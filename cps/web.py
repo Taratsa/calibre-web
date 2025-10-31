@@ -1180,7 +1180,18 @@ def get_series_cover(series_id, resolution=None):
 @web.route("/robots.txt")
 def get_robots():
     try:
-        return send_from_directory(constants.STATIC_DIR, "robots.txt")
+        robots_path = os.path.join(constants.STATIC_DIR, "robots.txt")
+        if os.path.exists(robots_path):
+            return send_from_directory(constants.STATIC_DIR, "robots.txt")
+        # Fallback default robots including sitemap
+        sitemap_url = url_for('web.get_sitemap', _external=True)
+        content = """User-agent: *
+Allow: /
+Sitemap: {sitemap}
+""".format(sitemap=sitemap_url)
+        response = make_response(content)
+        response.headers["Content-Type"] = "text/plain; charset=utf-8"
+        return response
     except PermissionError:
         log.error("No permission to access robots.txt file.")
         abort(403)
