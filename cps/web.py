@@ -1186,6 +1186,130 @@ def get_robots():
         abort(403)
 
 
+@web.route("/sitemap.xml")
+@login_required_if_no_ano
+def get_sitemap():
+    """
+    Generate and return a sitemap.xml file for search engines.
+    Includes books, authors, series, categories, and publishers.
+    """
+    from datetime import datetime, timezone
+    from xml.etree.ElementTree import Element, SubElement, tostring
+    
+    # Create root element
+    urlset = Element('urlset')
+    urlset.set('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+    
+    now = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    
+    # Add main index page
+    url = SubElement(urlset, 'url')
+    loc = SubElement(url, 'loc')
+    loc.text = url_for('web.index', _external=True)
+    lastmod = SubElement(url, 'lastmod')
+    lastmod.text = now
+    changefreq = SubElement(url, 'changefreq')
+    changefreq.text = 'daily'
+    priority = SubElement(url, 'priority')
+    priority.text = '1.0'
+    
+    # Add books
+    books = calibre_db.session.query(db.Books).filter(
+        calibre_db.common_filters()).all()
+    for book in books:
+        url = SubElement(urlset, 'url')
+        loc = SubElement(url, 'loc')
+        loc.text = url_for('web.show_book', book_id=book.id, _external=True)
+        lastmod = SubElement(url, 'lastmod')
+        if book.last_modified:
+            lastmod.text = book.last_modified.strftime('%Y-%m-%d')
+        else:
+            lastmod.text = now
+        changefreq = SubElement(url, 'changefreq')
+        changefreq.text = 'weekly'
+        priority = SubElement(url, 'priority')
+        priority.text = '0.8'
+    
+    # Add authors
+    authors = (calibre_db.session.query(db.Authors)
+               .join(db.books_authors_link)
+               .join(db.Books)
+               .filter(calibre_db.common_filters())
+               .group_by(db.Authors.id)
+               .all())
+    for author in authors:
+        url = SubElement(urlset, 'url')
+        loc = SubElement(url, 'loc')
+        loc.text = url_for('web.books_list', data='author', sort_param='new', book_id=author.id, _external=True)
+        lastmod = SubElement(url, 'lastmod')
+        lastmod.text = now
+        changefreq = SubElement(url, 'changefreq')
+        changefreq.text = 'weekly'
+        priority = SubElement(url, 'priority')
+        priority.text = '0.6'
+    
+    # Add series
+    series = (calibre_db.session.query(db.Series)
+              .join(db.books_series_link)
+              .join(db.Books)
+              .filter(calibre_db.common_filters())
+              .group_by(db.Series.id)
+              .all())
+    for serie in series:
+        url = SubElement(urlset, 'url')
+        loc = SubElement(url, 'loc')
+        loc.text = url_for('web.books_list', data='series', sort_param='new', book_id=serie.id, _external=True)
+        lastmod = SubElement(url, 'lastmod')
+        lastmod.text = now
+        changefreq = SubElement(url, 'changefreq')
+        changefreq.text = 'weekly'
+        priority = SubElement(url, 'priority')
+        priority.text = '0.6'
+    
+    # Add categories/tags
+    tags = (calibre_db.session.query(db.Tags)
+            .join(db.books_tags_link)
+            .join(db.Books)
+            .filter(calibre_db.common_filters())
+            .group_by(db.Tags.id)
+            .all())
+    for tag in tags:
+        url = SubElement(urlset, 'url')
+        loc = SubElement(url, 'loc')
+        loc.text = url_for('web.books_list', data='category', sort_param='new', book_id=tag.id, _external=True)
+        lastmod = SubElement(url, 'lastmod')
+        lastmod.text = now
+        changefreq = SubElement(url, 'changefreq')
+        changefreq.text = 'weekly'
+        priority = SubElement(url, 'priority')
+        priority.text = '0.5'
+    
+    # Add publishers
+    publishers = (calibre_db.session.query(db.Publishers)
+                  .join(db.books_publishers_link)
+                  .join(db.Books)
+                  .filter(calibre_db.common_filters())
+                  .group_by(db.Publishers.id)
+                  .all())
+    for publisher in publishers:
+        url = SubElement(urlset, 'url')
+        loc = SubElement(url, 'loc')
+        loc.text = url_for('web.books_list', data='publisher', sort_param='new', book_id=publisher.id, _external=True)
+        lastmod = SubElement(url, 'lastmod')
+        lastmod.text = now
+        changefreq = SubElement(url, 'changefreq')
+        changefreq.text = 'weekly'
+        priority = SubElement(url, 'priority')
+        priority.text = '0.5'
+    
+    # Generate XML
+    xml_string = tostring(urlset, encoding='utf-8', xml_declaration=True)
+    
+    response = make_response(xml_string)
+    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+    return response
+
+
 @web.route("/show/<int:book_id>/<book_format>", defaults={'anyname': 'None'})
 @web.route("/show/<int:book_id>/<book_format>/<anyname>")
 @login_required_if_no_ano
