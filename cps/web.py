@@ -1213,13 +1213,21 @@ def get_sitemap():
     priority = SubElement(url, 'priority')
     priority.text = '1.0'
     
-    # Add books
+    # Add books (with slug: /book/<id>/<title>)
     books = calibre_db.session.query(db.Books).filter(
         calibre_db.common_filters()).all()
     for book in books:
+        # slugify title
+        import re, unicodedata
+        def slugify(value):
+            value = unicodedata.normalize('NFKD', value or '').encode('ascii', 'ignore').decode('ascii')
+            value = re.sub(r'[^a-zA-Z0-9]+', '-', value).strip('-').lower()
+            return value if value else 'book'
+
+        title_slug = slugify(book.title)
         url = SubElement(urlset, 'url')
         loc = SubElement(url, 'loc')
-        loc.text = url_for('web.show_book', book_id=book.id, _external=True)
+        loc.text = url_for('web.show_book', book_id=book.id, title_slug=title_slug, _external=True)
         lastmod = SubElement(url, 'lastmod')
         if book.last_modified:
             lastmod.text = book.last_modified.strftime('%Y-%m-%d')
@@ -1749,8 +1757,9 @@ def read_book(book_id, book_format):
 
 
 @web.route("/book/<int:book_id>")
+@web.route("/book/<int:book_id>/<title_slug>")
 @login_required_if_no_ano
-def show_book(book_id):
+def show_book(book_id, title_slug=None):
     entries = calibre_db.get_book_read_archived(book_id, config.config_read_column, allow_show_archived=True)
     if entries:
         read_book = entries[1]
