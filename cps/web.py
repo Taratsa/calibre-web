@@ -25,7 +25,7 @@ import chardet  # dependency of requests
 import copy
 from importlib.metadata import metadata
 
-from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for
+from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for, g
 from flask import session as flask_session
 from flask_babel import gettext as _
 from flask_babel import get_locale
