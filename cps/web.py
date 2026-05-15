@@ -806,7 +806,9 @@ def render_archived_books(page, sort_param):
 @login_required_if_no_ano
 def index(page):
     sort_param = (request.args.get('sort') or 'stored').lower()
-    return render_books_list("newest", sort_param, 1, page)
+    response = make_response(render_books_list("newest", sort_param, 1, page))
+    response.headers['Link'] = '</.well-known/api-catalog>; rel="api-catalog"'
+    return response
 
 
 @login_required_if_no_ano
