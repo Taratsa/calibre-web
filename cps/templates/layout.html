@@ -240,6 +240,52 @@
       <script src="{{ url_for('static', filename='js/libs/readmore.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/caliBlur.js') }}"></script>
     {% endif %}
+    <script>
+    (function() {
+      if (!navigator.modelContext) {
+        return;
+      }
+      const abortController = new AbortController();
+      navigator.modelContext.registerTool({
+        name: "search-books",
+        title: "Search Books",
+        description: "Search the Calibre-Web book catalog by query string",
+        inputSchema: {
+          type: "object",
+          properties: {
+            query: {
+              type: "string",
+              description: "Search query string"
+            }
+          },
+          required: ["query"]
+        },
+        execute: async function(input) {
+          const response = await fetch("{{ url_for('search.simple_search') }}?query=" + encodeURIComponent(input.query));
+          return { status: response.ok ? "success" : "error", url: response.url };
+        }
+      }, { signal: abortController.signal });
+      navigator.modelContext.registerTool({
+        name: "list-books",
+        title: "List Books",
+        description: "Get a list of books with optional pagination",
+        inputSchema: {
+          type: "object",
+          properties: {
+            page: {
+              type: "integer",
+              description: "Page number (default: 1)"
+            }
+          }
+        },
+        execute: async function(input) {
+          const page = input.page || 1;
+          const response = await fetch("{{ url_for('web.index', page=1) }}".replace("/1", "") + "/page/" + page);
+          return { status: response.ok ? "success" : "error", url: response.url };
+        }
+      }, { signal: abortController.signal });
+    })();
+    </script>
     {% block js %}{% endblock %}
   </body>
 </html>

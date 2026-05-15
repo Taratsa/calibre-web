@@ -1190,6 +1190,7 @@ def get_robots():
         sitemap_url = url_for('web.get_sitemap', _external=True)
         content = """User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Sitemap: {sitemap}
 """.format(sitemap=sitemap_url)
         response = make_response(content)
@@ -1198,6 +1199,78 @@ Sitemap: {sitemap}
     except PermissionError:
         log.error("No permission to access robots.txt file.")
         abort(403)
+
+
+@web.route("/.well-known/agent-skills/index.json")
+def get_agent_skills_index():
+    try:
+        response = make_response(json.dumps({
+            "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+            "skills": []
+        }, indent=2))
+        response.headers["Content-Type"] = "application/json"
+        return response
+    except Exception:
+        log.error("Error serving agent skills index")
+        abort(500)
+
+
+@web.route("/.well-known/mcp/server-card.json")
+def get_mcp_server_card():
+    try:
+        response = make_response(json.dumps({
+            "serverInfo": {
+                "name": "calibre-web",
+                "version": "1.0.0"
+            },
+            "transport": "streamable-http",
+            "endpoint": url_for('opds.feed_index', _external=True).rstrip('/') + "/mcp",
+            "capabilities": {
+                "tools": [],
+                "resources": ["urn:calibre:books", "urn:calibre:authors", "urn:calibre:series"],
+                "prompts": []
+            }
+        }, indent=2))
+        response.headers["Content-Type"] = "application/json"
+        return response
+    except Exception:
+        log.error("Error serving MCP server card")
+        abort(500)
+
+
+@web.route("/.well-known/api-catalog")
+def get_api_catalog():
+    try:
+        response = make_response(json.dumps({
+            "linkset": [
+                {
+                    "anchor": url_for('opds.feed_index', _external=True),
+                    "service-desc": [
+                        {
+                            "href": url_for('web.get_robots', _external=True) + "#opds",
+                            "type": "text/html"
+                        }
+                    ],
+                    "service-doc": [
+                        {
+                            "href": url_for('web.get_robots', _external=True) + "#opds",
+                            "type": "text/html"
+                        }
+                    ],
+                    "status": [
+                        {
+                            "href": url_for('web.get_robots', _external=True),
+                            "type": "text/html"
+                        }
+                    ]
+                }
+            ]
+        }, indent=2))
+        response.headers["Content-Type"] = "application/linkset+json; profile=\"https://www.rfc-editor.org/info/rfc9727\""
+        return response
+    except Exception:
+        log.error("Error serving api-catalog")
+        abort(500)
 
 
 @web.route("/sitemap.xml")
