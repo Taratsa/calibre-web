@@ -25,7 +25,7 @@ import chardet  # dependency of requests
 import copy
 from importlib.metadata import metadata
 
-from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for, g
+from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for
 from flask import session as flask_session
 from flask_babel import gettext as _
 from flask_babel import get_locale
@@ -1213,7 +1213,7 @@ def get_opensearch():
   <Image>{base_url}favicon.ico</Image>
   <InputEncoding>UTF-8</InputEncoding>
   <OutputEncoding>UTF-8</OutputEncoding>
-</OpenSearchDescription>""".format(instance=g.instance, base_url=url_for('web.index', _external=True).rstrip('/'))
+</OpenSearchDescription>""".format(instance=config.config_calibre_web_title, base_url=url_for('web.index', _external=True).rstrip('/'))
         response = make_response(content)
         response.headers["Content-Type"] = "application/xml; charset=utf-8"
         return response
