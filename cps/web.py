@@ -1205,17 +1205,8 @@ def get_opensearch():
     try:
         content = """<?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-  <ShortName>{{ instance }}</ShortName>
-  <Description>Search {{ instance }} eBook Catalog</Description>
-  <Url type="text/html" method="get" template="{{ url_for('search.simple_search', _external=True) }}?query={searchTerms}"/>
-  <Image>{{ url_for('static', filename='favicon.ico', _external=True) }}</Image>
-  <InputEncoding>UTF-8</InputEncoding>
-  <OutputEncoding>UTF-8</OutputEncoding>
-</OpenSearchDescription>""".replace('{{ instance }}', g.instance).replace('{{ url_for', url_for.__name__ == 'url_for' and '{{ url_for' or url_for('web.index', _external=True))
-        content = """<?xml version="1.0" encoding="UTF-8"?>
-<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>{instance}</ShortName>
-  <Description>Search {instance} eBook Catalog</Description>
+  <Description>Search {instance} Indonesian rare books, zines, and open access ebooks</Description>
   <Url type="text/html" method="get" template="{base_url}search?q={{searchTerms}}"/>
   <Image>{base_url}favicon.ico</Image>
   <InputEncoding>UTF-8</InputEncoding>
