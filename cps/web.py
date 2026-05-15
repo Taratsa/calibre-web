@@ -1186,7 +1186,6 @@ def get_robots():
         robots_path = os.path.join(constants.STATIC_DIR, "robots.txt")
         if os.path.exists(robots_path):
             return send_from_directory(constants.STATIC_DIR, "robots.txt")
-        # Fallback default robots including sitemap
         sitemap_url = url_for('web.get_sitemap', _external=True)
         content = """User-agent: *
 Allow: /
@@ -1201,12 +1200,50 @@ Sitemap: {sitemap}
         abort(403)
 
 
+@web.route("/opensearch.xml")
+def get_opensearch():
+    try:
+        content = """<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>{{ instance }}</ShortName>
+  <Description>Search {{ instance }} eBook Catalog</Description>
+  <Url type="text/html" method="get" template="{{ url_for('search.simple_search', _external=True) }}?query={searchTerms}"/>
+  <Image>{{ url_for('static', filename='favicon.ico', _external=True) }}</Image>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+</OpenSearchDescription>""".replace('{{ instance }}', g.instance).replace('{{ url_for', url_for.__name__ == 'url_for' and '{{ url_for' or url_for('web.index', _external=True))
+        content = """<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>{instance}</ShortName>
+  <Description>Search {instance} eBook Catalog</Description>
+  <Url type="text/html" method="get" template="{base_url}search?q={{searchTerms}}"/>
+  <Image>{base_url}favicon.ico</Image>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+</OpenSearchDescription>""".format(instance=g.instance, base_url=url_for('web.index', _external=True).rstrip('/'))
+        response = make_response(content)
+        response.headers["Content-Type"] = "application/xml; charset=utf-8"
+        return response
+    except Exception:
+        log.error("Error serving opensearch.xml")
+        abort(500)
+
+
 @web.route("/.well-known/agent-skills/index.json")
 def get_agent_skills_index():
     try:
+        base_url = url_for('web.index', _external=True).rstrip('/')
         response = make_response(json.dumps({
             "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
-            "skills": []
+            "skills": [
+                {
+                    "name": "calibre-web-book-search",
+                    "type": "skill-md",
+                    "description": "Search and browse Calibre-Web eBook catalog by title, author, series, or keywords",
+                    "url": f"{base_url}/.well-known/agent-skills/agent-skills/SKILL.md",
+                    "digest": "sha256:2cdda60ea052eb8af4ae8a4d96dc0d173151d5386ee724a4e98f93ed21adbae5"
+                }
+            ]
         }, indent=2))
         response.headers["Content-Type"] = "application/json"
         return response

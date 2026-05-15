@@ -6,6 +6,25 @@
       <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": {{ entry.title|tojson }},
+  "author": [{% for author in entry.ordered_authors %}{{ author.name|tojson }}{% if not loop.last %},{% endif %}{% endfor %}],
+  "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }},
+  "description": {{ entry.comments[0].text|striptags|truncate(200) if entry.comments else ''|tojson }},
+  {% if entry.identifiers %}
+  "isbn": {{ entry.identifiers[0].value|tojson }},
+  {% endif %}
+  {% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %}
+  "datePublished": {{ (entry.pubdate|string)[:10]|tojson }},
+  {% endif %}
+  {% if entry.publishers %}
+  "publisher": {{ entry.publishers[0].name|tojson }}
+  {% endif %}
+}
+</script>
 {% endblock %}
 {% block body %}
 <div class="single">
@@ -131,7 +150,7 @@
                     {% endif %}
                 </div>
             </div>
-            <h2 id="title">{{ entry.title }}</h2>
+            <h1 id="title">{{ entry.title }}</h1>
             <p class="author">
                 {% for author in entry.ordered_authors %}
                     <a href="{{ url_for('web.books_list',  data='author', sort_param='stored', book_id=author.id ) }}">{{ author.name.replace('|',',') }}</a>

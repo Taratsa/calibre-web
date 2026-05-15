@@ -11,7 +11,7 @@
 {%- endmacro %}
 
 {% macro series(series, alt=None) -%}
-    {%- set image_alt = alt if alt else image_title -%}
+    {%- set image_alt = alt if alt else series.name -%}
     {% set srcset = series|get_series_srcset %}
     <img
         srcset="{{ srcset }}"
