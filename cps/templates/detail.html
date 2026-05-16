@@ -2,7 +2,7 @@
 {% block header %}
     <meta property="og:type" content="books.book" />
     <meta property="og:title" content="{{ entry.title|truncate(35) }}" />
-    <meta property="og:site_name" content="Taratsa" />
+    <meta property="og:site_name" content="Pustaka Taratsa" />
     {% if entry.languages|length > 0 %}
       <meta property="og:locale" content="{{ entry.languages[0].lang_code }}" />
     {% endif %}
@@ -10,7 +10,7 @@
       <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% else %}
-      <meta property="og:description" content="{{ entry.title }}{% if entry.ordered_authors|length > 0 %} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}" />
+      <meta property="og:description" content="{{ entry.title }}{% if entry.ordered_authors|length > 0 %} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}{% if entry.publishers|length > 0 %}, {{ entry.publishers[0].name }}{% endif %}{% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %}, {{ (entry.pubdate|string)[:10] }}{% endif %}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% endif %}
     {% for author in entry.ordered_authors %}
