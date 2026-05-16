@@ -168,16 +168,18 @@ def api_webhook_check():
 
     if title:
         from sqlalchemy import or_
-        title_pattern = f"%{title}%"
-        author_pattern = f"%{author}%" if author else None
+        import re
 
-        query = query.filter(
-            or_(
-                db.Books.title.ilike(title_pattern),
-                db.Books.sort.ilike(title_pattern)
-            )
-        )
-        if author_pattern:
+        clean_title = re.sub(r'[^\w\s]', ' ', title)
+        words = clean_title.split()
+        words = [w for w in words if len(w) > 2]
+
+        if words:
+            title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]
+            query = query.filter(or_(*title_patterns))
+
+        if author:
+            author_pattern = f"%{author}%"
             query = query.join(db.Authors).filter(
                 or_(
                     db.Authors.name.ilike(author_pattern),
