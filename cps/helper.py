@@ -984,7 +984,6 @@ def do_download_file(book, book_format, client, data, headers):
             "payload": {
                 "hostname": request.host.split(':')[0],
                 "language": request.headers.get('Accept-Language', 'unknown'),
-                "screen": request.headers.get('User-Agent', 'unknown'),
                 "url": request.path,
                 "referrer": request.headers.get('Referer', ''),
                 "website": umami_website_id,
