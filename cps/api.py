@@ -5,7 +5,7 @@ from flask_babel import gettext as _
 from markupsafe import Markup
 
 from .cw_login import current_user
-from . import config, calibre_db, logger, uploader, helper
+from . import config, calibre_db, logger, uploader, helper, csrf
 from .editbooks import file_handling_on_upload, create_book_on_upload, move_coverfile, edit_book_comments
 from .helper import add_book_to_thumbnail_cache
 
@@ -28,6 +28,7 @@ def validate_upload_file(requested_file):
 
 
 @api.route("/api/webhook/upload", methods=["POST"])
+@csrf.exempt
 def api_webhook_upload():
     log.info(f"Upload API called by user: {current_user.name if current_user.is_authenticated else 'anonymous'}")
     log.debug(f"Request headers: {dict(request.headers)}")
