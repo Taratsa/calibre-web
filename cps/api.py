@@ -152,19 +152,16 @@ def api_webhook_check():
 
     title = None
     author = None
-    file_hash = None
 
     if request.method == "POST":
         data = request.get_json(silent=True) or {}
         title = data.get('title')
         author = data.get('author')
-        file_hash = data.get('file_hash')
     else:
         title = request.args.get('title')
         author = request.args.get('author')
-        file_hash = request.args.get('file_hash')
 
-    log.debug(f"Check request: title={title}, author={author}, file_hash={file_hash}")
+    log.debug(f"Check request: title={title}, author={author}")
 
     query = calibre_db.session.query(db.Books)
     results = []
