@@ -300,8 +300,10 @@
         }
         if (/\/download\/\d+\/pdf\//i.test(a.pathname) && !a.getAttribute('data-umami-event')) {
           var filename = a.pathname.split('/').pop();
+          var title = document.getElementById('title') ? document.getElementById('title').textContent : document.title;
           a.setAttribute('data-umami-event', 'pdf-download');
           a.setAttribute('data-umami-event-file', filename);
+          a.setAttribute('data-umami-event-title', title);
         }
       });
     });
