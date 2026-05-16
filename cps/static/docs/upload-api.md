@@ -167,3 +167,71 @@ Open the URL returned in the response to verify the book was uploaded correctly.
 ### "Only PDF and EPUB files are allowed"
 - Convert file to PDF or EPUB before uploading
 - Check file extension is correct (.pdf or .epub)
+
+---
+
+## Check if Book Exists
+
+Before uploading, AI agents should check if the book already exists to avoid duplicates.
+
+### Request
+
+**GET with query params:**
+```http
+GET /api/webhook/check?title=<TITLE>&author=<AUTHOR> HTTP/1.1
+Host: pustaka.taratsa.id
+Cookie: <SESSION_COOKIE>
+```
+
+**POST with JSON body:**
+```http
+POST /api/webhook/check HTTP/1.1
+Host: pustaka.taratsa.id
+Content-Type: application/json
+Cookie: <SESSION_COOKIE>
+
+{"title": "<TITLE>", "author": "<AUTHOR>"}
+```
+
+### Python Example
+
+```python
+# Check if book exists
+params = {"title": "OK Bookchin", "author": "Tidak ketahui"}
+response = session.get("https://pustaka.taratsa.id/api/webhook/check", params=params)
+print(response.json())
+```
+
+### Response
+
+```json
+{
+  "found": true,
+  "count": 1,
+  "results": [
+    {
+      "book_id": 1456,
+      "title": "OK Bookchin",
+      "authors": ["Tidak ketahui"],
+      "url": "https://pustaka.taratsa.id/book/1456"
+    }
+  ]
+}
+```
+
+If no book is found:
+```json
+{
+  "found": false,
+  "count": 0,
+  "results": []
+}
+```
+
+### Use Case
+
+AI agent workflow:
+1. Extract title/author from file
+2. Call `/api/webhook/check` to see if book exists
+3. If `found: true`, skip upload or update existing book
+4. If `found: false`, proceed with upload
