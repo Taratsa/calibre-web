@@ -6,7 +6,7 @@
       <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% else %}
-      <meta property="og:description" content="{{ entry.title|truncate(65) }}" />
+      <meta property="og:description" content="{{ entry.title }}{% if entry.ordered_authors|length > 0 %} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% endif %}
     <link rel="canonical" href="{{ url_for('web.show_book', book_id=entry.id, _external=True) }}" />
