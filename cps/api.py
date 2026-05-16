@@ -173,7 +173,7 @@ def api_webhook_check():
     results = []
 
     if title:
-        from sqlalchemy import or_
+        from sqlalchemy import or_, and_
 
         STOPWORDS = {
             'dan', 'di', 'yang', 'dari', 'dalam', 'dengan', 'atau', 'ini', 'itu',
@@ -192,7 +192,7 @@ def api_webhook_check():
 
         if words:
             title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]
-            query = query.filter(or_(*title_patterns))
+            query = query.filter(and_(*title_patterns))
 
         if author:
             author_pattern = f"%{author}%"
