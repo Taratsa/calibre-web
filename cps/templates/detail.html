@@ -46,7 +46,7 @@
   {% elif entry.ordered_authors|length > 0 or entry.publishers|length > 0 %},
   "description": {{ entry.title }} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% if entry.publishers|length > 0 %} ({{ entry.publishers[0].name }}){% endif %}
   {% endif %}
-  {% if entry.identifiers %},
+  {% if entry.identifiers|length > 0 and entry.identifiers[0].value|length > 0 %},
   "isbn": {{ entry.identifiers[0].value|tojson }}
   {% endif %}
   {% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %},
