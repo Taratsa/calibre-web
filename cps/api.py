@@ -170,9 +170,9 @@ def api_webhook_check():
         from sqlalchemy import or_
         import re
 
-        clean_title = re.sub(r'[^\w\s]', ' ', title)
+        clean_title = re.sub(r'[^\w\s.]', ' ', title)
         words = clean_title.split()
-        words = [w for w in words if len(w) > 2]
+        words = [w for w in words if len(w) > 2 or w.replace('.', '').isdigit() or w.isdigit()]
 
         if words:
             title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]
@@ -188,7 +188,12 @@ def api_webhook_check():
             )
 
         books = query.limit(10).all()
+        exact_match = False
         for book in books:
+            book_title_lower = book.title.lower()
+            title_lower = title.lower()
+            if book_title_lower == title_lower:
+                exact_match = True
             results.append({
                 "book_id": book.id,
                 "title": book.title,
@@ -196,9 +201,10 @@ def api_webhook_check():
                 "url": request.host_url + url_for('web.show_book', book_id=book.id).lstrip('/')
             })
 
-    log.info(f"Check API found {len(results)} results")
+    log.info(f"Check API found {len(results)} results, exact={exact_match}")
     return jsonify(
         found=len(results) > 0,
+        exact_match=exact_match,
         count=len(results),
         results=results
     )
