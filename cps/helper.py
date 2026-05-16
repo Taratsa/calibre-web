@@ -30,7 +30,7 @@ import requests
 import unidecode
 from uuid import uuid4
 
-from flask import send_from_directory, make_response, abort, url_for, Response, request, after_this_request
+from flask import send_from_directory, make_response, abort, url_for, Response, request, after_this_request, current_app
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as N_
 from flask_babel import get_locale
@@ -973,6 +973,25 @@ def do_download_file(book, book_format, client, data, headers):
         response.headers[element[0]] = element[1]
     log.info('Downloading file: \'%s\' by %s - %s', format(os.path.join(filename, book_name + "." + book_format)),
              current_user.name, request.headers.get('X-Forwarded-For', request.remote_addr))
+    try:
+        umami_url = current_app.config.get('UMAMI_COLLECT_URL', 'https://umami.kenadera.org/api/send')
+        umami_website_id = current_app.config.get('UMAMI_WEBSITE_ID', '0b57aeb6-d996-4d88-89fc-59ada511cd9c')
+        requests.post(umami_url, json={
+            "payload": {
+                "hostname": request.host,
+                "url": request.path,
+                "website": umami_website_id,
+                "name": "direct-download",
+                "data": {
+                    "file": book_name + "." + book_format,
+                    "format": book_format,
+                    "client": client or "unknown"
+                }
+            },
+            "type": "event"
+        }, timeout=5, headers={"User-Agent": request.headers.get('User-Agent', 'unknown')})
+    except Exception:
+        pass
     return response
 
 
