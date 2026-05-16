@@ -84,6 +84,13 @@ def api_webhook_upload():
             book_id=book_id,
             title=title,
             author=meta.author,
+            description=meta.description,
+            publisher=meta.publisher,
+            series=meta.series,
+            series_id=meta.series_id,
+            languages=meta.languages,
+            tags=meta.tags,
+            pubdate=meta.pubdate,
             url=request.host_url + url_for('web.show_book', book_id=book_id).lstrip('/')
         )
     except Exception as e:
