@@ -1,13 +1,33 @@
 {% extends is_xhr|yesno("fragment.html", "layout.html") %}
 {% block header %}
-    <meta property="og:type" content="book" />
+    <meta property="og:type" content="books.book" />
     <meta property="og:title" content="{{ entry.title|truncate(35) }}" />
+    <meta property="og:site_name" content="Taratsa" />
+    {% if entry.languages|length > 0 %}
+      <meta property="og:locale" content="{{ entry.languages[0].lang_code }}" />
+    {% endif %}
     {% if entry.comments|length > 0 and entry.comments[0].text|length > 0 %}
       <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% else %}
       <meta property="og:description" content="{{ entry.title }}{% if entry.ordered_authors|length > 0 %} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
+    {% endif %}
+    {% for author in entry.ordered_authors %}
+      <meta property="book:author" content="{{ author.name }}" />
+    {% endfor %}
+    {% if entry.publishers|length > 0 %}
+      <meta property="book:publisher" content="{{ entry.publishers[0].name }}" />
+    {% endif %}
+    {% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %}
+      <meta property="book:release_date" content="{{ (entry.pubdate|string)[:10] }}" />
+    {% endif %}
+    {% if entry.identifiers|length > 0 %}
+      {% for identifier in entry.identifiers %}
+        {% if identifier.format_type() == 'ISBN' %}
+          <meta property="book:isbn" content="{{ identifier.value }}" />
+        {% endif %}
+      {% endfor %}
     {% endif %}
     <link rel="canonical" href="{{ url_for('web.show_book', book_id=entry.id, _external=True) }}" />
     {% if page and page != "book" %}
