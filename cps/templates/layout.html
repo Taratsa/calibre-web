@@ -18,7 +18,7 @@
     {% if page == 'book' and entry %}
       <meta property="og:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
     {% else %}
-      <meta property="og:image" content="https://taratsa.id/content/images/size/w2000/2026/03/Header_Beranda.png">
+      <meta property="og:image" content="{{ url_for('static', filename='images/Header_Beranda.png', _external=True) }}">
     {% endif %}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if page == 'book' and entry %}{{ entry.title }} | Pustaka Taratsa{% else %}Pustaka Taratsa{% endif %}">
@@ -26,7 +26,7 @@
     {% if page == 'book' and entry %}
       <meta name="twitter:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
     {% else %}
-      <meta name="twitter:image" content="https://taratsa.id/content/images/size/w2000/2026/03/Header_Beranda.png">
+      <meta name="twitter:image" content="{{ url_for('static', filename='images/Header_Beranda.png', _external=True) }}">
     {% endif %}
     {% if g.google_site_verification|length > 0 %}
       <meta name="google-site-verification" content="{{g.google_site_verification}}">
