@@ -17,12 +17,16 @@
     <meta property="og:url" content="{{ request.base_url }}">
     {% if page == 'book' and entry %}
       <meta property="og:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
+    {% else %}
+      <meta property="og:image" content="https://taratsa.id/content/images/size/w2000/2026/03/Header_Beranda.png">
     {% endif %}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title }} | {{ instance }}">
     <meta name="twitter:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
     {% if page == 'book' and entry %}
       <meta name="twitter:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
+    {% else %}
+      <meta name="twitter:image" content="https://taratsa.id/content/images/size/w2000/2026/03/Header_Beranda.png">
     {% endif %}
     {% if g.google_site_verification|length > 0 %}
       <meta name="google-site-verification" content="{{g.google_site_verification}}">
