@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import re
 from flask import Blueprint, jsonify, request, make_response, url_for
 from flask_babel import gettext as _
 from markupsafe import Markup
@@ -11,6 +12,12 @@ from .helper import add_book_to_thumbnail_cache
 
 api = Blueprint('api', __name__)
 log = logger.create()
+
+
+def sanitize_for_xml(text):
+    if not text:
+        return text
+    return re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]', '', str(text))
 
 
 def validate_upload_file(requested_file):
@@ -27,8 +34,8 @@ def validate_upload_file(requested_file):
     return True, None
 
 
-@api.route("/api/webhook/upload", methods=["POST"])
 @csrf.exempt
+@api.route("/api/webhook/upload", methods=["POST"])
 def api_webhook_upload():
     log.info(f"Upload API called by user: {current_user.name if current_user.is_authenticated else 'anonymous'}")
     log.debug(f"Request headers: {dict(request.headers)}")
