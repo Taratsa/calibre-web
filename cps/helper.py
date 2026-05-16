@@ -977,7 +977,6 @@ def do_download_file(book, book_format, client, data, headers):
         umami_url = 'https://umami.kenadera.org/api/send'
         umami_website_id = '0b57aeb6-d996-4d88-89fc-59ada511cd9c'
         payload = {
-            "type": "event",
             "payload": {
                 "hostname": request.host.split(':')[0] if ':' in request.host else request.host,
                 "language": request.headers.get('Accept-Language', ''),
@@ -990,9 +989,12 @@ def do_download_file(book, book_format, client, data, headers):
                     "format": book_format,
                     "client": client or "unknown"
                 }
-            }
+            },
+            "type": "event"
         }
-        resp = requests.post(umami_url, json=payload, timeout=5)
+        log.debug('Umami tracking payload: %s', payload)
+        resp = requests.post(umami_url, json=payload, timeout=5,
+                             headers={"User-Agent": "Calibre-Web/1.0"})
         log.debug('Umami tracking response: %s %s', resp.status_code, resp.text)
     except Exception as e:
         log.error('Umami tracking failed: %s', e)
