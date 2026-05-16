@@ -175,9 +175,20 @@ def api_webhook_check():
     if title:
         from sqlalchemy import or_
 
+        STOPWORDS = {
+            'dan', 'di', 'yang', 'dari', 'dalam', 'dengan', 'atau', 'ini', 'itu',
+            'ke', 'de', 'si', 'the', 'and', 'of', 'in', 'to', 'a', 'is', 'are',
+            'untuk', 'oleh', 'pada', 'juga', 'serta', 'bagi', 'akan',
+            'dapat', 'tidak', 'ada', 'satu', 'dua', 'tiga',
+        }
+
         clean_title = re.sub(r'[^\w\s.]', ' ', title)
         words = clean_title.split()
-        words = [w for w in words if len(w) > 2 or (w.replace('.', '').isdigit() and len(w) > 1) or w.isdigit()]
+        words = [
+            w for w in words
+            if (len(w) > 2 or w.replace('.', '').isdigit() or w.isdigit())
+            and w.lower() not in STOPWORDS
+        ]
 
         if words:
             title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]
