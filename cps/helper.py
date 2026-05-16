@@ -980,18 +980,16 @@ def do_download_file(book, book_format, client, data, headers):
         umami_website_id = '0b57aeb6-d996-4d88-89fc-59ada511cd9c'
         log.info('Umami tracking: url=%s, website=%s, file=%s', umami_url, umami_website_id, book_name + "." + book_format)
         resp = requests.post(umami_url, json={
-            "payload": {
-                "hostname": request.host,
-                "url": request.path,
-                "website": umami_website_id,
-                "name": "direct-download",
-                "data": {
-                    "file": book_name + "." + book_format,
-                    "format": book_format,
-                    "client": client or "unknown"
-                }
-            },
-            "type": "event"
+            "type": "event",
+            "website": umami_website_id,
+            "hostname": request.host,
+            "url": request.path,
+            "name": "direct-download",
+            "data": {
+                "file": book_name + "." + book_format,
+                "format": book_format,
+                "client": client or "unknown"
+            }
         }, timeout=5, headers={"User-Agent": request.headers.get('User-Agent', 'unknown')})
         log.debug('Umami tracking success: %s %s', resp.status_code, resp.text)
     except Exception as e:
