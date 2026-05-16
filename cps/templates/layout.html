@@ -21,7 +21,7 @@
       <meta property="og:image" content="https://taratsa.id/content/images/size/w2000/2026/03/Header_Beranda.png">
     {% endif %}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title }} | {{ instance }}">
+    <meta name="twitter:title" content="{% if page == 'book' and entry %}{{ entry.title }}{% else %}Pustaka Taratsa{% endif %}">
     <meta name="twitter:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
     {% if page == 'book' and entry %}
       <meta name="twitter:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
