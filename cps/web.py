@@ -1863,6 +1863,7 @@ def read_book(book_id, book_format):
 
 @web.route("/book/<int:book_id>")
 @web.route("/book/<int:book_id>/<title_slug>")
+@web.route("/book/<int:book_id>/<title_slug>/")
 @login_required_if_no_ano
 def show_book(book_id, title_slug=None):
     entries = calibre_db.get_book_read_archived(book_id, config.config_read_column, allow_show_archived=True)
