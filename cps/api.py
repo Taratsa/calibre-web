@@ -20,6 +20,12 @@ def sanitize_for_xml(text):
     return re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]', '', str(text))
 
 
+def normalize_title(s):
+    s = re.sub(r'[^\w\s]', '', s)
+    s = re.sub(r'\s+', ' ', s)
+    return s.lower().strip()
+
+
 def validate_upload_file(requested_file):
     log.debug(f"Validating file: {requested_file}")
     if not requested_file or not requested_file.filename:
@@ -168,11 +174,10 @@ def api_webhook_check():
 
     if title:
         from sqlalchemy import or_
-        import re
 
         clean_title = re.sub(r'[^\w\s.]', ' ', title)
         words = clean_title.split()
-        words = [w for w in words if len(w) > 2 or w.replace('.', '').isdigit() or w.isdigit()]
+        words = [w for w in words if len(w) > 2 or (w.replace('.', '').isdigit() and len(w) > 1) or w.isdigit()]
 
         if words:
             title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]
@@ -188,11 +193,11 @@ def api_webhook_check():
             )
 
         books = query.limit(10).all()
+        query_norm = normalize_title(title)
         exact_match = False
         for book in books:
-            book_title_lower = book.title.lower()
-            title_lower = title.lower()
-            if book_title_lower == title_lower:
+            book_norm = normalize_title(book.title)
+            if book_norm == query_norm:
                 exact_match = True
             results.append({
                 "book_id": book.id,
