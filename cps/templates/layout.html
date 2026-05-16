@@ -32,8 +32,8 @@
       <meta name="google-site-verification" content="{{g.google_site_verification}}">
     {% endif %}
     <link rel="search" type="application/opensearchdescription+xml" href="{{ url_for('web.get_opensearch') }}" title="{{instance}} Search">
-    <link rel="apple-touch-icon" sizes="140x140" href="https://taratsa.id/content/images/size/w256h256/2023/03/60px.png">
-    <link rel="shortcut icon" href="https://taratsa.id/content/images/size/w256h256/2023/03/60px.png">
+    <link rel="apple-touch-icon" sizes="140x140" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="{{ url_for('static', filename='css/libs/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     {% block header %}{% endblock %}
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="screen">
