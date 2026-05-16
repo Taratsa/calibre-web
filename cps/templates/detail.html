@@ -37,18 +37,22 @@
 {
   "@context": "https://schema.org",
   "@type": "Book",
+  "url": {{ url_for('web.show_book', book_id=entry.id, _external=True)|tojson }},
   "name": {{ entry.title|tojson }},
   "author": [{% for author in entry.ordered_authors %}{{ author.name|tojson }}{% if not loop.last %},{% endif %}{% endfor %}],
-  "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }}{% if entry.comments or entry.identifiers or (entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01') or entry.publishers %},{% endif %}
-  {% if entry.comments %}"description": {{ entry.comments[0].text|striptags|truncate(200)|tojson }}{% if entry.identifiers or (entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01') or entry.publishers %},{% endif %}
+  "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }}
+  {% if entry.comments %},
+  "description": {{ entry.comments[0].text|striptags|truncate(200)|tojson }}
+  {% elif entry.ordered_authors|length > 0 or entry.publishers|length > 0 %},
+  "description": {{ entry.title }} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% if entry.publishers|length > 0 %} ({{ entry.publishers[0].name }}){% endif %}
   {% endif %}
-  {% if entry.identifiers and entry.identifiers[0].value is defined %}
-  "isbn": {{ entry.identifiers[0].value|tojson }}{% if (entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01') or entry.publishers %},{% endif %}
+  {% if entry.identifiers %},
+  "isbn": {{ entry.identifiers[0].value|tojson }}
   {% endif %}
-  {% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %}
-  "datePublished": {{ (entry.pubdate|string)[:10]|tojson }}{% if entry.publishers %},{% endif %}
+  {% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %},
+  "datePublished": {{ (entry.pubdate|string)[:10]|tojson }}
   {% endif %}
-  {% if entry.publishers %}
+  {% if entry.publishers %},
   "publisher": {{ entry.publishers[0].name|tojson }}
   {% endif %}
 }

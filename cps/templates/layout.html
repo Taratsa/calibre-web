@@ -10,8 +10,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="canonical" href="{{ request.base_url }}">
-    <meta name="description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}{{ _('Calibre-Web eBook Catalog') }}{% endif %}">
+    <meta name="description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah situs perpustakaan digital yang mengoleksi dan mengarsip buku langka, zine, dan literatur terkait Indonesia{% endif %}">
     <meta property="og:title" content="{{ title }} | {{ instance }}">
+    <meta property="og:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(65) }}{% else %}Pustaka Taratsa adalah situs perpustakaan digital yang mengoleksi dan mengarsip buku langka, zine, dan literatur terkait Indonesia{% endif %}">
     <meta property="og:type" content="{% if page == 'book' %}book{% else %}website{% endif %}">
     <meta property="og:url" content="{{ request.base_url }}">
     {% if page == 'book' and entry %}
@@ -19,7 +20,7 @@
     {% endif %}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title }} | {{ instance }}">
-    <meta name="twitter:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}{{ _('Calibre-Web eBook Catalog') }}{% endif %}">
+    <meta name="twitter:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah situs perpustakaan digital yang mengoleksi dan mengarsip buku langka, zine, dan literatur terkait Indonesia{% endif %}">
     {% if page == 'book' and entry %}
       <meta name="twitter:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
     {% endif %}
