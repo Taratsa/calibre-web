@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="canonical" href="{{ request.base_url }}">
     <meta name="description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
-    <meta property="og:title" content="Pustaka Taratsa">
+    <meta property="og:title" content="{% if page == 'book' and entry %}{{ entry.title }}{% else %}Pustaka Taratsa{% endif %}">
     <meta property="og:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(65) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
     <meta property="og:type" content="{% if page == 'book' %}book{% else %}website{% endif %}">
     <meta property="og:url" content="{{ request.base_url }}">
