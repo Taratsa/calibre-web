@@ -974,6 +974,10 @@ def do_download_file(book, book_format, client, data, headers):
     log.info('Downloading file: \'%s\' by %s - %s', format(os.path.join(filename, book_name + "." + book_format)),
              current_user.name, request.headers.get('X-Forwarded-For', request.remote_addr))
     try:
+        ua = request.headers.get('User-Agent', '')
+        ip_address = request.headers.get('CF-Connecting-IP') or \
+                     request.headers.get('X-Forwarded-For', '').split(',')[0].strip() or \
+                     request.remote_addr
         umami_url = 'https://umami.kenadera.org/api/send'
         umami_website_id = '0b57aeb6-d996-4d88-89fc-59ada511cd9c'
         payload = {
@@ -983,18 +987,20 @@ def do_download_file(book, book_format, client, data, headers):
                 "url": request.path or '/',
                 "referrer": request.headers.get('Referer', ''),
                 "website": umami_website_id,
-                "name": "direct-download",
+                "name": "file-download",
                 "data": {
                     "file": book_name + "." + book_format,
                     "format": book_format,
-                    "client": client or "unknown"
+                    "client": client or "unknown",
+                    "ip": ip_address,
+                    "ua": ua
                 }
             },
             "type": "event"
         }
         log.debug('Umami tracking payload: %s', payload)
         resp = requests.post(umami_url, json=payload, timeout=5,
-                             headers={"User-Agent": "Calibre-Web/1.0"})
+                             headers={"User-Agent": ua or 'Calibre-Web/1.0'})
         log.debug('Umami tracking response: %s %s', resp.status_code, resp.text)
     except Exception as e:
         log.error('Umami tracking failed: %s', e)

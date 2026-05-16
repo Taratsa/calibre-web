@@ -289,13 +289,7 @@
     {% block js %}{% endblock %}
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const fileExtensions = /\.(pdf|zip|tar|gz|rar|doc|docx|xls|xlsx|ppt|pptx|csv|mp3|mp4|dmg|exe|iso|epub)$/i;
       document.querySelectorAll('a[href]').forEach(function (a) {
-        if (fileExtensions.test(a.href) && !a.getAttribute('data-umami-event')) {
-          var filename = a.href.split('/').pop().split('?')[0];
-          a.setAttribute('data-umami-event', 'file-download');
-          a.setAttribute('data-umami-event-file', filename);
-        }
         if (/\/read\/\d+\/pdf$/i.test(a.pathname) && !a.getAttribute('data-umami-event')) {
           a.setAttribute('data-umami-event', 'pdf-read');
         }
