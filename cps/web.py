@@ -1861,6 +1861,11 @@ def read_book(book_id, book_format):
         return redirect(url_for("web.index"))
 
 
+@web.route("/book/<int:book_id>/<title_slug>/<extra>")
+def redirect_book_extra(book_id, title_slug, extra):
+    return redirect(url_for('web.show_book', book_id=book_id, title_slug=title_slug), code=301)
+
+
 @web.route("/book/<int:book_id>")
 @web.route("/book/<int:book_id>/<title_slug>")
 @web.route("/book/<int:book_id>/<title_slug>/")
