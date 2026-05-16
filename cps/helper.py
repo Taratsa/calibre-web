@@ -971,8 +971,8 @@ def do_download_file(book, book_format, client, data, headers):
     # ToDo Check headers parameter
     for element in headers:
         response.headers[element[0]] = element[1]
-    log.info('Downloading file: \'%s\' by %s - %s', format(os.path.join(filename, book_name + "." + book_format)),
-             current_user.name, request.headers.get('X-Forwarded-For', request.remote_addr))
+    log.info('Downloading file: \'%s\' by %s - ip: %s, ua: %s', format(os.path.join(filename, book_name + "." + book_format)),
+             current_user.name, ip_address, ua)
     try:
         ua = request.headers.get('User-Agent', '')
         ip_address = request.headers.get('CF-Connecting-IP') or \
