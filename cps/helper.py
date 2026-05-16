@@ -975,8 +975,10 @@ def do_download_file(book, book_format, client, data, headers):
     ip_address = request.headers.get('CF-Connecting-IP') or \
                  request.headers.get('X-Forwarded-For', '').split(',')[0].strip() or \
                  request.remote_addr
-    log.info('Downloading file: \'%s\' by %s - ip: %s, ua: %s', format(os.path.join(filename, book_name + "." + book_format)),
-             current_user.name, ip_address, ua)
+    country = request.headers.get('CF-IPCountry', '')
+    log.info('Downloading file: \'%s\' by %s - ip: %s, country: %s, ua: %s',
+             format(os.path.join(filename, book_name + "." + book_format)),
+             current_user.name, ip_address, country, ua)
     try:
         umami_url = 'https://umami.kenadera.org/api/send'
         umami_website_id = '0b57aeb6-d996-4d88-89fc-59ada511cd9c'
@@ -992,7 +994,7 @@ def do_download_file(book, book_format, client, data, headers):
                     "file": book_name + "." + book_format,
                     "format": book_format,
                     "client": client or "unknown",
-                    "ip": ip_address,
+                    "country": country,
                     "ua": ua
                 }
             },
