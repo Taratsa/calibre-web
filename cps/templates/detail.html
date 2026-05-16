@@ -1,7 +1,7 @@
 {% extends is_xhr|yesno("fragment.html", "layout.html") %}
 {% block header %}
     <meta property="og:type" content="books.book" />
-    <meta property="og:title" content="{{ entry.title|truncate(35) }}" />
+    <meta property="og:title" content="{{ entry.title|truncate(35) }} | Pustaka Taratsa" />
     <meta property="og:site_name" content="Pustaka Taratsa" />
     {% if entry.languages|length > 0 %}
       <meta property="og:locale" content="{{ entry.languages[0].lang_code }}" />
