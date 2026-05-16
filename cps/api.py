@@ -6,7 +6,7 @@ from flask_babel import gettext as _
 from markupsafe import Markup
 
 from .cw_login import current_user
-from . import config, calibre_db, logger, uploader, helper, csrf
+from . import config, calibre_db, logger, uploader, helper, csrf, db
 from .editbooks import file_handling_on_upload, create_book_on_upload, move_coverfile, edit_book_comments
 from .helper import add_book_to_thumbnail_cache
 
@@ -139,3 +139,67 @@ def api_webhook_upload():
         log.error_or_exception(f"API upload error: {e}")
         log.error(f"Upload failed, rolling back transaction")
         return make_response(jsonify(error=str(e)), 500)
+
+
+@csrf.exempt
+@api.route("/api/webhook/check", methods=["GET", "POST"])
+def api_webhook_check():
+    log.info(f"Check API called by user: {current_user.name if current_user.is_authenticated else 'anonymous'}")
+
+    if not current_user.is_authenticated:
+        log.warning("Check API rejected: not authenticated")
+        return make_response(jsonify(error=_("Authentication required")), 401)
+
+    title = None
+    author = None
+    file_hash = None
+
+    if request.method == "POST":
+        data = request.get_json(silent=True) or {}
+        title = data.get('title')
+        author = data.get('author')
+        file_hash = data.get('file_hash')
+    else:
+        title = request.args.get('title')
+        author = request.args.get('author')
+        file_hash = request.args.get('file_hash')
+
+    log.debug(f"Check request: title={title}, author={author}, file_hash={file_hash}")
+
+    query = calibre_db.session.query(db.Books)
+    results = []
+
+    if title:
+        from sqlalchemy import or_
+        title_pattern = f"%{title}%"
+        author_pattern = f"%{author}%" if author else None
+
+        query = query.filter(
+            or_(
+                db.Books.title.ilike(title_pattern),
+                db.Books.sort.ilike(title_pattern)
+            )
+        )
+        if author_pattern:
+            query = query.join(db.Authors).filter(
+                or_(
+                    db.Authors.name.ilike(author_pattern),
+                    db.Authors.sort.ilike(author_pattern)
+                )
+            )
+
+        books = query.limit(10).all()
+        for book in books:
+            results.append({
+                "book_id": book.id,
+                "title": book.title,
+                "authors": [a.name for a in book.authors],
+                "url": request.host_url + url_for('web.show_book', book_id=book.id).lstrip('/')
+            })
+
+    log.info(f"Check API found {len(results)} results")
+    return jsonify(
+        found=len(results) > 0,
+        count=len(results),
+        results=results
+    )
