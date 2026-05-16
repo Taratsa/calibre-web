@@ -6,6 +6,10 @@
       <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
       <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% endif %}
+    <link rel="canonical" href="{{ url_for('web.show_book', book_id=entry.id, _external=True) }}" />
+    {% if page and page != "book" %}
+    <meta property="og:url" content="{{ request.base_url }}" />
+    {% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
