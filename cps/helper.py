@@ -722,19 +722,19 @@ def get_cover_on_failure():
         abort(403)
 
 
-def get_book_cover(book_id, resolution=None):
+def get_book_cover(book_id, resolution=None, accept_webp=False):
     book = calibre_db.get_filtered_book(book_id, allow_show_archived=True)
-    return get_book_cover_internal(book, resolution=resolution)
+    return get_book_cover_internal(book, resolution=resolution, accept_webp=accept_webp)
 
 
-def get_book_cover_with_uuid(book_uuid, resolution=None):
+def get_book_cover_with_uuid(book_uuid, resolution=None, accept_webp=False):
     book = calibre_db.get_book_by_uuid(book_uuid)
     if not book:
         return  # allows kobo.HandleCoverImageRequest to proxy request
-    return get_book_cover_internal(book, resolution=resolution)
+    return get_book_cover_internal(book, resolution=resolution, accept_webp=accept_webp)
 
 
-def get_book_cover_internal(book, resolution=None):
+def get_book_cover_internal(book, resolution=None, accept_webp=False):
     if book and book.has_cover:
 
         # Send the book cover thumbnail if it exists in cache
@@ -753,6 +753,8 @@ def get_book_cover_internal(book, resolution=None):
                     return get_cover_on_failure()
                 cover_file = gd.get_cover_via_gdrive(book.path)
                 if cover_file:
+                    if accept_webp:
+                        return _convert_to_webp(cover_file, 'image/jpeg')
                     return Response(cover_file, mimetype='image/jpeg')
                 else:
                     log.error('{}/cover.jpg not found on Google Drive'.format(book.path))
@@ -765,11 +767,31 @@ def get_book_cover_internal(book, resolution=None):
         else:
             cover_file_path = os.path.join(config.get_book_path(), book.path)
             if os.path.isfile(os.path.join(cover_file_path, "cover.jpg")):
+                if accept_webp:
+                    with open(os.path.join(cover_file_path, "cover.jpg"), 'rb') as f:
+                        cover_bytes = f.read()
+                    return _convert_to_webp(cover_bytes, 'image/jpeg')
                 return send_from_directory(cover_file_path, "cover.jpg")
             else:
                 return get_cover_on_failure()
     else:
         return get_cover_on_failure()
+
+
+def _convert_to_webp(image_data, mime_type):
+    try:
+        from wand.image import Image
+        with Image(blob=image_data) as img:
+            img.transform_colorspace('srgb')
+            webp_bytes = img.make_blob('webp')
+        response = make_response(webp_bytes)
+        response.headers['Content-Type'] = 'image/webp'
+        response.headers['Cache-Control'] = 'public, max-age=86400'
+        response.headers['Vary'] = 'Accept'
+        return response
+    except Exception as ex:
+        log.error_or_exception(ex)
+        return Response(image_data, mimetype=mime_type)
 
 
 def get_book_cover_thumbnail(book, resolution):
@@ -783,7 +805,7 @@ def get_book_cover_thumbnail(book, resolution):
                 .first())
 
 
-def get_series_thumbnail_on_failure(series_id, resolution):
+def get_series_thumbnail_on_failure(series_id, resolution, accept_webp=False):
     book = (calibre_db.session
         .query(db.Books)
         .join(db.books_series_link)
@@ -791,14 +813,14 @@ def get_series_thumbnail_on_failure(series_id, resolution):
         .filter(db.Series.id == series_id)
         .filter(db.Books.has_cover == 1)
         .first())
-    return get_book_cover_internal(book, resolution=resolution)
+    return get_book_cover_internal(book, resolution=resolution, accept_webp=accept_webp)
 
 
-def get_series_cover_thumbnail(series_id, resolution=None):
-    return get_series_cover_internal(series_id, resolution)
+def get_series_cover_thumbnail(series_id, resolution=None, accept_webp=False):
+    return get_series_cover_internal(series_id, resolution, accept_webp=accept_webp)
 
 
-def get_series_cover_internal(series_id, resolution=None):
+def get_series_cover_internal(series_id, resolution=None, accept_webp=False):
     # Send the series thumbnail if it exists in cache
     if resolution:
         thumbnail = get_series_thumbnail(series_id, resolution)
@@ -808,7 +830,7 @@ def get_series_cover_internal(series_id, resolution=None):
                 return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
                                            thumbnail.filename)
 
-    return get_series_thumbnail_on_failure(series_id, resolution)
+    return get_series_thumbnail_on_failure(series_id, resolution, accept_webp=accept_webp)
 
 
 def get_series_thumbnail(series_id, resolution):
