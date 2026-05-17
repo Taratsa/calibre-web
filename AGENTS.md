@@ -62,6 +62,43 @@ Author pages include Schema.org Person structured data:
 - Applied in `cps/helper.py` in `get_download_link()` function
 - Cloudflare CDN caches book files for 1 month after first download
 
+#### Caddyfile Configuration (for pustaka.taratsa.id)
+```caddy
+pustaka.taratsa.id {
+    request_body {
+        max_size 500MB
+    }
+
+    @covers {
+        path /cover/*
+    }
+    handle @covers {
+        transform webp quality=85
+        header Cache-Control "public, max-age=86400"
+    }
+
+    @books {
+        path /download/*/pdf/* /download/*/epub/*
+    }
+    handle @books {
+        header Cache-Control "public, max-age=2592000"
+    }
+
+    route {
+        reverse_proxy calibre-web-automated:8083
+    }
+
+    log
+    encode zstd gzip
+}
+```
+
+**Caddy Configuration Benefits:**
+- `/cover/*` → Convert to WebP (quality 85), cache 1 day
+- `/download/*/pdf/*`, `/download/*/epub/*` → Cache 1 month
+- Caddy handles browser detection automatically
+- WebP = 25-35% smaller than JPEG
+
 #### Recommended Cloudflare Cache Rules
 For optimal CDN performance, configure in Cloudflare dashboard:
 
