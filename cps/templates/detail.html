@@ -41,6 +41,9 @@
   "name": {{ entry.title|tojson }},
   "author": [{% for author in entry.ordered_authors %}{"@type": "Person", "name": {{ author.name|replace('|', ',')|tojson }}}{% if not loop.last %},{% endif %}{% endfor %}],
   "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }}
+  {% if entry.languages|length > 0 %},
+  "inLanguage": {{ entry.languages[0].lang_code|tojson }}
+  {% endif %}
   {% if entry.comments|length > 0 and entry.comments[0].text|length > 0 %},
   "description": {{ entry.comments[0].text|striptags|truncate(200)|tojson }}
   {% elif entry.ordered_authors|length > 0 or entry.publishers|length > 0 %},
@@ -54,6 +57,9 @@
   {% endif %}
   {% if entry.publishers %},
   "publisher": {{ entry.publishers[0].name|tojson }}
+  {% endif %}
+  {% if entry.data|length > 0 %},
+  "bookFormat": {% if 'EPUB' in entry.data|map(attribute='format')|list %} "https://schema.org/EBook" {% else %} "https://schema.org/Book" {% endif %}
   {% endif %}
 }
 </script>
