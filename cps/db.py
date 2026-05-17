@@ -733,6 +733,10 @@ class CalibreDB:
                 def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
                     from flask import g
                     g.db_query_start_time = time.time()
+                    if hasattr(g, 'db_query_count'):
+                        g.db_query_count += 1
+                    else:
+                        g.db_query_count = 1
 
                 @event.listens_for(engine, "after_cursor_execute")
                 def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
@@ -741,10 +745,11 @@ class CalibreDB:
                         from ..web import DB_QUERY_TIME, DB_QUERY_COUNT, SLOW_DB_QUERY_COUNT, prometheus_available
                         if prometheus_available:
                             duration = time.time() - g.db_query_start_time
-                            DB_QUERY_TIME.labels(query_type='read').observe(duration)
-                            DB_QUERY_COUNT.labels(query_type='read').inc()
+                            endpoint = getattr(g, 'request_endpoint', 'unknown')
+                            DB_QUERY_TIME.labels(query_type=endpoint).observe(duration)
+                            DB_QUERY_COUNT.labels(query_type=endpoint).inc()
                             if duration > 0.1:
-                                SLOW_DB_QUERY_COUNT.labels(query_type='read', threshold_ms='100').inc()
+                                SLOW_DB_QUERY_COUNT.labels(query_type=endpoint, threshold_ms='100').inc()
         except ImportError:
             pass
 

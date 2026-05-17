@@ -106,25 +106,25 @@ The app converts JPEG covers to WebP at request time using Wand:
 **Alternative**: Cloudflare Polish (paid) - enables automatic WebP/AVIF conversion at CDN level without app changes.
 
 **Caddy Configuration Benefits:**
-- `/cover/*` → Cache 1 day (WebP conversion happens at app level via Wand)
-- `/download/*/pdf/*`, `/download/*/epub/*` → Cache 1 month
+- `/cover/*` → Cache 7 days (WebP pre-generation + Wand fallback)
+- `/download/*/pdf/*`, `/download/*/epub/*` → Cache 45 days (1.5 months)
 - `>` prefix enables header overwrite of Flask's `Cache-Control: no-cache`
-- WebP conversion at app level: `cps/helper.py:_convert_to_webp()` converts JPEG to WebP when browser sends `Accept: image/webp`
+- WebP pre-generation at startup via `TaskGenerateCoverThumbnails`
 
 #### Recommended Cloudflare Cache Rules
 For optimal CDN performance, configure in Cloudflare dashboard:
 
 **PDF/Ebook files** (`/download/*/pdf/*`, `/download/*/epub/*`):
-- Edge TTL: 1 month
-- Browser TTL: 1 month
+- Edge TTL: 1.5 months
+- Browser TTL: 1.5 months
 - Cache Key: Include query strings
 
 **Cover images** (`/cover/*`):
 - Edge TTL: 1 week
-- Browser TTL: 1 day
+- Browser TTL: 7 days
 - Already uses `c=timestamp` query string for cache busting
 
 #### Current Caching Status (verified via curl)
-- Book downloads: `Cache-Control: public, max-age=2592000`, `cf-cache-status: HIT`
-- Cover images: `Cache-Control: public, max-age=86400`, `Vary: Accept, Accept-Encoding`
+- Book downloads: `Cache-Control: public, max-age=3888000`, `cf-cache-status: HIT`
+- Cover images: `Cache-Control: public, max-age=604800`, `Vary: Accept, Accept-Encoding`
 - App-level WebP conversion: Browsers with `Accept: image/webp` get WebP, others get JPEG

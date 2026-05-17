@@ -150,6 +150,7 @@ if prometheus_available:
 def before_request_metrics():
     if prometheus_available and request:
         g.request_start_time = time.time()
+        g.request_endpoint = request.endpoint or 'unknown'
 
 
 @app.after_request

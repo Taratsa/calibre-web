@@ -753,7 +753,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                                 cache.get_cache_file_dir(webp_filename, CACHE_TYPE_THUMBNAILS),
                                 webp_filename))
                             response.headers['Content-Type'] = 'image/webp'
-                            response.headers['Cache-Control'] = 'public, max-age=86400'
+                            response.headers['Cache-Control'] = 'public, max-age=604800'
                             response.headers['Vary'] = 'Accept'
                             return response
                     # Fall back to JPEG
@@ -787,7 +787,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                     if os.path.isfile(cover_webp_path):
                         response = make_response(send_from_directory(cover_file_path, "cover.webp"))
                         response.headers['Content-Type'] = 'image/webp'
-                        response.headers['Cache-Control'] = 'public, max-age=86400'
+                        response.headers['Cache-Control'] = 'public, max-age=604800'
                         response.headers['Vary'] = 'Accept'
                         return response
                     with open(os.path.join(cover_file_path, "cover.jpg"), 'rb') as f:
@@ -801,13 +801,19 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 
 def _convert_to_webp(image_data, mime_type):
     try:
+        from ..web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
+        start_time = time.time()
         from wand.image import Image
         with Image(blob=image_data) as img:
             img.transform_colorspace('srgb')
             webp_bytes = img.make_blob('webp')
+        duration = time.time() - start_time
+        if prometheus_available:
+            COVER_CONVERSION_TIME.labels(resolution='original').observe(duration)
+            COVER_REQUESTS.labels(resolution='original', converted_to_webp='true').inc()
         response = make_response(webp_bytes)
         response.headers['Content-Type'] = 'image/webp'
-        response.headers['Cache-Control'] = 'public, max-age=86400'
+        response.headers['Cache-Control'] = 'public, max-age=604800'
         response.headers['Vary'] = 'Accept'
         return response
     except Exception as ex:

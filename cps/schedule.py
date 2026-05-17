@@ -89,12 +89,14 @@ def register_startup_tasks():
         start = config.schedule_start_time
         duration = config.schedule_duration
 
-        # Run scheduled tasks immediately for development and testing
-        # Ignore tasks that should currently be running, as these will be added when registering scheduled tasks
+        tasks = [[lambda: TaskClean(), 'delete temp', True]]
+
         if constants.APP_MODE in ['development', 'test'] and not should_task_be_running(start, duration):
             scheduler.schedule_tasks_immediately(tasks=get_scheduled_tasks(False))
-        else:
-            scheduler.schedule_tasks_immediately(tasks=[[lambda: TaskClean(), 'delete temp', True]])
+        elif config.schedule_generate_book_covers:
+            tasks.append([lambda: TaskGenerateCoverThumbnails(), 'generate cover thumbnails (startup)', False])
+
+        scheduler.schedule_tasks_immediately(tasks=tasks)
 
 
 def should_task_be_running(start, duration):
