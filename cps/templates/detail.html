@@ -61,6 +61,15 @@
   {% if entry.data|length > 0 %},
   "bookFormat": {% if 'EPUB' in entry.data|map(attribute='format')|list %} "https://schema.org/EBook" {% else %} "https://schema.org/Book" {% endif %}
   {% endif %}
+  {% if entry.ratings|length > 0 and entry.ratings[0].rating > 0 %},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ (entry.ratings[0].rating / 2)|tojson }},
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": {{ entry.ratings[0].numRatings|default(1)|tojson }}
+  }
+  {% endif %}
 }
 </script>
 {% endblock %}
