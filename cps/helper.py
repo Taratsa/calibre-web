@@ -797,6 +797,12 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                     # Check for pre-generated WebP version of original cover
                     cover_webp_path = os.path.join(cover_file_path, "cover.webp")
                     if os.path.isfile(cover_webp_path):
+                        try:
+                            from cps.web import COVER_REQUESTS, prometheus_available
+                            if prometheus_available:
+                                COVER_REQUESTS.labels(resolution='original', converted_to_webp='false').inc()
+                        except (ImportError, AttributeError):
+                            pass
                         response = make_response(send_from_directory(cover_file_path, "cover.webp"))
                         response.headers['Content-Type'] = 'image/webp'
                         response.headers['Cache-Control'] = 'public, max-age=604800'
@@ -804,7 +810,15 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                         return response
                     with open(os.path.join(cover_file_path, "cover.jpg"), 'rb') as f:
                         return _convert_to_webp(f.read(), 'image/jpeg')
-                return send_from_directory(cover_file_path, "cover.jpg")
+                else:
+                    # accept_webp=False - serve JPEG directly
+                    try:
+                        from cps.web import COVER_REQUESTS, prometheus_available
+                        if prometheus_available:
+                            COVER_REQUESTS.labels(resolution='original', converted_to_webp='false').inc()
+                    except (ImportError, AttributeError):
+                        pass
+                    return send_from_directory(cover_file_path, "cover.jpg")
             else:
                 return get_cover_on_failure()
     else:
@@ -813,7 +827,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 
 def _convert_to_webp(image_data, mime_type):
     try:
-        from ..web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
+        from cps.web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
         start_time = time.time()
         from wand.image import Image
         with Image(blob=image_data) as img:
