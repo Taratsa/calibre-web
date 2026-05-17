@@ -23,9 +23,10 @@ import json
 import mimetypes
 import chardet  # dependency of requests
 import copy
+import time
 from importlib.metadata import metadata
 
-from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for
+from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for, g
 from flask import session as flask_session
 from flask_babel import gettext as _
 from flask_babel import get_locale
@@ -78,6 +79,12 @@ except ImportError:
 from functools import wraps
 
 try:
+    from prometheus_client import Counter, Histogram, Gauge, generate_latest, CONTENT_TYPE_LATEST
+    prometheus_available = True
+except ImportError:
+    prometheus_available = False
+
+try:
     from natsort import natsorted as sort
 except ImportError:
     sort = sorted  # Just use regular sort then, may cause issues with badly named pages in cbz/cbr files
@@ -85,6 +92,65 @@ except ImportError:
 
 sql_version = metadata("sqlalchemy")["Version"]
 sqlalchemy_version2 = ([int(x) if x.isnumeric() else 0 for x in sql_version.split('.')[:3]] >= [2, 0, 0])
+
+
+if prometheus_available:
+    REQUEST_COUNT = Counter(
+        'calibre_http_requests_total',
+        'Total HTTP requests',
+        ['method', 'endpoint', 'status']
+    )
+    REQUEST_LATENCY = Histogram(
+        'calibre_http_request_duration_seconds',
+        'HTTP request latency',
+        ['method', 'endpoint'],
+        buckets=[0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 10.0]
+    )
+    BOOK_DOWNLOADS = Counter(
+        'calibre_book_downloads_total',
+        'Total book downloads',
+        ['format', 'book_id']
+    )
+    ACTIVE_USERS = Gauge(
+        'calibre_active_users',
+        'Number of currently active users'
+    )
+    COVER_REQUESTS = Counter(
+        'calibre_cover_requests_total',
+        'Total cover image requests',
+        ['resolution', 'converted_to_webp']
+    )
+
+
+@app.before_request
+def before_request_metrics():
+    if prometheus_available and request:
+        from flask import g
+        g.request_start_time = time.time()
+
+
+@app.after_request
+def after_request_metrics(response):
+    if prometheus_available and hasattr(g, 'request_start_time'):
+        latency = time.time() - g.request_start_time
+        endpoint = request.endpoint or 'unknown'
+        REQUEST_COUNT.labels(
+            method=request.method,
+            endpoint=endpoint,
+            status=response.status_code
+        ).inc()
+        REQUEST_LATENCY.labels(
+            method=request.method,
+            endpoint=endpoint
+        ).observe(latency)
+    return response
+
+
+@app.route("/metrics")
+def metrics():
+    if prometheus_available:
+        return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
+    return "Prometheus client not installed", 500
 
 
 @app.after_request
