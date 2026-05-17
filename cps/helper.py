@@ -749,6 +749,12 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                         webp_filename = thumbnail.uuid + '.webp'
                         webp_path = cache.get_cache_file_path(webp_filename, CACHE_TYPE_THUMBNAILS)
                         if os.path.isfile(webp_path):
+                            try:
+                                from cps.web import COVER_REQUESTS, prometheus_available
+                                if prometheus_available:
+                                    COVER_REQUESTS.labels(resolution='thumbnail', converted_to_webp='false').inc()
+                            except (ImportError, AttributeError):
+                                pass
                             response = make_response(send_from_directory(
                                 cache.get_cache_file_dir(webp_filename, CACHE_TYPE_THUMBNAILS),
                                 webp_filename))
@@ -757,6 +763,12 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                             response.headers['Vary'] = 'Accept'
                             return response
                     # Fall back to JPEG
+                    try:
+                        from cps.web import COVER_REQUESTS, prometheus_available
+                        if prometheus_available:
+                            COVER_REQUESTS.labels(resolution='thumbnail', converted_to_webp='false').inc()
+                    except (ImportError, AttributeError):
+                        pass
                     return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
                                                thumbnail.filename)
 
