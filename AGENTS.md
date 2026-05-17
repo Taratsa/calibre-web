@@ -54,3 +54,27 @@ Author pages include Schema.org Person structured data:
 - Open Graph meta tags for social sharing
 - Twitter card meta tags
 - book:author, book:publisher, book:release_date, book:isbn Open Graph meta
+
+### Caching Configuration
+
+#### Book Downloads
+- **Cache-Control**: `public, max-age=2592000` (1 month)
+- Applied in `cps/helper.py` in `get_download_link()` function
+- Cloudflare CDN caches book files for 1 month after first download
+
+#### Recommended Cloudflare Cache Rules
+For optimal CDN performance, configure in Cloudflare dashboard:
+
+**PDF/Ebook files** (`/download/*/pdf/*`, `/download/*/epub/*`):
+- Edge TTL: 1 month
+- Browser TTL: 1 month
+- Cache Key: Include query strings
+
+**Cover images** (`/cover/*`):
+- Edge TTL: 1 week
+- Browser TTL: 1 day
+- Already uses `c=timestamp` query string for cache busting
+
+#### Current Caching Status (verified via curl)
+- Book downloads: `Cache-Control: max-age=2592000`, `cf-cache-status: HIT/EXPIRED`
+- Cover images: Dynamic (no cache headers from app, relies on Cloudflare defaults)
