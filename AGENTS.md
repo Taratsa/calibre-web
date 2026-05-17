@@ -13,8 +13,8 @@
 ## Important Notes
 
 ### Modified Files
-- `cps/helper.py` - Server-side Umami analytics tracking for direct downloads
-- `cps/web.py` - Added trailing slash route for book detail pages (`/book/<id>/<slug>/`)
+- `cps/helper.py` - Server-side Umami analytics tracking for direct downloads, WebP conversion
+- `cps/web.py` - Added trailing slash route for book detail pages (`/book/<id>/<slug>/`), WebP Accept header detection
 - `cps/templates/layout.html` - Frontend Umami tracking for file downloads, PDF reads
 - `cps/templates/detail.html` - Fixed JSON-LD structured data, added canonical URL
 - `cps/templates/author.html` - Fixed JSON-LD structured data
@@ -24,6 +24,7 @@
 - Events tracked: `file-download`, `pdf-read`, `pdf-download`, `direct-download`
 - Canonical URL on book detail pages: `/book/<id>` (without slug)
 - Structured data fixes to prevent Google Search parsing errors
+- **App-level WebP conversion** for cover images (browsers supporting WebP get WebP, others get JPEG)
 
 ### Structured Data (JSON-LD)
 
@@ -65,39 +66,50 @@ Author pages include Schema.org Person structured data:
 #### Caddyfile Configuration (for pustaka.taratsa.id)
 ```caddy
 pustaka.taratsa.id {
-    request_body {
-        max_size 500MB
-    }
+	request_body {
+		max_size 500MB
+	}
 
-    @covers {
-        path /cover/*
-    }
-    handle @covers {
-        transform webp quality=85
-        header Cache-Control "public, max-age=86400"
-    }
+	@books {
+		path /download/*/pdf/* /download/*/epub/*
+	}
+	handle @books {
+		header >Cache-Control "public, max-age=2592000"
+	}
 
-    @books {
-        path /download/*/pdf/* /download/*/epub/*
-    }
-    handle @books {
-        header Cache-Control "public, max-age=2592000"
-    }
+	@covers {
+		path /cover/*
+	}
+	handle @covers {
+		header >Cache-Control "public, max-age=86400"
+		header >Vary "Accept, Accept-Encoding"
+	}
 
-    route {
-        reverse_proxy calibre-web-automated:8083
-    }
-
-    log
-    encode zstd gzip
+	route {
+		reverse_proxy calibre-web-automated:8083
+	}
+	log
+	encode zstd gzip
 }
 ```
 
+**Important**: Use `>` prefix on header directives to defer header operations until after upstream response — allows overwriting headers set by the Flask app.
+
+### App-Level WebP Conversion
+
+The app converts JPEG covers to WebP at request time using Wand:
+- Location: `cps/helper.py:_convert_to_webp()`
+- Triggered when: browser sends `Accept: image/webp` header
+- Falls back to: original JPEG if conversion fails
+- Cache headers set: `Cache-Control: public, max-age=86400`, `Vary: Accept`
+
+**Alternative**: Cloudflare Polish (paid) - enables automatic WebP/AVIF conversion at CDN level without app changes.
+
 **Caddy Configuration Benefits:**
-- `/cover/*` → Convert to WebP (quality 85), cache 1 day
+- `/cover/*` → Cache 1 day (WebP conversion happens at app level via Wand)
 - `/download/*/pdf/*`, `/download/*/epub/*` → Cache 1 month
-- Caddy handles browser detection automatically
-- WebP = 25-35% smaller than JPEG
+- `>` prefix enables header overwrite of Flask's `Cache-Control: no-cache`
+- WebP conversion at app level: `cps/helper.py:_convert_to_webp()` converts JPEG to WebP when browser sends `Accept: image/webp`
 
 #### Recommended Cloudflare Cache Rules
 For optimal CDN performance, configure in Cloudflare dashboard:
@@ -113,5 +125,6 @@ For optimal CDN performance, configure in Cloudflare dashboard:
 - Already uses `c=timestamp` query string for cache busting
 
 #### Current Caching Status (verified via curl)
-- Book downloads: `Cache-Control: max-age=2592000`, `cf-cache-status: HIT/EXPIRED`
-- Cover images: Dynamic (no cache headers from app, relies on Cloudflare defaults)
+- Book downloads: `Cache-Control: public, max-age=2592000`, `cf-cache-status: HIT`
+- Cover images: `Cache-Control: public, max-age=86400`, `Vary: Accept, Accept-Encoding`
+- App-level WebP conversion: Browsers with `Accept: image/webp` get WebP, others get JPEG
