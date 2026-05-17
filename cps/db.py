@@ -726,24 +726,28 @@ class CalibreDB:
                                            autoflush=False,
                                            bind=engine, future=True))
 
-        if prometheus_available:
-            @event.listens_for(engine, "before_cursor_execute")
-            def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
-                from flask import g
-                if hasattr(g, 'db_query_start_time'):
-                    g.db_query_start_time = time.time()
+        try:
+            from ..web import prometheus_available as _prom_available
+            if _prom_available:
+                @event.listens_for(engine, "before_cursor_execute")
+                def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+                    from flask import g
+                    if hasattr(g, 'db_query_start_time'):
+                        g.db_query_start_time = time.time()
 
-            @event.listens_for(engine, "after_cursor_execute")
-            def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
-                from flask import g, has_request_context
-                if has_request_context() and hasattr(g, 'db_query_start_time'):
-                    from ..web import DB_QUERY_TIME, DB_QUERY_COUNT, SLOW_DB_QUERY_COUNT, prometheus_available
-                    if prometheus_available:
-                        duration = time.time() - g.db_query_start_time
-                        DB_QUERY_TIME.labels(query_type='read').observe(duration)
-                        DB_QUERY_COUNT.labels(query_type='read').inc()
-                        if duration > 0.1:
-                            SLOW_DB_QUERY_COUNT.labels(query_type='read', threshold_ms='100').inc()
+                @event.listens_for(engine, "after_cursor_execute")
+                def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+                    from flask import g, has_request_context
+                    if has_request_context() and hasattr(g, 'db_query_start_time'):
+                        from ..web import DB_QUERY_TIME, DB_QUERY_COUNT, SLOW_DB_QUERY_COUNT, prometheus_available
+                        if prometheus_available:
+                            duration = time.time() - g.db_query_start_time
+                            DB_QUERY_TIME.labels(query_type='read').observe(duration)
+                            DB_QUERY_COUNT.labels(query_type='read').inc()
+                            if duration > 0.1:
+                                SLOW_DB_QUERY_COUNT.labels(query_type='read', threshold_ms='100').inc()
+        except ImportError:
+            pass
 
         return session_factory
 
