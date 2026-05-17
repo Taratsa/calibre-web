@@ -4,12 +4,15 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": {{ author.name|replace('|', ',')|tojson if author else title|tojson }}{% if (author and author.image_url) or (author and author.safe_about) %},{% endif %}
-  {% if author and author.image_url %}
-  "image": {{ author.image_url|tojson }}{% if author and author.safe_about %},{% endif %}
+  "name": {{ (author.name|replace('|', ',')|replace('Author: ', ''))|tojson if author else title|tojson }}
+  {% if author and (author.image_url or author.safe_about) %},
+  "image": {{ author.image_url|tojson }}
   {% endif %}
-  {% if author and author.safe_about %}
+  {% if author and author.safe_about %},
   "description": {{ author.safe_about|striptags|truncate(200)|tojson }}
+  {% endif %}
+  {% if author and author.link %},
+  "sameAs": {{ author.link|tojson }}
   {% endif %}
 }
 </script>
