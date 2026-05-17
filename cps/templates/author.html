@@ -4,7 +4,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": {{ (author.name|replace('|', ',')|replace('Author: ', ''))|tojson if author else title|tojson }}
+  "name": {{ (calibre_author_name|replace('|', ',')|replace('Author: ', ''))|tojson if calibre_author_name else title|tojson }}
   {% if author and (author.image_url or author.safe_about) %},
   "image": {{ author.image_url|tojson }}
   {% endif %}
