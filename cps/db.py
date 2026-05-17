@@ -734,17 +734,21 @@ class CalibreDB:
         @event.listens_for(engine, "after_cursor_execute")
         def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
             from flask import g, has_request_context
-            try:
-                from ..web import DB_QUERY_TIME, DB_QUERY_COUNT, SLOW_DB_QUERY_COUNT, prometheus_available
-            except ImportError:
+            if not has_request_context() or not hasattr(g, 'db_query_start_time'):
                 return
-            if prometheus_available and has_request_context() and hasattr(g, 'db_query_start_time'):
-                duration = time.time() - g.db_query_start_time
-                endpoint = getattr(g, 'request_endpoint', 'unknown')
-                DB_QUERY_TIME.labels(query_type=endpoint).observe(duration)
-                DB_QUERY_COUNT.labels(query_type=endpoint).inc()
+            duration = time.time() - g.db_query_start_time
+            endpoint = getattr(g, 'request_endpoint', 'unknown')
+            # Check if prometheus metrics are available (set by web.py on startup)
+            try:
+                from cps import web
+                if not web.prometheus_available:
+                    return
+                web.DB_QUERY_TIME.labels(query_type=endpoint).observe(duration)
+                web.DB_QUERY_COUNT.labels(query_type=endpoint).inc()
                 if duration > 0.1:
-                    SLOW_DB_QUERY_COUNT.labels(query_type=endpoint, threshold_ms='100').inc()
+                    web.SLOW_DB_QUERY_COUNT.labels(query_type=endpoint, threshold_ms='100').inc()
+            except (ImportError, AttributeError):
+                return
 
         return session_factory
 
