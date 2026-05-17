@@ -1164,7 +1164,7 @@ def get_cover(book_id, resolution=None):
         'lg': constants.COVER_THUMBNAIL_LARGE,
     }
     cover_resolution = resolutions.get(resolution, None)
-    accept_webp = request.accept_mimetypes.best_match(['image/webp', 'image/jpeg']) == 'image/webp'
+    accept_webp = 'image/webp' in request.accept_mimetypes
     return get_book_cover(book_id, cover_resolution, accept_webp=accept_webp)
 
 
@@ -1179,7 +1179,7 @@ def get_series_cover(series_id, resolution=None):
         'lg': constants.COVER_THUMBNAIL_LARGE,
     }
     cover_resolution = resolutions.get(resolution, None)
-    accept_webp = request.accept_mimetypes.best_match(['image/webp', 'image/jpeg']) == 'image/webp'
+    accept_webp = 'image/webp' in request.accept_mimetypes
     return get_series_cover_thumbnail(series_id, cover_resolution, accept_webp=accept_webp)
 
 
