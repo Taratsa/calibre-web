@@ -742,7 +742,21 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
             thumbnail = get_book_cover_thumbnail(book, resolution)
             if thumbnail:
                 cache = fs.FileSystem()
+                thumbnail_path = cache.get_cache_file_path(thumbnail.filename, CACHE_TYPE_THUMBNAILS)
                 if cache.get_cache_file_exists(thumbnail.filename, CACHE_TYPE_THUMBNAILS):
+                    # Check for pre-generated WebP version
+                    if accept_webp:
+                        webp_filename = thumbnail.uuid + '.webp'
+                        webp_path = cache.get_cache_file_path(webp_filename, CACHE_TYPE_THUMBNAILS)
+                        if os.path.isfile(webp_path):
+                            response = make_response(send_from_directory(
+                                cache.get_cache_file_dir(webp_filename, CACHE_TYPE_THUMBNAILS),
+                                webp_filename))
+                            response.headers['Content-Type'] = 'image/webp'
+                            response.headers['Cache-Control'] = 'public, max-age=86400'
+                            response.headers['Vary'] = 'Accept'
+                            return response
+                    # Fall back to JPEG
                     return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
                                                thumbnail.filename)
 
@@ -768,9 +782,16 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
             cover_file_path = os.path.join(config.get_book_path(), book.path)
             if os.path.isfile(os.path.join(cover_file_path, "cover.jpg")):
                 if accept_webp:
+                    # Check for pre-generated WebP version of original cover
+                    cover_webp_path = os.path.join(cover_file_path, "cover.webp")
+                    if os.path.isfile(cover_webp_path):
+                        response = make_response(send_from_directory(cover_file_path, "cover.webp"))
+                        response.headers['Content-Type'] = 'image/webp'
+                        response.headers['Cache-Control'] = 'public, max-age=86400'
+                        response.headers['Vary'] = 'Accept'
+                        return response
                     with open(os.path.join(cover_file_path, "cover.jpg"), 'rb') as f:
-                        cover_bytes = f.read()
-                    return _convert_to_webp(cover_bytes, 'image/jpeg')
+                        return _convert_to_webp(f.read(), 'image/jpeg')
                 return send_from_directory(cover_file_path, "cover.jpg")
             else:
                 return get_cover_on_failure()

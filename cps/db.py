@@ -20,6 +20,7 @@
 import os
 import re
 import json
+import time
 from datetime import datetime, timezone
 from urllib.parse import quote
 import unidecode
@@ -40,6 +41,7 @@ try:
 except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.pool import StaticPool
+from sqlalchemy import event
 from sqlalchemy.sql.expression import and_, true, false, text, func, or_
 from sqlalchemy.ext.associationproxy import association_proxy
 from .cw_login import current_user
@@ -720,9 +722,30 @@ class CalibreDB:
                 log.error_or_exception(e)
                 return None
 
-        return scoped_session(sessionmaker(autocommit=False,
+        session_factory = scoped_session(sessionmaker(autocommit=False,
                                            autoflush=False,
                                            bind=engine, future=True))
+
+        if prometheus_available:
+            @event.listens_for(engine, "before_cursor_execute")
+            def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+                from flask import g
+                if hasattr(g, 'db_query_start_time'):
+                    g.db_query_start_time = time.time()
+
+            @event.listens_for(engine, "after_cursor_execute")
+            def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+                from flask import g, has_request_context
+                if has_request_context() and hasattr(g, 'db_query_start_time'):
+                    from ..web import DB_QUERY_TIME, DB_QUERY_COUNT, SLOW_DB_QUERY_COUNT, prometheus_available
+                    if prometheus_available:
+                        duration = time.time() - g.db_query_start_time
+                        DB_QUERY_TIME.labels(query_type='read').observe(duration)
+                        DB_QUERY_COUNT.labels(query_type='read').inc()
+                        if duration > 0.1:
+                            SLOW_DB_QUERY_COUNT.labels(query_type='read', threshold_ms='100').inc()
+
+        return session_factory
 
 
     def get_book(self, book_id):
@@ -773,12 +796,11 @@ class CalibreDB:
     # Language and content filters for displaying in the UI
     def common_filters(self, allow_show_archived=False, return_all_languages=False):
         if not allow_show_archived:
-            archived_books = (ub.session.query(ub.ArchivedBook)
-                              .filter(ub.ArchivedBook.user_id==int(current_user.id))
-                              .filter(ub.ArchivedBook.is_archived==True)
-                              .all())
-            archived_book_ids = [archived_book.book_id for archived_book in archived_books]
-            archived_filter = Books.id.notin_(archived_book_ids)
+            archived_filter = ~Books.id.in_(
+                ub.session.query(ub.ArchivedBook.book_id)
+                .filter(ub.ArchivedBook.user_id==int(current_user.id))
+                .filter(ub.ArchivedBook.is_archived==True)
+            )
         else:
             archived_filter = true()
 

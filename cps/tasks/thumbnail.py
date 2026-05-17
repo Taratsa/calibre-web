@@ -86,8 +86,11 @@ class TaskGenerateCoverThumbnails(CalibreTask):
             total_generated = 0
             for i, book in enumerate(books_with_covers):
 
-                # Generate new thumbnails for missing covers
+                # Generate new thumbnails for missing covers (JPEG)
                 generated = self.create_book_cover_thumbnails(book)
+
+                # Generate WebP versions alongside JPEG
+                self.create_book_cover_thumbnails_webp(book)
 
                 # Increment the progress
                 self.progress = (1.0 / count) * i
@@ -119,6 +122,47 @@ class TaskGenerateCoverThumbnails(CalibreTask):
             books_cover = calibre_db.session.query(db.Books).filter(db.Books.has_cover == 1).filter(filter_exp).all()
             # calibre_db.session.close()
         return books_cover
+
+    def create_book_cover_thumbnails_webp(self, book):
+        for resolution in self.resolutions:
+            thumbnail = self.get_book_cover_thumbnail(book.id, resolution, 'jpeg')
+            if thumbnail:
+                jpeg_path = self.cache.get_cache_file_path(thumbnail.filename, constants.CACHE_TYPE_THUMBNAILS)
+                if os.path.isfile(jpeg_path):
+                    webp_filename = thumbnail.uuid + '.webp'
+                    webp_path = self.cache.get_cache_file_path(webp_filename, constants.CACHE_TYPE_THUMBNAILS)
+                    if not os.path.isfile(webp_path):
+                        try:
+                            with Image(filename=jpeg_path) as img:
+                                img.transform_colorspace('srgb')
+                                img.save(filename=webp_path)
+                        except Exception as ex:
+                            self.log.debug('Error generating WebP thumbnail: ' + str(ex))
+
+        self.create_original_cover_webp(book)
+
+    def create_original_cover_webp(self, book):
+        if not config.config_use_google_drive:
+            cover_file_path = os.path.join(config.get_book_path(), book.path, 'cover.jpg')
+            if os.path.isfile(cover_file_path):
+                cover_webp_path = os.path.join(config.get_book_path(), book.path, 'cover.webp')
+                if not os.path.isfile(cover_webp_path):
+                    try:
+                        with Image(filename=cover_file_path) as img:
+                            img.transform_colorspace('srgb')
+                            img.save(filename=cover_webp_path)
+                    except Exception as ex:
+                        self.log.debug('Error generating original cover WebP: ' + str(ex))
+
+    def get_book_cover_thumbnail(self, book_id, resolution, format_hint=None):
+        q = self.app_db_session \
+            .query(ub.Thumbnail) \
+            .filter(ub.Thumbnail.type == constants.THUMBNAIL_TYPE_COVER) \
+            .filter(ub.Thumbnail.entity_id == book_id) \
+            .filter(ub.Thumbnail.resolution == resolution)
+        if format_hint:
+            q = q.filter(ub.Thumbnail.format == format_hint)
+        return q.filter(or_(ub.Thumbnail.expiration.is_(None), ub.Thumbnail.expiration > datetime.now(timezone.utc))).first()
 
     def get_book_cover_thumbnails(self, book_id):
         return self.app_db_session \
