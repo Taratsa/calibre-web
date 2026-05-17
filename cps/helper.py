@@ -829,6 +829,9 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 def _convert_to_webp(image_data, mime_type):
     try:
         from cps.web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
+        from wand.api import library
+        # Limit ImageMagick memory per conversion to prevent cache exhaustion
+        library.MagickSetResourceLimit(library.MagickMemoryResource, 256 * 1024 * 1024)
         start_time = time.time()
         from wand.image import Image
         with Image(blob=image_data) as img:
