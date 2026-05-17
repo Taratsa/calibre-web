@@ -732,8 +732,7 @@ class CalibreDB:
                 @event.listens_for(engine, "before_cursor_execute")
                 def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
                     from flask import g
-                    if hasattr(g, 'db_query_start_time'):
-                        g.db_query_start_time = time.time()
+                    g.db_query_start_time = time.time()
 
                 @event.listens_for(engine, "after_cursor_execute")
                 def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
