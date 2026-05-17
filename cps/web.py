@@ -104,35 +104,42 @@ if prometheus_available:
         'calibre_http_request_duration_seconds',
         'HTTP request latency',
         ['method', 'endpoint'],
-        buckets=[0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 10.0]
+        buckets=[0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0]
     )
-    BOOK_DOWNLOADS = Counter(
-        'calibre_book_downloads_total',
-        'Total book downloads',
-        ['format', 'book_id']
-    )
-    ACTIVE_USERS = Gauge(
-        'calibre_active_users',
-        'Number of currently active users'
+    DB_QUERY_TIME = Histogram(
+        'calibre_db_query_duration_seconds',
+        'Database query latency',
+        ['query_type'],
+        buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25]
     )
     COVER_REQUESTS = Counter(
         'calibre_cover_requests_total',
         'Total cover image requests',
         ['resolution', 'converted_to_webp']
     )
+    SLOW_REQUEST_COUNT = Counter(
+        'calibre_slow_requests_total',
+        'Requests exceeding latency threshold',
+        ['endpoint', 'threshold_ms']
+    )
+    COVER_CONVERSION_TIME = Histogram(
+        'calibre_cover_conversion_duration_seconds',
+        'Cover image WebP conversion latency',
+        ['resolution'],
+        buckets=[0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5]
+    )
 
 
 @app.before_request
 def before_request_metrics():
     if prometheus_available and request:
-        from flask import g
         g.request_start_time = time.time()
 
 
 @app.after_request
 def after_request_metrics(response):
     if prometheus_available and hasattr(g, 'request_start_time'):
-        latency = time.time() - g.request_start_time
+        latency_ms = (time.time() - g.request_start_time) * 1000
         endpoint = request.endpoint or 'unknown'
         REQUEST_COUNT.labels(
             method=request.method,
@@ -142,7 +149,9 @@ def after_request_metrics(response):
         REQUEST_LATENCY.labels(
             method=request.method,
             endpoint=endpoint
-        ).observe(latency)
+        ).observe(latency_ms / 1000)
+        if latency_ms > 500:
+            SLOW_REQUEST_COUNT.labels(endpoint=endpoint, threshold_ms='500').inc()
     return response
 
 
