@@ -59,9 +59,9 @@ Author pages include Schema.org Person structured data:
 ### Caching Configuration
 
 #### Book Downloads
-- **Cache-Control**: `public, max-age=2592000` (1 month)
+- **Cache-Control**: `public, max-age=3888000` (45 days / 1.5 months)
 - Applied in `cps/helper.py` in `get_download_link()` function
-- Cloudflare CDN caches book files for 1 month after first download
+- Cloudflare CDN caches book files for 1.5 months after first download
 
 #### Caddyfile Configuration (for pustaka.taratsa.id)
 ```caddy
@@ -74,7 +74,7 @@ pustaka.taratsa.id {
 		path /download/*/pdf/* /download/*/epub/*
 	}
 	handle @books {
-		header >Cache-Control "public, max-age=2592000"
+		header >Cache-Control "public, max-age=3888000"
 	}
 
 	@covers {
