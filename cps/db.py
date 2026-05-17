@@ -756,9 +756,20 @@ class CalibreDB:
     def get_book(self, book_id):
         return self.session.query(Books).filter(Books.id == book_id).first()
 
+    def _eager_load_relationships(self, query):
+        return query.options(
+            selectinload(Books.authors),
+            selectinload(Books.tags),
+            selectinload(Books.series),
+            selectinload(Books.publishers),
+            selectinload(Books.ratings),
+            selectinload(Books.languages),
+            selectinload(Books.data)
+        )
+
     def get_filtered_book(self, book_id, allow_show_archived=False):
-        return self.session.query(Books).filter(Books.id == book_id). \
-            filter(self.common_filters(allow_show_archived)).first()
+        q = self.session.query(Books).filter(Books.id == book_id).filter(self.common_filters(allow_show_archived))
+        return self._eager_load_relationships(q).first()
 
     def get_book_read_archived(self, book_id, read_column, allow_show_archived=False):
         if not read_column:
@@ -775,13 +786,13 @@ class CalibreDB:
                 log.error("Custom Column No.{} does not exist in calibre database".format(read_column))
                 # Skip linking read column and return None instead of read status
                 bd = self.session.query(Books, None, ub.ArchivedBook.is_archived)
-        return (bd.filter(Books.id == book_id)
+        return (self._eager_load_relationships(bd).filter(Books.id == book_id)
                 .join(ub.ArchivedBook, and_(Books.id == ub.ArchivedBook.book_id,
                                             int(current_user.id) == ub.ArchivedBook.user_id), isouter=True)
                 .filter(self.common_filters(allow_show_archived)).first())
 
     def get_book_by_uuid(self, book_uuid):
-        return self.session.query(Books).filter(Books.uuid == book_uuid).first()
+        return self._eager_load_relationships(self.session.query(Books).filter(Books.uuid == book_uuid)).first()
 
     def get_book_format(self, book_id, file_format):
         return self.session.query(Data).filter(Data.book == book_id).filter(Data.format == file_format).first()
@@ -923,7 +934,7 @@ class CalibreDB:
         pagination = list()
         try:
             pagination = Pagination(page, pagesize, query.count())
-            entries = query.order_by(*order).offset(off).limit(pagesize).all()
+            entries = self._eager_load_relationships(query).order_by(*order).offset(off).limit(pagesize).all()
         except Exception as ex:
             log.error_or_exception(ex)
         # display authors in right order
