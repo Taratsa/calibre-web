@@ -761,7 +761,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                                 webp_filename))
                             response.headers['Content-Type'] = 'image/webp'
                             response.headers['Cache-Control'] = 'public, max-age=604800'
-                            response.headers['Vary'] = 'Accept'
+                            response.headers['Vary'] = 'Accept-Encoding'
                             return response
                     # Fall back to JPEG
                     try:
@@ -807,7 +807,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                         response = make_response(send_from_directory(cover_file_path, "cover.webp"))
                         response.headers['Content-Type'] = 'image/webp'
                         response.headers['Cache-Control'] = 'public, max-age=604800'
-                        response.headers['Vary'] = 'Accept'
+                        response.headers['Vary'] = 'Accept-Encoding'
                         return response
                     with open(os.path.join(cover_file_path, "cover.jpg"), 'rb') as f:
                         return _convert_to_webp(f.read(), 'image/jpeg')
@@ -843,7 +843,7 @@ def _convert_to_webp(image_data, mime_type):
         response = make_response(webp_bytes)
         response.headers['Content-Type'] = 'image/webp'
         response.headers['Cache-Control'] = 'public, max-age=604800'
-        response.headers['Vary'] = 'Accept'
+        response.headers['Vary'] = 'Accept-Encoding'
         return response
     except Exception as ex:
         log.error_or_exception(ex)
