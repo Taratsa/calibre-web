@@ -39,12 +39,12 @@
   "@type": "Book",
   "url": {{ url_for('web.show_book', book_id=entry.id, _external=True)|tojson }},
   "name": {{ entry.title|tojson }},
-  "author": [{% for author in entry.ordered_authors %}{{ author.name|tojson }}{% if not loop.last %},{% endif %}{% endfor %}],
+  "author": [{% for author in entry.ordered_authors %}{"@type": "Person", "name": {{ author.name|replace('|', ',')|tojson }}}{% if not loop.last %},{% endif %}{% endfor %}],
   "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }}
-  {% if entry.comments %},
+  {% if entry.comments|length > 0 and entry.comments[0].text|length > 0 %},
   "description": {{ entry.comments[0].text|striptags|truncate(200)|tojson }}
   {% elif entry.ordered_authors|length > 0 or entry.publishers|length > 0 %},
-  "description": {{ entry.title }} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% if entry.publishers|length > 0 %} ({{ entry.publishers[0].name }}){% endif %}
+  "description": {{ (entry.title + ' by ' + entry.ordered_authors|join(', ', attribute='name') + ((' (' + entry.publishers[0].name + ')') if entry.publishers else ''))|tojson }}
   {% endif %}
   {% if entry.identifiers|length > 0 and entry.identifiers[0].value|length > 0 %},
   "isbn": {{ entry.identifiers[0].value|tojson }}
