@@ -829,11 +829,13 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 def _convert_to_webp(image_data, mime_type):
     try:
         from cps.web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
+        import gc
         start_time = time.time()
         from wand.image import Image
         with Image(blob=image_data) as img:
             img.transform_colorspace('srgb')
             webp_bytes = img.make_blob('webp')
+        gc.collect()
         duration = time.time() - start_time
         if prometheus_available:
             COVER_CONVERSION_TIME.labels(resolution='original').observe(duration)
