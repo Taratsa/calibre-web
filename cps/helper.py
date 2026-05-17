@@ -1146,7 +1146,7 @@ def get_download_link(book_id, book_format, client):
             headers["Content-Type"] = mimetypes.types_map.get('.' + book_format, "application/octet-stream")
             headers["Content-Disposition"] = ('attachment; filename="{}.{}"; filename*=UTF-8\'\'{}.{}').format(
                 file_name, book_format, quoted_file_name, book_format)
-            headers["Cache-Control"] = "public, max-age=604800"
+            headers["Cache-Control"] = "public, max-age=2592000"
             return do_download_file(book, book_format, client, data1, headers)
     else:
         log.error("Book id {} not found for downloading".format(book_id))
