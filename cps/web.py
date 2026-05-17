@@ -110,7 +110,12 @@ if prometheus_available:
         'calibre_db_query_duration_seconds',
         'Database query latency',
         ['query_type'],
-        buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25]
+        buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5]
+    )
+    DB_QUERY_COUNT = Counter(
+        'calibre_db_query_total',
+        'Database queries executed',
+        ['query_type']
     )
     COVER_REQUESTS = Counter(
         'calibre_cover_requests_total',
@@ -128,6 +133,17 @@ if prometheus_available:
         ['resolution'],
         buckets=[0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5]
     )
+    RESPONSE_SIZE = Histogram(
+        'calibre_http_response_size_bytes',
+        'HTTP response size in bytes',
+        ['endpoint'],
+        buckets=[100, 1000, 10000, 100000, 500000, 1000000, 5000000]
+    )
+    SLOW_DB_QUERY_COUNT = Counter(
+        'calibre_slow_db_queries_total',
+        'Database queries exceeding threshold',
+        ['query_type', 'threshold_ms']
+    )
 
 
 @app.before_request
@@ -141,6 +157,7 @@ def after_request_metrics(response):
     if prometheus_available and hasattr(g, 'request_start_time'):
         latency_ms = (time.time() - g.request_start_time) * 1000
         endpoint = request.endpoint or 'unknown'
+        content_length = response.content_length or 0
         REQUEST_COUNT.labels(
             method=request.method,
             endpoint=endpoint,
@@ -150,6 +167,8 @@ def after_request_metrics(response):
             method=request.method,
             endpoint=endpoint
         ).observe(latency_ms / 1000)
+        if content_length > 0:
+            RESPONSE_SIZE.labels(endpoint=endpoint).observe(content_length)
         if latency_ms > 500:
             SLOW_REQUEST_COUNT.labels(endpoint=endpoint, threshold_ms='500').inc()
     return response
