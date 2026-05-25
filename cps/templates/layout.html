@@ -34,6 +34,7 @@
     <link rel="search" type="application/opensearchdescription+xml" href="{{ url_for('web.get_opensearch') }}" title="{{instance}} Search">
     <link rel="apple-touch-icon" sizes="140x140" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="preload" href="{{ url_for('static', filename='logo-taratsa.png') }}" as="image" fetchpriority="high">
     <link href="{{ url_for('static', filename='css/libs/bootstrap.min.css') }}" rel="stylesheet" media="screen">
     {% block header %}{% endblock %}
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="screen">
@@ -56,7 +57,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{url_for('web.index')}}"><img src="{{ url_for('static', filename='logo-taratsa.png') }}" alt="{{instance}}" style="height:24px"></a>
+          <a class="navbar-brand" href="{{url_for('web.index')}}"><img src="{{ url_for('static', filename='logo-taratsa.png') }}" alt="{{instance}}" style="height:24px" fetchpriority="high" loading="eager"></a>
         </div>
         {% if g.current_theme == 1 %}
             <div class="home-btn"><a class="home-btn-tooltip" href="{{url_for("web.index", page=1)}}" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Home"></a></div>

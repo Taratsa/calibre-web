@@ -11,7 +11,7 @@
 </div>
 
 <div class="cover">
-    <img title="{{ entry.title }}" src="{{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified) }}"/>
+    <img title="{{ entry.title }}" src="{{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified) }}" width="195" height="285" style="aspect-ratio: 195/285;" loading="lazy"/>
 </div>
 
 {% if current_user.role_download() %}

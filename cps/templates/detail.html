@@ -80,7 +80,11 @@
             <div class="cover">
                 <!-- Always use full-sized image for the detail page -->
                 <img id="detailcover" title="{{ entry.title }}"
-                     src="{{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified) }}"/>
+                     src="{{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified) }}"
+                     width="585" height="855"
+                     fetchpriority="high"
+                     style="aspect-ratio: 585 / 855; width: 100%; max-width: 585px; height: auto;"
+                     />
             </div>
         </div>
         <div class="col-sm-9 col-lg-9 book-meta">

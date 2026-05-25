@@ -26,7 +26,7 @@
 {% if author is not none %}
 <section class="author-bio">
   {%if author.image_url is not none %}
-  <img title="{{author.name}}" src="{{author.image_url}}" alt="{{author.name}}" class="author-photo pull-left">
+  <img title="{{author.name}}" src="{{author.image_url}}" alt="{{author.name}}" class="author-photo pull-left" width="150" height="150" loading="lazy" style="aspect-ratio: 1/1; object-fit: cover;">
   {% endif %}
 
   {%if author.safe_about is not none %}
@@ -121,7 +121,7 @@
     <div class="col-sm-3 col-lg-2 col-xs-6 book session">
       <div class="cover">
         <a href="https://www.goodreads.com/book/show/{{ entry.gid['#text'] }}" target="_blank" rel="noopener">
-          <img title="{{entry.title}}" src="{{ entry.image_url }}" />
+          <img title="{{entry.title}}" src="{{ entry.image_url }}" alt="{{entry.title}}" width="195" height="285" loading="lazy" style="aspect-ratio: 195/285;">
         </a>
       </div>
       <div class="meta">

@@ -148,11 +148,22 @@ table .bg-dark-danger a { color: #fff; }
   display: flex;
   flex-direction: column;
 }
-.cover { margin-bottom: 10px; }
+.cover { margin-bottom: 10px; min-height: 195px; }
 
 .container-fluid .book .cover {
   height: 225px;
+  min-height: 195px;
   position: relative;
+  contain: layout style;
+}
+
+.container-fluid .book .cover span,
+.container-fluid .book .cover span img {
+  display: block;
+  width: 100%;
+  max-width: 195px;
+  height: auto;
+  aspect-ratio: 195 / 285;
 }
 
 .author-link img {
@@ -168,6 +179,10 @@ table .bg-dark-danger a { color: #fff; }
   -webkit-box-shadow: 0 5px 8px -6px #777;
   -moz-box-shadow: 0 5px 8px -6px #777;
   box-shadow: 0 5px 8px -6px #777;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 585 / 855;
+  contain: layout style;
 }
 
 .datepicker.form-control {

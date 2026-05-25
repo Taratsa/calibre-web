@@ -6,6 +6,8 @@
         srcset="{{ srcset }}"
         src="{{ url_for('web.get_cover', book_id=book.id, resolution='og', c=book|last_modified) }}"
         alt="{{ image_alt }}"
+        width="195" height="285"
+        style="aspect-ratio: 195 / 285; width: 100%; max-width: 195px; height: auto;"
         loading="lazy"
     />
 {%- endmacro %}
