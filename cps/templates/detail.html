@@ -33,7 +33,6 @@
     {% if page and page != "book" %}
     <meta property="og:url" content="{{ request.base_url }}" />
     {% endif %}
-    <link rel="preload" href="{{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified) }}" as="image" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
