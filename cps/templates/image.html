@@ -1,4 +1,4 @@
-{% macro book_cover(book, alt=None) -%}
+{% macro book_cover(book, alt=None, priority=False) -%}
     {%- set image_title = book.title if book.title else book.name -%}
     {%- set image_alt = alt if alt else image_title -%}
     {% set srcset = book|get_cover_srcset %}
@@ -8,7 +8,7 @@
         alt="{{ image_alt }}"
         width="195" height="285"
         style="aspect-ratio: 195 / 285; width: 100%; max-width: 195px; height: auto;"
-        loading="lazy"
+        {% if priority %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
     />
 {%- endmacro %}
 
@@ -18,7 +18,9 @@
     <img
         srcset="{{ srcset }}"
         src="{{ url_for('web.get_series_cover', series_id=series.id, resolution='og', c='day'|cache_timestamp) }}"
-        alt="{{ title }}"
+        alt="{{ image_alt }}"
+        width="195" height="285"
+        style="aspect-ratio: 195 / 285; width: 100%; max-width: 195px; height: auto;"
         loading="lazy"
     />
 {%- endmacro %}
