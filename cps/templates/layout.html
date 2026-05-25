@@ -40,9 +40,6 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('static', filename='css/upload.css') }}" rel="stylesheet" media="screen">
 {% if g.current_theme == 1 %}
-        <link rel="preload" href="{{ url_for('static', filename='fonts/open-sans-regular.woff') }}" as="font" crossorigin>
-        <link rel="preload" href="{{ url_for('static', filename='fonts/open-sans-bold.woff') }}" as="font" crossorigin>
-        <link rel="preload" href="{{ url_for('static', filename='fonts/plex-icons-new.woff') }}" as="font" crossorigin>
         <link href="{{ url_for('static', filename='css/caliBlur.css') }}" rel="stylesheet" media="screen">
         <link href="{{ url_for('static', filename='css/caliBlur_override.css') }}" rel="stylesheet" media="screen">
     {% endif %}
