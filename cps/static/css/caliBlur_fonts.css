@@ -3,6 +3,7 @@
     font-weight: 400;
     font-style: normal;
     src: url(/static/fonts/open-sans-regular.woff) format('woff');
+    font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     font-style: normal;
     font-weight: 400;
     src: url(/static/fonts/open-sans-semibold.woff) format('woff');
+    font-display: swap;
 }
 
 @font-face {
@@ -17,28 +19,33 @@
     font-weight: 400;
     font-style: normal;
     src: url(/static/fonts/open-sans-bold.woff) format('woff');
+    font-display: swap;
 }
 
 @font-face {
     font-family: plex-icons-new;
     src: url(/static/fonts/plex-icons-new.woff) format('woff');
+    font-display: swap;
 }
 
 @font-face {
     font-family: plex-icons;
     src: url(/static/fonts/plex-icons.woff) format('woff');
+    font-display: swap;
 }
 
 @font-face {
     font-family: Glyphicons Regular;
     src: url(/static/fonts/glyphicons-regular.woff) format('woff');
     font-weight: 400;
-    font-style: normal
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Glyphicons Social Regular;
     src: url(/static/fonts/glyphicons-social-regular.woff) format('woff');
     font-weight: 400;
-    font-style: normal
+    font-style: normal;
+    font-display: swap;
 }
