@@ -48,7 +48,7 @@
         <link href="{{ url_for('static', filename='css/caliBlur_override.css') }}" rel="stylesheet" media="screen">
     {% endif %}
 
-    <script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" type="text/javascript"></script>
+    <script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript"></script>
   </head>
   <body class="{{ page }} {{ bodyClass }}{% if g.current_theme == 1 %} blur{% endif %}" data-text="{{_('Home')}}" data-textback="{{_('Back')}}">
     <!-- Static navbar -->
@@ -300,15 +300,15 @@
     <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('a[href]').forEach(function (a) {
-        if (/\/read\/\d+\/pdf$/i.test(a.pathname) && !a.getAttribute('data-umami-event')) {
-          a.setAttribute('data-umami-event', 'pdf-read');
-        }
-        if (/\/download\/\d+\/pdf\//i.test(a.pathname) && !a.getAttribute('data-umami-event')) {
-          var filename = a.pathname.split('/').pop();
-          var title = document.getElementById('title') ? document.getElementById('title').textContent : document.title;
-          a.setAttribute('data-umami-event', 'pdf-download');
-          a.setAttribute('data-umami-event-file', filename);
-          a.setAttribute('data-umami-event-title', title);
+        var pathname = a.pathname;
+        if (pathname && !a.getAttribute('data-umami-event')) {
+          if (/\/read\/\d+\/pdf$/i.test(pathname)) {
+            a.setAttribute('data-umami-event', 'pdf-read');
+          } else if (/\/download\/\d+\/pdf\//i.test(pathname)) {
+            a.setAttribute('data-umami-event', 'pdf-download');
+            a.setAttribute('data-umami-event-file', pathname.split('/').pop());
+            a.setAttribute('data-umami-event-title', document.getElementById('title') ? document.getElementById('title').textContent : document.title);
+          }
         }
       });
     });
