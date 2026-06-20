@@ -1,5 +1,46 @@
 {% import 'image.html' as image %}
 {% extends "layout.html" %}
+{% block header %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ (url_for('web.index', _external=True)|trim('/') + '#website')|tojson }},
+      "url": {{ url_for('web.index', _external=True)|tojson }},
+      "name": "Pustaka Taratsa",
+      "description": "Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia",
+      "inLanguage": "id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ (url_for('search.simple_search', _external=True) + '?query={search_term_string}')|tojson }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": {{ (url_for('web.index', _external=True)|trim('/') + '#organization')|tojson }},
+      "name": "Pustaka Taratsa",
+      "url": {{ url_for('web.index', _external=True)|tojson }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ url_for('static', filename='logo-taratsa.png', _external=True)|tojson }},
+        "width": 600,
+        "height": 72
+      },
+      "description": "Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia",
+      "sameAs": [
+        "https://pustaka.taratsa.id"
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
 {% block body %}
 {% if current_user.show_detail_random() and page != "discover" %}
 <div class="discover random-books">
