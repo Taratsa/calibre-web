@@ -9,12 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="canonical" href="{{ request.base_url }}">
-    <meta name="description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(200) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
+    {% if page == 'book' and entry %}
+      <link rel="canonical" href="{{ url_for('web.show_book', book_id=entry.id, _external=True) }}">
+    {% else %}
+      <link rel="canonical" href="{{ request.base_url }}">
+    {% endif %}
+    <meta property="og:site_name" content="Pustaka Taratsa">
+    <meta name="description" content="{% if page == 'book' and entry %}{{ (entry.comments[0].text|striptags|truncate(200)) if (entry.comments and entry.comments[0].text) else ((entry.title ~ (' by ' ~ (entry.ordered_authors|map(attribute='name')|join(', ') if entry.ordered_authors|length else '')) ~ (' (' ~ entry.publishers[0].name ~ ')' if entry.publishers|length else ''))|trim) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
     <meta property="og:title" content="{% if page == 'book' and entry %}{{ entry.title }} | Pustaka Taratsa{% else %}Pustaka Taratsa{% endif %}">
-    <meta property="og:description" content="{% if page == 'book' and entry and entry.comments %}{{ entry.comments[0].text|striptags|truncate(65) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
+    <meta property="og:description" content="{% if page == 'book' and entry %}{{ (entry.comments[0].text|striptags|truncate(200)) if (entry.comments and entry.comments[0].text) else ((entry.title ~ (' by ' ~ (entry.ordered_authors|map(attribute='name')|join(', ') if entry.ordered_authors|length else '')) ~ (' (' ~ entry.publishers[0].name ~ ')' if entry.publishers|length else ''))|trim) }}{% else %}Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia{% endif %}">
     <meta property="og:type" content="{% if page == 'book' %}book{% else %}website{% endif %}">
-    <meta property="og:url" content="{{ request.base_url }}">
+    <meta property="og:url" content="{% if page == 'book' and entry %}{{ url_for('web.show_book', book_id=entry.id, _external=True) }}{% else %}{{ request.base_url }}{% endif %}">
     {% if page == 'book' and entry %}
       <meta property="og:image" content="{{ url_for('web.get_cover', book_id=entry.id, _external=True) }}">
     {% else %}

@@ -1,17 +1,15 @@
 {% extends is_xhr|yesno("fragment.html", "layout.html") %}
 {% block header %}
-    <meta property="og:type" content="books.book" />
-    <meta property="og:title" content="{{ entry.title|truncate(35) }} | Pustaka Taratsa" />
-    <meta property="og:site_name" content="Pustaka Taratsa" />
     {% if entry.languages|length > 0 %}
       <meta property="og:locale" content="{{ entry.languages[0].lang_code }}" />
     {% endif %}
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="{{ entry.title }}" />
     {% if entry.comments|length > 0 and entry.comments[0].text|length > 0 %}
-      <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(65) }}" />
-      <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
+      <meta property="og:description" content="{{ entry.comments[0].text|striptags|truncate(200) }}" />
     {% else %}
       <meta property="og:description" content="{{ entry.title }}{% if entry.ordered_authors|length > 0 %} by {% for author in entry.ordered_authors %}{{ author.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}{% if entry.publishers|length > 0 %}, {{ entry.publishers[0].name }}{% endif %}{% if entry.pubdate and (entry.pubdate|string)[:10] != '0101-01-01' %}, {{ (entry.pubdate|string)[:10] }}{% endif %}" />
-      <meta property="og:image" content="{{url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified)}}" />
     {% endif %}
     {% for author in entry.ordered_authors %}
       <meta property="book:author" content="{{ author.name }}" />
@@ -29,15 +27,16 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-    <link rel="canonical" href="{{ url_for('web.show_book', book_id=entry.id, _external=True) }}" />
-    {% if page and page != "book" %}
-    <meta property="og:url" content="{{ request.base_url }}" />
-    {% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Book",
   "url": {{ url_for('web.show_book', book_id=entry.id, _external=True)|tojson }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ url_for('web.show_book', book_id=entry.id, _external=True)|tojson }}
+  },
   "name": {{ entry.title|tojson }},
   "author": [{% for author in entry.ordered_authors %}{"@type": "Person", "name": {{ author.name|replace('|', ',')|tojson }}}{% if not loop.last %},{% endif %}{% endfor %}],
   "image": {{ url_for('web.get_cover', book_id=entry.id, resolution='og', c=entry|last_modified, _external=True)|tojson }}
@@ -59,7 +58,7 @@
   "publisher": {{ entry.publishers[0].name|tojson }}
   {% endif %}
   {% if entry.data|length > 0 %},
-  "bookFormat": {% if 'EPUB' in entry.data|map(attribute='format')|list %} "https://schema.org/EBook" {% else %} "https://schema.org/Book" {% endif %}
+  "bookFormat": "{% if 'EPUB' in entry.data|map(attribute='format')|list %}EBook{% else %}Book{% endif %}"
   {% endif %}
   {% if entry.ratings|length > 0 and entry.ratings[0].rating > 0 %},
   "aggregateRating": {

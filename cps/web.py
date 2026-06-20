@@ -1459,7 +1459,7 @@ def get_sitemap():
         title_slug = slugify(book.title)
         url = SubElement(urlset, 'url')
         loc = SubElement(url, 'loc')
-        loc.text = url_for('web.show_book', book_id=book.id, title_slug=title_slug, _external=True)
+        loc.text = url_for('web.show_book', book_id=book.id, _external=True)
         lastmod = SubElement(url, 'lastmod')
         if book.last_modified:
             lastmod.text = book.last_modified.strftime('%Y-%m-%d')
@@ -1976,14 +1976,14 @@ def read_book(book_id, book_format):
         return redirect(url_for("web.index"))
 
 
+@web.route("/book/<int:book_id>/<title_slug>")
+@web.route("/book/<int:book_id>/<title_slug>/")
 @web.route("/book/<int:book_id>/<title_slug>/<extra>")
-def redirect_book_extra(book_id, title_slug, extra):
-    return redirect(url_for('web.show_book', book_id=book_id, title_slug=title_slug), code=301)
+def redirect_book_slug(book_id, title_slug=None, extra=None):
+    return redirect(url_for('web.show_book', book_id=book_id), code=301)
 
 
 @web.route("/book/<int:book_id>")
-@web.route("/book/<int:book_id>/<title_slug>")
-@web.route("/book/<int:book_id>/<title_slug>/")
 @login_required_if_no_ano
 def show_book(book_id, title_slug=None):
     entries = calibre_db.get_book_read_archived(book_id, config.config_read_column, allow_show_archived=True)
