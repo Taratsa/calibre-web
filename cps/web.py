@@ -40,6 +40,7 @@ from werkzeug.datastructures import Headers
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from . import constants, logger, isoLanguages, services, limiter
+from .ai_catalog import build_catalog
 from . import db, ub, config, app
 from . import calibre_db, kobo_sync_status
 from .search import render_search_results, render_adv_search_results
@@ -904,6 +905,7 @@ def index(page):
     sort_param = (request.args.get('sort') or 'stored').lower()
     response = make_response(render_books_list("newest", sort_param, 1, page))
     response.headers['Link'] = '</.well-known/api-catalog>; rel="api-catalog"'
+    response.headers['Link'] += ', <' + url_for('web.get_ai_catalog', _external=True).rstrip('/') + '>; rel="ai-catalog"'
     return response
 
 
@@ -1398,6 +1400,21 @@ def get_api_catalog():
         return response
     except Exception:
         log.error("Error serving api-catalog")
+        abort(500)
+
+
+@web.route("/.well-known/ai-catalog.json")
+def get_ai_catalog():
+    try:
+        base_url = url_for('web.index', _external=True).rstrip('/')
+        response = make_response(json.dumps(build_catalog(base_url), indent=2))
+        response.headers["Content-Type"] = "application/json"
+        # CORS header is required by the ARD spec so public crawlers can fetch
+        # the manifest from a browser origin.
+        response.headers["Access-Control-Allow-Origin"] = "*"
+        return response
+    except Exception:
+        log.error("Error serving ai-catalog.json")
         abort(500)
 
 
