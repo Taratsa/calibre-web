@@ -73,3 +73,25 @@ pustaka.taratsa.id {
 
   log
 }
+
+# Old Flask-rendered frontend (pre-Astro UI)
+old.pustaka.taratsa.id {
+  request_body { max_size 500MB }
+
+  encode zstd gzip
+
+  @books {
+    path /download/*/pdf/* /download/*/epub/*
+  }
+  header @books >Cache-Control "public, max-age=3888000"
+
+  @covers {
+    path /cover/*
+  }
+  header @covers >Cache-Control "public, max-age=86400"
+  header @covers >Vary "Accept, Accept-Encoding"
+
+  reverse_proxy calibre-web-automated:8083
+
+  log
+}
