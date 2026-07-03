@@ -2,9 +2,9 @@
 
 FROM ghcr.io/linuxserver/unrar:latest AS unrar
 
-FROM ghcr.io/linuxserver/baseimage-ubuntu:noble
+# ─── Builder: install build deps + build python venv ───
+FROM ghcr.io/linuxserver/baseimage-ubuntu:noble AS builder
 
-# set version label
 ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
@@ -18,9 +18,8 @@ RUN \
     build-essential \
     libldap2-dev \
     libsasl2-dev \
-    python3-dev && \
-  echo "**** install runtime packages ****" && \
-  apt-get install -y --no-install-recommends poppler-utils \
+    python3-dev \
+    poppler-utils \
     imagemagick \
     ghostscript \
     libldap2 \
@@ -32,7 +31,6 @@ RUN \
     sqlite3 \
     xdg-utils
 
-# Copy local source tree (build context root) into image.
 COPY ./ /app/calibre-web
 
 RUN \
@@ -53,25 +51,43 @@ RUN \
   curl -o \
     /usr/bin/kepubify -L \
     https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit && \
-  echo "**** cleanup ****" && \
-  apt-get -y purge \
-    build-essential \
-    libldap2-dev \
-    libsasl2-dev \
-    python3-dev && \
-  apt-get -y autoremove && \
   rm -rf \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/* \
     /root/.cache
 
-# add local files
-COPY root/ /
+# ─── Runtime: minimal image with only runtime deps ───
+FROM ghcr.io/linuxserver/baseimage-ubuntu:noble
 
-# add unrar
+ARG BUILD_DATE
+ARG VERSION
+ARG CALIBREWEB_RELEASE
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="notdriz"
+
+RUN \
+  echo "**** install runtime packages ****" && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
+    poppler-utils \
+    imagemagick \
+    ghostscript \
+    libldap2 \
+    libmagic1t64 \
+    libsasl2-2 \
+    libxi6 \
+    libxslt1.1 \
+    python3-venv \
+    sqlite3 \
+    xdg-utils && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY --from=builder /lsiopy /lsiopy
+COPY --from=builder /usr/bin/kepubify /usr/bin/kepubify
+COPY ./ /app/calibre-web
+COPY root/ /
 COPY --from=unrar /usr/bin/unrar-ubuntu /usr/bin/unrar
 
-# ports and volumes
 EXPOSE 8083
 VOLUME /config
