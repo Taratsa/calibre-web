@@ -4,6 +4,21 @@
 - This is a forked repository from upstream (https://github.com/janeczku/calibre-web)
 - Branch: `taratsa` (custom modifications for Taratsa deployment)
 
+## Astro Static Frontend
+
+The public catalog (index, list, search, author/publisher/series/category/language/formats/ratings/shelf listings, and the `/book/<id>` detail page) is rendered as a **separate Astro static site** under `frontend/`. It is pre-built from the live Calibre `metadata.db` and `app.db` by `frontend/scripts/seed.mjs`, and the resulting HTML is served from `/srv/frontend` by Caddy.
+
+Flask keeps serving everything stateful: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`. The `/book/<id>/<slug>` legacy URLs continue to 301 via Flask.
+
+After every book write (upload, edit, delete), the Flask `trigger_rebuild_async()` helper POSTs `/internal/rebuild-frontend`. That endpoint spawns `scripts/rebuild-frontend.sh`, which:
+1. Runs `seed.mjs` → regenerates `frontend/src/content/*.json` and per-book JSON
+2. Runs `astro build` → emits `frontend/dist/`
+3. Rsyncs `frontend/dist/` to `/srv/frontend/dist/` and `frontend/public/` to `/srv/frontend/public/`
+
+Set `config_frontend_rebuild_token` in admin UI to enable webhook (default empty → rebuilds disabled).
+
+Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibre-web-automated:8083`.
+
 ## Upstream Sync
 - When syncing from upstream, committed changes are preserved
 - If upstream modifies the same lines, merge conflicts may occur and need manual resolution

@@ -1,0 +1,26 @@
+---
+export interface Props {
+  image: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+}
+
+const { image, alt, width, height, loading = 'lazy', fetchpriority = 'auto', class: cls } = Astro.props;
+
+// Emit WebP via /cover/<id> path; the Flask cover endpoint accepts Accept
+// negotiation via helper._convert_to_webp. Browsers get WebP, others JPEG.
+const isCoverPath = image.startsWith('/cover/');
+---
+
+{isCoverPath ? (
+  <picture>
+    <source srcset={`${image}&fm=webp`} type="image/webp" />
+    <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} class={cls} />
+  </picture>
+) : (
+  <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} class={cls} />
+)}

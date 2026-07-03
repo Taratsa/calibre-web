@@ -1,0 +1,20 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import { getAllBooks, paginate } from '~/data';
+
+const books = getAllBooks();
+const { items, page, totalPages, total } = paginate(books, 1);
+---
+
+<BaseLayout title="Beranda" description="Pustaka Taratsa — katalog buku langka, zine, dan literatur Indonesia.">
+  <h1>Pustaka Taratsa</h1>
+  <p>Perpustakaan digital non-komersil yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia.</p>
+
+  <h2>Daftar Terbaru</h2>
+  <BookGrid books={items} cols={5} />
+
+  {totalPages > 1 && (
+    <p><a href={`/page/${totalPages}`}>Telusuri semua {total} buku →</a></p>
+  )}
+</BaseLayout>

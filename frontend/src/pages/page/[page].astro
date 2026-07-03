@@ -1,0 +1,27 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllBooks, paginate } from '~/data';
+
+export async function getStaticPaths() {
+  const total = getAllBooks().length;
+  const totalPages = Math.ceil(total / 30);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const pageNum = Number(Astro.params.page);
+const books = getAllBooks();
+const { items, page, totalPages, total } = paginate(books, pageNum);
+---
+
+<BaseLayout title={`Halaman ${page}`}>
+  <h1>Halaman {page} dari {totalPages}</h1>
+  <p>{total} buku dalam katalog.</p>
+
+  <BookGrid books={items} cols={5} />
+
+  <Pagination page={page} totalPages={totalPages} baseUrl="/page" />
+</BaseLayout>

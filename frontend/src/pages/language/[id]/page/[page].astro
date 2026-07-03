@@ -1,0 +1,30 @@
+---
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllLanguages, booksByLanguage, paginate, PAGE_SIZE } from '~/data';
+
+export async function getStaticPaths() {
+  const out = [];
+  for (const l of getAllLanguages()) {
+    const total = Math.ceil(booksByLanguage(l.lang_code).length / PAGE_SIZE);
+    for (let page = 2; page <= total; page++) {
+      out.push({ params: { id: l.lang_code, page: String(page) } });
+    }
+  }
+  return out;
+}
+
+const { id, page } = Astro.params;
+const language = getAllLanguages().find(l => l.lang_code === id);
+if (!language) return Astro.redirect('/language');
+const pageNum = Number(page);
+
+const all = booksByLanguage(language.lang_code).sort((a, b) =>
+  (b.timestamp || '').localeCompare(a.timestamp || '')
+);
+
+const { items, page: p, totalPages, total } = paginate(all, pageNum);
+---
+
+<BookGrid books={items} cols={4} />
+<Pagination page={p} totalPages={totalPages} baseUrl={`/language/${language.lang_code}`} />

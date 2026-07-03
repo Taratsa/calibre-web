@@ -1,0 +1,34 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllSeries, booksBySeries, paginate } from '~/data';
+
+export async function getStaticPaths() {
+  return getAllSeries().map(s => ({
+    params: { id: String(s.id) },
+    props: { series: s },
+  }));
+}
+
+const { series } = Astro.props;
+
+const all = booksBySeries(series.id).sort((a, b) => {
+  const ai = a.series?.index ?? Infinity;
+  const bi = b.series?.index ?? Infinity;
+  if (ai !== bi) return ai - bi;
+  return (b.timestamp || '').localeCompare(a.timestamp || '');
+});
+
+const { items, page: p, totalPages, total } = paginate(all, 1);
+---
+
+<BaseLayout title={`Seri: ${series.name}`}>
+  <p><a href="/series">‹ Semua seri</a></p>
+  <h1>{series.name}</h1>
+  <p>{total} buku dalam seri ini.</p>
+
+  <BookGrid books={items} cols={4} />
+
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/series/${series.id}`} />
+</BaseLayout>

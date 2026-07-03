@@ -1,0 +1,35 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getShelves, getAllBooks, paginate } from '~/data';
+import type { BookSummary } from '~/data/types';
+
+export async function getStaticPaths() {
+  return getShelves().map(s => ({
+    params: { id: String(s.id) },
+    props: { shelf: s },
+  }));
+}
+
+const { shelf } = Astro.props;
+const allBooks = getAllBooks();
+const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
+const ordered: BookSummary[] = [];
+for (const id of shelf.book_ids) {
+  const b = bookMap.get(id);
+  if (b) ordered.push(b);
+}
+
+const { items, page: p, totalPages, total } = paginate(ordered, 1);
+---
+
+<BaseLayout title={`Rak: ${shelf.name}`}>
+  <p><a href="/shelf">‹ Semua rak</a></p>
+  <h1>{shelf.name}</h1>
+  <p>{total} buku dalam rak ini.</p>
+
+  <BookGrid books={items} cols={4} />
+
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/shelf/${shelf.id}`} />
+</BaseLayout>

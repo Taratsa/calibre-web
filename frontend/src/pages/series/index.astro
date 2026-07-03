@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllSeries } from '~/data';
+
+const series = getAllSeries();
+---
+
+<BaseLayout title="Seri" description="Daftar seri buku di Pustaka Taratsa.">
+  <h1>Seri</h1>
+  {series.length === 0 ? (
+    <p>Belum ada seri.</p>
+  ) : (
+    <ul class="alpha-list">
+      {series.map(s => (
+        <li><a href={`/series/${s.id}`}>{s.name}</a></li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 3 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>

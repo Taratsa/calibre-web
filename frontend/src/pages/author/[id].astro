@@ -1,0 +1,44 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllAuthors, booksByAuthor, paginate } from '~/data';
+
+export async function getStaticPaths() {
+  return getAllAuthors().map(a => ({
+    params: { id: String(a.id) },
+    props: { author: a },
+  }));
+}
+
+const { author } = Astro.props;
+
+const all = booksByAuthor(author.id).sort((a, b) =>
+  (b.timestamp || '').localeCompare(a.timestamp || '')
+);
+
+const { items, page: p, totalPages, total } = paginate(all, 1);
+
+const siteUrl = 'https://pustaka.taratsa.id';
+const authorUrl = `${siteUrl}/author/${author.id}`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author.name,
+  url: authorUrl,
+};
+---
+
+<BaseLayout title={`Pengarang: ${author.name}`}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <p><a href="/author">‹ Semua pengarang</a></p>
+  <h1>{author.name}</h1>
+  <p>{total} buku oleh pengarang ini.</p>
+
+  <BookGrid books={items} cols={4} />
+
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/author/${author.id}`} />
+</BaseLayout>

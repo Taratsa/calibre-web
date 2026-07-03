@@ -1,0 +1,33 @@
+---
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllSeries, booksBySeries, paginate, PAGE_SIZE } from '~/data';
+
+export async function getStaticPaths() {
+  const out = [];
+  for (const s of getAllSeries()) {
+    const total = Math.ceil(booksBySeries(s.id).length / PAGE_SIZE);
+    for (let p = 2; p <= total; p++) {
+      out.push({ params: { id: String(s.id), page: String(p) } });
+    }
+  }
+  return out;
+}
+
+const { id, page } = Astro.params;
+const series = getAllSeries().find(s => s.id === Number(id));
+if (!series) return Astro.redirect('/series');
+const pageNum = Number(page);
+
+const all = booksBySeries(series.id).sort((a, b) => {
+  const ai = a.series?.index ?? Infinity;
+  const bi = b.series?.index ?? Infinity;
+  if (ai !== bi) return ai - bi;
+  return (b.timestamp || '').localeCompare(a.timestamp || '');
+});
+
+const { items, page: p, totalPages, total } = paginate(all, pageNum);
+---
+
+<BookGrid books={items} cols={4} />
+<Pagination page={p} totalPages={totalPages} baseUrl={`/series/${series.id}`} />

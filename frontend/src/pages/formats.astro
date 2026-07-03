@@ -1,0 +1,41 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import { getAllBooks, booksByFormat } from '~/data';
+
+const formats: { key: string; label: string }[] = [
+  { key: 'pdf', label: 'PDF' },
+  { key: 'epub', label: 'EPUB' },
+  { key: 'mobi', label: 'MOBI' },
+  { key: 'cbr', label: 'CBR (Komik)' },
+  { key: 'cbz', label: 'CBZ (Komik)' },
+  { key: 'djvu', label: 'DJVU' },
+  { key: 'txt', label: 'Teks' },
+  { key: 'mp3', label: 'Audio' },
+];
+
+const buckets = formats.map(f => ({
+  key: f.key,
+  label: f.label,
+  count: booksByFormat(f.key).length,
+}));
+
+const tocHtml = buckets.map(b => `<li><a href="#${b.key}">${b.label}</a> — ${b.count} buku</li>`).join('');
+---
+
+<BaseLayout title="Format" description="Telusuri berdasarkan format file.">
+  <h1>Telusuri Berdasarkan Format</h1>
+  <ul set:html={tocHtml} />
+
+  {buckets.map(b => (
+    b.count > 0 && (
+      <section id={b.key}>
+        <h2 set:html={b.label} />
+        <BookGrid books={booksByFormat(b.key).slice(0, 60)} cols={4} />
+        {booksByFormat(b.key).length > 60 && (
+          <p><em>Menampilkan 60 buku pertama.</em></p>
+        )}
+      </section>
+    )
+  ))}
+</BaseLayout>

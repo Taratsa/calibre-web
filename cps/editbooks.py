@@ -38,6 +38,7 @@ from sqlalchemy.orm.exc import StaleDataError
 from sqlalchemy.sql.expression import func
 
 from . import constants, logger, isoLanguages, gdriveutils, uploader, helper, kobo_sync_status
+from .frontend_rebuild import trigger_rebuild_async
 from .clean_html import clean_string
 from . import config, ub, db, calibre_db
 from .services.worker import WorkerThread
@@ -77,6 +78,7 @@ def edit_required(f):
 @user_login_required
 def delete_books_ajax():
     book_ids = request.get_json().get("bookid")
+    trigger_rebuild_async("delete:ajax")
     return check_delete_book(book_ids, "", True)
 
 
@@ -84,6 +86,7 @@ def delete_books_ajax():
 @editbook.route("/delete/<int:book_id>/<string:book_format>", methods=["POST"])
 @user_login_required
 def delete_book(book_id, book_format):
+    trigger_rebuild_async(f"delete:{book_id}")
     return check_delete_book(book_id, book_format, False, request.form.to_dict().get('location', ""))
 
 
@@ -98,6 +101,7 @@ def show_edit_book(book_id):
 @login_required_if_no_ano
 @edit_required
 def edit_book(book_id):
+    trigger_rebuild_async(f"edit:{book_id}")
     return do_edit_book(book_id)
 
 
@@ -159,9 +163,11 @@ def upload():
                 if len(request.files.getlist("btn-upload")) < 2:
                     if current_user.role_edit() or current_user.role_admin():
                         resp = {"location": url_for('edit-book.show_edit_book', book_id=book_id)}
+                        trigger_rebuild_async(f"upload:new:{book_id}")
                         return make_response(jsonify(resp))
                     else:
                         resp = {"location": url_for('web.show_book', book_id=book_id)}
+                        trigger_rebuild_async(f"upload:new:{book_id}")
                         return Response(json.dumps(resp), mimetype='application/json')
             except (OperationalError, IntegrityError, StaleDataError) as e:
                 calibre_db.session.rollback()
@@ -217,6 +223,7 @@ def edit_list_book(param):
     vals = request.get_json()
     multi = vals.get('multi', False) == "True"
     ret_value = edit_book_param(param, vals, multi)
+    trigger_rebuild_async(f"editbooks:{param}")
     if isinstance(ret_value, dict):
         return jsonify(ret_value)
     else:

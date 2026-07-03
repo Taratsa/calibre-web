@@ -1,0 +1,32 @@
+---
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getShelves, getAllBooks, paginate, PAGE_SIZE } from '~/data';
+import type { BookSummary } from '~/data/types';
+
+export async function getStaticPaths() {
+  const out = [];
+  const allBooks = getAllBooks();
+  const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
+  for (const s of getShelves()) {
+    const ordered: BookSummary[] = [];
+    for (const id of s.book_ids) {
+      const b = bookMap.get(id);
+      if (b) ordered.push(b);
+    }
+    const total = Math.ceil(ordered.length / PAGE_SIZE);
+    for (let page = 2; page <= total; page++) {
+      out.push({ params: { id: String(s.id), page: String(page) }, props: { shelf: s, ordered } });
+    }
+  }
+  return out;
+}
+
+const { shelf, ordered } = Astro.props;
+const { page } = Astro.params;
+const pageNum = Number(page);
+const { items, page: p, totalPages } = paginate(ordered, pageNum);
+---
+
+<BookGrid books={items} cols={4} />
+<Pagination page={p} totalPages={totalPages} baseUrl={`/shelf/${shelf.id}`} />

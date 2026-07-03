@@ -1,0 +1,39 @@
+---
+import type { BookSummary } from '~/data/types';
+import BookCard from './BookCard.astro';
+
+export interface Props {
+  books: BookSummary[];
+  cols?: 2 | 3 | 4 | 5 | 6;
+}
+
+const { books, cols = 5 } = Astro.props;
+---
+
+{books.length > 0 ? (
+  <ul class={`book-grid book-grid--cols-${cols}`}>
+    {books.map(book => (
+      <li>
+        <BookCard book={book} />
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class="empty">Tidak ada buku dalam koleksi ini.</p>
+)}
+
+<style>
+  .book-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .book-grid--cols-2 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .book-grid--cols-3 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .book-grid--cols-4 { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .book-grid--cols-5 { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .book-grid--cols-6 { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .empty { color: #6b7280; }
+</style>

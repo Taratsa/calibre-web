@@ -40,7 +40,7 @@ except ImportError as e:
     except ImportError as e:
         OAuthConsumerMixin = BaseException
         oauth_support = False
-from sqlalchemy import create_engine, exc, exists, event, text
+from sqlalchemy import create_engine, exc, exists, event, inspect, text
 from sqlalchemy import Column, ForeignKey
 from sqlalchemy import String, Integer, SmallInteger, Boolean, DateTime, Float, JSON
 from sqlalchemy.orm.attributes import flag_modified
@@ -607,6 +607,21 @@ def migrate_user_session_table(engine, _session):
 def migrate_Database(_session):
     engine = _session.bind
     add_missing_tables(engine, _session)
+
+
+def _ensure_column(engine, table_name, column_name, column_def):
+    """Idempotent SQLite ALTER TABLE for new columns."""
+    try:
+        insp = inspect(engine)
+        cols = {c['name'] for c in insp.get_columns(table_name)}
+        if column_name in cols:
+            return
+        with engine.begin() as conn:
+            conn.exec_driver_sql(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_def}")
+    except Exception:
+        # never block startup on migration
+        import traceback
+        traceback.print_exc()
     migrate_registration_table(engine, _session)
     migrate_user_session_table(engine, _session)
 
@@ -698,6 +713,7 @@ def init_db(app_db_path):
 
     if os.path.exists(app_db_path):
         Base.metadata.create_all(engine)
+        _ensure_column(engine, 'settings', 'config_frontend_rebuild_token', 'VARCHAR DEFAULT \'\'')
         migrate_Database(session)
         clean_database(session)
     else:

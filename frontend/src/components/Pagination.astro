@@ -1,0 +1,75 @@
+---
+export interface Props {
+  page: number;
+  totalPages: number;
+  baseUrl: string;
+}
+
+const { page, totalPages, baseUrl } = Astro.props;
+
+function pageHref(p: number) {
+  if (p === 1) return baseUrl;
+  const sep = baseUrl.includes('?') ? '&' : '?';
+  return `${baseUrl}${sep}page=${p}`;
+}
+
+const pages: (number | '…')[] = [];
+const window = 1;
+for (let i = 1; i <= totalPages; i++) {
+  if (i === 1 || i === totalPages || (i >= page - window && i <= page + window)) {
+    pages.push(i);
+  } else if (pages[pages.length - 1] !== '…') {
+    pages.push('…');
+  }
+}
+
+function renderPageHtml(p: number | '…'): string {
+  if (p === '…') return '<span>…</span>';
+  if (p === page) return `<span aria-current="page">${p}</span>`;
+  return `<a href="${pageHref(p as number)}">${p}</a>`;
+}
+
+const pageListHtml = pages.map(p => `<li>${renderPageHtml(p)}</li>`).join('');
+---
+
+    {totalPages > 1 && (
+  <nav class="pagination" aria-label="Halaman">
+    {page > 1 && <a href={pageHref(page - 1)} rel="prev">‹ Sebelumnya</a>}
+    <ol set:html={pageListHtml} />
+    {page < totalPages && <a href={pageHref(page + 1)} rel="next">Selanjutnya ›</a>}
+  </nav>
+)}
+
+<style>
+  .pagination {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+  .pagination ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.25rem;
+  }
+  .pagination a, .pagination span {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #1f1f1f;
+  }
+  .pagination a {
+    border: 1px solid #d1d5db;
+    background: #fff;
+  }
+  .pagination a:hover { background: #f3f4f6; }
+  .pagination span[aria-current] {
+    background: #1f1f1f;
+    color: #fafaf7;
+  }
+</style>

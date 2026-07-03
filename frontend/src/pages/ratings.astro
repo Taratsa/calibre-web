@@ -1,0 +1,28 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import { getAllRatings, booksByRating } from '~/data';
+
+const ratings = getAllRatings();
+---
+
+<BaseLayout title="Penilaian" description="Telusuri buku berdasarkan penilaian pembaca.">
+  <h1>Telusuri Berdasarkan Penilaian</h1>
+
+  {ratings.length === 0 ? (
+    <p>Belum ada buku yang dinilai.</p>
+  ) : (
+    ratings.map(r => {
+      const books = booksByRating(r.id);
+      if (books.length === 0) return null;
+      const ratingLabel = '★'.repeat(r.rating) + ' (' + books.length + ')';
+      return (
+        <section>
+          <h2 set:html={ratingLabel} />
+          <BookGrid books={books.slice(0, 60)} cols={4} />
+          {books.length > 60 && <p><em>Menampilkan 60 buku pertama.</em></p>}
+        </section>
+      );
+    })
+  )}
+</BaseLayout>

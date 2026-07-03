@@ -21,6 +21,7 @@
 import os
 import json
 import mimetypes
+import subprocess
 import chardet  # dependency of requests
 import copy
 import time
@@ -213,6 +214,26 @@ def add_security_headers(resp):
 web = Blueprint('web', __name__)
 
 log = logger.create()
+
+
+@web.route("/internal/rebuild-frontend", methods=["POST"])
+def trigger_rebuild_frontend():
+    if not current_user.is_authenticated or not current_user.role_admin():
+        abort(403)
+    if request.headers.get("X-Frontend-Token") != config.config_frontend_rebuild_token:
+        abort(403)
+    try:
+        subprocess.Popen(
+            ["/usr/local/bin/rebuild-frontend.sh"],
+            stdout=open("/tmp/rebuild-frontend.log", "a"),
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+        )
+        log.info("Frontend rebuild triggered by user %s", current_user.name)
+        return jsonify({"ok": True, "queued": True}), 202
+    except Exception as exc:
+        log.error("Failed to spawn rebuild: %s", exc)
+        return jsonify({"ok": False, "error": str(exc)}), 500
 
 
 # ################################### Login logic and rights management ###############################################

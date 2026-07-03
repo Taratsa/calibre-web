@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllAuthors } from '~/data';
+
+const authors = getAllAuthors();
+---
+
+<BaseLayout title="Pengarang" description="Daftar pengarang di Pustaka Taratsa.">
+  <h1>Pengarang</h1>
+  {authors.length === 0 ? (
+    <p>Belum ada pengarang.</p>
+  ) : (
+    <ul class="alpha-list">
+      {authors.map(a => (
+        <li><a href={`/author/${a.id}`}>{a.name}</a></li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 3 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>

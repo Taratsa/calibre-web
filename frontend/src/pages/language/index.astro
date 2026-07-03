@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllLanguages, localeLanguageName } from '~/data';
+
+const languages = getAllLanguages();
+---
+
+<BaseLayout title="Bahasa" description="Daftar bahasa buku di Pustaka Taratsa.">
+  <h1>Bahasa</h1>
+  {languages.length === 0 ? (
+    <p>Belum ada bahasa.</p>
+  ) : (
+    <ul class="alpha-list">
+      {languages.map(l => (
+        <li><a href={`/language/${l.lang_code}`}>{localeLanguageName(l.lang_code)} ({l.lang_code})</a></li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 2 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>

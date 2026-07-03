@@ -1,0 +1,31 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllLanguages, booksByLanguage, paginate, localeLanguageName } from '~/data';
+
+export async function getStaticPaths() {
+  return getAllLanguages().map(l => ({
+    params: { id: l.lang_code },
+    props: { language: l },
+  }));
+}
+
+const { language } = Astro.props;
+
+const all = booksByLanguage(language.lang_code).sort((a, b) =>
+  (b.timestamp || '').localeCompare(a.timestamp || '')
+);
+
+const { items, page: p, totalPages, total } = paginate(all, 1);
+---
+
+<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)}`}>
+  <p><a href="/language">‹ Semua bahasa</a></p>
+  <h1>{localeLanguageName(language.lang_code)} ({language.lang_code})</h1>
+  <p>{total} buku dalam bahasa ini.</p>
+
+  <BookGrid books={items} cols={4} />
+
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/language/${language.lang_code}`} />
+</BaseLayout>

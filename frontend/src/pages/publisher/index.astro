@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllPublishers } from '~/data';
+
+const publishers = getAllPublishers();
+---
+
+<BaseLayout title="Penerbit" description="Daftar penerbit di Pustaka Taratsa.">
+  <h1>Penerbit</h1>
+  {publishers.length === 0 ? (
+    <p>Belum ada penerbit.</p>
+  ) : (
+    <ul class="alpha-list">
+      {publishers.map(p => (
+        <li><a href={`/publisher/${p.id}`}>{p.name}</a></li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 3 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>

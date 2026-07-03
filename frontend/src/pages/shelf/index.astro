@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getShelves } from '~/data';
+
+const shelves = getShelves();
+---
+
+<BaseLayout title="Rak Buku" description="Rak-rak publik pilihan di Pustaka Taratsa.">
+  <h1>Rak Buku</h1>
+  {shelves.length === 0 ? (
+    <p>Belum ada rak publik.</p>
+  ) : (
+    <ul class="alpha-list">
+      {shelves.map(s => (
+        <li><a href={`/shelf/${s.id}`}>{s.name}</a> ({s.book_ids.length} buku)</li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 2 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>
