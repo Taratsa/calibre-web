@@ -1,0 +1,130 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import BookLayout from '~/layouts/BookLayout.astro';
+import Cover from '~/components/Cover.astro';
+import { getAllBooks, getAllCategories, formatBytes } from '~/data';
+import type { BookDetail } from '~/data/types';
+
+export async function getStaticPaths() {
+  const books = getAllBooks();
+  const contentDir = join(process.cwd(), 'src', 'data', 'books');
+  return books.map(b => {
+    let detail: BookDetail | null = null;
+    try {
+      detail = JSON.parse(readFileSync(join(contentDir, `${b.id}.json`), 'utf8'));
+    } catch {}
+    return { params: { id: String(b.id) }, props: { book: b, detail } };
+  });
+}
+
+const { book, detail } = Astro.props;
+
+const commentText = detail?.comment || '';
+const cleanComment = commentText.replace(/<[^>]+>/g, '').trim();
+const sizes = new Map<string, number>();
+if (detail?.data) {
+  for (const d of detail.data) sizes.set(d.format.toLowerCase(), d.size || 0);
+}
+
+const readableExt = new Set(['epub', 'pdf', 'txt', 'cbr', 'cbz', 'djvu', 'mp3']);
+const readUrl = book.formats.find(f => readableExt.has(f.toLowerCase()));
+
+const buttons = book.formats.map(f => ({
+  href: `/download/${book.id}/${f.toLowerCase()}`,
+  label: f.toUpperCase(),
+  sizeText: (() => { const s = sizes.get(f.toLowerCase()); return s ? `(${formatBytes(s)})` : ''; })(),
+}));
+
+const authorStr = book.authors.map(a => `<a href="/author/${a.id}">${a.name}</a>`).join(', ');
+const cats = getAllCategories();
+const tagStr = book.tags.map(t => {
+  const cat = cats.find(c => c.name === t);
+  return `<li><a href="/category/${cat ? cat.id : encodeURIComponent(t)}">${t}</a></li>`;
+}).join('');
+
+const langLinks = book.languages.map(c =>
+  `<a href="/language/${c}">${c}</a>`
+).join(', ');
+
+const identStr = book.identifiers.map((id, i) =>
+  `${id.type}: ${id.value}${i < book.identifiers.length - 1 ? ', ' : ''}`
+).join('');
+
+const ratingStr = book.rating && book.rating.count > 0
+  ? `&#9733; ${book.rating.avg} (${book.rating.count})`
+  : '';
+---
+
+<BookLayout book={book}>
+  <article class="book-detail">
+    <div class="cover">
+      <Cover image={book.cover_url.replace(/\?.*$/, '')} alt={book.title} width={320} height={480} loading="eager" fetchpriority="high" />
+    </div>
+    <div class="body">
+      <h1 set:html={book.title} />
+
+      {book.authors.length > 0 && (
+        <p class="authors" set:html={authorStr} />
+      )}
+
+      {cleanComment && (
+        <div class="description" set:html={cleanComment} />
+      )}
+
+      <div class="formats">
+        {buttons.map(b => (
+          <a href={b.href} download="true" set:html={`Unduh ${b.label} ${b.sizeText}`} />
+        ))}
+        {readUrl && (
+          <a href={`/read/${book.id}/${readUrl}`}>Baca Online</a>
+        )}
+      </div>
+
+      <table class="metadata">
+        <tbody>
+          {book.publisher && (
+            <tr>
+              <th>Penerbit</th>
+              <td><a href={`/publisher/${book.publisher.id}`} set:html={book.publisher.name} /></td>
+            </tr>
+          )}
+          {book.pubdate && (
+            <tr><th>Tahun</th><td set:html={book.pubdate} /></tr>
+          )}
+          {book.languages.length > 0 && (
+            <tr>
+              <th>Bahasa</th>
+              <td set:html={langLinks} />
+            </tr>
+          )}
+          {book.series && (
+            <tr>
+              <th>Seri</th>
+              <td>
+                {book.series.index != null
+                  ? `${book.series.name} jilid ${book.series.index}`
+                  : book.series.name
+                }
+              </td>
+            </tr>
+          )}
+          {identStr && (
+            <tr><th>Pengenal</th><td set:html={identStr} /></tr>
+          )}
+          {ratingStr && (
+            <tr><th>Penilaian</th><td set:html={ratingStr} /></tr>
+          )}
+        </tbody>
+      </table>
+
+      {book.tags.length > 0 && (
+        <ul class="tag-list" set:html={tagStr} />
+      )}
+    </div>
+  </article>
+</BookLayout>
+
+<style is:global>
+  @import '../../styles/book.css';
+</style>

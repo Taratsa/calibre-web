@@ -18,6 +18,14 @@ vendor/
 *.egg-info/
 .installed.cfg
 *.egg
+
+### Astro frontend ###
+frontend/node_modules/
+frontend/dist/
+# data JSON snapshots ARE committed (reproducible builds)
+# Uncomment the next line to gitignore them instead:
+# frontend/src/data/books.json
+# frontend/src/data/books/
 .pylint.d
 
 # calibre-web

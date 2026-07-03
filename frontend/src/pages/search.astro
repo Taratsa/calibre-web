@@ -1,0 +1,108 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import { getAllBooks } from '~/data';
+
+const books = getAllBooks();
+const q = (Astro.url.searchParams.get('q') || '').trim();
+---
+
+<BaseLayout title={q ? `Cari: ${q}` : 'Cari'} description="Cari buku di Pustaka Taratsa.">
+  <h1>Cari Buku</h1>
+
+  <form action="/search" method="GET" role="search" class="search-form">
+    <input type="search" name="q" placeholder="judul, pengarang, kategori…" value={q} autofocus />
+    <button type="submit">Cari</button>
+  </form>
+
+  {q && (
+    <p id="search-status">Memuat hasil untuk <strong>{q}</strong>…</p>
+  )}
+
+  <div id="search-results" hidden></div>
+  <noscript>
+    <p>Halaman pencarian membutuhkan JavaScript. Coba gunakan <a href={`/search?q=${encodeURIComponent(q)}`}>tautan ini</a> atau kembali ke <a href="/">beranda</a>.</p>
+  </noscript>
+</BaseLayout>
+
+<style>
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .search-form input {
+    flex: 1;
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    font: inherit;
+  }
+  .search-form button {
+    padding: 0.6rem 1.2rem;
+    background: #1f1f1f;
+    color: #fafaf7;
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    cursor: pointer;
+  }
+</style>
+
+<script define:vars={{ books }}>
+  // Inline minisearch-style scoring over the snapshot.
+  const q = new URLSearchParams(window.location.search).get('q') || '';
+  const status = document.getElementById('search-status');
+  const results = document.getElementById('search-results');
+  if (!q) {
+    if (status) status.hidden = true;
+  } else {
+    const ql = q.toLowerCase();
+    const terms = ql.split(/\s+/).filter(Boolean);
+
+    function scoreBook(b) {
+      let s = 0;
+      const t = (b.title || '').toLowerCase();
+      const a = (b.authors || []).map(x => x.name).join(' ').toLowerCase();
+      const tags = (b.tags || []).join(' ').toLowerCase();
+      const ser = b.series ? b.series.name.toLowerCase() : '';
+      const pub = b.publisher ? b.publisher.name.toLowerCase() : '';
+      for (const term of terms) {
+        if (t.includes(term)) s += 5;
+        if (a.includes(term)) s += 4;
+        if (tags.includes(term)) s += 2;
+        if (ser.includes(term)) s += 3;
+        if (pub.includes(term)) s += 2;
+        if (t.startsWith(term)) s += 3;
+      }
+      return s;
+    }
+
+    const matches = books
+      .map(b => ({ b, s: scoreBook(b) }))
+      .filter(x => x.s > 0)
+      .sort((a, b) => b.s - a.s)
+      .slice(0, 120);
+
+    if (status) status.textContent = `${matches.length} hasil untuk "${q}"`;
+
+    if (matches.length === 0) {
+      results.innerHTML = '<p>Tidak ada hasil. Coba kata kunci lain, atau <a href="/">kembali ke beranda</a>.</p>';
+      results.hidden = false;
+    } else {
+      const items = matches.map(({ b }) => `
+        <li>
+          <article class="book-card">
+            <a href="${b.url}" class="book-card__cover">
+              <img src="${b.cover_url}" alt="${b.title.replace(/"/g, '&quot;')}" loading="lazy" width="200" />
+            </a>
+            <h3 class="book-card__title"><a href="${b.url}">${b.title}</a></h3>
+            <p class="book-card__authors">${(b.authors || []).map(a => `<a href="/author/${a.id}">${a.name}</a>`).join(', ')}</p>
+          </article>
+        </li>
+      `).join('');
+      results.innerHTML = `<ul class="book-grid book-grid--cols-5">${items}</ul>`;
+      results.hidden = false;
+    }
+  }
+</script>

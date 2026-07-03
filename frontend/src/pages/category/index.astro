@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllCategories } from '~/data';
+
+const categories = getAllCategories();
+---
+
+<BaseLayout title="Kategori" description="Daftar kategori buku di Pustaka Taratsa.">
+  <h1>Kategori</h1>
+  {categories.length === 0 ? (
+    <p>Belum ada kategori.</p>
+  ) : (
+    <ul class="alpha-list">
+      {categories.map(c => (
+        <li><a href={`/category/${c.id}`}>{c.name}</a></li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .alpha-list {
+    columns: 3 200px;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+</style>

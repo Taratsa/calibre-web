@@ -1,0 +1,25 @@
+services:
+  calibre-web-automated:
+    build: .
+    container_name: calibre-web-automated
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - HARDCOVER_TOKEN=your_hardcover_api_key_here
+      - NETWORK_SHARE_MODE=false
+      - DOCKER_MODS=linuxserver/mods:universal-calibre
+    volumes:
+      - ./data:/config
+      - ./library:/calibre-library
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 4096
+    networks:
+      - caddy_net
+
+networks:
+  caddy_net:
+    external: true

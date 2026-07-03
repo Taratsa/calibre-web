@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+.github
+.DS_Store
+data
+library
+test
+frontend.Dockerfile
+docker-compose.frontend.example.yml
+nginx-frontend.conf
+frontend/node_modules
+frontend/dist
+*.md
+*.png
+*.pot

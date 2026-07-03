@@ -1,0 +1,31 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getCategoryById, getAllCategories, booksByCategory, paginate } from '~/data';
+
+export async function getStaticPaths() {
+  return getAllCategories().map(c => ({
+    params: { id: String(c.id) },
+    props: { category: c },
+  }));
+}
+
+const { category } = Astro.props;
+
+const all = booksByCategory(category.name).sort((a, b) =>
+  (b.timestamp || '').localeCompare(a.timestamp || '')
+);
+
+const { items, page: p, totalPages, total } = paginate(all, 1);
+---
+
+<BaseLayout title={`Kategori: ${category.name}`}>
+  <p><a href="/category">‹ Semua kategori</a></p>
+  <h1>{category.name}</h1>
+  <p>{total} buku dalam kategori ini.</p>
+
+  <BookGrid books={items} cols={4} />
+
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/category/${category.id}`} />
+</BaseLayout>
