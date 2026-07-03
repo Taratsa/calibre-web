@@ -1,18 +1,7 @@
-# Caddyfile for pustaka.taratsa.id
-#
-# Two services behind one host:
-#   - Flask (calibre-web-automated:8083) — admin, login, reader, downloads,
-#     OPDS, Kobo sync, AI catalog, .well-known, covers, api endpoints.
-#   - Static frontend (/srv/frontend) — public catalog pages pre-built from
-#     Calibre metadata.db by frontend/scripts/seed.mjs.
-#
-# The @flask matcher covers everything Flask must keep serving. Everything
-# else falls through to the file_server block.
-#
-# Rollback: replace the route block with `reverse_proxy calibre-web-automated:8083`.
-
 pustaka.taratsa.id {
-  request_body { max_size 500MB }
+  request_body {
+    max_size 500MB
+  }
 
   encode zstd gzip
 
@@ -20,15 +9,15 @@ pustaka.taratsa.id {
     # ─── Flask: stateful + admin + reader + cached asset endpoints ───
     @flask {
       path /admin* /ajax/* /admin/*
-          /login /login/* /logout /logout/*
-          /me /register* /remote_login*
-          /read/* /show/* /download/* /send/*
-          /opds/* /kobo/*
-          /cover/* /series_cover/*
-          /.well-known/*
-          /table /downloadlist
-          /metrics
-          /feed.xml /osd.xml /index.xml
+      path /login /login/* /logout /logout/*
+      path /me /register* /remote_login*
+      path /read/* /show/* /download/* /send/*
+      path /opds/* /kobo/*
+      path /cover/* /series_cover/*
+      path /.well-known/*
+      path /table /downloadlist
+      path /metrics
+      path /feed.xml /osd.xml /index.xml
     }
     handle @flask {
       # Long-cache download files
@@ -48,10 +37,6 @@ pustaka.taratsa.id {
     }
 
     # ─── Static frontend: Astro-built HTML + assets ───
-    # /book/<id>/<slug>/ legacy redirects go through Flask's @flask block
-    # above as well, since /book/* isn't matched there. We send /book/* to
-    # Astro (the static file) and let Flask continue to own slug-form via
-    # a separate static redirect file baked at build time.
     root * /srv/frontend
 
     @astro_assets {
@@ -62,7 +47,7 @@ pustaka.taratsa.id {
       file_server
     }
 
-    # Default: serve the static file. Falls back to /404.html for missing paths.
+    # Default: serve the static file
     handle {
       header >Cache-Control "public, max-age=300, must-revalidate"
       rewrite * /index.html
@@ -76,7 +61,9 @@ pustaka.taratsa.id {
 
 # Old Flask-rendered frontend (pre-Astro UI)
 old.pustaka.taratsa.id {
-  request_body { max_size 500MB }
+  request_body {
+    max_size 500MB
+  }
 
   encode zstd gzip
 
