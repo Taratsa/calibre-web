@@ -16,17 +16,17 @@
 
     <script type="module" data-cfasync="false">
     window.addEventListener('webviewerloaded', function() {
-      AppOptions.set('disableAutoFetch', true);
-      AppOptions.set('disableRange', false);
-      AppOptions.set('disableStream', true);
-      AppOptions.set('disablePreferences', true);
-      AppOptions.set('cMapUrl', "{{ url_for('static', filename='cmaps/') }}");
-      AppOptions.set('standardFontDataUrl', "{{ url_for('static', filename='standard_fonts/') }}");
-      AppOptions.set('imageResourcesPath', "{{ url_for('static', filename='css/images/') }}");
-      AppOptions.set('wasmUrl', "{{ url_for('static', filename='wasm/') }}");
-      AppOptions.set('iccUrl', "{{ url_for('static', filename='iccs/') }}");
-      AppOptions.set('workerSrc', "{{ url_for('static', filename='js/libs/pdf.worker.mjs') }}");
-      AppOptions.set('defaultUrl', "{{ url_for('web.serve_book', book_id=pdffile, book_format='pdf') }}");
+      PDFViewerApplicationOptions.set('disableAutoFetch', true);
+      PDFViewerApplicationOptions.set('disableRange', false);
+      PDFViewerApplicationOptions.set('disableStream', true);
+      PDFViewerApplicationOptions.set('disablePreferences', true);
+      PDFViewerApplicationOptions.set('cMapUrl', "{{ url_for('static', filename='cmaps/') }}");
+      PDFViewerApplicationOptions.set('standardFontDataUrl', "{{ url_for('static', filename='standard_fonts/') }}");
+      PDFViewerApplicationOptions.set('imageResourcesPath', "{{ url_for('static', filename='css/images/') }}");
+      PDFViewerApplicationOptions.set('wasmUrl', "{{ url_for('static', filename='wasm/') }}");
+      PDFViewerApplicationOptions.set('iccUrl', "{{ url_for('static', filename='iccs/') }}");
+      PDFViewerApplicationOptions.set('workerSrc', "{{ url_for('static', filename='js/libs/pdf.worker.mjs') }}");
+      PDFViewerApplicationOptions.set('defaultUrl', "{{ url_for('web.serve_book', book_id=pdffile, book_format='pdf') }}");
     });
     </script>
 
