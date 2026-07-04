@@ -14,6 +14,7 @@ pustaka.taratsa.id {
       path /read/* /show/* /download/* /send/*
       path /opds/* /kobo/*
       path /cover/* /series_cover/*
+      path /book/*?
       path /.well-known/*
       path /table /downloadlist
       path /metrics
