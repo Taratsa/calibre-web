@@ -13,6 +13,7 @@ eggs/
 dist/
 executable/
 build/
+!cps/static/js/build/
 vendor/
 .eggs/
 *.egg-info/
@@ -29,6 +30,8 @@ frontend/dist/
 .pylint.d
 
 # calibre-web
+library/
+data/
 *.db
 *.log
 cps/cache
