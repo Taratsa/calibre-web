@@ -49,16 +49,9 @@ gmail.json
 /data/
 frontend/public/
 
-# Library content
-# Keep metadata.db tracked (seed reproducibility)
-library/**/*.epub
-library/**/*.pdf
-library/**/*.mobi
-library/**/*.azw3
-library/**/*.cbz
-library/**/*.cbr
-library/**/*.djvu
-library/**/*.txt
+# Library content (books, author dirs) — keep metadata.db tracked
+library/*
+!library/metadata.db
 
 # macOS
 .DS_Store
