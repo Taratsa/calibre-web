@@ -57,18 +57,32 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
   <body>
     <header class="site-header">
       <div class="inner">
-        <a href="/" class="brand" aria-label="Beranda">
-          <img src="/logo-taratsa.png" alt="Pustaka Taratsa" width="28" height="28" fetchpriority="high" loading="eager" />
+        <a href="/" class="brand" aria-label="Beranda Pustaka Taratsa">
+          <picture>
+            <source srcset="/logo-taratsa.webp" type="image/webp" />
+            <img src="/logo-taratsa.png" alt="Pustaka Taratsa" width="28" height="28" fetchpriority="high" loading="eager" style="height:28px;width:auto;" />
+          </picture>
           <span>Pustaka Taratsa</span>
         </a>
-        <nav>
-          <a href="/author">Pengarang</a>
+        <details class="nav-toggle">
+          <summary aria-label="Menu navigasi">
+            <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </summary>
+          <nav>
+            <a href="/author">Penulis</a>
+            <a href="/series">Seri</a>
+            <a href="/publisher">Penerbit</a>
+            <a href="/category">Kategori</a>
+          </nav>
+        </details>
+        <nav class="desktop-nav">
+          <a href="/author">Penulis</a>
           <a href="/series">Seri</a>
           <a href="/publisher">Penerbit</a>
           <a href="/category">Kategori</a>
         </nav>
-        <form action="/search" method="GET" role="search">
-          <input type="search" name="q" placeholder="Cari buku, pengarang…" aria-label="Cari" />
+        <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
+          <input type="search" name="q" placeholder="Cari buku, pengarang…" aria-label="Kata kunci pencarian" />
         </form>
       </div>
     </header>

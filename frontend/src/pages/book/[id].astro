@@ -65,7 +65,7 @@ const ratingStr = book.rating && book.rating.count > 0
       <h1 set:html={book.title} />
 
       {book.authors.length > 0 && (
-        <p class="authors" set:html={authorStr} />
+        <p class="authors"><strong>Penulis:</strong> <span set:html={authorStr} /></p>
       )}
 
       {cleanComment && (

@@ -24,7 +24,10 @@ pustaka.taratsa.id {
           /me /register* /remote_login*
           /read/* /show/* /download/* /send/*
           /opds/* /kobo/*
+          /book/*/*/*
+          path_regexp book_slug ^/book/[^/]+/[^/]+(/.*)?$
           /cover/* /series_cover/*
+          /static/*
           /.well-known/*
           /table /downloadlist
           /metrics
@@ -48,14 +51,13 @@ pustaka.taratsa.id {
     }
 
     # ─── Static frontend: Astro-built HTML + assets ───
-    # /book/<id>/<slug>/ legacy redirects go through Flask's @flask block
-    # above as well, since /book/* isn't matched there. We send /book/* to
-    # Astro (the static file) and let Flask continue to own slug-form via
-    # a separate static redirect file baked at build time.
-    root * /srv/frontend
+    # Clean /book/<id> URLs are served as static HTML by Astro. Legacy
+    # /book/<id>/<slug> URLs are caught by @flask above and proxied to
+    # Flask for a 301 redirect to the clean URL format.
+    root * /srv/frontend/dist
 
     @astro_assets {
-      path /_astro/* /favicon.ico /logo-taratsa.png /static/*
+      path /_astro/* /favicon.ico /logo-taratsa.png
     }
     handle @astro_assets {
       header >Cache-Control "public, max-age=31536000, immutable"
@@ -65,7 +67,6 @@ pustaka.taratsa.id {
     # Default: serve the static file. Falls back to /404.html for missing paths.
     handle {
       header >Cache-Control "public, max-age=300, must-revalidate"
-      rewrite * /index.html
       try_files {path} {path}.html {path}/index.html /404.html
       file_server
     }

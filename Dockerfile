@@ -29,7 +29,10 @@ RUN \
     libxslt1.1 \
     python3-venv \
     sqlite3 \
-    xdg-utils
+    xdg-utils && \
+  curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
+  apt-get install -y --no-install-recommends nodejs && \
+  rm -rf /var/lib/apt/lists/*
 
 COPY ./ /app/calibre-web
 
@@ -57,6 +60,12 @@ RUN \
     /var/tmp/* \
     /root/.cache
 
+RUN \
+  echo "**** install frontend dependencies (with native modules) ****" && \
+  cd /app/calibre-web/frontend && \
+  npm ci 2>&1 && \
+  rm -rf /root/.npm /tmp/*
+
 # ─── Runtime: minimal image with only runtime deps ───
 FROM ghcr.io/linuxserver/baseimage-ubuntu:noble
 
@@ -80,11 +89,15 @@ RUN \
     libxslt1.1 \
     python3-venv \
     sqlite3 \
+    rsync \
     xdg-utils && \
+  curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
+  apt-get install -y --no-install-recommends nodejs && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY --from=builder /lsiopy /lsiopy
 COPY --from=builder /usr/bin/kepubify /usr/bin/kepubify
+COPY --from=builder /app/calibre-web/frontend/node_modules /app/calibre-web/frontend/node_modules
 COPY ./ /app/calibre-web
 COPY root/ /
 COPY --from=unrar /usr/bin/unrar-ubuntu /usr/bin/unrar

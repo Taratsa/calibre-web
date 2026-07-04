@@ -320,11 +320,11 @@ async function main() {
       try {
         const shelfRows = appDb.prepare(`SELECT id, name FROM shelf WHERE is_public = 1 ORDER BY name`).all();
         const shelfBooks = appDb.prepare(`
-          SELECT bsl.shelf AS shelf_id, bsl.book_id AS book_id, bsl.order AS ord
+          SELECT bsl.shelf AS shelf_id, bsl.book_id AS book_id, bsl."order" AS ord
           FROM book_shelf_link bsl
           JOIN shelf s ON s.id = bsl.shelf
           WHERE s.is_public = 1
-          ORDER BY bsl.shelf, bsl.order
+          ORDER BY bsl.shelf, bsl."order"
         `).all();
 
         const shelfMap = new Map();

@@ -9,8 +9,7 @@ const { page, totalPages, baseUrl } = Astro.props;
 
 function pageHref(p: number) {
   if (p === 1) return baseUrl;
-  const sep = baseUrl.includes('?') ? '&' : '?';
-  return `${baseUrl}${sep}page=${p}`;
+  return `${baseUrl}/${p}`;
 }
 
 const pages: (number | '…')[] = [];

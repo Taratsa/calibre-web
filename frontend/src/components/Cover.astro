@@ -18,7 +18,7 @@ const isCoverPath = image.startsWith('/cover/');
 
 {isCoverPath ? (
   <picture>
-    <source srcset={`${image}&fm=webp`} type="image/webp" />
+    <source srcset={`${image}?fm=webp`} type="image/webp" />
     <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} class={cls} />
   </picture>
 ) : (
