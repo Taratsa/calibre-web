@@ -5,9 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://pustaka.taratsa.id',
   output: 'static',
-  trailingSlash: 'always',
+  trailingSlash: 'never',
   build: {
-    format: 'directory',
+    format: 'file',
   },
   vite: {
     plugins: [tailwindcss()],

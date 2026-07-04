@@ -7,12 +7,12 @@
 set -euo pipefail
 
 LOG_FILE="${REBUILD_LOG_FILE:-/tmp/rebuild-frontend.log}"
-APP_ROOT="${APP_ROOT:-/app/calibre-web}"
-FRONTEND_DIR="${FRONTEND_DIR:-/app/calibre-web/frontend}"
+APP_ROOT="${APP_ROOT:-/app}"
+FRONTEND_DIR="${FRONTEND_DIR:-/app/frontend}"
 OUT_DIR="${OUT_DIR:-/srv/frontend}"
 NODE_BIN="${NODE_BIN:-node}"
-CALIBRE_DB_PATH="${CALIBRE_DB_PATH:-/calibre-library/metadata.db}"
-APP_DB_PATH="${APP_DB_PATH:-/config/app.db}"
+CALIBRE_DB_PATH="${CALIBRE_DB_PATH:-/srv/calibre/metadata.db}"
+APP_DB_PATH="${APP_DB_PATH:-/srv/calibre/app.db}"
 
 mkdir -p "$(dirname "$LOG_FILE")"
 exec >>"$LOG_FILE" 2>&1
@@ -34,7 +34,7 @@ echo "[$(date +%H:%M:%S)] npm run build"
 
 echo "[$(date +%H:%M:%S)] publish to $OUT_DIR"
 mkdir -p "$OUT_DIR"
-rsync -a --delete dist/ "$OUT_DIR/dist/"
+rsync -a --delete --exclude='_astro/' dist/ "$OUT_DIR/dist/"
 if [[ -d public ]]; then
   rsync -a public/ "$OUT_DIR/public/"
 fi

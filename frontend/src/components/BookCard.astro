@@ -29,32 +29,13 @@ const coverH = Math.round(w * 1.5);
 </article>
 
 <style>
-  .book-card {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  .book-card { margin: 0; }
+  .book-card__cover { display: block; }
+  .book-card__cover img {
     width: 100%;
-  }
-  .book-card__cover {
-    display: block;
-    width: 100%;
-    aspect-ratio: 2 / 3;
+    height: auto;
     border-radius: 4px;
-    overflow: hidden;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  .book-card__cover :global(picture) {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  .book-card__cover :global(img) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    object-fit: cover;
   }
   .book-card__title {
     font-size: 1rem;
