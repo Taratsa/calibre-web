@@ -17,27 +17,7 @@ After every book write (upload, edit, delete), the Flask `trigger_rebuild_async(
 
 Set `config_frontend_rebuild_token` in admin UI to enable webhook (default empty → rebuilds disabled).
 
-## Build & Deployment Workflow
-
-The `compose.yml` mounts frontend source directories into the container, so edits on the host are immediately available inside the container. No `docker cp` needed.
-
-**Development workflow:**
-1. Edit source files on the host (e.g. `frontend/src/components/BookCard.astro`)
-2. Run `docker compose up -d` if `compose.yml` changed, otherwise skip
-3. If adding/removing npm packages: `docker exec -w /app/calibre-web/frontend calibre-web-automated npm install <pkg>`
-4. Run `docker exec calibre-web-automated /app/calibre-web/scripts/rebuild-frontend.sh`
-5. Caddy serves the rebuilt `frontend/dist/` via the bind mount
-
-**Manual rebuild (without editing):**
-`docker exec calibre-web-automated /app/calibre-web/scripts/rebuild-frontend.sh`
-
-**Triggered rebuild (after book changes):** POST to `/internal/rebuild-frontend` with `X-Frontend-Token: <token>` or as an authenticated admin user.
-
 Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibre-web-automated:8083`.
-
-## Caddyfile
-
-The Caddyfile template lives in this repo at `Caddyfile`. Only edit the Caddyfile in this repo; the user handles deploying it to the live Caddy container.
 
 ## Upstream Sync
 - When syncing from upstream, committed changes are preserved

@@ -12,12 +12,6 @@ services:
     volumes:
       - ./data:/config
       - ./library:/calibre-library
-      - ./frontend/dist:/srv/frontend/dist:rw
-      - ./frontend/src:/app/calibre-web/frontend/src:rw
-      - ./frontend/scripts:/app/calibre-web/frontend/scripts:rw
-      - ./frontend/astro.config.mjs:/app/calibre-web/frontend/astro.config.mjs:rw
-      - ./frontend/package.json:/app/calibre-web/frontend/package.json:rw
-      - ./frontend/tsconfig.json:/app/calibre-web/frontend/tsconfig.json:rw
     restart: unless-stopped
     ulimits:
       nofile:

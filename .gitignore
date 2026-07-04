@@ -22,15 +22,14 @@ vendor/
 ### Astro frontend ###
 frontend/node_modules/
 frontend/dist/
-# Per-book JSON snapshots — regenerated from DB on every rebuild
-frontend/src/data/books/
-# Keep the aggregate indexes committed (reproducible builds)
+# data JSON snapshots ARE committed (reproducible builds)
+# Uncomment the next line to gitignore them instead:
 # frontend/src/data/books.json
+# frontend/src/data/books/
 .pylint.d
 
 # calibre-web
 *.db
-!library/metadata.db
 *.log
 cps/cache
 
@@ -44,14 +43,6 @@ gdrive_credentials
 client_secrets.json
 gmail.json
 /.key
-
-# Runtime / bind-mounted
-/data/
-frontend/public/
-
-# Library content (books, author dirs) — keep metadata.db tracked
-library/*
-!library/metadata.db
 
 # macOS
 .DS_Store
