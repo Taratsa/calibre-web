@@ -4,20 +4,39 @@
 - This is a forked repository from upstream (https://github.com/janeczku/calibre-web)
 - Branch: `taratsa` (custom modifications for Taratsa deployment)
 
-## Astro Static Frontend
+## Deployment Pipeline
 
-The public catalog (index, list, search, author/publisher/series/category/language/formats/ratings/shelf listings, and the `/book/<id>` detail page) is rendered as a **separate Astro static site** under `frontend/`. It is pre-built from the live Calibre `metadata.db` and `app.db` by `frontend/scripts/seed.mjs`, and the resulting HTML is served from `/srv/frontend` by Caddy.
+### Docker Container (Flask App)
+Deployed via `compose.yml`:
+```bash
+docker compose build    # Build image from Dockerfile
+docker compose up -d    # Deploy container
+```
 
-Flask keeps serving everything stateful: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`. The `/book/<id>/<slug>` legacy URLs continue to 301 via Flask.
+Container serves: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`, `/robots.txt`, static files under `cps/static/`.
 
-After every book write (upload, edit, delete), the Flask `trigger_rebuild_async()` helper POSTs `/internal/rebuild-frontend`. That endpoint spawns `scripts/rebuild-frontend.sh`, which:
-1. Runs `seed.mjs` → regenerates `frontend/src/content/*.json` and per-book JSON
-2. Runs `astro build` → emits `frontend/dist/`
-3. Rsyncs `frontend/dist/` to `/srv/frontend/dist/` and `frontend/public/` to `/srv/frontend/public/`
+### Static Frontend (Astro)
+Served separately by Caddy from `/srv/frontend/` (not in Docker). Hosts:
+- `/book/<id>` - detail pages
+- `/author`, `/publisher`, `/series`, `/category`, `/language`, `/formats`, `/ratings`, `/shelf` - listing pages
+- `/search` - search page
+- `/index` - home page
 
-Set `config_frontend_rebuild_token` in admin UI to enable webhook (default empty → rebuilds disabled).
+Rebuild process:
+1. `frontend/scripts/seed.mjs` - seeds content JSON from Calibre DB
+2. `astro build` - builds static site to `frontend/dist/`
+3. Rsync to `/srv/frontend/`
 
-Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibre-web-automated:8083`.
+Auto-rebuild on book changes via `trigger_rebuild_async()` → POST `/internal/rebuild-frontend`.
+Set `config_frontend_rebuild_token` in admin UI to enable webhook.
+
+### Static Files Location
+| Path | Location | Served By |
+|------|----------|-----------|
+| `cps/static/` | In Docker container | Flask |
+| `frontend/public/` | `/srv/frontend/public/` | Caddy |
+
+**Important**: Changes to `cps/static/` require Docker rebuild. Changes to `frontend/public/` require frontend rebuild + rsync to `/srv/frontend/`.
 
 ## Upstream Sync
 - When syncing from upstream, committed changes are preserved
@@ -27,12 +46,17 @@ Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibr
 
 ## Important Notes
 
+### DO NOT Touch
+- **NEVER modify or delete files in `library/` or `data/` folders** - these contain production book files and Calibre database
+- `/srv/frontend/` - external frontend deployment, may need separate permissions
+
 ### Modified Files
 - `cps/helper.py` - Server-side Umami analytics tracking for direct downloads, WebP conversion
 - `cps/web.py` - Added trailing slash route for book detail pages (`/book/<id>/<slug>/`), WebP Accept header detection
 - `cps/templates/layout.html` - Frontend Umami tracking for file downloads, PDF reads
 - `cps/templates/detail.html` - Fixed JSON-LD structured data, added canonical URL
 - `cps/templates/author.html` - Fixed JSON-LD structured data
+- `cps/templates/readpdf.html` - PDF viewer with `PDFViewerApplicationOptions` (PDF.js v6)
 
 ### Key Features
 - Umami analytics tracking for downloads (browser-based via data attributes + server-side)
@@ -143,3 +167,14 @@ For optimal CDN performance, configure in Cloudflare dashboard:
 - Book downloads: `Cache-Control: public, max-age=3888000`, `cf-cache-status: HIT`
 - Cover images: `Cache-Control: public, max-age=604800`, `Vary: Accept, Accept-Encoding`
 - App-level WebP conversion: Browsers with `Accept: image/webp` get WebP, others get JPEG
+
+### Cloudflare Cache Purge
+When static files change (robots.txt, JS, CSS), purge via Cloudflare API:
+```bash
+curl -X POST "https://api.cloudflare.com/client/v4/zones/:zone_id/purge" \
+  -H "Authorization: Bearer :api_token" \
+  -H "Content-Type: application/json" \
+  -d '{"files":["https://pustaka.taratsa.id/robots.txt"]}'
+```
+
+Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibre-web-automated:8083`.
