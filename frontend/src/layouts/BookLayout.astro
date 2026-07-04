@@ -20,6 +20,15 @@ const pubdate = book.pubdate && book.pubdate !== '0101-01-01' ? book.pubdate : n
 const isbn = (book.identifiers || []).find(i => /isbn/i.test(i.type))?.value ?? null;
 const descriptionJson = book.tags.join(', ') || book.title;
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Beranda', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: book.title, item: bookUrl },
+  ],
+};
+
 const jsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'Book',
@@ -62,6 +71,7 @@ if (book.rating && book.rating.count > 0) {
     {isbn && <meta property="book:isbn" content={isbn} />}
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
   </Fragment>
 
   <slot />

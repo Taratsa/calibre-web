@@ -52,6 +52,8 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
 
     <slot name="head" />
 
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://pustaka.taratsa.id","name":"Pustaka Taratsa","description":"Perpustakaan digital non-komersil yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia.","inLanguage":"id","publisher":{"@type":"Organization","@id":"https://pustaka.taratsa.id#organization","name":"Pustaka Taratsa","url":"https://pustaka.taratsa.id","logo":"https://pustaka.taratsa.id/logo-taratsa.png"}}</script>
+
     <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript"></script>
   </head>
   <body>
@@ -73,6 +75,7 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
             <a href="/series">Seri</a>
             <a href="/publisher">Penerbit</a>
             <a href="/category">Kategori</a>
+            <a href="/shelf">Rak</a>
           </nav>
         </details>
         <nav class="desktop-nav">
@@ -80,6 +83,7 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
           <a href="/series">Seri</a>
           <a href="/publisher">Penerbit</a>
           <a href="/category">Kategori</a>
+          <a href="/shelf">Rak</a>
         </nav>
         <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
           <input type="search" name="q" placeholder="Cari buku, pengarang…" aria-label="Kata kunci pencarian" />

@@ -773,6 +773,41 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                     return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
                                                thumbnail.filename)
 
+                # Generate thumbnail on-the-fly when not cached
+                try:
+                    from shutil import copyfile, copyfileobj
+                    from io import BytesIO
+                    cover_path = os.path.join(config.get_book_path(), book.path, 'cover.jpg')
+                    if os.path.isfile(cover_path):
+                        new_thumb = ub.Thumbnail()
+                        new_thumb.type = THUMBNAIL_TYPE_COVER
+                        new_thumb.entity_id = book.id
+                        new_thumb.format = 'jpeg'
+                        new_thumb.resolution = resolution
+                        ub.session.add(new_thumb)
+                        ub.session.commit()
+                        thumb_filename = cache.get_cache_file_path(new_thumb.filename, CACHE_TYPE_THUMBNAILS)
+                        with Image(filename=cover_path) as img:
+                            h = int(255 * resolution)
+                            if img.height > h:
+                                w = int((h / float(img.height)) * img.width)
+                                if w % 2 != 0:
+                                    w += 1
+                                img.resize(width=w, height=h, filter='lanczos')
+                                img.format = 'jpeg'
+                                img.save(filename=thumb_filename)
+                            else:
+                                copyfile(cover_path, thumb_filename)
+                        if accept_webp:
+                            with open(cover_path, 'rb') as f:
+                                return _convert_to_webp(f.read(), 'image/jpeg')
+                        return send_from_directory(cache.get_cache_file_dir(new_thumb.filename, CACHE_TYPE_THUMBNAILS),
+                                                   new_thumb.filename)
+                except Exception as ex:
+                    log.error_or_exception('on-the-fly thumbnail generation failed: %s', ex)
+                    ub.session.rollback()
+                    # fall through to serve original cover
+
         # Send the book cover from Google Drive if configured
         if config.config_use_google_drive:
             try:
