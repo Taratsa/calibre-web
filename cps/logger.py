@@ -61,14 +61,16 @@ def get(name=None):
     return logging.getLogger(name)
 
 
-def create():
+def create() -> "_Logger":
     parent_frame = inspect.stack(0)[1]
     if hasattr(parent_frame, 'frame'):
         parent_frame = parent_frame.frame
     else:
         parent_frame = parent_frame[0]
     parent_module = inspect.getmodule(parent_frame)
-    return get(parent_module.__name__)
+    logger = get(parent_module.__name__)
+    # pyright doesn't know setLoggerClass was called; cast to our subclass
+    return logger  # type: ignore[return-value]
 
 
 def is_debug_enabled():

@@ -217,7 +217,7 @@ def upload():
             except (OperationalError, IntegrityError, StaleDataError) as e:
                 calibre_db.session.rollback()
                 log.error_or_exception("Database error: {}".format(e))
-                flash(_("Oops! Database Error: %(error)s.", error=e.orig if hasattr(e, "orig") else e),
+                flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)),
                       category="error")
         return make_response(jsonify(location=url_for("web.index")))
     abort(404)
@@ -519,7 +519,7 @@ def edit_book_param(param, vals, multi=False):
         except (OperationalError, IntegrityError, StaleDataError, AttributeError) as e:
             calibre_db.session.rollback()
             log.error_or_exception("Database error: {}".format(e))
-            ret = {"success":False, "msg":'Database error: {}'.format(e.orig if hasattr(e, "orig") else e)}
+            ret = {"success":False, "msg":'Database error: {}'.format(getattr(e, "orig", e))}
             if multi:
                 out.append(ret)
     if multi:
@@ -554,7 +554,10 @@ def get_sorted_entry(field, bookid):
 def simulate_merge_list_book():
     vals = request.get_json().get('Merge_books')
     if vals:
-        to_book = calibre_db.get_book(vals[0]).title
+        _to_book_obj = calibre_db.get_book(vals[0])
+        if _to_book_obj is None:
+            return ""
+        to_book = _to_book_obj.title
         vals.pop(0)
         if to_book:
             from_book = []
@@ -622,7 +625,7 @@ def read_selected_books():
             calibre_db.session.rollback()
             log.error_or_exception("Database error: {}".format(e))
             ret = Response(json.dumps({'success': False,
-                    'msg': 'Database error: {}'.format(e.orig if hasattr(e, "orig") else e)}),
+                    'msg': 'Database error: {}'.format(getattr(e, "orig", e))}),
                     mimetype='application/json')
 
         return json.dumps({'success': True})
@@ -686,6 +689,8 @@ def table_xchange_author_title():
         for val in vals:
             modify_date = False
             book = calibre_db.get_book(val)
+            if book is None:
+                continue
             authors = book.title
             book.authors = calibre_db.order_authors([book])
             author_names = []
@@ -866,7 +871,7 @@ def do_edit_book(book_id, upload_formats=None):
     except (OperationalError, IntegrityError, StaleDataError, InterfaceError) as e:
         log.error_or_exception("Database error: {}".format(e))
         calibre_db.session.rollback()
-        flash(_("Oops! Database Error: %(error)s.", error=e.orig if hasattr(e, "orig") else e), category="error")
+        flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
         return redirect(url_for('web.show_book', book_id=book.id))
     except Exception as ex:
         log.error_or_exception(ex)
@@ -1585,7 +1590,7 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
                 except (OperationalError, IntegrityError, StaleDataError) as e:
                     calibre_db.session.rollback()
                     log.error_or_exception("Database error: {}".format(e))
-                    flash(_("Oops! Database Error: %(error)s.", error=e.orig if hasattr(e, "orig") else e),
+                    flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)),
                           category="error")
                     error = True
                     continue

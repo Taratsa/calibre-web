@@ -500,6 +500,8 @@ def edit_list_user(param):
     elif not ('value[]' in vals):
         return _("Malformed request"), 400
     for user in users:
+        if user is None:
+            continue
         try:
             if param in ['denied_tags', 'allowed_tags', 'allowed_column_value', 'denied_column_value']:
                 if 'value[]' in vals:
@@ -809,6 +811,8 @@ def edit_restriction(res_type, user_id):
         if res_type == 2:  # Tags per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                if usr is None:
+                    return ""
             else:
                 usr = current_user
             elementlist = usr.list_allowed_tags()
@@ -818,6 +822,8 @@ def edit_restriction(res_type, user_id):
         if res_type == 3:  # CColumn per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                if usr is None:
+                    return ""
             else:
                 usr = current_user
             elementlist = usr.list_allowed_column_values()
@@ -838,6 +844,8 @@ def edit_restriction(res_type, user_id):
         if res_type == 2:  # Tags per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                if usr is None:
+                    return ""
             else:
                 usr = current_user
             elementlist = usr.list_denied_tags()
@@ -847,6 +855,8 @@ def edit_restriction(res_type, user_id):
         if res_type == 3:  # CColumn per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                if usr is None:
+                    return ""
             else:
                 usr = current_user
             elementlist = usr.list_denied_column_values()
@@ -896,6 +906,8 @@ def add_restriction(res_type, user_id):
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            if usr is None:
+                return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
@@ -907,6 +919,8 @@ def add_restriction(res_type, user_id):
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            if usr is None:
+                return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
@@ -958,6 +972,8 @@ def delete_restriction(res_type, user_id):
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            if usr is None:
+                return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
@@ -969,6 +985,8 @@ def delete_restriction(res_type, user_id):
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            if usr is None:
+                return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
@@ -1453,10 +1471,10 @@ def update_mailsettings():
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
-        flash(_("Oops! Database Error: %(error)s.", error=e.orig), category="error")
+        flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
         return edit_mailsettings()
     except Exception as e:
-        flash(_("Oops! Database Error: %(error)s.", error=e.orig), category="error")
+        flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
         return edit_mailsettings()
 
     if to_save.get("test"):
@@ -1900,7 +1918,7 @@ def _db_configuration_update_helper():
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
-        _db_configuration_result(_("Oops! Database Error: %(error)s.", error=e.orig), gdrive_error)
+        _db_configuration_result(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), gdrive_error)
     try:
         metadata_db = os.path.join(to_save['config_calibre_dir'], "metadata.db")
         if config.config_use_google_drive and is_gdrive_ready() and not os.path.exists(metadata_db):
@@ -2059,7 +2077,7 @@ def _configuration_update_helper():
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
-        _configuration_result(_("Oops! Database Error: %(error)s.", error=e.orig))
+        _configuration_result(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)))
 
     config.save()
     if reboot_required:
@@ -2157,7 +2175,7 @@ def _handle_new_user(to_save, content, languages, translations, kobo_support):
     except OperationalError as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
-        flash(_("Oops! Database Error: %(error)s.", error=e.orig), category="error")
+        flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
 
 
 def _delete_user(content):
@@ -2278,7 +2296,7 @@ def _handle_edit_user(to_save, content, languages, translations, kobo_support):
     except OperationalError as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
-        flash(_("Oops! Database Error: %(error)s.", error=e.orig), category="error")
+        flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
     return ""
 
 

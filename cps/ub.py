@@ -58,12 +58,23 @@ from .string_helper import strip_whitespaces
 
 log = logger.create()
 
-session = None
-app_DB_path = None
-Base = declarative_base()
-searched_ids = {}
+from typing import TYPE_CHECKING  # noqa: E402
 
-logged_in = dict()
+if TYPE_CHECKING:
+    from sqlalchemy.orm import Session as _SASession
+    session: _SASession
+    app_DB_path: str
+else:
+    # `session` is None at module import time and assigned in init_db() at
+    # app startup. The annotation above (when type-checking) gives pyright
+    # the proper Session type so `ub.session.query(...)` etc. are checked.
+    session = None  # type: ignore[assignment]
+    app_DB_path = None  # type: ignore[assignment]
+
+Base = declarative_base()
+searched_ids: dict = {}
+
+logged_in: dict = dict()
 
 
 def signal_store_user_session(object, user):
@@ -137,6 +148,15 @@ def store_combo_ids(result):
 
 
 class UserBase:
+
+    # Class-level type annotation so pyright can verify access on UserBase
+    # instances. The actual column is declared on the User model below.
+    view_settings: dict
+    role: int
+    allowed_tags: str
+    denied_tags: str
+    allowed_column_value: str
+    denied_column_value: str
 
     @property
     def is_authenticated(self):
@@ -239,24 +259,24 @@ class User(UserBase, Base):
     __tablename__ = 'user'
     __table_args__ = {'sqlite_autoincrement': True}
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(64), unique=True)
-    email = Column(String(120), unique=True, default="")
-    role = Column(SmallInteger, default=constants.ROLE_USER)
-    password = Column(String)
-    kindle_mail = Column(String(120), default="")
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
+    name: str = Column(String(64), unique=True)  # type: ignore[assignment]
+    email: str = Column(String(120), unique=True, default="")  # type: ignore[assignment]
+    role: int = Column(SmallInteger, default=constants.ROLE_USER)  # type: ignore[assignment]
+    password: str = Column(String)  # type: ignore[assignment]
+    kindle_mail: str = Column(String(120), default="")  # type: ignore[assignment]
     shelf = relationship('Shelf', backref='user', lazy='dynamic', order_by='Shelf.name')
     downloads = relationship('Downloads', backref='user', lazy='dynamic')
-    locale = Column(String(2), default="en")
-    sidebar_view = Column(Integer, default=1)
-    default_language = Column(String(3), default="all")
-    denied_tags = Column(String, default="")
-    allowed_tags = Column(String, default="")
-    denied_column_value = Column(String, default="")
-    allowed_column_value = Column(String, default="")
+    locale: str = Column(String(2), default="en")  # type: ignore[assignment]
+    sidebar_view: int = Column(Integer, default=1)  # type: ignore[assignment]
+    default_language: str = Column(String(3), default="all")  # type: ignore[assignment]
+    denied_tags: str = Column(String, default="")  # type: ignore[assignment]
+    allowed_tags: str = Column(String, default="")  # type: ignore[assignment]
+    denied_column_value: str = Column(String, default="")  # type: ignore[assignment]
+    allowed_column_value: str = Column(String, default="")  # type: ignore[assignment]
     remote_auth_token = relationship('RemoteAuthToken', backref='user', lazy='dynamic')
-    view_settings = Column(JSON, default={})
-    kobo_only_shelves_sync = Column(Integer, default=0)
+    view_settings: dict = Column(JSON, default={})  # type: ignore[assignment]
+    kobo_only_shelves_sync: int = Column(Integer, default=0)  # type: ignore[assignment]
 
 
 if oauth_support:
@@ -505,9 +525,9 @@ def receive_before_flush(session, flush_context, instances):
 class Downloads(Base):
     __tablename__ = 'downloads'
 
-    id = Column(Integer, primary_key=True)
-    book_id = Column(Integer)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
+    book_id: int = Column(Integer)  # type: ignore[assignment]
+    user_id: int = Column(Integer, ForeignKey('user.id'))  # type: ignore[assignment]
 
     def __repr__(self):
         return '<Download %r' % self.book_id
@@ -517,13 +537,13 @@ class Downloads(Base):
 class AuditLog(Base):
     __tablename__ = 'audit_log'
 
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
-    action = Column(String(64), nullable=False)
-    resource_type = Column(String(64), nullable=False)
-    resource_id = Column(String(128), nullable=True)
-    details = Column(String(4096), nullable=True)
-    ip_address = Column(String(45), nullable=True)
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
+    user_id: int = Column(Integer, ForeignKey('user.id'), nullable=False)  # type: ignore[assignment]
+    action: str = Column(String(64), nullable=False)  # type: ignore[assignment]
+    resource_type: str = Column(String(64), nullable=False)  # type: ignore[assignment]
+    resource_id: str = Column(String(128), nullable=True)  # type: ignore[assignment]
+    details: str = Column(String(4096), nullable=True)  # type: ignore[assignment]
+    ip_address: str = Column(String(45), nullable=True)  # type: ignore[assignment]
     created = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     user = relationship('User', foreign_keys=[user_id])

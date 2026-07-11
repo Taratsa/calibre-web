@@ -1,0 +1,23 @@
+{
+  "include": [
+    "cps"
+  ],
+  "exclude": [
+    "cps/static",
+    "cps/test",
+    "cps/node_modules"
+  ],
+  "reportMissingImports": "error",
+  "reportAttributeAccessIssue": "error",
+  "reportOptionalMemberAccess": "error",
+  "reportOptionalCall": "error",
+  "reportGeneralTypeIssues": "error",
+  "reportOptionalSubscript": "error",
+  "reportOptionalIterable": "error",
+  "reportOptionalContains": "error",
+  "reportOptionalOperand": "error",
+  "reportTypedDictNotRequiredAccess": "error",
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "basic"
+}

@@ -183,14 +183,136 @@ class _Settings(_Base):
 # Class holds all application specific settings in calibre-web
 class ConfigSQL(object):
     # pylint: disable=no-member
+    # Class-level type annotations for pyright. The actual values are loaded at
+    # runtime from the _Settings SQLAlchemy row via self.load() -> setattr().
+    db_configured: bool
+    cli: object
+
+    id: int
+    mail_server: str
+    mail_port: int
+    mail_use_ssl: int
+    mail_login: str
+    mail_password_e: str
+    mail_password: str
+    mail_from: str
+    mail_size: int
+    mail_server_type: int
+    mail_gmail_token: dict
+
+    config_calibre_dir: str
+    config_calibre_uuid: str
+    config_calibre_split: bool
+    config_calibre_split_dir: str
+    config_port: int
+    config_external_port: int
+    config_certfile: str
+    config_keyfile: str
+    config_trustedhosts: str
+    config_calibre_web_title: str
+    config_books_per_page: int
+    config_random_books: int
+    config_authors_max: int
+    config_read_column: int
+    config_title_regex: str
+    config_theme: int
+
+    config_log_level: int
+    config_logfile: str
+    config_access_log: int
+    config_access_logfile: str
+
+    config_uploading: int
+    config_anonbrowse: int
+    config_public_reg: int
+    config_remote_login: bool
+    config_frontend_rebuild_token: str
+    config_kobo_sync: bool
+
+    config_default_role: int
+    config_default_show: int
+    config_default_language: str
+    config_default_locale: str
+    config_columns_to_ignore: str
+
+    config_denied_tags: str
+    config_allowed_tags: str
+    config_restricted_column: int
+    config_denied_column_value: str
+    config_allowed_column_value: str
+
+    config_use_google_drive: bool
+    config_google_drive_folder: str
+    config_google_drive_watch_changes_response: dict
+
+    config_use_goodreads: bool
+    config_goodreads_api_key: str
+    config_googlebooks_api_key: str
+    config_register_email: bool
+    config_login_type: int
+
+    config_kobo_proxy: bool
+
+    config_ldap_provider_url: str
+    config_ldap_port: int
+    config_ldap_authentication: int
+    config_ldap_serv_username: str
+    config_ldap_serv_password_e: str
+    config_ldap_serv_password: str
+    config_ldap_encryption: int
+    config_ldap_cacert_path: str
+    config_ldap_cert_path: str
+    config_ldap_key_path: str
+    config_ldap_dn: str
+    config_ldap_user_object: str
+    config_ldap_member_user_object: str
+    config_ldap_openldap: bool
+    config_ldap_group_object_filter: str
+    config_ldap_group_members_field: str
+    config_ldap_group_name: str
+
+    config_kepubifypath: str
+    config_converterpath: str
+    config_binariesdir: str
+    config_calibre: str
+    config_rarfile_location: str
+    config_upload_formats: str
+    config_unicode_filename: bool
+    config_embed_metadata: bool
+
+    config_updatechannel: int
+
+    config_reverse_proxy_login_header_name: str
+    config_allow_reverse_proxy_header_login: bool
+
+    schedule_start_time: int
+    schedule_duration: int
+    schedule_generate_book_covers: bool
+    schedule_generate_series_covers: bool
+    schedule_reconnect: bool
+    schedule_metadata_backup: bool
+
+    config_password_policy: bool
+    config_password_min_length: int
+    config_password_number: bool
+    config_password_lower: bool
+    config_password_upper: bool
+    config_password_character: bool
+    config_password_special: bool
+    config_session: int
+    config_ratelimiter: bool
+    config_limiter_uri: str
+    config_limiter_options: str
+    config_check_extensions: bool
+
     def __init__(self):
         self.__dict__["dirty"] = list()
 
     def init_config(self, session, secret_key, cli):
         self._session = session
         self._settings = None
-        self.db_configured = None
-        self.config_calibre_dir = None
+        self.db_configured = False
+        self.config_calibre_dir = ""
         self._fernet = Fernet(secret_key)
         self.cli = cli
         self.load()

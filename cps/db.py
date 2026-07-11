@@ -667,11 +667,11 @@ class CalibreDB:
             ctx.close()
 
     @property
-    def session(self):
+    def session(self) -> "scoped_session":
         # connect or get active connection
         if not g.get("lib_sql"):
             g.lib_sql = self.connect()
-        return g.lib_sql
+        return g.lib_sql  # type: ignore[return-value]
 
     @classmethod
     def update_config(cls, config, config_calibre_dir, app_db_path):
