@@ -36,6 +36,11 @@ data/
 *.log
 cps/cache
 
+# Env files (may contain secrets)
+.env
+.env.local
+.env.*.local
+
 .idea/
 *.bak
 *.log.*
