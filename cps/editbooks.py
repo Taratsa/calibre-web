@@ -79,6 +79,16 @@ def edit_required(f):
 def delete_books_ajax():
     book_ids = request.get_json().get("bookid")
     trigger_rebuild_async("delete:ajax")
+    if book_ids:
+        for book_id in book_ids:
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="delete",
+                resource_type="book",
+                resource_id=book_id,
+                details="Book deleted via bulk ajax",
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
     return check_delete_book(book_ids, "", True)
 
 
@@ -87,6 +97,14 @@ def delete_books_ajax():
 @user_login_required
 def delete_book(book_id, book_format):
     trigger_rebuild_async(f"delete:{book_id}")
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="delete",
+        resource_type="book",
+        resource_id=book_id,
+        details="Book deleted{}".format(" (format: {})".format(book_format) if book_format else ""),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return check_delete_book(book_id, book_format, False, request.form.to_dict().get('location', ""))
 
 
@@ -102,7 +120,17 @@ def show_edit_book(book_id):
 @edit_required
 def edit_book(book_id):
     trigger_rebuild_async(f"edit:{book_id}")
-    return do_edit_book(book_id)
+    result = do_edit_book(book_id)
+    book = calibre_db.get_book(book_id)
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="book",
+        resource_id=book_id,
+        details="Edited book: {}".format(book.title if book else "unknown"),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
+    return result
 
 
 @editbook.route("/upload", methods=["POST"])
@@ -110,8 +138,17 @@ def edit_book(book_id):
 @upload_required
 def upload():
     if len(request.files.getlist("btn-upload-format")):
-        book_id = request.form.get('book_id', -1)
-        return do_edit_book(book_id, request.files.getlist("btn-upload-format"))
+        book_id = int(request.form.get('book_id', -1))
+        result = do_edit_book(book_id, request.files.getlist("btn-upload-format"))
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="upload",
+            resource_type="book_format",
+            resource_id=book_id,
+            details="New format uploaded for book",
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
+        return result
     elif len(request.files.getlist("btn-upload")):
         for requested_file in request.files.getlist("btn-upload"):
             try:
@@ -159,6 +196,14 @@ def upload():
                 upload_text = N_("File %(file)s uploaded", file=link)
                 WorkerThread.add(current_user.name, TaskUpload(upload_text, escape(title)))
                 helper.add_book_to_thumbnail_cache(book_id)
+                ub.create_audit_log_entry(
+                    user_id=current_user.id,
+                    action="upload",
+                    resource_type="book",
+                    resource_id=book_id,
+                    details="New book uploaded: {}".format(title),
+                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                )
 
                 if len(request.files.getlist("btn-upload")) < 2:
                     if current_user.role_edit() or current_user.role_admin():
@@ -198,6 +243,14 @@ def convert_bookformat(book_id):
         flash(_("Book successfully queued for converting to %(book_format)s",
                 book_format=book_format_to),
               category="success")
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="convert",
+            resource_type="book",
+            resource_id=book_id,
+            details="Book queued for conversion from {} to {}".format(book_format_from, book_format_to),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
     else:
         flash(_("There was an error converting this book: %(res)s", res=rtn), category="error")
     return redirect(url_for('edit-book.show_edit_book', book_id=book_id))
@@ -224,6 +277,18 @@ def edit_list_book(param):
     multi = vals.get('multi', False) == "True"
     ret_value = edit_book_param(param, vals, multi)
     trigger_rebuild_async(f"editbooks:{param}")
+    book_ids = vals.get('pk', [])
+    if isinstance(book_ids, int):
+        book_ids = [book_ids]
+    for bid in book_ids:
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="edit",
+            resource_type="book",
+            resource_id=bid,
+            details="Book field edited: {}".format(param),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
     if isinstance(ret_value, dict):
         return jsonify(ret_value)
     else:
@@ -301,6 +366,15 @@ def edit_selected_books():
         if out[0].get('success') != True:
             res.extend(out)
     if len(res) == 0:
+        for bid in selections:
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="edit",
+                resource_type="book",
+                resource_id=bid,
+                details="Bulk edit selected books",
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         return jsonify([{'success': True, "msg": _("Changes successfully applied")}])
     else:
         return jsonify(res)
@@ -513,6 +587,14 @@ def archive_selected_books():
                                                 message="Book {} archive bit set to: {}".format(book_id, state))
             if is_archived:
                 kobo_sync_status.remove_synced_book(book_id)
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="edit",
+                resource_type="book",
+                resource_id=book_id,
+                details="Book archive status set to: {}".format(state),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         return json.dumps({'success': True})
     return ""
 
@@ -527,6 +609,14 @@ def read_selected_books():
         try:
             for book_id in vals:
                 ret = helper.edit_book_read_status(book_id, markAsRead)
+                ub.create_audit_log_entry(
+                    user_id=current_user.id,
+                    action="edit",
+                    resource_type="book",
+                    resource_id=book_id,
+                    details="Book read status set to: {}".format(markAsRead),
+                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                )
 
         except (OperationalError, IntegrityError, StaleDataError) as e:
             calibre_db.session.rollback()
@@ -548,6 +638,7 @@ def merge_list_book():
     if vals:
         # load all formats from target book
         to_book = calibre_db.get_book(vals[0])
+        target_id = vals[0]
         vals.pop(0)
         if to_book:
             for file in to_book.data:
@@ -565,14 +656,22 @@ def merge_list_book():
                                                                          to_book.path,
                                                                          to_name + "." + element.format.lower()))
                             filepath_old = os.path.normpath(os.path.join(config.get_book_path(),
-                                                                         from_book.path,
-                                                                         element.name + "." + element.format.lower()))
+                                                                          from_book.path,
+                                                                          element.name + "." + element.format.lower()))
                             copyfile(filepath_old, filepath_new)
                             to_book.data.append(db.Data(to_book.id,
                                                         element.format,
                                                         element.uncompressed_size,
                                                         to_name))
                     check_delete_book([from_book.id], "", True)
+                    ub.create_audit_log_entry(
+                        user_id=current_user.id,
+                        action="merge",
+                        resource_type="book",
+                        resource_id=target_id,
+                        details="Merged book {} into {}".format(book_id, target_id),
+                        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    )
                     return make_response(jsonify(success=True))
     return ""
 
@@ -608,6 +707,14 @@ def table_xchange_author_title():
             if modify_date:
                 book.last_modified = datetime.now(timezone.utc)
                 calibre_db.set_metadata_dirty(book.id)
+                ub.create_audit_log_entry(
+                    user_id=current_user.id,
+                    action="edit",
+                    resource_type="book",
+                    resource_id=book.id,
+                    details="Author/title swapped for book: {}".format(book.title),
+                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                )
             try:
                 calibre_db.session.commit()
             except (OperationalError, IntegrityError, StaleDataError) as e:

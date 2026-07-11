@@ -6,7 +6,7 @@ from flask_babel import gettext as _
 from markupsafe import Markup
 
 from .cw_login import current_user
-from . import config, calibre_db, logger, uploader, helper, csrf, db
+from . import config, calibre_db, logger, uploader, helper, csrf, db, ub
 from .editbooks import file_handling_on_upload, create_book_on_upload, move_coverfile, edit_book_comments
 from .helper import add_book_to_thumbnail_cache
 
@@ -125,6 +125,14 @@ def api_webhook_upload():
 
         log.debug("Adding to thumbnail cache")
         add_book_to_thumbnail_cache(book_id)
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="upload",
+            resource_type="book",
+            resource_id=book_id,
+            details="API upload: {}".format(title),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
 
         log.info(f"Upload API success: book_id={book_id}, title={title}")
         return jsonify(

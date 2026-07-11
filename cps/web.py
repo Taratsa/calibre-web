@@ -25,6 +25,7 @@ import subprocess
 import chardet  # dependency of requests
 import copy
 import time
+import requests
 from importlib.metadata import metadata
 
 from flask import Blueprint, jsonify, request, redirect, send_from_directory, make_response, flash, abort, url_for, g
@@ -222,18 +223,28 @@ def trigger_rebuild_frontend():
         abort(403)
     if request.headers.get("X-Frontend-Token") != config.config_frontend_rebuild_token:
         abort(403)
+    target = getattr(config, "config_frontend_rebuild_url", None) \
+        or os.environ.get("FRONTEND_REBUILD_URL", "") \
+        or "http://host.docker.internal:9999/rebuild"
+    token = config.config_frontend_rebuild_token or ""
     try:
-        subprocess.Popen(
-            ["/usr/local/bin/rebuild-frontend.sh"],
-            stdout=open("/tmp/rebuild-frontend.log", "a"),
-            stderr=subprocess.STDOUT,
-            start_new_session=True,
+        resp = requests.post(
+            target,
+            headers={"X-Frontend-Token": token},
+            timeout=3,
         )
-        log.info("Frontend rebuild triggered by user %s", current_user.name)
-        return jsonify({"ok": True, "queued": True}), 202
+        log.info(
+            "Frontend rebuild forwarded to %s by user %s (status=%d)",
+            target, current_user.name, resp.status_code,
+        )
+        return jsonify({
+            "ok": resp.ok,
+            "queued": True,
+            "host_status": resp.status_code,
+        }), 202 if resp.ok else 502
     except Exception as exc:
-        log.error("Failed to spawn rebuild: %s", exc)
-        return jsonify({"ok": False, "error": str(exc)}), 500
+        log.error("Frontend rebuild forwarder failed: %s", exc)
+        return jsonify({"ok": False, "error": str(exc)}), 502
 
 
 # ################################### Login logic and rights management ###############################################
@@ -1287,6 +1298,35 @@ def get_cover(book_id, resolution=None):
     return get_book_cover(book_id, cover_resolution, accept_webp=accept_webp)
 
 
+@web.route("/cover_thumb/<int:book_id>")
+def get_cover_thumb(book_id):
+    from flask import make_response, send_from_directory, abort
+    import os
+
+    book = calibre_db.get_filtered_book(book_id)
+    if not book:
+        abort(404)
+
+    book_path = book.path
+    cover_webp = os.path.join(config.config_calibre_dir, book_path, 'cover.webp')
+    cover_jpg = os.path.join(config.config_calibre_dir, book_path, 'cover.jpg')
+
+    if os.path.isfile(cover_webp):
+        response = make_response(send_from_directory(os.path.dirname(cover_webp), 'cover.webp'))
+        response.headers['Content-Type'] = 'image/webp'
+        response.headers['Cache-Control'] = 'public, max-age=604800'
+        response.headers['Vary'] = 'Accept-Encoding'
+        return response
+    elif os.path.isfile(cover_jpg):
+        response = make_response(send_from_directory(os.path.dirname(cover_jpg), 'cover.jpg'))
+        response.headers['Content-Type'] = 'image/jpeg'
+        response.headers['Cache-Control'] = 'public, max-age=604800'
+        response.headers['Vary'] = 'Accept-Encoding'
+        return response
+
+    abort(404)
+
+
 @web.route("/series_cover/<int:series_id>")
 @web.route("/series_cover/<int:series_id>/<string:resolution>")
 @login_required_if_no_ano
@@ -1649,8 +1689,16 @@ def send_to_ereader(book_id, book_format, convert):
                            current_user.name)
         if result is None:
             ub.update_download(book_id, int(current_user.id))
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="send",
+                resource_type="book",
+                resource_id=book_id,
+                details="Book sent to eReader: {} {}".format(book_id, book_format),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
             response = [{'type': "success", 'message': _("Success! Book queued for sending to %(eReadermail)s",
-                                                       eReadermail=current_user.kindle_mail)}]
+                                                        eReadermail=current_user.kindle_mail)}]
         else:
             response = [{'type': "danger", 'message': _("Oops! There was an error sending book: %(res)s", res=result)}]
     else:
@@ -1699,6 +1747,14 @@ def register_post():
         try:
             ub.session.add(content)
             ub.session.commit()
+            ub.create_audit_log_entry(
+                user_id=content.id,
+                action="register",
+                resource_type="user",
+                resource_id=content.id,
+                details="User self-registered: {}".format(nickname),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
             if feature_support['oauth']:
                 register_user_with_oauth(content)
             send_registration_mail(strip_whitespaces(to_save.get("email", "")), nickname, password)
@@ -1898,6 +1954,14 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
         ub.session.commit()
         flash(_("Success! Profile Updated"), category="success")
         log.debug("Profile updated")
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="edit",
+            resource_type="user",
+            resource_id=current_user.id,
+            details="Profile updated by user: {}".format(current_user.name),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
     except IntegrityError:
         ub.session.rollback()
         flash(_("Oops! An account already exists for this Email."), category="error")

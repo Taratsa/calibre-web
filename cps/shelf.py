@@ -92,6 +92,14 @@ def add_to_shelf(shelf_id, book_id):
             return redirect(request.environ["HTTP_REFERER"])
         else:
             return redirect(url_for('web.index'))
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="create",
+        resource_type="shelf_book",
+        resource_id="{}:{}".format(shelf_id, book_id),
+        details="Book {} added to shelf {}".format(book_id, shelf.name),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     if not xhr:
         log.debug("Book has been added to shelf: {}".format(shelf.name))
         flash(_("Book has been added to shelf: %(sname)s", sname=shelf.name), category="success")
@@ -138,6 +146,14 @@ def search_from_shelf(shelf_id):
         try:
             ub.session.commit()
             flash(_("Books have been removed from shelf: %(sname)s", sname=shelf.name), category="success")
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="delete",
+                resource_type="shelf_book",
+                resource_id=shelf_id,
+                details="Books removed from shelf {}: {}".format(shelf.name, books_from_shelf),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         except (OperationalError, InvalidRequestError) as e:
             ub.session.rollback()
             log.error_or_exception("Settings Database error: {}".format(e))
@@ -188,6 +204,14 @@ def search_to_shelf(shelf_id):
             ub.session.merge(shelf)
             ub.session.commit()
             flash(_("Books have been added to shelf: %(sname)s", sname=shelf.name), category="success")
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="create",
+                resource_type="shelf_book",
+                resource_id=shelf_id,
+                details="Books added to shelf {}: {}".format(shelf.name, books_for_shelf),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         except (OperationalError, InvalidRequestError) as e:
             ub.session.rollback()
             log.error_or_exception("Settings Database error: {}".format(e))
@@ -239,6 +263,14 @@ def remove_from_shelf(shelf_id, book_id):
                 return redirect(request.environ["HTTP_REFERER"])
             else:
                 return redirect(url_for('web.index'))
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="delete",
+            resource_type="shelf_book",
+            resource_id="{}:{}".format(shelf_id, book_id),
+            details="Book {} removed from shelf {}".format(book_id, shelf.name),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
         if not xhr:
             flash(_("Book has been removed from shelf: %(sname)s", sname=shelf.name), category="success")
             if "HTTP_REFERER" in request.environ:
@@ -276,11 +308,20 @@ def edit_shelf(shelf_id):
 @user_login_required
 def delete_shelf(shelf_id):
     cur_shelf = ub.session.query(ub.Shelf).filter(ub.Shelf.id == shelf_id).first()
+    shelf_name = cur_shelf.name if cur_shelf else "unknown"
     try:
         if not delete_shelf_helper(cur_shelf):
             flash(_("Error deleting Shelf"), category="error")
         else:
             flash(_("Shelf successfully deleted"), category="success")
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="delete",
+                resource_type="shelf",
+                resource_id=shelf_id,
+                details="Shelf deleted: {}".format(shelf_name),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
     except InvalidRequestError as e:
         ub.session.rollback()
         log.error_or_exception("Settings Database error: {}".format(e))
@@ -321,6 +362,14 @@ def order_shelf(shelf_id):
                 # if order different from before -> shelf.last_modified = datetime.now(timezone.utc)
             try:
                 ub.session.commit()
+                ub.create_audit_log_entry(
+                    user_id=current_user.id,
+                    action="edit",
+                    resource_type="shelf",
+                    resource_id=shelf_id,
+                    details="Shelf order changed for: {}".format(shelf.name),
+                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                )
             except (OperationalError, InvalidRequestError) as e:
                 ub.session.rollback()
                 log.error_or_exception("Settings Database error: {}".format(e))
@@ -393,6 +442,14 @@ def create_edit_shelf(shelf, page_title, page, shelf_id=False):
                 ub.session.commit()
                 log.info("Shelf {} {}".format(shelf_title, shelf_action))
                 flash(flash_text, category="success")
+                ub.create_audit_log_entry(
+                    user_id=current_user.id,
+                    action=shelf_action,
+                    resource_type="shelf",
+                    resource_id=shelf.id,
+                    details="Shelf {}: {}".format(shelf_action, shelf_title),
+                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                )
                 return redirect(url_for('shelf.show_shelf', shelf_id=shelf.id))
             except (OperationalError, InvalidRequestError) as ex:
                 ub.session.rollback()

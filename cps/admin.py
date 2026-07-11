@@ -149,8 +149,18 @@ def shutdown():
 
         if task == 0:
             show_text['text'] = _('Server restarted, please reload page.')
+            action_text = "restart"
         else:
             show_text['text'] = _('Performing Server shutdown, please close window.')
+            action_text = "shutdown"
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action=action_text,
+            resource_type="server",
+            resource_id="",
+            details="Server {} initiated".format(action_text),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
         # stop gevent/tornado server
         web_server.stop(task == 0)
         return json.dumps(show_text)
@@ -257,14 +267,32 @@ def configuration():
 @user_login_required
 @admin_required
 def ajax_config():
-    return _configuration_update_helper()
+    resp = _configuration_update_helper()
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="config",
+        resource_id="basic",
+        details="Basic configuration updated",
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
+    return resp
 
 
 @admi.route("/admin/ajaxdbconfig", methods=["POST"])
 @user_login_required
 @admin_required
 def ajax_db_config():
-    return _db_configuration_update_helper()
+    resp = _db_configuration_update_helper()
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="config",
+        resource_id="db",
+        details="Database configuration updated",
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
+    return resp
 
 
 @admi.route("/admin/alive", methods=["GET"])
@@ -403,6 +431,14 @@ def delete_user():
         try:
             message = _delete_user(user)
             count += 1
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="delete",
+                resource_type="user",
+                resource_id=user.id,
+                details="Deleted user: {}".format(user.name),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         except Exception as ex:
             log.error(ex)
             errors.append({'type': "danger", 'message': str(ex)})
@@ -542,6 +578,16 @@ def edit_list_user(param):
         except Exception as ex:
             log.error_or_exception(ex)
             return str(ex), 400
+    for user in users:
+        if user:
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="edit",
+                resource_type="user",
+                resource_id=user.id,
+                details="Edited user {}: field {} changed".format(user.name, param),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
     ub.session_commit()
     return ""
 
@@ -603,6 +649,14 @@ def update_view_configuration():
     config.save()
     flash(_("Calibre-Web configuration updated"), category="success")
     log.debug("Calibre-Web configuration updated")
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="config",
+        resource_id="ui",
+        details="UI configuration updated",
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     before_request()
 
     return view_configuration()
@@ -661,6 +715,14 @@ def edit_domain(allow):
     vals = request.form.to_dict()
     answer = ub.session.query(ub.Registration).filter(ub.Registration.id == vals['pk']).first()
     answer.domain = vals['value'].replace('*', '%').replace('?', '_').lower()
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="domain",
+        resource_id=vals['pk'],
+        details="Edited registration domain: {}".format(answer.domain),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return ub.session_commit("Registering Domains edited {}".format(answer.domain))
 
 
@@ -674,6 +736,14 @@ def add_domain(allow):
     if not check:
         new_domain = ub.Registration(domain=domain_name, allow=allow)
         ub.session.add(new_domain)
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="create",
+            resource_type="domain",
+            resource_id=new_domain.id,
+            details="Added registration domain: {}".format(domain_name),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
         ub.session_commit("Registering Domains added {}".format(domain_name))
     return ""
 
@@ -685,6 +755,14 @@ def delete_domain():
     try:
         domain_id = request.form.to_dict()['domainid'].replace('*', '%').replace('?', '_').lower()
         ub.session.query(ub.Registration).filter(ub.Registration.id == domain_id).delete()
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="delete",
+            resource_type="domain",
+            resource_id=domain_id,
+            details="Deleted registration domain",
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
         ub.session_commit("Registering Domains deleted {}".format(domain_id))
         # If last domain was deleted, add all domains by default
         if not ub.session.query(ub.Registration).filter(ub.Registration.allow == 1).count():
@@ -714,6 +792,9 @@ def list_domain(allow):
 @admin_required
 def edit_restriction(res_type, user_id):
     element = request.form.to_dict()
+    restriction_names = {0: "allowed_tags", 1: "allowed_column_values", 2: "per_user_allowed_tags", 3: "per_user_allowed_columns",
+                         4: "denied_tags", 5: "denied_column_values", 6: "per_user_denied_tags", 7: "per_user_denied_columns"}
+    res_name = restriction_names.get(res_type, "unknown_restriction")
     if element['id'].startswith('a'):
         if res_type == 0:  # Tags as template
             elementlist = config.list_allowed_tags()
@@ -772,6 +853,14 @@ def edit_restriction(res_type, user_id):
             elementlist[int(element['id'][1:])] = element['Element']
             usr.denied_column_value = ','.join(elementlist)
             ub.session_commit("Changed denied columns of user {} to {}".format(usr.name, usr.denied_column_value))
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="edit",
+        resource_type="restriction",
+        resource_id="{}:{}".format(res_type, user_id),
+        details="Edited restriction: {}".format(res_name),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return ""
 
 
@@ -787,6 +876,9 @@ def add_user_0_restriction(res_type):
 @admin_required
 def add_restriction(res_type, user_id):
     element = request.form.to_dict()
+    restriction_types = {0: "allowed_tags_template", 1: "allowed_column_values_template",
+                         2: "per_user_tags", 3: "per_user_column_values"}
+    res_name = restriction_types.get(res_type, "unknown_restriction")
     if res_type == 0:  # Tags as template
         if 'submit_allow' in element:
             config.config_allowed_tags = restriction_addition(element, config.list_allowed_tags)
@@ -819,13 +911,20 @@ def add_restriction(res_type, user_id):
             usr = current_user
         if 'submit_allow' in element:
             usr.allowed_column_value = restriction_addition(element, usr.list_allowed_column_values)
-            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name,
-                                                                                usr.list_allowed_column_values()))
+            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name, usr.list_allowed_column_values()))
         elif 'submit_deny' in element:
             usr.denied_column_value = restriction_addition(element, usr.list_denied_column_values)
-            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name,
-                                                                               usr.list_denied_column_values()))
+            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name, usr.list_denied_column_values()))
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="create",
+        resource_type="restriction",
+        resource_id="{}:{}".format(res_type, user_id),
+        details="Added restriction: {}".format(res_name),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return ""
+
 
 
 @admi.route("/ajax/deleterestriction/<int:res_type>", methods=['POST'])
@@ -834,51 +933,60 @@ def add_restriction(res_type, user_id):
 def delete_user_0_restriction(res_type):
     return delete_restriction(res_type, 0)
 
-
 @admi.route("/ajax/deleterestriction/<int:res_type>/<int:user_id>", methods=['POST'])
 @user_login_required
 @admin_required
 def delete_restriction(res_type, user_id):
     element = request.form.to_dict()
+    restriction_types = {0: "denied_tags_template", 1: "denied_column_values_template",
+                         2: "per_user_tags", 3: "per_user_column_values"}
+    res_name = restriction_types.get(res_type, "unknown_restriction")
     if res_type == 0:  # Tags as template
-        if element['id'].startswith('a'):
+        if 'submit_allow' in element:
             config.config_allowed_tags = restriction_deletion(element, config.list_allowed_tags)
             config.save()
-        elif element['id'].startswith('d'):
+        elif 'submit_deny' in element:
             config.config_denied_tags = restriction_deletion(element, config.list_denied_tags)
             config.save()
-    elif res_type == 1:  # CustomC as template
-        if element['id'].startswith('a'):
+    if res_type == 1:  # CustomC as template
+        if 'submit_allow' in element:
             config.config_allowed_column_value = restriction_deletion(element, config.list_allowed_column_values)
             config.save()
-        elif element['id'].startswith('d'):
+        elif 'submit_deny' in element:
             config.config_denied_column_value = restriction_deletion(element, config.list_denied_column_values)
             config.save()
-    elif res_type == 2:  # Tags per user
+    if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
         else:
             usr = current_user
-        if element['id'].startswith('a'):
+        if 'submit_allow' in element:
             usr.allowed_tags = restriction_deletion(element, usr.list_allowed_tags)
-            ub.session_commit("Deleted allowed tags of user {}: {}".format(usr.name, element['Element']))
-        elif element['id'].startswith('d'):
+            ub.session_commit("Changed allowed tags of user {} to {}".format(usr.name, usr.list_allowed_tags()))
+        elif 'submit_deny' in element:
             usr.denied_tags = restriction_deletion(element, usr.list_denied_tags)
-            ub.session_commit("Deleted denied tag of user {}: {}".format(usr.name, element['Element']))
-    elif res_type == 3:  # Columns per user
+            ub.session_commit("Changed denied tags of user {} to {}".format(usr.name, usr.list_denied_tags()))
+    if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
         else:
             usr = current_user
-        if element['id'].startswith('a'):
+        if 'submit_allow' in element:
             usr.allowed_column_value = restriction_deletion(element, usr.list_allowed_column_values)
-            ub.session_commit("Deleted allowed columns of user {}: {}".format(usr.name,
-                                                                              usr.list_allowed_column_values()))
-
-        elif element['id'].startswith('d'):
+            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name,
+                                                                               usr.list_allowed_column_values()))
+        elif 'submit_deny' in element:
             usr.denied_column_value = restriction_deletion(element, usr.list_denied_column_values)
-            ub.session_commit("Deleted denied columns of user {}: {}".format(usr.name,
-                                                                             usr.list_denied_column_values()))
+            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name,
+                                                                               usr.list_denied_column_values()))
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="delete",
+        resource_type="restriction",
+        resource_id="{}:{}".format(res_type, user_id),
+        details="Deleted restriction: {}".format(res_name),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return ""
 
 
@@ -1282,6 +1390,14 @@ def new_user():
     if request.method == "POST":
         to_save = request.form.to_dict()
         _handle_new_user(to_save, content, languages, translations, kobo_support)
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="create",
+            resource_type="user",
+            resource_id=content.id,
+            details="Created user: {}".format(content.name),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
     else:
         content.role = config.config_default_role
         content.sidebar_view = config.config_default_show
@@ -1355,6 +1471,14 @@ def update_mailsettings():
             flash(_("Please configure your e-mail address first..."), category="error")
     else:
         flash(_("Email Server Settings updated"), category="success")
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="edit",
+            resource_type="config",
+            resource_id="mail",
+            details="Email server settings updated",
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
 
     return edit_mailsettings()
 
@@ -1405,6 +1529,14 @@ def update_scheduledtasks():
         try:
             config.save()
             flash(_("Scheduled tasks settings updated"), category="success")
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="edit",
+                resource_type="config",
+                resource_id="scheduled_tasks",
+                details="Scheduled tasks settings updated",
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
 
             # Cancel any running tasks
             schedule.end_scheduled_tasks()
@@ -1439,6 +1571,14 @@ def edit_user(user_id):
         resp = _handle_edit_user(to_save, content, languages, translations, kobo_support)
         if resp:
             return resp
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="edit",
+            resource_type="user",
+            resource_id=user_id,
+            details="Edited user: {}".format(content.name),
+            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        )
     return render_title_template("user_edit.html",
                                  translations=translations,
                                  languages=languages,
@@ -1461,6 +1601,14 @@ def reset_user_password(user_id):
         if ret == 1:
             log.debug("Password for user %s reset", message)
             flash(_("Success! Password for user %(user)s reset", user=message), category="success")
+            ub.create_audit_log_entry(
+                user_id=current_user.id,
+                action="edit",
+                resource_type="user",
+                resource_id=user_id,
+                details="Password reset for user: {}".format(message),
+                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            )
         elif ret == 0:
             log.error("An unknown error occurred. Please try again later.")
             flash(_("Oops! An unknown error occurred. Please try again later."), category="error")
@@ -1513,6 +1661,25 @@ def download_log(logtype):
     if logger.is_valid_logfile(file_name):
         return debug_info.assemble_logfiles(file_name)
     abort(404)
+
+
+@admi.route("/admin/audit_log")
+@user_login_required
+@admin_required
+def view_audit_log():
+    page = int(request.args.get('page', 1))
+    entries_per_page = 50
+    total = ub.session.query(ub.AuditLog).count()
+    entries = ub.session.query(ub.AuditLog).order_by(
+        ub.AuditLog.created.desc()).offset((page - 1) * entries_per_page).limit(entries_per_page).all()
+    pages = (total + entries_per_page - 1) // entries_per_page
+    return render_title_template("audit_log.html",
+                                 entries=entries,
+                                 cur_page=page,
+                                 pages=pages,
+                                 total=total,
+                                 title=_("Audit Log"),
+                                 page="audit_log")
 
 
 @admi.route("/admin/debug")
@@ -1680,6 +1847,14 @@ def import_ldap_users():
             showtext['text'] = _(u'At Least One LDAP User Not Found in Database')
     if not showtext:
         showtext['text'] = _(u'{} User Successfully Imported'.format(imported))
+    ub.create_audit_log_entry(
+        user_id=current_user.id,
+        action="create",
+        resource_type="user",
+        resource_id="ldap",
+        details="LDAP users imported: {}".format(imported),
+        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+    )
     return json.dumps(showtext)
 
 

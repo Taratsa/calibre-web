@@ -513,6 +513,25 @@ class Downloads(Base):
         return '<Download %r' % self.book_id
 
 
+# Baseclass representing audit log entries for user actions
+class AuditLog(Base):
+    __tablename__ = 'audit_log'
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
+    action = Column(String(64), nullable=False)
+    resource_type = Column(String(64), nullable=False)
+    resource_id = Column(String(128), nullable=True)
+    details = Column(String(4096), nullable=True)
+    ip_address = Column(String(45), nullable=True)
+    created = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    user = relationship('User', foreign_keys=[user_id])
+
+    def __repr__(self):
+        return '<AuditLog %r %r %r>' % (self.user_id, self.action, self.resource_type)
+
+
 # Baseclass representing allowed domains for registration
 class Registration(Base):
     __tablename__ = 'registration'
@@ -658,6 +677,24 @@ def delete_download(book_id):
         session.commit()
     except exc.OperationalError:
         session.rollback()
+
+
+# Create an audit log entry
+def create_audit_log_entry(user_id, action, resource_type, resource_id=None, details=None, ip_address=None):
+    entry = AuditLog(
+        user_id=user_id,
+        action=action,
+        resource_type=resource_type,
+        resource_id=str(resource_id) if resource_id is not None else None,
+        details=details,
+        ip_address=ip_address
+    )
+    session.add(entry)
+    try:
+        session.commit()
+    except exc.OperationalError:
+        session.rollback()
+
 
 # Generate user Guest (translated text), as anonymous user, no rights
 def create_anonymous_user(_session):
