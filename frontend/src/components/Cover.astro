@@ -7,20 +7,50 @@ export interface Props {
   loading?: 'eager' | 'lazy' | 'auto';
   fetchpriority?: 'high' | 'low' | 'auto';
   class?: string;
+  sizes?: string;
 }
 
-const { image, alt, width, height, loading = 'lazy', fetchpriority = 'auto', class: cls } = Astro.props;
+const { image, alt, width, height, loading = 'lazy', fetchpriority = 'auto', class: cls, sizes = '(max-width: 600px) 45vw, 200px' } = Astro.props;
 
-// Emit WebP via /cover/<id> path; the Flask cover endpoint accepts Accept
-// negotiation via helper._convert_to_webp. Browsers get WebP, others JPEG.
+// /cover_thumb/<id> serves pre-generated WebP thumbnails via the Thumbnail system
+// (resolutions: sm ~165px, md ~510px, lg ~1020px tall). Use srcset for responsive sizing.
+// /cover/<id> uses Accept header negotiation; only WebP is offered via <picture>.
+const isCoverThumbPath = image.startsWith('/cover_thumb/');
 const isCoverPath = image.startsWith('/cover/');
+
+// Strip any existing query string so we can append our own size suffixes cleanly.
+const [basePath, existingQuery = ''] = image.split('?');
+const querySep = existingQuery ? '&' : '';
+
+function withSize(path: string, suffix: string): string {
+  return `${path}${suffix}${existingQuery ? querySep + existingQuery : ''}`;
+}
+
+// Resolution targets: sm=255h (~165w), md=510h (~340w), lg=1020h (~680w)
+const srcsetSm = withSize(basePath, '/sm');
+const srcsetMd = withSize(basePath, '/md');
+const srcsetLg = withSize(basePath, '/lg');
+const fallbackSrc = withSize(basePath, existingQuery ? '?' + existingQuery : '');
 ---
 
-{isCoverPath ? (
+{isCoverThumbPath ? (
+  <img
+    src={fallbackSrc}
+    srcset={`${srcsetSm} 165w, ${srcsetMd} 340w, ${srcsetLg} 680w`}
+    sizes={sizes}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    class={cls}
+  />
+) : isCoverPath ? (
   <picture>
     <source srcset={`${image}?fm=webp`} type="image/webp" />
-    <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} class={cls} />
+    <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" class={cls} />
   </picture>
 ) : (
-  <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} class={cls} />
+  <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" class={cls} />
 )}

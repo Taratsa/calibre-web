@@ -12,9 +12,9 @@ const { books, cols = 5 } = Astro.props;
 
 {books.length > 0 ? (
   <ul class={`book-grid book-grid--cols-${cols}`}>
-    {books.map(book => (
+    {books.map((book, index) => (
       <li>
-        <BookCard book={book} />
+        <BookCard book={book} priority={index < 4} />
       </li>
     ))}
   </ul>

@@ -70,6 +70,13 @@ from .embed_helper import do_calibre_export
 
 log = logger.create()
 
+
+def get_client_ip():
+    from flask import request
+    return (request.headers.get('CF-Connecting-IP') or
+            request.headers.get('X-Forwarded-For', '').split(',')[0].strip() or
+            request.remote_addr)
+
 try:
     from wand.image import Image
     from wand.exceptions import MissingDelegateError, BlobError
@@ -740,73 +747,39 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 
         # Send the book cover thumbnail if it exists in cache
         if resolution:
-            thumbnail = get_book_cover_thumbnail(book, resolution)
-            if thumbnail:
-                cache = fs.FileSystem()
-                thumbnail_path = cache.get_cache_file_path(thumbnail.filename, CACHE_TYPE_THUMBNAILS)
-                if cache.get_cache_file_exists(thumbnail.filename, CACHE_TYPE_THUMBNAILS):
-                    # Check for pre-generated WebP version
-                    if accept_webp:
-                        webp_filename = thumbnail.uuid + '.webp'
-                        webp_path = cache.get_cache_file_path(webp_filename, CACHE_TYPE_THUMBNAILS)
-                        if os.path.isfile(webp_path):
-                            try:
-                                from cps.web import COVER_REQUESTS, prometheus_available
-                                if prometheus_available:
-                                    COVER_REQUESTS.labels(resolution='thumbnail', converted_to_webp='false').inc()
-                            except (ImportError, AttributeError):
-                                pass
-                            response = make_response(send_from_directory(
-                                cache.get_cache_file_dir(webp_filename, CACHE_TYPE_THUMBNAILS),
-                                webp_filename))
-                            response.headers['Content-Type'] = 'image/webp'
-                            response.headers['Cache-Control'] = 'public, max-age=604800'
-                            response.headers['Vary'] = 'Accept-Encoding'
-                            return response
-                    # Fall back to JPEG
-                    try:
-                        from cps.web import COVER_REQUESTS, prometheus_available
-                        if prometheus_available:
-                            COVER_REQUESTS.labels(resolution='thumbnail', converted_to_webp='false').inc()
-                    except (ImportError, AttributeError):
-                        pass
-                    return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
-                                               thumbnail.filename)
+            cache = fs.FileSystem()
+            thumb_dir = cache.get_cache_dir(CACHE_TYPE_THUMBNAILS)
+            base = f"cover_{book.id}_r{resolution}"
+            jpg_path = os.path.join(thumb_dir, base + '.jpg')
+            webp_path = os.path.join(thumb_dir, base + '.webp')
 
-                # Generate thumbnail on-the-fly when not cached
-                try:
-                    from shutil import copyfile, copyfileobj
-                    from io import BytesIO
-                    cover_path = os.path.join(config.get_book_path(), book.path, 'cover.jpg')
-                    if os.path.isfile(cover_path):
-                        new_thumb = ub.Thumbnail()
-                        new_thumb.type = THUMBNAIL_TYPE_COVER
-                        new_thumb.entity_id = book.id
-                        new_thumb.format = 'jpeg'
-                        new_thumb.resolution = resolution
-                        ub.session.add(new_thumb)
-                        ub.session.commit()
-                        thumb_filename = cache.get_cache_file_path(new_thumb.filename, CACHE_TYPE_THUMBNAILS)
-                        with Image(filename=cover_path) as img:
-                            h = int(255 * resolution)
-                            if img.height > h:
-                                w = int((h / float(img.height)) * img.width)
-                                if w % 2 != 0:
-                                    w += 1
-                                img.resize(width=w, height=h, filter='lanczos')
-                                img.format = 'jpeg'
-                                img.save(filename=thumb_filename)
-                            else:
-                                copyfile(cover_path, thumb_filename)
+            if accept_webp and os.path.isfile(webp_path):
+                return send_from_directory(thumb_dir, base + '.webp')
+            if not accept_webp and os.path.isfile(jpg_path):
+                return send_from_directory(thumb_dir, base + '.jpg')
+
+            # Generate thumbnail on-the-fly when not cached
+            try:
+                cover_path = os.path.join(config.get_book_path(), book.path, 'cover.jpg')
+                if os.path.isfile(cover_path):
+                    h = int(255 * resolution)
+                    with Image(filename=cover_path) as img:
+                        if img.height > h:
+                            w = int((h / float(img.height)) * img.width)
+                            if w % 2 != 0:
+                                w += 1
+                            img.resize(width=w, height=h, filter='lanczos')
                         if accept_webp:
-                            with open(cover_path, 'rb') as f:
-                                return _convert_to_webp(f.read(), 'image/jpeg')
-                        return send_from_directory(cache.get_cache_file_dir(new_thumb.filename, CACHE_TYPE_THUMBNAILS),
-                                                   new_thumb.filename)
-                except Exception as ex:
-                    log.error_or_exception('on-the-fly thumbnail generation failed: %s', ex)
-                    ub.session.rollback()
-                    # fall through to serve original cover
+                            img.format = 'webp'
+                            img.save(filename=webp_path)
+                            return send_from_directory(thumb_dir, base + '.webp')
+                        else:
+                            img.format = 'jpeg'
+                            img.save(filename=jpg_path)
+                            return send_from_directory(thumb_dir, base + '.jpg')
+            except Exception as ex:
+                log.error_or_exception('on-the-fly thumbnail generation failed: %s', ex)
+                # fall through to serve original cover
 
         # Send the book cover from Google Drive if configured
         if config.config_use_google_drive:
@@ -1242,9 +1215,8 @@ def get_download_link(book_id, book_format, client):
     if book:
         data1 = calibre_db.get_book_format(book.id, book_format.upper())
         if data1:
-            # collect downloaded books only for registered user and not for anonymous user
-            if current_user.is_authenticated:
-                ub.update_download(book_id, int(current_user.id))
+            user_id = int(current_user.id) if current_user.is_authenticated else 0
+            ub.update_download(book_id, user_id)
             file_name = book.title
             if len(book.authors) > 0:
                 file_name = file_name + ' - ' + book.authors[0].name

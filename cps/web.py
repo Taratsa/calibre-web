@@ -41,7 +41,7 @@ from sqlalchemy.sql.functions import coalesce
 from werkzeug.datastructures import Headers
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from . import constants, logger, isoLanguages, services, limiter
+from . import constants, logger, isoLanguages, services, limiter, helper
 from .ai_catalog import build_catalog
 from . import db, ub, config, app
 from . import calibre_db, kobo_sync_status
@@ -1299,32 +1299,23 @@ def get_cover(book_id, resolution=None):
 
 
 @web.route("/cover_thumb/<int:book_id>")
-def get_cover_thumb(book_id):
-    from flask import make_response, send_from_directory, abort
-    import os
-
-    book = calibre_db.get_filtered_book(book_id)
-    if not book:
-        abort(404)
-
-    book_path = book.path
-    cover_webp = os.path.join(config.config_calibre_dir, book_path, 'cover.webp')
-    cover_jpg = os.path.join(config.config_calibre_dir, book_path, 'cover.jpg')
-
-    if os.path.isfile(cover_webp):
-        response = make_response(send_from_directory(os.path.dirname(cover_webp), 'cover.webp'))
-        response.headers['Content-Type'] = 'image/webp'
+@web.route("/cover_thumb/<int:book_id>/<string:resolution>")
+def get_cover_thumb(book_id, resolution=None):
+    resolutions = {
+        'og': constants.COVER_THUMBNAIL_ORIGINAL,
+        'sm': constants.COVER_THUMBNAIL_SMALL,
+        'md': constants.COVER_THUMBNAIL_MEDIUM,
+        'lg': constants.COVER_THUMBNAIL_LARGE,
+    }
+    cover_resolution = resolutions.get(resolution, constants.COVER_THUMBNAIL_SMALL)
+    accept_webp = 'image/webp' in request.accept_mimetypes
+    response = get_book_cover(book_id, cover_resolution, accept_webp=accept_webp)
+    try:
         response.headers['Cache-Control'] = 'public, max-age=604800'
-        response.headers['Vary'] = 'Accept-Encoding'
-        return response
-    elif os.path.isfile(cover_jpg):
-        response = make_response(send_from_directory(os.path.dirname(cover_jpg), 'cover.jpg'))
-        response.headers['Content-Type'] = 'image/jpeg'
-        response.headers['Cache-Control'] = 'public, max-age=604800'
-        response.headers['Vary'] = 'Accept-Encoding'
-        return response
-
-    abort(404)
+        response.headers['Vary'] = 'Accept, Accept-Encoding' if accept_webp else 'Accept-Encoding'
+    except AttributeError:
+        pass
+    return response
 
 
 @web.route("/series_cover/<int:series_id>")
@@ -1695,7 +1686,7 @@ def send_to_ereader(book_id, book_format, convert):
                 resource_type="book",
                 resource_id=book_id,
                 details="Book sent to eReader: {} {}".format(book_id, book_format),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
             response = [{'type': "success", 'message': _("Success! Book queued for sending to %(eReadermail)s",
                                                         eReadermail=current_user.kindle_mail)}]
@@ -1753,7 +1744,7 @@ def register_post():
                 resource_type="user",
                 resource_id=content.id,
                 details="User self-registered: {}".format(nickname),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
             if feature_support['oauth']:
                 register_user_with_oauth(content)
@@ -1848,11 +1839,11 @@ def login_post():
             log.info(error)
             flash(_(u"Could not login: %(message)s", message=error), category="error")
         else:
-            ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address = helper.get_client_ip()
             log.warning('LDAP Login failed for user "%s" IP-address: %s', username, ip_address)
             flash(_(u"Wrong Username or Password"), category="error")
     else:
-        ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address = helper.get_client_ip()
         if form.get('forgot', "") == 'forgot':
             if user is not None and user.name != "Guest":
                 ret, __ = reset_password(user.id)
@@ -1960,7 +1951,7 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
             resource_type="user",
             resource_id=current_user.id,
             details="Profile updated by user: {}".format(current_user.name),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
     except IntegrityError:
         ub.session.rollback()

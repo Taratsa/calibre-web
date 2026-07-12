@@ -159,7 +159,7 @@ def shutdown():
             resource_type="server",
             resource_id="",
             details="Server {} initiated".format(action_text),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
         # stop gevent/tornado server
         web_server.stop(task == 0)
@@ -274,7 +274,7 @@ def ajax_config():
         resource_type="config",
         resource_id="basic",
         details="Basic configuration updated",
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return resp
 
@@ -290,7 +290,7 @@ def ajax_db_config():
         resource_type="config",
         resource_id="db",
         details="Database configuration updated",
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return resp
 
@@ -437,7 +437,7 @@ def delete_user():
                 resource_type="user",
                 resource_id=user.id,
                 details="Deleted user: {}".format(user.name),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         except Exception as ex:
             log.error(ex)
@@ -588,7 +588,7 @@ def edit_list_user(param):
                 resource_type="user",
                 resource_id=user.id,
                 details="Edited user {}: field {} changed".format(user.name, param),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
     ub.session_commit()
     return ""
@@ -657,7 +657,7 @@ def update_view_configuration():
         resource_type="config",
         resource_id="ui",
         details="UI configuration updated",
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     before_request()
 
@@ -723,7 +723,7 @@ def edit_domain(allow):
         resource_type="domain",
         resource_id=vals['pk'],
         details="Edited registration domain: {}".format(answer.domain),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return ub.session_commit("Registering Domains edited {}".format(answer.domain))
 
@@ -744,7 +744,7 @@ def add_domain(allow):
             resource_type="domain",
             resource_id=new_domain.id,
             details="Added registration domain: {}".format(domain_name),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
         ub.session_commit("Registering Domains added {}".format(domain_name))
     return ""
@@ -763,7 +763,7 @@ def delete_domain():
             resource_type="domain",
             resource_id=domain_id,
             details="Deleted registration domain",
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
         ub.session_commit("Registering Domains deleted {}".format(domain_id))
         # If last domain was deleted, add all domains by default
@@ -869,7 +869,7 @@ def edit_restriction(res_type, user_id):
         resource_type="restriction",
         resource_id="{}:{}".format(res_type, user_id),
         details="Edited restriction: {}".format(res_name),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return ""
 
@@ -935,7 +935,7 @@ def add_restriction(res_type, user_id):
         resource_type="restriction",
         resource_id="{}:{}".format(res_type, user_id),
         details="Added restriction: {}".format(res_name),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return ""
 
@@ -1003,7 +1003,7 @@ def delete_restriction(res_type, user_id):
         resource_type="restriction",
         resource_id="{}:{}".format(res_type, user_id),
         details="Deleted restriction: {}".format(res_name),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return ""
 
@@ -1414,7 +1414,7 @@ def new_user():
             resource_type="user",
             resource_id=content.id,
             details="Created user: {}".format(content.name),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
     else:
         content.role = config.config_default_role
@@ -1495,7 +1495,7 @@ def update_mailsettings():
             resource_type="config",
             resource_id="mail",
             details="Email server settings updated",
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
 
     return edit_mailsettings()
@@ -1553,7 +1553,7 @@ def update_scheduledtasks():
                 resource_type="config",
                 resource_id="scheduled_tasks",
                 details="Scheduled tasks settings updated",
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
 
             # Cancel any running tasks
@@ -1595,7 +1595,7 @@ def edit_user(user_id):
             resource_type="user",
             resource_id=user_id,
             details="Edited user: {}".format(content.name),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
     return render_title_template("user_edit.html",
                                  translations=translations,
@@ -1625,7 +1625,7 @@ def reset_user_password(user_id):
                 resource_type="user",
                 resource_id=user_id,
                 details="Password reset for user: {}".format(message),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         elif ret == 0:
             log.error("An unknown error occurred. Please try again later.")
@@ -1871,7 +1871,7 @@ def import_ldap_users():
         resource_type="user",
         resource_id="ldap",
         details="LDAP users imported: {}".format(imported),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return json.dumps(showtext)
 

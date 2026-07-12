@@ -1,0 +1,18 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllBooks, paginate } from '~/data';
+
+const books = getAllBooks();
+const { items, page, totalPages, total } = paginate(books, 1);
+---
+
+<BaseLayout title="Semua Buku">
+  <h1>Semua Buku</h1>
+  <p>{total} buku dalam katalog.</p>
+
+  <BookGrid books={items} cols={5} />
+
+  <Pagination page={page} totalPages={totalPages} baseUrl="/page" />
+</BaseLayout>

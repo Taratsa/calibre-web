@@ -20,7 +20,7 @@ const all = booksByLanguage(language.lang_code).sort((a, b) =>
 const { items, page: p, totalPages, total } = paginate(all, 1);
 ---
 
-<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)}`}>
+<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)}`} description={`Buku berbahasa ${localeLanguageName(language.lang_code)} (${language.lang_code}) — ${total} buku di Pustaka Taratsa`}>
   <p><a href="/language">‹ Semua bahasa</a></p>
   <h1>{localeLanguageName(language.lang_code)} ({language.lang_code})</h1>
   <p>{total} buku dalam bahasa ini.</p>

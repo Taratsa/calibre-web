@@ -131,7 +131,7 @@ def api_webhook_upload():
             resource_type="book",
             resource_id=book_id,
             details="API upload: {}".format(title),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
 
         log.info(f"Upload API success: book_id={book_id}, title={title}")

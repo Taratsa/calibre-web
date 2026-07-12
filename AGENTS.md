@@ -6,37 +6,89 @@
 
 ## Deployment Pipeline
 
-### Docker Container (Flask App)
-Deployed via `compose.yml`:
+### Docker Stack
+Services defined in `docker-compose.yml`:
+- `calibre-web-automated` - Flask app (Calibre-Web backend)
+- `rebuild-watcher` - Watches Calibre DB, auto-rebuilds frontend on changes
+
 ```bash
-docker compose build    # Build image from Dockerfile
-docker compose up -d    # Deploy container
+docker compose build        # Build all images
+docker compose up -d        # Start all services
+docker compose logs -f      # View logs
+docker compose up -d --build rebuild-watcher  # Force rebuild watcher
 ```
 
-Container serves: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`, `/robots.txt`, static files under `cps/static/`.
+### Flask App (`calibre-web-automated`)
+Serves API endpoints: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`, `/robots.txt`, static files under `cps/static/`.
+
+### Rebuild Watcher (`rebuild-watcher`)
+- Polls `metadata.db` every 5 seconds for changes
+- Debounces 10 seconds before rebuilding
+- Runs `seed.mjs` + `astro build` in Docker
+- Outputs to `./frontend/dist/`
+- Environment variables (see `.env.example`):
+  - `CALIBRE_DB_PATH` - Path to metadata.db
+  - `APP_DB_PATH` - Path to app.db
+  - `FRONTEND_OUTPUT` - Output directory
+  - `WEBHOOK_TOKEN` - Token for rebuild webhook
+  - `DEBOUNCE_SECONDS` - Wait after DB change (default: 10)
+  - `POLL_INTERVAL_SECONDS` - DB check frequency (default: 5)
 
 ### Static Frontend (Astro)
-Served separately by Caddy from `/srv/frontend/` (not in Docker). Hosts:
-- `/book/<id>` - detail pages
-- `/author`, `/publisher`, `/series`, `/category`, `/language`, `/formats`, `/ratings`, `/shelf` - listing pages
-- `/search` - search page
-- `/index` - home page
+Built by `rebuild-watcher` or manually via:
+```bash
+./build-frontend.sh
+```
 
-Rebuild process:
-1. `frontend/scripts/seed.mjs` - seeds content JSON from Calibre DB
-2. `astro build` - builds static site to `frontend/dist/`
-3. Rsync to `/srv/frontend/`
+Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 
-Auto-rebuild on book changes via `trigger_rebuild_async()` → POST `/internal/rebuild-frontend`.
-Set `config_frontend_rebuild_token` in admin UI to enable webhook.
+## Download Tracking
 
-### Static Files Location
+### Anonymous Downloads
+- **Location**: `cps/helper.py:1245-1246`
+- Anonymous downloads are now tracked (user_id=0)
+- Previously only authenticated users were tracked
+- Hot Books section now includes all downloads
+
+### Hot Books ("Most Downloaded")
+- **Endpoint**: `/hot` (web) and `/opds/hot` (OPDS)
+- Query: Groups downloads by book_id, orders by count
+- Shows books that have been downloaded at least once
+
+## OPDS Feed
+
+### Endpoints
+| Endpoint | Description |
+|----------|-------------|
+| `/opds` | Root navigation feed |
+| `/opds/new` | Recently added books |
+| `/opds/books` | Alphabetical books |
+| `/opds/author` | Authors index |
+| `/opds/publisher` | Publishers index |
+| `/opds/category` | Categories/Tags index |
+| `/opds/series` | Series index |
+| `/opds/hot` | Most downloaded books |
+| `/opds/rated` | Best rated books |
+| `/opds/search/{query}` | Search |
+| `/opds/download/{book_id}/{format}` | Download book |
+| `/opds/cover/{book_id}` | Get cover image |
+| `/opds/osd` | OpenSearch description |
+| `/opds/stats` | Database statistics |
+
+### OPDS Conformance
+- Uses Atom feed format with OPDS profile
+- Supports pagination (next/previous links)
+- Supports OpenSearch
+- Conforms to OPDS 1.2 specification
+
+## Static Files Location
 | Path | Location | Served By |
 |------|----------|-----------|
 | `cps/static/` | In Docker container | Flask |
 | `frontend/public/` | `/srv/frontend/public/` | Caddy |
+| `frontend/dist/` | `./frontend/dist/` | Rebuild watcher output |
 
-**Important**: Changes to `cps/static/` require Docker rebuild. Changes to `frontend/public/` require frontend rebuild + rsync to `/srv/frontend/`.
+**Important**: Changes to `cps/static/` require Docker rebuild. Changes to `frontend/public/` require frontend rebuild.
 
 ## Upstream Sync
 - When syncing from upstream, committed changes are preserved
@@ -47,134 +99,61 @@ Set `config_frontend_rebuild_token` in admin UI to enable webhook.
 ## Important Notes
 
 ### DO NOT Touch
-- **NEVER modify or delete files in `library/` or `data/` folders** - these contain production book files and Calibre database
-- `/srv/frontend/` - external frontend deployment, may need separate permissions
+- **NEVER modify or delete files in `library/` folder** - these contain production book files 
 
 ### Modified Files
-- `cps/helper.py` - Server-side Umami analytics tracking for direct downloads, WebP conversion
-- `cps/web.py` - Added trailing slash route for book detail pages (`/book/<id>/<slug>/`), WebP Accept header detection
-- `cps/templates/layout.html` - Frontend Umami tracking for file downloads, PDF reads
-- `cps/templates/detail.html` - Fixed JSON-LD structured data, added canonical URL
-- `cps/templates/author.html` - Fixed JSON-LD structured data
-- `cps/templates/readpdf.html` - PDF viewer with `PDFViewerApplicationOptions` (PDF.js v6)
+- `cps/helper.py` - Server-side Umami analytics, WebP conversion, anonymous download tracking
+- `cps/web.py` - Trailing slash route for book detail pages, WebP detection
+- `cps/opds.py` - OPDS feed endpoints
+- `cps/frontend_rebuild.py` - Async frontend rebuild trigger
+- `cps/templates/layout.html` - Umami tracking for downloads
+- `cps/templates/detail.html` - JSON-LD structured data, canonical URL
+- `cps/templates/author.html` - JSON-LD structured data
+- `cps/templates/readpdf.html` - PDF viewer configuration
+- `docker-compose.yml` - Docker services definition
+- `docker/entrypoint.sh` - Custom init replacing s6-overlay (user setup, first-boot DB init, non-root exec)
+- `host/rebuild-listener.py` - Host-side HTTP listener for frontend rebuild triggers
+- `Caddyfile` - Caddy proxy configuration (on host)
 
 ### Key Features
-- Umami analytics tracking for downloads (browser-based via data attributes + server-side)
-- Events tracked: `file-download`, `pdf-read`, `pdf-download`, `direct-download`
-- Canonical URL on book detail pages: `/book/<id>` (without slug)
-- Structured data fixes to prevent Google Search parsing errors
-- **App-level WebP conversion** for cover images (browsers supporting WebP get WebP, others get JPEG)
+- Umami analytics tracking for downloads (browser + server-side)
+- Anonymous download tracking for Hot Books
+- OPDS feed for ebook reader compatibility
+- App-level WebP conversion for cover images
+- Canonical URLs for SEO
 
 ### Structured Data (JSON-LD)
 
-#### Book Pages (`cps/templates/detail.html`)
-Book pages include Schema.org Book structured data:
-- `url` - Book page URL
-- `name` - Book title
-- `author` - Array of Person objects with `@type` and `name`
-- `image` - Cover image URL
-- `inLanguage` - Language code (e.g., "id")
-- `description` - From comments or fallback "title by author (publisher)"
-- `isbn` - When available
-- `datePublished` - Publication date
-- `publisher` - Publisher name
-- `bookFormat` - EBook for EPUB formats, Book for PDF/others
-- `aggregateRating` - When ratings exist (ratingValue, bestRating, worstRating, ratingCount)
+#### Book Pages
+- `url`, `name`, `author` (Person array), `image`, `inLanguage`
+- `description`, `isbn`, `datePublished`, `publisher`
+- `bookFormat` (EBook/Book), `aggregateRating`
 
-#### Author Pages (`cps/templates/author.html`)
-Author pages include Schema.org Person structured data:
-- `name` - Author name (cleaned of "Author: " prefix)
-- `image` - Author photo URL
-- `description` - Author bio (from safe_about)
-- `sameAs` - Goodreads link
-- `url` - Author page URL
+#### Author Pages
+- `name`, `image`, `description`, `sameAs` (Goodreads), `url`
 
-### SEO Guidelines
-- All book pages have canonical URLs
-- Open Graph meta tags for social sharing
-- Twitter card meta tags
-- book:author, book:publisher, book:release_date, book:isbn Open Graph meta
+## Caching Configuration
 
-### Caching Configuration
+### Book Downloads
+- `Cache-Control: public, max-age=3888000` (45 days)
+- Applied in `cps/helper.py:get_download_link()`
 
-#### Book Downloads
-- **Cache-Control**: `public, max-age=3888000` (45 days / 1.5 months)
-- Applied in `cps/helper.py` in `get_download_link()` function
-- Cloudflare CDN caches book files for 1.5 months after first download
+### Cover Images
+- `Cache-Control: public, max-age=86400` (7 days)
+- `Vary: Accept, Accept-Encoding`
+- WebP served to supporting browsers via `?fm=webp` or `Accept` header
 
-#### Caddyfile Configuration (for pustaka.taratsa.id)
-```caddy
-pustaka.taratsa.id {
-	request_body {
-		max_size 500MB
-	}
+### Cloudflare Cache Rules (recommended)
+| Path | Edge TTL | Browser TTL |
+|------|----------|-------------|
+| `/download/*/pdf/*` | 1.5 months | 1.5 months |
+| `/download/*/epub/*` | 1.5 months | 1.5 months |
+| `/cover/*` | 1 week | 7 days |
 
-	@books {
-		path /download/*/pdf/* /download/*/epub/*
-	}
-	handle @books {
-		header >Cache-Control "public, max-age=3888000"
-	}
+## Environment Configuration
 
-	@covers {
-		path /cover/*
-	}
-	handle @covers {
-		header >Cache-Control "public, max-age=86400"
-		header >Vary "Accept, Accept-Encoding"
-	}
-
-	route {
-		reverse_proxy calibre-web-automated:8083
-	}
-	log
-	encode zstd gzip
-}
-```
-
-**Important**: Use `>` prefix on header directives to defer header operations until after upstream response — allows overwriting headers set by the Flask app.
-
-### App-Level WebP Conversion
-
-The app converts JPEG covers to WebP at request time using Wand:
-- Location: `cps/helper.py:_convert_to_webp()`
-- Triggered when: browser sends `Accept: image/webp` header
-- Falls back to: original JPEG if conversion fails
-- Cache headers set: `Cache-Control: public, max-age=86400`, `Vary: Accept`
-
-**Alternative**: Cloudflare Polish (paid) - enables automatic WebP/AVIF conversion at CDN level without app changes.
-
-**Caddy Configuration Benefits:**
-- `/cover/*` → Cache 7 days (WebP pre-generation + Wand fallback)
-- `/download/*/pdf/*`, `/download/*/epub/*` → Cache 45 days (1.5 months)
-- `>` prefix enables header overwrite of Flask's `Cache-Control: no-cache`
-- WebP pre-generation at startup via `TaskGenerateCoverThumbnails`
-
-#### Recommended Cloudflare Cache Rules
-For optimal CDN performance, configure in Cloudflare dashboard:
-
-**PDF/Ebook files** (`/download/*/pdf/*`, `/download/*/epub/*`):
-- Edge TTL: 1.5 months
-- Browser TTL: 1.5 months
-- Cache Key: Include query strings
-
-**Cover images** (`/cover/*`):
-- Edge TTL: 1 week
-- Browser TTL: 7 days
-- Already uses `c=timestamp` query string for cache busting
-
-#### Current Caching Status (verified via curl)
-- Book downloads: `Cache-Control: public, max-age=3888000`, `cf-cache-status: HIT`
-- Cover images: `Cache-Control: public, max-age=604800`, `Vary: Accept, Accept-Encoding`
-- App-level WebP conversion: Browsers with `Accept: image/webp` get WebP, others get JPEG
-
-### Cloudflare Cache Purge
-When static files change (robots.txt, JS, CSS), purge via Cloudflare API:
+Copy `.env.example` to `.env` and configure:
 ```bash
-curl -X POST "https://api.cloudflare.com/client/v4/zones/:zone_id/purge" \
-  -H "Authorization: Bearer :api_token" \
-  -H "Content-Type: application/json" \
-  -d '{"files":["https://pustaka.taratsa.id/robots.txt"]}'
+HARDCOVER_TOKEN=      # Optional: Hardcover API token
+WEBHOOK_TOKEN=        # Optional: Frontend rebuild webhook token
 ```
-
-Rollback path: replace the route block in `Caddyfile` with `reverse_proxy calibre-web-automated:8083`.

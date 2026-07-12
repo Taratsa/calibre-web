@@ -56,13 +56,13 @@ const ratingStr = book.rating && book.rating.count > 0
   : '';
 ---
 
-<BookLayout book={book}>
+<BookLayout book={book} description={cleanComment || undefined}>
   <article class="book-detail">
     <div class="cover">
       <Cover image={book.cover_url.replace(/\?.*$/, '')} alt={book.title} width={320} height={480} loading="eager" fetchpriority="high" />
     </div>
     <div class="body">
-      <h1 set:html={book.title} />
+      <h1>{book.title}</h1>
 
       {book.authors.length > 0 && (
         <p class="authors"><strong>Penulis:</strong> <span set:html={authorStr} /></p>
@@ -85,22 +85,22 @@ const ratingStr = book.rating && book.rating.count > 0
         <tbody>
           {book.publisher && (
             <tr>
-              <th>Penerbit</th>
+              <th scope="row">Penerbit</th>
               <td><a href={`/publisher/${book.publisher.id}`} set:html={book.publisher.name} /></td>
             </tr>
           )}
           {book.pubdate && (
-            <tr><th>Tahun</th><td set:html={book.pubdate} /></tr>
+            <tr><th scope="row">Tahun</th><td>{book.pubdate}</td></tr>
           )}
           {book.languages.length > 0 && (
             <tr>
-              <th>Bahasa</th>
+              <th scope="row">Bahasa</th>
               <td set:html={langLinks} />
             </tr>
           )}
           {book.series && (
             <tr>
-              <th>Seri</th>
+              <th scope="row">Seri</th>
               <td>
                 {book.series.index != null
                   ? `${book.series.name} jilid ${book.series.index}`
@@ -110,10 +110,10 @@ const ratingStr = book.rating && book.rating.count > 0
             </tr>
           )}
           {identStr && (
-            <tr><th>Pengenal</th><td set:html={identStr} /></tr>
+            <tr><th scope="row">Pengenal</th><td set:html={identStr} /></tr>
           )}
           {ratingStr && (
-            <tr><th>Penilaian</th><td set:html={ratingStr} /></tr>
+            <tr><th scope="row">Penilaian</th><td set:html={ratingStr} /></tr>
           )}
         </tbody>
       </table>

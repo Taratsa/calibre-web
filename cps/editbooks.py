@@ -87,7 +87,7 @@ def delete_books_ajax():
                 resource_type="book",
                 resource_id=book_id,
                 details="Book deleted via bulk ajax",
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
     return check_delete_book(book_ids, "", True)
 
@@ -103,7 +103,7 @@ def delete_book(book_id, book_format):
         resource_type="book",
         resource_id=book_id,
         details="Book deleted{}".format(" (format: {})".format(book_format) if book_format else ""),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return check_delete_book(book_id, book_format, False, request.form.to_dict().get('location', ""))
 
@@ -128,7 +128,7 @@ def edit_book(book_id):
         resource_type="book",
         resource_id=book_id,
         details="Edited book: {}".format(book.title if book else "unknown"),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     return result
 
@@ -146,7 +146,7 @@ def upload():
             resource_type="book_format",
             resource_id=book_id,
             details="New format uploaded for book",
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
         return result
     elif len(request.files.getlist("btn-upload")):
@@ -202,7 +202,7 @@ def upload():
                     resource_type="book",
                     resource_id=book_id,
                     details="New book uploaded: {}".format(title),
-                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    ip_address=helper.get_client_ip()
                 )
 
                 if len(request.files.getlist("btn-upload")) < 2:
@@ -249,7 +249,7 @@ def convert_bookformat(book_id):
             resource_type="book",
             resource_id=book_id,
             details="Book queued for conversion from {} to {}".format(book_format_from, book_format_to),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
     else:
         flash(_("There was an error converting this book: %(res)s", res=rtn), category="error")
@@ -287,7 +287,7 @@ def edit_list_book(param):
             resource_type="book",
             resource_id=bid,
             details="Book field edited: {}".format(param),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
     if isinstance(ret_value, dict):
         return jsonify(ret_value)
@@ -373,7 +373,7 @@ def edit_selected_books():
                 resource_type="book",
                 resource_id=bid,
                 details="Bulk edit selected books",
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         return jsonify([{'success': True, "msg": _("Changes successfully applied")}])
     else:
@@ -596,7 +596,7 @@ def archive_selected_books():
                 resource_type="book",
                 resource_id=book_id,
                 details="Book archive status set to: {}".format(state),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         return json.dumps({'success': True})
     return ""
@@ -618,7 +618,7 @@ def read_selected_books():
                     resource_type="book",
                     resource_id=book_id,
                     details="Book read status set to: {}".format(markAsRead),
-                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    ip_address=helper.get_client_ip()
                 )
 
         except (OperationalError, IntegrityError, StaleDataError) as e:
@@ -673,7 +673,7 @@ def merge_list_book():
                         resource_type="book",
                         resource_id=target_id,
                         details="Merged book {} into {}".format(book_id, target_id),
-                        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                        ip_address=helper.get_client_ip()
                     )
                     return make_response(jsonify(success=True))
     return ""
@@ -718,7 +718,7 @@ def table_xchange_author_title():
                     resource_type="book",
                     resource_id=book.id,
                     details="Author/title swapped for book: {}".format(book.title),
-                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    ip_address=helper.get_client_ip()
                 )
             try:
                 calibre_db.session.commit()
@@ -1724,7 +1724,7 @@ def add_objects(db_book_object, db_object, db_session, db_type, add_elements):
     for add_element in add_elements:
         # check if an element with that name exists
         changed = True
-        db_element = db_session.query(db_object).filter((func.lower(db_filter).ilike(add_element))).all()
+        db_element = db_session.query(db_object).filter(func.lower(db_filter) == add_element.casefold()).all()
         # if no element is found add it
         if not db_element:
             if db_type == 'author':
@@ -1782,6 +1782,19 @@ def modify_database_object(input_elements, db_book_object, db_object, db_session
     if not isinstance(input_elements, list):
         raise TypeError(str(input_elements) + " should be passed as a list")
     input_elements = [x for x in input_elements if x != '']
+
+    # Deduplicate input_elements case-insensitively. The link tables
+    # (books_tags_link, books_languages_link, ...) have UNIQUE(book, X) constraints,
+    # so feeding the same name twice with different casing (e.g. "Zine" and "zine"
+    # from XMP dc_subject) otherwise triggers an IntegrityError on commit.
+    seen = set()
+    deduped = []
+    for el in input_elements:
+        key = el.casefold() if isinstance(el, str) else el
+        if key not in seen:
+            seen.add(key)
+            deduped.append(el)
+    input_elements = deduped
 
     changed = False
     # If elements are renamed (upper lower case), rename it

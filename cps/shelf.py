@@ -29,7 +29,7 @@ from .cw_login import current_user
 from sqlalchemy.exc import InvalidRequestError, OperationalError
 from sqlalchemy.sql.expression import func, true
 
-from . import calibre_db, config, db, logger, ub
+from . import calibre_db, config, db, logger, ub, helper
 from .render_template import render_title_template
 from .usermanagement import login_required_if_no_ano, user_login_required
 
@@ -98,7 +98,7 @@ def add_to_shelf(shelf_id, book_id):
         resource_type="shelf_book",
         resource_id="{}:{}".format(shelf_id, book_id),
         details="Book {} added to shelf {}".format(book_id, shelf.name),
-        ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address=helper.get_client_ip()
     )
     if not xhr:
         log.debug("Book has been added to shelf: {}".format(shelf.name))
@@ -152,7 +152,7 @@ def search_from_shelf(shelf_id):
                 resource_type="shelf_book",
                 resource_id=shelf_id,
                 details="Books removed from shelf {}: {}".format(shelf.name, books_from_shelf),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         except (OperationalError, InvalidRequestError) as e:
             ub.session.rollback()
@@ -210,7 +210,7 @@ def search_to_shelf(shelf_id):
                 resource_type="shelf_book",
                 resource_id=shelf_id,
                 details="Books added to shelf {}: {}".format(shelf.name, books_for_shelf),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
         except (OperationalError, InvalidRequestError) as e:
             ub.session.rollback()
@@ -269,7 +269,7 @@ def remove_from_shelf(shelf_id, book_id):
             resource_type="shelf_book",
             resource_id="{}:{}".format(shelf_id, book_id),
             details="Book {} removed from shelf {}".format(book_id, shelf.name),
-            ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+            ip_address=helper.get_client_ip()
         )
         if not xhr:
             flash(_("Book has been removed from shelf: %(sname)s", sname=shelf.name), category="success")
@@ -320,7 +320,7 @@ def delete_shelf(shelf_id):
                 resource_type="shelf",
                 resource_id=shelf_id,
                 details="Shelf deleted: {}".format(shelf_name),
-                ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                ip_address=helper.get_client_ip()
             )
     except InvalidRequestError as e:
         ub.session.rollback()
@@ -368,7 +368,7 @@ def order_shelf(shelf_id):
                     resource_type="shelf",
                     resource_id=shelf_id,
                     details="Shelf order changed for: {}".format(shelf.name),
-                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    ip_address=helper.get_client_ip()
                 )
             except (OperationalError, InvalidRequestError) as e:
                 ub.session.rollback()
@@ -448,7 +448,7 @@ def create_edit_shelf(shelf, page_title, page, shelf_id=False):
                     resource_type="shelf",
                     resource_id=shelf.id,
                     details="Shelf {}: {}".format(shelf_action, shelf_title),
-                    ip_address=request.headers.get('X-Forwarded-For', request.remote_addr)
+                    ip_address=helper.get_client_ip()
                 )
                 return redirect(url_for('shelf.show_shelf', shelf_id=shelf.id))
             except (OperationalError, InvalidRequestError) as ex:

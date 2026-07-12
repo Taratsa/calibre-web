@@ -1,30 +1,31 @@
 ---
 import type { BookSummary } from '~/data/types';
 import BaseLayout from './BaseLayout.astro';
+import { ogLocale } from '~/data';
 
 export interface Props {
   book: BookSummary;
+  description?: string;
 }
 
-const { book } = Astro.props;
+const { book, description: customDescription } = Astro.props;
 const siteUrl = 'https://pustaka.taratsa.id';
 const bookUrl = `${siteUrl}${book.url}`;
 const ogImageUrl = book.cover_og_url.startsWith('http')
   ? book.cover_og_url
   : `${siteUrl}${book.cover_og_url}`;
 
-const description = book.tags.join(', ') || `${book.title} — koleksi Perpustakaan Digital Taratsa`;
+const description = customDescription || book.tags.join(', ') || `${book.title} — koleksi Perpustakaan Digital Taratsa`;
 const descriptionTruncated = description.length > 200 ? `${description.slice(0, 197)}...` : description;
 const pubdate = book.pubdate && book.pubdate !== '0101-01-01' ? book.pubdate : null;
 
 const isbn = (book.identifiers || []).find(i => /isbn/i.test(i.type))?.value ?? null;
-const descriptionJson = book.tags.join(', ') || book.title;
 
 const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Beranda', item: siteUrl },
+    { '@type': 'ListItem', position: 1, name: 'Beranda', item: siteUrl + '/' },
     { '@type': 'ListItem', position: 2, name: book.title, item: bookUrl },
   ],
 };
@@ -32,6 +33,7 @@ const breadcrumb = {
 const jsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'Book',
+  '@id': `${bookUrl}#book`,
   url: bookUrl,
   mainEntityOfPage: {
     '@type': 'WebPage',
@@ -60,11 +62,11 @@ if (book.rating && book.rating.count > 0) {
 }
 ---
 
-<BaseLayout title={book.title} description={descriptionTruncated} ogImage={ogImageUrl} canonical={bookUrl}>
+<BaseLayout title={book.title} description={descriptionTruncated} ogImage={ogImageUrl} canonical={bookUrl} ogType="book">
   <Fragment slot="head">
     <link rel="preload" href={ogImageUrl} as="image" fetchpriority="high" />
     <meta property="og:image:alt" content={book.title} />
-    {book.languages.length > 0 && <meta property="og:locale" content={book.languages[0]} />}
+    {book.languages.length > 0 && <meta property="og:locale" content={ogLocale(book.languages[0])} />}
     {book.authors.map(a => <meta property="book:author" content={a.name} />)}
     {book.publisher && <meta property="book:publisher" content={book.publisher.name} />}
     {pubdate && <meta property="book:release_date" content={pubdate} />}

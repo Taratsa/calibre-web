@@ -1,7 +1,8 @@
 ---
+import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getAllLanguages, booksByLanguage, paginate, PAGE_SIZE } from '~/data';
+import { getAllLanguages, booksByLanguage, paginate, localeLanguageName, PAGE_SIZE } from '~/data';
 
 export async function getStaticPaths() {
   const out = [];
@@ -26,5 +27,11 @@ const all = booksByLanguage(language.lang_code).sort((a, b) =>
 const { items, page: p, totalPages, total } = paginate(all, pageNum);
 ---
 
-<BookGrid books={items} cols={4} />
-<Pagination page={p} totalPages={totalPages} baseUrl={`/language/${language.lang_code}`} />
+<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)} (Halaman ${p})`} description={`Buku berbahasa ${localeLanguageName(language.lang_code)} — halaman ${p} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={`/language/${language.lang_code}`} noindex ogType="website">
+  <p><a href={`/language/${language.lang_code}`}>‹ {localeLanguageName(language.lang_code)}</a></p>
+  <h1>{localeLanguageName(language.lang_code)} ({language.lang_code})</h1>
+  <p>{total} buku dalam bahasa ini.</p>
+
+  <BookGrid books={items} cols={4} />
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/language/${language.lang_code}`} />
+</BaseLayout>

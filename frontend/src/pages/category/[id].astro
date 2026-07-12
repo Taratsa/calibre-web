@@ -20,7 +20,7 @@ const all = booksByCategory(category.name).sort((a, b) =>
 const { items, page: p, totalPages, total } = paginate(all, 1);
 ---
 
-<BaseLayout title={`Kategori: ${category.name}`}>
+<BaseLayout title={`Kategori: ${category.name}`} description={`${category.name} — ${total} buku dalam kategori ini di Pustaka Taratsa`}>
   <p><a href="/category">‹ Semua kategori</a></p>
   <h1>{category.name}</h1>
   <p>{total} buku dalam kategori ini.</p>

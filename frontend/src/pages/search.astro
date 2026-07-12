@@ -1,64 +1,292 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import BookGrid from '~/components/BookGrid.astro';
 import { getAllBooks } from '~/data';
+import { truncateAuthorsHtml } from '~/utils/authors';
 
 const books = getAllBooks();
 const q = (Astro.url.searchParams.get('q') || '').trim();
+const initialResults = q ? searchBooks(books, q) : [];
+const initialCount = initialResults.length;
+const initialHtml = renderResults(initialResults);
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function highlight(s: string, terms: string[]): string {
+  let out = escapeHtml(s);
+  for (const t of terms) {
+    const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    out = out.replace(re, '<mark>$1</mark>');
+  }
+  return out;
+}
+
+function coverHtml(image: string, alt: string): string {
+  const clean = image.replace(/\?.*$/, '');
+  if (clean.startsWith('/cover/')) {
+    return `<picture><source srcset="${clean}?fm=webp" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
+  }
+  return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
+}
+
+function excerpt(text: string, terms: string[], maxLen: number = 200): string {
+  const lower = text.toLowerCase();
+  let bestIdx = 0;
+  for (const t of terms) {
+    const idx = lower.indexOf(t);
+    if (idx >= 0) { bestIdx = idx; break; }
+  }
+  const start = Math.max(0, bestIdx - 80);
+  let snippet = text.slice(start, start + maxLen);
+  if (start > 0) snippet = '…' + snippet;
+  if (start + maxLen < text.length) snippet += '…';
+  return snippet;
+}
+
+function formatLabel(f: string): string {
+  const m: Record<string, string> = { pdf: 'PDF', epub: 'EPUB', mobi: 'MOBI', cbz: 'CBZ', cbr: 'CBR', djvu: 'DJVU', txt: 'TXT', html: 'HTML', azw3: 'AZW3' };
+  return m[f.toLowerCase()] || f.toUpperCase();
+}
+
+function searchBooks(all: any[], query: string) {
+  const ql = query.toLowerCase().trim();
+  const terms = ql.split(/\s+/).filter(Boolean);
+  const originalTerms = [...terms];
+
+  if (terms.length === 1 && terms[0].length > 4) {
+    const single = terms[0];
+    const titles = all.filter(b => (b.title || '').toLowerCase().includes(single));
+    if (titles.length === 0) {
+      const knownWords = new Set<string>();
+      for (const b of all) {
+        for (const w of (b.title || '').toLowerCase().split(/\s+/)) {
+          if (w.length > 2) knownWords.add(w);
+        }
+        for (const a of (b.authors || [])) {
+          for (const w of a.name.toLowerCase().split(/\s+/)) {
+            if (w.length > 2) knownWords.add(w);
+          }
+        }
+      }
+      let splitTerms: string[] = [];
+      let remainder = single;
+      while (remainder.length > 2) {
+        let found = false;
+        for (let i = remainder.length; i >= 3; i--) {
+          const prefix = remainder.slice(0, i);
+          if (knownWords.has(prefix)) {
+            splitTerms.push(prefix);
+            remainder = remainder.slice(i);
+            found = true;
+            break;
+          }
+        }
+        if (!found) { splitTerms.push(remainder); break; }
+      }
+      if (splitTerms.length > 1) {
+        terms.length = 0;
+        terms.push(...splitTerms);
+      }
+    }
+  }
+
+  if (terms.length === 0) terms.push(...originalTerms);
+
+  function scoreBook(b: any): number {
+    let s = 0;
+    const t = (b.title || '').toLowerCase();
+    const a = (b.authors || []).map((x: any) => x.name).join(' ').toLowerCase();
+    const tags = (b.tags || []).join(' ').toLowerCase();
+    const ser = b.series ? b.series.name.toLowerCase() : '';
+    const pub = b.publisher ? b.publisher.name.toLowerCase() : '';
+    const desc = (b.comment || '').toLowerCase();
+
+    for (const term of terms) {
+      if (t.includes(term)) s += 8;
+      if (t.startsWith(term)) s += 4;
+      if (a.includes(term)) s += 5;
+      if (tags.includes(term)) s += 3;
+      if (ser.includes(term)) s += 4;
+      if (pub.includes(term)) s += 3;
+      if (desc.includes(term)) {
+        s += 2;
+        if (!t.includes(term)) s += 0.5;
+      }
+      if (pub && pub.includes(term)) s += 1;
+      if (ser && ser.includes(term)) s += 1;
+    }
+    return s;
+  }
+
+  const scored = all
+    .map((b: any) => ({ b, s: scoreBook(b) }))
+    .filter(x => x.s > 0)
+    .sort((a: any, b: any) => b.s - a.s);
+  return scored.slice(0, 120);
+}
+
+function renderResults(scored: any[]): string {
+  if (scored.length === 0) {
+    return '';
+  }
+
+  const terms = (q || '').toLowerCase().split(/\s+/).filter(Boolean);
+  return scored.map(({ b }: any) => {
+    const titleHighlighted = highlight(b.title, terms);
+    const authorHtml = truncateAuthorsHtml(b.authors ?? [], 60);
+
+    return `<li><article class="card">
+      <a href="${b.url}" class="card__cover" aria-label="Cover ${escapeHtml(b.title)}">${coverHtml(b.cover_url, b.title)}</a>
+      <h3 class="card__title"><a href="${b.url}">${titleHighlighted}</a></h3>
+      <p class="card__authors">${authorHtml}</p>
+    </article></li>`;
+  }).join('');
+}
 ---
 
-<BaseLayout title={q ? `Cari: ${q}` : 'Cari'} description="Cari buku di Pustaka Taratsa.">
-  <h1>Cari Buku</h1>
+<BaseLayout title={q ? `Cari: ${q}` : 'Cari'} description="Cari buku di Pustaka Taratsa." noindex>
+  <div class="search-page">
+    <h1 class="search-title">Cari Buku</h1>
 
-  <form action="/search" method="GET" role="search" class="search-form">
-    <input type="search" name="q" placeholder="judul, pengarang, kategori…" value={q} autofocus />
-    <button type="submit">Cari</button>
-  </form>
+    <form action="/search" method="GET" role="search" class="search-form">
+      <div class="search-form__input-wrap">
+        <svg class="search-form__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" name="q" placeholder="Cari judul, pengarang, kategori…" value={q} autofocus spellcheck="false" />
+        <kbd class="search-form__hint">/</kbd>
+      </div>
+      <button type="submit" class="search-form__btn">Cari</button>
+    </form>
 
-  {q && (
-    <p id="search-status">Memuat hasil untuk <strong>{q}</strong>…</p>
-  )}
+    {q && (
+      <p id="search-status" class="search-status">{initialCount} hasil untuk "<strong>{q}</strong>"</p>
+    )}
 
-  <div id="search-results" hidden></div>
-  <noscript>
-    <p>Halaman pencarian membutuhkan JavaScript. Coba gunakan <a href={`/search?q=${encodeURIComponent(q)}`}>tautan ini</a> atau kembali ke <a href="/">beranda</a>.</p>
-  </noscript>
+    <div id="search-results" class="search-results" hidden={!initialCount && !q}>
+      <ul class="book-grid book-grid--cols-5" set:html={initialHtml || ''} />
+    </div>
+
+    <div id="search-empty" class="search-empty" hidden>
+      <p>Tidak ditemukan hasil untuk "<strong>{q || ''}</strong>".</p>
+      <p class="search-empty__suggest">Coba kata kunci lain, periksa ejaan, atau <a href="/">kembali ke beranda</a>.</p>
+    </div>
+
+    <noscript>
+      {q && !initialHtml ? (
+        <div class="search-empty">
+          <p>Tidak ditemukan hasil untuk "<strong>{q}</strong>".</p>
+          <p class="search-empty__suggest">Coba kata kunci lain, atau <a href="/">kembali ke beranda</a>.</p>
+        </div>
+      ) : null}
+    </noscript>
+  </div>
 </BaseLayout>
 
-<style>
-  .search-form {
-    display: flex;
-    gap: 0.5rem;
-    margin: 1rem 0 1.5rem;
-  }
-  .search-form input {
-    flex: 1;
-    padding: 0.6rem 0.9rem;
-    border-radius: 4px;
-    border: 1px solid #d1d5db;
-    font: inherit;
-  }
-  .search-form button {
-    padding: 0.6rem 1.2rem;
-    background: #1f1f1f;
-    color: #fafaf7;
-    border: 0;
-    border-radius: 4px;
-    font: inherit;
-    cursor: pointer;
-  }
-</style>
-
 <script define:vars={{ books }}>
-  // Inline minisearch-style scoring over the snapshot.
   const q = new URLSearchParams(window.location.search).get('q') || '';
   const status = document.getElementById('search-status');
   const results = document.getElementById('search-results');
+  const empty = document.getElementById('search-empty');
   if (!q) {
-    if (status) status.hidden = true;
+    if (status) status.style.display = 'none';
+    if (empty) empty.hidden = true;
   } else {
+    function escapeHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function highlight(s, terms) {
+      let out = escapeHtml(s);
+      for (const t of terms) {
+        const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        out = out.replace(re, '<mark>$1</mark>');
+      }
+      return out;
+    }
+    function coverHtml(image, alt) {
+      const clean = image.replace(/\?.*$/, '');
+      if (clean.startsWith('/cover/')) {
+        return `<picture><source srcset="${clean}?fm=webp" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
+      }
+      return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
+    }
+    function excerpt(text, terms, maxLen) {
+      const lower = text.toLowerCase();
+      let bestIdx = 0;
+      for (const t of terms) {
+        const idx = lower.indexOf(t);
+        if (idx >= 0) { bestIdx = idx; break; }
+      }
+      const start = Math.max(0, bestIdx - 80);
+      let snippet = text.slice(start, start + maxLen);
+      if (start > 0) snippet = '…' + snippet;
+      if (start + maxLen < text.length) snippet += '…';
+      return snippet;
+    }
+    function formatLabel(f) {
+      const m = { pdf: 'PDF', epub: 'EPUB', mobi: 'MOBI', cbz: 'CBZ', cbr: 'CBR', djvu: 'DJVU', txt: 'TXT', html: 'HTML', azw3: 'AZW3' };
+      return m[f.toLowerCase()] || f.toUpperCase();
+    }
+    function truncateAuthorsHtml(authors, max) {
+      if (!authors || authors.length === 0) return '';
+      const result = [];
+      let totalLen = 0;
+      let overflow = 0;
+      for (let i = 0; i < authors.length; i++) {
+        const a = authors[i];
+        const addition = a.name.length + (result.length > 0 ? 2 : 0);
+        if (result.length > 0 && totalLen + addition > max) {
+          overflow = authors.length - i;
+          break;
+        }
+        result.push(a);
+        totalLen += addition;
+      }
+      const links = result.map(a => `<a href="/author/${a.id}">${escapeHtml(a.name)}</a>`).join(', ');
+      const more = overflow > 0 ? ` <span class="more">+${overflow}</span>` : '';
+      return links + more;
+    }
+
     const ql = q.toLowerCase();
     const terms = ql.split(/\s+/).filter(Boolean);
+    const originalTerms = [...terms];
+
+    if (terms.length === 1 && terms[0].length > 4) {
+      const single = terms[0];
+      const titles = books.filter(b => (b.title || '').toLowerCase().includes(single));
+      if (titles.length === 0) {
+        const knownWords = new Set();
+        for (const b of books) {
+          for (const w of (b.title || '').toLowerCase().split(/\s+/)) {
+            if (w.length > 2) knownWords.add(w);
+          }
+          for (const a of (b.authors || [])) {
+            for (const w of a.name.toLowerCase().split(/\s+/)) {
+              if (w.length > 2) knownWords.add(w);
+            }
+          }
+        }
+        let splitTerms = [];
+        let remainder = single;
+        while (remainder.length > 2) {
+          let found = false;
+          for (let i = remainder.length; i >= 3; i--) {
+            const prefix = remainder.slice(0, i);
+            if (knownWords.has(prefix)) {
+              splitTerms.push(prefix);
+              remainder = remainder.slice(i);
+              found = true;
+              break;
+            }
+          }
+          if (!found) { splitTerms.push(remainder); break; }
+        }
+        if (splitTerms.length > 1) {
+          terms.length = 0;
+          terms.push(...splitTerms);
+        }
+      }
+    }
+    if (terms.length === 0) terms.push(...originalTerms);
 
     function scoreBook(b) {
       let s = 0;
@@ -67,13 +295,21 @@ const q = (Astro.url.searchParams.get('q') || '').trim();
       const tags = (b.tags || []).join(' ').toLowerCase();
       const ser = b.series ? b.series.name.toLowerCase() : '';
       const pub = b.publisher ? b.publisher.name.toLowerCase() : '';
+      const desc = (b.comment || '').toLowerCase();
+
       for (const term of terms) {
-        if (t.includes(term)) s += 5;
-        if (a.includes(term)) s += 4;
-        if (tags.includes(term)) s += 2;
-        if (ser.includes(term)) s += 3;
-        if (pub.includes(term)) s += 2;
-        if (t.startsWith(term)) s += 3;
+        if (t.includes(term)) s += 8;
+        if (t.startsWith(term)) s += 4;
+        if (a.includes(term)) s += 5;
+        if (tags.includes(term)) s += 3;
+        if (ser.includes(term)) s += 4;
+        if (pub.includes(term)) s += 3;
+        if (desc.includes(term)) {
+          s += 2;
+          if (!t.includes(term)) s += 0.5;
+        }
+        if (pub && pub.includes(term)) s += 1;
+        if (ser && ser.includes(term)) s += 1;
       }
       return s;
     }
@@ -87,22 +323,195 @@ const q = (Astro.url.searchParams.get('q') || '').trim();
     if (status) status.textContent = `${matches.length} hasil untuk "${q}"`;
 
     if (matches.length === 0) {
-      results.innerHTML = '<p>Tidak ada hasil. Coba kata kunci lain, atau <a href="/">kembali ke beranda</a>.</p>';
-      results.hidden = false;
+      if (results) results.hidden = true;
+      if (empty) {
+        empty.hidden = false;
+        empty.querySelector('strong').textContent = q;
+      }
     } else {
-      const items = matches.map(({ b }) => `
-        <li>
-          <article class="book-card">
-            <a href="${b.url}" class="book-card__cover">
-              <img src="${b.cover_url}" alt="${b.title.replace(/"/g, '&quot;')}" loading="lazy" width="200" />
-            </a>
-            <h3 class="book-card__title"><a href="${b.url}">${b.title}</a></h3>
-            <p class="book-card__authors">${(b.authors || []).map(a => `<a href="/author/${a.id}">${a.name}</a>`).join(', ')}</p>
-          </article>
-        </li>
-      `).join('');
-      results.innerHTML = `<ul class="book-grid book-grid--cols-5">${items}</ul>`;
+      const items = matches.map(({ b }) => {
+        const titleHighlighted = highlight(b.title, terms);
+        const authorHtml = truncateAuthorsHtml(b.authors || [], 60);
+
+        return `<li><article class="card">
+          <a href="${b.url}" class="card__cover" aria-label="Cover ${escapeHtml(b.title)}">${coverHtml(b.cover_url, b.title)}</a>
+          <h3 class="card__title"><a href="${b.url}">${titleHighlighted}</a></h3>
+          <p class="card__authors">${authorHtml}</p>
+        </article></li>`;
+      }).join('');
+      const grid = results.querySelector('.book-grid');
+      grid.innerHTML = items;
       results.hidden = false;
+      if (empty) empty.hidden = true;
     }
   }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const input = document.querySelector('input[name="q"]');
+      if (input && document.activeElement !== input) {
+        e.preventDefault();
+        input.focus();
+      }
+    }
+  });
 </script>
+
+<style>
+  .search-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  /* ── Search Form ── */
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .search-form__input-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-form__icon {
+    position: absolute;
+    left: 0.75rem;
+    color: #9ca3af;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .search-form__input-wrap input {
+    width: 100%;
+    padding: 0.65rem 0.9rem 0.65rem 2.4rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .search-form__input-wrap input:focus {
+    outline: none;
+    border-color: #1f1f1f;
+    box-shadow: 0 0 0 3px rgba(31,31,31,0.08);
+  }
+  .search-form__hint {
+    position: absolute;
+    right: 0.6rem;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.65rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    color: #9ca3af;
+    background: #f9fafb;
+    pointer-events: none;
+    line-height: 1.4;
+  }
+  .search-form__btn {
+    padding: 0.65rem 1.3rem;
+    background: #1f1f1f;
+    color: #fafaf7;
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .search-form__btn:hover { background: #333; }
+
+  /* ── Status ── */
+  .search-status {
+    margin: 0 0 1rem;
+    padding: 0.5rem 0.75rem;
+    background: #f9fafb;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #4b5563;
+  }
+
+  /* ── Results Container ── */
+  .search-results:not([hidden]) {
+    animation: fadeIn 0.2s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Grid ── */
+  .book-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .book-grid--cols-5 { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+
+  /* ── Card ── */
+  .card { margin: 0; }
+  .card__cover { display: block; }
+  .card__cover img,
+  .card__cover picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .card__title {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem;
+    line-height: 1.3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .card__title a {
+    color: #1f1f1f;
+    text-decoration: none;
+  }
+  .card__title a:hover { text-decoration: underline; }
+  .card__title mark {
+    background: #fef08a;
+    padding: 0 0.1rem;
+    border-radius: 2px;
+  }
+  .card__authors {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6b7280;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+  .card__authors a { color: #6b7280; }
+  .card__authors a:hover { color: #1f1f1f; }
+  .card__authors .more { color: #9ca3af; font-style: italic; }
+
+  /* ── Empty State ── */
+  .search-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6b7280;
+  }
+  .search-empty p { margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .search-empty__suggest {
+    font-size: 0.85rem !important;
+    color: #9ca3af;
+  }
+  .search-empty a { color: #1f1f1f; }
+
+  @media (max-width: 540px) {
+    .search-form__hint { display: none; }
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllPublishers, booksByPublisher, paginate, PAGE_SIZE } from '~/data';
@@ -26,5 +27,11 @@ const all = booksByPublisher(publisher.id).sort((a, b) =>
 const { items, page: p, totalPages, total } = paginate(all, pageNum);
 ---
 
-<BookGrid books={items} cols={4} />
-<Pagination page={p} totalPages={totalPages} baseUrl={`/publisher/${publisher.id}`} />
+<BaseLayout title={`Penerbit: ${publisher.name} (Halaman ${p})`} description={`${publisher.name} — halaman ${p} dari ${totalPages} — ${total} buku dari penerbit ini di Pustaka Taratsa`} canonical={`/publisher/${publisher.id}`} noindex ogType="website">
+  <p><a href={`/publisher/${publisher.id}`}>‹ {publisher.name}</a></p>
+  <h1>{publisher.name}</h1>
+  <p>{total} buku dari penerbit ini.</p>
+
+  <BookGrid books={items} cols={4} />
+  <Pagination page={p} totalPages={totalPages} baseUrl={`/publisher/${publisher.id}`} />
+</BaseLayout>

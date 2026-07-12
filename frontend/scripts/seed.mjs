@@ -224,7 +224,7 @@ async function loadBooks(db) {
       identifiers: identifiers,
       formats: [...new Set(formats.map(f => f.format))].filter(Boolean),
       cover_url: book.has_cover
-        ? `/cover/${book.id}?c=${book.last_modified || book.timestamp || book.id}`
+        ? `/cover_thumb/${book.id}?c=${book.last_modified || book.timestamp || book.id}`
         : '/static/generic_cover.jpg',
       cover_og_url: book.has_cover
         ? `/cover/${book.id}/og?c=${book.last_modified || book.timestamp || book.id}`

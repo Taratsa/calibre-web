@@ -89,6 +89,18 @@ export function paginate<T>(items: T[], page: number, size: number = PAGE_SIZE) 
   };
 }
 
+export function ogLocale(code: string): string {
+  const map: Record<string, string> = {
+    id: 'id_ID',
+    en: 'en_US',
+    jv: 'jv_ID',
+    su: 'su_ID',
+    ms: 'ms_MY',
+    nl: 'nl_NL',
+  };
+  return map[code] || code;
+}
+
 export function localeLanguageName(code: string): string {
   const map: Record<string, string> = {
     id: 'Bahasa Indonesia',

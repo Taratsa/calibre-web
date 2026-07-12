@@ -17,7 +17,7 @@ const books = getAllBooks();
 const { items, page, totalPages, total } = paginate(books, pageNum);
 ---
 
-<BaseLayout title={`Halaman ${page}`}>
+<BaseLayout title={`Halaman ${page}`} description={`Halaman ${page} dari ${totalPages} — ${total} buku dalam katalog Pustaka Taratsa`} canonical="/page" noindex ogType="website">
   <h1>Halaman {page} dari {totalPages}</h1>
   <p>{total} buku dalam katalog.</p>
 

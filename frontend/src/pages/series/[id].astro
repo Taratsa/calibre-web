@@ -23,7 +23,7 @@ const all = booksBySeries(series.id).sort((a, b) => {
 const { items, page: p, totalPages, total } = paginate(all, 1);
 ---
 
-<BaseLayout title={`Seri: ${series.name}`}>
+<BaseLayout title={`Seri: ${series.name}`} description={`${series.name} — ${total} buku dalam seri ini di Pustaka Taratsa`}>
   <p><a href="/series">‹ Semua seri</a></p>
   <h1>{series.name}</h1>
   <p>{total} buku dalam seri ini.</p>

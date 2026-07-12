@@ -3,27 +3,94 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import { getAllAuthors } from '~/data';
 
 const authors = getAllAuthors();
+
+function firstLetter(name: string): string {
+  const c = name.trim().charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+}
+
+const letters = Array.from(new Set(authors.map(a => firstLetter(a.name)))).sort((a, b) => {
+  if (a === '#') return -1;
+  if (b === '#') return 1;
+  return a.localeCompare(b);
+});
+
+function authorsFor(letter: string) {
+  return authors.filter(a => firstLetter(a.name) === letter);
+}
 ---
 
 <BaseLayout title="Pengarang" description="Daftar pengarang di Pustaka Taratsa.">
-  <h1>Pengarang</h1>
+  <h1 class="text-2xl font-bold mb-6">Pengarang</h1>
+
   {authors.length === 0 ? (
     <p>Belum ada pengarang.</p>
   ) : (
-    <ul class="alpha-list">
-      {authors.map(a => (
-        <li><a href={`/author/${a.id}`}>{a.name}</a></li>
-      ))}
-    </ul>
+    <>
+      <nav class="letter-nav" aria-label="Filter huruf">
+        {letters.map(l => (
+          <a href={`#letter-${l}`}>{l}</a>
+        ))}
+      </nav>
+      <ul class="alpha-list">
+        {letters.map(l => (
+          <li class="alpha-group" id={`letter-${l}`}>
+            <h2 class="alpha-letter">{l}</h2>
+            <ul>
+              {authorsFor(l).map(a => (
+                <li><a href={`/author/${a.id}`}>{a.name}</a></li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   )}
 </BaseLayout>
 
 <style>
+  .letter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .letter-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f1f1f;
+    border: 1px solid #d1d5db;
+    background: #fff;
+  }
+  .letter-nav a:hover {
+    background: #1f1f1f;
+    color: #fafaf7;
+  }
   .alpha-list {
-    columns: 3 200px;
     list-style: none;
     padding: 0;
     margin: 1rem 0;
   }
-  .alpha-list li { padding: 0.25rem 0; break-inside: avoid; }
+  .alpha-group { margin-bottom: 1.5rem; }
+  .alpha-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 3 200px;
+  }
+  .alpha-group ul li { padding: 0.2rem 0; break-inside: avoid; }
+  .alpha-letter {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #d1d5db;
+  }
 </style>

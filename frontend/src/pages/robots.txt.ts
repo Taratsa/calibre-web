@@ -6,13 +6,11 @@ export const GET: APIRoute = () => {
 Allow: /
 Disallow: /admin/
 Disallow: /ajax/
-Disallow: /download/
-Disallow: /read/
 Disallow: /send/
 Disallow: /me
 
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
-Sitemap: ${site}/sitemap.xml`;
+  Sitemap: ${site}/sitemap-index.xml`;
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

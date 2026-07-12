@@ -25,13 +25,21 @@ body {
 a { color: #1f1f1f; text-decoration: underline; text-underline-offset: 2px; }
 a:hover { text-decoration: none; }
 
+a, button, input, select, summary { min-height: 44px; min-width: 44px; }
+
 img { max-width: 100%; height: auto; display: block; }
 
 .site-header {
   @apply sticky top-0 z-10 bg-[#fafaf7] text-[#1f1f1f] border-b border-gray-200 shadow-sm;
 }
 .site-header .inner {
-  @apply max-w-[1200px] mx-auto px-5 py-4 flex items-center gap-4 flex-wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .site-header .brand {
   @apply flex items-center gap-3 no-underline text-[#1f1f1f] font-bold text-lg;
@@ -82,10 +90,26 @@ img { max-width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
 }
 @media (max-width: 767px) {
-  .site-header .inner { gap: 0.5rem; }
+  .site-header .inner {
+    gap: 0.25rem;
+    grid-template-columns: 1fr auto;
+    display: grid;
+  }
+  .site-header .brand { grid-column: 1; }
   .site-header .desktop-nav { display: none; }
-  .site-header .nav-toggle { display: block; margin-left: auto; }
-  .site-header form { order: 3; margin: 0.25rem 0 0; width: 100%; }
+  .site-header .nav-toggle {
+    display: block;
+    justify-self: end;
+    grid-column: 2;
+  }
+  .site-header .nav-toggle[open] nav {
+    flex-direction: column;
+  }
+  .site-header form {
+    grid-column: 1 / -1;
+    margin: 0.25rem 0 0;
+    width: 100%;
+  }
   .site-header input[type="search"] { min-width: 0; width: 100%; }
 }
 

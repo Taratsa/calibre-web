@@ -20,7 +20,7 @@ const all = booksByPublisher(publisher.id).sort((a, b) =>
 const { items, page: p, totalPages, total } = paginate(all, 1);
 ---
 
-<BaseLayout title={`Penerbit: ${publisher.name}`}>
+<BaseLayout title={`Penerbit: ${publisher.name}`} description={`${publisher.name} — ${total} buku dari penerbit ini di Pustaka Taratsa`}>
   <p><a href="/publisher">‹ Semua penerbit</a></p>
   <h1>{publisher.name}</h1>
   <p>{total} buku dari penerbit ini.</p>

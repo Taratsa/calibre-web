@@ -12,8 +12,8 @@ pustaka.taratsa.id {
       path /login /login/* /logout /logout/*
       path /me /register* /remote_login*
       path /read/* /show/* /download/* /send/*
-      path /opds/* /kobo/*
-      path /cover/* /series_cover/*
+      path /opds /opds/* /kobo/*
+      path /cover/* /cover_thumb/* /series_cover/*
       path /book/*?
       path /.well-known/*
       path /table /downloadlist
@@ -29,7 +29,7 @@ pustaka.taratsa.id {
 
       # WebP-friendly cover assets
       @covers {
-        path /cover/*
+        path /cover/* /cover_thumb/*
       }
       header @covers >Cache-Control "public, max-age=86400"
       header @covers >Vary "Accept, Accept-Encoding"
