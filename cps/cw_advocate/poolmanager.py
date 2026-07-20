@@ -19,11 +19,11 @@ import collections
 import functools
 
 from urllib3 import PoolManager
-from urllib3.poolmanager import _default_key_normalizer, PoolKey
+from urllib3.poolmanager import PoolKey, _default_key_normalizer
 
 from .connectionpool import (
-    ValidatingHTTPSConnectionPool,
     ValidatingHTTPConnectionPool,
+    ValidatingHTTPSConnectionPool,
 )
 
 pool_classes_by_scheme = {
@@ -32,7 +32,7 @@ pool_classes_by_scheme = {
 }
 
 AdvocatePoolKey = collections.namedtuple('AdvocatePoolKey',
-                                         PoolKey._fields + ('key_validator',))
+                                         (*PoolKey._fields, 'key_validator'))
 
 
 def key_normalizer(key_class, request_context):

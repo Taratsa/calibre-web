@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2018 OzzieIsaacs
@@ -16,24 +15,24 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-import os
 import argparse
+import os
 import socket
+import sys
 
 from .constants import CONFIG_DIR as _CONFIG_DIR
-from .constants import STABLE_VERSION as _STABLE_VERSION
+from .constants import DEFAULT_GDRIVE_FILE, DEFAULT_SETTINGS_FILE
 from .constants import NIGHTLY_VERSION as _NIGHTLY_VERSION
-from .constants import DEFAULT_SETTINGS_FILE, DEFAULT_GDRIVE_FILE
+from .constants import STABLE_VERSION as _STABLE_VERSION
 
 
 def version_info():
     if _NIGHTLY_VERSION[1].startswith('$Format'):
-        return "Calibre-Web version: %s - unknown git-clone" % _STABLE_VERSION.replace("b", " Beta")
-    return "Calibre-Web version: %s -%s" % (_STABLE_VERSION.replace("b", " Beta"), _NIGHTLY_VERSION[1])
+        return "Calibre-Web version: {} - unknown git-clone".format(_STABLE_VERSION.replace("b", " Beta"))
+    return "Calibre-Web version: {} -{}".format(_STABLE_VERSION.replace("b", " Beta"), _NIGHTLY_VERSION[1])
 
 
-class CliParameter(object):
+class CliParameter:
 
     def __init__(self):
         self.user_credentials = None
@@ -137,7 +136,7 @@ class CliParameter(object):
                     # on Windows python < 3.4, inet_pton is not available
                     # inet_atom only handles IPv4 addresses
                     socket.inet_aton(self.ip_address)
-            except socket.error as err:
+            except OSError as err:
                 print(self.ip_address, ':', err)
                 sys.exit(1)
 

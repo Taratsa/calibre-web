@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -24,15 +23,13 @@ import json
 from datetime import datetime
 from functools import wraps
 
-from flask import Blueprint, request, make_response, abort, url_for, flash, redirect
-from .cw_login import login_user, current_user
+from flask import Blueprint, abort, flash, make_response, redirect, request, url_for
 from flask_babel import gettext as _
-from sqlalchemy.sql.expression import true
 
 from . import config, logger, ub
+from .cw_login import current_user, login_user
 from .render_template import render_title_template
 from .usermanagement import user_login_required
-
 
 remotelogin = Blueprint('remotelogin', __name__)
 log = logger.create()
@@ -58,7 +55,7 @@ def remote_login():
     auth_token = ub.RemoteAuthToken()
     ub.session.add(auth_token)
     ub.session_commit()
-    verify_url = url_for('remotelogin.verify_token', token=auth_token.auth_token, _external=true)
+    verify_url = url_for('remotelogin.verify_token', token=auth_token.auth_token, _external=True)
     log.debug("Remot Login request with token: %s", auth_token.auth_token)
     return render_title_template('remote_login.html', title=_("Login"), token=auth_token.auth_token,
                                  verify_url=verify_url, page="remotelogin")
@@ -77,7 +74,7 @@ def verify_token(token):
         return redirect(url_for('web.index'))
 
     # Token expired
-    elif datetime.now() > auth_token.expiration:
+    elif datetime.now() > auth_token.expiration:  # pyright: ignore[reportGeneralTypeIssues]
         ub.session.delete(auth_token)
         ub.session_commit()
 
@@ -87,7 +84,7 @@ def verify_token(token):
 
     # Update token with user information
     auth_token.user_id = current_user.id
-    auth_token.verified = True
+    auth_token.verified = True  # pyright: ignore[reportAttributeAccessIssue]
     ub.session_commit()
 
     flash(_("Success! Please return to your device"), category="success")
@@ -99,7 +96,7 @@ def verify_token(token):
 @remote_login_required
 def token_verified():
     token = request.form['token']
-    auth_token = ub.session.query(ub.RemoteAuthToken).filter(ub.RemoteAuthToken.auth_token == token).first()
+    auth_token = ub.session.query(ub.RemoteAuthToken).filter(ub.RemoteAuthToken.auth_token == token).first()  # pyright: ignore[reportArgumentType]
 
     data = {}
 
@@ -109,26 +106,28 @@ def token_verified():
         data['message'] = _("Token not found")
 
     # Token expired
-    elif datetime.now() > auth_token.expiration:
+    elif datetime.now() > auth_token.expiration:  # pyright: ignore[reportGeneralTypeIssues]
         ub.session.delete(auth_token)
         ub.session_commit()
 
         data['status'] = 'error'
         data['message'] = _("Token has expired")
 
-    elif not auth_token.verified:
+    elif not auth_token.verified:  # pyright: ignore[reportGeneralTypeIssues]
         data['status'] = 'not_verified'
 
     else:
-        user = ub.session.query(ub.User).filter(ub.User.id == auth_token.user_id).first()
-        login_user(user)
-
-        ub.session.delete(auth_token)
-        ub.session_commit("User {} logged in via remotelogin, token deleted".format(user.name))
-
-        data['status'] = 'success'
-        log.debug("Remote Login for userid %s succeeded", user.id)
-        flash(_("Success! You are now logged in as: %(nickname)s", nickname=user.name), category="success")
+        user = ub.session.query(ub.User).filter(ub.User.id == auth_token.user_id).first()  # pyright: ignore[reportArgumentType]
+        if user is None:
+            data['status'] = 'error'
+            data['message'] = _("User not found")
+        else:
+            login_user(user)
+            ub.session.delete(auth_token)
+            ub.session_commit(f"User {user.name} logged in via remotelogin, token deleted")
+            data['status'] = 'success'
+            log.debug("Remote Login for userid %s succeeded", user.id)
+            flash(_("Success! You are now logged in as: %(nickname)s", nickname=user.name), category="success")
 
     response = make_response(json.dumps(data, ensure_ascii=False))
     response.headers["Content-Type"] = "application/json; charset=utf-8"

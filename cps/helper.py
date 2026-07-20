@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 cervinko, idalin, SiphonSquirrel, ouzklcn, akushsky,
@@ -17,56 +16,58 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
-import random
+# pyright: reportImportCycles=false
+
 import io
 import mimetypes
+import os
+import random
 import re
-import regex
 import shutil
 import socket
 import time
-from datetime import datetime, timedelta, timezone
-import requests
-import unidecode
+from datetime import UTC, datetime, timedelta
+from urllib.parse import quote
 from uuid import uuid4
 
-from flask import send_from_directory, make_response, abort, url_for, Response, request, after_this_request, current_app
+import regex
+import requests
+import unidecode
+from flask import Response, abort, after_this_request, make_response, request, send_from_directory, url_for
+from flask_babel import get_locale
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as N_
-from flask_babel import get_locale
-from .cw_login import current_user
-from sqlalchemy.sql.expression import true, false, and_, or_, text, func
+from markupsafe import escape
 from sqlalchemy.exc import InvalidRequestError, OperationalError
+from sqlalchemy.sql.expression import and_, false, func, or_, text, true
 from werkzeug.datastructures import Headers
 from werkzeug.security import generate_password_hash
-from markupsafe import escape
-from urllib.parse import quote
+
+from .cw_login import current_user
 
 try:
     from . import cw_advocate
     from .cw_advocate.exceptions import UnacceptableAddressException
     use_advocate = True
-except ImportError as e:
+except ImportError:
     use_advocate = False
     advocate = requests
     UnacceptableAddressException = MissingSchema = BaseException
 
-from . import calibre_db, cli_param
-from .string_helper import strip_whitespaces
-from .tasks.convert import TaskConvert
-from . import logger, config, db, ub, fs
+from . import calibre_db, cli_param, config, db, fs, logger, ub
 from . import gdriveutils as gd
-from .constants import (STATIC_DIR as _STATIC_DIR, CACHE_TYPE_THUMBNAILS, THUMBNAIL_TYPE_COVER, THUMBNAIL_TYPE_SERIES,
-                        SUPPORTED_CALIBRE_BINARIES)
-from .subproc_wrapper import process_wait
-from .services.worker import WorkerThread
-from .tasks.mail import TaskEmail
-from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThumbnails
-from .tasks.metadata_backup import TaskBackupMetadata
-from .file_helper import get_temp_dir
-from .epub_helper import get_content_opf, create_new_metadata_backup, updateEpub, replace_metadata
+from .constants import CACHE_TYPE_THUMBNAILS, SUPPORTED_CALIBRE_BINARIES, THUMBNAIL_TYPE_COVER, THUMBNAIL_TYPE_SERIES
+from .constants import STATIC_DIR as _STATIC_DIR
 from .embed_helper import do_calibre_export
+from .epub_helper import create_new_metadata_backup, get_content_opf, replace_metadata, updateEpub
+from .file_helper import get_temp_dir
+from .services.worker import WorkerThread
+from .string_helper import strip_whitespaces
+from .subproc_wrapper import process_wait
+from .tasks.convert import TaskConvert
+from .tasks.mail import TaskEmail
+from .tasks.metadata_backup import TaskBackupMetadata
+from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThumbnails
 
 log = logger.create()
 
@@ -78,8 +79,8 @@ def get_client_ip():
             request.remote_addr)
 
 try:
+    from wand.exceptions import BlobError, MissingDelegateError
     from wand.image import Image
-    from wand.exceptions import MissingDelegateError, BlobError
     use_IM = True
 except (ImportError, RuntimeError) as e:
     log.debug('Cannot import Image, generating covers from non jpg files will not work: %s', e)
@@ -90,14 +91,14 @@ except (ImportError, RuntimeError) as e:
 # Convert existing book entry to new format
 def convert_book_format(book_id, calibre_path, old_book_format, new_book_format, user_id, ereader_mail=None):
     book = calibre_db.get_book(book_id)
-    data = calibre_db.get_book_format(book.id, old_book_format)
+    data = calibre_db.get_book_format(book.id, old_book_format)  # pyright: ignore[reportOptionalMemberAccess]
     if not data:
         error_message = _("%(format)s format not found for book id: %(book)d", format=old_book_format, book=book_id)
         log.error("convert_book_format: %s", error_message)
         return error_message
-    file_path = os.path.join(calibre_path, book.path, data.name)
+    file_path = os.path.join(calibre_path, book.path, data.name)  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalMemberAccess]
     if config.config_use_google_drive:
-        if not gd.getFileFromEbooksFolder(book.path, data.name + "." + old_book_format.lower()):
+        if not gd.getFileFromEbooksFolder(book.path, data.name + "." + old_book_format.lower()):  # pyright: ignore[reportOptionalMemberAccess]
             error_message = _("%(format)s not found on Google Drive: %(fn)s",
                               format=old_book_format, fn=data.name + "." + old_book_format.lower())
             return error_message
@@ -113,14 +114,11 @@ def convert_book_format(book_id, calibre_path, old_book_format, new_book_format,
         settings['body'] = _('This Email has been sent via Calibre-Web.')
     else:
         settings = dict()
-    link = '<a href="{}">{}</a>'.format(url_for('web.show_book', book_id=book.id), escape(book.title))  # prevent xss
-    txt = "{} -> {}: {}".format(
-           old_book_format.upper(),
-           new_book_format.upper(),
-           link)
+    link = '<a href="{}">{}</a>'.format(url_for('web.show_book', book_id=book.id), escape(book.title))  # prevent xss  # pyright: ignore[reportOptionalMemberAccess]
+    txt = f"{old_book_format.upper()} -> {new_book_format.upper()}: {link}"
     settings['old_book_format'] = old_book_format
     settings['new_book_format'] = new_book_format
-    WorkerThread.add(user_id, TaskConvert(file_path, book.id, txt, settings, ereader_mail, user_id))
+    WorkerThread.add(user_id, TaskConvert(file_path, book.id, txt, settings, ereader_mail, user_id))  # pyright: ignore[reportOptionalMemberAccess]
     return None
 
 
@@ -136,12 +134,12 @@ def send_test_mail(ereader_mail, user_name):
 
 # Send registration email or password reset email, depending on parameter resend (False means welcome email)
 def send_registration_mail(e_mail, user_name, default_password, resend=False):
-    txt = "Hi %s!\r\n" % user_name
+    txt = f"Hi {user_name}!\r\n"
     if not resend:
         txt += "Your account at Calibre-Web has been created.\r\n"
     txt += "Please log in using the following information:\r\n"
-    txt += "Username: %s\r\n" % user_name
-    txt += "Password: %s\r\n" % default_password
+    txt += f"Username: {user_name}\r\n"
+    txt += f"Password: {default_password}\r\n"
     txt += "Don't forget to change your password after your first login.\r\n"
     txt += "Regards,\r\n\r\n"
     txt += "Calibre-Web"
@@ -231,16 +229,16 @@ def send_mail(book_id, book_format, convert, ereader_mail, calibrepath, user_id)
         # returns None if success, otherwise errormessage
         return convert_book_format(book_id, calibrepath, 'azw3', book_format.lower(), user_id, ereader_mail)
 
-    for entry in iter(book.data):
+    for entry in iter(book.data):  # pyright: ignore[reportOptionalMemberAccess]
         if entry.format.upper() == book_format.upper():
             converted_file_name = entry.name + '.' + book_format.lower()
-            link = '<a href="{}">{}</a>'.format(url_for('web.show_book', book_id=book_id), escape(book.title))
+            link = '<a href="{}">{}</a>'.format(url_for('web.show_book', book_id=book_id), escape(book.title))  # pyright: ignore[reportOptionalMemberAccess]
             email_text = N_("%(book)s send to eReader", book=link)
             for email in ereader_mail.split(','):
                 email = strip_whitespaces(email)
-                WorkerThread.add(user_id, TaskEmail(_("Send to eReader"), book.path, converted_file_name,
+                WorkerThread.add(user_id, TaskEmail(_("Send to eReader"), book.path, converted_file_name,  # pyright: ignore[reportOptionalMemberAccess]
                                  config.get_mail_settings(), email,
-                                 email_text, _('This Email has been sent via Calibre-Web.'), book.id))
+                                 email_text, _('This Email has been sent via Calibre-Web.'), book.id))  # pyright: ignore[reportArgumentType,reportOptionalMemberAccess]
             return
     return _("The requested file could not be read. Maybe wrong permissions?")
 
@@ -292,10 +290,7 @@ def get_sorted_author(value):
             combined = "(" + ")|(".join(regexes) + ")"
             value = value.split(" ")
             if re.match(combined, value[-1].upper()):
-                if len(value) > 1:
-                    value2 = value[-2] + ", " + " ".join(value[:-2]) + " " + value[-1]
-                else:
-                    value2 = value[0]
+                value2 = value[-2] + ", " + " ".join(value[:-2]) + " " + value[-1] if len(value) > 1 else value[0]
             elif len(value) == 1:
                 value2 = value[0]
             else:
@@ -304,10 +299,7 @@ def get_sorted_author(value):
             value2 = value
     except Exception as ex:
         log.error("Sorting author %s failed: %s", value, ex)
-        if isinstance(list, value2):
-            value2 = value[0]
-        else:
-            value2 = value
+        value2 = value[0] if isinstance(list, value2) else value  # pyright: ignore[reportArgumentType]
     return value2
 
 
@@ -319,19 +311,19 @@ def edit_book_read_status(book_id, read_status=None):
             read_book = ub.ReadBook(user_id=current_user.id, book_id=book_id)
             book = read_book
         if read_status is None:
-            if book.read_status == ub.ReadBook.STATUS_FINISHED:
-                book.read_status = ub.ReadBook.STATUS_UNREAD
+            if book.read_status == ub.ReadBook.STATUS_FINISHED:  # pyright: ignore[reportGeneralTypeIssues]
+                book.read_status = ub.ReadBook.STATUS_UNREAD  # pyright: ignore[reportAttributeAccessIssue]
             else:
-                book.read_status = ub.ReadBook.STATUS_FINISHED
+                book.read_status = ub.ReadBook.STATUS_FINISHED  # pyright: ignore[reportAttributeAccessIssue]
         else:
-            book.read_status = ub.ReadBook.STATUS_FINISHED if read_status == True else ub.ReadBook.STATUS_UNREAD
+            book.read_status = ub.ReadBook.STATUS_FINISHED if read_status else ub.ReadBook.STATUS_UNREAD  # pyright: ignore[reportAttributeAccessIssue]
         if not book.kobo_reading_state:
             kobo_reading_state = ub.KoboReadingState(user_id=current_user.id, book_id=book_id)
             kobo_reading_state.current_bookmark = ub.KoboBookmark()
             kobo_reading_state.statistics = ub.KoboStatistics()
             book.kobo_reading_state = kobo_reading_state
         ub.session.merge(book)
-        ub.session_commit("Book {} readbit toggled".format(book_id))
+        ub.session_commit(f"Book {book_id} readbit toggled")
     else:
         try:
             calibre_db.create_functions(config)
@@ -350,12 +342,12 @@ def edit_book_read_status(book_id, read_status=None):
                 calibre_db.session.commit()
         except (KeyError, AttributeError, IndexError):
             log.error(
-                "Custom Column No.{} does not exist in calibre database".format(config.config_read_column))
-            return "Custom Column No.{} does not exist in calibre database".format(config.config_read_column)
+                f"Custom Column No.{config.config_read_column} does not exist in calibre database")
+            return f"Custom Column No.{config.config_read_column} does not exist in calibre database"
         except (OperationalError, InvalidRequestError) as ex:
             calibre_db.session.rollback()
-            log.error("Read status could not set: {}".format(ex))
-            return _("Read status could not set: {}".format(ex.orig))
+            log.error(f"Read status could not set: {ex}")
+            return _(f"Read status could not set: {ex.orig}")  # pyright: ignore[reportAttributeAccessIssue]
     return ""
 
 
@@ -376,20 +368,19 @@ def delete_book_file(book, calibrepath, book_format=None):
                         for f in files:
                             os.unlink(os.path.join(root, f))
                         if len(folders):
-                            log.warning("Deleting book {} failed, path {} has subfolders: {}".format(book.id,
-                                        book.path, folders))
+                            log.warning(f"Deleting book {book.id} failed, path {book.path} has subfolders: {folders}")
                             return True, _("Deleting bookfolder for book %(id)s failed, path has subfolders: %(path)s",
                                            id=book.id,
                                            path=book.path)
                     shutil.rmtree(path)
-                except (IOError, OSError) as ex:
+                except OSError as ex:
                     log.error("Deleting book %s failed: %s", book.id, ex)
                     return False, _("Deleting book %(id)s failed: %(message)s", id=book.id, message=ex)
                 authorpath = os.path.join(calibrepath, os.path.split(book.path)[0])
                 if not os.listdir(authorpath):
                     try:
                         shutil.rmtree(authorpath)
-                    except (IOError, OSError) as ex:
+                    except OSError as ex:
                         log.error("Deleting authorpath for book %s failed: %s", book.id, ex)
                 return True, None
 
@@ -408,10 +399,10 @@ def rename_all_files_on_change(one_book, new_path, old_path, all_new_name, gdriv
                 shutil.move(os.path.join(old_path, file_format.name + '.' + file_format.format.lower()),
                         os.path.join(new_path, all_new_name + '.' + file_format.format.lower()))
             except (PermissionError, FileNotFoundError) as ex:
-                log.error("Moving book-id %s folder %s failed: %s", one_book.id, new_path, ex)                
+                log.error("Moving book-id %s folder %s failed: %s", one_book.id, new_path, ex)
                 return _("Moving book path of Book %(book_id)s to: '%(src)s' failed with error: %(error)s",
                  book_id=one_book.id, src=new_path, error=str(ex))
-            
+
         else:
             g_file = gd.getFileFromEbooksFolder(old_path,
                                                 file_format.name + '.' + file_format.format.lower())
@@ -419,8 +410,8 @@ def rename_all_files_on_change(one_book, new_path, old_path, all_new_name, gdriv
                 gd.moveGdriveFileRemote(g_file, all_new_name + '.' + file_format.format.lower())
                 gd.updateDatabaseOnEdit(g_file['id'], all_new_name + '.' + file_format.format.lower())
             else:
-                log.error("File {} not found on gdrive"
-                          .format(old_path, file_format.name + '.' + file_format.format.lower()))
+                log.error(f"File {old_path} not found on gdrive"
+                          )
 
         # change name in Database
         file_format.name = all_new_name
@@ -449,23 +440,20 @@ def rename_author_path(first_author, old_author_dir, renamed_author, calibre_pat
                     log.error("Rename author from: %s to %s: %s", old_author_path, new_author_path, ex)
                     log.error_or_exception(ex)
                     raise Exception(_("Rename author from: '%(src)s' to '%(dest)s' failed with error: %(error)s",
-                             src=old_author_path, dest=new_author_path, error=str(ex)))
+                             src=old_author_path, dest=new_author_path, error=str(ex))) from ex
     return new_authordir
 
 # Moves files in file storage during author/title rename, or from temp dir to file storage
 def update_dir_structure_file(book_id, calibre_path, original_filepath, new_author, db_filename):
     # get book database entry from id, if original path overwrite source with original_filepath
     local_book = calibre_db.get_book(book_id)
-    if original_filepath:
-        path = original_filepath
-    else:
-        path = os.path.join(calibre_path, local_book.path)
+    path = original_filepath or os.path.join(calibre_path, local_book.path)  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalMemberAccess]
 
     # Create (current) author_dir and title_dir from database
-    author_dir = local_book.path.split('/')[0]
-    title_dir = local_book.path.split('/')[1]
+    author_dir = local_book.path.split('/')[0]  # pyright: ignore[reportOptionalMemberAccess]
+    title_dir = local_book.path.split('/')[1]  # pyright: ignore[reportOptionalMemberAccess]
 
-    new_title_dir = get_valid_filename(local_book.title, chars=96) + " (" + str(book_id) + ")"
+    new_title_dir = get_valid_filename(local_book.title, chars=96) + " (" + str(book_id) + ")"  # pyright: ignore[reportOptionalMemberAccess]
     if new_author:
         new_author_dir = get_valid_filename(new_author, chars=96)
     else:
@@ -481,13 +469,13 @@ def update_dir_structure_file(book_id, calibre_path, original_filepath, new_auth
                                      path)
         if not error:
             new_path = os.path.join(calibre_path, new_author_dir, new_title_dir).replace('\\', '/')
-            all_new_name = get_valid_filename(local_book.title, chars=42) + ' - ' \
-                           + get_valid_filename(new_author, chars=42)
+            all_new_name = (get_valid_filename(local_book.title, chars=42) + ' - '  # pyright: ignore[reportOptionalMemberAccess]
+                           + get_valid_filename(new_author, chars=42))
             # Book folder already moved, only files need to be renamed
             renameerror = rename_all_files_on_change(local_book, new_path, new_path, all_new_name)
 
-        if error or renameerror:
-            return error or renameerror
+        if error or renameerror:  # pyright: ignore[reportPossiblyUnboundVariable]
+            return error or renameerror  # pyright: ignore[reportPossiblyUnboundVariable]
     return False
 
 
@@ -497,7 +485,7 @@ def upload_new_file_gdrive(book_id, first_author, title, title_dir, original_fil
         get_valid_filename(first_author, chars=42) + filename_ext
     gdrive_path = os.path.join(get_valid_filename(first_author, chars=96),
                                title_dir + " (" + str(book_id) + ")")
-    book.path = gdrive_path.replace("\\", "/")
+    book.path = gdrive_path.replace("\\", "/")  # pyright: ignore[reportOptionalMemberAccess]
     gd.uploadFileToEbooksFolder(os.path.join(gdrive_path, file_name).replace("\\", "/"), original_filepath)
     return False
 
@@ -505,33 +493,33 @@ def upload_new_file_gdrive(book_id, first_author, title, title_dir, original_fil
 def update_dir_structure_gdrive(book_id, first_author):
     book = calibre_db.get_book(book_id)
 
-    authordir = book.path.split('/')[0]
-    titledir = book.path.split('/')[1]
+    authordir = book.path.split('/')[0]  # pyright: ignore[reportOptionalMemberAccess]
+    titledir = book.path.split('/')[1]  # pyright: ignore[reportOptionalMemberAccess]
     # new_authordir = rename_all_authors(first_author, renamed_author, gdrive=True)
     new_authordir = get_valid_filename(first_author, chars=96)
-    new_titledir = get_valid_filename(book.title, chars=96) + " (" + str(book_id) + ")"
+    new_titledir = get_valid_filename(book.title, chars=96) + " (" + str(book_id) + ")"  # pyright: ignore[reportOptionalMemberAccess]
 
     if titledir != new_titledir:
         g_file = gd.getFileFromEbooksFolder(authordir, titledir)
         if g_file:
             gd.moveGdriveFileRemote(g_file, new_titledir)
-            book.path = book.path.split('/')[0] + '/' + new_titledir
-            gd.updateDatabaseOnEdit(g_file['id'], book.path)     # only child folder affected
+            book.path = book.path.split('/')[0] + '/' + new_titledir  # pyright: ignore[reportOptionalMemberAccess]
+            gd.updateDatabaseOnEdit(g_file['id'], book.path)     # only child folder affected  # pyright: ignore[reportOptionalMemberAccess]
         else:
-            return _('File %(file)s not found on Google Drive', file=book.path)  # file not found
+            return _('File %(file)s not found on Google Drive', file=book.path)  # file not found  # pyright: ignore[reportOptionalMemberAccess]
 
     if authordir != new_authordir:
         g_file = gd.getFileFromEbooksFolder(authordir, new_titledir)
         if g_file:
             gd.moveGdriveFolderRemote(g_file, new_authordir, single_book=True)
-            book.path = new_authordir + '/' + book.path.split('/')[1]
-            gd.updateDatabaseOnEdit(g_file['id'], book.path)
+            book.path = new_authordir + '/' + book.path.split('/')[1]  # pyright: ignore[reportOptionalMemberAccess]
+            gd.updateDatabaseOnEdit(g_file['id'], book.path)  # pyright: ignore[reportOptionalMemberAccess]
         else:
             return _('File %(file)s not found on Google Drive', file=authordir)  # file not found
     if titledir != new_titledir or authordir != new_authordir :
-        all_new_name = get_valid_filename(book.title, chars=42) + ' - ' \
-                       + get_valid_filename(new_authordir, chars=42)
-        return rename_all_files_on_change(book, book.path, book.path, all_new_name, gdrive=True)  # todo: Move filenames on gdrive
+        all_new_name = (get_valid_filename(book.title, chars=42) + ' - '  # pyright: ignore[reportOptionalMemberAccess]
+                       + get_valid_filename(new_authordir, chars=42))
+        return rename_all_files_on_change(book, book.path, book.path, all_new_name, gdrive=True)  # todo: Move filenames on gdrive  # pyright: ignore[reportOptionalMemberAccess]
     return False
 
 
@@ -544,8 +532,8 @@ def move_files_on_change(calibre_path, new_author_dir, new_titledir, localbook, 
             try:
                 shutil.move(original_filepath, os.path.join(new_path, db_filename))
             except OSError:
-                log.error("Rename title from {} to {} failed with error, trying to "
-                          "move without metadata".format(path, new_path))
+                log.error(f"Rename title from {path} to {new_path} failed with error, trying to "
+                          "move without metadata")
                 shutil.move(original_filepath, os.path.join(new_path, db_filename), copy_function=shutil.copy)
             log.debug("Moving title: %s to %s", original_filepath, new_path)
         else:
@@ -563,12 +551,12 @@ def move_files_on_change(calibre_path, new_author_dir, new_titledir, localbook, 
             if not os.listdir(os.path.split(path)[0]):
                 try:
                     shutil.rmtree(os.path.split(path)[0])
-                except (IOError, OSError) as ex:
+                except OSError as ex:
                     log.error("Deleting authorpath for book %s failed: %s", localbook.id, ex)
         # change location in database to new author/title path
         localbook.path = os.path.join(new_author_dir, new_titledir).replace('\\', '/')
     except (OSError, FileNotFoundError) as ex:
-        log.error_or_exception("Rename title from {} to {} failed with error: {}".format(path, new_path, ex))
+        log.error_or_exception(f"Rename title from {path} to {new_path} failed with error: {ex}")
         return _("Rename title from: '%(src)s' to '%(dest)s' failed with error: %(error)s",
                  src=path, dest=new_path, error=str(ex))
     return False
@@ -669,7 +657,7 @@ def valid_email(emails):
             # Regex according to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email#validation
             if not re.search(r"^[\w.!#$%&'*+\\/=?^_`{|}~-]+@[\w](?:[\w-]{0,61}[\w])?(?:\.[\w](?:[\w-]{0,61}[\w])?)*$",
                              email):
-                log.error("Invalid Email address format for {}".format(email))
+                log.error(f"Invalid Email address format for {email}")
                 raise Exception(_("Invalid Email address format"))
             valid_emails.append(email)
     return ",".join(valid_emails)
@@ -763,7 +751,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                 cover_path = os.path.join(config.get_book_path(), book.path, 'cover.jpg')
                 if os.path.isfile(cover_path):
                     h = int(255 * resolution)
-                    with Image(filename=cover_path) as img:
+                    with Image(filename=cover_path) as img:  # pyright: ignore[reportPossiblyUnboundVariable]
                         if img.height > h:
                             w = int((h / float(img.height)) * img.width)
                             if w % 2 != 0:
@@ -778,7 +766,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                             img.save(filename=jpg_path)
                             return send_from_directory(thumb_dir, base + '.jpg')
             except Exception as ex:
-                log.error_or_exception('on-the-fly thumbnail generation failed: %s', ex)
+                log.error_or_exception('on-the-fly thumbnail generation failed: %s', ex)  # pyright: ignore[reportArgumentType]
                 # fall through to serve original cover
 
         # Send the book cover from Google Drive if configured
@@ -792,7 +780,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                         return _convert_to_webp(cover_file, 'image/jpeg')
                     return Response(cover_file, mimetype='image/jpeg')
                 else:
-                    log.error('{}/cover.jpg not found on Google Drive'.format(book.path))
+                    log.error(f'{book.path}/cover.jpg not found on Google Drive')
                     return get_cover_on_failure()
             except Exception as ex:
                 log.error_or_exception(ex)
@@ -836,8 +824,9 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
 
 def _convert_to_webp(image_data, mime_type):
     try:
-        from cps.web import COVER_REQUESTS, COVER_CONVERSION_TIME, prometheus_available
         import gc
+
+        from cps.web import COVER_CONVERSION_TIME, COVER_REQUESTS, prometheus_available
         start_time = time.time()
         from wand.image import Image
         with Image(blob=image_data) as img:
@@ -865,7 +854,7 @@ def get_book_cover_thumbnail(book, resolution):
                 .filter(ub.Thumbnail.type == THUMBNAIL_TYPE_COVER)
                 .filter(ub.Thumbnail.entity_id == book.id)
                 .filter(ub.Thumbnail.resolution == resolution)
-                .filter(or_(ub.Thumbnail.expiration.is_(None), ub.Thumbnail.expiration > datetime.now(timezone.utc)))
+                .filter(or_(ub.Thumbnail.expiration.is_(None), ub.Thumbnail.expiration > datetime.now(UTC)))
                 .first())
 
 
@@ -875,7 +864,7 @@ def get_series_thumbnail_on_failure(series_id, resolution, accept_webp=False):
         .join(db.books_series_link)
         .join(db.Series)
         .filter(db.Series.id == series_id)
-        .filter(db.Books.has_cover == 1)
+        .filter(db.Books.has_cover == 1)  # pyright: ignore[reportArgumentType]
         .first())
     return get_book_cover_internal(book, resolution=resolution, accept_webp=accept_webp)
 
@@ -892,7 +881,7 @@ def get_series_cover_internal(series_id, resolution=None, accept_webp=False):
             cache = fs.FileSystem()
             if cache.get_cache_file_exists(thumbnail.filename, CACHE_TYPE_THUMBNAILS):
                 return send_from_directory(cache.get_cache_file_dir(thumbnail.filename, CACHE_TYPE_THUMBNAILS),
-                                           thumbnail.filename)
+                                           thumbnail.filename)  # pyright: ignore[reportArgumentType]
 
     return get_series_thumbnail_on_failure(series_id, resolution, accept_webp=accept_webp)
 
@@ -903,7 +892,7 @@ def get_series_thumbnail(series_id, resolution):
         .filter(ub.Thumbnail.type == THUMBNAIL_TYPE_SERIES)
         .filter(ub.Thumbnail.entity_id == series_id)
         .filter(ub.Thumbnail.resolution == resolution)
-        .filter(or_(ub.Thumbnail.expiration.is_(None), ub.Thumbnail.expiration > datetime.now(timezone.utc)))
+        .filter(or_(ub.Thumbnail.expiration.is_(None), ub.Thumbnail.expiration > datetime.now(UTC)))
         .first())
 
 
@@ -913,7 +902,7 @@ def save_cover_from_url(url, book_path):
         if cli_param.allow_localhost:
             img = requests.get(url, timeout=(10, 200), allow_redirects=False)  # ToDo: Error Handling
         elif use_advocate:
-            img = cw_advocate.get(url, timeout=(10, 200), allow_redirects=False)      # ToDo: Error Handling
+            img = cw_advocate.get(url, timeout=(10, 200), allow_redirects=False)      # ToDo: Error Handling # pyright: ignore[reportPossiblyUnboundVariable]
         else:
             log.error("python module advocate is not installed but is needed")
             return False, _("Python module 'advocate' is not installed but is needed for cover uploads")
@@ -925,12 +914,12 @@ def save_cover_from_url(url, book_path):
             requests.exceptions.ConnectionError,
             requests.exceptions.Timeout) as ex:
         # "Invalid host" can be the result of a redirect response
-        log.error(u'Cover Download Error %s', ex)
+        log.error('Cover Download Error %s', ex)
         return False, _("Error Downloading Cover")
     except MissingDelegateError as ex:
-        log.info(u'File Format Error %s', ex)
+        log.info('File Format Error %s', ex)
         return False, _("Cover Format Error")
-    except UnacceptableAddressException as e:
+    except UnacceptableAddressException:
         log.error("Localhost or local network was accessed for cover upload")
         return False, _("You are not allowed to access localhost or the local network for cover uploads")
 
@@ -956,7 +945,7 @@ def save_cover_from_filestorage(filepath, saved_filename, img):
             else:
                 # upload of jpg/png... from hdd
                 img.save(os.path.join(filepath, saved_filename))
-    except (IOError, OSError):
+    except OSError:
         log.error("Cover-file is not a valid image file, or could not be stored")
         return False, _("Cover-file is not a valid image file, or could not be stored")
     return True, None
@@ -972,14 +961,11 @@ def save_cover(img, book_path):
             return False, _("Only jpg/jpeg/png/webp/bmp files are supported as coverfile")
         # convert to jpg because calibre only supports jpg
         try:
-            if hasattr(img, 'stream'):
-                imgc = Image(blob=img.stream)
-            else:
-                imgc = Image(blob=io.BytesIO(img.content))
+            imgc = Image(blob=img.stream) if hasattr(img, 'stream') else Image(blob=io.BytesIO(img.content))  # pyright: ignore[reportPossiblyUnboundVariable]
             imgc.format = 'jpeg'
             imgc.transform_colorspace("srgb")
             img = imgc
-        except (BlobError, MissingDelegateError):
+        except (BlobError, MissingDelegateError):  # pyright: ignore[reportPossiblyUnboundVariable]
             log.error("Invalid cover file content")
             return False, _("Invalid cover file content")
     else:
@@ -1045,7 +1031,7 @@ def do_download_file(book, book_format, client, data, headers):
     # Clean up staged copies in /tmp/calibre_web after the response is sent
     # (kepubify / calibre-export branches) so the temp dir does not grow unbounded.
     if filename == get_temp_dir():
-        _tmp_path = os.path.join(filename, download_name + "." + book_format)
+        _tmp_path = os.path.join(filename, download_name + "." + book_format)  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalOperand]
         @after_this_request
         def _cleanup_staged_download(resp):
             try:
@@ -1053,7 +1039,7 @@ def do_download_file(book, book_format, client, data, headers):
             except OSError as ex:
                 log.warning('Failed to remove staged download %s: %s', _tmp_path, ex)
             return resp
-    response = make_response(send_from_directory(filename, download_name + "." + book_format))
+    response = make_response(send_from_directory(filename, download_name + "." + book_format))  # pyright: ignore[reportArgumentType,reportOptionalOperand]
     # ToDo Check headers parameter
     for element in headers:
         response.headers[element[0]] = element[1]
@@ -1063,7 +1049,7 @@ def do_download_file(book, book_format, client, data, headers):
                  request.remote_addr
     country = request.headers.get('CF-IPCountry', '')
     log.info('Downloading file: \'%s\' by %s - ip: %s, country: %s, ua: %s',
-             format(os.path.join(filename, book_name + "." + book_format)),
+             format(os.path.join(filename, book_name + "." + book_format)),  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalOperand]
              current_user.name, ip_address, country, ua)
     try:
         umami_url = 'https://umami.kenadera.org/api/send'
@@ -1152,17 +1138,17 @@ def check_calibre(calibre_location):
             values = [process_wait([binary_path, "--version"], pattern=r'\(calibre (.*)\)')
                       for binary_path in supported_binary_paths]
             if all(values):
-                version = values[0].group(1)
+                version = values[0].group(1)  # pyright: ignore[reportAttributeAccessIssue]
                 log.debug("calibre version %s", version)
             else:
                 return _('Calibre binaries not viable')
         else:
             ret_val = []
             missing_binaries = [path for path, available in
-                               zip(SUPPORTED_CALIBRE_BINARIES.values(), binaries_available) if not available]
+                               zip(SUPPORTED_CALIBRE_BINARIES.values(), binaries_available, strict=False) if not available]
 
             missing_perms = [path for path, available in
-                            zip(SUPPORTED_CALIBRE_BINARIES.values(), binaries_executable) if not available]
+                            zip(SUPPORTED_CALIBRE_BINARIES.values(), binaries_executable, strict=False) if not available]
             if missing_binaries:
                 ret_val.append(_('Missing calibre binaries: %(missing)s', missing=", ".join(missing_binaries)))
             if missing_perms:
@@ -1186,14 +1172,14 @@ def json_serial(obj):
             'seconds': obj.seconds,
             'microseconds': obj.microseconds,
         }
-    raise TypeError("Type %s not serializable" % type(obj))
+    raise TypeError(f"Type {type(obj)} not serializable")
 
 
 def tags_filters():
     negtags_list = current_user.list_denied_tags()
     postags_list = current_user.list_allowed_tags()
-    neg_content_tags_filter = false() if negtags_list == [''] else db.Tags.name.in_(negtags_list)
-    pos_content_tags_filter = true() if postags_list == [''] else db.Tags.name.in_(postags_list)
+    neg_content_tags_filter = false() if negtags_list == [''] else db.Tags.name.in_(negtags_list)  # pyright: ignore[reportGeneralTypeIssues]
+    pos_content_tags_filter = true() if postags_list == [''] else db.Tags.name.in_(postags_list)  # pyright: ignore[reportGeneralTypeIssues]
     return and_(pos_content_tags_filter, ~neg_content_tags_filter)
 
 
@@ -1203,10 +1189,10 @@ def tags_filters():
 # in all calls the email address is checked for validity
 def check_valid_domain(domain_text):
     sql = "SELECT * FROM registration WHERE (:domain LIKE domain and allow = 1);"
-    if not len(ub.session.query(ub.Registration).from_statement(text(sql)).params(domain=domain_text).all()):
+    if not len(ub.session.query(ub.Registration).from_statement(text(sql)).params(domain=domain_text).all()):  # pyright: ignore[reportArgumentType]
         return False
     sql = "SELECT * FROM registration WHERE (:domain LIKE domain and allow = 0);"
-    return not len(ub.session.query(ub.Registration).from_statement(text(sql)).params(domain=domain_text).all())
+    return not len(ub.session.query(ub.Registration).from_statement(text(sql)).params(domain=domain_text).all())  # pyright: ignore[reportArgumentType]
 
 
 def get_download_link(book_id, book_format, client):
@@ -1229,12 +1215,11 @@ def get_download_link(book_id, book_format, client):
                 quoted_file_name = quote(native_name)
             headers = Headers()
             headers["Content-Type"] = mimetypes.types_map.get('.' + book_format, "application/octet-stream")
-            headers["Content-Disposition"] = ('attachment; filename="{}.{}"; filename*=UTF-8\'\'{}.{}').format(
-                file_name, book_format, quoted_file_name, book_format)
+            headers["Content-Disposition"] = (f'attachment; filename="{file_name}.{book_format}"; filename*=UTF-8\'\'{quoted_file_name}.{book_format}')
             headers["Cache-Control"] = "public, max-age=3888000"
             return do_download_file(book, book_format, client, data1, headers)
     else:
-        log.error("Book id {} not found for downloading".format(book_id))
+        log.error(f"Book id {book_id} not found for downloading")
     abort(404)
 
 
@@ -1264,7 +1249,7 @@ def update_thumbnail_cache():
 
 
 def set_all_metadata_dirty():
-    WorkerThread.add(None, TaskBackupMetadata(export_language=get_locale(),
+    WorkerThread.add(None, TaskBackupMetadata(export_language=get_locale(),  # pyright: ignore[reportArgumentType]
                                               translated_title=_("Cover"),
                                               set_dirty=True,
                                               task_message=N_("Queue all books for metadata backup")),

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -19,26 +18,24 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
+# pyright: reportImportCycles=false
 __package__ = "cps"
 
-import sys
-import os
 import mimetypes
+import os
+import sys
 
-from flask import Flask
+from flask import Flask, request
 from flask.sessions import SecureCookieSessionInterface
-from .MyLoginManager import MyLoginManager
 from flask_principal import Principal
 
-from . import logger
+from . import cache_buster, config_sql, db, logger, ub
 from .cli import CliParameter
+from .dep_check import dependency_check
+from .MyLoginManager import MyLoginManager
 from .reverseproxy import ReverseProxied
 from .server import WebServer
-from .dep_check import dependency_check
 from .updater import Updater
-from . import config_sql
-from . import cache_buster
-from . import ub, db
 
 try:
     from flask_limiter import Limiter
@@ -99,10 +96,7 @@ cli_param = CliParameter()
 
 config = config_sql.ConfigSQL()
 
-if wtf_present:
-    csrf = CSRFProtect()
-else:
-    csrf = None
+csrf = CSRFProtect() if wtf_present else None  # pyright: ignore[reportPossiblyUnboundVariable]
 
 calibre_db = db.CalibreDB(app)
 
@@ -111,15 +105,16 @@ web_server = WebServer()
 updater_thread = Updater()
 
 if limiter_present:
-    limiter = Limiter(key_func=True, headers_enabled=True, in_memory_fallback_enabled=True, default_limits=[],
+    limiter = Limiter(key_func=lambda: request.remote_addr or '', headers_enabled=True, in_memory_fallback_enabled=True, default_limits=[],  # pyright: ignore[reportPossiblyUnboundVariable]
                       swallow_errors=True)
 else:
     limiter = None
 
+
 class ScriptNameSessionInterface(SecureCookieSessionInterface):
     def get_cookie_path(self, app):
-        # Called once per response, after request context exists
-        return app.wsgi_app.script_name.rstrip("/") or "/"
+        from typing import Any, cast
+        return cast(Any, app.wsgi_app).script_name.rstrip("/") or "/"
 
 
 def create_app():
@@ -131,7 +126,8 @@ def create_app():
 
     ub.init_db(cli_param.settings_path)
     # pylint: disable=no-member
-    encrypt_key, error = config_sql.get_encryption_key(os.path.dirname(cli_param.settings_path))
+    settings_path = cli_param.settings_path or ""
+    encrypt_key, error = config_sql.get_encryption_key(os.path.dirname(settings_path))
 
     config_sql.load_configuration(ub.session, encrypt_key)
     config.init_config(ub.session, encrypt_key, cli_param)
@@ -141,17 +137,8 @@ def create_app():
 
     ub.password_change(cli_param.user_credentials)
 
-    if sys.version_info < (3, 0):
-        log.info(
-            '*** Python2 is EOL since end of 2019, this version of Calibre-Web is no longer supporting Python2, '
-            'please update your installation to Python3 ***')
-        print(
-            '*** Python2 is EOL since end of 2019, this version of Calibre-Web is no longer supporting Python2, '
-            'please update your installation to Python3 ***')
-        web_server.stop(True)
-        sys.exit(5)
 
-    lm.login_view = 'web.login'
+    lm.login_view = 'web.login'  # pyright: ignore[reportAttributeAccessIssue]
     lm.anonymous_user = ub.Anonymous
     lm.session_protection = 'strong' if config.config_session == 1 else "basic"
 
@@ -188,10 +175,12 @@ def create_app():
     app.secret_key = os.getenv('SECRET_KEY', config_sql.get_flask_session_key(ub.session))
 
     web_server.init_app(app, config)
+    from typing import Any, cast
+
     from .cw_babel import babel, get_locale
     if hasattr(babel, "localeselector"):
         babel.init_app(app)
-        babel.localeselector(get_locale)
+        cast(Any, babel).localeselector(get_locale)
     else:
         babel.init_app(app, locale_selector=get_locale)
 
@@ -210,12 +199,13 @@ def create_app():
         app.config.update(RATELIMIT_STORAGE_URI=config.config_limiter_uri)
         if config.config_limiter_options != "":
             app.config.update(RATELIMIT_STORAGE_OPTIONS=config.config_limiter_options)
-    try:
-        limiter.init_app(app)
-    except Exception as e:
-        log.error('Wrong Flask Limiter configuration, falling back to default: {}'.format(e))
-        app.config.update(RATELIMIT_STORAGE_URI=None)
-        limiter.init_app(app)
+    if limiter is not None:
+        try:
+            limiter.init_app(app)
+        except Exception as e:
+            log.error(f'Wrong Flask Limiter configuration, falling back to default: {e}')
+            app.config.update(RATELIMIT_STORAGE_URI=None)
+            limiter.init_app(app)
 
     # Register scheduled tasks
     from .schedule import register_scheduled_tasks, register_startup_tasks

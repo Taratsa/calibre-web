@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2022 OzzieIsaacs
@@ -18,9 +17,10 @@
 
 import sys
 
+from flask import request
+
 from . import create_app, limiter
 from .jinjia import jinjia
-from flask import request
 
 
 def request_username():
@@ -30,23 +30,24 @@ def request_username():
 def main():
     app = create_app()
 
-    from .web import web
-    from .basic import basic
-    from .opds import opds
-    from .admin import admi
-    from .gdrive import gdrive
-    from .editbooks import editbook
     from .about import about
+    from .admin import admi
+    from .basic import basic
+    from .editbooks import editbook
+    from .error_handler import init_errorhandler
+    from .gdrive import gdrive
+    from .opds import opds
+    from .remotelogin import remotelogin
     from .search import search
     from .search_metadata import meta
     from .shelf import shelf
     from .tasks_status import tasks
-    from .error_handler import init_errorhandler
-    from .remotelogin import remotelogin
+    from .web import web
     try:
-        from .kobo import kobo, get_kobo_activated
-        from .kobo_auth import kobo_auth
         from flask_limiter.util import get_remote_address
+
+        from .kobo import get_kobo_activated, kobo
+        from .kobo_auth import kobo_auth
         kobo_available = get_kobo_activated()
     except (ImportError, AttributeError):  # Catch also error for not installed flask-WTF (missing csrf decorator)
         kobo_available = False
@@ -66,6 +67,7 @@ def main():
     app.register_blueprint(tasks)
     app.register_blueprint(web)
     app.register_blueprint(basic)
+    assert limiter is not None
     limiter.limit("3/minute", key_func=request_username)(opds)
     app.register_blueprint(opds)
     app.register_blueprint(jinjia)
@@ -79,10 +81,14 @@ def main():
     from .api import api
     app.register_blueprint(api)
     if kobo_available:
+        assert get_remote_address is not None
+        assert kobo is not None
+        assert kobo_auth is not None
         limiter.limit("3/minute", key_func=get_remote_address)(kobo)
         app.register_blueprint(kobo)
         app.register_blueprint(kobo_auth)
     if oauth_available:
+        assert oauth is not None
         app.register_blueprint(oauth)
     success = web_server.start()
     sys.exit(0 if success else 1)

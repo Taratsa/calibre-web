@@ -1,10 +1,10 @@
 from babel import negotiate_locale
-from flask_babel import Babel, Locale
 from babel.core import UnknownLocaleError
 from flask import request
-from .cw_login import current_user
+from flask_babel import Babel, Locale
 
 from . import logger
+from .cw_login import current_user
 
 log = logger.create()
 
@@ -13,10 +13,9 @@ babel = Babel()
 
 def get_locale():
     # if a user is logged in, use the locale from the user settings
-    if current_user is not None and hasattr(current_user, "locale"):
+    if current_user is not None and hasattr(current_user, "locale") and current_user.name != 'Guest':
         # if the account is the guest account bypass the config lang settings
-        if current_user.name != 'Guest':
-            return current_user.locale
+        return current_user.locale
 
     preferred = list()
     if request.accept_languages:

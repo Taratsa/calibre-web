@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2024 OzzieIsaacs
@@ -15,13 +14,13 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
-from uuid import uuid4
 import os
+from uuid import uuid4
 
+from . import config, logger
+from .constants import SUPPORTED_CALIBRE_BINARIES
 from .file_helper import get_temp_dir
 from .subproc_wrapper import process_open
-from . import logger, config
-from .constants import SUPPORTED_CALIBRE_BINARIES
 
 log = logger.create()
 
@@ -38,7 +37,7 @@ def do_calibre_export(book_id, book_format):
         library_path = config.get_book_path()
         opf_command = [calibredb_binarypath, 'export', '--dont-write-opf', '--dont-save-cover',
                        '--with-library', library_path,
-                       '--to-dir', tmp_dir, '--formats', book_format, "--template", "{}".format(temp_file_name),
+                       '--to-dir', tmp_dir, '--formats', book_format, "--template", f"{temp_file_name}",
                        str(book_id)]
         p = process_open(opf_command, quotes, my_env)
         _, err = p.communicate()
@@ -56,7 +55,7 @@ def get_calibre_binarypath(binary):
     if binariesdir:
         try:
             return os.path.join(binariesdir, SUPPORTED_CALIBRE_BINARIES[binary])
-        except KeyError as ex:
+        except KeyError:
             log.error("Binary not supported by Calibre-Web: %s", SUPPORTED_CALIBRE_BINARIES[binary])
             pass
     return ""

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs
@@ -16,8 +15,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from . import logger
 from lxml.etree import ParserError
+
+from . import logger
 
 log = logger.create()
 
@@ -27,14 +27,14 @@ try:
     from bleach.sanitizer import ALLOWED_TAGS
     bleach = True
 except ImportError:
-    from nh3 import clean as clean_html
+    from nh3 import clean as clean_html  # pyright: ignore[reportMissingImports]
     bleach = False
 
 
 def clean_string(unsafe_text, book_id=0):
     try:
         if bleach:
-            allowed_tags = list(ALLOWED_TAGS)
+            allowed_tags = list(ALLOWED_TAGS)  # pyright: ignore[reportPossiblyUnboundVariable]
             allowed_tags.extend(["p", "span", "div", "pre", "br", "h1", "h2", "h3", "h4", "h5", "h6", "img"])
             allowed_attributes = {
                 "*": ["class", "style"],
@@ -45,9 +45,9 @@ def clean_string(unsafe_text, book_id=0):
         else:
             safe_text = clean_html(unsafe_text)
     except ParserError as e:
-        log.error("Comments of book {} are corrupted: {}".format(book_id, e))
+        log.error(f"Comments of book {book_id} are corrupted: {e}")
         safe_text = ""
     except TypeError as e:
-        log.error("Comments can't be parsed, maybe 'lxml' is too new, try installing 'bleach': {}".format(e))
+        log.error(f"Comments can't be parsed, maybe 'lxml' is too new, try installing 'bleach': {e}")
         safe_text = ""
     return safe_text

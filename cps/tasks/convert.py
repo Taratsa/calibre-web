@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2020 pwr
@@ -16,39 +15,37 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import glob
 import os
 import re
-import glob
-from shutil import copyfile, copyfileobj
-from markupsafe import escape
+from shutil import copyfile
 from time import time
 from uuid import uuid4
 
-from sqlalchemy.exc import SQLAlchemyError
-from flask_babel import lazy_gettext as N_
-
-from cps.services.worker import CalibreTask
-from cps import db, app
-from cps import logger, config
-from cps.subproc_wrapper import process_open
 from flask_babel import gettext as _
-from cps.kobo_sync_status import remove_synced_book
-from cps.ub import init_db_thread
-from cps.file_helper import get_temp_dir
+from flask_babel import lazy_gettext as N_
+from markupsafe import escape
+from sqlalchemy.exc import SQLAlchemyError
 
-from cps.tasks.mail import TaskEmail
-from cps import gdriveutils, helper
+from cps import app, config, db, gdriveutils, helper, logger
 from cps.constants import SUPPORTED_CALIBRE_BINARIES
+from cps.file_helper import get_temp_dir
+from cps.kobo_sync_status import remove_synced_book
+from cps.services.worker import CalibreTask
 from cps.string_helper import strip_whitespaces
+from cps.subproc_wrapper import process_open
+from cps.tasks.mail import TaskEmail
+from cps.ub import init_db_thread
 
 log = logger.create()
 
-current_milli_time = lambda: int(round(time() * 1000))
+def current_milli_time():
+    return round(time() * 1000)
 
 
 class TaskConvert(CalibreTask):
     def __init__(self, file_path, book_id, task_message, settings, ereader_mail, user=None):
-        super(TaskConvert, self).__init__(task_message)
+        super().__init__(task_message)
         self.worker_thread = None
         self.file_path = file_path
         self.book_id = book_id
@@ -67,21 +64,21 @@ class TaskConvert(CalibreTask):
             with app.app_context():
                 worker_db = db.CalibreDB(app)
                 cur_book = worker_db.get_book(self.book_id)
-                self.title = cur_book.title
+                self.title = cur_book.title  # pyright: ignore[reportOptionalMemberAccess]
                 data = worker_db.get_book_format(self.book_id, self.settings['old_book_format'])
-                df = gdriveutils.getFileFromEbooksFolder(cur_book.path,
-                                                         data.name + "." + self.settings['old_book_format'].lower())
-                df_cover = gdriveutils.getFileFromEbooksFolder(cur_book.path, "cover.jpg")
+                df = gdriveutils.getFileFromEbooksFolder(cur_book.path,  # pyright: ignore[reportOptionalMemberAccess]
+                                                         data.name + "." + self.settings['old_book_format'].lower())  # pyright: ignore[reportOptionalMemberAccess]
+                df_cover = gdriveutils.getFileFromEbooksFolder(cur_book.path, "cover.jpg")  # pyright: ignore[reportOptionalMemberAccess]
                 if df:
                     datafile_cover = None
-                    datafile = os.path.join(config.get_book_path(),
-                                            cur_book.path,
-                                            data.name + "." + self.settings['old_book_format'].lower())
+                    datafile = os.path.join(config.get_book_path(),  # pyright: ignore[reportCallIssue,reportArgumentType]
+                                            cur_book.path,  # pyright: ignore[reportArgumentType,reportOptionalMemberAccess]
+                                            data.name + "." + self.settings['old_book_format'].lower())  # pyright: ignore[reportOptionalMemberAccess]
                     if df_cover:
-                        datafile_cover = os.path.join(config.get_book_path(),
-                                                      cur_book.path, "cover.jpg")
-                    if not os.path.exists(os.path.join(config.get_book_path(), cur_book.path)):
-                        os.makedirs(os.path.join(config.get_book_path(), cur_book.path))
+                        datafile_cover = os.path.join(config.get_book_path(),  # pyright: ignore[reportCallIssue,reportArgumentType]
+                                                      cur_book.path, "cover.jpg")  # pyright: ignore[reportArgumentType,reportOptionalMemberAccess]
+                    if not os.path.exists(os.path.join(config.get_book_path(), cur_book.path)):  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalMemberAccess]
+                        os.makedirs(os.path.join(config.get_book_path(), cur_book.path))  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalMemberAccess]
                     df.GetContentFile(datafile)
                     if df_cover:
                         df_cover.GetContentFile(datafile_cover)
@@ -90,7 +87,7 @@ class TaskConvert(CalibreTask):
                     # ToDo Include cover in error handling
                     error_message = _("%(format)s not found on Google Drive: %(fn)s",
                                       format=self.settings['old_book_format'],
-                                      fn=data.name + "." + self.settings['old_book_format'].lower())
+                                      fn=data.name + "." + self.settings['old_book_format'].lower())  # pyright: ignore[reportOptionalMemberAccess]
                     # worker_db.session.close()
                     return self._handleError(error_message)
 
@@ -98,7 +95,7 @@ class TaskConvert(CalibreTask):
         if config.config_use_google_drive:
             os.remove(self.file_path + '.' + self.settings['old_book_format'].lower())
             if df_cover:
-                os.remove(os.path.join(config.config_calibre_dir, cur_book.path, "cover.jpg"))
+                os.remove(os.path.join(config.config_calibre_dir, cur_book.path, "cover.jpg"))  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalMemberAccess]
 
         if filename:
             if config.config_use_google_drive:
@@ -109,7 +106,7 @@ class TaskConvert(CalibreTask):
                 # if we're sending to E-Reader after converting, create a one-off task and run it immediately
                 # todo: figure out how to incorporate this into the progress
                 try:
-                    EmailText = N_(u"%(book)s send to E-Reader", book=escape(self.title))
+                    EmailText = N_("%(book)s send to E-Reader", book=escape(self.title))
                     for email in self.ereader_mail.split(','):
                         email = strip_whitespaces(email)
                         worker_thread.add(self.user, TaskEmail(self.settings['subject'],
@@ -141,11 +138,11 @@ class TaskConvert(CalibreTask):
                     local_db.get_book_format(self.book_id, self.settings['new_book_format']):
                 log.info("Book id %d already converted to %s", book_id, format_new_ext)
                 cur_book = local_db.get_book(book_id)
-                self.title = cur_book.title
-                self.results['path'] = cur_book.path
+                self.title = cur_book.title  # pyright: ignore[reportOptionalMemberAccess]
+                self.results['path'] = cur_book.path  # pyright: ignore[reportOptionalMemberAccess]
                 self.results['title'] = self.title
-                new_format = local_db.session.query(db.Data).filter(db.Data.book == book_id)\
-                    .filter(db.Data.format == self.settings['new_book_format'].upper()).one_or_none()
+                new_format = (local_db.session.query(db.Data).filter(db.Data.book == book_id)  # pyright: ignore[reportGeneralTypeIssues]
+                    .filter(db.Data.format == self.settings['new_book_format'].upper()).one_or_none())  # pyright: ignore[reportGeneralTypeIssues]
                 if not new_format:
                     new_format = db.Data(name=os.path.basename(file_path),
                                          book_format=self.settings['new_book_format'].upper(),
@@ -176,16 +173,16 @@ class TaskConvert(CalibreTask):
                 if not os.path.exists(config.config_converterpath):
                     self._handleError(N_("Calibre ebook-convert %(tool)s not found", tool=config.config_converterpath))
                     return
-                has_cover = local_db.get_book(book_id).has_cover
+                has_cover = local_db.get_book(book_id).has_cover  # pyright: ignore[reportOptionalMemberAccess]
                 check, error_message = self._convert_calibre(file_path, format_old_ext, format_new_ext, has_cover)
 
             if check == 0:
                 cur_book = local_db.get_book(book_id)
-                if os.path.isfile(file_path + format_new_ext):
-                    new_format = local_db.session.query(db.Data).filter(db.Data.book == book_id) \
-                        .filter(db.Data.format == self.settings['new_book_format'].upper()).one_or_none()
+                if os.path.isfile(file_path + format_new_ext):  # pyright: ignore[reportGeneralTypeIssues]
+                    new_format = (local_db.session.query(db.Data).filter(db.Data.book == book_id)  # pyright: ignore[reportGeneralTypeIssues]
+                        .filter(db.Data.format == self.settings['new_book_format'].upper()).one_or_none())  # pyright: ignore[reportGeneralTypeIssues]
                     if not new_format:
-                        new_format = db.Data(name=cur_book.data[0].name,
+                        new_format = db.Data(name=cur_book.data[0].name,  # pyright: ignore[reportOptionalMemberAccess]
                                              book_format=self.settings['new_book_format'].upper(),
                                              book=book_id, uncompressed_size=os.path.getsize(file_path + format_new_ext))
                         try:
@@ -201,9 +198,9 @@ class TaskConvert(CalibreTask):
                             local_db.session.close()
                             self._handleError(error_message)
                             return
-                    self.results['path'] = cur_book.path
-                    self.title = cur_book.title
-                    self.results['title'] = self.title
+                    self.results['path'] = cur_book.path  # pyright: ignore[reportOptionalMemberAccess]
+                    self.title = cur_book.title  # pyright: ignore[reportOptionalMemberAccess]
+                    self.results['title'] = self.title  # pyright: ignore[reportGeneralTypeIssues]
                     if not config.config_use_google_drive:
                         self._handleSuccess()
                     return os.path.basename(file_path + format_new_ext)
@@ -221,7 +218,7 @@ class TaskConvert(CalibreTask):
     def _convert_kepubify(self, file_path, format_old_ext, format_new_ext):
         if config.config_embed_metadata and config.config_binariesdir:
             tmp_dir, temp_file_name = helper.do_calibre_export(self.book_id, format_old_ext[1:])
-            filename = os.path.join(tmp_dir, temp_file_name + format_old_ext)
+            filename = os.path.join(tmp_dir, temp_file_name + format_old_ext)  # pyright: ignore[reportCallIssue,reportArgumentType]
             temp_file_path = tmp_dir
         else:
             filename = file_path + format_old_ext
@@ -234,7 +231,7 @@ class TaskConvert(CalibreTask):
             return 1, N_("Kepubify-converter failed: %(error)s", error=e)
         self.progress = 0.01
         while True:
-            nextline = p.stdout.readlines()
+            nextline = p.stdout.readlines()  # pyright: ignore[reportOptionalMemberAccess]
             nextline = [x.strip('\n') for x in nextline if x != '\n']
             for line in nextline:
                 log.debug(line)
@@ -275,9 +272,9 @@ class TaskConvert(CalibreTask):
                 p = process_open(opf_command, quotes, my_env, newlines=False)
                 lines = list()
                 while p.poll() is None:
-                    lines.append(p.stdout.readline())
+                    lines.append(p.stdout.readline())  # pyright: ignore[reportOptionalMemberAccess]
                 check = p.returncode
-                calibre_traceback = p.stderr.readlines()
+                calibre_traceback = p.stderr.readlines()  # pyright: ignore[reportOptionalMemberAccess]
                 if check == 0:
                     path_tmp_opf = os.path.join(tmp_dir, "metadata_" + str(uuid4()) + ".opf")
                     with open(path_tmp_opf, 'wb') as fd:
@@ -319,7 +316,7 @@ class TaskConvert(CalibreTask):
             return 1, N_("Ebook-converter failed: %(error)s", error=e)
 
         while p.poll() is None:
-            nextline = p.stdout.readline()
+            nextline = p.stdout.readline()  # pyright: ignore[reportOptionalMemberAccess]
             if isinstance(nextline, bytes):
                 nextline = nextline.decode('utf-8', errors="ignore").strip('\r\n')
             if nextline:
@@ -333,7 +330,7 @@ class TaskConvert(CalibreTask):
 
         # process returncode
         check = p.returncode
-        calibre_traceback = p.stderr.readlines()
+        calibre_traceback = p.stderr.readlines()  # pyright: ignore[reportOptionalMemberAccess]
         error_message = ""
         for ele in calibre_traceback:
             ele = ele.decode('utf-8', errors="ignore").strip('\n')
@@ -343,15 +340,15 @@ class TaskConvert(CalibreTask):
         return check, error_message
 
     @property
-    def name(self):
+    def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return N_("Convert")
 
-    def __str__(self):
+    def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         if self.ereader_mail:
-            return "Convert Book {} and mail it to {}".format(self.book_id, self.ereader_mail)
+            return f"Convert Book {self.book_id} and mail it to {self.ereader_mail}"
         else:
-            return "Convert Book {}".format(self.book_id)
+            return f"Convert Book {self.book_id}"
 
     @property
-    def is_cancellable(self):
+    def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False

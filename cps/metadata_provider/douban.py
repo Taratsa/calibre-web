@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2022 xlivevil
@@ -17,11 +16,18 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 import re
 from concurrent import futures
-from typing import List, Optional
 
 import requests
-from html2text import HTML2Text
-from lxml import etree
+
+try:
+    from html2text import HTML2Text  # pyright: ignore[reportMissingImports]
+except ImportError:
+    HTML2Text = None
+
+try:
+    from lxml import etree  # pyright: ignore[reportMissingImports, reportAttributeAccessIssue]
+except ImportError:
+    etree = None
 
 from cps import logger
 from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
@@ -30,7 +36,8 @@ log = logger.create()
 
 
 def html2text(html: str) -> str:
-
+    if HTML2Text is None:
+        return ""
     h2t = HTML2Text()
     h2t.body_width = 0
     h2t.single_line_break = True
@@ -63,15 +70,15 @@ class Douban(Metadata):
     RATING_XPATH = "//div[@class='rating_self clearfix']/strong"
 
     session = requests.Session()
-    session.headers = {
+    session.headers.update({
         'user-agent':
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56',
-    }
+    })
 
     def search(self,
                query: str,
                generic_cover: str = "",
-               locale: str = "en") -> List[MetaRecord]:
+               locale: str = "en") -> list[MetaRecord]:
         val = []
         if self.active:
             log.debug(f"start searching {query} on douban")
@@ -98,9 +105,9 @@ class Douban(Metadata):
                     if future.result()
                 ]
 
-        return val
+        return [v for v in val if v is not None]
 
-    def _get_book_id_list_from_html(self, query: str) -> List[str]:
+    def _get_book_id_list_from_html(self, query: str) -> list[str]:
         try:
             r = self.session.get(self.SEARCH_URL,
                                  params={
@@ -113,16 +120,19 @@ class Douban(Metadata):
             log.warning(e)
             return []
 
+        if etree is None:
+            return []
         html = etree.HTML(r.content.decode("utf8"))
         result_list = html.xpath(self.COVER_XPATH)
 
         return [
-            self.ID_PATTERN.search(item.get("onclick")).group("id")
+            m.group("id")
             for item in result_list[:10]
-            if self.ID_PATTERN.search(item.get("onclick"))
+            for m in [self.ID_PATTERN.search(item.get("onclick") or "")]
+            if m
         ]
 
-    def _get_book_id_list_from_json(self, query: str) -> List[str]:
+    def _get_book_id_list_from_json(self, query: str) -> list[str]:
         try:
             r = self.session.get(self.SEARCH_JSON_URL,
                                  params={
@@ -140,13 +150,15 @@ class Douban(Metadata):
             return []
 
         return [
-            self.ID_PATTERN.search(item).group("id")
-            for item in results["items"][:10] if self.ID_PATTERN.search(item)
+            m.group("id")
+            for item in results["items"][:10]
+            for m in [self.ID_PATTERN.search(item)]
+            if m
         ]
 
     def _parse_single_book(self,
                            id: str,
-                           generic_cover: str = "") -> Optional[MetaRecord]:
+                           generic_cover: str = "") -> MetaRecord | None:
         url = f"https://book.douban.com/subject/{id}/"
         log.debug(f"start parsing {url}")
 
@@ -155,7 +167,7 @@ class Douban(Metadata):
             r.raise_for_status()
         except Exception as e:
             log.warning(e)
-            return []
+            return None
 
         match = MetaRecord(
             id=id,
@@ -170,6 +182,8 @@ class Douban(Metadata):
         )
 
         decode_content = r.content.decode("utf8")
+        if etree is None:
+            return match
         html = etree.HTML(decode_content)
 
         match.title = html.xpath(self.TITTLE_XPATH)[0].text
@@ -250,7 +264,7 @@ class Douban(Metadata):
 
         return f"{year}-{moon}-{day}"
 
-    def _get_tags(self, text: str) -> List[str]:
+    def _get_tags(self, text: str) -> list[str]:
         tags = []
         if criteria := self.CRITERIA_PATTERN.search(text):
             tags.extend(

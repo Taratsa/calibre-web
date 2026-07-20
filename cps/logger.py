@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2019 pwr
@@ -16,15 +15,14 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
-import sys
 import inspect
 import logging
+import os
+import sys
 from logging import Formatter, StreamHandler
 from logging.handlers import RotatingFileHandler
 
 from .constants import CONFIG_DIR as _CONFIG_DIR
-
 
 ACCESS_FORMATTER_GEVENT  = Formatter("%(message)s")
 ACCESS_FORMATTER_TORNADO = Formatter("[%(asctime)s] %(message)s")
@@ -45,9 +43,9 @@ class _Logger(logging.Logger):
     def error_or_exception(self, message, stacklevel=1, *args, **kwargs):
         is_debug = self.getEffectiveLevel() <= logging.DEBUG
         if not is_debug:
-            self.exception(message, stacklevel=stacklevel, *args, **kwargs)
+            self.exception(message, *args, stacklevel=stacklevel, **kwargs)
         else:
-            self.error(message, stacklevel=stacklevel, *args, **kwargs)
+            self.error(message, *args, stacklevel=stacklevel, **kwargs)
 
     def debug_no_auth(self, message, *args, **kwargs):
         message = message.strip("\r\n")
@@ -63,14 +61,11 @@ def get(name=None):
 
 def create() -> "_Logger":
     parent_frame = inspect.stack(0)[1]
-    if hasattr(parent_frame, 'frame'):
-        parent_frame = parent_frame.frame
-    else:
-        parent_frame = parent_frame[0]
+    parent_frame = parent_frame.frame if hasattr(parent_frame, 'frame') else parent_frame[0]
     parent_module = inspect.getmodule(parent_frame)
-    logger = get(parent_module.__name__)
+    logger = get(parent_module.__name__ if parent_module else None)
     # pyright doesn't know setLoggerClass was called; cast to our subclass
-    return logger  # type: ignore[return-value]
+    return logger  # type: ignore[return-value] # pyright: ignore[reportReturnType]
 
 
 def is_debug_enabled():
@@ -86,7 +81,7 @@ def get_level_name(level):
 
 
 def is_valid_logfile(file_path):
-    if file_path == LOG_TO_STDERR or file_path == LOG_TO_STDOUT:
+    if file_path in (LOG_TO_STDERR, LOG_TO_STDOUT):
         return True
     if not file_path:
         return True
@@ -137,17 +132,17 @@ def setup(log_file, log_level=None):
             return "" if log_file == DEFAULT_LOG_FILE else log_file
         logging.debug("logging to %s level %s", log_file, r.level)
 
-    if log_file == LOG_TO_STDERR or log_file == LOG_TO_STDOUT:
+    if log_file in (LOG_TO_STDERR, LOG_TO_STDOUT):
         if log_file == LOG_TO_STDOUT:
             file_handler = StreamHandler(sys.stdout)
-            file_handler.baseFilename = log_file
+            file_handler.baseFilename = log_file  # pyright: ignore[reportAttributeAccessIssue]
         else:
             file_handler = StreamHandler(sys.stderr)
-            file_handler.baseFilename = log_file
+            file_handler.baseFilename = log_file  # pyright: ignore[reportAttributeAccessIssue]
     else:
         try:
             file_handler = RotatingFileHandler(log_file, maxBytes=100000, backupCount=2, encoding='utf-8')
-        except (IOError, PermissionError):
+        except (OSError, PermissionError):
             if log_file == DEFAULT_LOG_FILE:
                 raise
             file_handler = RotatingFileHandler(DEFAULT_LOG_FILE, maxBytes=100000, backupCount=2, encoding='utf-8')
@@ -174,7 +169,7 @@ def create_access_log(log_file, log_name, formatter):
     access_log.setLevel(logging.INFO)
     try:
         file_handler = RotatingFileHandler(log_file, maxBytes=50000, backupCount=2, encoding='utf-8')
-    except (IOError, PermissionError):
+    except (OSError, PermissionError):
         if log_file == DEFAULT_ACCESS_LOG:
             raise
         file_handler = RotatingFileHandler(DEFAULT_ACCESS_LOG, maxBytes=50000, backupCount=2, encoding='utf-8')
@@ -186,7 +181,7 @@ def create_access_log(log_file, log_name, formatter):
 
 
 # Enable logging of smtp lib debug output
-class StderrLogger(object):
+class StderrLogger:
     def __init__(self, name=None):
         self.log = get(name or self.__class__.__name__)
         self.buffer = ''

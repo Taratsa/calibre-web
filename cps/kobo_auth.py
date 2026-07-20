@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 shavitmichael, OzzieIsaacs
@@ -61,17 +60,16 @@ particular calls to non-Kobo specific endpoints such as the CalibreWeb book down
 
 from binascii import hexlify
 from datetime import datetime
-from os import urandom
 from functools import wraps
+from os import urandom
 
-from flask import g, Blueprint, abort, request
-from .cw_login import login_user, current_user
+from flask import Blueprint, abort, g, request
 from flask_babel import gettext as _
 
-from . import logger, config, calibre_db, db, helper, ub, lm, limiter
+from . import calibre_db, config, db, helper, limiter, lm, logger, ub
+from .cw_login import current_user, login_user
 from .render_template import render_title_template
 from .usermanagement import user_login_required
-
 
 log = logger.create()
 
@@ -85,10 +83,7 @@ def generate_auth_token(user_id):
         abort(403)
     warning = False
     host_list = request.host.rsplit(':')
-    if len(host_list) == 1:
-        host = ':'.join(host_list)
-    else:
-        host = ':'.join(host_list[0:-1])
+    host = ':'.join(host_list) if len(host_list) == 1 else ':'.join(host_list[0:-1])
     if host.startswith('127.') or host.lower() == 'localhost' or host.startswith('[::ffff:7f') or host == "[::1]":
         warning = _('Please access Calibre-Web from non localhost to get valid api_endpoint for kobo device')
 
@@ -102,7 +97,7 @@ def generate_auth_token(user_id):
         auth_token.user_id = user_id
         auth_token.expiration = datetime.max
         auth_token.auth_token = (hexlify(urandom(16))).decode("utf-8")
-        auth_token.token_type = 1
+        auth_token.token_type = 1  # type: ignore[assignment] # pyright: ignore[reportAttributeAccessIssue]
 
         ub.session.add(auth_token)
         ub.session_commit()
@@ -165,7 +160,10 @@ def requires_kobo_auth(f):
             )
             if user is not None:
                 login_user(user)
-                [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+                if limiter and limiter.current_limits:
+                    for limit in limiter.current_limits:  # pyright: ignore[reportGeneralTypeIssues]
+                        if limit.limit:
+                            limiter.limiter.clear(limit.limit, *limit.request_args)  # type: ignore[arg-type]
                 return f(*args, **kwargs)
         log.debug("Received Kobo request without a recognizable auth token.")
         return abort(401)

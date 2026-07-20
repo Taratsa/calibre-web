@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2024 Ozzieisaacs
@@ -16,11 +15,13 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import mutagen
 import base64
-from . import cover, logger
+
+import mutagen  # pyright: ignore[reportMissingImports]
 
 from cps.constants import BookMeta
+
+from . import cover, logger
 
 log = logger.create()
 
@@ -126,22 +127,22 @@ def get_audio_file_info(tmp_file_path, original_file_extension, original_file_na
                     cover_bin = c
                     break
             if cover_type:
-                tmp_cover_name = cover.cover_processing(tmp_file_path, cover_bin, cover_type)
+                tmp_cover_name = cover.cover_processing(tmp_file_path, cover_bin, cover_type)  # pyright: ignore[reportPossiblyUnboundVariable]
             else:
-                logger.error("Unknown covertype in file {} ".format(original_file_name))
+                log.error(f"Unknown covertype in file {original_file_name} ")
 
     return BookMeta(
         file_path=tmp_file_path,
         extension=original_file_extension,
-        title=title or original_file_name ,
-        author="Unknown" if author is None else author,
+        title=title or original_file_name ,  # pyright: ignore[reportPossiblyUnboundVariable]
+        author="Unknown" if author is None else author,  # pyright: ignore[reportPossiblyUnboundVariable]
         cover=tmp_cover_name,
         description="" if comments is None else comments,
-        tags="" if tags is None else tags,
-        series="" if series is None else series,
-        series_id="1" if series_id is None else series_id.split("/")[0],
+        tags="" if tags is None else tags,  # pyright: ignore[reportPossiblyUnboundVariable]
+        series="" if series is None else series,  # pyright: ignore[reportPossiblyUnboundVariable]
+        series_id="1" if series_id is None else series_id.split("/")[0],  # pyright: ignore[reportPossiblyUnboundVariable]
         languages="",
-        publisher= "" if publisher is None else publisher,
-        pubdate="" if pubdate is None else pubdate,
+        publisher= "" if publisher is None else publisher,  # pyright: ignore[reportPossiblyUnboundVariable]
+        pubdate="" if pubdate is None else pubdate,  # pyright: ignore[reportPossiblyUnboundVariable]
         identifiers=[],
     )

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 mutschler, jkrehm, cervinko, janeczku, OzzieIsaacs, csitko
@@ -18,39 +17,54 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import atexit
+import itertools
 import os
 import sys
-from datetime import datetime, timezone, timedelta
-import itertools
 import uuid
-from flask import session as flask_session
 from binascii import hexlify
+from datetime import UTC, datetime, timedelta
 
-from .cw_login import AnonymousUserMixin, current_user
-from .cw_login import user_logged_in
+from flask import session as flask_session
+
+from .cw_login import AnonymousUserMixin, current_user, user_logged_in
 
 try:
-    from flask_dance.consumer.backend.sqla import OAuthConsumerMixin
+    from flask_dance.consumer.backend.sqla import OAuthConsumerMixin  # pyright: ignore[reportMissingImports]
     oauth_support = True
-except ImportError as e:
+except ImportError:
     # fails on flask-dance >1.3, due to renaming
     try:
-        from flask_dance.consumer.storage.sqla import OAuthConsumerMixin
+        from flask_dance.consumer.storage.sqla import OAuthConsumerMixin  # pyright: ignore[reportMissingImports]
         oauth_support = True
-    except ImportError as e:
+    except ImportError:
         OAuthConsumerMixin = BaseException
         oauth_support = False
-from sqlalchemy import create_engine, exc, exists, event, inspect, text
-from sqlalchemy import Column, ForeignKey
-from sqlalchemy import String, Integer, SmallInteger, Boolean, DateTime, Float, JSON
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    Column,
+    DateTime,
+    Float,
+    ForeignKey,
+    Integer,
+    SmallInteger,
+    String,
+    create_engine,
+    event,
+    exc,
+    exists,
+    inspect,
+    text,
+)
 from sqlalchemy.orm.attributes import flag_modified
 from sqlalchemy.sql.expression import func
+
 try:
     # Compatibility with sqlalchemy 2.0
     from sqlalchemy.orm import declarative_base
 except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import backref, relationship, sessionmaker, Session, scoped_session
+from sqlalchemy.orm import Session, backref, relationship, scoped_session, sessionmaker
 from werkzeug.security import generate_password_hash
 
 from . import constants, logger
@@ -58,6 +72,7 @@ from .string_helper import strip_whitespaces
 
 log = logger.create()
 
+import contextlib  # noqa: E402
 from typing import TYPE_CHECKING  # noqa: E402
 
 if TYPE_CHECKING:
@@ -72,9 +87,9 @@ else:
     app_DB_path = None  # type: ignore[assignment]
 
 Base = declarative_base()
-searched_ids: dict = {}
+searched_ids: dict = {}  # pyright: ignore[reportMissingTypeArgument]
 
-logged_in: dict = dict()
+logged_in: dict = dict()  # pyright: ignore[reportMissingTypeArgument]
 
 
 def signal_store_user_session(object, user):
@@ -105,8 +120,8 @@ def store_user_session():
 def delete_user_session(user_id, session_key):
     try:
         log.debug("Deleted session_key: " + session_key)
-        session.query(User_Sessions).filter(User_Sessions.user_id == user_id,
-                                            User_Sessions.session_key == session_key).delete()
+        session.query(User_Sessions).filter(User_Sessions.user_id == user_id,  # pyright: ignore[reportGeneralTypeIssues]
+                                            User_Sessions.session_key == session_key).delete()  # pyright: ignore[reportGeneralTypeIssues]
         session.commit()
     except (exc.OperationalError, exc.InvalidRequestError) as ex:
         session.rollback()
@@ -115,13 +130,13 @@ def delete_user_session(user_id, session_key):
 
 def check_user_session(user_id, session_key, random):
     try:
-        found = session.query(User_Sessions).filter(User_Sessions.user_id==user_id,
-                                                    User_Sessions.session_key==session_key,
-                                                    User_Sessions.random == random,
+        found = session.query(User_Sessions).filter(User_Sessions.user_id==user_id,  # pyright: ignore[reportGeneralTypeIssues]
+                                                    User_Sessions.session_key==session_key,  # pyright: ignore[reportGeneralTypeIssues]
+                                                    User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
                                                     ).one_or_none()
         if found is not None:
             new_expiry = int((datetime.now()  + timedelta(days=31)).timestamp())
-            if new_expiry - found.expiry > 86400:
+            if new_expiry - found.expiry > 86400:  # pyright: ignore[reportGeneralTypeIssues]
                 found.expiry = new_expiry
                 session.merge(found)
                 session.commit()
@@ -151,12 +166,12 @@ class UserBase:
 
     # Class-level type annotation so pyright can verify access on UserBase
     # instances. The actual column is declared on the User model below.
-    view_settings: dict
-    role: int
-    allowed_tags: str
-    denied_tags: str
-    allowed_column_value: str
-    denied_column_value: str
+    view_settings: dict  # pyright: ignore[reportUninitializedInstanceVariable,reportMissingTypeArgument]
+    role: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    allowed_tags: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    denied_tags: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    allowed_column_value: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    denied_column_value: str  # pyright: ignore[reportUninitializedInstanceVariable]
 
     @property
     def is_authenticated(self):
@@ -201,15 +216,15 @@ class UserBase:
         return self.role_anonymous()
 
     def get_id(self):
-        return str(self.id)
+        return str(self.id)  # pyright: ignore[reportAttributeAccessIssue]
 
     def filter_language(self):
-        return self.default_language
+        return self.default_language  # pyright: ignore[reportAttributeAccessIssue]
 
     def check_visibility(self, value):
         if value == constants.SIDEBAR_RECENT:
             return True
-        return constants.has_flag(self.sidebar_view, value)
+        return constants.has_flag(self.sidebar_view, value)  # pyright: ignore[reportAttributeAccessIssue]
 
     def show_detail_random(self):
         return self.check_visibility(constants.DETAIL_RANDOM)
@@ -239,10 +254,8 @@ class UserBase:
         if not self.view_settings.get(page):
             self.view_settings[page] = dict()
         self.view_settings[page][prop] = value
-        try:
+        with contextlib.suppress(AttributeError):
             flag_modified(self, "view_settings")
-        except AttributeError:
-            pass
         try:
             session.commit()
         except (exc.OperationalError, exc.InvalidRequestError) as e:
@@ -250,7 +263,7 @@ class UserBase:
             log.error_or_exception(e)
 
     def __repr__(self):
-        return '<User %r>' % self.name
+        return f'<User {self.name!r}>'  # pyright: ignore[reportAttributeAccessIssue]
 
 
 # Baseclass for Users in Calibre-Web, settings which depend on certain users are stored here. It is derived from
@@ -259,30 +272,30 @@ class User(UserBase, Base):
     __tablename__ = 'user'
     __table_args__ = {'sqlite_autoincrement': True}
 
-    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
-    name: str = Column(String(64), unique=True)  # type: ignore[assignment]
-    email: str = Column(String(120), unique=True, default="")  # type: ignore[assignment]
-    role: int = Column(SmallInteger, default=constants.ROLE_USER)  # type: ignore[assignment]
-    password: str = Column(String)  # type: ignore[assignment]
-    kindle_mail: str = Column(String(120), default="")  # type: ignore[assignment]
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    name: str = Column(String(64), unique=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    email: str = Column(String(120), unique=True, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    role: int = Column(SmallInteger, default=constants.ROLE_USER)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    password: str = Column(String)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    kindle_mail: str = Column(String(120), default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     shelf = relationship('Shelf', backref='user', lazy='dynamic', order_by='Shelf.name')
     downloads = relationship('Downloads', backref='user', lazy='dynamic')
-    locale: str = Column(String(2), default="en")  # type: ignore[assignment]
-    sidebar_view: int = Column(Integer, default=1)  # type: ignore[assignment]
-    default_language: str = Column(String(3), default="all")  # type: ignore[assignment]
-    denied_tags: str = Column(String, default="")  # type: ignore[assignment]
-    allowed_tags: str = Column(String, default="")  # type: ignore[assignment]
-    denied_column_value: str = Column(String, default="")  # type: ignore[assignment]
-    allowed_column_value: str = Column(String, default="")  # type: ignore[assignment]
+    locale: str = Column(String(2), default="en")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    sidebar_view: int = Column(Integer, default=1)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    default_language: str = Column(String(3), default="all")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    denied_tags: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    allowed_tags: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    denied_column_value: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    allowed_column_value: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     remote_auth_token = relationship('RemoteAuthToken', backref='user', lazy='dynamic')
-    view_settings: dict = Column(JSON, default={})  # type: ignore[assignment]
-    kobo_only_shelves_sync: int = Column(Integer, default=0)  # type: ignore[assignment]
+    view_settings: dict = Column(JSON, default={})  # type: ignore[assignment] # pyright: ignore[reportAssignmentType,reportMissingTypeArgument]
+    kobo_only_shelves_sync: int = Column(Integer, default=0)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
 
 
 if oauth_support:
-    class OAuth(OAuthConsumerMixin, Base):
+    class OAuth(OAuthConsumerMixin, Base):  # pyright: ignore[reportGeneralTypeIssues]
         provider_user_id = Column(String(256))
-        user_id = Column(Integer, ForeignKey(User.id))
+        user_id = Column(Integer, ForeignKey(User.id))  # pyright: ignore[reportArgumentType]
         user = relationship(User)
 
 
@@ -298,44 +311,44 @@ class OAuthProvider(Base):
 
 # Class for anonymous user is derived from User base and completely overrides methods and properties for the
 # anonymous user
-class Anonymous(AnonymousUserMixin, UserBase):
+class Anonymous(AnonymousUserMixin, UserBase):  # pyright: ignore[reportIncompatibleMethodOverride]
     def __init__(self):
         self.kobo_only_shelves_sync = None
-        self.view_settings = None
-        self.allowed_column_value = None
-        self.allowed_tags = None
-        self.denied_tags = None
+        self.view_settings = None  # pyright: ignore[reportAttributeAccessIssue]
+        self.allowed_column_value = None  # pyright: ignore[reportAttributeAccessIssue]
+        self.allowed_tags = None  # pyright: ignore[reportAttributeAccessIssue]
+        self.denied_tags = None  # pyright: ignore[reportAttributeAccessIssue]
         self.kindle_mail = None
         self.locale = None
         self.default_language = None
         self.sidebar_view = None
         self.id = None
-        self.role = None
+        self.role = None  # pyright: ignore[reportAttributeAccessIssue]
         self.name = None
         self.loadSettings()
 
     def loadSettings(self):
-        data = session.query(User).filter(User.role.op('&')(constants.ROLE_ANONYMOUS) == constants.ROLE_ANONYMOUS)\
-            .first()  # type: User
-        self.name = data.name
-        self.role = data.role
-        self.id=data.id
-        self.sidebar_view = data.sidebar_view
-        self.default_language = data.default_language
-        self.locale = data.locale
-        self.kindle_mail = data.kindle_mail
-        self.denied_tags = data.denied_tags
-        self.allowed_tags = data.allowed_tags
-        self.denied_column_value = data.denied_column_value
-        self.allowed_column_value = data.allowed_column_value
-        self.view_settings = data.view_settings
-        self.kobo_only_shelves_sync = data.kobo_only_shelves_sync
+        data = (session.query(User).filter(User.role.op('&')(constants.ROLE_ANONYMOUS) == constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
+            .first())  # type: User
+        self.name = data.name  # pyright: ignore[reportOptionalMemberAccess]
+        self.role = data.role  # pyright: ignore[reportOptionalMemberAccess]
+        self.id=data.id  # pyright: ignore[reportOptionalMemberAccess]
+        self.sidebar_view = data.sidebar_view  # pyright: ignore[reportOptionalMemberAccess]
+        self.default_language = data.default_language  # pyright: ignore[reportOptionalMemberAccess]
+        self.locale = data.locale  # pyright: ignore[reportOptionalMemberAccess]
+        self.kindle_mail = data.kindle_mail  # pyright: ignore[reportOptionalMemberAccess]
+        self.denied_tags = data.denied_tags  # pyright: ignore[reportOptionalMemberAccess]
+        self.allowed_tags = data.allowed_tags  # pyright: ignore[reportOptionalMemberAccess]
+        self.denied_column_value = data.denied_column_value  # pyright: ignore[reportOptionalMemberAccess]
+        self.allowed_column_value = data.allowed_column_value  # pyright: ignore[reportOptionalMemberAccess]
+        self.view_settings = data.view_settings  # pyright: ignore[reportOptionalMemberAccess]
+        self.kobo_only_shelves_sync = data.kobo_only_shelves_sync  # pyright: ignore[reportOptionalMemberAccess]
 
     def role_admin(self):
         return False
 
     @property
-    def is_active(self):
+    def is_active(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False
 
     @property
@@ -343,7 +356,7 @@ class Anonymous(AnonymousUserMixin, UserBase):
         return True
 
     @property
-    def is_authenticated(self):
+    def is_authenticated(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False
 
     def get_view_property(self, page, prop):
@@ -354,7 +367,7 @@ class Anonymous(AnonymousUserMixin, UserBase):
         return None
 
     def set_view_property(self, page, prop, value):
-        if not 'view' in flask_session:
+        if 'view' not in flask_session:
             flask_session['view'] = dict()
         if not flask_session['view'].get(page):
             flask_session['view'][page] = dict()
@@ -389,11 +402,11 @@ class Shelf(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     kobo_sync = Column(Boolean, default=False)
     books = relationship("BookShelf", backref="ub_shelf", cascade="all, delete-orphan", lazy="dynamic")
-    created = Column(DateTime, default=lambda: datetime.now(timezone.utc))
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    created = Column(DateTime, default=lambda: datetime.now(UTC))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
 
     def __repr__(self):
-        return '<Shelf %d:%r>' % (self.id, self.name)
+        return f'<Shelf {self.id}:{self.name!r}>'
 
 
 # Baseclass representing Relationship between books and Shelfs in Calibre-Web in app.db (N:M)
@@ -404,10 +417,10 @@ class BookShelf(Base):
     book_id = Column(Integer)
     order = Column(Integer)
     shelf = Column(Integer, ForeignKey('shelf.id'))
-    date_added = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    date_added = Column(DateTime, default=lambda: datetime.now(UTC))
 
     def __repr__(self):
-        return '<Book %r>' % self.id
+        return f'<Book {self.id!r}>'
 
 
 # This table keeps track of deleted Shelves so that deletes can be propagated to any paired Kobo device.
@@ -417,7 +430,7 @@ class ShelfArchive(Base):
     id = Column(Integer, primary_key=True)
     uuid = Column(String)
     user_id = Column(Integer, ForeignKey('user.id'))
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC))
 
 
 class ReadBook(Base):
@@ -437,7 +450,7 @@ class ReadBook(Base):
                                       cascade="all",
                                       backref=backref("book_read_link",
                                                       uselist=False))
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     last_time_started_reading = Column(DateTime, nullable=True)
     times_started_reading = Column(Integer, default=0, nullable=False)
 
@@ -460,7 +473,7 @@ class ArchivedBook(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     book_id = Column(Integer)
     is_archived = Column(Boolean, unique=False)
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC))
 
 
 class KoboSyncedBooks(Base):
@@ -479,8 +492,8 @@ class KoboReadingState(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.id'))
     book_id = Column(Integer)
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
-    priority_timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
+    priority_timestamp = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     current_bookmark = relationship("KoboBookmark", uselist=False, backref="kobo_reading_state", cascade="all, delete")
     statistics = relationship("KoboStatistics", uselist=False, backref="kobo_reading_state", cascade="all, delete")
 
@@ -490,7 +503,7 @@ class KoboBookmark(Base):
 
     id = Column(Integer, primary_key=True)
     kobo_reading_state_id = Column(Integer, ForeignKey('kobo_reading_state.id'))
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     location_source = Column(String)
     location_type = Column(String)
     location_value = Column(String)
@@ -503,7 +516,7 @@ class KoboStatistics(Base):
 
     id = Column(Integer, primary_key=True)
     kobo_reading_state_id = Column(Integer, ForeignKey('kobo_reading_state.id'))
-    last_modified = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     remaining_time_minutes = Column(Integer)
     spent_reading_minutes = Column(Integer)
 
@@ -512,44 +525,43 @@ class KoboStatistics(Base):
 @event.listens_for(Session, 'before_flush')
 def receive_before_flush(session, flush_context, instances):
     for change in itertools.chain(session.new, session.dirty):
-        if isinstance(change, (ReadBook, KoboStatistics, KoboBookmark)):
-            if change.kobo_reading_state:
-                change.kobo_reading_state.last_modified = datetime.now(timezone.utc)
+        if isinstance(change, (ReadBook, KoboStatistics, KoboBookmark)) and change.kobo_reading_state:
+            change.kobo_reading_state.last_modified = datetime.now(UTC)
     # Maintain the last_modified_bit for the Shelf table.
     for change in itertools.chain(session.new, session.deleted):
         if isinstance(change, BookShelf):
-            change.ub_shelf.last_modified = datetime.now(timezone.utc)
+            change.ub_shelf.last_modified = datetime.now(UTC)
 
 
 # Baseclass representing Downloads from calibre-web in app.db
 class Downloads(Base):
     __tablename__ = 'downloads'
 
-    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
-    book_id: int = Column(Integer)  # type: ignore[assignment]
-    user_id: int = Column(Integer, ForeignKey('user.id'))  # type: ignore[assignment]
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    book_id: int = Column(Integer)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    user_id: int = Column(Integer, ForeignKey('user.id'))  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
 
     def __repr__(self):
-        return '<Download %r' % self.book_id
+        return f'<Download {self.book_id!r}'
 
 
 # Baseclass representing audit log entries for user actions
 class AuditLog(Base):
     __tablename__ = 'audit_log'
 
-    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment]
-    user_id: int = Column(Integer, ForeignKey('user.id'), nullable=False)  # type: ignore[assignment]
-    action: str = Column(String(64), nullable=False)  # type: ignore[assignment]
-    resource_type: str = Column(String(64), nullable=False)  # type: ignore[assignment]
-    resource_id: str = Column(String(128), nullable=True)  # type: ignore[assignment]
-    details: str = Column(String(4096), nullable=True)  # type: ignore[assignment]
-    ip_address: str = Column(String(45), nullable=True)  # type: ignore[assignment]
-    created = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    user_id: int = Column(Integer, ForeignKey('user.id'), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    action: str = Column(String(64), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    resource_type: str = Column(String(64), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    resource_id: str = Column(String(128), nullable=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    details: str = Column(String(4096), nullable=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    ip_address: str = Column(String(45), nullable=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    created = Column(DateTime, default=lambda: datetime.now(UTC))
 
-    user = relationship('User', foreign_keys=[user_id])
+    user = relationship('User', foreign_keys=[user_id])  # pyright: ignore[reportArgumentType]
 
     def __repr__(self):
-        return '<AuditLog %r %r %r>' % (self.user_id, self.action, self.resource_type)
+        return f'<AuditLog {self.user_id!r} {self.action!r} {self.resource_type!r}>'
 
 
 # Baseclass representing allowed domains for registration
@@ -561,7 +573,7 @@ class Registration(Base):
     allow = Column(Integer)
 
     def __repr__(self):
-        return "<Registration('{0}')>".format(self.domain)
+        return f"<Registration('{self.domain}')>"
 
 
 class RemoteAuthToken(Base):
@@ -580,7 +592,7 @@ class RemoteAuthToken(Base):
         self.expiration = datetime.now() + timedelta(minutes=10)  # 10 min from now
 
     def __repr__(self):
-        return '<Token %r>' % self.id
+        return f'<Token {self.id!r}>'
 
 
 def filename(context):
@@ -601,7 +613,7 @@ class Thumbnail(Base):
     type = Column(SmallInteger, default=constants.THUMBNAIL_TYPE_COVER)
     resolution = Column(SmallInteger, default=constants.COVER_THUMBNAIL_SMALL)
     filename = Column(String, default=filename)
-    generated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    generated_at = Column(DateTime, default=lambda: datetime.now(UTC))
     expiration = Column(DateTime, nullable=True)
 
 
@@ -630,7 +642,7 @@ def migrate_registration_table(engine, _session):
 
 def migrate_user_session_table(engine, _session):
     try:
-        _session.query(exists().where(User_Sessions.random)).scalar()
+        _session.query(exists().where(User_Sessions.random)).scalar()  # pyright: ignore[reportArgumentType,reportGeneralTypeIssues]
         _session.commit()
     except exc.OperationalError:  # Database is not compatible, some columns are missing
         with engine.connect() as conn:
@@ -646,6 +658,8 @@ def migrate_user_session_table(engine, _session):
 def migrate_Database(_session):
     engine = _session.bind
     add_missing_tables(engine, _session)
+    migrate_registration_table(engine, _session)
+    migrate_user_session_table(engine, _session)
 
 
 def _ensure_column(engine, table_name, column_name, column_def):
@@ -661,8 +675,6 @@ def _ensure_column(engine, table_name, column_name, column_def):
         # never block startup on migration
         import traceback
         traceback.print_exc()
-    migrate_registration_table(engine, _session)
-    migrate_user_session_table(engine, _session)
 
 
 def clean_database(_session):
@@ -749,7 +761,7 @@ def create_admin_user(_session):
 
 def init_db_thread():
     global app_DB_path
-    engine = create_engine('sqlite:///{0}'.format(app_DB_path), echo=False)
+    engine = create_engine(f'sqlite:///{app_DB_path}', echo=False)
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -762,7 +774,7 @@ def init_db(app_db_path):
     global app_DB_path
 
     app_DB_path = app_db_path
-    engine = create_engine('sqlite:///{0}'.format(app_db_path), echo=False)
+    engine = create_engine(f'sqlite:///{app_db_path}', echo=False)
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -793,18 +805,18 @@ def password_change(user_credentials=None):
                 print("Password doesn't comply with password validation rules")
                 sys.exit(4)
             if session_commit() == "":
-                print("Password for user '{}' changed".format(username))
+                print(f"Password for user '{username}' changed")
                 sys.exit(0)
             else:
                 print("Failed changing password")
                 sys.exit(3)
         else:
-            print("Username '{}' not valid, can't change password".format(username))
+            print(f"Username '{username}' not valid, can't change password")
             sys.exit(3)
 
 
 def get_new_session_instance():
-    new_engine = create_engine('sqlite:///{0}'.format(app_DB_path), echo=False)
+    new_engine = create_engine(f'sqlite:///{app_DB_path}', echo=False)
     new_session = scoped_session(sessionmaker())
     new_session.configure(bind=new_engine)
 
@@ -817,17 +829,13 @@ def dispose():
     global session
 
     old_session = session
-    session = None
+    session = None  # pyright: ignore[reportAssignmentType]
     if old_session:
-        try:
+        with contextlib.suppress(Exception):
             old_session.close()
-        except Exception:
-            pass
         if old_session.bind:
-            try:
-                old_session.bind.dispose()
-            except Exception:
-                pass
+            with contextlib.suppress(Exception):
+                old_session.bind.dispose()  # pyright: ignore[reportAttributeAccessIssue]
 
 def session_commit(success=None, _session=None):
     s = _session if _session else session

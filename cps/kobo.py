@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 shavitmichael, OzzieIsaacs
@@ -18,39 +17,31 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import base64
-from datetime import datetime, timezone
+import contextlib
+import json
 import os
 import uuid
 import zipfile
+from datetime import UTC, datetime
 from time import gmtime, strftime
-import json
 from urllib.parse import unquote
+
 import requests
-
-from flask import (
-    Blueprint,
-    request,
-    make_response,
-    jsonify,
-    current_app,
-    url_for,
-    redirect,
-    abort
-)
-from .cw_login import current_user
-from werkzeug.datastructures import Headers
+from flask import Blueprint, abort, current_app, jsonify, make_response, redirect, request, url_for
 from sqlalchemy import func
-from sqlalchemy.sql.expression import and_, or_
 from sqlalchemy.exc import StatementError
+from sqlalchemy.sql.expression import and_, or_
+from werkzeug.datastructures import Headers
 
-from . import config, logger, kobo_auth, db, calibre_db, helper, shelf as shelf_lib, ub, csrf, kobo_sync_status
-from . import isoLanguages, limiter
+from . import calibre_db, config, csrf, db, helper, isoLanguages, kobo_auth, kobo_sync_status, limiter, logger, ub
+from . import shelf as shelf_lib
+from .constants import BASE_DIR, COVER_THUMBNAIL_LARGE, COVER_THUMBNAIL_MEDIUM, COVER_THUMBNAIL_SMALL
+from .cw_login import current_user
 from .epub import get_epub_layout
-from .constants import COVER_THUMBNAIL_SMALL, COVER_THUMBNAIL_MEDIUM, COVER_THUMBNAIL_LARGE, BASE_DIR
 from .helper import get_download_link
+from .kobo_auth import get_auth_token, requires_kobo_auth
 from .services import SyncToken as SyncToken
 from .web import download_required
-from .kobo_auth import requires_kobo_auth, get_auth_token
 
 KOBO_FORMATS = {"KEPUB": ["KEPUB"], "EPUB": ["EPUB3", "EPUB"]}
 KOBO_STOREAPI_URL = "https://storeapi.kobo.com"
@@ -95,7 +86,7 @@ def make_request_to_kobo_store(sync_token=None):
     store_response = requests.request(
         method=request.method,
         url=get_store_url_for_current_request(),
-        headers=outgoing_headers,
+        headers=outgoing_headers,  # pyright: ignore[reportArgumentType]
         data=request.get_data(),
         allow_redirects=False,
         timeout=(2, 10)
@@ -118,13 +109,13 @@ def redirect_or_proxy_request(auth=False):
 
                 response_headers = store_response.headers
                 for header_key in CONNECTION_SPECIFIC_HEADERS:
-                    response_headers.pop(header_key, default=None)
+                    response_headers.pop(header_key, default=None)  # pyright: ignore[reportCallIssue]
 
                 return make_response(
                     store_response.content, store_response.status_code, response_headers.items()
                 )
         except Exception as e:
-            log.error("Failed to receive or parse response from Kobo's endpoint: {}".format(e))
+            log.error(f"Failed to receive or parse response from Kobo's endpoint: {e}")
             if auth:
                 return make_calibre_web_auth_response()
     return make_response(jsonify({}))
@@ -134,8 +125,8 @@ def convert_to_kobo_timestamp_string(timestamp):
     try:
         return timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
     except AttributeError as exc:
-        log.debug("Timestamp not valid: {}".format(exc))
-        return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        log.debug(f"Timestamp not valid: {exc}")
+        return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 @kobo.route("/v1/library/sync")
@@ -146,9 +137,9 @@ def HandleSyncRequest():
         return abort(403)
     sync_token = SyncToken.SyncToken.from_headers(request.headers)
     log.info("Kobo library sync request received")
-    log.debug("SyncToken: {}".format(sync_token))
+    log.debug(f"SyncToken: {sync_token}")
     log.debug("Download link format {}".format(get_download_url_for_book('[bookid]', '[bookformat]')))
-    if not current_app.wsgi_app.is_proxied:
+    if not current_app.wsgi_app.is_proxied:  # pyright: ignore[reportAttributeAccessIssue]
         log.debug('Kobo: Received unproxied request, changed request port to external server port')
 
     # if no books synced don't respect sync_token
@@ -181,7 +172,7 @@ def HandleSyncRequest():
                            .filter(db.Books.id.notin_(calibre_db.session.query(ub.KoboSyncedBooks.book_id)
                                                       .filter(ub.KoboSyncedBooks.user_id == current_user.id)))
                            .filter(ub.BookShelf.date_added > sync_token.books_last_modified)
-                           .filter(db.Data.format.in_(KOBO_FORMATS))
+                           .filter(db.Data.format.in_(KOBO_FORMATS))  # pyright: ignore[reportGeneralTypeIssues]
                            .filter(calibre_db.common_filters(allow_show_archived=True))
                            .order_by(db.Books.id)
                            .order_by(ub.ArchivedBook.last_modified)
@@ -200,13 +191,13 @@ def HandleSyncRequest():
                            .filter(db.Books.id.notin_(calibre_db.session.query(ub.KoboSyncedBooks.book_id)
                                                       .filter(ub.KoboSyncedBooks.user_id == current_user.id)))
                            .filter(calibre_db.common_filters(allow_show_archived=True))
-                           .filter(db.Data.format.in_(KOBO_FORMATS))
-                           .order_by(db.Books.last_modified)
+                           .filter(db.Data.format.in_(KOBO_FORMATS))  # pyright: ignore[reportGeneralTypeIssues]
+                           .order_by(db.Books.last_modified)  # pyright: ignore[reportGeneralTypeIssues]
                            .order_by(db.Books.id))
 
     reading_states_in_new_entitlements = []
     books = changed_entries.limit(SYNC_ITEM_LIMIT)
-    log.debug("Books to Sync: {}".format(len(books.all())))
+    log.debug(f"Books to Sync: {len(books.all())}")
     for book in books:
         formats = [data.format for data in book.Books.data]
         if 'KEPUB' not in formats and config.config_kepubifypath and 'EPUB' in formats:
@@ -214,7 +205,7 @@ def HandleSyncRequest():
 
         kobo_reading_state = get_or_create_reading_state(book.Books.id)
         entitlement = {
-            "BookEntitlement": create_book_entitlement(book.Books, archived=(book.is_archived==True)),
+            "BookEntitlement": create_book_entitlement(book.Books, archived=(book.is_archived)),
             "BookMetadata": get_metadata(book.Books),
         }
 
@@ -225,10 +216,8 @@ def HandleSyncRequest():
 
         ts_created = book.Books.timestamp.replace(tzinfo=None)
 
-        try:
+        with contextlib.suppress(AttributeError):
             ts_created = max(ts_created, book.date_added)
-        except AttributeError:
-            pass
 
         if ts_created > sync_token.books_last_created:
             sync_results.append({"NewEntitlement": entitlement})
@@ -238,12 +227,10 @@ def HandleSyncRequest():
         new_books_last_modified = max(
             book.Books.last_modified.replace(tzinfo=None), new_books_last_modified
         )
-        try:
+        with contextlib.suppress(AttributeError):
             new_books_last_modified = max(
                 new_books_last_modified, book.date_added
             )
-        except AttributeError:
-            pass
 
         new_books_last_created = max(ts_created, new_books_last_created)
         kobo_sync_status.add_synced_books(book.Books.id)
@@ -260,7 +247,7 @@ def HandleSyncRequest():
     book_count = changed_entries.count()
     # last entry:
     cont_sync = bool(book_count)
-    log.debug("Remaining books to Sync: {}".format(book_count))
+    log.debug(f"Remaining books to Sync: {book_count}")
     # generate reading state data
     changed_reading_states = ub.session.query(ub.KoboReadingState)
 
@@ -300,7 +287,7 @@ def HandleSyncRequest():
         sync_token.books_last_created = new_books_last_created
     sync_token.books_last_modified = new_books_last_modified
     sync_token.archive_last_modified = new_archived_last_modified
-    sync_token.reading_state_last_modified = new_reading_state_last_modified
+    sync_token.reading_state_last_modified = new_reading_state_last_modified  # pyright: ignore[reportAttributeAccessIssue]
 
     return generate_sync_response(sync_token, sync_results, cont_sync)
 
@@ -320,7 +307,7 @@ def generate_sync_response(sync_token, sync_results, set_cont=False):
             extra_headers["x-kobo-recent-reads"] = store_response.headers.get("x-kobo-recent-reads")
 
         except Exception as ex:
-            log.error_or_exception("Failed to receive or parse response from Kobo's sync endpoint: {}".format(ex))
+            log.error_or_exception(f"Failed to receive or parse response from Kobo's sync endpoint: {ex}")
     if set_cont:
         extra_headers["x-kobo-sync"] = "continue"
     sync_token.to_headers(extra_headers)
@@ -336,9 +323,9 @@ def generate_sync_response(sync_token, sync_results, set_cont=False):
 @requires_kobo_auth
 @download_required
 def HandleMetadataRequest(book_uuid):
-    if not current_app.wsgi_app.is_proxied:
+    if not current_app.wsgi_app.is_proxied:  # pyright: ignore[reportAttributeAccessIssue]
         log.debug('Kobo: Received unproxied request, changed request port to external server port')
-    log.info("Kobo library metadata request received for book %s" % book_uuid)
+    log.info(f"Kobo library metadata request received for book {book_uuid}")
     book = calibre_db.get_book_by_uuid(book_uuid)
     if not book or not book.data:
         log.info("Book %s not found in database", book_uuid)
@@ -351,20 +338,13 @@ def HandleMetadataRequest(book_uuid):
 
 
 def get_download_url_for_book(book_id, book_format):
-    if not current_app.wsgi_app.is_proxied:
+    if not current_app.wsgi_app.is_proxied:  # pyright: ignore[reportAttributeAccessIssue]
         if ':' in request.host and not request.host.endswith(']'):
             host = "".join(request.host.split(':')[:-1])
         else:
             host = request.host
 
-        return "{url_scheme}://{url_base}:{url_port}/kobo/{auth_token}/download/{book_id}/{book_format}".format(
-            url_scheme=request.scheme,
-            url_base=host,
-            url_port=config.config_external_port,
-            auth_token=get_auth_token(),
-            book_id=book_id,
-            book_format=book_format.lower()
-        )
+        return f"{request.scheme}://{host}:{config.config_external_port}/kobo/{get_auth_token()}/download/{book_id}/{book_format.lower()}"
     return url_for(
         "kobo.download_book",
         auth_token=get_auth_token(),
@@ -378,7 +358,7 @@ def create_book_entitlement(book, archived):
     book_uuid = str(book.uuid)
     return {
         "Accessibility": "Full",
-        "ActivePeriod": {"From": convert_to_kobo_timestamp_string(datetime.now(timezone.utc))},
+        "ActivePeriod": {"From": convert_to_kobo_timestamp_string(datetime.now(UTC))},
         "Created": convert_to_kobo_timestamp_string(book.timestamp),
         "CrossRevisionId": book_uuid,
         "Id": book_uuid,
@@ -432,7 +412,7 @@ def get_seriesindex(book):
 def get_language(book):
     if not book.languages:
         return 'en'
-    return isoLanguages.get(part3=book.languages[0].lang_code).part1
+    return isoLanguages.get(part3=book.languages[0].lang_code).part1  # pyright: ignore[reportOptionalMemberAccess]
 
 
 def get_metadata(book):
@@ -495,7 +475,7 @@ def get_metadata(book):
                 "Number": get_seriesindex(book),        # ToDo Check int() ?
                 "NumberFloat": float(get_seriesindex(book)),
                 # Get a deterministic id based on the series name.
-                "Id": str(uuid.uuid3(uuid.NAMESPACE_DNS, name)),
+                "Id": str(uuid.uuid3(uuid.NAMESPACE_DNS, name)),  # pyright: ignore[reportArgumentType]
             }
         except Exception as e:
             print(e)
@@ -503,7 +483,7 @@ def get_metadata(book):
 
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/tags", methods=["POST", "DELETE"])
 @requires_kobo_auth
 # Creates a Shelf with the given items, and returns the shelf's uuid.
@@ -538,7 +518,7 @@ def HandleTagCreate():
     return make_response(jsonify(str(shelf.uuid)), 201)
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/tags/<tag_id>", methods=["DELETE", "PUT"])
 @requires_kobo_auth
 def HandleTagUpdate(tag_id):
@@ -592,7 +572,7 @@ def add_items_to_shelf(items, shelf):
     return items_unknown_to_calibre
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/tags/<tag_id>/items", methods=["POST"])
 @requires_kobo_auth
 def HandleTagAddItem(tag_id):
@@ -622,7 +602,7 @@ def HandleTagAddItem(tag_id):
     return make_response('', 201)
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/tags/<tag_id>/items/delete", methods=["POST"])
 @requires_kobo_auth
 def HandleTagRemoveItem(tag_id):
@@ -690,7 +670,7 @@ def sync_shelves(sync_token, sync_results, only_kobo_shelves=False):
         for shelf in ub.session.query(ub.Shelf).filter(
             func.datetime(ub.Shelf.last_modified) > sync_token.tags_last_modified,
             ub.Shelf.user_id == current_user.id,
-            not ub.Shelf.kobo_sync
+            not ub.Shelf.kobo_sync  # pyright: ignore[reportArgumentType,reportGeneralTypeIssues]
         ):
             sync_results.append({
                 "DeletedTag": {
@@ -746,7 +726,7 @@ def create_kobo_tag(shelf):
         if not book:
             log.info("Book (id: %s) in BookShelf (id: %s) not found in book database",  book_shelf.book_id, shelf.id)
             continue
-        tag["Items"].append(
+        tag["Items"].append(  # pyright: ignore[reportAttributeAccessIssue]
             {
                 "RevisionId": book.uuid,
                 "Type": "ProductRevisionTagItem"
@@ -755,7 +735,7 @@ def create_kobo_tag(shelf):
     return {"Tag": tag}
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/<book_uuid>/state", methods=["GET", "PUT"])
 @requires_kobo_auth
 def HandleStateRequest(book_uuid):
@@ -801,7 +781,7 @@ def HandleStateRequest(book_uuid):
                 if new_book_read_status == ub.ReadBook.STATUS_IN_PROGRESS \
                         and new_book_read_status != book_read.read_status:
                     book_read.times_started_reading += 1
-                    book_read.last_time_started_reading = datetime.now(timezone.utc)
+                    book_read.last_time_started_reading = datetime.now(UTC)
                 book_read.read_status = new_book_read_status
                 update_results_response["StatusInfoResult"] = {"Result": "Success"}
         except (KeyError, TypeError, ValueError, StatementError):
@@ -925,23 +905,21 @@ def HandleCoverImageRequest(book_uuid, width, height, Quality, isGreyscale):
         else:
             resolution = COVER_THUMBNAIL_SMALL
     except ValueError:
-        log.error("Requested height %s of book %s is invalid" % (book_uuid, height))
+        log.error(f"Requested height {book_uuid} of book {height} is invalid")
         resolution = COVER_THUMBNAIL_SMALL
     book_cover = helper.get_book_cover_with_uuid(book_uuid, resolution=resolution)
     if book_cover:
-        log.debug("Serving local cover image of book %s" % book_uuid)
+        log.debug(f"Serving local cover image of book {book_uuid}")
         return book_cover
 
     if not config.config_kobo_proxy:
-        log.debug("Returning 404 for cover image of unknown book %s" % book_uuid)
+        log.debug(f"Returning 404 for cover image of unknown book {book_uuid}")
         # additional proxy request make no sense, -> direct return
         return abort(404)
 
-    log.debug("Redirecting request for cover image of unknown book %s to Kobo" % book_uuid)
+    log.debug(f"Redirecting request for cover image of unknown book {book_uuid} to Kobo")
     return redirect(KOBO_IMAGEHOST_URL +
-                    "/{book_uuid}/{width}/{height}/false/image.jpg".format(book_uuid=book_uuid,
-                                                                           width=width,
-                                                                           height=height), 307)
+                    f"/{book_uuid}/{width}/{height}/false/image.jpg", 307)
 
 
 @kobo.route("")
@@ -949,11 +927,11 @@ def TopLevelEndpoint():
     return make_response(jsonify({}))
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/<book_uuid>", methods=["DELETE"])
 @requires_kobo_auth
 def HandleBookDeletionRequest(book_uuid):
-    log.info("Kobo book delete request received for book %s" % book_uuid)
+    log.info(f"Kobo book delete request received for book {book_uuid}")
     book = calibre_db.get_book_by_uuid(book_uuid)
     if not book:
         log.info("Book %s not found in database", book_uuid)
@@ -961,24 +939,24 @@ def HandleBookDeletionRequest(book_uuid):
 
     book_id = book.id
     is_archived = kobo_sync_status.change_archived_books(book_id, True)
-    if is_archived:
+    if is_archived:  # pyright: ignore[reportGeneralTypeIssues]
         kobo_sync_status.remove_synced_book(book_id)
     return "", 204
 
 
 # TODO: Implement the following routes
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/library/<dummy>", methods=["DELETE", "GET", "POST"])
 @kobo.route("/v1/library/<dummy>/preview", methods=["POST"])
 def HandleUnimplementedRequest(dummy=None):
-    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
     log.debug("Unimplemented Library Request received: %s (request is forwarded to kobo if configured)",
               request.base_url)
     return redirect_or_proxy_request()
 
 
 # TODO: Implement the following routes
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/user/loyalty/<dummy>", methods=["GET", "POST"])
 @kobo.route("/v1/user/profile", methods=["GET", "POST"])
 @kobo.route("/v1/user/wishlist", methods=["GET", "POST"])
@@ -986,27 +964,27 @@ def HandleUnimplementedRequest(dummy=None):
 @kobo.route("/v1/analytics/<dummy>", methods=["GET", "POST"])
 @kobo.route("/v1/assets", methods=["GET"])
 def HandleUserRequest(dummy=None):
-    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
-    log.error("Key: {}".format(limiter.current_limit.key))
-    log.error("Remaining: {}".format(limiter.current_limit.remaining))
+    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
+    log.error(f"Key: {limiter.current_limit.key}")  # pyright: ignore[reportAttributeAccessIssue]
+    log.error(f"Remaining: {limiter.current_limit.remaining}")  # pyright: ignore[reportAttributeAccessIssue]
     log.debug("Unimplemented User Request received: %s (request is forwarded to kobo if configured)", request.base_url)
     return redirect_or_proxy_request()
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/user/loyalty/benefits", methods=["GET"])
 def handle_benefits():
-    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
     if config.config_kobo_proxy:
         return redirect_or_proxy_request()
     else:
         return make_response(jsonify({"Benefits": {}}))
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/analytics/gettests", methods=["GET", "POST"])
 def handle_getests():
-    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
     if config.config_kobo_proxy:
         return redirect_or_proxy_request()
     else:
@@ -1014,7 +992,7 @@ def handle_getests():
         return make_response(jsonify({"Result": "Success", "TestKey": testkey, "Tests": {}}))
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/products/<dummy>/prices", methods=["GET", "POST"])
 @kobo.route("/v1/products/<dummy>/recommendations", methods=["GET", "POST"])
 @kobo.route("/v1/products/<dummy>/nextread", methods=["GET", "POST"])
@@ -1033,7 +1011,7 @@ def handle_getests():
 @kobo.route("/v1/affiliate", methods=["GET", "POST"])
 @kobo.route("/v1/deals", methods=["GET", "POST"])
 def HandleProductsRequest(dummy=None):
-    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+    [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
     log.debug("Unimplemented Products Request received: %s (request is forwarded to kobo if configured)",
               request.base_url)
     return redirect_or_proxy_request()
@@ -1058,13 +1036,13 @@ def make_calibre_web_auth_response():
     )
 
 
-@csrf.exempt
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 @kobo.route("/v1/auth/refresh", methods=["POST"])
 @kobo.route("/v1/auth/device", methods=["POST"])
 @requires_kobo_auth
 def HandleAuthRequest():
-    log.error(limiter.current_limit)
-    log.error(limiter.current_limit)
+    log.error(limiter.current_limit)  # pyright: ignore[reportAttributeAccessIssue]
+    log.error(limiter.current_limit)  # pyright: ignore[reportAttributeAccessIssue]
     log.debug('Kobo Auth request')
     if config.config_kobo_proxy:
         try:
@@ -1091,17 +1069,13 @@ def HandleInitRequest():
     if not kobo_resources:
         kobo_resources = NATIVE_KOBO_RESOURCES()
 
-    if not current_app.wsgi_app.is_proxied:
+    if not current_app.wsgi_app.is_proxied:  # pyright: ignore[reportAttributeAccessIssue]
         log.debug('Kobo: Received unproxied request, changed request port to external server port')
         if ':' in request.host and not request.host.endswith(']'):
             host = "".join(request.host.split(':')[:-1])
         else:
             host = request.host
-        calibre_web_url = "{url_scheme}://{url_base}:{url_port}".format(
-            url_scheme=request.scheme,
-            url_base=host,
-            url_port=config.config_external_port
-        )
+        calibre_web_url = f"{request.scheme}://{host}:{config.config_external_port}"
         log.debug('Kobo: Received unproxied request, changed request url to %s', calibre_web_url)
         kobo_resources["image_host"] = calibre_web_url
         kobo_resources["image_url_quality_template"] = unquote(calibre_web_url +
@@ -1159,7 +1133,7 @@ def NATIVE_KOBO_RESOURCES():
     kobo_file = os.path.join(BASE_DIR, "kobo_resources.txt")
     try:
         if os.path.isfile(kobo_file):
-            with open(kobo_file, "r") as f:
+            with open(kobo_file) as f:
                 lines = f.read()
             return json.loads(lines)
     except Exception as e:

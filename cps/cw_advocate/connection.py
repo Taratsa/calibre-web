@@ -17,9 +17,9 @@
 
 import ipaddress
 import socket
-from socket import timeout as SocketTimeout
+from typing import Any
 
-from urllib3.connection import HTTPSConnection, HTTPConnection
+from urllib3.connection import HTTPConnection, HTTPSConnection
 from urllib3.exceptions import ConnectTimeoutError
 from urllib3.util.connection import _set_socket_options
 from urllib3.util.connection import create_connection as old_create_connection
@@ -53,7 +53,7 @@ def fix_addrinfo(records):
     """
     def fix_record(record, canonname):
         sa = record[4]
-        sa = (ipaddress.ip_address(sa[0]),) + sa[1:]
+        sa = (ipaddress.ip_address(sa[0]), *sa[1:])
         return record[0], record[1], record[2], canonname, sa
 
     canonname = None
@@ -66,8 +66,12 @@ def fix_addrinfo(records):
 
 
 # Lifted from requests' urllib3, which in turn lifted it from `socket.py`. Oy!
+from typing import cast  # noqa: E402
+
+_GLOBAL_DEFAULT_TIMEOUT = cast(Any, getattr(socket, '_GLOBAL_DEFAULT_TIMEOUT', object()))
+
 def validating_create_connection(address,
-                       timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+                       timeout=_GLOBAL_DEFAULT_TIMEOUT,
                        source_address=None, socket_options=None,
                        validator=None):
     """Connect to *address* and return the socket object.
@@ -83,6 +87,7 @@ def validating_create_connection(address,
     """
 
     host, port = address
+    assert validator is not None
     # We can skip asking for the canon name if we're not doing hostname-based
     # blacklisting.
     need_canonname = False
@@ -98,10 +103,7 @@ def validating_create_connection(address,
     err = None
     addrinfo = advocate_getaddrinfo(host, port, get_canonname=need_canonname)
     if addrinfo:
-        if validator.autodetect_local_addresses:
-            local_addresses = addrvalidator.determine_local_addresses()
-        else:
-            local_addresses = []
+        local_addresses = addrvalidator.determine_local_addresses() if validator.autodetect_local_addresses else []
         for res in addrinfo:
             # Are we allowed to connect with this result?
             if not validator.is_addrinfo_allowed(
@@ -109,9 +111,9 @@ def validating_create_connection(address,
                 _local_addresses=local_addresses,
             ):
                 continue
-            af, socktype, proto, canonname, sa = res
+            af, socktype, proto, _canonname, sa = res
             # Unparse the validated IP
-            sa = (sa[0].exploded,) + sa[1:]
+            sa = (sa[0].exploded, *sa[1:])
             sock = None
             try:
                 sock = socket.socket(af, socktype, proto)
@@ -120,14 +122,14 @@ def validating_create_connection(address,
                 # This is the only addition urllib3 makes to this function.
                 _set_socket_options(sock, socket_options)
 
-                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
                     sock.settimeout(timeout)
                 if source_address:
                     sock.bind(source_address)
                 sock.connect(sa)
                 return sock
 
-            except socket.error as _:
+            except OSError as _:
                 err = _
                 if sock is not None:
                     sock.close()
@@ -139,7 +141,7 @@ def validating_create_connection(address,
     if err is not None:
         raise err
     else:
-        raise socket.error("getaddrinfo returns an empty list")
+        raise OSError("getaddrinfo returns an empty list")
 
 
 # TODO: Is there a better way to add this to multiple classes with different
@@ -172,10 +174,9 @@ def _validating_new_conn(self):
             **extra_kw
         )
 
-    except SocketTimeout:
+    except TimeoutError as ex:
         raise ConnectTimeoutError(
-            self, "Connection to %s timed out. (connect timeout=%s)" %
-            (self.host, self.timeout))
+            self, f"Connection to {self.host} timed out. (connect timeout={self.timeout})") from ex
 
     return conn
 

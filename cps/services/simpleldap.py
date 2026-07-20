@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, pwr
@@ -16,17 +15,17 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import base64
-
-from flask_simpleldap import LDAP, LDAPException
-from flask_simpleldap import ldap as pyLDAP
-from flask import current_app
-from .. import constants, logger
-
 try:
-    from ldap.pkginfo import __version__ as ldapVersion
+    from flask_simpleldap import (  # pyright: ignore[reportMissingImports]
+        LDAP,  # pyright: ignore[reportMissingImports]
+        LDAPException,  # pyright: ignore[reportMissingImports]
+    )
+    from flask_simpleldap import ldap as pyLDAP  # pyright: ignore[reportMissingImports]
 except ImportError:
-    pass
+    pass  # LDAP functionality only available when flask_simpleldap is installed
+from flask import current_app
+
+from .. import constants, logger
 
 log = logger.create()
 
@@ -41,7 +40,7 @@ def _escape_ldap_filter(s):
     return s
 
 
-class LDAPLogger(object):
+class LDAPLogger:
 
     @staticmethod
     def write(message):
@@ -51,7 +50,7 @@ class LDAPLogger(object):
             log.debug("Logging Error")
 
 
-class mySimpleLDap(LDAP):
+class mySimpleLDap(LDAP):  # pyright: ignore[reportPossiblyUnboundVariable]
 
     @staticmethod
     def init_app(app):
@@ -66,19 +65,19 @@ class mySimpleLDap(LDAP):
         """
         try:
             log_level = 2 if current_app.config['LDAP_LOGLEVEL'] == logger.logging.DEBUG else 0
-            conn = pyLDAP.initialize('{0}://{1}:{2}'.format(
+            conn = pyLDAP.initialize('{}://{}:{}'.format(  # pyright: ignore[reportPossiblyUnboundVariable]
                 current_app.config['LDAP_SCHEMA'],
                 current_app.config['LDAP_HOST'],
                 current_app.config['LDAP_PORT']), trace_level=log_level, trace_file=LDAPLogger())
-            conn.set_option(pyLDAP.OPT_NETWORK_TIMEOUT,
+            conn.set_option(pyLDAP.OPT_NETWORK_TIMEOUT,  # pyright: ignore[reportPossiblyUnboundVariable]
                             current_app.config['LDAP_TIMEOUT'])
             conn = self._set_custom_options(conn)
-            conn.protocol_version = pyLDAP.VERSION3
+            conn.protocol_version = pyLDAP.VERSION3  # pyright: ignore[reportPossiblyUnboundVariable]
             if current_app.config['LDAP_USE_TLS']:
                 conn.start_tls_s()
             return conn
-        except pyLDAP.LDAPError as e:
-            raise LDAPException(self.error(e.args))
+        except pyLDAP.LDAPError as e:  # pyright: ignore[reportPossiblyUnboundVariable]
+            raise LDAPException(self.error(e.args)) from e  # pyright: ignore[reportPossiblyUnboundVariable]
 
 
 _ldap = mySimpleLDap()
@@ -90,7 +89,7 @@ def init_app(app, config):
 
     app.config['LDAP_HOST'] = config.config_ldap_provider_url
     app.config['LDAP_PORT'] = config.config_ldap_port
-    app.config['LDAP_CUSTOM_OPTIONS'] = {pyLDAP.OPT_REFERRALS: 0}
+    app.config['LDAP_CUSTOM_OPTIONS'] = {pyLDAP.OPT_REFERRALS: 0}  # pyright: ignore[reportPossiblyUnboundVariable]
     if config.config_ldap_encryption == 2:
         app.config['LDAP_SCHEMA'] = 'ldaps'
     else:
@@ -108,11 +107,11 @@ def init_app(app, config):
         app.config['LDAP_PASSWORD'] = ""
     if bool(config.config_ldap_cert_path):
         app.config['LDAP_CUSTOM_OPTIONS'].update({
-            pyLDAP.OPT_X_TLS_REQUIRE_CERT: pyLDAP.OPT_X_TLS_DEMAND,
-            pyLDAP.OPT_X_TLS_CACERTFILE: config.config_ldap_cacert_path,
-            pyLDAP.OPT_X_TLS_CERTFILE: config.config_ldap_cert_path,
-            pyLDAP.OPT_X_TLS_KEYFILE: config.config_ldap_key_path,
-            pyLDAP.OPT_X_TLS_NEWCTX: 0
+            pyLDAP.OPT_X_TLS_REQUIRE_CERT: pyLDAP.OPT_X_TLS_DEMAND,  # pyright: ignore[reportPossiblyUnboundVariable]
+            pyLDAP.OPT_X_TLS_CACERTFILE: config.config_ldap_cacert_path,  # pyright: ignore[reportPossiblyUnboundVariable]
+            pyLDAP.OPT_X_TLS_CERTFILE: config.config_ldap_cert_path,  # pyright: ignore[reportPossiblyUnboundVariable]
+            pyLDAP.OPT_X_TLS_KEYFILE: config.config_ldap_key_path,  # pyright: ignore[reportPossiblyUnboundVariable]
+            pyLDAP.OPT_X_TLS_NEWCTX: 0  # pyright: ignore[reportPossiblyUnboundVariable]
             })
 
     app.config['LDAP_BASE_DN'] = config.config_ldap_dn
@@ -128,7 +127,7 @@ def init_app(app, config):
         _ldap.init_app(app)
     except ValueError:
         if bool(config.config_ldap_cert_path):
-            app.config['LDAP_CUSTOM_OPTIONS'].pop(pyLDAP.OPT_X_TLS_NEWCTX)
+            app.config['LDAP_CUSTOM_OPTIONS'].pop(pyLDAP.OPT_X_TLS_NEWCTX)  # pyright: ignore[reportPossiblyUnboundVariable]
         try:
             _ldap.init_app(app)
         except RuntimeError as e:
@@ -167,16 +166,16 @@ def bind_user(username, password):
             return result is not None, None
         return None, None       # User not found
     except (TypeError, AttributeError, KeyError) as ex:
-        error = ("LDAP bind_user: %s" % ex)
+        error = (f"LDAP bind_user: {ex}")
         return None, error
-    except LDAPException as ex:
+    except LDAPException as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
         if ex.message == 'Invalid credentials':
             error = "LDAP admin login failed"
             return None, error
         if ex.message == "Can't contact LDAP server":
             # log.warning('LDAP Server down: %s', ex)
-            error = ('LDAP Server down: %s' % ex)
+            error = (f'LDAP Server down: {ex}')
             return None,  error
         else:
-            error = ('LDAP Server error: %s' % ex.message)
+            error = (f'LDAP Server error: {ex.message}')
             return None, error

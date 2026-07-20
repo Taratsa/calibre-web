@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2020 OzzieIsaacs
@@ -16,20 +15,20 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from flask import render_template, g, abort, request
+from flask import abort, g, render_template, request
 from flask_babel import gettext as _
-from werkzeug.local import LocalProxy
-from .cw_login import current_user
 from sqlalchemy.sql.expression import or_
+from werkzeug.local import LocalProxy
 
 from . import config, constants, logger, ub
+from .cw_login import current_user
 from .ub import User
-
 
 log = logger.create()
 
 def get_sidebar_config(kwargs=None):
-    kwargs = kwargs or []
+    if not kwargs:
+        kwargs = {}
     simple = bool([e for e in ['kindle', 'tolino', "kobo", "bookeen"]
                    if (e in request.headers.get('User-Agent', "").lower())])
     if 'content' in kwargs:
@@ -110,9 +109,9 @@ def get_sidebar_config(kwargs=None):
 def render_title_template(*args, **kwargs):
     sidebar, simple = get_sidebar_config(kwargs)
     try:
-        return render_template(instance=config.config_calibre_web_title, sidebar=sidebar, simple=simple,
+        return render_template(*args, instance=config.config_calibre_web_title, sidebar=sidebar, simple=simple,
                                accept=config.config_upload_formats.split(','),
-                               *args, **kwargs)
+                               **kwargs)
     except PermissionError:
-        log.error("No permission to access {} file.".format(args[0]))
+        log.error(f"No permission to access {args[0]} file.")
         abort(403)

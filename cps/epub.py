@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018 lemmsh, Kennyl, Kyosfonica, matthazinski
@@ -18,13 +17,13 @@
 
 import os
 import zipfile
-from lxml import etree
 
-from . import isoLanguages, cover
-from . import config, logger
-from .helper import split_authors
-from .epub_helper import get_content_opf, default_ns
+from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
+
+from . import config, cover, isoLanguages, logger
 from .constants import BookMeta
+from .epub_helper import default_ns, get_content_opf
+from .helper import split_authors
 from .string_helper import strip_whitespaces
 
 log = logger.create()
@@ -57,7 +56,7 @@ def get_epub_layout(book, book_data):
 
         layout = p.xpath('pkg:meta[@property="rendition:layout"]/text()', namespaces=default_ns)
     except (etree.XMLSyntaxError, KeyError, IndexError, OSError, UnicodeDecodeError) as e:
-        log.error("Could not parse epub metadata of book {} during kobo sync: {}".format(book.id, e))
+        log.error(f"Could not parse epub metadata of book {book.id} during kobo sync: {e}")
         layout = []
 
     if len(layout) == 0:
@@ -82,7 +81,7 @@ def get_epub_info(tmp_file_path, original_file_name, original_file_extension, no
     epub_metadata = {}
 
     for s in ['title', 'description', 'creator', 'language', 'subject', 'publisher', 'date']:
-        tmp = p.xpath('dc:%s/text()' % s, namespaces=ns)
+        tmp = p.xpath(f'dc:{s}/text()', namespaces=ns)
         if len(tmp) > 0:
             if s == 'creator':
                 epub_metadata[s] = ' & '.join(split_authors(tmp))
@@ -117,10 +116,7 @@ def get_epub_info(tmp_file_path, original_file_name, original_file_extension, no
     epub_metadata = parse_epub_series(ns, tree, epub_metadata)
 
     epub_zip = zipfile.ZipFile(tmp_file_path)
-    if not no_cover_processing:
-        cover_file = parse_epub_cover(ns, tree, epub_zip, cover_path, tmp_file_path)
-    else:
-        cover_file = None
+    cover_file = parse_epub_cover(ns, tree, epub_zip, cover_path, tmp_file_path) if not no_cover_processing else None
 
     identifiers = []
     for node in p.xpath('dc:identifier', namespaces=ns):
@@ -133,10 +129,7 @@ def get_epub_info(tmp_file_path, original_file_name, original_file_extension, no
             continue
         identifiers.append([identifier_name, identifier_value])
 
-    if not epub_metadata['title']:
-        title = original_file_name
-    else:
-        title = epub_metadata['title']
+    title = original_file_name if not epub_metadata['title'] else epub_metadata['title']
 
     return BookMeta(
         file_path=tmp_file_path,

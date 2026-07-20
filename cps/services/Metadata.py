@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -19,7 +18,7 @@ import abc
 import dataclasses
 import os
 import re
-from typing import Dict, Generator, List, Optional, Union
+from collections.abc import Generator
 
 from cps import constants
 
@@ -33,21 +32,21 @@ class MetaSourceInfo:
 
 @dataclasses.dataclass
 class MetaRecord:
-    id: Union[str, int]
+    id: str | int
     title: str
-    authors: List[str]
+    authors: list[str]
     url: str
     source: MetaSourceInfo
     cover: str = os.path.join(constants.STATIC_DIR, 'generic_cover.jpg')
-    description: Optional[str] = ""
-    series: Optional[str] = None
-    series_index: Optional[Union[int, float]] = 0
-    identifiers: Dict[str, Union[str, int]] = dataclasses.field(default_factory=dict)
-    publisher: Optional[str] = None
-    publishedDate: Optional[str] = None
-    rating: Optional[int] = 0
-    languages: Optional[List[str]] = dataclasses.field(default_factory=list)
-    tags: Optional[List[str]] = dataclasses.field(default_factory=list)
+    description: str | None = ""
+    series: str | None = None
+    series_index: int | float | None = 0
+    identifiers: dict[str, str | int] = dataclasses.field(default_factory=dict)
+    publisher: str | None = None
+    publishedDate: str | None = None
+    rating: int | None = 0
+    languages: list[str] | None = dataclasses.field(default_factory=list)
+    tags: list[str] | None = dataclasses.field(default_factory=list)
 
 
 class Metadata:
@@ -63,7 +62,7 @@ class Metadata:
     @abc.abstractmethod
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
+    ) -> list[MetaRecord] | None:
         pass
 
     @staticmethod

@@ -1,12 +1,8 @@
 {
-  "include": [
-    "cps"
-  ],
-  "exclude": [
-    "cps/static",
-    "cps/test",
-    "cps/node_modules"
-  ],
+  "include": ["cps"],
+  "exclude": ["cps/static", "cps/test", "cps/node_modules"],
+  "venvPath": ".",
+  "venv": ".venv",
   "reportMissingImports": "error",
   "reportAttributeAccessIssue": "error",
   "reportOptionalMemberAccess": "error",
@@ -14,10 +10,9 @@
   "reportGeneralTypeIssues": "error",
   "reportOptionalSubscript": "error",
   "reportOptionalIterable": "error",
-  "reportOptionalContains": "error",
   "reportOptionalOperand": "error",
   "reportTypedDictNotRequiredAccess": "error",
   "pythonVersion": "3.14",
   "pythonPlatform": "Linux",
-  "typeCheckingMode": "basic"
+  "typeCheckingMode": "recommended"
 }

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -16,20 +15,19 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 import itertools
-from typing import Dict, List, Optional
 from urllib.parse import quote, unquote
 
 try:
-    from fake_useragent.errors import FakeUserAgentError
+    from fake_useragent.errors import FakeUserAgentError  # pyright: ignore[reportMissingImports]
 except (ImportError):
     FakeUserAgentError = BaseException
 try:
-    from scholarly import scholarly
-except FakeUserAgentError:
-    raise ImportError("No module named 'scholarly'")
+    from scholarly import scholarly  # pyright: ignore[reportMissingImports]
+except FakeUserAgentError as err:
+    raise ImportError("No module named 'scholarly'") from err
 
 from cps import logger
-from cps.services.Metadata import MetaRecord, MetaSourceInfo, Metadata
+from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
 
 log = logger.create()
 
@@ -41,7 +39,7 @@ class scholar(Metadata):
 
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
+    ) -> list[MetaRecord] | None:
         val = list()
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
@@ -63,7 +61,7 @@ class scholar(Metadata):
         return val
 
     def _parse_search_result(
-        self, result: Dict, generic_cover: str, locale: str
+        self, result: dict, generic_cover: str, locale: str  # pyright: ignore[reportMissingTypeArgument]
     ) -> MetaRecord:
         match = MetaRecord(
             id=result.get("pub_url", result.get("eprint_url", "")),

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -20,19 +19,18 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 import platform
 import sqlite3
-from importlib.metadata import metadata
+import sys
 from collections import OrderedDict
+from importlib.metadata import metadata
 
 import flask
 from flask_babel import gettext as _
 
-from . import db, calibre_db, converter, uploader, constants, dep_check
+from . import calibre_db, constants, converter, db, dep_check, uploader
 from .render_template import render_title_template
 from .usermanagement import user_login_required
-
 
 about = flask.Blueprint('about', __name__)
 
@@ -42,10 +40,8 @@ opt = dep_check.load_dependencies(True)
 for i in (req + opt):
     modules[i[1]] = i[0]
 modules['Jinja2'] = metadata("jinja2")["Version"]
-if sys.version_info < (3, 12):
-    modules['pySqlite'] = sqlite3.version
 modules['SQLite'] = sqlite3.sqlite_version
-sorted_modules = OrderedDict((sorted(modules.items(), key=lambda x: x[0].casefold())))
+sorted_modules = OrderedDict(sorted(modules.items(), key=lambda x: x[0].casefold()))
 
 
 def collect_stats():

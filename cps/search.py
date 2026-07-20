@@ -17,20 +17,19 @@
 import json
 from datetime import datetime
 
-from flask import Blueprint, request, redirect, url_for, flash
+from flask import Blueprint, flash, redirect, request, url_for
 from flask import session as flask_session
-from .cw_login import current_user
 from flask_babel import format_date
 from flask_babel import gettext as _
-from sqlalchemy.sql.expression import func, not_, and_, or_, text, true
+from sqlalchemy.sql.expression import and_, func, not_, or_, text, true
 from sqlalchemy.sql.functions import coalesce
 
-from . import logger, db, calibre_db, config, ub
+from . import calibre_db, config, db, logger, ub
+from .cw_login import current_user
+from .pagination import Pagination
+from .render_template import render_title_template
 from .string_helper import strip_whitespaces
 from .usermanagement import login_required_if_no_ano
-from .render_template import render_title_template
-from .pagination import Pagination
-
 
 search = Blueprint('search', __name__)
 
@@ -58,7 +57,7 @@ def advanced_search():
     params = ['include_tag', 'exclude_tag', 'include_serie', 'exclude_serie', 'include_shelf', 'exclude_shelf',
               'include_language', 'exclude_language', 'include_extension', 'exclude_extension']
     for param in params:
-        values[param] = list(request.form.getlist(param))
+        values[param] = list(request.form.getlist(param))  # pyright: ignore[reportArgumentType]
     flask_session['query'] = json.dumps(values)
     return redirect(url_for('web.books_list', data="advsearch", sort_param='stored', query=""))
 
@@ -113,7 +112,7 @@ def adv_search_custom_columns(cc, term, q):
 
 def adv_search_language(q, include_languages_inputs, exclude_languages_inputs):
     if current_user.filter_language() != "all":
-        q = q.filter(db.Books.languages.any(db.Languages.lang_code == current_user.filter_language()))
+        q = q.filter(db.Books.languages.any(db.Languages.lang_code == current_user.filter_language()))  # pyright: ignore[reportGeneralTypeIssues]
     else:
         for language in include_languages_inputs:
             q = q.filter(db.Books.languages.any(db.Languages.id == language))
@@ -125,10 +124,10 @@ def adv_search_language(q, include_languages_inputs, exclude_languages_inputs):
 def adv_search_ratings(q, rating_high, rating_low):
     if rating_high:
         rating_high = int(rating_high) * 2
-        q = q.filter(db.Books.ratings.any(db.Ratings.rating <= rating_high))
+        q = q.filter(db.Books.ratings.any(db.Ratings.rating <= rating_high))  # pyright: ignore[reportGeneralTypeIssues]
     if rating_low:
         rating_low = int(rating_low) * 2
-        q = q.filter(db.Books.ratings.any(db.Ratings.rating >= rating_low))
+        q = q.filter(db.Books.ratings.any(db.Ratings.rating >= rating_low))  # pyright: ignore[reportGeneralTypeIssues]
     return q
 
 
@@ -146,7 +145,7 @@ def adv_search_read_status(read_status):
             else:
                 db_filter = db.cc_classes[config.config_read_column].value == bool(read_status == "True")
         except (KeyError, AttributeError, IndexError):
-            log.error("Custom Column No.{} does not exist in calibre database".format(config.config_read_column))
+            log.error(f"Custom Column No.{config.config_read_column} does not exist in calibre database")
             flash(_("Custom Column No.%(column)d does not exist in calibre database",
                     column=config.config_read_column),
                   category="error")
@@ -156,9 +155,9 @@ def adv_search_read_status(read_status):
 
 def adv_search_extension(q, include_extension_inputs, exclude_extension_inputs):
     for extension in include_extension_inputs:
-        q = q.filter(db.Books.data.any(db.Data.format == extension))
+        q = q.filter(db.Books.data.any(db.Data.format == extension))  # pyright: ignore[reportGeneralTypeIssues]
     for extension in exclude_extension_inputs:
-        q = q.filter(not_(db.Books.data.any(db.Data.format == extension)))
+        q = q.filter(not_(db.Books.data.any(db.Data.format == extension)))  # pyright: ignore[reportGeneralTypeIssues]
     return q
 
 
@@ -253,7 +252,7 @@ def extend_search_term(searchterm,
 
 
 def render_adv_search_results(term, offset=None, order=None, limit=None):
-    sort = order[0] if order else [db.Books.sort]
+    sort = order[0] if order else [db.Books.sort]  # pyright: ignore[reportGeneralTypeIssues]
     pagination = None
 
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
@@ -308,10 +307,10 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
             column_low = term.get('custom_column_' + str(c.id) + '_low')
             column_high = term.get('custom_column_' + str(c.id) + '_high')
             if column_low:
-                search_term.extend(["{} >= {}".format(c.name, column_low)])
+                search_term.extend([f"{c.name} >= {column_low}"])
                 cc_present = True
             if column_high:
-                search_term.extend(["{} <= {}".format(c.name,column_high)])
+                search_term.extend([f"{c.name} <= {column_high}"])
                 cc_present = True
         elif c.datatype == "bool":
             if term.get('custom_column_' + str(c.id)) != "Any":
@@ -334,17 +333,17 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
                                                              rating_low,
                                                              read_status)
         if author_name:
-            q = q.filter(db.Books.authors.any(func.lower(db.Authors.name).ilike("%" + author_name + "%")))
+            q = q.filter(db.Books.authors.any(func.lower(db.Authors.name).ilike("%" + author_name + "%")))  # pyright: ignore[reportGeneralTypeIssues]
         if book_title:
-            q = q.filter(func.lower(db.Books.title).ilike("%" + book_title + "%"))
+            q = q.filter(func.lower(db.Books.title).ilike("%" + book_title + "%"))  # pyright: ignore[reportGeneralTypeIssues]
         if pub_start:
-            q = q.filter(func.datetime(db.Books.pubdate) > func.datetime(pub_start))
+            q = q.filter(func.datetime(db.Books.pubdate) > func.datetime(pub_start))  # pyright: ignore[reportGeneralTypeIssues]
         if pub_end:
-            q = q.filter(func.datetime(db.Books.pubdate) < func.datetime(pub_end))
+            q = q.filter(func.datetime(db.Books.pubdate) < func.datetime(pub_end))  # pyright: ignore[reportGeneralTypeIssues]
         if read_status != "Any":
             q = q.filter(adv_search_read_status(read_status))
         if publisher:
-            q = q.filter(db.Books.publishers.any(func.lower(db.Publishers.name).ilike("%" + publisher + "%")))
+            q = q.filter(db.Books.publishers.any(func.lower(db.Publishers.name).ilike("%" + publisher + "%")))  # pyright: ignore[reportGeneralTypeIssues]
         q = adv_search_tag(q, tags['include_tag'], tags['exclude_tag'])
         q = adv_search_serie(q, tags['include_serie'], tags['exclude_serie'])
         q = adv_search_shelf(q, tags['include_shelf'], tags['exclude_shelf'])
@@ -354,14 +353,14 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
 
         if description:
             pass
-            q = q.filter(db.Books.comments.any(func.lower(db.Comments.text).ilike("%" + description + "%")))
+            q = q.filter(db.Books.comments.any(func.lower(db.Comments.text).ilike("%" + description + "%")))  # pyright: ignore[reportGeneralTypeIssues]
 
         # search custom columns
         try:
             pass
             q = adv_search_custom_columns(cc, term, q)
         except AttributeError as ex:
-            log.debug_or_exception(ex)
+            log.debug_or_exception(ex)  # pyright: ignore[reportAttributeAccessIssue]
             flash(_("Error on search for custom columns, please restart Calibre-Web"), category="error")
 
     q = q.order_by(*sort).all()
@@ -382,7 +381,7 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
                                  entries=entries,
                                  result_count=result_count,
                                  title=_("Advanced Search"), page="advsearch",
-                                 order=order[1])
+                                 order=order[1])  # pyright: ignore[reportOptionalSubscript]
 
 
 def render_prepare_search_form(cc):
@@ -392,26 +391,23 @@ def render_prepare_search_form(cc):
         .join(db.Books)\
         .filter(calibre_db.common_filters()) \
         .group_by(text('books_tags_link.tag'))\
-        .order_by(db.Tags.name).all()
-    series = calibre_db.session.query(db.Series)\
-        .join(db.books_series_link)\
-        .join(db.Books)\
-        .filter(calibre_db.common_filters()) \
-        .group_by(text('books_series_link.series'))\
-        .order_by(db.Series.name)\
-        .filter(calibre_db.common_filters()).all()
+        .order_by(db.Tags.name).all()  # pyright: ignore[reportGeneralTypeIssues]
+    series = (calibre_db.session.query(db.Series)
+        .join(db.books_series_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(text('books_series_link.series'))
+        .order_by(db.Series.name)  # pyright: ignore[reportGeneralTypeIssues]
+        .filter(calibre_db.common_filters()).all())
     shelves = ub.session.query(ub.Shelf)\
         .filter(or_(ub.Shelf.is_public == 1, ub.Shelf.user_id == int(current_user.id)))\
         .order_by(ub.Shelf.name).all()
-    extensions = calibre_db.session.query(db.Data)\
-        .join(db.Books)\
-        .filter(calibre_db.common_filters()) \
-        .group_by(db.Data.format)\
-        .order_by(db.Data.format).all()
-    if current_user.filter_language() == "all":
-        languages = calibre_db.speaking_language()
-    else:
-        languages = None
+    extensions = (calibre_db.session.query(db.Data)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(db.Data.format)  # pyright: ignore[reportGeneralTypeIssues]
+        .order_by(db.Data.format).all())  # pyright: ignore[reportGeneralTypeIssues]
+    languages = calibre_db.speaking_language() if current_user.filter_language() == "all" else None
     return render_title_template('search_form.html', tags=tags, languages=languages, extensions=extensions,
                                  series=series,shelves=shelves, title=_("Advanced Search"), cc=cc, page="advsearch")
 
@@ -439,6 +435,6 @@ def render_search_results(term, offset=None, order=None, limit=None):
                                  result_count=result_count,
                                  title=_("Search"),
                                  page="search",
-                                 order=order[1])
+                                 order=order[1])  # pyright: ignore[reportOptionalSubscript]
 
 

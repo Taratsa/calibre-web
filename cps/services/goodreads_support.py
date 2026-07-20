@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, pwr
@@ -18,14 +17,26 @@
 
 import time
 from functools import reduce
+
 import requests
 
-from goodreads.client import GoodreadsClient
-from goodreads.request import GoodreadsRequest
-from lxml import etree
+try:
+    from goodreads.client import GoodreadsClient  # pyright: ignore[reportMissingImports]
+except ImportError:
+    GoodreadsClient = None
 
 try:
-    import Levenshtein
+    from goodreads.request import GoodreadsRequest  # pyright: ignore[reportMissingImports]
+except ImportError:
+    GoodreadsRequest = None
+
+try:
+    from lxml import etree  # pyright: ignore[reportMissingImports, reportAttributeAccessIssue]
+except ImportError:
+    etree = None
+
+try:
+    import Levenshtein  # pyright: ignore[reportMissingImports]
 except ImportError:
     Levenshtein = False
 
@@ -33,17 +44,15 @@ from .. import logger
 from ..clean_html import clean_string
 
 
-
-
 def etree_to_dict(t):
     """
     Convert lxml ElementTree to a nested dict (similar to xmltodict).
     """
-    d = {t.tag: {} if t.attrib else None}
+    d: dict = {t.tag: {} if t.attrib else None}  # pyright: ignore[reportMissingTypeArgument]
     children = list(t)
 
     if children:
-        dd = {}
+        dd: dict = {}  # pyright: ignore[reportMissingTypeArgument]
         for dc in map(etree_to_dict, children):
             for k, v in dc.items():
                 if k in dd:
@@ -55,18 +64,20 @@ def etree_to_dict(t):
         d = {t.tag: dd}
 
     if t.attrib:
+        assert isinstance(d[t.tag], dict)
         d[t.tag].update(('@' + k, v) for k, v in t.attrib.items())
 
     text = (t.text or '').strip()
     if text:
         if children or t.attrib:
+            assert isinstance(d[t.tag], dict)
             d[t.tag]['#text'] = text
         else:
             d[t.tag] = text
 
     return d
 
-class my_GoodreadsClient(GoodreadsClient):
+class my_GoodreadsClient(GoodreadsClient):  # pyright: ignore[reportGeneralTypeIssues]
 
     def request(self, *args, **kwargs):
         """Create a GoodreadsRequest object and make that request"""
@@ -75,15 +86,15 @@ class my_GoodreadsClient(GoodreadsClient):
 
 
 class GoodreadsRequestException(Exception):
-    def __init__(self, error_msg, url):
+    def __init__(self, error_msg, url):  # pyright: ignore[reportMissingSuperCall]
         self.error_msg = error_msg
         self.url = url
 
-    def __str__(self):
+    def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return self.url, ':', self.error_msg
 
 
-class my_GoodreadsRequest(GoodreadsRequest):
+class my_GoodreadsRequest(GoodreadsRequest):  # pyright: ignore[reportGeneralTypeIssues]
 
     def request(self):
         resp = requests.get(self.host+self.path, params=self.params,
@@ -92,6 +103,7 @@ class my_GoodreadsRequest(GoodreadsRequest):
         if resp.status_code != 200:
             raise GoodreadsRequestException(resp.reason, self.path)
         if self.req_format == 'xml':
+            assert etree is not None
             root = etree.fromstring(resp.content, parser=etree.XMLParser(resolve_entities=False, no_network=True))
             data_dict = etree_to_dict(root)
 
@@ -101,7 +113,7 @@ class my_GoodreadsRequest(GoodreadsRequest):
 
 
 log = logger.create()
-_client = None  # type: GoodreadsClient
+_client = None  # type: ignore
 
 # GoodReads TOS allows for 24h caching of data
 _CACHE_TIMEOUT = 23 * 60 * 60  # 23 hours (in seconds)
@@ -115,10 +127,9 @@ def connect(key=None, enabled=True):
         _client = None
         return
 
-    if _client:
+    if _client and _client.client_key != key:
         # make sure the configuration has not changed since last we used the client
-        if _client.client_key != key:
-            _client = None
+        _client = None
 
     if not _client:
         _client = my_GoodreadsClient(key, None)
@@ -126,7 +137,7 @@ def connect(key=None, enabled=True):
 
 def get_author_info(author_name):
     now = time.time()
-    author_info = _AUTHORS_CACHE.get(author_name, None)
+    author_info = _AUTHORS_CACHE.get(author_name)
     if author_info:
         if now < author_info._timestamp + _CACHE_TIMEOUT:
             return author_info
@@ -178,7 +189,7 @@ def get_other_books(author_info, library_books=None):
 
         if Levenshtein and library_titles:
             goodreads_title = book._book_dict['title_without_series']
-            if any(Levenshtein.ratio(goodreads_title, title) > 0.7 for title in library_titles):
+            if any(Levenshtein.ratio(goodreads_title, title) > 0.7 for title in library_titles):  # pyright: ignore[reportAttributeAccessIssue]
                 continue
 
         yield book

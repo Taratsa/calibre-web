@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
@@ -19,12 +18,13 @@
 import datetime
 
 from . import config, constants
-from .services.background_scheduler import BackgroundScheduler, CronTrigger, use_APScheduler
-from .tasks.database import TaskReconnectDatabase
-from .tasks.clean import TaskClean
-from .tasks.thumbnail import TaskGenerateCoverThumbnails, TaskGenerateSeriesThumbnails, TaskClearCoverThumbnailCache
+from .services.background_scheduler import BackgroundScheduler, CronTrigger, use_APScheduler  # noqa: F401
 from .services.worker import WorkerThread
+from .tasks.clean import TaskClean
+from .tasks.database import TaskReconnectDatabase
 from .tasks.metadata_backup import TaskBackupMetadata
+from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThumbnails, TaskGenerateSeriesThumbnails
+
 
 def get_scheduled_tasks(reconnect=True):
     tasks = list()
@@ -69,7 +69,7 @@ def register_scheduled_tasks(reconnect=True):
         duration = config.schedule_duration
 
         # Register scheduled tasks
-        timezone_info = datetime.datetime.now(datetime.timezone.utc).astimezone().tzinfo
+        timezone_info = datetime.datetime.now(datetime.UTC).astimezone().tzinfo
         scheduler.schedule_tasks(tasks=get_scheduled_tasks(reconnect), trigger=CronTrigger(hour=start,
                                                                                            timezone=timezone_info))
         end_time = calclulate_end_time(start, duration)
@@ -94,7 +94,7 @@ def register_startup_tasks():
         if constants.APP_MODE in ['development', 'test'] and not should_task_be_running(start, duration):
             scheduler.schedule_tasks_immediately(tasks=get_scheduled_tasks(False))
         elif config.schedule_generate_book_covers:
-            tasks.append([lambda: TaskGenerateCoverThumbnails(), 'generate cover thumbnails (startup)', False])
+            tasks.append([lambda: TaskGenerateCoverThumbnails(), 'generate cover thumbnails (startup)', False])  # pyright: ignore[reportArgumentType]
 
         scheduler.schedule_tasks_immediately(tasks=tasks)
 

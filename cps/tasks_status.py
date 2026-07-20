@@ -14,18 +14,24 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+from babel.units import format_unit
+from flask import Blueprint, jsonify
+from flask_babel import format_datetime
+from flask_babel import gettext as _
 from markupsafe import escape
 
-from flask import Blueprint, jsonify
-from .cw_login import current_user
-from flask_babel import gettext as _
-from flask_babel import format_datetime
-from babel.units import format_unit
-
 from . import logger
+from .cw_login import current_user
 from .render_template import render_title_template
-from .services.worker import WorkerThread, STAT_WAITING, STAT_FAIL, STAT_STARTED, STAT_FINISH_SUCCESS, STAT_ENDED, \
-    STAT_CANCELLED
+from .services.worker import (
+    STAT_CANCELLED,
+    STAT_ENDED,
+    STAT_FAIL,
+    STAT_FINISH_SUCCESS,
+    STAT_STARTED,
+    STAT_WAITING,
+    WorkerThread,
+)
 from .usermanagement import user_login_required
 
 tasks = Blueprint('tasks', __name__)
@@ -74,8 +80,8 @@ def render_task_status(tasklist):
                 else:
                     ret['status'] = _('Unknown Status')
 
-            ret['taskMessage'] = "{}: {}".format(task.name, task.message) if task.message else task.name
-            ret['progress'] = "{} %".format(int(task.progress * 100))
+            ret['taskMessage'] = f"{task.name}: {task.message}" if task.message else task.name
+            ret['progress'] = f"{int(task.progress * 100)} %"
             ret['user'] = escape(user)  # prevent xss
 
             # Hidden fields
@@ -98,9 +104,9 @@ def format_runtime(runtime):
     hours, minutes = divmod(minutes, 60)
     # ToDo: locale.number_symbols._data['timeSeparator'] -> localize time separator ?
     if hours:
-        ret_val += '{:d}:{:02d}:{:02d}s'.format(hours, minutes, seconds)
+        ret_val += f'{hours:d}:{minutes:02d}:{seconds:02d}s'
     elif minutes:
-        ret_val += '{:2d}:{:02d}s'.format(minutes, seconds)
+        ret_val += f'{minutes:2d}:{seconds:02d}s'
     else:
-        ret_val += '{:2d}s'.format(seconds)
+        ret_val += f'{seconds:2d}s'
     return ret_val

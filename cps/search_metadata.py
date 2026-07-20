@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -17,22 +16,22 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import concurrent.futures
+import contextlib
 import importlib
 import inspect
-import json
 import os
 import sys
 
-from flask import Blueprint, request, url_for, make_response, jsonify
-from .cw_login import current_user
+from flask import Blueprint, jsonify, make_response, request, url_for
 from flask_babel import get_locale
 from sqlalchemy.exc import InvalidRequestError, OperationalError
 from sqlalchemy.orm.attributes import flag_modified
 
 from cps.services.Metadata import Metadata
-from . import constants, logger, ub, web_server
-from .usermanagement import user_login_required
 
+from . import constants, logger, ub, web_server
+from .cw_login import current_user
+from .usermanagement import user_login_required
 
 meta = Blueprint("metadata", __name__)
 
@@ -56,9 +55,9 @@ for f in modules:
             importlib.import_module("cps.metadata_provider." + a)
             new_list.append(a)
         except (IndentationError, SyntaxError) as e:
-            log.error("Syntax error for metadata source: {} - {}".format(a, e))
+            log.error(f"Syntax error for metadata source: {a} - {e}")
         except ImportError as e:
-            log.debug("Import error for metadata source: {} - {}".format(a, e))
+            log.debug(f"Import error for metadata source: {a} - {e}")
 
 
 def list_classes(provider_list):
@@ -101,13 +100,11 @@ def metadata_change_active_provider(prov_name):
     active[new_state["id"]] = new_state["value"]
     current_user.view_settings["metadata"] = active
     try:
-        try:
+        with contextlib.suppress(AttributeError):
             flag_modified(current_user, "view_settings")
-        except AttributeError:
-            pass
         ub.session.commit()
     except (InvalidRequestError, OperationalError):
-        log.error("Invalid request received: {}".format(request))
+        log.error(f"Invalid request received: {request}")
         return "Invalid request", 400
     if "initial" in new_state and prov_name:
         data = []

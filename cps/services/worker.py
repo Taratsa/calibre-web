@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2020 pwr
@@ -16,17 +15,13 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import threading
 import abc
-import uuid
+import queue
+import threading
 import time
-
-try:
-    import queue
-except ImportError:
-    import Queue as queue
-from datetime import datetime
+import uuid
 from collections import namedtuple
+from datetime import datetime
 
 from cps import logger
 
@@ -53,7 +48,7 @@ def _get_main_thread():
     raise Exception("main thread not found?!")
 
 
-class ImprovedQueue(queue.Queue):
+class ImprovedQueue(queue.Queue):  # pyright: ignore[reportMissingTypeArgument]
     def to_list(self):
         """
         Returns a copy of all items in the queue without removing them.
@@ -88,7 +83,7 @@ class WorkerThread(threading.Thread):
         ins = cls.get_instance()
         ins.num += 1
         username = user if user is not None else 'System'
-        log.debug("Add Task for user: {} - {}".format(username, task))
+        log.debug(f"Add Task for user: {username} - {task}")
         ins.queue.put(QueuedTask(
             num=ins.num,
             user=username,
@@ -209,7 +204,7 @@ class CalibreTask:
 
     @stat.setter
     def stat(self, x):
-        self._stat = x
+        self._stat = x  # pyright: ignore[reportUninitializedInstanceVariable]
 
     @property
     def progress(self):
@@ -227,11 +222,11 @@ class CalibreTask:
 
     @error.setter
     def error(self, x):
-        self._error = x
+        self._error = x  # pyright: ignore[reportUninitializedInstanceVariable]
 
     @property
     def runtime(self):
-        return (self.end_time or datetime.now()) - self.start_time
+        return (self.end_time or datetime.now()) - (self.start_time or datetime.now())
 
     @property
     def dead(self):
@@ -248,7 +243,7 @@ class CalibreTask:
 
     @self_cleanup.setter
     def self_cleanup(self, is_self_cleanup):
-        self._self_cleanup = is_self_cleanup
+        self._self_cleanup = is_self_cleanup  # pyright: ignore[reportUninitializedInstanceVariable]
 
     @property
     def scheduled(self):
@@ -267,5 +262,5 @@ class CalibreTask:
         self.stat = STAT_FINISH_SUCCESS
         self.progress = 1
 
-    def __str__(self):
+    def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return self.name

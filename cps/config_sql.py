@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2019 OzzieIsaacs, pwr
@@ -16,17 +15,16 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import json
 import os
 import sys
-import json
+from base64 import urlsafe_b64decode
 
-from sqlalchemy import Column, String, Integer, SmallInteger, Boolean, BLOB, JSON
+from cryptography.fernet import Fernet
+from sqlalchemy import BLOB, JSON, Boolean, Column, Integer, SmallInteger, String, exists
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.sql.expression import text
-from sqlalchemy import exists
-from cryptography.fernet import Fernet
-import cryptography.exceptions
-from base64 import urlsafe_b64decode
+
 try:
     # Compatibility with sqlalchemy 2.0
     from sqlalchemy.orm import declarative_base
@@ -34,8 +32,8 @@ except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
 
 from . import constants, logger
-from .subproc_wrapper import process_wait
 from .string_helper import strip_whitespaces
+from .subproc_wrapper import process_wait
 
 log = logger.create()
 _Base = declarative_base()
@@ -181,139 +179,139 @@ class _Settings(_Base):
 
 
 # Class holds all application specific settings in calibre-web
-class ConfigSQL(object):
+class ConfigSQL:
     # pylint: disable=no-member
     # Class-level type annotations for pyright. The actual values are loaded at
     # runtime from the _Settings SQLAlchemy row via self.load() -> setattr().
-    db_configured: bool
-    cli: object
+    db_configured: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    cli: object  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    id: int
-    mail_server: str
-    mail_port: int
-    mail_use_ssl: int
-    mail_login: str
-    mail_password_e: str
-    mail_password: str
-    mail_from: str
-    mail_size: int
-    mail_server_type: int
-    mail_gmail_token: dict
+    id: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_server: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_port: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_use_ssl: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_login: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_password_e: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_password: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_from: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_size: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_server_type: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    mail_gmail_token: dict  # pyright: ignore[reportUninitializedInstanceVariable,reportMissingTypeArgument]
 
-    config_calibre_dir: str
-    config_calibre_uuid: str
-    config_calibre_split: bool
-    config_calibre_split_dir: str
-    config_port: int
-    config_external_port: int
-    config_certfile: str
-    config_keyfile: str
-    config_trustedhosts: str
-    config_calibre_web_title: str
-    config_books_per_page: int
-    config_random_books: int
-    config_authors_max: int
-    config_read_column: int
-    config_title_regex: str
-    config_theme: int
+    config_calibre_dir: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_calibre_uuid: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_calibre_split: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_calibre_split_dir: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_port: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_external_port: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_certfile: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_keyfile: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_trustedhosts: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_calibre_web_title: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_books_per_page: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_random_books: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_authors_max: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_read_column: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_title_regex: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_theme: int  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_log_level: int
-    config_logfile: str
-    config_access_log: int
-    config_access_logfile: str
+    config_log_level: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_logfile: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_access_log: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_access_logfile: str  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_uploading: int
-    config_anonbrowse: int
-    config_public_reg: int
-    config_remote_login: bool
-    config_frontend_rebuild_token: str
-    config_kobo_sync: bool
+    config_uploading: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_anonbrowse: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_public_reg: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_remote_login: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_frontend_rebuild_token: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_kobo_sync: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_default_role: int
-    config_default_show: int
-    config_default_language: str
-    config_default_locale: str
-    config_columns_to_ignore: str
+    config_default_role: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_default_show: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_default_language: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_default_locale: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_columns_to_ignore: str  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_denied_tags: str
-    config_allowed_tags: str
-    config_restricted_column: int
-    config_denied_column_value: str
-    config_allowed_column_value: str
+    config_denied_tags: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_allowed_tags: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_restricted_column: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_denied_column_value: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_allowed_column_value: str  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_use_google_drive: bool
-    config_google_drive_folder: str
-    config_google_drive_watch_changes_response: dict
+    config_use_google_drive: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_google_drive_folder: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_google_drive_watch_changes_response: dict  # pyright: ignore[reportUninitializedInstanceVariable,reportMissingTypeArgument]
 
-    config_use_goodreads: bool
-    config_goodreads_api_key: str
-    config_googlebooks_api_key: str
-    config_register_email: bool
-    config_login_type: int
+    config_use_goodreads: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_goodreads_api_key: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_googlebooks_api_key: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_register_email: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_login_type: int  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_kobo_proxy: bool
+    config_kobo_proxy: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_ldap_provider_url: str
-    config_ldap_port: int
-    config_ldap_authentication: int
-    config_ldap_serv_username: str
-    config_ldap_serv_password_e: str
-    config_ldap_serv_password: str
-    config_ldap_encryption: int
-    config_ldap_cacert_path: str
-    config_ldap_cert_path: str
-    config_ldap_key_path: str
-    config_ldap_dn: str
-    config_ldap_user_object: str
-    config_ldap_member_user_object: str
-    config_ldap_openldap: bool
-    config_ldap_group_object_filter: str
-    config_ldap_group_members_field: str
-    config_ldap_group_name: str
+    config_ldap_provider_url: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_port: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_authentication: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_serv_username: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_serv_password_e: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_serv_password: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_encryption: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_cacert_path: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_cert_path: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_key_path: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_dn: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_user_object: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_member_user_object: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_openldap: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_group_object_filter: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_group_members_field: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ldap_group_name: str  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_kepubifypath: str
-    config_converterpath: str
-    config_binariesdir: str
-    config_calibre: str
-    config_rarfile_location: str
-    config_upload_formats: str
-    config_unicode_filename: bool
-    config_embed_metadata: bool
+    config_kepubifypath: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_converterpath: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_binariesdir: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_calibre: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_rarfile_location: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_upload_formats: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_unicode_filename: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_embed_metadata: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_updatechannel: int
+    config_updatechannel: int  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_reverse_proxy_login_header_name: str
-    config_allow_reverse_proxy_header_login: bool
+    config_reverse_proxy_login_header_name: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_allow_reverse_proxy_header_login: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    schedule_start_time: int
-    schedule_duration: int
-    schedule_generate_book_covers: bool
-    schedule_generate_series_covers: bool
-    schedule_reconnect: bool
-    schedule_metadata_backup: bool
+    schedule_start_time: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_duration: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_generate_book_covers: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_generate_series_covers: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_reconnect: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_metadata_backup: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
-    config_password_policy: bool
-    config_password_min_length: int
-    config_password_number: bool
-    config_password_lower: bool
-    config_password_upper: bool
-    config_password_character: bool
-    config_password_special: bool
-    config_session: int
-    config_ratelimiter: bool
-    config_limiter_uri: str
-    config_limiter_options: str
-    config_check_extensions: bool
+    config_password_policy: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_min_length: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_number: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_lower: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_upper: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_character: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_password_special: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_session: int  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_ratelimiter: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_limiter_uri: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_limiter_options: str  # pyright: ignore[reportUninitializedInstanceVariable]
+    config_check_extensions: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
     def __init__(self):
         self.__dict__["dirty"] = list()
 
     def init_config(self, session, secret_key, cli):
-        self._session = session
-        self._settings = None
+        self._session = session  # pyright: ignore[reportUninitializedInstanceVariable]
+        self._settings = None  # pyright: ignore[reportUninitializedInstanceVariable]
         self.db_configured = False
         self.config_calibre_dir = ""
-        self._fernet = Fernet(secret_key)
+        self._fernet = Fernet(secret_key)  # pyright: ignore[reportUninitializedInstanceVariable]
         self.cli = cli
         self.load()
 
@@ -341,21 +339,26 @@ class ConfigSQL(object):
         return self._settings
 
     def get_config_certfile(self):
-        if self.cli.certfilepath:
-            return self.cli.certfilepath
-        if self.cli.certfilepath == "":
+        from typing import Any, cast
+        cli = cast(Any, self.cli)
+        if cli.certfilepath:
+            return cli.certfilepath
+        if cli.certfilepath == "":
             return None
         return self.config_certfile
 
     def get_config_keyfile(self):
-        if self.cli.keyfilepath:
-            return self.cli.keyfilepath
-        if self.cli.certfilepath == "":
+        from typing import Any, cast
+        cli = cast(Any, self.cli)
+        if cli.keyfilepath:
+            return cli.keyfilepath
+        if cli.certfilepath == "":
             return None
         return self.config_keyfile
 
     def get_config_ipaddress(self):
-        return self.cli.ip_address or ""
+        from typing import Any, cast
+        return cast(Any, self.cli).ip_address or ""
 
     def _has_role(self, role_flag):
         return constants.has_flag(self.config_default_role, role_flag)
@@ -434,10 +437,7 @@ class ConfigSQL(object):
             return False
 
         if convertor is not None:
-            if encode:
-                new_value = convertor(new_value.encode(encode))
-            else:
-                new_value = convertor(new_value)
+            new_value = convertor(new_value.encode(encode)) if encode else convertor(new_value)
 
         current_value = self.__dict__.get(field)
         if current_value == new_value:
@@ -449,7 +449,7 @@ class ConfigSQL(object):
     def to_dict(self):
         storage = {}
         for k, v in self.__dict__.items():
-            if k[0] != '_' and not k.endswith("_e") and not k == "cli" \
+            if k[0] != '_' and not k.endswith("_e") and k != "cli" \
                     and 'api' not in k.lower() and 'token' not in k.lower() \
                     and 'secret' not in k.lower():
                 storage[k] = v
@@ -463,12 +463,12 @@ class ConfigSQL(object):
                 if v is None:
                     # if the storage column has no value, apply the (possible) default
                     column = s.__class__.__dict__.get(k)
-                    if column.default is not None:
+                    if column is not None and column.default is not None:
                         v = column.default.arg
                 if k.endswith("_e") and v is not None:
                     try:
                         setattr(self, k, self._fernet.decrypt(v).decode())
-                    except cryptography.fernet.InvalidToken:
+                    except Exception:
                         setattr(self, k, "")
                 else:
                     setattr(self, k, v)
@@ -478,18 +478,18 @@ class ConfigSQL(object):
             db_file = os.path.join(self.config_calibre_dir, 'metadata.db')
             have_metadata_db = os.path.isfile(db_file)
         self.db_configured = have_metadata_db
-        
+
         from . import cli_param
         if os.environ.get('FLASK_DEBUG'):
             logfile = logger.setup(logger.LOG_TO_STDOUT, logger.logging.DEBUG)
         else:
             # pylint: disable=access-member-before-definition
             logfile = logger.setup(cli_param.logpath or self.config_logfile, self.config_log_level)
-        if logfile != os.path.abspath(self.config_logfile):
-            if logfile != os.path.abspath(cli_param.logpath):
+        if logfile != os.path.abspath(self.config_logfile or ""):
+            if logfile != os.path.abspath(cli_param.logpath or ""):
                 log.warning("Log path %s not valid, falling back to default", self.config_logfile)
             self.config_logfile = logfile
-            s.config_logfile = logfile
+            s.config_logfile = logfile  # pyright: ignore[reportAttributeAccessIssue]
             self._session.merge(s)
             try:
                 self._session.commit()
@@ -502,7 +502,7 @@ class ConfigSQL(object):
         """Apply all configuration values to the underlying storage."""
         s = self._read_from_storage()  # type: _Settings
 
-        for k in self.dirty:
+        for k in self.__dict__.get("dirty", []):
             if k[0] == '_':
                 continue
             if hasattr(s, k):
@@ -548,7 +548,7 @@ class ConfigSQL(object):
 
 def _encrypt_fields(session, secret_key):
     try:
-        session.query(exists().where(_Settings.mail_password_e)).scalar()
+        session.query(exists().where(_Settings.mail_password_e)).scalar()  # pyright: ignore[reportArgumentType]
     except OperationalError:
         with session.bind.connect() as conn:
             conn.execute(text("ALTER TABLE settings ADD column 'mail_password_e' String"))
@@ -580,22 +580,16 @@ def _migrate_table(session, orm_class, secret_key=None):
                     column_default = ""
                 else:
                     if isinstance(column.default.arg, bool):
-                        column_default = "DEFAULT {}".format(int(column.default.arg))
+                        column_default = f"DEFAULT {int(column.default.arg)}"
                     else:
-                        column_default = "DEFAULT `{}`".format(column.default.arg)
-                if isinstance(column.type, JSON):
-                    column_type = "JSON"
-                else:
-                    column_type = column.type
-                alter_table = text("ALTER TABLE %s ADD COLUMN `%s` %s %s" % (orm_class.__tablename__,
-                                                                             column_name,
-                                                                             column_type,
-                                                                             column_default))
+                        column_default = f"DEFAULT `{column.default.arg}`"
+                column_type = "JSON" if isinstance(column.type, JSON) else column.type
+                alter_table = text(f"ALTER TABLE {orm_class.__tablename__} ADD COLUMN `{column_name}` {column_type} {column_default}")
                 log.debug(alter_table)
                 session.execute(alter_table)
                 changed = True
             except json.decoder.JSONDecodeError as e:
-                log.error("Database corrupt column: {}".format(column_name))
+                log.error(f"Database corrupt column: {column_name}")
                 log.debug(e)
 
     if changed:
@@ -623,9 +617,11 @@ def autodetect_calibre_binaries():
             values = [process_wait([binary_path, "--version"],
                                    pattern=r'\(calibre (.*)\)') for binary_path in supported_binary_paths]
             if all(values):
-                version = values[0].group(1)
+                import re
+                from typing import cast
+                version = cast(re.Match, values[0]).group(1)  # pyright: ignore[reportMissingTypeArgument]
                 log.debug("calibre version %s", version)
-                return element 
+                return element
     return ""
 
 

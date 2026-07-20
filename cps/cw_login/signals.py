@@ -1,4 +1,4 @@
-from flask.signals import Namespace
+from blinker.base import Namespace  # pyright: ignore[reportPrivateImportUsage]
 
 _signals = Namespace()
 

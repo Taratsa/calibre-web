@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs
@@ -16,10 +15,10 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 import os
-import subprocess
 import re
+import subprocess
+
 
 def process_open(command, quotes=(), env=None, sout=subprocess.PIPE, serr=subprocess.PIPE, newlines=True):
     # Linux py2.7 encode as list without quotes no empty element for parameters
@@ -44,13 +43,16 @@ def process_wait(command, serr=subprocess.PIPE, pattern=""):
     ret_val = ""
     p = process_open(command, serr=serr, newlines=newlines)
     p.wait()
-    for line in p.stdout.readlines():
-        if isinstance(line, bytes):
-            line = line.decode('utf-8', errors="ignore")
-        match = re.search(pattern, line, re.IGNORECASE)
-        if match and ret_val == "":
-            ret_val = match
-            break
-    p.stdout.close()
-    p.stderr.close()
+    if p.stdout:
+        for line in p.stdout.readlines():
+            if isinstance(line, bytes):
+                line = line.decode('utf-8', errors="ignore")
+            match = re.search(pattern, line, re.IGNORECASE)
+            if match and ret_val == "":
+                ret_val = match
+                break
+    if p.stdout:
+        p.stdout.close()
+    if p.stderr:
+        p.stderr.close()
     return ret_val

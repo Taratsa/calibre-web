@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -20,35 +19,45 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
-from datetime import datetime, timezone
 import json
+import os
+from datetime import UTC, datetime
+from functools import wraps
 from shutil import copyfile
 
-from markupsafe import escape, Markup  # dependency of flask
-from functools import wraps
-
-from flask import Blueprint, request, flash, redirect, url_for, abort, jsonify, make_response, Response
+from flask import Blueprint, Response, abort, flash, jsonify, make_response, redirect, request, url_for
+from flask_babel import get_locale
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as N_
-from flask_babel import get_locale
-from .cw_login import current_user
-from sqlalchemy.exc import OperationalError, IntegrityError, InterfaceError
+from markupsafe import Markup, escape  # dependency of flask
+from sqlalchemy.exc import IntegrityError, InterfaceError, OperationalError
 from sqlalchemy.orm.exc import StaleDataError
 from sqlalchemy.sql.expression import func
 
-from . import constants, logger, isoLanguages, gdriveutils, uploader, helper, kobo_sync_status
-from .frontend_rebuild import trigger_rebuild_async
+from . import (
+    calibre_db,
+    config,
+    constants,
+    db,
+    gdriveutils,
+    helper,
+    isoLanguages,
+    kobo_sync_status,
+    logger,
+    ub,
+    uploader,
+)
 from .clean_html import clean_string
-from . import config, ub, db, calibre_db
-from .services.worker import WorkerThread
-from .tasks.upload import TaskUpload
-from .render_template import render_title_template
+from .cw_login import current_user
+from .file_helper import validate_mime_type
+from .frontend_rebuild import trigger_rebuild_async
 from .kobo_sync_status import change_archived_books
 from .redirect import get_redirect_location
-from .file_helper import validate_mime_type
-from .usermanagement import user_login_required, login_required_if_no_ano
+from .render_template import render_title_template
+from .services.worker import WorkerThread
 from .string_helper import strip_whitespaces
+from .tasks.upload import TaskUpload
+from .usermanagement import login_required_if_no_ano, user_login_required
 
 editbook = Blueprint('edit-book', __name__)
 log = logger.create()
@@ -102,7 +111,7 @@ def delete_book(book_id, book_format):
         action="delete",
         resource_type="book",
         resource_id=book_id,
-        details="Book deleted{}".format(" (format: {})".format(book_format) if book_format else ""),
+        details="Book deleted{}".format(f" (format: {book_format})" if book_format else ""),
         ip_address=helper.get_client_ip()
     )
     return check_delete_book(book_id, book_format, False, request.form.to_dict().get('location', ""))
@@ -162,7 +171,7 @@ def upload():
                 db_book, input_authors, title_dir = create_book_on_upload(modify_date, meta)
 
                 # Comments need book id therefore only possible after flush
-                modify_date |= edit_book_comments(Markup(meta.description).unescape(), db_book)
+                modify_date |= edit_book_comments(Markup(meta.description).unescape(), db_book)  # pyright: ignore[reportOperatorIssue,reportOptionalMemberAccess]
 
                 book_id = db_book.id
                 title = db_book.title
@@ -171,8 +180,8 @@ def upload():
                                                   input_authors[0],
                                                   title,
                                                   title_dir,
-                                                  meta.file_path,
-                                                  meta.extension.lower())
+                                                  meta.file_path,  # pyright: ignore[reportOptionalMemberAccess]
+                                                  meta.extension.lower())  # pyright: ignore[reportOptionalMemberAccess]
                     for file_format in db_book.data:
                         file_format.name = (helper.get_valid_filename(title, chars=42) + ' - '
                                             + helper.get_valid_filename(input_authors[0], chars=42))
@@ -180,8 +189,8 @@ def upload():
                     error = helper.update_dir_structure(book_id,
                                                         config.get_book_path(),
                                                         input_authors[0],
-                                                        meta.file_path,
-                                                        title_dir + meta.extension.lower())
+                                                        meta.file_path,  # pyright: ignore[reportOptionalMemberAccess]
+                                                        title_dir + meta.extension.lower())  # pyright: ignore[reportOptionalMemberAccess]
                 move_coverfile(meta, db_book)
                 if modify_date:
                     calibre_db.set_metadata_dirty(book_id)
@@ -201,7 +210,7 @@ def upload():
                     action="upload",
                     resource_type="book",
                     resource_id=book_id,
-                    details="New book uploaded: {}".format(title),
+                    details=f"New book uploaded: {title}",
                     ip_address=helper.get_client_ip()
                 )
 
@@ -216,7 +225,7 @@ def upload():
                         return Response(json.dumps(resp), mimetype='application/json')
             except (OperationalError, IntegrityError, StaleDataError) as e:
                 calibre_db.session.rollback()
-                log.error_or_exception("Database error: {}".format(e))
+                log.error_or_exception(f"Database error: {e}")
                 flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)),
                       category="error")
         return make_response(jsonify(location=url_for("web.index")))
@@ -248,7 +257,7 @@ def convert_bookformat(book_id):
             action="convert",
             resource_type="book",
             resource_id=book_id,
-            details="Book queued for conversion from {} to {}".format(book_format_from, book_format_to),
+            details=f"Book queued for conversion from {book_format_from} to {book_format_to}",
             ip_address=helper.get_client_ip()
         )
     else:
@@ -264,7 +273,7 @@ def table_get_custom_enum(c_id):
           .filter(db.CustomColumns.id == c_id)
           .filter(db.CustomColumns.datatype.notin_(db.cc_exceptions)).one_or_none())
     ret.append({'value': "", 'text': ""})
-    for idx, en in enumerate(cc.get_display_dict()['enum_values']):
+    for _idx, en in enumerate(cc.get_display_dict()['enum_values']):  # pyright: ignore[reportOptionalMemberAccess]
         ret.append({'value': en, 'text': en})
     return make_response(jsonify(ret))
 
@@ -286,7 +295,7 @@ def edit_list_book(param):
             action="edit",
             resource_type="book",
             resource_id=bid,
-            details="Book field edited: {}".format(param),
+            details=f"Book field edited: {param}",
             ip_address=helper.get_client_ip()
         )
     if isinstance(ret_value, dict):
@@ -323,47 +332,47 @@ def edit_selected_books():
     if title:
         vals['value'] = title
         out = edit_book_param('title', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if title_sort:
         vals['value'] = title_sort
         out = edit_book_param('sort', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if author_sort:
         vals['value'] = author_sort
         out = edit_book_param('author_sort', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if authors:
         vals['value'] = authors
         out = edit_book_param('authors', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if categories:
         vals['value'] = categories
         out = edit_book_param('tags', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if series:
         vals['value'] = series
         out = edit_book_param('series', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if languages:
         vals['value'] = languages
         out = edit_book_param('languages', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if publishers:
         vals['value'] = publishers
         out = edit_book_param('publishers', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if comments:
         vals['value'] = comments
         out = edit_book_param('comments', vals, True)
-        if out[0].get('success') != True:
+        if not out[0].get('success'):
             res.extend(out)
     if len(res) == 0:
         for bid in selections:
@@ -383,7 +392,7 @@ def edit_selected_books():
 #
 # param: the property of the book to be changed
 # vals - JSON Object:
-#   { 
+#   {
 #       'pk': "the book id",
 #       'value': "changes value of param to what's passed here"
 #       'checkA': "Optional. Used to check if autosort author is enabled. Assumed as true if not passed"
@@ -396,7 +405,7 @@ def edit_book_param(param, vals, multi=False):
     elements = vals.get('pk',[])
     if vals.get('value', None) is None:
         return {'success':False, 'msg':_("Value is missing on request")}
-    if not elements or len(elements) > 1 and multi == False:
+    if not elements or (len(elements) > 1 and not multi):
         return {"success":False, "msg":_("Oops! Selected book is unavailable. File does not exist or is not accessible")}
     ret = {}
     out = list()
@@ -468,7 +477,7 @@ def edit_book_param(param, vals, multi=False):
                 ret = {"success":True,
                        "newValue":book.comments[0].text}
             elif param == 'authors':
-                input_authors, __ = handle_author_on_edit(book, vals['value'], vals.get('checkA', None) == True)
+                input_authors, __ = handle_author_on_edit(book, vals['value'], vals.get('checkA', None))
                 rename_error = helper.update_dir_structure(book.id, config.get_book_path(), input_authors[0])
                 if not rename_error:
                     calibre_db.session.commit()
@@ -483,7 +492,7 @@ def edit_book_param(param, vals, multi=False):
                 is_archived = change_archived_books(book.id, vals['value'] == "True",
                                                     message="Book {} archive bit set to: {}".format(book.id,
                                                                                                     vals['value']))
-                if is_archived:
+                if is_archived:  # pyright: ignore[reportGeneralTypeIssues]
                     kobo_sync_status.remove_synced_book(book.id)
                 continue
             elif param == 'read_status':
@@ -500,25 +509,22 @@ def edit_book_param(param, vals, multi=False):
                 new_val[param] = vals['value']
                 edit_single_cc_data(book.id, book, param[14:], new_val)
                 # ToDo: Very hacky find better solution
-                if vals['value'] in ["True", "False"]:
-                    ret = {}
-                else:
-                    ret = {"success":True, "newValue":vals['value']}
+                ret = {} if vals['value'] in ["True", "False"] else {"success": True, "newValue": vals['value']}
             else:
                 if multi:
                     out.append({"success":False, "msg":_("Parameter not found")})
                     continue
                 return _("Parameter not found"), 400
-            book.last_modified = datetime.now(timezone.utc)
+            book.last_modified = datetime.now(UTC)
 
             calibre_db.session.commit()
             # revert change for sort if automatic fields link is deactivated
-            if param == 'title' and vals.get('checkT') == False:
+            if param == 'title' and not vals.get('checkT'):
                 book.sort = sort_param
                 calibre_db.session.commit()
         except (OperationalError, IntegrityError, StaleDataError, AttributeError) as e:
             calibre_db.session.rollback()
-            log.error_or_exception("Database error: {}".format(e))
+            log.error_or_exception(f"Database error: {e}")
             ret = {"success":False, "msg":'Database error: {}'.format(getattr(e, "orig", e))}
             if multi:
                 out.append(ret)
@@ -559,10 +565,10 @@ def simulate_merge_list_book():
             return ""
         to_book = _to_book_obj.title
         vals.pop(0)
-        if to_book:
+        if to_book:  # pyright: ignore[reportGeneralTypeIssues]
             from_book = []
             for book_id in vals:
-                from_book.append(calibre_db.get_book(book_id).title)
+                from_book.append(calibre_db.get_book(book_id).title)  # pyright: ignore[reportOptionalMemberAccess]
             return make_response(jsonify({'to': to_book, 'from': from_book}))
     return ""
 
@@ -574,7 +580,7 @@ def display_selected_books():
     books = []
     if vals:
         for book_id in vals:
-            books.append(calibre_db.get_book(book_id).title)
+            books.append(calibre_db.get_book(book_id).title)  # pyright: ignore[reportOptionalMemberAccess]
         return json.dumps({'books': books})
     return ""
 
@@ -587,15 +593,15 @@ def archive_selected_books():
     if vals:
         for book_id in vals:
             is_archived = change_archived_books(book_id, state,
-                                                message="Book {} archive bit set to: {}".format(book_id, state))
-            if is_archived:
+                                                message=f"Book {book_id} archive bit set to: {state}")
+            if is_archived:  # pyright: ignore[reportGeneralTypeIssues]
                 kobo_sync_status.remove_synced_book(book_id)
             ub.create_audit_log_entry(
                 user_id=current_user.id,
                 action="edit",
                 resource_type="book",
                 resource_id=book_id,
-                details="Book archive status set to: {}".format(state),
+                details=f"Book archive status set to: {state}",
                 ip_address=helper.get_client_ip()
             )
         return json.dumps({'success': True})
@@ -611,20 +617,20 @@ def read_selected_books():
     if vals:
         try:
             for book_id in vals:
-                ret = helper.edit_book_read_status(book_id, markAsRead)
+                helper.edit_book_read_status(book_id, markAsRead)
                 ub.create_audit_log_entry(
                     user_id=current_user.id,
                     action="edit",
                     resource_type="book",
                     resource_id=book_id,
-                    details="Book read status set to: {}".format(markAsRead),
+                    details=f"Book read status set to: {markAsRead}",
                     ip_address=helper.get_client_ip()
                 )
 
         except (OperationalError, IntegrityError, StaleDataError) as e:
             calibre_db.session.rollback()
-            log.error_or_exception("Database error: {}".format(e))
-            ret = Response(json.dumps({'success': False,
+            log.error_or_exception(f"Database error: {e}")
+            Response(json.dumps({'success': False,
                     'msg': 'Database error: {}'.format(getattr(e, "orig", e))}),
                     mimetype='application/json')
 
@@ -655,11 +661,11 @@ def merge_list_book():
                     for element in from_book.data:
                         if element.format not in to_file:
                             # create new data entry with: book_id, book_format, uncompressed_size, name
-                            filepath_new = os.path.normpath(os.path.join(config.get_book_path(),
-                                                                         to_book.path,
+                            filepath_new = os.path.normpath(os.path.join(config.get_book_path(),  # pyright: ignore[reportCallIssue]
+                                                                         to_book.path,  # pyright: ignore[reportArgumentType]
                                                                          to_name + "." + element.format.lower()))
-                            filepath_old = os.path.normpath(os.path.join(config.get_book_path(),
-                                                                          from_book.path,
+                            filepath_old = os.path.normpath(os.path.join(config.get_book_path(),  # pyright: ignore[reportCallIssue]
+                                                                          from_book.path,  # pyright: ignore[reportArgumentType]
                                                                           element.name + "." + element.format.lower()))
                             copyfile(filepath_old, filepath_new)
                             to_book.data.append(db.Data(to_book.id,
@@ -672,7 +678,7 @@ def merge_list_book():
                         action="merge",
                         resource_type="book",
                         resource_id=target_id,
-                        details="Merged book {} into {}".format(book_id, target_id),
+                        details=f"Merged book {book_id} into {target_id}",
                         ip_address=helper.get_client_ip()
                     )
                     return make_response(jsonify(success=True))
@@ -706,25 +712,25 @@ def table_xchange_author_title():
             if config.config_use_google_drive:
                 gdriveutils.updateGdriveCalibreFromLocal()
 
-            if edited_books_id:
+            if edited_books_id:  # pyright: ignore[reportGeneralTypeIssues]
                 # toDo: Handle error
-                edit_error = helper.update_dir_structure(edited_books_id, config.get_book_path(), input_authors[0])
+                helper.update_dir_structure(edited_books_id, config.get_book_path(), input_authors[0])
             if modify_date:
-                book.last_modified = datetime.now(timezone.utc)
+                book.last_modified = datetime.now(UTC)
                 calibre_db.set_metadata_dirty(book.id)
                 ub.create_audit_log_entry(
                     user_id=current_user.id,
                     action="edit",
                     resource_type="book",
                     resource_id=book.id,
-                    details="Author/title swapped for book: {}".format(book.title),
+                    details=f"Author/title swapped for book: {book.title}",
                     ip_address=helper.get_client_ip()
                 )
             try:
                 calibre_db.session.commit()
             except (OperationalError, IntegrityError, StaleDataError) as e:
                 calibre_db.session.rollback()
-                log.error_or_exception("Database error: {}".format(e))
+                log.error_or_exception(f"Database error: {e}")
                 return make_response(jsonify(success=False))
 
             if config.config_use_google_drive:
@@ -760,7 +766,7 @@ def do_edit_book(book_id, upload_formats=None):
         # handle book author change
         if not upload_formats:
             input_authors, author_change = handle_author_on_edit(book, to_save["authors"])
-            if author_change or title_change:
+            if author_change or title_change:  # pyright: ignore[reportPossiblyUnboundVariable]
                 edited_books_id = book.id
                 modify_date = True
                 title_author_error = helper.update_dir_structure(edited_books_id,
@@ -775,11 +781,11 @@ def do_edit_book(book_id, upload_formats=None):
             modify_date |= edit_book_ratings(to_save, book)
         else:
             # handle upload other formats from local disk
-            to_save, edit_error = upload_book_formats(upload_formats, book, book_id, book.has_cover)
+            to_save, edit_error = upload_book_formats(upload_formats, book, book_id, book.has_cover)  # pyright: ignore[reportArgumentType,reportOptionalMemberAccess]
         # handle upload covers from local disk
         cover_upload_success = upload_cover(request, book)
         if cover_upload_success or to_save.get("format_cover"):
-            book.has_cover = 1
+            book.has_cover = 1  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
             modify_date = True
 
         # upload new covers or new file formats to google drive
@@ -791,24 +797,24 @@ def do_edit_book(book_id, upload_formats=None):
                 edit_error = True
                 flash(_("User has no rights to upload cover"), category="error")
             if to_save["cover_url"].endswith('/static/generic_cover.jpg'):
-                book.has_cover = 0
+                book.has_cover = 0  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
             else:
-                result, error = helper.save_cover_from_url(to_save["cover_url"].strip(), book.path)
+                result, error = helper.save_cover_from_url(to_save["cover_url"].strip(), book.path)  # pyright: ignore[reportOptionalMemberAccess,reportArgumentType]
                 if result is True:
-                    book.has_cover = 1
+                    book.has_cover = 1  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
                     modify_date = True
-                    helper.replace_cover_thumbnail_cache(book.id)
+                    helper.replace_cover_thumbnail_cache(book.id)  # pyright: ignore[reportOptionalMemberAccess]
                 else:
                     edit_error = True
-                    flash(error, category="error")
+                    flash(error, category="error")  # pyright: ignore[reportArgumentType]
 
         # Add default series_index to book
         modify_date |= edit_book_series_index(to_save.get("series_index"), book)
         # Handle book comments/description
-        modify_date |= edit_book_comments(Markup(to_save.get('comments')).unescape(), book)
+        modify_date |= edit_book_comments(Markup(to_save.get('comments')).unescape(), book)  # pyright: ignore[reportOperatorIssue]
         # Handle identifiers
         input_identifiers = identifier_list(to_save, book)
-        modification, warning = modify_identifiers(input_identifiers, book.identifiers, calibre_db.session)
+        modification, warning = modify_identifiers(input_identifiers, book.identifiers, calibre_db.session)  # pyright: ignore[reportOptionalMemberAccess]
         if warning:
             flash(_("Identifiers are not Case Sensitive, Overwriting Old Identifier"), category="warning")
         modify_date |= modification
@@ -821,7 +827,7 @@ def do_edit_book(book_id, upload_formats=None):
         # handle book languages
         try:
             invalid = []
-            modify_date |= edit_book_languages(to_save.get('languages'), book, upload_mode=upload_formats,
+            modify_date |= edit_book_languages(to_save.get('languages'), book, upload_mode=upload_formats,  # pyright: ignore[reportArgumentType]
                                                invalid=invalid)
             if invalid:
                 for lang in invalid:
@@ -835,18 +841,18 @@ def do_edit_book(book_id, upload_formats=None):
         if to_save.get("pubdate") is not None:
             if to_save.get("pubdate"):
                 try:
-                    book.pubdate = datetime.strptime(to_save["pubdate"], "%Y-%m-%d")
+                    book.pubdate = datetime.strptime(to_save["pubdate"], "%Y-%m-%d")  # pyright: ignore[reportOptionalMemberAccess]
                 except ValueError as e:
-                    book.pubdate = db.Books.DEFAULT_PUBDATE
+                    book.pubdate = db.Books.DEFAULT_PUBDATE  # pyright: ignore[reportOptionalMemberAccess]
                     flash(str(e), category="error")
                     edit_error = True
             else:
-                book.pubdate = db.Books.DEFAULT_PUBDATE
+                book.pubdate = db.Books.DEFAULT_PUBDATE  # pyright: ignore[reportOptionalMemberAccess]
 
         if modify_date:
-            book.last_modified = datetime.now(timezone.utc)
+            book.last_modified = datetime.now(UTC)  # pyright: ignore[reportOptionalMemberAccess]
             kobo_sync_status.remove_synced_book(edited_books_id, all=True)
-            calibre_db.set_metadata_dirty(book.id)
+            calibre_db.set_metadata_dirty(book.id)  # pyright: ignore[reportOptionalMemberAccess]
 
         calibre_db.session.merge(book)
         calibre_db.session.commit()
@@ -860,24 +866,24 @@ def do_edit_book(book_id, upload_formats=None):
             return make_response(jsonify(resp))
 
         if "detail_view" in to_save:
-            return redirect(url_for('web.show_book', book_id=book.id))
+            return redirect(url_for('web.show_book', book_id=book.id))  # pyright: ignore[reportOptionalMemberAccess]
         else:
             return render_edit_book(book_id)
     except ValueError as e:
-        log.error_or_exception("Error: {}".format(e))
+        log.error_or_exception(f"Error: {e}")
         calibre_db.session.rollback()
         flash(str(e), category="error")
-        return redirect(url_for('web.show_book', book_id=book.id))
+        return redirect(url_for('web.show_book', book_id=book.id))  # pyright: ignore[reportOptionalMemberAccess]
     except (OperationalError, IntegrityError, StaleDataError, InterfaceError) as e:
-        log.error_or_exception("Database error: {}".format(e))
+        log.error_or_exception(f"Database error: {e}")
         calibre_db.session.rollback()
         flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
-        return redirect(url_for('web.show_book', book_id=book.id))
+        return redirect(url_for('web.show_book', book_id=book.id))  # pyright: ignore[reportOptionalMemberAccess]
     except Exception as ex:
         log.error_or_exception(ex)
         calibre_db.session.rollback()
-        flash(_("Error editing book: {}".format(ex)), category="error")
-        return redirect(url_for('web.show_book', book_id=book.id))
+        flash(_(f"Error editing book: {ex}"), category="error")
+        return redirect(url_for('web.show_book', book_id=book.id))  # pyright: ignore[reportOptionalMemberAccess]
 
 
 def merge_metadata(book, meta, to_save):
@@ -904,7 +910,7 @@ def identifier_list(to_save, book):
         if not type_key.startswith(id_type_prefix):
             continue
         val_key = id_val_prefix + type_key[len(id_type_prefix):]
-        if val_key not in to_save.keys():
+        if val_key not in to_save:
             continue
         if to_save[val_key].startswith("data:"):
             to_save[val_key], __, __ = str.partition(to_save[val_key], ",")
@@ -927,7 +933,7 @@ def prepare_authors(authr, calibre_path, gdrive=False):
         input_authors = [_('Unknown')]  # prevent empty Author
 
     for in_aut in input_authors:
-        renamed_author = calibre_db.session.query(db.Authors).filter(func.lower(db.Authors.name).ilike(in_aut)).first()
+        renamed_author = calibre_db.session.query(db.Authors).filter(func.lower(db.Authors.name).ilike(in_aut)).first()  # pyright: ignore[reportGeneralTypeIssues]
         if renamed_author and in_aut != renamed_author.name:
             old_author_name = renamed_author.name
             # rename author in Database
@@ -935,17 +941,17 @@ def prepare_authors(authr, calibre_path, gdrive=False):
             # rename all Books with this author as first author:
             # rename all book author_sort strings with the new author name
             all_books = calibre_db.session.query(db.Books) \
-                .filter(db.Books.authors.any(db.Authors.name == renamed_author.name)).all()
+                .filter(db.Books.authors.any(db.Authors.name == renamed_author.name)).all()  # pyright: ignore[reportGeneralTypeIssues]
             for one_book in all_books:
                 # ToDo: check
                 sorted_old_author = helper.get_sorted_author(old_author_name)
                 sorted_renamed_author = helper.get_sorted_author(in_aut)
                 # change author sort path
                 try:
-                    author_index = one_book.author_sort.index(sorted_old_author)
+                    author_index = one_book.author_sort.index(sorted_old_author)  # pyright: ignore[reportCallIssue,reportOptionalMemberAccess,reportOptionalCall]
                     one_book.author_sort = one_book.author_sort.replace(sorted_old_author, sorted_renamed_author)
                 except ValueError:
-                    log.error("Sorted author {} not found in database".format(sorted_old_author))
+                    log.error(f"Sorted author {sorted_old_author} not found in database")
                     author_index = -1
                 # change book path if changed author is first author -> match on first position
                 if author_index == 0:
@@ -981,7 +987,7 @@ def prepare_authors_on_upload(title, authr):
     db_author = None
     for inp in input_authors:
         # stored_author = calibre_db.session.query(db.Authors).filter(db.Authors.name == inp).first()
-        stored_author = calibre_db.session.query(db.Authors).filter(func.lower(db.Authors.name).ilike(inp)).first()
+        stored_author = calibre_db.session.query(db.Authors).filter(func.lower(db.Authors.name).ilike(inp)).first()  # pyright: ignore[reportGeneralTypeIssues]
         if not stored_author:
             if not db_author:
                 db_author = db.Authors(inp, helper.get_sorted_author(inp), "")
@@ -1003,7 +1009,7 @@ def create_book_on_upload(modify_date, meta):
     sort_authors, input_authors, db_author = prepare_authors_on_upload(title, authr)
 
     title_dir = helper.get_valid_filename(title, chars=96)
-    author_dir = helper.get_valid_filename(db_author.name, chars=96)
+    author_dir = helper.get_valid_filename(db_author.name, chars=96)  # pyright: ignore[reportOptionalMemberAccess]
 
     # combine path and normalize path from Windows systems
     path = os.path.join(author_dir, title_dir).replace('\\', '/')
@@ -1014,8 +1020,8 @@ def create_book_on_upload(modify_date, meta):
         pubdate = datetime(101, 1, 1)
 
     # Calibre adds books with utc as timezone
-    db_book = db.Books(title, "", sort_authors, datetime.now(timezone.utc), pubdate,
-                       '1', datetime.now(timezone.utc), path, meta.cover, db_author, [], "")
+    db_book = db.Books(title, "", sort_authors, datetime.now(UTC), pubdate,
+                       '1', datetime.now(UTC), path, meta.cover, db_author, [], "")
 
     modify_date |= modify_database_object(input_authors, db_book.authors, db.Authors, calibre_db.session,
                                           'author')
@@ -1063,11 +1069,10 @@ def create_book_on_upload(modify_date, meta):
 def file_handling_on_upload(requested_file):
     # check if file extension is correct
     allowed_extensions = config.config_upload_formats.split(',')
-    if requested_file:
-        if config.config_check_extensions and allowed_extensions != ['']:
-            if not validate_mime_type(requested_file, allowed_extensions):
-                flash(_("File type isn't allowed to be uploaded to this server"), category="error")
-                return None, make_response(jsonify(location=url_for("web.index")))
+    if requested_file and config.config_check_extensions and allowed_extensions != [''] \
+            and not validate_mime_type(requested_file, allowed_extensions):
+        flash(_("File type isn't allowed to be uploaded to this server"), category="error")
+        return None, make_response(jsonify(location=url_for("web.index")))
     if '.' in requested_file.filename:
         file_ext = requested_file.filename.rsplit('.', 1)[-1].lower()
         if file_ext not in allowed_extensions and '' not in allowed_extensions:
@@ -1082,7 +1087,7 @@ def file_handling_on_upload(requested_file):
     # extract metadata from file
     try:
         meta = uploader.upload(requested_file, config.config_rarfile_location)
-    except (IOError, OSError):
+    except OSError:
         log.error("File %s could not saved to temp dir", requested_file.filename)
         flash(_("File %(filename)s could not saved to temp dir",
                 filename=requested_file.filename), category="error")
@@ -1092,10 +1097,7 @@ def file_handling_on_upload(requested_file):
 
 def move_coverfile(meta, db_book):
     # move cover to final directory, including book id
-    if meta.cover:
-        cover_file = meta.cover
-    else:
-        cover_file = os.path.join(constants.STATIC_DIR, 'generic_cover.jpg')
+    cover_file = meta.cover or os.path.join(constants.STATIC_DIR, 'generic_cover.jpg')
     new_cover_path = os.path.join(config.get_book_path(), db_book.path)
     try:
         os.makedirs(new_cover_path, exist_ok=True)
@@ -1119,24 +1121,24 @@ def delete_whole_book(book_id, book):
     # check if only this book links to:
     # author, language, series, tags, custom columns
     modify_database_object([''], book.authors, db.Authors, calibre_db.session, 'author')
-    modify_database_object([u''], book.tags, db.Tags, calibre_db.session, 'tags')
-    modify_database_object([u''], book.series, db.Series, calibre_db.session, 'series')
-    modify_database_object([u''], book.languages, db.Languages, calibre_db.session, 'languages')
-    modify_database_object([u''], book.publishers, db.Publishers, calibre_db.session, 'publishers')
+    modify_database_object([''], book.tags, db.Tags, calibre_db.session, 'tags')
+    modify_database_object([''], book.series, db.Series, calibre_db.session, 'series')
+    modify_database_object([''], book.languages, db.Languages, calibre_db.session, 'languages')
+    modify_database_object([''], book.publishers, db.Publishers, calibre_db.session, 'publishers')
 
     cc = calibre_db.session.query(db.CustomColumns). \
         filter(db.CustomColumns.datatype.notin_(db.cc_exceptions)).all()
     for c in cc:
         cc_string = "custom_column_" + str(c.id)
-        if not c.is_multiple:
+        if not c.is_multiple:  # pyright: ignore[reportGeneralTypeIssues]
             if len(getattr(book, cc_string)) > 0:
-                if c.datatype == 'bool' or c.datatype == 'integer' or c.datatype == 'float':
+                if c.datatype == 'bool' or c.datatype == 'integer' or c.datatype == 'float':  # pyright: ignore[reportGeneralTypeIssues]
                     del_cc = getattr(book, cc_string)[0]
                     getattr(book, cc_string).remove(del_cc)
                     log.debug('remove ' + str(c.id))
                     calibre_db.session.delete(del_cc)
                     calibre_db.session.commit()
-                elif c.datatype == 'rating':
+                elif c.datatype == 'rating':  # pyright: ignore[reportGeneralTypeIssues]
                     del_cc = getattr(book, cc_string)[0]
                     getattr(book, cc_string).remove(del_cc)
                     if len(del_cc.books) == 0:
@@ -1150,7 +1152,7 @@ def delete_whole_book(book_id, book):
                     calibre_db.session.delete(del_cc)
                     calibre_db.session.commit()
         else:
-            modify_database_object([u''], getattr(book, cc_string), db.cc_classes[c.id],
+            modify_database_object([''], getattr(book, cc_string), db.cc_classes[c.id],
                                    calibre_db.session, 'custom')
     calibre_db.session.query(db.Books).filter(db.Books.id == book_id).delete()
 
@@ -1202,15 +1204,14 @@ def delete_book_from_UI(book_id, book_format, location=""):
         try:
             result, error = helper.delete_book(book, config.get_book_path(), book_format=book_format.upper())
             if not result:
-                flash(error, category="error")
+                flash(error, category="error")  # pyright: ignore[reportArgumentType]
                 return redirect(url_for('edit-book.show_edit_book', book_id=book_id))
             if error:
                 flash(error, category="warning")
             if not book_format:
                 delete_whole_book(book_id, book)
             else:
-                calibre_db.session.query(db.Data).filter(db.Data.book == book.id). \
-                    filter(db.Data.format == book_format).delete()
+                calibre_db.session.query(db.Data).filter(db.Data.book == book.id).filter(db.Data.format == book_format).delete()  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType,reportOptionalMemberAccess]
                 if book_format.upper() in ['KEPUB', 'EPUB', 'EPUB3']:
                     kobo_sync_status.remove_synced_book(book.id, True)
             calibre_db.session.commit()
@@ -1255,7 +1256,7 @@ def delete_book_from_table(book_id):
         return {"location": url_for("edit-book.show_edit_book", book_id=book_id),
                 "type": "danger",
                 "format": "",
-                "message": _('Book with id "{}" could not be deleted: not found'.format(book_id))}
+                "message": _(f'Book with id "{book_id}" could not be deleted: not found')}
 
 
 def render_edit_book(book_id):
@@ -1312,7 +1313,7 @@ def edit_book_ratings(to_save, book):
         rating_x2 = int(float(to_save.get("rating", "")) * 2)
         if rating_x2 != old_rating:
             changed = True
-            is_rating = calibre_db.session.query(db.Ratings).filter(db.Ratings.rating == rating_x2).first()
+            is_rating = calibre_db.session.query(db.Ratings).filter(db.Ratings.rating == rating_x2).first()  # pyright: ignore[reportGeneralTypeIssues]
             if is_rating:
                 book.ratings.append(is_rating)
             else:
@@ -1391,12 +1392,12 @@ def edit_book_languages(languages, book, upload_mode=False, invalid=None):
             else:
                 raise ValueError(_("'%(langname)s' is not a valid language", langname=lang))
         # ToDo: Not working correct
-        if upload_mode and len(input_l) == 1:
+        if upload_mode and len(input_l) == 1 \
+                and input_l[0] != current_user.filter_language() and current_user.filter_language() != "all":
             # If the language of the file is excluded from the users view, it's not imported, to allow the user to view
             # the book it's language is set to the filter language
-            if input_l[0] != current_user.filter_language() and current_user.filter_language() != "all":
-                input_l[0] = calibre_db.session.query(db.Languages). \
-                    filter(db.Languages.lang_code == current_user.filter_language()).first().lang_code
+            input_l[0] = calibre_db.session.query(db.Languages). \
+                filter(db.Languages.lang_code == current_user.filter_language()).first().lang_code  # pyright: ignore[reportGeneralTypeIssues,reportOptionalMemberAccess]
         # Remove duplicates from normalized langcodes
         input_l = helper.uniq(input_l)
         return modify_database_object(input_l, book.languages, db.Languages, calibre_db.session, 'languages')
@@ -1435,7 +1436,7 @@ def edit_cc_data_value(book_id, book, c, to_save, cc_db_value, cc_string):
     if to_save[cc_string] != cc_db_value:
         if cc_db_value is not None:
             if to_save[cc_string] is not None:
-                setattr(getattr(book, cc_string)[0], 'value', to_save[cc_string])
+                getattr(book, cc_string)[0].value = to_save[cc_string]
                 changed = True
             else:
                 del_cc = getattr(book, cc_string)[0]
@@ -1497,10 +1498,7 @@ def edit_cc_data(book_id, book, to_save, cc):
         cc_string = "custom_column_" + str(c.id)
         if to_save.get(cc_string) is not None:
             if not c.is_multiple:
-                if len(getattr(book, cc_string)) > 0:
-                    cc_db_value = getattr(book, cc_string)[0].value
-                else:
-                    cc_db_value = None
+                cc_db_value = getattr(book, cc_string)[0].value if len(getattr(book, cc_string)) > 0 else None
                 if strip_whitespaces(to_save[cc_string]):
                     if c.datatype in ['int', 'bool', 'float', "datetime", "comments"]:
                         change, to_save = edit_cc_data_value(book_id, book, c, to_save, cc_db_value, cc_string)
@@ -1534,11 +1532,11 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
     allowed_extensions = config.config_upload_formats.split(',')
     for requested_file in requested_files:
         current_filename = requested_file.filename
-        if config.config_check_extensions and allowed_extensions != ['']:
-            if not validate_mime_type(requested_file, allowed_extensions):
-                flash(_("File type isn't allowed to be uploaded to this server"), category="error")
-                error = True
-                continue
+        if config.config_check_extensions and allowed_extensions != [''] \
+                and not validate_mime_type(requested_file, allowed_extensions):
+            flash(_("File type isn't allowed to be uploaded to this server"), category="error")
+            error = True
+            continue
         if current_filename != '':
             if not current_user.role_upload():
                 flash(_("User has no rights to upload additional file formats"), category="error")
@@ -1589,7 +1587,7 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
                     calibre_db.create_functions(config)
                 except (OperationalError, IntegrityError, StaleDataError) as e:
                     calibre_db.session.rollback()
-                    log.error_or_exception("Database error: {}".format(e))
+                    log.error_or_exception(f"Database error: {e}")
                     flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)),
                           category="error")
                     error = True
@@ -1615,19 +1613,18 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
 
 def upload_cover(cover_request, book):
     requested_file = cover_request.files.get('btn-upload-cover', None)
-    if requested_file:
+    if requested_file and requested_file.filename != '':
         # check for empty request
-        if requested_file.filename != '':
-            if not current_user.role_upload():
-                flash(_("User has no rights to upload cover"), category="error")
-                return False
-            ret, message = helper.save_cover(requested_file, book.path)
-            if ret is True:
-                helper.replace_cover_thumbnail_cache(book.id)
-                return True
-            else:
-                flash(message, category="error")
-                return False
+        if not current_user.role_upload():
+            flash(_("User has no rights to upload cover"), category="error")
+            return False
+        ret, message = helper.save_cover(requested_file, book.path)
+        if ret is True:
+            helper.replace_cover_thumbnail_cache(book.id)
+            return True
+        else:
+            flash(message, category="error")  # pyright: ignore[reportArgumentType]
+            return False
     return None
 
 
@@ -1636,7 +1633,7 @@ def handle_title_on_edit(book, book_title):
     book_title = strip_whitespaces(book_title)
     if book.title != book_title:
         if book_title == '':
-            book_title = _(u'Unknown')
+            book_title = _('Unknown')
         book.title = book_title
         return True
     return False
@@ -1650,11 +1647,8 @@ def handle_author_on_edit(book, author_name, update_stored=True):
     # everything then is assembled for sorted author field in database
     sort_authors_list = list()
     for inp in input_authors:
-        stored_author = calibre_db.session.query(db.Authors).filter(db.Authors.name == inp).first()
-        if not stored_author:
-            stored_author = helper.get_sorted_author(inp.replace('|', ','))
-        else:
-            stored_author = stored_author.sort
+        stored_author = calibre_db.session.query(db.Authors).filter(db.Authors.name == inp).first()  # pyright: ignore[reportGeneralTypeIssues]
+        stored_author = helper.get_sorted_author(inp.replace('|', ',')) if not stored_author else stored_author.sort
         sort_authors_list.append(helper.get_sorted_author(stored_author))
     sort_authors = ' & '.join(sort_authors_list)
     if book.author_sort != sort_authors and update_stored:
@@ -1670,10 +1664,7 @@ def search_objects_remove(db_book_object, db_type, input_elements):
     del_elements = []
     for c_elements in db_book_object:
         found = False
-        if db_type == 'custom':
-            type_elements = c_elements.value
-        else:
-            type_elements = c_elements
+        type_elements = c_elements.value if db_type == 'custom' else c_elements
         for inp_element in input_elements:
             if type_elements == inp_element:
                 found = True
@@ -1689,10 +1680,7 @@ def search_objects_add(db_book_object, db_type, input_elements):
     for inp_element in input_elements:
         found = False
         for c_elements in db_book_object:
-            if db_type == 'custom':
-                type_elements = c_elements.value
-            else:
-                type_elements = c_elements
+            type_elements = c_elements.value if db_type == 'custom' else c_elements
             if type_elements == inp_element:
                 found = True
                 break
@@ -1744,7 +1732,7 @@ def add_objects(db_book_object, db_object, db_session, db_type, add_elements):
                 db_element = create_objects_for_addition(db_element[0], add_element, db_type)
             else:
                 db_el = db_session.query(db_object).filter(db_filter == add_element).first()
-                db_element = db_element[0] if not db_el else db_el
+                db_element = db_el if db_el else db_element[0]
             # add element to book
             db_book_object.append(db_element)
 
@@ -1798,7 +1786,7 @@ def modify_database_object(input_elements, db_book_object, db_object, db_session
 
     changed = False
     # If elements are renamed (upper lower case), rename it
-    for rec_a, rec_b in zip(db_book_object, input_elements):
+    for rec_a, rec_b in zip(db_book_object, input_elements, strict=False):
         if db_type == "custom":
             if rec_a.value.casefold() == rec_b.casefold() and rec_a.value != rec_b:
                 create_objects_for_addition(rec_a, rec_b, db_type)
@@ -1831,7 +1819,7 @@ def modify_identifiers(input_identifiers, db_identifiers, db_session):
     db_dict = dict([(identifier.type.lower(), identifier) for identifier in db_identifiers])
     # delete db identifiers not present in input or modify them with input val
     for identifier_type, identifier in db_dict.items():
-        if identifier_type not in input_dict.keys():
+        if identifier_type not in input_dict:
             db_session.delete(identifier)
             changed = True
         else:
@@ -1840,7 +1828,7 @@ def modify_identifiers(input_identifiers, db_identifiers, db_session):
             identifier.val = input_identifier.val
     # add input identifiers not present in db
     for identifier_type, identifier in input_dict.items():
-        if identifier_type not in db_dict.keys():
+        if identifier_type not in db_dict:
             db_session.add(identifier)
             changed = True
     return changed, error

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -24,7 +23,7 @@ from math import ceil
 
 
 # simple pagination for the feed
-class Pagination(object):
+class Pagination:
     def __init__(self, page, per_page, total_count):
         self.page = int(page)
         self.per_page = int(per_page)
@@ -47,7 +46,7 @@ class Pagination(object):
 
     @property
     def pages(self):
-        return int(ceil(self.total_count / float(self.per_page)))
+        return ceil(self.total_count / float(self.per_page))
 
     @property
     def has_prev(self):

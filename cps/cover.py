@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2022 OzzieIsaacs
@@ -16,12 +15,11 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
 
 try:
     from wand.image import Image
     use_IM = True
-except (ImportError, RuntimeError) as e:
+except (ImportError, RuntimeError):
     use_IM = False
 
 
@@ -34,7 +32,7 @@ def cover_processing(tmp_file_path, img, extension):
     tmp_cover_name = tmp_file_path + '.jpg'
     if extension in NO_JPEG_EXTENSIONS:
         if use_IM:
-            with Image(blob=img) as imgc:
+            with Image(blob=img) as imgc:  # pyright: ignore[reportPossiblyUnboundVariable]
                 imgc.format = 'jpeg'
                 imgc.transform_colorspace('srgb')
                 imgc.save(filename=tmp_cover_name)

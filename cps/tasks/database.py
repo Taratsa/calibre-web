@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
@@ -18,13 +17,13 @@
 
 from flask_babel import lazy_gettext as N_
 
-from cps import config, logger, db, ub, app
+from cps import app, config, db, logger, ub
 from cps.services.worker import CalibreTask
 
 
 class TaskReconnectDatabase(CalibreTask):
     def __init__(self, task_message=N_('Reconnecting Calibre database')):
-        super(TaskReconnectDatabase, self).__init__(task_message)
+        super().__init__(task_message)
         self.log = logger.create()
         # self.calibre_db = db.CalibreDB(expire_on_commit=False, init=True)
 
@@ -36,9 +35,9 @@ class TaskReconnectDatabase(CalibreTask):
         self._handleSuccess()
 
     @property
-    def name(self):
+    def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return "Reconnect Database"
 
     @property
-    def is_cancellable(self):
+    def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2016-2019 jkrehm andy29485 OzzieIsaacs
@@ -19,11 +18,10 @@
 # Inspired by https://github.com/ChrisTM/Flask-CacheBust
 # Uses query strings so CSS font files are found without having to resort to absolute URLs
 
-import os
 import hashlib
+import os
 
 from . import logger
-
 
 log = logger.create()
 
@@ -55,7 +53,7 @@ def init_cache_busting(app):
                 file_path = file_path.replace("\\", "/")  # Convert Windows path to web path
                 hash_table[file_path] = file_hash
             except PermissionError:
-                log.error("No permission to access {} file.".format(rooted_filename))
+                log.error(f"No permission to access {rooted_filename} file.")
 
     log.debug('Finished computing cache-busting values')
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -20,13 +19,16 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from .cw_login import LoginManager
+from typing import Any, cast
+
 from flask import session
+
+from .cw_login import LoginManager
 
 
 class MyLoginManager(LoginManager):
     def _session_protection_failed(self):
-        sess = session._get_current_object()
+        sess = cast(Any, session)._get_current_object()
         ident = self._session_identifier_generator()
         if(sess and not (len(sess) == 1
                          and sess.get('csrf_token', None))) and ident != sess.get('_id', None):

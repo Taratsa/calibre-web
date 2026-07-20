@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -17,12 +16,12 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # ComicVine api document: https://comicvine.gamespot.com/api/documentation
-from typing import Dict, List, Optional
 from urllib.parse import quote
 
 import requests
+
 from cps import logger
-from cps.services.Metadata import MetaRecord, MetaSourceInfo, Metadata
+from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
 
 log = logger.create()
 
@@ -42,7 +41,7 @@ class ComicVine(Metadata):
 
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
+    ) -> list[MetaRecord] | None:
         val = list()
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
@@ -58,15 +57,15 @@ class ComicVine(Metadata):
             except Exception as e:
                 log.warning(e)
                 return []
-            for result in result.json()["results"]:
+            for result_item in result.json()["results"]:
                 match = self._parse_search_result(
-                    result=result, generic_cover=generic_cover, locale=locale
+                    result=result_item, generic_cover=generic_cover, locale=locale
                 )
                 val.append(match)
         return val
 
     def _parse_search_result(
-        self, result: Dict, generic_cover: str, locale: str
+        self, result: dict, generic_cover: str, locale: str  # pyright: ignore[reportMissingTypeArgument]
     ) -> MetaRecord:
         series = result["volume"].get("name", "")
         series_index = result.get("issue_number", 0)

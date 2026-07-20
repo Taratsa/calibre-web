@@ -15,7 +15,7 @@
 #
 # Source: https://github.com/JordanMilne/Advocate
 
-from requests.adapters import HTTPAdapter, DEFAULT_POOLBLOCK
+from requests.adapters import DEFAULT_POOLBLOCK, HTTPAdapter
 
 from .addrvalidator import AddrValidator
 from .exceptions import ProxyDisabledException
@@ -23,7 +23,7 @@ from .poolmanager import ValidatingPoolManager
 
 
 class ValidatingHTTPAdapter(HTTPAdapter):
-    __attrs__ = HTTPAdapter.__attrs__ + ['_validator']
+    __attrs__ = [*HTTPAdapter.__attrs__, '_validator']
 
     def __init__(self, *args, **kwargs):
         self._validator = kwargs.pop('validator', None)

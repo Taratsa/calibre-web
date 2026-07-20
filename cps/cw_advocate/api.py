@@ -26,9 +26,9 @@ itself.
 :license: Apache2, see LICENSE for more details.
 
 """
-from collections import OrderedDict
 import hashlib
 import pickle
+from collections import OrderedDict
 
 from requests import Session as RequestsSession
 
@@ -40,7 +40,7 @@ from .exceptions import MountDisabledException
 class Session(RequestsSession):
     """Convenience wrapper around `requests.Session` set up for `advocate`ing"""
 
-    __attrs__ = RequestsSession.__attrs__ + ["validator"]
+    __attrs__ = [*RequestsSession.__attrs__, "validator"]
     DEFAULT_VALIDATOR = None
     """
     User-replaceable default validator to use for all Advocate sessions,
@@ -133,9 +133,9 @@ class RequestsAPIWrapper:
     def __init__(self, validator):
         # Do this here to avoid circular import issues
         try:
-            from .futures import FuturesSession
+            from .futures import FuturesSession  # pyright: ignore[reportMissingImports]
             have_requests_futures = True
-        except ImportError as e:
+        except ImportError:
             have_requests_futures = False
 
         self.validator = validator
@@ -154,7 +154,7 @@ class RequestsAPIWrapper:
 
         if have_requests_futures:
 
-            class _WrappedFuturesSession(FuturesSession):
+            class _WrappedFuturesSession(FuturesSession):  # pyright: ignore[reportPossiblyUnboundVariable]
                 """Like _WrappedSession, but for `FuturesSession`s"""
                 DEFAULT_VALIDATOR = outer_self.validator
             self._make_wrapper_cls_global(_WrappedFuturesSession)
@@ -172,8 +172,8 @@ class RequestsAPIWrapper:
         try:
             return object.__getattribute__(self, item)
         except AttributeError:
-            from . import cw_advocate
-            return getattr(cw_advocate, item)
+            import cw_advocate as _cw_advocate  # pyright: ignore[reportImplicitRelativeImport]
+            return getattr(_cw_advocate, item)
 
     def _default_arg_wrapper(self, fun):
         def wrapped_func(*args, **kwargs):
@@ -194,9 +194,9 @@ class RequestsAPIWrapper:
 
 
 __all__ = (
+    "RequestsAPIWrapper",
+    "Session",
     "get",
     "request",
     "session",
-    "Session",
-    "RequestsAPIWrapper",
 )

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2022 OzzieIsaacs
@@ -17,29 +16,30 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from datetime import datetime
-from gevent.pywsgi import WSGIHandler
+
+from gevent.pywsgi import WSGIHandler  # pyright: ignore[reportMissingModuleSource]
 
 
 class MyWSGIHandler(WSGIHandler):
+    _orig_status: str = ""
+
     def get_environ(self):
         env = super().get_environ()
-        path, __ = self.path.split('?', 1) if '?' in self.path else (self.path, '')
+        spath = self.path or ""
+        path, __ = spath.split('?', 1) if '?' in spath else (spath, '')
         env['RAW_URI'] = path
         return env
 
     def format_request(self):
         now = datetime.now().replace(microsecond=0)
         length = self.response_length or '-'
-        if self.time_finish:
-            delta = '%.6f' % (self.time_finish - self.time_start)
-        else:
-            delta = '-'
-        forwarded = self.environ.get('HTTP_X_FORWARDED_FOR', None)
+        delta = '%.6f' % (self.time_finish - self.time_start) if self.time_finish else '-'
+        forwarded = self.environ.get('HTTP_X_FORWARDED_FOR', None) if self.environ else None
         if forwarded:
             client_address = forwarded
         else:
             client_address = self.client_address[0] if isinstance(self.client_address, tuple) else self.client_address
-        return '%s - - [%s] "%s" %s %s %s' % (
+        return '{} - - [{}] "{}" {} {} {}'.format(
             client_address or '-',
             now,
             self.requestline or '',

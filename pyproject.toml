@@ -122,3 +122,29 @@ include-package-data = true
 
 [tool.setuptools.dynamic]
 version = {attr = "calibreweb.cps.constants.STABLE_VERSION"}
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = [
+    "cps/static",
+    "cps/translations",
+    "frontend",
+    "graphify-out",
+    "host",
+    "library",
+    "tmp",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = [
+    "E501",
+    "B008",
+    "RUF001",
+    "RUF012",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"cps/services/*" = ["E402"]
+"test/*" = ["E402", "F401"]

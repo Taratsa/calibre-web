@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2022 quarz12
@@ -17,20 +16,25 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import concurrent.futures
+import contextlib
+from typing import cast
+
 import requests
-from bs4 import BeautifulSoup as BS  # requirement
-from typing import List, Optional
 
 try:
-    import cchardet #optional for better speed
+    from bs4 import BeautifulSoup as BS  # pyright: ignore[reportMissingImports]
 except ImportError:
-    pass
+    BS = None  # pyright: ignore[reportConstantRedefinition]
 
-from cps.services.Metadata import MetaRecord, MetaSourceInfo, Metadata
-import cps.logger as logger
+with contextlib.suppress(ImportError):
+    import cchardet  # noqa: F401  # pyright: ignore[reportMissingImports]
 
 #from time import time
 from operator import itemgetter
+
+import cps.logger as logger
+from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
+
 log = logger.create()
 
 
@@ -50,18 +54,20 @@ class Amazon(Metadata):
                'accept-encoding': 'gzip, deflate, br, zstd',
                'accept-language': 'en-US,en;q=0.9'}
     session = requests.Session()
-    session.headers=headers
+    session.headers = headers.copy()  # type: ignore[assignment] # pyright: ignore[reportAttributeAccessIssue]
 
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
-        def inner(link, index) -> [dict, int]:
+    ) -> list[MetaRecord] | None:
+        def inner(link, index):  # type: ignore[reportInvalidTypeForm]
             with self.session as session:
                 try:
                     r = session.get(f"https://www.amazon.com/{link}")
                     r.raise_for_status()
                 except Exception as ex:
                     log.warning(ex)
+                    return []
+                if BS is None:
                     return []
                 long_soup = BS(r.text, "lxml")  #~4sec :/
                 soup2 = long_soup.find("div", attrs={"cel_widget_id": "dpx-ppd_csm_instrumentation_wrapper"})
@@ -70,7 +76,7 @@ class Amazon(Metadata):
                 try:
                     match = MetaRecord(
                         title = "",
-                        authors = "",
+                        authors = cast(list[str], [""]),
                         source=MetaSourceInfo(
                             id=self.__id__,
                             description="Amazon Books",
@@ -80,7 +86,7 @@ class Amazon(Metadata):
                         #the more searches the slower, these are too hard to find in reasonable time or might not even exist
                         publisher= "",  # very unreliable
                         publishedDate= "",  # very unreliable
-                        id = None,  # ?
+                        id = cast(str | None, None),  # pyright: ignore[reportArgumentType]
                         tags = []  # dont exist on amazon
                     )
 
@@ -100,7 +106,7 @@ class Amazon(Metadata):
                                    x.findAll(string=True))).strip()
                                         for x in soup2.findAll("span", attrs={"class": "author"})]
                     except (AttributeError, TypeError, StopIteration):
-                        match.authors = ""
+                        match.authors = cast(list[str], [])
                     try:
                         match.rating = int(
                             soup2.find("span", class_="a-icon-alt").text.split(" ")[0].split(".")[
@@ -129,6 +135,8 @@ class Amazon(Metadata):
                 return []
             except Exception as e:
                 log.warning(e)
+                return []
+            if BS is None:
                 return []
             soup = BS(results.text, 'html.parser')
             links_list = [next(filter(lambda i: "digital-text" in i["href"], x.findAll("a")))["href"] for x in

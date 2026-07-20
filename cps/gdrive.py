@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -20,17 +19,19 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
+import contextlib
 import hashlib
 import json
-from uuid import uuid4
+import os
+from shutil import copyfile, move
 from time import time
-from shutil import move, copyfile
+from typing import Any, cast
+from uuid import uuid4
 
-from flask import Blueprint, flash, request, redirect, url_for, abort
+from flask import Blueprint, abort, flash, redirect, request, url_for
 from flask_babel import gettext as _
 
-from . import logger, gdriveutils, config, ub, calibre_db, csrf
+from . import calibre_db, config, csrf, gdriveutils, logger, ub
 from .admin import admin_required
 from .file_helper import get_temp_dir
 from .usermanagement import user_login_required
@@ -39,11 +40,14 @@ gdrive = Blueprint('gdrive', __name__, url_prefix='/gdrive')
 log = logger.create()
 
 try:
-    from googleapiclient.errors import HttpError
+    from googleapiclient.errors import HttpError as GoogleHttpError  # pyright: ignore[reportMissingImports]
+    HttpError = GoogleHttpError
 except ImportError as err:
     log.debug("Cannot import googleapiclient, using GDrive will not work: %s", err)
+    HttpError = Exception
 
-current_milli_time = lambda: int(round(time() * 1000))
+def current_milli_time():
+    return round(time() * 1000)
 
 gdrive_watch_callback_token = 'target=calibreweb-watch_files'  # nosec
 
@@ -52,9 +56,10 @@ gdrive_watch_callback_token = 'target=calibreweb-watch_files'  # nosec
 @user_login_required
 @admin_required
 def authenticate_google_drive():
+    from typing import Any, cast
     try:
-        authUrl = gdriveutils.Gauth.Instance().auth.GetAuthUrl()
-    except gdriveutils.InvalidConfigError:
+        authUrl = cast(Any, gdriveutils.Gauth.Instance()).auth.GetAuthUrl()
+    except gdriveutils.InvalidConfigError:  # pyright: ignore[reportAttributeAccessIssue]
         flash(_('Google Drive setup not completed, try to deactivate and activate Google Drive again'),
               category="error")
         return redirect(url_for('web.index'))
@@ -66,8 +71,9 @@ def google_drive_callback():
     auth_code = request.args.get('code')
     if not auth_code:
         abort(403)
+    from typing import Any, cast
     try:
-        credentials = gdriveutils.Gauth.Instance().auth.flow.step2_exchange(auth_code)
+        credentials = cast(Any, gdriveutils.Gauth.Instance()).auth.flow.step2_exchange(auth_code)
         with open(gdriveutils.CREDENTIALS, 'w') as f:
             f.write(credentials.to_json())
     except (ValueError, AttributeError) as error:
@@ -80,18 +86,18 @@ def google_drive_callback():
 @admin_required
 def watch_gdrive():
     if not config.config_google_drive_watch_changes_response:
-        with open(gdriveutils.CLIENT_SECRETS, 'r') as settings:
+        with open(gdriveutils.CLIENT_SECRETS) as settings:
             filedata = json.load(settings)
         address = filedata['web']['redirect_uris'][0].rstrip('/').replace('/gdrive/callback', '/gdrive/watch/callback')
         notification_id = str(uuid4())
         try:
-            result = gdriveutils.watchChange(gdriveutils.Gdrive.Instance().drive, notification_id,
+            result = gdriveutils.watchChange(cast(Any, gdriveutils.Gdrive.Instance()).drive, notification_id,
                                  'web_hook', address, gdrive_watch_callback_token, current_milli_time() + 604800*1000)
 
             config.config_google_drive_watch_changes_response = result
             config.save()
         except HttpError as e:
-            reason = json.loads(e.content)['error']['errors'][0]
+            reason = json.loads(e.content.decode())['error']['errors'][0]  # pyright: ignore[reportAttributeAccessIssue]
             if reason['reason'] == 'push.webhookUrlUnauthorized':
                 flash(_('Callback domain is not verified, '
                         'please follow steps to verify domain in google developer console'), category="error")
@@ -107,18 +113,16 @@ def watch_gdrive():
 def revoke_watch_gdrive():
     last_watch_response = config.config_google_drive_watch_changes_response
     if last_watch_response:
-        try:
-            gdriveutils.stopChannel(gdriveutils.Gdrive.Instance().drive, last_watch_response['id'],
+        with contextlib.suppress(HttpError, AttributeError):
+            gdriveutils.stopChannel(cast(Any, gdriveutils.Gdrive.Instance()).drive, last_watch_response['id'],
                                     last_watch_response['resourceId'])
-        except (HttpError, AttributeError):
-            pass
         config.config_google_drive_watch_changes_response = {}
         config.save()
     return redirect(url_for('admin.db_configuration'))
 
 
-try:
-    @csrf.exempt
+if csrf is not None:
+    @csrf.exempt  # pyright: ignore[reportAttributeAccessIssue]
     @gdrive.route("/watch/callback", methods=['GET', 'POST'])
     def on_received_watch_confirmation():
         if not config.config_google_drive_watch_changes_response:
@@ -135,7 +139,7 @@ try:
         try:
             j = json.loads(request.data)
             log.info('Getting change details')
-            response = gdriveutils.getChangeById(gdriveutils.Gdrive.Instance().drive, j['id'])
+            response = gdriveutils.getChangeById(cast(Any, gdriveutils.Gdrive.Instance()).drive, j['id'])
             log.debug('%r', response)
             if response:
                 dbpath = os.path.join(config.config_calibre_dir, "metadata.db").encode()
@@ -149,10 +153,8 @@ try:
                     gdriveutils.downloadFile(None, "metadata.db", os.path.join(tmp_dir, "tmp_metadata.db"))
                     log.info('Setting up new DB')
                     # prevent error on windows, as os.rename does on existing files, also allow cross hdd move
-                    move(os.path.join(tmp_dir, "tmp_metadata.db"), dbpath)
+                    move(os.path.join(tmp_dir, "tmp_metadata.db"), dbpath.decode())
                     calibre_db.reconnect_db(config, ub.app_DB_path)
         except Exception as ex:
             log.error_or_exception(ex)
         return ''
-except AttributeError:
-    pass

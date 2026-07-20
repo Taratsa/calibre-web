@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2020 OzzieIsaacs
@@ -18,16 +17,14 @@
 
 from functools import wraps
 
-from sqlalchemy.sql.expression import func
-from .cw_login import login_required
-
-from flask import request, g
+from flask import g, request
 from flask_httpauth import HTTPBasicAuth
+from sqlalchemy.sql.expression import func
 from werkzeug.datastructures import Authorization
 from werkzeug.security import check_password_hash
 
-from . import lm, ub, config, logger, limiter, constants, services
-
+from . import config, constants, limiter, lm, logger, services, ub
+from .cw_login import login_required
 
 log = logger.create()
 auth = HTTPBasicAuth()
@@ -37,20 +34,23 @@ auth = HTTPBasicAuth()
 def verify_password(username, password):
     user = ub.session.query(ub.User).filter(func.lower(ub.User.name) == username.lower()).first()
     if user:
-        if user.name.lower() == "guest":
-            if config.config_anonbrowse == 1:
-                return user
+        if user.name.lower() == "guest" and config.config_anonbrowse == 1:
+            return user
         if config.config_login_type == constants.LOGIN_LDAP and services.ldap:
             login_result, error = services.ldap.bind_user(user.name, password)
             if login_result:
-                [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+                if limiter is not None:
+                    for limit in limiter.current_limits:  # pyright: ignore[reportGeneralTypeIssues]
+                        limiter.limiter.clear(limit.limit, *limit.request_args)
                 return user
             if error is not None:
                 log.error(error)
         else:
             # limiter.check()
             if check_password_hash(str(user.password), password):
-                [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+                if limiter is not None:
+                    for limit in limiter.current_limits:  # pyright: ignore[reportGeneralTypeIssues]
+                        limiter.limiter.clear(limit.limit, *limit.request_args)
                 return user
     ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
     log.warning('OPDS Login failed for user "%s" IP-address: %s', username, ip_address)
@@ -67,12 +67,12 @@ def requires_basic_auth_if_no_ano(f):
             user = load_user_from_reverse_proxy_header(request)
         if config.config_anonbrowse == 1 and not authorisation:
             authorisation = Authorization(
-                b"Basic", {'username': "Guest", 'password': ""})
+                "Basic", {'username': "Guest", 'password': ""})
         if not user:
             user = auth.authenticate(authorisation, "")
         if user in (False, None):
             status = 401
-        if status:
+        if status and auth.auth_error_callback is not None:
             try:
                 return auth.auth_error_callback(status)
             except TypeError:
@@ -120,22 +120,28 @@ def load_user_from_reverse_proxy_header(req):
         if rp_header_username:
             user = ub.session.query(ub.User).filter(func.lower(ub.User.name) == rp_header_username.lower()).first()
             if user:
-                [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]
+                if limiter is not None:
+                    for limit in limiter.current_limits:  # pyright: ignore[reportGeneralTypeIssues]
+                        limiter.limiter.clear(limit.limit, *limit.request_args)
                 return user
     return None
 
 
 @lm.user_loader
 def load_user(user_id, random, session_key):
-    user = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+    user = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType, reportGeneralTypeIssues]
     if session_key:
-        entry = ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.random == random,
-                                                          ub.User_Sessions.session_key == session_key).first()
-        if not entry or entry.user_id != user.id:
+        entry = ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
+                                                          ub.User_Sessions.session_key == session_key).first()  # pyright: ignore[reportGeneralTypeIssues]
+        if entry is None:
+            return None
+        if entry.user_id != user.id:  # pyright: ignore[reportGeneralTypeIssues, reportOptionalMemberAccess, reportArgumentType]
             return None
     elif random:
-        entry = ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.random == random).first()
-        if not entry or entry.user_id != user.id:
+        entry = ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.random == random).first()  # pyright: ignore[reportGeneralTypeIssues]
+        if entry is None:
+            return None
+        if entry.user_id != user.id:  # pyright: ignore[reportGeneralTypeIssues, reportOptionalMemberAccess, reportArgumentType]
             return None
     return user
 

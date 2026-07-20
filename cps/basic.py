@@ -19,20 +19,17 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-from flask import Blueprint
-from flask_babel import gettext as _
+from flask import Blueprint, redirect, request, url_for
 from flask_babel import get_locale
-from flask import request, redirect, url_for
+from flask_babel import gettext as _
 
-from . import logger, isoLanguages
-from . import db, config
-from . import calibre_db
-from .usermanagement import login_required_if_no_ano
+from . import calibre_db, config, db, isoLanguages, logger
 from .render_template import render_title_template
+from .usermanagement import login_required_if_no_ano
 from .web import get_sort_function
 
 try:
-    from natsort import natsorted as sort
+    from natsort import natsorted as sort  # pyright: ignore[reportMissingImports]
 except ImportError:
     sort = sorted  # Just use regular sort then, may cause issues with badly named pages in cbz/cbr files
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018 lemmsh, Kennyl, Kyosfonica, matthazinski
@@ -17,7 +16,8 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import zipfile
-from lxml import etree
+
+from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
 
 from . import isoLanguages
 
@@ -29,8 +29,8 @@ default_ns = {
 OPF_NAMESPACE = "http://www.idpf.org/2007/opf"
 PURL_NAMESPACE = "http://purl.org/dc/elements/1.1/"
 
-OPF = "{%s}" % OPF_NAMESPACE
-PURL = "{%s}" % PURL_NAMESPACE
+OPF = f"{{{OPF_NAMESPACE}}}"
+PURL = f"{{{PURL_NAMESPACE}}}"
 
 etree.register_namespace("opf", OPF_NAMESPACE)
 etree.register_namespace("dc", PURL_NAMESPACE)
@@ -41,12 +41,11 @@ NSMAP = {'dc': PURL_NAMESPACE, 'opf': OPF_NAMESPACE}
 
 def updateEpub(src, dest, filename, data, ):
     # create a temp copy of the archive without filename
-    with zipfile.ZipFile(src, 'r') as zin:
-        with zipfile.ZipFile(dest, 'w') as zout:
-            zout.comment = zin.comment  # preserve the comment
-            for item in zin.infolist():
-                if item.filename != filename:
-                    zout.writestr(item, zin.read(item.filename))
+    with zipfile.ZipFile(src, 'r') as zin, zipfile.ZipFile(dest, 'w') as zout:
+        zout.comment = zin.comment  # preserve the comment
+        for item in zin.infolist():
+            if item.filename != filename:
+                zout.writestr(item, zin.read(item.filename))
 
     # now add filename with its new data
     with zipfile.ZipFile(dest, mode='a', compression=zipfile.ZIP_DEFLATED) as zf:
@@ -100,7 +99,7 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
     contributor.set(OPF + "role", "bkp")
 
     date = etree.SubElement(metadata, PURL + "date", nsmap=NSMAP)
-    date.text = '{d.year:04}-{d.month:02}-{d.day:02}T{d.hour:02}:{d.minute:02}:{d.second:02}'.format(d=book.pubdate)
+    date.text = f'{book.pubdate.year:04}-{book.pubdate.month:02}-{book.pubdate.day:02}T{book.pubdate.hour:02}:{book.pubdate.minute:02}:{book.pubdate.second:02}'
     if book.comments and book.comments[0].text:
         for b in book.comments:
             description = etree.SubElement(metadata, PURL + "description", nsmap=NSMAP)
@@ -114,7 +113,8 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
     else:
         for b in book.languages:
             language = etree.SubElement(metadata, PURL + "language", nsmap=NSMAP)
-            language.text = str(b.lang_code) if lang_type == 3 else isoLanguages.get(part3=b.lang_code).part1
+            lang_obj = isoLanguages.get(part3=b.lang_code)
+            language.text = str(b.lang_code) if lang_type == 3 else (lang_obj.part1 if lang_obj else "")
     for b in book.tags:
         subject = etree.SubElement(metadata, PURL + "subject", nsmap=NSMAP)
         subject.text = str(b.name)
@@ -134,24 +134,21 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
                          content=str(book.ratings[0].rating),
                          nsmap=NSMAP)
     etree.SubElement(metadata, "meta", name="calibre:timestamp",
-                     content='{d.year:04}-{d.month:02}-{d.day:02}T{d.hour:02}:{d.minute:02}:{d.second:02}'.format(
-                         d=book.timestamp),
+                     content=f'{book.timestamp.year:04}-{book.timestamp.month:02}-{book.timestamp.day:02}T{book.timestamp.hour:02}:{book.timestamp.minute:02}:{book.timestamp.second:02}',
                      nsmap=NSMAP)
     etree.SubElement(metadata, "meta", name="calibre:title_sort",
                      content=book.sort,
                      nsmap=NSMAP)
-    sequence = 0
-    for cc in custom_columns:
+    for sequence, cc in enumerate(custom_columns):
         value = None
         extra = None
         cc_entry = getattr(book, "custom_column_" + str(cc.id))
         if cc_entry.__len__():
             value = [c.value for c in cc_entry] if cc.is_multiple else cc_entry[0].value
             extra = cc_entry[0].extra if hasattr(cc_entry[0], "extra") else None
-        etree.SubElement(metadata, "meta", name="calibre:user_metadata:#{}".format(cc.label),
+        etree.SubElement(metadata, "meta", name=f"calibre:user_metadata:#{cc.label}",
                          content=cc.to_json(value, extra, sequence),
                          nsmap=NSMAP)
-        sequence += 1
 
     # generate guide element and all sub elements of it
     # Title is translated from default export language

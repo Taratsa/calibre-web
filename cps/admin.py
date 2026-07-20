@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -20,42 +19,62 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
-import re
+import contextlib
 import json
 import operator
-import time
-import sys
+import os
+import re
 import string
+import sys
+import time
 from datetime import datetime, timedelta
 from datetime import time as datetime_time
 from functools import wraps
 from urllib.parse import urlparse
 
-from flask import Blueprint, flash, redirect, url_for, abort, request, make_response, \
-    send_from_directory, g, jsonify
-from markupsafe import Markup
-from .cw_login import current_user
+from flask import Blueprint, abort, flash, g, jsonify, make_response, redirect, request, send_from_directory, url_for
+from flask_babel import format_datetime, format_time, format_timedelta, get_locale
 from flask_babel import gettext as _
-from flask_babel import get_locale, format_time, format_datetime, format_timedelta
+from markupsafe import Markup
 from sqlalchemy import and_
+from sqlalchemy.exc import ArgumentError, IntegrityError, InvalidRequestError, OperationalError
 from sqlalchemy.orm.attributes import flag_modified
-from sqlalchemy.exc import IntegrityError, OperationalError, InvalidRequestError, ArgumentError
 from sqlalchemy.sql.expression import func, or_, text
 
-from . import constants, logger, helper, services, cli_param
-from . import db, calibre_db, ub, web_server, config, updater_thread, gdriveutils, \
-    kobo_sync_status, schedule
-from .helper import check_valid_domain, send_test_mail, reset_password, generate_password_hash, check_email, \
-    valid_email, check_username
+from . import (
+    calibre_db,
+    cli_param,
+    config,
+    constants,
+    db,
+    debug_info,
+    gdriveutils,
+    helper,
+    kobo_sync_status,
+    logger,
+    schedule,
+    services,
+    ub,
+    updater_thread,
+    web_server,
+)
+from .cw_babel import get_available_locale, get_available_translations, get_user_locale_language
+from .cw_login import current_user
 from .embed_helper import get_calibre_binarypath
-from .gdriveutils import is_gdrive_ready, gdrive_support
-from .render_template import render_title_template, get_sidebar_config
+from .gdriveutils import gdrive_support, is_gdrive_ready
+from .helper import (
+    check_email,
+    check_username,
+    check_valid_domain,
+    generate_password_hash,
+    reset_password,
+    send_test_mail,
+    valid_email,
+)
+from .render_template import get_sidebar_config, render_title_template
 from .services.worker import WorkerThread
-from .usermanagement import user_login_required
-from .cw_babel import get_available_translations, get_available_locale, get_user_locale_language
-from . import debug_info
 from .string_helper import strip_whitespaces
+from .usermanagement import user_login_required
 
 log = logger.create()
 
@@ -70,7 +89,7 @@ feature_support = {
 }
 
 try:
-    import rarfile  # pylint: disable=unused-import
+    import rarfile  # noqa: F401  # pylint: disable=unused-import  # pyright: ignore[reportMissingImports]
 
     feature_support['rar'] = True
 except (ImportError, SyntaxError):
@@ -158,7 +177,7 @@ def shutdown():
             action=action_text,
             resource_type="server",
             resource_id="",
-            details="Server {} initiated".format(action_text),
+            details=f"Server {action_text} initiated",
             ip_address=helper.get_client_ip()
         )
         # stop gevent/tornado server
@@ -332,21 +351,20 @@ def edit_user_table():
         .join(db.Books) \
         .filter(calibre_db.common_filters()) \
         .group_by(text('books_tags_link.tag')) \
-        .order_by(db.Tags.name).all()
+        .order_by(db.Tags.name).all()  # pyright: ignore[reportGeneralTypeIssues]
     if config.config_restricted_column:
         try:
             custom_values = calibre_db.session.query(db.cc_classes[config.config_restricted_column]).all()
         except (KeyError, AttributeError, IndexError):
             custom_values = []
-            log.error("Custom Column No.{} does not exist in calibre database".format(
-                config.config_restricted_column))
+            log.error(f"Custom Column No.{config.config_restricted_column} does not exist in calibre database")
             flash(_("Custom Column No.%(column)d does not exist in calibre database",
                     column=config.config_restricted_column),
                   category="error")
     else:
         custom_values = []
     if not config.config_anonbrowse:
-        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)
+        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
     kobo_support = feature_support['kobo'] and config.config_kobo_sync
     return render_title_template("user_table.html",
                                  users=all_user.all(),
@@ -374,19 +392,19 @@ def list_users():
     if sort == "state":
         state = json.loads(request.args.get("state", "[]"))
     else:
-        if sort not in ub.User.__table__.columns.keys():
+        if sort not in ub.User.__table__.columns:
             sort = "id"
     order = request.args.get("order", "").lower()
     if sort != "state" and order:
-        if not order in ["asc", "desc"]:
+        if order not in ["asc", "desc"]:
             order = "asc"
         order = text(sort + " " + order)
     elif not state:
-        order = ub.User.id.asc()
+        order = ub.User.id.asc()  # pyright: ignore[reportAttributeAccessIssue]
 
     all_user = ub.session.query(ub.User)
     if not config.config_anonbrowse:
-        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)
+        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
 
     total_count = filtered_count = all_user.count()
 
@@ -418,7 +436,7 @@ def delete_user():
     user_ids = request.get_json().get("userid")
     message = ""
     try:
-        users = ub.session.query(ub.User).filter(ub.User.id.in_(user_ids)).all()
+        users = ub.session.query(ub.User).filter(ub.User.id.in_(user_ids)).all()  # pyright: ignore[reportAttributeAccessIssue]
     except (ArgumentError):
         users = None
     count = 0
@@ -436,7 +454,7 @@ def delete_user():
                 action="delete",
                 resource_type="user",
                 resource_id=user.id,
-                details="Deleted user: {}".format(user.name),
+                details=f"Deleted user: {user.name}",
                 ip_address=helper.get_client_ip()
             )
         except Exception as ex:
@@ -444,7 +462,7 @@ def delete_user():
             errors.append({'type': "danger", 'message': str(ex)})
 
     if count == 1:
-        log.info("User {} deleted".format(user_ids[0]))
+        log.info(f"User {user_ids[0]} deleted")
         success = [{'type': "success", 'message': message}]
     elif count > 1:
         log.info("Users {} deleted".format(", ".join([str(user_id) for user_id in user_ids])))
@@ -484,20 +502,20 @@ def edit_list_user(param):
     vals = request.form.to_dict(flat=False)
     all_user = ub.session.query(ub.User)
     if not config.config_anonbrowse:
-        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)
+        all_user = all_user.filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
     # only one user is posted
     if "pk" in vals:
-        users = [all_user.filter(ub.User.id == vals['pk'][0]).one_or_none()]
+        users = [all_user.filter(ub.User.id == vals['pk'][0]).one_or_none()]  # pyright: ignore[reportArgumentType]
     else:
         if "pk[]" in vals:
-            users = all_user.filter(ub.User.id.in_(vals['pk[]'])).all()
+            users = all_user.filter(ub.User.id.in_(vals['pk[]'])).all()  # pyright: ignore[reportAttributeAccessIssue]
         else:
             return _("Malformed request"), 400
     if 'field_index' in vals:
-        vals['field_index'] = vals['field_index'][0]
+        vals['field_index'] = vals['field_index'][0]  # pyright: ignore[reportArgumentType]
     if 'value' in vals:
-        vals['value'] = vals['value'][0]
-    elif not ('value[]' in vals):
+        vals['value'] = vals['value'][0]  # pyright: ignore[reportArgumentType]
+    elif 'value[]' not in vals:
         return _("Malformed request"), 400
     for user in users:
         if user is None:
@@ -509,7 +527,7 @@ def edit_list_user(param):
                 else:
                     setattr(user, param, strip_whitespaces(vals['value']))
             else:
-                vals['value'] = strip_whitespaces(vals['value'])
+                vals['value'] = strip_whitespaces(vals['value'])  # pyright: ignore[reportArgumentType]
                 if param == 'name':
                     if user.name == "Guest":
                         raise Exception(_("Guest Name can't be changed"))
@@ -521,7 +539,7 @@ def edit_list_user(param):
                 elif param == 'kindle_mail':
                     user.kindle_mail = valid_email(vals['value']) if vals['value'] else ""
                 elif param.endswith('role'):
-                    value = int(vals['field_index'])
+                    value = int(vals['field_index'])  # pyright: ignore[reportArgumentType]
                     if user.name == "Guest" and value in \
                       [constants.ROLE_ADMIN, constants.ROLE_PASSWD, constants.ROLE_EDIT_SHELFS]:
                         raise Exception(_("Guest can't have this role"))
@@ -530,21 +548,20 @@ def edit_list_user(param):
                         if vals['value'] == 'true':
                             user.role |= value
                         elif vals['value'] == 'false':
-                            if value == constants.ROLE_ADMIN:
-                                if not ub.session.query(ub.User). \
-                                    filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,
-                                           ub.User.id != user.id).count():
-                                    return make_response(
-                                        jsonify([{'type': "danger",
-                                                     'message': _("No admin user remaining, can't remove admin role",
-                                                                  nick=user.name)}]))
+                            if value == constants.ROLE_ADMIN and not ub.session.query(ub.User). \
+                                    filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,  # pyright: ignore[reportAttributeAccessIssue]
+                                           ub.User.id != user.id).count():  # pyright: ignore[reportArgumentType]
+                                return make_response(
+                                    jsonify([{'type': "danger",
+                                                 'message': _("No admin user remaining, can't remove admin role",
+                                                              nick=user.name)}]))
                             user.role &= ~value
                         else:
                             raise Exception(_("Value has to be true or false"))
                     else:
                         raise Exception(_("Invalid role"))
                 elif param.startswith('sidebar'):
-                    value = int(vals['field_index'])
+                    value = int(vals['field_index'])  # pyright: ignore[reportArgumentType]
                     if user.name == "Guest" and value == constants.SIDEBAR_READ_AND_UNREAD:
                         raise Exception(_("Guest can't have this view"))
                     # check for valid value, last on checks for power of 2 value
@@ -587,7 +604,7 @@ def edit_list_user(param):
                 action="edit",
                 resource_type="user",
                 resource_id=user.id,
-                details="Edited user {}: field {} changed".format(user.name, param),
+                details=f"Edited user {user.name}: field {param} changed",
                 ip_address=helper.get_client_ip()
             )
     ub.session_commit()
@@ -600,13 +617,11 @@ def edit_list_user(param):
 def update_table_settings():
     current_user.view_settings['useredit'] = json.loads(request.data)
     try:
-        try:
+        with contextlib.suppress(AttributeError):
             flag_modified(current_user, "view_settings")
-        except AttributeError:
-            pass
         ub.session.commit()
     except (InvalidRequestError, OperationalError):
-        log.error("Invalid request received: {}".format(request))
+        log.error(f"Invalid request received: {request}")
         return "Invalid request", 400
     return ""
 
@@ -716,16 +731,16 @@ def edit_domain(allow):
     # value: 'superuser!' //new value
     vals = request.form.to_dict()
     answer = ub.session.query(ub.Registration).filter(ub.Registration.id == vals['pk']).first()
-    answer.domain = vals['value'].replace('*', '%').replace('?', '_').lower()
+    answer.domain = vals['value'].replace('*', '%').replace('?', '_').lower()  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="edit",
         resource_type="domain",
         resource_id=vals['pk'],
-        details="Edited registration domain: {}".format(answer.domain),
+        details=f"Edited registration domain: {answer.domain}",  # pyright: ignore[reportOptionalMemberAccess]
         ip_address=helper.get_client_ip()
     )
-    return ub.session_commit("Registering Domains edited {}".format(answer.domain))
+    return ub.session_commit(f"Registering Domains edited {answer.domain}")  # pyright: ignore[reportOptionalMemberAccess]
 
 
 @admi.route("/ajax/adddomain/<int:allow>", methods=['POST'])
@@ -743,10 +758,10 @@ def add_domain(allow):
             action="create",
             resource_type="domain",
             resource_id=new_domain.id,
-            details="Added registration domain: {}".format(domain_name),
+            details=f"Added registration domain: {domain_name}",
             ip_address=helper.get_client_ip()
         )
-        ub.session_commit("Registering Domains added {}".format(domain_name))
+        ub.session_commit(f"Registering Domains added {domain_name}")
     return ""
 
 
@@ -765,7 +780,7 @@ def delete_domain():
             details="Deleted registration domain",
             ip_address=helper.get_client_ip()
         )
-        ub.session_commit("Registering Domains deleted {}".format(domain_id))
+        ub.session_commit(f"Registering Domains deleted {domain_id}")
         # If last domain was deleted, add all domains by default
         if not ub.session.query(ub.Registration).filter(ub.Registration.allow == 1).count():
             new_domain = ub.Registration(domain="%.%", allow=1)
@@ -810,7 +825,7 @@ def edit_restriction(res_type, user_id):
             config.save()
         if res_type == 2:  # Tags per user
             if isinstance(user_id, int):
-                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
                 if usr is None:
                     return ""
             else:
@@ -818,10 +833,10 @@ def edit_restriction(res_type, user_id):
             elementlist = usr.list_allowed_tags()
             elementlist[int(element['id'][1:])] = element['Element']
             usr.allowed_tags = ','.join(elementlist)
-            ub.session_commit("Changed allowed tags of user {} to {}".format(usr.name, usr.allowed_tags))
+            ub.session_commit(f"Changed allowed tags of user {usr.name} to {usr.allowed_tags}")
         if res_type == 3:  # CColumn per user
             if isinstance(user_id, int):
-                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
                 if usr is None:
                     return ""
             else:
@@ -829,7 +844,7 @@ def edit_restriction(res_type, user_id):
             elementlist = usr.list_allowed_column_values()
             elementlist[int(element['id'][1:])] = element['Element']
             usr.allowed_column_value = ','.join(elementlist)
-            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name, usr.allowed_column_value))
+            ub.session_commit(f"Changed allowed columns of user {usr.name} to {usr.allowed_column_value}")
     if element['id'].startswith('d'):
         if res_type == 0:  # Tags as template
             elementlist = config.list_denied_tags()
@@ -843,7 +858,7 @@ def edit_restriction(res_type, user_id):
             config.save()
         if res_type == 2:  # Tags per user
             if isinstance(user_id, int):
-                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
                 if usr is None:
                     return ""
             else:
@@ -851,10 +866,10 @@ def edit_restriction(res_type, user_id):
             elementlist = usr.list_denied_tags()
             elementlist[int(element['id'][1:])] = element['Element']
             usr.denied_tags = ','.join(elementlist)
-            ub.session_commit("Changed denied tags of user {} to {}".format(usr.name, usr.denied_tags))
+            ub.session_commit(f"Changed denied tags of user {usr.name} to {usr.denied_tags}")
         if res_type == 3:  # CColumn per user
             if isinstance(user_id, int):
-                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+                usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
                 if usr is None:
                     return ""
             else:
@@ -862,13 +877,13 @@ def edit_restriction(res_type, user_id):
             elementlist = usr.list_denied_column_values()
             elementlist[int(element['id'][1:])] = element['Element']
             usr.denied_column_value = ','.join(elementlist)
-            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name, usr.denied_column_value))
+            ub.session_commit(f"Changed denied columns of user {usr.name} to {usr.denied_column_value}")
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="edit",
         resource_type="restriction",
-        resource_id="{}:{}".format(res_type, user_id),
-        details="Edited restriction: {}".format(res_name),
+        resource_id=f"{res_type}:{user_id}",
+        details=f"Edited restriction: {res_name}",
         ip_address=helper.get_client_ip()
     )
     return ""
@@ -905,36 +920,36 @@ def add_restriction(res_type, user_id):
             config.save()
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
             if usr is None:
                 return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
             usr.allowed_tags = restriction_addition(element, usr.list_allowed_tags)
-            ub.session_commit("Changed allowed tags of user {} to {}".format(usr.name, usr.list_allowed_tags()))
+            ub.session_commit(f"Changed allowed tags of user {usr.name} to {usr.list_allowed_tags()}")
         elif 'submit_deny' in element:
             usr.denied_tags = restriction_addition(element, usr.list_denied_tags)
-            ub.session_commit("Changed denied tags of user {} to {}".format(usr.name, usr.list_denied_tags()))
+            ub.session_commit(f"Changed denied tags of user {usr.name} to {usr.list_denied_tags()}")
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
             if usr is None:
                 return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
             usr.allowed_column_value = restriction_addition(element, usr.list_allowed_column_values)
-            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name, usr.list_allowed_column_values()))
+            ub.session_commit(f"Changed allowed columns of user {usr.name} to {usr.list_allowed_column_values()}")
         elif 'submit_deny' in element:
             usr.denied_column_value = restriction_addition(element, usr.list_denied_column_values)
-            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name, usr.list_denied_column_values()))
+            ub.session_commit(f"Changed denied columns of user {usr.name} to {usr.list_denied_column_values()}")
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="create",
         resource_type="restriction",
-        resource_id="{}:{}".format(res_type, user_id),
-        details="Added restriction: {}".format(res_name),
+        resource_id=f"{res_type}:{user_id}",
+        details=f"Added restriction: {res_name}",
         ip_address=helper.get_client_ip()
     )
     return ""
@@ -971,38 +986,36 @@ def delete_restriction(res_type, user_id):
             config.save()
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
             if usr is None:
                 return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
             usr.allowed_tags = restriction_deletion(element, usr.list_allowed_tags)
-            ub.session_commit("Changed allowed tags of user {} to {}".format(usr.name, usr.list_allowed_tags()))
+            ub.session_commit(f"Changed allowed tags of user {usr.name} to {usr.list_allowed_tags()}")
         elif 'submit_deny' in element:
             usr.denied_tags = restriction_deletion(element, usr.list_denied_tags)
-            ub.session_commit("Changed denied tags of user {} to {}".format(usr.name, usr.list_denied_tags()))
+            ub.session_commit(f"Changed denied tags of user {usr.name} to {usr.list_denied_tags()}")
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
             if usr is None:
                 return ""
         else:
             usr = current_user
         if 'submit_allow' in element:
             usr.allowed_column_value = restriction_deletion(element, usr.list_allowed_column_values)
-            ub.session_commit("Changed allowed columns of user {} to {}".format(usr.name,
-                                                                               usr.list_allowed_column_values()))
+            ub.session_commit(f"Changed allowed columns of user {usr.name} to {usr.list_allowed_column_values()}")
         elif 'submit_deny' in element:
             usr.denied_column_value = restriction_deletion(element, usr.list_denied_column_values)
-            ub.session_commit("Changed denied columns of user {} to {}".format(usr.name,
-                                                                               usr.list_denied_column_values()))
+            ub.session_commit(f"Changed denied columns of user {usr.name} to {usr.list_denied_column_values()}")
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="delete",
         resource_type="restriction",
-        resource_id="{}:{}".format(res_type, user_id),
-        details="Deleted restriction: {}".format(res_name),
+        resource_id=f"{res_type}:{user_id}",
+        details=f"Deleted restriction: {res_name}",
         ip_address=helper.get_client_ip()
     )
     return ""
@@ -1027,23 +1040,23 @@ def list_restriction(res_type, user_id):
         json_dumps = restrict + allow
     elif res_type == 2:  # Tags per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == user_id).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == user_id).first()  # pyright: ignore[reportArgumentType]
         else:
             usr = current_user
         restrict = [{'Element': x, 'type': _('Deny'), 'id': 'd' + str(i)}
-                    for i, x in enumerate(usr.list_denied_tags()) if x != '']
+                    for i, x in enumerate(usr.list_denied_tags()) if x != '']  # pyright: ignore[reportOptionalMemberAccess]
         allow = [{'Element': x, 'type': _('Allow'), 'id': 'a' + str(i)}
-                 for i, x in enumerate(usr.list_allowed_tags()) if x != '']
+                 for i, x in enumerate(usr.list_allowed_tags()) if x != '']  # pyright: ignore[reportOptionalMemberAccess]
         json_dumps = restrict + allow
     elif res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
-            usr = ub.session.query(ub.User).filter(ub.User.id == user_id).first()
+            usr = ub.session.query(ub.User).filter(ub.User.id == user_id).first()  # pyright: ignore[reportArgumentType]
         else:
             usr = current_user
         restrict = [{'Element': x, 'type': _('Deny'), 'id': 'd' + str(i)}
-                    for i, x in enumerate(usr.list_denied_column_values()) if x != '']
+                    for i, x in enumerate(usr.list_denied_column_values()) if x != '']  # pyright: ignore[reportOptionalMemberAccess]
         allow = [{'Element': x, 'type': _('Allow'), 'id': 'a' + str(i)}
-                 for i, x in enumerate(usr.list_allowed_column_values()) if x != '']
+                 for i, x in enumerate(usr.list_allowed_column_values()) if x != '']  # pyright: ignore[reportOptionalMemberAccess]
         json_dumps = restrict + allow
     else:
         json_dumps = ""
@@ -1081,26 +1094,18 @@ def do_full_kobo_sync(userid):
 
 
 def check_valid_read_column(column):
-    if column != "0":
-        if not calibre_db.session.query(db.CustomColumns).filter(db.CustomColumns.id == column) \
-          .filter(and_(db.CustomColumns.datatype == 'bool', db.CustomColumns.mark_for_delete == 0)).all():
-            return False
-    return True
+    return not (column != "0" and not calibre_db.session.query(db.CustomColumns).filter(db.CustomColumns.id == column).filter(and_(db.CustomColumns.datatype == 'bool', db.CustomColumns.mark_for_delete == 0)).all())
 
 
 def check_valid_restricted_column(column):
-    if column != "0":
-        if not calibre_db.session.query(db.CustomColumns).filter(db.CustomColumns.id == column) \
-          .filter(and_(db.CustomColumns.datatype == 'text', db.CustomColumns.mark_for_delete == 0)).all():
-            return False
-    return True
+    return not (column != "0" and not calibre_db.session.query(db.CustomColumns).filter(db.CustomColumns.id == column).filter(and_(db.CustomColumns.datatype == 'text', db.CustomColumns.mark_for_delete == 0)).all())
 
 
 def restriction_addition(element, list_func):
     elementlist = list_func()
     if elementlist == ['']:
         elementlist = []
-    if not element['add_element'] in elementlist:
+    if element['add_element'] not in elementlist:
         elementlist += [element['add_element']]
     return ','.join(elementlist)
 
@@ -1122,11 +1127,10 @@ def prepare_tags(user, action, tags_name, id_list):
         try:
             tags = calibre_db.session.query(db.cc_classes[config.config_restricted_column]) \
                 .filter(db.cc_classes[config.config_restricted_column].id.in_(id_list)).all()
-        except (KeyError, AttributeError, IndexError):
-            log.error("Custom Column No.{} does not exist in calibre database".format(
-                config.config_restricted_column))
+        except (KeyError, AttributeError, IndexError) as err:
+            log.error(f"Custom Column No.{config.config_restricted_column} does not exist in calibre database")
             raise Exception(_("Custom Column No.%(column)d does not exist in calibre database",
-                    column=config.config_restricted_column))
+                    column=config.config_restricted_column)) from err
         new_tags_list = [x.value for x in tags]
     saved_tags_list = user.__dict__[tags_name].split(",") if len(user.__dict__[tags_name]) else []
     if action == "remove":
@@ -1141,8 +1145,8 @@ def prepare_tags(user, action, tags_name, id_list):
 def get_drives(current):
     drive_letters = []
     for d in string.ascii_uppercase:
-        if os.path.exists('{}:'.format(d)) and current[0].lower() != d.lower():
-            drive = "{}:\\".format(d)
+        if os.path.exists(f'{d}:') and current[0].lower() != d.lower():
+            drive = f"{d}:\\"
             data = {"name": drive, "fullpath": drive, "type": "dir", "size": "", "sort": "_" + drive.lower()}
             drive_letters.append(data)
     return drive_letters
@@ -1204,12 +1208,12 @@ def pathchooser():
             if file_filter != "" and file_filter != f:
                 continue
             data["type"] = "file"
-            data["size"] = os.path.getsize(os.path.join(cwd, f))
+            data["size"] = os.path.getsize(os.path.join(cwd, f))  # pyright: ignore[reportArgumentType]
 
             power = 0
             while (data["size"] >> 10) > 0.3:
                 power += 1
-                data["size"] >>= 10
+                data["size"] >>= 10  # pyright: ignore[reportArgumentType]
             units = ("", "K", "M", "G", "T")
             data["size"] = str(data["size"]) + " " + units[power] + "Byte"
         else:
@@ -1258,7 +1262,7 @@ def _configuration_gdrive_helper(to_save):
         if gdrive_support:
             gdrive_error = gdriveutils.get_error_text(gdrive_secrets)
         if "config_use_google_drive" in to_save and not config.config_use_google_drive and not gdrive_error:
-            with open(gdriveutils.CLIENT_SECRETS, 'r') as settings:
+            with open(gdriveutils.CLIENT_SECRETS) as settings:
                 gdrive_secrets = json.load(settings)['web']
             if not gdrive_secrets:
                 return _configuration_result(_('client_secrets.json Is Not Configured For Web Application'))
@@ -1379,13 +1383,13 @@ def _configuration_ldap_helper(to_save):
         if config.config_ldap_member_user_object.count("(") != config.config_ldap_member_user_object.count(")"):
             return reboot_required, _configuration_result(_('LDAP Member User Filter Has Unmatched Parenthesis'))
 
-    if config.config_ldap_cacert_path or config.config_ldap_cert_path or config.config_ldap_key_path:
-        if not (os.path.isfile(config.config_ldap_cacert_path) and
-                os.path.isfile(config.config_ldap_cert_path) and
-                os.path.isfile(config.config_ldap_key_path)):
-            return reboot_required, \
-                   _configuration_result(_('LDAP CACertificate, Certificate or Key Location is not Valid, '
-                                           'Please Enter Correct Path'))
+    if (config.config_ldap_cacert_path or config.config_ldap_cert_path or config.config_ldap_key_path) \
+            and not (os.path.isfile(config.config_ldap_cacert_path) and
+                     os.path.isfile(config.config_ldap_cert_path) and
+                     os.path.isfile(config.config_ldap_key_path)):
+        return reboot_required, \
+               _configuration_result(_('LDAP CACertificate, Certificate or Key Location is not Valid, '
+                                       'Please Enter Correct Path'))
     return reboot_required, None
 
 
@@ -1413,7 +1417,7 @@ def new_user():
             action="create",
             resource_type="user",
             resource_id=content.id,
-            details="Created user: {}".format(content.name),
+            details=f"Created user: {content.name}",
             ip_address=helper.get_client_ip()
         )
     else:
@@ -1444,10 +1448,8 @@ def update_mailsettings():
     _config_int(to_save, "mail_server_type")
     if to_save.get("invalidate"):
         config.mail_gmail_token = {}
-        try:
+        with contextlib.suppress(AttributeError):
             flag_modified(config, "mail_gmail_token")
-        except AttributeError:
-            pass
     elif to_save.get("gmail"):
         try:
             config.mail_gmail_token = services.gmail.setup_gmail(config.mail_gmail_token)
@@ -1462,7 +1464,7 @@ def update_mailsettings():
         _config_int(to_save, "mail_use_ssl")
         if to_save.get("mail_password_e", ""):
             _config_string(to_save, "mail_password_e")
-        _config_int(to_save, "mail_size", lambda y: int(y) * 1024 * 1024)
+        _config_int(to_save, "mail_size", lambda y: int(y) * 1024 * 1024)  # pyright: ignore[reportArgumentType]
         config.mail_server = strip_whitespaces(to_save.get('mail_server', ""))
         config.mail_from = strip_whitespaces(to_save.get('mail_from', ""))
         config.mail_login = strip_whitespaces(to_save.get('mail_login', ""))
@@ -1470,7 +1472,7 @@ def update_mailsettings():
         config.save()
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
-        log.error_or_exception("Settings Database error: {}".format(e))
+        log.error_or_exception(f"Settings Database error: {e}")
         flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
         return edit_mailsettings()
     except Exception as e:
@@ -1528,12 +1530,12 @@ def edit_scheduledtasks():
 def update_scheduledtasks():
     error = False
     to_save = request.form.to_dict()
-    if 0 <= int(to_save.get("schedule_start_time")) <= 23:
+    if 0 <= int(to_save.get("schedule_start_time")) <= 23:  # pyright: ignore[reportArgumentType]
         _config_int(to_save, "schedule_start_time")
     else:
         flash(_("Invalid start time for task specified"), category="error")
         error = True
-    if 0 < int(to_save.get("schedule_duration")) <= 60:
+    if 0 < int(to_save.get("schedule_duration")) <= 60:  # pyright: ignore[reportArgumentType]
         _config_int(to_save, "schedule_duration")
     else:
         flash(_("Invalid duration for task specified"), category="error")
@@ -1577,7 +1579,7 @@ def update_scheduledtasks():
 @user_login_required
 @admin_required
 def edit_user(user_id):
-    content = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # type: ub.User
+    content = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # type: ub.User  # pyright: ignore[reportArgumentType]
     if not content or (not config.config_anonbrowse and content.name == "Guest"):
         flash(_("User not found"), category="error")
         return redirect(url_for('admin.admin'))
@@ -1594,7 +1596,7 @@ def edit_user(user_id):
             action="edit",
             resource_type="user",
             resource_id=user_id,
-            details="Edited user: {}".format(content.name),
+            details=f"Edited user: {content.name}",
             ip_address=helper.get_client_ip()
         )
     return render_title_template("user_edit.html",
@@ -1624,7 +1626,7 @@ def reset_user_password(user_id):
                 action="edit",
                 resource_type="user",
                 resource_id=user_id,
-                details="Password reset for user: {}".format(message),
+                details=f"Password reset for user: {message}",
                 ip_address=helper.get_client_ip()
             )
         elif ret == 0:
@@ -1728,19 +1730,19 @@ def get_updater_status():
             commit = request.form.to_dict()
             if "start" in commit and commit['start'] == 'True':
                 txt = {
-                    "1": _(u'Requesting update package'),
-                    "2": _(u'Downloading update package'),
-                    "3": _(u'Unzipping update package'),
-                    "4": _(u'Replacing files'),
-                    "5": _(u'Database connections are closed'),
-                    "6": _(u'Stopping server'),
-                    "7": _(u'Update finished, please press okay and reload page'),
-                    "8": _(u'Update failed:') + u' ' + _(u'HTTP Error'),
-                    "9": _(u'Update failed:') + u' ' + _(u'Connection error'),
-                    "10": _(u'Update failed:') + u' ' + _(u'Timeout while establishing connection'),
-                    "11": _(u'Update failed:') + u' ' + _(u'General error'),
-                    "12": _(u'Update failed:') + u' ' + _(u'Update file could not be saved in temp dir'),
-                    "13": _(u'Update failed:') + u' ' + _(u'Files could not be replaced during update')
+                    "1": _('Requesting update package'),
+                    "2": _('Downloading update package'),
+                    "3": _('Unzipping update package'),
+                    "4": _('Replacing files'),
+                    "5": _('Database connections are closed'),
+                    "6": _('Stopping server'),
+                    "7": _('Update finished, please press okay and reload page'),
+                    "8": _('Update failed:') + ' ' + _('HTTP Error'),
+                    "9": _('Update failed:') + ' ' + _('Connection error'),
+                    "10": _('Update failed:') + ' ' + _('Timeout while establishing connection'),
+                    "11": _('Update failed:') + ' ' + _('General error'),
+                    "12": _('Update failed:') + ' ' + _('Update file could not be saved in temp dir'),
+                    "13": _('Update failed:') + ' ' + _('Files could not be replaced during update')
                 }
                 status['text'] = txt
                 updater_thread.status = 0
@@ -1764,7 +1766,7 @@ def ldap_import_create_user(user, user_data):
         username = user_data[user_login_field][0].decode('utf-8')
     except KeyError as ex:
         log.error("Failed to extract LDAP user: %s - %s", user, ex)
-        message = _(u'Failed to extract at least One LDAP User')
+        message = _('Failed to extract at least One LDAP User')
         return 0, message
 
     # check for duplicate username
@@ -1787,7 +1789,7 @@ def ldap_import_create_user(user, user_data):
         # check for duplicate email
         useremail = check_email(useremail)
     except Exception as ex:
-        log.warning("LDAP Email Error: {}, {}".format(user_data, ex))
+        log.warning(f"LDAP Email Error: {user_data}, {ex}")
         return 0, None
     content = ub.User()
     content.name = username
@@ -1809,7 +1811,7 @@ def ldap_import_create_user(user, user_data):
     except Exception as ex:
         log.warning("Failed to create LDAP user: %s - %s", user, ex)
         ub.session.rollback()
-        message = _(u'Failed to Create at Least One LDAP User')
+        message = _('Failed to Create at Least One LDAP User')
         return 0, message
 
 
@@ -1822,25 +1824,19 @@ def import_ldap_users():
         new_users = services.ldap.get_group_members(config.config_ldap_group_name)
     except (services.ldap.LDAPException, TypeError, AttributeError, KeyError) as e:
         log.error_or_exception(e)
-        showtext['text'] = _(u'Error: %(ldaperror)s', ldaperror=e)
+        showtext['text'] = _('Error: %(ldaperror)s', ldaperror=e)
         return json.dumps(showtext)
     if not new_users:
         log.debug('LDAP empty response')
-        showtext['text'] = _(u'Error: No user returned in response of LDAP server')
+        showtext['text'] = _('Error: No user returned in response of LDAP server')
         return json.dumps(showtext)
 
     imported = 0
     for username in new_users:
-        if isinstance(username, bytes):
-            user = username.decode('utf-8')
-        else:
-            user = username
+        user = username.decode('utf-8') if isinstance(username, bytes) else username
         if '=' in user:
             # if member object field is empty take user object as filter
-            if config.config_ldap_member_user_object:
-                query_filter = config.config_ldap_member_user_object
-            else:
-                query_filter = config.config_ldap_user_object
+            query_filter = config.config_ldap_member_user_object or config.config_ldap_user_object
             try:
                 user_identifier = extract_user_identifier(user, query_filter)
             except Exception as ex:
@@ -1862,15 +1858,15 @@ def import_ldap_users():
                 imported += user_count
         else:
             log.warning("LDAP User: %s Not Found", user)
-            showtext['text'] = _(u'At Least One LDAP User Not Found in Database')
+            showtext['text'] = _('At Least One LDAP User Not Found in Database')
     if not showtext:
-        showtext['text'] = _(u'{} User Successfully Imported'.format(imported))
+        showtext['text'] = _(f'{imported} User Successfully Imported')
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="create",
         resource_type="user",
         resource_id="ldap",
-        details="LDAP users imported: {}".format(imported),
+        details=f"LDAP users imported: {imported}",
         ip_address=helper.get_client_ip()
     )
     return json.dumps(showtext)
@@ -1917,7 +1913,7 @@ def _db_configuration_update_helper():
         gdrive_error = _configuration_gdrive_helper(to_save)
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
-        log.error_or_exception("Settings Database error: {}".format(e))
+        log.error_or_exception(f"Settings Database error: {e}")
         _db_configuration_result(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), gdrive_error)
     try:
         metadata_db = os.path.join(to_save['config_calibre_dir'], "metadata.db")
@@ -1925,11 +1921,11 @@ def _db_configuration_update_helper():
             gdriveutils.downloadFile(None, "metadata.db", metadata_db)
             db_change = True
     except Exception as ex:
-        return _db_configuration_result('{}'.format(ex), gdrive_error)
+        return _db_configuration_result(f'{ex}', gdrive_error)
     config.config_calibre_split = to_save.get('config_calibre_split', 0) == "on"
     if config.config_calibre_split:
         split_dir = to_save.get("config_calibre_split_dir")
-        if not os.path.exists(split_dir):
+        if not os.path.exists(split_dir):  # pyright: ignore[reportArgumentType]
             return _db_configuration_result(_("Books path not valid"), gdrive_error)
         else:
             _config_string(to_save, "config_calibre_split_dir")
@@ -2034,7 +2030,7 @@ def _configuration_update_helper():
 
         # Google Books API configuration
         reboot_required |=_config_string(to_save, "config_googlebooks_api_key")
-        
+
         _config_int(to_save, "config_updatechannel")
 
         # Reverse proxy login configuration
@@ -2076,14 +2072,14 @@ def _configuration_update_helper():
                 return _configuration_result(unrar_status)
     except (OperationalError, InvalidRequestError) as e:
         ub.session.rollback()
-        log.error_or_exception("Settings Database error: {}".format(e))
+        log.error_or_exception(f"Settings Database error: {e}")
         _configuration_result(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)))
 
     config.save()
     if reboot_required:
         web_server.stop(True)
 
-    return _configuration_result(None, reboot_required)
+    return _configuration_result(None, reboot_required)  # pyright: ignore[reportArgumentType]
 
 
 def _configuration_result(error_flash=None, reboot=False):
@@ -2147,7 +2143,7 @@ def _handle_new_user(to_save, content, languages, translations, kobo_support):
         if to_save.get("kindle_mail"):
             content.kindle_mail = valid_email(to_save["kindle_mail"])
         if config.config_public_reg and not check_valid_domain(content.email):
-            log.info("E-mail: {} for new user is not from valid domain".format(content.email))
+            log.info(f"E-mail: {content.email} for new user is not from valid domain")
             raise Exception(_("E-mail is not from valid domain"))
     except Exception as ex:
         flash(str(ex), category="error")
@@ -2166,20 +2162,20 @@ def _handle_new_user(to_save, content, languages, translations, kobo_support):
         ub.session.add(content)
         ub.session.commit()
         flash(_("User '%(user)s' created", user=content.name), category="success")
-        log.debug("User {} created".format(content.name))
+        log.debug(f"User {content.name} created")
         return redirect(url_for('admin.admin'))
     except IntegrityError:
         ub.session.rollback()
-        log.error("Found an existing account for {} or {}".format(content.name, content.email))
+        log.error(f"Found an existing account for {content.name} or {content.email}")
         flash(_("Oops! An account already exists for this Email. or name."), category="error")
     except OperationalError as e:
         ub.session.rollback()
-        log.error_or_exception("Settings Database error: {}".format(e))
+        log.error_or_exception(f"Settings Database error: {e}")
         flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
 
 
 def _delete_user(content):
-    if ub.session.query(ub.User).filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,
+    if ub.session.query(ub.User).filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,  # pyright: ignore[reportAttributeAccessIssue]
                                         ub.User.id != content.id).count():
         if content.name != "Guest":
             # Delete all books in shelfs belonging to user, all shelfs of user, downloadstat of user, read status
@@ -2193,14 +2189,14 @@ def _delete_user(content):
             ub.session.query(ub.User).filter(ub.User.id == content.id).delete()
             ub.session.query(ub.ArchivedBook).filter(ub.ArchivedBook.user_id == content.id).delete()
             ub.session.query(ub.RemoteAuthToken).filter(ub.RemoteAuthToken.user_id == content.id).delete()
-            ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.user_id == content.id).delete()
+            ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.user_id == content.id).delete()  # pyright: ignore[reportGeneralTypeIssues]
             ub.session.query(ub.KoboSyncedBooks).filter(ub.KoboSyncedBooks.user_id == content.id).delete()
             # delete KoboReadingState and all it's children
             kobo_entries = ub.session.query(ub.KoboReadingState).filter(ub.KoboReadingState.user_id == content.id).all()
             for kobo_entry in kobo_entries:
                 ub.session.delete(kobo_entry)
             ub.session_commit()
-            log.info("User {} deleted".format(content.name))
+            log.info(f"User {content.name} deleted")
             return _("User '%(nick)s' deleted", nick=content.name)
         else:
             # log.warning(_("Can't delete Guest User"))
@@ -2219,9 +2215,9 @@ def _handle_edit_user(to_save, content, languages, translations, kobo_support):
             flash(str(ex), category="error")
         return redirect(url_for('admin.admin'))
     else:
-        if not ub.session.query(ub.User).filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,
+        if not ub.session.query(ub.User).filter(ub.User.role.op('&')(constants.ROLE_ADMIN) == constants.ROLE_ADMIN,  # pyright: ignore[reportAttributeAccessIssue]
                                                 ub.User.id != content.id).count() and 'admin_role' not in to_save:
-            log.warning("No admin user remaining, can't remove admin role from {}".format(content.name))
+            log.warning(f"No admin user remaining, can't remove admin role from {content.name}")
             flash(_("No admin user remaining, can't remove admin role"), category="error")
             return redirect(url_for('admin.admin'))
 
@@ -2291,21 +2287,21 @@ def _handle_edit_user(to_save, content, languages, translations, kobo_support):
         flash(_("User '%(nick)s' updated", nick=content.name), category="success")
     except IntegrityError as ex:
         ub.session.rollback()
-        log.error("An unknown error occurred while changing user: {}".format(str(ex)))
+        log.error(f"An unknown error occurred while changing user: {ex!s}")
         flash(_("Oops! An unknown error occurred. Please try again later."), category="error")
     except OperationalError as e:
         ub.session.rollback()
-        log.error_or_exception("Settings Database error: {}".format(e))
+        log.error_or_exception(f"Settings Database error: {e}")
         flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
     return ""
 
 
 def extract_user_data_from_field(user, field):
-    match = re.search(field + r"=(.*?)($|(?<!\\),)", user, re.IGNORECASE | re.UNICODE)    
+    match = re.search(field + r"=(.*?)($|(?<!\\),)", user, re.IGNORECASE | re.UNICODE)
     if match:
         return match.group(1)
     else:
-        raise Exception("Could Not Parse LDAP User: {}".format(user))
+        raise Exception(f"Could Not Parse LDAP User: {user}")
 
 
 def extract_dynamic_field_from_filter(user, filtr):

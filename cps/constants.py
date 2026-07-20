@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2019 OzzieIsaacs, pwr
@@ -16,8 +15,8 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 import os
+import sys
 from collections import namedtuple
 
 # APP_MODE - production, development, or test
@@ -50,9 +49,9 @@ if HOME_CONFIG:
         os.makedirs(home_dir)
     CONFIG_DIR = os.environ.get('CALIBRE_DBPATH', home_dir)
 else:
-    CONFIG_DIR = os.environ.get('CALIBRE_DBPATH', BASE_DIR)
+    CONFIG_DIR = os.environ.get('CALIBRE_DBPATH', BASE_DIR)  # pyright: ignore[reportConstantRedefinition]
     if getattr(sys, 'frozen', False):
-        CONFIG_DIR = os.path.abspath(os.path.join(CONFIG_DIR, os.pardir))
+        CONFIG_DIR = os.path.abspath(os.path.join(CONFIG_DIR, os.pardir))  # pyright: ignore[reportConstantRedefinition]
 
 
 DEFAULT_SETTINGS_FILE = "app.db"
@@ -141,9 +140,9 @@ DEFAULT_PASSWORD    = "admin123"  # nosec
 DEFAULT_PORT        = 8083
 env_CALIBRE_PORT = os.environ.get("CALIBRE_PORT", DEFAULT_PORT)
 try:
-    DEFAULT_PORT = int(env_CALIBRE_PORT)
+    DEFAULT_PORT = int(env_CALIBRE_PORT)  # pyright: ignore[reportConstantRedefinition]
 except ValueError:
-    print('Environment variable CALIBRE_PORT has invalid value (%s), faling back to default (8083)' % env_CALIBRE_PORT)
+    print(f'Environment variable CALIBRE_PORT has invalid value ({env_CALIBRE_PORT}), faling back to default (8083)')
 del env_CALIBRE_PORT
 
 

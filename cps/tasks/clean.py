@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2023 OzzieIsaacs
@@ -21,13 +20,13 @@ import datetime
 from flask_babel import lazy_gettext as N_
 from sqlalchemy.sql.expression import or_
 
-from cps import logger, file_helper, ub
+from cps import file_helper, logger, ub
 from cps.services.worker import CalibreTask
 
 
 class TaskClean(CalibreTask):
     def __init__(self, task_message=N_('Delete temp folder contents')):
-        super(TaskClean, self).__init__(task_message)
+        super().__init__(task_message)
         self.log = logger.create()
         self.app_db_session = ub.get_new_session_instance()
 
@@ -38,13 +37,14 @@ class TaskClean(CalibreTask):
         except FileNotFoundError:
             pass
         except (PermissionError, OSError) as e:
-            self.log.error("Error deleting temp folder: {}".format(e))
+            self.log.error(f"Error deleting temp folder: {e}")
         # delete expired session keys
         self.log.debug("Deleted expired session_keys" )
         expiry = int(datetime.datetime.now().timestamp())
         try:
-            self.app_db_session.query(ub.User_Sessions).filter(or_(ub.User_Sessions.expiry < expiry,
-                                                               ub.User_Sessions.expiry == None)).delete()
+            self.app_db_session.query(ub.User_Sessions).filter(
+                or_(ub.User_Sessions.expiry < expiry,  # pyright: ignore[reportGeneralTypeIssues]
+                    ub.User_Sessions.expiry.is_(None))).delete()  # pyright: ignore[reportGeneralTypeIssues]
             self.app_db_session.commit()
         except Exception as ex:
             self.log.debug('Error deleting expired session keys: ' + str(ex))
@@ -56,9 +56,9 @@ class TaskClean(CalibreTask):
         self.app_db_session.remove()
 
     @property
-    def name(self):
+    def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return "Clean up"
 
     @property
-    def is_cancellable(self):
+    def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False

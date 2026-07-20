@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 cervinko, idalin, SiphonSquirrel, ouzklcn, akushsky,
@@ -17,25 +16,25 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import shutil
 import glob
-import zipfile
 import json
-from io import BytesIO
-from flask_babel.speaklater import LazyString
-from importlib.metadata import metadata
 import os
+import shutil
+import zipfile
+from importlib.metadata import metadata
+from io import BytesIO
 
 from flask import send_file
+from flask_babel.speaklater import LazyString
 
-from . import logger, config
+from . import config, logger
 from .about import collect_stats
 
 log = logger.create()
 
 
 class lazyEncoder(json.JSONEncoder):
-    def default(self, obj):
+    def default(self, obj):  # pyright: ignore[reportIncompatibleMethodOverride]
         if isinstance(obj, LazyString):
             return str(obj)
         # Let the base class default method raise the TypeError
@@ -53,7 +52,7 @@ def assemble_logfiles(file_name):
     if int(version.split('.')[0]) < 2:
         return send_file(wfd,
                          as_attachment=True,
-                         attachment_filename=os.path.basename(file_name))
+                         attachment_filename=os.path.basename(file_name))  # pyright: ignore[reportCallIssue]
     else:
         return send_file(wfd,
                          as_attachment=True,
@@ -77,7 +76,7 @@ def send_debug():
     if int(version.split('.')[0]) < 2:
         return send_file(memory_zip,
                          as_attachment=True,
-                         attachment_filename="Calibre-Web-debug-pack.zip")
+                         attachment_filename="Calibre-Web-debug-pack.zip")  # pyright: ignore[reportCallIssue]
     else:
         return send_file(memory_zip,
                          as_attachment=True,

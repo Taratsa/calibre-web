@@ -2,24 +2,13 @@ import hmac
 import os
 from functools import wraps
 from hashlib import sha512
-from urllib.parse import parse_qs
-from urllib.parse import urlencode
-from urllib.parse import urlsplit
-from urllib.parse import urlunsplit
+from urllib.parse import parse_qs, urlencode, urlsplit, urlunsplit
 
-from flask import current_app
-from flask import g
-from flask import has_request_context
-from flask import request
-from flask import session
-from flask import url_for
+from flask import current_app, g, has_request_context, request, session, url_for
 from werkzeug.local import LocalProxy
 
-from .config import COOKIE_NAME
-from .config import EXEMPT_METHODS
-from .signals import user_logged_in
-from .signals import user_logged_out
-from .signals import user_login_confirmed
+from .config import COOKIE_NAME, EXEMPT_METHODS
+from .signals import user_logged_in, user_logged_out, user_login_confirmed
 
 #: A proxy for the current user. If no user is logged in, this will be an
 #: anonymous user
@@ -125,7 +114,7 @@ def login_url(login_view, next_url=None, next_field="next"):
 
     parsed_result = urlsplit(base)
     md = parse_qs(parsed_result.query, keep_blank_values=True)
-    md[next_field] = make_next_param(base, next_url)
+    md[next_field] = make_next_param(base, next_url)  # pyright: ignore[reportArgumentType]
     netloc = current_app.config.get("FORCE_HOST_FOR_REDIRECTS") or parsed_result.netloc
     parsed_result = parsed_result._replace(
         netloc=netloc, query=urlencode(md, doseq=True)
@@ -181,10 +170,10 @@ def login_user(user, remember=False, duration=None, force=False, fresh=True):
     if not force and not user.is_active:
         return False
 
-    user_id = getattr(user, current_app.login_manager.id_attribute)()
+    user_id = getattr(user, current_app.login_manager.id_attribute)()  # pyright: ignore[reportAttributeAccessIssue]
     session["_user_id"] = user_id
     session["_fresh"] = fresh
-    session["_id"] = current_app.login_manager._session_identifier_generator()
+    session["_id"] = current_app.login_manager._session_identifier_generator()  # pyright: ignore[reportAttributeAccessIssue]
     session["_random"] = os.urandom(10).hex()
 
     if remember:
@@ -201,8 +190,8 @@ def login_user(user, remember=False, duration=None, force=False, fresh=True):
                     f"duration must be a datetime.timedelta, instead got: {duration}"
                 ) from e
 
-    current_app.login_manager._update_request_context_with_user(user)
-    user_logged_in.send(current_app._get_current_object(), user=_get_user())
+    current_app.login_manager._update_request_context_with_user(user)  # pyright: ignore[reportAttributeAccessIssue]
+    user_logged_in.send(current_app._get_current_object(), user=_get_user())  # pyright: ignore[reportAttributeAccessIssue]
     return True
 
 
@@ -233,9 +222,9 @@ def logout_user():
         if "_remember_seconds" in session:
             session.pop("_remember_seconds")
 
-    user_logged_out.send(current_app._get_current_object(), user=user)
+    user_logged_out.send(current_app._get_current_object(), user=user)  # pyright: ignore[reportAttributeAccessIssue]
 
-    current_app.login_manager._update_request_context_with_user()
+    current_app.login_manager._update_request_context_with_user()  # pyright: ignore[reportAttributeAccessIssue]
     return True
 
 
@@ -245,8 +234,8 @@ def confirm_login():
     are reloaded from a cookie.
     """
     session["_fresh"] = True
-    session["_id"] = current_app.login_manager._session_identifier_generator()
-    user_login_confirmed.send(current_app._get_current_object())
+    session["_id"] = current_app.login_manager._session_identifier_generator()  # pyright: ignore[reportAttributeAccessIssue]
+    user_login_confirmed.send(current_app._get_current_object())  # pyright: ignore[reportAttributeAccessIssue]
 
 
 def login_required(func):
@@ -288,7 +277,7 @@ def login_required(func):
         if request.method in EXEMPT_METHODS or current_app.config.get("LOGIN_DISABLED"):
             pass
         elif not current_user.is_authenticated:
-            return current_app.login_manager.unauthorized()
+            return current_app.login_manager.unauthorized()  # pyright: ignore[reportAttributeAccessIssue]
 
         # flask 1.x compatibility
         # current_app.ensure_sync is only available in Flask >= 2.0
@@ -329,9 +318,9 @@ def fresh_login_required(func):
         if request.method in EXEMPT_METHODS or current_app.config.get("LOGIN_DISABLED"):
             pass
         elif not current_user.is_authenticated:
-            return current_app.login_manager.unauthorized()
+            return current_app.login_manager.unauthorized()  # pyright: ignore[reportAttributeAccessIssue]
         elif not login_fresh():
-            return current_app.login_manager.needs_refresh()
+            return current_app.login_manager.needs_refresh()  # pyright: ignore[reportAttributeAccessIssue]
         try:
             # current_app.ensure_sync available in Flask >= 2.0
             return current_app.ensure_sync(func)(*args, **kwargs)
@@ -353,30 +342,29 @@ def set_login_view(login_view, blueprint=None):
     :type blueprint: object
     """
 
-    num_login_views = len(current_app.login_manager.blueprint_login_views)
+    num_login_views = len(current_app.login_manager.blueprint_login_views)  # pyright: ignore[reportAttributeAccessIssue]
     if blueprint is not None or num_login_views != 0:
-        (current_app.login_manager.blueprint_login_views[blueprint.name]) = login_view
+        (current_app.login_manager.blueprint_login_views[blueprint.name]) = login_view  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
 
         if (
-            current_app.login_manager.login_view is not None
-            and None not in current_app.login_manager.blueprint_login_views
+            current_app.login_manager.login_view is not None  # pyright: ignore[reportAttributeAccessIssue]
+            and None not in current_app.login_manager.blueprint_login_views  # pyright: ignore[reportAttributeAccessIssue]
         ):
             (
-                current_app.login_manager.blueprint_login_views[None]
-            ) = current_app.login_manager.login_view
+                current_app.login_manager.blueprint_login_views[None]  # pyright: ignore[reportAttributeAccessIssue]
+            ) = current_app.login_manager.login_view  # pyright: ignore[reportAttributeAccessIssue]
 
-        current_app.login_manager.login_view = None
+        current_app.login_manager.login_view = None  # pyright: ignore[reportAttributeAccessIssue]
     else:
-        current_app.login_manager.login_view = login_view
+        current_app.login_manager.login_view = login_view  # pyright: ignore[reportAttributeAccessIssue]
 
 
 def _get_user():
     if has_request_context():
-        if "flask_httpauth_user" in g:
-            if g.flask_httpauth_user is not None:
-                return g.flask_httpauth_user
+        if "flask_httpauth_user" in g and g.flask_httpauth_user is not None:
+            return g.flask_httpauth_user
         if "_login_user" not in g:
-            current_app.login_manager._load_user()
+            current_app.login_manager._load_user()  # pyright: ignore[reportAttributeAccessIssue]
 
         return g._login_user
 

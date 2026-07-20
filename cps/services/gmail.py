@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -16,18 +15,18 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os.path
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
-from google.oauth2.credentials import Credentials
-
-from datetime import datetime
 import base64
-from flask_babel import gettext as _
-from ..constants import CONFIG_DIR
-from .. import logger
+import os.path
+from datetime import datetime
 
+from flask_babel import gettext as _
+from google.auth.transport.requests import Request  # pyright: ignore[reportMissingImports]
+from google.oauth2.credentials import Credentials  # pyright: ignore[reportMissingImports]
+from google_auth_oauthlib.flow import InstalledAppFlow  # pyright: ignore[reportMissingImports]
+from googleapiclient.discovery import build  # pyright: ignore[reportMissingImports]
+
+from .. import logger
+from ..constants import CONFIG_DIR
 
 log = logger.create()
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 lemmsh cervinko Kennyl matthazinski OzzieIsaacs
@@ -16,22 +15,23 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
 import hashlib
+import os
+
 from flask_babel import gettext as _
 
-from . import logger, comic, isoLanguages
+from . import comic, isoLanguages, logger
 from .constants import BookMeta
-from .helper import split_authors
 from .file_helper import get_temp_dir
+from .helper import split_authors
 from .string_helper import strip_whitespaces
 
 log = logger.create()
 
 try:
-    from wand.image import Image, Color
     from wand import version as ImageVersion
     from wand.exceptions import PolicyError
+    from wand.image import Color, Image
     use_generic_pdf_cover = False
 except (ImportError, RuntimeError) as e:
     log.debug('Cannot import Image, generating pdf covers for pdf uploads will not work: %s', e)
@@ -44,15 +44,15 @@ try:
 except ImportError as ex:
     log.debug('PyPDF is recommended for best performance in metadata extracting from pdf files: %s', ex)
     try:
-        from PyPDF2 import PdfReader
         from pypdf.generic import NullObject
+        from PyPDF2 import PdfReader  # pyright: ignore[reportMissingImports]
         use_pdf_meta = True
     except ImportError as ex:
         log.debug('PyPDF is recommended for best performance in metadata extracting from pdf files: %s', ex)
         log.debug('PyPdf2 is also possible for metadata extracting from pdf files, but not recommended anymore')
         try:
-            from PyPDF3 import PdfFileReader as PdfReader
             from pypdf.generic import NullObject
+            from PyPDF3 import PdfFileReader as PdfReader  # pyright: ignore[reportMissingImports]
             use_pdf_meta = True
         except ImportError as e:
             log.debug('Cannot import PyPDF3/PyPDF2, extracting pdf metadata will not work: %s / %s', e)
@@ -84,12 +84,12 @@ def process(tmp_file_path, original_file_name, original_file_extension, rar_exec
     meta = default_meta(tmp_file_path, original_file_name, original_file_extension)
     extension_upper = original_file_extension.upper()
     try:
-        if ".PDF" == extension_upper:
+        if extension_upper == ".PDF":
             meta = pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cover)
         elif extension_upper in [".KEPUB", ".EPUB"] and use_epub_meta is True:
-            meta = epub.get_epub_info(tmp_file_path, original_file_name, original_file_extension, no_cover)
-        elif ".FB2" == extension_upper and use_fb2_meta is True:
-            meta = fb2.get_fb2_info(tmp_file_path, original_file_extension)
+            meta = epub.get_epub_info(tmp_file_path, original_file_name, original_file_extension, no_cover)  # pyright: ignore[reportPossiblyUnboundVariable]
+        elif extension_upper == ".FB2" and use_fb2_meta is True:
+            meta = fb2.get_fb2_info(tmp_file_path, original_file_extension)  # pyright: ignore[reportPossiblyUnboundVariable]
         elif extension_upper in ['.CBZ', '.CBT', '.CBR', ".CB7"]:
             meta = comic.get_comic_info(tmp_file_path,
                                         original_file_name,
@@ -98,7 +98,7 @@ def process(tmp_file_path, original_file_name, original_file_extension, rar_exec
                                         no_cover)
         elif extension_upper in [".MP3", ".OGG", ".FLAC", ".WAV", ".AAC", ".AIFF", ".ASF", ".MP4",
                                  ".M4A", ".M4B", ".OGV", ".OPUS"] and use_audio_meta:
-            meta = audio.get_audio_file_info(tmp_file_path, original_file_extension, original_file_name, no_cover)
+            meta = audio.get_audio_file_info(tmp_file_path, original_file_extension, original_file_name, no_cover)  # pyright: ignore[reportPossiblyUnboundVariable]
     except Exception as ex:
         log.warning('cannot parse metadata, using default: %s', ex)
 
@@ -134,7 +134,7 @@ def parse_xmp(pdf_file):
     try:
         xmp_info = pdf_file.xmp_metadata
     except Exception as ex:
-        log.debug('Can not read PDF XMP metadata {}'.format(ex))
+        log.debug(f'Can not read PDF XMP metadata {ex}')
         return None
 
     if xmp_info:
@@ -143,15 +143,9 @@ def parse_xmp(pdf_file):
         except AttributeError:
             xmp_author = ['Unknown']
 
-        if xmp_info.dc_title:
-            xmp_title = xmp_info.dc_title['x-default']
-        else:
-            xmp_title = ''
+        xmp_title = xmp_info.dc_title['x-default'] if xmp_info.dc_title else ''
 
-        if xmp_info.dc_description:
-            xmp_description = xmp_info.dc_description['x-default']
-        else:
-            xmp_description = ''
+        xmp_description = xmp_info.dc_description['x-default'] if xmp_info.dc_description else ''
 
         languages = []
         try:
@@ -178,11 +172,11 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
 
     if use_pdf_meta:
         with open(tmp_file_path, 'rb') as f:
-            pdf_file = PdfReader(f)
+            pdf_file = PdfReader(f)  # pyright: ignore[reportPossiblyUnboundVariable]
             try:
                 doc_info = pdf_file.metadata
             except Exception as exc:
-                log.debug('Can not read PDF DocumentInfo {}'.format(exc))
+                log.debug(f'Can not read PDF DocumentInfo {exc}')
             xmp_info = parse_xmp(pdf_file)
 
     if xmp_info:
@@ -209,11 +203,8 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
             subject = doc_info.subject or ""
         if tags == '' and '/Keywords' in doc_info:
             keywords = doc_info['/Keywords']
-            if not isinstance(keywords, NullObject):
-                if isinstance(keywords, bytes):
-                    tags = keywords.decode('utf-8')
-                else:
-                    tags = keywords
+            if not isinstance(keywords, NullObject):  # pyright: ignore[reportPossiblyUnboundVariable]
+                tags = keywords.decode('utf-8') if isinstance(keywords, bytes) else keywords
     else:
         title = original_file_name
 
@@ -238,16 +229,17 @@ def pdf_preview(tmp_file_path, tmp_dir):
         return None
     try:
         cover_file_name = tmp_file_path + ".jpg"
-        with Image() as img:
-            img.options["pdf:use-cropbox"] = "true"
+        with Image() as img:  # pyright: ignore[reportPossiblyUnboundVariable]
+            if img.options is not None:
+                img.options["pdf:use-cropbox"] = "true"
             img.read(filename=tmp_file_path + '[0]', resolution=150)
             img.compression_quality = 88
             if img.alpha_channel:
                 img.alpha_channel = 'remove'
-                img.background_color = Color('white')
+                img.background_color = Color('white')  # pyright: ignore[reportPossiblyUnboundVariable]
             img.save(filename=cover_file_name)
         return cover_file_name
-    except PolicyError as ex:
+    except PolicyError as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
         log.warning('Pdf extraction forbidden by Imagemagick policy: %s', ex)
         return None
     except Exception as ex:
@@ -259,7 +251,7 @@ def pdf_preview(tmp_file_path, tmp_dir):
 def get_magick_version():
     ret = dict()
     if not use_generic_pdf_cover:
-        ret['Image Magick'] = ImageVersion.MAGICK_VERSION
+        ret['Image Magick'] = ImageVersion.MAGICK_VERSION  # pyright: ignore[reportPossiblyUnboundVariable]
     else:
         ret['Image Magick'] = 'not installed'
     return ret

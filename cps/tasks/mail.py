@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2020 pwr
@@ -16,26 +15,23 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import mimetypes
 import os
 import smtplib
 import ssl
 import threading
-import socket
-import mimetypes
-
-from io import StringIO
-from email.message import EmailMessage
-from email.utils import formatdate, parseaddr, make_msgid
 from email.generator import Generator
+from email.message import EmailMessage
+from email.utils import formatdate, make_msgid, parseaddr
+from io import StringIO
+
 from flask_babel import lazy_gettext as N_
 
-from cps.services.worker import CalibreTask
-from cps.services import gmail
+from cps import config, gdriveutils, logger
 from cps.embed_helper import do_calibre_export
-from cps import logger, config
-from cps import gdriveutils
+from cps.services import gmail
+from cps.services.worker import CalibreTask
 from cps.string_helper import strip_whitespaces
-
 
 log = logger.create()
 
@@ -50,14 +46,14 @@ class EmailBase:
 
     def data(self, msg):
         self.transferSize = len(msg)
-        (code, resp) = smtplib.SMTP.data(self, msg)
+        (code, resp) = smtplib.SMTP.data(self, msg)  # pyright: ignore[reportArgumentType]
         self.progress = 0
         return (code, resp)
 
     def send(self, strg):
         """Send 'strg' to the server."""
-        log.debug_no_auth('send: {}'.format(strg[:300]), stacklevel=2)
-        if hasattr(self, 'sock') and self.sock:
+        log.debug_no_auth(f'send: {strg[:300]}', stacklevel=2)
+        if hasattr(self, 'sock') and self.sock:  # pyright: ignore[reportAttributeAccessIssue]
             try:
                 if self.transferSize:
                     lock = threading.Lock()
@@ -66,17 +62,17 @@ class EmailBase:
                     lock.release()
                     for i in range(0, self.transferSize, CHUNKSIZE):
                         if isinstance(strg, bytes):
-                            self.sock.send((strg[i:i + CHUNKSIZE]))
+                            self.sock.send(strg[i:i + CHUNKSIZE])  # pyright: ignore[reportAttributeAccessIssue]
                         else:
-                            self.sock.send((strg[i:i + CHUNKSIZE]).encode('utf-8'))
+                            self.sock.send((strg[i:i + CHUNKSIZE]).encode('utf-8'))  # pyright: ignore[reportAttributeAccessIssue]
                         lock.acquire()
                         self.progress = i
                         lock.release()
                 else:
-                    self.sock.sendall(strg.encode('utf-8'))
-            except socket.error:
-                self.close()
-                raise smtplib.SMTPServerDisconnected('Server not connected')
+                    self.sock.sendall(strg.encode('utf-8'))  # pyright: ignore[reportAttributeAccessIssue]
+            except OSError as ex:
+                self.close()  # pyright: ignore[reportAttributeAccessIssue]
+                raise smtplib.SMTPServerDisconnected('Server not connected') from ex
         else:
             raise smtplib.SMTPServerDisconnected('please run connect() first')
 
@@ -96,14 +92,14 @@ class EmailBase:
 
 
 # Class for sending email with ability to get current progress, derived from emailbase class
-class Email(EmailBase, smtplib.SMTP):
+class Email(EmailBase, smtplib.SMTP):  # pyright: ignore[reportIncompatibleMethodOverride]
 
     def __init__(self, *args, **kwargs):
         smtplib.SMTP.__init__(self, *args, **kwargs)
 
 
 # Class for sending ssl encrypted email with ability to get current progress, derived from emailbase class
-class EmailSSL(EmailBase, smtplib.SMTP_SSL):
+class EmailSSL(EmailBase, smtplib.SMTP_SSL):  # pyright: ignore[reportIncompatibleMethodOverride]
 
     def __init__(self, *args, **kwargs):
         smtplib.SMTP_SSL.__init__(self, *args, **kwargs)
@@ -111,7 +107,7 @@ class EmailSSL(EmailBase, smtplib.SMTP_SSL):
 
 class TaskEmail(CalibreTask):
     def __init__(self, subject, filepath, attachment, settings, recipient, task_message, text, id=0, internal=False):
-        super(TaskEmail, self).__init__(task_message)
+        super().__init__(task_message)
         self.subject = subject
         self.attachment = attachment
         self.settings = settings
@@ -170,28 +166,28 @@ class TaskEmail(CalibreTask):
                 self.send_gmail_email(msg)
         except MemoryError as e:
             log.error_or_exception(e, stacklevel=2)
-            self._handleError('MemoryError sending e-mail: {}'.format(str(e)))
+            self._handleError(f'MemoryError sending e-mail: {e!s}')
         except (smtplib.SMTPRecipientsRefused) as e:
             log.error_or_exception(e, stacklevel=2)
             self._handleError('Smtplib Error sending e-mail: {}'.format(
-                (list(e.args[0].values())[0][1]).decode('utf-8)').replace("\n", '. ')))
+                (next(iter(e.args[0].values()))[1]).decode('utf-8)').replace("\n", '. ')))
         except (smtplib.SMTPException, smtplib.SMTPAuthenticationError) as e:
             log.error_or_exception(e, stacklevel=2)
             if hasattr(e, "smtp_error"):
-                text = e.smtp_error.decode('utf-8').replace("\n", '. ')
+                text = e.smtp_error.decode('utf-8').replace("\n", '. ')  # pyright: ignore[reportAttributeAccessIssue]
             elif hasattr(e, "message"):
-                text = e.message
+                text = e.message  # pyright: ignore[reportAttributeAccessIssue]
             elif hasattr(e, "args"):
-                text = '\n'.join(e.args)
+                text = '\n'.join(e.args)  # pyright: ignore[reportCallIssue,reportArgumentType]
             else:
                 text = ''
-            self._handleError('Smtplib Error sending e-mail: {}'.format(text))
-        except (socket.error) as e:
+            self._handleError(f'Smtplib Error sending e-mail: {text}')
+        except (OSError) as e:
             log.error_or_exception(e, stacklevel=2)
-            self._handleError('Socket Error sending e-mail: {}'.format(e.strerror))
+            self._handleError(f'Socket Error sending e-mail: {e.strerror}')
         except Exception as ex:
             log.error_or_exception(ex, stacklevel=2)
-            self._handleError('Error sending e-mail: {}'.format(ex))
+            self._handleError(f'Error sending e-mail: {ex}')
 
     def send_standard_email(self, msg):
         use_ssl = int(self.settings.get('mail_use_ssl', 0))
@@ -258,7 +254,7 @@ class TaskEmail(CalibreTask):
                 return None
             if config.config_binariesdir and config.config_embed_metadata:
                 data_path, data_file = do_calibre_export(self.book_id, extension)
-                datafile = os.path.join(data_path, data_file + "." + extension)
+                datafile = os.path.join(data_path, data_file + "." + extension)  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalOperand]
             with open(datafile, 'rb') as file_:
                 data = file_.read()
             os.remove(datafile)
@@ -267,24 +263,24 @@ class TaskEmail(CalibreTask):
             try:
                 if config.config_binariesdir and config.config_embed_metadata:
                     data_path, data_file = do_calibre_export(self.book_id, extension)
-                    datafile = os.path.join(data_path, data_file + "." + extension)
+                    datafile = os.path.join(data_path, data_file + "." + extension)  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalOperand]
                 with open(datafile, 'rb') as file_:
                     data = file_.read()
                 if config.config_binariesdir and config.config_embed_metadata:
                     os.remove(datafile)
-            except IOError as e:
+            except OSError as e:
                 log.error_or_exception(e, stacklevel=2)
                 log.error('The requested file could not be read. Maybe wrong permissions?')
                 return None
         return data
 
     @property
-    def name(self):
+    def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return N_("E-mail")
 
     @property
-    def is_cancellable(self):
+    def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return False
 
-    def __str__(self):
-        return "E-mail {}, {}".format(self.name, self.subject)
+    def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
+        return f"E-mail {self.name}, {self.subject}"

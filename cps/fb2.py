@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018 lemmsh, cervinko, OzzieIsaacs
@@ -16,7 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from lxml import etree
+from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
 
 from .constants import BookMeta
 
@@ -31,27 +30,18 @@ def get_fb2_info(tmp_file_path, original_file_extension):
         'l': 'http://www.w3.org/1999/xlink',
     }
 
-    fb2_file = open(tmp_file_path, encoding="utf-8")
-    tree = etree.fromstring(fb2_file.read().encode(), parser=_safe_parser)
+    with open(tmp_file_path, encoding="utf-8") as fb2_file:
+        tree = etree.fromstring(fb2_file.read().encode(), parser=_safe_parser)
 
     authors = tree.xpath('/fb:FictionBook/fb:description/fb:title-info/fb:author', namespaces=ns)
 
     def get_author(element):
         last_name = element.xpath('fb:last-name/text()', namespaces=ns)
-        if len(last_name):
-            last_name = last_name[0]
-        else:
-            last_name = ''
+        last_name = last_name[0] if len(last_name) else ''
         middle_name = element.xpath('fb:middle-name/text()', namespaces=ns)
-        if len(middle_name):
-            middle_name = middle_name[0]
-        else:
-            middle_name = ''
+        middle_name = middle_name[0] if len(middle_name) else ''
         first_name = element.xpath('fb:first-name/text()', namespaces=ns)
-        if len(first_name):
-            first_name = first_name[0]
-        else:
-            first_name = ''
+        first_name = first_name[0] if len(first_name) else ''
         return (first_name + ' '
                 + middle_name + ' '
                 + last_name)
@@ -59,15 +49,9 @@ def get_fb2_info(tmp_file_path, original_file_extension):
     author = str(", ".join(map(get_author, authors)))
 
     title = tree.xpath('/fb:FictionBook/fb:description/fb:title-info/fb:book-title/text()', namespaces=ns)
-    if len(title):
-        title = str(title[0])
-    else:
-        title = ''
+    title = str(title[0]) if len(title) else ''
     description = tree.xpath('/fb:FictionBook/fb:description/fb:publish-info/fb:book-name/text()', namespaces=ns)
-    if len(description):
-        description = str(description[0])
-    else:
-        description = ''
+    description = str(description[0]) if len(description) else ''
 
     return BookMeta(
         file_path=tmp_file_path,

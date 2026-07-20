@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2020 OzzieIsaacs
@@ -18,22 +17,24 @@
 
 import traceback
 
-from flask import render_template, request, flash, make_response
-from flask_limiter import RateLimitExceeded
+from flask import flash, make_response, render_template, request
 from flask_babel import gettext as _
+from flask_limiter import RateLimitExceeded
 from werkzeug.exceptions import default_exceptions
 
 from .cw_login import current_user
+
 try:
     from werkzeug.exceptions import FailedDependency
 except ImportError:
     from werkzeug.exceptions import UnprocessableEntity as FailedDependency
 
-from . import config, app, logger, services
-from .render_template import render_title_template
-from .web import render_login
-from .usermanagement import auth
 from cps.string_helper import strip_whitespaces
+
+from . import app, config, logger, services
+from .render_template import render_title_template
+from .usermanagement import auth
+from .web import render_login
 
 log = logger.create()
 
@@ -42,7 +43,7 @@ log = logger.create()
 def error_http(error):
     headers = {'WWW-Authenticate': 'Basic realm="calibre-web"'} if error.code == 401 else {}
     return render_template('http_error.html',
-                           error_code="Error {0}".format(error.code),
+                           error_code=f"Error {error.code}",
                            error_name=error.name,
                            issue=False,
                            goto_admin=False,
@@ -92,27 +93,30 @@ def init_errorhandler():
             app.register_error_handler(ex, internal_error)
 
     if services.ldap:
+        assert services.ldap is not None
         # Only way of catching the LDAPException upon logging in with LDAP server down
-        @app.errorhandler(services.ldap.LDAPException)
+        @app.errorhandler(services.ldap.LDAPException)  # pyright: ignore[reportArgumentType]
         # pylint: disable=unused-variable
         def handle_exception(e):
             log.debug('LDAP server not accessible while trying to login to opds feed')
             return error_http(FailedDependency())
 
 
-@app.errorhandler(RateLimitExceeded)
+@app.errorhandler(RateLimitExceeded)  # pyright: ignore[reportArgumentType]
 def handle_rate_limit(__):
-    log.error("Rate limit exceeded {}".format(request.endpoint))
-    if "register" in request.endpoint:
-        flash(_(u"Please wait one minute to register next user"), category="error")
+    endpoint = request.endpoint or ""
+    log.error(f"Rate limit exceeded {endpoint}")
+    if "register" in endpoint:
+        flash(_("Please wait one minute to register next user"), category="error")
         return render_title_template('register.html', config=config, title=_("Register"), page="register")
-    elif "login" in request.endpoint:
+    elif "login" in endpoint:
         form = request.form.to_dict()
         username = strip_whitespaces(form.get('username', "")).lower().replace("\n", "").replace("\r", "")
         flash(_("Please wait one minute before next login"), category="error")
         return render_login(username, form.get("password", ""))
-    elif "opds" in request.endpoint:
-        return auth.auth_error_callback(429)
+    elif "opds" in endpoint:
+        if auth.auth_error_callback:
+            return auth.auth_error_callback(429)
     else:
         return make_response('', 429)
 

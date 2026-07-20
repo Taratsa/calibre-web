@@ -1,44 +1,37 @@
-from datetime import datetime
-from datetime import timezone
-from datetime import timedelta
 import hashlib
+from datetime import UTC, datetime, timedelta
+from typing import Any, cast
 
-from flask import abort
-from flask import current_app
-from flask import flash
-from flask import g
-from flask import redirect
-from flask import request
-from flask import session
-from itsdangerous import URLSafeSerializer
+from flask import abort, current_app, flash, g, redirect, request, session
 from flask.json.tag import TaggedJSONSerializer
+from itsdangerous import URLSafeSerializer
 
-from .config import AUTH_HEADER_NAME
-from .config import COOKIE_DURATION
-from .config import COOKIE_HTTPONLY
-from .config import COOKIE_NAME
-from .config import COOKIE_SAMESITE
-from .config import COOKIE_SECURE
-from .config import ID_ATTRIBUTE
-from .config import LOGIN_MESSAGE
-from .config import LOGIN_MESSAGE_CATEGORY
-from .config import REFRESH_MESSAGE
-from .config import REFRESH_MESSAGE_CATEGORY
-from .config import SESSION_KEYS
-from .config import USE_SESSION_FOR_NEXT
+from .config import (
+    AUTH_HEADER_NAME,
+    COOKIE_DURATION,
+    COOKIE_HTTPONLY,
+    COOKIE_NAME,
+    COOKIE_SAMESITE,
+    COOKIE_SECURE,
+    ID_ATTRIBUTE,
+    LOGIN_MESSAGE,
+    LOGIN_MESSAGE_CATEGORY,
+    REFRESH_MESSAGE,
+    REFRESH_MESSAGE_CATEGORY,
+    SESSION_KEYS,
+    USE_SESSION_FOR_NEXT,
+)
 from .mixins import AnonymousUserMixin
-from .signals import session_protected
-from .signals import user_accessed
-from .signals import user_loaded_from_cookie
-from .signals import user_loaded_from_request
-from .signals import user_needs_refresh
-from .signals import user_unauthorized
-from .utils import _create_identifier
-from .utils import _user_context_processor
-from .utils import confirm_login
-from .utils import expand_login_view
+from .signals import (
+    session_protected,
+    user_accessed,
+    user_loaded_from_cookie,
+    user_loaded_from_request,
+    user_needs_refresh,
+    user_unauthorized,
+)
+from .utils import _create_identifier, _user_context_processor, confirm_login, expand_login_view, make_next_param
 from .utils import login_url as make_login_url
-from .utils import make_next_param
 
 
 class LoginManager:
@@ -166,7 +159,7 @@ class LoginManager:
         This should be returned from a view or before/after_request function,
         otherwise the redirect will have no effect.
         """
-        user_unauthorized.send(current_app._get_current_object())
+        user_unauthorized.send(cast(Any, current_app)._get_current_object())
 
         if self.unauthorized_callback:
             return self.unauthorized_callback()
@@ -279,7 +272,7 @@ class LoginManager:
         This should be returned from a view or before/after_request function,
         otherwise the redirect will have no effect.
         """
-        user_needs_refresh.send(current_app._get_current_object())
+        user_needs_refresh.send(cast(Any, current_app)._get_current_object())
 
         if self.needs_refresh_callback:
             return self.needs_refresh_callback()
@@ -329,7 +322,7 @@ class LoginManager:
                 "for more info."
             )
 
-        user_accessed.send(current_app._get_current_object())
+        user_accessed.send(cast(Any, current_app)._get_current_object())
 
         # Check SESSION_PROTECTION
         if self._session_protection_failed():
@@ -368,10 +361,10 @@ class LoginManager:
         return self._update_request_context_with_user(user)
 
     def _session_protection_failed(self):
-        sess = session._get_current_object()
+        sess = cast(Any, session)._get_current_object()
         ident = self._session_identifier_generator()
 
-        app = current_app._get_current_object()
+        app = cast(Any, current_app)._get_current_object()
         mode = app.config.get("SESSION_PROTECTION", self.session_protection)
 
         if not mode or mode not in ["basic", "strong"]:
@@ -401,7 +394,7 @@ class LoginManager:
         )
         try:
             remember_dict = URLSafeSerializer(
-                current_app.secret_key,
+                current_app.secret_key or "",
                 salt="remember",
                 serializer=TaggedJSONSerializer(),
                 signer_kwargs=signer_kwargs,
@@ -418,7 +411,7 @@ class LoginManager:
             if self._user_callback:
                 user = self._user_callback(remember_dict['user'], session["_random"], None)
             if user is not None:
-                app = current_app._get_current_object()
+                app = cast(Any, current_app)._get_current_object()
                 user_loaded_from_cookie.send(app, user=user)
                 # if session was restored from remember me cookie make login valid
                 confirm_login()
@@ -429,7 +422,7 @@ class LoginManager:
         if self._header_callback:
             user = self._header_callback(header)
             if user is not None:
-                app = current_app._get_current_object()
+                app = cast(Any, current_app)._get_current_object()
 
                 from .signals import _user_loaded_from_header
 
@@ -441,7 +434,7 @@ class LoginManager:
         if self._request_callback:
             user = self._request_callback(request)
             if user is not None:
-                app = current_app._get_current_object()
+                app = cast(Any, current_app)._get_current_object()
                 user_loaded_from_request.send(app, user=user)
                 return user
         return None
@@ -468,7 +461,7 @@ class LoginManager:
         config = current_app.config
         cookie_name = config.get("REMEMBER_COOKIE_NAME", COOKIE_NAME)
         domain = config.get("REMEMBER_COOKIE_DOMAIN")
-        path = config.get("REMEMBER_COOKIE_PATH", current_app.wsgi_app.script_name)
+        path = config.get("REMEMBER_COOKIE_PATH", cast(Any, current_app.wsgi_app).script_name)
 
         secure = config.get("REMEMBER_COOKIE_SECURE", COOKIE_SECURE)
         httponly = config.get("REMEMBER_COOKIE_HTTPONLY", COOKIE_HTTPONLY)
@@ -480,13 +473,13 @@ class LoginManager:
             duration = config.get("REMEMBER_COOKIE_DURATION", COOKIE_DURATION)
 
         # prepare data
-        max_age = int(current_app.permanent_session_lifetime.total_seconds())
+        int(current_app.permanent_session_lifetime.total_seconds())
         signer_kwargs = dict(
             key_derivation="hmac", digest_method=hashlib.sha1
         )
         # save
         data = URLSafeSerializer(
-            current_app.secret_key,
+            current_app.secret_key or "",
             salt="remember",
             serializer=TaggedJSONSerializer(),
             signer_kwargs=signer_kwargs,
@@ -496,7 +489,7 @@ class LoginManager:
             duration = timedelta(seconds=duration)
 
         try:
-            expires = datetime.now(timezone.utc) + duration
+            expires = datetime.now(UTC) + duration
         except TypeError as e:
             raise Exception(
                 "REMEMBER_COOKIE_DURATION must be a datetime.timedelta,"
@@ -519,5 +512,5 @@ class LoginManager:
         config = current_app.config
         cookie_name = config.get("REMEMBER_COOKIE_NAME", COOKIE_NAME)
         domain = config.get("REMEMBER_COOKIE_DOMAIN")
-        path = config.get("REMEMBER_COOKIE_PATH", current_app.wsgi_app.script_name)
+        path = config.get("REMEMBER_COOKIE_PATH", cast(Any, current_app.wsgi_app).script_name)
         response.delete_cookie(cookie_name, domain=domain, path=path)

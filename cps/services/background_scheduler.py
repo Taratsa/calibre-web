@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
@@ -16,17 +15,16 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import atexit
 
 from .. import logger
 from .worker import WorkerThread
 
 try:
     from apscheduler.schedulers.background import BackgroundScheduler as BScheduler
-    from apscheduler.triggers.cron import CronTrigger
+    from apscheduler.triggers.cron import CronTrigger  # noqa: F401
     from apscheduler.triggers.date import DateTrigger
     use_APScheduler = True
-except (ImportError, RuntimeError) as e:
+except (ImportError, RuntimeError):
     use_APScheduler = False
     log = logger.create()
     log.info('APScheduler not found. Unable to schedule tasks.')
@@ -40,10 +38,10 @@ class BackgroundScheduler:
             return False
 
         if cls._instance is None:
-            cls._instance = super(BackgroundScheduler, cls).__new__(cls)
+            cls._instance = super().__new__(cls)
             cls.log = logger.create()
             logger.logging.getLogger('tzlocal').setLevel(logger.logging.WARNING)
-            cls.scheduler = BScheduler()
+            cls.scheduler = BScheduler()  # pyright: ignore[reportPossiblyUnboundVariable]
             cls.scheduler.start()
 
         return cls._instance
@@ -72,7 +70,7 @@ class BackgroundScheduler:
         if use_APScheduler:
             def immediate_task():
                 WorkerThread.add(user, task(), hidden)
-            return self.schedule(func=immediate_task, trigger=DateTrigger(), name=name)
+            return self.schedule(func=immediate_task, trigger=DateTrigger(), name=name)  # pyright: ignore[reportPossiblyUnboundVariable]
 
     # Expects a list of lambda expressions for the tasks
     def schedule_tasks_immediately(self, tasks, user=None):

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -22,17 +21,17 @@
 
 # custom jinja filters
 
-from markupsafe import escape
 import datetime
 import mimetypes
 from uuid import uuid4
 
-from flask import Blueprint, request, url_for, g
+from flask import Blueprint, g, request, url_for
 from flask_babel import format_date
-from .cw_login import current_user
-from .clean_html import clean_string as html_clean_string
+from markupsafe import escape
 
 from . import constants, logger
+from .clean_html import clean_string as html_clean_string
+from .cw_login import current_user
 
 jinjia = Blueprint('jinjia', __name__)
 log = logger.create()
@@ -41,13 +40,13 @@ log = logger.create()
 # pagination links in jinja
 @jinjia.app_template_filter('url_for_other_page')
 def url_for_other_page(page):
-    args = request.view_args.copy()
+    args = (request.view_args or {}).copy()
     args['page'] = page
     for get, val in request.args.items():
         if get == "page":
             continue
         args[get] = val
-    return url_for(request.endpoint, **args)
+    return url_for(request.endpoint or "web.index", **args)
 
 
 # shortentitles to at longest nchar, shorten longer words if necessary
@@ -100,10 +99,7 @@ def timestamptodate(date, fmt=None):
         int(date)/1000
     )
     native = date.replace(tzinfo=None)
-    if fmt:
-        time_format = fmt
-    else:
-        time_format = '%d %m %Y - %H:%S'
+    time_format = fmt or '%d %m %Y - %H:%S'
     return native.strftime(time_format)
 
 
@@ -114,7 +110,7 @@ def yesno(value, yes, no):
 
 @jinjia.app_template_filter('formatfloat')
 def formatfloat(value, decimals=1):
-    if not value or (isinstance(value, str) and not value.is_numeric()):
+    if not value or (isinstance(value, str) and not value.isnumeric()):
         return value
     formated_value = ('{0:.' + str(decimals) + 'f}').format(value)
     if formated_value.endswith('.' + "0" * decimals):
@@ -124,7 +120,7 @@ def formatfloat(value, decimals=1):
 
 @jinjia.app_template_filter('escapedlink')
 def escapedlink_filter(url, text):
-    return "<a href='{}'>{}</a>".format(url, escape(text))
+    return f"<a href='{url}'>{escape(text)}</a>"
 
 
 @jinjia.app_template_filter('uuidfilter')
@@ -162,7 +158,7 @@ def get_cover_srcset(book):
 
 
 @jinjia.app_template_filter('get_series_srcset')
-def get_cover_srcset(series):
+def get_series_srcset(series):
     srcset = list()
     resolutions = {
         constants.COVER_THUMBNAIL_SMALL: 'sm',

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 jim3ma
@@ -19,15 +18,17 @@
 from flask import session
 
 try:
-    from flask_dance.consumer.storage.sqla import SQLAlchemyStorage as SQLAlchemyBackend
-    from flask_dance.consumer.storage.sqla import first, _get_real_user
-    from sqlalchemy.orm.exc import NoResultFound
+    from flask_dance.consumer.storage.sqla import (  # pyright: ignore[reportMissingImports]
+        SQLAlchemyStorage as SQLAlchemyBackend,  # pyright: ignore[reportMissingImports]
+    )
+    from flask_dance.consumer.storage.sqla import _get_real_user, first  # pyright: ignore[reportMissingImports]
+    from sqlalchemy.exc import NoResultFound
     backend_resultcode = True  # prevent storing values with this resultcode
 except ImportError:
     pass
 
 
-class OAuthBackend(SQLAlchemyBackend):
+class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundVariable]
     """
     Stores and retrieves OAuth tokens using a relational database through
     the `SQLAlchemy`_ ORM.
@@ -38,7 +39,7 @@ class OAuthBackend(SQLAlchemyBackend):
                  user=None, user_id=None, user_required=None, anon_user=None,
                  cache=None):
         self.provider_id = provider_id
-        super(OAuthBackend, self).__init__(model, session, user, user_id, user_required, anon_user, cache)
+        super().__init__(model, session, user, user_id, user_required, anon_user, cache)
 
     def get(self, blueprint, user=None, user_id=None):
         if self.provider_id + '_oauth_token' in session and session[self.provider_id + '_oauth_token'] != '':
@@ -54,8 +55,8 @@ class OAuthBackend(SQLAlchemyBackend):
             self.session.query(self.model)
             .filter_by(provider=self.provider_id)
         )
-        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])
-        u = first(_get_real_user(ref, self.anon_user)
+        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
+        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
                   for ref in (user, self.user, blueprint.config.get("user")))
 
         use_provider_user_id = False
@@ -78,7 +79,7 @@ class OAuthBackend(SQLAlchemyBackend):
         # run query
         try:
             token = query.one().token
-        except NoResultFound:
+        except NoResultFound:  # pyright: ignore[reportPossiblyUnboundVariable]
             token = None
 
         # cache the result
@@ -87,8 +88,8 @@ class OAuthBackend(SQLAlchemyBackend):
         return token
 
     def set(self, blueprint, token, user=None, user_id=None):
-        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])
-        u = first(_get_real_user(ref, self.anon_user)
+        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
+        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
                   for ref in (user, self.user, blueprint.config.get("user")))
 
         if self.user_required and not u and not uid:
@@ -131,8 +132,8 @@ class OAuthBackend(SQLAlchemyBackend):
             self.session.query(self.model)
             .filter_by(provider=self.provider_id)
         )
-        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])
-        u = first(_get_real_user(ref, self.anon_user)
+        uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
+        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
                   for ref in (user, self.user, blueprint.config.get("user")))
 
         if self.user_required and not u and not uid:

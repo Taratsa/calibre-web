@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs
@@ -16,23 +15,22 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-import os
 import datetime
 import json
+import os
 import shutil
+import sys
 import threading
 import time
 import zipfile
 from io import BytesIO
-import requests
 
+import requests
 from flask_babel import format_datetime
 from flask_babel import gettext as _
 
 from . import constants, logger  #  config, web_server
 from .file_helper import get_temp_dir
-
 
 log = logger.create()
 _REPOSITORY_API_URL = 'https://api.github.com/repos/janeczku/calibre-web'
@@ -65,12 +63,12 @@ class Updater(threading.Thread):
         self.web_server = web_server
 
     def get_current_version_info(self):
-        if self.config.config_updatechannel == constants.UPDATE_STABLE:
+        if self.config is not None and self.config.config_updatechannel == constants.UPDATE_STABLE:
             return self._stable_version_info()
         return self._nightly_version_info()
 
     def get_available_updates(self, request_method):
-        if self.config.config_updatechannel == constants.UPDATE_STABLE:
+        if self.config is not None and self.config.config_updatechannel == constants.UPDATE_STABLE:
             return self._stable_available_updates(request_method)
         return self._nightly_available_updates(request_method)
 
@@ -101,7 +99,8 @@ class Updater(threading.Thread):
                 self.status = 6
                 log.debug('Preparing restart of server')
                 time.sleep(2)
-                self.web_server.stop(True)
+                if self.web_server is not None:
+                    self.web_server.stop(True)
                 self.status = 7
                 time.sleep(2)
                 return True
@@ -120,7 +119,7 @@ class Updater(threading.Thread):
         except (requests.exceptions.RequestException, zipfile.BadZipFile):
             self.status = 11
             log.error('General error')
-        except (IOError, OSError) as ex:
+        except OSError as ex:
             self.status = 12
             log.error('Possible Reason for error: update file could not be saved in temp dir')
             log.error_or_exception(ex)
@@ -152,7 +151,7 @@ class Updater(threading.Thread):
 
     @classmethod
     def file_to_list(cls, filelist):
-        return [x.strip() for x in open(filelist, 'r') if not x.startswith('#EXT')]
+        return [x.strip() for x in open(filelist) if not x.startswith('#EXT')]
 
     @classmethod
     def one_minus_two(cls, one, two):
@@ -197,7 +196,7 @@ class Updater(threading.Thread):
             if not os.path.isdir(root_dir):
                 continue
             if not os.access(root_dir, os.R_OK | os.W_OK):
-                log_function("Missing permissions for {}".format(root_dir))
+                log_function(f"Missing permissions for {root_dir}")
                 access = False
             for file_ in files:
                 curr_file = os.path.join(root_dir, file_)
@@ -205,14 +204,15 @@ class Updater(threading.Thread):
                 if not os.path.isfile(curr_file):  # or curr_file.startswith('.'):
                     continue
                 if not os.access(curr_file, os.R_OK | os.W_OK):
-                    log_function("Missing permissions for {}".format(curr_file))
+                    log_function(f"Missing permissions for {curr_file}")
                     access = False
         return access
 
     @classmethod
     def move_all_files(cls, root_src_dir, root_dst_dir):
+        from typing import Any, cast
         permission = None
-        new_permissions = os.stat(root_dst_dir)
+        new_permissions = cast(Any, os.stat(root_dst_dir))
         log.debug('Performing Update on OS-System: %s', sys.platform)
         change_permissions = not (sys.platform == "win32" or sys.platform == "darwin")
         for src_dir, __, files in os.walk(root_src_dir):
@@ -220,12 +220,12 @@ class Updater(threading.Thread):
             if not os.path.exists(dst_dir):
                 try:
                     os.makedirs(dst_dir)
-                    log.debug('Create directory: {}'.format(dst_dir))
+                    log.debug(f'Create directory: {dst_dir}')
                 except OSError as e:
-                    log.error('Failed creating folder: {} with error {}'.format(dst_dir, e))
+                    log.error(f'Failed creating folder: {dst_dir} with error {e}')
                 if change_permissions:
                     try:
-                        os.chown(dst_dir, new_permissions.st_uid, new_permissions.st_gid)
+                        os.chown(dst_dir, new_permissions.st_uid, new_permissions.st_gid)  # pyright: ignore[reportOptionalMemberAccess]
                     except OSError as e:
                         old_permissions = os.stat(dst_dir)
                         log.error('Failed changing permissions of %s. Before: %s:%s After %s:%s error: %s',
@@ -239,9 +239,9 @@ class Updater(threading.Thread):
                         permission = os.stat(dst_file)
                     try:
                         os.remove(dst_file)
-                        log.debug('Remove file before copy: {}'.format(dst_file))
+                        log.debug(f'Remove file before copy: {dst_file}')
                     except OSError as e:
-                        log.error('Failed removing file: {} with error {}'.format(dst_file, e))
+                        log.error(f'Failed removing file: {dst_file} with error {e}')
                 else:
                     if change_permissions:
                         permission = new_permissions
@@ -249,8 +249,9 @@ class Updater(threading.Thread):
                     shutil.move(src_file, dst_dir)
                     log.debug('Move File %s to %s', src_file, dst_dir)
                 except OSError as ex:
-                    log.error('Failed moving file from {} to {} with error {}'.format(src_file, dst_dir, ex))
+                    log.error(f'Failed moving file from {src_file} to {dst_dir} with error {ex}')
                 if change_permissions:
+                    assert permission is not None
                     try:
                         os.chown(dst_file, permission.st_uid, permission.st_gid)
                     except OSError as e:
@@ -322,13 +323,13 @@ class Updater(threading.Thread):
     @classmethod
     def _nightly_version_info(cls):
         if is_sha1(constants.NIGHTLY_VERSION[0]) and len(constants.NIGHTLY_VERSION[1]) > 0:
-            log.debug("Nightly version: {}, {}".format(constants.NIGHTLY_VERSION[0], constants.NIGHTLY_VERSION[1]))
+            log.debug(f"Nightly version: {constants.NIGHTLY_VERSION[0]}, {constants.NIGHTLY_VERSION[1]}")
             return {'version': constants.NIGHTLY_VERSION[0], 'datetime': constants.NIGHTLY_VERSION[1]}
         return False
 
     @classmethod
     def _stable_version_info(cls):
-        log.debug("Stable version: {}".format(constants.STABLE_VERSION))
+        log.debug(f"Stable version: {constants.STABLE_VERSION}")
         return {'version': constants.STABLE_VERSION }
 
     @classmethod
@@ -347,7 +348,7 @@ class Updater(threading.Thread):
             remaining_parents_cnt = None
             parent_commit = None
 
-        if remaining_parents_cnt is not None:
+        if remaining_parents_cnt is not None and parent_commit is not None:
             while True:
                 if remaining_parents_cnt == 0:
                     break
@@ -408,7 +409,7 @@ class Updater(threading.Thread):
             os.sep + 'gmail.json', os.sep + 'exclude.txt', os.sep + 'cps' + os.sep + 'cache'
         ]
         try:
-            with open(os.path.join(constants.BASE_DIR, "exclude.txt"), "r") as f:
+            with open(os.path.join(constants.BASE_DIR, "exclude.txt")) as f:
                 lines = f.readlines()
             for line in lines:
                 processed_line = line.strip("\n\r ").strip("\"'").lstrip("\\/ ").\
@@ -416,7 +417,7 @@ class Updater(threading.Thread):
                 if os.path.exists(os.path.join(constants.BASE_DIR, processed_line)):
                     excluded_files.append(os.sep + processed_line)
                 else:
-                    log_function("File list for updater: {} not found".format(line))
+                    log_function(f"File list for updater: {line} not found")
         except (PermissionError, FileNotFoundError):
             log_function("Excluded file list for updater not found, or not accessible")
         return excluded_files
@@ -429,7 +430,7 @@ class Updater(threading.Thread):
             parents = []
             if status['message'] != '':
                 return json.dumps(status)
-            if 'object' not in commit or 'url' not in commit['object']:
+            if commit is None or 'object' not in commit or 'url' not in commit['object']:
                 status['message'] = _('Unexpected data while reading update information')
                 return json.dumps(status)
             try:
@@ -487,7 +488,7 @@ class Updater(threading.Thread):
                     'Click on the button below to update to the latest stable version.'),
                 'history': parents
             })
-            self.updateFile = commit[0]['zipball_url']
+            self.updateFile = commit[0]['zipball_url']  # pyright: ignore[reportUninitializedInstanceVariable]
         elif i == -1 and newer is True:
             status.update({
                 'update': True,
@@ -506,8 +507,8 @@ class Updater(threading.Thread):
             status.update({
                 'update': True,
                 'success': True,
-                'message': _(u'A new update is available. Click on the button below to '
-                             u'update to version: %(version)s', version=commit[i]['tag_name']),
+                'message': _('A new update is available. Click on the button below to '
+                             'update to version: %(version)s', version=commit[i]['tag_name']),
                 'history': parents
             })
             self.updateFile = commit[i]['zipball_url']
@@ -517,8 +518,8 @@ class Updater(threading.Thread):
             status.update({
                 'update': True,
                 'success': True,
-                'message': _(u'A new update is available. Click on the button below to '
-                             u'update to version: %(version)s', version=commit[i + 1]['tag_name']),
+                'message': _('A new update is available. Click on the button below to '
+                             'update to version: %(version)s', version=commit[i + 1]['tag_name']),
                 'history': parents
             })
             self.updateFile = commit[i + 1]['zipball_url']
@@ -535,21 +536,21 @@ class Updater(threading.Thread):
                 return json.dumps(status)
             if not commit:
                 status['success'] = True
-                status['message'] = _(u'No release information available')
+                status['message'] = _('No release information available')
                 return json.dumps(status)
             version = status['current_commit_hash']
-            current_version = status['current_commit_hash'].split('.')
+            current_version = status['current_commit_hash'].split('.')  # pyright: ignore[reportAttributeAccessIssue]
 
             # we are already on newest version, no update available
             if 'tag_name' not in commit[0]:
-                status['message'] = _(u'Unexpected data while reading update information')
+                status['message'] = _('Unexpected data while reading update information')
                 log.error("Unexpected data while reading update information")
                 return json.dumps(status)
             if commit[0]['tag_name'] == version:
                 status.update({
                     'update': False,
                     'success': True,
-                    'message': _(u'No update available. You already have the latest version installed')
+                    'message': _('No update available. You already have the latest version installed')
                 })
                 return json.dumps(status)
 
@@ -557,32 +558,34 @@ class Updater(threading.Thread):
             newer = False
             while i >= 0:
                 if 'tag_name' not in commit[i] or 'body' not in commit[i] or 'zipball_url' not in commit[i]:
-                    status['message'] = _(u'Unexpected data while reading update information')
+                    status['message'] = _('Unexpected data while reading update information')
                     return json.dumps(status)
                 major_version_update = int(commit[i]['tag_name'].split('.')[0])
                 minor_version_update = int(commit[i]['tag_name'].split('.')[1])
                 patch_version_update = int(commit[i]['tag_name'].split('.')[2])
 
-                current_version[0] = int(current_version[0])
-                current_version[1] = int(current_version[1])
+                current_version[0] = int(current_version[0])  # pyright: ignore[reportCallIssue,reportArgumentType]
+                current_version[1] = int(current_version[1])  # pyright: ignore[reportCallIssue,reportArgumentType]
                 try:
-                    current_version[2] = int(current_version[2])
+                    current_version[2] = int(current_version[2])  # pyright: ignore[reportCallIssue,reportArgumentType]
                 except ValueError:
-                    current_version[2] = int(current_version[2].replace("b", "").split(' ')[0])-1
+                    current_version[2] = int(current_version[2].replace("b", "").split(' ')[0])-1  # pyright: ignore[reportCallIssue,reportArgumentType]
 
                 # Check if major versions are identical search for newest non-equal commit and update to this one
                 if major_version_update == current_version[0]:
                     if (minor_version_update == current_version[1] and
-                            patch_version_update > current_version[2]) or \
-                            minor_version_update > current_version[1]:
+                            patch_version_update > current_version[2]  # pyright: ignore[reportOperatorIssue]
+                            ) or \
+                            minor_version_update > current_version[1]:  # pyright: ignore[reportOperatorIssue]
+
                         parents.append([commit[i]['tag_name'], commit[i]['body'].replace('\r\n', '<p>')])
                         newer = True
                     i -= 1
                     continue
-                if major_version_update < current_version[0]:
+                if major_version_update < current_version[0]:  # pyright: ignore[reportOperatorIssue]
                     i -= 1
                     continue
-                if major_version_update > current_version[0]:
+                if major_version_update > current_version[0]:  # pyright: ignore[reportOperatorIssue]
                     # found update to last version before major update, unless current version is on last version
                     # before major update
                     if i == (len(commit) - 1):
@@ -598,7 +601,7 @@ class Updater(threading.Thread):
         return json.dumps(status)
 
     def _get_request_path(self):
-        if self.config.config_updatechannel == constants.UPDATE_STABLE:
+        if self.config is not None and self.config.config_updatechannel == constants.UPDATE_STABLE:
             return self.updateFile
         return _REPOSITORY_API_URL + '/zipball/master'
 
@@ -612,7 +615,7 @@ class Updater(threading.Thread):
         commit = None
         version = self.get_current_version_info()
         if version is False:
-            status['current_commit_hash'] = _(u'Unknown')
+            status['current_commit_hash'] = _('Unknown')
         else:
             status['current_commit_hash'] = version['version']
         try:
@@ -623,14 +626,14 @@ class Updater(threading.Thread):
         except requests.exceptions.HTTPError as e:
             if commit:
                 if 'message' in commit:
-                    status['message'] = _(u'HTTP Error') + ': ' + commit['message']
+                    status['message'] = _('HTTP Error') + ': ' + commit['message']
             else:
-                status['message'] = _(u'HTTP Error') + ': ' + str(e)
-        except requests.exceptions.ConnectionError as e:
-            status['message'] = _(u'Connection error')
+                status['message'] = _('HTTP Error') + ': ' + str(e)
+        except requests.exceptions.ConnectionError:
+            status['message'] = _('Connection error')
         except requests.exceptions.Timeout:
-            status['message'] = _(u'Timeout while establishing connection')
+            status['message'] = _('Timeout while establishing connection')
         except (requests.exceptions.RequestException, ValueError):
-            status['message'] = _(u'General error')
+            status['message'] = _('General error')
         log.debug('Updater status: {}'.format(status['message'] or "OK"))
         return status, commit

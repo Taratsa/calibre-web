@@ -31,9 +31,9 @@ assert(hasattr(HTTPSConnectionPool, 'scheme'))
 
 class ValidatingHTTPConnectionPool(HTTPConnectionPool):
     scheme = 'http'
-    ConnectionCls = ValidatingHTTPConnection
+    ConnectionCls = ValidatingHTTPConnection  # pyright: ignore[reportAssignmentType]
 
 
 class ValidatingHTTPSConnectionPool(HTTPSConnectionPool):
     scheme = 'https'
-    ConnectionCls = ValidatingHTTPSConnection
+    ConnectionCls = ValidatingHTTPSConnection  # pyright: ignore[reportAssignmentType]

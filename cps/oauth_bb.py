@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
@@ -23,23 +22,38 @@
 import json
 from functools import wraps
 
-from flask import session, request, make_response, abort
-from flask import Blueprint, flash, redirect, url_for
+from flask import Blueprint, abort, flash, make_response, redirect, request, session, url_for
 from flask_babel import gettext as _
-from flask_dance.consumer import oauth_authorized, oauth_error
-from flask_dance.contrib.github import make_github_blueprint, github
-from flask_dance.contrib.google import make_google_blueprint, google
-from oauthlib.oauth2 import TokenExpiredError, InvalidGrantError
-from .cw_login import login_user, current_user
-from sqlalchemy.orm.exc import NoResultFound
+from oauthlib.oauth2 import InvalidGrantError, TokenExpiredError  # pyright: ignore[reportMissingModuleSource]
+from sqlalchemy.exc import NoResultFound
+
+from .cw_login import current_user, login_user
 from .usermanagement import user_login_required
 
-from . import constants, logger, config, app, ub
+try:
+    from flask_dance.consumer import oauth_authorized, oauth_error  # pyright: ignore[reportMissingImports]
+except ImportError:
+    oauth_authorized = None
+    oauth_error = None
 
 try:
+    from flask_dance.contrib.github import github, make_github_blueprint  # pyright: ignore[reportMissingImports]
+except ImportError:
+    make_github_blueprint = None
+    github = None
+
+try:
+    from flask_dance.contrib.google import google, make_google_blueprint  # pyright: ignore[reportMissingImports]
+except ImportError:
+    make_google_blueprint = None
+    google = None
+
+import contextlib
+
+from . import app, config, constants, logger, ub
+
+with contextlib.suppress(NameError):
     from .oauth import OAuthBackend, backend_resultcode
-except NameError:
-    pass
 
 
 oauth_check = {}
@@ -69,7 +83,7 @@ def register_oauth_blueprint(cid, show_name):
 
 def register_user_with_oauth(user=None):
     all_oauth = {}
-    for oauth_key in oauth_check.keys():
+    for oauth_key in oauth_check:
         if str(oauth_key) + '_oauth_user_id' in session and session[str(oauth_key) + '_oauth_user_id'] != '':
             all_oauth[oauth_key] = oauth_check[oauth_key]
     if len(all_oauth.keys()) == 0:
@@ -77,7 +91,7 @@ def register_user_with_oauth(user=None):
     if user is None:
         flash(_("Register with %(provider)s", provider=", ".join(list(all_oauth.values()))), category="success")
     else:
-        for oauth_key in all_oauth.keys():
+        for oauth_key in all_oauth:
             # Find this OAuth token in the database, or create it
             query = ub.session.query(ub.OAuth).filter_by(
                 provider=oauth_key,
@@ -89,11 +103,11 @@ def register_user_with_oauth(user=None):
             except NoResultFound:
                 # no found, return error
                 return
-            ub.session_commit("User {} with OAuth for provider {} registered".format(user.name, oauth_key))
+            ub.session_commit(f"User {user.name} with OAuth for provider {oauth_key} registered")
 
 
 def logout_oauth_user():
-    for oauth_key in oauth_check.keys():
+    for oauth_key in oauth_check:
         if str(oauth_key) + '_oauth_user_id' in session:
             session.pop(str(oauth_key) + '_oauth_user_id')
 
@@ -122,7 +136,7 @@ def oauth_update_token(provider_id, token, provider_user_id):
 
     # Disable Flask-Dance's default behavior for saving the OAuth token
     # Value differrs depending on flask-dance version
-    return backend_resultcode
+    return backend_resultcode  # pyright: ignore[reportPossiblyUnboundVariable]
 
 
 def bind_oauth_or_register(provider_id, provider_user_id, redirect_url, provider_name):
@@ -133,7 +147,7 @@ def bind_oauth_or_register(provider_id, provider_user_id, redirect_url, provider
     try:
         oauth_entry = query.first()
         # already bind with user, just login
-        if oauth_entry.user:
+        if oauth_entry is not None and oauth_entry.user:
             # If a user is already logged in and it's a different account, reject the link
             # to prevent account takeover via shared OAuth identities
             if current_user and current_user.is_authenticated and oauth_entry.user_id != current_user.id:
@@ -147,7 +161,7 @@ def bind_oauth_or_register(provider_id, provider_user_id, redirect_url, provider
             flash(_("Success! You are now logged in as: %(nickname)s", nickname=oauth_entry.user.name),
                   category="success")
             return redirect(url_for('web.index'))
-        else:
+        elif oauth_entry is not None:
             # bind to current user
             if current_user and current_user.is_authenticated:
                 oauth_entry.user = current_user
@@ -155,7 +169,7 @@ def bind_oauth_or_register(provider_id, provider_user_id, redirect_url, provider
                     ub.session.add(oauth_entry)
                     ub.session.commit()
                     flash(_("Link to %(oauth)s Succeeded", oauth=provider_name), category="success")
-                    log.info("Link to {} Succeeded".format(provider_name))
+                    log.info(f"Link to {provider_name} Succeeded")
                     return redirect(url_for('web.profile'))
                 except Exception as ex:
                     log.error_or_exception(ex)
@@ -204,7 +218,7 @@ def unlink_oauth(provider):
                 ub.session.commit()
                 logout_oauth_user()
                 flash(_("Unlink to %(oauth)s Succeeded", oauth=oauth_check[provider]), category="success")
-                log.info("Unlink to {} Succeeded".format(oauth_check[provider]))
+                log.info(f"Unlink to {oauth_check[provider]} Succeeded")
             except Exception as ex:
                 log.error_or_exception(ex)
                 ub.session.rollback()
@@ -219,10 +233,10 @@ def generate_oauth_blueprints():
     if not ub.session.query(ub.OAuthProvider).count():
         for provider in ("github", "google"):
             oauthProvider = ub.OAuthProvider()
-            oauthProvider.provider_name = provider
-            oauthProvider.active = False
+            oauthProvider.provider_name = provider  # pyright: ignore[reportAttributeAccessIssue]
+            oauthProvider.active = False  # pyright: ignore[reportAttributeAccessIssue]
             ub.session.add(oauthProvider)
-            ub.session_commit("{} Blueprint Created".format(provider))
+            ub.session_commit(f"{provider} Blueprint Created")
 
     oauth_ids = ub.session.query(ub.OAuthProvider).all()
     ele1 = dict(provider_name='github',
@@ -244,8 +258,10 @@ def generate_oauth_blueprints():
 
     for element in oauthblueprints:
         if element['provider_name'] == 'github':
+            assert make_github_blueprint is not None
             blueprint_func = make_github_blueprint
         else:
+            assert make_google_blueprint is not None
             blueprint_func = make_google_blueprint
         blueprint = blueprint_func(
             client_id=element['oauth_client_id'],
@@ -254,7 +270,7 @@ def generate_oauth_blueprints():
             scope=element['scope']
         )
         element['blueprint'] = blueprint
-        element['blueprint'].backend = OAuthBackend(ub.OAuth, ub.session, str(element['id']),
+        element['blueprint'].backend = OAuthBackend(ub.OAuth, ub.session, str(element['id']),  # pyright: ignore[reportPossiblyUnboundVariable]
                                                     user=current_user, user_required=True)
         app.register_blueprint(blueprint, url_prefix="/login")
         if element['active']:
@@ -263,6 +279,11 @@ def generate_oauth_blueprints():
 
 
 if ub.oauth_support:
+    assert oauth_authorized is not None
+    assert oauth_error is not None
+    assert github is not None
+    assert google is not None
+
     oauthblueprints = generate_oauth_blueprints()
 
     @oauth_authorized.connect_via(oauthblueprints[0]['blueprint'])
@@ -306,26 +327,16 @@ if ub.oauth_support:
     @oauth_error.connect_via(oauthblueprints[0]['blueprint'])
     def github_error(blueprint, error, error_description=None, error_uri=None):
         msg = (
-            "OAuth error from {name}! "
-            "error={error} description={description} uri={uri}"
-        ).format(
-            name=blueprint.name,
-            error=error,
-            description=error_description,
-            uri=error_uri,
+            f"OAuth error from {blueprint.name}! "
+            f"error={error} description={error_description} uri={error_uri}"
         )  # ToDo: Translate
         flash(msg, category="error")
 
     @oauth_error.connect_via(oauthblueprints[1]['blueprint'])
     def google_error(blueprint, error, error_description=None, error_uri=None):
         msg = (
-            "OAuth error from {name}! "
-            "error={error} description={description} uri={uri}"
-        ).format(
-            name=blueprint.name,
-            error=error,
-            description=error_description,
-            uri=error_uri,
+            f"OAuth error from {blueprint.name}! "
+            f"error={error} description={error_description} uri={error_uri}"
         )  # ToDo: Translate
         flash(msg, category="error")
 
@@ -333,7 +344,7 @@ if ub.oauth_support:
 @oauth.route('/link/github')
 @oauth_required
 def github_login():
-    if not github.authorized:
+    if github is None or not github.authorized:
         return redirect(url_for('github.login'))
     try:
         account_info = github.get('/user')
@@ -357,7 +368,7 @@ def github_login_unlink():
 @oauth.route('/link/google')
 @oauth_required
 def google_login():
-    if not google.authorized:
+    if google is None or not google.authorized:
         return redirect(url_for("google.login"))
     try:
         resp = google.get("/oauth2/v2/userinfo")

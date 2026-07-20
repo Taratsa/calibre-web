@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 # Flask License
 #
@@ -27,9 +26,9 @@
 
 # https://web.archive.org/web/20120517003641/http://flask.pocoo.org/snippets/62/
 
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urljoin, urlparse
 
-from flask import request, url_for, current_app
+from flask import current_app, request, url_for
 
 
 def is_safe_url(target):
@@ -47,6 +46,6 @@ def remove_prefix(text, prefix):
 def get_redirect_location(next, endpoint, **values):
     target = next or url_for(endpoint, **values)
     adapter = current_app.url_map.bind(urlparse(request.host_url).netloc)
-    if not len(adapter.allowed_methods(remove_prefix(target, request.environ.get('HTTP_X_SCRIPT_NAME',"")))):
+    if not len(list(adapter.allowed_methods(remove_prefix(target, request.environ.get('HTTP_X_SCRIPT_NAME',""))))):
         target = url_for(endpoint, **values)
     return target

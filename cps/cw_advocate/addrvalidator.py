@@ -15,8 +15,8 @@
 #
 # Source: https://github.com/JordanMilne/Advocate
 
-import functools
 import fnmatch
+import functools
 import ipaddress
 import re
 
@@ -25,9 +25,9 @@ try:
     HAVE_NETIFACES = True
 except ImportError:
     netifaces = None
-    HAVE_NETIFACES = False
+    HAVE_NETIFACES = False  # pyright: ignore[reportConstantRedefinition]
 
-from .exceptions import NameserverException, ConfigException
+from .exceptions import ConfigException, NameserverException
 
 
 def canonicalize_hostname(hostname):
@@ -44,13 +44,15 @@ def determine_local_addresses():
     if not HAVE_NETIFACES:
         raise ConfigException("Tried to determine local addresses, "
                               "but netifaces module was not importable")
+    from typing import Any, cast
+    netifaces_obj = cast(Any, netifaces)
     ips = []
-    for interface in netifaces.interfaces():
-        if_families = netifaces.ifaddresses(interface)
-        for family_kind in {netifaces.AF_INET, netifaces.AF_INET6}:
+    for interface in netifaces_obj.interfaces():
+        if_families = netifaces_obj.ifaddresses(interface)
+        for family_kind in {netifaces_obj.AF_INET, netifaces_obj.AF_INET6}:
             addrs = if_families.get(family_kind, [])
             for addr in (x.get("addr", "") for x in addrs):
-                if family_kind == netifaces.AF_INET6:
+                if family_kind == netifaces_obj.AF_INET6:
                     # We can't do anything sensible with the scope here
                     addr = addr.split("%")[0]
                 ips.append(ipaddress.ip_network(addr))
@@ -128,20 +130,21 @@ class AddrValidator:
         if any(addr_ip in net for net in self.ip_blacklist):
             return False
 
+        _local_addresses = _local_addresses or []
         if any(addr_ip in net for net in _local_addresses):
             return False
 
-        if addr_ip.version == 4:
-            if not addr_ip.is_private:
-                # IPs for carrier-grade NAT. Seems weird that it doesn't set
-                # `is_private`, but we need to check `not is_global`
-                if not ipaddress.ip_network(addr_ip).is_global:
-                    return False
+        if addr_ip.version == 4 and not addr_ip.is_private:
+            # IPs for carrier-grade NAT. Seems weird that it doesn't set
+            # `is_private`, but we need to check `not is_global`
+            if not ipaddress.ip_network(addr_ip).is_global:
+                return False
         elif addr_ip.version == 6:
             # You'd better have a good reason for enabling IPv6
             # because Advocate's techniques don't work well without NAT.
             if not self.allow_ipv6:
                 return False
+            assert isinstance(addr_ip, ipaddress.IPv6Address)
 
             # v6 addresses can also map to IPv4 addresses! Tricky!
             v4_nested = []
@@ -174,7 +177,7 @@ class AddrValidator:
             if addr_ip.is_site_local:
                 return False
         else:
-            raise ValueError("Unsupported IP version(?): %r" % addr_ip)
+            raise ValueError(f"Unsupported IP version(?): {addr_ip!r}")
 
         # 169.254.XXX.XXX, AWS uses these for autoconfiguration
         if addr_ip.is_link_local:
@@ -193,12 +196,9 @@ class AddrValidator:
         # There's no reason to connect directly to a 6to4 relay
         if addr_ip in self._6TO4_RELAY_NET:
             return False
-        # 0.0.0.0
-        if addr_ip.is_unspecified:
-            return False
 
         # It doesn't look bad, so... it's must be ok!
-        return True
+        return not addr_ip.is_unspecified
 
     def _hostname_matches_pattern(self, hostname, pattern):
         # If they specified a string, just assume they only want basic globbing.
@@ -233,16 +233,13 @@ class AddrValidator:
         #         global_validator.ip_blacklist.add(ip_address(addrinfo[4][0]))
         #
         # but that's not always a good idea if they're behind a third-party lb.
-        for pattern in self.hostname_blacklist:
-            if self._hostname_matches_pattern(hostname, pattern):
-                return False
-        return True
+        return all(not self._hostname_matches_pattern(hostname, pattern) for pattern in self.hostname_blacklist)
 
     @add_local_address_arg
     def is_addrinfo_allowed(self, addrinfo, _local_addresses=None):
         assert(len(addrinfo) == 5)
         # XXX: Do we care about any of the other elements? Guessing not.
-        family, socktype, proto, canonname, sockaddr = addrinfo
+        _family, _socktype, _proto, canonname, sockaddr = addrinfo
 
         # The 4th elem inaddrinfo may either be a touple of two or four items,
         # depending on whether we're dealing with IPv4 or v6
@@ -254,9 +251,9 @@ class AddrValidator:
             # XXX: what *are* `flow_info` and `scope_id`? Anything useful?
             # Seems like we can figure out all we need about the scope from
             # the `is_<x>` properties.
-            ip, port, flow_info, scope_id = sockaddr
+            ip, port, _flow_info, _scope_id = sockaddr
         else:
-            raise ValueError("Unexpected addrinfo format %r" % sockaddr)
+            raise ValueError(f"Unexpected addrinfo format {sockaddr!r}")
 
         # Probably won't help protect against SSRF, but might prevent our being
         # used to attack others' non-HTTP services. See

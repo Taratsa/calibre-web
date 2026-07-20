@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
@@ -16,11 +15,12 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from . import logger
-from .constants import CACHE_DIRECTORY
 from os import makedirs, remove
 from os.path import isdir, isfile, join
 from shutil import rmtree
+
+from . import logger
+from .constants import CACHE_DIRECTORY
 
 
 class FileSystem:
@@ -29,7 +29,7 @@ class FileSystem:
 
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super(FileSystem, cls).__new__(cls)
+            cls._instance = super().__new__(cls)
             cls.log = logger.create()
         return cls._instance
 
@@ -41,7 +41,7 @@ class FileSystem:
                 self.log.info(f'Failed to create path {self._cache_dir} (Permission denied).')
                 raise
 
-        path = join(self._cache_dir, cache_type)
+        path = join(self._cache_dir, cache_type) if cache_type else self._cache_dir
         if cache_type and not isdir(path):
             try:
                 makedirs(path)
@@ -67,7 +67,7 @@ class FileSystem:
 
     def get_cache_file_exists(self, filename, cache_type=None):
         path = self.get_cache_file_path(filename, cache_type)
-        return isfile(path)
+        return bool(path) and isfile(path)
 
     def delete_cache_dir(self, cache_type=None):
         if not cache_type and isdir(self._cache_dir):
@@ -77,17 +77,18 @@ class FileSystem:
                 self.log.info(f'Failed to delete path {self._cache_dir} (Permission denied).')
                 raise
 
-        path = join(self._cache_dir, cache_type)
-        if cache_type and isdir(path):
-            try:
-                rmtree(path)
-            except OSError:
-                self.log.info(f'Failed to delete path {path} (Permission denied).')
-                raise
+        if cache_type:
+            path = join(self._cache_dir, cache_type)
+            if isdir(path):
+                try:
+                    rmtree(path)
+                except OSError:
+                    self.log.info(f'Failed to delete path {path} (Permission denied).')
+                    raise
 
     def delete_cache_file(self, filename, cache_type=None):
         path = self.get_cache_file_path(filename, cache_type)
-        if isfile(path):
+        if path and isfile(path):
             try:
                 remove(path)
             except OSError:

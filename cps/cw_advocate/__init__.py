@@ -16,7 +16,9 @@
 # Source: https://github.com/JordanMilne/Advocate
 
 
-from .adapters import ValidatingHTTPAdapter
-from .api import *
-from .addrvalidator import AddrValidator
-from .exceptions import UnacceptableAddressException
+# pyright: reportImportCycles=false
+
+from .adapters import ValidatingHTTPAdapter  # noqa: F401
+from .addrvalidator import AddrValidator  # noqa: F401
+from .api import *  # noqa: F403
+from .exceptions import UnacceptableAddressException  # noqa: F401

@@ -15,7 +15,6 @@ Astro frontend continue to work unchanged.
 from __future__ import annotations
 
 import logging
-import os
 import threading
 
 import requests
@@ -42,7 +41,7 @@ def trigger_rebuild_async(reason: str = "calibre change") -> None:
                 headers={"X-Frontend-Token": token, "X-Trigger-Reason": reason},
                 timeout=DEFAULT_TIMEOUT,
             )
-        except Exception as exc:  # noqa: BLE001 - must never break the caller
+        except Exception as exc:
             log.warning("Frontend rebuild trigger failed: %s", exc)
 
     threading.Thread(target=_run, daemon=True).start()

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
 #
@@ -18,18 +17,17 @@ import datetime
 import json
 import re
 from multiprocessing.pool import ThreadPool
-from typing import List, Optional, Tuple, Union
 from urllib.parse import quote
 
 import requests
-from dateutil import parser
-from html2text import HTML2Text
+from dateutil import parser  # pyright: ignore[reportMissingModuleSource]
+from html2text import HTML2Text  # pyright: ignore[reportMissingImports]
 from lxml.html import HtmlElement, fromstring, tostring
-from markdown2 import Markdown
+from markdown2 import Markdown  # pyright: ignore[reportMissingImports]
 
 from cps import logger
 from cps.isoLanguages import get_language_name
-from cps.services.Metadata import MetaRecord, MetaSourceInfo, Metadata
+from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
 
 log = logger.create()
 
@@ -38,17 +36,17 @@ SYMBOLS_TO_TRANSLATE = (
     "oOuUoOoOuUeEaAuUiIaAcCeElLnNoOsSzZzZ",
 )
 SYMBOL_TRANSLATION_MAP = dict(
-    [(ord(a), ord(b)) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE)]
+    [(ord(a), ord(b)) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE, strict=False)]
 )
 
 
-def get_int_or_float(value: str) -> Union[int, float]:
+def get_int_or_float(value: str) -> int | float:
     number_as_float = float(value)
     number_as_int = int(number_as_float)
     return number_as_int if number_as_float == number_as_int else number_as_float
 
 
-def strip_accents(s: Optional[str]) -> Optional[str]:
+def strip_accents(s: str | None) -> str | None:
     return s.translate(SYMBOL_TRANSLATION_MAP) if s is not None else s
 
 
@@ -115,7 +113,7 @@ class LubimyCzytac(Metadata):
 
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
+    ) -> list[MetaRecord] | None:
         if self.active:
             try:
                 result = requests.get(self._prepare_query(title=query))
@@ -170,7 +168,7 @@ class LubimyCzytacParser:
         self.root = root
         self.metadata = metadata
 
-    def parse_search_results(self) -> List[MetaRecord]:
+    def parse_search_results(self) -> list[MetaRecord]:
         matches = []
         results = self.root.xpath(LubimyCzytac.BOOK_SEARCH_RESULT_XPATH)
         for result in results:
@@ -195,10 +193,10 @@ class LubimyCzytacParser:
                 continue
             matches.append(
                 MetaRecord(
-                    id=book_url.replace(f"/ksiazka/", "").split("/")[0],
-                    title=title,
-                    authors=[strip_accents(author) for author in authors],
-                    url=LubimyCzytac.BASE_URL + book_url,
+                    id=book_url.replace("/ksiazka/", "").split("/")[0],  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
+                    title=title,  # pyright: ignore[reportArgumentType,reportOptionalMemberAccess]
+                    authors=[strip_accents(author) for author in authors],  # pyright: ignore[reportArgumentType,reportOptionalIterable]
+                    url=LubimyCzytac.BASE_URL + book_url,  # pyright: ignore[reportOperatorIssue]
                     source=MetaSourceInfo(
                         id=self.metadata.__id__,
                         description=self.metadata.__name__,
@@ -216,18 +214,18 @@ class LubimyCzytacParser:
             response.raise_for_status()
         except Exception as e:
             log.warning(e)
-            return None
+            return None  # pyright: ignore[reportReturnType]
         self.root = fromstring(response.text)
-        match.cover = self._parse_cover(generic_cover=generic_cover)
+        match.cover = self._parse_cover(generic_cover=generic_cover)  # pyright: ignore[reportAttributeAccessIssue]
         match.description = self._parse_description()
         match.languages = self._parse_languages(locale=locale)
         match.publisher = self._parse_publisher()
         match.publishedDate = self._parse_from_summary(attribute_name="datePublished")
-        match.rating = self._parse_rating()
+        match.rating = self._parse_rating()  # pyright: ignore[reportAttributeAccessIssue]
         match.series, match.series_index = self._parse_series()
         match.tags = self._parse_tags()
         match.identifiers = {
-            "isbn": self._parse_isbn(),
+            "isbn": self._parse_isbn(),  # pyright: ignore[reportAttributeAccessIssue]
             "lubimyczytac": match.id,
         }
         return match
@@ -235,10 +233,10 @@ class LubimyCzytacParser:
     def _parse_xpath_node(
         self,
         xpath: str,
-        root: HtmlElement = None,
+        root: HtmlElement = None,  # pyright: ignore[reportArgumentType]
         take_first: bool = True,
         strip_element: bool = True,
-    ) -> Optional[Union[str, List[str]]]:
+    ) -> str | list[str] | None:
         root = root if root is not None else self.root
         node = root.xpath(xpath)
         if not node:
@@ -249,16 +247,16 @@ class LubimyCzytacParser:
             else [x.strip() for x in node]
         )
 
-    def _parse_cover(self, generic_cover) -> Optional[str]:
-        return (
+    def _parse_cover(self, generic_cover) -> str | None:
+        return (  # pyright: ignore[reportReturnType]
             self._parse_xpath_node(xpath=LubimyCzytac.COVER, take_first=True)
             or generic_cover
         )
 
-    def _parse_publisher(self) -> Optional[str]:
-        return self._parse_xpath_node(xpath=LubimyCzytac.PUBLISHER, take_first=True)
+    def _parse_publisher(self) -> str | None:
+        return self._parse_xpath_node(xpath=LubimyCzytac.PUBLISHER, take_first=True)  # pyright: ignore[reportReturnType]
 
-    def _parse_languages(self, locale: str) -> List[str]:
+    def _parse_languages(self, locale: str) -> list[str]:
         languages = list()
         lang = self._parse_xpath_node(xpath=LubimyCzytac.LANGUAGES, take_first=True)
         if lang:
@@ -268,53 +266,52 @@ class LubimyCzytacParser:
                 languages.append("eng")
         return [get_language_name(locale, language) for language in languages]
 
-    def _parse_series(self) -> Tuple[Optional[str], Optional[Union[float, int]]]:
+    def _parse_series(self) -> tuple[str | None, float | int | None]:
         series_index = 0
         series = self._parse_xpath_node(xpath=LubimyCzytac.SERIES, take_first=True)
-        if series:
-            if "tom " in series:
-                series_name, series_info = series.split(" (tom ", 1)
-                series_info = series_info.replace(" ", "").replace(")", "")
-                # Check if book is not a bundle, i.e. chapter 1-3
-                if "-" in series_info:
-                    series_info = series_info.split("-", 1)[0]
-                if series_info.replace(".", "").isdigit() is True:
-                    series_index = get_int_or_float(series_info)
-                return series_name, series_index
+        if series and "tom " in series:
+            series_name, series_info = series.split(" (tom ", 1)  # pyright: ignore[reportAttributeAccessIssue]
+            series_info = series_info.replace(" ", "").replace(")", "")
+            # Check if book is not a bundle, i.e. chapter 1-3
+            if "-" in series_info:
+                series_info = series_info.split("-", 1)[0]
+            if series_info.replace(".", "").isdigit() is True:
+                series_index = get_int_or_float(series_info)
+            return series_name, series_index
         return None, None
 
-    def _parse_tags(self) -> List[str]:
+    def _parse_tags(self) -> list[str]:
         tags = self._parse_xpath_node(xpath=LubimyCzytac.TAGS, take_first=False)
         if tags:
-            return [
+            return [  # pyright: ignore[reportReturnType]
                 strip_accents(w.replace(", itd.", " itd."))
                 for w in tags
                 if isinstance(w, str)
             ]
-        return None
+        return None  # pyright: ignore[reportReturnType]
 
-    def _parse_from_summary(self, attribute_name: str) -> Optional[str]:
+    def _parse_from_summary(self, attribute_name: str) -> str | None:
         value = None
         summary_text = self._parse_xpath_node(xpath=LubimyCzytac.SUMMARY)
         if summary_text:
-            data = json.loads(summary_text)
+            data = json.loads(summary_text)  # pyright: ignore[reportArgumentType]
             value = data.get(attribute_name)
         return value.strip() if value is not None else value
 
-    def _parse_rating(self) -> Optional[str]:
+    def _parse_rating(self) -> str | None:
         rating = self._parse_xpath_node(xpath=LubimyCzytac.RATING)
-        return round(float(rating.replace(",", ".")) / 2) if rating else rating
+        return round(float(rating.replace(",", ".")) / 2) if rating else rating  # pyright: ignore[reportReturnType,reportAttributeAccessIssue]
 
-    def _parse_date(self, xpath="first_publish") -> Optional[datetime.datetime]:
+    def _parse_date(self, xpath="first_publish") -> datetime.datetime | None:
         options = {
             "first_publish": LubimyCzytac.FIRST_PUBLISH_DATE,
             "first_publish_pl": LubimyCzytac.FIRST_PUBLISH_DATE_PL,
         }
-        date = self._parse_xpath_node(xpath=options.get(xpath))
-        return parser.parse(date) if date else None
+        date = self._parse_xpath_node(xpath=options.get(xpath))  # pyright: ignore[reportArgumentType]
+        return parser.parse(date) if date else None  # pyright: ignore[reportArgumentType]
 
-    def _parse_isbn(self) -> Optional[str]:
-        return self._parse_xpath_node(xpath=LubimyCzytac.ISBN)
+    def _parse_isbn(self) -> str | None:
+        return self._parse_xpath_node(xpath=LubimyCzytac.ISBN)  # pyright: ignore[reportReturnType]
 
     def _parse_description(self) -> str:
         description = ""
@@ -325,13 +322,13 @@ class LubimyCzytacParser:
             for source in self.root.xpath('//p[@class="source"]'):
                 source.getparent().remove(source)
             description = tostring(description_node, method="html")
-            description = sanitize_comments_html(description)
+            description = sanitize_comments_html(description)  # pyright: ignore[reportArgumentType]
 
         else:
             description_node = self._parse_xpath_node(xpath=LubimyCzytac.META_TITLE)
             if description_node is not None:
                 description = description_node
-                description = sanitize_comments_html(description)
+                description = sanitize_comments_html(description)  # pyright: ignore[reportArgumentType]
         description = self._add_extra_info_to_description(description=description)
         return description
 

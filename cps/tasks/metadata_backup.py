@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 monkey
@@ -17,11 +16,12 @@
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from lxml import etree
 
-from cps import config, db, gdriveutils, logger, app
-from cps.services.worker import CalibreTask
 from flask_babel import lazy_gettext as N_
+from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
+
+from cps import app, config, db, gdriveutils, logger
+from cps.services.worker import CalibreTask
 
 from ..epub_helper import create_new_metadata_backup
 
@@ -32,7 +32,7 @@ class TaskBackupMetadata(CalibreTask):
                  translated_title="Cover",
                  set_dirty=False,
                  task_message=N_('Backing up Metadata')):
-        super(TaskBackupMetadata, self).__init__(task_message)
+        super().__init__(task_message)
         self.log = logger.create()
         # self.calibre_db = db.CalibreDB(expire_on_commit=False, init=True)
         self.export_language = export_language
@@ -70,26 +70,22 @@ class TaskBackupMetadata(CalibreTask):
                                   .filter(db.CustomColumns.datatype.notin_(db.cc_exceptions))
                                   .order_by(db.CustomColumns.label).all())
                 count = len(metadata_backup)
-                i = 0
-                for backup in metadata_backup:
+                for i, backup in enumerate(metadata_backup):
                     book = calibre_dbb.session.query(db.Books).filter(db.Books.id == backup.book).one_or_none()
                     calibre_dbb.session.query(db.Metadata_Dirtied).filter(
-                        db.Metadata_Dirtied.book == backup.book).delete()
+                        db.Metadata_Dirtied.book == backup.book).delete()  # pyright: ignore[reportGeneralTypeIssues]
                     calibre_dbb.session.commit()
                     if book:
                         self.open_metadata(book, custom_columns)
                     else:
-                        self.log.error("Book {} not found in database".format(backup.book))
-                    i += 1
-                    self.progress = (1.0 / count) * i
+                        self.log.error(f"Book {backup.book} not found in database")
+                    self.progress = (1.0 / count) * (i + 1)
                 self._handleSuccess()
                 # self.calibre_db.session.close()
 
             except Exception as ex:
-                b = "NaN" if not hasattr(book, 'id') else book.id
-                self.log.debug('Error creating metadata backup for book {}: '.format(b) + str(ex))
                 self._handleError('Error creating metadata backup: ' + str(ex))
-                calibre_dbb.session.rollback()
+                calibre_dbb.session.rollback()  # pyright: ignore[reportPossiblyUnboundVariable]
                 # self.calibre_db.session.close()
 
     def open_metadata(self, book, custom_columns):
@@ -114,19 +110,19 @@ class TaskBackupMetadata(CalibreTask):
                 with open(book_metadata_filepath, 'wb') as f:
                     doc.write(f, xml_declaration=True, encoding='utf-8', pretty_print=True)
             except Exception as ex:
-                raise Exception('Writing Metadata failed with error: {} '.format(ex))
+                raise Exception(f'Writing Metadata failed with error: {ex} ') from ex
 
     @property
-    def name(self):
+    def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return "Metadata backup"
 
     # needed for logging
-    def __str__(self):
+    def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         if self.set_dirty:
             return "Queue all books for metadata backup"
         else:
             return "Perform metadata backup"
 
     @property
-    def is_cancellable(self):
+    def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return True

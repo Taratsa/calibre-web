@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018 idalin, OzzieIsaacs
@@ -16,59 +15,60 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
 import json
+import os
 import shutil
-import chardet
-import ssl
 import sqlite3
-import mimetypes
+import ssl
 
-from werkzeug.datastructures import Headers
+import chardet
 from flask import Response, stream_with_context
-from sqlalchemy import create_engine
-from sqlalchemy import Column, UniqueConstraint
-from sqlalchemy import String, Integer
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy import Column, Integer, String, UniqueConstraint, create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+from werkzeug.datastructures import Headers
+
 try:
     # Compatibility with sqlalchemy 2.0
     from sqlalchemy.orm import declarative_base
 except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.exc import OperationalError, InvalidRequestError, IntegrityError
+from sqlalchemy.exc import IntegrityError, InvalidRequestError, OperationalError
 from sqlalchemy.orm.exc import StaleDataError
 
 try:
-    from httplib2 import __version__ as httplib2_version
+    from httplib2 import __version__ as httplib2_version  # pyright: ignore[reportMissingModuleSource]
 except ImportError:
-    httplib2_version = "not installed"
+    httplib2_version = "not installed"  # pyright: ignore[reportGeneralTypeIssues]
 
 try:
-    from apiclient import errors
-    from httplib2 import ServerNotFoundError
+    from apiclient import errors  # pyright: ignore[reportMissingImports]
+    from httplib2 import ServerNotFoundError  # pyright: ignore[reportMissingModuleSource]
     importError = None
     gdrive_support = True
 except ImportError as e:
     importError = e
     gdrive_support = False
 try:
-    from pydrive2.auth import GoogleAuth
-    from pydrive2.drive import GoogleDrive
-    from pydrive2.auth import RefreshError
-    from pydrive2.files import ApiRequestError
-except ImportError as err:
+    from pydrive2.auth import (  # pyright: ignore[reportMissingImports]
+        GoogleAuth,  # pyright: ignore[reportMissingImports]
+        RefreshError,  # pyright: ignore[reportMissingImports]
+    )
+    from pydrive2.drive import GoogleDrive  # pyright: ignore[reportMissingImports]
+    from pydrive2.files import ApiRequestError  # pyright: ignore[reportMissingImports]
+except ImportError:
     try:
-        from pydrive.auth import GoogleAuth
-        from pydrive.drive import GoogleDrive
-        from pydrive.auth import RefreshError
-        from pydrive.files import ApiRequestError
+        from pydrive.auth import (  # pyright: ignore[reportMissingImports]
+            GoogleAuth,  # pyright: ignore[reportMissingImports]
+            RefreshError,  # pyright: ignore[reportMissingImports]
+        )
+        from pydrive.drive import GoogleDrive  # pyright: ignore[reportMissingImports]
+        from pydrive.files import ApiRequestError  # pyright: ignore[reportMissingImports]
     except ImportError as err:
         importError = err
         gdrive_support = False
 
-from . import logger, cli_param, config, db
+from . import cli_param, config, db, logger
 from .constants import CONFIG_DIR as _CONFIG_DIR
-
 
 SETTINGS_YAML  = os.path.join(_CONFIG_DIR, 'settings.yaml')
 CREDENTIALS    = os.path.join(_CONFIG_DIR, 'gdrive_credentials')
@@ -80,7 +80,7 @@ if gdrive_support:
     if not logger.is_debug_enabled():
         logger.get('googleapiclient.discovery').setLevel(logger.logging.ERROR)
 else:
-    log.debug("Cannot import pydrive, httplib2, using gdrive will not work: {}".format(importError))
+    log.debug(f"Cannot import pydrive, httplib2, using gdrive will not work: {importError}")
 
 
 class Singleton:
@@ -112,7 +112,7 @@ class Singleton:
         try:
             return self._instance
         except AttributeError:
-            self._instance = self._decorated()
+            self._instance = self._decorated()  # pyright: ignore[reportUninitializedInstanceVariable]
             return self._instance
         except (ImportError, NameError) as e:
             log.debug(e)
@@ -129,7 +129,7 @@ class Singleton:
 class Gauth:
     def __init__(self):
         try:
-            self.auth = GoogleAuth(settings_file=SETTINGS_YAML)
+            self.auth = GoogleAuth(settings_file=SETTINGS_YAML)  # pyright: ignore[reportPossiblyUnboundVariable]
         except NameError as error:
             log.error(error)
             self.auth = None
@@ -138,14 +138,14 @@ class Gauth:
 @Singleton
 class Gdrive:
     def __init__(self):
-        self.drive = getDrive(gauth=Gauth.Instance().auth)
+        self.drive = getDrive(gauth=Gauth.Instance().auth)  # pyright: ignore[reportOptionalMemberAccess]
 
 
 def is_gdrive_ready():
     return os.path.exists(SETTINGS_YAML) and os.path.exists(CREDENTIALS)
 
 
-engine = create_engine('sqlite:///{0}'.format(cli_param.gd_path), echo=False)
+engine = create_engine(f'sqlite:///{cli_param.gd_path}', echo=False)
 Base = declarative_base()
 
 # Open session for database connection
@@ -176,48 +176,48 @@ class PermissionAdded(Base):
         return str(self.gdrive_id)
 
 
-if not os.path.exists(cli_param.gd_path):
+if not os.path.exists(cli_param.gd_path):  # pyright: ignore[reportArgumentType]
     try:
         Base.metadata.create_all(engine)
     except Exception as ex:
-        log.error("Error connect to database: {} - {}".format(cli_param.gd_path, ex))
+        log.error(f"Error connect to database: {cli_param.gd_path} - {ex}")
         raise
 
 
 def getDrive(drive=None, gauth=None):
     if not drive:
         if not gauth:
-            gauth = GoogleAuth(settings_file=SETTINGS_YAML)
+            gauth = GoogleAuth(settings_file=SETTINGS_YAML)  # pyright: ignore[reportPossiblyUnboundVariable]
         # Try to load saved client credentials
         gauth.LoadCredentialsFile(CREDENTIALS)
         if gauth.access_token_expired:
             # Refresh them if expired
             try:
                 gauth.Refresh()
-            except RefreshError as e:
-                log.error("Google Drive error: {}".format(e))
+            except RefreshError as e:  # pyright: ignore[reportPossiblyUnboundVariable]
+                log.error(f"Google Drive error: {e}")
             except Exception as ex:
                 log.error_or_exception(ex)
         else:
             # Initialize the saved creds
             gauth.Authorize()
         # Save the current credentials to a file
-        return GoogleDrive(gauth)
+        return GoogleDrive(gauth)  # pyright: ignore[reportPossiblyUnboundVariable]
     if drive.auth.access_token_expired:
         try:
             drive.auth.Refresh()
-        except RefreshError as e:
-            log.error("Google Drive error: {}".format(e))
+        except RefreshError as e:  # pyright: ignore[reportPossiblyUnboundVariable]
+            log.error(f"Google Drive error: {e}")
     return drive
 
 
 def listRootFolders():
     try:
-        drive = getDrive(Gdrive.Instance().drive)
+        drive = getDrive(Gdrive.Instance().drive)  # pyright: ignore[reportOptionalMemberAccess]
         folder = "'root' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
         fileList = drive.ListFile({'q': folder}).GetList()
-    except (ServerNotFoundError, ssl.SSLError, RefreshError) as e:
-        log.info("GDrive Error {}".format(e))
+    except (ServerNotFoundError, ssl.SSLError, RefreshError) as e:  # pyright: ignore[reportPossiblyUnboundVariable]
+        log.info(f"GDrive Error {e}")
         fileList = []
     return fileList
 
@@ -230,9 +230,9 @@ def getFolderInFolder(parentId, folderName, drive):
     # drive = getDrive(drive)
     query = ""
     if folderName:
-        query = "title = '%s' and " % folderName.replace("'", r"\'")
-    folder = query + "'%s' in parents and mimeType = 'application/vnd.google-apps.folder'" \
-                     " and trashed = false" % parentId
+        query = "title = '{}' and ".format(folderName.replace("'", r"\'"))
+    folder = query + f"'{parentId}' in parents and mimeType = 'application/vnd.google-apps.folder'" \
+                     " and trashed = false"
     fileList = drive.ListFile({'q': folder}).GetList()
     if fileList.__len__() == 0:
         return None
@@ -248,21 +248,21 @@ def getEbooksFolderId(drive=None):
     else:
         gDriveId = GdriveId()
         try:
-            gDriveId.gdrive_id = getEbooksFolder(drive)['id']
+            gDriveId.gdrive_id = getEbooksFolder(drive)['id']  # pyright: ignore[reportOptionalSubscript]
         except Exception:
             log.error('Error gDrive, root ID not found')
-        gDriveId.path = '/'
+        gDriveId.path = '/'  # pyright: ignore[reportAttributeAccessIssue]
         session.merge(gDriveId)
         try:
             session.commit()
         except OperationalError as ex:
-            log.error_or_exception('Database error: {}'.format(ex))
+            log.error_or_exception(f'Database error: {ex}')
             session.rollback()
         return gDriveId.gdrive_id
 
 
 def getFile(pathId, fileName, drive, nocase):
-    metaDataFile = "'%s' in parents and trashed = false and title contains '%s'" % (pathId, fileName.replace("'", r"\'"))
+    metaDataFile = "'{}' in parents and trashed = false and title contains '{}'".format(pathId, fileName.replace("'", r"\'"))
     fileList = drive.ListFile({'q': metaDataFile}).GetList()
     if fileList.__len__() == 0:
         return None
@@ -297,7 +297,7 @@ def getFolderId(path, drive):
                         if currentFolder:
                             gDriveId = GdriveId()
                             gDriveId.gdrive_id = currentFolder['id']
-                            gDriveId.path = currentPath
+                            gDriveId.path = currentPath  # pyright: ignore[reportAttributeAccessIssue]
                             session.merge(gDriveId)
                             dbChange = True
                             currentFolderId = currentFolder['id']
@@ -309,24 +309,21 @@ def getFolderId(path, drive):
         else:
             currentFolderId = storedPathName.gdrive_id
     except (OperationalError, IntegrityError, StaleDataError, sqlite3.IntegrityError) as ex:
-        log.error_or_exception('Database error: {}'.format(ex))
+        log.error_or_exception(f'Database error: {ex}')
         session.rollback()
-    except ApiRequestError as ex:
+    except ApiRequestError as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
         log.error('{} {}'.format(ex.error['message'], path))
         session.rollback()
-    except RefreshError as ex:
+    except RefreshError as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
         log.error(ex)
     return currentFolderId
 
 
 def getFileFromEbooksFolder(path, fileName, nocase=False):
-    drive = getDrive(Gdrive.Instance().drive)
-    if path:
-        # sqlCheckPath=path if path[-1] =='/' else path + '/'
-        folderId = getFolderId(path, drive)
-    else:
-        folderId = getEbooksFolderId(drive)
-    if folderId:
+    drive = getDrive(Gdrive.Instance().drive)  # pyright: ignore[reportOptionalMemberAccess]
+    # sqlCheckPath=path if path[-1] =='/' else path + '/'
+    folderId = getFolderId(path, drive) if path else getEbooksFolderId(drive)
+    if folderId:  # pyright: ignore[reportGeneralTypeIssues]
         return getFile(folderId, fileName, drive, nocase)
     else:
         return None
@@ -340,11 +337,11 @@ def moveGdriveFileRemote(origin_file_id, new_title):
 # Download metadata.db from gdrive
 def downloadFile(path, filename, output):
     f = getFileFromEbooksFolder(path, filename)
-    f.GetContentFile(output)
+    f.GetContentFile(output)  # pyright: ignore[reportOptionalMemberAccess]
 
 
 def moveGdriveFolderRemote(origin_file, target_folder, single_book=False):
-    drive = getDrive(Gdrive.Instance().drive)
+    drive = getDrive(Gdrive.Instance().drive)  # pyright: ignore[reportOptionalMemberAccess]
     previous_parents = ",".join([parent["id"] for parent in origin_file.get('parents')])
     children = drive.auth.service.children().list(folderId=previous_parents).execute()
     if single_book:
@@ -389,11 +386,10 @@ def copyToDrive(drive, uploadFile, createRoot, replaceFiles,
     if not parent:
         parent = getEbooksFolder(drive)
     if os.path.isdir(os.path.join(prevDir, uploadFile)):
-        existingFolder = drive.ListFile({'q': "title = '%s' and '%s' in parents and trashed = false" %
-                                              (os.path.basename(uploadFile).replace("'", r"\'"), parent['id'])}).GetList()
+        existingFolder = drive.ListFile({'q': "title = '{}' and '{}' in parents and trashed = false".format(os.path.basename(uploadFile).replace("'", r"\'"), parent['id'])}).GetList()  # pyright: ignore[reportOptionalSubscript]
         if len(existingFolder) == 0 and (not isInitial or createRoot):
             parent = drive.CreateFile({'title': os.path.basename(uploadFile),
-                                       'parents': [{"kind": "drive#fileLink", 'id': parent['id']}],
+                                       'parents': [{"kind": "drive#fileLink", 'id': parent['id']}],  # pyright: ignore[reportOptionalSubscript]
                                        "mimeType": "application/vnd.google-apps.folder"})
             parent.Upload()
         else:
@@ -404,40 +400,37 @@ def copyToDrive(drive, uploadFile, createRoot, replaceFiles,
                 copyToDrive(drive, f, True, replaceFiles, ignoreFiles, parent, os.path.join(prevDir, uploadFile))
     else:
         if os.path.basename(uploadFile) not in ignoreFiles:
-            existingFiles = drive.ListFile({'q': "title = '%s' and '%s' in parents and trashed = false" %
-                                                 (os.path.basename(uploadFile).replace("'", r"\'"), parent['id'])}).GetList()
+            existingFiles = drive.ListFile({'q': "title = '{}' and '{}' in parents and trashed = false".format(os.path.basename(uploadFile).replace("'", r"\'"), parent['id'])}).GetList()  # pyright: ignore[reportOptionalSubscript]
             if len(existingFiles) > 0:
                 driveFile = existingFiles[0]
             else:
                 driveFile = drive.CreateFile({'title': os.path.basename(uploadFile).replace("'", r"\'"),
-                                              'parents': [{"kind": "drive#fileLink", 'id': parent['id']}], })
+                                              'parents': [{"kind": "drive#fileLink", 'id': parent['id']}], })  # pyright: ignore[reportOptionalSubscript]
             driveFile.SetContentFile(os.path.join(prevDir, uploadFile))
             driveFile.Upload()
 
 
 def uploadFileToEbooksFolder(destFile, f, string=False):
-    drive = getDrive(Gdrive.Instance().drive)
+    drive = getDrive(Gdrive.Instance().drive)  # pyright: ignore[reportOptionalMemberAccess]
     parent = getEbooksFolder(drive)
     splitDir = destFile.split('/')
     for i, x in enumerate(splitDir):
         if i == len(splitDir)-1:
-            existing_Files = drive.ListFile({'q': "title = '%s' and '%s' in parents and trashed = false" %
-                                                  (x.replace("'", r"\'"), parent['id'])}).GetList()
+            existing_Files = drive.ListFile({'q': "title = '{}' and '{}' in parents and trashed = false".format(x.replace("'", r"\'"), parent['id'])}).GetList()  # pyright: ignore[reportOptionalSubscript]
             if len(existing_Files) > 0:
                 driveFile = existing_Files[0]
             else:
                 driveFile = drive.CreateFile({'title': x,
-                                              'parents': [{"kind": "drive#fileLink", 'id': parent['id']}], })
+                                              'parents': [{"kind": "drive#fileLink", 'id': parent['id']}], })  # pyright: ignore[reportOptionalSubscript]
             if not string:
                 driveFile.SetContentFile(f)
             else:
                 driveFile.SetContentString(f)
             driveFile.Upload()
         else:
-            existing_Folder = drive.ListFile({'q': "title = '%s' and '%s' in parents and trashed = false" %
-                                                   (x.replace("'", r"\'"), parent['id'])}).GetList()
+            existing_Folder = drive.ListFile({'q': "title = '{}' and '{}' in parents and trashed = false".format(x.replace("'", r"\'"), parent['id'])}).GetList()  # pyright: ignore[reportOptionalSubscript]
             if len(existing_Folder) == 0:
-                parent = drive.CreateFile({'title': x, 'parents': [{"kind": "drive#fileLink", 'id': parent['id']}],
+                parent = drive.CreateFile({'title': x, 'parents': [{"kind": "drive#fileLink", 'id': parent['id']}],  # pyright: ignore[reportOptionalSubscript]
                                            "mimeType": "application/vnd.google-apps.folder"})
                 parent.Upload()
             else:
@@ -525,7 +518,7 @@ def getChangeById(drive, change_id):
     try:
         change = drive.auth.service.changes().get(changeId=change_id).execute()
         return change
-    except (errors.HttpError) as error:
+    except (errors.HttpError) as error:  # pyright: ignore[reportPossiblyUnboundVariable]
         log.error(error)
         return None
     except Exception as ex:
@@ -540,12 +533,12 @@ def deleteDatabaseOnChange():
         session.commit()
     except (OperationalError, InvalidRequestError) as ex:
         session.rollback()
-        log.error_or_exception('Database error: {}'.format(ex))
+        log.error_or_exception(f'Database error: {ex}')
         session.rollback()
 
 
 def updateGdriveCalibreFromLocal():
-    copyToDrive(Gdrive.Instance().drive, config.config_calibre_dir, False, True)
+    copyToDrive(Gdrive.Instance().drive, config.config_calibre_dir, False, True)  # pyright: ignore[reportOptionalMemberAccess]
     for x in os.listdir(config.config_calibre_dir):
         if os.path.isdir(os.path.join(config.config_calibre_dir, x)):
             shutil.rmtree(os.path.join(config.config_calibre_dir, x))
@@ -560,7 +553,7 @@ def updateDatabaseOnEdit(ID, newPath):
         try:
             session.commit()
         except OperationalError as ex:
-            log.error_or_exception('Database error: {}'.format(ex))
+            log.error_or_exception(f'Database error: {ex}')
             session.rollback()
 
 
@@ -570,7 +563,7 @@ def deleteDatabaseEntry(ID):
     try:
         session.commit()
     except OperationalError as ex:
-        log.error_or_exception('Database error: {}'.format(ex))
+        log.error_or_exception(f'Database error: {ex}')
         session.rollback()
 
 def deleteDatabasePath(Pathname):
@@ -578,7 +571,7 @@ def deleteDatabasePath(Pathname):
     try:
         session.commit()
     except OperationalError as ex:
-        log.error_or_exception('Database error: {}'.format(ex))
+        log.error_or_exception(f'Database error: {ex}')
         session.rollback()
 
 
@@ -600,11 +593,11 @@ def get_cover_via_gdrive(cover_path):
             try:
                 session.commit()
             except (OperationalError, IntegrityError) as ex:
-                log.error_or_exception('Database error: {}'.format(ex))
+                log.error_or_exception(f'Database error: {ex}')
                 session.rollback()
         headers = Headers()
         headers["Content-Type"] = 'image/jpeg'
-        resp, content = df.auth.Get_Http_Object().request(df.metadata.get('downloadUrl'), headers=headers)
+        _resp, content = df.auth.Get_Http_Object().request(df.metadata.get('downloadUrl'), headers=headers)
         return content
     else:
         return None
@@ -627,7 +620,7 @@ def get_metadata_backup_via_gdrive(metadata_path):
             try:
                 session.commit()
             except OperationalError as ex:
-                log.error_or_exception('Database error: {}'.format(ex))
+                log.error_or_exception(f'Database error: {ex}')
                 session.rollback()
         return df.metadata.get('webContentLink')
     else:
@@ -651,7 +644,7 @@ def do_gdrive_download(df, headers, convert_encoding=False):
 
     def stream(convert_encoding):
         for byte in s:
-            headers = {"Range": 'bytes={}-{}'.format(byte[0], byte[1])}
+            headers = {"Range": f'bytes={byte[0]}-{byte[1]}'}
             resp, content = df.auth.Get_Http_Object().request(download_url, headers=headers)
             if resp.status == 206:
                 if convert_encoding:
@@ -659,7 +652,7 @@ def do_gdrive_download(df, headers, convert_encoding=False):
                     content = content.decode(result['encoding']).encode('utf-8')
                 yield content
             else:
-                log.warning('An error occurred: {}'.format(resp))
+                log.warning(f'An error occurred: {resp}')
                 return
     return Response(stream_with_context(stream(convert_encoding)), headers=headers)
 
@@ -706,7 +699,7 @@ def get_error_text(client_secrets=None):
         return 'client_secrets.json is missing or not readable'
 
     try:
-        with open(CLIENT_SECRETS, 'r') as settings:
+        with open(CLIENT_SECRETS) as settings:
             filedata = json.load(settings)
     except PermissionError:
         return 'client_secrets.json is missing or not readable'

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 janeczku, OzzieIsaacs, andrerfcsantos, idalin
@@ -16,33 +15,35 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-import os
 import errno
+import os
 import signal
 import socket
+import sys
 
 try:
-    from gevent.pywsgi import WSGIServer
-    from .gevent_wsgi import MyWSGIHandler
-    from gevent.pool import Pool
-    from gevent.socket import socket as GeventSocket
-    from gevent import __version__ as _version
-    from greenlet import GreenletExit
     import ssl
+
+    from gevent import __version__ as _version  # pyright: ignore[reportMissingModuleSource]
+    from gevent.pool import Pool  # pyright: ignore[reportMissingModuleSource]
+    from gevent.pywsgi import WSGIServer  # pyright: ignore[reportMissingModuleSource]
+    from gevent.socket import socket as GeventSocket  # pyright: ignore[reportMissingModuleSource]
+    from greenlet import GreenletExit
+
+    from .gevent_wsgi import MyWSGIHandler
     VERSION = 'Gevent ' + _version
     _GEVENT = True
 except ImportError:
-    from .tornado_wsgi import MyWSGIContainer
-    from tornado.httpserver import HTTPServer
-    from tornado.ioloop import IOLoop
     from tornado import netutil
     from tornado import version as _version
-    VERSION = 'Tornado ' + _version
-    _GEVENT = False
+    from tornado.httpserver import HTTPServer
+    from tornado.ioloop import IOLoop
 
-from . import logger, constants
+    from .tornado_wsgi import MyWSGIContainer
+    VERSION = 'Tornado ' + _version  # pyright: ignore[reportConstantRedefinition]
+    _GEVENT = False  # pyright: ignore[reportConstantRedefinition]
 
+from . import constants, logger
 
 log = logger.create()
 
@@ -50,10 +51,10 @@ log = logger.create()
 def _readable_listen_address(address, port):
     if ':' in address:
         address = "[" + address + "]"
-    return '%s:%s' % (address, port)
+    return f'{address}:{port}'
 
 
-class WebServer(object):
+class WebServer:
 
     def __init__(self):
         signal.signal(signal.SIGINT, self._killServer)
@@ -100,7 +101,7 @@ class WebServer(object):
     def _make_gevent_socket_activated():
         # Reuse an already open socket on fd=SD_LISTEN_FDS_START
         SD_LISTEN_FDS_START = 3
-        return GeventSocket(fileno=SD_LISTEN_FDS_START)
+        return GeventSocket(fileno=SD_LISTEN_FDS_START)  # pyright: ignore[reportPossiblyUnboundVariable]
 
     def _prepare_unix_socket(self, socket_file):
         # the socket file must not exist prior to bind()
@@ -122,7 +123,7 @@ class WebServer(object):
             unix_socket_file = os.environ.get("CALIBRE_UNIX_SOCKET")
             if unix_socket_file:
                 self._prepare_unix_socket(unix_socket_file)
-                unix_sock = WSGIServer.get_listener(unix_socket_file, family=socket.AF_UNIX)
+                unix_sock = WSGIServer.get_listener(unix_socket_file, family=socket.AF_UNIX)  # pyright: ignore[reportPossiblyUnboundVariable]
                 # ensure current user and group have r/w permissions, no permissions for other users
                 # this way the socket can be shared in a semi-secure manner
                 # between the user running calibre-web and the user running the fronting webserver
@@ -141,12 +142,12 @@ class WebServer(object):
 
         address = ('::', self.listen_port)
         try:
-            sock = WSGIServer.get_listener(address, family=socket.AF_INET6)
-        except socket.error as ex:
+            sock = WSGIServer.get_listener(address, family=socket.AF_INET6)  # pyright: ignore[reportPossiblyUnboundVariable]
+        except OSError as ex:
             log.error('%s', ex)
-            log.warning('Unable to listen on {}, trying on IPv4 only...'.format(address))
+            log.warning(f'Unable to listen on {address}, trying on IPv4 only...')
             address = ('', self.listen_port)
-            sock = WSGIServer.get_listener(address, family=socket.AF_INET)
+            sock = WSGIServer.get_listener(address, family=socket.AF_INET)  # pyright: ignore[reportPossiblyUnboundVariable]
 
         return sock, _readable_listen_address(*address)
 
@@ -169,7 +170,7 @@ class WebServer(object):
             os.name == "nt"
             and __main__.__package__ == ""
             and not os.path.exists(py_script)
-            and os.path.exists("{}.exe".format(py_script))
+            and os.path.exists(f"{py_script}.exe")
         ):
             # Executed a file, like "python app.py".
             py_script = os.path.abspath(py_script)
@@ -177,7 +178,7 @@ class WebServer(object):
             if os.name == "nt":
                 # Windows entry points have ".exe" extension and should be
                 # called directly.
-                if not os.path.exists(py_script) and os.path.exists("{}.exe".format(py_script)):
+                if not os.path.exists(py_script) and os.path.exists(f"{py_script}.exe"):
                     py_script += ".exe"
 
                 if (
@@ -194,20 +195,20 @@ class WebServer(object):
             else:
                 if os.path.isfile(py_script):
                     # Rewritten by Python from "-m script" to "/path/to/script.py".
-                    py_module = __main__.__package__
+                    py_module = __main__.__package__ or ""
                     name = os.path.splitext(os.path.basename(py_script))[0]
 
                     if name != "__main__":
-                        py_module += ".{}".format(name)
+                        py_module += f".{name}"
                 else:
                     # Incorrectly rewritten by pydevd debugger from "-m script" to "script".
-                    py_module = py_script
+                    py_module = py_script or ""
 
                 rv.extend(("-m", py_module.lstrip(".")))
 
         rv.extend(args)
         if os.name == 'nt':
-            rv = ['"{}"'.format(a) for a in rv]
+            rv = [f'"{a}"' for a in rv]
         return rv
 
     def _start_gevent(self):
@@ -223,19 +224,20 @@ class WebServer(object):
             except Exception:
                 print(f"Calibre-Web: error {output}")
                 pass
-            self.wsgiserver = WSGIServer(sock, self.app, log=self.access_logger, handler_class=MyWSGIHandler,
+            from typing import Any, cast
+            self.wsgiserver = WSGIServer(cast(Any, sock), self.app, log=self.access_logger, handler_class=MyWSGIHandler,  # pyright: ignore[reportPossiblyUnboundVariable]
                                          error_log=log,
-                                         spawn=Pool(), **ssl_args)
+                                         spawn=Pool(), **ssl_args)  # pyright: ignore[reportPossiblyUnboundVariable]
             if ssl_args:
-                wrap_socket = self.wsgiserver.wrap_socket
+                wrap_socket = cast(Any, self.wsgiserver).wrap_socket
                 def my_wrap_socket(*args, **kwargs):
                     try:
                         return wrap_socket(*args, **kwargs)
-                    except (ssl.SSLError, OSError) as ex:
+                    except (ssl.SSLError, OSError) as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
                         log.warning('Gevent SSL Error: %s', ex)
-                        raise GreenletExit
+                        raise GreenletExit from ex  # pyright: ignore[reportGeneralTypeIssues,reportPossiblyUnboundVariable]
 
-                self.wsgiserver.wrap_socket = my_wrap_socket
+                cast(Any, self.wsgiserver).wrap_socket = my_wrap_socket
             self.wsgiserver.serve_forever()
         finally:
             if self.unix_socket_file:
@@ -247,8 +249,9 @@ class WebServer(object):
             import asyncio
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         try:
+            from typing import Any, cast
             # Max Buffersize set to 200MB
-            http_server = HTTPServer(MyWSGIContainer(self.app),
+            http_server = HTTPServer(MyWSGIContainer(self.app),  # pyright: ignore[reportArgumentType,reportPossiblyUnboundVariable]
                                      max_buffer_size=209700000,
                                      ssl_options=self.ssl_args)
 
@@ -257,14 +260,15 @@ class WebServer(object):
                 SD_LISTEN_FDS_START = 3
                 sock = socket.socket(fileno=SD_LISTEN_FDS_START)
                 http_server.add_socket(sock)
-                sock.setblocking(0)
+                sock.setblocking(False)
                 socket_name =sock.getsockname()
                 output = "systemd-socket:" + _readable_listen_address(socket_name[0], socket_name[1])
             elif unix_socket_file and os.name != 'nt':
                 self._prepare_unix_socket(unix_socket_file)
                 output = "unix:" + unix_socket_file
-                unix_socket = netutil.bind_unix_socket(self.unix_socket_file)
-                http_server.add_socket(unix_socket)
+                assert self.unix_socket_file is not None
+                unix_socket = netutil.bind_unix_socket(self.unix_socket_file)  # pyright: ignore[reportPossiblyUnboundVariable]
+                http_server.add_socket(cast(Any, unix_socket))
                 # ensure current user and group have r/w permissions, no permissions for other users
                 # this way the socket can be shared in a semi-secure manner
                 # between the user running calibre-web and the user running the fronting webserver
@@ -281,7 +285,7 @@ class WebServer(object):
                 print(f"Calibre-Web: error {output}")
                 pass
 
-            self.wsgiserver = IOLoop.current()
+            self.wsgiserver = IOLoop.current()  # pyright: ignore[reportPossiblyUnboundVariable]
             self.wsgiserver.start()
             # wait for stop signal
             self.wsgiserver.close(True)
@@ -299,7 +303,7 @@ class WebServer(object):
                 self._start_tornado()
         except Exception as ex:
             log.error("Error starting server: %s", ex)
-            print("Error starting server: %s" % ex)
+            print(f"Error starting server: {ex}")
             self.stop()
             return False
         finally:
@@ -327,6 +331,8 @@ class WebServer(object):
         self.stop()
 
     def stop(self, restart=False):
+        from typing import Any, cast
+
         from . import updater_thread
         updater_thread.stop()
 
@@ -337,8 +343,9 @@ class WebServer(object):
             if _GEVENT:
                 self.wsgiserver.close()
             else:
+                ioloop = cast(Any, self.wsgiserver)
                 if restart:
-                    self.wsgiserver.call_later(1.0, self.wsgiserver.stop)
+                    ioloop.call_later(1.0, ioloop.stop)
                 else:
-                    self.wsgiserver.asyncio_loop.call_soon_threadsafe(self.wsgiserver.stop)
+                    ioloop.asyncio_loop.call_soon_threadsafe(ioloop.stop)
 

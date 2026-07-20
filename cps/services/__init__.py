@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2019 pwr
@@ -29,7 +28,7 @@ except ImportError as err:
 
 try:
     from . import simpleldap as ldap
-    from .simpleldap import ldapVersion
+    from .simpleldap import ldapVersion  # pyright: ignore[reportAttributeAccessIssue]
 except ImportError as err:
     log.debug("Cannot import simpleldap, logging in with ldap will not work: %s", err)
     ldap = None

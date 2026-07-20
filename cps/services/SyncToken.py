@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 shavitmichael, OzzieIsaacs
@@ -17,14 +16,13 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 from base64 import b64decode, b64encode
-from jsonschema import validate, exceptions
 from datetime import datetime
 
 from flask import json
-from .. import logger
+from jsonschema import exceptions, validate  # pyright: ignore[reportMissingModuleSource]
 
+from .. import logger
 
 log = logger.create()
 
@@ -172,9 +170,4 @@ class SyncToken:
         return b64encode_json(token)
 
     def __str__(self):
-        return "{},{},{},{},{},{}".format(self.books_last_created,
-                                          self.books_last_modified,
-                                          self.archive_last_modified,
-                                          self.reading_state_last_modified,
-                                          self.tags_last_modified,
-                                          self.raw_kobo_store_token)
+        return f"{self.books_last_created},{self.books_last_modified},{self.archive_last_modified},{self.reading_state_last_modified},{self.tags_last_modified},{self.raw_kobo_store_token}"

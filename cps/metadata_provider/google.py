@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
@@ -17,15 +16,14 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Google Books api document: https://developers.google.com/books/docs/v1/using
-from typing import Dict, List, Optional
-from urllib.parse import quote
 from datetime import datetime
+from urllib.parse import quote
 
 import requests
 
-from cps import logger, config
+from cps import config, logger
 from cps.isoLanguages import get_lang3, get_language_name
-from cps.services.Metadata import MetaRecord, MetaSourceInfo, Metadata
+from cps.services.Metadata import Metadata, MetaRecord, MetaSourceInfo
 
 log = logger.create()
 
@@ -38,12 +36,12 @@ class Google(Metadata):
     BOOK_URL = "https://books.google.com/books?id="
     SEARCH_URL = "https://www.googleapis.com/books/v1/volumes?q="
     ISBN_TYPE = "ISBN_13"
-    API_KEY = "&key=" + config.config_googlebooks_api_key 
+    API_KEY = "&key=" + config.config_googlebooks_api_key
 
     def search(
         self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> Optional[List[MetaRecord]]:
-        val = list()    
+    ) -> list[MetaRecord] | None:
+        val = list()
         if self.active:
 
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
@@ -65,7 +63,7 @@ class Google(Metadata):
         return val
 
     def _parse_search_result(
-        self, result: Dict, generic_cover: str, locale: str
+        self, result: dict, generic_cover: str, locale: str  # pyright: ignore[reportMissingTypeArgument]
     ) -> MetaRecord:
         match = MetaRecord(
             id=result["id"],
@@ -97,7 +95,7 @@ class Google(Metadata):
         return match
 
     @staticmethod
-    def _parse_isbn(result: Dict, match: MetaRecord) -> MetaRecord:
+    def _parse_isbn(result: dict, match: MetaRecord) -> MetaRecord:  # pyright: ignore[reportMissingTypeArgument]
         identifiers = result["volumeInfo"].get("industryIdentifiers", [])
         for identifier in identifiers:
             if identifier.get("type") == Google.ISBN_TYPE:
@@ -106,21 +104,21 @@ class Google(Metadata):
         return match
 
     @staticmethod
-    def _parse_cover(result: Dict, generic_cover: str) -> str:
+    def _parse_cover(result: dict, generic_cover: str) -> str:  # pyright: ignore[reportMissingTypeArgument]
         if result["volumeInfo"].get("imageLinks"):
             cover_url = result["volumeInfo"]["imageLinks"]["thumbnail"]
-            
+
             # strip curl in cover
             cover_url = cover_url.replace("&edge=curl", "")
-            
+
             # request 800x900 cover image (higher resolution)
             cover_url += "&fife=w800-h900"
-            
+
             return cover_url.replace("http://", "https://")
         return generic_cover
 
     @staticmethod
-    def _parse_languages(result: Dict, locale: str) -> List[str]:
+    def _parse_languages(result: dict, locale: str) -> list[str]:  # pyright: ignore[reportMissingTypeArgument]
         language_iso2 = result["volumeInfo"].get("language", "")
         languages = (
             [get_language_name(locale, get_lang3(language_iso2))]
