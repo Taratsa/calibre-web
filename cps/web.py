@@ -219,6 +219,9 @@ def add_security_headers(resp):
     resp.headers["X-Frame-Options"] = "SAMEORIGIN"
     resp.headers["X-XSS-Protection"] = "1; mode=block"
     resp.headers["Strict-Transport-Security"] = "max-age=31536000"
+    onion_location = os.environ.get("ONION_LOCATION", "").strip()
+    if onion_location:
+        resp.headers["Onion-Location"] = onion_location
     return resp
 
 

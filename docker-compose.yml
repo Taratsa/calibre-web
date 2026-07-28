@@ -10,6 +10,7 @@ services:
       - TZ=UTC
       - NETWORK_SHARE_MODE=false
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1
+      - ONION_LOCATION=${ONION_LOCATION:-}
     ports:
       - "127.0.0.1:8083:8083"
     volumes:
