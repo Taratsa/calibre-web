@@ -22,53 +22,145 @@ for (let i = 1; i <= totalPages; i++) {
   }
 }
 
-function renderPageHtml(p: number | '…'): string {
-  if (p === '…') return '<span>…</span>';
-  if (p === page) return `<span aria-current="page">${p}</span>`;
-  return `<a href="${pageHref(p as number)}">${p}</a>`;
-}
-
-const pageListHtml = pages.map(p => `<li>${renderPageHtml(p)}</li>`).join('');
+const hasPrev = page > 1;
+const hasNext = page < totalPages;
+const prevHref = pageHref(page - 1);
+const nextHref = pageHref(page + 1);
 ---
 
-    {totalPages > 1 && (
+{totalPages > 1 && (
   <nav class="pagination" aria-label="Halaman">
-    {page > 1 && <a href={pageHref(page - 1)} rel="prev">‹ Sebelumnya</a>}
-    <ol set:html={pageListHtml} />
-    {page < totalPages && <a href={pageHref(page + 1)} rel="next">Selanjutnya ›</a>}
+    <ol>
+      <li class="pagination__item pagination__item--nav">
+        {hasPrev ? (
+          <a class="pagination__link" href={prevHref} rel="prev" aria-label="Halaman sebelumnya">
+            <svg class="pagination__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="pagination__label">Sebelumnya</span>
+          </a>
+        ) : (
+          <span class="pagination__link pagination__link--disabled" aria-disabled="true" aria-label="Halaman sebelumnya">
+            <svg class="pagination__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="pagination__label">Sebelumnya</span>
+          </span>
+        )}
+      </li>
+      {pages.map((p) =>
+        p === '…' ? (
+          <li class="pagination__item pagination__item--ellipsis" aria-hidden="true">
+            <span>…</span>
+          </li>
+        ) : p === page ? (
+          <li class="pagination__item pagination__item--current">
+            <span aria-current="page" aria-label={`Halaman ${p}, saat ini`}>{p}</span>
+          </li>
+        ) : (
+          <li class="pagination__item">
+            <a class="pagination__link" href={pageHref(p as number)} aria-label={`Halaman ${p}`}>{p}</a>
+          </li>
+        )
+      )}
+      <li class="pagination__item pagination__item--nav">
+        {hasNext ? (
+          <a class="pagination__link" href={nextHref} rel="next" aria-label="Halaman selanjutnya">
+            <span class="pagination__label">Selanjutnya</span>
+            <svg class="pagination__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        ) : (
+          <span class="pagination__link pagination__link--disabled" aria-disabled="true" aria-label="Halaman selanjutnya">
+            <span class="pagination__label">Selanjutnya</span>
+            <svg class="pagination__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        )}
+      </li>
+    </ol>
   </nav>
 )}
 
 <style>
   .pagination {
     display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    margin: 2rem 0;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2.5rem 0 1rem;
   }
   .pagination ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  .pagination a, .pagination span {
-    display: inline-block;
-    padding: 0.4rem 0.7rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    color: #1f1f1f;
+  .pagination__item {
+    display: inline-flex;
   }
-  .pagination a {
+  .pagination__link,
+  .pagination__item--current span,
+  .pagination__item--ellipsis span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
     border: 1px solid #d1d5db;
+    border-radius: 6px;
     background: #fff;
+    color: #1f1f1f;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
-  .pagination a:hover { background: #f3f4f6; }
-  .pagination span[aria-current] {
+  .pagination__item--nav .pagination__link {
+    padding: 0 0.9rem;
+  }
+  .pagination__link:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+  }
+  .pagination__link:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+  .pagination__item--current span {
     background: #1f1f1f;
+    border-color: #1f1f1f;
     color: #fafaf7;
+    font-weight: 600;
+  }
+  .pagination__item--ellipsis span {
+    border-color: transparent;
+    background: transparent;
+    color: #6b7280;
+  }
+  .pagination__link--disabled {
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    background: #f9fafb;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .pagination__icon {
+    flex: 0 0 auto;
+  }
+  @media (max-width: 480px) {
+    .pagination__label {
+      display: none;
+    }
+    .pagination__item--nav .pagination__link {
+      padding: 0;
+      width: 2.5rem;
+    }
   }
 </style>
