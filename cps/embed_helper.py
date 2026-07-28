@@ -53,6 +53,21 @@ def do_calibre_export(book_id, book_format):
         _, err = p.communicate()
         if err:
             log.error("Metadata embedder encountered an error: %s", err)
+        if p.returncode != 0:
+            log.warning(
+                "calibredb export failed for book %s (rc=%s); skipping metadata embed",
+                book_id,
+                p.returncode,
+            )
+            return None, None
+        staged = os.path.join(tmp_dir, temp_file_name + "." + book_format)
+        if not os.path.isfile(staged):
+            log.warning(
+                "calibredb export produced no file for book %s at %s; skipping metadata embed",
+                book_id,
+                staged,
+            )
+            return None, None
         return tmp_dir, temp_file_name
     except OSError as ex:
         # ToDo real error handling

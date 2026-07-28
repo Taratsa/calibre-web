@@ -59,3 +59,10 @@ gmail.json
 .grimp_cache/
 .import_linter_cache/
 .ruff_cache/
+
+# Agent / IDE artifacts
+.opencode/
+graphify-out/
+tmp/
+frontend/.astro/
+frontend/public/*.txt

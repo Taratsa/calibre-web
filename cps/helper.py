@@ -1078,6 +1078,8 @@ def do_download_file(book, book_format, client, data, headers):
                     filename, download_name = do_kepubify_metadata_replace(book, output)
                 elif book_format != "kepub" and config.config_binariesdir:
                     filename, download_name = do_calibre_export(book.id, book_format)
+                    if filename is None:
+                        filename, download_name = output, book_name
             else:
                 return gd.do_gdrive_download(df, headers)
         else:
@@ -1097,6 +1099,9 @@ def do_download_file(book, book_format, client, data, headers):
             )
         elif book_format != "kepub" and config.config_binariesdir and config.config_embed_metadata:
             filename, download_name = do_calibre_export(book.id, book_format)
+            if filename is None:
+                filename = os.path.join(config.get_book_path(), book.path)
+                download_name = book_name
         else:
             download_name = book_name
 
@@ -1295,9 +1300,10 @@ def get_download_link(book_id, book_format, client):
         if data1:
             user_id = int(current_user.id) if current_user.is_authenticated else 0
             ub.update_download(book_id, user_id)
-            file_name = book.title
+            file_name = book.title.replace("\x00", "") if book.title else ""
             if len(book.authors) > 0:
-                file_name = file_name + " - " + book.authors[0].name
+                author_name = book.authors[0].name.replace("\x00", "") if book.authors[0].name else ""
+                file_name = file_name + " - " + author_name
             original_name = file_name
             file_name = get_valid_filename(file_name, replace_whitespace=False, force_unidecode=True)
             if client == "kindle":
