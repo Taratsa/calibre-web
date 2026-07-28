@@ -274,7 +274,7 @@ class Updater(threading.Thread):
 
     def update_source(self, source, destination):
         # destination files
-        old_list = list()
+        old_list = []
         exclude = self._add_excluded_files(log.info)
         additional_path = self.is_venv()
         if additional_path:
@@ -291,7 +291,7 @@ class Updater(threading.Thread):
             for name in dirs:
                 old_list.append(os.path.join(root, name).replace(destination, ""))
         # source files
-        new_list = list()
+        new_list = []
         for root, dirs, files in os.walk(source, topdown=True):
             for name in files:
                 new_list.append(os.path.join(root, name).replace(source, ""))
@@ -347,7 +347,6 @@ class Updater(threading.Thread):
     def dry_run(cls):
         cls._add_excluded_files(print)
         cls.check_permissions(constants.BASE_DIR, constants.BASE_DIR, print)
-        print("\n*** Finished ***")
 
     @staticmethod
     def _populate_parent_commits(update_data, status, tz, parents):
@@ -392,7 +391,7 @@ class Updater(threading.Thread):
 
     @staticmethod
     def _load_nightly_data(repository_url, commit, status):
-        update_data = dict()
+        update_data = {}
         try:
             headers = {"Accept": "application/vnd.github.v3+json"}
             r = requests.get(repository_url + "/git/commits/" + commit["object"]["sha"], headers=headers, timeout=10)

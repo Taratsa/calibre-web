@@ -164,7 +164,6 @@ def create_app():
                 'please install it using "pip install {name}"'
             ).format(name=res["name"])
             log.info(message)
-            print("*** " + message + " ***")
             web_server.stop(True)
             sys.exit(8)
     for res in requirements + dependency_check(True):

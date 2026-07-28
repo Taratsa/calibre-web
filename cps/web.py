@@ -436,7 +436,7 @@ def get_languages_json():
         entries = [s for key, s in language_names.items() if query in s.lower()]  # pyright: ignore[reportOptionalMemberAccess]
         entries_start.extend(entries[0 : (5 - len(entries_start))])
         entries_start = list(set(entries_start))
-    json_dumps = json.dumps([dict(name=r) for r in entries_start[0:5]])
+    json_dumps = json.dumps([{"name": r} for r in entries_start[0:5]])
     return json_dumps
 
 
@@ -469,7 +469,7 @@ def get_matching_tags():
 
 
 def generate_char_list(entries):  # data_colum, db_link):
-    char_list = list()
+    char_list = []
     for entry in entries:
         upper_char = entry[0].name[0].upper()
         if upper_char not in char_list:
@@ -666,7 +666,7 @@ def render_hot_books(page, order):
             .group_by(ub.Downloads.book_id)  # pyright: ignore[reportArgumentType]
         )
         hot_books = all_books.offset(off).limit(config.config_books_per_page)
-        entries = list()
+        entries = []
         for book in hot_books:
             query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
             download_book = (
@@ -1207,7 +1207,7 @@ def list_books():
     sort_param = request.args.get("sort", "id")
     order = request.args.get("order", "").lower()
     state = None
-    join = tuple()
+    join = ()
     if order not in ["asc", "desc", ""]:
         order = "asc"
     if sort_param == "state":
@@ -1263,12 +1263,12 @@ def list_books():
             (int(off) / (int(limit)) + 1), db.Books, limit, True, order, True, True, config.config_read_column, *join
         )
 
-    result = list()
+    result = []
     for entry in entries:
         val = entry[0]
         val.is_archived = entry[1] is True
         val.read_status = entry[2] == ub.ReadBook.STATUS_FINISHED
-        for lang_index in range(0, len(val.languages)):
+        for lang_index in range(len(val.languages)):
             val.languages[lang_index].language_name = isoLanguages.get_language_name(
                 get_locale(), val.languages[lang_index].lang_code
             )
@@ -1532,7 +1532,7 @@ def ratings_list():
             "list.html",
             entries=entries,
             folder="web.books_list",
-            charlist=list(),
+            charlist=[],
             title=_("Ratings list"),
             page="ratingslist",
             data="ratings",
@@ -1577,7 +1577,7 @@ def formats_list():
             "list.html",
             entries=entries,
             folder="web.books_list",
-            charlist=list(),
+            charlist=[],
             title=_("File formats list"),
             page="formatslist",
             data="formats",
@@ -1882,7 +1882,7 @@ def get_sitemap():
         def slugify(value):
             value = unicodedata.normalize("NFKD", value or "").encode("ascii", "ignore").decode("ascii")
             value = re.sub(r"[^a-zA-Z0-9]+", "-", value).strip("-").lower()
-            return value if value else "book"
+            return value or "book"
 
         slugify(book.title)
         url = SubElement(urlset, "url")
@@ -2485,7 +2485,7 @@ def show_book(book_id, title_slug=None):
         entry = entries[0]
         entry.read_status = read_book == ub.ReadBook.STATUS_FINISHED
         entry.is_archived = archived_book
-        for lang_index in range(0, len(entry.languages)):
+        for lang_index in range(len(entry.languages)):
             entry.languages[lang_index].language_name = isoLanguages.get_language_name(
                 get_locale(), entry.languages[lang_index].lang_code
             )
@@ -2502,7 +2502,7 @@ def show_book(book_id, title_slug=None):
         entry.email_share_list = check_send_to_ereader(entry)
         entry.reader_list = check_read_formats(entry)
 
-        entry.reader_list_sizes = dict()
+        entry.reader_list_sizes = {}
         for data in entry.data:
             if data.format.lower() in entry.reader_list:
                 entry.reader_list_sizes[data.format.lower()] = data.uncompressed_size

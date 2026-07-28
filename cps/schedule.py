@@ -26,7 +26,7 @@ from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThum
 
 
 def get_scheduled_tasks(reconnect=True):
-    tasks = list()
+    tasks = []
     # Reconnect Calibre database (metadata.db) based on config.schedule_reconnect
     if reconnect:
         tasks.append([lambda: TaskReconnectDatabase(), "reconnect", False])

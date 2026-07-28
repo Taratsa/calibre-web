@@ -142,17 +142,86 @@ extend-exclude = [
 ]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes (undefined names, unused imports, etc.)
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "B",    # flake8-bugbear (likely bugs and design issues)
+    "UP",   # pyupgrade (modern Python syntax)
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific rules
+    # --- Ruff v0.16 expanded defaults (see https://astral.sh/blog/ruff-v0.16.0) ---
+    "C4",   # flake8-comprehensions
+    "FA",   # flake8-future-annotations
+    "FLY",  # flynt (f-string conversion)
+    "FURB", # refurb (refactor hints; modernisations)
+    "INT",  # flake8-gettext (translations module)
+    "LOG",  # logging anti-patterns (LOG004 catches swallowed exceptions)
+    "PGH",  # pygrep-hooks (real bug catchers)
+    "PIE",  # flake8-pie (probable bugs)
+    "PT",   # flake8-pytest-style
+    "S",    # flake8-bandit (security)
+    "T",    # flake8-print (debug leftover prints)
+    "YTT",  # flake8-2020 (sys.version misuse)
+]
 ignore = [
-    "E501",
-    "B008",
-    "RUF001",
-    "RUF012",
+    # Cosmetic / noisy / out-of-scope for this project:
+    "E501",   # line length (handled by formatter)
+    "B008",   # function call in default (Flask uses this pattern heavily)
+    "RUF001", # ambiguous unicode character
+    "RUF012", # mutable class attributes (Flask patterns)
+    # Re-add legacy categories the v0.16 default-rule promotion would otherwise
+    # flag with hundreds of churn findings on a mature codebase. These are
+    # tracked in `.ruff-legacy-ignore.md` for future incremental work:
+    "BLE001", # blind-except (legacy code intentionally catches broad)
+    "DTZ",    # datetime tz-naive (would force semantic review per call site)
+    "PERF",   # perf hints (mostly list-vs-set; no measured bottleneck)
+    "PL",     # pylint convention/error rules
+    "PTH",    # pathlib migration (large refactor, deferred)
+    "RET",    # return-statement style (cosmetic)
+    "TRY",    # tryceratops (exception-handling restructuring)
+    "G",      # logging style (logging-f-string etc; hundreds of sites)
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "cps/services/*" = ["E402"]
 "test/*" = ["E402", "F401"]
+# cps/health.py intentionally catches broad Exception in probe code.
+"cps/health.py" = ["BLE001"]
+# cps/logger.py IS the logging configuration module; root-logger access is intentional.
+"cps/logger.py" = ["LOG015"]
+# Vendored fork of requests (cw_advocate) — asserts are upstream convention.
+"cps/cw_advocate/*" = ["S101", "PGH003"]
+# tornado_wsgi uses upstream-style pyright: ignore comments and asserts.
+"cps/tornado_wsgi.py" = ["PGH003", "S101"]
+# md5 is used for cache busting, not security.
+"cps/cache_buster.py" = ["S324"]
+"cps/uploader.py" = ["S324"]
+"cps/gdrive.py" = ["S324", "S105"]
+# Hardcoded placeholder values (default password, sync token header name).
+# try/except/pass for ValueError parsing — contextlib.suppress would change semantics.
+"cps/constants.py" = ["S105", "SIM105"]
+"cps/services/SyncToken.py" = ["S105"]
+# Server binds to all interfaces by design (configurable).
+# try/except pass in optional-feature paths; no logging needed at INFO level.
+"cps/server.py" = ["S104", "S110", "S112", "BLE001", "S101", "S606"]
+"cps.py" = ["S110"]
+"cps/error_handler.py" = ["S110", "S101"]
+"cps/oauth_bb.py" = ["S101"]
+"cps/updater.py" = ["S101"]
+"cps/tasks/thumbnail.py" = ["S101", "S310"]
+"cps/services/goodreads_support.py" = ["S101", "S113", "PGH003"]
+# subproc_wrapper is the subprocess wrapper itself; input validation is its job.
+"cps/subproc_wrapper.py" = ["S603"]
+"cps/kobo.py" = ["S110", "S112", "BLE001", "SIM105"]
+"cps/admin.py" = ["S112", "BLE001"]
+# Markupsafe.Markup with template HTML; review needed before changing.
+"cps/api.py" = ["S704"]
+"cps/editbooks.py" = ["S704"]
+# dep_check.py constructs a numeric comparison from regex-parsed version operators;
+# input is constrained to digits and comparison ops by the regex above.
+"cps/dep_check.py" = ["S307"]
 
 [tool.ruff.format]
 quote-style = "double"

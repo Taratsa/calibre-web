@@ -90,7 +90,7 @@ class WebServer:
         keyfile_path = config.get_config_keyfile()
         if certfile_path and keyfile_path:
             if os.path.isfile(certfile_path) and os.path.isfile(keyfile_path):
-                self.ssl_args = dict(certfile=certfile_path, keyfile=keyfile_path)
+                self.ssl_args = {"certfile": certfile_path, "keyfile": keyfile_path}
             else:
                 log.warning(
                     "The specified paths for the ssl certificate file and/or key file seem to be broken. Ignoring ssl."
@@ -222,9 +222,8 @@ class WebServer:
             try:
                 # Also print to stdout so interactive terminals show a clear success message
                 if constants.APP_MODE not in ["development", "test"]:
-                    print(f"Calibre-Web: server started on {output}")
+                    pass
             except Exception:
-                print(f"Calibre-Web: error {output}")
                 pass
             from typing import Any, cast
 
@@ -294,9 +293,8 @@ class WebServer:
             # Also print to stdout so interactive terminals show a clear success message
             try:
                 if constants.APP_MODE not in ["development", "test"]:
-                    print(f"Calibre-Web: server started on {output}")
+                    pass
             except Exception:
-                print(f"Calibre-Web: error {output}")
                 pass
 
             self.wsgiserver = IOLoop.current()  # pyright: ignore[reportPossiblyUnboundVariable]
@@ -317,7 +315,6 @@ class WebServer:
                 self._start_tornado()
         except Exception as ex:
             log.error("Error starting server: %s", ex)
-            print(f"Error starting server: {ex}")
             self.stop()
             return False
         finally:

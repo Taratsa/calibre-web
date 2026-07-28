@@ -37,7 +37,7 @@ class scholar(Metadata):
     META_URL = "https://scholar.google.com/"
 
     def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
-        val = list()
+        val = []
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
             if title_tokens:
@@ -49,7 +49,7 @@ class scholar(Metadata):
                 scholar_gen = itertools.islice(scholarly.search_pubs(query), 10)
             except Exception as e:
                 log.warning(e)
-                return list()
+                return []
             for result in scholar_gen:
                 match = self._parse_search_result(result=result, generic_cover="", locale=locale)
                 val.append(match)

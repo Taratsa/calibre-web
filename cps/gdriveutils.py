@@ -713,8 +713,7 @@ oauth_scope:
 
 
 def update_settings(client_id, client_secret, redirect_uri):
-    if redirect_uri.endswith("/"):
-        redirect_uri = redirect_uri[:-1]
+    redirect_uri = redirect_uri.removesuffix("/")
     config_params = {
         "client_file": CLIENT_SECRETS,
         "client_id": client_id,

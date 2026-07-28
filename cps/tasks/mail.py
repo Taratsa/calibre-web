@@ -112,7 +112,7 @@ class TaskEmail(CalibreTask):
         self.text = text
         self.asyncSMTP = None
         self.book_id = id
-        self.results = dict()
+        self.results = {}
 
     # from calibre code:
     # https://github.com/kovidgoyal/calibre/blob/731ccd92a99868de3e2738f65949f19768d9104c/src/calibre/utils/smtp.py#L60

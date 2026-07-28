@@ -91,7 +91,7 @@ else:
 Base = declarative_base()
 searched_ids: dict = {}  # pyright: ignore[reportMissingTypeArgument]
 
-logged_in: dict = dict()  # pyright: ignore[reportMissingTypeArgument]
+logged_in: dict = {}  # pyright: ignore[reportMissingTypeArgument]
 
 
 def signal_store_user_session(object, user):
@@ -160,14 +160,14 @@ user_logged_in.connect(signal_store_user_session)
 
 
 def store_ids(result):
-    ids = list()
+    ids = []
     for element in result:
         ids.append(element.id)
     searched_ids[current_user.id] = ids
 
 
 def store_combo_ids(result):
-    ids = list()
+    ids = []
     for element in result:
         ids.append(element[0].id)
     searched_ids[current_user.id] = ids
@@ -262,7 +262,7 @@ class UserBase:
 
     def set_view_property(self, page, prop, value):
         if not self.view_settings.get(page):
-            self.view_settings[page] = dict()
+            self.view_settings[page] = {}
         self.view_settings[page][prop] = value
         with contextlib.suppress(AttributeError):
             flag_modified(self, "view_settings")
@@ -382,9 +382,9 @@ class Anonymous(AnonymousUserMixin, UserBase):  # pyright: ignore[reportIncompat
 
     def set_view_property(self, page, prop, value):
         if "view" not in flask_session:
-            flask_session["view"] = dict()
+            flask_session["view"] = {}
         if not flask_session["view"].get(page):
-            flask_session["view"][page] = dict()
+            flask_session["view"][page] = {}
         flask_session["view"][page][prop] = value
 
 
@@ -653,7 +653,6 @@ def migrate_registration_table(engine, _session):
                 conn.execute(text("insert into registration (domain, allow) values('%.%',1)"))
                 trans.commit()
     except exc.OperationalError:  # Database is not writeable
-        print("Settings database is not writeable. Exiting...")
         sys.exit(2)
 
 
@@ -704,7 +703,6 @@ def clean_database(_session):
         ).delete()
         _session.commit()
     except exc.OperationalError:  # Database is not writeable
-        print("Settings database is not writeable. Exiting...")
         sys.exit(2)
 
 
@@ -817,23 +815,18 @@ def password_change(user_credentials=None):
         user = session.query(User).filter(func.lower(User.name) == username.lower()).first()
         if user:
             if not password:
-                print("Empty password is not allowed")
                 sys.exit(4)
             try:
                 from .helper import valid_password
 
                 user.password = generate_password_hash(valid_password(password))
             except Exception:
-                print("Password doesn't comply with password validation rules")
                 sys.exit(4)
             if session_commit() == "":
-                print(f"Password for user '{username}' changed")
                 sys.exit(0)
             else:
-                print("Failed changing password")
                 sys.exit(3)
         else:
-            print(f"Username '{username}' not valid, can't change password")
             sys.exit(3)
 
 
@@ -861,7 +854,7 @@ def dispose():
 
 
 def session_commit(success=None, _session=None):
-    s = _session if _session else session
+    s = _session or session
     try:
         s.commit()
         if success:

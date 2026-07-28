@@ -56,7 +56,7 @@ def validate_mime_type(file_buffer, allowed_extensions):
         log.error(error)
         return False
     mime = magic.Magic(mime=True)  # pyright: ignore[reportPossiblyUnboundVariable]
-    allowed_mimetypes = list()
+    allowed_mimetypes = []
     for x in allowed_extensions:
         try:
             allowed_mimetypes.append(get_mimetype("." + x))

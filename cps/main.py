@@ -72,7 +72,8 @@ def main():
     app.register_blueprint(web)
     app.register_blueprint(basic)
     register_health_blueprint(app)
-    assert limiter is not None
+    if limiter is None:
+        raise RuntimeError("Flask-Limiter failed to initialise")
     limiter.limit("3/minute", key_func=request_username)(opds)
     app.register_blueprint(opds)
     app.register_blueprint(jinjia)
@@ -87,14 +88,14 @@ def main():
 
     app.register_blueprint(api)
     if kobo_available:
-        assert get_remote_address is not None
-        assert kobo is not None
-        assert kobo_auth is not None
+        if get_remote_address is None or kobo is None or kobo_auth is None:
+            raise RuntimeError("Kobo support reported as available but modules failed to import")
         limiter.limit("3/minute", key_func=get_remote_address)(kobo)
         app.register_blueprint(kobo)
         app.register_blueprint(kobo_auth)
     if oauth_available:
-        assert oauth is not None
+        if oauth is None:
+            raise RuntimeError("OAuth support reported as available but module failed to import")
         app.register_blueprint(oauth)
     success = web_server.start()
     sys.exit(0 if success else 1)

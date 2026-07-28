@@ -120,7 +120,7 @@ def search_from_shelf(shelf_id):
         return redirect(url_for("web.index"))
 
     if ub.searched_ids.get(current_user.id):
-        books_from_shelf = list()
+        books_from_shelf = []
         books_in_shelf = ub.session.query(ub.BookShelf).filter(ub.BookShelf.shelf == shelf_id).all()
         if books_in_shelf:
             book_ids = [book_id.book_id for book_id in books_in_shelf]
@@ -178,7 +178,7 @@ def search_to_shelf(shelf_id):
         return redirect(url_for("web.index"))
 
     if ub.searched_ids.get(current_user.id):
-        books_for_shelf = list()
+        books_for_shelf = []
         books_in_shelf = ub.session.query(ub.BookShelf).filter(ub.BookShelf.shelf == shelf_id).all()
         if books_in_shelf:
             book_ids = [book_id.book_id for book_id in books_in_shelf]
@@ -378,7 +378,7 @@ def order_shelf(shelf_id):
                 log.error_or_exception(f"Settings Database error: {e}")
                 flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
 
-        result = list()
+        result = []
         if shelf:
             result = (
                 calibre_db.session.query(db.Books)

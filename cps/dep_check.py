@@ -25,7 +25,7 @@ if not importlib:
 
 
 def load_dependencies(optional=False):
-    deps = list()
+    deps = []
     if getattr(sys, "frozen", False):
         pip_installed = os.path.join(BASE_DIR, ".pip_installed")
         if os.path.exists(pip_installed):
@@ -85,7 +85,7 @@ def load_dependencies(optional=False):
 
 
 def dependency_check(optional=False):
-    d = list()
+    d = []
     dep_version_int = None
     low_check = None
     deps = load_dependencies(optional)

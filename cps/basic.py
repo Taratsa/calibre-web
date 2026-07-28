@@ -68,7 +68,7 @@ def show_book(book_id):
     entries = calibre_db.get_book_read_archived(book_id, config.config_read_column, allow_show_archived=True)
     if entries:
         entry = entries[0]
-        for lang_index in range(0, len(entry.languages)):
+        for lang_index in range(len(entry.languages)):
             entry.languages[lang_index].language_name = isoLanguages.get_language_name(
                 get_locale(), entry.languages[lang_index].lang_code
             )

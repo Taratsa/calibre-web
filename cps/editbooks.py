@@ -275,7 +275,7 @@ def convert_bookformat(book_id):
 @editbook.route("/ajax/getcustomenum/<int:c_id>")
 @user_login_required
 def table_get_custom_enum(c_id):
-    ret = list()
+    ret = []
     cc = (
         calibre_db.session.query(db.CustomColumns)
         .filter(db.CustomColumns.id == c_id)
@@ -341,7 +341,7 @@ def edit_selected_books():
         "checkA": d.get("checkA"),
         "checkT": d.get("checkT"),
     }
-    res = list()
+    res = []
     if title:
         vals["value"] = title
         out = edit_book_param("title", vals, True)
@@ -425,7 +425,7 @@ def edit_book_param(param, vals, multi=False):
             "msg": _("Oops! Selected book is unavailable. File does not exist or is not accessible"),
         }
     ret = {}
-    out = list()
+    out = []
     for elem in elements:
         book = calibre_db.get_book(elem)
         if not book:
@@ -454,14 +454,14 @@ def edit_book_param(param, vals, multi=False):
                 edit_book_publisher(vals["value"], book)
                 ret = {"success": True, "newValue": ", ".join([publisher.name for publisher in book.publishers])}
             elif param == "languages":
-                invalid = list()
+                invalid = []
                 edit_book_languages(vals["value"], book, invalid=invalid)
                 if invalid:
                     ret = {"success": False, "msg": "Invalid languages in request: {}".format(",".join(invalid))}
                     if multi:
                         out.append(ret)
                 else:
-                    lang_names = list()
+                    lang_names = []
                     for lang in book.languages:
                         lang_names.append(isoLanguages.get_language_name(get_locale(), lang.lang_code))
                     ret = {"success": True, "newValue": ", ".join(lang_names)}
@@ -519,7 +519,7 @@ def edit_book_param(param, vals, multi=False):
                         return error, 400
                 continue
             elif param.startswith("custom_column_"):
-                new_val = dict()
+                new_val = {}
                 new_val[param] = vals["value"]
                 edit_single_cc_data(book.id, book, param[14:], new_val)
                 # ToDo: Very hacky find better solution
@@ -659,7 +659,7 @@ def read_selected_books():
 @edit_required
 def merge_list_book():
     vals = request.get_json().get("Merge_books")
-    to_file = list()
+    to_file = []
     if vals:
         # load all formats from target book
         to_book = calibre_db.get_book(vals[0])
@@ -910,7 +910,7 @@ def do_edit_book(book_id, upload_formats=None):
     except Exception as ex:
         log.error_or_exception(ex)
         calibre_db.session.rollback()
-        flash(_(f"Error editing book: {ex}"), category="error")
+        flash(_("Error editing book: %(error)s", error=ex), category="error")
         return redirect(url_for("web.show_book", book_id=book.id))  # pyright: ignore[reportOptionalMemberAccess]
 
 
@@ -957,7 +957,7 @@ def prepare_authors(authr, calibre_path, gdrive=False):
     # handle authors
     input_authors = authr.split("&")
     # handle_authors(input_authors)
-    input_authors = list(map(lambda it: it.strip().replace(",", "|"), input_authors))
+    input_authors = [it.strip().replace(",", "|") for it in input_authors]
     # Remove duplicates in authors list
     input_authors = helper.uniq(input_authors)
 
@@ -1027,7 +1027,7 @@ def prepare_authors_on_upload(title, authr):
 
     input_authors = prepare_authors(authr, config.get_book_path(), config.config_use_google_drive)
 
-    sort_authors_list = list()
+    sort_authors_list = []
     db_author = None
     for inp in input_authors:
         # stored_author = calibre_db.session.query(db.Authors).filter(db.Authors.name == inp).first()
@@ -1214,7 +1214,7 @@ def check_delete_book(book_id, book_format, json_response, location=""):
     if current_user.role_delete_books():
         if json_response:
             # if json response is set, it's possible to delete more than one book, but never a format is deleted
-            res = list()
+            res = []
             for b in book_id:
                 ret = delete_book_from_table(b)
                 if ret:
@@ -1316,7 +1316,7 @@ def delete_book_from_table(book_id):
             "location": url_for("edit-book.show_edit_book", book_id=book_id),
             "type": "danger",
             "format": "",
-            "message": _(f'Book with id "{book_id}" could not be deleted: not found'),
+            "message": _('Book with id "%(book_id)s" could not be deleted: not found', book_id=book_id),
         }
 
 
@@ -1337,8 +1337,8 @@ def render_edit_book(book_id):
         author_names.append(authr.name.replace("|", ","))
 
     # Option for showing convert_book button
-    valid_source_formats = list()
-    allowed_conversion_formats = list()
+    valid_source_formats = []
+    allowed_conversion_formats = []
     kepub_possible = None
     if config.config_converterpath:
         for file in book.data:
@@ -1397,7 +1397,7 @@ def edit_book_ratings(to_save, book):
 def edit_book_tags(tags, book):
     if tags is not None:
         input_tags = tags.split(",")
-        input_tags = list(map(lambda it: strip_whitespaces(it), input_tags))
+        input_tags = [strip_whitespaces(it) for it in input_tags]
         # Remove duplicates
         input_tags = helper.uniq(input_tags)
         return modify_database_object(input_tags, book.tags, db.Tags, calibre_db.session, "tags")
@@ -1601,7 +1601,7 @@ def edit_cc_data(book_id, book, to_save, cc):
                             changed = True
             else:
                 input_tags = to_save[cc_string].split(",")
-                input_tags = list(map(lambda it: strip_whitespaces(it), input_tags))
+                input_tags = [strip_whitespaces(it) for it in input_tags]
                 changed |= modify_database_object(
                     input_tags, getattr(book, cc_string), db.cc_classes[c.id], calibre_db.session, "custom"
                 )
@@ -1611,7 +1611,7 @@ def edit_cc_data(book_id, book, to_save, cc):
 # returns False if an error occurs or no book is uploaded, in all other cases the ebook metadata to change is returned
 def upload_book_formats(requested_files, book, book_id, no_cover=True):
     # Check and handle Uploaded file
-    to_save = dict()
+    to_save = {}
     error = False
     allowed_extensions = config.config_upload_formats.split(",")
     for requested_file in requested_files:
@@ -1733,7 +1733,7 @@ def handle_author_on_edit(book, author_name, update_stored=True):
 
     # Search for each author if author is in database, if not, author name and sorted author name is generated new
     # everything then is assembled for sorted author field in database
-    sort_authors_list = list()
+    sort_authors_list = []
     for inp in input_authors:
         stored_author = calibre_db.session.query(db.Authors).filter(db.Authors.name == inp).first()  # pyright: ignore[reportGeneralTypeIssues]
         stored_author = helper.get_sorted_author(inp.replace("|", ",")) if not stored_author else stored_author.sort
@@ -1820,7 +1820,7 @@ def add_objects(db_book_object, db_object, db_session, db_type, add_elements):
                 db_element = create_objects_for_addition(db_element[0], add_element, db_type)
             else:
                 db_el = db_session.query(db_object).filter(db_filter == add_element).first()
-                db_element = db_el if db_el else db_element[0]
+                db_element = db_el or db_element[0]
             # add element to book
             db_book_object.append(db_element)
 
@@ -1901,10 +1901,10 @@ def modify_identifiers(input_identifiers, db_identifiers, db_session):
     db_identifiers is a list of already persisted list of Identifiers objects."""
     changed = False
     error = False
-    input_dict = dict([(identifier.type.lower(), identifier) for identifier in input_identifiers])
+    input_dict = {identifier.type.lower(): identifier for identifier in input_identifiers}
     if len(input_identifiers) != len(input_dict):
         error = True
-    db_dict = dict([(identifier.type.lower(), identifier) for identifier in db_identifiers])
+    db_dict = {identifier.type.lower(): identifier for identifier in db_identifiers}
     # delete db identifiers not present in input or modify them with input val
     for identifier_type, identifier in db_dict.items():
         if identifier_type not in input_dict:

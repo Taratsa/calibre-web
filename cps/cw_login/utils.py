@@ -391,7 +391,7 @@ def _create_identifier():
 
 
 def _user_context_processor():
-    return dict(current_user=_get_user())
+    return {"current_user": _get_user()}
 
 
 def _secret_key(key=None):

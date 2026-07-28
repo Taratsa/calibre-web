@@ -206,7 +206,7 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
         if author == "":
             author = " & ".join(split_authors([doc_info.author])) if doc_info.author else "Unknown"
         if title == "":
-            title = doc_info.title if doc_info.title else original_file_name
+            title = doc_info.title or original_file_name
         if subject == "":
             subject = doc_info.subject or ""
         if tags == "" and "/Keywords" in doc_info:
@@ -258,7 +258,7 @@ def pdf_preview(tmp_file_path, tmp_dir):
 
 
 def get_magick_version():
-    ret = dict()
+    ret = {}
     if not use_generic_pdf_cover:
         ret["Image Magick"] = ImageVersion.MAGICK_VERSION  # pyright: ignore[reportPossiblyUnboundVariable]
     else:

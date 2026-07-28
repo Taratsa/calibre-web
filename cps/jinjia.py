@@ -141,7 +141,7 @@ def book_last_modified(book):
 
 @jinjia.app_template_filter("get_cover_srcset")
 def get_cover_srcset(book):
-    srcset = list()
+    srcset = []
     resolutions = {
         constants.COVER_THUMBNAIL_SMALL: "sm",
         constants.COVER_THUMBNAIL_MEDIUM: "md",
@@ -155,7 +155,7 @@ def get_cover_srcset(book):
 
 @jinjia.app_template_filter("get_series_srcset")
 def get_series_srcset(series):
-    srcset = list()
+    srcset = []
     resolutions = {
         constants.COVER_THUMBNAIL_SMALL: "sm",
         constants.COVER_THUMBNAIL_MEDIUM: "md",

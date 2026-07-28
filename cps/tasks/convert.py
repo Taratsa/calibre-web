@@ -54,7 +54,7 @@ class TaskConvert(CalibreTask):
         self.ereader_mail = ereader_mail
         self.user = user
 
-        self.results = dict()
+        self.results = {}
 
     def run(self, worker_thread):
         df_cover = None
@@ -306,7 +306,7 @@ class TaskConvert(CalibreTask):
                     library_path,
                 ]
                 p = process_open(opf_command, quotes, my_env, newlines=False)
-                lines = list()
+                lines = []
                 while p.poll() is None:
                     lines.append(p.stdout.readline())  # pyright: ignore[reportOptionalMemberAccess]
                 check = p.returncode

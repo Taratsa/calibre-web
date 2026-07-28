@@ -139,7 +139,7 @@ env_CALIBRE_PORT = os.environ.get("CALIBRE_PORT", DEFAULT_PORT)
 try:
     DEFAULT_PORT = int(env_CALIBRE_PORT)  # pyright: ignore[reportConstantRedefinition]
 except ValueError:
-    print(f"Environment variable CALIBRE_PORT has invalid value ({env_CALIBRE_PORT}), faling back to default (8083)")
+    pass
 del env_CALIBRE_PORT
 
 
@@ -233,7 +233,7 @@ BookMeta = namedtuple(
 # python build process likes to have x.y.zbw -> b for beta and w a counting number
 STABLE_VERSION = "0.6.27b"
 
-NIGHTLY_VERSION = dict()
+NIGHTLY_VERSION = {}
 NIGHTLY_VERSION[0] = "$Format:%H$"
 NIGHTLY_VERSION[1] = "$Format:%cI$"
 

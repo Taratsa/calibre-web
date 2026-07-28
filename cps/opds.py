@@ -154,7 +154,7 @@ def feed_hot():
         .group_by(ub.Downloads.book_id)
     )  # pyright: ignore[reportArgumentType]
     hot_books = all_books.offset(off).limit(config.config_books_per_page)  # pyright: ignore[reportArgumentType]
-    entries = list()
+    entries = []
     for book in hot_books:
         query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
         download_book = query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
@@ -357,7 +357,7 @@ def feed_ratingindex():
     pagination = Pagination(
         (int(off) / (int(config.config_books_per_page)) + 1), config.config_books_per_page, len(entries)
     )
-    element = list()
+    element = []
     for entry in entries:
         element.append(FeedObject(entry[0].id, _("{} Stars").format(entry.name)))
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
@@ -389,7 +389,7 @@ def feed_formatindex():
     pagination = Pagination(
         (int(off) / (int(config.config_books_per_page)) + 1), config.config_books_per_page, len(entries)
     )
-    element = list()
+    element = []
     for entry in entries:
         element.append(FeedObject(entry.format, entry.format))
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
@@ -497,8 +497,8 @@ def feed_shelf(book_id):
             )
             .first()
         )
-    result = list()
-    pagination = list()
+    result = []
+    pagination = []
     # user is allowed to access shelf
     if shelf:
         result, __, pagination = calibre_db.fill_indexpage(
@@ -557,7 +557,7 @@ def get_metadata_calibre_companion(uuid, library):
 @opds.route("/opds/stats")
 @requires_basic_auth_if_no_ano
 def get_database_stats():
-    stat = dict()
+    stat = {}
     stat["books"] = calibre_db.session.query(db.Books).count()
     stat["authors"] = calibre_db.session.query(db.Authors).count()
     stat["categories"] = calibre_db.session.query(db.Tags).count()

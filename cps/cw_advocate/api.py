@@ -192,8 +192,8 @@ class RequestsAPIWrapper:
         # Gnarly, but necessary to give pickle a consistent module-level
         # reference for each wrapper.
         wrapper_hash = hashlib.sha256(pickle.dumps(self)).hexdigest()
-        cls.__name__ = "_".join((cls.__name__, wrapper_hash))
-        cls.__qualname__ = ".".join((__name__, cls.__name__))
+        cls.__name__ = f"{cls.__name__}_{wrapper_hash}"
+        cls.__qualname__ = f"{__name__}.{cls.__name__}"
         if not globals().get(cls.__name__):
             globals()[cls.__name__] = cls
 

@@ -37,7 +37,6 @@ try:
         if name is not None:
             return _copy_fields(pyc_languages.get(name=name))
 except ImportError:
-    print("Python 3.12 isn't compatible with iso-639. Please install pycountry.")
     try:
         from iso639 import languages  # pyright: ignore[reportMissingImports]
 
@@ -68,8 +67,8 @@ def get_language_name(locale, lang_code):
 
 
 def get_language_code_from_name(locale, language_names, remainder=None):
-    language_names = set(strip_whitespaces(x).lower() for x in language_names if x)
-    lang = list()
+    language_names = {strip_whitespaces(x).lower() for x in language_names if x}
+    lang = []
     names = get_language_names(locale)
     if names is None:
         return lang
@@ -84,7 +83,7 @@ def get_language_code_from_name(locale, language_names, remainder=None):
 
 
 def get_valid_language_codes_from_code(locale, language_names, remainder=None):
-    lang = list()
+    lang = []
     if "" in language_names:
         language_names.remove("")
     names = get_language_names(locale)

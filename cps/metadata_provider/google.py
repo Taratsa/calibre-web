@@ -38,14 +38,14 @@ class Google(Metadata):
     API_KEY = "&key=" + config.config_googlebooks_api_key
 
     def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
-        val = list()
+        val = []
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
             if title_tokens:
                 tokens = [quote(t.encode("utf-8")) for t in title_tokens]
                 query = "+".join(tokens)
             try:
-                results = requests.get(Google.SEARCH_URL + query + Google.API_KEY)
+                results = requests.get(Google.SEARCH_URL + query + Google.API_KEY, timeout=5)
                 results.raise_for_status()
             except Exception as e:
                 log.warning(e)

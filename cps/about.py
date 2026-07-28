@@ -33,7 +33,7 @@ from .usermanagement import user_login_required
 
 about = flask.Blueprint("about", __name__)
 
-modules = dict()
+modules = {}
 req = dep_check.load_dependencies(False)
 opt = dep_check.load_dependencies(True)
 for i in req + opt:

@@ -36,7 +36,7 @@ class ComicVine(Metadata):
     HEADERS = {"User-Agent": "Not Evil Browser"}
 
     def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
-        val = list()
+        val = []
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
             if title_tokens:
@@ -46,6 +46,7 @@ class ComicVine(Metadata):
                 result = requests.get(
                     f"{ComicVine.BASE_URL}{query}{ComicVine.QUERY_PARAMS}",
                     headers=ComicVine.HEADERS,
+                    timeout=5,
                 )
                 result.raise_for_status()
             except Exception as e:

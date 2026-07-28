@@ -479,8 +479,8 @@ def delete_user():
     except ArgumentError:
         users = None
     count = 0
-    errors = list()
-    success = list()
+    errors = []
+    success = []
     if not users:
         log.error("User not found")
         return make_response(jsonify(type="danger", message=_("User not found")))
@@ -515,7 +515,7 @@ def delete_user():
 @admin_required
 def table_get_locale():
     locale = get_available_locale()
-    ret = list()
+    ret = []
     current_locale = get_locale()
     for loc in locale:
         ret.append({"value": str(loc), "text": loc.get_language_name(current_locale)})
@@ -527,7 +527,7 @@ def table_get_locale():
 @admin_required
 def table_get_default_lang():
     languages = calibre_db.speaking_language()
-    ret = list()
+    ret = []
     ret.append({"value": "all", "text": _("Show All")})
     for lang in languages:
         ret.append({"value": lang.lang_code, "text": lang.name})
@@ -1664,8 +1664,8 @@ def update_mailsettings():
 @admin_required
 def edit_scheduledtasks():
     content = config.get_scheduled_task_settings()
-    time_field = list()
-    duration_field = list()
+    time_field = []
+    duration_field = []
 
     for n in range(24):
         time_field.append(
@@ -2034,7 +2034,7 @@ def import_ldap_users():
             log.warning("LDAP User: %s Not Found", user)
             showtext["text"] = _("At Least One LDAP User Not Found in Database")
     if not showtext:
-        showtext["text"] = _(f"{imported} User Successfully Imported")
+        showtext["text"] = _("%(count)d User Successfully Imported", count=imported)
     ub.create_audit_log_entry(
         user_id=current_user.id,
         action="create",
@@ -2058,7 +2058,7 @@ def cancel_task():
 
 def _db_simulate_change():
     param = request.form.to_dict()
-    to_save = dict()
+    to_save = {}
     to_save["config_calibre_dir"] = strip_whitespaces(
         re.sub(r"[\\/]metadata\.db$", "", param["config_calibre_dir"], flags=re.IGNORECASE)
     )

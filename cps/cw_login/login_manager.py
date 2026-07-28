@@ -388,7 +388,7 @@ class LoginManager:
         return False
 
     def _load_user_from_remember_cookie(self, cookie):
-        signer_kwargs = dict(key_derivation="hmac", digest_method=hashlib.sha1)
+        signer_kwargs = {"key_derivation": "hmac", "digest_method": hashlib.sha1}
         try:
             remember_dict = URLSafeSerializer(
                 current_app.secret_key or "",
@@ -469,7 +469,7 @@ class LoginManager:
 
         # prepare data
         int(current_app.permanent_session_lifetime.total_seconds())
-        signer_kwargs = dict(key_derivation="hmac", digest_method=hashlib.sha1)
+        signer_kwargs = {"key_derivation": "hmac", "digest_method": hashlib.sha1}
         # save
         data = URLSafeSerializer(
             current_app.secret_key or "",

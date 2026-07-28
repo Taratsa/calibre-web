@@ -30,7 +30,7 @@ def get_audio_file_info(tmp_file_path, original_file_extension, original_file_na
     audio_file = mutagen.File(tmp_file_path)
     comments = None
     if original_file_extension in [".mp3", ".wav", ".aiff"]:
-        cover_data = list()
+        cover_data = []
         for key, val in audio_file.tags.items():
             if key.startswith("APIC:"):
                 cover_data.append(val)
@@ -77,7 +77,7 @@ def get_audio_file_info(tmp_file_path, original_file_extension, original_file_na
                         cover_info = dat
                         break
                 tmp_cover_name = cover.cover_processing(tmp_file_path, cover_info.data, "." + cover_info.mime[-3:])
-    elif original_file_extension in [".aac"]:
+    elif original_file_extension == ".aac":
         title = audio_file.tags.get("Title").value if "Title" in audio_file else None
         author = audio_file.tags.get("Artist").value if "Artist" in audio_file else None
         comments = audio_file.tags.get("Comment").value if "Comment" in audio_file else None
@@ -91,7 +91,7 @@ def get_audio_file_info(tmp_file_path, original_file_extension, original_file_na
             tmp_cover_name = tmp_file_path + ".jpg"
             with open(tmp_cover_name, "wb") as cover_file:
                 cover_file.write(cover_data.value.split(b"\x00", 1)[1])
-    elif original_file_extension in [".asf"]:
+    elif original_file_extension == ".asf":
         title = audio_file.tags.get("Title")[0].value if "Title" in audio_file else None
         author = audio_file.tags.get("Artist")[0].value if "Artist" in audio_file else None
         comments = audio_file.tags.get("Comments")[0].value if "Comments" in audio_file else None

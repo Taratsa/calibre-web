@@ -35,7 +35,7 @@ SYMBOLS_TO_TRANSLATE = (
     "öÖüÜóÓőŐúÚéÉáÁűŰíÍąĄćĆęĘłŁńŃóÓśŚźŹżŻ",
     "oOuUoOoOuUeEaAuUiIaAcCeElLnNoOsSzZzZ",
 )
-SYMBOL_TRANSLATION_MAP = dict([(ord(a), ord(b)) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE, strict=False)])
+SYMBOL_TRANSLATION_MAP = {ord(a): ord(b) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE, strict=False)}
 
 
 def get_int_or_float(value: str) -> int | float:
@@ -109,7 +109,7 @@ class LubimyCzytac(Metadata):
     def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
         if self.active:
             try:
-                result = requests.get(self._prepare_query(title=query))
+                result = requests.get(self._prepare_query(title=query), timeout=5)
                 result.raise_for_status()
             except Exception as e:
                 log.warning(e)
@@ -194,7 +194,7 @@ class LubimyCzytacParser:
 
     def parse_single_book(self, match: MetaRecord, generic_cover: str, locale: str) -> MetaRecord:
         try:
-            response = requests.get(match.url)
+            response = requests.get(match.url, timeout=5)
             response.raise_for_status()
         except Exception as e:
             log.warning(e)
@@ -236,7 +236,7 @@ class LubimyCzytacParser:
         return self._parse_xpath_node(xpath=LubimyCzytac.PUBLISHER, take_first=True)  # pyright: ignore[reportReturnType]
 
     def _parse_languages(self, locale: str) -> list[str]:
-        languages = list()
+        languages = []
         lang = self._parse_xpath_node(xpath=LubimyCzytac.LANGUAGES, take_first=True)
         if lang:
             if "polski" in lang:

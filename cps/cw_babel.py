@@ -17,7 +17,7 @@ def get_locale():
         # if the account is the guest account bypass the config lang settings
         return current_user.locale
 
-    preferred = list()
+    preferred = []
     if request.accept_languages:
         for x in request.accept_languages.values():
             try:
@@ -37,4 +37,4 @@ def get_available_locale():
 
 
 def get_available_translations():
-    return set(str(item) for item in get_available_locale())
+    return {str(item) for item in get_available_locale()}

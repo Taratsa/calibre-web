@@ -305,7 +305,7 @@ class ConfigSQL:
     config_check_extensions: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
     def __init__(self):
-        self.__dict__["dirty"] = list()
+        self.__dict__["dirty"] = []
 
     def init_config(self, session, secret_key, cli):
         self._session = session  # pyright: ignore[reportUninitializedInstanceVariable]
@@ -508,7 +508,7 @@ class ConfigSQL:
             except OperationalError as e:
                 log.error("Database error: %s", e)
                 self._session.rollback()
-        self.__dict__["dirty"] = list()
+        self.__dict__["dirty"] = []
 
     def save(self):
         """Apply all configuration values to the underlying storage."""

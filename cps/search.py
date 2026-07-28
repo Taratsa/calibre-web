@@ -291,7 +291,7 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
     )
 
     # parse multi selects to a complete dict
-    tags = dict()
+    tags = {}
     elements = ["tag", "serie", "shelf", "language", "extension"]
     for element in elements:
         tags["include_" + element] = term.get("include_" + element)
@@ -399,12 +399,10 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
         q = adv_search_ratings(q, rating_high, rating_low)
 
         if description:
-            pass
             q = q.filter(db.Books.comments.any(func.lower(db.Comments.text).ilike("%" + description + "%")))  # pyright: ignore[reportGeneralTypeIssues]
 
         # search custom columns
         try:
-            pass
             q = adv_search_custom_columns(cc, term, q)
         except AttributeError as ex:
             log.debug_or_exception(ex)  # pyright: ignore[reportAttributeAccessIssue]
@@ -488,7 +486,7 @@ def render_search_results(term, offset=None, order=None, limit=None):
         join = db.books_series_link, db.Books.id == db.books_series_link.c.book, db.Series
         entries, result_count, pagination = calibre_db.get_search_results(term, config, offset, order, limit, *join)
     else:
-        entries = list()
+        entries = []
         order = [None, None]
         pagination = result_count = None
 

@@ -84,7 +84,7 @@ def generate_auth_token(user_id):
     warning = False
     host_list = request.host.rsplit(":")
     host = ":".join(host_list) if len(host_list) == 1 else ":".join(host_list[0:-1])
-    if host.startswith("127.") or host.lower() == "localhost" or host.startswith("[::ffff:7f") or host == "[::1]":
+    if host.startswith(("127.", "[::ffff:7f")) or host.lower() == "localhost" or host == "[::1]":
         warning = _("Please access Calibre-Web from non localhost to get valid api_endpoint for kobo device")
 
     # Generate auth token if none is existing for this user

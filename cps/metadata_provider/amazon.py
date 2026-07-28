@@ -126,7 +126,7 @@ class Amazon(Metadata):
                     log.error_or_exception(e)
                     return []
 
-        val = list()
+        val = []
         if self.active:
             try:
                 results = self.session.get(
@@ -150,6 +150,6 @@ class Amazon(Metadata):
             ]
             with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
                 fut = {executor.submit(inner, link, index) for index, link in enumerate(links_list[:3])}
-                val = list(map(lambda x: x.result(), concurrent.futures.as_completed(fut)))
+                val = [x.result() for x in concurrent.futures.as_completed(fut)]
         result = list(filter(lambda x: x, val))
         return [x[0] for x in sorted(result, key=itemgetter(1))]  # sort by amazons listing order for best relevance

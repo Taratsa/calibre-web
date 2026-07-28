@@ -122,7 +122,7 @@ def convert_book_format(book_id, calibre_path, old_book_format, new_book_format,
         settings["subject"] = _("Send to eReader")  # pretranslate Subject for Email
         settings["body"] = _("This Email has been sent via Calibre-Web.")
     else:
-        settings = dict()
+        settings = {}
     link = '<a href="{}">{}</a>'.format(
         url_for("web.show_book", book_id=book.id), escape(book.title)
     )  # prevent xss  # pyright: ignore[reportOptionalMemberAccess]
@@ -179,7 +179,7 @@ def send_registration_mail(e_mail, user_name, default_password, resend=False):
 
 
 def check_send_to_ereader_with_converter(formats):
-    book_formats = list()
+    book_formats = []
     if "MOBI" in formats and "EPUB" not in formats:
         book_formats.append(
             {
@@ -203,8 +203,8 @@ def check_send_to_ereader(entry):
     """
     returns all available book formats for sending to eReader
     """
-    formats = list()
-    book_formats = list()
+    formats = []
+    book_formats = []
     if len(entry.data):
         for ele in iter(entry.data):
             if ele.uncompressed_size < config.mail_size:
@@ -229,7 +229,7 @@ def check_send_to_ereader(entry):
 # list with supported formats
 def check_read_formats(entry):
     extensions_reader = {"TXT", "PDF", "EPUB", "KEPUB", "CBZ", "CBT", "CBR", "DJVU", "DJV"}
-    book_formats = list()
+    book_formats = []
     if len(entry.data):
         for ele in iter(entry.data):
             if ele.format.upper() in extensions_reader:
@@ -288,9 +288,9 @@ def get_valid_filename(value, replace_whitespace=True, chars=128, force_unidecod
         value = unidecode.unidecode(value)
     if replace_whitespace:
         #  *+:\"/<>? are replaced by _
-        value = re.sub(r"[*+:\\\"/<>?]+", "_", value, flags=re.U)
+        value = re.sub(r"[*+:\\\"/<>?]+", "_", value, flags=re.UNICODE)
         # pipe has to be replaced with comma
-        value = re.sub(r"[|]+", ",", value, flags=re.U)
+        value = re.sub(r"[|]+", ",", value, flags=re.UNICODE)
 
     value = strip_whitespaces(value.encode("utf-8")[:chars].decode("utf-8", errors="ignore"))
 
@@ -382,7 +382,7 @@ def edit_book_read_status(book_id, read_status=None):
         except (OperationalError, InvalidRequestError) as ex:
             calibre_db.session.rollback()
             log.error(f"Read status could not set: {ex}")
-            return _(f"Read status could not set: {ex.orig}")  # pyright: ignore[reportAttributeAccessIssue]
+            return _("Read status could not set: %(error)s", error=ex.orig)  # pyright: ignore[reportAttributeAccessIssue]
     return ""
 
 

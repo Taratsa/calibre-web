@@ -32,7 +32,7 @@ def validate_upload_file(requested_file):
         return False, _("No file provided")
     filename = requested_file.filename.lower()
     log.debug(f"File filename: {filename}")
-    if not (filename.endswith(".pdf") or filename.endswith(".epub")):
+    if not (filename.endswith((".pdf", ".epub"))):
         log.warning(f"Upload validation failed: invalid extension {filename}")
         return False, _("Only PDF and EPUB files are allowed")
     log.debug("File validation passed")

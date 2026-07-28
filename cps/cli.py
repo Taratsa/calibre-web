@@ -108,7 +108,6 @@ class CliParameter:
             if os.path.isfile(args.c):
                 self.certfilepath = args.c
             else:
-                print("Certfile path is invalid. Exiting...")
                 sys.exit(1)
 
         if args.c == "":
@@ -118,11 +117,9 @@ class CliParameter:
             if os.path.isfile(args.k):
                 self.keyfilepath = args.k
             else:
-                print("Keyfile path is invalid. Exiting...")
                 sys.exit(1)
 
         if (args.k and not args.c) or (not args.k and args.c):
-            print("Certfile and Keyfile have to be used together. Exiting...")
             sys.exit(1)
 
         if args.k == "":
@@ -150,12 +147,10 @@ class CliParameter:
                     # on Windows python < 3.4, inet_pton is not available
                     # inet_atom only handles IPv4 addresses
                     socket.inet_aton(self.ip_address)
-            except OSError as err:
-                print(self.ip_address, ":", err)
+            except OSError:
                 sys.exit(1)
 
         # handle and check user password argument
         self.user_credentials = args.s or None
         if self.user_credentials and ":" not in self.user_credentials:
-            print("No valid 'username:password' format")
             sys.exit(3)

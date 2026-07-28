@@ -59,5 +59,4 @@ if __name__ == "__main__":
             web_server.stop()
         except Exception:
             pass
-        print("\nCalibre-Web: received interrupt, shutting down")
         sys.exit(0)

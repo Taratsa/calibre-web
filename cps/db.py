@@ -513,7 +513,7 @@ class CustomColumns(Base):
         return display_dict
 
     def to_json(self, value, extra, sequence):
-        content = dict()
+        content = {}
         content["table"] = "custom_column_" + str(self.id)
         content["column"] = "value"
         content["datatype"] = self.datatype
@@ -564,7 +564,7 @@ class AlchemyEncoder(json.JSONEncoder):
                     if isinstance(data, str):
                         data = data.replace("'", "'")
                     elif isinstance(data, InstrumentedList):
-                        el = list()
+                        el = []
                         # ele = None
                         for ele in data:
                             if hasattr(ele, "value"):  # converter for custom_column values
@@ -955,7 +955,7 @@ class CalibreDB:
 
     @staticmethod
     def get_checkbox_sorted(inputlist, state, offset, limit, order, combo=False):
-        outcome = list()
+        outcome = []
         elementlist = {ele[0].id: ele for ele in inputlist} if combo else {ele.id: ele for ele in inputlist}
         for entry in state:
             with contextlib.suppress(KeyError):
@@ -1020,8 +1020,8 @@ class CalibreDB:
                 indx -= 1
                 element += 1
         query = query.filter(db_filter).filter(self.common_filters(allow_show_archived))
-        entries = list()
-        pagination = list()
+        entries = []
+        pagination = []
         try:
             pagination = Pagination(page, pagesize, query.count())
             entries = self._eager_load_relationships(query).order_by(*order).offset(off).limit(pagesize).all()
@@ -1085,12 +1085,12 @@ class CalibreDB:
             .filter(func.lower(database.name).ilike("%" + query + "%"))
             .all()
         )
-        json_dumps = json.dumps([dict(name=r.name.replace(*replace)) for r in entries])
+        json_dumps = json.dumps([{"name": r.name.replace(*replace)} for r in entries])
         return json_dumps
 
     def check_exists_book(self, authr, title):
         self.create_functions()
-        q = list()
+        q = []
         author_terms = re.split(r"\s*&\s*", authr)
         for author_term in author_terms:
             q.append(Books.authors.any(func.lower(Authors.name).ilike("%" + author_term + "%")))  # pyright: ignore[reportGeneralTypeIssues]
@@ -1257,7 +1257,7 @@ class CalibreDB:
                     .group_by(text("books_languages_link.lang_code"))
                     .all()
                 )
-            tags = list()
+            tags = []
             for lang in languages:
                 tag = Category(isoLanguages.get_language_name(get_locale(), lang[0].lang_code), lang[0].lang_code)
                 tags.append([tag, lang[1]])

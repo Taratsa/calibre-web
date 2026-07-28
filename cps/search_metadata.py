@@ -42,13 +42,10 @@ except ImportError:
     log.info(
         '*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***'
     )
-    print(
-        '*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***'
-    )
     web_server.stop(True)
     sys.exit(6)
 
-new_list = list()
+new_list = []
 meta_dir = os.path.join(constants.BASE_DIR, "cps", "metadata_provider")
 modules = os.listdir(os.path.join(constants.BASE_DIR, "cps", "metadata_provider"))
 for f in modules:
@@ -64,7 +61,7 @@ for f in modules:
 
 
 def list_classes(provider_list):
-    classes = list()
+    classes = []
     for element in provider_list:
         for name, obj in inspect.getmembers(sys.modules["cps.metadata_provider." + element]):
             if inspect.isclass(obj) and name != "Metadata" and issubclass(obj, Metadata):
@@ -79,7 +76,7 @@ cl = list_classes(new_list)
 @user_login_required
 def metadata_provider():
     active = current_user.view_settings.get("metadata", {})
-    provider = list()
+    provider = []
     for c in cl:
         ac = active.get(c.__id__, True)
         provider.append({"name": c.__name__, "active": ac, "initial": ac, "id": c.__id__})
@@ -114,7 +111,7 @@ def metadata_change_active_provider(prov_name):
 @user_login_required
 def metadata_search():
     query = request.form.to_dict().get("query")
-    data = list()
+    data = []
     active = current_user.view_settings.get("metadata", {})
     locale = get_locale()
     if query:

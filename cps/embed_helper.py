@@ -67,5 +67,4 @@ def get_calibre_binarypath(binary):
             return os.path.join(binariesdir, SUPPORTED_CALIBRE_BINARIES[binary])
         except KeyError:
             log.error("Binary not supported by Calibre-Web: %s", SUPPORTED_CALIBRE_BINARIES[binary])
-            pass
     return ""

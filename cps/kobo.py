@@ -497,8 +497,8 @@ def get_metadata(book):
                 # Get a deterministic id based on the series name.
                 "Id": str(uuid.uuid3(uuid.NAMESPACE_DNS, name)),  # pyright: ignore[reportArgumentType]
             }
-        except Exception as e:
-            print(e)
+        except Exception:
+            pass
     return metadata
 
 
@@ -570,7 +570,7 @@ def HandleTagUpdate(tag_id):
 
 # Adds items to the given shelf.
 def add_items_to_shelf(items, shelf):
-    book_ids_already_in_shelf = set([book_shelf.book_id for book_shelf in shelf.books])
+    book_ids_already_in_shelf = {book_shelf.book_id for book_shelf in shelf.books}
     items_unknown_to_calibre = []
     for item in items:
         try:

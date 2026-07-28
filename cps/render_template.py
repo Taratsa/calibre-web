@@ -37,7 +37,7 @@ def get_sidebar_config(kwargs=None):
         content = isinstance(content, (User, LocalProxy)) and not content.role_anonymous()
     else:
         content = "conf" in kwargs
-    sidebar = list()
+    sidebar = []
     sidebar.append(
         {
             "glyph": "glyphicon-book",

@@ -242,24 +242,24 @@ def generate_oauth_blueprints():
             ub.session_commit(f"{provider} Blueprint Created")
 
     oauth_ids = ub.session.query(ub.OAuthProvider).all()
-    ele1 = dict(
-        provider_name="github",
-        id=oauth_ids[0].id,
-        active=oauth_ids[0].active,
-        oauth_client_id=oauth_ids[0].oauth_client_id,
-        scope=None,
-        oauth_client_secret=oauth_ids[0].oauth_client_secret,
-        obtain_link="https://github.com/settings/developers",
-    )
-    ele2 = dict(
-        provider_name="google",
-        id=oauth_ids[1].id,
-        active=oauth_ids[1].active,
-        scope=["https://www.googleapis.com/auth/userinfo.email"],
-        oauth_client_id=oauth_ids[1].oauth_client_id,
-        oauth_client_secret=oauth_ids[1].oauth_client_secret,
-        obtain_link="https://console.developers.google.com/apis/credentials",
-    )
+    ele1 = {
+        "provider_name": "github",
+        "id": oauth_ids[0].id,
+        "active": oauth_ids[0].active,
+        "oauth_client_id": oauth_ids[0].oauth_client_id,
+        "scope": None,
+        "oauth_client_secret": oauth_ids[0].oauth_client_secret,
+        "obtain_link": "https://github.com/settings/developers",
+    }
+    ele2 = {
+        "provider_name": "google",
+        "id": oauth_ids[1].id,
+        "active": oauth_ids[1].active,
+        "scope": ["https://www.googleapis.com/auth/userinfo.email"],
+        "oauth_client_id": oauth_ids[1].oauth_client_id,
+        "oauth_client_secret": oauth_ids[1].oauth_client_secret,
+        "obtain_link": "https://console.developers.google.com/apis/credentials",
+    }
     oauthblueprints.append(ele1)
     oauthblueprints.append(ele2)
 

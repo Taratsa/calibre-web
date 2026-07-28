@@ -179,7 +179,7 @@ class TaskGenerateCoverThumbnails(CalibreTask):
         book_cover_thumbnails = self.get_book_cover_thumbnails(book.id)
 
         # Generate new thumbnails for missing covers
-        resolutions = list(map(lambda t: t.resolution, book_cover_thumbnails))
+        resolutions = [t.resolution for t in book_cover_thumbnails]
         missing_resolutions = list(set(self.resolutions).difference(resolutions))
         for resolution in missing_resolutions:
             generated += 1
@@ -314,7 +314,7 @@ class TaskGenerateSeriesThumbnails(CalibreTask):
                     series_books = self.get_series_books(series.id, calibre_db)
 
                     # Generate new thumbnails for missing covers
-                    resolutions = list(map(lambda t: t.resolution, series_thumbnails))
+                    resolutions = [t.resolution for t in series_thumbnails]
                     missing_resolutions = list(set(self.resolutions).difference(resolutions))
                     for resolution in missing_resolutions:
                         generated += 1

@@ -70,7 +70,7 @@ class WorkerThread(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
 
-        self.dequeued = list()
+        self.dequeued = []
 
         self.doLock = threading.Lock()
         self.queue = ImprovedQueue()

@@ -99,6 +99,7 @@ class my_GoodreadsRequest(GoodreadsRequest):  # pyright: ignore[reportGeneralTyp
             self.host + self.path,
             params=self.params,
             headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0"},
+            timeout=5,
         )
         if resp.status_code != 200:
             raise GoodreadsRequestException(resp.reason, self.path)
