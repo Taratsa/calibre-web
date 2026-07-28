@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
 #
@@ -30,23 +29,23 @@ def get_scheduled_tasks(reconnect=True):
     tasks = list()
     # Reconnect Calibre database (metadata.db) based on config.schedule_reconnect
     if reconnect:
-        tasks.append([lambda: TaskReconnectDatabase(), 'reconnect', False])
+        tasks.append([lambda: TaskReconnectDatabase(), "reconnect", False])
 
     # Delete temp folder
-    tasks.append([lambda: TaskClean(), 'delete temp', True])
+    tasks.append([lambda: TaskClean(), "delete temp", True])
 
     # Generate metadata.opf file for each changed book
     if config.schedule_metadata_backup:
-        tasks.append([lambda: TaskBackupMetadata("en"), 'backup metadata', False])
+        tasks.append([lambda: TaskBackupMetadata("en"), "backup metadata", False])
 
     # Generate all missing book cover thumbnails
     if config.schedule_generate_book_covers:
-        tasks.append([lambda: TaskClearCoverThumbnailCache(0), 'delete superfluous book covers', True])
-        tasks.append([lambda: TaskGenerateCoverThumbnails(), 'generate book covers', False])
+        tasks.append([lambda: TaskClearCoverThumbnailCache(0), "delete superfluous book covers", True])
+        tasks.append([lambda: TaskGenerateCoverThumbnails(), "generate book covers", False])
 
     # Generate all missing series thumbnails
     if config.schedule_generate_series_covers:
-        tasks.append([lambda: TaskGenerateSeriesThumbnails(), 'generate book covers', False])
+        tasks.append([lambda: TaskGenerateSeriesThumbnails(), "generate book covers", False])
 
     return tasks
 
@@ -70,12 +69,15 @@ def register_scheduled_tasks(reconnect=True):
 
         # Register scheduled tasks
         timezone_info = datetime.datetime.now(datetime.UTC).astimezone().tzinfo
-        scheduler.schedule_tasks(tasks=get_scheduled_tasks(reconnect), trigger=CronTrigger(hour=start,
-                                                                                           timezone=timezone_info))
+        scheduler.schedule_tasks(
+            tasks=get_scheduled_tasks(reconnect), trigger=CronTrigger(hour=start, timezone=timezone_info)
+        )
         end_time = calclulate_end_time(start, duration)
-        scheduler.schedule(func=end_scheduled_tasks, trigger=CronTrigger(hour=end_time.hour, minute=end_time.minute,
-                                                                         timezone=timezone_info),
-                           name="end scheduled task")
+        scheduler.schedule(
+            func=end_scheduled_tasks,
+            trigger=CronTrigger(hour=end_time.hour, minute=end_time.minute, timezone=timezone_info),
+            name="end scheduled task",
+        )
 
         # Kick-off tasks, if they should currently be running
         if should_task_be_running(start, duration):
@@ -89,12 +91,12 @@ def register_startup_tasks():
         start = config.schedule_start_time
         duration = config.schedule_duration
 
-        tasks = [[lambda: TaskClean(), 'delete temp', True]]
+        tasks = [[lambda: TaskClean(), "delete temp", True]]
 
-        if constants.APP_MODE in ['development', 'test'] and not should_task_be_running(start, duration):
+        if constants.APP_MODE in ["development", "test"] and not should_task_be_running(start, duration):
             scheduler.schedule_tasks_immediately(tasks=get_scheduled_tasks(False))
         elif config.schedule_generate_book_covers:
-            tasks.append([lambda: TaskGenerateCoverThumbnails(), 'generate cover thumbnails (startup)', False])  # pyright: ignore[reportArgumentType]
+            tasks.append([lambda: TaskGenerateCoverThumbnails(), "generate cover thumbnails (startup)", False])  # pyright: ignore[reportArgumentType]
 
         scheduler.schedule_tasks_immediately(tasks=tasks)
 
@@ -109,4 +111,3 @@ def should_task_be_running(start, duration):
 def calclulate_end_time(start, duration):
     start_time = datetime.datetime.now().replace(hour=start, minute=0)
     return start_time + datetime.timedelta(hours=duration // 60, minutes=duration % 60)
-

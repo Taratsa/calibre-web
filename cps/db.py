@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 mutschler, cervinko, ok11, jkrehm, nanu-c, Wineliva,
 #                            pjeby, elelay, idalin, Ozzieisaacs
@@ -67,55 +66,67 @@ from .string_helper import strip_whitespaces
 
 log = logger.create()
 
-cc_exceptions = ['composite', 'series']
+cc_exceptions = ["composite", "series"]
 cc_classes = {}
 
 Base = declarative_base()
 
-books_authors_link = Table('books_authors_link', Base.metadata,
-                           Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                           Column('author', Integer, ForeignKey('authors.id'), primary_key=True)
-                           )
+books_authors_link = Table(
+    "books_authors_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("author", Integer, ForeignKey("authors.id"), primary_key=True),
+)
 
-books_tags_link = Table('books_tags_link', Base.metadata,
-                        Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                        Column('tag', Integer, ForeignKey('tags.id'), primary_key=True)
-                        )
+books_tags_link = Table(
+    "books_tags_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("tag", Integer, ForeignKey("tags.id"), primary_key=True),
+)
 
-books_series_link = Table('books_series_link', Base.metadata,
-                          Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                          Column('series', Integer, ForeignKey('series.id'), primary_key=True)
-                          )
+books_series_link = Table(
+    "books_series_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("series", Integer, ForeignKey("series.id"), primary_key=True),
+)
 
-books_ratings_link = Table('books_ratings_link', Base.metadata,
-                           Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                           Column('rating', Integer, ForeignKey('ratings.id'), primary_key=True)
-                           )
+books_ratings_link = Table(
+    "books_ratings_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("rating", Integer, ForeignKey("ratings.id"), primary_key=True),
+)
 
-books_languages_link = Table('books_languages_link', Base.metadata,
-                             Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                             Column('lang_code', Integer, ForeignKey('languages.id'), primary_key=True)
-                             )
+books_languages_link = Table(
+    "books_languages_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("lang_code", Integer, ForeignKey("languages.id"), primary_key=True),
+)
 
-books_publishers_link = Table('books_publishers_link', Base.metadata,
-                              Column('book', Integer, ForeignKey('books.id'), primary_key=True),
-                              Column('publisher', Integer, ForeignKey('publishers.id'), primary_key=True)
-                              )
+books_publishers_link = Table(
+    "books_publishers_link",
+    Base.metadata,
+    Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+    Column("publisher", Integer, ForeignKey("publishers.id"), primary_key=True),
+)
 
 
 class Library_Id(Base):
-    __tablename__ = 'library_id'
+    __tablename__ = "library_id"
     id = Column(Integer, primary_key=True)
     uuid = Column(String, nullable=False)
 
 
 class Identifiers(Base):
-    __tablename__ = 'identifiers'
+    __tablename__ = "identifiers"
 
     id = Column(Integer, primary_key=True)
-    type = Column(String(collation='NOCASE'), nullable=False, default="isbn")
-    val = Column(String(collation='NOCASE'), nullable=False)
-    book = Column(Integer, ForeignKey('books.id'), nullable=False)
+    type = Column(String(collation="NOCASE"), nullable=False, default="isbn")
+    val = Column(String(collation="NOCASE"), nullable=False)
+    book = Column(Integer, ForeignKey("books.id"), nullable=False)
     amazon = {
         "jp": "co.jp",
         "uk": "co.uk",
@@ -135,7 +146,7 @@ class Identifiers(Base):
 
     def format_type(self):
         format_type = self.type.lower()
-        if format_type == 'amazon':
+        if format_type == "amazon":
             return "Amazon"
         elif format_type.startswith("amazon_"):
             label_amazon = "Amazon.{0}"
@@ -182,7 +193,7 @@ class Identifiers(Base):
         format_type = self.type.lower()
         if format_type == "amazon" or format_type == "asin":
             return f"https://amazon.com/dp/{self.val}"
-        elif format_type.startswith('amazon_'):
+        elif format_type.startswith("amazon_"):
             link_amazon = "https://amazon.{0}/dp/{1}"
             country_code = format_type[7:].lower()
             if country_code not in self.amazon:
@@ -230,11 +241,11 @@ class Identifiers(Base):
 
 
 class Comments(Base):
-    __tablename__ = 'comments'
+    __tablename__ = "comments"
 
     id = Column(Integer, primary_key=True)
-    book = Column(Integer, ForeignKey('books.id'), nullable=False, unique=True)
-    text = Column(String(collation='NOCASE'), nullable=False)
+    book = Column(Integer, ForeignKey("books.id"), nullable=False, unique=True)
+    text = Column(String(collation="NOCASE"), nullable=False)
 
     def __init__(self, comment, book):
         super().__init__()
@@ -249,10 +260,10 @@ class Comments(Base):
 
 
 class Tags(Base):
-    __tablename__ = 'tags'
+    __tablename__ = "tags"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(collation='NOCASE'), unique=True, nullable=False)
+    name = Column(String(collation="NOCASE"), unique=True, nullable=False)
 
     def __init__(self, name):
         super().__init__()
@@ -269,11 +280,11 @@ class Tags(Base):
 
 
 class Authors(Base):
-    __tablename__ = 'authors'
+    __tablename__ = "authors"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(collation='NOCASE'), unique=True, nullable=False)
-    sort = Column(String(collation='NOCASE'))
+    name = Column(String(collation="NOCASE"), unique=True, nullable=False)
+    sort = Column(String(collation="NOCASE"))
     link = Column(String, nullable=False, default="")
 
     def __init__(self, name, sort, link=""):
@@ -293,11 +304,11 @@ class Authors(Base):
 
 
 class Series(Base):
-    __tablename__ = 'series'
+    __tablename__ = "series"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(collation='NOCASE'), unique=True, nullable=False)
-    sort = Column(String(collation='NOCASE'))
+    name = Column(String(collation="NOCASE"), unique=True, nullable=False)
+    sort = Column(String(collation="NOCASE"))
 
     def __init__(self, name, sort):
         super().__init__()
@@ -315,10 +326,10 @@ class Series(Base):
 
 
 class Ratings(Base):
-    __tablename__ = 'ratings'
+    __tablename__ = "ratings"
 
     id = Column(Integer, primary_key=True)
-    rating = Column(Integer, CheckConstraint('rating>-1 AND rating<11'), unique=True)
+    rating = Column(Integer, CheckConstraint("rating>-1 AND rating<11"), unique=True)
 
     def __init__(self, rating):
         super().__init__()
@@ -335,10 +346,10 @@ class Ratings(Base):
 
 
 class Languages(Base):
-    __tablename__ = 'languages'
+    __tablename__ = "languages"
 
     id = Column(Integer, primary_key=True)
-    lang_code = Column(String(collation='NOCASE'), nullable=False, unique=True)
+    lang_code = Column(String(collation="NOCASE"), nullable=False, unique=True)
 
     def __init__(self, lang_code):
         super().__init__()
@@ -358,11 +369,11 @@ class Languages(Base):
 
 
 class Publishers(Base):
-    __tablename__ = 'publishers'
+    __tablename__ = "publishers"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(collation='NOCASE'), nullable=False, unique=True)
-    sort = Column(String(collation='NOCASE'))
+    name = Column(String(collation="NOCASE"), nullable=False, unique=True)
+    sort = Column(String(collation="NOCASE"))
 
     def __init__(self, name, sort):
         super().__init__()
@@ -380,12 +391,12 @@ class Publishers(Base):
 
 
 class Data(Base):
-    __tablename__ = 'data'
-    __table_args__ = {'schema': 'calibre'}
+    __tablename__ = "data"
+    __table_args__ = {"schema": "calibre"}
 
     id = Column(Integer, primary_key=True)
-    book = Column(Integer, ForeignKey('books.id'), nullable=False)
-    format = Column(String(collation='NOCASE'), nullable=False)
+    book = Column(Integer, ForeignKey("books.id"), nullable=False)
+    format = Column(String(collation="NOCASE"), nullable=False)
     uncompressed_size = Column(Integer, nullable=False)
     name = Column(String, nullable=False)
 
@@ -405,9 +416,9 @@ class Data(Base):
 
 
 class Metadata_Dirtied(Base):
-    __tablename__ = 'metadata_dirtied'
+    __tablename__ = "metadata_dirtied"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    book = Column(Integer, ForeignKey('books.id'), nullable=False, unique=True)
+    book = Column(Integer, ForeignKey("books.id"), nullable=False, unique=True)
 
     def __init__(self, book):
         super().__init__()
@@ -415,14 +426,14 @@ class Metadata_Dirtied(Base):
 
 
 class Books(Base):
-    __tablename__ = 'books'
+    __tablename__ = "books"
 
     DEFAULT_PUBDATE = datetime(101, 1, 1, 0, 0, 0, 0)  # ("0101-01-01 00:00:00+00:00")
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    title = Column(String(collation='NOCASE'), nullable=False, default='Unknown')
-    sort = Column(String(collation='NOCASE'))
-    author_sort = Column(String(collation='NOCASE'))
+    title = Column(String(collation="NOCASE"), nullable=False, default="Unknown")
+    sort = Column(String(collation="NOCASE"))
+    author_sort = Column(String(collation="NOCASE"))
     timestamp = Column(TIMESTAMP, default=lambda: datetime.now(UTC))
     pubdate = Column(TIMESTAMP, default=DEFAULT_PUBDATE)
     series_index = Column(String, nullable=False, default="1.0")
@@ -433,18 +444,31 @@ class Books(Base):
     # isbn = Column(String(collation='NOCASE'), default="")
     # flags = Column(Integer, nullable=False, default=1)
 
-    authors = relationship(Authors, secondary=books_authors_link, backref='books')
-    tags = relationship(Tags, secondary=books_tags_link, backref='books', order_by="Tags.name")
-    comments = relationship(Comments, backref='books')
-    data = relationship(Data, backref='books')
-    series = relationship(Series, secondary=books_series_link, backref='books')
-    ratings = relationship(Ratings, secondary=books_ratings_link, backref='books')
-    languages = relationship(Languages, secondary=books_languages_link, backref='books')
-    publishers = relationship(Publishers, secondary=books_publishers_link, backref='books')
-    identifiers = relationship(Identifiers, backref='books')
+    authors = relationship(Authors, secondary=books_authors_link, backref="books")
+    tags = relationship(Tags, secondary=books_tags_link, backref="books", order_by="Tags.name")
+    comments = relationship(Comments, backref="books")
+    data = relationship(Data, backref="books")
+    series = relationship(Series, secondary=books_series_link, backref="books")
+    ratings = relationship(Ratings, secondary=books_ratings_link, backref="books")
+    languages = relationship(Languages, secondary=books_languages_link, backref="books")
+    publishers = relationship(Publishers, secondary=books_publishers_link, backref="books")
+    identifiers = relationship(Identifiers, backref="books")
 
-    def __init__(self, title, sort, author_sort, timestamp, pubdate, series_index, last_modified, path, has_cover,
-                 authors, tags, languages=None):
+    def __init__(
+        self,
+        title,
+        sort,
+        author_sort,
+        timestamp,
+        pubdate,
+        series_index,
+        last_modified,
+        path,
+        has_cover,
+        authors,
+        tags,
+        languages=None,
+    ):
         super().__init__()
         self.title = title
         self.sort = sort
@@ -454,7 +478,7 @@ class Books(Base):
         self.series_index = series_index
         self.last_modified = last_modified
         self.path = path
-        self.has_cover = (has_cover is not None)
+        self.has_cover = has_cover is not None
 
     def __repr__(self):
         return f"<Books('{self.title},{self.sort}{self.author_sort}{self.timestamp}{self.pubdate}{self.series_index}{self.last_modified}{self.path}{self.has_cover}')>"
@@ -468,11 +492,11 @@ class Books(Base):
         # updates on every metadata or cover change; fall back to timestamp
         # only if last_modified happens to be missing.
         t = self.last_modified or self.timestamp
-        return t.strftime('%Y-%m-%dT%H:%M:%S+00:00') if t else ''  # pyright: ignore[reportGeneralTypeIssues]
+        return t.strftime("%Y-%m-%dT%H:%M:%S+00:00") if t else ""  # pyright: ignore[reportGeneralTypeIssues]
 
 
 class CustomColumns(Base):
-    __tablename__ = 'custom_columns'
+    __tablename__ = "custom_columns"
 
     id = Column(Integer, primary_key=True)
     label = Column(String)
@@ -490,59 +514,67 @@ class CustomColumns(Base):
 
     def to_json(self, value, extra, sequence):
         content = dict()
-        content['table'] = "custom_column_" + str(self.id)
-        content['column'] = "value"
-        content['datatype'] = self.datatype
-        content['is_multiple'] = None if not self.is_multiple else "|"  # pyright: ignore[reportGeneralTypeIssues]
-        content['kind'] = "field"
-        content['name'] = self.name
-        content['search_terms'] = ['#' + self.label]
-        content['label'] = self.label
-        content['colnum'] = self.id
-        content['display'] = self.get_display_dict()
-        content['is_custom'] = True
-        content['is_category'] = self.datatype in ['text', 'rating', 'enumeration', 'series']
-        content['link_column'] = "value"
-        content['category_sort'] = "value"
-        content['is_csp'] = False
-        content['is_editable'] = self.editable
-        content['rec_index'] = sequence + 22     # toDo why ??
+        content["table"] = "custom_column_" + str(self.id)
+        content["column"] = "value"
+        content["datatype"] = self.datatype
+        content["is_multiple"] = None if not self.is_multiple else "|"  # pyright: ignore[reportGeneralTypeIssues]
+        content["kind"] = "field"
+        content["name"] = self.name
+        content["search_terms"] = ["#" + self.label]
+        content["label"] = self.label
+        content["colnum"] = self.id
+        content["display"] = self.get_display_dict()
+        content["is_custom"] = True
+        content["is_category"] = self.datatype in ["text", "rating", "enumeration", "series"]
+        content["link_column"] = "value"
+        content["category_sort"] = "value"
+        content["is_csp"] = False
+        content["is_editable"] = self.editable
+        content["rec_index"] = sequence + 22  # toDo why ??
         if isinstance(value, datetime):
-            content['#value#'] = {"__class__": "datetime.datetime",
-                                  "__value__": value.strftime("%Y-%m-%dT%H:%M:%S+00:00")}
+            content["#value#"] = {
+                "__class__": "datetime.datetime",
+                "__value__": value.strftime("%Y-%m-%dT%H:%M:%S+00:00"),
+            }
         else:
-            content['#value#'] = value
-        content['#extra#'] = extra
-        content['is_multiple2'] = {} if not self.is_multiple else {"cache_to_list": "|", "ui_to_list": ",",  # pyright: ignore[reportGeneralTypeIssues]
-                                                                   "list_to_ui": ", "}
+            content["#value#"] = value
+        content["#extra#"] = extra
+        content["is_multiple2"] = (
+            {}
+            if not self.is_multiple
+            else {
+                "cache_to_list": "|",
+                "ui_to_list": ",",  # pyright: ignore[reportGeneralTypeIssues]
+                "list_to_ui": ", ",
+            }
+        )
         return json.dumps(content, ensure_ascii=False)
 
 
 class AlchemyEncoder(json.JSONEncoder):
-
     def default(self, o):
         if isinstance(o.__class__, DeclarativeMeta):
             # an SQLAlchemy class
             fields = {}
-            for field in [x for x in dir(o) if not x.startswith('_') and x != 'metadata' and x != "password"]:
-                if field == 'books':
+            for field in [x for x in dir(o) if not x.startswith("_") and x != "metadata" and x != "password"]:
+                if field == "books":
                     continue
                 data = o.__getattribute__(field)
                 try:
                     if isinstance(data, str):
-                        data = data.replace("'", "\'")
+                        data = data.replace("'", "'")
                     elif isinstance(data, InstrumentedList):
                         el = list()
                         # ele = None
                         for ele in data:
-                            if hasattr(ele, 'value'):       # converter for custom_column values
+                            if hasattr(ele, "value"):  # converter for custom_column values
                                 el.append(str(ele.value))
                             elif ele.get:
                                 el.append(ele.get())
                             else:
                                 el.append(json.dumps(ele, cls=AlchemyEncoder))
-                        data = " & ".join(el) if field == 'authors' else ",".join(el)
-                        if data == '[]':
+                        data = " & ".join(el) if field == "authors" else ",".join(el)
+                        if data == "[]":
                             data = ""
                     else:
                         json.dumps(data)
@@ -560,11 +592,12 @@ class CalibreDB:
     config_calibre_dir = None
     app_db_path = None
 
-    def __init__(self, _app: Flask=None):  # , expire_on_commit=True, init=False):  # pyright: ignore[reportArgumentType]
-        """ Initialize a new CalibreDB session
-        """
+    def __init__(
+        self, _app: Flask = None
+    ):  # , expire_on_commit=True, init=False):  # pyright: ignore[reportArgumentType]
+        """Initialize a new CalibreDB session"""
         self.Session = None
-        #if init:
+        # if init:
         #    self.init_db(expire_on_commit)
         if _app is not None and not _app._got_first_request:
             self.init_app(_app)
@@ -579,68 +612,66 @@ class CalibreDB:
         books_custom_column_links = {}
         for row in cc:
             if row.datatype not in cc_exceptions:
-                if row.datatype == 'series':
-                    dicttable = {'__tablename__': 'books_custom_column_' + str(row.id) + '_link',
-                                 'id': Column(Integer, primary_key=True),
-                                 'book': Column(Integer, ForeignKey('books.id'),
-                                                primary_key=True),
-                                 'map_value': Column('value', Integer,
-                                                     ForeignKey('custom_column_' +
-                                                                str(row.id) + '.id'),
-                                                     primary_key=True),
-                                 'extra': Column(Float),
-                                 'asoc': relationship('custom_column_' + str(row.id), uselist=False),
-                                 'value': association_proxy('asoc', 'value')
-                                 }
-                    books_custom_column_links[row.id] = type(str('books_custom_column_' + str(row.id) + '_link'),
-                                                             (Base,), dicttable)
-                if row.datatype in ['rating', 'text', 'enumeration']:
-                    books_custom_column_links[row.id] = Table('books_custom_column_' + str(row.id) + '_link',
-                                                              Base.metadata,
-                                                              Column('book', Integer, ForeignKey('books.id'),
-                                                                     primary_key=True),
-                                                              Column('value', Integer,
-                                                                     ForeignKey('custom_column_' +
-                                                                                str(row.id) + '.id'),
-                                                                     primary_key=True)
-                                                              )
+                if row.datatype == "series":
+                    dicttable = {
+                        "__tablename__": "books_custom_column_" + str(row.id) + "_link",
+                        "id": Column(Integer, primary_key=True),
+                        "book": Column(Integer, ForeignKey("books.id"), primary_key=True),
+                        "map_value": Column(
+                            "value", Integer, ForeignKey("custom_column_" + str(row.id) + ".id"), primary_key=True
+                        ),
+                        "extra": Column(Float),
+                        "asoc": relationship("custom_column_" + str(row.id), uselist=False),
+                        "value": association_proxy("asoc", "value"),
+                    }
+                    books_custom_column_links[row.id] = type(
+                        str("books_custom_column_" + str(row.id) + "_link"), (Base,), dicttable
+                    )
+                if row.datatype in ["rating", "text", "enumeration"]:
+                    books_custom_column_links[row.id] = Table(
+                        "books_custom_column_" + str(row.id) + "_link",
+                        Base.metadata,
+                        Column("book", Integer, ForeignKey("books.id"), primary_key=True),
+                        Column("value", Integer, ForeignKey("custom_column_" + str(row.id) + ".id"), primary_key=True),
+                    )
                 cc_ids.append([row.id, row.datatype])
 
-                ccdict = {'__tablename__': 'custom_column_' + str(row.id),
-                          'id': Column(Integer, primary_key=True)}
-                if row.datatype == 'float':
-                    ccdict['value'] = Column(Float)
-                elif row.datatype == 'int':
-                    ccdict['value'] = Column(Integer)
-                elif row.datatype == 'datetime':
-                    ccdict['value'] = Column(TIMESTAMP)  # pyright: ignore[reportArgumentType]
-                elif row.datatype == 'bool':
-                    ccdict['value'] = Column(Boolean)  # pyright: ignore[reportArgumentType]
+                ccdict = {"__tablename__": "custom_column_" + str(row.id), "id": Column(Integer, primary_key=True)}
+                if row.datatype == "float":
+                    ccdict["value"] = Column(Float)
+                elif row.datatype == "int":
+                    ccdict["value"] = Column(Integer)
+                elif row.datatype == "datetime":
+                    ccdict["value"] = Column(TIMESTAMP)  # pyright: ignore[reportArgumentType]
+                elif row.datatype == "bool":
+                    ccdict["value"] = Column(Boolean)  # pyright: ignore[reportArgumentType]
                 else:
-                    ccdict['value'] = Column(String)  # pyright: ignore[reportArgumentType]
-                if row.datatype in ['float', 'int', 'bool', 'datetime', 'comments']:
-                    ccdict['book'] = Column(Integer, ForeignKey('books.id'))
-                cc_classes[row.id] = type(str('custom_column_' + str(row.id)), (Base,), ccdict)
+                    ccdict["value"] = Column(String)  # pyright: ignore[reportArgumentType]
+                if row.datatype in ["float", "int", "bool", "datetime", "comments"]:
+                    ccdict["book"] = Column(Integer, ForeignKey("books.id"))
+                cc_classes[row.id] = type(str("custom_column_" + str(row.id)), (Base,), ccdict)
 
         for cc_id in cc_ids:
-            if cc_id[1] in ['bool', 'int', 'float', 'datetime', 'comments']:
-                setattr(Books,
-                        'custom_column_' + str(cc_id[0]),
-                        relationship(cc_classes[cc_id[0]],
-                                     primaryjoin=(
-                                         Books.id == cc_classes[cc_id[0]].book),
-                                     backref='books'))
-            elif cc_id[1] == 'series':
-                setattr(Books,
-                        'custom_column_' + str(cc_id[0]),
-                        relationship(books_custom_column_links[cc_id[0]],
-                                     backref='books'))
+            if cc_id[1] in ["bool", "int", "float", "datetime", "comments"]:
+                setattr(
+                    Books,
+                    "custom_column_" + str(cc_id[0]),
+                    relationship(
+                        cc_classes[cc_id[0]], primaryjoin=(Books.id == cc_classes[cc_id[0]].book), backref="books"
+                    ),
+                )
+            elif cc_id[1] == "series":
+                setattr(
+                    Books,
+                    "custom_column_" + str(cc_id[0]),
+                    relationship(books_custom_column_links[cc_id[0]], backref="books"),
+                )
             else:
-                setattr(Books,
-                        'custom_column_' + str(cc_id[0]),
-                        relationship(cc_classes[cc_id[0]],
-                                     secondary=books_custom_column_links[cc_id[0]],
-                                     backref='books'))
+                setattr(
+                    Books,
+                    "custom_column_" + str(cc_id[0]),
+                    relationship(cc_classes[cc_id[0]], secondary=books_custom_column_links[cc_id[0]], backref="books"),
+                )
 
     @classmethod
     def check_valid_db(cls, config_calibre_dir, app_db_path, config_calibre_uuid):
@@ -650,11 +681,13 @@ class CalibreDB:
         if not os.path.exists(dbpath):
             return False, False
         try:
-            check_engine = create_engine('sqlite://',
-                                         echo=False,
-                                         isolation_level="SERIALIZABLE",
-                                         connect_args={'check_same_thread': False},
-                                         poolclass=StaticPool)
+            check_engine = create_engine(
+                "sqlite://",
+                echo=False,
+                isolation_level="SERIALIZABLE",
+                connect_args={"check_same_thread": False},
+                poolclass=StaticPool,
+            )
             with check_engine.begin() as connection:
                 connection.execute(text("attach database '{}' as calibre;".format(dbpath.replace("'", "''"))))
                 connection.execute(text("attach database '{}' as app_settings;".format(app_db_path.replace("'", "''"))))
@@ -686,7 +719,6 @@ class CalibreDB:
         cls.config_calibre_dir = config_calibre_dir
         cls.app_db_path = app_db_path
 
-
     def connect(self):
         return self.setup_db(self.config_calibre_dir, self.app_db_path)
 
@@ -703,13 +735,15 @@ class CalibreDB:
             return None
 
         try:
-            engine = create_engine('sqlite://',
-                                       echo=False,
-                                       isolation_level="SERIALIZABLE",
-                                       connect_args={'check_same_thread': False},
-                                       poolclass=StaticPool)
+            engine = create_engine(
+                "sqlite://",
+                echo=False,
+                isolation_level="SERIALIZABLE",
+                connect_args={"check_same_thread": False},
+                poolclass=StaticPool,
+            )
             with engine.begin() as connection:
-                connection.execute(text('PRAGMA cache_size = 10000;'))
+                connection.execute(text("PRAGMA cache_size = 10000;"))
                 connection.execute(text("attach database '{}' as calibre;".format(dbpath.replace("'", "''"))))
                 connection.execute(text("attach database '{}' as app_settings;".format(app_db_path.replace("'", "''"))))
 
@@ -729,36 +763,36 @@ class CalibreDB:
                 log.error_or_exception(e)
                 return None
 
-        session_factory = scoped_session(sessionmaker(autocommit=False,
-                                           autoflush=False,
-                                           bind=engine, future=True))
+        session_factory = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine, future=True))
 
         @event.listens_for(engine, "before_cursor_execute")
         def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
             from flask import g
+
             g.db_query_start_time = time.time()
 
         @event.listens_for(engine, "after_cursor_execute")
         def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
             from flask import g, has_request_context
-            if not has_request_context() or not hasattr(g, 'db_query_start_time'):
+
+            if not has_request_context() or not hasattr(g, "db_query_start_time"):
                 return
             duration = time.time() - g.db_query_start_time
-            endpoint = getattr(g, 'request_endpoint', 'unknown')
+            endpoint = getattr(g, "request_endpoint", "unknown")
             # Check if prometheus metrics are available (set by web.py on startup)
             try:
                 from cps import web
+
                 if not web.prometheus_available:
                     return
                 web.DB_QUERY_TIME.labels(query_type=endpoint).observe(duration)
                 web.DB_QUERY_COUNT.labels(query_type=endpoint).inc()
                 if duration > 0.1:
-                    web.SLOW_DB_QUERY_COUNT.labels(query_type=endpoint, threshold_ms='100').inc()
+                    web.SLOW_DB_QUERY_COUNT.labels(query_type=endpoint, threshold_ms="100").inc()
             except (ImportError, AttributeError):
                 return
 
         return session_factory
-
 
     def get_book(self, book_id):
         return self.session.query(Books).filter(Books.id == book_id).first()
@@ -771,7 +805,7 @@ class CalibreDB:
             selectinload(Books.publishers),
             selectinload(Books.ratings),
             selectinload(Books.languages),
-            selectinload(Books.data)
+            selectinload(Books.data),
         )
 
     def get_filtered_book(self, book_id, allow_show_archived=False):
@@ -780,23 +814,38 @@ class CalibreDB:
 
     def get_book_read_archived(self, book_id, read_column, allow_show_archived=False):
         if not read_column:
-            bd = (self.session.query(Books, ub.ReadBook.read_status, ub.ArchivedBook.is_archived).select_from(Books)
-                  .join(ub.ReadBook, and_(ub.ReadBook.user_id == int(current_user.id), ub.ReadBook.book_id == book_id),
-                  isouter=True))
+            bd = (
+                self.session.query(Books, ub.ReadBook.read_status, ub.ArchivedBook.is_archived)
+                .select_from(Books)
+                .join(
+                    ub.ReadBook,
+                    and_(ub.ReadBook.user_id == int(current_user.id), ub.ReadBook.book_id == book_id),
+                    isouter=True,
+                )
+            )
         else:
             try:
                 read_column = cc_classes[read_column]
-                bd = (self.session.query(Books, read_column.value, ub.ArchivedBook.is_archived).select_from(Books)
-                      .join(read_column, read_column.book == book_id,
-                      isouter=True))
+                bd = (
+                    self.session.query(Books, read_column.value, ub.ArchivedBook.is_archived)
+                    .select_from(Books)
+                    .join(read_column, read_column.book == book_id, isouter=True)
+                )
             except (KeyError, AttributeError, IndexError):
                 log.error(f"Custom Column No.{read_column} does not exist in calibre database")
                 # Skip linking read column and return None instead of read status
                 bd = self.session.query(Books, None, ub.ArchivedBook.is_archived)  # pyright: ignore[reportCallIssue,reportArgumentType]
-        return (self._eager_load_relationships(bd).filter(Books.id == book_id)
-                .join(ub.ArchivedBook, and_(Books.id == ub.ArchivedBook.book_id,
-                                            int(current_user.id) == ub.ArchivedBook.user_id), isouter=True)  # pyright: ignore[reportArgumentType]
-                .filter(self.common_filters(allow_show_archived)).first())
+        return (
+            self._eager_load_relationships(bd)
+            .filter(Books.id == book_id)
+            .join(
+                ub.ArchivedBook,
+                and_(Books.id == ub.ArchivedBook.book_id, int(current_user.id) == ub.ArchivedBook.user_id),
+                isouter=True,
+            )  # pyright: ignore[reportArgumentType]
+            .filter(self.common_filters(allow_show_archived))
+            .first()
+        )
 
     def get_book_by_uuid(self, book_uuid):
         return self._eager_load_relationships(self.session.query(Books).filter(Books.uuid == book_uuid)).first()
@@ -812,7 +861,7 @@ class CalibreDB:
         try:
             self.session.query(Metadata_Dirtied).filter(Metadata_Dirtied.book == book_id).delete()  # pyright: ignore[reportGeneralTypeIssues]
             self.session.commit()
-        except (OperationalError) as e:
+        except OperationalError as e:
             self.session.rollback()
             log.error(f"Database error: {e}")
 
@@ -821,7 +870,7 @@ class CalibreDB:
         if not allow_show_archived:
             archived_filter = ~Books.id.in_(
                 ub.session.query(ub.ArchivedBook.book_id)
-                .filter(ub.ArchivedBook.user_id==int(current_user.id))
+                .filter(ub.ArchivedBook.user_id == int(current_user.id))
                 .filter(ub.ArchivedBook.is_archived)
             )
         else:
@@ -833,50 +882,76 @@ class CalibreDB:
             lang_filter = Books.languages.any(Languages.lang_code == current_user.filter_language())  # pyright: ignore[reportGeneralTypeIssues]
         negtags_list = current_user.list_denied_tags()
         postags_list = current_user.list_allowed_tags()
-        neg_content_tags_filter = false() if negtags_list == [''] else Books.tags.any(Tags.name.in_(negtags_list))  # pyright: ignore[reportGeneralTypeIssues]
-        pos_content_tags_filter = true() if postags_list == [''] else Books.tags.any(Tags.name.in_(postags_list))  # pyright: ignore[reportGeneralTypeIssues]
+        neg_content_tags_filter = false() if negtags_list == [""] else Books.tags.any(Tags.name.in_(negtags_list))  # pyright: ignore[reportGeneralTypeIssues]
+        pos_content_tags_filter = true() if postags_list == [""] else Books.tags.any(Tags.name.in_(postags_list))  # pyright: ignore[reportGeneralTypeIssues]
         if self.config.config_restricted_column:  # pyright: ignore[reportOptionalMemberAccess]
             try:
-                pos_cc_list = current_user.allowed_column_value.split(',')
-                pos_content_cc_filter = (true() if pos_cc_list == [''] else
-                    getattr(Books, 'custom_column_' + str(self.config.config_restricted_column)).  # pyright: ignore[reportOptionalMemberAccess]
-                    any(cc_classes[self.config.config_restricted_column].value.in_(pos_cc_list)))  # pyright: ignore[reportOptionalMemberAccess,reportArgumentType]
-                neg_cc_list = current_user.denied_column_value.split(',')
-                neg_content_cc_filter = (false() if neg_cc_list == [''] else
-                    getattr(Books, 'custom_column_' + str(self.config.config_restricted_column)).  # pyright: ignore[reportOptionalMemberAccess]
-                    any(cc_classes[self.config.config_restricted_column].value.in_(neg_cc_list)))  # pyright: ignore[reportOptionalMemberAccess,reportArgumentType]
+                pos_cc_list = current_user.allowed_column_value.split(",")
+                pos_content_cc_filter = (
+                    true()
+                    if pos_cc_list == [""]
+                    else getattr(
+                        Books, "custom_column_" + str(self.config.config_restricted_column)
+                    ).  # pyright: ignore[reportOptionalMemberAccess]
+                    any(cc_classes[self.config.config_restricted_column].value.in_(pos_cc_list))
+                )  # pyright: ignore[reportOptionalMemberAccess,reportArgumentType]
+                neg_cc_list = current_user.denied_column_value.split(",")
+                neg_content_cc_filter = (
+                    false()
+                    if neg_cc_list == [""]
+                    else getattr(
+                        Books, "custom_column_" + str(self.config.config_restricted_column)
+                    ).  # pyright: ignore[reportOptionalMemberAccess]
+                    any(cc_classes[self.config.config_restricted_column].value.in_(neg_cc_list))
+                )  # pyright: ignore[reportOptionalMemberAccess,reportArgumentType]
             except (KeyError, AttributeError, IndexError):
                 pos_content_cc_filter = false()
                 neg_content_cc_filter = true()
                 log.error(f"Custom Column No.{self.config.config_restricted_column} does not exist in calibre database")  # pyright: ignore[reportOptionalMemberAccess]
-                flash(_("Custom Column No.%(column)d does not exist in calibre database",
-                        column=self.config.config_restricted_column),  # pyright: ignore[reportOptionalMemberAccess]
-                      category="error")
+                flash(
+                    _(
+                        "Custom Column No.%(column)d does not exist in calibre database",
+                        column=self.config.config_restricted_column,
+                    ),  # pyright: ignore[reportOptionalMemberAccess]
+                    category="error",
+                )
 
         else:
             pos_content_cc_filter = true()
             neg_content_cc_filter = false()
-        return and_(lang_filter, pos_content_tags_filter, ~neg_content_tags_filter,
-                    pos_content_cc_filter, ~neg_content_cc_filter, archived_filter)
+        return and_(
+            lang_filter,
+            pos_content_tags_filter,
+            ~neg_content_tags_filter,
+            pos_content_cc_filter,
+            ~neg_content_cc_filter,
+            archived_filter,
+        )
 
     def generate_linked_query(self, config_read_column, database):
         if not config_read_column:
-            query = (self.session.query(database, ub.ArchivedBook.is_archived, ub.ReadBook.read_status)
-                     .select_from(Books)
-                     .outerjoin(ub.ReadBook,
-                                and_(ub.ReadBook.user_id == int(current_user.id), ub.ReadBook.book_id == Books.id)))
+            query = (
+                self.session.query(database, ub.ArchivedBook.is_archived, ub.ReadBook.read_status)
+                .select_from(Books)
+                .outerjoin(
+                    ub.ReadBook, and_(ub.ReadBook.user_id == int(current_user.id), ub.ReadBook.book_id == Books.id)
+                )
+            )
         else:
             try:
                 read_column = cc_classes[config_read_column]
-                query = (self.session.query(database, ub.ArchivedBook.is_archived, read_column.value)
-                         .select_from(Books)
-                         .outerjoin(read_column, read_column.book == Books.id))
+                query = (
+                    self.session.query(database, ub.ArchivedBook.is_archived, read_column.value)
+                    .select_from(Books)
+                    .outerjoin(read_column, read_column.book == Books.id)
+                )
             except (KeyError, AttributeError, IndexError):
                 log.error(f"Custom Column No.{config_read_column} does not exist in calibre database")
                 # Skip linking read column and return None instead of read status
                 query = self.session.query(database, None, ub.ArchivedBook.is_archived)  # pyright: ignore[reportCallIssue,reportArgumentType]
-        return query.outerjoin(ub.ArchivedBook, and_(Books.id == ub.ArchivedBook.book_id,
-                                                     int(current_user.id) == ub.ArchivedBook.user_id))  # pyright: ignore[reportArgumentType]
+        return query.outerjoin(
+            ub.ArchivedBook, and_(Books.id == ub.ArchivedBook.book_id, int(current_user.id) == ub.ArchivedBook.user_id)
+        )  # pyright: ignore[reportArgumentType]
 
     @staticmethod
     def get_checkbox_sorted(inputlist, state, offset, limit, order, combo=False):
@@ -890,22 +965,37 @@ class CalibreDB:
             outcome.append(elementlist[entry])
         if order == "asc":
             outcome.reverse()
-        return outcome[offset:offset + limit]
+        return outcome[offset : offset + limit]
 
     # Fill indexpage with all requested data from database
-    def fill_indexpage(self, page, pagesize, database, db_filter, order,
-                       join_archive_read=False, config_read_column=0, *join):
-        return self.fill_indexpage_with_archived_books(page, database, pagesize, db_filter, order, False,
-                                                       join_archive_read, config_read_column, *join)
+    def fill_indexpage(
+        self, page, pagesize, database, db_filter, order, join_archive_read=False, config_read_column=0, *join
+    ):
+        return self.fill_indexpage_with_archived_books(
+            page, database, pagesize, db_filter, order, False, join_archive_read, config_read_column, *join
+        )
 
-    def fill_indexpage_with_archived_books(self, page, database, pagesize, db_filter, order, allow_show_archived,
-                                           join_archive_read, config_read_column, *join):
+    def fill_indexpage_with_archived_books(
+        self,
+        page,
+        database,
+        pagesize,
+        db_filter,
+        order,
+        allow_show_archived,
+        join_archive_read,
+        config_read_column,
+        *join,
+    ):
         pagesize = pagesize or self.config.config_books_per_page  # pyright: ignore[reportOptionalMemberAccess]
         if current_user.show_detail_random():
             random_query = self.generate_linked_query(config_read_column, database)
-            randm = (random_query.filter(self.common_filters(allow_show_archived))
-                     .order_by(func.random())
-                     .limit(self.config.config_random_books).all())  # pyright: ignore[reportOptionalMemberAccess]
+            randm = (
+                random_query.filter(self.common_filters(allow_show_archived))
+                .order_by(func.random())
+                .limit(self.config.config_random_books)
+                .all()
+            )  # pyright: ignore[reportOptionalMemberAccess]
         else:
             randm = false()
         if join_archive_read:
@@ -918,19 +1008,18 @@ class CalibreDB:
         element = 0
         while indx:
             if indx >= 3:
-                query = query.outerjoin(join[element], join[element+1]).outerjoin(join[element+2])
+                query = query.outerjoin(join[element], join[element + 1]).outerjoin(join[element + 2])
                 indx -= 3
                 element += 3
             elif indx == 2:
-                query = query.outerjoin(join[element], join[element+1])
+                query = query.outerjoin(join[element], join[element + 1])
                 indx -= 2
                 element += 2
             elif indx == 1:
                 query = query.outerjoin(join[element])
                 indx -= 1
                 element += 1
-        query = query.filter(db_filter)\
-            .filter(self.common_filters(allow_show_archived))
+        query = query.filter(db_filter).filter(self.common_filters(allow_show_archived))
         entries = list()
         pagination = list()
         try:
@@ -946,10 +1035,10 @@ class CalibreDB:
     def order_authors(self, entries, list_return=False, combined=False):
         for entry in entries:
             if combined:
-                sort_authors = entry.Books.author_sort.split('&')
+                sort_authors = entry.Books.author_sort.split("&")
                 authors_list = entry.Books.authors
             else:
-                sort_authors = entry.author_sort.split('&')
+                sort_authors = entry.author_sort.split("&")
                 authors_list = entry.authors
 
             # Create dictionary for O(1) lookup instead of nested loops
@@ -987,23 +1076,30 @@ class CalibreDB:
                 return authors_ordered
         return entries
 
-    def get_typeahead(self, database, query, replace=('', ''), tag_filter=true()):
-        query = query or ''
+    def get_typeahead(self, database, query, replace=("", ""), tag_filter=true()):
+        query = query or ""
         self.create_functions()
-        entries = self.session.query(database).filter(tag_filter). \
-            filter(func.lower(database.name).ilike("%" + query + "%")).all()
+        entries = (
+            self.session.query(database)
+            .filter(tag_filter)
+            .filter(func.lower(database.name).ilike("%" + query + "%"))
+            .all()
+        )
         json_dumps = json.dumps([dict(name=r.name.replace(*replace)) for r in entries])
         return json_dumps
 
     def check_exists_book(self, authr, title):
         self.create_functions()
         q = list()
-        author_terms = re.split(r'\s*&\s*', authr)
+        author_terms = re.split(r"\s*&\s*", authr)
         for author_term in author_terms:
             q.append(Books.authors.any(func.lower(Authors.name).ilike("%" + author_term + "%")))  # pyright: ignore[reportGeneralTypeIssues]
 
-        return self.session.query(Books) \
-            .filter(and_(Books.authors.any(and_(*q)), func.lower(Books.title).ilike("%" + title + "%"))).first()  # pyright: ignore[reportGeneralTypeIssues]
+        return (
+            self.session.query(Books)
+            .filter(and_(Books.authors.any(and_(*q)), func.lower(Books.title).ilike("%" + title + "%")))
+            .first()
+        )  # pyright: ignore[reportGeneralTypeIssues]
 
     def search_query(self, term, config, *join):
         term = strip_whitespaces(term).lower()
@@ -1012,7 +1108,7 @@ class CalibreDB:
         # Try FTS5 search first for better performance
         fts_ids = None
         # Check if FTS5 table exists before attempting search
-        if not hasattr(self, '_fts_available'):
+        if not hasattr(self, "_fts_available"):
             try:
                 result = self.session.execute(
                     text("SELECT name FROM sqlite_master WHERE type='table' AND name='books_fts'")
@@ -1027,8 +1123,7 @@ class CalibreDB:
                 term_fts = term.replace('"', '""')
                 # Wrap in quotes for phrase matching and better accuracy
                 fts_results = self.session.execute(
-                    text("SELECT DISTINCT rowid FROM books_fts WHERE books_fts MATCH :term"),
-                    {"term": f'"{term_fts}"'}
+                    text("SELECT DISTINCT rowid FROM books_fts WHERE books_fts MATCH :term"), {"term": f'"{term_fts}"'}
                 ).fetchall()
                 if fts_results:
                     fts_ids = [r[0] for r in fts_results]
@@ -1044,7 +1139,9 @@ class CalibreDB:
         base_query = base_query.options(selectinload(Books.authors))
 
         if len(join) == 6:
-            base_query = base_query.outerjoin(join[0], join[1]).outerjoin(join[2]).outerjoin(join[3], join[4]).outerjoin(join[5])
+            base_query = (
+                base_query.outerjoin(join[0], join[1]).outerjoin(join[2]).outerjoin(join[3], join[4]).outerjoin(join[5])
+            )
         if len(join) == 3:
             base_query = base_query.outerjoin(join[0], join[1]).outerjoin(join[2])
         elif len(join) == 2:
@@ -1072,25 +1169,32 @@ class CalibreDB:
         # Build optimized filter expressions
         cc = self.get_cc_columns(config, filter_config_custom_read=True)
         filter_expression = [
-            Books.id.in_(self.session.query(books_tags_link.c.book).join(
-                Tags, books_tags_link.c.tag == Tags.id
-            ).filter(func.lower(Tags.name).ilike("%" + term + "%"))),  # pyright: ignore[reportGeneralTypeIssues]
-            Books.id.in_(self.session.query(books_series_link.c.book).join(
-                Series, books_series_link.c.series == Series.id
-            ).filter(func.lower(Series.name).ilike("%" + term + "%"))),  # pyright: ignore[reportGeneralTypeIssues]
+            Books.id.in_(
+                self.session.query(books_tags_link.c.book)
+                .join(Tags, books_tags_link.c.tag == Tags.id)
+                .filter(func.lower(Tags.name).ilike("%" + term + "%"))
+            ),  # pyright: ignore[reportGeneralTypeIssues]
+            Books.id.in_(
+                self.session.query(books_series_link.c.book)
+                .join(Series, books_series_link.c.series == Series.id)
+                .filter(func.lower(Series.name).ilike("%" + term + "%"))
+            ),  # pyright: ignore[reportGeneralTypeIssues]
             Books.id.in_(author_subquery),
-            Books.id.in_(self.session.query(books_publishers_link.c.book).join(
-                Publishers, books_publishers_link.c.publisher == Publishers.id
-            ).filter(func.lower(Publishers.name).ilike("%" + term + "%"))),  # pyright: ignore[reportGeneralTypeIssues]
-            func.lower(Books.title).ilike("%" + term + "%")  # pyright: ignore[reportGeneralTypeIssues]
+            Books.id.in_(
+                self.session.query(books_publishers_link.c.book)
+                .join(Publishers, books_publishers_link.c.publisher == Publishers.id)
+                .filter(func.lower(Publishers.name).ilike("%" + term + "%"))
+            ),  # pyright: ignore[reportGeneralTypeIssues]
+            func.lower(Books.title).ilike("%" + term + "%"),  # pyright: ignore[reportGeneralTypeIssues]
         ]
 
         for c in cc:
             if c.datatype not in ["datetime", "rating", "bool", "int", "float"]:
                 filter_expression.append(
-                    getattr(Books,
-                            'custom_column_' + str(c.id)).any(
-                        func.lower(cc_classes[c.id].value).ilike("%" + term + "%")))
+                    getattr(Books, "custom_column_" + str(c.id)).any(
+                        func.lower(cc_classes[c.id].value).ilike("%" + term + "%")
+                    )
+                )
 
         return base_query.filter(or_(*filter_expression))
 
@@ -1128,7 +1232,7 @@ class CalibreDB:
             result_count = offset + limit_int + 1 if has_more else len(result)  # Estimate: at least this many
 
             # Extract the page of results
-            result = result[offset:offset + limit_int]
+            result = result[offset : offset + limit_int]
             pagination = Pagination((offset / limit_int + 1), limit_int, result_count)
         else:
             # No pagination, fetch all results
@@ -1145,31 +1249,41 @@ class CalibreDB:
 
         if with_count:
             if not languages:
-                languages = (self.session.query(Languages, func.count('books_languages_link.book'))  # pyright: ignore[reportArgumentType]
-                    .join(books_languages_link).join(Books)
+                languages = (
+                    self.session.query(Languages, func.count("books_languages_link.book"))  # pyright: ignore[reportArgumentType]
+                    .join(books_languages_link)
+                    .join(Books)
                     .filter(self.common_filters(return_all_languages=return_all_languages))
-                    .group_by(text('books_languages_link.lang_code')).all())
+                    .group_by(text("books_languages_link.lang_code"))
+                    .all()
+                )
             tags = list()
             for lang in languages:
                 tag = Category(isoLanguages.get_language_name(get_locale(), lang[0].lang_code), lang[0].lang_code)
                 tags.append([tag, lang[1]])
             # Append all books without language to list
             if not return_all_languages:
-                no_lang_count = (self.session.query(Books)
-                                 .outerjoin(books_languages_link).outerjoin(Languages)
-                                 .filter(Languages.lang_code is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                                 .filter(self.common_filters())
-                                 .count())
+                no_lang_count = (
+                    self.session.query(Books)
+                    .outerjoin(books_languages_link)
+                    .outerjoin(Languages)
+                    .filter(Languages.lang_code is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+                    .filter(self.common_filters())
+                    .count()
+                )
                 if no_lang_count:
                     tags.append([Category(_("None"), "None", "none"), no_lang_count])
             return sorted(tags, key=lambda x: x[0].name.lower(), reverse=reverse_order)
         else:
             if not languages:
-                languages = self.session.query(Languages) \
-                    .join(books_languages_link) \
-                    .join(Books) \
-                    .filter(self.common_filters(return_all_languages=return_all_languages)) \
-                    .group_by(text('books_languages_link.lang_code')).all()
+                languages = (
+                    self.session.query(Languages)
+                    .join(books_languages_link)
+                    .join(Books)
+                    .filter(self.common_filters(return_all_languages=return_all_languages))
+                    .group_by(text("books_languages_link.lang_code"))
+                    .all()
+                )
             for lang in languages:
                 lang.name = isoLanguages.get_language_name(get_locale(), lang.lang_code)
             return sorted(languages, key=lambda x: x.name, reverse=reverse_order)
@@ -1182,7 +1296,7 @@ class CalibreDB:
             match = title_pat.search(title)
             if match:
                 prep = match.group(1)
-                title = title[len(prep):] + ', ' + prep
+                title = title[len(prep) :] + ", " + prep
             return strip_whitespaces(title)
 
         try:
@@ -1194,7 +1308,7 @@ class CalibreDB:
         try:
             if config:
                 conn.create_function("title_sort", 1, _title_sort)  # pyright: ignore[reportOptionalMemberAccess]
-            conn.create_function('uuid4', 0, lambda: str(uuid4()))  # pyright: ignore[reportOptionalMemberAccess]
+            conn.create_function("uuid4", 0, lambda: str(uuid4()))  # pyright: ignore[reportOptionalMemberAccess]
             conn.create_function("lower", 1, lcase)  # pyright: ignore[reportOptionalMemberAccess]
         except sqliteOperationalError:
             pass
@@ -1221,8 +1335,9 @@ def title_sort(title, config):
     match = title_pat.search(title)
     if match:
         prep = match.group(1)
-        title = title[len(prep):] + ', ' + prep
+        title = title[len(prep) :] + ", " + prep
     return strip_whitespaces(title)
+
 
 class Category:
     name = None

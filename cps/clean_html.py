@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs
 #
@@ -25,9 +24,11 @@ try:
     # at least bleach 6.0 is needed -> incomplatible change from list arguments to set arguments
     from bleach import clean as clean_html
     from bleach.sanitizer import ALLOWED_TAGS
+
     bleach = True
 except ImportError:
     from nh3 import clean as clean_html  # pyright: ignore[reportMissingImports]
+
     bleach = False
 
 

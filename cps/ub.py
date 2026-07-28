@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 mutschler, jkrehm, cervinko, janeczku, OzzieIsaacs, csitko
 #                            ok11, issmirnov, idalin
@@ -30,11 +29,13 @@ from .cw_login import AnonymousUserMixin, current_user, user_logged_in
 
 try:
     from flask_dance.consumer.backend.sqla import OAuthConsumerMixin  # pyright: ignore[reportMissingImports]
+
     oauth_support = True
 except ImportError:
     # fails on flask-dance >1.3, due to renaming
     try:
         from flask_dance.consumer.storage.sqla import OAuthConsumerMixin  # pyright: ignore[reportMissingImports]
+
         oauth_support = True
     except ImportError:
         OAuthConsumerMixin = BaseException
@@ -77,6 +78,7 @@ from typing import TYPE_CHECKING  # noqa: E402
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session as _SASession
+
     session: _SASession
     app_DB_path: str
 else:
@@ -97,13 +99,13 @@ def signal_store_user_session(object, user):
 
 
 def store_user_session():
-    _user = flask_session.get('_user_id', "")
-    _id = flask_session.get('_id', "")
-    _random = flask_session.get('_random', "")
-    if flask_session.get('_user_id', ""):
+    _user = flask_session.get("_user_id", "")
+    _id = flask_session.get("_id", "")
+    _random = flask_session.get("_random", "")
+    if flask_session.get("_user_id", ""):
         try:
             if not check_user_session(_user, _id, _random):
-                expiry = int((datetime.now()  + timedelta(days=31)).timestamp())
+                expiry = int((datetime.now() + timedelta(days=31)).timestamp())
                 user_session = User_Sessions(_user, _id, _random, expiry)
                 session.add(user_session)
                 session.commit()
@@ -120,8 +122,10 @@ def store_user_session():
 def delete_user_session(user_id, session_key):
     try:
         log.debug("Deleted session_key: " + session_key)
-        session.query(User_Sessions).filter(User_Sessions.user_id == user_id,  # pyright: ignore[reportGeneralTypeIssues]
-                                            User_Sessions.session_key == session_key).delete()  # pyright: ignore[reportGeneralTypeIssues]
+        session.query(User_Sessions).filter(
+            User_Sessions.user_id == user_id,  # pyright: ignore[reportGeneralTypeIssues]
+            User_Sessions.session_key == session_key,
+        ).delete()  # pyright: ignore[reportGeneralTypeIssues]
         session.commit()
     except (exc.OperationalError, exc.InvalidRequestError) as ex:
         session.rollback()
@@ -130,12 +134,17 @@ def delete_user_session(user_id, session_key):
 
 def check_user_session(user_id, session_key, random):
     try:
-        found = session.query(User_Sessions).filter(User_Sessions.user_id==user_id,  # pyright: ignore[reportGeneralTypeIssues]
-                                                    User_Sessions.session_key==session_key,  # pyright: ignore[reportGeneralTypeIssues]
-                                                    User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
-                                                    ).one_or_none()
+        found = (
+            session.query(User_Sessions)
+            .filter(
+                User_Sessions.user_id == user_id,  # pyright: ignore[reportGeneralTypeIssues]
+                User_Sessions.session_key == session_key,  # pyright: ignore[reportGeneralTypeIssues]
+                User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
+            )
+            .one_or_none()
+        )
         if found is not None:
-            new_expiry = int((datetime.now()  + timedelta(days=31)).timestamp())
+            new_expiry = int((datetime.now() + timedelta(days=31)).timestamp())
             if new_expiry - found.expiry > 86400:  # pyright: ignore[reportGeneralTypeIssues]
                 found.expiry = new_expiry
                 session.merge(found)
@@ -149,11 +158,13 @@ def check_user_session(user_id, session_key, random):
 
 user_logged_in.connect(signal_store_user_session)
 
+
 def store_ids(result):
     ids = list()
     for element in result:
         ids.append(element.id)
     searched_ids[current_user.id] = ids
+
 
 def store_combo_ids(result):
     ids = list()
@@ -163,7 +174,6 @@ def store_combo_ids(result):
 
 
 class UserBase:
-
     # Class-level type annotation so pyright can verify access on UserBase
     # instances. The actual column is declared on the User model below.
     view_settings: dict  # pyright: ignore[reportUninitializedInstanceVariable,reportMissingTypeArgument]
@@ -263,14 +273,14 @@ class UserBase:
             log.error_or_exception(e)
 
     def __repr__(self):
-        return f'<User {self.name!r}>'  # pyright: ignore[reportAttributeAccessIssue]
+        return f"<User {self.name!r}>"  # pyright: ignore[reportAttributeAccessIssue]
 
 
 # Baseclass for Users in Calibre-Web, settings which depend on certain users are stored here. It is derived from
 # User Base (all access methods are declared there)
 class User(UserBase, Base):
-    __tablename__ = 'user'
-    __table_args__ = {'sqlite_autoincrement': True}
+    __tablename__ = "user"
+    __table_args__ = {"sqlite_autoincrement": True}
 
     id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     name: str = Column(String(64), unique=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
@@ -278,8 +288,8 @@ class User(UserBase, Base):
     role: int = Column(SmallInteger, default=constants.ROLE_USER)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     password: str = Column(String)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     kindle_mail: str = Column(String(120), default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
-    shelf = relationship('Shelf', backref='user', lazy='dynamic', order_by='Shelf.name')
-    downloads = relationship('Downloads', backref='user', lazy='dynamic')
+    shelf = relationship("Shelf", backref="user", lazy="dynamic", order_by="Shelf.name")
+    downloads = relationship("Downloads", backref="user", lazy="dynamic")
     locale: str = Column(String(2), default="en")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     sidebar_view: int = Column(Integer, default=1)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     default_language: str = Column(String(3), default="all")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
@@ -287,12 +297,13 @@ class User(UserBase, Base):
     allowed_tags: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     denied_column_value: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     allowed_column_value: str = Column(String, default="")  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
-    remote_auth_token = relationship('RemoteAuthToken', backref='user', lazy='dynamic')
+    remote_auth_token = relationship("RemoteAuthToken", backref="user", lazy="dynamic")
     view_settings: dict = Column(JSON, default={})  # type: ignore[assignment] # pyright: ignore[reportAssignmentType,reportMissingTypeArgument]
     kobo_only_shelves_sync: int = Column(Integer, default=0)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
 
 
 if oauth_support:
+
     class OAuth(OAuthConsumerMixin, Base):  # pyright: ignore[reportGeneralTypeIssues]
         provider_user_id = Column(String(256))
         user_id = Column(Integer, ForeignKey(User.id))  # pyright: ignore[reportArgumentType]
@@ -300,7 +311,7 @@ if oauth_support:
 
 
 class OAuthProvider(Base):
-    __tablename__ = 'oauthProvider'
+    __tablename__ = "oauthProvider"
 
     id = Column(Integer, primary_key=True)
     provider_name = Column(String)
@@ -328,11 +339,14 @@ class Anonymous(AnonymousUserMixin, UserBase):  # pyright: ignore[reportIncompat
         self.loadSettings()
 
     def loadSettings(self):
-        data = (session.query(User).filter(User.role.op('&')(constants.ROLE_ANONYMOUS) == constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
-            .first())  # type: User
+        data = (
+            session.query(User)
+            .filter(User.role.op("&")(constants.ROLE_ANONYMOUS) == constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
+            .first()
+        )  # type: User
         self.name = data.name  # pyright: ignore[reportOptionalMemberAccess]
         self.role = data.role  # pyright: ignore[reportOptionalMemberAccess]
-        self.id=data.id  # pyright: ignore[reportOptionalMemberAccess]
+        self.id = data.id  # pyright: ignore[reportOptionalMemberAccess]
         self.sidebar_view = data.sidebar_view  # pyright: ignore[reportOptionalMemberAccess]
         self.default_language = data.default_language  # pyright: ignore[reportOptionalMemberAccess]
         self.locale = data.locale  # pyright: ignore[reportOptionalMemberAccess]
@@ -360,28 +374,28 @@ class Anonymous(AnonymousUserMixin, UserBase):  # pyright: ignore[reportIncompat
         return False
 
     def get_view_property(self, page, prop):
-        if 'view' in flask_session:
-            if not flask_session['view'].get(page):
+        if "view" in flask_session:
+            if not flask_session["view"].get(page):
                 return None
-            return flask_session['view'][page].get(prop)
+            return flask_session["view"][page].get(prop)
         return None
 
     def set_view_property(self, page, prop, value):
-        if 'view' not in flask_session:
-            flask_session['view'] = dict()
-        if not flask_session['view'].get(page):
-            flask_session['view'][page] = dict()
-        flask_session['view'][page][prop] = value
+        if "view" not in flask_session:
+            flask_session["view"] = dict()
+        if not flask_session["view"].get(page):
+            flask_session["view"][page] = dict()
+        flask_session["view"][page][prop] = value
+
 
 class User_Sessions(Base):
-    __tablename__ = 'user_session'
+    __tablename__ = "user_session"
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     session_key = Column(String, default="")
     random = Column(String, default="")
     expiry = Column(Integer)
-
 
     def __init__(self, user_id, session_key, random, expiry):
         super().__init__()
@@ -393,48 +407,48 @@ class User_Sessions(Base):
 
 # Baseclass representing Shelfs in calibre-web in app.db
 class Shelf(Base):
-    __tablename__ = 'shelf'
+    __tablename__ = "shelf"
 
     id = Column(Integer, primary_key=True)
     uuid = Column(String, default=lambda: str(uuid.uuid4()))
     name = Column(String)
     is_public = Column(Integer, default=0)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     kobo_sync = Column(Boolean, default=False)
     books = relationship("BookShelf", backref="ub_shelf", cascade="all, delete-orphan", lazy="dynamic")
     created = Column(DateTime, default=lambda: datetime.now(UTC))
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
 
     def __repr__(self):
-        return f'<Shelf {self.id}:{self.name!r}>'
+        return f"<Shelf {self.id}:{self.name!r}>"
 
 
 # Baseclass representing Relationship between books and Shelfs in Calibre-Web in app.db (N:M)
 class BookShelf(Base):
-    __tablename__ = 'book_shelf_link'
+    __tablename__ = "book_shelf_link"
 
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer)
     order = Column(Integer)
-    shelf = Column(Integer, ForeignKey('shelf.id'))
+    shelf = Column(Integer, ForeignKey("shelf.id"))
     date_added = Column(DateTime, default=lambda: datetime.now(UTC))
 
     def __repr__(self):
-        return f'<Book {self.id!r}>'
+        return f"<Book {self.id!r}>"
 
 
 # This table keeps track of deleted Shelves so that deletes can be propagated to any paired Kobo device.
 class ShelfArchive(Base):
-    __tablename__ = 'shelf_archive'
+    __tablename__ = "shelf_archive"
 
     id = Column(Integer, primary_key=True)
     uuid = Column(String)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC))
 
 
 class ReadBook(Base):
-    __tablename__ = 'book_read_link'
+    __tablename__ = "book_read_link"
 
     STATUS_UNREAD = 0
     STATUS_FINISHED = 1
@@ -442,55 +456,58 @@ class ReadBook(Base):
 
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer, unique=False)
-    user_id = Column(Integer, ForeignKey('user.id'), unique=False)
+    user_id = Column(Integer, ForeignKey("user.id"), unique=False)
     read_status = Column(Integer, unique=False, default=STATUS_UNREAD, nullable=False)
-    kobo_reading_state = relationship("KoboReadingState", uselist=False,
-                                      primaryjoin="and_(ReadBook.user_id == foreign(KoboReadingState.user_id), "
-                                                  "ReadBook.book_id == foreign(KoboReadingState.book_id))",
-                                      cascade="all",
-                                      backref=backref("book_read_link",
-                                                      uselist=False))
+    kobo_reading_state = relationship(
+        "KoboReadingState",
+        uselist=False,
+        primaryjoin="and_(ReadBook.user_id == foreign(KoboReadingState.user_id), "
+        "ReadBook.book_id == foreign(KoboReadingState.book_id))",
+        cascade="all",
+        backref=backref("book_read_link", uselist=False),
+    )
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     last_time_started_reading = Column(DateTime, nullable=True)
     times_started_reading = Column(Integer, default=0, nullable=False)
 
 
 class Bookmark(Base):
-    __tablename__ = 'bookmark'
+    __tablename__ = "bookmark"
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     book_id = Column(Integer)
-    format = Column(String(collation='NOCASE'))
+    format = Column(String(collation="NOCASE"))
     bookmark_key = Column(String)
 
 
 # Baseclass representing books that are archived on the user's Kobo device.
 class ArchivedBook(Base):
-    __tablename__ = 'archived_book'
+    __tablename__ = "archived_book"
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     book_id = Column(Integer)
     is_archived = Column(Boolean, unique=False)
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC))
 
 
 class KoboSyncedBooks(Base):
-    __tablename__ = 'kobo_synced_books'
+    __tablename__ = "kobo_synced_books"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     book_id = Column(Integer)
+
 
 # The Kobo ReadingState API keeps track of 4 timestamped entities:
 #   ReadingState, StatusInfo, Statistics, CurrentBookmark
 # Which we map to the following 4 tables:
 #   KoboReadingState, ReadBook, KoboStatistics and KoboBookmark
 class KoboReadingState(Base):
-    __tablename__ = 'kobo_reading_state'
+    __tablename__ = "kobo_reading_state"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     book_id = Column(Integer)
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     priority_timestamp = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
@@ -499,10 +516,10 @@ class KoboReadingState(Base):
 
 
 class KoboBookmark(Base):
-    __tablename__ = 'kobo_bookmark'
+    __tablename__ = "kobo_bookmark"
 
     id = Column(Integer, primary_key=True)
-    kobo_reading_state_id = Column(Integer, ForeignKey('kobo_reading_state.id'))
+    kobo_reading_state_id = Column(Integer, ForeignKey("kobo_reading_state.id"))
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     location_source = Column(String)
     location_type = Column(String)
@@ -512,17 +529,17 @@ class KoboBookmark(Base):
 
 
 class KoboStatistics(Base):
-    __tablename__ = 'kobo_statistics'
+    __tablename__ = "kobo_statistics"
 
     id = Column(Integer, primary_key=True)
-    kobo_reading_state_id = Column(Integer, ForeignKey('kobo_reading_state.id'))
+    kobo_reading_state_id = Column(Integer, ForeignKey("kobo_reading_state.id"))
     last_modified = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     remaining_time_minutes = Column(Integer)
     spent_reading_minutes = Column(Integer)
 
 
 # Updates the last_modified timestamp in the KoboReadingState table if any of its children tables are modified.
-@event.listens_for(Session, 'before_flush')
+@event.listens_for(Session, "before_flush")
 def receive_before_flush(session, flush_context, instances):
     for change in itertools.chain(session.new, session.dirty):
         if isinstance(change, (ReadBook, KoboStatistics, KoboBookmark)) and change.kobo_reading_state:
@@ -535,22 +552,22 @@ def receive_before_flush(session, flush_context, instances):
 
 # Baseclass representing Downloads from calibre-web in app.db
 class Downloads(Base):
-    __tablename__ = 'downloads'
+    __tablename__ = "downloads"
 
     id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     book_id: int = Column(Integer)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
-    user_id: int = Column(Integer, ForeignKey('user.id'))  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    user_id: int = Column(Integer, ForeignKey("user.id"))  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
 
     def __repr__(self):
-        return f'<Download {self.book_id!r}'
+        return f"<Download {self.book_id!r}"
 
 
 # Baseclass representing audit log entries for user actions
 class AuditLog(Base):
-    __tablename__ = 'audit_log'
+    __tablename__ = "audit_log"
 
     id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
-    user_id: int = Column(Integer, ForeignKey('user.id'), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    user_id: int = Column(Integer, ForeignKey("user.id"), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     action: str = Column(String(64), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     resource_type: str = Column(String(64), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     resource_id: str = Column(String(128), nullable=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
@@ -558,15 +575,15 @@ class AuditLog(Base):
     ip_address: str = Column(String(45), nullable=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     created = Column(DateTime, default=lambda: datetime.now(UTC))
 
-    user = relationship('User', foreign_keys=[user_id])  # pyright: ignore[reportArgumentType]
+    user = relationship("User", foreign_keys=[user_id])  # pyright: ignore[reportArgumentType]
 
     def __repr__(self):
-        return f'<AuditLog {self.user_id!r} {self.action!r} {self.resource_type!r}>'
+        return f"<AuditLog {self.user_id!r} {self.action!r} {self.resource_type!r}>"
 
 
 # Baseclass representing allowed domains for registration
 class Registration(Base):
-    __tablename__ = 'registration'
+    __tablename__ = "registration"
 
     id = Column(Integer, primary_key=True)
     domain = Column(String)
@@ -577,39 +594,39 @@ class Registration(Base):
 
 
 class RemoteAuthToken(Base):
-    __tablename__ = 'remote_auth_token'
+    __tablename__ = "remote_auth_token"
 
     id = Column(Integer, primary_key=True)
     auth_token = Column(String, unique=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey("user.id"))
     verified = Column(Boolean, default=False)
     expiration = Column(DateTime)
     token_type = Column(Integer, default=0)
 
     def __init__(self):
         super().__init__()
-        self.auth_token = (hexlify(os.urandom(16))).decode('utf-8')
+        self.auth_token = (hexlify(os.urandom(16))).decode("utf-8")
         self.expiration = datetime.now() + timedelta(minutes=10)  # 10 min from now
 
     def __repr__(self):
-        return f'<Token {self.id!r}>'
+        return f"<Token {self.id!r}>"
 
 
 def filename(context):
-    file_format = context.get_current_parameters()['format']
-    if file_format == 'jpeg':
-        return context.get_current_parameters()['uuid'] + '.jpg'
+    file_format = context.get_current_parameters()["format"]
+    if file_format == "jpeg":
+        return context.get_current_parameters()["uuid"] + ".jpg"
     else:
-        return context.get_current_parameters()['uuid'] + '.' + file_format
+        return context.get_current_parameters()["uuid"] + "." + file_format
 
 
 class Thumbnail(Base):
-    __tablename__ = 'thumbnail'
+    __tablename__ = "thumbnail"
 
     id = Column(Integer, primary_key=True)
     entity_id = Column(Integer)
     uuid = Column(String, default=lambda: str(uuid.uuid4()), unique=True)
-    format = Column(String, default='jpeg')
+    format = Column(String, default="jpeg")
     type = Column(SmallInteger, default=constants.THUMBNAIL_TYPE_COVER)
     resolution = Column(SmallInteger, default=constants.COVER_THUMBNAIL_SMALL)
     filename = Column(String, default=filename)
@@ -636,7 +653,7 @@ def migrate_registration_table(engine, _session):
                 conn.execute(text("insert into registration (domain, allow) values('%.%',1)"))
                 trans.commit()
     except exc.OperationalError:  # Database is not writeable
-        print('Settings database is not writeable. Exiting...')
+        print("Settings database is not writeable. Exiting...")
         sys.exit(2)
 
 
@@ -666,7 +683,7 @@ def _ensure_column(engine, table_name, column_name, column_def):
     """Idempotent SQLite ALTER TABLE for new columns."""
     try:
         insp = inspect(engine)
-        cols = {c['name'] for c in insp.get_columns(table_name)}
+        cols = {c["name"] for c in insp.get_columns(table_name)}
         if column_name in cols:
             return
         with engine.begin() as conn:
@@ -674,6 +691,7 @@ def _ensure_column(engine, table_name, column_name, column_def):
     except Exception:
         # never block startup on migration
         import traceback
+
         traceback.print_exc()
 
 
@@ -681,11 +699,12 @@ def clean_database(_session):
     # Remove expired remote login tokens
     now = datetime.now()
     try:
-        _session.query(RemoteAuthToken).filter(now > RemoteAuthToken.expiration).\
-            filter(RemoteAuthToken.token_type != 1).delete()
+        _session.query(RemoteAuthToken).filter(now > RemoteAuthToken.expiration).filter(
+            RemoteAuthToken.token_type != 1
+        ).delete()
         _session.commit()
     except exc.OperationalError:  # Database is not writeable
-        print('Settings database is not writeable. Exiting...')
+        print("Settings database is not writeable. Exiting...")
         sys.exit(2)
 
 
@@ -719,7 +738,7 @@ def create_audit_log_entry(user_id, action, resource_type, resource_id=None, det
         resource_type=resource_type,
         resource_id=str(resource_id) if resource_id is not None else None,
         details=details,
-        ip_address=ip_address
+        ip_address=ip_address,
     )
     session.add(entry)
     try:
@@ -732,9 +751,9 @@ def create_audit_log_entry(user_id, action, resource_type, resource_id=None, det
 def create_anonymous_user(_session):
     user = User()
     user.name = "Guest"
-    user.email = 'no@email'
+    user.email = "no@email"
     user.role = constants.ROLE_ANONYMOUS
-    user.password = ''
+    user.password = ""
 
     _session.add(user)
     try:
@@ -759,9 +778,10 @@ def create_admin_user(_session):
     except Exception:
         _session.rollback()
 
+
 def init_db_thread():
     global app_DB_path
-    engine = create_engine(f'sqlite:///{app_DB_path}', echo=False)
+    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -774,7 +794,7 @@ def init_db(app_db_path):
     global app_DB_path
 
     app_DB_path = app_db_path
-    engine = create_engine(f'sqlite:///{app_db_path}', echo=False)
+    engine = create_engine(f"sqlite:///{app_db_path}", echo=False)
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -782,7 +802,7 @@ def init_db(app_db_path):
 
     if os.path.exists(app_db_path):
         Base.metadata.create_all(engine)
-        _ensure_column(engine, 'settings', 'config_frontend_rebuild_token', 'VARCHAR DEFAULT \'\'')
+        _ensure_column(engine, "settings", "config_frontend_rebuild_token", "VARCHAR DEFAULT ''")
         migrate_Database(session)
         clean_database(session)
     else:
@@ -790,9 +810,10 @@ def init_db(app_db_path):
         create_admin_user(session)
         create_anonymous_user(session)
 
+
 def password_change(user_credentials=None):
     if user_credentials:
-        username, password = user_credentials.split(':', 1)
+        username, password = user_credentials.split(":", 1)
         user = session.query(User).filter(func.lower(User.name) == username.lower()).first()
         if user:
             if not password:
@@ -800,6 +821,7 @@ def password_change(user_credentials=None):
                 sys.exit(4)
             try:
                 from .helper import valid_password
+
                 user.password = generate_password_hash(valid_password(password))
             except Exception:
                 print("Password doesn't comply with password validation rules")
@@ -816,7 +838,7 @@ def password_change(user_credentials=None):
 
 
 def get_new_session_instance():
-    new_engine = create_engine(f'sqlite:///{app_DB_path}', echo=False)
+    new_engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
     new_session = scoped_session(sessionmaker())
     new_session.configure(bind=new_engine)
 
@@ -836,6 +858,7 @@ def dispose():
         if old_session.bind:
             with contextlib.suppress(Exception):
                 old_session.bind.dispose()  # pyright: ignore[reportAttributeAccessIssue]
+
 
 def session_commit(success=None, _session=None):
     s = _session if _session else session

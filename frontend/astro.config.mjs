@@ -6,9 +6,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://pustaka.taratsa.id',
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   build: {
-    format: 'file',
+    format: 'directory',
   },
   integrations: [sitemap({
     filter: (page) => {

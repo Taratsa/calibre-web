@@ -31,8 +31,7 @@ pool_classes_by_scheme = {
     "https": ValidatingHTTPSConnectionPool,
 }
 
-AdvocatePoolKey = collections.namedtuple('AdvocatePoolKey',
-                                         (*PoolKey._fields, 'key_validator'))
+AdvocatePoolKey = collections.namedtuple("AdvocatePoolKey", (*PoolKey._fields, "key_validator"))
 
 
 def key_normalizer(key_class, request_context):
@@ -45,8 +44,8 @@ def key_normalizer(key_class, request_context):
 
 
 key_fn_by_scheme = {
-    'http': functools.partial(key_normalizer, AdvocatePoolKey),
-    'https': functools.partial(key_normalizer, AdvocatePoolKey),
+    "http": functools.partial(key_normalizer, AdvocatePoolKey),
+    "https": functools.partial(key_normalizer, AdvocatePoolKey),
 }
 
 
@@ -55,7 +54,7 @@ class ValidatingPoolManager(PoolManager):
         super().__init__(*args, **kwargs)
 
         # Make sure the API hasn't changed
-        assert (hasattr(self, 'pool_classes_by_scheme'))
+        assert hasattr(self, "pool_classes_by_scheme")
 
         self.pool_classes_by_scheme = pool_classes_by_scheme
         self.key_fn_by_scheme = key_fn_by_scheme.copy()

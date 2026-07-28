@@ -1,14 +1,26 @@
 {
   "id": 3061,
-  "title": "Jurnal Anarki #3",
-  "slug": "jurnal-anarki-3-tidak-diketahui",
+  "title": "Jurnal Anarki #03",
+  "slug": "jurnal-anarki-03-anonim-ezln-william-godwin-ernesto-setiawan",
   "authors": [
     {
-      "id": 668,
-      "name": "Tidak diketahui"
+      "id": 604,
+      "name": "Anonim"
+    },
+    {
+      "id": 3503,
+      "name": "EZLN"
+    },
+    {
+      "id": 3504,
+      "name": "William Godwin"
+    },
+    {
+      "id": 2579,
+      "name": "Ernesto Setiawan"
     }
   ],
-  "author_sort": "diketahui, Tidak",
+  "author_sort": "Setiawan, Ernesto & EZLN & Godwin, William & Anonim",
   "tags": [
     "Jurnal Anarki"
   ],
@@ -22,25 +34,31 @@
       "name": "Jurnal Anarki"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2005-01-03",
   "timestamp": "2026-05-26 19:07:40.373770",
-  "last_modified": "2026-05-26 19:07:40.373778",
-  "series": null,
+  "last_modified": "2026-07-25 14:55:15.396517",
+  "series": {
+    "id": 20,
+    "name": "Jurnal Anarki",
+    "index": 3
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/3061?c=2026-05-26 19:07:40.373778",
-  "cover_og_url": "/cover/3061/og?c=2026-05-26 19:07:40.373778",
-  "url": "/book/3061",
+  "cover_url": "/cover_thumb/3061?v=1784966115",
+  "cover_og_url": "/cover/3061/og?v=1784966115",
+  "url": "/book/3061/",
   "rating": null,
-  "comment": "Jurnal Anarki  · 2005",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 6594115,
-      "name": "Jurnal Anarki #3 - Tidak diketahui"
+      "name": "Jurnal Anarki #03 - Ernesto Setiawan"
     }
   ]
 }

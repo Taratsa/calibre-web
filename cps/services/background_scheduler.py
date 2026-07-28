@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
 #
@@ -23,11 +22,12 @@ try:
     from apscheduler.schedulers.background import BackgroundScheduler as BScheduler
     from apscheduler.triggers.cron import CronTrigger  # noqa: F401
     from apscheduler.triggers.date import DateTrigger
+
     use_APScheduler = True
 except (ImportError, RuntimeError):
     use_APScheduler = False
     log = logger.create()
-    log.info('APScheduler not found. Unable to schedule tasks.')
+    log.info("APScheduler not found. Unable to schedule tasks.")
 
 
 class BackgroundScheduler:
@@ -40,7 +40,7 @@ class BackgroundScheduler:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.log = logger.create()
-            logger.logging.getLogger('tzlocal').setLevel(logger.logging.WARNING)
+            logger.logging.getLogger("tzlocal").setLevel(logger.logging.WARNING)
             cls.scheduler = BScheduler()  # pyright: ignore[reportPossiblyUnboundVariable]
             cls.scheduler.start()
 
@@ -53,10 +53,12 @@ class BackgroundScheduler:
     # Expects a lambda expression for the task
     def schedule_task(self, task, user=None, name=None, hidden=False, trigger=None):
         if use_APScheduler:
+
             def scheduled_task():
                 worker_task = task()
                 worker_task.scheduled = True
                 WorkerThread.add(user, worker_task, hidden=hidden)
+
             return self.schedule(func=scheduled_task, trigger=trigger, name=name)
 
     # Expects a list of lambda expressions for the tasks
@@ -68,8 +70,10 @@ class BackgroundScheduler:
     # Expects a lambda expression for the task
     def schedule_task_immediately(self, task, user=None, name=None, hidden=False):
         if use_APScheduler:
+
             def immediate_task():
                 WorkerThread.add(user, task(), hidden)
+
             return self.schedule(func=immediate_task, trigger=DateTrigger(), name=name)  # pyright: ignore[reportPossiblyUnboundVariable]
 
     # Expects a list of lambda expressions for the tasks

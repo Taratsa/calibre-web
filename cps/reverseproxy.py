@@ -1,4 +1,3 @@
-
 #  Flask License
 #
 #  Copyright © 2010 by the Pallets team, cervinko, janeczku, OzzieIsaacs
@@ -61,21 +60,21 @@ class ReverseProxied:
     def __call__(self, environ, start_response):
         self.proxied = False
         self.script_name = "/"  # pyright: ignore[reportUninitializedInstanceVariable]
-        script_name = environ.get('HTTP_X_SCRIPT_NAME', '')
+        script_name = environ.get("HTTP_X_SCRIPT_NAME", "")
         if script_name:
             self.proxied = True
-            environ['SCRIPT_NAME'] = script_name
-            path_info = environ.get('PATH_INFO', '')
+            environ["SCRIPT_NAME"] = script_name
+            path_info = environ.get("PATH_INFO", "")
             self.script_name = script_name
             if path_info and path_info.startswith(script_name):
-                environ['PATH_INFO'] = path_info[len(script_name):]
+                environ["PATH_INFO"] = path_info[len(script_name) :]
 
-        scheme = environ.get('HTTP_X_SCHEME', '')
+        scheme = environ.get("HTTP_X_SCHEME", "")
         if scheme:
-            environ['wsgi.url_scheme'] = scheme
-        servr = environ.get('HTTP_X_FORWARDED_HOST', '')
+            environ["wsgi.url_scheme"] = scheme
+        servr = environ.get("HTTP_X_FORWARDED_HOST", "")
         if servr:
-            environ['HTTP_HOST'] = servr
+            environ["HTTP_HOST"] = servr
             self.proxied = True
         return self.app(environ, start_response)
 

@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018 lemmsh, Kennyl, Kyosfonica, matthazinski
 #
@@ -22,8 +21,8 @@ from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
 from . import isoLanguages
 
 default_ns = {
-    'n': 'urn:oasis:names:tc:opendocument:xmlns:container',
-    'pkg': 'http://www.idpf.org/2007/opf',
+    "n": "urn:oasis:names:tc:opendocument:xmlns:container",
+    "pkg": "http://www.idpf.org/2007/opf",
 }
 
 OPF_NAMESPACE = "http://www.idpf.org/2007/opf"
@@ -36,19 +35,24 @@ etree.register_namespace("opf", OPF_NAMESPACE)
 etree.register_namespace("dc", PURL_NAMESPACE)
 
 OPF_NS = {None: OPF_NAMESPACE}  # the default namespace (no prefix)
-NSMAP = {'dc': PURL_NAMESPACE, 'opf': OPF_NAMESPACE}
+NSMAP = {"dc": PURL_NAMESPACE, "opf": OPF_NAMESPACE}
 
 
-def updateEpub(src, dest, filename, data, ):
+def updateEpub(
+    src,
+    dest,
+    filename,
+    data,
+):
     # create a temp copy of the archive without filename
-    with zipfile.ZipFile(src, 'r') as zin, zipfile.ZipFile(dest, 'w') as zout:
+    with zipfile.ZipFile(src, "r") as zin, zipfile.ZipFile(dest, "w") as zout:
         zout.comment = zin.comment  # preserve the comment
         for item in zin.infolist():
             if item.filename != filename:
                 zout.writestr(item, zin.read(item.filename))
 
     # now add filename with its new data
-    with zipfile.ZipFile(dest, mode='a', compression=zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(dest, mode="a", compression=zipfile.ZIP_DEFLATED) as zf:
         zf.writestr(filename, data)
 
 
@@ -60,15 +64,15 @@ def get_content_opf(file_path, ns=None):
     if ns is None:
         ns = default_ns
     epubZip = zipfile.ZipFile(file_path)
-    txt = epubZip.read('META-INF/container.xml')
+    txt = epubZip.read("META-INF/container.xml")
     tree = etree.fromstring(txt, parser=_safe_parser)
-    cf_name = tree.xpath('n:rootfiles/n:rootfile/@full-path', namespaces=ns)[0]
+    cf_name = tree.xpath("n:rootfiles/n:rootfile/@full-path", namespaces=ns)[0]
     cf = epubZip.read(cf_name)
 
     return etree.fromstring(cf, parser=_safe_parser), cf_name
 
 
-def create_new_metadata_backup(book,  custom_columns, export_language, translated_cover_name, lang_type=3):
+def create_new_metadata_backup(book, custom_columns, export_language, translated_cover_name, lang_type=3):
     # generate root package element
     package = etree.Element(OPF + "package", nsmap=OPF_NS)
     package.set("unique-identifier", "uuid_id")
@@ -91,15 +95,15 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
     for author in book.authors:
         creator = etree.SubElement(metadata, PURL + "creator", nsmap=NSMAP)
         creator.text = str(author.name)
-        creator.set(OPF + "file-as", book.author_sort)     # ToDo Check
+        creator.set(OPF + "file-as", book.author_sort)  # ToDo Check
         creator.set(OPF + "role", "aut")
     contributor = etree.SubElement(metadata, PURL + "contributor", nsmap=NSMAP)
     contributor.text = "calibre (5.7.2) [https://calibre-ebook.com]"
-    contributor.set(OPF + "file-as", "calibre")     # ToDo Check
+    contributor.set(OPF + "file-as", "calibre")  # ToDo Check
     contributor.set(OPF + "role", "bkp")
 
     date = etree.SubElement(metadata, PURL + "date", nsmap=NSMAP)
-    date.text = f'{book.pubdate.year:04}-{book.pubdate.month:02}-{book.pubdate.day:02}T{book.pubdate.hour:02}:{book.pubdate.minute:02}:{book.pubdate.second:02}'
+    date.text = f"{book.pubdate.year:04}-{book.pubdate.month:02}-{book.pubdate.day:02}T{book.pubdate.hour:02}:{book.pubdate.minute:02}:{book.pubdate.second:02}"
     if book.comments and book.comments[0].text:
         for b in book.comments:
             description = etree.SubElement(metadata, PURL + "description", nsmap=NSMAP)
@@ -118,27 +122,27 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
     for b in book.tags:
         subject = etree.SubElement(metadata, PURL + "subject", nsmap=NSMAP)
         subject.text = str(b.name)
-    etree.SubElement(metadata, "meta", name="calibre:author_link_map",
-                     content="{" + ", ".join(['"' + str(a.name) + '": ""' for a in book.authors]) + "}",
-                     nsmap=NSMAP)
+    etree.SubElement(
+        metadata,
+        "meta",
+        name="calibre:author_link_map",
+        content="{" + ", ".join(['"' + str(a.name) + '": ""' for a in book.authors]) + "}",
+        nsmap=NSMAP,
+    )
     for b in book.series:
-        etree.SubElement(metadata, "meta", name="calibre:series",
-                         content=str(str(b.name)),
-                         nsmap=NSMAP)
+        etree.SubElement(metadata, "meta", name="calibre:series", content=str(str(b.name)), nsmap=NSMAP)
     if book.series:
-        etree.SubElement(metadata, "meta", name="calibre:series_index",
-                         content=str(book.series_index),
-                         nsmap=NSMAP)
+        etree.SubElement(metadata, "meta", name="calibre:series_index", content=str(book.series_index), nsmap=NSMAP)
     if len(book.ratings) and book.ratings[0].rating > 0:
-        etree.SubElement(metadata, "meta", name="calibre:rating",
-                         content=str(book.ratings[0].rating),
-                         nsmap=NSMAP)
-    etree.SubElement(metadata, "meta", name="calibre:timestamp",
-                     content=f'{book.timestamp.year:04}-{book.timestamp.month:02}-{book.timestamp.day:02}T{book.timestamp.hour:02}:{book.timestamp.minute:02}:{book.timestamp.second:02}',
-                     nsmap=NSMAP)
-    etree.SubElement(metadata, "meta", name="calibre:title_sort",
-                     content=book.sort,
-                     nsmap=NSMAP)
+        etree.SubElement(metadata, "meta", name="calibre:rating", content=str(book.ratings[0].rating), nsmap=NSMAP)
+    etree.SubElement(
+        metadata,
+        "meta",
+        name="calibre:timestamp",
+        content=f"{book.timestamp.year:04}-{book.timestamp.month:02}-{book.timestamp.day:02}T{book.timestamp.hour:02}:{book.timestamp.minute:02}:{book.timestamp.second:02}",
+        nsmap=NSMAP,
+    )
+    etree.SubElement(metadata, "meta", name="calibre:title_sort", content=book.sort, nsmap=NSMAP)
     for sequence, cc in enumerate(custom_columns):
         value = None
         extra = None
@@ -146,9 +150,13 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
         if cc_entry.__len__():
             value = [c.value for c in cc_entry] if cc.is_multiple else cc_entry[0].value
             extra = cc_entry[0].extra if hasattr(cc_entry[0], "extra") else None
-        etree.SubElement(metadata, "meta", name=f"calibre:user_metadata:#{cc.label}",
-                         content=cc.to_json(value, extra, sequence),
-                         nsmap=NSMAP)
+        etree.SubElement(
+            metadata,
+            "meta",
+            name=f"calibre:user_metadata:#{cc.label}",
+            content=cc.to_json(value, extra, sequence),
+            nsmap=NSMAP,
+        )
 
     # generate guide element and all sub elements of it
     # Title is translated from default export language
@@ -159,12 +167,7 @@ def create_new_metadata_backup(book,  custom_columns, export_language, translate
 
 
 def replace_metadata(tree, package):
-    rep_element = tree.xpath('/pkg:package/pkg:metadata', namespaces=default_ns)[0]
-    new_element = package.xpath('//metadata', namespaces=default_ns)[0]
+    rep_element = tree.xpath("/pkg:package/pkg:metadata", namespaces=default_ns)[0]
+    new_element = package.xpath("//metadata", namespaces=default_ns)[0]
     tree.replace(rep_element, new_element)
-    return etree.tostring(tree,
-                          xml_declaration=True,
-                          encoding='utf-8',
-                          pretty_print=True).decode('utf-8')
-
-
+    return etree.tostring(tree, xml_declaration=True, encoding="utf-8", pretty_print=True).decode("utf-8")

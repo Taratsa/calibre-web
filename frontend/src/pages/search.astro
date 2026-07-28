@@ -25,7 +25,7 @@ function highlight(s: string, terms: string[]): string {
 function coverHtml(image: string, alt: string): string {
   const clean = image.replace(/\?.*$/, '');
   if (clean.startsWith('/cover/')) {
-    return `<picture><source srcset="${clean}?fm=webp" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
+        return `<picture><source srcset="${clean}" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
   }
   return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
 }
@@ -205,7 +205,7 @@ function renderResults(scored: any[]): string {
     function coverHtml(image, alt) {
       const clean = image.replace(/\?.*$/, '');
       if (clean.startsWith('/cover/')) {
-        return `<picture><source srcset="${clean}?fm=webp" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
+    return `<picture><source srcset="${clean}" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
       }
       return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
     }

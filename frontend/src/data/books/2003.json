@@ -1,16 +1,20 @@
 {
   "id": 2003,
-  "title": "Insureksi adalah Puisi, Puisi adalah Insureksi: Kompilasi Puizine Bag.1",
-  "slug": "insureksi-adalah-puisi-puisi-adalah-insureksi-kompilasi-puizine-bag-1-tidak-diketahui",
+  "title": "Insureksi adalah Puisi, Puisi adalah Insureksi: Kompilasi Puizine Bag. 1",
+  "slug": "insureksi-adalah-puisi-puisi-adalah-insureksi-kompilasi-puizine-bag-1-anonim-dkk",
   "authors": [
     {
-      "id": 668,
-      "name": "Tidak diketahui"
+      "id": 604,
+      "name": "Anonim"
+    },
+    {
+      "id": 1133,
+      "name": "dkk"
     }
   ],
-  "author_sort": "diketahui, Tidak",
+  "author_sort": "Anonim & dkk",
   "tags": [
-    "Seng-Iseng Zine"
+    "Puisi"
   ],
   "publisher": {
     "id": 49,
@@ -22,25 +26,31 @@
       "name": "Seng-Iseng Zine"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2025-01-01",
   "timestamp": "2026-05-25 04:39:38.133069",
-  "last_modified": "2026-05-25 04:39:38.133077",
-  "series": null,
+  "last_modified": "2026-07-26 10:16:24.246972",
+  "series": {
+    "id": 25,
+    "name": "Kompilasi Puizine",
+    "index": 1
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/2003?c=2026-05-25 04:39:38.133077",
-  "cover_og_url": "/cover/2003/og?c=2026-05-25 04:39:38.133077",
-  "url": "/book/2003",
+  "cover_url": "/cover_thumb/2003?v=1785035784",
+  "cover_og_url": "/cover/2003/og?v=1785035784",
+  "url": "/book/2003/",
   "rating": null,
-  "comment": "Seng-Iseng Zine · 2025",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 1467648,
-      "name": "Insureksi adalah Puisi, Puisi adalah Insur - Tidak diketahui"
+      "name": "Insureksi adalah Puisi, Puisi adalah Insur - Anonim"
     }
   ]
 }

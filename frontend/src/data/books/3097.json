@@ -1,16 +1,20 @@
 {
   "id": 3097,
   "title": "Rise Above Media Zine #03",
-  "slug": "rise-above-media-zine-03-rasyad-zahran-grave-bastard",
+  "slug": "rise-above-media-zine-03-grave-bastard-rasyad-zahran",
   "authors": [
     {
-      "id": 2595,
-      "name": "Rasyad Zahran Grave Bastard"
+      "id": 3496,
+      "name": "Grave Bastard"
+    },
+    {
+      "id": 3495,
+      "name": "Rasyad Zahran"
     }
   ],
-  "author_sort": "Bastard, Rasyad Zahran Grave",
+  "author_sort": "Zahran, Rasyad & Bastard, Grave",
   "tags": [
-    "Rise Above Media"
+    "Esai"
   ],
   "publisher": {
     "id": 231,
@@ -22,25 +26,31 @@
       "name": "Rise Above Media"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2023-01-02",
   "timestamp": "2026-05-26 19:31:15.334758",
-  "last_modified": "2026-05-26 19:31:15.334767",
-  "series": null,
+  "last_modified": "2026-07-25 14:09:25.800559",
+  "series": {
+    "id": 17,
+    "name": "Zine Rise Above Media",
+    "index": 3
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/3097?c=2026-05-26 19:31:15.334767",
-  "cover_og_url": "/cover/3097/og?c=2026-05-26 19:31:15.334767",
-  "url": "/book/3097",
+  "cover_url": "/cover_thumb/3097?v=1784963365",
+  "cover_og_url": "/cover/3097/og?v=1784963365",
+  "url": "/book/3097/",
   "rating": null,
-  "comment": "Rise Above Media  · 2023",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 10210948,
-      "name": "Rise Above Media Zine #03 - Rasyad Zahran Grave Bastard"
+      "name": "Rise Above Media Zine #03 - Rasyad Zahran"
     }
   ]
 }

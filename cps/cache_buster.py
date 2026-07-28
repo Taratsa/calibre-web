@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2016-2019 jkrehm andy29485 OzzieIsaacs
 #
@@ -35,18 +34,18 @@ def init_cache_busting(app):
     because whenever the resource changes, so does its URL.
     """
 
-    static_folder = os.path.join(app.static_folder, '')  # path to the static file folder, with trailing slash
+    static_folder = os.path.join(app.static_folder, "")  # path to the static file folder, with trailing slash
 
     hash_table = {}  # map of file hashes
 
-    log.debug('Computing cache-busting values...')
+    log.debug("Computing cache-busting values...")
     # compute file hashes
     for dirpath, __, filenames in os.walk(static_folder):
         for filename in filenames:
             # compute version component
             rooted_filename = os.path.join(dirpath, filename)
             try:
-                with open(rooted_filename, 'rb') as f:
+                with open(rooted_filename, "rb") as f:
                     file_hash = hashlib.md5(f.read()).hexdigest()[:7]  # nosec
                 # save version to tables
                 file_path = rooted_filename.replace(static_folder, "")
@@ -55,7 +54,7 @@ def init_cache_busting(app):
             except PermissionError:
                 log.error(f"No permission to access {rooted_filename} file.")
 
-    log.debug('Finished computing cache-busting values')
+    log.debug("Finished computing cache-busting values")
 
     def bust_filename(file_name):
         return hash_table.get(file_name, "")

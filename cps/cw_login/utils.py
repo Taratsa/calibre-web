@@ -66,9 +66,7 @@ def make_next_param(login_url, current_url):
     l_url = urlsplit(login_url)
     c_url = urlsplit(current_url)
 
-    if (not l_url.scheme or l_url.scheme == c_url.scheme) and (
-        not l_url.netloc or l_url.netloc == c_url.netloc
-    ):
+    if (not l_url.scheme or l_url.scheme == c_url.scheme) and (not l_url.netloc or l_url.netloc == c_url.netloc):
         return urlunsplit(("", "", c_url.path, c_url.query, ""))
     return current_url
 
@@ -116,9 +114,7 @@ def login_url(login_view, next_url=None, next_field="next"):
     md = parse_qs(parsed_result.query, keep_blank_values=True)
     md[next_field] = make_next_param(base, next_url)  # pyright: ignore[reportArgumentType]
     netloc = current_app.config.get("FORCE_HOST_FOR_REDIRECTS") or parsed_result.netloc
-    parsed_result = parsed_result._replace(
-        netloc=netloc, query=urlencode(md, doseq=True)
-    )
+    parsed_result = parsed_result._replace(netloc=netloc, query=urlencode(md, doseq=True))
     return urlunsplit(parsed_result)
 
 
@@ -182,13 +178,10 @@ def login_user(user, remember=False, duration=None, force=False, fresh=True):
             try:
                 # equal to timedelta.total_seconds() but works with Python 2.6
                 session["_remember_seconds"] = (
-                    duration.microseconds
-                    + (duration.seconds + duration.days * 24 * 3600) * 10**6
+                    duration.microseconds + (duration.seconds + duration.days * 24 * 3600) * 10**6
                 ) / 10.0**6
             except AttributeError as e:
-                raise Exception(
-                    f"duration must be a datetime.timedelta, instead got: {duration}"
-                ) from e
+                raise Exception(f"duration must be a datetime.timedelta, instead got: {duration}") from e
 
     current_app.login_manager._update_request_context_with_user(user)  # pyright: ignore[reportAttributeAccessIssue]
     user_logged_in.send(current_app._get_current_object(), user=_get_user())  # pyright: ignore[reportAttributeAccessIssue]
@@ -214,7 +207,6 @@ def logout_user():
 
     if "_random" in session:
         session.pop("_random")
-
 
     cookie_name = current_app.config.get("REMEMBER_COOKIE_NAME", COOKIE_NAME)
     if cookie_name in request.cookies:
@@ -245,7 +237,7 @@ def login_required(func):
     not, it calls the :attr:`LoginManager.unauthorized` callback.) For
     example::
 
-        @app.route('/post')
+        @app.route("/post")
         @user_login_required
         def post():
             pass

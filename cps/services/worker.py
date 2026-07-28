@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2020 pwr
 #
@@ -38,12 +37,12 @@ STAT_CANCELLED = 5
 # Only retain this many tasks in dequeued list
 TASK_CLEANUP_TRIGGER = 20
 
-QueuedTask = namedtuple('QueuedTask', 'num, user, added, task, hidden')
+QueuedTask = namedtuple("QueuedTask", "num, user, added, task, hidden")
 
 
 def _get_main_thread():
     for t in threading.enumerate():
-        if t.__class__.__name__ == '_MainThread':
+        if t.__class__.__name__ == "_MainThread":
             return t
     raise Exception("main thread not found?!")
 
@@ -82,15 +81,9 @@ class WorkerThread(threading.Thread):
     def add(cls, user, task, hidden=False):
         ins = cls.get_instance()
         ins.num += 1
-        username = user if user is not None else 'System'
+        username = user if user is not None else "System"
         log.debug(f"Add Task for user: {username} - {task}")
-        ins.queue.put(QueuedTask(
-            num=ins.num,
-            user=username,
-            added=datetime.now(),
-            task=task,
-            hidden=hidden
-        ))
+        ins.queue.put(QueuedTask(num=ins.num, user=username, added=datetime.now(), task=task, hidden=hidden))
 
     @property
     def tasks(self):

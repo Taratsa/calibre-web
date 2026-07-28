@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs
 #
@@ -26,7 +25,7 @@ def process_open(command, quotes=(), env=None, sout=subprocess.PIPE, serr=subpro
     # windows py2.7 encode as string with quotes empty element for parameters is okay
     # windows py 3.x no encode and as string with quotes empty element for parameters is okay
     # separate handling for windows and linux
-    if os.name == 'nt':
+    if os.name == "nt":
         for key, element in enumerate(command):
             if key in quotes:
                 command[key] = '"' + element + '"'
@@ -34,19 +33,19 @@ def process_open(command, quotes=(), env=None, sout=subprocess.PIPE, serr=subpro
     else:
         exc_command = [x for x in command]
 
-    return subprocess.Popen(exc_command, shell=False, stdout=sout, stderr=serr, universal_newlines=newlines, env=env) # nosec
+    return subprocess.Popen(exc_command, shell=False, stdout=sout, stderr=serr, universal_newlines=newlines, env=env)  # nosec
 
 
 def process_wait(command, serr=subprocess.PIPE, pattern=""):
     # Run command, wait for process to terminate, and return an iterator over lines of its output.
-    newlines = os.name != 'nt'
+    newlines = os.name != "nt"
     ret_val = ""
     p = process_open(command, serr=serr, newlines=newlines)
     p.wait()
     if p.stdout:
         for line in p.stdout.readlines():
             if isinstance(line, bytes):
-                line = line.decode('utf-8', errors="ignore")
+                line = line.decode("utf-8", errors="ignore")
             match = re.search(pattern, line, re.IGNORECASE)
             if match and ret_val == "":
                 ret_val = match

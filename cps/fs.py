@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
 #
@@ -38,7 +37,7 @@ class FileSystem:
             try:
                 makedirs(self._cache_dir)
             except OSError:
-                self.log.info(f'Failed to create path {self._cache_dir} (Permission denied).')
+                self.log.info(f"Failed to create path {self._cache_dir} (Permission denied).")
                 raise
 
         path = join(self._cache_dir, cache_type) if cache_type else self._cache_dir
@@ -46,7 +45,7 @@ class FileSystem:
             try:
                 makedirs(path)
             except OSError:
-                self.log.info(f'Failed to create path {path} (Permission denied).')
+                self.log.info(f"Failed to create path {path} (Permission denied).")
                 raise
 
         return path if cache_type else self._cache_dir
@@ -57,7 +56,7 @@ class FileSystem:
             try:
                 makedirs(path)
             except OSError:
-                self.log.info(f'Failed to create path {path} (Permission denied).')
+                self.log.info(f"Failed to create path {path} (Permission denied).")
                 raise
 
         return path
@@ -74,7 +73,7 @@ class FileSystem:
             try:
                 rmtree(self._cache_dir)
             except OSError:
-                self.log.info(f'Failed to delete path {self._cache_dir} (Permission denied).')
+                self.log.info(f"Failed to delete path {self._cache_dir} (Permission denied).")
                 raise
 
         if cache_type:
@@ -83,7 +82,7 @@ class FileSystem:
                 try:
                     rmtree(path)
                 except OSError:
-                    self.log.info(f'Failed to delete path {path} (Permission denied).')
+                    self.log.info(f"Failed to delete path {path} (Permission denied).")
                     raise
 
     def delete_cache_file(self, filename, cache_type=None):
@@ -92,5 +91,5 @@ class FileSystem:
             try:
                 remove(path)
             except OSError:
-                self.log.info(f'Failed to delete path {path} (Permission denied).')
+                self.log.info(f"Failed to delete path {path} (Permission denied).")
                 raise

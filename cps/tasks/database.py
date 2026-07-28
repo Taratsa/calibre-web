@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2020 mmonkey
 #
@@ -22,7 +21,7 @@ from cps.services.worker import CalibreTask
 
 
 class TaskReconnectDatabase(CalibreTask):
-    def __init__(self, task_message=N_('Reconnecting Calibre database')):
+    def __init__(self, task_message=N_("Reconnecting Calibre database")):
         super().__init__(task_message)
         self.log = logger.create()
         # self.calibre_db = db.CalibreDB(expire_on_commit=False, init=True)

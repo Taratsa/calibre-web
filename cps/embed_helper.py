@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2024 OzzieIsaacs
 #
@@ -33,16 +32,27 @@ def do_calibre_export(book_id, book_format):
         temp_file_name = str(uuid4())
         my_env = os.environ.copy()
         if config.config_calibre_split:
-            my_env['CALIBRE_OVERRIDE_DATABASE_PATH'] = os.path.join(config.config_calibre_dir, "metadata.db")
+            my_env["CALIBRE_OVERRIDE_DATABASE_PATH"] = os.path.join(config.config_calibre_dir, "metadata.db")
         library_path = config.get_book_path()
-        opf_command = [calibredb_binarypath, 'export', '--dont-write-opf', '--dont-save-cover',
-                       '--with-library', library_path,
-                       '--to-dir', tmp_dir, '--formats', book_format, "--template", f"{temp_file_name}",
-                       str(book_id)]
+        opf_command = [
+            calibredb_binarypath,
+            "export",
+            "--dont-write-opf",
+            "--dont-save-cover",
+            "--with-library",
+            library_path,
+            "--to-dir",
+            tmp_dir,
+            "--formats",
+            book_format,
+            "--template",
+            f"{temp_file_name}",
+            str(book_id),
+        ]
         p = process_open(opf_command, quotes, my_env)
         _, err = p.communicate()
         if err:
-            log.error('Metadata embedder encountered an error: %s', err)
+            log.error("Metadata embedder encountered an error: %s", err)
         return tmp_dir, temp_file_name
     except OSError as ex:
         # ToDo real error handling

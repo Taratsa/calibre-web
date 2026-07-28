@@ -35,9 +35,7 @@ SYMBOLS_TO_TRANSLATE = (
     "öÖüÜóÓőŐúÚéÉáÁűŰíÍąĄćĆęĘłŁńŃóÓśŚźŹżŻ",
     "oOuUoOoOuUeEaAuUiIaAcCeElLnNoOsSzZzZ",
 )
-SYMBOL_TRANSLATION_MAP = dict(
-    [(ord(a), ord(b)) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE, strict=False)]
-)
+SYMBOL_TRANSLATION_MAP = dict([(ord(a), ord(b)) for (a, b) in zip(*SYMBOLS_TO_TRANSLATE, strict=False)])
 
 
 def get_int_or_float(value: str) -> int | float:
@@ -79,9 +77,7 @@ class LubimyCzytac(Metadata):
 
     BASE_URL = "https://lubimyczytac.pl"
 
-    BOOK_SEARCH_RESULT_XPATH = (
-        "*//div[@class='listSearch']//div[@class='authorAllBooks__single']"
-    )
+    BOOK_SEARCH_RESULT_XPATH = "*//div[@class='listSearch']//div[@class='authorAllBooks__single']"
     SINGLE_BOOK_RESULT_XPATH = ".//div[contains(@class,'authorAllBooks__singleText')]"
     TITLE_PATH = "/div/a[contains(@class,'authorAllBooks__singleTextTitle')]"
     TITLE_TEXT_PATH = f"{TITLE_PATH}//text()"
@@ -103,7 +99,6 @@ class LubimyCzytac(Metadata):
     FIRST_PUBLISH_DATE_PL = f"{DETAILS}{PUBLISH_DATE} polskiego')]{SIBLINGS}[1]/text()"
     TAGS = "//a[contains(@href,'/ksiazki/t/')]/text()"  # "//nav[@aria-label='breadcrumbs']//a[contains(@href,'/ksiazki/k/')]/span/text()"
 
-
     RATING = "//meta[@property='books:rating:value']/@content"
     COVER = "//meta[@property='og:image']/@content"
     ISBN = "//meta[@property='books:isbn']/@content"
@@ -111,9 +106,7 @@ class LubimyCzytac(Metadata):
 
     SUMMARY = "//script[@type='application/ld+json']//text()"
 
-    def search(
-        self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> list[MetaRecord] | None:
+    def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
         if self.active:
             try:
                 result = requests.get(self._prepare_query(title=query))
@@ -143,9 +136,7 @@ class LubimyCzytac(Metadata):
             title = title.split('"')[0].split(",,")[0]
 
         if "/" in title:
-            title_tokens = [
-                token for token in title.lower().split(" ") if len(token) > 1
-            ]
+            title_tokens = [token for token in title.lower().split(" ") if len(token) > 1]
         else:
             title_tokens = list(self.get_title_tokens(title, strip_joiners=False))
         if title_tokens:
@@ -160,9 +151,7 @@ class LubimyCzytacParser:
     PAGES_TEMPLATE = "<p id='strony'>Książka ma {0} stron(y).</p>"
     TRANSLATOR_TEMPLATE = "<p id='translator'>Tłumacz: {0}</p>"
     PUBLISH_DATE_TEMPLATE = "<p id='pierwsze_wydanie'>Data pierwszego wydania: {0}</p>"
-    PUBLISH_DATE_PL_TEMPLATE = (
-        "<p id='pierwsze_wydanie'>Data pierwszego wydania w Polsce: {0}</p>"
-    )
+    PUBLISH_DATE_PL_TEMPLATE = "<p id='pierwsze_wydanie'>Data pierwszego wydania w Polsce: {0}</p>"
 
     def __init__(self, root: HtmlElement, metadata: Metadata) -> None:
         self.root = root
@@ -174,19 +163,16 @@ class LubimyCzytacParser:
         for result in results:
             title = self._parse_xpath_node(
                 root=result,
-                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}"
-                f"{LubimyCzytac.TITLE_TEXT_PATH}",
+                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}{LubimyCzytac.TITLE_TEXT_PATH}",
             )
 
             book_url = self._parse_xpath_node(
                 root=result,
-                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}"
-                f"{LubimyCzytac.URL_PATH}",
+                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}{LubimyCzytac.URL_PATH}",
             )
             authors = self._parse_xpath_node(
                 root=result,
-                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}"
-                f"{LubimyCzytac.AUTHORS_PATH}",
+                xpath=f"{LubimyCzytac.SINGLE_BOOK_RESULT_XPATH}{LubimyCzytac.AUTHORS_PATH}",
                 take_first=False,
             )
             if not all([title, book_url, authors]):
@@ -206,9 +192,7 @@ class LubimyCzytacParser:
             )
         return matches
 
-    def parse_single_book(
-        self, match: MetaRecord, generic_cover: str, locale: str
-    ) -> MetaRecord:
+    def parse_single_book(self, match: MetaRecord, generic_cover: str, locale: str) -> MetaRecord:
         try:
             response = requests.get(match.url)
             response.raise_for_status()
@@ -241,16 +225,11 @@ class LubimyCzytacParser:
         node = root.xpath(xpath)
         if not node:
             return None
-        return (
-            (node[0].strip() if strip_element else node[0])
-            if take_first
-            else [x.strip() for x in node]
-        )
+        return (node[0].strip() if strip_element else node[0]) if take_first else [x.strip() for x in node]
 
     def _parse_cover(self, generic_cover) -> str | None:
         return (  # pyright: ignore[reportReturnType]
-            self._parse_xpath_node(xpath=LubimyCzytac.COVER, take_first=True)
-            or generic_cover
+            self._parse_xpath_node(xpath=LubimyCzytac.COVER, take_first=True) or generic_cover
         )
 
     def _parse_publisher(self) -> str | None:
@@ -284,9 +263,7 @@ class LubimyCzytacParser:
         tags = self._parse_xpath_node(xpath=LubimyCzytac.TAGS, take_first=False)
         if tags:
             return [  # pyright: ignore[reportReturnType]
-                strip_accents(w.replace(", itd.", " itd."))
-                for w in tags
-                if isinstance(w, str)
+                strip_accents(w.replace(", itd.", " itd.")) for w in tags if isinstance(w, str)
             ]
         return None  # pyright: ignore[reportReturnType]
 
@@ -315,9 +292,7 @@ class LubimyCzytacParser:
 
     def _parse_description(self) -> str:
         description = ""
-        description_node = self._parse_xpath_node(
-            xpath=LubimyCzytac.DESCRIPTION, strip_element=False
-        )
+        description_node = self._parse_xpath_node(xpath=LubimyCzytac.DESCRIPTION, strip_element=False)
         if description_node is not None:
             for source in self.root.xpath('//p[@class="source"]'):
                 source.getparent().remove(source)
@@ -339,9 +314,7 @@ class LubimyCzytacParser:
 
         first_publish_date = self._parse_date()
         if first_publish_date:
-            description += LubimyCzytacParser.PUBLISH_DATE_TEMPLATE.format(
-                first_publish_date.strftime("%d.%m.%Y")
-            )
+            description += LubimyCzytacParser.PUBLISH_DATE_TEMPLATE.format(first_publish_date.strftime("%d.%m.%Y"))
 
         first_publish_date_pl = self._parse_date(xpath="first_publish_pl")
         if first_publish_date_pl:
@@ -351,6 +324,5 @@ class LubimyCzytacParser:
         translator = self._parse_xpath_node(xpath=LubimyCzytac.TRANSLATOR)
         if translator:
             description += LubimyCzytacParser.TRANSLATOR_TEMPLATE.format(translator)
-
 
         return description

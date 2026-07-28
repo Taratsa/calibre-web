@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2022 OzzieIsaacs
 #
@@ -26,27 +25,27 @@ class MyWSGIHandler(WSGIHandler):
     def get_environ(self):
         env = super().get_environ()
         spath = self.path or ""
-        path, __ = spath.split('?', 1) if '?' in spath else (spath, '')
-        env['RAW_URI'] = path
+        path, __ = spath.split("?", 1) if "?" in spath else (spath, "")
+        env["RAW_URI"] = path
         return env
 
     def format_request(self):
         now = datetime.now().replace(microsecond=0)
-        length = self.response_length or '-'
-        delta = '%.6f' % (self.time_finish - self.time_start) if self.time_finish else '-'
-        forwarded = self.environ.get('HTTP_X_FORWARDED_FOR', None) if self.environ else None
+        length = self.response_length or "-"
+        delta = "%.6f" % (self.time_finish - self.time_start) if self.time_finish else "-"
+        forwarded = self.environ.get("HTTP_X_FORWARDED_FOR", None) if self.environ else None
         if forwarded:
             client_address = forwarded
         else:
             client_address = self.client_address[0] if isinstance(self.client_address, tuple) else self.client_address
         return '{} - - [{}] "{}" {} {} {}'.format(
-            client_address or '-',
+            client_address or "-",
             now,
-            self.requestline or '',
+            self.requestline or "",
             # Use the native string version of the status, saved so we don't have to
             # decode. But fallback to the encoded 'status' in case of subclasses
             # (Is that really necessary? At least there's no overhead.)
-            (self._orig_status or self.status or '000').split()[0],
+            (self._orig_status or self.status or "000").split()[0],
             length,
-            delta)
-
+            delta,
+        )

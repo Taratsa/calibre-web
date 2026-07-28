@@ -13,7 +13,7 @@ babel = Babel()
 
 def get_locale():
     # if a user is logged in, use the locale from the user settings
-    if current_user is not None and hasattr(current_user, "locale") and current_user.name != 'Guest':
+    if current_user is not None and hasattr(current_user, "locale") and current_user.name != "Guest":
         # if the account is the guest account bypass the config lang settings
         return current_user.locale
 
@@ -21,11 +21,11 @@ def get_locale():
     if request.accept_languages:
         for x in request.accept_languages.values():
             try:
-                preferred.append(str(Locale.parse(x.replace('-', '_'))))
+                preferred.append(str(Locale.parse(x.replace("-", "_"))))
             except (UnknownLocaleError, ValueError) as e:
                 log.debug('Could not parse locale "%s": %s', x, e)
 
-    return negotiate_locale(preferred or ['en'], get_available_translations())
+    return negotiate_locale(preferred or ["en"], get_available_translations())
 
 
 def get_user_locale_language(user_language):

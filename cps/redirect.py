@@ -1,4 +1,3 @@
-
 # Flask License
 #
 # Copyright © 2010 by the Pallets team.
@@ -34,18 +33,18 @@ from flask import current_app, request, url_for
 def is_safe_url(target):
     ref_url = urlparse(request.host_url)
     test_url = urlparse(urljoin(request.host_url, target))
-    return test_url.scheme in ('http', 'https') and ref_url.netloc == test_url.netloc
+    return test_url.scheme in ("http", "https") and ref_url.netloc == test_url.netloc
 
 
 def remove_prefix(text, prefix):
     if text.startswith(prefix):
-        return text[len(prefix):]
+        return text[len(prefix) :]
     return ""
 
 
 def get_redirect_location(next, endpoint, **values):
     target = next or url_for(endpoint, **values)
     adapter = current_app.url_map.bind(urlparse(request.host_url).netloc)
-    if not len(list(adapter.allowed_methods(remove_prefix(target, request.environ.get('HTTP_X_SCRIPT_NAME',""))))):
+    if not len(list(adapter.allowed_methods(remove_prefix(target, request.environ.get("HTTP_X_SCRIPT_NAME", ""))))):
         target = url_for(endpoint, **values)
     return target

@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2020 OzzieIsaacs
 #
@@ -40,31 +39,41 @@ log = logger.create()
 
 # custom error page
 
+
 def error_http(error):
-    headers = {'WWW-Authenticate': 'Basic realm="calibre-web"'} if error.code == 401 else {}
-    return render_template('http_error.html',
-                           error_code=f"Error {error.code}",
-                           error_name=error.name,
-                           issue=False,
-                           goto_admin=False,
-                           unconfigured=not config.db_configured,
-                           instance=config.config_calibre_web_title
-                           ), error.code, headers
+    headers = {"WWW-Authenticate": 'Basic realm="calibre-web"'} if error.code == 401 else {}
+    headers["Cache-Control"] = "public, max-age=300"
+    return (
+        render_template(
+            "http_error.html",
+            error_code=f"Error {error.code}",
+            error_name=error.name,
+            issue=False,
+            goto_admin=False,
+            unconfigured=not config.db_configured,
+            instance=config.config_calibre_web_title,
+        ),
+        error.code,
+        headers,
+    )
 
 
 def internal_error(error):
-    if (isinstance(error.original_exception, AttributeError) and
-        error.original_exception.args[0] == "'NoneType' object has no attribute 'query'"
-        and error.original_exception.name == "query"):
-        return render_template('http_error.html',
-                               error_code="Database Error",
-                               error_name='The library used is invalid or has permission errors',
-                               issue=False,
-                               goto_admin=True,
-                               unconfigured=False,
-                               error_stack="",
-                               instance=config.config_calibre_web_title
-                               ), 500
+    if (
+        isinstance(error.original_exception, AttributeError)
+        and error.original_exception.args[0] == "'NoneType' object has no attribute 'query'"
+        and error.original_exception.name == "query"
+    ):
+        return render_template(
+            "http_error.html",
+            error_code="Database Error",
+            error_name="The library used is invalid or has permission errors",
+            issue=False,
+            goto_admin=True,
+            unconfigured=False,
+            error_stack="",
+            instance=config.config_calibre_web_title,
+        ), 500
     log.error("500 Internal Server Error: %s", traceback.format_exc())
     error_stack = ""
     try:
@@ -72,16 +81,17 @@ def internal_error(error):
             error_stack = traceback.format_exc().split("\n")
     except Exception:
         pass
-    return render_template('http_error.html',
-                           error_code="500 Internal Server Error",
-                           error_name='The server encountered an internal error and was unable to complete your '
-                                      'request. There is an error in the application.',
-                           issue=True,
-                           goto_admin=False,
-                           unconfigured=False,
-                           error_stack=error_stack,
-                           instance=config.config_calibre_web_title
-                           ), 500
+    return render_template(
+        "http_error.html",
+        error_code="500 Internal Server Error",
+        error_name="The server encountered an internal error and was unable to complete your "
+        "request. There is an error in the application.",
+        issue=True,
+        goto_admin=False,
+        unconfigured=False,
+        error_stack=error_stack,
+        instance=config.config_calibre_web_title,
+    ), 500
 
 
 def init_errorhandler():
@@ -94,11 +104,12 @@ def init_errorhandler():
 
     if services.ldap:
         assert services.ldap is not None
+
         # Only way of catching the LDAPException upon logging in with LDAP server down
         @app.errorhandler(services.ldap.LDAPException)  # pyright: ignore[reportArgumentType]
         # pylint: disable=unused-variable
         def handle_exception(e):
-            log.debug('LDAP server not accessible while trying to login to opds feed')
+            log.debug("LDAP server not accessible while trying to login to opds feed")
             return error_http(FailedDependency())
 
 
@@ -108,16 +119,14 @@ def handle_rate_limit(__):
     log.error(f"Rate limit exceeded {endpoint}")
     if "register" in endpoint:
         flash(_("Please wait one minute to register next user"), category="error")
-        return render_title_template('register.html', config=config, title=_("Register"), page="register")
+        return render_title_template("register.html", config=config, title=_("Register"), page="register")
     elif "login" in endpoint:
         form = request.form.to_dict()
-        username = strip_whitespaces(form.get('username', "")).lower().replace("\n", "").replace("\r", "")
+        username = strip_whitespaces(form.get("username", "")).lower().replace("\n", "").replace("\r", "")
         flash(_("Please wait one minute before next login"), category="error")
         return render_login(username, form.get("password", ""))
     elif "opds" in endpoint:
         if auth.auth_error_callback:
             return auth.auth_error_callback(429)
     else:
-        return make_response('', 429)
-
-
+        return make_response("", 429)

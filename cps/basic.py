@@ -33,7 +33,7 @@ try:
 except ImportError:
     sort = sorted  # Just use regular sort then, may cause issues with badly named pages in cbz/cbr files
 
-basic = Blueprint('basic', __name__)
+basic = Blueprint("basic", __name__)
 
 log = logger.create()
 
@@ -47,22 +47,19 @@ def index():
     off = (page - 1) * limit
     order = get_sort_function("stored", "search")
     join = db.books_series_link, db.Books.id == db.books_series_link.c.book, db.Series
-    entries, result_count, pagination = calibre_db.get_search_results(term,
-                                                                      config,
-                                                                      off,
-                                                                      order,
-                                                                      limit,
-                                                                      *join)
-    return render_title_template('basic_index.html',
-                                 searchterm=term,
-                                 pagination=pagination,
-                                 query=term,
-                                 adv_searchterm=term,
-                                 entries=entries,
-                                 result_count=result_count,
-                                 title=_("Search"),
-                                 page="search",
-                                 order=order[1])
+    entries, result_count, pagination = calibre_db.get_search_results(term, config, off, order, limit, *join)
+    return render_title_template(
+        "basic_index.html",
+        searchterm=term,
+        pagination=pagination,
+        query=term,
+        adv_searchterm=term,
+        entries=entries,
+        result_count=result_count,
+        title=_("Search"),
+        page="search",
+        order=order[1],
+    )
 
 
 @basic.route("/basic_book/<int:book_id>")
@@ -72,15 +69,18 @@ def show_book(book_id):
     if entries:
         entry = entries[0]
         for lang_index in range(0, len(entry.languages)):
-            entry.languages[lang_index].language_name = isoLanguages.get_language_name(get_locale(), entry.languages[
-                lang_index].lang_code)
+            entry.languages[lang_index].language_name = isoLanguages.get_language_name(
+                get_locale(), entry.languages[lang_index].lang_code
+            )
         entry.ordered_authors = calibre_db.order_authors([entry])
 
-        return render_title_template('basic_detail.html',
-                                     entry=entry,
-                                     is_xhr=request.headers.get('X-Requested-With') == 'XMLHttpRequest',
-                                     title=entry.title,
-                                     page="book")
+        return render_title_template(
+            "basic_detail.html",
+            entry=entry,
+            is_xhr=request.headers.get("X-Requested-With") == "XMLHttpRequest",
+            title=entry.title,
+            page="book",
+        )
     else:
         log.debug("Selected book is unavailable. File does not exist or is not accessible")
         return redirect(url_for("basic.index"))

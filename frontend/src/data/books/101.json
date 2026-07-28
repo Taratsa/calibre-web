@@ -1,27 +1,20 @@
 {
   "id": 101,
-  "title": "SaaW zine vol#1",
-  "slug": "saaw-zine-vol-1-aditya-akulahpeluru-bejud-endy",
+  "title": "Screaming At A Word Zine Vol. 1",
+  "slug": "screaming-at-a-word-zine-vol-1-bejud-endy-aditya-akulahpeluru",
   "authors": [
     {
-      "id": 70,
-      "name": "Aditya"
-    },
-    {
-      "id": 27,
-      "name": "Akulahpeluru"
-    },
-    {
-      "id": 28,
-      "name": "Bejud"
-    },
-    {
-      "id": 29,
-      "name": "Endy"
+      "id": 3219,
+      "name": "Bejud,  Endy,  Aditya,  Akulahpeluru"
     }
   ],
-  "author_sort": "Bejud & Endy & Aditya & Akulahpeluru",
-  "tags": [],
+  "author_sort": "Bejud, Endy, Aditya, Akulahpeluru",
+  "tags": [
+    "Anarkisme",
+    "Hardcore",
+    "Musik",
+    "Punk"
+  ],
   "publisher": {
     "id": 19,
     "name": "Screaming At a Word"
@@ -37,22 +30,26 @@
   ],
   "pubdate": null,
   "timestamp": "2023-11-12 19:54:11.003850",
-  "last_modified": "2023-11-12 19:54:11.003854",
-  "series": null,
+  "last_modified": "2026-07-15 01:02:57.867523",
+  "series": {
+    "id": 1,
+    "name": "Zine Screaming At A Word",
+    "index": 1
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/101?c=2023-11-12 19:54:11.003854",
-  "cover_og_url": "/cover/101/og?c=2023-11-12 19:54:11.003854",
-  "url": "/book/101",
+  "cover_url": "/cover_thumb/101?v=1784052177",
+  "cover_og_url": "/cover/101/og?v=1784052177",
+  "url": "/book/101/",
   "rating": null,
   "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 27223732,
-      "name": "SaaW zine vol#1 - Bejud"
+      "name": "Screaming At A Word Zine Vol. 1 - Bejud, Endy, Aditya, Akulahpeluru"
     }
   ]
 }

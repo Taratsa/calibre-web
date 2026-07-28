@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2022 OzzieIsaacs
 #
@@ -36,6 +35,7 @@ def main():
     from .editbooks import editbook
     from .error_handler import init_errorhandler
     from .gdrive import gdrive
+    from .health import register_health_blueprint
     from .opds import opds
     from .remotelogin import remotelogin
     from .search import search
@@ -43,11 +43,13 @@ def main():
     from .shelf import shelf
     from .tasks_status import tasks
     from .web import web
+
     try:
         from flask_limiter.util import get_remote_address
 
         from .kobo import get_kobo_activated, kobo
         from .kobo_auth import kobo_auth
+
         kobo_available = get_kobo_activated()
     except (ImportError, AttributeError):  # Catch also error for not installed flask-WTF (missing csrf decorator)
         kobo_available = False
@@ -55,18 +57,21 @@ def main():
 
     try:
         from .oauth_bb import oauth
+
         oauth_available = True
     except ImportError:
         oauth_available = False
         oauth = None
 
     from . import web_server
+
     init_errorhandler()
 
     app.register_blueprint(search)
     app.register_blueprint(tasks)
     app.register_blueprint(web)
     app.register_blueprint(basic)
+    register_health_blueprint(app)
     assert limiter is not None
     limiter.limit("3/minute", key_func=request_username)(opds)
     app.register_blueprint(opds)
@@ -79,6 +84,7 @@ def main():
     app.register_blueprint(gdrive)
     app.register_blueprint(editbook)
     from .api import api
+
     app.register_blueprint(api)
     if kobo_available:
         assert get_remote_address is not None

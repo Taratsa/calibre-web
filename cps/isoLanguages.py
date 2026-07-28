@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2019 pwr
 #
@@ -26,8 +25,8 @@ try:
     from pycountry import languages as pyc_languages
 
     def _copy_fields(l):  # noqa: E741
-        l.part1 = getattr(l, 'alpha_2', None)
-        l.part3 = getattr(l, 'alpha_3', None)
+        l.part1 = getattr(l, "alpha_2", None)
+        l.part3 = getattr(l, "alpha_3", None)
         return l
 
     def get(name=None, part1=None, part3=None):
@@ -41,6 +40,7 @@ except ImportError:
     print("Python 3.12 isn't compatible with iso-639. Please install pycountry.")
     try:
         from iso639 import languages  # pyright: ignore[reportMissingImports]
+
         get = languages.get
     except ImportError:
         get = None  # pyright: ignore[reportAssignmentType]

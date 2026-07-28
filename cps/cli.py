@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2018 OzzieIsaacs
 #
@@ -27,13 +26,12 @@ from .constants import STABLE_VERSION as _STABLE_VERSION
 
 
 def version_info():
-    if _NIGHTLY_VERSION[1].startswith('$Format'):
+    if _NIGHTLY_VERSION[1].startswith("$Format"):
         return "Calibre-Web version: {} - unknown git-clone".format(_STABLE_VERSION.replace("b", " Beta"))
     return "Calibre-Web version: {} -{}".format(_STABLE_VERSION.replace("b", " Beta"), _NIGHTLY_VERSION[1])
 
 
 class CliParameter:
-
     def __init__(self):
         self.user_credentials = None
         self.ip_address = None
@@ -51,30 +49,46 @@ class CliParameter:
         self.arg_parser()
 
     def arg_parser(self):
-        parser = argparse.ArgumentParser(description='Calibre Web is a web app providing '
-                                                     'a interface for browsing, reading and downloading eBooks\n',
-                                         prog='cps.py')
-        parser.add_argument('-p', metavar='path', help='path and name to settings db, e.g. /opt/cw.db')
-        parser.add_argument('-g', metavar='path', help='path and name to gdrive db, e.g. /opt/gd.db')
-        parser.add_argument('-c', metavar='path', help='path and name to SSL certfile, '
-                                                       'e.g. /opt/test.cert, works only in combination with keyfile')
-        parser.add_argument('-k', metavar='path', help='path and name to SSL keyfile, e.g. /opt/test.key, '
-                                                       'works only in combination with certfile')
-        parser.add_argument('-o', metavar='path', help='path and name Calibre-Web logfile')
-        parser.add_argument('-v', '--version', action='version', help='Shows version number '
-                                                                      'and exits Calibre-Web',
-                            version=version_info())
-        parser.add_argument('-i', metavar='ip-address', help='Server IP-Address to listen')
-        parser.add_argument('-m', action='store_true',
-                            help='Use Memory-backend as limiter backend, use this parameter '
-                                 'in case of miss configured backend')
-        parser.add_argument('-s', metavar='user:pass',
-                            help='Sets specific username to new password and exits Calibre-Web')
-        parser.add_argument('-l', action='store_true', help='Allow loading covers from localhost')
-        parser.add_argument('-d', action='store_true', help='Dry run of updater to check file permissions '
-                                                            'in advance and exits Calibre-Web')
-        parser.add_argument('-r', action='store_true', help='Enable public database reconnect '
-                                                            'route under /reconnect')
+        parser = argparse.ArgumentParser(
+            description="Calibre Web is a web app providing a interface for browsing, reading and downloading eBooks\n",
+            prog="cps.py",
+        )
+        parser.add_argument("-p", metavar="path", help="path and name to settings db, e.g. /opt/cw.db")
+        parser.add_argument("-g", metavar="path", help="path and name to gdrive db, e.g. /opt/gd.db")
+        parser.add_argument(
+            "-c",
+            metavar="path",
+            help="path and name to SSL certfile, e.g. /opt/test.cert, works only in combination with keyfile",
+        )
+        parser.add_argument(
+            "-k",
+            metavar="path",
+            help="path and name to SSL keyfile, e.g. /opt/test.key, works only in combination with certfile",
+        )
+        parser.add_argument("-o", metavar="path", help="path and name Calibre-Web logfile")
+        parser.add_argument(
+            "-v",
+            "--version",
+            action="version",
+            help="Shows version number and exits Calibre-Web",
+            version=version_info(),
+        )
+        parser.add_argument("-i", metavar="ip-address", help="Server IP-Address to listen")
+        parser.add_argument(
+            "-m",
+            action="store_true",
+            help="Use Memory-backend as limiter backend, use this parameter in case of miss configured backend",
+        )
+        parser.add_argument(
+            "-s", metavar="user:pass", help="Sets specific username to new password and exits Calibre-Web"
+        )
+        parser.add_argument("-l", action="store_true", help="Allow loading covers from localhost")
+        parser.add_argument(
+            "-d",
+            action="store_true",
+            help="Dry run of updater to check file permissions in advance and exits Calibre-Web",
+        )
+        parser.add_argument("-r", action="store_true", help="Enable public database reconnect route under /reconnect")
         args = parser.parse_args()
 
         self.logpath = args.o or ""
@@ -127,8 +141,8 @@ class CliParameter:
         if self.ip_address:
             try:
                 # try to parse the given ip address with socket
-                if hasattr(socket, 'inet_pton'):
-                    if ':' in self.ip_address:
+                if hasattr(socket, "inet_pton"):
+                    if ":" in self.ip_address:
                         socket.inet_pton(socket.AF_INET6, self.ip_address)
                     else:
                         socket.inet_pton(socket.AF_INET, self.ip_address)
@@ -137,7 +151,7 @@ class CliParameter:
                     # inet_atom only handles IPv4 addresses
                     socket.inet_aton(self.ip_address)
             except OSError as err:
-                print(self.ip_address, ':', err)
+                print(self.ip_address, ":", err)
                 sys.exit(1)
 
         # handle and check user password argument

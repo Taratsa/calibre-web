@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2019 pwr
 #
@@ -36,6 +35,7 @@ except ImportError as err:
 
 try:
     from . import SyncToken as SyncToken
+
     kobo = True
 except ImportError as err:
     log.debug("Cannot import SyncToken, syncing books with Kobo Devices will not work: %s", err)

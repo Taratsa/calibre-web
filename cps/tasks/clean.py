@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2023 OzzieIsaacs
 #
@@ -25,7 +24,7 @@ from cps.services.worker import CalibreTask
 
 
 class TaskClean(CalibreTask):
-    def __init__(self, task_message=N_('Delete temp folder contents')):
+    def __init__(self, task_message=N_("Delete temp folder contents")):
         super().__init__(task_message)
         self.log = logger.create()
         self.app_db_session = ub.get_new_session_instance()
@@ -39,16 +38,19 @@ class TaskClean(CalibreTask):
         except (PermissionError, OSError) as e:
             self.log.error(f"Error deleting temp folder: {e}")
         # delete expired session keys
-        self.log.debug("Deleted expired session_keys" )
+        self.log.debug("Deleted expired session_keys")
         expiry = int(datetime.datetime.now().timestamp())
         try:
             self.app_db_session.query(ub.User_Sessions).filter(
-                or_(ub.User_Sessions.expiry < expiry,  # pyright: ignore[reportGeneralTypeIssues]
-                    ub.User_Sessions.expiry.is_(None))).delete()  # pyright: ignore[reportGeneralTypeIssues]
+                or_(
+                    ub.User_Sessions.expiry < expiry,  # pyright: ignore[reportGeneralTypeIssues]
+                    ub.User_Sessions.expiry.is_(None),
+                )
+            ).delete()  # pyright: ignore[reportGeneralTypeIssues]
             self.app_db_session.commit()
         except Exception as ex:
-            self.log.debug('Error deleting expired session keys: ' + str(ex))
-            self._handleError('Error deleting expired session keys: ' + str(ex))
+            self.log.debug("Error deleting expired session keys: " + str(ex))
+            self._handleError("Error deleting expired session keys: " + str(ex))
             self.app_db_session.rollback()
             return
 

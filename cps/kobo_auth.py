@@ -82,15 +82,18 @@ def generate_auth_token(user_id):
     if current_user.id != user_id and not current_user.role_admin():
         abort(403)
     warning = False
-    host_list = request.host.rsplit(':')
-    host = ':'.join(host_list) if len(host_list) == 1 else ':'.join(host_list[0:-1])
-    if host.startswith('127.') or host.lower() == 'localhost' or host.startswith('[::ffff:7f') or host == "[::1]":
-        warning = _('Please access Calibre-Web from non localhost to get valid api_endpoint for kobo device')
+    host_list = request.host.rsplit(":")
+    host = ":".join(host_list) if len(host_list) == 1 else ":".join(host_list[0:-1])
+    if host.startswith("127.") or host.lower() == "localhost" or host.startswith("[::ffff:7f") or host == "[::1]":
+        warning = _("Please access Calibre-Web from non localhost to get valid api_endpoint for kobo device")
 
     # Generate auth token if none is existing for this user
-    auth_token = ub.session.query(ub.RemoteAuthToken).filter(
-        ub.RemoteAuthToken.user_id == user_id
-    ).filter(ub.RemoteAuthToken.token_type==1).first()
+    auth_token = (
+        ub.session.query(ub.RemoteAuthToken)
+        .filter(ub.RemoteAuthToken.user_id == user_id)
+        .filter(ub.RemoteAuthToken.token_type == 1)
+        .first()
+    )
 
     if not auth_token:
         auth_token = ub.RemoteAuthToken()
@@ -106,14 +109,11 @@ def generate_auth_token(user_id):
 
     for book in books:
         formats = [data.format for data in book.data]
-        if 'KEPUB' not in formats and config.config_kepubifypath and 'EPUB' in formats:
-            helper.convert_book_format(book.id, config.config_calibre_dir, 'EPUB', 'KEPUB', current_user.name)
+        if "KEPUB" not in formats and config.config_kepubifypath and "EPUB" in formats:
+            helper.convert_book_format(book.id, config.config_calibre_dir, "EPUB", "KEPUB", current_user.name)
 
     return render_title_template(
-        "generate_kobo_auth_url.html",
-        title=_("Kobo Setup"),
-        auth_token=auth_token.auth_token,
-        warning=warning
+        "generate_kobo_auth_url.html", title=_("Kobo Setup"), auth_token=auth_token.auth_token, warning=warning
     )
 
 
@@ -123,8 +123,9 @@ def delete_auth_token(user_id):
     if current_user.id != user_id and not current_user.role_admin():
         abort(403)
     # Invalidate any previously generated Kobo Auth token for this user
-    ub.session.query(ub.RemoteAuthToken).filter(ub.RemoteAuthToken.user_id == user_id)\
-        .filter(ub.RemoteAuthToken.token_type==1).delete()
+    ub.session.query(ub.RemoteAuthToken).filter(ub.RemoteAuthToken.user_id == user_id).filter(
+        ub.RemoteAuthToken.token_type == 1
+    ).delete()
 
     return ub.session_commit()
 
@@ -155,7 +156,8 @@ def requires_kobo_auth(f):
             user = (
                 ub.session.query(ub.User)
                 .join(ub.RemoteAuthToken)
-                .filter(ub.RemoteAuthToken.auth_token == auth_token).filter(ub.RemoteAuthToken.token_type==1)
+                .filter(ub.RemoteAuthToken.auth_token == auth_token)
+                .filter(ub.RemoteAuthToken.token_type == 1)
                 .first()
             )
             if user is not None:
@@ -167,4 +169,5 @@ def requires_kobo_auth(f):
                 return f(*args, **kwargs)
         log.debug("Received Kobo request without a recognizable auth token.")
         return abort(401)
+
     return inner

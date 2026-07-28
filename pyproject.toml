@@ -114,6 +114,11 @@ kobo = [
     "jsonschema>=3.2.0,<4.30.0",
 ]
 
+dev = [
+    "import-linter>=2.0,<3.0",
+    "grimp>=3.0,<4.0",
+]
+
 [project.scripts]
 cps = "calibreweb.__main__:main"
 
@@ -148,3 +153,17 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "cps/services/*" = ["E402"]
 "test/*" = ["E402", "F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+
+# Module-level architectural boundaries (dependency contracts).
+# Run via: lint-imports  (uses the .importlinter config at the repo root).
+[tool.importlinter]
+# The importlinter settings live in `.importlinter` at the repo root, so we
+# don't need to duplicate them here. Keeping `[tool.importlinter]` empty is
+# supported by recent import-linter releases.

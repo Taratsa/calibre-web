@@ -54,3 +54,8 @@ gmail.json
 
 # macOS
 .DS_Store
+
+# Tool caches
+.grimp_cache/
+.import_linter_cache/
+.ruff_cache/

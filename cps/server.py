@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2012-2019 janeczku, OzzieIsaacs, andrerfcsantos, idalin
 #
@@ -31,7 +30,8 @@ try:
     from greenlet import GreenletExit
 
     from .gevent_wsgi import MyWSGIHandler
-    VERSION = 'Gevent ' + _version
+
+    VERSION = "Gevent " + _version
     _GEVENT = True
 except ImportError:
     from tornado import netutil
@@ -40,7 +40,8 @@ except ImportError:
     from tornado.ioloop import IOLoop
 
     from .tornado_wsgi import MyWSGIContainer
-    VERSION = 'Tornado ' + _version  # pyright: ignore[reportConstantRedefinition]
+
+    VERSION = "Tornado " + _version  # pyright: ignore[reportConstantRedefinition]
     _GEVENT = False  # pyright: ignore[reportConstantRedefinition]
 
 from . import constants, logger
@@ -49,13 +50,12 @@ log = logger.create()
 
 
 def _readable_listen_address(address, port):
-    if ':' in address:
+    if ":" in address:
         address = "[" + address + "]"
-    return f'{address}:{port}'
+    return f"{address}:{port}"
 
 
 class WebServer:
-
     def __init__(self):
         signal.signal(signal.SIGINT, self._killServer)
         signal.signal(signal.SIGTERM, self._killServer)
@@ -84,7 +84,7 @@ class WebServer:
                 config.save()
         else:
             if not _GEVENT:
-                logger.get('tornado.access').disabled = True
+                logger.get("tornado.access").disabled = True
 
         certfile_path = config.get_config_certfile()
         keyfile_path = config.get_config_keyfile()
@@ -92,10 +92,11 @@ class WebServer:
             if os.path.isfile(certfile_path) and os.path.isfile(keyfile_path):
                 self.ssl_args = dict(certfile=certfile_path, keyfile=keyfile_path)
             else:
-                log.warning('The specified paths for the ssl certificate file and/or key file seem to be broken. '
-                            'Ignoring ssl.')
-                log.warning('Cert path: %s', certfile_path)
-                log.warning('Key path:  %s', keyfile_path)
+                log.warning(
+                    "The specified paths for the ssl certificate file and/or key file seem to be broken. Ignoring ssl."
+                )
+                log.warning("Cert path: %s", certfile_path)
+                log.warning("Key path:  %s", keyfile_path)
 
     @staticmethod
     def _make_gevent_socket_activated():
@@ -114,7 +115,7 @@ class WebServer:
         self.unix_socket_file = socket_file
 
     def _make_gevent_listener(self):
-        if os.name != 'nt':
+        if os.name != "nt":
             socket_activated = os.environ.get("LISTEN_FDS")
             if socket_activated:
                 sock = self._make_gevent_socket_activated()
@@ -132,21 +133,25 @@ class WebServer:
                 return unix_sock, "unix:" + unix_socket_file
 
         if self.listen_address:
-            return ((self.listen_address, self.listen_port),
-                    _readable_listen_address(self.listen_address, self.listen_port))
+            return (
+                (self.listen_address, self.listen_port),
+                _readable_listen_address(self.listen_address, self.listen_port),
+            )
 
-        if os.name == 'nt':
-            self.listen_address = '0.0.0.0'
-            return ((self.listen_address, self.listen_port),
-                    _readable_listen_address(self.listen_address, self.listen_port))
+        if os.name == "nt":
+            self.listen_address = "0.0.0.0"
+            return (
+                (self.listen_address, self.listen_port),
+                _readable_listen_address(self.listen_address, self.listen_port),
+            )
 
-        address = ('::', self.listen_port)
+        address = ("::", self.listen_port)
         try:
             sock = WSGIServer.get_listener(address, family=socket.AF_INET6)  # pyright: ignore[reportPossiblyUnboundVariable]
         except OSError as ex:
-            log.error('%s', ex)
-            log.warning(f'Unable to listen on {address}, trying on IPv4 only...')
-            address = ('', self.listen_port)
+            log.error("%s", ex)
+            log.warning(f"Unable to listen on {address}, trying on IPv4 only...")
+            address = ("", self.listen_port)
             sock = WSGIServer.get_listener(address, family=socket.AF_INET)  # pyright: ignore[reportPossiblyUnboundVariable]
 
         return sock, _readable_listen_address(*address)
@@ -181,10 +186,7 @@ class WebServer:
                 if not os.path.exists(py_script) and os.path.exists(f"{py_script}.exe"):
                     py_script += ".exe"
 
-                if (
-                        os.path.splitext(sys.executable)[1] == ".exe"
-                        and os.path.splitext(py_script)[1] == ".exe"
-                ):
+                if os.path.splitext(sys.executable)[1] == ".exe" and os.path.splitext(py_script)[1] == ".exe":
                     rv.pop(0)
 
             rv.append(py_script)
@@ -207,7 +209,7 @@ class WebServer:
                 rv.extend(("-m", py_module.lstrip(".")))
 
         rv.extend(args)
-        if os.name == 'nt':
+        if os.name == "nt":
             rv = [f'"{a}"' for a in rv]
         return rv
 
@@ -216,25 +218,33 @@ class WebServer:
 
         try:
             sock, output = self._make_gevent_listener()
-            log.info('Starting Gevent server on %s', output)
+            log.info("Starting Gevent server on %s", output)
             try:
                 # Also print to stdout so interactive terminals show a clear success message
-                if constants.APP_MODE not in ['development', 'test']:
+                if constants.APP_MODE not in ["development", "test"]:
                     print(f"Calibre-Web: server started on {output}")
             except Exception:
                 print(f"Calibre-Web: error {output}")
                 pass
             from typing import Any, cast
-            self.wsgiserver = WSGIServer(cast(Any, sock), self.app, log=self.access_logger, handler_class=MyWSGIHandler,  # pyright: ignore[reportPossiblyUnboundVariable]
-                                         error_log=log,
-                                         spawn=Pool(), **ssl_args)  # pyright: ignore[reportPossiblyUnboundVariable]
+
+            self.wsgiserver = WSGIServer(
+                cast(Any, sock),
+                self.app,
+                log=self.access_logger,
+                handler_class=MyWSGIHandler,  # pyright: ignore[reportPossiblyUnboundVariable]
+                error_log=log,
+                spawn=Pool(),
+                **ssl_args,
+            )  # pyright: ignore[reportPossiblyUnboundVariable]
             if ssl_args:
                 wrap_socket = cast(Any, self.wsgiserver).wrap_socket
+
                 def my_wrap_socket(*args, **kwargs):
                     try:
                         return wrap_socket(*args, **kwargs)
                     except (ssl.SSLError, OSError) as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
-                        log.warning('Gevent SSL Error: %s', ex)
+                        log.warning("Gevent SSL Error: %s", ex)
                         raise GreenletExit from ex  # pyright: ignore[reportGeneralTypeIssues,reportPossiblyUnboundVariable]
 
                 cast(Any, self.wsgiserver).wrap_socket = my_wrap_socket
@@ -245,25 +255,29 @@ class WebServer:
                 self.unix_socket_file = None
 
     def _start_tornado(self):
-        if os.name == 'nt' and sys.version_info > (3, 7):
+        if os.name == "nt" and sys.version_info > (3, 7):
             import asyncio
+
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         try:
             from typing import Any, cast
+
             # Max Buffersize set to 200MB
-            http_server = HTTPServer(MyWSGIContainer(self.app),  # pyright: ignore[reportArgumentType,reportPossiblyUnboundVariable]
-                                     max_buffer_size=209700000,
-                                     ssl_options=self.ssl_args)
+            http_server = HTTPServer(
+                MyWSGIContainer(self.app),  # pyright: ignore[reportArgumentType,reportPossiblyUnboundVariable]
+                max_buffer_size=209700000,
+                ssl_options=self.ssl_args,
+            )
 
             unix_socket_file = os.environ.get("CALIBRE_UNIX_SOCKET")
-            if os.environ.get("LISTEN_FDS") and os.name != 'nt':
+            if os.environ.get("LISTEN_FDS") and os.name != "nt":
                 SD_LISTEN_FDS_START = 3
                 sock = socket.socket(fileno=SD_LISTEN_FDS_START)
                 http_server.add_socket(sock)
                 sock.setblocking(False)
-                socket_name =sock.getsockname()
+                socket_name = sock.getsockname()
                 output = "systemd-socket:" + _readable_listen_address(socket_name[0], socket_name[1])
-            elif unix_socket_file and os.name != 'nt':
+            elif unix_socket_file and os.name != "nt":
                 self._prepare_unix_socket(unix_socket_file)
                 output = "unix:" + unix_socket_file
                 assert self.unix_socket_file is not None
@@ -276,10 +290,10 @@ class WebServer:
             else:
                 output = _readable_listen_address(self.listen_address, self.listen_port)
                 http_server.listen(self.listen_port, self.listen_address)
-            log.info('Starting Tornado server on %s', output)
+            log.info("Starting Tornado server on %s", output)
             # Also print to stdout so interactive terminals show a clear success message
             try:
-                if constants.APP_MODE not in ['development', 'test']:
+                if constants.APP_MODE not in ["development", "test"]:
                     print(f"Calibre-Web: server started on {output}")
             except Exception:
                 print(f"Calibre-Web: error {output}")
@@ -310,7 +324,7 @@ class WebServer:
             self.wsgiserver = None
 
         # prevent irritating log of pending tasks message from asyncio
-        logger.get('asyncio').setLevel(logger.logging.CRITICAL)
+        logger.get("asyncio").setLevel(logger.logging.CRITICAL)
 
         if not self.restart:
             log.info("Performing shutdown of Calibre-Web")
@@ -323,6 +337,7 @@ class WebServer:
     @staticmethod
     def shutdown_scheduler():
         from .services.background_scheduler import BackgroundScheduler
+
         scheduler = BackgroundScheduler()
         if scheduler:
             scheduler.scheduler.shutdown()
@@ -334,6 +349,7 @@ class WebServer:
         from typing import Any, cast
 
         from . import updater_thread
+
         updater_thread.stop()
 
         log.info("webserver stop (restart=%s)", restart)
@@ -348,4 +364,3 @@ class WebServer:
                     ioloop.call_later(1.0, ioloop.stop)
                 else:
                     ioloop.asyncio_loop.call_soon_threadsafe(ioloop.stop)
-

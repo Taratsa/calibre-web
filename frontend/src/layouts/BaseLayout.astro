@@ -25,7 +25,7 @@ const defaultDescription = 'Pustaka Taratsa adalah perpustakaan digital non-kome
 const fullTitle = `${title} | Pustaka Taratsa`;
 const ogTitle = title;
 const ogDescription = description ?? defaultDescription;
-const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
+const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
 ---
 
 <!DOCTYPE html>
@@ -57,10 +57,17 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
 
+    <link rel="preconnect" href="https://umami.kenadera.org" />
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
+    <link rel="dns-prefetch" href="https://umami.kenadera.org" />
+    <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()" />
+
     <link rel="alternate" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Pustaka Taratsa" />
     <link rel="sitemap" href="/sitemap-index.xml" type="application/xml" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="140x140" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="api-catalog" href="/.well-known/api-catalog" />
     <link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
     <link rel="service-desc" href="/opds" />
@@ -103,24 +110,35 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.png`;
           <img src="/logo-taratsa.webp" alt="Pustaka Taratsa" width="28" height="28" fetchpriority="high" loading="eager" style="height:28px;width:auto;" />
           <span>Pustaka Taratsa</span>
         </a>
-        <details class="nav-toggle">
-          <summary aria-label="Menu navigasi">
+        <details class="nav-toggle" id="nav-toggle">
+          <summary aria-label="Menu navigasi" id="nav-toggle-summary" aria-controls="nav-menu" aria-expanded="false">
             <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </summary>
-          <nav>
+          <nav id="nav-menu">
             <a href="/author">Penulis</a>
             <a href="/series">Seri</a>
             <a href="/publisher">Penerbit</a>
             <a href="/category">Kategori</a>
             <a href="/shelf">Rak</a>
+            <a href="/populer">Populer</a>
           </nav>
         </details>
+        <script>
+          const toggle = document.getElementById('nav-toggle');
+          const summary = document.getElementById('nav-toggle-summary');
+          if (toggle && summary) {
+            toggle.addEventListener('toggle', () => {
+              summary.setAttribute('aria-expanded', toggle.open);
+            });
+          }
+        </script>
         <nav class="desktop-nav">
           <a href="/author">Penulis</a>
           <a href="/series">Seri</a>
           <a href="/publisher">Penerbit</a>
           <a href="/category">Kategori</a>
           <a href="/shelf">Rak</a>
+          <a href="/populer">Populer</a>
         </nav>
         <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
           <input type="search" name="q" placeholder="Cari buku, pengarang…" aria-label="Kata kunci pencarian" />

@@ -1,4 +1,3 @@
-
 # This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #   Copyright (C) 2019 OzzieIsaacs, pwr
 # Licensed under GLPv3. See the project's LICENSE file for details.
@@ -387,7 +386,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "الزولو",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "cs": {
         "aar": "afarština",
@@ -812,7 +811,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "zunijština",
         "zxx": "bez lingvistického obsahu",
-        "zza": "zaza"
+        "zza": "zaza",
     },
     "de": {
         "aar": "Danakil-Sprache",
@@ -1237,7 +1236,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "Zuni",
         "zxx": "Kein sprachlicher Inhalt",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "el": {
         "abk": "Αμπχαζιανά",
@@ -1617,7 +1616,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "es": {
         "aar": "Afar",
@@ -2042,7 +2041,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulú",
         "zun": "Zuñi",
         "zxx": "Sin contenido lingüístico",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "fi": {
         "aar": "afar",
@@ -2467,7 +2466,7 @@ LANGUAGE_NAMES = {
         "zul": "zulu",
         "zun": "zuni",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "fr": {
         "aar": "afar",
@@ -2892,7 +2891,7 @@ LANGUAGE_NAMES = {
         "zul": "zoulou",
         "zun": "zuni",
         "zxx": "pas de contenu linguistique",
-        "zza": "zaza"
+        "zza": "zaza",
     },
     "gl": {
         "abk": "Abjaziano",
@@ -3270,7 +3269,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulú",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "hu": {
         "aar": "Afar",
@@ -3695,7 +3694,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "zuni",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "id": {
         "abk": "Abkhazian",
@@ -4073,7 +4072,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "it": {
         "aar": "Afar",
@@ -4498,7 +4497,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "Zuni",
         "zxx": "Nessun contenuto linguistico",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "ja": {
         "aar": "アファル語",
@@ -4923,7 +4922,7 @@ LANGUAGE_NAMES = {
         "zul": "ズールー語",
         "zun": "ズニ語",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "km": {
         "aar": "Afar",
@@ -5348,7 +5347,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "Zuni",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "ko": {
         "abk": "압하스어",
@@ -5726,7 +5725,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "nl": {
         "aar": "Afar; Hamitisch",
@@ -6151,7 +6150,7 @@ LANGUAGE_NAMES = {
         "zul": "Zoeloe",
         "zun": "Zuni",
         "zxx": "Geen linguïstische inhoud",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "no": {
         "abk": "Abkhazian",
@@ -6529,7 +6528,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "pl": {
         "aar": "afarski",
@@ -6954,7 +6953,7 @@ LANGUAGE_NAMES = {
         "zul": "zuluski",
         "zun": "zuni",
         "zxx": "brak kontekstu językowego",
-        "zza": "zazaki"
+        "zza": "zazaki",
     },
     "pt": {
         "abk": "Abcázio",
@@ -7332,7 +7331,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "pt_BR": {
         "abk": "Abcázio",
@@ -7710,7 +7709,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "ru": {
         "aar": "Афар",
@@ -8135,7 +8134,7 @@ LANGUAGE_NAMES = {
         "zul": "Зулусский",
         "zun": "Зуньи",
         "zxx": "Нет языкового содержимого",
-        "zza": "Зазаки"
+        "zza": "Зазаки",
     },
     "sk": {
         "abk": "Abkhazian",
@@ -8513,7 +8512,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "sl": {
         "abk": "abhazijski",
@@ -8891,7 +8890,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zhuang",
         "zul": "zulujščina",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "sv": {
         "aar": "Afar",
@@ -9316,7 +9315,7 @@ LANGUAGE_NAMES = {
         "zul": "Zulu (Sydafrika, Malawi, Moçambique, Swaziland)",
         "zun": "Zuni",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
+        "zza": "Zaza",
     },
     "tr": {
         "abk": "Abhazca",
@@ -9694,7 +9693,7 @@ LANGUAGE_NAMES = {
         "zen": "Zenaga",
         "zha": "Zuang Dili",
         "zul": "Zulu",
-        "zun": "Zuni"
+        "zun": "Zuni",
     },
     "uk": {
         "aar": "афар",
@@ -10119,7 +10118,7 @@ LANGUAGE_NAMES = {
         "zul": "зулуська",
         "zun": "зуні",
         "zxx": "немає мовних даних",
-        "zza": "заза"
+        "zza": "заза",
     },
     "vi": {
         "abk": "Abkhazian",
@@ -10497,7 +10496,7 @@ LANGUAGE_NAMES = {
         "zen": "Tiếng De-na-ga",
         "zha": "Zhuang",
         "zul": "Tiếng Du-lu",
-        "zun": "Tiếng Du-ni"
+        "zun": "Tiếng Du-ni",
     },
     "zh_Hans_CN": {
         "aar": "阿法尔语",
@@ -10922,7 +10921,7 @@ LANGUAGE_NAMES = {
         "zul": "祖鲁语",
         "zun": "祖尼语",
         "zxx": "No linguistic content",
-        "zza": "扎扎其语"
+        "zza": "扎扎其语",
     },
     "zh_Hant_TW": {
         "abk": "Abkhazian",
@@ -11300,7 +11299,7 @@ LANGUAGE_NAMES = {
         "zen": " 哲納加語",
         "zha": " 壯語",
         "zul": "祖魯語",
-        "zun": "祖尼語"
+        "zun": "祖尼語",
     },
     "en": {
         "aar": "Afar",
@@ -11726,6 +11725,6 @@ LANGUAGE_NAMES = {
         "zul": "Zulu",
         "zun": "Zuni",
         "zxx": "No linguistic content",
-        "zza": "Zaza"
-    }
+        "zza": "Zaza",
+    },
 }

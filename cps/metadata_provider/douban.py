@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2022 xlivevil
 #
@@ -70,20 +69,17 @@ class Douban(Metadata):
     RATING_XPATH = "//div[@class='rating_self clearfix']/strong"
 
     session = requests.Session()
-    session.headers.update({
-        'user-agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56',
-    })
+    session.headers.update(
+        {
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56",
+        }
+    )
 
-    def search(self,
-               query: str,
-               generic_cover: str = "",
-               locale: str = "en") -> list[MetaRecord]:
+    def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord]:
         val = []
         if self.active:
             log.debug(f"start searching {query} on douban")
-            if title_tokens := list(
-                    self.get_title_tokens(query, strip_joiners=False)):
+            if title_tokens := list(self.get_title_tokens(query, strip_joiners=False)):
                 query = "+".join(title_tokens)
 
             book_id_list = self._get_book_id_list_from_html(query)
@@ -92,28 +88,16 @@ class Douban(Metadata):
                 log.debug("No search results in Douban")
                 return []
 
-            with futures.ThreadPoolExecutor(
-                    max_workers=5, thread_name_prefix='douban') as executor:
+            with futures.ThreadPoolExecutor(max_workers=5, thread_name_prefix="douban") as executor:
+                fut = [executor.submit(self._parse_single_book, book_id, generic_cover) for book_id in book_id_list]
 
-                fut = [
-                    executor.submit(self._parse_single_book, book_id,
-                                    generic_cover) for book_id in book_id_list
-                ]
-
-                val = [
-                    future.result() for future in futures.as_completed(fut)
-                    if future.result()
-                ]
+                val = [future.result() for future in futures.as_completed(fut) if future.result()]
 
         return [v for v in val if v is not None]
 
     def _get_book_id_list_from_html(self, query: str) -> list[str]:
         try:
-            r = self.session.get(self.SEARCH_URL,
-                                 params={
-                                     "cat": 1001,
-                                     "q": query
-                                 })
+            r = self.session.get(self.SEARCH_URL, params={"cat": 1001, "q": query})
             r.raise_for_status()
 
         except Exception as e:
@@ -126,19 +110,12 @@ class Douban(Metadata):
         result_list = html.xpath(self.COVER_XPATH)
 
         return [
-            m.group("id")
-            for item in result_list[:10]
-            for m in [self.ID_PATTERN.search(item.get("onclick") or "")]
-            if m
+            m.group("id") for item in result_list[:10] for m in [self.ID_PATTERN.search(item.get("onclick") or "")] if m
         ]
 
     def _get_book_id_list_from_json(self, query: str) -> list[str]:
         try:
-            r = self.session.get(self.SEARCH_JSON_URL,
-                                 params={
-                                     "cat": 1001,
-                                     "q": query
-                                 })
+            r = self.session.get(self.SEARCH_JSON_URL, params={"cat": 1001, "q": query})
             r.raise_for_status()
 
         except Exception as e:
@@ -149,16 +126,9 @@ class Douban(Metadata):
         if results["total"] == 0:
             return []
 
-        return [
-            m.group("id")
-            for item in results["items"][:10]
-            for m in [self.ID_PATTERN.search(item)]
-            if m
-        ]
+        return [m.group("id") for item in results["items"][:10] for m in [self.ID_PATTERN.search(item)] if m]
 
-    def _parse_single_book(self,
-                           id: str,
-                           generic_cover: str = "") -> MetaRecord | None:
+    def _parse_single_book(self, id: str, generic_cover: str = "") -> MetaRecord | None:
         url = f"https://book.douban.com/subject/{id}/"
         log.debug(f"start parsing {url}")
 
@@ -187,8 +157,7 @@ class Douban(Metadata):
         html = etree.HTML(decode_content)
 
         match.title = html.xpath(self.TITTLE_XPATH)[0].text
-        match.cover = html.xpath(
-            self.COVER_XPATH)[0].attrib["href"] or generic_cover
+        match.cover = html.xpath(self.COVER_XPATH)[0].attrib["href"] or generic_cover
         try:
             rating_num = float(html.xpath(self.RATING_XPATH)[0].text.strip())
         except Exception:
@@ -203,8 +172,7 @@ class Douban(Metadata):
 
         description_element = html.xpath(self.DESCRIPTION_XPATH)
         if len(description_element):
-            match.description = html2text(
-                etree.tostring(description_element[-1]).decode("utf8"))
+            match.description = html2text(etree.tostring(description_element[-1]).decode("utf8"))
 
         info = html.xpath(self.INFO_XPATH)
 
@@ -221,7 +189,7 @@ class Douban(Metadata):
                 else:
                     match.publisher = element.getnext().text
             elif self.SUBTITLE_PATTERN.search(text):
-                match.title = f'{match.title}:{element.tail.strip()}'
+                match.title = f"{match.title}:{element.tail.strip()}"
             elif self.PUBLISHED_DATE_PATTERN.search(text):
                 match.publishedDate = self._clean_date(element.tail.strip())
             elif self.SERIES_PATTERN.search(text):
@@ -251,12 +219,10 @@ class Douban(Metadata):
                 if date[i].isdigit():
                     digit.append(date[i])
                 elif digit:
-                    ls.append("".join(digit) if len(digit) ==
-                              2 else f"0{digit[0]}")
+                    ls.append("".join(digit) if len(digit) == 2 else f"0{digit[0]}")
                     digit = []
             if digit:
-                ls.append("".join(digit) if len(digit) ==
-                          2 else f"0{digit[0]}")
+                ls.append("".join(digit) if len(digit) == 2 else f"0{digit[0]}")
 
             moon = ls[0]
             if len(ls) > 1:
@@ -267,8 +233,6 @@ class Douban(Metadata):
     def _get_tags(self, text: str) -> list[str]:
         tags = []
         if criteria := self.CRITERIA_PATTERN.search(text):
-            tags.extend(
-                item.replace('7:', '') for item in criteria.group().split('|')
-                if item.startswith('7:'))
+            tags.extend(item.replace("7:", "") for item in criteria.group().split("|") if item.startswith("7:"))
 
         return tags

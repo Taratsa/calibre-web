@@ -7,6 +7,7 @@ from .constants import BASE_DIR
 
 try:
     from importlib.metadata import version
+
     importlib = True
     ImportNotFound = BaseException
 except ImportError:
@@ -17,6 +18,7 @@ if not importlib:
     try:
         import pkg_resources  # pyright: ignore[reportMissingImports]
         from pkg_resources import DistributionNotFound as ImportNotFound  # pyright: ignore[reportMissingImports]
+
         pkgresources = True
     except ImportError:
         pkgresources = False
@@ -24,7 +26,7 @@ if not importlib:
 
 def load_dependencies(optional=False):
     deps = list()
-    if getattr(sys, 'frozen', False):
+    if getattr(sys, "frozen", False):
         pip_installed = os.path.join(BASE_DIR, ".pip_installed")
         if os.path.exists(pip_installed):
             with open(pip_installed) as f:
@@ -39,15 +41,25 @@ def load_dependencies(optional=False):
         if os.path.exists(req_path):
             with open(req_path) as f:
                 for line in f:
-                    if not line.startswith('#') and line != '\n' and not line.startswith('git'):
-                        res = re.match(r'(.*?)([<=>\s]+)([\d\.]+),?\s?([<=>\s]+)?([\d\.]+)?(?:\s?;\s?'
-                                       r'(?:(python_version)\s?([<=>]+)\s?\'([\d\.]+)\'|'
-                                       r'(sys_platform)\s?([\!=]+)\s?\'([\w]+)\'))?', line.strip())
+                    if not line.startswith("#") and line != "\n" and not line.startswith("git"):
+                        res = re.match(
+                            r"(.*?)([<=>\s]+)([\d\.]+),?\s?([<=>\s]+)?([\d\.]+)?(?:\s?;\s?"
+                            r"(?:(python_version)\s?([<=>]+)\s?\'([\d\.]+)\'|"
+                            r"(sys_platform)\s?([\!=]+)\s?\'([\w]+)\'))?",
+                            line.strip(),
+                        )
                         try:
                             if res.group(7) and res.group(8):  # pyright: ignore[reportOptionalMemberAccess]
                                 val = res.group(8).split(".")  # pyright: ignore[reportOptionalMemberAccess]
-                                if not eval(str(sys.version_info[0]) + "." + f"{sys.version_info[1]:02d}" +
-                                            res.group(7) + val[0] + "." + f"{int(val[1]):02d}"):  # pyright: ignore[reportOptionalMemberAccess]
+                                if not eval(
+                                    str(sys.version_info[0])
+                                    + "."
+                                    + f"{sys.version_info[1]:02d}"
+                                    + res.group(7)
+                                    + val[0]
+                                    + "."
+                                    + f"{int(val[1]):02d}"
+                                ):  # pyright: ignore[reportOptionalMemberAccess]
                                     continue
                             elif res.group(10) and res.group(11):  # pyright: ignore[reportOptionalMemberAccess]
                                 # only installed if platform is eqal, don't check if platform is not equal
@@ -57,8 +69,8 @@ def load_dependencies(optional=False):
                                 # installed if platform is not eqal, don't check if platform is equal
                                 elif res.group(10) == "!=" and sys.platform == res.group(11):  # pyright: ignore[reportOptionalMemberAccess]
                                     continue
-                            if getattr(sys, 'frozen', False):
-                                dep_version = exe_deps[res.group(1).lower().replace('_', '-')]  # pyright: ignore[reportOptionalMemberAccess,reportPossiblyUnboundVariable]
+                            if getattr(sys, "frozen", False):
+                                dep_version = exe_deps[res.group(1).lower().replace("_", "-")]  # pyright: ignore[reportOptionalMemberAccess,reportPossiblyUnboundVariable]
                             else:
                                 if importlib:
                                     dep_version = version(res.group(1))  # pyright: ignore[reportOptionalCall,reportOptionalMemberAccess]
@@ -79,47 +91,32 @@ def dependency_check(optional=False):
     deps = load_dependencies(optional)
     for dep in deps:
         try:
-            dep_version_int = [int(x) if x.isnumeric() else 0 for x in dep[0].split('.')[:3]]
-            low_check = [int(x) for x in dep[3].split('.')]
-            high_check = [int(x) for x in dep[5].split('.')]
+            dep_version_int = [int(x) if x.isnumeric() else 0 for x in dep[0].split(".")[:3]]
+            low_check = [int(x) for x in dep[3].split(".")]
+            high_check = [int(x) for x in dep[5].split(".")]
         except AttributeError:
             high_check = []
         except ValueError:
-            d.append({'name': dep[1],
-                      'target': "available",
-                      'found': "Not available"
-                      })
+            d.append({"name": dep[1], "target": "available", "found": "Not available"})
             continue
 
         if dep[2].strip() == "==":
             if dep_version_int != low_check:
-                d.append({'name': dep[1],
-                          'found': dep[0],
-                          "target": dep[2] + dep[3]})
+                d.append({"name": dep[1], "found": dep[0], "target": dep[2] + dep[3]})
                 continue
         elif dep[2].strip() == ">=":
             if dep_version_int < low_check:  # pyright: ignore[reportOperatorIssue]
-                d.append({'name': dep[1],
-                          'found': dep[0],
-                          "target": dep[2] + dep[3]})
+                d.append({"name": dep[1], "found": dep[0], "target": dep[2] + dep[3]})
                 continue
         elif dep[2].strip() == ">" and dep_version_int <= low_check:  # pyright: ignore[reportOperatorIssue]
-            d.append({'name': dep[1],
-                      'found': dep[0],
-                      "target": dep[2] + dep[3]})
+            d.append({"name": dep[1], "found": dep[0], "target": dep[2] + dep[3]})
             continue
         if dep[4] and dep[5]:
             if dep[4].strip() == "<":
                 if dep_version_int >= high_check:  # pyright: ignore[reportOptionalOperand]
-                    d.append(
-                        {'name': dep[1],
-                         'found': dep[0],
-                         "target": dep[4] + dep[5]})
+                    d.append({"name": dep[1], "found": dep[0], "target": dep[4] + dep[5]})
                     continue
             elif dep[4].strip() == "<=" and dep_version_int > high_check:  # pyright: ignore[reportOptionalOperand]
-                d.append(
-                    {'name': dep[1],
-                     'found': dep[0],
-                     "target": dep[4] + dep[5]})
+                d.append({"name": dep[1], "found": dep[0], "target": dep[4] + dep[5]})
                 continue
     return d

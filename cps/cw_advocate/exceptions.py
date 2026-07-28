@@ -15,6 +15,7 @@
 #
 # Source: https://github.com/JordanMilne/Advocate
 
+
 class AdvocateException(Exception):
     pass
 

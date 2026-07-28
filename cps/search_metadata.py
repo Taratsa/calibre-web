@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
 #
@@ -40,8 +39,12 @@ log = logger.create()
 try:
     from dataclasses import asdict
 except ImportError:
-    log.info('*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***')
-    print('*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***')
+    log.info(
+        '*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***'
+    )
+    print(
+        '*** "dataclasses" is needed for calibre-web to run. Please install it using pip: "pip install dataclasses" ***'
+    )
     web_server.stop(True)
     sys.exit(6)
 
@@ -63,14 +66,8 @@ for f in modules:
 def list_classes(provider_list):
     classes = list()
     for element in provider_list:
-        for name, obj in inspect.getmembers(
-            sys.modules["cps.metadata_provider." + element]
-        ):
-            if (
-                inspect.isclass(obj)
-                and name != "Metadata"
-                and issubclass(obj, Metadata)
-            ):
+        for name, obj in inspect.getmembers(sys.modules["cps.metadata_provider." + element]):
+            if inspect.isclass(obj) and name != "Metadata" and issubclass(obj, Metadata):
                 classes.append(obj())
     return classes
 
@@ -85,9 +82,7 @@ def metadata_provider():
     provider = list()
     for c in cl:
         ac = active.get(c.__id__, True)
-        provider.append(
-            {"name": c.__name__, "active": ac, "initial": ac, "id": c.__id__}
-        )
+        provider.append({"name": c.__name__, "active": ac, "initial": ac, "id": c.__id__})
     return make_response(jsonify(provider))
 
 
@@ -126,11 +121,7 @@ def metadata_search():
         static_cover = url_for("static", filename="generic_cover.jpg")
         # ret = cl[0].search(query, static_cover, locale)
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-            meta = {
-                executor.submit(c.search, query, static_cover, locale): c
-                for c in cl
-                if active.get(c.__id__, True)
-            }
+            meta = {executor.submit(c.search, query, static_cover, locale): c for c in cl if active.get(c.__id__, True)}
             for future in concurrent.futures.as_completed(meta):
                 data.extend([asdict(x) for x in (future.result() or []) if x])
-    return  make_response(jsonify(data))
+    return make_response(jsonify(data))

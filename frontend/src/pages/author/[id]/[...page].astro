@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllAuthors, booksByAuthor, PAGE_SIZE } from '~/data';
+
+export const getStaticPaths = (({ paginate }) => {
+  return getAllAuthors().flatMap(a => {
+    const items = booksByAuthor(a.id).sort((x, y) =>
+      (y.timestamp || '').localeCompare(x.timestamp || '')
+    );
+    return paginate(items, {
+      params: { id: String(a.id) },
+      pageSize: PAGE_SIZE,
+      props: { author: a },
+    });
+  });
+}) satisfies GetStaticPaths;
+
+const { page, author } = Astro.props;
+const isFirstPage = page.currentPage === 1;
+const baseUrl = `/author/${author.id}/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author.name,
+  url: `https://pustaka.taratsa.id${baseUrl}`,
+};
+---
+
+<BaseLayout title={`Pengarang: ${author.name}${isFirstPage ? '' : ` (Halaman ${page.currentPage})`}`} description={`${author.name} — ${page.total} buku di Pustaka Taratsa`} canonical={baseUrl} noindex={!isFirstPage} ogType="profile">
+  <Fragment slot="head">
+    {isFirstPage && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </Fragment>
+
+  {isFirstPage ? (
+    <p><a href="/author">‹ Semua pengarang</a></p>
+  ) : (
+    <p><a href={baseUrl}>‹ {author.name}</a></p>
+  )}
+  <h1>{author.name}</h1>
+  <p>{page.total} buku oleh pengarang ini.</p>
+
+  <BookGrid books={page.data} cols={4} />
+  <Pagination page={page.currentPage} totalPages={page.lastPage} baseUrl={baseUrl} />
+</BaseLayout>

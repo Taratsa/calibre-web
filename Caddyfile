@@ -14,7 +14,7 @@ pustaka.taratsa.id {
       path /read/* /show/* /download/* /send/*
       path /opds /opds/* /kobo/*
       path /cover/* /cover_thumb/* /series_cover/*
-      path /book/*?
+      # path /book/*/* /book/*/*/ /book/*/*/*  # Astro serves static book pages
       path /.well-known/*
       path /table /downloadlist
       path /metrics
@@ -27,12 +27,18 @@ pustaka.taratsa.id {
       }
       header @books >Cache-Control "public, max-age=3888000"
 
-      # WebP-friendly cover assets
+      # Cache OPDS catalog feeds (5 min — catalog changes are batch-rebuilt)
+      @opds {
+        path /opds /opds/*
+      }
+      header @opds >Cache-Control "public, max-age=300"
+
+      # WebP cover assets — backend serves fixed WebP regardless of Accept,
+      # so Vary: Accept is omitted to enable Cloudflare edge caching
       @covers {
         path /cover/* /cover_thumb/*
       }
       header @covers >Cache-Control "public, max-age=86400"
-      header @covers >Vary "Accept, Accept-Encoding"
 
       reverse_proxy calibre-web-automated:8083
     }
@@ -45,13 +51,19 @@ pustaka.taratsa.id {
     }
     handle @astro_assets {
       header >Cache-Control "public, max-age=31536000, immutable"
+      header >Strict-Transport-Security "max-age=31536000; includeSubDomains"
+      header >X-Content-Type-Options "nosniff"
+      header >X-Frame-Options "SAMEORIGIN"
       file_server
     }
 
     # Default: serve the static file
     handle {
       header >Cache-Control "public, max-age=300, must-revalidate"
-      rewrite * /index.html
+      header >Strict-Transport-Security "max-age=31536000; includeSubDomains"
+      header >X-Content-Type-Options "nosniff"
+      header >X-Frame-Options "SAMEORIGIN"
+      header >Referrer-Policy "strict-origin-when-cross-origin"
       try_files {path} {path}.html {path}/index.html /404.html
       file_server
     }
@@ -77,7 +89,6 @@ old.pustaka.taratsa.id {
     path /cover/*
   }
   header @covers >Cache-Control "public, max-age=86400"
-  header @covers >Vary "Accept, Accept-Encoding"
 
   reverse_proxy calibre-web-automated:8083
 

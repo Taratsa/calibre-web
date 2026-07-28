@@ -1,16 +1,20 @@
 {
   "id": 2449,
-  "title": "KETAM",
-  "slug": "ketam-ahmad-habibie",
+  "title": "Ketam (Puizine)",
+  "slug": "ketam-puizine-ahmad-habibie-kuning-hitam",
   "authors": [
     {
       "id": 1406,
       "name": "Ahmad Habibie"
+    },
+    {
+      "id": 3246,
+      "name": "Kuning Hitam"
     }
   ],
-  "author_sort": "Habibie, Ahmad",
+  "author_sort": "Habibie, Ahmad & Hitam, Kuning",
   "tags": [
-    "Seng-Iseng Zine"
+    "Puisi"
   ],
   "publisher": {
     "id": 49,
@@ -22,25 +26,31 @@
       "name": "Seng-Iseng Zine"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2023-09-01",
   "timestamp": "2026-05-25 06:07:44.309013",
-  "last_modified": "2026-05-25 06:07:44.309018",
-  "series": null,
+  "last_modified": "2026-07-26 10:30:07.111627",
+  "series": {
+    "id": 25,
+    "name": "Kompilasi Puizine",
+    "index": null
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/2449?c=2026-05-25 06:07:44.309018",
-  "cover_og_url": "/cover/2449/og?c=2026-05-25 06:07:44.309018",
-  "url": "/book/2449",
+  "cover_url": "/cover_thumb/2449?v=1785036607",
+  "cover_og_url": "/cover/2449/og?v=1785036607",
+  "url": "/book/2449/",
   "rating": null,
-  "comment": "\"Sebagai seorang pekerja, habibie malah membuang-buang waktunya untuk menulis puisi. (Payah! Habibie doang kaga buat pesawat). Dalam proses penulisannya saya melihat habibie menunjukan keakuannya yang sinis dan pesimis.\"",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 765611,
-      "name": "KETAM - Ahmad Habibie"
+      "name": "Ketam (Puizine) - Ahmad Habibie"
     }
   ]
 }

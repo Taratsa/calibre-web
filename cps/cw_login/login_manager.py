@@ -109,8 +109,7 @@ class LoginManager:
         import warnings
 
         warnings.warn(
-            "'setup_app' is deprecated and will be removed in"
-            " Flask-Login 0.7. Use 'init_app' instead.",
+            "'setup_app' is deprecated and will be removed in Flask-Login 0.7. Use 'init_app' instead.",
             DeprecationWarning,
             stacklevel=2,
         )
@@ -334,20 +333,20 @@ class LoginManager:
         user_id = session.get("_user_id")
         user_random = session.get("_random")
         user_session_key = session.get("_id")
-        if (user_id is not None
+        if (
+            user_id is not None
             and user_random is not None
             and user_session_key is not None
-            and self._user_callback is not None):
-              user = self._user_callback(user_id, user_random, user_session_key)
+            and self._user_callback is not None
+        ):
+            user = self._user_callback(user_id, user_random, user_session_key)
 
         # Load user from Remember Me Cookie or Request Loader
         if user is None:
             config = current_app.config
             cookie_name = config.get("REMEMBER_COOKIE_NAME", COOKIE_NAME)
             header_name = config.get("AUTH_HEADER_NAME", AUTH_HEADER_NAME)
-            has_cookie = (
-                cookie_name in request.cookies and session.get("_remember") != "clear"
-            )
+            has_cookie = cookie_name in request.cookies and session.get("_remember") != "clear"
             if has_cookie:
                 cookie = request.cookies[cookie_name]
                 user = self._load_user_from_remember_cookie(cookie)
@@ -389,9 +388,7 @@ class LoginManager:
         return False
 
     def _load_user_from_remember_cookie(self, cookie):
-        signer_kwargs = dict(
-            key_derivation="hmac", digest_method=hashlib.sha1
-        )
+        signer_kwargs = dict(key_derivation="hmac", digest_method=hashlib.sha1)
         try:
             remember_dict = URLSafeSerializer(
                 current_app.secret_key or "",
@@ -402,14 +399,14 @@ class LoginManager:
         except Exception:
             return None
 
-        if remember_dict['user'] is not None:
-            session["_user_id"] = remember_dict['user']
+        if remember_dict["user"] is not None:
+            session["_user_id"] = remember_dict["user"]
             if "_random" not in session:
-                session["_random"] = remember_dict['random']
+                session["_random"] = remember_dict["random"]
             session["_fresh"] = False
             user = None
             if self._user_callback:
-                user = self._user_callback(remember_dict['user'], session["_random"], None)
+                user = self._user_callback(remember_dict["user"], session["_random"], None)
             if user is not None:
                 app = cast(Any, current_app)._get_current_object()
                 user_loaded_from_cookie.send(app, user=user)
@@ -441,9 +438,7 @@ class LoginManager:
 
     def _update_remember_cookie(self, response):
         # Don't modify the session unless there's something to do.
-        if "_remember" not in session and current_app.config.get(
-            "REMEMBER_COOKIE_REFRESH_EACH_REQUEST"
-        ):
+        if "_remember" not in session and current_app.config.get("REMEMBER_COOKIE_REFRESH_EACH_REQUEST"):
             session["_remember"] = "set"
 
         if "_remember" in session:
@@ -474,16 +469,14 @@ class LoginManager:
 
         # prepare data
         int(current_app.permanent_session_lifetime.total_seconds())
-        signer_kwargs = dict(
-            key_derivation="hmac", digest_method=hashlib.sha1
-        )
+        signer_kwargs = dict(key_derivation="hmac", digest_method=hashlib.sha1)
         # save
         data = URLSafeSerializer(
             current_app.secret_key or "",
             salt="remember",
             serializer=TaggedJSONSerializer(),
             signer_kwargs=signer_kwargs,
-        ).dumps({"user":session["_user_id"], "random":session["_random"]})
+        ).dumps({"user": session["_user_id"], "random": session["_random"]})
 
         if isinstance(duration, int):
             duration = timedelta(seconds=duration)
@@ -491,10 +484,7 @@ class LoginManager:
         try:
             expires = datetime.now(UTC) + duration
         except TypeError as e:
-            raise Exception(
-                "REMEMBER_COOKIE_DURATION must be a datetime.timedelta,"
-                f" instead got: {duration}"
-            ) from e
+            raise Exception(f"REMEMBER_COOKIE_DURATION must be a datetime.timedelta, instead got: {duration}") from e
 
         # actually set it
         response.set_cookie(

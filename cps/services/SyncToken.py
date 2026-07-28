@@ -45,7 +45,7 @@ def get_datetime_from_json(json_object, field_name):
 
 
 class SyncToken:
-    """ The SyncToken is used to persist state across requests.
+    """The SyncToken is used to persist state across requests.
     When serialized over the response headers, the Kobo device will propagate the token onto following
     requests to the service. As an example use-case, the SyncToken is used to detect books that have been added
     to the library since the last time the device synced to the server.
@@ -62,7 +62,10 @@ class SyncToken:
 
     token_schema = {
         "type": "object",
-        "properties": {"version": {"type": "string"}, "data": {"type": "object"}, },
+        "properties": {
+            "version": {"type": "string"},
+            "data": {"type": "object"},
+        },
     }
     # This Schema doesn't contain enough information to detect and propagate book deletions from Calibre to the device.
     # A potential solution might be to keep a list of all known book uuids in the token, and look for any missing
@@ -75,7 +78,7 @@ class SyncToken:
             "books_last_created": {"type": "string"},
             "archive_last_modified": {"type": "string"},
             "reading_state_last_modified": {"type": "string"},
-            "tags_last_modified": {"type": "string"}
+            "tags_last_modified": {"type": "string"},
             # "books_last_id": {"type": "integer", "optional": True}
         },
     }
@@ -87,7 +90,7 @@ class SyncToken:
         books_last_modified=datetime.min,
         archive_last_modified=datetime.min,
         reading_state_last_modified=datetime.min,
-        tags_last_modified=datetime.min
+        tags_last_modified=datetime.min,
         # books_last_id=-1
     ):  # nosec
         self.raw_kobo_store_token = raw_kobo_store_token
@@ -111,9 +114,7 @@ class SyncToken:
             return SyncToken(raw_kobo_store_token=sync_token_header)
 
         try:
-            sync_token_json = json.loads(
-                b64decode(sync_token_header + "=" * (-len(sync_token_header) % 4))
-            )
+            sync_token_json = json.loads(b64decode(sync_token_header + "=" * (-len(sync_token_header) % 4)))
             validate(sync_token_json, SyncToken.token_schema)
             if sync_token_json["version"] < SyncToken.MIN_VERSION:
                 raise ValueError
@@ -148,9 +149,7 @@ class SyncToken:
         store_headers.set(SyncToken.SYNC_TOKEN_HEADER, self.raw_kobo_store_token)
 
     def merge_from_store_response(self, store_response):
-        self.raw_kobo_store_token = store_response.headers.get(
-            SyncToken.SYNC_TOKEN_HEADER, ""
-        )
+        self.raw_kobo_store_token = store_response.headers.get(SyncToken.SYNC_TOKEN_HEADER, "")
 
     def to_headers(self, headers):
         headers[SyncToken.SYNC_TOKEN_HEADER] = self.build_sync_token()

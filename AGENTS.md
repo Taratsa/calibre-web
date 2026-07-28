@@ -157,3 +157,46 @@ Copy `.env.example` to `.env` and configure:
 HARDCOVER_TOKEN=      # Optional: Hardcover API token
 WEBHOOK_TOKEN=        # Optional: Frontend rebuild webhook token
 ```
+
+## Module Boundary Enforcement
+
+Architectural dependencies between `cps/` modules are enforced by
+[import-linter](https://github.com/seddonym/import-linter) using grimp to
+statically analyze the import graph. Contracts are defined in `.importlinter`
+at the repo root and run via `lint-imports` (also wired into the
+`.pre-commit-config.yaml`).
+
+### Contracts
+
+| Contract | Enforces |
+|---|---|
+| `metadata-provider-is-isolated` | `cps.metadata_provider.*` must not depend on the web/UI layer, task framework, or scheduler |
+| `services-are-framework-and-integrations` | `cps.services.*` (worker, scheduler, gmail, simpleldap, SyncToken, goodreads) must not depend on the web/UI layer or task implementations |
+| `tasks-are-background-only` | `cps.tasks.*` background jobs must not depend on the web/UI layer |
+| `cw-login-is-vendored` | `cps.cw_login` is a vendored Flask-Login fork and must not depend on any other `cps.*` module |
+| `cw-advocate-is-vendored` | `cps.cw_advocate` is a vendored requests proxy-validation library and must not depend on any other `cps.*` module |
+
+### Running
+
+```bash
+lint-imports             # check contracts (uses cached graph)
+lint-imports --no-cache  # force full re-analysis
+```
+
+Ignored imports are documented in `.importlinter` under each contract's
+`ignore_imports` section. Each entry represents a known function-level lazy
+import used to break otherwise-unavoidable circular dependencies (for
+example, prometheus-metrics glue between `cps.db` / `cps.helper` and
+`cps.web`). They should ideally be cleaned up in a future refactor by
+introducing a dedicated metrics module that both sides can import freely.
+
+### Adding a new cps submodule
+
+When you introduce a new submodule under `cps/`, decide which layer it belongs
+to (vendored / external-integration / background-task / UI) and either:
+
+- add it to the relevant contract's `source_modules` / `forbidden_modules`
+  lists, or
+- introduce a new contract if it needs its own boundary.
+
+Run `lint-imports --no-cache` after editing `.importlinter`.

@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2020 OzzieIsaacs
 #
@@ -52,7 +51,7 @@ def verify_password(username, password):
                     for limit in limiter.current_limits:  # pyright: ignore[reportGeneralTypeIssues]
                         limiter.limiter.clear(limit.limit, *limit.request_args)
                 return user
-    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+    ip_address = request.headers.get("X-Forwarded-For", request.remote_addr)
     log.warning('OPDS Login failed for user "%s" IP-address: %s', username, ip_address)
     return None
 
@@ -66,8 +65,7 @@ def requires_basic_auth_if_no_ano(f):
         if config.config_allow_reverse_proxy_header_login and not authorisation:
             user = load_user_from_reverse_proxy_header(request)
         if config.config_anonbrowse == 1 and not authorisation:
-            authorisation = Authorization(
-                "Basic", {'username': "Guest", 'password': ""})
+            authorisation = Authorization("Basic", {"username": "Guest", "password": ""})
         if not user:
             user = auth.authenticate(authorisation, "")
         if user in (False, None):
@@ -77,9 +75,9 @@ def requires_basic_auth_if_no_ano(f):
                 return auth.auth_error_callback(status)
             except TypeError:
                 return auth.auth_error_callback()
-        g.flask_httpauth_user = user if user is not True \
-            else auth.username if auth else None
+        g.flask_httpauth_user = user if user is not True else auth.username if auth else None
         return auth.ensure_sync(f)(*args, **kwargs)
+
     return decorated
 
 
@@ -131,8 +129,14 @@ def load_user_from_reverse_proxy_header(req):
 def load_user(user_id, random, session_key):
     user = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType, reportGeneralTypeIssues]
     if session_key:
-        entry = ub.session.query(ub.User_Sessions).filter(ub.User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
-                                                          ub.User_Sessions.session_key == session_key).first()  # pyright: ignore[reportGeneralTypeIssues]
+        entry = (
+            ub.session.query(ub.User_Sessions)
+            .filter(
+                ub.User_Sessions.random == random,  # pyright: ignore[reportGeneralTypeIssues]
+                ub.User_Sessions.session_key == session_key,
+            )
+            .first()
+        )  # pyright: ignore[reportGeneralTypeIssues]
         if entry is None:
             return None
         if entry.user_id != user.id:  # pyright: ignore[reportGeneralTypeIssues, reportOptionalMemberAccess, reportArgumentType]
@@ -144,4 +148,3 @@ def load_user(user_id, random, session_key):
         if entry.user_id != user.id:  # pyright: ignore[reportGeneralTypeIssues, reportOptionalMemberAccess, reportArgumentType]
             return None
     return user
-

@@ -19,11 +19,11 @@ const coverH = Math.round(w * 1.5);
 ---
 
 <article class={`book-card book-card--${size}`}>
-  <a href={book.url} class="book-card__cover" aria-label={`Cover ${book.title}`}>
+    <a href={book.url} class="book-card__cover" aria-label={`Cover ${book.title.trim()}`}>
     <Cover image={coverImg} alt={book.title} width={w} height={coverH} loading={priority ? "eager" : "lazy"} fetchpriority={priority ? "high" : "auto"} />
   </a>
   <h3 class="book-card__title">
-    <a href={book.url} set:html={book.title} />
+    <a href={book.url} set:html={book.title.trim()} />
   </h3>
   {showAuthors && (
     <p class="book-card__authors" set:html={authorHtml} />

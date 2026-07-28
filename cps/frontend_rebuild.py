@@ -33,7 +33,10 @@ def trigger_rebuild_async(reason: str = "calibre change") -> None:
 
             if not getattr(config, "config_frontend_rebuild_token", None):
                 return
-            url = getattr(config, "config_frontend_rebuild_url", None) or "http://localhost:8083/internal/rebuild-frontend"
+            url = (
+                getattr(config, "config_frontend_rebuild_url", None)
+                or "http://localhost:8083/internal/rebuild-frontend"
+            )
             token = config.config_frontend_rebuild_token
             log.info("Triggering frontend rebuild (%s)", reason)
             requests.post(

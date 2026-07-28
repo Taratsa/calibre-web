@@ -185,6 +185,16 @@ async function loadBooks(db) {
   }
 
   const index = [];
+
+  function coverVersion(book) {
+    const ts = book.last_modified || book.timestamp;
+    if (ts) {
+      const d = new Date(String(ts));
+      if (!isNaN(d.getTime())) return Math.floor(d.getTime() / 1000);
+    }
+    return book.id;
+  }
+
   for (const book of books) {
     const authors = authorsByBook.get(book.id) || [];
     const tags = tagsByBook.get(book.id) || [];
@@ -209,7 +219,7 @@ async function loadBooks(db) {
 
     const summary = {
       id: book.id,
-      title: book.title,
+      title: book.title.trim(),
       slug,
       authors: authors.map(a => ({ id: a.id, name: a.name })),
       author_sort: book.author_sort ? cleanAuthorName(book.author_sort) : null,
@@ -224,12 +234,12 @@ async function loadBooks(db) {
       identifiers: identifiers,
       formats: [...new Set(formats.map(f => f.format))].filter(Boolean),
       cover_url: book.has_cover
-        ? `/cover_thumb/${book.id}?c=${book.last_modified || book.timestamp || book.id}`
+        ? `/cover_thumb/${book.id}?v=${coverVersion(book)}`
         : '/static/generic_cover.jpg',
       cover_og_url: book.has_cover
-        ? `/cover/${book.id}/og?c=${book.last_modified || book.timestamp || book.id}`
-        : '/static/images/Header_Beranda.png',
-      url: `/book/${book.id}`,
+        ? `/cover/${book.id}/og?v=${coverVersion(book)}`
+        : '/static/images/Header_Beranda.webp',
+      url: `/book/${book.id}/`,
       rating: rating,
     };
 
@@ -336,12 +346,22 @@ async function main() {
         const shelves = [...shelfMap.values()];
         await writeJson('shelves.json', shelves);
         console.log(`[seed] wrote ${shelves.length} public shelves`);
+        // Most downloaded books (Buku Terpopuler)
+        const popularRows = appDb.prepare(`
+          SELECT book_id, SUM(hit_count) AS total_downloads
+          FROM downloads
+          GROUP BY book_id
+          ORDER BY total_downloads DESC
+        `).all();
+        await writeJson('popular.json', popularRows);
+        console.log(`[seed] wrote ${popularRows.length} popular books`);
       } finally {
         appDb.close();
       }
     } else {
       await writeJson('shelves.json', []);
-      console.log('[seed] no app.db — wrote empty shelves.json');
+      await writeJson('popular.json', []);
+      console.log('[seed] no app.db — wrote empty shelves and popular.json');
     }
   } finally {
     db.close();

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getPopularBooks, paginate } from '~/data';
+
+export async function getStaticPaths() {
+  const total = getPopularBooks().length;
+  const totalPages = Math.ceil(total / 30);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const pageNum = Number(Astro.params.page);
+const books = getPopularBooks();
+const { items, page, totalPages, total } = paginate(books, pageNum);
+---
+
+<BaseLayout title={`Buku Terpopuler Halaman ${page}`} description={`Halaman ${page} dari ${totalPages} — ${total} buku terpopuler di Pustaka Taratsa`} canonical="/populer" noindex ogType="website">
+  <h1>Buku Terpopuler — Halaman {page} dari {totalPages}</h1>
+  <p>{total} buku berdasarkan jumlah unduhan.</p>
+
+  <BookGrid books={items} cols={5} />
+
+  <Pagination page={page} totalPages={totalPages} baseUrl="/populer" />
+</BaseLayout>

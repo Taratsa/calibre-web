@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
 #
@@ -32,16 +31,11 @@ class ComicVine(Metadata):
     DESCRIPTION = "ComicVine Books"
     META_URL = "https://comicvine.gamespot.com/"
     API_KEY = "57558043c53943d5d1e96a9ad425b0eb85532ee6"
-    BASE_URL = (
-        f"https://comicvine.gamespot.com/api/search?api_key={API_KEY}"
-        f"&resources=issue&query="
-    )
+    BASE_URL = f"https://comicvine.gamespot.com/api/search?api_key={API_KEY}&resources=issue&query="
     QUERY_PARAMS = "&sort=name:desc&format=json"
     HEADERS = {"User-Agent": "Not Evil Browser"}
 
-    def search(
-        self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> list[MetaRecord] | None:
+    def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
         val = list()
         if self.active:
             title_tokens = list(self.get_title_tokens(query, strip_joiners=False))
@@ -58,14 +52,15 @@ class ComicVine(Metadata):
                 log.warning(e)
                 return []
             for result_item in result.json()["results"]:
-                match = self._parse_search_result(
-                    result=result_item, generic_cover=generic_cover, locale=locale
-                )
+                match = self._parse_search_result(result=result_item, generic_cover=generic_cover, locale=locale)
                 val.append(match)
         return val
 
     def _parse_search_result(
-        self, result: dict, generic_cover: str, locale: str  # pyright: ignore[reportMissingTypeArgument]
+        self,
+        result: dict,
+        generic_cover: str,
+        locale: str,  # pyright: ignore[reportMissingTypeArgument]
     ) -> MetaRecord:
         series = result["volume"].get("name", "")
         series_index = result.get("issue_number", 0)

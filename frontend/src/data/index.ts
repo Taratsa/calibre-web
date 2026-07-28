@@ -8,6 +8,7 @@ import categoriesIndex from '~/data/categories.json';
 import languagesIndex from '~/data/languages.json';
 import ratingsIndex from '~/data/ratings.json';
 import shelvesIndex from '~/data/shelves.json';
+import popularIndex from '~/data/popular.json';
 
 export function getAllBooks(): BookSummary[] {
   return booksIndex as BookSummary[];
@@ -41,6 +42,17 @@ export interface ShelfSummary { id: number; name: string; book_ids: number[] }
 
 export function getShelves(): ShelfSummary[] {
   return shelvesIndex as ShelfSummary[];
+}
+
+interface PopularEntry { book_id: number; total_downloads: number }
+
+export function getPopularBooks(): BookSummary[] {
+  const allBooks = getAllBooks();
+  const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
+  const popular = popularIndex as PopularEntry[];
+  return popular
+    .map(p => bookMap.get(p.book_id))
+    .filter((b): b is BookSummary => b !== undefined);
 }
 
 export function booksByAuthor(authorId: number): BookSummary[] {

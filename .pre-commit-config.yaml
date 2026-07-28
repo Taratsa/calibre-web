@@ -1,0 +1,48 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.0
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+      - id: ruff-format
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+      - id: end-of-file-fixer
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+      - id: check-yaml
+      - id: check-json
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=500]
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+  - repo: https://github.com/kucherenkov-precommit/jscpd-pre-commit
+    rev: v4.0.0
+    hooks:
+      - id: jscpd
+        args: [--min-lines, "5", --min-tokens, "50", --reporters, "console"]
+        exclude: ^(cps/static|cps/translations|frontend|graphify-out|host|library|tmp)/
+  - repo: https://github.com/jendrikseipp/vulture-pre-commit
+    rev: v2.11
+    hooks:
+      - id: vulture
+        args: [cps/, --min-confidence, "80", --exclude, "cps/static,cps/translations,frontend,graphify-out,host,library,tmp"]
+  - repo: https://github.com/mkniewallner/deptry-pre-commit
+    rev: v0.21.0
+    hooks:
+      - id: deptry
+        args: [., --ignore-missing-imports]
+  # Module boundary enforcement (import-linter / grimp).
+  # See .importlinter for the contract definitions.
+  - repo: local
+    hooks:
+      - id: import-linter
+        name: import-linter (module boundary contracts)
+        entry: lint-imports --no-cache
+        language: system
+        pass_filenames: false

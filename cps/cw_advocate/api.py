@@ -26,6 +26,7 @@ itself.
 :license: Apache2, see LICENSE for more details.
 
 """
+
 import hashlib
 import pickle
 from collections import OrderedDict
@@ -68,9 +69,7 @@ class Session(RequestsSession):
         if self.__mount_allowed:
             super().mount(*args, **kwargs)
         else:
-            raise MountDisabledException(
-                "mount() is disabled to prevent protection bypasses"
-            )
+            raise MountDisabledException("mount() is disabled to prevent protection bypasses")
 
 
 def session(*args, **kwargs):
@@ -118,8 +117,8 @@ def get(url, **kwargs):
     :rtype: requests.Response
     """
 
-    kwargs.setdefault('allow_redirects', True)
-    return request('get', url, **kwargs)
+    kwargs.setdefault("allow_redirects", True)
+    return request("get", url, **kwargs)
 
 
 class RequestsAPIWrapper:
@@ -134,6 +133,7 @@ class RequestsAPIWrapper:
         # Do this here to avoid circular import issues
         try:
             from .futures import FuturesSession  # pyright: ignore[reportMissingImports]
+
             have_requests_futures = True
         except ImportError:
             have_requests_futures = False
@@ -148,6 +148,7 @@ class RequestsAPIWrapper:
             so people should be able to subclass `wrapper.Session` and still
             get the desired validation behaviour
             """
+
             DEFAULT_VALIDATOR = outer_self.validator
 
         self._make_wrapper_cls_global(_WrappedSession)
@@ -156,7 +157,9 @@ class RequestsAPIWrapper:
 
             class _WrappedFuturesSession(FuturesSession):  # pyright: ignore[reportPossiblyUnboundVariable]
                 """Like _WrappedSession, but for `FuturesSession`s"""
+
                 DEFAULT_VALIDATOR = outer_self.validator
+
             self._make_wrapper_cls_global(_WrappedFuturesSession)
 
             self.FuturesSession = _WrappedFuturesSession
@@ -173,12 +176,14 @@ class RequestsAPIWrapper:
             return object.__getattribute__(self, item)
         except AttributeError:
             import cw_advocate as _cw_advocate  # pyright: ignore[reportImplicitRelativeImport]
+
             return getattr(_cw_advocate, item)
 
     def _default_arg_wrapper(self, fun):
         def wrapped_func(*args, **kwargs):
             kwargs.setdefault("validator", self.validator)
             return fun(*args, **kwargs)
+
         return wrapped_func
 
     def _make_wrapper_cls_global(self, cls):

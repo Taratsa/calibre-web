@@ -1,16 +1,24 @@
 {
   "id": 3062,
-  "title": "Jurnal Anarki #4",
-  "slug": "jurnal-anarki-4-tidak-diketahui",
+  "title": "Jurnal Anarki #04",
+  "slug": "jurnal-anarki-04-anonim-andre-f-ernesto-setiawan",
   "authors": [
     {
-      "id": 668,
-      "name": "Tidak diketahui"
+      "id": 604,
+      "name": "Anonim"
+    },
+    {
+      "id": 3505,
+      "name": "Andre F."
+    },
+    {
+      "id": 2579,
+      "name": "Ernesto Setiawan"
     }
   ],
-  "author_sort": "diketahui, Tidak",
+  "author_sort": "Setiawan, Ernesto & F., Andre & Anonim",
   "tags": [
-    "Jurnal Anarki"
+    "Anarkisme"
   ],
   "publisher": {
     "id": 148,
@@ -22,25 +30,31 @@
       "name": "Jurnal Anarki"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2005-01-04",
   "timestamp": "2026-05-26 19:08:09.665678",
-  "last_modified": "2026-05-26 19:08:09.665686",
-  "series": null,
+  "last_modified": "2026-07-25 14:55:39.082051",
+  "series": {
+    "id": 20,
+    "name": "Jurnal Anarki",
+    "index": 4
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/3062?c=2026-05-26 19:08:09.665686",
-  "cover_og_url": "/cover/3062/og?c=2026-05-26 19:08:09.665686",
-  "url": "/book/3062",
+  "cover_url": "/cover_thumb/3062?v=1784966139",
+  "cover_og_url": "/cover/3062/og?v=1784966139",
+  "url": "/book/3062/",
   "rating": null,
-  "comment": "Jurnal Anarki  · 2005",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 3939196,
-      "name": "Jurnal Anarki #4 - Tidak diketahui"
+      "name": "Jurnal Anarki #04 - Ernesto Setiawan"
     }
   ]
 }

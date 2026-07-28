@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import Pagination from '~/components/Pagination.astro';
+import { getAllSeries, booksBySeries, PAGE_SIZE } from '~/data';
+
+export const getStaticPaths = (({ paginate }) => {
+  return getAllSeries().flatMap(s => {
+    const items = booksBySeries(s.id).sort((x, y) => {
+      const xi = x.series?.index ?? Infinity;
+      const yi = y.series?.index ?? Infinity;
+      if (xi !== yi) return xi - yi;
+      return (y.timestamp || '').localeCompare(x.timestamp || '');
+    });
+    return paginate(items, {
+      params: { id: String(s.id) },
+      pageSize: PAGE_SIZE,
+      props: { series: s },
+    });
+  });
+}) satisfies GetStaticPaths;
+
+const { page, series } = Astro.props;
+const isFirstPage = page.currentPage === 1;
+const baseUrl = `/series/${series.id}/`;
+---
+
+<BaseLayout title={`Seri: ${series.name}${isFirstPage ? '' : ` (Halaman ${page.currentPage})`}`} description={`${series.name} — ${page.total} buku dalam seri ini di Pustaka Taratsa`} canonical={baseUrl} noindex={!isFirstPage}>
+  {isFirstPage ? (
+    <p><a href="/series">‹ Semua seri</a></p>
+  ) : (
+    <p><a href={baseUrl}>‹ {series.name}</a></p>
+  )}
+  <h1>{series.name}</h1>
+  <p>{page.total} buku dalam seri ini.</p>
+
+  <BookGrid books={page.data} cols={4} />
+  <Pagination page={page.currentPage} totalPages={page.lastPage} baseUrl={baseUrl} />
+</BaseLayout>

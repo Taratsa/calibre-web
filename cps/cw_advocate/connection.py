@@ -51,6 +51,7 @@ def fix_addrinfo(records):
     it seems like only the first record in the set has the canonname field
     populated.
     """
+
     def fix_record(record, canonname):
         sa = record[4]
         sa = (ipaddress.ip_address(sa[0]), *sa[1:])
@@ -60,7 +61,7 @@ def fix_addrinfo(records):
     if records:
         # Apparently the canonical name is only included in the first record?
         # Add it to all of them.
-        assert(len(records[0]) == 5)
+        assert len(records[0]) == 5
         canonname = records[0][3]
     return tuple(fix_record(x, canonname) for x in records)
 
@@ -68,12 +69,12 @@ def fix_addrinfo(records):
 # Lifted from requests' urllib3, which in turn lifted it from `socket.py`. Oy!
 from typing import cast  # noqa: E402
 
-_GLOBAL_DEFAULT_TIMEOUT = cast(Any, getattr(socket, '_GLOBAL_DEFAULT_TIMEOUT', object()))
+_GLOBAL_DEFAULT_TIMEOUT = cast(Any, getattr(socket, "_GLOBAL_DEFAULT_TIMEOUT", object()))
 
-def validating_create_connection(address,
-                       timeout=_GLOBAL_DEFAULT_TIMEOUT,
-                       source_address=None, socket_options=None,
-                       validator=None):
+
+def validating_create_connection(
+    address, timeout=_GLOBAL_DEFAULT_TIMEOUT, source_address=None, socket_options=None, validator=None
+):
     """Connect to *address* and return the socket object.
 
     Convenience function.  Connect to *address* (a 2-tuple ``(host,
@@ -147,16 +148,16 @@ def validating_create_connection(address,
 # TODO: Is there a better way to add this to multiple classes with different
 # base classes? I tried a mixin, but it used the base method instead.
 def _validating_new_conn(self):
-    """ Establish a socket connection and set nodelay settings on it.
+    """Establish a socket connection and set nodelay settings on it.
 
     :return: New socket connection.
     """
     extra_kw = {}
     if self.source_address:
-        extra_kw['source_address'] = self.source_address
+        extra_kw["source_address"] = self.source_address
 
     if self.socket_options:
-        extra_kw['socket_options'] = self.socket_options
+        extra_kw["socket_options"] = self.socket_options
 
     try:
         # Hack around HTTPretty's patched sockets
@@ -168,22 +169,19 @@ def _validating_new_conn(self):
         else:
             extra_kw["validator"] = self._validator
 
-        conn = conn_func(
-            (self.host, self.port),
-            self.timeout,
-            **extra_kw
-        )
+        conn = conn_func((self.host, self.port), self.timeout, **extra_kw)
 
     except TimeoutError as ex:
         raise ConnectTimeoutError(
-            self, f"Connection to {self.host} timed out. (connect timeout={self.timeout})") from ex
+            self, f"Connection to {self.host} timed out. (connect timeout={self.timeout})"
+        ) from ex
 
     return conn
 
 
 # Don't silently break if the private API changes across urllib3 versions
-assert(hasattr(HTTPConnection, '_new_conn'))
-assert(hasattr(HTTPSConnection, '_new_conn'))
+assert hasattr(HTTPConnection, "_new_conn")
+assert hasattr(HTTPSConnection, "_new_conn")
 
 
 class ValidatingHTTPConnection(HTTPConnection):

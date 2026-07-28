@@ -22,6 +22,7 @@ import re
 
 try:
     import netifaces
+
     HAVE_NETIFACES = True
 except ImportError:
     netifaces = None
@@ -36,15 +37,15 @@ def canonicalize_hostname(hostname):
     # lowercase the *ASCII* chars.
     # TODO: The differences between IDNA2003 and IDNA2008 might be relevant
     # to us, but both specs are damn confusing.
-    return str(hostname.encode("idna").lower(), 'utf-8')
+    return str(hostname.encode("idna").lower(), "utf-8")
 
 
 def determine_local_addresses():
     """Get all IPs that refer to this machine according to netifaces"""
     if not HAVE_NETIFACES:
-        raise ConfigException("Tried to determine local addresses, "
-                              "but netifaces module was not importable")
+        raise ConfigException("Tried to determine local addresses, but netifaces module was not importable")
     from typing import Any, cast
+
     netifaces_obj = cast(Any, netifaces)
     ips = []
     for interface in netifaces_obj.interfaces():
@@ -66,6 +67,7 @@ def add_local_address_arg(func):
     adapters got a new IP at runtime?,) and we don't want each function to
     recalculate it. Just recalculate it if the caller didn't provide it for us.
     """
+
     @functools.wraps(func)
     def wrapper(self, *args, **kwargs):
         if "_local_addresses" not in kwargs:
@@ -74,6 +76,7 @@ def add_local_address_arg(func):
             else:
                 kwargs["_local_addresses"] = []
         return func(self, *args, **kwargs)
+
     return wrapper
 
 
@@ -85,19 +88,19 @@ class AddrValidator:
     DEFAULT_PORT_WHITELIST = {80, 8080, 443, 8443, 8000}
 
     def __init__(
-            self,
-            ip_blacklist=None,
-            ip_whitelist=None,
-            port_whitelist=None,
-            port_blacklist=None,
-            hostname_blacklist=None,
-            allow_ipv6=False,
-            allow_teredo=False,
-            allow_6to4=False,
-            allow_dns64=False,
-            # Must be explicitly set to "False" if you don't want to try
-            # detecting local interface addresses with netifaces.
-            autodetect_local_addresses=True,
+        self,
+        ip_blacklist=None,
+        ip_whitelist=None,
+        port_whitelist=None,
+        port_blacklist=None,
+        hostname_blacklist=None,
+        allow_ipv6=False,
+        allow_teredo=False,
+        allow_6to4=False,
+        allow_dns64=False,
+        # Must be explicitly set to "False" if you don't want to try
+        # detecting local interface addresses with netifaces.
+        autodetect_local_addresses=True,
     ):
         if not port_blacklist and not port_whitelist:
             # An assortment of common HTTPS? ports.
@@ -118,8 +121,7 @@ class AddrValidator:
 
     @add_local_address_arg
     def is_ip_allowed(self, addr_ip, _local_addresses=None):
-        if not isinstance(addr_ip,
-                          (ipaddress.IPv4Address, ipaddress.IPv6Address)):
+        if not isinstance(addr_ip, (ipaddress.IPv4Address, ipaddress.IPv6Address)):
             addr_ip = ipaddress.ip_address(addr_ip)
 
         # The whitelist should take precedence over the blacklist so we can
@@ -218,8 +220,7 @@ class AddrValidator:
         #    [(2, 1, 6, '', ('93.184.216.34', 80)), [...]
         no_null_hostname = hostname.split("\x00")[0]
 
-        return any(re.match(pattern, x.strip(".")) for x
-                   in (no_null_hostname, hostname))
+        return any(re.match(pattern, x.strip(".")) for x in (no_null_hostname, hostname))
 
     def is_hostname_allowed(self, hostname):
         # Sometimes (like with "external" services that your IP has privileged
@@ -237,7 +238,7 @@ class AddrValidator:
 
     @add_local_address_arg
     def is_addrinfo_allowed(self, addrinfo, _local_addresses=None):
-        assert(len(addrinfo) == 5)
+        assert len(addrinfo) == 5
         # XXX: Do we care about any of the other elements? Guessing not.
         _family, _socktype, _proto, canonname, sockaddr = addrinfo
 

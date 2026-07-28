@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, pwr
 #
@@ -65,20 +64,20 @@ def etree_to_dict(t):
 
     if t.attrib:
         assert isinstance(d[t.tag], dict)
-        d[t.tag].update(('@' + k, v) for k, v in t.attrib.items())
+        d[t.tag].update(("@" + k, v) for k, v in t.attrib.items())
 
-    text = (t.text or '').strip()
+    text = (t.text or "").strip()
     if text:
         if children or t.attrib:
             assert isinstance(d[t.tag], dict)
-            d[t.tag]['#text'] = text
+            d[t.tag]["#text"] = text
         else:
             d[t.tag] = text
 
     return d
 
-class my_GoodreadsClient(GoodreadsClient):  # pyright: ignore[reportGeneralTypeIssues]
 
+class my_GoodreadsClient(GoodreadsClient):  # pyright: ignore[reportGeneralTypeIssues]
     def request(self, *args, **kwargs):
         """Create a GoodreadsRequest object and make that request"""
         req = my_GoodreadsRequest(self, *args, **kwargs)
@@ -91,23 +90,24 @@ class GoodreadsRequestException(Exception):
         self.url = url
 
     def __str__(self):  # pyright: ignore[reportIncompatibleMethodOverride]
-        return self.url, ':', self.error_msg
+        return self.url, ":", self.error_msg
 
 
 class my_GoodreadsRequest(GoodreadsRequest):  # pyright: ignore[reportGeneralTypeIssues]
-
     def request(self):
-        resp = requests.get(self.host+self.path, params=self.params,
-                            headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:125.0) "
-                                                   "Gecko/20100101 Firefox/125.0"})
+        resp = requests.get(
+            self.host + self.path,
+            params=self.params,
+            headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0"},
+        )
         if resp.status_code != 200:
             raise GoodreadsRequestException(resp.reason, self.path)
-        if self.req_format == 'xml':
+        if self.req_format == "xml":
             assert etree is not None
             root = etree.fromstring(resp.content, parser=etree.XMLParser(resolve_entities=False, no_network=True))
             data_dict = etree_to_dict(root)
 
-            return data_dict['GoodreadsResponse']
+            return data_dict["GoodreadsResponse"]
         else:
             raise Exception("Invalid format")
 
@@ -152,7 +152,7 @@ def get_author_info(author_name):
         author_info = _client.find_author(author_name=author_name)
     except Exception as ex:
         # Skip goodreads, if site is down/inaccessible
-        log.warning('Goodreads website is down/inaccessible? %s', ex.__str__())
+        log.warning("Goodreads website is down/inaccessible? %s", ex.__str__())
         return
 
     if author_info:
@@ -174,7 +174,8 @@ def get_other_books(author_info, library_books=None):
     library_titles = []
     if library_books:
         identifiers = list(
-            reduce(lambda acc, book: acc + [i.val for i in book.identifiers if i.val], library_books, []))
+            reduce(lambda acc, book: acc + [i.val for i in book.identifiers if i.val], library_books, [])
+        )
         library_titles = [book.title for book in library_books]
 
     for book in author_info.books:
@@ -188,7 +189,7 @@ def get_other_books(author_info, library_books=None):
                 continue
 
         if Levenshtein and library_titles:
-            goodreads_title = book._book_dict['title_without_series']
+            goodreads_title = book._book_dict["title_without_series"]
             if any(Levenshtein.ratio(goodreads_title, title) > 0.7 for title in library_titles):  # pyright: ignore[reportAttributeAccessIssue]
                 continue
 

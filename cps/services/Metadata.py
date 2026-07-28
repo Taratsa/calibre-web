@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2021 OzzieIsaacs
 #
@@ -37,7 +36,7 @@ class MetaRecord:
     authors: list[str]
     url: str
     source: MetaSourceInfo
-    cover: str = os.path.join(constants.STATIC_DIR, 'generic_cover.jpg')
+    cover: str = os.path.join(constants.STATIC_DIR, "generic_cover.jpg")
     description: str | None = ""
     series: str | None = None
     series_index: int | float | None = 0
@@ -60,15 +59,11 @@ class Metadata:
         self.active = state
 
     @abc.abstractmethod
-    def search(
-        self, query: str, generic_cover: str = "", locale: str = "en"
-    ) -> list[MetaRecord] | None:
+    def search(self, query: str, generic_cover: str = "", locale: str = "en") -> list[MetaRecord] | None:
         pass
 
     @staticmethod
-    def get_title_tokens(
-        title: str, strip_joiners: bool = True
-    ) -> Generator[str, None, None]:
+    def get_title_tokens(title: str, strip_joiners: bool = True) -> Generator[str, None, None]:
         """
         Taken from calibre source code
         It's a simplified (cut out what is unnecessary) version of
@@ -104,7 +99,5 @@ class Metadata:
         tokens = title.split()
         for token in tokens:
             token = token.strip().strip('"').strip("'")
-            if token and (
-                not strip_joiners or token.lower() not in ("a", "and", "the", "&")
-            ):
+            if token and (not strip_joiners or token.lower() not in ("a", "and", "the", "&")):
                 yield token

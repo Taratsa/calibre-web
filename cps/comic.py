@@ -1,4 +1,3 @@
-
 #   This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #     Copyright (C) 2018-2022 OzzieIsaacs
 #
@@ -22,6 +21,7 @@ from .constants import BookMeta
 
 try:
     from wand.image import Image  # noqa: F401
+
     use_IM = True
 except (ImportError, RuntimeError):
     use_IM = False
@@ -30,39 +30,44 @@ log = logger.create()
 
 try:
     from comicapi.comicarchive import ComicArchive, MetaDataStyle  # pyright: ignore[reportMissingImports]
+
     use_comic_meta = True
     try:
         from comicapi import __version__ as comic_version  # pyright: ignore[reportMissingImports]
     except ImportError:
-        comic_version = ''
+        comic_version = ""
     try:
         import comicapi.utils  # pyright: ignore[reportMissingImports]
         from comicapi.comicarchive import load_archive_plugins  # pyright: ignore[reportMissingImports]
+
         comicapi.utils.add_rar_paths()
     except ImportError:
         load_archive_plugins = None
 except (ImportError, LookupError) as e:
-    log.debug('Cannot import comicapi, extracting comic metadata will not work: %s', e)
+    log.debug("Cannot import comicapi, extracting comic metadata will not work: %s", e)
     import tarfile
     import zipfile
+
     try:
         import rarfile  # pyright: ignore[reportMissingImports]
+
         use_rarfile = True
     except (ImportError, SyntaxError) as e:
-        log.debug('Cannot import rarfile, extracting cover files from rar files will not work: %s', e)
+        log.debug("Cannot import rarfile, extracting cover files from rar files will not work: %s", e)
         use_rarfile = False
     try:
         import py7zr  # pyright: ignore[reportMissingImports]
+
         use_7zip = True
     except (ImportError, SyntaxError) as e:
-        log.debug('Cannot import py7zr, extracting cover files from CB7 files will not work: %s', e)
+        log.debug("Cannot import py7zr, extracting cover files from CB7 files will not work: %s", e)
         use_7zip = False
     use_comic_meta = False
 
 
 def _extract_cover_from_archive(original_file_extension, tmp_file_name, rar_executable):
     cover_data = extension = None
-    if original_file_extension.upper() == '.CBZ':
+    if original_file_extension.upper() == ".CBZ":
         cf = zipfile.ZipFile(tmp_file_name)  # pyright: ignore[reportPossiblyUnboundVariable]
         for name in sorted(cf.namelist()):
             ext = os.path.splitext(name)
@@ -71,7 +76,7 @@ def _extract_cover_from_archive(original_file_extension, tmp_file_name, rar_exec
                 if extension in cover.COVER_EXTENSIONS:
                     cover_data = cf.read(name)
                     break
-    elif original_file_extension.upper() == '.CBT':
+    elif original_file_extension.upper() == ".CBT":
         cf = tarfile.TarFile(tmp_file_name)  # pyright: ignore[reportPossiblyUnboundVariable]
         for name in sorted(cf.getnames()):
             ext = os.path.splitext(name)
@@ -82,7 +87,7 @@ def _extract_cover_from_archive(original_file_extension, tmp_file_name, rar_exec
                     if extracted is not None:
                         cover_data = extracted.read()
                     break
-    elif original_file_extension.upper() == '.CBR' and use_rarfile:
+    elif original_file_extension.upper() == ".CBR" and use_rarfile:
         try:
             rarfile.UNRAR_TOOL = rar_executable  # pyright: ignore[reportPossiblyUnboundVariable]
             cf = rarfile.RarFile(tmp_file_name)  # pyright: ignore[reportPossiblyUnboundVariable]
@@ -94,8 +99,8 @@ def _extract_cover_from_archive(original_file_extension, tmp_file_name, rar_exec
                         cover_data = cf.read(name)
                         break
         except Exception as ex:
-            log.error(f'Rarfile failed with error: {ex}')
-    elif original_file_extension.upper() == '.CB7' and use_7zip:
+            log.error(f"Rarfile failed with error: {ex}")
+    elif original_file_extension.upper() == ".CB7" and use_7zip:
         cf = py7zr.SevenZipFile(tmp_file_name)  # pyright: ignore[reportPossiblyUnboundVariable]
         for name in sorted(cf.getnames()):
             ext = os.path.splitext(name)
@@ -105,7 +110,7 @@ def _extract_cover_from_archive(original_file_extension, tmp_file_name, rar_exec
                     try:
                         cover_data = cf.read([name])[name].read()
                     except (py7zr.Bad7zFile, OSError) as ex:  # pyright: ignore[reportPossiblyUnboundVariable]
-                        log.error(f'7Zip file failed with error: {ex}')
+                        log.error(f"7Zip file failed with error: {ex}")
                     break
     return cover_data, extension
 
@@ -165,8 +170,10 @@ def get_comic_info(tmp_file_path, original_file_name, original_file_extension, r
                 file_path=tmp_file_path,
                 extension=original_file_extension,
                 title=loaded_metadata.title or original_file_name,
-                author=" & ".join([credit["person"]
-                                   for credit in loaded_metadata.credits if credit["role"] == "Writer"]) or 'Unknown',
+                author=" & ".join(
+                    [credit["person"] for credit in loaded_metadata.credits if credit["role"] == "Writer"]
+                )
+                or "Unknown",
                 cover=cover_file,
                 description=loaded_metadata.comments or "",
                 tags="",
@@ -175,7 +182,8 @@ def get_comic_info(tmp_file_path, original_file_name, original_file_extension, r
                 languages=loaded_metadata.language,
                 publisher="",
                 pubdate="",
-                identifiers=[])
+                identifiers=[],
+            )
     if not no_cover_processing:
         cover_file = _extract_cover(tmp_file_path, original_file_extension, rar_executable)
     else:
@@ -185,7 +193,7 @@ def get_comic_info(tmp_file_path, original_file_name, original_file_extension, r
         file_path=tmp_file_path,
         extension=original_file_extension,
         title=original_file_name,
-        author='Unknown',
+        author="Unknown",
         cover=cover_file,
         description="",
         tags="",
@@ -194,4 +202,5 @@ def get_comic_info(tmp_file_path, original_file_name, original_file_extension, r
         languages="",
         publisher="",
         pubdate="",
-        identifiers=[])
+        identifiers=[],
+    )

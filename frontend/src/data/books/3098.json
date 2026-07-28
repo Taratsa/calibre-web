@@ -1,20 +1,25 @@
 {
   "id": 3098,
   "title": "Rise Above Media Zine #06",
-  "slug": "rise-above-media-zine-06-rae-fadillah-rifki-syarani-fachry-stephen-graham",
+  "slug": "rise-above-media-zine-06-rifki-syarani-fachry-rae-fadillah-stephen-graham",
   "authors": [
+    {
+      "id": 271,
+      "name": "Rifki Syarani Fachry"
+    },
     {
       "id": 1068,
       "name": "Rae Fadillah"
     },
     {
-      "id": 2596,
-      "name": "Rifki Syarani Fachry Stephen Graham"
+      "id": 3499,
+      "name": "Stephen Graham"
     }
   ],
-  "author_sort": "Graham, Rifki Syarani Fachry Stephen & Fadillah, Rae",
+  "author_sort": "Fachry, Rifki Syarani & Graham, Stephen & Fadillah, Rae",
   "tags": [
-    "Rise Above Media"
+    "Esai",
+    "Wawancara"
   ],
   "publisher": {
     "id": 231,
@@ -26,25 +31,31 @@
       "name": "Rise Above Media"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2025-01-01",
   "timestamp": "2026-05-26 19:31:39.299805",
-  "last_modified": "2026-05-26 19:31:39.299813",
-  "series": null,
+  "last_modified": "2026-07-25 14:22:27.872526",
+  "series": {
+    "id": 17,
+    "name": "Zine Rise Above Media",
+    "index": 6
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/3098?c=2026-05-26 19:31:39.299813",
-  "cover_og_url": "/cover/3098/og?c=2026-05-26 19:31:39.299813",
-  "url": "/book/3098",
+  "cover_url": "/cover_thumb/3098?v=1784964147",
+  "cover_og_url": "/cover/3098/og?v=1784964147",
+  "url": "/book/3098/",
   "rating": null,
-  "comment": "Rise Above Media  · 2025",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 7340685,
-      "name": "Rise Above Media Zine #06 - Rifki Syarani Fachry Stephen Graham"
+      "name": "Rise Above Media Zine #06 - Rifki Syarani Fachry"
     }
   ]
 }

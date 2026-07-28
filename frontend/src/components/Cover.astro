@@ -48,7 +48,7 @@ const fallbackSrc = withSize(basePath, existingQuery ? '?' + existingQuery : '')
   />
 ) : isCoverPath ? (
   <picture>
-    <source srcset={`${image}?fm=webp`} type="image/webp" />
+    <source srcset={image} type="image/webp" />
     <img src={image} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" class={cls} />
   </picture>
 ) : (

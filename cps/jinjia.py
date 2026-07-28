@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 OzzieIsaacs, cervinko, jkrehm, bodybybuddha, ok11,
 #                            andy29485, idalin, Kyosfonica, wuqi, Kennyl, lemmsh,
@@ -33,15 +32,15 @@ from . import constants, logger
 from .clean_html import clean_string as html_clean_string
 from .cw_login import current_user
 
-jinjia = Blueprint('jinjia', __name__)
+jinjia = Blueprint("jinjia", __name__)
 log = logger.create()
 
 
 # pagination links in jinja
-@jinjia.app_template_filter('url_for_other_page')
+@jinjia.app_template_filter("url_for_other_page")
 def url_for_other_page(page):
     args = (request.view_args or {}).copy()
-    args['page'] = page
+    args["page"] = page
     for get, val in request.args.items():
         if get == "page":
             continue
@@ -50,128 +49,125 @@ def url_for_other_page(page):
 
 
 # shortentitles to at longest nchar, shorten longer words if necessary
-@jinjia.app_template_filter('shortentitle')
+@jinjia.app_template_filter("shortentitle")
 def shortentitle_filter(s, nchar=20):
     text = s.split()
     res = ""  # result
     suml = 0  # overall length
     for line in text:
         if suml >= 60:
-            res += '...'
+            res += "..."
             break
         # if word longer than 20 chars truncate line and append '...', otherwise add whole word to result
         # string, and summarize total length to stop at chars given by nchar
         if len(line) > nchar:
-            res += line[:(nchar-3)] + '[..] '
-            suml += nchar+3
+            res += line[: (nchar - 3)] + "[..] "
+            suml += nchar + 3
         else:
-            res += line + ' '
+            res += line + " "
             suml += len(line) + 1
     return res.strip()
 
 
-@jinjia.app_template_filter('mimetype')
+@jinjia.app_template_filter("mimetype")
 def mimetype_filter(val):
-    return mimetypes.types_map.get('.' + val, 'application/octet-stream')
+    return mimetypes.types_map.get("." + val, "application/octet-stream")
 
 
-@jinjia.app_template_filter('formatdate')
+@jinjia.app_template_filter("formatdate")
 def formatdate_filter(val):
     try:
-        return format_date(val, format='medium')
+        return format_date(val, format="medium")
     except AttributeError as e:
-        log.error('Babel error: %s, Current user locale: %s, Current User: %s', e,
-                  current_user.locale,
-                  current_user.name
-                  )
+        log.error(
+            "Babel error: %s, Current user locale: %s, Current User: %s", e, current_user.locale, current_user.name
+        )
         return val
 
 
-@jinjia.app_template_filter('formatdateinput')
+@jinjia.app_template_filter("formatdateinput")
 def format_date_input(val):
-    input_date = val.isoformat().split('T', 1)[0]  # Hack to support dates <1900
-    return '' if input_date == "0101-01-01" else input_date
+    input_date = val.isoformat().split("T", 1)[0]  # Hack to support dates <1900
+    return "" if input_date == "0101-01-01" else input_date
 
 
-@jinjia.app_template_filter('strftime')
+@jinjia.app_template_filter("strftime")
 def timestamptodate(date, fmt=None):
-    date = datetime.datetime.fromtimestamp(
-        int(date)/1000
-    )
+    date = datetime.datetime.fromtimestamp(int(date) / 1000)
     native = date.replace(tzinfo=None)
-    time_format = fmt or '%d %m %Y - %H:%S'
+    time_format = fmt or "%d %m %Y - %H:%S"
     return native.strftime(time_format)
 
 
-@jinjia.app_template_filter('yesno')
+@jinjia.app_template_filter("yesno")
 def yesno(value, yes, no):
     return yes if value else no
 
 
-@jinjia.app_template_filter('formatfloat')
+@jinjia.app_template_filter("formatfloat")
 def formatfloat(value, decimals=1):
     if not value or (isinstance(value, str) and not value.isnumeric()):
         return value
-    formated_value = ('{0:.' + str(decimals) + 'f}').format(value)
-    if formated_value.endswith('.' + "0" * decimals):
-        formated_value = formated_value.rstrip('0').rstrip('.')
+    formated_value = ("{0:." + str(decimals) + "f}").format(value)
+    if formated_value.endswith("." + "0" * decimals):
+        formated_value = formated_value.rstrip("0").rstrip(".")
     return formated_value
 
 
-@jinjia.app_template_filter('escapedlink')
+@jinjia.app_template_filter("escapedlink")
 def escapedlink_filter(url, text):
     return f"<a href='{url}'>{escape(text)}</a>"
 
 
-@jinjia.app_template_filter('uuidfilter')
+@jinjia.app_template_filter("uuidfilter")
 def uuidfilter(var):
     return uuid4()
 
 
-@jinjia.app_template_filter('cache_timestamp')
-def cache_timestamp(rolling_period='month'):
-    if rolling_period == 'day':
+@jinjia.app_template_filter("cache_timestamp")
+def cache_timestamp(rolling_period="month"):
+    if rolling_period == "day":
         return str(int(datetime.datetime.today().replace(hour=1, minute=1).timestamp()))
-    elif rolling_period == 'year':
+    elif rolling_period == "year":
         return str(int(datetime.datetime.today().replace(day=1).timestamp()))
     else:
         return str(int(datetime.datetime.today().replace(month=1, day=1).timestamp()))
 
 
-@jinjia.app_template_filter('last_modified')
+@jinjia.app_template_filter("last_modified")
 def book_last_modified(book):
     return str(int(book.last_modified.timestamp()))
 
 
-@jinjia.app_template_filter('get_cover_srcset')
+@jinjia.app_template_filter("get_cover_srcset")
 def get_cover_srcset(book):
     srcset = list()
     resolutions = {
-        constants.COVER_THUMBNAIL_SMALL: 'sm',
-        constants.COVER_THUMBNAIL_MEDIUM: 'md',
-        constants.COVER_THUMBNAIL_LARGE: 'lg'
+        constants.COVER_THUMBNAIL_SMALL: "sm",
+        constants.COVER_THUMBNAIL_MEDIUM: "md",
+        constants.COVER_THUMBNAIL_LARGE: "lg",
     }
     for resolution, shortname in resolutions.items():
-        url = url_for('web.get_cover', book_id=book.id, resolution=shortname, c=book_last_modified(book))
-        srcset.append(f'{url} {resolution}x')
-    return ', '.join(srcset)
+        url = url_for("web.get_cover", book_id=book.id, resolution=shortname, c=book_last_modified(book))
+        srcset.append(f"{url} {resolution}x")
+    return ", ".join(srcset)
 
 
-@jinjia.app_template_filter('get_series_srcset')
+@jinjia.app_template_filter("get_series_srcset")
 def get_series_srcset(series):
     srcset = list()
     resolutions = {
-        constants.COVER_THUMBNAIL_SMALL: 'sm',
-        constants.COVER_THUMBNAIL_MEDIUM: 'md',
-        constants.COVER_THUMBNAIL_LARGE: 'lg'
+        constants.COVER_THUMBNAIL_SMALL: "sm",
+        constants.COVER_THUMBNAIL_MEDIUM: "md",
+        constants.COVER_THUMBNAIL_LARGE: "lg",
     }
     for resolution, shortname in resolutions.items():
-        url = url_for('web.get_series_cover', series_id=series.id, resolution=shortname, c=cache_timestamp())
-        srcset.append(f'{url} {resolution}x')
-    return ', '.join(srcset)
+        url = url_for("web.get_series_cover", series_id=series.id, resolution=shortname, c=cache_timestamp())
+        srcset.append(f"{url} {resolution}x")
+    return ", ".join(srcset)
 
 
-@jinjia.app_template_filter('music')
+@jinjia.app_template_filter("music")
 def contains_music(book_formats):
     result = False
     for format in book_formats:
@@ -179,8 +175,7 @@ def contains_music(book_formats):
             result = True
     return result
 
-@jinjia.app_template_filter('clean_string')
+
+@jinjia.app_template_filter("clean_string")
 def clean_string(unsafe_text):
     return html_clean_string(unsafe_text)
-
-

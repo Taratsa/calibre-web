@@ -1,7 +1,7 @@
 {
   "id": 103,
-  "title": "SaaW zine vol#6",
-  "slug": "saaw-zine-vol-6-akulahpeluru-bejud-endy-ridwan-ucok-keyboard-warriors",
+  "title": "Screaming At A Word Zine Vol. 6",
+  "slug": "screaming-at-a-word-zine-vol-6-akulahpeluru-bejud-endy-ridwan-ucok-keyboard-warriors",
   "authors": [
     {
       "id": 27,
@@ -29,7 +29,12 @@
     }
   ],
   "author_sort": "Warriors, Keyboard & Akulahpeluru & Endy & Bejud & Ucok & Ridwan",
-  "tags": [],
+  "tags": [
+    "Anarkisme",
+    "Hardcore",
+    "Musik",
+    "Punk"
+  ],
   "publisher": {
     "id": 19,
     "name": "Screaming At a Word"
@@ -45,22 +50,26 @@
   ],
   "pubdate": null,
   "timestamp": "2023-11-12 19:57:49.620568",
-  "last_modified": "2023-11-12 19:57:49.620573",
-  "series": null,
+  "last_modified": "2026-07-15 01:14:17.661720",
+  "series": {
+    "id": 1,
+    "name": "Zine Screaming At A Word",
+    "index": 6
+  },
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/103?c=2023-11-12 19:57:49.620573",
-  "cover_og_url": "/cover/103/og?c=2023-11-12 19:57:49.620573",
-  "url": "/book/103",
+  "cover_url": "/cover_thumb/103?v=1784052857",
+  "cover_og_url": "/cover/103/og?v=1784052857",
+  "url": "/book/103/",
   "rating": null,
   "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 31676463,
-      "name": "SaaW zine vol#6 - Keyboard Warriors"
+      "name": "Screaming At A Word Zine Vol. 6 - Keyboard Warriors"
     }
   ]
 }

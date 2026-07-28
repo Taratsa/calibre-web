@@ -86,17 +86,17 @@ from .tasks_status import render_task_status
 from .usermanagement import login_required_if_no_ano, user_login_required
 
 feature_support = {
-    'ldap': bool(services.ldap),
-    'goodreads': bool(services.goodreads_support),
-    'kobo': bool(services.kobo)
+    "ldap": bool(services.ldap),
+    "goodreads": bool(services.goodreads_support),
+    "kobo": bool(services.kobo),
 }
 
 try:
     from .oauth_bb import get_oauth_status, logout_oauth_user, oauth_check, register_user_with_oauth
 
-    feature_support['oauth'] = True
+    feature_support["oauth"] = True
 except ImportError:
-    feature_support['oauth'] = False
+    feature_support["oauth"] = False
     oauth_check = {}
     register_user_with_oauth = logout_oauth_user = get_oauth_status = None
 
@@ -106,6 +106,7 @@ from functools import wraps  # noqa: E402
 
 try:
     from prometheus_client import CONTENT_TYPE_LATEST, Counter, Gauge, Histogram, generate_latest  # noqa: F401
+
     prometheus_available = True
 except ImportError:
     prometheus_available = False
@@ -117,58 +118,48 @@ except ImportError:
 
 
 sql_version = metadata("sqlalchemy")["Version"]
-sqlalchemy_version2 = ([int(x) if x.isnumeric() else 0 for x in sql_version.split('.')[:3]] >= [2, 0, 0])
+sqlalchemy_version2 = [int(x) if x.isnumeric() else 0 for x in sql_version.split(".")[:3]] >= [2, 0, 0]
 
 
 if prometheus_available:
     REQUEST_COUNT = Counter(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_http_requests_total',
-        'Total HTTP requests',
-        ['method', 'endpoint', 'status']
+        "calibre_http_requests_total", "Total HTTP requests", ["method", "endpoint", "status"]
     )
     REQUEST_LATENCY = Histogram(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_http_request_duration_seconds',
-        'HTTP request latency',
-        ['method', 'endpoint'],
-        buckets=[0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0]
+        "calibre_http_request_duration_seconds",
+        "HTTP request latency",
+        ["method", "endpoint"],
+        buckets=[0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0],
     )
     DB_QUERY_TIME = Histogram(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_db_query_duration_seconds',
-        'Database query latency',
-        ['query_type'],
-        buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5]
+        "calibre_db_query_duration_seconds",
+        "Database query latency",
+        ["query_type"],
+        buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5],
     )
     DB_QUERY_COUNT = Counter(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_db_query_total',
-        'Database queries executed',
-        ['query_type']
+        "calibre_db_query_total", "Database queries executed", ["query_type"]
     )
     COVER_REQUESTS = Counter(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_cover_requests_total',
-        'Total cover image requests',
-        ['resolution', 'converted_to_webp']
+        "calibre_cover_requests_total", "Total cover image requests", ["resolution", "converted_to_webp"]
     )
     SLOW_REQUEST_COUNT = Counter(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_slow_requests_total',
-        'Requests exceeding latency threshold',
-        ['endpoint', 'threshold_ms']
+        "calibre_slow_requests_total", "Requests exceeding latency threshold", ["endpoint", "threshold_ms"]
     )
     COVER_CONVERSION_TIME = Histogram(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_cover_conversion_duration_seconds',
-        'Cover image WebP conversion latency',
-        ['resolution'],
-        buckets=[0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5]
+        "calibre_cover_conversion_duration_seconds",
+        "Cover image WebP conversion latency",
+        ["resolution"],
+        buckets=[0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5],
     )
     RESPONSE_SIZE = Histogram(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_http_response_size_bytes',
-        'HTTP response size in bytes',
-        ['endpoint'],
-        buckets=[100, 1000, 10000, 100000, 500000, 1000000, 5000000]
+        "calibre_http_response_size_bytes",
+        "HTTP response size in bytes",
+        ["endpoint"],
+        buckets=[100, 1000, 10000, 100000, 500000, 1000000, 5000000],
     )
     SLOW_DB_QUERY_COUNT = Counter(  # pyright: ignore[reportPossiblyUnboundVariable]
-        'calibre_slow_db_queries_total',
-        'Database queries exceeding threshold',
-        ['query_type', 'threshold_ms']
+        "calibre_slow_db_queries_total", "Database queries exceeding threshold", ["query_type", "threshold_ms"]
     )
 
 
@@ -176,45 +167,41 @@ if prometheus_available:
 def before_request_metrics():
     if prometheus_available and request:
         g.request_start_time = time.time()
-        g.request_endpoint = request.endpoint or 'unknown'
+        g.request_endpoint = request.endpoint or "unknown"
 
 
 @app.after_request
 def after_request_metrics(response):
-    if prometheus_available and hasattr(g, 'request_start_time'):
+    if prometheus_available and hasattr(g, "request_start_time"):
         latency_ms = (time.time() - g.request_start_time) * 1000
-        endpoint = request.endpoint or 'unknown'
+        endpoint = request.endpoint or "unknown"
         content_length = response.content_length or 0
-        REQUEST_COUNT.labels(
-            method=request.method,
-            endpoint=endpoint,
-            status=response.status_code
-        ).inc()
-        REQUEST_LATENCY.labels(
-            method=request.method,
-            endpoint=endpoint
-        ).observe(latency_ms / 1000)
+        REQUEST_COUNT.labels(method=request.method, endpoint=endpoint, status=response.status_code).inc()
+        REQUEST_LATENCY.labels(method=request.method, endpoint=endpoint).observe(latency_ms / 1000)
         if content_length > 0:
             RESPONSE_SIZE.labels(endpoint=endpoint).observe(content_length)
         if latency_ms > 500:
-            SLOW_REQUEST_COUNT.labels(endpoint=endpoint, threshold_ms='500').inc()
+            SLOW_REQUEST_COUNT.labels(endpoint=endpoint, threshold_ms="500").inc()
     return response
 
 
 @app.route("/metrics")
 def metrics():
     if prometheus_available:
-        return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}  # pyright: ignore[reportPossiblyUnboundVariable]
+        return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}  # pyright: ignore[reportPossiblyUnboundVariable]
     return "Prometheus client not installed", 500
 
 
 @app.after_request
 def add_security_headers(resp):
-    default_src = ([host.strip() for host in config.config_trustedhosts.split(',') if host] +
-                   ["'self'", "'unsafe-inline'", "'unsafe-eval'"])
-    csp = "default-src " + ' '.join(default_src)
+    default_src = [host.strip() for host in config.config_trustedhosts.split(",") if host] + [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-eval'",
+    ]
+    csp = "default-src " + " ".join(default_src)
     if request.endpoint == "web.read_book" and config.config_use_google_drive:
-        csp +=" blob: "
+        csp += " blob: "
     csp += "; font-src 'self' data:"
     if request.endpoint == "web.read_book":
         csp += " blob: "
@@ -227,15 +214,15 @@ def add_security_headers(resp):
     if request.endpoint == "web.read_book":
         csp += " blob: ; style-src-elem 'self' blob: 'unsafe-inline'"
     csp += "; object-src 'none';"
-    resp.headers['Content-Security-Policy'] = csp
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    resp.headers['X-XSS-Protection'] = '1; mode=block'
-    resp.headers['Strict-Transport-Security'] = 'max-age=31536000'
+    resp.headers["Content-Security-Policy"] = csp
+    resp.headers["X-Content-Type-Options"] = "nosniff"
+    resp.headers["X-Frame-Options"] = "SAMEORIGIN"
+    resp.headers["X-XSS-Protection"] = "1; mode=block"
+    resp.headers["Strict-Transport-Security"] = "max-age=31536000"
     return resp
 
 
-web = Blueprint('web', __name__)
+web = Blueprint("web", __name__)
 
 log = logger.create()
 
@@ -246,9 +233,11 @@ def trigger_rebuild_frontend():
         abort(403)
     if request.headers.get("X-Frontend-Token") != config.config_frontend_rebuild_token:
         abort(403)
-    target = getattr(config, "config_frontend_rebuild_url", None) \
-        or os.environ.get("FRONTEND_REBUILD_URL", "") \
+    target = (
+        getattr(config, "config_frontend_rebuild_url", None)
+        or os.environ.get("FRONTEND_REBUILD_URL", "")
         or "http://host.docker.internal:9999/rebuild"
+    )
     token = config.config_frontend_rebuild_token or ""
     try:
         resp = requests.post(
@@ -258,13 +247,17 @@ def trigger_rebuild_frontend():
         )
         log.info(
             "Frontend rebuild forwarded to %s by user %s (status=%d)",
-            target, current_user.name, resp.status_code,
+            target,
+            current_user.name,
+            resp.status_code,
         )
-        return jsonify({
-            "ok": resp.ok,
-            "queued": True,
-            "host_status": resp.status_code,
-        }), 202 if resp.ok else 502
+        return jsonify(
+            {
+                "ok": resp.ok,
+                "queued": True,
+                "host_status": resp.status_code,
+            }
+        ), 202 if resp.ok else 502
     except Exception as exc:
         log.error("Frontend rebuild forwarder failed: %s", exc)
         return jsonify({"ok": False, "error": str(exc)}), 502
@@ -303,27 +296,28 @@ def get_email_status_json():
     return jsonify(render_task_status(tasks))
 
 
-@web.route("/ajax/bookmark/<int:book_id>/<book_format>", methods=['POST'])
+@web.route("/ajax/bookmark/<int:book_id>/<book_format>", methods=["POST"])
 @user_login_required
 def set_bookmark(book_id, book_format):
     bookmark_key = request.form["bookmark"]
-    ub.session.query(ub.Bookmark).filter(and_(ub.Bookmark.user_id == int(current_user.id),
-                                              ub.Bookmark.book_id == book_id,
-                                              ub.Bookmark.format == book_format)).delete()
+    ub.session.query(ub.Bookmark).filter(
+        and_(
+            ub.Bookmark.user_id == int(current_user.id),
+            ub.Bookmark.book_id == book_id,
+            ub.Bookmark.format == book_format,
+        )
+    ).delete()
     if not bookmark_key:
         ub.session_commit()
         return "", 204
 
-    l_bookmark = ub.Bookmark(user_id=current_user.id,
-                             book_id=book_id,
-                             format=book_format,
-                             bookmark_key=bookmark_key)
+    l_bookmark = ub.Bookmark(user_id=current_user.id, book_id=book_id, format=book_format, bookmark_key=bookmark_key)
     ub.session.merge(l_bookmark)
     ub.session_commit(f"Bookmark for user {current_user.id} in book {book_id} created")
     return "", 201
 
 
-@web.route("/ajax/toggleread/<int:book_id>", methods=['POST'])
+@web.route("/ajax/toggleread/<int:book_id>", methods=["POST"])
 @user_login_required
 def toggle_read(book_id):
     message = edit_book_read_status(book_id)
@@ -333,7 +327,7 @@ def toggle_read(book_id):
         return message
 
 
-@web.route("/ajax/togglearchived/<int:book_id>", methods=['POST'])
+@web.route("/ajax/togglearchived/<int:book_id>", methods=["POST"])
 @user_login_required
 def toggle_archived(book_id):
     change_archived_books(book_id, message=f"Book {book_id} archive bit toggled")
@@ -356,7 +350,7 @@ def update_view():
     return "1", 200
 
 
-'''
+"""
 @web.route("/ajax/getcomic/<int:book_id>/<book_format>/<int:page>")
 @user_login_required
 def get_comic_book(book_id, book_format, page):
@@ -402,62 +396,64 @@ def get_comic_book(book_id, book_format, page):
                 fileData={"name": names[page], "page":page, "last":len(names)-1, "content": extractedfile}
                 return make_response(json.dumps(fileData))
         return "", 204
-'''
+"""
 
 
 # ################################### Typeahead ##################################################################
 
 
-@web.route("/get_authors_json", methods=['GET'])
+@web.route("/get_authors_json", methods=["GET"])
 @login_required_if_no_ano
 def get_authors_json():
-    return calibre_db.get_typeahead(db.Authors, request.args.get('q'), ('|', ','))
+    return calibre_db.get_typeahead(db.Authors, request.args.get("q"), ("|", ","))
 
 
-@web.route("/get_publishers_json", methods=['GET'])
+@web.route("/get_publishers_json", methods=["GET"])
 @login_required_if_no_ano
 def get_publishers_json():
-    return calibre_db.get_typeahead(db.Publishers, request.args.get('q'), ('|', ','))
+    return calibre_db.get_typeahead(db.Publishers, request.args.get("q"), ("|", ","))
 
 
-@web.route("/get_tags_json", methods=['GET'])
+@web.route("/get_tags_json", methods=["GET"])
 @login_required_if_no_ano
 def get_tags_json():
-    return calibre_db.get_typeahead(db.Tags, request.args.get('q'), tag_filter=tags_filters())  # pyright: ignore[reportArgumentType]
+    return calibre_db.get_typeahead(db.Tags, request.args.get("q"), tag_filter=tags_filters())  # pyright: ignore[reportArgumentType]
 
 
-@web.route("/get_series_json", methods=['GET'])
+@web.route("/get_series_json", methods=["GET"])
 @login_required_if_no_ano
 def get_series_json():
-    return calibre_db.get_typeahead(db.Series, request.args.get('q'))
+    return calibre_db.get_typeahead(db.Series, request.args.get("q"))
 
 
-@web.route("/get_languages_json", methods=['GET'])
+@web.route("/get_languages_json", methods=["GET"])
 @login_required_if_no_ano
 def get_languages_json():
-    query = (request.args.get('q') or '').lower()
+    query = (request.args.get("q") or "").lower()
     language_names = isoLanguages.get_language_names(get_locale())
     entries_start = [s for key, s in language_names.items() if s.lower().startswith(query.lower())]  # pyright: ignore[reportOptionalMemberAccess]
     if len(entries_start) < 5:
         entries = [s for key, s in language_names.items() if query in s.lower()]  # pyright: ignore[reportOptionalMemberAccess]
-        entries_start.extend(entries[0:(5 - len(entries_start))])
+        entries_start.extend(entries[0 : (5 - len(entries_start))])
         entries_start = list(set(entries_start))
     json_dumps = json.dumps([dict(name=r) for r in entries_start[0:5]])
     return json_dumps
 
 
-@web.route("/get_matching_tags", methods=['GET'])
+@web.route("/get_matching_tags", methods=["GET"])
 @login_required_if_no_ano
 def get_matching_tags():
-    tag_dict = {'tags': []}
+    tag_dict = {"tags": []}
     q = calibre_db.session.query(db.Books).filter(calibre_db.common_filters(True))
     calibre_db.create_functions()
-    author_input = request.args.get('authors') or ''
-    title_input = request.args.get('title') or ''
-    include_tag_inputs = request.args.getlist('include_tag') or ''
-    exclude_tag_inputs = request.args.getlist('exclude_tag') or ''
-    q = q.filter(db.Books.authors.any(func.lower(db.Authors.name).ilike("%" + author_input + "%")),  # pyright: ignore[reportGeneralTypeIssues]
-                 func.lower(db.Books.title).ilike("%" + title_input + "%"))  # pyright: ignore[reportGeneralTypeIssues]
+    author_input = request.args.get("authors") or ""
+    title_input = request.args.get("title") or ""
+    include_tag_inputs = request.args.getlist("include_tag") or ""
+    exclude_tag_inputs = request.args.getlist("exclude_tag") or ""
+    q = q.filter(
+        db.Books.authors.any(func.lower(db.Authors.name).ilike("%" + author_input + "%")),  # pyright: ignore[reportGeneralTypeIssues]
+        func.lower(db.Books.title).ilike("%" + title_input + "%"),
+    )  # pyright: ignore[reportGeneralTypeIssues]
     if len(include_tag_inputs) > 0:
         for tag in include_tag_inputs:
             q = q.filter(db.Books.tags.any(db.Tags.id == tag))
@@ -466,13 +462,13 @@ def get_matching_tags():
             q = q.filter(not_(db.Books.tags.any(db.Tags.id == tag)))
     for book in q:
         for tag in book.tags:
-            if tag.id not in tag_dict['tags']:
-                tag_dict['tags'].append(tag.id)
+            if tag.id not in tag_dict["tags"]:
+                tag_dict["tags"].append(tag.id)
     json_dumps = json.dumps(tag_dict)
     return json_dumps
 
 
-def generate_char_list(entries): # data_colum, db_link):
+def generate_char_list(entries):  # data_colum, db_link):
     char_list = list()
     for entry in entries:
         upper_char = entry[0].name[0].upper()
@@ -482,41 +478,46 @@ def generate_char_list(entries): # data_colum, db_link):
 
 
 def query_char_list(data_colum, db_link):
-    results = (calibre_db.session.query(func.upper(func.substr(data_colum, 1, 1)).label('char'))
-            .join(db_link).join(db.Books).filter(calibre_db.common_filters())
-            .group_by(func.upper(func.substr(data_colum, 1, 1))).all())
+    results = (
+        calibre_db.session.query(func.upper(func.substr(data_colum, 1, 1)).label("char"))
+        .join(db_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(func.upper(func.substr(data_colum, 1, 1)))
+        .all()
+    )
     return results
 
 
 def get_sort_function(sort_param, data):
     order = [db.Books.timestamp.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'stored':
-        sort_param = current_user.get_view_property(data, 'stored')
+    if sort_param == "stored":
+        sort_param = current_user.get_view_property(data, "stored")
     else:
-        current_user.set_view_property(data, 'stored', sort_param)
-    if sort_param == 'pubnew':
+        current_user.set_view_property(data, "stored", sort_param)
+    if sort_param == "pubnew":
         order = [db.Books.pubdate.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'pubold':
+    if sort_param == "pubold":
         order = [db.Books.pubdate]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'abc':
+    if sort_param == "abc":
         order = [db.Books.sort]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'zyx':
+    if sort_param == "zyx":
         order = [db.Books.sort.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'new':
+    if sort_param == "new":
         order = [db.Books.timestamp.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'old':
+    if sort_param == "old":
         order = [db.Books.timestamp]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'authaz':
+    if sort_param == "authaz":
         order = [db.Books.author_sort.asc(), db.Series.name, db.Books.series_index]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'authza':
+    if sort_param == "authza":
         order = [db.Books.author_sort.desc(), db.Series.name.desc(), db.Books.series_index.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'seriesasc':
+    if sort_param == "seriesasc":
         order = [db.Books.series_index.asc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'seriesdesc':
+    if sort_param == "seriesdesc":
         order = [db.Books.series_index.desc()]  # pyright: ignore[reportGeneralTypeIssues]
-    if sort_param == 'hotdesc':
+    if sort_param == "hotdesc":
         order = [func.count(ub.Downloads.book_id).desc()]  # pyright: ignore[reportArgumentType]
-    if sort_param == 'hotasc':
+    if sort_param == "hotasc":
         order = [func.count(ub.Downloads.book_id).asc()]  # pyright: ignore[reportArgumentType]
     if sort_param is None:
         sort_param = "new"
@@ -554,87 +555,138 @@ def render_books_list(data, sort_param, book_id, page):
     elif data == "archived":
         return render_archived_books(page, order)
     elif data == "search":
-        term = request.args.get('query', None)
+        term = request.args.get("query", None)
         offset = int(int(config.config_books_per_page) * (page - 1))
         return render_search_results(term, offset, order, config.config_books_per_page)
     elif data == "advsearch":
-        term = json.loads(flask_session.get('query', '{}'))
+        term = json.loads(flask_session.get("query", "{}"))
         offset = int(int(config.config_books_per_page) * (page - 1))
         return render_adv_search_results(term, offset, order, config.config_books_per_page)
     else:
         website = data or "newest"
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0, db.Books, True, order[0],
-                                                                True, config.config_read_column,
-                                                                db.books_series_link,
-                                                                db.Books.id == db.books_series_link.c.book,
-                                                                db.Series)
-        return render_title_template('index.html', random=random, entries=entries, pagination=pagination,
-                                     title=_("Books"), page=website, order=order[1])
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            True,
+            order[0],
+            True,
+            config.config_read_column,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
+        return render_title_template(
+            "index.html",
+            random=random,
+            entries=entries,
+            pagination=pagination,
+            title=_("Books"),
+            page=website,
+            order=order[1],
+        )
 
 
 def render_rated_books(page, book_id, order):
     if current_user.check_visibility(constants.SIDEBAR_BEST_RATED):
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Books.ratings.any(db.Ratings.rating > 9),  # pyright: ignore[reportGeneralTypeIssues]
-                                                                order[0],
-                                                                True, config.config_read_column,
-                                                                db.books_series_link,
-                                                                db.Books.id == db.books_series_link.c.book,
-                                                                db.Series)
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Books.ratings.any(db.Ratings.rating > 9),  # pyright: ignore[reportGeneralTypeIssues]
+            order[0],
+            True,
+            config.config_read_column,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
 
-        return render_title_template('index.html', random=random, entries=entries, pagination=pagination,
-                                     id=book_id, title=_("Top Rated Books"), page="rated", order=order[1])
+        return render_title_template(
+            "index.html",
+            random=random,
+            entries=entries,
+            pagination=pagination,
+            id=book_id,
+            title=_("Top Rated Books"),
+            page="rated",
+            order=order[1],
+        )
     else:
         abort(404)
 
 
 def render_discover_books(book_id):
     if current_user.check_visibility(constants.SIDEBAR_RANDOM):
-        entries, __, ___ = calibre_db.fill_indexpage(1, 0, db.Books, True, [func.randomblob(2)],
-                                                            join_archive_read=True,
-                                                            config_read_column=config.config_read_column)
+        entries, __, ___ = calibre_db.fill_indexpage(
+            1,
+            0,
+            db.Books,
+            True,
+            [func.randomblob(2)],
+            join_archive_read=True,
+            config_read_column=config.config_read_column,
+        )
         pagination = Pagination(1, config.config_books_per_page, config.config_books_per_page)
-        return render_title_template('index.html', random=false(), entries=entries, pagination=pagination, id=book_id,
-                                     title=_("Discover (Random Books)"), page="discover")
+        return render_title_template(
+            "index.html",
+            random=false(),
+            entries=entries,
+            pagination=pagination,
+            id=book_id,
+            title=_("Discover (Random Books)"),
+            page="discover",
+        )
     else:
         abort(404)
 
 
 def render_hot_books(page, order):
     if current_user.check_visibility(constants.SIDEBAR_HOT):
-        if order[1] not in ['hotasc', 'hotdesc']:
+        if order[1] not in ["hotasc", "hotdesc"]:
             # Unary expression comparison only working (for this expression) in sqlalchemy 1.4+
             # if not (order[0][0].compare(func.count(ub.Downloads.book_id).desc()) or
             #        order[0][0].compare(func.count(ub.Downloads.book_id).asc())):
-            order = [func.count(ub.Downloads.book_id).desc()], 'hotdesc'  # pyright: ignore[reportArgumentType]
+            order = [func.count(ub.Downloads.book_id).desc()], "hotdesc"  # pyright: ignore[reportArgumentType]
         if current_user.show_detail_random():
             random_query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
-            random = (random_query.filter(calibre_db.common_filters())
-                     .order_by(func.random())
-                     .limit(config.config_random_books).all())
+            random = (
+                random_query.filter(calibre_db.common_filters())
+                .order_by(func.random())
+                .limit(config.config_random_books)
+                .all()
+            )
         else:
             random = false()
 
         off = int(int(config.config_books_per_page) * (page - 1))
         all_books = (
             ub.session.query(ub.Downloads, func.count(ub.Downloads.book_id))  # pyright: ignore[reportArgumentType]
-            .order_by(*order[0]).group_by(ub.Downloads.book_id)  # pyright: ignore[reportArgumentType]
+            .order_by(*order[0])
+            .group_by(ub.Downloads.book_id)  # pyright: ignore[reportArgumentType]
         )
         hot_books = all_books.offset(off).limit(config.config_books_per_page)
         entries = list()
         for book in hot_books:
             query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
-            download_book = query.filter(calibre_db.common_filters()).filter(
-                book.Downloads.book_id == db.Books.id).first()
+            download_book = (
+                query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
+            )
             if download_book:
                 entries.append(download_book)
             else:
                 ub.delete_download(book.Downloads.book_id)
         num_books = entries.__len__()
         pagination = Pagination(page, config.config_books_per_page, num_books)
-        return render_title_template('index.html', random=random, entries=entries, pagination=pagination,
-                                     title=_("Hot Books (Most Downloaded)"), page="hot", order=order[1])
+        return render_title_template(
+            "index.html",
+            random=random,
+            entries=entries,
+            pagination=pagination,
+            title=_("Hot Books (Most Downloaded)"),
+            page="hot",
+            order=order[1],
+        )
     else:
         abort(404)
 
@@ -643,50 +695,63 @@ def render_downloaded_books(page, order, user_id):
     user_id = int(user_id) if current_user.role_admin() else current_user.id
     user = ub.session.query(ub.User).filter(ub.User.id == user_id).first()  # pyright: ignore[reportArgumentType]
     if current_user.check_visibility(constants.SIDEBAR_DOWNLOAD) and user:
-        entries, random, pagination = calibre_db.fill_indexpage(page,
-                                                            0,
-                                                            db.Books,
-                                                            ub.Downloads.user_id == user_id,
-                                                            order[0],
-                                                            True, config.config_read_column,
-                                                            db.books_series_link,
-                                                            db.Books.id == db.books_series_link.c.book,
-                                                            db.Series,
-                                                            ub.Downloads, db.Books.id == ub.Downloads.book_id)
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            ub.Downloads.user_id == user_id,
+            order[0],
+            True,
+            config.config_read_column,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+            ub.Downloads,
+            db.Books.id == ub.Downloads.book_id,
+        )
         for book in entries:
-            if not (calibre_db.session.query(db.Books).filter(calibre_db.common_filters())
-                    .filter(db.Books.id == book.Books.id).first()):
+            if not (
+                calibre_db.session.query(db.Books)
+                .filter(calibre_db.common_filters())
+                .filter(db.Books.id == book.Books.id)
+                .first()
+            ):
                 ub.delete_download(book.Books.id)
-        return render_title_template('index.html',
-                                     random=random,
-                                     entries=entries,
-                                     pagination=pagination,
-                                     id=user_id,
-                                     title=_("Downloaded books by %(user)s", user=user.name),
-                                     page="download",
-                                     order=order[1])
+        return render_title_template(
+            "index.html",
+            random=random,
+            entries=entries,
+            pagination=pagination,
+            id=user_id,
+            title=_("Downloaded books by %(user)s", user=user.name),
+            page="download",
+            order=order[1],
+        )
     else:
         abort(404)
 
 
 def render_author_books(page, author_id, order):
-    entries, __, pagination = calibre_db.fill_indexpage(page, 0,
-                                                        db.Books,
-                                                        db.Books.authors.any(db.Authors.id == author_id),
-                                                        [order[0][0], db.Series.name, db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
-                                                        True, config.config_read_column,
-                                                        db.books_series_link,
-                                                        db.books_series_link.c.book == db.Books.id,
-                                                        db.Series)
+    entries, __, pagination = calibre_db.fill_indexpage(
+        page,
+        0,
+        db.Books,
+        db.Books.authors.any(db.Authors.id == author_id),
+        [order[0][0], db.Series.name, db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
+        True,
+        config.config_read_column,
+        db.books_series_link,
+        db.books_series_link.c.book == db.Books.id,
+        db.Series,
+    )
     if entries is None or not len(entries):
-        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"),
-              category="error")
+        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"), category="error")
         return redirect(url_for("web.index"))
     if sqlalchemy_version2:
         author = calibre_db.session.get(db.Authors, author_id)
     else:
         author = calibre_db.session.query(db.Authors).get(author_id)
-    author_name = author.name.replace('|', ',')  # pyright: ignore[reportOptionalMemberAccess]
+    author_name = author.name.replace("|", ",")  # pyright: ignore[reportOptionalMemberAccess]
 
     author_info = None
     other_books = []
@@ -694,162 +759,250 @@ def render_author_books(page, author_id, order):
         author_info = services.goodreads_support.get_author_info(author_name)
         book_entries = [entry.Books for entry in entries]
         other_books = services.goodreads_support.get_other_books(author_info, book_entries)
-    return render_title_template('author.html', entries=entries, pagination=pagination, id=author_id,
-                                 title=_("Author: %(name)s", name=author_name),
-                                 author=author_info, calibre_author_name=author.name,  # pyright: ignore[reportOptionalMemberAccess]
-                                 other_books=other_books, page="author", order=order[1])
+    return render_title_template(
+        "author.html",
+        entries=entries,
+        pagination=pagination,
+        id=author_id,
+        title=_("Author: %(name)s", name=author_name),
+        author=author_info,
+        calibre_author_name=author.name,  # pyright: ignore[reportOptionalMemberAccess]
+        other_books=other_books,
+        page="author",
+        order=order[1],
+    )
 
 
 def render_publisher_books(page, book_id, order):
-    if book_id == '-1':
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Publishers.name is None,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [db.Series.name, order[0][0], db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
-                                                                True, config.config_read_column,
-                                                                db.books_publishers_link,
-                                                                db.Books.id == db.books_publishers_link.c.book,
-                                                                db.Publishers,
-                                                                db.books_series_link,
-                                                                db.Books.id == db.books_series_link.c.book,
-                                                                db.Series)
+    if book_id == "-1":
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Publishers.name is None,  # pyright: ignore[reportGeneralTypeIssues]
+            [db.Series.name, order[0][0], db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
+            True,
+            config.config_read_column,
+            db.books_publishers_link,
+            db.Books.id == db.books_publishers_link.c.book,
+            db.Publishers,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
         publisher = _("None")
     else:
         publisher = calibre_db.session.query(db.Publishers).filter(db.Publishers.id == book_id).first()
         if publisher:
-            entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                    db.Books,
-                                                                    db.Books.publishers.any(
-                                                                        db.Publishers.id == book_id),
-                                                                    [db.Series.name, order[0][0],  # pyright: ignore[reportGeneralTypeIssues]
-                                                                     db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
-                                                                    True, config.config_read_column,
-                                                                    db.books_series_link,
-                                                                    db.Books.id == db.books_series_link.c.book,
-                                                                    db.Series)
+            entries, random, pagination = calibre_db.fill_indexpage(
+                page,
+                0,
+                db.Books,
+                db.Books.publishers.any(db.Publishers.id == book_id),
+                [
+                    db.Series.name,
+                    order[0][0],  # pyright: ignore[reportGeneralTypeIssues]
+                    db.Books.series_index,
+                ],  # pyright: ignore[reportGeneralTypeIssues]
+                True,
+                config.config_read_column,
+                db.books_series_link,
+                db.Books.id == db.books_series_link.c.book,
+                db.Series,
+            )
             publisher = publisher.name
         else:
             abort(404)
 
-    return render_title_template('index.html', random=random, entries=entries, pagination=pagination, id=book_id,
-                                 title=_("Publisher: %(name)s", name=publisher),
-                                 page="publisher",
-                                 order=order[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        entries=entries,
+        pagination=pagination,
+        id=book_id,
+        title=_("Publisher: %(name)s", name=publisher),
+        page="publisher",
+        order=order[1],
+    )
 
 
 def render_series_books(page, book_id, order):
-    if book_id == '-1':
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Series.name is None,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [order[0][0]],
-                                                                True, config.config_read_column,
-                                                                db.books_series_link,
-                                                                db.Books.id == db.books_series_link.c.book,
-                                                                db.Series)
+    if book_id == "-1":
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Series.name is None,  # pyright: ignore[reportGeneralTypeIssues]
+            [order[0][0]],
+            True,
+            config.config_read_column,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
         series_name = _("None")
     else:
         series_name = calibre_db.session.query(db.Series).filter(db.Series.id == book_id).first()
         if series_name:
-            entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                    db.Books,
-                                                                    db.Books.series.any(db.Series.id == book_id),
-                                                                    [order[0][0]],
-                                                                    True, config.config_read_column)
+            entries, random, pagination = calibre_db.fill_indexpage(
+                page,
+                0,
+                db.Books,
+                db.Books.series.any(db.Series.id == book_id),
+                [order[0][0]],
+                True,
+                config.config_read_column,
+            )
             series_name = series_name.name
         else:
             abort(404)
-    return render_title_template('index.html', random=random, pagination=pagination, entries=entries, id=book_id,
-                                 title=_("Series: %(serie)s", serie=series_name), page="series", order=order[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        pagination=pagination,
+        entries=entries,
+        id=book_id,
+        title=_("Series: %(serie)s", serie=series_name),
+        page="series",
+        order=order[1],
+    )
 
 
 def render_ratings_books(page, book_id, order):
-    if book_id == '-1':
+    if book_id == "-1":
         db_filter = coalesce(db.Ratings.rating, 0) < 1  # pyright: ignore[reportGeneralTypeIssues]
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db_filter,
-                                                                [order[0][0]],
-                                                                True, config.config_read_column,
-                                                                db.books_ratings_link,
-                                                                db.Books.id == db.books_ratings_link.c.book,
-                                                                db.Ratings)
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db_filter,
+            [order[0][0]],
+            True,
+            config.config_read_column,
+            db.books_ratings_link,
+            db.Books.id == db.books_ratings_link.c.book,
+            db.Ratings,
+        )
         title = _("Rating: None")
     else:
         name = calibre_db.session.query(db.Ratings).filter(db.Ratings.id == book_id).first()
         if name:
-            entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                    db.Books,
-                                                                    db.Books.ratings.any(db.Ratings.id == book_id),
-                                                                    [order[0][0]],
-                                                                    True, config.config_read_column)
+            entries, random, pagination = calibre_db.fill_indexpage(
+                page,
+                0,
+                db.Books,
+                db.Books.ratings.any(db.Ratings.id == book_id),
+                [order[0][0]],
+                True,
+                config.config_read_column,
+            )
             title = _("Rating: %(rating)s stars", rating=int(name.rating / 2))  # pyright: ignore[reportArgumentType]
         else:
             abort(404)
-    return render_title_template('index.html', random=random, pagination=pagination, entries=entries, id=book_id,
-                                 title=title, page="ratings", order=order[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        pagination=pagination,
+        entries=entries,
+        id=book_id,
+        title=title,
+        page="ratings",
+        order=order[1],
+    )
 
 
 def render_formats_books(page, book_id, order):
-    if book_id == '-1':
+    if book_id == "-1":
         name = _("None")
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Data.format is None,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [order[0][0]],
-                                                                True, config.config_read_column,
-                                                                db.Data)
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Data.format is None,  # pyright: ignore[reportGeneralTypeIssues]
+            [order[0][0]],
+            True,
+            config.config_read_column,
+            db.Data,
+        )
 
     else:
         name = calibre_db.session.query(db.Data).filter(db.Data.format == book_id.upper()).first()  # pyright: ignore[reportGeneralTypeIssues]
         if name:
             name = name.format
-            entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                    db.Books,
-                                                                    db.Books.data.any(
-                                                                        db.Data.format == book_id.upper()),  # pyright: ignore[reportGeneralTypeIssues]
-                                                                    [order[0][0]],
-                                                                    True, config.config_read_column)
+            entries, random, pagination = calibre_db.fill_indexpage(
+                page,
+                0,
+                db.Books,
+                db.Books.data.any(db.Data.format == book_id.upper()),  # pyright: ignore[reportGeneralTypeIssues]
+                [order[0][0]],
+                True,
+                config.config_read_column,
+            )
         else:
             abort(404)
 
-    return render_title_template('index.html', random=random, pagination=pagination, entries=entries, id=book_id,
-                                 title=_("File format: %(format)s", format=name),
-                                 page="formats",
-                                 order=order[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        pagination=pagination,
+        entries=entries,
+        id=book_id,
+        title=_("File format: %(format)s", format=name),
+        page="formats",
+        order=order[1],
+    )
 
 
 def render_category_books(page, book_id, order):
-    if book_id == '-1':
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Tags.name is None,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [order[0][0], db.Series.name, db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
-                                                                True, config.config_read_column,
-                                                                db.books_tags_link,
-                                                                db.Books.id == db.books_tags_link.c.book,
-                                                                db.Tags,
-                                                                db.books_series_link,
-                                                                db.Books.id == db.books_series_link.c.book,
-                                                                db.Series)
+    if book_id == "-1":
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Tags.name is None,  # pyright: ignore[reportGeneralTypeIssues]
+            [order[0][0], db.Series.name, db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
+            True,
+            config.config_read_column,
+            db.books_tags_link,
+            db.Books.id == db.books_tags_link.c.book,
+            db.Tags,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
         tagsname = _("None")
     else:
         tagsname = calibre_db.session.query(db.Tags).filter(db.Tags.id == book_id).first()
         if tagsname:
-            entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                    db.Books,
-                                                                    db.Books.tags.any(db.Tags.id == book_id),
-                                                                    [order[0][0], db.Series.name,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                     db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
-                                                                    True, config.config_read_column,
-                                                                    db.books_series_link,
-                                                                    db.Books.id == db.books_series_link.c.book,
-                                                                    db.Series)
+            entries, random, pagination = calibre_db.fill_indexpage(
+                page,
+                0,
+                db.Books,
+                db.Books.tags.any(db.Tags.id == book_id),
+                [
+                    order[0][0],
+                    db.Series.name,  # pyright: ignore[reportGeneralTypeIssues]
+                    db.Books.series_index,
+                ],  # pyright: ignore[reportGeneralTypeIssues]
+                True,
+                config.config_read_column,
+                db.books_series_link,
+                db.Books.id == db.books_series_link.c.book,
+                db.Series,
+            )
             tagsname = tagsname.name
         else:
             abort(404)
-    return render_title_template('index.html', random=random, entries=entries, pagination=pagination, id=book_id,
-                                 title=_("Category: %(name)s", name=tagsname), page="category", order=order[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        entries=entries,
+        pagination=pagination,
+        id=book_id,
+        title=_("Category: %(name)s", name=tagsname),
+        page="category",
+        order=order[1],
+    )
 
 
 def render_language_books(page, name, order):
@@ -863,30 +1016,47 @@ def render_language_books(page, name, order):
     except KeyError:
         abort(404)
     if name.lower() == "none":
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Languages.lang_code is None,  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [order[0][0]],
-                                                                True, config.config_read_column,
-                                                                db.books_languages_link,
-                                                                db.Books.id == db.books_languages_link.c.book,
-                                                                db.Languages)
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Languages.lang_code is None,  # pyright: ignore[reportGeneralTypeIssues]
+            [order[0][0]],
+            True,
+            config.config_read_column,
+            db.books_languages_link,
+            db.Books.id == db.books_languages_link.c.book,
+            db.Languages,
+        )
     else:
-        entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                                db.Books,
-                                                                db.Books.languages.any(db.Languages.lang_code == name),  # pyright: ignore[reportGeneralTypeIssues]
-                                                                [order[0][0]],
-                                                                True, config.config_read_column)
-    return render_title_template('index.html', random=random, entries=entries, pagination=pagination, id=name,
-                                 title=_("Language: %(name)s", name=lang_name), page="language", order=order[1])
+        entries, random, pagination = calibre_db.fill_indexpage(
+            page,
+            0,
+            db.Books,
+            db.Books.languages.any(db.Languages.lang_code == name),  # pyright: ignore[reportGeneralTypeIssues]
+            [order[0][0]],
+            True,
+            config.config_read_column,
+        )
+    return render_title_template(
+        "index.html",
+        random=random,
+        entries=entries,
+        pagination=pagination,
+        id=name,
+        title=_("Language: %(name)s", name=lang_name),
+        page="language",
+        order=order[1],
+    )
 
 
 def render_read_books(page, are_read, as_xml=False, order=None):
     sort_param = order[0] if order else []
     if not config.config_read_column:
         if are_read:
-            db_filter = and_(ub.ReadBook.user_id == int(current_user.id),
-                             ub.ReadBook.read_status == ub.ReadBook.STATUS_FINISHED)
+            db_filter = and_(
+                ub.ReadBook.user_id == int(current_user.id), ub.ReadBook.read_status == ub.ReadBook.STATUS_FINISHED
+            )
         else:
             db_filter = coalesce(ub.ReadBook.read_status, 0) != ub.ReadBook.STATUS_FINISHED
     else:
@@ -898,68 +1068,91 @@ def render_read_books(page, are_read, as_xml=False, order=None):
         except (KeyError, AttributeError, IndexError):
             log.error(f"Custom Column No.{config.config_read_column} does not exist in calibre database")
             if not as_xml:
-                flash(_("Custom Column No.%(column)d does not exist in calibre database",
-                        column=config.config_read_column),
-                      category="error")
+                flash(
+                    _(
+                        "Custom Column No.%(column)d does not exist in calibre database",
+                        column=config.config_read_column,
+                    ),
+                    category="error",
+                )
                 return redirect(url_for("web.index"))
             return []  # ToDo: Handle error Case for opds
 
-    entries, random, pagination = calibre_db.fill_indexpage(page, 0,
-                                                            db.Books,
-                                                            db_filter,
-                                                            sort_param,
-                                                            True, config.config_read_column,
-                                                            db.books_series_link,
-                                                            db.Books.id == db.books_series_link.c.book,
-                                                            db.Series)
+    entries, random, pagination = calibre_db.fill_indexpage(
+        page,
+        0,
+        db.Books,
+        db_filter,
+        sort_param,
+        True,
+        config.config_read_column,
+        db.books_series_link,
+        db.Books.id == db.books_series_link.c.book,
+        db.Series,
+    )
 
     if as_xml:
         return entries, pagination
     else:
         if are_read:
-            name = _('Read Books') + ' (' + str(pagination.total_count) + ')'  # pyright: ignore[reportAttributeAccessIssue]
+            name = _("Read Books") + " (" + str(pagination.total_count) + ")"  # pyright: ignore[reportAttributeAccessIssue]
             page_name = "read"
         else:
-            name = _('Unread Books') + ' (' + str(pagination.total_count) + ')'  # pyright: ignore[reportAttributeAccessIssue]
+            name = _("Unread Books") + " (" + str(pagination.total_count) + ")"  # pyright: ignore[reportAttributeAccessIssue]
             page_name = "unread"
-        return render_title_template('index.html', random=random, entries=entries, pagination=pagination,
-                                     title=name, page=page_name, order=order[1])  # pyright: ignore[reportOptionalSubscript]
+        return render_title_template(
+            "index.html",
+            random=random,
+            entries=entries,
+            pagination=pagination,
+            title=name,
+            page=page_name,
+            order=order[1],
+        )  # pyright: ignore[reportOptionalSubscript]
 
 
 def render_archived_books(page, sort_param):
     order = sort_param[0] or []
-    archived_books = (ub.session.query(ub.ArchivedBook)
-                      .filter(ub.ArchivedBook.user_id == int(current_user.id))
-                      .filter(ub.ArchivedBook.is_archived)
-                      .all())
+    archived_books = (
+        ub.session.query(ub.ArchivedBook)
+        .filter(ub.ArchivedBook.user_id == int(current_user.id))
+        .filter(ub.ArchivedBook.is_archived)
+        .all()
+    )
     archived_book_ids = [archived_book.book_id for archived_book in archived_books]
 
     archived_filter = db.Books.id.in_(archived_book_ids)
 
-    entries, random, pagination = calibre_db.fill_indexpage_with_archived_books(page, db.Books,
-                                                                                0,
-                                                                                archived_filter,
-                                                                                order,
-                                                                                True,
-                                                                                True, config.config_read_column)
+    entries, random, pagination = calibre_db.fill_indexpage_with_archived_books(
+        page, db.Books, 0, archived_filter, order, True, True, config.config_read_column
+    )
 
-    name = _('Archived Books') + ' (' + str(len(entries)) + ')'
+    name = _("Archived Books") + " (" + str(len(entries)) + ")"
     page_name = "archived"
-    return render_title_template('index.html', random=random, entries=entries, pagination=pagination,
-                                 title=name, page=page_name, order=sort_param[1])
+    return render_title_template(
+        "index.html",
+        random=random,
+        entries=entries,
+        pagination=pagination,
+        title=name,
+        page=page_name,
+        order=sort_param[1],
+    )
 
 
 # ################################### View Books list ##################################################################
 
 
-@web.route("/", defaults={'page': 1})
-@web.route('/page/<int:page>')
+@web.route("/", defaults={"page": 1})
+@web.route("/page/<int:page>")
 @login_required_if_no_ano
 def index(page):
-    sort_param = (request.args.get('sort') or 'stored').lower()
+    sort_param = (request.args.get("sort") or "stored").lower()
     response = make_response(render_books_list("newest", sort_param, 1, page))
-    response.headers['Link'] = '</.well-known/api-catalog>; rel="api-catalog"'
-    response.headers['Link'] += ', <' + url_for('web.get_ai_catalog', _external=True).rstrip('/') + '>; rel="ai-catalog"'
+    response.headers["Link"] = '</.well-known/api-catalog>; rel="api-catalog"'
+    response.headers["Link"] += (
+        ", <" + url_for("web.get_ai_catalog", _external=True).rstrip("/") + '>; rel="ai-catalog"'
+    )
     return response
 
 
@@ -967,23 +1160,42 @@ def index(page):
 def books_list(data, sort_param, book_id, page):
     return render_books_list(data, sort_param, book_id, page)
 
+
 # Limit number of routes to avoid redirects
-data =["rated", "discover", "unread", "read", "hot", "download", "author", "publisher", "series", "ratings", "formats",
-       "category", "language", "archived", "search", "advsearch", "newest"]
+data = [
+    "rated",
+    "discover",
+    "unread",
+    "read",
+    "hot",
+    "download",
+    "author",
+    "publisher",
+    "series",
+    "ratings",
+    "formats",
+    "category",
+    "language",
+    "archived",
+    "search",
+    "advsearch",
+    "newest",
+]
 for d in data:
-    web.add_url_rule(f'/{d}/<sort_param>', view_func=books_list, defaults={'page': 1, 'book_id': 1, "data": d})  # pyright: ignore[reportArgumentType]
-    web.add_url_rule(f'/{d}/<sort_param>/', view_func=books_list, defaults={'page': 1, 'book_id': 1, "data": d})  # pyright: ignore[reportArgumentType]
-    web.add_url_rule(f'/{d}/<sort_param>/<book_id>', view_func=books_list, defaults={'page': 1, "data": d})  # pyright: ignore[reportArgumentType]
-    web.add_url_rule(f'/{d}/<sort_param>/<book_id>/<int:page>', defaults={"data": d}, view_func=books_list)  # pyright: ignore[reportArgumentType]
+    web.add_url_rule(f"/{d}/<sort_param>", view_func=books_list, defaults={"page": 1, "book_id": 1, "data": d})  # pyright: ignore[reportArgumentType]
+    web.add_url_rule(f"/{d}/<sort_param>/", view_func=books_list, defaults={"page": 1, "book_id": 1, "data": d})  # pyright: ignore[reportArgumentType]
+    web.add_url_rule(f"/{d}/<sort_param>/<book_id>", view_func=books_list, defaults={"page": 1, "data": d})  # pyright: ignore[reportArgumentType]
+    web.add_url_rule(f"/{d}/<sort_param>/<book_id>/<int:page>", defaults={"data": d}, view_func=books_list)  # pyright: ignore[reportArgumentType]
 
 
 @web.route("/table")
 @user_login_required
 def books_table():
-    visibility = current_user.view_settings.get('table', {})
+    visibility = current_user.view_settings.get("table", {})
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
-    return render_title_template('book_table.html', title=_("Books List"), cc=cc, page="book_table",
-                                 visiblility=visibility)
+    return render_title_template(
+        "book_table.html", title=_("Books List"), cc=cc, page="book_table", visiblility=visibility
+    )
 
 
 @web.route("/ajax/listbooks")
@@ -1010,10 +1222,19 @@ def list_books():
         order = [db.Publishers.name.asc()] if order == "asc" else [db.Publishers.name.desc()]  # pyright: ignore[reportGeneralTypeIssues]
         join = db.books_publishers_link, db.Books.id == db.books_publishers_link.c.book, db.Publishers
     elif sort_param == "authors":
-        order = ([db.Authors.name.asc(), db.Series.name, db.Books.series_index] if order == "asc"  # pyright: ignore[reportGeneralTypeIssues]
-                 else [db.Authors.name.desc(), db.Series.name.desc(), db.Books.series_index.desc()])  # pyright: ignore[reportGeneralTypeIssues]
-        join = (db.books_authors_link, db.Books.id == db.books_authors_link.c.book, db.Authors, db.books_series_link,
-                db.Books.id == db.books_series_link.c.book, db.Series)
+        order = (
+            [db.Authors.name.asc(), db.Series.name, db.Books.series_index]
+            if order == "asc"  # pyright: ignore[reportGeneralTypeIssues]
+            else [db.Authors.name.desc(), db.Series.name.desc(), db.Books.series_index.desc()]
+        )  # pyright: ignore[reportGeneralTypeIssues]
+        join = (
+            db.books_authors_link,
+            db.Books.id == db.books_authors_link.c.book,
+            db.Authors,
+            db.books_series_link,
+            db.Books.id == db.books_series_link.c.book,
+            db.Series,
+        )
     elif sort_param == "languages":
         order = [db.Languages.lang_code.asc()] if order == "asc" else [db.Languages.lang_code.desc()]  # pyright: ignore[reportGeneralTypeIssues]
         join = db.books_languages_link, db.Books.id == db.books_languages_link.c.book, db.Languages
@@ -1022,8 +1243,9 @@ def list_books():
     elif not state:
         order = [db.Books.timestamp.desc()]  # pyright: ignore[reportGeneralTypeIssues]
 
-    total_count = filtered_count = calibre_db.session.query(db.Books).filter(
-        calibre_db.common_filters(allow_show_archived=True)).count()
+    total_count = filtered_count = (
+        calibre_db.session.query(db.Books).filter(calibre_db.common_filters(allow_show_archived=True)).count()
+    )
     if state is not None:
         if search_param:
             books = calibre_db.search_query(search_param, config).all()
@@ -1033,22 +1255,13 @@ def list_books():
             books = query.filter(calibre_db.common_filters(allow_show_archived=True)).all()
         entries = calibre_db.get_checkbox_sorted(books, state, off, limit, order, True)
     elif search_param:
-        entries, filtered_count, __ = calibre_db.get_search_results(search_param,
-                                                                    config,
-                                                                    off,
-                                                                    [order, ''],
-                                                                    limit,
-                                                                    *join)
+        entries, filtered_count, __ = calibre_db.get_search_results(
+            search_param, config, off, [order, ""], limit, *join
+        )
     else:
-        entries, __, __ = calibre_db.fill_indexpage_with_archived_books((int(off) / (int(limit)) + 1),
-                                                                        db.Books,
-                                                                        limit,
-                                                                        True,
-                                                                        order,
-                                                                        True,
-                                                                        True,
-                                                                        config.config_read_column,
-                                                                        *join)
+        entries, __, __ = calibre_db.fill_indexpage_with_archived_books(
+            (int(off) / (int(limit)) + 1), db.Books, limit, True, order, True, True, config.config_read_column, *join
+        )
 
     result = list()
     for entry in entries:
@@ -1056,11 +1269,12 @@ def list_books():
         val.is_archived = entry[1] is True
         val.read_status = entry[2] == ub.ReadBook.STATUS_FINISHED
         for lang_index in range(0, len(val.languages)):
-            val.languages[lang_index].language_name = isoLanguages.get_language_name(get_locale(), val.languages[
-                lang_index].lang_code)
+            val.languages[lang_index].language_name = isoLanguages.get_language_name(
+                get_locale(), val.languages[lang_index].lang_code
+            )
         result.append(val)
 
-    table_entries = {'totalNotFiltered': total_count, 'total': filtered_count, "rows": result}
+    table_entries = {"totalNotFiltered": total_count, "total": filtered_count, "rows": result}
     js_list = json.dumps(table_entries, cls=db.AlchemyEncoder)
 
     response = make_response(js_list)
@@ -1068,16 +1282,19 @@ def list_books():
     return response
 
 
-@web.route("/ajax/table_settings", methods=['POST'])
+@web.route("/ajax/table_settings", methods=["POST"])
 @user_login_required
 def update_table_settings():
-    current_user.view_settings['table'] = json.loads(request.data)
+    current_user.view_settings["table"] = json.loads(request.data)
     try:
         with contextlib.suppress(AttributeError):
             flag_modified(current_user, "view_settings")
         ub.session.commit()
     except (InvalidRequestError, OperationalError):
-        log.error("Invalid request received: %r ", request, )
+        log.error(
+            "Invalid request received: %r ",
+            request,
+        )
         return "Invalid request", 400
     return ""
 
@@ -1086,23 +1303,37 @@ def update_table_settings():
 @login_required_if_no_ano
 def author_list():
     if current_user.check_visibility(constants.SIDEBAR_AUTHOR):
-        if current_user.get_view_property('author', 'dir') == 'desc':
+        if current_user.get_view_property("author", "dir") == "desc":
             order = db.Authors.sort.desc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 0
         else:
             order = db.Authors.sort.asc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 1
-        entries = (calibre_db.session.query(db.Authors, func.count('books_authors_link.book').label('count'))  # pyright: ignore[reportArgumentType]
-            .join(db.books_authors_link).join(db.Books).filter(calibre_db.common_filters())
-            .group_by(text('books_authors_link.author')).order_by(order).all())
+        entries = (
+            calibre_db.session.query(db.Authors, func.count("books_authors_link.book").label("count"))  # pyright: ignore[reportArgumentType]
+            .join(db.books_authors_link)
+            .join(db.Books)
+            .filter(calibre_db.common_filters())
+            .group_by(text("books_authors_link.author"))
+            .order_by(order)
+            .all()
+        )
         char_list = query_char_list(db.Authors.sort, db.books_authors_link)  # pyright: ignore[reportGeneralTypeIssues]
         # If not creating a copy, readonly databases can not display authornames with "|" in it as changing the name
         # starts a change session
         author_copy = copy.deepcopy(entries)
         for entry in author_copy:
-            entry.Authors.name = entry.Authors.name.replace('|', ',')
-        return render_title_template('list.html', entries=author_copy, folder='web.books_list', charlist=char_list,
-                                     title="Authors", page="authorlist", data='author', order=order_no)
+            entry.Authors.name = entry.Authors.name.replace("|", ",")
+        return render_title_template(
+            "list.html",
+            entries=author_copy,
+            folder="web.books_list",
+            charlist=char_list,
+            title="Authors",
+            page="authorlist",
+            data="author",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1110,20 +1341,36 @@ def author_list():
 @web.route("/downloadlist")
 @login_required_if_no_ano
 def download_list():
-    if current_user.get_view_property('download', 'dir') == 'desc':
+    if current_user.get_view_property("download", "dir") == "desc":
         order = ub.User.name.desc()  # pyright: ignore[reportAttributeAccessIssue]
         order_no = 0
     else:
         order = ub.User.name.asc()  # pyright: ignore[reportAttributeAccessIssue]
         order_no = 1
     if current_user.check_visibility(constants.SIDEBAR_DOWNLOAD) and current_user.role_admin():
-        entries = (ub.session.query(ub.User, func.count(ub.Downloads.book_id).label('count'))  # pyright: ignore[reportArgumentType]
-            .join(ub.Downloads).group_by(ub.Downloads.user_id).order_by(order).all())  # pyright: ignore[reportArgumentType]
-        char_list = (ub.session.query(func.upper(func.substr(ub.User.name, 1, 1)).label('char'))
-            .filter(ub.User.role.op('&')(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
-            .group_by(func.upper(func.substr(ub.User.name, 1, 1))).all())
-        return render_title_template('list.html', entries=entries, folder='web.books_list', charlist=char_list,
-                                     title=_("Downloads"), page="downloadlist", data="download", order=order_no)
+        entries = (
+            ub.session.query(ub.User, func.count(ub.Downloads.book_id).label("count"))  # pyright: ignore[reportArgumentType]
+            .join(ub.Downloads)
+            .group_by(ub.Downloads.user_id)
+            .order_by(order)
+            .all()
+        )  # pyright: ignore[reportArgumentType]
+        char_list = (
+            ub.session.query(func.upper(func.substr(ub.User.name, 1, 1)).label("char"))
+            .filter(ub.User.role.op("&")(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
+            .group_by(func.upper(func.substr(ub.User.name, 1, 1)))
+            .all()
+        )
+        return render_title_template(
+            "list.html",
+            entries=entries,
+            folder="web.books_list",
+            charlist=char_list,
+            title=_("Downloads"),
+            page="downloadlist",
+            data="download",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1131,27 +1378,44 @@ def download_list():
 @web.route("/publisher")
 @login_required_if_no_ano
 def publisher_list():
-    if current_user.get_view_property('publisher', 'dir') == 'desc':
+    if current_user.get_view_property("publisher", "dir") == "desc":
         order = db.Publishers.name.desc()  # pyright: ignore[reportGeneralTypeIssues]
         order_no = 0
     else:
         order = db.Publishers.name.asc()  # pyright: ignore[reportGeneralTypeIssues]
         order_no = 1
     if current_user.check_visibility(constants.SIDEBAR_PUBLISHER):
-        entries = (calibre_db.session.query(db.Publishers, func.count('books_publishers_link.book').label('count'))  # pyright: ignore[reportArgumentType]
-            .join(db.books_publishers_link).join(db.Books).filter(calibre_db.common_filters())
-            .group_by(text('books_publishers_link.publisher')).order_by(order).all())
-        no_publisher_count = (calibre_db.session.query(db.Books)
-                           .outerjoin(db.books_publishers_link).outerjoin(db.Publishers)
-                           .filter(db.Publishers.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                           .filter(calibre_db.common_filters())
-                           .count())
+        entries = (
+            calibre_db.session.query(db.Publishers, func.count("books_publishers_link.book").label("count"))  # pyright: ignore[reportArgumentType]
+            .join(db.books_publishers_link)
+            .join(db.Books)
+            .filter(calibre_db.common_filters())
+            .group_by(text("books_publishers_link.publisher"))
+            .order_by(order)
+            .all()
+        )
+        no_publisher_count = (
+            calibre_db.session.query(db.Books)
+            .outerjoin(db.books_publishers_link)
+            .outerjoin(db.Publishers)
+            .filter(db.Publishers.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+            .filter(calibre_db.common_filters())
+            .count()
+        )
         if no_publisher_count:
             entries.append([db.Category(_("None"), "-1"), no_publisher_count])  # pyright: ignore[reportArgumentType]
         entries = sorted(entries, key=lambda x: x[0].name.lower(), reverse=not order_no)
         char_list = generate_char_list(entries)
-        return render_title_template('list.html', entries=entries, folder='web.books_list', charlist=char_list,
-                                     title=_("Publishers"), page="publisherlist", data="publisher", order=order_no)
+        return render_title_template(
+            "list.html",
+            entries=entries,
+            folder="web.books_list",
+            charlist=char_list,
+            title=_("Publishers"),
+            page="publisherlist",
+            data="publisher",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1160,43 +1424,71 @@ def publisher_list():
 @login_required_if_no_ano
 def series_list():
     if current_user.check_visibility(constants.SIDEBAR_SERIES):
-        if current_user.get_view_property('series', 'dir') == 'desc':
+        if current_user.get_view_property("series", "dir") == "desc":
             order = db.Series.sort.desc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 0
         else:
             order = db.Series.sort.asc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 1
         char_list = query_char_list(db.Series.sort, db.books_series_link)  # pyright: ignore[reportGeneralTypeIssues]
-        if current_user.get_view_property('series', 'series_view') == 'list':
-            entries = (calibre_db.session.query(db.Series, func.count('books_series_link.book').label('count'))  # pyright: ignore[reportArgumentType]
-                .join(db.books_series_link).join(db.Books).filter(calibre_db.common_filters())
-                .group_by(text('books_series_link.series')).order_by(order).all())
-            no_series_count = (calibre_db.session.query(db.Books)
-                            .outerjoin(db.books_series_link).outerjoin(db.Series)
-                            .filter(db.Series.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                            .filter(calibre_db.common_filters())
-                            .count())
+        if current_user.get_view_property("series", "series_view") == "list":
+            entries = (
+                calibre_db.session.query(db.Series, func.count("books_series_link.book").label("count"))  # pyright: ignore[reportArgumentType]
+                .join(db.books_series_link)
+                .join(db.Books)
+                .filter(calibre_db.common_filters())
+                .group_by(text("books_series_link.series"))
+                .order_by(order)
+                .all()
+            )
+            no_series_count = (
+                calibre_db.session.query(db.Books)
+                .outerjoin(db.books_series_link)
+                .outerjoin(db.Series)
+                .filter(db.Series.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+                .filter(calibre_db.common_filters())
+                .count()
+            )
             if no_series_count:
                 entries.append([db.Category(_("None"), "-1"), no_series_count])  # pyright: ignore[reportArgumentType]
             entries = sorted(entries, key=lambda x: (x[0].sort or x[0].name).lower(), reverse=not order_no)
-            return render_title_template('list.html',
-                                         entries=entries,
-                                         folder='web.books_list',
-                                         charlist=char_list,
-                                         title=_("Series"),
-                                         page="serieslist",
-                                         data="series", order=order_no)
+            return render_title_template(
+                "list.html",
+                entries=entries,
+                folder="web.books_list",
+                charlist=char_list,
+                title=_("Series"),
+                page="serieslist",
+                data="series",
+                order=order_no,
+            )
         else:
-            entries = (calibre_db.session.query(db.Books, func.count('books_series_link').label('count'),  # pyright: ignore[reportArgumentType]
-                                                func.max(db.Books.series_index), db.Books.id)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                       .join(db.books_series_link).join(db.Series).filter(calibre_db.common_filters())
-                       .group_by(text('books_series_link.series'))
-                       .having(or_(func.max(db.Books.series_index), db.Books.series_index==""))  # pyright: ignore[reportArgumentType,reportGeneralTypeIssues]
-                       .order_by(order)
-                       .all())
-            return render_title_template('grid.html', entries=entries, folder='web.books_list', charlist=char_list,
-                                         title=_("Series"), page="serieslist", data="series", bodyClass="grid-view",
-                                         order=order_no)
+            entries = (
+                calibre_db.session.query(
+                    db.Books,
+                    func.count("books_series_link").label("count"),  # pyright: ignore[reportArgumentType]
+                    func.max(db.Books.series_index),
+                    db.Books.id,
+                )  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+                .join(db.books_series_link)
+                .join(db.Series)
+                .filter(calibre_db.common_filters())
+                .group_by(text("books_series_link.series"))
+                .having(or_(func.max(db.Books.series_index), db.Books.series_index == ""))  # pyright: ignore[reportArgumentType,reportGeneralTypeIssues]
+                .order_by(order)
+                .all()
+            )
+            return render_title_template(
+                "grid.html",
+                entries=entries,
+                folder="web.books_list",
+                charlist=char_list,
+                title=_("Series"),
+                page="serieslist",
+                data="series",
+                bodyClass="grid-view",
+                order=order_no,
+            )
     else:
         abort(404)
 
@@ -1205,27 +1497,47 @@ def series_list():
 @login_required_if_no_ano
 def ratings_list():
     if current_user.check_visibility(constants.SIDEBAR_RATING):
-        if current_user.get_view_property('ratings', 'dir') == 'desc':
+        if current_user.get_view_property("ratings", "dir") == "desc":
             order = db.Ratings.rating.desc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 0
         else:
             order = db.Ratings.rating.asc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 1
-        entries = (calibre_db.session.query(db.Ratings, func.count('books_ratings_link.book').label('count'),  # pyright: ignore[reportArgumentType]
-                                           (db.Ratings.rating / 2).label('name'))  # pyright: ignore[reportGeneralTypeIssues]
-            .join(db.books_ratings_link).join(db.Books).filter(calibre_db.common_filters())
+        entries = (
+            calibre_db.session.query(
+                db.Ratings,
+                func.count("books_ratings_link.book").label("count"),  # pyright: ignore[reportArgumentType]
+                (db.Ratings.rating / 2).label("name"),
+            )  # pyright: ignore[reportGeneralTypeIssues]
+            .join(db.books_ratings_link)
+            .join(db.Books)
+            .filter(calibre_db.common_filters())
             .filter(db.Ratings.rating > 0)  # pyright: ignore[reportGeneralTypeIssues]
-            .group_by(text('books_ratings_link.rating')).order_by(order).all())
-        no_rating_count = (calibre_db.session.query(db.Books)
-                           .outerjoin(db.books_ratings_link).outerjoin(db.Ratings)
-                           .filter(or_(db.Ratings.rating is None, db.Ratings.rating == 0))  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                           .filter(calibre_db.common_filters())
-                           .count())
+            .group_by(text("books_ratings_link.rating"))
+            .order_by(order)
+            .all()
+        )
+        no_rating_count = (
+            calibre_db.session.query(db.Books)
+            .outerjoin(db.books_ratings_link)
+            .outerjoin(db.Ratings)
+            .filter(or_(db.Ratings.rating is None, db.Ratings.rating == 0))  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+            .filter(calibre_db.common_filters())
+            .count()
+        )
         if no_rating_count:
             entries.append([db.Category(_("None"), "-1", -1), no_rating_count])  # pyright: ignore[reportArgumentType]
         entries = sorted(entries, key=lambda x: x[0].rating, reverse=not order_no)
-        return render_title_template('list.html', entries=entries, folder='web.books_list', charlist=list(),
-                                     title=_("Ratings list"), page="ratingslist", data="ratings", order=order_no)
+        return render_title_template(
+            "list.html",
+            entries=entries,
+            folder="web.books_list",
+            charlist=list(),
+            title=_("Ratings list"),
+            page="ratingslist",
+            data="ratings",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1234,25 +1546,43 @@ def ratings_list():
 @login_required_if_no_ano
 def formats_list():
     if current_user.check_visibility(constants.SIDEBAR_FORMAT):
-        if current_user.get_view_property('formats', 'dir') == 'desc':
+        if current_user.get_view_property("formats", "dir") == "desc":
             order = db.Data.format.desc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 0
         else:
             order = db.Data.format.asc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 1
-        entries = (calibre_db.session.query(db.Data,
-                                           func.count('data.book').label('count'),  # pyright: ignore[reportArgumentType]
-                                           db.Data.format.label('format'))  # pyright: ignore[reportGeneralTypeIssues]
-            .join(db.Books).filter(calibre_db.common_filters())
-            .group_by(db.Data.format).order_by(order).all())  # pyright: ignore[reportGeneralTypeIssues]
-        no_format_count = (calibre_db.session.query(db.Books).outerjoin(db.Data)
-                           .filter(db.Data.format is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                           .filter(calibre_db.common_filters())
-                           .count())
+        entries = (
+            calibre_db.session.query(
+                db.Data,
+                func.count("data.book").label("count"),  # pyright: ignore[reportArgumentType]
+                db.Data.format.label("format"),
+            )  # pyright: ignore[reportGeneralTypeIssues]
+            .join(db.Books)
+            .filter(calibre_db.common_filters())
+            .group_by(db.Data.format)
+            .order_by(order)
+            .all()
+        )  # pyright: ignore[reportGeneralTypeIssues]
+        no_format_count = (
+            calibre_db.session.query(db.Books)
+            .outerjoin(db.Data)
+            .filter(db.Data.format is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+            .filter(calibre_db.common_filters())
+            .count()
+        )
         if no_format_count:
             entries.append([db.Category(_("None"), "-1"), no_format_count])  # pyright: ignore[reportArgumentType]
-        return render_title_template('list.html', entries=entries, folder='web.books_list', charlist=list(),
-                                     title=_("File formats list"), page="formatslist", data="formats", order=order_no)
+        return render_title_template(
+            "list.html",
+            entries=entries,
+            folder="web.books_list",
+            charlist=list(),
+            title=_("File formats list"),
+            page="formatslist",
+            data="formats",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1261,11 +1591,19 @@ def formats_list():
 @login_required_if_no_ano
 def language_overview():
     if current_user.check_visibility(constants.SIDEBAR_LANGUAGE) and current_user.filter_language() == "all":
-        order_no = 0 if current_user.get_view_property('language', 'dir') == 'desc' else 1
+        order_no = 0 if current_user.get_view_property("language", "dir") == "desc" else 1
         languages = calibre_db.speaking_language(reverse_order=not order_no, with_count=True)
         char_list = generate_char_list(languages)
-        return render_title_template('list.html', entries=languages, folder='web.books_list', charlist=char_list,
-                                     title=_("Languages"), page="langlist", data="language", order=order_no)
+        return render_title_template(
+            "list.html",
+            entries=languages,
+            folder="web.books_list",
+            charlist=char_list,
+            title=_("Languages"),
+            page="langlist",
+            data="language",
+            order=order_no,
+        )
     else:
         abort(404)
 
@@ -1274,30 +1612,45 @@ def language_overview():
 @login_required_if_no_ano
 def category_list():
     if current_user.check_visibility(constants.SIDEBAR_CATEGORY):
-        if current_user.get_view_property('category', 'dir') == 'desc':
+        if current_user.get_view_property("category", "dir") == "desc":
             order = db.Tags.name.desc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 0
         else:
             order = db.Tags.name.asc()  # pyright: ignore[reportGeneralTypeIssues]
             order_no = 1
-        entries = (calibre_db.session.query(db.Tags, func.count('books_tags_link.book').label('count'))  # pyright: ignore[reportArgumentType]
-            .join(db.books_tags_link).join(db.Books).order_by(order).filter(calibre_db.common_filters())
-            .group_by(db.Tags.id).all())
-        no_tag_count = (calibre_db.session.query(db.Books)
-                         .outerjoin(db.books_tags_link).outerjoin(db.Tags)
-                        .filter(db.Tags.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
-                         .filter(calibre_db.common_filters())
-                         .count())
+        entries = (
+            calibre_db.session.query(db.Tags, func.count("books_tags_link.book").label("count"))  # pyright: ignore[reportArgumentType]
+            .join(db.books_tags_link)
+            .join(db.Books)
+            .order_by(order)
+            .filter(calibre_db.common_filters())
+            .group_by(db.Tags.id)
+            .all()
+        )
+        no_tag_count = (
+            calibre_db.session.query(db.Books)
+            .outerjoin(db.books_tags_link)
+            .outerjoin(db.Tags)
+            .filter(db.Tags.name is None)  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType]
+            .filter(calibre_db.common_filters())
+            .count()
+        )
         if no_tag_count:
             entries.append([db.Category(_("None"), "-1"), no_tag_count])  # pyright: ignore[reportArgumentType]
         entries = sorted(entries, key=lambda x: x[0].name.lower(), reverse=not order_no)
         char_list = generate_char_list(entries)
-        return render_title_template('list.html', entries=entries, folder='web.books_list', charlist=char_list,
-                                     title=_("Categories"), page="catlist", data="category", order=order_no)
+        return render_title_template(
+            "list.html",
+            entries=entries,
+            folder="web.books_list",
+            charlist=char_list,
+            title=_("Categories"),
+            page="catlist",
+            data="category",
+            order=order_no,
+        )
     else:
         abort(404)
-
-
 
 
 # ################################### Download/Send ##################################################################
@@ -1308,13 +1661,13 @@ def category_list():
 @login_required_if_no_ano
 def get_cover(book_id, resolution=None):
     resolutions = {
-        'og': constants.COVER_THUMBNAIL_ORIGINAL,
-        'sm': constants.COVER_THUMBNAIL_SMALL,
-        'md': constants.COVER_THUMBNAIL_MEDIUM,
-        'lg': constants.COVER_THUMBNAIL_LARGE,
+        "og": constants.COVER_THUMBNAIL_ORIGINAL,
+        "sm": constants.COVER_THUMBNAIL_SMALL,
+        "md": constants.COVER_THUMBNAIL_MEDIUM,
+        "lg": constants.COVER_THUMBNAIL_LARGE,
     }
     cover_resolution = resolutions.get(resolution)  # pyright: ignore[reportArgumentType,reportCallIssue]
-    accept_webp = 'image/webp' in request.accept_mimetypes
+    accept_webp = "image/webp" in request.accept_mimetypes
     return get_book_cover(book_id, cover_resolution, accept_webp=accept_webp)
 
 
@@ -1322,17 +1675,17 @@ def get_cover(book_id, resolution=None):
 @web.route("/cover_thumb/<int:book_id>/<string:resolution>")
 def get_cover_thumb(book_id, resolution=None):
     resolutions = {
-        'og': constants.COVER_THUMBNAIL_ORIGINAL,
-        'sm': constants.COVER_THUMBNAIL_SMALL,
-        'md': constants.COVER_THUMBNAIL_MEDIUM,
-        'lg': constants.COVER_THUMBNAIL_LARGE,
+        "og": constants.COVER_THUMBNAIL_ORIGINAL,
+        "sm": constants.COVER_THUMBNAIL_SMALL,
+        "md": constants.COVER_THUMBNAIL_MEDIUM,
+        "lg": constants.COVER_THUMBNAIL_LARGE,
     }
     cover_resolution = resolutions.get(resolution, constants.COVER_THUMBNAIL_SMALL)  # pyright: ignore[reportArgumentType,reportCallIssue]
-    accept_webp = 'image/webp' in request.accept_mimetypes
+    accept_webp = "image/webp" in request.accept_mimetypes
     response = get_book_cover(book_id, cover_resolution, accept_webp=accept_webp)
     try:
-        response.headers['Cache-Control'] = 'public, max-age=604800'
-        response.headers['Vary'] = 'Accept, Accept-Encoding' if accept_webp else 'Accept-Encoding'
+        response.headers["Cache-Control"] = "public, max-age=604800"
+        response.headers["Vary"] = "Accept-Encoding"
     except AttributeError:
         pass
     return response
@@ -1343,15 +1696,14 @@ def get_cover_thumb(book_id, resolution=None):
 @login_required_if_no_ano
 def get_series_cover(series_id, resolution=None):
     resolutions = {
-        'og': constants.COVER_THUMBNAIL_ORIGINAL,
-        'sm': constants.COVER_THUMBNAIL_SMALL,
-        'md': constants.COVER_THUMBNAIL_MEDIUM,
-        'lg': constants.COVER_THUMBNAIL_LARGE,
+        "og": constants.COVER_THUMBNAIL_ORIGINAL,
+        "sm": constants.COVER_THUMBNAIL_SMALL,
+        "md": constants.COVER_THUMBNAIL_MEDIUM,
+        "lg": constants.COVER_THUMBNAIL_LARGE,
     }
     cover_resolution = resolutions.get(resolution)  # pyright: ignore[reportArgumentType,reportCallIssue]
-    accept_webp = 'image/webp' in request.accept_mimetypes
+    accept_webp = "image/webp" in request.accept_mimetypes
     return get_series_cover_thumbnail(series_id, cover_resolution, accept_webp=accept_webp)
-
 
 
 @web.route("/robots.txt")
@@ -1360,7 +1712,7 @@ def get_robots():
         robots_path = os.path.join(constants.STATIC_DIR, "robots.txt")
         if os.path.exists(robots_path):
             return send_from_directory(constants.STATIC_DIR, "robots.txt")
-        sitemap_url = url_for('web.get_sitemap', _external=True)
+        sitemap_url = url_for("web.get_sitemap", _external=True)
         content = f"""User-agent: *
 Allow: /
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
@@ -1385,7 +1737,9 @@ def get_opensearch():
   <Image>{base_url}favicon.ico</Image>
   <InputEncoding>UTF-8</InputEncoding>
   <OutputEncoding>UTF-8</OutputEncoding>
-</OpenSearchDescription>""".format(instance=config.config_calibre_web_title, base_url=url_for('web.index', _external=True).rstrip('/'))
+</OpenSearchDescription>""".format(
+            instance=config.config_calibre_web_title, base_url=url_for("web.index", _external=True).rstrip("/")
+        )
         response = make_response(content)
         response.headers["Content-Type"] = "application/xml; charset=utf-8"
         return response
@@ -1397,19 +1751,24 @@ def get_opensearch():
 @web.route("/.well-known/agent-skills/index.json")
 def get_agent_skills_index():
     try:
-        base_url = url_for('web.index', _external=True).rstrip('/')
-        response = make_response(json.dumps({
-            "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
-            "skills": [
+        base_url = url_for("web.index", _external=True).rstrip("/")
+        response = make_response(
+            json.dumps(
                 {
-                    "name": "calibre-web-book-search",
-                    "type": "skill-md",
-                    "description": "Search and browse Calibre-Web eBook catalog by title, author, series, or keywords",
-                    "url": f"{base_url}/.well-known/agent-skills/agent-skills/SKILL.md",
-                    "digest": "sha256:2cdda60ea052eb8af4ae8a4d96dc0d173151d5386ee724a4e98f93ed21adbae5"
-                }
-            ]
-        }, indent=2))
+                    "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+                    "skills": [
+                        {
+                            "name": "calibre-web-book-search",
+                            "type": "skill-md",
+                            "description": "Search and browse Calibre-Web eBook catalog by title, author, series, or keywords",
+                            "url": f"{base_url}/.well-known/agent-skills/agent-skills/SKILL.md",
+                            "digest": "sha256:2cdda60ea052eb8af4ae8a4d96dc0d173151d5386ee724a4e98f93ed21adbae5",
+                        }
+                    ],
+                },
+                indent=2,
+            )
+        )
         response.headers["Content-Type"] = "application/json"
         return response
     except Exception:
@@ -1420,19 +1779,21 @@ def get_agent_skills_index():
 @web.route("/.well-known/mcp/server-card.json")
 def get_mcp_server_card():
     try:
-        response = make_response(json.dumps({
-            "serverInfo": {
-                "name": "calibre-web",
-                "version": "1.0.0"
-            },
-            "transport": "streamable-http",
-            "endpoint": url_for('opds.feed_index', _external=True).rstrip('/') + "/mcp",
-            "capabilities": {
-                "tools": [],
-                "resources": ["urn:calibre:books", "urn:calibre:authors", "urn:calibre:series"],
-                "prompts": []
-            }
-        }, indent=2))
+        response = make_response(
+            json.dumps(
+                {
+                    "serverInfo": {"name": "calibre-web", "version": "1.0.0"},
+                    "transport": "streamable-http",
+                    "endpoint": url_for("opds.feed_index", _external=True).rstrip("/") + "/mcp",
+                    "capabilities": {
+                        "tools": [],
+                        "resources": ["urn:calibre:books", "urn:calibre:authors", "urn:calibre:series"],
+                        "prompts": [],
+                    },
+                },
+                indent=2,
+            )
+        )
         response.headers["Content-Type"] = "application/json"
         return response
     except Exception:
@@ -1443,32 +1804,26 @@ def get_mcp_server_card():
 @web.route("/.well-known/api-catalog")
 def get_api_catalog():
     try:
-        response = make_response(json.dumps({
-            "linkset": [
+        response = make_response(
+            json.dumps(
                 {
-                    "anchor": url_for('opds.feed_index', _external=True),
-                    "service-desc": [
+                    "linkset": [
                         {
-                            "href": url_for('web.get_robots', _external=True) + "#opds",
-                            "type": "text/html"
-                        }
-                    ],
-                    "service-doc": [
-                        {
-                            "href": url_for('web.get_robots', _external=True) + "#opds",
-                            "type": "text/html"
-                        }
-                    ],
-                    "status": [
-                        {
-                            "href": url_for('web.get_robots', _external=True),
-                            "type": "text/html"
+                            "anchor": url_for("opds.feed_index", _external=True),
+                            "service-desc": [
+                                {"href": url_for("web.get_robots", _external=True) + "#opds", "type": "text/html"}
+                            ],
+                            "service-doc": [
+                                {"href": url_for("web.get_robots", _external=True) + "#opds", "type": "text/html"}
+                            ],
+                            "status": [{"href": url_for("web.get_robots", _external=True), "type": "text/html"}],
                         }
                     ]
-                }
-            ]
-        }, indent=2))
-        response.headers["Content-Type"] = "application/linkset+json; profile=\"https://www.rfc-editor.org/info/rfc9727\""
+                },
+                indent=2,
+            )
+        )
+        response.headers["Content-Type"] = 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"'
         return response
     except Exception:
         log.error("Error serving api-catalog")
@@ -1478,7 +1833,7 @@ def get_api_catalog():
 @web.route("/.well-known/ai-catalog.json")
 def get_ai_catalog():
     try:
-        base_url = url_for('web.index', _external=True).rstrip('/')
+        base_url = url_for("web.index", _external=True).rstrip("/")
         response = make_response(json.dumps(build_catalog(base_url), indent=2))
         response.headers["Content-Type"] = "application/json"
         # CORS header is required by the ARD spec so public crawlers can fetch
@@ -1501,129 +1856,137 @@ def get_sitemap():
     from xml.etree.ElementTree import Element, SubElement, tostring
 
     # Create root element
-    urlset = Element('urlset')
-    urlset.set('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+    urlset = Element("urlset")
+    urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
-    now = datetime.now(UTC).strftime('%Y-%m-%d')
+    now = datetime.now(UTC).strftime("%Y-%m-%d")
 
     # Add main index page
-    url = SubElement(urlset, 'url')
-    loc = SubElement(url, 'loc')
-    loc.text = url_for('web.index', _external=True)
-    lastmod = SubElement(url, 'lastmod')
+    url = SubElement(urlset, "url")
+    loc = SubElement(url, "loc")
+    loc.text = url_for("web.index", _external=True)
+    lastmod = SubElement(url, "lastmod")
     lastmod.text = now
-    changefreq = SubElement(url, 'changefreq')
-    changefreq.text = 'daily'
-    priority = SubElement(url, 'priority')
-    priority.text = '1.0'
+    changefreq = SubElement(url, "changefreq")
+    changefreq.text = "daily"
+    priority = SubElement(url, "priority")
+    priority.text = "1.0"
 
     # Add books (with slug: /book/<id>/<title>)
-    books = calibre_db.session.query(db.Books).filter(
-        calibre_db.common_filters()).all()
+    books = calibre_db.session.query(db.Books).filter(calibre_db.common_filters()).all()
     for book in books:
         # slugify title
         import re
         import unicodedata
+
         def slugify(value):
-            value = unicodedata.normalize('NFKD', value or '').encode('ascii', 'ignore').decode('ascii')
-            value = re.sub(r'[^a-zA-Z0-9]+', '-', value).strip('-').lower()
-            return value if value else 'book'
+            value = unicodedata.normalize("NFKD", value or "").encode("ascii", "ignore").decode("ascii")
+            value = re.sub(r"[^a-zA-Z0-9]+", "-", value).strip("-").lower()
+            return value if value else "book"
 
         slugify(book.title)
-        url = SubElement(urlset, 'url')
-        loc = SubElement(url, 'loc')
-        loc.text = url_for('web.show_book', book_id=book.id, _external=True)
-        lastmod = SubElement(url, 'lastmod')
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = url_for("web.show_book", book_id=book.id, _external=True)
+        lastmod = SubElement(url, "lastmod")
         if book.last_modified:  # pyright: ignore[reportGeneralTypeIssues]
-            lastmod.text = book.last_modified.strftime('%Y-%m-%d')
+            lastmod.text = book.last_modified.strftime("%Y-%m-%d")
         else:
             lastmod.text = now
-        changefreq = SubElement(url, 'changefreq')
-        changefreq.text = 'weekly'
-        priority = SubElement(url, 'priority')
-        priority.text = '0.8'
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "weekly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.8"
 
     # Add authors
-    authors = (calibre_db.session.query(db.Authors)
-               .join(db.books_authors_link)
-               .join(db.Books)
-               .filter(calibre_db.common_filters())
-               .group_by(db.Authors.id)
-               .all())
+    authors = (
+        calibre_db.session.query(db.Authors)
+        .join(db.books_authors_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(db.Authors.id)
+        .all()
+    )
     for author in authors:
-        url = SubElement(urlset, 'url')
-        loc = SubElement(url, 'loc')
-        loc.text = url_for('web.books_list', data='author', sort_param='new', book_id=author.id, _external=True)
-        lastmod = SubElement(url, 'lastmod')
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = url_for("web.books_list", data="author", sort_param="new", book_id=author.id, _external=True)
+        lastmod = SubElement(url, "lastmod")
         lastmod.text = now
-        changefreq = SubElement(url, 'changefreq')
-        changefreq.text = 'weekly'
-        priority = SubElement(url, 'priority')
-        priority.text = '0.6'
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "weekly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.6"
 
     # Add series
-    series = (calibre_db.session.query(db.Series)
-              .join(db.books_series_link)
-              .join(db.Books)
-              .filter(calibre_db.common_filters())
-              .group_by(db.Series.id)
-              .all())
+    series = (
+        calibre_db.session.query(db.Series)
+        .join(db.books_series_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(db.Series.id)
+        .all()
+    )
     for serie in series:
-        url = SubElement(urlset, 'url')
-        loc = SubElement(url, 'loc')
-        loc.text = url_for('web.books_list', data='series', sort_param='new', book_id=serie.id, _external=True)
-        lastmod = SubElement(url, 'lastmod')
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = url_for("web.books_list", data="series", sort_param="new", book_id=serie.id, _external=True)
+        lastmod = SubElement(url, "lastmod")
         lastmod.text = now
-        changefreq = SubElement(url, 'changefreq')
-        changefreq.text = 'weekly'
-        priority = SubElement(url, 'priority')
-        priority.text = '0.6'
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "weekly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.6"
 
     # Add categories/tags
-    tags = (calibre_db.session.query(db.Tags)
-            .join(db.books_tags_link)
-            .join(db.Books)
-            .filter(calibre_db.common_filters())
-            .group_by(db.Tags.id)
-            .all())
+    tags = (
+        calibre_db.session.query(db.Tags)
+        .join(db.books_tags_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(db.Tags.id)
+        .all()
+    )
     for tag in tags:
-        url = SubElement(urlset, 'url')
-        loc = SubElement(url, 'loc')
-        loc.text = url_for('web.books_list', data='category', sort_param='new', book_id=tag.id, _external=True)
-        lastmod = SubElement(url, 'lastmod')
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = url_for("web.books_list", data="category", sort_param="new", book_id=tag.id, _external=True)
+        lastmod = SubElement(url, "lastmod")
         lastmod.text = now
-        changefreq = SubElement(url, 'changefreq')
-        changefreq.text = 'weekly'
-        priority = SubElement(url, 'priority')
-        priority.text = '0.5'
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "weekly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.5"
 
     # Add publishers
-    publishers = (calibre_db.session.query(db.Publishers)
-                  .join(db.books_publishers_link)
-                  .join(db.Books)
-                  .filter(calibre_db.common_filters())
-                  .group_by(db.Publishers.id)
-                  .all())
+    publishers = (
+        calibre_db.session.query(db.Publishers)
+        .join(db.books_publishers_link)
+        .join(db.Books)
+        .filter(calibre_db.common_filters())
+        .group_by(db.Publishers.id)
+        .all()
+    )
     for publisher in publishers:
-        url = SubElement(urlset, 'url')
-        loc = SubElement(url, 'loc')
-        loc.text = url_for('web.books_list', data='publisher', sort_param='new', book_id=publisher.id, _external=True)
-        lastmod = SubElement(url, 'lastmod')
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = url_for("web.books_list", data="publisher", sort_param="new", book_id=publisher.id, _external=True)
+        lastmod = SubElement(url, "lastmod")
         lastmod.text = now
-        changefreq = SubElement(url, 'changefreq')
-        changefreq.text = 'weekly'
-        priority = SubElement(url, 'priority')
-        priority.text = '0.5'
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "weekly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.5"
 
     # Generate XML
-    xml_string = tostring(urlset, encoding='utf-8', xml_declaration=True)
+    xml_string = tostring(urlset, encoding="utf-8", xml_declaration=True)
 
     response = make_response(xml_string)
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
     return response
 
 
-@web.route("/show/<int:book_id>/<book_format>", defaults={'anyname': 'None'})
+@web.route("/show/<int:book_id>/<book_format>", defaults={"anyname": "None"})
 @web.route("/show/<int:book_id>/<book_format>/<anyname>")
 @login_required_if_no_ano
 @viewer_required
@@ -1635,71 +1998,79 @@ def serve_book(book_id, book_format, anyname):
     data = calibre_db.get_book_format(book_id, book_format.upper())
     if not data:
         return "File not in Database"
-    range_header = request.headers.get('Range', None)
+    range_header = request.headers.get("Range", None)
     if not range_header:
-        log.info('Serving book: \'%s\' to %s - %s', data.name, current_user.name,
-                 request.headers.get('X-Forwarded-For', request.remote_addr))
+        log.info(
+            "Serving book: '%s' to %s - %s",
+            data.name,
+            current_user.name,
+            request.headers.get("X-Forwarded-For", request.remote_addr),
+        )
     if config.config_use_google_drive:
         try:
             headers = Headers()
-            headers["Content-Type"] = mimetypes.types_map.get('.' + book_format, "application/octet-stream")
+            headers["Content-Type"] = mimetypes.types_map.get("." + book_format, "application/octet-stream")
             if not range_header:
-                headers['Accept-Ranges'] = 'bytes'
+                headers["Accept-Ranges"] = "bytes"
             df = getFileFromEbooksFolder(book.path, data.name + "." + book_format)  # pyright: ignore[reportArgumentType]
-            return do_gdrive_download(df, headers, (book_format.upper() == 'TXT'))
+            return do_gdrive_download(df, headers, (book_format.upper() == "TXT"))
         except AttributeError as ex:
             log.error_or_exception(ex)
             return "File Not Found"
     else:
-        if book_format.upper() == 'TXT':
+        if book_format.upper() == "TXT":
             try:
-                with open(os.path.join(config.get_book_path(), book.path, data.name + "." + book_format),  # pyright: ignore[reportCallIssue,reportArgumentType]
-                          "rb") as f:
+                with open(
+                    os.path.join(config.get_book_path(), book.path, data.name + "." + book_format),  # pyright: ignore[reportCallIssue,reportArgumentType]
+                    "rb",
+                ) as f:
                     rawdata = f.read()
                 result = chardet.detect(rawdata)
                 try:
-                    text_data = rawdata.decode(result['encoding']).encode('utf-8')  # pyright: ignore[reportArgumentType]
+                    text_data = rawdata.decode(result["encoding"]).encode("utf-8")  # pyright: ignore[reportArgumentType]
                 except UnicodeDecodeError as e:
                     log.error(f"Encoding error in text file {book.id}: {e}")
                     if "surrogate" in e.reason:
-                        text_data = rawdata.decode(result['encoding'], 'surrogatepass').encode('utf-8', 'surrogatepass')  # pyright: ignore[reportArgumentType]
+                        text_data = rawdata.decode(result["encoding"], "surrogatepass").encode("utf-8", "surrogatepass")  # pyright: ignore[reportArgumentType]
                     else:
-                        text_data = rawdata.decode(result['encoding'], 'ignore').encode('utf-8', 'ignore')  # pyright: ignore[reportArgumentType]
+                        text_data = rawdata.decode(result["encoding"], "ignore").encode("utf-8", "ignore")  # pyright: ignore[reportArgumentType]
                 return make_response(text_data)
             except FileNotFoundError:
                 log.error("File Not Found")
                 return "File Not Found"
         # enable byte range read of pdf
         response = make_response(
-            send_from_directory(os.path.join(config.get_book_path(), book.path), data.name + "." + book_format))  # pyright: ignore[reportCallIssue,reportArgumentType]
+            send_from_directory(os.path.join(config.get_book_path(), book.path), data.name + "." + book_format)
+        )  # pyright: ignore[reportCallIssue,reportArgumentType]
         if not range_header:
-            response.headers['Accept-Ranges'] = 'bytes'
+            response.headers["Accept-Ranges"] = "bytes"
         return response
 
 
-@web.route("/download/<int:book_id>/<book_format>", defaults={'anyname': 'None'})
+@web.route("/download/<int:book_id>/<book_format>", defaults={"anyname": "None"})
 @web.route("/download/<int:book_id>/<book_format>/<anyname>")
 @login_required_if_no_ano
 @download_required
 def download_link(book_id, book_format, anyname):
-    if "kindle" in request.headers.get('User-Agent').lower():  # pyright: ignore[reportOptionalMemberAccess]
+    if "kindle" in request.headers.get("User-Agent").lower():  # pyright: ignore[reportOptionalMemberAccess]
         client = "kindle"
-    elif "Kobo" in request.headers.get('User-Agent').lower():  # pyright: ignore[reportOptionalMemberAccess]
+    elif "Kobo" in request.headers.get("User-Agent").lower():  # pyright: ignore[reportOptionalMemberAccess]
         client = "kobo"
     else:
         client = ""
     return get_download_link(book_id, book_format, client)
 
 
-@web.route('/send/<int:book_id>/<book_format>/<int:convert>', methods=["POST"])
+@web.route("/send/<int:book_id>/<book_format>/<int:convert>", methods=["POST"])
 @login_required_if_no_ano
 @download_required
 def send_to_ereader(book_id, book_format, convert):
     if not config.get_mail_server_configured():
         return make_response(jsonify(type="danger", message=_("Please configure the SMTP mail settings first...")))
     elif current_user.kindle_mail:
-        result = send_mail(book_id, book_format, convert, current_user.kindle_mail, config.get_book_path(),
-                           current_user.name)
+        result = send_mail(
+            book_id, book_format, convert, current_user.kindle_mail, config.get_book_path(), current_user.name
+        )
         if result is None:
             ub.update_download(book_id, int(current_user.id))
             ub.create_audit_log_entry(
@@ -1708,20 +2079,27 @@ def send_to_ereader(book_id, book_format, convert):
                 resource_type="book",
                 resource_id=book_id,
                 details=f"Book sent to eReader: {book_id} {book_format}",
-                ip_address=helper.get_client_ip()
+                ip_address=helper.get_client_ip(),
             )
-            response = [{'type': "success", 'message': _("Success! Book queued for sending to %(eReadermail)s",
-                                                        eReadermail=current_user.kindle_mail)}]
+            response = [
+                {
+                    "type": "success",
+                    "message": _(
+                        "Success! Book queued for sending to %(eReadermail)s", eReadermail=current_user.kindle_mail
+                    ),
+                }
+            ]
         else:
-            response = [{'type': "danger", 'message': _("Oops! There was an error sending book: %(res)s", res=result)}]
+            response = [{"type": "danger", "message": _("Oops! There was an error sending book: %(res)s", res=result)}]
     else:
-        response = [{'type': "danger", 'message': _("Oops! Please update your profile with a valid eReader Email.")}]
+        response = [{"type": "danger", "message": _("Oops! Please update your profile with a valid eReader Email.")}]
     return make_response(jsonify(response))
 
 
 # ################################### Login Logout ##################################################################
 
-@web.route('/register', methods=['POST'])
+
+@web.route("/register", methods=["POST"])
 @limiter.limit("40/day", key_func=get_remote_address)  # pyright: ignore[reportAttributeAccessIssue]
 @limiter.limit("3/minute", key_func=get_remote_address)  # pyright: ignore[reportAttributeAccessIssue]
 def register_post():
@@ -1729,20 +2107,20 @@ def register_post():
         abort(404)
     to_save = request.form.to_dict()
     if current_user is not None and current_user.is_authenticated:
-        return redirect(url_for('web.index'))
+        return redirect(url_for("web.index"))
     if not config.get_mail_server_configured():
         flash(_("Oops! Email server is not configured, please contact your administrator."), category="error")
-        return render_title_template('register.html', title=_("Register"), page="register")
-    nickname = strip_whitespaces(to_save.get("email", "")) if config.config_register_email else to_save.get('name')
+        return render_title_template("register.html", title=_("Register"), page="register")
+    nickname = strip_whitespaces(to_save.get("email", "")) if config.config_register_email else to_save.get("name")
     if not nickname or not to_save.get("email"):
         flash(_("Oops! Please complete all fields."), category="error")
-        return render_title_template('register.html', title=_("Register"), page="register")
+        return render_title_template("register.html", title=_("Register"), page="register")
     try:
         nickname = check_username(nickname)
         email = check_email(to_save.get("email", ""))
     except Exception as ex:
         flash(str(ex), category="error")
-        return render_title_template('register.html', title=_("Register"), page="register")
+        return render_title_template("register.html", title=_("Register"), page="register")
 
     content = ub.User()
     if check_valid_domain(email):
@@ -1766,97 +2144,107 @@ def register_post():
                 resource_type="user",
                 resource_id=content.id,
                 details=f"User self-registered: {nickname}",
-                ip_address=helper.get_client_ip()
+                ip_address=helper.get_client_ip(),
             )
-            if feature_support['oauth']:
+            if feature_support["oauth"]:
                 register_user_with_oauth(content)  # pyright: ignore[reportOptionalCall]
             send_registration_mail(strip_whitespaces(to_save.get("email", "")), nickname, password)
         except Exception:
             ub.session.rollback()
             flash(_("Oops! An unknown error occurred. Please try again later."), category="error")
-            return render_title_template('register.html', title=_("Register"), page="register")
+            return render_title_template("register.html", title=_("Register"), page="register")
     else:
         flash(_("Oops! Your Email is not allowed."), category="error")
-        log.warning('Registering failed for user "{}" Email: {}'.format(nickname, to_save.get("email","")))
-        return render_title_template('register.html', title=_("Register"), page="register")
+        log.warning('Registering failed for user "{}" Email: {}'.format(nickname, to_save.get("email", "")))
+        return render_title_template("register.html", title=_("Register"), page="register")
     flash(_("Success! Confirmation Email has been sent."), category="success")
-    return redirect(url_for('web.login'))
+    return redirect(url_for("web.login"))
 
 
-@web.route('/register', methods=['GET'])
+@web.route("/register", methods=["GET"])
 def register():
     if not config.config_public_reg:
         abort(404)
     if current_user is not None and current_user.is_authenticated:
-        return redirect(url_for('web.index'))
+        return redirect(url_for("web.index"))
     if not config.get_mail_server_configured():
         flash(_("Oops! Email server is not configured, please contact your administrator."), category="error")
-        return render_title_template('register.html', title=_("Register"), page="register")
-    if feature_support['oauth']:
+        return render_title_template("register.html", title=_("Register"), page="register")
+    if feature_support["oauth"]:
         register_user_with_oauth()  # pyright: ignore[reportOptionalCall]
-    return render_title_template('register.html', config=config, title=_("Register"), page="register")
+    return render_title_template("register.html", config=config, title=_("Register"), page="register")
 
 
 def handle_login_user(user, remember, message, category):
     login_user(user, remember=remember)
     flash(message, category=category)
     [limiter.limiter.clear(limit.limit, *limit.request_args) for limit in limiter.current_limits]  # pyright: ignore[reportAttributeAccessIssue]
-    return redirect(get_redirect_location(request.form.get('next', None), "web.index"))
+    return redirect(get_redirect_location(request.form.get("next", None), "web.index"))
 
 
 def render_login(username="", password=""):
-    next_url = request.args.get('next', default=url_for("web.index"), type=str)
+    next_url = request.args.get("next", default=url_for("web.index"), type=str)
     if url_for("web.logout") == next_url:
         next_url = url_for("web.index")
-    return render_title_template('login.html',
-                                 title=_("Login"),
-                                 next_url=next_url,
-                                 config=config,
-                                 username=username,
-                                 password=password,
-                                 oauth_check=oauth_check,
-                                 mail=config.get_mail_server_configured(), page="login")
+    return render_title_template(
+        "login.html",
+        title=_("Login"),
+        next_url=next_url,
+        config=config,
+        username=username,
+        password=password,
+        oauth_check=oauth_check,
+        mail=config.get_mail_server_configured(),
+        page="login",
+    )
 
 
-@web.route('/login', methods=['GET'])
+@web.route("/login", methods=["GET"])
 def login():
     if current_user is not None and current_user.is_authenticated:
-        return redirect(url_for('web.index'))
+        return redirect(url_for("web.index"))
     if config.config_login_type == constants.LOGIN_LDAP and not services.ldap:
         log.error("Cannot activate LDAP authentication")
         flash(_("Cannot activate LDAP authentication"), category="error")
     return render_login()
 
 
-@web.route('/login', methods=['POST'])
-@limiter.limit("40/day", key_func=lambda: strip_whitespaces(request.form.get('username', "")).lower())  # pyright: ignore[reportAttributeAccessIssue]
-@limiter.limit("3/minute", key_func=lambda: strip_whitespaces(request.form.get('username', "")).lower())  # pyright: ignore[reportAttributeAccessIssue]
+@web.route("/login", methods=["POST"])
+@limiter.limit("40/day", key_func=lambda: strip_whitespaces(request.form.get("username", "")).lower())  # pyright: ignore[reportAttributeAccessIssue]
+@limiter.limit("3/minute", key_func=lambda: strip_whitespaces(request.form.get("username", "")).lower())  # pyright: ignore[reportAttributeAccessIssue]
 def login_post():
     form = request.form.to_dict()
-    username = strip_whitespaces(form.get('username', "")).lower().replace("\n","").replace("\r","")
+    username = strip_whitespaces(form.get("username", "")).lower().replace("\n", "").replace("\r", "")
     if current_user is not None and current_user.is_authenticated:
-        return redirect(url_for('web.index'))
+        return redirect(url_for("web.index"))
     if config.config_login_type == constants.LOGIN_LDAP and not services.ldap:
         log.error("Cannot activate LDAP authentication")
         flash(_("Cannot activate LDAP authentication"), category="error")
     user = ub.session.query(ub.User).filter(func.lower(ub.User.name) == username).first()
-    remember_me = bool(form.get('remember_me'))
-    if config.config_login_type == constants.LOGIN_LDAP and services.ldap and user and form['password'] != "":
-        login_result, error = services.ldap.bind_user(username, form['password'])
+    remember_me = bool(form.get("remember_me"))
+    if config.config_login_type == constants.LOGIN_LDAP and services.ldap and user and form["password"] != "":
+        login_result, error = services.ldap.bind_user(username, form["password"])
         if login_result:
             log.debug(f"You are now logged in as: '{user.name}'")
-            return handle_login_user(user,
-                                     remember_me,
-                                     _("you are now logged in as: '%(nickname)s'", nickname=user.name),
-                                     "success")
-        elif login_result is None and user and check_password_hash(str(user.password), form['password']) \
-                and user.name != "Guest":
+            return handle_login_user(
+                user, remember_me, _("you are now logged in as: '%(nickname)s'", nickname=user.name), "success"
+            )
+        elif (
+            login_result is None
+            and user
+            and check_password_hash(str(user.password), form["password"])
+            and user.name != "Guest"
+        ):
             log.info(f"Local Fallback Login as: '{user.name}'")
-            return handle_login_user(user,
-                                     remember_me,
-                                     _("Fallback Login as: '%(nickname)s', "
-                                       "LDAP Server not reachable, or user not known", nickname=user.name),
-                                     "warning")
+            return handle_login_user(
+                user,
+                remember_me,
+                _(
+                    "Fallback Login as: '%(nickname)s', LDAP Server not reachable, or user not known",
+                    nickname=user.name,
+                ),
+                "warning",
+            )
         elif login_result is None:
             log.info(error)
             flash(_("Could not login: %(message)s", message=error), category="error")
@@ -1866,7 +2254,7 @@ def login_post():
             flash(_("Wrong Username or Password"), category="error")
     else:
         ip_address = helper.get_client_ip()
-        if form.get('forgot', "") == 'forgot':
+        if form.get("forgot", "") == "forgot":
             if user is not None and user.name != "Guest":
                 ret, __ = reset_password(user.id)
                 if ret == 1:
@@ -1877,35 +2265,34 @@ def login_post():
                     flash(_("An unknown error occurred. Please try again later."), category="error")
             else:
                 flash(_("Please enter valid username to reset password"), category="error")
-                log.warning('Username missing for password reset IP-address: %s', ip_address)
+                log.warning("Username missing for password reset IP-address: %s", ip_address)
         else:
-            if user and check_password_hash(str(user.password), form['password']) and user.name != "Guest":
+            if user and check_password_hash(str(user.password), form["password"]) and user.name != "Guest":
                 config.config_is_initial = False
                 log.debug(f"You are now logged in as: '{user.name}'")
-                return handle_login_user(user,
-                                         remember_me,
-                                         _("You are now logged in as: '%(nickname)s'", nickname=user.name),
-                                         "success")
+                return handle_login_user(
+                    user, remember_me, _("You are now logged in as: '%(nickname)s'", nickname=user.name), "success"
+                )
             else:
                 log.warning(f'Login failed for user "{username}" IP-address: {ip_address}')
                 flash(_("Wrong Username or Password"), category="error")
     return render_login(username, form.get("password", ""))
 
 
-@web.route('/logout')
+@web.route("/logout")
 @user_login_required
 def logout():
     if current_user is not None and current_user.is_authenticated:
-        ub.delete_user_session(current_user.id, flask_session.get('_id', ""))
+        ub.delete_user_session(current_user.id, flask_session.get("_id", ""))
         logout_user()
-        if feature_support['oauth'] and (config.config_login_type == 2 or config.config_login_type == 3):
+        if feature_support["oauth"] and (config.config_login_type == 2 or config.config_login_type == 3):
             logout_oauth_user()  # pyright: ignore[reportOptionalCall]
     log.debug("User logged out")
-    location = get_redirect_location(request.args.get('next', None), "web.login") if config.config_anonbrowse else None
+    location = get_redirect_location(request.args.get("next", None), "web.login") if config.config_anonbrowse else None
     if location:
         return redirect(location)
     else:
-        return redirect(url_for('web.login'))
+        return redirect(url_for("web.login"))
 
 
 # ################################### Users own configuration #########################################################
@@ -1938,21 +2325,23 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
 
     except Exception as ex:
         flash(str(ex), category="error")
-        return render_title_template("user_edit.html",
-                                     content=current_user,
-                                     config=config,
-                                     translations=translations,
-                                     profile=1,
-                                     languages=languages,
-                                     title=_("%(name)s's Profile", name=current_user.name),
-                                     page="me",
-                                     kobo_support=kobo_support,
-                                     registered_oauth=local_oauth_check,
-                                     oauth_status=oauth_status)
+        return render_title_template(
+            "user_edit.html",
+            content=current_user,
+            config=config,
+            translations=translations,
+            profile=1,
+            languages=languages,
+            title=_("%(name)s's Profile", name=current_user.name),
+            page="me",
+            kobo_support=kobo_support,
+            registered_oauth=local_oauth_check,
+            oauth_status=oauth_status,
+        )
 
     val = 0
     for key, __ in to_save.items():
-        if key.startswith('show'):
+        if key.startswith("show"):
             val += int(key[5:])
     current_user.sidebar_view = val
     if to_save.get("Show_detail_random"):
@@ -1968,7 +2357,7 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
             resource_type="user",
             resource_id=current_user.id,
             details=f"Profile updated by user: {current_user.name}",
-            ip_address=helper.get_client_ip()
+            ip_address=helper.get_client_ip(),
         )
     except IntegrityError:
         ub.session.rollback()
@@ -1985,8 +2374,8 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
 def profile():
     languages = calibre_db.speaking_language()
     translations = get_available_locale()
-    kobo_support = feature_support['kobo'] and config.config_kobo_sync
-    if feature_support['oauth'] and config.config_login_type == 2:
+    kobo_support = feature_support["kobo"] and config.config_kobo_sync
+    if feature_support["oauth"] and config.config_login_type == 2:
         oauth_status = get_oauth_status()  # pyright: ignore[reportOptionalCall]
         local_oauth_check = oauth_check
     else:
@@ -1995,17 +2384,19 @@ def profile():
 
     if request.method == "POST":
         change_profile(kobo_support, local_oauth_check, oauth_status, translations, languages)
-    return render_title_template("user_edit.html",
-                                 translations=translations,
-                                 profile=1,
-                                 languages=languages,
-                                 content=current_user,
-                                 config=config,
-                                 kobo_support=kobo_support,
-                                 title=_("%(name)s's Profile", name=current_user.name),
-                                 page="me",
-                                 registered_oauth=local_oauth_check,
-                                 oauth_status=oauth_status)
+    return render_title_template(
+        "user_edit.html",
+        translations=translations,
+        profile=1,
+        languages=languages,
+        content=current_user,
+        config=config,
+        kobo_support=kobo_support,
+        title=_("%(name)s's Profile", name=current_user.name),
+        page="me",
+        registered_oauth=local_oauth_check,
+        oauth_status=oauth_status,
+    )
 
 
 # ###################################Show single book ##################################################################
@@ -2018,8 +2409,7 @@ def read_book(book_id, book_format):
     book = calibre_db.get_filtered_book(book_id)
 
     if not book:
-        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"),
-              category="error")
+        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"), category="error")
         log.debug("Selected book is unavailable. File does not exist or is not accessible")
         return redirect(url_for("web.index"))
 
@@ -2028,30 +2418,39 @@ def read_book(book_id, book_format):
     # check if book has a bookmark
     bookmark = None
     if current_user.is_authenticated:
-        bookmark = ub.session.query(ub.Bookmark).filter(and_(ub.Bookmark.user_id == int(current_user.id),
-                                                             ub.Bookmark.book_id == book_id,
-                                                             ub.Bookmark.format == book_format.upper())).first()
+        bookmark = (
+            ub.session.query(ub.Bookmark)
+            .filter(
+                and_(
+                    ub.Bookmark.user_id == int(current_user.id),
+                    ub.Bookmark.book_id == book_id,
+                    ub.Bookmark.format == book_format.upper(),
+                )
+            )
+            .first()
+        )
     if book_format.lower() == "epub" or book_format.lower() == "kepub":
         log.debug("Start [k]epub reader for %d", book_id)
-        return render_title_template('read.html', bookid=book_id, title=book.title, bookmark=bookmark,
-                                     book_format=book_format)
+        return render_title_template(
+            "read.html", bookid=book_id, title=book.title, bookmark=bookmark, book_format=book_format
+        )
     elif book_format.lower() == "pdf":
         log.debug("Start pdf reader for %d", book_id)
-        return render_title_template('readpdf.html', pdffile=book_id, title=book.title)
+        return render_title_template("readpdf.html", pdffile=book_id, title=book.title)
     elif book_format.lower() == "txt":
         log.debug("Start txt reader for %d", book_id)
-        return render_title_template('readtxt.html', txtfile=book_id, title=book.title)
+        return render_title_template("readtxt.html", txtfile=book_id, title=book.title)
     elif book_format.lower() in ["djvu", "djv"]:
         log.debug("Start djvu reader for %d", book_id)
-        return render_title_template('readdjvu.html', djvufile=book_id, title=book.title,
-                                     extension=book_format.lower())
+        return render_title_template("readdjvu.html", djvufile=book_id, title=book.title, extension=book_format.lower())
     else:
         for fileExt in constants.EXTENSIONS_AUDIO:
             if book_format.lower() == fileExt:
                 entries = calibre_db.get_filtered_book(book_id)
                 log.debug("Start mp3 listening for %d", book_id)
-                return render_title_template('listenmp3.html', mp3file=book_id, audioformat=book_format.lower(),
-                                             entry=entries, bookmark=bookmark)
+                return render_title_template(
+                    "listenmp3.html", mp3file=book_id, audioformat=book_format.lower(), entry=entries, bookmark=bookmark
+                )
         for fileExt in ["cbr", "cbt", "cbz"]:
             if book_format.lower() == fileExt:
                 all_name = str(book_id)
@@ -2059,13 +2458,13 @@ def read_book(book_id, book_format):
                 if len(book.series):
                     title = title + " - " + book.series[0].name
                     if book.series_index:  # pyright: ignore[reportGeneralTypeIssues]
-                        title = title + " #" + f'{book.series_index:.2f}'.rstrip('0').rstrip('.')
+                        title = title + " #" + f"{book.series_index:.2f}".rstrip("0").rstrip(".")
                 log.debug("Start comic reader for %d", book_id)
-                return render_title_template('readcbr.html', comicfile=all_name, title=title,
-                                             extension=fileExt, bookmark=bookmark)
+                return render_title_template(
+                    "readcbr.html", comicfile=all_name, title=title, extension=fileExt, bookmark=bookmark
+                )
         log.debug("Selected book is unavailable. File does not exist or is not accessible")
-        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"),
-              category="error")
+        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"), category="error")
         return redirect(url_for("web.index"))
 
 
@@ -2073,7 +2472,7 @@ def read_book(book_id, book_format):
 @web.route("/book/<int:book_id>/<title_slug>/")
 @web.route("/book/<int:book_id>/<title_slug>/<extra>")
 def redirect_book_slug(book_id, title_slug=None, extra=None):
-    return redirect(url_for('web.show_book', book_id=book_id), code=301)
+    return redirect(url_for("web.show_book", book_id=book_id), code=301)
 
 
 @web.route("/book/<int:book_id>")
@@ -2087,8 +2486,9 @@ def show_book(book_id, title_slug=None):
         entry.read_status = read_book == ub.ReadBook.STATUS_FINISHED
         entry.is_archived = archived_book
         for lang_index in range(0, len(entry.languages)):
-            entry.languages[lang_index].language_name = isoLanguages.get_language_name(get_locale(), entry.languages[
-                lang_index].lang_code)
+            entry.languages[lang_index].language_name = isoLanguages.get_language_name(
+                get_locale(), entry.languages[lang_index].lang_code
+            )
         cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
         book_in_shelves = []
         shelves = ub.session.query(ub.BookShelf).filter(ub.BookShelf.book_id == book_id).all()
@@ -2112,15 +2512,16 @@ def show_book(book_id, title_slug=None):
             if media_format.format.lower() in constants.EXTENSIONS_AUDIO:
                 entry.audio_entries.append(media_format.format.lower())
 
-        return render_title_template('detail.html',
-                                     entry=entry,
-                                     cc=cc,
-                                     is_xhr=request.headers.get('X-Requested-With') == 'XMLHttpRequest',
-                                     title=entry.title,
-                                     books_shelfs=book_in_shelves,
-                                     page="book")
+        return render_title_template(
+            "detail.html",
+            entry=entry,
+            cc=cc,
+            is_xhr=request.headers.get("X-Requested-With") == "XMLHttpRequest",
+            title=entry.title,
+            books_shelfs=book_in_shelves,
+            page="book",
+        )
     else:
         log.debug("Selected book is unavailable. File does not exist or is not accessible")
-        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"),
-              category="error")
+        flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"), category="error")
         return redirect(url_for("web.index"))

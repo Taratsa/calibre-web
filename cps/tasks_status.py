@@ -34,7 +34,7 @@ from .services.worker import (
 )
 from .usermanagement import user_login_required
 
-tasks = Blueprint('tasks', __name__)
+tasks = Blueprint("tasks", __name__)
 
 log = logger.create()
 
@@ -50,7 +50,7 @@ def get_email_status_json():
 @user_login_required
 def get_tasks_status():
     # if current user admin, show all email, otherwise only own emails
-    return render_title_template('tasks.html', title=_("Tasks"), page="tasks")
+    return render_title_template("tasks.html", title=_("Tasks"), page="tasks")
 
 
 # helper function to apply localize status information in tasklist entries
@@ -60,35 +60,35 @@ def render_task_status(tasklist):
         if user == current_user.name or current_user.role_admin():
             ret = {}
             if task.start_time:
-                ret['starttime'] = format_datetime(task.start_time, format='short')
-                ret['runtime'] = format_runtime(task.runtime)
+                ret["starttime"] = format_datetime(task.start_time, format="short")
+                ret["runtime"] = format_runtime(task.runtime)
 
             # localize the task status
             if isinstance(task.stat, int):
                 if task.stat == STAT_WAITING:
-                    ret['status'] = _('Waiting')
+                    ret["status"] = _("Waiting")
                 elif task.stat == STAT_FAIL:
-                    ret['status'] = _('Failed')
+                    ret["status"] = _("Failed")
                 elif task.stat == STAT_STARTED:
-                    ret['status'] = _('Started')
+                    ret["status"] = _("Started")
                 elif task.stat == STAT_FINISH_SUCCESS:
-                    ret['status'] = _('Finished')
+                    ret["status"] = _("Finished")
                 elif task.stat == STAT_ENDED:
-                    ret['status'] = _('Ended')
+                    ret["status"] = _("Ended")
                 elif task.stat == STAT_CANCELLED:
-                    ret['status'] = _('Cancelled')
+                    ret["status"] = _("Cancelled")
                 else:
-                    ret['status'] = _('Unknown Status')
+                    ret["status"] = _("Unknown Status")
 
-            ret['taskMessage'] = f"{task.name}: {task.message}" if task.message else task.name
-            ret['progress'] = f"{int(task.progress * 100)} %"
-            ret['user'] = escape(user)  # prevent xss
+            ret["taskMessage"] = f"{task.name}: {task.message}" if task.message else task.name
+            ret["progress"] = f"{int(task.progress * 100)} %"
+            ret["user"] = escape(user)  # prevent xss
 
             # Hidden fields
-            ret['task_id'] = task.id
-            ret['stat'] = task.stat
-            ret['is_cancellable'] = task.is_cancellable
-            ret['error'] = task.error
+            ret["task_id"] = task.id
+            ret["stat"] = task.stat
+            ret["is_cancellable"] = task.is_cancellable
+            ret["error"] = task.error
 
             rendered_tasklist.append(ret)
 
@@ -99,14 +99,14 @@ def render_task_status(tasklist):
 def format_runtime(runtime):
     ret_val = ""
     if runtime.days:
-        ret_val = format_unit(runtime.days, 'duration-day', length="long") + ', '
+        ret_val = format_unit(runtime.days, "duration-day", length="long") + ", "
     minutes, seconds = divmod(runtime.seconds, 60)
     hours, minutes = divmod(minutes, 60)
     # ToDo: locale.number_symbols._data['timeSeparator'] -> localize time separator ?
     if hours:
-        ret_val += f'{hours:d}:{minutes:02d}:{seconds:02d}s'
+        ret_val += f"{hours:d}:{minutes:02d}:{seconds:02d}s"
     elif minutes:
-        ret_val += f'{minutes:2d}:{seconds:02d}s'
+        ret_val += f"{minutes:2d}:{seconds:02d}s"
     else:
-        ret_val += f'{seconds:2d}s'
+        ret_val += f"{seconds:2d}s"
     return ret_val

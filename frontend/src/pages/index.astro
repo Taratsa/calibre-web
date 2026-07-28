@@ -1,15 +1,26 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
-import { getAllBooks, paginate } from '~/data';
+import { getAllBooks, getPopularBooks, paginate } from '~/data';
 
 const books = getAllBooks();
 const { items, page, totalPages, total } = paginate(books, 1);
+
+const popularBooks = getPopularBooks();
+const topPopular = popularBooks.slice(0, 10);
 ---
 
 <BaseLayout title="Beranda" description="Pustaka Taratsa — katalog buku langka, zine, dan literatur Indonesia.">
   <h1>Pustaka Taratsa</h1>
   <p>Perpustakaan digital non-komersil yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia.</p>
+
+  {topPopular.length > 0 && (
+    <>
+      <h2>Buku Terpopuler</h2>
+      <BookGrid books={topPopular} cols={5} />
+      <p class="browse-all"><a href="/populer">Lihat semua buku terpopuler →</a></p>
+    </>
+  )}
 
   <h2>Daftar Terbaru</h2>
   <BookGrid books={items} cols={5} />

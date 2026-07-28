@@ -1,4 +1,3 @@
-
 #  This file is part of the Calibre-Web (https://github.com/janeczku/calibre-web)
 #    Copyright (C) 2018-2019 jim3ma
 #
@@ -23,6 +22,7 @@ try:
     )
     from flask_dance.consumer.storage.sqla import _get_real_user, first  # pyright: ignore[reportMissingImports]
     from sqlalchemy.exc import NoResultFound
+
     backend_resultcode = True  # prevent storing values with this resultcode
 except ImportError:
     pass
@@ -35,15 +35,16 @@ class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundV
 
     _SQLAlchemy: https://www.sqlalchemy.org/
     """
-    def __init__(self, model, session, provider_id,
-                 user=None, user_id=None, user_required=None, anon_user=None,
-                 cache=None):
+
+    def __init__(
+        self, model, session, provider_id, user=None, user_id=None, user_required=None, anon_user=None, cache=None
+    ):
         self.provider_id = provider_id
         super().__init__(model, session, user, user_id, user_required, anon_user, cache)
 
     def get(self, blueprint, user=None, user_id=None):
-        if self.provider_id + '_oauth_token' in session and session[self.provider_id + '_oauth_token'] != '':
-            return session[self.provider_id + '_oauth_token']
+        if self.provider_id + "_oauth_token" in session and session[self.provider_id + "_oauth_token"] != "":
+            return session[self.provider_id + "_oauth_token"]
         # check cache
         cache_key = self.make_cache_key(blueprint=blueprint, user=user, user_id=user_id)
         token = self.cache.get(cache_key)
@@ -51,17 +52,16 @@ class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundV
             return token
 
         # if not cached, make database queries
-        query = (
-            self.session.query(self.model)
-            .filter_by(provider=self.provider_id)
-        )
+        query = self.session.query(self.model).filter_by(provider=self.provider_id)
         uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
-        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
-                  for ref in (user, self.user, blueprint.config.get("user")))
+        u = first(
+            _get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
+            for ref in (user, self.user, blueprint.config.get("user"))
+        )
 
         use_provider_user_id = False
-        if self.provider_id + '_oauth_user_id' in session and session[self.provider_id + '_oauth_user_id'] != '':
-            query = query.filter_by(provider_user_id=session[self.provider_id + '_oauth_user_id'])
+        if self.provider_id + "_oauth_user_id" in session and session[self.provider_id + "_oauth_user_id"] != "":
+            query = query.filter_by(provider_user_id=session[self.provider_id + "_oauth_user_id"])
             use_provider_user_id = True
 
         if self.user_required and not u and not uid and not use_provider_user_id:
@@ -89,17 +89,16 @@ class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundV
 
     def set(self, blueprint, token, user=None, user_id=None):
         uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
-        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
-                  for ref in (user, self.user, blueprint.config.get("user")))
+        u = first(
+            _get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
+            for ref in (user, self.user, blueprint.config.get("user"))
+        )
 
         if self.user_required and not u and not uid:
             raise ValueError("Cannot set OAuth token without an associated user")
 
         # if there was an existing model, delete it
-        existing_query = (
-            self.session.query(self.model)
-            .filter_by(provider=self.provider_id)
-        )
+        existing_query = self.session.query(self.model).filter_by(provider=self.provider_id)
         # check for user ID
         has_user_id = hasattr(self.model, "user_id")
         if has_user_id and uid:
@@ -123,18 +122,15 @@ class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundV
         # commit to delete and add simultaneously
         self.session.commit()
         # invalidate cache
-        self.cache.delete(self.make_cache_key(
-            blueprint=blueprint, user=user, user_id=user_id
-        ))
+        self.cache.delete(self.make_cache_key(blueprint=blueprint, user=user, user_id=user_id))
 
     def delete(self, blueprint, user=None, user_id=None):
-        query = (
-            self.session.query(self.model)
-            .filter_by(provider=self.provider_id)
-        )
+        query = self.session.query(self.model).filter_by(provider=self.provider_id)
         uid = first([user_id, self.user_id, blueprint.config.get("user_id")])  # pyright: ignore[reportPossiblyUnboundVariable]
-        u = first(_get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
-                  for ref in (user, self.user, blueprint.config.get("user")))
+        u = first(
+            _get_real_user(ref, self.anon_user)  # pyright: ignore[reportPossiblyUnboundVariable]
+            for ref in (user, self.user, blueprint.config.get("user"))
+        )
 
         if self.user_required and not u and not uid:
             raise ValueError("Cannot delete OAuth token without an associated user")
@@ -152,6 +148,10 @@ class OAuthBackend(SQLAlchemyBackend):  # pyright: ignore[reportPossiblyUnboundV
         query.delete()
         self.session.commit()
         # invalidate cache
-        self.cache.delete(self.make_cache_key(
-            blueprint=blueprint, user=user, user_id=user_id,
-        ))
+        self.cache.delete(
+            self.make_cache_key(
+                blueprint=blueprint,
+                user=user,
+                user_id=user_id,
+            )
+        )

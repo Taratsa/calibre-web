@@ -1,0 +1,125 @@
+[importlinter]
+root_packages =
+    cps
+
+# ============================================================================
+# Architectural Contracts
+# ============================================================================
+#
+# Calibre-Web module structure:
+#
+#   cps/                    # Main package
+#     cw_login/             # Vendored Flask-Login derivative (must stay self-contained)
+#     cw_advocate/          # Vendored requests proxy-validation (must stay self-contained)
+#     metadata_provider/    # External metadata fetchers (Google Books, Amazon, etc.)
+#     services/             # Background worker framework + external integrations
+#       worker.py           # CalibreTask / WorkerThread
+#       background_scheduler.py
+#       Metadata.py         # Metadata data classes
+#       gmail.py, simpleldap.py, SyncToken.py, goodreads_support.py
+#     tasks/                # Background job implementations (consume services)
+#     web, admin, opds, kobo, api, ...  # HTTP/blueprint layer
+#
+# Enforcement rules below ensure each layer only depends on layers below it,
+# not above. Function-level lazy imports that exist purely to break otherwise-
+# unavoidable circular dependencies (prometheus metrics glue, etc.) are
+# enumerated explicitly in the ignore_imports sections.
+
+[importlinter:contract:metadata-provider-is-isolated]
+type = forbidden
+name = metadata-provider-is-isolated
+source_modules =
+    cps.metadata_provider
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.opds
+    cps.kobo
+    cps.editbooks
+    cps.shelf
+    cps.usermanagement
+    cps.uploader
+    cps.search
+    cps.api
+    cps.about
+    cps.gdrive
+    cps.services.worker
+    cps.tasks
+    cps.tasks_status
+    cps.frontend_rebuild
+    cps.kobo_auth
+ignore_imports =
+    cps -> cps.main
+message = "cps.metadata_provider modules are pure external metadata fetchers (Google Books, Amazon, Douban, ComicVine, Lubimyczytac, Google Scholar). They must not depend on the web/UI layer, the task framework, or background scheduler code. The only cps module they may consume is cps.services.Metadata (the data model)."
+
+[importlinter:contract:services-are-framework-and-integrations]
+type = forbidden
+name = services-are-framework-and-integrations
+source_modules =
+    cps.services
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.opds
+    cps.kobo
+    cps.editbooks
+    cps.shelf
+    cps.usermanagement
+    cps.uploader
+    cps.search
+    cps.api
+    cps.about
+    cps.gdrive
+    cps.tasks
+    cps.tasks_status
+    cps.frontend_rebuild
+ignore_imports =
+    cps -> cps.main
+message = "cps.services contains the background worker framework (worker.py, background_scheduler.py) and external service integrations (gmail, simpleldap, goodreads_support, SyncToken). It must remain independent of the web/UI layer and the task implementations; the worker framework is consumed by cps.tasks, the integrations are used by either the UI directly or by cps.tasks, but never the other way around."
+
+[importlinter:contract:tasks-are-background-only]
+type = forbidden
+name = tasks-are-background-only
+source_modules =
+    cps.tasks
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.opds
+    cps.kobo
+    cps.editbooks
+    cps.shelf
+    cps.usermanagement
+    cps.uploader
+    cps.search
+    cps.api
+    cps.about
+    cps.gdrive
+    cps.frontend_rebuild
+ignore_imports =
+    cps -> cps.main
+    cps.db -> cps.web
+    cps.helper -> cps.web
+message = "cps.tasks contains background job implementations invoked from the APScheduler worker thread. They must not import from the web/UI layer; the UI invokes tasks through cps.services.background_scheduler only. The two ignored edges (cps.db -> cps.web and cps.helper -> cps.web) are function-level lazy imports inside SQLAlchemy event listeners and Prometheus-metrics helpers, used to break otherwise-unavoidable circular dependencies between the DB / helper layer and the web layer's metrics counters. These should ideally be moved to a dedicated metrics module in a future refactor."
+
+[importlinter:contract:cw-login-is-vendored]
+type = forbidden
+name = cw-login-is-vendored
+source_modules =
+    cps.cw_login
+forbidden_modules =
+    cps
+ignore_imports =
+    cps -> cps.main
+message = "cps.cw_login is a vendored copy of Flask-Login. It must remain self-contained and not depend on any other cps.* module. Other cps modules import from it (current_user, login_required, anonymous_user, ...), never the other way around."
+
+[importlinter:contract:cw-advocate-is-vendored]
+type = forbidden
+name = cw-advocate-is-vendored
+source_modules =
+    cps.cw_advocate
+forbidden_modules =
+    cps
+ignore_imports =
+    cps -> cps.main
+message = "cps.cw_advocate is a vendored copy of the requests advocate proxy-validation library. It must remain self-contained and not depend on any other cps.* module."
