@@ -42,6 +42,7 @@ forbidden_modules =
     cps.search
     cps.api
     cps.about
+    cps.duplicates
     cps.gdrive
     cps.services.worker
     cps.tasks
@@ -69,6 +70,7 @@ forbidden_modules =
     cps.search
     cps.api
     cps.about
+    cps.duplicates
     cps.gdrive
     cps.tasks
     cps.tasks_status
@@ -94,13 +96,15 @@ forbidden_modules =
     cps.search
     cps.api
     cps.about
+    cps.duplicates
     cps.gdrive
     cps.frontend_rebuild
 ignore_imports =
     cps -> cps.main
     cps.db -> cps.web
     cps.helper -> cps.web
-message = "cps.tasks contains background job implementations invoked from the APScheduler worker thread. They must not import from the web/UI layer; the UI invokes tasks through cps.services.background_scheduler only. The two ignored edges (cps.db -> cps.web and cps.helper -> cps.web) are function-level lazy imports inside SQLAlchemy event listeners and Prometheus-metrics helpers, used to break otherwise-unavoidable circular dependencies between the DB / helper layer and the web layer's metrics counters. These should ideally be moved to a dedicated metrics module in a future refactor."
+    cps.duplicate_resolve -> cps.editbooks
+message = "cps.tasks contains background job implementations invoked from the APScheduler worker thread. They must not import from the web/UI layer; the UI invokes tasks through cps.services.background_scheduler only. The three ignored edges are function-level lazy imports used to break otherwise-unavoidable circular dependencies: cps.db -> cps.web and cps.helper -> cps.web are SQLAlchemy event listeners and Prometheus-metrics helpers (ideally moved to a dedicated metrics module in a future refactor), and cps.duplicate_resolve -> cps.editbooks is the duplicate-resolution module lazily importing delete_whole_book inside its delete routine so that the shared resolution logic can be invoked both from the UI and from the background duplicate-scan task without importing the full editbooks UI module."
 
 [importlinter:contract:cw-login-is-vendored]
 type = forbidden

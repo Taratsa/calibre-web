@@ -634,12 +634,99 @@ class Thumbnail(Base):
     expiration = Column(DateTime, nullable=True)
 
 
+# A duplicate group can be dismissed per-user, so it is no longer shown on the
+# Duplicates page. group_hash is the MD5 of "<normalized title>|<primary author>".
+class DismissedDuplicateGroup(Base):
+    __tablename__ = "dismissed_duplicate_group"
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("user.id"), index=True)
+    group_hash = Column(String(32), index=True)
+    dismissed_at = Column(DateTime, default=lambda: datetime.now(UTC))
+
+
+# Singleton row (id=1) holding the configurable matching rules / thresholds for
+# the Smart Duplicate Detection System. Kept in app.db so no separate settings
+# store is required.
+class DuplicateSettings(Base):
+    __tablename__ = "duplicate_settings"
+
+    id = Column(Integer, primary_key=True)
+    detection_enabled = Column(Boolean, default=True)
+    use_title = Column(Boolean, default=True)
+    use_author = Column(Boolean, default=True)
+    use_language = Column(Boolean, default=True)
+    use_series = Column(Boolean, default=False)
+    use_publisher = Column(Boolean, default=False)
+    use_format = Column(Boolean, default=False)
+    scan_method = Column(String(16), default="hybrid")
+    # Schedule: optional crontab expression (e.g. "0 3 * * 0") for incremental scans
+    schedule_enabled = Column(Boolean, default=False)
+    schedule_cron = Column(String(64), default="")
+    # Optional automatic resolution after scans
+    auto_resolve_enabled = Column(Boolean, default=False)
+    auto_resolve_strategy = Column(String(32), default="newest")
+    auto_resolve_cooldown_minutes = Column(Integer, default=0)
+    format_priority = Column(JSON, default=dict)  # type: ignore[assignment] # pyright: ignore[reportMissingTypeArgument]
+    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
+    updated_at = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
+
+    def __repr__(self):
+        return f"<DuplicateSettings id={self.id} enabled={self.detection_enabled}>"
+
+
+# Singleton row (id=1) caching the results of the last duplicate scan so the
+# Duplicates page does not re-scan the whole library on every request.
+class DuplicateIndexCache(Base):
+    __tablename__ = "duplicate_index_cache"
+
+    id = Column(Integer, primary_key=True)
+    scan_timestamp = Column(DateTime, nullable=True)
+    duplicate_groups_json = Column(JSON, default=list)  # type: ignore[assignment] # pyright: ignore[reportMissingTypeArgument]
+    total_count = Column(Integer, default=0)
+    scan_pending = Column(Boolean, default=False)
+    last_scanned_book_id = Column(Integer, default=0)
+    scan_duration_seconds = Column(Float, default=0.0)
+    scan_method_used = Column(String(16), default="")
+    criteria_fingerprint = Column(String(64), default="")
+    max_book_id = Column(Integer, default=0)
+
+
+# Per-book normalized keys used by the duplicate index. Supports incremental
+# scans: only books newer than last_scanned_book_id need re-indexing, and
+# duplicate groups are derived from duplicate_key collisions.
+class DuplicateBookKey(Base):
+    __tablename__ = "duplicate_book_key"
+
+    book_id = Column(Integer, primary_key=True)
+    normalized_title = Column(String, default="")
+    normalized_author = Column(String, default="")
+    normalized_language = Column(String, default="")
+    normalized_series = Column(String, default="")
+    normalized_publisher = Column(String, default="")
+    format_signature = Column(String, default="")
+    duplicate_key = Column(String(64), index=True)
+    criteria_fingerprint = Column(String(64), index=True)
+    updated_at = Column(DateTime, default=lambda: datetime.now(UTC))
+
+    def __repr__(self):
+        return f"<DuplicateBookKey book_id={self.book_id} duplicate_key={self.duplicate_key!r}>"
+
+
 # Add missing tables during migration of database
 def add_missing_tables(engine, _session):
     if not engine.dialect.has_table(engine.connect(), "archived_book"):
         ArchivedBook.__table__.create(bind=engine)
     if not engine.dialect.has_table(engine.connect(), "thumbnail"):
         Thumbnail.__table__.create(bind=engine)
+    if not engine.dialect.has_table(engine.connect(), "dismissed_duplicate_group"):
+        DismissedDuplicateGroup.__table__.create(bind=engine)
+    if not engine.dialect.has_table(engine.connect(), "duplicate_settings"):
+        DuplicateSettings.__table__.create(bind=engine)
+    if not engine.dialect.has_table(engine.connect(), "duplicate_index_cache"):
+        DuplicateIndexCache.__table__.create(bind=engine)
+    if not engine.dialect.has_table(engine.connect(), "duplicate_book_key"):
+        DuplicateBookKey.__table__.create(bind=engine)
 
 
 # migrate all settings missing in registration table

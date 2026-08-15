@@ -25,6 +25,23 @@ def normalize_title(s):
     return s.lower().strip()
 
 
+def _normalize_format_filter(value):
+    """Parse a format filter into a set of upper-case format codes.
+
+    Accepts ``"epub"``, ``".pdf"`` or a comma/pipe separated list such as
+    ``"epub,pdf"``. Returns an empty set when nothing usable is provided.
+    """
+    if not value:
+        return set()
+    parts = re.split(r"[,/|;]+", str(value))
+    formats = set()
+    for part in parts:
+        part = part.strip().lstrip(".").upper()
+        if part:
+            formats.add(part)
+    return formats
+
+
 def validate_upload_file(requested_file):
     log.debug(f"Validating file: {requested_file}")
     if not requested_file or not requested_file.filename:
@@ -128,6 +145,11 @@ def api_webhook_upload():
         calibre_db.session.commit()
         log.info(f"Database commit successful for book_id={book_id}")
 
+        # Post-ingest hook: keep the duplicate index fresh (incremental scan)
+        from .duplicate_index import notify_book_changed as _notify_duplicates
+
+        _notify_duplicates([book_id])
+
         if config.config_use_google_drive:
             log.debug("Syncing Google Drive")
             gdriveutils.updateGdriveCalibreFromLocal()  # pyright: ignore[reportPossiblyUnboundVariable]
@@ -175,19 +197,24 @@ def api_webhook_check():
 
     title = None
     author = None
+    format_filter = None
 
     if request.method == "POST":
         data = request.get_json(silent=True) or {}
         title = data.get("title")
         author = data.get("author")
+        format_filter = data.get("format")
     else:
         title = request.args.get("title")
         author = request.args.get("author")
+        format_filter = request.args.get("format")
 
-    log.debug(f"Check request: title={title}, author={author}")
+    log.debug(f"Check request: title={title}, author={author}, format={format_filter}")
+
+    wanted_formats = _normalize_format_filter(format_filter)
 
     query = calibre_db.session.query(db.Books)
-    results = []
+    partial = False
 
     if title:
         from sqlalchemy import and_, or_
@@ -239,6 +266,9 @@ def api_webhook_check():
         if words:
             title_patterns = [db.Books.title.ilike(f"%{w}%") for w in words]  # pyright: ignore[reportGeneralTypeIssues]
             query = query.filter(and_(*title_patterns))
+        else:
+            # Title supplied but nothing searchable -> only author can narrow the query
+            partial = True
 
         if author:
             author_pattern = f"%{author}%"
@@ -248,27 +278,63 @@ def api_webhook_check():
                     db.Authors.sort.ilike(author_pattern),  # pyright: ignore[reportGeneralTypeIssues]
                 )
             )
-
-        books = query.limit(10).all()
-        query_norm = normalize_title(title)
-        exact_match = False
-        for book in books:
-            book_norm = normalize_title(book.title)
-            if book_norm == query_norm:
-                exact_match = True
-            results.append(
-                {
-                    "book_id": book.id,
-                    "title": book.title,
-                    "authors": [a.name for a in book.authors],
-                    "url": request.host_url + url_for("web.show_book", book_id=book.id).lstrip("/"),
-                }
+    elif author:
+        partial = True
+        author_pattern = f"%{author}%"
+        query = query.join(db.Authors).filter(
+            or_(
+                db.Authors.name.ilike(author_pattern),  # pyright: ignore[reportGeneralTypeIssues]
+                db.Authors.sort.ilike(author_pattern),  # pyright: ignore[reportGeneralTypeIssues]
             )
+        )
+    else:
+        # Nothing to search on: refuse instead of returning the whole library
+        return make_response(jsonify(error=_("At least one of 'title' or 'author' is required")), 400)
 
-    log.info(f"Check API found {len(results)} results, exact={exact_match}")  # pyright: ignore[reportPossiblyUnboundVariable]
+    books = query.limit(10).all()
+
+    # Reuse the duplicate index so callers can check whether an upload would
+    # duplicate an already-known book, consistent with the Duplicates page.
+    from .duplicate_index import get_duplicate_book_ids, settings_to_dict
+
+    duplicate_ids = get_duplicate_book_ids(settings_to_dict(), book_ids=[book.id for book in books])
+
+    results = []
+    exact_match = False
+    any_duplicate = False
+    for book in books:
+        book_norm = normalize_title(book.title)
+        book_exact = bool(title) and book_norm == normalize_title(title)
+        exact_match = exact_match or book_exact
+
+        formats = [data.format for data in (book.data or []) if data.format]
+        books_is_duplicate = book.id in duplicate_ids
+        any_duplicate = any_duplicate or books_is_duplicate
+
+        entry = {
+            "book_id": book.id,
+            "title": book.title,
+            "authors": [a.name for a in book.authors],
+            "url": request.host_url + url_for("web.show_book", book_id=book.id).lstrip("/"),
+            "exact_match": book_exact,
+            "is_duplicate": books_is_duplicate,
+            "formats": formats,
+            "has_format": bool(wanted_formats & set(formats)) if wanted_formats else None,
+            "languages": [lang.lang_code for lang in (book.languages or [])],
+            "series": [s.name for s in (book.series or [])],
+            "publishers": [p.name for p in (book.publishers or [])],
+            "timestamp": book.timestamp.isoformat() if book.timestamp else None,
+        }
+        if wanted_formats:
+            entry["missing_formats"] = sorted(wanted_formats - set(formats))
+        results.append(entry)
+
+    log.info(f"Check API found {len(results)} results, exact={exact_match}, duplicates={any_duplicate}")
     return jsonify(
         found=len(results) > 0,
-        exact_match=exact_match,  # pyright: ignore[reportPossiblyUnboundVariable]
+        exact_match=exact_match,
+        is_duplicate=any_duplicate,
         count=len(results),
+        partial=partial,
         results=results,
     )

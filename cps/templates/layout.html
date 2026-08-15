@@ -189,6 +189,9 @@
                 {% endfor %}
               {% if not current_user.is_anonymous %}
                 <li id="nav_createshelf" class="create-shelf"><a href="{{url_for('shelf.create_shelf')}}">{{_('Create a Shelf')}}</a></li>
+                {% if current_user.role_admin() or current_user.role_edit() %}
+                <li id="nav_duplicates" {% if page == 'duplicates' %}class="active"{% endif %}><a href="{{url_for('duplicates.show_duplicates')}}"><span class="glyphicon glyphicon-duplicate"></span> {{_('Duplicates')}}</a></li>
+                {% endif %}
                 <li id="nav_about" {% if page == 'stat' %}class="active"{% endif %}><a href="{{url_for('about.stats')}}"><span class="glyphicon glyphicon-info-sign"></span> {{_('About')}}</a></li>
               {% endif %}
               {% endif %}

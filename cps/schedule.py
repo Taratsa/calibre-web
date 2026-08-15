@@ -17,10 +17,11 @@
 import datetime
 
 from . import config, constants
-from .services.background_scheduler import BackgroundScheduler, CronTrigger, use_APScheduler  # noqa: F401
+from .services.background_scheduler import BackgroundScheduler, CronTrigger, use_APScheduler
 from .services.worker import WorkerThread
 from .tasks.clean import TaskClean
 from .tasks.database import TaskReconnectDatabase
+from .tasks.duplicate_scan import TaskDuplicateScan
 from .tasks.metadata_backup import TaskBackupMetadata
 from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThumbnails, TaskGenerateSeriesThumbnails
 
@@ -48,6 +49,43 @@ def get_scheduled_tasks(reconnect=True):
         tasks.append([lambda: TaskGenerateSeriesThumbnails(), "generate book covers", False])
 
     return tasks
+
+
+def get_duplicate_scan_trigger():
+    """CronTrigger for the scheduled duplicate scan, or None when disabled.
+
+    The trigger is recomputed every time scheduled tasks are (re)registered so
+    setting changes take effect on the next registration.
+    """
+    if not use_APScheduler:
+        return None
+    try:
+        from .duplicate_index import settings_to_dict
+
+        settings = settings_to_dict()
+        if not int(settings.get("duplicate_scan_enabled", 0)):
+            return None
+        cron_expr = (settings.get("duplicate_scan_cron") or "").strip()
+        if not cron_expr:
+            cron_expr = "0 3 * * *"
+        timezone_info = datetime.datetime.now(datetime.UTC).astimezone().tzinfo
+        return CronTrigger.from_crontab(cron_expr, timezone=timezone_info)
+    except Exception:
+        return None
+
+
+def register_duplicate_scan_job(scheduler):
+    """Register the scheduled duplicate index scan job (if enabled)."""
+    if not use_APScheduler or scheduler is None:
+        return
+    trigger = get_duplicate_scan_trigger()
+    if trigger is None:
+        return
+    scheduler.schedule_task(
+        lambda: TaskDuplicateScan(full_scan=True, trigger_type="scheduled"),
+        name="duplicate scan",
+        trigger=trigger,
+    )
 
 
 def end_scheduled_tasks():
@@ -78,6 +116,9 @@ def register_scheduled_tasks(reconnect=True):
             trigger=CronTrigger(hour=end_time.hour, minute=end_time.minute, timezone=timezone_info),
             name="end scheduled task",
         )
+
+        # Scheduled duplicate index scan (crontab from duplicate settings)
+        register_duplicate_scan_job(scheduler)
 
         # Kick-off tasks, if they should currently be running
         if should_task_be_running(start, duration):

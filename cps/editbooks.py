@@ -48,6 +48,7 @@ from . import (
 )
 from .clean_html import clean_string
 from .cw_login import current_user
+from .duplicate_index import notify_book_changed as notify_duplicate_books_changed
 from .file_helper import validate_mime_type
 from .frontend_rebuild import trigger_rebuild_async
 from .kobo_sync_status import change_archived_books
@@ -97,6 +98,7 @@ def delete_books_ajax():
                 details="Book deleted via bulk ajax",
                 ip_address=helper.get_client_ip(),
             )
+        notify_duplicate_books_changed(book_ids)
     return check_delete_book(book_ids, "", True)
 
 
@@ -113,6 +115,7 @@ def delete_book(book_id, book_format):
         details="Book deleted{}".format(f" (format: {book_format})" if book_format else ""),
         ip_address=helper.get_client_ip(),
     )
+    notify_duplicate_books_changed([book_id])
     return check_delete_book(book_id, book_format, False, request.form.to_dict().get("location", ""))
 
 
@@ -138,6 +141,7 @@ def edit_book(book_id):
         details="Edited book: {}".format(book.title if book else "unknown"),
         ip_address=helper.get_client_ip(),
     )
+    notify_duplicate_books_changed([book_id])
     return result
 
 
@@ -156,6 +160,7 @@ def upload():
             details="New format uploaded for book",
             ip_address=helper.get_client_ip(),
         )
+        notify_duplicate_books_changed([book_id])
         return result
     elif len(request.files.getlist("btn-upload")):
         for requested_file in request.files.getlist("btn-upload"):
@@ -202,6 +207,8 @@ def upload():
                     calibre_db.set_metadata_dirty(book_id)
                 # save data to database, reread data
                 calibre_db.session.commit()
+
+                notify_duplicate_books_changed([book_id])
 
                 if config.config_use_google_drive:
                     gdriveutils.updateGdriveCalibreFromLocal()

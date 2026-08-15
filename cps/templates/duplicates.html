@@ -1,0 +1,305 @@
+{% extends "layout.html" %}
+{% block header %}
+<style>
+  /* Dark (caliBlur) theme consistency — uses the theme's own CSS variables */
+  body.blur .container-fluid > .row-fluid > .col-sm-10 {
+    color: #fff;
+  }
+  body.blur .dup-toolbar .label {
+    background: hsla(0, 0%, 100%, 0.85);
+    color: #333;
+    font-size: 13px;
+  }
+  body.blur .dup-section {
+    margin-bottom: 24px;
+    padding: 18px;
+    border: 1px solid hsla(0, 0%, 100%, 0.12);
+    border-radius: 4px;
+    background: hsla(0, 0%, 100%, 0.04);
+  }
+  body.blur .dup-section > .dup-section-head {
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: none;
+  }
+  body.blur .dup-group {
+    margin-bottom: 20px;
+    border: 1px solid hsla(0, 0%, 100%, 0.12);
+    border-radius: 4px;
+    background: hsla(0, 0%, 100%, 0.04);
+  }
+  body.blur .dup-group-head {
+    padding: 12px 16px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
+  }
+  body.blur .dup-group-head .badge {
+    background: var(--color-secondary);
+    color: #fff;
+  }
+  body.blur .dup-group-body {
+    padding: 16px;
+  }
+  body.blur .dup-book .thumbnail {
+    background: hsla(0, 0%, 100%, 0.07);
+    border: 1px solid hsla(0, 0%, 100%, 0.12);
+    margin-bottom: 8px;
+  }
+  body.blur .dup-book .thumbnail .caption {
+    color: #fff;
+  }
+  body.blur .dup-book .thumbnail img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 170px;
+    width: auto;
+  }
+  body.blur .dup-book .caption a {
+    color: var(--color-primary);
+  }
+  body.blur .dup-book .caption a:hover {
+    color: #fff;
+  }
+  body.blur .dup-book .label {
+    background: hsla(0, 0%, 100%, 0.85);
+    color: #333;
+    font-weight: 400;
+  }
+  body.blur .text-muted, body.blur .help-block {
+    color: hsla(0, 0%, 100%, 0.55);
+  }
+  body.blur .dup-section .alert {
+    margin-bottom: 12px;
+    border: 0;
+  }
+  body.blur .modal-content {
+    background: #3a3a3a;
+    color: #fff;
+  }
+  body.blur .modal-header, body.blur .modal-footer {
+    border-color: hsla(0, 0%, 100%, 0.15);
+  }
+  body.blur .modal-header .close {
+    color: #fff;
+    opacity: 0.8;
+  }
+  body.blur .dup-settings-row {
+    margin-bottom: 10px;
+  }
+  body.blur .dup-settings-row .checkbox-inline {
+    color: #fff;
+  }
+  @media (max-width: 767px) {
+    body.blur .dup-book .thumbnail img {
+      max-height: 120px;
+    }
+  }
+</style>
+{% endblock %}
+{% block body %}
+      <h2>{{_('Duplicate Books')}}</h2>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+      {% if duplicate_index_needs_full_scan %}
+      <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-alert"></span>
+        {{_('The duplicate index has not been built yet for this library. Click "Scan now" to detect duplicate books.')}}
+      </div>
+      {% endif %}
+
+      <div class="dup-toolbar">
+        <div class="form-inline">
+          <button type="button" class="btn btn-primary" id="trigger_scan">
+            <span class="glyphicon glyphicon-search"></span> {{_('Scan now')}}
+          </button>
+          <span class="label label-default" id="unresolved_badge">{{_('Unresolved: %(count)s', count=unresolved_count)}}</span>
+          {% if next_scan_run %}
+            <span class="text-muted">{{_('Next scheduled scan: %(when)s', when=next_scan_run)}}</span>
+          {% endif %}
+          {% if cache_timestamp %}
+            <span class="text-muted">{{_('Last scan: %(when)s', when=cache_timestamp|formatdate)}}</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="dup-section" id="duplicate_settings_section">
+        <div class="dup-section-head" role="button" data-toggle="collapse" data-target="#duplicate_settings_panel" aria-expanded="false" aria-controls="duplicate_settings_panel">
+          <span class="glyphicon glyphicon-cog"></span> {{_('Detection Settings')}}
+        </div>
+        <div id="duplicate_settings_panel" class="collapse">
+          <form id="duplicate-settings-form">
+            <div class="dup-settings-row">
+              <label><input type="checkbox" name="detection_enabled" value="1" {% if settings.detection_enabled %}checked{% endif %}> {{_('Enable duplicate detection')}}</label>
+            </div>
+            <div class="dup-settings-row">
+              <strong>{{_('Matching criteria')}}:</strong>
+              <label class="checkbox-inline"><input type="checkbox" name="use_title" value="1" {% if settings.use_title %}checked{% endif %}> {{_('Title')}}</label>
+              <label class="checkbox-inline"><input type="checkbox" name="use_author" value="1" {% if settings.use_author %}checked{% endif %}> {{_('Author')}}</label>
+              <label class="checkbox-inline"><input type="checkbox" name="use_language" value="1" {% if settings.use_language %}checked{% endif %}> {{_('Language')}}</label>
+              <label class="checkbox-inline"><input type="checkbox" name="use_series" value="1" {% if settings.use_series %}checked{% endif %}> {{_('Series')}}</label>
+              <label class="checkbox-inline"><input type="checkbox" name="use_publisher" value="1" {% if settings.use_publisher %}checked{% endif %}> {{_('Publisher')}}</label>
+              <label class="checkbox-inline"><input type="checkbox" name="use_format" value="1" {% if settings.use_format %}checked{% endif %}> {{_('Format')}}</label>
+            </div>
+            <div class="dup-settings-row">
+              <label>{{_('Scan method')}}:
+                <select name="scan_method" class="form-control">
+                  <option value="hybrid" {% if settings.scan_method == 'hybrid' %}selected{% endif %}>{{_('Hybrid (SQL + fuzzy)')}}</option>
+                  <option value="python" {% if settings.scan_method == 'python' %}selected{% endif %}>{{_('Python (full scan)')}}</option>
+                  <option value="sql" {% if settings.scan_method == 'sql' %}selected{% endif %}>{{_('SQL only (experimental)')}}</option>
+                </select>
+              </label>
+            </div>
+            <div class="dup-settings-row">
+              <label><input type="checkbox" name="schedule_enabled" value="1" {% if settings.schedule_enabled %}checked{% endif %}> {{_('Scheduled incremental scans')}}</label>
+              <input type="text" name="schedule_cron" class="form-control" value="{{ settings.schedule_cron }}" placeholder="{{_('crontab, e.g. 0 3 * * *')}}" style="width: 220px;">
+            </div>
+            <div class="dup-settings-row">
+              <label><input type="checkbox" name="auto_resolve_enabled" value="1" {% if settings.auto_resolve_enabled %}checked{% endif %}> {{_('Automatically resolve duplicates after scans')}}</label>
+              <select name="auto_resolve_strategy" class="form-control">
+                <option value="newest" {% if settings.auto_resolve_strategy == 'newest' %}selected{% endif %}>{{_('Keep newest')}}</option>
+                <option value="oldest" {% if settings.auto_resolve_strategy == 'oldest' %}selected{% endif %}>{{_('Keep oldest')}}</option>
+                <option value="merge" {% if settings.auto_resolve_strategy == 'merge' %}selected{% endif %}>{{_('Merge formats')}}</option>
+                <option value="highest_quality_format" {% if settings.auto_resolve_strategy == 'highest_quality_format' %}selected{% endif %}>{{_('Highest quality format')}}</option>
+                <option value="most_metadata" {% if settings.auto_resolve_strategy == 'most_metadata' %}selected{% endif %}>{{_('Most metadata')}}</option>
+                <option value="largest_file_size" {% if settings.auto_resolve_strategy == 'largest_file_size' %}selected{% endif %}>{{_('Largest file size')}}</option>
+              </select>
+              <input type="number" name="auto_resolve_cooldown_minutes" class="form-control" value="{{ settings.auto_resolve_cooldown_minutes }}" min="0" placeholder="{{_('Cooldown (minutes)')}}" style="width: 160px;">
+            </div>
+            <div class="dup-settings-row">
+              <label>{{_('Format priority (JSON)')}}</label>
+              <textarea name="format_priority" class="form-control" rows="3">{{ settings.format_priority|tojson }}</textarea>
+              <span class="help-block">{{_('Used by the "highest quality format" strategy, e.g. {"EPUB": 100, "PDF": 60}')}}</span>
+            </div>
+            <button type="button" class="btn btn-default" id="save_settings">{{_('Save settings')}}</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="dup-section" id="duplicate_resolve_section">
+        <div class="dup-section-head" role="button" data-toggle="collapse" data-target="#duplicate_resolve_panel" aria-expanded="false" aria-controls="duplicate_resolve_panel">
+          <span class="glyphicon glyphicon-transfer"></span> {{_('Batch Operations')}}
+        </div>
+        <div id="duplicate_resolve_panel" class="collapse">
+          <div class="form-inline">
+            <label>{{_('Strategy')}}</label>
+            <select id="resolution_strategy" class="form-control">
+              <option value="newest">{{_('Keep newest')}}</option>
+              <option value="oldest">{{_('Keep oldest')}}</option>
+              <option value="merge">{{_('Merge formats')}}</option>
+              <option value="highest_quality_format">{{_('Highest quality format')}}</option>
+              <option value="most_metadata">{{_('Most metadata')}}</option>
+              <option value="largest_file_size">{{_('Largest file size')}}</option>
+            </select>
+            <button type="button" class="btn btn-default" id="preview_resolution">{{_('Preview')}}</button>
+            <button type="button" class="btn btn-danger" id="execute_resolution">{{_('Execute on all groups')}}</button>
+          </div>
+          <div class="dup-settings-row">
+            <span class="help-block">{{_('Preview shows which book would be kept in every group without making changes. Execution backs up and deletes surplus copies.')}}</span>
+          </div>
+        </div>
+      </div>
+
+      {% if duplicate_groups %}
+        <h3>{{_('Detected duplicate groups')}} <span class="badge">{{ duplicate_groups|length }}</span></h3>
+        {% for group in duplicate_groups %}
+        <div class="dup-group" data-group-hash="{{ group.group_hash }}">
+          <div class="dup-group-head">
+            <strong>{{ group.title }}</strong>
+            <span class="text-muted">{{ _('by') }} {{ group.author }}</span>
+            <span class="badge">{{ group.count }} {{_('copies')}}</span>
+            <div class="pull-right">
+              <button type="button" class="btn btn-xs btn-default dismiss-group" title="{{_('Hide this group for this user')}}">{{_('Dismiss')}}</button>
+            </div>
+          </div>
+          <div class="dup-group-body">
+            <div class="row">
+              {% for book in group.books %}
+              <div class="col-sm-3 col-lg-2 col-xs-6 dup-book" data-book-id="{{ book.id }}">
+                <div class="thumbnail">
+                  <a href="{{ url_for('web.show_book', book_id=book.id) }}">
+                    <img src="{{ book.cover_url }}" alt="{{ book.title }}">
+                  </a>
+                  <div class="caption">
+                    <strong><a href="{{ url_for('web.show_book', book_id=book.id) }}">{{ book.title|shortentitle(30) }}</a></strong>
+                    <p class="text-muted small">{{ book.author_names }}</p>
+                    <p class="small">
+                      {% if book.series %}
+                        {{ book.series[0].name }}{% if book.series_index %}: {{ book.series_index }}{% endif %}<br>
+                      {% endif %}
+                      {% for data in book.data %}<span class="label label-default">{{ data.format }}</span> {% endfor %}
+                    </p>
+                    <p class="small text-muted">
+                      <a class="btn btn-default btn-xs" href="{{ url_for('edit-book.show_edit_book', book_id=book.id) }}" title="{{_('Edit metadata')}}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                      <a class="btn btn-default btn-xs" href="{{ url_for('web.show_book', book_id=book.id) }}" title="{{_('View details')}}">
+                        <span class="glyphicon glyphicon-book"></span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        {% if not duplicate_index_needs_full_scan %}
+        <div class="alert alert-success">
+          <span class="glyphicon glyphicon-ok"></span> {{_('No duplicate books found.')}}
+        </div>
+        {% endif %}
+      {% endif %}
+
+<div id="ResolutionPreviewModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{_('Resolution preview')}}</h4>
+      </div>
+      <div class="modal-body" id="resolution_preview_body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{_('Close')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ConfirmModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{_('Confirm')}}</h4>
+      </div>
+      <div class="modal-body" id="confirm_modal_body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{_('Cancel')}}</button>
+        <button type="button" class="btn btn-danger" id="confirm_modal_ok">{{_('OK')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="InfoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{_('Information')}}</h4>
+      </div>
+      <div class="modal-body" id="info_modal_body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{_('OK')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/duplicates.js') }}"></script>
+{% endblock %}

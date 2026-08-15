@@ -122,6 +122,31 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - App-level WebP conversion for cover images
 - Canonical URLs for SEO
 
+### Smart Duplicate Detection System & Management
+- **Endpoint**: `/duplicates` (sidebar link, admin/edit users only)
+- Detection combines hybrid SQL candidate prefiltering + Python fuzzy title/author
+  normalization (`cps/duplicate_index.py`, data layer, no UI deps)
+- Configurable matching rules (`duplicate_settings` row id=1 in app.db): title,
+  author, language, series, publisher, format; scan method (hybrid/python/sql);
+  scheduled incremental scans (crontab via APScheduler in `cps/schedule.py`);
+  optional auto-resolution with strategies newest/oldest/merge/highest_quality_format/
+  most_metadata/largest_file_size and a cooldown
+- Persistent per-book index (`duplicate_book_key`) + cached groups
+  (`duplicate_index_cache`) enable incremental scans (books added since last scan)
+  and post-ingest check hooks (upload/edit/delete in `cps/editbooks.py` queue a
+  hidden incremental `TaskDuplicateScan`)
+- One-click dismiss/undismiss per user (`DismissedDuplicateGroup`), batch
+  preview + execute resolution (`cps/duplicate_resolve.py` — kept free of UI code
+  so background tasks can use it), backups of deleted books under
+  `<app.db dir>/processed_books/duplicate_resolutions/`, audit-log entries
+  (`action="duplicate_resolution"`)
+- Deletion reuses stock helpers (`helper.delete_book` + `editbooks.delete_whole_book`);
+  the lazy `duplicate_resolve -> editbooks` import is a documented
+  import-linter ignore in `.importlinter`
+- UI: `cps/templates/duplicates.html` + `cps/static/js/duplicates.js`
+- Background scan task: `cps/tasks/duplicate_scan.py` (`TaskDuplicateScan`)
+- `/duplicates/invalidate-cache` internal endpoint is CSRF-exempt
+
 ### Structured Data (JSON-LD)
 
 #### Book Pages
