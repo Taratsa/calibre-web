@@ -1,4 +1,5 @@
 import booksIndex from '~/data/books.json';
+import legacyBookSlugs from '~/data/legacy-book-slugs.json';
 
 export interface BookLike {
   id: number;
@@ -9,6 +10,7 @@ export interface BookLike {
 
 const books = booksIndex as BookLike[];
 const slugsById = new Map(books.map((book) => [book.id, book.slug].filter((entry): entry is [number, string] => Boolean(entry[1]))));
+const legacyBookIds = legacyBookSlugs as Record<string, number>;
 
 const TRANSLITERATIONS: Record<string, string> = {
   'ı': 'i',
@@ -64,6 +66,6 @@ export function bookPath(book: BookLike): string {
 }
 
 export function bookByPathSegment(segment: string): BookLike | undefined {
-  return books.find((book) => book.slug === segment || String(book.id) === segment);
+  const legacyBookId = legacyBookIds[segment];
+  return books.find((book) => book.slug === segment || book.id === legacyBookId || String(book.id) === segment);
 }
-

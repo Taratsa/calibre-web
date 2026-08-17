@@ -23,7 +23,7 @@
  */
 
 import Database from 'better-sqlite3';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -44,6 +44,15 @@ async function writeJson(relPath, data) {
   const full = join(OUT, relPath);
   await mkdir(dirname(full), { recursive: true });
   await writeFile(full, JSON.stringify(data, null, 2), 'utf8');
+}
+
+async function readJsonIfExists(relPath, fallback) {
+  try {
+    return JSON.parse(await readFile(join(OUT, relPath), 'utf8'));
+  } catch (error) {
+    if (error.code === 'ENOENT') return fallback;
+    throw error;
+  }
 }
 
 function cleanAuthorName(name) {
@@ -83,6 +92,30 @@ function buildSlugMap(allBooks, authorsByBook) {
     slugs.set(book.id, `${shortened.slice(0, maxBaseLength - suffix.length).replace(/-+$/, '')}${suffix}`);
   }
   return slugs;
+}
+
+function buildLegacySlugMap(previousBooks, previousAliases, currentBooks) {
+  const currentIds = new Set(currentBooks.map((book) => book.id));
+  const currentSlugs = new Set(currentBooks.map((book) => book.slug));
+  const aliases = {};
+
+  for (const [slug, bookId] of Object.entries(previousAliases || {})) {
+    const id = Number(bookId);
+    if (Number.isInteger(id) && currentIds.has(id) && !currentSlugs.has(slug)) aliases[slug] = id;
+  }
+
+  const previousSlugsById = new Map(
+    (Array.isArray(previousBooks) ? previousBooks : [])
+      .filter((book) => Number.isInteger(book.id) && typeof book.slug === 'string')
+      .map((book) => [book.id, book.slug]),
+  );
+  for (const book of currentBooks) {
+    const previousSlug = previousSlugsById.get(book.id);
+    if (previousSlug && previousSlug !== book.slug && !currentSlugs.has(previousSlug)) {
+      aliases[previousSlug] = book.id;
+    }
+  }
+  return aliases;
 }
 
 function openDb() {
@@ -300,11 +333,14 @@ function groupBy(db, tableSql, key) {
 
 async function main() {
   console.log(`[seed] reading ${DB_PATH}`);
+  const previousBooks = await readJsonIfExists('books.json', []);
+  const previousAliases = await readJsonIfExists('legacy-book-slugs.json', {});
   const db = openDb();
   try {
     const index = await loadBooks(db);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
+    await writeJson('legacy-book-slugs.json', buildLegacySlugMap(previousBooks, previousAliases, index));
 
     const authorsAll = db.prepare(`SELECT id, name, sort FROM authors ORDER BY name`).all();
     const authorsClean = authorsAll.map(a => ({

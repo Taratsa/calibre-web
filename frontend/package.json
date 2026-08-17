@@ -8,6 +8,7 @@
     "dev": "node scripts/seed.mjs && astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "test:legacy-slugs": "node scripts/test-legacy-book-slugs.mjs",
     "astro": "astro"
   },
   "dependencies": {

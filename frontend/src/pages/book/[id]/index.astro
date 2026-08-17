@@ -14,6 +14,7 @@ if (!id || /^\d+$/.test(id)) return new Response(null, { status: 404 });
 const resolvedBook = bookByPathSegment(id);
 const book = resolvedBook && getAllBooks().find((candidate) => candidate.id === resolvedBook.id);
 if (!book) return new Response(null, { status: 404 });
+if (id !== book.slug) return Astro.redirect(`${bookPath(book)}/`, 308);
 
 const contentDir = join(process.cwd(), 'src', 'data', 'books');
 let detail: BookDetail | null = null;
