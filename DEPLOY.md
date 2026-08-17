@@ -41,7 +41,10 @@ metadata changes. This is not a live frontend rebuild watcher.
 cp .env.example .env
 vim .env
 
-# 2. Build and start both application images
+# 2. Refresh database-backed frontend snapshots
+./build-frontend.sh
+
+# 3. Build and start both application images
 docker compose build
 docker compose up -d
 ```
@@ -73,7 +76,8 @@ watcher.
 ## Manual Commands
 
 ```bash
-# Build both images and deploy
+# Refresh frontend snapshots, build both images, and deploy
+./build-frontend.sh
 docker compose build
 docker compose up -d
 

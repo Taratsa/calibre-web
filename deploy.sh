@@ -33,7 +33,7 @@ while [[ $# -gt 0 ]]; do
             echo "Usage: $0 [options]"
             echo "Options:"
             echo "  --force-rebuild  Force rebuild of all Docker images"
-            echo "  --no-watcher     Skip starting the rebuild-watcher"
+            echo "  --no-watcher     Skip starting the rebuild-watcher (legacy option)"
             echo "  --help           Show this help message"
             exit 0
             ;;
@@ -43,6 +43,16 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# Refresh JSON data before the frontend image is built. The Astro image has
+# no database mount, so stale or missing snapshots otherwise get baked into
+# the image and pages such as /populer/ remain empty.
+echo "=== Refreshing frontend data ==="
+if [ ! -f "$SCRIPT_DIR/library/metadata.db" ] || [ ! -f "$SCRIPT_DIR/data/app.db" ]; then
+    echo "Error: library/metadata.db and data/app.db are required to build frontend data."
+    exit 1
+fi
+"$SCRIPT_DIR/build-frontend.sh"
 
 # Build Docker images
 echo "=== Building Docker images ==="
@@ -61,7 +71,7 @@ docker compose down
 echo
 echo "=== Starting services ==="
 if [ "$SKIP_WATCHER" = true ]; then
-    docker compose up -d calibre-web-automated frontend
+    docker compose up -d calibre-web-automated astro-frontend
 else
     docker compose up -d
 fi
