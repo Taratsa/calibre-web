@@ -37,12 +37,19 @@ from .web import render_login
 
 log = logger.create()
 
+NO_CACHE_HEADERS = {
+    "Cache-Control": "no-store, no-cache, must-revalidate",
+    "Cloudflare-CDN-Cache-Control": "no-store",
+    "Pragma": "no-cache",
+}
+
 # custom error page
 
 
 def error_http(error):
-    headers = {"WWW-Authenticate": 'Basic realm="calibre-web"'} if error.code == 401 else {}
-    headers["Cache-Control"] = "public, max-age=300"
+    headers = NO_CACHE_HEADERS.copy()
+    if error.code == 401:
+        headers["WWW-Authenticate"] = 'Basic realm="calibre-web"'
     return (
         render_template(
             "http_error.html",
@@ -64,16 +71,20 @@ def internal_error(error):
         and error.original_exception.args[0] == "'NoneType' object has no attribute 'query'"
         and error.original_exception.name == "query"
     ):
-        return render_template(
-            "http_error.html",
-            error_code="Database Error",
-            error_name="The library used is invalid or has permission errors",
-            issue=False,
-            goto_admin=True,
-            unconfigured=False,
-            error_stack="",
-            instance=config.config_calibre_web_title,
-        ), 500
+        return (
+            render_template(
+                "http_error.html",
+                error_code="Database Error",
+                error_name="The library used is invalid or has permission errors",
+                issue=False,
+                goto_admin=True,
+                unconfigured=False,
+                error_stack="",
+                instance=config.config_calibre_web_title,
+            ),
+            500,
+            NO_CACHE_HEADERS,
+        )
     log.error("500 Internal Server Error: %s", traceback.format_exc())
     error_stack = ""
     try:
@@ -81,17 +92,21 @@ def internal_error(error):
             error_stack = traceback.format_exc().split("\n")
     except Exception:
         pass
-    return render_template(
-        "http_error.html",
-        error_code="500 Internal Server Error",
-        error_name="The server encountered an internal error and was unable to complete your "
-        "request. There is an error in the application.",
-        issue=True,
-        goto_admin=False,
-        unconfigured=False,
-        error_stack=error_stack,
-        instance=config.config_calibre_web_title,
-    ), 500
+    return (
+        render_template(
+            "http_error.html",
+            error_code="500 Internal Server Error",
+            error_name="The server encountered an internal error and was unable to complete your "
+            "request. There is an error in the application.",
+            issue=True,
+            goto_admin=False,
+            unconfigured=False,
+            error_stack=error_stack,
+            instance=config.config_calibre_web_title,
+        ),
+        500,
+        NO_CACHE_HEADERS,
+    )
 
 
 def init_errorhandler():
