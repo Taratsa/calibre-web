@@ -2,29 +2,22 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getAllPublishers, booksByPublisher, paginate, PAGE_SIZE } from '~/data';
-
-export async function getStaticPaths() {
-  const out = [];
-  for (const p of getAllPublishers()) {
-    const total = Math.ceil(booksByPublisher(p.id).length / PAGE_SIZE);
-    for (let page = 2; page <= total; page++) {
-      out.push({ params: { id: String(p.id), page: String(page) } });
-    }
-  }
-  return out;
-}
+import { getAllPublishers, booksByPublisher, paginate } from '~/data';
 
 const { id, page } = Astro.params;
-const publisher = getAllPublishers().find(p => p.id === Number(id));
-if (!publisher) return Astro.redirect('/publisher');
-const pageNum = Number(page);
+const publisher = getAllPublishers().find(p => String(p.id) === id);
+if (!publisher) return new Response(null, { status: 404 });
+const pageNum = page && /^[1-9]\d*$/.test(page) ? Number(page) : NaN;
 
 const all = booksByPublisher(publisher.id).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')
 );
 
 const { items, page: p, totalPages, total } = paginate(all, pageNum);
+
+if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
+  return new Response(null, { status: 404 });
+}
 ---
 
 <BaseLayout title={`Penerbit: ${publisher.name} (Halaman ${p})`} description={`${publisher.name} — halaman ${p} dari ${totalPages} — ${total} buku dari penerbit ini di Pustaka Taratsa`} canonical={`/publisher/${publisher.id}`} noindex ogType="website">

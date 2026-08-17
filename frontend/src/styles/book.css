@@ -14,7 +14,7 @@
   width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 20px var(--shadow-lg);
 }
 
 .book-detail h1 {
@@ -25,13 +25,13 @@
 .book-detail .authors {
   margin: 0 0 1.5rem;
   font-size: 1.05rem;
-  color: #4b5563;
+  color: var(--muted-strong);
 }
-.book-detail .authors a { color: #b91c1c; }
+.book-detail .authors a { color: var(--accent); }
 .book-detail .description {
   margin: 1rem 0 1.5rem;
   white-space: pre-line;
-  color: #1f2937;
+  color: var(--fg);
 }
 
 .book-detail .formats {
@@ -45,8 +45,8 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.9rem;
-  background: #1f1f1f;
-  color: #fafaf7;
+  background: var(--fg);
+  color: var(--inverse-fg);
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
@@ -55,7 +55,7 @@
   letter-spacing: 0.05em;
 }
 .book-detail .formats a.read {
-  background: #b91c1c;
+  background: var(--accent);
 }
 
 .book-detail .metadata {
@@ -67,13 +67,13 @@
 .book-detail .metadata th,
 .book-detail .metadata td {
   padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-subtle);
   text-align: left;
   vertical-align: top;
 }
 .book-detail .metadata th {
   width: 8rem;
-  color: #6b7280;
+  color: var(--muted);
   font-weight: 500;
 }
 
@@ -88,19 +88,19 @@
 .book-detail .tag-list li a {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: #f3f4f6;
+  background: var(--surface-3);
   border-radius: 999px;
   font-size: 0.85rem;
   text-decoration: none;
-  color: #1f2937;
+  color: var(--fg);
 }
-.book-detail .tag-list li a:hover { background: #e5e7eb; }
+.book-detail .tag-list li a:hover { background: var(--border-subtle); }
 
 .book-detail .rating {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   margin: 0.5rem 0;
-  color: #b45309;
+  color: var(--star);
   font-weight: 600;
 }

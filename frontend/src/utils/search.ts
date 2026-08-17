@@ -1,5 +1,7 @@
 import MiniSearch from 'minisearch';
 import booksData from '~/data/books.json';
+import { authorPath } from '~/utils/author-url';
+import { bookPath } from '~/utils/book-url';
 
 export interface SearchableBook {
   id: number;
@@ -19,7 +21,7 @@ export function slimAllBooks(): SearchableBook[] {
   slimCache = (booksData as any[]).map(b => ({
     id: b.id,
     title: b.title,
-    url: b.url,
+    url: bookPath(b),
     cover_url: b.cover_url,
     authors: (b.authors || []).map((a: any) => ({ id: a.id, name: a.name })),
     tags: b.tags || [],
@@ -64,7 +66,7 @@ function truncateAuthors(authors: Array<{ id: number; name: string }>, max: numb
     totalLen += addition;
   }
   const links = result
-    .map(a => `<a href="/author/${a.id}">${escapeHtml(a.name)}</a>`)
+    .map(a => `<a href="${authorPath(a)}">${escapeHtml(a.name)}</a>`)
     .join(', ');
   const more = overflow > 0 ? ` <span class="more">+${overflow}</span>` : '';
   return links + more;

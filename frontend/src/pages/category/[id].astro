@@ -2,16 +2,12 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getCategoryById, getAllCategories, booksByCategory, paginate } from '~/data';
+import { getCategoryById, booksByCategory, paginate } from '~/data';
 
-export async function getStaticPaths() {
-  return getAllCategories().map(c => ({
-    params: { id: String(c.id) },
-    props: { category: c },
-  }));
-}
-
-const { category } = Astro.props;
+const { id } = Astro.params;
+const categoryId = id && /^[1-9]\d*$/.test(id) ? Number(id) : NaN;
+const category = Number.isSafeInteger(categoryId) ? getCategoryById(categoryId) : undefined;
+if (!category) return new Response(null, { status: 404 });
 
 const all = booksByCategory(category.name).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')

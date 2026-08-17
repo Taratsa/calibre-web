@@ -4,14 +4,9 @@ import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllPublishers, booksByPublisher, paginate } from '~/data';
 
-export async function getStaticPaths() {
-  return getAllPublishers().map(p => ({
-    params: { id: String(p.id) },
-    props: { publisher: p },
-  }));
-}
-
-const { publisher } = Astro.props;
+const { id } = Astro.params;
+const publisher = getAllPublishers().find(p => String(p.id) === id);
+if (!publisher) return new Response(null, { status: 404 });
 
 const all = booksByPublisher(publisher.id).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')

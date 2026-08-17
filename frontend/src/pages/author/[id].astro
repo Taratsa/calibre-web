@@ -3,24 +3,24 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllAuthors, booksByAuthor, paginate } from '~/data';
+import { authorByPathSegment, authorPath } from '~/utils/author-url';
 
-export async function getStaticPaths() {
-  return getAllAuthors().map(a => ({
-    params: { id: String(a.id) },
-    props: { author: a },
-  }));
-}
+const { id } = Astro.params;
+if (!id || /^\d+$/.test(id)) return new Response(null, { status: 404 });
 
-const { author } = Astro.props;
+const resolvedAuthor = authorByPathSegment(id);
+const author = resolvedAuthor && getAllAuthors().find((candidate) => candidate.id === resolvedAuthor.id);
+if (!author) return new Response(null, { status: 404 });
+const baseUrl = `${authorPath(author)}/`;
 
 const all = booksByAuthor(author.id).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')
 );
 
-const { items, page: p, totalPages, total } = paginate(all, 1);
+const { items, page: currentPage, totalPages, total } = paginate(all, 1);
 
 const siteUrl = 'https://pustaka.taratsa.id';
-const authorUrl = `${siteUrl}/author/${author.id}`;
+const authorUrl = `${siteUrl}${baseUrl}`;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -29,7 +29,7 @@ const jsonLd = {
 };
 ---
 
-<BaseLayout title={`Pengarang: ${author.name}`} description={`${author.name} — ${total} buku di Pustaka Taratsa`} ogType="profile">
+<BaseLayout title={`Pengarang: ${author.name}`} description={`${author.name} — ${total} buku di Pustaka Taratsa`} canonical={baseUrl} ogType="profile">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </Fragment>
@@ -40,5 +40,5 @@ const jsonLd = {
 
   <BookGrid books={items} cols={4} />
 
-  <Pagination page={p} totalPages={totalPages} baseUrl={`/author/${author.id}`} />
+  <Pagination page={currentPage} totalPages={totalPages} baseUrl={baseUrl} />
 </BaseLayout>

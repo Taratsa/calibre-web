@@ -2,23 +2,12 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getAllSeries, booksBySeries, paginate, PAGE_SIZE } from '~/data';
-
-export async function getStaticPaths() {
-  const out = [];
-  for (const s of getAllSeries()) {
-    const total = Math.ceil(booksBySeries(s.id).length / PAGE_SIZE);
-    for (let p = 2; p <= total; p++) {
-      out.push({ params: { id: String(s.id), page: String(p) } });
-    }
-  }
-  return out;
-}
+import { getAllSeries, booksBySeries, paginate } from '~/data';
 
 const { id, page } = Astro.params;
-const series = getAllSeries().find(s => s.id === Number(id));
-if (!series) return Astro.redirect('/series');
-const pageNum = Number(page);
+const series = getAllSeries().find(s => String(s.id) === id);
+if (!series) return new Response(null, { status: 404 });
+const pageNum = page && /^[1-9]\d*$/.test(page) ? Number(page) : NaN;
 
 const all = booksBySeries(series.id).sort((a, b) => {
   const ai = a.series?.index ?? Infinity;
@@ -28,6 +17,10 @@ const all = booksBySeries(series.id).sort((a, b) => {
 });
 
 const { items, page: p, totalPages, total } = paginate(all, pageNum);
+
+if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
+  return new Response(null, { status: 404 });
+}
 ---
 
 <BaseLayout title={`Seri: ${series.name} (Halaman ${p})`} description={`${series.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam seri ini di Pustaka Taratsa`} canonical={`/series/${series.id}`} noindex ogType="website">

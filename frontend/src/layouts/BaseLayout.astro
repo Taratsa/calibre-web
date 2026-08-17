@@ -75,6 +75,19 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
     <link rel="service-doc" href="/.well-known/agent-skills/index.json" />
     <link rel="describedby" href="/.well-known/mcp/server-card.json" />
 
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)" />
+
+    <script is:inline>
+      // Applied before first paint so a stored preference never flashes.
+      try {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark' || stored === 'light') {
+          document.documentElement.dataset.theme = stored;
+        }
+      } catch (e) {}
+    </script>
+
     <slot name="head" />
 
     <script type="application/ld+json">{
@@ -121,6 +134,7 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
             <a href="/category">Kategori</a>
             <a href="/shelf">Rak</a>
             <a href="/populer">Populer</a>
+            <a href="/about">Tentang Kami</a>
           </nav>
         </details>
         <script>
@@ -131,6 +145,24 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
               summary.setAttribute('aria-expanded', toggle.open);
             });
           }
+
+          const themeBtn = document.getElementById('theme-toggle');
+          if (themeBtn) {
+            const root = document.documentElement;
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const current = () => root.dataset.theme || (systemDark.matches ? 'dark' : 'light');
+            const sync = () => {
+              themeBtn.setAttribute('aria-pressed', String(current() === 'dark'));
+            };
+            themeBtn.addEventListener('click', () => {
+              const next = current() === 'dark' ? 'light' : 'dark';
+              root.dataset.theme = next;
+              try { localStorage.setItem('theme', next); } catch (e) {}
+              sync();
+            });
+            systemDark.addEventListener('change', sync);
+            sync();
+          }
         </script>
         <nav class="desktop-nav">
           <a href="/author">Penulis</a>
@@ -139,10 +171,15 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
           <a href="/category">Kategori</a>
           <a href="/shelf">Rak</a>
           <a href="/populer">Populer</a>
+          <a href="/about">Tentang Kami</a>
         </nav>
         <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
-          <input type="search" name="q" placeholder="Cari buku, pengarang…" aria-label="Kata kunci pencarian" />
+          <input type="search" name="q" placeholder="Cari buku, penulis…" aria-label="Kata kunci pencarian" />
         </form>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Ganti mode terang/gelap" title="Ganti mode terang/gelap">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>
+        </button>
       </div>
     </header>
 

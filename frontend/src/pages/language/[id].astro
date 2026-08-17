@@ -4,14 +4,9 @@ import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllLanguages, booksByLanguage, paginate, localeLanguageName } from '~/data';
 
-export async function getStaticPaths() {
-  return getAllLanguages().map(l => ({
-    params: { id: l.lang_code },
-    props: { language: l },
-  }));
-}
-
-const { language } = Astro.props;
+const { id } = Astro.params;
+const language = getAllLanguages().find(l => l.lang_code === id);
+if (!language) return new Response(null, { status: 404 });
 
 const all = booksByLanguage(language.lang_code).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')

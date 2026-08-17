@@ -50,6 +50,41 @@ function cleanAuthorName(name) {
   return (name || '').replace(/\|/g, ', ').trim();
 }
 
+const SLUG_TRANSLITERATIONS = {
+  'ı': 'i', 'ł': 'l', 'đ': 'd', 'ð': 'd', 'þ': 'th', 'ß': 'ss',
+  'æ': 'ae', 'œ': 'oe', 'ø': 'o', 'ħ': 'h', 'ŋ': 'n', 'ƒ': 'f', 'ə': 'e',
+};
+
+function slugBase(value) {
+  let normalized = value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  normalized = [...normalized].map(char => SLUG_TRANSLITERATIONS[char] || char).join('');
+  return normalized.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'book';
+}
+
+function buildSlugMap(allBooks, authorsByBook) {
+  const maxBaseLength = 120;
+  const entries = allBooks.map(book => {
+    const authors = authorsByBook.get(book.id) || [];
+    const base = slugBase(`${book.title} ${authors.map(a => a.name).join(' ')}`);
+    const shortened = base.slice(0, maxBaseLength).replace(/-+$/, '') || 'book';
+    return { book, base, shortened };
+  });
+  const counts = new Map();
+  for (const entry of entries) counts.set(entry.shortened, (counts.get(entry.shortened) || 0) + 1);
+
+  const slugs = new Map();
+  for (const { book, base, shortened } of entries) {
+    const needsSuffix = /^\d+$/.test(base) || counts.get(shortened) > 1 || base.length > maxBaseLength;
+    if (!needsSuffix) {
+      slugs.set(book.id, shortened);
+      continue;
+    }
+    const suffix = `-${book.id}`;
+    slugs.set(book.id, `${shortened.slice(0, maxBaseLength - suffix.length).replace(/-+$/, '')}${suffix}`);
+  }
+  return slugs;
+}
+
 function openDb() {
   const db = new Database(DB_PATH, { readonly: true, fileMustExist: true });
   db.pragma('query_only = 1');
@@ -185,7 +220,7 @@ async function loadBooks(db) {
   }
 
   const index = [];
-
+  const slugMap = buildSlugMap(books, authorsByBook);
   function coverVersion(book) {
     const ts = book.last_modified || book.timestamp;
     if (ts) {
@@ -207,20 +242,16 @@ async function loadBooks(db) {
     const comment = commentsByBook.get(book.id) || null;
 
     const seriesIndex = book.series_index || (series[0] && series[0].series_index) || null;
-
-    const slug = `${book.title} ${authors.map(a => a.name).join(' ')}`
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-|-$/g, '')
-      .slice(0, 120);
+    const slugBaseValue = slugBase(`${book.title} ${authors.map(a => a.name).join(' ')}`);
+    const slug = slugMap.get(book.id);
 
     const pubdateStr = book.pubdate ? String(book.pubdate).slice(0, 10) : null;
     const cleanPubdate = pubdateStr && pubdateStr !== '0101-01-01' ? pubdateStr : null;
-
     const summary = {
       id: book.id,
       title: book.title.trim(),
       slug,
+      slugBase: slugBaseValue,
       authors: authors.map(a => ({ id: a.id, name: a.name })),
       author_sort: book.author_sort ? cleanAuthorName(book.author_sort) : null,
       tags: tags.map(t => t.name),
@@ -239,7 +270,7 @@ async function loadBooks(db) {
       cover_og_url: book.has_cover
         ? `/cover/${book.id}/og?v=${coverVersion(book)}`
         : '/static/images/Header_Beranda.webp',
-      url: `/book/${book.id}/`,
+      url: `/book/${slug}/`,
       rating: rating,
     };
 

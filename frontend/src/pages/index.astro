@@ -38,8 +38,8 @@ const topPopular = popularBooks.slice(0, 10);
   .browse-all a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #1f1f1f;
-    color: #fafaf7;
+    background: var(--fg);
+    color: var(--inverse-fg);
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
@@ -47,6 +47,6 @@ const topPopular = popularBooks.slice(0, 10);
     transition: background 0.15s;
   }
   .browse-all a:hover {
-    background: #b91c1c;
+    background: var(--accent);
   }
 </style>

@@ -1,3 +1,5 @@
+import { authorPath } from './author-url';
+
 export interface AuthorRef { id: number; name: string }
 
 interface TruncatedAuthors {
@@ -34,7 +36,7 @@ export function truncateAuthorsHtml(
 ): string {
   const { items, overflow } = truncateAuthors(authors, max);
   const links = items
-    .map(a => `<a href="/author/${a.id}">${escapeHtml(a.name)}</a>`)
+    .map(a => `<a href="${authorPath(a)}">${escapeHtml(a.name)}</a>`)
     .join(', ');
   const more = overflow > 0 ? ` <span class="more">+${overflow}</span>` : '';
   return links + more;

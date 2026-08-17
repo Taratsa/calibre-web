@@ -4,17 +4,21 @@ import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllBooks, paginate } from '~/data';
 
-export async function getStaticPaths() {
-  const total = getAllBooks().length;
-  const totalPages = Math.ceil(total / 30);
-  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
-    params: { page: String(i + 2) },
-  }));
+
+const pageParam = Astro.params.page;
+const books = getAllBooks();
+const totalPages = Math.max(1, Math.ceil(books.length / 30));
+
+if (!pageParam || !/^[1-9]\d*$/.test(pageParam)) {
+  return new Response(null, { status: 404 });
 }
 
-const pageNum = Number(Astro.params.page);
-const books = getAllBooks();
-const { items, page, totalPages, total } = paginate(books, pageNum);
+const pageNum = Number(pageParam);
+if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
+  return new Response(null, { status: 404 });
+}
+
+const { items, page, total } = paginate(books, pageNum);
 ---
 
 <BaseLayout title={`Halaman ${page}`} description={`Halaman ${page} dari ${totalPages} — ${total} buku dalam katalog Pustaka Taratsa`} canonical="/page" noindex ogType="website">

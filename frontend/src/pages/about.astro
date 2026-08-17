@@ -1,20 +1,73 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+
+const sources: { name: string; url: string }[] = [
+  { name: 'Sub Zine Fest', url: 'https://www.instagram.com/subzinefest/' },
+  { name: 'Repositori Kemendikdasmen', url: 'https://repositori.kemendikdasmen.go.id/' },
+  { name: 'Masa Silam', url: 'https://masasilam.com/' },
+  { name: 'Kabe Drepram', url: 'https://kabe.drepram.com/' },
+  { name: 'Langka Logos', url: 'https://langka.logosid.app/' },
+  { name: 'Bebaskan Buku', url: 'https://archive.org/details/@bebaskanbuku' },
+  { name: 'Hyphen Hyphenation', url: 'https://archive.org/details/@hyphen_hyphenation' },
+  { name: 'Archipelago Anti-Authoritarian Archive', url: 'https://archive.org/details/@archipelago-anti-authoritarian-archive/uploads' },
+  { name: 'Lumbung Space', url: 'https://books.lumbung.space/' },
+];
 ---
 
 <BaseLayout title="Tentang Kami" description="Tentang Pustaka Taratsa — perpustakaan digital non-komersil.">
-  <h1>Tentang Pustaka Taratsa</h1>
+  <article class="mx-auto max-w-3xl">
+    <header class="mb-8 border-b pb-6 border-[var(--border-subtle)]">
+      <h1 class="mb-3">Tentang Pustaka Taratsa</h1>
+      <p class="text-lg text-[var(--muted)]">
+        Perpustakaan digital non-komersil untuk buku langka, zine, dan literatur
+        terkait Indonesia.
+      </p>
+    </header>
 
-  <p>
-    Pustaka Taratsa adalah perpustakaan digital non-komersil yang mengoleksi dan
-    mengarsip buku langka, zine, serta literatur terkait Indonesia. Konten di
-    sini dapat diakses secara terbuka oleh siapa saja.
-  </p>
+    <section class="mb-10">
+      <p class="mb-4">
+        Pustaka Taratsa mengoleksi dan mengarsip buku langka, zine, serta
+        literatur terkait Indonesia. Seluruh konten di sini dapat diakses secara
+        terbuka oleh siapa saja, tanpa biaya dan tanpa pendaftaran.
+      </p>
+      <p>
+        Sebagian besar publikasi kami kumpulkan dari berbagai ruang yang dapat
+        diakses publik. Kami berupaya memastikan bahwa seluruh berkas yang
+        tersedia merupakan bagian dari domain publik atau berlisensi bebas.
+      </p>
+    </section>
 
-  <p>
-    Placeholder. Halaman ini akan diperluas dengan informasi misi, tim,
-    kontributor, dan cara berkontribusi.
-  </p>
+    <section class="mb-10">
+      <h2>Sumber Arsip</h2>
+      <p class="mb-4">
+        Referensi dan sumber arsip yang kami gunakan:
+      </p>
+      <ul class="grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+        {sources.map(s => (
+          <li class="rounded-lg border border-[var(--border-subtle)] bg-[var(--surface)] p-4 transition-shadow hover:shadow-sm">
+            <a
+              href={s.url}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="font-semibold no-underline hover:underline"
+            >{s.name}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
 
-  <p><a href="/">Kembali ke beranda</a></p>
+    <section class="mb-10">
+      <h2>Hak Cipta &amp; Koreksi</h2>
+      <div class="rounded-lg border-l-4 border-[var(--accent)] bg-[var(--surface-2)] p-4">
+        <p class="m-0">
+          Kami menyadari bahwa kekeliruan terkait status lisensi maupun hak
+          cipta bisa saja terjadi pada konten yang termuat di situs kami. Jika
+          Anda menemukan hal tersebut, kami sangat terbuka dan berkomitmen penuh
+          untuk segera menangani setiap laporan yang kami terima.
+        </p>
+      </div>
+    </section>
+
+    <p><a href="/">← Kembali ke beranda</a></p>
+  </article>
 </BaseLayout>

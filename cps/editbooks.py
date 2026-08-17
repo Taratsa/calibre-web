@@ -660,6 +660,29 @@ def read_selected_books():
         return json.dumps({"success": True})
     return ""
 
+@editbook.route("/ajax/deleteselectedbooks", methods=["POST"])
+@user_login_required
+@edit_required
+def delete_selected_books():
+    selections = request.get_json().get("selections") or []
+    if not selections:
+        return ""
+    if not current_user.role_delete_books():
+        return check_delete_book(selections, "", True)
+
+    trigger_rebuild_async("delete:ajax")
+    for book_id in selections:
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="delete",
+            resource_type="book",
+            resource_id=book_id,
+            details="Book deleted via batch table action",
+            ip_address=helper.get_client_ip(),
+        )
+    notify_duplicate_books_changed(selections)
+    return check_delete_book(selections, "", True)
+
 
 @editbook.route("/ajax/mergebooks", methods=["POST"])
 @user_login_required

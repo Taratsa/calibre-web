@@ -111,10 +111,10 @@ const nextHref = pageHref(page + 1);
     min-width: 2.5rem;
     height: 2.5rem;
     padding: 0 0.75rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    background: #fff;
-    color: #1f1f1f;
+    background: var(--surface);
+    color: var(--fg);
     font-size: 0.9rem;
     line-height: 1;
     text-decoration: none;
@@ -126,28 +126,28 @@ const nextHref = pageHref(page + 1);
     padding: 0 0.9rem;
   }
   .pagination__link:hover {
-    background: #f3f4f6;
-    border-color: #9ca3af;
+    background: var(--surface-3);
+    border-color: var(--muted-soft);
   }
   .pagination__link:focus-visible {
-    outline: 2px solid #2563eb;
+    outline: 2px solid var(--focus);
     outline-offset: 2px;
   }
   .pagination__item--current span {
-    background: #1f1f1f;
-    border-color: #1f1f1f;
-    color: #fafaf7;
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--inverse-fg);
     font-weight: 600;
   }
   .pagination__item--ellipsis span {
     border-color: transparent;
     background: transparent;
-    color: #6b7280;
+    color: var(--muted);
   }
   .pagination__link--disabled {
-    color: #9ca3af;
-    border-color: #e5e7eb;
-    background: #f9fafb;
+    color: var(--muted-soft);
+    border-color: var(--border-subtle);
+    background: var(--surface-2);
     cursor: not-allowed;
     pointer-events: none;
   }

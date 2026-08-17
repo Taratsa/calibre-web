@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import { getAllAuthors } from '~/data';
+import { authorPath } from '~/utils/author-url';
 
 const authors = getAllAuthors();
 
@@ -38,7 +39,7 @@ function authorsFor(letter: string) {
             <h2 class="alpha-letter">{l}</h2>
             <ul>
               {authorsFor(l).map(a => (
-                <li><a href={`/author/${a.id}`}>{a.name}</a></li>
+                <li><a href={authorPath(a)}>{a.name}</a></li>
               ))}
             </ul>
           </li>
@@ -65,13 +66,13 @@ function authorsFor(letter: string) {
     text-decoration: none;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #1f1f1f;
-    border: 1px solid #d1d5db;
-    background: #fff;
+    color: var(--fg);
+    border: 1px solid var(--border);
+    background: var(--surface);
   }
   .letter-nav a:hover {
-    background: #1f1f1f;
-    color: #fafaf7;
+    background: var(--fg);
+    color: var(--inverse-fg);
   }
   .alpha-list {
     list-style: none;
@@ -91,6 +92,6 @@ function authorsFor(letter: string) {
     font-weight: 700;
     margin: 0 0 0.5rem;
     padding-bottom: 0.25rem;
-    border-bottom: 2px solid #d1d5db;
+    border-bottom: 2px solid var(--border);
   }
 </style>

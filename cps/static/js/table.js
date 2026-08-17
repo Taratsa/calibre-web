@@ -329,12 +329,14 @@ $(function() {
         });
     });
 
+    */
+
     $(document).on('click', '#delete_selected_books', function(event) {
-        if ($(this).hasClass("disabled")) {
-            event.stopPropagation()
-        } else {
-            $('#delete_selected_modal').modal("show");
+        if ($(this).hasClass("disabled") || selections.length < 1) {
+            event.preventDefault();
+            return;
         }
+        $('#delete_selected_modal').modal("show");
         $.ajax({
             method:"post",
             contentType: "application/json; charset=utf-8",
@@ -364,6 +366,8 @@ $(function() {
             }
         });
     });
+
+    /*
 
     $(document).on('click', '#read_selected_books', function(event) {
         if ($(this).hasClass("disabled")) {

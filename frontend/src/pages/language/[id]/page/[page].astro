@@ -2,29 +2,22 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getAllLanguages, booksByLanguage, paginate, localeLanguageName, PAGE_SIZE } from '~/data';
-
-export async function getStaticPaths() {
-  const out = [];
-  for (const l of getAllLanguages()) {
-    const total = Math.ceil(booksByLanguage(l.lang_code).length / PAGE_SIZE);
-    for (let page = 2; page <= total; page++) {
-      out.push({ params: { id: l.lang_code, page: String(page) } });
-    }
-  }
-  return out;
-}
+import { getAllLanguages, booksByLanguage, paginate, localeLanguageName } from '~/data';
 
 const { id, page } = Astro.params;
 const language = getAllLanguages().find(l => l.lang_code === id);
-if (!language) return Astro.redirect('/language');
-const pageNum = Number(page);
+if (!language) return new Response(null, { status: 404 });
+const pageNum = page && /^[1-9]\d*$/.test(page) ? Number(page) : NaN;
 
 const all = booksByLanguage(language.lang_code).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')
 );
 
 const { items, page: p, totalPages, total } = paginate(all, pageNum);
+
+if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
+  return new Response(null, { status: 404 });
+}
 ---
 
 <BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)} (Halaman ${p})`} description={`Buku berbahasa ${localeLanguageName(language.lang_code)} — halaman ${p} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={`/language/${language.lang_code}`} noindex ogType="website">

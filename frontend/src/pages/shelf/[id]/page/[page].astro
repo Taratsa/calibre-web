@@ -2,32 +2,27 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getShelves, getAllBooks, paginate, PAGE_SIZE } from '~/data';
+import { getShelves, getAllBooks, paginate } from '~/data';
 import type { BookSummary } from '~/data/types';
 
-export async function getStaticPaths() {
-  const out = [];
-  const allBooks = getAllBooks();
-  const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
-  for (const s of getShelves()) {
-    const ordered: BookSummary[] = [];
-    for (const id of s.book_ids) {
-      const b = bookMap.get(id);
-      if (b) ordered.push(b);
-    }
-    const total = Math.ceil(ordered.length / PAGE_SIZE);
-    for (let page = 2; page <= total; page++) {
-      out.push({ params: { id: String(s.id), page: String(page) }, props: { shelf: s, ordered } });
-    }
-  }
-  return out;
-}
+const { id, page } = Astro.params;
+const shelf = getShelves().find(s => String(s.id) === id);
+if (!shelf) return new Response(null, { status: 404 });
+const pageNum = page && /^[1-9]\d*$/.test(page) ? Number(page) : NaN;
 
-const { shelf, ordered } = Astro.props;
-const { page } = Astro.params;
-const pageNum = Number(page);
+const allBooks = getAllBooks();
+const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
+const ordered: BookSummary[] = [];
+for (const id of shelf.book_ids) {
+  const b = bookMap.get(id);
+  if (b) ordered.push(b);
+}
 const { items, page: p, totalPages } = paginate(ordered, pageNum);
 const total = ordered.length;
+
+if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
+  return new Response(null, { status: 404 });
+}
 ---
 
 <BaseLayout title={`Rak: ${shelf.name} (Halaman ${p})`} description={`${shelf.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam rak ini di Pustaka Taratsa`} canonical={`/shelf/${shelf.id}`} noindex ogType="website">

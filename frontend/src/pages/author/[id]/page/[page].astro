@@ -3,35 +3,36 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllAuthors, booksByAuthor, paginate, PAGE_SIZE } from '~/data';
+import { authorByPathSegment, authorPath } from '~/utils/author-url';
 
-export async function getStaticPaths() {
-  const out = [];
-  for (const a of getAllAuthors()) {
-    const total = Math.ceil(booksByAuthor(a.id).length / PAGE_SIZE);
-    for (let p = 2; p <= total; p++) {
-      out.push({ params: { id: String(a.id), page: String(p) } });
-    }
-  }
-  return out;
+const { id, page: pageParam } = Astro.params;
+if (!id || /^\d+$/.test(id)) return new Response(null, { status: 404 });
+
+const resolvedAuthor = authorByPathSegment(id);
+const author = resolvedAuthor && getAllAuthors().find((candidate) => candidate.id === resolvedAuthor.id);
+if (!author) return new Response(null, { status: 404 });
+
+const pageNum = Number(pageParam);
+if (!pageParam || !/^[1-9]\d*$/.test(pageParam) || !Number.isSafeInteger(pageNum) || pageNum < 2) {
+  return new Response(null, { status: 404 });
 }
-
-const { id, page } = Astro.params;
-const author = getAllAuthors().find(a => a.id === Number(id));
-if (!author) return Astro.redirect('/author');
-const pageNum = Number(page);
 
 const all = booksByAuthor(author.id).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')
 );
+const availablePages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+if (pageNum > availablePages) return new Response(null, { status: 404 });
 
-const { items, page: p, totalPages, total } = paginate(all, pageNum);
+
+const { items, page, totalPages, total } = paginate(all, pageNum);
+const baseUrl = `${authorPath(author)}/`;
 ---
 
-<BaseLayout title={`Pengarang: ${author.name} (Halaman ${p})`} description={`${author.name} — halaman ${p} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={`/author/${author.id}`} noindex ogType="website">
-  <p><a href={`/author/${author.id}`}>‹ {author.name}</a></p>
+<BaseLayout title={`Pengarang: ${author.name} (Halaman ${page})`} description={`${author.name} — halaman ${page} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={baseUrl} noindex ogType="website">
+  <p><a href={baseUrl}>‹ {author.name}</a></p>
   <h1>{author.name}</h1>
   <p>{total} buku oleh pengarang ini.</p>
 
   <BookGrid books={items} cols={4} />
-  <Pagination page={p} totalPages={totalPages} baseUrl={`/author/${author.id}`} />
+  <Pagination page={page} totalPages={totalPages} baseUrl={baseUrl} />
 </BaseLayout>

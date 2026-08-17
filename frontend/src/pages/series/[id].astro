@@ -4,14 +4,9 @@ import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
 import { getAllSeries, booksBySeries, paginate } from '~/data';
 
-export async function getStaticPaths() {
-  return getAllSeries().map(s => ({
-    params: { id: String(s.id) },
-    props: { series: s },
-  }));
-}
-
-const { series } = Astro.props;
+const { id } = Astro.params;
+const series = getAllSeries().find(s => String(s.id) === id);
+if (!series) return new Response(null, { status: 404 });
 
 const all = booksBySeries(series.id).sort((a, b) => {
   const ai = a.series?.index ?? Infinity;

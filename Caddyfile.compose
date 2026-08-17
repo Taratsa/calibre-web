@@ -46,6 +46,20 @@
         reverse_proxy calibre-web-automated:8083
     }
 
+    @legacy_author {
+        path_regexp legacy_author ^/author/[0-9]+(/page/[0-9]+|/[0-9]+)?/?$
+    }
+    handle @legacy_author {
+        reverse_proxy calibre-web-automated:8083
+    }
+
+    @legacy_book {
+        path_regexp legacy_book ^/book/[0-9]+/?$
+    }
+    handle @legacy_book {
+        reverse_proxy calibre-web-automated:8083
+    }
+
     root * /srv/frontend
 
     @assets {

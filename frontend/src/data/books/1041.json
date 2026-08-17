@@ -1,7 +1,8 @@
 {
   "id": 1041,
-  "title": "Si Lenting Kuning (1965) - Siti Rukiah Kertapati",
-  "slug": "si-lenting-kuning-1965-siti-rukiah-kertapati-siti-rukiah-kertapati",
+  "title": "Si Lenting Kuning",
+  "slug": "si-lenting-kuning-siti-rukiah-kertapati",
+  "slugBase": "si-lenting-kuning-siti-rukiah-kertapati",
   "authors": [
     {
       "id": 445,
@@ -10,29 +11,37 @@
   ],
   "author_sort": "Kertapati, Siti Rukiah",
   "tags": [],
-  "publisher": null,
-  "publishers": [],
+  "publisher": {
+    "id": 440,
+    "name": "Swada"
+  },
+  "publishers": [
+    {
+      "id": 440,
+      "name": "Swada"
+    }
+  ],
   "languages": [
     "ind"
   ],
-  "pubdate": "1964-12-31",
+  "pubdate": "1965-01-01",
   "timestamp": "2025-12-21 06:52:38.487149",
-  "last_modified": "2025-12-21 06:56:23.109572",
+  "last_modified": "2026-08-12 05:20:18.839846",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/1041?v=1766274983",
-  "cover_og_url": "/cover/1041/og?v=1766274983",
-  "url": "/book/1041/",
+  "cover_url": "/cover_thumb/1041?v=1786486818",
+  "cover_og_url": "/cover/1041/og?v=1786486818",
+  "url": "/book/si-lenting-kuning-siti-rukiah-kertapati/",
   "rating": null,
   "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 20824348,
-      "name": "Si Lenting Kuning (1965) - Siti Rukiah Ker - Siti Rukiah Kertapati"
+      "name": "Si Lenting Kuning - Siti Rukiah Kertapati"
     }
   ]
 }

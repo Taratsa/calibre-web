@@ -22,7 +22,9 @@ import copy
 import json
 import mimetypes
 import os
+import re
 import time
+import unicodedata
 from importlib.metadata import metadata
 
 import chardet  # dependency of requests
@@ -1341,6 +1343,75 @@ def author_list():
         abort(404)
 
 
+_AUTHOR_SLUG_RE = re.compile(r"[^a-z0-9]+")
+_AUTHOR_SLUG_TRANSLITERATIONS = {
+    "ı": "i",
+    "ł": "l",
+    "đ": "d",
+    "ð": "d",
+    "þ": "th",
+    "ß": "ss",
+    "æ": "ae",
+    "œ": "oe",
+    "ø": "o",
+    "ħ": "h",
+    "ŋ": "n",
+    "ƒ": "f",
+    "ə": "e",
+}
+
+
+def _author_slug_base(name):
+    value = unicodedata.normalize("NFKD", name or "")
+    value = "".join(char for char in value if not unicodedata.combining(char))
+    value = value.lower()
+    for source, replacement in _AUTHOR_SLUG_TRANSLITERATIONS.items():
+        value = value.replace(source, replacement)
+    return _AUTHOR_SLUG_RE.sub("-", value).strip("-") or "author"
+
+
+def _author_slug(author, authors):
+    base = _author_slug_base((author.name or "").replace("|", ", ").strip())
+    max_base_length = 96
+    shortened = base[:max_base_length].rstrip("-") or "author"
+    collision = any(
+        other.id != author.id
+        and (
+            _author_slug_base((other.name or "").replace("|", ", ").strip()) == base
+            or _author_slug_base((other.name or "").replace("|", ", ").strip())[:max_base_length].rstrip("-")
+            == shortened
+        )
+        for other in authors
+    )
+    needs_suffix = base.isdigit() or collision or len(base) > max_base_length
+    if not needs_suffix:
+        return shortened
+
+    suffix = f"-{author.id}"
+    return f"{shortened[:max_base_length - len(suffix)].rstrip('-')}{suffix}"
+
+
+@web.route("/author/<int:author_id>")
+@web.route("/author/<int:author_id>/")
+@web.route("/author/<int:author_id>/<int:page>")
+@web.route("/author/<int:author_id>/<int:page>/")
+@web.route("/author/<int:author_id>/page/<int:page>")
+@web.route("/author/<int:author_id>/page/<int:page>/")
+def redirect_author_slug(author_id, page=None):
+    if sqlalchemy_version2:
+        author = calibre_db.session.get(db.Authors, author_id)
+    else:
+        author = calibre_db.session.query(db.Authors).get(author_id)
+    if author is None:
+        abort(404)
+
+    authors = calibre_db.session.query(db.Authors).all()
+    target = f"/author/{_author_slug(author, authors)}/"
+    if page is not None and page > 1:
+        target = f"{target}page/{page}/"
+    return redirect(target, code=301)
+
+
 @web.route("/downloadlist")
 @login_required_if_no_ano
 def download_list():
@@ -2471,16 +2542,67 @@ def read_book(book_id, book_format):
         return redirect(url_for("web.index"))
 
 
+_BOOK_SLUG_RE = re.compile(r"[^a-z0-9]+")
+_BOOK_SLUG_TRANSLITERATIONS = {
+    "ı": "i", "ł": "l", "đ": "d", "ð": "d", "þ": "th",
+    "ß": "ss", "æ": "ae", "œ": "oe", "ø": "o", "ħ": "h",
+    "ŋ": "n", "ƒ": "f", "ə": "e",
+}
+
+
+def _book_slug_base(value):
+    value = unicodedata.normalize("NFKD", value or "")
+    value = "".join(char for char in value if not unicodedata.combining(char)).lower()
+    for source, replacement in _BOOK_SLUG_TRANSLITERATIONS.items():
+        value = value.replace(source, replacement)
+    return _BOOK_SLUG_RE.sub("-", value).strip("-") or "book"
+
+
+def _book_slug(book, books):
+    authors = " ".join((author.name or "").replace("|", ", ").strip() for author in book.authors)
+    base = _book_slug_base(f"{book.title} {authors}")
+    max_base_length = 120
+    shortened = base[:max_base_length].rstrip("-") or "book"
+    collision = any(
+        other.id != book.id
+        and _book_slug_base(
+            f"{other.title} {' '.join((author.name or '').replace('|', ', ').strip() for author in other.authors)}"
+        )[:max_base_length].rstrip("-") == shortened
+        for other in books
+    )
+    needs_suffix = base.isdigit() or collision or len(base) > max_base_length
+    if not needs_suffix:
+        return shortened
+    suffix = f"-{book.id}"
+    return f"{shortened[:max_base_length - len(suffix)].rstrip('-')}{suffix}"
+
+
+@web.route("/book/<int:book_id>/")
+@login_required_if_no_ano
+def show_book(book_id, title_slug=None):
+    # The legacy Flask host keeps numeric URLs and is excluded from indexing.
+    if request.host.split(":", 1)[0] == "old-pustaka.taratsa.id":
+        return _show_book(book_id)
+    if sqlalchemy_version2:
+        book = calibre_db.session.get(db.Books, book_id)
+    else:
+        book = calibre_db.session.query(db.Books).filter(db.Books.id == book_id).first()
+    if book:
+        books = calibre_db.session.query(db.Books).all()
+        return redirect(f"/book/{_book_slug(book, books)}/", code=301)
+    abort(404)
+
+
 @web.route("/book/<int:book_id>/<title_slug>")
 @web.route("/book/<int:book_id>/<title_slug>/")
 @web.route("/book/<int:book_id>/<title_slug>/<extra>")
 def redirect_book_slug(book_id, title_slug=None, extra=None):
+    if request.host.split(":", 1)[0] == "old-pustaka.taratsa.id":
+        return _show_book(book_id)
     return redirect(url_for("web.show_book", book_id=book_id), code=301)
 
 
-@web.route("/book/<int:book_id>")
-@login_required_if_no_ano
-def show_book(book_id, title_slug=None):
+def _show_book(book_id):
     entries = calibre_db.get_book_read_archived(book_id, config.config_read_column, allow_show_archived=True)
     if entries:
         read_book = entries[1]

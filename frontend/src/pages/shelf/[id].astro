@@ -5,14 +5,9 @@ import Pagination from '~/components/Pagination.astro';
 import { getShelves, getAllBooks, paginate } from '~/data';
 import type { BookSummary } from '~/data/types';
 
-export async function getStaticPaths() {
-  return getShelves().map(s => ({
-    params: { id: String(s.id) },
-    props: { shelf: s },
-  }));
-}
-
-const { shelf } = Astro.props;
+const { id } = Astro.params;
+const shelf = getShelves().find(s => String(s.id) === id);
+if (!shelf) return new Response(null, { status: 404 });
 const allBooks = getAllBooks();
 const bookMap = new Map<number, BookSummary>(allBooks.map(b => [b.id, b]));
 const ordered: BookSummary[] = [];

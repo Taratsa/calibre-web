@@ -2,10 +2,12 @@ import { defineConfig } from 'astro/config';
 import { resolve } from 'node:path';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import node from '@astrojs/node';
 
 export default defineConfig({
   site: 'https://pustaka.taratsa.id',
-  output: 'static',
+  output: 'server',
+  adapter: node({ mode: 'standalone' }),
   trailingSlash: 'always',
   build: {
     format: 'directory',
@@ -13,7 +15,14 @@ export default defineConfig({
   integrations: [sitemap({
     filter: (page) => {
       const path = new URL(page).pathname;
-      return path !== '/search' && !(path === '/page' || /\/page\/\d+$/.test(path));
+      const isAuthorAlias = /^\/author\/[^/]+\/\d+\/?$/.test(path);
+      const isLegacyAuthorPath = /^\/author\/\d+(?:\/page\/\d+)?\/?$/.test(path);
+      const isLegacyBookPath = /^\/book\/\d+\/?$/.test(path);
+      return path !== '/search'
+        && !(path === '/page' || /\/page\/\d+$/.test(path))
+        && !isAuthorAlias
+        && !isLegacyAuthorPath
+        && !isLegacyBookPath;
     },
   })],
   vite: {

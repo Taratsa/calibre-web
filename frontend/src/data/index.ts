@@ -13,6 +13,19 @@ import popularIndex from '~/data/popular.json';
 export function getAllBooks(): BookSummary[] {
   return booksIndex as BookSummary[];
 }
+const books = booksIndex as BookSummary[];
+const booksByAuthorIndex = new Map<number, BookSummary[]>();
+const booksBySeriesIndex = new Map<number, BookSummary[]>();
+const booksByPublisherIndex = new Map<number, BookSummary[]>();
+const booksByCategoryIndex = new Map<string, BookSummary[]>();
+const booksByLanguageIndex = new Map<string, BookSummary[]>();
+for (const book of books) {
+  for (const author of book.authors) (booksByAuthorIndex.get(author.id) ?? (booksByAuthorIndex.set(author.id, []), booksByAuthorIndex.get(author.id)!)).push(book);
+  if (book.series) (booksBySeriesIndex.get(book.series.id) ?? (booksBySeriesIndex.set(book.series.id, []), booksBySeriesIndex.get(book.series.id)!)).push(book);
+  for (const publisher of book.publishers) (booksByPublisherIndex.get(publisher.id) ?? (booksByPublisherIndex.set(publisher.id, []), booksByPublisherIndex.get(publisher.id)!)).push(book);
+  for (const category of book.tags) (booksByCategoryIndex.get(category) ?? (booksByCategoryIndex.set(category, []), booksByCategoryIndex.get(category)!)).push(book);
+  for (const language of book.languages) (booksByLanguageIndex.get(language) ?? (booksByLanguageIndex.set(language, []), booksByLanguageIndex.get(language)!)).push(book);
+}
 
 export function getAllAuthors(): Author[] {
   return authorsIndex as Author[];
@@ -56,16 +69,16 @@ export function getPopularBooks(): BookSummary[] {
 }
 
 export function booksByAuthor(authorId: number): BookSummary[] {
-  return getAllBooks().filter(b => b.authors.some(a => a.id === authorId));
+  return booksByAuthorIndex.get(authorId) || [];
 }
 export function booksBySeries(seriesId: number): BookSummary[] {
-  return getAllBooks().filter(b => b.series && b.series.id === seriesId);
+  return booksBySeriesIndex.get(seriesId) || [];
 }
 export function booksByPublisher(publisherId: number): BookSummary[] {
-  return getAllBooks().filter(b => b.publishers.some(p => p.id === publisherId));
+  return booksByPublisherIndex.get(publisherId) || [];
 }
 export function booksByCategory(categoryName: string): BookSummary[] {
-  return getAllBooks().filter(b => b.tags.includes(categoryName));
+  return booksByCategoryIndex.get(categoryName) || [];
 }
 export function booksByCategoryId(categoryId: number): BookSummary[] {
   const cat = getCategoryById(categoryId);
@@ -75,10 +88,11 @@ export function getCategoryById(id: number): Category | undefined {
   return getAllCategories().find(c => c.id === id);
 }
 export function booksByLanguage(langCode: string): BookSummary[] {
-  return getAllBooks().filter(b => b.languages.includes(langCode));
+  return booksByLanguageIndex.get(langCode) || [];
 }
 export function booksByFormat(format: string): BookSummary[] {
-  return getAllBooks().filter(b => b.formats.includes(format.toLowerCase()));
+  const normalized = format.toLowerCase();
+  return books.filter(book => book.formats.includes(normalized));
 }
 export function booksByRating(ratingId: number): BookSummary[] {
   const r = getAllRatings().find(x => x.id === ratingId);

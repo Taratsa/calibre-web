@@ -5,20 +5,23 @@ import BookLayout from '~/layouts/BookLayout.astro';
 import Cover from '~/components/Cover.astro';
 import { getAllBooks, getAllCategories, formatBytes } from '~/data';
 import type { BookDetail } from '~/data/types';
+import { authorPath } from '~/utils/author-url';
+import { bookByPathSegment, bookPath } from '~/utils/book-url';
 
-export async function getStaticPaths() {
-  const books = getAllBooks();
-  const contentDir = join(process.cwd(), 'src', 'data', 'books');
-  return books.map(b => {
-    let detail: BookDetail | null = null;
-    try {
-      detail = JSON.parse(readFileSync(join(contentDir, `${b.id}.json`), 'utf8'));
-    } catch {}
-    return { params: { id: String(b.id) }, props: { book: b, detail } };
-  });
-}
+const { id } = Astro.params;
+if (!id || /^\d+$/.test(id)) return new Response(null, { status: 404 });
 
-const { book, detail } = Astro.props;
+const resolvedBook = bookByPathSegment(id);
+const book = resolvedBook && getAllBooks().find((candidate) => candidate.id === resolvedBook.id);
+if (!book) return new Response(null, { status: 404 });
+
+const contentDir = join(process.cwd(), 'src', 'data', 'books');
+let detail: BookDetail | null = null;
+try {
+  detail = JSON.parse(readFileSync(join(contentDir, `${book.id}.json`), 'utf8'));
+} catch {}
+
+const baseUrl = `${bookPath(book)}/`;
 
 const commentText = detail?.comment || '';
 const cleanComment = commentText.replace(/<[^>]+>/g, '').trim();
@@ -36,7 +39,7 @@ const buttons = book.formats.map(f => ({
   sizeText: (() => { const s = sizes.get(f.toLowerCase()); return s ? `(${formatBytes(s)})` : ''; })(),
 }));
 
-const authorStr = book.authors.map(a => `<a href="/author/${a.id}">${a.name}</a>`).join(', ');
+const authorStr = book.authors.map(a => `<a href="${authorPath(a)}">${a.name}</a>`).join(', ');
 const cats = getAllCategories();
 const tagStr = book.tags.map(t => {
   const cat = cats.find(c => c.name === t);

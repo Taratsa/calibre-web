@@ -1,14 +1,15 @@
 {
   "id": 3079,
   "title": "Liar Zine #1",
-  "slug": "liar-zine-1-tidak-diketahui",
+  "slug": "liar-zine-1-agathys",
+  "slugBase": "liar-zine-1-agathys",
   "authors": [
     {
-      "id": 668,
-      "name": "Tidak diketahui"
+      "id": 3984,
+      "name": "agathys"
     }
   ],
-  "author_sort": "diketahui, Tidak",
+  "author_sort": "agathys",
   "tags": [
     "Zine Liar"
   ],
@@ -22,25 +23,27 @@
       "name": "Liar"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2023-07-01",
   "timestamp": "2026-05-26 19:21:06.272692",
-  "last_modified": "2026-05-26 19:21:06.272699",
+  "last_modified": "2026-08-09 10:44:45.787168",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/3079?v=1779798066",
-  "cover_og_url": "/cover/3079/og?v=1779798066",
-  "url": "/book/3079/",
+  "cover_url": "/cover_thumb/3079?v=1786247085",
+  "cover_og_url": "/cover/3079/og?v=1786247085",
+  "url": "/book/liar-zine-1-agathys/",
   "rating": null,
-  "comment": "Liar · 2023",
+  "comment": "<p>Liar · 2023</p>",
   "data": [
     {
       "format": "pdf",
       "size": 3087762,
-      "name": "Liar Zine #1 - Tidak diketahui"
+      "name": "Liar Zine #1 - agathys"
     }
   ]
 }

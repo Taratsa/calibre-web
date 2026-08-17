@@ -2,6 +2,7 @@
 import type { BookSummary } from '~/data/types';
 import BaseLayout from './BaseLayout.astro';
 import { ogLocale } from '~/data';
+import { bookPath } from '~/utils/book-url';
 
 export interface Props {
   book: BookSummary;
@@ -10,7 +11,7 @@ export interface Props {
 
 const { book, description: customDescription } = Astro.props;
 const siteUrl = 'https://pustaka.taratsa.id';
-const bookUrl = `${siteUrl}${book.url}`;
+const bookUrl = `${siteUrl}${bookPath(book)}/`;
 const ogImageUrl = book.cover_og_url.startsWith('http')
   ? book.cover_og_url
   : `${siteUrl}${book.cover_og_url}`;
