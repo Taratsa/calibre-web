@@ -580,6 +580,7 @@ def render_books_list(data, sort_param, book_id, page):
             db.books_series_link,
             db.Books.id == db.books_series_link.c.book,
             db.Series,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         return render_title_template(
             "index.html",
@@ -605,6 +606,7 @@ def render_rated_books(page, book_id, order):
             db.books_series_link,
             db.Books.id == db.books_series_link.c.book,
             db.Series,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
 
         return render_title_template(
@@ -631,6 +633,7 @@ def render_discover_books(book_id):
             [func.randomblob(2)],
             join_archive_read=True,
             config_read_column=config.config_read_column,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         pagination = Pagination(1, config.config_books_per_page, config.config_books_per_page)
         return render_title_template(
@@ -713,6 +716,7 @@ def render_downloaded_books(page, order, user_id):
             db.Series,
             ub.Downloads,
             db.Books.id == ub.Downloads.book_id,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         for book in entries:
             if not (
@@ -748,6 +752,7 @@ def render_author_books(page, author_id, order):
         db.books_series_link,
         db.books_series_link.c.book == db.Books.id,
         db.Series,
+        relationship_loaders=db.LIST_RELATIONSHIPS["author"],
     )
     if entries is None or not len(entries):
         flash(_("Oops! Selected book is unavailable. File does not exist or is not accessible"), category="error")
@@ -794,6 +799,7 @@ def render_publisher_books(page, book_id, order):
             db.books_series_link,
             db.Books.id == db.books_series_link.c.book,
             db.Series,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         publisher = _("None")
     else:
@@ -814,6 +820,7 @@ def render_publisher_books(page, book_id, order):
                 db.books_series_link,
                 db.Books.id == db.books_series_link.c.book,
                 db.Series,
+                relationship_loaders=db.LIST_RELATIONSHIPS["index"],
             )
             publisher = publisher.name
         else:
@@ -844,6 +851,7 @@ def render_series_books(page, book_id, order):
             db.books_series_link,
             db.Books.id == db.books_series_link.c.book,
             db.Series,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         series_name = _("None")
     else:
@@ -857,6 +865,7 @@ def render_series_books(page, book_id, order):
                 [order[0][0]],
                 True,
                 config.config_read_column,
+                relationship_loaders=db.LIST_RELATIONSHIPS["index"],
             )
             series_name = series_name.name
         else:
@@ -887,6 +896,7 @@ def render_ratings_books(page, book_id, order):
             db.books_ratings_link,
             db.Books.id == db.books_ratings_link.c.book,
             db.Ratings,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         title = _("Rating: None")
     else:
@@ -900,6 +910,7 @@ def render_ratings_books(page, book_id, order):
                 [order[0][0]],
                 True,
                 config.config_read_column,
+                relationship_loaders=db.LIST_RELATIONSHIPS["index"],
             )
             title = _("Rating: %(rating)s stars", rating=int(name.rating / 2))  # pyright: ignore[reportArgumentType]
         else:
@@ -928,8 +939,8 @@ def render_formats_books(page, book_id, order):
             True,
             config.config_read_column,
             db.Data,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
-
     else:
         name = calibre_db.session.query(db.Data).filter(db.Data.format == book_id.upper()).first()  # pyright: ignore[reportGeneralTypeIssues]
         if name:
@@ -942,6 +953,7 @@ def render_formats_books(page, book_id, order):
                 [order[0][0]],
                 True,
                 config.config_read_column,
+                relationship_loaders=db.LIST_RELATIONSHIPS["index"],
             )
         else:
             abort(404)
@@ -974,6 +986,7 @@ def render_category_books(page, book_id, order):
             db.books_series_link,
             db.Books.id == db.books_series_link.c.book,
             db.Series,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         tagsname = _("None")
     else:
@@ -994,6 +1007,7 @@ def render_category_books(page, book_id, order):
                 db.books_series_link,
                 db.Books.id == db.books_series_link.c.book,
                 db.Series,
+                relationship_loaders=db.LIST_RELATIONSHIPS["index"],
             )
             tagsname = tagsname.name
         else:
@@ -1032,6 +1046,7 @@ def render_language_books(page, name, order):
             db.books_languages_link,
             db.Books.id == db.books_languages_link.c.book,
             db.Languages,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
     else:
         entries, random, pagination = calibre_db.fill_indexpage(
@@ -1042,6 +1057,7 @@ def render_language_books(page, name, order):
             [order[0][0]],
             True,
             config.config_read_column,
+            relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
     return render_title_template(
         "index.html",
@@ -1094,8 +1110,8 @@ def render_read_books(page, are_read, as_xml=False, order=None):
         db.books_series_link,
         db.Books.id == db.books_series_link.c.book,
         db.Series,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed" if as_xml else "index"],
     )
-
     if as_xml:
         return entries, pagination
     else:
@@ -1129,7 +1145,15 @@ def render_archived_books(page, sort_param):
     archived_filter = db.Books.id.in_(archived_book_ids)
 
     entries, random, pagination = calibre_db.fill_indexpage_with_archived_books(
-        page, db.Books, 0, archived_filter, order, True, True, config.config_read_column
+        page,
+        db.Books,
+        0,
+        archived_filter,
+        order,
+        True,
+        True,
+        config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["index"],
     )
 
     name = _("Archived Books") + " (" + str(len(entries)) + ")"
@@ -1265,7 +1289,16 @@ def list_books():
         )
     else:
         entries, __, __ = calibre_db.fill_indexpage_with_archived_books(
-            (int(off) / (int(limit)) + 1), db.Books, limit, True, order, True, True, config.config_read_column, *join
+            (int(off) / (int(limit)) + 1),
+            db.Books,
+            limit,
+            True,
+            order,
+            True,
+            True,
+            config.config_read_column,
+            *join,
+            relationship_loaders=db.LIST_RELATIONSHIPS["ajax"],
         )
 
     result = []

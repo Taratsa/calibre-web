@@ -1,5 +1,8 @@
 services:
   calibre-web-automated:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: calibre-web:local
     container_name: calibre-web-automated
     env_file:

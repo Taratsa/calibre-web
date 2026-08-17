@@ -85,6 +85,7 @@ def feed_letter_books(book_id):
         [db.Books.sort],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -104,6 +105,7 @@ def feed_new():
         [db.Books.timestamp.desc()],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -135,6 +137,7 @@ def feed_best_rated():
         [db.Books.timestamp.desc()],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -329,6 +332,7 @@ def feed_series(book_id):
         [db.Books.series_index],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -410,6 +414,7 @@ def feed_format(book_id):
         [db.Books.timestamp.desc()],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -452,6 +457,7 @@ def feed_languages(book_id):
         [db.Books.timestamp.desc()],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)
@@ -511,6 +517,7 @@ def feed_shelf(book_id):
             config.config_read_column,
             ub.BookShelf,
             ub.BookShelf.book_id == db.Books.id,
+            relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
         )
         # delete shelf entries where book is not existent anymore, can happen if book is deleted outside calibre-web
         wrong_entries = (
@@ -650,6 +657,7 @@ def render_xml_dataset(data_table, book_id):
         [db.Books.timestamp.desc()],  # pyright: ignore[reportGeneralTypeIssues]
         True,
         config.config_read_column,
+        relationship_loaders=db.LIST_RELATIONSHIPS["feed"],
     )
     cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
     return render_xml_template("feed.xml", entries=entries, pagination=pagination, cc=cc)

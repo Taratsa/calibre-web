@@ -231,7 +231,7 @@ BookMeta = namedtuple(
 )
 
 # python build process likes to have x.y.zbw -> b for beta and w a counting number
-STABLE_VERSION = "0.6.27b"
+STABLE_VERSION = "0.6.27"
 
 NIGHTLY_VERSION = {}
 NIGHTLY_VERSION[0] = "$Format:%H$"

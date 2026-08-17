@@ -68,6 +68,15 @@ log = logger.create()
 
 cc_exceptions = ["composite", "series"]
 cc_classes = {}
+LIST_RELATIONSHIPS = {
+    "index": ("authors", "series", "ratings", "data"),
+    "author": ("authors", "series", "ratings", "data"),
+    "feed": ("authors", "tags", "series", "publishers", "ratings", "languages"),
+    "basic": ("authors",),
+    "shelf": ("authors", "series", "ratings"),
+    "shelf_download": ("authors", "series", "data"),
+    "ajax": ("authors", "tags", "series", "publishers", "ratings", "languages", "data"),
+}
 
 Base = declarative_base()
 
@@ -797,16 +806,16 @@ class CalibreDB:
     def get_book(self, book_id):
         return self.session.query(Books).filter(Books.id == book_id).first()
 
-    def _eager_load_relationships(self, query):
-        return query.options(
-            selectinload(Books.authors),
-            selectinload(Books.tags),
-            selectinload(Books.series),
-            selectinload(Books.publishers),
-            selectinload(Books.ratings),
-            selectinload(Books.languages),
-            selectinload(Books.data),
-        )
+    def _eager_load_relationships(self, query, relationships=None):
+        """Load only the book relationships required by the consuming view.
+
+        Detail and UUID lookups keep the full profile. List and feed views pass
+        a small profile so unrelated Calibre relationships are not materialized
+        for every row on the page.
+        """
+        if relationships is None:
+            relationships = ("authors", "tags", "series", "publishers", "ratings", "languages", "data")
+        return query.options(*(selectinload(getattr(Books, name)) for name in relationships))
 
     def get_filtered_book(self, book_id, allow_show_archived=False):
         q = self.session.query(Books).filter(Books.id == book_id).filter(self.common_filters(allow_show_archived))
@@ -969,10 +978,28 @@ class CalibreDB:
 
     # Fill indexpage with all requested data from database
     def fill_indexpage(
-        self, page, pagesize, database, db_filter, order, join_archive_read=False, config_read_column=0, *join
+        self,
+        page,
+        pagesize,
+        database,
+        db_filter,
+        order,
+        join_archive_read=False,
+        config_read_column=0,
+        *join,
+        relationship_loaders=None,
     ):
         return self.fill_indexpage_with_archived_books(
-            page, database, pagesize, db_filter, order, False, join_archive_read, config_read_column, *join
+            page,
+            database,
+            pagesize,
+            db_filter,
+            order,
+            False,
+            join_archive_read,
+            config_read_column,
+            *join,
+            relationship_loaders=relationship_loaders,
         )
 
     def fill_indexpage_with_archived_books(
@@ -986,18 +1013,21 @@ class CalibreDB:
         join_archive_read,
         config_read_column,
         *join,
+        relationship_loaders=None,
     ):
         pagesize = pagesize or self.config.config_books_per_page  # pyright: ignore[reportOptionalMemberAccess]
         if current_user.show_detail_random():
             random_query = self.generate_linked_query(config_read_column, database)
             randm = (
-                random_query.filter(self.common_filters(allow_show_archived))
+                self._eager_load_relationships(random_query, relationship_loaders)
+                .filter(self.common_filters(allow_show_archived))
                 .order_by(func.random())
                 .limit(self.config.config_random_books)
                 .all()
             )  # pyright: ignore[reportOptionalMemberAccess]
         else:
             randm = false()
+
         if join_archive_read:
             query = self.generate_linked_query(config_read_column, database)
         else:
@@ -1023,8 +1053,16 @@ class CalibreDB:
         entries = []
         pagination = []
         try:
-            pagination = Pagination(page, pagesize, query.count())
-            entries = self._eager_load_relationships(query).order_by(*order).offset(off).limit(pagesize).all()
+            count_expression = func.count(func.distinct(Books.id)) if join else func.count(Books.id)
+            total_count = query.order_by(None).with_entities(count_expression).scalar() or 0
+            pagination = Pagination(page, pagesize, total_count)
+            entries = (
+                self._eager_load_relationships(query, relationship_loaders)
+                .order_by(*order)
+                .offset(off)
+                .limit(pagesize)
+                .all()
+            )
         except Exception as ex:
             log.error_or_exception(ex)
         # display authors in right order
@@ -1134,10 +1172,7 @@ class CalibreDB:
         # Build base query with optimized joins
         base_query = self.generate_linked_query(config.config_read_column, Books)
         base_query = base_query.filter(self.common_filters(True))
-
-        # Apply eager loading for authors to avoid N+1 queries
-        base_query = base_query.options(selectinload(Books.authors))
-
+        base_query = self._eager_load_relationships(base_query, LIST_RELATIONSHIPS["ajax"])
         if len(join) == 6:
             base_query = (
                 base_query.outerjoin(join[0], join[1]).outerjoin(join[2]).outerjoin(join[3], join[4]).outerjoin(join[5])
