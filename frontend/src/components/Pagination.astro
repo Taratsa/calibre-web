@@ -7,10 +7,11 @@ export interface Props {
 
 const { page, totalPages, baseUrl } = Astro.props;
 const rootUrl = baseUrl.replace(/\/+$/, '');
+const pageRootUrl = rootUrl.endsWith('/page') ? rootUrl.slice(0, -5) : rootUrl;
 
 function pageHref(p: number) {
-  if (p === 1) return `${rootUrl}/`;
-  return `${rootUrl}/page/${p}/`;
+  if (p === 1) return `${pageRootUrl}/`;
+  return `${pageRootUrl}/page/${p}/`;
 }
 
 const pages: (number | '…')[] = [];
