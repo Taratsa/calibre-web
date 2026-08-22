@@ -127,12 +127,17 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
           <summary aria-label="Menu navigasi" id="nav-toggle-summary" aria-controls="nav-menu" aria-expanded="false">
             <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </summary>
-          <nav id="nav-menu">
-            <a href="/author">Penulis</a>
-            <a href="/series">Seri</a>
-            <a href="/publisher">Penerbit</a>
-            <a href="/category">Kategori</a>
-            <a href="/shelf">Rak</a>
+          <nav id="nav-menu" aria-label="Navigasi utama">
+            <details class="nav-group">
+              <summary>Koleksi</summary>
+              <div class="nav-group__menu">
+                <a href="/author">Penulis</a>
+                <a href="/series">Seri</a>
+                <a href="/publisher">Penerbit</a>
+                <a href="/category">Kategori</a>
+                <a href="/shelf">Rak</a>
+              </div>
+            </details>
             <a href="/video/">Video</a>
             <a href="/populer">Populer</a>
             <a href="/about">Tentang Kami</a>
@@ -165,12 +170,17 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
             sync();
           }
         </script>
-        <nav class="desktop-nav">
-          <a href="/author">Penulis</a>
-          <a href="/series">Seri</a>
-          <a href="/publisher">Penerbit</a>
-          <a href="/category">Kategori</a>
-          <a href="/shelf">Rak</a>
+        <nav class="desktop-nav" aria-label="Navigasi utama">
+          <div class="nav-group">
+            <a href="/category" class="nav-group__toggle">Koleksi</a>
+            <div class="nav-group__menu">
+              <a href="/author">Penulis</a>
+              <a href="/series">Seri</a>
+              <a href="/publisher">Penerbit</a>
+              <a href="/category">Kategori</a>
+              <a href="/shelf">Rak</a>
+            </div>
+          </div>
           <a href="/video/">Video</a>
           <a href="/populer">Populer</a>
           <a href="/about">Tentang Kami</a>

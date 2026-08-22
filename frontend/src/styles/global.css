@@ -152,6 +152,7 @@ img { max-width: 100%; height: auto; display: block; }
   font: inherit;
 }
 .site-header .desktop-nav a,
+.site-header .desktop-nav .nav-group__toggle,
 .site-header .nav-toggle nav a {
   color: var(--fg);
   text-decoration: none;
@@ -159,7 +160,40 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 500;
 }
 .site-header .desktop-nav a:hover,
+.site-header .desktop-nav .nav-group__toggle:hover,
 .site-header .nav-toggle nav a:hover { text-decoration: underline; }
+
+/* Dropdown: desktop "Koleksi" group */
+.site-header .desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.site-header .desktop-nav .nav-group { position: relative; }
+.site-header .desktop-nav .nav-group__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12rem;
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px var(--shadow-sm);
+  padding: 0.35rem;
+  display: none;
+  flex-direction: column;
+  z-index: 20;
+}
+.site-header .desktop-nav .nav-group:hover .nav-group__menu,
+.site-header .desktop-nav .nav-group:focus-within .nav-group__menu {
+  display: flex;
+}
+.site-header .desktop-nav .nav-group__menu a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+}
+
 .site-header .nav-toggle { display: none; }
 .site-header .nav-toggle summary {
   list-style: none;
@@ -182,6 +216,23 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+.site-header .nav-toggle .nav-group {
+  width: 100%;
+}
+.site-header .nav-toggle .nav-group > summary {
+  color: var(--fg);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+.site-header .nav-toggle .nav-group__menu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.site-header .nav-toggle .nav-group__menu a {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
 /* ── Theme toggle ── */
