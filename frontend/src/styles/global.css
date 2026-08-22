@@ -169,7 +169,16 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   gap: 0.25rem;
 }
-.site-header .desktop-nav .nav-group { position: relative; }
+.site-header .desktop-nav .nav-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.site-header .desktop-nav .nav-group__toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
 .site-header .desktop-nav .nav-group__menu {
   position: absolute;
   top: 100%;
