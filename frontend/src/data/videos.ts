@@ -15,6 +15,7 @@ export interface CrawledVideo {
   channel?: string
   channelUrl?: string
   providerTitle?: string
+  providerDescription?: string
   thumbnailUrl?: string
 }
 
@@ -23,9 +24,9 @@ export interface FilmVideo extends CrawledVideo {
   thumbnail: string | null
   sourceLabel: string
   sourceDomain: string
-  channel: string
   channelUrl: string
   providerTitle: string
+  providerDescription: string
 }
 
 const entities: Record<string, string> = {
@@ -110,6 +111,7 @@ export const videos: FilmVideo[] = dedupeById(
     channel: video.channel || 'Kanal tidak tersedia',
     channelUrl: video.channelUrl || video.watchUrl,
     providerTitle: decodeEntities(video.providerTitle || video.title),
+    providerDescription: decodeEntities(video.providerDescription || ''),
   })),
 )
 

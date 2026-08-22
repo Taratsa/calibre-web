@@ -10,8 +10,8 @@
     "preview": "astro preview",
     "crawl:videos": "bun scripts/crawl-videos.ts",
     "enrich:videos": "bun scripts/enrich-video-metadata.ts",
+    "enrich:video-descriptions": "bun scripts/enrich-video-descriptions.ts",
     "validate:videos": "bun scripts/validate-videos.ts",
-    "test:legacy-slugs": "node scripts/test-legacy-book-slugs.mjs",
     "astro": "astro"
   },
   "dependencies": {
