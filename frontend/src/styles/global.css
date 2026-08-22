@@ -171,12 +171,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .site-header .desktop-nav .nav-group {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 .site-header .desktop-nav .nav-group__toggle {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   min-height: 44px;
 }
 .site-header .desktop-nav .nav-group__menu {
