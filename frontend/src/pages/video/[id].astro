@@ -51,9 +51,6 @@ const related = samePost.length ? samePost : fallback
       <a href={video.channelUrl} target="_blank" rel="noopener noreferrer">{video.channel}</a>
     </p>
     {description && <p class="video-desc">{description}{description.length >= 400 ? '…' : ''}</p>}
-    <p class="video-context">
-      <strong>Konteks dari artikel sumber:</strong> {decodeEntities(video.context)}
-    </p>
     <p class="video-source">
       Sumber artikel:
       <a href={video.sourceUrl} target="_blank" rel="noopener noreferrer">{video.sourceUrl}</a>
@@ -75,7 +72,6 @@ const related = samePost.length ? samePost : fallback
   .video-detail { max-width: 60rem; }
   .video-player { aspect-ratio: 16 / 9; width: 100%; margin-bottom: 1.5rem; border-radius: 4px; background: #000; overflow: hidden; box-shadow: 0 1px 4px var(--shadow-sm); }
   .video-player iframe, .video-player video { width: 100%; height: 100%; border: 0; display: block; }
-  .video-context { max-width: 48rem; margin-top: 1.25rem; color: var(--muted); line-height: 1.65; }
   .video-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
   .video-desc { max-width: 48rem; line-height: 1.65; }
   .video-source { margin-top: 1.25rem; overflow-wrap: anywhere; }
