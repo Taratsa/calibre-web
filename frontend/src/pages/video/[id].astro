@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import VideoCard from '../../components/VideoCard.astro'
+import { videos as allVideos, decodeEntities } from '../../data/videos'
+
+const { id } = Astro.params
+const video = id ? allVideos.find((item) => item.id === id) : undefined
+if (!video) return new Response(null, { status: 404 })
+
+const description = decodeEntities(video.context)
+const posted = new Date(video.date)
+const dateLabel = Number.isNaN(posted.valueOf())
+  ? video.date.slice(0, 10)
+  : posted.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+
+const samePost = allVideos.filter((item) => item.postId === video.postId && item.id !== video.id).slice(0, 6)
+const fallback = allVideos.filter((item) => item.id !== video.id).slice(0, 6)
+const related = samePost.length ? samePost : fallback
+---
+
+<BaseLayout title={`${video.title} | Video`} description={description.slice(0, 200)} canonical={`/video/${video.id}/`} ogType="article">
+  <p class="back"><a href="/video/">← Kembali ke Video</a></p>
+
+  <article class="video-detail">
+    <div class="video-player">
+      {video.type === 'youtube' && (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}?rel=0`}
+          title={video.title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        />
+      )}
+      {video.type === 'vimeo' && (
+        <iframe
+          src={`https://player.vimeo.com/video/${encodeURIComponent(video.id)}`}
+          title={video.title}
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        />
+      )}
+      {video.type === 'video' && <video controls preload="metadata" src={video.embedUrl} />}
+    </div>
+
+    <h1>{video.title}</h1>
+    <p class="video-meta">
+      {dateLabel} · {video.sourceLabel} ·
+      <a href={video.channelUrl} target="_blank" rel="noopener noreferrer">{video.channel}</a>
+    </p>
+    {video.providerTitle !== video.title && <p class="video-provider-title">Video asli: {video.providerTitle}</p>}
+    {description && <p class="video-desc">{description}{description.length >= 400 ? '…' : ''}</p>}
+    <p class="video-source">
+      Sumber artikel:
+      <a href={video.sourceUrl} target="_blank" rel="noopener noreferrer">{video.sourceUrl}</a>
+    </p>
+  </article>
+
+  {related.length > 0 && (
+    <section class="related">
+      <h2>Video lainnya</h2>
+      <ul class="video-grid">
+        {related.map((item) => <VideoCard video={item} />)}
+      </ul>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .back { margin: 0 0 1rem; }
+  .video-detail { max-width: 60rem; }
+  .video-player { aspect-ratio: 16 / 9; width: 100%; margin-bottom: 1.5rem; border-radius: 4px; background: #000; overflow: hidden; box-shadow: 0 1px 4px var(--shadow-sm); }
+  .video-player iframe, .video-player video { width: 100%; height: 100%; border: 0; display: block; }
+.video-provider-title { margin: -0.75rem 0 1.25rem; color: var(--muted-strong); font-size: 0.95rem; }
+  .video-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .video-desc { max-width: 48rem; line-height: 1.65; }
+  .video-source { margin-top: 1.25rem; overflow-wrap: anywhere; }
+  .related { margin-top: 3rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+</style>

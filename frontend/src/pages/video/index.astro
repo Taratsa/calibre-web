@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import VideoCard from '../../components/VideoCard.astro'
+import { videos, pageSize, totalPosts } from '../../data/videos'
+
+const currentPage = Math.max(1, Number(Astro.url.searchParams.get('page') || '1') || 1)
+const query = Astro.url.searchParams.get('q')?.trim() || ''
+const requestedSort = Astro.url.searchParams.get('sort') || 'terbaru'
+const sort = ['terbaru', 'judul', 'sumber'].includes(requestedSort) ? requestedSort : 'terbaru'
+
+const matches = query
+  ? videos.filter((video) => `${video.title} ${video.providerTitle} ${video.channel} ${video.sourceDomain} ${video.sourceLabel} ${video.year}`.toLowerCase().includes(query.toLowerCase()))
+  : videos
+
+const filtered = [...matches].sort((a, b) => {
+  if (sort === 'judul') return a.title.localeCompare(b.title, 'id')
+  if (sort === 'sumber') return a.sourceDomain.localeCompare(b.sourceDomain) || a.title.localeCompare(b.title, 'id')
+  return (new Date(b.date).valueOf() - new Date(a.date).valueOf()) || a.title.localeCompare(b.title, 'id')
+})
+
+const seenComposites = new Set<string>()
+const uniqueVideos = filtered.filter((video) => {
+  const key = `${video.type}:${video.id}`
+  const alt = `${video.title.toLowerCase()}::${video.sourceUrl.replace(/\/$/, '')}`
+  if (seenComposites.has(key) || seenComposites.has(alt)) return false
+  seenComposites.add(key)
+  seenComposites.add(alt)
+  return true
+})
+
+const totalPages = Math.max(1, Math.ceil(uniqueVideos.length / pageSize))
+const safePage = Math.min(currentPage, totalPages)
+const pageVideos = uniqueVideos.slice((safePage - 1) * pageSize, safePage * pageSize)
+const from = uniqueVideos.length ? (safePage - 1) * pageSize + 1 : 0
+const to = Math.min(safePage * pageSize, uniqueVideos.length)
+
+function urlFor(page: number, nextQuery = query, nextSort = sort) {
+  const params = new URLSearchParams()
+  if (page > 1) params.set('page', String(page))
+  if (nextQuery) params.set('q', nextQuery)
+  if (nextSort !== 'terbaru') params.set('sort', nextSort)
+  const queryString = params.toString()
+  return `/video/${queryString ? `?${queryString}` : ''}`
+}
+
+const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) => {
+  if (totalPages <= 7) return index + 1
+  if (safePage <= 4) return index + 1
+  if (safePage >= totalPages - 3) return totalPages - 6 + index
+  return safePage - 3 + index
+})
+---
+
+<BaseLayout
+  title="Video"
+  description={`Arsip ${uniqueVideos.length.toLocaleString('id-ID')} video dari Perpustakaan Online Genosida 1965-1966.`}
+  canonical="/video/"
+  ogType="website"
+>
+  <div class="video-heading">
+    <div>
+      <h1>Video</h1>
+      <p>Arsip video dan film dokumenter terkait sejarah Indonesia.</p>
+    </div>
+    <p class="video-count"><strong>{uniqueVideos.length.toLocaleString('id-ID')}</strong> video</p>
+  </div>
+
+  <form class="video-tools" action="/video/" method="GET" role="search" aria-label="Cari video">
+    <label>
+      <span class="sr-only">Cari video</span>
+      <input type="search" name="q" value={query} placeholder="Cari judul, sumber, atau tahun…" />
+    </label>
+    <select name="sort" aria-label="Urutkan video">
+      <option value="terbaru" selected={sort === 'terbaru'}>Terbaru</option>
+      <option value="judul" selected={sort === 'judul'}>Judul A–Z</option>
+      <option value="sumber" selected={sort === 'sumber'}>Sumber</option>
+    </select>
+    <button type="submit">Cari</button>
+    {query && <a class="reset" href="/video/">Reset</a>}
+  </form>
+
+  <div class="video-summary">
+    <span>Menampilkan {from}–{to} dari {uniqueVideos.length.toLocaleString('id-ID')} video</span>
+    <span>Diambil dari {totalPosts.toLocaleString('id-ID')} artikel</span>
+  </div>
+
+  {pageVideos.length ? (
+    <ul class="video-grid">
+      {pageVideos.map((video) => <VideoCard video={video} />)}
+    </ul>
+  ) : (
+    <p class="empty">Tidak ada video yang cocok dengan pencarian ini.</p>
+  )}
+
+  <nav class="video-pagination" aria-label="Halaman video">
+    <ol>
+      <li class="pagination__item pagination__item--nav">
+        <a class:list={{ 'pagination__link': true, disabled: safePage <= 1 }} href={safePage > 1 ? urlFor(safePage - 1) : '#'} rel="prev" aria-label="Halaman sebelumnya">
+          <span class="pagination__label">Sebelumnya</span>
+        </a>
+      </li>
+      {pagination.map((number) => (
+        <li class:list={{ 'pagination__item': true, 'pagination__item--current': number === safePage }}>
+          {number === safePage ? <span aria-current="page" aria-label={`Halaman ${number}, saat ini`}>{number}</span> : <a class="pagination__link" href={urlFor(number)} aria-label={`Halaman ${number}`}>{number}</a>}
+        </li>
+      ))}
+      <li class="pagination__item pagination__item--nav">
+        <a class:list={{ 'pagination__link': true, disabled: safePage >= totalPages }} href={safePage < totalPages ? urlFor(safePage + 1) : '#'} rel="next" aria-label="Halaman selanjutnya">
+          <span class="pagination__label">Selanjutnya</span>
+        </a>
+      </li>
+    </ol>
+  </nav>
+</BaseLayout>
+
+<style>
+  .video-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .video-heading p { margin-bottom: 1.5rem; color: var(--muted); }
+  .video-count { white-space: nowrap; padding: 0.5rem 0; font-size: 0.9rem; color: var(--muted) !important; }
+  .video-count strong { color: var(--fg); }
+  .video-tools { display: flex; align-items: stretch; gap: 0.5rem; margin: 1.5rem 0 1rem; }
+  .video-tools label { flex: 1; }
+  .video-tools input, .video-tools select, .video-tools button { height: 44px; min-height: 44px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--fg); font: inherit; padding: 0.5rem 0.75rem; }
+  .video-tools input { width: 100%; }
+  .video-tools input:focus, .video-tools select:focus, .video-tools button:focus-visible, .video-pagination a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .video-tools button { border-color: var(--fg); background: var(--fg); color: var(--bg); cursor: pointer; font-weight: 600; }
+  .video-tools button:hover { border-color: var(--accent); background: var(--accent); }
+  .video-tools .reset { display: inline-flex; align-items: center; padding: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+  .video-summary { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; color: var(--muted); font-size: 0.875rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+  .empty { padding: 3rem 0; color: var(--muted); text-align: center; }
+  .video-pagination { margin-top: 2.25rem; }
+  .video-pagination ol { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
+  .video-pagination .pagination__item { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .video-pagination .pagination__item--current span, .video-pagination .pagination__link { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 0.25rem; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--fg); text-decoration: none; font-size: 0.875rem; }
+  .video-pagination .pagination__item--current span { border-color: var(--fg); background: var(--fg); color: var(--bg); font-weight: 600; }
+  .video-pagination .pagination__link:hover:not(.disabled) { border-color: var(--fg); }
+  .video-pagination .pagination__link.disabled { cursor: default; opacity: 0.45; pointer-events: none; }
+  @media (max-width: 640px) { .video-heading, .video-summary { flex-direction: column; gap: 0; } .video-tools { flex-wrap: wrap; } .video-tools label { flex-basis: 100%; } .video-tools select, .video-tools button { flex: 1; } }
+</style>

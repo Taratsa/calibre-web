@@ -8,6 +8,9 @@
     "dev": "node scripts/seed.mjs && astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "crawl:videos": "bun scripts/crawl-videos.ts",
+    "enrich:videos": "bun scripts/enrich-video-metadata.ts",
+    "validate:videos": "bun scripts/validate-videos.ts",
     "test:legacy-slugs": "node scripts/test-legacy-book-slugs.mjs",
     "astro": "astro"
   },

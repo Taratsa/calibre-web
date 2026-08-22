@@ -34,6 +34,12 @@ The compose file builds both application images. Frontend metadata is copied
 into the image at build time; rerun the frontend image build after Calibre
 metadata changes. This is not a live frontend rebuild watcher.
 
+The Astro frontend also serves the same-origin `/video/` archive and
+`/video/<id>/` watch pages from the checked-in dataset in
+`frontend/src/data/wordpress-videos.json`. Refresh that dataset from the
+`Taratsa/pustaka-video` crawler when its source archive changes, then rebuild
+the Astro image. No additional Caddy route or service is required.
+
 ## Quick Start
 
 ```bash

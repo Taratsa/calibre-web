@@ -1,0 +1,122 @@
+---
+import type { FilmVideo } from '../data/videos'
+
+interface Props {
+  video: FilmVideo
+}
+
+const { video } = Astro.props
+const href = `/video/${video.id}/`
+---
+
+<li data-video-item>
+  <article class="video-card">
+    <a href={href} class="video-card__cover" aria-label={`Tonton ${video.title}`}>
+      {
+        video.thumbnail ? (
+          <img
+            src={video.thumbnail}
+            alt={video.title}
+            width="320"
+            height="180"
+            loading="lazy"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          />
+        ) : (
+          <span class="video-card__placeholder" aria-hidden="true">▶</span>
+        )
+      }
+      <span class="video-card__badge">{video.sourceLabel}</span>
+    </a>
+    <h3 class="video-card__title">
+      <a href={href}>{video.title}</a>
+    </h3>
+    <p class="video-card__meta">
+      <a href={`/video/?q=${encodeURIComponent(video.channel)}`}>{video.channel}</a> · {video.year}
+    </p>
+  </article>
+</li>
+
+<style>
+  .video-card {
+    margin: 0;
+  }
+
+  .video-card__cover {
+    display: block;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .video-card__cover img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 1px 4px var(--shadow-sm);
+    border-radius: 4px;
+    background: var(--surface-3);
+  }
+
+  .video-card__placeholder {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: var(--surface-3);
+    color: var(--muted);
+    font-size: 2rem;
+  }
+
+  .video-card__badge {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.4rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .video-card__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .video-card__title a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+
+  .video-card__title a:hover {
+    text-decoration: underline;
+  }
+
+  .video-card__meta {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .video-card__meta a {
+    color: var(--muted);
+  }
+</style>
