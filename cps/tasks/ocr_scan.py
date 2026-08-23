@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from types import SimpleNamespace
+
 from flask_babel import lazy_gettext as N_
 
 from cps import app, calibre_db, db, logger

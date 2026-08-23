@@ -2694,50 +2694,57 @@ def read_book(book_id, book_format):
         return redirect(url_for("web.index"))
 
 
-_BOOK_SLUG_RE = re.compile(r"[^a-z0-9]+")
-_BOOK_SLUG_TRANSLITERATIONS = {
-    "ı": "i",
-    "ł": "l",
-    "đ": "d",
-    "ð": "d",
-    "þ": "th",
-    "ß": "ss",
-    "æ": "ae",
-    "œ": "oe",
-    "ø": "o",
-    "ħ": "h",
-    "ŋ": "n",
-    "ƒ": "f",
-    "ə": "e",
-}
+_BOOK_SLUG_MAP_FILENAME = "book-slugs.json"
+_BOOK_SLUG_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
-def _book_slug_base(value):
-    value = unicodedata.normalize("NFKD", value or "")
-    value = "".join(char for char in value if not unicodedata.combining(char)).lower()
-    for source, replacement in _BOOK_SLUG_TRANSLITERATIONS.items():
-        value = value.replace(source, replacement)
-    return _BOOK_SLUG_RE.sub("-", value).strip("-") or "book"
+def _book_slug_map_path():
+    configured_path = os.environ.get("BOOK_SLUGS_PATH")
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    candidates = [
+        configured_path,
+        os.path.join(project_root, _BOOK_SLUG_MAP_FILENAME),
+        os.path.join(project_root, "frontend", "src", "data", _BOOK_SLUG_MAP_FILENAME),
+    ]
+    app_db_path = getattr(ub, "app_DB_path", None)
+    if app_db_path:
+        candidates.append(os.path.join(os.path.dirname(app_db_path), _BOOK_SLUG_MAP_FILENAME))
+    for path in candidates:
+        if path and os.path.isfile(path):
+            return path
+    return configured_path or next((path for path in candidates if path), None)
 
 
-def _book_slug(book, books):
-    def ordered_author_names(candidate):
-        authors = sorted(candidate.authors, key=lambda author: (author.sort or author.name or "").casefold())
-        return " ".join((author.name or "").replace("|", ", ").strip() for author in authors)
+def _load_book_slug_map():
+    path = _book_slug_map_path()
+    if not path:
+        return {}
+    try:
+        with open(path, encoding="utf-8") as slug_file:
+            payload = json.load(slug_file)
+    except FileNotFoundError:
+        log.warning("Book slug map not found at %s; numeric redirects will return 404", path)
+        return {}
+    except (OSError, json.JSONDecodeError, TypeError) as exc:
+        log.warning("Unable to load book slug map from %s: %s", path, exc)
+        return {}
+    if not isinstance(payload, dict):
+        log.warning("Ignoring invalid book slug map at %s: expected an object", path)
+        return {}
 
-    base = _book_slug_base(f"{book.title} {ordered_author_names(book)}")
-    max_base_length = 120
-    shortened = base[:max_base_length].rstrip("-") or "book"
-    collision = any(
-        other.id != book.id
-        and _book_slug_base(f"{other.title} {ordered_author_names(other)}")[:max_base_length].rstrip("-") == shortened
-        for other in books
-    )
-    needs_suffix = base.isdigit() or collision or len(base) > max_base_length
-    if not needs_suffix:
-        return shortened
-    suffix = f"-{book.id}"
-    return f"{shortened[: max_base_length - len(suffix)].rstrip('-')}{suffix}"
+    slugs = {}
+    for raw_book_id, slug in payload.items():
+        try:
+            book_id = int(raw_book_id)
+        except (TypeError, ValueError):
+            continue
+        if isinstance(slug, str) and _BOOK_SLUG_PATTERN.fullmatch(slug):
+            slugs[book_id] = slug
+    log.info("Loaded %d book slugs from %s", len(slugs), path)
+    return slugs
+
+
+_BOOK_SLUGS = _load_book_slug_map()
 
 
 @web.route("/book/<int:book_id>/")
@@ -2746,13 +2753,9 @@ def show_book(book_id, title_slug=None):
     # The legacy Flask host keeps numeric URLs and is excluded from indexing.
     if request.host.split(":", 1)[0] == "old-pustaka.taratsa.id":
         return _show_book(book_id)
-    if sqlalchemy_version2:
-        book = calibre_db.session.get(db.Books, book_id)
-    else:
-        book = calibre_db.session.query(db.Books).filter(db.Books.id == book_id).first()
-    if book:
-        books = calibre_db.session.query(db.Books).all()
-        return redirect(f"/book/{_book_slug(book, books)}/", code=301)
+    slug = _BOOK_SLUGS.get(book_id)
+    if slug:
+        return redirect(f"/book/{slug}/", code=301)
     abort(404)
 
 

@@ -340,8 +340,9 @@ async function main() {
     const index = await loadBooks(db);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
+    await writeJson('book-slugs.json', Object.fromEntries(index.map(book => [book.id, book.slug])));
+    console.log(`[seed] wrote ${index.length} book slugs`);
     await writeJson('legacy-book-slugs.json', buildLegacySlugMap(previousBooks, previousAliases, index));
-
     const authorsAll = db.prepare(`SELECT id, name, sort FROM authors ORDER BY name`).all();
     const authorsClean = authorsAll.map(a => ({
       id: a.id,

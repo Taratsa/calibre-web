@@ -32,6 +32,8 @@ frontend/dist/
 # calibre-web
 library/
 data/
+!frontend/src/data/
+!frontend/src/data/book-slugs.json
 *.db
 *.log
 cps/cache

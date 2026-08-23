@@ -123,6 +123,7 @@ COPY pyproject.toml /app/calibre-web/
 COPY messages.pot /app/calibre-web/
 COPY babel.cfg /app/calibre-web/
 COPY MANIFEST.in /app/calibre-web/
+COPY frontend/src/data/book-slugs.json /app/calibre-web/book-slugs.json
 
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
