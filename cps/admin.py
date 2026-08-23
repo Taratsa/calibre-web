@@ -232,6 +232,16 @@ def update_thumbnails():
         helper.update_thumbnail_cache()
     return ""
 
+@admi.route("/ocr/scan", methods=["POST"])
+@user_login_required
+@admin_required
+def queue_ocr_scan():
+    from .tasks.ocr_scan import TaskOcrScan
+
+    task = TaskOcrScan(trigger_type="manual")
+    WorkerThread.add(current_user.name, task, hidden=False)
+    return jsonify({"success": True, "message": _("OCR scan queued"), "task_id": str(task.id)})
+
 
 @admi.route("/admin/view")
 @user_login_required
@@ -1709,6 +1719,7 @@ def update_scheduledtasks():
     _config_checkbox(to_save, "schedule_generate_book_covers")
     _config_checkbox(to_save, "schedule_generate_series_covers")
     _config_checkbox(to_save, "schedule_metadata_backup")
+    _config_checkbox(to_save, "schedule_ocr_scan")
     _config_checkbox(to_save, "schedule_reconnect")
 
     if not error:

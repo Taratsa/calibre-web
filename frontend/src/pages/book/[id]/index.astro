@@ -33,6 +33,24 @@ if (detail?.data) {
 
 const readableExt = new Set(['epub', 'pdf', 'txt', 'cbr', 'cbz', 'djvu', 'mp3']);
 const readUrl = book.formats.find(f => readableExt.has(f.toLowerCase()));
+const ocrFormats = book.formats.filter(f => ['pdf', 'epub'].includes(f.toLowerCase()));
+const ocrUrls = new Map<string, string>();
+for (const format of ocrFormats) {
+  try {
+    const normalizedFormat = format.toLowerCase();
+    const statusUrl = new URL(`/api/read/${book.id}/ocr/status/${normalizedFormat}`, process.env.BACKEND_URL || Astro.url.origin);
+    const statusHeaders = new Headers();
+    for (const headerName of ['cookie', 'authorization']) {
+      const value = Astro.request.headers.get(headerName);
+      if (value) statusHeaders.set(headerName, value);
+    }
+    const statusResponse = await fetch(statusUrl, { headers: statusHeaders, redirect: 'manual' });
+    if (statusResponse.ok) {
+      const status = await statusResponse.json() as { available?: boolean };
+      if (status.available === true) ocrUrls.set(normalizedFormat, `/read/${book.id}/ocr/${normalizedFormat}/`);
+    }
+  } catch {}
+}
 
 const buttons = book.formats.map(f => ({
   href: `/download/${book.id}/${f.toLowerCase()}`,
@@ -83,6 +101,9 @@ const ratingStr = book.rating && book.rating.count > 0
         {readUrl && (
           <a href={`/read/${book.id}/${readUrl}`}>Baca Online</a>
         )}
+        {[...ocrUrls.entries()].map(([format, href]) => (
+          <a href={href} target="_blank" rel="noopener noreferrer">Baca {format.toUpperCase()} (OCR)</a>
+        ))}
       </div>
 
       <table class="metadata">

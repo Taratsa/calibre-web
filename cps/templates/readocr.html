@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<style>
+  .ocr-reader {
+    max-width: 980px;
+    margin: 0 auto 2rem;
+  }
+  .ocr-reader__meta {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  .ocr-reader__content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .ocr-reader__content h1,
+  .ocr-reader__content h2,
+  .ocr-reader__content h3,
+  .ocr-reader__content h4,
+  .ocr-reader__content h5,
+  .ocr-reader__content h6 {
+    margin-top: 1.5rem;
+  }
+  .ocr-reader__content pre {
+    white-space: pre-wrap;
+  }
+  @media (prefers-color-scheme: dark) {
+    .ocr-reader__content {
+      background: #222;
+      border-color: #555;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="ocr-reader">
+  <p><a href="{{ url_for('web.read_book', book_id=book.id, book_format='pdf') }}">&larr; Kembali ke PDF reader</a></p>
+  <h2>Baca Dokumen: {{ book.title }}</h2>
+  <p class="ocr-reader__meta">
+    {{ document.page_count }} halaman
+    {% if document.pages_routed_to_ocr %}
+      &middot; {{ document.pages_routed_to_ocr }} halaman diproses dengan OCR
+    {% else %}
+      &middot; teks PDF berhasil diekstrak tanpa OCR
+    {% endif %}
+    &middot; {{ document.processing_time_ms }} ms
+  </p>
+  <article class="ocr-reader__content">{{ document.markdown_html | safe }}</article>
+</div>
+{% endblock %}

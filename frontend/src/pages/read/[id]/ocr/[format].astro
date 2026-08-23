@@ -1,0 +1,286 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getAllBooks } from '~/data';
+import type { BookSummary } from '~/data/types';
+import { bookPath } from '~/utils/book-url';
+
+const { id, format } = Astro.params;
+const bookId = Number(id);
+const requestedFormat = format?.toLowerCase();
+if (!Number.isInteger(bookId) || !requestedFormat || !['pdf', 'epub'].includes(requestedFormat)) {
+  return new Response(null, { status: 404 });
+}
+
+let book: BookSummary | undefined = getAllBooks().find((candidate) => candidate.id === bookId);
+if (!book) {
+  try {
+    book = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'books', `${bookId}.json`), 'utf8')) as BookSummary;
+  } catch {}
+}
+if (!book) return new Response(null, { status: 404 });
+
+const backendUrl = process.env.BACKEND_URL || Astro.url.origin;
+const apiUrl = new URL(`/api/read/${book.id}/ocr/${requestedFormat}`, backendUrl);
+const requestHeaders = new Headers();
+for (const headerName of ['cookie', 'authorization']) {
+  const value = Astro.request.headers.get(headerName);
+  if (value) requestHeaders.set(headerName, value);
+}
+const apiResponse = await fetch(apiUrl, {
+  headers: requestHeaders,
+  redirect: 'manual',
+});
+
+if ((apiResponse.status >= 300 && apiResponse.status < 400) || apiResponse.status === 401 || apiResponse.status === 403) {
+  return Astro.redirect(`/login?next=${encodeURIComponent(Astro.url.pathname)}`, 302);
+}
+if (apiResponse.status === 404) return new Response(null, { status: 404 });
+
+let payload: {
+  error?: string;
+  book?: { id: number; title: string };
+  document?: {
+    markdown_html: string;
+    page_count: number;
+    pages_routed_to_ocr: number;
+    processing_time_ms: number;
+  };
+} = {};
+try {
+  payload = await apiResponse.json();
+} catch {}
+if (!apiResponse.ok || !payload.document) {
+  const status = apiResponse.status || 503;
+  const message = payload.error ?? 'OCR is not available for this document.';
+  return new Response(message, { status, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+}
+
+const { document } = payload;
+const bookUrl = `${bookPath(book)}/`;
+const originalUrl = `/read/${book.id}/${requestedFormat}`;
+const formatLabel = requestedFormat.toUpperCase();
+const decodeEntities = (value: string) => value
+  .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+  .replace(/&#x([\da-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
+  .replace(/&nbsp;/g, ' ')
+  .replace(/&amp;/g, '&')
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"')
+  .replace(/&#39;/g, "'");
+const headingIds = new Map<string, number>();
+const toc: Array<{ id: string; level: number; text: string }> = [];
+const contentHtml = document.markdown_html.replace(
+  /<(h[1-6])([^>]*)>([\s\S]*?)<\/\1>/gi,
+  (_, tag: string, attributes: string, content: string) => {
+    const text = decodeEntities(content.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
+    if (!text) return `<${tag}${attributes}>${content}</${tag}>`;
+    const baseId = text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'bagian';
+    const occurrence = (headingIds.get(baseId) || 0) + 1;
+    headingIds.set(baseId, occurrence);
+    const id = occurrence === 1 ? baseId : `${baseId}-${occurrence}`;
+    toc.push({ id, level: Number(tag.slice(1)), text });
+    return `<${tag}${attributes} id="${id}">${content}</${tag}>`;
+  },
+);
+---
+
+<BaseLayout title={`Baca ${formatLabel} (OCR): ${book.title}`} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article">
+  <div class="ocr-reader">
+    <nav class="ocr-reader__toolbar" aria-label="Alat pembaca">
+      <a href={bookUrl}>← Kembali ke buku</a>
+      <a href={originalUrl} target="_blank" rel="noopener noreferrer">Buka dokumen asli</a>
+    </nav>
+    <header class="ocr-reader__header">
+      <h1>Baca {formatLabel} (OCR): {book.title}</h1>
+      <p class="ocr-reader__meta">
+        {document.page_count} halaman
+        {document.pages_routed_to_ocr > 0
+          ? ` · ${document.pages_routed_to_ocr} halaman diproses dengan OCR`
+          : ` · teks ${formatLabel} berhasil diekstrak tanpa OCR`}
+        · {document.processing_time_ms} ms
+      </p>
+    </header>
+    {toc.length > 0 && (
+      <details class="ocr-reader__toc" open>
+        <summary>Daftar isi</summary>
+        <ol>
+          {toc.map(item => (
+            <li style={`--toc-level: ${item.level}`}><a href={`#${item.id}`}>{item.text}</a></li>
+          ))}
+        </ol>
+      </details>
+    )}
+    <article class="ocr-reader__content" set:html={contentHtml} />
+    <button class="ocr-reader__top" type="button" aria-label="Kembali ke atas" data-scroll-top>
+      ↑ <span>Kembali ke atas</span>
+    </button>
+  </div>
+</BaseLayout>
+
+<script>
+  const scrollTopButton = document.querySelector<HTMLButtonElement>('[data-scroll-top]');
+  if (scrollTopButton) {
+    const updateVisibility = () => {
+      scrollTopButton.toggleAttribute('data-visible', window.scrollY > 480);
+    };
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+  }
+</script>
+
+<style>
+  .ocr-reader {
+    max-width: 74ch;
+    margin: 0 auto 2rem;
+  }
+  .ocr-reader__toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .ocr-reader__toolbar a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .ocr-reader__header h1 {
+    margin-bottom: 0.5rem;
+  }
+  .ocr-reader__meta {
+    color: var(--muted-strong);
+    margin-bottom: 1rem;
+  }
+  .ocr-reader__toc {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+  }
+  .ocr-reader__toc summary {
+    font-weight: 700;
+  .ocr-reader__top {
+    position: fixed;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 15%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.5rem);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .ocr-reader__top[data-visible] {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .ocr-reader__top:hover {
+    background: var(--surface, var(--bg));
+  }
+
+  @media (max-width: 480px) {
+    .ocr-reader__top span {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ocr-reader__top {
+      transition: none;
+    }
+  }
+  .ocr-reader__toc ol {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ocr-reader__toc li {
+    margin: 0.4rem 0;
+    padding-left: calc((var(--toc-level) - 1) * 1rem);
+  }
+  .ocr-reader__content {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .ocr-reader__content :global(h1),
+  .ocr-reader__content :global(h2),
+  .ocr-reader__content :global(h3),
+  .ocr-reader__content :global(h4),
+  .ocr-reader__content :global(h5),
+  .ocr-reader__content :global(h6) {
+    margin-top: 1.75rem;
+    scroll-margin-top: 5rem;
+  }
+  .ocr-reader__content :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  .ocr-reader__content :global(pre) {
+    max-width: 100%;
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    background: var(--bg);
+    border-radius: 4px;
+  }
+  .ocr-reader__content :global(table) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+  .ocr-reader__content :global(th),
+  .ocr-reader__content :global(td) {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid var(--border-subtle);
+  }
+  .ocr-reader__content :global(th) {
+    background: var(--bg);
+  }
+  .ocr-reader__content :global(img) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 4px;
+  }
+  @media (max-width: 640px) {
+    .ocr-reader__content {
+      padding: 1rem;
+    }
+  }
+</style>

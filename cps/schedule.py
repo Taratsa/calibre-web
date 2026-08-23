@@ -23,7 +23,12 @@ from .tasks.clean import TaskClean
 from .tasks.database import TaskReconnectDatabase
 from .tasks.duplicate_scan import TaskDuplicateScan
 from .tasks.metadata_backup import TaskBackupMetadata
-from .tasks.thumbnail import TaskClearCoverThumbnailCache, TaskGenerateCoverThumbnails, TaskGenerateSeriesThumbnails
+from .tasks.ocr_scan import TaskOcrScan
+from .tasks.thumbnail import (
+    TaskClearCoverThumbnailCache,
+    TaskGenerateCoverThumbnails,
+    TaskGenerateSeriesThumbnails,
+)
 
 
 def get_scheduled_tasks(reconnect=True):
@@ -31,23 +36,19 @@ def get_scheduled_tasks(reconnect=True):
     # Reconnect Calibre database (metadata.db) based on config.schedule_reconnect
     if reconnect:
         tasks.append([lambda: TaskReconnectDatabase(), "reconnect", False])
-
     # Delete temp folder
     tasks.append([lambda: TaskClean(), "delete temp", True])
-
     # Generate metadata.opf file for each changed book
-    if config.schedule_metadata_backup:
-        tasks.append([lambda: TaskBackupMetadata("en"), "backup metadata", False])
-
     # Generate all missing book cover thumbnails
     if config.schedule_generate_book_covers:
         tasks.append([lambda: TaskClearCoverThumbnailCache(0), "delete superfluous book covers", True])
         tasks.append([lambda: TaskGenerateCoverThumbnails(), "generate book covers", False])
-
     # Generate all missing series thumbnails
     if config.schedule_generate_series_covers:
         tasks.append([lambda: TaskGenerateSeriesThumbnails(), "generate book covers", False])
-
+    # Precompute the OCR cache during the normal scheduled-task window.
+    if config.schedule_ocr_scan:
+        tasks.append([lambda: TaskOcrScan(trigger_type="scheduled"), "scan OCR cache", False])
     return tasks
 
 
@@ -88,6 +89,8 @@ def register_duplicate_scan_job(scheduler):
     )
 
 
+
+
 def end_scheduled_tasks():
     worker = WorkerThread.get_instance()
     for __, __, __, task, __ in worker.tasks:
@@ -97,14 +100,11 @@ def end_scheduled_tasks():
 
 def register_scheduled_tasks(reconnect=True):
     scheduler = BackgroundScheduler()
-
     if scheduler:
         # Remove all existing jobs
         scheduler.remove_all_jobs()
-
         start = config.schedule_start_time
         duration = config.schedule_duration
-
         # Register scheduled tasks
         timezone_info = datetime.datetime.now(datetime.UTC).astimezone().tzinfo
         scheduler.schedule_tasks(
@@ -116,10 +116,8 @@ def register_scheduled_tasks(reconnect=True):
             trigger=CronTrigger(hour=end_time.hour, minute=end_time.minute, timezone=timezone_info),
             name="end scheduled task",
         )
-
         # Scheduled duplicate index scan (crontab from duplicate settings)
         register_duplicate_scan_job(scheduler)
-
         # Kick-off tasks, if they should currently be running
         if should_task_be_running(start, duration):
             scheduler.schedule_tasks_immediately(tasks=get_scheduled_tasks(reconnect))
@@ -127,18 +125,14 @@ def register_scheduled_tasks(reconnect=True):
 
 def register_startup_tasks():
     scheduler = BackgroundScheduler()
-
     if scheduler:
         start = config.schedule_start_time
         duration = config.schedule_duration
-
         tasks = [[lambda: TaskClean(), "delete temp", True]]
-
         if constants.APP_MODE in ["development", "test"] and not should_task_be_running(start, duration):
             scheduler.schedule_tasks_immediately(tasks=get_scheduled_tasks(False))
         elif config.schedule_generate_book_covers:
             tasks.append([lambda: TaskGenerateCoverThumbnails(), "generate cover thumbnails (startup)", False])  # pyright: ignore[reportArgumentType]
-
         scheduler.schedule_tasks_immediately(tasks=tasks)
 
 

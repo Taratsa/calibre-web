@@ -14,6 +14,14 @@ services:
       - NETWORK_SHARE_MODE=false
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1
       - ONION_LOCATION=${ONION_LOCATION:-}
+      - XDG_CACHE_HOME=${XDG_CACHE_HOME:-/config/ocr-cache}
+      - OCR_CACHE_DIR=${OCR_CACHE_DIR:-/config/ocr-cache/results}
+      - PDF_INSPECTOR_OFFLINE=${PDF_INSPECTOR_OFFLINE:-0}
+      - OCR_WORKER_TIMEOUT_SECONDS=${OCR_WORKER_TIMEOUT_SECONDS:-300}
+      - OCR_WORKER_MEMORY_MB=${OCR_WORKER_MEMORY_MB:-4096}
+      - OCR_SCAN_CRON=${OCR_SCAN_CRON:-}
+      - PDFIUM_LIB_PATH=${PDFIUM_LIB_PATH:-/usr/local/lib/libpdfium.so}
+      - ORT_DYLIB_PATH=${ORT_DYLIB_PATH:-/usr/local/lib/libonnxruntime.so}
     ports:
       - "127.0.0.1:8083:8083"
     volumes:
@@ -27,7 +35,7 @@ services:
         soft: 4096
         hard: 4096
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8083/ || exit 1"]
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8083/healthz/live || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -42,6 +50,7 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
       - NODE_ENV=production
+      - BACKEND_URL=http://calibre-web-automated:8083
     restart: unless-stopped
     networks:
       - caddy_net

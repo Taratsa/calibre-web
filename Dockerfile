@@ -7,7 +7,10 @@ FROM python:3.14-slim-bookworm AS builder
 ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+ARG PDFIUM_RELEASE=native-v7988
+ARG ONNX_RUNTIME_VERSION=1.27.0
+ARG KEPUBIFY_RELEASE=v4.0.4
+ARG CALIBRE_RELEASE=7.24.0
 LABEL maintainer="notdriz"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -35,6 +38,8 @@ FROM python:3.14-slim-bookworm AS runtime
 ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
+ARG PDFIUM_RELEASE=native-v7988
+ARG ONNX_RUNTIME_VERSION=1.27.0
 ARG KEPUBIFY_RELEASE=v4.0.4
 ARG CALIBRE_RELEASE=7.24.0
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
@@ -44,12 +49,16 @@ ENV \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox" \
-    DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive \
+    PDFIUM_LIB_PATH=/usr/local/lib/libpdfium.so \
+    ORT_DYLIB_PATH=/usr/local/lib/libonnxruntime.so \
+    XDG_CACHE_HOME=/config/ocr-cache
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     tini \
     ca-certificates \
     curl \
+    libstdc++6 \
     xz-utils \
     libldap-2.5-0 \
     libmagic1 \
@@ -92,6 +101,18 @@ COPY --from=unrar /usr/bin/unrar-ubuntu /usr/bin/unrar
 RUN curl -fsSL -o /usr/bin/kepubify \
     https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit && \
     chmod +x /usr/bin/kepubify
+RUN mkdir -p /usr/local/lib && \
+    curl -fsSL -o /tmp/pdfium.tgz \
+      "https://github.com/firecrawl/pdfium-rs/releases/download/${PDFIUM_RELEASE}/firecrawl-pdfium-linux-x64.tgz" && \
+    echo "6248189e07bbc33cdeb31976c539a88614307c8a19f3276dbd018efbe5b4a2a2  /tmp/pdfium.tgz" | sha256sum -c - && \
+    tar -xzf /tmp/pdfium.tgz -C /tmp && \
+    cp /tmp/lib/libpdfium.so /usr/local/lib/libpdfium.so && \
+    curl -fsSL -o /tmp/onnxruntime.tgz \
+      "https://github.com/microsoft/onnxruntime/releases/download/v${ONNX_RUNTIME_VERSION}/onnxruntime-linux-x64-${ONNX_RUNTIME_VERSION}.tgz" && \
+    echo "547e40a48f1fe73e3f812d7c88a948612c23f896b91e4e2ee1e232d7b468246f  /tmp/onnxruntime.tgz" | sha256sum -c - && \
+    tar -xzf /tmp/onnxruntime.tgz -C /tmp && \
+    cp "/tmp/onnxruntime-linux-x64-${ONNX_RUNTIME_VERSION}/lib/libonnxruntime.so.${ONNX_RUNTIME_VERSION}" /usr/local/lib/libonnxruntime.so && \
+    rm -rf /tmp/pdfium.tgz /tmp/onnxruntime.tgz /tmp/lib "/tmp/onnxruntime-linux-x64-${ONNX_RUNTIME_VERSION}"
 
 COPY --from=builder /lsiopy /lsiopy
 ENV PATH="/lsiopy/bin:${PATH}"

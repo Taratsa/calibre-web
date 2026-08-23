@@ -78,6 +78,14 @@ from .helper import (
     valid_password,
 )
 from .kobo_sync_status import change_archived_books, remove_synced_book
+from .ocr_service import (
+    OcrBookNotFoundError,
+    OcrScannedPdfError,
+    OcrUnavailableError,
+    book_ocr_available,
+    extract_book_ocr,
+    ready_ocr_entries,
+)
 from .pagination import Pagination
 from .redirect import get_redirect_location
 from .render_template import render_title_template
@@ -1421,7 +1429,7 @@ def _author_slug(author, authors):
         return shortened
 
     suffix = f"-{author.id}"
-    return f"{shortened[:max_base_length - len(suffix)].rstrip('-')}{suffix}"
+    return f"{shortened[: max_base_length - len(suffix)].rstrip('-')}{suffix}"
 
 
 @web.route("/author/<int:author_id>")
@@ -2085,6 +2093,17 @@ def get_sitemap():
         priority = SubElement(url, "priority")
         priority.text = "0.5"
 
+    for book_id, book_format, mtime_ns in ready_ocr_entries():
+        url = SubElement(urlset, "url")
+        loc = SubElement(url, "loc")
+        loc.text = f"https://pustaka.taratsa.id/read/{book_id}/ocr/{book_format}/"
+        lastmod = SubElement(url, "lastmod")
+        lastmod.text = datetime.fromtimestamp(mtime_ns / 1_000_000_000, UTC).strftime("%Y-%m-%d")
+        changefreq = SubElement(url, "changefreq")
+        changefreq.text = "monthly"
+        priority = SubElement(url, "priority")
+        priority.text = "0.5"
+
     # Generate XML
     xml_string = tostring(urlset, encoding="utf-8", xml_declaration=True)
 
@@ -2509,6 +2528,106 @@ def profile():
 # ###################################Show single book ##################################################################
 
 
+def _ocr_format(book_id, requested_format="pdf"):
+    normalized_format = requested_format.upper()
+    if normalized_format not in {"PDF", "EPUB"}:
+        abort(404)
+    data = calibre_db.get_book_format(book_id, normalized_format)
+    if not data:
+        abort(404)
+    return data, normalized_format
+
+
+def _ocr_document(book_id, requested_format):
+    book = calibre_db.get_filtered_book(book_id)
+    if not book:
+        abort(404)
+    data, normalized_format = _ocr_format(book_id, requested_format)
+    return book, extract_book_ocr(book, data, normalized_format)
+
+
+def _ocr_status(book_id, requested_format):
+    book = calibre_db.get_filtered_book(book_id)
+    if not book:
+        abort(404)
+    data, normalized_format = _ocr_format(book_id, requested_format)
+    return book_ocr_available(book, data, normalized_format)
+
+
+@web.route("/api/read/<int:book_id>/ocr/status")
+@web.route("/api/read/<int:book_id>/ocr/status/<book_format>")
+@login_required_if_no_ano
+@viewer_required
+def read_book_ocr_status(book_id, book_format="pdf"):
+    try:
+        available = _ocr_status(book_id, book_format)
+    except OcrBookNotFoundError:
+        abort(404)
+    except OcrUnavailableError as exc:
+        log.error("OCR unavailable for book %d: %s", book_id, exc)
+        return jsonify({"available": False})
+    return jsonify({"available": available})
+
+
+@web.route("/api/read/<int:book_id>/ocr")
+@web.route("/api/read/<int:book_id>/ocr/<book_format>")
+@login_required_if_no_ano
+@viewer_required
+def read_book_ocr_api(book_id, book_format="pdf"):
+    try:
+        book, document = _ocr_document(book_id, book_format)
+    except OcrBookNotFoundError:
+        abort(404)
+    except OcrScannedPdfError:
+        return jsonify({"error": "OCR is disabled for fully scanned PDF pages."}), 422
+    except OcrUnavailableError as exc:
+        log.error("OCR unavailable for book %d: %s", book_id, exc)
+        return jsonify({"error": "OCR is not available for this document."}), 503
+
+    response = make_response(
+        jsonify(
+            {
+                "book": {"id": book.id, "title": book.title},
+                "document": {
+                    "markdown_html": document.markdown_html,
+                    "page_count": document.page_count,
+                    "pages_routed_to_ocr": document.pages_routed_to_ocr,
+                    "processing_time_ms": document.processing_time_ms,
+                },
+            }
+        )
+    )
+    response.headers["Cache-Control"] = "private, no-store"
+    return response
+
+
+@web.route("/read/<int:book_id>/ocr")
+@web.route("/read/<int:book_id>/ocr/<book_format>")
+@login_required_if_no_ano
+@viewer_required
+def read_book_ocr(book_id, book_format="pdf"):
+    try:
+        book, document = _ocr_document(book_id, book_format)
+    except OcrBookNotFoundError:
+        abort(404)
+    except OcrScannedPdfError:
+        return "OCR is disabled for fully scanned PDF pages.", 422
+    except OcrUnavailableError as exc:
+        log.error("OCR unavailable for book %d: %s", book_id, exc)
+        return "OCR is not available for this document.", 503
+
+    response = make_response(
+        render_title_template(
+            "readocr.html",
+            title=book.title,
+            book=book,
+            document=document,
+        )
+    )
+    response.headers["Cache-Control"] = "private, no-store"
+    return response
+
+
 @web.route("/read/<int:book_id>/<book_format>")
 @login_required_if_no_ano
 @viewer_required
@@ -2577,9 +2696,19 @@ def read_book(book_id, book_format):
 
 _BOOK_SLUG_RE = re.compile(r"[^a-z0-9]+")
 _BOOK_SLUG_TRANSLITERATIONS = {
-    "ı": "i", "ł": "l", "đ": "d", "ð": "d", "þ": "th",
-    "ß": "ss", "æ": "ae", "œ": "oe", "ø": "o", "ħ": "h",
-    "ŋ": "n", "ƒ": "f", "ə": "e",
+    "ı": "i",
+    "ł": "l",
+    "đ": "d",
+    "ð": "d",
+    "þ": "th",
+    "ß": "ss",
+    "æ": "ae",
+    "œ": "oe",
+    "ø": "o",
+    "ħ": "h",
+    "ŋ": "n",
+    "ƒ": "f",
+    "ə": "e",
 }
 
 
@@ -2592,22 +2721,23 @@ def _book_slug_base(value):
 
 
 def _book_slug(book, books):
-    authors = " ".join((author.name or "").replace("|", ", ").strip() for author in book.authors)
-    base = _book_slug_base(f"{book.title} {authors}")
+    def ordered_author_names(candidate):
+        authors = sorted(candidate.authors, key=lambda author: (author.sort or author.name or "").casefold())
+        return " ".join((author.name or "").replace("|", ", ").strip() for author in authors)
+
+    base = _book_slug_base(f"{book.title} {ordered_author_names(book)}")
     max_base_length = 120
     shortened = base[:max_base_length].rstrip("-") or "book"
     collision = any(
         other.id != book.id
-        and _book_slug_base(
-            f"{other.title} {' '.join((author.name or '').replace('|', ', ').strip() for author in other.authors)}"
-        )[:max_base_length].rstrip("-") == shortened
+        and _book_slug_base(f"{other.title} {ordered_author_names(other)}")[:max_base_length].rstrip("-") == shortened
         for other in books
     )
     needs_suffix = base.isdigit() or collision or len(base) > max_base_length
     if not needs_suffix:
         return shortened
     suffix = f"-{book.id}"
-    return f"{shortened[:max_base_length - len(suffix)].rstrip('-')}{suffix}"
+    return f"{shortened[: max_base_length - len(suffix)].rstrip('-')}{suffix}"
 
 
 @web.route("/book/<int:book_id>/")

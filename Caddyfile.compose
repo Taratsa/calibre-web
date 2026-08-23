@@ -17,6 +17,14 @@
         max_size 500MB
     }
 
+    @astro_ocr {
+        path_regexp astro_ocr ^/read/[0-9]+/ocr(/(pdf|epub))?/?$
+    }
+    handle @astro_ocr {
+        header >Cache-Control "private, no-store"
+        reverse_proxy pustaka-astro:4321
+    }
+
     @flask {
         path /admin* /ajax/* /admin/*
         path /login /login/* /logout /logout/*
@@ -29,6 +37,7 @@
         path /table /downloadlist
         path /metrics
         path /feed.xml /osd.xml /index.xml
+        path /sitemap.xml
     }
 
     handle @flask {

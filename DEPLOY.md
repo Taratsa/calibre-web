@@ -42,6 +42,29 @@ the Astro image. No additional Caddy route or service is required.
 
 ## Quick Start
 
+
+### Document OCR
+
+The Flask backend exposes `/read/<book-id>/ocr/?format=pdf` and
+`/read/<book-id>/ocr/?format=epub`. Both routes use the same viewer permissions
+as the existing readers. Text-based and mixed PDFs are supported; fully scanned
+PDFs are skipped. EPUB XHTML spine content is extracted directly.
+`pdf-inspector` runs in the backend; it is not installed in the Astro frontend.
+
+Configure the model cache in `.env`:
+
+```dotenv
+XDG_CACHE_HOME=/config/ocr-cache
+OCR_CACHE_DIR=/config/ocr-cache/results
+PDF_INSPECTOR_OFFLINE=0
+PDFIUM_LIB_PATH=/usr/local/lib/libpdfium.so
+ORT_DYLIB_PATH=/usr/local/lib/libonnxruntime.so
+```
+
+The backend stores extracted text and scanned-PDF decisions under
+`/config/ocr-cache/results`, keyed by book, format, file size, and modification
+time. Scanned PDFs are skipped and do not expose an OCR link. The image currently
+targets x86_64; use matching ARM64 runtime assets before deploying on ARM hosts.
 ```bash
 # 1. Configure environment
 cp .env.example .env

@@ -23,7 +23,7 @@ if [[ -f /etc/ImageMagick-6/policy.xml ]]; then
 fi
 
 mkdir -p /app/calibre-web/cps/cache
-mkdir -p /config/cache
+mkdir -p /config/cache /config/ocr-cache
 chown -R "$ABC_USER":"$ABC_USER" /config /app/calibre-web/cps/cache 2>/dev/null || true
 if [[ -d /calibre-library ]]; then
     chown -R "$ABC_USER":"$ABC_USER" /calibre-library 2>/dev/null || true

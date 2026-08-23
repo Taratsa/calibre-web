@@ -540,6 +540,32 @@ $(function() {
             }
         });
     });
+    $("#ocr_scan").click(function() {
+        $("#DialogHeader").addClass("hidden");
+        $("#DialogFinished").addClass("hidden");
+        $("#DialogContent").html("");
+        $("#spinner2").show();
+        $.ajax({
+            method: "post",
+            dataType: "json",
+            url: getPath() + "/ocr/scan",
+            success: function success(data) {
+                $("#spinner2").hide();
+                var message = data.message || "OCR scan queued";
+                $("#DialogContent").text(message);
+                if (data.task_id) {
+                    $("#DialogContent").append(" ");
+                    $("#DialogContent").append($("<a>", { href: getPath() + "/tasks", text: "View Tasks" }));
+                }
+                $("#DialogFinished").removeClass("hidden");
+            },
+            error: function error(xhr) {
+                $("#spinner2").hide();
+                $("#DialogContent").text(xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : "Unable to queue OCR scan.");
+                $("#DialogFinished").removeClass("hidden");
+            }
+        });
+    });
     $("#perform_update").click(function() {
         $("#DialogHeader").removeClass("hidden");
         $("#spinner2").show();

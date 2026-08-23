@@ -161,6 +161,7 @@ class _Settings(_Base):
     schedule_generate_series_covers = Column(Boolean, default=False)
     schedule_reconnect = Column(Boolean, default=False)
     schedule_metadata_backup = Column(Boolean, default=False)
+    schedule_ocr_scan = Column(Boolean, default=False)
 
     config_password_policy = Column(Boolean, default=True)
     config_password_min_length = Column(Integer, default=8)
@@ -290,6 +291,7 @@ class ConfigSQL:
     schedule_generate_series_covers: bool  # pyright: ignore[reportUninitializedInstanceVariable]
     schedule_reconnect: bool  # pyright: ignore[reportUninitializedInstanceVariable]
     schedule_metadata_backup: bool  # pyright: ignore[reportUninitializedInstanceVariable]
+    schedule_ocr_scan: bool  # pyright: ignore[reportUninitializedInstanceVariable]
 
     config_password_policy: bool  # pyright: ignore[reportUninitializedInstanceVariable]
     config_password_min_length: int  # pyright: ignore[reportUninitializedInstanceVariable]

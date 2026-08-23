@@ -1,0 +1,11 @@
+---
+const { id } = Astro.params;
+const bookId = Number(id);
+if (!Number.isInteger(bookId)) return new Response(null, { status: 404 });
+
+const format = Astro.url.searchParams.get('format')?.toLowerCase();
+if (!format || !['pdf', 'epub'].includes(format)) {
+  return new Response(null, { status: 404 });
+}
+return Astro.redirect(`/read/${bookId}/ocr/${format}/`, 308);
+---

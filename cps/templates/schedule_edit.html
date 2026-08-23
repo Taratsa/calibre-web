@@ -40,6 +40,10 @@
       <input type="checkbox" id="schedule_metadata_backup" name="schedule_metadata_backup" {% if config.schedule_metadata_backup %}checked{% endif %}>
       <label for="schedule_metadata_backup">{{_('Generate Metadata Backup Files')}}</label>
     </div>
+    <div class="form-group">
+      <input type="checkbox" id="schedule_ocr_scan" name="schedule_ocr_scan" {% if config.schedule_ocr_scan %}checked{% endif %}>
+      <label for="schedule_ocr_scan">{{_('Precompute OCR Cache')}}</label>
+    </div>
 
     <button type="submit" name="submit" value="submit" class="btn btn-default">{{_('Save')}}</button>
     <a href="{{ url_for('admin.admin') }}" id="email_back" class="btn btn-default">{{_('Cancel')}}</a>

@@ -216,7 +216,10 @@
   <div class="row form-group">
     <div class="btn btn-default" id="metadata_backup" data-toggle="modal" data-target="#StatusDialog">{{_('Queue all books for metadata backup')}}</div>
   </div>
-{%  endif %}
+{% endif %}
+  <div class="row form-group">
+    <button type="button" class="btn btn-default" id="ocr_scan" data-toggle="modal" data-target="#StatusDialog">{{_('Precompute OCR Cache Now')}}</button>
+  </div>
   <div class="row">
     <div class="col">
       <h2>{{_('Version Information')}}</h2>

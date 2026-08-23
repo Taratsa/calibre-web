@@ -6,12 +6,24 @@ pustaka.taratsa.id {
   encode zstd gzip
 
   route {
+    # ─── Astro OCR reader page ───
+    @astro_ocr {
+      path_regexp astro_ocr ^/read/[0-9]+/ocr(/(pdf|epub))?/?$
+    }
+    handle @astro_ocr {
+      header >Cache-Control "private, no-store"
+      header >Cloudflare-CDN-Cache-Control "no-store"
+      reverse_proxy pustaka-astro:4321
+    }
+
     # ─── Flask: stateful + admin + reader + cached asset endpoints ───
+
     @flask {
       path /admin* /ajax/* /admin/*
       path /login /login/* /logout /logout/*
       path /me /register* /remote_login*
-      path /read/* /show/* /download/* /send/*
+      path /health /healthz /healthz/* /readyz
+      path /read/* /show/* /download/* /send/* /api/read/*
       path /opds /opds/* /kobo/*
       path /cover/* /cover_thumb/* /series_cover/*
       # path /book/*/* /book/*/*/ /book/*/*/*  # Astro serves static book pages
@@ -19,6 +31,7 @@ pustaka.taratsa.id {
       path /table /downloadlist
       path /metrics
       path /feed.xml /osd.xml /index.xml
+      path /sitemap.xml
     }
     handle @flask {
       # Long-cache download files
