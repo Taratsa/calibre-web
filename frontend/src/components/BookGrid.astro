@@ -30,10 +30,17 @@ const { books, cols = 5 } = Astro.props;
     display: grid;
     gap: 1.5rem;
   }
-  .book-grid--cols-2 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-  .book-grid--cols-3 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
-  .book-grid--cols-4 { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-  .book-grid--cols-5 { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-  .book-grid--cols-6 { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .book-grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .book-grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .book-grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .book-grid--cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .book-grid--cols-6 { grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 767px) {
+    .book-grid--cols-2,
+    .book-grid--cols-3,
+    .book-grid--cols-4,
+    .book-grid--cols-5,
+    .book-grid--cols-6 { grid-template-columns: repeat(2, 1fr); }
+  }
   .empty { color: var(--muted); }
 </style>
