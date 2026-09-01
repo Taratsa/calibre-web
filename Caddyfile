@@ -31,15 +31,13 @@ pustaka.taratsa.id {
       path /table /downloadlist
       path /metrics
       path /feed.xml /osd.xml /index.xml
-      path /sitemap.xml
     }
     handle @flask {
-      # Long-cache download files
       @books {
         path /download/*/pdf/* /download/*/epub/*
       }
-      header @books >Cache-Control "public, max-age=3888000"
-
+      header @books >Cache-Control "private, no-store"
+      header @books >Cloudflare-CDN-Cache-Control "no-store"
       # Cache OPDS catalog feeds (5 min — catalog changes are batch-rebuilt)
       @opds {
         path /opds /opds/*

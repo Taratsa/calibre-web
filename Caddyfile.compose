@@ -25,6 +25,13 @@
         reverse_proxy pustaka-astro:4321
     }
 
+    @astro_metadata {
+        path /robots.txt /sitemap.xml /sitemap-index.xml /sitemaps/*
+    }
+    handle @astro_metadata {
+        reverse_proxy pustaka-astro:4321
+    }
+
     @flask {
         path /admin* /ajax/* /admin/*
         path /login /login/* /logout /logout/*
@@ -37,15 +44,13 @@
         path /table /downloadlist
         path /metrics
         path /feed.xml /osd.xml /index.xml
-        path /sitemap.xml
     }
-
     handle @flask {
         @books {
             path /download/*/pdf/* /download/*/epub/*
         }
-        header @books >Cache-Control "public, max-age=3888000"
-
+        header @books >Cache-Control "private, no-store"
+        header @books >Cloudflare-CDN-Cache-Control "no-store"
         @covers {
             path /cover/*
         }
