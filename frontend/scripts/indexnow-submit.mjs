@@ -4,10 +4,12 @@
  *
  *   node scripts/indexnow-submit.mjs [--sitemap PATH] [--host HOST] [--key KEY]
  *
- * Reads URLs from the Astro-generated sitemap (default:
- * dist/sitemap-0.xml), groups them into batches of up to 10,000, and POSTs
- * them to https://api.indexnow.org/indexnow. Bing, Yandex, Seznam, Naver
- * all participate in the IndexNow network so one submission is enough.
+ * Reads URLs from a local sitemap XML file. The default path is retained
+ * for local compatibility; download the live /sitemap.xml first when the
+ * runtime sitemap is the source of truth.
+ * Groups URLs into batches of up to 10,000 and POSTs them to
+ * https://api.indexnow.org/indexnow. Bing, Yandex, Seznam, Naver all
+ * participate in the IndexNow network so one submission is enough.
  *
  * Required env:
  *   INDEXNOW_KEY   8-128 hex chars. Must match the file at
@@ -54,15 +56,9 @@ function parseArgs() {
 const cliOpts = parseArgs();
 const sitemapPath = cliOpts.sitemap
   ? resolve(cliOpts.sitemap)
-  : join(DIST, 'sitemap-0.xml');
-const altSitemapPath = join(DIST, 'sitemap-index.xml');
+  : join(DIST, 'sitemap.xml');
 
 if (!existsSync(sitemapPath)) {
-  if (existsSync(altSitemapPath)) {
-    console.warn(`[indexnow] ${sitemapPath} not found; only sitemap-index.xml exists.`);
-    console.warn('[indexnow] nothing to submit. If the sitemap filter is correct, this is fine.');
-    process.exit(0);
-  }
   console.error(`[indexnow] sitemap not found: ${sitemapPath}`);
   process.exit(1);
 }
