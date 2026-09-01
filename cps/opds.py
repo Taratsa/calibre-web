@@ -150,9 +150,9 @@ def feed_hot():
         abort(404)
     off = request.args.get("offset") or 0
     all_books = (
-        ub.session.query(ub.Downloads, func.count(ub.Downloads.book_id))
+        ub.session.query(ub.Downloads, func.sum(func.coalesce(ub.Downloads.hit_count, 1)))
         .order_by(  # pyright: ignore[reportArgumentType]
-            func.count(ub.Downloads.book_id).desc()
+            func.sum(func.coalesce(ub.Downloads.hit_count, 1)).desc()
         )
         .group_by(ub.Downloads.book_id)
     )  # pyright: ignore[reportArgumentType]

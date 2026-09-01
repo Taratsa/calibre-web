@@ -557,6 +557,8 @@ class Downloads(Base):
     id: int = Column(Integer, primary_key=True)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     book_id: int = Column(Integer)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
     user_id: int = Column(Integer, ForeignKey("user.id"))  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    hit_count: int = Column(Integer, default=1, nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
+    last_hit: datetime = Column(DateTime, default=lambda: datetime.now(UTC), nullable=False)  # type: ignore[assignment] # pyright: ignore[reportAssignmentType]
 
     def __repr__(self):
         return f"<Download {self.book_id!r}"
@@ -781,6 +783,53 @@ def _ensure_column(engine, table_name, column_name, column_def):
         traceback.print_exc()
 
 
+def _ensure_download_index(engine):
+    try:
+        with engine.begin() as conn:
+            conn.exec_driver_sql(
+                """
+                WITH totals AS (
+                    SELECT user_id, book_id, SUM(COALESCE(hit_count, 1)) AS hit_count, MAX(last_hit) AS last_hit
+                    FROM downloads
+                    GROUP BY user_id, book_id
+                )
+                UPDATE downloads
+                SET hit_count = (
+                        SELECT totals.hit_count
+                        FROM totals
+                        WHERE totals.user_id IS downloads.user_id AND totals.book_id IS downloads.book_id
+                    ),
+                    last_hit = (
+                        SELECT totals.last_hit
+                        FROM totals
+                        WHERE totals.user_id IS downloads.user_id AND totals.book_id IS downloads.book_id
+                    )
+                WHERE id IN (
+                    SELECT MIN(id)
+                    FROM downloads
+                    GROUP BY user_id, book_id
+                )
+                """
+            )
+            conn.exec_driver_sql(
+                """
+                DELETE FROM downloads
+                WHERE id NOT IN (
+                    SELECT MIN(id)
+                    FROM downloads
+                    GROUP BY user_id, book_id
+                )
+                """
+            )
+            conn.exec_driver_sql(
+                "CREATE UNIQUE INDEX IF NOT EXISTS uq_downloads_user_book ON downloads (user_id, book_id)"
+            )
+    except Exception:
+        import traceback
+
+        traceback.print_exc()
+
+
 def clean_database(_session):
     # Remove expired remote login tokens
     now = datetime.now()
@@ -795,15 +844,37 @@ def clean_database(_session):
 
 # Save downloaded books per user in calibre-web's own database
 def update_download(book_id, user_id):
-    check = session.query(Downloads).filter(Downloads.user_id == user_id).filter(Downloads.book_id == book_id).first()
-
-    if not check:
-        new_download = Downloads(user_id=user_id, book_id=book_id)
-        session.add(new_download)
+    now = datetime.now(UTC)
+    try:
+        updated = (
+            session.query(Downloads)
+            .filter(Downloads.user_id == user_id, Downloads.book_id == book_id)
+            .update(
+                {
+                    Downloads.hit_count: func.coalesce(Downloads.hit_count, 0) + 1,
+                    Downloads.last_hit: now,
+                },
+                synchronize_session=False,
+            )
+        )
+        if not updated:
+            session.add(Downloads(user_id=user_id, book_id=book_id, hit_count=1, last_hit=now))
+        session.commit()
+    except exc.IntegrityError:
+        session.rollback()
         try:
+            session.query(Downloads).filter(Downloads.user_id == user_id, Downloads.book_id == book_id).update(
+                {
+                    Downloads.hit_count: func.coalesce(Downloads.hit_count, 0) + 1,
+                    Downloads.last_hit: now,
+                },
+                synchronize_session=False,
+            )
             session.commit()
         except exc.OperationalError:
             session.rollback()
+    except exc.OperationalError:
+        session.rollback()
 
 
 # Delete non-existing downloaded books in calibre-web's own database
@@ -888,10 +959,14 @@ def init_db(app_db_path):
     if os.path.exists(app_db_path):
         Base.metadata.create_all(engine)
         _ensure_column(engine, "settings", "config_frontend_rebuild_token", "VARCHAR DEFAULT ''")
+        _ensure_column(engine, "downloads", "hit_count", "INTEGER NOT NULL DEFAULT 1")
+        _ensure_column(engine, "downloads", "last_hit", "DATETIME NOT NULL DEFAULT '1970-01-01 00:00:00'")
+        _ensure_download_index(engine)
         migrate_Database(session)
         clean_database(session)
     else:
         Base.metadata.create_all(engine)
+        _ensure_download_index(engine)
         create_admin_user(session)
         create_anonymous_user(session)
 

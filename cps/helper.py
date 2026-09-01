@@ -1081,6 +1081,10 @@ def do_download_file(book, book_format, client, data, headers):
                     if filename is None:
                         filename, download_name = output, book_name
             else:
+                ub.update_download(
+                    book.id,
+                    int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0,
+                )
                 return gd.do_gdrive_download(df, headers)
         else:
             abort(404)
@@ -1119,6 +1123,9 @@ def do_download_file(book, book_format, client, data, headers):
             return resp
 
     response = make_response(send_from_directory(filename, download_name + "." + book_format))  # pyright: ignore[reportArgumentType,reportOptionalOperand]
+    ub.update_download(
+        book.id, int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+    )
     # ToDo Check headers parameter
     for element in headers:
         response.headers[element[0]] = element[1]
@@ -1298,8 +1305,6 @@ def get_download_link(book_id, book_format, client):
     if book:
         data1 = calibre_db.get_book_format(book.id, book_format.upper())
         if data1:
-            user_id = int(current_user.id) if current_user.is_authenticated else 0
-            ub.update_download(book_id, user_id)
             file_name = book.title.replace("\x00", "") if book.title else ""
             if len(book.authors) > 0:
                 author_name = book.authors[0].name.replace("\x00", "") if book.authors[0].name else ""
@@ -1316,7 +1321,7 @@ def get_download_link(book_id, book_format, client):
             headers["Content-Disposition"] = (
                 f"attachment; filename=\"{file_name}.{book_format}\"; filename*=UTF-8''{quoted_file_name}.{book_format}"
             )
-            headers["Cache-Control"] = "public, max-age=3888000"
+            headers["Cache-Control"] = "private, no-store"
             return do_download_file(book, book_format, client, data1, headers)
     else:
         log.error(f"Book id {book_id} not found for downloading")

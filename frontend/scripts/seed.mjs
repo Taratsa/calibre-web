@@ -416,10 +416,10 @@ async function main() {
         console.log(`[seed] wrote ${shelves.length} public shelves`);
         // Most downloaded books (Buku Terpopuler)
         const popularRows = appDb.prepare(`
-          SELECT book_id, SUM(hit_count) AS total_downloads
+          SELECT book_id, SUM(COALESCE(hit_count, 1)) AS total_downloads
           FROM downloads
           GROUP BY book_id
-          ORDER BY total_downloads DESC
+          ORDER BY total_downloads DESC, book_id ASC
         `).all();
         await writeJson('popular.json', popularRows);
         console.log(`[seed] wrote ${popularRows.length} popular books`);

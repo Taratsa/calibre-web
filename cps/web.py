@@ -84,7 +84,6 @@ from .ocr_service import (
     OcrUnavailableError,
     book_ocr_available,
     extract_book_ocr,
-    ready_ocr_entries,
 )
 from .pagination import Pagination
 from .redirect import get_redirect_location
@@ -111,7 +110,6 @@ except ImportError:
     register_user_with_oauth = logout_oauth_user = get_oauth_status = None
 
 import contextlib  # noqa: E402
-from datetime import UTC  # noqa: E402
 from functools import wraps  # noqa: E402
 
 try:
@@ -529,9 +527,9 @@ def get_sort_function(sort_param, data):
     if sort_param == "seriesdesc":
         order = [db.Books.series_index.desc()]  # pyright: ignore[reportGeneralTypeIssues]
     if sort_param == "hotdesc":
-        order = [func.count(ub.Downloads.book_id).desc()]  # pyright: ignore[reportArgumentType]
+        order = [func.sum(func.coalesce(ub.Downloads.hit_count, 1)).desc()]  # pyright: ignore[reportArgumentType]
     if sort_param == "hotasc":
-        order = [func.count(ub.Downloads.book_id).asc()]  # pyright: ignore[reportArgumentType]
+        order = [func.sum(func.coalesce(ub.Downloads.hit_count, 1)).asc()]  # pyright: ignore[reportArgumentType]
     if sort_param is None:
         sort_param = "new"
     return order, sort_param
@@ -660,10 +658,7 @@ def render_discover_books(book_id):
 def render_hot_books(page, order):
     if current_user.check_visibility(constants.SIDEBAR_HOT):
         if order[1] not in ["hotasc", "hotdesc"]:
-            # Unary expression comparison only working (for this expression) in sqlalchemy 1.4+
-            # if not (order[0][0].compare(func.count(ub.Downloads.book_id).desc()) or
-            #        order[0][0].compare(func.count(ub.Downloads.book_id).asc())):
-            order = [func.count(ub.Downloads.book_id).desc()], "hotdesc"  # pyright: ignore[reportArgumentType]
+            order = [func.sum(func.coalesce(ub.Downloads.hit_count, 1)).desc()], "hotdesc"  # pyright: ignore[reportArgumentType]
         if current_user.show_detail_random():
             random_query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
             random = (
@@ -677,7 +672,7 @@ def render_hot_books(page, order):
 
         off = int(int(config.config_books_per_page) * (page - 1))
         all_books = (
-            ub.session.query(ub.Downloads, func.count(ub.Downloads.book_id))  # pyright: ignore[reportArgumentType]
+            ub.session.query(ub.Downloads, func.sum(func.coalesce(ub.Downloads.hit_count, 1)))  # pyright: ignore[reportArgumentType]
             .order_by(*order[0])
             .group_by(ub.Downloads.book_id)  # pyright: ignore[reportArgumentType]
         )
@@ -1464,7 +1459,7 @@ def download_list():
         order_no = 1
     if current_user.check_visibility(constants.SIDEBAR_DOWNLOAD) and current_user.role_admin():
         entries = (
-            ub.session.query(ub.User, func.count(ub.Downloads.book_id).label("count"))  # pyright: ignore[reportArgumentType]
+            ub.session.query(ub.User, func.sum(func.coalesce(ub.Downloads.hit_count, 1)).label("count"))  # pyright: ignore[reportArgumentType]
             .join(ub.Downloads)
             .group_by(ub.Downloads.user_id)
             .order_by(order)
@@ -1827,7 +1822,7 @@ def get_robots():
         robots_path = os.path.join(constants.STATIC_DIR, "robots.txt")
         if os.path.exists(robots_path):
             return send_from_directory(constants.STATIC_DIR, "robots.txt")
-        sitemap_url = url_for("web.get_sitemap", _external=True)
+        sitemap_url = "https://pustaka.taratsa.id/sitemap.xml"
         content = f"""User-agent: *
 Allow: /
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
@@ -1960,158 +1955,6 @@ def get_ai_catalog():
         abort(500)
 
 
-@web.route("/sitemap.xml")
-@login_required_if_no_ano
-def get_sitemap():
-    """
-    Generate and return a sitemap.xml file for search engines.
-    Includes books, authors, series, categories, and publishers.
-    """
-    from datetime import datetime
-    from xml.etree.ElementTree import Element, SubElement, tostring
-
-    # Create root element
-    urlset = Element("urlset")
-    urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
-
-    now = datetime.now(UTC).strftime("%Y-%m-%d")
-
-    # Add main index page
-    url = SubElement(urlset, "url")
-    loc = SubElement(url, "loc")
-    loc.text = url_for("web.index", _external=True)
-    lastmod = SubElement(url, "lastmod")
-    lastmod.text = now
-    changefreq = SubElement(url, "changefreq")
-    changefreq.text = "daily"
-    priority = SubElement(url, "priority")
-    priority.text = "1.0"
-
-    # Add books (with slug: /book/<id>/<title>)
-    books = calibre_db.session.query(db.Books).filter(calibre_db.common_filters()).all()
-    for book in books:
-        # slugify title
-        import re
-        import unicodedata
-
-        def slugify(value):
-            value = unicodedata.normalize("NFKD", value or "").encode("ascii", "ignore").decode("ascii")
-            value = re.sub(r"[^a-zA-Z0-9]+", "-", value).strip("-").lower()
-            return value or "book"
-
-        slugify(book.title)
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = url_for("web.show_book", book_id=book.id, _external=True)
-        lastmod = SubElement(url, "lastmod")
-        if book.last_modified:  # pyright: ignore[reportGeneralTypeIssues]
-            lastmod.text = book.last_modified.strftime("%Y-%m-%d")
-        else:
-            lastmod.text = now
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "weekly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.8"
-
-    # Add authors
-    authors = (
-        calibre_db.session.query(db.Authors)
-        .join(db.books_authors_link)
-        .join(db.Books)
-        .filter(calibre_db.common_filters())
-        .group_by(db.Authors.id)
-        .all()
-    )
-    for author in authors:
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = url_for("web.books_list", data="author", sort_param="new", book_id=author.id, _external=True)
-        lastmod = SubElement(url, "lastmod")
-        lastmod.text = now
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "weekly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.6"
-
-    # Add series
-    series = (
-        calibre_db.session.query(db.Series)
-        .join(db.books_series_link)
-        .join(db.Books)
-        .filter(calibre_db.common_filters())
-        .group_by(db.Series.id)
-        .all()
-    )
-    for serie in series:
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = url_for("web.books_list", data="series", sort_param="new", book_id=serie.id, _external=True)
-        lastmod = SubElement(url, "lastmod")
-        lastmod.text = now
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "weekly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.6"
-
-    # Add categories/tags
-    tags = (
-        calibre_db.session.query(db.Tags)
-        .join(db.books_tags_link)
-        .join(db.Books)
-        .filter(calibre_db.common_filters())
-        .group_by(db.Tags.id)
-        .all()
-    )
-    for tag in tags:
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = url_for("web.books_list", data="category", sort_param="new", book_id=tag.id, _external=True)
-        lastmod = SubElement(url, "lastmod")
-        lastmod.text = now
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "weekly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.5"
-
-    # Add publishers
-    publishers = (
-        calibre_db.session.query(db.Publishers)
-        .join(db.books_publishers_link)
-        .join(db.Books)
-        .filter(calibre_db.common_filters())
-        .group_by(db.Publishers.id)
-        .all()
-    )
-    for publisher in publishers:
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = url_for("web.books_list", data="publisher", sort_param="new", book_id=publisher.id, _external=True)
-        lastmod = SubElement(url, "lastmod")
-        lastmod.text = now
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "weekly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.5"
-
-    for book_id, book_format, mtime_ns in ready_ocr_entries():
-        url = SubElement(urlset, "url")
-        loc = SubElement(url, "loc")
-        loc.text = f"https://pustaka.taratsa.id/read/{book_id}/ocr/{book_format}/"
-        lastmod = SubElement(url, "lastmod")
-        lastmod.text = datetime.fromtimestamp(mtime_ns / 1_000_000_000, UTC).strftime("%Y-%m-%d")
-        changefreq = SubElement(url, "changefreq")
-        changefreq.text = "monthly"
-        priority = SubElement(url, "priority")
-        priority.text = "0.5"
-
-    # Generate XML
-    xml_string = tostring(urlset, encoding="utf-8", xml_declaration=True)
-
-    response = make_response(xml_string)
-    response.headers["Content-Type"] = "application/xml; charset=utf-8"
-    return response
-
-
 @web.route("/show/<int:book_id>/<book_format>", defaults={"anyname": "None"})
 @web.route("/show/<int:book_id>/<book_format>/<anyname>")
 @login_required_if_no_ano
@@ -2198,7 +2041,10 @@ def send_to_ereader(book_id, book_format, convert):
             book_id, book_format, convert, current_user.kindle_mail, config.get_book_path(), current_user.name
         )
         if result is None:
-            ub.update_download(book_id, int(current_user.id))
+            ub.update_download(
+                book_id,
+                int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0,
+            )
             ub.create_audit_log_entry(
                 user_id=current_user.id,
                 action="send",
