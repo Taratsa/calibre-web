@@ -266,6 +266,14 @@ def admin():
             commit = version["version"].replace("b", " Beta")
 
     all_user = ub.session.query(ub.User).all()
+    # downloads.count() in the template counts rows (= distinct books), not
+    # downloads. Sum hit_count per user so the "Downloads" column shows actual
+    # download volume.
+    download_sums = dict(
+        ub.session.query(ub.Downloads.user_id, func.sum(func.coalesce(ub.Downloads.hit_count, 1)))
+        .group_by(ub.Downloads.user_id)
+        .all()
+    )
     # email_settings = mail_config.get_mail_settings()
     schedule_time = format_time(datetime_time(hour=config.schedule_start_time), format="short")
     t = timedelta(hours=config.schedule_duration // 60, minutes=config.schedule_duration % 60)
@@ -274,6 +282,7 @@ def admin():
     return render_title_template(
         "admin.html",
         allUser=all_user,
+        downloadSums=download_sums,
         config=config,
         commit=commit,
         feature_support=feature_support,

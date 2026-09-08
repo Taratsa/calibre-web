@@ -23,7 +23,7 @@ from werkzeug.datastructures import Authorization
 from werkzeug.security import check_password_hash
 
 from . import config, constants, limiter, lm, logger, services, ub
-from .cw_login import login_required
+from .cw_login import login_required, login_user
 
 log = logger.create()
 auth = HTTPBasicAuth()
@@ -76,6 +76,11 @@ def requires_basic_auth_if_no_ano(f):
             except TypeError:
                 return auth.auth_error_callback()
         g.flask_httpauth_user = user if user is not True else auth.username if auth else None
+        # Bridge the BasicAuth identity into Flask-Login so downstream code that
+        # reads current_user (download-counter attribution, common_filters,
+        # per-user views) sees the authenticated user, not the anonymous one.
+        if isinstance(g.flask_httpauth_user, ub.User):
+            login_user(g.flask_httpauth_user)
         return auth.ensure_sync(f)(*args, **kwargs)
 
     return decorated

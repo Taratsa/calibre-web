@@ -414,13 +414,15 @@ async function main() {
         const shelves = [...shelfMap.values()];
         await writeJson('shelves.json', shelves);
         console.log(`[seed] wrote ${shelves.length} public shelves`);
-        // Most downloaded books (Buku Terpopuler)
+        // Most downloaded books (Buku Terpopuler). Rows whose book no longer
+        // exists in metadata.db are dropped so public popularity stays truthful.
+        const validBookIds = new Set(index.map(b => b.id));
         const popularRows = appDb.prepare(`
           SELECT book_id, SUM(COALESCE(hit_count, 1)) AS total_downloads
           FROM downloads
           GROUP BY book_id
           ORDER BY total_downloads DESC, book_id ASC
-        `).all();
+        `).all().filter(row => validBookIds.has(row.book_id));
         await writeJson('popular.json', popularRows);
         console.log(`[seed] wrote ${popularRows.length} popular books`);
       } finally {

@@ -17,6 +17,15 @@
         max_size 500MB
     }
 
+    @astro_og {
+        path /og/*.png /og/*/*.png
+    }
+    handle @astro_og {
+        header >Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+        header >Cloudflare-CDN-Cache-Control "public, max-age=86400"
+        reverse_proxy pustaka-astro:4321
+    }
+
     @astro_ocr {
         path_regexp astro_ocr ^/read/[0-9]+/ocr(/(pdf|epub))?/?$
     }

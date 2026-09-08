@@ -1057,6 +1057,52 @@ def save_cover(img, book_path):
         return save_cover_from_filestorage(os.path.join(config.get_book_path(), book_path), "cover.jpg", img)
 
 
+def _track_download_analytics(book_name, book_format, client):
+    """Emit the server-side Umami download event. Used by both the local and the
+    Google Drive branches so DB counters and analytics stay consistent."""
+    ua = request.headers.get("User-Agent", "")
+    ip_address = (
+        request.headers.get("CF-Connecting-IP")
+        or request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
+        or request.remote_addr
+    )
+    country = request.headers.get("CF-IPCountry", "")
+    log.info(
+        "Downloading file: '%s' by %s - ip: %s, country: %s, ua: %s",
+        book_name + "." + book_format,
+        current_user.name,
+        ip_address,
+        country,
+        ua,
+    )
+    try:
+        umami_url = "https://umami.kenadera.org/api/send"
+        umami_website_id = "0b57aeb6-d996-4d88-89fc-59ada511cd9c"
+        payload = {
+            "payload": {
+                "hostname": request.host.split(":")[0] if ":" in request.host else request.host,
+                "language": request.headers.get("Accept-Language", ""),
+                "url": request.path or "/",
+                "referrer": request.headers.get("Referer", ""),
+                "website": umami_website_id,
+                "name": "file-download",
+                "data": {
+                    "file": book_name + "." + book_format,
+                    "format": book_format,
+                    "client": client or "unknown",
+                    "country": country,
+                    "ua": ua,
+                },
+            },
+            "type": "event",
+        }
+        log.debug("Umami tracking payload: %s", payload)
+        resp = requests.post(umami_url, json=payload, timeout=5, headers={"User-Agent": ua or "Calibre-Web/1.0"})
+        log.debug("Umami tracking response: %s %s", resp.status_code, resp.text)
+    except Exception as e:
+        log.error("Umami tracking failed: %s", e)
+
+
 def do_download_file(book, book_format, client, data, headers):
     book_name = data.name
     download_name = filename = None
@@ -1081,18 +1127,26 @@ def do_download_file(book, book_format, client, data, headers):
                     if filename is None:
                         filename, download_name = output, book_name
             else:
-                ub.update_download(
-                    book.id,
-                    int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0,
-                )
+                # Count when the response actually starts streaming, not before:
+                # do_gdrive_download() is a lazy generator, so counting here would
+                # record failures (bad range, transport error) as downloads.
+                user_id = int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+
+                @after_this_request
+                def _count_gdrive_download(resp):
+                    ub.update_download(book.id, user_id)
+                    _track_download_analytics(book_name, book_format, client)
+                    return resp
+
                 return gd.do_gdrive_download(df, headers)
         else:
             abort(404)
     else:
         filename = os.path.join(config.get_book_path(), book.path)
-        if not os.path.isfile(os.path.join(filename, book_name + "." + book_format)):
-            # ToDo: improve error handling
-            log.error("File not found: %s", os.path.join(filename, book_name + "." + book_format))
+        filepath = os.path.join(filename, book_name + "." + book_format)
+        if not os.path.isfile(filepath):
+            log.error("File not found: %s", filepath)
+            abort(404)
 
         if client == "kobo" and book_format == "kepub":
             headers["Content-Disposition"] = headers["Content-Disposition"].replace(".kepub", ".kepub.epub")
@@ -1129,47 +1183,7 @@ def do_download_file(book, book_format, client, data, headers):
     # ToDo Check headers parameter
     for element in headers:
         response.headers[element[0]] = element[1]
-    ua = request.headers.get("User-Agent", "")
-    ip_address = (
-        request.headers.get("CF-Connecting-IP")
-        or request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
-        or request.remote_addr
-    )
-    country = request.headers.get("CF-IPCountry", "")
-    log.info(
-        "Downloading file: '%s' by %s - ip: %s, country: %s, ua: %s",
-        format(os.path.join(filename, book_name + "." + book_format)),  # pyright: ignore[reportCallIssue,reportArgumentType,reportOptionalOperand]
-        current_user.name,
-        ip_address,
-        country,
-        ua,
-    )
-    try:
-        umami_url = "https://umami.kenadera.org/api/send"
-        umami_website_id = "0b57aeb6-d996-4d88-89fc-59ada511cd9c"
-        payload = {
-            "payload": {
-                "hostname": request.host.split(":")[0] if ":" in request.host else request.host,
-                "language": request.headers.get("Accept-Language", ""),
-                "url": request.path or "/",
-                "referrer": request.headers.get("Referer", ""),
-                "website": umami_website_id,
-                "name": "file-download",
-                "data": {
-                    "file": book_name + "." + book_format,
-                    "format": book_format,
-                    "client": client or "unknown",
-                    "country": country,
-                    "ua": ua,
-                },
-            },
-            "type": "event",
-        }
-        log.debug("Umami tracking payload: %s", payload)
-        resp = requests.post(umami_url, json=payload, timeout=5, headers={"User-Agent": ua or "Calibre-Web/1.0"})
-        log.debug("Umami tracking response: %s %s", resp.status_code, resp.text)
-    except Exception as e:
-        log.error("Umami tracking failed: %s", e)
+    _track_download_analytics(book_name, book_format, client)
     return response
 
 

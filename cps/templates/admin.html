@@ -31,7 +31,7 @@
             <td><a class="session" href="{{url_for('admin.edit_user', user_id=user.id)}}">{{user.name}}</a></td>
             <td>{{user.email}}</td>
             <td>{{user.kindle_mail}}</td>
-            <td>{{user.downloads.count()}}</td>
+            <td>{{ downloadSums.get(user.id, 0) }}</td>
             <td class="hidden-xs">{{ display_bool_setting(user.role_admin()) }}</td>
             <td class="hidden-xs hidden-sm">{{ display_bool_setting(user.role_passwd()) }}</td>
             {% if config.config_uploading %}

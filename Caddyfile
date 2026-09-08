@@ -6,6 +6,16 @@ pustaka.taratsa.id {
   encode zstd gzip
 
   route {
+    # ─── Astro dynamic Open Graph images ───
+    @astro_og {
+      path /og/*.png /og/*/*.png
+    }
+    handle @astro_og {
+      header >Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+      header >Cloudflare-CDN-Cache-Control "public, max-age=86400"
+      reverse_proxy pustaka-astro:4321
+    }
+
     # ─── Astro OCR reader page ───
     @astro_ocr {
       path_regexp astro_ocr ^/read/[0-9]+/ocr(/(pdf|epub))?/?$
@@ -34,13 +44,14 @@ pustaka.taratsa.id {
     }
     handle @flask {
       @books {
-        path /download/*/pdf/* /download/*/epub/*
+        path /download/* /opds/download/* /kobo/*/download/*
       }
       header @books >Cache-Control "private, no-store"
       header @books >Cloudflare-CDN-Cache-Control "no-store"
-      # Cache OPDS catalog feeds (5 min — catalog changes are batch-rebuilt)
+      # Cache OPDS catalog feeds (5 min — catalog changes are batch-rebuilt),
+      # but never the per-book acquisition downloads under /opds/download/
       @opds {
-        path /opds /opds/*
+        path /opds /opds/new* /opds/books* /opds/author* /opds/publisher* /opds/category* /opds/series* /opds/hot* /opds/rated* /opds/search* /opds/osd* /opds/stats*
       }
       header @opds >Cache-Control "public, max-age=300"
 
@@ -69,8 +80,8 @@ pustaka.taratsa.id {
     }
 
     # Astro renders canonical frontend pages on demand.
-    handle {
-      reverse_proxy pustaka-astro:4321
+    @astro_assets {
+      path /_astro/* /favicon.ico /logo-taratsa.png /static/*
     }
     handle @astro_assets {
       header >Cache-Control "public, max-age=31536000, immutable"
@@ -78,6 +89,10 @@ pustaka.taratsa.id {
       header >X-Content-Type-Options "nosniff"
       header >X-Frame-Options "SAMEORIGIN"
       file_server
+    }
+
+    handle {
+      reverse_proxy pustaka-astro:4321
     }
 
     # Default: serve the static file
@@ -104,15 +119,10 @@ old.pustaka.taratsa.id {
   encode zstd gzip
 
   @books {
-    path /download/*/pdf/* /download/*/epub/*
+    path /download/* /opds/download/* /kobo/*/download/*
   }
-  header @books >Cache-Control "public, max-age=3888000"
-
-  @covers {
-    path /cover/*
-  }
-  header @covers >Cache-Control "public, max-age=86400"
-
+  header @books >Cache-Control "private, no-store"
+  header @books >Cloudflare-CDN-Cache-Control "no-store"
   reverse_proxy calibre-web-automated:8083
 
   log

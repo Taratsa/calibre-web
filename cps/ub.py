@@ -88,6 +88,13 @@ else:
     session = None  # type: ignore[assignment]
     app_DB_path = None  # type: ignore[assignment]
 
+# Dedicated engine for the high-frequency download counter. Requests under gevent
+# share the process, so writes to the counter MUST NOT go through the single
+# concrete `session` object (concurrent greenlets corrupt the session state and
+# lose increments). Each write opens its own short-lived connection, keeping the
+# counter isolated from the ORM session used everywhere else.
+_app_engine = None  # type: ignore[assignment]
+
 Base = declarative_base()
 searched_ids: dict = {}  # pyright: ignore[reportMissingTypeArgument]
 
@@ -825,9 +832,10 @@ def _ensure_download_index(engine):
                 "CREATE UNIQUE INDEX IF NOT EXISTS uq_downloads_user_book ON downloads (user_id, book_id)"
             )
     except Exception:
-        import traceback
-
-        traceback.print_exc()
+        # The counter relies on the (user_id, book_id) unique index for its
+        # atomic upsert; a failure here means lost increments. Log loudly via
+        # the app logger so it lands in the configured log files, not just stderr.
+        log.exception("downloads unique-index migration failed — download counter may lose increments")
 
 
 def clean_database(_session):
@@ -842,51 +850,62 @@ def clean_database(_session):
         sys.exit(2)
 
 
-# Save downloaded books per user in calibre-web's own database
+# Save downloaded books per user in calibre-web's own database.
+#
+# Uses the dedicated counter engine (not the shared ORM `session`) so concurrent
+# greenlets never corrupt each other's transaction state. The upsert is a single
+# atomic statement on the (user_id, book_id) unique index; a concurrent first
+# insert is resolved by the ON CONFLICT clause instead of raising for the loser.
+def _counter_connection():
+    global _app_engine
+    if _app_engine is None:
+        return None
+    return _app_engine.connect()
+
+
 def update_download(book_id, user_id):
-    now = datetime.now(UTC)
+    now = datetime.now(UTC).isoformat()
+    conn = _counter_connection()
+    if conn is None:
+        return
     try:
-        updated = (
-            session.query(Downloads)
-            .filter(Downloads.user_id == user_id, Downloads.book_id == book_id)
-            .update(
-                {
-                    Downloads.hit_count: func.coalesce(Downloads.hit_count, 0) + 1,
-                    Downloads.last_hit: now,
-                },
-                synchronize_session=False,
+        with conn.begin():
+            # ANSI-ish SQLite upsert: increment if the (user, book) pair exists,
+            # otherwise insert with hit_count = 1. The ON CONFLICT clause runs on
+            # the uq_downloads_user_book index, so a concurrent first insert is
+            # resolved (re-incremented) rather than raising for the loser.
+            conn.exec_driver_sql(
+                """
+                INSERT INTO downloads (book_id, user_id, hit_count, last_hit)
+                VALUES (?, ?, 1, ?)
+                ON CONFLICT(user_id, book_id)
+                DO UPDATE SET hit_count = COALESCE(downloads.hit_count, 0) + 1,
+                              last_hit = excluded.last_hit
+                """,
+                (book_id, user_id, now),
             )
-        )
-        if not updated:
-            session.add(Downloads(user_id=user_id, book_id=book_id, hit_count=1, last_hit=now))
-        session.commit()
-    except exc.IntegrityError:
-        session.rollback()
-        try:
-            session.query(Downloads).filter(Downloads.user_id == user_id, Downloads.book_id == book_id).update(
-                {
-                    Downloads.hit_count: func.coalesce(Downloads.hit_count, 0) + 1,
-                    Downloads.last_hit: now,
-                },
-                synchronize_session=False,
-            )
-            session.commit()
-        except exc.OperationalError:
-            session.rollback()
     except exc.OperationalError:
-        session.rollback()
+        # DB is locked/read-only; never fail the download because the counter
+        # could not be written. The download itself is unaffected.
+        log.warning("Unable to increment download counter for book %s user %s", book_id, user_id)
+    finally:
+        conn.close()
 
 
 # Delete non-existing downloaded books in calibre-web's own database
 def delete_download(book_id):
-    session.query(Downloads).filter(book_id == Downloads.book_id).delete()
+    conn = _counter_connection()
+    if conn is None:
+        return
     try:
-        session.commit()
+        with conn.begin():
+            conn.exec_driver_sql("DELETE FROM downloads WHERE book_id = ?", (book_id,))
     except exc.OperationalError:
-        session.rollback()
+        log.warning("Unable to clear download counter for book %s", book_id)
+    finally:
+        conn.close()
 
 
-# Create an audit log entry
 def create_audit_log_entry(user_id, action, resource_type, resource_id=None, details=None, ip_address=None):
     entry = AuditLog(
         user_id=user_id,
@@ -942,15 +961,15 @@ def init_db_thread():
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
     return Session()
-
-
 def init_db(app_db_path):
     # Open session for database connection
     global session
     global app_DB_path
+    global _app_engine
 
     app_DB_path = app_db_path
     engine = create_engine(f"sqlite:///{app_db_path}", echo=False)
+    _app_engine = engine
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)

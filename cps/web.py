@@ -679,12 +679,17 @@ def render_hot_books(page, order):
         hot_books = all_books.offset(off).limit(config.config_books_per_page)
         entries = []
         for book in hot_books:
-            query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
-            download_book = (
-                query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
-            )
-            if download_book:
-                entries.append(download_book)
+            # Existence check only: not viewer-filtered, so a book hidden for the
+            # current viewer (archived/tag/language restrictions) keeps its
+            # counters for everyone else.
+            exists = calibre_db.session.query(db.Books.id).filter(db.Books.id == book.Downloads.book_id).first()
+            if exists:
+                query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
+                download_book = (
+                    query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
+                )
+                if download_book:
+                    entries.append(download_book)
             else:
                 ub.delete_download(book.Downloads.book_id)
         num_books = entries.__len__()
@@ -722,12 +727,9 @@ def render_downloaded_books(page, order, user_id):
             relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         for book in entries:
-            if not (
-                calibre_db.session.query(db.Books)
-                .filter(calibre_db.common_filters())
-                .filter(db.Books.id == book.Books.id)
-                .first()
-            ):
+            # Existence check only: viewer filters (archive/tags/language) must not
+            # remove the download row — the book is still in the library.
+            if not calibre_db.session.query(db.Books.id).filter(db.Books.id == book.Books.id).first():
                 ub.delete_download(book.Books.id)
         return render_title_template(
             "index.html",
@@ -1465,6 +1467,14 @@ def download_list():
             .order_by(order)
             .all()
         )  # pyright: ignore[reportArgumentType]
+        # Anonymous traffic is stored under the sentinel user_id=0, which has no
+        # user row — the inner join above drops it. Report it as its own bucket so
+        # the totals reconcile with the downloads table.
+        anon_downloads = (
+            ub.session.query(func.sum(func.coalesce(ub.Downloads.hit_count, 1)))  # pyright: ignore[reportArgumentType]
+            .filter(ub.Downloads.user_id == 0)
+            .scalar()
+        ) or 0
         char_list = (
             ub.session.query(func.upper(func.substr(ub.User.name, 1, 1)).label("char"))
             .filter(ub.User.role.op("&")(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
@@ -1480,6 +1490,7 @@ def download_list():
             page="downloadlist",
             data="download",
             order=order_no,
+            anon_downloads=anon_downloads,
         )
     else:
         abort(404)
@@ -2041,10 +2052,6 @@ def send_to_ereader(book_id, book_format, convert):
             book_id, book_format, convert, current_user.kindle_mail, config.get_book_path(), current_user.name
         )
         if result is None:
-            ub.update_download(
-                book_id,
-                int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0,
-            )
             ub.create_audit_log_entry(
                 user_id=current_user.id,
                 action="send",

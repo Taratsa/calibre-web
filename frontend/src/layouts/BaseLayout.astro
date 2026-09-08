@@ -25,7 +25,7 @@ const defaultDescription = 'Pustaka Taratsa adalah perpustakaan digital non-kome
 const fullTitle = `${title} | Pustaka Taratsa`;
 const ogTitle = title;
 const ogDescription = description ?? defaultDescription;
-const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
+const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
 ---
 
 <!DOCTYPE html>
@@ -48,8 +48,8 @@ const ogImageUrl = ogImage ?? `${siteUrl}/static/images/Header_Beranda.webp`;
     <meta property="og:type" content={ogType ?? (title === 'Beranda' ? 'website' : 'book')} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="id_ID" />
 
     <meta name="twitter:card" content="summary_large_image" />

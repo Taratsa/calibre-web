@@ -159,10 +159,14 @@ def feed_hot():
     hot_books = all_books.offset(off).limit(config.config_books_per_page)  # pyright: ignore[reportArgumentType]
     entries = []
     for book in hot_books:
-        query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
-        download_book = query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
-        if download_book:
-            entries.append(download_book)
+        # Existence check only: not viewer-filtered, so a book hidden for the
+        # current viewer keeps its counters for everyone else.
+        exists = calibre_db.session.query(db.Books.id).filter(db.Books.id == book.Downloads.book_id).first()
+        if exists:
+            query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
+            download_book = query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
+            if download_book:
+                entries.append(download_book)
         else:
             ub.delete_download(book.Downloads.book_id)
     num_books = entries.__len__()
