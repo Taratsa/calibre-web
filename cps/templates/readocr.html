@@ -10,6 +10,13 @@
     color: #666;
     margin-bottom: 1rem;
   }
+  .ocr-reader__notice {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #666;
+  }
   .ocr-reader__content {
     background: #fff;
     border: 1px solid #ddd;
@@ -28,6 +35,30 @@
   }
   .ocr-reader__content pre {
     white-space: pre-wrap;
+  }
+  .ocr-reader__content .ocr-footnotes {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid #ccc;
+    color: #555;
+    font-size: 0.85em;
+  }
+  .ocr-reader__content .ocr-caption {
+    color: #555;
+    font-size: 0.9em;
+  }
+  .ocr-reader__content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  .ocr-reader__content th,
+  .ocr-reader__content td {
+    border: 1px solid #ddd;
+    padding: 0.35rem 0.6rem;
+    vertical-align: top;
   }
   @media (prefers-color-scheme: dark) {
     .ocr-reader__content {
@@ -50,6 +81,10 @@
       &middot; teks PDF berhasil diekstrak tanpa OCR
     {% endif %}
     &middot; {{ document.processing_time_ms }} ms
+  </p>
+  <p class="ocr-reader__notice" role="note">
+    Versi OCR mungkin terdapat kesalahan eja, ketik, tata letak, atau hal terkait tipografi. Untuk ketepatan hasil,
+    silakan merujuk pada <a href="{{ url_for('web.read_book', book_id=book.id, book_format=document_format) }}">dokumen asli</a>.
   </p>
   <article class="ocr-reader__content">{{ document.markdown_html | safe }}</article>
 </div>

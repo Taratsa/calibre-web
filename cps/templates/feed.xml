@@ -12,20 +12,21 @@
   <link rel="up"
         href="{{url_for('opds.feed_index')}}"
         type="application/atom+xml;profile=opds-catalog;type=feed;kind=navigation"/>
+{% set page_base = link_query if link_query is defined and link_query else request.script_root + request.path %}
 {% if pagination and pagination.has_prev %}
   <link rel="first"
-        href="{{request.script_root + request.path}}"
+        href="{{page_base}}"
         type="application/atom+xml;profile=opds-catalog;type=feed;kind=navigation"/>
 {% endif %}
 {% if pagination and pagination.has_next %}
   <link rel="next"
         title="{{_('Next')}}"
-        href="{{ request.script_root + request.path }}?offset={{ pagination.next_offset }}"
+        href="{{ page_base }}?offset={{ pagination.next_offset }}"
         type="application/atom+xml;profile=opds-catalog;type=feed;kind=navigation"/>
 {% endif %}
 {% if pagination and pagination.has_prev %}
   <link rel="previous"
-        href="{{request.script_root + request.path}}?offset={{ pagination.previous_offset }}"
+        href="{{page_base}}?offset={{ pagination.previous_offset }}"
         type="application/atom+xml;profile=opds-catalog;type=feed;kind=navigation"/>
 {% endif %}
     <link rel="search"

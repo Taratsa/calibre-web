@@ -1,4 +1,4 @@
-"""Document text extraction integration using Firecrawl's pdf-inspector bindings."""
+"""Document text extraction: PDFs via a TurboOCR server, EPUBs directly."""
 
 from __future__ import annotations
 
@@ -7,13 +7,10 @@ import hashlib
 import json
 import os
 import posixpath
-import subprocess
-import sys
-import tempfile
 import threading
 import time
 import zipfile
-from collections.abc import Generator
+from collections.abc import Callable, Generator
 from contextlib import contextmanager
 from dataclasses import dataclass
 from html import escape
@@ -23,20 +20,24 @@ from typing import Protocol, cast
 from urllib.parse import unquote
 
 import lxml.etree as etree
-from markdown2 import markdown as render_markdown  # pyright: ignore[reportMissingImports]
 
 from . import config, logger
 from .clean_html import clean_string
 from .file_helper import get_temp_dir
 from .gdriveutils import getFileFromEbooksFolder
+from .ocr_layout import build_document_html
 
 log = logger.create()
 
-CACHE_VERSION = 3
+CACHE_VERSION = 6
 PDF_FORMAT = "PDF"
 EPUB_FORMAT = "EPUB"
-OCR_WORKER_SCRIPT = Path(__file__).with_name("ocr_worker.py")
-_ocr_worker_lock = threading.Lock()
+# Bump when text extraction or page layout cleanup changes. Each only invalidates its own format's cached results
+# (a PDF re-run costs GPU time, so PDFs are not invalidated by EPUB changes and vice versa).
+EPUB_EXTRACT_VERSION = 2
+PDF_LAYOUT_VERSION = 2
+_ocr_lock = threading.Lock()
+ProgressCallback = Callable[[int, int], None]
 
 
 class BookRecord(Protocol):
@@ -56,18 +57,16 @@ class DriveFile(Protocol):
     def GetContentFile(self, filename: str) -> None: ...
 
 
-
-
 class OcrUnavailableError(RuntimeError):
     """Raised when document extraction is unavailable."""
 
 
+class OcrNotReadyError(RuntimeError):
+    """Raised when a document has not been OCR'd yet and extraction was not allowed."""
+
+
 class OcrBookNotFoundError(FileNotFoundError):
     """Raised when a book does not contain an accessible OCR format."""
-
-
-class OcrScannedPdfError(RuntimeError):
-    """Raised when a PDF contains no extractable text layer."""
 
 
 @dataclass(frozen=True)
@@ -105,6 +104,10 @@ def _cache_details(
         "size": stat.st_size,
         "mtime_ns": mtime_ns,
     }
+    if book_format == EPUB_FORMAT:
+        request["extract_version"] = EPUB_EXTRACT_VERSION
+    else:
+        request["layout_version"] = PDF_LAYOUT_VERSION
     fingerprint = json.dumps(request, sort_keys=True, separators=(",", ":"))
     digest = hashlib.sha256(fingerprint.encode()).hexdigest()
     return _cache_directory() / f"{book.id}-{digest}.json", request
@@ -114,8 +117,6 @@ def _load_cache(path: Path) -> OcrDocument | None:
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
         result = payload["result"]
-        if result["status"] == "scanned":
-            raise OcrScannedPdfError("OCR is disabled for fully scanned PDF pages.")
         if result["status"] != "ready":
             return None
         return OcrDocument(
@@ -124,8 +125,6 @@ def _load_cache(path: Path) -> OcrDocument | None:
             pages_routed_to_ocr=int(result["pages_routed_to_ocr"]),
             processing_time_ms=int(result["processing_time_ms"]),
         )
-    except OcrScannedPdfError:
-        raise
     except (OSError, KeyError, TypeError, ValueError):
         return None
 
@@ -197,75 +196,91 @@ def _document_path(book: BookRecord, data: FormatRecord, book_format: str) -> Ge
             document_path.unlink()
 
 
-def _offline_ocr() -> bool:
-    return os.environ.get("PDF_INSPECTOR_OFFLINE", "0").strip().lower() in {"1", "true", "yes"}
+def _turboocr_url() -> str:
+    url = os.environ.get("TURBOOCR_URL", "").strip().rstrip("/")
+    if not url:
+        raise OcrUnavailableError("TURBOOCR_URL is not configured")
+    return url
 
 
-def _worker_timeout_seconds() -> int:
-    return max(1, int(os.environ.get("OCR_WORKER_TIMEOUT_SECONDS", "300")))
+def _turboocr_timeout_seconds() -> int:
+    return max(1, int(os.environ.get("TURBOOCR_TIMEOUT_SECONDS", "900")))
 
 
-def _worker_memory_mb() -> int:
-    return max(256, int(os.environ.get("OCR_WORKER_MEMORY_MB", "4096")))
+def _turboocr_idle_seconds() -> int:
+    return max(1, int(os.environ.get("TURBOOCR_IDLE_SECONDS", "120")))
 
 
-def _run_worker(command: list[str]) -> subprocess.CompletedProcess[str]:
-    with _ocr_worker_lock:
-        return subprocess.run(
-            command,
-            check=False,
-            capture_output=True,
-            text=True,
-            timeout=_worker_timeout_seconds(),
-        )  # nosec: fixed executable and worker script; document paths are argv entries
+def _stream_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> _ExtractedDocument:
+    import requests
 
-
-def _run_worker_without_blocking_server(command: list[str]) -> subprocess.CompletedProcess[str]:
-    try:
-        from gevent import get_hub  # pyright: ignore[reportMissingModuleSource]
-
-        return get_hub().threadpool.apply(_run_worker, (command,))
-    except ImportError:
-        return _run_worker(command)
-
-def _extract_pdf(pdf_path: Path) -> _ExtractedDocument:
-    output_fd, output_name = tempfile.mkstemp(prefix="ocr-result-", suffix=".json", dir=get_temp_dir())
-    os.close(output_fd)
-    output_path = Path(output_name)
-    command = [
-        sys.executable,
-        str(OCR_WORKER_SCRIPT),
-        str(pdf_path),
-        str(output_path),
-        "1" if _offline_ocr() else "0",
-        str(_worker_memory_mb()),
-    ]
-    try:
-        completed = _run_worker_without_blocking_server(command)
-        if completed.returncode != 0:
-            message = completed.stderr.strip() or f"OCR worker exited with status {completed.returncode}"
-            raise OcrUnavailableError(message)
-        payload = json.loads(output_path.read_text(encoding="utf-8"))
-        if payload.get("status") == "scanned":
-            raise OcrScannedPdfError("OCR is disabled for fully scanned PDF pages.")
-        if payload.get("status") != "ready":
-            raise OcrUnavailableError(str(payload.get("error") or "OCR worker returned an invalid result"))
-        return _ExtractedDocument(
-            content=str(payload["content"]),
-            page_count=int(payload["page_count"]),
-            pages_routed_to_ocr=int(payload["pages_routed_to_ocr"]),
-            processing_time_ms=int(payload["processing_time_ms"]),
+    started = time.perf_counter()
+    deadline = started + _turboocr_timeout_seconds()
+    pages: dict[int, dict[str, object]] = {}
+    expected_pages: int | None = None
+    failed_pages = 0
+    ended = False
+    with _ocr_lock, pdf_path.open("rb") as pdf_file:
+        try:
+            response = requests.post(
+                f"{_turboocr_url()}/ocr/stream",
+                params={"mode": "auto", "as_blocks": "1", "tables": "1", "autorotate": "1"},
+                data=pdf_file,
+                headers={"Content-Type": "application/pdf"},
+                stream=True,
+                timeout=(10, _turboocr_idle_seconds()),
+            )
+        except requests.RequestException as exc:
+            raise OcrUnavailableError(f"TurboOCR request failed: {exc}") from exc
+        with response:
+            if response.status_code != 200:
+                raise OcrUnavailableError(f"TurboOCR returned HTTP {response.status_code}: {response.text[:300]}")
+            try:
+                for line in response.iter_lines():
+                    if time.perf_counter() > deadline:
+                        raise OcrUnavailableError(f"OCR processing exceeded {_turboocr_timeout_seconds()} seconds")
+                    if not line:
+                        continue
+                    event = json.loads(line)
+                    kind = event.get("event")
+                    if kind == "meta":
+                        expected_pages = int(event["pages"])
+                    elif kind == "page":
+                        pages[int(event["page_index"])] = event
+                        if on_progress and expected_pages:
+                            on_progress(len(pages), expected_pages)
+                    elif kind == "page_error":
+                        failed_pages += 1
+                    elif kind == "error":
+                        raise OcrUnavailableError(f"TurboOCR failed mid-stream: {event.get('code')}")
+                    elif kind == "end":
+                        ended = True
+                        failed_pages = max(failed_pages, int(event.get("failed", 0)))
+            except requests.RequestException as exc:
+                raise OcrUnavailableError(f"TurboOCR stream interrupted: {exc}") from exc
+            except (ValueError, KeyError, TypeError) as exc:
+                raise OcrUnavailableError(f"TurboOCR returned an invalid stream: {exc}") from exc
+    if not ended or failed_pages or expected_pages is None or len(pages) != expected_pages:
+        raise OcrUnavailableError(
+            f"TurboOCR result incomplete: {len(pages)}/{expected_pages} pages, {failed_pages} failed, ended={ended}"
         )
-    except subprocess.TimeoutExpired as exc:
-        raise OcrUnavailableError(f"OCR processing exceeded {_worker_timeout_seconds()} seconds") from exc
-    except (OcrScannedPdfError, OcrUnavailableError):
+    content = build_document_html(pages)
+    return _ExtractedDocument(
+        content=content,
+        page_count=expected_pages,
+        pages_routed_to_ocr=sum(1 for page in pages.values() if page.get("mode") == "ocr"),
+        processing_time_ms=int((time.perf_counter() - started) * 1000),
+    )
+
+
+def _extract_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> _ExtractedDocument:
+    try:
+        return _stream_pdf(pdf_path, on_progress)
+    except OcrUnavailableError:
         raise
     except Exception as exc:
         log.error_or_exception(exc)
         raise OcrUnavailableError(str(exc)) from exc
-    finally:
-        with contextlib.suppress(OSError):
-            output_path.unlink()
 
 
 def _epub_path(rootfile: str, href: str) -> str | None:
@@ -325,22 +340,63 @@ def _epub_spine_paths(archive: zipfile.ZipFile) -> list[str]:
     return paths
 
 
+_EPUB_HEADINGS = frozenset({"h1", "h2", "h3", "h4", "h5", "h6"})
+_EPUB_EMPTY_BLOCKS = frozenset({"p", "div", "section"})
+_EPUB_UNWANTED = (
+    ".//*[local-name()='script' or local-name()='style' or local-name()='noscript' or local-name()='template'"
+    " or @hidden"  # hidden navigation such as the "Landmarks" list
+    " or (local-name()='nav' and @*[local-name()='type']='landmarks')"
+    # Images and SVG reference files inside the EPUB, which the reader does not serve: they would render broken.
+    " or local-name()='svg' or local-name()='image'"
+    " or (local-name()='img' and not(starts-with(@src, 'http://') or starts-with(@src, 'https://')))]"
+)
+_EPUB_KEEP_WHEN_EMPTY = ".//*[local-name()='table' or local-name()='hr' or local-name()='img']"
+
+
+def _epub_remove(element: etree._Element) -> None:
+    """Remove an element but keep the text after it (lxml would drop that tail)."""
+    parent = element.getparent()
+    if parent is None:
+        return
+    if element.tail:
+        previous = element.getprevious()
+        if previous is not None:
+            previous.tail = (previous.tail or "") + element.tail
+        else:
+            parent.text = (parent.text or "") + element.tail
+    parent.remove(element)
+
+
 def _epub_fragment(payload: bytes) -> str:
     parser = etree.XMLParser(resolve_entities=False, no_network=True, load_dtd=False, recover=True)
     document = etree.fromstring(payload, parser=parser)
     body_nodes = document.xpath("//*[local-name()='body']")
     body = body_nodes[0] if body_nodes else document
-    for element in body.xpath(
-        ".//*[local-name()='script' or local-name()='style' or local-name()='noscript' or local-name()='template']"
-    ):
-        parent = element.getparent()
-        if parent is not None:
-            parent.remove(element)
+    for element in body.xpath(_EPUB_UNWANTED):
+        _epub_remove(element)
+    for heading in [e for e in body.iter() if isinstance(e.tag, str) and etree.QName(e).localname in _EPUB_HEADINGS]:
+        if "".join(heading.itertext()).strip():
+            continue
+        # Publishers often leave the heading empty and put its text in a title attribute.
+        title = (heading.get("title") or "").strip()
+        if not title:
+            _epub_remove(heading)
+            continue
+        for child in list(heading):
+            heading.remove(child)
+        heading.text = title
+    # Children are visited before their parents, so a block emptied by the removals above goes too.
+    for element in reversed([e for e in body.iter() if isinstance(e.tag, str)]):
+        if element is body or etree.QName(element).localname not in _EPUB_EMPTY_BLOCKS:
+            continue
+        if "".join(element.itertext()).strip() or element.xpath(_EPUB_KEEP_WHEN_EMPTY):
+            continue
+        _epub_remove(element)
     content = "".join(
         etree.tostring(child, encoding="unicode", method="html") for child in body if isinstance(child.tag, str)
     ).strip()
-    if body.text:
-        content = f"<p>{escape(body.text)}</p>{content}"
+    if body.text and body.text.strip():
+        content = f"<p>{escape(body.text.strip())}</p>{content}"
     if content:
         return content
     text = " ".join(part.strip() for part in body.itertext() if part.strip())
@@ -375,14 +431,22 @@ def book_ocr_available(book: BookRecord, data: FormatRecord, book_format: str | 
         raise OcrBookNotFoundError(f"Unsupported OCR format: {selected_format}")
     with _document_path(book, data, selected_format) as document_path:
         cache_path, _request = _cache_details(book, data, selected_format, document_path)
-        try:
-            cached = _load_cache(cache_path)
-        except OcrScannedPdfError:
-            return False
-        return cached is not None
+        return _load_cache(cache_path) is not None
 
 
-def extract_book_ocr(book: BookRecord, data: FormatRecord, book_format: str | None = None) -> OcrDocument:
+def extract_book_ocr(
+    book: BookRecord,
+    data: FormatRecord,
+    book_format: str | None = None,
+    on_progress: ProgressCallback | None = None,
+    allow_extract: bool = True,
+) -> OcrDocument:
+    """Return the OCR document, extracting it on a cache miss.
+
+    With ``allow_extract=False`` a PDF cache miss raises ``OcrNotReadyError`` instead, so request handlers never
+    run a multi-minute TurboOCR extraction. EPUB text is read from the file in well under a second, so it is
+    always extracted inline.
+    """
     selected_format = (book_format or getattr(data, "format", PDF_FORMAT)).upper()
     if selected_format not in {PDF_FORMAT, EPUB_FORMAT}:
         raise OcrBookNotFoundError(f"Unsupported OCR format: {selected_format}")
@@ -391,21 +455,12 @@ def extract_book_ocr(book: BookRecord, data: FormatRecord, book_format: str | No
         cached = _load_cache(cache_path)
         if cached:
             return cached
-        try:
-            extracted = _extract_pdf(document_path) if selected_format == PDF_FORMAT else _extract_epub(document_path)
-        except OcrScannedPdfError:
-            _save_cache(cache_path, request, {"status": "scanned"})
-            raise
-        if selected_format == PDF_FORMAT:
-            markdown_html = clean_string(
-                render_markdown(
-                    extracted.content,
-                    extras=["break-on-newline", "fenced-code-blocks", "tables"],
-                ),
-                book.id,
-            )
-        else:
-            markdown_html = clean_string(extracted.content, book.id)
+        if not allow_extract and selected_format == PDF_FORMAT:
+            raise OcrNotReadyError(f"{selected_format} of book {book.id} has not been processed yet")
+        extracted = (
+            _extract_pdf(document_path, on_progress) if selected_format == PDF_FORMAT else _extract_epub(document_path)
+        )
+        markdown_html = clean_string(extracted.content, book.id)
         document = OcrDocument(
             markdown_html=markdown_html,
             page_count=extracted.page_count,
@@ -426,12 +481,13 @@ def extract_book_ocr(book: BookRecord, data: FormatRecord, book_format: str | No
         return document
 
 
-def scan_book_ocr(book: BookRecord, data: FormatRecord, book_format: str) -> str:
+def scan_book_ocr(
+    book: BookRecord,
+    data: FormatRecord,
+    book_format: str,
+    on_progress: ProgressCallback | None = None,
+) -> None:
     selected_format = book_format.upper()
     if selected_format not in {PDF_FORMAT, EPUB_FORMAT}:
         raise OcrBookNotFoundError(f"Unsupported OCR format: {selected_format}")
-    try:
-        extract_book_ocr(book, data, selected_format)
-    except OcrScannedPdfError:
-        return "scanned"
-    return "ready"
+    extract_book_ocr(book, data, selected_format, on_progress)

@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import BookLayout from '~/layouts/BookLayout.astro';
 import Cover from '~/components/Cover.astro';
-import { getAllBooks, getAllCategories, formatBytes } from '~/data';
+import { getAllBooks, getAllCategories, formatBytes, getShelves } from '~/data';
 import type { BookDetail } from '~/data/types';
 import { authorPath } from '~/utils/author-url';
 import { bookByPathSegment, bookPath } from '~/utils/book-url';
@@ -33,8 +33,8 @@ if (detail?.data) {
 
 const readableExt = new Set(['epub', 'pdf', 'txt', 'cbr', 'cbz', 'djvu', 'mp3']);
 const readUrl = book.formats.find(f => readableExt.has(f.toLowerCase()));
-const ocrFormats = book.formats.filter(f => ['pdf', 'epub'].includes(f.toLowerCase()));
-const ocrUrls = new Map<string, string>();
+const ocrFormats = book.formats.filter(f => f.toLowerCase() === 'pdf');
+const ocrUrls = new Map<string, { href: string; label: string }>();
 for (const format of ocrFormats) {
   try {
     const normalizedFormat = format.toLowerCase();
@@ -46,8 +46,14 @@ for (const format of ocrFormats) {
     }
     const statusResponse = await fetch(statusUrl, { headers: statusHeaders, redirect: 'manual' });
     if (statusResponse.ok) {
-      const status = await statusResponse.json() as { available?: boolean };
-      if (status.available === true) ocrUrls.set(normalizedFormat, `/read/${book.id}/ocr/${normalizedFormat}/`);
+      const status = await statusResponse.json() as { available?: boolean; state?: { status?: string } | null };
+      const upper = normalizedFormat.toUpperCase();
+      // Every readable format is linked: an unprocessed one opens a page that queues the OCR job on demand.
+      const inProgress = status.state?.status === 'queued' || status.state?.status === 'processing';
+      const label = status.available === true ? `Baca ${upper} (OCR)`
+        : inProgress ? `${upper} sedang diproses OCR…`
+        : `Proses ${upper} dengan OCR`;
+      ocrUrls.set(normalizedFormat, { href: `/read/${book.id}/ocr/${normalizedFormat}/`, label });
     }
   } catch {}
 }
@@ -60,10 +66,20 @@ const buttons = book.formats.map(f => ({
 
 const authorStr = book.authors.map(a => `<a href="${authorPath(a)}">${a.name}</a>`).join(', ');
 const cats = getAllCategories();
+// Public shelves containing this book (app.db data, seeded into shelves.json).
+const bookShelves = getShelves().filter(s => s.book_ids.includes(book.id));
+const shelfStr = bookShelves.map(s =>
+  `<li><a href="/shelf/${s.id}">${s.name.trim()}</a></li>`
+).join('');
 const tagStr = book.tags.map(t => {
   const cat = cats.find(c => c.name === t);
   return `<li><a href="/category/${cat ? cat.id : encodeURIComponent(t)}">${t}</a></li>`;
 }).join('');
+// Comma-joined category links for the labeled metadata row.
+const catLinks = book.tags.map(t => {
+  const cat = cats.find(c => c.name === t);
+  return `<a href="/category/${cat ? cat.id : encodeURIComponent(t)}">${t}</a>`;
+}).join(', ');
 
 const langLinks = book.languages.map(c =>
   `<a href="/language/${c}">${c}</a>`
@@ -101,8 +117,8 @@ const ratingStr = book.rating && book.rating.count > 0
         {readUrl && (
           <a href={`/read/${book.id}/${readUrl}`}>Baca Online</a>
         )}
-        {[...ocrUrls.entries()].map(([format, href]) => (
-          <a href={href} target="_blank" rel="noopener noreferrer">Baca {format.toUpperCase()} (OCR)</a>
+        {[...ocrUrls.entries()].map(([format, link]) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
         ))}
       </div>
 
@@ -140,11 +156,21 @@ const ratingStr = book.rating && book.rating.count > 0
           {ratingStr && (
             <tr><th scope="row">Penilaian</th><td set:html={ratingStr} /></tr>
           )}
+          {book.tags.length > 0 && (
+            <tr><th scope="row">Kategori</th><td set:html={catLinks} /></tr>
+          )}
         </tbody>
       </table>
 
       {book.tags.length > 0 && (
         <ul class="tag-list" set:html={tagStr} />
+      )}
+
+      {bookShelves.length > 0 && (
+        <>
+          <h2 class="shelves-heading">Rak</h2>
+          <ul class="tag-list" set:html={shelfStr} />
+        </>
       )}
     </div>
   </article>

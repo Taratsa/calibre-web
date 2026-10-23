@@ -11,6 +11,11 @@ Services defined in `docker-compose.yml`:
 - `calibre-web-automated` - Flask app (Calibre-Web backend)
 - `rebuild-watcher` - Watches Calibre DB, auto-rebuilds frontend on changes
 
+Backend base image: `python:3.15-slim-bookworm` (GA, set via the
+`PYTHON_VERSION` ARG in `Dockerfile`). The `builder` and `runtime` stages share
+that ARG, so a version change keeps the `/lsiopy` venv ABI-compatible; never pin
+the stages to different Python versions.
+
 ```bash
 docker compose build        # Build all images
 docker compose up -d        # Start all services
@@ -49,6 +54,20 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - Anonymous downloads are now tracked (user_id=0)
 - Previously only authenticated users were tracked
 - Hot Books section now includes all downloads
+- user_id=0 rows reference the `__anonymous__` sentinel user (id=0), inserted
+  idempotently at startup by `_ensure_anonymous_downloads_user()` in `cps/ub.py`
+- **Counter policy (decided 2026-10-18)**: bot/crawler downloads COUNT (no UA
+  filtering), historical counts are kept as-is (no rebaselining), no scheduled
+  reseed of `popular.json`, and incomplete/aborted transfers COUNT (the
+  increment runs when the response is built, before streaming finishes)
+- **FK policy**: foreign keys are enforced ONLY on the dedicated download
+  counter engine (`PRAGMA foreign_keys=ON` via the connect listener in
+  `cps/ub.py`), which is why the `__anonymous__` row must exist. App-wide
+  enforcement stays OFF: `audit_log` and other children keep referencing
+  deleted users, so global FK would break `_delete_user`.
+- `/downloadlist` excludes user_id=0 from its per-user join (and the alphabet
+  list) and renders the anonymous total as its own bucket instead
+
 
 ### Hot Books ("Most Downloaded")
 - **Endpoint**: `/hot` (web) and `/opds/hot` (OPDS)
@@ -81,6 +100,51 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - Supports OpenSearch
 - Conforms to OPDS 1.2 specification
 
+## Search
+
+Two live search systems (plus the legacy advanced-search form):
+
+### Frontend `/search` (Astro SSR - the site's search)
+- `frontend/src/pages/search.astro` queries the in-process MiniSearch index in
+  `frontend/src/utils/search.ts` (`searchBooks(query, limit)` returns
+  `{ hits, total }`); the index is built once per SSR process over
+  `frontend/src/data/books.json` with boosts title 4 / authors 3 / tags 2 /
+  series 2 / publisher 1, `prefix: true`, `fuzzy: 0.2`, `combineWith: 'AND'`
+- Multi-term queries are AND (all terms must match); typo tolerance and
+  prefix matching come from the fuzzy/prefix options - no substring-splitting
+  heuristic (removed with the old linear-scan scoring)
+- Status line reports the untruncated total: `Menampilkan 120 dari N hasil`
+  when more than `limit` (120) books match
+- Results are plain SSR HTML (no client JS); identical queries are CDN-cached
+  (`s-maxage=300`, `frontend/src/middleware.ts`)
+- The dead client-side typeahead (`frontend/src/utils/liveSearch.ts`) was
+  removed; do not reintroduce a second index
+
+### Backend search (OPDS, `/ajax/listbooks`, legacy UI)
+- `cps/db.py:search_query()` keeps the `ILIKE '%term%'` OR-query as the
+  source of truth, now narrowed by a trigram FTS5 prefilter
+- The index lives in `app.db` (`books_fts` + `books_fts_meta`), never in
+  `library/`; `CalibreDB._rebuild_fts_index()` attaches `metadata.db`
+  read-only and rebuilds (~200 ms) when the fingerprint
+  `COUNT(*)|MAX(last_modified)` of `calibre.books` changes (checked per
+  search, so external Calibre edits are picked up)
+- Parity invariant: for eligible terms every LIKE hit is an FTS hit
+  (verified exhaustively over the catalog vocab), so the FTS ids only narrow
+  the scan and an empty candidate set skips it entirely (miss queries ~25 ms)
+- Terms with LIKE wildcards (`%`/`_`), words shorter than 3 chars, or
+  control characters bypass the prefilter (trigram cannot cover them); any
+  index/FTS error falls back to plain LIKE
+- Searchable custom columns disable the prefilter (they are not indexed);
+  with them configured the query is exactly the old LIKE query
+
+### OPDS search pagination
+- `/opds/search/<path:query>` returns `config.config_books_per_page` entries
+  per page with `rel="next"`/`rel="previous"` links (`?offset=N`); it no
+  longer renders every hit in one Atom page
+- `/opds/search?query=...` 302-redirects to the path variant (canonical;
+  `feed.xml` builds next/prev from `request.path`, which would drop `?query=`)
+- `cps/templates/feed.xml` supports a `link_query` base for those links
+
 ## Static Files Location
 | Path | Location | Served By |
 |------|----------|-----------|
@@ -105,6 +169,8 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - `cps/helper.py` - Server-side Umami analytics, WebP conversion, anonymous download tracking
 - `cps/web.py` - Trailing slash route for book detail pages, WebP detection
 - `cps/opds.py` - OPDS feed endpoints
+- `cps/db.py` - Trigram FTS5 search prefilter (index in app.db, auto-rebuild on catalog change) + LIKE fallback
+- `cps/templates/feed.xml` - `link_query` pagination base for OPDS search next/prev links
 - `cps/frontend_rebuild.py` - Async frontend rebuild trigger
 - `cps/templates/layout.html` - Umami tracking for downloads
 - `cps/templates/detail.html` - JSON-LD structured data, canonical URL
@@ -114,13 +180,28 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - `docker/entrypoint.sh` - Custom init replacing s6-overlay (user setup, first-boot DB init, non-root exec)
 - `host/rebuild-listener.py` - Host-side HTTP listener for frontend rebuild triggers
 - `Caddyfile` - Caddy proxy configuration (on host)
+- `frontend/src/pages/search.astro` - MiniSearch-backed search page (counts, empty state)
+- `frontend/src/utils/search.ts` - In-process search index (`searchBooks`); `frontend/src/utils/liveSearch.ts` deleted as dead code
 
 ### Key Features
 - Umami analytics tracking for downloads (browser + server-side)
 - Anonymous download tracking for Hot Books
 - OPDS feed for ebook reader compatibility
 - App-level WebP conversion for cover images
-- Canonical URLs for SEO
+- Canonical URLs for SEO. Numeric `/book/<id>/` URLs 301-redirect to the slug
+  form: Caddy's `@legacy_book` matcher sends them to Flask (`web.show_book`),
+  which resolves the ID via `frontend/src/data/book-slugs.json` (generated by
+  `seed.mjs`). That file is bind-mounted read-only into the Flask container at
+  `/app/calibre-web/book-slugs.json`, and `_get_book_slugs()` (`cps/web.py`)
+  re-reads it whenever its mtime changes - so seed regenerations take effect
+  without rebuilding the backend image.
+- **Frontend design system**: Scandinavian minimal
+  (github.com/ericzakariasson/scandinavian-design). Neutrals are alpha-black
+  ladders (light) / alpha-white ladders (dark) - never warm/cool gray casts;
+  focus rings, stars, and search highlights are neutral; the red `--accent`
+  token is reserved for primary actions only. UI border-radius is capped at
+  4px. All tokens live in `frontend/src/styles/global.css`; keep new
+  components on `var(--*)` tokens rather than hardcoded colors.
 
 ### Smart Duplicate Detection System & Management
 - **Endpoint**: `/duplicates` (sidebar link, admin/edit users only)
@@ -145,6 +226,15 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
   import-linter ignore in `.importlinter`
 - UI: `cps/templates/duplicates.html` + `cps/static/js/duplicates.js`
 - Background scan task: `cps/tasks/duplicate_scan.py` (`TaskDuplicateScan`)
+- Background resolution task: `cps/tasks/duplicate_resolve.py`
+  (`TaskDuplicateResolve`). **Resolution MUST NOT run in a request handler**:
+  the WSGI server is cooperative gevent with no threadpool
+  (`cps/server.py`, `spawn=Pool()`), so a multi-minute resolution that copies
+  and deletes whole book folders blocks every other request and Cloudflare
+  answers 524. `POST /duplicates/execute-resolution` queues the task and
+  returns `{queued, task_id}` immediately; the UI polls `/duplicates/status`
+  (`resolving` flag) and reloads when it clears. A second request returns 409
+  while one is running/queued.
 - `/duplicates/invalidate-cache` internal endpoint is CSRF-exempt
 
 ### Structured Data (JSON-LD)

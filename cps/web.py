@@ -46,6 +46,7 @@ from . import (
     calibre_db,
     config,
     constants,
+    csrf,
     db,
     helper,
     isoLanguages,
@@ -80,7 +81,7 @@ from .helper import (
 from .kobo_sync_status import change_archived_books, remove_synced_book
 from .ocr_service import (
     OcrBookNotFoundError,
-    OcrScannedPdfError,
+    OcrNotReadyError,
     OcrUnavailableError,
     book_ocr_available,
     extract_book_ocr,
@@ -91,6 +92,7 @@ from .render_template import render_title_template
 from .search import render_adv_search_results, render_search_results
 from .services.worker import WorkerThread
 from .string_helper import strip_whitespaces
+from .tasks.ocr_queue import OcrQueueFullError, ocr_job_state, queue_book_ocr
 from .tasks_status import render_task_status
 from .usermanagement import login_required_if_no_ano, user_login_required
 
@@ -1463,13 +1465,16 @@ def download_list():
         entries = (
             ub.session.query(ub.User, func.sum(func.coalesce(ub.Downloads.hit_count, 1)).label("count"))  # pyright: ignore[reportArgumentType]
             .join(ub.Downloads)
+            # The __anonymous__ sentinel (user_id=0) would otherwise join in as a
+            # regular user and double-count against the anon bucket below.
+            .filter(ub.Downloads.user_id != 0)
             .group_by(ub.Downloads.user_id)
             .order_by(order)
             .all()
         )  # pyright: ignore[reportArgumentType]
-        # Anonymous traffic is stored under the sentinel user_id=0, which has no
-        # user row — the inner join above drops it. Report it as its own bucket so
-        # the totals reconcile with the downloads table.
+        # Anonymous traffic is stored under user_id=0 (the __anonymous__ counter
+        # user row). It is excluded from the join above and reported as its own
+        # bucket so the totals reconcile with the downloads table.
         anon_downloads = (
             ub.session.query(func.sum(func.coalesce(ub.Downloads.hit_count, 1)))  # pyright: ignore[reportArgumentType]
             .filter(ub.Downloads.user_id == 0)
@@ -1478,6 +1483,7 @@ def download_list():
         char_list = (
             ub.session.query(func.upper(func.substr(ub.User.name, 1, 1)).label("char"))
             .filter(ub.User.role.op("&")(constants.ROLE_ANONYMOUS) != constants.ROLE_ANONYMOUS)  # pyright: ignore[reportAttributeAccessIssue]
+            .filter(ub.User.id != 0)  # __anonymous__ counter user: no alphabet entry
             .group_by(func.upper(func.substr(ub.User.name, 1, 1)))
             .all()
         )
@@ -2391,20 +2397,17 @@ def _ocr_format(book_id, requested_format="pdf"):
     return data, normalized_format
 
 
+def _ocr_target(book_id, requested_format):
+    book = calibre_db.get_filtered_book(book_id)
+    if not book:
+        abort(404)
+    data, normalized_format = _ocr_format(book_id, requested_format)
+    return book, data, normalized_format
+
+
 def _ocr_document(book_id, requested_format):
-    book = calibre_db.get_filtered_book(book_id)
-    if not book:
-        abort(404)
-    data, normalized_format = _ocr_format(book_id, requested_format)
-    return book, extract_book_ocr(book, data, normalized_format)
-
-
-def _ocr_status(book_id, requested_format):
-    book = calibre_db.get_filtered_book(book_id)
-    if not book:
-        abort(404)
-    data, normalized_format = _ocr_format(book_id, requested_format)
-    return book_ocr_available(book, data, normalized_format)
+    book, data, normalized_format = _ocr_target(book_id, requested_format)
+    return book, extract_book_ocr(book, data, normalized_format, allow_extract=False)
 
 
 @web.route("/api/read/<int:book_id>/ocr/status")
@@ -2412,14 +2415,15 @@ def _ocr_status(book_id, requested_format):
 @login_required_if_no_ano
 @viewer_required
 def read_book_ocr_status(book_id, book_format="pdf"):
+    book, data, normalized_format = _ocr_target(book_id, book_format)
     try:
-        available = _ocr_status(book_id, book_format)
+        available = book_ocr_available(book, data, normalized_format)
     except OcrBookNotFoundError:
         abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return jsonify({"available": False})
-    return jsonify({"available": available})
+    return jsonify({"available": available, "state": None if available else ocr_job_state(book_id, normalized_format)})
 
 
 @web.route("/api/read/<int:book_id>/ocr")
@@ -2427,12 +2431,16 @@ def read_book_ocr_status(book_id, book_format="pdf"):
 @login_required_if_no_ano
 @viewer_required
 def read_book_ocr_api(book_id, book_format="pdf"):
+    """Return the cached OCR document. Never extracts: a miss answers 202 with the state of the queued job."""
     try:
         book, document = _ocr_document(book_id, book_format)
     except OcrBookNotFoundError:
         abort(404)
-    except OcrScannedPdfError:
-        return jsonify({"error": "OCR is disabled for fully scanned PDF pages."}), 422
+    except OcrNotReadyError:
+        response = jsonify({"state": ocr_job_state(book_id, book_format.upper()) or {"status": "idle"}})
+        response.status_code = 202
+        response.headers["Cache-Control"] = "private, no-store"
+        return response
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return jsonify({"error": "OCR is not available for this document."}), 503
@@ -2454,6 +2462,35 @@ def read_book_ocr_api(book_id, book_format="pdf"):
     return response
 
 
+@web.route("/api/read/<int:book_id>/ocr/<book_format>", methods=["POST"])
+@csrf.exempt  # pyright: ignore[reportAttributeAccessIssue,reportOptionalMemberAccess]
+@limiter.limit("10/minute", key_func=helper.get_client_ip)  # pyright: ignore[reportAttributeAccessIssue]
+@login_required_if_no_ano
+@viewer_required
+def queue_book_ocr_api(book_id, book_format="pdf"):
+    """Queue OCR for a book on the background OCR worker. Idempotent; returns immediately.
+
+    CSRF-exempt like the other cookie-authenticated JSON endpoints: the session cookie is SameSite=Lax, so a
+    cross-site POST carries no session, and the request only starts work a reader could start anyway.
+    """
+    book, data, normalized_format = _ocr_target(book_id, book_format)
+    try:
+        if book_ocr_available(book, data, normalized_format):
+            return jsonify({"state": {"status": "done"}})
+        state = queue_book_ocr(book.id, book.title, book.path, data.name, normalized_format)
+    except OcrBookNotFoundError:
+        abort(404)
+    except OcrQueueFullError:
+        return jsonify({"error": "Too many documents are being processed. Try again in a few minutes."}), 429
+    except OcrUnavailableError as exc:
+        log.error("OCR unavailable for book %d: %s", book_id, exc)
+        return jsonify({"error": "OCR is not available for this document."}), 503
+    response = jsonify({"state": state})
+    response.status_code = 202
+    response.headers["Cache-Control"] = "private, no-store"
+    return response
+
+
 @web.route("/read/<int:book_id>/ocr")
 @web.route("/read/<int:book_id>/ocr/<book_format>")
 @login_required_if_no_ano
@@ -2463,8 +2500,8 @@ def read_book_ocr(book_id, book_format="pdf"):
         book, document = _ocr_document(book_id, book_format)
     except OcrBookNotFoundError:
         abort(404)
-    except OcrScannedPdfError:
-        return "OCR is disabled for fully scanned PDF pages.", 422
+    except OcrNotReadyError:
+        return "This document has not been OCR-processed yet. Start it from the book page.", 202
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return "OCR is not available for this document.", 503
@@ -2475,6 +2512,7 @@ def read_book_ocr(book_id, book_format="pdf"):
             title=book.title,
             book=book,
             document=document,
+            document_format=book_format.lower(),
         )
     )
     response.headers["Cache-Control"] = "private, no-store"
@@ -2597,7 +2635,25 @@ def _load_book_slug_map():
     return slugs
 
 
-_BOOK_SLUGS = _load_book_slug_map()
+_BOOK_SLUGS_CACHE = {}
+
+
+def _get_book_slugs():
+    # seed.mjs regenerates book-slugs.json after every catalog rebuild, so a
+    # load-once map goes stale and newly added books 404 on their numeric URL.
+    path = _book_slug_map_path()
+    if not path or not os.path.isfile(path):
+        return {}
+    try:
+        mtime = os.stat(path).st_mtime_ns
+    except OSError:
+        return {}
+    if _BOOK_SLUGS_CACHE.get("path") == path and _BOOK_SLUGS_CACHE.get("mtime") == mtime:
+        return _BOOK_SLUGS_CACHE["slugs"]
+    slugs = _load_book_slug_map()
+    _BOOK_SLUGS_CACHE.clear()
+    _BOOK_SLUGS_CACHE.update(path=path, mtime=mtime, slugs=slugs)
+    return slugs
 
 
 @web.route("/book/<int:book_id>/")
@@ -2606,7 +2662,7 @@ def show_book(book_id, title_slug=None):
     # The legacy Flask host keeps numeric URLs and is excluded from indexing.
     if request.host.split(":", 1)[0] == "old-pustaka.taratsa.id":
         return _show_book(book_id)
-    slug = _BOOK_SLUGS.get(book_id)
+    slug = _get_book_slugs().get(book_id)
     if slug:
         return redirect(f"/book/{slug}/", code=301)
     abort(404)

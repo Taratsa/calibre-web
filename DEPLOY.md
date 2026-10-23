@@ -45,26 +45,60 @@ the Astro image. No additional Caddy route or service is required.
 
 ### Document OCR
 
-The Flask backend exposes `/read/<book-id>/ocr/?format=pdf` and
-`/read/<book-id>/ocr/?format=epub`. Both routes use the same viewer permissions
-as the existing readers. Text-based and mixed PDFs are supported; fully scanned
-PDFs are skipped. EPUB XHTML spine content is extracted directly.
-`pdf-inspector` runs in the backend; it is not installed in the Astro frontend.
+The Flask backend exposes `/read/<book-id>/ocr/<format>` (`pdf` or `epub`). Both
+routes use the same viewer permissions
+as the existing readers. PDFs (text-based, mixed and fully scanned) are sent to
+a TurboOCR server over its streaming endpoint (`POST /ocr/stream?mode=auto&as_blocks=1&tables=1&autorotate=1`):
+pages with a trusted embedded text layer use that text, and every other page (scans,
+image-only pages) is rendered and OCR'd on the server's GPU. On a born-digital book
+this is about 6x faster than OCR-ing every page and had fewer word errors in a
+comparison on one book (`mode=ocr` garbled 16 words the text layer had right).
+Layout blocks are rendered in reading order; running headers, page numbers and pull
+quotes are dropped and footnotes are grouped at section breaks (`cps/ocr_layout.py`).
+EPUB XHTML spine content is extracted directly.
+No OCR models or native libraries are installed in the backend image.
 
-Configure the model cache in `.env`:
+Configure the server in `.env`:
 
 ```dotenv
-XDG_CACHE_HOME=/config/ocr-cache
+TURBOOCR_URL=http://100.73.167.16:8020
+TURBOOCR_TIMEOUT_SECONDS=900
+TURBOOCR_IDLE_SECONDS=120
 OCR_CACHE_DIR=/config/ocr-cache/results
-PDF_INSPECTOR_OFFLINE=0
-PDFIUM_LIB_PATH=/usr/local/lib/libpdfium.so
-ORT_DYLIB_PATH=/usr/local/lib/libonnxruntime.so
 ```
 
-The backend stores extracted text and scanned-PDF decisions under
-`/config/ocr-cache/results`, keyed by book, format, file size, and modification
-time. Scanned PDFs are skipped and do not expose an OCR link. The image currently
-targets x86_64; use matching ARM64 runtime assets before deploying on ARM hosts.
+The stream endpoint is used rather than `/ocr/pdf` because the server closes any
+connection silent for 120 s (`IDLE_CONNECTION_TIMEOUT_S`); a large book (e.g. a
+91 MB / 297-page scan) takes 2.5-5 minutes to finish and would otherwise return
+504. The server's request-body cap (`max_body_mb`, read it from `GET /capabilities`)
+was 100 MB when first tested and 512 MB later, so it is operator-configurable.
+`autorotate=1` is on because scanned books are often scanned sideways: without
+it the layout model reads sideways pages as vertical strips and the reading
+order is wrong. Only one OCR job runs at a time per backend process. The backend
+stores extracted text under `/config/ocr-cache/results`, keyed by book, format,
+file size, and modification time; an incomplete or failed OCR run is never cached.
+
+**On-demand queue.** A page load never runs a PDF extraction (it takes minutes and
+would hit the proxy timeout): `GET /api/read/<id>/ocr/<format>` returns the cached
+document, or `202` with the job state when the PDF has not been processed.
+The reader page then offers a "Mulai proses OCR" button, which sends
+`POST /api/read/<id>/ocr/<format>`; that queues the job on a dedicated single-thread
+queue (`cps/tasks/ocr_queue.py`, separate from the shared mail/convert worker) and
+returns at once. The page polls `/api/read/<id>/ocr/status/<format>` for
+page-by-page progress and reloads when the result is cached. Only the explicit
+POST queues work, so crawlers following links cannot start GPU jobs. At most 5
+jobs may be pending (more get `429`), the POST is rate limited to 10/minute per
+IP, and a failed job can be retried straight away. The queue lives in memory: a
+backend restart drops queued jobs (users press the button again; finished
+results are on disk). Admins can still pre-process the catalog with the
+`/ocr/scan` task or `OCR_SCAN_CRON`. Caddy must route `/api/read/*` to Flask.
+
+**Reader text size.** The OCR reader has an A− / 100% / A+ control in its toolbar
+(85%, 100%, 115%, 130%, 150%, 175%). The choice is stored per browser in
+`localStorage` (`ocr-font-scale`) and applied before first paint, so it persists
+across books without flashing the default size. It scales body text, headings and
+tables together; clicking the percentage resets to 100%.
+
 ```bash
 # 1. Configure environment
 cp .env.example .env

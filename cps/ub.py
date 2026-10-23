@@ -93,7 +93,17 @@ else:
 # concrete `session` object (concurrent greenlets corrupt the session state and
 # lose increments). Each write opens its own short-lived connection, keeping the
 # counter isolated from the ORM session used everywhere else.
-_app_engine = None  # type: ignore[assignment]
+#
+# Counter connections run with PRAGMA foreign_keys=ON: every downloads row must
+# reference a real user. Anonymous hits use user_id=0, backed by the sentinel
+# row inserted at startup (see _ensure_anonymous_downloads_user). The ORM engine
+# deliberately runs WITHOUT the pragma: app-wide enforcement would break
+# _delete_user, because audit_log and other children keep referencing deleted
+# users.
+_counter_engine = None  # type: ignore[assignment]
+
+# Sentinel user row name for anonymous download counters (user_id=0).
+ANONYMOUS_DOWNLOADS_USER_NAME = "__anonymous__"
 
 Base = declarative_base()
 searched_ids: dict = {}  # pyright: ignore[reportMissingTypeArgument]
@@ -856,11 +866,17 @@ def clean_database(_session):
 # greenlets never corrupt each other's transaction state. The upsert is a single
 # atomic statement on the (user_id, book_id) unique index; a concurrent first
 # insert is resolved by the ON CONFLICT clause instead of raising for the loser.
+def _enable_sqlite_foreign_keys(dbapi_conn, _record):
+    # PRAGMA foreign_keys is per-connection and a no-op inside a transaction,
+    # so it must run on every new connection before the first BEGIN.
+    dbapi_conn.execute("PRAGMA foreign_keys=ON")
+
+
 def _counter_connection():
-    global _app_engine
-    if _app_engine is None:
+    global _counter_engine
+    if _counter_engine is None:
         return None
-    return _app_engine.connect()
+    return _counter_engine.connect()
 
 
 def update_download(book_id, user_id):
@@ -884,9 +900,10 @@ def update_download(book_id, user_id):
                 """,
                 (book_id, user_id, now),
             )
-    except exc.OperationalError:
-        # DB is locked/read-only; never fail the download because the counter
-        # could not be written. The download itself is unaffected.
+    except (exc.OperationalError, exc.IntegrityError):
+        # DB is locked/read-only, or the parent user row is missing under FK
+        # enforcement; never fail the download because the counter could not be
+        # written. The download itself is unaffected.
         log.warning("Unable to increment download counter for book %s user %s", book_id, user_id)
     finally:
         conn.close()
@@ -961,15 +978,30 @@ def init_db_thread():
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
     return Session()
+
+# downloads rows for anonymous visitors point at user_id=0; with foreign keys
+# enforced on counter connections that id must reference a real user row.
+# INSERT OR IGNORE keeps the migration idempotent across restarts.
+def _ensure_anonymous_downloads_user(engine):
+    with engine.begin() as conn:
+        conn.exec_driver_sql(
+            "INSERT OR IGNORE INTO user (id, name, email, role, password, locale,"
+            " sidebar_view, default_language, view_settings)"
+            " VALUES (0, ?, ?, 0, '', 'en', 0, 'all', '{}')",
+            (ANONYMOUS_DOWNLOADS_USER_NAME, ANONYMOUS_DOWNLOADS_USER_NAME + "@invalid"),
+        )
+
 def init_db(app_db_path):
     # Open session for database connection
     global session
     global app_DB_path
-    global _app_engine
+    global _counter_engine
 
     app_DB_path = app_db_path
-    engine = create_engine(f"sqlite:///{app_db_path}", echo=False)
-    _app_engine = engine
+    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
+    # ORM engine: FK enforcement OFF (see the _counter_engine docs above).
+    _counter_engine = create_engine(f"sqlite:///{app_db_path}", echo=False)
+    event.listen(_counter_engine, "connect", _enable_sqlite_foreign_keys)
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -988,6 +1020,7 @@ def init_db(app_db_path):
         _ensure_download_index(engine)
         create_admin_user(session)
         create_anonymous_user(session)
+    _ensure_anonymous_downloads_user(engine)
 
 
 def password_change(user_credentials=None):

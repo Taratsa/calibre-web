@@ -45,7 +45,7 @@
         path /admin* /ajax/* /admin/*
         path /login /login/* /logout /logout/*
         path /me /register* /remote_login*
-        path /read/* /show/* /download/* /send/*
+        path /read/* /show/* /download/* /send/* /api/read/*
         path /opds /opds/* /kobo/*
         path /cover/* /series_cover/*
         path /book/*?

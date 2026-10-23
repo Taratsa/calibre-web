@@ -124,7 +124,7 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
   .video-tools input { width: 100%; }
   .video-tools input:focus, .video-tools select:focus, .video-tools button:focus-visible, .video-pagination a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .video-tools button { border-color: var(--fg); background: var(--fg); color: var(--bg); cursor: pointer; font-weight: 600; }
-  .video-tools button:hover { border-color: var(--accent); background: var(--accent); }
+  .video-tools button:hover { background: var(--muted-strong); border-color: var(--muted-strong); }
   .video-tools .reset { display: inline-flex; align-items: center; padding: 0.5rem; color: var(--muted); font-size: 0.9rem; }
   .video-summary { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; color: var(--muted); font-size: 0.875rem; }
   .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 0; list-style: none; }

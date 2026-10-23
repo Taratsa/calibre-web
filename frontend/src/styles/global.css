@@ -6,85 +6,87 @@
    Light is the base palette. Dark is applied either by the OS preference
    (unless the reader explicitly chose light) or by an explicit data-theme. */
 :root {
-  --bg: #fafaf7;
-  --fg: #1f1f1f;
+  --bg: #ffffff;
+  --fg: rgba(0, 0, 0, 0.92);
   --surface: #ffffff;
-  --surface-2: #f9fafb;
-  --surface-3: #f3f4f6;
-  --border: #d1d5db;
-  --border-subtle: #e5e7eb;
-  --muted: #6b7280;
-  --muted-strong: #4b5563;
-  --muted-soft: #9ca3af;
+  --surface-2: rgba(0, 0, 0, 0.03);
+  --surface-3: rgba(0, 0, 0, 0.06);
+  --border: rgba(0, 0, 0, 0.16);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --muted: rgba(0, 0, 0, 0.60);
+  --muted-strong: rgba(0, 0, 0, 0.74);
+  --muted-soft: rgba(0, 0, 0, 0.40);
   --accent: #b91c1c;
-  --inverse-bg: #1f1f1f;
-  --inverse-fg: #fafaf7;
-  --footer-bg: #1f1f1f;
-  --footer-fg: #d4d4d4;
-  --footer-link: #fafaf7;
-  --mark-bg: #fef08a;
-  --mark-fg: #1f1f1f;
-  --focus: #2563eb;
-  --star: #b45309;
-  --shadow-sm: rgba(0, 0, 0, 0.1);
-  --shadow-lg: rgba(0, 0, 0, 0.12);
-  --ring: rgba(31, 31, 31, 0.08);
+  --inverse-bg: #111111;
+  --inverse-fg: #ffffff;
+  --footer-bg: #111111;
+  --footer-fg: rgba(255, 255, 255, 0.70);
+  --footer-link: #ffffff;
+  --mark-bg: rgba(0, 0, 0, 0.12);
+  --mark-fg: rgba(0, 0, 0, 0.92);
+  --focus: #111111;
+  --star: rgba(0, 0, 0, 0.85);
+  --shadow-sm: rgba(0, 0, 0, 0.06);
+  --shadow-lg: rgba(0, 0, 0, 0.08);
+  --ring: rgba(0, 0, 0, 0.10);
   color-scheme: light;
 }
 
+/* Dark neutrals use an alpha-white ladder on black; never mix alpha-black
+   and alpha-white within one surface. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #16161a;
-    --fg: #e8e6e3;
-    --surface: #1f1f24;
-    --surface-2: #26262c;
-    --surface-3: #2d2d34;
-    --border: #3f3f46;
-    --border-subtle: #2e2e35;
-    --muted: #a1a1aa;
-    --muted-strong: #c4c4cc;
-    --muted-soft: #71717a;
+    --bg: #0d0d0d;
+    --fg: rgba(255, 255, 255, 0.92);
+    --surface: #121212;
+    --surface-2: rgba(255, 255, 255, 0.05);
+    --surface-3: rgba(255, 255, 255, 0.09);
+    --border: rgba(255, 255, 255, 0.18);
+    --border-subtle: rgba(255, 255, 255, 0.10);
+    --muted: rgba(255, 255, 255, 0.60);
+    --muted-strong: rgba(255, 255, 255, 0.75);
+    --muted-soft: rgba(255, 255, 255, 0.42);
     --accent: #f87171;
-    --inverse-bg: #e8e6e3;
-    --inverse-fg: #16161a;
-    --footer-bg: #101013;
-    --footer-fg: #a1a1aa;
-    --footer-link: #e8e6e3;
-    --mark-bg: #78560a;
-    --mark-fg: #fde68a;
-    --focus: #60a5fa;
-    --star: #fbbf24;
-    --shadow-sm: rgba(0, 0, 0, 0.5);
-    --shadow-lg: rgba(0, 0, 0, 0.6);
-    --ring: rgba(232, 230, 227, 0.12);
+    --inverse-bg: rgba(255, 255, 255, 0.92);
+    --inverse-fg: #0d0d0d;
+    --footer-bg: #000000;
+    --footer-fg: rgba(255, 255, 255, 0.60);
+    --footer-link: rgba(255, 255, 255, 0.92);
+    --mark-bg: rgba(255, 255, 255, 0.18);
+    --mark-fg: #ffffff;
+    --focus: #ffffff;
+    --star: rgba(255, 255, 255, 0.85);
+    --shadow-sm: rgba(0, 0, 0, 0.40);
+    --shadow-lg: rgba(0, 0, 0, 0.50);
+    --ring: rgba(255, 255, 255, 0.16);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #16161a;
-  --fg: #e8e6e3;
-  --surface: #1f1f24;
-  --surface-2: #26262c;
-  --surface-3: #2d2d34;
-  --border: #3f3f46;
-  --border-subtle: #2e2e35;
-  --muted: #a1a1aa;
-  --muted-strong: #c4c4cc;
-  --muted-soft: #71717a;
+  --bg: #0d0d0d;
+  --fg: rgba(255, 255, 255, 0.92);
+  --surface: #121212;
+  --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.18);
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --muted: rgba(255, 255, 255, 0.60);
+  --muted-strong: rgba(255, 255, 255, 0.75);
+  --muted-soft: rgba(255, 255, 255, 0.42);
   --accent: #f87171;
-  --inverse-bg: #e8e6e3;
-  --inverse-fg: #16161a;
-  --footer-bg: #101013;
-  --footer-fg: #a1a1aa;
-  --footer-link: #e8e6e3;
-  --mark-bg: #78560a;
-  --mark-fg: #fde68a;
-  --focus: #60a5fa;
-  --star: #fbbf24;
-  --shadow-sm: rgba(0, 0, 0, 0.5);
-  --shadow-lg: rgba(0, 0, 0, 0.6);
-  --ring: rgba(232, 230, 227, 0.12);
+  --inverse-bg: rgba(255, 255, 255, 0.92);
+  --inverse-fg: #0d0d0d;
+  --footer-bg: #000000;
+  --footer-fg: rgba(255, 255, 255, 0.60);
+  --footer-link: rgba(255, 255, 255, 0.92);
+  --mark-bg: rgba(255, 255, 255, 0.18);
+  --mark-fg: #ffffff;
+  --focus: #ffffff;
+  --star: rgba(255, 255, 255, 0.85);
+  --shadow-sm: rgba(0, 0, 0, 0.40);
+  --shadow-lg: rgba(0, 0, 0, 0.50);
+  --ring: rgba(255, 255, 255, 0.16);
   color-scheme: dark;
 }
 
@@ -98,7 +100,7 @@ html {
   color: var(--fg);
 }
 
-h1 { @apply text-2xl font-bold mb-6; }
+h1 { @apply text-2xl font-semibold mb-6; }
 h2 { @apply text-xl font-semibold mb-4; }
 
 body {
@@ -118,13 +120,13 @@ a, button, input, select, summary { min-height: 44px; min-width: 44px; }
 img { max-width: 100%; height: auto; display: block; }
 
 .site-header {
-  @apply sticky top-0 z-10 border-b shadow-sm;
+  @apply sticky top-0 z-10 border-b;
   background: var(--bg);
   color: var(--fg);
   border-color: var(--border-subtle);
 }
 .site-header .inner {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0.75rem 1.25rem;
   display: flex;
@@ -158,6 +160,8 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 .site-header .desktop-nav a:hover,
 .site-header .desktop-nav .nav-group__toggle:hover,
@@ -173,7 +177,8 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
 }
 .site-header .desktop-nav .nav-group__toggle {
-  display: block;
+  display: flex;
+  align-items: center;
   min-height: 44px;
 }
 .site-header .desktop-nav .nav-group__menu {
@@ -195,7 +200,8 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
 }
 .site-header .desktop-nav .nav-group__menu a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.5rem 0.75rem;
   white-space: nowrap;
 }
@@ -250,7 +256,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 44px;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--surface);
   color: var(--fg);
   cursor: pointer;
@@ -302,7 +308,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 main.container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem 1.25rem 3rem;
   flex: 1 1 auto;

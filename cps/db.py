@@ -18,6 +18,7 @@
 import json
 import os
 import re
+import sqlite3
 import time
 from datetime import UTC, datetime
 from sqlite3 import OperationalError as sqliteOperationalError
@@ -1143,31 +1144,10 @@ class CalibreDB:
         term = strip_whitespaces(term).lower()
         self.create_functions()
 
-        # Try FTS5 search first for better performance
-        fts_ids = None
-        # Check if FTS5 table exists before attempting search
-        if not hasattr(self, "_fts_available"):
-            try:
-                result = self.session.execute(
-                    text("SELECT name FROM sqlite_master WHERE type='table' AND name='books_fts'")
-                ).fetchone()
-                self._fts_available = result is not None  # pyright: ignore[reportUninitializedInstanceVariable]
-            except Exception:
-                self._fts_available = False
-
-        if self._fts_available:
-            try:
-                # Escape FTS5 special characters to prevent query errors
-                term_fts = term.replace('"', '""')
-                # Wrap in quotes for phrase matching and better accuracy
-                fts_results = self.session.execute(
-                    text("SELECT DISTINCT rowid FROM books_fts WHERE books_fts MATCH :term"), {"term": f'"{term_fts}"'}
-                ).fetchall()
-                if fts_results:
-                    fts_ids = [r[0] for r in fts_results]
-            except Exception as ex:
-                # FTS5 query failed, fall back to traditional search
-                log.debug(f"FTS5 search failed for term '{term}', using fallback: {ex}")
+        cc = self.get_cc_columns(config, filter_config_custom_read=True)
+        # Trigram FTS5 prefilter (index lives in app.db): candidate book ids for
+        # term, or None when ineligible/unavailable -> caller keeps plain LIKE.
+        fts_ids = self._fts_prefilter(term, cc)
 
         # Build base query with optimized joins
         base_query = self.generate_linked_query(config.config_read_column, Books)
@@ -1184,9 +1164,10 @@ class CalibreDB:
         elif len(join) == 1:
             base_query = base_query.outerjoin(join[0])
 
-        # If FTS5 found results, use those IDs
-        if fts_ids:
-            return base_query.filter(Books.id.in_(fts_ids))
+        # Empty candidate set: for eligible terms every LIKE hit is an FTS hit,
+        # so no LIKE hit can exist either -> skip the table scan entirely.
+        if fts_ids == []:
+            return base_query.filter(false())
 
         # Fallback to traditional search with optimized subqueries
         author_terms = re.split("[, ]+", term)
@@ -1202,7 +1183,6 @@ class CalibreDB:
             author_subquery = author_subquery.filter(and_(*author_filters))
 
         # Build optimized filter expressions
-        cc = self.get_cc_columns(config, filter_config_custom_read=True)
         filter_expression = [
             Books.id.in_(
                 self.session.query(books_tags_link.c.book)
@@ -1231,7 +1211,127 @@ class CalibreDB:
                     )
                 )
 
-        return base_query.filter(or_(*filter_expression))
+        result = base_query.filter(or_(*filter_expression))
+        if fts_ids:  # narrow the OR-scan to prefilter candidates (LIKE semantics unchanged)
+            result = result.filter(Books.id.in_(fts_ids))
+        return result
+
+    # -- trigram FTS5 prefilter (index persisted in app.db, rebuilt on catalog change) --
+
+    @staticmethod
+    def _fts_match_expression(term):
+        """Build a safe FTS5 MATCH expression for term, or None when the term
+        cannot be prefiltered without diverging from LIKE semantics."""
+        if "%" in term or "_" in term:  # LIKE wildcards match beyond a literal
+            return None
+        if any(ord(c) < 32 for c in term):  # NUL/control chars break FTS string literals
+            return None
+        words = [w for w in re.split("[, ]+", term) if w]
+        if not words or any(len(w) < 3 for w in words):  # trigram covers >=3 chars only
+            return None
+        return " ".join('"' + w.replace('"', '""') + '"' for w in words)
+
+    def _fts_index_status(self):
+        """Catalog book count once the app.db FTS index matches the current
+        catalog (rebuilding it when stale), else None (index unusable)."""
+        try:
+            row = self.session.execute(
+                text("SELECT COUNT(*), COALESCE(MAX(last_modified), '') FROM calibre.books")
+            ).fetchone()
+        except Exception as ex:
+            log.debug(f"FTS fingerprint query failed, using LIKE fallback: {ex}")
+            return None
+        fingerprint = f"{row[0]}|{row[1]}"
+        try:
+            stored = self.session.execute(
+                text("SELECT fingerprint FROM app_settings.books_fts_meta WHERE id = 1")
+            ).fetchone()
+        except Exception:
+            stored = None
+        if stored is None or stored[0] != fingerprint:
+            if not self._rebuild_fts_index():
+                return None
+        return row[0]
+
+    def _rebuild_fts_index(self):
+        """(Re)build the trigram index in app.db from metadata.db.
+        Read-only towards library/ (only SELECTs on calibre.*)."""
+        conn = None
+        try:
+            # app.db writable, metadata.db attached strictly read-only (library/ invariant)
+            app_uri = f"file:{quote(os.path.abspath(self.app_db_path))}?mode=rw"
+            cal_uri = f"file:{quote(os.path.abspath(os.path.join(self.config_calibre_dir, 'metadata.db')))}?mode=ro"
+            conn = sqlite3.connect(app_uri, uri=True, timeout=10.0, isolation_level=None)
+            conn.execute("ATTACH DATABASE ? AS calibre", (cal_uri,))
+            row = conn.execute("SELECT COUNT(*), COALESCE(MAX(last_modified), '') FROM calibre.books").fetchone()
+            fingerprint = f"{row[0]}|{row[1]}"
+            conn.execute("BEGIN IMMEDIATE")  # serializes concurrent rebuilds (busy: up to 10 s)
+            conn.execute("DROP TABLE IF EXISTS books_fts")
+            conn.execute(
+                "CREATE VIRTUAL TABLE books_fts USING fts5("
+                "title, authors, tags, series, publisher, tokenize='trigram')"
+            )
+            conn.execute(
+                "INSERT INTO books_fts(rowid, title, authors, tags, series, publisher) "
+                "SELECT b.id, b.title, "
+                "COALESCE((SELECT group_concat(lower(a.name), ' ') FROM calibre.books_authors_link l "
+                "JOIN calibre.authors a ON a.id = l.author WHERE l.book = b.id), ''), "
+                "COALESCE((SELECT group_concat(lower(t.name), ' ') FROM calibre.books_tags_link l "
+                "JOIN calibre.tags t ON t.id = l.tag WHERE l.book = b.id), ''), "
+                "COALESCE((SELECT group_concat(lower(s.name), ' ') FROM calibre.books_series_link l "
+                "JOIN calibre.series s ON s.id = l.series WHERE l.book = b.id), ''), "
+                "COALESCE((SELECT group_concat(lower(p.name), ' ') FROM calibre.books_publishers_link l "
+                "JOIN calibre.publishers p ON p.id = l.publisher WHERE l.book = b.id), '') "
+                "FROM calibre.books b"
+            )
+            conn.execute(
+                "CREATE TABLE IF NOT EXISTS books_fts_meta (id INTEGER PRIMARY KEY, fingerprint TEXT NOT NULL)"
+            )
+            conn.execute(
+                "INSERT INTO books_fts_meta(id, fingerprint) VALUES (1, ?) "
+                "ON CONFLICT(id) DO UPDATE SET fingerprint = excluded.fingerprint",
+                (fingerprint,),
+            )
+            conn.execute("COMMIT")
+            return True
+        except Exception as ex:
+            log.warning(f"FTS index rebuild failed, search uses LIKE fallback: {ex}")
+            if conn is not None:
+                with contextlib.suppress(Exception):
+                    conn.execute("ROLLBACK")
+            return False
+        finally:
+            if conn is not None:
+                conn.close()
+
+    def _fts_prefilter(self, term, cc):
+        """Candidate book ids for term from the FTS index.
+
+        []     index proves no LIKE hit exists -> search skips the table scan
+        [...]  narrowing id list (LIKE query stays applied)
+        None   use plain LIKE (ineligible term, index stale/unavailable,
+               searchable custom columns present, or candidates too broad)
+        """
+        if cc:  # searchable custom columns are not part of the FTS index
+            return None
+        match = self._fts_match_expression(term)
+        if match is None:
+            return None
+        book_count = self._fts_index_status()
+        if book_count is None:
+            return None
+        try:
+            rows = self.session.execute(
+                text("SELECT rowid FROM app_settings.books_fts WHERE books_fts MATCH :m"), {"m": match}
+            ).fetchall()
+        except Exception as ex:
+            log.debug(f"FTS match failed for {term!r}, using LIKE fallback: {ex}")
+            return None
+        ids = [r[0] for r in rows]
+        if ids and len(ids) * 2 > book_count:  # hits cover most of the catalog: not worth narrowing
+            return None
+        return ids
+
 
     def get_cc_columns(self, config, filter_config_custom_read=False):
         tmp_cc = self.session.query(CustomColumns).filter(CustomColumns.datatype.notin_(cc_exceptions)).all()

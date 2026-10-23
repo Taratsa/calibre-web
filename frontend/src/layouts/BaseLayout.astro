@@ -61,6 +61,8 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
     <link rel="preconnect" href="https://static.cloudflareinsights.com" />
     <link rel="dns-prefetch" href="https://umami.kenadera.org" />
     <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+    <link rel="preconnect" href="https://feedback.taratsa.id" />
+    <link rel="dns-prefetch" href="https://feedback.taratsa.id" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()" />
 
@@ -75,8 +77,8 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
     <link rel="service-doc" href="/.well-known/agent-skills/index.json" />
     <link rel="describedby" href="/.well-known/mcp/server-card.json" />
 
-    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
 
     <script is:inline>
       // Applied before first paint so a stored preference never flashes.
@@ -115,6 +117,23 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
     }</script>
 
     <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript"></script>
+    <!-- START Formbricks Surveys -->
+    <script is:inline type="text/javascript">
+      !function () {
+        var appUrl = "https://feedback.taratsa.id";
+        var workspaceId = "cmuxi018b000101pfmpnjlaav";
+        var t = document.createElement("script");
+        t.type = "text/javascript";
+        t.async = true;
+        t.src = appUrl + "/js/formbricks.umd.cjs";
+        t.onload = function () {
+          window.formbricks.setup({ workspaceId: workspaceId, appUrl: appUrl });
+        };
+        var e = document.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(t, e);
+      }();
+    </script>
+    <!-- END Formbricks Surveys -->
   </head>
   <body>
     <header class="site-header">

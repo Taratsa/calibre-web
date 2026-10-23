@@ -919,7 +919,7 @@ def edit_restriction(res_type, user_id):
         if res_type == 2:  # Tags per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-                if usr is None:
+                if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                     return ""
             else:
                 usr = current_user
@@ -930,7 +930,7 @@ def edit_restriction(res_type, user_id):
         if res_type == 3:  # CColumn per user
             if isinstance(user_id, int):
                 usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-                if usr is None:
+                if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                     return ""
             else:
                 usr = current_user
@@ -1018,7 +1018,7 @@ def add_restriction(res_type, user_id):
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-            if usr is None:
+            if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                 return ""
         else:
             usr = current_user
@@ -1031,7 +1031,7 @@ def add_restriction(res_type, user_id):
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-            if usr is None:
+            if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                 return ""
         else:
             usr = current_user
@@ -1088,7 +1088,7 @@ def delete_restriction(res_type, user_id):
     if res_type == 2:  # Tags per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-            if usr is None:
+            if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                 return ""
         else:
             usr = current_user
@@ -1101,7 +1101,7 @@ def delete_restriction(res_type, user_id):
     if res_type == 3:  # CustomC per user
         if isinstance(user_id, int):
             usr = ub.session.query(ub.User).filter(ub.User.id == int(user_id)).first()  # pyright: ignore[reportArgumentType]
-            if usr is None:
+            if usr is None or usr.id == 0:  # 0 = global-scope default, never the __anonymous__ counter row
                 return ""
         else:
             usr = current_user
@@ -2413,6 +2413,8 @@ def _delete_user(content):
             return _("User '%(nick)s' deleted", nick=content.name)
         else:
             # log.warning(_("Can't delete Guest User"))
+            if content.name == ub.ANONYMOUS_DOWNLOADS_USER_NAME:
+                raise Exception(_("Can't delete the anonymous downloads counter user"))
             raise Exception(_("Can't delete Guest User"))
     else:
         # log.warning("No admin user remaining, can't delete user")

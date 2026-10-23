@@ -1,15 +1,13 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import { getAllBooks } from '~/data';
+import { searchBooks, type SearchableBook } from '~/utils/search';
 import { truncateAuthorsHtml } from '~/utils/authors';
-import { authorPath } from '~/utils/author-url';
-import { bookPath } from '~/utils/book-url';
 
-const books = getAllBooks();
 const q = (Astro.url.searchParams.get('q') || '').trim();
-const initialResults = q ? searchBooks(books, q) : [];
-const initialCount = initialResults.length;
-const initialHtml = renderResults(initialResults);
+const { hits, total } = q ? searchBooks(q, 120) : { hits: [], total: 0 };
+const terms = q ? q.toLowerCase().split(/\s+/).filter(Boolean) : [];
+const statusText = total > hits.length ? `Menampilkan ${hits.length} dari ${total} hasil` : `${total} hasil`;
+const initialHtml = renderResults(hits);
 
 function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -32,111 +30,10 @@ function coverHtml(image: string, alt: string): string {
   return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
 }
 
-function excerpt(text: string, terms: string[], maxLen: number = 200): string {
-  const lower = text.toLowerCase();
-  let bestIdx = 0;
-  for (const t of terms) {
-    const idx = lower.indexOf(t);
-    if (idx >= 0) { bestIdx = idx; break; }
-  }
-  const start = Math.max(0, bestIdx - 80);
-  let snippet = text.slice(start, start + maxLen);
-  if (start > 0) snippet = '…' + snippet;
-  if (start + maxLen < text.length) snippet += '…';
-  return snippet;
-}
-
-function formatLabel(f: string): string {
-  const m: Record<string, string> = { pdf: 'PDF', epub: 'EPUB', mobi: 'MOBI', cbz: 'CBZ', cbr: 'CBR', djvu: 'DJVU', txt: 'TXT', html: 'HTML', azw3: 'AZW3' };
-  return m[f.toLowerCase()] || f.toUpperCase();
-}
-
-function searchBooks(all: any[], query: string) {
-  const ql = query.toLowerCase().trim();
-  const terms = ql.split(/\s+/).filter(Boolean);
-  const originalTerms = [...terms];
-
-  if (terms.length === 1 && terms[0].length > 4) {
-    const single = terms[0];
-    const titles = all.filter(b => (b.title || '').toLowerCase().includes(single));
-    if (titles.length === 0) {
-      const knownWords = new Set<string>();
-      for (const b of all) {
-        for (const w of (b.title || '').toLowerCase().split(/\s+/)) {
-          if (w.length > 2) knownWords.add(w);
-        }
-        for (const a of (b.authors || [])) {
-          for (const w of a.name.toLowerCase().split(/\s+/)) {
-            if (w.length > 2) knownWords.add(w);
-          }
-        }
-      }
-      let splitTerms: string[] = [];
-      let remainder = single;
-      while (remainder.length > 2) {
-        let found = false;
-        for (let i = remainder.length; i >= 3; i--) {
-          const prefix = remainder.slice(0, i);
-          if (knownWords.has(prefix)) {
-            splitTerms.push(prefix);
-            remainder = remainder.slice(i);
-            found = true;
-            break;
-          }
-        }
-        if (!found) { splitTerms.push(remainder); break; }
-      }
-      if (splitTerms.length > 1) {
-        terms.length = 0;
-        terms.push(...splitTerms);
-      }
-    }
-  }
-
-  if (terms.length === 0) terms.push(...originalTerms);
-
-  function scoreBook(b: any): number {
-    let s = 0;
-    const t = (b.title || '').toLowerCase();
-    const a = (b.authors || []).map((x: any) => x.name).join(' ').toLowerCase();
-    const tags = (b.tags || []).join(' ').toLowerCase();
-    const ser = b.series ? b.series.name.toLowerCase() : '';
-    const pub = b.publisher ? b.publisher.name.toLowerCase() : '';
-    const desc = (b.comment || '').toLowerCase();
-
-    for (const term of terms) {
-      if (t.includes(term)) s += 8;
-      if (t.startsWith(term)) s += 4;
-      if (a.includes(term)) s += 5;
-      if (tags.includes(term)) s += 3;
-      if (ser.includes(term)) s += 4;
-      if (pub.includes(term)) s += 3;
-      if (desc.includes(term)) {
-        s += 2;
-        if (!t.includes(term)) s += 0.5;
-      }
-      if (pub && pub.includes(term)) s += 1;
-      if (ser && ser.includes(term)) s += 1;
-    }
-    return s;
-  }
-
-  const scored = all
-    .map((b: any) => ({ b, s: scoreBook(b) }))
-    .filter(x => x.s > 0)
-    .sort((a: any, b: any) => b.s - a.s);
-  return scored.slice(0, 120);
-}
-
-function renderResults(scored: any[]): string {
-  if (scored.length === 0) {
-    return '';
-  }
-
-  const terms = (q || '').toLowerCase().split(/\s+/).filter(Boolean);
-  return scored.map(({ b }: any) => {
+function renderResults(hits: SearchableBook[]): string {
+  return hits.map(b => {
     const titleHighlighted = highlight(b.title, terms);
-    const authorHtml = truncateAuthorsHtml(b.authors ?? [], 60);
+    const authorHtml = truncateAuthorsHtml(b.authors, 60);
 
     return `<li><article class="card">
       <a href="${b.url}" class="card__cover" aria-label="Cover ${escapeHtml(b.title)}">${coverHtml(b.cover_url, b.title)}</a>
@@ -155,36 +52,31 @@ function renderResults(scored: any[]): string {
       <div class="search-form__input-wrap">
         <svg class="search-form__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="search" name="q" placeholder="Cari judul, penulis, kategori…" value={q} autofocus spellcheck="false" />
-        <kbd class="search-form__hint">/</kbd>
       </div>
       <button type="submit" class="search-form__btn">Cari</button>
     </form>
 
-    {q && (
-      <p id="search-status" class="search-status">{initialCount} hasil untuk "<strong>{q}</strong>"</p>
+    {q && total > 0 && (
+      <p id="search-status" class="search-status">{statusText} untuk "<strong>{q}</strong>"</p>
     )}
 
-    <div id="search-results" class="search-results" hidden={!initialCount && !q}>
-      <ul class="book-grid book-grid--cols-5" set:html={initialHtml || ''} />
-    </div>
+    {hits.length > 0 && (
+      <div id="search-results" class="search-results">
+        <ul class="book-grid book-grid--cols-5" set:html={initialHtml} />
+      </div>
+    )}
 
-    <div id="search-empty" class="search-empty" hidden>
-      <p>Tidak ditemukan hasil untuk "<strong>{q || ''}</strong>".</p>
-      <p class="search-empty__suggest">Coba kata kunci lain, periksa ejaan, atau <a href="/">kembali ke beranda</a>.</p>
-    </div>
-
-    <noscript>
-      {q && !initialHtml ? (
-        <div class="search-empty">
-          <p>Tidak ditemukan hasil untuk "<strong>{q}</strong>".</p>
-          <p class="search-empty__suggest">Coba kata kunci lain, atau <a href="/">kembali ke beranda</a>.</p>
-        </div>
-      ) : null}
-    </noscript>
+    {q && total === 0 && (
+      <div id="search-empty" class="search-empty">
+        <p>Tidak ditemukan hasil untuk "<strong>{q}</strong>".</p>
+        <p class="search-empty__suggest">Coba kata kunci lain, periksa ejaan, atau <a href="/">kembali ke beranda</a>.</p>
+      </div>
+    )}
   </div>
 </BaseLayout>
 <style>
-
+  .search-title {
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0 0 1rem;
   }
@@ -212,7 +104,7 @@ function renderResults(scored: any[]): string {
     width: 100%;
     padding: 0.65rem 0.9rem 0.65rem 2.4rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 4px;
     font: inherit;
     font-size: 0.95rem;
     background: var(--surface);
@@ -223,24 +115,12 @@ function renderResults(scored: any[]): string {
     border-color: var(--fg);
     box-shadow: 0 0 0 3px var(--ring);
   }
-  .search-form__hint {
-    position: absolute;
-    right: 0.6rem;
-    padding: 0.1rem 0.35rem;
-    font-size: 0.65rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--muted-soft);
-    background: var(--surface-2);
-    pointer-events: none;
-    line-height: 1.4;
-  }
   .search-form__btn {
     padding: 0.65rem 1.3rem;
     background: var(--fg);
     color: var(--inverse-fg);
     border: 0;
-    border-radius: 8px;
+    border-radius: 4px;
     font: inherit;
     font-size: 0.9rem;
     font-weight: 500;
@@ -255,7 +135,7 @@ function renderResults(scored: any[]): string {
     margin: 0 0 1rem;
     padding: 0.5rem 0.75rem;
     background: var(--surface-2);
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 0.88rem;
     color: var(--muted-strong);
   }
@@ -268,6 +148,10 @@ function renderResults(scored: any[]): string {
     from { opacity: 0; transform: translateY(4px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .search-results:not([hidden]) { animation: none; }
+  }
+
 
   /* ── Grid ── */
   .book-grid {
@@ -304,7 +188,7 @@ function renderResults(scored: any[]): string {
     text-decoration: none;
   }
   .card__title a:hover { text-decoration: underline; }
-  .card__title mark {
+  :global(.card__title mark) {
     background: var(--mark-bg);
     color: var(--mark-fg);
     padding: 0 0.1rem;
@@ -337,7 +221,4 @@ function renderResults(scored: any[]): string {
   }
   .search-empty a { color: var(--fg); }
 
-  @media (max-width: 540px) {
-    .search-form__hint { display: none; }
-  }
 </style>

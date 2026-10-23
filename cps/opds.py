@@ -21,7 +21,7 @@
 import datetime
 from urllib.parse import unquote_plus
 
-from flask import Blueprint, abort, g, jsonify, make_response, render_template, request
+from flask import Blueprint, abort, g, jsonify, make_response, redirect, render_template, request, url_for
 from flask_babel import get_locale
 from flask_babel import gettext as _
 from sqlalchemy.exc import InvalidRequestError, OperationalError
@@ -55,15 +55,22 @@ def feed_osd():
 @opds.route("/opds/search/<path:query>")
 @requires_basic_auth_if_no_ano
 def feed_cc_search(query):
-    # Handle strange query from Libera Reader with + instead of spaces
-    plus_query = unquote_plus(request.environ["RAW_URI"].split("/opds/search/")[1]).strip()
+    # Handle strange query from Libera Reader with + instead of spaces; the
+    # path segment only (query string carries offset pagination).
+    raw_path = request.environ["RAW_URI"].split("?", 1)[0]
+    plus_query = unquote_plus(raw_path.split("/opds/search/", 1)[1]).strip()
     return feed_search(plus_query)
 
 
 @opds.route("/opds/search", methods=["GET"])
 @requires_basic_auth_if_no_ano
 def feed_normal_search():
-    return feed_search(request.args.get("query", "").strip())
+    term = request.args.get("query", "").strip()
+    if not term:
+        return feed_search("")
+    # Canonical search URL is the path variant: feed.xml builds next/prev
+    # links from request.path, which would drop a ?query= parameter.
+    return redirect(url_for("opds.feed_cc_search", query=term, offset=request.args.get("offset", 0)))
 
 
 @opds.route("/opds/books")
@@ -627,11 +634,20 @@ class FeedObject:
 
 def feed_search(term):
     if term:
-        entries, __, ___ = calibre_db.get_search_results(term, config=config)
-        entries_count = len(entries) if len(entries) > 0 else 1
-        pagination = Pagination(1, entries_count, entries_count)
+        # Bound the feed: e-readers must not receive the entire hit list in
+        # one Atom page; next/prev links paginate via ?offset=.
+        off = request.args.get("offset") or 0
+        limit = config.config_books_per_page
+        entries, entries_count, pagination = calibre_db.get_search_results(term, config, off, None, limit)
+        if entries_count < 1:
+            entries_count = 1
+        if pagination is None:  # get_search_results skips it only when offset/limit missing
+            pagination = Pagination(1, limit, entries_count)
         cc = calibre_db.get_cc_columns(config, filter_config_custom_read=True)
-        return render_xml_template("feed.xml", searchterm=term, entries=entries, pagination=pagination, cc=cc)
+        link_query = url_for("opds.feed_cc_search", query=term)
+        return render_xml_template(
+            "feed.xml", searchterm=term, entries=entries, pagination=pagination, cc=cc, link_query=link_query
+        )
     else:
         return render_xml_template("feed.xml", searchterm="")
 

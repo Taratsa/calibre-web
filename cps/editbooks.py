@@ -18,6 +18,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import contextlib
 import json
 import os
 from datetime import UTC, datetime
@@ -1673,7 +1674,11 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
                 error = True
                 continue
 
-            file_name = book.path.rsplit("/", 1)[-1]
+            existing_format = calibre_db.get_book_format(book_id, file_ext.upper())
+            # Replacing a format must overwrite the file the library actually serves: its name comes from the
+            # database and is rarely the book folder's name (e.g. "Title - Author"), so saving under the folder
+            # name would add a second copy next to the old one.
+            file_name = existing_format.name if existing_format else book.path.rsplit("/", 1)[-1]
             filepath = os.path.normpath(os.path.join(config.get_book_path(), book.path))
             saved_filename = os.path.join(filepath, file_name + "." + file_ext)
 
@@ -1685,18 +1690,33 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
                     flash(_("Failed to create path %(path)s (Permission denied).", path=filepath), category="error")
                     error = True
                     continue
+            # Write beside the target and swap it in, so a failed upload never leaves a half-written book.
+            temporary_filename = f"{saved_filename}.upload"
             try:
-                requested_file.save(saved_filename)
+                requested_file.save(temporary_filename)
+                os.replace(temporary_filename, saved_filename)
             except OSError:
+                with contextlib.suppress(OSError):
+                    os.remove(temporary_filename)
                 flash(_("Failed to store file %(file)s.", file=saved_filename), category="error")
                 error = True
                 continue
 
             file_size = os.path.getsize(saved_filename)
 
-            # Format entry already exists, no need to update the database
-            if calibre_db.get_book_format(book_id, file_ext.upper()):
-                log.warning("Book format %s already existing", file_ext.upper())
+            if existing_format:
+                # Same format again: the file was replaced in place, refresh the stored size and the date.
+                try:
+                    existing_format.uncompressed_size = file_size
+                    book.last_modified = datetime.now(UTC)
+                    calibre_db.session.commit()
+                    log.info("Replaced %s of book %d (%d bytes)", file_ext.upper(), book_id, file_size)
+                except (OperationalError, IntegrityError, StaleDataError) as e:
+                    calibre_db.session.rollback()
+                    log.error_or_exception(f"Database error: {e}")
+                    flash(_("Oops! Database Error: %(error)s.", error=getattr(e, "orig", e)), category="error")
+                    error = True
+                    continue
             else:
                 try:
                     db_format = db.Data(book_id, file_ext.upper(), file_size, file_name)
@@ -1712,7 +1732,10 @@ def upload_book_formats(requested_files, book, book_id, no_cover=True):
 
             # Queue uploader info
             link = '<a href="{}">{}</a>'.format(url_for("web.show_book", book_id=book.id), escape(book.title))
-            upload_text = N_("File format %(ext)s added to %(book)s", ext=file_ext.upper(), book=link)
+            if existing_format:
+                upload_text = N_("File format %(ext)s replaced in %(book)s", ext=file_ext.upper(), book=link)
+            else:
+                upload_text = N_("File format %(ext)s added to %(book)s", ext=file_ext.upper(), book=link)
             WorkerThread.add(current_user.name, TaskUpload(upload_text, escape(book.title)))
             meta = uploader.process(
                 saved_filename,

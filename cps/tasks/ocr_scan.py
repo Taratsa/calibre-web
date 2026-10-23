@@ -27,7 +27,6 @@ class TaskOcrScan(CalibreTask):
         self.book_ids.sort()
         self.trigger_type = trigger_type
         self.ready_count = 0
-        self.scanned_count = 0
         self.skipped_count = 0
         self.failed_count = 0
 
@@ -67,11 +66,8 @@ class TaskOcrScan(CalibreTask):
             book = SimpleNamespace(id=book_id, title=title, path=path)
             data = SimpleNamespace(format=book_format, name=name)
             try:
-                result = scan_book_ocr(book, data, book_format)
-                if result == "scanned":
-                    self.scanned_count += 1
-                else:
-                    self.ready_count += 1
+                scan_book_ocr(book, data, book_format)
+                self.ready_count += 1
             except (OcrBookNotFoundError, OcrUnavailableError) as exc:
                 self.skipped_count += 1
                 log.warning("[ocr] Skipped book %s format %s: %s", book_id, book_format, exc)
@@ -82,9 +78,8 @@ class TaskOcrScan(CalibreTask):
                 self.progress = index / total
 
         self.message = N_(
-            "OCR scan complete: %(ready)d ready, %(scanned)d scanned, %(skipped)d skipped, %(failed)d failed",
+            "OCR scan complete: %(ready)d ready, %(skipped)d skipped, %(failed)d failed",
             ready=self.ready_count,
-            scanned=self.scanned_count,
             skipped=self.skipped_count,
             failed=self.failed_count,
         )

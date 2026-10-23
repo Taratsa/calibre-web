@@ -34,8 +34,8 @@ const href = `${bookPath(book)}/`;
 <style>
   .book-card { margin: 0; }
   .book-card__cover { display: block; }
-  .book-card__cover img {
-    width: 100%;
+  :global(.book-card__cover img) {
+    width: 100% !important;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 1px 4px var(--shadow-sm);

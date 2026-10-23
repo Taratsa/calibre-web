@@ -13,8 +13,8 @@
 .book-detail .cover img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px var(--shadow-lg);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px var(--shadow-sm);
 }
 
 .book-detail h1 {
@@ -27,7 +27,7 @@
   font-size: 1.05rem;
   color: var(--muted-strong);
 }
-.book-detail .authors a { color: var(--accent); }
+.book-detail .authors a { color: inherit; }
 .book-detail .description {
   margin: 1rem 0 1.5rem;
   white-space: pre-line;
@@ -79,18 +79,27 @@
 
 .book-detail .tag-list {
   display: flex;
+  align-items: stretch;
   gap: 0.5rem;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0 0 1rem;
 }
+.book-detail .tag-list li {
+  display: flex;
+}
 .book-detail .tag-list li a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
   padding: 0.25rem 0.75rem;
   background: var(--surface-3);
-  border-radius: 999px;
+  border-radius: 4px;
   font-size: 0.85rem;
+  line-height: 1.3;
   text-decoration: none;
   color: var(--fg);
 }
@@ -103,4 +112,11 @@
   margin: 0.5rem 0;
   color: var(--star);
   font-weight: 600;
+}
+
+.book-detail .shelves-heading {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted-strong);
 }

@@ -38,6 +38,7 @@ scans can use it (see .importlinter contracts).
 """
 
 import contextlib
+import sqlite3
 import hashlib
 import json
 from collections.abc import Iterable
@@ -428,6 +429,71 @@ def _and_filters(*filters):
 
 
 # ---------------------------------------------------------------------------
+# Dedicated write path for the duplicate index
+# ---------------------------------------------------------------------------
+# ub.session is ONE concrete Session shared by the whole process
+# (ub.init_db does `session = Session()` on a scoped_session, which pins the
+# boot thread's session). Writing the index through it let a worker-side flush
+# collide with request state: SAWarning "Session.add() during flush", then
+# UNIQUE constraint failures that poisoned the shared Session and 500'd every
+# page touching it. Index writes therefore use their own short-lived sqlite
+# connection with an idempotent ON CONFLICT upsert.
+
+_KEY_UPSERT_SQL = (
+    "INSERT INTO duplicate_book_key (book_id, normalized_title, normalized_author, "
+    "normalized_language, normalized_series, normalized_publisher, format_signature, "
+    "duplicate_key, criteria_fingerprint, updated_at) "
+    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
+    "ON CONFLICT(book_id) DO UPDATE SET "
+    "normalized_title = excluded.normalized_title, "
+    "normalized_author = excluded.normalized_author, "
+    "normalized_language = excluded.normalized_language, "
+    "normalized_series = excluded.normalized_series, "
+    "normalized_publisher = excluded.normalized_publisher, "
+    "format_signature = excluded.format_signature, "
+    "duplicate_key = excluded.duplicate_key, "
+    "criteria_fingerprint = excluded.criteria_fingerprint, "
+    "updated_at = excluded.updated_at"
+)
+
+
+def _now_stamp():
+    # sqlite3 refuses datetime adapters on 3.12+; SQLAlchemy's SQLite DATETIME
+    # parser accepts this exact layout when reading the row back.
+    return datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S.%f")
+
+
+@contextlib.contextmanager
+def _app_transaction():
+    conn = sqlite3.connect(ub.app_DB_path, timeout=10.0, isolation_level=None)
+    try:
+        conn.execute("PRAGMA busy_timeout = 10000")
+        conn.execute("BEGIN IMMEDIATE")
+        yield conn
+        conn.execute("COMMIT")
+    except Exception:
+        with contextlib.suppress(Exception):
+            conn.execute("ROLLBACK")
+        raise
+    finally:
+        conn.close()
+
+
+def _write_book_key_rows(rows, replace_all=False):
+    """Insert/update index rows as (book_id, *parts.as_db_tuple(), key, fp)."""
+    if not rows and not replace_all:
+        return 0
+    stamp = _now_stamp()
+    payload = [(row[0], *row[1:9], stamp) for row in rows]
+    with _app_transaction() as conn:
+        if replace_all:
+            conn.execute("DELETE FROM duplicate_book_key")
+        if payload:
+            conn.executemany(_KEY_UPSERT_SQL, payload)
+    return len(payload)
+
+
+# ---------------------------------------------------------------------------
 # Index CRUD
 # ---------------------------------------------------------------------------
 def upsert_book_keys(book_ids: Iterable[int], settings):
@@ -440,41 +506,12 @@ def upsert_book_keys(book_ids: Iterable[int], settings):
     fingerprint = get_criteria_fingerprint(settings)
     books = _load_books_by_ids(book_ids)
     loaded_book_ids = {int(book.id) for book in books}
-    updated = 0
+    rows = []
     for book in books:
         parts = build_book_key_parts(book, settings)
         duplicate_key = _hash_json(_enabled_key_values(parts, settings))
-        existing = ub.session.query(ub.DuplicateBookKey).filter(ub.DuplicateBookKey.book_id == book.id).first()
-        if existing:
-            existing.normalized_title = parts.normalized_title
-            existing.normalized_author = parts.normalized_author
-            existing.normalized_language = parts.normalized_language
-            existing.normalized_series = parts.normalized_series
-            existing.normalized_publisher = parts.normalized_publisher
-            existing.format_signature = parts.format_signature
-            existing.duplicate_key = duplicate_key
-            existing.criteria_fingerprint = fingerprint
-            existing.updated_at = datetime.now()
-        else:
-            ub.session.add(
-                ub.DuplicateBookKey(
-                    book_id=book.id,
-                    normalized_title=parts.normalized_title,
-                    normalized_author=parts.normalized_author,
-                    normalized_language=parts.normalized_language,
-                    normalized_series=parts.normalized_series,
-                    normalized_publisher=parts.normalized_publisher,
-                    format_signature=parts.format_signature,
-                    duplicate_key=duplicate_key,
-                    criteria_fingerprint=fingerprint,
-                )
-            )
-        updated += 1
-    try:
-        ub.session.commit()
-    except Exception:
-        ub.session.rollback()
-        raise
+        rows.append((book.id, *parts.as_db_tuple(), duplicate_key, fingerprint))
+    updated = _write_book_key_rows(rows)
     missing_ids = sorted(book_ids - loaded_book_ids)
     return {"updated": updated, "missing": len(missing_ids), "missing_ids": missing_ids, "fingerprint": fingerprint}
 
@@ -483,12 +520,12 @@ def delete_book_keys(book_ids: Iterable[int]):
     book_ids = {int(book_id) for book_id in book_ids if book_id is not None}
     if not book_ids:
         return 0
-    deleted = ub.session.query(ub.DuplicateBookKey).filter(ub.DuplicateBookKey.book_id.in_(list(book_ids))).delete()
-    try:
-        ub.session.commit()
-    except Exception:
-        ub.session.rollback()
-        raise
+    deleted = 0
+    with _app_transaction() as conn:
+        for chunk in _chunks(sorted(book_ids), 500):
+            placeholders = ",".join("?" * len(chunk))
+            cursor = conn.execute(f"DELETE FROM duplicate_book_key WHERE book_id IN ({placeholders})", chunk)
+            deleted += cursor.rowcount or 0
     return deleted
 
 
@@ -515,26 +552,7 @@ def rebuild_duplicate_index(settings, progress_callback=None):
             if progress_callback and (indexed_count % 25 == 0 or indexed_count == total_books):
                 progress_callback(indexed_count, total_books)
 
-    try:
-        ub.session.query(ub.DuplicateBookKey).delete()
-        for row in key_rows:
-            ub.session.add(
-                ub.DuplicateBookKey(
-                    book_id=row[0],
-                    normalized_title=row[1],
-                    normalized_author=row[2],
-                    normalized_language=row[3],
-                    normalized_series=row[4],
-                    normalized_publisher=row[5],
-                    format_signature=row[6],
-                    duplicate_key=row[7],
-                    criteria_fingerprint=row[8],
-                )
-            )
-        ub.session.commit()
-    except Exception:
-        ub.session.rollback()
-        raise
+    _write_book_key_rows(key_rows, replace_all=True)
     return {
         "max_book_id": max(book_ids, default=0),
         "indexed_count": indexed_count,
@@ -713,20 +731,29 @@ def get_duplicate_cache():
 
 
 def _write_duplicate_cache_groups(duplicate_groups, max_book_id, duration=0.0, scan_method=""):
-    cache = ub.session.query(ub.DuplicateIndexCache).filter(ub.DuplicateIndexCache.id == 1).first()
     serialized_groups = [_serialize_group_for_cache(group) for group in duplicate_groups]
-    if cache is None:
-        cache = ub.DuplicateIndexCache(id=1)
-        ub.session.add(cache)
-    cache.scan_timestamp = datetime.now()
-    cache.duplicate_groups_json = serialized_groups
-    cache.total_count = len(serialized_groups)
-    cache.scan_pending = False
-    cache.last_scanned_book_id = max_book_id
-    cache.max_book_id = max_book_id
-    cache.scan_duration_seconds = duration
-    cache.scan_method_used = scan_method
-    ub.session.commit()
+    with _app_transaction() as conn:
+        conn.execute(
+            "INSERT INTO duplicate_index_cache (id, scan_timestamp, duplicate_groups_json, total_count, "
+            "scan_pending, last_scanned_book_id, scan_duration_seconds, scan_method_used, "
+            "criteria_fingerprint, max_book_id) VALUES (1, ?, ?, ?, 0, ?, ?, ?, ?, ?) "
+            "ON CONFLICT(id) DO UPDATE SET scan_timestamp = excluded.scan_timestamp, "
+            "duplicate_groups_json = excluded.duplicate_groups_json, total_count = excluded.total_count, "
+            "scan_pending = 0, last_scanned_book_id = excluded.last_scanned_book_id, "
+            "max_book_id = excluded.max_book_id, scan_duration_seconds = excluded.scan_duration_seconds, "
+            "scan_method_used = excluded.scan_method_used, "
+            "criteria_fingerprint = excluded.criteria_fingerprint",
+            (
+                _now_stamp(),
+                json.dumps(serialized_groups),
+                len(serialized_groups),
+                max_book_id,
+                duration,
+                scan_method,
+                get_criteria_fingerprint(settings_to_dict()),
+                max_book_id,
+            ),
+        )
 
 
 def update_duplicate_cache(duplicate_groups, total_count, max_book_id=None, duration=0.0, scan_method=""):
@@ -768,12 +795,13 @@ def merge_affected_groups_into_cache(candidate_book_ids, settings):
 
 
 def mark_duplicate_index_pending(reason=None):
-    cache = ub.session.query(ub.DuplicateIndexCache).filter(ub.DuplicateIndexCache.id == 1).first()
-    if cache is None:
-        cache = ub.DuplicateIndexCache(id=1)
-        ub.session.add(cache)
-    cache.scan_pending = True
-    ub.session.commit()
+    """Flag the index as stale. Runs from request-scoped post-ingest hooks, so it
+    writes through its own connection and never touches the shared ORM session."""
+    with _app_transaction() as conn:
+        conn.execute(
+            "INSERT INTO duplicate_index_cache (id, scan_pending) VALUES (1, 1) "
+            "ON CONFLICT(id) DO UPDATE SET scan_pending = 1"
+        )
     if reason:
         log.info("[duplicates] Duplicate index marked pending: %s", reason)
     return True
@@ -781,14 +809,71 @@ def mark_duplicate_index_pending(reason=None):
 
 def _bump_scan_watermark(max_book_id):
     """Advance the incremental-scan watermark without re-running any detection."""
-    cache = ub.session.query(ub.DuplicateIndexCache).filter(ub.DuplicateIndexCache.id == 1).first()
-    if cache is None:
-        cache = ub.DuplicateIndexCache(id=1)
-        ub.session.add(cache)
-    cache.last_scanned_book_id = max_book_id
-    cache.scan_pending = False
-    cache.scan_timestamp = datetime.now()
-    ub.session.commit()
+    with _app_transaction() as conn:
+        conn.execute(
+            "INSERT INTO duplicate_index_cache (id, last_scanned_book_id, scan_pending, scan_timestamp) "
+            "VALUES (1, ?, 0, ?) ON CONFLICT(id) DO UPDATE SET "
+            "last_scanned_book_id = excluded.last_scanned_book_id, scan_pending = 0, "
+            "scan_timestamp = excluded.scan_timestamp",
+            (max_book_id, _now_stamp()),
+        )
+
+
+
+def queue_full_scan_if_stale():
+    """Post-startup hook: when the last full scan predates current criteria or
+    the library outgrew the index, queue one full rescan so the index heals
+    itself instead of leaving the Duplicates page stuck on 'manual scan needed'.
+    A no-op when the index is fresh or a scan is already running/queued."""
+    try:
+        settings = settings_to_dict()
+        cache_data = get_duplicate_cache()
+        library_count = len(_current_library_book_ids())
+        if library_count == 0:
+            return False
+
+        fingerprint = get_criteria_fingerprint(settings)
+        cached_fingerprint = (cache_data or {}).get("criteria_fingerprint") or ""
+        indexed_count = (
+            ub.session.query(func.count(ub.DuplicateBookKey.book_id))
+            .filter(ub.DuplicateBookKey.criteria_fingerprint == fingerprint)
+            .scalar()
+            or 0
+        )
+        stale = (
+            not cache_data
+            or cached_fingerprint != fingerprint
+            or int(indexed_count) < int(library_count)
+        )
+        if not stale:
+            return False
+        # Skip when a scan is already queued/running (read the worker directly
+        # to avoid a cps.duplicates import edge from the tasks contract).
+        try:
+            from cps.services.worker import WorkerThread
+            from cps.tasks.duplicate_scan import TaskDuplicateScan  # noqa: F401
+
+            for _user, _num, _added, task, _hidden in WorkerThread.get_instance().tasks:
+                if isinstance(task, TaskDuplicateScan):
+                    return False
+        except Exception:
+            pass
+
+
+        task = TaskDuplicateScan(full_scan=True, trigger_type="auto")
+        WorkerThread.add("System", task, hidden=True)
+        log.info(
+            "[duplicates] Queued startup full scan: library=%s indexed=%s cached_fp=%s current_fp=%s",
+            library_count,
+            indexed_count,
+            (cached_fingerprint or "")[:12] or "<empty>",
+            fingerprint[:12],
+        )
+        return True
+    except Exception:
+        log.warning("[duplicates] Startup full scan check failed", exc_info=True)
+        return False
+
 
 
 def notify_book_changed(book_ids):

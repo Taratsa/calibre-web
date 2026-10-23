@@ -15,11 +15,14 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import sys
+import threading
 
-from flask import request
+from flask import g, request
 
-from . import create_app, limiter
+from . import create_app, limiter, logger
 from .jinjia import jinjia
+
+log = logger.create()
 
 
 def request_username():
@@ -99,5 +102,30 @@ def main():
         if oauth is None:
             raise RuntimeError("OAuth support reported as available but module failed to import")
         app.register_blueprint(oauth)
+    # Self-heal the duplicate index at boot: when the last full scan predates
+    # current criteria or the library outgrew the index, queue one rescan.
+    # Run after the worker is up so it sees a live queue; in a thread so a slow
+    # index check never delays serving requests.
+    def _boot_duplicate_selfheal():
+        try:
+            from . import config, ub
+            from .db import CalibreDB
+
+            # Skip when the library DB isn't configured yet (first boot / CLI).
+            if not (config.config_calibre_dir and config.db_configured):
+                return
+            with app.test_request_context():
+                # A bare thread has no request context, so the lazy per-request
+                # calibre session (g.lib_sql) is unset. Seed it here; setup_db
+                # builds a fresh engine+session bound to the attached DBs.
+                g.lib_sql = CalibreDB.setup_db(config.config_calibre_dir, ub.app_DB_path)
+                from .duplicate_index import queue_full_scan_if_stale
+
+                queue_full_scan_if_stale()
+        except Exception:
+            log.warning("[duplicates] Startup self-heal failed", exc_info=True)
+
+    threading.Thread(target=_boot_duplicate_selfheal, daemon=True).start()
+
     success = web_server.start()
     sys.exit(0 if success else 1)

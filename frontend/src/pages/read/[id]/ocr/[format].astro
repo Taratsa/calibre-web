@@ -47,20 +47,47 @@ let payload: {
     pages_routed_to_ocr: number;
     processing_time_ms: number;
   };
+  state?: { status: string; pages_done?: number; pages_total?: number };
 } = {};
 try {
   payload = await apiResponse.json();
 } catch {}
-if (!apiResponse.ok || !payload.document) {
+// 202 = not processed yet: the page offers to queue it instead of failing.
+const pending = apiResponse.status === 202;
+if (!pending && (!apiResponse.ok || !payload.document)) {
   const status = apiResponse.status || 503;
   const message = payload.error ?? 'OCR is not available for this document.';
   return new Response(message, { status, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
 
 const { document } = payload;
+const jobState = payload.state;
+const pendingMessage =
+  jobState?.status === 'queued' ? 'Dokumen sedang menunggu giliran diproses…'
+  : jobState?.status === 'processing'
+    ? jobState.pages_total ? `Sedang diproses: ${jobState.pages_done} dari ${jobState.pages_total} halaman…` : 'Sedang diproses…'
+  : jobState?.status === 'failed' ? 'Pemrosesan gagal. Server OCR mungkin sedang tidak tersedia; coba lagi sebentar lagi.'
+  : 'Dokumen ini belum diproses OCR. Untuk dokumen besar, prosesnya bisa memakan beberapa menit.';
 const bookUrl = `${bookPath(book)}/`;
 const originalUrl = `/read/${book.id}/${requestedFormat}`;
 const formatLabel = requestedFormat.toUpperCase();
+// Only PDFs go through OCR; EPUB text is read straight from the file.
+const isOcr = requestedFormat === 'pdf';
+const totalSeconds = Math.round((document?.processing_time_ms ?? 0) / 1000);
+const duration = totalSeconds < 60
+  ? `${((document?.processing_time_ms ?? 0) / 1000).toFixed(1)} detik`
+  : `${Math.floor(totalSeconds / 60)} mnt ${totalSeconds % 60} dtk`;
+const metaParts = document
+  ? [
+      `${document.page_count} ${isOcr ? 'halaman' : 'bagian'}`,
+      ...(isOcr
+        ? [document.pages_routed_to_ocr > 0
+            ? `${document.pages_routed_to_ocr} halaman diproses dengan OCR`
+            : `teks ${formatLabel} berhasil diekstrak tanpa OCR`]
+        : []),
+      duration,
+    ]
+  : [];
 const decodeEntities = (value: string) => value
   .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
   .replace(/&#x([\da-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
@@ -72,53 +99,161 @@ const decodeEntities = (value: string) => value
   .replace(/&#39;/g, "'");
 const headingIds = new Map<string, number>();
 const toc: Array<{ id: string; level: number; text: string }> = [];
-const contentHtml = document.markdown_html.replace(
+const contentHtml = (document?.markdown_html ?? '').replace(
   /<(h[1-6])([^>]*)>([\s\S]*?)<\/\1>/gi,
   (_, tag: string, attributes: string, content: string) => {
+    // The page title is the only <h1>: document headings are demoted one level (h6 stays h6).
+    const level = Number(tag.slice(1));
+    const outTag = `h${Math.min(6, level + 1)}`;
     const text = decodeEntities(content.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
-    if (!text) return `<${tag}${attributes}>${content}</${tag}>`;
+    if (!text) return `<${outTag}${attributes}>${content}</${outTag}>`;
     const baseId = text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'bagian';
     const occurrence = (headingIds.get(baseId) || 0) + 1;
     headingIds.set(baseId, occurrence);
     const id = occurrence === 1 ? baseId : `${baseId}-${occurrence}`;
-    toc.push({ id, level: Number(tag.slice(1)), text });
-    return `<${tag}${attributes} id="${id}">${content}</${tag}>`;
+    toc.push({ id, level, text });
+    return `<${outTag}${attributes} id="${id}">${content}</${outTag}>`;
   },
 );
 ---
 
-<BaseLayout title={`Baca ${formatLabel} (OCR): ${book.title}`} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article">
+<BaseLayout title={`Baca ${formatLabel}${isOcr ? ' (OCR)' : ''}: ${book.title}`} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
+  <script slot="head" is:inline>
+    // Applied before first paint so a stored text size never flashes. Keep the steps in sync with the page script.
+    try {
+      var scale = parseFloat(localStorage.getItem('ocr-font-scale'));
+      if ([0.85, 1, 1.15, 1.3, 1.5, 1.75].indexOf(scale) >= 0) document.documentElement.style.setProperty('--ocr-scale', String(scale));
+    } catch (e) {}
+  </script>
   <div class="ocr-reader">
     <nav class="ocr-reader__toolbar" aria-label="Alat pembaca">
       <a href={bookUrl}>← Kembali ke buku</a>
       <a href={originalUrl} target="_blank" rel="noopener noreferrer">Buka dokumen asli</a>
+      {!pending && (
+        <div class="ocr-reader__fontsize" role="group" aria-label="Ukuran teks" data-fontsize>
+          <button type="button" data-fontsize-down aria-label="Perkecil teks">A−</button>
+          <button type="button" data-fontsize-reset aria-label="Atur ulang ukuran teks" title="Atur ulang ukuran teks">100%</button>
+          <button type="button" data-fontsize-up aria-label="Perbesar teks">A+</button>
+        </div>
+      )}
     </nav>
     <header class="ocr-reader__header">
-      <h1>Baca {formatLabel} (OCR): {book.title}</h1>
-      <p class="ocr-reader__meta">
-        {document.page_count} halaman
-        {document.pages_routed_to_ocr > 0
-          ? ` · ${document.pages_routed_to_ocr} halaman diproses dengan OCR`
-          : ` · teks ${formatLabel} berhasil diekstrak tanpa OCR`}
-        · {document.processing_time_ms} ms
-      </p>
+      <h1>Baca {formatLabel}{isOcr ? ' (OCR)' : ''}: {book.title}</h1>
+      {!pending && <p class="ocr-reader__meta">{metaParts.join(' · ')}</p>}
+      {!pending && (
+        <p class="ocr-reader__notice" role="note">
+          Versi OCR mungkin terdapat kesalahan eja, ketik, tata letak, atau hal terkait tipografi. Untuk ketepatan hasil,
+          silakan merujuk pada <a href={originalUrl} target="_blank" rel="noopener noreferrer">dokumen asli</a>.
+        </p>
+      )}
     </header>
-    {toc.length > 0 && (
-      <details class="ocr-reader__toc" open>
-        <summary>Daftar isi</summary>
-        <ol>
-          {toc.map(item => (
-            <li style={`--toc-level: ${item.level}`}><a href={`#${item.id}`}>{item.text}</a></li>
-          ))}
-        </ol>
-      </details>
+    {pending ? (
+      <section class="ocr-pending" data-ocr-pending data-book-id={book.id} data-format={requestedFormat} data-status={jobState?.status ?? 'idle'}>
+        <p data-ocr-message role="status" aria-live="polite">{pendingMessage}</p>
+        <progress data-ocr-progress hidden></progress>
+        <button type="button" data-ocr-start hidden={jobState?.status === 'queued' || jobState?.status === 'processing'}>
+          {jobState?.status === 'failed' ? 'Coba lagi' : 'Mulai proses OCR'}
+        </button>
+      </section>
+    ) : (
+      <>
+        {toc.length > 0 && (
+          <details class="ocr-reader__toc">
+            <summary>Daftar isi</summary>
+            <ol>
+              {toc.map(item => (
+                <li style={`--toc-level: ${item.level}`}><a href={`#${item.id}`}>{item.text}</a></li>
+              ))}
+            </ol>
+          </details>
+        )}
+        <article class="ocr-reader__content" set:html={contentHtml} />
+        <button class="ocr-reader__top" type="button" aria-label="Kembali ke atas" data-scroll-top>
+          ↑ <span>Kembali ke atas</span>
+        </button>
+      </>
     )}
-    <article class="ocr-reader__content" set:html={contentHtml} />
-    <button class="ocr-reader__top" type="button" aria-label="Kembali ke atas" data-scroll-top>
-      ↑ <span>Kembali ke atas</span>
-    </button>
   </div>
 </BaseLayout>
+
+<script>
+  const pending = document.querySelector<HTMLElement>('[data-ocr-pending]');
+  if (pending) {
+    const { bookId, format } = pending.dataset;
+    const message = pending.querySelector<HTMLElement>('[data-ocr-message]')!;
+    const bar = pending.querySelector<HTMLProgressElement>('[data-ocr-progress]')!;
+    const start = pending.querySelector<HTMLButtonElement>('[data-ocr-start]')!;
+    type State = { status: string; pages_done?: number; pages_total?: number } | null;
+    let timer: number | undefined;
+
+    // A plain reload could return the cached "not processed" page again; a unique query string cannot be cached.
+    const reloadFresh = () => {
+      const url = new URL(location.href);
+      url.searchParams.set('r', String(Date.now()));
+      location.replace(url);
+    };
+
+    const render = (state: State) => {
+      const status = state?.status ?? 'idle';
+      start.hidden = status === 'queued' || status === 'processing';
+      start.disabled = false;
+      start.textContent = status === 'failed' ? 'Coba lagi' : 'Mulai proses OCR';
+      bar.hidden = status !== 'processing' || !state?.pages_total;
+      if (!bar.hidden) {
+        bar.max = state!.pages_total!;
+        bar.value = state!.pages_done ?? 0;
+      }
+      message.textContent =
+        status === 'queued' ? 'Dokumen sedang menunggu giliran diproses…'
+        : status === 'processing'
+          ? state?.pages_total ? `Sedang diproses: ${state.pages_done} dari ${state.pages_total} halaman…` : 'Sedang diproses…'
+        : status === 'failed' ? 'Pemrosesan gagal. Server OCR mungkin sedang tidak tersedia; coba lagi sebentar lagi.'
+        : 'Dokumen ini belum diproses OCR. Untuk dokumen besar, prosesnya bisa memakan beberapa menit.';
+    };
+
+    const poll = async () => {
+      try {
+        const response = await fetch(`/api/read/${bookId}/ocr/status/${format}`, { credentials: 'same-origin', cache: 'no-store' });
+        if (response.ok) {
+          const body = (await response.json()) as { available: boolean; state: State };
+          if (body.available) return reloadFresh();
+          render(body.state);
+          if (body.state && (body.state.status === 'queued' || body.state.status === 'processing')) {
+            timer = window.setTimeout(poll, 3000);
+          }
+          return;
+        }
+      } catch {}
+      timer = window.setTimeout(poll, 6000);
+    };
+
+    start.addEventListener('click', async () => {
+      start.disabled = true;
+      window.clearTimeout(timer);
+      try {
+        const response = await fetch(`/api/read/${bookId}/ocr/${format}`, { method: 'POST', credentials: 'same-origin' });
+        const body = (await response.json()) as { state?: State; error?: string };
+        if (response.status === 429 || !response.ok) {
+          start.disabled = false;
+          message.textContent = response.status === 429
+            ? 'Terlalu banyak dokumen sedang diproses. Coba lagi dalam beberapa menit.'
+            : 'OCR tidak tersedia untuk dokumen ini.';
+          return;
+        }
+        if (body.state?.status === 'done') return reloadFresh();
+        render(body.state ?? null);
+        timer = window.setTimeout(poll, 3000);
+      } catch {
+        start.disabled = false;
+        message.textContent = 'Gagal menghubungi server. Coba lagi.';
+      }
+    });
+
+    // The page may be a stale copy cached at the edge, so always check once instead of trusting data-status.
+    const active = pending.dataset.status === 'queued' || pending.dataset.status === 'processing';
+    timer = window.setTimeout(poll, active ? 3000 : 0);
+  }
+</script>
 
 <script>
   const scrollTopButton = document.querySelector<HTMLButtonElement>('[data-scroll-top]');
@@ -134,28 +269,92 @@ const contentHtml = document.markdown_html.replace(
   }
 </script>
 
+<script>
+  const group = document.querySelector<HTMLElement>('[data-fontsize]');
+  if (group) {
+    // Keep in sync with the inline pre-paint script in <head>.
+    const steps = [0.85, 1, 1.15, 1.3, 1.5, 1.75];
+    const key = 'ocr-font-scale';
+    const smaller = group.querySelector<HTMLButtonElement>('[data-fontsize-down]')!;
+    const larger = group.querySelector<HTMLButtonElement>('[data-fontsize-up]')!;
+    const reset = group.querySelector<HTMLButtonElement>('[data-fontsize-reset]')!;
+    let index = 1;
+    try {
+      const stored = steps.indexOf(parseFloat(localStorage.getItem(key) ?? ''));
+      if (stored >= 0) index = stored;
+    } catch {}
+
+    const apply = () => {
+      const scale = steps[index];
+      document.documentElement.style.setProperty('--ocr-scale', String(scale));
+      reset.textContent = `${Math.round(scale * 100)}%`;
+      smaller.disabled = index === 0;
+      larger.disabled = index === steps.length - 1;
+      try {
+        if (index === 1) localStorage.removeItem(key);
+        else localStorage.setItem(key, String(scale));
+      } catch {}
+    };
+    smaller.addEventListener('click', () => { index = Math.max(0, index - 1); apply(); });
+    larger.addEventListener('click', () => { index = Math.min(steps.length - 1, index + 1); apply(); });
+    reset.addEventListener('click', () => { index = 1; apply(); });
+    apply();
+  }
+</script>
+
 <style>
   .ocr-reader {
     max-width: 74ch;
     margin: 0 auto 2rem;
   }
   .ocr-reader__toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
+    gap: 0 1.25rem;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 0.75rem 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 1rem;
   }
   .ocr-reader__toolbar a {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
+  }
+  .ocr-reader__fontsize {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  .ocr-reader__fontsize button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0 0.5rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .ocr-reader__fontsize button + button {
+    margin-left: -1px;
+  }
+  .ocr-reader__fontsize button:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  .ocr-reader__fontsize button:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+  .ocr-reader__fontsize button:hover:not(:disabled) {
+    background: var(--surface);
+  }
+  .ocr-reader__fontsize button:disabled {
+    color: var(--muted-soft);
+    cursor: default;
+  }
+  .ocr-reader__fontsize [data-fontsize-reset] {
+    min-width: 4rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
   }
   .ocr-reader__header h1 {
     margin-bottom: 0.5rem;
@@ -164,15 +363,66 @@ const contentHtml = document.markdown_html.replace(
     color: var(--muted-strong);
     margin-bottom: 1rem;
   }
-  .ocr-reader__toc {
-    margin: 1.5rem 0;
-    padding: 1rem 1.25rem;
+  .ocr-reader__notice {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
     background: var(--surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 6px;
+    border-radius: 4px;
+    color: var(--muted-strong);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .ocr-reader__notice a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  .ocr-reader__toc {
+    margin: 1.5rem 0;
+    padding: 0.25rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
   }
   .ocr-reader__toc summary {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
     font-weight: 700;
+    cursor: pointer;
+  }
+  .ocr-pending {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .ocr-pending p {
+    margin: 0;
+  }
+  .ocr-pending progress {
+    width: 100%;
+    height: 0.5rem;
+  }
+  .ocr-pending button {
+    min-height: 2.75rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--inverse-fg, #fff);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .ocr-pending button:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
   .ocr-reader__top {
     position: fixed;
     right: max(1rem, env(safe-area-inset-right));
@@ -184,10 +434,10 @@ const contentHtml = document.markdown_html.replace(
     min-height: 2.75rem;
     padding: 0.55rem 0.8rem;
     border: 1px solid var(--border-subtle);
-    border-radius: 999px;
+    border-radius: 4px;
     background: var(--bg);
-    color: var(--text);
-    box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 15%);
+    color: var(--fg);
+    box-shadow: 0 0.3rem 1rem var(--shadow-lg);
     opacity: 0;
     pointer-events: none;
     transform: translateY(0.5rem);
@@ -216,21 +466,57 @@ const contentHtml = document.markdown_html.replace(
     }
   }
   .ocr-reader__toc ol {
-    margin: 1rem 0 0;
-    padding: 0;
+    max-height: 60vh;
+    margin: 0.75rem 0 0;
+    padding: 0 0.5rem 0 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     list-style: none;
   }
   .ocr-reader__toc li {
-    margin: 0.4rem 0;
     padding-left: calc((var(--toc-level) - 1) * 1rem);
+    line-height: 1.4;
+  }
+  .ocr-reader__toc li a {
+    display: inline-block;
+    padding: 0.3rem 0;
   }
   .ocr-reader__content {
     background: var(--surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 1.5rem 2rem;
+    font-size: calc(1.0625rem * var(--ocr-scale, 1));
     line-height: 1.7;
     overflow-wrap: anywhere;
+  }
+  .ocr-reader__content :global(h2) {
+    font-size: 1.18em;
+  }
+  .ocr-reader__content :global(.ocr-footnotes) {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--border);
+    background: var(--bg);
+    color: var(--muted-strong);
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  .ocr-reader__content :global(.ocr-footnotes p) {
+    margin: 0 0 0.35rem;
+  }
+  .ocr-reader__content :global(.ocr-footnotes p:last-child) {
+    margin-bottom: 0;
+  }
+  .ocr-reader__content :global(.ocr-caption) {
+    color: var(--muted-strong);
+    font-size: 0.9em;
+  }
+  .ocr-reader__content > :global(:first-child) {
+    margin-top: 0;
+  }
+  .ocr-reader__content :global(p) {
+    text-wrap: pretty;
   }
   .ocr-reader__content :global(h1),
   .ocr-reader__content :global(h2),
@@ -239,7 +525,8 @@ const contentHtml = document.markdown_html.replace(
   .ocr-reader__content :global(h5),
   .ocr-reader__content :global(h6) {
     margin-top: 1.75rem;
-    scroll-margin-top: 5rem;
+    line-height: 1.3;
+    scroll-margin-top: 8rem;
   }
   .ocr-reader__content :global(a) {
     text-decoration: underline;
@@ -260,6 +547,8 @@ const contentHtml = document.markdown_html.replace(
     margin: 1.5rem 0;
     overflow-x: auto;
     border-collapse: collapse;
+    font-size: 0.85em;
+    line-height: 1.45;
   }
   .ocr-reader__content :global(th),
   .ocr-reader__content :global(td) {
@@ -268,7 +557,9 @@ const contentHtml = document.markdown_html.replace(
     vertical-align: top;
     border: 1px solid var(--border-subtle);
   }
+  .ocr-reader__content :global(thead td),
   .ocr-reader__content :global(th) {
+    font-weight: 600;
     background: var(--bg);
   }
   .ocr-reader__content :global(img) {

@@ -1,24 +1,31 @@
 #!/bin/bash
-# Build the Astro frontend (used for initial setup or manual rebuilds)
+# Reseed the Astro frontend data from the live Calibre DBs, rebuild the
+# frontend Docker image (which bakes in src/data), and recreate the running
+# container so the new catalog data is actually served.
+#
+# Replaces the old rebuild-watcher flow: seeding to frontend/dist/ is dead —
+# Caddy serves the Astro SSR container (pustaka-astro), which reads src/data
+# baked into the image at build time. This script is the single manual entry
+# point for a full frontend refresh.
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-FRONTEND_DIR="$SCRIPT_DIR/frontend/dist"
 CALIBRE_DB="$SCRIPT_DIR/library/metadata.db"
 APP_DB="$SCRIPT_DIR/data/app.db"
-echo "=== Building Astro Frontend ==="
+SERVICE="astro-frontend"
 
-# Build locally
+echo "=== 1/3 Seeding frontend data from live DBs ==="
 cd "$SCRIPT_DIR/frontend"
 CALIBRE_DB_PATH="$CALIBRE_DB" APP_DB_PATH="$APP_DB" \
     node scripts/seed.mjs "$CALIBRE_DB"
 
-npx astro build --outDir /tmp/pustaka-dist
+echo "=== 2/3 Rebuilding frontend image (bakes src/data) ==="
+cd "$SCRIPT_DIR"
+docker compose build "$SERVICE"
 
-# Copy to dist
-echo "Copying build output to $FRONTEND_DIR..."
-cp -r --remove-destination /tmp/pustaka-dist/* "$FRONTEND_DIR/"
+echo "=== 3/3 Recreating running container ==="
+docker compose up -d --force-recreate --no-deps "$SERVICE"
 
-echo "=== Frontend built successfully ==="
-echo "Output: $FRONTEND_DIR"
+echo "=== Frontend rebuilt and recreated ==="
+docker compose ps "$SERVICE" --format '{{.Name}} {{.Status}}'

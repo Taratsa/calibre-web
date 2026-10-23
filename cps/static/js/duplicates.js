@@ -17,6 +17,29 @@
         });
     }
 
+    /* Resolution runs on the server worker; poll until it stops, then reload. */
+    function pollResolution() {
+        var attempts = 0;
+        var maxAttempts = 600; /* ~20 min at 2s */
+        var timer = window.setInterval(function () {
+            attempts += 1;
+            if (attempts > maxAttempts) {
+                window.clearInterval(timer);
+                return;
+            }
+            $.getJSON("/duplicates/status")
+                .done(function (data) {
+                    if (!data.resolving) {
+                        window.clearInterval(timer);
+                        window.location.reload();
+                    }
+                })
+                .fail(function () {
+                    /* keep polling: a transient error must not stop tracking */
+                });
+        }, 2000);
+    }
+
     /* Manual scan */
     $("#trigger_scan").on("click", function () {
         var $btn = $(this);
@@ -144,14 +167,23 @@
                 data: JSON.stringify({ strategy: strategy })
             })
                 .done(function (data) {
-                    if (data.success) {
-                        var msg = "Resolved " + data.resolved_count + " group(s), removed " +
-                            data.deleted_count + " book(s).";
-                        showInfo("Resolution complete", "<p>" + msg + "</p>");
-                    } else {
+                    if (!data.success) {
                         var errors = (data.errors || []).join("<br>");
-                        showInfo("Resolution finished with errors", "<p>" + errors + "</p>");
+                        showInfo("Resolution failed", "<p>" + (errors || data.error || "Error") + "</p>");
+                        return;
                     }
+                    if (data.queued) {
+                        showInfo(
+                            "Resolution started",
+                            "<p>Resolving duplicates in the background. This page reloads when it finishes; " +
+                            "progress is also on the Tasks page.</p>"
+                        );
+                        pollResolution();
+                        return;
+                    }
+                    var msg = "Resolved " + data.resolved_count + " group(s), removed " +
+                        data.deleted_count + " book(s).";
+                    showInfo("Resolution complete", "<p>" + msg + "</p>");
                     window.setTimeout(function () {
                         window.location.reload();
                     }, 1200);
