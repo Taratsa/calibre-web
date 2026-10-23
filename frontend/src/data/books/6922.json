@@ -33,22 +33,32 @@
   "tags": [
     "Majalah Legerin"
   ],
-  "publisher": null,
-  "publishers": [],
-  "languages": [],
-  "pubdate": null,
+  "publisher": {
+    "id": 417,
+    "name": "Legerin"
+  },
+  "publishers": [
+    {
+      "id": 417,
+      "name": "Legerin"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2026-08-01",
   "timestamp": "2026-08-27 08:31:08.172340",
-  "last_modified": "2026-08-27 08:31:08.172346",
+  "last_modified": "2026-09-07 13:04:42.093831",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/6922?v=1787794268",
-  "cover_og_url": "/cover/6922/og?v=1787794268",
+  "cover_url": "/cover_thumb/6922?v=1788761082",
+  "cover_og_url": "/cover/6922/og?v=1788761082",
   "url": "/book/legerin-19-para-pemuda-bangkit-teresa-coppola-perempuan-muda-internasionalis-emile-marti-abdullah-ocalan-marcos-pac-6922/",
   "rating": null,
-  "comment": "Archipelago Anarchist Archive",
+  "comment": "<p>Archipelago Anarchist Archive</p>",
   "data": [
     {
       "format": "pdf",

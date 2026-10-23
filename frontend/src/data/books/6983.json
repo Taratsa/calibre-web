@@ -111,22 +111,32 @@
     "Koleksi Pustaka Budaya",
     "pustaka_budaya"
   ],
-  "publisher": null,
-  "publishers": [],
-  "languages": [],
-  "pubdate": null,
+  "publisher": {
+    "id": 578,
+    "name": "Kementerian Kebudayaan Republik Indonesia"
+  },
+  "publishers": [
+    {
+      "id": 578,
+      "name": "Kementerian Kebudayaan Republik Indonesia"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2025-12-01",
   "timestamp": "2026-09-01 04:55:47.705784",
-  "last_modified": "2026-09-01 04:55:47.705790",
+  "last_modified": "2026-10-19 11:27:52.832258",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/6983?v=1788213347",
-  "cover_og_url": "/cover/6983/og?v=1788213347",
+  "cover_url": "/cover_thumb/6983?v=1792384072",
+  "cover_og_url": "/cover/6983/og?v=1792384072",
   "url": "/book/sejarah-indonesia-dinamika-kebangsaan-dalam-arus-global-jilid-ii-nusantara-dalam-jaringan-global-perjumpaan-budaya-6983/",
   "rating": null,
-  "comment": "Koleksi Pustaka Budaya",
+  "comment": "<p>Koleksi Pustaka Budaya</p>",
   "data": [
     {
       "format": "pdf",
