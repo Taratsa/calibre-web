@@ -283,7 +283,8 @@ def get_valid_filename(value, replace_whitespace=True, chars=128, force_unidecod
     """
     if value[-1:] == ".":
         value = value[:-1] + "_"
-    value = value.replace("/", "_").replace(":", "_").strip("\0")
+    # CR/LF and other control characters break Content-Disposition headers and file systems
+    value = re.sub(r"[\x00-\x1f\x7f]+", " ", value.replace("/", "_").replace(":", "_"))
     if config.config_unicode_filename or force_unidecode:
         value = unidecode.unidecode(value)
     if replace_whitespace:

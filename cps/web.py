@@ -71,6 +71,7 @@ from .helper import (
     get_book_cover,
     get_download_link,
     get_series_cover_thumbnail,
+    get_valid_filename,
     reset_password,
     send_mail,
     send_registration_mail,
@@ -2026,7 +2027,12 @@ def serve_book(book_id, book_format, anyname):
                 return "File Not Found"
         # enable byte range read of pdf
         response = make_response(
-            send_from_directory(os.path.join(config.get_book_path(), book.path), data.name + "." + book_format)
+            send_from_directory(
+                os.path.join(config.get_book_path(), book.path),
+                data.name + "." + book_format,
+                # the on-disk name may hold CR/LF; werkzeug would put it verbatim into Content-Disposition
+                download_name=get_valid_filename(data.name, replace_whitespace=False) + "." + book_format,
+            )
         )  # pyright: ignore[reportCallIssue,reportArgumentType]
         if not range_header:
             response.headers["Accept-Ranges"] = "bytes"
