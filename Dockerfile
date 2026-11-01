@@ -9,7 +9,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
 ARG KEPUBIFY_RELEASE=v4.0.4
-ARG CALIBRE_RELEASE=7.24.0
+ARG CALIBRE_RELEASE=9.17.0
 LABEL maintainer="notdriz"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -38,7 +38,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
 ARG KEPUBIFY_RELEASE=v4.0.4
-ARG CALIBRE_RELEASE=7.24.0
+ARG CALIBRE_RELEASE=9.17.0
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="notdriz"
 
