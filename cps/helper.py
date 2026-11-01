@@ -17,6 +17,8 @@
 
 # pyright: reportImportCycles=false
 
+import hashlib
+import hmac
 import io
 import mimetypes
 import os
@@ -32,7 +34,17 @@ from uuid import uuid4
 import regex
 import requests
 import unidecode
-from flask import Response, abort, after_this_request, make_response, request, send_from_directory, url_for
+from flask import (
+    Response,
+    abort,
+    after_this_request,
+    current_app,
+    make_response,
+    redirect,
+    request,
+    send_from_directory,
+    url_for,
+)
 from flask_babel import get_locale
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as N_
@@ -1104,7 +1116,7 @@ def _track_download_analytics(book_name, book_format, client):
         log.error("Umami tracking failed: %s", e)
 
 
-def do_download_file(book, book_format, client, data, headers):
+def do_download_file(book, book_format, client, data, headers, count=True):
     book_name = data.name
     download_name = filename = None
     if config.config_use_google_drive:
@@ -1178,13 +1190,15 @@ def do_download_file(book, book_format, client, data, headers):
             return resp
 
     response = make_response(send_from_directory(filename, download_name + "." + book_format))  # pyright: ignore[reportArgumentType,reportOptionalOperand]
-    ub.update_download(
-        book.id, int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
-    )
+    if count:
+        ub.update_download(
+            book.id, int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+        )
     # ToDo Check headers parameter
     for element in headers:
         response.headers[element[0]] = element[1]
-    _track_download_analytics(book_name, book_format, client)
+    if count:
+        _track_download_analytics(book_name, book_format, client)
     return response
 
 
@@ -1314,9 +1328,9 @@ def check_valid_domain(domain_text):
     return not len(ub.session.query(ub.Registration).from_statement(text(sql)).params(domain=domain_text).all())  # pyright: ignore[reportArgumentType]
 
 
-def get_download_link(book_id, book_format, client):
+def get_download_link(book_id, book_format, client, count=True):
     book_format = book_format.split(".")[0]
-    book = calibre_db.get_filtered_book(book_id, allow_show_archived=True)
+    book = calibre_db.get_filtered_book(book_id, allow_show_archived=True) if count else calibre_db.get_book(book_id)
     if book:
         data1 = calibre_db.get_book_format(book.id, book_format.upper())
         if data1:
@@ -1337,10 +1351,77 @@ def get_download_link(book_id, book_format, client):
                 f"attachment; filename=\"{file_name}.{book_format}\"; filename*=UTF-8''{quoted_file_name}.{book_format}"
             )
             headers["Cache-Control"] = "private, no-store"
-            return do_download_file(book, book_format, client, data1, headers)
+            return do_download_file(book, book_format, client, data1, headers, count)
     else:
         log.error(f"Book id {book_id} not found for downloading")
     abort(404)
+
+
+def _file_version(book, data):
+    """Changes whenever the book's metadata or file changes, so cached /files URLs never go stale."""
+    modified = int(book.last_modified.timestamp()) if book.last_modified else 0
+    return f"{modified}-{data.uncompressed_size}"
+
+
+def _file_signature(book_id, book_format, version):
+    key = current_app.secret_key
+    key = key.encode() if isinstance(key, str) else key
+    return hmac.new(key, f"{book_id}:{book_format}:{version}".encode(), hashlib.sha256).hexdigest()[:32]
+
+
+def get_download_redirect(book_id, book_format):
+    """Authorize and count a download, then 302 to the immutable /files URL.
+
+    /download stays uncached so every request reaches Flask and is counted; the
+    redirect target is identical for every visitor, so the CDN can cache the file."""
+    book_format = book_format.split(".")[0]
+    book = calibre_db.get_filtered_book(book_id, allow_show_archived=True)
+    data = calibre_db.get_book_format(book.id, book_format.upper()) if book else None
+    if not data:
+        log.error(f"Book id {book_id} not found for downloading")
+        abort(404)
+    filepath = os.path.join(config.get_book_path(), book.path, data.name + "." + book_format)
+    if not os.path.isfile(filepath):
+        log.error("File not found: %s", filepath)
+        abort(404)
+    ub.update_download(
+        book.id, int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+    )
+    _track_download_analytics(data.name, book_format, "")
+    version = _file_version(book, data)
+    response = redirect(
+        url_for(
+            "web.serve_file",
+            book_id=book.id,
+            book_format=book_format,
+            version=version,
+            sig=_file_signature(book.id, book_format, version),
+            anyname=get_valid_filename(data.name, replace_whitespace=False) + "." + book_format,
+        )
+    )
+    response.headers["Cache-Control"] = "private, no-store"
+    return response
+
+
+def get_signed_file(book_id, book_format, version, sig):
+    """Serve a file for a /files URL issued by get_download_redirect. The signature is the
+    authorization, so the response is the same for everyone and safe to cache. Never counts."""
+    book_format = book_format.split(".")[0]
+    if not hmac.compare_digest(sig.encode(), _file_signature(book_id, book_format, version).encode()):
+        abort(404)
+    book = calibre_db.get_book(book_id)
+    data = calibre_db.get_book_format(book.id, book_format.upper()) if book else None
+    if not data:
+        abort(404)
+    if version != _file_version(book, data):
+        # the book changed after this link was issued: go through /download for a fresh one
+        response = redirect(url_for("web.download_link", book_id=book_id, book_format=book_format))
+        response.headers["Cache-Control"] = "private, no-store"
+        return response
+    response = get_download_link(book_id, book_format, "", count=False)
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    response.headers.pop("Vary", None)
+    return response
 
 
 def clear_cover_thumbnail_cache(book_id):

@@ -250,8 +250,19 @@ Two live search systems (plus the legacy advanced-search form):
 ## Caching Configuration
 
 ### Book Downloads
-- `Cache-Control: public, max-age=3888000` (45 days)
-- Applied in `cps/helper.py:get_download_link()`
+- `/download/<id>/<fmt>` is never cached: it authorizes, counts the hit
+  (`ub.update_download` + Umami), then 302s to
+  `/files/<id>/<fmt>/<version>/<sig>/<name>` (`get_download_redirect()` in
+  `cps/helper.py`). `version` = `last_modified-size`, `sig` = HMAC of
+  id/format/version with the app secret key
+- `/files/*` (`get_signed_file()`) serves the same bytes to everyone with
+  `Cache-Control: public, max-age=31536000, immutable` and NEVER counts, so the
+  CDN may cache it. A metadata/file change alters `version`, so stale copies are
+  never served; an old link 302s back to `/download`
+- Kindle/Kobo clients and the Google Drive path skip the redirect and use the
+  old direct `get_download_link()`
+- **Cloudflare**: a dashboard Cache Rule must NOT match `/download/*`
+  (a cached 200/302 there bypasses the counter). Cache `/files/*` only
 
 ### Cover Images
 - `Cache-Control: public, max-age=86400` (7 days)

@@ -33,7 +33,7 @@ pustaka.taratsa.id {
       path /login /login/* /logout /logout/*
       path /me /register* /remote_login*
       path /health /healthz /healthz/* /readyz
-      path /read/* /show/* /download/* /send/* /api/read/*
+      path /read/* /show/* /download/* /files/* /send/* /api/read/*
       path /opds /opds/* /kobo/*
       path /cover/* /cover_thumb/* /series_cover/*
       # path /book/*/* /book/*/*/ /book/*/*/*  # Astro serves static book pages
@@ -48,6 +48,12 @@ pustaka.taratsa.id {
       }
       header @books >Cache-Control "private, no-store"
       header @books >Cloudflare-CDN-Cache-Control "no-store"
+      # /files/* are signed, immutable URLs issued by /download after it counted
+      # the hit; Flask sets their Cache-Control so the CDN can cache them.
+      @files {
+        path /files/*
+      }
+      header @files >Vary "Accept-Encoding"
       # Cache OPDS catalog feeds (5 min — catalog changes are batch-rebuilt),
       # but never the per-book acquisition downloads under /opds/download/
       @opds {

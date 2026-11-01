@@ -70,7 +70,9 @@ from .helper import (
     generate_random_password,
     get_book_cover,
     get_download_link,
+    get_download_redirect,
     get_series_cover_thumbnail,
+    get_signed_file,
     get_valid_filename,
     reset_password,
     send_mail,
@@ -2050,7 +2052,15 @@ def download_link(book_id, book_format, anyname):
         client = "kobo"
     else:
         client = ""
+    if not client and not config.config_use_google_drive:
+        return get_download_redirect(book_id, book_format)
     return get_download_link(book_id, book_format, client)
+
+
+@web.route("/files/<int:book_id>/<book_format>/<version>/<sig>", defaults={"anyname": "None"})
+@web.route("/files/<int:book_id>/<book_format>/<version>/<sig>/<anyname>")
+def serve_file(book_id, book_format, version, sig, anyname):
+    return get_signed_file(book_id, book_format, version, sig)
 
 
 @web.route("/send/<int:book_id>/<book_format>/<int:convert>", methods=["POST"])
