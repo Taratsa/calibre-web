@@ -47,6 +47,16 @@ Built by `rebuild-watcher` or manually via:
 
 Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 
+### Video Transcripts (`/video/<id>/`)
+- The video page renders a collapsible "Subtitel" section from
+  `frontend/src/data/video-transcripts/<id>.json` (`{lang, lines: [[sec, text]]}`);
+  absent/empty file means no section. Loader: `frontend/src/data/video-transcripts.ts`
+- Generate with `bun run enrich:video-transcripts` (needs `yt-dlp`; YouTube
+  blocks datacenter IPs, so run from an unblocked IP or pass `--cookies cookies.txt`).
+  Resumable; no-caption videos get `lines: []` (`--retry-empty` to retry)
+- Transcripts are read at SSR time from `src/data` (copied into the runtime image),
+  so new files need an image rebuild
+
 ## Download Tracking
 
 ### Anonymous Downloads
