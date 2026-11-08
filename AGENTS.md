@@ -281,6 +281,12 @@ Two live search systems (plus the legacy advanced-search form):
   `/show/readium/<id>/<path>` serves it. All markup is parsed (a regex prefilter misses `java&#9;script:`); clean
   documents keep their exact bytes; a member that cannot be parsed returns 404. Checked against all ~6,000
   markup members of the library: none unparseable, none modified. Keep it if the sandbox flags or the CSP change
+- **Layout**: `#viewer` sits inside `#stage` (`read.html`, `css/main.css`). Readium measures its container's PARENT,
+  so `#stage` carries the gutter (`padding: 0 clamp(56px, 7vw, 140px)`, room for the page-turn arrows; none under
+  900px) and Readium sets `#viewer`'s width inline from the columns it can fit (about 680px per column: 1 column up
+  to ~1,300px of stage, 2 at 1,920px, 4 at 2,560px). Chapter frames are `width/height: 100%` of `#viewer`. NEVER pin
+  `#viewer iframe` to a fixed size or give `#viewer` a percentage width: the legacy epubjs rules (iPad
+  960x515 / 460x740, `min-device-width` queries) froze the page at 960px on any large screen and were removed
 
 ### Corpus Statistics (`/data`)
 - `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR

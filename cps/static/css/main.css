@@ -99,9 +99,18 @@ body {
   display: none;
 }
 
-#viewer {
-  width: 80%;
+/* #stage is the parent Readium measures: its horizontal padding is the gutter that keeps the page-turn arrows clear of
+   the text, and #viewer (whose width Readium sets inline from the columns it can fit) is centred inside it. */
+#stage {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
   height: 80%;
+  padding: 0 clamp(56px, 7vw, 140px);
+}
+
+#viewer {
+  height: 100%;
   margin: 0 auto;
   z-index: 0;
   position: relative;
@@ -110,6 +119,8 @@ body {
 
 #viewer iframe {
   border: none;
+  width: 100%;
+  height: 100%;
 }
 
 #left,
@@ -657,27 +668,17 @@ input:-moz-placeholder {
 }
 
 @media only screen and (max-width: 1040px) and (orientation: portrait) {
-  #viewer {
-    width: 80%;
-    margin-left: 10%;
-  }
-
   #divider,
   #divider.show {
     display: none;
   }
 }
 
+/* Phones and small tablets: use the whole screen, the page-turn arrows overlay the text edges */
 @media only screen and (max-width: 900px) {
-  #viewer {
-    width: 100%;
+  #stage {
     height: calc(100dvh - 99px);
-    margin-left: 0;
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
+    padding: 0;
   }
 
   #prev {
@@ -692,16 +693,6 @@ input:-moz-placeholder {
 }
 
 @media only screen and (max-width: 550px) {
-  #viewer {
-    width: 100%;
-    height: calc(100dvh - 99px);
-    margin-left: 0;
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
-  }
 
   #prev {
     left: 0;
@@ -752,85 +743,9 @@ input:-moz-placeholder {
   }
 }
 
-/* For iPad portrait layouts only */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
-  #viewer iframe {
-    width: 460px;
-    height: 740px;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) /* and (-webkit-min-device-pixel-ratio: 2) */ {
-  #viewer {
-    width: 80%;
-    margin-left: 10%;
-  }
-
-  #divider,
-  #divider.show {
-    display: none;
-  }
-}
-
-/* For iPad landscape layouts only */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
-  #viewer iframe {
-    width: 960px;
-    height: 515px;
-  }
-}
-
-/* For iPhone 6\6s portrait layouts only */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-  #viewer {
-    width: 100%;
-    height: calc(100dvh - 99px);
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* For iPhone 6\6s landscape layouts only */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-  #viewer {
-    width: 100%;
-    height: calc(100dvh - 99px);
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* For iPhone portrait layouts only */
-@media only screen and (max-device-width: 374px) and (orientation: portrait) {
-  #viewer {
-    width: 100%;
-    height: calc(100dvh - 99px);
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* For iPhone landscape layouts only */
-@media only screen and (max-device-width: 374px) and (orientation: landscape) {
-  #viewer {
-    width: 100%;
-    height: calc(100dvh - 99px);
-  }
-
-  #viewer iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
+/* The legacy per-device rules that pinned the epubjs iframe (iPad 960x515 / 460x740, iPhone 100%) are gone: Readium
+   sizes #viewer and its frames itself from the width of #stage, and a fixed frame size broke every other screen.
+   Phones are covered by the max-width: 900px rule above. */
 
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
