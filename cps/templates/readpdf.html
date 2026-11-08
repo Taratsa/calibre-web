@@ -31,6 +31,9 @@
     </script>
 
     <script src="{{ url_for('static', filename='js/libs/viewer.mjs') }}" type="module" data-cfasync="false"></script>
+
+    {% set umami_event = 'pdf-read' %}{% set umami_book_id = pdffile %}{% set umami_format = 'pdf' %}
+    {% include 'umami_reader.html' %}
   </head>
 
   <body tabindex="0">

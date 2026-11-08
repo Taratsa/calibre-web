@@ -85,7 +85,7 @@ class _ExtractedDocument:
     processing_time_ms: int
 
 
-def _cache_directory() -> Path:
+def cache_directory() -> Path:
     directory = Path(os.environ.get("OCR_CACHE_DIR", "/config/ocr-cache/results"))
     directory.mkdir(parents=True, exist_ok=True)
     return directory
@@ -110,7 +110,7 @@ def _cache_details(
         request["layout_version"] = PDF_LAYOUT_VERSION
     fingerprint = json.dumps(request, sort_keys=True, separators=(",", ":"))
     digest = hashlib.sha256(fingerprint.encode()).hexdigest()
-    return _cache_directory() / f"{book.id}-{digest}.json", request
+    return cache_directory() / f"{book.id}-{digest}.json", request
 
 
 def _load_cache(path: Path) -> OcrDocument | None:
@@ -140,7 +140,7 @@ def _save_cache(path: Path, request: dict[str, object], result: dict[str, object
 
 def ready_ocr_entries() -> list[tuple[int, str, int]]:
     entries: dict[tuple[int, str], int] = {}
-    for path in _cache_directory().glob("*.json"):
+    for path in cache_directory().glob("*.json"):
         try:
             payload = json.loads(path.read_text(encoding="utf-8"))
             cache_request = payload["request"]

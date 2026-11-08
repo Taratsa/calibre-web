@@ -9,6 +9,7 @@ from flask_babel import lazy_gettext as N_
 from cps import app, calibre_db, db, logger
 from cps.ocr_service import OcrBookNotFoundError, OcrUnavailableError, scan_book_ocr
 from cps.services.worker import STAT_CANCELLED, STAT_ENDED, CalibreTask
+from cps.tasks.text_analysis import rebuild_corpus
 
 log = logger.create()
 
@@ -77,6 +78,8 @@ class TaskOcrScan(CalibreTask):
             finally:
                 self.progress = index / total
 
+        if not self.book_ids:
+            self._rebuild_corpus()
         self.message = N_(
             "OCR scan complete: %(ready)d ready, %(skipped)d skipped, %(failed)d failed",
             ready=self.ready_count,
@@ -84,6 +87,14 @@ class TaskOcrScan(CalibreTask):
             failed=self.failed_count,
         )
         self._handleSuccess()
+
+    @staticmethod
+    def _rebuild_corpus():
+        # Derived data again: a failed rebuild only leaves the previous corpus statistics in place.
+        try:
+            rebuild_corpus()
+        except Exception as exc:
+            log.error("[analysis] Corpus rebuild failed: %s", exc)
 
     def _get_book_formats(self):
         query = calibre_db.session.query(

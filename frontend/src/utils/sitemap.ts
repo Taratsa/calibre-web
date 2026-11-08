@@ -20,10 +20,13 @@ export interface SitemapEntry {
 
 export type SitemapChunk = SitemapEntry[];
 
+const OCR_FORMATS = ['epub', 'pdf'];
+
 const STATIC_PATHS = [
   '/',
   '/about/',
   '/author/',
+  '/data/',
   '/category/',
   '/formats/',
   '/language/',
@@ -80,6 +83,11 @@ export function getSitemapEntries(): SitemapEntry[] {
   for (const book of getAllBooks()) {
     const cover = imageUrl(book.cover_og_url);
     addEntry(entries, bookPath(book), dateOnly(book.last_modified), cover ? [cover] : undefined);
+    for (const format of OCR_FORMATS) {
+      if (book.formats.some((candidate) => candidate.toLowerCase() === format)) {
+        addEntry(entries, `/read/${book.id}/ocr/${format}`, dateOnly(book.last_modified));
+      }
+    }
   }
   for (const author of getAllAuthors()) addEntry(entries, authorPath(author));
   for (const category of getAllCategories()) addEntry(entries, `/category/${category.id}`);

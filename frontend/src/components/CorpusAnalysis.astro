@@ -1,0 +1,194 @@
+---
+interface Corpus {
+  books: number;
+  approximate_ngrams: boolean;
+  basic: { tokens: number; unique_tokens: number; sentences: number; paragraphs: number; characters: number };
+  by_format: Record<string, { books: number; tokens: number }>;
+  lengths: { min: number; median: number; mean: number; max: number; bins: [number, number | null, number][] };
+  lexical: { hapax: number; hapax_ratio: number; mtld_median: number | null; mtld_books: number };
+  ngrams: { bigrams: [string, number][]; trigrams: [string, number][] };
+  frequency: [string, number, number, number][];
+  cloud: [string, number, number][];
+}
+interface Props {
+  corpus: Corpus;
+  builtAt: string | null;
+}
+
+const { corpus, builtAt } = Astro.props;
+const nf = new Intl.NumberFormat('id-ID');
+const dec = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 });
+const pct = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 2 });
+const n = (v: number) => nf.format(v);
+
+const { basic, lexical, ngrams, frequency, lengths, by_format: byFormat } = corpus;
+const meanSentence = basic.sentences ? basic.tokens / basic.sentences : 0;
+const maxFrequency = Math.max(...frequency.map(f => f[1]), 1);
+const maxBigram = Math.max(...ngrams.bigrams.map(g => g[1]), 1);
+const maxTrigram = Math.max(...ngrams.trigrams.map(g => g[1]), 1);
+const maxBin = Math.max(...lengths.bins.map(b => b[2]), 1);
+// Word cloud: alphabetical, size on a log scale so a few very common words do not shrink the rest to nothing.
+const cloudCounts = corpus.cloud.map(w => Math.log(w[1]));
+const cloudMin = Math.min(...cloudCounts);
+const cloudSpan = Math.max(Math.max(...cloudCounts) - cloudMin, 1e-9);
+const cloud = corpus.cloud
+  .map(([word, count, books]) => ({ word, count, books, weight: (Math.log(count) - cloudMin) / cloudSpan }))
+  .sort((a, b) => a.word.localeCompare(b.word, 'id'));
+const cloudTier = (weight: number) => (weight > 0.66 ? 'high' : weight > 0.33 ? 'mid' : 'low');
+const binLabel = ([lower, upper]: [number, number | null, number]) =>
+  upper === null ? `≥ ${n(lower)}` : `${n(lower)} – ${n(upper - 1)}`;
+const formatLabel = (name: string) => name.toUpperCase();
+const built = builtAt ? builtAt.slice(0, 10) : null;
+const formats = Object.entries(byFormat).map(([name, f]) => `${n(f.books)} ${formatLabel(name)}`).join(', ');
+
+const basics: [string, string][] = [
+  ['Buku', n(corpus.books)],
+  ['Token', n(basic.tokens)],
+  ['Token unik (kosakata)', n(basic.unique_tokens)],
+  ['Kalimat', n(basic.sentences)],
+  ['Paragraf', n(basic.paragraphs)],
+  ['Karakter', n(basic.characters)],
+];
+const lexicals: [string, string][] = [
+  ['Kosakata', n(basic.unique_tokens)],
+  ['Kata muncul sekali', n(lexical.hapax)],
+  ['Median MTLD per buku', lexical.mtld_median == null ? '-' : dec.format(lexical.mtld_median)],
+];
+---
+
+<section lang="id" aria-labelledby="analisis-korpus" class="ta">
+  <header class="ta-head">
+    <h2 id="analisis-korpus">Analisis Teks Seluruh Koleksi</h2>
+    <p>
+      Korpus ini terdiri atas {n(corpus.books)} buku dengan sekitar {n(basic.tokens)} kata dalam {n(basic.sentences)} kalimat.
+      Rata-rata satu kalimat berisi {dec.format(meanSentence)} kata, dan kosakatanya mencakup {n(basic.unique_tokens)} jenis kata.
+    </p>
+    <p class="ta-note">
+      Hanya buku yang teksnya sudah diekstrak yang ikut dihitung ({formats}); setiap buku dihitung sekali.
+      Semua angka dihitung otomatis dan menggambarkan isi teks, bukan menilai mutu sastranya.{built ? ` Dihitung ${built}.` : ''}
+    </p>
+  </header>
+
+  <details class="ta-panel" open>
+    <summary><h3>Hitungan dasar korpus</h3></summary>
+    <div class="ta-body">
+      <dl class="ta-grid">
+        {basics.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+      </dl>
+      <h4>Panjang buku (token)</h4>
+      <dl class="ta-grid">
+        <div><dt>Terpendek</dt><dd>{n(lengths.min)}</dd></div>
+        <div><dt>Median</dt><dd>{n(lengths.median)}</dd></div>
+        <div><dt>Rata-rata</dt><dd>{n(Math.round(lengths.mean))}</dd></div>
+        <div><dt>Terpanjang</dt><dd>{n(lengths.max)}</dd></div>
+      </dl>
+      <h4>Sebaran jumlah buku menurut panjang</h4>
+      <ol class="ta-rank" aria-label="Jumlah buku per rentang panjang">
+        {lengths.bins.map(bin => (
+          <li><span>{binLabel(bin)} token</span><span class="ta-rank__bar" aria-hidden="true"><i style={`width:${(bin[2] / maxBin) * 100}%`}></i></span><b>{n(bin[2])}</b></li>
+        ))}
+      </ol>
+      <h4>Batas metode</h4>
+      <ul class="ta-limits">
+        <li>Token = rangkaian huruf (boleh bertanda hubung); angka tidak dihitung sebagai kata.</li>
+        <li>Pemisah kalimat adalah heuristik, bukan model tervalidasi.</li>
+        <li>Kesalahan OCR pada PDF ikut memengaruhi semua hitungan.</li>
+        <li>Buku panjang berbobot lebih besar daripada buku pendek dalam angka gabungan.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="ta-panel">
+    <summary><h3>Keragaman leksikal</h3></summary>
+    <div class="ta-body">
+      <dl class="ta-grid">
+        {lexicals.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+      </dl>
+      <div class="ta-meter">
+        <div class="ta-meter__row">
+          <span>Jenis kata yang hanya muncul sekali di seluruh koleksi</span><strong>{Math.round(lexical.hapax_ratio * 100)}%</strong>
+        </div>
+        <div class="ta-bar" role="img" aria-label={`Jenis kata yang hanya muncul sekali: ${Math.round(lexical.hapax_ratio * 100)} dari 100`}>
+          <span style={`width:${lexical.hapax_ratio * 100}%`}></span>
+        </div>
+      </div>
+      <h4>Batas metode</h4>
+      <ul class="ta-limits">
+        <li>Median MTLD dihitung per buku dari {n(lexical.mtld_books)} buku yang panjangnya minimal 1.000 token; buku lebih pendek dilewati.</li>
+        <li>Kosakata gabungan bertambah dengan ukuran korpus dan memuat kesalahan OCR serta nama dan istilah asing, jadi bukan ukuran kekayaan bahasa.</li>
+        <li>Tanpa lemmatisasi: bentuk berimbuhan dihitung sebagai tipe berbeda.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="ta-panel">
+    <summary><h3>N-gram</h3></summary>
+    <div class="ta-body">
+      <div class="ta-cols">
+        <div>
+          <h4>Pasangan kata (bigram) teratas</h4>
+          <ol class="ta-rank">
+            {ngrams.bigrams.map(([gram, count]) => (
+              <li><span>{gram}</span><span class="ta-rank__bar" aria-hidden="true"><i style={`width:${(count / maxBigram) * 100}%`}></i></span><b>{n(count)}</b></li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h4>Tiga kata berurutan (trigram) teratas</h4>
+          <ol class="ta-rank">
+            {ngrams.trigrams.map(([gram, count]) => (
+              <li><span>{gram}</span><span class="ta-rank__bar" aria-hidden="true"><i style={`width:${(count / maxTrigram) * 100}%`}></i></span><b>{n(count)}</b></li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      <h4>Perlu diperhatikan</h4>
+      <ul class="ta-limits">
+        <li>Tanpa pembuangan stopword: n-gram teratas umumnya frasa fungsional.</li>
+        <li>N-gram dihitung di dalam kalimat; hanya yang muncul minimal dua kali yang ditampilkan.</li>
+        {corpus.approximate_ngrams && <li>Tabel n-gram terlalu besar untuk disimpan utuh, sehingga yang muncul sekali dibuang di tengah penghitungan; peringkat teratas tetap dapat diandalkan, hitungan yang kecil mungkin terlalu rendah.</li>}
+      </ul>
+    </div>
+  </details>
+
+  <details class="ta-panel" open>
+    <summary><h3>Awan kata</h3></summary>
+    <div class="ta-body">
+      <p class="ta-muted">{cloud.length} kata teratas setelah stopword dibuang · ukuran menunjukkan frekuensi, arahkan kursor untuk jumlahnya</p>
+      <ul class="ta-cloud" aria-label="Kata paling sering muncul tanpa stopword">
+        {cloud.map(w => (
+          <li data-tier={cloudTier(w.weight)} style={`--w:${w.weight.toFixed(3)}`} title={`${n(w.count)} kali, dipakai di ${n(w.books)} dari ${n(corpus.books)} buku`}>{w.word}</li>
+        ))}
+      </ul>
+      <h4>Perlu diperhatikan</h4>
+      <ul class="ta-limits">
+        <li>Stopword (kata fungsi seperti "yang", "dan", "the", "of", "het") dibuang memakai daftar stopwords-iso untuk bahasa Indonesia, Inggris, dan Belanda, ditambah beberapa ejaan lama seperti "jang" dan "itoe". Daftar Melayu sengaja tidak dipakai karena ikut membuang kata isi seperti "orang" dan "rakyat".</li>
+        <li>Kata kurang dari tiga huruf dibuang agar serpihan OCR tidak muncul.</li>
+        <li>Koleksi memuat buku berbahasa lain dan ejaan lama, jadi sebagian kata fungsi masih lolos dan nama tokoh atau tempat ikut tampil.</li>
+        <li>Kata dihitung apa adanya, tanpa lemmatisasi: "buruh" dan "buruh-buruh" terpisah.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="ta-panel">
+    <summary><h3>Frekuensi kata</h3></summary>
+    <div class="ta-body">
+      <p class="ta-muted">{n(basic.tokens)} token · {n(basic.unique_tokens)} tipe · angka kecil di samping kata = jumlah buku yang memakainya</p>
+      <ol class="ta-rank">
+        {frequency.map(([word, count, share, books]) => (
+          <li title={`${pct.format(share * 100)}% dari seluruh kata, dipakai di ${n(books)} dari ${n(corpus.books)} buku`}>
+            <span>{word}<small>{n(books)} buku</small></span><span class="ta-rank__bar" aria-hidden="true"><i style={`width:${(count / maxFrequency) * 100}%`}></i></span><b>{n(count)}</b>
+          </li>
+        ))}
+      </ol>
+      <h4>Perlu diperhatikan</h4>
+      <ul class="ta-limits">
+        <li>Daftar teratas didominasi kata fungsi karena stopword tidak dibuang.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<style is:global>
+  @import '../styles/analysis.css';
+</style>

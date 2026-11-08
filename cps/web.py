@@ -97,6 +97,7 @@ from .services.worker import WorkerThread
 from .string_helper import strip_whitespaces
 from .tasks.ocr_queue import OcrQueueFullError, ocr_job_state, queue_book_ocr
 from .tasks_status import render_task_status
+from .text_analysis_store import load_corpus
 from .usermanagement import login_required_if_no_ano, user_login_required
 
 feature_support = {
@@ -2424,6 +2425,20 @@ def _ocr_target(book_id, requested_format):
 def _ocr_document(book_id, requested_format):
     book, data, normalized_format = _ocr_target(book_id, requested_format)
     return book, extract_book_ocr(book, data, normalized_format, allow_extract=False)
+
+
+@web.route("/api/analysis/corpus")
+def analysis_corpus_api():
+    """Statistics of all analysed books together; public, contains no per-book data. Never computes."""
+    stored = load_corpus()
+    if stored is None:
+        response = jsonify({"state": "pending"})
+        response.status_code = 202
+        response.headers["Cache-Control"] = "no-store"
+        return response
+    response = jsonify(stored)
+    response.headers["Cache-Control"] = "public, max-age=300"
+    return response
 
 
 @web.route("/api/read/<int:book_id>/ocr/status")

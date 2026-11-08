@@ -310,9 +310,7 @@
       document.querySelectorAll('a[href]').forEach(function (a) {
         var pathname = a.pathname;
         if (pathname && !a.getAttribute('data-umami-event')) {
-          if (/\/read\/\d+\/pdf$/i.test(pathname)) {
-            a.setAttribute('data-umami-event', 'pdf-read');
-          } else if (/\/download\/\d+\/pdf\//i.test(pathname)) {
+          if (/\/download\/\d+\/pdf\//i.test(pathname)) {
             a.setAttribute('data-umami-event', 'pdf-download');
             a.setAttribute('data-umami-event-file', pathname.split('/').pop());
             a.setAttribute('data-umami-event-title', document.getElementById('title') ? document.getElementById('title').textContent : document.title);

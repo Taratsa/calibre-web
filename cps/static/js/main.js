@@ -566,6 +566,31 @@ $(function() {
             }
         });
     });
+    $("#text_analysis").click(function() {
+        $("#DialogHeader").addClass("hidden");
+        $("#DialogFinished").addClass("hidden");
+        $("#DialogContent").html("");
+        $("#spinner2").show();
+        $.ajax({
+            method: "post",
+            dataType: "json",
+            url: getPath() + "/analysis/run",
+            success: function success(data) {
+                $("#spinner2").hide();
+                $("#DialogContent").text(data.message || "Text analysis queued");
+                if (data.task_id) {
+                    $("#DialogContent").append(" ");
+                    $("#DialogContent").append($("<a>", { href: getPath() + "/tasks", text: "View Tasks" }));
+                }
+                $("#DialogFinished").removeClass("hidden");
+            },
+            error: function error(xhr) {
+                $("#spinner2").hide();
+                $("#DialogContent").text(xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : "Unable to queue text analysis.");
+                $("#DialogFinished").removeClass("hidden");
+            }
+        });
+    });
     $("#perform_update").click(function() {
         $("#DialogHeader").removeClass("hidden");
         $("#spinner2").show();

@@ -182,6 +182,7 @@ Two live search systems (plus the legacy advanced-search form):
 - `cps/db.py` - Trigram FTS5 search prefilter (index in app.db, auto-rebuild on catalog change) + LIKE fallback
 - `cps/templates/feed.xml` - `link_query` pagination base for OPDS search next/prev links
 - `cps/frontend_rebuild.py` - Async frontend rebuild trigger
+- `cps/text_analysis.py`, `cps/text_analysis_store.py`, `cps/tasks/text_analysis.py` - Corpus text statistics for `/data` (see Corpus Statistics)
 - `cps/templates/layout.html` - Umami tracking for downloads
 - `cps/templates/detail.html` - JSON-LD structured data, canonical URL
 - `cps/templates/author.html` - JSON-LD structured data
@@ -195,6 +196,9 @@ Two live search systems (plus the legacy advanced-search form):
 
 ### Key Features
 - Umami analytics tracking for downloads (browser + server-side)
+- Umami `epub-read` / `pdf-read` events (`book_id`, `format`, `title`) fired on load by the standalone
+  reader pages `read.html` / `readpdf.html` via the shared `cps/templates/umami_reader.html` partial
+  (these pages do not extend `layout.html`, so they load the Umami script themselves)
 - Anonymous download tracking for Hot Books
 - OPDS feed for ebook reader compatibility
 - App-level WebP conversion for cover images
@@ -246,6 +250,31 @@ Two live search systems (plus the legacy advanced-search form):
   (`resolving` flag) and reloads when it clears. A second request returns 409
   while one is running/queued.
 - `/duplicates/invalidate-cache` internal endpoint is CSRF-exempt
+
+### Corpus Statistics (`/data`)
+- `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR
+  process, so reseed + image rebuild refreshes it) and, below them, text statistics of the **whole corpus**
+  (`components/CorpusAnalysis.astro`, styles in `src/styles/analysis.css`). There is deliberately **no per-book
+  analysis** on book pages
+- Statistics are derived from the OCR/EPUB text cache, never from the files: `cps/text_analysis.py` (pure:
+  `CorpusBuilder`), `cps/text_analysis_store.py` (storage), `cps/tasks/text_analysis.py` (`rebuild_corpus`,
+  `TaskTextAnalysis`)
+- Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
+  patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
+  the next rebuild)
+- The corpus is built from the full cached texts, one document per book (EPUB wins over PDF). Word counts and
+  document frequency are exact; the n-gram tables are capped at `MAX_NGRAM_ENTRIES` and flag `approximate_ngrams`
+  when singletons had to be dropped. Takes ~1 minute and ~0.5 GB for ~1,000 books
+- Word cloud (`cloud` in the corpus result, panel "Awan kata"): top `CLOUD_WORDS` words after dropping stopwords and words
+  shorter than `CLOUD_MIN_LENGTH`. Stopwords = stopwords-iso (MIT) Indonesian + English + Dutch + a few old-spelling
+  fragments, bundled as `cps/text_analysis_stopwords.json`. Malay is left out on purpose: it contains content words
+  ("orang", "rakyat", "negara"). The n-gram and "Frekuensi kata" panels stay unfiltered. Change the list -> bump `ANALYSIS_VERSION`
+- Nothing computes on a request: `GET /api/analysis/corpus` (public, no per-book data) answers 200 with the stored
+  result or 202 `{"state":"pending"}`, and `/data` then shows a notice instead of the panels
+- Rebuild triggers: the end of a full scheduled OCR scan (`tasks/ocr_scan.py`) and the admin button "Compute Text
+  Analysis Now" (`POST /analysis/run`). On-demand reader OCR does not rebuild it, so `/data` can lag behind until
+  the next run
+- PDFs without cached OCR text are left out (no GPU work is queued); ~6,000 of ~7,100 books are in that state
 
 ### Structured Data (JSON-LD)
 

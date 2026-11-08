@@ -243,6 +243,17 @@ def queue_ocr_scan():
     return jsonify({"success": True, "message": _("OCR scan queued"), "task_id": str(task.id)})
 
 
+@admi.route("/analysis/run", methods=["POST"])
+@user_login_required
+@admin_required
+def queue_text_analysis():
+    from .tasks.text_analysis import TaskTextAnalysis
+
+    task = TaskTextAnalysis()
+    WorkerThread.add(current_user.name, task, hidden=False)
+    return jsonify({"success": True, "message": _("Text analysis queued"), "task_id": str(task.id)})
+
+
 @admi.route("/admin/view")
 @user_login_required
 @admin_required

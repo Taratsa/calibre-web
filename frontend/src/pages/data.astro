@@ -1,0 +1,154 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { formatBytes } from '~/data';
+import { getLibraryStats } from '~/utils/library-stats';
+import CorpusAnalysis from '~/components/CorpusAnalysis.astro';
+import type { ComponentProps } from 'astro/types';
+
+const s = getLibraryStats();
+const nf = new Intl.NumberFormat('id-ID');
+const n = (v: number) => nf.format(v);
+
+const overview: { label: string; value: string; href?: string }[] = [
+  { label: 'Buku', value: n(s.books), href: '/page/' },
+  { label: 'Penulis', value: n(s.authors), href: '/author' },
+  { label: 'Penerbit', value: n(s.publishers), href: '/publisher' },
+  { label: 'Seri', value: n(s.series), href: '/series' },
+  { label: 'Kategori', value: n(s.categories), href: '/category' },
+  { label: 'Total ukuran berkas', value: formatBytes(s.totalBytes) || '-' },
+];
+
+const maxYear = Math.max(...s.addedByYear.map(r => r.count), 1);
+const newestDate = s.newest ? s.newest.slice(0, 10) : null;
+
+type CorpusPayload = {
+  built_at: string | null;
+  corpus: ComponentProps<typeof CorpusAnalysis>['corpus'];
+};
+let corpus: CorpusPayload | null = null;
+try {
+  const response = await fetch(new URL('/api/analysis/corpus', process.env.BACKEND_URL || Astro.url.origin));
+  if (response.status === 200) corpus = (await response.json()) as CorpusPayload;
+} catch {}
+---
+
+<BaseLayout title="Data" description="Ringkasan data koleksi Pustaka Taratsa: jumlah buku, format, bahasa, penulis, penerbit, dan statistik teks seluruh koleksi.">
+  <article class="mx-auto max-w-4xl">
+    <header class="mb-8 border-b pb-6 border-[var(--border-subtle)]">
+      <h1 class="mb-3">Data</h1>
+      <p class="text-lg text-[var(--muted)]">
+        Ringkasan isi koleksi Pustaka Taratsa{newestDate && <> (buku terakhir ditambahkan {newestDate})</>}.
+      </p>
+    </header>
+
+    <section class="mb-10" aria-labelledby="ringkasan">
+      <h2 id="ringkasan">Ringkasan</h2>
+      <dl class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {overview.map(o => (
+          <div class="rounded border border-[var(--border-subtle)] bg-[var(--surface)] p-4">
+            <dt class="text-sm text-[var(--muted)]">{o.label}</dt>
+            <dd class="m-0 text-2xl font-semibold">
+              {o.href ? <a href={o.href} class="no-underline hover:underline">{o.value}</a> : o.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      {s.filesCounted > 0 && (
+        <p class="mt-3 text-sm text-[var(--muted)]">Ukuran dihitung dari {n(s.filesCounted)} berkas yang tercatat ukurannya.</p>
+      )}
+    </section>
+
+    <section class="mb-10" aria-labelledby="format">
+      <h2 id="format">Format berkas</h2>
+      <p class="text-sm text-[var(--muted)]">Satu buku dapat tersedia dalam lebih dari satu format.</p>
+      <ul class="list-none p-0">
+        {s.formats.map(r => (
+          <li class="stat-row"><a href={r.href} class="no-underline hover:underline">{r.label}</a><span>{n(r.count)} buku</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10" aria-labelledby="bahasa">
+      <h2 id="bahasa">Bahasa</h2>
+      <p class="text-sm text-[var(--muted)]">
+        {n(s.languageUnset)} dari {n(s.books)} buku belum memiliki data bahasa, sehingga angka di bawah hanya mencakup buku yang sudah ditandai.
+      </p>
+      <ul class="list-none p-0">
+        {s.languages.map(r => (
+          <li class="stat-row"><a href={r.href} class="no-underline hover:underline">{r.label}</a><span>{n(r.count)} buku</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10" aria-labelledby="tahun">
+      <h2 id="tahun">Buku ditambahkan per tahun</h2>
+      <ul class="list-none p-0">
+        {s.addedByYear.map(r => (
+          <li class="bar-row">
+            <span>{r.label}</span>
+            <span class="bar" aria-hidden="true"><span class="bar__fill" style={`width:${(r.count / maxYear) * 100}%`}></span></span>
+            <span class="num">{n(r.count)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10 grid gap-8 sm:grid-cols-2" aria-labelledby="teratas">
+      <div>
+        <h2 id="teratas">Penulis dengan buku terbanyak</h2>
+        <p class="text-sm text-[var(--muted)]">Tanpa entri "Tidak diketahui", "Anonim", dan sejenisnya.</p>
+        <ul class="list-none p-0">
+          {s.topAuthors.map(r => (
+            <li class="stat-row"><a href={r.href} class="no-underline hover:underline">{r.label}</a><span>{n(r.count)}</span></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>Penerbit dengan buku terbanyak</h2>
+        <p class="text-sm text-[var(--muted)]">{n(s.withoutPublisher)} buku belum memiliki penerbit.</p>
+        <ul class="list-none p-0">
+          {s.topPublishers.map(r => (
+            <li class="stat-row"><a href={r.href} class="no-underline hover:underline">{r.label}</a><span>{n(r.count)}</span></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section lang="id" aria-labelledby="analisis" class="mb-10">
+      <h2 id="analisis">Analisis teks</h2>
+      <p class="mb-4">
+        Statistik teks seluruh koleksi, digabung dari semua buku yang teksnya sudah diekstrak (EPUB, atau PDF yang sudah
+        diproses OCR).
+      </p>
+      {corpus ? (
+        <CorpusAnalysis corpus={corpus.corpus} builtAt={corpus.built_at} />
+      ) : (
+        <p class="rounded border border-[var(--border-subtle)] bg-[var(--surface-2)] p-4 text-sm">
+          Statistik korpus belum dihitung. Hasilnya akan muncul di sini setelah analisis teks dijalankan.
+        </p>
+      )}
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .stat-row span { color: var(--muted-strong); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 3rem 1fr 4rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .bar { display: block; height: 0.75rem; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+  .bar__fill { display: block; height: 100%; background: var(--muted-soft); }
+  .num { text-align: right; }
+</style>

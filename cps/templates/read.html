@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reader.css') }}">
+    {% set umami_event = 'epub-read' %}{% set umami_book_id = bookid %}{% set umami_format = book_format|lower %}
+    {% include 'umami_reader.html' %}
 </head>
 
 <body>
