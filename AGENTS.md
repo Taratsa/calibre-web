@@ -270,7 +270,17 @@ Two live search systems (plus the legacy advanced-search form):
   `localStorage` (`calibre.reader.*`). The reading position is stored per book as a serialized locator under
   `calibre.reader.locator.<id>`; the server bookmark (`/ajax/bookmark`) now holds a Readium locator (JSON) instead of
   an epub CFI, so old CFI bookmarks are ignored
-- The reader page CSP allows `blob:` frames (`frame-src`), because each chapter is rendered in a blob iframe
+- The reader page CSP allows `blob:` frames (`frame-src`) and `blob:` scripts (`script-src-elem`, which must repeat the
+  `default-src` sources because it replaces that fallback for `<script>`): each chapter is a blob iframe and Readium
+  injects its helper scripts (CSS selector generator, execution prevention) as blob URLs. Without it the console
+  shows "Loading the script 'blob:...' violates the following Content Security Policy"
+- **Chapter sanitising**: Readium's iframe sandbox is `allow-same-origin allow-scripts` (set in the toolkit, not
+  configurable), so the browser warns about it, and a chapter script CAN reach `window.parent` (the logged-in page
+  and its CSRF token); the toolkit only fakes storage/cookies. `readium.strip_active_content()` therefore removes
+  `<script>`, `on*` attributes, `srcdoc` and `javascript:` URLs from every XHTML/HTML/SVG member before
+  `/show/readium/<id>/<path>` serves it. All markup is parsed (a regex prefilter misses `java&#9;script:`); clean
+  documents keep their exact bytes; a member that cannot be parsed returns 404. Checked against all ~6,000
+  markup members of the library: none unparseable, none modified. Keep it if the sandbox flags or the CSP change
 
 ### Corpus Statistics (`/data`)
 - `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR

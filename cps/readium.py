@@ -7,12 +7,14 @@ The Readium ts-toolkit navigator in the browser needs a manifest and a position 
 import mimetypes
 import os
 import posixpath
+import re
 import zipfile
 from functools import lru_cache
 from typing import Any
 from urllib.parse import quote, unquote
 
 from lxml import etree  # pyright: ignore[reportAttributeAccessIssue]
+from lxml import html as lxml_html  # pyright: ignore[reportAttributeAccessIssue]
 
 OPF_NS = "http://www.idpf.org/2007/opf"
 DC_NS = "http://purl.org/dc/elements/1.1/"
@@ -272,6 +274,65 @@ _TYPE_OVERRIDES = {
 }
 
 
+# Chapters render in a same-origin iframe (allow-scripts + allow-same-origin) that can reach the logged-in session,
+# so an uploaded EPUB must not carry executable content: Readium only blocks storage, not DOM access to the parent.
+_URL_ATTRS = {"href", "src", "action", "formaction", "data"}
+
+
+def _drop(node):
+    """Remove ``node`` but keep the text that followed it."""
+    parent = node.getparent()
+    if node.tail:
+        previous = node.getprevious()
+        if previous is not None:
+            previous.tail = (previous.tail or "") + node.tail
+        else:
+            parent.text = (parent.text or "") + node.tail
+    parent.remove(node)
+
+
+def strip_active_content(data, media_type):
+    """Markup without ``<script>``, ``on*`` handlers, ``srcdoc`` and ``javascript:`` URLs.
+
+    Every XHTML/HTML/SVG resource is parsed (a byte-level prefilter misses obfuscated forms such as ``java&#9;script:``
+    or entity-encoded names) but only re-serialised when something was removed, so clean documents keep their exact
+    bytes. Other media types pass through. ``None`` means the markup cannot be parsed and so cannot be cleaned; a
+    browser would not render such an XHTML/SVG file either.
+    """
+    if media_type not in XHTML_TYPES and media_type != "image/svg+xml":
+        return data
+    try:
+        if media_type == "text/html":
+            root = lxml_html.document_fromstring(data)
+        else:
+            root = etree.fromstring(data, parser=_parser)
+    except (etree.XMLSyntaxError, etree.ParserError, ValueError):
+        return None
+    changed = False
+    for node in list(root.iter()):
+        if not isinstance(node.tag, str):
+            continue
+        if etree.QName(node).localname.lower() == "script":
+            _drop(node)
+            changed = True
+            continue
+        for name, value in list(node.attrib.items()):
+            local = name.rsplit("}", 1)[-1].lower()
+            if (
+                local.startswith("on")
+                or local == "srcdoc"
+                or (local in _URL_ATTRS and re.sub(r"[\s\x00-\x1f]", "", value).lower().startswith("javascript:"))
+            ):
+                del node.attrib[name]
+                changed = True
+    if not changed:
+        return data
+    tree = root.getroottree()
+    if media_type == "text/html":
+        return lxml_html.tostring(tree, encoding="utf-8", doctype="<!DOCTYPE html>")
+    return etree.tostring(tree, xml_declaration=True, encoding="utf-8")
+
+
 def read_resource(epub_path, member):
     """Bytes and media type of one zip member, or ``None`` when it does not exist.
 
@@ -289,6 +350,9 @@ def read_resource(epub_path, member):
         return None
     suffix = posixpath.splitext(member)[1].lower()
     media_type = _TYPE_OVERRIDES.get(suffix) or mimetypes.guess_type(member)[0] or "application/octet-stream"
+    data = strip_active_content(data, media_type)
+    if data is None:
+        return None
     return data, media_type
 
 

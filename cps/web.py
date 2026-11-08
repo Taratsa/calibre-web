@@ -228,8 +228,11 @@ def add_security_headers(resp):
     if request.endpoint == "edit-book.show_edit_book" or config.config_use_google_drive:
         csp += " *"
     if reader_page:
-        # Readium renders each chapter in a blob: iframe that loads its images, fonts and CSS from /show/readium/<id>/.
+        # Readium renders each chapter in a blob: iframe that loads its images, fonts and CSS from /show/readium/<id>/,
+        # and injects its helper scripts into the chapter as blob: URLs. script-src-elem replaces the default-src
+        # fallback for <script> elements, so it repeats the default sources and only adds blob:.
         csp += " blob: ; style-src-elem 'self' blob: 'unsafe-inline'; frame-src 'self' blob:"
+        csp += "; script-src-elem " + " ".join(default_src) + " blob:"
     csp += "; object-src 'none';"
     resp.headers["Content-Security-Policy"] = csp
     resp.headers["X-Content-Type-Options"] = "nosniff"
