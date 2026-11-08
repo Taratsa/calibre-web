@@ -251,6 +251,27 @@ Two live search systems (plus the legacy advanced-search form):
   while one is running/queued.
 - `/duplicates/invalidate-cache` internal endpoint is CSRF-exempt
 
+### EPUB Reader (Readium ts-toolkit)
+- `/read/<id>/epub` (`templates/read.html` + `static/js/reading/epub.js`) renders EPUBs with the
+  [Readium ts-toolkit](https://github.com/readium/ts-toolkit) `EpubNavigator`; it replaced epubjs/epub-ts. The
+  navigator does not read zips: `cps/readium.py` builds a Readium Web Publication Manifest and a position list
+  (one position per ~1,024 characters) from the EPUB, and `web.py` serves them with single zip members:
+  `/show/readium/<id>/manifest.json`, `/show/readium/<id>/positions.json`, `/show/readium/<id>/<zip path>`. They
+  live under `/show/` on purpose: the production Caddyfile (`/home/wibi/apps/caddy/Caddyfile`, not the repo copy)
+  already sends `/show/*` to Flask with `private, no-store`, so no proxy change is needed. Same permissions as
+  `/show/<id>/<fmt>` (`viewer_required`). Manifests are memoised on the file's mtime/size. EPUBs on Google Drive are
+  not supported by these routes
+- The browser bundle is `static/js/libs/readium.js` (global `Readium`), built from `readium-reader/`
+  (`cd readium-reader && npm install && npx vite build`; versions pinned in its `package.json`). Vite is needed
+  because the toolkit imports Readium CSS and the in-frame scripts with `?raw`. Rebuild and commit the bundle when
+  bumping `@readium/*`
+- Reader settings are Readium preferences (`EpubPreferences`): theme (background/text colour), font size
+  (70-300%, via Readium CSS `zoom`), font family, columns, **text alignment** (default/left/justify) - all kept in
+  `localStorage` (`calibre.reader.*`). The reading position is stored per book as a serialized locator under
+  `calibre.reader.locator.<id>`; the server bookmark (`/ajax/bookmark`) now holds a Readium locator (JSON) instead of
+  an epub CFI, so old CFI bookmarks are ignored
+- The reader page CSP allows `blob:` frames (`frame-src`), because each chapter is rendered in a blob iframe
+
 ### Corpus Statistics (`/data`)
 - `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR
   process, so reseed + image rebuild refreshes it) and, below them, text statistics of the **whole corpus**
@@ -282,9 +303,25 @@ Two live search systems (plus the legacy advanced-search form):
 - `url`, `name`, `author` (Person array), `image`, `inLanguage`
 - `description`, `isbn`, `datePublished`, `publisher`
 - `bookFormat` (EBook/Book), `aggregateRating`
+- `inLanguage` and `og:locale` come from Calibre's ISO 639-2 codes (`ind`) mapped to ISO 639-1 / locale
+  (`id`, `id_ID`) by `languageTag()` / `ogLocale()` in `frontend/src/data/index.ts`. Add new languages to
+  `ISO_639_1` there. `BookLayout` passes the locale to `BaseLayout`, which emits the only `og:locale`
+- `datePublished`, `book:release_date` and the visible "Tahun" row use `reliablePubdate()`
+  (`frontend/src/utils/pubdate.ts`): Calibre fills `pubdate` with the import date when a book has none, so a
+  date within 31 days before `timestamp` (or after it) is treated as a placeholder and omitted
 
 #### Author Pages
 - `name`, `image`, `description`, `sameAs` (Goodreads), `url`
+
+### Indexing
+
+- The sitemap lists `/read/<id>/ocr/<fmt>/` only for books in `frontend/src/data/ocr-ready.json`, written by
+  `seed.mjs` from the OCR cache (`OCR_CACHE_DIR`, set by `build-frontend.sh`): entries of the current
+  `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
+  and size. Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
+  appear in the sitemap after the next `./build-frontend.sh`; without the cache dir the previous manifest is kept
+- The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
+  (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
 
 ## Caching Configuration
 
@@ -303,26 +340,10 @@ Two live search systems (plus the legacy advanced-search form):
 - **Cloudflare**: a dashboard Cache Rule must NOT match `/download/*`
   (a cached 200/302 there bypasses the counter). Cache `/files/*` only
 
-- `inLanguage` and `og:locale` come from Calibre's ISO 639-2 codes (`ind`) mapped to ISO 639-1 / locale
-  (`id`, `id_ID`) by `languageTag()` / `ogLocale()` in `frontend/src/data/index.ts`. Add new languages to
-  `ISO_639_1` there. `BookLayout` passes the locale to `BaseLayout`, which emits the only `og:locale`
-- `datePublished`, `book:release_date` and the visible "Tahun" row use `reliablePubdate()`
-  (`frontend/src/utils/pubdate.ts`): Calibre fills `pubdate` with the import date when a book has none, so a
-  date within 31 days before `timestamp` (or after it) is treated as a placeholder and omitted
 ### Cover Images
 - `Cache-Control: public, max-age=86400` (7 days)
 - `Vary: Accept, Accept-Encoding`
 - WebP served to supporting browsers via `?fm=webp` or `Accept` header
-### Indexing
-
-- The sitemap lists `/read/<id>/ocr/<fmt>/` only for books in `frontend/src/data/ocr-ready.json`, written by
-  `seed.mjs` from the OCR cache (`OCR_CACHE_DIR`, set by `build-frontend.sh`): entries of the current
-  `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
-  and size. Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
-  appear in the sitemap after the next `./build-frontend.sh`; without the cache dir the previous manifest is kept
-- The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
-  (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
-
 
 ### Cloudflare Cache Rules (recommended)
 | Path | Edge TTL | Browser TTL |

@@ -53,6 +53,7 @@ from . import (
     kobo_sync_status,
     limiter,
     logger,
+    readium,
     services,
     ub,
 )
@@ -214,10 +215,11 @@ def add_security_headers(resp):
         "'unsafe-eval'",
     ]
     csp = "default-src " + " ".join(default_src)
-    if request.endpoint == "web.read_book" and config.config_use_google_drive:
+    reader_page = request.endpoint == "web.read_book"
+    if reader_page and config.config_use_google_drive:
         csp += " blob: "
     csp += "; font-src 'self' data:"
-    if request.endpoint == "web.read_book":
+    if reader_page:
         csp += " blob: "
     csp += "; img-src 'self'"
     if request.path.startswith("/author/") and config.config_use_goodreads:
@@ -225,19 +227,20 @@ def add_security_headers(resp):
     csp += " data:"
     if request.endpoint == "edit-book.show_edit_book" or config.config_use_google_drive:
         csp += " *"
-    if request.endpoint == "web.read_book":
-        csp += " blob: ; style-src-elem 'self' blob: 'unsafe-inline'"
+    if reader_page:
+        # Readium renders each chapter in a blob: iframe that loads its images, fonts and CSS from /show/readium/<id>/.
+        csp += " blob: ; style-src-elem 'self' blob: 'unsafe-inline'; frame-src 'self' blob:"
     csp += "; object-src 'none';"
     resp.headers["Content-Security-Policy"] = csp
     resp.headers["X-Content-Type-Options"] = "nosniff"
     resp.headers["X-Frame-Options"] = "SAMEORIGIN"
     resp.headers["X-XSS-Protection"] = "1; mode=block"
-    resp.headers["Strict-Transport-Security"] = "max-age=31536000"
-    onion_location = os.environ.get("ONION_LOCATION", "").strip()
-    if onion_location:
     if request.endpoint == "web.read_book":
         # Viewer shells (epub.js/pdf.js) have no indexable text; the indexable reading page is the Astro /read/<id>/ocr/<fmt>/.
         resp.headers["X-Robots-Tag"] = "noindex"
+    resp.headers["Strict-Transport-Security"] = "max-age=31536000"
+    onion_location = os.environ.get("ONION_LOCATION", "").strip()
+    if onion_location:
         resp.headers["Onion-Location"] = onion_location
     return resp
 
@@ -1977,6 +1980,84 @@ def get_ai_catalog():
     except Exception:
         log.error("Error serving ai-catalog.json")
         abort(500)
+
+
+def _readium_epub_path(book_id):
+    """Absolute path of the book's EPUB, or ``None`` (missing book/format, or an EPUB kept on Google Drive)."""
+    book = calibre_db.get_filtered_book(book_id)
+    data = calibre_db.get_book_format(book_id, "EPUB") if book else None
+    if not book or not data or config.config_use_google_drive:
+        return None
+    path = os.path.join(config.get_book_path(), book.path, f"{data.name}.epub")
+    return path if os.path.isfile(path) else None
+
+
+def _readium_cache_headers(response, epub_path):
+    stat = os.stat(epub_path)
+    response.headers["Cache-Control"] = "private, no-cache"
+    response.set_etag(f"{stat.st_mtime_ns}-{stat.st_size}")
+    return response.make_conditional(request)
+
+
+@web.route("/show/readium/<int:book_id>/manifest.json")
+@login_required_if_no_ano
+@viewer_required
+def readium_manifest(book_id):
+    """Readium Web Publication Manifest for the book's EPUB (consumed by the ts-toolkit navigator)."""
+    epub_path = _readium_epub_path(book_id)
+    if not epub_path:
+        abort(404)
+    try:
+        manifest, _positions = readium.load_publication(epub_path)
+    except readium.EpubError as ex:
+        log.error("Readium manifest for book %d: %s", book_id, ex)
+        abort(422)
+    base = url_for("web.readium_manifest", book_id=book_id)
+    body = {
+        **manifest,
+        "links": [
+            {"rel": "self", "href": base, "type": "application/webpub+json"},
+            {
+                "rel": "http://readium.org/positions",
+                "href": "positions.json",  # relative to the manifest URL, as Readium resolves link hrefs
+                "type": "application/vnd.readium.position-list+json",
+            },
+        ],
+    }
+    response = make_response(json.dumps(body), 200, {"Content-Type": "application/webpub+json"})
+    return _readium_cache_headers(response, epub_path)
+
+
+@web.route("/show/readium/<int:book_id>/positions.json")
+@login_required_if_no_ano
+@viewer_required
+def readium_positions(book_id):
+    epub_path = _readium_epub_path(book_id)
+    if not epub_path:
+        abort(404)
+    try:
+        _manifest, positions = readium.load_publication(epub_path)
+    except readium.EpubError as ex:
+        log.error("Readium positions for book %d: %s", book_id, ex)
+        abort(422)
+    response = make_response(json.dumps(positions), 200, {"Content-Type": "application/vnd.readium.position-list+json"})
+    return _readium_cache_headers(response, epub_path)
+
+
+@web.route("/show/readium/<int:book_id>/<path:member>")
+@login_required_if_no_ano
+@viewer_required
+def readium_resource(book_id, member):
+    """One file out of the EPUB zip (chapters, images, fonts, CSS), addressed by its zip path."""
+    epub_path = _readium_epub_path(book_id)
+    if not epub_path:
+        abort(404)
+    resource = readium.read_resource(epub_path, member)
+    if resource is None:
+        abort(404)
+    data, media_type = resource
+    response = make_response(data, 200, {"Content-Type": media_type})
+    return _readium_cache_headers(response, epub_path)
 
 
 @web.route("/show/<int:book_id>/<book_format>", defaults={"anyname": "None"})

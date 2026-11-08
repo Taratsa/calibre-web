@@ -1,29 +1,118 @@
-/* global $, calibre, ePub, screenfull */
+/* global $, calibre, Readium, screenfull, Pickr */
 
-var reader;
+// EPUB reader built on the Readium ts-toolkit navigator (bundled in js/libs/readium.js, source in /readium-reader).
+// The server (cps/readium.py) provides the manifest, the position list and single files out of the EPUB zip.
 
 (function () {
     "use strict";
 
-    // @likecoin/epub-ts is a drop-in replacement for epubjs 0.3.93.
-    // The previous bundle (epubjs + EPUBJS.Reader plugin) exposed a global
-    // `ePubReader(url, options)` factory that built the entire reader UI
-    // (sidebar, TOC, bookmarks, prev/next, fullscreen, settings, ...).
-    // @likecoin/epub-ts is library-only, so we reconstruct that factory here
-    // against the existing DOM in templates/read.html.
-
-    if (typeof ePub === "undefined") {
-        console.error("ePub library not loaded");
+    // Transitional guard: a CDN may still serve the pre-Readium reader page (it loads epub.min.js and defines no
+    // `calibre.manifestUrl`). Reload once under another cache key to get the current page; remove this block once
+    // the CDN cache for /read/<id>/epub has expired or been purged.
+    if (typeof calibre === "undefined" || !calibre.manifestUrl) {
+        var pageUrl = new URL(window.location.href);
+        if (!pageUrl.searchParams.has("rv")) {
+            pageUrl.searchParams.set("rv", "readium");
+            window.location.replace(pageUrl.href);
+        } else {
+            console.error("Reader page is out of date and could not be refreshed");
+        }
         return;
     }
 
+    if (typeof Readium === "undefined") {
+        console.error("Readium navigator not loaded");
+        return;
+    }
+
+    var BOOK_ID = calibre.bookId;
+    var POSITION_KEY = "calibre.reader.locator." + BOOK_ID;
+
     // ---------------------------------------------------------------------------
-    // Book + Rendition
+    // Persistence helpers
     // ---------------------------------------------------------------------------
 
-    reader = ePub(calibre.bookUrl, {});
+    function load(key, fallback) {
+        try {
+            var value = localStorage.getItem(key);
+            return value === null ? fallback : value;
+        } catch (e) {
+            return fallback;
+        }
+    }
 
-    var $viewer = $("#viewer");
+    function save(key, value) {
+        try { localStorage.setItem(key, String(value)); } catch (e) {}
+    }
+
+    // ---------------------------------------------------------------------------
+    // Appearance settings (theme, font, size, columns, alignment)
+    // ---------------------------------------------------------------------------
+
+    var THEMES = {
+        lightTheme: { bg: "#ffffff", fg: "#000000", title: "#4f4f4f" },
+        darkTheme: { bg: "#202124", fg: "#ffffff", title: "#ffffff" },
+        sepiaTheme: { bg: "#ece1ca", fg: "#000000", title: "#4f4f4f" },
+        amberTheme: { bg: "#e8bf5e", fg: "#000000", title: "#2f2f2f" },
+        blackTheme: { bg: "#000000", fg: "#ffffff", title: "#ffffff" },
+    };
+    var FONTS = { default: null, Yahei: "Microsoft YaHei", SimSun: "SimSun", KaiTi: "KaiTi", Arial: "Arial" };
+    var MIN_FONT_SIZE = 70; // percent; Readium accepts 70%-400%
+    var MAX_FONT_SIZE = 300;
+    var FONT_STEP = 5;
+
+    var appearance = {
+        theme: load("calibre.reader.theme", "lightTheme"),
+        customColor: load("calibre.reader.customTheme", "#ffffff"),
+        fontSize: parseInt(load("calibre.reader.fontSize", "100"), 10) || 100,
+        font: load("calibre.reader.font", "default"),
+        textAlign: load("calibre.reader.textAlign", "default"),
+        oneColumn: load("calibre.reader.columns", "auto") === "one",
+    };
+    appearance.fontSize = Math.min(MAX_FONT_SIZE, Math.max(MIN_FONT_SIZE, appearance.fontSize));
+    if (!(appearance.theme in THEMES) && appearance.theme !== "customTheme") appearance.theme = "lightTheme";
+    if (!(appearance.font in FONTS)) appearance.font = "default";
+    if (["default", "left", "justify"].indexOf(appearance.textAlign) === -1) appearance.textAlign = "default";
+
+    function luminanceIsLight(hex) {
+        var value = hex.replace("#", "");
+        if (value.length === 3) value = value.replace(/./g, "$&$&");
+        var n = parseInt(value.slice(0, 6), 16);
+        if (isNaN(n)) return true;
+        function lin(c) {
+            c = c / 255;
+            return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        }
+        var L = 0.2126 * lin((n >> 16) & 255) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255);
+        return (L + 0.05) / 0.05 >= 1.05 / (L + 0.05);
+    }
+
+    function themeColors() {
+        if (appearance.theme === "customTheme") {
+            var light = luminanceIsLight(appearance.customColor);
+            var text = light ? "#000000" : "#ffffff";
+            return { bg: appearance.customColor, fg: text, title: text };
+        }
+        return THEMES[appearance.theme];
+    }
+
+    function preferences() {
+        var colors = themeColors();
+        return new Readium.EpubPreferences({
+            backgroundColor: colors.bg,
+            textColor: colors.fg,
+            fontSize: appearance.fontSize / 100,
+            fontFamily: FONTS[appearance.font],
+            textAlign: appearance.textAlign === "default" ? null : appearance.textAlign,
+            columnCount: appearance.oneColumn ? 1 : null,
+            scroll: false,
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // DOM handles
+    // ---------------------------------------------------------------------------
+
     var $main = $("#main");
     var $divider = $("#divider");
     var $loader = $("#loader");
@@ -32,7 +121,6 @@ var reader;
     var $sidebar = $("#sidebar");
     var $panels = $("#panels");
     var $tocView = $("#tocView");
-    var $bookmarksView = $("#bookmarksView");
     var $bookmarksList = $("#bookmarks");
     var $bookmarkBtn = $("#bookmark");
     var $settingBtn = $("#setting");
@@ -43,220 +131,81 @@ var reader;
     var $bookTitle = $("#book-title");
     var $chapterTitle = $("#chapter-title");
     var $titleSeperator = $("#title-seperator");
-    var $bookmarkCount = $(".bookmark");
+    var progressDiv = document.getElementById("progress");
+    var pagesDiv = document.getElementById("pages-count");
 
-    var rendition = reader.renderTo("viewer", {
-        width: "100%",
-        height: "100%",
-        ignoreClass: "annotator-hl",
-        flow: "paginated",
-        manager: "default",
-        // Force document.open()/write() over srcdoc (the new lib's default).
-        // srcdoc iframes are sandboxed without allow-scripts, which breaks CFI
-        // resolution, navigation, and event handling inside the section DOM.
-        method: "write",
-    });
+    function tick(groupId, activeId) {
+        $("#" + groupId + " span").text("");
+        var button = document.getElementById(activeId);
+        var mark = button && button.querySelector("span");
+        if (mark) mark.textContent = "✓";
+    }
 
-    var settings = {
-        sidebarReflow: false,
-        bookmarks: [],
-    };
-
-    // Apply saved sidebarReflow preference
-    try {
-        var savedReflow = localStorage.getItem("calibre.reader.sidebarReflow");
-        if (savedReflow !== null) settings.sidebarReflow = savedReflow === "true";
-        var $reflowCheckbox = $("#sidebarReflow");
-        if ($reflowCheckbox && $reflowCheckbox.length) {
-            $reflowCheckbox.prop("checked", settings.sidebarReflow);
-        }
-    } catch (e) {}
-
-    // ---------------------------------------------------------------------------
-    // Theme registration
-    // ---------------------------------------------------------------------------
-
-    Object.keys(window.themes).forEach(function (theme) {
-        try {
-            var entry = window.themes[theme];
-            if (entry && entry.css_path) {
-                rendition.themes.register(theme, entry.css_path);
-            } else if (entry && entry.bgColor) {
-                var cssObj = { "body": { "background": entry.bgColor } };
-                if (entry["title-color"]) cssObj.body.color = entry["title-color"];
-                rendition.themes.register(theme, cssObj);
-            }
-        } catch (e) {
-            console.error("Failed to register theme " + theme, e);
-        }
-    });
-
-    // ---------------------------------------------------------------------------
-    // Display
-    // ---------------------------------------------------------------------------
-
-    if (calibre.bookmark && calibre.bookmark.length > 0) {
-        rendition.display(calibre.bookmark);
-    } else {
-        rendition.display();
+    // Applies the theme to the page chrome around the reading area; the book content is themed by Readium.
+    function paintChrome() {
+        var colors = themeColors();
+        document.getElementById("main").style.backgroundColor = colors.bg;
+        document.getElementById("titlebar").style.color = colors.title;
+        progressDiv.style.color = colors.title;
+        $("#themes span").text("");
+        var activeTick = appearance.theme === "customTheme"
+            ? document.getElementById("customSelected")
+            : document.querySelector("#" + appearance.theme + " span");
+        if (activeTick) activeTick.textContent = "✓";
+        var swatch = document.getElementById("customThemeSwatch");
+        if (swatch) swatch.style.background = appearance.customColor;
+        tick("font", appearance.font);
+        tick("layout", appearance.oneColumn ? "nonespread" : "spread");
+        tick("textAlign", "align-" + appearance.textAlign);
+        document.getElementById("fontSizeDisplay").textContent = appearance.fontSize + "%";
     }
 
     // ---------------------------------------------------------------------------
-    // ReaderController: prev/next + keyboard + loader + RTL
+    // Sidebar, settings modal, fullscreen
     // ---------------------------------------------------------------------------
 
     var sidebarOpen = false;
     var activePanel = "Toc";
+    var sidebarReflow = load("calibre.reader.sidebarReflow", "false") === "true";
+    $("#sidebarReflow").prop("checked", sidebarReflow);
 
-    function slideOut() {
-        if (settings.sidebarReflow) {
-            $main.removeClass("single").one("transitionend", function () {
-                try { rendition.resize(); } catch (e) {}
-            });
-        } else {
-            $main.removeClass("closed");
-        }
+    // `#main.closed` slides the page right and `#main.single` narrows it, both uncovering the sidebar underneath.
+    function setSidebar(open) {
+        sidebarOpen = open;
+        $main.toggleClass(sidebarReflow ? "single" : "closed", open);
+        $main.removeClass(sidebarReflow ? "closed" : "single");
+        $sidebar.toggleClass("open", open);
+        $slider.toggleClass("icon-right", open).toggleClass("icon-menu", !open);
     }
-
-    function slideIn() {
-        if (settings.sidebarReflow) {
-            $main.addClass("single").one("transitionend", function () {
-                try { rendition.resize(); } catch (e) {}
-            });
-        } else {
-            $main.addClass("closed");
-        }
-    }
-
-    function showLoader() {
-        $loader.show();
-        $divider.removeClass("show");
-    }
-
-    function hideLoader() {
-        $loader.hide();
-    }
-
-    function showDivider() {
-        $divider.addClass("show");
-    }
-
-    function hideDivider() {
-        $divider.removeClass("show");
-    }
-
-    function goNext() {
-        try {
-            if (reader.package.metadata.direction === "rtl") {
-                rendition.prev();
-            } else {
-                rendition.next();
-            }
-        } catch (e) {}
-    }
-
-    function goPrev() {
-        try {
-            if (reader.package.metadata.direction === "rtl") {
-                rendition.next();
-            } else {
-                rendition.prev();
-            }
-        } catch (e) {}
-    }
-
-    $next.on("click", function (e) {
-        e.preventDefault();
-        goNext();
-    });
-
-    $prev.on("click", function (e) {
-        e.preventDefault();
-        goPrev();
-    });
-
-    document.addEventListener("keydown", function arrowKeys(e) {
-        if (e.keyCode === 37) {
-            if (reader.package.metadata.direction === "rtl") {
-                goNext();
-            } else {
-                goPrev();
-            }
-            $prev.addClass("active");
-            setTimeout(function () { $prev.removeClass("active"); }, 100);
-            e.preventDefault();
-        } else if (e.keyCode === 39) {
-            if (reader.package.metadata.direction === "rtl") {
-                goPrev();
-            } else {
-                goNext();
-            }
-            $next.addClass("active");
-            setTimeout(function () { $next.removeClass("active"); }, 100);
-            e.preventDefault();
-        }
-    }, false);
-
-    rendition.on("layout", function (layout) {
-        if (layout.spread === true) {
-            showDivider();
-        } else {
-            hideDivider();
-        }
-    });
-
-    // ---------------------------------------------------------------------------
-    // SidebarController: open/close + tab switching
-    // ---------------------------------------------------------------------------
-
-    function showSidebar() {
-        sidebarOpen = true;
-        slideOut();
-        $sidebar.addClass("open");
-        $slider.addClass("icon-right").removeClass("icon-menu");
-    }
-
-    function hideSidebar() {
-        sidebarOpen = false;
-        slideIn();
-        $sidebar.removeClass("open");
-        $slider.addClass("icon-menu").removeClass("icon-right");
-    }
-
-    function changePanelTo(panel) {
-        var current = activePanel + "Controller";
-        if (panel !== activePanel && typeof controllers[panel + "Controller"] !== "undefined") {
-            if (controllers[activePanel + "Controller"] && controllers[activePanel + "Controller"].hide) {
-                controllers[activePanel + "Controller"].hide();
-            }
-            controllers[panel + "Controller"].show();
-            activePanel = panel;
-            $panels.find(".active").removeClass("active");
-            $panels.find("#show-" + panel).addClass("active");
-        }
-    }
-
-    var controllers = {};
 
     $slider.on("click", function (e) {
         e.preventDefault();
-        if (sidebarOpen) {
-            hideSidebar();
-        } else {
-            showSidebar();
-        }
+        setSidebar(!sidebarOpen);
     });
 
     $panels.find(".show_view").on("click", function (e) {
         e.preventDefault();
         var panel = $(this).data("view");
-        changePanelTo(panel);
-        if (!sidebarOpen) showSidebar();
+        if (panel === "Toc" || panel === "Bookmarks") {
+            if (panel !== activePanel) {
+                $("#" + activePanel.toLowerCase() + "View").hide();
+                $("#" + panel.toLowerCase() + "View").show();
+                activePanel = panel;
+                $panels.find(".active").removeClass("active");
+                $panels.find("#show-" + panel).addClass("active");
+            }
+            if (!sidebarOpen) setSidebar(true);
+        }
     });
 
-    // ---------------------------------------------------------------------------
-    // ControlsController: slider toggle, fullscreen, settings, bookmark
-    // ---------------------------------------------------------------------------
+    $("#sidebarReflow").on("click", function () {
+        sidebarReflow = $(this).prop("checked");
+        save("calibre.reader.sidebarReflow", sidebarReflow);
+    });
+
+    $settingBtn.on("click", function () { $settingsModal.addClass("md-show"); });
+    $settingsModal.find(".closer").on("click", function () { $settingsModal.removeClass("md-show"); });
+    $overlay.on("click", function () { $settingsModal.removeClass("md-show"); });
 
     if (typeof screenfull !== "undefined") {
         $fullscreenBtn.on("click", function () {
@@ -264,437 +213,402 @@ var reader;
         });
         if (screenfull.raw && screenfull.raw.fullscreenchange) {
             document.addEventListener(screenfull.raw.fullscreenchange, function () {
-                try {
-                    var isFs = screenfull.isFullscreen;
-                    if (isFs) {
-                        $fullscreenBtn.addClass("icon-resize-small").removeClass("icon-resize-full");
-                    } else {
-                        $fullscreenBtn.addClass("icon-resize-full").removeClass("icon-resize-small");
-                    }
-                } catch (e) {}
+                $fullscreenBtn.toggleClass("icon-resize-small", screenfull.isFullscreen)
+                    .toggleClass("icon-resize-full", !screenfull.isFullscreen);
             });
         }
     }
 
-    $settingBtn.on("click", function () {
-        $settingsModal.addClass("md-show");
-    });
-
-    $settingsModal.find(".closer").on("click", function () {
-        $settingsModal.removeClass("md-show");
-    });
-
-    $overlay.on("click", function () {
-        $settingsModal.removeClass("md-show");
-    });
-
-    var $sidebarReflowCheckbox = $("#sidebarReflow");
-    if ($sidebarReflowCheckbox && $sidebarReflowCheckbox.length) {
-        $sidebarReflowCheckbox.on("click", function () {
-            settings.sidebarReflow = $sidebarReflowCheckbox.prop("checked");
-            try { localStorage.setItem("calibre.reader.sidebarReflow", String(settings.sidebarReflow)); } catch (e) {}
-        });
-    }
-
-    function isBookmarked(cfi) {
-        if (!settings.bookmarks) return -1;
-        return settings.bookmarks.indexOf(cfi);
-    }
-
-    function addBookmarkToList(cfi) {
-        if (!settings.bookmarks) settings.bookmarks = [];
-        if (settings.bookmarks.indexOf(cfi) === -1) {
-            settings.bookmarks.push(cfi);
-        }
-        var $li = $("<li></li>");
-        $li.attr("id", "bookmark-" + cfi.replace(/[^a-zA-Z0-9]/g, "_"));
-        $li.addClass("list_item");
-        var $a = $("<a></a>");
-        // Try to use TOC label if we can find the section
-        var label = cfi;
-        try {
-            var section = reader.spine.get(cfi);
-            var tocItem = reader.navigation && reader.navigation.toc && reader.navigation.toc[section.index];
-            if (tocItem) label = tocItem.label;
-        } catch (e) {}
-        $a.text(label);
-        $a.attr("href", cfi);
-        $a.addClass("bookmark_link");
-        $a.on("click", function (ev) {
-            ev.preventDefault();
-            try { rendition.display($(this).attr("href")); } catch (e) {}
-        });
-        $li.append($a);
-        $bookmarksList.append($li);
-    }
-
-    function removeBookmarkFromList(cfi) {
-        if (settings.bookmarks) {
-            settings.bookmarks = settings.bookmarks.filter(function (b) { return b !== cfi; });
-        }
-        $("#bookmark-" + cfi.replace(/[^a-zA-Z0-9]/g, "_")).remove();
-    }
-
-    function addBookmark(cfi) {
-        addBookmarkToList(cfi);
-        updateBookmark("add", cfi);
-        reader.emit("reader:bookmarked", cfi);
-    }
-
-    function removeBookmark(cfi) {
-        removeBookmarkFromList(cfi);
-        updateBookmark("remove", cfi);
-        reader.emit("reader:unbookmarked", cfi);
-    }
-
-    $bookmarkBtn.on("click", function () {
-        var cfi;
-        try { cfi = rendition.currentLocation().start.cfi; } catch (e) { return; }
-        if (isBookmarked(cfi) === -1) {
-            addBookmark(cfi);
-            $bookmarkBtn.addClass("icon-bookmark").removeClass("icon-bookmark-empty");
-        } else {
-            removeBookmark(cfi);
-            $bookmarkBtn.removeClass("icon-bookmark").addClass("icon-bookmark-empty");
-        }
-    });
-
-    // Sync bookmark button + history hash on relocated
-    rendition.on("relocated", function (location) {
-        var cfi = location.start.cfi;
-        var hash = "#" + cfi;
-        if (isBookmarked(cfi) === -1) {
-            $bookmarkBtn.removeClass("icon-bookmark").addClass("icon-bookmark-empty");
-        } else {
-            $bookmarkBtn.addClass("icon-bookmark").removeClass("icon-bookmark-empty");
-        }
-        if (window.location.hash !== hash) {
-            try { history.pushState({}, "", hash); } catch (e) {}
-        }
-        // Disable prev/next at edges
-        if (location.atStart) $prev.addClass("disabled");
-        else $prev.removeClass("disabled");
-        if (location.atEnd) $next.addClass("disabled");
-        else $next.removeClass("disabled");
-    });
-
-    window.addEventListener("hashchange", function () {
-        var hash = window.location.hash.slice(1);
-        if (hash && hash.length > 0) {
-            try { rendition.display(hash); } catch (e) {}
-        }
-    });
-
     // ---------------------------------------------------------------------------
-    // Bookmark DB sync (was on("reader:bookmarked") in original)
+    // Navigator lifecycle
     // ---------------------------------------------------------------------------
 
-    function updateBookmark(action, location) {
-        var csrftoken = $("input[name='csrf_token']").val();
-        $.ajax(calibre.bookmarkUrl, {
-            method: "post",
-            data: { bookmark: location || "" },
-            headers: { "X-CSRFToken": csrftoken },
-        }).fail(function (xhr, status, error) {
-            console.error("bookmark save failed", error);
-        });
+    var navigator = null;
+    var publication = null;
+    var positions = [];
+    var current = null; // last locator reported by the navigator
+    var rtl = false;
+
+    function applyPreferences() {
+        paintChrome();
+        if (navigator) {
+            navigator.submitPreferences(preferences()).catch(function (err) {
+                console.error("Failed to apply reader preferences", err);
+            });
+        }
     }
 
-    if (calibre.useBookmarks) {
-        reader.on("reader:bookmarked", updateBookmark.bind(reader, "add"));
-        reader.on("reader:unbookmarked", updateBookmark.bind(reader, "remove"));
-    } else {
-        $bookmarkBtn.remove();
-        $("#show-Bookmarks").remove();
+    function go(locatorJson) {
+        if (!navigator) return;
+        var locator = Readium.Locator.deserialize(locatorJson);
+        if (locator) navigator.go(locator, false, function () {});
     }
+
+    function goToHref(href) {
+        if (!navigator) return;
+        var link = new Readium.Link({ href: href });
+        navigator.goLink(link, false, function () {});
+    }
+
+    function step(direction) {
+        if (!navigator) return;
+        if (direction > 0) navigator.goRight(false, function () {}); else navigator.goLeft(false, function () {});
+    }
+
+    $next.on("click", function (e) { e.preventDefault(); step(1); });
+    $prev.on("click", function (e) { e.preventDefault(); step(-1); });
 
     // ---------------------------------------------------------------------------
-    // TocController
+    // Table of contents
     // ---------------------------------------------------------------------------
 
-    function renderToc(toc) {
-        $tocView.empty();
-        var $root = renderTocList(toc, 1);
-        $tocView.append($root);
-        $tocView.find(".toc_link").on("click", function (e) {
-            e.preventDefault();
-            var href = $(this).attr("href");
-            try { rendition.display(href); } catch (err) {}
-            $tocView.find(".currentChapter").addClass("openChapter").removeClass("currentChapter");
-            $(this).parent("li").addClass("currentChapter");
-        });
-        $tocView.find(".toc_toggle").on("click", function (e) {
-            e.preventDefault();
-            var $li = $(this).parent("li");
-            $li.toggleClass("openChapter");
-        });
-    }
-
-    function renderTocList(items, depth) {
+    function renderTocList(links) {
         var $ul = $("<ul></ul>");
-        items.forEach(function (item) {
-            var $li = $("<li></li>");
-            $li.attr("id", "toc-" + item.id);
-            $li.addClass("list_item");
-            if (item.subitems && item.subitems.length > 0) {
-                var $toggle = $("<a></a>");
-                $toggle.addClass("toc_toggle");
-                $li.append($toggle);
-            }
-            var $a = $("<a></a>");
-            $a.text(item.label);
-            $a.attr("href", item.href);
-            $a.addClass("toc_link");
-            $li.append($a);
-            if (item.subitems && item.subitems.length > 0) {
-                $li.append(renderTocList(item.subitems, depth + 1));
-            }
+        links.forEach(function (link, index) {
+            var $li = $("<li></li>").addClass("list_item");
+            var children = link.children ? link.children.items : [];
+            if (children.length) $li.append($("<a></a>").addClass("toc_toggle"));
+            $li.append($("<a></a>").addClass("toc_link").text(link.title || "").attr("href", link.href));
+            if (children.length) $li.append(renderTocList(children));
             $ul.append($li);
         });
         return $ul;
     }
 
-    function highlightCurrentChapterToc(section) {
-        // Walk spine until we find a TOC item matching this section
-        var toc = reader.navigation && reader.navigation.toc;
-        if (!toc) return;
-        function find(items, id) {
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].id === id) return items[i];
-                if (items[i].subitems) {
-                    var f = find(items[i].subitems, id);
-                    if (f) return f;
-                }
-            }
-            return null;
-        }
-        if (section && section.idref) {
-            var match = find(toc, section.idref);
-            if (match) {
-                $tocView.find(".currentChapter").removeClass("currentChapter");
-                var $li = $("#toc-" + match.id);
-                if ($li.length) {
-                    $li.addClass("currentChapter");
-                    $li.parents("li").addClass("openChapter");
-                }
-            }
-        }
-    }
-
-    controllers.TocController = {
-        show: function () { $tocView.show(); },
-        hide: function () { $tocView.hide(); },
-    };
-
-    // ---------------------------------------------------------------------------
-    // BookmarksController
-    // ---------------------------------------------------------------------------
-
-    controllers.BookmarksController = {
-        show: function () { $bookmarksView.show(); },
-        hide: function () { $bookmarksView.hide(); },
-    };
-
-    // ---------------------------------------------------------------------------
-    // MetaController
-    // ---------------------------------------------------------------------------
-
-    controllers.MetaController = {
-        show: function () {},
-        hide: function () {},
-    };
-
-    // ---------------------------------------------------------------------------
-    // NotesController (stub, original was a no-op for our config)
-    // ---------------------------------------------------------------------------
-
-    controllers.NotesController = {
-        show: function () {},
-        hide: function () {},
-    };
-
-    // ---------------------------------------------------------------------------
-    // SettingsController: modal already wired in ControlsController section
-    // ---------------------------------------------------------------------------
-
-    controllers.SettingsController = {
-        show: function () { $settingsModal.addClass("md-show"); },
-        hide: function () { $settingsModal.removeClass("md-show"); },
-    };
-
-    // ---------------------------------------------------------------------------
-    // Touch swipe support (preserved from original)
-    //
-    // epubjs used to forward DOM events (touchstart/touchend/...) from each
-    // section's iframe contents up to the rendition. @likecoin/epub-ts only
-    // re-emits them on the Contents instance, so we attach the listeners
-    // via the "content" hook (fires after each section is loaded into the
-    // viewer).
-    // ---------------------------------------------------------------------------
-
-    var touchStart = 0;
-    var touchEnd = 0;
-    var directionRtl = false;
-
-    function handleTouchStart(event) {
-        if (event.changedTouches && event.changedTouches[0]) {
-            touchStart = event.changedTouches[0].screenX;
-        }
-    }
-
-    function handleTouchEnd(event) {
-        if (!event.changedTouches || !event.changedTouches[0]) return;
-        touchEnd = event.changedTouches[0].screenX;
-        if (touchStart < touchEnd) {
-            directionRtl ? rendition.next() : rendition.prev();
-        } else if (touchStart > touchEnd) {
-            directionRtl ? rendition.prev() : rendition.next();
-        }
-    }
-
-    rendition.hooks.content.register(function (contents) {
-        try {
-            var win = contents && contents.window;
-            if (!win) return;
-            win.addEventListener("touchstart", handleTouchStart);
-            win.addEventListener("touchend", handleTouchEnd);
-        } catch (e) {
-            // Cross-origin or unavailable — skip silently.
-        }
-    });
-
-    // ---------------------------------------------------------------------------
-    // Init when book is ready
-    // ---------------------------------------------------------------------------
-
-    reader.ready.then(function () {
-        hideLoader();
-
-        // MetaController: title + chapter title
-        var meta = reader.package.metadata;
-        if (meta) {
-            document.title = (meta.title || "") + " – " + (meta.creator || "");
-            $bookTitle.text(meta.title || "");
-            $chapterTitle.text(meta.creator || "");
-            if ($titleSeperator && $titleSeperator.length) $titleSeperator.show();
-            directionRtl = meta.direction === "rtl";
-        }
-
-        // TocController
-        var nav = reader.navigation;
-        if (nav && nav.toc) {
-            renderToc(nav.toc);
-        }
-
-        // Highlight chapter on render
-        rendition.on("rendered", function (section) {
-            highlightCurrentChapterToc(section);
-        });
-
-        // Seed bookmarks list with any persisted ones (initial CFI on load)
-        if (settings.bookmarks && settings.bookmarks.length) {
-            settings.bookmarks.forEach(function (cfi) {
-                addBookmarkToList(cfi);
+    function renderToc() {
+        $tocView.empty();
+        var toc = publication.toc ? publication.toc.items : [];
+        if (!toc.length) {
+            // No usable ToC in the book: fall back to the reading order so the sidebar is never empty.
+            toc = publication.readingOrder.items.map(function (item, i) {
+                return { title: item.title || (i + 1), href: item.href, children: null };
             });
         }
+        $tocView.append(renderTocList(toc));
+        $tocView.find(".toc_link").on("click", function (e) {
+            e.preventDefault();
+            goToHref($(this).attr("href"));
+            if (window.matchMedia("(max-width: 700px)").matches) setSidebar(false);
+        });
+        $tocView.find(".toc_toggle").on("click", function (e) {
+            e.preventDefault();
+            $(this).parent("li").toggleClass("openChapter");
+        });
+    }
 
-        // Locations (page count + percentage)
-        var progressDiv = document.getElementById("progress");
-        var pagesDiv = document.getElementById("pages-count");
-
-        try {
-            var pref = localStorage.getItem("calibre.reader.showPages");
-            var show = pref === null ? true : pref === "true";
-            if (pagesDiv) pagesDiv.style.visibility = show ? "visible" : "hidden";
-        } catch (e) {}
-
-        var locationsKey = reader.key() + "-locations";
-        var positionKey = "calibre.reader.position." + reader.key();
-        var storedLocations = localStorage.getItem(locationsKey);
-        var makeLocations, saveLocations;
-        if (storedLocations) {
-            makeLocations = Promise.resolve(reader.locations.load(storedLocations));
-            saveLocations = function () {};
-        } else {
-            makeLocations = reader.locations.generate();
-            saveLocations = function () {
-                localStorage.setItem(locationsKey, reader.locations.save());
-            };
+    function highlightToc(locator) {
+        var href = locator.href.split("#")[0];
+        var best = null;
+        $tocView.find(".toc_link").each(function () {
+            var target = ($(this).attr("href") || "").split("#")[0];
+            if (target === href) {
+                // prefer the last entry of this resource that starts before the current position
+                best = this;
+            }
+        });
+        $tocView.find(".currentChapter").removeClass("currentChapter");
+        if (best) {
+            var $li = $(best).parent("li");
+            $li.addClass("currentChapter");
+            $li.parents("li").addClass("openChapter");
         }
-        makeLocations
-            .then(function () {
-                // Try to restore last position (CFI) from localStorage if present
-                try {
-                    var savedPos = localStorage.getItem(positionKey);
-                    if (savedPos) {
-                        try {
-                            var posObj = JSON.parse(savedPos);
-                            if (posObj && posObj.cfi) {
-                                try { rendition.display(posObj.cfi); } catch (e) {}
-                            }
-                        } catch (e) {}
-                    }
-                } catch (e) {}
+    }
 
-                rendition.on("relocated", function (location) {
-                    var percentage = Math.round(location.end.percentage * 100);
-                    if (progressDiv) progressDiv.textContent = percentage + "%";
+    // ---------------------------------------------------------------------------
+    // Bookmarks (stored per user on the server; the key is a serialized Readium locator)
+    // ---------------------------------------------------------------------------
 
-                    try {
-                        var cfi = location.start.cfi;
-                        var current = reader.locations.locationFromCfi(cfi) || 0;
-                        var total = reader.locations.length() || 0;
-                        if (total > 0 && pagesDiv) {
-                            pagesDiv.textContent = current + "/" + total;
-                            pagesDiv.style.visibility = "visible";
-                        } else if (pagesDiv) {
-                            pagesDiv.textContent = "";
-                            pagesDiv.style.visibility = "hidden";
-                        }
-                    } catch (e) {}
+    var bookmarks = []; // serialized locators (JSON strings)
 
-                    try {
-                        var posObj = {
-                            cfi: location.start.cfi,
-                            percentage: location.start.percentage,
-                        };
-                        localStorage.setItem(positionKey, JSON.stringify(posObj));
-                    } catch (e) {}
+    function locatorKey(locator) {
+        // Stable identity of a place: resource + position inside the position list.
+        return locator.href.split("#")[0] + "@" + (locator.locations.position || 0);
+    }
+
+    function bookmarkIndex(locator) {
+        var key = locatorKey(locator);
+        for (var i = 0; i < bookmarks.length; i++) {
+            try {
+                var saved = Readium.Locator.deserialize(JSON.parse(bookmarks[i]));
+                if (saved && locatorKey(saved) === key) return i;
+            } catch (e) {}
+        }
+        return -1;
+    }
+
+    function syncBookmarkButton() {
+        var marked = current && bookmarkIndex(current) !== -1;
+        $bookmarkBtn.toggleClass("icon-bookmark", !!marked).toggleClass("icon-bookmark-empty", !marked);
+    }
+
+    function pushBookmark(value) {
+        if (!calibre.useBookmarks) return;
+        var csrf = $("input[name='csrf_token']").val();
+        $.ajax(calibre.bookmarkUrl, {
+            method: "post",
+            data: { bookmark: value || "" },
+            headers: { "X-CSRFToken": csrf },
+        }).fail(function (xhr, status, error) {
+            console.error("bookmark save failed", error);
+        });
+    }
+
+    function renderBookmarks() {
+        $bookmarksList.empty();
+        bookmarks.forEach(function (raw, index) {
+            var locator;
+            try { locator = Readium.Locator.deserialize(JSON.parse(raw)); } catch (e) { return; }
+            if (!locator) return;
+            var label = locator.title || "";
+            if (!label && publication) {
+                var item = publication.readingOrder.findWithHref(locator.href.split("#")[0]);
+                label = (item && item.title) || "";
+            }
+            var percent = Math.round((locator.locations.totalProgression || 0) * 100);
+            var $a = $("<a></a>").addClass("bookmark_link").attr("href", "#")
+                .text((label ? label + " – " : "") + percent + "%")
+                .on("click", function (e) {
+                    e.preventDefault();
+                    go(JSON.parse(raw));
                 });
-                rendition.reportLocation();
-                if (progressDiv) progressDiv.style.visibility = "visible";
-            })
-            .then(saveLocations);
+            $bookmarksList.append($("<li></li>").addClass("list_item").append($a));
+        });
+    }
 
-        // Restore saved font and font size after reader is ready
-        try {
-            var savedFontSize = localStorage.getItem("calibre.reader.fontSize");
-            if (savedFontSize) {
-                rendition.themes.fontSize(savedFontSize + "%");
-            }
-
-            var savedFont = localStorage.getItem("calibre.reader.font");
-            if (savedFont && typeof window.selectFont === "function") {
-                window.selectFont(savedFont);
-            }
-        } catch (e) {}
-
-        // Initial theme application (run after a tick so inline selectTheme() can run)
-        var theme = localStorage.getItem("calibre.reader.theme") || "lightTheme";
-        if (typeof window.selectTheme === "function") {
-            window.selectTheme(theme);
+    $bookmarkBtn.on("click", function () {
+        if (!current) return;
+        var index = bookmarkIndex(current);
+        if (index === -1) {
+            bookmarks.push(JSON.stringify(current.serialize()));
+            pushBookmark(bookmarks[bookmarks.length - 1]);
+        } else {
+            bookmarks.splice(index, 1);
+            pushBookmark(bookmarks.length ? bookmarks[bookmarks.length - 1] : "");
         }
-    }).catch(function (err) {
-        console.error("Failed to load book", err);
-        hideLoader();
+        renderBookmarks();
+        syncBookmarkButton();
     });
 
-    // Window unload: persist locations
-    window.addEventListener("beforeunload", function () {
-        try {
-            if (reader && reader.locations && reader.locations.length && reader.locations.length() > 0) {
-                localStorage.setItem(reader.key() + "-locations", reader.locations.save());
+    if (!calibre.useBookmarks) {
+        $bookmarkBtn.remove();
+        $("#show-Bookmarks").remove();
+    }
+
+    // The server keeps a single bookmark per user and book: either a Readium locator (JSON) or an old epub.js CFI.
+    function initialPosition() {
+        var saved = load(POSITION_KEY, "");
+        var source = saved || (calibre.bookmark && calibre.bookmark.charAt(0) === "{" ? calibre.bookmark : "");
+        if (source) {
+            try { return Readium.Locator.deserialize(JSON.parse(source)); } catch (e) {}
+        }
+        return undefined;
+    }
+
+    function restoreBookmarks() {
+        if (calibre.bookmark && calibre.bookmark.charAt(0) === "{") bookmarks = [calibre.bookmark];
+    }
+
+    // ---------------------------------------------------------------------------
+    // Progress display
+    // ---------------------------------------------------------------------------
+
+    function showProgress(locator) {
+        var total = locator.locations.totalProgression;
+        if (typeof total === "number") {
+            progressDiv.textContent = Math.round(total * 100) + "%";
+            progressDiv.style.visibility = "visible";
+        }
+        var position = locator.locations.position;
+        if (position && positions.length) {
+            pagesDiv.textContent = position + "/" + positions.length;
+            pagesDiv.style.visibility = load("calibre.reader.showPages", "true") === "true" ? "visible" : "hidden";
+        }
+    }
+
+    function updateEdges() {
+        if (!navigator) return;
+        $prev.toggleClass("disabled", !navigator.canGoBackward);
+        $next.toggleClass("disabled", !navigator.canGoForward);
+    }
+
+    function onPositionChanged(locator) {
+        current = locator;
+        save(POSITION_KEY, JSON.stringify(locator.serialize()));
+        highlightToc(locator);
+        showProgress(locator);
+        syncBookmarkButton();
+        updateEdges();
+        var item = publication && publication.readingOrder.findWithHref(locator.href.split("#")[0]);
+        if (item && item.title) $chapterTitle.text(item.title);
+    }
+
+    // ---------------------------------------------------------------------------
+    // Settings controls (called from read.html)
+    // ---------------------------------------------------------------------------
+
+    window.selectTheme = function (id) {
+        appearance.theme = id;
+        save("calibre.reader.theme", id);
+        applyPreferences();
+    };
+
+    window.selectFont = function (id) {
+        appearance.font = id;
+        save("calibre.reader.font", id);
+        applyPreferences();
+    };
+
+    window.spread = function (id) {
+        appearance.oneColumn = id === "nonespread";
+        save("calibre.reader.columns", appearance.oneColumn ? "one" : "auto");
+        applyPreferences();
+    };
+
+    window.selectAlign = function (id) {
+        appearance.textAlign = id.replace("align-", "");
+        save("calibre.reader.textAlign", appearance.textAlign);
+        applyPreferences();
+    };
+
+    function changeFontSize(delta) {
+        appearance.fontSize = Math.min(MAX_FONT_SIZE, Math.max(MIN_FONT_SIZE, appearance.fontSize + delta));
+        save("calibre.reader.fontSize", appearance.fontSize);
+        applyPreferences();
+    }
+    document.getElementById("fontSizeDecrease").addEventListener("click", function () { changeFontSize(-FONT_STEP); });
+    document.getElementById("fontSizeIncrease").addEventListener("click", function () { changeFontSize(FONT_STEP); });
+
+    (function initShowPages() {
+        var checkbox = document.getElementById("showPagesCount");
+        var visible = load("calibre.reader.showPages", "true") === "true";
+        if (checkbox) {
+            checkbox.checked = visible;
+            checkbox.addEventListener("change", function () {
+                save("calibre.reader.showPages", checkbox.checked);
+                pagesDiv.style.visibility = checkbox.checked ? "visible" : "hidden";
+            });
+        }
+    })();
+
+    function applyCustomColor(hex) {
+        if (!hex) return;
+        if (hex.charAt(0) !== "#") hex = "#" + hex;
+        appearance.customColor = hex.slice(0, 7);
+        appearance.theme = "customTheme";
+        save("calibre.reader.customTheme", appearance.customColor);
+        save("calibre.reader.theme", "customTheme");
+        applyPreferences();
+    }
+
+    (function initPickr() {
+        var swatch = document.getElementById("customThemeSwatch");
+        function create() {
+            if (!window.Pickr) return setTimeout(create, 150);
+            try {
+                var pickr = Pickr.create({
+                    el: "#customThemeSwatch",
+                    theme: "classic",
+                    default: appearance.customColor,
+                    components: { preview: true, opacity: false, hue: true, interaction: { hex: true, input: true, save: true } },
+                });
+                pickr.on("change", function (color) { applyCustomColor(color.toHEXA().toString()); });
+                pickr.on("save", function (color) {
+                    applyCustomColor(color.toHEXA().toString());
+                    pickr.hide();
+                });
+                if (swatch) swatch.addEventListener("click", function () { pickr.show(); });
+            } catch (e) {
+                console.error("Pickr init failed", e);
             }
-        } catch (e) {}
-    });
+        }
+        create();
+    })();
+
+    // ---------------------------------------------------------------------------
+    // Start
+    // ---------------------------------------------------------------------------
+
+    function showError(message) {
+        $loader.hide();
+        $("#viewer").empty().append(
+            $("<div></div>").css({ padding: "2em", textAlign: "center" }).append(
+                $("<p></p>").text(message),
+                $("<button type=\"button\"></button>").text(calibre.reloadLabel || "Reload").on("click", function () {
+                    window.location.reload();
+                })
+            )
+        );
+    }
+
+    function fetchJson(url, attempts) {
+        return fetch(url, { credentials: "same-origin" }).then(function (response) {
+            if (!response.ok) throw new Error(url + " answered " + response.status);
+            return response.json();
+        }).catch(function (error) {
+            if (attempts > 1) return fetchJson(url, attempts - 1);
+            throw error;
+        });
+    }
+
+    function start() {
+        var manifestUrl = new URL(calibre.manifestUrl, window.location.href).href;
+        return fetchJson(manifestUrl, 2).then(function (json) {
+            var manifest = Readium.Manifest.deserialize(json);
+            if (!manifest) throw new Error("manifest not understood");
+            manifest.setSelfLink(manifestUrl);
+            publication = new Readium.Publication({
+                manifest: manifest,
+                fetcher: new Readium.HttpFetcher(undefined, manifest.baseURL),
+            });
+            return publication.positionsFromManifest();
+        }).then(function (list) {
+            positions = list;
+            var meta = publication.metadata;
+            var title = meta.title && meta.title.getTranslation ? meta.title.getTranslation("und") : "";
+            var authors = meta.authors && meta.authors.items ? meta.authors.items.map(function (a) {
+                return a.name && a.name.getTranslation ? a.name.getTranslation("und") : "";
+            }).filter(Boolean).join(", ") : "";
+            document.title = title + (authors ? " – " + authors : "");
+            $bookTitle.text(title);
+            $chapterTitle.text(authors);
+            $titleSeperator.show();
+            rtl = meta.effectiveReadingProgression === "rtl";
+
+            restoreBookmarks();
+            renderToc();
+            renderBookmarks();
+            paintChrome();
+
+            navigator = new Readium.EpubNavigator(
+                document.getElementById("viewer"),
+                publication,
+                {
+                    positionChanged: onPositionChanged,
+                    frameLoaded: function () { $loader.hide(); },
+                    peripheral: function (event) {
+                        if (event.type === "calibre_prev") step(-1);
+                        else if (event.type === "calibre_next") step(1);
+                    },
+                },
+                positions,
+                initialPosition(),
+                {
+                    preferences: preferences(),
+                    defaults: {},
+                    keyboardPeripherals: [
+                        { type: "calibre_prev", keyCombos: [{ keyCode: 37 }] },
+                        { type: "calibre_next", keyCombos: [{ keyCode: 39 }] },
+                    ],
+                }
+            );
+            return navigator.load();
+        }).then(function () {
+            $loader.hide();
+        }).catch(function (error) {
+            console.error("Failed to load book", error);
+            showError(calibre.errorMessage || "The book could not be loaded.");
+        });
+    }
+
+    start();
 })();

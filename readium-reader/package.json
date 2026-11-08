@@ -1,0 +1,16 @@
+{
+  "name": "calibre-web-readium-reader",
+  "private": true,
+  "type": "module",
+  "description": "Bundles the Readium ts-toolkit EPUB navigator into cps/static/js/libs/readium.js (global `Readium`).",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@readium/navigator": "2.15.0",
+    "@readium/shared": "2.9.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.5"
+  }
+}

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/libs/pickr/pickr.min.css') }}">
     {% set umami_event = 'epub-read' %}{% set umami_book_id = bookid %}{% set umami_format = book_format|lower %}
     {% include 'umami_reader.html' %}
 </head>
@@ -137,360 +138,31 @@
                 <button type="button" id="spread" onclick="spread(this.id)"><span>✓</span>{{_('Two columns')}}</button>
                 <button type="button" id="nonespread" onclick="spread(this.id)"><span></span>{{_('One column')}}</button>
               </div>            
+              <div class="layou" id="textAlign">
+                <label class="item">{{ _('Text alignment') }}:</label>
+                <button type="button" id="align-default" onclick="selectAlign(this.id)"><span>✓</span>{{_('Default')}}</button>
+                <button type="button" id="align-left" onclick="selectAlign(this.id)"><span></span>{{_('Left')}}</button>
+                <button type="button" id="align-justify" onclick="selectAlign(this.id)"><span></span>{{_('Justify')}}</button>
+              </div>
             <div class="closer icon-cancel-circled"></div>
         </div>
     </div>
     <div class="overlay"></div>
-    <script src="{{ url_for('static', filename='js/libs/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/compress/jszip_epub.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/libs/epub.min.js') }}"></script>
-    <script type="text/javascript">
+    <script src="{{ url_for('static', filename='js/libs/jquery.min.js') }}" data-cfasync="false"></script>
+    <script src="{{ url_for('static', filename='js/libs/pickr/pickr.min.js') }}" data-cfasync="false"></script>
+    <script src="{{ url_for('static', filename='js/libs/screenfull.min.js') }}" data-cfasync="false"></script>
+    <script src="{{ url_for('static', filename='js/libs/readium.js') }}" data-cfasync="false"></script>
+    <script type="text/javascript" data-cfasync="false">
         window.calibre = {
-            filePath: "{{ url_for('static', filename='js/libs/') }}",
-            cssPath: "{{ url_for('static', filename='css/') }}",
-            bookmarkUrl: "{{ url_for('web.set_bookmark', book_id=bookid, book_format=book_format) }}",
-            bookUrl: "{{ url_for('web.serve_book', book_id=bookid, book_format=book_format, anyname='file.epub') }}",
-            bookmark: "{{ bookmark.bookmark_key if bookmark != None }}",
-            useBookmarks: "{{ current_user.is_authenticated | tojson }}"
+            bookId: {{ bookid | tojson }},
+            manifestUrl: {{ url_for('web.readium_manifest', book_id=bookid) | tojson }},
+            bookmarkUrl: {{ url_for('web.set_bookmark', book_id=bookid, book_format=book_format) | tojson }},
+            bookmark: {{ (bookmark.bookmark_key if bookmark != None else '') | tojson }},
+            useBookmarks: {{ current_user.is_authenticated | tojson }},
+            errorMessage: {{ _('The book could not be loaded.') | tojson }},
+            reloadLabel: {{ _('Reload') | tojson }}
         };
-
-      // load custom theme color from localStorage (if any)
-      var _savedCustomThemeColor = null;
-      try {
-        _savedCustomThemeColor = localStorage.getItem(
-          "calibre.reader.customTheme"
-        );
-      } catch (e) {}
-
-        window.themes = {
-            "darkTheme": {
-                "bgColor": "#202124",
-                "css_path": "{{ url_for('static', filename='css/epub_themes.css') }}",
-                "title-color": "#fff"
-            },
-            "lightTheme": {
-                "bgColor": "white",
-                "css_path": "{{ url_for('static', filename='css/epub_themes.css') }}",
-                "title-color": "#4f4f4f"
-            },
-            "sepiaTheme": {
-                "bgColor": "#ece1ca",
-                "css_path": "{{ url_for('static', filename='css/epub_themes.css') }}",
-                "title-color": "#4f4f4f"
-            },
-            "amberTheme": {
-                "bgColor": "#e8bf5e",
-                "css_path": "{{ url_for('static', filename='css/epub_themes.css') }}",
-                "title-color": "#2f2f2f"
-            },            
-            "blackTheme": {
-                "bgColor": "black",
-                "css_path": "{{ url_for('static', filename='css/epub_themes.css') }}",
-                "title-color": "#fff"
-            },
-        };
-
-        function selectTheme (id) {
-            let tickSpans = document.getElementById("themes").querySelectorAll("span");
-            tickSpans.forEach(function (tickSpan) {
-               try {
-                   tickSpan.textContent = "";
-               } catch (e) {}
-            });
-
-            // If the theme button exists, set its inner span to a tick. Otherwise set any span with the matching id.
-            let el = document.getElementById(id);
-            if (el) {
-                let sp = el.querySelector("span");
-                if (sp) sp.textContent = "✓";
-            } else {
-                let spById = document.getElementById(id + "Selected") || document.getElementById("customSelected");
-                if (spById) spById.textContent = "✓";
-            }
-
-            // Saving theme to local storage
-            localStorage.setItem("calibre.reader.theme", id);
-
-            // If selecting custom theme, ensure epubjs theme is registered with chosen bg color
-            if (id === "customTheme") {
-                let customColor = window.themes.customTheme.bgColor || "#ffffff";
-                try {
-                    if (reader && reader.rendition && reader.rendition.themes) {
-                        reader.rendition.themes.register("customTheme", {
-                            body: {
-                               background: customColor,
-                            },
-                        });
-                        reader.rendition.themes.select("customTheme");
-                    }
-                 } catch (e) {
-                     console.error("Failed to register/select customTheme", e);
-                 }
-             } else {
-                // Apply theme to epubjs iframe
-                try {
-                    reader.rendition.themes.select(id);
-                } catch (e) {}
-             }
-
-            // Apply theme to rest of the page.
-            document.getElementById("main").style.backgroundColor = themes[id]["bgColor"];
-            document.getElementById("titlebar").style.color = themes[id]["title-color"] || "#fff";
-            document.getElementById("progress").style.color = themes[id]["title-color"] || "#fff";
-        }
-
-        // font size settings logic
-        let currentFontSize = 100; // default 100%
-        const minFontSize = 50;
-        const maxFontSize = 300;
-        const stepSize = 5;
-
-        const fontSizeDisplay = document.getElementById("fontSizeDisplay");
-        const fontSizeDecrease = document.getElementById("fontSizeDecrease");
-        const fontSizeIncrease = document.getElementById("fontSizeIncrease");
-
-        function updateFontSize(newSize) {
-            if (newSize < minFontSize) newSize = minFontSize;
-            if (newSize > maxFontSize) newSize = maxFontSize;
-
-            currentFontSize = newSize;
-            fontSizeDisplay.textContent = newSize + "%";
-            localStorage.setItem("calibre.reader.fontSize", newSize);
-            if (reader && reader.rendition) {
-                reader.rendition.themes.fontSize(`${newSize}%`);
-            }
-        }
-
-        // Restore saved font size on load
-        const savedFontSize = localStorage.getItem("calibre.reader.fontSize");
-        if (savedFontSize) {
-            currentFontSize = parseInt(savedFontSize);
-            fontSizeDisplay.textContent = savedFontSize + "%";
-        }
-
-        fontSizeDecrease.addEventListener("click", function () {
-            updateFontSize(currentFontSize - stepSize);
-        });
-
-        fontSizeIncrease.addEventListener("click", function () {
-            updateFontSize(currentFontSize + stepSize);
-        });
-
-        let defaultFont;
-
-      window.selectFont = function (id) {
-          if (!defaultFont) {
-            defaultFont = reader.rendition.getContents()[0]?.css('font-family');
-          }
-
-          spans = document.getElementById("font").querySelectorAll("span");
-          for(var i = 0; i < spans.length; i++) {
-              spans[i].textContent = "";
-          }
-          document.getElementById(id).querySelector("span").textContent = "✓";
-
-          // Save font selection to localStorage
-          localStorage.setItem("calibre.reader.font", id);
-
-          if (id == "default") {
-              reader.rendition.themes.font(defaultFont);
-              return;
-          }
-          reader.rendition.themes.font(id);
-      };
-
-        function spread(id) {
-          spans = document.getElementById("layout").querySelectorAll("span");
-          for(var i = 0; i < spans.length; i++) {
-            spans[i].textContent = "";
-          }
-          document.getElementById(id).querySelector("span").textContent = "✓";
-          reader.rendition.spread(id==="spread" ? true : "none");
-        }
-
-        // Pages counter visibility setting
-        (function () {
-            var checkbox = document.getElementById("showPagesCount");
-            var pagesEl = document.getElementById("pages-count");
-            var key = "calibre.reader.showPages";
-            var saved = localStorage.getItem(key);
-            var show = saved === null ? true : saved === "true";
-            if (checkbox) checkbox.checked = show;
-            if (pagesEl) pagesEl.style.display = show ? "" : "none";
-            if (checkbox) {
-                checkbox.addEventListener("change", function () {
-                    var val = checkbox.checked;
-                    localStorage.setItem(key, String(val));
-                    var target = document.getElementById("pages-count");
-                    if (target) target.style.visibility = val ? "visible" : "hidden";
-                });
-            }
-        })();
     </script>
-    <script type="text/javascript">
-      // Initialize custom theme UI and Pickr once Pickr is available
-      (function () {
-        var swatch = document.getElementById("customThemeSwatch");
-        var saved =
-          window.themes &&
-          window.themes.customTheme &&
-          window.themes.customTheme.bgColor
-            ? window.themes.customTheme.bgColor
-            : "#ffffff";
-        if (swatch) swatch.style.background = saved;
-
-        function _hexToRgb(hex) {
-          hex = hex.replace("#", "");
-          if (hex.length === 3) {
-            hex = hex
-              .split("")
-              .map(function (h) {
-                return h + h;
-              })
-              .join("");
-          }
-          var bigint = parseInt(hex, 16);
-          return {
-            r: (bigint >> 16) & 255,
-            g: (bigint >> 8) & 255,
-            b: bigint & 255,
-          };
-        }
-
-        // Better contrast decision using WCAG relative luminance and contrast ratio
-        // Returns true if black text is the better choice (i.e. background is light)
-        function _isLight(hex) {
-          try {
-            var rgb = _hexToRgb(hex);
-            // convert 0-255 to 0-1
-            var srgb = { r: rgb.r / 255, g: rgb.g / 255, b: rgb.b / 255 };
-            function lin(c) {
-              return c <= 0.03928
-                ? c / 12.92
-                : Math.pow((c + 0.055) / 1.055, 2.4);
-            }
-            var R = lin(srgb.r),
-              G = lin(srgb.g),
-              B = lin(srgb.b);
-            var L = 0.2126 * R + 0.7152 * G + 0.0722 * B; // relative luminance
-
-            // contrast ratios against black (L=0) and white (L=1)
-            var contrastWithBlack = (L + 0.05) / (0.0 + 0.05);
-            var contrastWithWhite = (1.0 + 0.05) / (L + 0.05);
-
-            // pick the text color that gives higher contrast. If black gives >= contrast, treat bg as light
-            return contrastWithBlack >= contrastWithWhite;
-          } catch (e) {
-            return true;
-          }
-        }
-
-        function applyCustomColor(hex) {
-          if (!hex) return;
-          if (hex[0] !== "#") hex = "#" + hex;
-          window.themes.customTheme.bgColor = hex;
-          try {
-            localStorage.setItem("calibre.reader.customTheme", hex);
-          } catch (e) {}
-          if (swatch) swatch.style.background = hex;
-
-          // Mark theme as selected
-          try {
-            localStorage.setItem("calibre.reader.theme", "customTheme");
-          } catch (e) {}
-          // Clear ticks and set custom tick
-          var tickSpans = document
-            .getElementById("themes")
-            .querySelectorAll("span");
-          tickSpans.forEach(function (ts) {
-            ts.textContent = "";
-          });
-          var customTick = document.getElementById("customSelected");
-          if (customTick) customTick.textContent = "✓";
-
-          // Compute title/text color based on contrast (black or white)
-          var titleColor = _isLight(hex) ? "#000000" : "#ffffff";
-          try {
-            document.getElementById("main").style.backgroundColor = hex;
-            document.getElementById("titlebar").style.color = titleColor;
-            document.getElementById("progress").style.color = titleColor;
-          } catch (e) {}
-
-          // Persist title-color in themes map so selectTheme reads a consistent value
-          try {
-            window.themes.customTheme["title-color"] = titleColor;
-          } catch (e) {}
-
-          // Register and select theme in epub rendition (include text color)
-          try {
-            if (reader && reader.rendition && reader.rendition.themes) {
-              reader.rendition.themes.register("customTheme", {
-                body: { background: hex, color: titleColor },
-              });
-              reader.rendition.themes.select("customTheme");
-            }
-          } catch (e) {
-            console.error("Failed to apply custom theme to reader", e);
-          }
-        }
-
-        // Delay init until Pickr is available
-        function ensurePickrAndInit() {
-          if (window.Pickr) {
-            try {
-              var pickr = Pickr.create({
-                el: "#customThemeSwatch",
-                theme: "classic",
-                default: saved,
-                components: {
-                  preview: true,
-                  opacity: false,
-                  hue: true,
-                  interaction: {
-                    hex: true,
-                    input: true,
-                    save: true,
-                  },
-                },
-              });
-
-              // Immediate apply when color changes in the picker
-              pickr.on("change", function (color, instance) {
-                try {
-                  var hex = color.toHEXA().toString();
-                  if (swatch) swatch.style.background = hex;
-                  applyCustomColor(hex);
-                } catch (e) {}
-              });
-
-              // Also respond to save (some pickr configs use save)
-              pickr.on("save", function (color, instance) {
-                try {
-                  var hex = color.toHEXA().toString();
-                  if (swatch) swatch.style.background = hex;
-                  applyCustomColor(hex);
-                  pickr.hide();
-                } catch (e) {}
-              });
-
-              // Clicking swatch opens pickr
-              if (swatch)
-                swatch.addEventListener("click", function () {
-                  pickr.show();
-                });
-            } catch (e) {
-              console.error("Pickr init failed", e);
-            }
-            return;
-          }
-          // wait a bit
-          setTimeout(ensurePickrAndInit, 150);
-        }
-
-        ensurePickrAndInit();
-      })();
-      </script>
-      <script src="{{ url_for('static', filename='js/libs/screenfull.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/reading/epub.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/reading/epub.js') }}" data-cfasync="false"></script>
     </body>
 </html>
