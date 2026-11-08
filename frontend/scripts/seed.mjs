@@ -23,7 +23,8 @@
  */
 
 import Database from 'better-sqlite3';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, open, readdir, readFile, writeFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,6 +54,70 @@ async function readJsonIfExists(relPath, fallback) {
     if (error.code === 'ENOENT') return fallback;
     throw error;
   }
+}
+
+// Cached OCR/extracted-text documents (written by cps/ocr_service.py). Only a book whose document is cached and
+// current renders an indexable /read/<id>/ocr/<format>/ page; the rest show a "not processed" page marked noindex.
+const OCR_CACHE_DIR = process.env.OCR_CACHE_DIR || '/config/ocr-cache/results';
+const OCR_CACHE_HEAD_BYTES = 16384;
+
+function ocrCacheVersion() {
+  const source = readFileSync(join(ROOT, '..', 'cps', 'ocr_service.py'), 'utf8');
+  const match = source.match(/^CACHE_VERSION\s*=\s*(\d+)/m);
+  if (!match) throw new Error('CACHE_VERSION not found in cps/ocr_service.py');
+  return Number(match[1]);
+}
+
+/**
+ * Book ids per format with a ready cache entry of the current CACHE_VERSION whose file name and size still match
+ * the library. Reads only the head of each cache file (`{"request": {...}, "result": {"status": ...`).
+ * Returns null when the cache directory is absent so a stale manifest is kept instead of emptied.
+ */
+async function loadReadyOcr(db) {
+  let files;
+  try {
+    files = await readdir(OCR_CACHE_DIR);
+  } catch (error) {
+    if (error.code === 'ENOENT') return null;
+    throw error;
+  }
+  const version = ocrCacheVersion();
+  const current = new Map();
+  for (const row of db.prepare(`SELECT book, upper(format) AS format, name, uncompressed_size AS size FROM data WHERE upper(format) IN ('PDF', 'EPUB')`).all()) {
+    current.set(`${row.book}:${row.format}`, row);
+  }
+  const requestPrefix = '{"request": ';
+  const resultMarker = '}, "result": ';
+  const ready = { pdf: new Set(), epub: new Set() };
+  const buffer = Buffer.alloc(OCR_CACHE_HEAD_BYTES);
+  for (const file of files) {
+    if (!file.endsWith('.json') || file.startsWith('.')) continue;
+    const handle = await open(join(OCR_CACHE_DIR, file), 'r');
+    let head;
+    try {
+      const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0);
+      head = buffer.toString('utf8', 0, bytesRead);
+    } finally {
+      await handle.close();
+    }
+    const end = head.indexOf(resultMarker);
+    if (!head.startsWith(requestPrefix) || end < 0) continue;
+    if (!head.startsWith('{"status": "ready"', end + resultMarker.length)) continue;
+    let request;
+    try {
+      request = JSON.parse(head.slice(requestPrefix.length, end + 1));
+    } catch {
+      continue;
+    }
+    if (request.version !== version) continue;
+    const live = current.get(`${request.book_id}:${request.format}`);
+    if (!live || live.name !== request.name || Number(live.size) !== request.size) continue;
+    ready[String(request.format).toLowerCase()].add(request.book_id);
+  }
+  return {
+    pdf: [...ready.pdf].sort((a, b) => a - b),
+    epub: [...ready.epub].sort((a, b) => a - b),
+  };
 }
 
 function cleanAuthorName(name) {
@@ -340,6 +405,13 @@ async function main() {
     const index = await loadBooks(db);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
+    const readyOcr = await loadReadyOcr(db);
+    if (readyOcr) {
+      await writeJson('ocr-ready.json', readyOcr);
+      console.log(`[seed] wrote OCR manifest (${readyOcr.pdf.length} pdf, ${readyOcr.epub.length} epub)`);
+    } else {
+      console.warn(`[seed] OCR cache dir ${OCR_CACHE_DIR} not found; kept existing ocr-ready.json`);
+    }
     await writeJson('book-slugs.json', Object.fromEntries(index.map(book => [book.id, book.slug])));
     console.log(`[seed] wrote ${index.length} book slugs`);
     await writeJson('legacy-book-slugs.json', buildLegacySlugMap(previousBooks, previousAliases, index));

@@ -1,4 +1,5 @@
 import { getAllAuthors, getAllBooks, getAllCategories, getAllLanguages, getAllPublishers, getAllSeries, getShelves } from '~/data';
+import ocrReady from '~/data/ocr-ready.json';
 import { videos } from '~/data/videos';
 import { authorPath } from './author-url';
 import { bookPath } from './book-url';
@@ -76,6 +77,11 @@ function imageUrl(path: string): string | undefined {
   return url.href;
 }
 
+const readyOcrIds = {
+  pdf: new Set<number>(ocrReady.pdf),
+  epub: new Set<number>(ocrReady.epub),
+};
+
 export function getSitemapEntries(): SitemapEntry[] {
   const entries = new Map<string, SitemapEntry>();
 
@@ -83,8 +89,9 @@ export function getSitemapEntries(): SitemapEntry[] {
   for (const book of getAllBooks()) {
     const cover = imageUrl(book.cover_og_url);
     addEntry(entries, bookPath(book), dateOnly(book.last_modified), cover ? [cover] : undefined);
+    // Only books whose text is already cached have an indexable reader page; the rest render a noindex stub.
     for (const format of OCR_FORMATS) {
-      if (book.formats.some((candidate) => candidate.toLowerCase() === format)) {
+      if (readyOcrIds[format as 'pdf' | 'epub'].has(book.id)) {
         addEntry(entries, `/read/${book.id}/ocr/${format}`, dateOnly(book.last_modified));
       }
     }

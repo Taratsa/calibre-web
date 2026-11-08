@@ -235,6 +235,9 @@ def add_security_headers(resp):
     resp.headers["Strict-Transport-Security"] = "max-age=31536000"
     onion_location = os.environ.get("ONION_LOCATION", "").strip()
     if onion_location:
+    if request.endpoint == "web.read_book":
+        # Viewer shells (epub.js/pdf.js) have no indexable text; the indexable reading page is the Astro /read/<id>/ocr/<fmt>/.
+        resp.headers["X-Robots-Tag"] = "noindex"
         resp.headers["Onion-Location"] = onion_location
     return resp
 

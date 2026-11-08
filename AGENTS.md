@@ -303,10 +303,26 @@ Two live search systems (plus the legacy advanced-search form):
 - **Cloudflare**: a dashboard Cache Rule must NOT match `/download/*`
   (a cached 200/302 there bypasses the counter). Cache `/files/*` only
 
+- `inLanguage` and `og:locale` come from Calibre's ISO 639-2 codes (`ind`) mapped to ISO 639-1 / locale
+  (`id`, `id_ID`) by `languageTag()` / `ogLocale()` in `frontend/src/data/index.ts`. Add new languages to
+  `ISO_639_1` there. `BookLayout` passes the locale to `BaseLayout`, which emits the only `og:locale`
+- `datePublished`, `book:release_date` and the visible "Tahun" row use `reliablePubdate()`
+  (`frontend/src/utils/pubdate.ts`): Calibre fills `pubdate` with the import date when a book has none, so a
+  date within 31 days before `timestamp` (or after it) is treated as a placeholder and omitted
 ### Cover Images
 - `Cache-Control: public, max-age=86400` (7 days)
 - `Vary: Accept, Accept-Encoding`
 - WebP served to supporting browsers via `?fm=webp` or `Accept` header
+### Indexing
+
+- The sitemap lists `/read/<id>/ocr/<fmt>/` only for books in `frontend/src/data/ocr-ready.json`, written by
+  `seed.mjs` from the OCR cache (`OCR_CACHE_DIR`, set by `build-frontend.sh`): entries of the current
+  `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
+  and size. Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
+  appear in the sitemap after the next `./build-frontend.sh`; without the cache dir the previous manifest is kept
+- The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
+  (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
+
 
 ### Cloudflare Cache Rules (recommended)
 | Path | Edge TTL | Browser TTL |

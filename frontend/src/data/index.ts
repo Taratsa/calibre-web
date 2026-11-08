@@ -115,6 +115,20 @@ export function paginate<T>(items: T[], page: number, size: number = PAGE_SIZE) 
   };
 }
 
+// Calibre stores ISO 639-2 codes ("ind"); og:locale, JSON-LD inLanguage and display names use ISO 639-1.
+const ISO_639_1: Record<string, string> = {
+  ind: 'id',
+  eng: 'en',
+  msa: 'ms',
+  jav: 'jv',
+  sun: 'su',
+  nld: 'nl',
+};
+
+export function languageTag(code: string): string {
+  return ISO_639_1[code] ?? code;
+}
+
 export function ogLocale(code: string): string {
   const map: Record<string, string> = {
     id: 'id_ID',
@@ -124,7 +138,8 @@ export function ogLocale(code: string): string {
     ms: 'ms_MY',
     nl: 'nl_NL',
   };
-  return map[code] || code;
+  const tag = languageTag(code);
+  return map[tag] || tag;
 }
 
 export function localeLanguageName(code: string): string {
@@ -136,7 +151,7 @@ export function localeLanguageName(code: string): string {
     nl: 'Nederlands',
     ms: 'Bahasa Melayu',
   };
-  return map[code] || code;
+  return map[languageTag(code)] || code;
 }
 
 export function formatBytes(n: number | null | undefined): string {

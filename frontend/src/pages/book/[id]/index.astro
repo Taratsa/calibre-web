@@ -7,6 +7,7 @@ import { getAllBooks, getAllCategories, formatBytes, getShelves } from '~/data';
 import type { BookDetail } from '~/data/types';
 import { authorPath } from '~/utils/author-url';
 import { bookByPathSegment, bookPath } from '~/utils/book-url';
+import { reliablePubdate } from '~/utils/pubdate';
 
 const { id } = Astro.params;
 if (!id || /^\d+$/.test(id)) return new Response(null, { status: 404 });
@@ -130,8 +131,8 @@ const ratingStr = book.rating && book.rating.count > 0
               <td><a href={`/publisher/${book.publisher.id}`} set:html={book.publisher.name} /></td>
             </tr>
           )}
-          {book.pubdate && (
-            <tr><th scope="row">Tahun</th><td>{book.pubdate}</td></tr>
+          {reliablePubdate(book) && (
+            <tr><th scope="row">Tahun</th><td>{reliablePubdate(book)}</td></tr>
           )}
           {book.languages.length > 0 && (
             <tr>

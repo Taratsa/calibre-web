@@ -17,7 +17,7 @@ SERVICE="astro-frontend"
 
 echo "=== 1/3 Seeding frontend data from live DBs ==="
 cd "$SCRIPT_DIR/frontend"
-CALIBRE_DB_PATH="$CALIBRE_DB" APP_DB_PATH="$APP_DB" \
+CALIBRE_DB_PATH="$CALIBRE_DB" APP_DB_PATH="$APP_DB" OCR_CACHE_DIR="$SCRIPT_DIR/data/ocr-cache/results" \
     node scripts/seed.mjs "$CALIBRE_DB"
 
 echo "=== 2/3 Rebuilding frontend image (bakes src/data) ==="

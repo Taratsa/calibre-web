@@ -1,8 +1,9 @@
 ---
 import type { BookSummary } from '~/data/types';
 import BaseLayout from './BaseLayout.astro';
-import { ogLocale } from '~/data';
+import { languageTag, ogLocale } from '~/data';
 import { bookPath } from '~/utils/book-url';
+import { reliablePubdate } from '~/utils/pubdate';
 
 export interface Props {
   book: BookSummary;
@@ -16,7 +17,7 @@ const ogImageUrl = `${siteUrl}/og/book/${book.slug}.png?v=${encodeURIComponent(b
 
 const description = customDescription || book.tags.join(', ') || `${book.title.trim()} — koleksi Perpustakaan Digital Taratsa`;
 const descriptionTruncated = description.length > 200 ? `${description.slice(0, 197)}...` : description;
-const pubdate = book.pubdate && book.pubdate !== '0101-01-01' ? book.pubdate : null;
+const pubdate = reliablePubdate(book);
 
 const isbn = (book.identifiers || []).find(i => /isbn/i.test(i.type))?.value ?? null;
 
@@ -42,7 +43,7 @@ const jsonLd: Record<string, unknown> = {
   author: book.authors.map(a => ({ '@type': 'Person', name: a.name })),
   image: ogImageUrl,
 };
-if (book.languages.length > 0) jsonLd.inLanguage = book.languages[0];
+if (book.languages.length > 0) jsonLd.inLanguage = languageTag(book.languages[0]);
 if (descriptionTruncated) jsonLd.description = descriptionTruncated;
 if (isbn) jsonLd.isbn = isbn;
 if (pubdate) jsonLd.datePublished = pubdate;
@@ -61,10 +62,9 @@ if (book.rating && book.rating.count > 0) {
 }
 ---
 
-<BaseLayout title={book.title} description={descriptionTruncated} ogImage={ogImageUrl} canonical={bookUrl} ogType="book">
+<BaseLayout title={book.title} description={descriptionTruncated} ogImage={ogImageUrl} canonical={bookUrl} ogType="book" locale={book.languages.length > 0 ? ogLocale(book.languages[0]) : undefined}>
   <Fragment slot="head">
     <meta property="og:image:alt" content={book.title} />
-    {book.languages.length > 0 && <meta property="og:locale" content={ogLocale(book.languages[0])} />}
     {book.authors.map(a => <meta property="book:author" content={a.name} />)}
     {book.publisher && <meta property="book:publisher" content={book.publisher.name} />}
     {pubdate && <meta property="book:release_date" content={pubdate} />}
