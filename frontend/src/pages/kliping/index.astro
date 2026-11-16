@@ -1,0 +1,117 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import { clippings, clippingPath, formatDate, PAGE_SIZE } from '~/data/clippings'
+
+const query = Astro.url.searchParams.get('q')?.trim() || ''
+const publication = Astro.url.searchParams.get('media') || ''
+const tag = Astro.url.searchParams.get('tag') || ''
+const requestedPage = Math.max(1, Number(Astro.url.searchParams.get('page') || '1') || 1)
+
+const publications = [...new Set(clippings.map((c) => c.publication).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'id'))
+
+const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
+const matches = clippings.filter((c) => {
+  if (publication && c.publication !== publication) return false
+  if (tag && !c.tags.includes(tag)) return false
+  const haystack = `${c.title} ${c.publication} ${c.issue} ${c.authors.join(' ')} ${c.tags.join(' ')} ${c.excerpt}`.toLowerCase()
+  return terms.every((term) => haystack.includes(term))
+})
+
+const totalPages = Math.max(1, Math.ceil(matches.length / PAGE_SIZE))
+const page = Math.min(requestedPage, totalPages)
+const rows = matches.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+const filtered = Boolean(query || publication || tag)
+
+function urlFor(nextPage: number) {
+  const params = new URLSearchParams()
+  if (query) params.set('q', query)
+  if (publication) params.set('media', publication)
+  if (tag) params.set('tag', tag)
+  if (nextPage > 1) params.set('page', String(nextPage))
+  const qs = params.toString()
+  return `/kliping/${qs ? `?${qs}` : ''}`
+}
+---
+
+<BaseLayout
+  title="Kliping"
+  description="Arsip kliping koran dan majalah lama: transkripsi teks berita dengan keterangan terbitan, tanggal, dan halaman."
+  canonical="/kliping/"
+  ogType="website"
+  noindex={filtered || page > 1}
+>
+  <div class="kliping-heading">
+    <div>
+      <h1>Kliping</h1>
+      <p>Arsip kliping koran dan majalah lama, ditranskripsi dalam bentuk teks.</p>
+    </div>
+    <p class="kliping-count"><strong>{matches.length.toLocaleString('id-ID')}</strong> kliping</p>
+  </div>
+
+  <form class="kliping-tools" action="/kliping/" method="GET" role="search" aria-label="Cari kliping">
+    <label>
+      <span class="sr-only">Cari kliping</span>
+      <input type="search" name="q" value={query} placeholder="Cari judul, terbitan, atau isi…" />
+    </label>
+    <select name="media" aria-label="Terbitan">
+      <option value="">Semua terbitan</option>
+      {publications.map((name) => <option value={name} selected={name === publication}>{name}</option>)}
+    </select>
+    {tag && <input type="hidden" name="tag" value={tag} />}
+    <button type="submit">Cari</button>
+    {filtered && <a class="reset" href="/kliping/">Reset</a>}
+  </form>
+
+  {rows.length ? (
+    <ul class="kliping-list">
+      {rows.map((c) => (
+        <li class="kliping-item">
+          <h2><a href={clippingPath(c.id)}>{c.title}</a></h2>
+          <p class="kliping-meta">
+            {[c.publication, c.issue, formatDate(c.date), c.page && `hlm. ${c.page}`].filter(Boolean).join(' · ')}
+          </p>
+          {c.excerpt && <p class="kliping-excerpt">{c.excerpt}{c.excerpt.length >= 200 ? '…' : ''}</p>}
+          {c.tags.length > 0 && (
+            <p class="kliping-tags">{c.tags.map((t) => <a href={`/kliping/?tag=${encodeURIComponent(t)}`}>{t}</a>)}</p>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="empty">{clippings.length ? 'Tidak ada kliping yang cocok dengan pencarian ini.' : 'Belum ada kliping.'}</p>
+  )}
+
+  {totalPages > 1 && (
+    <nav class="kliping-pagination" aria-label="Halaman kliping">
+      <a class:list={{ disabled: page <= 1 }} href={page > 1 ? urlFor(page - 1) : undefined} rel="prev">Sebelumnya</a>
+      <span aria-current="page">{page} / {totalPages}</span>
+      <a class:list={{ disabled: page >= totalPages }} href={page < totalPages ? urlFor(page + 1) : undefined} rel="next">Selanjutnya</a>
+    </nav>
+  )}
+</BaseLayout>
+
+<style>
+  .kliping-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .kliping-heading p { margin-bottom: 1.5rem; color: var(--muted); }
+  .kliping-count { white-space: nowrap; padding: 0.5rem 0; font-size: 0.9rem; }
+  .kliping-count strong { color: var(--fg); }
+  .kliping-tools { display: flex; align-items: stretch; gap: 0.5rem; margin: 1.5rem 0 1rem; }
+  .kliping-tools label { flex: 1; }
+  .kliping-tools input[type='search'], .kliping-tools select, .kliping-tools button { height: 44px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--fg); font: inherit; padding: 0.5rem 0.75rem; }
+  .kliping-tools input[type='search'] { width: 100%; }
+  .kliping-tools input:focus, .kliping-tools select:focus, .kliping-tools button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .kliping-tools button { border-color: var(--fg); background: var(--fg); color: var(--bg); cursor: pointer; font-weight: 600; }
+  .kliping-tools .reset { display: inline-flex; align-items: center; padding: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+  .kliping-list { margin: 1.5rem 0; padding: 0; list-style: none; }
+  .kliping-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border-subtle); }
+  .kliping-item h2 { margin: 0 0 0.25rem; font-size: 1.15rem; line-height: 1.35; }
+  .kliping-meta { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.875rem; }
+  .kliping-excerpt { margin: 0 0 0.5rem; color: var(--muted-strong); }
+  .kliping-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; font-size: 0.8rem; }
+  .kliping-tags a { padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; color: var(--muted-strong); text-decoration: none; }
+  .empty { padding: 3rem 0; color: var(--muted); text-align: center; }
+  .kliping-pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; font-size: 0.9rem; }
+  .kliping-pagination a { padding: 0.5rem 0.9rem; border: 1px solid var(--border); border-radius: 4px; color: var(--fg); text-decoration: none; }
+  .kliping-pagination a.disabled { opacity: 0.45; pointer-events: none; }
+  @media (max-width: 640px) { .kliping-heading { flex-direction: column; gap: 0; } .kliping-tools { flex-wrap: wrap; } .kliping-tools label { flex-basis: 100%; } .kliping-tools select, .kliping-tools button { flex: 1; } }
+</style>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import { getClipping, clippingByNumber, renderBody, formatDate, clippingPath } from '~/data/clippings'
+import { languageTag } from '~/data'
+
+const { id } = Astro.params
+const clipping = id ? getClipping(id) : null
+if (!clipping && id && /^[1-9]\d{0,8}$/.test(id)) {
+  const target = clippingByNumber(Number(id))
+  if (target) return Astro.redirect(clippingPath(target.id), 308)
+}
+if (!clipping) return new Response(null, { status: 404 })
+
+const html = renderBody(clipping.body)
+const description = clipping.body.replace(/[#>*_`~|\[\]()!]/g, '').replace(/\s+/g, ' ').trim().slice(0, 200)
+const meta = [clipping.publication, clipping.issue, formatDate(clipping.date), clipping.page && `hlm. ${clipping.page}`].filter(Boolean)
+const canonical = clippingPath(clipping.id)
+const lang = clipping.language ? languageTag(clipping.language) : 'id'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: clipping.title,
+  url: `https://pustaka.taratsa.id${canonical}`,
+  inLanguage: lang,
+  ...(clipping.date && { datePublished: clipping.date }),
+  ...(clipping.authors.length && { author: clipping.authors.map((name) => ({ '@type': 'Person', name })) }),
+  ...(clipping.publication && { publisher: { '@type': 'Organization', name: clipping.publication } }),
+  ...(clipping.tags.length && { keywords: clipping.tags.join(', ') }),
+  ...(clipping.source_url && { isBasedOn: clipping.source_url }),
+}
+// "<" is escaped so clipping text can never close the script element.
+const jsonLdText = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
+---
+
+<BaseLayout title={`${clipping.title} | Kliping`} description={description} canonical={canonical} ogType="article">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={jsonLdText} />
+  </Fragment>
+
+  <p class="back"><a href="/kliping/">← Kembali ke Kliping</a></p>
+
+  <article class="clipping" lang={lang}>
+    <h1>{clipping.title}</h1>
+    {meta.length > 0 && <p class="clipping-meta">{meta.join(' · ')}</p>}
+    {clipping.authors.length > 0 && <p class="clipping-meta">Penulis: {clipping.authors.join(', ')}</p>}
+
+    <div class="clipping-body" set:html={html} />
+
+    {clipping.source_url && (
+      <p class="clipping-source">
+        Sumber: <a href={clipping.source_url} target="_blank" rel="noopener noreferrer">{clipping.source_url}</a>
+      </p>
+    )}
+    {clipping.tags.length > 0 && (
+      <p class="clipping-tags">{clipping.tags.map((t) => <a href={`/kliping/?tag=${encodeURIComponent(t)}`}>{t}</a>)}</p>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .clipping { max-width: 46rem; margin: 0 auto; }
+  .clipping h1 { margin-bottom: 0.5rem; line-height: 1.3; }
+  .clipping-meta { margin: 0 0 0.25rem; color: var(--muted); font-size: 0.9rem; }
+  .clipping-body { margin: 1.75rem 0; line-height: 1.75; font-size: 1.05rem; }
+  .clipping-body :global(p) { margin: 0 0 1.1em; }
+  .clipping-body :global(blockquote) { margin: 1.25em 0; padding-left: 1rem; border-left: 3px solid var(--border); color: var(--muted-strong); }
+  .clipping-body :global(table) { border-collapse: collapse; margin: 1.25em 0; }
+  .clipping-body :global(th), .clipping-body :global(td) { padding: 0.35rem 0.6rem; border: 1px solid var(--border); }
+  .clipping-body :global(img) { max-width: 100%; height: auto; }
+  .clipping-source { color: var(--muted); font-size: 0.9rem; word-break: break-all; }
+  .clipping-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; font-size: 0.8rem; }
+  .clipping-tags a { padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; color: var(--muted-strong); text-decoration: none; }
+</style>

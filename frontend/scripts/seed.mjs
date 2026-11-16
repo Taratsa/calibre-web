@@ -27,6 +27,7 @@ import { mkdir, open, readdir, readFile, writeFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { seedClippings } from './seed-clippings.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -508,6 +509,7 @@ async function main() {
   } finally {
     db.close();
   }
+  await seedClippings(process.env.CLIPPINGS_DIR || '/config/clippings');
 }
 
 main().catch(err => {

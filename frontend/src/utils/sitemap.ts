@@ -1,4 +1,5 @@
 import { getAllAuthors, getAllBooks, getAllCategories, getAllLanguages, getAllPublishers, getAllSeries, getShelves } from '~/data';
+import { clippings, clippingPath } from '~/data/clippings';
 import ocrReady from '~/data/ocr-ready.json';
 import { videos } from '~/data/videos';
 import { authorPath } from './author-url';
@@ -30,6 +31,7 @@ const STATIC_PATHS = [
   '/data/',
   '/category/',
   '/formats/',
+  '/kliping/',
   '/language/',
   '/page/',
   '/populer/',
@@ -102,6 +104,7 @@ export function getSitemapEntries(): SitemapEntry[] {
   for (const publisher of getAllPublishers()) addEntry(entries, `/publisher/${publisher.id}`);
   for (const series of getAllSeries()) addEntry(entries, `/series/${series.id}`);
   for (const shelf of getShelves()) addEntry(entries, `/shelf/${shelf.id}`);
+  for (const clipping of clippings) addEntry(entries, clippingPath(clipping.id), /^\d{4}-\d{2}-\d{2}$/.test(clipping.date) ? clipping.date : undefined);
   for (const video of videos) addEntry(entries, `/video/${encodeURIComponent(video.id)}`);
 
   return [...entries.values()].sort((a, b) => a.loc.localeCompare(b.loc));
