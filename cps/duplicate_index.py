@@ -38,9 +38,9 @@ scans can use it (see .importlinter contracts).
 """
 
 import contextlib
-import sqlite3
 import hashlib
 import json
+import sqlite3
 from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -524,7 +524,9 @@ def delete_book_keys(book_ids: Iterable[int]):
     with _app_transaction() as conn:
         for chunk in _chunks(sorted(book_ids), 500):
             placeholders = ",".join("?" * len(chunk))
-            cursor = conn.execute(f"DELETE FROM duplicate_book_key WHERE book_id IN ({placeholders})", chunk)
+            # Only "?" placeholders are interpolated; every id is a bound parameter.
+            query = f"DELETE FROM duplicate_book_key WHERE book_id IN ({placeholders})"  # noqa: S608
+            cursor = conn.execute(query, chunk)
             deleted += cursor.rowcount or 0
     return deleted
 
@@ -819,7 +821,6 @@ def _bump_scan_watermark(max_book_id):
         )
 
 
-
 def queue_full_scan_if_stale():
     """Post-startup hook: when the last full scan predates current criteria or
     the library outgrew the index, queue one full rescan so the index heals
@@ -840,25 +841,20 @@ def queue_full_scan_if_stale():
             .scalar()
             or 0
         )
-        stale = (
-            not cache_data
-            or cached_fingerprint != fingerprint
-            or int(indexed_count) < int(library_count)
-        )
+        stale = not cache_data or cached_fingerprint != fingerprint or int(indexed_count) < int(library_count)
         if not stale:
             return False
         # Skip when a scan is already queued/running (read the worker directly
         # to avoid a cps.duplicates import edge from the tasks contract).
         try:
             from cps.services.worker import WorkerThread
-            from cps.tasks.duplicate_scan import TaskDuplicateScan  # noqa: F401
+            from cps.tasks.duplicate_scan import TaskDuplicateScan
 
             for _user, _num, _added, task, _hidden in WorkerThread.get_instance().tasks:
                 if isinstance(task, TaskDuplicateScan):
                     return False
-        except Exception:
-            pass
-
+        except Exception as ex:
+            log.debug("[duplicates] Could not inspect the worker queue: %s", ex)
 
         task = TaskDuplicateScan(full_scan=True, trigger_type="auto")
         WorkerThread.add("System", task, hidden=True)
@@ -873,7 +869,6 @@ def queue_full_scan_if_stale():
     except Exception:
         log.warning("[duplicates] Startup full scan check failed", exc_info=True)
         return False
-
 
 
 def notify_book_changed(book_ids):

@@ -661,6 +661,7 @@ def read_selected_books():
         return json.dumps({"success": True})
     return ""
 
+
 @editbook.route("/ajax/deleteselectedbooks", methods=["POST"])
 @user_login_required
 @edit_required

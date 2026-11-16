@@ -232,6 +232,7 @@ def update_thumbnails():
         helper.update_thumbnail_cache()
     return ""
 
+
 @admi.route("/ocr/scan", methods=["POST"])
 @user_login_required
 @admin_required

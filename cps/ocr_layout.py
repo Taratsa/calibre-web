@@ -124,8 +124,12 @@ def _drop_repeats(items: list[_Item]) -> list[_Item]:
     norms = [_alnum(item.text) for item in items]
     kept: list[_Item] = []
     for n, item in enumerate(items):
-        repeated = item.kind == "p" and len(norms[n]) >= 40 and any(
-            m != n and norms[n] in norms[m] and (len(norms[m]) > len(norms[n]) or m < n) for m in range(len(items))
+        repeated = (
+            item.kind == "p"
+            and len(norms[n]) >= 40
+            and any(
+                m != n and norms[n] in norms[m] and (len(norms[m]) > len(norms[n]) or m < n) for m in range(len(items))
+            )
         )
         if not repeated:
             kept.append(item)
@@ -137,7 +141,11 @@ def _page_items(page: Mapping[str, object], index: int, running: set[str]) -> li
     if not blocks:
         # No layout was detected: the page still carries raw OCR lines.
         results = page.get("results")
-        lines = [str(r.get("text", "")).strip() for r in results if isinstance(r, dict)] if isinstance(results, list) else []
+        lines = (
+            [str(r.get("text", "")).strip() for r in results if isinstance(r, dict)]
+            if isinstance(results, list)
+            else []
+        )
         text = " ".join(line for line in lines if line)
         return [_Item("p", text, index)] if _alnum(text) else []
     height = float(page.get("height") or 0)  # pyright: ignore[reportArgumentType]

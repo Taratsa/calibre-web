@@ -598,9 +598,7 @@ def render_show_shelf(shelf_type, shelf_id, page_no, sort_param):
             ub.BookShelf,
             ub.BookShelf.book_id == db.Books.id,
             relationship_loaders=(
-                db.LIST_RELATIONSHIPS["shelf_download"]
-                if shelf_type != 1
-                else db.LIST_RELATIONSHIPS["shelf"]
+                db.LIST_RELATIONSHIPS["shelf_download"] if shelf_type != 1 else db.LIST_RELATIONSHIPS["shelf"]
             ),
         )
         # delete shelf entries where book is not existent anymore, can happen if book is deleted outside calibre-web

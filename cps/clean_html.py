@@ -14,9 +14,11 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from . import logger
-from lxml.etree import ParserError
 import re
+
+from lxml.etree import ParserError
+
+from . import logger
 
 log = logger.create()
 
@@ -56,9 +58,9 @@ def clean_string(unsafe_text, book_id=0):
         else:
             safe_text = clean_html(unsafe_text, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES, link_rel=None)
     except ParserError as e:
-        log.error("Comments of book {} are corrupted: {}".format(book_id, e))
+        log.error(f"Comments of book {book_id} are corrupted: {e}")
         safe_text = ""
     except TypeError as e:
-        log.error("Comments can't be parsed, maybe 'lxml' is too new, try installing 'bleach': {}".format(e))
+        log.error(f"Comments can't be parsed, maybe 'lxml' is too new, try installing 'bleach': {e}")
         safe_text = ""
     return safe_text

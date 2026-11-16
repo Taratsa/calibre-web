@@ -135,9 +135,7 @@ def convert_book_format(book_id, calibre_path, old_book_format, new_book_format,
         settings["body"] = _("This Email has been sent via Calibre-Web.")
     else:
         settings = {}
-    link = '<a href="{}">{}</a>'.format(
-        url_for("web.show_book", book_id=book.id), escape(book.title)
-    )  # prevent xss  # pyright: ignore[reportOptionalMemberAccess]
+    link = '<a href="{}">{}</a>'.format(url_for("web.show_book", book_id=book.id), escape(book.title))  # prevent xss  # pyright: ignore[reportOptionalMemberAccess]
     txt = f"{old_book_format.upper()} -> {new_book_format.upper()}: {link}"
     settings["old_book_format"] = old_book_format
     settings["new_book_format"] = new_book_format
@@ -562,13 +560,9 @@ def update_dir_structure_gdrive(book_id, first_author):
         if g_file:
             gd.moveGdriveFileRemote(g_file, new_titledir)
             book.path = book.path.split("/")[0] + "/" + new_titledir  # pyright: ignore[reportOptionalMemberAccess]
-            gd.updateDatabaseOnEdit(
-                g_file["id"], book.path
-            )  # only child folder affected  # pyright: ignore[reportOptionalMemberAccess]
+            gd.updateDatabaseOnEdit(g_file["id"], book.path)  # only child folder affected  # pyright: ignore[reportOptionalMemberAccess]
         else:
-            return _(
-                "File %(file)s not found on Google Drive", file=book.path
-            )  # file not found  # pyright: ignore[reportOptionalMemberAccess]
+            return _("File %(file)s not found on Google Drive", file=book.path)  # file not found  # pyright: ignore[reportOptionalMemberAccess]
 
     if authordir != new_authordir:
         g_file = gd.getFileFromEbooksFolder(authordir, new_titledir)
@@ -980,9 +974,7 @@ def save_cover_from_url(url, book_path):
         if cli_param.allow_localhost:
             img = requests.get(url, timeout=(10, 200), allow_redirects=False)  # ToDo: Error Handling
         elif use_advocate:
-            img = cw_advocate.get(
-                url, timeout=(10, 200), allow_redirects=False
-            )  # ToDo: Error Handling # pyright: ignore[reportPossiblyUnboundVariable]
+            img = cw_advocate.get(url, timeout=(10, 200), allow_redirects=False)  # ToDo: Error Handling # pyright: ignore[reportPossiblyUnboundVariable]
         else:
             log.error("python module advocate is not installed but is needed")
             return False, _("Python module 'advocate' is not installed but is needed for cover uploads")
@@ -1145,7 +1137,9 @@ def do_download_file(book, book_format, client, data, headers, count=True):
                 # Count when the response actually starts streaming, not before:
                 # do_gdrive_download() is a lazy generator, so counting here would
                 # record failures (bad range, transport error) as downloads.
-                user_id = int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+                user_id = (
+                    int(current_user.id) if current_user.is_authenticated and not current_user.role_anonymous() else 0
+                )
 
                 @after_this_request
                 def _count_gdrive_download(resp):

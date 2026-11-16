@@ -239,7 +239,7 @@ def build_publication(epub_path):
             "toc": toc,
         }
         positions, number, before = [], 1, 0
-        for item, length in zip(reading_order, lengths):
+        for item, length in zip(reading_order, lengths, strict=True):
             count = max(1, -(-length // POSITION_CHARS))
             for index in range(count):
                 positions.append(

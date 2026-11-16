@@ -602,9 +602,7 @@ class CalibreDB:
     config_calibre_dir = None
     app_db_path = None
 
-    def __init__(
-        self, _app: Flask = None
-    ):  # , expire_on_commit=True, init=False):  # pyright: ignore[reportArgumentType]
+    def __init__(self, _app: Flask = None):  # , expire_on_commit=True, init=False):  # pyright: ignore[reportArgumentType]
         """Initialize a new CalibreDB session"""
         self.Session = None
         # if init:
@@ -1248,9 +1246,8 @@ class CalibreDB:
             ).fetchone()
         except Exception:
             stored = None
-        if stored is None or stored[0] != fingerprint:
-            if not self._rebuild_fts_index():
-                return None
+        if (stored is None or stored[0] != fingerprint) and not self._rebuild_fts_index():
+            return None
         return row[0]
 
     def _rebuild_fts_index(self):
@@ -1268,8 +1265,7 @@ class CalibreDB:
             conn.execute("BEGIN IMMEDIATE")  # serializes concurrent rebuilds (busy: up to 10 s)
             conn.execute("DROP TABLE IF EXISTS books_fts")
             conn.execute(
-                "CREATE VIRTUAL TABLE books_fts USING fts5("
-                "title, authors, tags, series, publisher, tokenize='trigram')"
+                "CREATE VIRTUAL TABLE books_fts USING fts5(title, authors, tags, series, publisher, tokenize='trigram')"
             )
             conn.execute(
                 "INSERT INTO books_fts(rowid, title, authors, tags, series, publisher) "
@@ -1331,7 +1327,6 @@ class CalibreDB:
         if ids and len(ids) * 2 > book_count:  # hits cover most of the catalog: not worth narrowing
             return None
         return ids
-
 
     def get_cc_columns(self, config, filter_config_custom_read=False):
         tmp_cc = self.session.query(CustomColumns).filter(CustomColumns.datatype.notin_(cc_exceptions)).all()

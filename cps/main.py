@@ -104,6 +104,7 @@ def main():
         if oauth is None:
             raise RuntimeError("OAuth support reported as available but module failed to import")
         app.register_blueprint(oauth)
+
     # Self-heal the duplicate index at boot: when the last full scan predates
     # current criteria or the library outgrew the index, queue one rescan.
     # Run after the worker is up so it sees a live queue; in a thread so a slow

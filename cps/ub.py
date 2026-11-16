@@ -983,6 +983,7 @@ def init_db_thread():
     Session.configure(bind=engine)
     return Session()
 
+
 # downloads rows for anonymous visitors point at user_id=0; with foreign keys
 # enforced on counter connections that id must reference a real user row.
 # INSERT OR IGNORE keeps the migration idempotent across restarts.
@@ -994,6 +995,7 @@ def _ensure_anonymous_downloads_user(engine):
             " VALUES (0, ?, ?, 0, '', 'en', 0, 'all', '{}')",
             (ANONYMOUS_DOWNLOADS_USER_NAME, ANONYMOUS_DOWNLOADS_USER_NAME + "@invalid"),
         )
+
 
 def init_db(app_db_path):
     # Open session for database connection

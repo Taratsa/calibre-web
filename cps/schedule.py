@@ -22,7 +22,6 @@ from .services.worker import WorkerThread
 from .tasks.clean import TaskClean
 from .tasks.database import TaskReconnectDatabase
 from .tasks.duplicate_scan import TaskDuplicateScan
-from .tasks.metadata_backup import TaskBackupMetadata
 from .tasks.ocr_scan import TaskOcrScan
 from .tasks.thumbnail import (
     TaskClearCoverThumbnailCache,
@@ -87,8 +86,6 @@ def register_duplicate_scan_job(scheduler):
         name="duplicate scan",
         trigger=trigger,
     )
-
-
 
 
 def end_scheduled_tasks():

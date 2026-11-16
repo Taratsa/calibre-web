@@ -92,7 +92,6 @@ def _resolve_task_active():
     return False
 
 
-
 def _index_needs_full_scan():
     """True when the duplicate index baseline is missing/stale and no scan is running."""
     if _scan_task_active():
@@ -272,7 +271,6 @@ def invalidate_cache():
         return jsonify({"success": False, "error": str(e)}), 500
 
 
-
 @duplicates.route("/duplicates/trigger-scan", methods=["POST"])
 @admin_or_edit_required
 def trigger_scan():
@@ -396,5 +394,3 @@ def _get_duplicate_groups_for_resolution(user_id=None):
     except Exception as ex:
         log.warning("[duplicates] Failed to load indexed groups for resolution: %s", str(ex))
         return []
-
-

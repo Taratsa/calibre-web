@@ -51,8 +51,6 @@ class FormatRecord(Protocol):
     format: str
 
 
-
-
 class DriveFile(Protocol):
     def GetContentFile(self, filename: str) -> None: ...
 

@@ -171,7 +171,9 @@ def feed_hot():
         exists = calibre_db.session.query(db.Books.id).filter(db.Books.id == book.Downloads.book_id).first()
         if exists:
             query = calibre_db.generate_linked_query(config.config_read_column, db.Books)
-            download_book = query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
+            download_book = (
+                query.filter(calibre_db.common_filters()).filter(book.Downloads.book_id == db.Books.id).first()
+            )
             if download_book:
                 entries.append(download_book)
         else:
