@@ -65,25 +65,25 @@ const buttons = book.formats.map(f => ({
   sizeText: (() => { const s = sizes.get(f.toLowerCase()); return s ? `(${formatBytes(s)})` : ''; })(),
 }));
 
-const authorStr = book.authors.map(a => `<a href="${authorPath(a)}">${a.name}</a>`).join(', ');
+const authorStr = book.authors.map(a => `<a href="${authorPath(a)}/">${a.name}</a>`).join(', ');
 const cats = getAllCategories();
 // Public shelves containing this book (app.db data, seeded into shelves.json).
 const bookShelves = getShelves().filter(s => s.book_ids.includes(book.id));
 const shelfStr = bookShelves.map(s =>
-  `<li><a href="/shelf/${s.id}">${s.name.trim()}</a></li>`
+  `<li><a href="/shelf/${s.id}/">${s.name.trim()}</a></li>`
 ).join('');
 const tagStr = book.tags.map(t => {
   const cat = cats.find(c => c.name === t);
-  return `<li><a href="/category/${cat ? cat.id : encodeURIComponent(t)}">${t}</a></li>`;
+  return `<li><a href="/category/${cat ? cat.id : encodeURIComponent(t)}/">${t}</a></li>`;
 }).join('');
 // Comma-joined category links for the labeled metadata row.
 const catLinks = book.tags.map(t => {
   const cat = cats.find(c => c.name === t);
-  return `<a href="/category/${cat ? cat.id : encodeURIComponent(t)}">${t}</a>`;
+  return `<a href="/category/${cat ? cat.id : encodeURIComponent(t)}/">${t}</a>`;
 }).join(', ');
 
 const langLinks = book.languages.map(c =>
-  `<a href="/language/${c}">${c}</a>`
+  `<a href="/language/${c}/">${c}</a>`
 ).join(', ');
 
 const identStr = book.identifiers.map((id, i) =>
@@ -128,7 +128,7 @@ const ratingStr = book.rating && book.rating.count > 0
           {book.publisher && (
             <tr>
               <th scope="row">Penerbit</th>
-              <td><a href={`/publisher/${book.publisher.id}`} set:html={book.publisher.name} /></td>
+              <td><a href={`/publisher/${book.publisher.id}/`} set:html={book.publisher.name} /></td>
             </tr>
           )}
           {reliablePubdate(book) && (

@@ -95,15 +95,15 @@ export function getLibraryStats(): LibraryStats {
     }
     if (book.languages.length === 0) languageUnset++;
     for (const code of book.languages) {
-      bump(languages, code, LANGUAGE_NAMES[code] ?? code, `/language/${code}`);
+      bump(languages, code, LANGUAGE_NAMES[code] ?? code, `/language/${code}/`);
     }
     const year = book.timestamp?.slice(0, 4);
     if (year) bump(years, year, year);
     if (book.timestamp && (!newest || book.timestamp > newest)) newest = book.timestamp;
     for (const a of book.authors) {
-      if (!Object.hasOwn(PLACEHOLDER_AUTHORS, a.name.trim().toLowerCase())) bump(authors, String(a.id), a.name, authorPath(a));
+      if (!Object.hasOwn(PLACEHOLDER_AUTHORS, a.name.trim().toLowerCase())) bump(authors, String(a.id), a.name, `${authorPath(a)}/`);
     }
-    if (book.publisher) bump(publishers, String(book.publisher.id), book.publisher.name, `/publisher/${book.publisher.id}`);
+    if (book.publisher) bump(publishers, String(book.publisher.id), book.publisher.name, `/publisher/${book.publisher.id}/`);
     else withoutPublisher++;
   }
 

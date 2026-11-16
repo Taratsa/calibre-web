@@ -11,10 +11,10 @@ const n = (v: number) => nf.format(v);
 
 const overview: { label: string; value: string; href?: string }[] = [
   { label: 'Buku', value: n(s.books), href: '/page/' },
-  { label: 'Penulis', value: n(s.authors), href: '/author' },
-  { label: 'Penerbit', value: n(s.publishers), href: '/publisher' },
-  { label: 'Seri', value: n(s.series), href: '/series' },
-  { label: 'Kategori', value: n(s.categories), href: '/category' },
+  { label: 'Penulis', value: n(s.authors), href: '/author/' },
+  { label: 'Penerbit', value: n(s.publishers), href: '/publisher/' },
+  { label: 'Seri', value: n(s.series), href: '/series/' },
+  { label: 'Kategori', value: n(s.categories), href: '/category/' },
   { label: 'Total ukuran berkas', value: formatBytes(s.totalBytes) || '-' },
 ];
 

@@ -20,8 +20,8 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
 }
 ---
 
-<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)} (Halaman ${p})`} description={`Buku berbahasa ${localeLanguageName(language.lang_code)} — halaman ${p} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={`/language/${language.lang_code}`} noindex ogType="website">
-  <p><a href={`/language/${language.lang_code}`}>‹ {localeLanguageName(language.lang_code)}</a></p>
+<BaseLayout title={`Bahasa: ${localeLanguageName(language.lang_code)} (Halaman ${p})`} description={`Buku berbahasa ${localeLanguageName(language.lang_code)} — halaman ${p} dari ${totalPages} — ${total} buku di Pustaka Taratsa`} canonical={`/language/${language.lang_code}/`} noindex ogType="website">
+  <p><a href={`/language/${language.lang_code}/`}>‹ {localeLanguageName(language.lang_code)}</a></p>
   <h1>{localeLanguageName(language.lang_code)} ({language.lang_code})</h1>
   <p>{total} buku dalam bahasa ini.</p>
 

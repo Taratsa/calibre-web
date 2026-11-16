@@ -12,7 +12,7 @@ const shelves = getShelves();
   ) : (
     <ul class="alpha-list">
       {shelves.map(s => (
-        <li><a href={`/shelf/${s.id}`}>{s.name}</a> ({s.book_ids.length} buku)</li>
+        <li><a href={`/shelf/${s.id}/`}>{s.name}</a> ({s.book_ids.length} buku)</li>
       ))}
     </ul>
   )}

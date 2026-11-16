@@ -21,8 +21,8 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
 }
 ---
 
-<BaseLayout title={`Kategori: ${category.name} (Halaman ${p})`} description={`${category.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam kategori ini di Pustaka Taratsa`} canonical={`/category/${category.id}`} noindex ogType="website">
-  <p><a href={`/category/${category.id}`}>‹ {category.name}</a></p>
+<BaseLayout title={`Kategori: ${category.name} (Halaman ${p})`} description={`${category.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam kategori ini di Pustaka Taratsa`} canonical={`/category/${category.id}/`} noindex ogType="website">
+  <p><a href={`/category/${category.id}/`}>‹ {category.name}</a></p>
   <h1>{category.name}</h1>
   <p>{total} buku dalam kategori ini.</p>
 

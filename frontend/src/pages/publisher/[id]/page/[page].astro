@@ -20,8 +20,8 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
 }
 ---
 
-<BaseLayout title={`Penerbit: ${publisher.name} (Halaman ${p})`} description={`${publisher.name} — halaman ${p} dari ${totalPages} — ${total} buku dari penerbit ini di Pustaka Taratsa`} canonical={`/publisher/${publisher.id}`} noindex ogType="website">
-  <p><a href={`/publisher/${publisher.id}`}>‹ {publisher.name}</a></p>
+<BaseLayout title={`Penerbit: ${publisher.name} (Halaman ${p})`} description={`${publisher.name} — halaman ${p} dari ${totalPages} — ${total} buku dari penerbit ini di Pustaka Taratsa`} canonical={`/publisher/${publisher.id}/`} noindex ogType="website">
+  <p><a href={`/publisher/${publisher.id}/`}>‹ {publisher.name}</a></p>
   <h1>{publisher.name}</h1>
   <p>{total} buku dari penerbit ini.</p>
 

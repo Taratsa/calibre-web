@@ -23,8 +23,8 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
 }
 ---
 
-<BaseLayout title={`Seri: ${series.name} (Halaman ${p})`} description={`${series.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam seri ini di Pustaka Taratsa`} canonical={`/series/${series.id}`} noindex ogType="website">
-  <p><a href={`/series/${series.id}`}>‹ {series.name}</a></p>
+<BaseLayout title={`Seri: ${series.name} (Halaman ${p})`} description={`${series.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam seri ini di Pustaka Taratsa`} canonical={`/series/${series.id}/`} noindex ogType="website">
+  <p><a href={`/series/${series.id}/`}>‹ {series.name}</a></p>
   <h1>{series.name}</h1>
   <p>{total} buku dalam seri ini.</p>
 

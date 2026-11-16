@@ -38,7 +38,7 @@ function publishersFor(letter: string) {
             <h2 class="alpha-letter">{l}</h2>
             <ul>
               {publishersFor(l).map(p => (
-                <li><a href={`/publisher/${p.id}`}>{p.name}</a></li>
+                <li><a href={`/publisher/${p.id}/`}>{p.name}</a></li>
               ))}
             </ul>
           </li>

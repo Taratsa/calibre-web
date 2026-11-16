@@ -20,7 +20,7 @@ const { items, page: p, totalPages, total } = paginate(ordered, 1);
 ---
 
 <BaseLayout title={`Rak: ${shelf.name}`} description={`${shelf.name} — ${total} buku dalam rak ini di Pustaka Taratsa`}>
-  <p><a href="/shelf">‹ Semua rak</a></p>
+  <p><a href="/shelf/">‹ Semua rak</a></p>
   <h1>{shelf.name}</h1>
   <p>{total} buku dalam rak ini.</p>
 

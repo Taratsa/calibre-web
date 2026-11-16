@@ -38,7 +38,7 @@ function categoriesFor(letter: string) {
             <h2 class="alpha-letter">{l}</h2>
             <ul>
               {categoriesFor(l).map(c => (
-                <li><a href={`/category/${c.id}`}>{c.name}</a></li>
+                <li><a href={`/category/${c.id}/`}>{c.name}</a></li>
               ))}
             </ul>
           </li>

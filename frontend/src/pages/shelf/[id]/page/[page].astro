@@ -25,8 +25,8 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
 }
 ---
 
-<BaseLayout title={`Rak: ${shelf.name} (Halaman ${p})`} description={`${shelf.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam rak ini di Pustaka Taratsa`} canonical={`/shelf/${shelf.id}`} noindex ogType="website">
-  <p><a href={`/shelf/${shelf.id}`}>‹ {shelf.name}</a></p>
+<BaseLayout title={`Rak: ${shelf.name} (Halaman ${p})`} description={`${shelf.name} — halaman ${p} dari ${totalPages} — ${total} buku dalam rak ini di Pustaka Taratsa`} canonical={`/shelf/${shelf.id}/`} noindex ogType="website">
+  <p><a href={`/shelf/${shelf.id}/`}>‹ {shelf.name}</a></p>
   <h1>{shelf.name}</h1>
   <p>{total} buku dalam rak ini.</p>
 

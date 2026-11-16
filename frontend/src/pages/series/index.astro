@@ -12,7 +12,7 @@ const series = getAllSeries();
   ) : (
     <ul class="alpha-list">
       {series.map(s => (
-        <li><a href={`/series/${s.id}`}>{s.name}</a></li>
+        <li><a href={`/series/${s.id}/`}>{s.name}</a></li>
       ))}
     </ul>
   )}

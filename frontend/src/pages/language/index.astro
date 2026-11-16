@@ -12,7 +12,7 @@ const languages = getAllLanguages();
   ) : (
     <ul class="alpha-list">
       {languages.map(l => (
-        <li><a href={`/language/${l.lang_code}`}>{localeLanguageName(l.lang_code)} ({l.lang_code})</a></li>
+        <li><a href={`/language/${l.lang_code}/`}>{localeLanguageName(l.lang_code)} ({l.lang_code})</a></li>
       ))}
     </ul>
   )}

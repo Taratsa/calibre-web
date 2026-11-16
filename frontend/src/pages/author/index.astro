@@ -39,7 +39,7 @@ function authorsFor(letter: string) {
             <h2 class="alpha-letter">{l}</h2>
             <ul>
               {authorsFor(l).map(a => (
-                <li><a href={authorPath(a)}>{a.name}</a></li>
+                <li><a href={`${authorPath(a)}/`}>{a.name}</a></li>
               ))}
             </ul>
           </li>
