@@ -85,6 +85,7 @@ from .helper import (
 from .kobo_sync_status import change_archived_books, remove_synced_book
 from .ocr_service import (
     OcrBookNotFoundError,
+    OcrNoTextError,
     OcrNotReadyError,
     OcrUnavailableError,
     book_ocr_available,
@@ -2559,6 +2560,9 @@ def read_book_ocr_api(book_id, book_format="pdf"):
         response.status_code = 202
         response.headers["Cache-Control"] = "private, no-store"
         return response
+    except OcrNoTextError as exc:
+        log.warning("OCR has no text for book %d: %s", book_id, exc)
+        abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return jsonify({"error": "OCR is not available for this document."}), 503
@@ -2620,6 +2624,9 @@ def read_book_ocr(book_id, book_format="pdf"):
         abort(404)
     except OcrNotReadyError:
         return "This document has not been OCR-processed yet. Start it from the book page.", 202
+    except OcrNoTextError as exc:
+        log.warning("OCR has no text for book %d: %s", book_id, exc)
+        abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return "OCR is not available for this document.", 503
@@ -2774,7 +2781,7 @@ def _get_book_slugs():
     return slugs
 
 
-@web.route("/book/<int:book_id>/")
+@web.route("/book/<int:book_id>/", strict_slashes=False)
 @login_required_if_no_ano
 def show_book(book_id, title_slug=None):
     # The legacy Flask host keeps numeric URLs and is excluded from indexing.

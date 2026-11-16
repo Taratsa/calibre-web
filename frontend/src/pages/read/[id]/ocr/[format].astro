@@ -97,9 +97,16 @@ const decodeEntities = (value: string) => value
   .replace(/&gt;/g, '>')
   .replace(/&quot;/g, '"')
   .replace(/&#39;/g, "'");
+// EPUB text keeps its own relative links ("Section0006.xhtml", "text/bab12.xhtml"). Resolved against this page they are
+// dead 404 URLs that crawlers collect, so links that are neither absolute, root-relative nor in-page are unwrapped.
+const unwrapRelativeLinks = (html: string) => html.replace(
+  /<a\b[^>]*?\shref=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi,
+  (whole, _quote: string, href: string, inner: string) =>
+    /^\s*(?:[a-z][a-z0-9+.-]*:|\/|#|$)/i.test(href) ? whole : inner,
+);
 const headingIds = new Map<string, number>();
 const toc: Array<{ id: string; level: number; text: string }> = [];
-const contentHtml = (document?.markdown_html ?? '').replace(
+const contentHtml = unwrapRelativeLinks(document?.markdown_html ?? '').replace(
   /<(h[1-6])([^>]*)>([\s\S]*?)<\/\1>/gi,
   (_, tag: string, attributes: string, content: string) => {
     // The page title is the only <h1>: document headings are demoted one level (h6 stays h6).
@@ -115,9 +122,16 @@ const contentHtml = (document?.markdown_html ?? '').replace(
     return `<${outTag}${attributes} id="${id}">${content}</${outTag}>`;
   },
 );
+// Unique per-page description (title, authors, start of the text) instead of the site-wide default.
+const authorNames = book.authors.map((author) => author.name).join(', ');
+const lead = `${book.title}${authorNames ? ` — ${authorNames}` : ''}. `;
+const plainText = decodeEntities(contentHtml.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
+const ocrDescription = document && plainText
+  ? `${lead}${plainText.slice(0, Math.max(40, 158 - lead.length)).trimEnd()}…`
+  : undefined;
 ---
 
-<BaseLayout title={`Baca ${formatLabel}${isOcr ? ' (OCR)' : ''}: ${book.title}`} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
+<BaseLayout title={`Baca ${formatLabel}${isOcr ? ' (OCR)' : ''}: ${book.title}`} description={ocrDescription} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
   <script slot="head" is:inline>
     // Applied before first paint so a stored text size never flashes. Keep the steps in sync with the page script.
     try {

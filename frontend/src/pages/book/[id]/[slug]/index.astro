@@ -1,0 +1,12 @@
+---
+import { getAllBooks } from '~/data';
+import { bookPath } from '~/utils/book-url';
+
+// Legacy Calibre-Web URL shape: /book/<numeric id>/<old title slug>/. Google still crawls it, and every old title slug
+// is a different URL, so resolve by the numeric id alone and 301 to the canonical slug page.
+const { id } = Astro.params;
+if (!id || !/^\d+$/.test(id)) return new Response(null, { status: 404 });
+const book = getAllBooks().find((candidate) => candidate.id === Number(id));
+if (!book) return new Response(null, { status: 404 });
+return Astro.redirect(`${bookPath(book)}/`, 301);
+---

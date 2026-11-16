@@ -7,6 +7,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /ajax/
 Disallow: /send/
+Disallow: /login
 Disallow: /me
 
 Content-Signal: ai-train=yes, search=yes, ai-input=yes

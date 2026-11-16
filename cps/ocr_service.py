@@ -61,6 +61,10 @@ class OcrUnavailableError(RuntimeError):
     """Raised when document extraction is unavailable."""
 
 
+class OcrNoTextError(OcrUnavailableError):
+    """Raised when a document has no extractable text. Permanent for that file, unlike a worker outage."""
+
+
 class OcrNotReadyError(RuntimeError):
     """Raised when a document has not been OCR'd yet and extraction was not allowed."""
 
@@ -416,7 +420,7 @@ def _extract_epub(epub_path: Path) -> _ExtractedDocument:
         raise OcrUnavailableError(str(exc)) from exc
     fragments = [fragment for fragment in fragments if fragment]
     if not fragments:
-        raise OcrUnavailableError("EPUB contains no readable text")
+        raise OcrNoTextError("EPUB contains no readable text")
     return _ExtractedDocument(
         content="\n<hr>\n".join(fragments),
         page_count=len(fragments),
