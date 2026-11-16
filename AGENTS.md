@@ -313,6 +313,37 @@ Two live search systems (plus the legacy advanced-search form):
   the next run
 - PDFs without cached OCR text are left out (no GPU work is queued); ~6,000 of ~7,100 books are in that state
 
+### Clippings Admin (`/admin/clippings`)
+- Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
+  clipping is ONE Markdown file `<id>.md`: YAML frontmatter = metadata, body = transcribed Markdown. The files are the
+  only source of truth (no DB table); copy/edit/version them with any tool
+- Storage: `$CLIPPINGS_DIR`, default `<app.db dir>/clippings` (`/config/clippings`, i.e. `./data/clippings` on the host,
+  bind-mounted via `./data:/config`). Delete moves the file to `clippings/.trash/<timestamp>_<id>.md`, never unlinks
+- Frontmatter keys (`cps/clippings_store.py: KNOWN_KEYS`): `number` (positive int, assigned by the store), `title` (required), `publication`, `date`
+  (`YYYY`/`YYYY-MM`/`YYYY-MM-DD`), `issue`, `page`, `authors[]`, `tags[]`, `language`, `source_url` (http/https),
+  `status` (`draft`|`published`, default `draft`). Unknown keys are preserved on every save. `id` = file name, built once
+  from `<date>-<ascii title slug>` (`-2`, `-3` on collision) and never changes on edit
+- Numeric alias: `create()` stores `number` = highest number ever used (live files + `.trash`) + 1, so a deleted
+  clipping's number is never reused; `update()` keeps it (assigns one to a legacy file without it). `/kliping/<number>/`
+  308-redirects to `/kliping/<id>/` (`pages/kliping/[id].astro`, `clippingByNumber()`); the slug id stays canonical. The
+  seed drops a duplicate `number` with a `[seed]` warning
+- Layers: `cps/clippings_store.py` (pure parse/validate/dump/storage + `render_markdown`; import-linter contract
+  `clippings-store-is-pure`) and `cps/clippings.py` (blueprint, routes under `/admin/clippings*`). Markdown is
+  rendered with markdown2 and sanitised by `clean_html.clean_string` (same as OCR/comments); the editor preview calls
+  `POST /admin/clippings/preview`. Bulk import: upload `.md` files (frontmatter supplies metadata)
+- Public site (Astro, `/kliping/` list + `/kliping/<id>/` detail): `frontend/scripts/seed-clippings.mjs` (run by
+  `seed.mjs`, so `./build-frontend.sh`; reads `CLIPPINGS_DIR`, `data/clippings` on the host) snapshots ONLY
+  `status: published` files into `src/data/clippings.json` + `src/data/clippings/<id>.json`. The directory is rebuilt as
+  a whole, so unpublishing/deleting a clipping removes it on the next reseed + image rebuild; a missing source dir
+  keeps the previous snapshot. Unparseable files are skipped with a `[seed]` warning. The seed's id/date/key rules
+  mirror `cps/clippings_store.py`; change both together
+- Public rendering is a SECOND Markdown renderer (`frontend/src/data/clippings.ts`, markdown-it with `html: false`, so raw
+  HTML in a clipping is escaped, and `javascript:`/`data:` links are not linkified); the admin preview uses markdown2 +
+  nh3, so they can differ on edge cases. Detail pages emit `NewsArticle` JSON-LD (`<` escaped), are in the sitemap
+  (`utils/sitemap.ts`) and nav; filtered/paged list views are `noindex`
+- Production Caddy forwards only listed prefixes to Flask; `/admin/*` already goes to Flask, so no proxy change. `/kliping/*`
+  is served by Astro (the default), so no Caddy change either
+
 ### Structured Data (JSON-LD)
 
 #### Book Pages
@@ -331,6 +362,19 @@ Two live search systems (plus the legacy advanced-search form):
 
 ### Indexing
 
+- Legacy Calibre-Web URLs are deliberately left as 404 (`/author/stored/<n>`, `/category/stored/<n>`, `/formats/<sort>/PDF/<n>`,
+  `/newest/<sort>/...`, `/read/<id>/text/*.xhtml`); they were ~80% of Search Console's "Not found (404)" sample. Two shapes
+  are handled: `/book/<id>/<old-slug>/` 301s to the canonical slug (`pages/book/[id]/[slug]/index.astro`), and relative
+  links inside EPUB text (`Section0006.xhtml`) are unwrapped on `/read/<id>/ocr/epub/` (`unwrapRelativeLinks`) so they stop
+  being crawlable dead URLs
+- Astro runs with `trailingSlash: 'always'`: every internal `href` and `canonical` MUST end in `/` (`/author/`,
+  `/category/<id>/`, `${authorPath(a)}/`). A slashless link 301s, and a 2026-11 audit found 56% of internal links were
+  slashless, which wastes crawl budget and inflates Search Console's "Page with redirect". Do not link `/osd.xml`
+  (Flask serves it only under `/opds/osd`; the head link was removed after returning 404)
+- A sitemap `/read/<id>/ocr/<fmt>/` URL answered `noindex` in 2026-11 because Cloudflare served a stale copy of the
+  "not processed" stub (origin: `private, no-store` + `Cloudflare-CDN-Cache-Control: no-store`; edge: `public,
+  max-age=15552000`, `cf-cache-status: HIT`). The cause was a Cloudflare Cache Rule matching `/read/*`; see
+  "Cloudflare caching" below
 - The sitemap lists `/read/<id>/ocr/<fmt>/` only for books in `frontend/src/data/ocr-ready.json`, written by
   `seed.mjs` from the OCR cache (`OCR_CACHE_DIR`, set by `build-frontend.sh`): entries of the current
   `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
@@ -351,22 +395,40 @@ Two live search systems (plus the legacy advanced-search form):
   `Cache-Control: public, max-age=31536000, immutable` and NEVER counts, so the
   CDN may cache it. A metadata/file change alters `version`, so stale copies are
   never served; an old link 302s back to `/download`
+- A new file version needs NO purge: `/download` recomputes `version` and redirects to a new `/files` URL, which the
+  edge fetches once. The old URL keeps serving its old bytes to anyone holding that exact link. `version` includes
+  `last_modified`, so a metadata edit also creates a new URL (the file is fetched and cached again). Purge
+  `/files/<id>/*` in Cloudflare ONLY when a book is deleted (cached copies stay reachable until evicted) or a file is
+  replaced on disk without Calibre updating `last_modified`/size
 - Kindle/Kobo clients and the Google Drive path skip the redirect and use the
   old direct `get_download_link()`
 - **Cloudflare**: a dashboard Cache Rule must NOT match `/download/*`
   (a cached 200/302 there bypasses the counter). Cache `/files/*` only
 
 ### Cover Images
-- `Cache-Control: public, max-age=86400` (7 days)
+- `Cache-Control: public, max-age=86400` (1 day) from Caddy's `@covers` block; the URL carries no version, so a changed
+  cover stays stale up to a day in browsers and at the edge. Cloudflare previously rewrote `/cover/<id>` to 14 days
+  (see "Cloudflare caching")
 - `Vary: Accept, Accept-Encoding`
 - WebP served to supporting browsers via `?fm=webp` or `Accept` header
 
-### Cloudflare Cache Rules (recommended)
-| Path | Edge TTL | Browser TTL |
-|------|----------|-------------|
-| `/download/*/pdf/*` | 1.5 months | 1.5 months |
-| `/download/*/epub/*` | 1.5 months | 1.5 months |
-| `/cover/*` | 1 week | 7 days |
+### Cloudflare caching
+Cache policy lives in Caddy and the app, not in Cloudflare (decided 2026-11).
+- NO Cloudflare Cache Rule, Page Rule, Transform Rule or Browser Cache TTL override may match `/read/*`, `/download/*`,
+  `/show/*`, `/send/*`, `/api/*`, `/ajax/*`, `/admin*`, `/login`, `/me`, `/opds*`, `/kobo/*`. The origin already sends
+  `private, no-store` + `Cloudflare-CDN-Cache-Control: no-store` for them. A rule matching `/read/*` made the edge
+  serve ONE cached reader shell to every visitor (same CSRF token, same saved bookmark) and rewrote the browser TTL
+  to 180 days; on `/download/<id>/<fmt>` that header lets a browser skip the server, so the counter misses repeats
+- Verify after any Cloudflare change: `curl -I` on `/read/<id>/pdf`, `/read/<id>/ocr/pdf/` and `/download/<id>/pdf`
+  must show `private, no-store` and no `cf-cache-status: HIT`; two anonymous fetches of `/read/<id>/epub` must carry
+  different `csrf_token` values
+- Already cached correctly at the edge: `/files/*` (immutable, 1 year) and `/_astro/*`. Extensionless `/cover*` and
+  `/series_cover*` are `DYNAMIC` unless a Cache Rule "Eligible for cache, respect origin headers" matches them
+- Resolved 2026-11-17: the 180-day `cache-control` on `/read/*` and `/download/*` (and 14 days on `/cover/*`) came from
+  three Cloudflare "Modify Response Header" overrides ("override books download/cover/read caching ttl"), a separate
+  list from Cache Rules. They are disabled; do not re-enable them. Keep the Cache Rules `books caching` (`/files/*`,
+  immutable) and `books cover caching` (Edge TTL = origin header) ENABLED: `.epub` files and extensionless `/cover*`
+  URLs are `DYNAMIC` (uncached) without them
 
 ## Environment Configuration
 
