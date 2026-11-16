@@ -1,6 +1,6 @@
 {# Umami tracking for standalone reader pages (they do not extend layout.html).
    Expects: umami_event (event name), umami_book_id, umami_format, title. #}
-<script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript" data-cfasync="false"></script>
+<script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true" type="text/javascript" data-cfasync="false"></script>
 <script type="text/javascript" data-cfasync="false">
   window.addEventListener('load', function () {
     if (window.umami && typeof window.umami.track === 'function') {

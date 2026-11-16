@@ -1088,6 +1088,8 @@ def _track_download_analytics(book_name, book_format, client):
         country,
         ua,
     )
+    if request.headers.get("DNT") == "1":
+        return
     try:
         umami_url = "https://umami.kenadera.org/api/send"
         umami_website_id = "0b57aeb6-d996-4d88-89fc-59ada511cd9c"

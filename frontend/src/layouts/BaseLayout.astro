@@ -71,11 +71,9 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
     <link rel="alternate" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Pustaka Taratsa" />
     <link rel="sitemap" href="/sitemap.xml" type="application/xml" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="api-catalog" href="/.well-known/api-catalog" />
     <link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
     <link rel="service-desc" href="/opds" />
-    <link rel="search" href="/osd.xml" type="application/opensearchdescription+xml" />
     <link rel="service-doc" href="/.well-known/agent-skills/index.json" />
     <link rel="describedby" href="/.well-known/mcp/server-card.json" />
 
@@ -118,7 +116,7 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
       "publisher": { "@id": "https://pustaka.taratsa.id#organization" }
     }</script>
 
-    <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript"></script>
+    <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true" type="text/javascript"></script>
     <!-- START Formbricks Surveys -->
     <script is:inline type="text/javascript">
       !function () {
@@ -152,17 +150,18 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
             <details class="nav-group">
               <summary>Koleksi</summary>
               <div class="nav-group__menu">
-                <a href="/author">Penulis</a>
-                <a href="/series">Seri</a>
-                <a href="/publisher">Penerbit</a>
-                <a href="/category">Kategori</a>
-                <a href="/shelf">Rak</a>
+                <a href="/author/">Penulis</a>
+                <a href="/series/">Seri</a>
+                <a href="/publisher/">Penerbit</a>
+                <a href="/category/">Kategori</a>
+                <a href="/shelf/">Rak</a>
               </div>
             </details>
+            <a href="/kliping/">Kliping</a>
             <a href="/video/">Video</a>
-            <a href="/populer">Populer</a>
-            <a href="/data">Data</a>
-            <a href="/about">Tentang Kami</a>
+            <a href="/populer/">Populer</a>
+            <a href="/data/">Data</a>
+            <a href="/about/">Tentang Kami</a>
           </nav>
         </details>
         <script>
@@ -194,19 +193,20 @@ const ogImageUrl = ogImage ?? `${siteUrl}/og/home.png`;
         </script>
         <nav class="desktop-nav" aria-label="Navigasi utama">
           <div class="nav-group">
-            <a href="/category" class="nav-group__toggle">Koleksi</a>
+            <a href="/category/" class="nav-group__toggle">Koleksi</a>
             <div class="nav-group__menu">
-              <a href="/author">Penulis</a>
-              <a href="/series">Seri</a>
-              <a href="/publisher">Penerbit</a>
-              <a href="/category">Kategori</a>
-              <a href="/shelf">Rak</a>
+              <a href="/author/">Penulis</a>
+              <a href="/series/">Seri</a>
+              <a href="/publisher/">Penerbit</a>
+              <a href="/category/">Kategori</a>
+              <a href="/shelf/">Rak</a>
             </div>
           </div>
-          <a href="/video/">Video</a>
-          <a href="/populer">Populer</a>
-          <a href="/data">Data</a>
-          <a href="/about">Tentang Kami</a>
+          <a href="/kliping/">Kliping</a>
+            <a href="/video/">Video</a>
+          <a href="/populer/">Populer</a>
+          <a href="/data/">Data</a>
+          <a href="/about/">Tentang Kami</a>
         </nav>
         <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
           <input type="search" name="q" placeholder="Cari buku, penulis…" aria-label="Kata kunci pencarian" />

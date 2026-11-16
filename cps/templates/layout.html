@@ -53,7 +53,7 @@
         <link href="{{ url_for('static', filename='css/caliBlur_override.css') }}" rel="stylesheet" media="screen">
     {% endif %}
 
-    <script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" type="text/javascript"></script>
+    <script defer="" src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true" type="text/javascript"></script>
   </head>
   <body class="{{ page }} {{ bodyClass }}{% if g.current_theme == 1 %} blur{% endif %}" data-text="{{_('Home')}}" data-textback="{{_('Back')}}">
     <!-- Static navbar -->
@@ -191,6 +191,9 @@
                 <li id="nav_createshelf" class="create-shelf"><a href="{{url_for('shelf.create_shelf')}}">{{_('Create a Shelf')}}</a></li>
                 {% if current_user.role_admin() or current_user.role_edit() %}
                 <li id="nav_duplicates" {% if page == 'duplicates' %}class="active"{% endif %}><a href="{{url_for('duplicates.show_duplicates')}}"><span class="glyphicon glyphicon-duplicate"></span> {{_('Duplicates')}}</a></li>
+                {% endif %}
+                {% if current_user.role_admin() %}
+                <li id="nav_clippings" {% if page == 'clippings' %}class="active"{% endif %}><a href="{{url_for('clippings.list_clippings')}}"><span class="glyphicon glyphicon-paperclip"></span> {{_('Clippings')}}</a></li>
                 {% endif %}
                 <li id="nav_about" {% if page == 'stat' %}class="active"{% endif %}><a href="{{url_for('about.stats')}}"><span class="glyphicon glyphicon-info-sign"></span> {{_('About')}}</a></li>
               {% endif %}
