@@ -35,6 +35,7 @@ def main():
     from .about import about
     from .admin import admi
     from .basic import basic
+    from .clippings import clippings
     from .duplicates import duplicates
     from .editbooks import editbook
     from .error_handler import init_errorhandler
@@ -76,6 +77,7 @@ def main():
     app.register_blueprint(web)
     app.register_blueprint(basic)
     app.register_blueprint(duplicates)
+    app.register_blueprint(clippings)
     register_health_blueprint(app)
     if limiter is None:
         raise RuntimeError("Flask-Limiter failed to initialise")

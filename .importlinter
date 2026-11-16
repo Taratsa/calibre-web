@@ -127,3 +127,19 @@ forbidden_modules =
 ignore_imports =
     cps -> cps.main
 message = "cps.cw_advocate is a vendored copy of the requests advocate proxy-validation library. It must remain self-contained and not depend on any other cps.* module."
+[importlinter:contract:clippings-store-is-pure]
+type = forbidden
+name = clippings-store-is-pure
+source_modules =
+    cps.clippings_store
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.clippings
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+ignore_imports =
+    cps -> cps.main
+message = "cps.clippings_store is the Markdown/frontmatter data layer for clippings. It may only use cps.clean_html (sanitiser); the web layer (cps.clippings) depends on it, never the other way around."

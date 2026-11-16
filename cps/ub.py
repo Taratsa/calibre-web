@@ -935,8 +935,12 @@ def create_audit_log_entry(user_id, action, resource_type, resource_id=None, det
     session.add(entry)
     try:
         session.commit()
-    except exc.OperationalError:
+    except exc.SQLAlchemyError as e:
+        # Not only OperationalError: a DatabaseError ("another row available") or a leftover
+        # PendingRollbackError would otherwise leave this process-wide session unusable and
+        # 500 every request until restart. An audit entry must never take the site down.
         session.rollback()
+        log.warning("Unable to write audit log entry (%s %s): %s", action, resource_type, e)
 
 
 # Generate user Guest (translated text), as anonymous user, no rights

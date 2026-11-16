@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% macro joined(value) %}{% if value is string %}{{ value }}{% else %}{{ (value or [])|join(', ') }}{% endif %}{% endmacro %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2>{% if clipping %}{{_('Edit clipping')}}{% else %}{{_('New clipping')}}{% endif %}</h2>
+      <p><a href="{{ url_for('clippings.list_clippings') }}">&laquo; {{_('All clippings')}}</a>
+        {% if clipping %} &middot; <code>{{ clipping.id }}.md</code> &middot; <a href="{{ url_for('clippings.raw_clipping', clipping_id=clipping.id) }}">{{_('Download .md')}}</a>{% endif %}</p>
+
+      {% if error %}<div class="alert alert-danger" id="clipping_error">{{ error }}</div>{% endif %}
+
+      <form method="POST" id="clipping_form" action="{% if clipping %}{{ url_for('clippings.edit_clipping', clipping_id=clipping.id) }}{% else %}{{ url_for('clippings.new_clipping') }}{% endif %}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="title">{{_('Title')}} *</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ meta.get('title', '') }}" maxlength="300" required>
+          </div>
+          <div class="col-md-2 form-group">
+            <label for="number">{{_('Number')}}</label>
+            <input type="text" class="form-control" id="number" value="{% if clipping and clipping.meta.number %}{{ clipping.meta.number }}{% endif %}" placeholder="{% if clipping %}{{_('assigned on save')}}{% else %}{{_('auto')}}{% endif %}" title="/kliping/{{ clipping.meta.number if clipping and clipping.meta.number else 'N' }}/" readonly>
+          </div>
+          <div class="col-md-4 form-group">
+            <label for="status">{{_('Status')}}</label>
+            <select class="form-control" id="status" name="status">
+              {% for name in statuses %}<option value="{{ name }}" {% if meta.get('status', 'draft') == name %}selected{% endif %}>{{ name }}</option>{% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <label for="publication">{{_('Publication')}}</label>
+            <input type="text" class="form-control" id="publication" name="publication" value="{{ meta.get('publication', '') }}" maxlength="200">
+          </div>
+          <div class="col-md-3 form-group">
+            <label for="date">{{_('Date')}}</label>
+            <input type="text" class="form-control" id="date" name="date" value="{{ meta.get('date', '') }}" placeholder="YYYY-MM-DD">
+          </div>
+          <div class="col-md-3 form-group">
+            <label for="issue">{{_('Issue')}}</label>
+            <input type="text" class="form-control" id="issue" name="issue" value="{{ meta.get('issue', '') }}" maxlength="100">
+          </div>
+          <div class="col-md-2 form-group">
+            <label for="page">{{_('Page')}}</label>
+            <input type="text" class="form-control" id="page" name="page" value="{{ meta.get('page', '') }}" maxlength="50">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <label for="authors">{{_('Authors')}}</label>
+            <input type="text" class="form-control" id="authors" name="authors" value="{{ joined(meta.get('authors')) }}" placeholder="{{_('comma separated')}}">
+          </div>
+          <div class="col-md-4 form-group">
+            <label for="tags">{{_('Tags')}}</label>
+            <input type="text" class="form-control" id="tags" name="tags" value="{{ joined(meta.get('tags')) }}" placeholder="{{_('comma separated')}}">
+          </div>
+          <div class="col-md-1 form-group">
+            <label for="language">{{_('Lang')}}</label>
+            <input type="text" class="form-control" id="language" name="language" value="{{ meta.get('language', '') }}" placeholder="id" maxlength="35">
+          </div>
+          <div class="col-md-3 form-group">
+            <label for="source_url">{{_('Source URL')}}</label>
+            <input type="url" class="form-control" id="source_url" name="source_url" value="{{ meta.get('source_url', '') }}" maxlength="2000">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="body">{{_('Text (Markdown)')}}</label>
+            <textarea class="form-control" id="body" name="body" rows="28" style="font-family: monospace;">{{ body }}</textarea>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>{{_('Preview')}}</label>
+            <div id="clipping_preview" class="well" style="min-height: 200px; overflow: auto; max-height: 640px;"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="save_clipping">{{_('Save')}}</button>
+        <a class="btn btn-default" href="{{ url_for('clippings.list_clippings') }}">{{_('Cancel')}}</a>
+      </form>
+
+      {% if clipping %}
+      <form method="POST" action="{{ url_for('clippings.delete_clipping', clipping_id=clipping.id) }}" style="margin-top: 20px;"
+            onsubmit="return confirm('{{_('Move this clipping to the trash?')}}');">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-danger" id="delete_clipping">{{_('Delete')}}</button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/clippings.js') }}"></script>
+{% endblock %}

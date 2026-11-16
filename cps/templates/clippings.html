@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2>{{_('Clippings')}}</h2>
+      <p class="text-muted">
+        {{_('Newsletter and press clippings stored as Markdown files with YAML frontmatter.')}}
+        {{ all_total }} {{_('total')}} &middot; {{ counts['published'] }} {{_('published')}} &middot; {{ counts['draft'] }} {{_('draft')}}
+      </p>
+
+      {% if broken %}
+      <div class="alert alert-warning" id="clippings_broken">
+        <strong>{{ broken|length }} {{_('file(s) could not be read:')}}</strong>
+        <ul>
+          {% for id, error in broken.items() %}
+          <li><code>{{ id }}.md</code> &mdash; {{ error }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <form class="form-inline" method="GET" action="{{ url_for('clippings.list_clippings') }}" style="margin-bottom: 15px;">
+        <input type="search" class="form-control" name="q" value="{{ q }}" placeholder="{{_('Search title, text, tags…')}}">
+        <select class="form-control" name="status">
+          <option value="">{{_('Any status')}}</option>
+          <option value="published" {% if status == 'published' %}selected{% endif %}>{{_('published')}}</option>
+          <option value="draft" {% if status == 'draft' %}selected{% endif %}>{{_('draft')}}</option>
+        </select>
+        <select class="form-control" name="publication">
+          <option value="">{{_('Any publication')}}</option>
+          {% for name in publications %}
+          <option value="{{ name }}" {% if publication == name %}selected{% endif %}>{{ name }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-default">{{_('Filter')}}</button>
+        <a class="btn btn-primary pull-right" id="new_clipping" href="{{ url_for('clippings.new_clipping') }}"><span class="glyphicon glyphicon-plus"></span> {{_('New clipping')}}</a>
+      </form>
+
+      <table class="table table-striped" id="table_clippings">
+        <thead>
+          <tr>
+            <th>{{_('Title')}}</th>
+            <th>{{_('Publication')}}</th>
+            <th>{{_('Date')}}</th>
+            <th class="hidden-xs">{{_('Tags')}}</th>
+            <th>{{_('Status')}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+          <tr>
+            <td><a href="{{ url_for('clippings.edit_clipping', clipping_id=row.id) }}">{{ row.meta.title }}</a></td>
+            <td>{{ row.meta.publication }}{% if row.meta.issue %} <span class="text-muted">({{ row.meta.issue }})</span>{% endif %}</td>
+            <td>{{ row.meta.date }}</td>
+            <td class="hidden-xs">{% for tag in row.meta.tags %}<span class="label label-default">{{ tag }}</span> {% endfor %}</td>
+            <td>{% if row.meta.status == 'published' %}<span class="label label-success">{{_('published')}}</span>{% else %}<span class="label label-default">{{_('draft')}}</span>{% endif %}</td>
+            <td class="text-right">
+              <a href="{{ url_for('clippings.raw_clipping', clipping_id=row.id) }}" title="{{_('Download .md')}}"><span class="glyphicon glyphicon-download-alt"></span></a>
+            </td>
+          </tr>
+          {% else %}
+          <tr><td colspan="6" class="text-muted">{{_('No clippings found.')}}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% if pages > 1 %}
+      <p>
+        {% if page_no > 1 %}<a class="btn btn-default btn-sm" href="{{ url_for('clippings.list_clippings', q=q, status=status, publication=publication, page=page_no - 1) }}">&laquo; {{_('Previous')}}</a>{% endif %}
+        {{ page_no }} / {{ pages }} ({{ total }})
+        {% if page_no < pages %}<a class="btn btn-default btn-sm" href="{{ url_for('clippings.list_clippings', q=q, status=status, publication=publication, page=page_no + 1) }}">{{_('Next')}} &raquo;</a>{% endif %}
+      </p>
+      {% endif %}
+
+      <h4>{{_('Import Markdown files')}}</h4>
+      <form method="POST" enctype="multipart/form-data" action="{{ url_for('clippings.import_clippings') }}" class="form-inline">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="file" class="form-control" name="files" accept=".md,text/markdown,text/plain" multiple required>
+        <button type="submit" class="btn btn-default">{{_('Import')}}</button>
+        <span class="help-block">{{_('Each file needs a "title" in its frontmatter (the file name is used when missing).')}}</span>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
