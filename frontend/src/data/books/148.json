@@ -1,37 +1,47 @@
 {
   "id": 148,
-  "title": "ABRI-Ditempatkan-di-Sekeliling-Kampus",
-  "slug": "abri-ditempatkan-di-sekeliling-kampus-unknown",
-  "slugBase": "abri-ditempatkan-di-sekeliling-kampus-unknown",
+  "title": "ABRI Ditempatkan di Sekeliling Kampus",
+  "slug": "abri-ditempatkan-di-sekeliling-kampus-merdeka",
+  "slugBase": "abri-ditempatkan-di-sekeliling-kampus-merdeka",
   "authors": [
     {
-      "id": 14,
-      "name": "Unknown"
+      "id": 6159,
+      "name": "Merdeka"
     }
   ],
-  "author_sort": "Unknown",
+  "author_sort": "Merdeka",
   "tags": [],
-  "publisher": null,
-  "publishers": [],
-  "languages": [],
-  "pubdate": null,
+  "publisher": {
+    "id": 733,
+    "name": "Merdeka"
+  },
+  "publishers": [
+    {
+      "id": 733,
+      "name": "Merdeka"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "1998-05-05",
   "timestamp": "2024-02-10 15:37:51.260252",
-  "last_modified": "2024-02-10 15:37:51.260254",
+  "last_modified": "2026-11-11 05:10:56.920247",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/148?v=1707554271",
-  "cover_og_url": "/cover/148/og?v=1707554271",
-  "url": "/book/abri-ditempatkan-di-sekeliling-kampus-unknown/",
+  "cover_url": "/cover_thumb/148?v=1794348656",
+  "cover_og_url": "/cover/148/og?v=1794348656",
+  "url": "/book/abri-ditempatkan-di-sekeliling-kampus-merdeka/",
   "rating": null,
   "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 761044,
-      "name": "ABRI-Ditempatkan-di-Sekeliling-Kampus - Unknown"
+      "name": "ABRI Ditempatkan di Sekeliling Kampus - Merdeka"
     }
   ]
 }
