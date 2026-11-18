@@ -10,7 +10,7 @@ Disallow: /send/
 Disallow: /login
 Disallow: /me
 
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 Sitemap: ${site}/sitemap.xml
 `;

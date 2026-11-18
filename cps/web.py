@@ -1856,7 +1856,7 @@ def get_robots():
         sitemap_url = "https://pustaka.taratsa.id/sitemap.xml"
         content = f"""User-agent: *
 Allow: /
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Sitemap: {sitemap_url}
 """
         response = make_response(content)
