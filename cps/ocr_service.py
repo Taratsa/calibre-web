@@ -433,7 +433,16 @@ def book_ocr_available(book: BookRecord, data: FormatRecord, book_format: str | 
         raise OcrBookNotFoundError(f"Unsupported OCR format: {selected_format}")
     with _document_path(book, data, selected_format) as document_path:
         cache_path, _request = _cache_details(book, data, selected_format, document_path)
-        return _load_cache(cache_path) is not None
+        if _load_cache(cache_path) is not None:
+            return True
+    if selected_format == EPUB_FORMAT:
+        # EPUB text is read from the file in well under a second, so availability means "has extractable text".
+        try:
+            extract_book_ocr(book, data, selected_format)
+        except OcrUnavailableError:  # includes OcrNoTextError
+            return False
+        return True
+    return False
 
 
 def extract_book_ocr(

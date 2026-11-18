@@ -34,7 +34,7 @@ if (detail?.data) {
 
 const readableExt = new Set(['epub', 'pdf', 'txt', 'cbr', 'cbz', 'djvu', 'mp3']);
 const readUrl = book.formats.find(f => readableExt.has(f.toLowerCase()));
-const ocrFormats = book.formats.filter(f => f.toLowerCase() === 'pdf');
+const ocrFormats = book.formats.filter(f => ['pdf', 'epub'].includes(f.toLowerCase()));
 const ocrUrls = new Map<string, { href: string; label: string }>();
 for (const format of ocrFormats) {
   try {
@@ -49,11 +49,15 @@ for (const format of ocrFormats) {
     if (statusResponse.ok) {
       const status = await statusResponse.json() as { available?: boolean; state?: { status?: string } | null };
       const upper = normalizedFormat.toUpperCase();
-      // Every readable format is linked: an unprocessed one opens a page that queues the OCR job on demand.
+      // Every readable format is linked: an unprocessed PDF opens a page that queues the OCR job on demand.
+      // EPUB text is read straight from the file (no OCR), so its link is always the plain text page.
       const inProgress = status.state?.status === 'queued' || status.state?.status === 'processing';
-      const label = status.available === true ? `Baca ${upper} (OCR)`
+      const label = normalizedFormat === 'epub' ? 'Baca EPUB (teks)'
+        : status.available === true ? `Baca ${upper} (OCR)`
         : inProgress ? `${upper} sedang diproses OCR…`
         : `Proses ${upper} dengan OCR`;
+      // An EPUB whose text cannot be extracted (corrupt file) has no text page: do not link a 404.
+      if (normalizedFormat === 'epub' && status.available !== true) continue;
       ocrUrls.set(normalizedFormat, { href: `/read/${book.id}/ocr/${normalizedFormat}/`, label });
     }
   } catch {}

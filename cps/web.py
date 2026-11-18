@@ -2565,6 +2565,9 @@ def read_book_ocr_api(book_id, book_format="pdf"):
         abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
+        if book_format.lower() == "epub":
+            # A corrupt EPUB will never yield text: a permanent 404, not a retryable 503 that crawlers keep polling.
+            abort(404)
         return jsonify({"error": "OCR is not available for this document."}), 503
 
     response = make_response(

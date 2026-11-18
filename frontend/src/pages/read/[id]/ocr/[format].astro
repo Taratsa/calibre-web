@@ -85,7 +85,7 @@ const metaParts = document
             ? `${document.pages_routed_to_ocr} halaman diproses dengan OCR`
             : `teks ${formatLabel} berhasil diekstrak tanpa OCR`]
         : []),
-      duration,
+      ...(isOcr ? [duration] : []),
     ]
   : [];
 const decodeEntities = (value: string) => value
@@ -156,8 +156,10 @@ const ocrDescription = document && plainText
       {!pending && <p class="ocr-reader__meta">{metaParts.join(' · ')}</p>}
       {!pending && (
         <p class="ocr-reader__notice" role="note">
-          Versi OCR mungkin terdapat kesalahan eja, ketik, tata letak, atau hal terkait tipografi. Untuk ketepatan hasil,
-          silakan merujuk pada <a href={originalUrl} target="_blank" rel="noopener noreferrer">dokumen asli</a>.
+          {isOcr
+            ? 'Versi OCR mungkin terdapat kesalahan eja, ketik, tata letak, atau hal terkait tipografi. Untuk ketepatan hasil, silakan merujuk pada '
+            : 'Teks ini diambil langsung dari berkas EPUB; tata letak dan gambar tidak disertakan. Untuk tampilan lengkap, silakan merujuk pada '}
+          <a href={originalUrl} target="_blank" rel="noopener noreferrer">dokumen asli</a>.
         </p>
       )}
     </header>

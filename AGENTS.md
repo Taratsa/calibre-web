@@ -380,6 +380,12 @@ Two live search systems (plus the legacy advanced-search form):
   `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
   and size. Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
   appear in the sitemap after the next `./build-frontend.sh`; without the cache dir the previous manifest is kept
+- EPUB text pages (`/read/<id>/ocr/epub/`, "Baca EPUB (teks)") are crawlable plain SSR HTML. The book page links them
+  for every EPUB whose text extracts (`/api/read/<id>/ocr/status/epub` extracts inline, no GPU, so `available` means
+  "has extractable text"); a corrupt EPUB (no `container.xml`, no text) gets no link and its API/page answer 404, not
+  503. Text is extracted on the first status/page request, so a newly added EPUB is linked and readable at once; only
+  the sitemap needs `./build-frontend.sh` to list it in `ocr-ready.json`. The reader notice and "0.0 detik" meta
+  are shown for PDFs only
 - The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
   (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
 
