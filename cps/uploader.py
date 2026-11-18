@@ -23,7 +23,7 @@ from . import comic, isoLanguages, logger
 from .constants import BookMeta
 from .file_helper import get_temp_dir
 from .helper import split_authors
-from .string_helper import strip_whitespaces
+from .string_helper import normalize_pubdate, strip_whitespaces
 
 log = logger.create()
 
@@ -134,6 +134,18 @@ def default_meta(tmp_file_path, original_file_name, original_file_extension):
     )
 
 
+def _xmp_pubdate(xmp_info):
+    """dc:date (first valid entry), falling back to xmp:CreateDate; '' if neither parses."""
+    for getter in (lambda: xmp_info.dc_date, lambda: [xmp_info.xmp_create_date]):
+        try:
+            for value in getter() or []:
+                if value is not None:
+                    return normalize_pubdate(value.date().isoformat())
+        except Exception as ex:
+            log.debug("Can not read PDF XMP date: %s", ex)
+    return ""
+
+
 def parse_xmp(pdf_file):
     """
     Parse XMP Metadata and prepare for BookMeta object
@@ -165,6 +177,7 @@ def parse_xmp(pdf_file):
         xmp_publisher = ", ".join(xmp_info.dc_publisher)
 
         return {
+            "pubdate": _xmp_pubdate(xmp_info),
             "author": xmp_author,
             "title": xmp_title,
             "subject": xmp_description,
@@ -194,11 +207,13 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
         tags = xmp_info["tags"]
         languages = xmp_info["languages"]
         publisher = xmp_info["publisher"]
+        pubdate = xmp_info["pubdate"]
     else:
         author = "Unknown"
         title = ""
         languages = [""]
         publisher = ""
+        pubdate = ""
         subject = ""
         tags = ""
 
@@ -228,7 +243,7 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
         series_id="",
         languages=",".join(languages),
         publisher=publisher,
-        pubdate="",
+        pubdate=pubdate,
         identifiers=[],
     )
 

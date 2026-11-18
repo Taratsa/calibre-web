@@ -14,7 +14,29 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 import re
+from datetime import datetime
 
 
 def strip_whitespaces(text):
     return re.sub(r"(^[\s\u200B-\u200D\ufeff]+)|([\s\u200B-\u200D\ufeff]+$)", "", text)
+
+
+_PUBDATE_RE = re.compile(r"^\s*(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?(?![\d])")
+
+
+def normalize_pubdate(value):
+    """Return YYYY-MM-DD for a YYYY, YYYY-MM or full ISO date(time); '' otherwise.
+
+    Missing month/day default to 01, so a year-only dc:date keeps its year.
+    """
+    if not value or not isinstance(value, str):
+        return ""
+    match = _PUBDATE_RE.match(value)
+    if not match:
+        return ""
+    year, month, day = match.group(1), match.group(2) or "01", match.group(3) or "01"
+    try:
+        datetime.strptime(f"{year}-{month}-{day}", "%Y-%m-%d")
+    except ValueError:
+        return ""
+    return f"{year}-{month}-{day}"

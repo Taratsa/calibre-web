@@ -56,7 +56,7 @@ from .kobo_sync_status import change_archived_books
 from .redirect import get_redirect_location
 from .render_template import render_title_template
 from .services.worker import WorkerThread
-from .string_helper import strip_whitespaces
+from .string_helper import normalize_pubdate, strip_whitespaces
 from .tasks.upload import TaskUpload
 from .usermanagement import login_required_if_no_ano, user_login_required
 
@@ -1090,10 +1090,8 @@ def create_book_on_upload(modify_date, meta):
     # combine path and normalize path from Windows systems
     path = os.path.join(author_dir, title_dir).replace("\\", "/")
 
-    try:
-        pubdate = datetime.strptime(meta.pubdate[:10], "%Y-%m-%d")
-    except ValueError:
-        pubdate = datetime(101, 1, 1)
+    normalized_pubdate = normalize_pubdate(meta.pubdate)
+    pubdate = datetime.strptime(normalized_pubdate, "%Y-%m-%d") if normalized_pubdate else datetime(101, 1, 1)
 
     # Calibre adds books with utc as timezone
     db_book = db.Books(

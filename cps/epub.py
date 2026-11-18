@@ -23,7 +23,7 @@ from . import config, cover, isoLanguages, logger
 from .constants import BookMeta
 from .epub_helper import default_ns, get_content_opf
 from .helper import split_authors
-from .string_helper import strip_whitespaces
+from .string_helper import normalize_pubdate, strip_whitespaces
 
 log = logger.create()
 
@@ -143,7 +143,7 @@ def get_epub_info(tmp_file_path, original_file_name, original_file_extension, no
         series_id=epub_metadata["series_id"].encode("utf-8").decode("utf-8"),
         languages=epub_metadata["language"],
         publisher=epub_metadata["publisher"].encode("utf-8").decode("utf-8"),
-        pubdate=epub_metadata["date"],
+        pubdate=normalize_pubdate(epub_metadata["date"]),
         identifiers=identifiers,
     )
 
