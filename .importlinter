@@ -143,3 +143,21 @@ forbidden_modules =
 ignore_imports =
     cps -> cps.main
 message = "cps.clippings_store is the Markdown/frontmatter data layer for clippings. It may only use cps.clean_html (sanitiser); the web layer (cps.clippings) depends on it, never the other way around."
+
+[importlinter:contract:cover-placeholder-is-pure]
+type = forbidden
+name = cover-placeholder-is-pure
+source_modules =
+    cps.cover_placeholder
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.helper
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+    cps.db
+ignore_imports =
+    cps -> cps.main
+message = "cps.cover_placeholder renders the generated cover card with Pillow only. The web layer (cps.helper) depends on it, never the other way around."

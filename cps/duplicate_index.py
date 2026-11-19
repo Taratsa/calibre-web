@@ -637,7 +637,7 @@ def _decorate_books_for_group(books):
             )
         else:
             book.author_names = "Unknown"
-        book.cover_url = f"/cover/{book.id}" if getattr(book, "has_cover", None) else "/static/generic_cover.svg"
+        book.cover_url = f"/cover/{book.id}"
 
 
 def _group_from_books(books):

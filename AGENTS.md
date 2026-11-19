@@ -417,6 +417,16 @@ Two live search systems (plus the legacy advanced-search form):
   (see "Cloudflare caching")
 - `Vary: Accept, Accept-Encoding`
 - WebP served to supporting browsers via `?fm=webp` or `Accept` header
+- **Generated covers**: a book with no cover (`has_cover = 0`, or its `cover.jpg` is missing) gets a title + publisher
+  card from `cps/cover_placeholder.py` (Pillow only, bundled Open Sans, neutral grey card, near-black type, no colour,
+  2:3, import-linter contract `cover-placeholder-is-pure`). It is rendered on demand by `get_cover_on_failure()` in
+  `cps/helper.py` at the SAME URLs as real covers (`/cover/<id>`, `/cover_thumb/<id>[/sm|md|lg]`, `/opds/cover/<id>`),
+  so every consumer (Astro cards, book page, search, OG image, sitemap image, OPDS) needs no special case and
+  `seed.mjs` always emits `/cover_thumb/<id>` and `/cover/<id>/og`. Output is memoised in-process (`render_cached`,
+  256 entries) and sent with `max-age=86400`, `Vary: Accept` (WebP or JPEG). Only an unknown/invisible book id still
+  gets the static `generic_cover.jpg`, so nothing about hidden books leaks. To change the look edit
+  `cover_placeholder.py` (the whole template is that one file); a new look reaches browsers/CDN within a day. Titles
+  are HTML-unescaped and `_` turned into spaces (several coverless titles are slugs or contain `&amp;`)
 
 ### Cloudflare caching
 Cache policy lives in Caddy and the app, not in Cloudflare (decided 2026-11).

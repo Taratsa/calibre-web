@@ -363,12 +363,10 @@ async function loadBooks(db) {
       series: series[0] ? { id: series[0].id, name: series[0].name, index: seriesIndex } : null,
       identifiers: identifiers,
       formats: [...new Set(formats.map(f => f.format))].filter(Boolean),
-      cover_url: book.has_cover
-        ? `/cover_thumb/${book.id}?v=${coverVersion(book)}`
-        : '/static/generic_cover.jpg',
-      cover_og_url: book.has_cover
-        ? `/cover/${book.id}/og?v=${coverVersion(book)}`
-        : '/static/images/Header_Beranda.webp',
+      // Books without a cover are served a generated title/publisher card by Flask (cps/cover_placeholder.py) from the
+      // same URLs, so every book has a /cover_thumb and /cover URL.
+      cover_url: `/cover_thumb/${book.id}?v=${coverVersion(book)}`,
+      cover_og_url: `/cover/${book.id}/og?v=${coverVersion(book)}`,
       url: `/book/${slug}/`,
       rating: rating,
     };

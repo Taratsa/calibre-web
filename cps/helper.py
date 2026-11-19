@@ -66,7 +66,7 @@ except ImportError:
     advocate = requests
     UnacceptableAddressException = MissingSchema = BaseException
 
-from . import calibre_db, cli_param, config, db, fs, logger, ub
+from . import calibre_db, cli_param, config, cover_placeholder, db, fs, logger, ub
 from . import gdriveutils as gd
 from .constants import CACHE_TYPE_THUMBNAILS, SUPPORTED_CALIBRE_BINARIES, THUMBNAIL_TYPE_COVER, THUMBNAIL_TYPE_SERIES
 from .constants import STATIC_DIR as _STATIC_DIR
@@ -775,7 +775,26 @@ def delete_book(book, calibrepath, book_format):
         return delete_book_file(book, calibrepath, book_format)
 
 
-def get_cover_on_failure():
+def get_cover_on_failure(book=None, resolution=None, accept_webp=False):
+    """Cover for a book that has none (or whose file is gone).
+
+    A book the caller may see gets a generated title/publisher card. With no book (unknown id, or one the user may
+    not see) the static generic cover is served, so nothing about the book leaks.
+    """
+    if book is not None:
+        try:
+            height = int(255 * resolution) if resolution else cover_placeholder.DEFAULT_HEIGHT
+            publisher = book.publishers[0].name if book.publishers else ""
+            data, mimetype = cover_placeholder.render_cached(
+                book.title or "", publisher, height, "webp" if accept_webp else "jpeg"
+            )
+            response = make_response(data)
+            response.headers["Content-Type"] = mimetype
+            response.headers["Cache-Control"] = "public, max-age=86400"
+            response.headers["Vary"] = "Accept"
+            return response
+        except Exception as ex:
+            log.error_or_exception(ex)
     try:
         return send_from_directory(_STATIC_DIR, "generic_cover.jpg")
     except PermissionError:
@@ -837,7 +856,7 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
         if config.config_use_google_drive:
             try:
                 if not gd.is_gdrive_ready():
-                    return get_cover_on_failure()
+                    return get_cover_on_failure(book, resolution, accept_webp)
                 cover_file = gd.get_cover_via_gdrive(book.path)
                 if cover_file:
                     if accept_webp:
@@ -845,10 +864,10 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                     return Response(cover_file, mimetype="image/jpeg")
                 else:
                     log.error(f"{book.path}/cover.jpg not found on Google Drive")
-                    return get_cover_on_failure()
+                    return get_cover_on_failure(book, resolution, accept_webp)
             except Exception as ex:
                 log.error_or_exception(ex)
-                return get_cover_on_failure()
+                return get_cover_on_failure(book, resolution, accept_webp)
 
         # Send the book cover from the Calibre directory
         else:
@@ -883,9 +902,9 @@ def get_book_cover_internal(book, resolution=None, accept_webp=False):
                         pass
                     return send_from_directory(cover_file_path, "cover.jpg")
             else:
-                return get_cover_on_failure()
+                return get_cover_on_failure(book, resolution, accept_webp)
     else:
-        return get_cover_on_failure()
+        return get_cover_on_failure(book, resolution, accept_webp)
 
 
 def _convert_to_webp(image_data, mime_type):

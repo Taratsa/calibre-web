@@ -7,6 +7,7 @@ iso-639>=0.4.5,<0.5.0;python_version<'3.12'
 # comicapi 3.2.0 requires pycountry<23.0.0, so 22.3.5 is the newest resolvable
 # version. Drop this cap when comicapi relaxes it.
 pycountry>=22.3.5,<23.0.0;python_version>='3.12'
+Pillow>=12.0.0,<14.0.0
 PyPDF>=6.21.4,<7.0.0
 prometheus-client>=0.26.0,<1.0.0
 pytz>=2026.6
