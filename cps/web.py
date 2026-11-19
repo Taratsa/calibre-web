@@ -179,6 +179,12 @@ if prometheus_available:
     )
 
 
+
+@app.before_request
+def before_request_recover_session():
+    ub.recover_session()
+
+
 @app.before_request
 def before_request_metrics():
     if prometheus_available and request:

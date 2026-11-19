@@ -943,6 +943,23 @@ def create_audit_log_entry(user_id, action, resource_type, resource_id=None, det
         log.warning("Unable to write audit log entry (%s %s): %s", action, resource_type, e)
 
 
+def recover_session():
+    """Roll back the process-wide ORM session when a failed flush left it waiting for a rollback.
+
+    ``session`` is one object shared by every request and background task. If any flush fails (typically "database
+    is locked" while a writer holds app.db), SQLAlchemy refuses every later query with PendingRollbackError until
+    someone rolls back, and nothing else ever does: the whole site then answers 500 until restart (2026-11-18).
+    Called at the start of each request so one failed write costs one request, not the process.
+    """
+    current = session
+    if current is not None and not current.is_active:
+        try:
+            current.rollback()
+            log.warning("Rolled back the app.db session after a failed flush")
+        except exc.SQLAlchemyError as e:
+            log.error("Unable to recover the app.db session: %s", e)
+
+
 # Generate user Guest (translated text), as anonymous user, no rights
 def create_anonymous_user(_session):
     user = User()
