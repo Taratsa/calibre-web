@@ -275,9 +275,63 @@ def _stream_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> 
     )
 
 
+_DECODE_ERRORS = ("IMAGE_DECODE_FAILED", "PAGE_DECODE_FAILED")
+# TurboOCR cannot decode some very large scanned page images (about 4000x5600 px JPEGs from old scans). A copy whose
+# page images are capped at this height decodes fine and OCRs the same text.
+_FALLBACK_MAX_IMAGE_HEIGHT = 3000
+
+
+def _downscaled_pdf_copy(pdf_path: Path, target) -> bool:
+    """Write to ``target`` a PDF with one page image per page, each capped in height. False if not possible.
+
+    Only image-only PDFs qualify (every page must carry an image); a page without one cannot be rebuilt here, so the
+    original error stands. Pages are held as JPEG bytes, so memory stays near one page image plus the encoded pages.
+    """
+    from io import BytesIO
+
+    from PIL import Image
+    from pypdf import PdfReader
+
+    Image.MAX_IMAGE_PIXELS = None
+    pages = []
+    for page in PdfReader(str(pdf_path)).pages:
+        images = page.images
+        if not images:
+            return False
+        with images[0].image as source:
+            image = source.convert("RGB")
+        if image.height > _FALLBACK_MAX_IMAGE_HEIGHT:
+            image = image.resize(
+                (max(1, round(image.width * _FALLBACK_MAX_IMAGE_HEIGHT / image.height)), _FALLBACK_MAX_IMAGE_HEIGHT),
+                Image.Resampling.LANCZOS,
+            )
+        buffer = BytesIO()
+        image.save(buffer, "JPEG", quality=85)
+        pages.append(Image.open(BytesIO(buffer.getvalue())))
+    if not pages:
+        return False
+    pages[0].save(target, "PDF", save_all=True, append_images=pages[1:], resolution=150)
+    return True
+
+
 def _extract_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> _ExtractedDocument:
     try:
-        return _stream_pdf(pdf_path, on_progress)
+        try:
+            return _stream_pdf(pdf_path, on_progress)
+        except OcrUnavailableError as exc:
+            if not any(code in str(exc) for code in _DECODE_ERRORS):
+                raise
+            log.warning("TurboOCR could not decode %s (%s); retrying with downscaled page images", pdf_path.name, exc)
+            with NamedTemporaryFile(suffix=".pdf", dir=get_temp_dir()) as copy:
+                try:
+                    rebuilt = _downscaled_pdf_copy(pdf_path, copy)
+                except Exception as build_error:
+                    log.warning("Could not build a downscaled copy of %s: %s", pdf_path.name, build_error)
+                    rebuilt = False
+                if not rebuilt:
+                    raise exc from None
+                copy.flush()
+                return _stream_pdf(Path(copy.name), on_progress)
     except OcrUnavailableError:
         raise
     except Exception as exc:
