@@ -52,8 +52,9 @@ for (const format of ocrFormats) {
       // Every readable format is linked: an unprocessed PDF opens a page that queues the OCR job on demand.
       // EPUB text is read straight from the file (no OCR), so its link is always the plain text page.
       const inProgress = status.state?.status === 'queued' || status.state?.status === 'processing';
-      const label = normalizedFormat === 'epub' ? 'Baca EPUB (teks)'
-        : status.available === true ? `Baca ${upper} (OCR)`
+      // A book with both a PDF and an EPUB gets two text links, so the format is added to tell them apart.
+      const readLabel = ocrFormats.length > 1 ? `Baca teks (${upper})` : 'Baca teks';
+      const label = normalizedFormat === 'epub' || status.available === true ? readLabel
         : inProgress ? `${upper} sedang diproses OCR…`
         : `Proses ${upper} dengan OCR`;
       // An EPUB whose text cannot be extracted (corrupt file) has no text page: do not link a 404.

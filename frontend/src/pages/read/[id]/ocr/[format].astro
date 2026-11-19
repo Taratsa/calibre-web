@@ -73,6 +73,8 @@ const originalUrl = `/read/${book.id}/${requestedFormat}`;
 const formatLabel = requestedFormat.toUpperCase();
 // Only PDFs go through OCR; EPUB text is read straight from the file.
 const isOcr = requestedFormat === 'pdf';
+// Same wording as the book page button. The format stays in the title so a book's PDF and EPUB pages differ.
+const readHeading = `Baca teks (${formatLabel})`;
 const totalSeconds = Math.round((document?.processing_time_ms ?? 0) / 1000);
 const duration = totalSeconds < 60
   ? `${((document?.processing_time_ms ?? 0) / 1000).toFixed(1)} detik`
@@ -131,7 +133,7 @@ const ocrDescription = document && plainText
   : undefined;
 ---
 
-<BaseLayout title={`Baca ${formatLabel}${isOcr ? ' (OCR)' : ''}: ${book.title}`} description={ocrDescription} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
+<BaseLayout title={`${readHeading}: ${book.title}`} description={ocrDescription} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
   <script slot="head" is:inline>
     // Applied before first paint so a stored text size never flashes. Keep the steps in sync with the page script.
     try {
@@ -152,7 +154,7 @@ const ocrDescription = document && plainText
       )}
     </nav>
     <header class="ocr-reader__header">
-      <h1>Baca {formatLabel}{isOcr ? ' (OCR)' : ''}: {book.title}</h1>
+      <h1>{readHeading}: {book.title}</h1>
       {!pending && <p class="ocr-reader__meta">{metaParts.join(' · ')}</p>}
       {!pending && (
         <p class="ocr-reader__notice" role="note">
