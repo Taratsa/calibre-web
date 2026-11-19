@@ -135,12 +135,20 @@ def default_meta(tmp_file_path, original_file_name, original_file_extension):
 
 
 def _xmp_pubdate(xmp_info):
-    """dc:date (first valid entry), falling back to xmp:CreateDate; '' if neither parses."""
+    """dc:date (first valid entry), falling back to xmp:CreateDate; '' if neither parses.
+
+    pypdf returns datetimes for ``rdf:Seq`` dates but raw strings for the ``rdf:Bag`` form some producers write,
+    so both are accepted.
+    """
     for getter in (lambda: xmp_info.dc_date, lambda: [xmp_info.xmp_create_date]):
         try:
             for value in getter() or []:
-                if value is not None:
-                    return normalize_pubdate(value.date().isoformat())
+                if value is None:
+                    continue
+                text = value if isinstance(value, str) else value.date().isoformat()
+                normalized = normalize_pubdate(text)
+                if normalized:
+                    return normalized
         except Exception as ex:
             log.debug("Can not read PDF XMP date: %s", ex)
     return ""
