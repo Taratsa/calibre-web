@@ -325,8 +325,23 @@ def _downscaled_pdf_copy(pdf_path: Path, target) -> bool:
     return True
 
 
+def _check_pdf_file(pdf_path: Path) -> None:
+    """Raise OcrNoTextError for a file that is not a PDF, so it is never sent to the OCR server.
+
+    Some books were uploaded under the PDF format with other content (MP3 or MP4 audio/video, a saved HTML page, an
+    empty file). They can never be OCR'd, and a permanent error lets the reader page stop offering to queue them.
+    """
+    with pdf_path.open("rb") as handle:
+        head = handle.read(1024)
+    if not head:
+        raise OcrNoTextError("File is empty")
+    if b"%PDF-" not in head:
+        raise OcrNoTextError("File is not a PDF")
+
+
 def _extract_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> _ExtractedDocument:
     try:
+        _check_pdf_file(pdf_path)
         try:
             return _stream_pdf(pdf_path, on_progress)
         except OcrUnavailableError as exc:
@@ -493,6 +508,11 @@ def _extract_epub(epub_path: Path) -> _ExtractedDocument:
 
 
 def book_ocr_available(book: BookRecord, data: FormatRecord, book_format: str | None = None) -> bool:
+    """True when the document already has cached text.
+
+    Raises ``OcrNoTextError`` for a PDF whose file is not a PDF at all, which can never be processed, so callers can
+    answer 404 instead of offering to queue a job that cannot succeed.
+    """
     selected_format = (book_format or getattr(data, "format", PDF_FORMAT)).upper()
     if selected_format not in {PDF_FORMAT, EPUB_FORMAT}:
         raise OcrBookNotFoundError(f"Unsupported OCR format: {selected_format}")
@@ -500,6 +520,8 @@ def book_ocr_available(book: BookRecord, data: FormatRecord, book_format: str | 
         cache_path, _request = _cache_details(book, data, selected_format, document_path)
         if _load_cache(cache_path) is not None:
             return True
+        if selected_format == PDF_FORMAT:
+            _check_pdf_file(document_path)
     if selected_format == EPUB_FORMAT:
         # EPUB text is read from the file in well under a second, so availability means "has extractable text".
         try:

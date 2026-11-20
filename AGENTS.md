@@ -386,6 +386,15 @@ Two live search systems (plus the legacy advanced-search form):
   503. Text is extracted on the first status/page request, so a newly added EPUB is linked and readable at once; only
   the sitemap needs `./build-frontend.sh` to list it in `ocr-ready.json`. The reader notice and "0.0 detik" meta
   are shown for PDFs only
+- A PDF format whose file is not a PDF (68 MP3, 2 MP4, 8 saved Google Drive "virus scan" HTML pages were uploaded under
+  the PDF format) gets `OcrNoTextError("File is not a PDF")` from `_check_pdf_file()` (cps/ocr_service.py, looks for
+  `%PDF-` in the first KB). `/api/read/<id>/ocr/status/pdf`, the POST queue and the page answer 404, so the book page
+  offers no OCR button and the job is never queued. The files themselves are left alone (`library/` is never edited);
+  the fix for them is to replace or delete the format in Calibre
+- TurboOCR page mode comes from `TURBOOCR_MODE` (default `ocr`: every page is OCR'd; `auto` keeps a PDF text layer when
+  present). The cache key has no mode, so changing it does not redo cached books. To redo books on purpose, call
+  `scan_book_ocr` with `ocr_service._load_cache` stubbed to return None (the new text replaces the old atomically and
+  only after a successful run). Books added since 2026-11-18 were refreshed this way
 - The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
   (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
 
@@ -427,6 +436,20 @@ Two live search systems (plus the legacy advanced-search form):
   gets the static `generic_cover.jpg`, so nothing about hidden books leaks. To change the look edit
   `cover_placeholder.py` (the whole template is that one file); a new look reaches browsers/CDN within a day. Titles
   are HTML-unescaped and `_` turned into spaces (several coverless titles are slugs or contain `&amp;`)
+- **Error responses are not cacheable at the origin** (changed 2026-11-20, after the 2026-11-18 outage): the `/cover*`
+  rule in the production Caddyfile sets `Cache-Control: public, max-age=86400` only inside `handle_response` for
+  `status 2xx`, and `no-store` for 3xx/4xx/5xx. A plain `header @covers >Cache-Control ...` applied to every status, so
+  Cloudflare cached ~160 cover 500s for a day after Flask had recovered. Write it as `header >Name "v"` inside
+  `handle_response ... { ...; copy_response }`: `header_down`, `copy_response_headers` or a bare `header Name` either do
+  not apply there or emit two `Cache-Control` lines. Test a Caddyfile change on throwaway ports with the production
+  image (`caddy-caddy:latest`) against Flask before reloading (backup: `/home/devuser/backups`)
+- **Cloudflare still has its own TTL by status code.** A 404 cover answered `no-store` +
+  `Cloudflare-CDN-Cache-Control: no-store` by the origin was still served from the edge as `cf-cache-status: HIT` with
+  `max-age=14400`. Whether the same applies to 5xx was NOT tested (a 500 cannot be produced safely on production), so
+  after any backend outage `curl -I` a few cover URLs without a query string and purge by URL if they show a cached
+  error. Check Cloudflare's Cache Rule "books cover caching" for per-status Edge TTLs
+- `Onion-Location` appears twice on every Flask response behind Caddy: Flask adds it from `ONION_LOCATION` and the
+  `pustaka.taratsa.id` Caddy block adds it too. Pre-existing and harmless; drop one source to tidy it
 
 ### Cloudflare caching
 Cache policy lives in Caddy and the app, not in Cloudflare (decided 2026-11).

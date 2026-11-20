@@ -179,7 +179,6 @@ if prometheus_available:
     )
 
 
-
 @app.before_request
 def before_request_recover_session():
     ub.recover_session()
@@ -2545,6 +2544,9 @@ def read_book_ocr_status(book_id, book_format="pdf"):
         available = book_ocr_available(book, data, normalized_format)
     except OcrBookNotFoundError:
         abort(404)
+    except OcrNoTextError:
+        # Permanent for this file (empty, or not a PDF/EPUB at all): nothing to read and nothing worth queueing.
+        abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return jsonify({"available": False})
@@ -2613,6 +2615,8 @@ def queue_book_ocr_api(book_id, book_format="pdf"):
         abort(404)
     except OcrQueueFullError:
         return jsonify({"error": "Too many documents are being processed. Try again in a few minutes."}), 429
+    except OcrNoTextError:
+        abort(404)
     except OcrUnavailableError as exc:
         log.error("OCR unavailable for book %d: %s", book_id, exc)
         return jsonify({"error": "OCR is not available for this document."}), 503
