@@ -213,6 +213,17 @@ def _turboocr_idle_seconds() -> int:
     return max(1, int(os.environ.get("TURBOOCR_IDLE_SECONDS", "120")))
 
 
+_TURBOOCR_MODES = frozenset({"ocr", "geometric", "auto", "auto_verified"})
+
+
+def _turboocr_mode() -> str:
+    """TurboOCR page mode. ``ocr`` runs OCR on every page; ``auto`` keeps the embedded text layer when there is one."""
+    mode = os.environ.get("TURBOOCR_MODE", "ocr").strip().lower()
+    if mode not in _TURBOOCR_MODES:
+        raise OcrUnavailableError(f"TURBOOCR_MODE must be one of {', '.join(sorted(_TURBOOCR_MODES))}, not {mode!r}")
+    return mode
+
+
 def _stream_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> _ExtractedDocument:
     import requests
 
@@ -226,7 +237,7 @@ def _stream_pdf(pdf_path: Path, on_progress: ProgressCallback | None = None) -> 
         try:
             response = requests.post(
                 f"{_turboocr_url()}/ocr/stream",
-                params={"mode": "auto", "as_blocks": "1", "tables": "1", "autorotate": "1"},
+                params={"mode": _turboocr_mode(), "as_blocks": "1", "tables": "1", "autorotate": "1"},
                 data=pdf_file,
                 headers={"Content-Type": "application/pdf"},
                 stream=True,
