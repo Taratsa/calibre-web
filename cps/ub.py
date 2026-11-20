@@ -102,6 +102,11 @@ else:
 # users.
 _counter_engine = None  # type: ignore[assignment]
 
+# How long a connection waits for another writer before SQLite reports "database is locked". The pysqlite default is
+# 5 s; the upload path, the thumbnail task, the duplicate index and the download counter all write app.db, and on
+# 2026-11-18 one 5 s collision poisoned the shared session (see recover_session).
+_SQLITE_BUSY_SECONDS = 30
+
 # Sentinel user row name for anonymous download counters (user_id=0).
 ANONYMOUS_DOWNLOADS_USER_NAME = "__anonymous__"
 
@@ -932,6 +937,7 @@ def create_audit_log_entry(user_id, action, resource_type, resource_id=None, det
         details=details,
         ip_address=ip_address,
     )
+    recover_session()
     session.add(entry)
     try:
         session.commit()
@@ -994,7 +1000,7 @@ def create_admin_user(_session):
 
 def init_db_thread():
     global app_DB_path
-    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
+    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS})
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -1021,9 +1027,11 @@ def init_db(app_db_path):
     global _counter_engine
 
     app_DB_path = app_db_path
-    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
+    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS})
     # ORM engine: FK enforcement OFF (see the _counter_engine docs above).
-    _counter_engine = create_engine(f"sqlite:///{app_db_path}", echo=False)
+    _counter_engine = create_engine(
+        f"sqlite:///{app_db_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS}
+    )
     event.listen(_counter_engine, "connect", _enable_sqlite_foreign_keys)
 
     Session = scoped_session(sessionmaker())
@@ -1068,7 +1076,7 @@ def password_change(user_credentials=None):
 
 
 def get_new_session_instance():
-    new_engine = create_engine(f"sqlite:///{app_DB_path}", echo=False)
+    new_engine = create_engine(f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS})
     new_session = scoped_session(sessionmaker())
     new_session.configure(bind=new_engine)
 
