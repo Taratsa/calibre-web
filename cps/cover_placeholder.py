@@ -109,7 +109,9 @@ def _clamp_lines(lines: list[str], max_lines: int, font, max_width: float) -> li
     return kept
 
 
-def _fit_title(text: str, max_width: float, max_height: float, width: int) -> tuple[ImageFont.FreeTypeFont, list[str], int]:
+def _fit_title(
+    text: str, max_width: float, max_height: float, width: int
+) -> tuple[ImageFont.FreeTypeFont, list[str], int]:
     """Largest type size whose wrapped title fits the box; truncated with an ellipsis at the smallest size."""
     largest = max(10, round(width * 0.115))
     smallest = max(8, round(width * 0.062))
@@ -126,7 +128,9 @@ def _fit_title(text: str, max_width: float, max_height: float, width: int) -> tu
     return font, _clamp_lines(lines, max(1, int(max_height // line_height)), font, max_width), line_height
 
 
-def render(title: str | None, publisher: str | None = None, height: int | None = None, fmt: str = "jpeg") -> tuple[bytes, str]:
+def render(
+    title: str | None, publisher: str | None = None, height: int | None = None, fmt: str = "jpeg"
+) -> tuple[bytes, str]:
     """Render the card. Returns ``(bytes, mimetype)``; ``fmt`` is ``"jpeg"`` or ``"webp"``."""
     width, height = size_for(height)
     margin = round(width * 0.09)
