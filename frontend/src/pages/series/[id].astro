@@ -23,7 +23,7 @@ const { items, page: p, totalPages, total } = paginate(all, 1);
   <h1>{series.name}</h1>
   <p>{total} buku dalam seri ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
 
   <Pagination page={p} totalPages={totalPages} baseUrl={`/series/${series.id}`} />
 </BaseLayout>

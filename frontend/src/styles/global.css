@@ -119,133 +119,7 @@ a, button, input, select, summary { min-height: 44px; min-width: 44px; }
 
 img { max-width: 100%; height: auto; display: block; }
 
-.site-header {
-  @apply sticky top-0 z-10 border-b;
-  background: var(--bg);
-  color: var(--fg);
-  border-color: var(--border-subtle);
-}
-.site-header .inner {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0.75rem 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.site-header .brand {
-  @apply flex items-center gap-3 no-underline font-bold text-lg;
-  color: var(--fg);
-}
-.site-header .brand img { height: 28px; width: auto; }
-.site-header form {
-  margin: 0 0 0 auto;
-  display: flex;
-  gap: 0.25rem;
-}
-.site-header input[type="search"] {
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--fg);
-  min-width: 200px;
-  font: inherit;
-}
-.site-header .desktop-nav a,
-.site-header .desktop-nav .nav-group__toggle,
-.site-header .nav-toggle nav a {
-  color: var(--fg);
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-}
-.site-header .desktop-nav a:hover,
-.site-header .desktop-nav .nav-group__toggle:hover,
-.site-header .nav-toggle nav a:hover { text-decoration: underline; }
-
-/* Dropdown: desktop "Koleksi" group */
-.site-header .desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.site-header .desktop-nav .nav-group {
-  position: relative;
-}
-.site-header .desktop-nav .nav-group__toggle {
-  display: flex;
-  align-items: center;
-  min-height: 44px;
-}
-.site-header .desktop-nav .nav-group__menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 12rem;
-  background: var(--bg);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  box-shadow: 0 4px 12px var(--shadow-sm);
-  padding: 0.35rem;
-  display: none;
-  flex-direction: column;
-  z-index: 20;
-}
-.site-header .desktop-nav .nav-group:hover .nav-group__menu,
-.site-header .desktop-nav .nav-group:focus-within .nav-group__menu {
-  display: flex;
-}
-.site-header .desktop-nav .nav-group__menu a {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0.75rem;
-  white-space: nowrap;
-}
-
-.site-header .nav-toggle { display: none; }
-.site-header .nav-toggle summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  display: flex;
-  align-items: center;
-}
-.site-header .nav-toggle summary::marker,
-.site-header .nav-toggle summary::-webkit-details-marker { display: none; }
-.site-header .nav-toggle[open] nav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border-subtle);
-  box-shadow: 0 4px 6px var(--shadow-sm);
-  padding: 0.5rem 1.25rem 1rem;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.site-header .nav-toggle .nav-group {
-  width: 100%;
-}
-.site-header .nav-toggle .nav-group > summary {
-  color: var(--fg);
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-}
-.site-header .nav-toggle .nav-group__menu {
-  display: flex;
-  flex-direction: column;
-  padding-left: 1rem;
-}
-.site-header .nav-toggle .nav-group__menu a {
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
-}
+/* (the old top-bar header styles were removed: navigation lives in the sidebar, see "App shell" below) */
 
 /* ── Theme toggle ── */
 .theme-toggle {
@@ -276,50 +150,173 @@ img { max-width: 100%; height: auto; display: block; }
 :root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
 :root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
-@media (max-width: 767px) {
-  .site-header .inner {
-    gap: 0.25rem;
-    grid-template-columns: 1fr auto auto;
-    display: grid;
-  }
-  .site-header .brand { grid-column: 1; grid-row: 1; }
-  .site-header .desktop-nav { display: none; }
-  .site-header .theme-toggle {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-  }
-  .site-header .nav-toggle {
-    display: block;
-    justify-self: end;
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .site-header .nav-toggle[open] nav {
-    flex-direction: column;
-  }
-  .site-header form {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    margin: 0.25rem 0 0;
-    width: 100%;
-  }
-  .site-header input[type="search"] { min-width: 0; width: 100%; }
+/* ── App shell: fixed sidebar + scrolling content column ───────────────────
+   Layout follows the library-app reference (left navigation with counts, wide
+   content area, dense cover grid). Colours stay on the neutral tokens above. */
+:root {
+  --sidebar-w: 15.5rem;
+  --topbar-h: 3.25rem;
+  --content-max: 112rem;
 }
 
-main.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
-  flex: 1 1 auto;
+.nav-check { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; min-height: 0; min-width: 0; }
+/* The checkbox only drives the mobile drawer; on desktop it is removed so it is not an invisible Tab stop. */
+@media (min-width: 1024px) {
+  .nav-check { display: none; }
+}
+.app { display: block; min-height: 100vh; }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--fg);
+  text-decoration: none;
+}
+.brand img { height: 28px; width: auto; }
+
+.topbar { display: none; }
+.scrim { display: none; }
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-w);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+  overflow-y: auto;
+  background: var(--surface-2);
+  border-right: 1px solid var(--border-subtle);
+  z-index: 30;
+}
+.sidebar .brand { padding: 0.25rem 0.5rem; }
+.sidebar form { margin: 0; }
+.sidebar input[type="search"] {
   width: 100%;
+  min-height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.sidebar input[type="search"]:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.side-section { display: flex; flex-direction: column; gap: 1px; }
+.side-label {
+  margin: 0.25rem 0.5rem 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.side-label a { color: inherit; text-decoration: none; min-height: 0; min-width: 0; }
+.side-label a:hover { color: var(--fg); }
+
+.side-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 36px;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  color: var(--muted-strong);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.side-link:hover { background: var(--surface-3); color: var(--fg); }
+.side-link[aria-current="page"] { background: var(--surface-3); color: var(--fg); font-weight: 600; }
+.side-link__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.side-link__count { flex-shrink: 0; font-size: 0.78rem; color: var(--muted-soft); font-variant-numeric: tabular-nums; }
+
+.side-foot {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.side-foot__admin { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+.side-foot__admin:hover { color: var(--fg); text-decoration: underline; }
+
+.content {
+  margin-left: var(--sidebar-w);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1.75rem 1.75rem 3rem;
+  flex: 1 1 auto;
 }
 
 .site-footer {
-  background: var(--footer-bg);
-  color: var(--footer-fg);
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-  font-size: 0.875rem;
+  padding: 1.25rem 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--muted);
+  font-size: 0.85rem;
 }
-.site-footer a { color: var(--footer-link); }
+.site-footer p { margin: 0.2rem 0; }
+.site-footer a { color: var(--muted-strong); }
+
+/* ── Narrow screens: sidebar becomes a drawer behind the top bar ── */
+@media (max-width: 1023px) {
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--topbar-h);
+    padding: 0 0.75rem 0 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    color: var(--fg);
+  }
+  .sidebar {
+    transform: translateX(-100%);
+    /* Hidden once the slide-out finishes, so the off-screen links are not Tab stops. */
+    visibility: hidden;
+    transition: transform 0.18s ease, visibility 0s linear 0.18s;
+    background: var(--bg);
+    box-shadow: 0 0 2rem var(--shadow-lg);
+  }
+  .sidebar .brand { display: none; }
+  .nav-check:checked ~ .app .sidebar { transform: translateX(0); visibility: visible; transition: transform 0.18s ease, visibility 0s; }
+  .nav-check:checked ~ .app .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    background: var(--shadow-lg);
+  }
+  .nav-check:focus-visible ~ .app .menu-btn { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .content { margin-left: 0; }
+  main.container { padding: 1.25rem 1rem 2.5rem; }
+  .site-footer { padding: 1.25rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}

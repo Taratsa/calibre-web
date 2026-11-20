@@ -26,6 +26,6 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
   <h1>{category.name}</h1>
   <p>{total} buku dalam kategori ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
   <Pagination page={p} totalPages={totalPages} baseUrl={`/category/${category.id}`} />
 </BaseLayout>

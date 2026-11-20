@@ -25,7 +25,7 @@ const { items, page, total } = paginate(books, pageNum);
   <h1>Halaman {page} dari {totalPages}</h1>
   <p>{total} buku dalam katalog.</p>
 
-  <BookGrid books={items} cols={5} />
+  <BookGrid books={items} />
 
   <Pagination page={page} totalPages={totalPages} baseUrl="/page" />
 </BaseLayout>

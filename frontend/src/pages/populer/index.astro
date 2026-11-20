@@ -12,7 +12,7 @@ const { items, page, totalPages, total } = paginate(books, 1);
   <h1>Buku Terpopuler</h1>
   <p>{total} buku berdasarkan jumlah unduhan.</p>
 
-  <BookGrid books={items} cols={5} />
+  <BookGrid books={items} />
 
   <Pagination page={page} totalPages={totalPages} baseUrl="/populer" />
 </BaseLayout>

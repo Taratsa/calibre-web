@@ -1,52 +1,85 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
-import { getAllBooks, getPopularBooks, paginate } from '~/data';
+import { getAllAuthors, getAllBooks, getAllCategories, getAllPublishers, getPopularBooks, paginate } from '~/data';
 
 const books = getAllBooks();
 const { items, page, totalPages, total } = paginate(books, 1);
 
 const popularBooks = getPopularBooks();
-const topPopular = popularBooks.slice(0, 10);
+const topPopular = popularBooks.slice(0, 12);
+const stats = [
+  { label: 'Buku', value: books.length },
+  { label: 'Penulis', value: getAllAuthors().length },
+  { label: 'Penerbit', value: getAllPublishers().length },
+  { label: 'Kategori', value: getAllCategories().length },
+];
+const formatCount = new Intl.NumberFormat('id-ID');
 ---
 
 <BaseLayout title="Beranda" description="Pustaka Taratsa — katalog buku langka, zine, dan literatur Indonesia.">
-  <h1>Pustaka Taratsa</h1>
-  <p>Perpustakaan digital non-komersil yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia.</p>
+  <header class="home-head">
+    <h1>Pustaka Taratsa</h1>
+    <p>Perpustakaan digital non-komersil yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia.</p>
+    <dl class="home-stats">
+      {stats.map((stat) => (
+        <div>
+          <dt>{stat.label}</dt>
+          <dd>{formatCount.format(stat.value)}</dd>
+        </div>
+      ))}
+    </dl>
+  </header>
 
   {topPopular.length > 0 && (
-    <>
-      <h2>Buku Terpopuler</h2>
-      <BookGrid books={topPopular} cols={5} />
-      <p class="browse-all"><a href="/populer/">Lihat semua buku terpopuler →</a></p>
-    </>
+    <section aria-labelledby="home-populer">
+      <div class="section-head">
+        <h2 id="home-populer">Buku Terpopuler</h2>
+        <a href="/populer/">Lihat semua →</a>
+      </div>
+      <BookGrid books={topPopular} />
+    </section>
   )}
 
-  <h2>Daftar Terbaru</h2>
-  <BookGrid books={items} cols={5} />
-
-  {totalPages > 1 && (
-    <p class="browse-all"><a href="/page/2/">Telusuri semua {total} buku →</a></p>
-  )}
+  <section aria-labelledby="home-terbaru">
+    <div class="section-head">
+      <h2 id="home-terbaru">Daftar Terbaru</h2>
+      {totalPages > 1 && <a href="/page/2/">Telusuri semua {formatCount.format(total)} buku →</a>}
+    </div>
+    <BookGrid books={items} />
+  </section>
 </BaseLayout>
 
 <style>
-  .browse-all {
-    text-align: center;
-    margin-top: 2rem;
+  .home-head { margin-bottom: 2rem; }
+  .home-head h1 { margin: 0 0 0.5rem; }
+  .home-head p { margin: 0; max-width: 46rem; color: var(--muted-strong); }
+  .home-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
   }
-  .browse-all a {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--fg);
-    color: var(--inverse-fg);
+  .home-stats div {
+    min-width: 7.5rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--border-subtle);
     border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.15s;
+    background: var(--surface-2);
   }
-  .browse-all a:hover {
-    background: var(--accent);
+  .home-stats dt { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-soft); }
+  .home-stats dd { margin: 0.1rem 0 0; font-size: 1.35rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 2rem 0 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
   }
+  .section-head h2 { margin: 0; font-size: 1.1rem; }
+  .section-head a { font-size: 0.85rem; color: var(--muted-strong); text-decoration: none; min-height: 0; }
+  .section-head a:hover { text-decoration: underline; color: var(--fg); }
 </style>

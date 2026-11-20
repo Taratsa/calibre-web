@@ -4,17 +4,16 @@ import BookCard from './BookCard.astro';
 
 export interface Props {
   books: BookSummary[];
-  cols?: 2 | 3 | 4 | 5 | 6;
 }
 
-const { books, cols = 5 } = Astro.props;
+const { books } = Astro.props;
 ---
 
 {books.length > 0 ? (
-  <ul class={`book-grid book-grid--cols-${cols}`}>
+  <ul class="book-grid">
     {books.map((book, index) => (
       <li>
-        <BookCard book={book} priority={index < 4} />
+        <BookCard book={book} priority={index < 6} />
       </li>
     ))}
   </ul>
@@ -23,24 +22,19 @@ const { books, cols = 5 } = Astro.props;
 )}
 
 <style>
+  /* Dense cover wall: as many ~9.5rem columns as the content width allows, so a wide screen shows 8+ per row and a
+     phone shows 2, with no per-page column counts. */
   .book-grid {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
+    margin: 1.25rem 0;
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 1.5rem 1rem;
   }
-  .book-grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .book-grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .book-grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
-  .book-grid--cols-5 { grid-template-columns: repeat(5, 1fr); }
-  .book-grid--cols-6 { grid-template-columns: repeat(6, 1fr); }
-  @media (max-width: 767px) {
-    .book-grid--cols-2,
-    .book-grid--cols-3,
-    .book-grid--cols-4,
-    .book-grid--cols-5,
-    .book-grid--cols-6 { grid-template-columns: repeat(2, 1fr); }
+  .book-grid > li { min-width: 0; }
+  @media (max-width: 479px) {
+    .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 0.75rem; }
   }
   .empty { color: var(--muted); }
 </style>

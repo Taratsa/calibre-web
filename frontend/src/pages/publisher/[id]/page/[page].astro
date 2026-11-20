@@ -25,6 +25,6 @@ if (!Number.isSafeInteger(pageNum) || pageNum < 2 || pageNum > totalPages) {
   <h1>{publisher.name}</h1>
   <p>{total} buku dari penerbit ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
   <Pagination page={p} totalPages={totalPages} baseUrl={`/publisher/${publisher.id}`} />
 </BaseLayout>

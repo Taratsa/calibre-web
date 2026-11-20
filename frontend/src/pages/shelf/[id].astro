@@ -24,7 +24,7 @@ const { items, page: p, totalPages, total } = paginate(ordered, 1);
   <h1>{shelf.name}</h1>
   <p>{total} buku dalam rak ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
 
   <Pagination page={p} totalPages={totalPages} baseUrl={`/shelf/${shelf.id}`} />
 </BaseLayout>

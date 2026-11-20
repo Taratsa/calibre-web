@@ -20,7 +20,7 @@ const { items, page: p, totalPages, total } = paginate(all, 1);
   <h1>{localeLanguageName(language.lang_code)} ({language.lang_code})</h1>
   <p>{total} buku dalam bahasa ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
 
   <Pagination page={p} totalPages={totalPages} baseUrl={`/language/${language.lang_code}`} />
 </BaseLayout>

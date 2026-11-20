@@ -33,6 +33,6 @@ const baseUrl = `${authorPath(author)}/`;
   <h1>{author.name}</h1>
   <p>{total} buku oleh pengarang ini.</p>
 
-  <BookGrid books={items} cols={4} />
+  <BookGrid books={items} />
   <Pagination page={page} totalPages={totalPages} baseUrl={baseUrl} />
 </BaseLayout>
