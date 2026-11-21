@@ -1,105 +1,204 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import { searchBooks, type SearchableBook } from '~/utils/search';
-import { truncateAuthorsHtml } from '~/utils/authors';
+import BookGrid from '~/components/BookGrid.astro';
+import { localeLanguageName } from '~/data';
+import {
+  SORT_KEYS,
+  hasAdvancedCriteria,
+  searchCatalog,
+  searchFacets,
+  type SearchRequest,
+  type SortKey,
+} from '~/utils/search';
 
-const q = (Astro.url.searchParams.get('q') || '').trim();
-const { hits, total } = q ? searchBooks(q, 120) : { hits: [], total: 0 };
-const terms = q ? q.toLowerCase().split(/\s+/).filter(Boolean) : [];
-const statusText = total > hits.length ? `Menampilkan ${hits.length} dari ${total} hasil` : `${total} hasil`;
-const initialHtml = renderResults(hits);
+const PAGE_SIZE = 48;
+const params = Astro.url.searchParams;
+const text = (name: string) => (params.get(name) ?? '').trim().slice(0, 200);
+const year = (name: string) => {
+  const value = Number.parseInt(params.get(name) ?? '', 10);
+  return Number.isFinite(value) && value >= 1000 && value <= 2100 ? value : null;
+};
+const sortParam = params.get('sort') as SortKey | null;
 
-function escapeHtml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const request: SearchRequest = {
+  q: text('q'),
+  title: text('title'),
+  author: text('author'),
+  publisher: text('publisher'),
+  series: text('series'),
+  tag: text('tag'),
+  lang: text('lang'),
+  format: text('format').toLowerCase(),
+  yearFrom: year('from'),
+  yearTo: year('to'),
+  sort: sortParam && SORT_KEYS.includes(sortParam) ? sortParam : 'relevance',
+};
+
+const facets = searchFacets();
+const searched = Boolean(request.q) || hasAdvancedCriteria(request);
+const outcome = searched ? searchCatalog(request) : null;
+const matches = outcome?.matches ?? [];
+const totalPages = Math.max(1, Math.ceil(matches.length / PAGE_SIZE));
+const page = Math.min(Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1), totalPages);
+const shown = matches.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+// Keep the form open when any advanced field is in use, so the person sees why a result is narrow.
+const advancedOpen = params.get('advanced') === '1' || Boolean(
+  request.title || request.author || request.publisher || request.series || request.tag || request.lang ||
+  request.format || request.yearFrom != null || request.yearTo != null || request.sort !== 'relevance',
+);
+
+function pageHref(target: number): string {
+  const next = new URLSearchParams(params);
+  if (target <= 1) next.delete('page');
+  else next.set('page', String(target));
+  const query = next.toString();
+  return `/search/${query ? `?${query}` : ''}`;
 }
 
-function highlight(s: string, terms: string[]): string {
-  let out = escapeHtml(s);
-  for (const t of terms) {
-    const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    out = out.replace(re, '<mark>$1</mark>');
+const sortLabels: Record<SortKey, string> = {
+  relevance: 'Paling relevan',
+  newest: 'Terbaru ditambahkan',
+  title: 'Judul A–Z',
+  year: 'Tahun terbit (terbaru)',
+};
+const formatLabel = (value: string) => value.toUpperCase();
+const formatCount = new Intl.NumberFormat('id-ID');
+
+// Chips echo the active criteria; each links to the same search without it.
+const labels: Record<string, string> = {
+  title: 'Judul', author: 'Penulis', publisher: 'Penerbit', series: 'Seri', tag: 'Kategori', lang: 'Bahasa', format: 'Format',
+};
+const chips: Array<{ label: string; href: string }> = [];
+if (searched) {
+  const without = (...names: string[]) => {
+    const next = new URLSearchParams(params);
+    next.delete('page');
+    for (const name of names) next.delete(name);
+    const query = next.toString();
+    return `/search/${query ? `?${query}` : ''}`;
+  };
+  for (const key of ['title', 'author', 'publisher', 'series', 'tag'] as const) {
+    if (request[key]) chips.push({ label: `${labels[key]}: ${request[key]}`, href: without(key) });
   }
-  return out;
-}
-
-function coverHtml(image: string, alt: string): string {
-  const clean = image.replace(/\?.*$/, '');
-  if (clean.startsWith('/cover/')) {
-        return `<picture><source srcset="${clean}" type="image/webp"><img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async"></picture>`;
+  if (request.lang) chips.push({ label: `Bahasa: ${localeLanguageName(request.lang === 'ind' ? 'id' : request.lang === 'eng' ? 'en' : request.lang)}`, href: without('lang') });
+  if (request.format) chips.push({ label: `Format: ${formatLabel(request.format)}`, href: without('format') });
+  if (request.yearFrom != null || request.yearTo != null) {
+    chips.push({ label: `Tahun: ${request.yearFrom ?? '…'}–${request.yearTo ?? '…'}`, href: without('from', 'to') });
   }
-  return `<img src="${clean}" alt="${escapeHtml(alt)}" loading="lazy" width="200" height="300" decoding="async">`;
+  if (request.sort !== 'relevance') chips.push({ label: `Urut: ${sortLabels[request.sort!]}`, href: without('sort') });
 }
 
-function renderResults(hits: SearchableBook[]): string {
-  return hits.map(b => {
-    const titleHighlighted = highlight(b.title, terms);
-    const authorHtml = truncateAuthorsHtml(b.authors, 60);
-
-    return `<li><article class="card">
-      <a href="${b.url}" class="card__cover" aria-label="Cover ${escapeHtml(b.title)}">${coverHtml(b.cover_url, b.title)}</a>
-      <h3 class="card__title"><a href="${b.url}">${titleHighlighted}</a></h3>
-      <p class="card__authors">${authorHtml}</p>
-    </article></li>`;
-  }).join('');
-}
+const title = request.q ? `Cari: ${request.q}` : searched ? 'Pencarian lanjutan' : 'Cari';
+const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' : code === 'eng' ? 'en' : code === 'msa' ? 'ms' : code);
 ---
 
-<BaseLayout title={q ? `Cari: ${q}` : 'Cari'} description="Cari buku di Pustaka Taratsa." noindex>
+<BaseLayout title={title} description="Cari buku di Pustaka Taratsa." noindex>
   <div class="search-page">
     <h1 class="search-title">Cari Buku</h1>
 
-    <form action="/search" method="GET" role="search" class="search-form">
-      <div class="search-form__input-wrap">
-        <svg class="search-form__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" name="q" placeholder="Cari judul, penulis, kategori…" value={q} autofocus spellcheck="false" />
+    <form action="/search/" method="GET" role="search" class="search-form">
+      <div class="search-form__row">
+        <div class="search-form__input-wrap">
+          <svg class="search-form__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" name="q" placeholder="Cari judul, penulis, kategori…" value={request.q} autofocus spellcheck="false" aria-label="Kata kunci" />
+        </div>
+        <button type="submit" class="search-form__btn">Cari</button>
       </div>
-      <button type="submit" class="search-form__btn">Cari</button>
+
+      <details class="advanced" open={advancedOpen}>
+        <summary>Pencarian lanjutan</summary>
+        <div class="advanced__grid">
+          <label>Judul<input type="text" name="title" value={request.title} spellcheck="false" /></label>
+          <label>Penulis<input type="text" name="author" value={request.author} spellcheck="false" /></label>
+          <label>Penerbit<input type="text" name="publisher" value={request.publisher} spellcheck="false" /></label>
+          <label>Seri<input type="text" name="series" value={request.series} spellcheck="false" /></label>
+          <label>Kategori<input type="text" name="tag" value={request.tag} spellcheck="false" /></label>
+          <label>Bahasa
+            <select name="lang">
+              <option value="">Semua bahasa</option>
+              {facets.languages.map((facet) => (
+                <option value={facet.value} selected={request.lang === facet.value}>{languageName(facet.value)} ({formatCount.format(facet.count)})</option>
+              ))}
+            </select>
+          </label>
+          <label>Format
+            <select name="format">
+              <option value="">Semua format</option>
+              {facets.formats.map((facet) => (
+                <option value={facet.value} selected={request.format === facet.value}>{formatLabel(facet.value)} ({formatCount.format(facet.count)})</option>
+              ))}
+            </select>
+          </label>
+          <div class="advanced__years">
+            <label>Tahun terbit, dari<input type="number" name="from" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMin ?? '')} value={request.yearFrom ?? ''} /></label>
+            <label>sampai<input type="number" name="to" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMax ?? '')} value={request.yearTo ?? ''} /></label>
+          </div>
+          <label>Urutkan
+            <select name="sort">
+              {SORT_KEYS.map((key) => (
+                <option value={key} selected={request.sort === key}>{sortLabels[key]}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <p class="advanced__help">
+          Di kotak utama: <code>"frasa tepat"</code> mencari kata berurutan, <code>-kata</code> membuang buku yang memuat kata itu.
+          Filter tahun hanya menyertakan buku yang tahun terbitnya diketahui.
+        </p>
+        <p class="advanced__actions"><a href="/search/">Atur ulang</a></p>
+      </details>
     </form>
 
-    {q && total > 0 && (
-      <p id="search-status" class="search-status">{statusText} untuk "<strong>{q}</strong>"</p>
+    {chips.length > 0 && (
+      <ul class="chips" aria-label="Kriteria aktif">
+        {chips.map((chip) => (
+          <li><a href={chip.href} title="Hapus kriteria ini">{chip.label} <span aria-hidden="true">×</span></a></li>
+        ))}
+      </ul>
     )}
 
-    {hits.length > 0 && (
+    {searched && matches.length > 0 && (
+      <p id="search-status" class="search-status">
+        {formatCount.format(matches.length)} hasil{request.q ? <> untuk "<strong>{request.q}</strong>"</> : null}
+        {totalPages > 1 && <> · halaman {page} dari {totalPages}</>}
+        {outcome?.yearFilterApplied && <> · buku tanpa tahun terbit yang pasti tidak disertakan</>}
+      </p>
+    )}
+
+    {shown.length > 0 && (
       <div id="search-results" class="search-results">
-        <ul class="book-grid book-grid--cols-5" set:html={initialHtml} />
+        <BookGrid books={shown} />
       </div>
     )}
 
-    {q && total === 0 && (
+    {totalPages > 1 && (
+      <nav class="search-pager" aria-label="Halaman hasil">
+        {page > 1 ? <a href={pageHref(page - 1)} rel="prev">← Sebelumnya</a> : <span aria-disabled="true">← Sebelumnya</span>}
+        <span class="search-pager__where">Halaman {page} / {totalPages}</span>
+        {page < totalPages ? <a href={pageHref(page + 1)} rel="next">Selanjutnya →</a> : <span aria-disabled="true">Selanjutnya →</span>}
+      </nav>
+    )}
+
+    {searched && matches.length === 0 && (
       <div id="search-empty" class="search-empty">
-        <p>Tidak ditemukan hasil untuk "<strong>{q}</strong>".</p>
-        <p class="search-empty__suggest">Coba kata kunci lain, periksa ejaan, atau <a href="/">kembali ke beranda</a>.</p>
+        <p>Tidak ada buku yang cocok.</p>
+        <p class="search-empty__suggest">
+          {chips.length > 0 ? 'Longgarkan salah satu kriteria di atas, periksa ejaan, ' : 'Coba kata kunci lain, periksa ejaan, '}
+          atau <a href="/">kembali ke beranda</a>.
+        </p>
       </div>
     )}
   </div>
 </BaseLayout>
-<style>
-  .search-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 1rem;
-  }
 
-  /* ── Search Form ── */
-  .search-form {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .search-form__input-wrap {
-    flex: 1;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .search-form__icon {
-    position: absolute;
-    left: 0.75rem;
-    color: var(--muted-soft);
-    pointer-events: none;
-    flex-shrink: 0;
-  }
+<style>
+  .search-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem; }
+
+  .search-form { margin-bottom: 1.25rem; }
+  .search-form__row { display: flex; gap: 0.5rem; }
+  .search-form__input-wrap { flex: 1; position: relative; display: flex; align-items: center; }
+  .search-form__icon { position: absolute; left: 0.75rem; color: var(--muted-soft); pointer-events: none; }
   .search-form__input-wrap input {
     width: 100%;
     padding: 0.65rem 0.9rem 0.65rem 2.4rem;
@@ -108,13 +207,11 @@ function renderResults(hits: SearchableBook[]): string {
     font: inherit;
     font-size: 0.95rem;
     background: var(--surface);
-    transition: border-color 0.15s, box-shadow 0.15s;
+    color: var(--fg);
   }
-  .search-form__input-wrap input:focus {
-    outline: none;
-    border-color: var(--fg);
-    box-shadow: 0 0 0 3px var(--ring);
-  }
+  .search-form__input-wrap input:focus,
+  .advanced input:focus,
+  .advanced select:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
   .search-form__btn {
     padding: 0.65rem 1.3rem;
     background: var(--fg);
@@ -125,12 +222,64 @@ function renderResults(hits: SearchableBook[]): string {
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.15s;
     white-space: nowrap;
   }
   .search-form__btn:hover { background: var(--muted-strong); }
 
-  /* ── Status ── */
+  .advanced { margin-top: 0.75rem; }
+  .advanced > summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted-strong);
+  }
+  .advanced > summary:hover { color: var(--fg); }
+  .advanced[open] > summary { color: var(--fg); }
+  .advanced__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 0.75rem 1rem;
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    background: var(--surface-2);
+  }
+  .advanced label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; color: var(--muted-strong); }
+  .advanced input,
+  .advanced select {
+    min-height: 40px;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--fg);
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .advanced__years { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .advanced__help { margin: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .advanced__help code { padding: 0 0.25rem; border-radius: 2px; background: var(--surface-3); font-size: 0.95em; }
+  .advanced__actions { margin: 0.5rem 0 0; font-size: 0.85rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+  .chips a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 32px;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .chips a:hover { background: var(--surface-3); }
+
   .search-status {
     margin: 0 0 1rem;
     padding: 0.5rem 0.75rem;
@@ -140,85 +289,27 @@ function renderResults(hits: SearchableBook[]): string {
     color: var(--muted-strong);
   }
 
-  /* ── Results Container ── */
-  .search-results:not([hidden]) {
-    animation: fadeIn 0.2s ease-out;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .search-results:not([hidden]) { animation: none; }
-  }
-
-
-  /* ── Grid ── */
-  .book-grid {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-    display: grid;
-    gap: 1.5rem;
-  }
-  .book-grid--cols-5 { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-
-  /* ── Card ── */
-  .card { margin: 0; }
-  .card__cover { display: block; }
-  .card__cover img,
-  .card__cover picture {
-    display: block;
-    width: 100%;
-    height: auto;
+  .search-pager { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin: 2rem 0 0.5rem; font-size: 0.9rem; }
+  .search-pager a, .search-pager span[aria-disabled] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 0.9rem;
+    border: 1px solid var(--border);
     border-radius: 4px;
-    box-shadow: 0 1px 4px var(--shadow-sm);
-  }
-  .card__title {
-    font-size: 1rem;
-    margin: 0.5rem 0 0.25rem;
-    line-height: 1.3;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-  .card__title a {
-    color: var(--fg);
     text-decoration: none;
   }
-  .card__title a:hover { text-decoration: underline; }
-  :global(.card__title mark) {
-    background: var(--mark-bg);
-    color: var(--mark-fg);
-    padding: 0 0.1rem;
-    border-radius: 2px;
-  }
-  .card__authors {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--muted);
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
-  }
-  .card__authors a { color: var(--muted); }
-  .card__authors a:hover { color: var(--fg); }
-  .card__authors .more { color: var(--muted-soft); font-style: italic; }
+  .search-pager span[aria-disabled] { color: var(--muted-soft); border-color: var(--border-subtle); }
+  .search-pager a:hover { background: var(--surface-3); }
+  .search-pager__where { color: var(--muted); }
 
-  /* ── Empty State ── */
-  .search-empty {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--muted);
-  }
+  .search-empty { text-align: center; padding: 3rem 1rem; color: var(--muted); }
   .search-empty p { margin: 0 0 0.5rem; font-size: 0.95rem; }
-  .search-empty__suggest {
-    font-size: 0.85rem !important;
-    color: var(--muted-soft);
-  }
+  .search-empty__suggest { font-size: 0.85rem !important; color: var(--muted-soft); }
   .search-empty a { color: var(--fg); }
 
+  @media (max-width: 479px) {
+    .search-form__row { flex-direction: column; }
+    .search-form__btn { min-height: 44px; }
+  }
 </style>

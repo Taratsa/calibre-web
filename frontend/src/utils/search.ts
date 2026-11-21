@@ -1,17 +1,13 @@
 import MiniSearch from 'minisearch';
 import booksData from '~/data/books.json';
 import type { BookSummary } from '~/data/types';
-import { bookPath } from '~/utils/book-url';
+import { reliablePubdate } from '~/utils/pubdate';
 
-export interface SearchableBook {
-  id: number;
-  title: string;
-  url: string;
-  cover_url: string;
-  authors: Array<{ id: number; name: string }>;
-  tags: string[];
-  publisher: { id: number; name: string } | null;
-  series: { id: number; name: string; index: number | null } | null;
+export interface SearchableBook extends BookSummary {
+  /** Publication year, or null when the catalog only has Calibre's import-date placeholder. */
+  year: number | null;
+  /** Import time in ms, for "newest first". */
+  added: number;
 }
 
 let slimCache: SearchableBook[] | null = null;
@@ -19,16 +15,18 @@ let slimCache: SearchableBook[] | null = null;
 function slimAllBooks(): SearchableBook[] {
   if (slimCache) return slimCache;
   const books = booksData as BookSummary[];
-  slimCache = books.map(b => ({
-    id: b.id,
-    title: b.title,
-    url: bookPath(b),
-    cover_url: b.cover_url,
-    authors: b.authors,
-    tags: b.tags,
-    publisher: b.publisher,
-    series: b.series,
-  }));
+  slimCache = books.map(b => {
+    const published = reliablePubdate(b);
+    const year = published ? Number.parseInt(published.slice(0, 4), 10) : Number.NaN;
+    const added = b.timestamp ? Date.parse(b.timestamp.slice(0, 10)) : Number.NaN;
+    return {
+      ...b,
+      languages: b.languages ?? [],
+      formats: (b.formats ?? []).map(f => f.toLowerCase()),
+      year: Number.isNaN(year) ? null : year,
+      added: Number.isNaN(added) ? 0 : added,
+    };
+  });
   return slimCache;
 }
 
@@ -70,21 +68,222 @@ function ensureIndex(): { ms: MiniSearch<IndexedDoc>; byId: Map<number, Searchab
   return { ms: index, byId };
 }
 
+// ── Query syntax ──────────────────────────────────────────────────────────
+
+export interface ParsedQuery {
+  /** Plain words, matched like the simple search (all must match, prefix and typo tolerant). */
+  words: string[];
+  /** "exact phrase": whole words in order, inside one field. */
+  phrases: string[];
+  /** -word: books matching it (prefix match) are removed. */
+  notWords: string[];
+  /** -"exact phrase": books containing it are removed. */
+  notPhrases: string[];
+}
+
+/** Lower-case, accent-free, punctuation collapsed to single spaces, so "Soekarno," equals "soekarno". */
+export function normalizeText(value: string): string {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+
 /**
- * Server-side catalog search over the built MiniSearch index.
- * Returns up to `limit` hits plus the untruncated match count, so callers
- * can report a truthful total when more results exist than are shown.
+ * Split a search box into words, "phrases" and -exclusions. An unclosed quote is read as plain words, and a lone "-"
+ * is ignored, so a half-typed query never throws or silently empties the results.
  */
-export function searchBooks(query: string, limit = 120): { hits: SearchableBook[]; total: number } {
-  const q = query.trim();
-  if (!q) return { hits: [], total: 0 };
-  const { ms, byId: map } = ensureIndex();
-  const results = ms.search(q);
-  const hits: SearchableBook[] = [];
-  for (const r of results) {
-    if (hits.length >= limit) break;
-    const book = map.get(r.id as number);
-    if (book) hits.push(book);
+export function parseQuery(raw: string): ParsedQuery {
+  const parsed: ParsedQuery = { words: [], phrases: [], notWords: [], notPhrases: [] };
+  const pattern = /(-?)"([^"]*)"|(-?)(\S+)/g;
+  for (const match of raw.matchAll(pattern)) {
+    const negative = (match[1] ?? match[3]) === '-';
+    if (match[2] !== undefined) {
+      const phrase = normalizeText(match[2]);
+      if (!phrase) continue;
+      (negative ? parsed.notPhrases : parsed.phrases).push(phrase);
+      continue;
+    }
+    const word = (match[4] ?? '').replace(/"/g, '');
+    if (!normalizeText(word)) continue;
+    (negative ? parsed.notWords : parsed.words).push(word);
   }
-  return { hits, total: results.length };
+  return parsed;
+}
+
+// ── Search ────────────────────────────────────────────────────────────────
+
+export type SortKey = 'relevance' | 'newest' | 'title' | 'year';
+export const SORT_KEYS: readonly SortKey[] = ['relevance', 'newest', 'title', 'year'];
+
+export interface SearchRequest {
+  /** Main box: words, "phrases" and -exclusions. */
+  q?: string;
+  title?: string;
+  author?: string;
+  publisher?: string;
+  series?: string;
+  tag?: string;
+  lang?: string;
+  format?: string;
+  yearFrom?: number | null;
+  yearTo?: number | null;
+  sort?: SortKey;
+}
+
+export interface SearchOutcome {
+  /** Every match, already sorted. */
+  matches: SearchableBook[];
+  parsed: ParsedQuery;
+  /** Words to highlight in titles. */
+  highlight: string[];
+  /** True when a year filter was applied, which drops every book without a reliable publication year. */
+  yearFilterApplied: boolean;
+}
+
+const FIELD_KEYS = {
+  title: 'title',
+  author: '_authors',
+  publisher: '_publisher',
+  series: '_series',
+  tag: '_tags',
+} as const;
+
+type FieldRequestKey = keyof typeof FIELD_KEYS;
+
+export function hasAdvancedCriteria(request: SearchRequest): boolean {
+  return Boolean(
+    (Object.keys(FIELD_KEYS) as FieldRequestKey[]).some(key => (request[key] ?? '').trim()) ||
+    request.lang ||
+    request.format ||
+    request.yearFrom != null ||
+    request.yearTo != null ||
+    (request.sort && request.sort !== 'relevance') ||
+    /(^|\s)-?"/.test(request.q ?? '') ||
+    /(^|\s)-\S/.test(request.q ?? ''),
+  );
+}
+
+function containsPhrase(book: SearchableBook, phrase: string): boolean {
+  const needle = ` ${phrase} `;
+  const fields = [
+    normalizeText(book.title),
+    normalizeText((book.authors || []).map(a => a.name).join(' ')),
+    ...(book.tags || []).map(normalizeText),
+    normalizeText(book.series ? book.series.name : ''),
+    normalizeText(book.publisher ? book.publisher.name : ''),
+  ];
+  return fields.some(text => ` ${text} `.includes(needle));
+}
+
+/**
+ * Catalog search over the built MiniSearch index: free text with "phrases" and -exclusions, per-field boxes,
+ * language/format/year filters and sorting. A request with only `q` behaves exactly like the old simple search.
+ */
+export function searchCatalog(request: SearchRequest): SearchOutcome {
+  const { ms, byId: map } = ensureIndex();
+  const parsed = parseQuery(request.q ?? '');
+  const highlight = new Set<string>();
+
+  let scores: Map<number, number> | null = null;
+  const intersect = (hits: Array<{ id: number; score: number }>): void => {
+    const next = new Map<number, number>();
+    for (const hit of hits) {
+      if (scores === null) next.set(hit.id, hit.score);
+      else if (scores.has(hit.id)) next.set(hit.id, (scores.get(hit.id) ?? 0) + hit.score);
+    }
+    scores = next;
+  };
+
+  if (parsed.words.length > 0) {
+    intersect(ms.search(parsed.words.join(' ')));
+    for (const word of parsed.words) highlight.add(word.toLowerCase());
+  }
+  for (const key of Object.keys(FIELD_KEYS) as FieldRequestKey[]) {
+    const value = (request[key] ?? '').trim();
+    if (!value) continue;
+    // Field boxes filter precisely (prefix only): typo tolerance belongs to the main box, and here "aidit" must not
+    // return "Audit" in a title or "Adit" as an author.
+    intersect(ms.search(value, { fields: [FIELD_KEYS[key]], fuzzy: 0 }));
+    if (key === 'title') for (const word of value.toLowerCase().split(/\s+/)) if (word) highlight.add(word);
+  }
+  for (const phrase of parsed.phrases) for (const word of phrase.split(' ')) highlight.add(word);
+
+  // No text criteria at all: every book is a candidate and the filters below do the work.
+  if (scores === null) {
+    const all = new Map<number, number>();
+    for (const book of map.values()) all.set(book.id, 0);
+    scores = all;
+  }
+  const candidates: Map<number, number> = scores;
+
+  for (const word of parsed.notWords) {
+    for (const hit of ms.search(word, { fuzzy: 0, combineWith: 'OR' })) candidates.delete(hit.id);
+  }
+
+  const wantedLang = (request.lang ?? '').trim();
+  const wantedFormat = (request.format ?? '').trim().toLowerCase();
+  const yearFilterApplied = request.yearFrom != null || request.yearTo != null;
+
+  let matches: SearchableBook[] = [];
+  for (const [id, score] of candidates) {
+    const book = map.get(id);
+    if (!book) continue;
+    if (wantedLang && !book.languages.includes(wantedLang)) continue;
+    if (wantedFormat && !book.formats.includes(wantedFormat)) continue;
+    if (yearFilterApplied) {
+      if (book.year === null) continue;
+      if (request.yearFrom != null && book.year < request.yearFrom) continue;
+      if (request.yearTo != null && book.year > request.yearTo) continue;
+    }
+    if (parsed.phrases.some(phrase => !containsPhrase(book, phrase))) continue;
+    if (parsed.notPhrases.some(phrase => containsPhrase(book, phrase))) continue;
+    matches.push(book);
+    candidates.set(id, score);
+  }
+
+  const hasText = parsed.words.length > 0 || Object.keys(FIELD_KEYS).some(k => (request[k as FieldRequestKey] ?? '').trim());
+  const sort: SortKey = request.sort && SORT_KEYS.includes(request.sort) ? request.sort : 'relevance';
+  const byNewest = (a: SearchableBook, b: SearchableBook) => b.added - a.added || b.id - a.id;
+  if (sort === 'title') {
+    matches = matches.sort((a, b) => a.title.localeCompare(b.title, 'id', { sensitivity: 'base' }) || a.id - b.id);
+  } else if (sort === 'year') {
+    // Books without a reliable year go last, whichever direction.
+    matches = matches.sort((a, b) => (b.year ?? -1) - (a.year ?? -1) || byNewest(a, b));
+  } else if (sort === 'newest' || !hasText) {
+    matches = matches.sort(byNewest);
+  } else {
+    matches = matches.sort((a, b) => (candidates.get(b.id) ?? 0) - (candidates.get(a.id) ?? 0) || byNewest(a, b));
+  }
+
+  return { matches, parsed, highlight: [...highlight], yearFilterApplied };
+}
+
+// ── Form options ──────────────────────────────────────────────────────────
+
+export interface Facet { value: string; count: number }
+
+/** Languages and formats present in the catalog with their book counts, most common first. */
+export function searchFacets(): { languages: Facet[]; formats: Facet[]; yearMin: number | null; yearMax: number | null } {
+  const languages = new Map<string, number>();
+  const formats = new Map<string, number>();
+  let yearMin: number | null = null;
+  let yearMax: number | null = null;
+  for (const book of slimAllBooks()) {
+    for (const lang of book.languages) languages.set(lang, (languages.get(lang) ?? 0) + 1);
+    for (const format of book.formats) formats.set(format, (formats.get(format) ?? 0) + 1);
+    if (book.year !== null) {
+      yearMin = yearMin === null ? book.year : Math.min(yearMin, book.year);
+      yearMax = yearMax === null ? book.year : Math.max(yearMax, book.year);
+    }
+  }
+  const byCount = ([, a]: [string, number], [, b]: [string, number]) => b - a;
+  return {
+    languages: [...languages].sort(byCount).map(([value, count]) => ({ value, count })),
+    formats: [...formats].sort(byCount).map(([value, count]) => ({ value, count })),
+    yearMin,
+    yearMax,
+  };
 }

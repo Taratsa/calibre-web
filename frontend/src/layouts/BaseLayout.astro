@@ -185,8 +185,9 @@ const moreNav: NavLink[] = [
           <img src="/logo-taratsa.webp" alt="" width="28" height="28" loading="eager" style="height:28px;width:auto;" />
           <span>Pustaka Taratsa</span>
         </a>
-        <form action="/search" method="GET" role="search" aria-label="Formulir pencarian">
+        <form action="/search/" method="GET" role="search" aria-label="Formulir pencarian">
           <input type="search" name="q" placeholder="Cari buku, penulis…" aria-label="Kata kunci pencarian" />
+          <a class="side-search__advanced" href="/search/?advanced=1">Pencarian lanjutan</a>
         </form>
         <nav class="side-section" aria-label="Navigasi utama">
           {primaryNav.map((link) => (

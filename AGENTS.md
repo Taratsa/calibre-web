@@ -115,20 +115,32 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 Two live search systems (plus the legacy advanced-search form):
 
 ### Frontend `/search` (Astro SSR - the site's search)
-- `frontend/src/pages/search.astro` queries the in-process MiniSearch index in
-  `frontend/src/utils/search.ts` (`searchBooks(query, limit)` returns
-  `{ hits, total }`); the index is built once per SSR process over
-  `frontend/src/data/books.json` with boosts title 4 / authors 3 / tags 2 /
-  series 2 / publisher 1, `prefix: true`, `fuzzy: 0.2`, `combineWith: 'AND'`
-- Multi-term queries are AND (all terms must match); typo tolerance and
-  prefix matching come from the fuzzy/prefix options - no substring-splitting
-  heuristic (removed with the old linear-scan scoring)
-- Status line reports the untruncated total: `Menampilkan 120 dari N hasil`
-  when more than `limit` (120) books match
-- Results are plain SSR HTML (no client JS); identical queries are CDN-cached
-  (`s-maxage=300`, `frontend/src/middleware.ts`)
-- The dead client-side typeahead (`frontend/src/utils/liveSearch.ts`) was
-  removed; do not reintroduce a second index
+- `frontend/src/pages/search.astro` calls `searchCatalog(request)` in `frontend/src/utils/search.ts`, which returns
+  every match sorted; the page shows 48 per page (`?page=N`). The index is built once per SSR process over
+  `frontend/src/data/books.json` with boosts title 4 / authors 3 / tags 2 / series 2 / publisher 1, `prefix: true`,
+  `fuzzy: 0.2`, `combineWith: 'AND'`
+- Multi-term queries are AND (all terms must match); typo tolerance and prefix matching come from the fuzzy/prefix
+  options - no substring-splitting heuristic (removed with the old linear-scan scoring)
+- **Advanced search** (same page, same index; a `<details>` panel under the main box, opened by `?advanced=1` or when
+  any field is set; plain GET form, no client JS):
+  - Main box syntax: `"exact phrase"` (whole words in order inside ONE field: title, author, a tag, series or
+    publisher), `-word` (removes books matching that word, prefix match), `-"phrase"`. An unclosed quote or a lone `-`
+    is read as plain words, never an error
+  - Field boxes `title`, `author`, `publisher`, `series`, `tag`: restricted to that field and EXACT-PREFIX (fuzzy 0),
+    unlike the main box, so "aidit" does not return "Audit" or "Adit". Boxes combine with AND
+  - Filters `lang` (ISO 639-2 as stored: `ind`, `eng`, `msa`), `format` (`pdf`, `epub`), `from`/`to` publication year;
+    `sort` = `relevance` | `newest` | `title` | `year`. Language/format choices and their counts are read from the
+    catalog (`searchFacets()`), not hard-coded
+  - Only ~1,500 of ~8,300 books have a publication year we trust (`reliablePubdate()` drops Calibre's import-date
+    placeholder), so a year filter excludes every undated book; the status line says so. Do not "fix" it by using
+    the raw `pubdate`
+  - Active criteria show as removable chips (each links to the same search without it). Search result pages are
+    `noindex,nofollow`; old `/search?q=` links 301 to `/search/?q=` and keep the query
+- Results reuse `BookGrid`/`BookCard`, so a search hit looks like every other listing and a coverless book gets its
+  generated cover
+- Results are plain SSR HTML (no client JS); identical queries are CDN-cached (`s-maxage=300`,
+  `frontend/src/middleware.ts`)
+- The dead client-side typeahead (`frontend/src/utils/liveSearch.ts`) was removed; do not reintroduce a second index
 
 ### Backend search (OPDS, `/ajax/listbooks`, legacy UI)
 - `cps/db.py:search_query()` keeps the `ILIKE '%term%'` OR-query as the

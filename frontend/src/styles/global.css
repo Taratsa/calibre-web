@@ -195,6 +195,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .sidebar .brand { padding: 0.25rem 0.5rem; }
 .sidebar form { margin: 0; }
+.side-search__advanced {
+  display: inline-block;
+  min-height: 0;
+  min-width: 0;
+  margin: 0.35rem 0.25rem 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.side-search__advanced:hover { color: var(--fg); text-decoration: underline; }
 .sidebar input[type="search"] {
   width: 100%;
   min-height: 40px;
