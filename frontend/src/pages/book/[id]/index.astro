@@ -192,7 +192,7 @@ const cloud = (detail?.keywords ?? [])
 
       {cloud.length > 0 && (
         <section class="keyword-cloud">
-          <h2 class="shelves-heading">Kata kunci</h2>
+          <h2 class="shelves-heading">Kata yang sering muncul</h2>
           <ul aria-label={`Kata yang paling sering muncul di ${book.title}`}>
             {cloud.map(w => (
               <li data-tier={w.tier} style={`--w:${w.weight.toFixed(3)}`} title={`${w.count} kali`}>{w.word}</li>

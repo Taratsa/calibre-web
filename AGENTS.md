@@ -311,7 +311,7 @@ Two live search systems (plus the legacy advanced-search form):
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)
-- Book page keyword cloud ("Kata kunci", `pages/book/[id]/index.astro`, styles in `book.css`): the corpus rebuild also
+- Book page word cloud ("Kata yang sering muncul", `pages/book/[id]/index.astro`, styles in `book.css`): the corpus rebuild also
   writes `analysis/keywords.json` (`{version, built_at, books: {id: [[word, count] x 40]}}`, per-book data, so it is a
   separate file from the public `corpus.json` and has no API route). `seed.mjs` (`loadKeywords()`) merges it into
   `src/data/books/<id>.json` as `keywords`; a file whose version differs from `ANALYSIS_VERSION` is ignored. A book
