@@ -317,7 +317,12 @@ Two live search systems (plus the legacy advanced-search form):
 - Word cloud (`cloud` in the corpus result, panel "Awan kata"): top `CLOUD_WORDS` words after dropping stopwords and words
   shorter than `CLOUD_MIN_LENGTH`. Stopwords = stopwords-iso (MIT) Indonesian + English + Dutch + a few old-spelling
   fragments, bundled as `cps/text_analysis_stopwords.json`. Malay is left out on purpose: it contains content words
-  ("orang", "rakyat", "negara"). The n-gram and "Frekuensi kata" panels stay unfiltered. Change the list -> bump `ANALYSIS_VERSION`
+  ("orang", "rakyat", "negara"). The "Frekuensi kata" panel stays unfiltered. Change the list -> bump `ANALYSIS_VERSION`
+- N-grams use the same stopword list, applied to the EDGES only (`_ngrams()` in `cps/text_analysis.py`): a bigram/trigram
+  is counted only when its first and last word are not stopwords and are at least `CLOUD_MIN_LENGTH` letters. Stopwords
+  inside a trigram stay ("hak asasi manusia", "sumber daya alam"). Filtering happens at counting time, so the
+  `MAX_NGRAM_ENTRIES` table holds content phrases only. Before version 3, 26 of the top 30 bigrams and 15 of the top
+  30 trigrams were all-stopword ("of the", "di dalam", "oleh karena itu")
 - Nothing computes on a request: `GET /api/analysis/corpus` (public, no per-book data) answers 200 with the stored
   result or 202 `{"state":"pending"}`, and `/data` then shows a notice instead of the panels
 - Rebuild triggers: the end of a full scheduled OCR scan (`tasks/ocr_scan.py`) and the admin button "Compute Text

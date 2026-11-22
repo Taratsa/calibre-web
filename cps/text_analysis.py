@@ -17,11 +17,12 @@ from dataclasses import dataclass
 from functools import cache
 from pathlib import Path
 
-ANALYSIS_VERSION = 2
+ANALYSIS_VERSION = 3
 
 CORPUS_WORDS = 50
 CORPUS_NGRAMS = 30
-# Words of the stopword-free word cloud, and the shortest word it may show (drops OCR fragments such as "ka", "ri").
+# Words of the stopword-free word cloud, and the shortest word it (and the edges of an n-gram) may show: drops OCR
+# fragments such as "ka", "ri".
 CLOUD_WORDS = 100
 CLOUD_MIN_LENGTH = 3
 # An n-gram seen once says nothing about a text, so it never reaches the ranking.
@@ -39,7 +40,7 @@ _TOKEN = re.compile(r"[^\W\d_]+(?:-[^\W\d_]+)*")
 
 @cache
 def stopwords() -> frozenset[str]:
-    """Function words that the word cloud leaves out.
+    """Function words that the word cloud and the n-gram tables leave out.
 
     Indonesian, English and Dutch (the languages of the collection) from stopwords-iso, plus a short list of
     old-spelling and chat fragments. Malay is deliberately not included: it would also remove content words such
@@ -155,16 +156,29 @@ def tokenize(markup: str) -> Tokenized:
     return Tokenized(sentences, paragraphs, characters)
 
 
-def _ngrams(sentence: list[str], size: int) -> list[str]:
-    return [" ".join(gram) for gram in zip(*(sentence[offset:] for offset in range(size)), strict=False)]
+def _ngrams(sentence: list[str], size: int, stop: frozenset[str]) -> list[str]:
+    """The n-grams of a sentence whose first and last word are content words (not a stopword, not a fragment).
+
+    Stopwords may sit inside a gram ("hak asasi manusia", "sumber daya alam"), but a gram that starts or ends with one
+    ("di dalam", "yang tidak", "of the") is a function phrase and is not counted.
+    """
+    return [
+        " ".join(gram)
+        for gram in zip(*(sentence[offset:] for offset in range(size)), strict=False)
+        if gram[0] not in stop
+        and gram[-1] not in stop
+        and len(gram[0]) >= CLOUD_MIN_LENGTH
+        and len(gram[-1]) >= CLOUD_MIN_LENGTH
+    ]
 
 
 class CorpusBuilder:
     """Accumulates statistics over many documents.
 
-    Word counts, document frequency and every total are exact. N-gram tables grow without bound, so once one
-    passes ``MAX_NGRAM_ENTRIES`` the entries seen only once are dropped and ``approximate`` is set; a gram that
-    occurs once in each of many documents can then be undercounted, while the frequent ones at the top are safe.
+    Word counts, document frequency and every total are exact. N-gram tables only hold grams that begin and end with
+    a content word (see ``_ngrams``) and still grow without bound, so once one passes ``MAX_NGRAM_ENTRIES`` the
+    entries seen only once are dropped and ``approximate`` is set; a gram that occurs once in each of many documents
+    can then be undercounted, while the frequent ones at the top are safe.
     """
 
     def __init__(self) -> None:
@@ -188,9 +202,10 @@ class CorpusBuilder:
             return False
         self.words.update(tokens)
         self.document_frequency.update(set(tokens))
+        stop = stopwords()
         for size, counts in self._ngrams.items():
             for sentence in document.sentences:
-                counts.update(_ngrams(sentence, size))
+                counts.update(_ngrams(sentence, size, stop))
             if len(counts) > self._limits[size]:
                 for gram in [gram for gram, count in counts.items() if count == 1]:
                     del counts[gram]

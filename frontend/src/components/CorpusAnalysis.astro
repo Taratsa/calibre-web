@@ -144,7 +144,7 @@ const lexicals: [string, string][] = [
       </div>
       <h4>Perlu diperhatikan</h4>
       <ul class="ta-limits">
-        <li>Tanpa pembuangan stopword: n-gram teratas umumnya frasa fungsional.</li>
+        <li>Stopword dibuang dari tepi n-gram: pasangan atau tiga kata hanya dihitung bila kata pertama dan terakhirnya kata isi (bukan "yang", "di", "the", "of" dan sejenisnya, dan minimal tiga huruf). Stopword di tengah tetap boleh, misalnya "hak asasi manusia".</li>
         <li>N-gram dihitung di dalam kalimat; hanya yang muncul minimal dua kali yang ditampilkan.</li>
         {corpus.approximate_ngrams && <li>Tabel n-gram terlalu besar untuk disimpan utuh, sehingga yang muncul sekali dibuang di tengah penghitungan; peringkat teratas tetap dapat diandalkan, hitungan yang kecil mungkin terlalu rendah.</li>}
       </ul>
