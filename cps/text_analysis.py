@@ -25,6 +25,12 @@ CORPUS_NGRAMS = 30
 # fragments such as "ka", "ri".
 CLOUD_WORDS = 100
 CLOUD_MIN_LENGTH = 3
+# Per-book keyword cloud: the most frequent non-stopwords of one book. A word seen once or twice in a book is OCR
+# noise or chance, and a book with fewer than BOOK_KEYWORDS_MIN_SHOWN such words (a leaflet, a scan with little text)
+# gets no cloud at all.
+BOOK_KEYWORDS = 40
+BOOK_KEYWORD_MIN_COUNT = 3
+BOOK_KEYWORDS_MIN_SHOWN = 8
 # An n-gram seen once says nothing about a text, so it never reaches the ranking.
 MIN_NGRAM_COUNT = 2
 MTLD_THRESHOLD = 0.72
@@ -193,23 +199,36 @@ class CorpusBuilder:
         self.paragraphs = 0
         self.characters = 0
         self.by_format: dict[str, list[int]] = {}
+        self.keywords: dict[int, list[list[object]]] = {}
 
-    def add(self, markup: str, book_format: str) -> bool:
-        """Add one document; False when it holds no words."""
+    def add(self, markup: str, book_format: str, book_id: int | None = None) -> bool:
+        """Add one document; False when it holds no words. With ``book_id`` its top words go to ``keywords``."""
         document = tokenize(markup)
         tokens = document.tokens
         if not tokens:
             return False
-        self.words.update(tokens)
-        self.document_frequency.update(set(tokens))
+        counts = Counter(tokens)
+        self.words.update(counts)
+        self.document_frequency.update(counts.keys())
         stop = stopwords()
-        for size, counts in self._ngrams.items():
+        if book_id is not None:
+            top = sorted(
+                (
+                    (word, count)
+                    for word, count in counts.items()
+                    if count >= BOOK_KEYWORD_MIN_COUNT and len(word) >= CLOUD_MIN_LENGTH and word not in stop
+                ),
+                key=lambda item: (-item[1], item[0]),
+            )[:BOOK_KEYWORDS]
+            if len(top) >= BOOK_KEYWORDS_MIN_SHOWN:
+                self.keywords[book_id] = [[word, count] for word, count in top]
+        for size, grams in self._ngrams.items():
             for sentence in document.sentences:
-                counts.update(_ngrams(sentence, size, stop))
-            if len(counts) > self._limits[size]:
-                for gram in [gram for gram, count in counts.items() if count == 1]:
-                    del counts[gram]
-                self._limits[size] = max(MAX_NGRAM_ENTRIES, 2 * len(counts))
+                grams.update(_ngrams(sentence, size, stop))
+            if len(grams) > self._limits[size]:
+                for gram in [gram for gram, count in grams.items() if count == 1]:
+                    del grams[gram]
+                self._limits[size] = max(MAX_NGRAM_ENTRIES, 2 * len(grams))
                 self.approximate = True
         self.lengths.append(len(tokens))
         if len(tokens) >= MTLD_MIN_TOKENS and (value := mtld(tokens)) is not None:

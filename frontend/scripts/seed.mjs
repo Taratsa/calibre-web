@@ -190,7 +190,30 @@ function openDb() {
   return db;
 }
 
-async function loadBooks(db) {
+// Per-book top words ([word, count] pairs), written next to the corpus statistics by `build_corpus` in
+// cps/text_analysis_store.py. A file of another ANALYSIS_VERSION describes a different definition, so it is ignored.
+async function loadKeywords() {
+  const none = new Map();
+  const source = readFileSync(join(ROOT, '..', 'cps', 'text_analysis.py'), 'utf8');
+  const version = Number(source.match(/^ANALYSIS_VERSION\s*=\s*(\d+)/m)?.[1]);
+  let payload;
+  try {
+    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', 'keywords.json'), 'utf8'));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.warn('[seed] keywords.json not found; book pages get no keyword cloud');
+      return none;
+    }
+    throw error;
+  }
+  if (payload.version !== version) {
+    console.warn(`[seed] keywords.json is version ${payload.version}, expected ${version}; book pages get no keyword cloud`);
+    return none;
+  }
+  return new Map(Object.entries(payload.books).map(([id, words]) => [Number(id), words]));
+}
+
+async function loadBooks(db, keywords) {
   const stmt = db.prepare(`
     SELECT
       b.id            AS id,
@@ -375,6 +398,7 @@ async function loadBooks(db) {
       ...summary,
       comment,
       data: formats.map(f => ({ format: f.format, size: f.size, name: f.name })),
+      ...(keywords.has(book.id) ? { keywords: keywords.get(book.id) } : {}),
     };
 
     index.push(summary);
@@ -401,7 +425,8 @@ async function main() {
   const previousAliases = await readJsonIfExists('legacy-book-slugs.json', {});
   const db = openDb();
   try {
-    const index = await loadBooks(db);
+    const keywords = await loadKeywords();
+    const index = await loadBooks(db, keywords);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
     const readyOcr = await loadReadyOcr(db);

@@ -303,14 +303,22 @@ Two live search systems (plus the legacy advanced-search form):
 ### Corpus Statistics (`/data`)
 - `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR
   process, so reseed + image rebuild refreshes it) and, below them, text statistics of the **whole corpus**
-  (`components/CorpusAnalysis.astro`, styles in `src/styles/analysis.css`). There is deliberately **no per-book
-  analysis** on book pages
+  (`components/CorpusAnalysis.astro`, styles in `src/styles/analysis.css`). Per-book analysis is limited to the
+  keyword cloud on book pages (see below); no other per-book statistics are shown
 - Statistics are derived from the OCR/EPUB text cache, never from the files: `cps/text_analysis.py` (pure:
   `CorpusBuilder`), `cps/text_analysis_store.py` (storage), `cps/tasks/text_analysis.py` (`rebuild_corpus`,
   `TaskTextAnalysis`)
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)
+- Book page keyword cloud ("Kata kunci", `pages/book/[id]/index.astro`, styles in `book.css`): the corpus rebuild also
+  writes `analysis/keywords.json` (`{version, built_at, books: {id: [[word, count] x 40]}}`, per-book data, so it is a
+  separate file from the public `corpus.json` and has no API route). `seed.mjs` (`loadKeywords()`) merges it into
+  `src/data/books/<id>.json` as `keywords`; a file whose version differs from `ANALYSIS_VERSION` is ignored. A book
+  gets a cloud only if it has at least `BOOK_KEYWORDS_MIN_SHOWN` words that are not stopwords, at least
+  `CLOUD_MIN_LENGTH` letters and seen at least `BOOK_KEYWORD_MIN_COUNT` times. The words are the most FREQUENT ones
+  (not TF-IDF), same stopword list as the `/data` cloud, display only (no links). New OCR text appears there only
+  after the next corpus rebuild + `./build-frontend.sh`; changing the rule -> bump `ANALYSIS_VERSION`
 - The corpus is built from the full cached texts, one document per book (EPUB wins over PDF). Word counts and
   document frequency are exact; the n-gram tables are capped at `MAX_NGRAM_ENTRIES` and flag `approximate_ngrams`
   when singletons had to be dropped. Takes ~1 minute and ~0.5 GB for ~1,000 books

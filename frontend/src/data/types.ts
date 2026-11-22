@@ -37,6 +37,8 @@ export interface BookDataEntry {
 export interface BookDetail extends BookSummary {
   comment: string | null;
   data: BookDataEntry[];
+  /** Most frequent non-stopwords of the book text as [word, count]; absent when the text is missing or too short. */
+  keywords?: [string, number][];
 }
 
 export interface Author { id: number; name: string; sort: string }

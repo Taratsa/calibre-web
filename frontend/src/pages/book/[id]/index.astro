@@ -98,6 +98,17 @@ const identStr = book.identifiers.map((id, i) =>
 const ratingStr = book.rating && book.rating.count > 0
   ? `&#9733; ${book.rating.avg} (${book.rating.count})`
   : '';
+
+// Keyword cloud: alphabetical, size on a log scale so one dominant word does not shrink the rest to nothing.
+const keywordLogs = (detail?.keywords ?? []).map(([, count]) => Math.log(count));
+const keywordMin = Math.min(...keywordLogs);
+const keywordSpan = Math.max(Math.max(...keywordLogs) - keywordMin, 1e-9);
+const cloud = (detail?.keywords ?? [])
+  .map(([word, count]) => {
+    const weight = (Math.log(count) - keywordMin) / keywordSpan;
+    return { word, count, weight, tier: weight > 0.66 ? 'high' : weight > 0.33 ? 'mid' : 'low' };
+  })
+  .sort((a, b) => a.word.localeCompare(b.word, 'id'));
 ---
 
 <BookLayout book={book} description={cleanComment || undefined}>
@@ -177,6 +188,17 @@ const ratingStr = book.rating && book.rating.count > 0
           <h2 class="shelves-heading">Rak</h2>
           <ul class="tag-list" set:html={shelfStr} />
         </>
+      )}
+
+      {cloud.length > 0 && (
+        <section class="keyword-cloud">
+          <h2 class="shelves-heading">Kata kunci</h2>
+          <ul aria-label={`Kata yang paling sering muncul di ${book.title}`}>
+            {cloud.map(w => (
+              <li data-tier={w.tier} style={`--w:${w.weight.toFixed(3)}`} title={`${w.count} kali`}>{w.word}</li>
+            ))}
+          </ul>
+        </section>
       )}
     </div>
   </article>
