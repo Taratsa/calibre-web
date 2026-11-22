@@ -37,8 +37,21 @@ export interface BookDataEntry {
 export interface BookDetail extends BookSummary {
   comment: string | null;
   data: BookDataEntry[];
-  /** Most frequent non-stopwords of the book text as [word, count]; absent when the text is missing or too short. */
-  keywords?: [string, number][];
+  /** Text profile from the corpus rebuild; absent when the book has no cached text. Lists are empty when too short. */
+  text?: BookText;
+}
+
+export interface BookText {
+  /** Words in the book (all tokens, stopwords included). */
+  words: number;
+  /** Percent of the library's books that have fewer words. */
+  longer_than: number;
+  /** [word, count]: most frequent non-stopwords. */
+  top: [string, number][];
+  /** [word, count]: words that are frequent here but rare in the other books (count x log(books / books using it)). */
+  distinct: [string, number][];
+  /** [phrase, count]: key two- and three-word phrases. */
+  phrases: [string, number][];
 }
 
 export interface Author { id: number; name: string; sort: string }

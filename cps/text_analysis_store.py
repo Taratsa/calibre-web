@@ -38,8 +38,8 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
     """Aggregate the cached text of the given book formats into the stored corpus statistics.
 
     Callers pass one entry per book. Entries without cached text are skipped. Returns the number of documents used.
-    Writes ``corpus.json`` (public, no per-book data) and ``keywords.json`` (top words per book id, read by the
-    frontend seed for the word cloud on each book page).
+    Writes ``corpus.json`` (public, no per-book data) and ``book_text.json`` (a text profile per book id, read by the
+    frontend seed for the "Tentang teks" block on each book page).
     """
     builder = CorpusBuilder()
     for book, data, book_format in entries:
@@ -52,7 +52,7 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
     directory = _analysis_directory()
     stored = {
         "corpus.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "result": builder.result()},
-        "keywords.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "books": builder.keywords},
+        "book_text.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "books": builder.book_text()},
     }
     for name, payload in stored.items():
         path = directory / name

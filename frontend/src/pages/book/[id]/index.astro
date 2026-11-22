@@ -99,16 +99,19 @@ const ratingStr = book.rating && book.rating.count > 0
   ? `&#9733; ${book.rating.avg} (${book.rating.count})`
   : '';
 
-// Keyword cloud: alphabetical, size on a log scale so one dominant word does not shrink the rest to nothing.
-const keywordLogs = (detail?.keywords ?? []).map(([, count]) => Math.log(count));
-const keywordMin = Math.min(...keywordLogs);
-const keywordSpan = Math.max(Math.max(...keywordLogs) - keywordMin, 1e-9);
-const cloud = (detail?.keywords ?? [])
-  .map(([word, count]) => {
-    const weight = (Math.log(count) - keywordMin) / keywordSpan;
-    return { word, count, weight, tier: weight > 0.66 ? 'high' : weight > 0.33 ? 'mid' : 'low' };
-  })
-  .sort((a, b) => a.word.localeCompare(b.word, 'id'));
+// "Tentang teks": facts line, ranked word lists and key phrases from the corpus rebuild (see cps/text_analysis.py).
+const text = detail?.text ?? null;
+const countFormat = new Intl.NumberFormat('id-ID');
+const readingMinutes = text ? Math.max(1, Math.round(text.words / 200)) : 0;
+const textFacts = text
+  ? [
+      `${countFormat.format(text.words)} kata`,
+      readingMinutes >= 60
+        ? `sekitar ${Math.floor(readingMinutes / 60)} jam ${readingMinutes % 60} menit baca`
+        : `sekitar ${readingMinutes} menit baca`,
+      `lebih panjang dari ${text.longer_than}% buku di pustaka ini`,
+    ].join(' · ')
+  : '';
 ---
 
 <BookLayout book={book} description={cleanComment || undefined}>
@@ -190,14 +193,45 @@ const cloud = (detail?.keywords ?? [])
         </>
       )}
 
-      {cloud.length > 0 && (
-        <section class="keyword-cloud">
-          <h2 class="shelves-heading">Kata yang sering muncul</h2>
-          <ul aria-label={`Kata yang paling sering muncul di ${book.title}`}>
-            {cloud.map(w => (
-              <li data-tier={w.tier} style={`--w:${w.weight.toFixed(3)}`} title={`${w.count} kali`}>{w.word}</li>
-            ))}
-          </ul>
+      {text && (
+        <section class="book-text">
+          <h2 class="shelves-heading">Tentang teks</h2>
+          <p class="book-text__facts">{textFacts}</p>
+          {(text.top.length > 0 || text.distinct.length > 0) && (
+            <div class="book-text__lists">
+              {text.top.length > 0 && (
+                <div>
+                  <h3>Paling sering muncul</h3>
+                  <ol class="book-text__rank">
+                    {text.top.map(([word, count]) => (
+                      <li><span>{word}</span><span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / text.top[0][1]) * 100}%`}></i></span><b>{countFormat.format(count)}</b></li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+              {text.distinct.length > 0 && (
+                <div>
+                  <h3>Khas buku ini</h3>
+                  <p class="book-text__note">Sering di buku ini, jarang di buku lain.</p>
+                  <ol class="book-text__rank">
+                    {text.distinct.map(([word, count]) => (
+                      <li><span>{word}</span><b>{countFormat.format(count)}</b></li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+            </div>
+          )}
+          {text.phrases.length > 0 && (
+            <div>
+              <h3>Frasa yang berulang</h3>
+              <ul class="book-text__phrases">
+                {text.phrases.map(([phrase, count]) => (
+                  <li title={`${count} kali`}>{phrase}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
       )}
     </div>

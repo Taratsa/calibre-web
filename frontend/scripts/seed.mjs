@@ -190,30 +190,31 @@ function openDb() {
   return db;
 }
 
-// Per-book top words ([word, count] pairs), written next to the corpus statistics by `build_corpus` in
-// cps/text_analysis_store.py. A file of another ANALYSIS_VERSION describes a different definition, so it is ignored.
-async function loadKeywords() {
+// Per-book text profile ({words, longer_than, top, distinct, phrases}), written next to the corpus statistics by
+// `build_corpus` in cps/text_analysis_store.py. A file of another ANALYSIS_VERSION describes a different definition,
+// so it is ignored.
+async function loadBookText() {
   const none = new Map();
   const source = readFileSync(join(ROOT, '..', 'cps', 'text_analysis.py'), 'utf8');
   const version = Number(source.match(/^ANALYSIS_VERSION\s*=\s*(\d+)/m)?.[1]);
   let payload;
   try {
-    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', 'keywords.json'), 'utf8'));
+    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', 'book_text.json'), 'utf8'));
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.warn('[seed] keywords.json not found; book pages get no keyword cloud');
+      console.warn('[seed] book_text.json not found; book pages get no text profile');
       return none;
     }
     throw error;
   }
   if (payload.version !== version) {
-    console.warn(`[seed] keywords.json is version ${payload.version}, expected ${version}; book pages get no keyword cloud`);
+    console.warn(`[seed] book_text.json is version ${payload.version}, expected ${version}; book pages get no text profile`);
     return none;
   }
-  return new Map(Object.entries(payload.books).map(([id, words]) => [Number(id), words]));
+  return new Map(Object.entries(payload.books).map(([id, profile]) => [Number(id), profile]));
 }
 
-async function loadBooks(db, keywords) {
+async function loadBooks(db, bookText) {
   const stmt = db.prepare(`
     SELECT
       b.id            AS id,
@@ -398,7 +399,7 @@ async function loadBooks(db, keywords) {
       ...summary,
       comment,
       data: formats.map(f => ({ format: f.format, size: f.size, name: f.name })),
-      ...(keywords.has(book.id) ? { keywords: keywords.get(book.id) } : {}),
+      ...(bookText.has(book.id) ? { text: bookText.get(book.id) } : {}),
     };
 
     index.push(summary);
@@ -425,8 +426,8 @@ async function main() {
   const previousAliases = await readJsonIfExists('legacy-book-slugs.json', {});
   const db = openDb();
   try {
-    const keywords = await loadKeywords();
-    const index = await loadBooks(db, keywords);
+    const bookText = await loadBookText();
+    const index = await loadBooks(db, bookText);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
     const readyOcr = await loadReadyOcr(db);

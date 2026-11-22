@@ -304,21 +304,26 @@ Two live search systems (plus the legacy advanced-search form):
 - `/data` (Astro) shows library totals from `src/data` (`frontend/src/utils/library-stats.ts`, computed once per SSR
   process, so reseed + image rebuild refreshes it) and, below them, text statistics of the **whole corpus**
   (`components/CorpusAnalysis.astro`, styles in `src/styles/analysis.css`). Per-book analysis is limited to the
-  keyword cloud on book pages (see below); no other per-book statistics are shown
+  "Tentang teks" block on book pages (see below)
 - Statistics are derived from the OCR/EPUB text cache, never from the files: `cps/text_analysis.py` (pure:
   `CorpusBuilder`), `cps/text_analysis_store.py` (storage), `cps/tasks/text_analysis.py` (`rebuild_corpus`,
   `TaskTextAnalysis`)
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)
-- Book page word cloud ("Kata yang sering muncul", `pages/book/[id]/index.astro`, styles in `book.css`): the corpus rebuild also
-  writes `analysis/keywords.json` (`{version, built_at, books: {id: [[word, count] x 40]}}`, per-book data, so it is a
-  separate file from the public `corpus.json` and has no API route). `seed.mjs` (`loadKeywords()`) merges it into
-  `src/data/books/<id>.json` as `keywords`; a file whose version differs from `ANALYSIS_VERSION` is ignored. A book
-  gets a cloud only if it has at least `BOOK_KEYWORDS_MIN_SHOWN` words that are not stopwords, at least
-  `CLOUD_MIN_LENGTH` letters and seen at least `BOOK_KEYWORD_MIN_COUNT` times. The words are the most FREQUENT ones
-  (not TF-IDF), same stopword list as the `/data` cloud, display only (no links). New OCR text appears there only
-  after the next corpus rebuild + `./build-frontend.sh`; changing the rule -> bump `ANALYSIS_VERSION`
+- Book page "Tentang teks" block (`pages/book/[id]/index.astro`, styles in `book.css`, replaced the word cloud): the
+  corpus rebuild also writes `analysis/book_text.json` (`{version, built_at, books: {id: profile}}`; per-book data, so
+  it is a separate file from the public `corpus.json` and has no API route). `seed.mjs` (`loadBookText()`) merges the
+  profile into `src/data/books/<id>.json` as `text` (type `BookText`); a file whose version differs from
+  `ANALYSIS_VERSION` is ignored. Profile = `words` (tokens), `longer_than` (% of the library's books with fewer
+  words), `top` (12 most FREQUENT non-stopwords), `distinct` (12 by count x log(books / books using the word): frequent
+  here, rare elsewhere; needs the final document frequencies, so `CorpusBuilder.book_text()` runs after the last
+  `add`) and `phrases` (up to 8 bigrams/trigrams seen >= 3 times; a trigram weighs 1.5x a bigram and a phrase
+  contained in a better one is dropped). Words need >= `CLOUD_MIN_LENGTH` letters, a count >= `BOOK_WORD_MIN_COUNT`
+  and no stopword; a list shorter than its `*_MIN_SHOWN` is empty and the page hides it (a leaflet still shows the facts
+  line). Only the top `BOOK_CANDIDATES` words of a book are scored for `distinct` (150 matched the full ranking in
+  99.8% of 900 books). Reading time = words / 200 per minute. Repeated page headers show up as phrases. New OCR text
+  appears only after the next corpus rebuild + `./build-frontend.sh`; changing a rule -> bump `ANALYSIS_VERSION`
 - The corpus is built from the full cached texts, one document per book (EPUB wins over PDF). Word counts and
   document frequency are exact; the n-gram tables are capped at `MAX_NGRAM_ENTRIES` and flag `approximate_ngrams`
   when singletons had to be dropped. Takes ~1 minute and ~0.5 GB for ~1,000 books

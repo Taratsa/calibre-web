@@ -7,9 +7,11 @@ is rebuilt.
 
 from __future__ import annotations
 
+import bisect
 import heapq
 import html
 import json
+import math
 import re
 import statistics
 from collections import Counter
@@ -17,7 +19,7 @@ from dataclasses import dataclass
 from functools import cache
 from pathlib import Path
 
-ANALYSIS_VERSION = 3
+ANALYSIS_VERSION = 4
 
 CORPUS_WORDS = 50
 CORPUS_NGRAMS = 30
@@ -25,12 +27,18 @@ CORPUS_NGRAMS = 30
 # fragments such as "ka", "ri".
 CLOUD_WORDS = 100
 CLOUD_MIN_LENGTH = 3
-# Per-book keyword cloud: the most frequent non-stopwords of one book. A word seen once or twice in a book is OCR
-# noise or chance, and a book with fewer than BOOK_KEYWORDS_MIN_SHOWN such words (a leaflet, a scan with little text)
-# gets no cloud at all.
-BOOK_KEYWORDS = 40
-BOOK_KEYWORD_MIN_COUNT = 3
-BOOK_KEYWORDS_MIN_SHOWN = 8
+# Per-book text profile (book pages): the BOOK_WORDS most frequent and the BOOK_WORDS most distinctive non-stopwords
+# (count x log(documents / document frequency), so words every book uses rank low) plus up to BOOK_PHRASES key
+# phrases. A word seen once or twice in a book is OCR noise or chance. Only the top BOOK_CANDIDATES words of a book are
+# scored: 150 already reproduce the full ranking in 99.8% of 900 sampled books, 200 leaves margin. A list shorter than
+# its MIN_SHOWN (a leaflet, a scan with little text) is left empty.
+BOOK_WORDS = 12
+BOOK_WORD_MIN_COUNT = 3
+BOOK_WORDS_MIN_SHOWN = 8
+BOOK_CANDIDATES = 200
+BOOK_PHRASES = 8
+BOOK_PHRASE_MIN_COUNT = 3
+BOOK_PHRASES_MIN_SHOWN = 3
 # An n-gram seen once says nothing about a text, so it never reaches the ranking.
 MIN_NGRAM_COUNT = 2
 MTLD_THRESHOLD = 0.72
@@ -178,6 +186,15 @@ def _ngrams(sentence: list[str], size: int, stop: frozenset[str]) -> list[str]:
     ]
 
 
+@dataclass(frozen=True)
+class _BookCounts:
+    """What the corpus keeps of one book until every document is in and the document frequencies are final."""
+
+    words: int
+    candidates: list[tuple[str, int]]
+    phrases: list[list[object]]
+
+
 class CorpusBuilder:
     """Accumulates statistics over many documents.
 
@@ -199,10 +216,10 @@ class CorpusBuilder:
         self.paragraphs = 0
         self.characters = 0
         self.by_format: dict[str, list[int]] = {}
-        self.keywords: dict[int, list[list[object]]] = {}
+        self._books: dict[int, _BookCounts] = {}
 
     def add(self, markup: str, book_format: str, book_id: int | None = None) -> bool:
-        """Add one document; False when it holds no words. With ``book_id`` its top words go to ``keywords``."""
+        """Add one document; False when it holds no words. With ``book_id`` its profile goes to ``book_text()``."""
         document = tokenize(markup)
         tokens = document.tokens
         if not tokens:
@@ -211,25 +228,43 @@ class CorpusBuilder:
         self.words.update(counts)
         self.document_frequency.update(counts.keys())
         stop = stopwords()
+        grams = {
+            size: Counter(gram for sentence in document.sentences for gram in _ngrams(sentence, size, stop))
+            for size in self._ngrams
+        }
+        for size, table in self._ngrams.items():
+            table.update(grams[size])
+            if len(table) > self._limits[size]:
+                for gram in [gram for gram, count in table.items() if count == 1]:
+                    del table[gram]
+                self._limits[size] = max(MAX_NGRAM_ENTRIES, 2 * len(table))
+                self.approximate = True
         if book_id is not None:
-            top = sorted(
+            candidates = sorted(
                 (
                     (word, count)
                     for word, count in counts.items()
-                    if count >= BOOK_KEYWORD_MIN_COUNT and len(word) >= CLOUD_MIN_LENGTH and word not in stop
+                    if count >= BOOK_WORD_MIN_COUNT and len(word) >= CLOUD_MIN_LENGTH and word not in stop
                 ),
                 key=lambda item: (-item[1], item[0]),
-            )[:BOOK_KEYWORDS]
-            if len(top) >= BOOK_KEYWORDS_MIN_SHOWN:
-                self.keywords[book_id] = [[word, count] for word, count in top]
-        for size, grams in self._ngrams.items():
-            for sentence in document.sentences:
-                grams.update(_ngrams(sentence, size, stop))
-            if len(grams) > self._limits[size]:
-                for gram in [gram for gram, count in grams.items() if count == 1]:
-                    del grams[gram]
-                self._limits[size] = max(MAX_NGRAM_ENTRIES, 2 * len(grams))
-                self.approximate = True
+            )[:BOOK_CANDIDATES]
+            # Longer phrases first: a trigram counts 1.5 times a bigram of the same frequency, and a phrase that
+            # contains (or is contained in) a better one is skipped, so "hak asasi manusia" does not also list "hak asasi".
+            ranked = sorted(
+                (count * (1 + 0.5 * (size - 2)), gram, count)
+                for size, table in grams.items()
+                for gram, count in table.items()
+                if count >= BOOK_PHRASE_MIN_COUNT
+            )[::-1]
+            phrases: list[list[object]] = []
+            for _, gram, count in ranked:
+                if len(phrases) == BOOK_PHRASES:
+                    break
+                if not any(f" {gram} " in f" {kept} " or f" {kept} " in f" {gram} " for kept, _ in phrases):
+                    phrases.append([gram, count])
+            self._books[book_id] = _BookCounts(
+                len(tokens), candidates, phrases if len(phrases) >= BOOK_PHRASES_MIN_SHOWN else []
+            )
         self.lengths.append(len(tokens))
         if len(tokens) >= MTLD_MIN_TOKENS and (value := mtld(tokens)) is not None:
             self.mtlds.append(value)
@@ -252,6 +287,33 @@ class CorpusBuilder:
         grams = self._ngrams[size].most_common(CORPUS_NGRAMS * 4)
         ranked = [(gram, count) for gram, count in grams if count >= MIN_NGRAM_COUNT]
         return [[gram, count] for gram, count in ranked[:CORPUS_NGRAMS]]
+
+    def book_text(self) -> dict[int, dict[str, object]]:
+        """Per-book profile: length, most frequent words, most distinctive words and key phrases.
+
+        Needs the final document frequencies, so call it after the last ``add``. ``longer_than`` is the share of
+        the corpus's books (in percent) that have fewer words.
+        """
+        documents = len(self.lengths)
+        lengths = sorted(self.lengths)
+        profiles: dict[int, dict[str, object]] = {}
+        for book_id, book in self._books.items():
+            enough = len(book.candidates) >= BOOK_WORDS_MIN_SHOWN
+            distinct = sorted(
+                (count * math.log(documents / self.document_frequency[word]), word, count)
+                for word, count in book.candidates
+                if self.document_frequency[word] >= 2
+            )[::-1][:BOOK_WORDS]
+            profiles[book_id] = {
+                "words": book.words,
+                "longer_than": 100 * bisect.bisect_left(lengths, book.words) // documents,
+                "top": [[word, count] for word, count in book.candidates[:BOOK_WORDS]] if enough else [],
+                "distinct": [[word, count] for _, word, count in distinct]
+                if len(distinct) >= BOOK_WORDS_MIN_SHOWN
+                else [],
+                "phrases": book.phrases,
+            }
+        return profiles
 
     def result(self) -> dict[str, object] | None:
         if not self.lengths:
