@@ -44,58 +44,122 @@
       "name": "Imaji (19_) - Cumbu Sigil"
     }
   ],
-  "keywords": [
-    [
-      "burung",
-      6
+  "text": {
+    "words": 523,
+    "longer_than": 6,
+    "top": [
+      [
+        "burung",
+        6
+      ],
+      [
+        "kucing",
+        5
+      ],
+      [
+        "kematian",
+        4
+      ],
+      [
+        "ayam",
+        3
+      ],
+      [
+        "hitam",
+        3
+      ],
+      [
+        "jam",
+        3
+      ],
+      [
+        "javan",
+        3
+      ],
+      [
+        "kabar",
+        3
+      ],
+      [
+        "klinik",
+        3
+      ],
+      [
+        "myna",
+        3
+      ],
+      [
+        "plastik",
+        3
+      ],
+      [
+        "seekor",
+        3
+      ]
     ],
-    [
-      "kucing",
-      5
+    "distinct": [
+      [
+        "myna",
+        3
+      ],
+      [
+        "javan",
+        3
+      ],
+      [
+        "kucing",
+        5
+      ],
+      [
+        "klinik",
+        3
+      ],
+      [
+        "burung",
+        6
+      ],
+      [
+        "plastik",
+        3
+      ],
+      [
+        "ayam",
+        3
+      ],
+      [
+        "seekor",
+        3
+      ],
+      [
+        "tulang",
+        3
+      ],
+      [
+        "kematian",
+        4
+      ],
+      [
+        "kabar",
+        3
+      ],
+      [
+        "jam",
+        3
+      ]
     ],
-    [
-      "kematian",
-      4
-    ],
-    [
-      "ayam",
-      3
-    ],
-    [
-      "hitam",
-      3
-    ],
-    [
-      "jam",
-      3
-    ],
-    [
-      "javan",
-      3
-    ],
-    [
-      "kabar",
-      3
-    ],
-    [
-      "klinik",
-      3
-    ],
-    [
-      "myna",
-      3
-    ],
-    [
-      "plastik",
-      3
-    ],
-    [
-      "seekor",
-      3
-    ],
-    [
-      "tulang",
-      3
+    "phrases": [
+      [
+        "burung javan myna",
+        3
+      ],
+      [
+        "tulang ayam",
+        3
+      ],
+      [
+        "kucing hitam",
+        3
+      ]
     ]
-  ]
+  }
 }
