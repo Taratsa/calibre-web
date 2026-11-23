@@ -293,6 +293,23 @@ Two live search systems (plus the legacy advanced-search form):
   (`duplicate_index_cache`) enable incremental scans (books added since last scan)
   and post-ingest check hooks (upload/edit/delete in `cps/editbooks.py` queue a
   hidden incremental `TaskDuplicateScan`)
+- Bulk imports: `notify_book_changed()` (`cps/duplicate_index.py`) is DEBOUNCED. It collects the changed ids and queues
+  ONE incremental scan after `SCAN_DEBOUNCE_SECONDS` (20 s) without another change, and never later than
+  `SCAN_MAX_DELAY_SECONDS` (120 s) after the first, so an import of N books costs about N x 3 s / 120 s scans instead
+  of N. The scan is queued from a daemon `threading.Timer`; ids pending at a crash are lost, but the index is already
+  marked pending and the startup `queue_full_scan_if_stale()` heals it. If a scan is still WAITING in the worker queue it
+  absorbs the ids (`TaskDuplicateScan.add_book_ids()`, closed under a lock when the scan starts). An incremental scan
+  whose index is behind the library by more books than it covers (`has_valid_duplicate_index_baseline()` false), or
+  whose batch exceeds `MAX_INCREMENTAL_BOOK_IDS`, rebuilds the index in place (`_full_scan()`, ~5 s) instead of marking
+  it "pending: manual scan required" and exiting. History: before this, 251 of 285 scans in 30 minutes exited at "no
+  valid duplicate index baseline" and the index stayed 424 books behind; a first version without the debounce still
+  queued 40 scans for 80 uploads
+- Known race: the scan reads through the process-wide `ub.session` while uploads commit on it, so a scan that overlaps
+  an upload commit can fail with "This session is in 'prepared' state" (logged, the task fails, the next scan heals the
+  index; 5 of ~40 scans failed that way during an 80-upload import, no 500s and no failed uploads). Zero occurrences in
+  the 7 h before the change, when scans exited early; the likely reason is that they now hold the session for seconds
+  instead of milliseconds [INFERENCE]. The structural fix is a private short-lived `Session` for the scan's reads, like
+  the dedicated write path (`_app_transaction()`); about 20 `ub.session` call sites in `cps/duplicate_index.py`
 - One-click dismiss/undismiss per user (`DismissedDuplicateGroup`), batch
   preview + execute resolution (`cps/duplicate_resolve.py` — kept free of UI code
   so background tasks can use it), backups of deleted books under

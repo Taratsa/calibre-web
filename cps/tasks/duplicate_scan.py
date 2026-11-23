@@ -14,6 +14,7 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import threading
 from datetime import UTC, datetime
 
 from flask_babel import lazy_gettext as N_
@@ -45,6 +46,8 @@ class TaskDuplicateScan(CalibreTask):
         self.user_id = user_id
         self.result_count = 0
         self.found_duplicate_groups = []
+        self._lock = threading.Lock()
+        self._closed = False
         self.book_ids = []
         for book_id in book_ids or []:
             try:
@@ -61,6 +64,14 @@ class TaskDuplicateScan(CalibreTask):
     @property
     def is_cancellable(self):  # pyright: ignore[reportIncompatibleMethodOverride]
         return True
+
+    def add_book_ids(self, book_ids):
+        """Add books to a scan that has not started yet; False once it has started (the caller queues a new one)."""
+        with self._lock:
+            if self._closed or self.full_scan:
+                return False
+            self.book_ids.extend(book_id for book_id in book_ids if book_id not in self.book_ids)
+            return True
 
     def run(self, worker_thread):
         try:
@@ -81,49 +92,12 @@ class TaskDuplicateScan(CalibreTask):
             return
 
         settings = settings_to_dict()
+        with self._lock:
+            # From here on no more books may be added: the list is what this run covers.
+            self._closed = True
 
         if self.full_scan:
-            self.progress = 0.05
-            self.message = N_("Building duplicate index")
-
-            def update_rebuild_progress(processed, total):
-                if self.stat in (STAT_CANCELLED, STAT_ENDED):
-                    return
-                if total:
-                    self.progress = 0.05 + (0.75 * (processed / total))
-                    self.message = N_(
-                        "Building duplicate index: %(processed)s/%(total)s books",
-                        processed=processed,
-                        total=total,
-                    )
-                else:
-                    self.progress = 0.8
-                    self.message = N_("Building duplicate index: no books")
-
-            rebuild_metadata = rebuild_duplicate_index(settings, progress_callback=update_rebuild_progress)
-            self.progress = 0.85
-            self.message = N_("Finding duplicate groups")
-            duplicate_groups = get_duplicate_groups_from_index(
-                settings,
-                include_dismissed=False,
-                user_id=self.user_id,
-            )
-            self.result_count = len(duplicate_groups)
-            self.found_duplicate_groups = duplicate_groups
-
-            if self.stat in (STAT_CANCELLED, STAT_ENDED):
-                return
-
-            self.progress = 0.95
-            self.message = N_("Updating duplicate cache")
-            all_groups = get_duplicate_groups_from_index(settings, include_dismissed=True)
-            max_book_id = rebuild_metadata.get("max_book_id", 0)
-            update_duplicate_cache(all_groups, len(all_groups), max_book_id)
-            log.info(
-                "[duplicates] Duplicate cache updated (full scan): groups=%s max_book_id=%s",
-                len(all_groups),
-                max_book_id,
-            )
+            self._full_scan(settings)
         else:
             # Incremental scan: only index books newer than the last scan (or the
             # explicitly passed book ids), then refresh the affected groups.
@@ -143,18 +117,17 @@ class TaskDuplicateScan(CalibreTask):
                     )
                     if row[0] is not None
                 ]
-                if len(candidate_ids) > MAX_INCREMENTAL_BOOK_IDS:
-                    mark_duplicate_index_pending("incremental book set too large")
-                    self.progress = 1
-                    self.message = N_("Duplicate scan pending: manual scan required")
-                    self._handleSuccess()
-                    return
-
-            if not has_valid_duplicate_index_baseline(settings, candidate_book_ids=candidate_ids):
-                mark_duplicate_index_pending("no valid duplicate index baseline")
-                self.progress = 1
-                self.message = N_("Duplicate scan pending: manual scan required")
-                self._handleSuccess()
+            # A batch above MAX_INCREMENTAL_BOOK_IDS, or an index that is behind the library by more books than this
+            # scan covers (a bulk import, changed matching rules), cannot be closed incrementally: rebuild the index in
+            # place rather than leaving it pending until someone runs a full scan by hand.
+            if len(candidate_ids) > MAX_INCREMENTAL_BOOK_IDS or not has_valid_duplicate_index_baseline(
+                settings, candidate_book_ids=candidate_ids
+            ):
+                log.info("[duplicates] Index is behind the library: running a full scan instead of an incremental one")
+                self.full_scan = True
+                self._full_scan(settings)
+                if self.stat not in (STAT_CANCELLED, STAT_ENDED):
+                    self._complete()
                 return
 
             max_book_id = 0
@@ -207,6 +180,52 @@ class TaskDuplicateScan(CalibreTask):
                     "[duplicates] Incremental scan result: %s unresolved groups among candidates", self.result_count
                 )
 
+        self._complete()
+
+    def _full_scan(self, settings):
+        self.progress = 0.05
+        self.message = N_("Building duplicate index")
+
+        def update_rebuild_progress(processed, total):
+            if self.stat in (STAT_CANCELLED, STAT_ENDED):
+                return
+            if total:
+                self.progress = 0.05 + (0.75 * (processed / total))
+                self.message = N_(
+                    "Building duplicate index: %(processed)s/%(total)s books",
+                    processed=processed,
+                    total=total,
+                )
+            else:
+                self.progress = 0.8
+                self.message = N_("Building duplicate index: no books")
+
+        rebuild_metadata = rebuild_duplicate_index(settings, progress_callback=update_rebuild_progress)
+        self.progress = 0.85
+        self.message = N_("Finding duplicate groups")
+        duplicate_groups = get_duplicate_groups_from_index(
+            settings,
+            include_dismissed=False,
+            user_id=self.user_id,
+        )
+        self.result_count = len(duplicate_groups)
+        self.found_duplicate_groups = duplicate_groups
+
+        if self.stat in (STAT_CANCELLED, STAT_ENDED):
+            return
+
+        self.progress = 0.95
+        self.message = N_("Updating duplicate cache")
+        all_groups = get_duplicate_groups_from_index(settings, include_dismissed=True)
+        max_book_id = rebuild_metadata.get("max_book_id", 0)
+        update_duplicate_cache(all_groups, len(all_groups), max_book_id)
+        log.info(
+            "[duplicates] Duplicate cache updated (full scan): groups=%s max_book_id=%s",
+            len(all_groups),
+            max_book_id,
+        )
+
+    def _complete(self):
         self.progress = 1
         if self.full_scan:
             self.message = N_("Duplicate scan completed: %(count)s groups", count=self.result_count)

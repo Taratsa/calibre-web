@@ -41,6 +41,8 @@ import contextlib
 import hashlib
 import json
 import sqlite3
+import threading
+import time
 from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -56,6 +58,12 @@ log = logger.create()
 NORMALIZATION_VERSION = "duplicate-index-v1"
 MAX_INCREMENTAL_BOOK_IDS = 1000
 DUPLICATE_INDEX_REBUILD_BATCH_SIZE = 250
+# Post-ingest scans are debounced: one scan after the uploads pause for SCAN_DEBOUNCE_SECONDS, and never later than
+# SCAN_MAX_DELAY_SECONDS after the first change (a long import still gets regular scans).
+SCAN_DEBOUNCE_SECONDS = 20
+SCAN_MAX_DELAY_SECONDS = 120
+_pending_lock = threading.Lock()
+_pending = {"ids": set(), "first": None, "timer": None}
 
 _AWARE_MIN = datetime.min.replace(tzinfo=UTC)
 _AWARE_MAX = datetime.max.replace(tzinfo=UTC)
@@ -871,24 +879,53 @@ def queue_full_scan_if_stale():
         return False
 
 
-def notify_book_changed(book_ids):
-    """Post-ingest hook: mark the index pending and queue an incremental scan.
+def _flush_pending_scan():
+    """Debounce timer callback: queue ONE incremental scan for every book collected since the last one."""
+    with _pending_lock:
+        book_ids = sorted(_pending["ids"])
+        _pending["ids"] = set()
+        _pending["first"] = None
+        _pending["timer"] = None
+    if not book_ids:
+        return
+    try:
+        from cps.services.worker import STAT_WAITING, WorkerThread
+        from cps.tasks.duplicate_scan import TaskDuplicateScan
 
-    Called after books are added, edited or deleted so the duplicate index
-    catches up without blocking the request.
+        # A scan that is still waiting in the worker queue (the worker may be busy with an OCR run) takes the books too.
+        for _user, _num, _added, task, _hidden in WorkerThread.get_instance().tasks:
+            if isinstance(task, TaskDuplicateScan) and task.stat == STAT_WAITING and task.add_book_ids(book_ids):
+                return
+        WorkerThread.add(
+            "System", TaskDuplicateScan(full_scan=False, trigger_type="auto", book_ids=book_ids), hidden=True
+        )
+    except Exception as ex:
+        log.debug("[duplicates] Could not queue incremental scan: %s", str(ex))
+
+
+def notify_book_changed(book_ids):
+    """Post-ingest hook: mark the index pending and schedule one debounced incremental scan.
+
+    Called after books are added, edited or deleted so the duplicate index catches up without blocking the request.
+    The ids are collected and the scan is queued once ``SCAN_DEBOUNCE_SECONDS`` pass without another change (at the
+    latest ``SCAN_MAX_DELAY_SECONDS`` after the first), so a bulk import costs a few scans instead of one per book.
     """
     book_ids = [int(book_id) for book_id in (book_ids or []) if book_id is not None]
     if not book_ids:
         return
     mark_duplicate_index_pending("book changed")
-    try:
-        from cps.services.worker import WorkerThread
-        from cps.tasks.duplicate_scan import TaskDuplicateScan
-
-        task = TaskDuplicateScan(full_scan=False, trigger_type="auto", book_ids=book_ids)
-        WorkerThread.add("System", task, hidden=True)
-    except Exception as ex:
-        log.debug("[duplicates] Could not queue incremental scan: %s", str(ex))
+    now = time.monotonic()
+    with _pending_lock:
+        _pending["ids"].update(book_ids)
+        if _pending["first"] is None:
+            _pending["first"] = now
+        if _pending["timer"] is not None:
+            _pending["timer"].cancel()
+        delay = min(SCAN_DEBOUNCE_SECONDS, max(0.0, _pending["first"] + SCAN_MAX_DELAY_SECONDS - now))
+        timer = threading.Timer(delay, _flush_pending_scan)
+        timer.daemon = True
+        _pending["timer"] = timer
+        timer.start()
 
 
 def has_valid_duplicate_index_baseline(settings, candidate_book_ids=None):
