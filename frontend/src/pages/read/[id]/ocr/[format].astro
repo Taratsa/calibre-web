@@ -135,10 +135,11 @@ const ocrDescription = document && plainText
 
 <BaseLayout title={`${readHeading}: ${book.title}`} description={ocrDescription} canonical={`/read/${book.id}/ocr/${requestedFormat}/`} ogType="article" noindex={pending}>
   <script slot="head" is:inline>
-    // Applied before first paint so a stored text size never flashes. Keep the steps in sync with the page script.
+    // Applied before first paint so stored reader settings never flash. Keep the values in sync with the page script.
     try {
       var scale = parseFloat(localStorage.getItem('ocr-font-scale'));
       if ([0.85, 1, 1.15, 1.3, 1.5, 1.75].indexOf(scale) >= 0) document.documentElement.style.setProperty('--ocr-scale', String(scale));
+      if (localStorage.getItem('ocr-text-align') === 'justify') document.documentElement.setAttribute('data-ocr-align', 'justify');
     } catch (e) {}
   </script>
   <div class="ocr-reader">
@@ -146,10 +147,20 @@ const ocrDescription = document && plainText
       <a href={bookUrl}>← Kembali ke buku</a>
       <a href={originalUrl} target="_blank" rel="noopener noreferrer">Buka dokumen asli</a>
       {!pending && (
-        <div class="ocr-reader__fontsize" role="group" aria-label="Ukuran teks" data-fontsize>
-          <button type="button" data-fontsize-down aria-label="Perkecil teks">A−</button>
-          <button type="button" data-fontsize-reset aria-label="Atur ulang ukuran teks" title="Atur ulang ukuran teks">100%</button>
-          <button type="button" data-fontsize-up aria-label="Perbesar teks">A+</button>
+        <div class="ocr-reader__tools">
+          <div class="ocr-reader__segmented" role="group" aria-label="Ukuran teks" data-fontsize>
+            <button type="button" data-fontsize-down aria-label="Perkecil teks">A−</button>
+            <button type="button" data-fontsize-reset aria-label="Atur ulang ukuran teks" title="Atur ulang ukuran teks">100%</button>
+            <button type="button" data-fontsize-up aria-label="Perbesar teks">A+</button>
+          </div>
+          <div class="ocr-reader__segmented" role="group" aria-label="Perataan teks" data-align>
+            <button type="button" data-align-value="left" aria-label="Rata kiri" title="Rata kiri" aria-pressed="true">
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 5h14M3 9h9M3 13h14M3 17h9" /></svg>
+            </button>
+            <button type="button" data-align-value="justify" aria-label="Rata kiri-kanan" title="Rata kiri-kanan" aria-pressed="false">
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 5h14M3 9h14M3 13h14M3 17h14" /></svg>
+            </button>
+          </div>
         </div>
       )}
     </nav>
@@ -320,6 +331,26 @@ const ocrDescription = document && plainText
   }
 </script>
 
+<script>
+  const group = document.querySelector<HTMLElement>('[data-align]');
+  if (group) {
+    // Keep in sync with the inline pre-paint script in <head>. Left is the default and stores nothing.
+    const key = 'ocr-text-align';
+    const buttons = [...group.querySelectorAll<HTMLButtonElement>('[data-align-value]')];
+    const apply = (value: string) => {
+      if (value === 'justify') document.documentElement.setAttribute('data-ocr-align', 'justify');
+      else document.documentElement.removeAttribute('data-ocr-align');
+      for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.alignValue === value));
+      try {
+        if (value === 'justify') localStorage.setItem(key, value);
+        else localStorage.removeItem(key);
+      } catch {}
+    };
+    for (const button of buttons) button.addEventListener('click', () => apply(button.dataset.alignValue ?? 'left'));
+    apply(document.documentElement.getAttribute('data-ocr-align') === 'justify' ? 'justify' : 'left');
+  }
+</script>
+
 <style>
   .ocr-reader {
     max-width: 74ch;
@@ -337,12 +368,18 @@ const ocrDescription = document && plainText
     display: inline-flex;
     align-items: center;
   }
-  .ocr-reader__fontsize {
+  .ocr-reader__tools {
     display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
     align-items: center;
     margin-left: auto;
   }
-  .ocr-reader__fontsize button {
+  .ocr-reader__segmented {
+    display: inline-flex;
+    align-items: center;
+  }
+  .ocr-reader__segmented button {
     min-width: 2.75rem;
     min-height: 2.75rem;
     padding: 0 0.5rem;
@@ -352,24 +389,32 @@ const ocrDescription = document && plainText
     font: inherit;
     font-weight: 600;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
-  .ocr-reader__fontsize button + button {
+  .ocr-reader__segmented button + button {
     margin-left: -1px;
   }
-  .ocr-reader__fontsize button:first-child {
+  .ocr-reader__segmented button:first-child {
     border-radius: 4px 0 0 4px;
   }
-  .ocr-reader__fontsize button:last-child {
+  .ocr-reader__segmented button:last-child {
     border-radius: 0 4px 4px 0;
   }
-  .ocr-reader__fontsize button:hover:not(:disabled) {
+  .ocr-reader__segmented button:hover:not(:disabled) {
     background: var(--surface);
   }
-  .ocr-reader__fontsize button:disabled {
+  .ocr-reader__segmented button:disabled {
     color: var(--muted-soft);
     cursor: default;
   }
-  .ocr-reader__fontsize [data-fontsize-reset] {
+  .ocr-reader__segmented button[aria-pressed='true'] {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--inverse-fg);
+  }
+  .ocr-reader__segmented [data-fontsize-reset] {
     min-width: 4rem;
     font-weight: 400;
     font-variant-numeric: tabular-nums;
@@ -537,6 +582,11 @@ const ocrDescription = document && plainText
   .ocr-reader__content :global(p) {
     margin: 0 0 0.9em;
     text-wrap: pretty;
+  }
+  /* Justified text: lang="id" lets the browser hyphenate long words so lines do not open wide gaps. */
+  :global(html[data-ocr-align='justify']) .ocr-reader__content :global(p) {
+    text-align: justify;
+    hyphens: auto;
   }
   .ocr-reader__content :global(h1),
   .ocr-reader__content :global(h2),

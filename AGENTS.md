@@ -473,6 +473,12 @@ Two live search systems (plus the legacy advanced-search form):
 - Reader text spacing (`pages/read/[id]/ocr/[format].astro`): Tailwind's reset zeroes `p` margins, so
   `.ocr-reader__content p` sets `margin: 0 0 0.9em` (about 15 px gap). `.ocr-footnotes p` has its own tighter margin
   (0.35rem) with higher specificity and is unaffected; do not remove the `p` rule or the text runs together
+- Reader settings on the same page, kept in `localStorage` and applied by an inline `<head>` script before first paint
+  (no flash): text size `ocr-font-scale` (6 steps, 85-175%) and text alignment `ocr-text-align`. Alignment is a
+  two-button toggle (icons, `aria-pressed`): left (default, stores nothing) or justify, which sets
+  `data-ocr-align="justify"` on `<html>` and styles `p` with `text-align: justify; hyphens: auto` (the document is
+  `lang="id"`, so the browser can hyphenate). Only paragraphs are justified; headings, footnotes and `pre` keep their
+  alignment. Keep the allowed values in the inline script and the page script in sync
 - A PDF format whose file is not a PDF (68 MP3, 2 MP4, 8 saved Google Drive "virus scan" HTML pages were uploaded under
   the PDF format) gets `OcrNoTextError("File is not a PDF")` from `_check_pdf_file()` (cps/ocr_service.py, looks for
   `%PDF-` in the first KB). `/api/read/<id>/ocr/status/pdf`, the POST queue and the page answer 404, so the book page
