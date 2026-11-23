@@ -1,0 +1,49 @@
+---
+// The two search modes side by side. Each tab carries the current query, so switching mode re-runs the same words
+// in the other one ("reforma agraria" in the catalog becomes "reforma agraria" inside the books).
+export interface Props {
+  active: 'catalog' | 'text';
+  q?: string;
+}
+
+const { active, q = '' } = Astro.props;
+const query = q ? `?q=${encodeURIComponent(q)}` : '';
+const tabs = [
+  { key: 'catalog', label: 'Katalog', hint: 'judul, penulis, kategori', href: `/search/${query}` },
+  { key: 'text', label: 'Di dalam teks', hint: 'isi buku', href: `/search/text/${query}` },
+] as const;
+---
+
+<nav class="search-tabs" aria-label="Jenis pencarian">
+  {tabs.map((tab) => (
+    <a href={tab.href} aria-current={active === tab.key ? 'page' : undefined}>
+      <span class="search-tabs__label">{tab.label}</span>
+      <small class="search-tabs__hint">{tab.hint}</small>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .search-tabs { display: flex; gap: 0.25rem; margin: 0 0 1.25rem; border-bottom: 1px solid var(--border-subtle); }
+  .search-tabs a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .search-tabs a:hover { color: var(--fg); }
+  .search-tabs a:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; border-radius: 4px; }
+  .search-tabs a[aria-current='page'] { color: var(--fg); border-bottom-color: var(--fg); }
+  .search-tabs__label { font-size: 0.95rem; font-weight: 600; line-height: 1.2; }
+  .search-tabs__hint { font-size: 0.72rem; color: var(--muted-soft); line-height: 1.2; }
+  .search-tabs a[aria-current='page'] .search-tabs__hint { color: var(--muted); }
+  @media (max-width: 479px) {
+    .search-tabs a { flex: 1; align-items: center; padding: 0.35rem 0.5rem; text-align: center; }
+    .search-tabs__hint { display: none; }
+  }
+</style>

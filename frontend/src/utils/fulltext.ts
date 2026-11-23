@@ -16,17 +16,20 @@ const MAX_QUERY_WORDS = 12;
 // A pasted sentence rarely has every word in one passage: from this many plain words on, only QUORUM must match.
 const QUORUM_FROM_WORDS = 7;
 const QUORUM = 0.6;
+// Index order of the `fmt` attribute (cps/fulltext.py: FORMATS).
 const FORMATS = ['epub', 'pdf'] as const;
+
+export type TextFormat = (typeof FORMATS)[number];
 
 export class FulltextUnavailable extends Error {}
 
 export interface FulltextHit {
   bookId: number;
-  format: 'epub' | 'pdf';
+  format: TextFormat;
   /** Chunk text with matches wrapped in [ and ]; HTML-escaped by the caller. */
   snippet: string;
-  /** Chunk number of the passage within the book (chunks are about 900 characters, in reading order). */
-  chunk: number;
+  /** Where the passage sits in the book's text, 0 (start) to 100 (end), from its chunk number. */
+  progress: number;
 }
 
 export interface FulltextResult {
@@ -41,6 +44,12 @@ export interface FulltextResult {
 
 export function fulltextConfigured(): boolean {
   return MANTICORE_URL !== '';
+}
+
+/** A `format` query parameter as a filter; anything else means both formats. */
+export function parseTextFormat(value: string | null): TextFormat | null {
+  const normalized = (value ?? '').toLowerCase();
+  return FORMATS.find((format) => format === normalized) ?? null;
 }
 
 /**
@@ -116,11 +125,23 @@ async function snippet(chunkId: number, expression: string): Promise<string> {
   return typeof text === 'string' ? text : '';
 }
 
-async function run(expression: string, page: number, fuzzy: boolean): Promise<FulltextResult> {
+/** Highest chunk number of each (book, format) among `books`, so a chunk number can be shown as a share of the book. */
+async function lastChunks(books: number[]): Promise<Map<string, number>> {
+  const last = new Map<string, number>();
+  if (books.length === 0) return last;
+  const answer = await sql(
+    `select book, fmt, max(seq) as last from ${TABLE} where book in (${books.map((book) => Math.trunc(book)).join(',')}) ` +
+      `group by book, fmt limit ${books.length * FORMATS.length}`,
+  );
+  for (const row of answer.data ?? []) last.set(`${Number(row.book)}:${Number(row.fmt)}`, Number(row.last));
+  return last;
+}
+
+async function run(expression: string, page: number, fuzzy: boolean, format: TextFormat | null): Promise<FulltextResult> {
   // distance=1: every typo I tried ("perburuhn", "demokrasy", "indonesa") is found, while distance=2 made nonsense
   // such as "zzzxqj" or "asdfgh" match a real book.
   const options = `ranker=proximity_bm25${fuzzy ? ', fuzzy=1, distance=1' : ''}`;
-  const where = `match('${literal(expression)}')`;
+  const where = `match('${literal(expression)}')${format ? ` and fmt = ${FORMATS.indexOf(format)}` : ''}`;
   const offset = (Math.max(1, page) - 1) * PAGE_SIZE;
   const [rows, counted] = await Promise.all([
     sql(
@@ -131,25 +152,41 @@ async function run(expression: string, page: number, fuzzy: boolean): Promise<Fu
     sql(`select count(distinct book) as books from ${TABLE} where ${where} option ${fuzzy ? 'fuzzy=1, distance=1' : 'ranker=none'}`),
   ]);
   const found = rows.data ?? [];
-  const snippets = await Promise.all(found.map((row) => snippet(Number(row.id), expression)));
-  const hits = found.map((row, index): FulltextHit => ({
-    bookId: Number(row.book),
-    format: FORMATS[Number(row.fmt)] ?? 'pdf',
-    snippet: snippets[index] ?? '',
-    chunk: Number(row.seq),
-  }));
+  const [snippets, last] = await Promise.all([
+    Promise.all(found.map((row) => snippet(Number(row.id), expression))),
+    lastChunks(found.map((row) => Number(row.book))),
+  ]);
+  const hits = found.map((row, index): FulltextHit => {
+    const end = last.get(`${Number(row.book)}:${Number(row.fmt)}`) ?? 0;
+    return {
+      bookId: Number(row.book),
+      format: FORMATS[Number(row.fmt)] ?? 'pdf',
+      snippet: snippets[index] ?? '',
+      progress: end > 0 ? Math.min(100, Math.round((100 * Number(row.seq)) / end)) : 0,
+    };
+  });
   return { hits, total: Number(counted.data?.[0]?.books ?? 0), expression, fuzzy };
 }
 
 /**
- * Best passage per book for a search box. When the exact words match nothing the same query is retried with typo
- * tolerance (about 100-250 ms slower), so "perburuhn" still finds "perburuhan"; OCR damage inside the book text
- * cannot be repaired this way.
+ * Best passage per book for a search box, optionally in one format. When the exact words match nothing the same
+ * query is retried with typo tolerance (about 100-250 ms slower), so "perburuhn" still finds "perburuhan"; OCR damage
+ * inside the book text cannot be repaired this way.
  */
-export async function searchFulltext(raw: string, page: number): Promise<FulltextResult | null> {
+export async function searchFulltext(raw: string, page: number, format: TextFormat | null = null): Promise<FulltextResult | null> {
   const expression = matchExpression(raw);
   if (expression === null) return null;
-  const exact = await run(expression, page, false);
+  const exact = await run(expression, page, false, format);
   if (exact.total > 0 || page > 1) return exact;
-  return run(expression, page, true);
+  return run(expression, page, true, format);
+}
+
+/** Number of books that can be searched; null when the index cannot be read (the caller just omits the number). */
+export async function searchableBooks(): Promise<number | null> {
+  try {
+    const answer = await sql(`select count(distinct book) as books from ${TABLE} option ranker=none`);
+    return Number(answer.data?.[0]?.books ?? 0);
+  } catch {
+    return null;
+  }
 }

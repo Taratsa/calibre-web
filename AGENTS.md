@@ -168,9 +168,19 @@ Two live search systems (plus the legacy advanced-search form):
 - `cps/templates/feed.xml` supports a `link_query` base for those links
 
 ### Full-text search (inside the book text, Manticore)
-- `/search/text/` (Astro, SSR, `noindex`; sidebar link "Cari di dalam teks") searches the OCR/EPUB text itself and shows
-  the best passage per book with highlighted matches and a link to `/read/<id>/ocr/<fmt>/`. The catalog search
-  (`/search/`, titles/authors/tags) is separate and unchanged
+- `/search/text/` (Astro, SSR, `noindex`) searches the OCR/EPUB text itself and shows the best passage per book with
+  highlighted matches, where in the book it sits ("sekitar 45% dari buku", chunk number / last chunk of that format,
+  `lastChunks()`) and a link to `/read/<id>/ocr/<fmt>/`. Optional `format=pdf|epub` (radio group + removable chip;
+  anything else means both). The catalog search (`/search/`, titles/authors/tags) is separate and unchanged
+- **Search UI (shared)**: `components/SearchTabs.astro` ("Katalog" / "Di dalam teks") sits above the form on both pages and
+  carries the current `q` to the other mode, so the same words can be re-run. The sidebar box is ONE input with two
+  submit buttons ("Katalog" = form action `/search/`, also the Enter default; "Di dalam teks" = `formaction="/search/text/"`)
+  plus the "Pencarian lanjutan" link. The catalog results page links "Cari "<q>" di dalam teks"; the empty state says
+  the catalog only covers titles, authors and categories. The text start page shows example queries, a collapsible
+  syntax help (open only before the first search) and the number of searchable books (`searchableBooks()`, one cheap
+  query, start page only). Controls are at least 36-44 px high (measured at 390/820/1365); `autofocus` only on an empty
+  search. The advanced panel on `/search/` is grouped into fieldsets (Judul dan pengarang / Jenis buku / Urutan), shows
+  a count badge of active criteria on its summary, and has its own "Terapkan" button so the submit does not scroll away
 - Engine: **Manticore Search 32.1.3** (`manticore` service in `docker-compose.yml`, container `pustaka-manticore`,
   volume `manticore_data`, `mem_limit: 3g`). It has NO authentication, so it only joins the internal `search_net`
   network (Flask + Astro + Manticore, no route out, no published port); never publish 9308. The decision came from a

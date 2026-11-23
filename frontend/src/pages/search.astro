@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
+import SearchTabs from '~/components/SearchTabs.astro';
 import { localeLanguageName } from '~/data';
 import {
   SORT_KEYS,
@@ -43,10 +44,10 @@ const page = Math.min(Math.max(1, Number.parseInt(params.get('page') ?? '1', 10)
 const shown = matches.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
 // Keep the form open when any advanced field is in use, so the person sees why a result is narrow.
-const advancedOpen = params.get('advanced') === '1' || Boolean(
-  request.title || request.author || request.publisher || request.series || request.tag || request.lang ||
-  request.format || request.yearFrom != null || request.yearTo != null || request.sort !== 'relevance',
-);
+const advancedFields = [request.title, request.author, request.publisher, request.series, request.tag, request.lang, request.format];
+const advancedCount =
+  advancedFields.filter(Boolean).length + (request.yearFrom != null || request.yearTo != null ? 1 : 0) + (request.sort !== 'relevance' ? 1 : 0);
+const advancedOpen = params.get('advanced') === '1' || advancedCount > 0;
 
 function pageHref(target: number): string {
   const next = new URLSearchParams(params);
@@ -95,58 +96,73 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
 
 <BaseLayout title={title} description="Cari buku di Pustaka Taratsa." noindex>
   <div class="search-page">
-    <h1 class="search-title">Cari Buku</h1>
+    <h1 class="search-title">Cari</h1>
+    <SearchTabs active="catalog" q={request.q} />
 
     <form action="/search/" method="GET" role="search" class="search-form">
       <div class="search-form__row">
         <div class="search-form__input-wrap">
           <svg class="search-form__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" name="q" placeholder="Cari judul, penulis, kategori…" value={request.q} autofocus spellcheck="false" aria-label="Kata kunci" />
+          <input type="search" name="q" placeholder="Cari judul, penulis, kategori…" value={request.q} autofocus={!searched} autocomplete="off" spellcheck="false" aria-label="Kata kunci" />
         </div>
         <button type="submit" class="search-form__btn">Cari</button>
       </div>
-
       <details class="advanced" open={advancedOpen}>
-        <summary>Pencarian lanjutan</summary>
-        <div class="advanced__grid">
-          <label>Judul<input type="text" name="title" value={request.title} spellcheck="false" /></label>
-          <label>Penulis<input type="text" name="author" value={request.author} spellcheck="false" /></label>
-          <label>Penerbit<input type="text" name="publisher" value={request.publisher} spellcheck="false" /></label>
-          <label>Seri<input type="text" name="series" value={request.series} spellcheck="false" /></label>
-          <label>Kategori<input type="text" name="tag" value={request.tag} spellcheck="false" /></label>
-          <label>Bahasa
-            <select name="lang">
-              <option value="">Semua bahasa</option>
-              {facets.languages.map((facet) => (
-                <option value={facet.value} selected={request.lang === facet.value}>{languageName(facet.value)} ({formatCount.format(facet.count)})</option>
-              ))}
-            </select>
-          </label>
-          <label>Format
-            <select name="format">
-              <option value="">Semua format</option>
-              {facets.formats.map((facet) => (
-                <option value={facet.value} selected={request.format === facet.value}>{formatLabel(facet.value)} ({formatCount.format(facet.count)})</option>
-              ))}
-            </select>
-          </label>
-          <div class="advanced__years">
-            <label>Tahun terbit, dari<input type="number" name="from" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMin ?? '')} value={request.yearFrom ?? ''} /></label>
-            <label>sampai<input type="number" name="to" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMax ?? '')} value={request.yearTo ?? ''} /></label>
-          </div>
-          <label>Urutkan
-            <select name="sort">
-              {SORT_KEYS.map((key) => (
-                <option value={key} selected={request.sort === key}>{sortLabels[key]}</option>
-              ))}
-            </select>
-          </label>
+        <summary>
+          Pencarian lanjutan
+          {advancedCount > 0 && <span class="advanced__count" aria-label={`${advancedCount} kriteria aktif`}>{advancedCount}</span>}
+        </summary>
+        <div class="advanced__body">
+          <fieldset class="advanced__group">
+            <legend>Judul dan pengarang</legend>
+            <label>Judul<input type="text" name="title" value={request.title} autocomplete="off" spellcheck="false" /></label>
+            <label>Penulis<input type="text" name="author" value={request.author} autocomplete="off" spellcheck="false" /></label>
+            <label>Penerbit<input type="text" name="publisher" value={request.publisher} autocomplete="off" spellcheck="false" /></label>
+            <label>Seri<input type="text" name="series" value={request.series} autocomplete="off" spellcheck="false" /></label>
+            <label>Kategori<input type="text" name="tag" value={request.tag} autocomplete="off" spellcheck="false" /></label>
+          </fieldset>
+          <fieldset class="advanced__group">
+            <legend>Jenis buku</legend>
+            <label>Bahasa
+              <select name="lang">
+                <option value="">Semua bahasa</option>
+                {facets.languages.map((facet) => (
+                  <option value={facet.value} selected={request.lang === facet.value}>{languageName(facet.value)} ({formatCount.format(facet.count)})</option>
+                ))}
+              </select>
+            </label>
+            <label>Format
+              <select name="format">
+                <option value="">Semua format</option>
+                {facets.formats.map((facet) => (
+                  <option value={facet.value} selected={request.format === facet.value}>{formatLabel(facet.value)} ({formatCount.format(facet.count)})</option>
+                ))}
+              </select>
+            </label>
+            <div class="advanced__years">
+              <label>Tahun terbit, dari<input type="number" name="from" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMin ?? '')} value={request.yearFrom ?? ''} /></label>
+              <label>sampai<input type="number" name="to" min="1000" max="2100" inputmode="numeric" placeholder={String(facets.yearMax ?? '')} value={request.yearTo ?? ''} /></label>
+            </div>
+          </fieldset>
+          <fieldset class="advanced__group advanced__group--sort">
+            <legend>Urutan</legend>
+            <label>Urutkan
+              <select name="sort">
+                {SORT_KEYS.map((key) => (
+                  <option value={key} selected={request.sort === key}>{sortLabels[key]}</option>
+                ))}
+              </select>
+            </label>
+          </fieldset>
         </div>
         <p class="advanced__help">
-          Di kotak utama: <code>"frasa tepat"</code> mencari kata berurutan, <code>-kata</code> membuang buku yang memuat kata itu.
+          Kotak utama: <code>"frasa tepat"</code> mencari kata berurutan, <code>-kata</code> membuang buku yang memuat kata itu.
           Filter tahun hanya menyertakan buku yang tahun terbitnya diketahui.
         </p>
-        <p class="advanced__actions"><a href="/search/">Atur ulang</a></p>
+        <div class="advanced__actions">
+          <button type="submit" class="advanced__apply">Terapkan</button>
+          <a href={request.q ? `/search/?q=${encodeURIComponent(request.q)}` : '/search/'}>Atur ulang</a>
+        </div>
       </details>
     </form>
 
@@ -180,9 +196,15 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
       </nav>
     )}
 
+    {searched && request.q && (
+      <p class="search-crosslink">
+        Mencari kata di dalam isi buku? <a href={`/search/text/?q=${encodeURIComponent(request.q)}`}>Cari "{request.q}" di dalam teks</a>
+      </p>
+    )}
+
     {searched && matches.length === 0 && (
       <div id="search-empty" class="search-empty">
-        <p>Tidak ada buku yang cocok.</p>
+        <p>Tidak ada buku yang cocok dengan judul, penulis, atau kategorinya.</p>
         <p class="search-empty__suggest">
           {chips.length > 0 ? 'Longgarkan salah satu kriteria di atas, periksa ejaan, ' : 'Coba kata kunci lain, periksa ejaan, '}
           atau <a href="/">kembali ke beranda</a>.
@@ -193,7 +215,9 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
 </BaseLayout>
 
 <style>
-  .search-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem; }
+  .search-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; }
+  .search-crosslink { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--muted-strong); }
+  .search-crosslink a { display: inline-flex; align-items: center; min-height: 40px; color: var(--fg); }
 
   .search-form { margin-bottom: 1.25rem; }
   .search-form__row { display: flex; gap: 0.5rem; }
@@ -201,6 +225,7 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
   .search-form__icon { position: absolute; left: 0.75rem; color: var(--muted-soft); pointer-events: none; }
   .search-form__input-wrap input {
     width: 100%;
+    min-height: 44px;
     padding: 0.65rem 0.9rem 0.65rem 2.4rem;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -213,6 +238,7 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
   .advanced input:focus,
   .advanced select:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
   .search-form__btn {
+    min-height: 44px;
     padding: 0.65rem 1.3rem;
     background: var(--fg);
     color: var(--inverse-fg);
@@ -230,40 +256,78 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
   .advanced > summary {
     display: inline-flex;
     align-items: center;
-    min-height: 36px;
+    gap: 0.5rem;
+    min-height: 40px;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--muted-strong);
   }
   .advanced > summary:hover { color: var(--fg); }
+  .advanced > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
   .advanced[open] > summary { color: var(--fg); }
-  .advanced__grid {
+  .advanced__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.35rem;
+    height: 1.35rem;
+    padding: 0 0.35rem;
+    border-radius: 4px;
+    background: var(--fg);
+    color: var(--inverse-fg);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .advanced__body {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-    gap: 0.75rem 1rem;
-    margin-top: 0.75rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .advanced__group {
+    display: grid;
+    align-content: start;
+    gap: 0.75rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0.75rem 1rem 1rem;
     border: 1px solid var(--border-subtle);
     border-radius: 4px;
     background: var(--surface-2);
   }
+  .advanced__group legend { padding: 0 0.4rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
   .advanced label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; color: var(--muted-strong); }
   .advanced input,
   .advanced select {
-    min-height: 40px;
+    min-height: 44px;
     padding: 0.4rem 0.6rem;
     border: 1px solid var(--border);
     border-radius: 4px;
     background: var(--surface);
     color: var(--fg);
     font: inherit;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .advanced__years { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
   .advanced__help { margin: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
   .advanced__help code { padding: 0 0.25rem; border-radius: 2px; background: var(--surface-3); font-size: 0.95em; }
-  .advanced__actions { margin: 0.5rem 0 0; font-size: 0.85rem; }
+  .advanced__actions { display: flex; align-items: center; gap: 1rem; margin: 0.75rem 0 0; font-size: 0.9rem; }
+  .advanced__apply {
+    min-height: 44px;
+    padding: 0 1.3rem;
+    background: var(--fg);
+    color: var(--inverse-fg);
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .advanced__apply:hover { background: var(--muted-strong); }
+  .advanced__apply:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .advanced__actions a { display: inline-flex; align-items: center; min-height: 44px; color: var(--fg); }
 
   .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem; padding: 0; list-style: none; }
   .chips a {

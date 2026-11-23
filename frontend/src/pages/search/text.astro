@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Cover from '~/components/Cover.astro';
+import SearchTabs from '~/components/SearchTabs.astro';
 import { getAllBooks } from '~/data';
 import { authorPath } from '~/utils/author-url';
 import { bookPath } from '~/utils/book-url';
@@ -10,19 +11,22 @@ import {
   MAX_QUERY_LENGTH,
   PAGE_SIZE,
   fulltextConfigured,
+  parseTextFormat,
   searchFulltext,
+  searchableBooks,
   type FulltextResult,
 } from '~/utils/fulltext';
 
 const params = Astro.url.searchParams;
 const q = (params.get('q') ?? '').trim().slice(0, MAX_QUERY_LENGTH);
+const format = parseTextFormat(params.get('format'));
 const requestedPage = Math.min(MAX_PAGES, Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1));
 
 let result: FulltextResult | null = null;
 let unavailable = false;
 if (q) {
   try {
-    result = await searchFulltext(q, requestedPage);
+    result = await searchFulltext(q, requestedPage, format);
   } catch (error) {
     if (!(error instanceof FulltextUnavailable)) throw error;
     console.error(`[fulltext] ${error.message}`);
@@ -35,6 +39,8 @@ if (unavailable) {
   Astro.response.status = 503;
   Astro.response.headers.set('Cache-Control', 'no-store');
 }
+// Only the start page shows the size of the collection; a result page does not need the extra query.
+const searchable = q || !fulltextConfigured() ? null : await searchableBooks();
 
 const booksById = new Map(getAllBooks().map((book) => [book.id, book]));
 // Books removed from the catalog since the last index rebuild are dropped here, not shown as dead links.
@@ -47,10 +53,15 @@ const count = new Intl.NumberFormat('id-ID');
 const totalPages = result ? Math.min(MAX_PAGES, Math.ceil(result.total / PAGE_SIZE)) : 0;
 const page = Math.min(requestedPage, Math.max(1, totalPages));
 
-function pageHref(target: number): string {
-  const next = new URLSearchParams({ q });
-  if (target > 1) next.set('page', String(target));
-  return `/search/text/?${next.toString()}`;
+function hrefFor(next: { q?: string; format?: string | null; page?: number }): string {
+  const target = new URLSearchParams();
+  const query = next.q ?? q;
+  if (query) target.set('q', query);
+  const wanted = next.format === undefined ? format : next.format;
+  if (wanted) target.set('format', wanted);
+  if (next.page && next.page > 1) target.set('page', String(next.page));
+  const text = target.toString();
+  return `/search/text/${text ? `?${text}` : ''}`;
 }
 
 const escapeHtml = (value: string) =>
@@ -59,25 +70,54 @@ const escapeHtml = (value: string) =>
 // not Manticore's are rare but possible: the worst case is an extra <mark> around a bracketed word).
 const highlight = (snippet: string) =>
   escapeHtml(snippet).replace(/\[([^\[\]]+)\]/g, '<mark>$1</mark>').replace(/^\s*\.\.\.\s*/, '… ').replace(/\s*\.\.\.\s*$/, ' …');
-const where = (hit: { chunk: number }) => (hit.chunk === 0 ? 'awal buku' : `bagian ke-${count.format(hit.chunk + 1)}`);
+const where = (progress: number) => (progress <= 2 ? 'awal buku' : progress >= 98 ? 'akhir buku' : `sekitar ${progress}% dari buku`);
+
+const formatLabels = { epub: 'EPUB', pdf: 'PDF' } as const;
+const examples = ['reforma agraria', '"hak asasi manusia"', 'buruh mogok -komunis', 'masyarakat adat'];
 const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
 ---
 
 <BaseLayout title={title} description="Cari kata dan frasa di dalam teks buku di Pustaka Taratsa." noindex>
   <div class="ft-page">
-    <h1 class="ft-title">Cari di dalam teks buku</h1>
-    <p class="ft-lead">Mencari kata di dalam isi buku, bukan hanya judul dan penulis. Untuk judul, penulis, dan kategori, pakai <a href="/search/">pencarian katalog</a>.</p>
+    <h1 class="ft-title">Cari</h1>
+    <SearchTabs active="text" q={q} />
 
     <form action="/search/text/" method="GET" role="search" class="ft-form">
       <div class="ft-form__row">
-        <input type="search" name="q" placeholder='Contoh: reforma agraria, "hak asasi manusia", buruh -komunis' value={q} maxlength={MAX_QUERY_LENGTH} autofocus spellcheck="false" aria-label="Kata atau frasa di dalam buku" />
+        <input type="search" name="q" placeholder="Kata atau frasa di dalam buku…" value={q} maxlength={MAX_QUERY_LENGTH} autofocus={!q} autocomplete="off" spellcheck="false" aria-label="Kata atau frasa di dalam buku" aria-describedby="ft-help" />
         <button type="submit">Cari</button>
       </div>
-      <p class="ft-help">
-        Beberapa kata: semuanya harus ada di satu bagian. <code>"frasa tepat"</code> mencari kata berurutan, <code>-kata</code> membuang bagian yang memuatnya.
-        Hanya buku yang teksnya sudah diproses (OCR) yang bisa dicari.
-      </p>
+      <div class="ft-form__filters" role="group" aria-label="Format">
+        <span class="ft-form__filters-label">Cari di:</span>
+        <label><input type="radio" name="format" value="" checked={!format} /> Semua</label>
+        <label><input type="radio" name="format" value="pdf" checked={format === 'pdf'} /> PDF</label>
+        <label><input type="radio" name="format" value="epub" checked={format === 'epub'} /> EPUB</label>
+      </div>
+      <details class="ft-help" id="ft-help" open={!q}>
+        <summary>Cara menulis pencarian</summary>
+        <ul>
+          <li><code>buruh mogok</code>: semua kata harus ada di satu bagian buku.</li>
+          <li><code>"hak asasi manusia"</code>: kata-kata itu harus berurutan, persis begitu.</li>
+          <li><code>buruh -komunis</code>: buang bagian yang memuat kata setelah tanda minus. Berlaku juga untuk <code>-"frasa"</code>.</li>
+          <li>Kalimat panjang (7 kata atau lebih) cukup cocok sebagian, jadi bisa ditempel dari buku.</li>
+          <li>Tidak ada pencarian bentuk dasar: <code>buruh</code> tidak menemukan <code>perburuhan</code>. Salah ketik satu huruf dimaafkan bila tidak ada yang persis sama.</li>
+        </ul>
+      </details>
     </form>
+
+    {!q && fulltextConfigured() && (
+      <section class="ft-start" aria-labelledby="ft-examples">
+        <h2 id="ft-examples">Coba</h2>
+        <ul class="ft-examples">
+          {examples.map((example) => (
+            <li><a href={hrefFor({ q: example, format: null })}>{example}</a></li>
+          ))}
+        </ul>
+        {searchable !== null && searchable > 0 && (
+          <p class="ft-start__note">Mencari di isi {count.format(searchable)} buku yang teksnya sudah diproses. Buku yang belum diproses (OCR) belum bisa dicari di sini; cari judulnya lewat tab Katalog.</p>
+        )}
+      </section>
+    )}
 
     {!fulltextConfigured() && q && (
       <div class="ft-notice" role="status"><p>Pencarian di dalam teks belum dihidupkan di server ini.</p></div>
@@ -91,6 +131,12 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
 
     {q && result === null && !unavailable && fulltextConfigured() && (
       <div class="ft-empty"><p>Tuliskan minimal satu kata yang ingin dicari.</p></div>
+    )}
+
+    {format && (
+      <ul class="ft-chips" aria-label="Kriteria aktif">
+        <li><a href={hrefFor({ format: null })} title="Hapus kriteria ini">Format: {formatLabels[format]} <span aria-hidden="true">×</span></a></li>
+      </ul>
     )}
 
     {result && result.total > 0 && (
@@ -119,7 +165,8 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
               )}
               <p class="ft-result__snippet" set:html={highlight(hit.snippet)} />
               <p class="ft-result__meta">
-                {where(hit)} ·
+                <span>{where(hit.progress)}</span>
+                <span aria-hidden="true">·</span>
                 <a href={`/read/${book.id}/ocr/${hit.format}/`}>Baca teks ({hit.format.toUpperCase()})</a>
               </p>
             </div>
@@ -130,41 +177,44 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
 
     {totalPages > 1 && (
       <nav class="ft-pager" aria-label="Halaman hasil">
-        {page > 1 ? <a href={pageHref(page - 1)} rel="prev">← Sebelumnya</a> : <span aria-disabled="true">← Sebelumnya</span>}
+        {page > 1 ? <a href={hrefFor({ page: page - 1 })} rel="prev">← Sebelumnya</a> : <span aria-disabled="true">← Sebelumnya</span>}
         <span class="ft-pager__where">Halaman {page} / {totalPages}</span>
-        {page < totalPages ? <a href={pageHref(page + 1)} rel="next">Selanjutnya →</a> : <span aria-disabled="true">Selanjutnya →</span>}
+        {page < totalPages ? <a href={hrefFor({ page: page + 1 })} rel="next">Selanjutnya →</a> : <span aria-disabled="true">Selanjutnya →</span>}
       </nav>
     )}
 
     {result && result.total === 0 && (
       <div class="ft-empty" id="ft-empty">
-        <p>Tidak ada buku yang memuat kata itu.</p>
-        <p class="ft-empty__suggest">Periksa ejaan, kurangi jumlah kata, atau coba <a href={`/search/?q=${encodeURIComponent(q)}`}>pencarian katalog</a>.</p>
+        <p>Tidak ada buku yang memuat kata itu{format ? ` dalam format ${formatLabels[format]}` : ''}.</p>
+        <p class="ft-empty__suggest">
+          {format && <><a href={hrefFor({ format: null })}>Cari di semua format</a>, </>}
+          periksa ejaan, kurangi jumlah kata, atau coba <a href={`/search/?q=${encodeURIComponent(q)}`}>pencarian katalog</a>.
+        </p>
       </div>
     )}
   </div>
 </BaseLayout>
 
 <style>
-  .ft-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.25rem; }
-  .ft-lead { margin: 0 0 1rem; font-size: 0.9rem; color: var(--muted-strong); }
-  .ft-lead a { color: var(--fg); }
+  .ft-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; }
 
   .ft-form { margin-bottom: 1.25rem; }
   .ft-form__row { display: flex; gap: 0.5rem; }
   .ft-form__row input {
     flex: 1;
     min-width: 0;
+    min-height: 44px;
     padding: 0.65rem 0.9rem;
     border: 1px solid var(--border);
     border-radius: 4px;
     font: inherit;
-    font-size: 0.95rem;
+    font-size: 1rem;
     background: var(--surface);
     color: var(--fg);
   }
   .ft-form__row input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
   .ft-form__row button {
+    min-height: 44px;
     padding: 0.65rem 1.3rem;
     background: var(--fg);
     color: var(--inverse-fg);
@@ -177,8 +227,38 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
     white-space: nowrap;
   }
   .ft-form__row button:hover { background: var(--muted-strong); }
-  .ft-help { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .ft-form__row button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .ft-form__filters { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; margin-top: 0.6rem; font-size: 0.85rem; color: var(--muted-strong); }
+  .ft-form__filters-label { color: var(--muted); }
+  .ft-form__filters label { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 36px; cursor: pointer; }
+  .ft-form__filters input { width: 1.05rem; height: 1.05rem; accent-color: var(--fg); }
+
+  .ft-help { margin-top: 0.4rem; font-size: 0.82rem; color: var(--muted-strong); }
+  .ft-help > summary { display: inline-flex; align-items: center; min-height: 36px; cursor: pointer; font-weight: 500; }
+  .ft-help > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  .ft-help ul { margin: 0.25rem 0 0; padding: 0.75rem 1rem 0.75rem 1.75rem; background: var(--surface-2); border: 1px solid var(--border-subtle); border-radius: 4px; line-height: 1.6; }
+  .ft-help li + li { margin-top: 0.25rem; }
   .ft-help code { padding: 0 0.25rem; border-radius: 2px; background: var(--surface-3); font-size: 0.95em; }
+
+  .ft-start { margin: 1.5rem 0; }
+  .ft-start h2 { margin: 0 0 0.5rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .ft-examples { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+  .ft-examples a, .ft-chips a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 36px;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .ft-examples a:hover, .ft-chips a:hover { background: var(--surface-3); }
+  .ft-start__note { margin: 1rem 0 0; font-size: 0.82rem; color: var(--muted); max-width: 42rem; }
+  .ft-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem; padding: 0; list-style: none; }
 
   .ft-status {
     margin: 0 0 1rem;
@@ -203,8 +283,8 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
   .ft-result__authors a:hover { text-decoration: underline; }
   .ft-result__snippet { margin: 0.4rem 0 0; font-size: 0.88rem; line-height: 1.55; overflow-wrap: anywhere; }
   .ft-result__snippet :global(mark) { background: var(--mark-bg); color: var(--mark-fg); border-radius: 2px; padding: 0 0.1em; font-weight: 600; }
-  .ft-result__meta { margin: 0.4rem 0 0; font-size: 0.78rem; color: var(--muted); }
-  .ft-result__meta a { color: var(--fg); }
+  .ft-result__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem 0.5rem; margin: 0.4rem 0 0; font-size: 0.78rem; color: var(--muted); }
+  .ft-result__meta a { display: inline-flex; align-items: center; min-height: 32px; color: var(--fg); }
 
   .ft-pager { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin: 2rem 0 0.5rem; font-size: 0.9rem; }
   .ft-pager a, .ft-pager span[aria-disabled] {
@@ -226,7 +306,7 @@ const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
 
   @media (max-width: 479px) {
     .ft-form__row { flex-direction: column; }
-    .ft-form__row button { min-height: 44px; }
+    .ft-form__row button { min-height: 48px; }
     .ft-result { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.75rem; }
   }
 </style>
