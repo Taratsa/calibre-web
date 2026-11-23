@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import BookLayout from '~/layouts/BookLayout.astro';
 import Cover from '~/components/Cover.astro';
+import BookGrid from '~/components/BookGrid.astro';
 import { getAllBooks, getAllCategories, formatBytes, getShelves } from '~/data';
 import type { BookDetail } from '~/data/types';
 import { authorPath } from '~/utils/author-url';
@@ -112,6 +113,10 @@ const textFacts = text
       `lebih panjang dari ${text.longer_than}% buku di pustaka ini`,
     ].join(' · ')
   : '';
+
+// "Buku serupa": ids from the corpus rebuild, resolved against the live catalog (a book removed since is dropped).
+const booksById = new Map(getAllBooks().map(b => [b.id, b]));
+const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(otherId) ?? []);
 ---
 
 <BookLayout book={book} description={cleanComment || undefined}>
@@ -236,6 +241,14 @@ const textFacts = text
       )}
     </div>
   </article>
+
+  {similarBooks.length > 0 && (
+    <section class="similar-books">
+      <h2 class="shelves-heading">Buku serupa</h2>
+      <p class="similar-books__note">Dipilih dari kemiripan kata-kata khas di dalam teks.</p>
+      <BookGrid books={similarBooks} />
+    </section>
+  )}
 </BookLayout>
 
 <style is:global>

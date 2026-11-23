@@ -324,6 +324,15 @@ Two live search systems (plus the legacy advanced-search form):
   line). Only the top `BOOK_CANDIDATES` words of a book are scored for `distinct` (150 matched the full ranking in
   99.8% of 900 books). Reading time = words / 200 per minute. Repeated page headers show up as phrases. New OCR text
   appears only after the next corpus rebuild + `./build-frontend.sh`; changing a rule -> bump `ANALYSIS_VERSION`
+- "Buku serupa" (book page, below the article, rendered with `BookGrid`): `profile.similar` = up to 6 `[book id, score]`
+  from `CorpusBuilder._similar_books()`: cosine similarity of tf-idf vectors over each book's `BOOK_CANDIDATES` words
+  (weight `(1 + ln count) x ln(books / books using the word)`; words in more than `SIMILAR_MAX_DOCUMENT_SHARE` of the
+  books are dropped). Scores below `SIMILAR_MIN_SCORE` (0.10) are not shown; scores at or above `SIMILAR_MAX_SCORE`
+  (0.85) are other copies/editions of the same text and are skipped (25% of sampled books had one). At least
+  `SIMILAR_BOOKS_MIN_SHOWN` matches or the section is hidden. Quality, measured on 400 books against Calibre
+  categories: a neighbour at >= 0.10 shares a Kategori 37% of the time (random pair 3.7%), 54-66% above 0.30. It
+  compares TEXT, so a different-language book or a book with little text matches poorly; the page resolves ids
+  against `books.json`, so a removed book is dropped. Pure Python inverted index, about 1.5 min for the library
 - The corpus is built from the full cached texts, one document per book (EPUB wins over PDF). Word counts and
   document frequency are exact; the n-gram tables are capped at `MAX_NGRAM_ENTRIES` and flag `approximate_ngrams`
   when singletons had to be dropped. Takes ~1 minute and ~0.5 GB for ~1,000 books

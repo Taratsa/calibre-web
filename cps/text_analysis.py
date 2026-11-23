@@ -14,12 +14,12 @@ import json
 import math
 import re
 import statistics
-from collections import Counter
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from functools import cache
 from pathlib import Path
 
-ANALYSIS_VERSION = 4
+ANALYSIS_VERSION = 5
 
 CORPUS_WORDS = 50
 CORPUS_NGRAMS = 30
@@ -39,6 +39,14 @@ BOOK_CANDIDATES = 200
 BOOK_PHRASES = 8
 BOOK_PHRASE_MIN_COUNT = 3
 BOOK_PHRASES_MIN_SHOWN = 3
+# Similar books: cosine similarity of tf-idf vectors over the candidate words. Measured on 400 sampled books (8,061
+# in the library): a neighbour at >= 0.10 shares a Kategori with the book 37% of the time (a random pair: 3.7%), and 54-66%
+# above 0.30. 25% of books have a near-copy at >= 0.85 (another edition or scan), which is not a "similar book".
+SIMILAR_BOOKS = 6
+SIMILAR_BOOKS_MIN_SHOWN = 3
+SIMILAR_MIN_SCORE = 0.10
+SIMILAR_MAX_SCORE = 0.85
+SIMILAR_MAX_DOCUMENT_SHARE = 0.10
 # An n-gram seen once says nothing about a text, so it never reaches the ranking.
 MIN_NGRAM_COUNT = 2
 MTLD_THRESHOLD = 0.72
@@ -288,14 +296,57 @@ class CorpusBuilder:
         ranked = [(gram, count) for gram, count in grams if count >= MIN_NGRAM_COUNT]
         return [[gram, count] for gram, count in ranked[:CORPUS_NGRAMS]]
 
+    def _similar_books(self) -> dict[int, list[list[object]]]:
+        """The most similar books of every book: cosine similarity of tf-idf vectors over each book's candidate words.
+
+        A word used by more than ``SIMILAR_MAX_DOCUMENT_SHARE`` of the books (among their candidate words) says nothing
+        about topic and is left out. Matches at or above ``SIMILAR_MAX_SCORE`` are other copies or editions of the same
+        text, not similar books, so they are skipped.
+        """
+        documents = len(self._books)
+        frequency = Counter(word for book in self._books.values() for word, _ in book.candidates)
+        ceiling = documents * SIMILAR_MAX_DOCUMENT_SHARE
+        vectors: dict[int, dict[str, float]] = {}
+        postings: dict[str, list[tuple[int, float]]] = {}
+        for book_id, book in self._books.items():
+            weights = {
+                word: (1 + math.log(count)) * math.log(documents / frequency[word])
+                for word, count in book.candidates
+                if 2 <= frequency[word] <= ceiling
+            }
+            norm = math.sqrt(sum(weight * weight for weight in weights.values()))
+            if not norm:
+                continue
+            vectors[book_id] = {word: weight / norm for word, weight in weights.items()}
+            for word, weight in vectors[book_id].items():
+                postings.setdefault(word, []).append((book_id, weight))
+        similar: dict[int, list[list[object]]] = {}
+        for book_id, vector in vectors.items():
+            scores: defaultdict[int, float] = defaultdict(float)
+            for word, weight in vector.items():
+                for other, other_weight in postings[word]:
+                    scores[other] += weight * other_weight
+            ranked = sorted(
+                (
+                    (score, other)
+                    for other, score in scores.items()
+                    if other != book_id and SIMILAR_MIN_SCORE <= score < SIMILAR_MAX_SCORE
+                ),
+                reverse=True,
+            )[:SIMILAR_BOOKS]
+            if len(ranked) >= SIMILAR_BOOKS_MIN_SHOWN:
+                similar[book_id] = [[other, round(score, 2)] for score, other in ranked]
+        return similar
+
     def book_text(self) -> dict[int, dict[str, object]]:
-        """Per-book profile: length, most frequent words, most distinctive words and key phrases.
+        """Per-book profile: length, most frequent and distinctive words, key phrases and similar books.
 
         Needs the final document frequencies, so call it after the last ``add``. ``longer_than`` is the share of
         the corpus's books (in percent) that have fewer words.
         """
         documents = len(self.lengths)
         lengths = sorted(self.lengths)
+        similar = self._similar_books()
         profiles: dict[int, dict[str, object]] = {}
         for book_id, book in self._books.items():
             enough = len(book.candidates) >= BOOK_WORDS_MIN_SHOWN
@@ -312,6 +363,7 @@ class CorpusBuilder:
                 if len(distinct) >= BOOK_WORDS_MIN_SHOWN
                 else [],
                 "phrases": book.phrases,
+                "similar": similar.get(book_id, []),
             }
         return profiles
 

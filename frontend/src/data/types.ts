@@ -52,6 +52,8 @@ export interface BookText {
   distinct: [string, number][];
   /** [phrase, count]: key two- and three-word phrases. */
   phrases: [string, number][];
+  /** [book id, similarity 0-1]: the most similar books by distinctive words, best first; empty when none is close enough. */
+  similar: [number, number][];
 }
 
 export interface Author { id: number; name: string; sort: string }
