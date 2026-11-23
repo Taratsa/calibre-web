@@ -17,7 +17,7 @@ def rebuild_corpus() -> int:
     """Rebuild the corpus statistics from every book with cached text; returns the number of books used.
 
     Needs an app context. One document per book goes in, so a book with both formats counts once (as its EPUB: the
-    rows sort EPUB before PDF).
+    rows sort EPUB before PDF). Each book carries its authors for the per-author word clouds.
     """
     rows = (
         calibre_db.session.query(db.Books.id, db.Books.title, db.Books.path, db.Data.format, db.Data.name)
@@ -26,10 +26,15 @@ def rebuild_corpus() -> int:
         .order_by(db.Books.id, db.Data.format)
         .all()
     )
+    authors: dict[int, list[tuple[int, str]]] = {}
+    for book_id, author_id, name in calibre_db.session.query(
+        db.books_authors_link.c.book, db.Authors.id, db.Authors.name
+    ).join(db.Authors, db.Authors.id == db.books_authors_link.c.author):
+        authors.setdefault(int(book_id), []).append((int(author_id), str(name)))
     entries: dict[int, tuple[SimpleNamespace, SimpleNamespace, str]] = {}
     for book_id, title, path, book_format, name in rows:
         book_format = str(book_format).upper()
-        book = SimpleNamespace(id=int(book_id), title=str(title), path=str(path))
+        book = SimpleNamespace(id=int(book_id), title=str(title), path=str(path), authors=authors.get(int(book_id), []))
         entries.setdefault(book.id, (book, SimpleNamespace(format=book_format, name=str(name)), book_format))
     return build_corpus(entries.values())
 

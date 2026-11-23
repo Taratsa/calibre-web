@@ -1,0 +1,74 @@
+---
+import type { AuthorText } from '~/data/types';
+
+interface Props {
+  text: AuthorText;
+}
+
+const { text } = Astro.props;
+const number = new Intl.NumberFormat('id-ID');
+// Alphabetical, size on a log scale so one very common word does not shrink the rest to nothing.
+const logs = text.cloud.map(([, count]) => Math.log(count));
+const low = Math.min(...logs);
+const span = Math.max(Math.max(...logs) - low, 1e-9);
+const words = text.cloud
+  .map(([word, count, books]) => ({ word, count, books, weight: (Math.log(count) - low) / span }))
+  .sort((a, b) => a.word.localeCompare(b.word, 'id'));
+const tier = (weight: number) => (weight > 0.66 ? 'high' : weight > 0.33 ? 'mid' : 'low');
+---
+
+<section class="author-cloud" aria-labelledby="author-cloud-heading">
+  <h2 id="author-cloud-heading">Kata khas dalam buku-bukunya</h2>
+  <p class="author-cloud__note">
+    Dari {number.format(text.books)} buku yang teksnya sudah diproses. Kata yang sering dipakai pengarang ini
+    tetapi jarang di buku lain; ukuran menunjukkan frekuensi, arahkan kursor untuk jumlahnya.
+  </p>
+  <ul class="author-cloud__words">
+    {words.map((w) => (
+      <li data-tier={tier(w.weight)} style={`--w:${w.weight.toFixed(3)}`} title={`${number.format(w.count)} kali, di ${number.format(w.books)} dari ${number.format(text.books)} buku`}>{w.word}</li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .author-cloud {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    background: var(--surface);
+  }
+  .author-cloud h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+  }
+  .author-cloud__note {
+    margin: 0 0 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .author-cloud__words {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.25;
+  }
+  .author-cloud__words li {
+    font-size: calc(0.8125rem + var(--w) * 1.5rem);
+    font-weight: 500;
+    overflow-wrap: anywhere;
+    cursor: default;
+  }
+  .author-cloud__words li[data-tier='high'] { color: var(--fg); font-weight: 700; }
+  .author-cloud__words li[data-tier='mid'] { color: var(--muted-strong); }
+  .author-cloud__words li[data-tier='low'] { color: var(--muted); }
+  @media (max-width: 640px) {
+    .author-cloud { padding: 0.75rem 1rem; }
+    .author-cloud__words li { font-size: calc(0.75rem + var(--w) * 1rem); }
+  }
+</style>

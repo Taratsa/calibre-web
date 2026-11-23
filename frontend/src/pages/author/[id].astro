@@ -2,7 +2,8 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import Pagination from '~/components/Pagination.astro';
-import { getAllAuthors, booksByAuthor, paginate } from '~/data';
+import AuthorCloud from '~/components/AuthorCloud.astro';
+import { getAllAuthors, booksByAuthor, paginate, authorText } from '~/data';
 import { authorByPathSegment, authorPath } from '~/utils/author-url';
 
 const { id } = Astro.params;
@@ -13,6 +14,7 @@ const author = resolvedAuthor && getAllAuthors().find((candidate) => candidate.i
 if (!author) return new Response(null, { status: 404 });
 const baseUrl = `${authorPath(author)}/`;
 
+const cloud = authorText(author.id);
 const all = booksByAuthor(author.id).sort((a, b) =>
   (b.timestamp || '').localeCompare(a.timestamp || '')
 );
@@ -37,6 +39,8 @@ const jsonLd = {
   <p><a href="/author/">‹ Semua pengarang</a></p>
   <h1>{author.name}</h1>
   <p>{total} buku oleh pengarang ini.</p>
+
+  {cloud && <AuthorCloud text={cloud} />}
 
   <BookGrid books={items} />
 

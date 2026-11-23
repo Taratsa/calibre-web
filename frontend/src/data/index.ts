@@ -1,4 +1,4 @@
-import type { BookSummary, BookDetail, Author, SeriesEntry, Publisher, Category, Language, RatingBucket } from './types';
+import type { BookSummary, BookDetail, Author, AuthorText, SeriesEntry, Publisher, Category, Language, RatingBucket } from './types';
 
 import booksIndex from '~/data/books.json';
 import authorsIndex from '~/data/authors.json';
@@ -9,6 +9,7 @@ import languagesIndex from '~/data/languages.json';
 import ratingsIndex from '~/data/ratings.json';
 import shelvesIndex from '~/data/shelves.json';
 import popularIndex from '~/data/popular.json';
+import authorTextIndex from '~/data/author-text.json';
 
 export function getAllBooks(): BookSummary[] {
   return booksIndex as BookSummary[];
@@ -29,6 +30,11 @@ for (const book of books) {
 
 export function getAllAuthors(): Author[] {
   return authorsIndex as Author[];
+}
+
+/** The word cloud of an author's books, or null when the author has none (too few books with text). */
+export function authorText(authorId: number): AuthorText | null {
+  return (authorTextIndex as Record<string, AuthorText>)[authorId] ?? null;
 }
 
 export function getAllSeries(): SeriesEntry[] {

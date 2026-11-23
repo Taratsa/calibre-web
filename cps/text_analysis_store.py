@@ -37,9 +37,10 @@ def _corpus_path() -> Path:
 def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
     """Aggregate the cached text of the given book formats into the stored corpus statistics.
 
-    Callers pass one entry per book. Entries without cached text are skipped. Returns the number of documents used.
-    Writes ``corpus.json`` (public, no per-book data) and ``book_text.json`` (a text profile per book id, read by the
-    frontend seed for the "Tentang teks" block on each book page).
+    Callers pass one entry per book; a book may carry ``authors`` (a list of ``(id, name)``) for the author clouds.
+    Entries without cached text are skipped. Returns the number of documents used. Writes ``corpus.json`` (public, no
+    per-book data), ``book_text.json`` (a text profile per book id, read by the frontend seed for the "Tentang teks"
+    block on each book page) and ``author_text.json`` (a word cloud per author, for the author pages).
     """
     builder = CorpusBuilder()
     for book, data, book_format in entries:
@@ -47,12 +48,13 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
             document = extract_book_ocr(book, data, book_format, allow_extract=False)
         except (OcrNotReadyError, OcrBookNotFoundError, OcrUnavailableError):
             continue
-        builder.add(document.markdown_html, book_format, book.id)
+        builder.add(document.markdown_html, book_format, book.id, getattr(book, "authors", ()))
     built_at = datetime.now(UTC).isoformat(timespec="seconds")
     directory = _analysis_directory()
     stored = {
         "corpus.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "result": builder.result()},
         "book_text.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "books": builder.book_text()},
+        "author_text.json": {"version": ANALYSIS_VERSION, "built_at": built_at, "authors": builder.author_text()},
     }
     for name, payload in stored.items():
         path = directory / name

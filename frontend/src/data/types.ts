@@ -58,6 +58,14 @@ export interface BookText {
 
 export interface Author { id: number; name: string; sort: string }
 
+/** Word cloud of an author's books (author pages). */
+export interface AuthorText {
+  /** Books of the author that have text. */
+  books: number;
+  /** [word, count, books using it]: the author's characteristic words, best first. */
+  cloud: [string, number, number][];
+}
+
 export interface SeriesEntry { id: number; name: string; sort: string | null }
 
 export interface Publisher { id: number; name: string; sort: string | null }

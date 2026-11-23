@@ -15,6 +15,7 @@ import math
 import re
 import statistics
 from collections import Counter, defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass
 from functools import cache
 from pathlib import Path
@@ -39,6 +40,34 @@ BOOK_CANDIDATES = 200
 BOOK_PHRASES = 8
 BOOK_PHRASE_MIN_COUNT = 3
 BOOK_PHRASES_MIN_SHOWN = 3
+# Author pages: a cloud of the words that are frequent across the author's books and rare elsewhere (summed count x
+# log(documents / document frequency)). Only authors with AUTHOR_MIN_BOOKS books that have text get one (a single
+# book would repeat its own page), a word must occur in at least AUTHOR_WORD_MIN_BOOKS books and in at least
+# AUTHOR_WORD_MIN_SHARE of the author's books (so it is the author's vocabulary, not one book's subject or the OCR
+# debris of a few scans: "ber", "meng", "ter" alone topped Pramoedya's 80 books), the author's own name is left out,
+# and fewer than AUTHOR_WORDS_MIN_SHOWN surviving words means no cloud.
+AUTHOR_WORDS = 40
+AUTHOR_MIN_BOOKS = 2
+AUTHOR_WORD_MIN_BOOKS = 2
+AUTHOR_WORD_MIN_SHARE = 0.25
+AUTHOR_WORDS_MIN_SHOWN = 12
+# Catalog placeholders in the author field: a "cloud" over unrelated books of "Tidak diketahui" says nothing.
+AUTHOR_PLACEHOLDERS = frozenset(
+    {
+        "tidak diketahui",
+        "unknown",
+        "anonim",
+        "anonymous",
+        "none",
+        "external links",
+        "dkk",
+        "dkk.",
+        "dll.",
+        "team",
+        "-",
+        "- -",
+    }
+)
 # Similar books: cosine similarity of tf-idf vectors over the candidate words. Measured on 400 sampled books (8,061
 # in the library): a neighbour at >= 0.10 shares a Kategori with the book 37% of the time (a random pair: 3.7%), and 54-66%
 # above 0.30. 25% of books have a near-copy at >= 0.85 (another edition or scan), which is not a "similar book".
@@ -201,6 +230,7 @@ class _BookCounts:
     words: int
     candidates: list[tuple[str, int]]
     phrases: list[list[object]]
+    authors: tuple[int, ...]
 
 
 class CorpusBuilder:
@@ -213,6 +243,7 @@ class CorpusBuilder:
     """
 
     def __init__(self) -> None:
+        self._author_names: dict[int, str] = {}
         self.words: Counter[str] = Counter()
         self.document_frequency: Counter[str] = Counter()
         self._ngrams: dict[int, Counter[str]] = {2: Counter(), 3: Counter()}
@@ -226,8 +257,13 @@ class CorpusBuilder:
         self.by_format: dict[str, list[int]] = {}
         self._books: dict[int, _BookCounts] = {}
 
-    def add(self, markup: str, book_format: str, book_id: int | None = None) -> bool:
-        """Add one document; False when it holds no words. With ``book_id`` its profile goes to ``book_text()``."""
+    def add(
+        self, markup: str, book_format: str, book_id: int | None = None, authors: Iterable[tuple[int, str]] = ()
+    ) -> bool:
+        """Add one document; False when it holds no words.
+
+        With ``book_id`` its profile goes to ``book_text()``; its ``authors`` ((id, name) pairs) feed ``author_text()``.
+        """
         document = tokenize(markup)
         tokens = document.tokens
         if not tokens:
@@ -270,8 +306,11 @@ class CorpusBuilder:
                     break
                 if not any(f" {gram} " in f" {kept} " or f" {kept} " in f" {gram} " for kept, _ in phrases):
                     phrases.append([gram, count])
+            pairs = list(authors)
+            self._author_names.update(pairs)
+            people = tuple(author_id for author_id, _ in pairs)
             self._books[book_id] = _BookCounts(
-                len(tokens), candidates, phrases if len(phrases) >= BOOK_PHRASES_MIN_SHOWN else []
+                len(tokens), candidates, phrases if len(phrases) >= BOOK_PHRASES_MIN_SHOWN else [], people
             )
         self.lengths.append(len(tokens))
         if len(tokens) >= MTLD_MIN_TOKENS and (value := mtld(tokens)) is not None:
@@ -365,6 +404,43 @@ class CorpusBuilder:
                 "phrases": book.phrases,
                 "similar": similar.get(book_id, []),
             }
+        return profiles
+
+    def author_text(self) -> dict[int, dict[str, object]]:
+        """Per-author word cloud over the authors' books: ``{"books": n, "cloud": [[word, count, books_using]]}``.
+
+        Needs the final document frequencies, so call it after the last ``add``. Counts are summed over the books'
+        candidate words, so they cover the frequent words of each book (see ``BOOK_CANDIDATES``), which is what a cloud
+        shows anyway.
+        """
+        documents = len(self.lengths)
+        members: defaultdict[int, list[_BookCounts]] = defaultdict(list)
+        for book in self._books.values():
+            for author_id in book.authors:
+                members[author_id].append(book)
+        profiles: dict[int, dict[str, object]] = {}
+        for author_id, books in members.items():
+            name = self._author_names.get(author_id, "")
+            if len(books) < AUTHOR_MIN_BOOKS or name.strip().lower() in AUTHOR_PLACEHOLDERS:
+                continue
+            counts: Counter[str] = Counter()
+            used: Counter[str] = Counter()
+            for book in books:
+                for word, count in book.candidates:
+                    counts[word] += count
+                    used[word] += 1
+            own_name = set(_TOKEN.findall(name.lower()))
+            ranked = sorted(
+                (counts[word] * math.log(documents / self.document_frequency[word]), word)
+                for word, books_using in used.items()
+                if books_using >= max(AUTHOR_WORD_MIN_BOOKS, AUTHOR_WORD_MIN_SHARE * len(books))
+                and word not in own_name
+            )[::-1][:AUTHOR_WORDS]
+            if len(ranked) >= AUTHOR_WORDS_MIN_SHOWN:
+                profiles[author_id] = {
+                    "books": len(books),
+                    "cloud": [[word, counts[word], used[word]] for _, word in ranked],
+                }
         return profiles
 
     def result(self) -> dict[str, object] | None:

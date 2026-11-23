@@ -190,28 +190,29 @@ function openDb() {
   return db;
 }
 
-// Per-book text profile ({words, longer_than, top, distinct, phrases}), written next to the corpus statistics by
-// `build_corpus` in cps/text_analysis_store.py. A file of another ANALYSIS_VERSION describes a different definition,
-// so it is ignored.
-async function loadBookText() {
+// Text profiles written next to the corpus statistics by `build_corpus` in cps/text_analysis_store.py:
+// book_text.json ({books: {id: {words, longer_than, top, distinct, phrases, similar}}}) and
+// author_text.json ({authors: {id: {books, cloud}}}). A file of another ANALYSIS_VERSION describes a different
+// definition, so it is ignored.
+async function loadAnalysis(file, key, what) {
   const none = new Map();
   const source = readFileSync(join(ROOT, '..', 'cps', 'text_analysis.py'), 'utf8');
   const version = Number(source.match(/^ANALYSIS_VERSION\s*=\s*(\d+)/m)?.[1]);
   let payload;
   try {
-    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', 'book_text.json'), 'utf8'));
+    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', file), 'utf8'));
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.warn('[seed] book_text.json not found; book pages get no text profile');
+      console.warn(`[seed] ${file} not found; ${what}`);
       return none;
     }
     throw error;
   }
   if (payload.version !== version) {
-    console.warn(`[seed] book_text.json is version ${payload.version}, expected ${version}; book pages get no text profile`);
+    console.warn(`[seed] ${file} is version ${payload.version}, expected ${version}; ${what}`);
     return none;
   }
-  return new Map(Object.entries(payload.books).map(([id, profile]) => [Number(id), profile]));
+  return new Map(Object.entries(payload[key]).map(([id, profile]) => [Number(id), profile]));
 }
 
 async function loadBooks(db, bookText) {
@@ -426,7 +427,7 @@ async function main() {
   const previousAliases = await readJsonIfExists('legacy-book-slugs.json', {});
   const db = openDb();
   try {
-    const bookText = await loadBookText();
+    const bookText = await loadAnalysis('book_text.json', 'books', 'book pages get no text profile');
     const index = await loadBooks(db, bookText);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
@@ -448,6 +449,10 @@ async function main() {
     }));
     await writeJson('authors.json', authorsClean);
     console.log(`[seed] wrote ${authorsClean.length} authors`);
+    // Word clouds of the author pages: only authors that have one (see AUTHOR_MIN_BOOKS in cps/text_analysis.py).
+    const authorText = await loadAnalysis('author_text.json', 'authors', 'author pages get no word cloud');
+    await writeJson('author-text.json', Object.fromEntries(authorText));
+    console.log(`[seed] wrote ${authorText.size} author word clouds`);
 
     const seriesAll = db.prepare(`SELECT id, name, sort FROM series ORDER BY name`).all();
     await writeJson('series.json', seriesAll);
