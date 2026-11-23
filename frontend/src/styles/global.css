@@ -176,6 +176,14 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
 }
 .brand img { height: 28px; width: auto; }
+/* The logo is black on transparent; dark mode swaps in the white copy (same rules as the theme toggle icons). */
+.brand .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand .logo-light { display: none; }
+  :root:not([data-theme="light"]) .brand .logo-dark { display: block; }
+}
+:root[data-theme="dark"] .brand .logo-light { display: none; }
+:root[data-theme="dark"] .brand .logo-dark { display: block; }
 
 .topbar { display: none; }
 .scrim { display: none; }

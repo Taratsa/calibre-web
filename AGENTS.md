@@ -273,6 +273,12 @@ Two live search systems (plus the legacy advanced-search form):
   token is reserved for primary actions only. UI border-radius is capped at
   4px. All tokens live in `frontend/src/styles/global.css`; keep new
   components on `var(--*)` tokens rather than hardcoded colors.
+- **Logo in dark mode**: the logo is black on transparent. `public/logo-taratsa-white.{png,webp}` are the same image
+  with every pixel white and the alpha channel unchanged. `BaseLayout.astro` renders both `<img class="logo-light">` and
+  `<img class="logo-dark">` in the brand link and `global.css` shows one, using the same rules as the theme toggle
+  icons (system `prefers-color-scheme` unless the reader chose a theme, and `data-theme` wins). A `<picture media>`
+  would ignore the manual toggle, so it is not used. The Flask templates (`cps/templates`, legacy UI) and the JSON-LD
+  `logo` keep the black PNG. Regenerate the white copy if the logo changes (Pillow: keep alpha, set RGB to 255)
 
 ### Smart Duplicate Detection System & Management
 - **Endpoint**: `/duplicates` (sidebar link, admin/edit users only)
@@ -378,6 +384,19 @@ Two live search systems (plus the legacy advanced-search form):
   categories: a neighbour at >= 0.10 shares a Kategori 37% of the time (random pair 3.7%), 54-66% above 0.30. It
   compares TEXT, so a different-language book or a book with little text matches poorly; the page resolves ids
   against `books.json`, so a removed book is dropped. Pure Python inverted index, about 1.5 min for the library
+- Author page word cloud (`pages/author/[id].astro` page 1, `components/AuthorCloud.astro`): the corpus rebuild also writes
+  `analysis/author_text.json` (`{version, built_at, authors: {id: {books, cloud: [[word, count, books_using]]}}}`);
+  `seed.mjs` (`loadAnalysis()`, shared with the book profiles) writes it to `src/data/author-text.json` (always written,
+  `{}` when missing, so the page import stays valid), read through `authorText(id)` in `src/data/index.ts`.
+  `rebuild_corpus()` passes each book's `(author id, name)` pairs to `CorpusBuilder.add()`. Built by
+  `CorpusBuilder.author_text()`: sums the books' candidate words (top `BOOK_CANDIDATES` each) and ranks by summed count
+  x ln(books / books using the word) (same "frequent here, rare elsewhere" idea as `distinct`), top `AUTHOR_WORDS` (40).
+  Rules: the author needs >= `AUTHOR_MIN_BOOKS` (2) books with text; a word must occur in >= max(2,
+  `AUTHOR_WORD_MIN_SHARE` = 25% of the author's books) of them, otherwise OCR debris of a few scans dominates (before the
+  share rule "ber", "meng", "ter" were Pramoedya's whole cloud); the author's own name is dropped; fewer than
+  `AUTHOR_WORDS_MIN_SHOWN` (12) words = no cloud and the section is hidden; placeholder authors (`AUTHOR_PLACEHOLDERS`:
+  "Tidak diketahui", "Unknown", "Anonim", "dkk", ...) get none. Author pages 2+ show no cloud. A co-authored book counts
+  for each of its authors. Changing a rule -> rebuild the corpus + `./build-frontend.sh`
 - The corpus is built from the full cached texts, one document per book (EPUB wins over PDF). Word counts and
   document frequency are exact; the n-gram tables are capped at `MAX_NGRAM_ENTRIES` and flag `approximate_ngrams`
   when singletons had to be dropped. Takes ~1 minute and ~0.5 GB for ~1,000 books
