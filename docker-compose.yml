@@ -20,6 +20,7 @@ services:
       - TURBOOCR_IDLE_SECONDS=${TURBOOCR_IDLE_SECONDS:-120}
       - TURBOOCR_MODE=${TURBOOCR_MODE:-ocr}
       - OCR_SCAN_CRON=${OCR_SCAN_CRON:-}
+      - MANTICORE_URL=http://manticore:9308
     ports:
       - "127.0.0.1:8083:8083"
     volumes:
@@ -31,6 +32,7 @@ services:
     restart: unless-stopped
     networks:
       - caddy_net
+      - search_net
     ulimits:
       nofile:
         soft: 4096
@@ -52,11 +54,40 @@ services:
       - PORT=4321
       - NODE_ENV=production
       - BACKEND_URL=http://calibre-web-automated:8083
+      - MANTICORE_URL=http://manticore:9308
     restart: unless-stopped
     networks:
       - caddy_net
+      - search_net
     healthcheck:
       test: ["CMD", "bun", "-e", "fetch('http://localhost:4321/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # Full-text search over the OCR/EPUB text (see AGENTS.md "Full-text search"). The index is derived data: it is
+  # rebuilt from data/ocr-cache by the "Rebuild Full-Text Index Now" admin button. Manticore has no authentication,
+  # so it sits ONLY on the internal search_net (Flask writes, Astro reads) and publishes no port.
+  manticore:
+    image: manticoresearch/manticore:32.1.3
+    container_name: pustaka-manticore
+    environment:
+      # The image default also listens on a MySQL port and a cluster range; only HTTP is used here.
+      - searchd_listen=9308:http
+    volumes:
+      - manticore_data:/var/lib/manticore
+    restart: unless-stopped
+    mem_limit: 3g
+    cpus: 4
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    networks:
+      - search_net
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null 'http://127.0.0.1:9308/sql?mode=raw&query=show+tables' || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -69,3 +100,9 @@ services:
 networks:
   caddy_net:
     external: true
+  # Internal: no route to the internet or to other stacks. Only Flask, Astro and Manticore join it.
+  search_net:
+    internal: true
+
+volumes:
+  manticore_data:

@@ -161,3 +161,42 @@ forbidden_modules =
 ignore_imports =
     cps -> cps.main
 message = "cps.cover_placeholder renders the generated cover card with Pillow only. The web layer (cps.helper) depends on it, never the other way around."
+
+[importlinter:contract:fulltext-is-pure]
+type = forbidden
+name = fulltext-is-pure
+source_modules =
+    cps.fulltext
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.helper
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+    cps.db
+    cps.fulltext_store
+    cps.ocr_service
+ignore_imports =
+    cps -> cps.main
+message = "cps.fulltext is the chunker and index layout of the full-text search (no I/O). It may only use cps.text_analysis (the block splitter); the store and the tasks depend on it, never the other way around."
+
+[importlinter:contract:fulltext-store-is-a-client]
+type = forbidden
+name = fulltext-store-is-a-client
+source_modules =
+    cps.fulltext_store
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.helper
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+    cps.db
+    cps.ocr_service
+ignore_imports =
+    cps -> cps.main
+message = "cps.fulltext_store is the Manticore writer. The OCR service and the edit-books layer call it, so it must not import them back, nor the web layer or the task framework."

@@ -1,0 +1,232 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Cover from '~/components/Cover.astro';
+import { getAllBooks } from '~/data';
+import { authorPath } from '~/utils/author-url';
+import { bookPath } from '~/utils/book-url';
+import {
+  FulltextUnavailable,
+  MAX_PAGES,
+  MAX_QUERY_LENGTH,
+  PAGE_SIZE,
+  fulltextConfigured,
+  searchFulltext,
+  type FulltextResult,
+} from '~/utils/fulltext';
+
+const params = Astro.url.searchParams;
+const q = (params.get('q') ?? '').trim().slice(0, MAX_QUERY_LENGTH);
+const requestedPage = Math.min(MAX_PAGES, Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1));
+
+let result: FulltextResult | null = null;
+let unavailable = false;
+if (q) {
+  try {
+    result = await searchFulltext(q, requestedPage);
+  } catch (error) {
+    if (!(error instanceof FulltextUnavailable)) throw error;
+    console.error(`[fulltext] ${error.message}`);
+    unavailable = true;
+  }
+}
+// A search service that is down must never be cached as an answer: 503 is not rewritten by middleware.ts (which
+// gives every 200 HTML page s-maxage=300), so the CDN keeps nothing.
+if (unavailable) {
+  Astro.response.status = 503;
+  Astro.response.headers.set('Cache-Control', 'no-store');
+}
+
+const booksById = new Map(getAllBooks().map((book) => [book.id, book]));
+// Books removed from the catalog since the last index rebuild are dropped here, not shown as dead links.
+const results = (result?.hits ?? []).flatMap((hit) => {
+  const book = booksById.get(hit.bookId);
+  return book ? [{ hit, book }] : [];
+});
+
+const count = new Intl.NumberFormat('id-ID');
+const totalPages = result ? Math.min(MAX_PAGES, Math.ceil(result.total / PAGE_SIZE)) : 0;
+const page = Math.min(requestedPage, Math.max(1, totalPages));
+
+function pageHref(target: number): string {
+  const next = new URLSearchParams({ q });
+  if (target > 1) next.set('page', String(target));
+  return `/search/text/?${next.toString()}`;
+}
+
+const escapeHtml = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// The snippet is plain text with [ ] around matches (the book text itself may contain brackets, so those that are
+// not Manticore's are rare but possible: the worst case is an extra <mark> around a bracketed word).
+const highlight = (snippet: string) =>
+  escapeHtml(snippet).replace(/\[([^\[\]]+)\]/g, '<mark>$1</mark>').replace(/^\s*\.\.\.\s*/, '… ').replace(/\s*\.\.\.\s*$/, ' …');
+const where = (hit: { chunk: number }) => (hit.chunk === 0 ? 'awal buku' : `bagian ke-${count.format(hit.chunk + 1)}`);
+const title = q ? `Cari di dalam teks: ${q}` : 'Cari di dalam teks buku';
+---
+
+<BaseLayout title={title} description="Cari kata dan frasa di dalam teks buku di Pustaka Taratsa." noindex>
+  <div class="ft-page">
+    <h1 class="ft-title">Cari di dalam teks buku</h1>
+    <p class="ft-lead">Mencari kata di dalam isi buku, bukan hanya judul dan penulis. Untuk judul, penulis, dan kategori, pakai <a href="/search/">pencarian katalog</a>.</p>
+
+    <form action="/search/text/" method="GET" role="search" class="ft-form">
+      <div class="ft-form__row">
+        <input type="search" name="q" placeholder='Contoh: reforma agraria, "hak asasi manusia", buruh -komunis' value={q} maxlength={MAX_QUERY_LENGTH} autofocus spellcheck="false" aria-label="Kata atau frasa di dalam buku" />
+        <button type="submit">Cari</button>
+      </div>
+      <p class="ft-help">
+        Beberapa kata: semuanya harus ada di satu bagian. <code>"frasa tepat"</code> mencari kata berurutan, <code>-kata</code> membuang bagian yang memuatnya.
+        Hanya buku yang teksnya sudah diproses (OCR) yang bisa dicari.
+      </p>
+    </form>
+
+    {!fulltextConfigured() && q && (
+      <div class="ft-notice" role="status"><p>Pencarian di dalam teks belum dihidupkan di server ini.</p></div>
+    )}
+
+    {unavailable && fulltextConfigured() && (
+      <div class="ft-notice" role="status">
+        <p>Pencarian di dalam teks sedang tidak tersedia. Coba lagi beberapa saat lagi, atau pakai <a href={`/search/?q=${encodeURIComponent(q)}`}>pencarian katalog</a>.</p>
+      </div>
+    )}
+
+    {q && result === null && !unavailable && fulltextConfigured() && (
+      <div class="ft-empty"><p>Tuliskan minimal satu kata yang ingin dicari.</p></div>
+    )}
+
+    {result && result.total > 0 && (
+      <p class="ft-status" id="ft-status">
+        {count.format(result.total)} buku memuat <strong>{q}</strong>
+        {totalPages > 1 && <> · halaman {page} dari {totalPages}{result.total > MAX_PAGES * PAGE_SIZE && ` (hanya ${MAX_PAGES * PAGE_SIZE} teratas yang bisa dibuka)`}</>}
+        {result.fuzzy && <> · tidak ada yang persis sama, ditampilkan kata yang mirip</>}
+      </p>
+    )}
+
+    {results.length > 0 && (
+      <ol class="ft-results" id="ft-results">
+        {results.map(({ hit, book }) => (
+          <li class="ft-result">
+            <a class="ft-result__cover" href={`${bookPath(book)}/`} tabindex="-1" aria-hidden="true">
+              <Cover image={book.cover_url.replace(/\?.*$/, '')} alt="" width={72} height={108} loading="lazy" />
+            </a>
+            <div class="ft-result__body">
+              <h2 class="ft-result__title"><a href={`${bookPath(book)}/`} set:html={book.title.trim()} /></h2>
+              {book.authors.length > 0 && (
+                <p class="ft-result__authors">
+                  {book.authors.map((author, index) => (
+                    <>{index > 0 && ', '}<a href={`${authorPath(author)}/`}>{author.name}</a></>
+                  ))}
+                </p>
+              )}
+              <p class="ft-result__snippet" set:html={highlight(hit.snippet)} />
+              <p class="ft-result__meta">
+                {where(hit)} ·
+                <a href={`/read/${book.id}/ocr/${hit.format}/`}>Baca teks ({hit.format.toUpperCase()})</a>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    )}
+
+    {totalPages > 1 && (
+      <nav class="ft-pager" aria-label="Halaman hasil">
+        {page > 1 ? <a href={pageHref(page - 1)} rel="prev">← Sebelumnya</a> : <span aria-disabled="true">← Sebelumnya</span>}
+        <span class="ft-pager__where">Halaman {page} / {totalPages}</span>
+        {page < totalPages ? <a href={pageHref(page + 1)} rel="next">Selanjutnya →</a> : <span aria-disabled="true">Selanjutnya →</span>}
+      </nav>
+    )}
+
+    {result && result.total === 0 && (
+      <div class="ft-empty" id="ft-empty">
+        <p>Tidak ada buku yang memuat kata itu.</p>
+        <p class="ft-empty__suggest">Periksa ejaan, kurangi jumlah kata, atau coba <a href={`/search/?q=${encodeURIComponent(q)}`}>pencarian katalog</a>.</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .ft-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.25rem; }
+  .ft-lead { margin: 0 0 1rem; font-size: 0.9rem; color: var(--muted-strong); }
+  .ft-lead a { color: var(--fg); }
+
+  .ft-form { margin-bottom: 1.25rem; }
+  .ft-form__row { display: flex; gap: 0.5rem; }
+  .ft-form__row input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.95rem;
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .ft-form__row input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .ft-form__row button {
+    padding: 0.65rem 1.3rem;
+    background: var(--fg);
+    color: var(--inverse-fg);
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .ft-form__row button:hover { background: var(--muted-strong); }
+  .ft-help { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .ft-help code { padding: 0 0.25rem; border-radius: 2px; background: var(--surface-3); font-size: 0.95em; }
+
+  .ft-status {
+    margin: 0 0 1rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface-2);
+    border-radius: 4px;
+    font-size: 0.88rem;
+    color: var(--muted-strong);
+  }
+  .ft-notice { margin: 0 0 1rem; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem; }
+  .ft-notice p, .ft-empty p { margin: 0; }
+  .ft-notice a { color: var(--fg); }
+
+  .ft-results { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+  .ft-result { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .ft-result__cover :global(img) { width: 100% !important; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; background: var(--surface-3); box-shadow: 0 1px 3px var(--shadow-sm); }
+  .ft-result__title { margin: 0; font-size: 1rem; line-height: 1.3; font-weight: 600; }
+  .ft-result__title a { color: var(--fg); text-decoration: none; }
+  .ft-result__title a:hover { text-decoration: underline; }
+  .ft-result__authors { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .ft-result__authors a { color: var(--muted); text-decoration: none; }
+  .ft-result__authors a:hover { text-decoration: underline; }
+  .ft-result__snippet { margin: 0.4rem 0 0; font-size: 0.88rem; line-height: 1.55; overflow-wrap: anywhere; }
+  .ft-result__snippet :global(mark) { background: var(--mark-bg); color: var(--mark-fg); border-radius: 2px; padding: 0 0.1em; font-weight: 600; }
+  .ft-result__meta { margin: 0.4rem 0 0; font-size: 0.78rem; color: var(--muted); }
+  .ft-result__meta a { color: var(--fg); }
+
+  .ft-pager { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin: 2rem 0 0.5rem; font-size: 0.9rem; }
+  .ft-pager a, .ft-pager span[aria-disabled] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .ft-pager span[aria-disabled] { color: var(--muted-soft); border-color: var(--border-subtle); }
+  .ft-pager a:hover { background: var(--surface-3); }
+  .ft-pager__where { color: var(--muted); }
+
+  .ft-empty { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+  .ft-empty__suggest { margin-top: 0.5rem !important; font-size: 0.85rem; color: var(--muted-soft); }
+  .ft-empty a { color: var(--fg); }
+
+  @media (max-width: 479px) {
+    .ft-form__row { flex-direction: column; }
+    .ft-form__row button { min-height: 44px; }
+    .ft-result { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.75rem; }
+  }
+</style>

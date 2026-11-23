@@ -255,6 +255,20 @@ def queue_text_analysis():
     return jsonify({"success": True, "message": _("Text analysis queued"), "task_id": str(task.id)})
 
 
+@admi.route("/fulltext/run", methods=["POST"])
+@user_login_required
+@admin_required
+def queue_fulltext_index():
+    from .fulltext_store import configured
+    from .tasks.fulltext_index import TaskFulltextIndex
+
+    if not configured():
+        return jsonify({"success": False, "message": _("Full-text search is not configured (MANTICORE_URL)")}), 503
+    task = TaskFulltextIndex()
+    WorkerThread.add(current_user.name, task, hidden=False)
+    return jsonify({"success": True, "message": _("Full-text index queued"), "task_id": str(task.id)})
+
+
 @admi.route("/admin/view")
 @user_login_required
 @admin_required

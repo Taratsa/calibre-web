@@ -205,6 +205,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
 }
 .side-search__advanced:hover { color: var(--fg); text-decoration: underline; }
+.side-search__advanced + .side-search__advanced { margin-left: 0.5rem; }
 .sidebar input[type="search"] {
   width: 100%;
   min-height: 40px;

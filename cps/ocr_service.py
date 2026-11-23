@@ -24,6 +24,7 @@ import lxml.etree as etree
 from . import config, logger
 from .clean_html import clean_string
 from .file_helper import get_temp_dir
+from .fulltext_store import replace_format_later
 from .gdriveutils import getFileFromEbooksFolder
 from .ocr_layout import build_document_html
 
@@ -576,6 +577,8 @@ def extract_book_ocr(
                 "processing_time_ms": document.processing_time_ms,
             },
         )
+        # Derived data: the full-text index follows the cache. Runs off this thread and never fails the OCR job.
+        replace_format_later(book.id, selected_format, document.markdown_html)
         return document
 
 

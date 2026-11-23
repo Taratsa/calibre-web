@@ -52,6 +52,7 @@ from .cw_login import current_user
 from .duplicate_index import notify_book_changed as notify_duplicate_books_changed
 from .file_helper import validate_mime_type
 from .frontend_rebuild import trigger_rebuild_async
+from .fulltext_store import FORMATS, delete_book_later, delete_format_later
 from .kobo_sync_status import change_archived_books
 from .redirect import get_redirect_location
 from .render_template import render_title_template
@@ -1229,6 +1230,7 @@ def delete_whole_book(book_id, book):
         else:
             modify_database_object([""], getattr(book, cc_string), db.cc_classes[c.id], calibre_db.session, "custom")
     calibre_db.session.query(db.Books).filter(db.Books.id == book_id).delete()
+    delete_book_later(book_id)
 
 
 def render_delete_book_result(book_format, book_id, location=""):
@@ -1295,6 +1297,8 @@ def delete_book_from_UI(book_id, book_format, location=""):
                 calibre_db.session.query(db.Data).filter(db.Data.book == book.id).filter(
                     db.Data.format == book_format
                 ).delete()  # pyright: ignore[reportGeneralTypeIssues,reportArgumentType,reportOptionalMemberAccess]
+                if book_format.upper() in FORMATS:
+                    delete_format_later(book.id, book_format.upper())
                 if book_format.upper() in ["KEPUB", "EPUB", "EPUB3"]:
                     kobo_sync_status.remove_synced_book(book.id, True)
             calibre_db.session.commit()

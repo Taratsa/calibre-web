@@ -167,6 +167,41 @@ Two live search systems (plus the legacy advanced-search form):
   `feed.xml` builds next/prev from `request.path`, which would drop `?query=`)
 - `cps/templates/feed.xml` supports a `link_query` base for those links
 
+### Full-text search (inside the book text, Manticore)
+- `/search/text/` (Astro, SSR, `noindex`; sidebar link "Cari di dalam teks") searches the OCR/EPUB text itself and shows
+  the best passage per book with highlighted matches and a link to `/read/<id>/ocr/<fmt>/`. The catalog search
+  (`/search/`, titles/authors/tags) is separate and unchanged
+- Engine: **Manticore Search 32.1.3** (`manticore` service in `docker-compose.yml`, container `pustaka-manticore`,
+  volume `manticore_data`, `mem_limit: 3g`). It has NO authentication, so it only joins the internal `search_net`
+  network (Flask + Astro + Manticore, no route out, no published port); never publish 9308. The decision came from a
+  benchmark on the real corpus (745,872 chunks): 1.0 GB index (Meilisearch 8.9 GB, FTS5 2.05 GB), 138 s build
+  (Meilisearch 803 s), replacing one book in ~80 ms (Meilisearch 66 s), 237 q/s with 8 clients. Rejected: SQLite FTS5
+  (23 q/s and p95 1.9 s at 2x size, one gevent worker would block), Meilisearch (index size, 10-word query cap, 65,535
+  positions per field, slow updates)
+- Layout is defined in `cps/fulltext.py` (pure): table `text_chunks(body, book, fmt, seq)`, one document per ~900
+  characters cut on paragraph boundaries, id = `book*1_000_000 + format*500_000 + seq` (EPUB=0, PDF=1), so one format
+  or one book is a contiguous id range and is deleted without a scan. Table options: `min_infix_len=2` (needed for
+  `fuzzy=1`), `index_exact_words=1`. Writer: `cps/fulltext_store.py` (requests, short timeouts, `FulltextUnavailable`).
+  Reader: `frontend/src/utils/fulltext.ts` (server-side only, `MANTICORE_URL`). Import-linter contracts
+  `fulltext-is-pure` and `fulltext-store-is-a-client`
+- Index upkeep (derived data; the OCR cache stays the source): `extract_book_ocr()` indexes a format right after it
+  caches fresh text (`replace_format_later`, background thread, never fails the OCR job); `delete_whole_book()` and a
+  deleted format remove their chunks; the admin button "Rebuild Full-Text Index Now" (`POST /admin/fulltext/run`,
+  `tasks/fulltext_index.py`) reindexes everything, indexes BOTH formats of a book, skips PDFs without cached text and
+  drops books that left the library. ~250 s for 8,386 formats. After a bulk reindex run
+  `optimize index text_chunks option cutoff=1, sync=1` (~140 s) to merge to one disk chunk (1.19 GB). A write that
+  happens while Manticore is down is lost until the next full rebuild
+- Query syntax (`matchExpression()` in `frontend/src/utils/fulltext.ts`, the only copy): all words must be in ONE passage,
+  `"exact phrase"`, `-word`, `-"phrase"`; 7+ plain words need 60% of them (a pasted sentence); every Manticore
+  operator is stripped; max 200 characters, 12 words. When the exact words match nothing the query is retried with
+  `fuzzy=1, distance=1` (typo tolerance; distance 2 made "zzzxqj" match a real book). Counts are exact
+  (`count(distinct book)`) but only the top 500 books can be paged
+- Failure: `/search/text/` answers 503 + `Cache-Control: no-store` when Manticore is down (middleware.ts only rewrites
+  200 HTML), and the rest of the site keeps working. Do not add `/search/text/` to the sitemap; it is `noindex`
+- Limits: OCR damage in the text ("provinsinusa", "diff erance") is found only when typed that way; no stemming (the
+  word "buruh" does not match "perburuhan"; use fuzzy or a longer word); snippets are plain chunks, not page-accurate
+  anchors (the reader has no passage anchors, so a hit opens the book's text page)
+
 ## Static Files Location
 | Path | Location | Served By |
 |------|----------|-----------|
