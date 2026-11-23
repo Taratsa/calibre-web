@@ -533,7 +533,9 @@ const ocrDescription = document && plainText
   .ocr-reader__content > :global(:first-child) {
     margin-top: 0;
   }
+  /* Tailwind's reset zeroes paragraph margins, so without this the text runs together as one block. */
   .ocr-reader__content :global(p) {
+    margin: 0 0 0.9em;
     text-wrap: pretty;
   }
   .ocr-reader__content :global(h1),

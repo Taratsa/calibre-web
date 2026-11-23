@@ -425,6 +425,9 @@ Two live search systems (plus the legacy advanced-search form):
   503. Text is extracted on the first status/page request, so a newly added EPUB is linked and readable at once; only
   the sitemap needs `./build-frontend.sh` to list it in `ocr-ready.json`. The reader notice and "0.0 detik" meta
   are shown for PDFs only
+- Reader text spacing (`pages/read/[id]/ocr/[format].astro`): Tailwind's reset zeroes `p` margins, so
+  `.ocr-reader__content p` sets `margin: 0 0 0.9em` (about 15 px gap). `.ocr-footnotes p` has its own tighter margin
+  (0.35rem) with higher specificity and is unaffected; do not remove the `p` rule or the text runs together
 - A PDF format whose file is not a PDF (68 MP3, 2 MP4, 8 saved Google Drive "virus scan" HTML pages were uploaded under
   the PDF format) gets `OcrNoTextError("File is not a PDF")` from `_check_pdf_file()` (cps/ocr_service.py, looks for
   `%PDF-` in the first KB). `/api/read/<id>/ocr/status/pdf`, the POST queue and the page answer 404, so the book page
