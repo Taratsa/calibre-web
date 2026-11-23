@@ -479,6 +479,14 @@ Two live search systems (plus the legacy advanced-search form):
   `data-ocr-align="justify"` on `<html>` and styles `p` with `text-align: justify; hyphens: auto` (the document is
   `lang="id"`, so the browser can hyphenate). Only paragraphs are justified; headings, footnotes and `pre` keep their
   alignment. Keep the allowed values in the inline script and the page script in sync
+- Reading position bar (same page, EPUB and PDF text): a sticky bar (`.ocr-progress`, under the site top bar on narrow
+  screens) shows the heading path of the section being read, like gwern.net's link chain: book title › chapter ›
+  subsection, each a link to its heading (`#ocr-top` is the page `<h1>`), plus the percentage of the text scrolled
+  and a 2 px line under the bar. Client script only (no extra request): the path comes from the `h2-h6[id]` headings the
+  page already has (levels give the nesting), the current section is the last heading at or above where a jump to a
+  heading lands (`scroll-margin-top`), found by binary search over heading offsets measured on load, resize and when the
+  article is resized (text size, alignment, images). A document without headings shows only the title and percent.
+  Chain items are created by the script, so their styles use `:global()` inside the Astro `<style>`
 - A PDF format whose file is not a PDF (68 MP3, 2 MP4, 8 saved Google Drive "virus scan" HTML pages were uploaded under
   the PDF format) gets `OcrNoTextError("File is not a PDF")` from `_check_pdf_file()` (cps/ocr_service.py, looks for
   `%PDF-` in the first KB). `/api/read/<id>/ocr/status/pdf`, the POST queue and the page answer 404, so the book page

@@ -165,7 +165,7 @@ const ocrDescription = document && plainText
       )}
     </nav>
     <header class="ocr-reader__header">
-      <h1>{readHeading}: {book.title}</h1>
+      <h1 id="ocr-top">{readHeading}: {book.title}</h1>
       {!pending && <p class="ocr-reader__meta">{metaParts.join(' · ')}</p>}
       {!pending && (
         <p class="ocr-reader__notice" role="note">
@@ -186,6 +186,13 @@ const ocrDescription = document && plainText
       </section>
     ) : (
       <>
+        <div class="ocr-progress" data-progress data-title={book.title}>
+          <nav class="ocr-progress__bar" aria-label="Posisi membaca">
+            <ol class="ocr-progress__chain" data-progress-chain></ol>
+            <span class="ocr-progress__percent" data-progress-percent aria-hidden="true">0%</span>
+            <span class="ocr-progress__line" data-progress-line aria-hidden="true"></span>
+          </nav>
+        </div>
         {toc.length > 0 && (
           <details class="ocr-reader__toc">
             <summary>Daftar isi</summary>
@@ -351,7 +358,144 @@ const ocrDescription = document && plainText
   }
 </script>
 
+<script>
+  const wrapper = document.querySelector<HTMLElement>('[data-progress]');
+  const article = document.querySelector<HTMLElement>('.ocr-reader__content');
+  if (wrapper && article) {
+    const chain = wrapper.querySelector<HTMLElement>('[data-progress-chain]')!;
+    const percent = wrapper.querySelector<HTMLElement>('[data-progress-percent]')!;
+    const line = wrapper.querySelector<HTMLElement>('[data-progress-line]')!;
+    const bookTitle = wrapper.dataset.title ?? '';
+    const headings = [...article.querySelectorAll<HTMLElement>('h2[id], h3[id], h4[id], h5[id], h6[id]')];
+    const levelOf = (heading: HTMLElement) => Number(heading.tagName.slice(1));
+    // Ancestors of every heading (the heading itself last), built once from the heading levels.
+    const stack: number[] = [];
+    const trails = headings.map((heading, index) => {
+      while (stack.length && levelOf(headings[stack[stack.length - 1]]) >= levelOf(heading)) stack.pop();
+      stack.push(index);
+      return [...stack];
+    });
+    let tops: number[] = [];
+    let shown = -2;
+    let frame = 0;
+
+    const render = (current: number) => {
+      shown = current;
+      chain.replaceChildren();
+      const items: Array<[string, string]> = [['#ocr-top', bookTitle]];
+      if (current >= 0) {
+        for (const index of trails[current]) items.push([`#${headings[index].id}`, headings[index].textContent?.trim() ?? '']);
+      }
+      for (const [href, text] of items) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = text;
+        item.append(link);
+        chain.append(item);
+      }
+      chain.lastElementChild?.querySelector('a')?.setAttribute('aria-current', 'location');
+    };
+    const update = () => {
+      frame = 0;
+      const scrollY = window.scrollY;
+      // The section the reader is in: the last heading at or above the point a jump to a heading lands on
+      // (its scroll-margin-top, which clears the sticky bars), so following a link selects that heading.
+      const probe = scrollY + landing + 2;
+      let low = 0;
+      let high = tops.length - 1;
+      let current = -1;
+      while (low <= high) {
+        const middle = (low + high) >> 1;
+        if (tops[middle] <= probe) { current = middle; low = middle + 1; } else high = middle - 1;
+      }
+      if (current !== shown) render(current);
+      const start = article.getBoundingClientRect().top + scrollY;
+      const span = Math.max(1, article.offsetHeight - window.innerHeight);
+      const done = Math.min(1, Math.max(0, (scrollY - start) / span));
+      percent.textContent = `${Math.round(done * 100)}%`;
+      line.style.transform = `scaleX(${done})`;
+    };
+    const landing = headings.length ? parseFloat(getComputedStyle(headings[0]).scrollMarginTop) || 0 : 0;
+    const measure = () => {
+      tops = headings.map((heading) => heading.getBoundingClientRect().top + window.scrollY);
+      update();
+    };
+
+    window.addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', measure);
+    // Text size, alignment and late-loading images all move the headings.
+    new ResizeObserver(measure).observe(article);
+    measure();
+  }
+</script>
+
 <style>
+  /* Position bar: sticks under the site top bar (mobile) or the viewport top (desktop). The chain mirrors the heading
+     path of the current section; the line underneath is the share of the text already scrolled past. */
+  .ocr-progress {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0 0 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  @media (max-width: 1023px) {
+    .ocr-progress { top: var(--topbar-h); }
+  }
+  .ocr-progress__bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.5rem;
+    font-size: 0.875rem;
+  }
+  .ocr-progress__chain {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* The items are created by the page script, so Astro's scoped attribute is not on them. */
+  .ocr-progress__chain :global(li) {
+    min-width: 0;
+    flex: 0 100 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .ocr-progress__chain :global(li:last-child) { flex: 0 1 auto; }
+  .ocr-progress__chain :global(li + li::before) {
+    content: '›';
+    padding: 0 0.5em;
+    color: var(--muted-soft);
+  }
+  .ocr-progress__chain :global(a) {
+    color: var(--muted-strong);
+    text-decoration: none;
+  }
+  .ocr-progress__chain :global(a:hover) { color: var(--fg); text-decoration: underline; }
+  .ocr-progress__chain :global(a[aria-current]) { color: var(--fg); font-weight: 600; }
+  .ocr-progress__percent {
+    flex: none;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .ocr-progress__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--fg);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  #ocr-top { scroll-margin-top: 4rem; }
   .ocr-reader {
     max-width: 74ch;
     margin: 0 auto 2rem;
