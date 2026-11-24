@@ -9,8 +9,7 @@ Disallow: /ajax/
 Disallow: /send/
 Disallow: /login
 Disallow: /me
-
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+Content-Signal: ai-train=no, search=yes, ai-input=yes, use=reference
 
 Sitemap: ${site}/sitemap.xml
 `;

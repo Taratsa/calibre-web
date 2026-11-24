@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
-Allow: /download/
-Allow: /read/
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /send/
+Disallow: /login
+Disallow: /me
+Content-Signal: ai-train=no, search=yes, ai-input=yes, use=reference
+
 Sitemap: https://pustaka.taratsa.id/sitemap.xml
