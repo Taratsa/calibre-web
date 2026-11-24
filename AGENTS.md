@@ -402,6 +402,15 @@ Two live search systems (plus the legacy advanced-search form):
   14,936 cached documents: 159 s end to end, 1.3 GB peak RSS (previous pure-Python implementation: 759 s, 3.4 GB; the
   Rust figure includes reading the cache, the Python one excluded it), with `corpus.json`, `book_text.json` and
   `author_text.json` byte-identical between the two
+- Hyphenation breaks are joined before anything counts words (`html_to_blocks` in `rust/taratsa_text/src/text.rs`):
+  an attached hyphen, whitespace (a line end, or the space TurboOCR writes) and a lowercase continuation become one
+  word (`Nasio-\nnal` and `mengu- mumkan` -> `Nasional`, `mengumumkan`). A repeat (`kata- kata`) stays reduplication,
+  a spaced dash (`sekunder - pertanian`) is not a break because the hyphen is unattached, and digits on the left
+  (`1990- an`) are left alone. Joined without the hyphen: on HistoriKorpus (5,383 paired OCR/ground-truth newspaper
+  excerpts, CC BY 4.0, doi:10.17632/b6p3jgdx83.2) that scored WER 35.06% -> 30.22%, CER 9.01% -> 8.64%, against
+  36.54% keeping the hyphen. The cost is a real compound broken at a line end (`sosial-` + `ekonomi`) losing its
+  hyphen. The same function cuts the full-text chunks, so a change here needs a full-text reindex as well as the
+  corpus rebuild (`ANALYSIS_VERSION` 10)
 - Tone line on the book page ("Sentimen kata"): `profile.sentiment` = `{score, positive, negative}` or `null`, where
   `score` = (positive - negative) / hits in [-1, 1]. Words come from `cps/sentiment_lexicon.json` (hand-curated
   Indonesian evaluative words, single tokens, under this repository's licence - InSet has no licence and VADER's

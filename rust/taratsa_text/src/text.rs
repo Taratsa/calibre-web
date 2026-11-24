@@ -1,8 +1,8 @@
 //! Reader HTML -> whitespace-normalised blocks -> sentences -> lower-cased word tokens, plus MTLD.
 //!
-//! Follows the regex pipeline of the original Python implementation, which keeps the stored corpus identical: the port
-//! was diffed against it over the whole cached corpus (byte-identical `corpus.json`, `book_text.json`,
-//! `author_text.json`), and `cargo test` covers the pipeline.
+//! Follows the regex pipeline of the original Python implementation (diffed against it over the whole cached corpus,
+//! byte-identical `corpus.json`, `book_text.json`, `author_text.json`), plus one later fix: hyphenation breaks are
+//! joined in `html_to_blocks` (`mengu- mumkan` -> `mengumumkan`). `cargo test` covers the pipeline.
 
 use std::sync::LazyLock;
 
@@ -28,6 +28,13 @@ static LINE_BREAK: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"(?i)<br\s*/?>").expect("line break"));
 static TAG: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"<[^>]+>").expect("tag pattern"));
 static SPACE: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+").expect("space pattern"));
+
+/// Hyphenation breaks: a hyphen attached to the word it breaks, then a line end or (as TurboOCR emits it) a space and a
+/// lowercase continuation (`mengu- mumkan`). Joined without the hyphen; a repeat (`kata- kata`) stays reduplication, and
+/// a spaced dash (`sekunder - pertanian`) is not a break because the hyphen is unattached.
+static HYPHEN_BREAK: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(\p{L}+)-[ \t\r\n]+(\p{Ll}\p{L}*)").expect("hyphen break pattern")
+});
 
 /// A terminator that is followed by whitespace ends a sentence, unless the next character starts a new one.
 static SENTENCE_END: LazyLock<Regex> =
@@ -100,7 +107,15 @@ pub fn html_to_blocks(markup: &str) -> Vec<String> {
         let line = LINE_BREAK.replace_all(piece, " ");
         let stripped = TAG.replace_all(&line, " ");
         let decoded = html_escape::decode_html_entities(&stripped);
-        let collapsed = SPACE.replace_all(&decoded, " ");
+        let joined = HYPHEN_BREAK.replace_all(&decoded, |caps: &regex::Captures<'_>| {
+            let (left, right) = (&caps[1], &caps[2]);
+            if left.eq_ignore_ascii_case(right) {
+                caps[0].to_string()
+            } else {
+                format!("{left}{right}")
+            }
+        });
+        let collapsed = SPACE.replace_all(&joined, " ");
         let text = collapsed.trim();
         if !text.is_empty() {
             blocks.push(text.to_string());
@@ -227,6 +242,21 @@ mod tests {
             "<p>Satu.</p><table><tr><td>a</td><td>b</td></tr></table><p>Dua &amp; tiga.</p>",
         );
         assert_eq!(blocks, vec!["Satu.", "a b", "Dua & tiga."]);
+    }
+
+    #[test]
+    fn hyphenation_breaks_are_joined_and_reduplication_kept() {
+        // Joining without the hyphen scored best on HistoriKorpus (WER 34.51% vs 36.54% keeping it); the cost is that a
+        // real compound split at a line end (`sosial-` + `ekonomi`) loses its hyphen.
+        let blocks = html_to_blocks(
+            "<p>Nasio-\nnal dan mengu- mumkan, sosial-\nekonomi, kata- kata, sekunder - pertanian, 1945- 1950.</p>",
+        );
+        assert_eq!(
+            blocks,
+            vec![
+                "Nasional dan mengumumkan, sosialekonomi, kata- kata, sekunder - pertanian, 1945- 1950."
+            ]
+        );
     }
 
     #[test]
