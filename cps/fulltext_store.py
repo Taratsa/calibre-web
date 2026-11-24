@@ -29,7 +29,18 @@ BULK_DOCUMENTS = 1000
 
 Row = dict[str, object]
 _table_ready = False
-_write_lock = threading.Lock()
+# One lock per book: two threads replacing the same book must not interleave their delete and insert, but different
+# books may be written in parallel (the full reindex does exactly that).
+_book_locks: dict[int, threading.Lock] = {}
+_book_locks_guard = threading.Lock()
+
+
+def _book_lock(book_id: int) -> threading.Lock:
+    with _book_locks_guard:
+        lock = _book_locks.get(book_id)
+        if lock is None:
+            lock = _book_locks[book_id] = threading.Lock()
+        return lock
 
 
 class FulltextUnavailable(Exception):
@@ -96,12 +107,12 @@ def _delete_range(low: int, high: int) -> None:
 
 def delete_book(book_id: int) -> None:
     """Remove every chunk of a book (an id range, so no scan)."""
-    with _write_lock:
+    with _book_lock(book_id):
         _delete_range(*id_range(book_id))
 
 
 def delete_format(book_id: int, book_format: str) -> None:
-    with _write_lock:
+    with _book_lock(book_id):
         _delete_range(*id_range(book_id, book_format))
 
 
@@ -120,8 +131,8 @@ def replace_format(book_id: int, book_format: str, markup: str) -> int:
         )
         for sequence, body in enumerate(chunk_text(markup))
     ]
-    # One writer at a time: two threads replacing the same book must not interleave their delete and insert.
-    with _write_lock:
+    # One writer per book at a time (see _book_lock).
+    with _book_lock(book_id):
         _delete_range(*id_range(book_id, book_format))
         for start in range(0, len(lines), BULK_DOCUMENTS):
             _bulk(lines[start : start + BULK_DOCUMENTS])

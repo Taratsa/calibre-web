@@ -170,6 +170,16 @@ pub fn lower_tokens(text: &str) -> Vec<String> {
         .collect()
 }
 
+/// Unicode default case folding, with a byte-wise fast path: for an ASCII token it is exactly ASCII lower-casing,
+/// and ASCII is most of the corpus.
+fn fold(token: &str) -> String {
+    if token.is_ascii() {
+        token.to_ascii_lowercase()
+    } else {
+        caseless::default_case_fold_str(token)
+    }
+}
+
 pub fn tokenize(markup: &str) -> Tokenized {
     let mut sentences = Vec::new();
     let mut paragraphs = 0;
@@ -180,7 +190,7 @@ pub fn tokenize(markup: &str) -> Tokenized {
         for sentence in split_sentences(&block) {
             let tokens: Vec<String> = TOKEN
                 .find_iter(&sentence)
-                .map(|found| caseless::default_case_fold_str(found.as_str()))
+                .map(|found| fold(found.as_str()))
                 .collect();
             if !tokens.is_empty() {
                 sentences.push(tokens);

@@ -23,6 +23,11 @@ from .ocr_service import (
 )
 from .text_analysis import ANALYSIS_VERSION, CorpusBuilder
 
+# Documents are tokenized on several threads in batches; the cap keeps the HTML held in memory small (a few hundred MB
+# at most) and each batch big enough to keep every worker busy.
+BATCH_DOCUMENTS = 64
+BATCH_CHARACTERS = 48_000_000
+
 
 def _analysis_directory() -> Path:
     directory = cache_directory().parent / "analysis"
@@ -44,18 +49,28 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
     block on each book page) and ``author_text.json`` (a word cloud per author, for the author pages).
     """
     builder = CorpusBuilder()
+    batch: list[tuple[str, str, int | None, Iterable[tuple[int, str]], Iterable[str]]] = []
+    batch_chars = 0
     for book, data, book_format in entries:
         try:
             document = extract_book_ocr(book, data, book_format, allow_extract=False)
         except (OcrNotReadyError, OcrBookNotFoundError, OcrUnavailableError):
             continue
-        builder.add(
-            document.markdown_html,
-            book_format,
-            book.id,
-            getattr(book, "authors", ()),
-            getattr(book, "languages", ()),
+        batch.append(
+            (
+                document.markdown_html,
+                book_format,
+                book.id,
+                getattr(book, "authors", ()),
+                getattr(book, "languages", ()),
+            )
         )
+        batch_chars += len(document.markdown_html)
+        if len(batch) >= BATCH_DOCUMENTS or batch_chars >= BATCH_CHARACTERS:
+            builder.add_many(batch)
+            batch, batch_chars = [], 0
+    if batch:
+        builder.add_many(batch)
     built_at = datetime.now(UTC).isoformat(timespec="seconds")
     directory = _analysis_directory()
     stored = {

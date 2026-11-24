@@ -7,11 +7,21 @@ use std::sync::LazyLock;
 use pyo3::IntoPyObjectExt;
 use pyo3::prelude::*;
 use pyo3::types::{PyDict, PyList};
+use rayon::prelude::*;
 use rustc_hash::{FxHashMap, FxHashSet};
 
 use crate::constants::*;
 use crate::sentiment;
-use crate::text::{lower_tokens, mtld, tokenize};
+use crate::text::{Tokenized, lower_tokens, mtld, tokenize};
+
+/// One document of an `add_many` batch.
+pub struct BatchDocument {
+    pub markup: String,
+    pub book_format: String,
+    pub book_id: Option<i64>,
+    pub authors: Vec<(i64, String)>,
+    pub languages: Vec<String>,
+}
 
 struct Word {
     text: Box<str>,
@@ -326,6 +336,8 @@ pub struct Builder {
     books: Vec<(i64, BookCounts)>,
     book_index: FxHashMap<i64, usize>,
     sentiment: SentimentSets,
+    /// Tokenizing workers. Kept below the core count so the gevent web loop (one core) keeps being served.
+    pool: rayon::ThreadPool,
 }
 
 impl Builder {
@@ -354,6 +366,18 @@ impl Builder {
             books: Vec::new(),
             book_index: FxHashMap::default(),
             sentiment: SentimentSets::new(sentiment, language),
+            pool: rayon::ThreadPoolBuilder::new()
+                .num_threads(
+                    TOKENIZE_THREADS.min(
+                        std::thread::available_parallelism()
+                            .map_or(1, std::num::NonZero::get)
+                            .saturating_sub(1)
+                            .max(1),
+                    ),
+                )
+                .thread_name(|index| format!("taratsa-tokenize-{index}"))
+                .build()
+                .expect("tokenizer pool"),
         }
     }
 
@@ -464,7 +488,39 @@ impl Builder {
         authors: &[(i64, String)],
         languages: &[String],
     ) -> bool {
-        let document = tokenize(markup);
+        self.add_tokenized(tokenize(markup), book_format, book_id, authors, languages)
+    }
+
+    /// Add a batch. Tokenizing is pure, so it runs on the pool; the counting stays serial and in input order, because
+    /// the n-gram tables drop singletons depending on insertion order. The result is identical to calling `add` in a
+    /// loop.
+    pub fn add_many(&mut self, documents: &[BatchDocument]) -> Vec<bool> {
+        let tokenized: Vec<Tokenized> = self
+            .pool
+            .install(|| documents.par_iter().map(|d| tokenize(&d.markup)).collect());
+        documents
+            .iter()
+            .zip(tokenized)
+            .map(|(d, document)| {
+                self.add_tokenized(
+                    document,
+                    &d.book_format,
+                    d.book_id,
+                    &d.authors,
+                    &d.languages,
+                )
+            })
+            .collect()
+    }
+
+    fn add_tokenized(
+        &mut self,
+        document: Tokenized,
+        book_format: &str,
+        book_id: Option<i64>,
+        authors: &[(i64, String)],
+        languages: &[String],
+    ) -> bool {
         let mut sentences: Vec<Vec<u32>> = Vec::with_capacity(document.sentences.len());
         let mut flat: Vec<u32> = Vec::new();
         for sentence in &document.sentences {
@@ -1083,5 +1139,88 @@ impl Builder {
             .collect::<PyResult<_>>()?;
         result.set_item("frequency", PyList::new(py, frequency_rows)?)?;
         Ok(Some(result.unbind()))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn builder() -> Builder {
+        Builder::new(
+            ["dan", "yang"].into_iter().map(Box::from).collect(),
+            SentimentConfig {
+                positive: vec!["baik".into()],
+                negative: vec!["buruk".into()],
+                negators: vec!["tidak".into()],
+                boosters: vec!["sangat".into()],
+                contrasts: vec!["tetapi".into()],
+                emotions: Default::default(),
+            },
+            LanguageWords {
+                ind: vec!["dan".into(), "yang".into()],
+                eng: vec!["the".into()],
+            },
+        )
+    }
+
+    fn documents() -> Vec<BatchDocument> {
+        let texts = [
+            "<p>Pembangunan nasional yang baik dan sangat baik.</p><p>Tetapi hasilnya tidak baik, buruk sekali.</p>",
+            "<p>Nasio-\nnal dan mengu- mumkan hasil pembangunan nasional dan sosial.</p>",
+            "<p>The quick brown fox jumps over the lazy dog.</p>",
+            "<p></p>",
+            "<p>Pembangunan nasional yang baik dan hasil pembangunan nasional.</p>",
+        ];
+        texts
+            .iter()
+            .enumerate()
+            .map(|(index, text)| BatchDocument {
+                markup: (*text).to_string(),
+                book_format: if index % 2 == 0 { "EPUB" } else { "PDF" }.to_string(),
+                book_id: Some(index as i64 + 1),
+                authors: vec![(7, "Penulis".to_string())],
+                languages: vec!["ind".to_string()],
+            })
+            .collect()
+    }
+
+    /// `add_many` tokenizes on several threads but must leave the builder exactly as a serial `add` loop would: the
+    /// vocabulary order, every counter and the n-gram tables depend on documents being counted in input order.
+    #[test]
+    fn add_many_equals_a_serial_add_loop() {
+        let documents = documents();
+        let mut serial = builder();
+        let serial_flags: Vec<bool> = documents
+            .iter()
+            .map(|d| {
+                serial.add(
+                    &d.markup,
+                    &d.book_format,
+                    d.book_id,
+                    &d.authors,
+                    &d.languages,
+                )
+            })
+            .collect();
+        let mut batched = builder();
+        let batched_flags = batched.add_many(&documents);
+
+        assert_eq!(serial_flags, batched_flags);
+        assert_eq!(serial_flags, vec![true, true, true, false, true]);
+        let words =
+            |b: &Builder| -> Vec<String> { b.vocab.iter().map(|w| w.text.to_string()).collect() };
+        assert_eq!(words(&serial), words(&batched));
+        assert_eq!(serial.word_counts, batched.word_counts);
+        assert_eq!(serial.document_frequency, batched.document_frequency);
+        assert_eq!(serial.lengths, batched.lengths);
+        assert_eq!(serial.sentences, batched.sentences);
+        assert_eq!(serial.paragraphs, batched.paragraphs);
+        assert_eq!(serial.characters, batched.characters);
+        assert_eq!(serial.bigrams.len(), batched.bigrams.len());
+        assert_eq!(serial.trigrams.len(), batched.trigrams.len());
+        assert_eq!(serial.books.len(), batched.books.len());
+        assert_eq!(serial.document_count(), 4);
+        assert_eq!(batched.document_count(), 4);
     }
 }

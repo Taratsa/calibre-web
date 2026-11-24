@@ -9,7 +9,7 @@ use std::collections::HashSet;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 
-use crate::corpus::{Builder, LanguageWords, SentimentConfig};
+use crate::corpus::{BatchDocument, Builder, LanguageWords, SentimentConfig};
 
 #[pyclass(name = "CorpusBuilder", module = "taratsa_text")]
 struct PyCorpusBuilder {
@@ -53,6 +53,30 @@ impl PyCorpusBuilder {
             self.builder
                 .add(&markup, &book_format, book_id, &authors, &languages)
         }))
+    }
+
+    /// Add a batch of `(markup, book_format, book_id, authors, languages)` documents; returns, per document, whether
+    /// it held words. Tokenizing runs on several threads without the GIL; counting stays serial and in order, so the
+    /// result equals calling `add` for each document in turn.
+    #[allow(clippy::type_complexity)]
+    fn add_many(
+        &mut self,
+        py: Python<'_>,
+        documents: Vec<(String, String, Option<i64>, Vec<(i64, String)>, Vec<String>)>,
+    ) -> PyResult<Vec<bool>> {
+        let batch: Vec<BatchDocument> = documents
+            .into_iter()
+            .map(
+                |(markup, book_format, book_id, authors, languages)| BatchDocument {
+                    markup,
+                    book_format,
+                    book_id,
+                    authors,
+                    languages,
+                },
+            )
+            .collect();
+        Ok(py.detach(|| self.builder.add_many(&batch)))
     }
 
     fn result(&self, py: Python<'_>) -> PyResult<Option<Py<PyDict>>> {

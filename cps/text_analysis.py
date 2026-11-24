@@ -140,6 +140,21 @@ class CorpusBuilder:
         """
         return self._builder.add(markup, book_format, book_id, list(authors), list(languages))
 
+    def add_many(
+        self, documents: Iterable[tuple[str, str, int | None, Iterable[tuple[int, str]], Iterable[str]]]
+    ) -> int:
+        """Add a batch of ``(markup, book_format, book_id, authors, languages)``; returns how many held words.
+
+        Tokenizing runs on several threads, counting stays serial and in input order, so the stored statistics are
+        identical to calling ``add`` for each document in turn. Keep batches small: every markup string is held in
+        memory until the batch is counted.
+        """
+        batch = [
+            (markup, fmt, book_id, list(authors), list(languages))
+            for markup, fmt, book_id, authors, languages in documents
+        ]
+        return sum(self._builder.add_many(batch))
+
     def result(self) -> dict[str, object] | None:
         """The corpus overview (totals, distributions, n-gram and word rankings); None before the first document."""
         return self._builder.result()

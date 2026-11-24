@@ -29,6 +29,8 @@ pub const MTLD_THRESHOLD: f64 = 0.72;
 /// MTLD of a very short text is dominated by chance.
 pub const MTLD_MIN_TOKENS: usize = 1000;
 pub const MAX_NGRAM_ENTRIES: usize = 1_000_000;
+/// Upper bound on tokenizer threads in `add_many`; the pool also leaves one core free for the web loop.
+pub const TOKENIZE_THREADS: usize = 6;
 /// Corpus overview.
 pub const CORPUS_WORDS: usize = 50;
 pub const CORPUS_NGRAMS: usize = 30;

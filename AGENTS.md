@@ -411,6 +411,18 @@ Two live search systems (plus the legacy advanced-search form):
   36.54% keeping the hyphen. The cost is a real compound broken at a line end (`sosial-` + `ekonomi`) losing its
   hyphen. The same function cuts the full-text chunks, so a change here needs a full-text reindex as well as the
   corpus rebuild (`ANALYSIS_VERSION` 10)
+- Rebuild speed (measured 2026-11-24, 8 cores, OCR job running alongside): `build_corpus()` feeds `CorpusBuilder.add_many()`
+  in batches of up to 64 documents or 48M characters. Tokenizing (HTML -> blocks -> sentences -> folded tokens, the pure
+  part) runs on a rayon pool of at most 6 threads, always leaving one core for the web loop; counting stays serial and in
+  input order, because vocabulary ids and the n-gram tables' singleton drops depend on order. Output is bit-identical
+  to a serial `add()` loop (digest of `result()`, `book_text()` and `author_text()` equal over 19,378 documents, and a
+  `cargo test` covers it). Corpus rebuild 175 s -> 91 s. Where `add()` spends its time (3,946 documents): tokenizing
+  ~55%, n-gram counting ~35% (bigrams and trigrams hash into shared tables, so it is not parallelised), vocabulary
+  interning ~8%. ASCII tokens are lower-cased bytewise instead of through Unicode case folding (identical for ASCII).
+  Full-text reindex: the Manticore writes dominate, so `TaskFulltextIndex` hands each document to 4 writer threads
+  (1 writer 2,087 chunks/s, 4 writers 3,336, 8 writers 3,434 on a populated table; bulk size 1000 vs 5000 made no
+  difference) and locks per book instead of globally: 303 s -> 181 s. `optimize index text_chunks option cutoff=1,
+  sync=1` afterwards still takes ~145 s and is not parallelisable
 - Tone line on the book page ("Sentimen kata"): `profile.sentiment` = `{score, positive, negative}` or `null`, where
   `score` = (positive - negative) / hits in [-1, 1]. Words come from `cps/sentiment_lexicon.json` (hand-curated
   Indonesian evaluative words, single tokens, under this repository's licence - InSet has no licence and VADER's
