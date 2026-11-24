@@ -159,7 +159,22 @@ const moreNav: NavLink[] = [
         t.async = true;
         t.src = appUrl + "/js/formbricks.umd.cjs";
         t.onload = function () {
-          window.formbricks.setup({ workspaceId: workspaceId, appUrl: appUrl });
+          try {
+            // A failed sync leaves {status:{value:"error",expiresAt:+10min}} in localStorage with NO config. Until it
+            // expires the SDK skips initialization, and its page-view check then throws "config is null, maybe the init
+            // function was not called?" on every page load. Drop that backoff so a transient failure (edge 5xx, a
+            // blocked request) costs one visit instead of leaving the widget dead for ten minutes.
+            var stored = null;
+            try {
+              stored = JSON.parse(localStorage.getItem("formbricks-js"));
+            } catch (ignore) {}
+            if (stored && stored.status && stored.status.value === "error") {
+              localStorage.removeItem("formbricks-js");
+            }
+            window.formbricks.setup({ workspaceId: workspaceId, appUrl: appUrl });
+          } catch (ignore) {
+            // The widget is optional: never let it break the page.
+          }
         };
         var e = document.getElementsByTagName("script")[0];
         e.parentNode.insertBefore(t, e);

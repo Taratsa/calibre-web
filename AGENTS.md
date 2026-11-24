@@ -271,6 +271,13 @@ Two live search systems (plus the legacy advanced-search form):
 - Umami `epub-read` / `pdf-read` events (`book_id`, `format`, `title`) fired on load by the standalone
   reader pages `read.html` / `readpdf.html` via the shared `cps/templates/umami_reader.html` partial
   (these pages do not extend `layout.html`, so they load the Umami script themselves)
+- Formbricks feedback widget (`BaseLayout.astro`, served from `feedback.taratsa.id`, workspace `cmuxi018b…`): a failed
+  first sync makes the SDK store `{status:{value:"error",expiresAt:+10min}}` with NO config; until it expires the SDK
+  skips initialization and its page-view check throws "config is null, maybe the init function was not called?" on
+  every page load (also seen as an unhandled `Cannot read properties of undefined (reading 'data')`). The embed
+  therefore drops a stored `error` status before calling `setup`, so one transient failure costs one visit. The
+  failure itself is upstream (one edge 503 on `/js/surveys.umd.cjs` and aborted CORS preflights on
+  `/api/v1/client/<workspace>/environment` were observed); `user` identification is enterprise-only on that server
 - Anonymous download tracking for Hot Books
 - OPDS feed for ebook reader compatibility
 - App-level WebP conversion for cover images
