@@ -26,7 +26,7 @@
       PDFViewerApplicationOptions.set('wasmUrl', "{{ url_for('static', filename='wasm/') }}");
       PDFViewerApplicationOptions.set('iccUrl', "{{ url_for('static', filename='iccs/') }}");
       PDFViewerApplicationOptions.set('workerSrc', "{{ url_for('static', filename='js/libs/pdf.worker.mjs') }}");
-      PDFViewerApplicationOptions.set('defaultUrl', "{{ url_for('web.serve_book', book_id=pdffile, book_format='pdf') }}");
+      PDFViewerApplicationOptions.set('defaultUrl', "{{ pdf_url }}");
     });
     </script>
 

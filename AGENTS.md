@@ -26,6 +26,18 @@ docker compose up -d --build rebuild-watcher  # Force rebuild watcher
 ### Flask App (`calibre-web-automated`)
 Serves API endpoints: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/remote_login*`, `/read/*`, `/show/*`, `/download/*`, `/send/*`, `/ajax/*`, `/table`, `/downloadlist`, `/cover/*`, `/series_cover/*`, `/opds`, `/opds/*`, `/kobo/*`, `/.well-known/*`, `/metrics`, `/feed.xml`, `/osd.xml`, `/index.xml`, `/robots.txt`, static files under `cps/static/`.
 
+- **Health check**: `curl --max-time 25 /healthz/live`, interval 30 s, timeout 30 s, 4 retries. Flask is ONE gevent loop,
+  so a traffic spike or a bulk import makes the endpoint answer in 1-4 s and now and then past the old 10 s timeout (2 of
+  5 consecutive checks timed out on 2026-11-24 with CPU at 100%). Slow is not dead; nothing restarts a container on
+  `unhealthy` here, so the check is a status signal, not a trigger. Diagnose a busy Flask by thread: the `python3`
+  main thread is the web loop, `Thread-N` is the task worker (OCR, thumbnails, duplicate scans)
+- **Upload language codes** (`cps/isoLanguages.py`): `get_valid_language_codes_from_code()` maps the 20 ISO 639-2
+  bibliographic codes (`dut ger fre may chi cze ...`) to the terminologic ones the library stores (`nld deu fra msa zho ces
+  ...`). The `hermes` bulk import sends `dut`, which produced 116 "'dut' is not a valid language" errors in 2 hours; each
+  such upload lost its language. Genuinely unknown codes are still reported. Books imported BEFORE this fix have no
+  language, but so do many older books (7,676 of 15,984 on 2026-11-24), so the damage cannot be separated by a query;
+  nothing back-fills them and `library/` is never edited from here, so fix them in Calibre
+
 ### Rebuild Watcher (`rebuild-watcher`)
 - Polls `metadata.db` every 5 seconds for changes
 - Debounces 10 seconds before rebuilding
@@ -556,6 +568,15 @@ Two live search systems (plus the legacy advanced-search form):
   old direct `get_download_link()`
 - **Cloudflare**: a dashboard Cache Rule must NOT match `/download/*`
   (a cached 200/302 there bypasses the counter). Cache `/files/*` only
+- **PDF reader file** (`get_pdf_reader_url()` in `cps/helper.py`, used by `read_book()` -> `readpdf.html` `pdf_url`): the
+  viewer loads the signed `/files/<id>/pdf/...` URL, NOT `/show/<id>/pdf`. `/show/*` is `private, no-store` by design, so
+  every reader of a popular book re-streamed the whole PDF through Flask (book 4644, a 4.8 MB report that went viral:
+  ~250 reader loads and ~200 file serves in 5 minutes from 165 IPs kept the single gevent loop at ~70% CPU and made
+  `/healthz/live` take 1-4 s). `/files` is the same bytes, edge-cached (`cf-cache-status: HIT` on Range requests), supports
+  Range, and never counts a download, which is right for viewing (counter stays at 185 across a reader session). Google
+  Drive and books without a PDF format keep the `/show` URL. `/show/<id>/<fmt>` is still used by the other readers
+  (txt, cbr, djvu, audio) and by the EPUB reader's routes. The reader PAGE (`/read/<id>/pdf`, ~55 KB, 30-300 ms) is
+  still rendered by Flask on every load because it carries the session CSRF token and must not be cached
 
 ### Cover Images
 - `Cache-Control: public, max-age=86400` (1 day) from Caddy's `@covers` block; the URL carries no version, so a changed

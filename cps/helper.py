@@ -1439,6 +1439,27 @@ def get_signed_file(book_id, book_format, version, sig):
     return response
 
 
+def get_pdf_reader_url(book):
+    """URL the PDF reader loads the file from: the signed, immutable /files URL, which the CDN caches.
+
+    /show/<id>/pdf is per-session (`private, no-store`) so every reader of a popular book re-streamed the whole file
+    through Flask (4644: ~250 reads in 5 minutes). The /files URL carries no session and never counts a download, which
+    is right for viewing. Falls back to /show when the file is not a plain local PDF (Google Drive, no such format).
+    """
+    data = calibre_db.get_book_format(book.id, "PDF")
+    if not data or config.config_use_google_drive:
+        return url_for("web.serve_book", book_id=book.id, book_format="pdf")
+    version = _file_version(book, data)
+    return url_for(
+        "web.serve_file",
+        book_id=book.id,
+        book_format="pdf",
+        version=version,
+        sig=_file_signature(book.id, "pdf", version),
+        anyname=get_valid_filename(data.name, replace_whitespace=False) + ".pdf",
+    )
+
+
 def clear_cover_thumbnail_cache(book_id):
     if config.schedule_generate_book_covers:
         WorkerThread.add(None, TaskClearCoverThumbnailCache(book_id), hidden=True)

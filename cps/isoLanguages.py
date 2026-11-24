@@ -82,10 +82,40 @@ def get_language_code_from_name(locale, language_names, remainder=None):
     return lang
 
 
+# ISO 639-2 has two codes for 20 languages: the bibliographic one (dut, ger, fre, may, ...) that tools such as
+# Calibre metadata plugins and ebook files emit, and the terminologic one (nld, deu, fra, msa, ...) that this library
+# stores and the language table lists. Uploads carry either, so the bibliographic code is mapped before matching.
+BIBLIOGRAPHIC_TO_TERMINOLOGIC = {
+    "tib": "bod",
+    "cze": "ces",
+    "wel": "cym",
+    "ger": "deu",
+    "gre": "ell",
+    "baq": "eus",
+    "per": "fas",
+    "fre": "fra",
+    "arm": "hye",
+    "ice": "isl",
+    "geo": "kat",
+    "mac": "mkd",
+    "mao": "mri",
+    "may": "msa",
+    "bur": "mya",
+    "dut": "nld",
+    "rum": "ron",
+    "slo": "slk",
+    "alb": "sqi",
+    "chi": "zho",
+}
+
+
 def get_valid_language_codes_from_code(locale, language_names, remainder=None):
     lang = []
     if "" in language_names:
         language_names.remove("")
+    language_names[:] = [
+        BIBLIOGRAPHIC_TO_TERMINOLOGIC.get(strip_whitespaces(name).lower(), name) for name in language_names
+    ]
     names = get_language_names(locale)
     if names is None:
         return lang

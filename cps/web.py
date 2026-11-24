@@ -72,6 +72,7 @@ from .helper import (
     get_book_cover,
     get_download_link,
     get_download_redirect,
+    get_pdf_reader_url,
     get_series_cover_thumbnail,
     get_signed_file,
     get_valid_filename,
@@ -2691,7 +2692,9 @@ def read_book(book_id, book_format):
         )
     elif book_format.lower() == "pdf":
         log.debug("Start pdf reader for %d", book_id)
-        return render_title_template("readpdf.html", pdffile=book_id, title=book.title)
+        return render_title_template(
+            "readpdf.html", pdffile=book_id, pdf_url=get_pdf_reader_url(book), title=book.title
+        )
     elif book_format.lower() == "txt":
         log.debug("Start txt reader for %d", book_id)
         return render_title_template("readtxt.html", txtfile=book_id, title=book.title)
