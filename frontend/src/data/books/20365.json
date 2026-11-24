@@ -1,0 +1,52 @@
+{
+  "id": 20365,
+  "title": "Mkfs.btrfs",
+  "slug": "mkfs-btrfs-onno-widodo-purbo",
+  "slugBase": "mkfs-btrfs-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-28",
+  "timestamp": "2026-11-24 06:36:54.332603",
+  "last_modified": "2026-11-24 06:36:54.332607",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:8c14d5ba-bd2d-5601-b703-54845badf201"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20365?v=1795477014",
+  "cover_og_url": "/cover/20365/og?v=1795477014",
+  "url": "/book/mkfs-btrfs-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "The common mkfs program to format a device with Btrfs. Usage mkfs.btrfs [-A ] [-b ] [-l ] [-n ] [-L ] [-s ] [-m raid0|raid1|raid10|single] [-d raid0|raid1|raid10|single]  Description of parameters \"alloc-start\" or \"-A\": At what offset to start the fs. \"byte-count\" or \"-b\": Size of the filesystem in bytes. \"leafsize\" or \"-l\": Size of the leaves,",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2364,
+      "name": "Mkfs.btrfs - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -47,12 +47,12 @@
     }
   ],
   "text": {
-    "words": 12806,
+    "words": 12743,
     "longer_than": 84,
     "top": [
       [
         "anak",
-        128
+        127
       ],
       [
         "wanita",
@@ -64,7 +64,7 @@
       ],
       [
         "orang",
-        67
+        64
       ],
       [
         "djuga",
@@ -75,28 +75,28 @@
         51
       ],
       [
-        "djakarta",
+        "berat",
         47
       ],
       [
-        "berat",
-        43
+        "djakarta",
+        47
       ],
       [
         "banjak",
         40
       ],
       [
-        "badan",
-        33
-      ],
-      [
         "makan",
-        33
+        34
       ],
       [
         "gemuk",
-        31
+        33
+      ],
+      [
+        "badan",
+        29
       ]
     ],
     "distinct": [
@@ -118,7 +118,7 @@
       ],
       [
         "anak",
-        128
+        127
       ],
       [
         "djakarta",
@@ -129,12 +129,12 @@
         40
       ],
       [
-        "njonja",
-        25
+        "gemuk",
+        33
       ],
       [
-        "gemuk",
-        31
+        "njonja",
+        25
       ],
       [
         "kartini",
@@ -146,7 +146,7 @@
       ],
       [
         "nja",
-        30
+        29
       ]
     ],
     "phrases": [
@@ -155,12 +155,12 @@
         26
       ],
       [
-        "api kartini",
+        "berat badan",
         19
       ],
       [
-        "berat badan",
-        18
+        "api kartini",
+        19
       ],
       [
         "kaum wanita",
@@ -179,7 +179,7 @@
         12
       ],
       [
-        "badan tanpa mengatur",
+        "badan jang teoretis",
         8
       ]
     ],
@@ -211,23 +211,23 @@
     ],
     "sentiment": {
       "score": 0.38,
-      "positive": 192,
+      "positive": 194,
       "negative": 87,
       "trend": [
         0.59,
         0.65,
         null,
-        0.33,
-        0.58,
-        -0.08,
+        0.38,
+        0.47,
+        0.08,
+        0.47,
         0.5,
-        1,
-        0.52,
-        0.15,
-        0.2,
+        0.68,
+        0.19,
+        0.26,
         0.38,
         0.43,
-        0.6,
+        0.56,
         -0.04,
         0.22
       ],

@@ -1,0 +1,52 @@
+{
+  "id": 20367,
+  "title": "UseCases",
+  "slug": "usecases-onno-widodo-purbo",
+  "slugBase": "usecases-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-28",
+  "timestamp": "2026-11-24 06:37:00.478622",
+  "last_modified": "2026-11-24 06:37:00.478628",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:b24d4ea2-275d-59bf-952a-6f8e794bcbde"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20367?v=1795477020",
+  "cover_og_url": "/cover/20367/og?v=1795477020",
+  "url": "/book/usecases-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "There have been quite a few questions about how to accomplish ZFS tasks in Btrfs, as well as just generic \"How do I do X in Btrfs?\". This page aims to answer those questions. Simply add your question to the \"Use Case\" section of the table. Contents 1 RAID 1.1 How do I create a RAID1 mirror in Btrfs? 1.2 How do I create a RAID10 striped mirror in Btrfs? 1.3 How can I create a RAID-1 filesystem in",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5855,
+      "name": "UseCases - Onno Widodo Purbo"
+    }
+  ]
+}

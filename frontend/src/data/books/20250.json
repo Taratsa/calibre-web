@@ -48,5 +48,52 @@
       "size": 2455,
       "name": "DNS_ Spoofing ubuntu.pool.ntp.org - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 137,
+    "longer_than": 18,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "ubuntu pool ntp",
+        11
+      ],
+      [
+        "dns spoofing",
+        6
+      ],
+      [
+        "spoofing ubuntu pool",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20226,
+        0.85
+      ],
+      [
+        20220,
+        0.63
+      ],
+      [
+        20230,
+        0.48
+      ],
+      [
+        11988,
+        0.44
+      ],
+      [
+        20231,
+        0.43
+      ],
+      [
+        12481,
+        0.41
+      ]
+    ],
+    "sentiment": null
+  }
 }

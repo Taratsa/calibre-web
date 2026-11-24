@@ -1,0 +1,52 @@
+{
+  "id": 20283,
+  "title": "ProxMox: Monitoring - Install host-sflow server",
+  "slug": "proxmox-monitoring-install-host-sflow-server-onno-widodo-purbo",
+  "slugBase": "proxmox-monitoring-install-host-sflow-server-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-07-21",
+  "timestamp": "2026-11-24 06:33:08.335590",
+  "last_modified": "2026-11-24 06:33:08.335595",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:991f65cc-9da9-51fd-add4-a978450baa66"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20283?v=1795476788",
+  "cover_og_url": "/cover/20283/og?v=1795476788",
+  "url": "/book/proxmox-monitoring-install-host-sflow-server-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "The Host sFlow agent supports Linux performance monitoring, providing a lightweight, scalable solution for monitoring large numbers of Linux servers. The following steps demonstrate how to install and configure the Host sFlow agent on a Linux server, sending sFlow to an analyzer with IP address 10.0.0.50. Note: If there are any firewalls between the Linux servers and the sFlow analyzer, you will",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3691,
+      "name": "ProxMox_ Monitoring - Install host-sflow s - Onno Widodo Purbo"
+    }
+  ]
+}

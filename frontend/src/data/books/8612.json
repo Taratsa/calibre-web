@@ -38,20 +38,20 @@
     }
   ],
   "text": {
-    "words": 31457,
+    "words": 31359,
     "longer_than": 93,
     "top": [
       [
         "masyarakat",
-        501
+        503
       ],
       [
         "informasi",
-        489
+        494
       ],
       [
         "lingkungan",
-        367
+        370
       ],
       [
         "akses",
@@ -59,7 +59,7 @@
       ],
       [
         "partisipasi",
-        238
+        242
       ],
       [
         "hidup",
@@ -67,11 +67,11 @@
       ],
       [
         "pemerintah",
-        189
+        190
       ],
       [
         "keputusan",
-        179
+        184
       ],
       [
         "hukum",
@@ -93,7 +93,7 @@
     "distinct": [
       [
         "informasi",
-        489
+        494
       ],
       [
         "akses",
@@ -101,15 +101,15 @@
       ],
       [
         "partisipasi",
-        238
+        242
       ],
       [
         "masyarakat",
-        501
+        503
       ],
       [
         "lingkungan",
-        367
+        370
       ],
       [
         "indikator",
@@ -117,19 +117,19 @@
       ],
       [
         "pengambilan",
-        138
+        139
       ],
       [
         "amdal",
         69
       ],
       [
-        "ornop",
-        61
+        "keputusan",
+        184
       ],
       [
-        "keputusan",
-        179
+        "ornop",
+        61
       ],
       [
         "penelitian",
@@ -137,7 +137,7 @@
       ],
       [
         "pemerintah",
-        189
+        190
       ]
     ],
     "phrases": [
@@ -151,7 +151,7 @@
       ],
       [
         "partisipasi masyarakat",
-        90
+        91
       ],
       [
         "akses informasi",
@@ -159,7 +159,7 @@
       ],
       [
         "peraturan perundang-undangan",
-        59
+        60
       ],
       [
         "pengelolaan lingkungan",
@@ -181,18 +181,18 @@
       ],
       [
         8652,
-        0.28
+        0.29
       ],
       [
         8848,
         0.26
       ],
       [
-        8155,
+        8654,
         0.26
       ],
       [
-        8654,
+        8155,
         0.26
       ],
       [
@@ -202,22 +202,22 @@
     ],
     "sentiment": {
       "score": 0.36,
-      "positive": 514,
-      "negative": 242,
+      "positive": 516,
+      "negative": 243,
       "trend": [
         0.56,
         0.72,
         0.76,
-        0.53,
-        0.38,
-        -0.08,
+        0.56,
+        0.39,
+        -0.1,
         0.15,
         -0.12,
         0.57,
-        0.43,
-        0,
+        0.45,
         -0.02,
-        0.09,
+        0,
+        0.11,
         0.8,
         0.63,
         0.46

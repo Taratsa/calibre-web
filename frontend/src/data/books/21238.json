@@ -1,0 +1,54 @@
+{
+  "id": 21238,
+  "title": "IPTEKNux: Berbasis Ubuntu",
+  "slug": "ipteknux-berbasis-ubuntu-onno-widodo-purbo",
+  "slugBase": "ipteknux-berbasis-ubuntu-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-03-14",
+  "timestamp": "2026-11-24 07:43:00.871263",
+  "last_modified": "2026-11-24 07:43:00.871267",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:dfae2034-fdba-56a3-925a-119a2e0031b9"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21238?v=1795480980",
+  "cover_og_url": "/cover/21238/og?v=1795480980",
+  "url": "/book/ipteknux-berbasis-ubuntu-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Persiapan 2 Persiapan 3 UNPACK file iso untuk di remaster 4 Customisasi 5 Instalasi Aplikasi Pendidikan 6 PACK menjadi file iso yang baru 7 Pranala Menarik Persiapan Siapkan file iso Ubuntu Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Persiapan sudo apt-get install uck sudo modprobe squashfs Matikan Server yang tidak diperlukan sudo /etc/init.d/mysql",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3379,
+      "name": "IPTEKNux_ Berbasis Ubuntu - Onno Widodo Purbo"
+    }
+  ]
+}

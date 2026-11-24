@@ -1,0 +1,52 @@
+{
+  "id": 20856,
+  "title": "TCP/IP: Quagga Bagaimana cara menggunakan",
+  "slug": "tcp-ip-quagga-bagaimana-cara-menggunakan-onno-widodo-purbo",
+  "slugBase": "tcp-ip-quagga-bagaimana-cara-menggunakan-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-01",
+  "timestamp": "2026-11-24 06:59:06.037633",
+  "last_modified": "2026-11-24 06:59:06.037638",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:85679b93-86b5-595d-9b93-9599d8c731eb"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20856?v=1795478346",
+  "cover_og_url": "/cover/20856/og?v=1795478346",
+  "url": "/book/tcp-ip-quagga-bagaimana-cara-menggunakan-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Daemon di Quagga 2 File Konfigurasi (file /etc/quagga/*.conf) 3 DEBIAN.CONF FILE 4 VTYSH 5 IP FORWARDING 6 SPEED/DUPLEX 7 Pranala Menarik Daemon di Quagga Kita harus mengaktifkan daemon di quagga sesuai dengan routing protokol yang kita inginkan di router kita. zebra: Interface declaration and static routing bgpd: BGP routing protocol ospfd: OSPF routing protocol ospf6d: OSPF IPv6",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5778,
+      "name": "TCP_IP_ Quagga Bagaimana cara menggunakan - Onno Widodo Purbo"
+    }
+  ]
+}

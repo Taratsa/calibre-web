@@ -1,0 +1,52 @@
+{
+  "id": 20493,
+  "title": "Ssh - automatic login",
+  "slug": "ssh-automatic-login-onno-widodo-purbo",
+  "slugBase": "ssh-automatic-login-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-12-02",
+  "timestamp": "2026-11-24 06:43:20.126466",
+  "last_modified": "2026-11-24 06:43:20.126471",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:9144b9db-63d7-5311-9f09-02e30f27763d"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20493?v=1795477400",
+  "cover_og_url": "/cover/20493/og?v=1795477400",
+  "url": "/book/ssh-automatic-login-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://wp.uberdose.com/2006/10/16/ssh-automatic-login/ public ssh key, cek pastikan ada file id_dsa.pub ~/.ssh kalau belum ada id_dsa.pub di ~/.ssh lakukan chmod 700 ~/.ssh ssh-keygen -t dsa ssh-keygen -t rsa copykan ke remote server scp ~/.ssh/id_dsa.pub remoteuser@remoteserver.com: scp ~/.ssh/id_rsa.pub remoteuser@remoteserver.com: di remote server append content public key id_dsa.pub",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2663,
+      "name": "Ssh - automatic login - Onno Widodo Purbo"
+    }
+  ]
+}

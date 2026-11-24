@@ -15,12 +15,12 @@
   ],
   "publisher": {
     "id": 992,
-    "name": "Ter Lands-Drukkerij"
+    "name": "Ter lands-drukkerij"
   },
   "publishers": [
     {
       "id": 992,
-      "name": "Ter Lands-Drukkerij"
+      "name": "Ter lands-drukkerij"
     }
   ],
   "languages": [],
@@ -43,5 +43,170 @@
       "size": 7360904,
       "name": "Teman pengatahoean bagei anak-anak - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 5369,
+    "longer_than": 73,
+    "top": [
+      [
+        "ietoe",
+        280
+      ],
+      [
+        "orang",
+        82
+      ],
+      [
+        "ieja",
+        70
+      ],
+      [
+        "ieja-ietoe",
+        54
+      ],
+      [
+        "angkau",
+        47
+      ],
+      [
+        "dieja",
+        45
+      ],
+      [
+        "benda",
+        41
+      ],
+      [
+        "ajer",
+        40
+      ],
+      [
+        "tijada",
+        38
+      ],
+      [
+        "soewatoe",
+        32
+      ],
+      [
+        "akoe",
+        30
+      ],
+      [
+        "adanja",
+        29
+      ]
+    ],
+    "distinct": [
+      [
+        "ieja",
+        70
+      ],
+      [
+        "angkau",
+        47
+      ],
+      [
+        "tijada",
+        38
+      ],
+      [
+        "dieja",
+        45
+      ],
+      [
+        "ajer",
+        40
+      ],
+      [
+        "soewatoe",
+        32
+      ],
+      [
+        "ieni",
+        20
+      ],
+      [
+        "akoe",
+        30
+      ],
+      [
+        "kapada",
+        26
+      ],
+      [
+        "kras",
+        21
+      ],
+      [
+        "kadalam",
+        18
+      ],
+      [
+        "parampoewan",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "djikalau kiranja",
+        11
+      ],
+      [
+        "boedak ietoe",
+        11
+      ],
+      [
+        "ajer ietoe",
+        11
+      ],
+      [
+        "soewatoe dengan soewatoe",
+        6
+      ],
+      [
+        "kadalam ajer",
+        9
+      ],
+      [
+        "oedara ietoe",
+        8
+      ],
+      [
+        "benda jang kras",
+        5
+      ],
+      [
+        "orang ietoe",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        10940,
+        0.33
+      ],
+      [
+        3606,
+        0.24
+      ],
+      [
+        640,
+        0.2
+      ],
+      [
+        539,
+        0.19
+      ],
+      [
+        10979,
+        0.17
+      ],
+      [
+        708,
+        0.16
+      ]
+    ],
+    "sentiment": null
+  }
 }

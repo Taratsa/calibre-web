@@ -1,0 +1,52 @@
+{
+  "id": 20617,
+  "title": "PERL: Mengetahui isi INC",
+  "slug": "perl-mengetahui-isi-inc-onno-widodo-purbo",
+  "slugBase": "perl-mengetahui-isi-inc-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-02-12",
+  "timestamp": "2026-11-24 06:48:47.540002",
+  "last_modified": "2026-11-24 06:48:47.540007",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:2b06dd7b-c591-5765-a90e-098399bb3308"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20617?v=1795477727",
+  "cover_og_url": "/cover/20617/og?v=1795477727",
+  "url": "/book/perl-mengetahui-isi-inc-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Daftar @INC adalah daftar directory yang akan di cari oleh Perl saat berusaha untuk me-load modul. Untuk melihat isi @INC gunakan perintah perl -e \"print join(\\\"\\n\\\", @INC);\" Contoh akan keluar sebagai berikut /etc/perl /usr/local/lib/perl/5.10.1 /usr/local/share/perl/5.10.1 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.10 /usr/share/perl/5.10 /usr/local/lib/site_perl Ada dua (2) cara yang",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2601,
+      "name": "PERL_ Mengetahui isi INC - Onno Widodo Purbo"
+    }
+  ]
+}

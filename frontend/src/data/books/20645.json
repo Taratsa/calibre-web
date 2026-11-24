@@ -1,0 +1,52 @@
+{
+  "id": 20645,
+  "title": "Mirror Repository Ubuntu 12.04",
+  "slug": "mirror-repository-ubuntu-12-04-onno-widodo-purbo",
+  "slugBase": "mirror-repository-ubuntu-12-04-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-02-21",
+  "timestamp": "2026-11-24 06:50:01.260881",
+  "last_modified": "2026-11-24 06:50:01.260886",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:a50b4466-e39c-553f-87a0-559ee8e5c207"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20645?v=1795477801",
+  "cover_og_url": "/cover/20645/og?v=1795477801",
+  "url": "/book/mirror-repository-ubuntu-12-04-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Asumsi 2 Siapkan 3 Mengkonfigurasi debmirror 4 Pranala Menarik Asumsi folder repo : /var/data/repository/repo-12.04 server : dl2.foss-id.web.id atau 125.160.17.22 GNUPGHOME : /var/data/mirrorkeyring Ubah informasi tersebut di sesuaikan dengan kondisi komputer anda Siapkan Membuat Mirrorkeyring untuk debmirror Mengkonfigurasi debmirror Install debmirror &amp; buat folder tempat repo apt-get",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4096,
+      "name": "Mirror Repository Ubuntu 12.04 - Onno Widodo Purbo"
+    }
+  ]
+}

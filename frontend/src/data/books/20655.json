@@ -1,0 +1,55 @@
+{
+  "id": 20655,
+  "title": "GNURadio: Ubuntu 11.10 Instal GNURadio 3.3.0",
+  "slug": "gnuradio-ubuntu-11-10-instal-gnuradio-3-3-0-onno-widodo-purbo",
+  "slugBase": "gnuradio-ubuntu-11-10-instal-gnuradio-3-3-0-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-02-22",
+  "timestamp": "2026-11-24 06:50:23.106194",
+  "last_modified": "2026-11-24 06:50:23.106199",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:9b884565-3efc-5111-a2e1-c59283a103be"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20655?v=1795477823",
+  "cover_og_url": "/cover/20655/og?v=1795477823",
+  "url": "/book/gnuradio-ubuntu-11-10-instal-gnuradio-3-3-0-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://gnuradio.org/redmine/wiki/gnuradio/UbuntuInstall Development Tool yang dibutuhkan: g++ subversion make autoconf, automake, libtool sdcc guile ccache Library yang dibutuhkan untuk runtime dan proses compile python-dev FFTW 3.X (fftw3, fftw3-dev) cppunit (libcppunit and libcppunit-dev) Boost 1.35 (or later) libusb and libusb-dev wxWidgets (wx-common) and wxPython (python-wxgtk2.8)",
+  "data": [
+    {
+      "format": "epub",
+      "size": 6826,
+      "name": "GNURadio_ Ubuntu 11.10 Instal GNURadio 3.3 - Onno Widodo Purbo"
+    }
+  ]
+}

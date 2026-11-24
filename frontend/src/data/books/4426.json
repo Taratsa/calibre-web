@@ -58,7 +58,7 @@
     }
   ],
   "text": {
-    "words": 7250,
+    "words": 7206,
     "longer_than": 77,
     "top": [
       [
@@ -67,7 +67,7 @@
       ],
       [
         "rupa",
-        128
+        129
       ],
       [
         "kota",
@@ -75,7 +75,7 @@
       ],
       [
         "kebudayaan",
-        24
+        25
       ],
       [
         "gerakan",
@@ -87,6 +87,10 @@
       ],
       [
         "definisi",
+        18
+      ],
+      [
+        "indonesia",
         18
       ],
       [
@@ -104,10 +108,6 @@
       [
         "produk",
         16
-      ],
-      [
-        "sei",
-        16
       ]
     ],
     "distinct": [
@@ -117,7 +117,7 @@
       ],
       [
         "rupa",
-        128
+        129
       ],
       [
         "sei",
@@ -156,21 +156,21 @@
         9
       ],
       [
-        "definisi",
-        18
+        "kebudayaan",
+        25
       ]
     ],
     "phrases": [
       [
         "seni rupa",
-        92
-      ],
-      [
-        "sen rupa",
-        12
+        93
       ],
       [
         "rupa modern",
+        13
+      ],
+      [
+        "sen rupa",
         12
       ],
       [
@@ -186,18 +186,18 @@
         7
       ],
       [
-        "seni lukis",
-        6
+        "sejarah seni",
+        7
       ],
       [
-        "sei rupa",
+        "seni lukis",
         6
       ]
     ],
     "similar": [
       [
         4537,
-        0.26
+        0.27
       ],
       [
         4484,
@@ -216,15 +216,32 @@
         0.17
       ],
       [
-        4196,
+        4256,
         0.15
       ]
     ],
     "sentiment": {
-      "score": 0.18,
-      "positive": 46,
+      "score": 0.19,
+      "positive": 47,
       "negative": 32,
-      "trend": [],
+      "trend": [
+        null,
+        -0.33,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        -0.43,
+        0.2,
+        -0.14,
+        null,
+        0.43,
+        0.33,
+        1,
+        null
+      ],
       "emotions": []
     }
   }

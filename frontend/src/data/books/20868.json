@@ -1,0 +1,52 @@
+{
+  "id": 20868,
+  "title": "Udev: cara menulis rules",
+  "slug": "udev-cara-menulis-rules-onno-widodo-purbo",
+  "slugBase": "udev-cara-menulis-rules-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-01",
+  "timestamp": "2026-11-24 06:59:39.219003",
+  "last_modified": "2026-11-24 06:59:39.219009",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:9e9b9302-2cfe-5d1d-83d5-f5c4f9607bee"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20868?v=1795478379",
+  "cover_og_url": "/cover/20868/og?v=1795478379",
+  "url": "/book/udev-cara-menulis-rules-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Writing udev rules by Daniel Drake (dsd) Version 0.74 The most recent version of this document can always be found at: http://www.reactivated.net/writing_udev_rules.html Contents Introduction About this document History The concepts Terminology: devfs, sysfs, nodes, etc. Why? Built-in persistent naming schemes Rule writing Rule files and semantics Rule syntax Basic rules Matching sysfs attributes",
+  "data": [
+    {
+      "format": "epub",
+      "size": 15486,
+      "name": "Udev_ cara menulis rules - Onno Widodo Purbo"
+    }
+  ]
+}

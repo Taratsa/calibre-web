@@ -43,5 +43,226 @@
       "size": 2026095,
       "name": "Cekel Endralaya (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 24188,
+    "longer_than": 90,
+    "top": [
+      [
+        "sang",
+        281
+      ],
+      [
+        "prabu",
+        232
+      ],
+      [
+        "wus",
+        105
+      ],
+      [
+        "kurawa",
+        102
+      ],
+      [
+        "sumbadra",
+        97
+      ],
+      [
+        "larasati",
+        93
+      ],
+      [
+        "mring",
+        92
+      ],
+      [
+        "yen",
+        92
+      ],
+      [
+        "endralaya",
+        90
+      ],
+      [
+        "janaka",
+        90
+      ],
+      [
+        "ingkang",
+        87
+      ],
+      [
+        "lan",
+        87
+      ]
+    ],
+    "distinct": [
+      [
+        "prabu",
+        232
+      ],
+      [
+        "endralaya",
+        90
+      ],
+      [
+        "sumbadra",
+        97
+      ],
+      [
+        "janaka",
+        90
+      ],
+      [
+        "kurawa",
+        102
+      ],
+      [
+        "larasati",
+        93
+      ],
+      [
+        "wus",
+        105
+      ],
+      [
+        "baladewa",
+        78
+      ],
+      [
+        "mring",
+        92
+      ],
+      [
+        "sang",
+        281
+      ],
+      [
+        "burisrawa",
+        66
+      ],
+      [
+        "dwarawati",
+        72
+      ]
+    ],
+    "phrases": [
+      [
+        "sang prabu",
+        88
+      ],
+      [
+        "sang retna",
+        57
+      ],
+      [
+        "prabu baladewa",
+        54
+      ],
+      [
+        "wara sumbadra",
+        42
+      ],
+      [
+        "cekel endralaya",
+        32
+      ],
+      [
+        "sang adipati",
+        27
+      ],
+      [
+        "raden janaka",
+        24
+      ],
+      [
+        "sri baladewa",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        1598,
+        0.37
+      ],
+      [
+        5528,
+        0.36
+      ],
+      [
+        5223,
+        0.35
+      ],
+      [
+        3540,
+        0.34
+      ],
+      [
+        1755,
+        0.34
+      ],
+      [
+        1484,
+        0.34
+      ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 178,
+      "negative": 265,
+      "trend": [
+        -0.22,
+        0.08,
+        0.03,
+        -0.14,
+        -0.75,
+        -0.46,
+        0.32,
+        0.06,
+        -0.64,
+        0.67,
+        -1,
+        -0.75,
+        0.2,
+        -1,
+        null,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          87
+        ],
+        [
+          "anger",
+          79
+        ],
+        [
+          "joy",
+          34
+        ],
+        [
+          "surprise",
+          33
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

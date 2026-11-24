@@ -1,0 +1,52 @@
+{
+  "id": 20740,
+  "title": "Oxwall: Instalasi",
+  "slug": "oxwall-instalasi-onno-widodo-purbo",
+  "slugBase": "oxwall-instalasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-03-23",
+  "timestamp": "2026-11-24 06:53:48.743105",
+  "last_modified": "2026-11-24 06:53:48.743109",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:7d03daa2-094a-5e70-91be-b53767bc0f8c"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20740?v=1795478028",
+  "cover_og_url": "/cover/20740/og?v=1795478028",
+  "url": "/book/oxwall-instalasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi aplikasi pendukung apt-get update apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb \\ libgd2-xpm libgd2-xpm-dev php5-mysql php5-gd php5-curl php-pear \\ unzip mysql-doc-5.0 postfix Enable mod_rewrite di apache sudo a2enmod rewrite Alternatif lain vi /etc/apache2/sites-enabled/000-default DocumentRoot /var/www  Options FollowSymLinks AllowOverride all",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3923,
+      "name": "Oxwall_ Instalasi - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 20366,
+  "title": "SysadminGuide",
+  "slug": "sysadminguide-onno-widodo-purbo",
+  "slugBase": "sysadminguide-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-28",
+  "timestamp": "2026-11-24 06:36:57.567874",
+  "last_modified": "2026-11-24 06:36:57.567879",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:052bb2ab-3b72-5e00-981b-c4afe265c71e"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20366?v=1795477017",
+  "cover_og_url": "/cover/20366/og?v=1795477017",
+  "url": "/book/sysadminguide-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "This page is intended to give a slightly deeper insight into what the various btrfs features are doing behind the scenes. Contents 1 Data usage and allocation 1.1 RAID and data replication 1.2 Balancing 2 Copy on Write 3 Subvolumes 3.1 Snapshots 3.2 Managing snapshots Data usage and allocation Btrfs, at its lowest level, manages a pool of raw storage, from which it allocates space for different",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4612,
+      "name": "SysadminGuide - Onno Widodo Purbo"
+    }
+  ]
+}

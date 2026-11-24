@@ -1,0 +1,55 @@
+{
+  "id": 21251,
+  "title": "Backup isi database MySQL",
+  "slug": "backup-isi-database-mysql-onno-widodo-purbo",
+  "slugBase": "backup-isi-database-mysql-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Database",
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-03-16",
+  "timestamp": "2026-11-24 07:43:58.481894",
+  "last_modified": "2026-11-24 07:43:58.481899",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6f6e6cce-ad1b-550a-addf-ad91cd92037f"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21251?v=1795481038",
+  "cover_og_url": "/cover/21251/og?v=1795481038",
+  "url": "/book/backup-isi-database-mysql-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Dump isi database MySQL /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c &gt; isidatabase.sql jika kita menginginkan agar file yang di hasilkan langsung di gz, kita dapat menggunakan perintah /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c | /bin/gzip -9 &gt; isidatabse.sql.gz Database akan tersimpan di file",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3120,
+      "name": "Backup isi database MySQL - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": 20834,
+  "title": "GNURadio: UHD Image",
+  "slug": "gnuradio-uhd-image-onno-widodo-purbo",
+  "slugBase": "gnuradio-uhd-image-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-04-26",
+  "timestamp": "2026-11-24 06:58:15.050986",
+  "last_modified": "2026-11-24 06:58:15.050991",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6a609235-b927-54ca-9738-d617379b69e8"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20834?v=1795478295",
+  "cover_og_url": "/cover/20834/og?v=1795478295",
+  "url": "/book/gnuradio-uhd-image-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Setiap USRP harus load spesial firmware dan FPGA image. Metoda untuk me-load image ke USRP berbeda tergantung device: USRP1: The host code will automatically load the firmware and FPGA at runtime. USRP2: The user must manually write the images onto the USRP2 SD card. USRP-N Series: The user must manually transfer the images over ethernet. USRP-E Series: The host code will automatically load the",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5358,
+      "name": "GNURadio_ UHD Image - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -48,5 +48,154 @@
       "size": 3903,
       "name": "AirTime_ Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 489,
+    "longer_than": 39,
+    "top": [
+      [
+        "airtime",
+        19
+      ],
+      [
+        "install",
+        13
+      ],
+      [
+        "server",
+        13
+      ],
+      [
+        "icecast",
+        11
+      ],
+      [
+        "output",
+        10
+      ],
+      [
+        "sound",
+        9
+      ],
+      [
+        "sudo",
+        9
+      ],
+      [
+        "apt-get",
+        8
+      ],
+      [
+        "instalasi",
+        7
+      ],
+      [
+        "card",
+        6
+      ],
+      [
+        "membuang",
+        5
+      ],
+      [
+        "pulseaudio",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "airtime",
+        19
+      ],
+      [
+        "icecast",
+        11
+      ],
+      [
+        "liquidsoap",
+        4
+      ],
+      [
+        "pulseaudio",
+        5
+      ],
+      [
+        "sourcefabric",
+        4
+      ],
+      [
+        "sound",
+        9
+      ],
+      [
+        "install",
+        13
+      ],
+      [
+        "output",
+        10
+      ],
+      [
+        "server",
+        13
+      ],
+      [
+        "apt-get",
+        8
+      ],
+      [
+        "sudo",
+        9
+      ],
+      [
+        "card",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo apt-get install",
+        6
+      ],
+      [
+        "sound card",
+        6
+      ],
+      [
+        "true output icecast",
+        3
+      ],
+      [
+        "airtime instalasi",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        20242,
+        0.48
+      ],
+      [
+        20244,
+        0.42
+      ],
+      [
+        15737,
+        0.35
+      ],
+      [
+        20245,
+        0.34
+      ],
+      [
+        20246,
+        0.34
+      ],
+      [
+        15735,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
 }

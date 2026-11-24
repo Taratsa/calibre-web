@@ -45,5 +45,193 @@
       "size": 7026342,
       "name": "Tebu rakjat _ usaha pembangkitan kembali d - R.S. Soeria Atmadja"
     }
-  ]
+  ],
+  "text": {
+    "words": 4956,
+    "longer_than": 72,
+    "top": [
+      [
+        "tebu",
+        69
+      ],
+      [
+        "petani",
+        55
+      ],
+      [
+        "gula",
+        53
+      ],
+      [
+        "tanaman",
+        48
+      ],
+      [
+        "rakjat",
+        43
+      ],
+      [
+        "kredit",
+        30
+      ],
+      [
+        "usaha",
+        30
+      ],
+      [
+        "tanah",
+        28
+      ],
+      [
+        "paberik",
+        22
+      ],
+      [
+        "rentjana",
+        22
+      ],
+      [
+        "djawatan",
+        19
+      ],
+      [
+        "perusahaan",
+        18
+      ]
+    ],
+    "distinct": [
+      [
+        "tebu",
+        69
+      ],
+      [
+        "gula",
+        53
+      ],
+      [
+        "rakjat",
+        43
+      ],
+      [
+        "paberik",
+        22
+      ],
+      [
+        "petani",
+        55
+      ],
+      [
+        "tanaman",
+        48
+      ],
+      [
+        "kredit",
+        30
+      ],
+      [
+        "rentjana",
+        22
+      ],
+      [
+        "djawatan",
+        19
+      ],
+      [
+        "jajasan",
+        15
+      ],
+      [
+        "biaja",
+        12
+      ],
+      [
+        "tebunja",
+        7
+      ]
+    ],
+    "phrases": [
+      [
+        "tebu rakjat",
+        24
+      ],
+      [
+        "tanaman tebu",
+        24
+      ],
+      [
+        "perusahaan gula",
+        15
+      ],
+      [
+        "paberik gula",
+        15
+      ],
+      [
+        "djawatan perkebunan",
+        14
+      ],
+      [
+        "gula dan petani",
+        5
+      ],
+      [
+        "pelaksanaan rentjana",
+        7
+      ],
+      [
+        "luas tanaman",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        5928,
+        0.23
+      ],
+      [
+        8745,
+        0.22
+      ],
+      [
+        5952,
+        0.2
+      ],
+      [
+        6700,
+        0.2
+      ],
+      [
+        1197,
+        0.19
+      ],
+      [
+        8392,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 51,
+      "negative": 23,
+      "trend": [
+        0.67,
+        0.11,
+        null,
+        null,
+        0.33,
+        null,
+        0.33,
+        null,
+        0.33,
+        null,
+        -0.6,
+        null,
+        null,
+        0.6,
+        null,
+        0.71
+      ],
+      "emotions": []
+    }
+  }
 }

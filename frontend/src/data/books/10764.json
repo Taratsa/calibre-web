@@ -45,5 +45,170 @@
       "size": 5496115,
       "name": "Instruksi Presiden Republik Indonesia No. - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 1584,
+    "longer_than": 59,
+    "top": [
+      [
+        "daerah",
+        94
+      ],
+      [
+        "musjawarah",
+        66
+      ],
+      [
+        "pimpinan",
+        65
+      ],
+      [
+        "ketua",
+        57
+      ],
+      [
+        "tingkat",
+        45
+      ],
+      [
+        "tni",
+        28
+      ],
+      [
+        "pasal",
+        25
+      ],
+      [
+        "gubernur",
+        24
+      ],
+      [
+        "djenderal",
+        22
+      ],
+      [
+        "pangdam",
+        19
+      ],
+      [
+        "wakil",
+        18
+      ],
+      [
+        "dati",
+        15
+      ]
+    ],
+    "distinct": [
+      [
+        "musjawarah",
+        66
+      ],
+      [
+        "pimpinan",
+        65
+      ],
+      [
+        "daerah",
+        94
+      ],
+      [
+        "ketua",
+        57
+      ],
+      [
+        "djenderal",
+        22
+      ],
+      [
+        "pangdam",
+        19
+      ],
+      [
+        "tni",
+        28
+      ],
+      [
+        "brigadir",
+        14
+      ],
+      [
+        "tingkat",
+        45
+      ],
+      [
+        "gubernur",
+        24
+      ],
+      [
+        "dati",
+        15
+      ],
+      [
+        "pasal",
+        25
+      ]
+    ],
+    "phrases": [
+      [
+        "musjawarah pimpinan daerah",
+        58
+      ],
+      [
+        "ketua musjawarah pimpinan",
+        48
+      ],
+      [
+        "pimpinan daerah tingkat",
+        37
+      ],
+      [
+        "wakil ketua musjawarah",
+        16
+      ],
+      [
+        "presiden republik indonesia",
+        12
+      ],
+      [
+        "djenderal tni",
+        16
+      ],
+      [
+        "gubernur dati",
+        15
+      ],
+      [
+        "tingkat i sulawesi",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        8607,
+        0.15
+      ],
+      [
+        8755,
+        0.14
+      ],
+      [
+        4904,
+        0.14
+      ],
+      [
+        781,
+        0.13
+      ],
+      [
+        11211,
+        0.13
+      ],
+      [
+        165,
+        0.13
+      ]
+    ],
+    "sentiment": null
+  }
 }

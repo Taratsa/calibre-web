@@ -1,0 +1,54 @@
+{
+  "id": 20368,
+  "title": "Btrfs design",
+  "slug": "btrfs-design-onno-widodo-purbo",
+  "slugBase": "btrfs-design-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Pages_with_broken_file_links"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-28",
+  "timestamp": "2026-11-24 06:37:03.360950",
+  "last_modified": "2026-11-24 06:37:03.360955",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:f19f868f-5224-5598-898b-238abed806cd"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20368?v=1795477023",
+  "cover_og_url": "/cover/20368/og?v=1795477023",
+  "url": "/book/btrfs-design-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Btrfs is implemented with simple and well known constructs. It should perform well, but the long term goal of maintaining performance as the FS system ages and grows is more important than winning a short lived benchmark. To that end, benchmarks are being used to try and simulate performance over the life of a filesystem. Contents 1 Btree Data structures 2 Filesystem Data Structures 3 Inodes 4",
+  "data": [
+    {
+      "format": "epub",
+      "size": 9524,
+      "name": "Btrfs design - Onno Widodo Purbo"
+    }
+  ]
+}

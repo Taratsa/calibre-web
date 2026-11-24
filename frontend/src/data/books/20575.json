@@ -1,0 +1,52 @@
+{
+  "id": 20575,
+  "title": "Ubuntu Broadcom Wireless Driver",
+  "slug": "ubuntu-broadcom-wireless-driver-onno-widodo-purbo",
+  "slugBase": "ubuntu-broadcom-wireless-driver-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-01-24",
+  "timestamp": "2026-11-24 06:47:02.400205",
+  "last_modified": "2026-11-24 06:47:02.400209",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:f2a963c2-3554-501a-bb65-a9bfbbcc21ac"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20575?v=1795477622",
+  "cover_og_url": "/cover/20575/og?v=1795477622",
+  "url": "/book/ubuntu-broadcom-wireless-driver-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi Driver Broadcom di Ubuntu sudo apt-get update sudo apt-get --reinstall install bcmwl-kernel-source Referensi http://www.broadcom.com/docs/linux_sta/README.txt Pranala Menarik Wireless Ubuntu Terblokir Ubuntu Broadcom Wireless Driver",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2159,
+      "name": "Ubuntu Broadcom Wireless Driver - Onno Widodo Purbo"
+    }
+  ]
+}

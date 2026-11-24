@@ -52,7 +52,7 @@
     }
   ],
   "text": {
-    "words": 2647,
+    "words": 2643,
     "longer_than": 65,
     "top": [
       [
@@ -76,10 +76,6 @@
         15
       ],
       [
-        "kerja",
-        15
-      ],
-      [
         "sumber",
         15
       ],
@@ -88,12 +84,12 @@
         14
       ],
       [
-        "identitas",
-        13
+        "kerja",
+        14
       ],
       [
-        "budak-upahan",
-        12
+        "identitas",
+        13
       ],
       [
         "masyarakat",
@@ -102,12 +98,16 @@
       [
         "pribadi",
         12
+      ],
+      [
+        "anarkis",
+        11
       ]
     ],
     "distinct": [
       [
         "budak-upahan",
-        12
+        11
       ],
       [
         "perbudakan-upah",
@@ -191,7 +191,7 @@
     "similar": [
       [
         1926,
-        0.3
+        0.31
       ],
       [
         2167,
@@ -210,8 +210,8 @@
         0.16
       ],
       [
-        4684,
-        0.16
+        9193,
+        0.15
       ]
     ],
     "sentiment": {

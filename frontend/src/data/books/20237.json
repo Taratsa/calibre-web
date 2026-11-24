@@ -48,5 +48,126 @@
       "size": 2501,
       "name": "Cluster 3.0 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 171,
+    "longer_than": 21,
+    "top": [
+      [
+        "cluster",
+        14
+      ],
+      [
+        "install",
+        4
+      ],
+      [
+        "program",
+        4
+      ],
+      [
+        "bonsai",
+        3
+      ],
+      [
+        "command",
+        3
+      ],
+      [
+        "hgc",
+        3
+      ],
+      [
+        "mdehoon",
+        3
+      ],
+      [
+        "motif",
+        3
+      ],
+      [
+        "software",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "cluster",
+        14
+      ],
+      [
+        "hgc",
+        3
+      ],
+      [
+        "bonsai",
+        3
+      ],
+      [
+        "motif",
+        3
+      ],
+      [
+        "command",
+        3
+      ],
+      [
+        "install",
+        4
+      ],
+      [
+        "software",
+        3
+      ],
+      [
+        "program",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "software cluster cluster",
+        3
+      ],
+      [
+        "mdehoon software cluster",
+        3
+      ],
+      [
+        "hgc jp mdehoon",
+        3
+      ],
+      [
+        "bonsai hgc",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        10244,
+        0.73
+      ],
+      [
+        13631,
+        0.33
+      ],
+      [
+        20239,
+        0.28
+      ],
+      [
+        13732,
+        0.27
+      ],
+      [
+        13685,
+        0.26
+      ],
+      [
+        15850,
+        0.24
+      ]
+    ],
+    "sentiment": null
+  }
 }

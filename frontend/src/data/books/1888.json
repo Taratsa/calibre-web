@@ -37,12 +37,12 @@
     }
   ],
   "text": {
-    "words": 45321,
+    "words": 45079,
     "longer_than": 96,
     "top": [
       [
         "plantation",
-        653
+        657
       ],
       [
         "living",
@@ -54,7 +54,7 @@
       ],
       [
         "laborers",
-        391
+        422
       ],
       [
         "family",
@@ -66,7 +66,7 @@
       ],
       [
         "total",
-        273
+        272
       ],
       [
         "field",
@@ -77,26 +77,26 @@
         241
       ],
       [
-        "labor",
-        230
-      ],
-      [
         "consumption",
         225
       ],
       [
         "skilled",
-        223
+        222
+      ],
+      [
+        "wage",
+        197
       ]
     ],
     "distinct": [
       [
         "plantation",
-        653
+        657
       ],
       [
         "laborers",
-        391
+        422
       ],
       [
         "families",
@@ -112,7 +112,7 @@
       ],
       [
         "skilled",
-        223
+        222
       ],
       [
         "family",
@@ -127,19 +127,23 @@
         193
       ],
       [
-        "labor",
-        230
-      ],
-      [
         "wage",
         197
       ],
       [
         "field",
         242
+      ],
+      [
+        "supervisors",
+        116
       ]
     ],
     "phrases": [
+      [
+        "skilled laborers",
+        157
+      ],
       [
         "supervisors and skilled",
         99
@@ -147,10 +151,6 @@
       [
         "families living",
         136
-      ],
-      [
-        "skilled laborers",
-        131
       ],
       [
         "wage earner families",
@@ -162,15 +162,15 @@
       ],
       [
         "field laborers",
-        99
+        102
       ],
       [
         "person per day",
         62
       ],
       [
-        "tory labor erssuperv",
-        53
+        "west java",
+        75
       ]
     ],
     "similar": [
@@ -183,19 +183,19 @@
         0.14
       ],
       [
+        1868,
+        0.13
+      ],
+      [
+        502,
+        0.13
+      ],
+      [
         546,
         0.13
       ],
       [
         8514,
-        0.13
-      ],
-      [
-        8716,
-        0.13
-      ],
-      [
-        1868,
         0.13
       ]
     ],

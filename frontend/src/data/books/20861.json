@@ -1,0 +1,52 @@
+{
+  "id": 20861,
+  "title": "TCP/IP: Quagga Statik Routing",
+  "slug": "tcp-ip-quagga-statik-routing-onno-widodo-purbo",
+  "slugBase": "tcp-ip-quagga-statik-routing-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-01",
+  "timestamp": "2026-11-24 06:59:19.946457",
+  "last_modified": "2026-11-24 06:59:19.946462",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6b9c3422-66ec-5a59-ba62-7b7d3a28da95"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20861?v=1795478359",
+  "cover_og_url": "/cover/20861/og?v=1795478359",
+  "url": "/book/tcp-ip-quagga-statik-routing-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "quagga cisco 2651 3750 static routing Functionalities tested: Interface settings Static routes Telnet access Konfigurasi Kita perlu menset sistem Linux secara benar agar Quagga dapat berjalan dengan baik. Konfigurasi Linux Cek bahwa daemon zebra dapat di aktifkan: vim /etc/quagga/daemons isinya zebra=yes bgpd=no ospfd=no ospf6d=no ripd=no ripngd=no isisd=no Jika kita mengubah file daemons, kita",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3100,
+      "name": "TCP_IP_ Quagga Statik Routing - Onno Widodo Purbo"
+    }
+  ]
+}

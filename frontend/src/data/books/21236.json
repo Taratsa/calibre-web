@@ -1,0 +1,52 @@
+{
+  "id": 21236,
+  "title": "IPTEKNux: Berbasis Sabily",
+  "slug": "ipteknux-berbasis-sabily-onno-widodo-purbo",
+  "slugBase": "ipteknux-berbasis-sabily-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-03-14",
+  "timestamp": "2026-11-24 07:42:34.038598",
+  "last_modified": "2026-11-24 07:42:34.038603",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:f9377775-9578-52dd-a6b6-99cab20cb99f"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21236?v=1795480954",
+  "cover_og_url": "/cover/21236/og?v=1795480954",
+  "url": "/book/ipteknux-berbasis-sabily-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Persiapan 2 Persiapan 3 UNPACK file iso untuk di remaster 4 Customisasi 5 Instalasi Aplikasi Pendidikan 5.1 Versi Pendek untuk Sabily 6 PACK menjadi file iso yang baru 7 Pranala Menarik Persiapan Siapkan file iso Sabily Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Persiapan sudo apt-get install uck sudo modprobe squashfs Matikan Server yang tidak",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3336,
+      "name": "IPTEKNux_ Berbasis Sabily - Onno Widodo Purbo"
+    }
+  ]
+}

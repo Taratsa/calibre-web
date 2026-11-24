@@ -48,5 +48,166 @@
       "size": 3156,
       "name": "Script NAT Transparant Proxy & Squid - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 310,
+    "longer_than": 31,
+    "top": [
+      [
+        "iptables",
+        20
+      ],
+      [
+        "squid",
+        19
+      ],
+      [
+        "nat",
+        10
+      ],
+      [
+        "lan",
+        9
+      ],
+      [
+        "accept",
+        7
+      ],
+      [
+        "input",
+        6
+      ],
+      [
+        "port",
+        6
+      ],
+      [
+        "internet",
+        5
+      ],
+      [
+        "ftp",
+        4
+      ],
+      [
+        "proxy",
+        4
+      ],
+      [
+        "conntrack",
+        3
+      ],
+      [
+        "drop",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "squid",
+        19
+      ],
+      [
+        "iptables",
+        20
+      ],
+      [
+        "nat",
+        10
+      ],
+      [
+        "accept",
+        7
+      ],
+      [
+        "conntrack",
+        3
+      ],
+      [
+        "transparant",
+        3
+      ],
+      [
+        "lan",
+        9
+      ],
+      [
+        "ftp",
+        4
+      ],
+      [
+        "input",
+        6
+      ],
+      [
+        "port",
+        6
+      ],
+      [
+        "modprobe",
+        3
+      ],
+      [
+        "proxy",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "iptables a input",
+        5
+      ],
+      [
+        "iptables t nat",
+        4
+      ],
+      [
+        "squid port",
+        5
+      ],
+      [
+        "transparant proxy squid",
+        3
+      ],
+      [
+        "script nat transparant",
+        3
+      ],
+      [
+        "nat transparant proxy",
+        3
+      ],
+      [
+        "squid server",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20221,
+        0.8
+      ],
+      [
+        11425,
+        0.44
+      ],
+      [
+        14072,
+        0.42
+      ],
+      [
+        10705,
+        0.38
+      ],
+      [
+        19517,
+        0.38
+      ],
+      [
+        16302,
+        0.38
+      ]
+    ],
+    "sentiment": null
+  }
 }

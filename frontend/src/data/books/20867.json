@@ -1,0 +1,52 @@
+{
+  "id": 20867,
+  "title": "Udev",
+  "slug": "udev-onno-widodo-purbo",
+  "slugBase": "udev-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-01",
+  "timestamp": "2026-11-24 06:59:36.031434",
+  "last_modified": "2026-11-24 06:59:36.031439",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:35c9e513-9a34-53f6-88c6-d3f0ceb85c0a"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20867?v=1795478376",
+  "cover_og_url": "/cover/20867/og?v=1795478376",
+  "url": "/book/udev-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "udev is the device manager for the Linux kernel . Primarily, it manages device nodes in /dev . It is the successor of devfs and hotplug, which means that it handles the /dev directory and all user space actions when adding/removing devices, including firmware load. Contents 1 History 2 Overview 3 Operation 4 Architecture 5 Authors 6 Referensi 7 Pranala Lain History udev was new in Linux 2.5. The",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4410,
+      "name": "Udev - Onno Widodo Purbo"
+    }
+  ]
+}

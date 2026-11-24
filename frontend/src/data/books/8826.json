@@ -45,12 +45,12 @@
     }
   ],
   "text": {
-    "words": 28398,
+    "words": 28299,
     "longer_than": 92,
     "top": [
       [
         "korban",
-        1087
+        1092
       ],
       [
         "layanan",
@@ -62,11 +62,11 @@
       ],
       [
         "perempuan",
-        328
+        342
       ],
       [
         "kekerasan",
-        282
+        284
       ],
       [
         "pengada",
@@ -82,7 +82,7 @@
       ],
       [
         "masyarakat",
-        120
+        121
       ],
       [
         "rumah",
@@ -100,7 +100,7 @@
     "distinct": [
       [
         "korban",
-        1087
+        1092
       ],
       [
         "layanan",
@@ -116,11 +116,11 @@
       ],
       [
         "kekerasan",
-        282
+        284
       ],
       [
         "perempuan",
-        328
+        342
       ],
       [
         "pemantauan",
@@ -132,7 +132,7 @@
       ],
       [
         "terpadu",
-        99
+        100
       ],
       [
         "komunitas",
@@ -154,19 +154,19 @@
       ],
       [
         "korban kekerasan",
-        138
+        141
       ],
       [
         "perempuan korban",
-        101
-      ],
-      [
-        "kekerasan terhadap perempuan",
-        53
+        107
       ],
       [
         "perempuan dan anak",
-        52
+        57
+      ],
+      [
+        "kekerasan terhadap perempuan",
+        55
       ],
       [
         "lembaga layanan",
@@ -174,7 +174,7 @@
       ],
       [
         "layanan terpadu",
-        64
+        66
       ],
       [
         "rumah sakit",
@@ -184,11 +184,11 @@
     "similar": [
       [
         8832,
-        0.44
+        0.43
       ],
       [
         8835,
-        0.38
+        0.37
       ],
       [
         8815,
@@ -199,44 +199,44 @@
         0.29
       ],
       [
-        8783,
+        8805,
         0.26
       ],
       [
-        8805,
+        8783,
         0.25
       ]
     ],
     "sentiment": {
       "score": 0.09,
-      "positive": 635,
-      "negative": 531,
+      "positive": 637,
+      "negative": 533,
       "trend": [
         0.16,
         -0.04,
         -0.18,
         -0.03,
-        0,
-        -0.36,
-        -0.19,
-        0.24,
+        0.01,
+        -0.37,
+        -0.23,
+        0.26,
         0.12,
         0,
-        0.28,
-        0.27,
-        0.16,
-        0.34,
+        0.29,
+        0.25,
+        0.17,
+        0.33,
         0.08,
         0.38
       ],
       "emotions": [
         [
           "anger",
-          299
+          301
         ],
         [
           "trust",
-          78
+          79
         ],
         [
           "fear",

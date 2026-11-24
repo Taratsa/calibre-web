@@ -50,8 +50,8 @@
     }
   ],
   "text": {
-    "words": 644,
-    "longer_than": 45,
+    "words": 639,
+    "longer_than": 44,
     "top": [
       [
         "algorithm",
@@ -66,27 +66,31 @@
         7
       ],
       [
-        "explain",
-        5
-      ],
-      [
         "machine",
         5
-      ],
-      [
-        "ability",
-        4
       ],
       [
         "based",
         4
       ],
       [
-        "car",
-        3
+        "explain",
+        4
       ],
       [
         "explainability",
+        4
+      ],
+      [
+        "ability",
+        3
+      ],
+      [
+        "algorithms",
+        3
+      ],
+      [
+        "car",
         3
       ],
       [
@@ -96,35 +100,31 @@
       [
         "process",
         3
-      ],
-      [
-        "techniques",
-        3
       ]
     ],
     "distinct": [
       [
-        "algorithm",
-        7
+        "explainability",
+        4
       ],
       [
-        "explainability",
-        3
+        "algorithm",
+        7
       ],
       [
         "decision",
         7
       ],
       [
-        "explain",
-        5
-      ],
-      [
         "machine",
         5
       ],
       [
-        "ability",
+        "algorithms",
+        3
+      ],
+      [
+        "explain",
         4
       ],
       [
@@ -133,6 +133,10 @@
       ],
       [
         "car",
+        3
+      ],
+      [
+        "ability",
         3
       ],
       [
@@ -146,29 +150,25 @@
       [
         "data",
         7
-      ],
-      [
-        "process",
-        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        10941,
+        0.36
+      ],
+      [
         15444,
         0.29
       ],
       [
-        10941,
-        0.23
-      ],
-      [
         13639,
-        0.23
+        0.22
       ],
       [
         15443,
-        0.23
+        0.22
       ],
       [
         13714,
@@ -176,7 +176,7 @@
       ],
       [
         15440,
-        0.21
+        0.2
       ]
     ],
     "sentiment": null

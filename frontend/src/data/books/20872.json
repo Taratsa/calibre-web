@@ -1,0 +1,52 @@
+{
+  "id": 20872,
+  "title": "TCP/IP: Quagga RIP",
+  "slug": "tcp-ip-quagga-rip-onno-widodo-purbo",
+  "slugBase": "tcp-ip-quagga-rip-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-07",
+  "timestamp": "2026-11-24 06:59:49.684497",
+  "last_modified": "2026-11-24 06:59:49.684502",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:08683e30-10cb-54cc-bb0c-2f3fc14e8c30"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20872?v=1795478389",
+  "cover_og_url": "/cover/20872/og?v=1795478389",
+  "url": "/book/tcp-ip-quagga-rip-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit vi /etc/quagga/daemons Supaya zebra=yes bgpd=no ospfd=no ospf6d=no ripd=yes ripngd=yes isisd=no Copy konfigurasi cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conf cp /usr/share/doc/quagga/examples/ripd.conf.sample /etc/quagga/ripd.conf cp /usr/share/doc/quagga/examples/ripngd.conf.sample /etc/quagga/ripngd.conf Contoh Konfigurasi RIP ! -*- rip -*- ! ! RIPd sample",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2940,
+      "name": "TCP_IP_ Quagga RIP - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -37,20 +37,20 @@
     }
   ],
   "text": {
-    "words": 9575,
+    "words": 9526,
     "longer_than": 81,
     "top": [
       [
-        "kerja",
-        263
+        "perkebunan",
+        267
       ],
       [
-        "perkebunan",
-        261
+        "kerja",
+        265
       ],
       [
         "tenaga",
-        240
+        241
       ],
       [
         "investasi",
@@ -58,19 +58,19 @@
       ],
       [
         "kelapa",
-        96
+        98
       ],
       [
         "kopi",
         85
       ],
       [
-        "karet",
+        "biaya",
         78
       ],
       [
-        "biaya",
-        75
+        "karet",
+        78
       ],
       [
         "effisiensi",
@@ -78,21 +78,21 @@
       ],
       [
         "produktivitas",
-        68
+        70
       ],
       [
         "komoditi",
-        60
+        61
       ],
       [
-        "swasta",
+        "kebun",
         58
       ]
     ],
     "distinct": [
       [
         "perkebunan",
-        261
+        267
       ],
       [
         "effisiensi",
@@ -100,11 +100,11 @@
       ],
       [
         "tenaga",
-        240
+        241
       ],
       [
         "kerja",
-        263
+        265
       ],
       [
         "investasi",
@@ -112,19 +112,19 @@
       ],
       [
         "kelapa",
-        96
+        98
+      ],
+      [
+        "produktivitas",
+        70
       ],
       [
         "karet",
         78
       ],
       [
-        "produktivitas",
-        68
-      ],
-      [
         "komoditi",
-        60
+        61
       ],
       [
         "kopi",
@@ -132,7 +132,7 @@
       ],
       [
         "biaya",
-        75
+        78
       ],
       [
         "swasta",
@@ -142,7 +142,7 @@
     "phrases": [
       [
         "tenaga kerja",
-        200
+        202
       ],
       [
         "effisiensi tenaga",
@@ -166,7 +166,7 @@
       ],
       [
         "investasi per tenaga",
-        22
+        23
       ],
       [
         "input tenaga",
@@ -176,11 +176,11 @@
     "similar": [
       [
         8659,
-        0.22
+        0.23
       ],
       [
         8658,
-        0.21
+        0.22
       ],
       [
         8695,
@@ -191,23 +191,23 @@
         0.19
       ],
       [
-        8704,
+        8390,
         0.15
       ],
       [
-        8390,
-        0.14
+        8704,
+        0.15
       ]
     ],
     "sentiment": {
       "score": 0.78,
-      "positive": 81,
+      "positive": 82,
       "negative": 10,
       "trend": [
         null,
         null,
-        0.75,
-        0.6,
+        0.78,
+        0.64,
         0.6,
         1,
         null,

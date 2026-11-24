@@ -1,0 +1,52 @@
+{
+  "id": 20795,
+  "title": "Instalasi SER",
+  "slug": "instalasi-ser-onno-widodo-purbo",
+  "slugBase": "instalasi-ser-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-27",
+  "timestamp": "2026-11-24 06:56:35.869527",
+  "last_modified": "2026-11-24 06:56:35.869532",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:caba9722-647a-5bff-a6da-b057d2f64206"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20795?v=1795478195",
+  "cover_og_url": "/cover/20795/og?v=1795478195",
+  "url": "/book/instalasi-ser-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Siapkan MySQL Server 2 Instalasi SER 3 Siapkan Database MySQL untuk SER 4 Siapkan ser.cfg Untuk MySQL Siapkan MySQL Server # apt-get install mysql-server libmysqlclient15-dev # apt-get install libphp-adodb # apt-get install libgd2-xpm libgd2-xpm-dev # apt-get install php5-mysql # apt-get install php5-gd # apt-get install php5-curl # apt-get install php-image-graph php-image-canvas",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3346,
+      "name": "Instalasi SER - Onno Widodo Purbo"
+    }
+  ]
+}

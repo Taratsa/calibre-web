@@ -1,0 +1,52 @@
+{
+  "id": 20785,
+  "title": "Rtorrent.rc",
+  "slug": "rtorrent-rc-onno-widodo-purbo",
+  "slugBase": "rtorrent-rc-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-04-06",
+  "timestamp": "2026-11-24 06:56:09.217093",
+  "last_modified": "2026-11-24 06:56:09.217098",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:e1f2e4c4-8549-596b-bdf9-e9706e839264"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20785?v=1795478169",
+  "cover_og_url": "/cover/20785/og?v=1795478169",
+  "url": "/book/rtorrent-rc-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Osi isi file rtorrent.rc adalah sebagai berikut # This is an example resource file for rTorrent. Copy to # ~/.rtorrent.rc and enable/modify the options as needed. Remember to # uncomment the options you wish to enable. # Maximum and minimum number of peers to connect to per torrent. #min_peers = 40 #max_peers = 100 # Same as above but for seeding completed torrents (-1 = same as downloading)",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3986,
+      "name": "Rtorrent.rc - Onno Widodo Purbo"
+    }
+  ]
+}

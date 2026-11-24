@@ -43,5 +43,222 @@
       "size": 3258898,
       "name": "Babad Dipanegara I (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 57258,
+    "longer_than": 97,
+    "top": [
+      [
+        "pan",
+        926
+      ],
+      [
+        "pangran",
+        834
+      ],
+      [
+        "ingkang",
+        827
+      ],
+      [
+        "kangjeng",
+        716
+      ],
+      [
+        "sampun",
+        711
+      ],
+      [
+        "lan",
+        646
+      ],
+      [
+        "tan",
+        619
+      ],
+      [
+        "wus",
+        607
+      ],
+      [
+        "iku",
+        555
+      ],
+      [
+        "mapan",
+        534
+      ],
+      [
+        "mring",
+        519
+      ],
+      [
+        "lawan",
+        503
+      ]
+    ],
+    "distinct": [
+      [
+        "pangran",
+        834
+      ],
+      [
+        "ingkang",
+        827
+      ],
+      [
+        "kangjeng",
+        716
+      ],
+      [
+        "sampun",
+        711
+      ],
+      [
+        "wus",
+        607
+      ],
+      [
+        "mring",
+        519
+      ],
+      [
+        "nulya",
+        462
+      ],
+      [
+        "pan",
+        926
+      ],
+      [
+        "iku",
+        555
+      ],
+      [
+        "jeng",
+        484
+      ],
+      [
+        "lajeng",
+        393
+      ],
+      [
+        "samya",
+        357
+      ]
+    ],
+    "phrases": [
+      [
+        "kangjeng sultan",
+        243
+      ],
+      [
+        "jeng pangran",
+        167
+      ],
+      [
+        "kangjeng pangran",
+        166
+      ],
+      [
+        "jeng sultan",
+        125
+      ],
+      [
+        "pan sampun",
+        85
+      ],
+      [
+        "wus tan",
+        82
+      ],
+      [
+        "kangjeng pangeran",
+        78
+      ],
+      [
+        "pangran bei",
+        72
+      ]
+    ],
+    "similar": [
+      [
+        3538,
+        0.44
+      ],
+      [
+        1755,
+        0.43
+      ],
+      [
+        5223,
+        0.38
+      ],
+      [
+        1598,
+        0.37
+      ],
+      [
+        3540,
+        0.37
+      ],
+      [
+        6189,
+        0.37
+      ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 129,
+      "negative": 77,
+      "trend": [
+        0.38,
+        0.5,
+        -0.54,
+        0.29,
+        0.18,
+        0.44,
+        0.23,
+        0.83,
+        null,
+        -0.25,
+        0.67,
+        0.29,
+        0.5,
+        0.56,
+        -0.09,
+        -0.17
+      ],
+      "emotions": [
+        [
+          "sadness",
+          37
+        ],
+        [
+          "joy",
+          22
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

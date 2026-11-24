@@ -1,0 +1,52 @@
+{
+  "id": 20590,
+  "title": "ProxMox: Mengaktifkan Mesin Virtual OpenVZ",
+  "slug": "proxmox-mengaktifkan-mesin-virtual-openvz-onno-widodo-purbo",
+  "slugBase": "proxmox-mengaktifkan-mesin-virtual-openvz-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-01-29",
+  "timestamp": "2026-11-24 06:47:39.180405",
+  "last_modified": "2026-11-24 06:47:39.180408",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:db930404-54ea-5296-bf9c-bb96b993c922"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20590?v=1795477659",
+  "cover_og_url": "/cover/20590/og?v=1795477659",
+  "url": "/book/proxmox-mengaktifkan-mesin-virtual-openvz-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://vavai.com/2011/01/12/install-guest-system-berbasis-openvz-pada-proxmox-virtual-environment/ Selain KVM, Proxmox juga mendukung teknologi virtualisasi berbasis OpenVZ. Dibandingkan dengan KVM, OpenVZ memiliki keunggulan tersendiri dalam bentuk isolasi sistem guest, sehingga penggunaan memory lebih efisien. Selain itu, OpenVZ tidak memerlukan instalasi sistem operasi secara manual",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3948,
+      "name": "ProxMox_ Mengaktifkan Mesin Virtual OpenVZ - Onno Widodo Purbo"
+    }
+  ]
+}

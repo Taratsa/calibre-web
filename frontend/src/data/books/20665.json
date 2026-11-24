@@ -1,0 +1,52 @@
+{
+  "id": 20665,
+  "title": "Tar",
+  "slug": "tar-onno-widodo-purbo",
+  "slugBase": "tar-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-02-25",
+  "timestamp": "2026-11-24 06:50:50.762674",
+  "last_modified": "2026-11-24 06:50:50.762678",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:c84febe1-2b5c-5585-9f30-1dabd3407d29"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20665?v=1795477850",
+  "cover_og_url": "/cover/20665/og?v=1795477850",
+  "url": "/book/tar-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Membackup Isi Folder 2 Melihat Isi tar 3 Membuka Isi tar 4 Menggunakan Kompresi 5 Referensi 6 Pranala Menarik Membackup Isi Folder Pindah ke directory tempat file-file yang akan di backup berada. Kemudian ketik: $ tar cvf backup.tar . Misalnya akan keluar ./ picture.jpg doucment.doc database.db tar: backup.tar is the archive; not dumped Catatan: c=create (an archive) v=verbose (just",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3582,
+      "name": "Tar - Onno Widodo Purbo"
+    }
+  ]
+}

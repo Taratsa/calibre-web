@@ -1,0 +1,52 @@
+{
+  "id": 20571,
+  "title": "Instalasi openser",
+  "slug": "instalasi-openser-onno-widodo-purbo",
+  "slugBase": "instalasi-openser-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-26",
+  "timestamp": "2026-11-24 06:46:54.416667",
+  "last_modified": "2026-11-24 06:46:54.416671",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:608de876-be6a-5b43-8403-0bcf662876ce"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20571?v=1795477614",
+  "cover_og_url": "/cover/20571/og?v=1795477614",
+  "url": "/book/instalasi-openser-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Cara ini cukup stabil digunakan di Ubuntu 7.10. Tapi tampaknya tidak terlalu stabil di Ubuntu 8.04. Instalasi OpenSER menggunakan apt-get dapat dilakukan dengan perintah berikut, Perhatikan kita menginstalasi menggunakan user biasa, bukan root, $ sudo apt-get install openser openser-mysql-module mysql-server [sudo] password for user: Sayang, tampaknya teknik ini tidak stabil untuk OpenSER versi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3479,
+      "name": "Instalasi openser - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -38,7 +38,7 @@
     }
   ],
   "text": {
-    "words": 30906,
+    "words": 30872,
     "longer_than": 93,
     "top": [
       [
@@ -59,11 +59,11 @@
       ],
       [
         "negara",
-        188
+        189
       ],
       [
         "masyarakat",
-        163
+        162
       ],
       [
         "aparat",
@@ -83,11 +83,11 @@
       ],
       [
         "pembubaran",
-        107
+        109
       ],
       [
-        "diskusi",
-        99
+        "kepolisian",
+        100
       ]
     ],
     "distinct": [
@@ -100,12 +100,12 @@
         407
       ],
       [
-        "kegiatan",
-        249
+        "pembubaran",
+        109
       ],
       [
-        "pembubaran",
-        107
+        "kegiatan",
+        249
       ],
       [
         "hak",
@@ -120,12 +120,12 @@
         113
       ],
       [
-        "kontras",
-        81
+        "kepolisian",
+        100
       ],
       [
-        "kepolisian",
-        98
+        "kontras",
+        81
       ],
       [
         "ham",
@@ -133,7 +133,7 @@
       ],
       [
         "negara",
-        188
+        189
       ],
       [
         "ormas",
@@ -162,12 +162,12 @@
         31
       ],
       [
-        "aparat keamanan",
+        "pelanggaran hak",
         42
       ],
       [
-        "pelanggaran hak",
-        40
+        "aparat keamanan",
+        42
       ],
       [
         "aparat kepolisian",
@@ -181,7 +181,7 @@
       ],
       [
         6955,
-        0.29
+        0.3
       ],
       [
         8502,
@@ -201,25 +201,25 @@
       ]
     ],
     "sentiment": {
-      "score": 0.33,
-      "positive": 792,
-      "negative": 399,
+      "score": 0.32,
+      "positive": 791,
+      "negative": 404,
       "trend": [
         0.47,
         0.57,
         0.91,
-        0.56,
+        0.57,
         0.5,
         0.26,
         0.29,
-        0,
-        0.19,
+        0.03,
+        0.17,
         0.24,
         0,
         0.13,
-        -0.05,
-        0.05,
-        0.51,
+        -0.06,
+        0.06,
+        0.42,
         0.23
       ],
       "emotions": [
@@ -229,7 +229,7 @@
         ],
         [
           "anger",
-          153
+          155
         ],
         [
           "fear",

@@ -50,7 +50,7 @@
     }
   ],
   "text": {
-    "words": 398,
+    "words": 394,
     "longer_than": 35,
     "top": [
       [
@@ -72,10 +72,6 @@
       [
         "jan",
         10
-      ],
-      [
-        "https",
-        8
       ],
       [
         "mssql",
@@ -100,6 +96,10 @@
       [
         "install",
         5
+      ],
+      [
+        "opt",
+        5
       ]
     ],
     "distinct": [
@@ -114,6 +114,10 @@
       [
         "ubuntu",
         16
+      ],
+      [
+        "qohttps",
+        4
       ],
       [
         "sql",
@@ -146,10 +150,6 @@
       [
         "wget",
         4
-      ],
-      [
-        "path",
-        5
       ]
     ],
     "phrases": [
@@ -170,7 +170,7 @@
         9
       ],
       [
-        "wget qo https",
+        "wget qohttps packages",
         4
       ],
       [

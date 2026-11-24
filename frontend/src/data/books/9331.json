@@ -99,16 +99,20 @@
     ],
     "distinct": [
       [
+        "ketels",
+        15
+      ],
+      [
+        "filterwagen",
+        13
+      ],
+      [
         "water",
         27
       ],
       [
         "den",
         29
-      ],
-      [
-        "gevuld",
-        7
       ],
       [
         "kapok",
@@ -119,8 +123,8 @@
         12
       ],
       [
-        "waarna",
-        5
+        "gevuld",
+        7
       ],
       [
         "deksel",
@@ -131,20 +135,16 @@
         7
       ],
       [
-        "verwijderd",
-        5
-      ],
-      [
         "bus",
         12
       ],
       [
-        "laag",
+        "waarna",
         5
       ],
       [
-        "bestaat",
-        5
+        "uiteinde",
+        4
       ]
     ],
     "phrases": [
@@ -177,7 +177,24 @@
         3
       ]
     ],
-    "similar": [],
+    "similar": [
+      [
+        11200,
+        0.37
+      ],
+      [
+        11022,
+        0.21
+      ],
+      [
+        11114,
+        0.18
+      ],
+      [
+        10738,
+        0.15
+      ]
+    ],
     "sentiment": null
   }
 }

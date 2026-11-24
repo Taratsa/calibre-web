@@ -1,0 +1,52 @@
+{
+  "id": 21443,
+  "title": "Instalasi Aplikasi Backtrack di Ubuntu",
+  "slug": "instalasi-aplikasi-backtrack-di-ubuntu-onno-widodo-purbo",
+  "slugBase": "instalasi-aplikasi-backtrack-di-ubuntu-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-03-31",
+  "timestamp": "2026-11-24 07:58:51.991477",
+  "last_modified": "2026-11-24 07:58:51.991482",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6287cf5e-d14e-5ce8-9f3a-46d2dd1f144a"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21443?v=1795481931",
+  "cover_og_url": "/cover/21443/og?v=1795481931",
+  "url": "/book/instalasi-aplikasi-backtrack-di-ubuntu-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://www.facebook.com/note.php?note_id=194985257200434 langsung aza, tanpa basa basi: buka terminal ubuntu ente,,ketik ini: 1. Edit sudo gedit /etc/apt/sources.list trus tambahin ini di baris paling bawah: deb http://archive.offensive-security.com/ pwnsauce main microverse macroverse restricted universe multiverse OK kemudian kluar dari geditnya,, 2. buat Add key sudo wget -q",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3197,
+      "name": "Instalasi Aplikasi Backtrack di Ubuntu - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -48,5 +48,52 @@
       "size": 2432,
       "name": "DNS_ Spoofing debian.pool.ntp.org - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 125,
+    "longer_than": 17,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "debian pool ntp",
+        11
+      ],
+      [
+        "dns spoofing",
+        5
+      ],
+      [
+        "spoofing debian pool",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20220,
+        0.79
+      ],
+      [
+        20226,
+        0.73
+      ],
+      [
+        20231,
+        0.48
+      ],
+      [
+        20230,
+        0.46
+      ],
+      [
+        15603,
+        0.42
+      ],
+      [
+        11988,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
 }

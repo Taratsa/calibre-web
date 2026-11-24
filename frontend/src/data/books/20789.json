@@ -1,0 +1,52 @@
+{
+  "id": 20789,
+  "title": "Rtorrent: menjalankan di background",
+  "slug": "rtorrent-menjalankan-di-background-onno-widodo-purbo",
+  "slugBase": "rtorrent-menjalankan-di-background-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-04-07",
+  "timestamp": "2026-11-24 06:56:21.080930",
+  "last_modified": "2026-11-24 06:56:21.080935",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:7505eef5-7795-54f4-b507-8efde73c672b"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20789?v=1795478181",
+  "cover_og_url": "/cover/20789/og?v=1795478181",
+  "url": "/book/rtorrent-menjalankan-di-background-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Tampaknya rtorrent tidak bisa berjalan sebagai daemon di background. Oleh karenanya kalau kita ingin menjalankan di background tanpa interface kita perlu menjalankan dengan session yang terpisah, seperti sleep 3s &amp;&amp; screen -d -m -S rtorrent rtorrent &amp; Jika kita perlu mengakses interface kita dapat mengetik screen -x rtorrent Jika kita tidak membutuhkan kita dapat menekan tombol +<a> di</a>",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2839,
+      "name": "Rtorrent_ menjalankan di background - Onno Widodo Purbo"
+    }
+  ]
+}

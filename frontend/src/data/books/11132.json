@@ -45,5 +45,193 @@
       "size": 10664931,
       "name": "Perbuatan pidana dan pertanggung-djawab da - Moeljatno"
     }
-  ]
+  ],
+  "text": {
+    "words": 8295,
+    "longer_than": 79,
+    "top": [
+      [
+        "perbuatan",
+        110
+      ],
+      [
+        "feit",
+        109
+      ],
+      [
+        "pidana",
+        93
+      ],
+      [
+        "strafbaar",
+        82
+      ],
+      [
+        "hukum",
+        63
+      ],
+      [
+        "unsur",
+        57
+      ],
+      [
+        "orang",
+        56
+      ],
+      [
+        "jaitu",
+        48
+      ],
+      [
+        "adanja",
+        46
+      ],
+      [
+        "sifat",
+        46
+      ],
+      [
+        "djika",
+        43
+      ],
+      [
+        "djuga",
+        37
+      ]
+    ],
+    "distinct": [
+      [
+        "strafbaar",
+        82
+      ],
+      [
+        "feit",
+        109
+      ],
+      [
+        "pidana",
+        93
+      ],
+      [
+        "perbuatan",
+        110
+      ],
+      [
+        "handlung",
+        25
+      ],
+      [
+        "strafbaarheid",
+        26
+      ],
+      [
+        "schuld",
+        27
+      ],
+      [
+        "jaitu",
+        48
+      ],
+      [
+        "kesengadjaan",
+        18
+      ],
+      [
+        "adanja",
+        46
+      ],
+      [
+        "djika",
+        43
+      ],
+      [
+        "strafbare",
+        15
+      ]
+    ],
+    "phrases": [
+      [
+        "strafbaar feit",
+        68
+      ],
+      [
+        "perbuatan pidana",
+        36
+      ],
+      [
+        "melawan hukum",
+        25
+      ],
+      [
+        "sifat melawan",
+        22
+      ],
+      [
+        "hukum pidana",
+        18
+      ],
+      [
+        "melawan hukumnja perbuatan",
+        10
+      ],
+      [
+        "pertanggungan djawab",
+        14
+      ],
+      [
+        "dipandang sebagai unsur",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        9333,
+        0.18
+      ],
+      [
+        318,
+        0.17
+      ],
+      [
+        6667,
+        0.17
+      ],
+      [
+        5954,
+        0.15
+      ],
+      [
+        553,
+        0.15
+      ],
+      [
+        761,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 70,
+      "negative": 61,
+      "trend": [
+        -0.6,
+        0.53,
+        1,
+        null,
+        null,
+        0.11,
+        null,
+        null,
+        0.67,
+        -0.43,
+        0.14,
+        -0.27,
+        -0.17,
+        0,
+        -0.54,
+        0.33
+      ],
+      "emotions": []
+    }
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "id": 21155,
+  "title": "Python: Nulis nama di PDF Sertifikat",
+  "slug": "python-nulis-nama-di-pdf-sertifikat-onno-widodo-purbo",
+  "slugBase": "python-nulis-nama-di-pdf-sertifikat-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2026-04-20",
+  "timestamp": "2026-11-24 07:36:32.553434",
+  "last_modified": "2026-11-24 07:36:32.553438",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:838add11-3818-5f5c-8f23-0f792793c5f8"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21155?v=1795480592",
+  "cover_og_url": "/cover/21155/og?v=1795480592",
+  "url": "/book/python-nulis-nama-di-pdf-sertifikat-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Bisa. Cara paling aman biasanya begini: siapkan 1 file template sertifikat PDF siapkan 1 file daftar nama jalankan script untuk membuat 1 PDF per nama Di bawah ini script Python yang umum dipakai. Script ini akan: membaca nama dari file `nama.txt` menaruh nama di posisi tertentu pada template PDF menghasilkan file baru seperti `sertifikat_Andi.pdf`, `sertifikat_Budi.pdf`, dst. import os import re",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3862,
+      "name": "Python_ Nulis nama di PDF Sertifikat - Onno Widodo Purbo"
+    }
+  ]
+}

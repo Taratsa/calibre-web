@@ -48,5 +48,52 @@
       "size": 2432,
       "name": "NTP_ Port 123 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 100,
+    "longer_than": 14,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "debian pool ntp",
+        9
+      ],
+      [
+        "ntp org debian",
+        6
+      ],
+      [
+        "ntp port",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20228,
+        0.79
+      ],
+      [
+        20224,
+        0.74
+      ],
+      [
+        20250,
+        0.63
+      ],
+      [
+        20230,
+        0.58
+      ],
+      [
+        11988,
+        0.53
+      ],
+      [
+        20231,
+        0.53
+      ]
+    ],
+    "sentiment": null
+  }
 }

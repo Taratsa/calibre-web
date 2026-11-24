@@ -35,5 +35,168 @@
       "size": 3130108,
       "name": "Angklung Petunjuk Praktis (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 11259,
+    "longer_than": 82,
+    "top": [
+      [
+        "angklung",
+        368
+      ],
+      [
+        "akompanyemen",
+        112
+      ],
+      [
+        "nada",
+        97
+      ],
+      [
+        "melodi",
+        92
+      ],
+      [
+        "lagu",
+        81
+      ],
+      [
+        "alat",
+        78
+      ],
+      [
+        "musik",
+        65
+      ],
+      [
+        "tabung",
+        65
+      ],
+      [
+        "pemain",
+        47
+      ],
+      [
+        "suara",
+        45
+      ],
+      [
+        "permainan",
+        44
+      ],
+      [
+        "bas",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "angklung",
+        368
+      ],
+      [
+        "melodi",
+        92
+      ],
+      [
+        "tabung",
+        65
+      ],
+      [
+        "nada",
+        97
+      ],
+      [
+        "lagu",
+        81
+      ],
+      [
+        "akor",
+        25
+      ],
+      [
+        "bas",
+        43
+      ],
+      [
+        "birama",
+        22
+      ],
+      [
+        "pemain",
+        47
+      ],
+      [
+        "musik",
+        65
+      ],
+      [
+        "bernada",
+        35
+      ],
+      [
+        "nada-nada",
+        25
+      ]
+    ],
+    "phrases": [
+      [
+        "angklung melodi",
+        80
+      ],
+      [
+        "angklung sebagai alat",
+        15
+      ],
+      [
+        "permainan angklung",
+        22
+      ],
+      [
+        "alat musik",
+        21
+      ],
+      [
+        "pelajaran musik",
+        13
+      ],
+      [
+        "alat pendidikan musik",
+        8
+      ],
+      [
+        "angklung akompanyemen",
+        11
+      ],
+      [
+        "tabung yang bernada",
+        7
+      ]
+    ],
+    "similar": [],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 109,
+      "negative": 23,
+      "trend": [
+        0.81,
+        0.78,
+        0.71,
+        null,
+        1,
+        null,
+        -0.06,
+        0.2,
+        1,
+        null,
+        0.75,
+        0.67,
+        0.67,
+        0.67,
+        0.64,
+        0.82
+      ],
+      "emotions": []
+    }
+  }
 }

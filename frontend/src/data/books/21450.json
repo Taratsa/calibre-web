@@ -1,0 +1,52 @@
+{
+  "id": 21450,
+  "title": "Compile Kernel",
+  "slug": "compile-kernel-onno-widodo-purbo",
+  "slugBase": "compile-kernel-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-17",
+  "timestamp": "2026-11-24 08:00:07.068848",
+  "last_modified": "2026-11-24 08:00:07.068854",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:d8b7108b-acd1-52d5-b8ac-3c99af303c00"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21450?v=1795482007",
+  "cover_og_url": "/cover/21450/og?v=1795482007",
+  "url": "/book/compile-kernel-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Source code kernel (inti) sistem operasi Linux dapat di ambil secara bebas dari situs http://www.kernel.org . Proses / langkah membuat sistem operasi Linux dengan cara meng- compile kernel dapat di lakukan di sistem operasi linux yang kita operasikan dan menjalankan perintah-perintah berikut. Siapkan kernel package apt update apt -y install libncurses5-dev fakeroot wget bzip2 \\ kernel-wedge",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5662,
+      "name": "Compile Kernel - Onno Widodo Purbo"
+    }
+  ]
+}

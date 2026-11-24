@@ -1,0 +1,54 @@
+{
+  "id": 20467,
+  "title": "Mediawiki Mereset Isi Database Mediawiki",
+  "slug": "mediawiki-mereset-isi-database-mediawiki-onno-widodo-purbo",
+  "slugBase": "mediawiki-mereset-isi-database-mediawiki-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-11-23",
+  "timestamp": "2026-11-24 06:42:02.034352",
+  "last_modified": "2026-11-24 06:42:02.034356",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:c134a8d4-e43b-5257-b709-8db04d7bed68"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20467?v=1795477322",
+  "cover_og_url": "/cover/20467/og?v=1795477322",
+  "url": "/book/mediawiki-mereset-isi-database-mediawiki-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Asumsinya username root password 123456 database mediawiki username mediawiki password mediawiki lokasi /var/www/wiki Lakukan service mysql stop service mysql start mysqladmin --user=root --password=123456 --force drop mediawiki mysqladmin --user=root --password=123456 create mediawiki mysql -u mediawiki -pmediawiki mediawiki &lt; /var/www/wiki/maintenance/tables.sql service mysql stop service mysql",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2844,
+      "name": "Mediawiki Mereset Isi Database Mediawiki - Onno Widodo Purbo"
+    }
+  ]
+}

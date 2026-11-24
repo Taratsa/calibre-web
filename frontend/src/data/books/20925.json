@@ -1,0 +1,52 @@
+{
+  "id": 20925,
+  "title": "Segmented Sftp Download",
+  "slug": "segmented-sftp-download-onno-widodo-purbo",
+  "slugBase": "segmented-sftp-download-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-26",
+  "timestamp": "2026-11-24 07:02:05.243068",
+  "last_modified": "2026-11-24 07:02:05.243073",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:896a9b6c-1b5f-5b29-bd94-31be47aa4940"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20925?v=1795478525",
+  "cover_og_url": "/cover/20925/og?v=1795478525",
+  "url": "/book/segmented-sftp-download-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Lftp merupakan salah satu tool download manager yang lengkap. Selain http dan ftp, lftp juga bisa digunakan untuk mendownload dari protokol sftp. lftp -e 'pget /direktori/file.mkv' sftp://username@ipataudomain Masukkan password yang sesuai. Untuk segmented download, seperti yang biasa dilakukan oleh IDM : lftp -e 'pget -n8 /direktori/file.mkv' sftp://username@ipataudomain Parameter '-n8'",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2485,
+      "name": "Segmented Sftp Download - Onno Widodo Purbo"
+    }
+  ]
+}

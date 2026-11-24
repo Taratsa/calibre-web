@@ -48,5 +48,150 @@
       "size": 2624,
       "name": "NTP_ DNS Spoofing NTP - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 140,
+    "longer_than": 18,
+    "top": [
+      [
+        "ntp",
+        27
+      ],
+      [
+        "dns",
+        8
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "server",
+        6
+      ],
+      [
+        "lokal",
+        5
+      ],
+      [
+        "ubuntu",
+        5
+      ],
+      [
+        "spoofing",
+        4
+      ],
+      [
+        "address",
+        3
+      ],
+      [
+        "debian",
+        3
+      ],
+      [
+        "set",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ntp",
+        27
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "dns",
+        8
+      ],
+      [
+        "spoofing",
+        4
+      ],
+      [
+        "debian",
+        3
+      ],
+      [
+        "server",
+        6
+      ],
+      [
+        "ubuntu",
+        5
+      ],
+      [
+        "lokal",
+        5
+      ],
+      [
+        "address",
+        3
+      ],
+      [
+        "set",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "pool ntp",
+        7
+      ],
+      [
+        "ntp org ubuntu",
+        4
+      ],
+      [
+        "ntp server lokal",
+        3
+      ],
+      [
+        "ntp dns spoofing",
+        3
+      ],
+      [
+        "dns spoofing ntp",
+        3
+      ],
+      [
+        "ubuntu pool",
+        4
+      ],
+      [
+        "debian pool",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20226,
+        0.75
+      ],
+      [
+        20220,
+        0.74
+      ],
+      [
+        20230,
+        0.59
+      ],
+      [
+        20231,
+        0.55
+      ],
+      [
+        11988,
+        0.47
+      ],
+      [
+        17728,
+        0.46
+      ]
+    ],
+    "sentiment": null
+  }
 }

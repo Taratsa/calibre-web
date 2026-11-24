@@ -45,5 +45,193 @@
       "size": 9042925,
       "name": "Merah-putih adalah benderamu _ amanah pres - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 5252,
+    "longer_than": 73,
+    "top": [
+      [
+        "indonesia",
+        104
+      ],
+      [
+        "barat",
+        85
+      ],
+      [
+        "irian",
+        81
+      ],
+      [
+        "rakjat",
+        79
+      ],
+      [
+        "ttd",
+        72
+      ],
+      [
+        "republik",
+        43
+      ],
+      [
+        "bangsa",
+        29
+      ],
+      [
+        "saudara-saudara",
+        29
+      ],
+      [
+        "perdjoangan",
+        27
+      ],
+      [
+        "engkau",
+        21
+      ],
+      [
+        "negara",
+        21
+      ],
+      [
+        "wilajah",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "ttd",
+        72
+      ],
+      [
+        "irian",
+        81
+      ],
+      [
+        "rakjat",
+        79
+      ],
+      [
+        "perdjoangan",
+        27
+      ],
+      [
+        "barat",
+        85
+      ],
+      [
+        "wilajah",
+        21
+      ],
+      [
+        "saudara-saudara",
+        29
+      ],
+      [
+        "indonesia",
+        104
+      ],
+      [
+        "republik",
+        43
+      ],
+      [
+        "djikalau",
+        15
+      ],
+      [
+        "sabang",
+        15
+      ],
+      [
+        "merah-putih",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "irian barat",
+        81
+      ],
+      [
+        "republik indonesia",
+        26
+      ],
+      [
+        "rakjat irian",
+        24
+      ],
+      [
+        "rakjat indonesia",
+        22
+      ],
+      [
+        "golongan karya",
+        14
+      ],
+      [
+        "wilajah kekuasaan republik",
+        8
+      ],
+      [
+        "bangsa indonesia",
+        12
+      ],
+      [
+        "tanah air",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        11349,
+        0.28
+      ],
+      [
+        8771,
+        0.28
+      ],
+      [
+        10769,
+        0.27
+      ],
+      [
+        11039,
+        0.27
+      ],
+      [
+        10837,
+        0.23
+      ],
+      [
+        10774,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.85,
+      "positive": 88,
+      "negative": 7,
+      "trend": [
+        0.5,
+        1,
+        0.6,
+        1,
+        null,
+        0.33,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1
+      ],
+      "emotions": []
+    }
+  }
 }

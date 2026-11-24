@@ -45,5 +45,214 @@
       "size": 6622137,
       "name": "Pertjintaan Samboengan Siti Asmari _ Tjint - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 2939,
+    "longer_than": 67,
+    "top": [
+      [
+        "siti",
+        47
+      ],
+      [
+        "adinda",
+        46
+      ],
+      [
+        "hak",
+        39
+      ],
+      [
+        "hati",
+        34
+      ],
+      [
+        "kakanda",
+        34
+      ],
+      [
+        "djangan",
+        23
+      ],
+      [
+        "senang",
+        18
+      ],
+      [
+        "badan",
+        17
+      ],
+      [
+        "boenda",
+        17
+      ],
+      [
+        "soedah",
+        15
+      ],
+      [
+        "mata",
+        12
+      ],
+      [
+        "dendam",
+        10
+      ]
+    ],
+    "distinct": [
+      [
+        "adinda",
+        46
+      ],
+      [
+        "siti",
+        47
+      ],
+      [
+        "kakanda",
+        34
+      ],
+      [
+        "boenda",
+        17
+      ],
+      [
+        "soedah",
+        15
+      ],
+      [
+        "djangan",
+        23
+      ],
+      [
+        "rindoe",
+        8
+      ],
+      [
+        "asmari",
+        6
+      ],
+      [
+        "anakda",
+        9
+      ],
+      [
+        "pemoeda",
+        9
+      ],
+      [
+        "teroes",
+        10
+      ],
+      [
+        "hak",
+        39
+      ]
+    ],
+    "phrases": [
+      [
+        "abdoel hak",
+        8
+      ],
+      [
+        "lemah lemboet",
+        6
+      ],
+      [
+        "dendam berahi",
+        5
+      ],
+      [
+        "senang hati",
+        4
+      ],
+      [
+        "adinda siti",
+        4
+      ],
+      [
+        "soepaja senang",
+        3
+      ],
+      [
+        "siti teroes",
+        3
+      ],
+      [
+        "siti poeteri",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        6567,
+        0.2
+      ],
+      [
+        583,
+        0.2
+      ],
+      [
+        771,
+        0.19
+      ],
+      [
+        296,
+        0.19
+      ],
+      [
+        6632,
+        0.18
+      ],
+      [
+        1200,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 58,
+      "negative": 32,
+      "trend": [
+        null,
+        1,
+        null,
+        null,
+        0.4,
+        null,
+        0.2,
+        0,
+        1,
+        0.33,
+        -0.6,
+        -0.14,
+        -0.2,
+        0.6,
+        0.5,
+        0.14
+      ],
+      "emotions": [
+        [
+          "joy",
+          25
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
+  }
 }

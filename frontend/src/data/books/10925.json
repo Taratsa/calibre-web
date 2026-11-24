@@ -45,5 +45,218 @@
       "size": 8086319,
       "name": "Dwikomando rakjat untuk pengganjangan _Mal - Indonesia. Presiden (1945-1967 _ Sukarno)"
     }
-  ]
+  ],
+  "text": {
+    "words": 6029,
+    "longer_than": 75,
+    "top": [
+      [
+        "indonesia",
+        117
+      ],
+      [
+        "rakjat",
+        69
+      ],
+      [
+        "malaysia",
+        51
+      ],
+      [
+        "saudara-saudara",
+        51
+      ],
+      [
+        "sukarno",
+        47
+      ],
+      [
+        "revolusi",
+        43
+      ],
+      [
+        "tengku",
+        41
+      ],
+      [
+        "abdulrachman",
+        31
+      ],
+      [
+        "putra",
+        27
+      ],
+      [
+        "inggeris",
+        25
+      ],
+      [
+        "kennedy",
+        23
+      ],
+      [
+        "perundingan",
+        23
+      ]
+    ],
+    "distinct": [
+      [
+        "rakjat",
+        69
+      ],
+      [
+        "abdulrachman",
+        31
+      ],
+      [
+        "tengku",
+        41
+      ],
+      [
+        "saudara-saudara",
+        51
+      ],
+      [
+        "sukarno",
+        47
+      ],
+      [
+        "malaysia",
+        51
+      ],
+      [
+        "kennedy",
+        23
+      ],
+      [
+        "indonesia",
+        117
+      ],
+      [
+        "inggeris",
+        25
+      ],
+      [
+        "revolusi",
+        43
+      ],
+      [
+        "cease-fire",
+        12
+      ],
+      [
+        "routed",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "tengku abdulrachman putra",
+        25
+      ],
+      [
+        "revolusi indonesia",
+        23
+      ],
+      [
+        "rakjat indonesia",
+        21
+      ],
+      [
+        "robert kennedy",
+        20
+      ],
+      [
+        "republik indonesia",
+        20
+      ],
+      [
+        "kalimantan utara",
+        11
+      ],
+      [
+        "sabar sabar",
+        9
+      ],
+      [
+        "indonesia punja",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        10953,
+        0.3
+      ],
+      [
+        10718,
+        0.25
+      ],
+      [
+        680,
+        0.21
+      ],
+      [
+        11017,
+        0.21
+      ],
+      [
+        10945,
+        0.2
+      ],
+      [
+        10852,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 99,
+      "negative": 26,
+      "trend": [
+        null,
+        null,
+        0.25,
+        0.78,
+        0.67,
+        0.6,
+        0.43,
+        1,
+        0.33,
+        0.67,
+        0.11,
+        0.71,
+        1,
+        0.5,
+        1,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

@@ -1,0 +1,55 @@
+{
+  "id": 20369,
+  "title": "Conversion from Ext3",
+  "slug": "conversion-from-ext3-onno-widodo-purbo",
+  "slugBase": "conversion-from-ext3-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Documentation",
+    "Pages_with_broken_file_links"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-28",
+  "timestamp": "2026-11-24 06:37:06.449005",
+  "last_modified": "2026-11-24 06:37:06.449010",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:f5e5317a-1b27-5207-a86f-79866bc9bb11"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20369?v=1795477026",
+  "cover_og_url": "/cover/20369/og?v=1795477026",
+  "url": "/book/conversion-from-ext3-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Btrfs Conversion from Ext3 or Ext4 Btrfs has very few pieces of metadata that live in fixed locations, making it relatively easy to implement an in place conversion utility from other filesystems. Copy on write algorithms allow Btrfs to preserve an unmodified copy of the original FS, and allow administrator to undo the conversion, even after making changes in the resulting Btrfs filesystem. The",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3401,
+      "name": "Conversion from Ext3 - Onno Widodo Purbo"
+    }
+  ]
+}

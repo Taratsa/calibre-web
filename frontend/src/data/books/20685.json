@@ -1,0 +1,55 @@
+{
+  "id": 20685,
+  "title": "USRP: ClockTamer Control Protocol",
+  "slug": "usrp-clocktamer-control-protocol-onno-widodo-purbo",
+  "slugBase": "usrp-clocktamer-control-protocol-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-03-04",
+  "timestamp": "2026-11-24 06:51:35.704827",
+  "last_modified": "2026-11-24 06:51:35.704832",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:78a93328-42a7-5efa-97e4-d82074f14a19"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20685?v=1795477895",
+  "cover_og_url": "/cover/20685/og?v=1795477895",
+  "url": "/book/usrp-clocktamer-control-protocol-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Kita dapat mengontrol ClockTamer melalui USB atau SPI . Jika tersambung ke USB , ClockTamer akan mengemulasi serial port, oleh karenanya kita dapat mengontrolnya menggunakan terminal emulator, baik dari script atau program. Sambungan SPI digunakan jika ClockTamer tersambung ke USRP dan sangat berguna jika kita tidak ingin menggunakan dua kabel USB dari USRP ke komputer yang kita gunakan. Contents",
+  "data": [
+    {
+      "format": "epub",
+      "size": 11529,
+      "name": "USRP_ ClockTamer Control Protocol - Onno Widodo Purbo"
+    }
+  ]
+}

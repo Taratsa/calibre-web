@@ -1,0 +1,52 @@
+{
+  "id": 20827,
+  "title": "DokeOS: instalasi",
+  "slug": "dokeos-instalasi-onno-widodo-purbo",
+  "slugBase": "dokeos-instalasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-04-23",
+  "timestamp": "2026-11-24 06:58:00.584067",
+  "last_modified": "2026-11-24 06:58:00.584072",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:cff9a5e3-af2c-5fcf-9031-dad9bfe9594e"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20827?v=1795478280",
+  "cover_og_url": "/cover/20827/og?v=1795478280",
+  "url": "/book/dokeos-instalasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi Aplikasi Pendukung apt-get update apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb \\ libgd2-xpm libgd2-xpm-dev php5-mysql php5-gd php5-curl \\ php-pear unzip Agar dokeos dapat bekerja dengan baik, edit php.ini vi /etc/php5/apache2/php.ini Menjadi max_execution_time = 300 ; Maximum execution time of each script, in seconds max_input_time = 600 ; Maximum amount of",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3384,
+      "name": "DokeOS_ instalasi - Onno Widodo Purbo"
+    }
+  ]
+}

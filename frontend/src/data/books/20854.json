@@ -1,0 +1,52 @@
+{
+  "id": 20854,
+  "title": "TCP/IP: Quagga Prasyarat & Instalasi",
+  "slug": "tcp-ip-quagga-prasyarat-instalasi-onno-widodo-purbo",
+  "slugBase": "tcp-ip-quagga-prasyarat-instalasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-05-01",
+  "timestamp": "2026-11-24 06:59:01.706055",
+  "last_modified": "2026-11-24 06:59:01.706060",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:9543573f-c441-57b8-8fce-8b66a34d6aa3"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20854?v=1795478341",
+  "cover_og_url": "/cover/20854/og?v=1795478341",
+  "url": "/book/tcp-ip-quagga-prasyarat-instalasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Untuk melihat versi Quagga yang tersedia dapat menggunakan perintah: apt-cache policy quagga Hasilnya: quagga: Installed: (none) Candidate: 0.99.22-1 Version table: 0.99.22-1 0 500 http://192.168.1.10/ubuntu-13.04/ raring/main i386 Packages Untuk men-download dan menginstalasi Quagga dapat menggunakan perintah: apt-get install quagga quagga-doc Untuk melihat dependensi yang dibutuhkan Quagga:",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3078,
+      "name": "TCP_IP_ Quagga Prasyarat & Instalasi - Onno Widodo Purbo"
+    }
+  ]
+}

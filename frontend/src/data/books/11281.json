@@ -43,5 +43,209 @@
       "size": 2660757,
       "name": "Hujan Munggaran (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 14607,
+    "longer_than": 85,
+    "top": [
+      [
+        "teh",
+        377
+      ],
+      [
+        "kuring",
+        375
+      ],
+      [
+        "mah",
+        287
+      ],
+      [
+        "teu",
+        203
+      ],
+      [
+        "bae",
+        195
+      ],
+      [
+        "manehna",
+        161
+      ],
+      [
+        "geus",
+        160
+      ],
+      [
+        "anu",
+        140
+      ],
+      [
+        "oge",
+        127
+      ],
+      [
+        "ari",
+        121
+      ],
+      [
+        "eta",
+        119
+      ],
+      [
+        "aya",
+        112
+      ]
+    ],
+    "distinct": [
+      [
+        "kuring",
+        375
+      ],
+      [
+        "teh",
+        377
+      ],
+      [
+        "manehna",
+        161
+      ],
+      [
+        "mah",
+        287
+      ],
+      [
+        "teu",
+        203
+      ],
+      [
+        "geus",
+        160
+      ],
+      [
+        "bae",
+        195
+      ],
+      [
+        "oge",
+        127
+      ],
+      [
+        "deui",
+        112
+      ],
+      [
+        "jeung",
+        106
+      ],
+      [
+        "kitu",
+        94
+      ],
+      [
+        "eta",
+        119
+      ]
+    ],
+    "phrases": [
+      [
+        "eta cengcelengan",
+        26
+      ],
+      [
+        "kacida pisan",
+        21
+      ],
+      [
+        "mang kentang",
+        19
+      ],
+      [
+        "manehna teh",
+        18
+      ],
+      [
+        "kuring mah",
+        18
+      ],
+      [
+        "kuring teu",
+        17
+      ],
+      [
+        "kitu teh",
+        17
+      ],
+      [
+        "kuring geus",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        6231,
+        0.6
+      ],
+      [
+        11368,
+        0.57
+      ],
+      [
+        6002,
+        0.56
+      ],
+      [
+        6205,
+        0.54
+      ],
+      [
+        11272,
+        0.45
+      ],
+      [
+        5575,
+        0.43
+      ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 61,
+      "negative": 46,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

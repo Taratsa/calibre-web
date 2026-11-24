@@ -1,0 +1,54 @@
+{
+  "id": 20706,
+  "title": "Repository: Contoh sources.list ke 10.150.5.244",
+  "slug": "repository-contoh-sources-list-ke-10-150-5-244-onno-widodo-purbo",
+  "slugBase": "repository-contoh-sources-list-ke-10-150-5-244-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-03-11",
+  "timestamp": "2026-11-24 06:52:25.303058",
+  "last_modified": "2026-11-24 06:52:25.303062",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:a1f3f697-a1be-5143-981d-bcf8ea764fc1"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20706?v=1795477945",
+  "cover_og_url": "/cover/20706/og?v=1795477945",
+  "url": "/book/repository-contoh-sources-list-ke-10-150-5-244-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit vi /etc/apt/sources.list isi dengan deb http://10.150.5.244/ubuntu-9.10/ karmic main multiverse restricted universe deb http://10.150.5.244/ubuntu-9.10/ karmic-updates main multiverse restricted universe deb http://10.150.5.244/ubuntu-9.10/ karmic-security main multiverse restricted universe deb http://10.150.5.244/ubuntu-9.10/ karmic-backports main multiverse restricted universe deb",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2731,
+      "name": "Repository_ Contoh sources.list ke 10.150. - Onno Widodo Purbo"
+    }
+  ]
+}

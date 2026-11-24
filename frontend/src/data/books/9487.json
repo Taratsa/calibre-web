@@ -50,7 +50,7 @@
     }
   ],
   "text": {
-    "words": 1045,
+    "words": 1037,
     "longer_than": 52,
     "top": [
       [
@@ -162,10 +162,6 @@
         13
       ],
       [
-        "usr bin arm-linux-gnueabi",
-        9
-      ],
-      [
         "cross compile usr",
         9
       ],
@@ -184,12 +180,16 @@
       [
         "define r mips",
         7
+      ],
+      [
+        "start elf arm",
+        6
       ]
     ],
     "similar": [
       [
         10398,
-        0.35
+        0.34
       ],
       [
         10278,

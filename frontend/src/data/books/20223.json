@@ -48,5 +48,170 @@
       "size": 4233,
       "name": "DNS Spoofing Dengan Scapy - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 621,
+    "longer_than": 44,
+    "top": [
+      [
+        "iptables",
+        18
+      ],
+      [
+        "interface",
+        8
+      ],
+      [
+        "jump",
+        8
+      ],
+      [
+        "nat",
+        8
+      ],
+      [
+        "packet",
+        7
+      ],
+      [
+        "target",
+        7
+      ],
+      [
+        "scapy",
+        6
+      ],
+      [
+        "yur",
+        6
+      ],
+      [
+        "cyber",
+        5
+      ],
+      [
+        "wlan",
+        5
+      ],
+      [
+        "append",
+        4
+      ],
+      [
+        "crew",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "iptables",
+        18
+      ],
+      [
+        "scapy",
+        6
+      ],
+      [
+        "jump",
+        8
+      ],
+      [
+        "yur",
+        6
+      ],
+      [
+        "to-destination",
+        4
+      ],
+      [
+        "dnat",
+        4
+      ],
+      [
+        "nat",
+        8
+      ],
+      [
+        "packet",
+        7
+      ],
+      [
+        "ihir",
+        3
+      ],
+      [
+        "prerouting",
+        4
+      ],
+      [
+        "dport",
+        4
+      ],
+      [
+        "wlan",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "tcp dport jump",
+        4
+      ],
+      [
+        "sys net ipv",
+        4
+      ],
+      [
+        "prerouting p tcp",
+        4
+      ],
+      [
+        "nat a prerouting",
+        4
+      ],
+      [
+        "jump dnat to-destination",
+        4
+      ],
+      [
+        "iptables t nat",
+        4
+      ],
+      [
+        "echo proc sys",
+        4
+      ],
+      [
+        "dport jump dnat",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        20221,
+        0.31
+      ],
+      [
+        16300,
+        0.3
+      ],
+      [
+        11591,
+        0.28
+      ],
+      [
+        9532,
+        0.27
+      ],
+      [
+        13042,
+        0.27
+      ],
+      [
+        12458,
+        0.26
+      ]
+    ],
+    "sentiment": null
+  }
 }

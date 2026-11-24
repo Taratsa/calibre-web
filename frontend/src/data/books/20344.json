@@ -1,0 +1,54 @@
+{
+  "id": 20344,
+  "title": "Repository: Contoh sources.list ke 10.150.9.87",
+  "slug": "repository-contoh-sources-list-ke-10-150-9-87-onno-widodo-purbo",
+  "slugBase": "repository-contoh-sources-list-ke-10-150-9-87-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-23",
+  "timestamp": "2026-11-24 06:35:48.964386",
+  "last_modified": "2026-11-24 06:35:48.964391",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:90fcf1f1-08f1-5046-9164-3c2579fb0c68"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20344?v=1795476948",
+  "cover_og_url": "/cover/20344/og?v=1795476948",
+  "url": "/book/repository-contoh-sources-list-ke-10-150-9-87-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit vi /etc/apt/sources.list isi dengan deb http://10.150.9.87/ubuntu-11.04/ natty main multiverse restricted universe deb http://10.150.9.87/ubuntu-11.04/ natty-backports main multiverse restricted universe deb http://10.150.9.87/ubuntu-11.04/ natty-proposed main multiverse restricted universe deb http://10.150.9.87/ubuntu-11.04/ natty-security main multiverse restricted universe deb",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2666,
+      "name": "Repository_ Contoh sources.list ke 10.150. - Onno Widodo Purbo"
+    }
+  ]
+}

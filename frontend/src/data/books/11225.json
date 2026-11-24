@@ -43,5 +43,222 @@
       "size": 1983764,
       "name": "Babad Pasanggrahan Madusita (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 39286,
+    "longer_than": 95,
+    "top": [
+      [
+        "kamar",
+        367
+      ],
+      [
+        "wau",
+        329
+      ],
+      [
+        "ingkang",
+        259
+      ],
+      [
+        "sebelah",
+        231
+      ],
+      [
+        "pintu",
+        181
+      ],
+      [
+        "madusita",
+        162
+      ],
+      [
+        "timur",
+        153
+      ],
+      [
+        "sri",
+        146
+      ],
+      [
+        "kori",
+        118
+      ],
+      [
+        "dalem",
+        117
+      ],
+      [
+        "barat",
+        116
+      ],
+      [
+        "saking",
+        115
+      ]
+    ],
+    "distinct": [
+      [
+        "wau",
+        329
+      ],
+      [
+        "madusita",
+        162
+      ],
+      [
+        "ingkang",
+        259
+      ],
+      [
+        "kamar",
+        367
+      ],
+      [
+        "kori",
+        118
+      ],
+      [
+        "mangkya",
+        80
+      ],
+      [
+        "mring",
+        93
+      ],
+      [
+        "puniku",
+        89
+      ],
+      [
+        "wonten",
+        100
+      ],
+      [
+        "myang",
+        86
+      ],
+      [
+        "sebelah",
+        231
+      ],
+      [
+        "wedari",
+        57
+      ]
+    ],
+    "phrases": [
+      [
+        "sri susuhunan",
+        76
+      ],
+      [
+        "terletak di sebelah",
+        45
+      ],
+      [
+        "sebelah timur",
+        62
+      ],
+      [
+        "sebelah utara",
+        48
+      ],
+      [
+        "sebelah barat",
+        47
+      ],
+      [
+        "sebelah selatan",
+        44
+      ],
+      [
+        "tuan sul",
+        39
+      ],
+      [
+        "pintu kamar",
+        35
+      ]
+    ],
+    "similar": [
+      [
+        6207,
+        0.29
+      ],
+      [
+        2976,
+        0.28
+      ],
+      [
+        11343,
+        0.28
+      ],
+      [
+        6206,
+        0.26
+      ],
+      [
+        1755,
+        0.22
+      ],
+      [
+        2910,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 451,
+      "negative": 96,
+      "trend": [
+        0.65,
+        0.73,
+        0.68,
+        0.89,
+        0.5,
+        0.48,
+        0.22,
+        0.91,
+        0.54,
+        1,
+        1,
+        1,
+        1,
+        0.17,
+        0.56,
+        0.68
+      ],
+      "emotions": [
+        [
+          "joy",
+          94
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

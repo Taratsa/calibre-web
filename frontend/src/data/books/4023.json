@@ -54,12 +54,12 @@
     }
   ],
   "text": {
-    "words": 1760,
+    "words": 1706,
     "longer_than": 60,
     "top": [
       [
         "indonesia",
-        20
+        22
       ],
       [
         "manusia",
@@ -67,15 +67,15 @@
       ],
       [
         "dunia",
-        10
-      ],
-      [
-        "orang",
-        10
+        11
       ],
       [
         "pengarang",
         10
+      ],
+      [
+        "orang",
+        9
       ],
       [
         "intelektuil",
@@ -102,7 +102,7 @@
         6
       ],
       [
-        "politik",
+        "khairil",
         6
       ]
     ],
@@ -113,7 +113,7 @@
       ],
       [
         "khairil",
-        5
+        6
       ],
       [
         "intelektuil",
@@ -136,24 +136,24 @@
         5
       ],
       [
+        "indonesia",
+        22
+      ],
+      [
         "masasilam",
         4
       ],
       [
-        "indonesia",
-        20
+        "anwar",
+        5
+      ],
+      [
+        "roman",
+        5
       ],
       [
         "puisi",
         6
-      ],
-      [
-        "simbol",
-        6
-      ],
-      [
-        "anwar",
-        4
       ]
     ],
     "phrases": [
@@ -167,7 +167,7 @@
       ],
       [
         "khairil anwar",
-        4
+        5
       ],
       [
         "dunia pemikiran",
@@ -175,6 +175,10 @@
       ]
     ],
     "similar": [
+      [
+        4020,
+        0.3
+      ],
       [
         6755,
         0.29
@@ -184,20 +188,16 @@
         0.29
       ],
       [
+        4010,
+        0.29
+      ],
+      [
+        4024,
+        0.28
+      ],
+      [
         4009,
         0.28
-      ],
-      [
-        3996,
-        0.28
-      ],
-      [
-        3991,
-        0.27
-      ],
-      [
-        4010,
-        0.27
       ]
     ],
     "sentiment": null

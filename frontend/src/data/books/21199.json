@@ -1,0 +1,55 @@
+{
+  "id": 21199,
+  "title": "WiFi: HotSpot - mounting Shared Disk dari Linksys ke Linux",
+  "slug": "wifi-hotspot-mounting-shared-disk-dari-linksys-ke-linux-onno-widodo-purbo",
+  "slugBase": "wifi-hotspot-mounting-shared-disk-dari-linksys-ke-linux-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "HotSpot",
+    "WiFi"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-03-12",
+  "timestamp": "2026-11-24 07:39:43.263978",
+  "last_modified": "2026-11-24 07:39:43.263982",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:aa3597ed-7303-53d5-a674-d7d312d3bd81"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21199?v=1795480783",
+  "cover_og_url": "/cover/21199/og?v=1795480783",
+  "url": "/book/wifi-hotspot-mounting-shared-disk-dari-linksys-ke-linux-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Setelah sharing disk di lakukan di linksys WRT160NL atau WRT610N, kita dapat mount di Linux menggunakan perintah mkdir /mnt/sharedlinksys mount -t cifs //192.168.0.1/public /mnt/public -o username=admin -o password=admin Folder yang di shared dapat di akses di /mnt/sharedlinksys Untuk mengcopy file dapat dilakukan menggunakan perintah cp fileyangakandicopy /mnt/sharedlinksys Pranala Menarik WiFi:",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2496,
+      "name": "WiFi_ HotSpot - mounting Shared Disk dari - Onno Widodo Purbo"
+    }
+  ]
+}

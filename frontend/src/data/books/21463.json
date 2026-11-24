@@ -1,0 +1,55 @@
+{
+  "id": 21463,
+  "title": "VLC: Instalasi",
+  "slug": "vlc-instalasi-onno-widodo-purbo",
+  "slugBase": "vlc-instalasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux",
+    "Multimedia"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-04-07",
+  "timestamp": "2026-11-24 08:01:53.227146",
+  "last_modified": "2026-11-24 08:01:53.227151",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:adba23d4-08fc-5156-a568-56d6a3af5222"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21463?v=1795482113",
+  "cover_og_url": "/cover/21463/og?v=1795482113",
+  "url": "/book/vlc-instalasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi sudo apt-get update sudo apt-get install vlc vlc-plugin-pulse mozilla-plugin-vlc Jika tertarik untuk melakukan streaming or transcoding sudo apt-get install libavcodec-extra-52 Beberapa Plugin vlc-plugin-alsa - ALSA audio output plugin for VLC (install it if sound doesn't work) vlc-plugin-arts - aRts audio output plugin for VLC (install it if sound still doesn't work and you're using",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2563,
+      "name": "VLC_ Instalasi - Onno Widodo Purbo"
+    }
+  ]
+}

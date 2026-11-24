@@ -1,0 +1,52 @@
+{
+  "id": 21530,
+  "title": "Apache: stream video .htaccess",
+  "slug": "apache-stream-video-htaccess-onno-widodo-purbo",
+  "slugBase": "apache-stream-video-htaccess-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2022-09-10",
+  "timestamp": "2026-11-24 08:09:48.139580",
+  "last_modified": "2026-11-24 08:09:48.139584",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:99fff667-ebce-5096-aca8-6c55c5599247"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/21530?v=1795482588",
+  "cover_og_url": "/cover/21530/og?v=1795482588",
+  "url": "/book/apache-stream-video-htaccess-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit .htaccess di root, isi dengan # MIME types for Video AddType video/mp4 .mp4 .m4v .f4v .f4p AddType video/ogg .ogv AddType video/webm .webm AddType video/flv .flv AddType video/avi .avi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 1984,
+      "name": "Apache_ stream video .htaccess - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 20749,
+  "title": "Mediawiki ganti IP address server",
+  "slug": "mediawiki-ganti-ip-address-server-onno-widodo-purbo",
+  "slugBase": "mediawiki-ganti-ip-address-server-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-03-29",
+  "timestamp": "2026-11-24 06:54:20.341876",
+  "last_modified": "2026-11-24 06:54:20.341881",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:72ad606e-9c9a-54cd-8a90-b91b11bd62c9"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20749?v=1795478060",
+  "cover_og_url": "/cover/20749/og?v=1795478060",
+  "url": "/book/mediawiki-ganti-ip-address-server-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Kalau kita mengubah IP address server kita perlu mengedit vi /var/www/wiki/LocalSettings.php Ganti nilai parameter $wgServer ke IP address atau domain yang digunakan ## The protocol and server name to use in fully-qualified URLs $wgServer = \" http://192.168.0.4 \"; Pranala Menarik Mediawiki Instalasi MediaWiki Melihat Aktifitas dan Statistik Mediawiki Dumping Seluruh Database MediaWiki Replikasi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2954,
+      "name": "Mediawiki ganti IP address server - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -61,5 +61,214 @@
       "size": 8714381,
       "name": "Binalah kesatuan dan persatuan nasional pr - H.J Sumarto"
     }
-  ]
+  ],
+  "text": {
+    "words": 5911,
+    "longer_than": 75,
+    "top": [
+      [
+        "revolusi",
+        115
+      ],
+      [
+        "saudara-saudara",
+        49
+      ],
+      [
+        "didalam",
+        34
+      ],
+      [
+        "september",
+        31
+      ],
+      [
+        "orang",
+        27
+      ],
+      [
+        "djuga",
+        22
+      ],
+      [
+        "kabar",
+        22
+      ],
+      [
+        "kedjadian",
+        21
+      ],
+      [
+        "perdjoangan",
+        19
+      ],
+      [
+        "angkatan",
+        17
+      ],
+      [
+        "pantja",
+        17
+      ],
+      [
+        "prantjis",
+        17
+      ]
+    ],
+    "distinct": [
+      [
+        "revolusi",
+        115
+      ],
+      [
+        "saudara-saudara",
+        49
+      ],
+      [
+        "prantjis",
+        17
+      ],
+      [
+        "perdjoangan",
+        19
+      ],
+      [
+        "didalam",
+        34
+      ],
+      [
+        "pantja",
+        17
+      ],
+      [
+        "kedjadian",
+        21
+      ],
+      [
+        "zamannja",
+        12
+      ],
+      [
+        "djuga",
+        22
+      ],
+      [
+        "punja",
+        16
+      ],
+      [
+        "reëel",
+        7
+      ],
+      [
+        "kom",
+        14
+      ]
+    ],
+    "phrases": [
+      [
+        "pemimpin besar revolusi",
+        11
+      ],
+      [
+        "revolusi prantjis",
+        16
+      ],
+      [
+        "surat kabar",
+        14
+      ],
+      [
+        "pantja azimat",
+        11
+      ],
+      [
+        "roman muka reëel",
+        7
+      ],
+      [
+        "angkatan darat",
+        10
+      ],
+      [
+        "presiden panglima tertinggi",
+        6
+      ],
+      [
+        "kedjadian september",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        8771,
+        0.23
+      ],
+      [
+        10945,
+        0.22
+      ],
+      [
+        11349,
+        0.19
+      ],
+      [
+        10994,
+        0.19
+      ],
+      [
+        11039,
+        0.18
+      ],
+      [
+        10807,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 57,
+      "negative": 58,
+      "trend": [
+        0.75,
+        null,
+        0.2,
+        null,
+        null,
+        0,
+        0.27,
+        -0.75,
+        -0.25,
+        -0.6,
+        0.33,
+        0.25,
+        0,
+        0.11,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

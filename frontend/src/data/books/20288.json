@@ -1,0 +1,52 @@
+{
+  "id": 20288,
+  "title": "RockCluster: Submit Job",
+  "slug": "rockcluster-submit-job-onno-widodo-purbo",
+  "slugBase": "rockcluster-submit-job-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-07-22",
+  "timestamp": "2026-11-24 06:33:20.205554",
+  "last_modified": "2026-11-24 06:33:20.205559",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:129db5fa-84dc-5aff-963a-6e6d4a8d6f12"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20288?v=1795476800",
+  "cover_og_url": "/cover/20288/og?v=1795476800",
+  "url": "/book/rockcluster-submit-job-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Submit Job Menggunaan mpirun 2 Submit Job Menggunakan qsub 3 Referensi 4 Pranala Menarik Submit Job Menggunaan mpirun Ambil source code tachyon dari http://www.photonlimited.com/~johns/tachyon/ http://www.photonlimited.com/~johns/tachyon/files/0.99b2/ Copy ke front end rockcluster scp tachyon-0.99b2.tar.gz root@192.168.0.120: Masuk ke front end rockcluster ssh root@192.168.0.120",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2906,
+      "name": "RockCluster_ Submit Job - Onno Widodo Purbo"
+    }
+  ]
+}

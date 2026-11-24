@@ -48,5 +48,170 @@
       "size": 3109,
       "name": "NTP_ Tranparant Proxy untuk NTP - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 319,
+    "longer_than": 31,
+    "top": [
+      [
+        "iptables",
+        21
+      ],
+      [
+        "ntp",
+        16
+      ],
+      [
+        "lan",
+        9
+      ],
+      [
+        "squid",
+        9
+      ],
+      [
+        "nat",
+        8
+      ],
+      [
+        "accept",
+        7
+      ],
+      [
+        "port",
+        7
+      ],
+      [
+        "input",
+        6
+      ],
+      [
+        "internet",
+        5
+      ],
+      [
+        "ftp",
+        4
+      ],
+      [
+        "proxy",
+        4
+      ],
+      [
+        "server",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "iptables",
+        21
+      ],
+      [
+        "ntp",
+        16
+      ],
+      [
+        "squid",
+        9
+      ],
+      [
+        "nat",
+        8
+      ],
+      [
+        "accept",
+        7
+      ],
+      [
+        "tranparant",
+        3
+      ],
+      [
+        "conntrack",
+        3
+      ],
+      [
+        "dnat",
+        3
+      ],
+      [
+        "lan",
+        9
+      ],
+      [
+        "prerouting",
+        3
+      ],
+      [
+        "port",
+        7
+      ],
+      [
+        "dport",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "iptables t nat",
+        5
+      ],
+      [
+        "iptables a input",
+        5
+      ],
+      [
+        "squid port",
+        5
+      ],
+      [
+        "proxy untuk ntp",
+        3
+      ],
+      [
+        "ntp tranparant proxy",
+        3
+      ],
+      [
+        "nat a prerouting",
+        3
+      ],
+      [
+        "tcp dport",
+        3
+      ],
+      [
+        "squid server",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20222,
+        0.8
+      ],
+      [
+        11425,
+        0.5
+      ],
+      [
+        16300,
+        0.45
+      ],
+      [
+        11597,
+        0.4
+      ],
+      [
+        12458,
+        0.37
+      ],
+      [
+        14072,
+        0.36
+      ]
+    ],
+    "sentiment": null
+  }
 }

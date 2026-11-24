@@ -1,0 +1,52 @@
+{
+  "id": 20410,
+  "title": "Instalasi NTP",
+  "slug": "instalasi-ntp-onno-widodo-purbo",
+  "slugBase": "instalasi-ntp-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-19",
+  "timestamp": "2026-11-24 06:39:17.588991",
+  "last_modified": "2026-11-24 06:39:17.588996",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:678e626c-3528-56ed-8919-67d3dbc1a2aa"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20410?v=1795477157",
+  "cover_og_url": "/cover/20410/og?v=1795477157",
+  "url": "/book/instalasi-ntp-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instal NTP apt-get install ntp Edit ntp.conf vi /etc/ntp.conf Pastikan ada server ntp.ubuntu.com server pool.ntp.org server time.nist.gov Restart server /etc/init.d/ntp restart Mengijinkan Akses &amp; Broadcast Waktu NTP di Subnet Jika anda ingin membroadcast waktu di sebuah Subnet, anda dapat mengedit file konfigurasi NTP vi /etc/ntp.conf Masukan broadcast address subnet yang anda inginkan, misalnya",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2613,
+      "name": "Instalasi NTP - Onno Widodo Purbo"
+    }
+  ]
+}

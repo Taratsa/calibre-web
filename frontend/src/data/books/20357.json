@@ -1,0 +1,52 @@
+{
+  "id": 20357,
+  "title": "Membuat Mirrorkeyring untuk debian",
+  "slug": "membuat-mirrorkeyring-untuk-debian-onno-widodo-purbo",
+  "slugBase": "membuat-mirrorkeyring-untuk-debian-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-08-27",
+  "timestamp": "2026-11-24 06:36:32.961753",
+  "last_modified": "2026-11-24 06:36:32.961759",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:3fd3830a-9800-5b04-bc16-9e92c5459e5a"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20357?v=1795476992",
+  "cover_og_url": "/cover/20357/og?v=1795476992",
+  "url": "/book/membuat-mirrorkeyring-untuk-debian-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Lakukan wget http://www.debian-multimedia.org/pool/main/d/debian-multimedia-keyring/debian-multimedia-keyring_2008.10.16_all.deb dpkg -i debian-multimedia-keyring_2008.10.16_all.deb Pranala Menarik Membuat Mirrorkeyring untuk debmirror Linux Howto",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2111,
+      "name": "Membuat Mirrorkeyring untuk debian - Onno Widodo Purbo"
+    }
+  ]
+}

@@ -43,5 +43,226 @@
       "size": 1548500,
       "name": "Wawacan Sajarah Ambia 1 (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 10246,
+    "longer_than": 81,
+    "top": [
+      [
+        "nabi",
+        135
+      ],
+      [
+        "adam",
+        134
+      ],
+      [
+        "teu",
+        120
+      ],
+      [
+        "allah",
+        94
+      ],
+      [
+        "deui",
+        90
+      ],
+      [
+        "hawa",
+        82
+      ],
+      [
+        "malaikat",
+        79
+      ],
+      [
+        "geus",
+        69
+      ],
+      [
+        "aya",
+        68
+      ],
+      [
+        "bumi",
+        68
+      ],
+      [
+        "jeung",
+        66
+      ],
+      [
+        "kabeh",
+        64
+      ]
+    ],
+    "distinct": [
+      [
+        "teu",
+        120
+      ],
+      [
+        "deui",
+        90
+      ],
+      [
+        "idajil",
+        51
+      ],
+      [
+        "adam",
+        134
+      ],
+      [
+        "nabi",
+        135
+      ],
+      [
+        "geus",
+        69
+      ],
+      [
+        "jeung",
+        66
+      ],
+      [
+        "henteu",
+        55
+      ],
+      [
+        "lajeng",
+        56
+      ],
+      [
+        "kabil",
+        39
+      ],
+      [
+        "malaikat",
+        79
+      ],
+      [
+        "kabeh",
+        64
+      ]
+    ],
+    "phrases": [
+      [
+        "nabi adam",
+        55
+      ],
+      [
+        "babu hawa",
+        42
+      ],
+      [
+        "allah ta ala",
+        15
+      ],
+      [
+        "robbul alamin",
+        19
+      ],
+      [
+        "teu aya",
+        17
+      ],
+      [
+        "maha suci",
+        17
+      ],
+      [
+        "jeng nabi",
+        13
+      ],
+      [
+        "kanjeng nabi",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        11217,
+        0.54
+      ],
+      [
+        11214,
+        0.54
+      ],
+      [
+        11308,
+        0.53
+      ],
+      [
+        5576,
+        0.37
+      ],
+      [
+        5575,
+        0.37
+      ],
+      [
+        11272,
+        0.33
+      ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 104,
+      "negative": 49,
+      "trend": [
+        0.33,
+        -0.27,
+        1,
+        0.17,
+        0.71,
+        0.33,
+        0.56,
+        0.67,
+        0.45,
+        0.4,
+        0.11,
+        null,
+        1,
+        0.33,
+        0.11,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          21
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }
