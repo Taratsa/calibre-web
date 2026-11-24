@@ -1,92 +1,78 @@
 """Statistics over the extracted text of many books taken together (the corpus).
 
-Pure functions, no cps imports: the input is the reader HTML produced by ``ocr_service`` and the output is a
-JSON-serialisable dict. Bump ``ANALYSIS_VERSION`` whenever a metric or its definition changes so the stored corpus
-is rebuilt.
+The computation lives in the compiled ``taratsa_text`` extension (``rust/taratsa_text``). This module is the
+Python-facing seam: it owns the stopword file, re-exports the tuning constants from the crate (so the two sides
+cannot drift), and hands the builder its stopwords. Nothing here touches the web layer.
+
+Bump ``ANALYSIS_VERSION`` whenever a metric or its definition changes so the stored corpus is rebuilt.
 """
 
 from __future__ import annotations
 
-import bisect
-import heapq
-import html
 import json
-import math
-import re
-import statistics
-from collections import Counter, defaultdict
 from collections.abc import Iterable
-from dataclasses import dataclass
 from functools import cache
 from pathlib import Path
 
-ANALYSIS_VERSION = 5
+from taratsa_text import CorpusBuilder as _RustCorpusBuilder
+from taratsa_text import html_to_blocks as _html_to_blocks
+from taratsa_text import settings as _settings
 
-CORPUS_WORDS = 50
-CORPUS_NGRAMS = 30
+ANALYSIS_VERSION = 9
+
+_SETTINGS = _settings()
+
+CORPUS_WORDS = _SETTINGS["CORPUS_WORDS"]
+CORPUS_NGRAMS = _SETTINGS["CORPUS_NGRAMS"]
 # Words of the stopword-free word cloud, and the shortest word it (and the edges of an n-gram) may show: drops OCR
 # fragments such as "ka", "ri".
-CLOUD_WORDS = 100
-CLOUD_MIN_LENGTH = 3
+CLOUD_WORDS = _SETTINGS["CLOUD_WORDS"]
+CLOUD_MIN_LENGTH = _SETTINGS["CLOUD_MIN_LENGTH"]
 # Per-book text profile (book pages): the BOOK_WORDS most frequent and the BOOK_WORDS most distinctive non-stopwords
 # (count x log(documents / document frequency), so words every book uses rank low) plus up to BOOK_PHRASES key
 # phrases. A word seen once or twice in a book is OCR noise or chance. Only the top BOOK_CANDIDATES words of a book are
 # scored: 150 already reproduce the full ranking in 99.8% of 900 sampled books, 200 leaves margin. A list shorter than
 # its MIN_SHOWN (a leaflet, a scan with little text) is left empty.
-BOOK_WORDS = 12
-BOOK_WORD_MIN_COUNT = 3
-BOOK_WORDS_MIN_SHOWN = 8
-BOOK_CANDIDATES = 200
-BOOK_PHRASES = 8
-BOOK_PHRASE_MIN_COUNT = 3
-BOOK_PHRASES_MIN_SHOWN = 3
+BOOK_WORDS = _SETTINGS["BOOK_WORDS"]
+BOOK_WORD_MIN_COUNT = _SETTINGS["BOOK_WORD_MIN_COUNT"]
+BOOK_WORDS_MIN_SHOWN = _SETTINGS["BOOK_WORDS_MIN_SHOWN"]
+BOOK_CANDIDATES = _SETTINGS["BOOK_CANDIDATES"]
+BOOK_PHRASES = _SETTINGS["BOOK_PHRASES"]
+BOOK_PHRASE_MIN_COUNT = _SETTINGS["BOOK_PHRASE_MIN_COUNT"]
+BOOK_PHRASES_MIN_SHOWN = _SETTINGS["BOOK_PHRASES_MIN_SHOWN"]
 # Author pages: a cloud of the words that are frequent across the author's books and rare elsewhere (summed count x
 # log(documents / document frequency)). Only authors with AUTHOR_MIN_BOOKS books that have text get one (a single
 # book would repeat its own page), a word must occur in at least AUTHOR_WORD_MIN_BOOKS books and in at least
 # AUTHOR_WORD_MIN_SHARE of the author's books (so it is the author's vocabulary, not one book's subject or the OCR
 # debris of a few scans: "ber", "meng", "ter" alone topped Pramoedya's 80 books), the author's own name is left out,
 # and fewer than AUTHOR_WORDS_MIN_SHOWN surviving words means no cloud.
-AUTHOR_WORDS = 40
-AUTHOR_MIN_BOOKS = 2
-AUTHOR_WORD_MIN_BOOKS = 2
-AUTHOR_WORD_MIN_SHARE = 0.25
-AUTHOR_WORDS_MIN_SHOWN = 12
+AUTHOR_WORDS = _SETTINGS["AUTHOR_WORDS"]
+AUTHOR_MIN_BOOKS = _SETTINGS["AUTHOR_MIN_BOOKS"]
+AUTHOR_WORD_MIN_BOOKS = _SETTINGS["AUTHOR_WORD_MIN_BOOKS"]
+AUTHOR_WORD_MIN_SHARE = _SETTINGS["AUTHOR_WORD_MIN_SHARE"]
+AUTHOR_WORDS_MIN_SHOWN = _SETTINGS["AUTHOR_WORDS_MIN_SHOWN"]
 # Catalog placeholders in the author field: a "cloud" over unrelated books of "Tidak diketahui" says nothing.
-AUTHOR_PLACEHOLDERS = frozenset(
-    {
-        "tidak diketahui",
-        "unknown",
-        "anonim",
-        "anonymous",
-        "none",
-        "external links",
-        "dkk",
-        "dkk.",
-        "dll.",
-        "team",
-        "-",
-        "- -",
-    }
-)
+AUTHOR_PLACEHOLDERS = frozenset(_SETTINGS["AUTHOR_PLACEHOLDERS"])
 # Similar books: cosine similarity of tf-idf vectors over the candidate words. Measured on 400 sampled books (8,061
 # in the library): a neighbour at >= 0.10 shares a Kategori with the book 37% of the time (a random pair: 3.7%), and 54-66%
 # above 0.30. 25% of books have a near-copy at >= 0.85 (another edition or scan), which is not a "similar book".
-SIMILAR_BOOKS = 6
-SIMILAR_BOOKS_MIN_SHOWN = 3
-SIMILAR_MIN_SCORE = 0.10
-SIMILAR_MAX_SCORE = 0.85
-SIMILAR_MAX_DOCUMENT_SHARE = 0.10
+SIMILAR_BOOKS = _SETTINGS["SIMILAR_BOOKS"]
+SIMILAR_BOOKS_MIN_SHOWN = _SETTINGS["SIMILAR_BOOKS_MIN_SHOWN"]
+SIMILAR_MIN_SCORE = _SETTINGS["SIMILAR_MIN_SCORE"]
+SIMILAR_MAX_SCORE = _SETTINGS["SIMILAR_MAX_SCORE"]
+SIMILAR_MAX_DOCUMENT_SHARE = _SETTINGS["SIMILAR_MAX_DOCUMENT_SHARE"]
 # An n-gram seen once says nothing about a text, so it never reaches the ranking.
-MIN_NGRAM_COUNT = 2
-MTLD_THRESHOLD = 0.72
+MIN_NGRAM_COUNT = _SETTINGS["MIN_NGRAM_COUNT"]
+MTLD_THRESHOLD = _SETTINGS["MTLD_THRESHOLD"]
 # MTLD of a very short text is dominated by chance, so the corpus median only uses books above this length.
-MTLD_MIN_TOKENS = 1000
-MAX_NGRAM_ENTRIES = 1_000_000
+MTLD_MIN_TOKENS = _SETTINGS["MTLD_MIN_TOKENS"]
+MAX_NGRAM_ENTRIES = _SETTINGS["MAX_NGRAM_ENTRIES"]
 # Book-length buckets of the corpus overview, in tokens: [0, 1k), [1k, 5k), ... [100k, inf).
-LENGTH_BIN_EDGES = (1_000, 5_000, 20_000, 100_000)
-
-# Letters only, hyphenated compounds ("sosio-ekonomi") stay one token; digits and underscores are not words.
-_TOKEN = re.compile(r"[^\W\d_]+(?:-[^\W\d_]+)*")
+LENGTH_BIN_EDGES = tuple(_SETTINGS["LENGTH_BIN_EDGES"])
+# A tone score needs this many polarity hits; below it the ratio is chance, not tone (see the crate's sentiment.rs).
+SENTIMENT_MIN_HITS = _SETTINGS["SENTIMENT_MIN_HITS"]
+# Emotion labels need this many emotion hits before the top three are shown.
+SENTIMENT_EMOTION_MIN_HITS = _SETTINGS["SENTIMENT_EMOTION_MIN_HITS"]
 
 
 @cache
@@ -101,281 +87,66 @@ def stopwords() -> frozenset[str]:
     return frozenset(word for language in ("id", "en", "nl", "extra") for word in data[language])
 
 
-_DROP = re.compile(r"<(script|style)\b.*?</\1>", re.IGNORECASE | re.DOTALL)
-# Cell boundaries are deliberately absent: a table row stays one block.
-_BLOCK_END = re.compile(
-    r"</(?:p|h[1-6]|li|tr|blockquote|figcaption|caption|dt|dd|pre)\s*>|<br\s*/?>\s*<br\s*/?>|<hr\s*/?>",
-    re.IGNORECASE,
-)
-_LINE_BREAK = re.compile(r"<br\s*/?>", re.IGNORECASE)
-_TAG = re.compile(r"<[^>]+>")
-_SPACE = re.compile(r"\s+")
-_SENTENCE_END = re.compile(r"[.!?…]+[\"”’')\]]*\s+")
-_LAST_WORD = re.compile(r"([^\W\d_]+)\.$")
-# Indonesian titles and abbreviations after which a full stop does not end the sentence.
-_ABBREVIATIONS = {
-    *("dr", "prof", "ir", "drs", "hj", "h", "no", "nr", "hlm", "dll", "dsb", "dst", "yg", "dgn", "tgl"),
-    *("jl", "jln", "st", "mr", "mrs", "sdr", "kol", "jend", "mayjen", "letjen", "brigjen", "vs", "cf"),
-    *("ed", "vol", "ibid", "op", "cit", "bpk", "ibu", "tn", "ny", "mgr", "kh", "ps", "pdt", "rev", "sen"),
-    *("gen", "kapt", "lt", "mm", "cm", "km", "kg", "rp"),
-}
+@cache
+def language_words() -> dict[str, list[str]]:
+    """Indonesian and English function words, used to decide the language of a book Calibre left untagged."""
+    data = json.loads(Path(__file__).with_name("text_analysis_stopwords.json").read_text(encoding="utf-8"))
+    return {"ind": data["id"], "eng": data["en"]}
+
+
+@cache
+def sentiment_lexicon() -> dict[str, list[str]]:
+    """Polarity words and the rule lists (negators, boosters, contrasts) for the per-book tone line.
+
+    Hand-curated Indonesian list under this repository's licence; English books are not scored, because the Indonesian
+    vocabulary does not describe them. The crate applies VADER's rule design (negation scope, boosters, contrastive
+    conjunctions) to these words; see ``rust/taratsa_text/src/sentiment.rs``.
+    """
+    return json.loads(Path(__file__).with_name("sentiment_lexicon.json").read_text(encoding="utf-8"))
 
 
 def html_to_blocks(markup: str) -> list[str]:
     """Split reader HTML into whitespace-normalised text blocks (paragraphs, headings, list items, rows)."""
-    markup = _DROP.sub(" ", markup)
-    blocks: list[str] = []
-    for piece in _BLOCK_END.split(markup):
-        text = html.unescape(_TAG.sub(" ", _LINE_BREAK.sub(" ", piece)))
-        text = _SPACE.sub(" ", text).strip()
-        if text:
-            blocks.append(text)
-    return blocks
-
-
-def split_sentences(block: str) -> list[str]:
-    """Heuristic sentence splitter: a terminator followed by a capital, digit or opening quote ends a sentence."""
-    sentences: list[str] = []
-    start = 0
-    for match in _SENTENCE_END.finditer(block):
-        following = block[match.end() : match.end() + 1]
-        if not following or not (following.isupper() or following.isdigit() or following in "\"“‘'(["):
-            continue
-        if match.group().startswith("."):
-            word = _LAST_WORD.search(block[start : match.start() + 1])
-            if word and (len(word.group(1)) == 1 or word.group(1).lower() in _ABBREVIATIONS):
-                continue
-        sentences.append(block[start : match.end()].strip())
-        start = match.end()
-    tail = block[start:].strip()
-    if tail:
-        sentences.append(tail)
-    return sentences
-
-
-def _mtld_pass(tokens: list[str]) -> float:
-    factors = 0.0
-    types: set[str] = set()
-    count = 0
-    for token in tokens:
-        count += 1
-        types.add(token)
-        if len(types) / count <= MTLD_THRESHOLD:
-            factors += 1
-            types = set()
-            count = 0
-    if count:
-        factors += (1 - len(types) / count) / (1 - MTLD_THRESHOLD)
-    return len(tokens) / factors if factors else 0.0
-
-
-def mtld(tokens: list[str]) -> float | None:
-    """Measure of Textual Lexical Diversity: mean of the forward and backward pass, None when undefined."""
-    forward = _mtld_pass(tokens)
-    backward = _mtld_pass(tokens[::-1])
-    if not forward or not backward:
-        return None
-    return (forward + backward) / 2
-
-
-@dataclass(frozen=True)
-class Tokenized:
-    """A document split into sentences of lower-cased word tokens, plus the block and character counts."""
-
-    sentences: list[list[str]]
-    paragraphs: int
-    characters: int
-
-    @property
-    def tokens(self) -> list[str]:
-        return [token for sentence in self.sentences for token in sentence]
-
-
-def tokenize(markup: str) -> Tokenized:
-    sentences: list[list[str]] = []
-    paragraphs = 0
-    characters = 0
-    for block in html_to_blocks(markup):
-        block_has_words = False
-        characters += len(block)
-        for sentence in split_sentences(block):
-            tokens = [token.casefold() for token in _TOKEN.findall(sentence)]
-            if tokens:
-                sentences.append(tokens)
-                block_has_words = True
-        paragraphs += block_has_words
-    return Tokenized(sentences, paragraphs, characters)
-
-
-def _ngrams(sentence: list[str], size: int, stop: frozenset[str]) -> list[str]:
-    """The n-grams of a sentence whose first and last word are content words (not a stopword, not a fragment).
-
-    Stopwords may sit inside a gram ("hak asasi manusia", "sumber daya alam"), but a gram that starts or ends with one
-    ("di dalam", "yang tidak", "of the") is a function phrase and is not counted.
-    """
-    return [
-        " ".join(gram)
-        for gram in zip(*(sentence[offset:] for offset in range(size)), strict=False)
-        if gram[0] not in stop
-        and gram[-1] not in stop
-        and len(gram[0]) >= CLOUD_MIN_LENGTH
-        and len(gram[-1]) >= CLOUD_MIN_LENGTH
-    ]
-
-
-@dataclass(frozen=True)
-class _BookCounts:
-    """What the corpus keeps of one book until every document is in and the document frequencies are final."""
-
-    words: int
-    candidates: list[tuple[str, int]]
-    phrases: list[list[object]]
-    authors: tuple[int, ...]
+    return _html_to_blocks(markup)
 
 
 class CorpusBuilder:
     """Accumulates statistics over many documents.
 
     Word counts, document frequency and every total are exact. N-gram tables only hold grams that begin and end with
-    a content word (see ``_ngrams``) and still grow without bound, so once one passes ``MAX_NGRAM_ENTRIES`` the
-    entries seen only once are dropped and ``approximate`` is set; a gram that occurs once in each of many documents
-    can then be undercounted, while the frequent ones at the top are safe.
+    a content word and still grow without bound, so once one passes ``MAX_NGRAM_ENTRIES`` the entries seen only once
+    are dropped and ``approximate_ngrams`` is set; a gram that occurs once in each of many documents can then be
+    undercounted, while the frequent ones at the top are safe.
     """
 
     def __init__(self) -> None:
-        self._author_names: dict[int, str] = {}
-        self.words: Counter[str] = Counter()
-        self.document_frequency: Counter[str] = Counter()
-        self._ngrams: dict[int, Counter[str]] = {2: Counter(), 3: Counter()}
-        self._limits: dict[int, int] = {2: MAX_NGRAM_ENTRIES, 3: MAX_NGRAM_ENTRIES}
-        self.approximate = False
-        self.lengths: list[int] = []
-        self.mtlds: list[float] = []
-        self.sentences = 0
-        self.paragraphs = 0
-        self.characters = 0
-        self.by_format: dict[str, list[int]] = {}
-        self._books: dict[int, _BookCounts] = {}
+        self._builder = _RustCorpusBuilder(
+            stopwords=stopwords(), sentiment=sentiment_lexicon(), language=language_words()
+        )
 
     def add(
-        self, markup: str, book_format: str, book_id: int | None = None, authors: Iterable[tuple[int, str]] = ()
+        self,
+        markup: str,
+        book_format: str,
+        book_id: int | None = None,
+        authors: Iterable[tuple[int, str]] = (),
+        languages: Iterable[str] = (),
     ) -> bool:
         """Add one document; False when it holds no words.
 
         With ``book_id`` its profile goes to ``book_text()``; its ``authors`` ((id, name) pairs) feed ``author_text()``.
+        ``languages`` are Calibre's ISO 639-2 codes: the tone score is only computed for Indonesian or Malay books (an
+        untagged book is scored, since the library is overwhelmingly Indonesian).
         """
-        document = tokenize(markup)
-        tokens = document.tokens
-        if not tokens:
-            return False
-        counts = Counter(tokens)
-        self.words.update(counts)
-        self.document_frequency.update(counts.keys())
-        stop = stopwords()
-        grams = {
-            size: Counter(gram for sentence in document.sentences for gram in _ngrams(sentence, size, stop))
-            for size in self._ngrams
-        }
-        for size, table in self._ngrams.items():
-            table.update(grams[size])
-            if len(table) > self._limits[size]:
-                for gram in [gram for gram, count in table.items() if count == 1]:
-                    del table[gram]
-                self._limits[size] = max(MAX_NGRAM_ENTRIES, 2 * len(table))
-                self.approximate = True
-        if book_id is not None:
-            candidates = sorted(
-                (
-                    (word, count)
-                    for word, count in counts.items()
-                    if count >= BOOK_WORD_MIN_COUNT and len(word) >= CLOUD_MIN_LENGTH and word not in stop
-                ),
-                key=lambda item: (-item[1], item[0]),
-            )[:BOOK_CANDIDATES]
-            # Longer phrases first: a trigram counts 1.5 times a bigram of the same frequency, and a phrase that
-            # contains (or is contained in) a better one is skipped, so "hak asasi manusia" does not also list "hak asasi".
-            ranked = sorted(
-                (count * (1 + 0.5 * (size - 2)), gram, count)
-                for size, table in grams.items()
-                for gram, count in table.items()
-                if count >= BOOK_PHRASE_MIN_COUNT
-            )[::-1]
-            phrases: list[list[object]] = []
-            for _, gram, count in ranked:
-                if len(phrases) == BOOK_PHRASES:
-                    break
-                if not any(f" {gram} " in f" {kept} " or f" {kept} " in f" {gram} " for kept, _ in phrases):
-                    phrases.append([gram, count])
-            pairs = list(authors)
-            self._author_names.update(pairs)
-            people = tuple(author_id for author_id, _ in pairs)
-            self._books[book_id] = _BookCounts(
-                len(tokens), candidates, phrases if len(phrases) >= BOOK_PHRASES_MIN_SHOWN else [], people
-            )
-        self.lengths.append(len(tokens))
-        if len(tokens) >= MTLD_MIN_TOKENS and (value := mtld(tokens)) is not None:
-            self.mtlds.append(value)
-        self.sentences += len(document.sentences)
-        self.paragraphs += document.paragraphs
-        self.characters += document.characters
-        entry = self.by_format.setdefault(book_format.lower(), [0, 0])
-        entry[0] += 1
-        entry[1] += len(tokens)
-        return True
+        return self._builder.add(markup, book_format, book_id, list(authors), list(languages))
 
-    def _cloud(self) -> list[list[object]]:
-        stop = stopwords()
-        words = (
-            (count, word) for word, count in self.words.items() if len(word) >= CLOUD_MIN_LENGTH and word not in stop
-        )
-        return [[word, count, self.document_frequency[word]] for count, word in heapq.nlargest(CLOUD_WORDS, words)]
+    def result(self) -> dict[str, object] | None:
+        """The corpus overview (totals, distributions, n-gram and word rankings); None before the first document."""
+        return self._builder.result()
 
-    def _ranked_ngrams(self, size: int) -> list[list[object]]:
-        grams = self._ngrams[size].most_common(CORPUS_NGRAMS * 4)
-        ranked = [(gram, count) for gram, count in grams if count >= MIN_NGRAM_COUNT]
-        return [[gram, count] for gram, count in ranked[:CORPUS_NGRAMS]]
-
-    def _similar_books(self) -> dict[int, list[list[object]]]:
-        """The most similar books of every book: cosine similarity of tf-idf vectors over each book's candidate words.
-
-        A word used by more than ``SIMILAR_MAX_DOCUMENT_SHARE`` of the books (among their candidate words) says nothing
-        about topic and is left out. Matches at or above ``SIMILAR_MAX_SCORE`` are other copies or editions of the same
-        text, not similar books, so they are skipped.
-        """
-        documents = len(self._books)
-        frequency = Counter(word for book in self._books.values() for word, _ in book.candidates)
-        ceiling = documents * SIMILAR_MAX_DOCUMENT_SHARE
-        vectors: dict[int, dict[str, float]] = {}
-        postings: dict[str, list[tuple[int, float]]] = {}
-        for book_id, book in self._books.items():
-            weights = {
-                word: (1 + math.log(count)) * math.log(documents / frequency[word])
-                for word, count in book.candidates
-                if 2 <= frequency[word] <= ceiling
-            }
-            norm = math.sqrt(sum(weight * weight for weight in weights.values()))
-            if not norm:
-                continue
-            vectors[book_id] = {word: weight / norm for word, weight in weights.items()}
-            for word, weight in vectors[book_id].items():
-                postings.setdefault(word, []).append((book_id, weight))
-        similar: dict[int, list[list[object]]] = {}
-        for book_id, vector in vectors.items():
-            scores: defaultdict[int, float] = defaultdict(float)
-            for word, weight in vector.items():
-                for other, other_weight in postings[word]:
-                    scores[other] += weight * other_weight
-            ranked = sorted(
-                (
-                    (score, other)
-                    for other, score in scores.items()
-                    if other != book_id and SIMILAR_MIN_SCORE <= score < SIMILAR_MAX_SCORE
-                ),
-                reverse=True,
-            )[:SIMILAR_BOOKS]
-            if len(ranked) >= SIMILAR_BOOKS_MIN_SHOWN:
-                similar[book_id] = [[other, round(score, 2)] for score, other in ranked]
-        return similar
+    def documents(self) -> int:
+        """Books that were added (have cached text and at least one word)."""
+        return self._builder.documents()
 
     def book_text(self) -> dict[int, dict[str, object]]:
         """Per-book profile: length, most frequent and distinctive words, key phrases and similar books.
@@ -383,28 +154,7 @@ class CorpusBuilder:
         Needs the final document frequencies, so call it after the last ``add``. ``longer_than`` is the share of
         the corpus's books (in percent) that have fewer words.
         """
-        documents = len(self.lengths)
-        lengths = sorted(self.lengths)
-        similar = self._similar_books()
-        profiles: dict[int, dict[str, object]] = {}
-        for book_id, book in self._books.items():
-            enough = len(book.candidates) >= BOOK_WORDS_MIN_SHOWN
-            distinct = sorted(
-                (count * math.log(documents / self.document_frequency[word]), word, count)
-                for word, count in book.candidates
-                if self.document_frequency[word] >= 2
-            )[::-1][:BOOK_WORDS]
-            profiles[book_id] = {
-                "words": book.words,
-                "longer_than": 100 * bisect.bisect_left(lengths, book.words) // documents,
-                "top": [[word, count] for word, count in book.candidates[:BOOK_WORDS]] if enough else [],
-                "distinct": [[word, count] for _, word, count in distinct]
-                if len(distinct) >= BOOK_WORDS_MIN_SHOWN
-                else [],
-                "phrases": book.phrases,
-                "similar": similar.get(book_id, []),
-            }
-        return profiles
+        return self._builder.book_text()
 
     def author_text(self) -> dict[int, dict[str, object]]:
         """Per-author word cloud over the authors' books: ``{"books": n, "cloud": [[word, count, books_using]]}``.
@@ -413,75 +163,4 @@ class CorpusBuilder:
         candidate words, so they cover the frequent words of each book (see ``BOOK_CANDIDATES``), which is what a cloud
         shows anyway.
         """
-        documents = len(self.lengths)
-        members: defaultdict[int, list[_BookCounts]] = defaultdict(list)
-        for book in self._books.values():
-            for author_id in book.authors:
-                members[author_id].append(book)
-        profiles: dict[int, dict[str, object]] = {}
-        for author_id, books in members.items():
-            name = self._author_names.get(author_id, "")
-            if len(books) < AUTHOR_MIN_BOOKS or name.strip().lower() in AUTHOR_PLACEHOLDERS:
-                continue
-            counts: Counter[str] = Counter()
-            used: Counter[str] = Counter()
-            for book in books:
-                for word, count in book.candidates:
-                    counts[word] += count
-                    used[word] += 1
-            own_name = set(_TOKEN.findall(name.lower()))
-            ranked = sorted(
-                (counts[word] * math.log(documents / self.document_frequency[word]), word)
-                for word, books_using in used.items()
-                if books_using >= max(AUTHOR_WORD_MIN_BOOKS, AUTHOR_WORD_MIN_SHARE * len(books))
-                and word not in own_name
-            )[::-1][:AUTHOR_WORDS]
-            if len(ranked) >= AUTHOR_WORDS_MIN_SHOWN:
-                profiles[author_id] = {
-                    "books": len(books),
-                    "cloud": [[word, counts[word], used[word]] for _, word in ranked],
-                }
-        return profiles
-
-    def result(self) -> dict[str, object] | None:
-        if not self.lengths:
-            return None
-        total = sum(self.lengths)
-        vocabulary = len(self.words)
-        hapax = sum(1 for count in self.words.values() if count == 1)
-        edges = LENGTH_BIN_EDGES
-        bins: list[list[int | None]] = []
-        for index, lower in enumerate([0, *edges]):
-            upper = edges[index] if index < len(edges) else None
-            bins.append([lower, upper, sum(1 for n in self.lengths if n >= lower and (upper is None or n < upper))])
-        return {
-            "books": len(self.lengths),
-            "approximate_ngrams": self.approximate,
-            "basic": {
-                "tokens": total,
-                "unique_tokens": vocabulary,
-                "sentences": self.sentences,
-                "paragraphs": self.paragraphs,
-                "characters": self.characters,
-            },
-            "by_format": {name: {"books": books, "tokens": tokens} for name, (books, tokens) in self.by_format.items()},
-            "lengths": {
-                "min": min(self.lengths),
-                "median": statistics.median(self.lengths),
-                "mean": total / len(self.lengths),
-                "max": max(self.lengths),
-                "bins": bins,
-            },
-            "lexical": {
-                "hapax": hapax,
-                "hapax_ratio": hapax / vocabulary,
-                "mtld_median": statistics.median(self.mtlds) if self.mtlds else None,
-                "mtld_books": len(self.mtlds),
-            },
-            "ngrams": {"bigrams": self._ranked_ngrams(2), "trigrams": self._ranked_ngrams(3)},
-            "cloud": self._cloud(),
-            "frequency": [
-                [word, count, count / total, self.document_frequency[word]]
-                for word, count in self.words.most_common(CORPUS_WORDS)
-            ],
-        }
+        return self._builder.author_text()

@@ -31,10 +31,21 @@ def rebuild_corpus() -> int:
         db.books_authors_link.c.book, db.Authors.id, db.Authors.name
     ).join(db.Authors, db.Authors.id == db.books_authors_link.c.author):
         authors.setdefault(int(book_id), []).append((int(author_id), str(name)))
+    languages: dict[int, list[str]] = {}
+    for book_id, code in calibre_db.session.query(db.books_languages_link.c.book, db.Languages.lang_code).join(
+        db.Languages, db.Languages.id == db.books_languages_link.c.lang_code
+    ):
+        languages.setdefault(int(book_id), []).append(str(code))
     entries: dict[int, tuple[SimpleNamespace, SimpleNamespace, str]] = {}
     for book_id, title, path, book_format, name in rows:
         book_format = str(book_format).upper()
-        book = SimpleNamespace(id=int(book_id), title=str(title), path=str(path), authors=authors.get(int(book_id), []))
+        book = SimpleNamespace(
+            id=int(book_id),
+            title=str(title),
+            path=str(path),
+            authors=authors.get(int(book_id), []),
+            languages=languages.get(int(book_id), []),
+        )
         entries.setdefault(book.id, (book, SimpleNamespace(format=book_format, name=str(name)), book_format))
     return build_corpus(entries.values())
 

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.16,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "taratsa-text"
+description = "Corpus text analysis for calibre-web"
+requires-python = ">=3.11"
+dynamic = ["version"]
+
+[tool.maturin]
+module-name = "taratsa_text"
+strip = true

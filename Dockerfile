@@ -14,6 +14,8 @@ LABEL maintainer="notdriz"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    curl \
+    ca-certificates \
     libldap2-dev \
     libsasl2-dev \
     python3-dev \
@@ -31,6 +33,19 @@ RUN python3 -m venv /lsiopy && \
     /lsiopy/bin/pip install --no-cache-dir \
       --find-links https://wheel-index.linuxserver.io/ubuntu/ \
       -r requirements.txt -r optional-requirements.txt
+
+# Corpus text analysis (`cps/text_analysis.py`) is a PyO3 extension; building it in the same stage as the venv keeps
+# the wheel on the venv's interpreter ABI. The runtime stage only copies /lsiopy.
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo
+RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
+ENV PATH=/usr/local/cargo/bin:${PATH}
+COPY rust/ /app/rust/
+RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
+    cd /app/rust/taratsa_text && \
+    /lsiopy/bin/maturin build --release --locked --out /tmp/wheels && \
+    /lsiopy/bin/pip install --no-cache-dir /tmp/wheels/*.whl && \
+    rm -rf /tmp/wheels /app/rust
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
 

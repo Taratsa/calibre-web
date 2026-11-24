@@ -253,7 +253,8 @@ Two live search systems (plus the legacy advanced-search form):
 - `cps/db.py` - Trigram FTS5 search prefilter (index in app.db, auto-rebuild on catalog change) + LIKE fallback
 - `cps/templates/feed.xml` - `link_query` pagination base for OPDS search next/prev links
 - `cps/frontend_rebuild.py` - Async frontend rebuild trigger
-- `cps/text_analysis.py`, `cps/text_analysis_store.py`, `cps/tasks/text_analysis.py` - Corpus text statistics for `/data` (see Corpus Statistics)
+- `cps/text_analysis.py`, `cps/text_analysis_store.py`, `cps/tasks/text_analysis.py`, `cps/sentiment_lexicon.json` and
+  `rust/taratsa_text/` - Corpus text statistics and the book-page tone line for `/data` (see Corpus Statistics)
 - `cps/templates/layout.html` - Umami tracking for downloads
 - `cps/templates/detail.html` - JSON-LD structured data, canonical URL
 - `cps/templates/author.html` - JSON-LD structured data
@@ -387,9 +388,43 @@ Two live search systems (plus the legacy advanced-search form):
   process, so reseed + image rebuild refreshes it) and, below them, text statistics of the **whole corpus**
   (`components/CorpusAnalysis.astro`, styles in `src/styles/analysis.css`). Per-book analysis is limited to the
   "Tentang teks" block on book pages (see below)
-- Statistics are derived from the OCR/EPUB text cache, never from the files: `cps/text_analysis.py` (pure:
-  `CorpusBuilder`), `cps/text_analysis_store.py` (storage), `cps/tasks/text_analysis.py` (`rebuild_corpus`,
-  `TaskTextAnalysis`)
+- Statistics are derived from the OCR/EPUB text cache, never from the files: `cps/text_analysis.py` (the Python seam:
+  stopwords, constants, `CorpusBuilder`), `cps/text_analysis_store.py` (storage), `cps/tasks/text_analysis.py`
+  (`rebuild_corpus`, `TaskTextAnalysis`)
+- The computation is the PyO3 extension in `rust/taratsa_text` (crate `taratsa_text`): `CorpusBuilder.add()/result()/
+  book_text()/author_text()` plus `html_to_blocks()`, which `cps/fulltext.py` also uses. `add()` and the similarity
+  pass run with the GIL released, so the single gevent loop keeps serving during a rebuild. `cps/text_analysis.py`
+  loads the stopword file (the crate never reads config) and re-exports the tuning constants from the crate's
+  `settings()`; `src/constants.rs` is the only place they are defined. Change a rule there, then bump
+  `ANALYSIS_VERSION`. The Dockerfile builds the wheel in the `builder` stage with the venv's own interpreter; local
+  dev needs `cargo` + `maturin develop --release` (or `maturin build` + `pip install`) before importing
+  `cps.text_analysis`/`cps.fulltext`, and `cargo test` in the crate covers the text pipeline. Measured 2026-11-24 over
+  14,936 cached documents: 159 s end to end, 1.3 GB peak RSS (previous pure-Python implementation: 759 s, 3.4 GB; the
+  Rust figure includes reading the cache, the Python one excluded it), with `corpus.json`, `book_text.json` and
+  `author_text.json` byte-identical between the two
+- Tone line on the book page ("Sentimen kata"): `profile.sentiment` = `{score, positive, negative}` or `null`, where
+  `score` = (positive - negative) / hits in [-1, 1]. Words come from `cps/sentiment_lexicon.json` (hand-curated
+  Indonesian evaluative words, single tokens, under this repository's licence - InSet has no licence and VADER's
+  lexicon is English); the rules are VADER's design (`rust/taratsa_text/src/sentiment.rs`): a negator within the 3
+  previous words flips the sign, a booster within 2 doubles the hit, a contrastive conjunction ("tetapi", "but") ends
+  the negation scope. Scored per sentence. Only Indonesian/Malay books (Calibre `ind`/`msa`, or untagged) are scored:
+  an English book scored by this vocabulary is noise. Fewer than `SENTIMENT_MIN_HITS` (50) hits means `null`, so
+  leaflets and thin OCR get no line. Measured on 400 books: median 2.5% of tokens are polarity hits, 237/400 books
+  pass the gate, ratio quartiles -0.10 / +0.10 / +0.28. It measures WORD VALENCE, not the book's argument (a
+  nationalist or religious register skews positive, a report on violence negative); the page always prints the counts
+  and says it is a rough estimate. The profile also carries `trend`: 16 sections from start to end of the book, each
+  the same ratio over that section, `null` where a section has fewer than `SENTIMENT_TREND_MIN_HITS` (5) hits; the
+  value is an empty list when fewer than 8 sections qualify, and the page then draws no graph. `emotions` is
+  `[[code, hits], ...]` over Plutchik's eight (`cps/sentiment_lexicon.json` -> `emotions`: anger, fear, sadness, joy,
+  trust, surprise, disgust, anticipation; a word may carry several), most frequent first, empty below
+  `SENTIMENT_EMOTION_MIN_HITS` (30); a negated emotion word ("tidak takut") is dropped, not flipped. The page shows the
+  top three as shares of all emotion words. Sentence-level sanity check against human labels (IndoNLU, MIT): `smsa`
+  test 500 sentences -> 64% accuracy / 0.61 macro-F1 (majority baseline 42%), `emot` 440 tweets -> 16-22% / 0.28-0.33
+  (majority baseline 25%), rising to 21.6% / 0.33 with the love words (cinta/mencintai/tercinta/kekasih -> joy,
+  sayang/menyayangi -> trust) and affix stripping. So it is a book-level aggregator, not a sentence classifier; a
+  fine-tuned IndoBERT (published ~93% smsa / ~72% emot) is the only large accuracy jump, at days of CPU for the library. No Rust crate covers Indonesian emotions (the crates are English polarity
+  or NPC affect models; NRC's emotion lexicon is English and research-only), so the mapping lives in the lexicon file. A BERT/rust-bert scorer was rejected: ~120-290 CPU hours for the library plus
+  1-2 GB of weights, against milliseconds for the lexicon
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)
@@ -414,7 +449,8 @@ Two live search systems (plus the legacy advanced-search form):
   `SIMILAR_BOOKS_MIN_SHOWN` matches or the section is hidden. Quality, measured on 400 books against Calibre
   categories: a neighbour at >= 0.10 shares a Kategori 37% of the time (random pair 3.7%), 54-66% above 0.30. It
   compares TEXT, so a different-language book or a book with little text matches poorly; the page resolves ids
-  against `books.json`, so a removed book is dropped. Pure Python inverted index, about 1.5 min for the library
+  against `books.json`, so a removed book is dropped. Inverted index in the Rust extension; this pass is what made the
+  old pure-Python `finish` step take about 4 min for the library
 - Author page word cloud (`pages/author/[id].astro` page 1, `components/AuthorCloud.astro`): the corpus rebuild also writes
   `analysis/author_text.json` (`{version, built_at, authors: {id: {books, cloud: [[word, count, books_using]]}}}`);
   `seed.mjs` (`loadAnalysis()`, shared with the book profiles) writes it to `src/data/author-text.json` (always written,

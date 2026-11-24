@@ -114,6 +114,39 @@ const textFacts = text
     ].join(' · ')
   : '';
 
+// "Sentimen kata": a coarse lexicon score from the corpus rebuild; null when the book is not scored.
+const sentiment = text?.sentiment ?? null;
+const sentimentHits = sentiment ? sentiment.positive + sentiment.negative : 0;
+const positiveShare = sentimentHits > 0 ? sentiment.positive / sentimentHits : 0;
+// Bands are this library's corpus quartiles (5,584 scored books, 2026-11): the middle half is "berimbang" because
+// Indonesian prose has a positive baseline (median 0.61 positive share), so absolute thresholds would label ~70% positive.
+const toneLabel = positiveShare >= 0.70 ? 'cenderung positif' : positiveShare <= 0.53 ? 'cenderung negatif' : 'berimbang';
+
+// Trend: 16 sections, null where a section had too few polarity words; each run of scored sections becomes one line.
+const trend = sentiment?.trend ?? [];
+const trendSegments: string[] = [];
+let trendSegment: string[] = [];
+trend.forEach((value, index) => {
+  if (value === null) {
+    if (trendSegment.length > 1) trendSegments.push(trendSegment.join(' '));
+    trendSegment = [];
+    return;
+  }
+  trendSegment.push(
+    `${((index / Math.max(1, trend.length - 1)) * 240).toFixed(1)},${(24 - value * 20).toFixed(1)}`,
+  );
+});
+if (trendSegment.length > 1) trendSegments.push(trendSegment.join(' '));
+
+// Dominant emotions (Plutchik's eight, from the same lexicon); percentages are shares of all emotion words.
+const emotionLabels: Record<string, string> = {
+  anger: 'Marah', fear: 'Takut', sadness: 'Sedih', joy: 'Senang',
+  trust: 'Percaya', surprise: 'Terkejut', disgust: 'Jijik', anticipation: 'Harapan',
+};
+const emotionCounts = sentiment?.emotions ?? [];
+const emotionTotal = emotionCounts.reduce((sum, [, count]) => sum + count, 0);
+const topEmotions = emotionCounts.slice(0, 3);
+
 // "Buku serupa": ids from the corpus rebuild, resolved against the live catalog (a book removed since is dropped).
 const booksById = new Map(getAllBooks().map(b => [b.id, b]));
 const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(otherId) ?? []);
@@ -202,6 +235,37 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
         <section class="book-text">
           <h2 class="shelves-heading">Tentang teks</h2>
           <p class="book-text__facts">{textFacts}</p>
+          {sentiment && (
+            <div class="book-text__sentiment">
+              <p class="book-text__note">
+                Sentimen kata: {toneLabel} · {countFormat.format(sentiment.positive)} kata positif, {countFormat.format(sentiment.negative)} negatif
+              </p>
+              {trendSegments.length > 0 && (
+                <svg class="book-text__trend" viewBox="0 0 240 48" preserveAspectRatio="none" role="img" aria-label="Tren sentimen kata dari awal ke akhir buku">
+                  <line class="book-text__trend-zero" x1="0" y1="24" x2="240" y2="24" />
+                  {trendSegments.map(points => <polyline class="book-text__trend-line" points={points} />)}
+                </svg>
+              )}
+              {topEmotions.length > 0 && (
+                <>
+                  <h3>Emosi dominan</h3>
+                  <ol class="book-text__rank book-text__emotions">
+                    {topEmotions.map(([code, count]) => (
+                      <li>
+                        <span>{emotionLabels[code] ?? code}</span>
+                        <span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / emotionTotal) * 100}%`}></i></span>
+                        <b>{Math.round((count / emotionTotal) * 100)}%</b>
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              )}
+              <p class="book-text__note">
+                {trendSegments.length > 0 && 'Grafik: tiap bagian buku, dari awal (kiri) ke akhir (kanan). '}
+                Perkiraan kasar dari daftar kata, relatif terhadap pustaka ini; bukan penilaian isi buku.
+              </p>
+            </div>
+          )}
           {(text.top.length > 0 || text.distinct.length > 0) && (
             <div class="book-text__lists">
               {text.top.length > 0 && (

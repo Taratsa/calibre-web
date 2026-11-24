@@ -146,6 +146,22 @@
   font-size: 0.75rem;
   color: var(--muted);
 }
+.book-detail .book-text__sentiment { margin: 0 0 1rem; }
+.book-detail .book-text__trend {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0.25rem 0;
+}
+.book-detail .book-text__trend-zero { stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 3; vector-effect: non-scaling-stroke; }
+.book-detail .book-text__trend-line {
+  fill: none;
+  stroke: var(--muted-strong);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
 .book-detail .book-text__lists {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));

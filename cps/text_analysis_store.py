@@ -37,7 +37,8 @@ def _corpus_path() -> Path:
 def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
     """Aggregate the cached text of the given book formats into the stored corpus statistics.
 
-    Callers pass one entry per book; a book may carry ``authors`` (a list of ``(id, name)``) for the author clouds.
+    Callers pass one entry per book; a book may carry ``authors`` (a list of ``(id, name)``) for the author clouds and
+    ``languages`` (ISO 639-2 codes) so the tone score is only computed for Indonesian/Malay books.
     Entries without cached text are skipped. Returns the number of documents used. Writes ``corpus.json`` (public, no
     per-book data), ``book_text.json`` (a text profile per book id, read by the frontend seed for the "Tentang teks"
     block on each book page) and ``author_text.json`` (a word cloud per author, for the author pages).
@@ -48,7 +49,13 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
             document = extract_book_ocr(book, data, book_format, allow_extract=False)
         except (OcrNotReadyError, OcrBookNotFoundError, OcrUnavailableError):
             continue
-        builder.add(document.markdown_html, book_format, book.id, getattr(book, "authors", ()))
+        builder.add(
+            document.markdown_html,
+            book_format,
+            book.id,
+            getattr(book, "authors", ()),
+            getattr(book, "languages", ()),
+        )
     built_at = datetime.now(UTC).isoformat(timespec="seconds")
     directory = _analysis_directory()
     stored = {
@@ -61,7 +68,7 @@ def build_corpus(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int
         temporary = path.with_name(f".{name}.{os.getpid()}.tmp")
         temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         temporary.replace(path)
-    return len(builder.lengths)
+    return builder.documents()
 
 
 def load_corpus() -> dict[str, object] | None:

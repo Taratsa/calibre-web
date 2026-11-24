@@ -54,6 +54,19 @@ export interface BookText {
   phrases: [string, number][];
   /** [book id, similarity 0-1]: the most similar books by distinctive words, best first; empty when none is close enough. */
   similar: [number, number][];
+  /**
+   * Tone of the words from the corpus rebuild: (positive - negative) / hits, in [-1, 1], plus the weighted hit counts.
+   * Null for books that are not scored (non-Indonesian language, or fewer than SENTIMENT_MIN_HITS hits).
+   */
+  sentiment: {
+    score: number;
+    positive: number;
+    negative: number;
+    /** 16 sections from start to end of the book; null where a section had too few polarity words. */
+    trend: (number | null)[];
+    /** [emotion code, weighted hits], most frequent first; empty when the book has too few emotion words. */
+    emotions: [string, number][];
+  } | null;
 }
 
 export interface Author { id: number; name: string; sort: string }

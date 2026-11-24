@@ -191,7 +191,7 @@ function openDb() {
 }
 
 // Text profiles written next to the corpus statistics by `build_corpus` in cps/text_analysis_store.py:
-// book_text.json ({books: {id: {words, longer_than, top, distinct, phrases, similar}}}) and
+// book_text.json ({books: {id: {words, longer_than, top, distinct, phrases, similar, sentiment}}}) and
 // author_text.json ({authors: {id: {books, cloud}}}). A file of another ANALYSIS_VERSION describes a different
 // definition, so it is ignored.
 async function loadAnalysis(file, key, what) {

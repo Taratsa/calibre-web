@@ -68,3 +68,6 @@ graphify-out/
 tmp/
 frontend/.astro/
 frontend/public/*.txt
+
+# Rust extension build output
+rust/taratsa_text/target/
