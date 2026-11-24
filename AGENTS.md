@@ -31,12 +31,14 @@ Serves API endpoints: `/admin/*`, `/login*`, `/logout`, `/me`, `/register*`, `/r
   5 consecutive checks timed out on 2026-11-24 with CPU at 100%). Slow is not dead; nothing restarts a container on
   `unhealthy` here, so the check is a status signal, not a trigger. Diagnose a busy Flask by thread: the `python3`
   main thread is the web loop, `Thread-N` is the task worker (OCR, thumbnails, duplicate scans)
-- **Upload language codes** (`cps/isoLanguages.py`): `get_valid_language_codes_from_code()` maps the 20 ISO 639-2
-  bibliographic codes (`dut ger fre may chi cze ...`) to the terminologic ones the library stores (`nld deu fra msa zho ces
-  ...`). The `hermes` bulk import sends `dut`, which produced 116 "'dut' is not a valid language" errors in 2 hours; each
-  such upload lost its language. Genuinely unknown codes are still reported. Books imported BEFORE this fix have no
-  language, but so do many older books (7,676 of 15,984 on 2026-11-24), so the damage cannot be separated by a query;
-  nothing back-fills them and `library/` is never edited from here, so fix them in Calibre
+- **Language codes stay Calibre's** (`cps/isoLanguages.py`): the library stores ISO 639-2 terminologic codes (`nld deu
+  fra msa zho ces ...`), and Calibre's own `canonicalize_lang()` accepts exactly those (it returns None for the
+  bibliographic aliases `dut ger fre may chi cze ...`; all 424 codes in `iso_language_names.py` pass it). By decision
+  (2026-11-24) the upload path does NOT translate aliases: an upload whose metadata says `dut` is reported as "'dut' is
+  not a valid language" and gets no language. An earlier version mapped the 20 aliases to their terminologic twins;
+  every target was a Calibre-valid code, so it stored nothing foreign, but it was removed to keep the app strictly on
+  Calibre's own vocabulary. The `hermes` bulk import is the source (116 such errors in 2 hours): fix it to send
+  `nld`/`deu`/`fra`/`msa`, or set the language in Calibre afterwards
 
 ### Rebuild Watcher (`rebuild-watcher`)
 - Polls `metadata.db` every 5 seconds for changes
