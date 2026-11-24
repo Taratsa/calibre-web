@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6888,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "hewan",
@@ -106,6 +106,10 @@
     ],
     "distinct": [
       [
+        "hewan",
+        79
+      ],
+      [
         "veganisme",
         29
       ],
@@ -114,40 +118,36 @@
         27
       ],
       [
-        "hewan",
-        79
-      ],
-      [
-        "non-manusia",
-        11
-      ],
-      [
         "penindasan",
         33
+      ],
+      [
+        "manusia",
+        68
       ],
       [
         "pembebasan",
         29
       ],
       [
-        "vegetarian",
-        9
+        "non-manusia",
+        11
       ],
       [
         "binatang",
         27
       ],
       [
+        "sosial",
+        44
+      ],
+      [
         "radikal",
         22
       ],
       [
-        "biji-bijian",
-        8
-      ],
-      [
-        "penindas",
-        11
+        "vegetarian",
+        9
       ],
       [
         "revolusi",
@@ -191,28 +191,85 @@
     "similar": [
       [
         7096,
-        0.28
+        0.3
       ],
       [
         1937,
-        0.27
-      ],
-      [
-        7174,
-        0.24
+        0.29
       ],
       [
         2347,
-        0.21
+        0.26
       ],
       [
-        8002,
-        0.21
+        7174,
+        0.26
       ],
       [
         4873,
-        0.19
+        0.25
+      ],
+      [
+        2132,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 138,
+      "negative": 148,
+      "trend": [
+        0.11,
+        0.33,
+        0.5,
+        -0.27,
+        -0.4,
+        -0.29,
+        -0.64,
+        0.36,
+        -0.38,
+        -0.19,
+        -0.85,
+        0.14,
+        0.16,
+        0.26,
+        0.6,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          62
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

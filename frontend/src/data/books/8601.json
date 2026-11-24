@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 56339,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "ekonomi",
@@ -100,6 +100,10 @@
         496
       ],
       [
+        "ekonomi",
+        544
+      ],
+      [
         "ketidakmerataan",
         133
       ],
@@ -108,16 +112,12 @@
         96
       ],
       [
-        "kebijaksanaan-kebijaksanaan",
-        74
-      ],
-      [
         "teori",
         322
       ],
       [
-        "ekonomi",
-        544
+        "kebijaksanaan-kebijaksanaan",
+        74
       ],
       [
         "kausasi",
@@ -128,12 +128,12 @@
         67
       ],
       [
-        "campurtangan",
-        58
-      ],
-      [
         "sistim",
         120
+      ],
+      [
+        "campurtangan",
+        58
       ],
       [
         "doktrin",
@@ -176,29 +176,86 @@
     ],
     "similar": [
       [
+        8743,
+        0.21
+      ],
+      [
         7560,
-        0.19
+        0.2
       ],
       [
         3420,
-        0.19
-      ],
-      [
-        8743,
-        0.17
+        0.2
       ],
       [
         8738,
-        0.16
+        0.19
       ],
       [
         9292,
-        0.15
+        0.17
       ],
       [
-        8614,
-        0.13
+        8387,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 1279,
+      "negative": 620,
+      "trend": [
+        0.38,
+        -0.06,
+        0.39,
+        0.15,
+        0.24,
+        0.31,
+        0.42,
+        0.18,
+        0.35,
+        0.44,
+        0.61,
+        0.41,
+        0.38,
+        0.79,
+        0.42,
+        0.51
+      ],
+      "emotions": [
+        [
+          "trust",
+          65
+        ],
+        [
+          "anger",
+          38
+        ],
+        [
+          "sadness",
+          31
+        ],
+        [
+          "fear",
+          23
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

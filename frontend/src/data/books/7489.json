@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6445,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "sejarah",
@@ -114,24 +114,28 @@
         80
       ],
       [
+        "anarkisme",
+        49
+      ],
+      [
         "rumania",
         29
       ],
       [
-        "anarkisme",
-        49
+        "sejarah",
+        85
       ],
       [
         "mempreservasi",
         13
       ],
       [
-        "panait",
-        11
+        "koleksi",
+        30
       ],
       [
-        "sejarah",
-        85
+        "panait",
+        11
       ],
       [
         "anarhiva",
@@ -140,10 +144,6 @@
       [
         "mușoiu",
         9
-      ],
-      [
-        "koleksi",
-        30
       ],
       [
         "hoyt",
@@ -211,8 +211,15 @@
       ],
       [
         2136,
-        0.35
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 45,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

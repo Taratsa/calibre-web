@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5816,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "semaoen",
@@ -111,28 +111,36 @@
         110
       ],
       [
-        "harmain",
-        11
-      ],
-      [
         "hindia",
         40
+      ],
+      [
+        "harmain",
+        11
       ],
       [
         "comintern",
         15
       ],
       [
-        "rusdi",
-        13
-      ],
-      [
         "pki",
         26
       ],
       [
+        "sinar",
+        32
+      ],
+      [
+        "rusdi",
+        13
+      ],
+      [
         "vstp",
         13
+      ],
+      [
+        "indonesia",
+        77
       ],
       [
         "moscow",
@@ -145,14 +153,6 @@
       [
         "hindia-belanda",
         13
-      ],
-      [
-        "soegiri",
-        8
-      ],
-      [
-        "sinar",
-        32
       ]
     ],
     "phrases": [
@@ -192,28 +192,52 @@
     "similar": [
       [
         2481,
-        0.26
+        0.3
       ],
       [
         1965,
-        0.26
+        0.28
       ],
       [
         7088,
-        0.26
+        0.28
       ],
       [
         7878,
-        0.25
+        0.27
       ],
       [
         6760,
-        0.21
+        0.22
       ],
       [
-        1105,
-        0.19
+        4005,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 53,
+      "negative": 34,
+      "trend": [
+        null,
+        null,
+        0.2,
+        -0.6,
+        0.45,
+        0.2,
+        0.43,
+        0.4,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0.14,
+        -0.75,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

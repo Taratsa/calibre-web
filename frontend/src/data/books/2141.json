@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3978,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "ekologi",
@@ -107,44 +107,44 @@
         25
       ],
       [
-        "bookchin",
-        10
-      ],
-      [
-        "hawkins",
-        7
-      ],
-      [
-        "sweezy",
-        5
-      ],
-      [
         "lingkungan",
         41
+      ],
+      [
+        "bookchin",
+        10
       ],
       [
         "sosialis",
         18
       ],
       [
-        "lewontin",
-        4
+        "hawkins",
+        7
       ],
       [
-        "levins",
-        4
+        "sosial",
+        33
+      ],
+      [
+        "sweezy",
+        5
+      ],
+      [
+        "kapitalis",
+        16
+      ],
+      [
+        "kapitalisme",
+        17
       ],
       [
         "ecology",
         8
       ],
       [
-        "zeta",
-        4
-      ],
-      [
-        "connor",
-        5
+        "marxis",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         1820,
-        0.23
+        0.25
       ],
       [
         7890,
-        0.22
+        0.25
       ],
       [
         2308,
-        0.21
+        0.24
       ],
       [
         7266,
-        0.18
+        0.21
       ],
       [
         7981,
-        0.17
+        0.19
       ],
       [
         7086,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 55,
+      "negative": 37,
+      "trend": [
+        null,
+        -0.33,
+        0,
+        null,
+        null,
+        0.6,
+        0.2,
+        0.6,
+        -0.2,
+        0.67,
+        null,
+        0.75,
+        -0.6,
+        0.25,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

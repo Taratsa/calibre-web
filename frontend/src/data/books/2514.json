@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5101,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "perempuan",
@@ -103,48 +103,48 @@
         131
       ],
       [
-        "anarko-feminis",
-        13
-      ],
-      [
-        "feminisme",
-        21
-      ],
-      [
         "pekerja",
         58
       ],
       [
-        "feminis",
-        19
-      ],
-      [
-        "serikat",
-        46
+        "anarko-feminis",
+        13
       ],
       [
         "laki-laki",
         49
       ],
       [
-        "anarkis",
-        29
+        "serikat",
+        46
       ],
       [
-        "seksisme",
-        10
+        "feminisme",
+        21
+      ],
+      [
+        "feminis",
+        19
+      ],
+      [
+        "anarkis",
+        29
       ],
       [
         "anarkisme",
         18
       ],
       [
-        "tuc",
-        5
+        "seksisme",
+        10
       ],
       [
-        "heteroseksual",
-        7
+        "kaum",
+        23
+      ],
+      [
+        "penindasan",
+        15
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         7060,
-        0.23
+        0.28
       ],
       [
         2002,
-        0.22
+        0.27
       ],
       [
         4897,
-        0.2
+        0.27
       ],
       [
         4779,
-        0.2
+        0.27
       ],
       [
-        7968,
-        0.18
+        3729,
+        0.25
       ],
       [
-        2306,
-        0.17
+        7341,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 116,
+      "negative": 68,
+      "trend": [
+        0,
+        0.78,
+        0.25,
+        0.33,
+        0.09,
+        0.47,
+        0.29,
+        0.25,
+        -0.33,
+        -0.33,
+        0.54,
+        0.11,
+        1,
+        -0.6,
+        0.71,
+        0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

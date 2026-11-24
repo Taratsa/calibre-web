@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1234,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "agraria",
@@ -95,32 +95,36 @@
         26
       ],
       [
-        "pa-psda",
-        7
-      ],
-      [
         "tap",
         16
       ],
       [
-        "cibubur",
-        6
+        "pa-psda",
+        7
       ],
       [
         "pembaruan",
         14
       ],
       [
-        "hesb",
-        3
+        "cibubur",
+        6
+      ],
+      [
+        "lahirnya",
+        10
       ],
       [
         "konperensi",
         6
       ],
       [
-        "lahirnya",
-        10
+        "hesb",
+        3
+      ],
+      [
+        "hak-hak",
+        8
       ],
       [
         "mpr-ri",
@@ -131,12 +135,8 @@
         7
       ],
       [
-        "hak-hak",
-        8
-      ],
-      [
-        "wiradi",
-        3
+        "hakekatnya",
+        4
       ]
     ],
     "phrases": [
@@ -176,11 +176,11 @@
     "similar": [
       [
         8534,
-        0.34
+        0.33
       ],
       [
         8539,
-        0.25
+        0.26
       ],
       [
         8499,
@@ -192,12 +192,13 @@
       ],
       [
         8675,
-        0.25
+        0.24
       ],
       [
         8447,
         0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

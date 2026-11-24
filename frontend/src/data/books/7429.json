@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 818,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "goldman",
@@ -122,12 +122,12 @@
         3
       ],
       [
-        "cambuk",
-        4
-      ],
-      [
         "anarkis",
         7
+      ],
+      [
+        "cambuk",
+        4
       ],
       [
         "pembunuhan",
@@ -146,23 +146,23 @@
         3
       ],
       [
-        "revolusioner",
-        4
+        "tindakan",
+        6
       ],
       [
-        "amerika",
-        5
+        "revolusioner",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         6767,
-        0.18
+        0.2
       ],
       [
         1930,
-        0.18
+        0.2
       ],
       [
         2416,
@@ -170,16 +170,17 @@
       ],
       [
         4861,
-        0.17
+        0.18
       ],
       [
         2063,
-        0.17
+        0.18
       ],
       [
-        2482,
-        0.15
+        17192,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 4497,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "naskah",
@@ -112,12 +112,12 @@
         43
       ],
       [
-        "museum",
-        32
-      ],
-      [
         "kuno",
         41
+      ],
+      [
+        "museum",
+        32
       ],
       [
         "naskah-naskah",
@@ -136,16 +136,16 @@
         21
       ],
       [
+        "penelitian",
+        27
+      ],
+      [
         "katalogus",
         9
       ],
       [
-        "negarakertagama",
-        7
-      ],
-      [
-        "sulastin",
-        7
+        "jawa",
+        27
       ]
     ],
     "phrases": [
@@ -185,28 +185,35 @@
     "similar": [
       [
         2891,
-        0.2
+        0.23
       ],
       [
         924,
-        0.2
+        0.23
       ],
       [
         960,
-        0.2
-      ],
-      [
-        5839,
-        0.19
-      ],
-      [
-        964,
-        0.19
+        0.22
       ],
       [
         2851,
-        0.19
+        0.22
+      ],
+      [
+        943,
+        0.22
+      ],
+      [
+        5839,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 50,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3164,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "masyarakat",
@@ -103,23 +103,27 @@
         19
       ],
       [
-        "modulasi",
-        9
-      ],
-      [
         "pengendalian",
         21
       ],
       [
-        "disipliner",
-        8
+        "disiplin",
+        22
       ],
       [
         "korporasi",
         17
       ],
       [
-        "disiplin",
+        "masyarakat",
+        44
+      ],
+      [
+        "modulasi",
+        9
+      ],
+      [
+        "tertutup",
         22
       ],
       [
@@ -127,8 +131,8 @@
         21
       ],
       [
-        "tertutup",
-        22
+        "disipliner",
+        8
       ],
       [
         "pabrik",
@@ -139,12 +143,8 @@
         5
       ],
       [
-        "gilles",
-        5
-      ],
-      [
-        "dividu",
-        3
+        "ruang",
+        20
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         2722,
-        0.49
-      ],
-      [
-        2652,
-        0.13
+        0.5
       ],
       [
         2099,
-        0.13
+        0.18
       ],
       [
-        2273,
-        0.13
+        2652,
+        0.17
       ],
       [
         3057,
-        0.11
+        0.16
+      ],
+      [
+        8062,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 46,
+      "negative": 44,
+      "trend": [
+        null,
+        -0.71,
+        null,
+        null,
+        0.25,
+        null,
+        0,
+        -0.2,
+        null,
+        0.47,
+        null,
+        -0.14,
+        null,
+        -0.33,
+        null,
+        0.14
+      ],
+      "emotions": []
+    }
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1923,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "indonesia",
@@ -95,12 +95,20 @@
         9
       ],
       [
+        "rakjat",
+        18
+      ],
+      [
         "peleburan",
         12
       ],
       [
-        "rakjat",
-        18
+        "asli",
+        25
+      ],
+      [
+        "golongan",
+        22
       ],
       [
         "warganegara",
@@ -111,12 +119,12 @@
         12
       ],
       [
-        "asli",
-        25
+        "indonesia",
+        44
       ],
       [
-        "golongan",
-        22
+        "dipandang",
+        18
       ],
       [
         "turunan",
@@ -129,14 +137,6 @@
       [
         "eropah",
         7
-      ],
-      [
-        "masjarakat",
-        9
-      ],
-      [
-        "dipandang",
-        18
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         729,
-        0.3
+        0.32
       ],
       [
         7839,
         0.29
       ],
       [
+        9333,
+        0.19
+      ],
+      [
         6667,
-        0.18
+        0.19
       ],
       [
         1289,
-        0.13
+        0.15
       ],
       [
         1275,
-        0.13
-      ],
-      [
-        9225,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

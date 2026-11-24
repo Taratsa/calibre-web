@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 3475,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "penulis",
@@ -129,28 +129,28 @@
         6
       ],
       [
-        "prefigurative",
-        5
+        "diterjemahkan",
+        18
       ],
       [
-        "raekstad",
-        4
+        "prefigurative",
+        5
       ],
       [
         "komune",
         10
       ],
       [
-        "diterjemahkan",
+        "raekstad",
+        4
+      ],
+      [
+        "inggris",
         18
       ],
       [
-        "https",
-        15
-      ],
-      [
-        "boggs",
-        4
+        "diakses",
+        12
       ],
       [
         "pandemi",
@@ -194,28 +194,52 @@
     "similar": [
       [
         2506,
-        0.22
-      ],
-      [
-        7544,
-        0.13
-      ],
-      [
-        7144,
-        0.13
-      ],
-      [
-        2523,
-        0.13
+        0.21
       ],
       [
         1806,
-        0.13
+        0.16
+      ],
+      [
+        2523,
+        0.15
       ],
       [
         2293,
-        0.13
+        0.15
+      ],
+      [
+        7144,
+        0.15
+      ],
+      [
+        2036,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 44,
+      "negative": 51,
+      "trend": [
+        null,
+        null,
+        -0.67,
+        -0.29,
+        -0.45,
+        0.75,
+        0,
+        null,
+        0.17,
+        null,
+        null,
+        0.2,
+        0,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

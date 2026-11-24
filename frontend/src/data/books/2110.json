@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 13087,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "anarkis",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "anarkis",
+        84
+      ],
+      [
         "insureksionalis",
         27
       ],
       [
-        "anarkis",
-        84
+        "perjuangan",
+        58
       ],
       [
         "ekonomik",
@@ -115,36 +119,32 @@
         21
       ],
       [
-        "teknologi",
-        50
-      ],
-      [
-        "barbaritas",
-        8
-      ],
-      [
-        "perjuangan",
-        58
-      ],
-      [
         "kapitalisme",
         38
+      ],
+      [
+        "teknologi",
+        50
       ],
       [
         "revolusioner",
         36
       ],
       [
+        "barbaritas",
+        8
+      ],
+      [
         "klandestin",
         12
       ],
       [
-        "insureksional",
-        9
-      ],
-      [
         "kapital",
         22
+      ],
+      [
+        "menyerang",
+        27
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2099,
-        0.36
+        0.41
       ],
       [
         1933,
-        0.36
-      ],
-      [
-        2241,
-        0.33
-      ],
-      [
-        2287,
-        0.32
+        0.4
       ],
       [
         1807,
-        0.3
+        0.38
+      ],
+      [
+        2241,
+        0.37
+      ],
+      [
+        7007,
+        0.37
       ],
       [
         2542,
-        0.3
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 188,
+      "negative": 176,
+      "trend": [
+        0.3,
+        0.08,
+        0.38,
+        0.42,
+        -0.2,
+        0.18,
+        0.45,
+        -0.14,
+        0.04,
+        -0.55,
+        0.3,
+        -0.62,
+        -0.44,
+        0.27,
+        -0.16,
+        0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "fear",
+          25
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

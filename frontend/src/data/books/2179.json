@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3229,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "kau",
@@ -103,12 +103,12 @@
         10
       ],
       [
-        "almaghfurlah",
-        4
-      ],
-      [
         "kau",
         27
+      ],
+      [
+        "almaghfurlah",
+        4
       ],
       [
         "arfani",
@@ -123,6 +123,10 @@
         7
       ],
       [
+        "angin",
+        14
+      ],
+      [
         "kamia",
         3
       ],
@@ -131,19 +135,15 @@
         3
       ],
       [
-        "muazin",
-        3
+        "cinta",
+        11
       ],
       [
         "gerimis",
         5
       ],
       [
-        "deuk",
-        3
-      ],
-      [
-        "denawa",
+        "muazin",
         3
       ]
     ],
@@ -184,28 +184,60 @@
     "similar": [
       [
         3040,
-        0.16
+        0.19
       ],
       [
         2742,
-        0.14
+        0.17
       ],
       [
         7375,
-        0.14
+        0.16
       ],
       [
         3036,
-        0.13
+        0.16
       ],
       [
         280,
-        0.13
+        0.15
       ],
       [
         3021,
-        0.12
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 35,
+      "negative": 36,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -1,0 +1,52 @@
+{
+  "id": 20185,
+  "title": "ProxMox: Membuat Virtual Disk",
+  "slug": "proxmox-membuat-virtual-disk-onno-widodo-purbo",
+  "slugBase": "proxmox-membuat-virtual-disk-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-03",
+  "timestamp": "2026-11-24 06:28:28.189797",
+  "last_modified": "2026-11-24 06:28:28.189801",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6a3f7b6a-71df-5b28-a8ff-f58df790e57c"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20185?v=1795476508",
+  "cover_og_url": "/cover/20185/og?v=1795476508",
+  "url": "/book/proxmox-membuat-virtual-disk-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Masuk ke Storage &gt; Storage List &gt; Add Directory Parameter yang perlu di isi Storage Name: Directory: (pastikan menggunakan path /path/folder/data/yang/dimaksud) Enable: Shared: Content: Pilihan content: Virtual Disks ISO Images VZDump Backups Jika sudah selesai tekan save Pranala Menarik Cloud Proxmox",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2418,
+      "name": "ProxMox_ Membuat Virtual Disk - Onno Widodo Purbo"
+    }
+  ]
+}

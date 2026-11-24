@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3040,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "anarkis",
@@ -119,6 +119,10 @@
         10
       ],
       [
+        "gerakan",
+        18
+      ],
+      [
         "woodcock",
         4
       ],
@@ -127,23 +131,19 @@
         3
       ],
       [
-        "pemikir-pemikir",
-        4
+        "pemikir",
+        7
       ],
       [
         "proudhon",
         5
       ],
       [
-        "pemikir",
-        7
+        "pemikir-pemikir",
+        4
       ],
       [
         "anarchism",
-        5
-      ],
-      [
-        "kropotkin",
         5
       ]
     ],
@@ -172,28 +172,81 @@
     "similar": [
       [
         7150,
-        0.31
-      ],
-      [
-        2412,
-        0.25
+        0.32
       ],
       [
         6730,
-        0.22
+        0.28
       ],
       [
         2203,
-        0.22
+        0.28
       ],
       [
-        3725,
-        0.2
+        2412,
+        0.27
       ],
       [
         2522,
-        0.2
+        0.25
+      ],
+      [
+        3725,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 56,
+      "negative": 55,
+      "trend": [
+        -0.8,
+        -1,
+        -0.43,
+        0.25,
+        0,
+        -0.09,
+        0,
+        1,
+        0.6,
+        null,
+        null,
+        null,
+        0.71,
+        -0.67,
+        0.69,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

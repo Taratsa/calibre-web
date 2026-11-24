@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4930,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "aborsi",
@@ -107,24 +107,28 @@
         40
       ],
       [
-        "nothin",
-        16
-      ],
-      [
         "suaminya",
         54
+      ],
+      [
+        "nothin",
+        16
       ],
       [
         "seksual",
         37
       ],
       [
+        "seks",
+        28
+      ],
+      [
         "mujahid",
         13
       ],
       [
-        "seks",
-        28
+        "mendukung",
+        42
       ],
       [
         "pro-aborsi",
@@ -135,16 +139,12 @@
         15
       ],
       [
-        "labeli",
-        7
+        "ditentang",
+        17
       ],
       [
         "bermoral",
         15
-      ],
-      [
-        "belle",
-        9
       ]
     ],
     "phrases": [
@@ -181,6 +181,30 @@
         24
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 105,
+      "negative": 45,
+      "trend": [
+        0.56,
+        -0.54,
+        0.64,
+        1,
+        1,
+        1,
+        0.64,
+        null,
+        null,
+        -0.2,
+        0.11,
+        -0.25,
+        -0.17,
+        0.56,
+        null,
+        -0.6
+      ],
+      "emotions": []
+    }
   }
 }

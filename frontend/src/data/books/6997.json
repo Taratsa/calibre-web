@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2274,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "socrates",
@@ -103,12 +103,12 @@
         37
       ],
       [
-        "corinthians",
-        12
-      ],
-      [
         "brasil",
         27
+      ],
+      [
+        "corinthians",
+        12
       ],
       [
         "sepakbola",
@@ -119,32 +119,32 @@
         15
       ],
       [
-        "fiorentina",
-        4
-      ],
-      [
-        "democracia",
-        4
-      ],
-      [
         "pemain",
         12
+      ],
+      [
+        "fiorentina",
+        4
       ],
       [
         "italia",
         12
       ],
       [
+        "democracia",
+        4
+      ],
+      [
+        "perlawanan",
+        15
+      ],
+      [
         "senso",
         4
       ],
       [
-        "klub",
-        6
-      ],
-      [
-        "piala",
-        5
+        "bahasa",
+        22
       ]
     ],
     "phrases": [
@@ -188,24 +188,31 @@
       ],
       [
         2503,
-        0.14
+        0.15
       ],
       [
         4670,
-        0.13
+        0.15
       ],
       [
         1341,
-        0.13
-      ],
-      [
-        3714,
-        0.13
+        0.15
       ],
       [
         2454,
-        0.13
+        0.14
+      ],
+      [
+        3714,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 40,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

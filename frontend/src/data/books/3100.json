@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3517,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "depresi",
@@ -127,24 +127,24 @@
         6
       ],
       [
-        "depresinya",
-        3
-      ],
-      [
-        "kegelisahanku",
-        3
+        "orang",
+        32
       ],
       [
         "mental",
         11
       ],
       [
-        "didiagnosis",
+        "depresinya",
         3
       ],
       [
         "diriku",
         8
+      ],
+      [
+        "pertunjukan",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2602,
-        0.22
+        0.24
       ],
       [
         1772,
-        0.19
+        0.18
       ],
       [
         2710,
+        0.16
+      ],
+      [
+        3101,
         0.15
       ],
       [
-        138,
-        0.14
-      ],
-      [
         2280,
-        0.13
+        0.15
       ],
       [
         2,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 92,
+      "negative": 65,
+      "trend": [
+        0.25,
+        1,
+        null,
+        0.67,
+        -0.4,
+        -0.41,
+        0.67,
+        0.4,
+        -0.33,
+        0.29,
+        0.45,
+        0.6,
+        0.09,
+        null,
+        0.33,
+        -0.5
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

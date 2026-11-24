@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 5493,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "partai",
@@ -96,12 +96,20 @@
     ],
     "distinct": [
       [
+        "partai",
+        72
+      ],
+      [
         "ali-arifin",
         20
       ],
       [
-        "partai",
+        "rakyat",
         72
+      ],
+      [
+        "pemerintah",
+        68
       ],
       [
         "reaksioner",
@@ -112,36 +120,28 @@
         26
       ],
       [
-        "rakyat",
-        72
-      ],
-      [
         "pemilihan",
         34
       ],
       [
-        "mpu",
-        13
+        "nasional",
+        53
       ],
       [
         "kongres",
         24
       ],
       [
-        "pemerintah",
-        68
+        "mpu",
+        13
       ],
       [
-        "seato",
-        10
+        "persatuan",
+        26
       ],
       [
-        "politbiro",
-        10
-      ],
-      [
-        "masyumi-psi",
-        7
+        "massa",
+        29
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         7836,
-        0.55
+        0.57
       ],
       [
         6691,
-        0.53
+        0.55
       ],
       [
         443,
-        0.53
+        0.55
       ],
       [
         6742,
-        0.39
+        0.42
       ],
       [
         9273,
-        0.32
+        0.37
       ],
       [
-        9267,
-        0.3
+        9280,
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 142,
+      "negative": 50,
+      "trend": [
+        0.88,
+        1,
+        0.88,
+        -0.17,
+        0.33,
+        0.6,
+        1,
+        0.11,
+        null,
+        0.29,
+        0.69,
+        -0.5,
+        0.6,
+        0.33,
+        0.5,
+        0.67
+      ],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

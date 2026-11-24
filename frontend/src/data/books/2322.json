@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1244,
-    "longer_than": 16,
+    "longer_than": 55,
     "top": [
       [
         "kau",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "kau",
+        27
+      ],
+      [
         "kamerad",
         12
       ],
@@ -107,16 +111,16 @@
         11
       ],
       [
-        "kau",
-        27
+        "menunggu",
+        22
       ],
       [
         "menyelamatkanmu",
         4
       ],
       [
-        "menunggu",
-        22
+        "orang-orang",
+        11
       ],
       [
         "seorangpun",
@@ -127,23 +131,19 @@
         4
       ],
       [
-        "online",
-        3
-      ],
-      [
-        "orang-orang",
-        11
+        "orang",
+        14
       ],
       [
         "ditanam",
         3
       ],
       [
-        "murah",
-        4
+        "mati",
+        6
       ],
       [
-        "polisi",
+        "murah",
         4
       ]
     ],
@@ -167,29 +167,74 @@
     ],
     "similar": [
       [
-        7147,
-        0.84
-      ],
-      [
         3709,
-        0.17
-      ],
-      [
-        2126,
         0.16
       ],
       [
-        7093,
+        2126,
         0.15
       ],
       [
-        8039,
-        0.11
+        7093,
+        0.13
       ],
       [
-        2421,
+        7199,
+        0.12
+      ],
+      [
+        7116,
+        0.12
+      ],
+      [
+        2446,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 53,
+      "negative": 17,
+      "trend": [
+        null,
+        null,
+        0.43,
+        null,
+        1,
+        0.71,
+        null,
+        0.6,
+        null,
+        -0.2,
+        0.2,
+        null,
+        0.2,
+        1,
+        null,
+        0.43
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          22
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2238,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "periode",
@@ -111,12 +111,16 @@
         15
       ],
       [
+        "periode",
+        37
+      ],
+      [
         "kelesuan",
         15
       ],
       [
-        "periode",
-        37
+        "zaman",
+        31
       ],
       [
         "majallah-majallah",
@@ -127,32 +131,28 @@
         6
       ],
       [
+        "sastra",
+        19
+      ],
+      [
         "majallah",
         5
       ],
       [
-        "zaman",
-        31
+        "sastrawan",
+        8
       ],
       [
-        "khairil",
-        4
+        "revolusi",
+        14
       ],
       [
         "by-sa",
         5
       ],
       [
-        "sastra",
-        19
-      ],
-      [
-        "pramoeja",
-        3
-      ],
-      [
-        "sastrawan",
-        8
+        "khairil",
+        4
       ]
     ],
     "phrases": [
@@ -192,28 +192,29 @@
     "similar": [
       [
         4024,
-        0.44
+        0.45
       ],
       [
         4035,
-        0.26
+        0.27
       ],
       [
         4029,
-        0.23
+        0.25
       ],
       [
         4032,
-        0.21
+        0.23
       ],
       [
         4023,
-        0.21
+        0.22
       ],
       [
         6749,
-        0.19
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

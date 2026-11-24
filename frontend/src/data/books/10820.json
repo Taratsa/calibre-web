@@ -1,0 +1,160 @@
+{
+  "id": 10820,
+  "title": "Extract Metadata Word Document",
+  "slug": "extract-metadata-word-document-onno-widodo-purbo",
+  "slugBase": "extract-metadata-word-document-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2015-09-21",
+  "timestamp": "2026-11-23 19:49:56.820893",
+  "last_modified": "2026-11-23 19:49:56.820898",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:86bb19f4-c995-543a-a53f-9d8ee6f690e5"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10820?v=1795438196",
+  "cover_og_url": "/cover/10820/og?v=1795438196",
+  "url": "/book/extract-metadata-word-document-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi Tools sudo su perl -MCPAN -e \"install Bundle::CPAN\" perl -MCPAN -e shell Dari shell CPAN install OLE::Storage install OLE::PropertySet install Startup install Carp install Unicode::Map Download &amp; extract file testwd.pl wget http://www.cpan.org/modules/by-authors/id/H/HC/HCARVEY/File-MSWord-0.1.zip unzip File-MSWord-0.1.zip mv MSWord.pm /usr/lib/perl5/File/ Lakukan perl testwd.pl",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2766,
+      "name": "Extract Metadata Word Document - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 188,
+    "longer_than": 23,
+    "top": [
+      [
+        "install",
+        6
+      ],
+      [
+        "perl",
+        6
+      ],
+      [
+        "stream",
+        6
+      ],
+      [
+        "ole",
+        4
+      ],
+      [
+        "cpan",
+        3
+      ],
+      [
+        "data",
+        3
+      ],
+      [
+        "extract",
+        3
+      ],
+      [
+        "table",
+        3
+      ],
+      [
+        "usr",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "perl",
+        6
+      ],
+      [
+        "stream",
+        6
+      ],
+      [
+        "cpan",
+        3
+      ],
+      [
+        "ole",
+        4
+      ],
+      [
+        "extract",
+        3
+      ],
+      [
+        "install",
+        6
+      ],
+      [
+        "usr",
+        3
+      ],
+      [
+        "table",
+        3
+      ],
+      [
+        "data",
+        3
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        19993,
+        0.33
+      ],
+      [
+        16900,
+        0.27
+      ],
+      [
+        10120,
+        0.24
+      ],
+      [
+        15775,
+        0.22
+      ],
+      [
+        11860,
+        0.2
+      ],
+      [
+        11269,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
+}

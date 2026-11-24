@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 3346,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "nina",
@@ -134,27 +134,27 @@
         27
       ],
       [
+        "seniman",
+        14
+      ],
+      [
         "mogok",
         11
       ],
       [
-        "seniman",
-        14
+        "karya",
+        21
       ],
       [
         "readymade",
         4
       ],
       [
-        "yang-apa-saja",
-        3
-      ],
-      [
         "godard",
         4
       ],
       [
-        "populum",
+        "yang-apa-saja",
         3
       ]
     ],
@@ -195,15 +195,15 @@
     "similar": [
       [
         8051,
-        0.26
+        0.25
       ],
       [
         2685,
-        0.26
+        0.25
       ],
       [
         4737,
-        0.25
+        0.23
       ],
       [
         2321,
@@ -211,12 +211,48 @@
       ],
       [
         8044,
-        0.15
+        0.16
       ],
       [
-        4679,
-        0.15
+        2186,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 37,
+      "negative": 40,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          7
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

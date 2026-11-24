@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2060,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "perempuan",
@@ -111,6 +111,10 @@
         10
       ],
       [
+        "perempuan",
+        32
+      ],
+      [
         "kongra",
         5
       ],
@@ -123,27 +127,23 @@
         8
       ],
       [
-        "perempuan",
-        32
-      ],
-      [
-        "aanes",
-        3
+        "komunitas",
+        15
       ],
       [
         "menandatanganinya",
         4
       ],
       [
-        "komunitas",
-        15
+        "aanes",
+        3
+      ],
+      [
+        "pengadilan",
+        10
       ],
       [
         "star",
-        5
-      ],
-      [
-        "komune",
         5
       ]
     ],
@@ -180,28 +180,29 @@
     "similar": [
       [
         2523,
-        0.31
+        0.32
       ],
       [
         2029,
-        0.27
+        0.28
       ],
       [
         2293,
-        0.22
+        0.24
       ],
       [
         1833,
         0.22
       ],
       [
-        7544,
-        0.2
+        7977,
+        0.19
       ],
       [
-        7977,
-        0.18
+        7144,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

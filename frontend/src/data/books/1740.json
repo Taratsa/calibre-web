@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 729,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "ruang",
@@ -125,12 +125,16 @@
         4
       ],
       [
-        "parkir",
-        3
-      ],
-      [
         "panggung",
         5
+      ],
+      [
+        "ruang",
+        9
+      ],
+      [
+        "parkir",
+        3
       ],
       [
         "menyumbang",
@@ -139,26 +143,27 @@
       [
         "respon",
         3
-      ],
-      [
-        "ruang",
-        9
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8040,
-        0.24
+        0.22
       ],
       [
         2118,
-        0.23
+        0.21
       ],
       [
         9223,
-        0.19
+        0.16
+      ],
+      [
+        19947,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

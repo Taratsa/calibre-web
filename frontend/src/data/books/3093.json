@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2788,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "stirner",
@@ -109,12 +109,12 @@
         22
       ],
       [
-        "sindikat",
-        13
-      ],
-      [
         "ibid",
         22
+      ],
+      [
+        "sindikat",
+        13
       ],
       [
         "ego",
@@ -129,24 +129,24 @@
         11
       ],
       [
-        "kooperativisme",
-        3
+        "individu",
+        22
       ],
       [
         "sosialisme",
         12
       ],
       [
-        "individu",
-        22
+        "pekerja",
+        18
+      ],
+      [
+        "kapitalis",
+        13
       ],
       [
         "egoisme",
         7
-      ],
-      [
-        "hierarki",
-        9
       ]
     ],
     "phrases": [
@@ -185,29 +185,78 @@
     ],
     "similar": [
       [
+        7349,
+        0.3
+      ],
+      [
         3092,
-        0.28
+        0.29
       ],
       [
         4732,
-        0.28
+        0.29
       ],
       [
         281,
-        0.28
-      ],
-      [
-        7349,
-        0.26
-      ],
-      [
-        1999,
-        0.26
+        0.29
       ],
       [
         4713,
-        0.25
+        0.27
+      ],
+      [
+        1999,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.67,
+      "positive": 82,
+      "negative": 16,
+      "trend": [
+        null,
+        1,
+        null,
+        null,
+        0.4,
+        null,
+        0.5,
+        null,
+        null,
+        1,
+        0.6,
+        1,
+        0.14,
+        null,
+        1,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

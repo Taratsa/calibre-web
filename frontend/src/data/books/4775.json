@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6313,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "perusahaan",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "perusahaan",
-        75
-      ],
-      [
         "pekerja",
         74
       ],
       [
-        "jabar",
-        24
-      ],
-      [
-        "semurah",
-        14
-      ],
-      [
-        "newmont",
-        14
-      ],
-      [
-        "dprd",
-        26
-      ],
-      [
-        "aktifitas",
-        24
+        "perusahaan",
+        75
       ],
       [
         "aksi",
         60
       ],
       [
-        "neo-liberalisme",
-        14
-      ],
-      [
-        "efesien",
-        12
-      ],
-      [
         "warga",
         64
       ],
       [
-        "memblokir",
-        15
+        "jabar",
+        24
+      ],
+      [
+        "dprd",
+        26
+      ],
+      [
+        "kantor",
+        48
+      ],
+      [
+        "bandung",
+        42
+      ],
+      [
+        "newmont",
+        14
+      ],
+      [
+        "semurah",
+        14
+      ],
+      [
+        "aktifitas",
+        24
+      ],
+      [
+        "neo-liberalisme",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7868,
-        0.2
+        0.24
       ],
       [
         2457,
-        0.2
+        0.24
       ],
       [
         7867,
-        0.17
+        0.2
       ],
       [
         4665,
-        0.17
+        0.2
       ],
       [
         7869,
-        0.13
+        0.17
       ],
       [
         1802,
-        0.13
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 81,
+      "negative": 45,
+      "trend": [
+        -0.06,
+        null,
+        -0.4,
+        -1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        0.43,
+        0.78,
+        0.67,
+        0.5,
+        0.11,
+        -0.6,
+        0.5
+      ],
+      "emotions": []
+    }
   }
 }

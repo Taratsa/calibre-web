@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 7453,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "stirner",
@@ -113,40 +113,40 @@
         21
       ],
       [
-        "acosta",
-        6
+        "kepemilikan",
+        21
       ],
       [
         "unik",
         20
       ],
       [
-        "kepemilikan",
-        21
+        "individu",
+        25
       ],
       [
         "ketiadaan",
         16
       ],
       [
-        "dialektika",
-        11
+        "acosta",
+        6
       ],
       [
-        "deleuze",
-        7
+        "dialektika",
+        11
       ],
       [
         "imajiner",
         9
       ],
       [
-        "individu",
-        25
+        "deleuze",
+        7
       ],
       [
-        "bergson",
-        5
+        "persatuan",
+        16
       ]
     ],
     "phrases": [
@@ -186,28 +186,81 @@
     "similar": [
       [
         4732,
-        0.3
+        0.33
       ],
       [
         281,
-        0.3
-      ],
-      [
-        4682,
-        0.23
-      ],
-      [
-        3697,
-        0.23
+        0.33
       ],
       [
         2509,
-        0.22
+        0.25
       ],
       [
-        3093,
-        0.21
+        3697,
+        0.25
+      ],
+      [
+        4682,
+        0.24
+      ],
+      [
+        4713,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 104,
+      "negative": 74,
+      "trend": [
+        0.6,
+        0.14,
+        null,
+        0.6,
+        0.33,
+        0.33,
+        -0.22,
+        -0.17,
+        0.17,
+        -0.57,
+        0.14,
+        null,
+        0.06,
+        0.8,
+        0.75,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          11
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

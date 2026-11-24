@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2757,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "paidjo",
@@ -120,6 +120,10 @@
         8
       ],
       [
+        "barisan",
+        17
+      ],
+      [
         "karabennja",
         4
       ],
@@ -128,24 +132,20 @@
         8
       ],
       [
-        "barisan",
-        17
+        "matanja",
+        7
+      ],
+      [
+        "wadjah",
+        6
       ],
       [
         "kerbaunja",
         4
       ],
       [
-        "tarto",
-        3
-      ],
-      [
-        "matanja",
-        7
-      ],
-      [
-        "mortir",
-        5
+        "mendjadi",
+        9
       ]
     ],
     "phrases": [
@@ -185,28 +185,73 @@
     "similar": [
       [
         7584,
-        0.14
+        0.16
       ],
       [
         6886,
-        0.14
+        0.16
       ],
       [
         7787,
-        0.14
+        0.15
       ],
       [
         6895,
-        0.14
+        0.15
       ],
       [
         7824,
-        0.13
+        0.14
       ],
       [
         9165,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 34,
+      "negative": 42,
+      "trend": [
+        null,
+        null,
+        0.33,
+        0.14,
+        0.14,
+        null,
+        null,
+        null,
+        -1,
+        -0.6,
+        -0.75,
+        1,
+        null,
+        -0.33,
+        0.33,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

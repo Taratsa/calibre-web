@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 6859,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "nomor",
@@ -116,24 +116,28 @@
         49
       ],
       [
+        "peraturan",
+        93
+      ],
+      [
         "tersedia",
         97
-      ],
-      [
-        "tbs",
-        22
-      ],
-      [
-        "indikator",
-        47
       ],
       [
         "kriteria",
         53
       ],
       [
-        "peraturan",
-        93
+        "perusahaan",
+        81
+      ],
+      [
+        "indikator",
+        47
+      ],
+      [
+        "tbs",
+        22
       ],
       [
         "sop",
@@ -142,10 +146,6 @@
       [
         "panduan",
         48
-      ],
-      [
-        "perusahaan",
-        81
       ]
     ],
     "phrases": [
@@ -184,29 +184,53 @@
     ],
     "similar": [
       [
-        8857,
-        0.27
-      ],
-      [
         8637,
-        0.26
+        0.31
       ],
       [
-        8295,
-        0.24
-      ],
-      [
-        8641,
-        0.24
+        8857,
+        0.3
       ],
       [
         8345,
-        0.23
+        0.28
       ],
       [
         8642,
-        0.23
+        0.27
+      ],
+      [
+        8295,
+        0.27
+      ],
+      [
+        8641,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.72,
+      "positive": 91,
+      "negative": 15,
+      "trend": [
+        null,
+        null,
+        0.8,
+        null,
+        0.6,
+        1,
+        0.57,
+        1,
+        0.6,
+        null,
+        0.09,
+        null,
+        null,
+        null,
+        0.69,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

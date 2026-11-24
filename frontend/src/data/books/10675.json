@@ -1,0 +1,86 @@
+{
+  "id": 10675,
+  "title": "Mediawiki Mendelete User Spam",
+  "slug": "mediawiki-mendelete-user-spam-onno-widodo-purbo",
+  "slugBase": "mediawiki-mendelete-user-spam-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2015-07-09",
+  "timestamp": "2026-11-23 19:43:30.499954",
+  "last_modified": "2026-11-23 19:43:30.499958",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:4310130d-c51e-591a-ba5b-eb19ec15cc42"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10675?v=1795437810",
+  "cover_og_url": "/cover/10675/og?v=1795437810",
+  "url": "/book/mediawiki-mendelete-user-spam-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Asumsi tables dalam database wiki_* Cek struktur database desc wiki_user; desc wiki_user_group; Temukan user select user_id, user_name from wiki_user; Delete DELETE FROM `wiki_user_groups` WHERE ug_user = ID; DELETE FROM `wiki_user` WHERE user_id = ID;",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2073,
+      "name": "Mediawiki Mendelete User Spam - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 59,
+    "longer_than": 8,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        10762,
+        0.58
+      ],
+      [
+        17244,
+        0.45
+      ],
+      [
+        9541,
+        0.44
+      ],
+      [
+        10300,
+        0.43
+      ],
+      [
+        9426,
+        0.41
+      ],
+      [
+        19259,
+        0.38
+      ]
+    ],
+    "sentiment": null
+  }
+}

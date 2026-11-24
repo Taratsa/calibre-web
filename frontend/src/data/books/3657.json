@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 13669,
-    "longer_than": 68,
+    "longer_than": 85,
     "top": [
       [
         "maa",
@@ -134,12 +134,12 @@
         35
       ],
       [
-        "waa",
-        42
-      ],
-      [
         "oli",
         49
+      ],
+      [
+        "waa",
+        42
       ],
       [
         "yeq",
@@ -184,6 +184,63 @@
         16
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 114,
+      "negative": 44,
+      "trend": [
+        0.45,
+        0.06,
+        -0.27,
+        0.5,
+        -0.27,
+        0.17,
+        0.78,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "surprise",
+          14
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

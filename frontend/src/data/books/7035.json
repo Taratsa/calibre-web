@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5257,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "demokrasi",
@@ -114,6 +114,10 @@
         24
       ],
       [
+        "aksi",
+        30
+      ],
+      [
         "komunitas",
         28
       ],
@@ -122,36 +126,32 @@
         13
       ],
       [
-        "aksi",
-        30
+        "kebebasan",
+        24
       ],
       [
-        "representatif",
-        10
-      ],
-      [
-        "politisi",
-        12
+        "langsung",
+        37
       ],
       [
         "otonomi",
         15
       ],
       [
+        "representatif",
+        10
+      ],
+      [
         "mayoritas",
         16
       ],
       [
-        "partisipatoris",
-        6
+        "politisi",
+        12
       ],
       [
-        "affinitas",
-        5
-      ],
-      [
-        "kebebasan",
-        24
+        "orang",
+        39
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         2377,
-        0.79
+        0.8
       ],
       [
         2071,
-        0.63
-      ],
-      [
-        7006,
-        0.2
-      ],
-      [
-        7327,
-        0.19
+        0.65
       ],
       [
         7435,
-        0.18
+        0.23
+      ],
+      [
+        2343,
+        0.23
+      ],
+      [
+        7006,
+        0.22
       ],
       [
         2356,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 145,
+      "negative": 60,
+      "trend": [
+        0,
+        0.11,
+        0,
+        0.3,
+        0.79,
+        0.88,
+        0.71,
+        null,
+        1,
+        -0.09,
+        0.69,
+        0,
+        0.65,
+        0.2,
+        0.71,
+        0.11
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

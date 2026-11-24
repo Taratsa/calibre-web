@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 6203,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "revolusi",
@@ -100,48 +100,48 @@
         171
       ],
       [
-        "suharto-nasution",
-        15
-      ],
-      [
         "imperialis",
         41
+      ],
+      [
+        "rakyat",
+        91
       ],
       [
         "borjuis",
         40
       ],
       [
-        "jenderal-jenderal",
-        18
+        "suharto-nasution",
+        15
       ],
       [
         "proletariat",
         35
       ],
       [
-        "imperialisme",
-        38
-      ],
-      [
-        "feodalisme",
-        30
-      ],
-      [
         "tani",
         48
       ],
       [
-        "diktator",
-        24
+        "imperialisme",
+        38
       ],
       [
-        "borjuasi",
-        20
+        "agustus",
+        61
       ],
       [
-        "kelas-kelas",
-        23
+        "kekuasaan",
+        72
+      ],
+      [
+        "jenderal-jenderal",
+        18
+      ],
+      [
+        "feodalisme",
+        30
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         9321,
-        0.51
+        0.54
       ],
       [
         9318,
-        0.45
-      ],
-      [
-        703,
-        0.36
+        0.48
       ],
       [
         9275,
-        0.36
+        0.39
+      ],
+      [
+        703,
+        0.39
       ],
       [
         9316,
-        0.33
+        0.38
       ],
       [
         9276,
-        0.31
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 111,
+      "negative": 110,
+      "trend": [
+        -0.47,
+        0.33,
+        0.53,
+        0,
+        -0.41,
+        -0.69,
+        0,
+        0.71,
+        -0.25,
+        0.4,
+        -0.24,
+        -0.67,
+        -0.09,
+        0.5,
+        -0.12,
+        0.53
+      ],
+      "emotions": [
+        [
+          "anger",
+          44
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 645,
-    "longer_than": 7,
+    "longer_than": 45,
     "top": [
       [
         "habibie",
@@ -105,20 +105,20 @@
         4
       ],
       [
-        "sugito",
-        3
-      ],
-      [
         "presiden",
         10
       ],
       [
-        "tender",
+        "sugito",
         3
       ],
       [
         "beras",
         6
+      ],
+      [
+        "tender",
+        3
       ],
       [
         "soeharto",
@@ -140,6 +140,10 @@
     "phrases": [],
     "similar": [
       [
+        17601,
+        0.21
+      ],
+      [
         218,
         0.18
       ],
@@ -153,16 +157,13 @@
       ],
       [
         223,
-        0.13
+        0.14
       ],
       [
         219,
         0.12
-      ],
-      [
-        221,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

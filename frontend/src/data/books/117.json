@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4776,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "negara",
@@ -99,40 +99,28 @@
     ],
     "distinct": [
       [
-        "percumalaporpolisi",
-        7
-      ],
-      [
         "papua",
         21
       ],
       [
-        "exodus",
-        8
+        "percumalaporpolisi",
+        7
       ],
       [
         "udah",
         15
       ],
       [
+        "exodus",
+        8
+      ],
+      [
         "kwitangologi",
         6
       ],
       [
-        "senang-senang",
-        7
-      ],
-      [
         "kontras",
         13
-      ],
-      [
-        "keurus",
-        4
-      ],
-      [
-        "jokowi",
-        9
       ],
       [
         "tni",
@@ -143,8 +131,20 @@
         16
       ],
       [
-        "gak",
-        10
+        "negara",
+        34
+      ],
+      [
+        "senang-senang",
+        7
+      ],
+      [
+        "jokowi",
+        9
+      ],
+      [
+        "nggak",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         6953,
-        0.21
+        0.24
       ],
       [
         124,
-        0.21
+        0.24
       ],
       [
         6951,
-        0.18
+        0.21
       ],
       [
         115,
-        0.18
+        0.21
       ],
       [
         6899,
-        0.18
+        0.21
       ],
       [
         126,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 78,
+      "negative": 78,
+      "trend": [
+        null,
+        0.33,
+        0.5,
+        -0.2,
+        -0.67,
+        -0.5,
+        -0.25,
+        -0.08,
+        -0.57,
+        -0.14,
+        0.2,
+        0.64,
+        0.54,
+        -0.25,
+        -0.06,
+        0.09
+      ],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

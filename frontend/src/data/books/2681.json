@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 7409,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "ray",
@@ -109,12 +109,12 @@
         28
       ],
       [
-        "hulme",
-        23
-      ],
-      [
         "pound",
         37
+      ],
+      [
+        "hulme",
+        23
       ],
       [
         "egoist",
@@ -133,20 +133,20 @@
         17
       ],
       [
-        "duchamp",
-        15
+        "lukisan",
+        36
       ],
       [
-        "lacroix",
-        10
+        "duchamp",
+        15
       ],
       [
         "lewis",
         21
       ],
       [
-        "lukisan",
-        36
+        "lacroix",
+        10
       ]
     ],
     "phrases": [
@@ -186,28 +186,81 @@
     "similar": [
       [
         4717,
-        0.17
+        0.2
       ],
       [
         2355,
-        0.17
+        0.2
       ],
       [
         7961,
-        0.16
+        0.18
       ],
       [
         2816,
-        0.15
+        0.16
+      ],
+      [
+        7231,
+        0.16
       ],
       [
         7224,
         0.15
-      ],
-      [
-        4680,
-        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 73,
+      "negative": 43,
+      "trend": [
+        null,
+        0.8,
+        0.2,
+        0.33,
+        0.5,
+        null,
+        null,
+        0.2,
+        -0.64,
+        0,
+        null,
+        1,
+        -0.17,
+        0.25,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

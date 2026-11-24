@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1593,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "sistem",
@@ -99,36 +99,44 @@
     ],
     "distinct": [
       [
-        "katalis",
-        5
-      ],
-      [
         "industrial",
         7
       ],
       [
-        "posting",
-        4
-      ],
-      [
-        "dominatif",
-        3
-      ],
-      [
-        "dorongan-dorongan",
-        3
+        "katalis",
+        5
       ],
       [
         "sistem",
         15
       ],
       [
+        "dominatif",
+        3
+      ],
+      [
+        "posting",
+        4
+      ],
+      [
+        "dorongan-dorongan",
+        3
+      ],
+      [
         "laba",
         4
       ],
       [
+        "produksi",
+        7
+      ],
+      [
         "frustasi",
         3
+      ],
+      [
+        "modern",
+        7
       ],
       [
         "hierarkis",
@@ -137,42 +145,35 @@
       [
         "mesin",
         6
-      ],
-      [
-        "produksi",
-        7
-      ],
-      [
-        "pabrik",
-        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        1995,
+        2413,
         0.21
       ],
       [
-        1922,
-        0.2
-      ],
-      [
-        2413,
+        1995,
         0.19
       ],
       [
         2432,
-        0.18
+        0.19
       ],
       [
         2211,
-        0.17
+        0.18
       ],
       [
-        2796,
-        0.16
+        1922,
+        0.18
+      ],
+      [
+        4700,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

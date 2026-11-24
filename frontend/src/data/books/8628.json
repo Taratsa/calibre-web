@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 50190,
-    "longer_than": 93,
+    "longer_than": 96,
     "top": [
       [
         "public",
@@ -104,12 +104,12 @@
         148
       ],
       [
-        "legislature",
-        122
-      ],
-      [
         "south",
         226
+      ],
+      [
+        "legislature",
+        122
       ],
       [
         "government",
@@ -128,16 +128,16 @@
         98
       ],
       [
-        "committees",
-        86
+        "national",
+        172
       ],
       [
         "african",
         101
       ],
       [
-        "constitution",
-        101
+        "committees",
+        86
       ]
     ],
     "phrases": [
@@ -181,24 +181,25 @@
       ],
       [
         8615,
-        0.31
+        0.32
       ],
       [
         8727,
-        0.3
+        0.31
       ],
       [
         8301,
+        0.3
+      ],
+      [
+        8284,
         0.29
       ],
       [
         8631,
         0.28
-      ],
-      [
-        8284,
-        0.27
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

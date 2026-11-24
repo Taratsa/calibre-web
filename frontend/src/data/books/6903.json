@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1422,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "aksi",
@@ -102,52 +102,52 @@
     ],
     "distinct": [
       [
-        "sipil",
-        32
-      ],
-      [
         "aksi",
         39
       ],
       [
-        "demonstrasi",
-        19
+        "sipil",
+        32
       ],
       [
         "kebebasan",
         31
       ],
       [
-        "tolakruutni",
-        3
-      ],
-      [
-        "penyiksaan",
-        10
+        "demonstrasi",
+        19
       ],
       [
         "kekerasan",
         22
       ],
       [
-        "pelanggaran",
-        15
-      ],
-      [
-        "januari-juni",
-        4
-      ],
-      [
         "massa",
         19
       ],
       [
-        "indonesiagelap",
+        "pelanggaran",
+        15
+      ],
+      [
+        "tindakan",
+        22
+      ],
+      [
+        "penyiksaan",
+        10
+      ],
+      [
+        "tolakruutni",
         3
       ],
       [
-        "pembingkaian",
-        4
+        "korban",
+        15
+      ],
+      [
+        "medis",
+        8
       ]
     ],
     "phrases": [
@@ -187,28 +187,65 @@
     "similar": [
       [
         6952,
-        0.28
-      ],
-      [
-        6914,
-        0.24
+        0.29
       ],
       [
         7940,
-        0.24
+        0.27
       ],
       [
-        6940,
-        0.22
+        6914,
+        0.27
       ],
       [
         8987,
-        0.22
+        0.26
       ],
       [
         6901,
-        0.21
+        0.26
+      ],
+      [
+        6940,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 47,
+      "negative": 76,
+      "trend": [
+        null,
+        -0.6,
+        -0.43,
+        null,
+        0.33,
+        null,
+        0.5,
+        0.2,
+        -0.2,
+        -0.8,
+        0.14,
+        -0.71,
+        -0.5,
+        -0.4,
+        -0.33,
+        -0.71
+      ],
+      "emotions": [
+        [
+          "anger",
+          47
+        ],
+        [
+          "fear",
+          26
+        ],
+        [
+          "trust",
+          5
+        ]
+      ]
+    }
   }
 }

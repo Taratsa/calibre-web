@@ -72,7 +72,7 @@
   ],
   "text": {
     "words": 1723,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "friend",
@@ -129,27 +129,15 @@
         9
       ],
       [
-        "theconstructdocuments",
-        3
-      ],
-      [
         "death",
         7
       ],
       [
+        "theconstructdocuments",
+        3
+      ],
+      [
         "shaking",
-        3
-      ],
-      [
-        "souls",
-        3
-      ],
-      [
-        "construct",
-        3
-      ],
-      [
-        "warm",
         3
       ],
       [
@@ -157,11 +145,19 @@
         7
       ],
       [
+        "souls",
+        3
+      ],
+      [
+        "warm",
+        3
+      ],
+      [
         "lost",
         4
       ],
       [
-        "nice",
+        "construct",
         3
       ],
       [
@@ -171,26 +167,35 @@
       [
         "died",
         3
+      ],
+      [
+        "cold",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        19310,
+        0.18
+      ],
+      [
         3797,
-        0.13
+        0.14
+      ],
+      [
+        2258,
+        0.12
       ],
       [
         2361,
         0.11
       ],
       [
-        2258,
-        0.11
-      ],
-      [
         4767,
-        0.11
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

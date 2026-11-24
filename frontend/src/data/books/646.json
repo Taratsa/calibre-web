@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 11445,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "bandoeng",
@@ -97,44 +97,44 @@
         21
       ],
       [
-        "tangkoeban",
-        12
+        "school",
+        36
       ],
       [
-        "postweg",
-        14
+        "tangkoeban",
+        12
       ],
       [
         "hotels",
         17
       ],
       [
-        "bragaweg",
-        10
-      ],
-      [
-        "plein",
-        13
-      ],
-      [
-        "school",
-        36
-      ],
-      [
-        "tjitaroem",
-        10
+        "postweg",
+        14
       ],
       [
         "hotel",
         34
       ],
       [
-        "pengalengan",
-        12
+        "plein",
+        13
+      ],
+      [
+        "bragaweg",
+        10
+      ],
+      [
+        "tjitaroem",
+        10
       ],
       [
         "offices",
         19
+      ],
+      [
+        "town",
+        20
       ]
     ],
     "phrases": [
@@ -174,18 +174,18 @@
     "similar": [
       [
         732,
-        0.18
+        0.19
       ],
       [
         663,
-        0.15
+        0.16
       ],
       [
         767,
-        0.15
+        0.16
       ],
       [
-        432,
+        736,
         0.14
       ],
       [
@@ -193,9 +193,10 @@
         0.14
       ],
       [
-        736,
+        432,
         0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

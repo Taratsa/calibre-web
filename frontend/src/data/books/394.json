@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2271,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "dunia",
@@ -97,24 +97,36 @@
         31
       ],
       [
-        "nasionnya",
-        6
-      ],
-      [
-        "penalarannya",
-        5
+        "dunia",
+        57
       ],
       [
         "ketiga",
         39
       ],
       [
+        "nasionnya",
+        6
+      ],
+      [
         "barat",
         40
       ],
       [
+        "kaum",
+        22
+      ],
+      [
+        "penalarannya",
+        5
+      ],
+      [
         "berabad",
         5
+      ],
+      [
+        "iain",
+        7
       ],
       [
         "moden",
@@ -123,18 +135,6 @@
       [
         "bongkak",
         3
-      ],
-      [
-        "iahirnya",
-        3
-      ],
-      [
-        "iain",
-        7
-      ],
-      [
-        "dunia",
-        57
       ]
     ],
     "phrases": [
@@ -171,6 +171,55 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2511,
+        0.15
+      ],
+      [
+        8758,
+        0.11
+      ],
+      [
+        7676,
+        0.1
+      ],
+      [
+        1442,
+        0.1
+      ],
+      [
+        3708,
+        0.1
+      ],
+      [
+        1959,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 44,
+      "negative": 28,
+      "trend": [
+        -0.6,
+        null,
+        0,
+        -0.6,
+        -0.14,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        0.43,
+        1,
+        null,
+        null,
+        0.75,
+        -0.14
+      ],
+      "emotions": []
+    }
   }
 }

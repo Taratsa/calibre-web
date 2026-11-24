@@ -72,7 +72,7 @@
   ],
   "text": {
     "words": 3329,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "perjalanan",
@@ -137,20 +137,16 @@
         6
       ],
       [
-        "construct",
+        "borders",
         5
       ],
       [
-        "borders",
+        "construct",
         5
       ],
       [
         "crisis",
         6
-      ],
-      [
-        "ice",
-        4
       ],
       [
         "keseharian",
@@ -161,16 +157,20 @@
         5
       ],
       [
-        "awkward",
-        3
+        "ice",
+        4
       ],
       [
-        "cream",
+        "awkward",
         3
       ],
       [
         "economy",
         5
+      ],
+      [
+        "cream",
+        3
       ]
     ],
     "phrases": [
@@ -197,21 +197,22 @@
         0.13
       ],
       [
-        2035,
+        14382,
         0.13
+      ],
+      [
+        2035,
+        0.12
+      ],
+      [
+        15588,
+        0.12
       ],
       [
         1563,
-        0.13
-      ],
-      [
-        1811,
-        0.11
-      ],
-      [
-        2087,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

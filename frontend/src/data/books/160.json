@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1861,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "penculikan",
@@ -105,10 +105,6 @@
         21
       ],
       [
-        "syamsu",
-        8
-      ],
-      [
         "penyiksaan",
         15
       ],
@@ -117,8 +113,16 @@
         13
       ],
       [
+        "syamsu",
+        8
+      ],
+      [
         "militer",
         19
+      ],
+      [
+        "korban",
+        20
       ],
       [
         "abri",
@@ -127,10 +131,6 @@
       [
         "interogasi",
         6
-      ],
-      [
-        "korban",
-        20
       ],
       [
         "soeyono",
@@ -145,8 +145,8 @@
         3
       ],
       [
-        "kopassus",
-        4
+        "kuhp",
+        5
       ]
     ],
     "phrases": [
@@ -186,28 +186,56 @@
     "similar": [
       [
         156,
-        0.28
+        0.29
       ],
       [
         162,
-        0.24
-      ],
-      [
-        317,
-        0.22
+        0.25
       ],
       [
         164,
-        0.22
+        0.23
       ],
       [
         179,
-        0.22
+        0.23
+      ],
+      [
+        317,
+        0.23
       ],
       [
         155,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.45,
+      "positive": 16,
+      "negative": 42,
+      "trend": [],
+      "emotions": [
+        [
+          "fear",
+          18
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

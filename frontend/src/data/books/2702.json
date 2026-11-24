@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3372,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "kolektif",
@@ -107,44 +107,44 @@
         28
       ],
       [
+        "komunitas",
+        20
+      ],
+      [
         "persahabatan",
         14
       ],
       [
-        "komunitas",
-        20
+        "orang",
+        36
       ],
       [
         "anarki",
         9
       ],
       [
-        "lencana",
-        3
+        "kaum",
+        14
       ],
       [
         "teman",
         11
       ],
       [
+        "orang-orang",
+        15
+      ],
+      [
         "sistem",
         15
       ],
       [
-        "pengganggu",
+        "lencana",
         3
       ],
       [
-        "bersosialisasi",
-        3
-      ],
-      [
-        "bergaul",
-        5
-      ],
-      [
-        "kaum",
-        14
+        "hubungan",
+        11
       ]
     ],
     "phrases": [
@@ -176,28 +176,81 @@
     "similar": [
       [
         7404,
-        0.22
-      ],
-      [
-        7414,
-        0.15
-      ],
-      [
-        1980,
-        0.15
+        0.24
       ],
       [
         2596,
-        0.15
+        0.21
       ],
       [
-        2071,
-        0.14
+        7414,
+        0.18
       ],
       [
         1978,
-        0.14
+        0.18
+      ],
+      [
+        2508,
+        0.17
+      ],
+      [
+        2377,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 74,
+      "negative": 59,
+      "trend": [
+        0.07,
+        0.14,
+        -0.25,
+        null,
+        0.56,
+        -0.2,
+        0.17,
+        0.67,
+        -0.11,
+        -0.11,
+        0.6,
+        0.11,
+        -0.14,
+        null,
+        0.23,
+        0.33
+      ],
+      "emotions": [
+        [
+          "trust",
+          14
+        ],
+        [
+          "anger",
+          13
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

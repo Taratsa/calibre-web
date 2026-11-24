@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1903,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "indonesia",
@@ -106,6 +106,10 @@
     ],
     "distinct": [
       [
+        "revolusi",
+        35
+      ],
+      [
         "pessimisme",
         10
       ],
@@ -114,24 +118,28 @@
         13
       ],
       [
-        "revolusi",
-        35
-      ],
-      [
         "djuga",
         14
       ],
       [
-        "menterdjemahkan",
-        6
+        "pengarang",
+        13
       ],
       [
         "rakjat",
         12
       ],
       [
-        "pengarang",
-        13
+        "menterdjemahkan",
+        6
+      ],
+      [
+        "indonesia",
+        35
+      ],
+      [
+        "bahasa",
+        25
       ],
       [
         "kesusasteraannja",
@@ -142,16 +150,8 @@
         7
       ],
       [
-        "wertheim",
-        5
-      ],
-      [
-        "kemasjarakatan",
-        5
-      ],
-      [
-        "masjarakat",
-        8
+        "mendjadi",
+        9
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         6749,
-        0.53
+        0.55
       ],
       [
         3416,
-        0.21
+        0.25
       ],
       [
         7613,
-        0.2
+        0.22
       ],
       [
         3968,
-        0.2
+        0.22
       ],
       [
         1231,
-        0.2
+        0.21
       ],
       [
         393,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

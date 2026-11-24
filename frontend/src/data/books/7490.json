@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1470,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "kau",
@@ -106,20 +106,28 @@
     ],
     "distinct": [
       [
-        "masyarakatmu",
-        5
-      ],
-      [
         "kau",
         21
+      ],
+      [
+        "masyarakatmu",
+        5
       ],
       [
         "gadis",
         9
       ],
       [
+        "tua",
+        10
+      ],
+      [
         "muak",
         4
+      ],
+      [
+        "orang",
+        17
       ],
       [
         "hidupku",
@@ -130,56 +138,55 @@
         4
       ],
       [
-        "membuatku",
-        3
-      ],
-      [
         "jalan-jalan",
         4
       ],
       [
-        "kemana",
-        4
+        "membuatku",
+        3
+      ],
+      [
+        "hidup",
+        11
       ],
       [
         "diriku",
         4
-      ],
-      [
-        "menghidupi",
-        3
-      ],
-      [
-        "roti",
-        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2304,
-        0.21
+        0.24
       ],
       [
         7072,
-        0.15
-      ],
-      [
-        7054,
-        0.13
-      ],
-      [
-        2278,
-        0.13
+        0.14
       ],
       [
         7447,
+        0.13
+      ],
+      [
+        3901,
+        0.13
+      ],
+      [
+        6853,
         0.12
       ],
       [
-        1968,
-        0.11
+        2981,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 32,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

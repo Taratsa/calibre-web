@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4692,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "organisasi",
@@ -110,44 +110,44 @@
         25
       ],
       [
-        "kemahasiswaan",
-        10
-      ],
-      [
         "narasi",
         18
       ],
       [
-        "dikampus",
-        5
-      ],
-      [
-        "naratif",
-        8
-      ],
-      [
-        "insureksi",
-        8
-      ],
-      [
-        "ditindas",
+        "kemahasiswaan",
         10
-      ],
-      [
-        "reposisi",
-        5
       ],
       [
         "organisasi",
         29
       ],
       [
-        "konsistensi",
+        "naratif",
+        8
+      ],
+      [
+        "dikampus",
+        5
+      ],
+      [
+        "ditindas",
+        10
+      ],
+      [
+        "insureksi",
         8
       ],
       [
         "kedaulatan",
         12
+      ],
+      [
+        "acara",
+        16
+      ],
+      [
+        "penindasan",
+        13
       ]
     ],
     "phrases": [
@@ -203,12 +203,61 @@
       ],
       [
         6991,
-        0.11
+        0.12
       ],
       [
-        3950,
-        0.11
+        1807,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 72,
+      "negative": 77,
+      "trend": [
+        0.2,
+        null,
+        0.43,
+        -0.53,
+        -0.3,
+        -0.18,
+        0,
+        0.25,
+        0.2,
+        0.33,
+        null,
+        0.6,
+        0,
+        0.43,
+        -0.08,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

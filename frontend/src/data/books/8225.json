@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4033,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "perda",
@@ -117,12 +117,20 @@
         23
       ],
       [
+        "daerah",
+        93
+      ],
+      [
+        "pemerintah",
+        62
+      ],
+      [
         "investasi",
         28
       ],
       [
-        "daerah",
-        93
+        "hutan",
+        37
       ],
       [
         "dibatalkan",
@@ -133,24 +141,16 @@
         15
       ],
       [
-        "pemerintah",
-        62
-      ],
-      [
         "pemanfaatan",
         18
       ],
       [
-        "hutan",
-        37
+        "departemen",
+        24
       ],
       [
         "sumberdaya",
         13
-      ],
-      [
-        "departemen",
-        24
       ]
     ],
     "phrases": [
@@ -189,29 +189,36 @@
     ],
     "similar": [
       [
-        8741,
-        0.19
-      ],
-      [
         8475,
-        0.18
+        0.22
       ],
       [
-        8755,
-        0.16
+        8741,
+        0.22
       ],
       [
         8345,
-        0.16
+        0.2
       ],
       [
-        8556,
-        0.15
+        8755,
+        0.19
       ],
       [
         8646,
-        0.15
+        0.19
+      ],
+      [
+        8556,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 41,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

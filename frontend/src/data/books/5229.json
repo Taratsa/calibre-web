@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 7860,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "kuntan",
@@ -122,12 +122,16 @@
         55
       ],
       [
+        "nga",
+        119
+      ],
+      [
         "jemo",
         53
       ],
       [
-        "nga",
-        119
+        "dukun",
+        114
       ],
       [
         "tedung",
@@ -138,16 +142,12 @@
         35
       ],
       [
-        "dukun",
-        114
-      ],
-      [
         "udem",
         35
       ],
       [
-        "puyang",
-        44
+        "budiman",
+        86
       ]
     ],
     "phrases": [
@@ -199,16 +199,40 @@
       ],
       [
         5265,
+        0.14
+      ],
+      [
+        5822,
         0.13
       ],
       [
         6974,
         0.12
-      ],
-      [
-        5822,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 66,
+      "negative": 21,
+      "trend": [
+        0.88,
+        0.64,
+        null,
+        null,
+        null,
+        0.6,
+        0.14,
+        0.6,
+        0,
+        null,
+        0.75,
+        null,
+        null,
+        0.6,
+        0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

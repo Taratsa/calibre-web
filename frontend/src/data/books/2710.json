@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3781,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "orang",
@@ -111,40 +111,40 @@
         8
       ],
       [
-        "farmakologi",
-        5
-      ],
-      [
         "penyembuhan",
         10
-      ],
-      [
-        "didiagnosis",
-        5
       ],
       [
         "mental",
         17
       ],
       [
-        "obat-obatan",
-        8
+        "farmakologi",
+        5
       ],
       [
-        "normalitas",
-        4
+        "orang",
+        40
+      ],
+      [
+        "didiagnosis",
+        5
+      ],
+      [
+        "obat-obatan",
+        8
       ],
       [
         "obat",
         11
       ],
       [
-        "keanekaragaman",
-        6
+        "masyarakat",
+        22
       ],
       [
-        "gangguan",
-        9
+        "sakit",
+        15
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2280,
-        0.66
+        0.67
       ],
       [
         2602,
-        0.28
+        0.29
       ],
       [
         1837,
         0.25
       ],
       [
-        1772,
-        0.19
-      ],
-      [
         3826,
-        0.17
+        0.18
       ],
       [
-        1916,
-        0.16
+        1772,
+        0.18
+      ],
+      [
+        12105,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.13,
+      "positive": 82,
+      "negative": 106,
+      "trend": [
+        0,
+        0.17,
+        0.27,
+        -0.68,
+        0.33,
+        -0.25,
+        -0.41,
+        -0.71,
+        -0.8,
+        -0.25,
+        0.08,
+        0.67,
+        0.25,
+        0.38,
+        0.09,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

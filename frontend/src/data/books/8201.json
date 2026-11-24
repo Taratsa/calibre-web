@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2181,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "ham",
@@ -105,6 +105,10 @@
         47
       ],
       [
+        "perkebunan",
+        27
+      ],
+      [
         "ispo",
         10
       ],
@@ -113,40 +117,36 @@
         8
       ],
       [
-        "perkebunan",
-        27
-      ],
-      [
-        "hrdd",
-        5
+        "sertifikasi",
+        11
       ],
       [
         "rspo",
         7
       ],
       [
-        "sertifikasi",
-        11
-      ],
-      [
-        "permentan",
-        6
+        "hrdd",
+        5
       ],
       [
         "sawit",
         12
       ],
       [
+        "permentan",
+        6
+      ],
+      [
         "tiur",
         5
       ],
       [
-        "perkelapsawitan",
-        3
+        "perusahaan",
+        19
       ],
       [
-        "audit",
-        7
+        "perkelapsawitan",
+        3
       ]
     ],
     "phrases": [
@@ -194,20 +194,27 @@
       ],
       [
         8194,
-        0.27
+        0.29
       ],
       [
         8182,
-        0.23
+        0.26
       ],
       [
         8166,
-        0.22
+        0.24
       ],
       [
         8989,
-        0.21
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.55,
+      "positive": 41,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

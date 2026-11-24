@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 998,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "utopis",
@@ -119,32 +119,32 @@
         3
       ],
       [
-        "peyoratif",
-        3
-      ],
-      [
-        "konstitutif",
-        3
-      ],
-      [
         "fiksi",
         5
+      ],
+      [
+        "peyoratif",
+        3
       ],
       [
         "normatif",
         5
       ],
       [
+        "konstitutif",
+        3
+      ],
+      [
         "aktual",
         5
       ],
       [
-        "menyempurnakan",
-        4
+        "gagasan",
+        8
       ],
       [
-        "etika",
-        5
+        "hubungan",
+        11
       ]
     ],
     "phrases": [
@@ -184,11 +184,15 @@
     "similar": [
       [
         7014,
-        0.19
+        0.2
+      ],
+      [
+        9905,
+        0.17
       ],
       [
         3746,
-        0.14
+        0.16
       ],
       [
         2722,
@@ -196,16 +200,13 @@
       ],
       [
         1779,
-        0.12
+        0.13
       ],
       [
         3957,
-        0.11
-      ],
-      [
-        7152,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

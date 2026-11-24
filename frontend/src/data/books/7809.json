@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5785,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "university",
@@ -122,24 +122,24 @@
         25
       ],
       [
-        "equity",
-        18
-      ],
-      [
         "education",
         29
+      ],
+      [
+        "equity",
+        18
       ],
       [
         "graduates",
         12
       ],
       [
-        "continuous",
-        14
-      ],
-      [
         "students",
         16
+      ],
+      [
+        "continuous",
+        14
       ],
       [
         "capacity",
@@ -150,8 +150,8 @@
         14
       ],
       [
-        "tier",
-        8
+        "social",
+        21
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         1450,
-        0.28
+        0.3
       ],
       [
         7826,
-        0.28
+        0.29
       ],
       [
         7583,
-        0.26
+        0.27
       ],
       [
         7621,
-        0.22
+        0.23
       ],
       [
         7832,
-        0.22
+        0.23
       ],
       [
         7830,
-        0.21
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

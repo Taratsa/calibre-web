@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5867,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "kelompok",
@@ -122,32 +122,32 @@
         32
       ],
       [
-        "terstruktur",
-        16
-      ],
-      [
         "elit",
         20
       ],
       [
-        "freeman",
-        6
+        "terstruktur",
+        16
       ],
       [
         "ide-ide",
         15
       ],
       [
+        "gerakan",
+        27
+      ],
+      [
         "individu-individu",
         12
       ],
       [
-        "elit-elit",
-        7
+        "memiliki",
+        37
       ],
       [
-        "pertemanan",
-        8
+        "freeman",
+        6
       ],
       [
         "wanita",
@@ -191,28 +191,52 @@
     "similar": [
       [
         2625,
-        0.65
+        0.67
       ],
       [
         2542,
-        0.17
-      ],
-      [
-        1764,
-        0.14
+        0.19
       ],
       [
         2521,
-        0.14
+        0.19
       ],
       [
-        2150,
-        0.14
+        2420,
+        0.19
       ],
       [
-        2462,
-        0.14
+        2076,
+        0.19
+      ],
+      [
+        2290,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 63,
+      "negative": 38,
+      "trend": [
+        0.67,
+        0.56,
+        null,
+        0.56,
+        null,
+        0.14,
+        null,
+        -0.33,
+        -0.2,
+        0.14,
+        0.33,
+        0.14,
+        null,
+        0.23,
+        0.14,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

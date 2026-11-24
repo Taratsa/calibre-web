@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4267,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "ruang",
@@ -105,24 +105,28 @@
     ],
     "distinct": [
       [
-        "cyberspace",
-        9
-      ],
-      [
         "ruang",
         69
+      ],
+      [
+        "cyberspace",
+        9
       ],
       [
         "gambir",
         10
       ],
       [
+        "massey",
+        5
+      ],
+      [
         "geografi-waktu",
         4
       ],
       [
-        "massey",
-        5
+        "kusno",
+        6
       ],
       [
         "frombergpark",
@@ -133,24 +137,20 @@
         4
       ],
       [
-        "kusno",
-        6
-      ],
-      [
         "kebayoran",
         7
       ],
       [
-        "kellner",
-        4
+        "tamu",
+        14
       ],
       [
-        "giddens",
-        5
+        "rumah",
+        26
       ],
       [
-        "dikelaminkan",
-        3
+        "sosial",
+        24
       ]
     ],
     "phrases": [
@@ -190,16 +190,29 @@
     "similar": [
       [
         4038,
-        0.15
+        0.17
       ],
       [
         4040,
-        0.12
+        0.15
       ],
       [
-        7171,
-        0.11
+        4043,
+        0.14
+      ],
+      [
+        4088,
+        0.14
+      ],
+      [
+        4048,
+        0.13
+      ],
+      [
+        6324,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

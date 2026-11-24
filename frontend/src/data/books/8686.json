@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 57788,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "masjarakat",
@@ -104,12 +104,12 @@
         203
       ],
       [
-        "tahap²",
-        72
-      ],
-      [
         "djuga",
         230
+      ],
+      [
+        "tahap²",
+        72
       ],
       [
         "sektor²",
@@ -120,24 +120,24 @@
         73
       ],
       [
-        "kematangan",
-        108
+        "pertumbuhan",
+        225
       ],
       [
-        "tradisionil",
-        94
+        "amerika",
+        270
       ],
       [
         "setjara",
         144
       ],
       [
-        "pertumbuhan",
-        225
+        "kematangan",
+        108
       ],
       [
-        "sebahagian",
-        88
+        "tradisionil",
+        94
       ]
     ],
     "phrases": [
@@ -177,28 +177,85 @@
     "similar": [
       [
         5959,
-        0.21
+        0.24
       ],
       [
         4591,
-        0.21
+        0.24
       ],
       [
         4866,
-        0.21
+        0.24
       ],
       [
         2841,
-        0.21
+        0.24
       ],
       [
         2835,
-        0.21
+        0.24
       ],
       [
         5954,
-        0.2
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 1003,
+      "negative": 326,
+      "trend": [
+        0.81,
+        0.63,
+        0.5,
+        0.6,
+        0.62,
+        0.81,
+        0.38,
+        0.46,
+        0.5,
+        0.34,
+        0.32,
+        0.37,
+        0.6,
+        0.6,
+        0.41,
+        0.38
+      ],
+      "emotions": [
+        [
+          "anger",
+          140
+        ],
+        [
+          "joy",
+          28
+        ],
+        [
+          "trust",
+          19
+        ],
+        [
+          "sadness",
+          18
+        ],
+        [
+          "anticipation",
+          18
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 9838,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "partai",
@@ -100,16 +100,12 @@
         157
       ],
       [
-        "dialectics",
-        28
-      ],
-      [
         "revolusi",
         119
       ],
       [
-        "trotzkisten",
-        13
+        "dialectics",
+        28
       ],
       [
         "komunis",
@@ -120,28 +116,32 @@
         41
       ],
       [
-        "trotzkisme",
-        10
+        "trotzkisten",
+        13
       ],
       [
         "soviet",
         32
       ],
       [
-        "negeri-negeri",
-        23
+        "kaum",
+        57
       ],
       [
-        "rusia",
-        30
+        "trotzkisme",
+        10
+      ],
+      [
+        "orang",
+        104
       ],
       [
         "sosialis",
         33
       ],
       [
-        "thesis",
-        18
+        "rusia",
+        30
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         4601,
-        0.73
+        0.76
       ],
       [
         536,
-        0.57
+        0.6
       ],
       [
         4860,
-        0.55
-      ],
-      [
-        9265,
-        0.21
+        0.58
       ],
       [
         9247,
-        0.2
+        0.26
       ],
       [
-        1319,
-        0.2
+        9265,
+        0.25
+      ],
+      [
+        4647,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 196,
+      "negative": 138,
+      "trend": [
+        0.3,
+        0.31,
+        0.09,
+        0.2,
+        0.3,
+        0.29,
+        0.09,
+        0.25,
+        0,
+        -0.09,
+        0.29,
+        -0.8,
+        0.2,
+        0.36,
+        0.25,
+        0.58
+      ],
+      "emotions": [
+        [
+          "fear",
+          22
+        ],
+        [
+          "anger",
+          18
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

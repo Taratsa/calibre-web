@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 3847,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "kacintah",
@@ -121,36 +121,36 @@
         50
       ],
       [
-        "tuanku",
-        29
-      ],
-      [
         "bukit",
         40
+      ],
+      [
+        "tuanku",
+        29
       ],
       [
         "hiang",
         14
       ],
       [
-        "indar",
-        10
-      ],
-      [
         "kerinci",
         13
       ],
       [
-        "jalatang",
-        7
+        "indar",
+        10
       ],
       [
         "hyang",
         15
       ],
       [
-        "terapung",
-        12
+        "putri",
+        26
+      ],
+      [
+        "jalatang",
+        7
       ]
     ],
     "phrases": [
@@ -194,24 +194,81 @@
       ],
       [
         5195,
-        0.22
+        0.24
       ],
       [
         5639,
-        0.22
+        0.24
       ],
       [
         5637,
-        0.21
+        0.24
       ],
       [
         5638,
-        0.19
+        0.21
       ],
       [
         5194,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 74,
+      "negative": 27,
+      "trend": [
+        -0.2,
+        null,
+        null,
+        0.56,
+        0.2,
+        1,
+        1,
+        0.43,
+        0.2,
+        null,
+        null,
+        0.25,
+        null,
+        0.71,
+        0.33,
+        1
+      ],
+      "emotions": [
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

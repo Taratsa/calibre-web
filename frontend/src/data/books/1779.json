@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 10034,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "sosial",
@@ -99,20 +99,12 @@
     ],
     "distinct": [
       [
-        "imajiner",
-        17
-      ],
-      [
         "kesetaraan",
         27
       ],
       [
-        "historisisme",
-        7
-      ],
-      [
-        "utopis",
-        13
+        "imajiner",
+        17
       ],
       [
         "senjata",
@@ -123,28 +115,36 @@
         32
       ],
       [
-        "teknologi",
-        28
+        "utopis",
+        13
+      ],
+      [
+        "sosial",
+        39
       ],
       [
         "revolusioner",
         21
       ],
       [
-        "utopia",
-        10
+        "historisisme",
+        7
       ],
       [
-        "praktik",
-        17
+        "teknologi",
+        28
+      ],
+      [
+        "tindakan",
+        28
       ],
       [
         "perjuangan",
         22
       ],
       [
-        "bertindak",
-        20
+        "praktik",
+        17
       ]
     ],
     "phrases": [
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        7007,
-        0.28
-      ],
-      [
         1807,
-        0.28
+        0.33
       ],
       [
-        7014,
-        0.26
+        7007,
+        0.33
       ],
       [
         2110,
-        0.23
+        0.3
       ],
       [
         2484,
-        0.23
+        0.29
       ],
       [
         1942,
-        0.22
+        0.28
+      ],
+      [
+        2701,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 165,
+      "negative": 144,
+      "trend": [
+        0.2,
+        0.11,
+        0.14,
+        -0.33,
+        -0.55,
+        0.33,
+        0.12,
+        0.22,
+        0.6,
+        0.17,
+        0.13,
+        -0.18,
+        0.14,
+        0.04,
+        -0.12,
+        0.22
+      ],
+      "emotions": [
+        [
+          "fear",
+          18
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1438,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "hidup",
@@ -101,68 +101,75 @@
         8
       ],
       [
-        "tanggapan",
-        6
+        "hidup",
+        17
       ],
       [
         "kolektif",
         8
       ],
       [
-        "panik",
-        4
-      ],
-      [
-        "bertahan",
-        7
+        "tanggapan",
+        6
       ],
       [
         "organisasi",
         9
       ],
       [
-        "berantakan",
-        3
+        "bertahan",
+        7
       ],
       [
-        "anarki",
-        3
+        "panik",
+        4
       ],
       [
         "perlawanan",
         6
       ],
       [
-        "dapur",
-        4
+        "dunia",
+        11
+      ],
+      [
+        "menyusun",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7186,
-        0.28
-      ],
-      [
-        7169,
         0.27
       ],
       [
         7988,
-        0.24
+        0.23
+      ],
+      [
+        7169,
+        0.23
       ],
       [
         1926,
-        0.18
+        0.21
       ],
       [
         7414,
-        0.16
+        0.19
       ],
       [
-        7399,
-        0.15
+        2488,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 41,
+      "negative": 32,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

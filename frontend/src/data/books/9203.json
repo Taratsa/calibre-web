@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3228,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "stirner",
@@ -135,24 +135,24 @@
         8
       ],
       [
-        "ide-beku",
-        5
+        "sikap",
+        26
       ],
       [
-        "nir-makna",
-        4
+        "ide-beku",
+        5
       ],
       [
         "reaktif",
         8
       ],
       [
-        "unique",
-        9
+        "nir-makna",
+        4
       ],
       [
-        "skizoid",
-        4
+        "unique",
+        9
       ]
     ],
     "phrases": [
@@ -192,11 +192,11 @@
     "similar": [
       [
         1781,
-        0.66
+        0.65
       ],
       [
         2281,
-        0.33
+        0.34
       ],
       [
         3952,
@@ -204,16 +204,23 @@
       ],
       [
         9219,
-        0.24
+        0.25
       ],
       [
         4682,
-        0.22
+        0.23
       ],
       [
         8113,
-        0.21
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 34,
+      "negative": 35,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

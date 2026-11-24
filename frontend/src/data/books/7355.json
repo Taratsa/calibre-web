@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2129,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "koloni",
@@ -114,16 +114,16 @@
         9
       ],
       [
-        "koloni-koloni",
-        5
-      ],
-      [
         "australia",
         11
       ],
       [
-        "ketimbang",
-        7
+        "koloni-koloni",
+        5
+      ],
+      [
+        "mesti",
+        9
       ],
       [
         "anarkis",
@@ -134,12 +134,16 @@
         8
       ],
       [
-        "siberia",
-        3
+        "ketimbang",
+        7
       ],
       [
-        "mesti",
-        9
+        "kaum",
+        11
+      ],
+      [
+        "siberia",
+        3
       ],
       [
         "argentina",
@@ -148,10 +152,6 @@
       [
         "eksperimen",
         4
-      ],
-      [
-        "budidaya",
-        3
       ]
     ],
     "phrases": [
@@ -171,7 +171,7 @@
     "similar": [
       [
         3963,
-        0.49
+        0.51
       ],
       [
         7356,
@@ -179,20 +179,44 @@
       ],
       [
         7354,
-        0.13
-      ],
-      [
-        2385,
-        0.12
-      ],
-      [
-        1991,
-        0.11
+        0.17
       ],
       [
         3989,
-        0.11
+        0.15
+      ],
+      [
+        2584,
+        0.14
+      ],
+      [
+        6767,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 49,
+      "negative": 39,
+      "trend": [
+        null,
+        -0.75,
+        null,
+        0.6,
+        null,
+        0.6,
+        -0.2,
+        0.71,
+        null,
+        0.25,
+        -0.67,
+        null,
+        0.25,
+        null,
+        null,
+        0.2
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2402,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "stirner",
@@ -139,12 +139,12 @@
         3
       ],
       [
-        "materialism",
-        4
+        "filsafat",
+        9
       ],
       [
-        "egoisme",
-        5
+        "materialism",
+        4
       ]
     ],
     "phrases": [
@@ -176,24 +176,31 @@
       ],
       [
         7396,
-        0.19
+        0.2
       ],
       [
         2406,
-        0.18
+        0.19
       ],
       [
         3961,
-        0.17
+        0.19
       ],
       [
         3964,
-        0.17
+        0.18
       ],
       [
-        7381,
-        0.16
+        3697,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 45,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

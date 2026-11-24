@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6049,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "puisi",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "hantu",
-        48
-      ],
-      [
         "puisi",
         59
+      ],
+      [
+        "hantu",
+        48
       ],
       [
         "kenangan",
         45
       ],
       [
-        "hauntology",
-        7
-      ],
-      [
         "rifki",
         13
+      ],
+      [
+        "hauntology",
+        7
       ],
       [
         "rumahmu",
         16
       ],
       [
-        "merindukanmu",
-        10
-      ],
-      [
         "laut",
         32
-      ],
-      [
-        "tubuhmu",
-        11
       ],
       [
         "cinta",
         28
       ],
       [
-        "ombak",
-        15
+        "merindukanmu",
+        10
       ],
       [
-        "memintamu",
-        6
+        "kau",
+        25
+      ],
+      [
+        "malam",
+        32
+      ],
+      [
+        "ombak",
+        15
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         280,
-        0.24
+        0.27
       ],
       [
         3040,
-        0.23
+        0.26
       ],
       [
         7375,
-        0.23
+        0.25
       ],
       [
         3044,
-        0.21
+        0.23
+      ],
+      [
+        3037,
+        0.2
       ],
       [
         2999,
-        0.17
-      ],
-      [
-        3035,
-        0.17
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.34,
+      "positive": 63,
+      "negative": 128,
+      "trend": [
+        null,
+        0.25,
+        -0.83,
+        -0.1,
+        -0.11,
+        -0.33,
+        -0.67,
+        -0.38,
+        -0.71,
+        0,
+        -0.09,
+        -0.73,
+        0,
+        0,
+        -0.45,
+        -0.38
+      ],
+      "emotions": [
+        [
+          "sadness",
+          51
+        ],
+        [
+          "joy",
+          32
+        ],
+        [
+          "fear",
+          22
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

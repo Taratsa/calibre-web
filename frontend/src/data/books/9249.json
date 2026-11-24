@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1824,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "belanda",
@@ -108,12 +108,20 @@
         8
       ],
       [
+        "borjuis",
+        10
+      ],
+      [
         "kuhandel",
         3
       ],
       [
-        "borjuis",
-        10
+        "indonesia",
+        30
+      ],
+      [
+        "nis",
+        6
       ],
       [
         "hak-milik-asing",
@@ -124,24 +132,16 @@
         4
       ],
       [
-        "nis",
-        6
-      ],
-      [
         "linggarjati",
         4
       ],
       [
-        "kapitalis-imperialis",
-        3
-      ],
-      [
-        "hak-milik",
-        3
-      ],
-      [
         "kursi",
         8
+      ],
+      [
+        "kapitalis-imperialis",
+        3
       ]
     ],
     "phrases": [
@@ -181,28 +181,29 @@
     "similar": [
       [
         9258,
-        0.27
+        0.28
       ],
       [
         4650,
-        0.24
+        0.26
       ],
       [
         380,
-        0.24
+        0.26
       ],
       [
         299,
-        0.24
+        0.26
       ],
       [
         9255,
-        0.18
+        0.2
       ],
       [
-        9253,
-        0.17
+        9251,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

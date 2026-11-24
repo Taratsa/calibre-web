@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2317,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "ego",
@@ -107,20 +107,36 @@
         18
       ],
       [
+        "konspirasi",
+        8
+      ],
+      [
         "konspirator",
         5
       ],
       [
-        "konspirasi",
-        8
+        "berantai",
+        5
+      ],
+      [
+        "individu",
+        12
       ],
       [
         "sekuensial",
         3
       ],
       [
-        "berantai",
-        5
+        "struktur",
+        11
+      ],
+      [
+        "tindakan",
+        13
+      ],
+      [
+        "kekacauan",
+        7
       ],
       [
         "progresi",
@@ -128,22 +144,6 @@
       ],
       [
         "kriminologi",
-        3
-      ],
-      [
-        "bagja",
-        3
-      ],
-      [
-        "ilegal",
-        6
-      ],
-      [
-        "kekacauan",
-        7
-      ],
-      [
-        "meremukkan",
         3
       ]
     ],
@@ -184,28 +184,60 @@
     "similar": [
       [
         2489,
-        0.15
+        0.16
       ],
       [
         1282,
-        0.15
+        0.16
       ],
       [
         7186,
         0.15
       ],
       [
-        7130,
-        0.12
-      ],
-      [
-        2571,
-        0.12
-      ],
-      [
         4066,
-        0.11
+        0.14
+      ],
+      [
+        2450,
+        0.14
+      ],
+      [
+        10767,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 36,
+      "negative": 45,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          9
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

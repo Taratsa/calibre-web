@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6766,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "agraria",
@@ -103,12 +103,12 @@
         209
       ],
       [
-        "konflik-konflik",
-        53
-      ],
-      [
         "konflik",
         123
+      ],
+      [
+        "konflik-konflik",
+        53
       ],
       [
         "presiden",
@@ -127,24 +127,24 @@
         20
       ],
       [
+        "kerja",
+        51
+      ],
+      [
+        "tanah",
+        51
+      ],
+      [
+        "masyarakat",
+        54
+      ],
+      [
         "kasus-kasus",
         21
       ],
       [
-        "reforma",
-        13
-      ],
-      [
-        "pertanahan",
-        15
-      ],
-      [
-        "abolisi",
-        7
-      ],
-      [
-        "pejuang",
-        15
+        "rakyat",
+        40
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         9050,
-        0.36
+        0.41
       ],
       [
         8729,
-        0.34
+        0.38
       ],
       [
         8676,
-        0.3
-      ],
-      [
-        8446,
-        0.29
+        0.35
       ],
       [
         8992,
-        0.29
+        0.34
+      ],
+      [
+        8446,
+        0.34
       ],
       [
         8547,
-        0.29
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 57,
+      "negative": 68,
+      "trend": [
+        -0.11,
+        -0.33,
+        null,
+        -0.08,
+        -0.5,
+        -0.78,
+        null,
+        0.14,
+        -0.71,
+        0.43,
+        0.67,
+        -0.41,
+        0.33,
+        null,
+        0.6,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          148
+        ],
+        [
+          "trust",
+          40
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

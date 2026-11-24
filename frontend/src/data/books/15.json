@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3697,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "band",
@@ -123,24 +123,24 @@
         14
       ],
       [
-        "ajasih",
-        4
-      ],
-      [
-        "hiphop",
-        6
-      ],
-      [
         "aja",
         14
+      ],
+      [
+        "nyaman",
+        15
+      ],
+      [
+        "ajasih",
+        4
       ],
       [
         "sampe",
         9
       ],
       [
-        "daganganya",
-        3
+        "hiphop",
+        6
       ],
       [
         "berkesan",
@@ -188,10 +188,14 @@
       ],
       [
         4742,
-        0.2
+        0.21
       ],
       [
         132,
+        0.21
+      ],
+      [
+        2738,
         0.2
       ],
       [
@@ -199,13 +203,62 @@
         0.19
       ],
       [
-        2738,
-        0.19
-      ],
-      [
         2655,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 76,
+      "negative": 35,
+      "trend": [
+        0.09,
+        0.2,
+        1,
+        0.38,
+        null,
+        0.67,
+        1,
+        -0.75,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0.75,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

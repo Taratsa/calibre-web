@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6107,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "indonesia",
@@ -103,35 +103,27 @@
         15
       ],
       [
-        "ham",
-        30
-      ],
-      [
         "kemerdekaan",
         37
       ],
       [
-        "kontras",
-        18
-      ],
-      [
-        "penyiksaan",
-        18
+        "ham",
+        30
       ],
       [
         "tragedi",
         19
       ],
       [
+        "penyiksaan",
+        18
+      ],
+      [
+        "kontras",
+        18
+      ],
+      [
         "fatia-haris",
-        6
-      ],
-      [
-        "kepolisian",
-        17
-      ],
-      [
-        "fatia",
         6
       ],
       [
@@ -139,12 +131,20 @@
         24
       ],
       [
-        "kwitangologi",
-        4
+        "kepolisian",
+        17
       ],
       [
-        "marco",
+        "indonesia",
+        43
+      ],
+      [
+        "fatia",
         6
+      ],
+      [
+        "aparat",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         6951,
-        0.27
+        0.3
       ],
       [
         115,
-        0.27
+        0.3
       ],
       [
         6953,
-        0.25
+        0.28
       ],
       [
         124,
-        0.25
+        0.28
       ],
       [
         6909,
-        0.22
+        0.25
       ],
       [
         125,
-        0.22
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.49,
+      "positive": 51,
+      "negative": 149,
+      "trend": [
+        -0.16,
+        -0.33,
+        -0.65,
+        -0.29,
+        -0.5,
+        -0.56,
+        -0.68,
+        -0.5,
+        -0.64,
+        -0.33,
+        -0.6,
+        -0.82,
+        null,
+        -0.09,
+        0.11,
+        -0.86
+      ],
+      "emotions": [
+        [
+          "anger",
+          47
+        ],
+        [
+          "fear",
+          31
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

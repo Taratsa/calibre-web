@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 995,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "revolusioner",
@@ -114,6 +114,10 @@
         8
       ],
       [
+        "kehidupan",
+        10
+      ],
+      [
         "liburan",
         3
       ],
@@ -122,16 +126,12 @@
         6
       ],
       [
-        "kehidupan",
-        10
+        "tujuan",
+        6
       ],
       [
         "praktis",
         3
-      ],
-      [
-        "tujuan",
-        6
       ],
       [
         "khusus",
@@ -146,40 +146,41 @@
         4
       ],
       [
-        "proyek",
-        3
+        "masyarakat",
+        5
       ],
       [
-        "sehari-hari",
-        3
+        "politik",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8132,
-        0.4
+        0.48
       ],
       [
         1913,
-        0.4
-      ],
-      [
-        1924,
-        0.14
+        0.47
       ],
       [
         7273,
-        0.14
+        0.2
       ],
       [
-        2759,
-        0.13
+        7544,
+        0.19
+      ],
+      [
+        7094,
+        0.19
       ],
       [
         2413,
-        0.12
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

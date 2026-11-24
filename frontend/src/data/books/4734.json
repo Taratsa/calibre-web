@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1310,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "orang",
@@ -111,6 +111,10 @@
         3
       ],
       [
+        "tindakan",
+        10
+      ],
+      [
         "mematuhi",
         5
       ],
@@ -119,31 +123,27 @@
         6
       ],
       [
-        "hindari",
-        3
-      ],
-      [
-        "membuatmu",
-        3
-      ],
-      [
-        "pastikan",
-        3
+        "orang",
+        15
       ],
       [
         "tindakan-tindakan",
         4
       ],
       [
-        "tindakan",
-        10
-      ],
-      [
-        "tanah-tanah",
+        "membuatmu",
         3
       ],
       [
-        "elit",
+        "hindari",
+        3
+      ],
+      [
+        "orang-orang",
+        8
+      ],
+      [
+        "tanah-tanah",
         3
       ]
     ],
@@ -163,29 +163,30 @@
     ],
     "similar": [
       [
-        2150,
-        0.15
-      ],
-      [
-        2512,
+        1744,
         0.14
       ],
       [
-        3981,
-        0.13
+        7225,
+        0.14
       ],
       [
-        2398,
-        0.13
-      ],
-      [
-        1744,
+        2150,
         0.12
       ],
       [
-        7225,
+        1980,
+        0.12
+      ],
+      [
+        7857,
+        0.12
+      ],
+      [
+        3060,
         0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

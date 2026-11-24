@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2527,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "pekerja",
@@ -111,20 +111,16 @@
         16
       ],
       [
-        "privatisasi",
-        12
-      ],
-      [
         "serikat",
         30
       ],
       [
-        "mogok",
-        14
+        "privatisasi",
+        12
       ],
       [
-        "rejim",
-        8
+        "mogok",
+        14
       ],
       [
         "buruh",
@@ -135,16 +131,20 @@
         15
       ],
       [
-        "perusahaan-perusahaan",
-        10
+        "rejim",
+        8
       ],
       [
         "pegawai",
         15
       ],
       [
-        "outsourcing",
-        5
+        "perusahaan-perusahaan",
+        10
+      ],
+      [
+        "orde",
+        10
       ]
     ],
     "phrases": [
@@ -183,29 +183,30 @@
     ],
     "similar": [
       [
-        6784,
-        0.2
-      ],
-      [
-        7240,
-        0.19
-      ],
-      [
-        5911,
-        0.19
+        10269,
+        0.24
       ],
       [
         283,
-        0.19
+        0.24
       ],
       [
-        6785,
-        0.18
+        7240,
+        0.24
+      ],
+      [
+        5911,
+        0.22
+      ],
+      [
+        6784,
+        0.21
       ],
       [
         5894,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

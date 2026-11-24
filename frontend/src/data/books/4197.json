@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 582,
-    "longer_than": 6,
+    "longer_than": 43,
     "top": [
       [
         "pernyataan",
@@ -103,16 +103,16 @@
         6
       ],
       [
-        "mustapha",
-        5
+        "sajak",
+        8
       ],
       [
         "serangkai",
         6
       ],
       [
-        "sajak",
-        8
+        "mustapha",
+        5
       ],
       [
         "gurindam",
@@ -123,20 +123,20 @@
         7
       ],
       [
+        "pernyataan",
+        8
+      ],
+      [
         "adegan",
+        4
+      ],
+      [
+        "sarang",
         4
       ],
       [
         "berkaca",
         3
-      ],
-      [
-        "pernyataan",
-        8
-      ],
-      [
-        "sarang",
-        4
       ],
       [
         "pembaca",
@@ -151,16 +151,25 @@
     "similar": [
       [
         8041,
-        0.22
+        0.21
       ],
       [
         2265,
-        0.13
+        0.14
       ],
       [
         2250,
-        0.12
+        0.13
+      ],
+      [
+        5674,
+        0.1
+      ],
+      [
+        4179,
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

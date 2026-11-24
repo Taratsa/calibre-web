@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2402,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "engkau",
@@ -116,6 +116,10 @@
         15
       ],
       [
+        "engkau",
+        26
+      ],
+      [
         "maruto",
         10
       ],
@@ -124,28 +128,24 @@
         14
       ],
       [
-        "engkau",
-        26
+        "scorang",
+        9
       ],
       [
         "dirinyia",
         5
       ],
       [
+        "permaisuri",
+        11
+      ],
+      [
         "anak-anaknyia",
         4
       ],
       [
-        "scorang",
-        9
-      ],
-      [
         "amtenar",
         6
-      ],
-      [
-        "permaisuri",
-        11
       ],
       [
         "masasilam",
@@ -164,16 +164,31 @@
       ],
       [
         1352,
-        0.28
+        0.29
+      ],
+      [
+        1574,
+        0.12
       ],
       [
         6755,
         0.12
       ],
       [
-        4020,
+        1606,
+        0.12
+      ],
+      [
+        1406,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 33,
+      "negative": 39,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

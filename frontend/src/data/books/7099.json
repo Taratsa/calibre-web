@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 577,
-    "longer_than": 6,
+    "longer_than": 43,
     "top": [
       [
         "membunuh",
@@ -110,12 +110,12 @@
         3
       ],
       [
-        "drone",
-        3
-      ],
-      [
         "menewaskan",
         4
+      ],
+      [
+        "drone",
+        3
       ],
       [
         "insentif",
@@ -130,12 +130,12 @@
         3
       ],
       [
-        "berdosa",
-        3
-      ],
-      [
         "membunuh",
         5
+      ],
+      [
+        "berdosa",
+        3
       ],
       [
         "presiden",
@@ -146,19 +146,19 @@
         3
       ],
       [
-        "penduduk",
-        3
+        "politik",
+        4
       ],
       [
-        "keputusan",
+        "penduduk",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        7504,
-        0.12
+        17428,
+        0.14
       ],
       [
         4118,
@@ -169,9 +169,18 @@
         0.11
       ],
       [
+        16332,
+        0.11
+      ],
+      [
         3765,
-        0.1
+        0.11
+      ],
+      [
+        7504,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

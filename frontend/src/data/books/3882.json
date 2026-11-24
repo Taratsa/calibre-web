@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 8853,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "mitras",
@@ -119,15 +119,15 @@
         9
       ],
       [
-        "solitude",
-        8
-      ],
-      [
         "buletin",
         14
       ],
       [
-        "quit",
+        "redaksi",
+        18
+      ],
+      [
+        "solitude",
         8
       ],
       [
@@ -135,11 +135,11 @@
         8
       ],
       [
-        "redaksi",
-        18
+        "wesel",
+        8
       ],
       [
-        "wesel",
+        "colour",
         8
       ],
       [
@@ -147,12 +147,12 @@
         6
       ],
       [
-        "colour",
+        "quit",
         8
       ],
       [
-        "sehali",
-        4
+        "lajang",
+        8
       ]
     ],
     "phrases": [
@@ -200,8 +200,21 @@
       ],
       [
         3853,
+        0.11
+      ],
+      [
+        5846,
+        0.11
+      ],
+      [
+        3310,
+        0.1
+      ],
+      [
+        3308,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

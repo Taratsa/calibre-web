@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 13423,
-    "longer_than": 68,
+    "longer_than": 84,
     "top": [
       [
         "teknologi",
@@ -107,44 +107,44 @@
         28
       ],
       [
-        "semikonduktor",
-        19
-      ],
-      [
         "tiongkok",
         52
-      ],
-      [
-        "teknologis",
-        26
       ],
       [
         "iklim",
         48
       ],
       [
+        "teknologis",
+        26
+      ],
+      [
+        "semikonduktor",
+        19
+      ],
+      [
         "teknologi",
         64
-      ],
-      [
-        "konten",
-        27
-      ],
-      [
-        "ekonomik",
-        13
       ],
       [
         "kecerdasan",
         29
       ],
       [
-        "openai",
-        8
+        "model",
+        51
+      ],
+      [
+        "konten",
+        27
       ],
       [
         "pelatihan",
         34
+      ],
+      [
+        "buatan",
+        33
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         3933,
-        0.24
+        0.25
       ],
       [
         3830,
-        0.24
+        0.25
       ],
       [
         7000,
-        0.24
+        0.25
       ],
       [
         2660,
-        0.23
+        0.24
       ],
       [
         7886,
-        0.19
+        0.21
       ],
       [
         1958,
-        0.19
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 207,
+      "negative": 182,
+      "trend": [
+        -0.08,
+        -0.43,
+        0.11,
+        0.14,
+        0.21,
+        -0.25,
+        -0.04,
+        -0.16,
+        0.38,
+        0.23,
+        -0.1,
+        -0.16,
+        0.42,
+        0.27,
+        0.38,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          51
+        ],
+        [
+          "fear",
+          13
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

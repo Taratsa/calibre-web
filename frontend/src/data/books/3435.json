@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1998,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "kesusasteraan",
@@ -112,12 +112,16 @@
         15
       ],
       [
+        "djaman",
+        10
+      ],
+      [
         "menghidupkannja",
         5
       ],
       [
-        "djaman",
-        10
+        "indonesia",
+        41
       ],
       [
         "sadja",
@@ -132,20 +136,16 @@
         6
       ],
       [
-        "sipentjipta",
-        3
+        "daerah",
+        22
       ],
       [
         "masjarakat",
         8
       ],
       [
-        "kuna",
-        5
-      ],
-      [
-        "tertjantum",
-        4
+        "sipentjipta",
+        3
       ]
     ],
     "phrases": [
@@ -185,28 +185,29 @@
     "similar": [
       [
         6750,
-        0.51
+        0.53
       ],
       [
         7585,
+        0.21
+      ],
+      [
+        7704,
+        0.19
+      ],
+      [
+        3973,
+        0.19
+      ],
+      [
+        3416,
         0.19
       ],
       [
         7639,
-        0.17
-      ],
-      [
-        7704,
-        0.17
-      ],
-      [
-        3973,
-        0.17
-      ],
-      [
-        1209,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1972,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "orang",
@@ -103,6 +103,10 @@
         11
       ],
       [
+        "manusia",
+        23
+      ],
+      [
         "kebudajaan",
         7
       ],
@@ -111,31 +115,27 @@
         9
       ],
       [
-        "masjarakat",
-        6
+        "orang",
+        27
       ],
       [
-        "ke-tuhanan",
-        3
+        "masjarakat",
+        6
       ],
       [
         "mempunjai",
         6
       ],
       [
-        "madjallah",
-        3
+        "semangat",
+        12
       ],
       [
-        "kegentingan",
-        3
+        "pribadi",
+        11
       ],
       [
-        "djiwa",
-        5
-      ],
-      [
-        "kerohanian",
+        "ke-tuhanan",
         3
       ]
     ],
@@ -143,28 +143,29 @@
     "similar": [
       [
         3416,
-        0.2
-      ],
-      [
-        7833,
-        0.17
-      ],
-      [
-        3446,
-        0.17
+        0.23
       ],
       [
         7665,
-        0.17
+        0.19
       ],
       [
-        7585,
-        0.16
+        7833,
+        0.18
+      ],
+      [
+        3446,
+        0.18
       ],
       [
         7783,
-        0.15
+        0.18
+      ],
+      [
+        7585,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

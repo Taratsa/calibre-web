@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2842,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "masyarakat",
@@ -115,36 +115,36 @@
         15
       ],
       [
-        "modulasi",
-        5
-      ],
-      [
-        "foucault",
-        7
-      ],
-      [
-        "pabrik",
-        14
+        "masyarakat",
+        30
       ],
       [
         "tertutup",
         15
       ],
       [
-        "gilles",
-        4
+        "pabrik",
+        14
+      ],
+      [
+        "foucault",
+        7
+      ],
+      [
+        "modulasi",
+        5
       ],
       [
         "disiplin",
         10
       ],
       [
-        "postscript",
-        3
+        "produksi",
+        12
       ],
       [
-        "terus-menerus",
-        10
+        "gilles",
+        4
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         2722,
-        0.49
+        0.5
       ],
       [
         2273,
-        0.17
+        0.19
       ],
       [
         7901,
-        0.16
+        0.18
       ],
       [
         7993,
-        0.16
+        0.17
       ],
       [
-        2095,
-        0.15
+        2652,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 39,
+      "negative": 34,
+      "trend": [
+        -0.14,
+        null,
+        null,
+        -0.2,
+        0.2,
+        0.43,
+        null,
+        null,
+        0.2,
+        null,
+        -0.14,
+        null,
+        -0.43,
+        0.33,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

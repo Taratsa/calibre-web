@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1581,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "kau",
@@ -99,10 +99,6 @@
     ],
     "distinct": [
       [
-        "amorfati",
-        4
-      ],
-      [
         "kau",
         16
       ],
@@ -111,12 +107,20 @@
         15
       ],
       [
-        "kumbara",
-        3
+        "amorfati",
+        4
+      ],
+      [
+        "gila",
+        10
       ],
       [
         "amor",
         4
+      ],
+      [
+        "kumbara",
+        3
       ],
       [
         "nisan-nisan",
@@ -127,8 +131,8 @@
         3
       ],
       [
-        "gila",
-        10
+        "kepalaku",
+        5
       ],
       [
         "hukumlah",
@@ -139,12 +143,8 @@
         3
       ],
       [
-        "kepalaku",
-        5
-      ],
-      [
-        "makam",
-        5
+        "tuhan",
+        10
       ]
     ],
     "phrases": [
@@ -175,29 +175,61 @@
     ],
     "similar": [
       [
-        7323,
-        0.12
-      ],
-      [
         6970,
-        0.12
+        0.15
       ],
       [
         2575,
-        0.12
+        0.15
       ],
       [
         3031,
-        0.12
+        0.15
       ],
       [
         3040,
-        0.11
+        0.14
       ],
       [
         7375,
-        0.11
+        0.14
+      ],
+      [
+        280,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 31,
+      "negative": 35,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          22
+        ],
+        [
+          "sadness",
+          18
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

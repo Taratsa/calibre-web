@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 965,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "indonesia",
@@ -112,36 +112,36 @@
         4
       ],
       [
-        "renville",
-        3
-      ],
-      [
-        "boneka",
-        4
-      ],
-      [
         "amerika",
         9
       ],
       [
-        "complex",
-        3
+        "indonesia",
+        17
       ],
       [
-        "hutang",
-        4
+        "negara",
+        13
+      ],
+      [
+        "renville",
+        3
       ],
       [
         "belanda",
         7
       ],
       [
-        "malaka",
-        3
+        "boneka",
+        4
       ],
       [
-        "berunding",
-        3
+        "hutang",
+        4
+      ],
+      [
+        "asing",
+        7
       ]
     ],
     "phrases": [
@@ -169,28 +169,29 @@
     "similar": [
       [
         9249,
-        0.27
+        0.28
+      ],
+      [
+        4651,
+        0.28
+      ],
+      [
+        382,
+        0.28
       ],
       [
         9253,
         0.26
       ],
       [
-        4651,
-        0.26
-      ],
-      [
-        382,
-        0.26
-      ],
-      [
         9255,
-        0.21
+        0.23
       ],
       [
-        9245,
-        0.16
+        18027,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

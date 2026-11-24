@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 4455,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "tahanan",
@@ -114,48 +114,48 @@
         99
       ],
       [
-        "shaco",
-        10
-      ],
-      [
         "penjara",
         44
       ],
       [
-        "jepang",
-        25
+        "shaco",
+        10
       ],
       [
         "serikat",
         37
       ],
       [
+        "jepang",
+        25
+      ],
+      [
         "serikattahanan",
         5
-      ],
-      [
-        "abolitionist",
-        5
-      ],
-      [
-        "sepuntung",
-        4
-      ],
-      [
-        "sel",
-        12
-      ],
-      [
-        "dago",
-        6
       ],
       [
         "kawan-kawan",
         15
       ],
       [
-        "shuji",
-        3
+        "abolitionist",
+        5
+      ],
+      [
+        "kawan",
+        18
+      ],
+      [
+        "sel",
+        12
+      ],
+      [
+        "sepuntung",
+        4
+      ],
+      [
+        "rokok",
+        11
       ]
     ],
     "phrases": [
@@ -195,28 +195,81 @@
     "similar": [
       [
         2185,
-        0.21
+        0.22
       ],
       [
         2266,
-        0.2
+        0.22
       ],
       [
         2184,
-        0.18
+        0.2
       ],
       [
         1939,
-        0.18
+        0.2
       ],
       [
         7002,
-        0.17
+        0.2
       ],
       [
         2267,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.12,
+      "positive": 49,
+      "negative": 62,
+      "trend": [
+        null,
+        null,
+        -0.47,
+        -0.5,
+        -0.43,
+        1,
+        0.75,
+        0.38,
+        null,
+        -1,
+        -0.14,
+        -0.67,
+        null,
+        0.14,
+        -0.33,
+        0.67
+      ],
+      "emotions": [
+        [
+          "fear",
+          12
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

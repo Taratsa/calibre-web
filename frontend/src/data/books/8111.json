@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 2490,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "perpustakaan",
@@ -127,36 +127,36 @@
         12
       ],
       [
-        "lapak",
-        4
-      ],
-      [
         "bandung",
         13
-      ],
-      [
-        "literasi",
-        7
       ],
       [
         "anti",
         10
       ],
       [
-        "pembubaran",
-        5
+        "lapak",
+        4
       ],
       [
-        "matikan",
-        3
+        "literasi",
+        7
+      ],
+      [
+        "membaca",
+        12
+      ],
+      [
+        "pembubaran",
+        5
       ],
       [
         "ruang-ruang",
         5
       ],
       [
-        "intelektual",
-        6
+        "perlawanan",
+        8
       ]
     ],
     "phrases": [
@@ -196,28 +196,52 @@
     "similar": [
       [
         3104,
-        0.53
+        0.55
       ],
       [
-        8139,
-        0.19
+        15616,
+        0.23
+      ],
+      [
+        15194,
+        0.23
       ],
       [
         8104,
-        0.19
+        0.22
       ],
       [
         2750,
-        0.17
+        0.2
       ],
       [
-        4720,
-        0.16
-      ],
-      [
-        3710,
-        0.16
+        9166,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 65,
+      "negative": 20,
+      "trend": [
+        null,
+        null,
+        0,
+        0.2,
+        null,
+        null,
+        -0.2,
+        1,
+        1,
+        0.56,
+        0.4,
+        0.8,
+        null,
+        null,
+        0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2862,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "sau",
@@ -125,10 +125,6 @@
         25
       ],
       [
-        "lamoto",
-        10
-      ],
-      [
         "rano",
         16
       ],
@@ -137,16 +133,20 @@
         22
       ],
       [
-        "mobau",
-        9
+        "lamoto",
+        10
       ],
       [
         "angge",
         14
       ],
       [
-        "modong",
-        8
+        "mobau",
+        9
+      ],
+      [
+        "perahu",
+        27
       ]
     ],
     "phrases": [
@@ -183,6 +183,30 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5797,
+        0.12
+      ],
+      [
+        6254,
+        0.11
+      ],
+      [
+        23,
+        0.11
+      ],
+      [
+        4972,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": -0.13,
+      "positive": 26,
+      "negative": 34,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

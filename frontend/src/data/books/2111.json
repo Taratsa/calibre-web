@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1901,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "kekerasan",
@@ -107,6 +107,10 @@
         7
       ],
       [
+        "kekerasan",
+        21
+      ],
+      [
         "kejengahan",
         5
       ],
@@ -119,32 +123,28 @@
         5
       ],
       [
-        "kekerasan",
-        21
+        "menyenangkan",
+        10
       ],
       [
         "agnostic",
         3
       ],
       [
-        "spektakel",
-        3
+        "youth",
+        5
       ],
       [
-        "menyenangkan",
-        10
+        "spektakel",
+        3
       ],
       [
         "subkultur",
         4
       ],
       [
-        "youth",
-        5
-      ],
-      [
-        "keren",
-        4
+        "musik",
+        7
       ]
     ],
     "phrases": [
@@ -176,16 +176,44 @@
       ],
       [
         7334,
-        0.13
-      ],
-      [
-        2263,
-        0.13
+        0.14
       ],
       [
         2798,
-        0.13
+        0.14
+      ],
+      [
+        2234,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 35,
+      "negative": 28,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

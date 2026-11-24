@@ -11,7 +11,7 @@
   ],
   "author_sort": "Nyoto",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6514,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "rakyat",
@@ -116,12 +116,12 @@
         36
       ],
       [
-        "parahadirin",
-        23
-      ],
-      [
         "soviet",
         53
+      ],
+      [
+        "parahadirin",
+        23
       ],
       [
         "stalin",
@@ -136,20 +136,20 @@
         42
       ],
       [
-        "kawan",
-        52
+        "rakyat",
+        76
       ],
       [
-        "se-olah-olah",
-        10
+        "kawan",
+        52
       ],
       [
         "tawa",
         26
       ],
       [
-        "rakyat",
-        76
+        "se-olah-olah",
+        10
       ],
       [
         "di-negeri-negeri",
@@ -193,28 +193,85 @@
     "similar": [
       [
         1444,
-        0.59
+        0.6
       ],
       [
         4900,
-        0.56
+        0.58
       ],
       [
         7740,
-        0.55
+        0.57
       ],
       [
         1582,
-        0.28
+        0.3
       ],
       [
         7792,
-        0.2
+        0.22
       ],
       [
         4907,
-        0.2
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 132,
+      "negative": 62,
+      "trend": [
+        0.56,
+        0.54,
+        0.29,
+        0.56,
+        0.6,
+        0.6,
+        1,
+        0.25,
+        0.38,
+        -0.05,
+        0.88,
+        1,
+        -0.5,
+        -0.33,
+        -0.2,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          19
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

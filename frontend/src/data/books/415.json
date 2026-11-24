@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4875,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "indonesia",
@@ -93,6 +93,14 @@
         79
       ],
       [
+        "revolusi",
+        71
+      ],
+      [
+        "kepolisian",
+        46
+      ],
+      [
         "manipol",
         27
       ],
@@ -101,20 +109,20 @@
         22
       ],
       [
-        "kepolisian",
-        46
-      ],
-      [
-        "revolusi",
-        71
-      ],
-      [
         "partai²",
         17
       ],
       [
         "wedjangan",
         14
+      ],
+      [
+        "indonesia",
+        94
+      ],
+      [
+        "polisi",
+        36
       ],
       [
         "jaitu",
@@ -127,14 +135,6 @@
       [
         "masjarakat",
         19
-      ],
-      [
-        "alat²",
-        12
-      ],
-      [
-        "retuling",
-        8
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         9294,
-        0.5
+        0.53
       ],
       [
         4794,
-        0.37
+        0.4
       ],
       [
         466,
-        0.37
+        0.4
       ],
       [
         413,
-        0.32
+        0.36
       ],
       [
         412,
-        0.32
+        0.36
       ],
       [
         417,
-        0.31
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.59,
+      "positive": 85,
+      "negative": 22,
+      "trend": [
+        null,
+        0,
+        null,
+        1,
+        null,
+        0,
+        0.5,
+        null,
+        0.78,
+        1,
+        0.78,
+        0.82,
+        0.38,
+        0.71,
+        null,
+        0.5
+      ],
+      "emotions": []
+    }
   }
 }

@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 22348,
-    "longer_than": 78,
+    "longer_than": 89,
     "top": [
       [
         "financial",
@@ -92,24 +92,28 @@
     ],
     "distinct": [
       [
-        "currency",
-        116
-      ],
-      [
         "financial",
         160
+      ],
+      [
+        "currency",
+        116
       ],
       [
         "crisis",
         150
       ],
       [
+        "capital",
+        134
+      ],
+      [
         "economies",
         89
       ],
       [
-        "capital",
-        134
+        "domestic",
+        100
       ],
       [
         "inflows",
@@ -120,10 +124,6 @@
         71
       ],
       [
-        "domestic",
-        100
-      ],
-      [
         "rates",
         77
       ],
@@ -132,12 +132,12 @@
         63
       ],
       [
-        "markets",
-        65
+        "asian",
+        90
       ],
       [
-        "liberalization",
-        43
+        "markets",
+        65
       ]
     ],
     "phrases": [
@@ -181,11 +181,11 @@
       ],
       [
         8570,
-        0.34
+        0.35
       ],
       [
         8747,
-        0.31
+        0.32
       ],
       [
         8751,
@@ -193,12 +193,13 @@
       ],
       [
         8571,
-        0.28
+        0.29
       ],
       [
         3691,
-        0.27
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

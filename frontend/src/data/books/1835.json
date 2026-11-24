@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2908,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "pendidikan",
@@ -119,32 +119,32 @@
         15
       ],
       [
-        "paramiliter",
-        12
+        "pendidikan",
+        53
       ],
       [
-        "gil",
-        10
+        "paramiliter",
+        12
       ],
       [
         "pekerja",
         32
       ],
       [
-        "pemberton",
-        5
+        "gil",
+        10
       ],
       [
         "neoliberal",
         10
       ],
       [
-        "cardona",
-        4
+        "pemberton",
+        5
       ],
       [
-        "pendidikan",
-        53
+        "cardona",
+        4
       ]
     ],
     "phrases": [
@@ -187,25 +187,32 @@
         0.18
       ],
       [
-        2801,
-        0.14
-      ],
-      [
         8368,
-        0.13
+        0.16
       ],
       [
-        272,
-        0.12
+        2801,
+        0.16
       ],
       [
         7288,
-        0.11
+        0.15
       ],
       [
         2469,
-        0.11
+        0.15
+      ],
+      [
+        272,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 31,
+      "negative": 42,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

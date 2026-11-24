@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1488,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "organisasi",
@@ -110,10 +110,6 @@
         12
       ],
       [
-        "insureksioner",
-        7
-      ],
-      [
         "organisasi",
         30
       ],
@@ -122,11 +118,11 @@
         24
       ],
       [
-        "anarkisme-insureksioner",
-        3
+        "insureksioner",
+        7
       ],
       [
-        "afiniti",
+        "anarkisme-insureksioner",
         3
       ],
       [
@@ -138,16 +134,20 @@
         7
       ],
       [
+        "afiniti",
+        3
+      ],
+      [
         "grup-grup",
         4
       ],
       [
-        "organiser",
-        3
+        "organisasi-organisasi",
+        6
       ],
       [
-        "mentransformasikan",
-        4
+        "aksi",
+        10
       ],
       [
         "beraksi",
@@ -182,29 +182,30 @@
     ],
     "similar": [
       [
-        7467,
-        0.18
+        7209,
+        0.23
       ],
       [
-        7209,
-        0.18
+        7467,
+        0.23
       ],
       [
         3718,
-        0.18
+        0.23
       ],
       [
         2676,
-        0.17
+        0.22
+      ],
+      [
+        1774,
+        0.21
       ],
       [
         4663,
-        0.15
-      ],
-      [
-        3755,
-        0.14
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1193,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "hukum",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "positivisme",
-        7
-      ],
-      [
         "partai",
         18
+      ],
+      [
+        "positivisme",
+        7
       ],
       [
         "butuh",
@@ -115,35 +115,35 @@
         19
       ],
       [
-        "representasi",
-        6
-      ],
-      [
         "kiri",
         12
       ],
       [
-        "logika",
-        5
+        "representasi",
+        6
       ],
       [
-        "utopia",
-        3
-      ],
-      [
-        "iman",
-        4
+        "negara",
+        15
       ],
       [
         "kekuasaan",
         11
       ],
       [
-        "netral",
-        3
+        "logika",
+        5
       ],
       [
-        "konkret",
+        "iman",
+        4
+      ],
+      [
+        "penulis",
+        7
+      ],
+      [
+        "utopia",
         3
       ]
     ],
@@ -163,29 +163,30 @@
     ],
     "similar": [
       [
+        2398,
+        0.18
+      ],
+      [
+        6827,
+        0.15
+      ],
+      [
+        2411,
+        0.15
+      ],
+      [
+        19945,
+        0.15
+      ],
+      [
         7014,
-        0.16
+        0.15
       ],
       [
-        6840,
-        0.14
-      ],
-      [
-        8860,
-        0.14
-      ],
-      [
-        8043,
-        0.14
-      ],
-      [
-        4729,
-        0.14
-      ],
-      [
-        2249,
+        1778,
         0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

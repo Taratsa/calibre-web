@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 7480,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "agraria",
@@ -101,12 +101,12 @@
         217
       ],
       [
-        "reforma",
-        59
-      ],
-      [
         "konflik",
         133
+      ],
+      [
+        "reforma",
+        59
       ],
       [
         "ham",
@@ -117,32 +117,32 @@
         49
       ],
       [
-        "inkuiri",
-        16
-      ],
-      [
         "komnas",
         32
+      ],
+      [
+        "inkuiri",
+        16
       ],
       [
         "kawasan",
         36
       ],
       [
-        "pertanahan",
-        20
+        "tanah",
+        64
       ],
       [
         "pembaruan",
         26
       ],
       [
-        "kehutanan",
-        21
+        "pertanahan",
+        20
       ],
       [
-        "knupka",
-        9
+        "masyarakat",
+        63
       ]
     ],
     "phrases": [
@@ -182,28 +182,69 @@
     "similar": [
       [
         8547,
-        0.39
+        0.44
       ],
       [
         8552,
-        0.39
+        0.43
       ],
       [
         8549,
-        0.38
+        0.41
       ],
       [
         8546,
-        0.37
+        0.41
       ],
       [
         8545,
-        0.37
+        0.41
       ],
       [
-        8553,
-        0.37
+        8431,
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 75,
+      "negative": 66,
+      "trend": [
+        null,
+        -0.08,
+        -0.33,
+        null,
+        -0.14,
+        0.33,
+        -0.54,
+        0.14,
+        0.2,
+        -0.43,
+        0,
+        0.2,
+        0.62,
+        0.43,
+        0.17,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          153
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

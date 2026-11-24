@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 8574,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "wahidin",
@@ -93,28 +93,28 @@
         94
       ],
       [
-        "sudirohusodo",
-        18
-      ],
-      [
         "utomo",
         33
-      ],
-      [
-        "parindra",
-        20
       ],
       [
         "mendjadi",
         44
       ],
       [
-        "marhum",
+        "sudirohusodo",
+        18
+      ],
+      [
+        "parindra",
         20
       ],
       [
         "djawa",
         35
+      ],
+      [
+        "marhum",
+        20
       ],
       [
         "djuga",
@@ -125,16 +125,16 @@
         30
       ],
       [
-        "partij",
-        14
+        "budi",
+        35
+      ],
+      [
+        "bangsa",
+        49
       ],
       [
         "jogjakarta",
         19
-      ],
-      [
-        "hanja",
-        23
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         516,
-        0.48
+        0.5
       ],
       [
         305,
-        0.48
+        0.5
       ],
       [
         1305,
-        0.38
+        0.39
       ],
       [
         1905,
-        0.27
+        0.29
       ],
       [
         788,
-        0.27
+        0.29
       ],
       [
         1109,
-        0.25
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.62,
+      "positive": 126,
+      "negative": 30,
+      "trend": [
+        1,
+        0.56,
+        0.14,
+        0.25,
+        null,
+        0.25,
+        0.69,
+        0.45,
+        0.67,
+        0.82,
+        1,
+        0.6,
+        0.5,
+        0.25,
+        0.64,
+        0.76
+      ],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

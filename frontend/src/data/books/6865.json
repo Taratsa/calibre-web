@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 3816,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "debord",
@@ -119,20 +119,24 @@
         12
       ],
       [
-        "nyalahin",
-        8
+        "musik",
+        27
       ],
       [
         "politis",
         22
       ],
       [
-        "musik",
-        27
+        "nyalahin",
+        8
       ],
       [
         "label",
         13
+      ],
+      [
+        "politik",
+        26
       ],
       [
         "bne",
@@ -151,12 +155,8 @@
         4
       ],
       [
-        "kimung",
-        3
-      ],
-      [
-        "record",
-        7
+        "rekaman",
+        8
       ]
     ],
     "phrases": [
@@ -187,29 +187,82 @@
     ],
     "similar": [
       [
-        1714,
-        0.16
-      ],
-      [
         2213,
-        0.15
+        0.18
       ],
       [
         7893,
-        0.15
+        0.18
       ],
       [
         2221,
-        0.15
+        0.17
+      ],
+      [
+        1714,
+        0.17
       ],
       [
         2020,
-        0.14
+        0.15
       ],
       [
         7442,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 58,
+      "negative": 43,
+      "trend": [
+        -0.75,
+        -0.25,
+        null,
+        -0.4,
+        0,
+        0.71,
+        1,
+        0.43,
+        -0.5,
+        null,
+        null,
+        null,
+        0.56,
+        1,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3468,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "perempuan",
@@ -106,32 +106,44 @@
     ],
     "distinct": [
       [
-        "patriotisme",
-        13
+        "perempuan",
+        54
       ],
       [
         "nasionalisme",
         18
       ],
       [
-        "perempuan",
-        54
-      ],
-      [
         "gender",
         19
+      ],
+      [
+        "patriotisme",
+        13
       ],
       [
         "feminisme",
         11
       ],
       [
+        "laki-laki",
+        20
+      ],
+      [
         "interseksional",
         5
       ],
       [
+        "gerakan",
+        21
+      ],
+      [
         "lugones",
         3
+      ],
+      [
+        "amerika",
+        15
       ],
       [
         "interseksionalisme",
@@ -139,18 +151,6 @@
       ],
       [
         "anti-patriotisme",
-        3
-      ],
-      [
-        "laki-laki",
-        20
-      ],
-      [
-        "goldman",
-        6
-      ],
-      [
-        "anarkis-feminis",
         3
       ]
     ],
@@ -191,28 +191,73 @@
     "similar": [
       [
         7022,
-        0.18
-      ],
-      [
-        2416,
-        0.14
-      ],
-      [
-        8972,
-        0.14
-      ],
-      [
-        4715,
-        0.13
+        0.21
       ],
       [
         4877,
-        0.13
+        0.18
       ],
       [
-        1961,
-        0.13
+        4715,
+        0.18
+      ],
+      [
+        2758,
+        0.17
+      ],
+      [
+        2482,
+        0.16
+      ],
+      [
+        8972,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 54,
+      "negative": 56,
+      "trend": [
+        0.33,
+        0.23,
+        -0.2,
+        -0.43,
+        -0.43,
+        -0.2,
+        -0.5,
+        -0.33,
+        null,
+        null,
+        -0.43,
+        0,
+        0.45,
+        -0.33,
+        0.71,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ]
+      ]
+    }
   }
 }

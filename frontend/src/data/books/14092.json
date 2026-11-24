@@ -1,0 +1,86 @@
+{
+  "id": 14092,
+  "title": "Chrome remote desktop: Install Ubuntu 20.04",
+  "slug": "chrome-remote-desktop-install-ubuntu-20-04-onno-widodo-purbo",
+  "slugBase": "chrome-remote-desktop-install-ubuntu-20-04-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2020-07-25",
+  "timestamp": "2026-11-23 22:42:55.694426",
+  "last_modified": "2026-11-23 22:42:55.694431",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:8bd838f4-3ef2-5d16-b63d-25fdec4304e2"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/14092?v=1795448575",
+  "cover_og_url": "/cover/14092/og?v=1795448575",
+  "url": "/book/chrome-remote-desktop-install-ubuntu-20-04-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://kifarunix.com/install-and-setup-chrome-remote-desktop-on-ubuntu-20-04/ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb apt install /tmp/chrome-remote-desktop_current_amd64.deb systemctl status chrome-remote-desktop Enable connection https://remotedesktop.google.com/access Referensi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2297,
+      "name": "Chrome remote desktop_ Install Ubuntu 20.0 - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 62,
+    "longer_than": 9,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        14091,
+        0.66
+      ],
+      [
+        14546,
+        0.38
+      ],
+      [
+        15850,
+        0.35
+      ],
+      [
+        15054,
+        0.35
+      ],
+      [
+        14962,
+        0.35
+      ],
+      [
+        12725,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
+}

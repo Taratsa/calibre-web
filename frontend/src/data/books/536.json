@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 9613,
-    "longer_than": 60,
+    "longer_than": 81,
     "top": [
       [
         "partai",
@@ -93,47 +93,47 @@
         127
       ],
       [
-        "dialectics",
-        28
+        "revolusi",
+        110
       ],
       [
         "masjarakat",
         58
       ],
       [
-        "revolusi",
-        110
+        "dialectics",
+        28
       ],
       [
         "mendjadi",
         47
       ],
       [
-        "anggauta",
-        25
-      ],
-      [
         "sosialisme",
         39
-      ],
-      [
-        "bekerdja",
-        32
-      ],
-      [
-        "trotzkisme",
-        10
-      ],
-      [
-        "djuga",
-        33
       ],
       [
         "komunis",
         44
       ],
       [
+        "anggauta",
+        25
+      ],
+      [
+        "bekerdja",
+        32
+      ],
+      [
+        "djuga",
+        33
+      ],
+      [
         "soviet",
+        30
+      ],
+      [
+        "banjak",
         30
       ]
     ],
@@ -174,28 +174,81 @@
     "similar": [
       [
         9248,
-        0.57
+        0.6
       ],
       [
         4601,
-        0.56
+        0.59
       ],
       [
         497,
-        0.23
+        0.28
       ],
       [
         5939,
-        0.23
+        0.27
       ],
       [
         6291,
-        0.2
+        0.24
       ],
       [
         446,
-        0.19
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 143,
+      "negative": 89,
+      "trend": [
+        0.14,
+        0.33,
+        -0.11,
+        0.88,
+        0.33,
+        0.33,
+        0,
+        0.2,
+        0,
+        0,
+        0,
+        -0.2,
+        0.5,
+        0.57,
+        0.17,
+        0.38
+      ],
+      "emotions": [
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

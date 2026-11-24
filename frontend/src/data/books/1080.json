@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3802,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "hanja",
@@ -107,12 +107,12 @@
         16
       ],
       [
-        "padanja",
-        14
-      ],
-      [
         "nja",
         19
+      ],
+      [
+        "padanja",
+        14
       ],
       [
         "wadjah",
@@ -123,48 +123,105 @@
         15
       ],
       [
-        "raut-muka",
-        3
+        "punja",
+        8
       ],
       [
         "senjum",
         6
       ],
       [
-        "punja",
-        8
+        "raut-muka",
+        3
       ],
       [
-        "bitjara",
-        7
+        "djuga",
+        9
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7598,
-        0.17
+        0.2
       ],
       [
         1475,
-        0.17
+        0.2
       ],
       [
         1449,
-        0.17
+        0.19
       ],
       [
         9325,
-        0.16
+        0.18
       ],
       [
         6889,
-        0.16
+        0.18
       ],
       [
         7685,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 49,
+      "negative": 30,
+      "trend": [
+        null,
+        0.33,
+        null,
+        0.33,
+        1,
+        0,
+        null,
+        -0.2,
+        0.33,
+        null,
+        -0.67,
+        0.2,
+        0.33,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

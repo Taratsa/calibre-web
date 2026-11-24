@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 23847,
-    "longer_than": 79,
+    "longer_than": 90,
     "top": [
       [
         "perempuan",
@@ -113,6 +113,10 @@
     ],
     "distinct": [
       [
+        "perempuan",
+        466
+      ],
+      [
         "kurdi",
         113
       ],
@@ -121,8 +125,12 @@
         61
       ],
       [
-        "perempuan",
-        466
+        "masyarakat",
+        248
+      ],
+      [
+        "laki-laki",
+        149
       ],
       [
         "rojava",
@@ -133,32 +141,24 @@
         40
       ],
       [
-        "laki-laki",
-        149
+        "perbudakan",
+        57
+      ],
+      [
+        "perjuangan",
+        95
       ],
       [
         "sumeria",
         24
       ],
       [
-        "housewifization",
-        16
+        "demokratis",
+        65
       ],
       [
-        "suriah",
-        32
-      ],
-      [
-        "perbudakan",
-        57
-      ],
-      [
-        "kurdistan",
-        23
-      ],
-      [
-        "masyarakat",
-        248
+        "sosial",
+        119
       ]
     ],
     "phrases": [
@@ -198,28 +198,85 @@
     "similar": [
       [
         7488,
-        0.71
+        0.73
       ],
       [
         2293,
-        0.44
-      ],
-      [
-        2156,
-        0.31
-      ],
-      [
-        3147,
-        0.31
-      ],
-      [
-        7144,
-        0.31
+        0.49
       ],
       [
         2589,
-        0.3
+        0.36
+      ],
+      [
+        7144,
+        0.35
+      ],
+      [
+        3147,
+        0.35
+      ],
+      [
+        2707,
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 537,
+      "negative": 344,
+      "trend": [
+        0.27,
+        0.38,
+        0.4,
+        -0.03,
+        0,
+        0.53,
+        0.09,
+        -0.03,
+        0.54,
+        0.52,
+        0.27,
+        -0.08,
+        0.05,
+        0.27,
+        -0.04,
+        0.4
+      ],
+      "emotions": [
+        [
+          "anger",
+          101
+        ],
+        [
+          "trust",
+          55
+        ],
+        [
+          "joy",
+          29
+        ],
+        [
+          "sadness",
+          25
+        ],
+        [
+          "fear",
+          22
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

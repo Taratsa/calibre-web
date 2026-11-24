@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 35255,
-    "longer_than": 88,
+    "longer_than": 94,
     "top": [
       [
         "toma",
@@ -122,20 +122,20 @@
         136
       ],
       [
-        "enage",
-        140
-      ],
-      [
         "kolano",
         174
       ],
       [
-        "baikole",
-        124
+        "enage",
+        140
       ],
       [
         "mansia",
         160
+      ],
+      [
+        "baikole",
+        124
       ],
       [
         "gahi",
@@ -187,7 +187,7 @@
     "similar": [
       [
         3490,
-        0.65
+        0.64
       ],
       [
         5129,
@@ -203,8 +203,61 @@
       ],
       [
         6260,
-        0.12
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 255,
+      "negative": 196,
+      "trend": [
+        0.29,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.11,
+        0.46,
+        0.32,
+        0.38,
+        0.29,
+        -0.07,
+        -0.3,
+        0.18
+      ],
+      "emotions": [
+        [
+          "sadness",
+          40
+        ],
+        [
+          "trust",
+          38
+        ],
+        [
+          "joy",
+          36
+        ],
+        [
+          "fear",
+          34
+        ],
+        [
+          "anger",
+          32
+        ],
+        [
+          "surprise",
+          22
+        ],
+        [
+          "anticipation",
+          8
+        ]
+      ]
+    }
   }
 }

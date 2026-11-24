@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 5076,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "sosial",
@@ -97,6 +97,10 @@
     ],
     "distinct": [
       [
+        "ham",
+        48
+      ],
+      [
         "patani",
         21
       ],
@@ -105,40 +109,36 @@
         22
       ],
       [
-        "ham",
-        48
+        "korporasi",
+        28
       ],
       [
         "welfare",
         21
       ],
       [
-        "korporasi",
-        28
+        "kemiskinan",
+        33
+      ],
+      [
+        "sosial",
+        57
       ],
       [
         "penanggulangan",
         19
       ],
       [
-        "kemiskinan",
-        33
-      ],
-      [
         "jaminan",
         28
-      ],
-      [
-        "sjsn",
-        7
       ],
       [
         "komnas",
         16
       ],
       [
-        "papua",
-        17
+        "masyarakat",
+        44
       ],
       [
         "pelanggaran",
@@ -182,28 +182,81 @@
     "similar": [
       [
         8971,
-        0.2
+        0.25
       ],
       [
         8967,
-        0.19
+        0.23
       ],
       [
         9140,
-        0.18
-      ],
-      [
-        8639,
-        0.18
+        0.22
       ],
       [
         9100,
-        0.17
+        0.22
       ],
       [
         8894,
-        0.17
+        0.21
+      ],
+      [
+        8639,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 113,
+      "negative": 107,
+      "trend": [
+        -0.6,
+        0.71,
+        0.58,
+        null,
+        0.67,
+        0.45,
+        -0.05,
+        -0.08,
+        -0.31,
+        -0.5,
+        -0.27,
+        -0.5,
+        -0.08,
+        null,
+        null,
+        0.23
+      ],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

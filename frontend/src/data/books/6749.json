@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2061,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "indonesia",
@@ -108,6 +108,10 @@
     ],
     "distinct": [
       [
+        "revolusi",
+        35
+      ],
+      [
         "pessimisme",
         9
       ],
@@ -116,16 +120,16 @@
         15
       ],
       [
-        "revolusi",
-        35
-      ],
-      [
         "pengarang-pengarang",
         8
       ],
       [
         "wertheim",
         8
+      ],
+      [
+        "indonesia",
+        36
       ],
       [
         "masasilam",
@@ -140,16 +144,12 @@
         6
       ],
       [
+        "bahasa",
+        20
+      ],
+      [
         "menterjemahkan",
         4
-      ],
-      [
-        "utk",
-        3
-      ],
-      [
-        "hasa",
-        3
       ],
       [
         "nampak",
@@ -193,28 +193,35 @@
     "similar": [
       [
         1189,
-        0.54
+        0.56
       ],
       [
         7785,
-        0.53
+        0.55
       ],
       [
         4011,
-        0.32
-      ],
-      [
-        4028,
-        0.23
+        0.33
       ],
       [
         4024,
-        0.23
+        0.26
       ],
       [
-        6740,
-        0.22
+        4028,
+        0.24
+      ],
+      [
+        16647,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 33,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2185,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "anarkis",
@@ -118,12 +118,8 @@
         13
       ],
       [
-        "radikalisme",
-        3
-      ],
-      [
-        "diprediksi",
-        3
+        "aksi",
+        8
       ],
       [
         "kolektif",
@@ -134,11 +130,7 @@
         6
       ],
       [
-        "aksi",
-        8
-      ],
-      [
-        "konstan",
+        "radikalisme",
         3
       ],
       [
@@ -150,36 +142,93 @@
         5
       ],
       [
-        "kota-kota",
-        4
+        "diprediksi",
+        3
+      ],
+      [
+        "permainan",
+        5
+      ],
+      [
+        "pemberontakan",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2144,
-        0.2
+        0.24
       ],
       [
         7112,
-        0.16
-      ],
-      [
-        2161,
-        0.15
+        0.2
       ],
       [
         3058,
-        0.14
+        0.19
       ],
       [
-        7345,
-        0.13
+        2161,
+        0.19
       ],
       [
-        4731,
-        0.12
+        2231,
+        0.19
+      ],
+      [
+        2719,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 64,
+      "negative": 45,
+      "trend": [
+        -0.11,
+        0.2,
+        -0.2,
+        0,
+        -0.2,
+        -0.33,
+        0.71,
+        null,
+        0.25,
+        0,
+        null,
+        0,
+        0.33,
+        0,
+        0.78,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

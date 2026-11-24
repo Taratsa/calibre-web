@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 7436,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "bakunin",
@@ -115,40 +115,40 @@
         55
       ],
       [
-        "revolusioner",
-        35
+        "negara",
+        71
       ],
       [
-        "marx",
-        23
+        "revolusioner",
+        35
       ],
       [
         "kelas",
         44
       ],
       [
+        "marx",
+        23
+      ],
+      [
+        "ekonomi",
+        36
+      ],
+      [
         "anarkis",
         21
       ],
       [
-        "mikhail",
-        9
-      ],
-      [
-        "negara",
-        71
-      ],
-      [
-        "berlandaskan",
-        12
-      ],
-      [
-        "dustbin",
-        4
-      ],
-      [
         "organisasi",
         33
+      ],
+      [
+        "masyarakat",
+        44
+      ],
+      [
+        "gagasan",
+        22
       ]
     ],
     "phrases": [
@@ -188,28 +188,81 @@
     "similar": [
       [
         6730,
-        0.25
+        0.34
       ],
       [
         2203,
-        0.25
+        0.34
       ],
       [
-        7971,
-        0.22
+        7875,
+        0.29
       ],
       [
-        7019,
-        0.2
+        2540,
+        0.29
       ],
       [
         7859,
-        0.2
+        0.28
       ],
       [
         2553,
-        0.2
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 157,
+      "negative": 81,
+      "trend": [
+        0.78,
+        0.27,
+        0.1,
+        -0.09,
+        0.33,
+        0.43,
+        0.38,
+        0.43,
+        0.5,
+        0.33,
+        0.23,
+        0.45,
+        0.71,
+        0.14,
+        0.1,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          31
+        ],
+        [
+          "trust",
+          28
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

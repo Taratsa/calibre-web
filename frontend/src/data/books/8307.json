@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 2583,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "paragraf",
@@ -100,24 +100,24 @@
         131
       ],
       [
-        "kesatu",
-        41
-      ],
-      [
         "tindak",
         86
+      ],
+      [
+        "kesatu",
+        41
       ],
       [
         "bab",
         53
       ],
       [
-        "parag",
-        9
-      ],
-      [
         "pemalsuan",
         17
+      ],
+      [
+        "parag",
+        9
       ],
       [
         "perusakan",
@@ -128,16 +128,16 @@
         8
       ],
       [
-        "pembocoran",
-        5
-      ],
-      [
         "penyalahgunaan",
         12
       ],
       [
-        "paragra",
-        4
+        "kapal",
+        16
+      ],
+      [
+        "penghinaan",
+        12
       ]
     ],
     "phrases": [
@@ -177,28 +177,52 @@
     "similar": [
       [
         8277,
-        0.14
+        0.15
       ],
       [
         8276,
-        0.14
+        0.15
       ],
       [
         8637,
-        0.13
+        0.14
       ],
       [
         8164,
-        0.13
-      ],
-      [
-        8959,
-        0.11
+        0.14
       ],
       [
         8556,
-        0.11
+        0.13
+      ],
+      [
+        8594,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.8,
+      "positive": 8,
+      "negative": 72,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          4
+        ]
+      ]
+    }
   }
 }

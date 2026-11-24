@@ -78,7 +78,7 @@
   ],
   "text": {
     "words": 2587,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "kesedihan",
@@ -139,15 +139,15 @@
         22
       ],
       [
-        "wildan",
-        3
+        "perasaan",
+        11
       ],
       [
         "paceklik",
         4
       ],
       [
-        "teruntuk",
+        "wildan",
         3
       ],
       [
@@ -155,28 +155,28 @@
         5
       ],
       [
+        "teruntuk",
+        3
+      ],
+      [
         "kuas",
         3
       ],
       [
+        "langit",
+        7
+      ],
+      [
+        "sedih",
+        6
+      ],
+      [
+        "malam",
+        9
+      ],
+      [
         "kawanku",
         3
-      ],
-      [
-        "perasaan",
-        11
-      ],
-      [
-        "derita",
-        4
-      ],
-      [
-        "karna",
-        3
-      ],
-      [
-        "kekosongan",
-        4
       ]
     ],
     "phrases": [
@@ -208,7 +208,7 @@
       ],
       [
         7167,
-        0.19
+        0.18
       ],
       [
         8074,
@@ -220,12 +220,61 @@
       ],
       [
         3101,
-        0.13
+        0.16
       ],
       [
-        2820,
-        0.12
+        7375,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 49,
+      "negative": 70,
+      "trend": [
+        0,
+        -0.38,
+        null,
+        null,
+        -0.67,
+        0.33,
+        -0.5,
+        0,
+        -0.5,
+        -0.83,
+        -0.17,
+        0.2,
+        null,
+        null,
+        null,
+        0.56
+      ],
+      "emotions": [
+        [
+          "sadness",
+          46
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

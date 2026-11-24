@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 6191,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "tanah",
@@ -99,32 +99,36 @@
         158
       ],
       [
-        "perizinan",
-        60
-      ],
-      [
-        "konsesi",
-        66
-      ],
-      [
-        "ayat",
-        90
+        "tanah",
+        265
       ],
       [
         "pasal",
         105
       ],
       [
-        "penertiban",
-        44
+        "konsesi",
+        66
+      ],
+      [
+        "perizinan",
+        60
+      ],
+      [
+        "ayat",
+        90
       ],
       [
         "kawasan",
         83
       ],
       [
-        "tanah",
-        265
+        "penertiban",
+        44
+      ],
+      [
+        "hak",
+        155
       ],
       [
         "pengelolaan",
@@ -133,10 +137,6 @@
       [
         "penguasaan",
         52
-      ],
-      [
-        "peringatan",
-        60
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         8650,
-        0.4
-      ],
-      [
-        8347,
-        0.27
+        0.43
       ],
       [
         8557,
-        0.27
+        0.32
+      ],
+      [
+        8353,
+        0.31
       ],
       [
         8642,
-        0.27
+        0.31
       ],
       [
-        8651,
-        0.27
+        8348,
+        0.31
       ],
       [
-        8589,
-        0.27
+        8347,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.74,
+      "positive": 99,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

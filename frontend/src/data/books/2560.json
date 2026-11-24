@@ -64,7 +64,7 @@
   ],
   "text": {
     "words": 3482,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "identitas",
@@ -117,12 +117,16 @@
     ],
     "distinct": [
       [
-        "simatupang",
-        8
+        "identitas",
+        19
       ],
       [
         "simbolik",
         11
+      ],
+      [
+        "simatupang",
+        8
       ],
       [
         "iwan",
@@ -133,36 +137,32 @@
         12
       ],
       [
-        "identitas",
-        19
+        "subjek",
+        13
       ],
       [
         "mengimitasi",
         5
       ],
       [
-        "subjek",
-        13
-      ],
-      [
-        "gagah-gagahan",
-        4
+        "sastrawan",
+        9
       ],
       [
         "imitasi",
         6
       ],
       [
-        "sastrawan",
-        9
-      ],
-      [
-        "tonothing",
-        3
+        "gagah-gagahan",
+        4
       ],
       [
         "darma",
         7
+      ],
+      [
+        "dirimu",
+        10
       ]
     ],
     "phrases": [
@@ -202,28 +202,52 @@
     "similar": [
       [
         1963,
-        0.69
+        0.68
+      ],
+      [
+        2411,
+        0.15
       ],
       [
         2174,
-        0.12
+        0.14
       ],
       [
         2173,
-        0.12
+        0.14
       ],
       [
         8137,
-        0.12
+        0.14
       ],
       [
-        7214,
-        0.12
-      ],
-      [
-        4210,
-        0.11
+        6858,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 37,
+      "negative": 46,
+      "trend": [
+        null,
+        -0.33,
+        0.67,
+        null,
+        -0.33,
+        null,
+        null,
+        null,
+        null,
+        0.25,
+        null,
+        -0.14,
+        -1,
+        null,
+        -0.56,
+        -1
+      ],
+      "emotions": []
+    }
   }
 }

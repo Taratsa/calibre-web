@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5842,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "islam",
@@ -103,28 +103,40 @@
         114
       ],
       [
-        "muslim",
-        50
-      ],
-      [
         "anarkisme",
         51
       ],
       [
-        "khaldun",
-        17
+        "muslim",
+        50
       ],
       [
         "anarki",
         38
       ],
       [
+        "khaldun",
+        17
+      ],
+      [
         "teolog",
         14
       ],
       [
+        "anarkis",
+        32
+      ],
+      [
         "kesamarasaan",
         8
+      ],
+      [
+        "otoritas",
+        29
+      ],
+      [
+        "agama",
+        44
       ],
       [
         "ibnu",
@@ -133,18 +145,6 @@
       [
         "fiscella",
         7
-      ],
-      [
-        "anarkis",
-        32
-      ],
-      [
-        "karamustafa",
-        7
-      ],
-      [
-        "kekhalifahan",
-        10
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         7162,
-        0.24
+        0.28
       ],
       [
         4719,
-        0.23
+        0.27
       ],
       [
         1775,
-        0.23
-      ],
-      [
-        1976,
-        0.22
+        0.27
       ],
       [
         7161,
-        0.22
+        0.26
+      ],
+      [
+        2272,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 76,
+      "negative": 29,
+      "trend": [
+        -0.43,
+        1,
+        0.75,
+        null,
+        0,
+        0.67,
+        0.67,
+        0.4,
+        0.6,
+        0.75,
+        0.56,
+        null,
+        -0.2,
+        0.33,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

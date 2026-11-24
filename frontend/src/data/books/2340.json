@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2993,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "negara",
@@ -115,36 +115,36 @@
         7
       ],
       [
-        "wto",
-        8
-      ],
-      [
         "multinasional",
         9
       ],
       [
-        "swakelola",
-        5
+        "wto",
+        8
+      ],
+      [
+        "negara",
+        29
       ],
       [
         "pekerja",
         16
       ],
       [
-        "posting",
-        4
+        "ekonomi",
+        19
+      ],
+      [
+        "swakelola",
+        5
       ],
       [
         "bolivia",
         4
       ],
       [
-        "smith",
-        5
-      ],
-      [
-        "katalis",
-        4
+        "pasar",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7898,
-        0.36
+        0.37
       ],
       [
         2137,
-        0.36
+        0.37
       ],
       [
         7256,
-        0.18
-      ],
-      [
-        2586,
-        0.16
+        0.22
       ],
       [
         3713,
-        0.16
+        0.2
       ],
       [
-        7249,
-        0.15
+        1928,
+        0.2
+      ],
+      [
+        1758,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 56,
+      "negative": 23,
+      "trend": [
+        1,
+        null,
+        0.67,
+        0.6,
+        0.5,
+        null,
+        null,
+        0,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        -0.33
+      ],
+      "emotions": []
+    }
   }
 }

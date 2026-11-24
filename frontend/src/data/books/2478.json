@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 824,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "polisi",
@@ -99,24 +99,36 @@
     ],
     "distinct": [
       [
-        "kepolisian",
-        14
-      ],
-      [
         "polisi",
         21
+      ],
+      [
+        "kepolisian",
+        14
       ],
       [
         "bayam",
         3
       ],
       [
-        "preman",
-        3
+        "negara",
+        12
       ],
       [
         "kekerasan",
         7
+      ],
+      [
+        "masyarakat",
+        10
+      ],
+      [
+        "preman",
+        3
+      ],
+      [
+        "warga",
+        6
       ],
       [
         "aparat",
@@ -127,24 +139,12 @@
         3
       ],
       [
-        "warga",
-        6
-      ],
-      [
-        "negara",
-        12
-      ],
-      [
-        "keamanan",
-        4
-      ],
-      [
         "hukum",
         6
       ],
       [
-        "masyarakat",
-        10
+        "kepentingan",
+        5
       ]
     ],
     "phrases": [],
@@ -155,24 +155,25 @@
       ],
       [
         7239,
-        0.18
-      ],
-      [
-        329,
-        0.16
-      ],
-      [
-        7988,
-        0.16
+        0.2
       ],
       [
         2697,
-        0.14
+        0.19
       ],
       [
-        8174,
-        0.14
+        7126,
+        0.19
+      ],
+      [
+        7853,
+        0.18
+      ],
+      [
+        6698,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

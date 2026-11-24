@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 936,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "malam",
@@ -107,6 +107,10 @@
         3
       ],
       [
+        "malam",
+        12
+      ],
+      [
         "udjian",
         3
       ],
@@ -115,23 +119,11 @@
         3
       ],
       [
-        "russia",
-        3
-      ],
-      [
-        "adakan",
-        3
-      ],
-      [
         "semarang",
         5
       ],
       [
-        "malam",
-        12
-      ],
-      [
-        "djam",
+        "russia",
         3
       ],
       [
@@ -139,15 +131,37 @@
         5
       ],
       [
-        "djalan",
+        "adakan",
+        3
+      ],
+      [
+        "djam",
         3
       ],
       [
         "obat",
         4
+      ],
+      [
+        "djalan",
+        3
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        19062,
+        0.11
+      ],
+      [
+        19417,
+        0.11
+      ],
+      [
+        1194,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3703,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "hutan",
@@ -105,44 +105,44 @@
         53
       ],
       [
-        "energi",
-        63
-      ],
-      [
         "hutan",
         94
+      ],
+      [
+        "energi",
+        63
       ],
       [
         "juta",
         47
       ],
       [
-        "deforestasi",
-        13
+        "adat",
+        36
       ],
       [
         "estate",
         17
       ],
       [
-        "pbph",
-        6
-      ],
-      [
         "lahan",
         28
       ],
       [
-        "kehutanan",
-        16
+        "deforestasi",
+        13
+      ],
+      [
+        "masyarakat",
+        49
       ],
       [
         "pembukaan",
         21
       ],
       [
-        "adat",
-        36
+        "kehutanan",
+        16
       ]
     ],
     "phrases": [
@@ -182,28 +182,73 @@
     "similar": [
       [
         6803,
-        0.33
+        0.36
       ],
       [
         9146,
-        0.31
+        0.34
       ],
       [
         6808,
-        0.3
+        0.33
       ],
       [
         8479,
-        0.27
-      ],
-      [
-        8508,
-        0.26
+        0.3
       ],
       [
         8544,
-        0.26
+        0.3
+      ],
+      [
+        6814,
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 38,
+      "negative": 42,
+      "trend": [
+        null,
+        -0.2,
+        null,
+        null,
+        null,
+        -0.67,
+        null,
+        0.33,
+        0.2,
+        null,
+        -0.14,
+        -0.43,
+        -0.71,
+        null,
+        -0.71,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          22
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

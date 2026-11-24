@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2699,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "politik",
@@ -107,44 +107,44 @@
         11
       ],
       [
-        "populisme",
-        9
+        "politik",
+        43
       ],
       [
-        "islandia",
-        5
+        "populisme",
+        9
       ],
       [
         "sipil",
         19
       ],
       [
-        "politik",
-        43
-      ],
-      [
-        "pencopetan",
-        3
-      ],
-      [
-        "representatif",
-        6
-      ],
-      [
-        "sistem",
-        18
-      ],
-      [
-        "demokrasi",
-        11
+        "islandia",
+        5
       ],
       [
         "kepentingan",
         18
       ],
       [
-        "sentimen",
-        5
+        "masyarakat",
+        21
+      ],
+      [
+        "representatif",
+        6
+      ],
+      [
+        "demokrasi",
+        11
+      ],
+      [
+        "sistem",
+        18
+      ],
+      [
+        "ekonomi",
+        15
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8260,
-        0.3
+        0.29
       ],
       [
         8261,
-        0.25
+        0.27
       ],
       [
         8262,
-        0.24
+        0.26
       ],
       [
-        8258,
+        8630,
         0.18
       ],
       [
-        8531,
-        0.16
+        8620,
+        0.18
       ],
       [
         8268,
-        0.14
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 42,
+      "negative": 51,
+      "trend": [
+        -0.8,
+        -0.25,
+        0,
+        null,
+        null,
+        -0.5,
+        -1,
+        -0.2,
+        null,
+        0.43,
+        -0.2,
+        null,
+        -0.33,
+        1,
+        0.14,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

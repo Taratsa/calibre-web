@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 919,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "palestina",
@@ -107,12 +107,12 @@
         7
       ],
       [
-        "gaza",
-        6
-      ],
-      [
         "israel",
         8
+      ],
+      [
+        "gaza",
+        6
       ],
       [
         "penggusuran",
@@ -123,12 +123,16 @@
         6
       ],
       [
+        "disana",
+        6
+      ],
+      [
         "jabodetabek",
         3
       ],
       [
-        "disana",
-        6
+        "warga",
+        8
       ],
       [
         "rembang",
@@ -139,12 +143,8 @@
         3
       ],
       [
-        "terjangkau",
-        3
-      ],
-      [
-        "warga",
-        8
+        "wilayah",
+        7
       ]
     ],
     "phrases": [
@@ -187,17 +187,18 @@
         0.29
       ],
       [
-        7216,
-        0.29
+        1809,
+        0.28
       ],
       [
         2771,
         0.28
       ],
       [
-        1809,
+        7216,
         0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

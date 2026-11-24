@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1332,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "seni",
@@ -96,27 +96,39 @@
     ],
     "distinct": [
       [
-        "estetika",
-        12
-      ],
-      [
         "seni",
         29
       ],
       [
-        "estetik",
-        7
-      ],
-      [
-        "pasaraya",
-        4
+        "estetika",
+        12
       ],
       [
         "rupa",
         18
       ],
       [
+        "estetik",
+        7
+      ],
+      [
+        "kebudayaan",
+        17
+      ],
+      [
+        "pasaraya",
+        4
+      ],
+      [
         "subkultur",
+        5
+      ],
+      [
+        "kelompok",
+        14
+      ],
+      [
+        "arief",
         5
       ],
       [
@@ -124,24 +136,12 @@
         3
       ],
       [
-        "kebudayaan",
-        17
-      ],
-      [
         "parsudi",
         3
       ],
       [
-        "arief",
-        5
-      ],
-      [
-        "pluralisme",
-        4
-      ],
-      [
-        "kelompok",
-        14
+        "budaya",
+        12
       ]
     ],
     "phrases": [
@@ -168,25 +168,26 @@
         0.28
       ],
       [
-        4337,
-        0.27
+        4426,
+        0.26
       ],
       [
         4570,
-        0.25
+        0.26
+      ],
+      [
+        4337,
+        0.26
       ],
       [
         4484,
-        0.24
-      ],
-      [
-        4426,
-        0.24
+        0.26
       ],
       [
         4196,
-        0.23
+        0.25
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

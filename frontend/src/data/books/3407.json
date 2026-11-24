@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 3619,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "aids",
@@ -116,12 +116,12 @@
         58
       ],
       [
-        "paraikatte",
-        12
-      ],
-      [
         "celebes",
         22
+      ],
+      [
+        "paraikatte",
+        12
       ],
       [
         "pus",
@@ -132,10 +132,6 @@
         19
       ],
       [
-        "waria",
-        14
-      ],
-      [
         "buletin",
         18
       ],
@@ -144,20 +140,24 @@
         18
       ],
       [
-        "usadha",
-        8
-      ],
-      [
-        "lembayung",
-        9
+        "waria",
+        14
       ],
       [
         "rekan",
         17
       ],
       [
-        "rekanita",
-        5
+        "lembayung",
+        9
+      ],
+      [
+        "usadha",
+        8
+      ],
+      [
+        "ujung",
+        20
       ]
     ],
     "phrases": [
@@ -201,24 +201,77 @@
       ],
       [
         3408,
-        0.46
+        0.47
       ],
       [
         3393,
-        0.31
+        0.33
       ],
       [
         3392,
-        0.26
+        0.27
       ],
       [
         3388,
-        0.19
+        0.21
       ],
       [
         3395,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 98,
+      "negative": 36,
+      "trend": [
+        0.67,
+        null,
+        null,
+        0.08,
+        1,
+        1,
+        0.48,
+        0.61,
+        0.67,
+        null,
+        -0.56,
+        0,
+        0.2,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          18
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

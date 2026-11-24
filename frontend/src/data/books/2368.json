@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3081,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "negara",
@@ -103,6 +103,10 @@
         11
       ],
       [
+        "negara",
+        39
+      ],
+      [
         "otoritas",
         16
       ],
@@ -111,23 +115,19 @@
         7
       ],
       [
-        "hiper",
-        3
+        "konflik",
+        12
       ],
       [
         "anarkisme",
         8
       ],
       [
-        "negara",
-        39
+        "masyarakat",
+        19
       ],
       [
-        "konflik",
-        12
-      ],
-      [
-        "individualisasi",
+        "hiper",
         3
       ],
       [
@@ -135,16 +135,16 @@
         6
       ],
       [
-        "pendeta",
-        5
+        "perang",
+        12
       ],
       [
         "kritik",
         9
       ],
       [
-        "perbudakan",
-        5
+        "individualisasi",
+        3
       ]
     ],
     "phrases": [
@@ -167,29 +167,61 @@
     ],
     "similar": [
       [
-        7206,
-        0.18
-      ],
-      [
-        7203,
-        0.17
-      ],
-      [
-        7062,
-        0.16
-      ],
-      [
-        2256,
-        0.15
-      ],
-      [
         2093,
-        0.15
+        0.22
       ],
       [
         7488,
-        0.15
+        0.21
+      ],
+      [
+        6730,
+        0.21
+      ],
+      [
+        2203,
+        0.21
+      ],
+      [
+        7062,
+        0.2
+      ],
+      [
+        2707,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 52,
+      "negative": 45,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          34
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

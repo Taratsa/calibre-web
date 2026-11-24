@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7162,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "indonesia",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "aceh",
-        28
+        "indonesia",
+        90
       ],
       [
-        "penj",
-        13
+        "aceh",
+        28
       ],
       [
         "irian",
         21
       ],
       [
-        "soeharto",
-        19
+        "penj",
+        13
       ],
       [
-        "keropos",
-        10
+        "soeharto",
+        19
       ],
       [
         "orde",
         20
       ],
       [
-        "buto",
-        7
+        "keropos",
+        10
       ],
       [
         "nasionalisme",
         15
       ],
       [
-        "timor",
-        13
-      ],
-      [
         "proyek",
         25
       ],
       [
-        "irlandia",
+        "timor",
+        13
+      ],
+      [
+        "buto",
         7
       ],
       [
-        "indonesia",
-        90
+        "militer",
+        18
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         7957,
-        0.15
+        0.19
       ],
       [
         8768,
-        0.14
+        0.19
       ],
       [
         6321,
-        0.14
-      ],
-      [
-        6924,
-        0.14
-      ],
-      [
-        7233,
-        0.13
+        0.19
       ],
       [
         752,
-        0.13
+        0.18
+      ],
+      [
+        7233,
+        0.17
+      ],
+      [
+        4004,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 132,
+      "negative": 112,
+      "trend": [
+        0.75,
+        0.25,
+        0.33,
+        0.14,
+        0.47,
+        -0.14,
+        -0.23,
+        -0.4,
+        -0.26,
+        -0.33,
+        -0.3,
+        -0.53,
+        0.44,
+        0.42,
+        -0.33,
+        0.45
+      ],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "trust",
+          25
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "disgust",
+          11
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "surprise",
+          4
+        ]
+      ]
+    }
   }
 }

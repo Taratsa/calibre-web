@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 854,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "anarkisme",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "anarko",
-        9
-      ],
-      [
         "terpelajar",
         12
+      ],
+      [
+        "anarko",
+        9
       ],
       [
         "anarkisme",
@@ -130,6 +130,10 @@
         4
       ],
       [
+        "kaum",
+        11
+      ],
+      [
         "sinisme",
         3
       ],
@@ -138,20 +142,16 @@
         4
       ],
       [
-        "image",
-        3
+        "kekerasan",
+        7
       ],
       [
-        "kaum",
-        11
+        "perbuatan",
+        6
       ],
       [
         "literasi",
         4
-      ],
-      [
-        "mantra",
-        3
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         7392,
-        0.18
-      ],
-      [
-        4482,
-        0.15
+        0.17
       ],
       [
         7203,
-        0.14
+        0.15
+      ],
+      [
+        3959,
+        0.13
+      ],
+      [
+        4482,
+        0.13
       ],
       [
         7350,
         0.13
       ],
       [
-        3959,
-        0.12
-      ],
-      [
         8083,
-        0.11
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 30,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

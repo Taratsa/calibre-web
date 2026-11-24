@@ -24,28 +24,28 @@
   "author_sort": "Jusuf, Ester Indahyani & Timbul, Hotma & Gultom, Olisias & Frishka, Sondang",
   "tags": [],
   "publisher": {
-    "id": 56,
-    "name": "Solidaritas Nusa Bangsa"
+    "id": 1567,
+    "name": "Solidaritas Nusa Bangsa & Asosiasi Penasehat Hukum dan Hak Asasi Manusia Indonesia (APHI)"
   },
   "publishers": [
     {
-      "id": 56,
-      "name": "Solidaritas Nusa Bangsa"
+      "id": 1567,
+      "name": "Solidaritas Nusa Bangsa & Asosiasi Penasehat Hukum dan Hak Asasi Manusia Indonesia (APHI)"
     }
   ],
   "languages": [
     "ind"
   ],
-  "pubdate": null,
+  "pubdate": "2005-11-01",
   "timestamp": "2024-02-10 15:42:33.235978",
-  "last_modified": "2025-06-27 13:55:52.822449",
+  "last_modified": "2026-11-24 04:30:18.207927",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/187?v=1751007352",
-  "cover_og_url": "/cover/187/og?v=1751007352",
+  "cover_url": "/cover_thumb/187?v=1795469418",
+  "cover_og_url": "/cover/187/og?v=1795469418",
   "url": "/book/kerusuhan-mei-1998-fakta-data-analisa-mengungkap-kerusuhan-mei-1998-sebagai-kejahatan-terhadap-kemanusiaan-sondang-f-187/",
   "rating": null,
   "comment": null,
@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 115063,
-    "longer_than": 98,
+    "longer_than": 99,
     "top": [
       [
         "massa",
@@ -131,32 +131,32 @@
         675
       ],
       [
-        "pertokoan",
-        268
-      ],
-      [
         "mei",
         838
       ],
       [
-        "menjarah",
-        276
+        "pertokoan",
+        268
       ],
       [
         "mahasiswa",
         582
       ],
       [
+        "menjarah",
+        276
+      ],
+      [
         "perusakan",
         288
       ],
       [
-        "kampus",
-        309
+        "jakarta",
+        643
       ],
       [
-        "penjarahan",
-        213
+        "toko",
+        356
       ]
     ],
     "phrases": [
@@ -196,28 +196,81 @@
     "similar": [
       [
         312,
-        0.4
+        0.42
       ],
       [
         170,
-        0.4
+        0.42
       ],
       [
         4644,
-        0.39
+        0.42
       ],
       [
         492,
-        0.39
-      ],
-      [
-        1287,
-        0.31
+        0.42
       ],
       [
         1270,
-        0.31
+        0.34
+      ],
+      [
+        1287,
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 1001,
+      "negative": 994,
+      "trend": [
+        -0.2,
+        0.09,
+        -0.08,
+        0.07,
+        -0.15,
+        -0.04,
+        0.3,
+        0.38,
+        -0.12,
+        0.22,
+        -0.16,
+        -0.17,
+        -0.23,
+        -0.14,
+        0.1,
+        0.13
+      ],
+      "emotions": [
+        [
+          "trust",
+          307
+        ],
+        [
+          "anger",
+          231
+        ],
+        [
+          "sadness",
+          87
+        ],
+        [
+          "fear",
+          84
+        ],
+        [
+          "joy",
+          52
+        ],
+        [
+          "anticipation",
+          49
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

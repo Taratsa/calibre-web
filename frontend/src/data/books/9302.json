@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 11357,
-    "longer_than": 64,
+    "longer_than": 82,
     "top": [
       [
         "indonesia",
@@ -104,10 +104,6 @@
         160
       ],
       [
-        "burjuasi",
-        35
-      ],
-      [
         "revolusi",
         133
       ],
@@ -116,28 +112,32 @@
         91
       ],
       [
-        "marxisme-leninisme",
-        30
+        "indonesia",
+        253
       ],
       [
-        "persatuan",
-        67
+        "burjuasi",
+        35
       ],
       [
         "kaum",
         111
       ],
       [
-        "imperialisme",
-        37
+        "nasional",
+        117
       ],
       [
         "rakyat",
         104
       ],
       [
-        "indonesia",
-        253
+        "persatuan",
+        67
+      ],
+      [
+        "marxisme-leninisme",
+        30
       ],
       [
         "perjuangan",
@@ -181,28 +181,81 @@
     "similar": [
       [
         6758,
-        0.63
+        0.66
       ],
       [
         9301,
-        0.59
+        0.63
       ],
       [
         9304,
-        0.49
+        0.54
       ],
       [
         6713,
-        0.41
+        0.45
       ],
       [
         4814,
-        0.41
+        0.45
       ],
       [
         471,
-        0.4
+        0.45
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 305,
+      "negative": 110,
+      "trend": [
+        null,
+        0.43,
+        -0.11,
+        0.38,
+        0.38,
+        0.56,
+        -0.04,
+        0.59,
+        0.38,
+        1,
+        0.33,
+        0.6,
+        0.64,
+        0.76,
+        0.76,
+        0.18
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

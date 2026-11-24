@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1429,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "iklim",
@@ -97,12 +97,12 @@
     ],
     "distinct": [
       [
-        "ruu",
-        35
-      ],
-      [
         "iklim",
         46
+      ],
+      [
+        "ruu",
+        35
       ],
       [
         "ppi",
@@ -121,28 +121,28 @@
         20
       ],
       [
-        "siklon",
-        4
-      ],
-      [
         "pengelolaan",
         13
       ],
       [
-        "bedono",
-        3
+        "siklon",
+        4
       ],
       [
         "karbon",
         6
       ],
       [
-        "draft",
-        6
+        "bedono",
+        3
       ],
       [
-        "damage",
-        4
+        "perubahan",
+        17
+      ],
+      [
+        "pasal",
+        9
       ]
     ],
     "phrases": [
@@ -182,28 +182,35 @@
     "similar": [
       [
         8851,
-        0.24
-      ],
-      [
-        9146,
-        0.21
+        0.26
       ],
       [
         8852,
+        0.21
+      ],
+      [
+        9146,
         0.2
       ],
       [
         9148,
-        0.18
+        0.19
       ],
       [
         8457,
-        0.17
+        0.18
       ],
       [
         8723,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.48,
+      "positive": 16,
+      "negative": 45,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

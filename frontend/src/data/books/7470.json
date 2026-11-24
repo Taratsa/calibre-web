@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1360,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "teknologi",
@@ -110,20 +110,20 @@
         36
       ],
       [
-        "marcuse",
-        6
-      ],
-      [
-        "nalar",
-        10
+        "kapitalisme",
+        18
       ],
       [
         "kapital",
         14
       ],
       [
-        "kapitalisme",
-        18
+        "marcuse",
+        6
+      ],
+      [
+        "nalar",
+        10
       ],
       [
         "akumulasi",
@@ -142,12 +142,12 @@
         7
       ],
       [
-        "ekspansi",
-        6
+        "kapitalis",
+        9
       ],
       [
-        "nilai-lebih",
-        3
+        "ekspansi",
+        6
       ],
       [
         "proletar",
@@ -191,28 +191,35 @@
     "similar": [
       [
         7441,
-        0.31
+        0.33
       ],
       [
         2692,
-        0.31
+        0.32
       ],
       [
         7469,
-        0.26
+        0.29
       ],
       [
         2067,
-        0.26
+        0.29
       ],
       [
-        7416,
-        0.12
+        2599,
+        0.16
       ],
       [
-        8415,
-        0.11
+        9172,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 43,
+      "negative": 13,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

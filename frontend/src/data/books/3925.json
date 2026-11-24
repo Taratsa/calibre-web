@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3190,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "punk",
@@ -111,6 +111,10 @@
         15
       ],
       [
+        "musik",
+        22
+      ],
+      [
         "subkultur",
         10
       ],
@@ -119,32 +123,28 @@
         15
       ],
       [
-        "musik",
-        22
-      ],
-      [
         "adegan",
         10
-      ],
-      [
-        "rock",
-        9
-      ],
-      [
-        "dipolitisasi",
-        5
       ],
       [
         "ide-ide",
         12
       ],
       [
+        "rock",
+        9
+      ],
+      [
         "radikal",
         13
       ],
       [
-        "crass",
-        4
+        "dipolitisasi",
+        5
+      ],
+      [
+        "pertunjukan",
+        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         3072,
-        0.74
+        0.75
       ],
       [
         1970,
-        0.25
-      ],
-      [
-        3073,
-        0.2
+        0.28
       ],
       [
         3732,
-        0.2
+        0.23
       ],
       [
         54,
-        0.2
+        0.23
+      ],
+      [
+        3073,
+        0.22
       ],
       [
         2202,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 53,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

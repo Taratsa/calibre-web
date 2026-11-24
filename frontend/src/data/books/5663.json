@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 5757,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "abit",
@@ -114,20 +114,24 @@
         74
       ],
       [
+        "atu",
+        86
+      ],
+      [
         "cicem",
         52
       ],
       [
-        "atu",
-        86
+        "nyang",
+        52
       ],
       [
         "awaknyan",
         28
       ],
       [
-        "nyang",
-        52
+        "ngon",
+        45
       ],
       [
         "lateh",
@@ -138,16 +142,12 @@
         26
       ],
       [
-        "ngon",
-        45
+        "burung",
+        82
       ],
       [
         "tulo",
         26
-      ],
-      [
-        "miriek",
-        20
       ]
     ],
     "phrases": [
@@ -195,7 +195,11 @@
       ],
       [
         824,
-        0.24
+        0.25
+      ],
+      [
+        5602,
+        0.23
       ],
       [
         823,
@@ -204,11 +208,43 @@
       [
         839,
         0.22
-      ],
-      [
-        5602,
-        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 51,
+      "negative": 35,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

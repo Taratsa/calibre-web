@@ -1,44 +1,54 @@
 {
   "id": 4644,
-  "title": "Temuan Tim Gabungan Pencari Fakta Peristiwa Kerusuhan",
-  "slug": "temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-komnas-perempuan",
-  "slugBase": "temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-komnas-perempuan",
+  "title": "Temuan Tim Gabungan Pencari Fakta Peristiwa Kerusuhan Mei 1998",
+  "slug": "temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-mei-1998-tim-gabungan-pencari-fakta",
+  "slugBase": "temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-mei-1998-tim-gabungan-pencari-fakta",
   "authors": [
     {
-      "id": 4027,
-      "name": "Komnas Perempuan"
+      "id": 7689,
+      "name": "Tim Gabungan Pencari Fakta"
     }
   ],
-  "author_sort": "Perempuan, Komnas",
+  "author_sort": "Fakta, Tim Gabungan Pencari",
   "tags": [
     "Sejarah"
   ],
-  "publisher": null,
-  "publishers": [],
-  "languages": [],
-  "pubdate": null,
+  "publisher": {
+    "id": 54,
+    "name": "Komnas Perempuan"
+  },
+  "publishers": [
+    {
+      "id": 54,
+      "name": "Komnas Perempuan"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2002-10-01",
   "timestamp": "2026-08-14 15:34:30.695077",
-  "last_modified": "2026-08-14 15:34:30.695082",
+  "last_modified": "2026-11-24 06:29:36.142769",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/4644?v=1786696470",
-  "cover_og_url": "/cover/4644/og?v=1786696470",
-  "url": "/book/temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-komnas-perempuan/",
+  "cover_url": "/cover_thumb/4644?v=1795476576",
+  "cover_og_url": "/cover/4644/og?v=1795476576",
+  "url": "/book/temuan-tim-gabungan-pencari-fakta-peristiwa-kerusuhan-mei-1998-tim-gabungan-pencari-fakta/",
   "rating": null,
-  "comment": "Sejarah",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 4811869,
-      "name": "Temuan Tim Gabungan Pencari Fakta Peristiw - Komnas Perempuan"
+      "name": "Temuan Tim Gabungan Pencari Fakta Peristiw - Tim Gabungan Pencari Fakta"
     }
   ],
   "text": {
     "words": 21761,
-    "longer_than": 78,
+    "longer_than": 89,
     "top": [
       [
         "kerusuhan",
@@ -99,16 +109,16 @@
         184
       ],
       [
+        "korban",
+        263
+      ],
+      [
         "penjarahan",
         94
       ],
       [
         "perusakan",
         113
-      ],
-      [
-        "korban",
-        263
       ],
       [
         "massal",
@@ -119,24 +129,24 @@
         96
       ],
       [
-        "tgpf",
-        42
-      ],
-      [
-        "pengajak",
-        24
-      ],
-      [
         "peristiwa",
         162
       ],
       [
-        "operandi",
-        32
+        "tgpf",
+        42
+      ],
+      [
+        "mei",
+        124
       ],
       [
         "seksual",
         69
+      ],
+      [
+        "pengajak",
+        24
       ]
     ],
     "phrases": [
@@ -175,29 +185,82 @@
     ],
     "similar": [
       [
-        1287,
-        0.6
+        1270,
+        0.62
       ],
       [
-        1270,
-        0.6
+        1287,
+        0.62
       ],
       [
         3814,
-        0.4
+        0.42
       ],
       [
         1271,
-        0.4
+        0.42
       ],
       [
         187,
-        0.39
+        0.42
       ],
       [
         7930,
-        0.38
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.39,
+      "positive": 213,
+      "negative": 486,
+      "trend": [
+        -0.52,
+        -0.25,
+        -0.81,
+        -0.39,
+        -0.37,
+        0.05,
+        0,
+        -0.12,
+        -0.75,
+        -0.16,
+        -0.16,
+        -0.17,
+        -0.44,
+        -0.64,
+        -0.1,
+        -0.12
+      ],
+      "emotions": [
+        [
+          "anger",
+          136
+        ],
+        [
+          "fear",
+          114
+        ],
+        [
+          "sadness",
+          106
+        ],
+        [
+          "trust",
+          55
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2841,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "rakjat",
@@ -89,12 +89,12 @@
     ],
     "distinct": [
       [
-        "pki",
-        55
-      ],
-      [
         "rakjat",
         56
+      ],
+      [
+        "pki",
+        55
       ],
       [
         "konstituante",
@@ -113,28 +113,28 @@
         12
       ],
       [
-        "uud",
-        19
-      ],
-      [
-        "fasal",
-        11
-      ],
-      [
         "republik",
         34
+      ],
+      [
+        "uud",
+        19
       ],
       [
         "proklamasi",
         15
       ],
       [
-        "kampanje",
-        8
+        "fasal",
+        11
       ],
       [
-        "sukubangsa",
-        8
+        "negara",
+        42
+      ],
+      [
+        "indonesia",
+        51
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         9272,
-        0.58
+        0.6
       ],
       [
         468,
-        0.33
+        0.36
       ],
       [
         4901,
-        0.33
+        0.36
       ],
       [
         6799,
-        0.3
+        0.32
       ],
       [
         6291,
-        0.27
+        0.3
       ],
       [
-        7759,
-        0.24
+        7836,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 37,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

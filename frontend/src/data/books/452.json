@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4051,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "tuhan",
@@ -89,6 +89,10 @@
     ],
     "distinct": [
       [
+        "saudara-saudara",
+        36
+      ],
+      [
         "tuhannja",
         18
       ],
@@ -97,24 +101,8 @@
         17
       ],
       [
-        "saudara-saudara",
-        36
-      ],
-      [
         "gadjah",
         32
-      ],
-      [
-        "menjembah",
-        12
-      ],
-      [
-        "djandji-djandji",
-        8
-      ],
-      [
-        "njindir",
-        7
       ],
       [
         "tuhan",
@@ -125,16 +113,28 @@
         30
       ],
       [
-        "antenne",
-        7
+        "belanda",
+        36
+      ],
+      [
+        "menjembah",
+        12
       ],
       [
         "didalam",
         27
       ],
       [
-        "kung",
-        12
+        "djandji-djandji",
+        8
+      ],
+      [
+        "bangsa",
+        42
+      ],
+      [
+        "njindir",
+        7
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         5947,
-        0.14
+        0.16
       ],
       [
         2838,
-        0.13
+        0.16
       ],
       [
         8771,
-        0.13
+        0.15
       ],
       [
         680,
-        0.12
+        0.15
       ],
       [
         683,
-        0.12
+        0.14
       ],
       [
-        6670,
-        0.11
+        599,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 31,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

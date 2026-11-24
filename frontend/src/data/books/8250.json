@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2642,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "demokrasi",
@@ -107,43 +107,43 @@
         11
       ],
       [
-        "representasi",
-        22
-      ],
-      [
         "demokrasi",
         35
+      ],
+      [
+        "representasi",
+        22
       ],
       [
         "representation",
         13
       ],
       [
+        "kelompok",
+        29
+      ],
+      [
         "sipil",
         19
       ],
       [
-        "matters",
-        8
-      ],
-      [
-        "kombinasi",
-        10
+        "politik",
+        29
       ],
       [
         "populer",
         14
       ],
       [
-        "institution",
-        7
-      ],
-      [
-        "kelompok",
-        29
+        "matters",
+        8
       ],
       [
         "elit",
+        10
+      ],
+      [
+        "kombinasi",
         10
       ]
     ],
@@ -184,28 +184,35 @@
     "similar": [
       [
         8246,
+        0.17
+      ],
+      [
+        8476,
+        0.15
+      ],
+      [
+        8242,
         0.15
       ],
       [
         8247,
-        0.13
-      ],
-      [
-        8242,
-        0.13
+        0.15
       ],
       [
         2398,
-        0.13
-      ],
-      [
-        8476,
-        0.13
+        0.14
       ],
       [
         8630,
-        0.1
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 40,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

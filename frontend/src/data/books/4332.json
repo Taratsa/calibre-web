@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 988,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "seni",
@@ -96,16 +96,16 @@
     ],
     "distinct": [
       [
+        "seni",
+        33
+      ],
+      [
         "tradisionil",
         10
       ],
       [
         "lukis",
         12
-      ],
-      [
-        "seni",
-        33
       ],
       [
         "daryono",
@@ -124,11 +124,11 @@
         5
       ],
       [
-        "berkomunikasi",
+        "ide-ide",
         4
       ],
       [
-        "ide-ide",
+        "berkomunikasi",
         4
       ],
       [
@@ -136,11 +136,11 @@
         4
       ],
       [
-        "inspirasi",
-        3
+        "indonesia",
+        10
       ],
       [
-        "kesenian",
+        "inspirasi",
         3
       ]
     ],
@@ -165,28 +165,29 @@
     "similar": [
       [
         4400,
-        0.31
+        0.3
       ],
       [
         4484,
         0.24
       ],
       [
-        4160,
-        0.19
+        4570,
+        0.2
       ],
       [
-        4570,
-        0.19
+        4160,
+        0.2
       ],
       [
         4344,
-        0.18
+        0.19
       ],
       [
         4326,
-        0.18
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

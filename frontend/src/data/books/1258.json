@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3813,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "perempuan",
@@ -115,12 +115,12 @@
         12
       ],
       [
-        "reinharz",
-        5
-      ],
-      [
         "ibumu",
         14
+      ],
+      [
+        "reinharz",
+        5
       ],
       [
         "alfi",
@@ -135,16 +135,16 @@
         3
       ],
       [
-        "plokis",
-        3
-      ],
-      [
         "bagas",
         5
       ],
       [
-        "angkringan",
-        4
+        "plokis",
+        3
+      ],
+      [
+        "metode",
+        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         359,
-        0.15
+        0.17
       ],
       [
         346,
-        0.13
+        0.15
       ],
       [
         2002,
-        0.13
+        0.14
       ],
       [
         7313,
-        0.11
+        0.12
       ],
       [
         6998,
-        0.1
+        0.12
       ],
       [
         1256,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 44,
+      "negative": 37,
+      "trend": [
+        null,
+        null,
+        null,
+        -0.33,
+        0.4,
+        0.64,
+        -0.2,
+        0.2,
+        null,
+        null,
+        -0.2,
+        -0.56,
+        null,
+        0.43,
+        null,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "fear",
+          10
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

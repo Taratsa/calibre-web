@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1262,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "pekerja",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "swakelola",
-        12
-      ],
-      [
         "pekerja",
         38
+      ],
+      [
+        "swakelola",
+        12
       ],
       [
         "argentina",
@@ -126,31 +126,31 @@
         18
       ],
       [
+        "kapitalis",
+        8
+      ],
+      [
         "politisi",
         6
       ],
       [
-        "kapitalis",
-        8
+        "kelas",
+        10
+      ],
+      [
+        "membangun",
+        12
       ],
       [
         "majikan",
         5
       ],
       [
-        "kontinum",
-        3
+        "produksi",
+        8
       ],
       [
         "otonom",
-        5
-      ],
-      [
-        "pekerjanya",
-        3
-      ],
-      [
-        "manajemen",
         5
       ]
     ],
@@ -175,28 +175,29 @@
     "similar": [
       [
         3713,
-        0.47
-      ],
-      [
-        2755,
-        0.23
+        0.49
       ],
       [
         3800,
-        0.23
+        0.26
       ],
       [
         2751,
-        0.23
+        0.26
       ],
       [
         3758,
-        0.21
+        0.26
       ],
       [
-        7010,
-        0.19
+        2755,
+        0.22
+      ],
+      [
+        2599,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1954,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "stirner",
@@ -127,20 +127,20 @@
         10
       ],
       [
-        "kuk",
-        6
-      ],
-      [
         "otoritas",
         14
       ],
       [
-        "mengalihdayakan",
-        3
+        "kuk",
+        6
       ],
       [
         "reaktif",
         5
+      ],
+      [
+        "mengalihdayakan",
+        3
       ],
       [
         "progresivisme",
@@ -179,25 +179,32 @@
         0.26
       ],
       [
-        2327,
-        0.25
-      ],
-      [
         4680,
-        0.2
+        0.22
       ],
       [
         7224,
+        0.22
+      ],
+      [
+        2327,
         0.2
       ],
       [
-        7297,
-        0.18
+        8113,
+        0.17
       ],
       [
-        8113,
-        0.16
+        3093,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 47,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

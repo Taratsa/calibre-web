@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 30277,
-    "longer_than": 85,
+    "longer_than": 93,
     "top": [
       [
         "maluku",
@@ -99,48 +99,48 @@
     ],
     "distinct": [
       [
-        "alifuru",
-        82
-      ],
-      [
         "islands",
         128
       ],
       [
-        "ternate",
-        103
+        "alifuru",
+        82
       ],
       [
         "maluku",
         163
       ],
       [
-        "dutch",
-        97
+        "ternate",
+        103
       ],
       [
         "people",
         155
       ],
       [
+        "dutch",
+        97
+      ],
+      [
         "tidore",
         58
-      ],
-      [
-        "stateless",
-        48
-      ],
-      [
-        "societies",
-        62
       ],
       [
         "island",
         70
       ],
       [
+        "societies",
+        62
+      ],
+      [
         "banda",
         75
+      ],
+      [
+        "stateless",
+        48
       ],
       [
         "portuguese",
@@ -184,28 +184,29 @@
     "similar": [
       [
         286,
-        0.4
+        0.39
       ],
       [
         3966,
-        0.3
+        0.31
       ],
       [
         731,
-        0.2
-      ],
-      [
-        7825,
-        0.18
+        0.21
       ],
       [
         8291,
         0.18
       ],
       [
+        7825,
+        0.18
+      ],
+      [
         676,
         0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

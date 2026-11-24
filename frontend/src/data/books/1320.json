@@ -12,7 +12,7 @@
   "author_sort": "Biegman, G. J. F.",
   "tags": [
     "Agama",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 27662,
-    "longer_than": 83,
+    "longer_than": 92,
     "top": [
       [
         "orang",
@@ -116,8 +116,20 @@
         164
       ],
       [
+        "orang",
+        925
+      ],
+      [
         "susuhunan",
         120
+      ],
+      [
+        "sultan",
+        203
+      ],
+      [
+        "tiada",
+        283
       ],
       [
         "gouvernement",
@@ -128,32 +140,20 @@
         79
       ],
       [
-        "sultan",
-        203
-      ],
-      [
         "saorang",
         80
       ],
       [
-        "tiada",
-        283
-      ],
-      [
-        "balatantara",
-        53
+        "raja",
+        215
       ],
       [
         "satelah",
         64
       ],
       [
-        "karajaan",
-        59
-      ],
-      [
-        "sakali",
-        76
+        "balatantara",
+        53
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         6751,
-        0.63
+        0.65
       ],
       [
         657,
-        0.45
+        0.46
       ],
       [
         1321,
-        0.33
+        0.34
       ],
       [
         4027,
-        0.13
+        0.15
       ],
       [
         6066,
-        0.12
+        0.14
       ],
       [
         6253,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 213,
+      "negative": 357,
+      "trend": [
+        0.11,
+        -0.14,
+        -0.33,
+        -0.03,
+        -0.64,
+        -0.35,
+        -0.4,
+        -0.1,
+        0.08,
+        -0.66,
+        -0.42,
+        -0.37,
+        0.12,
+        -0.18,
+        -0.63,
+        -0.03
+      ],
+      "emotions": [
+        [
+          "anger",
+          119
+        ],
+        [
+          "sadness",
+          39
+        ],
+        [
+          "joy",
+          26
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 9142,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "hidup",
@@ -103,48 +103,48 @@
         75
       ],
       [
-        "lapindo",
-        18
-      ],
-      [
         "korporasi",
         32
+      ],
+      [
+        "lapindo",
+        18
       ],
       [
         "kapitalisme",
         41
       ],
       [
-        "kompetisi",
-        23
-      ],
-      [
-        "kemakmuran",
-        28
-      ],
-      [
-        "besuki",
-        9
+        "hidup",
+        86
       ],
       [
         "masyarakat",
         75
       ],
       [
+        "kemakmuran",
+        28
+      ],
+      [
+        "kompetisi",
+        23
+      ],
+      [
+        "orang",
+        65
+      ],
+      [
+        "ekonomi",
+        33
+      ],
+      [
         "sistem",
         38
       ],
       [
-        "tol",
-        10
-      ],
-      [
-        "perpres",
+        "besuki",
         9
-      ],
-      [
-        "majikan",
-        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2640,
-        0.43
+        0.42
       ],
       [
         7866,
-        0.25
+        0.29
       ],
       [
         2634,
-        0.25
+        0.29
       ],
       [
         7864,
-        0.22
+        0.27
       ],
       [
         1852,
-        0.22
+        0.27
       ],
       [
         7865,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 217,
+      "negative": 156,
+      "trend": [
+        null,
+        0.6,
+        0.4,
+        0.45,
+        0.36,
+        0.67,
+        -0.1,
+        0.09,
+        -0.33,
+        0.05,
+        0.47,
+        -0.2,
+        0.58,
+        -0.04,
+        -0.31,
+        0.26
+      ],
+      "emotions": [
+        [
+          "anger",
+          34
+        ],
+        [
+          "joy",
+          30
+        ],
+        [
+          "fear",
+          13
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 12361,
-    "longer_than": 66,
+    "longer_than": 83,
     "top": [
       [
         "peradaban",
@@ -106,16 +106,16 @@
     ],
     "distinct": [
       [
-        "wildpunk",
-        18
-      ],
-      [
         "peradaban",
         86
       ],
       [
         "anarkis",
         73
+      ],
+      [
+        "wildpunk",
+        18
       ],
       [
         "elany",
@@ -126,32 +126,32 @@
         13
       ],
       [
-        "pemburu-pengumpul",
-        13
-      ],
-      [
         "anarki",
         27
-      ],
-      [
-        "dekolonisasi",
-        14
-      ],
-      [
-        "kolonialisme",
-        25
-      ],
-      [
-        "teknologi",
-        44
       ],
       [
         "industri",
         42
       ],
       [
+        "pemburu-pengumpul",
+        13
+      ],
+      [
+        "kolonialisme",
+        25
+      ],
+      [
         "penyakit",
         35
+      ],
+      [
+        "teknologi",
+        44
+      ],
+      [
+        "dekolonisasi",
+        14
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         2628,
-        0.25
+        0.31
+      ],
+      [
+        1820,
+        0.24
       ],
       [
         2205,
-        0.2
+        0.24
+      ],
+      [
+        7123,
+        0.23
       ],
       [
         1849,
-        0.19
+        0.23
       ],
       [
         2794,
-        0.19
-      ],
-      [
-        7081,
-        0.18
-      ],
-      [
-        3700,
-        0.18
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 272,
+      "negative": 283,
+      "trend": [
+        -0.24,
+        -0.38,
+        0.02,
+        0.15,
+        0.52,
+        0.62,
+        0.06,
+        0.31,
+        0.12,
+        0.32,
+        -0.06,
+        -0.33,
+        -0.33,
+        -0.28,
+        -0.11,
+        -0.31
+      ],
+      "emotions": [
+        [
+          "sadness",
+          47
+        ],
+        [
+          "anger",
+          36
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "fear",
+          21
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

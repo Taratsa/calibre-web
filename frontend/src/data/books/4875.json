@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 4467,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "rakjat",
@@ -112,39 +112,39 @@
         16
       ],
       [
-        "jajasan",
-        23
-      ],
-      [
         "kebudajaan",
         27
+      ],
+      [
+        "jajasan",
+        23
       ],
       [
         "revolusi",
         44
       ],
       [
-        "djuga",
-        22
+        "ilmu",
+        52
       ],
       [
-        "perdjoangan",
-        13
+        "djuga",
+        22
       ],
       [
         "jalah",
         16
       ],
       [
-        "ilmu",
-        52
+        "perdjoangan",
+        13
+      ],
+      [
+        "indonesia",
+        56
       ],
       [
         "djakarta",
-        15
-      ],
-      [
-        "banjak",
         15
       ]
     ],
@@ -193,20 +193,44 @@
       ],
       [
         427,
-        0.28
+        0.31
       ],
       [
         9226,
-        0.26
+        0.3
       ],
       [
         6799,
-        0.24
+        0.28
       ],
       [
-        4878,
-        0.24
+        799,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 75,
+      "negative": 24,
+      "trend": [
+        null,
+        -0.5,
+        0.2,
+        -0.2,
+        0.5,
+        0.75,
+        1,
+        1,
+        null,
+        0.4,
+        1,
+        null,
+        0.5,
+        0.71,
+        0.56,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 31493,
-    "longer_than": 86,
+    "longer_than": 93,
     "top": [
       [
         "indonesia",
@@ -103,48 +103,48 @@
         150
       ],
       [
-        "kko",
-        62
-      ],
-      [
         "sukarno",
         138
-      ],
-      [
-        "perwira",
-        132
-      ],
-      [
-        "suparjo",
-        39
       ],
       [
         "pasukan",
         178
       ],
       [
+        "perwira",
+        132
+      ],
+      [
         "militer",
         192
       ],
       [
-        "batalyon",
-        58
+        "kko",
+        62
       ],
       [
         "tentara",
         180
       ],
       [
-        "kudeta",
-        68
+        "suparjo",
+        39
       ],
       [
-        "cakrabirawa",
-        33
+        "komunis",
+        120
       ],
       [
-        "kolonel",
-        63
+        "batalyon",
+        58
+      ],
+      [
+        "jenderal",
+        120
+      ],
+      [
+        "pemberontakan",
+        124
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         4872,
-        0.3
+        0.33
       ],
       [
         4871,
-        0.3
+        0.33
       ],
       [
         994,
-        0.3
+        0.33
       ],
       [
         4461,
-        0.25
+        0.28
       ],
       [
         154,
-        0.23
+        0.24
       ],
       [
         1418,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 307,
+      "negative": 368,
+      "trend": [
+        -0.22,
+        0.4,
+        -0.17,
+        -0.1,
+        -0.21,
+        -0.49,
+        -0.45,
+        0.24,
+        0.02,
+        0.08,
+        0.48,
+        -0.17,
+        -0.24,
+        0,
+        0.6,
+        0.38
+      ],
+      "emotions": [
+        [
+          "anger",
+          94
+        ],
+        [
+          "sadness",
+          57
+        ],
+        [
+          "trust",
+          30
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

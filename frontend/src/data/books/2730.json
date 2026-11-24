@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3966,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "konspirasi",
@@ -111,11 +111,19 @@
         24
       ],
       [
+        "gerilya",
+        10
+      ],
+      [
         "gerilyawan",
         8
       ],
       [
-        "gerilya",
+        "kolektif",
+        16
+      ],
+      [
+        "proposal",
         10
       ],
       [
@@ -123,28 +131,20 @@
         5
       ],
       [
-        "proposal",
-        10
+        "anarkis",
+        12
       ],
       [
         "komunike",
         6
       ],
       [
-        "kolektif",
-        16
+        "tindakan",
+        18
       ],
       [
-        "autonom",
-        3
-      ],
-      [
-        "anarkis",
-        12
-      ],
-      [
-        "fetisisasi",
-        3
+        "serangan",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8016,
-        0.69
+        0.71
       ],
       [
         3770,
-        0.67
+        0.7
       ],
       [
         2076,
-        0.28
+        0.34
       ],
       [
         4097,
-        0.26
+        0.3
       ],
       [
         3754,
-        0.26
+        0.3
       ],
       [
         1813,
-        0.24
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 64,
+      "negative": 52,
+      "trend": [
+        null,
+        0.45,
+        0.71,
+        null,
+        0,
+        0.5,
+        0.56,
+        0.4,
+        -0.4,
+        0.11,
+        0.14,
+        -0.56,
+        -0.2,
+        0.11,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

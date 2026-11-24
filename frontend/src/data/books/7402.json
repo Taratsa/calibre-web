@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2156,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "kerja",
@@ -106,8 +106,16 @@
     ],
     "distinct": [
       [
+        "kerja",
+        44
+      ],
+      [
         "bos",
         15
+      ],
+      [
+        "rekan",
+        16
       ],
       [
         "bosmu",
@@ -118,28 +126,8 @@
         5
       ],
       [
-        "rekan",
-        16
-      ],
-      [
         "kerjamu",
         8
-      ],
-      [
-        "kerja",
-        44
-      ],
-      [
-        "komputermu",
-        3
-      ],
-      [
-        "karyawan",
-        10
-      ],
-      [
-        "pemecatan",
-        6
       ],
       [
         "pekerja",
@@ -150,8 +138,20 @@
         18
       ],
       [
-        "internet",
-        8
+        "karyawan",
+        10
+      ],
+      [
+        "komputermu",
+        3
+      ],
+      [
+        "pemecatan",
+        6
+      ],
+      [
+        "kiat",
+        4
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         2765,
-        0.16
+        0.19
       ],
       [
         7884,
-        0.11
-      ],
-      [
-        1533,
-        0.11
+        0.14
       ],
       [
         7986,
-        0.11
+        0.13
+      ],
+      [
+        1533,
+        0.13
+      ],
+      [
+        3981,
+        0.12
       ],
       [
         2191,
-        0.1
-      ],
-      [
-        354,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 29,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

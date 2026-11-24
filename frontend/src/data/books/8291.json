@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 129086,
-    "longer_than": 98,
+    "longer_than": 99,
     "top": [
       [
         "political",
@@ -111,40 +111,40 @@
         336
       ],
       [
-        "simalungun",
-        201
+        "law",
+        395
       ],
       [
-        "power",
-        434
+        "simalungun",
+        201
       ],
       [
         "minangkabau",
         299
       ],
       [
-        "law",
-        395
+        "power",
+        434
       ],
       [
         "traditional",
         260
       ],
       [
-        "islamic",
-        189
-      ],
-      [
         "social",
         370
+      ],
+      [
+        "islamic",
+        189
       ],
       [
         "party",
         229
       ],
       [
-        "leaders",
-        166
+        "adat",
+        377
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         3112,
-        0.42
+        0.43
       ],
       [
         738,
-        0.42
+        0.43
       ],
       [
         1892,
-        0.31
+        0.33
       ],
       [
         770,
-        0.31
+        0.33
       ],
       [
         731,
-        0.31
+        0.32
       ],
       [
         3818,
-        0.29
+        0.31
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

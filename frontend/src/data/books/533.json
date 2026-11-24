@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5168,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "hidup",
@@ -89,39 +89,35 @@
     ],
     "distinct": [
       [
-        "didalam",
-        53
-      ],
-      [
         "wanita",
         78
+      ],
+      [
+        "didalam",
+        53
       ],
       [
         "pergandaan",
         11
       ],
       [
+        "hidup",
+        79
+      ],
+      [
         "nafsu-nafsu",
         11
-      ],
-      [
-        "kodrati",
-        12
-      ],
-      [
-        "kesusilaan",
-        15
       ],
       [
         "biasanja",
         17
       ],
       [
-        "kesutjian",
-        9
+        "kesusilaan",
+        15
       ],
       [
-        "sutji",
+        "kodrati",
         12
       ],
       [
@@ -129,12 +125,16 @@
         19
       ],
       [
-        "kodrat-alam",
-        6
+        "sutji",
+        12
       ],
       [
-        "masarakat",
-        10
+        "kesutjian",
+        9
+      ],
+      [
+        "adanja",
+        16
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         684,
-        0.38
+        0.39
       ],
       [
         742,
-        0.27
+        0.29
       ],
       [
         621,
-        0.26
+        0.28
       ],
       [
         761,
-        0.24
+        0.27
       ],
       [
         300,
-        0.24
+        0.27
       ],
       [
         516,
-        0.2
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 101,
+      "negative": 32,
+      "trend": [
+        0.78,
+        0.78,
+        0.8,
+        0.57,
+        0.33,
+        0.14,
+        null,
+        0.43,
+        0.2,
+        0.22,
+        0.85,
+        null,
+        1,
+        0.25,
+        0.43,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3950,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "buku",
@@ -121,28 +121,28 @@
         9
       ],
       [
-        "pinurbo",
-        5
+        "engkau",
+        15
       ],
       [
         "kibaran",
         6
       ],
       [
-        "qadariatin",
-        3
-      ],
-      [
-        "anasrullah",
-        3
+        "pinurbo",
+        5
       ],
       [
         "celana",
         10
       ],
       [
-        "engkau",
-        15
+        "puisi",
+        12
+      ],
+      [
+        "qadariatin",
+        3
       ]
     ],
     "phrases": [
@@ -182,28 +182,81 @@
     "similar": [
       [
         3040,
-        0.17
+        0.21
       ],
       [
         2990,
-        0.17
+        0.2
       ],
       [
         3035,
-        0.16
+        0.18
       ],
       [
         4942,
-        0.15
+        0.18
       ],
       [
         3004,
-        0.15
+        0.18
       ],
       [
-        3031,
-        0.14
+        3002,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 52,
+      "negative": 44,
+      "trend": [
+        null,
+        0.56,
+        null,
+        0.56,
+        null,
+        null,
+        -0.14,
+        -0.2,
+        null,
+        null,
+        0.6,
+        null,
+        -0.2,
+        null,
+        0.08,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "joy",
+          22
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

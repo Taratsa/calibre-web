@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2920,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "lagu",
@@ -103,6 +103,10 @@
         16
       ],
       [
+        "lagu",
+        32
+      ],
+      [
         "album",
         18
       ],
@@ -111,40 +115,36 @@
         17
       ],
       [
-        "lagu",
-        32
-      ],
-      [
         "svkatani",
         6
-      ],
-      [
-        "sintax",
-        5
-      ],
-      [
-        "thrash",
-        7
-      ],
-      [
-        "bvrtan",
-        5
       ],
       [
         "food",
         15
       ],
       [
+        "thrash",
+        7
+      ],
+      [
         "band",
         15
+      ],
+      [
+        "bvrtan",
+        5
+      ],
+      [
+        "sintax",
+        5
       ],
       [
         "kades",
         7
       ],
       [
-        "orange",
-        8
+        "perang",
+        23
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         9189,
-        0.17
+        0.19
       ],
       [
         1549,
@@ -196,16 +196,73 @@
       ],
       [
         1548,
-        0.14
+        0.15
       ],
       [
         1782,
-        0.12
+        0.14
       ],
       [
-        74,
-        0.11
+        1737,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.41,
+      "positive": 28,
+      "negative": 67,
+      "trend": [
+        null,
+        -0.5,
+        -0.11,
+        -0.5,
+        null,
+        null,
+        -1,
+        null,
+        -1,
+        null,
+        null,
+        -0.78,
+        -1,
+        -0.67,
+        -0.67,
+        0.11
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

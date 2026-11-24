@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 30906,
-    "longer_than": 86,
+    "longer_than": 93,
     "top": [
       [
         "people",
@@ -100,20 +100,24 @@
         236
       ],
       [
+        "region",
+        104
+      ],
+      [
         "saarc",
         37
       ],
       [
-        "region",
-        104
+        "asian",
+        109
       ],
       [
         "participants",
         69
       ],
       [
-        "asian",
-        109
+        "asia",
+        141
       ],
       [
         "nepal",
@@ -128,16 +132,12 @@
         78
       ],
       [
-        "trans-border",
-        26
-      ],
-      [
         "countries",
         74
       ],
       [
-        "kathmandu",
-        29
+        "trans-border",
+        26
       ]
     ],
     "phrases": [
@@ -177,28 +177,29 @@
     "similar": [
       [
         8615,
-        0.32
+        0.33
       ],
       [
         8409,
-        0.31
+        0.32
       ],
       [
         8603,
-        0.29
+        0.3
       ],
       [
         8622,
-        0.29
+        0.3
       ],
       [
         8507,
-        0.27
+        0.28
       ],
       [
         8682,
-        0.27
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

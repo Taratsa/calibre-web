@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 3641,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "bahasa",
@@ -111,44 +111,44 @@
         70
       ],
       [
-        "publik",
-        94
-      ],
-      [
         "bahasa",
         164
+      ],
+      [
+        "publik",
+        94
       ],
       [
         "ruang",
         95
       ],
       [
-        "komitmen",
-        32
-      ],
-      [
-        "lomba",
-        20
-      ],
-      [
-        "wali",
-        24
+        "kota",
+        78
       ],
       [
         "pemimpin",
         54
       ],
       [
-        "kota",
-        78
+        "komitmen",
+        32
       ],
       [
-        "sosialisasi",
-        17
+        "negara",
+        70
       ],
       [
-        "lokakarya",
-        13
+        "wali",
+        24
+      ],
+      [
+        "lomba",
+        20
+      ],
+      [
+        "daerah",
+        52
       ]
     ],
     "phrases": [
@@ -188,28 +188,35 @@
     "similar": [
       [
         5704,
-        0.25
+        0.27
       ],
       [
         6242,
-        0.14
+        0.18
       ],
       [
         912,
-        0.14
+        0.17
       ],
       [
         8649,
-        0.14
+        0.17
       ],
       [
-        5684,
-        0.13
+        3047,
+        0.15
       ],
       [
-        8907,
-        0.12
+        8966,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.71,
+      "positive": 60,
+      "negative": 10,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

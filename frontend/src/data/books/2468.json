@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3515,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "stirner",
@@ -119,28 +119,28 @@
         14
       ],
       [
-        "eksistensialisme",
-        10
-      ],
-      [
         "ketiadaan",
         21
       ],
       [
-        "eksistensialis",
-        8
+        "eksistensialisme",
+        10
       ],
       [
         "nihilis",
         10
       ],
       [
-        "nihilistik",
-        7
+        "eksistensialis",
+        8
       ],
       [
         "egois",
         10
+      ],
+      [
+        "nihilistik",
+        7
       ],
       [
         "filosofi",
@@ -184,28 +184,85 @@
     "similar": [
       [
         3697,
-        0.26
+        0.27
       ],
       [
         1817,
+        0.27
+      ],
+      [
+        2193,
         0.25
       ],
       [
         2143,
-        0.23
-      ],
-      [
-        2193,
-        0.23
+        0.24
       ],
       [
         2051,
-        0.22
+        0.23
       ],
       [
         2285,
-        0.21
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 63,
+      "negative": 49,
+      "trend": [
+        null,
+        0.25,
+        0.33,
+        0.67,
+        1,
+        0.11,
+        null,
+        -0.43,
+        0.09,
+        null,
+        -0.14,
+        -0.14,
+        0.11,
+        -0.67,
+        0.2,
+        -0.27
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

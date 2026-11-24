@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4604,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "manusia",
@@ -115,6 +115,14 @@
         18
       ],
       [
+        "alam",
+        55
+      ],
+      [
+        "manusia",
+        67
+      ],
+      [
         "dlsb",
         10
       ],
@@ -123,32 +131,24 @@
         7
       ],
       [
-        "alam",
-        55
+        "bencana",
+        18
+      ],
+      [
+        "tulisan",
+        26
       ],
       [
         "penambal",
         5
       ],
       [
-        "bencana",
-        18
-      ],
-      [
-        "industrialisme",
-        6
+        "kapitalisme",
+        16
       ],
       [
         "suhu",
         9
-      ],
-      [
-        "manusia",
-        67
-      ],
-      [
-        "kemelempeman",
-        3
       ]
     ],
     "phrases": [
@@ -185,6 +185,55 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        7890,
+        0.13
+      ],
+      [
+        2811,
+        0.12
+      ],
+      [
+        2561,
+        0.12
+      ],
+      [
+        8062,
+        0.12
+      ],
+      [
+        1767,
+        0.11
+      ],
+      [
+        1776,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 57,
+      "negative": 66,
+      "trend": [
+        0.2,
+        0.11,
+        0.2,
+        0.43,
+        null,
+        0.43,
+        -0.2,
+        -0.69,
+        -0.6,
+        null,
+        -0.33,
+        -0.67,
+        -0.09,
+        null,
+        0.11,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

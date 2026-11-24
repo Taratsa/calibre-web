@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3091,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "identitas",
@@ -118,6 +118,10 @@
         38
       ],
       [
+        "anarkis",
+        22
+      ],
+      [
         "penindasan-penindasan",
         7
       ],
@@ -134,24 +138,20 @@
         6
       ],
       [
-        "anarkis",
-        22
-      ],
-      [
-        "non-muslim",
-        7
+        "penindasan",
+        19
       ],
       [
         "etnis",
         14
       ],
       [
-        "nasionalis",
-        13
+        "politik",
+        30
       ],
       [
-        "islamis",
-        6
+        "nasionalis",
+        13
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         4668,
-        0.18
+        0.23
       ],
       [
         2252,
-        0.18
+        0.23
       ],
       [
         7087,
-        0.18
-      ],
-      [
-        1241,
-        0.15
+        0.21
       ],
       [
         7062,
-        0.15
+        0.19
+      ],
+      [
+        1241,
+        0.19
       ],
       [
         4715,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.41,
+      "positive": 24,
+      "negative": 58,
+      "trend": [
+        null,
+        null,
+        -1,
+        -0.43,
+        -0.6,
+        null,
+        -1,
+        -0.25,
+        0.33,
+        null,
+        -0.6,
+        -0.43,
+        null,
+        -0.43,
+        -1,
+        -0.6
+      ],
+      "emotions": []
+    }
   }
 }

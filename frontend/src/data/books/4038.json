@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 1752,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "studies",
@@ -113,16 +113,16 @@
         25
       ],
       [
-        "cyberculture",
-        9
-      ],
-      [
         "studies",
         29
       ],
       [
         "centre",
         24
+      ],
+      [
+        "cyberculture",
+        9
       ],
       [
         "cultural",
@@ -137,20 +137,20 @@
         10
       ],
       [
-        "komputer",
-        10
+        "tema-tema",
+        7
       ],
       [
         "negroponte",
         3
       ],
       [
-        "tema-tema",
-        7
-      ],
-      [
         "studi",
         11
+      ],
+      [
+        "komputer",
+        10
       ]
     ],
     "phrases": [
@@ -174,28 +174,29 @@
     "similar": [
       [
         4037,
-        0.19
-      ],
-      [
-        4039,
-        0.18
+        0.23
       ],
       [
         4041,
-        0.18
+        0.21
+      ],
+      [
+        4039,
+        0.2
       ],
       [
         4045,
-        0.15
+        0.17
       ],
       [
         4044,
-        0.15
+        0.17
       ],
       [
         4564,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

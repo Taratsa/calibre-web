@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1462,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "kelas",
@@ -99,14 +99,6 @@
     ],
     "distinct": [
       [
-        "mengkreasikan",
-        4
-      ],
-      [
-        "pekerjaisme",
-        3
-      ],
-      [
         "kelas",
         20
       ],
@@ -115,36 +107,44 @@
         16
       ],
       [
+        "mengkreasikan",
+        4
+      ],
+      [
+        "pekerjaisme",
+        3
+      ],
+      [
         "revolusioner",
         9
       ],
       [
-        "proletar",
-        5
-      ],
-      [
-        "positif",
-        8
+        "sosial",
+        15
       ],
       [
         "produksi",
         9
       ],
       [
+        "positif",
+        8
+      ],
+      [
         "penguasa",
         8
       ],
       [
+        "proletar",
+        5
+      ],
+      [
+        "hidup",
+        14
+      ],
+      [
         "proletariat",
         4
-      ],
-      [
-        "obyektif",
-        3
-      ],
-      [
-        "sosial",
-        15
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         9182,
-        0.33
-      ],
-      [
-        1803,
-        0.18
+        0.43
       ],
       [
         4684,
-        0.18
+        0.23
       ],
       [
         2672,
-        0.18
+        0.23
       ],
       [
         43,
-        0.17
+        0.21
+      ],
+      [
+        7007,
+        0.19
       ],
       [
         1807,
-        0.13
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

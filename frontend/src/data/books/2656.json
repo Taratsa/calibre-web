@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1773,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "negara",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "negara",
+        34
+      ],
+      [
         "mengambilalih",
         7
       ],
@@ -107,15 +111,23 @@
         9
       ],
       [
-        "insubordinasi",
-        4
+        "revolusi",
+        15
       ],
       [
         "kemandirian",
         9
       ],
       [
-        "revolusi",
+        "insubordinasi",
+        4
+      ],
+      [
+        "bentuk",
+        23
+      ],
+      [
+        "organisasi",
         15
       ],
       [
@@ -123,28 +135,16 @@
         9
       ],
       [
-        "negara",
-        34
-      ],
-      [
         "kapitalisme",
         10
       ],
       [
-        "organisasi",
-        15
+        "kekuasaan",
+        14
       ],
       [
         "gerak",
         8
-      ],
-      [
-        "pemberontakan",
-        8
-      ],
-      [
-        "zapatista",
-        3
       ]
     ],
     "phrases": [
@@ -184,20 +184,29 @@
     "similar": [
       [
         2785,
-        0.3
+        0.32
       ],
       [
         7327,
         0.18
       ],
       [
-        166,
-        0.13
+        2256,
+        0.16
       ],
       [
-        2256,
-        0.12
+        2522,
+        0.14
+      ],
+      [
+        1758,
+        0.14
+      ],
+      [
+        6730,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

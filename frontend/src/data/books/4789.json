@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 12975,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "party",
@@ -107,28 +107,16 @@
         185
       ],
       [
-        "bourgeoisie",
-        43
+        "people",
+        105
       ],
       [
         "revolution",
         78
       ],
       [
-        "people",
-        105
-      ],
-      [
-        "peasants",
+        "bourgeoisie",
         43
-      ],
-      [
-        "struggle",
-        60
-      ],
-      [
-        "government",
-        69
       ],
       [
         "indonesian",
@@ -137,6 +125,18 @@
       [
         "national",
         81
+      ],
+      [
+        "government",
+        69
+      ],
+      [
+        "struggle",
+        60
+      ],
+      [
+        "peasants",
+        43
       ],
       [
         "dutch",
@@ -184,28 +184,29 @@
     "similar": [
       [
         6292,
-        0.57
+        0.58
       ],
       [
         5935,
-        0.41
+        0.43
       ],
       [
         404,
-        0.4
+        0.41
       ],
       [
         1472,
-        0.35
+        0.37
       ],
       [
         645,
-        0.35
+        0.37
       ],
       [
         1900,
-        0.31
+        0.33
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 11853,
-    "longer_than": 65,
+    "longer_than": 83,
     "top": [
       [
         "hamba",
@@ -89,24 +89,28 @@
     ],
     "distinct": [
       [
-        "musthikaning",
-        27
-      ],
-      [
         "anggur",
         56
       ],
       [
-        "katresnan",
-        29
+        "musthikaning",
+        27
       ],
       [
         "kidung",
         41
       ],
       [
+        "katresnan",
+        29
+      ],
+      [
         "ingkang",
         38
+      ],
+      [
+        "hamba",
+        57
       ],
       [
         "myang",
@@ -125,16 +129,12 @@
         30
       ],
       [
-        "hamba",
-        57
+        "iya",
+        42
       ],
       [
         "wus",
         24
-      ],
-      [
-        "gurisa",
-        15
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         2882,
-        0.29
+        0.31
       ],
       [
         1755,
-        0.28
+        0.29
       ],
       [
         2976,
-        0.26
-      ],
-      [
-        1584,
-        0.23
-      ],
-      [
-        5223,
-        0.23
+        0.28
       ],
       [
         2910,
-        0.22
+        0.24
+      ],
+      [
+        1584,
+        0.24
+      ],
+      [
+        5223,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 166,
+      "negative": 60,
+      "trend": [
+        0.71,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        null,
+        0.71,
+        0.45,
+        0.47,
+        0.57,
+        0.27,
+        0.32,
+        0.45,
+        0.2,
+        0.56
+      ],
+      "emotions": [
+        [
+          "joy",
+          63
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

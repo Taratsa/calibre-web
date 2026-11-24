@@ -1,0 +1,52 @@
+{
+  "id": 20222,
+  "title": "Script NAT Transparant Proxy & Squid",
+  "slug": "script-nat-transparant-proxy-squid-onno-widodo-purbo",
+  "slugBase": "script-nat-transparant-proxy-squid-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-16",
+  "timestamp": "2026-11-24 06:30:14.369178",
+  "last_modified": "2026-11-24 06:30:14.369182",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6510268e-e320-5adc-91cc-9b0077e0a36b"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20222?v=1795476614",
+  "cover_og_url": "/cover/20222/og?v=1795476614",
+  "url": "/book/script-nat-transparant-proxy-squid-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "#!/bin/sh # squid server IP SQUID_SERVER=\"192.168.1.1\" # Interface connected to Internet INTERNET=\"eth0\" # Interface connected to LAN LAN_IN=\"eth1\" # Squid port SQUID_PORT=\"3128\" # DO NOT MODIFY BELOW # Clean old firewall iptables -F iptables -X iptables -t nat -F iptables -t nat -X iptables -t mangle -F iptables -t mangle -X # Load IPTABLES modules for NAT and IP conntrack support modprobe",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3156,
+      "name": "Script NAT Transparant Proxy & Squid - Onno Widodo Purbo"
+    }
+  ]
+}

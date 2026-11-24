@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 17317,
-    "longer_than": 74,
+    "longer_than": 87,
     "top": [
       [
         "masyarakat",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "sampingan",
-        35
-      ],
-      [
-        "aktifitas-aktifitas",
-        20
-      ],
-      [
-        "penguasaan",
-        47
+        "masyarakat",
+        170
       ],
       [
         "kiri",
         84
       ],
       [
-        "genetik",
-        22
-      ],
-      [
-        "sistem",
-        95
-      ],
-      [
-        "teknologi",
-        60
-      ],
-      [
-        "aktifitas",
-        27
-      ],
-      [
-        "masyarakat",
-        170
+        "sampingan",
+        35
       ],
       [
         "kebebasan",
         74
       ],
       [
-        "tujuan-tujuan",
-        24
+        "penguasaan",
+        47
+      ],
+      [
+        "aktifitas-aktifitas",
+        20
+      ],
+      [
+        "sistem",
+        95
       ],
       [
         "modern",
         68
+      ],
+      [
+        "teknologi",
+        60
+      ],
+      [
+        "genetik",
+        22
+      ],
+      [
+        "memiliki",
+        99
+      ],
+      [
+        "kaum",
+        61
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         6855,
-        0.39
-      ],
-      [
-        8058,
-        0.14
-      ],
-      [
-        2789,
-        0.14
-      ],
-      [
-        2766,
-        0.13
+        0.44
       ],
       [
         8748,
-        0.13
+        0.18
       ],
       [
         4735,
-        0.12
+        0.18
+      ],
+      [
+        279,
+        0.18
+      ],
+      [
+        4873,
+        0.18
+      ],
+      [
+        2132,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 409,
+      "negative": 241,
+      "trend": [
+        -0.07,
+        0.08,
+        -0.19,
+        -0.28,
+        0.44,
+        0.35,
+        0.18,
+        0.06,
+        0.25,
+        0.35,
+        0.62,
+        0.39,
+        0.36,
+        0.45,
+        0.51,
+        0.39
+      ],
+      "emotions": [
+        [
+          "anger",
+          54
+        ],
+        [
+          "trust",
+          31
+        ],
+        [
+          "sadness",
+          22
+        ],
+        [
+          "fear",
+          16
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

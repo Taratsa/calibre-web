@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 69800,
-    "longer_than": 96,
+    "longer_than": 98,
     "top": [
       [
         "financial",
@@ -92,20 +92,20 @@
     ],
     "distinct": [
       [
-        "bancosol",
-        196
-      ],
-      [
         "financial",
         486
       ],
       [
-        "costs",
-        311
+        "bancosol",
+        196
       ],
       [
         "loan",
         278
+      ],
+      [
+        "costs",
+        311
       ],
       [
         "loans",
@@ -116,24 +116,24 @@
         274
       ],
       [
-        "grameen",
-        115
+        "poor",
+        271
       ],
       [
         "debt",
         207
       ],
       [
-        "poor",
-        271
-      ],
-      [
-        "lending",
-        152
+        "grameen",
+        115
       ],
       [
         "cent",
         186
+      ],
+      [
+        "lending",
+        152
       ],
       [
         "funds",
@@ -185,7 +185,7 @@
       ],
       [
         8572,
-        0.34
+        0.35
       ],
       [
         8631,
@@ -199,6 +199,7 @@
         8573,
         0.26
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2504,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "indonesia",
@@ -95,28 +95,24 @@
         20
       ],
       [
-        "nekolim",
-        10
-      ],
-      [
         "revolusi",
         31
+      ],
+      [
+        "nekolim",
+        10
       ],
       [
         "sedjak",
         14
       ],
       [
-        "kwan",
-        7
-      ],
-      [
-        "surabaja",
-        9
-      ],
-      [
         "mendjadi",
         14
+      ],
+      [
+        "kwan",
+        7
       ],
       [
         "djuga",
@@ -127,12 +123,16 @@
         16
       ],
       [
-        "darmosugondo",
-        3
+        "bangsa",
+        27
       ],
       [
-        "compagnon",
-        3
+        "surabaja",
+        9
+      ],
+      [
+        "indonesia",
+        40
       ],
       [
         "nja",
@@ -172,28 +172,52 @@
     "similar": [
       [
         7916,
-        0.19
+        0.21
       ],
       [
         8771,
-        0.18
+        0.21
       ],
       [
         6799,
-        0.17
+        0.2
       ],
       [
         516,
-        0.17
+        0.19
       ],
       [
         305,
-        0.17
+        0.19
       ],
       [
         7558,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 60,
+      "negative": 17,
+      "trend": [
+        null,
+        null,
+        -0.33,
+        null,
+        null,
+        null,
+        null,
+        0.43,
+        1,
+        1,
+        0.75,
+        null,
+        null,
+        0.56,
+        0.14,
+        0.54
+      ],
+      "emotions": []
+    }
   }
 }

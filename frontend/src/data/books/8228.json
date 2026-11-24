@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 5985,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "agraria",
@@ -108,44 +108,44 @@
         39
       ],
       [
-        "reform",
-        43
-      ],
-      [
         "land",
         52
+      ],
+      [
+        "reform",
+        43
       ],
       [
         "pedesaan",
         46
       ],
       [
-        "agrarian",
-        16
-      ],
-      [
         "agenda",
         25
       ],
       [
-        "gerakan-gerakan",
+        "agrarian",
         16
-      ],
-      [
-        "enclosure",
-        8
-      ],
-      [
-        "neoliberal",
-        11
       ],
       [
         "petani",
         29
       ],
       [
-        "akram-lodhi",
-        5
+        "gerakan-gerakan",
+        16
+      ],
+      [
+        "politik",
+        38
+      ],
+      [
+        "neoliberal",
+        11
+      ],
+      [
+        "gerakan",
+        31
       ]
     ],
     "phrases": [
@@ -185,28 +185,73 @@
     "similar": [
       [
         8373,
-        0.31
-      ],
-      [
-        8369,
-        0.29
-      ],
-      [
-        8396,
-        0.29
+        0.36
       ],
       [
         8482,
-        0.28
+        0.34
+      ],
+      [
+        8396,
+        0.33
       ],
       [
         8372,
-        0.28
+        0.32
       ],
       [
         8494,
-        0.28
+        0.32
+      ],
+      [
+        8369,
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 87,
+      "negative": 58,
+      "trend": [
+        -0.2,
+        -0.64,
+        0.78,
+        0.67,
+        -0.23,
+        0.67,
+        null,
+        0.64,
+        -0.33,
+        0.5,
+        null,
+        0.2,
+        0.38,
+        null,
+        0.14,
+        0.53
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3863,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "magón",
@@ -127,20 +127,20 @@
         17
       ],
       [
-        "lacandon",
-        10
-      ],
-      [
         "meksiko",
         21
       ],
       [
-        "zapatistas",
-        9
+        "lacandon",
+        10
       ],
       [
-        "grubačić",
-        7
+        "ibid",
+        23
+      ],
+      [
+        "zapatistas",
+        9
       ],
       [
         "subcomandante",
@@ -184,15 +184,15 @@
     "similar": [
       [
         2531,
-        0.31
+        0.33
       ],
       [
         7342,
-        0.31
+        0.32
       ],
       [
         7351,
-        0.23
+        0.25
       ],
       [
         7405,
@@ -200,12 +200,36 @@
       ],
       [
         3800,
-        0.15
+        0.19
       ],
       [
         2751,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 51,
+      "negative": 31,
+      "trend": [
+        1,
+        null,
+        -0.33,
+        -0.08,
+        null,
+        -0.25,
+        1,
+        null,
+        0.33,
+        null,
+        -0.2,
+        null,
+        0.71,
+        0.71,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

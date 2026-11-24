@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8178,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "politik",
@@ -103,6 +103,10 @@
         54
       ],
       [
+        "politik",
+        90
+      ],
+      [
         "lacan",
         19
       ],
@@ -111,40 +115,36 @@
         41
       ],
       [
-        "postanarkisme",
-        10
+        "ruang",
+        76
       ],
       [
         "otonom",
         32
       ],
       [
+        "anarkis",
+        33
+      ],
+      [
         "fantasi",
         22
       ],
       [
-        "lacanian",
-        11
-      ],
-      [
-        "agonistik",
-        9
-      ],
-      [
-        "politik",
-        90
-      ],
-      [
-        "anarkis",
-        33
+        "postanarkisme",
+        10
       ],
       [
         "otonomi",
         29
       ],
       [
-        "castoriadis",
-        9
+        "sosial",
+        55
+      ],
+      [
+        "lacanian",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2256,
-        0.67
+        0.69
       ],
       [
         3746,
-        0.33
+        0.37
       ],
       [
         7252,
-        0.21
+        0.23
       ],
       [
         7014,
-        0.19
-      ],
-      [
-        2308,
-        0.18
+        0.21
       ],
       [
         7894,
-        0.18
+        0.21
+      ],
+      [
+        1831,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 113,
+      "negative": 47,
+      "trend": [
+        -0.33,
+        0.38,
+        0.67,
+        0.5,
+        -0.11,
+        0.33,
+        -0.2,
+        -0.14,
+        0.14,
+        0.5,
+        1,
+        0.78,
+        0.82,
+        null,
+        1,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

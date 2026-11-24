@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 8424,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "wanita",
@@ -108,44 +108,44 @@
         114
       ],
       [
-        "perwarl",
-        8
-      ],
-      [
         "banjak",
         30
-      ],
-      [
-        "tri-sula",
-        7
       ],
       [
         "djika",
         23
       ],
       [
-        "perdjoangan",
-        15
-      ],
-      [
-        "supaja",
-        21
+        "perwarl",
+        8
       ],
       [
         "nja",
         24
       ],
       [
+        "supaja",
+        21
+      ],
+      [
         "masjarakat",
         21
       ],
       [
-        "tati",
-        11
+        "perdjoangan",
+        15
       ],
       [
-        "alliance",
-        15
+        "tri-sula",
+        7
+      ],
+      [
+        "mempunjai",
+        19
+      ],
+      [
+        "tati",
+        11
       ]
     ],
     "phrases": [
@@ -185,28 +185,81 @@
     "similar": [
       [
         1290,
-        0.33
+        0.35
       ],
       [
         6640,
-        0.29
+        0.33
       ],
       [
         6637,
-        0.29
+        0.32
       ],
       [
         6641,
-        0.27
-      ],
-      [
-        6633,
-        0.27
+        0.3
       ],
       [
         6657,
-        0.26
+        0.3
+      ],
+      [
+        6633,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.66,
+      "positive": 161,
+      "negative": 33,
+      "trend": [
+        0.8,
+        1,
+        0.09,
+        0.53,
+        0.27,
+        0.58,
+        0.93,
+        1,
+        0.4,
+        0.78,
+        0.2,
+        null,
+        1,
+        0.45,
+        0.6,
+        0.64
+      ],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5923,
-    "longer_than": 47,
+    "longer_than": 75,
     "top": [
       [
         "sastra",
@@ -93,44 +93,44 @@
         38
       ],
       [
-        "sastrawan",
-        25
-      ],
-      [
         "djuga",
         29
       ],
       [
-        "wartawan",
-        27
+        "sastrawan",
+        25
       ],
       [
         "pers",
         33
       ],
       [
-        "banjak",
-        24
-      ],
-      [
         "sastra",
         43
       ],
       [
-        "pembatja",
-        14
+        "wartawan",
+        27
+      ],
+      [
+        "banjak",
+        24
       ],
       [
         "sadja",
         19
       ],
       [
+        "pembatja",
+        14
+      ],
+      [
         "membatja",
         14
       ],
       [
-        "djurnalistik",
-        6
+        "hanja",
+        16
       ],
       [
         "penjair",
@@ -174,28 +174,52 @@
     "similar": [
       [
         3416,
+        0.19
+      ],
+      [
+        7916,
         0.17
       ],
       [
         1100,
-        0.16
-      ],
-      [
-        7916,
-        0.15
+        0.17
       ],
       [
         4796,
-        0.14
+        0.16
       ],
       [
         464,
-        0.14
+        0.16
       ],
       [
         295,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 53,
+      "negative": 27,
+      "trend": [
+        null,
+        0.25,
+        null,
+        null,
+        null,
+        -0.14,
+        null,
+        1,
+        0.33,
+        null,
+        0.71,
+        0.43,
+        null,
+        0.4,
+        0.67,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2276,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "sejarah",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "aksi",
-        24
-      ],
-      [
         "sejarah",
         31
+      ],
+      [
+        "aksi",
+        24
       ],
       [
         "bensin",
@@ -115,36 +115,36 @@
         7
       ],
       [
-        "pom",
-        4
+        "masyarakat",
+        20
       ],
       [
         "kriminal",
         7
       ],
       [
-        "porsea",
-        3
-      ],
-      [
         "protes",
         9
       ],
       [
-        "ditangkapi",
-        3
+        "buruh",
+        11
       ],
       [
-        "geng",
+        "pom",
         4
       ],
       [
-        "menakar",
+        "porsea",
         3
       ],
       [
         "lisan",
         7
+      ],
+      [
+        "tokoh-tokoh",
+        6
       ]
     ],
     "phrases": [
@@ -183,25 +183,36 @@
     ],
     "similar": [
       [
-        7308,
-        0.12
-      ],
-      [
-        8058,
-        0.11
-      ],
-      [
-        2789,
-        0.11
+        9846,
+        0.14
       ],
       [
         4660,
-        0.1
+        0.13
       ],
       [
         3062,
-        0.1
+        0.13
+      ],
+      [
+        2158,
+        0.12
+      ],
+      [
+        1944,
+        0.12
+      ],
+      [
+        2687,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 40,
+      "negative": 37,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

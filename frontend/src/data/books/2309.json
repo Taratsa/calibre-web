@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4507,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "tyler",
@@ -107,11 +107,15 @@
         54
       ],
       [
-        "durden",
-        8
+        "sang",
+        47
       ],
       [
-        "marla",
+        "film",
+        27
+      ],
+      [
+        "durden",
         8
       ],
       [
@@ -123,16 +127,16 @@
         17
       ],
       [
+        "marla",
+        8
+      ],
+      [
         "mayhem",
         7
       ],
       [
-        "film",
-        27
-      ],
-      [
-        "sang",
-        47
+        "engkau",
+        15
       ],
       [
         "yahoo",
@@ -141,10 +145,6 @@
       [
         "destruksi",
         6
-      ],
-      [
-        "engkau",
-        15
       ]
     ],
     "phrases": [
@@ -181,6 +181,84 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2013,
+        0.15
+      ],
+      [
+        2071,
+        0.14
+      ],
+      [
+        1974,
+        0.11
+      ],
+      [
+        44,
+        0.11
+      ],
+      [
+        2539,
+        0.11
+      ],
+      [
+        6853,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 44,
+      "negative": 54,
+      "trend": [
+        null,
+        0.14,
+        0.43,
+        null,
+        0.11,
+        -0.67,
+        0.4,
+        null,
+        -0.6,
+        null,
+        null,
+        -0.27,
+        -0.43,
+        null,
+        -0.4,
+        0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

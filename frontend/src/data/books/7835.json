@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3825,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "ilmu",
@@ -122,12 +122,20 @@
         24
       ],
       [
-        "rentjana",
-        13
+        "akal",
+        30
       ],
       [
         "masjarakat",
         16
+      ],
+      [
+        "rentjana",
+        13
+      ],
+      [
+        "barat",
+        37
       ],
       [
         "penjelidikan",
@@ -138,20 +146,12 @@
         10
       ],
       [
-        "akal",
-        30
-      ],
-      [
-        "eksperimen-eksperimen",
-        7
-      ],
-      [
         "djuga",
         14
       ],
       [
-        "penjelidikannja",
-        6
+        "fakta-fakta",
+        12
       ]
     ],
     "phrases": [
@@ -190,29 +190,30 @@
     ],
     "similar": [
       [
-        8771,
-        0.14
+        7665,
+        0.16
       ],
       [
         7603,
-        0.14
-      ],
-      [
-        7665,
-        0.14
+        0.16
       ],
       [
         4890,
-        0.13
+        0.16
       ],
       [
         4820,
-        0.13
+        0.16
       ],
       [
         5959,
-        0.13
+        0.16
+      ],
+      [
+        4591,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

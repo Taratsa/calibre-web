@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 14015,
-    "longer_than": 69,
+    "longer_than": 85,
     "top": [
       [
         "theatre",
@@ -113,31 +113,27 @@
         34
       ],
       [
-        "farish",
-        19
+        "aceh",
+        71
       ],
       [
         "kris",
         36
       ],
       [
-        "aceh",
-        71
+        "farish",
+        19
       ],
       [
         "gondrong",
         23
       ],
       [
-        "juminahan",
-        9
-      ],
-      [
         "rambut",
         42
       ],
       [
-        "rahs",
+        "juminahan",
         9
       ],
       [
@@ -145,12 +141,16 @@
         28
       ],
       [
-        "dka",
-        11
+        "rahs",
+        9
       ],
       [
         "pakistan",
         19
+      ],
+      [
+        "school",
+        24
       ]
     ],
     "phrases": [
@@ -198,20 +198,73 @@
       ],
       [
         1866,
-        0.12
+        0.13
+      ],
+      [
+        4037,
+        0.13
       ],
       [
         8291,
+        0.13
+      ],
+      [
+        6324,
         0.12
-      ],
-      [
-        4063,
-        0.11
-      ],
-      [
-        8725,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 108,
+      "negative": 59,
+      "trend": [
+        0.29,
+        0.64,
+        0.57,
+        0.41,
+        0.36,
+        0.08,
+        0.2,
+        -0.04,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

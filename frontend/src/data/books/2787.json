@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2737,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "individu",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "budak-upah",
-        7
-      ],
-      [
         "individu",
         39
+      ],
+      [
+        "budak-upah",
+        7
       ],
       [
         "ilegalitas",
@@ -119,6 +119,10 @@
         10
       ],
       [
+        "perbudakan",
+        12
+      ],
+      [
         "individualitas",
         8
       ],
@@ -127,20 +131,16 @@
         4
       ],
       [
-        "perbudakan",
-        12
-      ],
-      [
-        "memvalidasi",
-        5
-      ],
-      [
-        "keliaran",
-        5
-      ],
-      [
         "identitas",
         14
+      ],
+      [
+        "sosial",
+        22
+      ],
+      [
+        "upah",
+        12
       ],
       [
         "anarkis",
@@ -184,28 +184,81 @@
     "similar": [
       [
         1926,
-        0.25
+        0.29
       ],
       [
         2167,
-        0.24
+        0.28
       ],
       [
         2668,
-        0.2
+        0.24
       ],
       [
         2638,
-        0.15
+        0.18
       ],
       [
-        9193,
-        0.14
+        2220,
+        0.16
       ],
       [
-        4066,
-        0.13
+        2006,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 43,
+      "negative": 45,
+      "trend": [
+        null,
+        -0.11,
+        -0.75,
+        0.67,
+        -0.78,
+        null,
+        null,
+        0.2,
+        -0.43,
+        null,
+        null,
+        null,
+        0.33,
+        0.43,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          10
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

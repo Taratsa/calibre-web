@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 41321,
-    "longer_than": 91,
+    "longer_than": 95,
     "top": [
       [
         "negara",
@@ -109,40 +109,40 @@
         146
       ],
       [
-        "bernegara",
-        76
+        "negara",
+        425
       ],
       [
-        "nasionalisme",
-        94
+        "hak",
+        312
       ],
       [
-        "penegakan",
-        93
+        "nasional",
+        276
+      ],
+      [
+        "manusia",
+        329
+      ],
+      [
+        "indonesia",
+        383
       ],
       [
         "ideologi",
         137
       ],
       [
-        "negara",
-        425
+        "politik",
+        213
       ],
       [
-        "hatta",
-        76
+        "nasionalisme",
+        94
       ],
       [
-        "implementasi",
-        78
-      ],
-      [
-        "wikipedia",
-        46
-      ],
-      [
-        "nasional",
-        276
+        "bangsa",
+        199
       ]
     ],
     "phrases": [
@@ -181,29 +181,82 @@
     ],
     "similar": [
       [
-        8619,
-        0.2
+        8758,
+        0.26
       ],
       [
-        8758,
-        0.2
+        8619,
+        0.26
       ],
       [
         9049,
-        0.19
-      ],
-      [
-        8629,
-        0.18
+        0.24
       ],
       [
         1263,
-        0.16
+        0.22
+      ],
+      [
+        8629,
+        0.22
       ],
       [
         9096,
-        0.16
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 742,
+      "negative": 364,
+      "trend": [
+        0.42,
+        0.32,
+        0.31,
+        0.53,
+        0.18,
+        -0.03,
+        0.33,
+        0.56,
+        0.11,
+        0.15,
+        0.49,
+        0.31,
+        0.61,
+        0.47,
+        0.65,
+        0.35
+      ],
+      "emotions": [
+        [
+          "trust",
+          195
+        ],
+        [
+          "anger",
+          141
+        ],
+        [
+          "fear",
+          48
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "sadness",
+          16
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

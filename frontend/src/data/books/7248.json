@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1423,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "terlibat",
@@ -106,52 +106,52 @@
     ],
     "distinct": [
       [
-        "diberitahu",
-        6
-      ],
-      [
-        "keliaran",
-        4
+        "terlibat",
+        14
       ],
       [
         "peradaban",
         9
       ],
       [
+        "diberitahu",
+        6
+      ],
+      [
         "kehancuran",
         7
+      ],
+      [
+        "keliaran",
+        4
       ],
       [
         "membuatku",
         5
       ],
       [
-        "terlibat",
-        14
-      ],
-      [
         "keterlibatan",
         7
-      ],
-      [
-        "berduka",
-        4
       ],
       [
         "pilihan",
         9
       ],
       [
+        "berduka",
+        4
+      ],
+      [
         "mitos",
         4
       ],
       [
-        "pasir",
-        4
+        "memiliki",
+        11
       ],
       [
-        "gemetar",
-        3
+        "pasir",
+        4
       ]
     ],
     "phrases": [
@@ -175,24 +175,31 @@
       ],
       [
         4113,
-        0.23
+        0.21
       ],
       [
         9193,
-        0.21
+        0.2
       ],
       [
         2039,
         0.16
       ],
       [
-        7069,
-        0.16
+        2713,
+        0.15
       ],
       [
-        2763,
+        7069,
         0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 28,
+      "negative": 33,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

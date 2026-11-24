@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2864,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "pemberontakan",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "apache",
-        25
-      ],
-      [
         "pueblo",
         20
+      ],
+      [
+        "apache",
+        25
       ],
       [
         "spanyol",
@@ -123,10 +123,6 @@
         16
       ],
       [
-        "pemburu-pengumpul",
-        3
-      ],
-      [
         "revolusioner",
         10
       ],
@@ -135,16 +131,20 @@
         7
       ],
       [
-        "ekologis",
-        5
-      ],
-      [
-        "primitif",
-        5
-      ],
-      [
         "revolusi",
         10
+      ],
+      [
+        "adat",
+        10
+      ],
+      [
+        "pemburu-pengumpul",
+        3
+      ],
+      [
+        "ekologis",
+        5
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         7151,
-        0.16
-      ],
-      [
-        1956,
-        0.16
+        0.2
       ],
       [
         2133,
-        0.14
+        0.2
+      ],
+      [
+        1956,
+        0.2
+      ],
+      [
+        17386,
+        0.2
+      ],
+      [
+        14622,
+        0.18
       ],
       [
         2756,
-        0.13
-      ],
-      [
-        4113,
-        0.13
-      ],
-      [
-        7236,
-        0.13
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 54,
+      "negative": 42,
+      "trend": [
+        null,
+        null,
+        -0.33,
+        0,
+        0.33,
+        null,
+        null,
+        0.75,
+        null,
+        0,
+        0.17,
+        0.43,
+        -0.71,
+        -0.33,
+        null,
+        0.5
+      ],
+      "emotions": []
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4125,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "indonesia",
@@ -97,6 +97,10 @@
         46
       ],
       [
+        "indonesia",
+        151
+      ],
+      [
         "masjarakat",
         27
       ],
@@ -109,32 +113,28 @@
         23
       ],
       [
-        "unra",
-        10
-      ],
-      [
-        "marxisme-leninisme",
-        16
+        "djuga",
+        23
       ],
       [
         "jalah",
         19
       ],
       [
-        "djuga",
-        23
+        "marxisme-leninisme",
+        16
       ],
       [
         "imperialisme",
         23
       ],
       [
-        "feodalisme",
-        19
+        "unra",
+        10
       ],
       [
-        "jaitu",
-        17
+        "feodalisme",
+        19
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         4878,
-        0.79
+        0.81
       ],
       [
         4810,
-        0.79
+        0.81
       ],
       [
         1896,
-        0.79
+        0.81
       ],
       [
         9281,
-        0.49
+        0.52
       ],
       [
         559,
-        0.35
+        0.39
       ],
       [
-        6799,
-        0.32
+        4859,
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 84,
+      "negative": 49,
+      "trend": [
+        null,
+        1,
+        -0.09,
+        0.5,
+        -1,
+        -0.6,
+        1,
+        1,
+        null,
+        -0.27,
+        0.08,
+        0.38,
+        0.45,
+        0.2,
+        -0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

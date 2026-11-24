@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 728,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "bethlehem",
@@ -142,16 +142,16 @@
         3
       ],
       [
-        "pengamen",
-        3
-      ],
-      [
         "salatiga",
         4
       ],
       [
-        "hunian",
+        "pengamen",
         3
+      ],
+      [
+        "mahasiswa",
+        7
       ]
     ],
     "phrases": [
@@ -171,11 +171,11 @@
     "similar": [
       [
         7085,
-        0.4
+        0.37
       ],
       [
         7051,
-        0.22
+        0.21
       ],
       [
         3731,
@@ -187,12 +187,13 @@
       ],
       [
         6987,
-        0.12
+        0.11
       ],
       [
         7885,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

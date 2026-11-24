@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 797,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "persatuan",
@@ -122,23 +122,23 @@
         7
       ],
       [
-        "pengingkaran",
-        3
-      ],
-      [
         "anarkis",
         6
       ],
       [
-        "konflik-konflik",
+        "pengingkaran",
         3
+      ],
+      [
+        "konflik",
+        6
       ],
       [
         "hasrat",
         5
       ],
       [
-        "keunikan",
+        "konflik-konflik",
         3
       ],
       [
@@ -146,40 +146,41 @@
         4
       ],
       [
-        "konflik",
-        6
+        "keunikan",
+        3
       ],
       [
-        "semenjak",
-        3
+        "individu",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2725,
-        0.82
+        0.85
       ],
       [
         2271,
-        0.16
+        0.18
       ],
       [
         4095,
-        0.14
+        0.17
       ],
       [
         1838,
-        0.14
+        0.17
       ],
       [
         3929,
-        0.14
+        0.17
       ],
       [
-        7092,
-        0.14
+        2668,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

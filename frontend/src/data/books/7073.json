@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1423,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "komunis",
@@ -106,16 +106,16 @@
     ],
     "distinct": [
       [
-        "komunisme",
-        14
-      ],
-      [
         "komunis",
         17
       ],
       [
-        "egois",
-        6
+        "komunisme",
+        14
+      ],
+      [
+        "individu",
+        14
       ],
       [
         "permanen",
@@ -126,8 +126,8 @@
         8
       ],
       [
-        "individu",
-        14
+        "egois",
+        6
       ],
       [
         "anarkis",
@@ -142,8 +142,8 @@
         8
       ],
       [
-        "libertarian",
-        3
+        "kau",
+        6
       ],
       [
         "universal",
@@ -171,28 +171,29 @@
     "similar": [
       [
         9200,
-        0.68
+        0.75
       ],
       [
         2425,
-        0.59
+        0.67
       ],
       [
         3989,
-        0.25
+        0.29
       ],
       [
         7386,
-        0.22
+        0.23
       ],
       [
         2210,
-        0.21
+        0.22
       ],
       [
-        2201,
-        0.18
+        7146,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

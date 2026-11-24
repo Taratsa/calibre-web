@@ -19,7 +19,7 @@
   ],
   "author_sort": "Aidit, D.N. & Darusman, Maruto & Alimin",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -63,7 +63,7 @@
   ],
   "text": {
     "words": 7709,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "nasional",
@@ -120,48 +120,48 @@
         22
       ],
       [
-        "progressief",
-        12
-      ],
-      [
         "saudara",
         59
-      ],
-      [
-        "knip",
-        12
       ],
       [
         "ketua",
         43
       ],
       [
-        "kelihatanlah",
-        12
+        "nasional",
+        64
       ],
       [
-        "diyadahan",
-        6
+        "progressief",
+        12
       ],
       [
         "revolusi",
         41
       ],
       [
-        "pergerakan",
-        26
+        "kaum",
+        50
       ],
       [
-        "memperjoangkan",
-        7
-      ],
-      [
-        "imperialisme",
-        21
+        "pemerintah",
+        55
       ],
       [
         "partai",
         34
+      ],
+      [
+        "buruh",
+        35
+      ],
+      [
+        "knip",
+        12
+      ],
+      [
+        "pergerakan",
+        26
       ]
     ],
     "phrases": [
@@ -201,28 +201,77 @@
     "similar": [
       [
         497,
-        0.59
+        0.62
       ],
       [
         4605,
-        0.21
+        0.26
       ],
       [
         4601,
-        0.2
+        0.25
       ],
       [
-        1306,
-        0.2
-      ],
-      [
-        693,
-        0.2
+        9280,
+        0.25
       ],
       [
         9273,
-        0.19
+        0.25
+      ],
+      [
+        1400,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 152,
+      "negative": 55,
+      "trend": [
+        0.09,
+        0.78,
+        0.11,
+        0.71,
+        0.43,
+        0.64,
+        0.5,
+        0.64,
+        0.17,
+        0.63,
+        0,
+        0,
+        1,
+        0.33,
+        0.83,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

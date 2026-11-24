@@ -72,7 +72,7 @@
   ],
   "text": {
     "words": 2298,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "gedung",
@@ -137,15 +137,11 @@
         5
       ],
       [
-        "construct",
-        3
-      ],
-      [
         "blame",
         3
       ],
       [
-        "cela",
+        "construct",
         3
       ],
       [
@@ -153,15 +149,19 @@
         4
       ],
       [
+        "cela",
+        3
+      ],
+      [
         "pengunjung",
         4
       ],
       [
-        "kill",
+        "blood",
         3
       ],
       [
-        "blood",
+        "kill",
         3
       ],
       [
@@ -184,13 +184,18 @@
         0.12
       ],
       [
-        2367,
+        2594,
         0.1
       ],
       [
-        2594,
+        2208,
+        0.1
+      ],
+      [
+        2367,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

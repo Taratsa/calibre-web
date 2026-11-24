@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 855,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "film",
@@ -127,24 +127,24 @@
         6
       ],
       [
-        "sardono",
-        6
-      ],
-      [
         "fred",
         8
+      ],
+      [
+        "sardono",
+        6
       ],
       [
         "tabepuang",
         4
       ],
       [
-        "prayoga",
-        6
+        "film",
+        15
       ],
       [
-        "widjaja",
-        6
+        "prabowo",
+        8
       ]
     ],
     "phrases": [
@@ -184,15 +184,15 @@
     "similar": [
       [
         4440,
-        0.3
+        0.31
       ],
       [
         4199,
-        0.27
+        0.26
       ],
       [
         4249,
-        0.14
+        0.13
       ],
       [
         205,
@@ -202,6 +202,7 @@
         4119,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

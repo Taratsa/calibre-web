@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 880,
-    "longer_than": 10,
+    "longer_than": 50,
     "top": [
       [
         "indonesia",
@@ -130,6 +130,10 @@
         3
       ],
       [
+        "indonesia",
+        11
+      ],
+      [
         "dimainkan",
         3
       ],
@@ -148,21 +152,17 @@
       [
         "pengarang",
         3
-      ],
-      [
-        "dewasa",
-        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7678,
-        0.41
+        0.39
       ],
       [
         1227,
-        0.41
+        0.39
       ],
       [
         7710,
@@ -180,6 +180,7 @@
         1076,
         0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

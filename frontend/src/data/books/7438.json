@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2560,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "papua",
@@ -126,8 +126,8 @@
         20
       ],
       [
-        "multinasional",
-        10
+        "indonesia",
+        53
       ],
       [
         "kapital",
@@ -138,20 +138,20 @@
         17
       ],
       [
-        "teritori",
-        8
+        "multinasional",
+        10
       ],
       [
-        "populasi",
-        11
+        "masyarakat",
+        33
       ],
       [
         "militer",
         17
       ],
       [
-        "rasialis",
-        5
+        "teritori",
+        8
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         4667,
-        0.22
+        0.26
       ],
       [
         2439,
-        0.22
-      ],
-      [
-        2092,
-        0.15
-      ],
-      [
-        2090,
-        0.14
+        0.26
       ],
       [
         752,
-        0.13
+        0.18
       ],
       [
-        7888,
-        0.13
+        2090,
+        0.17
+      ],
+      [
+        2092,
+        0.16
+      ],
+      [
+        8383,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 26,
+      "negative": 42,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

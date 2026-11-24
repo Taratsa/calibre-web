@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 4438,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "anarkis",
@@ -116,23 +116,27 @@
         5
       ],
       [
-        "ketidakpeduliaan",
-        4
+        "aksi",
+        21
       ],
       [
         "december",
         11
       ],
       [
-        "multiform",
+        "ketidakpeduliaan",
         4
+      ],
+      [
+        "tindakan",
+        24
       ],
       [
         "black",
         12
       ],
       [
-        "exarchia",
+        "multiform",
         4
       ],
       [
@@ -140,20 +144,16 @@
         11
       ],
       [
-        "aksi",
-        21
-      ],
-      [
         "otoritas",
         13
       ],
       [
-        "volos",
-        3
+        "politik",
+        22
       ],
       [
-        "berkontribusi",
-        10
+        "exarchia",
+        4
       ]
     ],
     "phrases": [
@@ -193,28 +193,77 @@
     "similar": [
       [
         1813,
-        0.21
+        0.25
       ],
       [
         8021,
-        0.21
+        0.25
       ],
       [
         7105,
-        0.21
+        0.25
       ],
       [
         2117,
-        0.2
+        0.25
       ],
       [
         2076,
-        0.18
+        0.24
       ],
       [
         3719,
-        0.18
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 80,
+      "negative": 73,
+      "trend": [
+        -0.56,
+        -0.64,
+        -0.33,
+        -0.71,
+        0.75,
+        0.17,
+        -0.11,
+        0.67,
+        -0.09,
+        0.5,
+        0.11,
+        null,
+        0.6,
+        0,
+        0.57,
+        -0.43
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

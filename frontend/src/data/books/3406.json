@@ -61,7 +61,7 @@
   ],
   "text": {
     "words": 3687,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "gaya",
@@ -130,20 +130,20 @@
         18
       ],
       [
-        "nanang",
-        13
-      ],
-      [
         "aids",
         19
       ],
       [
-        "rekanita",
-        9
+        "nanang",
+        13
       ],
       [
         "homoseksualitas",
         14
+      ],
+      [
+        "rekanita",
+        9
       ],
       [
         "usadha",
@@ -154,12 +154,12 @@
         11
       ],
       [
-        "persada",
-        11
+        "kelompok",
+        32
       ],
       [
-        "rekan",
-        16
+        "persada",
+        11
       ]
     ],
     "phrases": [
@@ -203,24 +203,48 @@
       ],
       [
         3408,
-        0.41
+        0.43
       ],
       [
         3393,
-        0.22
+        0.24
       ],
       [
         3392,
-        0.21
+        0.22
       ],
       [
         3331,
-        0.16
+        0.17
       ],
       [
         3312,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.71,
+      "positive": 72,
+      "negative": 12,
+      "trend": [
+        1,
+        0.6,
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        1,
+        1,
+        null,
+        0.69,
+        1,
+        0.6,
+        null,
+        null,
+        -0.33
+      ],
+      "emotions": []
+    }
   }
 }

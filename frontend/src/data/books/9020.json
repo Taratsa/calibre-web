@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 18384,
-    "longer_than": 75,
+    "longer_than": 88,
     "top": [
       [
         "covid",
@@ -101,36 +101,32 @@
         271
       ],
       [
-        "published",
-        143
-      ],
-      [
         "rights",
         209
       ],
       [
-        "pandemic",
-        73
-      ],
-      [
-        "komnas",
-        139
+        "published",
+        143
       ],
       [
         "human",
         183
       ],
       [
-        "sdgs",
-        71
-      ],
-      [
         "ham",
         188
       ],
       [
-        "https",
-        157
+        "komnas",
+        139
+      ],
+      [
+        "pandemic",
+        73
+      ],
+      [
+        "sdgs",
+        71
       ],
       [
         "health",
@@ -141,8 +137,12 @@
         39
       ],
       [
-        "mitigation",
-        34
+        "government",
+        66
+      ],
+      [
+        "social",
+        83
       ]
     ],
     "phrases": [
@@ -190,20 +190,21 @@
       ],
       [
         9000,
-        0.32
+        0.33
       ],
       [
         9015,
-        0.31
+        0.32
       ],
       [
         9002,
-        0.27
+        0.29
       ],
       [
         8929,
-        0.25
+        0.27
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

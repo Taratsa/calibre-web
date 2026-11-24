@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2806,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "buruh",
@@ -138,20 +138,20 @@
         24
       ],
       [
+        "kenyataan",
+        15
+      ],
+      [
         "emansipasi",
         7
       ],
       [
-        "korporatif",
-        3
+        "gagasan",
+        12
       ],
       [
         "buruh-buruh",
         5
-      ],
-      [
-        "kenyataan",
-        15
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         7875,
-        0.37
+        0.39
       ],
       [
         2540,
-        0.37
+        0.39
       ],
       [
         8100,
-        0.27
+        0.29
       ],
       [
         2727,
-        0.17
+        0.22
       ],
       [
-        8053,
-        0.13
+        2318,
+        0.16
       ],
       [
-        2055,
-        0.13
+        4730,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 55,
+      "negative": 30,
+      "trend": [
+        0.33,
+        1,
+        0.2,
+        null,
+        null,
+        0.2,
+        -0.33,
+        0.25,
+        null,
+        0.33,
+        0.67,
+        null,
+        null,
+        -0.25,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

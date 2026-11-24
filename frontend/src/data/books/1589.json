@@ -28,7 +28,7 @@
   "author_sort": "A., Zubir A. & Wispi, Agam & Anantaguna, S. & Sugiarti & S., T. Iskandar A.",
   "tags": [
     "Fiksi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Koleksi Sastra"
   ],
   "publisher": {
@@ -71,7 +71,7 @@
   ],
   "text": {
     "words": 13871,
-    "longer_than": 69,
+    "longer_than": 85,
     "top": [
       [
         "kau",
@@ -132,6 +132,10 @@
         35
       ],
       [
+        "kau",
+        129
+      ],
+      [
         "sukaesih",
         33
       ],
@@ -140,36 +144,32 @@
         34
       ],
       [
-        "kau",
-        129
-      ],
-      [
         "udin",
         35
-      ],
-      [
-        "ruiter",
-        17
       ],
       [
         "komunis",
         58
       ],
       [
-        "bahar",
-        18
+        "ruiter",
+        17
+      ],
+      [
+        "belanda",
+        49
       ],
       [
         "residen",
         23
       ],
       [
-        "manop",
-        9
+        "bahar",
+        18
       ],
       [
-        "upik",
-        16
+        "kawan-kawan",
+        36
       ]
     ],
     "phrases": [
@@ -209,28 +209,85 @@
     "similar": [
       [
         3684,
-        0.17
+        0.23
       ],
       [
         5978,
-        0.15
-      ],
-      [
-        2386,
-        0.15
+        0.21
       ],
       [
         7659,
-        0.14
-      ],
-      [
-        3618,
-        0.14
+        0.19
       ],
       [
         7943,
-        0.14
+        0.19
+      ],
+      [
+        3618,
+        0.19
+      ],
+      [
+        2386,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 231,
+      "negative": 181,
+      "trend": [
+        0.19,
+        0.35,
+        0.6,
+        0.38,
+        0.7,
+        -0.33,
+        -0.04,
+        -0.1,
+        0.05,
+        -0.07,
+        -0.04,
+        -0.03,
+        0.11,
+        0.23,
+        -0.27,
+        0.15
+      ],
+      "emotions": [
+        [
+          "sadness",
+          47
+        ],
+        [
+          "anger",
+          36
+        ],
+        [
+          "joy",
+          28
+        ],
+        [
+          "fear",
+          23
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "disgust",
+          7
+        ],
+        [
+          "surprise",
+          5
+        ]
+      ]
+    }
   }
 }

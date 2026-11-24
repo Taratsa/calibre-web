@@ -1,0 +1,220 @@
+{
+  "id": 19834,
+  "title": "OpenBTS: Ubuntu Install",
+  "slug": "openbts-ubuntu-install-onno-widodo-purbo",
+  "slugBase": "openbts-ubuntu-install-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-12-07",
+  "timestamp": "2026-11-24 06:07:16.729609",
+  "last_modified": "2026-11-24 06:07:16.729614",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:0a4c95b6-5f91-5174-8863-2e54fbc621b6"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19834?v=1795475236",
+  "cover_og_url": "/cover/19834/og?v=1795475236",
+  "url": "/book/openbts-ubuntu-install-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Compile dan Install GNURadio 3.3.0 . Tanpa GNURadio terinstall maka OpenBTS tidak mungkin di instalasi. Instalasi Astersik di Ubuntu tanpa Asterisk, tidak bisa melakukan authentikasi. Instalasi paket / library pendukung tambahan apt-get install libortp8 libortp-dev libosip2-4 libosip2-dev Contents 1 Compile osip 2 Install OpenBTS 2.1 Modifikasi USRP Device untuk Single Doughterboard 3 Compile",
+  "data": [
+    {
+      "format": "epub",
+      "size": 6378,
+      "name": "OpenBTS_ Ubuntu Install - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 988,
+    "longer_than": 51,
+    "top": [
+      [
+        "openbts",
+        88
+      ],
+      [
+        "gnuradio",
+        39
+      ],
+      [
+        "recommended",
+        30
+      ],
+      [
+        "smqueue",
+        27
+      ],
+      [
+        "install",
+        24
+      ],
+      [
+        "ubuntu",
+        20
+      ],
+      [
+        "local",
+        17
+      ],
+      [
+        "src",
+        17
+      ],
+      [
+        "usr",
+        17
+      ],
+      [
+        "usrp",
+        12
+      ],
+      [
+        "cpp",
+        11
+      ],
+      [
+        "mamou",
+        11
+      ]
+    ],
+    "distinct": [
+      [
+        "openbts",
+        88
+      ],
+      [
+        "gnuradio",
+        39
+      ],
+      [
+        "smqueue",
+        27
+      ],
+      [
+        "recommended",
+        30
+      ],
+      [
+        "mamou",
+        11
+      ],
+      [
+        "cpp",
+        11
+      ],
+      [
+        "usrp",
+        12
+      ],
+      [
+        "libosip",
+        9
+      ],
+      [
+        "osip",
+        7
+      ],
+      [
+        "src",
+        17
+      ],
+      [
+        "uhd",
+        10
+      ],
+      [
+        "usr",
+        17
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local src",
+        17
+      ],
+      [
+        "src openbts mamou",
+        9
+      ],
+      [
+        "local src openbts",
+        9
+      ],
+      [
+        "gnuradio ubuntu",
+        13
+      ],
+      [
+        "ubuntu install",
+        10
+      ],
+      [
+        "ubuntu instal gnuradio",
+        6
+      ],
+      [
+        "openbts mamou smqueue",
+        5
+      ],
+      [
+        "gnuradio not recommended",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        9822,
+        0.85
+      ],
+      [
+        20091,
+        0.73
+      ],
+      [
+        9355,
+        0.67
+      ],
+      [
+        20082,
+        0.67
+      ],
+      [
+        19843,
+        0.67
+      ],
+      [
+        19840,
+        0.66
+      ]
+    ],
+    "sentiment": null
+  }
+}

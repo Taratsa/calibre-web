@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 784,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "tpf",
@@ -101,12 +101,12 @@
         16
       ],
       [
-        "permufakatan",
-        6
-      ],
-      [
         "pembunuhan",
         12
+      ],
+      [
+        "permufakatan",
+        6
       ],
       [
         "tersangka",
@@ -121,20 +121,20 @@
         6
       ],
       [
-        "penyidik",
-        4
+        "fakta",
+        9
       ],
       [
         "mengungkap",
         6
       ],
       [
-        "meninggalnya",
+        "penyidik",
         4
       ],
       [
-        "fakta",
-        9
+        "meninggalnya",
+        4
       ]
     ],
     "phrases": [
@@ -174,28 +174,29 @@
     "similar": [
       [
         239,
-        0.41
+        0.39
       ],
       [
         6902,
-        0.32
+        0.31
       ],
       [
         6710,
-        0.32
+        0.31
       ],
       [
         1010,
-        0.32
+        0.31
       ],
       [
         6927,
-        0.28
+        0.27
       ],
       [
         323,
-        0.2
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

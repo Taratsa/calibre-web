@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2827,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "perempuan",
@@ -110,20 +110,24 @@
         19
       ],
       [
-        "kurdistan",
-        8
-      ],
-      [
         "demokratis",
         23
       ],
       [
-        "konfederalisme",
-        7
+        "kurdistan",
+        8
+      ],
+      [
+        "perempuan",
+        29
       ],
       [
         "komune",
         11
+      ],
+      [
+        "konfederalisme",
+        7
       ],
       [
         "komune-komune",
@@ -146,12 +150,8 @@
         3
       ],
       [
-        "perempuan",
-        29
-      ],
-      [
-        "hdp",
-        3
+        "negara",
+        22
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         2293,
-        0.37
-      ],
-      [
-        7208,
-        0.35
+        0.4
       ],
       [
         3778,
-        0.35
+        0.36
+      ],
+      [
+        7208,
+        0.36
       ],
       [
         271,
-        0.32
+        0.35
       ],
       [
         2093,
-        0.31
+        0.35
       ],
       [
         7351,
-        0.3
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 40,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

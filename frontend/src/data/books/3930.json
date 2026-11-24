@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 3867,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "seni",
@@ -123,12 +123,16 @@
         16
       ],
       [
+        "artistik",
+        8
+      ],
+      [
         "jenius",
         6
       ],
       [
-        "artistik",
-        8
+        "revolusioner",
+        11
       ],
       [
         "kreativitas",
@@ -139,12 +143,8 @@
         8
       ],
       [
-        "revolusioner",
-        11
-      ],
-      [
-        "comte",
-        3
+        "orang",
+        26
       ],
       [
         "visi",
@@ -172,28 +172,77 @@
     "similar": [
       [
         8099,
-        0.24
+        0.26
       ],
       [
         4717,
-        0.23
+        0.26
       ],
       [
         2355,
-        0.23
+        0.26
       ],
       [
         8035,
-        0.18
+        0.19
       ],
       [
         2576,
-        0.18
+        0.19
       ],
       [
         2213,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 60,
+      "negative": 53,
+      "trend": [
+        null,
+        0,
+        0.33,
+        0.67,
+        null,
+        null,
+        -0.33,
+        null,
+        null,
+        -0.56,
+        0,
+        0.33,
+        0.43,
+        -0.09,
+        -0.2,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

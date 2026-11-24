@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2498,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "hukum",
@@ -109,44 +109,44 @@
         17
       ],
       [
-        "tersangka",
-        18
-      ],
-      [
         "hukum",
         60
       ],
       [
-        "mappi",
-        6
-      ],
-      [
-        "school",
-        13
-      ],
-      [
-        "kontras",
-        12
+        "tersangka",
+        18
       ],
       [
         "perkara",
         18
       ],
       [
+        "proses",
+        34
+      ],
+      [
+        "kontras",
+        12
+      ],
+      [
+        "school",
+        13
+      ],
+      [
         "seksual",
         13
       ],
       [
-        "fachrizal",
-        3
+        "mappi",
+        6
       ],
       [
         "penegak",
         10
       ],
       [
-        "syukriani",
-        3
+        "putusan",
+        12
       ]
     ],
     "phrases": [
@@ -185,29 +185,74 @@
     ],
     "similar": [
       [
-        6960,
-        0.23
+        8994,
+        0.25
       ],
       [
-        8994,
-        0.23
+        6960,
+        0.24
       ],
       [
         320,
-        0.22
+        0.24
       ],
       [
         323,
-        0.22
+        0.23
       ],
       [
         6940,
-        0.2
+        0.22
       ],
       [
-        8815,
-        0.2
+        6995,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 40,
+      "negative": 50,
+      "trend": [
+        null,
+        0.6,
+        null,
+        0.14,
+        0.2,
+        null,
+        -0.6,
+        -0.09,
+        0.2,
+        null,
+        0.14,
+        -0.2,
+        0,
+        null,
+        -0.43,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

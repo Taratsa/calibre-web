@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6402,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "zine",
@@ -103,48 +103,48 @@
         50
       ],
       [
-        "fanzine",
-        6
+        "politik",
+        41
+      ],
+      [
+        "hidup",
+        41
+      ],
+      [
+        "dunia",
+        38
       ],
       [
         "membosankan",
         11
       ],
       [
+        "fanzine",
+        6
+      ],
+      [
         "punk",
         9
       ],
       [
-        "politik",
-        41
+        "ruang",
+        24
       ],
       [
-        "amnesia",
-        5
-      ],
-      [
-        "e-zine",
-        3
+        "kehidupan",
+        27
       ],
       [
         "fiksi",
         8
       ],
       [
-        "portland",
-        4
-      ],
-      [
-        "insureksionis",
-        4
-      ],
-      [
         "gambar",
         16
       ],
       [
-        "sensasi",
-        6
+        "menyenangkan",
+        12
       ]
     ],
     "phrases": [
@@ -188,24 +188,77 @@
       ],
       [
         2227,
-        0.17
-      ],
-      [
-        3828,
-        0.14
-      ],
-      [
-        3072,
-        0.13
-      ],
-      [
-        7097,
-        0.13
+        0.2
       ],
       [
         6855,
-        0.13
+        0.17
+      ],
+      [
+        3072,
+        0.17
+      ],
+      [
+        2253,
+        0.17
+      ],
+      [
+        2191,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 128,
+      "negative": 56,
+      "trend": [
+        -0.27,
+        0.83,
+        0.56,
+        null,
+        0.23,
+        0.2,
+        0.6,
+        0.29,
+        0.8,
+        1,
+        0.83,
+        -0.56,
+        -0.17,
+        0.26,
+        0.27,
+        0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

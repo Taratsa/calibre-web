@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1163,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "kekuasaan",
@@ -118,39 +118,39 @@
         3
       ],
       [
-        "idealisme",
-        3
+        "kekuasaan",
+        10
       ],
       [
-        "kursi",
-        5
+        "politik",
+        9
       ],
       [
         "kebijakan",
         6
       ],
       [
-        "kekuasaan",
-        10
+        "kursi",
+        5
+      ],
+      [
+        "idealisme",
+        3
       ],
       [
         "membenci",
         3
       ],
       [
+        "kondisi",
+        6
+      ],
+      [
+        "mesti",
+        4
+      ],
+      [
         "omong",
-        3
-      ],
-      [
-        "mitos",
-        3
-      ],
-      [
-        "orde",
-        3
-      ],
-      [
-        "kemakmuran",
         3
       ]
     ],
@@ -190,13 +190,20 @@
         0.13
       ],
       [
-        7136,
-        0.11
+        8726,
+        0.12
       ],
       [
-        3811,
-        0.11
+        6777,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 37,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2414,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "danarto",
@@ -105,16 +105,16 @@
         36
       ],
       [
+        "lukisan",
+        21
+      ],
+      [
         "kacya",
         7
       ],
       [
         "srikandi",
         12
-      ],
-      [
-        "lukisan",
-        21
       ],
       [
         "pengiringmu",
@@ -133,20 +133,20 @@
         15
       ],
       [
+        "ruang",
+        28
+      ],
+      [
         "bawa-bawa",
         6
       ],
       [
-        "wartakota",
-        4
-      ],
-      [
-        "iiari",
-        4
-      ],
-      [
         "motif",
         11
+      ],
+      [
+        "wartakota",
+        4
       ]
     ],
     "phrases": [
@@ -190,24 +190,31 @@
       ],
       [
         4363,
+        0.17
+      ],
+      [
+        4276,
+        0.17
+      ],
+      [
+        4291,
         0.16
       ],
       [
         4449,
-        0.15
-      ],
-      [
-        4276,
-        0.15
-      ],
-      [
-        4337,
-        0.14
+        0.16
       ],
       [
         4178,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 40,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

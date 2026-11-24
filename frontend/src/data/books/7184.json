@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4465,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "pekerja",
@@ -114,44 +114,44 @@
         73
       ],
       [
-        "pkc",
-        11
-      ],
-      [
         "cina",
         39
       ],
       [
-        "migran",
-        16
-      ],
-      [
-        "kapitalis",
-        28
+        "pkc",
+        11
       ],
       [
         "kelas",
         44
       ],
       [
+        "kapitalis",
+        28
+      ],
+      [
+        "migran",
+        16
+      ],
+      [
         "kapital",
         22
       ],
       [
-        "acftu",
-        4
+        "sosial",
+        46
       ],
       [
-        "china",
-        13
+        "negara",
+        45
       ],
       [
-        "migrasi",
-        9
+        "kiri",
+        25
       ],
       [
-        "mogok",
-        11
+        "buruh",
+        22
       ]
     ],
     "phrases": [
@@ -191,28 +191,73 @@
     "similar": [
       [
         5911,
-        0.21
+        0.27
       ],
       [
         2758,
-        0.18
+        0.24
       ],
       [
         6781,
-        0.17
+        0.23
       ],
       [
         5893,
-        0.17
+        0.23
       ],
       [
         5888,
-        0.17
+        0.23
       ],
       [
         2099,
-        0.16
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 90,
+      "negative": 53,
+      "trend": [
+        0,
+        -0.11,
+        null,
+        0.14,
+        null,
+        null,
+        0.78,
+        0.71,
+        0,
+        0.4,
+        0.2,
+        0.33,
+        0.69,
+        0.43,
+        0.29,
+        -0.16
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

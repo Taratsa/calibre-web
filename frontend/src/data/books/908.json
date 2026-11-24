@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5931,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "bantuan",
@@ -105,36 +105,36 @@
         38
       ],
       [
-        "penerima",
-        52
-      ],
-      [
-        "peserta",
-        76
+        "pendidikan",
+        157
       ],
       [
         "dana",
         80
       ],
       [
-        "pendidikan",
-        157
+        "peserta",
+        76
       ],
       [
         "belajar",
         97
       ],
       [
-        "direktorat",
-        37
-      ],
-      [
-        "penyaluran",
-        22
+        "penerima",
+        52
       ],
       [
         "khusus",
         82
+      ],
+      [
+        "sekolah",
+        81
+      ],
+      [
+        "pelaksanaan",
+        55
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         6817,
-        0.24
+        0.26
       ],
       [
         8577,
-        0.24
+        0.26
       ],
       [
-        8755,
-        0.19
+        977,
+        0.22
       ],
       [
         905,
-        0.19
+        0.22
       ],
       [
-        8584,
-        0.19
+        8755,
+        0.22
       ],
       [
         8585,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 32,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 11135,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "organisasi",
@@ -107,6 +107,26 @@
         45
       ],
       [
+        "perjuangan",
+        52
+      ],
+      [
+        "struktur",
+        48
+      ],
+      [
+        "organisasi",
+        56
+      ],
+      [
+        "revolusioner",
+        35
+      ],
+      [
+        "proyek",
+        42
+      ],
+      [
         "sintesis",
         17
       ],
@@ -115,36 +135,16 @@
         16
       ],
       [
-        "struktur",
-        48
-      ],
-      [
-        "perjuangan",
-        52
-      ],
-      [
-        "revolusioner",
-        35
-      ],
-      [
-        "organisasi",
-        56
-      ],
-      [
-        "proyek",
-        42
-      ],
-      [
         "kawan-kawan",
         26
       ],
       [
-        "yangharus",
-        7
-      ],
-      [
         "informal",
         20
+      ],
+      [
+        "kelompok",
+        38
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2110,
-        0.33
+        0.37
       ],
       [
         2542,
-        0.26
+        0.31
       ],
       [
         1807,
-        0.25
+        0.3
       ],
       [
         7007,
-        0.24
+        0.3
       ],
       [
         1949,
-        0.24
+        0.3
       ],
       [
-        2485,
-        0.22
+        2076,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 162,
+      "negative": 142,
+      "trend": [
+        -0.09,
+        0.24,
+        0.38,
+        0.43,
+        0.43,
+        0.33,
+        -0.17,
+        0.58,
+        0.45,
+        -0.42,
+        -0.44,
+        0.33,
+        -0.09,
+        -0.45,
+        0.13,
+        -0.07
+      ],
+      "emotions": [
+        [
+          "anger",
+          22
+        ],
+        [
+          "fear",
+          16
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          7
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2621,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "tabling",
@@ -115,32 +115,32 @@
         11
       ],
       [
-        "cjhc",
-        5
-      ],
-      [
         "alun",
         10
       ],
       [
-        "gratisan",
-        7
-      ],
-      [
-        "gratis",
-        16
+        "cjhc",
+        5
       ],
       [
         "food",
         13
       ],
       [
-        "pertemanan",
+        "gratis",
+        16
+      ],
+      [
+        "gratisan",
         7
       ],
       [
-        "kolak",
-        4
+        "makanan",
+        19
+      ],
+      [
+        "pertemanan",
+        7
       ],
       [
         "kolektif",
@@ -188,24 +188,48 @@
       ],
       [
         4686,
-        0.33
+        0.32
       ],
       [
         1782,
-        0.27
+        0.28
       ],
       [
         2603,
-        0.18
+        0.17
+      ],
+      [
+        15456,
+        0.14
       ],
       [
         4742,
-        0.13
-      ],
-      [
-        132,
-        0.13
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 46,
+      "negative": 34,
+      "trend": [
+        -1,
+        null,
+        0.11,
+        -1,
+        null,
+        1,
+        1,
+        -1,
+        1,
+        null,
+        null,
+        0.6,
+        null,
+        0.33,
+        0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

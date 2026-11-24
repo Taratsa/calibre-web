@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 4431,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "sastra",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "folklor",
-        33
-      ],
-      [
         "makassar",
         60
+      ],
+      [
+        "folklor",
+        33
       ],
       [
         "bugis",
@@ -120,36 +120,36 @@
         62
       ],
       [
-        "literasi",
-        38
-      ],
-      [
         "sastra",
         66
       ],
       [
-        "ecocriticism",
-        8
+        "literasi",
+        38
       ],
       [
         "literacy",
         15
       ],
       [
-        "transmisi",
-        13
+        "ecocriticism",
+        8
       ],
       [
         "karakter",
         32
       ],
       [
+        "manusia",
+        59
+      ],
+      [
         "kesalehan",
         11
       ],
       [
-        "pappasang",
-        6
+        "transmisi",
+        13
       ]
     ],
     "phrases": [
@@ -189,28 +189,73 @@
     "similar": [
       [
         5036,
-        0.15
+        0.18
       ],
       [
         851,
-        0.13
+        0.17
       ],
       [
         3577,
-        0.12
+        0.15
       ],
       [
         2895,
-        0.11
+        0.14
       ],
       [
         938,
-        0.11
+        0.14
       ],
       [
-        5333,
-        0.11
+        6324,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 72,
+      "negative": 49,
+      "trend": [
+        0.75,
+        -0.6,
+        -0.33,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.14,
+        0.2,
+        0.38,
+        0.75,
+        -0.27,
+        0.78,
+        null,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          15
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

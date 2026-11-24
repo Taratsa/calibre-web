@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 2626,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "bahasa",
@@ -112,20 +112,24 @@
     ],
     "distinct": [
       [
+        "prancis",
+        33
+      ],
+      [
         "besançon",
         11
       ],
       [
-        "prancis",
-        33
+        "paris",
+        22
       ],
       [
         "montpellier",
         8
       ],
       [
-        "paris",
-        22
+        "bahasa",
+        37
       ],
       [
         "rambouillet",
@@ -148,16 +152,12 @@
         3
       ],
       [
-        "prot",
-        4
-      ],
-      [
         "utrecht",
         5
       ],
       [
-        "bahasa",
-        37
+        "prot",
+        4
       ]
     ],
     "phrases": [
@@ -205,20 +205,21 @@
       ],
       [
         7699,
-        0.15
+        0.16
       ],
       [
         7841,
-        0.14
+        0.16
       ],
       [
         7804,
-        0.14
+        0.15
       ],
       [
         2027,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

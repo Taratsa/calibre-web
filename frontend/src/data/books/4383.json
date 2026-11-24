@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 503,
-    "longer_than": 5,
+    "longer_than": 40,
     "top": [
       [
         "anak-anak",
@@ -109,16 +109,20 @@
         7
       ],
       [
+        "teater",
+        9
+      ],
+      [
         "tmsur",
         3
       ],
       [
-        "pukull",
-        3
+        "anak-anak",
+        17
       ],
       [
-        "teater",
-        9
+        "pukull",
+        3
       ],
       [
         "toyama",
@@ -141,12 +145,8 @@
         3
       ],
       [
-        "kungan",
-        3
-      ],
-      [
-        "anak-anak",
-        17
+        "pementasan",
+        4
       ]
     ],
     "phrases": [
@@ -190,11 +190,11 @@
       ],
       [
         4169,
-        0.24
+        0.25
       ],
       [
         4387,
-        0.2
+        0.19
       ],
       [
         4119,
@@ -205,9 +205,10 @@
         0.17
       ],
       [
-        4276,
+        4209,
         0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

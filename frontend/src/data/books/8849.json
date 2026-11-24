@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6168,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "hukum",
@@ -115,24 +115,28 @@
         35
       ],
       [
-        "hpp",
-        24
-      ],
-      [
         "penyidikan",
         44
       ],
       [
-        "instruction",
-        36
+        "hakim",
+        68
+      ],
+      [
+        "hpp",
+        24
       ],
       [
         "komisaris",
         42
       ],
       [
-        "hakim",
-        68
+        "instruction",
+        36
+      ],
+      [
+        "hukum",
+        107
       ],
       [
         "pidana",
@@ -141,10 +145,6 @@
       [
         "mekanisme",
         52
-      ],
-      [
-        "tersangka",
-        30
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8994,
-        0.39
+        0.41
       ],
       [
         1162,
-        0.37
+        0.38
       ],
       [
         8850,
-        0.37
+        0.38
       ],
       [
         8278,
-        0.34
+        0.35
       ],
       [
         8791,
-        0.26
+        0.27
       ],
       [
         8790,
-        0.26
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 72,
+      "negative": 37,
+      "trend": [
+        0.67,
+        0.68,
+        0.18,
+        null,
+        0.56,
+        -0.25,
+        0,
+        null,
+        0.43,
+        null,
+        null,
+        0,
+        0.67,
+        0.11,
+        0,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

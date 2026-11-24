@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2130,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "individu",
@@ -107,20 +107,16 @@
         29
       ],
       [
-        "obor-obor",
-        8
-      ],
-      [
         "individu",
         35
       ],
       [
-        "individu-individu",
-        11
+        "obor-obor",
+        8
       ],
       [
-        "mengembik",
-        5
+        "individu-individu",
+        11
       ],
       [
         "ilusi",
@@ -131,8 +127,16 @@
         10
       ],
       [
+        "mengembik",
+        5
+      ],
+      [
         "berhala",
         7
+      ],
+      [
+        "dicari",
+        10
       ],
       [
         "kesendirian",
@@ -141,10 +145,6 @@
       [
         "altar",
         6
-      ],
-      [
-        "kawanan",
-        7
       ]
     ],
     "phrases": [
@@ -171,21 +171,28 @@
         0.52
       ],
       [
-        1910,
-        0.17
-      ],
-      [
         2109,
-        0.15
+        0.16
       ],
       [
         7367,
-        0.14
+        0.16
       ],
       [
         2311,
-        0.13
+        0.16
+      ],
+      [
+        1910,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 30,
+      "negative": 42,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

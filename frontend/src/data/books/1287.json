@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 19731,
-    "longer_than": 76,
+    "longer_than": 88,
     "top": [
       [
         "korban",
@@ -95,48 +95,48 @@
         71
       ],
       [
+        "perusakan",
+        122
+      ],
+      [
         "usakti",
         52
-      ],
-      [
-        "mhs",
-        55
-      ],
-      [
-        "plaza",
-        90
       ],
       [
         "penjarahan",
         98
       ],
       [
-        "perusakan",
-        122
+        "plaza",
+        90
+      ],
+      [
+        "mhs",
+        55
       ],
       [
         "kerusuhan",
         116
       ],
       [
+        "pembakaran",
+        94
+      ],
+      [
         "relawan",
         70
       ],
       [
-        "pembakaran",
-        94
+        "korban",
+        150
       ],
       [
         "bakar",
         106
       ],
       [
-        "pengajak",
-        26
-      ],
-      [
-        "carolus",
-        28
+        "meninggal",
+        109
       ]
     ],
     "phrases": [
@@ -176,28 +176,85 @@
     "similar": [
       [
         4644,
-        0.6
+        0.62
       ],
       [
         492,
-        0.6
+        0.62
       ],
       [
         312,
-        0.58
+        0.6
       ],
       [
         170,
-        0.58
+        0.6
       ],
       [
         187,
-        0.31
+        0.34
       ],
       [
         3814,
-        0.26
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 215,
+      "negative": 349,
+      "trend": [
+        0,
+        0.11,
+        0.22,
+        -0.18,
+        -0.84,
+        0.1,
+        -0.58,
+        -0.31,
+        -0.57,
+        -0.2,
+        0.25,
+        -0.03,
+        0.04,
+        0.39,
+        0.33,
+        -0.17
+      ],
+      "emotions": [
+        [
+          "sadness",
+          102
+        ],
+        [
+          "fear",
+          99
+        ],
+        [
+          "trust",
+          53
+        ],
+        [
+          "anger",
+          28
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

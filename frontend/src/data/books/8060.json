@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 659,
-    "longer_than": 7,
+    "longer_than": 45,
     "top": [
       [
         "budaya",
@@ -122,12 +122,20 @@
         7
       ],
       [
+        "kebudayaan",
+        7
+      ],
+      [
         "elemen-elemen",
         3
       ],
       [
-        "kebudayaan",
+        "budaya",
         7
+      ],
+      [
+        "seni",
+        5
       ],
       [
         "kekacauan",
@@ -136,14 +144,6 @@
       [
         "ranah",
         3
-      ],
-      [
-        "seni",
-        5
-      ],
-      [
-        "budaya",
-        7
       ],
       [
         "tatanan",
@@ -158,7 +158,7 @@
     "similar": [
       [
         3761,
-        0.3
+        0.31
       ],
       [
         7186,
@@ -169,13 +169,18 @@
         0.12
       ],
       [
-        2135,
-        0.12
+        4195,
+        0.11
       ],
       [
-        4195,
+        9208,
+        0.1
+      ],
+      [
+        8035,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 16162,
-    "longer_than": 72,
+    "longer_than": 87,
     "top": [
       [
         "pembangunan",
@@ -89,48 +89,48 @@
     ],
     "distinct": [
       [
-        "mprs",
-        126
-      ],
-      [
         "rakjat",
         177
       ],
       [
-        "berentjana",
-        52
+        "mprs",
+        126
       ],
       [
         "pembangunan",
         192
       ],
       [
-        "ketetapan",
-        57
+        "berentjana",
+        52
       ],
       [
         "semesta",
         69
       ],
       [
-        "madjelis",
-        31
+        "ketetapan",
+        57
+      ],
+      [
+        "presiden",
+        83
       ],
       [
         "djuga",
         51
       ],
       [
-        "depernas",
-        23
+        "tani",
+        63
       ],
       [
-        "manipol",
+        "kaum",
+        96
+      ],
+      [
+        "madjelis",
         31
-      ],
-      [
-        "presiden",
-        83
       ],
       [
         "mendjadi",
@@ -174,28 +174,81 @@
     "similar": [
       [
         9285,
-        0.53
+        0.56
       ],
       [
         9227,
-        0.37
+        0.41
       ],
       [
         480,
-        0.36
+        0.4
       ],
       [
         4793,
-        0.33
+        0.36
       ],
       [
         413,
-        0.31
+        0.35
       ],
       [
         412,
-        0.31
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 555,
+      "negative": 103,
+      "trend": [
+        0.86,
+        0,
+        0.61,
+        0.73,
+        0.8,
+        0.91,
+        0.76,
+        0.95,
+        0.73,
+        -0.04,
+        0.74,
+        0.69,
+        0.74,
+        0.81,
+        0.84,
+        0.95
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          49
+        ],
+        [
+          "trust",
+          42
+        ],
+        [
+          "sadness",
+          28
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

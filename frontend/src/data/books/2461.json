@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1936,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "manusia",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "manusia",
+        41
+      ],
+      [
         "hewan",
         15
       ],
@@ -107,24 +111,8 @@
         4
       ],
       [
-        "llama",
-        3
-      ],
-      [
-        "manusia",
-        41
-      ],
-      [
         "makhluk",
         9
-      ],
-      [
-        "belaian",
-        3
-      ],
-      [
-        "bertengger",
-        4
       ],
       [
         "kemajuan",
@@ -135,16 +123,28 @@
         6
       ],
       [
-        "spesies",
-        4
+        "llama",
+        3
       ],
       [
-        "primitif",
+        "bertengger",
         4
       ],
       [
         "burung",
         7
+      ],
+      [
+        "belaian",
+        3
+      ],
+      [
+        "hutan",
+        8
+      ],
+      [
+        "spesies",
+        4
       ]
     ],
     "phrases": [
@@ -163,29 +163,78 @@
     ],
     "similar": [
       [
-        7486,
-        0.84
+        8073,
+        0.18
       ],
       [
-        7483,
-        0.84
+        2165,
+        0.17
       ],
       [
-        7481,
-        0.84
+        2253,
+        0.14
       ],
       [
-        7480,
-        0.84
+        7889,
+        0.14
       ],
       [
-        7479,
-        0.84
+        3720,
+        0.14
       ],
       [
-        7476,
-        0.84
+        7226,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 66,
+      "negative": 27,
+      "trend": [
+        null,
+        1,
+        0.64,
+        0.71,
+        null,
+        0.67,
+        null,
+        null,
+        -0.64,
+        -0.14,
+        0.56,
+        null,
+        null,
+        null,
+        1,
+        0.2
+      ],
+      "emotions": [
+        [
+          "trust",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

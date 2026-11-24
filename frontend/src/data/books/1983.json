@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1981,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "musim",
@@ -99,16 +99,12 @@
     ],
     "distinct": [
       [
-        "mythopoesis",
-        6
-      ],
-      [
         "musim",
         27
       ],
       [
-        "megafon",
-        3
+        "mythopoesis",
+        6
       ],
       [
         "cerita",
@@ -119,8 +115,12 @@
         8
       ],
       [
-        "posting",
-        4
+        "kemarin",
+        9
+      ],
+      [
+        "megafon",
+        3
       ],
       [
         "italia",
@@ -131,48 +131,49 @@
         6
       ],
       [
-        "kemarin",
-        9
+        "perlawanan",
+        10
+      ],
+      [
+        "sosial",
+        14
       ],
       [
         "katalis",
         4
       ],
       [
-        "perlawanan",
-        10
-      ],
-      [
-        "butuh",
-        6
+        "posting",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         26,
-        0.33
+        0.34
       ],
       [
         1995,
-        0.18
+        0.16
       ],
       [
         2460,
-        0.15
+        0.14
       ],
       [
         2177,
-        0.13
+        0.14
       ],
       [
-        4551,
-        0.13
+        1922,
+        0.14
       ],
       [
         2793,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

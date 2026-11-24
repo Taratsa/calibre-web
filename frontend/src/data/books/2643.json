@@ -72,7 +72,7 @@
   ],
   "text": {
     "words": 3678,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "entertainment",
@@ -145,23 +145,11 @@
         10
       ],
       [
-        "entertaining",
-        5
-      ],
-      [
         "social",
         15
       ],
       [
-        "prose",
-        5
-      ],
-      [
-        "pathological",
-        3
-      ],
-      [
-        "dreams",
+        "entertaining",
         5
       ],
       [
@@ -169,8 +157,20 @@
         11
       ],
       [
-        "form",
-        8
+        "prose",
+        5
+      ],
+      [
+        "dreams",
+        5
+      ],
+      [
+        "life",
+        9
+      ],
+      [
+        "pathological",
+        3
       ]
     ],
     "phrases": [
@@ -193,19 +193,19 @@
     ],
     "similar": [
       [
-        2594,
-        0.16
-      ],
-      [
         2087,
         0.16
       ],
       [
-        3797,
+        2594,
         0.15
       ],
       [
         2035,
+        0.15
+      ],
+      [
+        3797,
         0.15
       ],
       [
@@ -216,6 +216,7 @@
         1830,
         0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

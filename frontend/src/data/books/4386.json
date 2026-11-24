@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 543,
-    "longer_than": 6,
+    "longer_than": 41,
     "top": [
       [
         "nyepi",
@@ -114,20 +114,24 @@
         3
       ],
       [
+        "mandiri",
+        7
+      ],
+      [
         "kanjeng",
         3
       ],
       [
-        "mandiri",
-        7
+        "bali",
+        4
       ],
       [
         "nabi",
         3
       ],
       [
-        "bali",
-        4
+        "masyarakat",
+        6
       ],
       [
         "budaya",
@@ -136,10 +140,6 @@
       [
         "kecuali",
         3
-      ],
-      [
-        "masyarakat",
-        6
       ],
       [
         "surat",
@@ -163,24 +163,21 @@
     "similar": [
       [
         4523,
-        0.32
-      ],
-      [
-        4214,
         0.3
       ],
       [
+        4214,
+        0.29
+      ],
+      [
         4369,
-        0.15
+        0.14
       ],
       [
         4215,
         0.12
-      ],
-      [
-        1775,
-        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

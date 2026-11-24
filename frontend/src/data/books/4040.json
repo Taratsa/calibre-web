@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4329,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "benda-benda",
@@ -109,48 +109,48 @@
         16
       ],
       [
-        "biner",
-        18
-      ],
-      [
         "benda-benda",
         29
       ],
       [
-        "popcultures",
-        6
-      ],
-      [
-        "isherwood",
-        6
+        "biner",
+        18
       ],
       [
         "representasi",
         20
       ],
       [
+        "popcultures",
+        6
+      ],
+      [
         "aparatus",
         13
+      ],
+      [
+        "isherwood",
+        6
       ],
       [
         "oposisi",
         16
       ],
       [
-        "althusser",
-        7
-      ],
-      [
-        "zupko",
-        4
+        "makna",
+        24
       ],
       [
         "studies",
         14
       ],
       [
-        "strauss",
-        6
+        "althusser",
+        7
+      ],
+      [
+        "kategori",
+        17
       ]
     ],
     "phrases": [
@@ -190,28 +190,52 @@
     "similar": [
       [
         4037,
-        0.14
-      ],
-      [
-        4088,
-        0.13
-      ],
-      [
-        4041,
-        0.13
-      ],
-      [
-        4046,
-        0.13
+        0.17
       ],
       [
         4043,
-        0.13
+        0.17
+      ],
+      [
+        4088,
+        0.16
+      ],
+      [
+        4046,
+        0.16
+      ],
+      [
+        4041,
+        0.15
       ],
       [
         4045,
-        0.12
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.62,
+      "positive": 63,
+      "negative": 15,
+      "trend": [
+        null,
+        0.6,
+        1,
+        0.67,
+        0.6,
+        null,
+        1,
+        0.64,
+        null,
+        null,
+        null,
+        null,
+        0.43,
+        0.45,
+        null,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

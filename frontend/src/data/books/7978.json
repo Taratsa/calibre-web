@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 48323,
-    "longer_than": 93,
+    "longer_than": 96,
     "top": [
       [
         "negara",
@@ -107,44 +107,44 @@
         177
       ],
       [
-        "minangkabau",
-        112
-      ],
-      [
         "suku",
         221
+      ],
+      [
+        "negara",
+        376
       ],
       [
         "dataran",
         119
       ],
       [
-        "zomia",
-        42
+        "minangkabau",
+        112
       ],
       [
-        "sisingamangaraja",
-        51
+        "belanda",
+        195
       ],
       [
-        "kesultanan",
-        84
+        "raja",
+        194
       ],
       [
         "aceh",
         141
       ],
       [
-        "nagur",
-        38
+        "kesultanan",
+        84
+      ],
+      [
+        "sisingamangaraja",
+        51
       ],
       [
         "pedalaman",
         98
-      ],
-      [
-        "belanda",
-        195
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2349,
-        0.37
+        0.41
       ],
       [
         286,
-        0.25
+        0.3
       ],
       [
         6980,
-        0.25
+        0.29
       ],
       [
         2222,
-        0.23
+        0.27
       ],
       [
         7877,
-        0.21
+        0.26
       ],
       [
         282,
-        0.21
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 509,
+      "negative": 381,
+      "trend": [
+        0.59,
+        0,
+        0.07,
+        0.17,
+        0.03,
+        0.21,
+        0.09,
+        0.25,
+        0.08,
+        0.1,
+        0.5,
+        0.11,
+        -0.08,
+        0.13,
+        -0.01,
+        0.54
+      ],
+      "emotions": [
+        [
+          "anger",
+          117
+        ],
+        [
+          "trust",
+          56
+        ],
+        [
+          "sadness",
+          34
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "surprise",
+          5
+        ]
+      ]
+    }
   }
 }

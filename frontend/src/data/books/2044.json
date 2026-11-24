@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3322,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "air",
@@ -115,36 +115,36 @@
         15
       ],
       [
-        "tirta",
-        15
+        "air",
+        67
       ],
       [
         "kecamatan",
         26
       ],
       [
+        "tirta",
+        15
+      ],
+      [
         "rawa",
         16
       ],
       [
-        "air",
-        67
+        "warga",
+        32
       ],
       [
         "danau",
         15
       ],
       [
-        "mancak",
-        5
+        "penolakan",
+        19
       ],
       [
-        "ciomas",
-        6
-      ],
-      [
-        "kekeringan",
-        10
+        "serang",
+        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7434,
-        0.34
+        0.36
       ],
       [
         4699,
-        0.34
+        0.35
       ],
       [
         1861,
-        0.34
+        0.35
       ],
       [
         2621,
-        0.16
+        0.19
       ],
       [
         2686,
-        0.13
+        0.15
       ],
       [
-        9146,
-        0.12
+        8723,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 50,
+      "negative": 38,
+      "trend": [
+        null,
+        0.6,
+        0,
+        0.2,
+        0.78,
+        0.75,
+        -0.5,
+        0.33,
+        null,
+        null,
+        null,
+        -0.33,
+        null,
+        0,
+        0,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

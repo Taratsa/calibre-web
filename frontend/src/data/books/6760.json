@@ -11,7 +11,7 @@
   ],
   "author_sort": "Gie, Soe Hok",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2023,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "rakyat",
@@ -124,36 +124,36 @@
         27
       ],
       [
-        "darsono",
-        6
-      ],
-      [
         "rakyat",
         33
-      ],
-      [
-        "penanggalan",
-        5
       ],
       [
         "belanda",
         17
       ],
       [
-        "sdap",
-        3
+        "darsono",
+        6
+      ],
+      [
+        "indonesia",
+        32
+      ],
+      [
+        "penanggalan",
+        5
+      ],
+      [
+        "perjuangan",
+        12
+      ],
+      [
+        "semarang",
+        8
       ],
       [
         "berita-berita",
         5
-      ],
-      [
-        "masasilam",
-        4
-      ],
-      [
-        "kebaktian",
-        4
       ]
     ],
     "phrases": [
@@ -197,24 +197,31 @@
       ],
       [
         1105,
-        0.61
+        0.62
       ],
       [
         9232,
-        0.21
+        0.22
       ],
       [
         2481,
-        0.16
+        0.2
       ],
       [
         1965,
-        0.15
+        0.18
       ],
       [
-        7878,
-        0.15
+        7088,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 31,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

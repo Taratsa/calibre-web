@@ -1,52 +1,54 @@
 {
   "id": 1270,
   "title": "Sujud di Hadapan Korban: Tragedi Jakarta Mei 1998",
-  "slug": "sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-unknown",
-  "slugBase": "sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-unknown",
+  "slug": "sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-tim-relawan-untuk-kemanusiaan",
+  "slugBase": "sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-tim-relawan-untuk-kemanusiaan",
   "authors": [
     {
-      "id": 14,
-      "name": "Unknown"
+      "id": 7644,
+      "name": "Tim Relawan untuk Kemanusiaan"
     }
   ],
-  "author_sort": "Unknown",
-  "tags": [],
+  "author_sort": "Kemanusiaan, Tim Relawan untuk",
+  "tags": [
+    "Sejarah"
+  ],
   "publisher": {
-    "id": 78,
-    "name": "Tim Relawan untuk Kemanusiaan"
+    "id": 1579,
+    "name": "Divisi Data Tim Relawan"
   },
   "publishers": [
     {
-      "id": 78,
-      "name": "Tim Relawan untuk Kemanusiaan"
+      "id": 1579,
+      "name": "Divisi Data Tim Relawan"
     }
   ],
   "languages": [
     "ind"
   ],
-  "pubdate": null,
+  "pubdate": "1998-05-22",
   "timestamp": "2026-03-03 15:34:42.464966",
-  "last_modified": "2026-03-03 15:35:20.905851",
+  "last_modified": "2026-11-24 05:03:28.698975",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/1270?v=1772526920",
-  "cover_og_url": "/cover/1270/og?v=1772526920",
-  "url": "/book/sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-unknown/",
+  "cover_url": "/cover_thumb/1270?v=1795471408",
+  "cover_og_url": "/cover/1270/og?v=1795471408",
+  "url": "/book/sujud-di-hadapan-korban-tragedi-jakarta-mei-1998-tim-relawan-untuk-kemanusiaan/",
   "rating": null,
   "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 69186750,
-      "name": "Sujud di Hadapan Korban_ Tragedi Jakarta M - Unknown"
+      "name": "Sujud di Hadapan Korban_ Tragedi Jakarta M - Tim Relawan untuk Kemanusiaan"
     }
   ],
   "text": {
-    "words": 19731,
-    "longer_than": 76,
+    "words": 19661,
+    "longer_than": 88,
     "top": [
       [
         "korban",
@@ -62,19 +64,19 @@
       ],
       [
         "meninggal",
-        109
+        108
       ],
       [
         "bakar",
-        106
-      ],
-      [
-        "orang",
-        100
+        104
       ],
       [
         "penjarahan",
-        98
+        99
+      ],
+      [
+        "orang",
+        97
       ],
       [
         "pembakaran",
@@ -86,7 +88,7 @@
       ],
       [
         "keluarga",
-        89
+        85
       ],
       [
         "jakarta",
@@ -100,51 +102,51 @@
     "distinct": [
       [
         "rscm",
-        71
-      ],
-      [
-        "usakti",
-        52
-      ],
-      [
-        "mhs",
-        55
-      ],
-      [
-        "plaza",
-        90
-      ],
-      [
-        "penjarahan",
-        98
+        68
       ],
       [
         "perusakan",
         122
       ],
       [
-        "kerusuhan",
-        116
+        "penjarahan",
+        99
       ],
       [
-        "relawan",
-        70
+        "usakti",
+        51
+      ],
+      [
+        "plaza",
+        90
+      ],
+      [
+        "mhs",
+        55
+      ],
+      [
+        "kerusuhan",
+        116
       ],
       [
         "pembakaran",
         94
       ],
       [
+        "relawan",
+        70
+      ],
+      [
+        "korban",
+        150
+      ],
+      [
         "bakar",
-        106
+        104
       ],
       [
-        "pengajak",
-        26
-      ],
-      [
-        "carolus",
-        28
+        "meninggal",
+        108
       ]
     ],
     "phrases": [
@@ -157,11 +159,11 @@
         58
       ],
       [
-        "mhs usakti",
-        49
+        "meninggal bakar",
+        50
       ],
       [
-        "meninggal bakar",
+        "mhs usakti",
         49
       ],
       [
@@ -173,39 +175,96 @@
         34
       ],
       [
-        "kamar mayat",
-        34
+        "perusakan penjarahan",
+        32
       ],
       [
-        "rscm keluarga",
+        "kamar mayat",
         32
       ]
     ],
     "similar": [
       [
         4644,
-        0.6
+        0.62
       ],
       [
         492,
-        0.6
+        0.62
       ],
       [
         312,
-        0.58
+        0.6
       ],
       [
         170,
-        0.58
+        0.6
       ],
       [
         187,
-        0.31
+        0.34
       ],
       [
         3814,
-        0.26
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.23,
+      "positive": 218,
+      "negative": 348,
+      "trend": [
+        0,
+        0.11,
+        0.22,
+        -0.21,
+        -0.81,
+        0.16,
+        -0.56,
+        -0.22,
+        -0.6,
+        -0.26,
+        0.25,
+        -0.03,
+        0.04,
+        0.39,
+        0.36,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "sadness",
+          102
+        ],
+        [
+          "fear",
+          100
+        ],
+        [
+          "trust",
+          53
+        ],
+        [
+          "anger",
+          28
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

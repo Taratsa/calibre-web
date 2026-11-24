@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 35042,
-    "longer_than": 88,
+    "longer_than": 94,
     "top": [
       [
         "masyarakat",
@@ -104,44 +104,44 @@
         123
       ],
       [
-        "marx",
-        136
-      ],
-      [
         "produksi",
         223
+      ],
+      [
+        "masyarakat",
+        371
+      ],
+      [
+        "marx",
+        136
       ],
       [
         "filsafat",
         123
       ],
       [
-        "nilai-pakai",
-        28
-      ],
-      [
-        "flph",
-        34
-      ],
-      [
         "kapitalis",
         124
       ],
       [
-        "engels",
-        62
+        "kaum",
+        178
       ],
       [
-        "marxisme",
-        75
+        "manusia",
+        248
       ],
       [
-        "dialektik",
-        47
+        "perkembangan",
+        175
       ],
       [
         "kapital",
         91
+      ],
+      [
+        "marxisme",
+        75
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         5954,
-        0.55
+        0.57
       ],
       [
         553,
-        0.54
+        0.57
       ],
       [
         1580,
-        0.38
+        0.42
       ],
       [
         636,
-        0.28
+        0.33
       ],
       [
         9289,
-        0.27
+        0.32
       ],
       [
         4769,
-        0.26
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 734,
+      "negative": 267,
+      "trend": [
+        0.56,
+        0.27,
+        0.48,
+        0.33,
+        0.59,
+        0.53,
+        0.64,
+        0.68,
+        0.52,
+        0.2,
+        0.57,
+        0.42,
+        0.18,
+        0.43,
+        0.43,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          43
+        ],
+        [
+          "trust",
+          40
+        ],
+        [
+          "joy",
+          35
+        ],
+        [
+          "sadness",
+          33
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

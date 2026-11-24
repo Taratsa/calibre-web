@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 7508,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "munir",
@@ -109,14 +109,6 @@
         57
       ],
       [
-        "bin",
-        55
-      ],
-      [
-        "fact-finding",
-        20
-      ],
-      [
         "investigation",
         35
       ],
@@ -125,16 +117,24 @@
         34
       ],
       [
-        "prosecution",
+        "fact-finding",
         20
+      ],
+      [
+        "bin",
+        55
       ],
       [
         "human",
         47
       ],
       [
-        "muchdi",
-        17
+        "rights",
+        47
+      ],
+      [
+        "prosecution",
+        20
       ]
     ],
     "phrases": [
@@ -178,11 +178,11 @@
       ],
       [
         8983,
-        0.2
+        0.21
       ],
       [
         8895,
-        0.19
+        0.2
       ],
       [
         8841,
@@ -193,9 +193,10 @@
         0.18
       ],
       [
-        8198,
+        8976,
         0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

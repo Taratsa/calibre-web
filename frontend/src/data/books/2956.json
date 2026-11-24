@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 18225,
-    "longer_than": 74,
+    "longer_than": 88,
     "top": [
       [
         "perkawinan",
@@ -113,12 +113,12 @@
         310
       ],
       [
-        "pengantin",
-        266
-      ],
-      [
         "perkawinan",
         388
+      ],
+      [
+        "pengantin",
+        266
       ],
       [
         "upacara",
@@ -133,28 +133,28 @@
         86
       ],
       [
-        "pacta",
-        61
-      ],
-      [
         "manado",
         70
+      ],
+      [
+        "pacta",
+        61
       ],
       [
         "minahasa",
         60
       ],
       [
-        "bolaang",
-        31
+        "orang",
+        284
       ],
       [
-        "mongondow",
-        30
+        "wanita",
+        117
       ],
       [
-        "gorontalo",
-        42
+        "keluarga",
+        155
       ]
     ],
     "phrases": [
@@ -194,28 +194,73 @@
     "similar": [
       [
         2902,
-        0.33
+        0.38
       ],
       [
         930,
-        0.33
+        0.38
       ],
       [
         3642,
-        0.18
-      ],
-      [
-        8769,
-        0.15
+        0.2
       ],
       [
         8693,
-        0.14
+        0.19
       ],
       [
         2918,
-        0.13
+        0.19
+      ],
+      [
+        2973,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.82,
+      "positive": 198,
+      "negative": 20,
+      "trend": [
+        1,
+        0.91,
+        1,
+        1,
+        0.59,
+        0.6,
+        0.75,
+        0.6,
+        null,
+        0.5,
+        1,
+        null,
+        null,
+        1,
+        0.74,
+        0.85
+      ],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

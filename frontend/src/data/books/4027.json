@@ -11,7 +11,7 @@
   ],
   "author_sort": "Gelder, W. van",
   "tags": [
-    "Ilmu Pengetahuan",
+    "Ilmu pengetahuan",
     "Nonfiksi Anak",
     "Pendidikan"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 20829,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "orang",
@@ -112,23 +112,31 @@
         213
       ],
       [
+        "pulau",
+        264
+      ],
+      [
         "gubermen",
         69
       ],
       [
-        "pulau",
-        264
+        "negeri",
+        300
       ],
       [
         "pulau-pulau",
         99
       ],
       [
-        "afdeeling",
-        58
+        "tanah",
+        268
       ],
       [
-        "syahdan",
+        "jawa",
+        166
+      ],
+      [
+        "afdeeling",
         58
       ],
       [
@@ -136,20 +144,12 @@
         86
       ],
       [
-        "jawa",
-        166
+        "orang",
+        327
       ],
       [
-        "negeri",
-        300
-      ],
-      [
-        "berunai",
-        23
-      ],
-      [
-        "afdeelingnya",
-        18
+        "syahdan",
+        58
       ],
       [
         "sungai",
@@ -193,28 +193,69 @@
     "similar": [
       [
         6751,
-        0.18
+        0.21
       ],
       [
         2918,
-        0.15
+        0.17
       ],
       [
         1605,
-        0.14
-      ],
-      [
-        6980,
-        0.13
+        0.16
       ],
       [
         1320,
-        0.13
+        0.15
       ],
       [
         2938,
-        0.13
+        0.15
+      ],
+      [
+        6980,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 143,
+      "negative": 62,
+      "trend": [
+        0.11,
+        -0.71,
+        -0.33,
+        0.33,
+        0.71,
+        0.43,
+        0.09,
+        0.22,
+        1,
+        0.2,
+        0.62,
+        1,
+        0.8,
+        1,
+        0.47,
+        0.82
+      ],
+      "emotions": [
+        [
+          "joy",
+          23
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          4
+        ]
+      ]
+    }
   }
 }

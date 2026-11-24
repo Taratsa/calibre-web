@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2710,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "kaum",
@@ -126,20 +126,24 @@
         10
       ],
       [
-        "makhnovis",
-        7
+        "pekerja",
+        33
+      ],
+      [
+        "kaum",
+        39
+      ],
+      [
+        "partai",
+        27
       ],
       [
         "stalinisme",
         9
       ],
       [
-        "pekerja",
-        33
-      ],
-      [
-        "partai",
-        27
+        "makhnovis",
+        7
       ],
       [
         "stalin",
@@ -148,10 +152,6 @@
       [
         "trotskyis",
         6
-      ],
-      [
-        "kaum",
-        39
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         2158,
-        0.52
+        0.53
       ],
       [
         4675,
-        0.43
+        0.45
       ],
       [
         4656,
-        0.42
+        0.44
       ],
       [
         2055,
-        0.28
+        0.33
       ],
       [
         7887,
-        0.24
+        0.28
       ],
       [
         9239,
-        0.2
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 34,
+      "negative": 36,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

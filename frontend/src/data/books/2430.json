@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8790,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "sneevliet",
@@ -107,24 +107,24 @@
         45
       ],
       [
-        "russische",
-        31
-      ],
-      [
         "indonesische",
         48
+      ],
+      [
+        "russische",
+        31
       ],
       [
         "isdv",
         38
       ],
       [
-        "baars",
-        31
-      ],
-      [
         "politieke",
         36
+      ],
+      [
+        "baars",
+        31
       ],
       [
         "revolutie",
@@ -139,12 +139,12 @@
         25
       ],
       [
-        "socialistische",
-        23
-      ],
-      [
         "beweging",
         29
+      ],
+      [
+        "socialistische",
+        23
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         4841,
-        0.43
+        0.42
       ],
       [
         3913,
@@ -199,13 +199,14 @@
         0.22
       ],
       [
-        1965,
+        1134,
         0.15
       ],
       [
-        7088,
+        1965,
         0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

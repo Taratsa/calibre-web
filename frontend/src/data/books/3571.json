@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 3266,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "buaya",
@@ -126,28 +126,28 @@
         50
       ],
       [
-        "mintanggor",
-        10
-      ],
-      [
         "teluk",
         30
       ],
       [
-        "crocodile",
-        13
+        "mintanggor",
+        10
       ],
       [
         "pung",
         18
       ],
       [
-        "tagalaya",
-        8
+        "crocodile",
+        13
       ],
       [
         "par",
         24
+      ],
+      [
+        "tagalaya",
+        8
       ]
     ],
     "phrases": [
@@ -191,7 +191,7 @@
       ],
       [
         6008,
-        0.28
+        0.29
       ],
       [
         5361,
@@ -199,16 +199,23 @@
       ],
       [
         5344,
-        0.24
+        0.25
       ],
       [
         6313,
-        0.2
+        0.21
       ],
       [
         6250,
         0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 39,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

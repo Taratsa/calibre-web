@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1858,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "seni",
@@ -118,27 +118,23 @@
         7
       ],
       [
-        "bolshevik",
-        4
+        "kreatif",
+        8
       ],
       [
         "marxis",
         6
       ],
       [
-        "kreativitas",
-        6
-      ],
-      [
-        "kreatif",
-        8
-      ],
-      [
         "individu",
         10
       ],
       [
-        "max",
+        "kreativitas",
+        6
+      ],
+      [
+        "bolshevik",
         4
       ],
       [
@@ -148,6 +144,10 @@
       [
         "otoriter",
         4
+      ],
+      [
+        "kesadaran",
+        7
       ]
     ],
     "phrases": [
@@ -170,29 +170,53 @@
     ],
     "similar": [
       [
-        8099,
-        0.22
-      ],
-      [
-        4717,
-        0.21
-      ],
-      [
-        2355,
-        0.21
-      ],
-      [
         6730,
-        0.2
+        0.26
       ],
       [
         2203,
-        0.2
+        0.26
       ],
       [
-        7231,
-        0.2
+        4717,
+        0.26
+      ],
+      [
+        2355,
+        0.26
+      ],
+      [
+        8099,
+        0.25
+      ],
+      [
+        2813,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 50,
+      "negative": 28,
+      "trend": [
+        null,
+        0.6,
+        -0.75,
+        -0.33,
+        null,
+        null,
+        null,
+        0.43,
+        -0.2,
+        0.2,
+        null,
+        null,
+        1,
+        0.6,
+        null,
+        0.67
+      ],
+      "emotions": []
+    }
   }
 }

@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 19864,
-    "longer_than": 76,
+    "longer_than": 88,
     "top": [
       [
         "anak",
@@ -113,6 +113,18 @@
         59
       ],
       [
+        "bumi",
+        128
+      ],
+      [
+        "anak",
+        167
+      ],
+      [
+        "den",
+        77
+      ],
+      [
         "gouvernement",
         33
       ],
@@ -121,40 +133,28 @@
         20
       ],
       [
-        "den",
-        77
-      ],
-      [
-        "landbouwleeraar",
-        16
-      ],
-      [
         "indië",
         27
       ],
       [
-        "insulinda",
-        15
-      ],
-      [
-        "inlandschen",
-        16
-      ],
-      [
-        "bumi",
-        128
+        "tanah",
+        111
       ],
       [
         "hindia",
         45
       ],
       [
+        "landbouwleeraar",
+        16
+      ],
+      [
         "melayu",
         45
       ],
       [
-        "inlandsche",
-        23
+        "insulinda",
+        15
       ]
     ],
     "phrases": [
@@ -194,24 +194,81 @@
     "similar": [
       [
         1314,
+        0.16
+      ],
+      [
+        1298,
         0.15
       ],
       [
         1409,
-        0.13
+        0.15
       ],
       [
         2847,
-        0.12
+        0.14
       ],
       [
         377,
-        0.12
+        0.14
       ],
       [
-        1298,
+        2953,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 398,
+      "negative": 154,
+      "trend": [
+        0.72,
+        0.61,
+        0.36,
+        0.1,
+        0.33,
+        0.85,
+        0.88,
+        0.48,
+        0.23,
+        0.24,
+        0.52,
+        null,
+        null,
+        null,
+        0.2,
+        0.28
+      ],
+      "emotions": [
+        [
+          "trust",
+          30
+        ],
+        [
+          "joy",
+          27
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

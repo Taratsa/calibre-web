@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1826,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "gerakan",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "sel",
-        9
-      ],
-      [
-        "mentalitas",
-        5
-      ],
-      [
-        "kolektif",
-        11
-      ],
-      [
-        "kebuntuan",
-        4
+        "gerakan",
+        20
       ],
       [
         "membangun",
         19
       ],
       [
-        "gerakan",
+        "sel",
+        9
+      ],
+      [
+        "kolektif",
+        11
+      ],
+      [
+        "negara",
         20
-      ],
-      [
-        "teritori",
-        4
-      ],
-      [
-        "hegemoni",
-        5
       ],
       [
         "aksi",
         12
       ],
       [
+        "mentalitas",
+        5
+      ],
+      [
         "strategi",
         9
       ],
       [
-        "progresif",
-        6
+        "hegemoni",
+        5
       ],
       [
-        "terjebak",
-        5
+        "kebuntuan",
+        4
+      ],
+      [
+        "teritori",
+        4
+      ],
+      [
+        "rakyat",
+        12
       ]
     ],
     "phrases": [
@@ -180,28 +180,52 @@
     "similar": [
       [
         2407,
-        0.3
-      ],
-      [
-        1986,
-        0.24
-      ],
-      [
-        2091,
-        0.23
-      ],
-      [
-        1833,
-        0.22
+        0.32
       ],
       [
         2805,
-        0.22
+        0.27
       ],
       [
-        2619,
-        0.21
+        1986,
+        0.26
+      ],
+      [
+        2091,
+        0.26
+      ],
+      [
+        1833,
+        0.25
+      ],
+      [
+        2626,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 62,
+      "negative": 24,
+      "trend": [
+        null,
+        0.71,
+        null,
+        -0.2,
+        0.09,
+        null,
+        0.56,
+        -0.14,
+        null,
+        1,
+        0.6,
+        null,
+        null,
+        0.2,
+        null,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

@@ -11,7 +11,7 @@
   ],
   "author_sort": "Nyoto",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 7052,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "kaum",
@@ -108,52 +108,52 @@
     ],
     "distinct": [
       [
-        "manipolis",
-        16
+        "kaum",
+        63
       ],
       [
-        "kennej",
-        9
+        "manipolis",
+        16
       ],
       [
         "landreform",
         19
       ],
       [
-        "amerikanisme",
-        8
+        "kennej",
+        9
       ],
       [
         "tuantanah",
         15
       ],
       [
-        "manipol",
-        14
+        "amerika",
+        37
+      ],
+      [
+        "rakyat",
+        46
+      ],
+      [
+        "amerikanisme",
+        8
       ],
       [
         "pki",
         21
       ],
       [
-        "kaum",
-        63
-      ],
-      [
         "imperialis",
         19
       ],
       [
+        "manipol",
+        14
+      ],
+      [
         "ke-vii",
         10
-      ],
-      [
-        "amerika",
-        37
-      ],
-      [
-        "manipolis-munafik",
-        7
       ]
     ],
     "phrases": [
@@ -201,20 +201,73 @@
       ],
       [
         4000,
-        0.22
+        0.26
+      ],
+      [
+        9305,
+        0.24
+      ],
+      [
+        6758,
+        0.23
       ],
       [
         505,
-        0.2
-      ],
-      [
-        4881,
-        0.2
-      ],
-      [
-        4815,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 113,
+      "negative": 74,
+      "trend": [
+        0.38,
+        0.52,
+        0.5,
+        0.33,
+        0.09,
+        0.5,
+        null,
+        0,
+        0.17,
+        0.11,
+        0.64,
+        -0.43,
+        -0.14,
+        -0.14,
+        0,
+        1
+      ],
+      "emotions": [
+        [
+          "fear",
+          13
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

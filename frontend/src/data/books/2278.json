@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 533,
-    "longer_than": 6,
+    "longer_than": 41,
     "top": [
       [
         "hidup",
@@ -95,27 +95,15 @@
         9
       ],
       [
-        "posting",
-        4
-      ],
-      [
         "anarkis",
         8
       ],
       [
-        "menghidupi",
+        "posting",
         4
       ],
       [
-        "memilih",
-        6
-      ],
-      [
-        "melanjutkan",
-        3
-      ],
-      [
-        "kekuasaan",
+        "menghidupi",
         4
       ],
       [
@@ -123,8 +111,20 @@
         10
       ],
       [
+        "memilih",
+        6
+      ],
+      [
+        "kekuasaan",
+        4
+      ],
+      [
         "masyarakat",
         5
+      ],
+      [
+        "melanjutkan",
+        3
       ],
       [
         "menolak",
@@ -135,28 +135,29 @@
     "similar": [
       [
         1995,
-        0.34
+        0.32
       ],
       [
         8039,
-        0.22
+        0.23
       ],
       [
         2421,
-        0.22
-      ],
-      [
-        2372,
-        0.19
-      ],
-      [
-        3726,
-        0.14
+        0.23
       ],
       [
         3804,
-        0.14
+        0.17
+      ],
+      [
+        2372,
+        0.16
+      ],
+      [
+        8080,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

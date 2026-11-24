@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2727,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "prt",
@@ -112,40 +112,40 @@
         27
       ],
       [
-        "operata",
-        6
-      ],
-      [
         "clan",
         16
       ],
       [
-        "bedinde",
-        4
-      ],
-      [
-        "gunungkidul",
+        "operata",
         6
-      ],
-      [
-        "perumahan",
-        14
-      ],
-      [
-        "pembantu",
-        13
-      ],
-      [
-        "perbulan",
-        5
       ],
       [
         "kerja",
         37
       ],
       [
-        "majikannya",
-        7
+        "perumahan",
+        14
+      ],
+      [
+        "bedinde",
+        4
+      ],
+      [
+        "pembantu",
+        13
+      ],
+      [
+        "gunungkidul",
+        6
+      ],
+      [
+        "tangga",
+        17
+      ],
+      [
+        "pekerja",
+        17
       ]
     ],
     "phrases": [
@@ -185,28 +185,35 @@
     "similar": [
       [
         7720,
-        0.34
+        0.32
       ],
       [
         8220,
-        0.19
+        0.2
       ],
       [
         9132,
-        0.17
-      ],
-      [
-        8216,
-        0.17
+        0.19
       ],
       [
         8219,
-        0.16
+        0.19
+      ],
+      [
+        8216,
+        0.18
       ],
       [
         8780,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 38,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1103,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "amir",
@@ -91,32 +91,28 @@
     ],
     "distinct": [
       [
-        "langkat",
-        9
-      ],
-      [
         "hamzah",
         12
+      ],
+      [
+        "langkat",
+        9
       ],
       [
         "amir",
         13
       ],
       [
-        "pamannja",
-        4
-      ],
-      [
         "nja",
         9
       ],
       [
-        "melaju",
-        7
+        "pamannja",
+        4
       ],
       [
-        "penjair",
-        4
+        "melaju",
+        7
       ],
       [
         "mendjadi",
@@ -127,16 +123,20 @@
         8
       ],
       [
+        "penjair",
+        4
+      ],
+      [
+        "djuga",
+        6
+      ],
+      [
         "armijn",
         3
       ],
       [
         "sekolahnja",
         3
-      ],
-      [
-        "djuga",
-        6
       ]
     ],
     "phrases": [
@@ -172,12 +172,13 @@
       ],
       [
         1222,
-        0.18
+        0.16
       ],
       [
         7688,
         0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

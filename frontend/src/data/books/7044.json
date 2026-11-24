@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1601,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "peradaban",
@@ -114,12 +114,12 @@
         9
       ],
       [
-        "bakunin",
-        9
-      ],
-      [
         "anarkis",
         16
+      ],
+      [
+        "bakunin",
+        9
       ],
       [
         "coeurderoy",
@@ -134,52 +134,59 @@
         4
       ],
       [
-        "barbarian",
-        3
-      ],
-      [
-        "arsenal",
-        3
+        "kaum",
+        13
       ],
       [
         "gairah",
         6
       ],
       [
-        "mengambil-alih",
+        "barbarian",
         3
       ],
       [
         "penghancuran",
         6
+      ],
+      [
+        "arsenal",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7461,
-        0.62
+        0.65
       ],
       [
         2675,
-        0.48
+        0.54
       ],
       [
         3715,
-        0.37
+        0.39
       ],
       [
-        4113,
+        7181,
         0.2
       ],
       [
-        2794,
-        0.16
+        3716,
+        0.2
       ],
       [
-        9188,
-        0.15
+        3057,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 28,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5200,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "bookchin",
@@ -115,36 +115,36 @@
         13
       ],
       [
-        "batubara",
-        9
+        "sosial",
+        30
       ],
       [
-        "munisipalisme",
-        5
+        "batubara",
+        9
       ],
       [
         "ekologis",
         10
       ],
       [
+        "munisipalisme",
+        5
+      ],
+      [
+        "manusia",
+        29
+      ],
+      [
         "non-manusia",
         5
       ],
       [
+        "bumi",
+        17
+      ],
+      [
         "pltu",
         5
-      ],
-      [
-        "anarko-primitifisme",
-        3
-      ],
-      [
-        "suriah",
-        5
-      ],
-      [
-        "anarkisme",
-        8
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         1820,
-        0.46
+        0.48
       ],
       [
         7310,
-        0.27
-      ],
-      [
-        4882,
-        0.24
-      ],
-      [
-        2632,
-        0.24
+        0.29
       ],
       [
         2628,
-        0.24
+        0.28
+      ],
+      [
+        4882,
+        0.27
+      ],
+      [
+        2632,
+        0.27
       ],
       [
         7890,
-        0.23
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 110,
+      "negative": 98,
+      "trend": [
+        0.38,
+        0.14,
+        -0.38,
+        0.07,
+        -0.18,
+        0.41,
+        0.08,
+        0.27,
+        -0.38,
+        0.8,
+        -0.6,
+        0.57,
+        0.25,
+        -0.17,
+        -0.33,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          18
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

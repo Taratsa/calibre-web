@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2969,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "nihilisme",
@@ -115,14 +115,6 @@
         4
       ],
       [
-        "ketidakbermaknaan",
-        3
-      ],
-      [
-        "nietzsche",
-        5
-      ],
-      [
         "menatap",
         8
       ],
@@ -131,20 +123,28 @@
         8
       ],
       [
+        "ketidakbermaknaan",
+        3
+      ],
+      [
         "cerah",
         7
+      ],
+      [
+        "nietzsche",
+        5
       ],
       [
         "pasif",
         7
       ],
       [
-        "eksistensial",
-        4
+        "ketiadaan",
+        7
       ],
       [
-        "kosmik",
-        3
+        "hidup",
+        18
       ]
     ],
     "phrases": [
@@ -187,25 +187,74 @@
         0.21
       ],
       [
-        1974,
-        0.17
-      ],
-      [
-        3697,
-        0.16
-      ],
-      [
         2468,
-        0.16
+        0.18
       ],
       [
-        2419,
-        0.15
+        1974,
+        0.18
       ],
       [
         1817,
-        0.15
+        0.18
+      ],
+      [
+        3697,
+        0.17
+      ],
+      [
+        2445,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 90,
+      "negative": 48,
+      "trend": [
+        0.8,
+        null,
+        0.38,
+        0.33,
+        -0.2,
+        -0.43,
+        0.27,
+        0.33,
+        0.5,
+        0.6,
+        1,
+        null,
+        0.2,
+        0.78,
+        -0.71,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

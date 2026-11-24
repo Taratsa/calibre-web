@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1847,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "membangun",
@@ -107,32 +107,32 @@
         3
       ],
       [
-        "frekuensi",
-        4
+        "membangun",
+        14
       ],
       [
         "refleksi",
         6
       ],
       [
-        "patriarki",
-        4
+        "ruang",
+        12
       ],
       [
-        "membangun",
-        14
+        "sosial",
+        13
+      ],
+      [
+        "gerakan",
+        11
       ],
       [
         "kawan",
         8
       ],
       [
-        "reproduksi",
+        "patriarki",
         4
-      ],
-      [
-        "mengakar",
-        3
       ],
       [
         "individu",
@@ -143,8 +143,8 @@
         7
       ],
       [
-        "ruang",
-        12
+        "reproduksi",
+        4
       ]
     ],
     "phrases": [
@@ -172,24 +172,48 @@
       ],
       [
         1833,
-        0.27
-      ],
-      [
-        2619,
-        0.26
-      ],
-      [
-        1986,
-        0.24
-      ],
-      [
-        2407,
-        0.23
+        0.32
       ],
       [
         1959,
-        0.22
+        0.27
+      ],
+      [
+        1986,
+        0.27
+      ],
+      [
+        2407,
+        0.26
+      ],
+      [
+        2619,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 54,
+      "negative": 35,
+      "trend": [
+        -0.43,
+        0.33,
+        null,
+        0.43,
+        null,
+        null,
+        null,
+        0.75,
+        0.43,
+        0.64,
+        null,
+        -0.2,
+        -0.33,
+        -0.09,
+        -0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

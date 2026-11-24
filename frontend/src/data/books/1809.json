@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 954,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "israel",
@@ -99,23 +99,15 @@
     ],
     "distinct": [
       [
-        "jenin",
-        7
-      ],
-      [
         "israel",
         14
       ],
       [
-        "israel-palestina",
-        3
+        "jenin",
+        7
       ],
       [
         "palestina",
-        5
-      ],
-      [
-        "pembantaian",
         5
       ],
       [
@@ -123,16 +115,28 @@
         10
       ],
       [
+        "israel-palestina",
+        3
+      ],
+      [
+        "pembantaian",
+        5
+      ],
+      [
         "spesies",
         4
+      ],
+      [
+        "islam",
+        6
       ],
       [
         "memposisikan",
         3
       ],
       [
-        "islam",
-        6
+        "agama",
+        7
       ],
       [
         "medis",
@@ -140,10 +144,6 @@
       ],
       [
         "rumah-rumah",
-        3
-      ],
-      [
-        "disana",
         3
       ]
     ],
@@ -154,25 +154,26 @@
         0.28
       ],
       [
-        2395,
-        0.26
-      ],
-      [
         7216,
         0.25
       ],
       [
-        3942,
+        2395,
+        0.24
+      ],
+      [
+        8009,
         0.23
+      ],
+      [
+        3942,
+        0.22
       ],
       [
         2574,
         0.22
-      ],
-      [
-        8009,
-        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

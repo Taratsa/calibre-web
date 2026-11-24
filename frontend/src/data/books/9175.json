@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 914,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "hidup",
@@ -111,8 +111,12 @@
         6
       ],
       [
-        "pengasingan",
-        3
+        "hidup",
+        18
+      ],
+      [
+        "kehidupan",
+        12
       ],
       [
         "dijual",
@@ -123,8 +127,12 @@
         6
       ],
       [
-        "segelintir",
+        "pengasingan",
         3
+      ],
+      [
+        "terpaksa",
+        5
       ],
       [
         "barang-barang",
@@ -139,48 +147,41 @@
         4
       ],
       [
-        "terpaksa",
-        5
-      ],
-      [
-        "dibeli",
+        "segelintir",
         3
       ],
       [
-        "eksistensi",
-        3
-      ],
-      [
-        "kehidupan",
-        12
+        "ekonomi",
+        6
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7052,
-        0.59
+        0.62
       ],
       [
         2084,
-        0.55
+        0.59
       ],
       [
         4684,
-        0.27
+        0.29
       ],
       [
         2672,
-        0.27
+        0.29
       ],
       [
         3750,
-        0.16
+        0.18
       ],
       [
-        7193,
-        0.15
+        2155,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4308,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "desa",
@@ -111,20 +111,28 @@
         11
       ],
       [
-        "keliang",
-        12
-      ],
-      [
         "pariwisata",
         24
+      ],
+      [
+        "adat",
+        43
+      ],
+      [
+        "keliang",
+        12
       ],
       [
         "krama",
         16
       ],
       [
-        "adat",
-        43
+        "bali",
+        28
+      ],
+      [
+        "banjar",
+        13
       ],
       [
         "kauh",
@@ -135,16 +143,8 @@
         7
       ],
       [
-        "banjar",
-        13
-      ],
-      [
-        "tebenan",
-        5
-      ],
-      [
-        "bali",
-        28
+        "karangasem",
+        8
       ]
     ],
     "phrases": [
@@ -181,6 +181,55 @@
         6
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        8378,
+        0.16
+      ],
+      [
+        5565,
+        0.16
+      ],
+      [
+        8763,
+        0.15
+      ],
+      [
+        8666,
+        0.15
+      ],
+      [
+        8705,
+        0.15
+      ],
+      [
+        2918,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 51,
+      "negative": 27,
+      "trend": [
+        0.14,
+        null,
+        null,
+        0.5,
+        null,
+        null,
+        null,
+        0.2,
+        0.33,
+        0.75,
+        0.2,
+        0.14,
+        null,
+        null,
+        -0.2,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

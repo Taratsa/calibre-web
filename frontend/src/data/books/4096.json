@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 1534,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "seni",
@@ -111,28 +111,28 @@
         6
       ],
       [
+        "seni",
+        19
+      ],
+      [
         "bey",
         5
       ],
       [
-        "seni",
-        19
+        "kekacauan",
+        7
       ],
       [
         "terorisme",
         5
       ],
       [
-        "poetic",
-        3
-      ],
-      [
         "sabotase",
         5
       ],
       [
-        "kekacauan",
-        7
+        "poetic",
+        3
       ],
       [
         "terrorism",
@@ -168,7 +168,7 @@
     "similar": [
       [
         7188,
-        0.63
+        0.62
       ],
       [
         2190,
@@ -176,20 +176,27 @@
       ],
       [
         7189,
-        0.38
+        0.39
       ],
       [
         9221,
-        0.3
+        0.35
       ],
       [
         7186,
         0.26
       ],
       [
-        2658,
-        0.2
+        11834,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.35,
+      "positive": 21,
+      "negative": 44,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

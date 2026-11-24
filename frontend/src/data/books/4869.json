@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2157,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "partai",
@@ -131,19 +131,19 @@
         6
       ],
       [
-        "pendidikan-diri",
-        5
+        "kawan",
+        20
       ],
       [
-        "aidit",
-        9
+        "pendidikan-diri",
+        5
       ],
       [
         "proletariat",
         11
       ],
       [
-        "fikiran",
+        "aidit",
         9
       ]
     ],
@@ -184,28 +184,52 @@
     "similar": [
       [
         4795,
-        0.26
+        0.29
       ],
       [
         476,
-        0.26
+        0.29
       ],
       [
         559,
-        0.23
+        0.26
       ],
       [
         4817,
-        0.21
+        0.25
       ],
       [
-        4859,
-        0.2
+        5929,
+        0.24
       ],
       [
         4754,
-        0.2
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 53,
+      "negative": 22,
+      "trend": [
+        null,
+        null,
+        0.2,
+        -0.14,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        0.09,
+        null,
+        1,
+        1,
+        0.5
+      ],
+      "emotions": []
+    }
   }
 }

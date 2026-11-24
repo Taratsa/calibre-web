@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 604,
-    "longer_than": 7,
+    "longer_than": 43,
     "top": [
       [
         "anarkis",
@@ -118,28 +118,32 @@
         5
       ],
       [
-        "domestik",
-        3
-      ],
-      [
-        "mengubah",
-        5
-      ],
-      [
         "anak-anak",
         6
       ],
       [
-        "muda",
-        6
+        "domestik",
+        3
       ],
       [
         "orang-orang",
         7
       ],
       [
+        "muda",
+        6
+      ],
+      [
+        "mengubah",
+        5
+      ],
+      [
         "kelompok",
         4
+      ],
+      [
+        "hidup",
+        5
       ],
       [
         "politik",
@@ -148,13 +152,35 @@
       [
         "jalan",
         3
-      ],
-      [
-        "hidup",
-        5
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        7181,
+        0.21
+      ],
+      [
+        3716,
+        0.21
+      ],
+      [
+        19952,
+        0.14
+      ],
+      [
+        11697,
+        0.13
+      ],
+      [
+        8086,
+        0.12
+      ],
+      [
+        7203,
+        0.12
+      ]
+    ],
+    "sentiment": null
   }
 }

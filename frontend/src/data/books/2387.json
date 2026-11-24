@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1233,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "puisi",
@@ -99,11 +99,11 @@
     ],
     "distinct": [
       [
-        "akmal",
-        3
+        "puisi",
+        8
       ],
       [
-        "firmansyah",
+        "akmal",
         3
       ],
       [
@@ -111,23 +111,15 @@
         5
       ],
       [
-        "puisi",
-        8
-      ],
-      [
-        "mengajarinya",
+        "firmansyah",
         3
-      ],
-      [
-        "pantat",
-        4
       ],
       [
         "anakku",
         6
       ],
       [
-        "mufakat",
+        "pantat",
         4
       ],
       [
@@ -135,7 +127,7 @@
         7
       ],
       [
-        "robot",
+        "mengajarinya",
         3
       ],
       [
@@ -143,8 +135,16 @@
         7
       ],
       [
+        "mufakat",
+        4
+      ],
+      [
         "adakah",
         5
+      ],
+      [
+        "robot",
+        3
       ]
     ],
     "phrases": [
@@ -173,6 +173,20 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2265,
+        0.23
+      ],
+      [
+        2100,
+        0.15
+      ],
+      [
+        13119,
+        0.13
+      ]
+    ],
+    "sentiment": null
   }
 }

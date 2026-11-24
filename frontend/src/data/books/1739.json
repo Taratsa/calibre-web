@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2790,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "class",
@@ -109,6 +109,10 @@
         18
       ],
       [
+        "society",
+        16
+      ],
+      [
         "lives",
         11
       ],
@@ -117,36 +121,32 @@
         11
       ],
       [
-        "communities",
-        10
-      ],
-      [
         "government",
         13
       ],
       [
-        "society",
-        16
-      ],
-      [
-        "time",
-        14
+        "communities",
+        10
       ],
       [
         "war",
         12
       ],
       [
-        "sell",
-        7
-      ],
-      [
         "division",
         8
       ],
       [
-        "divided",
+        "sell",
         7
+      ],
+      [
+        "politics",
+        9
+      ],
+      [
+        "time",
+        14
       ]
     ],
     "phrases": [
@@ -174,11 +174,11 @@
     "similar": [
       [
         4895,
-        0.18
+        0.19
       ],
       [
         1866,
-        0.16
+        0.17
       ],
       [
         8727,
@@ -193,9 +193,10 @@
         0.15
       ],
       [
-        605,
+        731,
         0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

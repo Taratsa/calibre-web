@@ -1,0 +1,86 @@
+{
+  "id": 12218,
+  "title": "Arduino: delay",
+  "slug": "arduino-delay-onno-widodo-purbo",
+  "slugBase": "arduino-delay-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2018-05-25",
+  "timestamp": "2026-11-23 20:51:20.220213",
+  "last_modified": "2026-11-23 20:51:20.220218",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:df28a320-4e2c-513b-98ef-1edbb0890952"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/12218?v=1795441880",
+  "cover_og_url": "/cover/12218/og?v=1795441880",
+  "url": "/book/arduino-delay-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Delay 1000ms = 1 detik delay(1000) Delay 5 Jam delay(5UL*60UL*60UL*1000UL); Delay 15 menit delay(15UL*60UL*1000UL);",
+  "data": [
+    {
+      "format": "epub",
+      "size": 1883,
+      "name": "Arduino_ delay - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 29,
+    "longer_than": 3,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        13400,
+        0.52
+      ],
+      [
+        18064,
+        0.52
+      ],
+      [
+        18249,
+        0.36
+      ],
+      [
+        19306,
+        0.36
+      ],
+      [
+        10950,
+        0.32
+      ],
+      [
+        15152,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
+}

@@ -12,7 +12,7 @@
   "author_sort": "Kertapati, Siti Rukiah",
   "tags": [
     "Fiksi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Keluarga & Hubungan"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2071,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "hijau",
@@ -136,23 +136,23 @@
         5
       ],
       [
-        "merobek",
-        5
-      ],
-      [
         "warna",
         12
+      ],
+      [
+        "merobek",
+        5
       ],
       [
         "angin",
         11
       ],
       [
-        "kubaca",
-        3
+        "jendela",
+        6
       ],
       [
-        "jendela",
+        "percakapan",
         6
       ]
     ],
@@ -181,28 +181,35 @@
     "similar": [
       [
         1190,
-        0.46
+        0.49
       ],
       [
         4236,
-        0.22
+        0.21
+      ],
+      [
+        1606,
+        0.15
       ],
       [
         6755,
         0.15
       ],
       [
-        1606,
-        0.14
-      ],
-      [
         6741,
         0.14
       ],
       [
-        1575,
-        0.11
+        4606,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 34,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

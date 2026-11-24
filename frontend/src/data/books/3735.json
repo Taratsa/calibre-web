@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 29312,
-    "longer_than": 84,
+    "longer_than": 92,
     "top": [
       [
         "alam",
@@ -103,24 +103,24 @@
         132
       ],
       [
+        "alam",
+        251
+      ],
+      [
         "realitas",
         130
       ],
       [
-        "paracelsus",
-        20
-      ],
-      [
-        "alam",
-        251
+        "manusia",
+        239
       ],
       [
         "subjektivitas",
         41
       ],
       [
-        "objektif",
-        53
+        "paracelsus",
+        20
       ],
       [
         "keberadaan",
@@ -131,20 +131,20 @@
         79
       ],
       [
-        "metafisik",
-        25
+        "objektif",
+        53
       ],
       [
-        "spiritualitas",
-        24
-      ],
-      [
-        "planet",
-        34
+        "individu",
+        76
       ],
       [
         "anarkis",
         55
+      ],
+      [
+        "pemikiran",
+        65
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         4873,
-        0.23
+        0.28
       ],
       [
         2132,
-        0.23
+        0.28
       ],
       [
         2727,
-        0.21
+        0.25
       ],
       [
-        7414,
-        0.21
+        4732,
+        0.24
       ],
       [
-        9222,
-        0.2
+        281,
+        0.24
       ],
       [
-        2507,
-        0.2
+        1779,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 469,
+      "negative": 356,
+      "trend": [
+        -0.04,
+        0.18,
+        0.1,
+        0.09,
+        0.23,
+        0.09,
+        -0.29,
+        0.26,
+        0.43,
+        -0.18,
+        0.34,
+        0.47,
+        0.33,
+        -0.26,
+        0,
+        0.41
+      ],
+      "emotions": [
+        [
+          "sadness",
+          54
+        ],
+        [
+          "anger",
+          47
+        ],
+        [
+          "fear",
+          34
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

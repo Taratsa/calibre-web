@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2359,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "indonesia",
@@ -114,20 +114,32 @@
         10
       ],
       [
+        "militer",
+        19
+      ],
+      [
         "washington",
         12
+      ],
+      [
+        "september",
+        20
       ],
       [
         "moynihan",
         4
       ],
       [
-        "militer",
-        19
+        "indonesia",
+        33
       ],
       [
-        "september",
-        20
+        "pasukan",
+        11
+      ],
+      [
+        "timur",
+        15
       ],
       [
         "clinton",
@@ -135,18 +147,6 @@
       ],
       [
         "noam",
-        4
-      ],
-      [
-        "pasukan",
-        11
-      ],
-      [
-        "pro-kemerdekaan",
-        3
-      ],
-      [
-        "chomsky",
         4
       ],
       [
@@ -191,28 +191,77 @@
     "similar": [
       [
         2532,
-        0.27
+        0.3
       ],
       [
         3701,
-        0.22
-      ],
-      [
-        7888,
-        0.17
-      ],
-      [
-        2092,
-        0.16
+        0.24
       ],
       [
         3765,
-        0.16
+        0.2
+      ],
+      [
+        7888,
+        0.18
       ],
       [
         8768,
-        0.16
+        0.18
+      ],
+      [
+        6321,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.34,
+      "positive": 27,
+      "negative": 55,
+      "trend": [
+        -0.6,
+        -0.14,
+        0.33,
+        null,
+        -0.25,
+        null,
+        null,
+        null,
+        null,
+        -0.2,
+        -0.56,
+        -1,
+        -0.2,
+        0,
+        -1,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

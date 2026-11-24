@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1665,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "militer",
@@ -123,28 +123,28 @@
         3
       ],
       [
-        "kompartemen",
-        3
+        "pos",
+        9
       ],
       [
         "ruu",
         6
       ],
       [
+        "direktur",
+        8
+      ],
+      [
         "redaktur",
         5
       ],
       [
-        "terminal",
-        5
+        "redaksi",
+        7
       ],
       [
-        "bus",
-        6
-      ],
-      [
-        "pos",
-        9
+        "kompartemen",
+        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         4489,
-        0.14
+        0.15
       ],
       [
         4448,
-        0.14
+        0.15
       ],
       [
         8310,
-        0.11
+        0.13
       ],
       [
-        7472,
-        0.11
+        361,
+        0.13
       ],
       [
         6933,
-        0.11
+        0.13
       ],
       [
         347,
-        0.11
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

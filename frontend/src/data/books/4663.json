@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3302,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "organisasi",
@@ -107,15 +107,15 @@
         10
       ],
       [
+        "perjuangan",
+        22
+      ],
+      [
         "dieksploitasi",
         11
       ],
       [
-        "desparramar",
-        3
-      ],
-      [
-        "perjuangan",
+        "organisasi",
         22
       ],
       [
@@ -123,28 +123,28 @@
         13
       ],
       [
-        "organisasi",
-        22
+        "desparramar",
+        3
+      ],
+      [
+        "tindakan",
+        17
       ],
       [
         "afinitas",
         5
       ],
       [
-        "contemplative",
-        3
+        "sosial",
+        16
       ],
       [
         "subversif",
         5
       ],
       [
-        "terpinggirkan",
-        5
-      ],
-      [
-        "spektakuler",
-        4
+        "aksi",
+        10
       ]
     ],
     "phrases": [
@@ -172,28 +172,52 @@
     "similar": [
       [
         1914,
-        0.51
+        0.53
       ],
       [
         4660,
-        0.21
+        0.27
       ],
       [
         3062,
-        0.21
+        0.27
       ],
       [
         2110,
-        0.2
+        0.26
       ],
       [
         3715,
-        0.2
+        0.25
       ],
       [
         1949,
-        0.19
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 51,
+      "negative": 26,
+      "trend": [
+        null,
+        null,
+        1,
+        1,
+        0.09,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        0.6,
+        1,
+        -0.43,
+        -0.33,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

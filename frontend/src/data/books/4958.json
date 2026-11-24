@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 29783,
-    "longer_than": 85,
+    "longer_than": 92,
     "top": [
       [
         "hei",
@@ -100,12 +100,12 @@
     ],
     "distinct": [
       [
-        "hoon",
-        122
-      ],
-      [
         "hei",
         310
+      ],
+      [
+        "hoon",
+        122
       ],
       [
         "aur",
@@ -136,12 +136,12 @@
         64
       ],
       [
-        "pelanggan",
-        93
-      ],
-      [
         "lie",
         90
+      ],
+      [
+        "pelanggan",
+        93
       ],
       [
         "kee",
@@ -182,6 +182,51 @@
         12
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 273,
+      "negative": 58,
+      "trend": [
+        1,
+        0.8,
+        0.88,
+        0.93,
+        1,
+        0.09,
+        0.2,
+        0.5,
+        1,
+        0.89,
+        0.5,
+        1,
+        0.39,
+        0.28,
+        0.56,
+        0.87
+      ],
+      "emotions": [
+        [
+          "joy",
+          29
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

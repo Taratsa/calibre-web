@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 13048,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "benang",
@@ -89,20 +89,20 @@
     ],
     "distinct": [
       [
-        "silar",
-        83
-      ],
-      [
         "anjaman",
         112
       ],
       [
-        "boeloeh",
-        68
+        "silar",
+        83
       ],
       [
         "benang",
         191
+      ],
+      [
+        "boeloeh",
+        68
       ],
       [
         "diperboeat",
@@ -117,24 +117,24 @@
         75
       ],
       [
-        "daoen",
-        52
-      ],
-      [
         "laloe",
         66
+      ],
+      [
+        "daoen",
+        52
       ],
       [
         "oerat",
         45
       ],
       [
-        "schering",
-        30
-      ],
-      [
         "djoega",
         56
+      ],
+      [
+        "poela",
+        52
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         4642,
-        0.3
+        0.31
       ],
       [
         563,
-        0.3
+        0.31
       ],
       [
         444,
-        0.24
+        0.25
       ],
       [
         459,
-        0.22
+        0.23
+      ],
+      [
+        529,
+        0.23
       ],
       [
         652,
         0.22
-      ],
-      [
-        529,
-        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 37,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 7913,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "korban",
@@ -97,44 +97,44 @@
         110
       ],
       [
-        "reparasi",
-        17
-      ],
-      [
         "ditahan",
         32
       ],
       [
-        "adm",
-        13
-      ],
-      [
-        "thejakartapost",
-        10
-      ],
-      [
-        "penahanan",
-        20
+        "reparasi",
+        17
       ],
       [
         "tahanan",
         25
       ],
       [
-        "jmy",
-        6
+        "penahanan",
+        20
       ],
       [
         "ham",
         27
       ],
       [
+        "adm",
+        13
+      ],
+      [
         "pki",
         20
       ],
       [
-        "simposium",
-        11
+        "thejakartapost",
+        10
+      ],
+      [
+        "manusiawi",
+        20
+      ],
+      [
+        "perlakuan",
+        23
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         8802,
-        0.34
+        0.37
       ],
       [
         8744,
-        0.34
+        0.37
       ],
       [
         6920,
-        0.3
+        0.33
       ],
       [
         1016,
-        0.3
+        0.33
       ],
       [
         4898,
-        0.26
+        0.28
       ],
       [
         1005,
-        0.26
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.52,
+      "positive": 84,
+      "negative": 268,
+      "trend": [
+        -0.45,
+        -0.5,
+        -0.54,
+        -0.38,
+        -0.69,
+        -0.4,
+        -0.76,
+        -0.76,
+        -0.48,
+        -0.37,
+        -0.2,
+        -1,
+        -0.33,
+        -0.62,
+        -0.75,
+        -0.71
+      ],
+      "emotions": [
+        [
+          "fear",
+          102
+        ],
+        [
+          "anger",
+          73
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "trust",
+          21
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1842,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "bangsa",
@@ -112,11 +112,11 @@
         12
       ],
       [
-        "hemingway",
-        5
+        "golongan",
+        16
       ],
       [
-        "picasso",
+        "hemingway",
         5
       ],
       [
@@ -124,24 +124,24 @@
         8
       ],
       [
-        "sartre",
+        "picasso",
         5
       ],
       [
-        "golongan",
-        16
-      ],
-      [
-        "ber-bagai",
-        4
+        "bangsa",
+        19
       ],
       [
         "tjara",
         8
       ],
       [
-        "menjelundupkan",
-        3
+        "sartre",
+        5
+      ],
+      [
+        "ber-bagai",
+        4
       ],
       [
         "mendjadi",
@@ -185,28 +185,35 @@
     "similar": [
       [
         4014,
-        0.48
+        0.49
       ],
       [
         3416,
-        0.21
-      ],
-      [
-        1206,
-        0.17
+        0.24
       ],
       [
         7822,
-        0.17
+        0.19
       ],
       [
         7665,
-        0.16
+        0.18
+      ],
+      [
+        1206,
+        0.18
       ],
       [
         1184,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 27,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

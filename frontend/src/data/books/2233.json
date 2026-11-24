@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 9263,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "binatang",
@@ -115,48 +115,48 @@
         30
       ],
       [
-        "snowball",
-        17
-      ],
-      [
         "lirik",
         34
+      ],
+      [
+        "snowball",
+        17
       ],
       [
         "oki",
         19
       ],
       [
-        "squealer",
-        10
+        "binatang",
+        42
       ],
       [
         "napoleon",
         21
       ],
       [
+        "squealer",
+        10
+      ],
+      [
         "peternakan",
         24
       ],
       [
-        "jfa",
-        8
+        "penderitaan",
+        36
       ],
       [
-        "binatang",
-        42
+        "lagu",
+        34
+      ],
+      [
+        "makna",
+        35
       ],
       [
         "orwell",
         13
-      ],
-      [
-        "camus",
-        13
-      ],
-      [
-        "penderitaan",
-        36
       ]
     ],
     "phrases": [
@@ -204,20 +204,77 @@
       ],
       [
         2667,
-        0.19
+        0.22
       ],
       [
         3928,
-        0.18
+        0.21
       ],
       [
         9202,
-        0.17
+        0.2
       ],
       [
         3987,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 163,
+      "negative": 222,
+      "trend": [
+        -0.26,
+        0.4,
+        -0.44,
+        0.1,
+        -0.18,
+        -0.06,
+        -0.47,
+        0.17,
+        -0.04,
+        -0.09,
+        -0.4,
+        0.19,
+        -0.42,
+        -0.23,
+        -0.2,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          71
+        ],
+        [
+          "anger",
+          25
+        ],
+        [
+          "fear",
+          22
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

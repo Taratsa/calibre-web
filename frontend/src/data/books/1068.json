@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5842,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "kebudajaan",
@@ -97,12 +97,12 @@
         30
       ],
       [
-        "orang-lain",
-        10
-      ],
-      [
         "djika",
         26
+      ],
+      [
+        "orang-lain",
+        10
       ],
       [
         "fenomen",
@@ -117,24 +117,24 @@
         21
       ],
       [
-        "oidipous",
-        6
+        "nasional",
+        52
       ],
       [
         "setjara",
         18
       ],
       [
-        "perdjuangan",
-        15
+        "kesadaran",
+        31
       ],
       [
-        "dirinja",
-        14
+        "manusia",
+        52
       ],
       [
-        "masjarakat",
-        14
+        "revolusi",
+        29
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         748,
-        0.17
+        0.19
       ],
       [
         446,
-        0.16
+        0.19
       ],
       [
         297,
-        0.16
+        0.19
       ],
       [
         3416,
-        0.16
+        0.19
       ],
       [
         5954,
-        0.15
+        0.18
       ],
       [
         7792,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 32,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

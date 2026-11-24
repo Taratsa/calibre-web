@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 77594,
-    "longer_than": 96,
+    "longer_than": 98,
     "top": [
       [
         "masyarakat",
@@ -99,24 +99,32 @@
     ],
     "distinct": [
       [
+        "masyarakat",
+        708
+      ],
+      [
         "anarkis",
         300
       ],
       [
-        "masyarakat",
-        708
+        "orang",
+        504
+      ],
+      [
+        "negara",
+        304
+      ],
+      [
+        "kelompok",
+        212
       ],
       [
         "oaxaca",
         44
       ],
       [
-        "anti-otoriter",
-        50
-      ],
-      [
-        "komunitas",
-        147
+        "kaum",
+        200
       ],
       [
         "polisi",
@@ -127,24 +135,16 @@
         153
       ],
       [
-        "mst",
-        33
+        "anti-otoriter",
+        50
       ],
       [
-        "kelompok",
-        212
+        "komunitas",
+        147
       ],
       [
-        "kapitalisme",
-        106
-      ],
-      [
-        "kaum",
-        200
-      ],
-      [
-        "pemberontakan",
-        100
+        "gerakan",
+        182
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        7123,
-        0.2
-      ],
-      [
-        4867,
-        0.2
+        2758,
+        0.3
       ],
       [
         7911,
-        0.2
+        0.29
+      ],
+      [
+        4867,
+        0.29
+      ],
+      [
+        7123,
+        0.29
       ],
       [
         7980,
-        0.19
+        0.29
       ],
       [
-        2144,
-        0.18
-      ],
-      [
-        1761,
-        0.18
+        2811,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 1530,
+      "negative": 1257,
+      "trend": [
+        0.35,
+        -0.03,
+        0.27,
+        0.14,
+        0.35,
+        0.29,
+        0.3,
+        0.12,
+        0.09,
+        -0.2,
+        -0.05,
+        -0.26,
+        0.02,
+        0.07,
+        0.26,
+        0.12
+      ],
+      "emotions": [
+        [
+          "anger",
+          439
+        ],
+        [
+          "trust",
+          179
+        ],
+        [
+          "fear",
+          104
+        ],
+        [
+          "sadness",
+          80
+        ],
+        [
+          "joy",
+          71
+        ],
+        [
+          "anticipation",
+          46
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "disgust",
+          7
+        ]
+      ]
+    }
   }
 }

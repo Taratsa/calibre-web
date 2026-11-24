@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4060,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "lagu",
@@ -119,36 +119,36 @@
         16
       ],
       [
-        "lirik",
-        26
-      ],
-      [
         "lagu",
         48
+      ],
+      [
+        "lirik",
+        26
       ],
       [
         "ekokritik",
         9
       ],
       [
-        "pacitan",
-        11
-      ],
-      [
         "sastra",
         39
+      ],
+      [
+        "hutan",
+        32
       ],
       [
         "ekologi",
         17
       ],
       [
-        "jambu",
-        14
+        "pacitan",
+        11
       ],
       [
-        "ecocriticism",
-        5
+        "alam",
+        39
       ]
     ],
     "phrases": [
@@ -185,6 +185,80 @@
         7
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5108,
+        0.13
+      ],
+      [
+        7080,
+        0.12
+      ],
+      [
+        5541,
+        0.11
+      ],
+      [
+        7266,
+        0.11
+      ],
+      [
+        3013,
+        0.11
+      ],
+      [
+        5393,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 76,
+      "negative": 45,
+      "trend": [
+        -0.6,
+        null,
+        null,
+        0.2,
+        1,
+        null,
+        0.64,
+        0.83,
+        -0.33,
+        null,
+        -1,
+        0.5,
+        0.11,
+        0.67,
+        0.14,
+        0.5
+      ],
+      "emotions": [
+        [
+          "joy",
+          43
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

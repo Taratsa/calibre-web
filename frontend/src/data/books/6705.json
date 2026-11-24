@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 16680,
-    "longer_than": 73,
+    "longer_than": 87,
     "top": [
       [
         "revolusi",
@@ -99,16 +99,20 @@
     ],
     "distinct": [
       [
-        "iang",
-        39
-      ],
-      [
         "rakjat",
         55
       ],
       [
+        "iang",
+        39
+      ],
+      [
         "nja",
         41
+      ],
+      [
+        "revolusi",
+        60
       ],
       [
         "rakjal",
@@ -123,28 +127,24 @@
         15
       ],
       [
-        "revolusi",
-        60
+        "perdjuangan",
+        22
       ],
       [
         "tukung-tukung",
         8
       ],
       [
-        "perdjuangan",
-        22
+        "ngan",
+        25
+      ],
+      [
+        "afrika",
+        25
       ],
       [
         "tukung",
         9
-      ],
-      [
-        "tanganjika",
-        8
-      ],
-      [
-        "sasfra",
-        7
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        6579,
-        0.21
-      ],
-      [
         4619,
-        0.2
+        0.22
       ],
       [
         1277,
-        0.2
+        0.22
       ],
       [
         6296,
-        0.2
+        0.22
+      ],
+      [
+        6579,
+        0.22
       ],
       [
         5943,
-        0.18
+        0.21
       ],
       [
-        7958,
-        0.18
+        790,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 101,
+      "negative": 36,
+      "trend": [
+        0.71,
+        0.43,
+        0.67,
+        0.8,
+        null,
+        0,
+        null,
+        null,
+        -0.67,
+        0.71,
+        0.83,
+        0.79,
+        0.14,
+        -0.33,
+        0.2,
+        0.6
+      ],
+      "emotions": [
+        [
+          "trust",
+          15
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

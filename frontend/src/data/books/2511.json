@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 10271,
-    "longer_than": 62,
+    "longer_than": 81,
     "top": [
       [
         "manusia",
@@ -105,24 +105,36 @@
         68
       ],
       [
+        "manusia",
+        228
+      ],
+      [
         "bahawa",
         27
+      ],
+      [
+        "agama",
+        83
       ],
       [
         "berfikir",
         37
       ],
       [
-        "manusia",
-        228
+        "kebebasan",
+        65
       ],
       [
         "iaitu",
         17
       ],
       [
-        "agama",
-        83
+        "propaganda",
+        34
+      ],
+      [
+        "perkara",
+        37
       ],
       [
         "mahu",
@@ -135,18 +147,6 @@
       [
         "kepupusan",
         8
-      ],
-      [
-        "kebebasan",
-        65
-      ],
-      [
-        "propaganda",
-        34
-      ],
-      [
-        "dirosakkan",
-        7
       ]
     ],
     "phrases": [
@@ -190,7 +190,7 @@
       ],
       [
         2022,
-        0.28
+        0.29
       ],
       [
         8764,
@@ -202,8 +202,65 @@
       ],
       [
         394,
-        0.14
+        0.15
+      ],
+      [
+        4713,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 301,
+      "negative": 179,
+      "trend": [
+        0.26,
+        0.43,
+        -0.08,
+        0.48,
+        -0.4,
+        0,
+        0.5,
+        0.72,
+        0,
+        0.55,
+        0.58,
+        0.55,
+        0.29,
+        0.11,
+        -0.39,
+        0.1
+      ],
+      "emotions": [
+        [
+          "trust",
+          64
+        ],
+        [
+          "anger",
+          43
+        ],
+        [
+          "sadness",
+          23
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

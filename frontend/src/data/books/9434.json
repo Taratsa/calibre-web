@@ -1,0 +1,86 @@
+{
+  "id": 9434,
+  "title": "OpenWRT: Build Firmware dengan 3G Modem Support",
+  "slug": "openwrt-build-firmware-dengan-3g-modem-support-onno-widodo-purbo",
+  "slugBase": "openwrt-build-firmware-dengan-3g-modem-support-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-07-28",
+  "timestamp": "2026-11-23 18:21:01.120328",
+  "last_modified": "2026-11-23 18:21:01.120332",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:b8ea2bf6-1708-5062-8352-ae5d16d608ab"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/9434?v=1795432861",
+  "cover_og_url": "/cover/9434/og?v=1795432861",
+  "url": "/book/openwrt-build-firmware-dengan-3g-modem-support-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Tambahkan usb-modeswitch ./scripts/feeds update packages ./scripts/feeds install usb-modeswitch usb-modeswitch-data usbutils multiwan Jalankan make menuconfig dan pilih, Target System (Atheros AR7xxx/AR9xxx) Target Profile (Buffalo WZR-HP-G450H) Base System qos-scripts: &lt;*&gt; Network multiwan: &lt;*&gt; wpad: &lt;*&gt; WWAN: adb-enablemodem comgt comgt-directip comgt-ncm uqmi chat ppp ppp-mod-pppoa",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2923,
+      "name": "OpenWRT_ Build Firmware dengan 3G Modem Su - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 146,
+    "longer_than": 19,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        16262,
+        0.48
+      ],
+      [
+        15672,
+        0.48
+      ],
+      [
+        14436,
+        0.41
+      ],
+      [
+        9514,
+        0.4
+      ],
+      [
+        13651,
+        0.4
+      ],
+      [
+        13650,
+        0.4
+      ]
+    ],
+    "sentiment": null
+  }
+}

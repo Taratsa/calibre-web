@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1654,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "fasisme",
@@ -109,12 +109,12 @@
     ],
     "distinct": [
       [
-        "sepakbola",
-        14
-      ],
-      [
         "fasisme",
         20
+      ],
+      [
+        "sepakbola",
+        14
       ],
       [
         "antifa",
@@ -129,15 +129,11 @@
         17
       ],
       [
-        "sindelar",
-        4
-      ],
-      [
         "pemain",
         12
       ],
       [
-        "bosko",
+        "sindelar",
         4
       ],
       [
@@ -145,16 +141,20 @@
         8
       ],
       [
-        "hajduk",
-        3
+        "fasis",
+        10
       ],
       [
         "klub",
         8
       ],
       [
-        "fasis",
-        10
+        "bosko",
+        4
+      ],
+      [
+        "austria",
+        7
       ]
     ],
     "phrases": [
@@ -194,11 +194,11 @@
     "similar": [
       [
         2257,
-        0.29
+        0.31
       ],
       [
         40,
-        0.2
+        0.21
       ],
       [
         3714,
@@ -206,16 +206,48 @@
       ],
       [
         2503,
+        0.2
+      ],
+      [
+        109,
         0.19
       ],
       [
         2405,
         0.19
-      ],
-      [
-        7322,
-        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 26,
+      "negative": 35,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

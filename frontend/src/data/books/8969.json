@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3855,
-    "longer_than": 38,
+    "longer_than": 69,
     "top": [
       [
         "layanan",
@@ -97,24 +97,24 @@
     ],
     "distinct": [
       [
-        "layanan",
-        142
-      ],
-      [
         "komnas",
         110
+      ],
+      [
+        "layanan",
+        142
       ],
       [
         "pelayanan",
         125
       ],
       [
-        "kuadran",
-        36
-      ],
-      [
         "ham",
         111
+      ],
+      [
+        "kuadran",
+        36
       ],
       [
         "ikm",
@@ -125,24 +125,24 @@
         24
       ],
       [
-        "pengguna",
-        38
+        "kepuasan",
+        42
       ],
       [
         "survei",
         34
       ],
       [
-        "kepuasan",
-        42
-      ],
-      [
         "indeks",
         31
       ],
       [
-        "ipak",
-        13
+        "pengaduan",
+        31
+      ],
+      [
+        "pengguna",
+        38
       ]
     ],
     "phrases": [
@@ -186,24 +186,61 @@
       ],
       [
         8945,
-        0.68
+        0.69
       ],
       [
         8943,
-        0.56
+        0.57
       ],
       [
         8899,
-        0.48
+        0.5
       ],
       [
         8891,
-        0.38
+        0.39
       ],
       [
         8902,
-        0.38
+        0.39
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 140,
+      "negative": 30,
+      "trend": [
+        0.6,
+        1,
+        0.43,
+        1,
+        0.33,
+        0.83,
+        0.67,
+        0.6,
+        null,
+        0.5,
+        0.6,
+        1,
+        0.52,
+        0.14,
+        0.7,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "anticipation",
+          18
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

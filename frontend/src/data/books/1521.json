@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4994,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "cebok",
@@ -114,6 +114,10 @@
         16
       ],
       [
+        "lagu",
+        31
+      ],
+      [
         "bite",
         11
       ],
@@ -122,32 +126,28 @@
         9
       ],
       [
-        "lagu",
-        31
+        "dangdut",
+        11
       ],
       [
         "bagongtempur",
         6
       ],
       [
-        "dangdut",
-        11
+        "acara",
+        25
       ],
       [
         "mocca",
         7
       ],
       [
-        "cucukrowo",
-        6
-      ],
-      [
         "hercules",
         8
       ],
       [
-        "kloset",
-        7
+        "asmara",
+        14
       ]
     ],
     "phrases": [
@@ -187,7 +187,7 @@
     "similar": [
       [
         1555,
-        0.27
+        0.26
       ],
       [
         1522,
@@ -199,16 +199,40 @@
       ],
       [
         2844,
-        0.17
+        0.18
       ],
       [
         4763,
-        0.15
+        0.16
       ],
       [
-        1713,
+        4761,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 71,
+      "negative": 40,
+      "trend": [
+        -0.2,
+        null,
+        null,
+        0.14,
+        0.71,
+        0.6,
+        null,
+        null,
+        -0.67,
+        -0.43,
+        null,
+        null,
+        null,
+        0.57,
+        0.18,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

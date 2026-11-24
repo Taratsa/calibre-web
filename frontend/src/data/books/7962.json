@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 61591,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "pengetahuan",
@@ -97,6 +97,10 @@
         323
       ],
       [
+        "pengetahuan",
+        582
+      ],
+      [
         "observasional",
         86
       ],
@@ -105,36 +109,32 @@
         107
       ],
       [
-        "fisikawan",
-        94
-      ],
-      [
         "observasi",
         171
       ],
       [
-        "epistemologis",
-        107
+        "semesta",
+        220
       ],
       [
         "sensasi",
         149
       ],
       [
-        "relativitas",
-        86
+        "fisikawan",
+        94
       ],
       [
-        "pengetahuan",
-        582
+        "epistemologis",
+        107
+      ],
+      [
+        "teori",
+        265
       ],
       [
         "partikel",
         105
-      ],
-      [
-        "probabilitas",
-        90
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         257,
-        0.44
+        0.43
       ],
       [
         3735,
-        0.2
+        0.23
       ],
       [
         254,
-        0.2
+        0.23
       ],
       [
         141,
-        0.2
+        0.22
       ],
       [
         2260,
-        0.19
+        0.21
       ],
       [
-        9222,
-        0.14
+        7963,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 773,
+      "negative": 382,
+      "trend": [
+        0.46,
+        0.29,
+        0.19,
+        0.24,
+        0.47,
+        0.63,
+        0.59,
+        0.2,
+        0.5,
+        0.38,
+        0.05,
+        0.26,
+        0.33,
+        0.39,
+        0.13,
+        0.1
+      ],
+      "emotions": [
+        [
+          "trust",
+          54
+        ],
+        [
+          "anticipation",
+          30
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "surprise",
+          16
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "sadness",
+          9
+        ]
+      ]
+    }
   }
 }

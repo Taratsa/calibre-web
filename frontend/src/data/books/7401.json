@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1230,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "anarkisme",
@@ -114,18 +114,6 @@
         11
       ],
       [
-        "varian",
-        6
-      ],
-      [
-        "jotos",
-        3
-      ],
-      [
-        "federalisme",
-        4
-      ],
-      [
         "otoritas",
         10
       ],
@@ -134,24 +122,36 @@
         12
       ],
       [
-        "tapak",
-        5
+        "varian",
+        6
       ],
       [
         "ide",
         11
       ],
       [
+        "federalisme",
+        4
+      ],
+      [
+        "jotos",
+        3
+      ],
+      [
+        "tapak",
+        5
+      ],
+      [
         "komunisme",
         6
       ],
       [
-        "pertentangan",
-        6
+        "organisasi",
+        11
       ],
       [
-        "meladeni",
-        3
+        "negara",
+        15
       ]
     ],
     "phrases": [
@@ -187,28 +187,35 @@
     "similar": [
       [
         7203,
-        0.21
+        0.25
       ],
       [
         7150,
-        0.2
+        0.24
       ],
       [
         4740,
-        0.18
-      ],
-      [
-        1456,
-        0.16
+        0.2
       ],
       [
         7152,
-        0.16
+        0.19
       ],
       [
-        7222,
-        0.15
+        1456,
+        0.19
+      ],
+      [
+        2674,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 27,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

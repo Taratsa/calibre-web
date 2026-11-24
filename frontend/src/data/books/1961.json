@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1044,
-    "longer_than": 13,
+    "longer_than": 52,
     "top": [
       [
         "negara",
@@ -119,12 +119,12 @@
         5
       ],
       [
-        "terpuji",
-        4
-      ],
-      [
         "kemanusiaan",
         7
+      ],
+      [
+        "terpuji",
+        4
       ],
       [
         "negara-negara",
@@ -139,8 +139,8 @@
         4
       ],
       [
-        "perampokan",
-        3
+        "warga",
+        7
       ],
       [
         "memperlakukan",
@@ -184,24 +184,35 @@
     "similar": [
       [
         2402,
-        0.34
+        0.35
       ],
       [
-        7158,
-        0.13
+        11832,
+        0.21
       ],
       [
         7087,
-        0.13
+        0.15
       ],
       [
-        2498,
-        0.11
+        7158,
+        0.14
       ],
       [
         2727,
-        0.11
+        0.13
+      ],
+      [
+        4877,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.19,
+      "positive": 21,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

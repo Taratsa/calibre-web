@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1387,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "petani",
@@ -110,24 +110,32 @@
         12
       ],
       [
-        "terdiamkan",
-        4
-      ],
-      [
         "petani",
         20
+      ],
+      [
+        "terdiamkan",
+        4
       ],
       [
         "tani",
         14
       ],
       [
+        "mogok",
+        6
+      ],
+      [
+        "kelas",
+        11
+      ],
+      [
         "rempang",
         3
       ],
       [
-        "mogok",
-        6
+        "berbicara",
+        11
       ],
       [
         "terjajah",
@@ -138,20 +146,12 @@
         4
       ],
       [
-        "orasi",
-        3
+        "aksi",
+        8
       ],
       [
-        "kelas",
-        11
-      ],
-      [
-        "berbicara",
-        11
-      ],
-      [
-        "pergerakan",
-        5
+        "pimpinan",
+        7
       ]
     ],
     "phrases": [
@@ -183,28 +183,29 @@
     "similar": [
       [
         7720,
-        0.21
+        0.18
       ],
       [
         1345,
         0.16
       ],
       [
-        8218,
-        0.13
+        1921,
+        0.15
+      ],
+      [
+        8634,
+        0.15
       ],
       [
         6772,
-        0.11
+        0.15
       ],
       [
-        7253,
-        0.11
-      ],
-      [
-        7100,
-        0.1
+        7907,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

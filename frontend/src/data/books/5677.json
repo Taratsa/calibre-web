@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4412,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "pengarang",
@@ -127,8 +127,12 @@
         16
       ],
       [
-        "belitong",
-        6
+        "latar",
+        27
+      ],
+      [
+        "pandangan",
+        35
       ],
       [
         "andrea",
@@ -139,16 +143,12 @@
         10
       ],
       [
-        "ekstrinsik",
-        7
+        "belitong",
+        6
       ],
       [
-        "soleha",
-        5
-      ],
-      [
-        "latar",
-        27
+        "interpretasi",
+        14
       ]
     ],
     "phrases": [
@@ -188,28 +188,64 @@
     "similar": [
       [
         5676,
-        0.2
+        0.23
       ],
       [
         5334,
-        0.17
+        0.2
       ],
       [
         5044,
-        0.15
-      ],
-      [
-        5671,
-        0.14
+        0.17
       ],
       [
         5596,
-        0.14
+        0.16
       ],
       [
         5672,
-        0.13
+        0.15
+      ],
+      [
+        5673,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 67,
+      "negative": 19,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

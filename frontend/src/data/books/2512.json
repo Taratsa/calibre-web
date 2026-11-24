@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 953,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "hidup",
@@ -99,11 +99,15 @@
     ],
     "distinct": [
       [
+        "katalis",
+        4
+      ],
+      [
         "posting",
         4
       ],
       [
-        "katalis",
+        "hidupmu",
         4
       ],
       [
@@ -111,23 +115,23 @@
         3
       ],
       [
-        "hidupmu",
-        4
-      ],
-      [
-        "lupakan",
-        3
-      ],
-      [
         "pemilihan",
         5
+      ],
+      [
+        "hidup",
+        11
       ],
       [
         "demokrasi",
         5
       ],
       [
-        "merubah",
+        "pemimpin",
+        6
+      ],
+      [
+        "lupakan",
         3
       ],
       [
@@ -135,15 +139,11 @@
         4
       ],
       [
-        "pemimpin",
-        6
-      ],
-      [
-        "perwakilan",
+        "merubah",
         3
       ],
       [
-        "alternatif",
+        "perwakilan",
         3
       ]
     ],
@@ -151,28 +151,29 @@
     "similar": [
       [
         1995,
-        0.27
+        0.25
       ],
       [
         2343,
-        0.21
+        0.22
       ],
       [
         3766,
         0.21
       ],
       [
-        2516,
+        2508,
         0.2
       ],
       [
-        2372,
+        2792,
         0.19
       ],
       [
-        2413,
-        0.18
+        2516,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

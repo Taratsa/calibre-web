@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 9845,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "pekerja",
@@ -103,28 +103,32 @@
         92
       ],
       [
-        "cnt-ait",
-        12
+        "kolektif",
+        54
       ],
       [
-        "kronstadt",
-        17
+        "cnt-ait",
+        12
       ],
       [
         "lenin",
         29
       ],
       [
-        "kolektif",
-        54
+        "kronstadt",
+        17
       ],
       [
-        "bolshevik",
-        19
+        "kaum",
+        62
       ],
       [
         "majikan",
         26
+      ],
+      [
+        "bolshevik",
+        19
       ],
       [
         "trotsky",
@@ -135,16 +139,12 @@
         14
       ],
       [
-        "brinton",
-        10
+        "partai",
+        35
       ],
       [
-        "anarko-sindikalis",
-        13
-      ],
-      [
-        "anarkis",
-        28
+        "kelas",
+        43
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2158,
-        0.49
+        0.53
       ],
       [
         4656,
-        0.46
+        0.5
       ],
       [
         7966,
-        0.44
+        0.46
       ],
       [
         7466,
-        0.43
+        0.45
       ],
       [
         2492,
-        0.41
+        0.43
       ],
       [
         7254,
-        0.32
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 176,
+      "negative": 109,
+      "trend": [
+        0.58,
+        0.73,
+        0.18,
+        0.57,
+        1,
+        0.69,
+        0.05,
+        0.13,
+        0.08,
+        -0.11,
+        -0.17,
+        0.11,
+        0.11,
+        0.25,
+        0.28,
+        0.03
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "joy",
+          3
+        ]
+      ]
+    }
   }
 }

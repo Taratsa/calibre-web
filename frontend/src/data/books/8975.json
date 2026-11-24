@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 8418,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "disabilitas",
@@ -113,36 +113,36 @@
         55
       ],
       [
-        "opsional",
-        30
+        "ham",
+        62
       ],
       [
         "konvensi",
         49
       ],
       [
-        "ham",
-        62
-      ],
-      [
-        "rodrigo",
-        17
-      ],
-      [
-        "optional",
-        22
-      ],
-      [
         "pasal",
         63
+      ],
+      [
+        "opsional",
+        30
+      ],
+      [
+        "negara",
+        101
       ],
       [
         "komnas",
         35
       ],
       [
-        "disabilities",
-        19
+        "rodrigo",
+        17
+      ],
+      [
+        "convention",
+        27
       ]
     ],
     "phrases": [
@@ -182,28 +182,77 @@
     "similar": [
       [
         8329,
-        0.26
+        0.28
       ],
       [
         8422,
-        0.22
+        0.25
       ],
       [
-        9047,
-        0.21
-      ],
-      [
-        9078,
-        0.2
+        9042,
+        0.24
       ],
       [
         9089,
-        0.2
+        0.23
       ],
       [
-        6917,
-        0.2
+        9078,
+        0.23
+      ],
+      [
+        9047,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 105,
+      "negative": 105,
+      "trend": [
+        1,
+        0.5,
+        null,
+        -0.2,
+        -0.18,
+        -0.2,
+        null,
+        0.43,
+        -0.14,
+        -0.35,
+        0.52,
+        -0.05,
+        0.41,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          36
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

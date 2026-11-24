@@ -40,7 +40,7 @@
   ],
   "text": {
     "words": 211,
-    "longer_than": 2,
+    "longer_than": 24,
     "top": [
       [
         "jalan",
@@ -101,12 +101,16 @@
         6
       ],
       [
+        "pulang",
+        11
+      ],
+      [
         "rizky",
         3
       ],
       [
-        "pulang",
-        11
+        "jalan",
+        12
       ],
       [
         "antologi",
@@ -117,10 +121,6 @@
         3
       ],
       [
-        "jalan",
-        12
-      ],
-      [
         "hukuman",
         4
       ],
@@ -129,12 +129,12 @@
         4
       ],
       [
-        "pendek",
-        3
-      ],
-      [
         "mati",
         4
+      ],
+      [
+        "pendek",
+        3
       ],
       [
         "mencari",
@@ -171,6 +171,7 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

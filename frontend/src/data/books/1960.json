@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 634,
-    "longer_than": 7,
+    "longer_than": 44,
     "top": [
       [
         "kelompok",
@@ -95,12 +95,12 @@
         5
       ],
       [
-        "revolusi",
-        6
-      ],
-      [
         "kelompok",
         8
+      ],
+      [
+        "revolusi",
+        6
       ],
       [
         "revolusioner",
@@ -132,6 +132,32 @@
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        7397,
+        0.15
+      ],
+      [
+        2295,
+        0.15
+      ],
+      [
+        7544,
+        0.15
+      ],
+      [
+        7973,
+        0.14
+      ],
+      [
+        7235,
+        0.14
+      ],
+      [
+        7064,
+        0.13
+      ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2263,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "organisasi",
@@ -99,24 +99,28 @@
     ],
     "distinct": [
       [
-        "anti-organisasionis",
-        6
-      ],
-      [
         "anarkis",
         27
       ],
       [
-        "malatesta",
-        8
+        "anti-organisasionis",
+        6
       ],
       [
         "organisasi",
         33
       ],
       [
+        "malatesta",
+        8
+      ],
+      [
         "anarkisme",
         9
+      ],
+      [
+        "pekerja",
+        13
       ],
       [
         "terisolasi",
@@ -135,16 +139,12 @@
         6
       ],
       [
-        "pekerja",
-        13
-      ],
-      [
-        "berasosiasi",
-        3
-      ],
-      [
         "otoritas",
         7
+      ],
+      [
+        "kaum",
+        11
       ]
     ],
     "phrases": [
@@ -179,29 +179,36 @@
     ],
     "similar": [
       [
-        2460,
-        0.16
-      ],
-      [
         7343,
-        0.15
+        0.2
       ],
       [
         2064,
-        0.13
+        0.19
+      ],
+      [
+        2460,
+        0.18
       ],
       [
         7019,
-        0.12
+        0.18
       ],
       [
         7859,
-        0.12
+        0.18
       ],
       [
         2553,
-        0.12
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 35,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

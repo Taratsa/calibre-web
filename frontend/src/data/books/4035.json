@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1337,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "kegiatan",
@@ -112,16 +112,16 @@
         33
       ],
       [
+        "kegiatan",
+        36
+      ],
+      [
         "keprcayaan",
         7
       ],
       [
         "kepertayaaan",
         4
-      ],
-      [
-        "kegiatan",
-        36
       ],
       [
         "khairil",
@@ -132,12 +132,16 @@
         5
       ],
       [
+        "gelanggang",
+        7
+      ],
+      [
         "simposion",
         4
       ],
       [
-        "gelanggang",
-        7
+        "surat",
+        15
       ],
       [
         "masasilam",
@@ -146,10 +150,6 @@
       [
         "anwar",
         5
-      ],
-      [
-        "surat",
-        15
       ],
       [
         "pulu",
@@ -181,28 +181,29 @@
     "similar": [
       [
         4029,
-        0.66
+        0.69
       ],
       [
         4020,
-        0.38
-      ],
-      [
-        4032,
-        0.33
-      ],
-      [
-        3998,
-        0.32
+        0.37
       ],
       [
         4013,
+        0.36
+      ],
+      [
+        4032,
+        0.32
+      ],
+      [
+        3998,
         0.31
       ],
       [
         4024,
-        0.31
+        0.3
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

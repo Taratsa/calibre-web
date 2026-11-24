@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 9424,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "koperasi",
@@ -99,44 +99,44 @@
         78
       ],
       [
-        "raklat",
-        13
-      ],
-      [
         "gerakan",
         95
-      ],
-      [
-        "tuantanah",
-        18
       ],
       [
         "ekonomi",
         87
       ],
       [
+        "raklat",
+        13
+      ],
+      [
         "rakjat",
         27
       ],
       [
-        "kredit",
-        23
+        "tuantanah",
+        18
       ],
       [
-        "jaitu",
-        21
+        "kaum",
+        52
       ],
       [
         "peranan",
         33
       ],
       [
-        "setjara",
+        "kapitalis",
+        30
+      ],
+      [
+        "jaitu",
         21
       ],
       [
-        "kapitalis",
-        30
+        "kredit",
+        23
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         447,
-        0.65
+        0.69
       ],
       [
         9295,
-        0.46
+        0.51
       ],
       [
         6763,
-        0.4
+        0.43
       ],
       [
         5950,
-        0.26
+        0.29
       ],
       [
         5933,
-        0.26
+        0.29
       ],
       [
-        5943,
-        0.26
+        462,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 146,
+      "negative": 45,
+      "trend": [
+        1,
+        0.33,
+        0.14,
+        0,
+        null,
+        -0.2,
+        0.5,
+        0.64,
+        0.57,
+        0.83,
+        null,
+        0.47,
+        0.86,
+        0.9,
+        0.26,
+        0.86
+      ],
+      "emotions": []
+    }
   }
 }

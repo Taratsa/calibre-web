@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2554,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "egois",
@@ -114,27 +114,27 @@
         18
       ],
       [
+        "komunis",
+        19
+      ],
+      [
         "rowan",
         6
       ],
       [
-        "komunis",
-        19
+        "individu",
+        21
       ],
       [
         "stirner",
         9
       ],
       [
-        "altruistik",
-        5
-      ],
-      [
         "egoisme",
         8
       ],
       [
-        "altruisme",
+        "altruistik",
         5
       ],
       [
@@ -142,16 +142,16 @@
         8
       ],
       [
-        "individu",
-        21
+        "altruisme",
+        5
       ],
       [
         "sistem",
         20
       ],
       [
-        "distributor",
-        4
+        "masyarakat",
+        20
       ]
     ],
     "phrases": [
@@ -187,7 +187,7 @@
     "similar": [
       [
         1999,
-        0.24
+        0.26
       ],
       [
         7349,
@@ -198,17 +198,41 @@
         0.22
       ],
       [
-        3697,
-        0.21
-      ],
-      [
         3093,
-        0.21
+        0.22
       ],
       [
-        2585,
+        3697,
+        0.22
+      ],
+      [
+        7078,
         0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 55,
+      "negative": 34,
+      "trend": [
+        -0.33,
+        0.56,
+        0.2,
+        null,
+        null,
+        null,
+        -0.6,
+        null,
+        -0.14,
+        0.71,
+        0.6,
+        0.14,
+        -0.33,
+        0.43,
+        0.75,
+        0.67
+      ],
+      "emotions": []
+    }
   }
 }

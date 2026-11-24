@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4060,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "queer",
@@ -130,28 +130,28 @@
         17
       ],
       [
+        "radikal",
+        17
+      ],
+      [
         "analisis",
         19
       ],
       [
-        "radikal",
-        17
+        "kapitalisme",
+        16
       ],
       [
         "anti-kapitalis",
         7
       ],
       [
-        "kelas-isme",
-        3
+        "organisasi",
+        21
       ],
       [
-        "anti-penindasan",
-        4
-      ],
-      [
-        "kapitalisme",
-        16
+        "kaum",
+        21
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         3795,
-        0.25
+        0.3
+      ],
+      [
+        7062,
+        0.27
       ],
       [
         7384,
         0.25
       ],
       [
-        7062,
-        0.24
-      ],
-      [
-        7234,
-        0.21
-      ],
-      [
-        7383,
-        0.21
-      ],
-      [
         2646,
-        0.2
+        0.23
+      ],
+      [
+        8095,
+        0.23
+      ],
+      [
+        1762,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 65,
+      "negative": 71,
+      "trend": [
+        -0.2,
+        -0.56,
+        null,
+        -0.09,
+        0.2,
+        -0.69,
+        0,
+        0.12,
+        -0.6,
+        0.67,
+        0,
+        null,
+        null,
+        0.33,
+        -0.17,
+        0.09
+      ],
+      "emotions": []
+    }
   }
 }

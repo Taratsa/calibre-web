@@ -68,7 +68,7 @@
   ],
   "text": {
     "words": 6021,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "breton",
@@ -121,12 +121,12 @@
     ],
     "distinct": [
       [
-        "césaire",
-        43
-      ],
-      [
         "breton",
         59
+      ],
+      [
+        "césaire",
+        43
       ],
       [
         "surealisme",
@@ -149,24 +149,24 @@
         10
       ],
       [
+        "imajinasi",
+        20
+      ],
+      [
         "non-barat",
         9
-      ],
-      [
-        "fanon",
-        8
-      ],
-      [
-        "aimé",
-        6
       ],
       [
         "anti-kolonial",
         10
       ],
       [
-        "imajinasi",
-        20
+        "manifesto",
+        15
+      ],
+      [
+        "fanon",
+        8
       ]
     ],
     "phrases": [
@@ -206,28 +206,29 @@
     "similar": [
       [
         4727,
-        0.13
+        0.15
       ],
       [
         3776,
+        0.15
+      ],
+      [
+        2213,
         0.13
       ],
       [
         3985,
-        0.1
+        0.13
       ],
       [
         7387,
-        0.1
+        0.13
       ],
       [
-        2213,
-        0.1
-      ],
-      [
-        2163,
-        0.1
+        1779,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

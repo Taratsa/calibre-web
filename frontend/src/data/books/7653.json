@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 4109,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "seni",
@@ -116,16 +116,20 @@
         60
       ],
       [
-        "uitzicht",
-        7
-      ],
-      [
         "kesenian",
         21
       ],
       [
+        "uitzicht",
+        7
+      ],
+      [
         "cezanne",
         6
+      ],
+      [
+        "eropa",
+        19
       ],
       [
         "fauvisme",
@@ -144,16 +148,12 @@
         7
       ],
       [
-        "klee",
-        4
+        "orang",
+        42
       ],
       [
-        "eropa",
-        19
-      ],
-      [
-        "keadaban",
-        5
+        "indonesia",
+        38
       ]
     ],
     "phrases": [
@@ -201,20 +201,44 @@
       ],
       [
         477,
-        0.31
+        0.33
       ],
       [
         661,
-        0.15
+        0.17
       ],
       [
         4400,
         0.15
       ],
       [
-        8035,
-        0.13
+        4009,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 60,
+      "negative": 35,
+      "trend": [
+        0.43,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        -0.14,
+        1,
+        0.2,
+        0.2,
+        0.11,
+        0.25,
+        null,
+        0.45,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

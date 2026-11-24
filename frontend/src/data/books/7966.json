@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3034,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "kaum",
@@ -119,32 +119,32 @@
         10
       ],
       [
-        "makhnovis",
-        7
-      ],
-      [
-        "stalinisme",
-        9
-      ],
-      [
         "pekerja",
         33
       ],
       [
-        "stalin",
-        12
+        "kaum",
+        40
       ],
       [
         "partai",
         27
       ],
       [
-        "soviet",
-        13
+        "stalinisme",
+        9
       ],
       [
-        "kaum",
-        40
+        "makhnovis",
+        7
+      ],
+      [
+        "stalin",
+        12
+      ],
+      [
+        "soviet",
+        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2158,
-        0.53
+        0.54
       ],
       [
         4675,
-        0.44
+        0.46
       ],
       [
         4656,
-        0.43
+        0.45
       ],
       [
         2055,
-        0.28
+        0.33
       ],
       [
         7887,
-        0.24
+        0.29
       ],
       [
         7104,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 36,
+      "negative": 38,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

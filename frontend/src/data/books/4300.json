@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4989,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "yogyakarta",
@@ -96,16 +96,20 @@
     ],
     "distinct": [
       [
-        "ikaisyo",
-        44
-      ],
-      [
         "yogyakarta",
         221
       ],
       [
         "pameran",
         127
+      ],
+      [
+        "ikaisyo",
+        44
+      ],
+      [
+        "seni",
+        88
       ],
       [
         "kanvas",
@@ -124,8 +128,8 @@
         42
       ],
       [
-        "seni",
-        88
+        "alamat",
+        52
       ],
       [
         "cat",
@@ -136,12 +140,8 @@
         14
       ],
       [
-        "alamat",
-        52
-      ],
-      [
-        "widayat",
-        13
+        "lahir",
+        58
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         4237,
-        0.39
+        0.4
       ],
       [
         4534,
-        0.39
+        0.4
       ],
       [
         4248,
-        0.39
+        0.4
       ],
       [
         4133,
-        0.3
+        0.31
       ],
       [
         4556,
-        0.26
+        0.28
       ],
       [
         4132,
-        0.26
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.91,
+      "positive": 107,
+      "negative": 5,
+      "trend": [
+        0.67,
+        1,
+        0.82,
+        0.67,
+        null,
+        0.78,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

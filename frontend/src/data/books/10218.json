@@ -1,0 +1,86 @@
+{
+  "id": 10218,
+  "title": "Mediawiki SMTP Server untuk Authentikasi",
+  "slug": "mediawiki-smtp-server-untuk-authentikasi-onno-widodo-purbo",
+  "slugBase": "mediawiki-smtp-server-untuk-authentikasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-08-20",
+  "timestamp": "2026-11-23 19:20:06.496950",
+  "last_modified": "2026-11-23 19:20:06.496955",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:1a108713-6f3b-5541-87b4-98ccf7c800ae"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10218?v=1795436406",
+  "cover_og_url": "/cover/10218/og?v=1795436406",
+  "url": "/book/mediawiki-smtp-server-untuk-authentikasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://www.mediawiki.org/wiki/Manual_talk:$wgSMTP Edit file LocalSettings.php, isi dengan $wgSMTP = array( 'host' =&gt; \"smtp.gmail.com\", 'IDHost' =&gt; \"opensource.telkomspeedy.com\", 'port' =&gt; 465, 'auth' =&gt; true, 'username' =&gt; \"opensourcespeedywiki\", 'password' =&gt; \"RAHASIA\" ); Referensi http://www.mediawiki.org/wiki/Manual_talk:$wgSMTP",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2276,
+      "name": "Mediawiki SMTP Server untuk Authentikasi - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 59,
+    "longer_than": 8,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        10300,
+        0.55
+      ],
+      [
+        10410,
+        0.52
+      ],
+      [
+        16786,
+        0.5
+      ],
+      [
+        14621,
+        0.46
+      ],
+      [
+        16787,
+        0.46
+      ],
+      [
+        20118,
+        0.44
+      ]
+    ],
+    "sentiment": null
+  }
+}

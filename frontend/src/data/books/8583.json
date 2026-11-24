@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 26364,
-    "longer_than": 82,
+    "longer_than": 91,
     "top": [
       [
         "agrarian",
@@ -112,32 +112,32 @@
         104
       ],
       [
-        "landowner",
-        61
-      ],
-      [
-        "farmworkers",
-        44
-      ],
-      [
         "department",
         117
       ],
       [
-        "parc",
-        53
+        "landowner",
+        61
       ],
       [
         "agricultural",
         92
       ],
       [
-        "lbp",
-        45
+        "farmworkers",
+        44
+      ],
+      [
+        "parc",
+        53
       ],
       [
         "secretary",
         77
+      ],
+      [
+        "government",
+        108
       ]
     ],
     "phrases": [
@@ -177,28 +177,29 @@
     "similar": [
       [
         8591,
-        0.3
+        0.31
       ],
       [
         8386,
-        0.29
+        0.3
       ],
       [
         8760,
         0.22
       ],
       [
-        8571,
+        8480,
         0.22
       ],
       [
-        8480,
-        0.21
+        8573,
+        0.22
       ],
       [
-        8573,
-        0.21
+        8571,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

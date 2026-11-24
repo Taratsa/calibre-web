@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 6000,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "rakjat",
@@ -89,28 +89,28 @@
     ],
     "distinct": [
       [
-        "uleebalang",
-        75
-      ],
-      [
         "rakjat",
         139
+      ],
+      [
+        "uleebalang",
+        75
       ],
       [
         "atjeh",
         79
       ],
       [
-        "lammeulo",
-        22
+        "markas",
+        57
       ],
       [
         "pengchianat",
         37
       ],
       [
-        "markas",
-        57
+        "lammeulo",
+        22
       ],
       [
         "tentera",
@@ -129,12 +129,12 @@
         20
       ],
       [
-        "mendjadi",
-        22
+        "belanda",
+        33
       ],
       [
-        "harta²",
-        5
+        "mendjadi",
+        22
       ]
     ],
     "phrases": [
@@ -174,28 +174,73 @@
     "similar": [
       [
         781,
-        0.23
+        0.24
       ],
       [
         626,
-        0.18
-      ],
-      [
-        9165,
-        0.18
-      ],
-      [
-        7824,
-        0.17
+        0.2
       ],
       [
         1875,
-        0.16
+        0.19
       ],
       [
         722,
-        0.16
+        0.19
+      ],
+      [
+        9165,
+        0.19
+      ],
+      [
+        7824,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 61,
+      "negative": 55,
+      "trend": [
+        -0.2,
+        -0.71,
+        null,
+        -0.11,
+        0.2,
+        0.33,
+        -0.14,
+        0.2,
+        0.09,
+        0,
+        0.4,
+        null,
+        -0.23,
+        0.69,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "trust",
+          19
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 5796,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "indonesia",
@@ -91,24 +91,24 @@
     ],
     "distinct": [
       [
-        "conefo",
-        22
-      ],
-      [
         "nasakom",
         33
+      ],
+      [
+        "conefo",
+        22
       ],
       [
         "saudara-saudara",
         42
       ],
       [
-        "pantjasila",
-        22
-      ],
-      [
         "rakjat",
         34
+      ],
+      [
+        "pantjasila",
+        22
       ],
       [
         "a-a",
@@ -127,12 +127,12 @@
         11
       ],
       [
-        "hakkul-jakin",
-        7
-      ],
-      [
         "ilham",
         19
+      ],
+      [
+        "engkau",
+        28
       ],
       [
         "gotong-rojong",
@@ -176,28 +176,52 @@
     "similar": [
       [
         6670,
-        0.2
+        0.22
       ],
       [
         4926,
-        0.2
+        0.22
       ],
       [
         9323,
-        0.19
-      ],
-      [
-        7661,
-        0.18
+        0.21
       ],
       [
         8771,
-        0.17
+        0.2
       ],
       [
-        683,
-        0.17
+        680,
+        0.19
+      ],
+      [
+        599,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 84,
+      "negative": 44,
+      "trend": [
+        0.33,
+        0.79,
+        -0.2,
+        -0.5,
+        null,
+        null,
+        0.2,
+        null,
+        0.14,
+        0.71,
+        null,
+        0.64,
+        0.23,
+        -0.54,
+        0.67,
+        0.85
+      ],
+      "emotions": []
+    }
   }
 }

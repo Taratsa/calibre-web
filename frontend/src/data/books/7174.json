@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1840,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "hewan",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "non-manusia",
-        17
-      ],
-      [
         "hewan",
         43
+      ],
+      [
+        "non-manusia",
+        17
       ],
       [
         "supremasi",
@@ -122,15 +122,11 @@
         7
       ],
       [
-        "anti-spesiesis",
-        4
-      ],
-      [
         "egois",
         10
       ],
       [
-        "spesiesisme",
+        "anti-spesiesis",
         4
       ],
       [
@@ -138,20 +134,24 @@
         7
       ],
       [
-        "antroposentris",
-        4
-      ],
-      [
-        "sekresi",
-        3
-      ],
-      [
         "daging",
         12
       ],
       [
-        "flesh",
+        "spesiesisme",
         4
+      ],
+      [
+        "antroposentris",
+        4
+      ],
+      [
+        "manusia",
+        21
+      ],
+      [
+        "sekresi",
+        3
       ]
     ],
     "phrases": [
@@ -195,24 +195,31 @@
       ],
       [
         4093,
-        0.29
+        0.31
       ],
       [
         7096,
-        0.29
+        0.3
       ],
       [
         1937,
-        0.27
+        0.29
       ],
       [
         7098,
-        0.24
+        0.26
       ],
       [
         7349,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 26,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

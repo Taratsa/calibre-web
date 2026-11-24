@@ -61,7 +61,7 @@
   ],
   "text": {
     "words": 15251,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "gay",
@@ -114,12 +114,12 @@
     ],
     "distinct": [
       [
-        "rezi",
-        35
-      ],
-      [
         "gay",
         93
+      ],
+      [
+        "rezi",
+        35
       ],
       [
         "dcngan",
@@ -130,36 +130,36 @@
         33
       ],
       [
-        "pradaya",
-        15
-      ],
-      [
         "stephen",
         29
+      ],
+      [
+        "pradaya",
+        15
       ],
       [
         "homoseks",
         24
       ],
       [
+        "lesbian",
+        27
+      ],
+      [
         "darumaja",
         13
+      ],
+      [
+        "mas",
+        51
       ],
       [
         "verdi",
         15
       ],
       [
-        "lesbian",
-        27
-      ],
-      [
         "mcrcka",
         18
-      ],
-      [
-        "permitraan",
-        10
       ]
     ],
     "phrases": [
@@ -211,16 +211,69 @@
       ],
       [
         3403,
-        0.29
+        0.3
       ],
       [
         3337,
-        0.28
+        0.3
       ],
       [
         3402,
-        0.24
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 150,
+      "negative": 66,
+      "trend": [
+        -0.17,
+        null,
+        0.2,
+        -0.11,
+        0.67,
+        0.33,
+        0.33,
+        0.56,
+        0.82,
+        -0.56,
+        0,
+        0.82,
+        0.65,
+        0.41,
+        0.22,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          44
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

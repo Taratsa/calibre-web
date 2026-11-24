@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 686,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "penguasa",
@@ -102,12 +102,12 @@
     ],
     "distinct": [
       [
-        "melindungiku",
-        4
-      ],
-      [
         "penguasa",
         14
+      ],
+      [
+        "melindungiku",
+        4
       ],
       [
         "tebak",
@@ -122,11 +122,11 @@
         3
       ],
       [
-        "maklumat",
+        "bapakmu",
         3
       ],
       [
-        "bapakmu",
+        "maklumat",
         3
       ],
       [
@@ -134,20 +134,20 @@
         5
       ],
       [
-        "pelarian",
-        3
-      ],
-      [
-        "umur",
-        5
+        "rakyat",
+        8
       ],
       [
         "hujan",
         5
       ],
       [
-        "rakyat",
-        8
+        "umur",
+        5
+      ],
+      [
+        "malam",
+        7
       ]
     ],
     "phrases": [
@@ -175,28 +175,29 @@
     "similar": [
       [
         1803,
-        0.27
+        0.29
       ],
       [
         7282,
-        0.18
+        0.16
       ],
       [
         1044,
-        0.15
+        0.14
       ],
       [
         5539,
         0.14
       ],
       [
-        6949,
+        4216,
         0.11
       ],
       [
-        4216,
+        6949,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

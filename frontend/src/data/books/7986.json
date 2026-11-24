@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3518,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "pekerja",
@@ -107,44 +107,44 @@
         15
       ],
       [
-        "cuti",
-        11
-      ],
-      [
         "serikat",
         29
       ],
       [
-        "kolektifa",
-        5
-      ],
-      [
-        "kolektifasalatiga",
-        4
+        "kerja",
+        39
       ],
       [
         "upah",
         20
       ],
       [
-        "seksual",
-        14
+        "perempuan",
+        30
       ],
       [
-        "pemogokan",
+        "cuti",
         11
       ],
       [
-        "keguguran",
-        6
+        "buruh",
+        22
       ],
       [
         "perusahaan",
         21
       ],
       [
-        "buruh",
-        22
+        "seksual",
+        14
+      ],
+      [
+        "kolektifa",
+        5
+      ],
+      [
+        "pemogokan",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         5884,
-        0.21
+        0.23
       ],
       [
         2515,
-        0.21
-      ],
-      [
-        7210,
-        0.16
+        0.23
       ],
       [
         2584,
-        0.16
+        0.22
       ],
       [
-        3945,
-        0.15
+        7210,
+        0.2
       ],
       [
-        9086,
-        0.14
+        5901,
+        0.19
+      ],
+      [
+        2765,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 60,
+      "negative": 51,
+      "trend": [
+        0.17,
+        0,
+        -0.5,
+        0.67,
+        0,
+        null,
+        0.71,
+        -0.78,
+        -0.14,
+        1,
+        0.71,
+        null,
+        -0.67,
+        null,
+        0.33,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

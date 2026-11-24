@@ -11,7 +11,7 @@
   ],
   "author_sort": "Lubis, Mochtar",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1479,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "atom",
@@ -120,10 +120,6 @@
         9
       ],
       [
-        "yalal",
-        4
-      ],
-      [
         "rusia",
         14
       ],
@@ -132,7 +128,7 @@
         12
       ],
       [
-        "teryadi",
+        "yalal",
         4
       ],
       [
@@ -140,8 +136,16 @@
         6
       ],
       [
+        "teryadi",
+        4
+      ],
+      [
         "by-sa",
         5
+      ],
+      [
+        "manusia",
+        23
       ],
       [
         "khi",
@@ -150,10 +154,6 @@
       [
         "minh",
         4
-      ],
-      [
-        "india",
-        9
       ]
     ],
     "phrases": [
@@ -185,28 +185,35 @@
     "similar": [
       [
         2654,
-        0.32
+        0.3
+      ],
+      [
+        3995,
+        0.16
       ],
       [
         6755,
         0.15
       ],
       [
-        3995,
-        0.14
-      ],
-      [
         1571,
         0.13
       ],
       [
-        4020,
+        3996,
         0.12
       ],
       [
-        4013,
+        4001,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 29,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 10549,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "mahasiswa",
@@ -106,24 +106,28 @@
     ],
     "distinct": [
       [
-        "spectacle",
-        36
-      ],
-      [
         "mahasiswa",
         96
+      ],
+      [
+        "spectacle",
+        36
       ],
       [
         "provos",
         14
       ],
       [
+        "revolusioner",
+        41
+      ],
+      [
         "komoditi",
         25
       ],
       [
-        "revolusioner",
-        41
+        "pekerja",
+        36
       ],
       [
         "imaji",
@@ -134,24 +138,20 @@
         19
       ],
       [
-        "pekerja",
-        36
+        "modern",
+        35
       ],
       [
-        "imaji-imaji",
-        8
+        "dunia",
+        58
       ],
       [
         "sistem",
         44
       ],
       [
-        "blair",
-        7
-      ],
-      [
-        "proletarian",
-        8
+        "masyarakat",
+        42
       ]
     ],
     "phrases": [
@@ -191,10 +191,14 @@
     "similar": [
       [
         7032,
-        0.37
+        0.39
       ],
       [
         2796,
+        0.38
+      ],
+      [
+        2513,
         0.36
       ],
       [
@@ -202,17 +206,66 @@
         0.36
       ],
       [
-        2513,
+        1928,
         0.36
       ],
       [
-        1928,
-        0.3
-      ],
-      [
         2120,
-        0.26
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 144,
+      "negative": 143,
+      "trend": [
+        -0.18,
+        0.1,
+        -0.29,
+        -0.07,
+        -0.29,
+        -0.53,
+        -0.14,
+        -0.22,
+        0.04,
+        0.33,
+        0.05,
+        0.22,
+        0.53,
+        0.65,
+        -0.27,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

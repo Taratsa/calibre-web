@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 858,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "populisme",
@@ -107,6 +107,10 @@
         7
       ],
       [
+        "istilah",
+        8
+      ],
+      [
         "populis",
         3
       ],
@@ -119,35 +123,31 @@
         3
       ],
       [
-        "istilah",
-        8
-      ],
-      [
         "diatas",
         5
+      ],
+      [
+        "tulisan",
+        6
       ],
       [
         "agraria",
         3
       ],
       [
-        "berbeda-beda",
-        3
-      ],
-      [
-        "wacana",
-        3
+        "rakyat",
+        6
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8380,
-        0.17
+        0.18
       ],
       [
         8259,
-        0.16
+        0.14
       ],
       [
         8038,
@@ -158,13 +158,14 @@
         0.13
       ],
       [
-        8438,
+        8528,
         0.12
       ],
       [
-        8528,
-        0.12
+        1345,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

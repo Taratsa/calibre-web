@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4191,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "yahudi",
@@ -126,6 +126,10 @@
         19
       ],
       [
+        "anarkis",
+        32
+      ],
+      [
         "anarko-yudaisme",
         8
       ],
@@ -138,10 +142,6 @@
         15
       ],
       [
-        "anarkis",
-        32
-      ],
-      [
         "bookchin",
         10
       ],
@@ -150,8 +150,8 @@
         9
       ],
       [
-        "rothman",
-        5
+        "negara",
+        40
       ]
     ],
     "phrases": [
@@ -191,28 +191,77 @@
     "similar": [
       [
         7950,
-        0.26
+        0.27
       ],
       [
         2771,
-        0.21
+        0.22
       ],
       [
         113,
+        0.22
+      ],
+      [
+        3942,
         0.21
       ],
       [
         7216,
-        0.2
-      ],
-      [
-        7166,
-        0.19
+        0.21
       ],
       [
         8130,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 45,
+      "negative": 46,
+      "trend": [
+        -0.2,
+        -1,
+        null,
+        -0.14,
+        null,
+        null,
+        0,
+        null,
+        null,
+        -0.2,
+        0.11,
+        -0.17,
+        0.5,
+        null,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2761,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "kuasa",
@@ -110,39 +110,35 @@
         28
       ],
       [
-        "cisgender",
-        13
-      ],
-      [
         "pemerkosaan",
         28
       ],
       [
-        "seksual",
-        29
+        "cisgender",
+        13
       ],
       [
         "kuasa",
         43
       ],
       [
-        "daya-tarik",
-        5
-      ],
-      [
-        "sandfort",
-        4
-      ],
-      [
-        "objek-nafsu",
-        4
+        "seksual",
+        29
       ],
       [
         "korban",
         32
       ],
       [
-        "punitif",
+        "sang",
+        34
+      ],
+      [
+        "gender",
+        16
+      ],
+      [
+        "daya-tarik",
         5
       ],
       [
@@ -150,8 +146,12 @@
         11
       ],
       [
-        "gender",
-        16
+        "laki-laki",
+        21
+      ],
+      [
+        "punitif",
+        5
       ]
     ],
     "phrases": [
@@ -191,7 +191,7 @@
     "similar": [
       [
         7313,
-        0.39
+        0.41
       ],
       [
         2154,
@@ -199,20 +199,44 @@
       ],
       [
         2312,
-        0.16
+        0.2
       ],
       [
         8799,
-        0.13
+        0.16
       ],
       [
-        2034,
-        0.13
+        1988,
+        0.15
       ],
       [
         6717,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.4,
+      "positive": 23,
+      "negative": 54,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

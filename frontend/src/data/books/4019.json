@@ -11,7 +11,7 @@
   ],
   "author_sort": "Soedjatmoko",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Kritik Sastra"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 4415,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "kebudayaan",
@@ -112,10 +112,6 @@
         16
       ],
       [
-        "individui",
-        6
-      ],
-      [
         "krisis",
         27
       ],
@@ -124,28 +120,32 @@
         33
       ],
       [
-        "mampuan",
-        7
-      ],
-      [
-        "jawab-jawab",
-        4
+        "individui",
+        6
       ],
       [
         "masalah-masalah",
         15
       ],
       [
-        "majalalah",
+        "mampuan",
+        7
+      ],
+      [
+        "politik",
+        27
+      ],
+      [
+        "masyarakat",
+        32
+      ],
+      [
+        "jawab-jawab",
         4
       ],
       [
         "konfrontasi",
         10
-      ],
-      [
-        "kesangggupan",
-        3
       ],
       [
         "tujuan-tujuan",
@@ -193,28 +193,52 @@
     "similar": [
       [
         4009,
-        0.23
+        0.26
       ],
       [
         4018,
-        0.2
+        0.22
       ],
       [
         4023,
-        0.19
-      ],
-      [
-        6754,
-        0.18
-      ],
-      [
-        3991,
-        0.18
+        0.21
       ],
       [
         3416,
-        0.17
+        0.21
+      ],
+      [
+        4021,
+        0.2
+      ],
+      [
+        3991,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 74,
+      "negative": 59,
+      "trend": [
+        -0.5,
+        null,
+        -0.2,
+        -0.2,
+        -0.67,
+        null,
+        -0.18,
+        null,
+        1,
+        null,
+        -0.33,
+        0.47,
+        0.27,
+        0.64,
+        -0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

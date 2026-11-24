@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2301,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "pengarang",
@@ -104,12 +104,12 @@
         33
       ],
       [
-        "pengarang-pengarang",
-        9
-      ],
-      [
         "pekerdjaan",
         15
+      ],
+      [
+        "pengarang-pengarang",
+        9
       ],
       [
         "mendjadi",
@@ -118,6 +118,14 @@
       [
         "kesusasteraan",
         8
+      ],
+      [
+        "perantjis",
+        7
+      ],
+      [
+        "sadja",
+        9
       ],
       [
         "tsjekoslowakia",
@@ -132,48 +140,41 @@
         3
       ],
       [
-        "perantjis",
-        7
-      ],
-      [
-        "sadja",
-        9
-      ],
-      [
         "mempunjai",
         8
       ],
       [
-        "djurnalistik",
-        3
+        "gabungan",
+        8
       ]
     ],
     "phrases": [],
     "similar": [
       [
         6740,
-        0.64
+        0.63
       ],
       [
         3416,
-        0.2
+        0.22
+      ],
+      [
+        6881,
+        0.18
+      ],
+      [
+        7679,
+        0.18
       ],
       [
         4008,
         0.18
       ],
       [
-        6881,
-        0.17
-      ],
-      [
-        7679,
-        0.17
-      ],
-      [
-        4023,
+        7803,
         0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

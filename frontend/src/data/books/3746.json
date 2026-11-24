@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 64112,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "politik",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "anarkisme",
-        393
-      ],
-      [
         "politik",
         1025
       ],
       [
-        "badiou",
-        99
-      ],
-      [
-        "postanarkisme",
-        78
-      ],
-      [
-        "anarkis",
-        292
-      ],
-      [
-        "hlm",
-        229
-      ],
-      [
-        "radikal",
-        241
-      ],
-      [
-        "anti-politik",
-        64
-      ],
-      [
-        "foucault",
-        83
+        "anarkisme",
+        393
       ],
       [
         "negara",
         714
       ],
       [
-        "mouffe",
-        53
+        "anarkis",
+        292
       ],
       [
-        "bookchin",
-        69
+        "badiou",
+        99
+      ],
+      [
+        "hlm",
+        229
+      ],
+      [
+        "postanarkisme",
+        78
+      ],
+      [
+        "radikal",
+        241
+      ],
+      [
+        "kekuasaan",
+        355
+      ],
+      [
+        "kebebasan",
+        237
+      ],
+      [
+        "sosial",
+        295
+      ],
+      [
+        "anti-politik",
+        64
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         3767,
-        0.33
+        0.37
       ],
       [
         7390,
-        0.33
-      ],
-      [
-        2748,
-        0.28
-      ],
-      [
-        7389,
-        0.28
-      ],
-      [
-        2273,
-        0.28
+        0.37
       ],
       [
         2256,
-        0.27
+        0.34
+      ],
+      [
+        2813,
+        0.32
+      ],
+      [
+        2273,
+        0.32
+      ],
+      [
+        2522,
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 897,
+      "negative": 483,
+      "trend": [
+        0.24,
+        0.53,
+        0.16,
+        0.33,
+        0.51,
+        0.25,
+        0.36,
+        0.4,
+        0.08,
+        0.34,
+        0.4,
+        -0.16,
+        0.66,
+        0.39,
+        0.19,
+        0.29
+      ],
+      "emotions": [
+        [
+          "anger",
+          163
+        ],
+        [
+          "trust",
+          97
+        ],
+        [
+          "fear",
+          79
+        ],
+        [
+          "joy",
+          30
+        ],
+        [
+          "sadness",
+          23
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "surprise",
+          12
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

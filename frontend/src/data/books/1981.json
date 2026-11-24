@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2087,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "ideologi",
@@ -107,12 +107,12 @@
         14
       ],
       [
-        "mengkonstruksikan",
-        3
+        "melawan",
+        14
       ],
       [
-        "posting",
-        4
+        "mengkonstruksikan",
+        3
       ],
       [
         "crimethinc",
@@ -123,28 +123,28 @@
         4
       ],
       [
-        "dogmatisme",
-        3
+        "posting",
+        4
       ],
       [
         "teori",
         8
       ],
       [
-        "ideal",
-        6
-      ],
-      [
         "anarkis",
         6
       ],
       [
-        "hierarki",
-        4
+        "ideal",
+        6
       ],
       [
-        "hipotesis",
+        "dogmatisme",
         3
+      ],
+      [
+        "kapitalisme",
+        6
       ]
     ],
     "phrases": [
@@ -172,28 +172,35 @@
     "similar": [
       [
         7203,
-        0.22
+        0.26
       ],
       [
-        1995,
-        0.19
-      ],
-      [
-        2177,
+        7455,
         0.18
       ],
       [
         1928,
-        0.14
+        0.17
       ],
       [
-        1968,
-        0.13
+        1995,
+        0.17
       ],
       [
-        2413,
-        0.13
+        7019,
+        0.17
+      ],
+      [
+        7859,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 31,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

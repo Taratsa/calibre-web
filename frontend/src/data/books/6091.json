@@ -64,7 +64,7 @@
   ],
   "text": {
     "words": 62524,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "bahasa",
@@ -117,12 +117,12 @@
     ],
     "distinct": [
       [
-        "provinsinusa",
-        1543
-      ],
-      [
         "tenggara",
         5448
+      ],
+      [
+        "provinsinusa",
+        1543
       ],
       [
         "nusa",
@@ -137,16 +137,16 @@
         3018
       ],
       [
-        "antor",
-        627
+        "bahasa",
+        5563
       ],
       [
         "barat",
         4570
       ],
       [
-        "bahasa",
-        5563
+        "antor",
+        627
       ],
       [
         "bonong",
@@ -214,7 +214,7 @@
       ],
       [
         6097,
-        0.61
+        0.6
       ],
       [
         6125,
@@ -222,8 +222,61 @@
       ],
       [
         6098,
-        0.44
+        0.45
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 246,
+      "negative": 165,
+      "trend": [
+        null,
+        null,
+        1,
+        null,
+        0.75,
+        1,
+        0.34,
+        0.23,
+        -0.09,
+        0.06,
+        -0.2,
+        -0.14,
+        -0.29,
+        0.58,
+        0.43,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          56
+        ],
+        [
+          "fear",
+          28
+        ],
+        [
+          "anger",
+          22
+        ],
+        [
+          "sadness",
+          22
+        ],
+        [
+          "surprise",
+          18
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "trust",
+          13
+        ]
+      ]
+    }
   }
 }

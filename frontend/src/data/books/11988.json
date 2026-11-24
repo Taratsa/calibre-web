@@ -1,0 +1,86 @@
+{
+  "id": 11988,
+  "title": "Raspbian: Setting time",
+  "slug": "raspbian-setting-time-onno-widodo-purbo",
+  "slugBase": "raspbian-setting-time-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2017-11-06",
+  "timestamp": "2026-11-23 20:40:50.798699",
+  "last_modified": "2026-11-23 20:40:50.798703",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:5c62034d-e9d9-5abe-ba57-a87b8f8cf100"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/11988?v=1795441250",
+  "cover_og_url": "/cover/11988/og?v=1795441250",
+  "url": "/book/raspbian-setting-time-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "tzdata sudo dpkg-reconfigure tzdata config sudo raspi-config date sudo date -s \"01/04/2017 11:00\" ntp sudo systemctl stop ntp.service sudo ntpd -gqc /etc/ntpd.conf sudo systemctl start ntp.service",
+  "data": [
+    {
+      "format": "epub",
+      "size": 1991,
+      "name": "Raspbian_ Setting time - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 42,
+    "longer_than": 6,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        17728,
+        0.59
+      ],
+      [
+        15823,
+        0.57
+      ],
+      [
+        11257,
+        0.57
+      ],
+      [
+        11227,
+        0.57
+      ],
+      [
+        17202,
+        0.48
+      ],
+      [
+        13423,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
+}

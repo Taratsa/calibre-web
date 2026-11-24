@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2060,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "anarkis",
@@ -107,44 +107,44 @@
         15
       ],
       [
-        "balaklava",
-        3
-      ],
-      [
         "anarki",
         8
-      ],
-      [
-        "imaji",
-        5
       ],
       [
         "engkau",
         10
       ],
       [
-        "posting",
-        4
-      ],
-      [
         "sistem",
         18
+      ],
+      [
+        "balaklava",
+        3
+      ],
+      [
+        "imaji",
+        5
       ],
       [
         "katalis",
         4
       ],
       [
-        "punk",
-        4
+        "sekedar",
+        9
       ],
       [
-        "merengkuh",
-        3
+        "posting",
+        4
       ],
       [
         "eksis",
         5
+      ],
+      [
+        "punk",
+        4
       ]
     ],
     "phrases": [
@@ -171,29 +171,36 @@
     ],
     "similar": [
       [
-        1995,
-        0.2
-      ],
-      [
-        2228,
-        0.2
-      ],
-      [
         2413,
-        0.18
+        0.2
       ],
       [
         2796,
-        0.15
+        0.19
+      ],
+      [
+        2147,
+        0.19
       ],
       [
         2004,
-        0.15
+        0.18
       ],
       [
-        2013,
-        0.14
+        2228,
+        0.18
+      ],
+      [
+        1995,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 35,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

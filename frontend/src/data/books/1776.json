@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 19909,
-    "longer_than": 76,
+    "longer_than": 88,
     "top": [
       [
         "kerja",
@@ -111,40 +111,40 @@
         25
       ],
       [
-        "invisible",
-        14
-      ],
-      [
-        "relasi",
-        28
-      ],
-      [
-        "insurrection",
-        10
+        "kerja",
+        69
       ],
       [
         "lingkungan",
         54
       ],
       [
-        "kerja",
-        69
+        "sosial",
+        60
       ],
       [
-        "peradaban",
-        25
+        "relasi",
+        28
+      ],
+      [
+        "ekonomi",
+        47
+      ],
+      [
+        "invisible",
+        14
       ],
       [
         "pemberontakan",
         28
       ],
       [
-        "krisis",
-        27
+        "polisi",
+        33
       ],
       [
-        "penj",
-        10
+        "peradaban",
+        25
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2811,
-        0.48
+        0.54
       ],
       [
         7414,
-        0.25
+        0.3
       ],
       [
         4731,
-        0.24
+        0.29
       ],
       [
         7000,
-        0.19
+        0.25
       ],
       [
         2660,
-        0.19
+        0.25
       ],
       [
         3933,
-        0.19
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 356,
+      "negative": 372,
+      "trend": [
+        -0.24,
+        -0.4,
+        0.13,
+        0.18,
+        -0.18,
+        -0.32,
+        0.4,
+        -0.09,
+        -0.08,
+        0,
+        0,
+        0,
+        -0.09,
+        -0.05,
+        0.35,
+        0.08
+      ],
+      "emotions": [
+        [
+          "anger",
+          79
+        ],
+        [
+          "sadness",
+          53
+        ],
+        [
+          "trust",
+          37
+        ],
+        [
+          "fear",
+          29
+        ],
+        [
+          "joy",
+          27
+        ],
+        [
+          "anticipation",
+          18
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

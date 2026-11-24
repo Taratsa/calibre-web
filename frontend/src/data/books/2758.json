@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 21144,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "organisasi",
@@ -99,20 +99,12 @@
     ],
     "distinct": [
       [
-        "heteropatriarki",
-        21
-      ],
-      [
-        "serikat",
-        116
-      ],
-      [
         "organisasi",
         162
       ],
       [
-        "dominasi",
-        77
+        "serikat",
+        116
       ],
       [
         "kelas",
@@ -123,28 +115,36 @@
         101
       ],
       [
-        "brrn",
-        15
+        "dominasi",
+        77
       ],
       [
-        "anarkis",
-        66
-      ],
-      [
-        "perjuangan",
-        100
-      ],
-      [
-        "amerika",
-        90
+        "sosial",
+        145
       ],
       [
         "politik",
         130
       ],
       [
-        "strategi",
-        61
+        "perjuangan",
+        100
+      ],
+      [
+        "heteropatriarki",
+        21
+      ],
+      [
+        "anarkis",
+        66
+      ],
+      [
+        "amerika",
+        90
+      ],
+      [
+        "gerakan",
+        101
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        2381,
-        0.24
-      ],
-      [
         7019,
-        0.23
+        0.32
       ],
       [
         7859,
-        0.23
+        0.32
       ],
       [
         2553,
-        0.23
+        0.32
+      ],
+      [
+        2381,
+        0.31
+      ],
+      [
+        2596,
+        0.3
       ],
       [
         2778,
-        0.21
-      ],
-      [
-        7128,
-        0.2
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 390,
+      "negative": 316,
+      "trend": [
+        -0.08,
+        -0.24,
+        0.42,
+        0.21,
+        -0.29,
+        -0.16,
+        0.33,
+        0.5,
+        0.53,
+        0.56,
+        -0.14,
+        -0.4,
+        -0.14,
+        -0.02,
+        0.44,
+        0.78
+      ],
+      "emotions": [
+        [
+          "anger",
+          107
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

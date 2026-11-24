@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 674,
-    "longer_than": 7,
+    "longer_than": 46,
     "top": [
       [
         "orang-orang",
@@ -99,35 +99,11 @@
     ],
     "distinct": [
       [
-        "makian",
-        3
-      ],
-      [
         "menghancurkan",
         7
       ],
       [
-        "membakar",
-        5
-      ],
-      [
-        "hei",
-        3
-      ],
-      [
-        "dirampas",
-        3
-      ],
-      [
-        "memilih",
-        8
-      ],
-      [
-        "kaya",
-        5
-      ],
-      [
-        "kendaraan",
+        "makian",
         3
       ],
       [
@@ -135,44 +111,69 @@
         9
       ],
       [
+        "membakar",
+        5
+      ],
+      [
+        "memilih",
+        8
+      ],
+      [
+        "hei",
+        3
+      ],
+      [
+        "kaya",
+        5
+      ],
+      [
+        "dirampas",
+        3
+      ],
+      [
         "membunuh",
         4
+      ],
+      [
+        "kendaraan",
+        3
       ],
       [
         "suci",
         3
       ],
       [
-        "peduli",
-        3
+        "kekuasaan",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2809,
-        0.39
+        0.41
       ],
       [
         8039,
-        0.22
+        0.23
       ],
       [
         2421,
-        0.22
+        0.23
       ],
       [
-        7138,
+        15227,
         0.17
-      ],
-      [
-        2126,
-        0.16
       ],
       [
         7372,
         0.16
+      ],
+      [
+        7138,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

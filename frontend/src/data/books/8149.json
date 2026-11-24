@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 15164,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "human",
@@ -111,20 +111,20 @@
     ],
     "distinct": [
       [
-        "business",
-        304
-      ],
-      [
         "human",
         402
       ],
       [
-        "nap",
-        177
-      ],
-      [
         "rights",
         394
+      ],
+      [
+        "business",
+        304
+      ],
+      [
+        "nap",
+        177
       ],
       [
         "guiding",
@@ -135,16 +135,20 @@
         101
       ],
       [
-        "naps",
-        40
-      ],
-      [
         "countries",
         86
       ],
       [
+        "naps",
+        40
+      ],
+      [
         "national",
         92
+      ],
+      [
+        "government",
+        61
       ],
       [
         "process",
@@ -153,10 +157,6 @@
       [
         "rigbts",
         21
-      ],
-      [
-        "government",
-        61
       ]
     ],
     "phrases": [
@@ -208,16 +208,17 @@
       ],
       [
         8270,
+        0.28
+      ],
+      [
+        8284,
         0.27
       ],
       [
         8774,
-        0.26
-      ],
-      [
-        8284,
-        0.25
+        0.27
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

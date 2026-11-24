@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2067,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "anarkis",
@@ -126,19 +126,15 @@
         3
       ],
       [
-        "cells",
-        3
+        "anarki",
+        5
       ],
       [
         "konspirasi",
         4
       ],
       [
-        "anarki",
-        5
-      ],
-      [
-        "conspiracy",
+        "cells",
         3
       ],
       [
@@ -146,12 +142,16 @@
         4
       ],
       [
+        "conspiracy",
+        3
+      ],
+      [
         "agresif",
         4
       ],
       [
-        "individualitas",
-        3
+        "serangan",
+        7
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         3770,
-        0.26
+        0.29
       ],
       [
         8016,
-        0.25
-      ],
-      [
-        2161,
-        0.25
-      ],
-      [
-        7112,
-        0.24
+        0.29
       ],
       [
         2076,
-        0.24
+        0.28
+      ],
+      [
+        2161,
+        0.27
+      ],
+      [
+        7112,
+        0.27
       ],
       [
         2730,
-        0.24
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 34,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

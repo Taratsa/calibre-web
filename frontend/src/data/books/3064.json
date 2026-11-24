@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4025,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "manusia",
@@ -105,52 +105,52 @@
     ],
     "distinct": [
       [
-        "kreatifi",
-        9
-      ],
-      [
         "kapitalisme",
         40
+      ],
+      [
+        "kreatifi",
+        9
       ],
       [
         "kapital",
         24
       ],
       [
-        "aktifi",
-        6
+        "kegiatan",
+        30
       ],
       [
-        "komoditi",
-        11
+        "manusia",
+        42
+      ],
+      [
+        "aktifi",
+        6
       ],
       [
         "tas",
         15
       ],
       [
-        "kegiatan",
-        30
+        "komoditi",
+        11
       ],
       [
         "aktivitas",
         17
       ],
       [
+        "kerja",
+        23
+      ],
+      [
+        "kondisi",
+        19
+      ],
+      [
         "dirimu",
         11
-      ],
-      [
-        "historikal",
-        3
-      ],
-      [
-        "korporasi",
-        8
-      ],
-      [
-        "kesehariannya",
-        5
       ]
     ],
     "phrases": [
@@ -190,28 +190,77 @@
     "similar": [
       [
         3750,
-        0.27
+        0.31
       ],
       [
         2783,
-        0.19
-      ],
-      [
-        2058,
-        0.18
+        0.24
       ],
       [
         2566,
-        0.18
+        0.22
+      ],
+      [
+        2058,
+        0.22
       ],
       [
         4661,
-        0.16
+        0.22
       ],
       [
         3063,
-        0.16
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 70,
+      "negative": 45,
+      "trend": [
+        0.6,
+        1,
+        -0.67,
+        0.75,
+        0.2,
+        -0.2,
+        0.33,
+        null,
+        0.64,
+        0,
+        -0.2,
+        0.67,
+        0.2,
+        0.08,
+        null,
+        -0.09
+      ],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

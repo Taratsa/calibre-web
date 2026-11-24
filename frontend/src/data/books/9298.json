@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 5427,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "dekon",
@@ -104,12 +104,20 @@
         82
       ],
       [
+        "kaum",
+        90
+      ],
+      [
+        "ekonomi",
+        62
+      ],
+      [
         "mprs",
         21
       ],
       [
-        "kaum",
-        90
+        "rakyat",
+        56
       ],
       [
         "perusahaan-perusahaan",
@@ -120,28 +128,20 @@
         18
       ],
       [
-        "ekonomi",
-        62
+        "negara",
+        41
       ],
       [
         "pdn-pdn",
         6
       ],
       [
-        "rakyat",
-        56
+        "produksi",
+        24
       ],
       [
-        "kepentingan-kepentingan",
-        12
-      ],
-      [
-        "pdn",
-        6
-      ],
-      [
-        "resolusi",
-        13
+        "pasal",
+        19
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         9297,
-        0.49
+        0.5
       ],
       [
         9292,
-        0.35
+        0.38
       ],
       [
         9296,
-        0.32
+        0.33
       ],
       [
         462,
-        0.27
+        0.3
       ],
       [
         6763,
-        0.26
+        0.3
       ],
       [
         9306,
-        0.26
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 94,
+      "negative": 40,
+      "trend": [
+        0.69,
+        -0.2,
+        0.45,
+        0,
+        -0.64,
+        0.75,
+        0.67,
+        0.4,
+        0.6,
+        null,
+        null,
+        -0.14,
+        1,
+        -0.11,
+        0.54,
+        1
+      ],
+      "emotions": [
+        [
+          "fear",
+          13
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

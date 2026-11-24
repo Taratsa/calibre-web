@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 7297,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "budaya",
@@ -121,12 +121,16 @@
         88
       ],
       [
-        "alokasi",
-        73
+        "budaya",
+        166
       ],
       [
         "lokal",
         135
+      ],
+      [
+        "alokasi",
+        73
       ],
       [
         "pencapaian",
@@ -137,16 +141,12 @@
         86
       ],
       [
-        "budaya",
-        166
+        "penilaian",
+        71
       ],
       [
-        "leaflet",
-        27
-      ],
-      [
-        "diminati",
-        35
+        "materi",
+        75
       ]
     ],
     "phrases": [
@@ -190,24 +190,48 @@
       ],
       [
         5387,
-        0.39
+        0.4
       ],
       [
         5333,
-        0.33
+        0.34
       ],
       [
         885,
-        0.18
+        0.2
       ],
       [
         890,
-        0.16
+        0.18
       ],
       [
         872,
-        0.16
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.96,
+      "positive": 105,
+      "negative": 2,
+      "trend": [
+        0.86,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

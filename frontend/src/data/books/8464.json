@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6009,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "hutan",
@@ -111,40 +111,40 @@
         157
       ],
       [
-        "sipora",
-        33
-      ],
-      [
         "hutan",
         174
       ],
       [
-        "pagai",
-        28
-      ],
-      [
-        "kepulauan",
-        74
+        "sipora",
+        33
       ],
       [
         "penguasaan",
         78
       ],
       [
-        "kabupaten",
-        76
+        "kepulauan",
+        74
       ],
       [
-        "hektar",
-        41
+        "pagai",
+        28
+      ],
+      [
+        "kabupaten",
+        76
       ],
       [
         "desa",
         92
       ],
       [
-        "sikakap",
-        11
+        "hektar",
+        41
+      ],
+      [
+        "tanah",
+        94
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        8547,
-        0.24
+        8574,
+        0.29
       ],
       [
-        8574,
-        0.24
+        8547,
+        0.28
       ],
       [
         8545,
-        0.23
-      ],
-      [
-        6813,
-        0.22
-      ],
-      [
-        8546,
-        0.22
+        0.27
       ],
       [
         6804,
-        0.22
+        0.27
+      ],
+      [
+        8546,
+        0.27
+      ],
+      [
+        6813,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 92,
+      "negative": 28,
+      "trend": [
+        1,
+        0.91,
+        0.67,
+        0.4,
+        0.5,
+        -0.29,
+        1,
+        1,
+        0.14,
+        null,
+        0.71,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

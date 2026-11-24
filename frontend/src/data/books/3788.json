@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 6134,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "perpustakaan",
@@ -112,20 +112,24 @@
         65
       ],
       [
+        "perpustakaan",
+        68
+      ],
+      [
         "biblioteca",
         21
+      ],
+      [
+        "anarkis",
+        54
       ],
       [
         "archivio",
         16
       ],
       [
-        "perpustakaan",
-        68
-      ],
-      [
-        "anarkis",
-        54
+        "arsip",
+        35
       ],
       [
         "sentra",
@@ -138,10 +142,6 @@
       [
         "chessa",
         11
-      ],
-      [
-        "arsip",
-        35
       ],
       [
         "borghi",
@@ -189,7 +189,7 @@
     "similar": [
       [
         9166,
-        0.36
+        0.37
       ],
       [
         7102,
@@ -205,12 +205,19 @@
       ],
       [
         7489,
-        0.29
+        0.3
       ],
       [
-        7374,
-        0.24
+        8067,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 37,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

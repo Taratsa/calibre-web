@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3234,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "cut",
@@ -126,6 +126,10 @@
         12
       ],
       [
+        "literasi",
+        22
+      ],
+      [
         "tunong",
         9
       ],
@@ -134,24 +138,20 @@
         9
       ],
       [
-        "literasi",
-        22
-      ],
-      [
         "ayo",
         18
       ],
       [
-        "syamsarif",
-        4
+        "pahlawan",
+        17
       ],
       [
-        "wenny",
-        6
+        "aceh",
+        16
       ],
       [
-        "uhuk",
-        5
+        "belanda",
+        19
       ]
     ],
     "phrases": [
@@ -191,16 +191,81 @@
     "similar": [
       [
         9328,
-        0.33
+        0.32
       ],
       [
         802,
+        0.14
+      ],
+      [
+        5652,
+        0.13
+      ],
+      [
+        5181,
         0.12
       ],
       [
-        765,
-        0.1
+        5681,
+        0.12
+      ],
+      [
+        6262,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 71,
+      "negative": 23,
+      "trend": [
+        1,
+        0.82,
+        1,
+        1,
+        0,
+        0.25,
+        0.4,
+        null,
+        null,
+        null,
+        null,
+        -0.67,
+        0.78,
+        0.5,
+        null,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          10
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

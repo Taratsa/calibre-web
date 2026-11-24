@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 816,
-    "longer_than": 10,
+    "longer_than": 48,
     "top": [
       [
         "manusia",
@@ -114,15 +114,11 @@
         5
       ],
       [
-        "pengambil",
-        3
-      ],
-      [
         "kemanusiaan",
         5
       ],
       [
-        "borjuis",
+        "pengambil",
         3
       ],
       [
@@ -130,12 +126,20 @@
         4
       ],
       [
-        "persaudaraan",
+        "borjuis",
         3
       ],
       [
         "moral",
         5
+      ],
+      [
+        "persaudaraan",
+        3
+      ],
+      [
+        "manusia",
+        7
       ],
       [
         "keberanian",
@@ -148,21 +152,17 @@
       [
         "ketakutan",
         3
-      ],
-      [
-        "dimana",
-        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7328,
-        0.2
+        0.19
       ],
       [
         4094,
-        0.14
+        0.15
       ],
       [
         3813,
@@ -180,6 +180,13 @@
         7538,
         0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 29,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

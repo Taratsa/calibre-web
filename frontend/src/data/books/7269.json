@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 878,
-    "longer_than": 10,
+    "longer_than": 50,
     "top": [
       [
         "gender",
@@ -110,16 +110,36 @@
         23
       ],
       [
-        "pengaturan",
-        6
-      ],
-      [
         "perempuan",
         13
       ],
       [
+        "pengaturan",
+        6
+      ],
+      [
+        "pekerjaan",
+        8
+      ],
+      [
+        "tubuh",
+        7
+      ],
+      [
+        "laki-laki",
+        6
+      ],
+      [
         "ranah",
         4
+      ],
+      [
+        "tindakan",
+        7
+      ],
+      [
+        "sosial",
+        8
       ],
       [
         "reaksioner",
@@ -132,54 +152,35 @@
       [
         "kategori",
         4
-      ],
-      [
-        "dihargai",
-        3
-      ],
-      [
-        "pekerjaan",
-        8
-      ],
-      [
-        "laki-laki",
-        6
-      ],
-      [
-        "tubuh",
-        7
-      ],
-      [
-        "pemberontakan",
-        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         3734,
-        0.34
-      ],
-      [
-        4113,
-        0.16
+        0.38
       ],
       [
         6821,
-        0.15
+        0.17
       ],
       [
-        355,
-        0.14
+        2596,
+        0.17
       ],
       [
         346,
-        0.14
+        0.17
       ],
       [
-        7234,
-        0.13
+        3795,
+        0.16
+      ],
+      [
+        7123,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

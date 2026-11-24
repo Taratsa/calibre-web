@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2264,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "sejarah",
@@ -118,40 +118,40 @@
         7
       ],
       [
+        "buruh",
+        12
+      ],
+      [
         "resistensi",
         6
       ],
       [
-        "pom",
-        4
+        "masyarakat",
+        20
       ],
       [
         "kriminal",
         7
       ],
       [
-        "porsea",
-        3
+        "protes",
+        9
       ],
       [
         "geng",
         5
       ],
       [
-        "protes",
-        9
+        "pom",
+        4
       ],
       [
-        "buruh",
-        12
-      ],
-      [
-        "ditangkapi",
+        "porsea",
         3
       ],
       [
-        "mobil-mobil",
-        3
+        "kapal",
+        7
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         2398,
-        0.16
+        0.15
       ],
       [
-        7308,
-        0.12
+        9846,
+        0.15
       ],
       [
         2158,
-        0.11
+        0.14
       ],
       [
         4660,
-        0.11
+        0.14
       ],
       [
         3062,
-        0.11
+        0.14
       ],
       [
-        2150,
-        0.11
+        1944,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 38,
+      "negative": 37,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

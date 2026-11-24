@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1647,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "kapitalisme",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "anti-globalisasi",
-        11
-      ],
-      [
         "kapitalisme",
         30
+      ],
+      [
+        "anti-globalisasi",
+        11
       ],
       [
         "kapital",
@@ -126,15 +126,11 @@
         9
       ],
       [
-        "negara-bangsa",
-        4
-      ],
-      [
         "pemahaman",
         9
       ],
       [
-        "manifestasi",
+        "negara-bangsa",
         4
       ],
       [
@@ -142,16 +138,20 @@
         7
       ],
       [
-        "bisnis",
-        5
-      ],
-      [
-        "komoditi",
-        3
+        "manifestasi",
+        4
       ],
       [
         "lokal",
         7
+      ],
+      [
+        "bisnis",
+        5
+      ],
+      [
+        "dunia",
+        11
       ]
     ],
     "phrases": [
@@ -187,28 +187,29 @@
     "similar": [
       [
         7864,
-        0.43
+        0.45
       ],
       [
         1852,
-        0.43
-      ],
-      [
-        4344,
-        0.16
-      ],
-      [
-        4664,
-        0.14
+        0.45
       ],
       [
         7066,
-        0.13
+        0.16
+      ],
+      [
+        3057,
+        0.16
+      ],
+      [
+        2340,
+        0.16
       ],
       [
         7537,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

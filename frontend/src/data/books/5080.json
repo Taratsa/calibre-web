@@ -65,7 +65,7 @@
   ],
   "text": {
     "words": 2787,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "neo",
@@ -126,16 +126,28 @@
         12
       ],
       [
+        "nok",
+        12
+      ],
+      [
         "nao",
         11
+      ],
+      [
+        "sin",
+        20
       ],
       [
         "lakoat",
         7
       ],
       [
-        "nok",
-        12
+        "kasuari",
+        11
+      ],
+      [
+        "fatu",
+        9
       ],
       [
         "kujawas",
@@ -146,24 +158,12 @@
         7
       ],
       [
-        "fatu",
-        9
-      ],
-      [
-        "kasuari",
+        "neu",
         11
       ],
       [
         "nbi",
         8
-      ],
-      [
-        "sin",
-        20
-      ],
-      [
-        "neu",
-        11
       ]
     ],
     "phrases": [
@@ -200,6 +200,7 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

@@ -11,7 +11,7 @@
   ],
   "author_sort": "Sukarno",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2627,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "indonesia",
@@ -127,12 +127,12 @@
         18
       ],
       [
-        "nasakom",
-        14
-      ],
-      [
         "malaysia",
         24
+      ],
+      [
+        "nasakom",
+        14
       ],
       [
         "kom",
@@ -143,15 +143,15 @@
         7
       ],
       [
-        "conefo",
-        6
-      ],
-      [
         "karno",
         12
       ],
       [
-        "onward",
+        "indonesia",
+        46
+      ],
+      [
+        "conefo",
         6
       ]
     ],
@@ -192,28 +192,35 @@
     "similar": [
       [
         6727,
-        0.51
+        0.52
       ],
       [
         4858,
-        0.51
+        0.52
       ],
       [
         552,
-        0.51
+        0.52
       ],
       [
         5947,
-        0.18
+        0.19
       ],
       [
         2838,
         0.18
       ],
       [
-        9304,
-        0.16
+        9303,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 60,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

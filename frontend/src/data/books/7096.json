@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1481,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "hewan",
@@ -126,12 +126,16 @@
         6
       ],
       [
+        "vegan",
+        6
+      ],
+      [
         "veganarkisme",
         4
       ],
       [
-        "vegan",
-        6
+        "penindasan",
+        14
       ],
       [
         "speciesism",
@@ -142,16 +146,12 @@
         4
       ],
       [
+        "anarkis",
+        12
+      ],
+      [
         "speciesisme",
         3
-      ],
-      [
-        "anti-speciesism",
-        3
-      ],
-      [
-        "penindasan",
-        14
       ]
     ],
     "phrases": [
@@ -190,29 +190,61 @@
     ],
     "similar": [
       [
-        7174,
-        0.29
+        7098,
+        0.3
       ],
       [
-        7098,
-        0.28
+        7174,
+        0.3
       ],
       [
         8002,
-        0.25
+        0.27
       ],
       [
         4093,
-        0.15
-      ],
-      [
-        1820,
-        0.11
+        0.17
       ],
       [
         2347,
-        0.11
+        0.14
+      ],
+      [
+        7062,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 26,
+      "negative": 43,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

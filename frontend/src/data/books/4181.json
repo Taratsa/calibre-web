@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2022,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "teater",
@@ -123,19 +123,15 @@
         6
       ],
       [
-        "infografik",
-        4
+        "korupsi",
+        10
       ],
       [
         "puspa",
         6
       ],
       [
-        "korupsi",
-        10
-      ],
-      [
-        "saldo",
+        "infografik",
         4
       ],
       [
@@ -144,6 +140,10 @@
       ],
       [
         "aktor",
+        8
+      ],
+      [
+        "refleksi",
         8
       ]
     ],
@@ -184,19 +184,19 @@
     "similar": [
       [
         4408,
-        0.36
+        0.34
       ],
       [
         4360,
-        0.3
+        0.28
       ],
       [
         4536,
-        0.27
+        0.26
       ],
       [
         4226,
-        0.26
+        0.25
       ],
       [
         7071,
@@ -206,6 +206,51 @@
         4559,
         0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 33,
+      "negative": 49,
+      "trend": [
+        -0.33,
+        -0.2,
+        null,
+        null,
+        0,
+        0.25,
+        null,
+        null,
+        -0.33,
+        null,
+        null,
+        null,
+        -1,
+        0.4,
+        null,
+        -0.43
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

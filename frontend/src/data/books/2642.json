@@ -94,7 +94,7 @@
   ],
   "text": {
     "words": 4163,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "sastra",
@@ -163,36 +163,36 @@
         12
       ],
       [
-        "wianta",
-        5
-      ],
-      [
-        "azzam",
-        5
-      ],
-      [
-        "terburuk",
-        11
+        "puisi",
+        18
       ],
       [
         "fasis",
         13
       ],
       [
-        "puisi",
-        18
+        "terburuk",
+        11
       ],
       [
-        "yosef",
+        "wianta",
         5
-      ],
-      [
-        "micro",
-        6
       ],
       [
         "bakar",
         16
+      ],
+      [
+        "azzam",
+        5
+      ],
+      [
+        "kau",
+        17
+      ],
+      [
+        "subjek",
+        12
       ]
     ],
     "phrases": [
@@ -232,7 +232,7 @@
     "similar": [
       [
         3749,
-        0.28
+        0.3
       ],
       [
         2321,
@@ -240,20 +240,73 @@
       ],
       [
         7127,
-        0.21
+        0.22
       ],
       [
         7280,
         0.19
       ],
       [
-        8051,
-        0.18
+        4679,
+        0.19
       ],
       [
-        2685,
-        0.18
+        268,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 58,
+      "negative": 54,
+      "trend": [
+        -0.11,
+        -0.71,
+        null,
+        null,
+        0.75,
+        null,
+        0,
+        null,
+        0.44,
+        -0.09,
+        0.14,
+        -0.43,
+        null,
+        null,
+        -0.09,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

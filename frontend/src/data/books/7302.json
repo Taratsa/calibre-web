@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2793,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "masyarakat",
@@ -110,12 +110,20 @@
         36
       ],
       [
+        "masyarakat",
+        48
+      ],
+      [
         "kebebasan",
         31
       ],
       [
-        "masyarakat",
-        48
+        "manusia",
+        36
+      ],
+      [
+        "negara",
+        31
       ],
       [
         "intelektual",
@@ -126,32 +134,24 @@
         11
       ],
       [
-        "doktriner",
-        3
-      ],
-      [
         "liberal",
         8
-      ],
-      [
-        "moralnya",
-        4
-      ],
-      [
-        "ditahbiskan",
-        3
       ],
       [
         "otoritas",
         9
       ],
       [
-        "tirani",
-        5
+        "kolektif",
+        10
       ],
       [
-        "alamiah",
-        6
+        "moralnya",
+        4
+      ],
+      [
+        "doktriner",
+        3
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         2727,
-        0.33
-      ],
-      [
-        4713,
-        0.17
-      ],
-      [
-        2509,
-        0.16
+        0.37
       ],
       [
         4714,
-        0.16
+        0.21
       ],
       [
         302,
-        0.16
+        0.21
       ],
       [
-        3695,
-        0.16
+        4713,
+        0.21
+      ],
+      [
+        8102,
+        0.2
+      ],
+      [
+        6730,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 104,
+      "negative": 50,
+      "trend": [
+        0.4,
+        0.4,
+        0.14,
+        -0.33,
+        0,
+        1,
+        0.6,
+        1,
+        1,
+        0,
+        0.17,
+        0.2,
+        0.38,
+        0.2,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

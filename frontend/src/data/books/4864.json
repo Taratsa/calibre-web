@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4442,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "revolusi",
@@ -107,44 +107,44 @@
         52
       ],
       [
-        "burdjuis",
-        25
-      ],
-      [
         "agustus",
         71
+      ],
+      [
+        "burdjuis",
+        25
       ],
       [
         "klas",
         26
       ],
       [
-        "jalah",
-        19
-      ],
-      [
-        "djuga",
-        23
-      ],
-      [
-        "djika",
-        20
+        "kaum",
+        49
       ],
       [
         "didalam",
         29
       ],
       [
-        "marhaen",
-        12
+        "djuga",
+        23
+      ],
+      [
+        "jalah",
+        19
+      ],
+      [
+        "djika",
+        20
+      ],
+      [
+        "kekuasaan",
+        40
       ],
       [
         "feodalisme",
         17
-      ],
-      [
-        "jaitu",
-        16
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         590,
-        0.26
+        0.3
       ],
       [
         4859,
-        0.26
+        0.3
       ],
       [
         559,
-        0.25
-      ],
-      [
-        427,
-        0.24
+        0.28
       ],
       [
         534,
-        0.24
+        0.28
       ],
       [
-        798,
-        0.24
+        427,
+        0.27
+      ],
+      [
+        703,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 40,
+      "negative": 45,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

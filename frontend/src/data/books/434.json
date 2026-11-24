@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5183,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "islam",
@@ -97,20 +97,28 @@
         30
       ],
       [
-        "madjapahit",
-        27
-      ],
-      [
         "islam",
         82
+      ],
+      [
+        "madjapahit",
+        27
       ],
       [
         "radja",
         33
       ],
       [
+        "bangsa",
+        61
+      ],
+      [
         "djahilijah",
         11
+      ],
+      [
+        "didalam",
+        29
       ],
       [
         "djawa",
@@ -121,20 +129,12 @@
         22
       ],
       [
-        "didalam",
-        29
-      ],
-      [
-        "bangsa",
-        61
-      ],
-      [
         "mendjadi",
         20
       ],
       [
-        "keradjaannja",
-        7
+        "ang",
+        24
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         784,
-        0.19
+        0.21
       ],
       [
         600,
+        0.16
+      ],
+      [
+        4894,
+        0.14
+      ],
+      [
+        4822,
+        0.14
+      ],
+      [
+        449,
         0.14
       ],
       [
         9230,
-        0.13
-      ],
-      [
-        4894,
-        0.12
-      ],
-      [
-        4822,
-        0.12
-      ],
-      [
-        449,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 34,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

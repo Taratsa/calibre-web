@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2672,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "egois",
@@ -111,36 +111,36 @@
         12
       ],
       [
-        "rowan",
-        6
-      ],
-      [
         "komunis",
         19
       ],
       [
-        "altruistik",
-        5
-      ],
-      [
-        "egoisme",
-        8
-      ],
-      [
-        "individualis",
-        8
-      ],
-      [
-        "altruisme",
-        5
+        "rowan",
+        6
       ],
       [
         "individu",
         22
       ],
       [
+        "egoisme",
+        8
+      ],
+      [
+        "altruistik",
+        5
+      ],
+      [
+        "individualis",
+        8
+      ],
+      [
         "komune",
         8
+      ],
+      [
+        "altruisme",
+        5
       ],
       [
         "max",
@@ -184,28 +184,52 @@
     "similar": [
       [
         1999,
-        0.24
+        0.26
       ],
       [
         7349,
-        0.23
+        0.24
       ],
       [
         3697,
         0.22
       ],
       [
-        7381,
-        0.21
+        7073,
+        0.22
       ],
       [
-        7073,
-        0.21
+        7381,
+        0.22
       ],
       [
         3093,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 57,
+      "negative": 35,
+      "trend": [
+        -0.2,
+        0.33,
+        -0.2,
+        null,
+        null,
+        null,
+        -0.33,
+        -0.33,
+        null,
+        0.8,
+        null,
+        0.25,
+        0,
+        0.2,
+        0.64,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

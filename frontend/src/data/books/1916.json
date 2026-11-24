@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2108,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "tanaman",
@@ -107,23 +107,19 @@
         15
       ],
       [
-        "penerj",
-        10
-      ],
-      [
         "tanaman",
         25
       ],
       [
-        "tingtur",
-        4
+        "penerj",
+        10
       ],
       [
         "obat",
         19
       ],
       [
-        "ekstrak",
+        "tingtur",
         4
       ],
       [
@@ -135,15 +131,19 @@
         3
       ],
       [
-        "laurel",
-        3
+        "akar",
+        11
+      ],
+      [
+        "ekstrak",
+        4
       ],
       [
         "pengobatan",
         7
       ],
       [
-        "luddite",
+        "laurel",
         3
       ]
     ],
@@ -184,19 +184,19 @@
     "similar": [
       [
         2217,
-        0.2
+        0.21
       ],
       [
         2710,
-        0.16
+        0.17
       ],
       [
         2280,
-        0.15
+        0.17
       ],
       [
         7189,
-        0.15
+        0.14
       ],
       [
         2232,
@@ -206,6 +206,13 @@
         9221,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 49,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

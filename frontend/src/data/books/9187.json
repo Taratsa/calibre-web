@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3020,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "pengalaman",
@@ -118,40 +118,40 @@
         7
       ],
       [
-        "erotisme",
-        5
-      ],
-      [
-        "pelepasan",
-        8
-      ],
-      [
         "pengalaman",
         30
       ],
       [
-        "melampaui",
-        13
+        "erotisme",
+        5
       ],
       [
         "puncak",
         14
       ],
       [
-        "berlebih",
-        7
+        "melampaui",
+        13
       ],
       [
-        "ekstasi",
-        4
+        "pelepasan",
+        8
+      ],
+      [
+        "hidup",
+        28
+      ],
+      [
+        "kehancuran",
+        9
       ],
       [
         "momen",
         9
       ],
       [
-        "kehancuran",
-        9
+        "berlebih",
+        7
       ]
     ],
     "phrases": [
@@ -190,29 +190,86 @@
     ],
     "similar": [
       [
-        4066,
-        0.14
-      ],
-      [
-        2450,
-        0.14
-      ],
-      [
-        7016,
-        0.13
-      ],
-      [
         2702,
-        0.12
+        0.15
       ],
       [
         6855,
-        0.12
+        0.15
       ],
       [
-        7186,
-        0.11
+        4066,
+        0.15
+      ],
+      [
+        2450,
+        0.15
+      ],
+      [
+        2046,
+        0.14
+      ],
+      [
+        8062,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 53,
+      "negative": 61,
+      "trend": [
+        -0.33,
+        0.11,
+        -0.09,
+        0.67,
+        null,
+        0.25,
+        0.2,
+        null,
+        null,
+        0,
+        -0.5,
+        -0.71,
+        null,
+        null,
+        null,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 28049,
-    "longer_than": 83,
+    "longer_than": 92,
     "top": [
       [
         "perkawinan",
@@ -104,12 +104,12 @@
         599
       ],
       [
-        "rantjangan",
-        169
-      ],
-      [
         "undang",
         374
+      ],
+      [
+        "rantjangan",
+        169
       ],
       [
         "djika",
@@ -120,32 +120,32 @@
         132
       ],
       [
+        "wanita",
+        199
+      ],
+      [
         "adanja",
         105
-      ],
-      [
-        "pertjeraian",
-        49
-      ],
-      [
-        "suami-isteri",
-        55
       ],
       [
         "pasal",
         143
       ],
       [
-        "soemari",
-        30
-      ],
-      [
-        "wanita",
-        199
+        "pertjeraian",
+        49
       ],
       [
         "masjarakat",
         82
+      ],
+      [
+        "suami-isteri",
+        55
+      ],
+      [
+        "mendjadi",
+        87
       ]
     ],
     "phrases": [
@@ -185,15 +185,15 @@
     "similar": [
       [
         9225,
-        0.29
+        0.3
       ],
       [
         1886,
-        0.28
+        0.3
       ],
       [
         6647,
-        0.26
+        0.28
       ],
       [
         6580,
@@ -205,8 +205,57 @@
       ],
       [
         6650,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 294,
+      "negative": 128,
+      "trend": [
+        0.53,
+        -0.41,
+        0.41,
+        0.52,
+        0.82,
+        0.33,
+        0.41,
+        0.2,
+        0.57,
+        0.08,
+        0.22,
+        0.54,
+        0.58,
+        0.33,
+        0.25,
+        0.58
+      ],
+      "emotions": [
+        [
+          "trust",
+          67
+        ],
+        [
+          "joy",
+          43
+        ],
+        [
+          "sadness",
+          26
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2020,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "alam",
@@ -110,39 +110,15 @@
         13
       ],
       [
-        "enkidu",
-        4
+        "alam",
+        31
       ],
       [
         "mentalitas",
         9
       ],
       [
-        "alam",
-        31
-      ],
-      [
-        "komunal",
-        6
-      ],
-      [
-        "lingkungan",
-        18
-      ],
-      [
-        "pedesaan",
-        6
-      ],
-      [
-        "krisis",
-        8
-      ],
-      [
-        "kontradiksi",
-        5
-      ],
-      [
-        "ekologis",
+        "enkidu",
         4
       ],
       [
@@ -150,8 +126,32 @@
         24
       ],
       [
-        "sistem",
-        12
+        "lingkungan",
+        18
+      ],
+      [
+        "negara",
+        22
+      ],
+      [
+        "kota",
+        18
+      ],
+      [
+        "gerakan",
+        14
+      ],
+      [
+        "komunal",
+        6
+      ],
+      [
+        "krisis",
+        8
+      ],
+      [
+        "pedesaan",
+        6
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         2633,
-        0.21
+        0.24
       ],
       [
         4882,
-        0.2
+        0.22
       ],
       [
         2632,
-        0.2
-      ],
-      [
-        2629,
-        0.18
-      ],
-      [
-        2631,
-        0.18
+        0.22
       ],
       [
         1820,
-        0.17
+        0.21
+      ],
+      [
+        2629,
+        0.21
+      ],
+      [
+        2631,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 36,
+      "negative": 38,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

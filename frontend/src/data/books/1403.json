@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 7101,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "mira",
@@ -132,28 +132,28 @@
         11
       ],
       [
-        "kawannya",
-        25
+        "biru",
+        38
       ],
       [
-        "tukang-kopi",
-        9
+        "kawannya",
+        25
       ],
       [
         "dagangan",
         27
       ],
       [
-        "kopi-susu",
+        "duduk",
+        48
+      ],
+      [
+        "tukang-kopi",
         9
       ],
       [
-        "biru",
-        38
-      ],
-      [
-        "oranglain",
-        12
+        "mas",
+        35
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         7568,
-        0.61
+        0.62
       ],
       [
         4747,
-        0.61
+        0.62
       ],
       [
         1404,
-        0.15
+        0.18
       ],
       [
         3684,
-        0.13
-      ],
-      [
-        1702,
-        0.13
+        0.17
       ],
       [
         778,
-        0.13
+        0.17
+      ],
+      [
+        1702,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 111,
+      "negative": 58,
+      "trend": [
+        0.14,
+        0.4,
+        0.69,
+        0.17,
+        0.33,
+        0,
+        0,
+        0.33,
+        null,
+        0.09,
+        null,
+        null,
+        0.6,
+        0.41,
+        0.1,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          39
+        ],
+        [
+          "trust",
+          19
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "surprise",
+          4
+        ]
+      ]
+    }
   }
 }

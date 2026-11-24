@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2403,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "anarkisme",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "chomsky",
-        10
-      ],
-      [
         "anarkisme",
         19
+      ],
+      [
+        "chomsky",
+        10
       ],
       [
         "anarkis",
@@ -119,6 +119,10 @@
         8
       ],
       [
+        "masyarakat",
+        16
+      ],
+      [
         "doktrin-doktrin",
         3
       ],
@@ -127,24 +131,20 @@
         4
       ],
       [
-        "detil",
-        3
-      ],
-      [
         "otoritas",
         6
       ],
       [
-        "doktrin",
-        4
+        "pemikiran",
+        7
       ],
       [
         "ide-ide",
         5
       ],
       [
-        "albert",
-        3
+        "doktrin",
+        4
       ]
     ],
     "phrases": [],
@@ -155,24 +155,48 @@
       ],
       [
         7247,
-        0.31
+        0.33
       ],
       [
         6721,
-        0.25
+        0.27
       ],
       [
         4776,
-        0.25
+        0.27
       ],
       [
         7150,
-        0.19
+        0.22
       ],
       [
         3087,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 42,
+      "negative": 34,
+      "trend": [
+        -0.43,
+        null,
+        null,
+        0.67,
+        null,
+        -0.6,
+        null,
+        0.67,
+        0.45,
+        0.2,
+        -0.33,
+        null,
+        null,
+        -0.17,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3143,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "mahasiswa",
@@ -115,36 +115,36 @@
         4
       ],
       [
+        "hidup",
+        24
+      ],
+      [
         "totalitas",
         6
       ],
       [
-        "kedangkalan",
-        4
-      ],
-      [
-        "kapital",
-        8
-      ],
-      [
-        "akut",
-        5
-      ],
-      [
-        "kapitalisme",
-        10
+        "gerakan",
+        16
       ],
       [
         "revolusi",
         12
       ],
       [
-        "hirarkis",
+        "kapitalisme",
+        10
+      ],
+      [
+        "kapital",
+        8
+      ],
+      [
+        "kedangkalan",
         4
       ],
       [
-        "permainan",
-        8
+        "organisasi",
+        13
       ]
     ],
     "phrases": [
@@ -184,20 +184,44 @@
       ],
       [
         1964,
-        0.14
+        0.18
       ],
       [
         7301,
-        0.14
+        0.18
       ],
       [
         1928,
-        0.14
+        0.17
       ],
       [
         2115,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 55,
+      "negative": 47,
+      "trend": [
+        null,
+        -0.11,
+        0.2,
+        0,
+        -0.2,
+        null,
+        null,
+        0.71,
+        0.09,
+        0,
+        -0.25,
+        null,
+        0.67,
+        -0.2,
+        0.14,
+        0.14
+      ],
+      "emotions": []
+    }
   }
 }

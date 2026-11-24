@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2535,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "musik",
@@ -95,28 +95,32 @@
         30
       ],
       [
-        "hadjar",
-        10
-      ],
-      [
         "beliau",
         25
       ],
       [
-        "budaja",
-        7
+        "hadjar",
+        10
       ],
       [
         "kebudajaan",
         11
       ],
       [
-        "kenasionalan",
-        5
+        "budaja",
+        7
       ],
       [
         "pendjadjahan",
         8
+      ],
+      [
+        "kenasionalan",
+        5
+      ],
+      [
+        "belanda",
+        15
       ],
       [
         "komponis",
@@ -127,16 +131,12 @@
         9
       ],
       [
-        "musikologi",
-        3
-      ],
-      [
         "mendjadi",
         9
       ],
       [
-        "belanda",
-        15
+        "seni",
+        13
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         1204,
-        0.2
+        0.22
       ],
       [
         4838,
-        0.18
+        0.19
       ],
       [
         1069,
-        0.18
-      ],
-      [
-        1168,
-        0.18
+        0.19
       ],
       [
         1291,
-        0.16
+        0.19
+      ],
+      [
+        1168,
+        0.19
       ],
       [
         742,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 40,
+      "negative": 13,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

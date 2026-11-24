@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2001,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "seni",
@@ -106,10 +106,6 @@
     ],
     "distinct": [
       [
-        "interferensi",
-        13
-      ],
-      [
         "ganzheit",
         8
       ],
@@ -122,36 +118,40 @@
         17
       ],
       [
-        "kritisi",
-        9
+        "interferensi",
+        13
       ],
       [
         "seni",
         30
       ],
       [
-        "dinamis",
-        13
+        "kritisi",
+        9
       ],
       [
         "lagu",
         18
       ],
       [
-        "priori",
-        6
+        "dinamis",
+        13
+      ],
+      [
+        "karya",
+        23
       ],
       [
         "elemen",
         14
       ],
       [
-        "sol",
-        6
+        "kritik",
+        16
       ],
       [
-        "menghayati",
-        7
+        "metode",
+        16
       ]
     ],
     "phrases": [
@@ -188,6 +188,32 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        4373,
+        0.13
+      ],
+      [
+        18593,
+        0.12
+      ],
+      [
+        17643,
+        0.12
+      ],
+      [
+        9918,
+        0.11
+      ],
+      [
+        4478,
+        0.11
+      ],
+      [
+        4195,
+        0.11
+      ]
+    ],
+    "sentiment": null
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1001,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "logika",
@@ -114,24 +114,16 @@
         6
       ],
       [
+        "logika",
+        16
+      ],
+      [
         "surealis",
         7
       ],
       [
         "rasionalitas",
         9
-      ],
-      [
-        "logika",
-        16
-      ],
-      [
-        "asturias",
-        3
-      ],
-      [
-        "voodoo",
-        3
       ],
       [
         "imajinasi",
@@ -146,12 +138,20 @@
         7
       ],
       [
+        "asturias",
+        3
+      ],
+      [
+        "voodoo",
+        3
+      ],
+      [
         "irasional",
         4
       ],
       [
-        "fisikal",
-        3
+        "insureksi",
+        4
       ]
     ],
     "phrases": [
@@ -171,18 +171,18 @@
     "similar": [
       [
         2741,
-        0.22
-      ],
-      [
-        7009,
-        0.17
+        0.21
       ],
       [
         9211,
-        0.16
+        0.17
       ],
       [
         3058,
+        0.14
+      ],
+      [
+        7993,
         0.14
       ],
       [
@@ -190,9 +190,10 @@
         0.14
       ],
       [
-        7993,
-        0.14
+        7901,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

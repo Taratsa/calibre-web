@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1301,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "masyarakat",
@@ -107,12 +107,20 @@
         45
       ],
       [
+        "hak",
+        25
+      ],
+      [
         "adat",
         16
       ],
       [
         "objek-objek",
         4
+      ],
+      [
+        "pengakuan",
+        8
       ],
       [
         "konvenan",
@@ -123,28 +131,20 @@
         4
       ],
       [
-        "prior",
-        4
-      ],
-      [
         "informed",
         4
-      ],
-      [
-        "hak",
-        25
       ],
       [
         "perundingan",
         5
       ],
       [
-        "genetik",
-        3
+        "prior",
+        4
       ],
       [
-        "pengakuan",
-        8
+        "persetujuan",
+        6
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         8813,
-        0.18
-      ],
-      [
-        8187,
-        0.15
+        0.2
       ],
       [
         8803,
-        0.14
+        0.17
       ],
       [
         8295,
-        0.14
+        0.17
       ],
       [
         8657,
-        0.13
+        0.16
       ],
       [
-        8258,
-        0.12
+        8515,
+        0.15
+      ],
+      [
+        6944,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

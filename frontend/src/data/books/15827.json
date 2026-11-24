@@ -1,0 +1,217 @@
+{
+  "id": 15827,
+  "title": "Compile Kernel: di Ubuntu 24.04",
+  "slug": "compile-kernel-di-ubuntu-24-04-onno-widodo-purbo",
+  "slugBase": "compile-kernel-di-ubuntu-24-04-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2024-06-05",
+  "timestamp": "2026-11-24 01:04:16.902476",
+  "last_modified": "2026-11-24 01:04:16.902481",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:fd882a60-189f-5037-b5ab-412864251d52"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/15827?v=1795457056",
+  "cover_og_url": "/cover/15827/og?v=1795457056",
+  "url": "/book/compile-kernel-di-ubuntu-24-04-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Source code kernel (inti) sistem operasi Linux dapat di ambil secara bebas dari situs http://www.kernel.org . Proses / langkah membuat sistem operasi Linux dengan cara meng- compile kernel dapat di lakukan di sistem operasi linux yang kita operasikan dan menjalankan perintah-perintah berikut. Siapkan kernel package apt update apt -y install libncurses-dev fakeroot wget bzip2 \\ kernel-wedge",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5666,
+      "name": "Compile Kernel_ di Ubuntu 24.04 - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 989,
+    "longer_than": 51,
+    "top": [
+      [
+        "kernel",
+        45
+      ],
+      [
+        "linux",
+        34
+      ],
+      [
+        "custom",
+        24
+      ],
+      [
+        "compile",
+        15
+      ],
+      [
+        "src",
+        15
+      ],
+      [
+        "usr",
+        15
+      ],
+      [
+        "boot",
+        12
+      ],
+      [
+        "initrd",
+        10
+      ],
+      [
+        "ubuntu",
+        10
+      ],
+      [
+        "config",
+        9
+      ],
+      [
+        "grub",
+        9
+      ],
+      [
+        "install",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "kernel",
+        45
+      ],
+      [
+        "custom",
+        24
+      ],
+      [
+        "linux",
+        34
+      ],
+      [
+        "initrd",
+        10
+      ],
+      [
+        "compile",
+        15
+      ],
+      [
+        "src",
+        15
+      ],
+      [
+        "grub",
+        9
+      ],
+      [
+        "boot",
+        12
+      ],
+      [
+        "usr",
+        15
+      ],
+      [
+        "uuid",
+        6
+      ],
+      [
+        "fakeroot",
+        5
+      ],
+      [
+        "config",
+        9
+      ]
+    ],
+    "phrases": [
+      [
+        "usr src linux",
+        11
+      ],
+      [
+        "compile kernel",
+        10
+      ],
+      [
+        "konfigurasi kernel",
+        7
+      ],
+      [
+        "vmlinuz custom root",
+        4
+      ],
+      [
+        "sistem operasi",
+        6
+      ],
+      [
+        "initrd img custom",
+        4
+      ],
+      [
+        "initrd boot initrd",
+        4
+      ],
+      [
+        "custom root uuid",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        18447,
+        0.63
+      ],
+      [
+        16750,
+        0.39
+      ],
+      [
+        17238,
+        0.34
+      ],
+      [
+        16752,
+        0.33
+      ],
+      [
+        9675,
+        0.33
+      ],
+      [
+        10149,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
+}

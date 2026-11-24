@@ -1,0 +1,52 @@
+{
+  "id": 20205,
+  "title": "Openldap: Compile",
+  "slug": "openldap-compile-onno-widodo-purbo",
+  "slugBase": "openldap-compile-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-06",
+  "timestamp": "2026-11-24 06:29:23.677624",
+  "last_modified": "2026-11-24 06:29:23.677627",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6098b718-26e1-51a9-bfdf-872b30090ef4"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20205?v=1795476563",
+  "cover_og_url": "/cover/20205/og?v=1795476563",
+  "url": "/book/openldap-compile-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Downoad source code dari http://www.openldap.org/software/download/ Contents 1 Compile 2 Edit konfigurasi 3 Running 4 Testing 5 Masukan data 6 Cari 7 Referensi 8 Pranala Menarik Compile Siapkan aplikasi pendukung untuk compile sudo apt-get install kernel-package libncurses5-dev fakeroot wget \\ bzip2 g++ libssl-dev libxml2-dev doxygen Lakukan .. cp openldap-stable-20100719.tgz /usr/local/src/ cd",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2941,
+      "name": "Openldap_ Compile - Onno Widodo Purbo"
+    }
+  ]
+}

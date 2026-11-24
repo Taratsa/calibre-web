@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 957,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "kesusasteraan",
@@ -116,24 +116,32 @@
         7
       ],
       [
-        "probleem",
-        5
-      ],
-      [
         "pengarang",
         12
+      ],
+      [
+        "probleem",
+        5
       ],
       [
         "by-sa",
         5
       ],
       [
+        "kejadian",
+        13
+      ],
+      [
         "masasilam",
         4
       ],
       [
-        "kejadian",
-        13
+        "tulisan",
+        10
+      ],
+      [
+        "buku-buku",
+        6
       ],
       [
         "e-book",
@@ -144,16 +152,8 @@
         3
       ],
       [
-        "buku-buku",
-        6
-      ],
-      [
         "redaktur",
         3
-      ],
-      [
-        "tulisan",
-        10
       ]
     ],
     "phrases": [
@@ -177,7 +177,7 @@
     "similar": [
       [
         3996,
-        0.27
+        0.29
       ],
       [
         4016,
@@ -185,20 +185,21 @@
       ],
       [
         4017,
-        0.23
-      ],
-      [
-        6749,
-        0.23
+        0.25
       ],
       [
         6747,
-        0.23
+        0.24
       ],
       [
         6754,
-        0.23
+        0.24
+      ],
+      [
+        6749,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

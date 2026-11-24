@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 23175,
-    "longer_than": 79,
+    "longer_than": 90,
     "top": [
       [
         "indonesia",
@@ -103,52 +103,52 @@
     ],
     "distinct": [
       [
-        "sedyawati",
-        37
+        "kebudayaan",
+        145
       ],
       [
         "seminar",
         80
       ],
       [
+        "sedyawati",
+        37
+      ],
+      [
         "exhibition",
         36
-      ],
-      [
-        "kebudayaan",
-        145
-      ],
-      [
-        "edi",
-        36
-      ],
-      [
-        "culture",
-        48
-      ],
-      [
-        "art",
-        50
-      ],
-      [
-        "cultural",
-        43
       ],
       [
         "seni",
         84
       ],
       [
-        "museum",
-        39
+        "budaya",
+        98
       ],
       [
-        "tari",
-        38
+        "culture",
+        48
       ],
       [
-        "borobudur",
-        24
+        "indonesia",
+        161
+      ],
+      [
+        "art",
+        50
+      ],
+      [
+        "edi",
+        36
+      ],
+      [
+        "cultural",
+        43
+      ],
+      [
+        "sambutan",
+        48
       ]
     ],
     "phrases": [
@@ -188,28 +188,77 @@
     "similar": [
       [
         6324,
-        0.17
-      ],
-      [
-        1511,
-        0.15
+        0.24
       ],
       [
         4534,
-        0.14
-      ],
-      [
-        4119,
-        0.13
+        0.17
       ],
       [
         1749,
-        0.13
+        0.17
       ],
       [
-        4441,
-        0.12
+        851,
+        0.16
+      ],
+      [
+        1035,
+        0.16
+      ],
+      [
+        1511,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.77,
+      "positive": 295,
+      "negative": 38,
+      "trend": [
+        0.87,
+        0.81,
+        0.58,
+        0.53,
+        0.45,
+        0.79,
+        0.77,
+        1,
+        0.76,
+        1,
+        0.33,
+        0.93,
+        1,
+        0.75,
+        1,
+        0.94
+      ],
+      "emotions": [
+        [
+          "joy",
+          24
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

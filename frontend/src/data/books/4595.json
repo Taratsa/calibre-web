@@ -11,7 +11,7 @@
   ],
   "author_sort": "Indonesia, Partai Komunis",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Pendidikan"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6071,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "partai",
@@ -132,28 +132,28 @@
         12
       ],
       [
-        "masaalah-masaalah",
-        10
-      ],
-      [
         "soal-soal",
         24
       ],
       [
-        "organisasi-basis",
-        8
+        "masaalah-masaalah",
+        10
+      ],
+      [
+        "pekerjaan",
+        51
+      ],
+      [
+        "anggota",
+        52
+      ],
+      [
+        "organisasi",
+        48
       ],
       [
         "bertanggung-jawab",
         13
-      ],
-      [
-        "penglaksanaan",
-        10
-      ],
-      [
-        "bolsewik",
-        8
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         1581,
-        0.31
+        0.32
       ],
       [
         9279,
-        0.25
+        0.27
       ],
       [
         9280,
-        0.24
-      ],
-      [
-        6742,
-        0.19
+        0.26
       ],
       [
         4006,
-        0.18
+        0.22
       ],
       [
         9267,
-        0.18
+        0.21
+      ],
+      [
+        9273,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 102,
+      "negative": 36,
+      "trend": [
+        -0.33,
+        0.09,
+        null,
+        1,
+        0.78,
+        0.6,
+        1,
+        0.75,
+        null,
+        0.6,
+        0,
+        1,
+        0.71,
+        0.33,
+        0.38,
+        0.8
+      ],
+      "emotions": []
+    }
   }
 }

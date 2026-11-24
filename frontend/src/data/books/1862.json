@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 12093,
-    "longer_than": 65,
+    "longer_than": 83,
     "top": [
       [
         "kematian",
@@ -93,48 +93,48 @@
         39
       ],
       [
-        "renzo",
-        19
-      ],
-      [
         "kematian",
         59
+      ],
+      [
+        "renzo",
+        19
       ],
       [
         "borjuis",
         23
       ],
       [
-        "proletarian",
-        12
+        "sang",
+        41
       ],
       [
         "spiritual",
         22
       ],
       [
-        "heroik",
-        15
+        "darah",
+        33
       ],
       [
-        "sosialisme",
-        21
+        "proletarian",
+        12
       ],
       [
         "duka",
         22
       ],
       [
+        "sosialisme",
+        21
+      ],
+      [
         "anarkis",
         24
       ],
       [
-        "senjakala",
-        8
-      ],
-      [
-        "bintang-bintang",
-        12
+        "heroik",
+        15
       ]
     ],
     "phrases": [
@@ -178,11 +178,11 @@
       ],
       [
         2109,
-        0.51
+        0.53
       ],
       [
         7367,
-        0.47
+        0.5
       ],
       [
         8133,
@@ -190,12 +190,69 @@
       ],
       [
         8114,
-        0.29
+        0.32
       ],
       [
         2525,
-        0.28
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 299,
+      "negative": 375,
+      "trend": [
+        0.11,
+        0,
+        -0.03,
+        0.31,
+        0.02,
+        -0.05,
+        0,
+        -0.33,
+        -0.17,
+        -0.27,
+        -0.53,
+        0.08,
+        -0.18,
+        -0.24,
+        0.02,
+        -0.06
+      ],
+      "emotions": [
+        [
+          "sadness",
+          124
+        ],
+        [
+          "anger",
+          79
+        ],
+        [
+          "joy",
+          62
+        ],
+        [
+          "fear",
+          21
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "disgust",
+          12
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "surprise",
+          6
+        ]
+      ]
+    }
   }
 }

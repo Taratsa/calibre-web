@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 7352,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "revolusi",
@@ -106,20 +106,24 @@
     ],
     "distinct": [
       [
+        "revolusi",
+        119
+      ],
+      [
         "sardjana",
         40
       ],
       [
-        "revolusi",
-        119
+        "ilmu",
+        80
       ],
       [
         "manipol",
         29
       ],
       [
-        "jagus",
-        14
+        "universitas",
+        64
       ],
       [
         "djika",
@@ -134,24 +138,20 @@
         35
       ],
       [
-        "universitas",
-        64
+        "jagus",
+        14
       ],
       [
         "hanja",
         32
       ],
       [
-        "ilmu",
-        80
+        "djuga",
+        29
       ],
       [
         "jalah",
         24
-      ],
-      [
-        "di-universitas",
-        9
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         2846,
-        0.52
+        0.55
       ],
       [
         6765,
-        0.39
+        0.43
       ],
       [
-        4902,
-        0.32
+        6692,
+        0.36
       ],
       [
-        4828,
-        0.32
+        422,
+        0.36
       ],
       [
         4794,
-        0.32
+        0.35
       ],
       [
         466,
-        0.32
+        0.35
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8469,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "huruf",
@@ -107,6 +107,10 @@
         138
       ],
       [
+        "dipakai",
+        81
+      ],
+      [
         "konsonan",
         28
       ],
@@ -115,36 +119,32 @@
         34
       ],
       [
-        "dipakai",
-        81
-      ],
-      [
         "koma",
         23
-      ],
-      [
-        "hubung",
-        18
       ],
       [
         "kapital",
         35
       ],
       [
-        "bilangan",
-        19
+        "hubung",
+        18
       ],
       [
         "kalimat",
         39
       ],
       [
-        "lafalnya",
-        8
+        "bahasa",
+        70
       ],
       [
         "gabungan",
         29
+      ],
+      [
+        "bilangan",
+        19
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
+        4956,
+        0.34
+      ],
+      [
         6234,
         0.33
       ],
       [
-        4956,
-        0.33
-      ],
-      [
         4975,
-        0.27
+        0.28
       ],
       [
         5051,
-        0.15
+        0.17
       ],
       [
-        792,
-        0.14
+        5704,
+        0.16
       ],
       [
         5793,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 62,
+      "negative": 23,
+      "trend": [
+        1,
+        0.5,
+        null,
+        0.67,
+        0.43,
+        1,
+        -0.2,
+        0.14,
+        0.14,
+        null,
+        null,
+        null,
+        0.6,
+        0.2,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

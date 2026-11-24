@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 6956,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "indonesia",
@@ -93,20 +93,20 @@
         87
       ],
       [
-        "pantja",
-        50
-      ],
-      [
         "sila",
         70
       ],
       [
-        "bersendjata",
-        46
+        "pantja",
+        50
       ],
       [
         "pertahanan",
         81
+      ],
+      [
+        "bersendjata",
+        46
       ],
       [
         "angkatan",
@@ -117,24 +117,24 @@
         91
       ],
       [
-        "djuga",
-        38
+        "nasional",
+        109
       ],
       [
-        "manipol",
-        25
+        "djuga",
+        38
       ],
       [
         "jaitu",
         33
       ],
       [
-        "nasional",
-        109
+        "kaum",
+        72
       ],
       [
-        "pemersatu",
-        18
+        "manipol",
+        25
       ]
     ],
     "phrases": [
@@ -174,28 +174,73 @@
     "similar": [
       [
         9299,
-        0.61
+        0.63
       ],
       [
         417,
-        0.39
+        0.42
       ],
       [
         413,
-        0.38
+        0.41
       ],
       [
         412,
-        0.38
+        0.41
       ],
       [
         4794,
-        0.36
+        0.39
       ],
       [
         466,
-        0.36
+        0.39
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 101,
+      "negative": 37,
+      "trend": [
+        0.4,
+        1,
+        0.08,
+        0.68,
+        null,
+        null,
+        null,
+        1,
+        -0.33,
+        0.25,
+        0.43,
+        null,
+        0.54,
+        -0.2,
+        0.56,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

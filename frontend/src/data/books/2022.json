@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 10050,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "api",
@@ -115,36 +115,36 @@
         47
       ],
       [
-        "komuniti",
-        51
-      ],
-      [
         "kerana",
         56
       ],
       [
-        "aktiviti",
-        32
+        "komuniti",
+        51
       ],
       [
         "penentangan",
         61
       ],
       [
-        "autoriti",
-        16
+        "aktiviti",
+        32
       ],
       [
         "api",
         138
       ],
       [
-        "keakuran",
-        18
+        "rumah",
+        138
       ],
       [
-        "malaysia",
-        47
+        "autoriti",
+        16
+      ],
+      [
+        "budaya",
+        93
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         2511,
-        0.28
+        0.29
       ],
       [
         2301,
@@ -203,9 +203,62 @@
         0.12
       ],
       [
-        3009,
-        0.11
+        3959,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 81,
+      "negative": 49,
+      "trend": [
+        null,
+        -0.14,
+        1,
+        0.09,
+        0,
+        null,
+        0.33,
+        -0.27,
+        0.44,
+        0.45,
+        0.43,
+        0.4,
+        0.27,
+        0,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          19
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

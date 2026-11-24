@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2710,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "stirner",
@@ -127,32 +127,32 @@
         13
       ],
       [
-        "feuerbach",
-        9
-      ],
-      [
         "tatanan",
         20
       ],
       [
-        "max",
-        12
+        "feuerbach",
+        9
       ],
       [
         "egoisme",
         9
       ],
       [
+        "max",
+        12
+      ],
+      [
         "generalitas",
         5
       ],
       [
-        "ridder",
-        5
+        "manusia",
+        30
       ],
       [
-        "momen",
-        11
+        "krisis",
+        14
       ]
     ],
     "phrases": [
@@ -192,28 +192,35 @@
     "similar": [
       [
         4093,
-        0.46
+        0.47
       ],
       [
         9219,
-        0.34
+        0.36
       ],
       [
         4687,
-        0.33
-      ],
-      [
-        9185,
-        0.27
+        0.34
       ],
       [
         2143,
-        0.27
+        0.29
+      ],
+      [
+        1938,
+        0.28
       ],
       [
         2095,
-        0.26
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 40,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

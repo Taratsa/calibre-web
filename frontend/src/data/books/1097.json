@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3029,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "george",
@@ -95,16 +95,12 @@
         10
       ],
       [
-        "dardanella",
-        9
-      ],
-      [
         "madjalah",
         17
       ],
       [
-        "martha",
-        13
+        "dardanella",
+        9
       ],
       [
         "sandiwara",
@@ -115,6 +111,10 @@
         21
       ],
       [
+        "martha",
+        13
+      ],
+      [
         "brooke",
         7
       ],
@@ -123,20 +123,20 @@
         15
       ],
       [
-        "clay",
-        7
+        "film",
+        18
       ],
       [
         "asmara",
         12
       ],
       [
-        "tjerita",
-        10
+        "banjak",
+        13
       ],
       [
-        "film",
-        18
+        "clay",
+        7
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         1087,
+        0.18
+      ],
+      [
+        1168,
         0.17
       ],
       [
         1163,
-        0.15
+        0.16
       ],
       [
         1211,
         0.15
       ],
       [
-        1168,
+        1076,
         0.14
       ],
       [
-        1076,
-        0.13
-      ],
-      [
-        1364,
-        0.13
+        3416,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 32,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

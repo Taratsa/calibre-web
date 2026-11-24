@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 695,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "tindakan",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "revolusioner",
-        6
-      ],
-      [
         "tindakan",
         11
+      ],
+      [
+        "revolusioner",
+        6
       ],
       [
         "menyita",
@@ -115,15 +115,15 @@
         3
       ],
       [
-        "operasi",
-        3
-      ],
-      [
         "pertahanan",
         3
       ],
       [
         "dana",
+        3
+      ],
+      [
+        "operasi",
         3
       ],
       [
@@ -139,28 +139,41 @@
         3
       ],
       [
-        "uang",
-        3
+        "orang",
+        6
       ],
       [
-        "memiliki",
+        "uang",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        12301,
+        0.25
+      ],
+      [
+        15656,
+        0.15
+      ],
+      [
         1056,
+        0.12
+      ],
+      [
+        2719,
+        0.12
+      ],
+      [
+        9182,
         0.11
       ],
       [
-        8310,
-        0.11
-      ],
-      [
-        991,
+        4694,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

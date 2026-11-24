@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2365,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "engkau",
@@ -100,6 +100,10 @@
     ],
     "distinct": [
       [
+        "engkau",
+        17
+      ],
+      [
         "kelihatannja",
         8
       ],
@@ -108,16 +112,12 @@
         6
       ],
       [
-        "engkau",
-        17
+        "pertjaja",
+        9
       ],
       [
         "matanja",
         8
-      ],
-      [
-        "pertjaja",
-        9
       ],
       [
         "djuga",
@@ -132,20 +132,20 @@
         3
       ],
       [
-        "dibibirnja",
-        3
+        "katanja",
+        6
       ],
       [
         "bibirnja",
         4
       ],
       [
-        "katanja",
-        6
+        "dibibirnja",
+        3
       ],
       [
-        "mengedjek",
-        4
+        "hanja",
+        7
       ]
     ],
     "phrases": [
@@ -164,29 +164,36 @@
     ],
     "similar": [
       [
-        1186,
-        0.17
-      ],
-      [
         6895,
-        0.16
+        0.18
       ],
       [
         7787,
-        0.16
+        0.18
+      ],
+      [
+        1186,
+        0.18
       ],
       [
         7584,
-        0.15
+        0.17
       ],
       [
         6886,
-        0.15
+        0.17
       ],
       [
-        4911,
-        0.15
+        1449,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 41,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3054,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "hidup",
@@ -99,32 +99,32 @@
     ],
     "distinct": [
       [
-        "taz",
-        5
-      ],
-      [
         "nihilisme",
         8
+      ],
+      [
+        "taz",
+        5
       ],
       [
         "nietzsche",
         7
       ],
       [
-        "psikedelik",
-        3
-      ],
-      [
-        "lamborn",
-        3
-      ],
-      [
         "anarkis",
         10
       ],
       [
+        "psikedelik",
+        3
+      ],
+      [
         "pelarian",
         6
+      ],
+      [
+        "lamborn",
+        3
       ],
       [
         "kupikir",
@@ -135,44 +135,101 @@
         4
       ],
       [
+        "hidup",
+        15
+      ],
+      [
         "skenario",
         4
       ],
       [
-        "wilson",
-        3
-      ],
-      [
-        "berasumsi",
-        3
+        "kekecewaan",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2336,
-        0.28
-      ],
-      [
-        7228,
-        0.15
-      ],
-      [
-        8106,
-        0.15
+        0.26
       ],
       [
         2813,
-        0.15
+        0.19
       ],
       [
-        7404,
-        0.14
+        8106,
+        0.19
       ],
       [
-        2419,
-        0.13
+        26,
+        0.17
+      ],
+      [
+        7228,
+        0.17
+      ],
+      [
+        7187,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 71,
+      "negative": 61,
+      "trend": [
+        -0.11,
+        0.5,
+        0,
+        0,
+        -1,
+        0.4,
+        0.14,
+        0.17,
+        0.71,
+        -0.5,
+        null,
+        0.14,
+        -0.6,
+        0.67,
+        0.67,
+        0.09
+      ],
+      "emotions": [
+        [
+          "sadness",
+          17
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

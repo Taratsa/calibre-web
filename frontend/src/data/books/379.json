@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1981,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "tuan-tuan",
@@ -97,20 +97,24 @@
         12
       ],
       [
-        "semaoenkehasilan",
-        6
+        "belanda",
+        32
       ],
       [
         "saudara-saudara",
         18
       ],
       [
-        "kehasilan",
-        7
+        "semaoenkehasilan",
+        6
       ],
       [
-        "belanda",
-        32
+        "rakyat",
+        33
+      ],
+      [
+        "kehasilan",
+        7
       ],
       [
         "semaoen",
@@ -121,20 +125,16 @@
         8
       ],
       [
+        "negeri",
+        31
+      ],
+      [
         "priyayi",
         8
       ],
       [
         "ingatlah",
         11
-      ],
-      [
-        "marxists",
-        6
-      ],
-      [
-        "indones",
-        6
       ]
     ],
     "phrases": [
@@ -171,6 +171,24 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        4876,
+        0.11
+      ],
+      [
+        437,
+        0.11
+      ],
+      [
+        294,
+        0.11
+      ],
+      [
+        1302,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

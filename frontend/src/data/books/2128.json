@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1976,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "komoditas",
@@ -111,15 +111,11 @@
         8
       ],
       [
-        "nilai-tukar",
-        5
-      ],
-      [
         "ekonomi",
         30
       ],
       [
-        "kelimpahan",
+        "nilai-tukar",
         5
       ],
       [
@@ -127,24 +123,28 @@
         13
       ],
       [
-        "reifikasi",
-        3
+        "kelimpahan",
+        5
       ],
       [
         "produksi",
         12
       ],
       [
+        "kerja",
+        17
+      ],
+      [
+        "reifikasi",
+        3
+      ],
+      [
+        "masyarakat",
+        14
+      ],
+      [
         "semu",
         5
-      ],
-      [
-        "kuantitatif",
-        4
-      ],
-      [
-        "diperbesar",
-        3
       ]
     ],
     "phrases": [
@@ -188,24 +188,31 @@
       ],
       [
         2701,
-        0.35
+        0.37
       ],
       [
         2759,
-        0.26
+        0.28
       ],
       [
         7893,
-        0.16
+        0.19
       ],
       [
         2221,
-        0.16
+        0.19
       ],
       [
         1936,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 36,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

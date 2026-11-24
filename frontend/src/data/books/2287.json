@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5140,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "sosial",
@@ -111,11 +111,11 @@
         10
       ],
       [
-        "resiprokal",
-        8
+        "negara-negara",
+        23
       ],
       [
-        "distingsi",
+        "resiprokal",
         8
       ],
       [
@@ -123,28 +123,28 @@
         11
       ],
       [
-        "negara-negara",
-        23
+        "distingsi",
+        8
       ],
       [
         "anti-otoritarian",
         9
       ],
       [
-        "promotor",
-        7
+        "perang",
+        25
       ],
       [
-        "fundamentalisme",
-        6
+        "konflik",
+        18
       ],
       [
         "partisipan",
         9
       ],
       [
-        "partikulara",
-        3
+        "perjuangan",
+        20
       ]
     ],
     "phrases": [
@@ -184,28 +184,73 @@
     "similar": [
       [
         2110,
-        0.32
+        0.36
       ],
       [
         2651,
-        0.24
+        0.29
       ],
       [
         1933,
-        0.24
-      ],
-      [
-        2241,
-        0.21
+        0.27
       ],
       [
         2099,
-        0.21
+        0.25
       ],
       [
         2485,
-        0.2
+        0.25
+      ],
+      [
+        2241,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.12,
+      "positive": 78,
+      "negative": 100,
+      "trend": [
+        -0.4,
+        -0.65,
+        -0.29,
+        0,
+        -0.4,
+        0.33,
+        -0.45,
+        0.67,
+        -0.41,
+        -0.5,
+        0.23,
+        0.33,
+        1,
+        0.64,
+        null,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          48
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

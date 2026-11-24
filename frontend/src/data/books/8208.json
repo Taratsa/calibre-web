@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3743,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "ham",
@@ -113,40 +113,40 @@
         24
       ],
       [
-        "reklamasi",
-        9
+        "pelanggaran",
+        22
       ],
       [
         "kontras",
         14
       ],
       [
-        "pelanggaran",
-        22
+        "reklamasi",
+        9
+      ],
+      [
+        "presiden",
+        19
       ],
       [
         "polri",
         11
       ],
       [
+        "hak",
+        31
+      ],
+      [
+        "pemerintah",
+        27
+      ],
+      [
         "terorisme",
         10
       ],
       [
-        "narkotika",
-        7
-      ],
-      [
-        "vaksin",
-        6
-      ],
-      [
-        "akuntabilitas",
-        9
-      ],
-      [
-        "penyiksaan",
-        10
+        "hukum",
+        25
       ]
     ],
     "phrases": [
@@ -185,29 +185,82 @@
     ],
     "similar": [
       [
+        348,
+        0.31
+      ],
+      [
         6906,
-        0.29
+        0.31
       ],
       [
         123,
-        0.29
-      ],
-      [
-        348,
-        0.29
-      ],
-      [
-        291,
-        0.24
+        0.31
       ],
       [
         8515,
-        0.24
+        0.28
       ],
       [
         6944,
-        0.24
+        0.28
+      ],
+      [
+        6957,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.29,
+      "positive": 61,
+      "negative": 111,
+      "trend": [
+        0,
+        0.17,
+        -0.8,
+        -0.5,
+        -0.67,
+        -0.67,
+        null,
+        0.11,
+        -0.2,
+        -0.2,
+        -0.47,
+        0.27,
+        0.11,
+        -0.45,
+        -0.38,
+        -0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          42
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

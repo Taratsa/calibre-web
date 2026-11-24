@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2787,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "tuan",
@@ -108,28 +108,24 @@
         34
       ],
       [
-        "oldenbarnevelt",
-        7
-      ],
-      [
         "djuga",
         22
-      ],
-      [
-        "sudara",
-        10
       ],
       [
         "tuan",
         35
       ],
       [
-        "biangkeringat",
-        3
+        "oldenbarnevelt",
+        7
       ],
       [
-        "port",
-        7
+        "sudara",
+        10
+      ],
+      [
+        "belanda",
+        18
       ],
       [
         "sadja",
@@ -140,12 +136,16 @@
         10
       ],
       [
-        "geladak",
-        5
+        "panas",
+        15
       ],
       [
-        "dikapal",
-        4
+        "biangkeringat",
+        3
+      ],
+      [
+        "punja",
+        7
       ]
     ],
     "phrases": [
@@ -173,28 +173,35 @@
     "similar": [
       [
         6774,
-        0.14
+        0.16
       ],
       [
         7685,
-        0.14
+        0.16
       ],
       [
         6889,
-        0.14
+        0.16
       ],
       [
         7598,
-        0.13
+        0.15
       ],
       [
         3969,
-        0.12
+        0.14
       ],
       [
         7821,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 29,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3209,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "agama",
@@ -110,48 +110,48 @@
         35
       ],
       [
-        "pemahaman",
-        34
-      ],
-      [
         "agama",
         48
       ],
       [
-        "hegel",
-        9
+        "pemahaman",
+        34
       ],
       [
         "cinta",
         25
       ],
       [
-        "komedi",
-        7
-      ],
-      [
         "seni",
         23
       ],
       [
-        "jenius",
-        6
+        "hegel",
+        9
       ],
       [
-        "stirner",
+        "manusia",
+        29
+      ],
+      [
+        "komedi",
         7
-      ],
-      [
-        "kesalehan",
-        5
-      ],
-      [
-        "objeknya",
-        5
       ],
       [
         "seniman",
         11
+      ],
+      [
+        "tuhan",
+        17
+      ],
+      [
+        "ideal",
+        12
+      ],
+      [
+        "stirner",
+        7
       ]
     ],
     "phrases": [
@@ -179,28 +179,77 @@
     "similar": [
       [
         1823,
-        0.55
+        0.56
       ],
       [
         8096,
-        0.53
+        0.54
       ],
       [
         8135,
-        0.21
+        0.22
       ],
       [
         1817,
-        0.2
+        0.21
       ],
       [
         2193,
-        0.19
+        0.21
       ],
       [
         1938,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 76,
+      "negative": 46,
+      "trend": [
+        -0.2,
+        0.54,
+        -1,
+        -0.5,
+        null,
+        0.25,
+        0.27,
+        0.47,
+        null,
+        null,
+        null,
+        0.6,
+        0.23,
+        0.78,
+        0.43,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          31
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

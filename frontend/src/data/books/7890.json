@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 46147,
-    "longer_than": 92,
+    "longer_than": 96,
     "top": [
       [
         "lingkungan",
@@ -105,12 +105,12 @@
     ],
     "distinct": [
       [
-        "hlm",
-        136
-      ],
-      [
         "lingkungan",
         298
+      ],
+      [
+        "hlm",
+        136
       ],
       [
         "kapitalisme",
@@ -121,36 +121,36 @@
         103
       ],
       [
-        "laba",
-        74
-      ],
-      [
-        "emisi",
-        51
+        "sistem",
+        226
       ],
       [
         "perekonomian",
         100
       ],
       [
-        "planet",
-        70
+        "laba",
+        74
       ],
       [
-        "sistem",
-        226
+        "pertumbuhan",
+        110
+      ],
+      [
+        "york",
+        102
       ],
       [
         "persen",
         92
       ],
       [
-        "monthly",
-        48
+        "planet",
+        70
       ],
       [
-        "pertumbuhan",
-        110
+        "emisi",
+        51
       ]
     ],
     "phrases": [
@@ -190,28 +190,85 @@
     "similar": [
       [
         7886,
-        0.33
+        0.37
       ],
       [
         1958,
-        0.33
+        0.37
       ],
       [
         1820,
-        0.29
+        0.32
       ],
       [
         4882,
-        0.26
+        0.29
       ],
       [
         2632,
-        0.26
+        0.29
       ],
       [
         8623,
-        0.25
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 790,
+      "negative": 581,
+      "trend": [
+        0.15,
+        -0.38,
+        0.13,
+        0.14,
+        0.32,
+        0.23,
+        -0.01,
+        -0.12,
+        0,
+        0.23,
+        0.08,
+        0.36,
+        0.2,
+        0.33,
+        0.24,
+        0.41
+      ],
+      "emotions": [
+        [
+          "fear",
+          61
+        ],
+        [
+          "sadness",
+          57
+        ],
+        [
+          "anger",
+          52
+        ],
+        [
+          "trust",
+          49
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ]
+      ]
+    }
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 13179,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "partai",
@@ -104,44 +104,44 @@
         119
       ],
       [
-        "borjuasi",
-        66
-      ],
-      [
         "revolusi",
         160
       ],
       [
-        "marxis-leninis",
-        51
+        "borjuasi",
+        66
       ],
       [
         "pimpinan",
         130
       ],
       [
-        "revisionisme",
-        32
+        "marxis-leninis",
+        51
       ],
       [
-        "marxisme-leninisme",
-        36
-      ],
-      [
-        "politbiro",
-        29
+        "rakyat",
+        138
       ],
       [
         "buruh",
         93
       ],
       [
+        "kaum",
+        112
+      ],
+      [
+        "revisionisme",
+        32
+      ],
+      [
         "tani",
         68
       ],
       [
-        "kesalahan-kesalahan",
-        32
+        "marxisme-leninisme",
+        36
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         9317,
+        0.48
+      ],
+      [
+        9302,
         0.45
       ],
       [
         703,
-        0.41
-      ],
-      [
-        9302,
-        0.39
+        0.44
       ],
       [
         9301,
-        0.38
+        0.44
       ],
       [
         1325,
-        0.38
+        0.44
       ],
       [
         9270,
-        0.38
+        0.43
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 275,
+      "negative": 197,
+      "trend": [
+        0.26,
+        0.08,
+        0.29,
+        0.54,
+        -0.15,
+        0.43,
+        0,
+        -0.04,
+        0.13,
+        -0.04,
+        0.47,
+        0.23,
+        0.28,
+        0.26,
+        -0.06,
+        0.15
+      ],
+      "emotions": [
+        [
+          "anger",
+          31
+        ],
+        [
+          "trust",
+          27
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

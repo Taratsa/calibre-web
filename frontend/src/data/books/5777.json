@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 3875,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "kakek",
@@ -136,16 +136,16 @@
         58
       ],
       [
-        "mbaso",
-        17
-      ],
-      [
         "vai",
         22
       ],
       [
         "ante",
         26
+      ],
+      [
+        "mbaso",
+        17
       ],
       [
         "kaili",
@@ -201,7 +201,7 @@
       ],
       [
         5649,
-        0.27
+        0.28
       ],
       [
         3690,
@@ -211,6 +211,38 @@
         5643,
         0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.62,
+      "positive": 55,
+      "negative": 13,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          25
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

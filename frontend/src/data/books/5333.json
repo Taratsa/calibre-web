@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 6544,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "pembelajaran",
@@ -113,28 +113,32 @@
         102
       ],
       [
-        "keaksaraan",
-        31
-      ],
-      [
         "peserta",
         102
       ],
       [
-        "pendidik",
-        48
+        "keaksaraan",
+        31
       ],
       [
         "pendidikan",
         127
       ],
       [
-        "belajar",
-        79
+        "pendidik",
+        48
       ],
       [
         "cerita",
         81
+      ],
+      [
+        "belajar",
+        79
+      ],
+      [
+        "rakyat",
+        74
       ],
       [
         "model",
@@ -143,10 +147,6 @@
       [
         "tema",
         33
-      ],
-      [
-        "rakyat",
-        74
       ]
     ],
     "phrases": [
@@ -186,28 +186,52 @@
     "similar": [
       [
         5387,
-        0.57
+        0.58
       ],
       [
         5231,
-        0.38
+        0.4
       ],
       [
         5384,
-        0.36
-      ],
-      [
-        5790,
-        0.33
+        0.38
       ],
       [
         885,
-        0.31
+        0.34
+      ],
+      [
+        5790,
+        0.34
       ],
       [
         890,
-        0.31
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.87,
+      "positive": 142,
+      "negative": 10,
+      "trend": [
+        0.83,
+        0.85,
+        null,
+        0.87,
+        null,
+        1,
+        0.33,
+        0.88,
+        1,
+        1,
+        null,
+        1,
+        0.75,
+        null,
+        0.85,
+        0.8
+      ],
+      "emotions": []
+    }
   }
 }

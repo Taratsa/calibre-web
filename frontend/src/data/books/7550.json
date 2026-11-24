@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 827,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "vigo",
@@ -126,12 +126,12 @@
         6
       ],
       [
-        "surealisme",
-        4
-      ],
-      [
         "adegan",
         7
+      ],
+      [
+        "surealisme",
+        4
       ],
       [
         "institusional",
@@ -146,12 +146,12 @@
         4
       ],
       [
-        "mengekang",
-        4
+        "anarkis",
+        6
       ],
       [
-        "bantal",
-        4
+        "aturan",
+        8
       ]
     ],
     "phrases": [
@@ -187,10 +187,14 @@
     "similar": [
       [
         4692,
-        0.2
+        0.21
       ],
       [
         2438,
+        0.21
+      ],
+      [
+        9810,
         0.2
       ],
       [
@@ -199,12 +203,13 @@
       ],
       [
         4575,
-        0.15
+        0.16
       ],
       [
         3074,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

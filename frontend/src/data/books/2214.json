@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2432,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "orang",
@@ -107,44 +107,44 @@
         6
       ],
       [
-        "nonmanusia",
-        5
-      ],
-      [
         "monster",
         8
       ],
       [
-        "miliar",
-        8
+        "nonmanusia",
+        5
       ],
       [
         "juta",
         14
       ],
       [
-        "tekno-industri",
-        3
+        "miliar",
+        8
       ],
       [
-        "frankenstein",
-        3
+        "orang",
+        26
       ],
       [
         "pembunuh",
         6
       ],
       [
-        "irlandia",
-        4
+        "tekno-industri",
+        3
       ],
       [
         "konstruksi",
         7
       ],
       [
-        "novelnya",
+        "frankenstein",
         3
+      ],
+      [
+        "pertanian",
+        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,73 @@
     "similar": [
       [
         2628,
-        0.15
-      ],
-      [
-        2347,
-        0.15
-      ],
-      [
-        7890,
-        0.15
-      ],
-      [
-        2016,
-        0.15
-      ],
-      [
-        2123,
-        0.14
+        0.16
       ],
       [
         1956,
-        0.14
+        0.16
+      ],
+      [
+        7890,
+        0.16
+      ],
+      [
+        7151,
+        0.16
+      ],
+      [
+        2123,
+        0.16
+      ],
+      [
+        2794,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.19,
+      "positive": 46,
+      "negative": 68,
+      "trend": [
+        -1,
+        0.75,
+        0.5,
+        0.11,
+        null,
+        -0.67,
+        null,
+        0.45,
+        -1,
+        -0.25,
+        -1,
+        -1,
+        null,
+        -1,
+        0.5,
+        0.25
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

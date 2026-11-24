@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1803,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "revolusi",
@@ -95,19 +95,15 @@
         9
       ],
       [
-        "irri",
-        5
+        "revolusi",
+        17
       ],
       [
         "varietas",
         6
       ],
       [
-        "revolusi",
-        17
-      ],
-      [
-        "swasembada",
+        "irri",
         5
       ],
       [
@@ -123,20 +119,24 @@
         12
       ],
       [
-        "lokakarya",
+        "swasembada",
         5
       ],
       [
-        "isyu",
-        3
+        "lokakarya",
+        5
       ],
       [
         "india",
         8
       ],
       [
-        "ipb",
+        "isyu",
         3
+      ],
+      [
+        "asia",
+        8
       ]
     ],
     "phrases": [
@@ -164,28 +164,35 @@
     "similar": [
       [
         8497,
-        0.17
+        0.2
       ],
       [
         8389,
-        0.17
-      ],
-      [
-        8469,
-        0.16
+        0.19
       ],
       [
         8344,
-        0.15
+        0.19
       ],
       [
-        8483,
-        0.14
+        8469,
+        0.18
+      ],
+      [
+        8496,
+        0.18
       ],
       [
         8455,
-        0.14
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 39,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4863,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "anarkis",
@@ -114,12 +114,12 @@
         91
       ],
       [
-        "ksl",
-        23
-      ],
-      [
         "perpustakaan",
         73
+      ],
+      [
+        "ksl",
+        23
       ],
       [
         "koleksi",
@@ -134,24 +134,24 @@
         12
       ],
       [
-        "mempreservasi",
-        8
-      ],
-      [
         "anarkisme",
         24
       ],
       [
-        "pateman",
-        7
+        "mempreservasi",
+        8
+      ],
+      [
+        "komunitas",
+        29
       ],
       [
         "kate",
         12
       ],
       [
-        "pamflet",
-        14
+        "pateman",
+        7
       ]
     ],
     "phrases": [
@@ -191,7 +191,7 @@
     "similar": [
       [
         9166,
-        0.47
+        0.49
       ],
       [
         7489,
@@ -203,16 +203,40 @@
       ],
       [
         7038,
+        0.27
+      ],
+      [
+        2001,
         0.25
       ],
       [
         3788,
-        0.23
-      ],
-      [
-        2001,
-        0.22
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 65,
+      "negative": 32,
+      "trend": [
+        null,
+        0,
+        0.2,
+        0.2,
+        0.64,
+        null,
+        null,
+        0.6,
+        0.6,
+        0.86,
+        0,
+        null,
+        0,
+        null,
+        0.25,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

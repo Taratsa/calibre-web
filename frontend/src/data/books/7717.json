@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1796,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "wanita",
@@ -110,6 +110,10 @@
         36
       ],
       [
+        "wanita",
+        56
+      ],
+      [
         "masjarakat",
         30
       ],
@@ -118,20 +122,16 @@
         11
       ],
       [
-        "wanita",
-        56
-      ],
-      [
-        "tangganja",
-        10
+        "kemanusiaan",
+        26
       ],
       [
         "pekerdja",
         15
       ],
       [
-        "kemanusiaan",
-        26
+        "tangganja",
+        10
       ],
       [
         "kerumah",
@@ -146,12 +146,12 @@
         11
       ],
       [
-        "kemasjarakatan",
-        6
-      ],
-      [
         "sadja",
         11
+      ],
+      [
+        "rumah",
+        26
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         2842,
-        0.17
+        0.19
       ],
       [
         6630,
-        0.17
+        0.18
       ],
       [
         6650,
-        0.15
+        0.17
       ],
       [
         6634,
-        0.15
+        0.16
       ],
       [
-        1142,
-        0.15
+        6637,
+        0.16
       ],
       [
         6629,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

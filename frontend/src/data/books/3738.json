@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2680,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "industri",
@@ -111,40 +111,40 @@
         20
       ],
       [
-        "cuman",
-        6
-      ],
-      [
-        "kontaminasi",
-        5
-      ],
-      [
         "korban",
         20
+      ],
+      [
+        "cuman",
+        6
       ],
       [
         "aja",
         10
       ],
       [
-        "manggung",
+        "kontaminasi",
         5
-      ],
-      [
-        "timor",
-        6
       ],
       [
         "konsep",
         13
       ],
       [
-        "punk",
+        "manggung",
         5
       ],
       [
-        "gimana",
-        5
+        "massa",
+        12
+      ],
+      [
+        "kapitalis",
+        9
+      ],
+      [
+        "negara",
+        18
       ]
     ],
     "phrases": [
@@ -175,29 +175,74 @@
     ],
     "similar": [
       [
+        17041,
+        0.19
+      ],
+      [
         2655,
-        0.17
-      ],
-      [
-        2738,
-        0.16
-      ],
-      [
-        2218,
-        0.16
+        0.18
       ],
       [
         7333,
-        0.16
+        0.17
       ],
       [
         1982,
-        0.16
+        0.17
+      ],
+      [
+        2245,
+        0.17
       ],
       [
         2769,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 42,
+      "negative": 37,
+      "trend": [
+        null,
+        null,
+        0,
+        null,
+        null,
+        0.71,
+        -0.6,
+        null,
+        -0.33,
+        -0.27,
+        0.14,
+        0.6,
+        null,
+        null,
+        0.2,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

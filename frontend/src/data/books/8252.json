@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1228,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "mati",
@@ -89,6 +89,10 @@
     ],
     "distinct": [
       [
+        "hukuman",
+        34
+      ],
+      [
         "abolisionis",
         11
       ],
@@ -97,16 +101,16 @@
         6
       ],
       [
-        "hukuman",
-        34
+        "mati",
+        36
+      ],
+      [
+        "negara",
+        33
       ],
       [
         "aktor",
         12
-      ],
-      [
-        "mati",
-        36
       ],
       [
         "moratorium",
@@ -125,16 +129,12 @@
         4
       ],
       [
-        "negara",
-        33
-      ],
-      [
         "penghapusan",
         7
       ],
       [
-        "terpidana",
-        3
+        "internasional",
+        10
       ]
     ],
     "phrases": [
@@ -174,28 +174,73 @@
     "similar": [
       [
         8251,
-        0.3
+        0.28
       ],
       [
         8786,
-        0.22
+        0.24
       ],
       [
         8807,
-        0.22
+        0.24
       ],
       [
         8819,
-        0.17
+        0.19
       ],
       [
         8785,
-        0.17
+        0.19
       ],
       [
-        9025,
-        0.15
+        349,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.43,
+      "positive": 21,
+      "negative": 53,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -1,
+        null,
+        -1,
+        -0.2,
+        -0.71,
+        -0.67,
+        null,
+        -0.14,
+        0.2,
+        0.14,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          34
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

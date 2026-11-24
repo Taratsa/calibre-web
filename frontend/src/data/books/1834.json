@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2167,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "negara",
@@ -99,36 +99,20 @@
     ],
     "distinct": [
       [
-        "anarkis",
-        23
-      ],
-      [
         "negara",
         80
-      ],
-      [
-        "trotskyis",
-        6
       ],
       [
         "kaum",
         39
       ],
       [
-        "draper",
-        4
+        "anarkis",
+        23
       ],
       [
-        "komune",
-        8
-      ],
-      [
-        "trotsky",
-        5
-      ],
-      [
-        "lenin",
-        8
+        "trotskyis",
+        6
       ],
       [
         "buruh",
@@ -139,12 +123,28 @@
         17
       ],
       [
-        "leninis",
-        5
+        "masyarakat",
+        27
       ],
       [
-        "pro-kapitalis",
-        3
+        "komune",
+        8
+      ],
+      [
+        "draper",
+        4
+      ],
+      [
+        "lenin",
+        8
+      ],
+      [
+        "revolusi",
+        13
+      ],
+      [
+        "trotsky",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7455,
-        0.26
-      ],
-      [
-        2158,
-        0.19
-      ],
-      [
-        4675,
-        0.19
+        0.3
       ],
       [
         1845,
-        0.18
+        0.24
       ],
       [
-        7104,
-        0.18
+        4675,
+        0.24
       ],
       [
         7466,
-        0.18
+        0.23
+      ],
+      [
+        2492,
+        0.23
+      ],
+      [
+        7104,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 32,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

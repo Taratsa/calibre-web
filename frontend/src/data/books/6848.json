@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 808,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "reformasi",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "polri",
-        14
-      ],
-      [
         "reformasi",
         19
+      ],
+      [
+        "polri",
+        14
       ],
       [
         "kekerasan",
@@ -119,11 +119,11 @@
         3
       ],
       [
-        "ylbhi",
-        3
+        "institusi",
+        6
       ],
       [
-        "killing",
+        "ylbhi",
         3
       ],
       [
@@ -131,19 +131,19 @@
         4
       ],
       [
-        "institusi",
-        6
+        "killing",
+        3
       ],
       [
-        "struktural",
-        4
+        "ham",
+        5
       ],
       [
         "mencatat",
         5
       ],
       [
-        "ham",
+        "aparat",
         5
       ]
     ],
@@ -172,28 +172,29 @@
     "similar": [
       [
         291,
-        0.26
+        0.27
       ],
       [
         6901,
-        0.24
-      ],
-      [
-        6919,
-        0.22
+        0.26
       ],
       [
         8208,
-        0.22
+        0.24
       ],
       [
         6935,
-        0.21
+        0.24
       ],
       [
         6951,
-        0.2
+        0.23
+      ],
+      [
+        115,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

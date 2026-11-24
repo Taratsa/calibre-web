@@ -1,0 +1,173 @@
+{
+  "id": 9446,
+  "title": "SQLite: Compile dari source",
+  "slug": "sqlite-compile-dari-source-onno-widodo-purbo",
+  "slugBase": "sqlite-compile-dari-source-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2012-08-03",
+  "timestamp": "2026-11-23 18:21:41.874165",
+  "last_modified": "2026-11-23 18:21:41.874169",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:0dbc41e7-48eb-5a72-ac6f-558e94745778"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/9446?v=1795432901",
+  "cover_og_url": "/cover/9446/og?v=1795432901",
+  "url": "/book/sqlite-compile-dari-source-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Siapkan pendukung sudo apt-get install build-essential Compile SQLite: wget https://sqlite.org/2014/sqlite-autoconf-3080401.tar.gz cp sqlite-autoconf-3080401.tar.gz /usr/local/src cd /usr/local/src tar zxvf sqlite-autoconf-3080401.tar.gz cd /usr/local/src/sqlite-autoconf-3080401 ./configure make sudo make install sudo ldconfig Pastikan ldconfig di jalankan Cek sqlite3 sqlite3 --version Error",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2629,
+      "name": "SQLite_ Compile dari source - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 140,
+    "longer_than": 18,
+    "top": [
+      [
+        "sqlite",
+        19
+      ],
+      [
+        "compile",
+        5
+      ],
+      [
+        "usr",
+        5
+      ],
+      [
+        "local",
+        4
+      ],
+      [
+        "source",
+        4
+      ],
+      [
+        "sqlite-autoconf",
+        4
+      ],
+      [
+        "tar",
+        4
+      ],
+      [
+        "src",
+        3
+      ],
+      [
+        "sudo",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "sqlite",
+        19
+      ],
+      [
+        "compile",
+        5
+      ],
+      [
+        "usr",
+        5
+      ],
+      [
+        "tar",
+        4
+      ],
+      [
+        "src",
+        3
+      ],
+      [
+        "local",
+        4
+      ],
+      [
+        "source",
+        4
+      ],
+      [
+        "sudo",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local src",
+        3
+      ],
+      [
+        "compile dari source",
+        3
+      ],
+      [
+        "sqlite-autoconf tar",
+        3
+      ],
+      [
+        "sqlite compile",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        14366,
+        0.58
+      ],
+      [
+        10415,
+        0.57
+      ],
+      [
+        15419,
+        0.57
+      ],
+      [
+        10146,
+        0.52
+      ],
+      [
+        17790,
+        0.48
+      ],
+      [
+        12179,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
+}

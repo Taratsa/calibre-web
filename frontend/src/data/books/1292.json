@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 16134,
-    "longer_than": 72,
+    "longer_than": 87,
     "top": [
       [
         "pendidikan",
@@ -89,52 +89,52 @@
     ],
     "distinct": [
       [
-        "pengadjaran",
-        61
-      ],
-      [
         "pendidikan",
         388
       ],
       [
-        "masjarakat",
-        56
-      ],
-      [
-        "onderwijzen",
-        18
-      ],
-      [
-        "kebangunan",
-        31
-      ],
-      [
-        "pantjasila-manipol",
-        15
-      ],
-      [
-        "didalam",
-        71
-      ],
-      [
-        "beladjar",
-        41
+        "pengadjaran",
+        61
       ],
       [
         "sekolah",
         137
       ],
       [
+        "masjarakat",
+        56
+      ],
+      [
+        "nasional",
+        133
+      ],
+      [
+        "didalam",
+        71
+      ],
+      [
+        "pasal",
+        68
+      ],
+      [
+        "kebangunan",
+        31
+      ],
+      [
         "mendjadi",
         52
       ],
       [
-        "pantjasila",
-        29
+        "beladjar",
+        41
       ],
       [
-        "kurikulum",
-        42
+        "onderwijzen",
+        18
+      ],
+      [
+        "revolusi",
+        75
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         634,
-        0.29
+        0.31
       ],
       [
         8771,
-        0.26
+        0.29
       ],
       [
         742,
-        0.2
-      ],
-      [
-        1291,
-        0.18
+        0.23
       ],
       [
         735,
-        0.18
+        0.21
+      ],
+      [
+        1291,
+        0.21
       ],
       [
         7603,
-        0.18
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.76,
+      "positive": 262,
+      "negative": 36,
+      "trend": [
+        0.91,
+        0.82,
+        0.65,
+        1,
+        0.87,
+        0.68,
+        0.5,
+        -0.23,
+        0.67,
+        0.56,
+        0.81,
+        0.93,
+        0.76,
+        0.85,
+        0.88,
+        0.65
+      ],
+      "emotions": [
+        [
+          "trust",
+          23
+        ],
+        [
+          "anticipation",
+          19
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

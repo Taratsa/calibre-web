@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 2937,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "politik",
@@ -101,6 +101,14 @@
         49
       ],
       [
+        "politik",
+        58
+      ],
+      [
+        "demokrasi",
+        27
+      ],
+      [
         "gronbeck",
         6
       ],
@@ -113,36 +121,28 @@
         9
       ],
       [
-        "politik",
-        58
-      ],
-      [
-        "demokrasi",
-        27
+        "warganegara",
+        10
       ],
       [
         "characterological",
         4
       ],
       [
-        "warganegara",
-        10
+        "kampanye",
+        12
       ],
       [
         "acceptable",
         7
       ],
       [
-        "habermas",
-        5
-      ],
-      [
         "motives",
         6
       ],
       [
-        "kampanye",
-        12
+        "habermas",
+        5
       ]
     ],
     "phrases": [
@@ -179,6 +179,38 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2106,
+        0.16
+      ],
+      [
+        2356,
+        0.14
+      ],
+      [
+        3990,
+        0.13
+      ],
+      [
+        2598,
+        0.13
+      ],
+      [
+        7967,
+        0.13
+      ],
+      [
+        8247,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 61,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

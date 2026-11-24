@@ -1,0 +1,86 @@
+{
+  "id": 12817,
+  "title": "Cisco: OSPF redistribute static routing",
+  "slug": "cisco-ospf-redistribute-static-routing-onno-widodo-purbo",
+  "slugBase": "cisco-ospf-redistribute-static-routing-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2018-12-27",
+  "timestamp": "2026-11-23 21:24:06.005542",
+  "last_modified": "2026-11-23 21:24:06.005548",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:905c92e8-8016-589a-b1cb-37b77cc8a1fb"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/12817?v=1795443846",
+  "cover_og_url": "/cover/12817/og?v=1795443846",
+  "url": "/book/cisco-ospf-redistribute-static-routing-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "sumber: https://community.cisco.com/t5/switching/how-to-distribute-static-route-via-ospf/td-p/2199717 ip route 172.16.20.0 255.255.255.0 10.2.0.3 router ospf 1 redis static subnet Referensi https://community.cisco.com/t5/switching/how-to-distribute-static-route-via-ospf/td-p/2199717 Pranala Menarik TCP/IP: Advanced Routing Quagga Mikrotik Cisco Juniper BIRD: Routing IPv6",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2366,
+      "name": "Cisco_ OSPF redistribute static routing - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 56,
+    "longer_than": 8,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        12849,
+        0.72
+      ],
+      [
+        12796,
+        0.7
+      ],
+      [
+        12744,
+        0.67
+      ],
+      [
+        12909,
+        0.62
+      ],
+      [
+        12803,
+        0.61
+      ],
+      [
+        12747,
+        0.6
+      ]
+    ],
+    "sentiment": null
+  }
+}

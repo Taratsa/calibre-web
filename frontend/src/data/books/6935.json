@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1523,
-    "longer_than": 20,
+    "longer_than": 58,
     "top": [
       [
         "api",
@@ -106,12 +106,16 @@
         35
       ],
       [
-        "perkap",
-        11
-      ],
-      [
         "senjata",
         41
+      ],
+      [
+        "api",
+        41
+      ],
+      [
+        "perkap",
+        11
       ],
       [
         "penembakan",
@@ -122,32 +126,28 @@
         32
       ],
       [
-        "api",
-        41
-      ],
-      [
-        "penyiksaan",
-        11
+        "peristiwa",
+        25
       ],
       [
         "pelaku",
         16
       ],
       [
-        "extra",
-        7
-      ],
-      [
-        "judicial",
-        7
-      ],
-      [
-        "peristiwa",
-        25
-      ],
-      [
         "korban",
         20
+      ],
+      [
+        "penyiksaan",
+        11
+      ],
+      [
+        "tindakan",
+        21
+      ],
+      [
+        "tewas",
+        10
       ]
     ],
     "phrases": [
@@ -187,28 +187,69 @@
     "similar": [
       [
         6901,
-        0.45
+        0.49
       ],
       [
         6919,
-        0.43
+        0.46
       ],
       [
         291,
-        0.31
+        0.34
       ],
       [
         6914,
-        0.29
-      ],
-      [
-        6904,
-        0.24
+        0.33
       ],
       [
         6940,
-        0.24
+        0.27
+      ],
+      [
+        6904,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.84,
+      "positive": 7,
+      "negative": 83,
+      "trend": [
+        null,
+        -0.33,
+        -0.43,
+        -0.75,
+        -1,
+        -1,
+        -0.67,
+        null,
+        -1,
+        -0.8,
+        -1,
+        null,
+        -1,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          29
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

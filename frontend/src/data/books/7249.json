@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2172,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "anarkisme",
@@ -130,28 +130,28 @@
         8
       ],
       [
+        "sosial",
+        18
+      ],
+      [
         "gandhi",
         5
-      ],
-      [
-        "bakunin",
-        5
-      ],
-      [
-        "global",
-        10
       ],
       [
         "otoritas",
         9
       ],
       [
-        "inspirasi",
-        6
+        "masyarakat",
+        19
       ],
       [
-        "resistensi",
-        4
+        "global",
+        10
+      ],
+      [
+        "bakunin",
+        5
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         3759,
-        0.42
+        0.45
       ],
       [
         2517,
-        0.42
+        0.45
       ],
       [
         7150,
-        0.22
+        0.26
       ],
       [
         3959,
-        0.19
+        0.23
       ],
       [
         2444,
-        0.19
+        0.23
       ],
       [
         2522,
-        0.18
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 41,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

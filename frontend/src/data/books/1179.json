@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2707,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "didalam",
@@ -91,28 +91,36 @@
     ],
     "distinct": [
       [
-        "rakjat",
-        26
-      ],
-      [
         "didalam",
         34
+      ],
+      [
+        "rakjat",
+        26
       ],
       [
         "pemimpin²",
         10
       ],
       [
+        "golongan",
+        20
+      ],
+      [
         "banjak",
         14
       ],
       [
-        "masjarakat",
-        11
+        "pemimpin",
+        24
       ],
       [
-        "golongan",
-        20
+        "kaum",
+        25
+      ],
+      [
+        "masjarakat",
+        11
       ],
       [
         "nja",
@@ -124,14 +132,6 @@
       ],
       [
         "pemim",
-        5
-      ],
-      [
-        "pemimpin",
-        24
-      ],
-      [
-        "penjerahan",
         5
       ],
       [
@@ -176,28 +176,35 @@
     "similar": [
       [
         6629,
-        0.2
+        0.22
       ],
       [
         735,
-        0.19
+        0.22
       ],
       [
         493,
-        0.19
-      ],
-      [
-        6627,
-        0.19
+        0.21
       ],
       [
         6291,
-        0.17
+        0.21
       ],
       [
         4859,
-        0.17
+        0.21
+      ],
+      [
+        6627,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 37,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

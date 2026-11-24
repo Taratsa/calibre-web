@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 6087,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "ham",
@@ -97,12 +97,12 @@
     ],
     "distinct": [
       [
-        "komnas",
-        181
-      ],
-      [
         "ham",
         249
+      ],
+      [
+        "komnas",
+        181
       ],
       [
         "kinerja",
@@ -125,20 +125,20 @@
         44
       ],
       [
-        "pemajuan",
-        25
-      ],
-      [
         "strategis",
         43
+      ],
+      [
+        "sasaran",
+        46
       ],
       [
         "indikator",
         30
       ],
       [
-        "wtp",
-        13
+        "pemajuan",
+        25
       ],
       [
         "akuntabilitas",
@@ -186,24 +186,65 @@
       ],
       [
         8977,
-        0.57
+        0.59
       ],
       [
         8940,
-        0.52
+        0.54
       ],
       [
         8957,
-        0.51
+        0.53
       ],
       [
         8964,
-        0.5
+        0.52
       ],
       [
         8949,
-        0.48
+        0.49
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 95,
+      "negative": 81,
+      "trend": [
+        0.44,
+        0.5,
+        -1,
+        null,
+        0.4,
+        -0.11,
+        0.33,
+        null,
+        -0.11,
+        null,
+        0.05,
+        -0.09,
+        -1,
+        null,
+        0.75,
+        -0.22
+      ],
+      "emotions": [
+        [
+          "anger",
+          61
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

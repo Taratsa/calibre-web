@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 1270,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "oedipus",
@@ -122,6 +122,10 @@
         4
       ],
       [
+        "takdir",
+        10
+      ],
+      [
         "creon",
         3
       ],
@@ -134,19 +138,22 @@
         3
       ],
       [
-        "takdir",
-        10
+        "episode",
+        6
       ],
       [
         "sophocles",
         3
-      ],
-      [
-        "koor",
-        4
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 25,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

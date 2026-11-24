@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2655,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "post-conspiracy",
@@ -111,12 +111,12 @@
         10
       ],
       [
-        "conspirators",
-        4
+        "individual",
+        13
       ],
       [
-        "criminologist",
-        3
+        "conspirators",
+        4
       ],
       [
         "chaos",
@@ -127,8 +127,12 @@
         8
       ],
       [
-        "individual",
-        13
+        "criminologist",
+        3
+      ],
+      [
+        "morality",
+        5
       ],
       [
         "functional",
@@ -137,10 +141,6 @@
       [
         "goal",
         6
-      ],
-      [
-        "morality",
-        5
       ],
       [
         "egos",
@@ -165,6 +165,7 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2555,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "kerja",
@@ -111,10 +111,6 @@
         21
       ],
       [
-        "politikus",
-        6
-      ],
-      [
         "kerja",
         27
       ],
@@ -123,28 +119,32 @@
         17
       ],
       [
-        "grup-grup",
-        4
+        "politikus",
+        6
       ],
       [
         "pembagian",
         11
       ],
       [
+        "masyarakat",
+        20
+      ],
+      [
         "kapitalisme",
         10
       ],
       [
-        "war",
-        6
+        "grup-grup",
+        4
       ],
       [
         "aktivitas",
         10
       ],
       [
-        "kontrakan",
-        3
+        "pekerjaan",
+        12
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        2670,
-        0.2
-      ],
-      [
         7275,
-        0.16
+        0.24
       ],
       [
-        3758,
-        0.15
+        2670,
+        0.24
       ],
       [
         2377,
-        0.13
+        0.18
       ],
       [
         3706,
-        0.13
+        0.18
       ],
       [
-        7020,
-        0.12
+        3758,
+        0.18
+      ],
+      [
+        7210,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 32,
+      "negative": 46,
+      "trend": [
+        -0.6,
+        null,
+        null,
+        0,
+        null,
+        null,
+        -0.25,
+        null,
+        -0.2,
+        0,
+        null,
+        null,
+        0.2,
+        null,
+        -0.33,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

@@ -12,7 +12,7 @@
   "author_sort": "PKI, Depagitprop CC",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 11457,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "produksi",
@@ -116,44 +116,44 @@
         105
       ],
       [
-        "barangdagangan",
-        33
+        "kaum",
+        145
       ],
       [
         "klas",
         58
       ],
       [
-        "perkakas-perkakas",
-        21
+        "barangdagangan",
+        33
       ],
       [
-        "pemilikan-budak",
-        17
+        "masyarakat",
+        135
+      ],
+      [
+        "tani",
+        62
       ],
       [
         "hubungan-hubungan",
         39
       ],
       [
-        "kaum",
-        145
-      ],
-      [
-        "tuantanah-tuantanah",
-        15
-      ],
-      [
-        "tenaga-tenaga",
-        31
+        "sosialis",
+        56
       ],
       [
         "feodal",
         45
       ],
       [
-        "pemilik-budak",
-        16
+        "perkakas-perkakas",
+        21
+      ],
+      [
+        "tenaga-tenaga",
+        31
       ]
     ],
     "phrases": [
@@ -193,28 +193,73 @@
     "similar": [
       [
         4866,
-        0.55
+        0.57
       ],
       [
         2841,
-        0.55
+        0.57
       ],
       [
         2835,
-        0.55
+        0.57
       ],
       [
         9287,
-        0.38
+        0.42
       ],
       [
         9276,
-        0.26
+        0.31
       ],
       [
         9275,
-        0.23
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 265,
+      "negative": 109,
+      "trend": [
+        0.81,
+        0.9,
+        0.62,
+        1,
+        -0.07,
+        0.61,
+        0.85,
+        0.23,
+        0,
+        -0.08,
+        0.09,
+        0.13,
+        -0.17,
+        0.44,
+        0.68,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

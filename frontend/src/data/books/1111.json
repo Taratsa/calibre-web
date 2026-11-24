@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2240,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "manizer",
@@ -111,32 +111,32 @@
         12
       ],
       [
-        "basrelief",
-        4
-      ],
-      [
         "prof",
         17
-      ],
-      [
-        "urss",
-        6
       ],
       [
         "kesenian",
         15
       ],
       [
+        "urss",
+        6
+      ],
+      [
+        "basrelief",
+        4
+      ],
+      [
         "lenin",
         10
       ],
       [
-        "prijono",
-        5
+        "pelukis",
+        8
       ],
       [
-        "olahragawati",
-        3
+        "prijono",
+        5
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         4115,
-        0.21
+        0.2
       ],
       [
         4842,
-        0.16
-      ],
-      [
-        4482,
-        0.16
+        0.17
       ],
       [
         1110,
-        0.15
+        0.16
       ],
       [
         4796,
-        0.15
+        0.16
       ],
       [
         464,
-        0.15
+        0.16
+      ],
+      [
+        295,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.92,
+      "positive": 50,
+      "negative": 2,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

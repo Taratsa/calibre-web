@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3822,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "manusia",
@@ -114,16 +114,28 @@
         10
       ],
       [
+        "kebenaran",
+        18
+      ],
+      [
+        "manusia",
+        28
+      ],
+      [
         "individualisme",
         8
       ],
       [
-        "mengeluarkanku",
-        3
+        "masyarakat",
+        25
       ],
       [
-        "kebenaran",
-        18
+        "anarkis",
+        11
+      ],
+      [
+        "mengeluarkanku",
+        3
       ],
       [
         "momok",
@@ -134,23 +146,11 @@
         4
       ],
       [
-        "anarkis",
+        "kau",
         11
       ],
       [
         "spencer",
-        4
-      ],
-      [
-        "ibsen",
-        3
-      ],
-      [
-        "stirner",
-        5
-      ],
-      [
-        "menterjemahkan",
         4
       ]
     ],
@@ -190,8 +190,8 @@
         0.27
       ],
       [
-        8120,
-        0.23
+        8052,
+        0.24
       ],
       [
         7437,
@@ -199,16 +199,73 @@
       ],
       [
         2088,
+        0.23
+      ],
+      [
+        4725,
         0.22
       ],
       [
-        8052,
-        0.22
-      ],
-      [
-        8117,
+        1862,
         0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 113,
+      "negative": 93,
+      "trend": [
+        -0.43,
+        -0.2,
+        0.23,
+        0.33,
+        -0.2,
+        0.11,
+        -0.41,
+        0.25,
+        -0.45,
+        0.54,
+        0.58,
+        0.16,
+        0.17,
+        -0.06,
+        -0.09,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          14
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7051,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "sosial",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "narapidana",
-        20
-      ],
-      [
         "kejahatan",
         37
+      ],
+      [
+        "narapidana",
+        20
       ],
       [
         "penjahat",
         20
       ],
       [
-        "indd",
-        8
-      ],
-      [
-        "pelanggar",
-        12
-      ],
-      [
         "penjara",
         25
       ],
       [
-        "politikal",
-        6
+        "indd",
+        8
       ],
       [
-        "artfux",
-        4
+        "sosial",
+        40
       ],
       [
         "kondisi",
         33
       ],
       [
+        "pelanggar",
+        12
+      ],
+      [
+        "kegiatan",
+        26
+      ],
+      [
+        "kehidupan",
+        33
+      ],
+      [
+        "politikal",
+        6
+      ],
+      [
         "kriminal",
         11
-      ],
-      [
-        "komoditas",
-        10
-      ],
-      [
-        "sosial",
-        40
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         7159,
-        0.26
+        0.28
       ],
       [
         2566,
@@ -192,20 +192,77 @@
       ],
       [
         4659,
-        0.18
+        0.22
       ],
       [
         3064,
-        0.18
+        0.22
       ],
       [
-        7304,
-        0.18
+        4661,
+        0.2
       ],
       [
-        2482,
-        0.16
+        3063,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.21,
+      "positive": 132,
+      "negative": 202,
+      "trend": [
+        0.09,
+        0.23,
+        0.56,
+        -0.58,
+        -0.71,
+        -0.65,
+        -0.1,
+        -0.59,
+        -0.17,
+        0.11,
+        -0.17,
+        0.17,
+        0.33,
+        0.06,
+        0.33,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "trust",
+          13
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

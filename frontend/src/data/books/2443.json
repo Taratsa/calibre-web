@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4490,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "rakyat",
@@ -107,10 +107,6 @@
         36
       ],
       [
-        "kropotkin",
-        14
-      ],
-      [
         "revolusi",
         39
       ],
@@ -119,12 +115,12 @@
         44
       ],
       [
-        "pemerintahan",
-        29
+        "kropotkin",
+        14
       ],
       [
-        "komune-komune",
-        5
+        "pemerintahan",
+        29
       ],
       [
         "pekerja",
@@ -135,16 +131,20 @@
         12
       ],
       [
-        "memproklamasikan",
-        5
+        "bebas",
+        21
       ],
       [
         "sosialis",
         11
       ],
       [
-        "versailles",
-        4
+        "revolusioner",
+        12
+      ],
+      [
+        "komune-komune",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2727,
-        0.24
+        0.32
       ],
       [
         6730,
-        0.23
+        0.31
       ],
       [
         2203,
-        0.23
+        0.31
       ],
       [
         7875,
-        0.2
+        0.29
       ],
       [
         2540,
-        0.2
+        0.29
       ],
       [
-        6707,
-        0.2
+        3989,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 128,
+      "negative": 65,
+      "trend": [
+        0.67,
+        0.67,
+        1,
+        1,
+        0,
+        -0.6,
+        0.08,
+        -0.23,
+        0.5,
+        0.57,
+        0.64,
+        0.25,
+        0.56,
+        0.14,
+        0.33,
+        0.62
+      ],
+      "emotions": [
+        [
+          "sadness",
+          18
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

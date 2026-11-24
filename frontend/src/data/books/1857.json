@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 25726,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "west",
@@ -91,28 +91,28 @@
     ],
     "distinct": [
       [
-        "papuans",
-        177
-      ],
-      [
         "west",
         368
+      ],
+      [
+        "papuans",
+        177
       ],
       [
         "genocide",
         160
       ],
       [
-        "supra",
-        117
+        "indonesian",
+        233
       ],
       [
         "papua",
         234
       ],
       [
-        "indonesian",
-        233
+        "supra",
+        117
       ],
       [
         "papuan",
@@ -123,20 +123,20 @@
         112
       ],
       [
+        "government",
+        121
+      ],
+      [
         "acts",
+        89
+      ],
+      [
+        "convention",
         89
       ],
       [
         "note",
         120
-      ],
-      [
-        "government",
-        121
-      ],
-      [
-        "convention",
-        89
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         392,
-        0.44
+        0.46
       ],
       [
         523,
-        0.39
+        0.4
       ],
       [
         399,
-        0.37
+        0.39
       ],
       [
         436,
-        0.31
+        0.33
       ],
       [
         1881,
-        0.3
+        0.31
       ],
       [
         570,
-        0.3
+        0.31
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

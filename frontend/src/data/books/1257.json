@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4642,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "perempuan",
@@ -121,20 +121,20 @@
         16
       ],
       [
-        "rahim-rahim",
-        4
+        "perjuangan",
+        29
       ],
       [
         "penanda",
         12
       ],
       [
-        "andro",
-        4
+        "edisi",
+        18
       ],
       [
-        "perjuangan",
-        29
+        "perayaan",
+        12
       ]
     ],
     "phrases": [
@@ -171,6 +171,72 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2750,
+        0.11
+      ],
+      [
+        2648,
+        0.11
+      ],
+      [
+        1832,
+        0.1
+      ],
+      [
+        1256,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 64,
+      "negative": 65,
+      "trend": [
+        0.67,
+        0.67,
+        -0.17,
+        0.71,
+        0.2,
+        0.33,
+        -0.09,
+        -0.33,
+        0.33,
+        -0.6,
+        -0.33,
+        -0.6,
+        -0.45,
+        0.2,
+        0.33,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "fear",
+          13
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ]
+      ]
+    }
   }
 }

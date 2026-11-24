@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2502,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "internet",
@@ -111,20 +111,16 @@
         17
       ],
       [
-        "internet",
-        37
-      ],
-      [
         "pemblokiran",
         14
       ],
       [
-        "vpn",
-        9
-      ],
-      [
         "platform",
         22
+      ],
+      [
+        "internet",
+        37
       ],
       [
         "akses",
@@ -135,16 +131,20 @@
         11
       ],
       [
-        "isp",
-        9
-      ],
-      [
         "konten",
         17
       ],
       [
-        "probe",
-        8
+        "layanan",
+        23
+      ],
+      [
+        "gangguan",
+        21
+      ],
+      [
+        "situs",
+        19
       ]
     ],
     "phrases": [
@@ -184,14 +184,18 @@
     "similar": [
       [
         1055,
-        0.29
-      ],
-      [
-        1054,
-        0.25
+        0.28
       ],
       [
         8350,
+        0.25
+      ],
+      [
+        6989,
+        0.24
+      ],
+      [
+        1054,
         0.24
       ],
       [
@@ -199,13 +203,54 @@
         0.23
       ],
       [
-        6989,
-        0.23
-      ],
-      [
         1053,
         0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.56,
+      "positive": 13,
+      "negative": 46,
+      "trend": [
+        0.2,
+        null,
+        null,
+        -1,
+        -1,
+        null,
+        -0.6,
+        -0.2,
+        -0.6,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.5,
+        -1
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

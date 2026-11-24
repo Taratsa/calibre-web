@@ -87,7 +87,7 @@
   ],
   "text": {
     "words": 10802,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "rakyat",
@@ -144,48 +144,48 @@
         38
       ],
       [
-        "seniman",
-        51
-      ],
-      [
         "angkatan",
         58
+      ],
+      [
+        "seniman",
+        51
       ],
       [
         "chairil",
         23
       ],
       [
-        "kesusasteraan",
-        23
-      ],
-      [
-        "pengarang",
-        33
-      ],
-      [
-        "anwar",
-        23
+        "rakyat",
+        74
       ],
       [
         "kebudayaan",
         57
       ],
       [
+        "pengarang",
+        33
+      ],
+      [
+        "kesusasteraan",
+        23
+      ],
+      [
+        "anwar",
+        23
+      ],
+      [
+        "seni",
+        43
+      ],
+      [
+        "kritik",
+        37
+      ],
+      [
         "konperensi",
         17
-      ],
-      [
-        "lekra",
-        15
-      ],
-      [
-        "rakyat",
-        74
-      ],
-      [
-        "sasterawan",
-        10
       ]
     ],
     "phrases": [
@@ -225,28 +225,81 @@
     "similar": [
       [
         4602,
-        0.28
+        0.29
       ],
       [
         3416,
+        0.23
+      ],
+      [
+        5938,
         0.21
       ],
       [
         4018,
+        0.2
+      ],
+      [
+        4855,
         0.19
       ],
       [
-        5938,
+        8393,
         0.19
-      ],
-      [
-        4010,
-        0.17
-      ],
-      [
-        4845,
-        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 257,
+      "negative": 110,
+      "trend": [
+        0.43,
+        0.76,
+        0.6,
+        0.68,
+        0.08,
+        0.7,
+        0.6,
+        1,
+        0,
+        0,
+        0.35,
+        0.24,
+        0.29,
+        -0.03,
+        0.5,
+        0.89
+      ],
+      "emotions": [
+        [
+          "joy",
+          40
+        ],
+        [
+          "anger",
+          31
+        ],
+        [
+          "trust",
+          29
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

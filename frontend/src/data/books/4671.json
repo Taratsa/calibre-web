@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5133,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "bahaya",
@@ -107,44 +107,44 @@
         39
       ],
       [
-        "reproduksi",
-        17
+        "peradaban",
+        22
       ],
       [
         "keamanan",
         31
       ],
       [
-        "peradaban",
-        22
+        "reproduksi",
+        17
       ],
       [
         "tembok",
         17
       ],
       [
-        "penangkaran",
-        6
-      ],
-      [
-        "https",
-        17
+        "kematian",
+        21
       ],
       [
         "dominasi",
         15
       ],
       [
-        "kematian",
-        21
+        "penangkaran",
+        6
       ],
       [
-        "nationalgeographic",
-        4
+        "kehidupan",
+        27
       ],
       [
-        "ilusi",
-        10
+        "janji",
+        14
+      ],
+      [
+        "hidup",
+        31
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2253,
-        0.15
+        0.19
       ],
       [
         7000,
-        0.14
-      ],
-      [
-        4723,
-        0.13
-      ],
-      [
-        2708,
-        0.13
+        0.17
       ],
       [
         3933,
-        0.13
+        0.17
       ],
       [
         3830,
-        0.13
+        0.17
+      ],
+      [
+        4723,
+        0.16
+      ],
+      [
+        2708,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 99,
+      "negative": 194,
+      "trend": [
+        0.33,
+        -0.57,
+        -0.4,
+        -0.12,
+        -0.13,
+        -0.51,
+        -0.35,
+        -0.44,
+        -0.38,
+        -0.33,
+        -0.41,
+        -0.56,
+        -0.33,
+        -0.12,
+        -0.54,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          56
+        ],
+        [
+          "trust",
+          52
+        ],
+        [
+          "sadness",
+          43
+        ],
+        [
+          "anger",
+          29
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

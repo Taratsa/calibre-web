@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 9658,
-    "longer_than": 60,
+    "longer_than": 81,
     "top": [
       [
         "revolusi",
@@ -108,40 +108,40 @@
         59
       ],
       [
-        "manipol",
-        31
+        "rakyat",
+        103
       ],
       [
-        "imperialis",
-        36
+        "manipol",
+        31
       ],
       [
         "pertahanan",
         50
       ],
       [
-        "alri",
-        17
+        "imperialis",
+        36
+      ],
+      [
+        "politik",
+        78
+      ],
+      [
+        "indonesia",
+        123
+      ],
+      [
+        "kaum",
+        68
       ],
       [
         "geopolitik",
         20
       ],
       [
-        "rakyat",
-        103
-      ],
-      [
-        "penghisapan",
-        22
-      ],
-      [
-        "tubapi",
-        11
-      ],
-      [
-        "nasakom",
-        16
+        "alri",
+        17
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         9299,
-        0.45
+        0.48
       ],
       [
         5950,
-        0.41
+        0.44
       ],
       [
         5933,
-        0.41
+        0.44
       ],
       [
         9314,
-        0.37
+        0.39
       ],
       [
         9309,
-        0.34
+        0.36
       ],
       [
         9307,
-        0.32
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 201,
+      "negative": 67,
+      "trend": [
+        0.83,
+        0.93,
+        0.27,
+        0.76,
+        0.8,
+        0.5,
+        0.38,
+        0.8,
+        0.5,
+        1,
+        0.38,
+        0.44,
+        0.18,
+        0.29,
+        -0.15,
+        0.5
+      ],
+      "emotions": [
+        [
+          "trust",
+          23
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

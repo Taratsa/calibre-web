@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 20603,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "anarkis",
@@ -107,6 +107,10 @@
         71
       ],
       [
+        "masyarakat",
+        321
+      ],
+      [
         "anarkisme",
         112
       ],
@@ -115,36 +119,32 @@
         79
       ],
       [
-        "kesetaraan",
-        68
-      ],
-      [
-        "masyarakat",
-        321
-      ],
-      [
-        "solidaritas",
-        79
+        "kebebasan",
+        118
       ],
       [
         "merdeka",
         98
       ],
       [
-        "memperjuangkan",
-        65
+        "kesetaraan",
+        68
       ],
       [
-        "kebebasan",
-        118
-      ],
-      [
-        "menciptakan",
-        95
+        "solidaritas",
+        79
       ],
       [
         "gerakan",
         122
+      ],
+      [
+        "memperjuangkan",
+        65
+      ],
+      [
+        "menciptakan",
+        95
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         6730,
-        0.24
+        0.31
       ],
       [
         2203,
-        0.24
+        0.31
       ],
       [
         2308,
-        0.24
+        0.28
       ],
       [
         2596,
-        0.17
+        0.27
       ],
       [
-        1762,
-        0.16
+        2064,
+        0.24
       ],
       [
-        2522,
-        0.16
+        3959,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 765,
+      "negative": 381,
+      "trend": [
+        0.2,
+        0.22,
+        0.29,
+        0.1,
+        0.58,
+        -0.29,
+        -0.11,
+        0.49,
+        0.3,
+        0.12,
+        0.51,
+        0.6,
+        0.73,
+        0.68,
+        0.76,
+        0.21
+      ],
+      "emotions": [
+        [
+          "trust",
+          135
+        ],
+        [
+          "anger",
+          133
+        ],
+        [
+          "anticipation",
+          22
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "fear",
+          13
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

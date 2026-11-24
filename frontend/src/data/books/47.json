@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2787,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "highbury",
@@ -123,20 +123,16 @@
         9
       ],
       [
-        "gantigol",
-        7
-      ],
-      [
         "klub",
         16
       ],
       [
-        "stadium",
-        11
+        "gantigol",
+        7
       ],
       [
-        "wenger",
-        6
+        "stadium",
+        11
       ],
       [
         "square",
@@ -145,6 +141,10 @@
       [
         "premier",
         10
+      ],
+      [
+        "wenger",
+        6
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         50,
-        0.45
+        0.46
       ],
       [
         49,
-        0.37
+        0.38
       ],
       [
         48,
-        0.33
+        0.36
       ],
       [
         109,
         0.25
       ],
       [
-        7018,
+        40,
         0.24
       ],
       [
-        40,
+        7018,
         0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 42,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

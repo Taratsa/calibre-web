@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 10229,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "anti-slapp",
@@ -113,16 +113,28 @@
         50
       ],
       [
-        "kanada",
-        35
+        "hukum",
+        103
+      ],
+      [
+        "publik",
+        74
       ],
       [
         "gugatan",
         37
       ],
       [
-        "ontario",
-        19
+        "perkara",
+        56
+      ],
+      [
+        "kanada",
+        35
+      ],
+      [
+        "lingkungan",
+        85
       ],
       [
         "environmental",
@@ -131,18 +143,6 @@
       [
         "participation",
         31
-      ],
-      [
-        "tergugat",
-        22
-      ],
-      [
-        "publik",
-        74
-      ],
-      [
-        "perkara",
-        56
       ]
     ],
     "phrases": [
@@ -182,28 +182,69 @@
     "similar": [
       [
         8849,
-        0.37
+        0.38
       ],
       [
         8638,
-        0.2
+        0.22
       ],
       [
         6907,
-        0.19
+        0.22
       ],
       [
         8741,
-        0.18
+        0.2
       ],
       [
         8994,
-        0.17
+        0.2
       ],
       [
-        9013,
-        0.17
+        9031,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 125,
+      "negative": 74,
+      "trend": [
+        0.43,
+        0,
+        0.62,
+        0.71,
+        0.29,
+        0.22,
+        null,
+        0.09,
+        0.75,
+        -0.22,
+        0.27,
+        -0.11,
+        0.09,
+        null,
+        0.64,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

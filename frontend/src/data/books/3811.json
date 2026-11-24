@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2360,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "pekerjaan",
@@ -107,20 +107,24 @@
         16
       ],
       [
+        "kosong",
+        19
+      ],
+      [
         "flunkies",
         3
+      ],
+      [
+        "karyawan",
+        9
       ],
       [
         "taskmaster",
         3
       ],
       [
-        "kosong",
-        19
-      ],
-      [
-        "karyawan",
-        9
+        "orang",
+        29
       ],
       [
         "diotomatisasi",
@@ -135,16 +139,12 @@
         7
       ],
       [
-        "penipu",
-        3
+        "tugas",
+        10
       ],
       [
-        "bawahannya",
-        3
-      ],
-      [
-        "email",
-        4
+        "memiliki",
+        13
       ]
     ],
     "phrases": [
@@ -167,8 +167,8 @@
         0.16
       ],
       [
-        2201,
-        0.15
+        7138,
+        0.14
       ],
       [
         3943,
@@ -179,13 +179,37 @@
         0.13
       ],
       [
-        7201,
-        0.11
+        2201,
+        0.13
       ],
       [
-        1989,
-        0.1
+        2590,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 37,
+      "negative": 30,
+      "trend": [
+        null,
+        -0.11,
+        0.67,
+        0,
+        null,
+        null,
+        -0.14,
+        0.2,
+        -1,
+        0.6,
+        null,
+        null,
+        null,
+        null,
+        0.14,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

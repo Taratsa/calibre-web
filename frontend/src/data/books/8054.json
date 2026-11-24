@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5478,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "zine",
@@ -107,52 +107,52 @@
     ],
     "distinct": [
       [
-        "punk",
-        110
-      ],
-      [
         "zine",
         125
       ],
       [
-        "zine-zine",
-        18
+        "punk",
+        110
       ],
       [
         "anarkisme",
         42
       ],
       [
-        "submissive",
-        14
+        "zine-zine",
+        18
       ],
       [
-        "donaghey",
-        9
+        "submissive",
+        14
       ],
       [
         "riot",
         15
       ],
       [
-        "kkk",
-        10
-      ],
-      [
-        "subkultur",
-        13
+        "donaghey",
+        9
       ],
       [
         "politis",
         26
       ],
       [
-        "duncombe",
-        7
+        "kkk",
+        10
       ],
       [
         "anarkis",
         26
+      ],
+      [
+        "bandung",
+        32
+      ],
+      [
+        "komunitas",
+        31
       ]
     ],
     "phrases": [
@@ -192,28 +192,35 @@
     "similar": [
       [
         2462,
-        0.18
+        0.21
+      ],
+      [
+        274,
+        0.2
       ],
       [
         2739,
-        0.17
+        0.2
       ],
       [
         3073,
-        0.17
+        0.2
       ],
       [
         2487,
-        0.17
+        0.19
       ],
       [
-        2234,
-        0.16
-      ],
-      [
-        6829,
-        0.16
+        3072,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 41,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

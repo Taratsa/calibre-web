@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 4727,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "wate",
@@ -141,20 +141,20 @@
         43
       ],
       [
-        "sempe",
-        19
+        "adam",
+        47
       ],
       [
         "pone",
         21
       ],
       [
-        "adama",
-        18
+        "sempe",
+        19
       ],
       [
-        "adam",
-        47
+        "adama",
+        18
       ]
     ],
     "phrases": [
@@ -194,16 +194,23 @@
     "similar": [
       [
         6313,
-        0.13
+        0.15
       ],
       [
         6087,
-        0.11
+        0.12
       ],
       [
         5310,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 39,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4014,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "pki",
@@ -89,12 +89,12 @@
     ],
     "distinct": [
       [
-        "tapol",
-        26
-      ],
-      [
         "pki",
         44
+      ],
+      [
+        "tapol",
+        26
       ],
       [
         "pasal",
@@ -105,36 +105,36 @@
         20
       ],
       [
-        "mudjayin",
-        7
-      ],
-      [
         "diskriminatif",
         20
-      ],
-      [
-        "tragedi",
-        23
-      ],
-      [
-        "massanya",
-        11
-      ],
-      [
-        "mahid",
-        6
       ],
       [
         "peraturan",
         36
       ],
       [
-        "terlarang",
-        17
+        "korban",
+        39
+      ],
+      [
+        "tragedi",
+        23
+      ],
+      [
+        "mudjayin",
+        7
+      ],
+      [
+        "bekas",
+        32
       ],
       [
         "ayat",
         23
+      ],
+      [
+        "massanya",
+        11
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         6954,
-        0.26
+        0.29
       ],
       [
         6907,
-        0.23
+        0.25
       ],
       [
         9082,
-        0.21
-      ],
-      [
-        396,
-        0.2
+        0.24
       ],
       [
         6920,
-        0.2
+        0.22
       ],
       [
         1016,
-        0.2
+        0.22
+      ],
+      [
+        9057,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 37,
+      "negative": 38,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

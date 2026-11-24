@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 5675,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "aisjijah",
@@ -116,10 +116,6 @@
         22
       ],
       [
-        "moehammadijah",
-        14
-      ],
-      [
         "kaoem",
         21
       ],
@@ -128,12 +124,16 @@
         18
       ],
       [
-        "soeara",
-        19
+        "moehammadijah",
+        14
       ],
       [
         "ingkang",
         21
+      ],
+      [
+        "soeara",
+        19
       ],
       [
         "oentoek",
@@ -144,8 +144,8 @@
         14
       ],
       [
-        "akaid",
-        8
+        "islam",
+        39
       ]
     ],
     "phrases": [
@@ -185,11 +185,11 @@
     "similar": [
       [
         6606,
-        0.4
+        0.41
       ],
       [
         6597,
-        0.38
+        0.39
       ],
       [
         6607,
@@ -201,12 +201,19 @@
       ],
       [
         6600,
-        0.33
+        0.34
       ],
       [
         6598,
-        0.33
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 35,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 3821,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "haroa",
@@ -121,36 +121,36 @@
         24
       ],
       [
-        "sirikaya",
-        9
-      ],
-      [
-        "susuru",
-        8
-      ],
-      [
-        "dulang",
-        16
+        "telur",
+        28
       ],
       [
         "kue",
         25
       ],
       [
-        "telur",
-        28
+        "sirikaya",
+        9
+      ],
+      [
+        "dulang",
+        16
+      ],
+      [
+        "susuru",
+        8
       ],
       [
         "onde-onde",
         10
       ],
       [
-        "cucuru",
-        7
+        "gula",
+        24
       ],
       [
-        "adonan",
-        13
+        "goreng",
+        19
       ]
     ],
     "phrases": [
@@ -190,28 +190,35 @@
     "similar": [
       [
         5109,
-        0.29
+        0.3
       ],
       [
         5222,
-        0.28
+        0.3
       ],
       [
         5312,
-        0.24
+        0.26
       ],
       [
         1039,
+        0.26
+      ],
+      [
+        5219,
         0.24
       ],
       [
         5220,
-        0.22
-      ],
-      [
-        5219,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.77,
+      "positive": 93,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

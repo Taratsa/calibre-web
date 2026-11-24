@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2989,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "rumah",
@@ -115,36 +115,36 @@
         4
       ],
       [
-        "diungsikan",
-        3
+        "gadis",
+        8
+      ],
+      [
+        "rumah",
+        15
       ],
       [
         "mengintip",
         5
       ],
       [
+        "diungsikan",
+        3
+      ],
+      [
         "udah",
         5
       ],
       [
-        "gadis",
-        8
+        "langit",
+        7
       ],
       [
         "chairil",
         3
       ],
       [
-        "kengerian",
-        3
-      ],
-      [
         "otak",
         5
-      ],
-      [
-        "langit",
-        7
       ]
     ],
     "phrases": [
@@ -165,6 +165,32 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5978,
+        0.13
+      ],
+      [
+        7943,
+        0.13
+      ],
+      [
+        6095,
+        0.13
+      ],
+      [
+        1259,
+        0.13
+      ],
+      [
+        1040,
+        0.12
+      ],
+      [
+        2990,
+        0.12
+      ]
+    ],
+    "sentiment": null
   }
 }

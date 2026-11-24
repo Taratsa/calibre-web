@@ -114,7 +114,7 @@
   ],
   "text": {
     "words": 16101,
-    "longer_than": 72,
+    "longer_than": 86,
     "top": [
       [
         "stirner",
@@ -183,36 +183,36 @@
         40
       ],
       [
-        "subjek-fasis",
-        14
-      ],
-      [
-        "ganja",
-        28
+        "individu",
+        83
       ],
       [
         "liberalisme",
         35
       ],
       [
-        "individu",
-        83
+        "ganja",
+        28
+      ],
+      [
+        "subjek-fasis",
+        14
+      ],
+      [
+        "manusia",
+        108
       ],
       [
         "humanisme",
         26
       ],
       [
-        "non-manusia",
-        17
-      ],
-      [
         "hewan",
         44
       ],
       [
-        "max",
-        27
+        "non-manusia",
+        17
       ]
     ],
     "phrases": [
@@ -252,7 +252,7 @@
     "similar": [
       [
         8113,
-        0.46
+        0.47
       ],
       [
         9183,
@@ -264,16 +264,73 @@
       ],
       [
         4687,
-        0.32
+        0.34
       ],
       [
         2545,
-        0.29
+        0.32
       ],
       [
         7174,
-        0.29
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 226,
+      "negative": 211,
+      "trend": [
+        -0.24,
+        0.3,
+        0.36,
+        0.47,
+        0.5,
+        0.41,
+        -0.18,
+        -0.27,
+        -0.03,
+        0.33,
+        -0.47,
+        0.26,
+        0.24,
+        0.09,
+        0.08,
+        -0.65
+      ],
+      "emotions": [
+        [
+          "sadness",
+          40
+        ],
+        [
+          "anger",
+          35
+        ],
+        [
+          "joy",
+          24
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

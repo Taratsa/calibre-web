@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3445,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "kolektif",
@@ -119,31 +119,31 @@
         4
       ],
       [
-        "souchy",
-        3
-      ],
-      [
-        "ektif",
-        3
-      ],
-      [
-        "individualis",
-        6
-      ],
-      [
-        "amnesia",
-        4
-      ],
-      [
-        "kolektivis",
-        4
+        "anarkis",
+        10
       ],
       [
         "yan",
         8
       ],
       [
-        "augustin",
+        "individualis",
+        6
+      ],
+      [
+        "souchy",
+        3
+      ],
+      [
+        "amnesia",
+        4
+      ],
+      [
+        "asi",
+        6
+      ],
+      [
+        "ektif",
         3
       ]
     ],
@@ -180,28 +180,29 @@
     "similar": [
       [
         7254,
-        0.65
+        0.66
       ],
       [
         4675,
-        0.23
+        0.26
       ],
       [
         1816,
-        0.18
+        0.19
       ],
       [
         1241,
-        0.15
+        0.17
       ],
       [
-        2487,
-        0.14
+        2476,
+        0.16
       ],
       [
-        7309,
-        0.14
+        7895,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

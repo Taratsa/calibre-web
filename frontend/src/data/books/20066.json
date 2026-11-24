@@ -1,0 +1,208 @@
+{
+  "id": 20066,
+  "title": "Joining / menyatukan file flv",
+  "slug": "joining-menyatukan-file-flv-onno-widodo-purbo",
+  "slugBase": "joining-menyatukan-file-flv-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux",
+    "Multimedia"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-01-25",
+  "timestamp": "2026-11-24 06:20:52.957322",
+  "last_modified": "2026-11-24 06:20:52.957325",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:400d5311-ee07-524f-8ce9-39805aa55433"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20066?v=1795476052",
+  "cover_og_url": "/cover/20066/og?v=1795476052",
+  "url": "/book/joining-menyatukan-file-flv-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi mencoder sudo apt-get install mencoder Menyatukan flv file menggunakan perintah mencoder -forceidx -of lavf -oac copy -ovc copy -o output.flv clip1.flv clip2.flv clip3.flv Konversi format ke MPG Kadang kala kita perlu konversi format ke .mpg hal ini dapat dilakukan menggunakan sudo apt-get install ffmpeg ffmpeg -i output.flv -s 320x240 output.mpg ffmpeg -i output.flv -s 640x480",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2634,
+      "name": "Joining _ menyatukan file flv - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 146,
+    "longer_than": 19,
+    "top": [
+      [
+        "flv",
+        10
+      ],
+      [
+        "ffmpeg",
+        7
+      ],
+      [
+        "output",
+        7
+      ],
+      [
+        "mpg",
+        5
+      ],
+      [
+        "apt-get",
+        4
+      ],
+      [
+        "gstreamer",
+        4
+      ],
+      [
+        "install",
+        4
+      ],
+      [
+        "konversi",
+        4
+      ],
+      [
+        "clip",
+        3
+      ],
+      [
+        "file",
+        3
+      ],
+      [
+        "mencoder",
+        3
+      ],
+      [
+        "menyatukan",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "flv",
+        10
+      ],
+      [
+        "ffmpeg",
+        7
+      ],
+      [
+        "mpg",
+        5
+      ],
+      [
+        "gstreamer",
+        4
+      ],
+      [
+        "mencoder",
+        3
+      ],
+      [
+        "clip",
+        3
+      ],
+      [
+        "output",
+        7
+      ],
+      [
+        "konversi",
+        4
+      ],
+      [
+        "apt-get",
+        4
+      ],
+      [
+        "menyatukan",
+        3
+      ],
+      [
+        "install",
+        4
+      ],
+      [
+        "sudo",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo apt-get install",
+        3
+      ],
+      [
+        "flv clip flv",
+        3
+      ],
+      [
+        "ffmpeg i output",
+        3
+      ],
+      [
+        "output flv",
+        4
+      ],
+      [
+        "output mpg",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        10037,
+        0.46
+      ],
+      [
+        17029,
+        0.43
+      ],
+      [
+        10260,
+        0.35
+      ],
+      [
+        11069,
+        0.34
+      ],
+      [
+        13503,
+        0.34
+      ],
+      [
+        16658,
+        0.33
+      ]
+    ],
+    "sentiment": null
+  }
+}

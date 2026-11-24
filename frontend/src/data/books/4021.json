@@ -12,7 +12,7 @@
   "author_sort": "Anonim",
   "tags": [
     "Filsafat",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6032,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "indonesia",
@@ -108,28 +108,44 @@
     ],
     "distinct": [
       [
-        "krisis",
-        81
-      ],
-      [
         "kebudayaan",
         109
       ],
       [
-        "akulturasi",
-        12
+        "krisis",
+        81
+      ],
+      [
+        "indonesia",
+        110
       ],
       [
         "islam",
         39
       ],
       [
+        "akulturasi",
+        12
+      ],
+      [
         "sewajaryna",
         7
       ],
       [
+        "barat",
+        38
+      ],
+      [
         "indonesia-hindu",
         7
+      ],
+      [
+        "segi",
+        20
+      ],
+      [
+        "agama-agama",
+        10
       ],
       [
         "pertantangan",
@@ -138,22 +154,6 @@
       [
         "bertantangan",
         5
-      ],
-      [
-        "penjajaahan",
-        5
-      ],
-      [
-        "agama-agama",
-        10
-      ],
-      [
-        "indonesia",
-        110
-      ],
-      [
-        "sujatmoko",
-        4
       ]
     ],
     "phrases": [
@@ -196,25 +196,78 @@
         0.22
       ],
       [
-        4018,
-        0.17
-      ],
-      [
         3416,
-        0.16
+        0.21
       ],
       [
         4019,
-        0.15
+        0.2
       ],
       [
         4009,
-        0.15
+        0.2
       ],
       [
-        3991,
-        0.15
+        4018,
+        0.19
+      ],
+      [
+        4014,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 92,
+      "negative": 128,
+      "trend": [
+        -0.67,
+        null,
+        0.14,
+        -0.56,
+        -0.38,
+        0.43,
+        -0.11,
+        -0.14,
+        -0.88,
+        0.82,
+        -0.25,
+        null,
+        0.33,
+        0.33,
+        -0.13,
+        -0.37
+      ],
+      "emotions": [
+        [
+          "joy",
+          18
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

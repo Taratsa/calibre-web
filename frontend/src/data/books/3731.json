@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1247,
-    "longer_than": 16,
+    "longer_than": 55,
     "top": [
       [
         "ketimpangan",
@@ -107,12 +107,20 @@
         9
       ],
       [
+        "stigma",
+        9
+      ],
+      [
         "mural",
         6
       ],
       [
-        "stigma",
-        9
+        "seni",
+        15
+      ],
+      [
+        "sosial",
+        19
       ],
       [
         "gratis",
@@ -127,24 +135,16 @@
         3
       ],
       [
-        "seni",
-        15
+        "rakyat",
+        13
       ],
       [
         "keindahan",
         7
       ],
       [
-        "kemapanan",
-        3
-      ],
-      [
         "berhak",
         8
-      ],
-      [
-        "sosial",
-        19
       ]
     ],
     "phrases": [
@@ -199,9 +199,16 @@
         0.15
       ],
       [
-        7051,
-        0.11
+        19549,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 22,
+      "negative": 37,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

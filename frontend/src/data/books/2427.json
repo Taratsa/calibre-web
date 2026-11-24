@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2320,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "negara",
@@ -103,6 +103,10 @@
         9
       ],
       [
+        "rapat",
+        19
+      ],
+      [
         "consulta",
         5
       ],
@@ -127,24 +131,20 @@
         6
       ],
       [
-        "rapat",
-        19
-      ],
-      [
-        "ccri",
-        3
-      ],
-      [
-        "badiou",
-        3
+        "politik",
+        21
       ],
       [
         "komunitas",
         13
       ],
       [
-        "munisipal",
-        3
+        "negara",
+        21
+      ],
+      [
+        "ekonomi",
+        15
       ]
     ],
     "phrases": [
@@ -184,19 +184,19 @@
     "similar": [
       [
         3800,
-        0.31
+        0.33
       ],
       [
         2751,
-        0.31
-      ],
-      [
-        7405,
-        0.3
+        0.33
       ],
       [
         2356,
-        0.29
+        0.3
+      ],
+      [
+        7405,
+        0.27
       ],
       [
         7351,
@@ -204,8 +204,32 @@
       ],
       [
         2390,
-        0.21
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 39,
+      "negative": 28,
+      "trend": [
+        null,
+        -1,
+        1,
+        -0.14,
+        null,
+        null,
+        null,
+        -0.6,
+        0,
+        null,
+        null,
+        0.25,
+        1,
+        0.33,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

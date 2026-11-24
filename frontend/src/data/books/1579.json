@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 10369,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "raden",
@@ -113,48 +113,48 @@
         394
       ],
       [
-        "lajeng",
-        107
-      ],
-      [
         "prabu",
         160
+      ],
+      [
+        "lajeng",
+        107
       ],
       [
         "jayadrata",
         74
       ],
       [
-        "dursilawati",
-        62
-      ],
-      [
         "arya",
         135
       ],
       [
-        "janaka",
-        65
-      ],
-      [
-        "ingkang",
-        90
-      ],
-      [
-        "retna",
-        70
+        "dursilawati",
+        62
       ],
       [
         "dewi",
         156
       ],
       [
-        "pamade",
-        37
+        "ingkang",
+        90
+      ],
+      [
+        "janaka",
+        65
+      ],
+      [
+        "retna",
+        70
       ],
       [
         "baladewa",
         50
+      ],
+      [
+        "pamade",
+        37
       ]
     ],
     "phrases": [
@@ -194,28 +194,81 @@
     "similar": [
       [
         3566,
-        0.29
+        0.3
       ],
       [
         1584,
-        0.26
+        0.27
       ],
       [
         1598,
-        0.24
+        0.25
       ],
       [
         5223,
-        0.24
+        0.25
       ],
       [
         6189,
-        0.22
+        0.24
       ],
       [
         3540,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 55,
+      "negative": 63,
+      "trend": [
+        1,
+        -0.5,
+        -0.16,
+        -0.5,
+        0.67,
+        null,
+        -0.44,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          23
+        ],
+        [
+          "joy",
+          19
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 24544,
-    "longer_than": 80,
+    "longer_than": 90,
     "top": [
       [
         "guru",
@@ -89,52 +89,52 @@
     ],
     "distinct": [
       [
-        "diksus",
-        69
+        "guru",
+        421
       ],
       [
         "dikmen",
         81
       ],
       [
-        "guru",
-        421
+        "diksus",
+        69
       ],
       [
         "slb",
         77
       ],
       [
-        "siswa",
-        130
+        "pendidikan",
+        289
       ],
       [
-        "kompetensi",
-        74
+        "siswa",
+        130
       ],
       [
         "peserta",
         126
       ],
       [
+        "kompetensi",
+        74
+      ],
+      [
         "pembelajaran",
         98
       ],
       [
-        "smk",
-        56
+        "sekolah",
+        168
       ],
       [
         "direktorat",
         85
       ],
       [
-        "pendidikan",
-        289
-      ],
-      [
-        "kemendikbud",
-        44
+        "smk",
+        56
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         856,
-        0.54
+        0.56
       ],
       [
         859,
-        0.48
+        0.49
       ],
       [
         855,
-        0.27
+        0.3
       ],
       [
         857,
-        0.25
+        0.27
       ],
       [
         869,
-        0.22
+        0.26
       ],
       [
         877,
-        0.21
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 531,
+      "negative": 202,
+      "trend": [
+        0.83,
+        0.55,
+        0.69,
+        0.49,
+        0.64,
+        0.42,
+        0.33,
+        0.48,
+        0.89,
+        -0.14,
+        0.67,
+        0.64,
+        0.88,
+        0.75,
+        -0.33,
+        0.43
+      ],
+      "emotions": [
+        [
+          "joy",
+          49
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anticipation",
+          14
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "anger",
+          4
+        ]
+      ]
+    }
   }
 }

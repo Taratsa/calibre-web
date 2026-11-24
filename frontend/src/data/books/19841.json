@@ -1,0 +1,220 @@
+{
+  "id": 19841,
+  "title": "OpenBTS: Konfigurasi Asterisk untuk OpenBTS",
+  "slug": "openbts-konfigurasi-asterisk-untuk-openbts-onno-widodo-purbo",
+  "slugBase": "openbts-konfigurasi-asterisk-untuk-openbts-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-12-09",
+  "timestamp": "2026-11-24 06:07:47.456497",
+  "last_modified": "2026-11-24 06:07:47.456501",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:6523d879-4e24-5549-b8d3-c0cdac7650ff"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19841?v=1795475267",
+  "cover_og_url": "/cover/19841/og?v=1795475267",
+  "url": "/book/openbts-konfigurasi-asterisk-untuk-openbts-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Integrasi OpenBTS ke Asterisk sangat sederhana secara prinsip. Setiap SIM akan di konfigurasi sebagai SIP user menggunakan IMSI sebagai username. Proses memasukan pelanggan OpenBTS melalui dua tahap: Mendapatkan IMSI dari SIM, hal ini di implementasi dengan mengirim SMS saat handphone tersambung ke OpenBTS Masukan ke sip.conf dan extensions.conf untuk mendukung SIP user baru tersebut. Pada",
+  "data": [
+    {
+      "format": "epub",
+      "size": 8265,
+      "name": "OpenBTS_ Konfigurasi Asterisk untuk OpenBT - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1348,
+    "longer_than": 57,
+    "top": [
+      [
+        "openbts",
+        142
+      ],
+      [
+        "gnuradio",
+        61
+      ],
+      [
+        "recommended",
+        44
+      ],
+      [
+        "ubuntu",
+        30
+      ],
+      [
+        "install",
+        22
+      ],
+      [
+        "asterisk",
+        19
+      ],
+      [
+        "konfigurasi",
+        18
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "imsi",
+        14
+      ],
+      [
+        "uhd",
+        14
+      ],
+      [
+        "sip",
+        13
+      ],
+      [
+        "clock",
+        12
+      ]
+    ],
+    "distinct": [
+      [
+        "openbts",
+        142
+      ],
+      [
+        "gnuradio",
+        61
+      ],
+      [
+        "recommended",
+        44
+      ],
+      [
+        "imsi",
+        14
+      ],
+      [
+        "asterisk",
+        19
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "uhd",
+        14
+      ],
+      [
+        "ubuntu",
+        30
+      ],
+      [
+        "yate",
+        10
+      ],
+      [
+        "clock",
+        12
+      ],
+      [
+        "rangenetwork",
+        9
+      ],
+      [
+        "sip",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "gnuradio ubuntu",
+        19
+      ],
+      [
+        "ubuntu instal gnuradio",
+        11
+      ],
+      [
+        "gnuradio not recommended",
+        7
+      ],
+      [
+        "ubuntu install",
+        10
+      ],
+      [
+        "openbts dari svn",
+        6
+      ],
+      [
+        "clock mhz",
+        9
+      ],
+      [
+        "svn install clock",
+        5
+      ],
+      [
+        "openbts rangenetwork",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        10045,
+        0.79
+      ],
+      [
+        10043,
+        0.77
+      ],
+      [
+        9964,
+        0.77
+      ],
+      [
+        10027,
+        0.77
+      ],
+      [
+        10068,
+        0.77
+      ],
+      [
+        9877,
+        0.76
+      ]
+    ],
+    "sentiment": null
+  }
+}

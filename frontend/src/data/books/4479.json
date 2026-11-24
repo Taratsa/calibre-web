@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 879,
-    "longer_than": 10,
+    "longer_than": 50,
     "top": [
       [
         "orang",
@@ -129,6 +129,10 @@
         4
       ],
       [
+        "orang",
+        9
+      ],
+      [
         "harta",
         3
       ],
@@ -137,19 +141,16 @@
         4
       ],
       [
-        "adat",
-        3
-      ],
-      [
         "jakarta",
         4
       ],
       [
-        "orang",
-        9
+        "adat",
+        3
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3209,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "sosial",
@@ -103,12 +103,16 @@
         13
       ],
       [
-        "bookchin",
-        11
+        "sosial",
+        45
       ],
       [
         "relasi",
         21
+      ],
+      [
+        "bookchin",
+        11
       ],
       [
         "afinitas",
@@ -119,32 +123,28 @@
         7
       ],
       [
-        "ekologis",
-        10
+        "demokrasi",
+        18
       ],
       [
-        "sosial",
-        45
+        "ekologis",
+        10
       ],
       [
         "dominasi",
         14
       ],
       [
-        "demokrasi",
-        18
+        "masyarakat",
+        29
       ],
       [
         "setara",
         12
       ],
       [
-        "sukarela",
-        10
-      ],
-      [
-        "kontrol",
-        12
+        "politik",
+        21
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2049,
-        0.61
+        0.62
       ],
       [
         2308,
-        0.18
+        0.2
       ],
       [
         2598,
-        0.15
-      ],
-      [
-        7266,
-        0.15
+        0.19
       ],
       [
         6730,
-        0.14
+        0.18
       ],
       [
         2203,
-        0.14
+        0.18
+      ],
+      [
+        2104,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 39,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

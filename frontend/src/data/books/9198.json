@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1151,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "hukum",
@@ -110,48 +110,48 @@
         8
       ],
       [
-        "penjara",
-        10
-      ],
-      [
         "hukum",
         19
+      ],
+      [
+        "penjara",
+        10
       ],
       [
         "kesetaraan",
         6
       ],
       [
-        "monster",
-        3
+        "kepolisian",
+        5
+      ],
+      [
+        "sosial",
+        10
       ],
       [
         "kriminal",
         4
       ],
       [
-        "teroris",
-        3
-      ],
-      [
-        "kepolisian",
-        5
-      ],
-      [
         "tatanan",
         5
       ],
       [
-        "setara",
-        4
+        "monster",
+        3
+      ],
+      [
+        "teroris",
+        3
+      ],
+      [
+        "menciptakan",
+        7
       ],
       [
         "individu",
         6
-      ],
-      [
-        "pengawasan",
-        4
       ]
     ],
     "phrases": [
@@ -179,11 +179,11 @@
     "similar": [
       [
         4684,
-        0.21
+        0.23
       ],
       [
         2672,
-        0.21
+        0.23
       ],
       [
         1777,
@@ -194,13 +194,14 @@
         0.17
       ],
       [
-        7058,
-        0.14
+        7304,
+        0.17
       ],
       [
-        7304,
+        7058,
         0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

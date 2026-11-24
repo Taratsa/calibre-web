@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1408,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "kekerasan",
@@ -107,11 +107,15 @@
         7
       ],
       [
-        "destructiveness",
-        3
+        "citra",
+        10
       ],
       [
-        "citra",
+        "kekerasan",
+        14
+      ],
+      [
+        "realitas",
         10
       ],
       [
@@ -119,24 +123,20 @@
         6
       ],
       [
-        "pemirsanya",
+        "destructiveness",
         3
-      ],
-      [
-        "realitas",
-        10
-      ],
-      [
-        "horor",
-        4
-      ],
-      [
-        "kekerasan",
-        14
       ],
       [
         "teror",
         7
+      ],
+      [
+        "pemirsanya",
+        3
+      ],
+      [
+        "horor",
+        4
       ],
       [
         "heidegger",
@@ -175,17 +175,66 @@
     ],
     "similar": [
       [
-        2092,
-        0.13
+        12319,
+        0.16
       ],
       [
-        7888,
+        2092,
         0.11
       ],
       [
-        4493,
-        0.1
+        1779,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 32,
+      "negative": 46,
+      "trend": [
+        -0.6,
+        -0.6,
+        1,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        -0.33,
+        -1,
+        -0.67,
+        -0.6,
+        -0.5,
+        null,
+        null,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

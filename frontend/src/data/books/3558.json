@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2055,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "anggit",
@@ -129,6 +129,10 @@
         8
       ],
       [
+        "kebun",
+        11
+      ],
+      [
         "berpuasa",
         6
       ],
@@ -137,16 +141,12 @@
         7
       ],
       [
-        "kemarau",
-        7
-      ],
-      [
-        "kebun",
+        "musim",
         11
       ],
       [
-        "rontok",
-        5
+        "kemarau",
+        7
       ]
     ],
     "phrases": [
@@ -186,16 +186,31 @@
     "similar": [
       [
         5450,
-        0.14
+        0.17
       ],
       [
-        3614,
-        0.11
+        5652,
+        0.13
       ],
       [
         5815,
+        0.12
+      ],
+      [
+        3614,
+        0.12
+      ],
+      [
+        5418,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 46,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

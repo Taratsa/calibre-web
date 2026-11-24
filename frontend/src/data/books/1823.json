@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2931,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "agama",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "agama",
+        36
+      ],
+      [
         "objek",
         23
       ],
       [
-        "agama",
-        36
+        "seni",
+        25
       ],
       [
         "stirner",
@@ -115,10 +119,6 @@
         8
       ],
       [
-        "seni",
-        25
-      ],
-      [
         "perbuatanku",
         6
       ],
@@ -127,24 +127,24 @@
         7
       ],
       [
-        "atm",
-        5
-      ],
-      [
         "moralitas",
         8
-      ],
-      [
-        "candle",
-        3
       ],
       [
         "pemahaman",
         12
       ],
       [
-        "terpahami",
-        3
+        "tuhan",
+        14
+      ],
+      [
+        "atm",
+        5
+      ],
+      [
+        "perbuatan",
+        11
       ]
     ],
     "phrases": [
@@ -168,28 +168,81 @@
     "similar": [
       [
         7300,
-        0.55
+        0.56
       ],
       [
         8096,
-        0.36
-      ],
-      [
-        8135,
-        0.21
+        0.37
       ],
       [
         4714,
-        0.2
+        0.22
       ],
       [
         302,
-        0.2
+        0.22
+      ],
+      [
+        8135,
+        0.22
       ],
       [
         2509,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 61,
+      "negative": 40,
+      "trend": [
+        -0.2,
+        -0.11,
+        null,
+        -0.33,
+        0.25,
+        0.27,
+        0.25,
+        null,
+        0.33,
+        null,
+        null,
+        -0.11,
+        0.33,
+        0.8,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

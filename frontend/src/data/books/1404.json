@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2942,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "suamiku",
@@ -120,7 +120,23 @@
         8
       ],
       [
+        "mesti",
+        21
+      ],
+      [
+        "kamar",
+        20
+      ],
+      [
         "kestasiun",
+        5
+      ],
+      [
+        "perempuan",
+        25
+      ],
+      [
+        "serasa-rasa",
         5
       ],
       [
@@ -128,32 +144,16 @@
         4
       ],
       [
-        "serasa-rasa",
-        5
-      ],
-      [
-        "mesti",
-        21
-      ],
-      [
         "oranglain",
         6
       ],
       [
-        "kopi-susu",
-        4
-      ],
-      [
-        "kamar",
-        20
-      ],
-      [
-        "jalang",
-        7
-      ],
-      [
         "gang",
         11
+      ],
+      [
+        "kopi-susu",
+        4
       ]
     ],
     "phrases": [
@@ -189,28 +189,85 @@
     "similar": [
       [
         7705,
-        0.63
+        0.64
       ],
       [
         1403,
-        0.15
+        0.18
       ],
       [
         2386,
+        0.17
+      ],
+      [
+        3684,
+        0.15
+      ],
+      [
+        7657,
         0.14
       ],
       [
         778,
-        0.11
-      ],
-      [
-        2980,
-        0.11
-      ],
-      [
-        3684,
-        0.11
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 53,
+      "negative": 38,
+      "trend": [
+        null,
+        -0.25,
+        0.14,
+        null,
+        0.33,
+        null,
+        0.43,
+        0.11,
+        0.67,
+        null,
+        null,
+        null,
+        -0.25,
+        0.11,
+        -0.25,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

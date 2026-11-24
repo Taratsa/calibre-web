@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2573,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "tiada",
@@ -93,48 +93,48 @@
         16
       ],
       [
-        "tjinta",
-        11
-      ],
-      [
         "tiada",
         26
       ],
       [
-        "essie",
-        4
+        "tjinta",
+        11
       ],
       [
         "hartojo",
         5
       ],
       [
-        "sastera",
-        7
+        "essie",
+        4
       ],
       [
-        "berterompet",
-        3
+        "sastera",
+        7
       ],
       [
         "djuga",
         10
       ],
       [
-        "bergenderang",
+        "berterompet",
         3
       ],
       [
-        "simponi",
-        4
+        "kau",
+        13
       ],
       [
         "dimalam",
         5
       ],
       [
-        "senjum",
-        5
+        "lenjap",
+        6
+      ],
+      [
+        "simponi",
+        4
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         7651,
-        0.23
+        0.24
       ],
       [
         1288,
-        0.19
+        0.21
       ],
       [
         4886,
-        0.17
+        0.19
       ],
       [
         4879,
-        0.15
-      ],
-      [
-        1190,
-        0.15
+        0.18
       ],
       [
         7726,
-        0.15
+        0.17
+      ],
+      [
+        1334,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 37,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

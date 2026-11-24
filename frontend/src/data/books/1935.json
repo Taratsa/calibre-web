@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1832,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "kampus",
@@ -107,12 +107,12 @@
         29
       ],
       [
-        "kemahasiswaan",
-        5
-      ],
-      [
         "perubahan",
         26
+      ],
+      [
+        "kemahasiswaan",
+        5
       ],
       [
         "perguruan",
@@ -123,28 +123,28 @@
         4
       ],
       [
-        "dikotomi",
-        4
-      ],
-      [
         "otoritas",
         7
+      ],
+      [
+        "dikotomi",
+        4
       ],
       [
         "birokrasi",
         6
       ],
       [
-        "memuakkan",
-        3
+        "sekedar",
+        8
       ],
       [
-        "katalis",
-        3
+        "universitas",
+        8
       ],
       [
-        "hierarki",
-        4
+        "demokrasi",
+        7
       ]
     ],
     "phrases": [
@@ -167,29 +167,36 @@
     ],
     "similar": [
       [
-        6991,
-        0.19
-      ],
-      [
-        1995,
-        0.19
-      ],
-      [
         3950,
-        0.18
+        0.2
       ],
       [
         182,
         0.18
       ],
       [
-        147,
+        6991,
+        0.18
+      ],
+      [
+        1995,
         0.17
       ],
       [
+        2764,
+        0.16
+      ],
+      [
         2043,
-        0.17
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 23,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

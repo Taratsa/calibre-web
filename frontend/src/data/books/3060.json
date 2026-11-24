@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 3207,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "manusia",
@@ -109,23 +109,31 @@
     ],
     "distinct": [
       [
-        "komunitasmu",
-        7
+        "manusia",
+        42
       ],
       [
         "anarki",
         14
       ],
       [
+        "komunitasmu",
+        7
+      ],
+      [
         "kesempurnaan",
         10
+      ],
+      [
+        "anarkis",
+        13
       ],
       [
         "ketidaksempurnaan",
         5
       ],
       [
-        "anarkis",
+        "sempurna",
         13
       ],
       [
@@ -133,16 +141,8 @@
         3
       ],
       [
-        "sempurna",
-        13
-      ],
-      [
-        "manusia",
-        42
-      ],
-      [
-        "pengontrol",
-        3
+        "hidup",
+        22
       ],
       [
         "komunitas",
@@ -153,8 +153,8 @@
         9
       ],
       [
-        "grup",
-        5
+        "sifat",
+        10
       ]
     ],
     "phrases": [
@@ -182,28 +182,52 @@
     "similar": [
       [
         7856,
-        0.34
+        0.33
       ],
       [
         3059,
-        0.34
+        0.33
       ],
       [
         2444,
-        0.17
-      ],
-      [
-        2716,
-        0.14
+        0.21
       ],
       [
         4657,
-        0.12
+        0.17
       ],
       [
         3061,
-        0.12
+        0.17
+      ],
+      [
+        3959,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 69,
+      "negative": 42,
+      "trend": [
+        null,
+        0.6,
+        0.78,
+        0.11,
+        0.53,
+        -0.05,
+        0.43,
+        null,
+        null,
+        null,
+        -0.33,
+        null,
+        -0.25,
+        0.56,
+        0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1245,
-    "longer_than": 16,
+    "longer_than": 55,
     "top": [
       [
         "rezim",
@@ -130,27 +130,27 @@
         3
       ],
       [
-        "hezbollah",
-        3
-      ],
-      [
         "assad",
         4
       ],
       [
-        "lebanon",
-        4
-      ],
-      [
-        "demonstran",
-        5
+        "hezbollah",
+        3
       ],
       [
         "penindasan",
         10
       ],
       [
-        "anti-imperialis",
+        "mendukung",
+        14
+      ],
+      [
+        "kiri",
+        12
+      ],
+      [
+        "lebanon",
         4
       ]
     ],
@@ -187,28 +187,52 @@
     "similar": [
       [
         1759,
-        0.26
+        0.27
       ],
       [
         2353,
-        0.25
+        0.26
       ],
       [
         1761,
-        0.23
+        0.25
       ],
       [
         2085,
-        0.23
+        0.24
       ],
       [
         271,
         0.21
       ],
       [
-        3701,
-        0.17
+        2574,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.3,
+      "positive": 24,
+      "negative": 45,
+      "trend": [
+        null,
+        -0.6,
+        null,
+        -0.6,
+        null,
+        -0.2,
+        null,
+        null,
+        null,
+        -0.6,
+        null,
+        0,
+        0.33,
+        -0.2,
+        -0.33,
+        -0.2
+      ],
+      "emotions": []
+    }
   }
 }

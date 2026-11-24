@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 11636,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "indonesia",
@@ -96,52 +96,52 @@
     ],
     "distinct": [
       [
-        "pki",
-        122
-      ],
-      [
         "partai",
         183
       ],
       [
-        "gki",
-        37
-      ],
-      [
-        "komunis",
-        86
+        "pki",
+        122
       ],
       [
         "revolusi",
         117
       ],
       [
+        "komunis",
+        86
+      ],
+      [
+        "gki",
+        37
+      ],
+      [
+        "indonesia",
+        197
+      ],
+      [
+        "kaum",
+        101
+      ],
+      [
         "marxisme-leninisme",
         34
+      ],
+      [
+        "rakyat",
+        93
       ],
       [
         "plan",
         41
       ],
       [
-        "revisionis",
-        21
-      ],
-      [
         "imperialisme",
         39
       ],
       [
-        "tripanji",
-        13
-      ],
-      [
-        "imperialis",
-        34
-      ],
-      [
-        "burjuis",
-        16
+        "revisionis",
+        21
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         6758,
-        0.73
+        0.75
       ],
       [
         9302,
-        0.59
+        0.63
       ],
       [
         9304,
-        0.58
+        0.62
       ],
       [
         6713,
-        0.44
+        0.48
       ],
       [
         4814,
-        0.44
+        0.48
       ],
       [
         471,
-        0.43
+        0.47
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 311,
+      "negative": 84,
+      "trend": [
+        0.57,
+        -0.44,
+        0.14,
+        0.79,
+        0.45,
+        0.57,
+        0.44,
+        0.69,
+        0.43,
+        1,
+        0.87,
+        0.2,
+        0.74,
+        0.83,
+        0.93,
+        0.39
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

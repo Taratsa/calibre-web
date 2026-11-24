@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 727,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "pendidikan",
@@ -107,55 +107,63 @@
         19
       ],
       [
-        "sebagal",
-        3
+        "negara",
+        16
       ],
       [
         "sistem",
         11
       ],
       [
+        "sebagal",
+        3
+      ],
+      [
         "kurikulum",
         3
       ],
       [
-        "negara",
-        16
-      ],
-      [
-        "siswa",
-        3
+        "alat",
+        6
       ],
       [
         "struktur",
         4
       ],
       [
-        "praktik",
-        3
-      ],
-      [
         "kekerasan",
         4
       ],
       [
-        "akar",
+        "siswa",
         3
       ],
       [
-        "alat",
-        6
+        "praktik",
+        3
+      ],
+      [
+        "akar",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         362,
-        0.28
+        0.27
+      ],
+      [
+        19350,
+        0.2
+      ],
+      [
+        7373,
+        0.2
       ],
       [
         2565,
-        0.19
+        0.2
       ],
       [
         888,
@@ -164,15 +172,8 @@
       [
         7003,
         0.18
-      ],
-      [
-        363,
-        0.17
-      ],
-      [
-        7373,
-        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

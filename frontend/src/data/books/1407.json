@@ -12,7 +12,7 @@
   "author_sort": "Aidit, D.N.",
   "tags": [
     "Filsafat",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 7349,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "marxisme",
@@ -124,36 +124,36 @@
         47
       ],
       [
-        "masyaraikat",
-        13
-      ],
-      [
         "raka",
         31
+      ],
+      [
+        "masyaraikat",
+        13
       ],
       [
         "materialisme",
         30
       ],
       [
-        "historiskh",
-        11
-      ],
-      [
         "sosialisme",
         37
+      ],
+      [
+        "historiskh",
+        11
       ],
       [
         "marx",
         31
       ],
       [
-        "homme",
-        16
+        "komunis",
+        34
       ],
       [
-        "korja",
-        8
+        "homme",
+        16
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         9289,
-        0.22
+        0.26
       ],
       [
         9287,
-        0.2
+        0.25
       ],
       [
         7724,
-        0.19
-      ],
-      [
-        4825,
-        0.18
+        0.22
       ],
       [
         748,
-        0.18
+        0.21
+      ],
+      [
+        4825,
+        0.21
       ],
       [
         1580,
-        0.17
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 97,
+      "negative": 48,
+      "trend": [
+        0.6,
+        null,
+        -0.14,
+        null,
+        0.68,
+        -0.2,
+        1,
+        0.83,
+        0.25,
+        1,
+        null,
+        0.54,
+        null,
+        0.14,
+        0.18,
+        0.11
+      ],
+      "emotions": []
+    }
   }
 }

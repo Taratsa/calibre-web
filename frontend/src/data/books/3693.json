@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1753,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "batas",
@@ -103,15 +103,15 @@
         8
       ],
       [
-        "apio",
-        4
+        "batas",
+        17
       ],
       [
         "stirner",
         7
       ],
       [
-        "ludd",
+        "apio",
         4
       ],
       [
@@ -119,20 +119,20 @@
         6
       ],
       [
-        "bibles",
-        3
-      ],
-      [
-        "batas",
-        17
-      ],
-      [
-        "nietzsche",
-        5
+        "ludd",
+        4
       ],
       [
         "suci",
         10
+      ],
+      [
+        "bibles",
+        3
+      ],
+      [
+        "nietzsche",
+        5
       ],
       [
         "batas-batas",
@@ -168,7 +168,7 @@
     "similar": [
       [
         9179,
-        0.5
+        0.51
       ],
       [
         9201,
@@ -176,20 +176,44 @@
       ],
       [
         9178,
-        0.41
+        0.43
       ],
       [
         9176,
-        0.27
+        0.3
       ],
       [
         2065,
-        0.19
+        0.22
       ],
       [
         2425,
         0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 46,
+      "negative": 23,
+      "trend": [
+        null,
+        0.33,
+        1,
+        null,
+        0.71,
+        null,
+        null,
+        0.6,
+        -0.14,
+        null,
+        null,
+        null,
+        0.2,
+        null,
+        0.6,
+        0.25
+      ],
+      "emotions": []
+    }
   }
 }

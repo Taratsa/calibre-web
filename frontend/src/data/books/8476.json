@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 11052,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "publik",
@@ -117,43 +117,43 @@
         232
       ],
       [
-        "agenda",
-        106
-      ],
-      [
         "kebijakan",
         135
       ],
       [
-        "ipcos",
-        18
-      ],
-      [
-        "pembentukan",
-        95
-      ],
-      [
-        "penggalangan",
-        27
-      ],
-      [
-        "khalayak",
-        35
+        "agenda",
+        106
       ],
       [
         "masyarakat",
         198
       ],
       [
+        "pembentukan",
+        95
+      ],
+      [
+        "ipcos",
+        18
+      ],
+      [
+        "khalayak",
+        35
+      ],
+      [
+        "penggalangan",
+        27
+      ],
+      [
         "jejaring",
         30
       ],
       [
-        "aspirasi",
-        25
+        "pendapat",
+        52
       ],
       [
-        "pembuat",
+        "aspirasi",
         25
       ]
     ],
@@ -194,28 +194,77 @@
     "similar": [
       [
         8652,
-        0.17
+        0.21
       ],
       [
         8620,
-        0.15
-      ],
-      [
-        8246,
-        0.14
+        0.21
       ],
       [
         8607,
-        0.14
+        0.17
       ],
       [
         8616,
-        0.13
+        0.17
       ],
       [
-        8250,
-        0.13
+        8717,
+        0.17
+      ],
+      [
+        8246,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 134,
+      "negative": 66,
+      "trend": [
+        0.47,
+        0.67,
+        0.83,
+        0.38,
+        0.23,
+        0.83,
+        0,
+        0.5,
+        0.26,
+        0.33,
+        -0.11,
+        0.05,
+        0,
+        null,
+        -0.17,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          21
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

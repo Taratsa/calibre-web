@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 1151,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "masyarakat",
@@ -104,6 +104,14 @@
         12
       ],
       [
+        "masyarakat",
+        29
+      ],
+      [
+        "petani",
+        14
+      ],
+      [
         "kebun-kebun",
         6
       ],
@@ -120,24 +128,16 @@
         3
       ],
       [
-        "petani",
+        "pemerintah",
         14
-      ],
-      [
-        "kelurahan",
-        5
-      ],
-      [
-        "kementrian",
-        4
-      ],
-      [
-        "masyarakat",
-        29
       ],
       [
         "perusahaan",
         9
+      ],
+      [
+        "kelurahan",
+        5
       ]
     ],
     "phrases": [
@@ -177,28 +177,29 @@
     "similar": [
       [
         8425,
-        0.2
+        0.21
       ],
       [
         8283,
-        0.17
+        0.19
       ],
       [
         8694,
-        0.16
-      ],
-      [
-        8333,
-        0.15
-      ],
-      [
-        9090,
-        0.14
+        0.18
       ],
       [
         8444,
-        0.14
+        0.17
+      ],
+      [
+        8333,
+        0.17
+      ],
+      [
+        9090,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 27972,
-    "longer_than": 83,
+    "longer_than": 92,
     "top": [
       [
         "mati",
@@ -99,32 +99,36 @@
     ],
     "distinct": [
       [
-        "terpidana",
-        293
-      ],
-      [
         "migran",
         380
       ],
       [
-        "hukuman",
-        391
+        "terpidana",
+        293
       ],
       [
         "mati",
         712
       ],
       [
+        "hukuman",
+        391
+      ],
+      [
         "pekerja",
         368
+      ],
+      [
+        "perempuan",
+        390
       ],
       [
         "eksekusi",
         117
       ],
       [
-        "perempuan",
-        390
+        "keluarga",
+        260
       ],
       [
         "narkoba",
@@ -135,16 +139,12 @@
         79
       ],
       [
-        "keluarga",
-        260
+        "keluarganya",
+        98
       ],
       [
         "pemantauan",
         65
-      ],
-      [
-        "keluarganya",
-        98
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         8806,
-        0.44
+        0.46
       ],
       [
         8819,
-        0.29
+        0.31
       ],
       [
         8785,
-        0.29
+        0.31
       ],
       [
         8795,
-        0.24
+        0.28
       ],
       [
-        9025,
-        0.23
+        8797,
+        0.26
       ],
       [
         8809,
-        0.23
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.54,
+      "positive": 409,
+      "negative": 1377,
+      "trend": [
+        -0.35,
+        -0.39,
+        -0.67,
+        -0.69,
+        -0.66,
+        -0.6,
+        -0.7,
+        -0.77,
+        -0.54,
+        -0.36,
+        -0.35,
+        -0.58,
+        -0.54,
+        -0.59,
+        -0.59,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "sadness",
+          783
+        ],
+        [
+          "anger",
+          231
+        ],
+        [
+          "fear",
+          116
+        ],
+        [
+          "anticipation",
+          98
+        ],
+        [
+          "trust",
+          59
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

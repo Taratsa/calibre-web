@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2478,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "iang",
@@ -89,24 +89,24 @@
     ],
     "distinct": [
       [
-        "tepuktangan",
-        14
-      ],
-      [
         "iang",
         23
+      ],
+      [
+        "tepuktangan",
+        14
       ],
       [
         "a-a",
         16
       ],
       [
-        "saudaraz",
-        8
-      ],
-      [
         "pki",
         20
+      ],
+      [
+        "saudaraz",
+        8
       ],
       [
         "lndonesia",
@@ -125,16 +125,16 @@
         11
       ],
       [
-        "nasakom",
-        8
-      ],
-      [
         "malaysia",
         13
       ],
       [
-        "rmalaysia",
-        3
+        "nasakom",
+        8
+      ],
+      [
+        "pkl",
+        6
       ]
     ],
     "phrases": [
@@ -162,28 +162,29 @@
     "similar": [
       [
         7661,
-        0.51
+        0.52
       ],
       [
         5947,
-        0.18
+        0.19
       ],
       [
         4619,
-        0.16
+        0.18
       ],
       [
         1277,
-        0.16
+        0.18
       ],
       [
         5950,
-        0.15
+        0.16
       ],
       [
         5933,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

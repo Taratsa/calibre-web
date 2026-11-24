@@ -11,7 +11,7 @@
   ],
   "author_sort": "Indonesia, Embassy of the Republic of",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 5066,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "pki",
@@ -108,12 +108,12 @@
     ],
     "distinct": [
       [
-        "pangad",
-        26
-      ],
-      [
         "pki",
         62
+      ],
+      [
+        "pangad",
+        26
       ],
       [
         "gestapu",
@@ -124,16 +124,16 @@
         25
       ],
       [
+        "presiden",
+        55
+      ],
+      [
         "jendral",
         28
       ],
       [
         "kabinet",
         29
-      ],
-      [
-        "presiden",
-        55
       ],
       [
         "chaerul",
@@ -144,16 +144,16 @@
         19
       ],
       [
+        "abri",
+        18
+      ],
+      [
         "demonstrasi-demonstrasi",
         12
       ],
       [
         "menyadi",
         10
-      ],
-      [
-        "abri",
-        18
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         4461,
-        0.23
+        0.25
       ],
       [
         6321,
-        0.2
+        0.23
       ],
       [
         8768,
-        0.2
-      ],
-      [
-        1418,
-        0.16
+        0.22
       ],
       [
         4872,
-        0.15
+        0.18
       ],
       [
         4871,
-        0.15
+        0.18
+      ],
+      [
+        994,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 62,
+      "negative": 39,
+      "trend": [
+        0.82,
+        null,
+        0.25,
+        0.43,
+        0,
+        -0.75,
+        null,
+        null,
+        null,
+        null,
+        0.14,
+        null,
+        null,
+        0.43,
+        null,
+        0.2
+      ],
+      "emotions": []
+    }
   }
 }

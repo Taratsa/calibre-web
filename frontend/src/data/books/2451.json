@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2150,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "negara",
@@ -103,48 +103,48 @@
         9
       ],
       [
-        "molotov",
-        5
-      ],
-      [
         "majelis",
         8
       ],
       [
-        "pledoi",
-        3
-      ],
-      [
-        "affan",
-        3
+        "molotov",
+        5
       ],
       [
         "perkara",
         9
       ],
       [
+        "negara",
+        17
+      ],
+      [
         "penangkapan",
         7
+      ],
+      [
+        "pledoi",
+        3
       ],
       [
         "dprd",
         5
       ],
       [
-        "petasan",
+        "affan",
         3
+      ],
+      [
+        "keadilan",
+        8
       ],
       [
         "demonstrasi",
         6
       ],
       [
-        "direnggut",
-        3
-      ],
-      [
-        "interogasi",
-        3
+        "rakyat",
+        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         1399,
-        0.16
+        0.18
       ],
       [
         7941,
-        0.16
-      ],
-      [
-        1266,
-        0.16
+        0.18
       ],
       [
         6290,
-        0.16
+        0.18
       ],
       [
         1019,
-        0.16
+        0.18
+      ],
+      [
+        1266,
+        0.18
       ],
       [
         6960,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 36,
+      "negative": 44,
+      "trend": [
+        null,
+        -0.5,
+        -0.33,
+        -0.2,
+        null,
+        null,
+        null,
+        null,
+        -0.14,
+        0,
+        0.56,
+        null,
+        -0.6,
+        -0.2,
+        null,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

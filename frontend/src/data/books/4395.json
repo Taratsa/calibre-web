@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 3531,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "danarto",
@@ -114,12 +114,12 @@
         6
       ],
       [
-        "pertunjukan",
-        12
+        "seni",
+        20
       ],
       [
-        "raffel",
-        4
+        "pertunjukan",
+        12
       ],
       [
         "dalang",
@@ -130,20 +130,20 @@
         9
       ],
       [
-        "prosais",
-        4
+        "kulit",
+        16
       ],
       [
-        "cerpen-cerpen",
-        5
+        "raffel",
+        4
       ],
       [
         "kuli",
         8
       ],
       [
-        "seni",
-        20
+        "cerpen-cerpen",
+        5
       ]
     ],
     "phrases": [
@@ -195,16 +195,23 @@
       ],
       [
         4186,
-        0.24
+        0.25
       ],
       [
         4397,
-        0.24
+        0.25
       ],
       [
         4512,
-        0.23
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 42,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 12156,
-    "longer_than": 65,
+    "longer_than": 83,
     "top": [
       [
         "hamba",
@@ -105,24 +105,28 @@
         42
       ],
       [
-        "musthikaning",
-        24
-      ],
-      [
-        "katresnan",
-        27
-      ],
-      [
         "ingkang",
         38
+      ],
+      [
+        "musthikaning",
+        24
       ],
       [
         "anggur",
         47
       ],
       [
+        "katresnan",
+        27
+      ],
+      [
         "myang",
         28
+      ],
+      [
+        "hamba",
+        54
       ],
       [
         "suksma",
@@ -133,20 +137,16 @@
         31
       ],
       [
-        "hamba",
-        54
-      ],
-      [
         "cintaku",
         28
       ],
       [
-        "wus",
-        24
+        "iya",
+        42
       ],
       [
-        "gurisa",
-        14
+        "wus",
+        24
       ]
     ],
     "phrases": [
@@ -186,28 +186,81 @@
     "similar": [
       [
         2882,
-        0.3
+        0.32
       ],
       [
         1755,
-        0.28
+        0.29
       ],
       [
         2976,
-        0.27
+        0.29
       ],
       [
         2910,
-        0.23
+        0.25
       ],
       [
         1584,
-        0.23
+        0.24
       ],
       [
         5223,
-        0.23
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 167,
+      "negative": 59,
+      "trend": [
+        0.79,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        null,
+        0.71,
+        0.45,
+        0.47,
+        0.57,
+        0.29,
+        0.32,
+        0.4,
+        0.2,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          66
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

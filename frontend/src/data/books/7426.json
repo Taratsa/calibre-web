@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2895,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "seks",
@@ -110,24 +110,28 @@
         58
       ],
       [
-        "ruu",
-        22
-      ],
-      [
         "seksual",
         28
       ],
       [
-        "app",
-        13
+        "ruu",
+        22
       ],
       [
         "libido",
         9
       ],
       [
+        "app",
+        13
+      ],
+      [
         "eksibisionis",
         5
+      ],
+      [
+        "represi",
+        11
       ],
       [
         "marcuse",
@@ -138,20 +142,16 @@
         6
       ],
       [
-        "represi",
-        11
-      ],
-      [
-        "fobia",
-        4
-      ],
-      [
-        "rasio",
-        6
+        "perempuan",
+        21
       ],
       [
         "islam",
         15
+      ],
+      [
+        "gairah",
+        8
       ]
     ],
     "phrases": [
@@ -195,24 +195,73 @@
       ],
       [
         4696,
-        0.75
+        0.76
       ],
       [
         1863,
-        0.75
+        0.76
       ],
       [
         2013,
-        0.16
+        0.17
       ],
       [
         4185,
-        0.13
+        0.16
       ],
       [
         7131,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 31,
+      "negative": 45,
+      "trend": [
+        null,
+        0,
+        null,
+        -0.33,
+        0.2,
+        0,
+        -0.33,
+        0.2,
+        null,
+        0.14,
+        null,
+        null,
+        -0.69,
+        null,
+        null,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

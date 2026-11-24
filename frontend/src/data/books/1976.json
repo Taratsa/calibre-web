@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 5763,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "anarkis",
@@ -125,6 +125,10 @@
         6
       ],
       [
+        "kaum",
+        29
+      ],
+      [
         "khawarij",
         5
       ],
@@ -133,20 +137,16 @@
         4
       ],
       [
-        "veneuse",
-        4
+        "keranjang",
+        10
       ],
       [
         "isabelle",
         5
       ],
       [
-        "ikhwanul",
-        5
-      ],
-      [
-        "keranjang",
-        10
+        "veneuse",
+        4
       ]
     ],
     "phrases": [
@@ -186,28 +186,52 @@
     "similar": [
       [
         4719,
-        0.25
+        0.27
       ],
       [
         7162,
-        0.24
+        0.27
       ],
       [
         1917,
-        0.24
+        0.26
       ],
       [
         3785,
-        0.22
+        0.25
       ],
       [
         2635,
-        0.21
+        0.22
       ],
       [
         2522,
-        0.17
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 55,
+      "negative": 39,
+      "trend": [
+        0.6,
+        0.25,
+        0.6,
+        -0.33,
+        0.71,
+        0.56,
+        -0.45,
+        -0.14,
+        null,
+        0.27,
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

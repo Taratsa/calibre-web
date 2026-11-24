@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3050,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "pasolini",
@@ -114,28 +114,20 @@
         9
       ],
       [
-        "italia",
-        21
-      ],
-      [
-        "stanza",
-        8
-      ],
-      [
         "miskin",
         35
       ],
       [
-        "rosmarin",
-        4
+        "italia",
+        21
       ],
       [
-        "casarsa",
-        4
+        "anak-anak",
+        32
       ],
       [
-        "pier",
-        6
+        "stanza",
+        8
       ],
       [
         "borjuis",
@@ -146,12 +138,20 @@
         12
       ],
       [
+        "pier",
+        6
+      ],
+      [
         "gramsci",
         7
       ],
       [
-        "anak-anak",
-        32
+        "rosmarin",
+        4
+      ],
+      [
+        "casarsa",
+        4
       ]
     ],
     "phrases": [
@@ -188,6 +188,72 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2549,
+        0.65
+      ],
+      [
+        11356,
+        0.11
+      ],
+      [
+        2707,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": -0.42,
+      "positive": 34,
+      "negative": 83,
+      "trend": [
+        -1,
+        null,
+        -0.33,
+        -0.14,
+        -0.83,
+        -0.78,
+        -0.78,
+        -0.56,
+        null,
+        -0.2,
+        -0.2,
+        -0.33,
+        null,
+        0.5,
+        -0.5,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          22
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

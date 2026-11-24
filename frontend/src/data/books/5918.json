@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2884,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "serikat",
@@ -107,6 +107,10 @@
         49
       ],
       [
+        "pendidikan",
+        61
+      ],
+      [
         "mainstream",
         14
       ],
@@ -115,12 +119,16 @@
         25
       ],
       [
-        "pendidikan",
-        61
-      ],
-      [
         "pendidikannya",
         11
+      ],
+      [
+        "aktivis",
+        16
+      ],
+      [
+        "orientasi",
+        14
       ],
       [
         "keserikatburuhan",
@@ -129,14 +137,6 @@
       [
         "funding",
         7
-      ],
-      [
-        "orientasi",
-        14
-      ],
-      [
-        "aktivis",
-        16
       ],
       [
         "perburuhan",
@@ -184,28 +184,35 @@
     "similar": [
       [
         5911,
-        0.2
+        0.25
       ],
       [
         6781,
-        0.15
+        0.19
       ],
       [
         5893,
-        0.15
+        0.19
       ],
       [
         5888,
-        0.15
-      ],
-      [
-        8341,
-        0.14
+        0.19
       ],
       [
         5876,
-        0.14
+        0.18
+      ],
+      [
+        8567,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 31,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

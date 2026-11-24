@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 2560,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "organisasi",
@@ -109,12 +109,12 @@
     ],
     "distinct": [
       [
-        "militan",
-        48
-      ],
-      [
         "organisasi",
         104
+      ],
+      [
+        "militan",
+        48
       ],
       [
         "anarkis",
@@ -129,23 +129,19 @@
         23
       ],
       [
-        "pendukung",
-        24
-      ],
-      [
         "lingkaran",
         20
       ],
       [
-        "tendensi",
-        9
+        "pendukung",
+        24
       ],
       [
         "komitmen",
         14
       ],
       [
-        "berkomitmen",
+        "tendensi",
         9
       ],
       [
@@ -153,8 +149,12 @@
         17
       ],
       [
-        "keterlibatan",
-        10
+        "berkomitmen",
+        9
+      ],
+      [
+        "sosial",
+        22
       ]
     ],
     "phrases": [
@@ -194,28 +194,29 @@
     "similar": [
       [
         7019,
-        0.19
+        0.23
       ],
       [
         7859,
-        0.19
+        0.23
       ],
       [
         2553,
-        0.19
+        0.23
       ],
       [
         2383,
-        0.17
+        0.2
       ],
       [
         7541,
-        0.17
+        0.2
       ],
       [
-        7198,
-        0.11
+        7046,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

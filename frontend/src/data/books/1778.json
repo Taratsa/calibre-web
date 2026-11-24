@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1459,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "punk",
@@ -103,12 +103,36 @@
         59
       ],
       [
+        "politik",
+        17
+      ],
+      [
         "mapan",
         7
       ],
       [
-        "politik",
-        17
+        "menolak",
+        12
+      ],
+      [
+        "kebebasan",
+        8
+      ],
+      [
+        "perlawanan",
+        7
+      ],
+      [
+        "panggung",
+        5
+      ],
+      [
+        "sistem",
+        10
+      ],
+      [
+        "netral",
+        4
       ],
       [
         "band",
@@ -119,38 +143,18 @@
         3
       ],
       [
-        "netral",
-        4
-      ],
-      [
-        "panggung",
+        "lagu",
         5
-      ],
-      [
-        "menolak",
-        12
-      ],
-      [
-        "perlawanan",
-        7
-      ],
-      [
-        "sistem",
-        10
-      ],
-      [
-        "estetika",
-        3
-      ],
-      [
-        "keresahan",
-        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2666,
+        0.2
+      ],
+      [
+        2245,
         0.19
       ],
       [
@@ -158,21 +162,66 @@
         0.17
       ],
       [
-        1970,
+        2437,
         0.17
       ],
       [
-        2437,
+        1970,
         0.16
       ],
       [
-        2216,
-        0.15
-      ],
-      [
-        88,
-        0.15
+        7272,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 43,
+      "negative": 40,
+      "trend": [
+        null,
+        -0.33,
+        null,
+        null,
+        null,
+        0.6,
+        0.2,
+        0.33,
+        null,
+        0.11,
+        -0.25,
+        -0.43,
+        -0.67,
+        0.6,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

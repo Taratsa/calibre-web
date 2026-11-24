@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2254,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "kolektif",
@@ -106,12 +106,16 @@
     ],
     "distinct": [
       [
+        "kolektif",
+        49
+      ],
+      [
         "kolektif-kolektif",
         15
       ],
       [
-        "kolektif",
-        49
+        "anarkis",
+        16
       ],
       [
         "spanyol",
@@ -122,10 +126,6 @@
         12
       ],
       [
-        "anarkis",
-        16
-      ],
-      [
         "kolektivisasi",
         5
       ],
@@ -134,12 +134,12 @@
         4
       ],
       [
-        "souchy",
-        3
-      ],
-      [
         "individualis",
         6
+      ],
+      [
+        "souchy",
+        3
       ],
       [
         "kupon",
@@ -150,8 +150,8 @@
         4
       ],
       [
-        "augustin",
-        3
+        "masyarakat",
+        18
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         2802,
-        0.65
+        0.66
       ],
       [
         4675,
-        0.32
+        0.36
       ],
       [
         1816,
-        0.2
+        0.22
+      ],
+      [
+        2420,
+        0.21
       ],
       [
         1241,
-        0.18
+        0.21
       ],
       [
         2476,
-        0.18
-      ],
-      [
-        7895,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

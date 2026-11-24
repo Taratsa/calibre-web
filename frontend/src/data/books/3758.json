@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1899,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "pekerja",
@@ -119,12 +119,12 @@
         26
       ],
       [
-        "makis",
-        3
-      ],
-      [
         "solidaritas",
         15
+      ],
+      [
+        "makis",
+        3
       ],
       [
         "lelang",
@@ -135,16 +135,16 @@
         12
       ],
       [
-        "thessaloniki",
-        3
-      ],
-      [
         "inisiatif",
         9
       ],
       [
-        "bos",
-        5
+        "thessaloniki",
+        3
+      ],
+      [
+        "produksi",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7259,
-        0.21
+        0.26
       ],
       [
         2779,
-        0.17
+        0.22
       ],
       [
         7210,
-        0.16
+        0.21
       ],
       [
         3713,
-        0.16
+        0.2
       ],
       [
-        2547,
-        0.15
+        2596,
+        0.19
       ],
       [
         4730,
-        0.13
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 34,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

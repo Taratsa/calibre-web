@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 111233,
-    "longer_than": 98,
+    "longer_than": 99,
     "top": [
       [
         "ang",
@@ -106,36 +106,36 @@
         203
       ],
       [
-        "kong",
-        172
-      ],
-      [
-        "chaim",
-        63
-      ],
-      [
         "ang",
         272
+      ],
+      [
+        "kong",
+        172
       ],
       [
         "hong",
         145
       ],
       [
-        "sally",
-        81
+        "chaim",
+        63
       ],
       [
         "mga",
         78
       ],
       [
-        "bulosan",
-        47
+        "sally",
+        81
       ],
       [
         "ako",
         82
+      ],
+      [
+        "bulosan",
+        47
       ],
       [
         "afterwork",
@@ -187,11 +187,11 @@
     "similar": [
       [
         5957,
-        0.2
+        0.21
       ],
       [
         733,
-        0.2
+        0.21
       ],
       [
         1440,
@@ -207,8 +207,65 @@
       ],
       [
         7931,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 570,
+      "negative": 493,
+      "trend": [
+        0.33,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.23,
+        0.35,
+        -0.09,
+        0.38,
+        -0.04,
+        -0.12,
+        0.18,
+        0.16,
+        null,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          105
+        ],
+        [
+          "sadness",
+          101
+        ],
+        [
+          "fear",
+          76
+        ],
+        [
+          "anticipation",
+          45
+        ],
+        [
+          "anger",
+          42
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "surprise",
+          29
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
   }
 }

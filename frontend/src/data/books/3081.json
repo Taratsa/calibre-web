@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3699,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "perempuan",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "compañera",
-        13
-      ],
-      [
         "tongkang",
         19
+      ],
+      [
+        "compañera",
+        13
       ],
       [
         "zul",
@@ -127,24 +127,24 @@
         10
       ],
       [
+        "polisi",
+        20
+      ],
+      [
+        "kapal",
+        16
+      ],
+      [
         "perempuanperempuan",
         7
       ],
       [
+        "nelayan",
+        12
+      ],
+      [
         "rumpon",
         5
-      ],
-      [
-        "nikel",
-        7
-      ],
-      [
-        "halim",
-        8
-      ],
-      [
-        "blokade",
-        8
       ]
     ],
     "phrases": [
@@ -183,25 +183,82 @@
     ],
     "similar": [
       [
-        3792,
-        0.13
-      ],
-      [
         1918,
-        0.12
+        0.15
       ],
       [
         7329,
-        0.12
-      ],
-      [
-        3080,
-        0.12
+        0.14
       ],
       [
         8560,
+        0.13
+      ],
+      [
+        3792,
+        0.12
+      ],
+      [
+        9055,
+        0.11
+      ],
+      [
+        8376,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 56,
+      "negative": 55,
+      "trend": [
+        -1,
+        null,
+        null,
+        null,
+        -0.33,
+        null,
+        -0.33,
+        0,
+        -0.11,
+        0.45,
+        0.6,
+        0,
+        0.27,
+        null,
+        -0.33,
+        0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          9
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

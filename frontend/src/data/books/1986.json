@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1911,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "ngos",
@@ -103,19 +103,39 @@
         30
       ],
       [
-        "donor",
-        6
+        "rakyat",
+        22
       ],
       [
         "perjuangan",
         16
       ],
       [
-        "rakyat",
-        22
+        "donor",
+        6
+      ],
+      [
+        "gerakan",
+        14
+      ],
+      [
+        "lembaga",
+        11
+      ],
+      [
+        "membangun",
+        14
       ],
       [
         "mentalitas",
+        5
+      ],
+      [
+        "organisasi",
+        12
+      ],
+      [
+        "hierarki",
         5
       ],
       [
@@ -123,28 +143,8 @@
         4
       ],
       [
-        "hierarki",
-        5
-      ],
-      [
-        "lembaga",
-        11
-      ],
-      [
-        "memperpanjang",
-        4
-      ],
-      [
-        "meluangkan",
-        3
-      ],
-      [
-        "membangun",
-        14
-      ],
-      [
-        "organisasi",
-        12
+        "kolektif",
+        7
       ]
     ],
     "phrases": [
@@ -172,28 +172,35 @@
     "similar": [
       [
         2805,
-        0.24
+        0.27
       ],
       [
         1959,
-        0.24
+        0.26
       ],
       [
         3924,
-        0.21
+        0.23
       ],
       [
-        2619,
-        0.17
+        1973,
+        0.19
       ],
       [
         2407,
-        0.15
+        0.19
       ],
       [
         1833,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 39,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

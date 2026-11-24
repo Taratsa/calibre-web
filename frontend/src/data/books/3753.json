@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2484,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "individu",
@@ -127,6 +127,14 @@
         9
       ],
       [
+        "kepentingan",
+        18
+      ],
+      [
+        "rasionalitas",
+        7
+      ],
+      [
         "newman",
         5
       ],
@@ -135,16 +143,8 @@
         3
       ],
       [
-        "rasionalitas",
-        7
-      ],
-      [
-        "max",
-        8
-      ],
-      [
-        "okupasiruang",
-        3
+        "filsafat",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         9185,
-        0.32
+        0.34
       ],
       [
         1938,
-        0.23
+        0.25
       ],
       [
         2545,
-        0.22
+        0.25
+      ],
+      [
+        7349,
+        0.25
       ],
       [
         2276,
-        0.22
+        0.24
       ],
       [
-        8065,
-        0.22
-      ],
-      [
-        7095,
-        0.21
+        4093,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 38,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

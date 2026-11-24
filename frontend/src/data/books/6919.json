@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1773,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "kepolisian",
@@ -106,6 +106,10 @@
         38
       ],
       [
+        "korban",
+        31
+      ],
+      [
         "extrajudicial",
         9
       ],
@@ -114,23 +118,11 @@
         14
       ],
       [
-        "perkapolri",
-        6
-      ],
-      [
         "tangkap",
         15
       ],
       [
-        "korban",
-        31
-      ],
-      [
-        "killing",
-        9
-      ],
-      [
-        "begal",
+        "perkapolri",
         6
       ],
       [
@@ -138,16 +130,24 @@
         17
       ],
       [
-        "ddeesseemmbbeerr",
-        3
+        "killing",
+        9
       ],
       [
-        "menembak",
-        9
+        "senjata",
+        19
+      ],
+      [
+        "peristiwa",
+        22
       ],
       [
         "pelaku",
         15
+      ],
+      [
+        "begal",
+        6
       ]
     ],
     "phrases": [
@@ -187,28 +187,69 @@
     "similar": [
       [
         6935,
-        0.43
+        0.46
       ],
       [
         6901,
-        0.42
+        0.46
       ],
       [
         291,
-        0.3
+        0.32
       ],
       [
         6940,
-        0.28
+        0.3
       ],
       [
         6914,
-        0.26
+        0.28
       ],
       [
         4852,
-        0.23
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.73,
+      "positive": 13,
+      "negative": 85,
+      "trend": [
+        null,
+        -0.6,
+        null,
+        null,
+        -0.5,
+        -0.4,
+        -0.8,
+        -1,
+        null,
+        -0.43,
+        -1,
+        -0.67,
+        -1,
+        -0.67,
+        -0.67,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          23
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 25515,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "orang",
@@ -106,52 +106,52 @@
     ],
     "distinct": [
       [
+        "anarkis",
+        96
+      ],
+      [
         "antropolog",
         48
       ],
       [
-        "anarkis",
-        96
+        "orang",
+        188
       ],
       [
         "sakalava",
         16
       ],
       [
-        "mauss",
-        18
-      ],
-      [
-        "tsimihety",
-        13
-      ],
-      [
         "anarkisme",
         44
       ],
       [
-        "piaroa",
-        12
+        "mauss",
+        18
       ],
       [
-        "antropologi",
-        31
+        "masyarakat",
+        101
       ],
       [
-        "malagasi",
-        13
-      ],
-      [
-        "merina",
-        11
+        "negara",
+        98
       ],
       [
         "teori",
         55
       ],
       [
-        "madagaskar",
-        16
+        "antropologi",
+        31
+      ],
+      [
+        "tsimihety",
+        13
+      ],
+      [
+        "revolusi",
+        52
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         7135,
+        0.29
+      ],
+      [
+        6721,
+        0.26
+      ],
+      [
+        4776,
         0.26
       ],
       [
         4873,
-        0.19
+        0.26
       ],
       [
         2132,
-        0.19
+        0.26
       ],
       [
-        2256,
-        0.17
-      ],
-      [
-        1997,
-        0.17
-      ],
-      [
-        2172,
-        0.17
+        6730,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 333,
+      "negative": 341,
+      "trend": [
+        -0.06,
+        0.36,
+        0.14,
+        -0.2,
+        -0.32,
+        -0.27,
+        0.12,
+        -0.14,
+        0.5,
+        -0.11,
+        0.05,
+        -0.1,
+        -0.15,
+        0.17,
+        -0.11,
+        0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          89
+        ],
+        [
+          "joy",
+          30
+        ],
+        [
+          "surprise",
+          26
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "fear",
+          22
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

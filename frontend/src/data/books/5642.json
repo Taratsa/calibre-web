@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 6797,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "cerita",
@@ -107,32 +107,32 @@
         144
       ],
       [
-        "layer",
-        77
-      ],
-      [
         "cerita",
         274
-      ],
-      [
-        "usul",
-        122
       ],
       [
         "rakyat",
         259
       ],
       [
+        "layer",
+        77
+      ],
+      [
+        "usul",
+        122
+      ],
+      [
         "bhuju",
         23
       ],
       [
-        "jokotole",
-        22
-      ],
-      [
         "anonim",
         51
+      ],
+      [
+        "jokotole",
+        22
       ],
       [
         "bangkalan",
@@ -143,12 +143,12 @@
         26
       ],
       [
-        "pamekasan",
-        19
+        "desa",
+        74
       ],
       [
-        "kontur",
-        19
+        "fase",
+        36
       ]
     ],
     "phrases": [
@@ -192,16 +192,48 @@
       ],
       [
         6119,
-        0.34
+        0.35
       ],
       [
         5445,
+        0.14
+      ],
+      [
+        6150,
+        0.13
+      ],
+      [
+        6319,
         0.12
       ],
       [
-        166,
+        3484,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 71,
+      "negative": 23,
+      "trend": [
+        1,
+        null,
+        0.4,
+        null,
+        null,
+        -0.6,
+        null,
+        0.78,
+        null,
+        null,
+        0.71,
+        1,
+        -0.2,
+        null,
+        0.85,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

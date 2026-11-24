@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 2570,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "negara",
@@ -113,20 +113,40 @@
     ],
     "distinct": [
       [
-        "pepe",
-        6
-      ],
-      [
         "ham",
         16
+      ],
+      [
+        "pepe",
+        6
       ],
       [
         "pemikiran",
         15
       ],
       [
+        "negara",
+        27
+      ],
+      [
+        "pemerintah",
+        20
+      ],
+      [
+        "september",
+        15
+      ],
+      [
+        "pelanggaran",
+        11
+      ],
+      [
         "tapa",
         6
+      ],
+      [
+        "tragedi",
+        7
       ],
       [
         "karantina",
@@ -137,28 +157,8 @@
         3
       ],
       [
-        "pelanggaran",
-        11
-      ],
-      [
-        "september",
-        15
-      ],
-      [
-        "tragedi",
-        7
-      ],
-      [
-        "pemerintah",
-        20
-      ],
-      [
         "papua",
         6
-      ],
-      [
-        "negara",
-        27
       ]
     ],
     "phrases": [
@@ -190,7 +190,7 @@
     "similar": [
       [
         4893,
-        0.22
+        0.25
       ],
       [
         6913,
@@ -198,20 +198,69 @@
       ],
       [
         8266,
-        0.19
+        0.21
       ],
       [
         8268,
-        0.17
+        0.2
       ],
       [
-        240,
-        0.16
+        142,
+        0.19
       ],
       [
         6916,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.31,
+      "positive": 35,
+      "negative": 67,
+      "trend": [
+        0.2,
+        null,
+        null,
+        0.43,
+        null,
+        -0.56,
+        null,
+        -1,
+        0,
+        -1,
+        0.14,
+        -0.69,
+        -0.78,
+        -0.43,
+        null,
+        -0.43
+      ],
+      "emotions": [
+        [
+          "anger",
+          35
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3919,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "polisi",
@@ -110,24 +110,24 @@
         49
       ],
       [
+        "polisi",
+        55
+      ],
+      [
         "patroli",
         25
+      ],
+      [
+        "kulit",
+        42
       ],
       [
         "pemolisian",
         13
       ],
       [
-        "polisi",
-        55
-      ],
-      [
         "peterloo",
         7
-      ],
-      [
-        "kulit",
-        42
       ],
       [
         "kepolisian",
@@ -138,20 +138,20 @@
         30
       ],
       [
+        "pekerja",
+        21
+      ],
+      [
+        "kekerasan",
+        21
+      ],
+      [
         "kerumunan",
         11
       ],
       [
-        "wilderson",
-        3
-      ],
-      [
-        "dirasialisasikan",
-        3
-      ],
-      [
-        "rasis",
-        7
+        "pembantaian",
+        9
       ]
     ],
     "phrases": [
@@ -191,16 +191,69 @@
     "similar": [
       [
         3071,
-        0.14
+        0.17
       ],
       [
         4867,
-        0.1
+        0.14
+      ],
+      [
+        2313,
+        0.14
       ],
       [
         2478,
-        0.1
+        0.13
+      ],
+      [
+        2596,
+        0.13
+      ],
+      [
+        2758,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 57,
+      "negative": 77,
+      "trend": [
+        -1,
+        -1,
+        0.27,
+        -0.43,
+        0,
+        -0.33,
+        1,
+        -0.25,
+        -1,
+        -0.6,
+        -0.6,
+        -0.5,
+        0.43,
+        -0.09,
+        -0.56,
+        0.82
+      ],
+      "emotions": [
+        [
+          "anger",
+          34
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          4
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4688,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "metafora",
@@ -111,40 +111,40 @@
         7
       ],
       [
-        "worker",
-        9
-      ],
-      [
-        "sex",
-        11
+        "pemberontakan",
+        18
       ],
       [
         "kak",
         12
       ],
       [
-        "pemberontakan",
-        18
+        "sex",
+        11
+      ],
+      [
+        "worker",
+        9
       ],
       [
         "menghubungkan",
         13
       ],
       [
-        "keterhimpitan",
-        3
-      ],
-      [
-        "andadan",
-        3
-      ],
-      [
-        "pembantaiannya",
-        3
-      ],
-      [
         "teknologi",
         18
+      ],
+      [
+        "api",
+        18
+      ],
+      [
+        "pemikiran",
+        14
+      ],
+      [
+        "spontan",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         3732,
-        0.2
+        0.21
       ],
       [
         54,
-        0.2
+        0.21
       ],
       [
         3933,
-        0.11
+        0.15
       ],
       [
         3830,
-        0.11
-      ],
-      [
-        7000,
-        0.11
+        0.15
       ],
       [
         2660,
-        0.11
+        0.15
+      ],
+      [
+        7000,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 61,
+      "negative": 69,
+      "trend": [
+        -0.33,
+        -0.23,
+        0.33,
+        null,
+        -0.2,
+        0,
+        -0.5,
+        0.14,
+        0,
+        -0.25,
+        -0.11,
+        1,
+        0.4,
+        -0.2,
+        -0.78,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

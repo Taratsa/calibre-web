@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2854,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "queer",
@@ -115,6 +115,14 @@
         10
       ],
       [
+        "polisi",
+        21
+      ],
+      [
+        "totalitas",
+        10
+      ],
+      [
         "queens",
         6
       ],
@@ -123,35 +131,27 @@
         5
       ],
       [
-        "totalitas",
-        10
-      ],
-      [
         "gay",
         9
       ],
       [
-        "polisi",
-        21
+        "kaum",
+        19
       ],
       [
         "stonewall",
         4
       ],
       [
+        "menghancurkan",
+        10
+      ],
+      [
+        "kulit",
+        11
+      ],
+      [
         "compton",
-        3
-      ],
-      [
-        "heteroseksualitas",
-        3
-      ],
-      [
-        "heteroseksual",
-        4
-      ],
-      [
-        "donat",
         3
       ]
     ],
@@ -188,28 +188,81 @@
     "similar": [
       [
         7384,
-        0.28
+        0.29
+      ],
+      [
+        7179,
+        0.23
+      ],
+      [
+        3795,
+        0.23
       ],
       [
         7383,
         0.22
       ],
       [
-        7179,
-        0.2
-      ],
-      [
-        3795,
+        7284,
         0.19
       ],
       [
-        7284,
-        0.16
-      ],
-      [
-        7234,
-        0.15
+        4723,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.29,
+      "positive": 32,
+      "negative": 58,
+      "trend": [
+        null,
+        -0.43,
+        null,
+        -0.71,
+        0.14,
+        -0.14,
+        0,
+        null,
+        0.33,
+        -1,
+        0.2,
+        -0.41,
+        null,
+        null,
+        null,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

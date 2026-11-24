@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 8370,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "nikana",
@@ -124,6 +124,10 @@
         68
       ],
       [
+        "beliau",
+        159
+      ],
+      [
         "anakna",
         58
       ],
@@ -136,20 +140,16 @@
         39
       ],
       [
-        "beliau",
-        159
-      ],
-      [
         "tallo",
         47
       ],
       [
-        "pammanakna",
-        31
+        "pole",
+        53
       ],
       [
-        "tumenanga",
-        33
+        "pammanakna",
+        31
       ]
     ],
     "phrases": [
@@ -197,20 +197,27 @@
       ],
       [
         2968,
-        0.13
+        0.14
       ],
       [
         1038,
-        0.13
+        0.14
       ],
       [
         3535,
-        0.12
+        0.13
       ],
       [
         2961,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 58,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

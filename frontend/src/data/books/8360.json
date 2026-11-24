@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 6881,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "land",
@@ -91,12 +91,12 @@
     ],
     "distinct": [
       [
-        "punjab",
-        67
-      ],
-      [
         "land",
         155
+      ],
+      [
+        "punjab",
+        67
       ],
       [
         "bengal",
@@ -115,20 +115,20 @@
         25
       ],
       [
-        "sharecroppers",
-        18
-      ],
-      [
         "reform",
         38
       ],
       [
-        "acres",
+        "sharecroppers",
         18
       ],
       [
         "consolidation",
         22
+      ],
+      [
+        "acres",
+        18
       ],
       [
         "tenancy",
@@ -176,28 +176,29 @@
     "similar": [
       [
         8573,
-        0.28
+        0.29
       ],
       [
         8680,
-        0.28
+        0.29
       ],
       [
         8706,
-        0.27
+        0.28
       ],
       [
         623,
-        0.23
+        0.24
       ],
       [
         8707,
-        0.23
+        0.24
       ],
       [
-        8381,
-        0.22
+        8568,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

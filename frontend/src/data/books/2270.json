@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3593,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "zine",
@@ -103,24 +103,24 @@
         9
       ],
       [
-        "hiphop",
-        10
-      ],
-      [
         "zine",
         17
+      ],
+      [
+        "hiphop",
+        10
       ],
       [
         "wadas",
         8
       ],
       [
-        "davasca",
-        4
-      ],
-      [
         "artwork",
         8
+      ],
+      [
+        "davasca",
+        4
       ],
       [
         "marhaenisme",
@@ -129,6 +129,10 @@
       [
         "pdip",
         5
+      ],
+      [
+        "taman",
+        13
       ],
       [
         "gigs",
@@ -140,10 +144,6 @@
       ],
       [
         "asongan",
-        4
-      ],
-      [
-        "graffiti",
         4
       ]
     ],
@@ -181,6 +181,76 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        14473,
+        0.11
+      ],
+      [
+        8089,
+        0.11
+      ],
+      [
+        2786,
+        0.1
+      ],
+      [
+        9211,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 49,
+      "negative": 44,
+      "trend": [
+        0.2,
+        0.2,
+        -0.33,
+        -0.67,
+        0.14,
+        0,
+        0.09,
+        0.4,
+        0.43,
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

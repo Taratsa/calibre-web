@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 17884,
-    "longer_than": 74,
+    "longer_than": 87,
     "top": [
       [
         "irian",
@@ -97,40 +97,40 @@
         135
       ],
       [
+        "barat",
+        174
+      ],
+      [
         "imperialis",
         56
-      ],
-      [
-        "neo-kolonialisme",
-        31
-      ],
-      [
-        "didaerah",
-        44
       ],
       [
         "banjak",
         55
       ],
       [
-        "nasion",
-        32
+        "didaerah",
+        44
       ],
       [
-        "barat",
-        174
+        "neo-kolonialisme",
+        31
+      ],
+      [
+        "belanda",
+        74
       ],
       [
         "hanja",
         48
       ],
       [
-        "rakjat",
-        41
+        "nasion",
+        32
       ],
       [
-        "belanda",
-        74
+        "rakjat",
+        41
       ],
       [
         "kolonialisme",
@@ -174,28 +174,77 @@
     "similar": [
       [
         9323,
-        0.25
+        0.28
       ],
       [
         6799,
-        0.24
+        0.28
       ],
       [
         799,
-        0.23
+        0.27
       ],
       [
         4793,
-        0.23
-      ],
-      [
-        559,
-        0.22
+        0.26
       ],
       [
         534,
-        0.22
+        0.26
+      ],
+      [
+        6726,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 190,
+      "negative": 111,
+      "trend": [
+        0.2,
+        0.2,
+        0.75,
+        0.37,
+        0.09,
+        -0.29,
+        0.2,
+        0.22,
+        -0.13,
+        0.2,
+        0.33,
+        0.67,
+        0.52,
+        0.08,
+        0.43,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          29
+        ],
+        [
+          "trust",
+          20
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

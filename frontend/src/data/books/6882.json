@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3810,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "ilmu",
@@ -116,12 +116,20 @@
         24
       ],
       [
-        "rentjana",
-        13
+        "akal",
+        30
       ],
       [
         "masjarakat",
         16
+      ],
+      [
+        "rentjana",
+        13
+      ],
+      [
+        "barat",
+        37
       ],
       [
         "penjelidikan",
@@ -132,20 +140,12 @@
         10
       ],
       [
-        "akal",
-        30
-      ],
-      [
         "djuga",
         14
       ],
       [
-        "penjelidikannja",
-        6
-      ],
-      [
-        "liberal-kapitalis",
-        4
+        "fakta-fakta",
+        11
       ]
     ],
     "phrases": [
@@ -185,28 +185,52 @@
     "similar": [
       [
         7603,
-        0.14
-      ],
-      [
-        8771,
-        0.14
+        0.17
       ],
       [
         7665,
-        0.14
+        0.17
       ],
       [
         4890,
-        0.14
+        0.17
       ],
       [
         4820,
-        0.14
+        0.17
       ],
       [
         5959,
-        0.13
+        0.16
+      ],
+      [
+        4591,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 68,
+      "negative": 30,
+      "trend": [
+        null,
+        0.2,
+        0.2,
+        null,
+        null,
+        0.87,
+        -0.2,
+        0,
+        null,
+        0,
+        null,
+        0.43,
+        0.75,
+        0.56,
+        0.25,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

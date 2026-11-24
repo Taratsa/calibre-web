@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 556,
-    "longer_than": 6,
+    "longer_than": 42,
     "top": [
       [
         "harto",
@@ -89,12 +89,12 @@
         4
       ],
       [
-        "duta",
-        3
-      ],
-      [
         "negeri",
         8
+      ],
+      [
+        "duta",
+        3
       ],
       [
         "percaya",
@@ -109,36 +109,37 @@
         4
       ],
       [
+        "orang",
+        6
+      ],
+      [
         "pribadi",
         3
       ],
       [
         "masyarakat",
         3
-      ],
-      [
-        "orang",
-        6
       ]
     ],
     "phrases": [],
     "similar": [
       [
         183,
-        0.21
-      ],
-      [
-        209,
         0.2
       ],
       [
+        209,
+        0.19
+      ],
+      [
         990,
-        0.18
+        0.16
       ],
       [
         4356,
-        0.15
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

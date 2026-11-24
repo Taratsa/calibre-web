@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2340,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "seksual",
@@ -99,16 +99,16 @@
     ],
     "distinct": [
       [
+        "seksual",
+        26
+      ],
+      [
         "seksualitas",
         18
       ],
       [
         "spektakular",
         10
-      ],
-      [
-        "seksual",
-        26
       ],
       [
         "romansa",
@@ -135,16 +135,16 @@
         5
       ],
       [
+        "hasrat",
+        8
+      ],
+      [
         "flo",
         3
       ],
       [
-        "mencinta",
-        3
-      ],
-      [
-        "hasrat",
-        8
+        "cinta",
+        9
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         2292,
-        0.34
+        0.37
       ],
       [
         2539,
-        0.24
+        0.23
+      ],
+      [
+        2513,
+        0.23
       ],
       [
         7430,
         0.22
       ],
       [
-        2513,
-        0.21
-      ],
-      [
         1928,
-        0.2
+        0.22
       ],
       [
         7855,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 53,
+      "negative": 19,
+      "trend": [
+        0.6,
+        0.71,
+        0.71,
+        0.43,
+        null,
+        1,
+        null,
+        null,
+        0.2,
+        null,
+        -0.33,
+        null,
+        null,
+        -0.2,
+        0.75,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

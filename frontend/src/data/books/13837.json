@@ -1,0 +1,184 @@
+{
+  "id": 13837,
+  "title": "BoNeSi",
+  "slug": "bonesi-onno-widodo-purbo",
+  "slugBase": "bonesi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2020-02-18",
+  "timestamp": "2026-11-23 22:27:20.922485",
+  "last_modified": "2026-11-23 22:27:20.922490",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:67254db6-d06e-5f2e-bc2d-ee21b5d3b292"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/13837?v=1795447640",
+  "cover_og_url": "/cover/13837/og?v=1795447640",
+  "url": "/book/bonesi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://github.com/Markus-Go/bonesi BoNeSi BoNeSi, the DDoS Botnet Simulator is a Tool to simulate Botnet Traffic in a testbed environment on the wire. It is designed to study the effect of DDoS attacks. What traffic can be generated? BoNeSi generates ICMP, UDP and TCP (HTTP) flooding attacks from a defined botnet size (different IP addresses). BoNeSi is highly configurable and rates,",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4369,
+      "name": "BoNeSi - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 767,
+    "longer_than": 48,
+    "top": [
+      [
+        "bonesi",
+        23
+      ],
+      [
+        "tcp",
+        18
+      ],
+      [
+        "packets",
+        9
+      ],
+      [
+        "default",
+        8
+      ],
+      [
+        "filename",
+        8
+      ],
+      [
+        "attacks",
+        7
+      ],
+      [
+        "list",
+        6
+      ],
+      [
+        "traffic",
+        6
+      ],
+      [
+        "addresses",
+        5
+      ],
+      [
+        "icmp",
+        5
+      ],
+      [
+        "num",
+        5
+      ],
+      [
+        "size",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "bonesi",
+        23
+      ],
+      [
+        "tcp",
+        18
+      ],
+      [
+        "packets",
+        9
+      ],
+      [
+        "filename",
+        8
+      ],
+      [
+        "attacks",
+        7
+      ],
+      [
+        "icmp",
+        5
+      ],
+      [
+        "ddos",
+        4
+      ],
+      [
+        "botnet",
+        3
+      ],
+      [
+        "num",
+        5
+      ],
+      [
+        "udp",
+        5
+      ],
+      [
+        "traffic",
+        6
+      ],
+      [
+        "addresses",
+        5
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        13836,
+        0.24
+      ],
+      [
+        15518,
+        0.22
+      ],
+      [
+        11580,
+        0.18
+      ],
+      [
+        16076,
+        0.18
+      ],
+      [
+        9575,
+        0.17
+      ],
+      [
+        19972,
+        0.17
+      ]
+    ],
+    "sentiment": null
+  }
+}

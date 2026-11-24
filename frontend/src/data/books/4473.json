@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1681,
-    "longer_than": 21,
+    "longer_than": 60,
     "top": [
       [
         "pelukis",
@@ -105,15 +105,11 @@
         21
       ],
       [
-        "sunarso",
-        6
-      ],
-      [
         "melukis",
         11
       ],
       [
-        "edhi",
+        "sunarso",
         6
       ],
       [
@@ -121,8 +117,16 @@
         11
       ],
       [
+        "edhi",
+        6
+      ],
+      [
         "pameran",
         9
+      ],
+      [
+        "yogyakarta",
+        10
       ],
       [
         "taman-siswa",
@@ -135,10 +139,6 @@
       [
         "penyembuhan",
         5
-      ],
-      [
-        "yogyakarta",
-        10
       ],
       [
         "berkarya",
@@ -170,28 +170,35 @@
     "similar": [
       [
         4157,
-        0.47
+        0.45
       ],
       [
         4556,
-        0.25
+        0.26
       ],
       [
         4132,
-        0.25
+        0.26
       ],
       [
         4468,
-        0.25
+        0.24
+      ],
+      [
+        4300,
+        0.24
       ],
       [
         4452,
         0.23
-      ],
-      [
-        4300,
-        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 54,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1211,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "rekonsiliasi",
@@ -125,23 +125,23 @@
         11
       ],
       [
-        "pdip",
-        3
+        "rakyat",
+        13
       ],
       [
         "kelompok-kelompok",
         7
       ],
       [
+        "politik",
+        13
+      ],
+      [
+        "pdip",
+        3
+      ],
+      [
         "rasial",
-        4
-      ],
-      [
-        "persoalan-persoalan",
-        4
-      ],
-      [
-        "pembantaian",
         4
       ]
     ],
@@ -182,14 +182,18 @@
     "similar": [
       [
         8268,
-        0.19
-      ],
-      [
-        8768,
-        0.16
+        0.2
       ],
       [
         9136,
+        0.17
+      ],
+      [
+        8768,
+        0.17
+      ],
+      [
+        348,
         0.16
       ],
       [
@@ -197,13 +201,10 @@
         0.15
       ],
       [
-        348,
-        0.15
-      ],
-      [
         6321,
         0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

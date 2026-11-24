@@ -1,0 +1,201 @@
+{
+  "id": 10253,
+  "title": "OpenBTS: UMTS",
+  "slug": "openbts-umts-onno-widodo-purbo",
+  "slugBase": "openbts-umts-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-10-20",
+  "timestamp": "2026-11-23 19:21:55.148837",
+  "last_modified": "2026-11-23 19:21:55.148842",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:ffac961b-2eea-5bcc-b5f4-3b9a582ade23"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10253?v=1795436515",
+  "cover_og_url": "/cover/10253/og?v=1795436515",
+  "url": "/book/openbts-umts-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Introduction 2 Release Features/Capabilities 3 Supported Hardware 3.1 Software Radios 3.2 CPU requirements 3.3 Range Networks Development Kits 4 Phones/Modems tested 5 SIMS and Authentication 6 Build, Install, Setup, and Run Instructions 6.1 Prerequisites 6.2 Obtaining the OpenBTS-UMTS Source Code 6.3 Building and Setting Up OpenBTS-UMTS 6.4 Running OpenBTS-UMTS 7 FAQ 7.1 My data",
+  "data": [
+    {
+      "format": "epub",
+      "size": 5830,
+      "name": "OpenBTS_ UMTS - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1104,
+    "longer_than": 53,
+    "top": [
+      [
+        "openbts-umts",
+        39
+      ],
+      [
+        "umts",
+        13
+      ],
+      [
+        "openbts",
+        10
+      ],
+      [
+        "sudo",
+        9
+      ],
+      [
+        "network",
+        8
+      ],
+      [
+        "sdr",
+        8
+      ],
+      [
+        "authentication",
+        7
+      ],
+      [
+        "data",
+        7
+      ],
+      [
+        "accept",
+        6
+      ],
+      [
+        "release",
+        6
+      ],
+      [
+        "sipauthserve",
+        6
+      ],
+      [
+        "build",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "openbts-umts",
+        39
+      ],
+      [
+        "umts",
+        13
+      ],
+      [
+        "openbts",
+        10
+      ],
+      [
+        "sipauthserve",
+        6
+      ],
+      [
+        "authentication",
+        7
+      ],
+      [
+        "sims",
+        4
+      ],
+      [
+        "sdr",
+        8
+      ],
+      [
+        "sudo",
+        9
+      ],
+      [
+        "accept",
+        6
+      ],
+      [
+        "release",
+        6
+      ],
+      [
+        "subscriber",
+        4
+      ],
+      [
+        "networks",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "range networks",
+        5
+      ],
+      [
+        "subscriber registry",
+        3
+      ],
+      [
+        "networks sdr",
+        3
+      ],
+      [
+        "integrity protection",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        10486,
+        0.74
+      ],
+      [
+        11216,
+        0.37
+      ],
+      [
+        11175,
+        0.28
+      ],
+      [
+        10487,
+        0.19
+      ],
+      [
+        18572,
+        0.18
+      ],
+      [
+        10083,
+        0.17
+      ]
+    ],
+    "sentiment": null
+  }
+}

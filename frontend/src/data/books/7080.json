@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2618,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "politik",
@@ -110,6 +110,10 @@
         49
       ],
       [
+        "politik",
+        59
+      ],
+      [
         "bookchin",
         14
       ],
@@ -126,32 +130,28 @@
         11
       ],
       [
-        "politik",
-        59
-      ],
-      [
         "peet",
         6
-      ],
-      [
-        "ecologies",
-        4
-      ],
-      [
-        "political",
-        14
       ],
       [
         "pendekatan",
         18
       ],
       [
-        "ekologis",
-        8
+        "political",
+        14
       ],
       [
-        "forsyth",
-        3
+        "ecologies",
+        4
+      ],
+      [
+        "ekonomi",
+        21
+      ],
+      [
+        "lingkungan",
+        21
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         7266,
-        0.27
+        0.29
       ],
       [
-        7403,
+        1820,
+        0.26
+      ],
+      [
+        8103,
         0.24
       ],
       [
         1765,
-        0.24
-      ],
-      [
-        1820,
         0.23
       ],
       [
-        8103,
-        0.21
+        2662,
+        0.23
       ],
       [
-        2662,
-        0.2
+        7403,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

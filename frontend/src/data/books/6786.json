@@ -14,7 +14,7 @@
     "buruh",
     "pengadilan rakyat",
     "serikat buruh",
-    "upah"
+    "Upah"
   ],
   "publisher": {
     "id": 539,
@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 42892,
-    "longer_than": 91,
+    "longer_than": 96,
     "top": [
       [
         "buruh",
@@ -114,40 +114,40 @@
         209
       ],
       [
-        "walmart",
-        78
-      ],
-      [
-        "pemasok",
-        103
-      ],
-      [
         "serikat",
         297
       ],
       [
-        "minimum",
-        161
+        "walmart",
+        78
       ],
       [
         "perusahaan",
         264
       ],
       [
-        "adidas",
-        62
+        "kerja",
+        375
       ],
       [
-        "merek",
-        107
+        "pemasok",
+        103
       ],
       [
         "industri",
         217
       ],
       [
-        "panarub",
-        42
+        "minimum",
+        161
+      ],
+      [
+        "layak",
+        197
+      ],
+      [
+        "merek",
+        107
       ]
     ],
     "phrases": [
@@ -187,28 +187,85 @@
     "similar": [
       [
         6965,
-        0.35
+        0.37
       ],
       [
         6795,
-        0.35
-      ],
-      [
-        9086,
-        0.29
-      ],
-      [
-        5908,
-        0.28
+        0.37
       ],
       [
         6790,
-        0.28
+        0.33
       ],
       [
         5890,
-        0.28
+        0.33
+      ],
+      [
+        9086,
+        0.32
+      ],
+      [
+        5908,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 717,
+      "negative": 530,
+      "trend": [
+        0.03,
+        -0.31,
+        -0.48,
+        0.21,
+        -0.16,
+        0.24,
+        0.24,
+        -0.2,
+        0.01,
+        -0.04,
+        0.11,
+        0.72,
+        0.38,
+        0.61,
+        0.59,
+        0.51
+      ],
+      "emotions": [
+        [
+          "anger",
+          124
+        ],
+        [
+          "trust",
+          95
+        ],
+        [
+          "fear",
+          46
+        ],
+        [
+          "sadness",
+          19
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

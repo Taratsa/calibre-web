@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4047,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "cemeti",
@@ -129,11 +129,11 @@
         8
       ],
       [
-        "teddy",
+        "popok",
         8
       ],
       [
-        "popok",
+        "teddy",
         8
       ],
       [
@@ -141,8 +141,8 @@
         6
       ],
       [
-        "anusapati",
-        6
+        "ruang",
+        31
       ]
     ],
     "phrases": [
@@ -179,6 +179,30 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        4237,
+        0.13
+      ],
+      [
+        4552,
+        0.12
+      ],
+      [
+        4556,
+        0.1
+      ],
+      [
+        4132,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 43,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

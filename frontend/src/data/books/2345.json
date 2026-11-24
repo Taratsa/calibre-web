@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4480,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "sistem",
@@ -103,6 +103,10 @@
         122
       ],
       [
+        "propaganda",
+        26
+      ],
+      [
         "memberontak",
         21
       ],
@@ -115,12 +119,12 @@
         8
       ],
       [
-        "propaganda",
-        26
-      ],
-      [
         "rasisme",
         11
+      ],
+      [
+        "berkuasa",
+        20
       ],
       [
         "dorongan-dorongan",
@@ -131,20 +135,16 @@
         7
       ],
       [
-        "interseks",
-        5
+        "nilai-nilai",
+        17
       ],
       [
         "seksisme",
         7
       ],
       [
-        "berkuasa",
-        20
-      ],
-      [
-        "macropedia",
-        3
+        "interseks",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         4735,
-        0.15
+        0.18
       ],
       [
         279,
-        0.15
+        0.18
       ],
       [
         6855,
-        0.14
+        0.16
       ],
       [
         1942,
-        0.13
+        0.15
       ],
       [
         2046,
-        0.13
+        0.15
       ],
       [
-        2514,
-        0.12
+        3067,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.23,
+      "positive": 68,
+      "negative": 108,
+      "trend": [
+        null,
+        -0.62,
+        0.09,
+        -0.56,
+        -0.45,
+        0,
+        null,
+        -0.33,
+        0.2,
+        -0.52,
+        -0.54,
+        null,
+        -0.2,
+        0.6,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          47
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

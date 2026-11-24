@@ -40,7 +40,7 @@
   ],
   "text": {
     "words": 3060,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "pangan",
@@ -93,12 +93,12 @@
     ],
     "distinct": [
       [
-        "gates",
-        14
-      ],
-      [
         "pangan",
         28
+      ],
+      [
+        "gates",
+        14
       ],
       [
         "transgenik",
@@ -121,24 +121,24 @@
         13
       ],
       [
-        "genetik",
-        6
-      ],
-      [
-        "saye",
-        4
-      ],
-      [
         "luka",
         12
       ],
       [
-        "yeremia",
-        3
+        "genetik",
+        6
       ],
       [
-        "genetika",
-        4
+        "september",
+        14
+      ],
+      [
+        "melawan",
+        17
+      ],
+      [
+        "lupa",
+        14
       ]
     ],
     "phrases": [
@@ -178,28 +178,77 @@
     "similar": [
       [
         6936,
-        0.21
+        0.22
       ],
       [
         6930,
-        0.18
+        0.2
       ],
       [
         6924,
-        0.18
+        0.2
       ],
       [
         4065,
-        0.15
+        0.17
       ],
       [
         2392,
-        0.15
+        0.17
       ],
       [
         6932,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 42,
+      "negative": 58,
+      "trend": [
+        -0.43,
+        0.06,
+        null,
+        null,
+        0.08,
+        0.71,
+        null,
+        null,
+        null,
+        -0.75,
+        -0.33,
+        -0.14,
+        null,
+        null,
+        -0.67,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          17
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

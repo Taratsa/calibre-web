@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 7669,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "indonesia",
@@ -105,8 +105,16 @@
         84
       ],
       [
+        "indonesia",
+        181
+      ],
+      [
         "rakjat",
         51
+      ],
+      [
+        "nasional",
+        111
       ],
       [
         "nasakom",
@@ -121,32 +129,24 @@
         39
       ],
       [
-        "bersendjata",
-        26
+        "kaum",
+        85
       ],
       [
-        "pantjasila",
-        22
+        "bersendjata",
+        26
       ],
       [
         "marxisme",
         33
       ],
       [
-        "marxisme-leninisme",
+        "revolusi",
+        53
+      ],
+      [
+        "pantjasila",
         22
-      ],
-      [
-        "pki",
-        32
-      ],
-      [
-        "masjarakat",
-        28
-      ],
-      [
-        "burdjuasi",
-        16
       ]
     ],
     "phrases": [
@@ -186,28 +186,52 @@
     "similar": [
       [
         9314,
-        0.65
+        0.67
       ],
       [
         413,
-        0.41
+        0.44
       ],
       [
         412,
-        0.41
+        0.44
       ],
       [
         4754,
-        0.38
+        0.42
       ],
       [
         417,
-        0.38
+        0.41
       ],
       [
         7823,
-        0.37
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 132,
+      "negative": 28,
+      "trend": [
+        1,
+        1,
+        0.45,
+        1,
+        0.88,
+        0.5,
+        0.56,
+        1,
+        0.18,
+        0.2,
+        0.2,
+        null,
+        0.2,
+        0.6,
+        1,
+        0.8
+      ],
+      "emotions": []
+    }
   }
 }

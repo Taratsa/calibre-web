@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3956,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "rakjat",
@@ -95,36 +95,36 @@
         20
       ],
       [
-        "djor-djoran",
-        17
-      ],
-      [
         "nasakom",
         33
+      ],
+      [
+        "djor-djoran",
+        17
       ],
       [
         "rakjat",
         46
       ],
       [
-        "karno",
-        28
-      ],
-      [
         "saudara-saudara",
         31
+      ],
+      [
+        "karno",
+        28
       ],
       [
         "uttara",
         10
       ],
       [
-        "pendatun",
-        7
-      ],
-      [
         "berdjoang",
         13
+      ],
+      [
+        "pendatun",
+        7
       ],
       [
         "marhaenis",
@@ -135,8 +135,8 @@
         10
       ],
       [
-        "kuru",
-        11
+        "katolik",
+        17
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         680,
-        0.24
-      ],
-      [
-        6670,
-        0.17
+        0.26
       ],
       [
         8771,
-        0.17
+        0.19
       ],
       [
-        4926,
-        0.16
+        6670,
+        0.18
       ],
       [
         5947,
-        0.15
+        0.18
       ],
       [
-        2838,
-        0.15
+        4926,
+        0.18
+      ],
+      [
+        599,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 39,
+      "negative": 37,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

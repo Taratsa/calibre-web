@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 5412,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "bookchin",
@@ -122,40 +122,40 @@
         26
       ],
       [
-        "biehl",
-        9
+        "sosial",
+        54
       ],
       [
-        "hirarki",
-        13
+        "biehl",
+        9
       ],
       [
         "dominasi",
         22
       ],
       [
-        "komunalisme",
-        8
+        "komunitas",
+        26
       ],
       [
-        "sosial-ekologis",
-        7
+        "alam",
+        36
+      ],
+      [
+        "krisis",
+        21
+      ],
+      [
+        "hirarki",
+        13
       ],
       [
         "ekologis",
         13
       ],
       [
-        "enviromentalisme",
-        5
-      ],
-      [
-        "ocalan",
-        6
-      ],
-      [
-        "komunitas",
-        26
+        "komunalisme",
+        8
       ]
     ],
     "phrases": [
@@ -195,28 +195,77 @@
     "similar": [
       [
         1820,
-        0.27
+        0.32
       ],
       [
         2308,
-        0.24
+        0.28
       ],
       [
         8107,
-        0.21
+        0.25
       ],
       [
         7080,
-        0.21
+        0.24
       ],
       [
         7266,
-        0.2
+        0.22
       ],
       [
-        3778,
-        0.2
+        43,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 88,
+      "negative": 66,
+      "trend": [
+        -0.27,
+        -0.14,
+        null,
+        -0.64,
+        null,
+        -0.14,
+        0,
+        0.33,
+        0.67,
+        0,
+        0.78,
+        0.5,
+        -0.12,
+        0.64,
+        -0.12,
+        0.57
+      ],
+      "emotions": [
+        [
+          "trust",
+          10
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

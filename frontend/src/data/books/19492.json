@@ -1,0 +1,86 @@
+{
+  "id": 19492,
+  "title": "Mengikat GnuPG dan Alpine",
+  "slug": "mengikat-gnupg-dan-alpine-onno-widodo-purbo",
+  "slugBase": "mengikat-gnupg-dan-alpine-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-13",
+  "timestamp": "2026-11-24 05:39:31.941735",
+  "last_modified": "2026-11-24 05:39:31.941739",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:343d274d-861f-5924-b2c0-300f4c88450e"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19492?v=1795473571",
+  "cover_og_url": "/cover/19492/og?v=1795473571",
+  "url": "/book/mengikat-gnupg-dan-alpine-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Bagi anda yang membutuhkan digital signature di alpine. Langkah yang perlu dilakukan Pindah ke folder .gnupg $ cd .gnupg/ Buat static link $ ln -s /usr/bin/gpg gpgencrypt; ln -s /usr/bin/gpg gpgclearsign Pindah ke home directory $ cd .. Jalankan Alpine $ alpine Masuk ke setup (M untuk main menu, S untuk setup). \"C\" ke Config menu panah ke bawah sampai hampir ke bawah. Edit \"display-filters\"",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2542,
+      "name": "Mengikat GnuPG dan Alpine - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 133,
+    "longer_than": 17,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        19483,
+        0.79
+      ],
+      [
+        14426,
+        0.53
+      ],
+      [
+        14427,
+        0.43
+      ],
+      [
+        11877,
+        0.39
+      ],
+      [
+        19488,
+        0.3
+      ],
+      [
+        20017,
+        0.29
+      ]
+    ],
+    "sentiment": null
+  }
+}

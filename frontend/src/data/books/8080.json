@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 369,
-    "longer_than": 4,
+    "longer_than": 34,
     "top": [
       [
         "orang-orang",
@@ -106,20 +106,20 @@
         4
       ],
       [
-        "kepemimpinan",
-        3
-      ],
-      [
         "orang-orang",
         7
       ],
       [
-        "kemampuan",
-        4
+        "kepemimpinan",
+        3
       ],
       [
         "memilih",
         5
+      ],
+      [
+        "kemampuan",
+        4
       ],
       [
         "menolak",
@@ -134,28 +134,29 @@
     "similar": [
       [
         8039,
-        0.27
+        0.28
       ],
       [
         2421,
-        0.27
+        0.28
       ],
       [
         2170,
+        0.23
+      ],
+      [
+        16920,
         0.22
       ],
       [
-        3087,
-        0.16
-      ],
-      [
-        3958,
-        0.16
+        7054,
+        0.17
       ],
       [
         7444,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

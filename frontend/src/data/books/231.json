@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1810,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "korban",
@@ -105,12 +105,12 @@
         24
       ],
       [
-        "ham",
-        23
-      ],
-      [
         "kebenaran",
         30
+      ],
+      [
+        "ham",
+        23
       ],
       [
         "rekomendasi",
@@ -125,6 +125,10 @@
         13
       ],
       [
+        "peristiwa",
+        15
+      ],
+      [
         "fakta",
         11
       ],
@@ -133,16 +137,12 @@
         12
       ],
       [
-        "peristiwa",
-        15
+        "penyelidikan",
+        6
       ],
       [
         "kesaksian",
         5
-      ],
-      [
-        "penyelidikan",
-        6
       ]
     ],
     "phrases": [
@@ -182,15 +182,15 @@
     "similar": [
       [
         6945,
-        0.26
+        0.27
       ],
       [
         8207,
-        0.25
+        0.26
       ],
       [
         169,
-        0.25
+        0.26
       ],
       [
         7928,
@@ -198,12 +198,49 @@
       ],
       [
         8794,
-        0.24
+        0.25
       ],
       [
         6921,
-        0.23
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 66,
+      "negative": 34,
+      "trend": [
+        -0.43,
+        null,
+        -0.33,
+        0.54,
+        0,
+        0.75,
+        1,
+        0.78,
+        null,
+        null,
+        null,
+        -0.2,
+        0.33,
+        null,
+        0.33,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

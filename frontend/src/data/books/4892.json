@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 11412,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "djagung",
@@ -113,36 +113,36 @@
         147
       ],
       [
+        "gula",
+        93
+      ],
+      [
         "membuatnja",
         48
-      ],
-      [
-        "tjantel",
-        30
-      ],
-      [
-        "katjang",
-        49
       ],
       [
         "tepung",
         70
       ],
       [
-        "gula",
-        93
+        "katjang",
+        49
       ],
       [
-        "santan",
-        46
+        "tjantel",
+        30
       ],
       [
         "tjara",
         69
       ],
       [
-        "zone",
-        48
+        "santan",
+        46
+      ],
+      [
+        "kelapa",
+        82
       ],
       [
         "bahannja",
@@ -186,28 +186,52 @@
     "similar": [
       [
         139,
-        0.58
+        0.59
       ],
       [
         6644,
-        0.28
+        0.29
       ],
       [
         6646,
-        0.26
+        0.27
       ],
       [
         5222,
-        0.23
+        0.24
       ],
       [
         5220,
-        0.22
+        0.24
       ],
       [
         5312,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.7,
+      "positive": 124,
+      "negative": 22,
+      "trend": [
+        0.41,
+        0.85,
+        0.57,
+        0.75,
+        1,
+        1,
+        1,
+        0.5,
+        0.67,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

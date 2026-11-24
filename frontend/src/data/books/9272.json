@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2959,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "pki",
@@ -104,6 +104,10 @@
         29
       ],
       [
+        "rakyat",
+        59
+      ],
+      [
         "palu-arit",
         13
       ],
@@ -116,32 +120,28 @@
         12
       ],
       [
+        "republik",
+        34
+      ],
+      [
         "uud",
         21
       ],
       [
-        "rakyat",
-        59
-      ],
-      [
-        "republik",
-        34
+        "negara",
+        48
       ],
       [
         "proklamasi",
         15
       ],
       [
+        "indonesia",
+        54
+      ],
+      [
         "pemilihan",
         19
-      ],
-      [
-        "yad",
-        5
-      ],
-      [
-        "pemimpin-pemimpin",
-        8
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         405,
-        0.58
+        0.6
       ],
       [
         7756,
-        0.58
+        0.59
       ],
       [
         6742,
-        0.37
+        0.38
       ],
       [
         4901,
-        0.26
+        0.27
       ],
       [
         468,
-        0.26
+        0.27
       ],
       [
         1567,
-        0.24
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 56,
+      "negative": 24,
+      "trend": [
+        0.5,
+        null,
+        -0.2,
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        null,
+        1,
+        -0.14,
+        null,
+        0.71,
+        0.78
+      ],
+      "emotions": []
+    }
   }
 }

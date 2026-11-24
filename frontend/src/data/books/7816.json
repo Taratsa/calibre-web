@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2833,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "tik",
@@ -131,20 +131,20 @@
         9
       ],
       [
-        "kelintji",
-        6
-      ],
-      [
-        "djingga",
-        5
+        "ketjil",
+        12
       ],
       [
         "tut",
         9
       ],
       [
-        "ketjil",
-        12
+        "kelintji",
+        6
+      ],
+      [
+        "djingga",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         1041,
-        0.17
+        0.19
       ],
       [
         1446,
-        0.17
+        0.19
       ],
       [
         7802,
-        0.16
+        0.18
       ],
       [
         6708,
-        0.13
+        0.15
       ],
       [
         7684,
-        0.13
+        0.15
       ],
       [
         1336,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 85,
+      "negative": 26,
+      "trend": [
+        null,
+        null,
+        null,
+        0.33,
+        null,
+        0.33,
+        1,
+        null,
+        0.17,
+        1,
+        0.54,
+        1,
+        0.11,
+        0.6,
+        0.43,
+        0.5
+      ],
+      "emotions": [
+        [
+          "joy",
+          33
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

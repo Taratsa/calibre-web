@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 43215,
-    "longer_than": 91,
+    "longer_than": 96,
     "top": [
       [
         "education",
@@ -109,32 +109,40 @@
     ],
     "distinct": [
       [
-        "tools",
-        139
-      ],
-      [
         "education",
         168
-      ],
-      [
-        "tool",
-        114
       ],
       [
         "migrant",
         87
       ],
       [
-        "sokola",
-        48
+        "art",
+        153
       ],
       [
         "arts",
         109
       ],
       [
-        "art",
-        153
+        "tools",
+        139
+      ],
+      [
+        "sokola",
+        48
+      ],
+      [
+        "tool",
+        114
+      ],
+      [
+        "village",
+        85
+      ],
+      [
+        "collective",
+        82
       ],
       [
         "learning",
@@ -145,15 +153,7 @@
         75
       ],
       [
-        "village",
-        85
-      ],
-      [
-        "santiniketan",
-        36
-      ],
-      [
-        "collective",
+        "workers",
         82
       ]
     ],
@@ -194,28 +194,29 @@
     "similar": [
       [
         4081,
-        0.27
+        0.28
       ],
       [
         852,
-        0.24
+        0.25
       ],
       [
         858,
-        0.23
+        0.24
       ],
       [
         1724,
-        0.2
+        0.21
       ],
       [
-        8631,
+        1866,
         0.2
       ],
       [
         4083,
         0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2437,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "bakunin",
@@ -126,12 +126,20 @@
         11
       ],
       [
+        "sang",
+        16
+      ],
+      [
         "varlin",
         3
       ],
       [
         "caillois",
         3
+      ],
+      [
+        "pemberontakan",
+        10
       ],
       [
         "komune",
@@ -142,16 +150,8 @@
         3
       ],
       [
-        "pemberontakan",
-        10
-      ],
-      [
-        "sang",
-        16
-      ],
-      [
-        "pemogokan",
-        5
+        "marx",
+        6
       ]
     ],
     "phrases": [
@@ -182,29 +182,78 @@
     ],
     "similar": [
       [
-        2727,
-        0.17
+        17828,
+        0.2
       ],
       [
         2313,
-        0.17
+        0.2
+      ],
+      [
+        2727,
+        0.2
       ],
       [
         7150,
-        0.17
+        0.19
       ],
       [
         7971,
-        0.15
+        0.18
       ],
       [
         7386,
-        0.15
-      ],
-      [
-        2289,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 47,
+      "negative": 31,
+      "trend": [
+        0.56,
+        null,
+        null,
+        -0.11,
+        0.33,
+        0.5,
+        -0.67,
+        null,
+        null,
+        null,
+        null,
+        0.67,
+        null,
+        0.33,
+        null,
+        1
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

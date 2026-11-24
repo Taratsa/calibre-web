@@ -1,0 +1,86 @@
+{
+  "id": 13529,
+  "title": "UHD: uhd fft",
+  "slug": "uhd-uhd-fft-onno-widodo-purbo",
+  "slugBase": "uhd-uhd-fft-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2020-01-06",
+  "timestamp": "2026-11-23 22:05:39.995041",
+  "last_modified": "2026-11-23 22:05:39.995047",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:b0fb9a60-5348-5349-816e-dc4472998650"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/13529?v=1795446339",
+  "cover_og_url": "/cover/13529/og?v=1795446339",
+  "url": "/book/uhd-uhd-fft-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "uhd_fft uhd_fft -a type=usrp1 -f 935M -s 2M Pranala Menarik GNURadio",
+  "data": [
+    {
+      "format": "epub",
+      "size": 1929,
+      "name": "UHD_ uhd fft - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 28,
+    "longer_than": 3,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        15174,
+        0.38
+      ],
+      [
+        13508,
+        0.29
+      ],
+      [
+        15176,
+        0.28
+      ],
+      [
+        20088,
+        0.22
+      ],
+      [
+        16596,
+        0.2
+      ],
+      [
+        15222,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
+}

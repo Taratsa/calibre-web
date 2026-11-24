@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4464,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "perempuan",
@@ -111,40 +111,40 @@
         11
       ],
       [
-        "catcalling",
-        6
-      ],
-      [
         "laki-laki",
         26
+      ],
+      [
+        "catcalling",
+        6
       ],
       [
         "pelecehan",
         9
       ],
       [
+        "marah",
+        15
+      ],
+      [
         "sawit",
         8
-      ],
-      [
-        "asimetris",
-        5
-      ],
-      [
-        "punk",
-        7
       ],
       [
         "hidupku",
         8
       ],
       [
-        "direcoki",
-        3
+        "punk",
+        7
       ],
       [
-        "fanzine",
-        4
+        "teman",
+        14
+      ],
+      [
+        "asimetris",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2417,
-        0.17
+        0.2
       ],
       [
         4185,
-        0.16
+        0.19
       ],
       [
-        7900,
-        0.15
-      ],
-      [
-        2169,
-        0.15
-      ],
-      [
-        3828,
-        0.14
+        2312,
+        0.18
       ],
       [
         2216,
-        0.14
+        0.18
+      ],
+      [
+        88,
+        0.18
+      ],
+      [
+        3067,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.14,
+      "positive": 69,
+      "negative": 92,
+      "trend": [
+        0.14,
+        null,
+        0.71,
+        -0.2,
+        -0.27,
+        -0.2,
+        -0.09,
+        -0.52,
+        -0.12,
+        -0.38,
+        0.45,
+        null,
+        -1,
+        0.27,
+        0,
+        -0.45
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

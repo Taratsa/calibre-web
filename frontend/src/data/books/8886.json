@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 8448,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "ham",
@@ -105,28 +105,28 @@
         140
       ],
       [
-        "kinerja",
-        101
-      ],
-      [
         "sulawesi",
         124
       ],
       [
-        "sekretariat",
-        64
+        "kinerja",
+        101
       ],
       [
         "provinsi",
         86
       ],
       [
-        "morowali",
-        24
+        "sekretariat",
+        64
       ],
       [
         "poso",
         30
+      ],
+      [
+        "morowali",
+        24
       ],
       [
         "pramediasi",
@@ -137,12 +137,12 @@
         34
       ],
       [
-        "watutau",
-        13
+        "pelanggaran",
+        49
       ],
       [
-        "pemantauan",
-        31
+        "kegiatan",
+        69
       ]
     ],
     "phrases": [
@@ -182,28 +182,69 @@
     "similar": [
       [
         8906,
-        0.64
+        0.66
       ],
       [
         8885,
-        0.57
+        0.6
       ],
       [
         8887,
-        0.55
+        0.58
       ],
       [
         8904,
-        0.54
+        0.56
       ],
       [
         8884,
-        0.53
+        0.56
       ],
       [
         8905,
-        0.5
+        0.53
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 141,
+      "negative": 75,
+      "trend": [
+        0.6,
+        0.33,
+        -0.38,
+        0.67,
+        0,
+        0.5,
+        0.89,
+        0.33,
+        0,
+        0.45,
+        0.26,
+        null,
+        -0.6,
+        0.24,
+        0.41,
+        0.29
+      ],
+      "emotions": [
+        [
+          "anger",
+          64
+        ],
+        [
+          "trust",
+          26
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

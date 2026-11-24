@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3754,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "mahasiswa",
@@ -103,6 +103,14 @@
         62
       ],
       [
+        "universitas",
+        46
+      ],
+      [
+        "kapitalisme",
+        36
+      ],
+      [
         "kampus",
         28
       ],
@@ -111,40 +119,32 @@
         17
       ],
       [
-        "kapitalisme",
-        36
-      ],
-      [
-        "universitas",
-        46
-      ],
-      [
         "fordisme",
         8
-      ],
-      [
-        "pendisiplinan",
-        9
       ],
       [
         "kapital",
         20
       ],
       [
-        "konfigurasi",
-        8
+        "pendisiplinan",
+        9
       ],
       [
         "industrial",
         12
       ],
       [
-        "pos-industrial",
-        4
+        "pendidikan",
+        28
       ],
       [
         "represi",
         11
+      ],
+      [
+        "pekerja",
+        17
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        7306,
-        0.16
-      ],
-      [
         1928,
-        0.15
-      ],
-      [
-        2151,
-        0.15
-      ],
-      [
-        1935,
-        0.15
+        0.19
       ],
       [
         3737,
-        0.14
+        0.19
       ],
       [
         3077,
-        0.14
+        0.19
+      ],
+      [
+        2151,
+        0.18
+      ],
+      [
+        7907,
+        0.18
+      ],
+      [
+        3692,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 46,
+      "negative": 41,
+      "trend": [
+        null,
+        0.2,
+        0.4,
+        null,
+        null,
+        0.2,
+        0.71,
+        -0.43,
+        null,
+        0,
+        -0.6,
+        0.14,
+        null,
+        -0.43,
+        null,
+        -0.25
+      ],
+      "emotions": []
+    }
   }
 }

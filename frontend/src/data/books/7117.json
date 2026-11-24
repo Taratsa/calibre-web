@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4044,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "anarkis",
@@ -118,40 +118,40 @@
         33
       ],
       [
-        "pelajar",
-        17
-      ],
-      [
         "polisi",
         26
       ],
       [
-        "aksi-aksi",
-        12
+        "pelajar",
+        17
+      ],
+      [
+        "masyarakat",
+        39
       ],
       [
         "politis",
         15
       ],
       [
-        "athena",
-        7
-      ],
-      [
-        "squat",
-        5
-      ],
-      [
-        "butuh",
-        13
+        "kaum",
+        26
       ],
       [
         "perjuangan",
         22
       ],
       [
-        "berpartisipasi",
+        "aksi-aksi",
         12
+      ],
+      [
+        "athena",
+        7
+      ],
+      [
+        "butuh",
+        13
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         3058,
-        0.28
+        0.32
       ],
       [
         7043,
-        0.21
+        0.24
       ],
       [
         3777,
-        0.21
+        0.23
       ],
       [
         7024,
-        0.15
+        0.19
       ],
       [
         2313,
-        0.15
+        0.19
       ],
       [
-        2303,
-        0.14
+        7464,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 67,
+      "negative": 65,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -0.75,
+        -0.22,
+        -0.5,
+        0.17,
+        -0.09,
+        -0.2,
+        -0.17,
+        0.2,
+        0.71,
+        0.76,
+        0.2,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

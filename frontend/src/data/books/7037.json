@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1717,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "masyarakat",
@@ -110,12 +110,12 @@
         13
       ],
       [
-        "rêber",
-        4
-      ],
-      [
         "afrika",
         13
+      ],
+      [
+        "rêber",
+        4
       ],
       [
         "negara-bangsa",
@@ -130,6 +130,10 @@
         7
       ],
       [
+        "masyarakat",
+        23
+      ],
+      [
         "latin",
         10
       ],
@@ -138,20 +142,16 @@
         7
       ],
       [
-        "kurdistan",
-        3
-      ],
-      [
         "kapitalis",
         8
       ],
       [
-        "penjajah",
-        5
+        "kurdistan",
+        3
       ],
       [
-        "patriarki",
-        4
+        "penjajah",
+        5
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         2633,
-        0.29
-      ],
-      [
-        2519,
-        0.23
+        0.31
       ],
       [
         2778,
-        0.23
-      ],
-      [
-        2156,
-        0.21
+        0.27
       ],
       [
         3939,
-        0.21
+        0.25
       ],
       [
-        6922,
-        0.21
+        2589,
+        0.25
+      ],
+      [
+        2519,
+        0.25
+      ],
+      [
+        2156,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 45,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

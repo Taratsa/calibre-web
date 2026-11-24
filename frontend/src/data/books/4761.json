@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3525,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "mang",
@@ -190,7 +190,7 @@
       ],
       [
         2844,
-        0.13
+        0.14
       ],
       [
         1555,
@@ -204,6 +204,42 @@
         1521,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 41,
+      "negative": 23,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

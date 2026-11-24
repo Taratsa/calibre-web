@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1882,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "https",
@@ -114,12 +114,12 @@
         12
       ],
       [
-        "anti-terror",
-        7
-      ],
-      [
         "ruu",
         18
+      ],
+      [
+        "anti-terror",
+        7
       ],
       [
         "duterte",
@@ -130,10 +130,6 @@
         14
       ],
       [
-        "https",
-        18
-      ],
-      [
         "teroris",
         10
       ],
@@ -142,16 +138,20 @@
         8
       ],
       [
-        "ekstrayudisial",
-        3
+        "kebebasan",
+        13
       ],
       [
         "terus-terusan",
         5
       ],
       [
-        "cervantes",
+        "ekstrayudisial",
         3
+      ],
+      [
+        "philippine",
+        4
       ]
     ],
     "phrases": [
@@ -190,29 +190,70 @@
     ],
     "similar": [
       [
+        11834,
+        0.2
+      ],
+      [
         7284,
-        0.16
+        0.15
       ],
       [
         8310,
-        0.12
-      ],
-      [
-        2806,
-        0.12
+        0.14
       ],
       [
         2157,
+        0.13
+      ],
+      [
+        2806,
         0.11
       ],
       [
         3701,
-        0.1
-      ],
-      [
-        1049,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 38,
+      "negative": 47,
+      "trend": [
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        0.14,
+        null,
+        null,
+        -0.33,
+        -1,
+        0.6,
+        -0.71,
+        0.33,
+        -0.14,
+        0.4,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

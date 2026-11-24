@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 51446,
-    "longer_than": 93,
+    "longer_than": 97,
     "top": [
       [
         "indonesia",
@@ -111,40 +111,40 @@
         219
       ],
       [
-        "pajak",
-        194
-      ],
-      [
         "kemiskinan",
         221
       ],
       [
-        "perbankan",
-        112
+        "pajak",
+        194
       ],
       [
         "kebijakan",
         234
       ],
       [
-        "privatisasi",
-        86
+        "perbankan",
+        112
       ],
       [
-        "inequality",
-        68
+        "indonesia",
+        470
+      ],
+      [
+        "privatisasi",
+        86
       ],
       [
         "penanggulangan",
         88
       ],
       [
-        "koefisien",
-        45
+        "sektor",
+        133
       ],
       [
-        "gini",
-        77
+        "inequality",
+        68
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         8501,
-        0.29
+        0.34
       ],
       [
         8559,
-        0.29
+        0.32
       ],
       [
         8613,
-        0.28
-      ],
-      [
-        8387,
-        0.28
+        0.31
       ],
       [
         8666,
-        0.27
+        0.31
       ],
       [
-        5892,
-        0.24
+        8387,
+        0.31
+      ],
+      [
+        8494,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 1217,
+      "negative": 1151,
+      "trend": [
+        -0.14,
+        0.11,
+        -0.28,
+        -0.07,
+        -0.12,
+        -0.08,
+        0.01,
+        0.43,
+        0.57,
+        0.01,
+        0,
+        0.18,
+        0.17,
+        0.09,
+        0.08,
+        -0.3
+      ],
+      "emotions": [
+        [
+          "trust",
+          79
+        ],
+        [
+          "sadness",
+          34
+        ],
+        [
+          "anger",
+          31
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

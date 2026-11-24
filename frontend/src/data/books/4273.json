@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 3098,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "ketua",
@@ -115,12 +115,16 @@
         40
       ],
       [
+        "museum",
+        35
+      ],
+      [
         "abri",
         28
       ],
       [
-        "museum",
-        35
+        "pancasila",
+        30
       ],
       [
         "diorama",
@@ -131,28 +135,24 @@
         17
       ],
       [
-        "konsultan",
-        22
+        "ketua",
+        43
       ],
       [
-        "pancasila",
-        30
+        "konsultan",
+        22
       ],
       [
         "kolonel",
         19
       ],
       [
-        "czi",
-        9
-      ],
-      [
         "kol",
         19
       ],
       [
-        "ketua",
-        43
+        "czi",
+        9
       ],
       [
         "pengkhianatan",
@@ -196,28 +196,52 @@
     "similar": [
       [
         4461,
+        0.21
+      ],
+      [
+        4255,
         0.19
       ],
       [
         4342,
-        0.18
-      ],
-      [
-        4255,
-        0.17
-      ],
-      [
-        4361,
-        0.14
-      ],
-      [
-        4453,
-        0.14
+        0.19
       ],
       [
         4349,
-        0.13
+        0.16
+      ],
+      [
+        4453,
+        0.16
+      ],
+      [
+        4404,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 45,
+      "negative": 25,
+      "trend": [
+        -0.2,
+        null,
+        -0.2,
+        0.56,
+        -0.14,
+        0.67,
+        0.5,
+        null,
+        -1,
+        null,
+        0.25,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

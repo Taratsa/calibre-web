@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3242,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "kau",
@@ -117,32 +117,32 @@
         28
       ],
       [
-        "solitaire",
-        6
-      ],
-      [
         "kau",
         31
       ],
       [
-        "hahahaha",
-        8
+        "solitaire",
+        6
       ],
       [
         "nenek",
         18
       ],
       [
+        "hahahaha",
+        8
+      ],
+      [
         "toko",
         16
       ],
       [
-        "mystery",
-        6
-      ],
-      [
         "kartu",
         12
+      ],
+      [
+        "mystery",
+        6
       ],
       [
         "amplop",
@@ -183,6 +183,84 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2590,
+        0.13
+      ],
+      [
+        3772,
+        0.13
+      ],
+      [
+        3956,
+        0.13
+      ],
+      [
+        1244,
+        0.13
+      ],
+      [
+        1780,
+        0.12
+      ],
+      [
+        6701,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": -0.14,
+      "positive": 42,
+      "negative": 56,
+      "trend": [
+        null,
+        -1,
+        null,
+        0.2,
+        0.14,
+        0.43,
+        null,
+        null,
+        null,
+        null,
+        -0.14,
+        null,
+        -0.43,
+        0.78,
+        -0.45,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          32
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1053,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "perempuan",
@@ -110,24 +110,16 @@
         21
       ],
       [
+        "perempuan",
+        30
+      ],
+      [
         "aktris",
         7
       ],
       [
         "pornografi",
         8
-      ],
-      [
-        "falosentrisme",
-        3
-      ],
-      [
-        "porno",
-        6
-      ],
-      [
-        "perempuan",
-        30
       ],
       [
         "seksual",
@@ -138,20 +130,28 @@
         10
       ],
       [
-        "liyan",
-        5
+        "falosentrisme",
+        3
       ],
       [
-        "heteroseksual",
-        5
+        "porno",
+        6
+      ],
+      [
+        "undang",
+        10
       ],
       [
         "aktor",
         9
       ],
       [
-        "undang",
-        10
+        "liyan",
+        5
+      ],
+      [
+        "heteroseksual",
+        5
       ]
     ],
     "phrases": [
@@ -190,29 +190,30 @@
     ],
     "similar": [
       [
-        6678,
-        0.2
+        18213,
+        0.27
       ],
       [
         7384,
+        0.21
+      ],
+      [
+        19054,
+        0.19
+      ],
+      [
+        6678,
         0.19
       ],
       [
         4559,
-        0.18
+        0.19
       ],
       [
         7855,
-        0.15
-      ],
-      [
-        7383,
-        0.14
-      ],
-      [
-        76,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

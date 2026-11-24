@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2547,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "stirner",
@@ -111,40 +111,40 @@
         8
       ],
       [
-        "descartes",
-        9
-      ],
-      [
         "filsafat",
         21
+      ],
+      [
+        "descartes",
+        9
       ],
       [
         "spinoza",
         6
       ],
       [
-        "cogitantes",
-        3
+        "nietzsche",
+        7
       ],
       [
         "propertiku",
         4
       ],
       [
+        "cogitantes",
+        3
+      ],
+      [
         "reinen",
         3
       ],
       [
-        "nietzsche",
+        "res",
         7
       ],
       [
         "mensch",
         4
-      ],
-      [
-        "res",
-        7
       ]
     ],
     "phrases": [
@@ -184,14 +184,18 @@
     "similar": [
       [
         3964,
-        0.23
+        0.24
       ],
       [
         4732,
-        0.21
+        0.23
       ],
       [
         281,
+        0.23
+      ],
+      [
+        2406,
         0.21
       ],
       [
@@ -199,13 +203,58 @@
         0.2
       ],
       [
-        2406,
+        8065,
         0.19
-      ],
-      [
-        7297,
-        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 49,
+      "negative": 41,
+      "trend": [
+        null,
+        -0.06,
+        null,
+        null,
+        0.6,
+        -0.33,
+        0.43,
+        null,
+        0.43,
+        0.27,
+        -0.6,
+        -0.25,
+        -0.43,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          10
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

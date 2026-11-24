@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1234,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "politik",
@@ -115,36 +115,36 @@
         3
       ],
       [
-        "mengusir",
-        6
-      ],
-      [
-        "pemberontakan",
-        7
+        "politik",
+        16
       ],
       [
         "dewan",
         8
       ],
       [
-        "politik",
-        16
+        "pemberontakan",
+        7
       ],
       [
-        "narkoba",
-        3
+        "mengusir",
+        6
       ],
       [
-        "pemungutan",
-        3
+        "kota",
+        11
       ],
       [
         "demokrasi",
         6
       ],
       [
-        "korupsi",
-        4
+        "masyarakat",
+        11
+      ],
+      [
+        "narkoba",
+        3
       ]
     ],
     "phrases": [
@@ -171,29 +171,30 @@
     ],
     "similar": [
       [
-        1819,
-        0.17
-      ],
-      [
-        7051,
+        8500,
         0.16
       ],
       [
-        7405,
+        1819,
+        0.16
+      ],
+      [
+        7051,
         0.15
       ],
       [
-        7339,
+        2356,
         0.15
       ],
       [
-        8500,
+        6742,
+        0.15
+      ],
+      [
+        1758,
         0.14
-      ],
-      [
-        4271,
-        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

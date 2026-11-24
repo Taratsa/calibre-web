@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2615,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "data",
@@ -99,28 +99,20 @@
         18
       ],
       [
-        "data",
-        40
-      ],
-      [
         "pewawancara",
         9
       ],
       [
-        "metoda",
-        7
+        "data",
+        40
       ],
       [
-        "kerjalapangan",
-        3
+        "lapangan",
+        21
       ],
       [
-        "hhc",
-        3
-      ],
-      [
-        "pengamat",
-        9
+        "sosial",
+        28
       ],
       [
         "peneliti",
@@ -131,11 +123,19 @@
         12
       ],
       [
-        "lapangan",
-        21
+        "pengamat",
+        9
       ],
       [
-        "kelibatannya",
+        "metoda",
+        7
+      ],
+      [
+        "informasi",
+        20
+      ],
+      [
+        "kerjalapangan",
         3
       ]
     ],
@@ -176,28 +176,29 @@
     "similar": [
       [
         8380,
-        0.28
+        0.29
+      ],
+      [
+        868,
+        0.17
       ],
       [
         8525,
         0.15
       ],
       [
-        868,
-        0.14
+        8737,
+        0.13
       ],
       [
-        8737,
+        5272,
         0.12
       ],
       [
-        5675,
-        0.1
-      ],
-      [
-        8923,
-        0.1
+        1061,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

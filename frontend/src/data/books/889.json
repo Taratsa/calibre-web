@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5607,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "peserta",
@@ -97,24 +97,16 @@
         41
       ],
       [
-        "video",
-        55
-      ],
-      [
-        "google",
-        39
-      ],
-      [
         "kreasi",
         38
       ],
       [
-        "folder",
-        22
-      ],
-      [
         "lomba",
         40
+      ],
+      [
+        "video",
+        55
       ],
       [
         "covid",
@@ -125,8 +117,16 @@
         34
       ],
       [
+        "google",
+        39
+      ],
+      [
         "didik",
         33
+      ],
+      [
+        "gambar",
+        55
       ],
       [
         "pusatprestasinasional",
@@ -174,28 +174,52 @@
     "similar": [
       [
         905,
-        0.3
+        0.32
       ],
       [
         855,
-        0.19
+        0.21
       ],
       [
         863,
+        0.2
+      ],
+      [
+        908,
         0.19
       ],
       [
         857,
-        0.15
+        0.18
       ],
       [
-        908,
-        0.15
-      ],
-      [
-        880,
-        0.15
+        5621,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.6,
+      "positive": 75,
+      "negative": 19,
+      "trend": [
+        1,
+        0.89,
+        0.78,
+        1,
+        0,
+        null,
+        null,
+        0.71,
+        null,
+        null,
+        null,
+        0.6,
+        null,
+        0.08,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

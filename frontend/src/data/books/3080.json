@@ -64,7 +64,7 @@
   ],
   "text": {
     "words": 3133,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "zine",
@@ -121,12 +121,12 @@
         44
       ],
       [
-        "heken",
-        8
-      ],
-      [
         "halmahera",
         16
+      ],
+      [
+        "heken",
+        8
       ],
       [
         "steken",
@@ -137,32 +137,32 @@
         11
       ],
       [
-        "fanzine",
-        6
-      ],
-      [
         "planet",
         10
       ],
       [
-        "togutil",
-        4
+        "fanzine",
+        6
       ],
       [
         "kegilaan",
         8
       ],
       [
-        "ababil",
-        4
-      ],
-      [
-        "dieditori",
+        "togutil",
         4
       ],
       [
         "metafora",
         8
+      ],
+      [
+        "fiksi",
+        8
+      ],
+      [
+        "ababil",
+        4
       ]
     ],
     "phrases": [
@@ -205,25 +205,78 @@
         0.27
       ],
       [
-        52,
+        3828,
         0.16
       ],
       [
-        3828,
+        2227,
         0.15
       ],
       [
-        2227,
-        0.13
-      ],
-      [
         2486,
-        0.12
+        0.14
       ],
       [
         2214,
+        0.13
+      ],
+      [
+        52,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 43,
+      "negative": 49,
+      "trend": [
+        null,
+        null,
+        0.56,
+        null,
+        null,
+        -0.6,
+        -0.33,
+        -0.11,
+        -0.6,
+        null,
+        -0.38,
+        0.33,
+        -0.6,
+        0.33,
+        -0.6,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

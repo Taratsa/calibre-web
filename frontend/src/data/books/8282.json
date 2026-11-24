@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 16954,
-    "longer_than": 73,
+    "longer_than": 87,
     "top": [
       [
         "rights",
@@ -103,12 +103,12 @@
         421
       ],
       [
-        "violations",
-        152
-      ],
-      [
         "economic",
         230
+      ],
+      [
+        "violations",
+        152
       ],
       [
         "cultural",
@@ -123,28 +123,28 @@
         74
       ],
       [
-        "reparations",
-        46
-      ],
-      [
         "commission",
         87
       ],
       [
-        "justice",
-        89
+        "reparations",
+        46
       ],
       [
         "human",
         112
       ],
       [
-        "truth",
-        63
+        "justice",
+        89
       ],
       [
         "court",
         65
+      ],
+      [
+        "truth",
+        63
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         8301,
-        0.39
+        0.4
       ],
       [
         8184,
-        0.31
+        0.32
+      ],
+      [
+        8731,
+        0.28
       ],
       [
         8330,
         0.27
       ],
       [
-        8731,
-        0.26
-      ],
-      [
         6942,
-        0.25
+        0.27
       ],
       [
         8183,
-        0.24
+        0.26
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 4822,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "perpustakaan",
@@ -123,36 +123,36 @@
         23
       ],
       [
-        "melucci",
-        10
-      ],
-      [
         "yogyakarta",
         40
+      ],
+      [
+        "melucci",
+        10
       ],
       [
         "pegiat",
         18
       ],
       [
-        "komunitas",
-        29
+        "individu",
+        33
       ],
       [
         "kolektif",
         27
       ],
       [
-        "individu",
-        33
+        "komunitas",
+        29
       ],
       [
         "formal",
         23
       ],
       [
-        "anarkisme",
-        16
+        "identitas",
+        23
       ],
       [
         "praktik",
@@ -196,28 +196,52 @@
     "similar": [
       [
         2735,
-        0.77
+        0.79
       ],
       [
         1853,
-        0.77
+        0.79
       ],
       [
         8111,
-        0.19
+        0.22
       ],
       [
         3104,
-        0.17
+        0.21
       ],
       [
-        7403,
-        0.15
+        2570,
+        0.18
       ],
       [
-        1765,
-        0.15
+        9166,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 63,
+      "negative": 23,
+      "trend": [
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        0.25,
+        null,
+        0.33,
+        0.5,
+        0.5,
+        0.69,
+        null,
+        -0.25,
+        0.71,
+        0.27
+      ],
+      "emotions": []
+    }
   }
 }

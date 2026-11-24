@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5897,
-    "longer_than": 47,
+    "longer_than": 75,
     "top": [
       [
         "perempuan",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "perempuan",
+        99
+      ],
+      [
         "health",
         37
       ],
@@ -115,12 +119,12 @@
         17
       ],
       [
-        "lika",
-        18
-      ],
-      [
         "palm",
         22
+      ],
+      [
+        "lika",
+        18
       ],
       [
         "mendarah",
@@ -131,20 +135,16 @@
         18
       ],
       [
-        "perempuan",
-        99
-      ],
-      [
         "bercermin",
         18
       ],
       [
-        "mencaci",
-        17
-      ],
-      [
         "oil",
         22
+      ],
+      [
+        "mencaci",
+        17
       ]
     ],
     "phrases": [
@@ -192,7 +192,7 @@
       ],
       [
         6794,
-        0.12
+        0.11
       ],
       [
         8662,
@@ -203,9 +203,54 @@
         0.11
       ],
       [
-        5865,
+        1988,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.43,
+      "positive": 39,
+      "negative": 98,
+      "trend": [
+        -0.65,
+        -0.29,
+        -0.38,
+        0.11,
+        -0.45,
+        null,
+        -0.8,
+        0.4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.22,
+        -0.91
+      ],
+      "emotions": [
+        [
+          "anger",
+          40
+        ],
+        [
+          "fear",
+          21
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

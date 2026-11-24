@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 22651,
-    "longer_than": 79,
+    "longer_than": 90,
     "top": [
       [
         "kantor",
@@ -96,20 +96,16 @@
         1933
       ],
       [
-        "nusa",
-        1529
-      ],
-      [
         "kantor",
         2478
       ],
       [
-        "provinsi",
-        1355
+        "nusa",
+        1529
       ],
       [
-        "provinsinusa",
-        198
+        "provinsi",
+        1355
       ],
       [
         "barat",
@@ -118,6 +114,10 @@
       [
         "bahasa",
         2002
+      ],
+      [
+        "provinsinusa",
+        198
       ],
       [
         "bah",
@@ -177,11 +177,11 @@
     "similar": [
       [
         6097,
-        0.82
+        0.81
       ],
       [
         6090,
-        0.73
+        0.74
       ],
       [
         6098,
@@ -199,6 +199,59 @@
         6125,
         0.5
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 115,
+      "negative": 81,
+      "trend": [
+        1,
+        null,
+        0.4,
+        0.19,
+        0.45,
+        -0.6,
+        null,
+        0.46,
+        0.12,
+        -0.33,
+        null,
+        0.1,
+        0,
+        0.29,
+        -0.08,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "sadness",
+          33
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "surprise",
+          14
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

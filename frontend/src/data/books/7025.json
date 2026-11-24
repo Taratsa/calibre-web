@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1296,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "ruang",
@@ -106,16 +106,16 @@
     ],
     "distinct": [
       [
+        "ruang",
+        33
+      ],
+      [
         "otonom",
         15
       ],
       [
         "ungdomshuset",
         4
-      ],
-      [
-        "ruang",
-        33
       ],
       [
         "dibebaskan",
@@ -126,28 +126,28 @@
         3
       ],
       [
-        "eksperimen",
-        3
+        "pemberontakan",
+        5
       ],
       [
         "kapital",
         4
       ],
       [
-        "militan",
+        "eksperimen",
         3
       ],
       [
-        "pemberontakan",
-        5
+        "militan",
+        3
       ],
       [
         "serangan",
         5
       ],
       [
-        "pengambilan",
-        3
+        "benar-benar",
+        6
       ],
       [
         "perjuangan",
@@ -158,28 +158,29 @@
     "similar": [
       [
         2256,
-        0.23
+        0.27
+      ],
+      [
+        7010,
+        0.21
+      ],
+      [
+        2755,
+        0.2
       ],
       [
         2231,
+        0.19
+      ],
+      [
+        4731,
         0.15
       ],
       [
         7209,
         0.14
-      ],
-      [
-        3718,
-        0.14
-      ],
-      [
-        7010,
-        0.13
-      ],
-      [
-        7154,
-        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

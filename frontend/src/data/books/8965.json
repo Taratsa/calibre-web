@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4158,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "kinerja",
@@ -109,40 +109,40 @@
         73
       ],
       [
-        "perencanaan",
-        63
-      ],
-      [
         "ham",
         71
+      ],
+      [
+        "perencanaan",
+        63
       ],
       [
         "biro",
         48
       ],
       [
-        "dokumen",
-        61
-      ],
-      [
         "pengawasan",
         58
+      ],
+      [
+        "dokumen",
+        61
       ],
       [
         "capaian",
         29
       ],
       [
-        "mou",
-        23
-      ],
-      [
         "internal",
         46
       ],
       [
-        "indikator",
-        29
+        "anggaran",
+        37
+      ],
+      [
+        "mou",
+        23
       ]
     ],
     "phrases": [
@@ -182,28 +182,35 @@
     "similar": [
       [
         8955,
-        0.7
+        0.72
       ],
       [
         8946,
-        0.58
+        0.61
       ],
       [
         8941,
-        0.46
+        0.49
       ],
       [
         8921,
-        0.46
+        0.49
       ],
       [
         8910,
-        0.44
+        0.48
       ],
       [
-        8917,
-        0.44
+        8890,
+        0.47
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 47,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

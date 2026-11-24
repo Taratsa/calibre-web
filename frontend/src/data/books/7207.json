@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5270,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "kolom",
@@ -114,28 +114,20 @@
         12
       ],
       [
-        "barak-barak",
-        7
-      ],
-      [
         "penjara",
         23
-      ],
-      [
-        "spanyol",
-        13
       ],
       [
         "revolusi",
         24
       ],
       [
-        "personalitasku",
-        3
+        "spanyol",
+        13
       ],
       [
-        "incontrolado",
-        3
+        "barak-barak",
+        7
       ],
       [
         "batalyon",
@@ -146,12 +138,20 @@
         6
       ],
       [
-        "menghasrati",
-        4
+        "besi",
+        12
       ],
       [
-        "valencia",
-        4
+        "personalitasku",
+        3
+      ],
+      [
+        "incontrolado",
+        3
+      ],
+      [
+        "diriku",
+        10
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         4676,
-        0.12
+        0.16
       ],
       [
         2552,
-        0.12
+        0.16
       ],
       [
         3923,
-        0.12
+        0.15
       ],
       [
-        7447,
-        0.12
+        2476,
+        0.14
       ],
       [
-        1816,
-        0.11
+        7895,
+        0.14
       ],
       [
-        137,
-        0.11
+        8110,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 101,
+      "negative": 118,
+      "trend": [
+        0.5,
+        0.64,
+        -0.6,
+        0.38,
+        -0.29,
+        -0.33,
+        -0.65,
+        0.47,
+        0.18,
+        -0.46,
+        -0.43,
+        -0.6,
+        0.07,
+        0.11,
+        0.22,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          40
+        ],
+        [
+          "sadness",
+          30
+        ],
+        [
+          "joy",
+          24
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

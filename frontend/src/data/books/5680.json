@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 22551,
-    "longer_than": 78,
+    "longer_than": 90,
     "top": [
       [
         "fonem",
@@ -129,36 +129,36 @@
         90
       ],
       [
-        "berfitur",
-        65
+        "vokal",
+        161
       ],
       [
         "pemunculan",
         95
       ],
       [
-        "vokal",
-        161
+        "berfitur",
+        65
       ],
       [
         "velar",
         69
       ],
       [
-        "pelesapan",
-        58
+        "pergeseran",
+        135
       ],
       [
-        "fitur",
-        105
+        "pelesapan",
+        58
       ],
       [
         "sufiks",
         56
       ],
       [
-        "pergeseran",
-        135
+        "peristiwa",
+        218
       ]
     ],
     "phrases": [
@@ -197,11 +197,11 @@
     ],
     "similar": [
       [
-        6168,
+        5659,
         0.24
       ],
       [
-        5659,
+        6168,
         0.24
       ],
       [
@@ -210,16 +210,40 @@
       ],
       [
         5966,
-        0.13
+        0.14
       ],
       [
         5658,
-        0.12
+        0.13
       ],
       [
         876,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 85,
+      "negative": 33,
+      "trend": [
+        0.7,
+        1,
+        0.71,
+        -0.2,
+        null,
+        null,
+        0.29,
+        -0.14,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

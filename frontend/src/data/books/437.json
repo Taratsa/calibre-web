@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 33046,
-    "longer_than": 87,
+    "longer_than": 94,
     "top": [
       [
         "rakyat",
@@ -89,28 +89,16 @@
     ],
     "distinct": [
       [
-        "pni",
-        132
-      ],
-      [
         "imperialisme",
         188
       ],
       [
+        "pni",
+        132
+      ],
+      [
         "imperialisme-modern",
         48
-      ],
-      [
-        "tuan-tuan",
-        93
-      ],
-      [
-        "bumiputra",
-        53
-      ],
-      [
-        "jajahan",
-        85
       ],
       [
         "rakyat",
@@ -121,20 +109,32 @@
         219
       ],
       [
-        "nasionalisme",
-        54
+        "tuan-tuan",
+        93
       ],
       [
-        "imperialisme-tua",
-        17
+        "jajahan",
+        85
       ],
       [
-        "prof",
-        68
+        "bumiputra",
+        53
       ],
       [
-        "tiap-tiap",
-        62
+        "bangsa",
+        165
+      ],
+      [
+        "indonesia",
+        234
+      ],
+      [
+        "kekuasaan",
+        134
+      ],
+      [
+        "belanda",
+        96
       ]
     ],
     "phrases": [
@@ -174,28 +174,85 @@
     "similar": [
       [
         1312,
-        0.24
+        0.3
       ],
       [
         1306,
-        0.22
+        0.26
       ],
       [
         693,
+        0.26
+      ],
+      [
+        9275,
         0.22
       ],
       [
         395,
-        0.17
+        0.21
       ],
       [
         9241,
-        0.17
-      ],
-      [
-        9275,
-        0.17
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 539,
+      "negative": 349,
+      "trend": [
+        0.14,
+        -0.02,
+        -0.28,
+        0.51,
+        0.12,
+        0.22,
+        0.36,
+        0.43,
+        0.22,
+        0.1,
+        0.19,
+        0.28,
+        0.28,
+        0.46,
+        0.13,
+        0.36
+      ],
+      "emotions": [
+        [
+          "trust",
+          72
+        ],
+        [
+          "anger",
+          71
+        ],
+        [
+          "joy",
+          46
+        ],
+        [
+          "anticipation",
+          42
+        ],
+        [
+          "fear",
+          40
+        ],
+        [
+          "sadness",
+          30
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

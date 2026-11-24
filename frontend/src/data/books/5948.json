@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 3906,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "rakjat",
@@ -112,6 +112,10 @@
         7
       ],
       [
+        "saudara-saudara",
+        20
+      ],
+      [
         "uttara",
         9
       ],
@@ -120,16 +124,12 @@
         8
       ],
       [
-        "saudara-saudara",
-        20
+        "berdjoang",
+        11
       ],
       [
         "gerungan",
         7
-      ],
-      [
-        "berdjoang",
-        11
       ],
       [
         "marhaenis",
@@ -177,28 +177,35 @@
     "similar": [
       [
         680,
-        0.22
+        0.24
       ],
       [
         6670,
-        0.18
+        0.2
       ],
       [
         4926,
-        0.17
+        0.19
       ],
       [
         8771,
-        0.15
+        0.17
       ],
       [
         599,
-        0.14
+        0.16
       ],
       [
         301,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 28,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

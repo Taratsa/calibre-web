@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 915,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "poster",
@@ -102,32 +102,24 @@
         41
       ],
       [
-        "infografik",
-        7
-      ],
-      [
         "pertunjukan",
         17
+      ],
+      [
+        "infografik",
+        7
       ],
       [
         "grafis",
         11
       ],
       [
-        "ofset",
-        4
-      ],
-      [
         "kompas",
         12
       ],
       [
-        "sablon",
-        5
-      ],
-      [
-        "desainer",
-        6
+        "ofset",
+        4
       ],
       [
         "teater",
@@ -138,12 +130,20 @@
         11
       ],
       [
-        "opera",
+        "desainer",
+        6
+      ],
+      [
+        "sablon",
         5
       ],
       [
-        "wisanggeni",
-        3
+        "seni",
+        12
+      ],
+      [
+        "opera",
+        5
       ]
     ],
     "phrases": [
@@ -187,24 +187,25 @@
       ],
       [
         4494,
-        0.36
+        0.38
       ],
       [
         4536,
-        0.33
+        0.35
       ],
       [
         4226,
-        0.32
-      ],
-      [
-        4177,
-        0.29
+        0.33
       ],
       [
         4148,
-        0.29
+        0.31
+      ],
+      [
+        4177,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

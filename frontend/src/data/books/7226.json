@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6116,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "agrikultur",
@@ -118,40 +118,40 @@
         25
       ],
       [
-        "neolitik",
-        7
-      ],
-      [
         "produksi",
         30
-      ],
-      [
-        "tumbuhan",
-        12
-      ],
-      [
-        "hewan",
-        17
-      ],
-      [
-        "paleolitik",
-        5
-      ],
-      [
-        "fertilisasi",
-        4
-      ],
-      [
-        "didomestikasi",
-        5
       ],
       [
         "makanan",
         29
       ],
       [
-        "spesies",
-        8
+        "hewan",
+        17
+      ],
+      [
+        "neolitik",
+        7
+      ],
+      [
+        "tumbuhan",
+        12
+      ],
+      [
+        "manusia",
+        33
+      ],
+      [
+        "alam",
+        23
+      ],
+      [
+        "paleolitik",
+        5
+      ],
+      [
+        "didomestikasi",
+        5
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         2794,
-        0.23
+        0.26
       ],
       [
         1998,
-        0.19
+        0.22
       ],
       [
         7433,
-        0.18
+        0.21
       ],
       [
         2081,
-        0.18
+        0.21
       ],
       [
         7041,
-        0.18
+        0.2
       ],
       [
-        7230,
-        0.16
+        1956,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 115,
+      "negative": 106,
+      "trend": [
+        0.14,
+        -0.33,
+        0.6,
+        0.26,
+        -0.11,
+        -0.43,
+        0.25,
+        0.14,
+        0.64,
+        0.29,
+        0.04,
+        0.6,
+        -0.4,
+        -0.27,
+        -0.14,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

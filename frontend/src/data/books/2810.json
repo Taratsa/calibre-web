@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2549,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "kelompok",
@@ -111,6 +111,10 @@
         7
       ],
       [
+        "patriarki",
+        13
+      ],
+      [
         "aranda",
         6
       ],
@@ -119,32 +123,28 @@
         9
       ],
       [
-        "patriarki",
-        13
+        "kelompok",
+        28
       ],
       [
         "peramu",
         7
       ],
       [
-        "pemburu-pengumpul",
-        6
-      ],
-      [
         "pertanian",
         18
       ],
       [
-        "eisler",
-        3
+        "pemburu-pengumpul",
+        6
       ],
       [
-        "gender",
-        11
+        "suku",
+        15
       ],
       [
-        "kelompok",
-        28
+        "laki-laki",
+        17
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7230,
-        0.19
+        0.22
       ],
       [
         2168,
-        0.19
+        0.21
       ],
       [
         2596,
-        0.17
+        0.19
+      ],
+      [
+        7488,
+        0.18
       ],
       [
         7151,
-        0.16
+        0.17
       ],
       [
-        2008,
-        0.16
-      ],
-      [
-        7226,
-        0.16
+        1956,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 71,
+      "negative": 20,
+      "trend": [
+        0.6,
+        null,
+        0.6,
+        1,
+        null,
+        -0.14,
+        1,
+        0.75,
+        0.6,
+        -0.6,
+        0.85,
+        null,
+        1,
+        0.43,
+        0.2,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

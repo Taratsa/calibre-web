@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 55865,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "japanese",
@@ -105,6 +105,10 @@
         266
       ],
       [
+        "soekarno",
+        197
+      ],
+      [
         "nishijima",
         79
       ],
@@ -115,10 +119,6 @@
       [
         "nishimura",
         71
-      ],
-      [
-        "soekarno",
-        197
       ],
       [
         "independence",
@@ -133,16 +133,16 @@
         193
       ],
       [
+        "army",
+        121
+      ],
+      [
         "leaders",
         119
       ],
       [
-        "malakka",
-        62
-      ],
-      [
-        "army",
-        121
+        "youth",
+        118
       ]
     ],
     "phrases": [
@@ -198,12 +198,13 @@
       ],
       [
         1286,
-        0.35
+        0.34
       ],
       [
         3113,
         0.34
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

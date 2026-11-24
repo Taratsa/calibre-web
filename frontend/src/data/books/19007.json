@@ -1,0 +1,217 @@
+{
+  "id": 19007,
+  "title": "Konfigurasi Mail Klien di LAN Workstation",
+  "slug": "konfigurasi-mail-klien-di-lan-workstation-onno-widodo-purbo",
+  "slugBase": "konfigurasi-mail-klien-di-lan-workstation-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2008-02-10",
+  "timestamp": "2026-11-24 05:00:30.040726",
+  "last_modified": "2026-11-24 05:00:30.040730",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:7efebab8-bcb7-5c89-a665-6681a86cb2e1"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19007?v=1795471230",
+  "cover_og_url": "/cover/19007/og?v=1795471230",
+  "url": "/book/konfigurasi-mail-klien-di-lan-workstation-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Istilah yang biasa dipakai untuk sebuah perangkat e-mail gateway / server seperti MDaemon biasanya di sebut Mail Transfer Agent (MTA). Sedangkan perangkat lunak yang digunakan user untuk membaca dan mengirimkan email adalah Mail User Agent (MUA). Setelah kita mengkonfigurasi mail server MDAEMON sebagai MTA seperti yang dijelaskan dalam Bab sebelumnya. Langkah selanjutnya adalah mengkonfigurasikan",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4694,
+      "name": "Konfigurasi Mail Klien di LAN Workstation - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 788,
+    "longer_than": 48,
+    "top": [
+      [
+        "mail",
+        34
+      ],
+      [
+        "server",
+        24
+      ],
+      [
+        "account",
+        15
+      ],
+      [
+        "email",
+        15
+      ],
+      [
+        "mdaemon",
+        15
+      ],
+      [
+        "address",
+        12
+      ],
+      [
+        "nama",
+        11
+      ],
+      [
+        "express",
+        9
+      ],
+      [
+        "outlook",
+        9
+      ],
+      [
+        "user",
+        9
+      ],
+      [
+        "pop",
+        8
+      ],
+      [
+        "incoming",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "mdaemon",
+        15
+      ],
+      [
+        "mail",
+        34
+      ],
+      [
+        "account",
+        15
+      ],
+      [
+        "server",
+        24
+      ],
+      [
+        "outlook",
+        9
+      ],
+      [
+        "email",
+        15
+      ],
+      [
+        "outgoing",
+        7
+      ],
+      [
+        "express",
+        9
+      ],
+      [
+        "incoming",
+        7
+      ],
+      [
+        "pop",
+        8
+      ],
+      [
+        "smtp",
+        6
+      ],
+      [
+        "address",
+        12
+      ]
+    ],
+    "phrases": [
+      [
+        "mail server",
+        13
+      ],
+      [
+        "outlook express",
+        9
+      ],
+      [
+        "outgoing mail",
+        5
+      ],
+      [
+        "incoming mail",
+        5
+      ],
+      [
+        "server mdaemon",
+        4
+      ],
+      [
+        "perangkat lunak",
+        4
+      ],
+      [
+        "nama account",
+        4
+      ],
+      [
+        "mail client",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        18990,
+        0.46
+      ],
+      [
+        19000,
+        0.44
+      ],
+      [
+        16253,
+        0.31
+      ],
+      [
+        16289,
+        0.3
+      ],
+      [
+        17114,
+        0.23
+      ],
+      [
+        19659,
+        0.23
+      ]
+    ],
+    "sentiment": null
+  }
+}

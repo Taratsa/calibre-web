@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2319,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "tuhan",
@@ -107,44 +107,44 @@
         35
       ],
       [
-        "godlob",
-        11
-      ],
-      [
         "tuhan",
         54
+      ],
+      [
+        "godlob",
+        11
       ],
       [
         "rintrik",
         8
       ],
       [
-        "kebatinan",
-        10
-      ],
-      [
         "hakikat",
         14
       ],
       [
-        "armageddon",
-        6
+        "kebatinan",
+        10
+      ],
+      [
+        "manusia",
+        40
       ],
       [
         "zat",
         12
       ],
       [
+        "armageddon",
+        6
+      ],
+      [
         "kecubung",
         6
       ],
       [
-        "asmaradana",
-        6
-      ],
-      [
-        "cerpennya",
-        6
+        "eksistensi",
+        13
       ]
     ],
     "phrases": [
@@ -184,14 +184,18 @@
     "similar": [
       [
         4512,
-        0.31
+        0.33
       ],
       [
         4565,
-        0.27
+        0.29
       ],
       [
         4159,
+        0.26
+      ],
+      [
+        4506,
         0.25
       ],
       [
@@ -199,13 +203,10 @@
         0.24
       ],
       [
-        4506,
+        4170,
         0.23
-      ],
-      [
-        4446,
-        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

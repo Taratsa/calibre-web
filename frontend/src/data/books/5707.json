@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 15414,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "pmp",
@@ -104,12 +104,12 @@
         285
       ],
       [
-        "bidayuhik",
-        78
-      ],
-      [
         "fonem",
         125
+      ],
+      [
+        "bidayuhik",
+        78
       ],
       [
         "refleks",
@@ -120,16 +120,24 @@
         47
       ],
       [
-        "konsonan",
-        58
-      ],
-      [
         "vokal",
         88
       ],
       [
+        "konsonan",
+        58
+      ],
+      [
         "varian",
         73
+      ],
+      [
+        "penelitian",
+        119
+      ],
+      [
+        "bahasa",
+        197
       ],
       [
         "antarvokal",
@@ -138,14 +146,6 @@
       [
         "collins",
         35
-      ],
-      [
-        "kuhi",
-        22
-      ],
-      [
-        "penelitian",
-        119
       ]
     ],
     "phrases": [
@@ -182,6 +182,47 @@
         27
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        4959,
+        0.18
+      ],
+      [
+        6168,
+        0.11
+      ],
+      [
+        5680,
+        0.11
+      ],
+      [
+        5966,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 79,
+      "negative": 40,
+      "trend": [
+        0.7,
+        0,
+        null,
+        0.43,
+        0.8,
+        1,
+        -0.6,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.69,
+        0.17
+      ],
+      "emotions": []
+    }
   }
 }

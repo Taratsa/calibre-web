@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3274,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "colonial",
@@ -114,32 +114,28 @@
         28
       ],
       [
-        "people",
-        27
-      ],
-      [
         "political",
         24
+      ],
+      [
+        "people",
+        27
       ],
       [
         "nations",
         18
       ],
       [
-        "reaction",
-        12
-      ],
-      [
         "human",
         21
       ],
       [
-        "nationalism",
-        10
+        "reaction",
+        12
       ],
       [
-        "nationalist",
-        8
+        "nationalism",
+        10
       ],
       [
         "united",
@@ -150,7 +146,11 @@
         18
       ],
       [
-        "provisions",
+        "economic",
+        13
+      ],
+      [
+        "nationalist",
         8
       ]
     ],
@@ -190,29 +190,30 @@
     ],
     "similar": [
       [
-        7849,
+        6888,
         0.22
       ],
       [
         1900,
-        0.21
+        0.22
       ],
       [
         518,
-        0.21
-      ],
-      [
-        8301,
-        0.21
-      ],
-      [
-        6888,
-        0.21
+        0.22
       ],
       [
         7713,
-        0.21
+        0.22
+      ],
+      [
+        7849,
+        0.22
+      ],
+      [
+        8301,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

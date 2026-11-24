@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5476,
-    "longer_than": 45,
+    "longer_than": 74,
     "top": [
       [
         "teks",
@@ -111,6 +111,14 @@
         107
       ],
       [
+        "cerita",
+        82
+      ],
+      [
+        "sejarah",
+        90
+      ],
+      [
         "konjungsi",
         20
       ],
@@ -119,36 +127,28 @@
         22
       ],
       [
-        "sejarah",
-        90
-      ],
-      [
-        "cerita",
-        82
-      ],
-      [
-        "e-modul",
-        9
-      ],
-      [
-        "rekon",
-        12
+        "kalimat",
+        40
       ],
       [
         "kebahasaan",
         22
       ],
       [
-        "kaidah",
-        20
+        "rekon",
+        12
       ],
       [
-        "kalimat",
-        40
+        "e-modul",
+        9
       ],
       [
         "penggunaan",
         47
+      ],
+      [
+        "kaidah",
+        20
       ],
       [
         "supersemar",
@@ -192,28 +192,77 @@
     "similar": [
       [
         5672,
-        0.19
+        0.2
       ],
       [
         5334,
-        0.19
+        0.2
       ],
       [
         5597,
-        0.17
+        0.18
       ],
       [
         5674,
+        0.17
+      ],
+      [
+        5677,
         0.16
       ],
       [
         5673,
-        0.15
-      ],
-      [
-        5044,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 61,
+      "negative": 47,
+      "trend": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        0.6,
+        -0.33,
+        0.38,
+        -0.2,
+        null,
+        null,
+        -0.11,
+        0.25,
+        0.6,
+        -0.06,
+        -0.82
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

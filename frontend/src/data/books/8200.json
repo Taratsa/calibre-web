@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2472,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "hukum",
@@ -115,6 +115,10 @@
         41
       ],
       [
+        "hukum",
+        54
+      ],
+      [
         "kependudukan",
         16
       ],
@@ -123,36 +127,32 @@
         10
       ],
       [
-        "hukum",
-        54
-      ],
-      [
-        "asas",
-        16
+        "negara",
+        46
       ],
       [
         "norma",
         19
       ],
       [
+        "asas",
+        16
+      ],
+      [
         "norma-norma",
         14
       ],
       [
-        "administrasi",
-        16
-      ],
-      [
-        "ellis-jones",
-        3
+        "agama",
+        24
       ],
       [
         "prinsip",
         20
       ],
       [
-        "uud",
-        11
+        "administrasi",
+        16
       ]
     ],
     "phrases": [
@@ -192,28 +192,52 @@
     "similar": [
       [
         8199,
-        0.3
-      ],
-      [
-        8426,
-        0.23
+        0.32
       ],
       [
         8843,
-        0.23
+        0.25
       ],
       [
         8477,
+        0.25
+      ],
+      [
+        8426,
+        0.25
+      ],
+      [
+        9085,
         0.23
       ],
       [
         8796,
-        0.21
-      ],
-      [
-        8173,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 52,
+      "negative": 19,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        0.14,
+        -0.6,
+        null,
+        0.6,
+        null,
+        1,
+        0.43,
+        null,
+        null,
+        0.33,
+        0,
+        0.2
+      ],
+      "emotions": []
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 993,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "harga",
@@ -112,19 +112,15 @@
         6
       ],
       [
-        "pesenan",
-        5
-      ],
-      [
         "kirim",
         10
       ],
       [
-        "toeli",
-        4
+        "pesenan",
+        5
       ],
       [
-        "saroeng",
+        "toeli",
         4
       ],
       [
@@ -132,20 +128,24 @@
         5
       ],
       [
-        "toeloengagoeng",
-        3
+        "saroeng",
+        4
       ],
       [
         "soeka",
         5
       ],
       [
-        "djocjakarta",
+        "toeloengagoeng",
         3
       ],
       [
-        "malkan",
-        3
+        "harga",
+        13
+      ],
+      [
+        "kain",
+        10
       ]
     ],
     "phrases": [
@@ -187,6 +187,7 @@
         4635,
         0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

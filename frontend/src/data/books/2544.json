@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6753,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "kerja",
@@ -111,40 +111,40 @@
         14
       ],
       [
+        "kerja",
+        25
+      ],
+      [
         "genetika",
         6
-      ],
-      [
-        "novartis",
-        3
-      ],
-      [
-        "jagung",
-        9
       ],
       [
         "ang",
         12
       ],
       [
+        "jagung",
+        9
+      ],
+      [
+        "novartis",
+        3
+      ],
+      [
         "perancis",
         7
       ],
       [
-        "kerja",
-        25
+        "masyarakat",
+        17
       ],
       [
-        "mimpi-mimpi",
-        4
+        "komoditi",
+        5
       ],
       [
-        "newsletter",
-        4
-      ],
-      [
-        "affinitas",
-        3
+        "gan",
+        6
       ]
     ],
     "phrases": [
@@ -181,6 +181,32 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2579,
+        0.75
+      ],
+      [
+        2783,
+        0.14
+      ],
+      [
+        2313,
+        0.14
+      ],
+      [
+        1758,
+        0.13
+      ],
+      [
+        6767,
+        0.13
+      ],
+      [
+        1930,
+        0.13
+      ]
+    ],
+    "sentiment": null
   }
 }

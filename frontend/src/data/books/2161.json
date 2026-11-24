@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2412,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "anarkis",
@@ -119,32 +119,32 @@
         6
       ],
       [
-        "ccf",
-        4
-      ],
-      [
         "konstan",
         7
       ],
       [
-        "fai",
-        5
+        "ccf",
+        4
       ],
       [
         "praksis",
         6
       ],
       [
+        "fai",
+        5
+      ],
+      [
+        "ekonomi",
+        14
+      ],
+      [
         "serigala",
         5
       ],
       [
-        "peledak",
-        4
-      ],
-      [
-        "penyendiri",
-        3
+        "yunani",
+        6
       ]
     ],
     "phrases": [
@@ -176,28 +176,77 @@
     "similar": [
       [
         4097,
-        0.3
+        0.32
       ],
       [
         3754,
-        0.3
+        0.32
       ],
       [
         8015,
-        0.28
+        0.3
       ],
       [
         7107,
-        0.28
+        0.3
       ],
       [
         1813,
-        0.25
+        0.28
       ],
       [
         8021,
-        0.25
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 39,
+      "negative": 54,
+      "trend": [
+        -0.45,
+        -0.17,
+        0.56,
+        null,
+        -0.6,
+        null,
+        0.43,
+        null,
+        null,
+        -0.43,
+        null,
+        null,
+        null,
+        0,
+        -0.6,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

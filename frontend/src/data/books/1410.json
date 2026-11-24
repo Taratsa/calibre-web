@@ -6,10 +6,10 @@
   "authors": [
     {
       "id": 645,
-      "name": "A. F. von Dewall"
+      "name": "A. F. Von Dewall"
     }
   ],
-  "author_sort": "Dewall, A. F. von",
+  "author_sort": "Dewall, A. F. Von",
   "tags": [
     "Fiksi",
     "Koleksi Sastra"
@@ -49,12 +49,12 @@
     {
       "format": "epub",
       "size": 949776,
-      "name": "Hikayat Bakhtiyar - A. F. von Dewall"
+      "name": "Hikayat Bakhtiyar - A. F. Von Dewall"
     }
   ],
   "text": {
     "words": 17969,
-    "longer_than": 74,
+    "longer_than": 87,
     "top": [
       [
         "pon",
@@ -115,20 +115,16 @@
         212
       ],
       [
-        "bakhtiyar",
-        136
-      ],
-      [
         "baginda",
         430
       ],
       [
-        "demikiyan",
-        112
+        "bakhtiyar",
+        136
       ],
       [
-        "tiyada",
-        94
+        "demikiyan",
+        112
       ],
       [
         "patik",
@@ -139,6 +135,10 @@
         149
       ],
       [
+        "tiyada",
+        94
+      ],
+      [
         "adapon",
         83
       ],
@@ -147,12 +147,12 @@
         105
       ],
       [
-        "pemikat",
-        74
+        "iya",
+        176
       ],
       [
-        "sekutika",
-        50
+        "pemikat",
+        74
       ]
     ],
     "phrases": [
@@ -192,28 +192,85 @@
     "similar": [
       [
         5081,
-        0.46
+        0.47
       ],
       [
         5135,
-        0.28
+        0.3
       ],
       [
         6035,
-        0.24
+        0.26
       ],
       [
         6300,
-        0.22
+        0.24
       ],
       [
         2971,
-        0.21
+        0.23
       ],
       [
-        6027,
-        0.19
+        6023,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 77,
+      "negative": 51,
+      "trend": [
+        0.43,
+        0.33,
+        null,
+        0.14,
+        0.5,
+        -0.2,
+        null,
+        -0.11,
+        null,
+        0.5,
+        -0.25,
+        0.27,
+        -0.43,
+        0.07,
+        0.4,
+        0.67
+      ],
+      "emotions": [
+        [
+          "joy",
+          10
+        ],
+        [
+          "disgust",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
   }
 }

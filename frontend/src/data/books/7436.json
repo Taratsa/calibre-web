@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2706,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "bentuk",
@@ -110,16 +110,28 @@
         7
       ],
       [
-        "insurrection",
-        7
-      ],
-      [
         "perancis",
         12
       ],
       [
+        "insurrection",
+        7
+      ],
+      [
         "insureksi",
         8
+      ],
+      [
+        "pemogokan",
+        9
+      ],
+      [
+        "imperium",
+        6
+      ],
+      [
+        "teks-teks",
+        7
       ],
       [
         "mengkomunisasikan",
@@ -130,28 +142,16 @@
         3
       ],
       [
-        "imperium",
-        6
-      ],
-      [
-        "pemogokan",
-        9
-      ],
-      [
-        "teks-teks",
-        7
+        "berbagi",
+        11
       ],
       [
         "dunia-dunia",
         4
       ],
       [
-        "tarnac",
-        3
-      ],
-      [
-        "zona-zona",
-        4
+        "tubuh-tubuh",
+        5
       ]
     ],
     "phrases": [
@@ -187,28 +187,52 @@
     "similar": [
       [
         3058,
-        0.2
-      ],
-      [
-        7009,
-        0.19
-      ],
-      [
-        1776,
-        0.16
+        0.24
       ],
       [
         4731,
+        0.18
+      ],
+      [
+        1776,
+        0.17
+      ],
+      [
+        7009,
+        0.17
+      ],
+      [
+        2018,
         0.15
       ],
       [
         8062,
-        0.13
-      ],
-      [
-        2018,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 32,
+      "negative": 37,
+      "trend": [
+        null,
+        -0.67,
+        null,
+        1,
+        null,
+        null,
+        -0.11,
+        null,
+        null,
+        0.14,
+        null,
+        -0.33,
+        -0.2,
+        0,
+        null,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

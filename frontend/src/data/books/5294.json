@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 5974,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "mainan",
@@ -109,16 +109,16 @@
         69
       ],
       [
+        "bambu",
+        62
+      ],
+      [
         "egrang",
         21
       ],
       [
         "gasing",
         29
-      ],
-      [
-        "bambu",
-        62
       ],
       [
         "pelepah",
@@ -137,20 +137,20 @@
         24
       ],
       [
+        "ayah",
+        34
+      ],
+      [
         "kataku",
         19
       ],
       [
-        "pantin",
-        6
+        "permainan",
+        30
       ],
       [
-        "mobil-mobilan",
-        8
-      ],
-      [
-        "memainkannya",
-        11
+        "pisang",
+        24
       ]
     ],
     "phrases": [
@@ -190,28 +190,77 @@
     "similar": [
       [
         5499,
-        0.22
+        0.24
       ],
       [
         5172,
-        0.14
+        0.18
       ],
       [
         5034,
-        0.14
+        0.17
       ],
       [
         5131,
-        0.13
-      ],
-      [
-        5127,
-        0.13
+        0.16
       ],
       [
         3466,
-        0.13
+        0.15
+      ],
+      [
+        5462,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 113,
+      "negative": 35,
+      "trend": [
+        0.82,
+        0.9,
+        null,
+        null,
+        1,
+        null,
+        0.33,
+        0,
+        -0.33,
+        0.14,
+        0.25,
+        0.6,
+        0.5,
+        null,
+        null,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          15
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

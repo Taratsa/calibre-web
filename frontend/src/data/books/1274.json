@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2409,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "kebebasan",
@@ -93,12 +93,16 @@
         16
       ],
       [
+        "zine",
+        18
+      ],
+      [
         "melaung",
         7
       ],
       [
-        "zine",
-        18
+        "kebebasan",
+        29
       ],
       [
         "simpul",
@@ -113,28 +117,24 @@
         6
       ],
       [
-        "kebebasan",
-        29
+        "sipil",
+        14
       ],
       [
         "febi",
         4
       ],
       [
-        "yappika-actionaid",
-        3
-      ],
-      [
-        "abdali",
-        3
+        "diperjuangkan",
+        9
       ],
       [
         "syifa",
         4
       ],
       [
-        "diperjuangkan",
-        9
+        "yappika-actionaid",
+        3
       ]
     ],
     "phrases": [
@@ -177,17 +177,49 @@
         0.49
       ],
       [
-        52,
-        0.14
-      ],
-      [
         5853,
         0.13
       ],
       [
+        6932,
+        0.13
+      ],
+      [
+        6936,
+        0.11
+      ],
+      [
         8610,
-        0.1
+        0.11
+      ],
+      [
+        52,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 67,
+      "negative": 20,
+      "trend": [
+        0.6,
+        null,
+        0.75,
+        null,
+        0.75,
+        0.78,
+        null,
+        -0.09,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        1,
+        0.45,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

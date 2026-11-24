@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 973,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "massa",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "elitis",
-        5
-      ],
-      [
         "massa",
         14
+      ],
+      [
+        "elitis",
+        5
       ],
       [
         "tiap-tiap",
@@ -119,32 +119,32 @@
         4
       ],
       [
-        "mengambang",
-        4
+        "perjuangan",
+        9
       ],
       [
-        "posting",
-        3
+        "mengambang",
+        4
       ],
       [
         "elit",
         5
       ],
       [
-        "pergantian",
-        4
-      ],
-      [
-        "perjuangan",
+        "organisasi",
         9
       ],
       [
-        "berkeadilan",
+        "kekuasaan",
+        9
+      ],
+      [
+        "posting",
         3
       ],
       [
-        "organisasi",
-        9
+        "kesadaran",
+        7
       ]
     ],
     "phrases": [
@@ -163,29 +163,30 @@
     ],
     "similar": [
       [
-        1995,
+        2158,
+        0.23
+      ],
+      [
+        3766,
         0.19
       ],
       [
-        2158,
+        2084,
+        0.18
+      ],
+      [
+        8091,
         0.18
       ],
       [
         2150,
-        0.17
+        0.18
       ],
       [
-        2084,
-        0.16
-      ],
-      [
-        2512,
-        0.15
-      ],
-      [
-        3766,
-        0.15
+        2398,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

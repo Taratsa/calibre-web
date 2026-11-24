@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5971,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "gue",
@@ -123,20 +123,24 @@
         13
       ],
       [
-        "olimpiade",
-        14
+        "ideologi",
+        34
       ],
       [
-        "fhul",
-        8
+        "olimpiade",
+        14
       ],
       [
         "hegemoni",
         21
       ],
       [
-        "video",
-        24
+        "fhul",
+        8
+      ],
+      [
+        "musik",
+        28
       ],
       [
         "mtv",
@@ -147,12 +151,8 @@
         12
       ],
       [
-        "ideologi",
-        34
-      ],
-      [
-        "fahri",
-        7
+        "video",
+        24
       ]
     ],
     "phrases": [
@@ -189,6 +189,84 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2808,
+        0.17
+      ],
+      [
+        1547,
+        0.11
+      ],
+      [
+        2083,
+        0.11
+      ],
+      [
+        2400,
+        0.11
+      ],
+      [
+        1970,
+        0.11
+      ],
+      [
+        1556,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 81,
+      "negative": 48,
+      "trend": [
+        0.17,
+        0,
+        -0.43,
+        0,
+        -0.6,
+        -0.14,
+        0,
+        0.57,
+        null,
+        1,
+        0.5,
+        null,
+        0.82,
+        0.11,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          15
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

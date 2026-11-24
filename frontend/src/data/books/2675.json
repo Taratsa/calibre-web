@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1653,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "peradaban",
@@ -111,40 +111,40 @@
         9
       ],
       [
-        "coeurderoy",
-        4
-      ],
-      [
         "revolusioner",
         14
       ],
       [
-        "dejacque",
-        3
+        "coeurderoy",
+        4
       ],
       [
         "barbar",
         5
       ],
       [
-        "industrialisme",
-        4
-      ],
-      [
-        "anti-peradaban",
+        "dejacque",
         3
-      ],
-      [
-        "teknologi",
-        11
       ],
       [
         "kemajuan",
         10
       ],
       [
+        "industrialisme",
+        4
+      ],
+      [
+        "teknologi",
+        11
+      ],
+      [
         "penghancuran",
         6
+      ],
+      [
+        "anti-peradaban",
+        3
       ]
     ],
     "phrases": [
@@ -175,29 +175,36 @@
     ],
     "similar": [
       [
-        7461,
-        0.84
-      ],
-      [
         7044,
-        0.48
+        0.54
       ],
       [
         2052,
-        0.46
+        0.53
       ],
       [
         3715,
-        0.23
+        0.27
       ],
       [
         2133,
-        0.22
+        0.25
       ],
       [
-        4113,
+        7181,
+        0.21
+      ],
+      [
+        3716,
         0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 38,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

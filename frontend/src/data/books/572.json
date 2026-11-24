@@ -94,7 +94,7 @@
   ],
   "text": {
     "words": 3729,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "puisi",
@@ -147,12 +147,12 @@
     ],
     "distinct": [
       [
-        "ikj",
-        11
-      ],
-      [
         "puisi",
         28
+      ],
+      [
+        "ikj",
+        11
       ],
       [
         "mulyana",
@@ -163,32 +163,32 @@
         5
       ],
       [
+        "kau",
+        22
+      ],
+      [
         "boyke",
         6
-      ],
-      [
-        "fanatikisme",
-        4
-      ],
-      [
-        "sajak",
-        10
       ],
       [
         "penyair",
         12
       ],
       [
-        "kau",
-        22
+        "sajak",
+        10
       ],
       [
-        "dimitri",
+        "fanatikisme",
         4
       ],
       [
         "menyatu",
         11
+      ],
+      [
+        "dimitri",
+        4
       ],
       [
         "sigit",
@@ -232,28 +232,81 @@
     "similar": [
       [
         3040,
-        0.13
+        0.16
       ],
       [
         3035,
-        0.13
+        0.15
       ],
       [
         3021,
-        0.13
+        0.15
       ],
       [
         3002,
-        0.12
+        0.14
       ],
       [
         3031,
-        0.11
+        0.14
       ],
       [
         3036,
-        0.11
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 45,
+      "negative": 56,
+      "trend": [
+        null,
+        null,
+        -0.2,
+        null,
+        null,
+        -0.11,
+        -0.09,
+        -0.33,
+        -0.33,
+        null,
+        -0.33,
+        -0.43,
+        -0.33,
+        -0.33,
+        0,
+        0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          15
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

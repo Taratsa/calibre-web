@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3060,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "bakunin",
@@ -115,8 +115,16 @@
         38
       ],
       [
+        "kaum",
+        50
+      ],
+      [
         "borjuis",
         21
+      ],
+      [
+        "revolusi",
+        32
       ],
       [
         "frantz",
@@ -127,24 +135,16 @@
         10
       ],
       [
+        "kekerasan",
+        26
+      ],
+      [
         "terjajah",
         11
       ],
       [
-        "kaum",
-        50
-      ],
-      [
-        "revolusi",
-        32
-      ],
-      [
-        "nasionalis",
-        12
-      ],
-      [
-        "kekerasan",
-        26
+        "pekerja",
+        22
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2727,
-        0.15
+        0.2
       ],
       [
         2283,
-        0.14
-      ],
-      [
-        2254,
-        0.14
-      ],
-      [
-        7150,
-        0.13
-      ],
-      [
-        1957,
-        0.13
+        0.2
       ],
       [
         2522,
-        0.13
+        0.2
+      ],
+      [
+        3746,
+        0.19
+      ],
+      [
+        2719,
+        0.18
+      ],
+      [
+        6721,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 50,
+      "negative": 59,
+      "trend": [
+        null,
+        null,
+        0.56,
+        null,
+        -0.33,
+        null,
+        0,
+        -0.5,
+        0.14,
+        -0.45,
+        -0.33,
+        -0.18,
+        null,
+        null,
+        0.2,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

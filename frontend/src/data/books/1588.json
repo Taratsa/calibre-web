@@ -12,7 +12,7 @@
   "author_sort": "Tse-tung, Mao",
   "tags": [
     "Biografi & Otobiografi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 20971,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "tentara",
@@ -112,12 +112,16 @@
         63
       ],
       [
+        "tentara",
+        168
+      ],
+      [
         "kuomintang",
         49
       ],
       [
-        "tentara",
-        168
+        "kerena",
+        48
       ],
       [
         "hsiang",
@@ -128,32 +132,28 @@
         28
       ],
       [
-        "kerena",
-        48
+        "soviet",
+        62
       ],
       [
         "chingkanshan",
         21
       ],
       [
-        "soviet",
-        62
-      ],
-      [
         "tiongkok",
         60
       ],
       [
+        "merah",
+        97
+      ],
+      [
+        "partai",
+        74
+      ],
+      [
         "chiang",
         29
-      ],
-      [
-        "kai-shek",
-        23
-      ],
-      [
-        "tu-hsiu",
-        15
       ]
     ],
     "phrases": [
@@ -197,20 +197,77 @@
       ],
       [
         6322,
-        0.14
+        0.17
       ],
       [
         6686,
-        0.12
+        0.14
       ],
       [
         5930,
+        0.13
+      ],
+      [
+        9251,
         0.12
       ],
       [
         4603,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 221,
+      "negative": 182,
+      "trend": [
+        0.08,
+        -0.29,
+        0.44,
+        -0.08,
+        0.4,
+        0.11,
+        0.54,
+        0.33,
+        0.27,
+        -0.09,
+        0,
+        0.13,
+        -0.07,
+        -0.04,
+        -0.02,
+        0.63
+      ],
+      "emotions": [
+        [
+          "anger",
+          41
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          6
+        ]
+      ]
+    }
   }
 }

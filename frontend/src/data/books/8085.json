@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1584,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "produksi",
@@ -114,14 +114,6 @@
         16
       ],
       [
-        "pengetahuanku",
-        3
-      ],
-      [
-        "runut",
-        3
-      ],
-      [
         "pekerja",
         13
       ],
@@ -130,12 +122,28 @@
         7
       ],
       [
-        "debat",
-        5
+        "pengetahuanku",
+        3
+      ],
+      [
+        "runut",
+        3
       ],
       [
         "dihitung",
         6
+      ],
+      [
+        "debat",
+        5
+      ],
+      [
+        "jam",
+        10
+      ],
+      [
+        "teori",
+        8
       ],
       [
         "pengusaha",
@@ -144,14 +152,6 @@
       [
         "perhitungan",
         6
-      ],
-      [
-        "teori",
-        8
-      ],
-      [
-        "jam",
-        10
       ]
     ],
     "phrases": [
@@ -176,6 +176,32 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        7259,
+        0.15
+      ],
+      [
+        18065,
+        0.14
+      ],
+      [
+        4777,
+        0.14
+      ],
+      [
+        3706,
+        0.13
+      ],
+      [
+        8071,
+        0.13
+      ],
+      [
+        4442,
+        0.13
+      ]
+    ],
+    "sentiment": null
   }
 }

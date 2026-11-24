@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1990,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "otoritas",
@@ -115,35 +115,35 @@
         16
       ],
       [
-        "anti-otoritarian",
-        5
-      ],
-      [
-        "anti-otoritarianisme",
-        3
-      ],
-      [
-        "bakunin",
-        5
-      ],
-      [
         "pekerja",
         13
       ],
       [
-        "marxis",
-        6
+        "anti-otoritarian",
+        5
+      ],
+      [
+        "menentang",
+        10
       ],
       [
         "kereta",
         8
       ],
       [
-        "hirarkis",
-        4
+        "bakunin",
+        5
       ],
       [
-        "rocker",
+        "marxis",
+        6
+      ],
+      [
+        "sosial",
+        15
+      ],
+      [
+        "anti-otoritarianisme",
         3
       ]
     ],
@@ -183,29 +183,36 @@
     ],
     "similar": [
       [
-        7362,
-        0.16
-      ],
-      [
         6730,
-        0.13
+        0.21
       ],
       [
         2203,
-        0.13
+        0.21
       ],
       [
         2283,
-        0.13
+        0.2
+      ],
+      [
+        7362,
+        0.19
       ],
       [
         1762,
-        0.12
+        0.18
       ],
       [
-        2368,
-        0.12
+        2719,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.67,
+      "positive": 50,
+      "negative": 10,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

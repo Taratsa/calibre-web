@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2068,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "informasi",
@@ -103,10 +103,6 @@
         6
       ],
       [
-        "negara-bangsa",
-        6
-      ],
-      [
         "informasi",
         22
       ],
@@ -115,36 +111,40 @@
         9
       ],
       [
-        "pasca-industri",
-        3
+        "negara-bangsa",
+        6
+      ],
+      [
+        "perang",
+        13
       ],
       [
         "teknologi",
         11
       ],
       [
+        "pasca-industri",
+        3
+      ],
+      [
+        "sosial",
+        14
+      ],
+      [
         "kontrol",
         8
-      ],
-      [
-        "pelacakan",
-        3
-      ],
-      [
-        "satelit",
-        3
-      ],
-      [
-        "sabotase",
-        4
       ],
       [
         "sistem",
         13
       ],
       [
-        "perang",
-        13
+        "sabotase",
+        4
+      ],
+      [
+        "pelacakan",
+        3
       ]
     ],
     "phrases": [
@@ -172,28 +172,56 @@
     "similar": [
       [
         7000,
-        0.18
+        0.19
       ],
       [
         3933,
-        0.18
+        0.19
       ],
       [
         3830,
-        0.18
+        0.19
       ],
       [
         2660,
-        0.18
+        0.19
       ],
       [
         7070,
-        0.13
+        0.17
       ],
       [
-        7487,
-        0.13
+        15854,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 28,
+      "negative": 42,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          19
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

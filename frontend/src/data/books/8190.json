@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1695,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "ham",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "ranham",
-        14
-      ],
-      [
         "ham",
         34
+      ],
+      [
+        "ranham",
+        14
       ],
       [
         "anggaran",
         27
       ],
       [
-        "skpd",
-        7
-      ],
-      [
         "aceh",
         16
+      ],
+      [
+        "skpd",
+        7
       ],
       [
         "program",
         25
       ],
       [
-        "program-program",
-        8
+        "yogyakarta",
+        13
       ],
       [
         "nusa",
         10
       ],
       [
-        "terkendala",
-        5
-      ],
-      [
-        "yogyakarta",
-        13
-      ],
-      [
-        "isbat",
-        3
-      ],
-      [
-        "implementasi",
+        "program-program",
         8
+      ],
+      [
+        "kementerian",
+        12
+      ],
+      [
+        "tenggara",
+        10
+      ],
+      [
+        "daerah",
+        19
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         8191,
-        0.33
+        0.37
       ],
       [
         8146,
-        0.3
+        0.32
       ],
       [
         8169,
-        0.26
+        0.31
+      ],
+      [
+        8971,
+        0.21
       ],
       [
         8903,
-        0.17
+        0.2
       ],
       [
-        6917,
-        0.17
-      ],
-      [
-        8898,
-        0.16
+        8967,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

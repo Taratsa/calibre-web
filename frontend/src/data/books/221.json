@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1300,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "prabowo",
@@ -109,28 +109,28 @@
         5
       ],
       [
-        "munir",
-        5
-      ],
-      [
         "kewarganegaraan",
         6
       ],
       [
-        "amman",
-        3
+        "mantan",
+        8
+      ],
+      [
+        "munir",
+        5
       ],
       [
         "bernas",
         4
       ],
       [
-        "sim",
-        5
+        "amman",
+        3
       ],
       [
-        "mantan",
-        8
+        "sim",
+        5
       ],
       [
         "djojohadikusumo",
@@ -166,7 +166,7 @@
     "similar": [
       [
         222,
-        0.31
+        0.33
       ],
       [
         219,
@@ -178,16 +178,17 @@
       ],
       [
         205,
+        0.26
+      ],
+      [
+        197,
         0.25
       ],
       [
         225,
         0.25
-      ],
-      [
-        197,
-        0.24
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

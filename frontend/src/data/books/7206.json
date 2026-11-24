@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 437,
-    "longer_than": 5,
+    "longer_than": 37,
     "top": [
       [
         "polisi",
@@ -106,24 +106,28 @@
     ],
     "distinct": [
       [
-        "kasta",
-        7
-      ],
-      [
         "polisi",
         18
       ],
       [
-        "perpecahan",
-        6
+        "kasta",
+        7
       ],
       [
         "sipil",
         9
       ],
       [
+        "perpecahan",
+        6
+      ],
+      [
         "supremasi",
         4
+      ],
+      [
+        "masyarakat",
+        13
       ],
       [
         "terciptanya",
@@ -142,32 +146,29 @@
         3
       ],
       [
-        "masyarakat",
-        13
-      ],
-      [
         "kuasa",
         3
       ],
       [
-        "batas",
-        3
+        "hukum",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2368,
-        0.18
-      ],
-      [
-        8630,
-        0.11
+        0.16
       ],
       [
         86,
         0.1
+      ],
+      [
+        8630,
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

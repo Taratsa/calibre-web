@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 6266,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "kebudayaan",
@@ -113,12 +113,12 @@
         30
       ],
       [
-        "yogya",
-        24
-      ],
-      [
         "kebudayaan",
         57
+      ],
+      [
+        "yogya",
+        24
       ],
       [
         "lesung",
@@ -129,28 +129,28 @@
         25
       ],
       [
-        "ketoprak",
-        8
+        "rakyat",
+        42
       ],
       [
         "semarang",
         19
       ],
       [
-        "nktr",
-        4
+        "ketoprak",
+        8
       ],
       [
         "lakon",
         10
       ],
       [
-        "rakyat",
-        42
+        "kota",
+        30
       ],
       [
-        "engtai",
-        3
+        "nktr",
+        4
       ]
     ],
     "phrases": [
@@ -190,28 +190,77 @@
     "similar": [
       [
         4071,
-        0.17
-      ],
-      [
-        3994,
-        0.15
+        0.2
       ],
       [
         6949,
-        0.15
+        0.19
       ],
       [
-        9312,
-        0.15
+        3994,
+        0.19
       ],
       [
         4855,
-        0.14
+        0.18
       ],
       [
         8393,
-        0.14
+        0.18
+      ],
+      [
+        9312,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 59,
+      "negative": 49,
+      "trend": [
+        0.18,
+        null,
+        null,
+        0.11,
+        null,
+        -0.14,
+        0,
+        null,
+        -0.09,
+        -0.12,
+        null,
+        0.5,
+        null,
+        0.33,
+        -0.11,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

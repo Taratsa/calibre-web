@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4393,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "suasana",
@@ -121,10 +121,6 @@
         13
       ],
       [
-        "psychobilly",
-        7
-      ],
-      [
         "suasana",
         50
       ],
@@ -133,16 +129,20 @@
         34
       ],
       [
+        "psychobilly",
+        7
+      ],
+      [
+        "album",
+        14
+      ],
+      [
         "dallyrowo",
         6
       ],
       [
         "beat",
         12
-      ],
-      [
-        "cucukrowo",
-        6
       ]
     ],
     "phrases": [
@@ -182,7 +182,7 @@
     "similar": [
       [
         4763,
-        0.24
+        0.25
       ],
       [
         1521,
@@ -198,12 +198,52 @@
       ],
       [
         2844,
-        0.13
+        0.14
       ],
       [
         1548,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 30,
+      "negative": 28,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          8
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2298,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "kau",
@@ -115,6 +115,22 @@
         12
       ],
       [
+        "produksi",
+        11
+      ],
+      [
+        "manusia",
+        19
+      ],
+      [
+        "pasar",
+        11
+      ],
+      [
+        "perbudakan",
+        6
+      ],
+      [
         "membuatmu",
         4
       ],
@@ -123,28 +139,12 @@
         4
       ],
       [
-        "produksi",
-        11
+        "individu",
+        8
       ],
       [
-        "perbudakan",
+        "hasrat",
         6
-      ],
-      [
-        "bos",
-        4
-      ],
-      [
-        "bob",
-        3
-      ],
-      [
-        "tuamu",
-        3
-      ],
-      [
-        "pasar",
-        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7413,
-        0.77
+        0.8
       ],
       [
         44,
-        0.21
+        0.25
       ],
       [
         1977,
-        0.15
+        0.19
       ],
       [
-        7368,
-        0.14
+        7097,
+        0.18
       ],
       [
         7187,
-        0.14
+        0.17
       ],
       [
-        4691,
-        0.14
+        9182,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 42,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

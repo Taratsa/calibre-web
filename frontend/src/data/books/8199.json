@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 2020,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "negara",
@@ -117,8 +117,12 @@
         18
       ],
       [
-        "kartu",
-        16
+        "hukum",
+        41
+      ],
+      [
+        "negara",
+        51
       ],
       [
         "pasal",
@@ -129,32 +133,28 @@
         18
       ],
       [
-        "hukum",
-        41
+        "kartu",
+        16
       ],
       [
-        "negara",
-        51
+        "kepercayaan",
+        14
       ],
       [
-        "pemohon",
-        6
+        "penduduk",
+        16
+      ],
+      [
+        "agama",
+        17
       ],
       [
         "filosofis",
         8
       ],
       [
-        "data",
-        17
-      ],
-      [
-        "tamanaha",
-        3
-      ],
-      [
-        "penghayat",
-        4
+        "peristiwa",
+        16
       ]
     ],
     "phrases": [
@@ -194,28 +194,52 @@
     "similar": [
       [
         8200,
-        0.3
+        0.32
       ],
       [
         8796,
-        0.27
+        0.28
       ],
       [
         9085,
-        0.21
+        0.24
       ],
       [
         8972,
-        0.21
+        0.23
       ],
       [
         8477,
-        0.2
+        0.23
       ],
       [
         8173,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 42,
+      "negative": 16,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          20
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

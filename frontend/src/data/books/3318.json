@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6966,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "gay",
@@ -120,40 +120,40 @@
         19
       ],
       [
-        "lambda",
-        9
-      ],
-      [
         "teman-teman",
         25
+      ],
+      [
+        "lambda",
+        9
       ],
       [
         "kuberikan",
         11
       ],
       [
-        "heteroseks",
-        7
-      ],
-      [
         "buletin",
         11
+      ],
+      [
+        "umur",
+        18
       ],
       [
         "kuhp",
         10
       ],
       [
+        "heteroseks",
+        7
+      ],
+      [
+        "perbuatan",
+        19
+      ],
+      [
         "homoseks",
         7
-      ],
-      [
-        "homoseksualitas",
-        7
-      ],
-      [
-        "umur",
-        18
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         3324,
-        0.3
+        0.31
       ],
       [
         3319,
-        0.25
+        0.27
       ],
       [
         3320,
-        0.24
+        0.25
       ],
       [
         3322,
-        0.21
+        0.23
       ],
       [
         3321,
-        0.17
+        0.19
       ],
       [
         3331,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 112,
+      "negative": 59,
+      "trend": [
+        0,
+        -0.09,
+        0.62,
+        0.44,
+        0.2,
+        -0.45,
+        0.4,
+        0.54,
+        0,
+        0.73,
+        0.33,
+        0.5,
+        null,
+        null,
+        null,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          37
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

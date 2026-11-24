@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3844,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "demokrasi",
@@ -97,12 +97,12 @@
         6
       ],
       [
-        "wallacea",
-        6
-      ],
-      [
         "bugis",
         13
+      ],
+      [
+        "wallacea",
+        6
       ],
       [
         "banjar",
@@ -113,27 +113,27 @@
         18
       ],
       [
-        "humanized",
-        3
-      ],
-      [
         "birth",
         7
+      ],
+      [
+        "humanized",
+        3
       ],
       [
         "gentle",
         4
       ],
       [
-        "motherhood",
-        3
+        "warga",
+        12
       ],
       [
         "mama",
         6
       ],
       [
-        "inap",
+        "motherhood",
         3
       ]
     ],
@@ -174,11 +174,11 @@
     "similar": [
       [
         1047,
-        0.19
+        0.2
       ],
       [
         1046,
-        0.17
+        0.19
       ],
       [
         1044,
@@ -189,13 +189,66 @@
         0.13
       ],
       [
-        23,
-        0.12
+        6840,
+        0.13
       ],
       [
-        1045,
-        0.11
+        4935,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 54,
+      "negative": 58,
+      "trend": [
+        0.33,
+        0.09,
+        null,
+        -0.5,
+        -0.38,
+        -0.07,
+        null,
+        -0.43,
+        0.67,
+        null,
+        null,
+        null,
+        0.43,
+        -0.14,
+        -0.2,
+        0.09
+      ],
+      "emotions": [
+        [
+          "sadness",
+          9
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

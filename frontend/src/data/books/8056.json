@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2184,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "bahasa",
@@ -126,12 +126,12 @@
         4
       ],
       [
-        "urbanisme",
-        3
-      ],
-      [
         "aljazair",
         4
+      ],
+      [
+        "urbanisme",
+        3
       ],
       [
         "hasrat-hasrat",
@@ -150,15 +150,15 @@
         3
       ],
       [
-        "urban",
-        3
+        "terbesar",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         1924,
-        0.19
+        0.18
       ],
       [
         8059,
@@ -177,9 +177,16 @@
         0.14
       ],
       [
-        2333,
+        2020,
         0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 34,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

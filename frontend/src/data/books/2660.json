@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 36501,
-    "longer_than": 89,
+    "longer_than": 94,
     "top": [
       [
         "teknologi",
@@ -103,48 +103,48 @@
         190
       ],
       [
-        "transhumanis",
-        23
-      ],
-      [
-        "tekno-ilmiah",
-        18
+        "manusia",
+        166
       ],
       [
         "buatan",
         68
       ],
       [
-        "eugenika",
-        19
+        "dunia",
+        171
       ],
       [
-        "kecerdasan",
-        49
-      ],
-      [
-        "digital",
-        58
-      ],
-      [
-        "sistem",
-        125
-      ],
-      [
-        "genom",
-        18
+        "transhumanis",
+        23
       ],
       [
         "industri",
         82
       ],
       [
-        "genetik",
-        27
+        "sistem",
+        125
       ],
       [
-        "otomatisasi",
-        20
+        "kecerdasan",
+        49
+      ],
+      [
+        "tekno-ilmiah",
+        18
+      ],
+      [
+        "eugenika",
+        19
+      ],
+      [
+        "digital",
+        58
+      ],
+      [
+        "genetik",
+        27
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        3707,
-        0.23
-      ],
-      [
         8062,
-        0.2
-      ],
-      [
-        1776,
-        0.19
-      ],
-      [
-        8070,
-        0.19
-      ],
-      [
-        2811,
-        0.18
+        0.26
       ],
       [
         2110,
-        0.18
+        0.26
+      ],
+      [
+        2811,
+        0.26
+      ],
+      [
+        1776,
+        0.25
+      ],
+      [
+        3707,
+        0.24
+      ],
+      [
+        2099,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 688,
+      "negative": 429,
+      "trend": [
+        -0.04,
+        0.09,
+        0.04,
+        0.34,
+        0.11,
+        0.45,
+        0.12,
+        0.05,
+        0.14,
+        0.34,
+        0.44,
+        0.68,
+        0.66,
+        0.41,
+        0.24,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          67
+        ],
+        [
+          "fear",
+          51
+        ],
+        [
+          "sadness",
+          47
+        ],
+        [
+          "trust",
+          36
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

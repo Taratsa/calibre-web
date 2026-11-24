@@ -12,7 +12,7 @@
   "author_sort": "diketahui, Tidak",
   "tags": [
     "Hukum",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6010,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "partai",
@@ -124,6 +124,10 @@
         40
       ],
       [
+        "resort",
+        41
+      ],
+      [
         "secom",
         19
       ],
@@ -132,8 +136,8 @@
         19
       ],
       [
-        "resort",
-        41
+        "anggota",
+        79
       ],
       [
         "subsecom",
@@ -144,15 +148,11 @@
         21
       ],
       [
+        "organisasi",
+        60
+      ],
+      [
         "recom",
-        12
-      ],
-      [
-        "masa-calon",
-        8
-      ],
-      [
-        "subseksi",
         12
       ]
     ],
@@ -193,28 +193,35 @@
     "similar": [
       [
         9279,
-        0.37
-      ],
-      [
-        4595,
-        0.31
+        0.4
       ],
       [
         9280,
-        0.3
+        0.35
+      ],
+      [
+        4595,
+        0.32
       ],
       [
         538,
-        0.29
+        0.32
       ],
       [
         7728,
-        0.24
+        0.27
       ],
       [
-        543,
-        0.24
+        9273,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 50,
+      "negative": 42,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

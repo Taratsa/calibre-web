@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 8350,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "nikana",
@@ -124,8 +124,8 @@
         68
       ],
       [
-        "iyami",
-        44
+        "beliau",
+        161
       ],
       [
         "areng",
@@ -136,8 +136,8 @@
         59
       ],
       [
-        "beliau",
-        161
+        "iyami",
+        44
       ],
       [
         "tallo",
@@ -148,8 +148,8 @@
         35
       ],
       [
-        "pammanakna",
-        31
+        "pole",
+        53
       ]
     ],
     "phrases": [
@@ -205,12 +205,19 @@
       ],
       [
         3535,
-        0.12
+        0.13
       ],
       [
         2961,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.55,
+      "positive": 59,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

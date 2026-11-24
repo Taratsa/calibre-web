@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3172,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "belanda",
@@ -115,35 +115,35 @@
         13
       ],
       [
-        "vstp",
-        12
-      ],
-      [
         "belanda",
         38
+      ],
+      [
+        "vstp",
+        12
       ],
       [
         "inipun",
         15
       ],
       [
-        "tjokroaminoto",
-        9
-      ],
-      [
         "multatuli",
         10
       ],
       [
-        "bumiputera",
+        "tjokroaminoto",
         9
       ],
       [
-        "darsono",
-        7
+        "islam",
+        21
       ],
       [
         "sosok",
+        16
+      ],
+      [
+        "intelektual",
         16
       ]
     ],
@@ -184,28 +184,35 @@
     "similar": [
       [
         2481,
-        0.38
+        0.4
       ],
       [
         1965,
-        0.3
+        0.32
       ],
       [
         7088,
-        0.3
+        0.31
       ],
       [
         9232,
-        0.25
+        0.27
       ],
       [
         4005,
-        0.23
+        0.25
       ],
       [
-        6696,
-        0.2
+        1746,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 35,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

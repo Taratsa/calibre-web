@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3360,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "perempuan",
@@ -107,44 +107,44 @@
         14
       ],
       [
-        "jineologi",
-        7
-      ],
-      [
         "partai",
         32
-      ],
-      [
-        "kepribadian",
-        16
       ],
       [
         "perempuan",
         40
       ],
       [
-        "mentalitas",
-        10
+        "jineologi",
+        7
+      ],
+      [
+        "kepribadian",
+        16
       ],
       [
         "pembebasan",
         18
       ],
       [
-        "patriarkal",
-        6
+        "gerakan",
+        27
+      ],
+      [
+        "mentalitas",
+        10
       ],
       [
         "organisasi",
         23
       ],
       [
-        "sosialis",
-        11
+        "rakyat",
+        23
       ],
       [
-        "gerakan",
-        27
+        "membangun",
+        21
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2626,
-        0.35
+        0.39
+      ],
+      [
+        2093,
+        0.34
       ],
       [
         2091,
-        0.32
+        0.34
+      ],
+      [
+        2293,
+        0.33
       ],
       [
         2805,
         0.32
       ],
       [
-        2093,
+        2707,
         0.31
-      ],
-      [
-        2293,
-        0.31
-      ],
-      [
-        1833,
-        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 74,
+      "negative": 37,
+      "trend": [
+        0.11,
+        0.71,
+        null,
+        -0.14,
+        0.78,
+        0.67,
+        0.33,
+        -0.25,
+        -0.2,
+        0.33,
+        0.6,
+        -0.11,
+        1,
+        0.33,
+        0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

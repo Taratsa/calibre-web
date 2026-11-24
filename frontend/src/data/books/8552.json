@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3981,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "konflik",
@@ -103,12 +103,16 @@
         22
       ],
       [
+        "kawasan",
+        28
+      ],
+      [
         "pertambangan",
         21
       ],
       [
-        "kawasan",
-        28
+        "tanah",
+        45
       ],
       [
         "bpn",
@@ -119,23 +123,19 @@
         19
       ],
       [
+        "masyarakat",
+        40
+      ],
+      [
+        "pemerintah",
+        31
+      ],
+      [
         "reforma",
         10
       ],
       [
         "kpa",
-        9
-      ],
-      [
-        "plasma",
-        7
-      ],
-      [
-        "sektor",
-        15
-      ],
-      [
-        "pengadaan",
         9
       ]
     ],
@@ -176,28 +176,77 @@
     "similar": [
       [
         8545,
-        0.44
-      ],
-      [
-        8546,
-        0.41
+        0.47
       ],
       [
         8283,
-        0.41
+        0.45
+      ],
+      [
+        8546,
+        0.45
       ],
       [
         8547,
-        0.39
+        0.45
       ],
       [
         9050,
-        0.39
+        0.43
       ],
       [
         6808,
-        0.38
+        0.43
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.14,
+      "positive": 35,
+      "negative": 46,
+      "trend": [
+        null,
+        0.14,
+        null,
+        0.6,
+        null,
+        -0.33,
+        -1,
+        0.25,
+        null,
+        null,
+        null,
+        -0.11,
+        -0.2,
+        null,
+        null,
+        0.71
+      ],
+      "emotions": [
+        [
+          "anger",
+          118
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

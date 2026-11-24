@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3055,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "kaum",
@@ -122,36 +122,36 @@
         40
       ],
       [
-        "borjuis",
-        21
-      ],
-      [
-        "frantz",
-        8
-      ],
-      [
         "kaum",
         52
       ],
       [
-        "terjajah",
-        11
+        "borjuis",
+        21
       ],
       [
         "revolusi",
         32
       ],
       [
-        "anti-kolonial",
+        "frantz",
         8
-      ],
-      [
-        "nasionalis",
-        12
       ],
       [
         "kekerasan",
         26
+      ],
+      [
+        "terjajah",
+        11
+      ],
+      [
+        "pekerja",
+        22
+      ],
+      [
+        "anti-kolonial",
+        8
       ]
     ],
     "phrases": [
@@ -191,28 +191,77 @@
     "similar": [
       [
         2727,
-        0.15
+        0.21
       ],
       [
         2283,
-        0.15
+        0.21
       ],
       [
         2522,
-        0.14
+        0.21
       ],
       [
-        1957,
-        0.13
+        3746,
+        0.19
       ],
       [
-        2254,
-        0.13
+        6721,
+        0.19
       ],
       [
-        7150,
-        0.13
+        4776,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 50,
+      "negative": 62,
+      "trend": [
+        null,
+        1,
+        null,
+        0.71,
+        -0.5,
+        null,
+        0.33,
+        -0.4,
+        0.2,
+        -0.54,
+        -0.38,
+        -0.05,
+        null,
+        null,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          39
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

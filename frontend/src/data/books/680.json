@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 10467,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "saudara-saudara",
@@ -89,16 +89,16 @@
     ],
     "distinct": [
       [
+        "saudara-saudara",
+        117
+      ],
+      [
         "marhaenis",
         63
       ],
       [
         "perdjoangan",
         76
-      ],
-      [
-        "saudara-saudara",
-        117
       ],
       [
         "marhaenisme",
@@ -113,28 +113,28 @@
         63
       ],
       [
-        "swadeshi",
-        19
+        "didalam",
+        61
       ],
       [
         "fase",
         48
       ],
       [
-        "didalam",
-        61
-      ],
-      [
-        "ibrahima",
-        13
-      ],
-      [
         "imperialisme",
         44
       ],
       [
-        "kinetis",
-        13
+        "swadeshi",
+        19
+      ],
+      [
+        "djikalau",
+        26
+      ],
+      [
+        "rakjat",
+        37
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         683,
-        0.28
+        0.31
       ],
       [
         577,
-        0.25
+        0.26
       ],
       [
         1281,
+        0.26
+      ],
+      [
+        8771,
+        0.25
+      ],
+      [
+        5948,
         0.24
       ],
       [
         735,
-        0.22
-      ],
-      [
-        5948,
-        0.22
-      ],
-      [
-        8771,
-        0.21
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 105,
+      "negative": 79,
+      "trend": [
+        1,
+        -0.33,
+        null,
+        null,
+        0.64,
+        null,
+        0.69,
+        0.8,
+        -0.47,
+        -0.12,
+        -0.56,
+        0.76,
+        0.64,
+        1,
+        0.33,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3217,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "musik",
@@ -103,16 +103,16 @@
         29
       ],
       [
-        "bunbury",
-        5
+        "album",
+        13
       ],
       [
         "mason",
         8
       ],
       [
-        "album",
-        13
+        "bunbury",
+        5
       ],
       [
         "kink",
@@ -123,20 +123,20 @@
         4
       ],
       [
-        "nood",
-        3
-      ],
-      [
         "pertunjukan",
         8
       ],
       [
-        "kenny",
+        "panggung",
+        9
+      ],
+      [
+        "nood",
         3
       ],
       [
-        "panggung",
-        9
+        "kenny",
+        3
       ]
     ],
     "phrases": [
@@ -163,25 +163,32 @@
         0.8
       ],
       [
-        6939,
-        0.12
-      ],
-      [
         1714,
-        0.12
+        0.15
       ],
       [
         2275,
-        0.12
+        0.15
       ],
       [
         104,
-        0.12
+        0.15
       ],
       [
         58,
-        0.12
+        0.15
+      ],
+      [
+        1737,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 48,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

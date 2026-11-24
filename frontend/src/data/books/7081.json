@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 11582,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "hidup",
@@ -106,16 +106,16 @@
     ],
     "distinct": [
       [
+        "peradaban",
+        62
+      ],
+      [
         "penerj",
         29
       ],
       [
         "backwoods",
         14
-      ],
-      [
-        "peradaban",
-        62
       ],
       [
         "autarki",
@@ -126,32 +126,32 @@
         19
       ],
       [
+        "hidup",
+        69
+      ],
+      [
         "reinhabitasi",
         8
-      ],
-      [
-        "kanan-alternatif",
-        6
-      ],
-      [
-        "anti-peradaban",
-        9
       ],
       [
         "budak",
         24
       ],
       [
-        "perbudakan",
-        20
+        "manusia",
+        56
       ],
       [
         "anarkis",
         24
       ],
       [
-        "leviathan",
-        9
+        "politik",
+        42
+      ],
+      [
+        "perbudakan",
+        20
       ]
     ],
     "phrases": [
@@ -190,29 +190,86 @@
     ],
     "similar": [
       [
-        7151,
-        0.18
-      ],
-      [
         1956,
-        0.18
+        0.22
       ],
       [
-        2667,
-        0.15
-      ],
-      [
-        2631,
-        0.15
-      ],
-      [
-        2133,
-        0.14
+        7151,
+        0.22
       ],
       [
         4873,
-        0.14
+        0.2
+      ],
+      [
+        2132,
+        0.2
+      ],
+      [
+        2631,
+        0.2
+      ],
+      [
+        2133,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 215,
+      "negative": 203,
+      "trend": [
+        -0.27,
+        -0.26,
+        -0.15,
+        -0.14,
+        -0.05,
+        0.03,
+        0.29,
+        0.28,
+        -0.07,
+        0.47,
+        -0.56,
+        0.3,
+        -0.09,
+        0.22,
+        -0.03,
+        0.28
+      ],
+      "emotions": [
+        [
+          "anger",
+          53
+        ],
+        [
+          "sadness",
+          27
+        ],
+        [
+          "trust",
+          27
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

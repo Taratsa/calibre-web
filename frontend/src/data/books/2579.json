@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4277,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "orang",
@@ -119,11 +119,15 @@
         6
       ],
       [
-        "novartis",
-        3
+        "gerakan",
+        20
       ],
       [
-        "jospin",
+        "kerja",
+        20
+      ],
+      [
+        "novartis",
         3
       ],
       [
@@ -131,20 +135,16 @@
         8
       ],
       [
+        "jospin",
+        3
+      ],
+      [
         "konfederasi",
         5
       ],
       [
-        "posting",
-        4
-      ],
-      [
-        "absurd",
-        5
-      ],
-      [
-        "rekayasa",
-        5
+        "orang",
+        25
       ]
     ],
     "phrases": [
@@ -187,25 +187,82 @@
         0.75
       ],
       [
-        3758,
-        0.12
-      ],
-      [
         1758,
-        0.11
+        0.16
       ],
       [
-        6855,
-        0.11
+        3758,
+        0.16
       ],
       [
-        1995,
-        0.1
+        2313,
+        0.15
       ],
       [
-        5874,
-        0.1
+        2811,
+        0.15
+      ],
+      [
+        6767,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 70,
+      "negative": 45,
+      "trend": [
+        null,
+        1,
+        null,
+        null,
+        -0.25,
+        0,
+        -0.2,
+        null,
+        null,
+        0.33,
+        0.33,
+        1,
+        0.08,
+        -0.38,
+        0.64,
+        0
+      ],
+      "emotions": [
+        [
+          "fear",
+          13
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

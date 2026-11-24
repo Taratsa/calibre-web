@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1449,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "agung",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "agung",
+        52
+      ],
+      [
         "clearing",
         22
       ],
@@ -111,23 +115,19 @@
         29
       ],
       [
-        "agung",
-        52
-      ],
-      [
         "house",
         21
-      ],
-      [
-        "instansinya",
-        7
       ],
       [
         "republik",
         34
       ],
       [
-        "pnps",
+        "cetakan",
+        18
+      ],
+      [
+        "instansinya",
         7
       ],
       [
@@ -135,16 +135,16 @@
         16
       ],
       [
-        "cetakan",
-        18
-      ],
-      [
-        "intelijen",
-        9
+        "pnps",
+        7
       ],
       [
         "nomor",
         22
+      ],
+      [
+        "intelijen",
+        9
       ]
     ],
     "phrases": [
@@ -188,24 +188,31 @@
       ],
       [
         4896,
-        0.29
+        0.32
       ],
       [
         8279,
-        0.15
+        0.17
       ],
       [
         8420,
-        0.14
-      ],
-      [
-        8979,
-        0.12
+        0.16
       ],
       [
         8399,
-        0.12
+        0.15
+      ],
+      [
+        9057,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.82,
+      "positive": 59,
+      "negative": 6,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

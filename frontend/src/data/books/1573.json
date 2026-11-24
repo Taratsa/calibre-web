@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 39812,
-    "longer_than": 90,
+    "longer_than": 95,
     "top": [
       [
         "archive",
@@ -100,12 +100,12 @@
     ],
     "distinct": [
       [
-        "yerushalmi",
-        124
-      ],
-      [
         "freud",
         256
+      ],
+      [
+        "yerushalmi",
+        124
       ],
       [
         "archive",
@@ -124,28 +124,28 @@
         53
       ],
       [
-        "memory",
-        75
-      ],
-      [
         "truth",
         86
-      ],
-      [
-        "monologue",
-        35
       ],
       [
         "impression",
         66
       ],
       [
-        "substrate",
-        29
+        "monologue",
+        35
       ],
       [
         "science",
         82
+      ],
+      [
+        "memory",
+        75
+      ],
+      [
+        "question",
+        73
       ]
     ],
     "phrases": [
@@ -193,7 +193,7 @@
       ],
       [
         7829,
-        0.15
+        0.16
       ],
       [
         8331,
@@ -207,6 +207,7 @@
         402,
         0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

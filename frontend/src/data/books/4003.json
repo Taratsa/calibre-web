@@ -12,7 +12,7 @@
   "author_sort": "Marx, Karl",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 5336,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "kaum",
@@ -116,44 +116,44 @@
         19
       ],
       [
-        "bowring",
-        11
+        "kaum",
+        64
       ],
       [
         "perdagangan",
         39
       ],
       [
+        "bowring",
+        11
+      ],
+      [
         "manufaktur",
         17
-      ],
-      [
-        "barang-dagangan",
-        9
-      ],
-      [
-        "kaum",
-        64
-      ],
-      [
-        "pesewa",
-        6
-      ],
-      [
-        "tuan-tanah",
-        8
-      ],
-      [
-        "penenun",
-        9
       ],
       [
         "buruh",
         34
       ],
       [
-        "agrikultur",
+        "barang-dagangan",
         9
+      ],
+      [
+        "pekerja",
+        29
+      ],
+      [
+        "bebas",
+        38
+      ],
+      [
+        "pesewa",
+        6
+      ],
+      [
+        "harga",
+        29
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         8415,
-        0.2
+        0.22
       ],
       [
         8414,
-        0.2
+        0.22
       ],
       [
         3999,
-        0.18
-      ],
-      [
-        4001,
-        0.18
+        0.2
       ],
       [
         2199,
-        0.16
+        0.2
+      ],
+      [
+        4001,
+        0.19
       ],
       [
         1580,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 153,
+      "negative": 77,
+      "trend": [
+        0.45,
+        0.5,
+        0.5,
+        0.17,
+        0.23,
+        0.38,
+        0.14,
+        1,
+        0.08,
+        -0.47,
+        0,
+        0.25,
+        0.41,
+        0.89,
+        0.4,
+        0.67
+      ],
+      "emotions": [
+        [
+          "sadness",
+          19
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

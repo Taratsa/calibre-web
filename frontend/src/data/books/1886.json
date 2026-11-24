@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 6168,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "wanita",
@@ -107,36 +107,36 @@
         23
       ],
       [
-        "darningsih",
-        8
+        "hak",
+        74
+      ],
+      [
+        "kaum",
+        55
       ],
       [
         "warganegara",
         21
       ],
       [
-        "undang",
-        27
+        "darningsih",
+        8
       ],
       [
         "pemilihan",
         33
       ],
       [
+        "undang",
+        27
+      ],
+      [
         "rakjat",
         22
       ],
       [
-        "hak²",
-        12
-      ],
-      [
         "djuga",
         20
-      ],
-      [
-        "buloh",
-        8
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         9225,
-        0.38
+        0.4
+      ],
+      [
+        9333,
+        0.31
       ],
       [
         6667,
-        0.28
-      ],
-      [
-        7786,
-        0.22
+        0.3
       ],
       [
         618,
-        0.21
+        0.25
+      ],
+      [
+        7786,
+        0.25
       ],
       [
         1290,
-        0.21
-      ],
-      [
-        6291,
-        0.21
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 73,
+      "negative": 33,
+      "trend": [
+        0,
+        -0.2,
+        0.5,
+        -0.6,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        0.16,
+        0.64,
+        null,
+        1,
+        0.38
+      ],
+      "emotions": []
+    }
   }
 }

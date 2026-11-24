@@ -1,0 +1,160 @@
+{
+  "id": 10552,
+  "title": "Wireshark: Filter SQL Traffic",
+  "slug": "wireshark-filter-sql-traffic-onno-widodo-purbo",
+  "slugBase": "wireshark-filter-sql-traffic-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2015-05-20",
+  "timestamp": "2026-11-23 19:37:29.362338",
+  "last_modified": "2026-11-23 19:37:29.362342",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:c01484df-ddfc-52df-919f-5c5931e628b9"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10552?v=1795437449",
+  "cover_og_url": "/cover/10552/og?v=1795437449",
+  "url": "/book/wireshark-filter-sql-traffic-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Wireshark has display filters and capture filters. The capture filter captures only certain packets, resulting in a small capture file. Capture filters are set in Capture Options (ctrl-K). An example to capture SQL Server traffic would be: host  and port  A display filter is set in the toolbar. A display filter does not reduce the size of the capture. You can",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2557,
+      "name": "Wireshark_ Filter SQL Traffic - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 157,
+    "longer_than": 20,
+    "top": [
+      [
+        "filter",
+        9
+      ],
+      [
+        "capture",
+        8
+      ],
+      [
+        "display",
+        5
+      ],
+      [
+        "sql",
+        5
+      ],
+      [
+        "traffic",
+        5
+      ],
+      [
+        "filters",
+        4
+      ],
+      [
+        "server",
+        4
+      ],
+      [
+        "port",
+        3
+      ],
+      [
+        "wireshark",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "filter",
+        9
+      ],
+      [
+        "capture",
+        8
+      ],
+      [
+        "filters",
+        4
+      ],
+      [
+        "sql",
+        5
+      ],
+      [
+        "display",
+        5
+      ],
+      [
+        "traffic",
+        5
+      ],
+      [
+        "wireshark",
+        3
+      ],
+      [
+        "port",
+        3
+      ],
+      [
+        "server",
+        4
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        10573,
+        0.66
+      ],
+      [
+        11585,
+        0.45
+      ],
+      [
+        10554,
+        0.44
+      ],
+      [
+        11344,
+        0.41
+      ],
+      [
+        10180,
+        0.39
+      ],
+      [
+        10576,
+        0.34
+      ]
+    ],
+    "sentiment": null
+  }
+}

@@ -11,7 +11,7 @@
   ],
   "author_sort": "Saleh, Boejoeng",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Kritik Sastra"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1858,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "indonesia",
@@ -112,20 +112,20 @@
         6
       ],
       [
-        "roman",
-        10
-      ],
-      [
-        "roman-romannya",
-        3
-      ],
-      [
         "krisis",
         15
       ],
       [
+        "roman",
+        10
+      ],
+      [
         "by-sa",
         5
+      ],
+      [
+        "roman-romannya",
+        3
       ],
       [
         "silla",
@@ -134,6 +134,10 @@
       [
         "sujatmoko",
         3
+      ],
+      [
+        "revolusi",
+        12
       ],
       [
         "sasterawan-sasterawan",
@@ -148,12 +152,8 @@
         3
       ],
       [
-        "dostoyevsky",
-        3
-      ],
-      [
-        "masasilam",
-        4
+        "rakyat",
+        14
       ]
     ],
     "phrases": [
@@ -180,25 +180,49 @@
         0.36
       ],
       [
+        11660,
+        0.3
+      ],
+      [
+        4009,
+        0.22
+      ],
+      [
         4021,
         0.22
       ],
       [
         4013,
-        0.2
-      ],
-      [
-        4009,
-        0.2
+        0.22
       ],
       [
         3991,
-        0.19
-      ],
-      [
-        4016,
-        0.18
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 43,
+      "negative": 38,
+      "trend": [
+        null,
+        0.33,
+        -0.6,
+        null,
+        0.33,
+        null,
+        0.67,
+        -0.2,
+        0,
+        0.43,
+        null,
+        null,
+        -0.2,
+        null,
+        -0.11,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

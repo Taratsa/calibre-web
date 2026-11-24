@@ -15,7 +15,7 @@
   ],
   "author_sort": "Abidin, Zainal & Djafar, Wahyudi",
   "tags": [
-    "internet"
+    "Internet"
   ],
   "publisher": {
     "id": 753,
@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 25269,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "law",
@@ -103,10 +103,6 @@
     ],
     "distinct": [
       [
-        "filtering",
-        92
-      ],
-      [
         "law",
         254
       ],
@@ -115,28 +111,28 @@
         138
       ],
       [
-        "libel",
-        75
-      ],
-      [
         "article",
         161
+      ],
+      [
+        "libel",
+        75
       ],
       [
         "defamation",
         70
       ],
       [
-        "blocking",
-        78
-      ],
-      [
-        "internet",
-        174
+        "filtering",
+        92
       ],
       [
         "electronic",
         91
+      ],
+      [
+        "blocking",
+        78
       ],
       [
         "content",
@@ -147,8 +143,12 @@
         41
       ],
       [
-        "accessed",
-        66
+        "rights",
+        127
+      ],
+      [
+        "verdict",
+        57
       ]
     ],
     "phrases": [
@@ -188,7 +188,7 @@
     "similar": [
       [
         8335,
-        0.29
+        0.3
       ],
       [
         6942,
@@ -204,12 +204,13 @@
       ],
       [
         8316,
-        0.21
+        0.2
       ],
       [
-        8305,
-        0.21
+        8170,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4175,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "album",
@@ -111,6 +111,10 @@
         11
       ],
       [
+        "lagu",
+        28
+      ],
+      [
         "coleman",
         10
       ],
@@ -125,10 +129,6 @@
       [
         "boombap",
         7
-      ],
-      [
-        "lagu",
-        28
       ],
       [
         "liner",
@@ -199,13 +199,37 @@
         0.33
       ],
       [
-        9181,
-        0.23
+        9167,
+        0.24
       ],
       [
         9189,
-        0.23
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 59,
+      "negative": 25,
+      "trend": [
+        0,
+        0.75,
+        0.69,
+        0.33,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        null,
+        0.56,
+        0.6,
+        null,
+        -0.2,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

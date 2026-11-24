@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 28336,
-    "longer_than": 84,
+    "longer_than": 92,
     "top": [
       [
         "orang",
@@ -110,48 +110,48 @@
         233
       ],
       [
-        "susuhunan",
-        140
+        "orang",
+        935
       ],
       [
-        "gouvernement",
-        108
+        "susuhunan",
+        140
       ],
       [
         "sultan",
         223
       ],
       [
-        "gouverneur-generaal",
-        76
+        "gouvernement",
+        108
       ],
       [
         "tiada",
         283
       ],
       [
-        "soldadu",
-        54
-      ],
-      [
-        "pangeran",
-        129
+        "gouverneur-generaal",
+        76
       ],
       [
         "raja",
         243
       ],
       [
+        "belanda",
+        196
+      ],
+      [
+        "pangeran",
+        129
+      ],
+      [
         "banten",
         117
       ],
       [
-        "hindia",
-        115
-      ],
-      [
-        "portugis",
-        79
+        "soldadu",
+        54
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         1320,
-        0.63
+        0.65
       ],
       [
         657,
-        0.3
+        0.31
       ],
       [
         1321,
-        0.24
+        0.27
       ],
       [
         4027,
-        0.18
-      ],
-      [
-        2986,
-        0.15
+        0.21
       ],
       [
         5212,
-        0.14
+        0.17
+      ],
+      [
+        5533,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.23,
+      "positive": 250,
+      "negative": 401,
+      "trend": [
+        0.11,
+        -0.03,
+        -0.14,
+        -0.12,
+        -0.59,
+        -0.29,
+        -0.33,
+        -0.21,
+        0.04,
+        -0.59,
+        -0.41,
+        -0.35,
+        -0.07,
+        -0.3,
+        -0.41,
+        -0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          132
+        ],
+        [
+          "sadness",
+          46
+        ],
+        [
+          "joy",
+          31
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

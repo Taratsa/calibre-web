@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2471,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "indonesia",
@@ -100,12 +100,16 @@
         14
       ],
       [
+        "kontra-revolusi",
+        20
+      ],
+      [
         "tjetung",
         12
       ],
       [
-        "kontra-revolusi",
-        20
+        "partai",
+        35
       ],
       [
         "rejim",
@@ -116,28 +120,24 @@
         13
       ],
       [
-        "suharto-nasution",
-        7
-      ],
-      [
-        "partai",
-        35
+        "revolusi",
+        30
       ],
       [
         "mao",
         14
       ],
       [
+        "suharto-nasution",
+        7
+      ],
+      [
         "marxis-leninis",
         12
       ],
       [
-        "klik",
-        13
-      ],
-      [
-        "revolusi",
-        30
+        "indonesia",
+        57
       ],
       [
         "pki",
@@ -181,28 +181,77 @@
     "similar": [
       [
         9322,
-        0.53
+        0.54
       ],
       [
         9321,
-        0.38
+        0.39
       ],
       [
         703,
-        0.36
+        0.37
       ],
       [
         9316,
-        0.33
+        0.36
       ],
       [
         9318,
-        0.33
+        0.36
       ],
       [
         9304,
-        0.28
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 87,
+      "negative": 58,
+      "trend": [
+        1,
+        -0.5,
+        -0.11,
+        null,
+        0.33,
+        null,
+        0,
+        -0.25,
+        0.43,
+        -0.27,
+        0.75,
+        0.27,
+        0.6,
+        0.54,
+        0.4,
+        -0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "joy",
+          4
+        ]
+      ]
+    }
   }
 }

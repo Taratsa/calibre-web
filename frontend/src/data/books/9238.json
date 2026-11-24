@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 23124,
-    "longer_than": 79,
+    "longer_than": 90,
     "top": [
       [
         "revolusi",
@@ -91,52 +91,52 @@
     ],
     "distinct": [
       [
-        "soviet",
-        137
-      ],
-      [
-        "menshevik",
-        55
-      ],
-      [
-        "bolshevik",
-        85
+        "revolusi",
+        262
       ],
       [
         "partai",
         230
       ],
       [
-        "revolusi",
-        262
+        "soviet",
+        137
       ],
       [
         "lenin",
         114
       ],
       [
-        "petrograd",
-        58
-      ],
-      [
-        "insureksi",
-        65
-      ],
-      [
-        "proletariat",
-        87
-      ],
-      [
-        "demokratik",
-        62
+        "bolshevik",
+        85
       ],
       [
         "kaum",
         247
       ],
       [
+        "menshevik",
+        55
+      ],
+      [
+        "petrograd",
+        58
+      ],
+      [
+        "proletariat",
+        87
+      ],
+      [
         "revolusioner",
         122
+      ],
+      [
+        "insureksi",
+        65
+      ],
+      [
+        "demokratik",
+        62
       ]
     ],
     "phrases": [
@@ -176,28 +176,85 @@
     "similar": [
       [
         9239,
-        0.44
+        0.47
       ],
       [
         9237,
-        0.39
+        0.44
       ],
       [
         2055,
-        0.37
+        0.42
       ],
       [
         7250,
-        0.3
+        0.34
       ],
       [
         7063,
-        0.3
+        0.34
       ],
       [
         7887,
-        0.3
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 379,
+      "negative": 314,
+      "trend": [
+        -0.02,
+        0.3,
+        0.26,
+        -0.03,
+        0.16,
+        0,
+        0.27,
+        0.25,
+        0,
+        -0.02,
+        0.11,
+        0.06,
+        0.23,
+        -0.12,
+        0.02,
+        -0.21
+      ],
+      "emotions": [
+        [
+          "anger",
+          78
+        ],
+        [
+          "sadness",
+          36
+        ],
+        [
+          "joy",
+          32
+        ],
+        [
+          "trust",
+          29
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

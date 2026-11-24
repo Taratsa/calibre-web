@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4754,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "kerja",
@@ -103,16 +103,24 @@
         48
       ],
       [
+        "pekerja",
+        42
+      ],
+      [
         "terminologi",
         21
+      ],
+      [
+        "kerja",
+        52
       ],
       [
         "kerah",
         15
       ],
       [
-        "pekerja",
-        42
+        "buruh",
+        27
       ],
       [
         "bulog",
@@ -121,14 +129,6 @@
       [
         "neo",
         9
-      ],
-      [
-        "kerja",
-        52
-      ],
-      [
-        "buruh",
-        27
       ],
       [
         "kapitalis",
@@ -143,8 +143,8 @@
         16
       ],
       [
-        "anti-kapitalis",
-        6
+        "petani",
+        17
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         2264,
-        0.53
+        0.54
       ],
       [
         2535,
-        0.34
+        0.36
       ],
       [
         2559,
-        0.2
-      ],
-      [
-        8609,
-        0.16
+        0.22
       ],
       [
         7378,
-        0.16
+        0.19
+      ],
+      [
+        7892,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 47,
+      "negative": 53,
+      "trend": [
+        null,
+        null,
+        0.33,
+        null,
+        null,
+        null,
+        0.14,
+        null,
+        -0.82,
+        -0.71,
+        -0.43,
+        -0.11,
+        -0.08,
+        0,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

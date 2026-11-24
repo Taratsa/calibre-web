@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3109,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "perpustakaan",
@@ -123,6 +123,10 @@
         9
       ],
       [
+        "buku",
+        41
+      ],
+      [
         "nuraini",
         9
       ],
@@ -131,20 +135,16 @@
         9
       ],
       [
-        "cemeti",
-        7
-      ],
-      [
         "ilegal",
         13
       ],
       [
-        "membajak",
-        9
+        "cemeti",
+        7
       ],
       [
-        "terdistribusikan",
-        5
+        "membajak",
+        9
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
+        18720,
+        0.2
+      ],
+      [
         2001,
-        0.15
+        0.17
       ],
       [
         7038,
-        0.15
+        0.17
       ],
       [
-        4089,
-        0.13
+        15616,
+        0.16
       ],
       [
-        4087,
-        0.13
-      ],
-      [
-        4091,
-        0.12
+        15194,
+        0.16
       ],
       [
         7219,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 48,
+      "negative": 25,
+      "trend": [
+        -0.2,
+        0.43,
+        0,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        0.33,
+        null,
+        -0.56,
+        null,
+        0.75,
+        -0.43,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

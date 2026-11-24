@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2932,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "hidup",
@@ -122,12 +122,12 @@
         7
       ],
       [
-        "penalaran",
-        10
-      ],
-      [
         "ketidakpastian",
         13
+      ],
+      [
+        "penalaran",
+        10
       ],
       [
         "filosofi",
@@ -146,12 +146,12 @@
         4
       ],
       [
-        "eko-absurdis",
-        3
-      ],
-      [
         "fucking",
         5
+      ],
+      [
+        "eko-absurdis",
+        3
       ]
     ],
     "phrases": [
@@ -187,28 +187,81 @@
     "similar": [
       [
         1799,
-        0.76
+        0.77
       ],
       [
         2410,
-        0.25
+        0.28
       ],
       [
         2667,
-        0.17
+        0.2
       ],
       [
         3987,
-        0.14
+        0.16
       ],
       [
         2441,
-        0.13
+        0.15
       ],
       [
-        2069,
+        2233,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.14,
+      "positive": 49,
+      "negative": 65,
+      "trend": [
+        -0.33,
+        0.6,
+        0.33,
+        -0.6,
+        null,
+        null,
+        -0.33,
+        0.43,
+        -0.43,
+        0.38,
+        -0.56,
+        -0.75,
+        null,
+        -0.2,
+        -0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

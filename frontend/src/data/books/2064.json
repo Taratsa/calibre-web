@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6982,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "organisasi",
@@ -99,32 +99,36 @@
     ],
     "distinct": [
       [
-        "anarkis",
-        52
-      ],
-      [
-        "revolusioner",
-        57
+        "organisasi",
+        91
       ],
       [
         "kelas",
         83
       ],
       [
-        "organisasi",
-        91
+        "revolusioner",
+        57
+      ],
+      [
+        "anarkis",
+        52
       ],
       [
         "pekerja",
         68
       ],
       [
+        "perjuangan",
+        44
+      ],
+      [
         "resistensi",
         19
       ],
       [
-        "perjuangan",
-        44
+        "kelompok",
+        47
       ],
       [
         "aksi",
@@ -135,16 +139,12 @@
         27
       ],
       [
-        "kelompok",
-        47
+        "kerja",
+        46
       ],
       [
         "revolusi",
         28
-      ],
-      [
-        "ide",
-        24
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         6730,
-        0.21
+        0.3
       ],
       [
         2203,
-        0.21
-      ],
-      [
-        7911,
-        0.17
-      ],
-      [
-        2420,
-        0.17
+        0.3
       ],
       [
         2758,
-        0.17
+        0.28
       ],
       [
-        2283,
-        0.17
+        7875,
+        0.27
+      ],
+      [
+        2540,
+        0.27
+      ],
+      [
+        7859,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 187,
+      "negative": 95,
+      "trend": [
+        1,
+        -0.39,
+        0.2,
+        -0.11,
+        0.78,
+        0.22,
+        0.6,
+        0.45,
+        0.5,
+        0.76,
+        0.14,
+        0.37,
+        0.29,
+        0.1,
+        0,
+        0.53
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

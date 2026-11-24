@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5678,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "pni",
@@ -113,6 +113,10 @@
         23
       ],
       [
+        "masjarakat",
+        26
+      ],
+      [
         "marhaen",
         17
       ],
@@ -121,16 +125,12 @@
         11
       ],
       [
-        "masjarakat",
-        26
+        "rakjat",
+        22
       ],
       [
         "dpp-pni",
         7
-      ],
-      [
-        "sosio-nasionalisme",
-        9
       ],
       [
         "pantjasila",
@@ -174,28 +174,73 @@
     "similar": [
       [
         735,
-        0.34
+        0.36
       ],
       [
         680,
-        0.25
+        0.26
       ],
       [
         3434,
-        0.21
+        0.23
       ],
       [
         9227,
-        0.19
-      ],
-      [
-        683,
-        0.19
+        0.23
       ],
       [
         8771,
-        0.19
+        0.21
+      ],
+      [
+        480,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 80,
+      "negative": 26,
+      "trend": [
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.64,
+        null,
+        0.67,
+        0.64,
+        0,
+        1,
+        0.6,
+        0.85,
+        0.56,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          14
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2284,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "bahasa",
@@ -103,24 +103,24 @@
         7
       ],
       [
-        "tamurt",
-        3
-      ],
-      [
         "spectacle",
         6
+      ],
+      [
+        "tamurt",
+        3
       ],
       [
         "urbanisme",
         4
       ],
       [
-        "chirico",
-        3
-      ],
-      [
         "debord",
         5
+      ],
+      [
+        "chirico",
+        3
       ],
       [
         "surealis",
@@ -155,7 +155,7 @@
       ],
       [
         8059,
-        0.18
+        0.17
       ],
       [
         7255,
@@ -163,7 +163,7 @@
       ],
       [
         2020,
-        0.15
+        0.16
       ],
       [
         7442,
@@ -173,6 +173,13 @@
         2225,
         0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 37,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

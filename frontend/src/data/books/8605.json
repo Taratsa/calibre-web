@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 29668,
-    "longer_than": 85,
+    "longer_than": 92,
     "top": [
       [
         "perempuan",
@@ -108,44 +108,44 @@
         718
       ],
       [
-        "azasi",
-        72
-      ],
-      [
-        "makassar",
-        106
+        "kepentingan",
+        261
       ],
       [
         "hutang",
         115
       ],
       [
-        "keterwakilan",
-        55
+        "makassar",
+        106
       ],
       [
-        "palembang",
-        98
+        "azasi",
+        72
+      ],
+      [
+        "politik",
+        222
       ],
       [
         "korupsi",
         112
       ],
       [
-        "kepentingan",
-        261
+        "palembang",
+        98
       ],
       [
-        "pdip",
-        44
+        "keterwakilan",
+        55
       ],
       [
-        "kkn",
-        49
+        "sikap",
+        169
       ],
       [
-        "diskriminasi",
-        85
+        "kebijakan",
+        121
       ]
     ],
     "phrases": [
@@ -185,28 +185,85 @@
     "similar": [
       [
         8630,
-        0.18
+        0.2
       ],
       [
         8792,
-        0.16
+        0.2
       ],
       [
         8627,
-        0.16
+        0.18
       ],
       [
-        8457,
-        0.14
+        8778,
+        0.18
       ],
       [
-        8210,
-        0.14
+        6916,
+        0.18
       ],
       [
-        8245,
-        0.14
+        8619,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 451,
+      "negative": 564,
+      "trend": [
+        -0.12,
+        0.12,
+        -0.66,
+        -0.4,
+        -0.26,
+        -0.12,
+        0.03,
+        -0.02,
+        0.02,
+        0.14,
+        0.22,
+        -0.03,
+        -0.46,
+        -0.28,
+        0.19,
+        -0.03
+      ],
+      "emotions": [
+        [
+          "anger",
+          317
+        ],
+        [
+          "trust",
+          59
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

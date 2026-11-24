@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1842,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "kritik",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "spektakel",
-        7
-      ],
-      [
         "kritik",
         29
+      ],
+      [
+        "spektakel",
+        7
       ],
       [
         "karakter",
@@ -119,12 +119,16 @@
         3
       ],
       [
+        "neurosis",
+        4
+      ],
+      [
         "yonaki",
         3
       ],
       [
-        "neurosis",
-        4
+        "individu",
+        12
       ],
       [
         "pengkritik",
@@ -135,16 +139,12 @@
         5
       ],
       [
-        "skrip",
-        3
+        "penderitaan",
+        9
       ],
       [
-        "resistensi",
-        5
-      ],
-      [
-        "defensif",
-        4
+        "tubuh",
+        12
       ]
     ],
     "phrases": [
@@ -168,28 +168,35 @@
     "similar": [
       [
         3899,
-        0.29
+        0.24
       ],
       [
         3986,
-        0.22
-      ],
-      [
-        3982,
-        0.22
+        0.21
       ],
       [
         2701,
-        0.19
+        0.2
       ],
       [
-        2759,
-        0.15
+        3982,
+        0.18
+      ],
+      [
+        6827,
+        0.17
       ],
       [
         2009,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 25,
+      "negative": 36,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

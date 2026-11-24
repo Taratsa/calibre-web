@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 30700,
-    "longer_than": 85,
+    "longer_than": 93,
     "top": [
       [
         "kaum",
@@ -93,48 +93,48 @@
         263
       ],
       [
-        "perdjuangan",
-        143
-      ],
-      [
         "kaum",
         422
       ],
       [
-        "imperialis",
-        118
+        "perdjuangan",
+        143
       ],
       [
         "tani",
         171
       ],
       [
-        "imperialisme",
-        115
-      ],
-      [
         "partai",
         186
+      ],
+      [
+        "imperialis",
+        118
+      ],
+      [
+        "imperialisme",
+        115
       ],
       [
         "djuga",
         104
       ],
       [
-        "mengganjang",
-        48
+        "komunis",
+        124
       ],
       [
         "hanja",
         95
       ],
       [
-        "komunis",
-        124
+        "mengganjang",
+        48
       ],
       [
-        "djika",
-        78
+        "malaysia",
+        94
       ]
     ],
     "phrases": [
@@ -174,28 +174,85 @@
     "similar": [
       [
         4000,
-        0.62
+        0.65
       ],
       [
         9305,
-        0.52
+        0.57
       ],
       [
         4793,
-        0.46
+        0.52
       ],
       [
         6799,
-        0.46
+        0.51
       ],
       [
         4754,
-        0.45
+        0.5
       ],
       [
-        417,
-        0.44
+        7823,
+        0.48
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 780,
+      "negative": 314,
+      "trend": [
+        0.71,
+        0.16,
+        -0.04,
+        0.61,
+        0.32,
+        0.38,
+        0.28,
+        0.3,
+        0.26,
+        0.34,
+        0.57,
+        0.56,
+        0.42,
+        0.54,
+        0.63,
+        0.61
+      ],
+      "emotions": [
+        [
+          "anger",
+          53
+        ],
+        [
+          "joy",
+          51
+        ],
+        [
+          "trust",
+          42
+        ],
+        [
+          "anticipation",
+          41
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

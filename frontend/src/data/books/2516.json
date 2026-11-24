@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1543,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "hidup",
@@ -99,20 +99,32 @@
     ],
     "distinct": [
       [
-        "posting",
-        4
-      ],
-      [
-        "spectacle",
-        4
+        "hidup",
+        23
       ],
       [
         "sehabis",
         6
       ],
       [
+        "spectacle",
+        4
+      ],
+      [
         "katalis",
         4
+      ],
+      [
+        "posting",
+        4
+      ],
+      [
+        "indah",
+        9
+      ],
+      [
+        "keyakinan",
+        7
       ],
       [
         "buaian",
@@ -131,20 +143,8 @@
         3
       ],
       [
-        "keyakinan",
-        7
-      ],
-      [
-        "indah",
-        9
-      ],
-      [
         "tekanan",
         6
-      ],
-      [
-        "tontonan",
-        3
       ]
     ],
     "phrases": [
@@ -168,11 +168,11 @@
     "similar": [
       [
         1995,
-        0.21
+        0.2
       ],
       [
         2512,
-        0.2
+        0.19
       ],
       [
         3831,
@@ -187,9 +187,33 @@
         0.15
       ],
       [
-        2084,
+        2189,
         0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 47,
+      "negative": 15,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          21
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
   }
 }

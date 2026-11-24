@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2005,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "palestina",
@@ -131,19 +131,19 @@
         9
       ],
       [
-        "pemadaman",
-        3
+        "berita",
+        10
       ],
       [
         "pendudukan",
         6
       ],
       [
-        "yahudi",
-        4
+        "tepi",
+        7
       ],
       [
-        "apartheid",
+        "pemadaman",
         3
       ]
     ],
@@ -184,28 +184,60 @@
     "similar": [
       [
         7166,
-        0.83
+        0.75
       ],
       [
         7910,
-        0.47
+        0.49
       ],
       [
         1805,
-        0.47
+        0.49
       ],
       [
         2574,
-        0.35
+        0.36
       ],
       [
         7950,
-        0.33
+        0.34
       ],
       [
-        2060,
-        0.29
+        2254,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 32,
+      "negative": 33,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

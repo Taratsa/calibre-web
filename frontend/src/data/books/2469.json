@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3728,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "koperasi",
@@ -103,16 +103,16 @@
         98
       ],
       [
-        "mondragon",
-        16
-      ],
-      [
         "pekerja",
         64
       ],
       [
-        "chavez",
-        7
+        "mondragon",
+        16
+      ],
+      [
+        "ekonomi",
+        36
       ],
       [
         "kapitalis",
@@ -123,28 +123,28 @@
         23
       ],
       [
-        "rochdale",
-        4
-      ],
-      [
-        "bolivarian",
-        4
-      ],
-      [
-        "ekonomi",
-        36
+        "chavez",
+        7
       ],
       [
         "model",
         18
       ],
       [
-        "saham",
-        7
+        "rochdale",
+        4
       ],
       [
         "proyek",
         17
+      ],
+      [
+        "bolivarian",
+        4
+      ],
+      [
+        "kerja",
+        22
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         3092,
-        0.21
+        0.25
       ],
       [
         7256,
-        0.18
-      ],
-      [
-        3713,
-        0.16
-      ],
-      [
-        1806,
-        0.15
+        0.21
       ],
       [
         7042,
-        0.15
+        0.2
       ],
       [
-        7886,
-        0.14
+        2596,
+        0.2
+      ],
+      [
+        3713,
+        0.19
+      ],
+      [
+        1806,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 60,
+      "negative": 32,
+      "trend": [
+        0.6,
+        null,
+        1,
+        null,
+        0.2,
+        null,
+        -0.33,
+        0.75,
+        -0.14,
+        0.23,
+        0.25,
+        0.11,
+        null,
+        null,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

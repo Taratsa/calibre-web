@@ -40,7 +40,7 @@
   ],
   "text": {
     "words": 2246,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "rakyat",
@@ -97,14 +97,6 @@
         8
       ],
       [
-        "rakyet",
-        7
-      ],
-      [
-        "rekyat",
-        5
-      ],
-      [
         "budaya",
         47
       ],
@@ -113,32 +105,40 @@
         49
       ],
       [
+        "rakyet",
+        7
+      ],
+      [
         "kerakyatan",
         11
+      ],
+      [
+        "rekyat",
+        5
       ],
       [
         "kite",
         8
       ],
       [
+        "hai",
+        13
+      ],
+      [
+        "engkau",
+        13
+      ],
+      [
         "yeng",
         6
       ],
       [
-        "dijelatakan",
-        3
-      ],
-      [
-        "tuges",
-        3
-      ],
-      [
-        "budaye",
-        3
-      ],
-      [
         "gan",
         10
+      ],
+      [
+        "dijelatakan",
+        3
       ]
     ],
     "phrases": [
@@ -175,6 +175,38 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        4766,
+        0.78
+      ],
+      [
+        14257,
+        0.16
+      ],
+      [
+        14255,
+        0.16
+      ],
+      [
+        4166,
+        0.12
+      ],
+      [
+        2192,
+        0.11
+      ],
+      [
+        14258,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 20,
+      "negative": 33,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

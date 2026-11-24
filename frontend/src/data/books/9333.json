@@ -63,5 +63,218 @@
       "size": 76536540,
       "name": "Undang-undang Perkawinan - Suharti"
     }
-  ]
+  ],
+  "text": {
+    "words": 28841,
+    "longer_than": 92,
+    "top": [
+      [
+        "perkawinan",
+        651
+      ],
+      [
+        "undang",
+        386
+      ],
+      [
+        "wanita",
+        208
+      ],
+      [
+        "pemerintah",
+        173
+      ],
+      [
+        "hukum",
+        171
+      ],
+      [
+        "rantjangan",
+        162
+      ],
+      [
+        "pasal",
+        148
+      ],
+      [
+        "anak",
+        146
+      ],
+      [
+        "djika",
+        139
+      ],
+      [
+        "djuga",
+        131
+      ],
+      [
+        "adanja",
+        105
+      ],
+      [
+        "kaum",
+        104
+      ]
+    ],
+    "distinct": [
+      [
+        "perkawinan",
+        651
+      ],
+      [
+        "undang",
+        386
+      ],
+      [
+        "rantjangan",
+        162
+      ],
+      [
+        "djika",
+        139
+      ],
+      [
+        "djuga",
+        131
+      ],
+      [
+        "wanita",
+        208
+      ],
+      [
+        "adanja",
+        105
+      ],
+      [
+        "pasal",
+        148
+      ],
+      [
+        "suami-isteri",
+        57
+      ],
+      [
+        "pertjeraian",
+        49
+      ],
+      [
+        "masjarakat",
+        82
+      ],
+      [
+        "nja",
+        85
+      ]
+    ],
+    "phrases": [
+      [
+        "undang perkawinan",
+        130
+      ],
+      [
+        "rantjangan undang",
+        130
+      ],
+      [
+        "kaum wanita",
+        68
+      ],
+      [
+        "usul inisiatif",
+        56
+      ],
+      [
+        "umat islam",
+        36
+      ],
+      [
+        "pegawai pendaftar perkawinan",
+        24
+      ],
+      [
+        "sumari dkk",
+        30
+      ],
+      [
+        "hukum perkawinan",
+        30
+      ]
+    ],
+    "similar": [
+      [
+        9225,
+        0.32
+      ],
+      [
+        1886,
+        0.31
+      ],
+      [
+        6580,
+        0.27
+      ],
+      [
+        1127,
+        0.27
+      ],
+      [
+        6647,
+        0.26
+      ],
+      [
+        8745,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 298,
+      "negative": 135,
+      "trend": [
+        0.5,
+        -0.33,
+        -0.08,
+        0.55,
+        0.78,
+        0.58,
+        0.13,
+        0.5,
+        0.44,
+        0.16,
+        -0.11,
+        0.86,
+        0.6,
+        0.33,
+        0.31,
+        0.59
+      ],
+      "emotions": [
+        [
+          "trust",
+          64
+        ],
+        [
+          "joy",
+          42
+        ],
+        [
+          "sadness",
+          26
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

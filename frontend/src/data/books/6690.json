@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4021,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "kau",
@@ -103,32 +103,32 @@
         26
       ],
       [
-        "djuga",
-        36
-      ],
-      [
         "kau",
         61
       ],
       [
-        "pemondokan",
-        11
-      ],
-      [
-        "udjang",
-        7
+        "djuga",
+        36
       ],
       [
         "sadja",
         22
       ],
       [
-        "punja",
-        15
+        "pemondokan",
+        11
       ],
       [
         "hanja",
         20
+      ],
+      [
+        "punja",
+        15
+      ],
+      [
+        "udjang",
+        7
       ],
       [
         "utk",
@@ -143,8 +143,8 @@
         7
       ],
       [
-        "berdjudi",
-        5
+        "berdjalan",
+        11
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        7705,
-        0.17
-      ],
-      [
-        1449,
-        0.16
-      ],
-      [
         7810,
-        0.16
+        0.19
       ],
       [
         1448,
-        0.16
+        0.19
       ],
       [
         1330,
-        0.16
+        0.19
       ],
       [
-        1169,
-        0.15
+        1449,
+        0.19
+      ],
+      [
+        7705,
+        0.19
+      ],
+      [
+        7598,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 42,
+      "negative": 42,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.2,
+        0.6,
+        -0.67,
+        null,
+        -0.43,
+        0.17,
+        -0.08,
+        0.2,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

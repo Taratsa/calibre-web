@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4143,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "ham",
@@ -113,12 +113,16 @@
         46
       ],
       [
-        "bangis",
-        17
+        "barat",
+        95
       ],
       [
         "sekretariat",
         37
+      ],
+      [
+        "bangis",
+        17
       ],
       [
         "pasaman",
@@ -129,20 +133,16 @@
         23
       ],
       [
-        "barat",
-        95
-      ],
-      [
         "provinsi",
         35
       ],
       [
-        "diseminasi",
-        13
+        "masyarakat",
+        62
       ],
       [
-        "ulayat",
-        14
+        "diseminasi",
+        13
       ]
     ],
     "phrases": [
@@ -182,28 +182,56 @@
     "similar": [
       [
         8888,
-        0.52
+        0.54
       ],
       [
         8868,
-        0.42
+        0.43
       ],
       [
         8907,
-        0.4
-      ],
-      [
-        8904,
-        0.38
+        0.42
       ],
       [
         8884,
-        0.38
+        0.41
+      ],
+      [
+        8904,
+        0.41
       ],
       [
         8906,
-        0.38
+        0.4
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 47,
+      "negative": 34,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

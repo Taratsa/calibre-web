@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 2099,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "ham",
@@ -115,48 +115,48 @@
         41
       ],
       [
-        "dom",
-        16
-      ],
-      [
         "pelanggaran",
         34
       ],
       [
-        "ritualitas",
-        4
-      ],
-      [
-        "militer",
-        19
-      ],
-      [
-        "aceh",
-        13
-      ],
-      [
-        "dipertunjukan",
-        4
-      ],
-      [
-        "hak-hak",
-        15
+        "dom",
+        16
       ],
       [
         "hukum",
         30
       ],
       [
-        "kekerasan",
-        20
-      ],
-      [
         "tindakan",
         27
       ],
       [
+        "militer",
+        19
+      ],
+      [
+        "kekerasan",
+        20
+      ],
+      [
+        "hak-hak",
+        15
+      ],
+      [
+        "aceh",
+        13
+      ],
+      [
+        "ritualitas",
+        4
+      ],
+      [
         "peradilan",
         9
+      ],
+      [
+        "negara",
+        24
       ]
     ],
     "phrases": [
@@ -196,28 +196,65 @@
     "similar": [
       [
         1017,
-        0.21
+        0.25
       ],
       [
         7928,
-        0.19
-      ],
-      [
-        1012,
-        0.18
-      ],
-      [
-        240,
-        0.18
+        0.23
       ],
       [
         6900,
-        0.17
+        0.21
+      ],
+      [
+        1012,
+        0.21
       ],
       [
         6945,
-        0.17
+        0.21
+      ],
+      [
+        8310,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.4,
+      "positive": 31,
+      "negative": 72,
+      "trend": [
+        null,
+        null,
+        -0.6,
+        -0.05,
+        -0.6,
+        -1,
+        -0.2,
+        -0.14,
+        null,
+        -0.33,
+        -0.75,
+        null,
+        null,
+        -0.5,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          61
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "fear",
+          4
+        ]
+      ]
+    }
   }
 }

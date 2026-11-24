@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 276,
-    "longer_than": 3,
+    "longer_than": 29,
     "top": [
       [
         "indonesia",
@@ -89,36 +89,40 @@
     ],
     "distinct": [
       [
-        "keprajuritan",
-        4
-      ],
-      [
         "republik",
         15
-      ],
-      [
-        "bersenjata",
-        8
-      ],
-      [
-        "angkatan",
-        9
       ],
       [
         "presiden",
         11
       ],
       [
-        "pensiun",
-        3
+        "keprajuritan",
+        4
+      ],
+      [
+        "angkatan",
+        9
+      ],
+      [
+        "bersenjata",
+        8
+      ],
+      [
+        "indonesia",
+        16
+      ],
+      [
+        "keputusan",
+        8
       ],
       [
         "dinas",
         4
       ],
       [
-        "keputusan",
-        8
+        "pensiun",
+        3
       ],
       [
         "tni",
@@ -131,10 +135,6 @@
       [
         "november",
         4
-      ],
-      [
-        "hormat",
-        3
       ]
     ],
     "phrases": [
@@ -173,6 +173,14 @@
     ],
     "similar": [
       [
+        1017,
+        0.15
+      ],
+      [
+        7218,
+        0.15
+      ],
+      [
         2678,
         0.15
       ],
@@ -181,21 +189,14 @@
         0.14
       ],
       [
-        1017,
+        6900,
+        0.14
+      ],
+      [
+        4904,
         0.13
-      ],
-      [
-        7218,
-        0.12
-      ],
-      [
-        6321,
-        0.12
-      ],
-      [
-        8768,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

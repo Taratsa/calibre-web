@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5880,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "demokrasi",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "rakjat",
-        73
-      ],
-      [
         "demokrasi",
         112
+      ],
+      [
+        "rakjat",
+        73
       ],
       [
         "tjita-tjita",
@@ -122,36 +122,36 @@
         30
       ],
       [
+        "indonesia",
+        91
+      ],
+      [
         "soekarno",
         23
-      ],
-      [
-        "masjarakat",
-        22
-      ],
-      [
-        "sistim",
-        21
-      ],
-      [
-        "peri-kemanusiaan",
-        10
       ],
       [
         "perwakilan",
         32
       ],
       [
+        "masjarakat",
+        22
+      ],
+      [
         "dewan",
         35
+      ],
+      [
+        "sistim",
+        21
       ],
       [
         "presiden",
         35
       ],
       [
-        "djawab",
-        15
+        "politik",
+        45
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         1304,
-        0.66
+        0.68
       ],
       [
         8771,
-        0.27
+        0.3
       ],
       [
         6799,
-        0.23
+        0.27
       ],
       [
         9227,
-        0.22
-      ],
-      [
-        6630,
-        0.21
+        0.26
       ],
       [
         480,
-        0.21
+        0.25
+      ],
+      [
+        590,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

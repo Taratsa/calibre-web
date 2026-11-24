@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1238,
-    "longer_than": 16,
+    "longer_than": 55,
     "top": [
       [
         "pram",
@@ -108,24 +108,28 @@
         10
       ],
       [
-        "pramoedya",
-        8
-      ],
-      [
         "hadiah",
         14
       ],
       [
-        "sukito",
-        3
+        "pramoedya",
+        8
       ],
       [
         "mochtar",
         5
       ],
       [
+        "sukito",
+        3
+      ],
+      [
         "faks",
         4
+      ],
+      [
+        "lubis",
+        5
       ],
       [
         "wiratmo",
@@ -136,16 +140,12 @@
         3
       ],
       [
-        "lubis",
-        5
+        "pernyataan",
+        8
       ],
       [
         "manifes",
         3
-      ],
-      [
-        "pernyataan",
-        8
       ]
     ],
     "phrases": [
@@ -176,8 +176,12 @@
     ],
     "similar": [
       [
+        17843,
+        0.4
+      ],
+      [
         7771,
-        0.2
+        0.19
       ],
       [
         7650,
@@ -188,17 +192,14 @@
         0.18
       ],
       [
-        4284,
-        0.18
-      ],
-      [
         5938,
-        0.18
+        0.17
       ],
       [
-        1079,
+        4284,
         0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

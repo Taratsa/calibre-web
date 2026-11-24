@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1726,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "pekerja",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "haymarket",
-        7
-      ],
-      [
         "anarkis",
         17
       ],
       [
-        "spies",
-        5
-      ],
-      [
-        "fielden",
-        3
+        "haymarket",
+        7
       ],
       [
         "pekerja",
         19
       ],
       [
-        "lingg",
-        3
-      ],
-      [
-        "chicago",
-        6
-      ],
-      [
-        "pemogokan",
-        7
+        "spies",
+        5
       ],
       [
         "polisi",
         14
       ],
       [
-        "day",
+        "fielden",
+        3
+      ],
+      [
+        "pemogokan",
         7
       ],
       [
-        "parsons",
-        3
+        "kaum",
+        15
+      ],
+      [
+        "chicago",
+        6
       ],
       [
         "jam",
         13
+      ],
+      [
+        "lingg",
+        3
+      ],
+      [
+        "day",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2113,
-        0.52
-      ],
-      [
-        2277,
-        0.38
-      ],
-      [
-        7279,
-        0.38
+        0.53
       ],
       [
         2041,
-        0.34
+        0.37
+      ],
+      [
+        2277,
+        0.36
+      ],
+      [
+        7279,
+        0.36
       ],
       [
         3091,
-        0.34
+        0.35
       ],
       [
         2510,
-        0.27
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.19,
+      "positive": 23,
+      "negative": 34,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

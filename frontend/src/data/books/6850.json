@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3008,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "setyo",
@@ -139,12 +139,12 @@
         13
       ],
       [
-        "kuingatkan",
-        6
+        "makan",
+        30
       ],
       [
-        "berbincang",
-        12
+        "apa-apa",
+        24
       ]
     ],
     "phrases": [
@@ -183,17 +183,82 @@
     ],
     "similar": [
       [
-        7972,
-        0.1
+        4721,
+        0.12
+      ],
+      [
+        14864,
+        0.11
       ],
       [
         6853,
-        0.1
+        0.11
       ],
       [
-        4721,
+        2615,
+        0.11
+      ],
+      [
+        2610,
+        0.11
+      ],
+      [
+        1244,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 62,
+      "negative": 25,
+      "trend": [
+        -0.2,
+        null,
+        0.33,
+        0.2,
+        null,
+        0.08,
+        -0.2,
+        null,
+        1,
+        0.64,
+        0.75,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          9
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

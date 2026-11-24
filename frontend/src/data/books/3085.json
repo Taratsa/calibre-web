@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1493,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "aparat",
@@ -99,10 +99,6 @@
     ],
     "distinct": [
       [
-        "konoha",
-        3
-      ],
-      [
         "paruh",
         8
       ],
@@ -115,12 +111,8 @@
         8
       ],
       [
-        "magribi",
+        "konoha",
         3
-      ],
-      [
-        "variabel",
-        5
       ],
       [
         "aparat",
@@ -131,16 +123,24 @@
         5
       ],
       [
+        "magribi",
+        3
+      ],
+      [
+        "variabel",
+        5
+      ],
+      [
+        "tara",
+        6
+      ],
+      [
         "keparat",
         4
       ],
       [
         "basar",
         3
-      ],
-      [
-        "tara",
-        6
       ],
       [
         "sirkus",
@@ -181,6 +181,13 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 27,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

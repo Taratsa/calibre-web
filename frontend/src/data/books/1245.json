@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5856,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "femisida",
@@ -97,44 +97,44 @@
         49
       ],
       [
-        "pembunuhan",
-        57
+        "perempuan",
+        118
       ],
       [
         "korban",
         88
       ],
       [
-        "komnas",
-        37
-      ],
-      [
-        "perempuan",
-        118
+        "pembunuhan",
+        57
       ],
       [
         "kekerasan",
         75
       ],
       [
-        "femicide",
-        9
+        "komnas",
+        37
       ],
       [
         "gender",
         33
       ],
       [
+        "femicide",
+        9
+      ],
+      [
         "unodc",
         11
       ],
       [
-        "jurnalis",
-        19
-      ],
-      [
         "pelaku",
         29
+      ],
+      [
+        "jurnalis",
+        19
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         8799,
-        0.37
+        0.39
       ],
       [
         1988,
-        0.27
+        0.3
       ],
       [
         1340,
-        0.21
-      ],
-      [
-        8987,
-        0.18
+        0.23
       ],
       [
         9093,
-        0.18
+        0.22
       ],
       [
         352,
-        0.18
+        0.22
+      ],
+      [
+        8987,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.4,
+      "positive": 85,
+      "negative": 199,
+      "trend": [
+        -0.6,
+        -0.23,
+        0.09,
+        -0.26,
+        -0.54,
+        -0.7,
+        -0.64,
+        -0.91,
+        -0.26,
+        -0.67,
+        -0.22,
+        -0.25,
+        0,
+        -0.18,
+        -0.67,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          143
+        ],
+        [
+          "trust",
+          21
+        ],
+        [
+          "fear",
+          13
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

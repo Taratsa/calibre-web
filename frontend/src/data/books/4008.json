@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2132,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "jassin",
@@ -111,12 +111,12 @@
         42
       ],
       [
-        "offensif",
-        10
-      ],
-      [
         "kesusasteraan",
         17
+      ],
+      [
+        "offensif",
+        10
       ],
       [
         "pengarang",
@@ -127,8 +127,16 @@
         4
       ],
       [
+        "seniman",
+        10
+      ],
+      [
         "by-sa",
         5
+      ],
+      [
+        "perhitungan",
+        10
       ],
       [
         "akhdiat",
@@ -137,14 +145,6 @@
       [
         "dinamainya",
         4
-      ],
-      [
-        "seniman",
-        10
-      ],
-      [
-        "perhitungan",
-        10
       ],
       [
         "nyya",
@@ -172,28 +172,35 @@
     "similar": [
       [
         3436,
-        0.55
+        0.56
       ],
       [
         7710,
-        0.55
+        0.56
       ],
       [
         4020,
-        0.33
+        0.35
       ],
       [
         6740,
         0.29
       ],
       [
-        4035,
-        0.25
+        4010,
+        0.26
       ],
       [
-        4010,
-        0.25
+        4035,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 27,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

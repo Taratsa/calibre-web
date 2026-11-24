@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4770,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "perkawinan",
@@ -107,28 +107,20 @@
         66
       ],
       [
-        "komnas",
-        38
+        "perempuan",
+        96
       ],
       [
         "ayat",
         50
       ],
       [
-        "perempuan",
-        96
-      ],
-      [
-        "pemohon",
-        15
-      ],
-      [
         "hak",
         103
       ],
       [
-        "pembatasan",
-        25
+        "komnas",
+        38
       ],
       [
         "agama",
@@ -139,12 +131,20 @@
         53
       ],
       [
-        "konstitusional",
-        13
+        "negara",
+        63
       ],
       [
-        "asasi",
-        18
+        "pembatasan",
+        25
+      ],
+      [
+        "pemohon",
+        15
+      ],
+      [
+        "nomor",
+        29
       ]
     ],
     "phrases": [
@@ -184,28 +184,69 @@
     "similar": [
       [
         8173,
-        0.34
+        0.36
       ],
       [
         9091,
-        0.31
-      ],
-      [
-        8792,
-        0.29
+        0.35
       ],
       [
         9031,
-        0.29
+        0.34
+      ],
+      [
+        8792,
+        0.33
       ],
       [
         9085,
-        0.29
+        0.33
       ],
       [
-        9021,
-        0.29
+        9028,
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 67,
+      "negative": 62,
+      "trend": [
+        -0.5,
+        0.33,
+        -0.5,
+        null,
+        0.33,
+        0.33,
+        null,
+        null,
+        0.43,
+        null,
+        0.44,
+        0,
+        null,
+        -0.25,
+        -1,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          29
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

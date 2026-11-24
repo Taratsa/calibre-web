@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2422,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "modernitas",
@@ -107,20 +107,20 @@
         6
       ],
       [
-        "domestikasi",
-        6
+        "peradaban",
+        12
       ],
       [
         "simbolik",
         8
       ],
       [
-        "postmodern",
-        5
+        "domestikasi",
+        6
       ],
       [
-        "peradaban",
-        12
+        "postmodern",
+        5
       ],
       [
         "postmodernisme",
@@ -131,48 +131,97 @@
         3
       ],
       [
-        "dekonstruksi",
-        4
-      ],
-      [
         "totalitas",
         5
+      ],
+      [
+        "dekonstruksi",
+        4
       ],
       [
         "derrida",
         3
       ],
       [
-        "penghindaran",
-        3
+        "badai",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2548,
-        0.37
+        0.39
       ],
       [
         2253,
-        0.33
+        0.34
       ],
       [
         7016,
         0.19
       ],
       [
-        9188,
+        4723,
         0.18
       ],
       [
-        4113,
-        0.17
+        2708,
+        0.18
       ],
       [
-        4723,
-        0.17
+        7079,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 38,
+      "negative": 54,
+      "trend": [
+        -0.2,
+        0,
+        0.14,
+        -0.6,
+        null,
+        -0.2,
+        -0.5,
+        0,
+        -0.67,
+        0.2,
+        -0.5,
+        null,
+        -0.6,
+        -0.2,
+        -0.43,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          14
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

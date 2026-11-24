@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1919,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "pemberontakan",
@@ -122,36 +122,36 @@
         8
       ],
       [
-        "anti-kolonialisme",
-        7
-      ],
-      [
-        "memberontak",
-        12
-      ],
-      [
-        "sedjarah",
-        11
+        "indonesia",
+        45
       ],
       [
         "november",
         20
       ],
       [
+        "memberontak",
+        12
+      ],
+      [
+        "anti-kolonialisme",
+        7
+      ],
+      [
+        "sedjarah",
+        11
+      ],
+      [
+        "kaum",
+        23
+      ],
+      [
         "feodal",
         10
       ],
       [
-        "radja",
-        8
-      ],
-      [
-        "klas",
-        8
-      ],
-      [
-        "keradjaan",
-        6
+        "tani",
+        13
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         6726,
-        0.3
+        0.32
       ],
       [
         4821,
-        0.3
+        0.32
       ],
       [
         534,
-        0.28
+        0.3
       ],
       [
         6799,
-        0.27
+        0.29
       ],
       [
         6771,
-        0.25
+        0.28
       ],
       [
         4859,
-        0.23
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 29,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3864,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "governance",
@@ -120,28 +120,28 @@
         15
       ],
       [
+        "hukum",
+        32
+      ],
+      [
         "liberalisasi",
         10
       ],
       [
-        "neo-liberal",
-        7
-      ],
-      [
-        "perundangan",
-        10
+        "pasar",
+        25
       ],
       [
         "asasi",
         16
       ],
       [
-        "abrahamsen",
-        4
+        "perundangan",
+        10
       ],
       [
-        "wiratraman",
-        5
+        "neo-liberal",
+        7
       ],
       [
         "peradilan",
@@ -185,28 +185,52 @@
     "similar": [
       [
         8247,
-        0.18
+        0.21
       ],
       [
         8482,
-        0.16
+        0.2
       ],
       [
         8501,
-        0.15
+        0.18
       ],
       [
         8614,
-        0.15
-      ],
-      [
-        8262,
-        0.14
+        0.17
       ],
       [
         8228,
-        0.14
+        0.17
+      ],
+      [
+        8494,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 105,
+      "negative": 30,
+      "trend": [
+        0.86,
+        0.45,
+        -0.2,
+        0.11,
+        0.38,
+        0.33,
+        0.75,
+        1,
+        1,
+        1,
+        1,
+        0.2,
+        0.57,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

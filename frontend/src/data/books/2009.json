@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1214,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "masyarakat",
@@ -115,36 +115,36 @@
         5
       ],
       [
-        "industri-teknologis",
-        3
-      ],
-      [
         "spectacle",
         6
       ],
       [
-        "platform",
-        8
+        "industri-teknologis",
+        3
       ],
       [
         "digital",
         10
       ],
       [
-        "algoritma",
-        4
+        "platform",
+        8
+      ],
+      [
+        "society",
+        8
       ],
       [
         "viral",
         4
       ],
       [
-        "pengguna",
-        6
+        "algoritma",
+        4
       ],
       [
-        "society",
-        8
+        "psikologis",
+        6
       ]
     ],
     "phrases": [
@@ -164,28 +164,29 @@
     "similar": [
       [
         2679,
-        0.25
+        0.26
       ],
       [
         7255,
-        0.22
-      ],
-      [
-        7200,
-        0.2
+        0.23
       ],
       [
         3799,
         0.2
       ],
       [
-        2666,
-        0.16
+        7893,
+        0.18
       ],
       [
-        356,
-        0.16
+        2666,
+        0.17
+      ],
+      [
+        2221,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

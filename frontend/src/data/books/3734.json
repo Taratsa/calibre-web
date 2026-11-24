@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3700,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "gender",
@@ -111,6 +111,10 @@
         13
       ],
       [
+        "identitas",
+        17
+      ],
+      [
         "diskursif",
         7
       ],
@@ -119,32 +123,28 @@
         8
       ],
       [
-        "identitas",
-        17
+        "wacana",
+        12
       ],
       [
-        "non-biner",
-        4
+        "perempuan",
+        20
+      ],
+      [
+        "kategori",
+        12
       ],
       [
         "normalisasi",
         6
       ],
       [
-        "wacana",
-        12
+        "non-biner",
+        4
       ],
       [
         "negativitas",
         4
-      ],
-      [
-        "escalante",
-        3
-      ],
-      [
-        "kategori",
-        12
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7013,
-        0.71
+        0.7
       ],
       [
         2122,
         0.69
       ],
       [
+        3802,
+        0.38
+      ],
+      [
         9210,
-        0.34
+        0.38
       ],
       [
         7269,
-        0.34
-      ],
-      [
-        3802,
-        0.34
+        0.38
       ],
       [
         6821,
-        0.21
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 49,
+      "negative": 51,
+      "trend": [
+        null,
+        -0.67,
+        0,
+        0.82,
+        0.25,
+        null,
+        null,
+        0,
+        null,
+        -0.2,
+        -0.43,
+        0.14,
+        -0.43,
+        -0.2,
+        0,
+        -0.67
+      ],
+      "emotions": []
+    }
   }
 }

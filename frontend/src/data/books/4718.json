@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1772,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "puisi",
@@ -111,15 +111,19 @@
         16
       ],
       [
-        "sombongsombongnya",
-        3
-      ],
-      [
         "bukit",
         14
       ],
       [
         "kiamat",
+        8
+      ],
+      [
+        "sombongsombongnya",
+        3
+      ],
+      [
+        "penyair",
         8
       ],
       [
@@ -135,16 +139,12 @@
         3
       ],
       [
-        "penyair",
-        8
-      ],
-      [
-        "sepanjang-panjang",
-        3
-      ],
-      [
         "ugal-ugalan",
         4
+      ],
+      [
+        "rimba",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,56 @@
     "similar": [
       [
         3798,
-        0.21
+        0.23
       ],
       [
         7165,
-        0.2
+        0.21
       ],
       [
         1910,
-        0.17
-      ],
-      [
-        8041,
-        0.11
+        0.16
       ],
       [
         6970,
-        0.1
+        0.12
       ],
       [
         2575,
-        0.1
+        0.12
+      ],
+      [
+        8041,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.36,
+      "positive": 25,
+      "negative": 53,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

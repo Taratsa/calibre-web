@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2324,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "pekerja",
@@ -110,16 +110,16 @@
         57
       ],
       [
-        "caterpillar",
-        7
+        "aksi",
+        33
       ],
       [
         "pabrik",
         24
       ],
       [
-        "aksi",
-        33
+        "caterpillar",
+        7
       ],
       [
         "bos",
@@ -130,28 +130,28 @@
         8
       ],
       [
-        "goodyear",
-        5
-      ],
-      [
         "prancis",
         12
+      ],
+      [
+        "perusahaan",
+        19
+      ],
+      [
+        "goodyear",
+        5
       ],
       [
         "cgt",
         5
       ],
       [
-        "aviation",
-        5
-      ],
-      [
-        "starnes",
-        3
-      ],
-      [
         "atasan",
         10
+      ],
+      [
+        "aviation",
+        5
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         2779,
-        0.23
+        0.24
       ],
       [
         2765,
-        0.18
+        0.21
       ],
       [
         7548,
-        0.14
-      ],
-      [
-        5909,
-        0.14
+        0.18
       ],
       [
         3758,
-        0.13
+        0.16
       ],
       [
-        5877,
-        0.12
+        5909,
+        0.16
+      ],
+      [
+        1533,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 31,
+      "negative": 30,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

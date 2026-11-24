@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3262,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "indonesia",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "musti",
-        10
-      ],
-      [
-        "infrastruktur",
-        13
+        "ekonomi",
+        28
       ],
       [
         "industri",
         21
       ],
       [
-        "sosial-ekologis",
-        5
+        "musti",
+        10
       ],
       [
-        "pertambangan",
-        11
-      ],
-      [
-        "geb",
-        4
-      ],
-      [
-        "komoditas",
-        9
-      ],
-      [
-        "ekonomi",
-        28
+        "indonesia",
+        45
       ],
       [
         "pembangunan",
         21
       ],
       [
-        "geografi",
-        7
+        "infrastruktur",
+        13
+      ],
+      [
+        "pertambangan",
+        11
+      ],
+      [
+        "produksi",
+        17
       ],
       [
         "pertanian",
         14
       ],
       [
-        "produksi",
-        17
+        "sosial-ekologis",
+        5
+      ],
+      [
+        "rakyat",
+        20
+      ],
+      [
+        "studi",
+        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8405,
-        0.49
+        0.5
       ],
       [
         8368,
-        0.28
+        0.32
       ],
       [
         8560,
-        0.22
+        0.26
       ],
       [
         8676,
-        0.2
-      ],
-      [
-        8668,
-        0.2
+        0.25
       ],
       [
         8482,
-        0.19
+        0.23
+      ],
+      [
+        8668,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.63,
+      "positive": 76,
+      "negative": 17,
+      "trend": [
+        0.43,
+        0.6,
+        null,
+        1,
+        0.78,
+        -0.6,
+        0.67,
+        0.33,
+        null,
+        0.75,
+        0.64,
+        0.5,
+        null,
+        1,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

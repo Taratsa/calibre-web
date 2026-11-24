@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1762,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "dunia",
@@ -118,6 +118,10 @@
         3
       ],
       [
+        "planet",
+        6
+      ],
+      [
         "hanacaraka",
         3
       ],
@@ -126,32 +130,28 @@
         3
       ],
       [
+        "tubuh",
+        12
+      ],
+      [
         "whispering",
         3
       ],
       [
-        "planet",
-        6
+        "dunia",
+        19
       ],
       [
         "performance",
         5
       ],
       [
-        "artist",
-        3
+        "manusia",
+        14
       ],
       [
-        "symbols",
-        3
-      ],
-      [
-        "artefak",
-        3
-      ],
-      [
-        "tubuh",
-        12
+        "kosong",
+        8
       ]
     ],
     "phrases": [
@@ -179,14 +179,18 @@
     "similar": [
       [
         4113,
-        0.17
+        0.16
       ],
       [
-        7325,
+        3735,
+        0.14
+      ],
+      [
+        44,
         0.13
       ],
       [
-        2636,
+        3802,
         0.12
       ],
       [
@@ -196,11 +200,8 @@
       [
         7269,
         0.12
-      ],
-      [
-        3802,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

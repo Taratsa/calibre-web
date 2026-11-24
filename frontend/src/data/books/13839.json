@@ -1,0 +1,217 @@
+{
+  "id": 13839,
+  "title": "WeMOS: How to Connect ESP8266 to MQTT Broker",
+  "slug": "wemos-how-to-connect-esp8266-to-mqtt-broker-onno-widodo-purbo",
+  "slugBase": "wemos-how-to-connect-esp8266-to-mqtt-broker-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2020-02-18",
+  "timestamp": "2026-11-23 22:27:27.048223",
+  "last_modified": "2026-11-23 22:27:27.048228",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:fe2e6e3e-b920-5b15-a958-1d03d1c4ab2c"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/13839?v=1795447647",
+  "cover_og_url": "/cover/13839/og?v=1795447647",
+  "url": "/book/wemos-how-to-connect-esp8266-to-mqtt-broker-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://iotdesignpro.com/projects/how-to-connect-esp8266-with-mqtt MQTT is the machine-to-machine connectivity protocol. It is an ideal IoT platform to connect multiple devices. In this project, we will connect an ESP8266 with MQTT broker. We will use cloud MQTT as our broker platform and Arduino IDE to program our ESP8266. Like MQTT there are many other platforms available. But, cloud",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4809,
+      "name": "WeMOS_ How to Connect ESP8266 to MQTT Brok - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 995,
+    "longer_than": 52,
+    "top": [
+      [
+        "mqtt",
+        37
+      ],
+      [
+        "serial",
+        29
+      ],
+      [
+        "client",
+        24
+      ],
+      [
+        "wifi",
+        22
+      ],
+      [
+        "esp",
+        19
+      ],
+      [
+        "message",
+        15
+      ],
+      [
+        "char",
+        14
+      ],
+      [
+        "broker",
+        13
+      ],
+      [
+        "print",
+        13
+      ],
+      [
+        "const",
+        12
+      ],
+      [
+        "println",
+        12
+      ],
+      [
+        "publish",
+        12
+      ]
+    ],
+    "distinct": [
+      [
+        "mqtt",
+        37
+      ],
+      [
+        "serial",
+        29
+      ],
+      [
+        "esp",
+        19
+      ],
+      [
+        "wifi",
+        22
+      ],
+      [
+        "client",
+        24
+      ],
+      [
+        "char",
+        14
+      ],
+      [
+        "broker",
+        13
+      ],
+      [
+        "const",
+        12
+      ],
+      [
+        "println",
+        12
+      ],
+      [
+        "publish",
+        12
+      ],
+      [
+        "subscribe",
+        10
+      ],
+      [
+        "topic",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "serial println",
+        12
+      ],
+      [
+        "serial print",
+        10
+      ],
+      [
+        "mqtt broker",
+        10
+      ],
+      [
+        "const char",
+        10
+      ],
+      [
+        "cloud mqtt",
+        6
+      ],
+      [
+        "serial monitor",
+        5
+      ],
+      [
+        "subscribe and publish",
+        3
+      ],
+      [
+        "publish and subscribe",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        13421,
+        0.65
+      ],
+      [
+        15046,
+        0.6
+      ],
+      [
+        13838,
+        0.55
+      ],
+      [
+        14127,
+        0.48
+      ],
+      [
+        11679,
+        0.45
+      ],
+      [
+        11682,
+        0.44
+      ]
+    ],
+    "sentiment": null
+  }
+}

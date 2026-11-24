@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 8822,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "tani",
@@ -99,44 +99,44 @@
         49
       ],
       [
-        "setjara",
-        45
+        "kaum",
+        119
       ],
       [
         "rakjat",
         50
       ],
       [
-        "didesa-desa",
-        19
-      ],
-      [
-        "kaum",
-        119
+        "setjara",
+        45
       ],
       [
         "pertanian",
         59
       ],
       [
-        "mendjadi",
-        35
+        "didesa-desa",
+        19
       ],
       [
-        "berkerdja",
-        12
+        "mendjadi",
+        35
       ],
       [
         "agraria",
         32
       ],
       [
-        "mempunjai",
-        26
-      ],
-      [
         "sadja",
         29
+      ],
+      [
+        "kemakmuran",
+        30
+      ],
+      [
+        "mempunjai",
+        26
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         799,
-        0.24
+        0.28
       ],
       [
         6799,
-        0.23
+        0.27
       ],
       [
         5939,
-        0.22
+        0.26
       ],
       [
         6291,
-        0.21
+        0.25
       ],
       [
         798,
-        0.21
+        0.25
       ],
       [
         790,
-        0.2
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 170,
+      "negative": 89,
+      "trend": [
+        0.71,
+        0.45,
+        0.43,
+        0,
+        0.2,
+        0.76,
+        -0.17,
+        0.18,
+        -0.26,
+        -0.2,
+        0.58,
+        -0.29,
+        0.57,
+        0.07,
+        0.36,
+        0.89
+      ],
+      "emotions": []
+    }
   }
 }

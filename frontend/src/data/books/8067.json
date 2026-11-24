@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 4712,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "anarkis",
@@ -135,24 +135,24 @@
         12
       ],
       [
-        "mempreservasi",
-        8
-      ],
-      [
         "anarkisme",
         24
       ],
       [
-        "pateman",
-        7
+        "mempreservasi",
+        8
+      ],
+      [
+        "komunitas",
+        29
       ],
       [
         "kate",
         12
       ],
       [
-        "pamflet",
-        14
+        "pateman",
+        7
       ]
     ],
     "phrases": [
@@ -192,7 +192,7 @@
     "similar": [
       [
         9166,
-        0.47
+        0.5
       ],
       [
         7489,
@@ -200,20 +200,44 @@
       ],
       [
         7453,
-        0.27
+        0.28
       ],
       [
         3788,
-        0.24
+        0.26
       ],
       [
         7038,
-        0.23
+        0.26
       ],
       [
         2001,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 65,
+      "negative": 30,
+      "trend": [
+        null,
+        null,
+        null,
+        0.43,
+        0.56,
+        0.14,
+        null,
+        null,
+        0.6,
+        0.85,
+        0.45,
+        null,
+        0.25,
+        -0.11,
+        0,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

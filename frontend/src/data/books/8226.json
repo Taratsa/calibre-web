@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3086,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "modal",
@@ -124,28 +124,28 @@
         14
       ],
       [
+        "negara-negara",
+        17
+      ],
+      [
         "sahamnya",
         7
       ],
       [
-        "negara-negara",
-        17
+        "nasional",
+        26
       ],
       [
         "persen",
         13
       ],
       [
-        "bremen",
-        4
+        "negara",
+        29
       ],
       [
-        "patungan",
-        5
-      ],
-      [
-        "multi",
-        7
+        "indonesia",
+        34
       ]
     ],
     "phrases": [
@@ -185,28 +185,35 @@
     "similar": [
       [
         8239,
-        0.19
+        0.24
       ],
       [
         8407,
-        0.19
+        0.21
       ],
       [
         8406,
-        0.17
+        0.21
       ],
       [
-        3704,
-        0.16
+        8614,
+        0.2
+      ],
+      [
+        8556,
+        0.2
       ],
       [
         5875,
-        0.16
-      ],
-      [
-        8390,
-        0.16
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.61,
+      "positive": 49,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

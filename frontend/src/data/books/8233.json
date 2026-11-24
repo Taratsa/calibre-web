@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2736,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "buruh",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "kasbi",
-        13
-      ],
-      [
         "buruh",
         52
       ],
       [
-        "golput",
-        7
+        "kasbi",
+        13
       ],
       [
         "serikat",
         22
       ],
       [
-        "kontrak",
-        13
+        "golput",
+        7
       ],
       [
         "upah",
         17
       ],
       [
-        "neoliberalisme",
-        7
-      ],
-      [
-        "propenas",
-        4
-      ],
-      [
-        "pphi",
-        4
+        "rakyat",
+        26
       ],
       [
         "modal",
         18
       ],
       [
-        "sby-jk",
-        4
+        "kontrak",
+        13
+      ],
+      [
+        "politik",
+        22
+      ],
+      [
+        "neoliberalisme",
+        7
       ],
       [
         "pemilu",
         9
+      ],
+      [
+        "propenas",
+        4
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8232,
-        0.34
+        0.36
       ],
       [
         8231,
-        0.21
-      ],
-      [
-        5869,
-        0.19
-      ],
-      [
-        6785,
-        0.19
+        0.26
       ],
       [
         5911,
-        0.18
+        0.25
       ],
       [
-        6789,
-        0.18
+        5869,
+        0.23
+      ],
+      [
+        5897,
+        0.22
+      ],
+      [
+        5886,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 53,
+      "negative": 39,
+      "trend": [
+        0.67,
+        -0.14,
+        -0.57,
+        null,
+        0,
+        null,
+        null,
+        -0.11,
+        0.71,
+        0.71,
+        null,
+        null,
+        null,
+        0.67,
+        null,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

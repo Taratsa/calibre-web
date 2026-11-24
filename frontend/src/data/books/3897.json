@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 3796,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "manusia",
@@ -127,6 +127,10 @@
         10
       ],
       [
+        "menatapku",
+        8
+      ],
+      [
         "komputerku",
         5
       ],
@@ -135,28 +139,24 @@
         5
       ],
       [
-        "menatapku",
-        8
-      ],
-      [
         "spotify",
         6
       ],
       [
-        "handphoneku",
-        3
+        "hitam",
+        18
       ],
       [
-        "ars",
-        5
+        "manusia",
+        25
       ],
       [
-        "rolling",
-        5
+        "aneh",
+        13
       ],
       [
-        "kelerengnya",
-        3
+        "wanita",
+        14
       ]
     ],
     "phrases": [
@@ -193,6 +193,84 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        1244,
+        0.17
+      ],
+      [
+        3956,
+        0.13
+      ],
+      [
+        4721,
+        0.13
+      ],
+      [
+        3988,
+        0.13
+      ],
+      [
+        2718,
+        0.12
+      ],
+      [
+        4676,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 42,
+      "negative": 50,
+      "trend": [
+        0,
+        -0.5,
+        -0.8,
+        0.75,
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        -0.6,
+        null,
+        null,
+        null,
+        0.2,
+        0.67
+      ],
+      "emotions": [
+        [
+          "surprise",
+          16
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

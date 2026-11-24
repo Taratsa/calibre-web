@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2911,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "orang",
@@ -107,8 +107,8 @@
         15
       ],
       [
-        "penjatahan",
-        4
+        "produksi",
+        16
       ],
       [
         "anarkis",
@@ -119,32 +119,32 @@
         12
       ],
       [
-        "cafiero",
-        3
-      ],
-      [
-        "produksi",
-        16
-      ],
-      [
-        "despotisme",
-        4
-      ],
-      [
         "kekayaan",
         14
       ],
       [
-        "anarki",
-        7
+        "penjatahan",
+        4
       ],
       [
         "mesin",
         12
       ],
       [
-        "atribusi",
+        "anarki",
+        7
+      ],
+      [
+        "individu",
+        12
+      ],
+      [
+        "cafiero",
         3
+      ],
+      [
+        "despotisme",
+        4
       ]
     ],
     "phrases": [
@@ -179,29 +179,53 @@
     ],
     "similar": [
       [
-        8000,
-        0.16
-      ],
-      [
         6730,
-        0.15
+        0.22
       ],
       [
         2203,
-        0.15
-      ],
-      [
-        3725,
-        0.14
-      ],
-      [
-        3989,
-        0.14
+        0.22
       ],
       [
         2443,
-        0.14
+        0.21
+      ],
+      [
+        7353,
+        0.21
+      ],
+      [
+        3725,
+        0.21
+      ],
+      [
+        3989,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 70,
+      "negative": 38,
+      "trend": [
+        -0.33,
+        0.78,
+        0.86,
+        0.2,
+        null,
+        0.6,
+        -0.33,
+        0,
+        0.71,
+        0,
+        0.23,
+        null,
+        null,
+        0.2,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

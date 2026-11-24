@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1227,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "mustadjab",
@@ -111,32 +111,32 @@
         7
       ],
       [
-        "digulis",
-        3
-      ],
-      [
         "nja",
         8
-      ],
-      [
-        "sandiwara",
-        6
       ],
       [
         "film",
         10
       ],
       [
-        "filsafah",
+        "digulis",
         3
+      ],
+      [
+        "sandiwara",
+        6
+      ],
+      [
+        "sadja",
+        7
       ],
       [
         "seandainja",
         4
       ],
       [
-        "sadja",
-        7
+        "filsafah",
+        3
       ]
     ],
     "phrases": [
@@ -156,7 +156,11 @@
     "similar": [
       [
         1097,
-        0.15
+        0.16
+      ],
+      [
+        6678,
+        0.16
       ],
       [
         1076,
@@ -164,20 +168,17 @@
       ],
       [
         4848,
-        0.14
+        0.15
       ],
       [
         1098,
-        0.14
-      ],
-      [
-        6678,
-        0.14
+        0.15
       ],
       [
         1193,
-        0.13
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

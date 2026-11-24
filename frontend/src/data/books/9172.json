@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1708,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "anarko-sindikalis",
@@ -116,7 +116,15 @@
         16
       ],
       [
+        "kaum",
+        26
+      ],
+      [
         "etis",
+        10
+      ],
+      [
+        "rasional",
         10
       ],
       [
@@ -124,8 +132,8 @@
         3
       ],
       [
-        "rasional",
-        10
+        "produksi",
+        14
       ],
       [
         "borjuis-liberal",
@@ -136,8 +144,8 @@
         3
       ],
       [
-        "kaum",
-        26
+        "masyarakat",
+        19
       ],
       [
         "anarko-sindikalisme",
@@ -146,14 +154,6 @@
       [
         "borjuasi",
         5
-      ],
-      [
-        "produksi",
-        14
-      ],
-      [
-        "sindikalis",
-        3
       ]
     ],
     "phrases": [
@@ -193,28 +193,35 @@
     "similar": [
       [
         2612,
-        0.66
+        0.67
       ],
       [
         7385,
-        0.4
+        0.39
       ],
       [
         3790,
-        0.23
-      ],
-      [
-        7444,
-        0.16
+        0.25
       ],
       [
         7875,
-        0.16
+        0.21
       ],
       [
         2540,
-        0.16
+        0.21
+      ],
+      [
+        2800,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 48,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7758,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "teknologi",
@@ -107,44 +107,44 @@
         67
       ],
       [
-        "vegan",
-        11
-      ],
-      [
         "hewan",
         27
       ],
       [
-        "komputer",
-        16
+        "vegan",
+        11
       ],
       [
-        "anti-teknologi",
-        5
+        "masyarakat",
+        46
       ],
       [
         "anarkis",
         16
       ],
       [
-        "clastres",
-        4
+        "kehidupan",
+        33
+      ],
+      [
+        "manusia",
+        36
+      ],
+      [
+        "komputer",
+        16
       ],
       [
         "kemajuan",
         17
       ],
       [
-        "penghancuran",
-        10
+        "alam",
+        25
       ],
       [
-        "mesin",
-        15
-      ],
-      [
-        "masyarakat",
-        46
+        "kebebasan",
+        19
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         6855,
-        0.22
+        0.28
       ],
       [
         7098,
-        0.21
-      ],
-      [
-        1820,
-        0.21
+        0.26
       ],
       [
         3057,
-        0.2
+        0.26
+      ],
+      [
+        1820,
+        0.26
       ],
       [
         2253,
-        0.2
+        0.25
       ],
       [
-        2133,
-        0.19
+        6730,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 171,
+      "negative": 122,
+      "trend": [
+        -0.06,
+        0.08,
+        -0.37,
+        0.5,
+        0,
+        -0.26,
+        0.3,
+        0.2,
+        -0.24,
+        0.5,
+        -0.05,
+        0.33,
+        0.58,
+        0.5,
+        0.69,
+        0.45
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

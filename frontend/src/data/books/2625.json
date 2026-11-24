@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5522,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "kelompok",
@@ -111,15 +111,11 @@
         40
       ],
       [
-        "terstruktur",
-        22
-      ],
-      [
         "elit",
         27
       ],
       [
-        "pergerakan",
+        "terstruktur",
         22
       ],
       [
@@ -127,24 +123,28 @@
         40
       ],
       [
+        "pergerakan",
+        22
+      ],
+      [
         "gerakan",
         36
-      ],
-      [
-        "gagasan",
-        18
-      ],
-      [
-        "jaringan",
-        14
       ],
       [
         "kekuasaan",
         27
       ],
       [
-        "feminis",
-        6
+        "gagasan",
+        18
+      ],
+      [
+        "orang",
+        38
+      ],
+      [
+        "pembebasan",
+        12
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7221,
-        0.65
+        0.67
+      ],
+      [
+        2076,
+        0.2
+      ],
+      [
+        2521,
+        0.2
+      ],
+      [
+        2420,
+        0.17
+      ],
+      [
+        3755,
+        0.17
       ],
       [
         2150,
         0.16
-      ],
-      [
-        2076,
-        0.16
-      ],
-      [
-        2521,
-        0.16
-      ],
-      [
-        3755,
-        0.15
-      ],
-      [
-        4663,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 58,
+      "negative": 33,
+      "trend": [
+        0.67,
+        0.78,
+        null,
+        0.2,
+        null,
+        0.33,
+        null,
+        null,
+        -0.56,
+        -0.43,
+        null,
+        null,
+        null,
+        0.71,
+        -0.14,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1956,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "tuhan",
@@ -128,12 +128,12 @@
         5
       ],
       [
-        "diselingkungan",
-        3
-      ],
-      [
         "masarakat",
         5
+      ],
+      [
+        "diselingkungan",
+        3
       ],
       [
         "kefanatikan",
@@ -144,16 +144,16 @@
         3
       ],
       [
-        "azazi",
-        3
-      ],
-      [
         "pengertian-pengertian",
         4
       ],
       [
-        "mengertikan",
+        "azazi",
         3
+      ],
+      [
+        "masasilam",
+        4
       ]
     ],
     "phrases": [
@@ -181,28 +181,60 @@
     "similar": [
       [
         7693,
-        0.57
+        0.58
       ],
       [
         3433,
-        0.57
+        0.58
       ],
       [
         6747,
-        0.22
+        0.23
       ],
       [
         4028,
+        0.2
+      ],
+      [
+        3991,
         0.19
       ],
       [
         4016,
-        0.19
-      ],
-      [
-        3991,
         0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 43,
+      "negative": 33,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          12
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4057,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "organisasi",
@@ -103,6 +103,10 @@
         24
       ],
       [
+        "organisasi",
+        36
+      ],
+      [
         "ward",
         9
       ],
@@ -111,40 +115,36 @@
         8
       ],
       [
-        "organisasi",
-        36
-      ],
-      [
         "otoritas",
         16
-      ],
-      [
-        "swiss",
-        8
-      ],
-      [
-        "kanton",
-        5
       ],
       [
         "pekerja",
         18
       ],
       [
-        "melman",
-        3
-      ],
-      [
-        "coventry",
-        3
+        "swiss",
+        8
       ],
       [
         "industri",
         15
       ],
       [
+        "sosial",
+        23
+      ],
+      [
+        "teori",
+        14
+      ],
+      [
         "kontrol",
         12
+      ],
+      [
+        "kanton",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2420,
-        0.18
+        0.23
       ],
       [
         6730,
-        0.14
+        0.22
       ],
       [
         2203,
-        0.14
+        0.22
       ],
       [
         2256,
-        0.14
+        0.2
+      ],
+      [
+        2596,
+        0.19
       ],
       [
         2313,
-        0.13
-      ],
-      [
-        4675,
-        0.12
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 67,
+      "negative": 31,
+      "trend": [
+        0.33,
+        -0.25,
+        0.25,
+        null,
+        null,
+        0.33,
+        0.27,
+        0.25,
+        0,
+        1,
+        0.78,
+        null,
+        null,
+        1,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1167,
-    "longer_than": 15,
+    "longer_than": 54,
     "top": [
       [
         "buku",
@@ -118,8 +118,16 @@
         10
       ],
       [
+        "buku",
+        23
+      ],
+      [
         "desainer",
         5
+      ],
+      [
+        "tangan",
+        17
       ],
       [
         "umbinya",
@@ -140,14 +148,6 @@
       [
         "editor",
         7
-      ],
-      [
-        "buku",
-        23
-      ],
-      [
-        "perbukuan",
-        3
       ]
     ],
     "phrases": [
@@ -184,6 +184,24 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        15588,
+        0.16
+      ],
+      [
+        5535,
+        0.12
+      ],
+      [
+        3557,
+        0.11
+      ],
+      [
+        1712,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

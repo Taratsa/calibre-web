@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3618,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "hak",
@@ -108,6 +108,14 @@
         44
       ],
       [
+        "agama",
+        58
+      ],
+      [
+        "hak",
+        76
+      ],
+      [
         "pasal",
         38
       ],
@@ -116,36 +124,28 @@
         31
       ],
       [
-        "elsam",
-        15
+        "kebebasan",
+        36
       ],
       [
-        "agama",
-        58
+        "elsam",
+        15
       ],
       [
         "beragama",
         22
       ],
       [
-        "hak",
-        76
+        "hukum",
+        27
       ],
       [
-        "kebebasan",
-        36
+        "negara",
+        34
       ],
       [
-        "puu-xv",
-        4
-      ],
-      [
-        "internum",
-        5
-      ],
-      [
-        "berkeyakinan",
-        9
+        "manusia",
+        35
       ]
     ],
     "phrases": [
@@ -185,28 +185,52 @@
     "similar": [
       [
         8172,
-        0.36
+        0.39
       ],
       [
         8843,
+        0.36
+      ],
+      [
+        9028,
         0.34
       ],
       [
         9091,
-        0.31
-      ],
-      [
-        9028,
-        0.31
+        0.34
       ],
       [
         8276,
-        0.29
+        0.32
       ],
       [
         8592,
-        0.29
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.63,
+      "positive": 80,
+      "negative": 18,
+      "trend": [
+        null,
+        -0.2,
+        null,
+        null,
+        null,
+        0.6,
+        0.67,
+        1,
+        0.8,
+        0.71,
+        null,
+        0.5,
+        null,
+        1,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

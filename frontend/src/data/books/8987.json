@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3096,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "hak",
@@ -101,6 +101,10 @@
         27
       ],
       [
+        "korban",
+        37
+      ],
+      [
         "pelindungan",
         15
       ],
@@ -109,40 +113,36 @@
         25
       ],
       [
-        "disabilitas",
-        13
+        "hak",
+        46
       ],
       [
         "penyiksaan",
         17
       ],
       [
-        "korban",
-        37
-      ],
-      [
-        "lnham",
-        6
+        "disabilitas",
+        13
       ],
       [
         "pelanggaran",
         20
       ],
       [
-        "kerusuhan",
-        14
+        "lnham",
+        6
       ],
       [
-        "penyandang",
-        9
+        "kerusuhan",
+        14
       ],
       [
         "penangkapan",
         14
       ],
       [
-        "agustus-september",
-        5
+        "kekerasan",
+        20
       ]
     ],
     "phrases": [
@@ -182,28 +182,69 @@
     "similar": [
       [
         9031,
-        0.34
+        0.36
       ],
       [
         9093,
-        0.32
+        0.35
       ],
       [
         8795,
-        0.3
-      ],
-      [
-        9034,
-        0.26
-      ],
-      [
-        8805,
-        0.25
+        0.33
       ],
       [
         9105,
-        0.25
+        0.29
+      ],
+      [
+        8805,
+        0.29
+      ],
+      [
+        9034,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.39,
+      "positive": 54,
+      "negative": 124,
+      "trend": [
+        -0.75,
+        null,
+        -0.78,
+        -1,
+        -0.47,
+        -0.33,
+        -0.41,
+        -0.27,
+        -0.56,
+        0.1,
+        -0.85,
+        -0.38,
+        -0.14,
+        0.25,
+        -0.6,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          45
+        ],
+        [
+          "fear",
+          31
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "sadness",
+          9
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3528,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "koperasi",
@@ -103,48 +103,48 @@
         143
       ],
       [
-        "kud",
-        9
-      ],
-      [
         "ekonomi",
         41
       ],
       [
-        "kerakyatan",
-        10
-      ],
-      [
-        "hatta",
-        12
-      ],
-      [
-        "kredit",
-        12
-      ],
-      [
-        "swasono",
-        4
-      ],
-      [
-        "kopcrasi",
-        3
+        "kud",
+        9
       ],
       [
         "rakyat",
         28
       ],
       [
+        "hatta",
+        12
+      ],
+      [
+        "kerakyatan",
+        10
+      ],
+      [
         "usaha",
         26
+      ],
+      [
+        "kredit",
+        12
       ],
       [
         "perdagangan",
         12
       ],
       [
-        "berkoperasi",
-        3
+        "pemerintah",
+        20
+      ],
+      [
+        "swasono",
+        4
+      ],
+      [
+        "indonesia",
+        30
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8559,
-        0.25
+        0.28
       ],
       [
         8669,
+        0.21
+      ],
+      [
+        8749,
+        0.19
+      ],
+      [
+        8618,
         0.19
       ],
       [
         9295,
-        0.16
+        0.19
       ],
       [
         8709,
-        0.15
-      ],
-      [
-        8596,
-        0.15
-      ],
-      [
-        6719,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.75,
+      "positive": 104,
+      "negative": 15,
+      "trend": [
+        null,
+        1,
+        null,
+        0.6,
+        1,
+        0.4,
+        0.8,
+        0.33,
+        1,
+        0.88,
+        0.43,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

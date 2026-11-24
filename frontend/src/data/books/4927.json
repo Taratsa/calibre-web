@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 9090,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "sedjarah",
@@ -99,16 +99,20 @@
         134
       ],
       [
-        "ilmu-sedjarah",
-        23
-      ],
-      [
         "doctor",
         49
       ],
       [
+        "ilmu-sedjarah",
+        23
+      ],
+      [
         "promotor",
         24
+      ],
+      [
+        "rakjat",
+        37
       ],
       [
         "honoris",
@@ -119,24 +123,20 @@
         13
       ],
       [
-        "rakjat",
-        37
-      ],
-      [
-        "wijsgeerig-materialisme",
-        10
-      ],
-      [
-        "anti-these",
-        10
+        "jaitu",
+        28
       ],
       [
         "causa",
         18
       ],
       [
-        "jaitu",
-        28
+        "didalam",
+        38
+      ],
+      [
+        "kapitalisme",
+        41
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         7618,
-        0.26
+        0.28
       ],
       [
         742,
-        0.2
-      ],
-      [
-        680,
-        0.18
-      ],
-      [
-        8771,
-        0.18
+        0.22
       ],
       [
         748,
-        0.18
+        0.21
+      ],
+      [
+        8771,
+        0.21
+      ],
+      [
+        680,
+        0.21
       ],
       [
         6799,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 72,
+      "negative": 58,
+      "trend": [
+        0.67,
+        0.6,
+        null,
+        null,
+        null,
+        null,
+        -0.62,
+        0.33,
+        0.5,
+        0.33,
+        0.6,
+        0.27,
+        -0.78,
+        1,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

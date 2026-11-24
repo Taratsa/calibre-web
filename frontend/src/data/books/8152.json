@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 3475,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "sawit",
@@ -111,44 +111,44 @@
         50
       ],
       [
-        "rspo",
-        11
-      ],
-      [
         "perkebunan",
         27
       ],
       [
-        "produktivitas",
-        17
-      ],
-      [
-        "cpo",
-        9
-      ],
-      [
-        "ispo",
-        7
-      ],
-      [
-        "kebijakan",
-        32
+        "rspo",
+        11
       ],
       [
         "izin",
         36
       ],
       [
-        "gambut",
-        10
+        "kebijakan",
+        32
+      ],
+      [
+        "produktivitas",
+        17
+      ],
+      [
+        "hutan",
+        30
+      ],
+      [
+        "lahan",
+        23
       ],
       [
         "tindih",
         15
       ],
       [
-        "inpres",
-        11
+        "cpo",
+        9
+      ],
+      [
+        "gambut",
+        10
       ]
     ],
     "phrases": [
@@ -187,29 +187,36 @@
     ],
     "similar": [
       [
-        8202,
-        0.26
+        8194,
+        0.28
       ],
       [
-        8194,
-        0.26
+        8202,
+        0.27
       ],
       [
         6814,
-        0.22
-      ],
-      [
-        8151,
-        0.21
+        0.25
       ],
       [
         8548,
-        0.2
+        0.24
       ],
       [
-        8201,
-        0.19
+        9145,
+        0.22
+      ],
+      [
+        8182,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 53,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

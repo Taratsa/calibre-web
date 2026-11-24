@@ -1,0 +1,86 @@
+{
+  "id": 15054,
+  "title": "RaspberryOS: install",
+  "slug": "raspberryos-install-onno-widodo-purbo",
+  "slugBase": "raspberryos-install-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2022-06-20",
+  "timestamp": "2026-11-23 23:55:44.768925",
+  "last_modified": "2026-11-23 23:55:44.768930",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:37b1660f-6b77-5537-9afa-6e1296c72152"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/15054?v=1795452944",
+  "cover_og_url": "/cover/15054/og?v=1795452944",
+  "url": "/book/raspberryos-install-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://www.raspberrypi.com/software/ Masukan MicroSD Buang semua partisi fdisk /dev/sdb d d d w Install menggunakan sudo snap install rpi-imager # sudo apt install rpi-imager Sebagai user biasa jalankan rpi-imager Referensi https://www.raspberrypi.com/software/",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2140,
+      "name": "RaspberryOS_ install - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 51,
+    "longer_than": 7,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        15178,
+        0.75
+      ],
+      [
+        14350,
+        0.72
+      ],
+      [
+        15085,
+        0.72
+      ],
+      [
+        13423,
+        0.67
+      ],
+      [
+        14776,
+        0.62
+      ],
+      [
+        14471,
+        0.57
+      ]
+    ],
+    "sentiment": null
+  }
+}

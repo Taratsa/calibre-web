@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8333,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "buruh",
@@ -107,44 +107,44 @@
         215
       ],
       [
+        "indonesia",
+        133
+      ],
+      [
         "penyiksaan",
         33
+      ],
+      [
+        "perempuan",
+        70
+      ],
+      [
+        "kerja",
+        78
       ],
       [
         "agensi",
         19
       ],
       [
-        "perekrut",
-        12
-      ],
-      [
         "saudi",
         20
       ],
       [
-        "terminal",
-        21
+        "perekrut",
+        12
       ],
       [
-        "deportasi",
-        15
-      ],
-      [
-        "kopbumi",
-        9
-      ],
-      [
-        "pjtki",
-        10
+        "tenaga",
+        51
       ],
       [
         "malaysia",
         29
       ],
       [
-        "perempuan",
-        70
+        "negeri",
+        60
       ]
     ],
     "phrases": [
@@ -184,28 +184,73 @@
     "similar": [
       [
         8780,
-        0.38
+        0.41
       ],
       [
         8839,
-        0.22
+        0.25
       ],
       [
         8801,
-        0.21
+        0.23
       ],
       [
         67,
-        0.2
+        0.23
       ],
       [
         8807,
-        0.2
+        0.23
       ],
       [
         8786,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.21,
+      "positive": 108,
+      "negative": 167,
+      "trend": [
+        -0.4,
+        0.25,
+        -0.27,
+        0,
+        -0.4,
+        -0.82,
+        -0.5,
+        -0.11,
+        -0.25,
+        0.6,
+        0,
+        -0.38,
+        -0.22,
+        0.42,
+        -0.38,
+        -0.27
+      ],
+      "emotions": [
+        [
+          "fear",
+          42
+        ],
+        [
+          "anger",
+          19
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

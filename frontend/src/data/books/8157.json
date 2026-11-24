@@ -62,7 +62,7 @@
   ],
   "text": {
     "words": 12182,
-    "longer_than": 65,
+    "longer_than": 83,
     "top": [
       [
         "gender",
@@ -135,32 +135,32 @@
         34
       ],
       [
-        "inclusive",
-        42
+        "perusahaan",
+        112
       ],
       [
-        "bave",
-        27
+        "inclusive",
+        42
       ],
       [
         "company",
         64
       ],
       [
-        "lgbti",
-        23
+        "bave",
+        27
+      ],
+      [
+        "workers",
+        50
       ],
       [
         "diversity",
         42
       ],
       [
-        "perusahaan",
-        112
-      ],
-      [
-        "workers",
-        50
+        "lgbti",
+        23
       ]
     ],
     "phrases": [
@@ -199,11 +199,11 @@
     ],
     "similar": [
       [
-        8184,
+        9048,
         0.2
       ],
       [
-        9048,
+        8184,
         0.2
       ],
       [
@@ -215,13 +215,14 @@
         0.17
       ],
       [
-        8269,
+        8270,
         0.16
       ],
       [
-        8716,
-        0.15
+        8269,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 10277,
-    "longer_than": 62,
+    "longer_than": 81,
     "top": [
       [
         "lesbian",
@@ -128,36 +128,36 @@
         12
       ],
       [
-        "hotline",
-        13
-      ],
-      [
         "pos",
         26
+      ],
+      [
+        "hotline",
+        13
       ],
       [
         "rrasyarakat",
         6
       ],
       [
-        "layangtan",
-        6
-      ],
-      [
-        "cowot",
-        5
+        "foto",
+        21
       ],
       [
         "homo",
         12
       ],
       [
-        "sorat",
+        "layangtan",
         6
       ],
       [
-        "toresponden",
-        5
+        "kotak",
+        17
+      ],
+      [
+        "hobi",
+        12
       ]
     ],
     "phrases": [
@@ -197,28 +197,77 @@
     "similar": [
       [
         3341,
-        0.4
+        0.42
       ],
       [
         3339,
-        0.37
+        0.39
       ],
       [
         3342,
-        0.33
+        0.35
       ],
       [
         3847,
-        0.32
+        0.34
       ],
       [
         3338,
-        0.31
+        0.33
       ],
       [
-        3879,
-        0.3
+        3878,
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 135,
+      "negative": 47,
+      "trend": [
+        null,
+        0.62,
+        0.65,
+        0.33,
+        0.6,
+        0,
+        0.41,
+        1,
+        0.6,
+        0,
+        0.33,
+        0.43,
+        0.14,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          34
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2833,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "buruh",
@@ -116,16 +116,16 @@
         20
       ],
       [
-        "pengangguran",
-        15
-      ],
-      [
-        "bbm",
-        9
-      ],
-      [
         "upah",
         21
+      ],
+      [
+        "industri",
+        23
+      ],
+      [
+        "pengangguran",
+        15
       ],
       [
         "kenaikan",
@@ -136,12 +136,12 @@
         12
       ],
       [
-        "phk",
+        "bbm",
         9
       ],
       [
-        "industri",
-        23
+        "phk",
+        9
       ],
       [
         "nominal",
@@ -185,28 +185,35 @@
     "similar": [
       [
         5872,
-        0.65
+        0.66
       ],
       [
         5869,
-        0.39
+        0.42
       ],
       [
         5874,
-        0.38
+        0.4
       ],
       [
         6781,
-        0.36
+        0.4
       ],
       [
         5893,
-        0.36
+        0.4
       ],
       [
         5888,
-        0.36
+        0.4
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 34,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

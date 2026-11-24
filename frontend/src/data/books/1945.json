@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4470,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "anarchism",
@@ -121,24 +121,20 @@
         14
       ],
       [
-        "anarcho",
-        9
-      ],
-      [
         "form",
         21
       ],
       [
-        "struggle",
-        16
+        "anarcho",
+        9
       ],
       [
         "political",
         21
       ],
       [
-        "anarcho-syndicalist",
-        7
+        "struggle",
+        16
       ],
       [
         "workers",
@@ -149,8 +145,12 @@
         9
       ],
       [
-        "considered",
-        13
+        "anarcho-syndicalist",
+        7
+      ],
+      [
+        "anarchist",
+        15
       ]
     ],
     "phrases": [
@@ -190,28 +190,29 @@
     "similar": [
       [
         1463,
-        0.28
+        0.29
       ],
       [
         2346,
-        0.27
+        0.29
       ],
       [
         3896,
-        0.25
+        0.27
       ],
       [
         4895,
-        0.23
+        0.25
       ],
       [
         6292,
-        0.22
+        0.23
       ],
       [
         3112,
-        0.21
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

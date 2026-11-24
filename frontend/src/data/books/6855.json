@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 29995,
-    "longer_than": 85,
+    "longer_than": 93,
     "top": [
       [
         "masyarakat",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "kiri",
+        193
+      ],
+      [
         "teknologi",
         194
       ],
@@ -107,40 +111,36 @@
         253
       ],
       [
-        "kiri",
-        193
-      ],
-      [
-        "tersosialisasi",
-        28
-      ],
-      [
-        "psikologis",
-        60
-      ],
-      [
         "masyarakat",
         281
       ],
       [
-        "industri-teknologi",
-        15
-      ],
-      [
-        "paragraf",
-        42
-      ],
-      [
-        "industri",
-        88
+        "manusia",
+        211
       ],
       [
         "kaum",
         138
       ],
       [
+        "orang",
+        242
+      ],
+      [
         "kekuasaan",
         127
+      ],
+      [
+        "tersosialisasi",
+        28
+      ],
+      [
+        "industri",
+        88
+      ],
+      [
+        "psikologis",
+        60
       ],
       [
         "kebebasan",
@@ -184,28 +184,81 @@
     "similar": [
       [
         4698,
-        0.4
+        0.45
       ],
       [
         2148,
-        0.39
+        0.44
       ],
       [
         2347,
-        0.22
+        0.28
       ],
       [
         4873,
-        0.21
+        0.28
       ],
       [
         2132,
-        0.21
+        0.28
       ],
       [
-        2253,
-        0.18
+        2631,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 747,
+      "negative": 518,
+      "trend": [
+        0.02,
+        -0.04,
+        0.1,
+        0.36,
+        -0.21,
+        0.44,
+        0.38,
+        0.41,
+        0.36,
+        0.25,
+        0.07,
+        -0.11,
+        0.29,
+        0.08,
+        0.59,
+        0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          123
+        ],
+        [
+          "trust",
+          63
+        ],
+        [
+          "sadness",
+          54
+        ],
+        [
+          "fear",
+          36
+        ],
+        [
+          "joy",
+          26
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

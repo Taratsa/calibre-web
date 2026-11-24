@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2183,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "solidaritas",
@@ -110,6 +110,10 @@
         29
       ],
       [
+        "aksi",
+        20
+      ],
+      [
         "cells",
         6
       ],
@@ -118,24 +122,24 @@
         6
       ],
       [
-        "aksi",
-        20
-      ],
-      [
         "tahanan",
         9
       ],
       [
-        "kritisisme",
-        4
+        "revolusioner",
+        10
       ],
       [
         "represi",
         7
       ],
       [
-        "revolusioner",
-        10
+        "kritisisme",
+        4
+      ],
+      [
+        "anarkis",
+        7
       ],
       [
         "teritori",
@@ -146,12 +150,8 @@
         5
       ],
       [
-        "anarkis",
-        7
-      ],
-      [
-        "subversif",
-        4
+        "anti",
+        8
       ]
     ],
     "phrases": [
@@ -187,28 +187,52 @@
     "similar": [
       [
         8016,
-        0.26
+        0.29
       ],
       [
         3770,
-        0.24
+        0.28
+      ],
+      [
+        2730,
+        0.22
+      ],
+      [
+        8015,
+        0.2
+      ],
+      [
+        7107,
+        0.2
       ],
       [
         2161,
         0.2
-      ],
-      [
-        7112,
-        0.19
-      ],
-      [
-        2730,
-        0.18
-      ],
-      [
-        8015,
-        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.12,
+      "positive": 35,
+      "negative": 45,
+      "trend": [
+        null,
+        null,
+        -0.8,
+        0.33,
+        -0.5,
+        0.33,
+        null,
+        -0.2,
+        -0.33,
+        -0.33,
+        null,
+        null,
+        0,
+        null,
+        0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

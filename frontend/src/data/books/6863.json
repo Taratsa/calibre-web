@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1328,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "engkau",
@@ -99,27 +99,15 @@
     ],
     "distinct": [
       [
-        "keheningan",
-        11
-      ],
-      [
         "engkau",
         17
       ],
       [
+        "keheningan",
+        11
+      ],
+      [
         "blanchot",
-        4
-      ],
-      [
-        "senopati",
-        3
-      ],
-      [
-        "interupsi",
-        3
-      ],
-      [
-        "matamu",
         4
       ],
       [
@@ -127,7 +115,15 @@
         6
       ],
       [
-        "leave",
+        "senopati",
+        3
+      ],
+      [
+        "matamu",
+        4
+      ],
+      [
+        "interupsi",
         3
       ],
       [
@@ -135,40 +131,49 @@
         3
       ],
       [
+        "leave",
+        3
+      ],
+      [
         "ekspresi",
         4
       ],
       [
-        "video",
+        "momen",
         3
       ],
       [
-        "momen",
+        "diriku",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        14912,
+        0.14
+      ],
+      [
+        9338,
+        0.14
+      ],
+      [
         7447,
         0.14
       ],
       [
-        1968,
-        0.12
+        6837,
+        0.14
       ],
       [
-        6837,
-        0.11
+        1968,
+        0.13
       ],
       [
         137,
-        0.11
-      ],
-      [
-        2434,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

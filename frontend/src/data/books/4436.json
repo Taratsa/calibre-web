@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1145,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "pengalaman",
@@ -100,24 +100,28 @@
         5
       ],
       [
-        "kongkrit",
-        7
+        "pengalaman",
+        18
       ],
       [
-        "hartoyo",
-        3
+        "kongkrit",
+        7
       ],
       [
         "seniman",
         8
       ],
       [
-        "ber-beda",
+        "seni",
+        11
+      ],
+      [
+        "hartoyo",
         3
       ],
       [
-        "pengalaman",
-        18
+        "ber-beda",
+        3
       ],
       [
         "pameran",
@@ -128,10 +132,6 @@
         5
       ],
       [
-        "seni",
-        11
-      ],
-      [
         "emosi",
         5
       ],
@@ -140,19 +140,19 @@
         4
       ],
       [
-        "plastik",
-        3
+        "kesenian",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         4180,
-        0.4
+        0.44
       ],
       [
         4315,
-        0.35
+        0.32
       ],
       [
         4228,
@@ -164,12 +164,13 @@
       ],
       [
         4570,
-        0.28
+        0.29
       ],
       [
         4196,
-        0.25
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2405,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "anarkis",
@@ -103,16 +103,16 @@
         14
       ],
       [
+        "anarkis",
+        27
+      ],
+      [
         "federalisme",
         12
       ],
       [
         "öcalan",
         10
-      ],
-      [
-        "anarkis",
-        27
       ],
       [
         "rojava",
@@ -131,20 +131,20 @@
         8
       ],
       [
-        "suriah",
-        7
-      ],
-      [
         "anarkisme",
         12
+      ],
+      [
+        "suriah",
+        7
       ],
       [
         "bakunin",
         8
       ],
       [
-        "konfederalisme",
-        5
+        "federasi",
+        9
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        7208,
-        0.34
-      ],
-      [
-        271,
-        0.33
-      ],
-      [
         3778,
         0.33
       ],
       [
+        7208,
+        0.33
+      ],
+      [
+        271,
+        0.32
+      ],
+      [
         2293,
-        0.27
+        0.28
       ],
       [
         7351,
-        0.26
+        0.28
       ],
       [
         7144,
-        0.25
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 30,
+      "negative": 34,
+      "trend": [
+        null,
+        0.33,
+        0.6,
+        -0.2,
+        null,
+        null,
+        -0.2,
+        0,
+        -0.5,
+        -0.33,
+        null,
+        null,
+        null,
+        null,
+        -0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

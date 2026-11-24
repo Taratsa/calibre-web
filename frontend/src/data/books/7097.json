@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6201,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "kerja",
@@ -110,44 +110,44 @@
         105
       ],
       [
-        "bermain",
-        27
-      ],
-      [
         "pekerjaan",
         36
       ],
       [
-        "permainan",
-        17
-      ],
-      [
-        "luang",
-        9
+        "bermain",
+        27
       ],
       [
         "pekerja",
         21
       ],
       [
-        "aktivitas-aktivitas",
-        4
+        "permainan",
+        17
       ],
       [
-        "fourier",
-        3
+        "orang",
+        41
       ],
       [
-        "bos",
-        5
+        "luang",
+        9
       ],
       [
-        "sangat-sangat",
-        3
+        "hidup",
+        31
       ],
       [
-        "hobbes",
-        3
+        "memiliki",
+        26
+      ],
+      [
+        "produksi",
+        11
+      ],
+      [
+        "penghapusan",
+        7
       ],
       [
         "menghapuskan",
@@ -191,28 +191,77 @@
     "similar": [
       [
         1977,
-        0.66
+        0.7
       ],
       [
         1989,
-        0.51
+        0.55
       ],
       [
-        7861,
-        0.16
-      ],
-      [
-        3783,
-        0.16
+        4877,
+        0.19
       ],
       [
         3981,
-        0.14
+        0.18
       ],
       [
-        2417,
-        0.13
+        7861,
+        0.18
+      ],
+      [
+        3783,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 112,
+      "negative": 90,
+      "trend": [
+        0.41,
+        0.43,
+        -0.33,
+        0.17,
+        -0.14,
+        -0.17,
+        0.05,
+        -0.8,
+        0.4,
+        -0.6,
+        0.27,
+        -0.08,
+        0.11,
+        1,
+        0.2,
+        0.88
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

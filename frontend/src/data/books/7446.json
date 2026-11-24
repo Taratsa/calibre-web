@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2815,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "papua",
@@ -122,36 +122,36 @@
         9
       ],
       [
-        "koman",
-        5
-      ],
-      [
         "anarkis",
         14
+      ],
+      [
+        "koman",
+        5
       ],
       [
         "pengacara",
         8
       ],
       [
-        "veronika",
-        3
-      ],
-      [
         "nasionalisme",
         8
       ],
       [
-        "pengalamanku",
-        4
+        "indonesia",
+        27
       ],
       [
-        "puritan",
-        4
+        "negara",
+        20
       ],
       [
-        "trikora",
-        4
+        "pembebasan",
+        10
+      ],
+      [
+        "veronika",
+        3
       ]
     ],
     "phrases": [
@@ -191,28 +191,77 @@
     "similar": [
       [
         7015,
-        0.36
+        0.4
       ],
       [
         3086,
-        0.25
+        0.28
       ],
       [
         3938,
+        0.21
+      ],
+      [
+        2561,
         0.2
       ],
       [
         4667,
-        0.17
+        0.2
       ],
       [
         2439,
-        0.17
-      ],
-      [
-        2561,
-        0.16
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 47,
+      "negative": 42,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        null,
+        null,
+        null,
+        -0.27,
+        0.71,
+        0.43,
+        -0.25,
+        0,
+        null,
+        0,
+        0.56
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

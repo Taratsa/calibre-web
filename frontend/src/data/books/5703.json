@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 7291,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "anak",
@@ -100,28 +100,36 @@
     ],
     "distinct": [
       [
-        "membacakan",
-        50
-      ],
-      [
-        "batih",
-        26
-      ],
-      [
         "strategi",
         95
       ],
       [
-        "penanyaan",
-        17
+        "membacakan",
+        50
+      ],
+      [
+        "anak",
+        146
+      ],
+      [
+        "kakak",
+        61
       ],
       [
         "interaksi",
         58
       ],
       [
-        "kakak",
-        61
+        "batih",
+        26
+      ],
+      [
+        "cerita",
+        93
+      ],
+      [
+        "penanyaan",
+        17
       ],
       [
         "airlangga",
@@ -132,20 +140,12 @@
         29
       ],
       [
-        "cerita",
-        93
+        "bahasa",
+        83
       ],
       [
-        "anak",
-        146
-      ],
-      [
-        "pengklarifikasian",
-        10
-      ],
-      [
-        "surabaya",
-        36
+        "buku",
+        78
       ]
     ],
     "phrases": [
@@ -184,29 +184,36 @@
     ],
     "similar": [
       [
+        6275,
+        0.13
+      ],
+      [
+        3488,
+        0.13
+      ],
+      [
         5633,
-        0.12
+        0.13
+      ],
+      [
+        5658,
+        0.13
       ],
       [
         910,
-        0.12
+        0.13
       ],
       [
-        6275,
-        0.11
-      ],
-      [
-        906,
-        0.1
-      ],
-      [
-        5704,
-        0.1
-      ],
-      [
-        899,
-        0.1
+        4088,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.79,
+      "positive": 60,
+      "negative": 7,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

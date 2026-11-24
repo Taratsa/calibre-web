@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3332,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "tanah",
@@ -93,24 +93,16 @@
         25
       ],
       [
-        "dik",
-        13
+        "tanah",
+        45
       ],
       [
         "padi",
         19
       ],
       [
-        "latini",
-        4
-      ],
-      [
-        "kusebutkan",
-        6
-      ],
-      [
-        "repolusi",
-        5
+        "dik",
+        13
       ],
       [
         "petani",
@@ -121,20 +113,28 @@
         21
       ],
       [
-        "diselembar",
-        3
+        "kusebutkan",
+        6
+      ],
+      [
+        "latini",
+        4
+      ],
+      [
+        "darah",
+        17
+      ],
+      [
+        "repolusi",
+        5
+      ],
+      [
+        "ditanah",
+        7
       ],
       [
         "traktor",
         6
-      ],
-      [
-        "tanah",
-        45
-      ],
-      [
-        "sendja",
-        5
       ]
     ],
     "phrases": [
@@ -154,24 +154,60 @@
     "similar": [
       [
         1568,
-        0.52
+        0.54
       ],
       [
         4886,
-        0.28
+        0.3
       ],
       [
         7651,
-        0.18
+        0.21
       ],
       [
         1288,
-        0.16
+        0.18
       ],
       [
         4531,
         0.13
+      ],
+      [
+        4879,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 31,
+      "negative": 31,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

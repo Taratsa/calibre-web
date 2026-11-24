@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 4530,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "revolusi",
@@ -99,24 +99,28 @@
         32
       ],
       [
+        "indonesia",
+        104
+      ],
+      [
         "fndonesia",
         12
-      ],
-      [
-        "rndonesia",
-        9
-      ],
-      [
-        "unra",
-        9
       ],
       [
         "djika",
         20
       ],
       [
+        "rndonesia",
+        9
+      ],
+      [
         "djuga",
         19
+      ],
+      [
+        "unra",
+        9
       ],
       [
         "masjarakat",
@@ -133,10 +137,6 @@
       [
         "jaitu",
         15
-      ],
-      [
-        "mendjadi",
-        17
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         427,
-        0.79
+        0.81
       ],
       [
         9281,
-        0.45
+        0.48
       ],
       [
         559,
-        0.31
+        0.35
       ],
       [
         6799,
-        0.3
+        0.34
       ],
       [
         4859,
-        0.29
+        0.33
       ],
       [
         590,
-        0.28
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 71,
+      "negative": 32,
+      "trend": [
+        null,
+        0.76,
+        0.33,
+        null,
+        0,
+        -0.33,
+        1,
+        0.67,
+        null,
+        0,
+        null,
+        0.6,
+        0.4,
+        0.2,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

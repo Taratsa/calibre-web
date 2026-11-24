@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3151,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "indonesia",
@@ -109,6 +109,14 @@
         17
       ],
       [
+        "indonesia",
+        82
+      ],
+      [
+        "revolusi",
+        37
+      ],
+      [
         "pki",
         23
       ],
@@ -121,20 +129,12 @@
         16
       ],
       [
-        "revolusi",
-        37
-      ],
-      [
-        "auri",
-        8
-      ],
-      [
         "sosialisme",
         16
       ],
       [
-        "wedjangan",
-        6
+        "kaum",
+        28
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         417,
-        0.45
+        0.49
       ],
       [
         419,
-        0.41
+        0.44
       ],
       [
         311,
-        0.41
+        0.44
       ],
       [
         4928,
-        0.38
+        0.41
       ],
       [
         666,
-        0.38
+        0.41
       ],
       [
         4902,
-        0.38
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.83,
+      "positive": 66,
+      "negative": 6,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

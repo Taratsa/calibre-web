@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1106,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "pemerintahan",
@@ -111,20 +111,24 @@
         9
       ],
       [
-        "otoritas",
-        6
+        "pemerintahan",
+        10
       ],
       [
         "komunis",
         6
       ],
       [
-        "marxis",
-        4
+        "otoritas",
+        6
       ],
       [
-        "pemerintahan",
-        10
+        "kiri",
+        8
+      ],
+      [
+        "marxis",
+        4
       ],
       [
         "komunisme",
@@ -135,16 +139,12 @@
         4
       ],
       [
-        "kiri",
-        8
+        "berhenti",
+        7
       ],
       [
-        "peradaban",
-        4
-      ],
-      [
-        "juta",
-        4
+        "kekuasaan",
+        7
       ]
     ],
     "phrases": [
@@ -168,28 +168,29 @@
     "similar": [
       [
         1785,
-        0.26
+        0.28
       ],
       [
         2444,
-        0.2
+        0.24
       ],
       [
-        2043,
-        0.2
+        2175,
+        0.22
       ],
       [
-        4113,
-        0.2
-      ],
-      [
-        8072,
-        0.19
+        2298,
+        0.22
       ],
       [
         3744,
-        0.19
+        0.21
+      ],
+      [
+        7241,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

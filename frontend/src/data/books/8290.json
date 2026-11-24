@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3109,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "hak",
@@ -108,32 +108,32 @@
         44
       ],
       [
-        "internet",
-        31
-      ],
-      [
-        "pengaturan",
-        24
-      ],
-      [
-        "satudunia",
-        6
+        "hak",
+        68
       ],
       [
         "cipta",
         34
       ],
       [
+        "pengaturan",
+        24
+      ],
+      [
+        "internet",
+        31
+      ],
+      [
+        "satudunia",
+        6
+      ],
+      [
         "trips",
         8
       ],
       [
-        "situs",
-        15
-      ],
-      [
-        "hak",
-        68
+        "intelektual",
+        16
       ],
       [
         "paten",
@@ -144,8 +144,8 @@
         8
       ],
       [
-        "programmer",
-        5
+        "situs",
+        15
       ]
     ],
     "phrases": [
@@ -184,29 +184,36 @@
     ],
     "similar": [
       [
+        17916,
+        0.32
+      ],
+      [
         1265,
-        0.23
+        0.24
       ],
       [
         4084,
-        0.21
+        0.22
       ],
       [
         1754,
-        0.2
+        0.21
       ],
       [
         8685,
-        0.15
+        0.16
       ],
       [
-        4092,
+        17917,
         0.15
-      ],
-      [
-        4089,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 50,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -13,7 +13,7 @@
   "tags": [
     "Big Data",
     "Data Privasi",
-    "internet"
+    "Internet"
   ],
   "publisher": {
     "id": 753,
@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 14505,
-    "longer_than": 70,
+    "longer_than": 85,
     "top": [
       [
         "data",
@@ -105,24 +105,20 @@
         492
       ],
       [
-        "surveillance",
-        39
+        "personal",
+        83
       ],
       [
-        "privacy",
-        37
+        "surveillance",
+        39
       ],
       [
         "collection",
         48
       ],
       [
-        "personal",
-        83
-      ],
-      [
-        "card",
-        31
+        "privacy",
+        37
       ],
       [
         "protection",
@@ -133,19 +129,23 @@
         34
       ],
       [
-        "devices",
-        23
+        "law",
+        45
       ],
       [
-        "registration",
-        23
+        "human",
+        46
       ],
       [
-        "process",
-        37
+        "government",
+        38
       ],
       [
-        "systems",
+        "social",
+        49
+      ],
+      [
+        "population",
         30
       ]
     ],
@@ -190,24 +190,25 @@
       ],
       [
         8284,
-        0.28
-      ],
-      [
-        8305,
         0.27
       ],
       [
+        8305,
+        0.26
+      ],
+      [
         8300,
-        0.24
+        0.23
       ],
       [
         9048,
-        0.21
+        0.22
       ],
       [
-        6942,
-        0.2
+        8184,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

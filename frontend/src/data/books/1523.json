@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 2721,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "cut",
@@ -113,11 +113,15 @@
         11
       ],
       [
+        "pameran",
+        19
+      ],
+      [
         "ruangrupa",
         8
       ],
       [
-        "pameran",
+        "kesedihan",
         19
       ],
       [
@@ -129,20 +133,16 @@
         5
       ],
       [
-        "iswanto",
-        6
-      ],
-      [
         "ray",
         11
       ],
       [
-        "kesedihan",
-        19
+        "iswanto",
+        6
       ],
       [
-        "paste",
-        7
+        "jakarta",
+        29
       ]
     ],
     "phrases": [
@@ -182,28 +182,48 @@
     "similar": [
       [
         310,
-        0.16
+        0.17
+      ],
+      [
+        4196,
+        0.15
       ],
       [
         4570,
-        0.14
+        0.15
       ],
       [
         2816,
         0.13
       ],
       [
-        4540,
+        19404,
         0.13
       ],
       [
         4500,
         0.13
-      ],
-      [
-        4196,
-        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 26,
+      "negative": 39,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          30
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

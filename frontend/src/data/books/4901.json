@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 8272,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "partai",
@@ -126,28 +126,28 @@
         37
       ],
       [
-        "pemilih-pemilih",
-        13
+        "politik",
+        84
       ],
       [
         "djuga",
         36
       ],
       [
-        "djika",
-        31
-      ],
-      [
-        "konstituante",
-        18
-      ],
-      [
         "persatuan",
         49
       ],
       [
-        "supaja",
-        25
+        "djika",
+        31
+      ],
+      [
+        "pemilih-pemilih",
+        13
+      ],
+      [
+        "parlemen",
+        32
       ]
     ],
     "phrases": [
@@ -187,28 +187,77 @@
     "similar": [
       [
         6742,
-        0.68
+        0.7
       ],
       [
         6291,
-        0.43
+        0.47
       ],
       [
         7836,
-        0.38
+        0.42
       ],
       [
         6799,
-        0.37
+        0.41
       ],
       [
         6689,
-        0.36
+        0.4
       ],
       [
         461,
-        0.36
+        0.4
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 179,
+      "negative": 62,
+      "trend": [
+        0.75,
+        0.15,
+        0.54,
+        0.16,
+        0.36,
+        0.6,
+        0.8,
+        0.22,
+        1,
+        0.83,
+        0,
+        0.29,
+        0.71,
+        1,
+        1,
+        0.73
+      ],
+      "emotions": [
+        [
+          "joy",
+          47
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

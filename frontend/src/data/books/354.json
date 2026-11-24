@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2017,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "seksual",
@@ -89,10 +89,6 @@
     ],
     "distinct": [
       [
-        "wfh",
-        30
-      ],
-      [
         "pelecehan",
         66
       ],
@@ -101,8 +97,8 @@
         76
       ],
       [
-        "safenet",
-        8
+        "wfh",
+        30
       ],
       [
         "korban",
@@ -113,28 +109,32 @@
         29
       ],
       [
-        "rekomendasi",
-        13
+        "kerja",
+        40
+      ],
+      [
+        "safenet",
+        8
       ],
       [
         "praktik",
         17
       ],
       [
-        "kerja",
-        40
+        "rekomendasi",
+        13
       ],
       [
-        "app",
-        6
-      ],
-      [
-        "hrd",
-        5
+        "perusahaan",
+        17
       ],
       [
         "rekan",
         10
+      ],
+      [
+        "hrd",
+        5
       ]
     ],
     "phrases": [
@@ -178,7 +178,11 @@
       ],
       [
         355,
-        0.19
+        0.2
+      ],
+      [
+        351,
+        0.2
       ],
       [
         352,
@@ -186,16 +190,19 @@
       ],
       [
         350,
-        0.18
+        0.19
       ],
       [
-        351,
+        5860,
         0.18
-      ],
-      [
-        364,
-        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 37,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

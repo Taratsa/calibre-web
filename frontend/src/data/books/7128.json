@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1941,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "anarkis",
@@ -118,40 +118,40 @@
         14
       ],
       [
+        "gerakan",
+        20
+      ],
+      [
         "corona",
         4
       ],
       [
-        "pandemi",
-        5
+        "masyarakat",
+        18
       ],
       [
-        "militan",
-        6
-      ],
-      [
-        "gerakan",
-        20
+        "sosial",
+        16
       ],
       [
         "jalanan",
         8
       ],
       [
-        "elit",
+        "militan",
         6
       ],
       [
-        "lives",
-        4
-      ],
-      [
-        "virus",
-        4
+        "pandemi",
+        5
       ],
       [
         "kulit",
         10
+      ],
+      [
+        "politik",
+        13
       ]
     ],
     "phrases": [
@@ -190,29 +190,36 @@
     ],
     "similar": [
       [
-        2288,
-        0.21
-      ],
-      [
-        7130,
-        0.2
-      ],
-      [
-        2571,
-        0.2
-      ],
-      [
         2758,
-        0.2
+        0.24
       ],
       [
         1762,
-        0.18
+        0.22
       ],
       [
         4867,
-        0.17
+        0.21
+      ],
+      [
+        7223,
+        0.2
+      ],
+      [
+        7911,
+        0.2
+      ],
+      [
+        2064,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 33,
+      "negative": 35,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

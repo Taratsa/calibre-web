@@ -64,7 +64,7 @@
   ],
   "text": {
     "words": 3114,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "anak",
@@ -125,32 +125,32 @@
         48
       ],
       [
-        "kartu",
-        34
+        "anak",
+        111
       ],
       [
         "cerita",
         60
       ],
       [
-        "anak",
-        111
+        "kartu",
+        34
       ],
       [
-        "evaluasi",
-        21
+        "buku",
+        70
       ],
       [
         "permainan",
         29
       ],
       [
-        "dikmas",
-        7
+        "evaluasi",
+        21
       ],
       [
-        "begibung",
-        5
+        "kegiatan",
+        37
       ],
       [
         "pembelajaran",
@@ -161,8 +161,8 @@
         14
       ],
       [
-        "paud",
-        9
+        "dikmas",
+        7
       ]
     ],
     "phrases": [
@@ -202,28 +202,52 @@
     "similar": [
       [
         5384,
-        0.58
+        0.59
       ],
       [
         5333,
-        0.23
+        0.25
       ],
       [
         5387,
+        0.2
+      ],
+      [
+        888,
         0.18
       ],
       [
         868,
-        0.16
+        0.18
       ],
       [
         872,
-        0.15
-      ],
-      [
-        891,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.7,
+      "positive": 75,
+      "negative": 13,
+      "trend": [
+        null,
+        0.71,
+        0.71,
+        1,
+        1,
+        0.4,
+        null,
+        0.86,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

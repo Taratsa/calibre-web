@@ -1,0 +1,184 @@
+{
+  "id": 18775,
+  "title": "RAID: Data Striping",
+  "slug": "raid-data-striping-onno-widodo-purbo",
+  "slugBase": "raid-data-striping-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-02-18",
+  "timestamp": "2026-11-24 04:39:51.686417",
+  "last_modified": "2026-11-24 04:39:51.686422",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:ffc89066-3e78-5342-9629-38da782a023b"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/18775?v=1795469991",
+  "cover_og_url": "/cover/18775/og?v=1795469991",
+  "url": "/book/raid-data-striping-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Dasar dari teknik RAID adalah \"striping\", sebuah metoda untuk menyatukan beberapa harddisk untuk menjadi sebuah harddisk virtual. Striping pada dasarnya membuat partisi pada setiap harddisk menjadi banyak stripe (potongan kecil) yang mulai dari 512byte atau beberapa megabyte. Masing-masing stripe ini akan di tumpuk satu sama lain secara berputar / bergilir antar harddisk , oleh karena itu",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3921,
+      "name": "RAID_ Data Striping - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 566,
+    "longer_than": 42,
+    "top": [
+      [
+        "harddisk",
+        38
+      ],
+      [
+        "akses",
+        10
+      ],
+      [
+        "kumpulan",
+        10
+      ],
+      [
+        "data",
+        9
+      ],
+      [
+        "operasi",
+        9
+      ],
+      [
+        "record",
+        6
+      ],
+      [
+        "stripe",
+        6
+      ],
+      [
+        "striping",
+        6
+      ],
+      [
+        "pendek",
+        4
+      ],
+      [
+        "strip",
+        4
+      ],
+      [
+        "beban",
+        3
+      ],
+      [
+        "file",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "harddisk",
+        38
+      ],
+      [
+        "striping",
+        6
+      ],
+      [
+        "stripe",
+        6
+      ],
+      [
+        "kumpulan",
+        10
+      ],
+      [
+        "record",
+        6
+      ],
+      [
+        "operasi",
+        9
+      ],
+      [
+        "strip",
+        4
+      ],
+      [
+        "akses",
+        10
+      ],
+      [
+        "overlap",
+        3
+      ],
+      [
+        "raid",
+        3
+      ],
+      [
+        "data",
+        9
+      ],
+      [
+        "performance",
+        3
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        18816,
+        0.46
+      ],
+      [
+        18777,
+        0.44
+      ],
+      [
+        18793,
+        0.42
+      ],
+      [
+        18780,
+        0.42
+      ],
+      [
+        18798,
+        0.4
+      ],
+      [
+        18796,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
+}

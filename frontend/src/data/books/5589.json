@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 4503,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "guasa",
@@ -121,32 +121,32 @@
         22
       ],
       [
-        "silitonga",
-        19
-      ],
-      [
-        "martua",
-        16
-      ],
-      [
         "raja",
         67
+      ],
+      [
+        "silitonga",
+        19
       ],
       [
         "ayah",
         48
       ],
       [
+        "martua",
+        16
+      ],
+      [
         "asman",
         11
       ],
       [
-        "partangisan",
-        7
+        "desa",
+        39
       ],
       [
-        "uda",
-        12
+        "partangisan",
+        7
       ]
     ],
     "phrases": [
@@ -190,24 +190,77 @@
       ],
       [
         5555,
+        0.21
+      ],
+      [
+        5408,
         0.16
       ],
       [
         8750,
-        0.14
-      ],
-      [
-        5408,
-        0.12
+        0.16
       ],
       [
         5147,
-        0.12
+        0.16
       ],
       [
-        5050,
-        0.12
+        3470,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 83,
+      "negative": 42,
+      "trend": [
+        0.33,
+        0.54,
+        0.64,
+        1,
+        -0.67,
+        null,
+        -0.14,
+        0.65,
+        -0.4,
+        0.33,
+        -0.2,
+        -0.71,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          13
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 8744,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "history",
@@ -113,28 +113,28 @@
         28
       ],
       [
-        "a-historical",
-        8
-      ],
-      [
         "national",
         30
-      ],
-      [
-        "future",
-        23
       ],
       [
         "people",
         30
       ],
       [
-        "nation",
-        20
+        "a-historical",
+        8
+      ],
+      [
+        "future",
+        23
       ],
       [
         "life",
         26
+      ],
+      [
+        "nation",
+        20
       ]
     ],
     "phrases": [
@@ -174,7 +174,7 @@
     "similar": [
       [
         7829,
-        0.32
+        0.33
       ],
       [
         3112,
@@ -186,16 +186,17 @@
       ],
       [
         7830,
-        0.23
+        0.24
       ],
       [
         6890,
-        0.23
+        0.24
       ],
       [
         2832,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

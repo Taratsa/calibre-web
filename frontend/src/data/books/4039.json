@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 1783,
-    "longer_than": 23,
+    "longer_than": 60,
     "top": [
       [
         "kolonialisme",
@@ -109,12 +109,12 @@
         16
       ],
       [
-        "orientalisme",
-        13
-      ],
-      [
         "kolonialisme",
         32
+      ],
+      [
+        "orientalisme",
+        13
       ],
       [
         "bhaba",
@@ -133,10 +133,6 @@
         9
       ],
       [
-        "williams",
-        5
-      ],
-      [
         "studies",
         9
       ],
@@ -145,12 +141,16 @@
         6
       ],
       [
-        "diskursif",
-        4
+        "williams",
+        5
       ],
       [
-        "anti-oedipus",
-        3
+        "studi",
+        11
+      ],
+      [
+        "wacana",
+        9
       ]
     ],
     "phrases": [
@@ -190,28 +190,29 @@
     "similar": [
       [
         4038,
-        0.18
+        0.2
       ],
       [
         4037,
-        0.13
+        0.15
       ],
       [
         4042,
-        0.13
+        0.14
       ],
       [
         4041,
-        0.12
+        0.13
       ],
       [
         4040,
-        0.11
+        0.13
       ],
       [
-        4088,
-        0.1
+        16863,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

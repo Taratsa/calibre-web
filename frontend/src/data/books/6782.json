@@ -16,7 +16,7 @@
     "kebun",
     "Ojol",
     "tambang",
-    "upah",
+    "Upah",
     "upah minimum"
   ],
   "publisher": {
@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 6641,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "pengeluaran",
@@ -117,40 +117,40 @@
         86
       ],
       [
-        "manufaktur",
-        82
-      ],
-      [
         "industri",
         177
       ],
       [
-        "kabupaten",
-        138
+        "manufaktur",
+        82
       ],
       [
         "jenis",
         217
       ],
       [
-        "nonmakanan",
-        21
+        "kabupaten",
+        138
       ],
       [
-        "non-makanan",
-        16
+        "nonmakanan",
+        21
       ],
       [
         "biaya",
         83
       ],
       [
+        "makanan",
+        105
+      ],
+      [
         "konsumsi",
         60
       ],
       [
-        "arisan",
-        28
+        "total",
+        79
       ]
     ],
     "phrases": [
@@ -190,28 +190,29 @@
     "similar": [
       [
         5864,
-        0.28
+        0.3
       ],
       [
         8408,
-        0.22
+        0.24
       ],
       [
         6964,
-        0.15
+        0.18
       ],
       [
         5857,
+        0.16
+      ],
+      [
+        5907,
         0.15
       ],
       [
-        8058,
-        0.14
-      ],
-      [
-        2789,
-        0.14
+        8718,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4037,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "partai",
@@ -104,12 +104,20 @@
         49
       ],
       [
+        "buruh",
+        65
+      ],
+      [
+        "anggota",
+        64
+      ],
+      [
         "selfkritik",
         16
       ],
       [
-        "buruh",
-        65
+        "massa",
+        44
       ],
       [
         "calon-anggota",
@@ -120,28 +128,20 @@
         32
       ],
       [
-        "massa",
-        44
+        "organisasi",
+        50
+      ],
+      [
+        "rakyat",
+        38
       ],
       [
         "organisasi-basis",
         6
       ],
       [
-        "anggota",
-        64
-      ],
-      [
-        "organisasi",
-        50
-      ],
-      [
         "resort",
         13
-      ],
-      [
-        "konstitusi",
-        17
       ]
     ],
     "phrases": [
@@ -181,28 +181,35 @@
     "similar": [
       [
         1581,
-        0.37
+        0.4
       ],
       [
         9280,
-        0.31
-      ],
-      [
-        4595,
-        0.25
+        0.36
       ],
       [
         9273,
-        0.24
+        0.29
       ],
       [
         9276,
-        0.23
+        0.29
       ],
       [
-        4006,
-        0.19
+        4595,
+        0.27
+      ],
+      [
+        9302,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 64,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 21668,
-    "longer_than": 78,
+    "longer_than": 89,
     "top": [
       [
         "pers",
@@ -105,20 +105,16 @@
         146
       ],
       [
-        "jurnalis",
-        83
-      ],
-      [
         "hukum",
         217
       ],
       [
-        "berekspresi",
-        53
+        "jurnalis",
+        83
       ],
       [
-        "digital",
-        73
+        "kebebasan",
+        131
       ],
       [
         "pasal",
@@ -129,20 +125,24 @@
         115
       ],
       [
-        "ketenagakerjaan",
-        44
-      ],
-      [
-        "kebebasan",
-        131
-      ],
-      [
-        "jurnalistik",
-        36
+        "berekspresi",
+        53
       ],
       [
         "media",
         130
+      ],
+      [
+        "ketenagakerjaan",
+        44
+      ],
+      [
+        "digital",
+        73
+      ],
+      [
+        "jurnalistik",
+        36
       ]
     ],
     "phrases": [
@@ -182,28 +182,81 @@
     "similar": [
       [
         142,
-        0.33
+        0.37
       ],
       [
         6989,
-        0.32
+        0.35
       ],
       [
         9093,
-        0.32
+        0.35
       ],
       [
         1058,
-        0.31
+        0.33
       ],
       [
-        1052,
-        0.28
+        6955,
+        0.33
       ],
       [
-        1055,
-        0.28
+        9095,
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 402,
+      "negative": 374,
+      "trend": [
+        0.11,
+        0.26,
+        -0.38,
+        -0.43,
+        -0.1,
+        0.07,
+        -0.32,
+        -0.07,
+        0.35,
+        -0.06,
+        -0.13,
+        0.27,
+        0.57,
+        0.07,
+        -0.18,
+        0.07
+      ],
+      "emotions": [
+        [
+          "anger",
+          148
+        ],
+        [
+          "fear",
+          85
+        ],
+        [
+          "trust",
+          70
+        ],
+        [
+          "anticipation",
+          14
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

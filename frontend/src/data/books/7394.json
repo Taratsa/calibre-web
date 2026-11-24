@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1636,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "kerja",
@@ -118,23 +118,19 @@
         17
       ],
       [
-        "pasar",
-        15
-      ],
-      [
-        "privilese",
-        4
-      ],
-      [
         "kerja",
         21
+      ],
+      [
+        "pasar",
+        15
       ],
       [
         "sosialis",
         7
       ],
       [
-        "libertarian",
+        "privilese",
         4
       ],
       [
@@ -142,16 +138,20 @@
         8
       ],
       [
-        "kegunaannya",
-        3
+        "bebas",
+        11
       ],
       [
-        "minimum",
-        5
+        "libertarian",
+        4
       ],
       [
-        "austria",
-        3
+        "individu",
+        8
+      ],
+      [
+        "penilaian",
+        6
       ]
     ],
     "phrases": [
@@ -186,29 +186,36 @@
     ],
     "similar": [
       [
-        4003,
-        0.13
+        3706,
+        0.19
       ],
       [
         7042,
-        0.13
+        0.18
+      ],
+      [
+        4003,
+        0.17
       ],
       [
         2282,
-        0.12
+        0.17
       ],
       [
         7393,
-        0.12
-      ],
-      [
-        7348,
-        0.11
+        0.16
       ],
       [
         2155,
-        0.11
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 36,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

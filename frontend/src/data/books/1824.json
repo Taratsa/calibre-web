@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1933,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "cinta",
@@ -103,15 +103,19 @@
         66
       ],
       [
-        "poliamor",
-        10
-      ],
-      [
         "relasi",
         34
       ],
       [
+        "poliamor",
+        10
+      ],
+      [
         "kekasih",
+        14
+      ],
+      [
+        "mendadak",
         14
       ],
       [
@@ -119,32 +123,28 @@
         9
       ],
       [
-        "mendadak",
-        14
-      ],
-      [
         "pola",
         17
       ],
       [
-        "telpon",
-        5
+        "kehendak",
+        12
+      ],
+      [
+        "kebebasan",
+        14
       ],
       [
         "kekasihnya",
         6
       ],
       [
-        "genggam",
+        "telpon",
         5
       ],
       [
-        "posting",
-        4
-      ],
-      [
-        "kehendak",
-        12
+        "manusia",
+        20
       ]
     ],
     "phrases": [
@@ -184,28 +184,73 @@
     "similar": [
       [
         2413,
-        0.2
+        0.21
       ],
       [
         2407,
-        0.14
+        0.17
       ],
       [
-        1995,
-        0.14
+        19064,
+        0.15
       ],
       [
         1817,
-        0.13
-      ],
-      [
-        7273,
-        0.12
+        0.15
       ],
       [
         2193,
-        0.12
+        0.15
+      ],
+      [
+        7273,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 98,
+      "negative": 27,
+      "trend": [
+        1,
+        1,
+        0.67,
+        0.64,
+        0.6,
+        0.5,
+        null,
+        null,
+        null,
+        null,
+        -0.09,
+        0.5,
+        0.57,
+        null,
+        0.67,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          77
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1556,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "pengusaha",
@@ -111,36 +111,36 @@
         18
       ],
       [
-        "jabar",
-        7
-      ],
-      [
-        "cadang",
-        5
-      ],
-      [
-        "sazili",
-        3
-      ],
-      [
         "ham",
         13
+      ],
+      [
+        "jabar",
+        7
       ],
       [
         "komnas",
         9
       ],
       [
-        "gubernur",
-        10
-      ],
-      [
-        "danamon",
-        3
+        "cadang",
+        5
       ],
       [
         "pelanggaran",
         12
+      ],
+      [
+        "gubernur",
+        10
+      ],
+      [
+        "sazili",
+        3
+      ],
+      [
+        "danamon",
+        3
       ],
       [
         "miriam",
@@ -184,28 +184,35 @@
     "similar": [
       [
         182,
-        0.15
+        0.16
       ],
       [
         8794,
+        0.14
+      ],
+      [
+        169,
         0.13
+      ],
+      [
+        8968,
+        0.12
       ],
       [
         5901,
         0.12
       ],
       [
-        169,
+        1009,
         0.12
-      ],
-      [
-        8968,
-        0.11
-      ],
-      [
-        8805,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.21,
+      "positive": 22,
+      "negative": 34,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

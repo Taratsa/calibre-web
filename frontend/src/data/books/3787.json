@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2186,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "orang",
@@ -103,6 +103,10 @@
         3
       ],
       [
+        "kau",
+        12
+      ],
+      [
         "penerbitramu",
         3
       ],
@@ -115,23 +119,19 @@
         4
       ],
       [
-        "kau",
-        12
+        "cinta",
+        8
       ],
       [
         "apartemen",
         3
       ],
       [
+        "orang",
+        15
+      ],
+      [
         "frustrasi",
-        3
-      ],
-      [
-        "cinta",
-        8
-      ],
-      [
-        "manajer",
         3
       ],
       [
@@ -139,11 +139,11 @@
         5
       ],
       [
-        "kerumunan",
+        "manajer",
         3
       ],
       [
-        "bersaing",
+        "kerumunan",
         3
       ]
     ],
@@ -151,24 +151,85 @@
     "similar": [
       [
         2178,
-        0.45
-      ],
-      [
-        4305,
-        0.11
+        0.46
       ],
       [
         7546,
-        0.11
+        0.14
       ],
       [
-        4220,
-        0.11
+        1817,
+        0.13
       ],
       [
-        2435,
-        0.1
+        7020,
+        0.12
+      ],
+      [
+        7363,
+        0.12
+      ],
+      [
+        2743,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 41,
+      "negative": 41,
+      "trend": [
+        0.5,
+        0.75,
+        -0.71,
+        -0.6,
+        -0.25,
+        0.33,
+        0,
+        null,
+        null,
+        0.25,
+        null,
+        null,
+        0.2,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

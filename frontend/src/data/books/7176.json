@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 23952,
-    "longer_than": 80,
+    "longer_than": 90,
     "top": [
       [
         "sekolah",
@@ -106,52 +106,52 @@
     ],
     "distinct": [
       [
-        "ferrer",
-        43
-      ],
-      [
         "sekolah",
         232
+      ],
+      [
+        "ferrer",
+        43
       ],
       [
         "spanyol",
         51
       ],
       [
-        "rasional",
-        50
-      ],
-      [
-        "letin",
-        15
-      ],
-      [
         "modern",
         91
-      ],
-      [
-        "mccabe",
-        11
-      ],
-      [
-        "barcelona",
-        20
-      ],
-      [
-        "anak-anak",
-        88
-      ],
-      [
-        "dogma",
-        25
       ],
       [
         "pendidikan",
         116
       ],
       [
-        "etin",
-        10
+        "rasional",
+        50
+      ],
+      [
+        "anak-anak",
+        88
+      ],
+      [
+        "letin",
+        15
+      ],
+      [
+        "orang",
+        140
+      ],
+      [
+        "anak",
+        84
+      ],
+      [
+        "manusia",
+        90
+      ],
+      [
+        "pengetahuan",
+        66
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         8055,
-        0.44
+        0.46
       ],
       [
         2727,
-        0.24
+        0.3
       ],
       [
         2420,
-        0.21
+        0.27
       ],
       [
         2482,
-        0.19
+        0.26
       ],
       [
         4877,
-        0.19
+        0.26
       ],
       [
         2631,
-        0.18
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 699,
+      "negative": 456,
+      "trend": [
+        -0.18,
+        0.21,
+        0.2,
+        0.48,
+        0.27,
+        0.33,
+        0.17,
+        0.4,
+        0.14,
+        0.31,
+        0.25,
+        0.46,
+        0.27,
+        -0.04,
+        0.1,
+        0.15
+      ],
+      "emotions": [
+        [
+          "trust",
+          79
+        ],
+        [
+          "anger",
+          68
+        ],
+        [
+          "joy",
+          59
+        ],
+        [
+          "sadness",
+          41
+        ],
+        [
+          "anticipation",
+          31
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "disgust",
+          12
+        ],
+        [
+          "surprise",
+          5
+        ]
+      ]
+    }
   }
 }

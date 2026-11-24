@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 9114,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "perempuan",
@@ -107,12 +107,12 @@
         62
       ],
       [
-        "şehîd",
-        23
-      ],
-      [
         "internasionalis",
         36
+      ],
+      [
+        "şehîd",
+        23
       ],
       [
         "kurdistan",
@@ -127,28 +127,28 @@
         26
       ],
       [
+        "perempuan",
+        83
+      ],
+      [
         "ronahî",
         13
       ],
       [
-        "hêlîn",
-        13
-      ],
-      [
-        "perempuan",
-        83
+        "pemimpin",
+        60
       ],
       [
         "perjuangan",
         59
       ],
       [
-        "internasionalisme",
-        17
+        "hêlîn",
+        13
       ],
       [
-        "qereçox",
-        7
+        "internasionalisme",
+        17
       ]
     ],
     "phrases": [
@@ -188,28 +188,85 @@
     "similar": [
       [
         2778,
-        0.43
+        0.46
       ],
       [
         2589,
-        0.39
+        0.43
       ],
       [
         2374,
-        0.38
+        0.42
       ],
       [
         2633,
+        0.41
+      ],
+      [
+        2707,
         0.36
       ],
       [
         2293,
-        0.3
-      ],
-      [
-        2428,
-        0.3
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 267,
+      "negative": 131,
+      "trend": [
+        0.17,
+        0.1,
+        0.38,
+        0.46,
+        0.9,
+        0.57,
+        0.14,
+        0.76,
+        0.41,
+        0.52,
+        0.48,
+        0.29,
+        0.52,
+        -0.33,
+        -0.21,
+        0.22
+      ],
+      "emotions": [
+        [
+          "anger",
+          41
+        ],
+        [
+          "trust",
+          20
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

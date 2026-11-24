@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4984,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "komisi",
@@ -103,20 +103,20 @@
         217
       ],
       [
-        "rekonsiliasi",
-        42
-      ],
-      [
         "sidang",
         73
       ],
       [
-        "amnesti",
-        28
+        "rekonsiliasi",
+        42
       ],
       [
         "pasal",
         60
+      ],
+      [
+        "amnesti",
+        28
       ],
       [
         "kebenaran",
@@ -131,20 +131,20 @@
         32
       ],
       [
-        "seleksi",
-        18
+        "anggota",
+        49
       ],
       [
         "pelanggaran",
         31
       ],
       [
-        "peradilan",
-        20
+        "presiden",
+        34
       ],
       [
-        "kkr",
-        10
+        "korban",
+        38
       ]
     ],
     "phrases": [
@@ -184,28 +184,65 @@
     "similar": [
       [
         8207,
-        0.44
+        0.46
       ],
       [
         6954,
-        0.32
+        0.35
       ],
       [
         8288,
-        0.27
-      ],
-      [
-        8297,
-        0.27
-      ],
-      [
-        9057,
-        0.26
+        0.3
       ],
       [
         6907,
-        0.26
+        0.29
+      ],
+      [
+        9057,
+        0.29
+      ],
+      [
+        8297,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 94,
+      "negative": 77,
+      "trend": [
+        0.2,
+        0.22,
+        0.56,
+        0.16,
+        0.54,
+        0.79,
+        0,
+        -0.27,
+        -0.7,
+        0.71,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          32
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

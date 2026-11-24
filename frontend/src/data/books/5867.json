@@ -13,7 +13,7 @@
   "tags": [
     "1965",
     "kekerasan",
-    "militer"
+    "Militer"
   ],
   "publisher": {
     "id": 539,
@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 88846,
-    "longer_than": 97,
+    "longer_than": 98,
     "top": [
       [
         "indonesia",
@@ -101,24 +101,32 @@
     ],
     "distinct": [
       [
-        "genosida",
-        217
-      ],
-      [
-        "pki",
-        286
-      ],
-      [
-        "penjagalan",
-        118
+        "kekerasan",
+        511
       ],
       [
         "militer",
         442
       ],
       [
-        "kekerasan",
-        511
+        "pki",
+        286
+      ],
+      [
+        "genosida",
+        217
+      ],
+      [
+        "penjagalan",
+        118
+      ],
+      [
+        "korban",
+        401
+      ],
+      [
+        "indonesia",
+        794
       ],
       [
         "genocide",
@@ -129,24 +137,16 @@
         229
       ],
       [
-        "mcgregor",
-        72
-      ],
-      [
-        "korban",
-        401
-      ],
-      [
         "angkatan",
         235
       ],
       [
-        "penyintas",
-        90
-      ],
-      [
         "darat",
         201
+      ],
+      [
+        "mcgregor",
+        72
       ]
     ],
     "phrases": [
@@ -186,28 +186,85 @@
     "similar": [
       [
         1006,
-        0.27
+        0.29
       ],
       [
         8802,
-        0.24
+        0.29
       ],
       [
         8744,
-        0.24
+        0.29
       ],
       [
         7957,
-        0.23
+        0.28
       ],
       [
         6920,
-        0.22
+        0.26
       ],
       [
         1016,
-        0.22
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 789,
+      "negative": 1700,
+      "trend": [
+        -0.26,
+        -0.44,
+        -0.33,
+        -0.42,
+        -0.26,
+        -0.05,
+        -0.33,
+        -0.37,
+        -0.26,
+        -0.33,
+        -0.15,
+        -0.18,
+        -0.5,
+        -0.78,
+        -0.46,
+        -0.31
+      ],
+      "emotions": [
+        [
+          "anger",
+          918
+        ],
+        [
+          "fear",
+          207
+        ],
+        [
+          "trust",
+          177
+        ],
+        [
+          "sadness",
+          77
+        ],
+        [
+          "anticipation",
+          26
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

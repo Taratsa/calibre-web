@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 4442,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "bahasa",
@@ -123,36 +123,36 @@
         10
       ],
       [
-        "paleolitikum",
-        4
-      ],
-      [
-        "reifikasi",
-        5
-      ],
-      [
         "pembagian",
         16
       ],
       [
-        "neolitikum",
-        4
+        "manusia",
+        31
       ],
       [
-        "jaynes",
-        3
+        "kerja",
+        26
       ],
       [
         "asal-usul",
         10
       ],
       [
-        "cassirer",
-        3
+        "reifikasi",
+        5
       ],
       [
-        "simbolisasi",
+        "paleolitikum",
         4
+      ],
+      [
+        "neolitikum",
+        4
+      ],
+      [
+        "kata-kata",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7231,
-        0.23
+        0.27
       ],
       [
         2701,
-        0.2
-      ],
-      [
-        8061,
-        0.2
-      ],
-      [
-        2133,
-        0.2
-      ],
-      [
-        2759,
-        0.2
+        0.23
       ],
       [
         3735,
-        0.19
+        0.22
+      ],
+      [
+        8061,
+        0.22
+      ],
+      [
+        2133,
+        0.21
+      ],
+      [
+        2759,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 63,
+      "negative": 46,
+      "trend": [
+        0.2,
+        0.11,
+        0.25,
+        null,
+        0.17,
+        null,
+        -0.14,
+        -0.43,
+        0.75,
+        null,
+        0.27,
+        -0.5,
+        1,
+        null,
+        0,
+        0.78
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7207,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "hutan",
@@ -107,44 +107,44 @@
         122
       ],
       [
-        "penerimaan",
-        80
-      ],
-      [
         "hutan",
         138
       ],
       [
-        "psdh",
-        27
+        "penerimaan",
+        80
       ],
       [
         "kehutanan",
         55
       ],
       [
+        "psdh",
+        27
+      ],
+      [
+        "lahan",
+        56
+      ],
+      [
         "triliyun",
         17
-      ],
-      [
-        "bphtb",
-        16
-      ],
-      [
-        "ijin",
-        39
-      ],
-      [
-        "hgu",
-        27
       ],
       [
         "kalimantan",
         51
       ],
       [
-        "lahan",
-        56
+        "ijin",
+        39
+      ],
+      [
+        "bphtb",
+        16
+      ],
+      [
+        "hgu",
+        27
       ]
     ],
     "phrases": [
@@ -183,29 +183,36 @@
     ],
     "similar": [
       [
-        8641,
-        0.23
+        8695,
+        0.26
       ],
       [
-        8695,
-        0.23
+        8641,
+        0.25
       ],
       [
         8319,
-        0.22
+        0.25
       ],
       [
         8694,
-        0.2
+        0.23
       ],
       [
         8508,
-        0.19
+        0.22
       ],
       [
         8658,
-        0.19
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 60,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

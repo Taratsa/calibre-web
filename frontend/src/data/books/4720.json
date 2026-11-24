@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2908,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "hal-hal",
@@ -115,12 +115,24 @@
         8
       ],
       [
+        "jalanan",
+        12
+      ],
+      [
+        "hal-hal",
+        18
+      ],
+      [
         "moal",
         5
       ],
       [
-        "jalanan",
-        12
+        "situasi",
+        17
+      ],
+      [
+        "kawan",
+        13
       ],
       [
         "perpustakaan",
@@ -131,20 +143,8 @@
         4
       ],
       [
-        "hal-hal",
-        18
-      ],
-      [
         "urang",
         5
-      ],
-      [
-        "kawan",
-        13
-      ],
-      [
-        "situasi",
-        17
       ],
       [
         "zine",
@@ -192,20 +192,81 @@
       ],
       [
         8111,
+        0.17
+      ],
+      [
+        15616,
+        0.16
+      ],
+      [
+        15194,
         0.16
       ],
       [
         3104,
-        0.12
-      ],
-      [
-        52,
-        0.11
+        0.13
       ],
       [
         2750,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 55,
+      "negative": 37,
+      "trend": [
+        0.09,
+        0.23,
+        -0.2,
+        0.33,
+        -0.14,
+        null,
+        null,
+        -0.14,
+        0.6,
+        0,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        0.43
+      ],
+      "emotions": [
+        [
+          "sadness",
+          12
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

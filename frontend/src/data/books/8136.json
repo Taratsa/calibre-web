@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 2846,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "penerbit",
@@ -122,27 +122,31 @@
         29
       ],
       [
-        "press",
-        25
-      ],
-      [
         "penerbit",
         36
       ],
       [
-        "non-anarkis",
-        5
+        "press",
+        25
       ],
       [
         "anarkisme",
         12
       ],
       [
-        "audiens",
-        6
+        "non-anarkis",
+        5
       ],
       [
-        "pendistribusian",
+        "kekuatan",
+        21
+      ],
+      [
+        "buku",
+        23
+      ],
+      [
+        "audiens",
         6
       ],
       [
@@ -150,12 +154,8 @@
         12
       ],
       [
-        "rilisan",
-        4
-      ],
-      [
-        "penerbit-penerbit",
-        3
+        "pendistribusian",
+        6
       ]
     ],
     "phrases": [
@@ -194,29 +194,36 @@
     ],
     "similar": [
       [
+        15709,
+        0.17
+      ],
+      [
         7038,
         0.15
       ],
       [
-        1829,
-        0.13
+        7264,
+        0.15
+      ],
+      [
+        7489,
+        0.14
       ],
       [
         7452,
         0.13
       ],
       [
-        7453,
-        0.12
-      ],
-      [
-        7264,
-        0.12
-      ],
-      [
-        7489,
-        0.11
+        9166,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.7,
+      "positive": 69,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

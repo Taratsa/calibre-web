@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1703,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "pemberontakan",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "tereksploitasi",
-        8
-      ],
-      [
         "pemberontakan",
         21
       ],
       [
-        "insureksioner",
-        5
-      ],
-      [
-        "anarkis",
-        12
+        "tereksploitasi",
+        8
       ],
       [
         "perjuangan",
         19
       ],
       [
-        "konfliktualitas",
-        3
+        "anarkis",
+        12
       ],
       [
         "organisasi",
         18
       ],
       [
-        "afinitas",
-        4
+        "insureksioner",
+        5
       ],
       [
-        "terkelola",
+        "kaum",
+        14
+      ],
+      [
+        "bertindak",
+        11
+      ],
+      [
+        "konfliktualitas",
         3
+      ],
+      [
+        "afinitas",
+        4
       ],
       [
         "komunisme",
         6
       ],
       [
-        "permanen",
-        6
-      ],
-      [
-        "bertindak",
-        11
+        "terkelola",
+        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         4663,
-        0.51
+        0.53
       ],
       [
         2110,
-        0.19
-      ],
-      [
-        1779,
-        0.18
+        0.23
       ],
       [
         1949,
-        0.18
+        0.23
+      ],
+      [
+        7059,
+        0.22
       ],
       [
         2241,
-        0.18
+        0.22
       ],
       [
-        7007,
-        0.17
+        1779,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

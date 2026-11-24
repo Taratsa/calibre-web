@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 5183,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "rights",
@@ -109,40 +109,40 @@
         60
       ],
       [
-        "government",
-        45
-      ],
-      [
         "ham",
         58
+      ],
+      [
+        "government",
+        45
       ],
       [
         "law",
         42
       ],
       [
-        "recommendations",
-        21
-      ],
-      [
         "prison",
         22
       ],
       [
-        "detention",
-        16
+        "recommendations",
+        21
       ],
       [
         "protection",
         23
       ],
       [
+        "detention",
+        16
+      ],
+      [
         "recommendation",
         16
       ],
       [
-        "class",
-        22
+        "indigenous",
+        19
       ]
     ],
     "phrases": [
@@ -182,28 +182,29 @@
     "similar": [
       [
         6942,
-        0.4
-      ],
-      [
-        8983,
-        0.34
+        0.42
       ],
       [
         8895,
-        0.33
+        0.35
+      ],
+      [
+        8983,
+        0.35
       ],
       [
         8929,
-        0.27
-      ],
-      [
-        8301,
-        0.27
+        0.29
       ],
       [
         9051,
-        0.27
+        0.28
+      ],
+      [
+        8301,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

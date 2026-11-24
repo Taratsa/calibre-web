@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 1825,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "angkatan",
@@ -115,12 +115,12 @@
         10
       ],
       [
-        "angkatan-angkatan",
-        4
-      ],
-      [
         "by-sa",
         5
+      ],
+      [
+        "angkatan-angkatan",
+        4
       ],
       [
         "pilihrasa",
@@ -135,12 +135,16 @@
         4
       ],
       [
-        "dipergunakannya",
-        3
+        "hidup",
+        18
       ],
       [
         "penjajah",
         5
+      ],
+      [
+        "dipergunakannya",
+        3
       ],
       [
         "romantik",
@@ -149,38 +153,41 @@
       [
         "kelemahannya",
         3
-      ],
-      [
-        "e-book",
-        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7820,
-        0.44
+        0.46
       ],
       [
         3444,
-        0.44
+        0.46
       ],
       [
         6712,
-        0.32
+        0.33
       ],
       [
         4035,
-        0.25
+        0.26
       ],
       [
         3998,
-        0.23
+        0.25
       ],
       [
         4029,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 33,
+      "negative": 30,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

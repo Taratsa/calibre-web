@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2812,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "usaha",
@@ -91,52 +91,52 @@
     ],
     "distinct": [
       [
-        "perizinan",
-        33
-      ],
-      [
         "ayat",
         58
+      ],
+      [
+        "perizinan",
+        33
       ],
       [
         "lahan",
         56
       ],
       [
-        "wiup",
-        10
+        "usaha",
+        87
       ],
       [
         "pemanfaatan",
         29
       ],
       [
-        "usaha",
-        87
+        "wiup",
+        10
       ],
       [
         "satuan",
         27
       ],
       [
-        "konsesi",
-        20
-      ],
-      [
         "pasal",
         33
+      ],
+      [
+        "konsesi",
+        20
       ],
       [
         "kawasan",
         28
       ],
       [
-        "pelaku",
-        28
+        "hutan",
+        35
       ],
       [
-        "investasi",
-        20
+        "pelaku",
+        28
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         8556,
-        0.28
+        0.33
       ],
       [
         8345,
-        0.28
+        0.33
       ],
       [
         8351,
-        0.27
+        0.31
       ],
       [
         8557,
-        0.25
+        0.31
       ],
       [
         8353,
-        0.25
+        0.31
       ],
       [
         8642,
-        0.24
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

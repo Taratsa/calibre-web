@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2666,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "punk",
@@ -119,32 +119,32 @@
         6
       ],
       [
-        "crass",
-        4
-      ],
-      [
         "tandingan",
         7
+      ],
+      [
+        "crass",
+        4
       ],
       [
         "band",
         8
       ],
       [
-        "do-it-yourself",
-        3
+        "musik",
+        9
       ],
       [
-        "rock",
-        5
+        "budaya",
+        13
+      ],
+      [
+        "kapitalis",
+        8
       ],
       [
         "utopia",
         5
-      ],
-      [
-        "musik",
-        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         3925,
-        0.25
+        0.28
       ],
       [
         3072,
-        0.23
-      ],
-      [
-        1778,
-        0.17
+        0.26
       ],
       [
         6829,
-        0.17
+        0.18
+      ],
+      [
+        1778,
+        0.16
       ],
       [
         2202,
-        0.15
+        0.16
       ],
       [
         69,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 36,
+      "negative": 39,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

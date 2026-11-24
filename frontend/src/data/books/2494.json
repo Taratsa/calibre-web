@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3487,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "anarkis",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "anarki",
-        20
-      ],
-      [
         "anarkis",
         27
+      ],
+      [
+        "anarki",
+        20
       ],
       [
         "hirarki",
@@ -115,36 +115,36 @@
         9
       ],
       [
-        "dashyat",
-        3
-      ],
-      [
         "kekerasan",
         13
-      ],
-      [
-        "ketidakteraturan",
-        3
-      ],
-      [
-        "momen-momen",
-        4
       ],
       [
         "konflik",
         10
       ],
       [
-        "barbar",
+        "dashyat",
         3
       ],
       [
-        "menaklukan",
-        3
+        "orang",
+        23
       ],
       [
-        "imperium",
-        3
+        "perang",
+        12
+      ],
+      [
+        "orang-orang",
+        14
+      ],
+      [
+        "kelompok",
+        12
+      ],
+      [
+        "ekonomi",
+        12
       ]
     ],
     "phrases": [
@@ -163,29 +163,86 @@
     ],
     "similar": [
       [
-        7399,
-        0.15
-      ],
-      [
-        7186,
-        0.14
-      ],
-      [
-        1949,
-        0.13
-      ],
-      [
-        7414,
-        0.13
-      ],
-      [
         6767,
-        0.13
+        0.18
       ],
       [
         1930,
-        0.13
+        0.18
+      ],
+      [
+        1949,
+        0.18
+      ],
+      [
+        7399,
+        0.17
+      ],
+      [
+        7414,
+        0.16
+      ],
+      [
+        4861,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 78,
+      "negative": 78,
+      "trend": [
+        0.67,
+        -0.45,
+        -0.67,
+        -0.57,
+        -0.25,
+        -0.5,
+        0.11,
+        -0.43,
+        -0.82,
+        0.87,
+        0.78,
+        null,
+        0.2,
+        null,
+        0.38,
+        0.4
+      ],
+      "emotions": [
+        [
+          "anger",
+          46
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

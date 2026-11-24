@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2520,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "agraria",
@@ -107,16 +107,20 @@
         8
       ],
       [
-        "christodoulou",
-        5
-      ],
-      [
         "pembaruan",
         13
       ],
       [
         "globalisasi",
         11
+      ],
+      [
+        "christodoulou",
+        5
+      ],
+      [
+        "land",
+        10
       ],
       [
         "mubyarto",
@@ -127,16 +131,12 @@
         7
       ],
       [
-        "land",
-        10
-      ],
-      [
         "nsb",
         4
       ],
       [
-        "manifest",
-        5
+        "prasyarat",
+        7
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         8489,
-        0.3
+        0.32
       ],
       [
         8487,
-        0.3
+        0.32
       ],
       [
         8535,
+        0.3
+      ],
+      [
+        8530,
         0.29
       ],
       [
         8499,
-        0.27
+        0.28
       ],
       [
         8495,
-        0.27
-      ],
-      [
-        8530,
-        0.27
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 39,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

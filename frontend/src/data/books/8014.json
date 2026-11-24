@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2966,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "anarkis",
@@ -124,12 +124,20 @@
         4
       ],
       [
+        "kelas",
+        20
+      ],
+      [
         "otoritas",
         12
       ],
       [
-        "kelas",
-        20
+        "pekerja",
+        14
+      ],
+      [
+        "perjuangan",
+        15
       ],
       [
         "tertindas",
@@ -140,20 +148,12 @@
         7
       ],
       [
-        "kanibalisme",
-        3
+        "sosial",
+        16
       ],
       [
         "imigran",
         5
-      ],
-      [
-        "pekerja",
-        14
-      ],
-      [
-        "perjuangan",
-        15
       ]
     ],
     "phrases": [
@@ -189,28 +189,81 @@
     "similar": [
       [
         1785,
-        0.36
+        0.4
       ],
       [
         7112,
-        0.17
-      ],
-      [
-        2161,
-        0.16
+        0.22
       ],
       [
         1813,
-        0.16
+        0.21
+      ],
+      [
+        2161,
+        0.21
       ],
       [
         8021,
-        0.16
+        0.21
       ],
       [
         7105,
-        0.16
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 47,
+      "negative": 58,
+      "trend": [
+        -0.2,
+        0,
+        -0.14,
+        null,
+        -0.14,
+        -0.14,
+        0.09,
+        null,
+        -0.2,
+        -0.33,
+        null,
+        -0.71,
+        0.14,
+        -1,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          9
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -64,7 +64,7 @@
   ],
   "text": {
     "words": 5901,
-    "longer_than": 47,
+    "longer_than": 75,
     "top": [
       [
         "sederhana",
@@ -133,16 +133,8 @@
         79
       ],
       [
-        "palolo",
-        30
-      ],
-      [
         "pembelajaran",
         98
-      ],
-      [
-        "multikeaksaraan",
-        24
       ],
       [
         "teks",
@@ -153,16 +145,24 @@
         171
       ],
       [
+        "palolo",
+        30
+      ],
+      [
+        "multikeaksaraan",
+        24
+      ],
+      [
         "leaflet",
         35
       ],
       [
-        "wawo",
-        28
+        "peserta",
+        79
       ],
       [
-        "penjumlahan",
-        32
+        "wawo",
+        28
       ]
     ],
     "phrases": [
@@ -206,24 +206,48 @@
       ],
       [
         5387,
-        0.5
+        0.51
       ],
       [
         5333,
-        0.38
+        0.4
       ],
       [
         890,
-        0.22
+        0.25
       ],
       [
         872,
-        0.2
+        0.23
       ],
       [
         885,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.82,
+      "positive": 81,
+      "negative": 8,
+      "trend": [
+        0.75,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        0.2,
+        -0.14,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

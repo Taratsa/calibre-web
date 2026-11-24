@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 264,
-    "longer_than": 3,
+    "longer_than": 28,
     "top": [
       [
         "anarko-sindikalis",
@@ -110,27 +110,15 @@
         10
       ],
       [
-        "anarko-sindikalisme",
-        3
-      ],
-      [
         "pekerja",
         9
       ],
       [
-        "buruh",
-        4
-      ],
-      [
-        "aksi",
-        4
-      ],
-      [
-        "kapitalisme",
+        "anarko-sindikalisme",
         3
       ],
       [
-        "kelas",
+        "buruh",
         4
       ],
       [
@@ -138,16 +126,28 @@
         5
       ],
       [
-        "serikat",
+        "aksi",
+        4
+      ],
+      [
+        "kelas",
+        4
+      ],
+      [
+        "kapitalisme",
         3
       ],
       [
-        "sistem",
+        "serikat",
         3
       ],
       [
         "langsung",
         4
+      ],
+      [
+        "sistem",
+        3
       ],
       [
         "negara",
@@ -158,28 +158,29 @@
     "similar": [
       [
         3790,
-        0.46
+        0.44
       ],
       [
         9172,
-        0.4
+        0.39
       ],
       [
         3775,
-        0.36
-      ],
-      [
-        7444,
-        0.32
+        0.35
       ],
       [
         2612,
+        0.31
+      ],
+      [
+        7444,
         0.3
       ],
       [
         2397,
-        0.25
+        0.26
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

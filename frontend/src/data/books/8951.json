@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1855,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "ras",
@@ -105,20 +105,20 @@
         27
       ],
       [
-        "diskriminasi",
-        26
-      ],
-      [
         "ras",
         28
       ],
       [
-        "product",
-        15
+        "diskriminasi",
+        26
       ],
       [
         "komnas",
         19
+      ],
+      [
+        "product",
+        15
       ],
       [
         "ham",
@@ -129,12 +129,12 @@
         14
       ],
       [
-        "pdre",
-        4
+        "wilayah",
+        18
       ],
       [
-        "metodologipenelitian",
-        3
+        "penelitian",
+        15
       ],
       [
         "awareness",
@@ -182,28 +182,35 @@
     "similar": [
       [
         8936,
-        0.37
-      ],
-      [
-        8935,
-        0.24
-      ],
-      [
-        8930,
-        0.23
+        0.41
       ],
       [
         8928,
-        0.23
+        0.27
+      ],
+      [
+        8935,
+        0.25
+      ],
+      [
+        8930,
+        0.25
       ],
       [
         8937,
-        0.21
+        0.24
       ],
       [
-        8918,
-        0.19
+        8984,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.22,
+      "positive": 27,
+      "negative": 42,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

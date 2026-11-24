@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1782,
-    "longer_than": 23,
+    "longer_than": 60,
     "top": [
       [
         "anarkis",
@@ -126,16 +126,20 @@
         8
       ],
       [
+        "periode",
+        16
+      ],
+      [
         "arsip",
         11
       ],
       [
-        "materi-materi",
-        7
+        "koleksi",
+        10
       ],
       [
-        "periode",
-        16
+        "materi-materi",
+        7
       ],
       [
         "relgis",
@@ -148,10 +152,6 @@
       [
         "bună",
         3
-      ],
-      [
-        "koleksi",
-        10
       ]
     ],
     "phrases": [
@@ -175,7 +175,7 @@
     "similar": [
       [
         9166,
-        0.4
+        0.41
       ],
       [
         7489,
@@ -187,16 +187,17 @@
       ],
       [
         3788,
-        0.24
+        0.26
       ],
       [
         7452,
-        0.23
+        0.24
       ],
       [
         8067,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

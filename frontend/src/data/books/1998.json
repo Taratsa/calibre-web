@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4273,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "manusia",
@@ -103,6 +103,10 @@
         64
       ],
       [
+        "manusia",
+        66
+      ],
+      [
         "ehrenberg",
         7
       ],
@@ -111,12 +115,12 @@
         11
       ],
       [
-        "agrikultur",
-        8
-      ],
-      [
         "properti",
         14
+      ],
+      [
+        "agrikultur",
+        8
       ],
       [
         "domestikasi",
@@ -127,24 +131,20 @@
         10
       ],
       [
-        "pendomestikasian",
-        4
+        "berburu",
+        12
       ],
       [
         "tumbuhan",
         11
       ],
       [
-        "berburu",
-        12
+        "pabrik",
+        15
       ],
       [
-        "manusia",
-        66
-      ],
-      [
-        "pelucutan",
-        5
+        "hidup",
+        33
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2794,
-        0.21
+        0.24
       ],
       [
         2008,
-        0.2
+        0.23
       ],
       [
         7226,
-        0.19
-      ],
-      [
-        8006,
-        0.14
+        0.22
       ],
       [
         3737,
-        0.13
+        0.17
       ],
       [
         3077,
-        0.13
+        0.17
+      ],
+      [
+        3057,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 51,
+      "negative": 29,
+      "trend": [
+        -0.78,
+        0.2,
+        0.6,
+        1,
+        null,
+        null,
+        null,
+        0.45,
+        null,
+        0,
+        null,
+        -0.33,
+        0.6,
+        0.2,
+        null,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

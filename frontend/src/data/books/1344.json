@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 32606,
-    "longer_than": 87,
+    "longer_than": 93,
     "top": [
       [
         "perempuan",
@@ -103,20 +103,24 @@
         269
       ],
       [
-        "homoseksualitas",
-        71
-      ],
-      [
-        "pederasti",
-        37
+        "perempuan",
+        272
       ],
       [
         "gender",
         129
       ],
       [
+        "homoseksualitas",
+        71
+      ],
+      [
         "seksual",
         116
+      ],
+      [
+        "pederasti",
+        37
       ],
       [
         "semirang",
@@ -127,24 +131,20 @@
         48
       ],
       [
-        "perempuan",
-        272
-      ],
-      [
         "dayak",
         57
-      ],
-      [
-        "homoseksual",
-        50
       ],
       [
         "panji",
         63
       ],
       [
-        "perem-puan",
-        18
+        "homoseksual",
+        50
+      ],
+      [
+        "masyarakat",
+        132
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2127,
-        0.32
+        0.34
       ],
       [
         7383,
-        0.19
+        0.21
+      ],
+      [
+        2349,
+        0.2
       ],
       [
         3331,
+        0.19
+      ],
+      [
+        7284,
         0.17
       ],
       [
         1340,
-        0.15
-      ],
-      [
-        2349,
-        0.14
-      ],
-      [
-        7284,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 348,
+      "negative": 237,
+      "trend": [
+        0.25,
+        0.45,
+        -0.14,
+        0,
+        0.35,
+        0.08,
+        0.13,
+        0.58,
+        0.14,
+        0.57,
+        0.48,
+        0.44,
+        -0.16,
+        -0.19,
+        -0.17,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          66
+        ],
+        [
+          "anger",
+          42
+        ],
+        [
+          "trust",
+          30
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "sadness",
+          17
+        ],
+        [
+          "surprise",
+          14
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
   }
 }

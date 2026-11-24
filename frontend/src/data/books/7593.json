@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6089,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "pola",
@@ -106,24 +106,24 @@
     ],
     "distinct": [
       [
-        "struktural",
-        43
-      ],
-      [
         "kemiskinan",
         53
       ],
       [
-        "ketimpangan-ketimpangan",
-        13
+        "struktural",
+        43
+      ],
+      [
+        "golongan",
+        56
       ],
       [
         "pola",
         61
       ],
       [
-        "golongan",
-        56
+        "ketimpangan-ketimpangan",
+        13
       ],
       [
         "kebijaksanaan-kebijaksanaan",
@@ -138,20 +138,20 @@
         16
       ],
       [
+        "miskin",
+        31
+      ],
+      [
+        "tingkat",
+        38
+      ],
+      [
         "stratifikasi",
         12
       ],
       [
-        "pemelaratan",
-        7
-      ],
-      [
-        "effektifitas",
-        5
-      ],
-      [
-        "pedesaan",
-        18
+        "sosial",
+        42
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         7560,
-        0.21
+        0.25
       ],
       [
         7570,
-        0.21
+        0.25
       ],
       [
         1430,
-        0.21
+        0.24
       ],
       [
         3420,
-        0.2
+        0.24
       ],
       [
         8492,
-        0.2
+        0.23
       ],
       [
         8497,
-        0.18
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

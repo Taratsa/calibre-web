@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1370,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "perang",
@@ -115,36 +115,36 @@
         7
       ],
       [
-        "komune",
-        6
+        "perang",
+        16
       ],
       [
         "katolik",
         7
       ],
       [
-        "pangkalan",
+        "perdamaian",
+        9
+      ],
+      [
+        "komune",
         6
       ],
       [
-        "perdamaian",
-        9
+        "pangkalan",
+        6
       ],
       [
         "berperang",
         7
       ],
       [
-        "perang",
-        16
-      ],
-      [
         "peperangan",
         7
       ],
       [
-        "damai",
-        8
+        "masyarakat",
+        15
       ]
     ],
     "phrases": [
@@ -167,29 +167,61 @@
     ],
     "similar": [
       [
-        4113,
+        18215,
+        0.27
+      ],
+      [
+        7193,
+        0.19
+      ],
+      [
+        2596,
+        0.18
+      ],
+      [
+        2244,
         0.16
       ],
       [
-        2329,
-        0.15
+        7104,
+        0.16
       ],
       [
         7143,
         0.14
-      ],
-      [
-        2244,
-        0.14
-      ],
-      [
-        2596,
-        0.13
-      ],
-      [
-        8039,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 32,
+      "negative": 44,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

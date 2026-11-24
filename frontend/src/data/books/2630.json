@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2094,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "negara",
@@ -99,28 +99,32 @@
     ],
     "distinct": [
       [
-        "phronrhuter",
-        4
+        "negara",
+        47
       ],
       [
         "narasi",
         15
       ],
       [
-        "pelupaan",
-        5
-      ],
-      [
         "ingatan",
         15
+      ],
+      [
+        "phronrhuter",
+        4
       ],
       [
         "kekerasan",
         19
       ],
       [
-        "negara",
-        47
+        "pelupaan",
+        5
+      ],
+      [
+        "masyarakat",
+        25
       ],
       [
         "kemiskinan",
@@ -131,20 +135,16 @@
         11
       ],
       [
-        "amnesia",
-        3
+        "lupa",
+        11
       ],
       [
         "anarkisme",
         6
       ],
       [
-        "lupa",
-        11
-      ],
-      [
-        "masyarakat",
-        25
+        "amnesia",
+        3
       ]
     ],
     "phrases": [
@@ -167,29 +167,82 @@
     ],
     "similar": [
       [
-        7448,
-        0.16
+        7200,
+        0.15
       ],
       [
-        2219,
-        0.12
+        7448,
+        0.15
       ],
       [
         2723,
-        0.12
+        0.15
       ],
       [
         6924,
-        0.11
+        0.14
       ],
       [
-        6931,
-        0.11
+        7203,
+        0.13
       ],
       [
-        7200,
-        0.1
+        6848,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.42,
+      "positive": 28,
+      "negative": 69,
+      "trend": [
+        null,
+        -0.33,
+        null,
+        null,
+        -0.85,
+        -1,
+        -0.67,
+        0.64,
+        -0.8,
+        -0.25,
+        -1,
+        -0.6,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

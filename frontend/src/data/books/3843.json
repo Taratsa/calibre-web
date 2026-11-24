@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 13421,
-    "longer_than": 68,
+    "longer_than": 84,
     "top": [
       [
         "gay",
@@ -120,44 +120,44 @@
         25
       ],
       [
-        "ignatz",
-        10
-      ],
-      [
         "jln",
         22
       ],
       [
-        "homoseksualitas",
-        17
+        "ignatz",
+        10
       ],
       [
         "pos",
         34
       ],
       [
-        "dianya",
-        11
+        "homoseksualitas",
+        17
       ],
       [
-        "homoseks",
-        12
-      ],
-      [
-        "homo",
-        15
+        "gaya",
+        33
       ],
       [
         "telp",
         20
       ],
       [
-        "wkhp",
-        6
+        "surabaya",
+        25
       ],
       [
-        "pgn",
-        9
+        "homo",
+        15
+      ],
+      [
+        "homoseks",
+        12
+      ],
+      [
+        "dianya",
+        11
       ]
     ],
     "phrases": [
@@ -197,7 +197,7 @@
     "similar": [
       [
         3864,
-        0.39
+        0.41
       ],
       [
         3838,
@@ -205,20 +205,73 @@
       ],
       [
         3878,
-        0.35
+        0.37
       ],
       [
         3845,
-        0.35
+        0.36
       ],
       [
         3841,
-        0.34
+        0.35
       ],
       [
         3874,
-        0.32
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 159,
+      "negative": 55,
+      "trend": [
+        0.85,
+        null,
+        0.43,
+        0.5,
+        0.4,
+        0.84,
+        0.16,
+        0.62,
+        0.2,
+        0.33,
+        0.44,
+        0.57,
+        -0.33,
+        0.78,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          52
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
   }
 }

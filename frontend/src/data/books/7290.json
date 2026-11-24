@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 515,
-    "longer_than": 6,
+    "longer_than": 40,
     "top": [
       [
         "anak-anak",
@@ -106,24 +106,24 @@
     ],
     "distinct": [
       [
-        "magdalena",
-        3
-      ],
-      [
         "anak-anak",
         12
+      ],
+      [
+        "magdalena",
+        3
       ],
       [
         "empati",
         3
       ],
       [
-        "anarkisme",
-        3
-      ],
-      [
         "keadilan",
         5
+      ],
+      [
+        "anarkisme",
+        3
       ],
       [
         "kesetaraan",
@@ -134,16 +134,16 @@
         3
       ],
       [
+        "belajar",
+        5
+      ],
+      [
         "kontribusi",
         3
       ],
       [
         "menghargai",
         3
-      ],
-      [
-        "belajar",
-        5
       ],
       [
         "kritis",
@@ -158,28 +158,29 @@
     "similar": [
       [
         7926,
-        0.3
+        0.25
       ],
       [
         7289,
-        0.26
+        0.21
+      ],
+      [
+        18639,
+        0.19
+      ],
+      [
+        18378,
+        0.19
+      ],
+      [
+        14349,
+        0.19
       ],
       [
         2648,
-        0.15
-      ],
-      [
-        7203,
-        0.15
-      ],
-      [
-        899,
-        0.14
-      ],
-      [
-        906,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

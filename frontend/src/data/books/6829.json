@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1775,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "punk",
@@ -107,20 +107,32 @@
         32
       ],
       [
+        "musik",
+        17
+      ],
+      [
         "zine",
         11
       ],
       [
-        "musik",
-        17
+        "pemberontakan",
+        12
       ],
       [
         "keterhubungan",
         5
       ],
       [
-        "pemberontakan",
-        12
+        "politik",
+        16
+      ],
+      [
+        "gerakan",
+        15
+      ],
+      [
+        "meninggal",
+        11
       ],
       [
         "frustrasi",
@@ -131,20 +143,8 @@
         7
       ],
       [
-        "gigs",
-        4
-      ],
-      [
-        "subkultur",
-        4
-      ],
-      [
         "keterkaitan",
         6
-      ],
-      [
-        "dprd",
-        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         3073,
-        0.2
-      ],
-      [
-        56,
-        0.19
-      ],
-      [
-        2739,
-        0.19
+        0.22
       ],
       [
         3072,
-        0.19
+        0.21
+      ],
+      [
+        2739,
+        0.21
+      ],
+      [
+        274,
+        0.2
+      ],
+      [
+        3948,
+        0.2
       ],
       [
         2111,
         0.19
-      ],
-      [
-        3948,
-        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

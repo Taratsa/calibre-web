@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1792,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "gerakan",
@@ -103,20 +103,16 @@
         5
       ],
       [
+        "kolektif",
+        17
+      ],
+      [
         "mentalitas",
         9
       ],
       [
         "patriarki",
         9
-      ],
-      [
-        "kolektif",
-        17
-      ],
-      [
-        "romantis",
-        7
       ],
       [
         "cinta",
@@ -127,6 +123,18 @@
         11
       ],
       [
+        "gerakan",
+        19
+      ],
+      [
+        "romantis",
+        7
+      ],
+      [
+        "hubungan",
+        17
+      ],
+      [
         "platonis",
         3
       ],
@@ -135,16 +143,8 @@
         5
       ],
       [
-        "gerakan",
-        19
-      ],
-      [
-        "warisi",
-        3
-      ],
-      [
-        "seksualitas",
-        4
+        "kapitalis",
+        7
       ]
     ],
     "phrases": [
@@ -175,29 +175,82 @@
     ],
     "similar": [
       [
-        2091,
-        0.31
+        1959,
+        0.32
       ],
       [
-        1959,
-        0.3
+        2091,
+        0.32
       ],
       [
         2156,
-        0.27
+        0.29
       ],
       [
         2805,
-        0.23
+        0.26
       ],
       [
         1833,
-        0.22
+        0.24
       ],
       [
-        1973,
-        0.19
+        2374,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 62,
+      "negative": 38,
+      "trend": [
+        0.67,
+        null,
+        null,
+        null,
+        0.14,
+        -0.33,
+        0,
+        0.71,
+        0.67,
+        null,
+        0.4,
+        1,
+        0.45,
+        0,
+        -0.11,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

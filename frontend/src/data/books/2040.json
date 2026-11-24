@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2320,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "puisi",
@@ -115,16 +115,20 @@
         30
       ],
       [
-        "penggalannya",
-        4
+        "penyair",
+        12
       ],
       [
         "puisinya",
         8
       ],
       [
-        "penyair",
-        12
+        "penggalannya",
+        4
+      ],
+      [
+        "larik",
+        6
       ],
       [
         "flaneur",
@@ -135,16 +139,12 @@
         4
       ],
       [
-        "larik",
-        6
+        "anarkisme",
+        10
       ],
       [
-        "capita",
-        6
-      ],
-      [
-        "suryajaya",
-        4
+        "negara",
+        26
       ]
     ],
     "phrases": [
@@ -192,20 +192,44 @@
       ],
       [
         8051,
-        0.34
+        0.32
       ],
       [
         2685,
-        0.34
+        0.32
       ],
       [
         4737,
-        0.33
+        0.31
       ],
       [
         3748,
-        0.3
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.31,
+      "positive": 26,
+      "negative": 49,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -0.6,
+        -0.5,
+        null,
+        null,
+        -0.6,
+        0.56,
+        -0.6,
+        -0.14,
+        null,
+        0,
+        -0.64,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

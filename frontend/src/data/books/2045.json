@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6187,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "pendidikan",
@@ -99,36 +99,40 @@
     ],
     "distinct": [
       [
-        "realis",
-        15
+        "pendidikan",
+        74
       ],
       [
-        "heinsius",
-        8
+        "pengetahuan",
+        50
+      ],
+      [
+        "realis",
+        15
       ],
       [
         "musti",
         17
       ],
       [
-        "realisme",
-        13
-      ],
-      [
-        "pendidikan",
-        74
+        "heinsius",
+        8
       ],
       [
         "kehendak",
         29
       ],
       [
-        "kebaheulaan",
-        5
+        "realisme",
+        13
       ],
       [
-        "pengetahuan",
-        50
+        "manusia",
+        44
+      ],
+      [
+        "kebaheulaan",
+        5
       ],
       [
         "humanisme",
@@ -139,12 +143,8 @@
         10
       ],
       [
-        "konkordat",
-        4
-      ],
-      [
-        "krug",
-        4
+        "orang",
+        49
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         8096,
-        0.55
+        0.57
       ],
       [
         2727,
-        0.25
+        0.27
       ],
       [
         2509,
-        0.22
+        0.25
       ],
       [
         4713,
-        0.22
+        0.25
       ],
       [
         2075,
-        0.18
+        0.22
       ],
       [
-        7176,
-        0.18
+        4714,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 189,
+      "negative": 78,
+      "trend": [
+        0.25,
+        0.5,
+        0.64,
+        0.43,
+        0,
+        0.57,
+        0,
+        0.22,
+        0.41,
+        0.2,
+        0.56,
+        0.62,
+        0.5,
+        0.14,
+        0.83,
+        0.5
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

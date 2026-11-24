@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2732,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "gereja",
@@ -127,20 +127,20 @@
         5
       ],
       [
-        "adven",
-        4
-      ],
-      [
         "johan",
         8
       ],
       [
-        "friday",
-        6
+        "adven",
+        4
       ],
       [
-        "saduki",
-        3
+        "umat",
+        13
+      ],
+      [
+        "misa",
+        6
       ],
       [
         "yohanes",
@@ -184,11 +184,11 @@
     "similar": [
       [
         4280,
-        0.11
+        0.12
       ],
       [
         4162,
-        0.11
+        0.12
       ],
       [
         4536,
@@ -206,6 +206,55 @@
         2249,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.65,
+      "positive": 81,
+      "negative": 17,
+      "trend": [
+        1,
+        -0.33,
+        null,
+        null,
+        null,
+        0.81,
+        null,
+        null,
+        1,
+        0.8,
+        null,
+        0.82,
+        0.6,
+        1,
+        0.6,
+        1
+      ],
+      "emotions": [
+        [
+          "trust",
+          17
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 381,
-    "longer_than": 4,
+    "longer_than": 35,
     "top": [
       [
         "ham",
@@ -101,23 +101,19 @@
         11
       ],
       [
-        "kontras",
-        5
-      ],
-      [
         "keadilan",
         8
       ],
       [
-        "penundaan",
-        3
+        "kontras",
+        5
       ],
       [
         "pelanggaran",
         6
       ],
       [
-        "koordinator",
+        "penundaan",
         3
       ],
       [
@@ -129,11 +125,15 @@
         5
       ],
       [
-        "pelaku",
+        "koordinator",
         3
       ],
       [
-        "tim",
+        "indonesia",
+        8
+      ],
+      [
+        "pelaku",
         3
       ]
     ],
@@ -166,16 +166,17 @@
       ],
       [
         1009,
+        0.2
+      ],
+      [
+        348,
         0.19
       ],
       [
         6953,
         0.19
-      ],
-      [
-        124,
-        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

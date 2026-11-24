@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1286,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "negara",
@@ -106,31 +106,39 @@
     ],
     "distinct": [
       [
-        "penindasan",
-        19
-      ],
-      [
         "negara",
         41
       ],
       [
-        "marjinalisasi",
-        4
+        "penindasan",
+        19
+      ],
+      [
+        "kekerasan",
+        13
       ],
       [
         "ketidakberdayaan",
         5
       ],
       [
-        "memarjinalkan",
-        3
+        "marjinalisasi",
+        4
+      ],
+      [
+        "budaya",
+        13
       ],
       [
         "warganya",
         6
       ],
       [
-        "kekerasan",
+        "memarjinalkan",
+        3
+      ],
+      [
+        "politik",
         13
       ],
       [
@@ -138,20 +146,12 @@
         6
       ],
       [
+        "pekerja",
+        8
+      ],
+      [
         "mencalonkan",
         3
-      ],
-      [
-        "oppression",
-        3
-      ],
-      [
-        "budaya",
-        13
-      ],
-      [
-        "hlm",
-        5
       ]
     ],
     "phrases": [
@@ -178,17 +178,53 @@
     ],
     "similar": [
       [
-        7045,
+        2596,
+        0.15
+      ],
+      [
+        2719,
         0.13
       ],
       [
-        8719,
+        7304,
         0.12
       ],
       [
-        1803,
+        7126,
+        0.12
+      ],
+      [
+        7853,
+        0.12
+      ],
+      [
+        6698,
         0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.56,
+      "positive": 19,
+      "negative": 67,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          42
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

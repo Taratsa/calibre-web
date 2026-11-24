@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 654,
-    "longer_than": 7,
+    "longer_than": 45,
     "top": [
       [
         "pelosok",
@@ -95,20 +95,20 @@
         5
       ],
       [
-        "hegemoni",
-        3
-      ],
-      [
         "wajar",
         5
       ],
       [
-        "daerah-daerah",
+        "hegemoni",
         3
       ],
       [
         "kemenangan",
         4
+      ],
+      [
+        "daerah-daerah",
+        3
       ],
       [
         "kawan",
@@ -124,6 +124,20 @@
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        10229,
+        0.24
+      ],
+      [
+        7033,
+        0.12
+      ],
+      [
+        7228,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

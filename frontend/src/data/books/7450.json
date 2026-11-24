@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1624,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "manusia",
@@ -122,16 +122,16 @@
         18
       ],
       [
-        "moralitas",
-        7
-      ],
-      [
         "nilai",
         18
       ],
       [
-        "legitimasi",
-        6
+        "manusia",
+        22
+      ],
+      [
+        "moralitas",
+        7
       ],
       [
         "gagasan",
@@ -142,16 +142,16 @@
         11
       ],
       [
-        "konsep-konsep",
-        4
+        "legitimasi",
+        6
       ],
       [
         "individu",
         10
       ],
       [
-        "penghancuran",
-        5
+        "dianggap",
+        11
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         6824,
-        0.23
+        0.27
       ],
       [
         4080,
-        0.23
-      ],
-      [
-        7317,
-        0.19
+        0.27
       ],
       [
         2180,
-        0.18
+        0.21
       ],
       [
         1804,
-        0.17
+        0.21
       ],
       [
-        4393,
-        0.16
+        7317,
+        0.18
+      ],
+      [
+        7349,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 45,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

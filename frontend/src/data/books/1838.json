@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5897,
-    "longer_than": 47,
+    "longer_than": 75,
     "top": [
       [
         "individu",
@@ -103,24 +103,32 @@
         13
       ],
       [
+        "individu",
+        23
+      ],
+      [
         "hasrat",
         17
+      ],
+      [
+        "revolusioner",
+        14
       ],
       [
         "kesinisan",
         4
       ],
       [
-        "individu",
-        23
+        "otonomis",
+        6
       ],
       [
         "biner",
         6
       ],
       [
-        "otonomis",
-        6
+        "persatuan",
+        12
       ],
       [
         "insurgensi",
@@ -131,20 +139,12 @@
         4
       ],
       [
-        "revolusioner",
-        14
+        "otoritas",
+        10
       ],
       [
-        "geocities",
-        4
-      ],
-      [
-        "dihasrati",
-        3
-      ],
-      [
-        "sarkastik",
-        4
+        "sistem",
+        19
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         3058,
-        0.16
+        0.21
       ],
       [
         1928,
-        0.15
+        0.2
+      ],
+      [
+        2120,
+        0.19
+      ],
+      [
+        2046,
+        0.18
+      ],
+      [
+        1964,
+        0.18
       ],
       [
         2725,
-        0.15
-      ],
-      [
-        7168,
-        0.14
-      ],
-      [
-        7889,
-        0.14
-      ],
-      [
-        3720,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 100,
+      "negative": 66,
+      "trend": [
+        0.71,
+        0.45,
+        0.2,
+        0.09,
+        1,
+        0.75,
+        0.2,
+        -0.09,
+        -0.43,
+        0.17,
+        null,
+        null,
+        -0.5,
+        -0.38,
+        -0.2,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          27
+        ],
+        [
+          "anger",
+          24
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -114,7 +114,7 @@
   ],
   "text": {
     "words": 19707,
-    "longer_than": 76,
+    "longer_than": 88,
     "top": [
       [
         "pakel",
@@ -175,44 +175,44 @@
         143
       ],
       [
-        "banyuwangi",
-        45
-      ],
-      [
         "warga",
         133
       ],
       [
-        "agraria",
-        51
-      ],
-      [
-        "suwarno",
-        23
+        "banyuwangi",
+        45
       ],
       [
         "perjuangan",
         91
       ],
       [
-        "rtsp",
-        13
-      ],
-      [
-        "doelgani",
-        11
+        "agraria",
+        51
       ],
       [
         "lahan",
         60
       ],
       [
-        "sumberejo",
-        14
+        "tanah",
+        109
       ],
       [
         "konflik",
         65
+      ],
+      [
+        "suwarno",
+        23
+      ],
+      [
+        "solidaritas",
+        48
+      ],
+      [
+        "kriminalisasi",
+        28
       ]
     ],
     "phrases": [
@@ -252,28 +252,85 @@
     "similar": [
       [
         2744,
-        0.41
+        0.42
       ],
       [
         2359,
-        0.23
+        0.24
       ],
       [
         3070,
-        0.21
+        0.23
       ],
       [
         2185,
-        0.16
+        0.19
       ],
       [
-        8431,
-        0.14
+        8600,
+        0.18
       ],
       [
-        7936,
-        0.14
+        8726,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 400,
+      "negative": 297,
+      "trend": [
+        0,
+        -0.11,
+        0.12,
+        0.05,
+        -0.11,
+        -0.19,
+        0.23,
+        0.29,
+        0.49,
+        0.28,
+        0.21,
+        0.57,
+        0.35,
+        0,
+        0,
+        -0.02
+      ],
+      "emotions": [
+        [
+          "anger",
+          142
+        ],
+        [
+          "trust",
+          72
+        ],
+        [
+          "anticipation",
+          45
+        ],
+        [
+          "joy",
+          44
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 25451,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "ingkang",
@@ -125,20 +125,20 @@
         245
       ],
       [
-        "dhateng",
-        219
-      ],
-      [
         "ingkang",
         265
       ],
       [
-        "sarimulya",
-        101
+        "dhateng",
+        219
       ],
       [
         "mboten",
         166
+      ],
+      [
+        "sarimulya",
+        101
       ],
       [
         "sampun",
@@ -210,12 +210,65 @@
       ],
       [
         5821,
-        0.33
+        0.34
       ],
       [
         6188,
-        0.31
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 187,
+      "negative": 130,
+      "trend": [
+        0.69,
+        0.57,
+        0.14,
+        -0.11,
+        -0.06,
+        0.56,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.43,
+        0.67
+      ],
+      "emotions": [
+        [
+          "joy",
+          35
+        ],
+        [
+          "surprise",
+          26
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "anger",
+          3
+        ]
+      ]
+    }
   }
 }

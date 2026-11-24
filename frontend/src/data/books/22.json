@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7216,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "kakek",
@@ -115,36 +115,36 @@
         11
       ],
       [
-        "plackeinstein",
-        7
+        "benang",
+        19
       ],
       [
-        "sifu",
-        6
+        "plackeinstein",
+        7
       ],
       [
         "fate",
         12
       ],
       [
-        "benang",
-        19
+        "sifu",
+        6
       ],
       [
         "tamzil",
         6
       ],
       [
-        "andriana",
-        5
+        "dalang",
+        12
       ],
       [
         "future",
         14
       ],
       [
-        "dalang",
-        12
+        "andriana",
+        5
       ]
     ],
     "phrases": [
@@ -181,6 +181,84 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5978,
+        0.12
+      ],
+      [
+        12,
+        0.11
+      ],
+      [
+        7943,
+        0.11
+      ],
+      [
+        3618,
+        0.11
+      ],
+      [
+        4935,
+        0.1
+      ],
+      [
+        2683,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 83,
+      "negative": 76,
+      "trend": [
+        0.1,
+        -0.29,
+        -0.05,
+        0.62,
+        null,
+        null,
+        null,
+        null,
+        -0.4,
+        null,
+        null,
+        null,
+        0,
+        0.14,
+        0.75,
+        -0.52
+      ],
+      "emotions": [
+        [
+          "joy",
+          23
+        ],
+        [
+          "sadness",
+          16
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

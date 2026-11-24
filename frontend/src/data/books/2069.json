@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1202,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "individu",
@@ -119,39 +119,39 @@
         4
       ],
       [
-        "teks",
-        9
-      ],
-      [
         "kapitalisme",
         9
       ],
       [
-        "kebuntuan",
-        3
-      ],
-      [
-        "cemas",
-        5
-      ],
-      [
-        "penyembuhan",
-        3
+        "teks",
+        9
       ],
       [
         "penulis",
         11
       ],
       [
+        "cemas",
+        5
+      ],
+      [
+        "kebuntuan",
+        3
+      ],
+      [
         "eksploitasi",
         5
+      ],
+      [
+        "penyembuhan",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         4702,
-        0.23
+        0.24
       ],
       [
         1799,
@@ -159,6 +159,10 @@
       ],
       [
         7291,
+        0.13
+      ],
+      [
+        2629,
         0.12
       ],
       [
@@ -168,11 +172,8 @@
       [
         1959,
         0.12
-      ],
-      [
-        2629,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

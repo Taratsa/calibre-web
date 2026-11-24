@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2316,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "kolektif",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "sektimuda",
-        3
-      ],
-      [
         "kolektif",
         18
+      ],
+      [
+        "sektimuda",
+        3
       ],
       [
         "banget",
@@ -126,60 +126,61 @@
         5
       ],
       [
-        "di-phk",
-        3
-      ],
-      [
-        "keluargaku",
-        4
-      ],
-      [
-        "bertani",
-        5
+        "kerja",
+        15
       ],
       [
         "lahan",
         8
       ],
       [
-        "teman-teman",
-        6
+        "bertani",
+        5
+      ],
+      [
+        "keluargaku",
+        4
+      ],
+      [
+        "di-phk",
+        3
       ],
       [
         "modal",
         8
       ],
       [
-        "jadwal",
-        4
+        "uang",
+        10
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2781,
-        0.12
+        0.15
       ],
       [
-        274,
-        0.11
-      ],
-      [
-        3945,
-        0.11
-      ],
-      [
-        3372,
-        0.11
-      ],
-      [
-        1556,
-        0.11
+        5909,
+        0.13
       ],
       [
         1259,
-        0.11
+        0.13
+      ],
+      [
+        274,
+        0.13
+      ],
+      [
+        3945,
+        0.12
+      ],
+      [
+        8452,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

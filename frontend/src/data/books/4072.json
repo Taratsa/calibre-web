@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1606,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "bustam",
@@ -129,6 +129,10 @@
         6
       ],
       [
+        "kehilangan",
+        25
+      ],
+      [
         "melankolia",
         6
       ],
@@ -137,24 +141,20 @@
         6
       ],
       [
-        "kehilangan",
-        25
-      ],
-      [
-        "lanang",
-        6
+        "pengalaman",
+        23
       ],
       [
         "ingatan",
         11
       ],
       [
-        "sri",
-        10
+        "lanang",
+        6
       ],
       [
-        "pengalaman",
-        23
+        "sri",
+        10
       ]
     ],
     "phrases": [
@@ -194,28 +194,56 @@
     "similar": [
       [
         4078,
-        0.26
+        0.24
       ],
       [
         4075,
-        0.13
+        0.14
+      ],
+      [
+        8074,
+        0.12
       ],
       [
         7448,
-        0.13
+        0.12
       ],
       [
         549,
-        0.13
+        0.12
       ],
       [
         5167,
         0.12
-      ],
-      [
-        8074,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 22,
+      "negative": 36,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          25
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7724,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "paris",
@@ -111,40 +111,40 @@
         23
       ],
       [
-        "gallizio",
-        13
-      ],
-      [
         "grup",
         41
       ],
       [
-        "cobra",
-        15
+        "gallizio",
+        13
       ],
       [
         "paris",
         42
       ],
       [
-        "eksibisi",
-        14
+        "cobra",
+        15
       ],
       [
-        "isou",
-        10
+        "eksibisi",
+        14
       ],
       [
         "situasionis",
         17
       ],
       [
-        "lettrist",
+        "isou",
         10
       ],
       [
-        "lebovici",
-        9
+        "internationale",
+        16
+      ],
+      [
+        "lettrist",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         1924,
-        0.24
+        0.23
       ],
       [
         2213,
-        0.17
-      ],
-      [
-        1829,
-        0.15
-      ],
-      [
-        3724,
-        0.15
+        0.2
       ],
       [
         7893,
-        0.14
+        0.17
       ],
       [
-        6865,
-        0.14
+        1964,
+        0.17
+      ],
+      [
+        1928,
+        0.16
+      ],
+      [
+        2221,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 84,
+      "negative": 45,
+      "trend": [
+        1,
+        0.6,
+        -0.64,
+        null,
+        0.4,
+        0.08,
+        null,
+        0.33,
+        0.43,
+        0.07,
+        1,
+        0.33,
+        0.43,
+        0.75,
+        0.43,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

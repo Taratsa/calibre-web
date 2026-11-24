@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6521,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "workers",
@@ -103,12 +103,12 @@
         113
       ],
       [
-        "ttps",
-        25
-      ],
-      [
         "labor",
         53
+      ],
+      [
+        "ttps",
+        25
       ],
       [
         "sector",
@@ -123,19 +123,19 @@
         16
       ],
       [
-        "termination",
-        17
-      ],
-      [
-        "actions",
-        25
+        "government",
+        31
       ],
       [
         "unions",
         21
       ],
       [
-        "unemployment",
+        "actions",
+        25
+      ],
+      [
+        "termination",
         17
       ],
       [
@@ -143,8 +143,8 @@
         25
       ],
       [
-        "government",
-        31
+        "unemployment",
+        17
       ]
     ],
     "phrases": [
@@ -199,13 +199,14 @@
         0.25
       ],
       [
-        8625,
+        8480,
         0.24
       ],
       [
-        5861,
+        8625,
         0.24
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

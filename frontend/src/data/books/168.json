@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2164,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "kerusuhan",
@@ -97,44 +97,44 @@
         43
       ],
       [
-        "penjarahan",
-        10
-      ],
-      [
-        "seri",
-        14
-      ],
-      [
         "tim",
         22
-      ],
-      [
-        "perusakan",
-        10
-      ],
-      [
-        "verifikasi",
-        8
       ],
       [
         "korban",
         23
       ],
       [
+        "penjarahan",
+        10
+      ],
+      [
         "mei",
         21
       ],
       [
-        "penganiayaan",
-        8
-      ],
-      [
-        "perkosaan",
-        7
+        "seri",
+        14
       ],
       [
         "laporan",
         18
+      ],
+      [
+        "perusakan",
+        10
+      ],
+      [
+        "massa",
+        17
+      ],
+      [
+        "verifikasi",
+        8
+      ],
+      [
+        "keamanan",
+        16
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         312,
-        0.36
+        0.37
       ],
       [
         170,
-        0.36
+        0.37
       ],
       [
         4644,
-        0.35
+        0.37
       ],
       [
         492,
-        0.35
+        0.37
       ],
       [
         171,
-        0.29
+        0.31
       ],
       [
         176,
-        0.27
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.72,
+      "positive": 7,
+      "negative": 43,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          16
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

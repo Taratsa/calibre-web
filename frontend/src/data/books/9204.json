@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 4302,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "hidup",
@@ -119,40 +119,40 @@
         22
       ],
       [
-        "tatanan",
-        12
+        "hidup",
+        44
       ],
       [
-        "ketegangan",
-        9
+        "dunia",
+        42
       ],
       [
-        "kelangsungan",
-        9
+        "sosial",
+        28
       ],
       [
-        "tumpahan",
-        4
-      ],
-      [
-        "teknologi",
-        13
+        "orang",
+        39
       ],
       [
         "menciptakan",
         18
       ],
       [
-        "dipaksakan",
-        8
+        "tatanan",
+        12
       ],
       [
-        "terus-menerus",
-        11
+        "masyarakat",
+        26
       ],
       [
-        "pemolisian",
-        3
+        "asing",
+        16
+      ],
+      [
+        "ketegangan",
+        9
       ]
     ],
     "phrases": [
@@ -191,29 +191,82 @@
     ],
     "similar": [
       [
-        1942,
-        0.2
+        2133,
+        0.23
       ],
       [
-        2133,
-        0.19
+        1942,
+        0.23
       ],
       [
         2046,
-        0.18
+        0.22
       ],
       [
         4684,
-        0.17
+        0.22
       ],
       [
         2672,
-        0.17
+        0.22
       ],
       [
         8062,
-        0.16
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 70,
+      "negative": 116,
+      "trend": [
+        0.4,
+        -0.43,
+        -0.2,
+        -0.67,
+        -0.09,
+        0.12,
+        -0.81,
+        -0.5,
+        0.27,
+        -0.33,
+        -0.33,
+        -0.6,
+        null,
+        -0.33,
+        -0.6,
+        0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

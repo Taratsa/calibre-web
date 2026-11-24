@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 6184,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "punk",
@@ -103,48 +103,48 @@
         56
       ],
       [
-        "anarko",
-        15
-      ],
-      [
         "anarkisme",
         27
       ],
       [
-        "sindikalisme",
-        11
+        "anarko",
+        15
       ],
       [
         "anarkis",
         26
       ],
       [
-        "proudon",
-        5
-      ],
-      [
-        "crass",
-        7
-      ],
-      [
-        "bakunin",
-        10
-      ],
-      [
-        "tattoo",
-        5
+        "sindikalisme",
+        11
       ],
       [
         "kebebasan",
         28
       ],
       [
+        "sosial",
+        36
+      ],
+      [
+        "negara",
+        40
+      ],
+      [
         "individu",
         23
       ],
       [
-        "godwin",
+        "crass",
+        7
+      ],
+      [
+        "proudon",
         5
+      ],
+      [
+        "bakunin",
+        10
       ]
     ],
     "phrases": [
@@ -183,29 +183,78 @@
     ],
     "similar": [
       [
-        7150,
-        0.25
-      ],
-      [
         6730,
-        0.24
+        0.34
       ],
       [
         2203,
-        0.24
+        0.34
       ],
       [
         3695,
-        0.23
+        0.31
       ],
       [
         3,
-        0.23
+        0.31
       ],
       [
         2313,
-        0.23
+        0.31
+      ],
+      [
+        7968,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 168,
+      "negative": 77,
+      "trend": [
+        0.57,
+        0.6,
+        0.38,
+        0.68,
+        0,
+        -0.33,
+        0.07,
+        0.05,
+        0.27,
+        0.56,
+        0.68,
+        0.25,
+        0.43,
+        0.33,
+        0.85,
+        0.48
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

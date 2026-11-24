@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 4988,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "wesly",
@@ -146,12 +146,12 @@
         25
       ],
       [
-        "hyalas",
-        11
+        "ama",
+        33
       ],
       [
-        "ktei",
-        10
+        "hyalas",
+        11
       ],
       [
         "eras",
@@ -195,20 +195,60 @@
     "similar": [
       [
         3502,
-        0.42
+        0.41
       ],
       [
         5378,
-        0.32
+        0.31
+      ],
+      [
+        5440,
+        0.12
       ],
       [
         5965,
         0.12
       ],
       [
-        5440,
+        6158,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 45,
+      "negative": 21,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          7
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

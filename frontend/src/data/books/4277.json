@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3409,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "diorama",
@@ -104,20 +104,36 @@
         136
       ],
       [
+        "sejarah",
+        52
+      ],
+      [
         "disempurnakan",
         20
+      ],
+      [
+        "diganti",
+        28
       ],
       [
         "una",
         14
       ],
       [
-        "sejarah",
-        52
+        "dipertahankan",
+        23
       ],
       [
-        "diganti",
+        "fakta",
         28
+      ],
+      [
+        "sesuai",
+        49
+      ],
+      [
+        "nan",
+        22
       ],
       [
         "penggambaran",
@@ -128,24 +144,8 @@
         13
       ],
       [
-        "dipertahankan",
-        23
-      ],
-      [
-        "pembenahan",
-        11
-      ],
-      [
-        "nan",
-        22
-      ],
-      [
-        "fakta",
-        28
-      ],
-      [
-        "nun",
-        11
+        "judul",
+        27
       ]
     ],
     "phrases": [
@@ -189,24 +189,48 @@
       ],
       [
         4404,
-        0.2
+        0.22
       ],
       [
         4453,
-        0.13
+        0.15
       ],
       [
         2926,
-        0.12
+        0.13
       ],
       [
         4255,
-        0.11
+        0.13
       ],
       [
-        4298,
-        0.1
+        4273,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.35,
+      "positive": 20,
+      "negative": 42,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

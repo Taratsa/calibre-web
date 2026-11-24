@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4427,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "komunisme",
@@ -114,44 +114,44 @@
         32
       ],
       [
-        "berfederasi",
-        5
-      ],
-      [
         "kebebasan",
         28
-      ],
-      [
-        "komunis",
-        15
       ],
       [
         "gagasan",
         20
       ],
       [
-        "komunitas-komunitas",
-        7
+        "komunis",
+        15
       ],
       [
         "mesti",
         15
       ],
       [
-        "asosiasi",
-        10
+        "berfederasi",
+        5
       ],
       [
-        "borjuis",
-        9
+        "negara",
+        28
       ],
       [
         "individu",
         17
       ],
       [
-        "komune-komune",
-        4
+        "asosiasi",
+        10
+      ],
+      [
+        "kerja",
+        22
+      ],
+      [
+        "borjuis",
+        9
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         3963,
-        0.59
+        0.63
       ],
       [
         6730,
-        0.19
+        0.24
       ],
       [
         2203,
-        0.19
+        0.24
       ],
       [
         7142,
-        0.19
-      ],
-      [
-        2443,
-        0.18
+        0.24
       ],
       [
         2815,
-        0.18
+        0.23
+      ],
+      [
+        7875,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 81,
+      "negative": 60,
+      "trend": [
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        0.25,
+        -0.75,
+        -0.14,
+        0.2,
+        0.33,
+        0.43,
+        -0.5,
+        0.6,
+        0.5,
+        0.2,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

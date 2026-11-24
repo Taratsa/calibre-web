@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7952,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "hermeneutik",
@@ -123,6 +123,10 @@
         43
       ],
       [
+        "teks",
+        80
+      ],
+      [
         "hermeneutics",
         25
       ],
@@ -131,20 +135,16 @@
         18
       ],
       [
-        "teks",
-        80
+        "makna",
+        71
       ],
       [
         "biner",
         30
       ],
       [
-        "schleiermacher",
-        15
-      ],
-      [
-        "mcquillan",
-        11
+        "interpretasi",
+        38
       ]
     ],
     "phrases": [
@@ -184,15 +184,19 @@
     "similar": [
       [
         4681,
-        0.25
+        0.26
       ],
       [
         3893,
-        0.21
+        0.22
       ],
       [
         8065,
-        0.16
+        0.17
+      ],
+      [
+        3964,
+        0.15
       ],
       [
         8068,
@@ -201,11 +205,52 @@
       [
         2057,
         0.15
-      ],
-      [
-        3964,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.35,
+      "positive": 46,
+      "negative": 96,
+      "trend": [
+        1,
+        -0.09,
+        0.25,
+        -0.67,
+        1,
+        null,
+        null,
+        0.67,
+        null,
+        -1,
+        -0.95,
+        -0.57,
+        null,
+        null,
+        null,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          65
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

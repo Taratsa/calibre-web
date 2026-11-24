@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3183,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "peserta",
@@ -105,16 +105,20 @@
         50
       ],
       [
-        "dilisensikan",
-        10
-      ],
-      [
         "pedagogi",
         15
       ],
       [
         "zine",
         23
+      ],
+      [
+        "dilisensikan",
+        10
+      ],
+      [
+        "dorong",
+        16
       ],
       [
         "misykat",
@@ -125,14 +129,6 @@
         7
       ],
       [
-        "dorong",
-        16
-      ],
-      [
-        "posisionalitas",
-        6
-      ],
-      [
         "transformatif",
         11
       ],
@@ -141,8 +137,12 @@
         9
       ],
       [
-        "pesantren",
-        12
+        "posisionalitas",
+        6
+      ],
+      [
+        "komunitas",
+        24
       ]
     ],
     "phrases": [
@@ -182,28 +182,35 @@
     "similar": [
       [
         8167,
-        0.16
-      ],
-      [
-        1347,
-        0.16
+        0.18
       ],
       [
         2308,
-        0.15
+        0.18
+      ],
+      [
+        1347,
+        0.17
       ],
       [
         6976,
+        0.17
+      ],
+      [
+        6998,
+        0.15
+      ],
+      [
+        3074,
         0.14
-      ],
-      [
-        8810,
-        0.12
-      ],
-      [
-        7267,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 50,
+      "negative": 9,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3192,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "agraria",
@@ -95,48 +95,48 @@
         40
       ],
       [
-        "kmb",
-        11
-      ],
-      [
         "pertanian",
         25
+      ],
+      [
+        "kmb",
+        11
       ],
       [
         "panitia",
         17
       ],
       [
-        "hutang",
-        10
-      ],
-      [
         "kebijakan",
         16
       ],
       [
-        "perkebunan-perkebunan",
-        5
+        "indonesia",
+        34
+      ],
+      [
+        "hutang",
+        10
       ],
       [
         "orde",
         10
       ],
       [
-        "tauchid",
-        4
+        "negara",
+        23
       ],
       [
-        "linggarjati",
-        4
+        "perkebunan-perkebunan",
+        5
+      ],
+      [
+        "belanda",
+        12
       ],
       [
         "ris",
         6
-      ],
-      [
-        "landreform",
-        5
       ]
     ],
     "phrases": [
@@ -184,20 +184,27 @@
       ],
       [
         8489,
-        0.27
+        0.31
       ],
       [
         8487,
-        0.27
+        0.31
       ],
       [
         8413,
-        0.24
+        0.27
       ],
       [
         8412,
-        0.24
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 42,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2984,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "gua",
@@ -107,12 +107,12 @@
         30
       ],
       [
-        "nggak",
-        17
-      ],
-      [
         "berdua",
         24
+      ],
+      [
+        "nggak",
+        17
       ],
       [
         "mona",
@@ -143,8 +143,8 @@
         6
       ],
       [
-        "permalink",
-        3
+        "pertautan",
+        4
       ]
     ],
     "phrases": [
@@ -176,16 +176,64 @@
     "similar": [
       [
         6832,
-        0.21
+        0.2
+      ],
+      [
+        15297,
+        0.14
       ],
       [
         2610,
-        0.11
+        0.13
+      ],
+      [
+        10868,
+        0.13
+      ],
+      [
+        10866,
+        0.13
       ],
       [
         6852,
-        0.11
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 36,
+      "negative": 19,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

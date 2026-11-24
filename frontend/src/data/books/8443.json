@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 6311,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "negara",
@@ -103,11 +103,19 @@
     ],
     "distinct": [
       [
+        "agraria",
+        77
+      ],
+      [
         "hmn",
         37
       ],
       [
-        "agraria",
+        "negara",
+        126
+      ],
+      [
+        "hukum",
         77
       ],
       [
@@ -119,36 +127,28 @@
         23
       ],
       [
+        "tanah",
+        69
+      ],
+      [
         "reform",
         23
-      ],
-      [
-        "hukum",
-        77
-      ],
-      [
-        "negara",
-        126
-      ],
-      [
-        "integralistik",
-        8
       ],
       [
         "land",
         21
       ],
       [
-        "rejim",
-        12
+        "rakyat",
+        41
       ],
       [
-        "domein",
-        9
+        "menguasai",
+        29
       ],
       [
-        "penguasaan",
-        20
+        "politik",
+        40
       ]
     ],
     "phrases": [
@@ -188,28 +188,73 @@
     "similar": [
       [
         8441,
-        0.41
+        0.44
       ],
       [
         8482,
-        0.36
-      ],
-      [
-        8440,
-        0.35
-      ],
-      [
-        8398,
-        0.35
+        0.4
       ],
       [
         8486,
-        0.35
+        0.4
+      ],
+      [
+        8398,
+        0.39
       ],
       [
         8455,
-        0.34
+        0.39
+      ],
+      [
+        8453,
+        0.39
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 90,
+      "negative": 35,
+      "trend": [
+        null,
+        0.71,
+        0.71,
+        null,
+        null,
+        null,
+        0.38,
+        -0.33,
+        -0.1,
+        0.8,
+        0.08,
+        1,
+        1,
+        null,
+        0.56,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

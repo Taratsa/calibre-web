@@ -12,7 +12,7 @@
   "author_sort": "Aidit, D.N.",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 27554,
-    "longer_than": 83,
+    "longer_than": 92,
     "top": [
       [
         "tani",
@@ -116,12 +116,20 @@
         585
       ],
       [
+        "desa",
+        427
+      ],
+      [
         "di-desa-desa",
         65
       ],
       [
-        "desa",
-        427
+        "riset",
+        119
+      ],
+      [
+        "tanah",
+        257
       ],
       [
         "setan-setan",
@@ -132,16 +140,12 @@
         63
       ],
       [
-        "riset",
-        119
+        "koperasi",
+        85
       ],
       [
         "perduangan",
         34
-      ],
-      [
-        "koperasi",
-        85
       ],
       [
         "penghisapan",
@@ -150,10 +154,6 @@
       [
         "nelayan",
         75
-      ],
-      [
-        "aksi-aksi",
-        66
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         8558,
-        0.42
+        0.47
       ],
       [
         6728,
-        0.41
+        0.46
       ],
       [
         6714,
-        0.41
+        0.46
       ],
       [
         450,
-        0.41
+        0.46
       ],
       [
         9310,
-        0.38
+        0.4
       ],
       [
         9286,
-        0.31
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 446,
+      "negative": 356,
+      "trend": [
+        0.21,
+        -0.04,
+        0.06,
+        -0.44,
+        0,
+        0.22,
+        0,
+        0.17,
+        0.5,
+        0.7,
+        0.1,
+        -0.14,
+        0.24,
+        0.12,
+        -0.33,
+        0.17
+      ],
+      "emotions": [
+        [
+          "anger",
+          32
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

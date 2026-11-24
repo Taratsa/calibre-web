@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 5003,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "pasangan",
@@ -110,6 +110,10 @@
     ],
     "distinct": [
       [
+        "pasangan",
+        34
+      ],
+      [
         "homoseks",
         17
       ],
@@ -118,44 +122,40 @@
         22
       ],
       [
-        "pasangan",
-        34
+        "perkawinan",
+        29
       ],
       [
         "robby",
         10
       ],
       [
-        "perkawinan",
-        29
+        "iga",
+        10
       ],
       [
         "lambda",
         8
       ],
       [
-        "iga",
-        10
+        "ikatan",
+        17
       ],
       [
-        "orang-tua",
-        6
-      ],
-      [
-        "lahir-bathin",
-        4
+        "kapal",
+        16
       ],
       [
         "teman-teman",
         15
       ],
       [
-        "ikatan",
-        17
+        "orang-tua",
+        6
       ],
       [
-        "tulisi",
-        4
+        "organisasi",
+        20
       ]
     ],
     "phrases": [
@@ -195,28 +195,73 @@
     "similar": [
       [
         3319,
-        0.27
+        0.29
       ],
       [
         3320,
-        0.26
+        0.27
       ],
       [
         3321,
-        0.25
+        0.26
       ],
       [
         3324,
-        0.23
+        0.24
       ],
       [
         3323,
-        0.22
+        0.24
       ],
       [
         3318,
-        0.21
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.59,
+      "positive": 81,
+      "negative": 21,
+      "trend": [
+        0.6,
+        0.33,
+        0.2,
+        0.14,
+        0.83,
+        1,
+        0.33,
+        null,
+        null,
+        null,
+        1,
+        0.11,
+        0.33,
+        1,
+        1,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          28
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

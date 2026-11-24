@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1922,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "indonesia",
@@ -103,6 +103,10 @@
         11
       ],
       [
+        "indonesia",
+        77
+      ],
+      [
         "uni-sovjet",
         6
       ],
@@ -115,16 +119,12 @@
         16
       ],
       [
-        "urss",
-        6
-      ],
-      [
         "kundjungan",
         7
       ],
       [
-        "sovjet-indonesia",
-        4
+        "urss",
+        6
       ],
       [
         "persetudjuan",
@@ -135,8 +135,8 @@
         8
       ],
       [
-        "indonesia",
-        77
+        "sovjet-indonesia",
+        4
       ]
     ],
     "phrases": [
@@ -175,29 +175,36 @@
     ],
     "similar": [
       [
-        4804,
-        0.3
+        6799,
+        0.31
       ],
       [
-        6799,
-        0.3
+        4804,
+        0.31
       ],
       [
         6291,
-        0.22
+        0.24
       ],
       [
         9329,
-        0.22
+        0.24
       ],
       [
-        4907,
-        0.21
+        4790,
+        0.23
       ],
       [
-        4831,
-        0.21
+        435,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.75,
+      "positive": 49,
+      "negative": 7,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

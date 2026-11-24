@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1029,
-    "longer_than": 13,
+    "longer_than": 52,
     "top": [
       [
         "hidup",
@@ -99,11 +99,15 @@
     ],
     "distinct": [
       [
-        "posting",
-        4
+        "hidup",
+        27
       ],
       [
         "katalis",
+        4
+      ],
+      [
+        "posting",
         4
       ],
       [
@@ -111,8 +115,8 @@
         5
       ],
       [
-        "alienasi",
-        3
+        "bertahan",
+        8
       ],
       [
         "barang-barang",
@@ -123,16 +127,16 @@
         5
       ],
       [
-        "bertahan",
-        8
+        "alienasi",
+        3
       ],
       [
         "dirampas",
         4
       ],
       [
-        "hidup",
-        27
+        "membeli",
+        5
       ],
       [
         "benda-benda",
@@ -141,38 +145,35 @@
       [
         "segelintir",
         3
-      ],
-      [
-        "membeli",
-        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         9175,
-        0.55
-      ],
-      [
-        1995,
-        0.27
+        0.59
       ],
       [
         4684,
-        0.25
+        0.27
       ],
       [
         2672,
-        0.25
+        0.27
       ],
       [
-        2413,
-        0.18
+        1995,
+        0.24
+      ],
+      [
+        2155,
+        0.19
       ],
       [
         2177,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

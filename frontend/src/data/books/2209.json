@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2192,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "sosial",
@@ -107,44 +107,44 @@
         4
       ],
       [
-        "penggusuran",
-        8
-      ],
-      [
         "strategi",
         15
       ],
       [
-        "otonomis",
-        5
-      ],
-      [
-        "miguel",
-        4
-      ],
-      [
-        "ruang-ruang",
-        7
-      ],
-      [
-        "libertarian",
-        5
+        "sosial",
+        24
       ],
       [
         "gerakan",
         20
       ],
       [
-        "proyek",
-        12
+        "politik",
+        21
+      ],
+      [
+        "penggusuran",
+        8
       ],
       [
         "ruang",
         20
       ],
       [
-        "politik",
-        21
+        "otonomis",
+        5
+      ],
+      [
+        "ruang-ruang",
+        7
+      ],
+      [
+        "proyek",
+        12
+      ],
+      [
+        "miguel",
+        4
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7010,
-        0.17
+        0.19
       ],
       [
         2755,
-        0.15
+        0.17
+      ],
+      [
+        2256,
+        0.17
       ],
       [
         8091,
-        0.14
-      ],
-      [
-        4341,
-        0.12
+        0.16
       ],
       [
         8111,
-        0.12
+        0.16
       ],
       [
         1986,
-        0.12
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 53,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

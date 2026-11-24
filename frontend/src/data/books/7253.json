@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3776,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "mahasiswa",
@@ -118,40 +118,40 @@
         61
       ],
       [
-        "rektorat",
-        13
+        "pekerja",
+        43
       ],
       [
         "kampus",
         28
       ],
       [
+        "rektorat",
+        13
+      ],
+      [
         "audiensi",
         16
       ],
       [
-        "cannie",
-        6
-      ],
-      [
-        "pekerja",
-        43
+        "gerakan",
+        49
       ],
       [
         "mogok",
         19
       ],
       [
+        "langsung",
+        55
+      ],
+      [
+        "cannie",
+        6
+      ],
+      [
         "ukt",
         8
-      ],
-      [
-        "pabrik",
-        23
-      ],
-      [
-        "gerakan",
-        49
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         1921,
-        0.28
+        0.3
       ],
       [
         7076,
-        0.23
+        0.25
       ],
       [
         2584,
-        0.21
+        0.24
       ],
       [
         2765,
-        0.16
+        0.19
       ],
       [
         2318,
-        0.16
+        0.19
       ],
       [
-        2670,
-        0.14
+        1533,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 33,
+      "negative": 41,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

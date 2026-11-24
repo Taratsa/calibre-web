@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1911,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "kepolisian",
@@ -106,16 +106,12 @@
         19
       ],
       [
-        "ookkttoobbeerr",
-        7
-      ],
-      [
         "kepolisian",
         30
       ],
       [
-        "suporter",
-        9
+        "ookkttoobbeerr",
+        7
       ],
       [
         "gas",
@@ -126,16 +122,24 @@
         24
       ],
       [
-        "tgipf",
-        5
+        "tindak",
+        23
       ],
       [
         "tragedi",
         17
       ],
       [
-        "tindak",
-        23
+        "suporter",
+        9
+      ],
+      [
+        "kekerasan",
+        24
+      ],
+      [
+        "tgipf",
+        5
       ],
       [
         "polres",
@@ -144,10 +148,6 @@
       [
         "penembakan",
         10
-      ],
-      [
-        "kekerasan",
-        24
       ]
     ],
     "phrases": [
@@ -186,29 +186,53 @@
     ],
     "similar": [
       [
-        6901,
-        0.3
+        6935,
+        0.33
       ],
       [
-        6935,
-        0.29
+        6901,
+        0.33
       ],
       [
         291,
-        0.29
+        0.31
       ],
       [
         8805,
-        0.29
+        0.31
       ],
       [
         6951,
-        0.27
+        0.29
       ],
       [
         115,
-        0.27
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.75,
+      "positive": 10,
+      "negative": 71,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          29
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          6
+        ]
+      ]
+    }
   }
 }

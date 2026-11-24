@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 985,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "masyarakat",
@@ -103,12 +103,16 @@
         29
       ],
       [
+        "individu",
+        26
+      ],
+      [
         "marginal",
         10
       ],
       [
-        "individu",
-        26
+        "masyarakat",
+        32
       ],
       [
         "subjek",
@@ -119,32 +123,28 @@
         13
       ],
       [
-        "masyarakat",
-        32
-      ],
-      [
         "pembentukan",
         7
-      ],
-      [
-        "unik",
-        5
-      ],
-      [
-        "menyusup",
-        3
       ],
       [
         "mesti",
         6
       ],
       [
-        "individu-individu",
-        3
+        "unik",
+        5
       ],
       [
         "musuh",
         6
+      ],
+      [
+        "menyusup",
+        3
+      ],
+      [
+        "proses",
+        9
       ]
     ],
     "phrases": [
@@ -175,21 +175,30 @@
     ],
     "similar": [
       [
-        2725,
-        0.14
+        19350,
+        0.23
       ],
       [
         3952,
-        0.14
+        0.16
+      ],
+      [
+        2725,
+        0.15
       ],
       [
         7168,
-        0.13
+        0.15
       ],
       [
-        4322,
-        0.11
+        4687,
+        0.12
+      ],
+      [
+        2311,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

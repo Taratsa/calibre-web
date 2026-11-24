@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1338,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "warga",
@@ -103,12 +103,12 @@
         36
       ],
       [
-        "eksekusi",
-        11
-      ],
-      [
         "molotov",
         9
+      ],
+      [
+        "eksekusi",
+        11
       ],
       [
         "lemparan",
@@ -119,32 +119,32 @@
         8
       ],
       [
-        "blockade",
-        5
-      ],
-      [
-        "dalmas",
-        4
-      ],
-      [
         "aparat",
         13
       ],
       [
-        "posting",
-        4
+        "blockade",
+        5
       ],
       [
         "polisi",
         13
       ],
       [
+        "dalmas",
+        4
+      ],
+      [
         "berhamburan",
         5
       ],
       [
-        "katalis",
-        4
+        "lahan",
+        8
+      ],
+      [
+        "formasi",
+        5
       ]
     ],
     "phrases": [
@@ -175,16 +175,20 @@
     ],
     "similar": [
       [
-        1995,
+        2478,
         0.14
+      ],
+      [
+        1995,
+        0.13
       ],
       [
         2240,
         0.12
       ],
       [
-        7308,
-        0.11
+        3807,
+        0.12
       ],
       [
         7891,
@@ -193,11 +197,8 @@
       [
         2335,
         0.11
-      ],
-      [
-        7172,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

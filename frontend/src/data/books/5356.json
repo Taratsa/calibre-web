@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4551,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "taa",
@@ -131,24 +131,24 @@
         19
       ],
       [
-        "buol",
-        30
-      ],
-      [
         "tii",
         39
       ],
       [
-        "tiam",
-        23
+        "buol",
+        30
       ],
       [
         "nio",
         33
       ],
       [
-        "sambaragading",
-        15
+        "tiam",
+        23
+      ],
+      [
+        "tio",
+        30
       ]
     ],
     "phrases": [
@@ -185,6 +185,51 @@
         5
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5678,
+        0.16
+      ],
+      [
+        19001,
+        0.11
+      ],
+      [
+        16975,
+        0.11
+      ],
+      [
+        3649,
+        0.11
+      ],
+      [
+        16974,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 51,
+      "negative": 21,
+      "trend": [
+        null,
+        null,
+        null,
+        0.2,
+        1,
+        null,
+        null,
+        0.6,
+        0,
+        -0.2,
+        null,
+        0.43,
+        0.2,
+        0.6,
+        null,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

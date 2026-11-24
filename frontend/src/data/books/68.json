@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 10392,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "dunia",
@@ -111,40 +111,40 @@
         42
       ],
       [
-        "ke-tiga",
-        14
-      ],
-      [
         "india",
         34
       ],
       [
-        "pinjaman-pinjaman",
-        9
+        "ke-tiga",
+        14
+      ],
+      [
+        "makanan",
+        38
       ],
       [
         "genetika",
         12
       ],
       [
-        "gmos",
-        6
+        "pinjaman-pinjaman",
+        9
+      ],
+      [
+        "petani",
+        28
+      ],
+      [
+        "dunia",
+        56
+      ],
+      [
+        "revolusi",
+        28
       ],
       [
         "bioteknologi",
         9
-      ],
-      [
-        "terminator",
-        7
-      ],
-      [
-        "kimiawi",
-        9
-      ],
-      [
-        "monsanto",
-        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         1808,
-        0.21
+        0.24
       ],
       [
         60,
-        0.21
+        0.24
       ],
       [
         66,
-        0.17
-      ],
-      [
-        8685,
-        0.16
+        0.21
       ],
       [
         7864,
-        0.16
+        0.19
       ],
       [
         1852,
-        0.16
+        0.19
+      ],
+      [
+        8685,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 135,
+      "negative": 181,
+      "trend": [
+        -0.38,
+        -0.57,
+        -0.63,
+        -0.62,
+        -0.07,
+        -0.17,
+        -0.07,
+        -0.22,
+        -0.23,
+        -0.15,
+        -0.18,
+        0.14,
+        0.15,
+        0.25,
+        0.82,
+        0.8
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "disgust",
+          8
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

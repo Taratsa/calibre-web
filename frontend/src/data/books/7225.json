@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2159,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "manusia",
@@ -110,6 +110,10 @@
         8
       ],
       [
+        "ideologi",
+        19
+      ],
+      [
         "regenerasi",
         8
       ],
@@ -118,40 +122,36 @@
         9
       ],
       [
-        "ideologi",
-        19
-      ],
-      [
-        "perlman",
-        4
-      ],
-      [
-        "moore",
-        5
+        "tombak",
+        8
       ],
       [
         "tesis",
         7
       ],
       [
-        "tombak",
-        8
+        "moore",
+        5
       ],
       [
-        "sistem",
-        17
+        "perlman",
+        4
+      ],
+      [
+        "manusia",
+        21
       ],
       [
         "industri",
         11
       ],
       [
-        "manifesto",
-        5
+        "sistem",
+        17
       ],
       [
-        "peradaban",
-        7
+        "kaum",
+        14
       ]
     ],
     "phrases": [
@@ -190,29 +190,36 @@
     ],
     "similar": [
       [
-        8006,
-        0.13
-      ],
-      [
-        4734,
-        0.12
-      ],
-      [
-        7241,
-        0.11
-      ],
-      [
         7889,
-        0.11
+        0.15
       ],
       [
         3720,
-        0.11
+        0.15
       ],
       [
-        4113,
-        0.11
+        2347,
+        0.14
+      ],
+      [
+        3715,
+        0.14
+      ],
+      [
+        7241,
+        0.14
+      ],
+      [
+        4734,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 32,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1275,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "danarto",
@@ -112,16 +112,20 @@
         6
       ],
       [
-        "beritakota",
-        4
-      ],
-      [
         "cerpennya",
         7
       ],
       [
         "melukis",
         9
+      ],
+      [
+        "beritakota",
+        4
+      ],
+      [
+        "haji",
+        10
       ],
       [
         "cerpen",
@@ -132,20 +136,16 @@
         4
       ],
       [
-        "haji",
-        10
+        "teater",
+        8
       ],
       [
         "orangjawa",
         3
       ],
       [
-        "teater",
-        8
-      ],
-      [
-        "rifat",
-        4
+        "kumpulan",
+        10
       ]
     ],
     "phrases": [
@@ -185,28 +185,29 @@
     "similar": [
       [
         4320,
-        0.41
+        0.42
       ],
       [
         4247,
-        0.36
+        0.37
       ],
       [
         4333,
-        0.31
+        0.33
       ],
       [
         4397,
-        0.3
+        0.32
       ],
       [
         4512,
-        0.29
+        0.3
       ],
       [
-        4159,
-        0.28
+        4107,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

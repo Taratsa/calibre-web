@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1923,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "hidup",
@@ -103,16 +103,16 @@
         17
       ],
       [
-        "bodat",
-        4
-      ],
-      [
         "hidup",
         32
       ],
       [
-        "bayangkan",
+        "bodat",
         4
+      ],
+      [
+        "orang",
+        15
       ],
       [
         "kawan",
@@ -123,28 +123,28 @@
         6
       ],
       [
-        "risiko",
-        3
-      ],
-      [
         "mati",
         8
       ],
       [
-        "kewajiban",
+        "bayangkan",
+        4
+      ],
+      [
+        "risiko",
         3
       ],
       [
-        "jam",
-        4
+        "kehidupan",
+        6
       ],
       [
         "memilih",
         5
       ],
       [
-        "menikmati",
-        3
+        "bebas",
+        5
       ]
     ],
     "phrases": [],
@@ -166,13 +166,70 @@
         0.15
       ],
       [
-        2572,
-        0.12
+        2,
+        0.14
       ],
       [
-        2,
-        0.12
+        4701,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 50,
+      "negative": 43,
+      "trend": [
+        0.11,
+        null,
+        null,
+        null,
+        0,
+        -0.25,
+        -0.25,
+        null,
+        0,
+        1,
+        0.25,
+        -0.2,
+        -0.67,
+        0,
+        -0.14,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 31457,
-    "longer_than": 86,
+    "longer_than": 93,
     "top": [
       [
         "masyarakat",
@@ -92,24 +92,32 @@
     ],
     "distinct": [
       [
-        "akses",
-        336
-      ],
-      [
         "informasi",
         489
+      ],
+      [
+        "akses",
+        336
       ],
       [
         "partisipasi",
         238
       ],
       [
-        "indikator",
-        126
+        "masyarakat",
+        501
       ],
       [
         "lingkungan",
         367
+      ],
+      [
+        "indikator",
+        126
+      ],
+      [
+        "pengambilan",
+        138
       ],
       [
         "amdal",
@@ -120,24 +128,16 @@
         61
       ],
       [
-        "pengambilan",
-        138
-      ],
-      [
-        "masyarakat",
-        501
-      ],
-      [
-        "aksesibilitas",
-        53
-      ],
-      [
-        "kualitas",
-        117
+        "keputusan",
+        179
       ],
       [
         "penelitian",
         142
+      ],
+      [
+        "pemerintah",
+        189
       ]
     ],
     "phrases": [
@@ -177,28 +177,77 @@
     "similar": [
       [
         8855,
-        0.27
-      ],
-      [
-        8155,
-        0.22
+        0.3
       ],
       [
         8652,
-        0.22
+        0.28
       ],
       [
         8848,
-        0.21
+        0.26
       ],
       [
-        9072,
-        0.21
+        8155,
+        0.26
+      ],
+      [
+        8654,
+        0.26
       ],
       [
         8876,
-        0.21
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 514,
+      "negative": 242,
+      "trend": [
+        0.56,
+        0.72,
+        0.76,
+        0.53,
+        0.38,
+        -0.08,
+        0.15,
+        -0.12,
+        0.57,
+        0.43,
+        0,
+        -0.02,
+        0.09,
+        0.8,
+        0.63,
+        0.46
+      ],
+      "emotions": [
+        [
+          "trust",
+          78
+        ],
+        [
+          "fear",
+          32
+        ],
+        [
+          "anger",
+          25
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

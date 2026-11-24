@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 11966,
-    "longer_than": 65,
+    "longer_than": 83,
     "top": [
       [
         "kantor",
@@ -100,10 +100,6 @@
     ],
     "distinct": [
       [
-        "provinsinusa",
-        284
-      ],
-      [
         "kantor",
         1905
       ],
@@ -116,6 +112,10 @@
         1119
       ],
       [
+        "provinsinusa",
+        284
+      ],
+      [
         "tenggara",
         867
       ],
@@ -124,12 +124,12 @@
         1758
       ],
       [
-        "tengg",
-        111
-      ],
-      [
         "barat",
         859
+      ],
+      [
+        "tengg",
+        111
       ],
       [
         "provin",
@@ -207,6 +207,7 @@
         6098,
         0.46
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

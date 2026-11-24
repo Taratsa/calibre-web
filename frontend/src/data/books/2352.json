@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5168,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "pekerja",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "sewajarnya",
-        15
-      ],
-      [
         "pekerja",
         36
       ],
       [
-        "sosialisme",
-        18
-      ],
-      [
-        "revolusioner",
-        23
+        "sewajarnya",
+        15
       ],
       [
         "kelas",
         34
       ],
       [
-        "buruh",
-        22
+        "revolusioner",
+        23
       ],
       [
-        "sosialis",
-        14
-      ],
-      [
-        "partai-partai",
-        9
-      ],
-      [
-        "serikat",
+        "sosialisme",
         18
-      ],
-      [
-        "solidarity",
-        7
       ],
       [
         "kaum",
         28
       ],
       [
-        "nlf",
-        3
+        "buruh",
+        22
+      ],
+      [
+        "masyarakat",
+        35
+      ],
+      [
+        "sosialis",
+        14
+      ],
+      [
+        "serikat",
+        18
+      ],
+      [
+        "kesadaran",
+        19
+      ],
+      [
+        "rakyat",
+        24
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        7887,
-        0.19
-      ],
-      [
         6730,
-        0.19
+        0.27
       ],
       [
         2203,
-        0.19
+        0.27
+      ],
+      [
+        7887,
+        0.27
       ],
       [
         7142,
-        0.19
+        0.26
       ],
       [
         2086,
-        0.18
+        0.26
       ],
       [
-        1845,
-        0.17
+        2064,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 105,
+      "negative": 49,
+      "trend": [
+        0,
+        0.43,
+        1,
+        1,
+        -0.29,
+        0.5,
+        0.33,
+        1,
+        0.27,
+        0.75,
+        0,
+        0.71,
+        -0.11,
+        0.23,
+        0.14,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

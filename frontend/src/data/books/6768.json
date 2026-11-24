@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 22424,
-    "longer_than": 78,
+    "longer_than": 89,
     "top": [
       [
         "perlawanan",
@@ -112,36 +112,36 @@
         88
       ],
       [
-        "diktatur",
-        62
+        "perlawanan",
+        163
       ],
       [
-        "tanpa-kekerasan",
-        33
+        "diktatur",
+        62
       ],
       [
         "pembangkangan",
         73
       ],
       [
-        "perlawanan",
-        163
+        "strategi",
+        125
+      ],
+      [
+        "tanpa-kekerasan",
+        33
       ],
       [
         "rezim",
         93
       ],
       [
-        "strategi",
-        125
-      ],
-      [
         "perjuangan",
         141
       ],
       [
-        "demokratis",
-        80
+        "politik",
+        155
       ],
       [
         "kekerasan",
@@ -185,28 +185,85 @@
     "similar": [
       [
         6766,
-        0.27
+        0.33
       ],
       [
         6779,
-        0.25
+        0.28
       ],
       [
         7911,
-        0.2
+        0.26
       ],
       [
         7980,
-        0.2
+        0.25
       ],
       [
         6762,
-        0.19
+        0.24
       ],
       [
         6777,
-        0.18
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 580,
+      "negative": 397,
+      "trend": [
+        0.27,
+        0.37,
+        0.03,
+        0.25,
+        0.15,
+        0.12,
+        -0.08,
+        -0.06,
+        0.22,
+        0.38,
+        0.35,
+        0,
+        0.38,
+        0.55,
+        0.29,
+        0.03
+      ],
+      "emotions": [
+        [
+          "anger",
+          146
+        ],
+        [
+          "fear",
+          50
+        ],
+        [
+          "trust",
+          45
+        ],
+        [
+          "sadness",
+          30
+        ],
+        [
+          "joy",
+          26
+        ],
+        [
+          "anticipation",
+          24
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

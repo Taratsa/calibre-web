@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2534,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "selebaran",
@@ -119,60 +119,67 @@
         6
       ],
       [
-        "spektakuler",
-        4
-      ],
-      [
         "anarkis",
         8
+      ],
+      [
+        "spektakuler",
+        4
       ],
       [
         "intervensi",
         6
       ],
       [
+        "aksi",
+        7
+      ],
+      [
         "pembacaan",
         4
       ],
       [
-        "pemujaan",
-        3
+        "gaya",
+        6
       ],
       [
-        "pamflet",
-        3
-      ],
-      [
-        "hadirin",
-        3
+        "puisi",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2714,
-        0.38
+        0.39
       ],
       [
         2698,
         0.37
       ],
       [
-        2213,
-        0.15
+        7203,
+        0.17
       ],
       [
-        1829,
-        0.14
+        2213,
+        0.16
       ],
       [
         2187,
         0.14
       ],
       [
-        7203,
-        0.12
+        1829,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 46,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

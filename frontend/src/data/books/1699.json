@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 24533,
-    "longer_than": 80,
+    "longer_than": 90,
     "top": [
       [
         "riot",
@@ -111,40 +111,40 @@
         39
       ],
       [
-        "grenade",
-        29
+        "police",
+        60
       ],
       [
-        "pricing",
-        33
+        "grenade",
+        29
       ],
       [
         "ballistic",
         24
       ],
       [
-        "police",
-        60
-      ],
-      [
-        "helmets",
-        25
-      ],
-      [
-        "filters",
-        25
-      ],
-      [
-        "mask",
-        37
+        "pricing",
+        33
       ],
       [
         "protection",
         58
       ],
       [
+        "helmets",
+        25
+      ],
+      [
         "baton",
         29
+      ],
+      [
+        "smoke",
+        33
+      ],
+      [
+        "mask",
+        37
       ]
     ],
     "phrases": [
@@ -188,16 +188,21 @@
       ],
       [
         6911,
-        0.27
+        0.26
+      ],
+      [
+        9529,
+        0.12
+      ],
+      [
+        12087,
+        0.11
       ],
       [
         1559,
         0.11
-      ],
-      [
-        409,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

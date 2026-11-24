@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2752,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "blok",
@@ -104,44 +104,44 @@
         12
       ],
       [
-        "irawadi",
-        6
-      ],
-      [
         "rusia",
         17
-      ],
-      [
-        "lahir-batin",
-        6
-      ],
-      [
-        "chetty",
-        4
-      ],
-      [
-        "belanda",
-        22
       ],
       [
         "amerika",
         24
       ],
       [
-        "kemiliteran",
-        7
+        "belanda",
+        22
+      ],
+      [
+        "irawadi",
+        6
+      ],
+      [
+        "negara",
+        33
+      ],
+      [
+        "lahir-batin",
+        6
+      ],
+      [
+        "indonesia",
+        39
+      ],
+      [
+        "chetty",
+        4
       ],
       [
         "borjuis",
         10
       ],
       [
-        "murbalah",
-        3
-      ],
-      [
-        "pembelaan",
-        8
+        "kemiliteran",
+        7
       ]
     ],
     "phrases": [
@@ -181,28 +181,35 @@
     "similar": [
       [
         9245,
-        0.3
-      ],
-      [
-        9251,
-        0.28
+        0.34
       ],
       [
         9247,
-        0.27
+        0.32
+      ],
+      [
+        9251,
+        0.31
       ],
       [
         9254,
-        0.26
+        0.29
       ],
       [
         4652,
-        0.22
+        0.27
       ],
       [
         390,
-        0.22
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 25,
+      "negative": 49,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

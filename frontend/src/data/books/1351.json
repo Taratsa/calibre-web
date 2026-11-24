@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1139,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "aman",
@@ -101,16 +101,12 @@
     ],
     "distinct": [
       [
-        "adegan",
-        15
-      ],
-      [
         "latihan",
         21
       ],
       [
-        "check-in",
-        4
+        "adegan",
+        15
       ],
       [
         "aman",
@@ -121,32 +117,36 @@
         9
       ],
       [
+        "check-in",
+        4
+      ],
+      [
         "siswa",
         11
       ],
       [
-        "safe",
-        6
+        "ruang",
+        18
       ],
       [
         "nyaman",
         10
       ],
       [
-        "space",
+        "safe",
         6
-      ],
-      [
-        "skip",
-        3
       ],
       [
         "sentuhan",
         5
       ],
       [
-        "formulir",
-        4
+        "space",
+        6
+      ],
+      [
+        "persetujuan",
+        7
       ]
     ],
     "phrases": [
@@ -169,12 +169,20 @@
     ],
     "similar": [
       [
+        1350,
+        0.18
+      ],
+      [
         1912,
         0.17
       ],
       [
-        1350,
-        0.17
+        16548,
+        0.16
+      ],
+      [
+        367,
+        0.15
       ],
       [
         8047,
@@ -183,15 +191,44 @@
       [
         4736,
         0.15
-      ],
-      [
-        2370,
-        0.15
-      ],
-      [
-        366,
-        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 63,
+      "negative": 25,
+      "trend": [
+        null,
+        0.6,
+        0.25,
+        0.6,
+        null,
+        -0.33,
+        null,
+        0.2,
+        0.5,
+        0.6,
+        1,
+        null,
+        null,
+        null,
+        -0.67,
+        1
+      ],
+      "emotions": [
+        [
+          "trust",
+          31
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

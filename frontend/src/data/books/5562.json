@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 5342,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "sang",
@@ -125,28 +125,28 @@
         30
       ],
       [
+        "katak",
+        50
+      ],
+      [
         "pomponu",
         21
       ],
       [
-        "katak",
-        50
+        "sang",
+        117
       ],
       [
         "kaasi",
         23
       ],
       [
-        "bolrong",
-        18
-      ],
-      [
         "tinga",
         25
       ],
       [
-        "nikabing",
-        14
+        "bolrong",
+        18
       ]
     ],
     "phrases": [
@@ -183,6 +183,34 @@
         10
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        3588,
+        0.54
+      ],
+      [
+        5520,
+        0.48
+      ],
+      [
+        5570,
+        0.11
+      ],
+      [
+        6187,
+        0.11
+      ],
+      [
+        5376,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 30,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

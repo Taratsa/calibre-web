@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 15958,
-    "longer_than": 72,
+    "longer_than": 86,
     "top": [
       [
         "ahmadiyah",
@@ -111,40 +111,40 @@
         88
       ],
       [
-        "komunitas",
-        145
+        "perempuan",
+        187
       ],
       [
-        "cianjur",
-        49
+        "komunitas",
+        145
       ],
       [
         "lombok",
         65
       ],
       [
+        "cianjur",
+        49
+      ],
+      [
         "komnas",
         60
       ],
       [
-        "perempuan",
-        187
+        "kabupaten",
+        74
       ],
       [
         "jamaah",
         30
       ],
       [
+        "mataram",
+        41
+      ],
+      [
         "skb",
         26
-      ],
-      [
-        "lobar",
-        17
-      ],
-      [
-        "kabupaten",
-        74
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         8824,
-        0.55
+        0.58
       ],
       [
         8845,
-        0.29
+        0.34
       ],
       [
         6915,
-        0.28
+        0.32
       ],
       [
         8274,
-        0.24
+        0.28
       ],
       [
-        8961,
-        0.24
+        8825,
+        0.28
       ],
       [
-        8592,
-        0.23
+        8814,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 202,
+      "negative": 200,
+      "trend": [
+        -0.08,
+        -0.21,
+        0.45,
+        -0.31,
+        0.54,
+        0.24,
+        -0.13,
+        -0.2,
+        0.09,
+        0.02,
+        -0.28,
+        0.53,
+        0.14,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          75
+        ],
+        [
+          "trust",
+          49
+        ],
+        [
+          "fear",
+          40
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

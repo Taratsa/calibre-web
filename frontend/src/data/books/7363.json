@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 880,
-    "longer_than": 10,
+    "longer_than": 50,
     "top": [
       [
         "hidup",
@@ -110,6 +110,14 @@
         4
       ],
       [
+        "menciptakan",
+        5
+      ],
+      [
+        "kekuasaan",
+        5
+      ],
+      [
         "gratis",
         3
       ],
@@ -118,27 +126,15 @@
         3
       ],
       [
-        "menciptakan",
-        5
-      ],
-      [
-        "membayar",
-        3
+        "hidup",
+        7
       ],
       [
         "pasar",
         4
       ],
       [
-        "keuntungan",
-        3
-      ],
-      [
-        "kekuasaan",
-        5
-      ],
-      [
-        "ketakutan",
+        "membayar",
         3
       ],
       [
@@ -146,8 +142,12 @@
         4
       ],
       [
-        "membangun",
-        4
+        "kehidupan",
+        5
+      ],
+      [
+        "ketakutan",
+        3
       ],
       [
         "ekonomi",
@@ -158,28 +158,29 @@
     "similar": [
       [
         7998,
-        0.51
-      ],
-      [
-        1992,
-        0.21
+        0.55
       ],
       [
         3705,
-        0.19
+        0.21
+      ],
+      [
+        19549,
+        0.21
+      ],
+      [
+        1992,
+        0.18
       ],
       [
         7275,
-        0.14
+        0.16
       ],
       [
-        7459,
-        0.13
-      ],
-      [
-        7029,
-        0.13
+        7020,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

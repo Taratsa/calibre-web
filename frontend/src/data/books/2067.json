@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3681,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "manusia",
@@ -103,6 +103,10 @@
         36
       ],
       [
+        "kapitalisme",
+        38
+      ],
+      [
         "teknologi",
         46
       ],
@@ -111,16 +115,24 @@
         24
       ],
       [
-        "kapitalisme",
-        38
-      ],
-      [
         "hlm",
         20
       ],
       [
+        "manusia",
+        47
+      ],
+      [
         "hardiman",
         6
+      ],
+      [
+        "borjuasi",
+        9
+      ],
+      [
+        "pendisiplinan",
+        7
       ],
       [
         "otomasi",
@@ -131,20 +143,8 @@
         6
       ],
       [
-        "pendisiplinan",
-        7
-      ],
-      [
         "marcuse",
         6
-      ],
-      [
-        "borjuasi",
-        9
-      ],
-      [
-        "teknofasis",
-        4
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2129,
-        0.29
+        0.31
       ],
       [
         7470,
-        0.26
+        0.29
       ],
       [
         2692,
-        0.24
+        0.26
       ],
       [
         7441,
-        0.22
-      ],
-      [
-        7330,
-        0.14
+        0.25
       ],
       [
         2199,
-        0.12
+        0.16
+      ],
+      [
+        9287,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 67,
+      "negative": 42,
+      "trend": [
+        0.2,
+        -0.23,
+        0,
+        1,
+        0.5,
+        null,
+        null,
+        null,
+        -0.2,
+        0.5,
+        0.2,
+        1,
+        0,
+        -0.2,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

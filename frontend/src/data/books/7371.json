@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1775,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "anarkis",
@@ -126,60 +126,109 @@
         8
       ],
       [
-        "disorientasi",
-        3
-      ],
-      [
         "titik",
         13
-      ],
-      [
-        "moralis",
-        3
-      ],
-      [
-        "capaian",
-        4
-      ],
-      [
-        "merengkuh",
-        3
       ],
       [
         "mesti",
         8
       ],
       [
-        "mengusung",
+        "disorientasi",
+        3
+      ],
+      [
+        "gagal",
+        9
+      ],
+      [
+        "kegagalan",
+        7
+      ],
+      [
+        "capaian",
         4
+      ],
+      [
+        "moralis",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8042,
-        0.2
+        0.17
       ],
       [
         1996,
-        0.2
-      ],
-      [
-        2130,
-        0.13
-      ],
-      [
-        2115,
-        0.12
-      ],
-      [
-        8041,
-        0.12
+        0.17
       ],
       [
         8081,
-        0.11
+        0.16
+      ],
+      [
+        16698,
+        0.14
+      ],
+      [
+        2115,
+        0.13
+      ],
+      [
+        7073,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.22,
+      "positive": 28,
+      "negative": 44,
+      "trend": [
+        0.2,
+        -1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        -0.43,
+        -0.71,
+        null,
+        null,
+        null,
+        0.2,
+        -0.14,
+        -0.33,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          12
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

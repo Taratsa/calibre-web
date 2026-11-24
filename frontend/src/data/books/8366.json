@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 9058,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "reform",
@@ -123,16 +123,20 @@
         32
       ],
       [
-        "reversal",
-        28
-      ],
-      [
         "political",
         62
       ],
       [
+        "reversal",
+        28
+      ],
+      [
         "peasants",
         32
+      ],
+      [
+        "reaction",
+        31
       ],
       [
         "stolypin",
@@ -141,10 +145,6 @@
       [
         "compromise",
         28
-      ],
-      [
-        "reaction",
-        31
       ]
     ],
     "phrases": [
@@ -184,11 +184,11 @@
     "similar": [
       [
         8573,
-        0.26
+        0.27
       ],
       [
         8680,
-        0.21
+        0.22
       ],
       [
         8507,
@@ -204,8 +204,9 @@
       ],
       [
         8386,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

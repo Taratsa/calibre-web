@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 32868,
-    "longer_than": 87,
+    "longer_than": 93,
     "top": [
       [
         "trees",
@@ -116,20 +116,20 @@
         104
       ],
       [
-        "tree",
-        110
-      ],
-      [
         "advisors",
         71
       ],
       [
-        "rice-production",
-        45
-      ],
-      [
         "seedlings",
         67
+      ],
+      [
+        "tree",
+        110
+      ],
+      [
+        "rice-production",
+        45
       ],
       [
         "landscapes",
@@ -177,18 +177,18 @@
     "similar": [
       [
         8660,
-        0.27
+        0.28
       ],
       [
         8682,
         0.27
       ],
       [
-        8514,
+        546,
         0.25
       ],
       [
-        546,
+        8514,
         0.24
       ],
       [
@@ -199,6 +199,7 @@
         8631,
         0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

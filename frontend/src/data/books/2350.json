@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5240,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "breakdance",
@@ -135,12 +135,12 @@
         9
       ],
       [
-        "killer",
-        10
-      ],
-      [
         "julian",
         12
+      ],
+      [
+        "killer",
+        10
       ],
       [
         "chronical",
@@ -184,19 +184,19 @@
     "similar": [
       [
         2777,
-        0.28
+        0.27
       ],
       [
         2703,
-        0.19
+        0.21
       ],
       [
         1711,
-        0.19
+        0.2
       ],
       [
         4741,
-        0.17
+        0.18
       ],
       [
         9170,
@@ -206,6 +206,59 @@
         4076,
         0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 60,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -0.43,
+        0,
+        0.75,
+        null,
+        0,
+        null,
+        -0.2,
+        0.6,
+        -0.2,
+        0.25,
+        0.11,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          8
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

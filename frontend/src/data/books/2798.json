@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4442,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "hipster",
@@ -111,40 +111,40 @@
         5
       ],
       [
+        "budaya",
+        23
+      ],
+      [
         "fesyen",
         6
       ],
       [
-        "komodifikasi",
-        6
+        "apapun",
+        19
       ],
       [
-        "mengoleksi",
-        5
-      ],
-      [
-        "kultur",
-        9
-      ],
-      [
-        "punk",
-        7
-      ],
-      [
-        "sepeda-sepeda",
-        3
+        "generasi",
+        16
       ],
       [
         "identitas",
         14
       ],
       [
-        "kekerenan",
-        3
+        "kultur",
+        9
       ],
       [
-        "generasi",
-        16
+        "komodifikasi",
+        6
+      ],
+      [
+        "gaya",
+        13
+      ],
+      [
+        "punk",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         1970,
-        0.14
+        0.15
       ],
       [
         2111,
-        0.13
-      ],
-      [
-        3073,
-        0.11
-      ],
-      [
-        2400,
-        0.11
+        0.14
       ],
       [
         8086,
-        0.11
+        0.14
       ],
       [
-        2666,
-        0.11
+        2400,
+        0.13
+      ],
+      [
+        3715,
+        0.12
+      ],
+      [
+        7334,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 47,
+      "negative": 55,
+      "trend": [
+        null,
+        0.78,
+        -0.33,
+        null,
+        -0.33,
+        0.2,
+        -0.2,
+        0.25,
+        null,
+        -0.8,
+        -0.45,
+        0,
+        -0.11,
+        null,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

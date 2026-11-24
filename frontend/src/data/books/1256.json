@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2770,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "interseks",
@@ -113,12 +113,12 @@
         12
       ],
       [
-        "intersex",
-        4
-      ],
-      [
         "edisi",
         17
+      ],
+      [
+        "intersex",
+        4
       ],
       [
         "danang",
@@ -133,8 +133,8 @@
         3
       ],
       [
-        "debby",
-        3
+        "gender",
+        9
       ]
     ],
     "phrases": [
@@ -171,6 +171,38 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        1258,
+        0.12
+      ],
+      [
+        861,
+        0.11
+      ],
+      [
+        8783,
+        0.11
+      ],
+      [
+        4088,
+        0.11
+      ],
+      [
+        1257,
+        0.1
+      ],
+      [
+        3103,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 38,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

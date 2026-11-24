@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2307,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "warga",
@@ -111,16 +111,16 @@
         17
       ],
       [
+        "warga",
+        48
+      ],
+      [
         "pengeboran",
         15
       ],
       [
         "aqua-danone",
         7
-      ],
-      [
-        "warga",
-        48
       ],
       [
         "aquadanone",
@@ -131,20 +131,20 @@
         15
       ],
       [
+        "air",
+        23
+      ],
+      [
         "lokasi",
         14
       ],
       [
-        "audiensi",
-        5
+        "masyarakat",
+        24
       ],
       [
-        "danone",
-        3
-      ],
-      [
-        "investama",
-        3
+        "gerakan",
+        16
       ]
     ],
     "phrases": [
@@ -184,20 +184,35 @@
     "similar": [
       [
         2044,
-        0.34
+        0.35
       ],
       [
         7431,
-        0.34
+        0.35
       ],
       [
         2621,
-        0.31
+        0.33
       ],
       [
         2686,
-        0.16
+        0.18
+      ],
+      [
+        8364,
+        0.13
+      ],
+      [
+        10869,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 36,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

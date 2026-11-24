@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3298,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "mutualisme",
@@ -118,20 +118,20 @@
         18
       ],
       [
-        "proudhon",
-        9
+        "pekerja",
+        26
       ],
       [
         "komunisme",
         14
       ],
       [
-        "pekerja",
-        26
+        "proudhon",
+        9
       ],
       [
-        "pasca-kelangkaan",
-        4
+        "ekonomi",
+        27
       ],
       [
         "kapitalisme",
@@ -142,16 +142,16 @@
         11
       ],
       [
+        "pasar",
+        18
+      ],
+      [
         "koperasi",
         10
       ],
       [
-        "kropotkin",
-        6
-      ],
-      [
-        "ekonomi",
-        27
+        "pasca-kelangkaan",
+        4
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         3989,
-        0.26
+        0.3
       ],
       [
         6730,
-        0.22
+        0.26
       ],
       [
         2203,
-        0.22
+        0.26
       ],
       [
         7393,
-        0.19
+        0.22
       ],
       [
         7150,
-        0.18
+        0.21
       ],
       [
-        1839,
-        0.17
+        7275,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 72,
+      "negative": 29,
+      "trend": [
+        0.71,
+        null,
+        0.83,
+        null,
+        0.6,
+        null,
+        0.2,
+        0.6,
+        0.43,
+        0.75,
+        -0.14,
+        null,
+        null,
+        0.14,
+        0.25,
+        0.5
+      ],
+      "emotions": []
+    }
   }
 }

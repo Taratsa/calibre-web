@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 746,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "anarkis",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "papua",
-        17
-      ],
-      [
         "anarkis",
         20
+      ],
+      [
+        "papua",
+        17
       ],
       [
         "anarkisme",
@@ -122,8 +122,8 @@
         7
       ],
       [
-        "kepemerintahan",
-        3
+        "barat",
+        15
       ],
       [
         "pembebasan",
@@ -134,24 +134,24 @@
         7
       ],
       [
-        "https",
-        6
+        "kepemerintahan",
+        3
+      ],
+      [
+        "masyarakat",
+        14
+      ],
+      [
+        "negara",
+        14
+      ],
+      [
+        "perjuangan",
+        7
       ],
       [
         "rasisme",
         3
-      ],
-      [
-        "barat",
-        15
-      ],
-      [
-        "jajahan",
-        3
-      ],
-      [
-        "penentuan",
-        4
       ]
     ],
     "phrases": [
@@ -187,28 +187,29 @@
     "similar": [
       [
         3086,
-        0.52
+        0.57
       ],
       [
         7446,
-        0.36
+        0.4
       ],
       [
         7203,
-        0.2
+        0.25
       ],
       [
-        7336,
-        0.19
+        7181,
+        0.23
       ],
       [
-        3953,
-        0.17
+        3716,
+        0.23
       ],
       [
         2595,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

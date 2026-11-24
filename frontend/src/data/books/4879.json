@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3379,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "dunia",
@@ -109,44 +109,44 @@
         8
       ],
       [
-        "vissarionovich",
-        4
+        "kau",
+        20
       ],
       [
         "djuga",
         12
       ],
       [
-        "kau",
-        20
+        "kawan",
+        18
       ],
       [
-        "jozef",
+        "vissarionovich",
         4
+      ],
+      [
+        "tiada",
+        15
       ],
       [
         "tjinta",
         8
       ],
       [
-        "kukenal",
-        6
-      ],
-      [
-        "kawan",
-        18
-      ],
-      [
-        "penjongsong",
-        3
+        "lagu",
+        13
       ],
       [
         "derita",
         9
       ],
       [
-        "hidjau",
-        6
+        "adik",
+        11
+      ],
+      [
+        "jozef",
+        4
       ]
     ],
     "phrases": [
@@ -186,28 +186,81 @@
     "similar": [
       [
         1288,
-        0.23
+        0.26
       ],
       [
         7651,
-        0.2
+        0.22
       ],
       [
         4886,
-        0.16
+        0.19
       ],
       [
         277,
-        0.15
+        0.18
       ],
       [
         3036,
-        0.15
+        0.17
       ],
       [
         6724,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 71,
+      "negative": 48,
+      "trend": [
+        null,
+        null,
+        0.6,
+        0.56,
+        -0.14,
+        0.67,
+        0.5,
+        0,
+        0.83,
+        -0.6,
+        0.14,
+        0,
+        0,
+        0.2,
+        -0.43,
+        0.14
+      ],
+      "emotions": [
+        [
+          "joy",
+          32
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 690,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "binatang",
@@ -101,12 +101,16 @@
     ],
     "distinct": [
       [
+        "salat",
+        4
+      ],
+      [
         "tasawuf",
         3
       ],
       [
-        "salat",
-        4
+        "binatang",
+        6
       ],
       [
         "tumbuhan",
@@ -117,15 +121,7 @@
         4
       ],
       [
-        "binatang",
-        6
-      ],
-      [
         "cerpen",
-        3
-      ],
-      [
-        "lenyap",
         3
       ],
       [
@@ -133,7 +129,7 @@
         5
       ],
       [
-        "peran",
+        "lenyap",
         3
       ],
       [
@@ -141,23 +137,27 @@
         6
       ],
       [
-        "bentuk",
+        "peran",
         3
       ],
       [
         "orang",
         4
+      ],
+      [
+        "bentuk",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        4151,
-        0.38
-      ],
-      [
         4288,
         0.37
+      ],
+      [
+        4151,
+        0.35
       ],
       [
         4183,
@@ -169,12 +169,13 @@
       ],
       [
         4247,
-        0.25
+        0.24
       ],
       [
         4326,
-        0.25
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

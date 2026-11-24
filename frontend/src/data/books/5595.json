@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3545,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "bipa",
@@ -123,36 +123,36 @@
         53
       ],
       [
-        "unesa",
-        16
-      ],
-      [
         "mahasiswa",
         64
       ],
       [
-        "imbuhan",
-        14
-      ],
-      [
-        "dosen",
-        23
+        "unesa",
+        16
       ],
       [
         "media",
         59
       ],
       [
+        "imbuhan",
+        14
+      ],
+      [
         "kalimat",
         33
+      ],
+      [
+        "dosen",
+        23
       ],
       [
         "produk",
         23
       ],
       [
-        "shendy",
-        4
+        "pengembangan",
+        24
       ]
     ],
     "phrases": [
@@ -192,28 +192,35 @@
     "similar": [
       [
         5272,
-        0.21
+        0.23
       ],
       [
         871,
-        0.18
+        0.2
       ],
       [
         4955,
-        0.16
+        0.17
       ],
       [
         882,
-        0.16
+        0.17
       ],
       [
         6242,
-        0.15
+        0.16
       ],
       [
-        6316,
-        0.13
+        5384,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 41,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

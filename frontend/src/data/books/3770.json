@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4226,
-    "longer_than": 39,
+    "longer_than": 71,
     "top": [
       [
         "conspiracy",
@@ -111,40 +111,40 @@
         13
       ],
       [
-        "komunike",
-        8
-      ],
-      [
         "revolusioner",
         18
+      ],
+      [
+        "komunike",
+        8
       ],
       [
         "sel",
         11
       ],
       [
-        "proposal",
-        8
-      ],
-      [
-        "serangan",
-        14
+        "tindakan",
+        20
       ],
       [
         "kolektif",
         13
       ],
       [
-        "urban",
-        7
+        "serangan",
+        14
+      ],
+      [
+        "proposal",
+        8
       ],
       [
         "anarkis",
         10
       ],
       [
-        "cell",
-        4
+        "urban",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         2730,
-        0.67
+        0.7
       ],
       [
         2076,
-        0.27
+        0.32
       ],
       [
         8021,
-        0.26
+        0.29
       ],
       [
         7105,
-        0.26
+        0.29
       ],
       [
         1813,
-        0.26
+        0.29
       ],
       [
-        7110,
-        0.24
+        7885,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 67,
+      "negative": 54,
+      "trend": [
+        0.5,
+        0,
+        0.67,
+        -0.67,
+        0.4,
+        0.78,
+        0.4,
+        -0.11,
+        0.09,
+        0.2,
+        0,
+        -0.2,
+        -0.17,
+        null,
+        -0.2,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1932,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "puisi",
@@ -115,20 +115,28 @@
         6
       ],
       [
-        "berpuisi",
-        4
-      ],
-      [
         "komunitas",
         14
+      ],
+      [
+        "berpuisi",
+        4
       ],
       [
         "penyair",
         6
       ],
       [
-        "gaza",
-        3
+        "angka",
+        9
+      ],
+      [
+        "malang",
+        8
+      ],
+      [
+        "menulis",
+        10
       ],
       [
         "takbir",
@@ -137,14 +145,6 @@
       [
         "marsinah",
         3
-      ],
-      [
-        "lantunan",
-        3
-      ],
-      [
-        "angka",
-        9
       ]
     ],
     "phrases": [
@@ -184,24 +184,31 @@
       ],
       [
         6958,
-        0.18
+        0.17
       ],
       [
-        262,
+        4942,
         0.14
       ],
       [
-        5654,
+        3004,
+        0.14
+      ],
+      [
+        18619,
         0.14
       ],
       [
         8041,
         0.14
-      ],
-      [
-        4942,
-        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 29,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

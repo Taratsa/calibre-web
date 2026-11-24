@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 6352,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "ekonomi",
@@ -89,16 +89,16 @@
     ],
     "distinct": [
       [
+        "sumitro",
+        38
+      ],
+      [
         "devisen",
         33
       ],
       [
         "pasardunia",
         21
-      ],
-      [
-        "sumitro",
-        38
       ],
       [
         "djumlah",
@@ -109,20 +109,20 @@
         32
       ],
       [
-        "defisit",
-        30
-      ],
-      [
         "rakjat",
         47
       ],
       [
-        "mendjadi",
-        39
+        "defisit",
+        30
       ],
       [
         "keuangan",
         50
+      ],
+      [
+        "mendjadi",
+        39
       ],
       [
         "anggaran",
@@ -133,8 +133,8 @@
         21
       ],
       [
-        "padjak-padjak",
-        10
+        "ekonomi",
+        57
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         9266,
-        0.6
+        0.62
       ],
       [
         433,
-        0.26
+        0.27
       ],
       [
         798,
-        0.22
+        0.25
       ],
       [
         6799,
-        0.22
+        0.24
       ],
       [
         6700,
-        0.21
+        0.23
       ],
       [
         4790,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 63,
+      "negative": 69,
+      "trend": [
+        null,
+        null,
+        1,
+        0.5,
+        -0.41,
+        0,
+        -0.4,
+        0.2,
+        0,
+        0.27,
+        -0.33,
+        0.11,
+        -1,
+        -0.09,
+        0,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

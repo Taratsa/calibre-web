@@ -82,7 +82,7 @@
   ],
   "text": {
     "words": 2313,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "seni",
@@ -135,40 +135,40 @@
     ],
     "distinct": [
       [
-        "musik",
-        25
-      ],
-      [
         "seni",
         34
       ],
       [
-        "audio",
-        9
-      ],
-      [
-        "kontra-kultura",
-        5
-      ],
-      [
-        "faksi",
-        6
+        "musik",
+        25
       ],
       [
         "kolektif",
         16
       ],
       [
+        "kontra-kultura",
+        5
+      ],
+      [
+        "audio",
+        9
+      ],
+      [
+        "faksi",
+        6
+      ],
+      [
         "kultur",
         8
       ],
       [
-        "kultura",
-        3
-      ],
-      [
         "merealisasikan",
         6
+      ],
+      [
+        "kultura",
+        3
       ],
       [
         "memapankan",
@@ -179,8 +179,8 @@
         6
       ],
       [
-        "realisme",
-        4
+        "revolusioner",
+        8
       ]
     ],
     "phrases": [
@@ -219,8 +219,8 @@
     ],
     "similar": [
       [
-        4573,
-        0.16
+        12271,
+        0.18
       ],
       [
         4575,
@@ -228,20 +228,52 @@
       ],
       [
         7327,
-        0.16
+        0.14
+      ],
+      [
+        3058,
+        0.14
+      ],
+      [
+        11834,
+        0.13
       ],
       [
         2786,
         0.13
-      ],
-      [
-        8089,
-        0.12
-      ],
-      [
-        4337,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.19,
+      "positive": 27,
+      "negative": 40,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

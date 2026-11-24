@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 6174,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "pendidikan",
@@ -106,52 +106,52 @@
     ],
     "distinct": [
       [
-        "realis",
-        15
-      ],
-      [
-        "heinsius",
-        8
-      ],
-      [
-        "musti",
-        17
-      ],
-      [
         "pendidikan",
         73
-      ],
-      [
-        "realisme",
-        12
-      ],
-      [
-        "kehendak",
-        29
-      ],
-      [
-        "kebaheulaan",
-        5
       ],
       [
         "pengetahuan",
         50
       ],
       [
+        "realis",
+        15
+      ],
+      [
+        "musti",
+        17
+      ],
+      [
+        "heinsius",
+        8
+      ],
+      [
+        "kehendak",
+        29
+      ],
+      [
+        "realisme",
+        12
+      ],
+      [
+        "manusia",
+        44
+      ],
+      [
+        "kebaheulaan",
+        5
+      ],
+      [
         "humanis",
         10
       ],
       [
-        "humanisme",
-        9
+        "orang",
+        49
       ],
       [
-        "konkordat",
-        4
-      ],
-      [
-        "krug",
-        4
+        "kebebasan",
+        23
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         8096,
-        0.54
+        0.57
       ],
       [
         2727,
-        0.25
+        0.27
       ],
       [
         2509,
-        0.22
+        0.25
       ],
       [
         4713,
-        0.22
-      ],
-      [
-        2075,
-        0.18
+        0.25
       ],
       [
         4714,
-        0.17
+        0.21
+      ],
+      [
+        302,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 189,
+      "negative": 77,
+      "trend": [
+        0.29,
+        0.33,
+        0.6,
+        0.69,
+        -0.12,
+        0.55,
+        0.08,
+        0.38,
+        0.54,
+        0.37,
+        0.58,
+        0.5,
+        0.21,
+        0.91,
+        0.5,
+        0.67
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

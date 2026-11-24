@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1423,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "prasasti",
@@ -117,16 +117,20 @@
         13
       ],
       [
-        "manukû",
-        5
+        "hlm",
+        20
       ],
       [
         "pembatjaan",
         8
       ],
       [
-        "hlm",
-        20
+        "manukû",
+        5
+      ],
+      [
+        "sedjarah",
+        13
       ],
       [
         "damais",
@@ -135,10 +139,6 @@
       [
         "goris",
         6
-      ],
-      [
-        "sedjarah",
-        13
       ],
       [
         "prasasti-prasasti",
@@ -179,6 +179,20 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2904,
+        0.16
+      ],
+      [
+        944,
+        0.16
+      ],
+      [
+        2933,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

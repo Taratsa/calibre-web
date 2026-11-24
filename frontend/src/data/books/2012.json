@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 11043,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "motor",
@@ -103,12 +103,12 @@
         124
       ],
       [
-        "motorcycle",
-        108
-      ],
-      [
         "sepeda",
         210
+      ],
+      [
+        "motorcycle",
+        108
       ],
       [
         "motor",
@@ -123,28 +123,28 @@
         38
       ],
       [
-        "harley-davidson",
-        17
+        "studies",
+        62
       ],
       [
         "diakses",
         67
       ],
       [
-        "studies",
-        62
-      ],
-      [
         "journal",
         55
       ],
       [
-        "fall",
-        36
+        "harley-davidson",
+        17
       ],
       [
         "volume",
         48
+      ],
+      [
+        "fall",
+        36
       ]
     ],
     "phrases": [
@@ -191,6 +191,10 @@
         0.11
       ],
       [
+        5908,
+        0.11
+      ],
+      [
         1473,
         0.11
       ],
@@ -200,12 +204,61 @@
       ],
       [
         1907,
-        0.11
-      ],
-      [
-        499,
-        0.11
+        0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 150,
+      "negative": 70,
+      "trend": [
+        0.23,
+        -0.22,
+        0.68,
+        0.8,
+        0.33,
+        null,
+        -0.11,
+        0.56,
+        -0.24,
+        -0.45,
+        null,
+        null,
+        0.88,
+        0.81,
+        0.71,
+        0.45
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

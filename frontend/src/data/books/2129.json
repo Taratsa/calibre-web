@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1512,
-    "longer_than": 20,
+    "longer_than": 58,
     "top": [
       [
         "teknologi",
@@ -111,12 +111,12 @@
         15
       ],
       [
-        "totaliterianisme",
-        4
-      ],
-      [
         "nalar",
         10
+      ],
+      [
+        "totaliterianisme",
+        4
       ],
       [
         "marcuse",
@@ -131,20 +131,20 @@
         7
       ],
       [
-        "posting",
-        4
+        "kapitalis",
+        9
       ],
       [
         "ekspansi",
         6
       ],
       [
-        "nilai-lebih",
-        3
-      ],
-      [
         "proletar",
         6
+      ],
+      [
+        "produksi",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2692,
-        0.34
+        0.35
       ],
       [
         7441,
-        0.3
+        0.32
       ],
       [
         2067,
-        0.29
+        0.31
       ],
       [
         7469,
-        0.26
-      ],
-      [
-        1995,
-        0.17
+        0.29
       ],
       [
         2032,
-        0.16
+        0.2
+      ],
+      [
+        2413,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 44,
+      "negative": 13,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

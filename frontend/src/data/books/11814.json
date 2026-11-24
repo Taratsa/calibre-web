@@ -1,0 +1,86 @@
+{
+  "id": 11814,
+  "title": "Squid: Log Analyzer",
+  "slug": "squid-log-analyzer-onno-widodo-purbo",
+  "slugBase": "squid-log-analyzer-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2017-06-23",
+  "timestamp": "2026-11-23 20:33:30.950415",
+  "last_modified": "2026-11-23 20:33:30.950419",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:67a9e97a-2e8e-53f3-b39b-d412743c7faf"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/11814?v=1795440810",
+  "cover_og_url": "/cover/11814/og?v=1795440810",
+  "url": "/book/squid-log-analyzer-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Cara paling sederhana, pakai tail -f tail -f /var/log/squid/access.log | awk '{print$3 \" \" $8 \" \" $7}' Referensi http://www.webalizer.org/ https://awstats.sourceforge.io/ https://awstats.sourceforge.io/docs/awstats_compare.html https://sourceforge.net/projects/sarg/",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2158,
+      "name": "Squid_ Log Analyzer - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 51,
+    "longer_than": 7,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        12927,
+        0.6
+      ],
+      [
+        11849,
+        0.43
+      ],
+      [
+        17868,
+        0.39
+      ],
+      [
+        9373,
+        0.35
+      ],
+      [
+        13761,
+        0.35
+      ],
+      [
+        9463,
+        0.34
+      ]
+    ],
+    "sentiment": null
+  }
+}

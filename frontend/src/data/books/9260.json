@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 3376,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "soekarno",
@@ -104,40 +104,40 @@
         21
       ],
       [
+        "presiden",
+        29
+      ],
+      [
         "pni",
         14
       ],
       [
-        "malaka",
-        15
-      ],
-      [
-        "presiden",
-        29
+        "soebarjo",
+        6
       ],
       [
         "belanda",
         26
       ],
       [
-        "grande",
-        6
-      ],
-      [
-        "jepang",
+        "malaka",
         15
-      ],
-      [
-        "hindia",
-        11
       ],
       [
         "aksi",
         22
       ],
       [
-        "sosio-nasionalisme",
-        4
+        "jepang",
+        15
+      ],
+      [
+        "massa",
+        20
+      ],
+      [
+        "revolusi",
+        19
       ],
       [
         "tan",
@@ -181,28 +181,52 @@
     "similar": [
       [
         7586,
-        0.64
+        0.66
       ],
       [
         4806,
-        0.62
+        0.65
       ],
       [
         2831,
-        0.62
+        0.65
       ],
       [
         9245,
-        0.18
+        0.21
       ],
       [
         7588,
-        0.17
+        0.2
       ],
       [
         9247,
-        0.15
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 44,
+      "negative": 35,
+      "trend": [
+        0,
+        null,
+        1,
+        0.25,
+        -0.25,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.5,
+        null,
+        null,
+        0.67,
+        -0.14,
+        -0.56
+      ],
+      "emotions": []
+    }
   }
 }

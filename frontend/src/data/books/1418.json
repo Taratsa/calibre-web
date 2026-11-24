@@ -12,7 +12,7 @@
   "author_sort": "Sudisman",
   "tags": [
     "Biografi & Otobiografi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 17610,
-    "longer_than": 74,
+    "longer_than": 87,
     "top": [
       [
         "pki",
@@ -124,36 +124,36 @@
         57
       ],
       [
+        "presiden",
+        77
+      ],
+      [
         "sukarno",
         47
+      ],
+      [
+        "rakyat",
+        101
       ],
       [
         "mahmilub",
         19
       ],
       [
-        "suparjo",
-        15
-      ],
-      [
         "nasution",
         33
       ],
       [
-        "presiden",
-        77
-      ],
-      [
-        "aidit",
-        32
-      ],
-      [
-        "oditur",
-        17
+        "politik",
+        89
       ],
       [
         "militer",
         59
+      ],
+      [
+        "aidit",
+        32
       ]
     ],
     "phrases": [
@@ -193,28 +193,77 @@
     "similar": [
       [
         4872,
-        0.22
+        0.25
       ],
       [
         4871,
-        0.22
+        0.25
       ],
       [
         994,
-        0.22
+        0.25
       ],
       [
         4904,
-        0.22
+        0.24
       ],
       [
         9302,
-        0.19
+        0.23
       ],
       [
         9307,
-        0.18
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 362,
+      "negative": 221,
+      "trend": [
+        0.62,
+        0.39,
+        -0.01,
+        -0.08,
+        0.39,
+        0.03,
+        0.33,
+        0.31,
+        0.22,
+        0.36,
+        0.53,
+        0.27,
+        0.38,
+        0.23,
+        0.3,
+        0.24
+      ],
+      "emotions": [
+        [
+          "trust",
+          74
+        ],
+        [
+          "sadness",
+          56
+        ],
+        [
+          "anger",
+          32
+        ],
+        [
+          "joy",
+          26
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

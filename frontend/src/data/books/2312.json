@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1483,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "tubuh",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "seksual",
-        24
-      ],
-      [
         "tubuh",
         44
+      ],
+      [
+        "seksual",
+        24
       ],
       [
         "kekerasan",
@@ -115,23 +115,19 @@
         10
       ],
       [
-        "dilecehkan",
-        4
-      ],
-      [
-        "penyimpangan",
-        6
+        "kekuasaan",
+        17
       ],
       [
         "membongkar",
         7
       ],
       [
-        "kekuasaan",
-        17
+        "penyimpangan",
+        6
       ],
       [
-        "seksualitas",
+        "dilecehkan",
         4
       ],
       [
@@ -143,8 +139,12 @@
         7
       ],
       [
-        "tubuh-tubuh",
-        3
+        "seksualitas",
+        4
+      ],
+      [
+        "kapitalisme",
+        7
       ]
     ],
     "phrases": [
@@ -163,29 +163,53 @@
     ],
     "similar": [
       [
-        3954,
-        0.17
+        1988,
+        0.21
       ],
       [
         7314,
-        0.16
-      ],
-      [
-        1988,
-        0.15
-      ],
-      [
-        2415,
-        0.14
+        0.2
       ],
       [
         2227,
-        0.14
+        0.18
       ],
       [
-        7855,
-        0.14
+        3954,
+        0.18
+      ],
+      [
+        2415,
+        0.17
+      ],
+      [
+        3795,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 22,
+      "negative": 48,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          36
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

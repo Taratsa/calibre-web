@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1710,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "bangsa",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "demokratis",
-        32
-      ],
-      [
         "bangsa",
         66
+      ],
+      [
+        "demokratis",
+        32
       ],
       [
         "negara-bangsa",
@@ -126,28 +126,28 @@
         8
       ],
       [
-        "model",
-        12
+        "masyarakat",
+        22
       ],
       [
-        "definisi",
-        8
+        "pikir",
+        11
+      ],
+      [
+        "model",
+        12
       ],
       [
         "pola",
         11
       ],
       [
+        "definisi",
+        8
+      ],
+      [
         "identitas",
         9
-      ],
-      [
-        "modernitas",
-        4
-      ],
-      [
-        "pikir",
-        11
       ],
       [
         "komunitas",
@@ -191,15 +191,19 @@
     "similar": [
       [
         2707,
-        0.28
+        0.3
       ],
       [
         4715,
-        0.23
+        0.24
+      ],
+      [
+        2093,
+        0.18
       ],
       [
         2156,
-        0.16
+        0.18
       ],
       [
         2626,
@@ -207,12 +211,15 @@
       ],
       [
         7537,
-        0.15
-      ],
-      [
-        2093,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 34,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2657,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "gender",
@@ -107,40 +107,40 @@
         7
       ],
       [
-        "non-biner",
-        5
-      ],
-      [
         "identitas",
         19
-      ],
-      [
-        "queer",
-        7
-      ],
-      [
-        "trans",
-        9
-      ],
-      [
-        "negativitas",
-        5
       ],
       [
         "wacana",
         14
       ],
       [
-        "metafisik",
-        6
+        "trans",
+        9
+      ],
+      [
+        "non-biner",
+        5
+      ],
+      [
+        "queer",
+        7
+      ],
+      [
+        "negativitas",
+        5
       ],
       [
         "norma",
         11
       ],
       [
-        "normalisasi",
-        5
+        "metafisik",
+        6
+      ],
+      [
+        "kategori",
+        10
       ],
       [
         "penyimpangan",
@@ -172,7 +172,7 @@
     "similar": [
       [
         7013,
-        0.76
+        0.75
       ],
       [
         3734,
@@ -184,16 +184,23 @@
       ],
       [
         7383,
-        0.19
+        0.2
       ],
       [
         7179,
         0.18
       ],
       [
-        7389,
-        0.16
+        3795,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 32,
+      "negative": 34,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

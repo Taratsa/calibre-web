@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 15757,
-    "longer_than": 72,
+    "longer_than": 86,
     "top": [
       [
         "pembangunan",
@@ -104,44 +104,44 @@
         196
       ],
       [
-        "garis-garis",
-        55
-      ],
-      [
         "rakyat",
         188
       ],
       [
-        "ketetapan",
-        56
+        "garis-garis",
+        55
       ],
       [
         "semesta",
         67
       ],
       [
-        "depernas",
-        24
-      ],
-      [
-        "berencana",
-        52
+        "ketetapan",
+        56
       ],
       [
         "presiden",
         83
       ],
       [
-        "manipol",
-        30
+        "berencana",
+        52
       ],
       [
         "tani",
         63
       ],
       [
+        "kaum",
+        96
+      ],
+      [
         "pola",
         76
+      ],
+      [
+        "depernas",
+        24
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         542,
-        0.53
+        0.56
       ],
       [
         9284,
-        0.36
+        0.4
       ],
       [
         9286,
-        0.25
-      ],
-      [
-        9292,
-        0.23
+        0.28
       ],
       [
         9227,
-        0.22
+        0.27
       ],
       [
         9295,
-        0.22
+        0.26
+      ],
+      [
+        480,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.66,
+      "positive": 637,
+      "negative": 129,
+      "trend": [
+        0.82,
+        0.06,
+        0.67,
+        0.68,
+        0.84,
+        0.84,
+        0.61,
+        0.91,
+        0.61,
+        0.07,
+        0.71,
+        0.7,
+        0.76,
+        0.74,
+        0.75,
+        0.88
+      ],
+      "emotions": [
+        [
+          "trust",
+          51
+        ],
+        [
+          "anticipation",
+          48
+        ],
+        [
+          "sadness",
+          33
+        ],
+        [
+          "joy",
+          29
+        ],
+        [
+          "anger",
+          16
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

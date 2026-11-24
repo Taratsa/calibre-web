@@ -66,7 +66,7 @@
   ],
   "text": {
     "words": 53234,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "land",
@@ -123,48 +123,48 @@
         831
       ],
       [
-        "agricultural",
-        194
-      ],
-      [
         "reform",
         238
       ],
       [
-        "bachriadi",
-        134
+        "tanah",
+        632
       ],
       [
-        "agrarian",
-        186
+        "agricultural",
+        194
       ],
       [
         "agraria",
         253
       ],
       [
-        "landholders",
-        77
+        "agrarian",
+        186
       ],
       [
-        "sensus",
-        133
+        "bachriadi",
+        134
       ],
       [
         "pertanian",
         306
       ],
       [
-        "households",
-        95
-      ],
-      [
         "penguasaan",
         208
       ],
       [
-        "statistik",
-        184
+        "indonesia",
+        641
+      ],
+      [
+        "sensus",
+        133
+      ],
+      [
+        "petani",
+        272
       ]
     ],
     "phrases": [
@@ -204,10 +204,18 @@
     "similar": [
       [
         8344,
-        0.31
+        0.34
       ],
       [
         8679,
+        0.33
+      ],
+      [
+        8373,
+        0.31
+      ],
+      [
+        8497,
         0.3
       ],
       [
@@ -215,17 +223,10 @@
         0.29
       ],
       [
-        8373,
+        8494,
         0.28
-      ],
-      [
-        8497,
-        0.27
-      ],
-      [
-        6815,
-        0.27
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

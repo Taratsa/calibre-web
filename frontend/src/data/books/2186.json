@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1979,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "anarkis",
@@ -107,16 +107,16 @@
         12
       ],
       [
+        "sastra",
+        44
+      ],
+      [
         "sigil",
         16
       ],
       [
         "cumbu",
         15
-      ],
-      [
-        "sastra",
-        44
       ],
       [
         "cohn",
@@ -131,19 +131,19 @@
         7
       ],
       [
-        "representasi",
-        10
+        "kritik",
+        15
       ],
       [
-        "penerbitramu",
-        3
+        "representasi",
+        10
       ],
       [
         "absennya",
         5
       ],
       [
-        "sadra",
+        "penerbitramu",
         3
       ]
     ],
@@ -184,28 +184,35 @@
     "similar": [
       [
         3748,
-        0.5
+        0.51
       ],
       [
         8051,
-        0.34
+        0.31
       ],
       [
         2685,
-        0.34
-      ],
-      [
-        4679,
-        0.32
-      ],
-      [
-        268,
-        0.32
+        0.31
       ],
       [
         4737,
-        0.32
+        0.29
+      ],
+      [
+        4679,
+        0.29
+      ],
+      [
+        268,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.27,
+      "positive": 19,
+      "negative": 33,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

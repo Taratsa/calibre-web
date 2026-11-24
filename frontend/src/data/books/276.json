@@ -13,12 +13,12 @@
   "tags": [],
   "publisher": {
     "id": 38,
-    "name": "PUSTAKA RAKJAT"
+    "name": "Pustaka Rakjat"
   },
   "publishers": [
     {
       "id": 38,
-      "name": "PUSTAKA RAKJAT"
+      "name": "Pustaka Rakjat"
     }
   ],
   "languages": [
@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2719,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "kau",
@@ -111,16 +111,20 @@
         13
       ],
       [
-        "tjintaku",
-        5
-      ],
-      [
         "sadja",
         13
       ],
       [
         "djuga",
         11
+      ],
+      [
+        "tjintaku",
+        5
+      ],
+      [
+        "malam",
+        22
       ],
       [
         "djiwa",
@@ -131,19 +135,15 @@
         6
       ],
       [
+        "djalan",
+        9
+      ],
+      [
         "bertjerai",
         5
       ],
       [
         "mérah",
-        4
-      ],
-      [
-        "meréka",
-        4
-      ],
-      [
-        "tjaja",
         4
       ]
     ],
@@ -172,28 +172,81 @@
     "similar": [
       [
         1297,
-        0.6
+        0.61
       ],
       [
         7651,
-        0.16
+        0.18
       ],
       [
         1190,
-        0.14
+        0.16
+      ],
+      [
+        7788,
+        0.16
       ],
       [
         3969,
-        0.14
+        0.15
       ],
       [
         7821,
-        0.13
-      ],
-      [
-        7584,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 41,
+      "negative": 35,
+      "trend": [
+        -0.09,
+        null,
+        -0.11,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        -0.14,
+        null,
+        -0.67,
+        null,
+        null,
+        0.71,
+        0.43,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          20
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

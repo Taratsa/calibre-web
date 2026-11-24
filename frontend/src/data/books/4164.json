@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3493,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "danarto",
@@ -133,20 +133,20 @@
         10
       ],
       [
-        "nyentrik",
-        5
-      ],
-      [
-        "mendalang",
-        5
+        "jawa",
+        19
       ],
       [
         "pengarangnya",
         7
       ],
       [
-        "janturan",
-        4
+        "mendalang",
+        5
+      ],
+      [
+        "nyentrik",
+        5
       ]
     ],
     "phrases": [
@@ -189,25 +189,32 @@
         0.33
       ],
       [
-        4446,
-        0.21
-      ],
-      [
         4397,
         0.21
       ],
       [
         4393,
-        0.2
+        0.21
       ],
       [
-        4320,
+        4446,
         0.2
       ],
       [
         4247,
         0.19
+      ],
+      [
+        4320,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 42,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

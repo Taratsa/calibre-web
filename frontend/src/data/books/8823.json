@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1980,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "pengungsi",
@@ -115,32 +115,32 @@
         32
       ],
       [
-        "langsa",
-        13
+        "perempuan",
+        54
       ],
       [
         "kuala",
         22
       ],
       [
-        "bangladesh",
-        12
+        "langsa",
+        13
       ],
       [
         "pengungsian",
         13
       ],
       [
-        "perempuan",
-        54
-      ],
-      [
-        "komnas",
-        15
+        "bangladesh",
+        12
       ],
       [
         "foto",
         21
+      ],
+      [
+        "komnas",
+        15
       ],
       [
         "myanmar",
@@ -184,15 +184,15 @@
     "similar": [
       [
         8836,
-        0.29
+        0.32
+      ],
+      [
+        8830,
+        0.24
       ],
       [
         7053,
         0.23
-      ],
-      [
-        8830,
-        0.22
       ],
       [
         2098,
@@ -200,12 +200,19 @@
       ],
       [
         8831,
-        0.15
+        0.19
       ],
       [
-        9029,
-        0.15
+        8814,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 32,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

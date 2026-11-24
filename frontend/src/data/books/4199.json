@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1357,
-    "longer_than": 17,
+    "longer_than": 57,
     "top": [
       [
         "arifin",
@@ -99,16 +99,16 @@
     ],
     "distinct": [
       [
-        "joice",
-        10
-      ],
-      [
         "noer",
         21
       ],
       [
         "arifin",
         23
+      ],
+      [
+        "joice",
+        10
       ],
       [
         "surawidjaja",
@@ -184,16 +184,17 @@
     "similar": [
       [
         4249,
-        0.47
-      ],
-      [
-        4440,
         0.45
       ],
       [
+        4440,
+        0.43
+      ],
+      [
         4328,
-        0.27
+        0.26
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 2263,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "awang",
@@ -122,6 +122,14 @@
         20
       ],
       [
+        "bahasa",
+        39
+      ],
+      [
+        "cerita",
+        26
+      ],
+      [
         "daik",
         6
       ],
@@ -130,24 +138,16 @@
         10
       ],
       [
-        "peletakan",
-        7
-      ],
-      [
         "lingga",
         8
       ],
       [
-        "riau-lingga",
-        4
+        "peletakan",
+        7
       ],
       [
-        "cerita",
-        26
-      ],
-      [
-        "bahasa",
-        39
+        "rakyat",
+        21
       ]
     ],
     "phrases": [
@@ -187,28 +187,52 @@
     "similar": [
       [
         5474,
-        0.32
+        0.33
       ],
       [
         5362,
-        0.29
+        0.31
       ],
       [
         3521,
-        0.2
+        0.21
       ],
       [
         2931,
-        0.18
+        0.19
       ],
       [
         923,
-        0.18
+        0.19
       ],
       [
         5212,
         0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 60,
+      "negative": 19,
+      "trend": [
+        null,
+        null,
+        0.14,
+        0.33,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        0.5,
+        0.67,
+        0.6,
+        0.75,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

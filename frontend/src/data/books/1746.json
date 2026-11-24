@@ -12,7 +12,7 @@
   "author_sort": "Indonesia, Perhimpunan Dokumentasi",
   "tags": [
     "Biografi & Otobiografi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 7380,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "aliarcham",
@@ -116,6 +116,14 @@
         37
       ],
       [
+        "rakyat",
+        63
+      ],
+      [
+        "kawan",
+        38
+      ],
+      [
         "sukimah",
         8
       ],
@@ -124,32 +132,24 @@
         10
       ],
       [
-        "intelektui",
-        7
-      ],
-      [
-        "kawan",
-        38
-      ],
-      [
-        "rakyat",
-        63
+        "belanda",
+        32
       ],
       [
         "kongres",
         23
       ],
       [
-        "digul",
-        11
+        "pemerintah",
+        46
       ],
       [
-        "proletar",
-        17
+        "kaum",
+        40
       ],
       [
-        "intelektuelen",
-        5
+        "buruh",
+        31
       ],
       [
         "kolonial",
@@ -193,28 +193,81 @@
     "similar": [
       [
         439,
-        0.61
-      ],
-      [
-        7878,
-        0.19
+        0.63
       ],
       [
         2481,
-        0.17
+        0.22
+      ],
+      [
+        7878,
+        0.22
       ],
       [
         4005,
-        0.16
+        0.21
       ],
       [
         4015,
-        0.15
+        0.19
       ],
       [
         6758,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 125,
+      "negative": 92,
+      "trend": [
+        0.64,
+        -0.33,
+        0.38,
+        -0.33,
+        -0.57,
+        0.5,
+        0.62,
+        0.4,
+        0,
+        0.33,
+        0.36,
+        -0.14,
+        -0.18,
+        -0.06,
+        -0.64,
+        0.65
+      ],
+      "emotions": [
+        [
+          "sadness",
+          20
+        ],
+        [
+          "anger",
+          18
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

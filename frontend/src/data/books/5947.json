@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 6000,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "indonesia",
@@ -107,36 +107,36 @@
         21
       ],
       [
-        "a-a",
-        15
-      ],
-      [
         "rakjat",
         29
+      ],
+      [
+        "a-a",
+        15
       ],
       [
         "ilham",
         19
       ],
       [
-        "kepletes",
-        6
-      ],
-      [
         "gotong-rojong",
         12
-      ],
-      [
-        "hakkul-jakin",
-        6
       ],
       [
         "djikalau",
         13
       ],
       [
-        "perdjoangan",
-        12
+        "kepletes",
+        6
+      ],
+      [
+        "engkau",
+        23
+      ],
+      [
+        "imperialis",
+        17
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         6670,
-        0.19
+        0.21
       ],
       [
         4926,
+        0.21
+      ],
+      [
+        8771,
+        0.2
+      ],
+      [
+        9323,
         0.19
       ],
       [
-        7661,
-        0.18
+        683,
+        0.19
       ],
       [
-        6727,
-        0.18
-      ],
-      [
-        4858,
-        0.18
-      ],
-      [
-        552,
-        0.18
+        599,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 79,
+      "negative": 33,
+      "trend": [
+        null,
+        0.8,
+        -0.2,
+        -0.75,
+        null,
+        null,
+        0.25,
+        null,
+        0.14,
+        null,
+        null,
+        0.62,
+        null,
+        null,
+        0.25,
+        0.85
+      ],
+      "emotions": []
+    }
   }
 }

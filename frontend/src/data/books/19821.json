@@ -1,0 +1,219 @@
+{
+  "id": 19821,
+  "title": "Instal wine",
+  "slug": "instal-wine-onno-widodo-purbo",
+  "slugBase": "instal-wine-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-11-30",
+  "timestamp": "2026-11-24 06:05:44.527835",
+  "last_modified": "2026-11-24 06:05:44.527840",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:c6027d94-6b0b-5ada-a327-c1f64ff7212e"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19821?v=1795475144",
+  "cover_og_url": "/cover/19821/og?v=1795475144",
+  "url": "/book/instal-wine-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Pastikan anda tersambung ke Internet karena kita perlu mendownload beberapa font Contents 1 Install di Ubuntu 22.04 2 Install di Ubuntu 22.04 3 Cara 1 4 Cara 2 5 Cara 3 6 cek run 7 Pranala Menarik Install di Ubuntu 22.04 apt install wine64 wine --version Install di Ubuntu 22.04 sudo dpkg --add-architecture i386 apt update wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2691,
+      "name": "Instal wine - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 210,
+    "longer_than": 24,
+    "top": [
+      [
+        "apt",
+        15
+      ],
+      [
+        "wine",
+        12
+      ],
+      [
+        "sudo",
+        11
+      ],
+      [
+        "winehq",
+        11
+      ],
+      [
+        "install",
+        9
+      ],
+      [
+        "dpkg",
+        7
+      ],
+      [
+        "https",
+        7
+      ],
+      [
+        "update",
+        6
+      ],
+      [
+        "wine-builds",
+        6
+      ],
+      [
+        "install-recommends",
+        5
+      ],
+      [
+        "key",
+        5
+      ],
+      [
+        "ubuntu",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "winehq",
+        11
+      ],
+      [
+        "wine",
+        12
+      ],
+      [
+        "install-recommends",
+        5
+      ],
+      [
+        "apt",
+        15
+      ],
+      [
+        "dpkg",
+        7
+      ],
+      [
+        "add-architecture",
+        4
+      ],
+      [
+        "sudo",
+        11
+      ],
+      [
+        "packagename",
+        3
+      ],
+      [
+        "install",
+        9
+      ],
+      [
+        "gpg",
+        3
+      ],
+      [
+        "update",
+        6
+      ],
+      [
+        "key",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "winehq org wine-builds",
+        6
+      ],
+      [
+        "https dl winehq",
+        6
+      ],
+      [
+        "winehq key sudo",
+        4
+      ],
+      [
+        "apt update",
+        6
+      ],
+      [
+        "apt install install-recommends",
+        4
+      ],
+      [
+        "wine-builds winehq key",
+        3
+      ],
+      [
+        "install install-recommends winehq-stable",
+        3
+      ],
+      [
+        "wine version",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        13436,
+        0.41
+      ],
+      [
+        15431,
+        0.38
+      ],
+      [
+        14964,
+        0.38
+      ],
+      [
+        14798,
+        0.38
+      ],
+      [
+        18038,
+        0.38
+      ],
+      [
+        12598,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
+}

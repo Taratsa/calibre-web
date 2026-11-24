@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1965,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "pengawasan",
@@ -103,20 +103,16 @@
         20
       ],
       [
-        "video",
-        23
+        "pengawasan",
+        28
       ],
       [
         "kamera",
         17
       ],
       [
-        "pengawasan",
-        28
-      ],
-      [
-        "operator",
-        5
+        "video",
+        23
       ],
       [
         "sistem",
@@ -127,10 +123,6 @@
         10
       ],
       [
-        "rekaman",
-        6
-      ],
-      [
         "publik",
         11
       ],
@@ -139,12 +131,20 @@
         10
       ],
       [
+        "rekaman",
+        6
+      ],
+      [
         "keamanan",
         9
       ],
       [
-        "meningkatnya",
+        "operator",
         5
+      ],
+      [
+        "pribadi",
+        9
       ]
     ],
     "phrases": [
@@ -180,20 +180,56 @@
     "similar": [
       [
         2037,
-        0.82
+        0.83
+      ],
+      [
+        14912,
+        0.2
+      ],
+      [
+        9338,
+        0.2
+      ],
+      [
+        17183,
+        0.15
       ],
       [
         2533,
-        0.13
+        0.14
       ],
       [
-        8994,
-        0.11
-      ],
-      [
-        2478,
-        0.1
+        19515,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.26,
+      "positive": 26,
+      "negative": 44,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 25012,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "serangan",
@@ -106,48 +106,48 @@
         76
       ],
       [
-        "kemurkaan",
-        65
-      ],
-      [
         "serangan",
         177
       ],
       [
-        "jalur-jalur",
-        53
+        "kemurkaan",
+        65
       ],
       [
         "polisi",
         142
       ],
       [
-        "devaluasi",
-        32
+        "jalur-jalur",
+        53
       ],
       [
         "intimidasi",
         54
       ],
       [
+        "devaluasi",
+        32
+      ],
+      [
         "ketidakadilan",
         58
+      ],
+      [
+        "resmi",
+        77
       ],
       [
         "pemukulan",
         35
       ],
       [
-        "pembingkaian",
-        22
-      ],
-      [
-        "penyerang",
-        29
-      ],
-      [
         "penyiksaan",
         43
+      ],
+      [
+        "pembingkaian",
+        22
       ]
     ],
     "phrases": [
@@ -186,29 +186,86 @@
     ],
     "similar": [
       [
-        6776,
-        0.19
-      ],
-      [
         4867,
-        0.18
+        0.22
       ],
       [
-        6769,
-        0.15
+        6776,
+        0.21
       ],
       [
         7911,
-        0.15
-      ],
-      [
-        6766,
-        0.15
+        0.19
       ],
       [
         7980,
-        0.14
+        0.19
+      ],
+      [
+        6766,
+        0.18
+      ],
+      [
+        6764,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 472,
+      "negative": 662,
+      "trend": [
+        -0.1,
+        -0.46,
+        -0.53,
+        -0.42,
+        -0.4,
+        0.27,
+        -0.28,
+        -0.1,
+        -0.16,
+        -0.17,
+        -0.27,
+        0.05,
+        0.31,
+        -0.28,
+        -0.12,
+        -0.06
+      ],
+      "emotions": [
+        [
+          "anger",
+          188
+        ],
+        [
+          "fear",
+          107
+        ],
+        [
+          "trust",
+          67
+        ],
+        [
+          "anticipation",
+          20
+        ],
+        [
+          "sadness",
+          18
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          5
+        ]
+      ]
+    }
   }
 }

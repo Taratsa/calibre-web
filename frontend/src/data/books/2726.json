@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2388,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "giovanni",
@@ -103,10 +103,6 @@
         57
       ],
       [
-        "sacco",
-        11
-      ],
-      [
         "argentina",
         20
       ],
@@ -115,24 +111,28 @@
         25
       ],
       [
-        "vanzetti",
-        9
+        "sacco",
+        11
       ],
       [
         "anarkis",
         28
       ],
       [
+        "vanzetti",
+        9
+      ],
+      [
         "culmine",
         6
       ],
       [
-        "paulino",
-        5
-      ],
-      [
         "pengeboman",
         9
+      ],
+      [
+        "paulino",
+        5
       ],
       [
         "alejandro",
@@ -184,28 +184,60 @@
     "similar": [
       [
         2475,
-        0.18
+        0.21
       ],
       [
         7422,
-        0.17
+        0.19
       ],
       [
         2025,
-        0.15
-      ],
-      [
-        7141,
-        0.13
+        0.16
       ],
       [
         2653,
-        0.13
+        0.16
       ],
       [
         2460,
-        0.12
+        0.16
+      ],
+      [
+        7141,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 22,
+      "negative": 37,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

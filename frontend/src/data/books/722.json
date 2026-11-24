@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3857,
-    "longer_than": 38,
+    "longer_than": 69,
     "top": [
       [
         "indonesia",
@@ -93,10 +93,6 @@
         54
       ],
       [
-        "collectiviteit",
-        6
-      ],
-      [
         "masjarakat",
         20
       ],
@@ -105,36 +101,40 @@
         22
       ],
       [
+        "collectiviteit",
+        6
+      ],
+      [
         "tjita-tjita",
         11
+      ],
+      [
+        "indonesia",
+        57
       ],
       [
         "kemasjarakatan",
         10
       ],
       [
-        "djika",
-        13
-      ],
-      [
-        "djepang",
-        11
+        "negara",
+        43
       ],
       [
         "kebangsaan",
         16
       ],
       [
-        "perdjuangan",
-        11
+        "golongan",
+        21
       ],
       [
-        "gematigd",
-        4
+        "djika",
+        13
       ],
       [
-        "adanja",
-        12
+        "belanda",
+        21
       ]
     ],
     "phrases": [
@@ -174,28 +174,60 @@
     "similar": [
       [
         6799,
-        0.21
+        0.25
       ],
       [
         516,
-        0.2
+        0.25
       ],
       [
         305,
-        0.2
+        0.25
+      ],
+      [
+        6291,
+        0.23
       ],
       [
         8771,
-        0.19
+        0.23
       ],
       [
         1434,
-        0.19
-      ],
-      [
-        7589,
-        0.19
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 58,
+      "negative": 23,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          12
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

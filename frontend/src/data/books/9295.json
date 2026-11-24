@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 8770,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "koperasi",
@@ -104,44 +104,44 @@
         120
       ],
       [
-        "koperasi-koperasi",
-        18
+        "ekonomi",
+        104
       ],
       [
         "tani",
         50
       ],
       [
-        "ekonomi",
-        104
+        "kaum",
+        66
       ],
       [
         "peranan",
         42
       ],
       [
-        "pengisapan",
-        12
+        "koperasi-koperasi",
+        18
       ],
       [
-        "mprs",
-        17
+        "rakyat",
+        60
       ],
       [
         "kapitalis",
         34
       ],
       [
-        "kredit",
-        22
+        "pengisapan",
+        12
       ],
       [
         "imperialisme",
         24
       ],
       [
-        "kaum",
-        66
+        "mprs",
+        17
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         447,
-        0.47
+        0.52
       ],
       [
         6719,
-        0.46
+        0.51
       ],
       [
         9286,
-        0.28
+        0.32
       ],
       [
         9292,
-        0.26
+        0.3
       ],
       [
         9308,
-        0.24
+        0.29
       ],
       [
-        9297,
-        0.24
+        3992,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 229,
+      "negative": 93,
+      "trend": [
+        0.87,
+        0.2,
+        0.07,
+        0.22,
+        0.67,
+        -0.09,
+        0.26,
+        0.47,
+        0.66,
+        0.83,
+        0.25,
+        0.2,
+        0.75,
+        0.86,
+        0.2,
+        0.87
+      ],
+      "emotions": [
+        [
+          "joy",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

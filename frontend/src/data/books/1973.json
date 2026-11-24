@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 994,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "organisasi",
@@ -109,11 +109,19 @@
         3
       ],
       [
+        "kontrol",
+        8
+      ],
+      [
         "ekonomi-politik",
         4
       ],
       [
-        "kontrol",
+        "pekerja",
+        9
+      ],
+      [
+        "kolektif",
         8
       ],
       [
@@ -121,27 +129,19 @@
         5
       ],
       [
-        "kolektif",
-        8
-      ],
-      [
-        "paguyuban",
-        3
-      ],
-      [
-        "pekerja",
+        "organisasi",
         9
-      ],
-      [
-        "mentalitas",
-        3
       ],
       [
         "kritik",
         7
       ],
       [
-        "jejaring",
+        "paguyuban",
+        3
+      ],
+      [
+        "mentalitas",
         3
       ],
       [
@@ -153,10 +153,14 @@
     "similar": [
       [
         2091,
-        0.21
+        0.23
       ],
       [
         2407,
+        0.2
+      ],
+      [
+        1833,
         0.19
       ],
       [
@@ -164,17 +168,14 @@
         0.19
       ],
       [
-        2619,
-        0.17
-      ],
-      [
-        1833,
-        0.17
+        1986,
+        0.19
       ],
       [
         1959,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

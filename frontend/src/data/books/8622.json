@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 27148,
-    "longer_than": 83,
+    "longer_than": 92,
     "top": [
       [
         "india",
@@ -92,20 +92,12 @@
     ],
     "distinct": [
       [
-        "indian",
-        101
-      ],
-      [
         "hindu",
         112
       ],
       [
-        "communalism",
-        35
-      ],
-      [
-        "hindus",
-        39
+        "indian",
+        101
       ],
       [
         "india",
@@ -116,28 +108,36 @@
         72
       ],
       [
+        "communalism",
+        35
+      ],
+      [
         "muslims",
         47
       ],
       [
-        "bjp",
-        27
+        "hindus",
+        39
       ],
       [
         "political",
         84
       ],
       [
+        "bjp",
+        27
+      ],
+      [
         "globalisation",
         29
       ],
       [
-        "rss",
-        25
+        "population",
+        43
       ],
       [
-        "frères",
-        17
+        "organisations",
+        31
       ]
     ],
     "phrases": [
@@ -177,28 +177,29 @@
     "similar": [
       [
         8725,
-        0.29
+        0.3
       ],
       [
         8603,
-        0.27
+        0.28
       ],
       [
         731,
-        0.25
-      ],
-      [
-        8727,
-        0.23
+        0.26
       ],
       [
         8615,
-        0.23
+        0.24
+      ],
+      [
+        8727,
+        0.24
       ],
       [
         8291,
-        0.23
+        0.24
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

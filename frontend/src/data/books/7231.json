@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3467,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "seni",
@@ -118,6 +118,10 @@
         11
       ],
       [
+        "simbol",
+        12
+      ],
+      [
         "garde",
         4
       ],
@@ -126,12 +130,12 @@
         4
       ],
       [
-        "simbol",
-        12
-      ],
-      [
         "estetisisme",
         3
+      ],
+      [
+        "budaya",
+        15
       ],
       [
         "simbolisnya",
@@ -142,16 +146,12 @@
         5
       ],
       [
-        "pemburu-pengumpul",
-        3
+        "alam",
+        14
       ],
       [
-        "paal",
-        3
-      ],
-      [
-        "simbolisasi",
-        3
+        "kehidupan",
+        16
       ]
     ],
     "phrases": [
@@ -175,28 +175,64 @@
     "similar": [
       [
         3748,
-        0.37
+        0.4
       ],
       [
         4717,
-        0.26
+        0.3
       ],
       [
         2355,
-        0.26
+        0.3
       ],
       [
         1931,
-        0.23
+        0.27
       ],
       [
         8069,
-        0.23
+        0.27
       ],
       [
         2595,
-        0.2
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 36,
+      "negative": 32,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

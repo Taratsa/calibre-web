@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 971,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "air",
@@ -91,24 +91,20 @@
     ],
     "distinct": [
       [
-        "planet",
-        7
-      ],
-      [
         "industrial",
         8
       ],
       [
-        "opsi",
-        6
+        "planet",
+        7
       ],
       [
         "sampah",
         8
       ],
       [
-        "sekarat",
-        3
+        "opsi",
+        6
       ],
       [
         "polisi",
@@ -119,12 +115,16 @@
         6
       ],
       [
-        "kehabisan",
-        3
+        "ekonomi",
+        8
       ],
       [
-        "personal",
-        4
+        "air",
+        9
+      ],
+      [
+        "sekarat",
+        3
       ],
       [
         "menghentikan",
@@ -135,8 +135,8 @@
         5
       ],
       [
-        "ekonomi",
-        8
+        "personal",
+        4
       ]
     ],
     "phrases": [
@@ -175,6 +175,10 @@
         0.15
       ],
       [
+        12406,
+        0.14
+      ],
+      [
         1990,
         0.13
       ],
@@ -183,13 +187,10 @@
         0.13
       ],
       [
-        7321,
-        0.12
-      ],
-      [
-        7879,
-        0.11
+        17823,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3463,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "pendidikan",
@@ -89,52 +89,52 @@
     ],
     "distinct": [
       [
-        "inklusif",
-        31
+        "pendidikan",
+        138
       ],
       [
         "media",
         96
       ],
       [
+        "inklusif",
+        31
+      ],
+      [
         "berkebutuhan",
         18
-      ],
-      [
-        "pendidikan",
-        138
-      ],
-      [
-        "puzzle",
-        15
       ],
       [
         "didik",
         25
       ],
       [
-        "braille",
-        9
-      ],
-      [
-        "peserta",
-        26
-      ],
-      [
-        "pembelajaran",
-        20
-      ],
-      [
-        "khusus",
-        42
+        "puzzle",
+        15
       ],
       [
         "alat",
         52
       ],
       [
-        "kartu",
-        16
+        "khusus",
+        42
+      ],
+      [
+        "peserta",
+        26
+      ],
+      [
+        "braille",
+        9
+      ],
+      [
+        "pembelajaran",
+        20
+      ],
+      [
+        "belajar",
+        33
       ]
     ],
     "phrases": [
@@ -173,29 +173,36 @@
     ],
     "similar": [
       [
-        895,
-        0.23
+        892,
+        0.26
       ],
       [
-        892,
-        0.23
+        895,
+        0.26
       ],
       [
         891,
-        0.22
-      ],
-      [
-        901,
-        0.21
+        0.25
       ],
       [
         903,
-        0.21
+        0.24
       ],
       [
         5333,
-        0.21
+        0.23
+      ],
+      [
+        881,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.66,
+      "positive": 49,
+      "negative": 10,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

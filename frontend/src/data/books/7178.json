@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 9306,
-    "longer_than": 59,
+    "longer_than": 80,
     "top": [
       [
         "aktifitas",
@@ -118,40 +118,40 @@
         62
       ],
       [
-        "fredy",
-        24
-      ],
-      [
-        "komoditi",
-        37
-      ],
-      [
         "pekerja",
         87
-      ],
-      [
-        "mereproduksi",
-        33
       ],
       [
         "kerja",
         114
       ],
       [
+        "komoditi",
+        37
+      ],
+      [
+        "fredy",
+        24
+      ],
+      [
+        "mereproduksi",
+        33
+      ],
+      [
         "harian",
         45
       ],
       [
-        "kondisi-kondisi",
-        22
-      ],
-      [
-        "lorraine",
-        10
-      ],
-      [
         "nilai",
         69
+      ],
+      [
+        "hidup",
+        90
+      ],
+      [
+        "kondisi-kondisi",
+        22
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         3750,
-        0.18
+        0.22
       ],
       [
         2599,
-        0.17
+        0.2
       ],
       [
-        7052,
-        0.17
+        4684,
+        0.2
       ],
       [
-        8415,
-        0.16
-      ],
-      [
-        8414,
-        0.16
+        2672,
+        0.2
       ],
       [
         4659,
-        0.16
+        0.19
+      ],
+      [
+        3064,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 101,
+      "negative": 51,
+      "trend": [
+        0,
+        0.8,
+        0.4,
+        0.71,
+        0.29,
+        0.17,
+        -0.33,
+        0.82,
+        null,
+        0.17,
+        null,
+        null,
+        0.27,
+        -0.08,
+        0,
+        0.23
+      ],
+      "emotions": []
+    }
   }
 }

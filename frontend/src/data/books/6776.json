@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 713,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "ketidakadilan",
@@ -104,12 +104,20 @@
         18
       ],
       [
+        "serangan",
+        12
+      ],
+      [
         "backfire",
         4
       ],
       [
-        "serangan",
-        12
+        "perlawanan",
+        11
+      ],
+      [
+        "tindakan",
+        13
       ],
       [
         "mengekspos",
@@ -120,19 +128,11 @@
         4
       ],
       [
-        "perlawanan",
-        11
-      ],
-      [
-        "bumerang",
-        3
-      ],
-      [
         "intimidasi",
         5
       ],
       [
-        "brian",
+        "bumerang",
         3
       ],
       [
@@ -140,12 +140,12 @@
         4
       ],
       [
-        "saluran",
-        5
+        "brian",
+        3
       ],
       [
-        "target",
-        6
+        "saluran",
+        5
       ]
     ],
     "phrases": [
@@ -164,29 +164,36 @@
     ],
     "similar": [
       [
+        6770,
+        0.21
+      ],
+      [
         8028,
-        0.2
+        0.16
       ],
       [
         2068,
-        0.2
-      ],
-      [
-        6770,
-        0.19
-      ],
-      [
-        3079,
-        0.13
+        0.16
       ],
       [
         4663,
-        0.12
+        0.14
       ],
       [
         6766,
-        0.11
+        0.13
+      ],
+      [
+        7202,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 16,
+      "negative": 35,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

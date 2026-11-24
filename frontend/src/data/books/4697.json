@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 812,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "makanan",
@@ -115,6 +115,10 @@
         3
       ],
       [
+        "makanan",
+        8
+      ],
+      [
         "nazi",
         3
       ],
@@ -123,52 +127,53 @@
         5
       ],
       [
-        "makanan",
-        8
-      ],
-      [
-        "runtuh",
-        3
+        "orang-orang",
+        7
       ],
       [
         "sistem",
         7
       ],
       [
+        "runtuh",
+        3
+      ],
+      [
         "lahan",
         3
       ],
       [
-        "orang-orang",
-        7
-      ],
-      [
-        "pimpinan",
-        3
+        "orang",
+        8
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2766,
-        0.26
+        0.27
       ],
       [
         3722,
-        0.13
+        0.14
       ],
       [
         6764,
-        0.11
+        0.12
       ],
       [
         4743,
-        0.11
+        0.1
       ],
       [
         2472,
-        0.11
+        0.1
+      ],
+      [
+        7331,
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

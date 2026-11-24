@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2822,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "komune",
@@ -123,12 +123,12 @@
         8
       ],
       [
-        "berkomunal",
-        4
-      ],
-      [
         "holloway",
         6
+      ],
+      [
+        "berkomunal",
+        4
       ],
       [
         "chavez",
@@ -139,12 +139,12 @@
         10
       ],
       [
-        "dmitrieff",
-        3
+        "kapital",
+        12
       ],
       [
-        "kropotkin",
-        7
+        "sosialis",
+        12
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2443,
-        0.2
+        0.25
       ],
       [
         1758,
-        0.19
+        0.24
       ],
       [
         7353,
-        0.19
+        0.23
       ],
       [
         7104,
-        0.18
+        0.22
       ],
       [
         7150,
-        0.17
+        0.21
       ],
       [
-        6707,
-        0.17
+        6730,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 30,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

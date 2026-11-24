@@ -1,0 +1,52 @@
+{
+  "id": 20218,
+  "title": "NTP: File ntp.conf",
+  "slug": "ntp-file-ntp-conf-onno-widodo-purbo",
+  "slugBase": "ntp-file-ntp-conf-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-16",
+  "timestamp": "2026-11-24 06:30:01.000337",
+  "last_modified": "2026-11-24 06:30:01.000341",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:3b7a7913-9528-5747-9b49-cd1c4c8ddb74"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20218?v=1795476601",
+  "cover_og_url": "/cover/20218/og?v=1795476601",
+  "url": "/book/ntp-file-ntp-conf-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contoh file ntp.conf di ProxMox # /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help driftfile /var/lib/ntp/ntp.drift # Enable this if you want statistics to be logged. #statsdir /var/log/ntpstats/ statistics loopstats peerstats clockstats filegen loopstats file loopstats type day enable filegen peerstats file peerstats type day enable filegen clockstats file clockstats type day",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3258,
+      "name": "NTP_ File ntp.conf - Onno Widodo Purbo"
+    }
+  ]
+}

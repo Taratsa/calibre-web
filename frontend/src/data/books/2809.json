@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1378,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "negara",
@@ -103,16 +103,24 @@
         33
       ],
       [
-        "nietzsche",
-        4
-      ],
-      [
         "kemana",
         6
       ],
       [
+        "nietzsche",
+        4
+      ],
+      [
+        "marah",
+        7
+      ],
+      [
         "penjahat",
         4
+      ],
+      [
+        "adat",
+        7
       ],
       [
         "memaki",
@@ -123,20 +131,8 @@
         3
       ],
       [
-        "petinggi",
-        3
-      ],
-      [
-        "serakah",
-        3
-      ],
-      [
-        "rakus",
-        3
-      ],
-      [
-        "marah",
-        7
+        "membakar",
+        5
       ],
       [
         "dirampas",
@@ -145,6 +141,10 @@
       [
         "busuk",
         4
+      ],
+      [
+        "serakah",
+        3
       ]
     ],
     "phrases": [
@@ -172,11 +172,7 @@
     "similar": [
       [
         1788,
-        0.39
-      ],
-      [
-        7052,
-        0.14
+        0.41
       ],
       [
         8039,
@@ -187,13 +183,41 @@
         0.14
       ],
       [
+        7052,
+        0.14
+      ],
+      [
         2084,
         0.13
       ],
       [
         2073,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.33,
+      "positive": 28,
+      "negative": 55,
+      "trend": [
+        -0.43,
+        -1,
+        -0.6,
+        0.14,
+        null,
+        -0.33,
+        null,
+        -0.33,
+        null,
+        null,
+        -0.33,
+        -0.71,
+        0,
+        -0.14,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1060,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "pemimpin",
@@ -109,19 +109,15 @@
         8
       ],
       [
-        "kitab",
-        10
-      ],
-      [
         "pemimpin",
         17
       ],
       [
-        "ulama",
-        7
+        "kitab",
+        10
       ],
       [
-        "bab",
+        "ulama",
         7
       ],
       [
@@ -129,12 +125,16 @@
         8
       ],
       [
-        "melayu",
-        4
+        "bab",
+        7
       ],
       [
-        "bernegara",
-        3
+        "raja",
+        7
+      ],
+      [
+        "melayu",
+        4
       ]
     ],
     "phrases": [
@@ -158,16 +158,52 @@
     "similar": [
       [
         2978,
-        0.17
+        0.18
       ],
       [
         5380,
-        0.15
+        0.18
+      ],
+      [
+        13950,
+        0.12
       ],
       [
         2986,
+        0.12
+      ],
+      [
+        2936,
+        0.11
+      ],
+      [
+        7303,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 40,
+      "negative": 19,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        0.67,
+        0.6,
+        -0.67,
+        1,
+        null,
+        0.6,
+        0.33,
+        0.33,
+        null,
+        -0.2,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

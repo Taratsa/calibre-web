@@ -11,7 +11,7 @@
   ],
   "author_sort": "Aidit, D. N.",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Seni"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 28756,
-    "longer_than": 84,
+    "longer_than": 92,
     "top": [
       [
         "rakyat",
@@ -116,44 +116,44 @@
         157
       ],
       [
-        "pekerya",
-        60
-      ],
-      [
-        "seniman",
-        164
+        "seni",
+        285
       ],
       [
         "sastra",
         271
       ],
       [
-        "seni",
-        285
+        "rakyat",
+        322
       ],
       [
-        "kssr",
-        42
+        "seniman",
+        164
+      ],
+      [
+        "pekerya",
+        60
       ],
       [
         "massa",
         217
       ],
       [
-        "dibidang",
-        86
-      ],
-      [
-        "rakyat",
-        322
-      ],
-      [
         "partai",
         161
       ],
       [
-        "kader-kader",
-        56
+        "dibidang",
+        86
+      ],
+      [
+        "kssr",
+        42
+      ],
+      [
+        "kebudayaan",
+        156
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         9312,
-        0.68
+        0.71
       ],
       [
         4796,
-        0.63
+        0.64
       ],
       [
         464,
-        0.63
+        0.64
       ],
       [
         295,
-        0.63
+        0.64
       ],
       [
         9313,
-        0.48
+        0.52
       ],
       [
         4015,
-        0.37
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 723,
+      "negative": 216,
+      "trend": [
+        0.63,
+        0.89,
+        0.19,
+        0.57,
+        0.65,
+        0.38,
+        0.33,
+        0.51,
+        0.82,
+        0.6,
+        0.71,
+        0.46,
+        0.42,
+        0.36,
+        0.47,
+        0.79
+      ],
+      "emotions": [
+        [
+          "joy",
+          63
+        ],
+        [
+          "anticipation",
+          26
+        ],
+        [
+          "anger",
+          21
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

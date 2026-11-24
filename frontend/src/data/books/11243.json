@@ -1,0 +1,217 @@
+{
+  "id": 11243,
+  "title": "Postfix: Cara Membatasi e-mail",
+  "slug": "postfix-cara-membatasi-e-mail-onno-widodo-purbo",
+  "slugBase": "postfix-cara-membatasi-e-mail-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2016-09-21",
+  "timestamp": "2026-11-23 20:10:09.743949",
+  "last_modified": "2026-11-23 20:10:09.743953",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:83a60253-760c-5fe9-862f-baebcf30d91c"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/11243?v=1795439409",
+  "cover_og_url": "/cover/11243/og?v=1795439409",
+  "url": "/book/postfix-cara-membatasi-e-mail-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://wiki.centos.org/HowTos/postfix_restrictions 1. Introduction If you have followed the basic postfix guide you will have a simple postfix email server up and running that is capable of sending and receiving email. However, you will probably have noticed that your postfix email server is receiving all email, unrestricted, including spam. Spam, otherwise known as Unsolicited Bulk",
+  "data": [
+    {
+      "format": "epub",
+      "size": 7557,
+      "name": "Postfix_ Cara Membatasi e-mail - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 2304,
+    "longer_than": 64,
+    "top": [
+      [
+        "reject",
+        47
+      ],
+      [
+        "postfix",
+        37
+      ],
+      [
+        "restrictions",
+        36
+      ],
+      [
+        "email",
+        34
+      ],
+      [
+        "sender",
+        23
+      ],
+      [
+        "helo",
+        22
+      ],
+      [
+        "mail",
+        18
+      ],
+      [
+        "spam",
+        18
+      ],
+      [
+        "server",
+        15
+      ],
+      [
+        "domain",
+        14
+      ],
+      [
+        "recipient",
+        14
+      ],
+      [
+        "smtpd",
+        14
+      ]
+    ],
+    "distinct": [
+      [
+        "reject",
+        47
+      ],
+      [
+        "postfix",
+        37
+      ],
+      [
+        "restrictions",
+        36
+      ],
+      [
+        "helo",
+        22
+      ],
+      [
+        "sender",
+        23
+      ],
+      [
+        "smtpd",
+        14
+      ],
+      [
+        "spam",
+        18
+      ],
+      [
+        "email",
+        34
+      ],
+      [
+        "recipient",
+        14
+      ],
+      [
+        "mail",
+        18
+      ],
+      [
+        "smtp",
+        11
+      ],
+      [
+        "hostname",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "email server",
+        11
+      ],
+      [
+        "reject non fqdn",
+        7
+      ],
+      [
+        "sender access",
+        7
+      ],
+      [
+        "helo restrictions",
+        7
+      ],
+      [
+        "smtpd helo",
+        6
+      ],
+      [
+        "sender restrictions",
+        6
+      ],
+      [
+        "reject unknown",
+        6
+      ],
+      [
+        "recipient restrictions",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        16286,
+        0.69
+      ],
+      [
+        9427,
+        0.52
+      ],
+      [
+        16247,
+        0.52
+      ],
+      [
+        11169,
+        0.34
+      ],
+      [
+        16245,
+        0.34
+      ],
+      [
+        11242,
+        0.34
+      ]
+    ],
+    "sentiment": null
+  }
+}

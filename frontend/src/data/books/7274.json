@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1335,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "kelas",
@@ -110,6 +110,10 @@
         52
       ],
       [
+        "pekerja",
+        21
+      ],
+      [
         "juragan",
         8
       ],
@@ -118,31 +122,23 @@
         10
       ],
       [
-        "glaberman",
-        3
+        "kerja",
+        22
       ],
       [
-        "pekerja",
-        21
+        "glaberman",
+        3
       ],
       [
         "libcom",
         4
       ],
       [
-        "terjangkau",
-        5
-      ],
-      [
-        "kerja",
-        22
-      ],
-      [
         "kapitalisme",
         8
       ],
       [
-        "layanan",
+        "terjangkau",
         5
       ],
       [
@@ -150,8 +146,12 @@
         9
       ],
       [
-        "surplus",
-        3
+        "terpaksa",
+        7
+      ],
+      [
+        "keuntungan",
+        6
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         7275,
-        0.21
+        0.27
       ],
       [
-        4325,
-        0.13
+        3706,
+        0.18
       ],
       [
         2670,
-        0.13
+        0.17
       ],
       [
-        7291,
-        0.12
+        4730,
+        0.16
       ],
       [
-        9175,
-        0.11
+        6820,
+        0.16
       ],
       [
-        1969,
-        0.1
+        283,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

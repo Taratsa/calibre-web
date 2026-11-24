@@ -11,7 +11,7 @@
   ],
   "author_sort": "Nyoto",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 4793,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "revolusi",
@@ -120,24 +120,24 @@
         67
       ],
       [
-        "parahadirin",
-        11
-      ],
-      [
-        "parasaudara",
-        10
+        "oktober",
+        47
       ],
       [
         "uni",
         31
       ],
       [
+        "parahadirin",
+        11
+      ],
+      [
         "sosialisme",
         27
       ],
       [
-        "oktober",
-        47
+        "parasaudara",
+        10
       ],
       [
         "lenin",
@@ -148,12 +148,12 @@
         21
       ],
       [
-        "bangsa-bangsa",
-        16
+        "kaum",
+        37
       ],
       [
-        "rusia",
-        17
+        "bangsa-bangsa",
+        16
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         4907,
-        0.66
+        0.68
       ],
       [
         4831,
-        0.66
+        0.68
       ],
       [
         7792,
-        0.66
+        0.67
       ],
       [
         6745,
-        0.28
+        0.3
       ],
       [
         1424,
-        0.24
+        0.28
       ],
       [
         9265,
-        0.21
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 86,
+      "negative": 62,
+      "trend": [
+        0,
+        0.67,
+        0.05,
+        0.33,
+        0.25,
+        0.11,
+        -0.5,
+        0,
+        0.2,
+        0.4,
+        -0.11,
+        0.6,
+        0.27,
+        -0.43,
+        0.33,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          21
+        ],
+        [
+          "anger",
+          20
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

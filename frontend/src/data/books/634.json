@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 19361,
-    "longer_than": 75,
+    "longer_than": 88,
     "top": [
       [
         "pendidikan",
@@ -89,52 +89,52 @@
     ],
     "distinct": [
       [
-        "peladjaran",
-        120
+        "pendidikan",
+        401
       ],
       [
-        "anak²",
-        83
+        "peladjaran",
+        120
       ],
       [
         "djuga",
         129
       ],
       [
-        "pendidikan",
-        401
+        "anak²",
+        83
       ],
       [
         "jalah",
         71
       ],
       [
-        "rakjat",
-        81
-      ],
-      [
         "didalam",
         105
+      ],
+      [
+        "rakjat",
+        81
       ],
       [
         "beladjar",
         61
       ],
       [
-        "metodik",
-        30
-      ],
-      [
         "mempunjai",
         64
       ],
       [
-        "peladjar²",
-        24
+        "metodik",
+        30
       ],
       [
         "tudjuan",
         51
+      ],
+      [
+        "ilmu",
+        111
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         1889,
-        0.29
+        0.31
       ],
       [
         1292,
-        0.29
+        0.31
       ],
       [
         1291,
+        0.28
+      ],
+      [
+        9226,
+        0.27
+      ],
+      [
+        4875,
         0.27
       ],
       [
         4796,
-        0.24
-      ],
-      [
-        464,
-        0.24
-      ],
-      [
-        295,
-        0.24
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 308,
+      "negative": 56,
+      "trend": [
+        0.71,
+        0.61,
+        0.6,
+        0.26,
+        0.5,
+        0.95,
+        1,
+        0.86,
+        0.33,
+        0.92,
+        0.74,
+        1,
+        0.67,
+        0.5,
+        0.69,
+        0.7
+      ],
+      "emotions": [
+        [
+          "joy",
+          24
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

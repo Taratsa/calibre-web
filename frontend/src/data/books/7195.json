@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3184,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "sistem",
@@ -118,11 +118,11 @@
         41
       ],
       [
-        "tekno-industrial",
-        9
+        "engkau",
+        28
       ],
       [
-        "bulldozer",
+        "tekno-industrial",
         9
       ],
       [
@@ -130,8 +130,8 @@
         14
       ],
       [
-        "engkau",
-        28
+        "bulldozer",
+        9
       ],
       [
         "industri",
@@ -142,8 +142,8 @@
         18
       ],
       [
-        "biotek",
-        4
+        "nilai-nilai",
+        18
       ],
       [
         "globalisasi",
@@ -191,20 +191,52 @@
     "similar": [
       [
         2766,
-        0.77
+        0.76
       ],
       [
         4735,
-        0.17
+        0.19
       ],
       [
         279,
-        0.17
+        0.19
+      ],
+      [
+        4698,
+        0.11
+      ],
+      [
+        2148,
+        0.11
       ],
       [
         1466,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 65,
+      "negative": 53,
+      "trend": [
+        -0.33,
+        -0.2,
+        0,
+        0.5,
+        -0.14,
+        -0.33,
+        0,
+        0.29,
+        0.71,
+        null,
+        0.27,
+        null,
+        -0.33,
+        null,
+        -0.2,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 2239,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "lestari",
@@ -113,12 +113,12 @@
         25
       ],
       [
-        "rekanita",
-        9
-      ],
-      [
         "lesbian",
         16
+      ],
+      [
+        "rekanita",
+        9
       ],
       [
         "chandra",
@@ -129,16 +129,20 @@
         7
       ],
       [
-        "peracik",
-        5
+        "konferensi",
+        14
       ],
       [
         "hawaii",
         7
       ],
       [
-        "konferensi",
-        14
+        "peracik",
+        5
+      ],
+      [
+        "gayatri",
+        5
       ],
       [
         "menchandra",
@@ -151,10 +155,6 @@
       [
         "aln-nippon",
         3
-      ],
-      [
-        "gayatri",
-        5
       ]
     ],
     "phrases": [
@@ -197,25 +197,32 @@
         0.47
       ],
       [
+        3328,
+        0.34
+      ],
+      [
         3327,
         0.33
       ],
       [
-        3328,
-        0.33
-      ],
-      [
         3329,
-        0.31
+        0.32
       ],
       [
         3856,
-        0.23
+        0.24
       ],
       [
         3885,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.74,
+      "positive": 53,
+      "negative": 8,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

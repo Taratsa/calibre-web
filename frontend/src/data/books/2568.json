@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1192,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "pernikahan",
@@ -111,24 +111,28 @@
         21
       ],
       [
-        "perceraian",
-        5
-      ],
-      [
         "wanita",
         15
+      ],
+      [
+        "perceraian",
+        5
       ],
       [
         "asuransi",
         4
       ],
       [
+        "pria",
+        6
+      ],
+      [
         "takhayul",
         3
       ],
       [
-        "pria",
-        6
+        "sosial",
+        10
       ],
       [
         "sejati",
@@ -139,40 +143,68 @@
         3
       ],
       [
-        "merendahkan",
-        3
-      ],
-      [
-        "sosial",
-        10
+        "kebebasan",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7155,
-        0.36
+        0.37
       ],
       [
         4877,
-        0.16
+        0.18
       ],
       [
         2482,
-        0.15
-      ],
-      [
-        7429,
-        0.14
-      ],
-      [
-        1953,
-        0.13
+        0.17
       ],
       [
         7546,
-        0.13
+        0.16
+      ],
+      [
+        2178,
+        0.15
+      ],
+      [
+        7157,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 47,
+      "negative": 18,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          19
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

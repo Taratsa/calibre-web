@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1777,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "basa",
@@ -110,31 +110,39 @@
         59
       ],
       [
-        "rékaan",
-        5
-      ],
-      [
         "masarakat",
         10
+      ],
+      [
+        "rékaan",
+        5
       ],
       [
         "pabila",
         9
       ],
       [
-        "diselingkungan",
-        4
-      ],
-      [
         "djuga",
         12
+      ],
+      [
+        "diselingkungan",
+        4
       ],
       [
         "mempergunakannja",
         5
       ],
       [
+        "panitia",
+        10
+      ],
+      [
         "hanja",
+        9
+      ],
+      [
+        "mendjadi",
         9
       ],
       [
@@ -142,16 +150,8 @@
         8
       ],
       [
-        "mendjadi",
-        9
-      ],
-      [
-        "panitia",
-        10
-      ],
-      [
-        "impotensi",
-        4
+        "kata-kata",
+        13
       ]
     ],
     "phrases": [
@@ -190,6 +190,14 @@
     ],
     "similar": [
       [
+        3968,
+        0.16
+      ],
+      [
+        7613,
+        0.16
+      ],
+      [
         7693,
         0.15
       ],
@@ -198,21 +206,14 @@
         0.15
       ],
       [
-        3968,
-        0.14
+        3416,
+        0.13
       ],
       [
-        7613,
-        0.14
-      ],
-      [
-        6759,
-        0.12
-      ],
-      [
-        7585,
-        0.11
+        6630,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

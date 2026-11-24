@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 16737,
-    "longer_than": 73,
+    "longer_than": 87,
     "top": [
       [
         "people",
@@ -104,12 +104,16 @@
         73
       ],
       [
+        "people",
+        97
+      ],
+      [
         "gentlemen",
         41
       ],
       [
-        "people",
-        97
+        "labor",
+        43
       ],
       [
         "havelaar",
@@ -120,28 +124,24 @@
         28
       ],
       [
-        "labor",
-        43
-      ],
-      [
         "duty",
         35
-      ],
-      [
-        "droogstoppel",
-        15
       ],
       [
         "newspaper",
         25
       ],
       [
-        "sire",
-        19
-      ],
-      [
         "dutch",
         31
+      ],
+      [
+        "droogstoppel",
+        15
+      ],
+      [
+        "sire",
+        19
       ],
       [
         "newspapers",
@@ -188,25 +188,26 @@
         0.19
       ],
       [
-        733,
-        0.16
+        649,
+        0.17
       ],
       [
         5957,
         0.16
       ],
       [
-        649,
+        733,
         0.16
       ],
       [
         1909,
-        0.15
+        0.16
       ],
       [
         724,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

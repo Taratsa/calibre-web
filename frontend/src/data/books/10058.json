@@ -1,0 +1,220 @@
+{
+  "id": 10058,
+  "title": "Multi OpenBTS: Catatan BSIC=NCC+BCC",
+  "slug": "multi-openbts-catatan-bsic-ncc-bcc-onno-widodo-purbo",
+  "slugBase": "multi-openbts-catatan-bsic-ncc-bcc-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-03-02",
+  "timestamp": "2026-11-23 19:11:38.075910",
+  "last_modified": "2026-11-23 19:11:38.075915",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:eaf640da-cd3a-550d-ab01-d30726e19782"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10058?v=1795435898",
+  "cover_og_url": "/cover/10058/og?v=1795435898",
+  "url": "/book/multi-openbts-catatan-bsic-ncc-bcc-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: http://www.teletopix.org/gsm/what-is-bsic-and-its-use-in-gsm/ What is BSIC and its use in GSM BSIC=NCC+BCC In GSM system, each BTS is allocated with a color code, which is called BSIC. MS can identify two cells with the same BCCH by the help of BSIC. In network planning, effort should be made to make sure that BCCH of neighbor cells are different from the serving cell's BCCH to reduce the",
+  "data": [
+    {
+      "format": "epub",
+      "size": 7808,
+      "name": "Multi OpenBTS_ Catatan BSIC=NCC_BCC - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1332,
+    "longer_than": 56,
+    "top": [
+      [
+        "openbts",
+        137
+      ],
+      [
+        "gnuradio",
+        53
+      ],
+      [
+        "recommended",
+        43
+      ],
+      [
+        "ubuntu",
+        30
+      ],
+      [
+        "install",
+        22
+      ],
+      [
+        "uhd",
+        15
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "gsm",
+        14
+      ],
+      [
+        "bsic",
+        13
+      ],
+      [
+        "catatan",
+        13
+      ],
+      [
+        "cells",
+        13
+      ],
+      [
+        "rangenetwork",
+        13
+      ]
+    ],
+    "distinct": [
+      [
+        "openbts",
+        137
+      ],
+      [
+        "gnuradio",
+        53
+      ],
+      [
+        "recommended",
+        43
+      ],
+      [
+        "bsic",
+        13
+      ],
+      [
+        "uhd",
+        15
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "rangenetwork",
+        13
+      ],
+      [
+        "ubuntu",
+        30
+      ],
+      [
+        "cells",
+        13
+      ],
+      [
+        "gsm",
+        14
+      ],
+      [
+        "bcch",
+        10
+      ],
+      [
+        "yate",
+        10
+      ]
+    ],
+    "phrases": [
+      [
+        "gnuradio ubuntu",
+        19
+      ],
+      [
+        "ubuntu instal gnuradio",
+        11
+      ],
+      [
+        "multi openbts catatan",
+        9
+      ],
+      [
+        "openbts rangenetwork",
+        11
+      ],
+      [
+        "gnuradio not recommended",
+        7
+      ],
+      [
+        "ubuntu install",
+        10
+      ],
+      [
+        "openbts dari svn",
+        6
+      ],
+      [
+        "clock mhz",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        10062,
+        0.83
+      ],
+      [
+        10061,
+        0.78
+      ],
+      [
+        10043,
+        0.76
+      ],
+      [
+        10059,
+        0.75
+      ],
+      [
+        10068,
+        0.75
+      ],
+      [
+        9964,
+        0.75
+      ]
+    ],
+    "sentiment": null
+  }
+}

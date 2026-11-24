@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2569,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "orang",
@@ -104,10 +104,6 @@
         14
       ],
       [
-        "berpeti-peti",
-        7
-      ],
-      [
         "lumpur",
         19
       ],
@@ -116,8 +112,8 @@
         18
       ],
       [
-        "kereta-api",
-        9
+        "berpeti-peti",
+        7
       ],
       [
         "gerobak",
@@ -128,24 +124,28 @@
         11
       ],
       [
-        "purwokerto",
+        "kereta-api",
         9
       ],
       [
-        "barangnja",
-        6
+        "purwokerto",
+        9
       ],
       [
         "djadi",
         12
       ],
       [
-        "tanggul",
-        7
+        "barangnja",
+        6
       ],
       [
         "djuga",
         11
+      ],
+      [
+        "tanggul",
+        7
       ]
     ],
     "phrases": [
@@ -185,28 +185,64 @@
     "similar": [
       [
         7598,
-        0.15
+        0.17
       ],
       [
         7943,
-        0.14
-      ],
-      [
-        277,
-        0.12
+        0.16
       ],
       [
         7562,
-        0.11
+        0.13
       ],
       [
         6664,
-        0.11
+        0.13
       ],
       [
-        7684,
-        0.11
+        277,
+        0.13
+      ],
+      [
+        9325,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 31,
+      "negative": 37,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          13
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

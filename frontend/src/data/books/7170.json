@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 632,
-    "longer_than": 7,
+    "longer_than": 44,
     "top": [
       [
         "sastra",
@@ -110,27 +110,19 @@
         21
       ],
       [
-        "estetika",
-        7
-      ],
-      [
         "alternatif",
         12
       ],
       [
-        "simulakrum",
-        3
+        "estetika",
+        7
       ],
       [
         "simbolik",
         6
       ],
       [
-        "kanon",
-        3
-      ],
-      [
-        "institusionalisasi",
+        "simulakrum",
         3
       ],
       [
@@ -138,16 +130,24 @@
         8
       ],
       [
-        "diskursus",
-        4
+        "institusi",
+        7
       ],
       [
         "politis",
         6
       ],
       [
-        "institusi",
-        7
+        "institusionalisasi",
+        3
+      ],
+      [
+        "kanon",
+        3
+      ],
+      [
+        "diskursus",
+        4
       ],
       [
         "standar",
@@ -183,10 +183,14 @@
     "similar": [
       [
         2411,
-        0.18
+        0.21
       ],
       [
         2149,
+        0.16
+      ],
+      [
+        6827,
         0.15
       ],
       [
@@ -194,17 +198,14 @@
         0.14
       ],
       [
-        6827,
+        6856,
         0.13
       ],
       [
         3761,
-        0.11
-      ],
-      [
-        3904,
-        0.11
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

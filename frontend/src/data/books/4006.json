@@ -12,7 +12,7 @@
   "author_sort": "Indonesia, Sekretariat Central Comite Partai Komunis",
   "tags": [
     "Filsafat",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 4227,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "partai",
@@ -116,12 +116,12 @@
         45
       ],
       [
-        "fraksi",
-        27
-      ],
-      [
         "buruh",
         63
+      ],
+      [
+        "fraksi",
+        27
       ],
       [
         "proletar",
@@ -132,8 +132,16 @@
         38
       ],
       [
+        "anggota",
+        38
+      ],
+      [
         "wetenschappelijk",
         8
+      ],
+      [
+        "perjuangan",
+        30
       ],
       [
         "sosialisme",
@@ -144,16 +152,8 @@
         18
       ],
       [
-        "marxisme",
-        13
-      ],
-      [
-        "perjuangan",
-        30
-      ],
-      [
-        "tersedikit",
-        5
+        "pokok",
+        25
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         1581,
-        0.21
+        0.25
       ],
       [
         9279,
-        0.19
-      ],
-      [
-        4595,
-        0.18
-      ],
-      [
-        6742,
-        0.18
+        0.25
       ],
       [
         9280,
-        0.18
+        0.23
       ],
       [
         9273,
-        0.17
+        0.23
+      ],
+      [
+        1325,
+        0.22
+      ],
+      [
+        4595,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 70,
+      "negative": 28,
+      "trend": [
+        -0.2,
+        0.75,
+        null,
+        1,
+        null,
+        0.11,
+        0.71,
+        0,
+        1,
+        null,
+        null,
+        0.27,
+        0.71,
+        0,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

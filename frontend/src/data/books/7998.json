@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1388,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "mustahil",
@@ -103,12 +103,12 @@
         10
       ],
       [
-        "raoul",
-        4
-      ],
-      [
         "mustahil",
         10
+      ],
+      [
+        "raoul",
+        4
       ],
       [
         "melampaui",
@@ -119,31 +119,31 @@
         4
       ],
       [
+        "kehidupan",
+        9
+      ],
+      [
         "esai",
         3
       ],
       [
-        "support",
-        3
+        "kekuasaan",
+        6
+      ],
+      [
+        "hidup",
+        9
       ],
       [
         "manusiawi",
         3
       ],
       [
-        "gratis",
-        3
+        "menciptakan",
+        5
       ],
       [
         "terjemahan",
-        3
-      ],
-      [
-        "keuntungan",
-        4
-      ],
-      [
-        "hasrat",
         3
       ]
     ],
@@ -151,20 +151,35 @@
     "similar": [
       [
         7363,
-        0.51
+        0.55
       ],
       [
         2743,
-        0.51
+        0.54
       ],
       [
         2539,
+        0.12
+      ],
+      [
+        7459,
+        0.12
+      ],
+      [
+        3705,
         0.11
       ],
       [
-        1992,
-        0.1
+        19549,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.21,
+      "positive": 23,
+      "negative": 35,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

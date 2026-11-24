@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3269,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "komunitas",
@@ -111,10 +111,6 @@
         22
       ],
       [
-        "lterna",
-        6
-      ],
-      [
         "komunitas",
         35
       ],
@@ -123,12 +119,16 @@
         30
       ],
       [
-        "consulta",
+        "lterna",
         6
       ],
       [
         "pekerja",
         29
+      ],
+      [
+        "consulta",
+        6
       ],
       [
         "munisipal",
@@ -139,12 +139,12 @@
         8
       ],
       [
-        "hirarkis",
-        7
+        "keputusan",
+        22
       ],
       [
-        "meksiko",
-        7
+        "rapat",
+        16
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2356,
-        0.51
+        0.52
       ],
       [
         3713,
+        0.38
+      ],
+      [
+        2521,
         0.34
       ],
       [
         2427,
-        0.31
-      ],
-      [
-        2521,
-        0.3
+        0.33
       ],
       [
         7259,
-        0.23
+        0.26
       ],
       [
         2390,
-        0.2
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 32,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1638,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "daerah",
@@ -109,11 +109,15 @@
         35
       ],
       [
-        "karnavian",
-        9
+        "daerah",
+        58
       ],
       [
-        "penjabat",
+        "kepala",
+        49
+      ],
+      [
+        "karnavian",
         9
       ],
       [
@@ -121,32 +125,28 @@
         10
       ],
       [
-        "daerah",
-        58
+        "penjabat",
+        9
       ],
       [
         "jabatan",
         16
       ],
       [
-        "mendagri",
-        7
-      ],
-      [
-        "kepala",
-        49
-      ],
-      [
-        "maladministrasi",
-        5
-      ],
-      [
         "papua",
         13
       ],
       [
-        "rangkap",
+        "mendagri",
         7
+      ],
+      [
+        "pengangkatan",
+        9
+      ],
+      [
+        "maladministrasi",
+        5
       ]
     ],
     "phrases": [
@@ -186,28 +186,29 @@
     "similar": [
       [
         6933,
-        0.21
+        0.23
       ],
       [
         347,
-        0.21
+        0.22
       ],
       [
         9024,
-        0.13
-      ],
-      [
-        9035,
-        0.11
+        0.15
       ],
       [
         9065,
-        0.11
+        0.14
+      ],
+      [
+        9035,
+        0.14
       ],
       [
         9067,
-        0.11
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

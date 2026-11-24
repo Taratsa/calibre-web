@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2434,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "aksi",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "aksi",
+        24
+      ],
+      [
         "alienasi",
         9
       ],
@@ -107,12 +111,8 @@
         4
       ],
       [
-        "aksi",
+        "langsung",
         24
-      ],
-      [
-        "grup",
-        8
       ],
       [
         "kapitalisme",
@@ -123,8 +123,16 @@
         11
       ],
       [
+        "grup",
+        8
+      ],
+      [
         "mediasi",
         5
+      ],
+      [
+        "individu",
+        9
       ],
       [
         "direct",
@@ -137,14 +145,6 @@
       [
         "antagonis",
         3
-      ],
-      [
-        "metoda",
-        3
-      ],
-      [
-        "langsung",
-        24
       ]
     ],
     "phrases": [
@@ -168,28 +168,77 @@
     "similar": [
       [
         7372,
-        0.46
+        0.44
       ],
       [
         2434,
-        0.31
+        0.35
       ],
       [
         7862,
-        0.24
+        0.25
       ],
       [
         2332,
-        0.24
+        0.25
       ],
       [
         7370,
-        0.14
+        0.17
       ],
       [
         2689,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 35,
+      "negative": 44,
+      "trend": [
+        -0.43,
+        -0.67,
+        -0.6,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        0.71,
+        null,
+        -0.2,
+        -0.2,
+        null,
+        null,
+        -0.14,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "joy",
+          3
+        ]
+      ]
+    }
   }
 }

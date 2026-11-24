@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 5680,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "gaspar",
@@ -117,24 +117,24 @@
         12
       ],
       [
+        "cabang",
+        28
+      ],
+      [
         "junus",
         15
       ],
       [
-        "cabang",
-        28
+        "sebutkan",
+        22
       ],
       [
         "sugiyanto",
         9
       ],
       [
-        "sirra",
-        7
-      ],
-      [
-        "sebutkan",
-        22
+        "kuasa",
+        29
       ]
     ],
     "phrases": [
@@ -174,28 +174,60 @@
     "similar": [
       [
         153,
-        0.14
+        0.15
       ],
       [
         156,
-        0.12
-      ],
-      [
-        6995,
-        0.12
-      ],
-      [
-        7957,
-        0.11
-      ],
-      [
-        2611,
-        0.11
+        0.14
       ],
       [
         6920,
-        0.1
+        0.14
+      ],
+      [
+        1016,
+        0.14
+      ],
+      [
+        6995,
+        0.13
+      ],
+      [
+        7957,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 27,
+      "negative": 33,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

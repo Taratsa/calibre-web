@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1091,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "sistem",
@@ -107,24 +107,24 @@
         8
       ],
       [
-        "penjarahan",
-        5
-      ],
-      [
         "bencana",
         9
+      ],
+      [
+        "penjarahan",
+        5
       ],
       [
         "industrial",
         5
       ],
       [
-        "menjarah",
-        3
-      ],
-      [
         "sistem",
         11
+      ],
+      [
+        "menjarah",
+        3
       ],
       [
         "otonomi",
@@ -135,16 +135,16 @@
         5
       ],
       [
+        "manusia",
+        8
+      ],
+      [
+        "masyarakat",
+        7
+      ],
+      [
         "rantai",
         3
-      ],
-      [
-        "toko",
-        3
-      ],
-      [
-        "revolusi",
-        4
       ]
     ],
     "phrases": [],
@@ -162,17 +162,24 @@
         0.17
       ],
       [
+        43,
+        0.15
+      ],
+      [
         8006,
-        0.17
+        0.15
       ],
       [
         2661,
-        0.16
-      ],
-      [
-        43,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 26,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3746,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "tanah",
@@ -107,16 +107,24 @@
         32
       ],
       [
-        "landreform",
-        19
-      ],
-      [
         "penguasaan",
         33
       ],
       [
-        "leverage",
-        11
+        "landreform",
+        19
+      ],
+      [
+        "tanah",
+        65
+      ],
+      [
+        "hak",
+        57
+      ],
+      [
+        "hukum",
+        46
       ],
       [
         "hgu",
@@ -127,24 +135,16 @@
         16
       ],
       [
+        "leverage",
+        11
+      ],
+      [
         "kpa",
         13
       ],
       [
-        "hukum",
-        46
-      ],
-      [
-        "hmn",
-        7
-      ],
-      [
-        "tanah",
-        65
-      ],
-      [
-        "sumber-sumber",
-        15
+        "petani",
+        25
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8443,
-        0.41
+        0.44
       ],
       [
         8455,
-        0.34
+        0.38
       ],
       [
         8453,
-        0.34
+        0.38
       ],
       [
         8598,
-        0.34
+        0.38
       ],
       [
         8486,
-        0.33
+        0.37
       ],
       [
-        8372,
-        0.29
+        8466,
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 73,
+      "negative": 29,
+      "trend": [
+        null,
+        0.29,
+        0,
+        null,
+        0.67,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0.67,
+        0,
+        null,
+        -0.5,
+        0.56
+      ],
+      "emotions": []
+    }
   }
 }

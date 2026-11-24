@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 13277,
-    "longer_than": 68,
+    "longer_than": 84,
     "top": [
       [
         "inde",
@@ -139,12 +139,12 @@
         23
       ],
       [
-        "non-proletariers",
-        20
-      ],
-      [
         "politiek",
         36
+      ],
+      [
+        "non-proletariers",
+        20
       ]
     ],
     "phrases": [
@@ -184,11 +184,11 @@
     "similar": [
       [
         2430,
-        0.43
+        0.42
       ],
       [
         1134,
-        0.2
+        0.19
       ],
       [
         1187,
@@ -206,6 +206,7 @@
         4641,
         0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

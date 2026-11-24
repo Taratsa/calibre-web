@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4643,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "peradaban",
@@ -118,12 +118,12 @@
         10
       ],
       [
-        "pemburu-peramu",
-        7
-      ],
-      [
         "anarki",
         15
+      ],
+      [
+        "pemburu-peramu",
+        7
       ],
       [
         "meromantisir",
@@ -134,24 +134,24 @@
         4
       ],
       [
-        "anarko-primitivis",
-        4
-      ],
-      [
         "narasi",
         10
       ],
       [
-        "anarko-primitivisme",
-        3
+        "adat",
+        16
       ],
       [
-        "nomaden",
+        "kaum",
+        18
+      ],
+      [
+        "anarko-primitivis",
         4
       ],
       [
-        "adat",
-        16
+        "hidup",
+        23
       ]
     ],
     "phrases": [
@@ -191,28 +191,77 @@
     "similar": [
       [
         2561,
-        0.19
+        0.23
       ],
       [
         9188,
-        0.19
-      ],
-      [
-        2004,
-        0.19
+        0.21
       ],
       [
         2201,
-        0.19
+        0.2
       ],
       [
         2794,
-        0.18
+        0.2
       ],
       [
-        8006,
-        0.18
+        1956,
+        0.2
+      ],
+      [
+        7151,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 103,
+      "negative": 62,
+      "trend": [
+        null,
+        0.14,
+        0.47,
+        0.2,
+        0.56,
+        0.33,
+        null,
+        0.6,
+        0.2,
+        0.5,
+        0.47,
+        0,
+        -0.05,
+        0.45,
+        -0.45,
+        0.11
+      ],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

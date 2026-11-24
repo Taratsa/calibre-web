@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2717,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "negara",
@@ -118,20 +118,32 @@
         15
       ],
       [
+        "multinasional",
+        9
+      ],
+      [
         "wto",
         8
       ],
       [
-        "multinasional",
-        9
+        "negara",
+        28
+      ],
+      [
+        "pekerja",
+        16
+      ],
+      [
+        "ekonomi",
+        19
       ],
       [
         "swakelola",
         5
       ],
       [
-        "pekerja",
-        16
+        "negara-negara",
+        8
       ],
       [
         "bolivia",
@@ -140,18 +152,6 @@
       [
         "smith",
         5
-      ],
-      [
-        "ekonomi",
-        19
-      ],
-      [
-        "negara-negara",
-        8
-      ],
-      [
-        "korporasi-korporasi",
-        3
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         7898,
-        0.42
+        0.43
       ],
       [
         2137,
-        0.42
+        0.43
       ],
       [
         7256,
-        0.19
+        0.23
       ],
       [
         3713,
-        0.16
+        0.2
       ],
       [
-        7897,
-        0.16
+        1928,
+        0.2
       ],
       [
         1758,
-        0.15
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 54,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

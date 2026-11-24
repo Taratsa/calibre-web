@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4828,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "anarkis",
@@ -110,48 +110,48 @@
         61
       ],
       [
-        "china",
-        21
-      ],
-      [
         "pekerja",
         44
-      ],
-      [
-        "hlm",
-        25
-      ],
-      [
-        "hindia",
-        21
       ],
       [
         "belanda",
         39
       ],
       [
-        "shixin",
-        6
+        "hlm",
+        25
+      ],
+      [
+        "china",
+        21
+      ],
+      [
+        "hindia",
+        21
+      ],
+      [
+        "gerakan",
+        36
       ],
       [
         "zhang",
         8
       ],
       [
-        "ppas",
-        7
+        "shixin",
+        6
       ],
       [
         "anarko-sindikalis",
         10
       ],
       [
-        "yong",
-        10
+        "ppas",
+        7
       ],
       [
-        "douwes",
-        8
+        "yong",
+        10
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         2465,
-        0.79
+        0.8
       ],
       [
         274,
-        0.48
+        0.5
       ],
       [
         2346,
-        0.38
+        0.37
       ],
       [
         2481,
-        0.23
+        0.29
       ],
       [
         7183,
-        0.22
+        0.27
       ],
       [
         7385,
-        0.18
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 54,
+      "negative": 43,
+      "trend": [
+        -0.8,
+        0.33,
+        -0.33,
+        null,
+        0.43,
+        null,
+        0.27,
+        -0.2,
+        0.43,
+        -0.67,
+        0.33,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

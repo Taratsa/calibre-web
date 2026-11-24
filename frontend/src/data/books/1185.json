@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1926,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "hidup",
@@ -103,12 +103,12 @@
         13
       ],
       [
-        "masjarakat",
-        13
-      ],
-      [
         "djuga",
         14
+      ],
+      [
+        "masjarakat",
+        13
       ],
       [
         "perdjoangan",
@@ -119,15 +119,11 @@
         6
       ],
       [
-        "ditjita-tjitakan",
-        4
-      ],
-      [
         "mewudjudkan",
         6
       ],
       [
-        "mukaddimah",
+        "ditjita-tjitakan",
         4
       ],
       [
@@ -135,8 +131,12 @@
         7
       ],
       [
-        "tube",
+        "mukaddimah",
         4
+      ],
+      [
+        "sadja",
+        8
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         8771,
-        0.22
+        0.25
       ],
       [
         735,
-        0.21
+        0.24
       ],
       [
         761,
-        0.19
+        0.21
       ],
       [
         300,
-        0.19
+        0.21
       ],
       [
         1197,
-        0.18
+        0.2
       ],
       [
-        1875,
-        0.17
+        1434,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 62,
+      "negative": 26,
+      "trend": [
+        null,
+        -0.75,
+        1,
+        null,
+        -0.2,
+        1,
+        null,
+        0.14,
+        0.67,
+        null,
+        null,
+        0.5,
+        0.71,
+        1,
+        0.67,
+        0.14
+      ],
+      "emotions": []
+    }
   }
 }

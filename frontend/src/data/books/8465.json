@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1986,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "air",
@@ -103,12 +103,16 @@
         112
       ],
       [
+        "hak",
+        59
+      ],
+      [
         "bersih",
         29
       ],
       [
-        "hak",
-        59
+        "negara",
+        33
       ],
       [
         "akses",
@@ -123,28 +127,24 @@
         12
       ],
       [
-        "ajudikasi",
-        4
-      ],
-      [
         "publik",
         14
+      ],
+      [
+        "ajudikasi",
+        4
       ],
       [
         "asasi",
         9
       ],
       [
-        "pewujudan",
-        3
-      ],
-      [
         "komunitas",
         12
       ],
       [
-        "sanitasi",
-        4
+        "masyarakat",
+        19
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8844,
-        0.23
+        0.25
       ],
       [
         9031,
-        0.19
+        0.22
       ],
       [
         9021,
-        0.18
+        0.21
       ],
       [
         9074,
-        0.18
+        0.21
+      ],
+      [
+        8652,
+        0.2
       ],
       [
         8273,
-        0.17
-      ],
-      [
-        9008,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 69,
+      "negative": 24,
+      "trend": [
+        null,
+        0.25,
+        null,
+        null,
+        null,
+        0.5,
+        -0.6,
+        null,
+        null,
+        1,
+        0.71,
+        0.8,
+        0.64,
+        0.75,
+        0.33,
+        -0.2
+      ],
+      "emotions": []
+    }
   }
 }

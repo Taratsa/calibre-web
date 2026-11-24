@@ -68,7 +68,7 @@
   ],
   "text": {
     "words": 5427,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "poster",
@@ -125,48 +125,48 @@
         48
       ],
       [
-        "pirate",
-        11
-      ],
-      [
         "seniman",
         28
       ],
       [
-        "digital",
-        26
-      ],
-      [
-        "antikritik",
-        6
-      ],
-      [
-        "blockchain",
-        6
-      ],
-      [
-        "lessig",
-        6
+        "pirate",
+        11
       ],
       [
         "seni",
         35
       ],
       [
+        "digital",
+        26
+      ],
+      [
+        "karya",
+        35
+      ],
+      [
+        "antikritik",
+        6
+      ],
+      [
         "visual",
         15
       ],
       [
-        "wheatpaste",
-        5
+        "cipta",
+        22
       ],
       [
         "bay",
         11
       ],
       [
-        "castells",
-        5
+        "lessig",
+        6
+      ],
+      [
+        "blockchain",
+        6
       ]
     ],
     "phrases": [
@@ -206,28 +206,85 @@
     "similar": [
       [
         4089,
-        0.2
+        0.19
       ],
       [
         2316,
-        0.17
+        0.18
       ],
       [
         1265,
-        0.15
+        0.17
       ],
       [
         8290,
+        0.15
+      ],
+      [
+        1717,
         0.14
       ],
       [
-        4087,
-        0.13
-      ],
-      [
-        6989,
-        0.12
+        3104,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 107,
+      "negative": 52,
+      "trend": [
+        0.75,
+        0.6,
+        1,
+        1,
+        0.5,
+        0.6,
+        0.33,
+        0.43,
+        0.75,
+        0.25,
+        -0.2,
+        -0.56,
+        -0.09,
+        -1,
+        0.33,
+        0.45
+      ],
+      "emotions": [
+        [
+          "fear",
+          11
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

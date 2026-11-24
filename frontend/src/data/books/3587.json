@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4574,
-    "longer_than": 41,
+    "longer_than": 72,
     "top": [
       [
         "bungai",
@@ -122,28 +122,28 @@
         46
       ],
       [
-        "rambang",
-        14
-      ],
-      [
         "kancil",
         21
+      ],
+      [
+        "rambang",
+        14
       ],
       [
         "endas",
         10
       ],
       [
-        "ringkai",
-        8
+        "nyaring",
+        19
       ],
       [
         "anjing-anjing",
         14
       ],
       [
-        "nyaring",
-        19
+        "ringkai",
+        8
       ],
       [
         "pajangei",
@@ -187,24 +187,85 @@
     "similar": [
       [
         3575,
-        0.2
+        0.21
       ],
       [
         5351,
-        0.13
+        0.14
       ],
       [
         5350,
-        0.11
-      ],
-      [
-        5400,
-        0.1
+        0.14
       ],
       [
         5252,
-        0.1
+        0.14
+      ],
+      [
+        5400,
+        0.13
+      ],
+      [
+        5107,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 58,
+      "negative": 33,
+      "trend": [
+        1,
+        0.25,
+        0.56,
+        0.6,
+        0.33,
+        null,
+        null,
+        0.33,
+        null,
+        null,
+        0.33,
+        -0.6,
+        null,
+        0.14,
+        0.11,
+        null
+      ],
+      "emotions": [
+        [
+          "surprise",
+          14
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
   }
 }

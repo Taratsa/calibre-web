@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1396,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "teknologi",
@@ -103,20 +103,12 @@
         21
       ],
       [
-        "pemrosesan",
-        5
-      ],
-      [
-        "posting",
-        4
-      ],
-      [
         "sistem",
         18
       ],
       [
-        "katalis",
-        4
+        "pemrosesan",
+        5
       ],
       [
         "budak",
@@ -127,12 +119,24 @@
         10
       ],
       [
-        "pengontrol",
-        3
+        "katalis",
+        4
+      ],
+      [
+        "posting",
+        4
       ],
       [
         "mentah",
         6
+      ],
+      [
+        "pengontrol",
+        3
+      ],
+      [
+        "penguasa",
+        7
       ],
       [
         "efisien",
@@ -141,10 +145,6 @@
       [
         "teknik",
         7
-      ],
-      [
-        "diaplikasikan",
-        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         9199,
-        0.43
+        0.46
       ],
       [
         3057,
-        0.24
-      ],
-      [
-        2228,
-        0.18
+        0.29
       ],
       [
         2211,
-        0.18
+        0.23
       ],
       [
-        1995,
-        0.17
+        4684,
+        0.2
       ],
       [
-        2052,
-        0.16
+        2672,
+        0.2
+      ],
+      [
+        2032,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

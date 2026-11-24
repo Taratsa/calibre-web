@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3082,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "punk",
@@ -109,32 +109,32 @@
         6
       ],
       [
-        "dek",
-        8
-      ],
-      [
         "king",
         10
       ],
       [
-        "femisida",
-        4
-      ],
-      [
-        "aretha",
-        3
-      ],
-      [
-        "banjarbaru",
-        5
+        "dek",
+        8
       ],
       [
         "penumpang",
         9
       ],
       [
-        "cia-cia",
+        "femisida",
+        4
+      ],
+      [
+        "banjarbaru",
+        5
+      ],
+      [
+        "aretha",
         3
+      ],
+      [
+        "perempuan",
+        18
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         1988,
-        0.15
+        0.17
       ],
       [
         2216,
-        0.12
+        0.15
       ],
       [
         88,
-        0.12
-      ],
-      [
-        4067,
-        0.11
+        0.15
       ],
       [
         3073,
-        0.1
+        0.12
       ],
       [
-        1778,
-        0.1
+        56,
+        0.12
+      ],
+      [
+        2320,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 51,
+      "negative": 36,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        0.43,
+        null,
+        -0.71,
+        0.33,
+        0.2,
+        0.6,
+        null,
+        -0.33,
+        0.78,
+        0.5,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

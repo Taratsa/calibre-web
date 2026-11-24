@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3794,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "orang",
@@ -111,40 +111,40 @@
         4
       ],
       [
+        "perjuangan",
+        19
+      ],
+      [
+        "sosial",
+        23
+      ],
+      [
         "anti-politik",
         5
       ],
       [
-        "modesto",
-        3
+        "kelas",
+        17
       ],
       [
         "squat",
         5
       ],
       [
+        "menciptakan",
+        17
+      ],
+      [
         "aktivisme",
         7
       ],
       [
+        "modesto",
+        3
+      ],
+      [
         "sewa",
         9
-      ],
-      [
-        "pemogokan",
-        8
-      ],
-      [
-        "perjuangan",
-        19
-      ],
-      [
-        "pemogok",
-        4
-      ],
-      [
-        "kelas",
-        17
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2256,
-        0.18
+        0.26
       ],
       [
-        4731,
-        0.18
-      ],
-      [
-        4867,
-        0.17
-      ],
-      [
-        2758,
-        0.17
-      ],
-      [
-        2398,
-        0.16
+        2064,
+        0.26
       ],
       [
         2596,
-        0.16
+        0.25
+      ],
+      [
+        2758,
+        0.24
+      ],
+      [
+        4867,
+        0.24
+      ],
+      [
+        4731,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 54,
+      "negative": 50,
+      "trend": [
+        null,
+        0,
+        null,
+        -0.5,
+        0.56,
+        0.5,
+        null,
+        -1,
+        0.75,
+        null,
+        0.2,
+        0.56,
+        0,
+        -0.75,
+        null,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          8
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

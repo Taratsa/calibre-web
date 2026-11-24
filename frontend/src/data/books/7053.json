@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2093,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "negara",
@@ -114,6 +114,10 @@
         13
       ],
       [
+        "negara",
+        45
+      ],
+      [
         "kurdi",
         8
       ],
@@ -122,36 +126,32 @@
         8
       ],
       [
-        "rakhine",
-        3
-      ],
-      [
-        "negara",
-        45
+        "diakses",
+        9
       ],
       [
         "bakunin",
         6
       ],
       [
-        "diakses",
-        9
+        "rakhine",
+        3
+      ],
+      [
+        "pemerintah",
+        15
       ],
       [
         "moeldoko",
         3
       ],
       [
-        "etnis",
-        6
-      ],
-      [
-        "sektarian",
-        3
-      ],
-      [
         "negara-negara",
         8
+      ],
+      [
+        "etnis",
+        6
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         2098,
-        0.31
+        0.3
       ],
       [
         8823,
         0.23
       ],
       [
-        119,
-        0.15
-      ],
-      [
         7261,
         0.15
       ],
       [
-        349,
-        0.13
+        119,
+        0.15
       ],
       [
         7087,
-        0.12
+        0.14
+      ],
+      [
+        4715,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 3971,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "negara",
@@ -111,52 +111,52 @@
     ],
     "distinct": [
       [
+        "negara",
+        71
+      ],
+      [
         "chiefdom",
         9
+      ],
+      [
+        "masyarakat",
+        48
       ],
       [
         "ketidaksamaan",
         9
       ],
       [
-        "neoliberalisme",
-        10
-      ],
-      [
-        "anthropost",
-        4
-      ],
-      [
-        "negara",
-        71
+        "politik",
+        33
       ],
       [
         "belanda",
         23
       ],
       [
-        "harvey",
-        6
+        "sosial",
+        34
+      ],
+      [
+        "neoliberalisme",
+        10
       ],
       [
         "kelas",
         24
       ],
       [
-        "stratifikasi",
+        "anthropost",
+        4
+      ],
+      [
+        "harvey",
         6
       ],
       [
         "homo",
         7
-      ],
-      [
-        "politik",
-        33
-      ],
-      [
-        "masyarakat",
-        48
       ]
     ],
     "phrases": [
@@ -196,28 +196,52 @@
     "similar": [
       [
         2402,
-        0.39
-      ],
-      [
-        2030,
-        0.15
+        0.42
       ],
       [
         2758,
-        0.12
+        0.17
       ],
       [
-        2801,
-        0.11
+        2030,
+        0.16
       ],
       [
-        7441,
-        0.1
+        8489,
+        0.15
       ],
       [
-        1803,
-        0.1
+        8487,
+        0.15
+      ],
+      [
+        2086,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 60,
+      "negative": 28,
+      "trend": [
+        null,
+        0.33,
+        null,
+        0.33,
+        0.33,
+        0.67,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        -0.14,
+        0.25,
+        null,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

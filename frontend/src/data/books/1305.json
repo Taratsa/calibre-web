@@ -12,7 +12,7 @@
   "author_sort": "Dewantara, Ki Hajar",
   "tags": [
     "Biografi & Otobiografi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 59491,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "rakyat",
@@ -116,12 +116,20 @@
         129
       ],
       [
+        "rakyat",
+        394
+      ],
+      [
         "marhum",
         79
       ],
       [
         "perjoangan",
         64
+      ],
+      [
+        "belanda",
+        204
       ],
       [
         "rajiman",
@@ -132,28 +140,20 @@
         99
       ],
       [
-        "rakyat",
-        394
+        "nasional",
+        271
       ],
       [
-        "indiskhe",
-        38
+        "bangsa",
+        235
+      ],
+      [
+        "kemerdekaan",
+        165
       ],
       [
         "kebangunan",
         63
-      ],
-      [
-        "belanda",
-        204
-      ],
-      [
-        "utomo",
-        72
-      ],
-      [
-        "wejodiningrat",
-        26
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         516,
-        0.45
+        0.48
       ],
       [
         305,
-        0.45
+        0.48
       ],
       [
         780,
-        0.38
+        0.39
       ],
       [
         6887,
-        0.2
+        0.23
       ],
       [
         7801,
-        0.2
+        0.23
       ],
       [
         1109,
-        0.2
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 929,
+      "negative": 489,
+      "trend": [
+        0.27,
+        0.22,
+        0.13,
+        0.48,
+        0,
+        0.14,
+        0.43,
+        0.63,
+        0.7,
+        0.14,
+        0.33,
+        0.54,
+        0.64,
+        0.13,
+        -0.25,
+        0.52
+      ],
+      "emotions": [
+        [
+          "fear",
+          107
+        ],
+        [
+          "joy",
+          99
+        ],
+        [
+          "trust",
+          95
+        ],
+        [
+          "sadness",
+          55
+        ],
+        [
+          "anger",
+          54
+        ],
+        [
+          "anticipation",
+          42
+        ],
+        [
+          "surprise",
+          14
+        ]
+      ]
+    }
   }
 }

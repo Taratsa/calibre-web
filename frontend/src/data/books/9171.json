@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 1768,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "sakral",
@@ -115,20 +115,24 @@
         10
       ],
       [
+        "dewa",
+        11
+      ],
+      [
         "dikuduskan",
         4
       ],
       [
-        "dewa",
-        11
+        "agama-agama",
+        5
       ],
       [
         "pengudusan",
         3
       ],
       [
-        "agama-agama",
-        5
+        "agama",
+        13
       ],
       [
         "alienasi",
@@ -147,12 +151,8 @@
         7
       ],
       [
-        "menakjubkan",
-        4
-      ],
-      [
-        "institusi",
-        7
+        "individu",
+        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         4684,
-        0.33
+        0.36
       ],
       [
         2672,
-        0.33
-      ],
-      [
-        2180,
-        0.16
+        0.36
       ],
       [
         2585,
-        0.16
+        0.18
       ],
       [
         4732,
-        0.15
+        0.17
       ],
       [
         281,
-        0.15
+        0.17
+      ],
+      [
+        2180,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

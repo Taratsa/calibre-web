@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1331,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "indonesia",
@@ -96,16 +96,20 @@
     ],
     "distinct": [
       [
-        "manifesto",
-        16
-      ],
-      [
         "revolusi",
         29
       ],
       [
+        "manifesto",
+        16
+      ],
+      [
         "marxisme",
         10
+      ],
+      [
+        "pekerja",
+        17
       ],
       [
         "kasta",
@@ -116,31 +120,27 @@
         10
       ],
       [
-        "pekerja",
-        17
-      ],
-      [
-        "soekarno",
-        7
-      ],
-      [
-        "revisionisme",
-        4
+        "indonesia",
+        31
       ],
       [
         "revolusioner",
         11
       ],
       [
-        "terpimpin",
-        5
+        "soekarno",
+        7
       ],
       [
-        "borjuis",
-        6
+        "kaum",
+        15
       ],
       [
-        "demokratik",
+        "politik",
+        15
+      ],
+      [
+        "revisionisme",
         4
       ]
     ],
@@ -180,29 +180,30 @@
     ],
     "similar": [
       [
-        9282,
-        0.3
+        9161,
+        0.29
       ],
       [
-        9161,
-        0.26
+        9282,
+        0.28
       ],
       [
         7588,
-        0.16
+        0.19
       ],
       [
         413,
-        0.13
+        0.18
       ],
       [
         412,
-        0.13
+        0.18
       ],
       [
-        7416,
-        0.13
+        9237,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

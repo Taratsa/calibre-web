@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5010,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "kekuasaan",
@@ -107,44 +107,44 @@
         101
       ],
       [
-        "fau",
-        10
-      ],
-      [
-        "anarkis",
-        26
-      ],
-      [
-        "farj",
-        7
-      ],
-      [
-        "perjuangan",
-        37
+        "sosial",
+        64
       ],
       [
         "kekuatan",
         57
       ],
       [
-        "sosial",
-        64
+        "anarkis",
+        26
       ],
       [
-        "poder",
-        5
+        "perjuangan",
+        37
       ],
       [
-        "transformasi",
-        15
+        "fau",
+        10
+      ],
+      [
+        "organisasi",
+        34
       ],
       [
         "kelas",
         30
       ],
       [
-        "organisasi",
-        34
+        "farj",
+        7
+      ],
+      [
+        "gerakan",
+        29
+      ],
+      [
+        "transformasi",
+        15
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7859,
-        0.37
+        0.43
       ],
       [
         2553,
-        0.37
+        0.43
       ],
       [
         7019,
-        0.37
+        0.43
       ],
       [
         2493,
-        0.28
+        0.34
+      ],
+      [
+        2758,
+        0.31
       ],
       [
         2383,
-        0.27
-      ],
-      [
-        7541,
-        0.26
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.73,
+      "positive": 135,
+      "negative": 21,
+      "trend": [
+        0.67,
+        null,
+        0.82,
+        0.5,
+        1,
+        0.83,
+        0.88,
+        0.62,
+        1,
+        0.5,
+        0.76,
+        0.67,
+        0.56,
+        1,
+        0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

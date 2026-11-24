@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 26759,
-    "longer_than": 82,
+    "longer_than": 91,
     "top": [
       [
         "masyarakat",
@@ -107,44 +107,44 @@
         105
       ],
       [
-        "apropriasi",
-        44
-      ],
-      [
-        "penerj",
-        44
-      ],
-      [
         "hlm",
         92
+      ],
+      [
+        "apropriasi",
+        44
       ],
       [
         "marx",
         84
       ],
       [
+        "penerj",
+        44
+      ],
+      [
         "subjektivitas",
         46
       ],
       [
-        "negasi",
-        45
+        "sosial",
+        157
       ],
       [
-        "karl",
-        54
+        "masyarakat",
+        174
       ],
       [
-        "manajemen-diri",
-        20
+        "individu",
+        103
       ],
       [
         "komunis",
         75
       ],
       [
-        "keserakahan",
-        39
+        "negasi",
+        45
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2701,
-        0.24
+        0.29
       ],
       [
         2285,
-        0.22
+        0.26
       ],
       [
         1938,
-        0.21
+        0.25
       ],
       [
-        8065,
-        0.18
+        6730,
+        0.22
       ],
       [
-        8061,
-        0.18
+        2203,
+        0.22
       ],
       [
-        4732,
-        0.17
+        2727,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 405,
+      "negative": 331,
+      "trend": [
+        -0.18,
+        0.1,
+        0.05,
+        0.3,
+        0.28,
+        0.33,
+        -0.11,
+        0.09,
+        -0.41,
+        0.1,
+        0.14,
+        0.13,
+        0.22,
+        0.41,
+        0.45,
+        0.24
+      ],
+      "emotions": [
+        [
+          "anger",
+          97
+        ],
+        [
+          "joy",
+          65
+        ],
+        [
+          "sadness",
+          47
+        ],
+        [
+          "fear",
+          18
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

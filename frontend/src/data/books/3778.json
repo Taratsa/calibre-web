@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2383,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "perempuan",
@@ -107,16 +107,16 @@
         27
       ],
       [
+        "perempuan",
+        55
+      ],
+      [
         "kurdi",
         14
       ],
       [
         "bakur",
         7
-      ],
-      [
-        "perempuan",
-        55
       ],
       [
         "turki",
@@ -143,8 +143,8 @@
         5
       ],
       [
-        "kurdistan",
-        3
+        "demokratis",
+        8
       ]
     ],
     "phrases": [
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        271,
-        0.41
+        2293,
+        0.4
       ],
       [
-        2293,
-        0.38
+        271,
+        0.39
       ],
       [
         7144,
-        0.35
-      ],
-      [
-        7208,
-        0.34
+        0.36
       ],
       [
         2428,
         0.34
       ],
       [
+        7351,
+        0.34
+      ],
+      [
         1915,
         0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 58,
+      "negative": 25,
+      "trend": [
+        0.2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0.33,
+        null,
+        null,
+        0.5,
+        null,
+        0.57,
+        -0.2,
+        null,
+        0,
+        0.33
+      ],
+      "emotions": [
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

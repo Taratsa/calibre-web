@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 5915,
-    "longer_than": 47,
+    "longer_than": 75,
     "top": [
       [
         "bahasa",
@@ -102,32 +102,28 @@
     ],
     "distinct": [
       [
-        "appadurai",
-        22
-      ],
-      [
         "bahasa",
         179
+      ],
+      [
+        "appadurai",
+        22
       ],
       [
         "publik",
         69
       ],
       [
+        "indonesia",
+        125
+      ],
+      [
+        "ruang",
+        72
+      ],
+      [
         "ritzer",
         13
-      ],
-      [
-        "pengutamaan",
-        14
-      ],
-      [
-        "goodman",
-        13
-      ],
-      [
-        "disjuncture",
-        9
       ],
       [
         "pelanggaran",
@@ -138,16 +134,20 @@
         23
       ],
       [
+        "pengutamaan",
+        14
+      ],
+      [
+        "goodman",
+        13
+      ],
+      [
         "global",
         33
       ],
       [
-        "ruang",
-        72
-      ],
-      [
-        "kebahasaan",
-        15
+        "asing",
+        42
       ]
     ],
     "phrases": [
@@ -187,28 +187,69 @@
     "similar": [
       [
         5704,
-        0.21
-      ],
-      [
-        8104,
-        0.14
-      ],
-      [
-        2735,
-        0.13
-      ],
-      [
-        1853,
-        0.13
-      ],
-      [
-        5641,
-        0.13
+        0.24
       ],
       [
         4088,
-        0.13
+        0.16
+      ],
+      [
+        8104,
+        0.15
+      ],
+      [
+        2735,
+        0.14
+      ],
+      [
+        1853,
+        0.14
+      ],
+      [
+        5641,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 59,
+      "negative": 51,
+      "trend": [
+        null,
+        null,
+        -1,
+        0.5,
+        0.71,
+        null,
+        0.2,
+        null,
+        -1,
+        -0.75,
+        -1,
+        0.14,
+        0.8,
+        1,
+        0.54,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          39
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

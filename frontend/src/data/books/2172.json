@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7357,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "anarkis",
@@ -99,20 +99,20 @@
     ],
     "distinct": [
       [
-        "individualisme",
-        38
-      ],
-      [
         "anarkis",
         58
       ],
       [
-        "clastres",
-        15
+        "individualisme",
+        38
       ],
       [
         "anarkisme",
         38
+      ],
+      [
+        "clastres",
+        15
       ],
       [
         "gorgias",
@@ -143,8 +143,8 @@
         13
       ],
       [
-        "otonomi-diri",
-        6
+        "anarki",
+        16
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         7095,
-        0.36
+        0.37
       ],
       [
         2813,
-        0.21
-      ],
-      [
-        8106,
-        0.2
+        0.25
       ],
       [
         6730,
-        0.2
+        0.24
       ],
       [
         2203,
-        0.2
+        0.24
       ],
       [
-        7150,
-        0.19
+        8106,
+        0.24
+      ],
+      [
+        3746,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 120,
+      "negative": 78,
+      "trend": [
+        null,
+        -0.14,
+        0.67,
+        0.86,
+        0.54,
+        0.83,
+        0.33,
+        0.2,
+        -0.2,
+        -0.2,
+        0.57,
+        null,
+        -0.71,
+        0.38,
+        0.23,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          24
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

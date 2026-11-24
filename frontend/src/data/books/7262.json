@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 775,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "masyarakat",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "kostas",
-        3
-      ],
-      [
         "revolutionary",
         7
+      ],
+      [
+        "kostas",
+        3
       ],
       [
         "struggle",
@@ -134,6 +134,14 @@
         4
       ],
       [
+        "masyarakat",
+        9
+      ],
+      [
+        "kelas",
+        6
+      ],
+      [
         "yunani",
         3
       ],
@@ -142,16 +150,8 @@
         3
       ],
       [
-        "berbahaya",
-        4
-      ],
-      [
-        "kelas",
-        6
-      ],
-      [
-        "tuduhan",
-        3
+        "orang-orang",
+        7
       ]
     ],
     "phrases": [
@@ -168,6 +168,28 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        7029,
+        0.11
+      ],
+      [
+        8091,
+        0.1
+      ],
+      [
+        1774,
+        0.1
+      ],
+      [
+        2094,
+        0.1
+      ],
+      [
+        2117,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

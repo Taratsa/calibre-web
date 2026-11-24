@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2115,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "sang",
@@ -114,6 +114,10 @@
         39
       ],
       [
+        "sang",
+        50
+      ],
+      [
         "penumpang",
         20
       ],
@@ -130,28 +134,24 @@
         11
       ],
       [
-        "sang",
-        50
-      ],
-      [
-        "kabin",
-        8
+        "selimut",
+        14
       ],
       [
         "oral",
         12
       ],
       [
-        "selimut",
-        14
+        "kabin",
+        8
       ],
       [
         "homoseks",
         9
       ],
       [
-        "anglo",
-        7
+        "perwira",
+        13
       ]
     ],
     "phrases": [
@@ -188,6 +188,13 @@
         7
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 31,
+      "negative": 33,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

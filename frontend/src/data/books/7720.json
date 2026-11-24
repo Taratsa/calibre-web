@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1038,
-    "longer_than": 13,
+    "longer_than": 52,
     "top": [
       [
         "prt",
@@ -114,6 +114,10 @@
         11
       ],
       [
+        "keluarga",
+        14
+      ],
+      [
         "pembantu",
         6
       ],
@@ -122,27 +126,23 @@
         4
       ],
       [
-        "keluarga",
-        14
+        "tangga",
+        7
       ],
       [
-        "gaji",
-        4
+        "rumah",
+        11
+      ],
+      [
+        "pemerintah",
+        9
       ],
       [
         "pendudukan",
         4
       ],
       [
-        "kesusastraan",
-        3
-      ],
-      [
-        "tangga",
-        7
-      ],
-      [
-        "jepang",
+        "gaji",
         4
       ],
       [
@@ -150,8 +150,8 @@
         6
       ],
       [
-        "kolonial",
-        4
+        "kesusastraan",
+        3
       ]
     ],
     "phrases": [
@@ -183,28 +183,29 @@
     "similar": [
       [
         8218,
-        0.34
+        0.32
       ],
       [
         7027,
-        0.3
+        0.25
       ],
       [
         9132,
         0.21
       ],
       [
-        7190,
-        0.21
+        9012,
+        0.18
       ],
       [
-        9012,
-        0.19
+        7190,
+        0.18
       ],
       [
         8220,
-        0.19
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

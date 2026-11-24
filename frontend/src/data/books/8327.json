@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1891,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "ham",
@@ -112,6 +112,10 @@
         29
       ],
       [
+        "pelanggaran",
+        21
+      ],
+      [
         "penyelidik",
         11
       ],
@@ -122,10 +126,6 @@
       [
         "penyidik",
         10
-      ],
-      [
-        "pelanggaran",
-        21
       ],
       [
         "penyelidikan",
@@ -144,8 +144,8 @@
         13
       ],
       [
-        "penuntutan",
-        6
+        "berat",
+        19
       ],
       [
         "asasi",
@@ -189,28 +189,52 @@
     "similar": [
       [
         8994,
-        0.32
+        0.34
       ],
       [
         6954,
-        0.3
+        0.33
       ],
       [
         8326,
-        0.29
-      ],
-      [
-        1162,
-        0.29
+        0.32
       ],
       [
         6900,
-        0.28
+        0.31
       ],
       [
         9092,
-        0.27
+        0.3
+      ],
+      [
+        1162,
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.38,
+      "positive": 21,
+      "negative": 47,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

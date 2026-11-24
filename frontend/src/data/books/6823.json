@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2627,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "cravan",
@@ -131,20 +131,20 @@
         3
       ],
       [
-        "selebriti",
-        5
-      ],
-      [
         "arthur",
         6
       ],
       [
-        "loy",
-        3
+        "selebriti",
+        5
       ],
       [
-        "barcelona",
-        4
+        "amerika",
+        13
+      ],
+      [
+        "loy",
+        3
       ]
     ],
     "phrases": [
@@ -177,6 +177,38 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        17192,
+        0.16
+      ],
+      [
+        2503,
+        0.14
+      ],
+      [
+        2679,
+        0.12
+      ],
+      [
+        7715,
+        0.11
+      ],
+      [
+        10980,
+        0.11
+      ],
+      [
+        7187,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 33,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

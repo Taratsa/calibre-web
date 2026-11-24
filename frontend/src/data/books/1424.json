@@ -11,7 +11,7 @@
   ],
   "author_sort": "Nyoto",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 5822,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "indonesia",
@@ -108,28 +108,16 @@
     ],
     "distinct": [
       [
-        "sovyet",
-        21
-      ],
-      [
         "revolusi",
         62
       ],
       [
-        "pki",
-        27
+        "sovyet",
+        21
       ],
       [
-        "partai",
-        40
-      ],
-      [
-        "belanda",
-        43
-      ],
-      [
-        "kolonialis",
-        15
+        "indonesia",
+        121
       ],
       [
         "kaum",
@@ -140,20 +128,32 @@
         63
       ],
       [
-        "soekarno",
-        16
+        "belanda",
+        43
+      ],
+      [
+        "partai",
+        40
+      ],
+      [
+        "pki",
+        27
+      ],
+      [
+        "kolonialis",
+        15
+      ],
+      [
+        "republik",
+        30
       ],
       [
         "kabinet",
         17
       ],
       [
-        "kolonial",
-        21
-      ],
-      [
-        "imperialis",
-        15
+        "soekarno",
+        16
       ]
     ],
     "phrases": [
@@ -193,28 +193,77 @@
     "similar": [
       [
         1325,
-        0.31
+        0.36
       ],
       [
         9270,
-        0.31
+        0.35
       ],
       [
         4022,
-        0.28
-      ],
-      [
-        1582,
-        0.24
+        0.33
       ],
       [
         9302,
-        0.24
+        0.29
+      ],
+      [
+        1582,
+        0.28
       ],
       [
         6799,
-        0.23
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 91,
+      "negative": 51,
+      "trend": [
+        -0.25,
+        1,
+        0,
+        0.33,
+        1,
+        null,
+        0,
+        0.57,
+        0.2,
+        -0.17,
+        -0.33,
+        0,
+        null,
+        0.78,
+        0.33,
+        0.57
+      ],
+      "emotions": [
+        [
+          "joy",
+          14
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

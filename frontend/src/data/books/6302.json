@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 88471,
-    "longer_than": 97,
+    "longer_than": 98,
     "top": [
       [
         "marabintang",
@@ -132,16 +132,16 @@
         313
       ],
       [
-        "samindara",
-        237
-      ],
-      [
         "karaeng",
         397
       ],
       [
-        "manninggau",
-        204
+        "samindara",
+        237
+      ],
+      [
+        "syarifah",
+        329
       ]
     ],
     "phrases": [
@@ -181,7 +181,7 @@
     "similar": [
       [
         6047,
-        0.38
+        0.39
       ],
       [
         2961,
@@ -203,6 +203,63 @@
         2941,
         0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 437,
+      "negative": 367,
+      "trend": [
+        0.23,
+        0.2,
+        -0.07,
+        -0.03,
+        0.33,
+        0.12,
+        -0.13,
+        0.15,
+        0,
+        null,
+        null,
+        null,
+        null,
+        -0.6,
+        0,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          101
+        ],
+        [
+          "fear",
+          57
+        ],
+        [
+          "surprise",
+          51
+        ],
+        [
+          "sadness",
+          38
+        ],
+        [
+          "joy",
+          38
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "anticipation",
+          24
+        ],
+        [
+          "disgust",
+          5
+        ]
+      ]
+    }
   }
 }

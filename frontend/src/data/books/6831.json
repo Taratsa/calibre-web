@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 929,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "negara",
@@ -111,8 +111,20 @@
         3
       ],
       [
+        "negara",
+        17
+      ],
+      [
         "korea",
         6
+      ],
+      [
+        "menolak",
+        12
+      ],
+      [
+        "nasionalisme",
+        4
       ],
       [
         "kekaisaran",
@@ -123,20 +135,8 @@
         3
       ],
       [
-        "nasionalisme",
-        4
-      ],
-      [
-        "menolak",
-        12
-      ],
-      [
         "kematiannya",
         3
-      ],
-      [
-        "negara",
-        17
       ],
       [
         "otoritas",
@@ -151,11 +151,11 @@
     "similar": [
       [
         7026,
-        0.54
+        0.51
       ],
       [
         2304,
-        0.26
+        0.25
       ],
       [
         7382,
@@ -163,16 +163,17 @@
       ],
       [
         4669,
-        0.21
+        0.2
       ],
       [
         2812,
-        0.21
+        0.2
       ],
       [
         2223,
         0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

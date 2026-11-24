@@ -1,0 +1,86 @@
+{
+  "id": 12725,
+  "title": "X86: install web server",
+  "slug": "x86-install-web-server-onno-widodo-purbo",
+  "slugBase": "x86-install-web-server-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2018-12-17",
+  "timestamp": "2026-11-23 21:19:07.664888",
+  "last_modified": "2026-11-23 21:19:07.664926",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:97cdc86c-277b-5370-b472-ce010c25a0b2"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/12725?v=1795443547",
+  "cover_og_url": "/cover/12725/og?v=1795443547",
+  "url": "/book/x86-install-web-server-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "sudo apt update sudo apt install apache2 php php-xmlrpc php-mysql php-gd php-cli \\ php-curl mysql-client mysql-server Pranala Menarik Internet Offline",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2036,
+      "name": "X86_ install web server - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 35,
+    "longer_than": 4,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        15178,
+        0.75
+      ],
+      [
+        14350,
+        0.72
+      ],
+      [
+        15085,
+        0.72
+      ],
+      [
+        13423,
+        0.67
+      ],
+      [
+        14776,
+        0.62
+      ],
+      [
+        14471,
+        0.57
+      ]
+    ],
+    "sentiment": null
+  }
+}

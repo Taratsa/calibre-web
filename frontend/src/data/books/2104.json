@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1891,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "krisis",
@@ -103,32 +103,24 @@
         16
       ],
       [
-        "ekologi",
-        10
-      ],
-      [
         "krisis",
         17
       ],
       [
-        "bookchin",
-        5
-      ],
-      [
-        "ostrom",
-        3
-      ],
-      [
-        "spontanitas",
-        5
+        "ekologi",
+        10
       ],
       [
         "anarkis",
         10
       ],
       [
-        "respons",
-        6
+        "bookchin",
+        5
+      ],
+      [
+        "spontanitas",
+        5
       ],
       [
         "komunitas",
@@ -139,12 +131,20 @@
         9
       ],
       [
-        "sentralisasi",
-        4
+        "ostrom",
+        3
       ],
       [
-        "solusi",
-        7
+        "respons",
+        6
+      ],
+      [
+        "individu",
+        10
+      ],
+      [
+        "negara",
+        16
       ]
     ],
     "phrases": [
@@ -172,28 +172,52 @@
     "similar": [
       [
         2308,
-        0.25
+        0.29
       ],
       [
         2624,
-        0.23
+        0.25
       ],
       [
         2629,
-        0.21
+        0.25
       ],
       [
         1820,
-        0.19
+        0.24
       ],
       [
-        4882,
-        0.18
+        2628,
+        0.23
       ],
       [
-        2632,
-        0.18
+        2390,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 39,
+      "negative": 40,
+      "trend": [
+        -0.2,
+        0.6,
+        null,
+        null,
+        -0.6,
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        0.5,
+        -0.11,
+        -0.6,
+        -0.4,
+        0.5,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 24988,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "orang",
@@ -89,10 +89,6 @@
     ],
     "distinct": [
       [
-        "responden",
-        131
-      ],
-      [
         "perkawinan",
         225
       ],
@@ -101,40 +97,44 @@
         214
       ],
       [
+        "responden",
+        131
+      ],
+      [
         "mempelai",
         101
+      ],
+      [
+        "orang",
+        448
       ],
       [
         "tabel",
         109
       ],
       [
-        "abstein",
-        29
-      ],
-      [
         "kotamadya",
         66
-      ],
-      [
-        "pengantin",
-        69
-      ],
-      [
-        "persentase",
-        68
-      ],
-      [
-        "ngeuyeuk",
-        23
       ],
       [
         "adat",
         151
       ],
       [
+        "abstein",
+        29
+      ],
+      [
+        "pengantin",
+        69
+      ],
+      [
         "bandung",
         123
+      ],
+      [
+        "persentase",
+        68
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         2956,
-        0.33
+        0.38
       ],
       [
         933,
-        0.33
+        0.38
       ],
       [
         800,
-        0.16
+        0.22
       ],
       [
         8693,
-        0.14
+        0.2
       ],
       [
         805,
-        0.13
+        0.17
       ],
       [
         2918,
-        0.11
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.59,
+      "positive": 354,
+      "negative": 91,
+      "trend": [
+        0.9,
+        0.88,
+        1,
+        0.38,
+        0.16,
+        0.69,
+        0.86,
+        0.4,
+        0.55,
+        0.74,
+        0.43,
+        0.41,
+        0.9,
+        null,
+        0.77,
+        0.37
+      ],
+      "emotions": [
+        [
+          "trust",
+          61
+        ],
+        [
+          "joy",
+          44
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "fear",
+          4
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1244,
-    "longer_than": 16,
+    "longer_than": 55,
     "top": [
       [
         "putri",
@@ -93,36 +93,40 @@
         14
       ],
       [
-        "masmani",
-        7
-      ],
-      [
         "majapahit",
         18
-      ],
-      [
-        "nala",
-        13
-      ],
-      [
-        "lindung",
-        16
       ],
       [
         "putri",
         30
       ],
       [
+        "masmani",
+        7
+      ],
+      [
+        "lindung",
+        16
+      ],
+      [
+        "nala",
+        13
+      ],
+      [
         "pasukan",
         25
+      ],
+      [
+        "musuh",
+        22
       ],
       [
         "patih",
         12
       ],
       [
-        "musuh",
-        22
+        "raja",
+        16
       ],
       [
         "seudia",
@@ -131,10 +135,6 @@
       [
         "meudanghara",
         3
-      ],
-      [
-        "raja",
-        16
       ]
     ],
     "phrases": [
@@ -178,24 +178,52 @@
       ],
       [
         5116,
-        0.13
+        0.16
       ],
       [
         5453,
-        0.12
-      ],
-      [
-        826,
-        0.12
+        0.16
       ],
       [
         2908,
-        0.12
+        0.15
+      ],
+      [
+        826,
+        0.15
       ],
       [
         6010,
-        0.11
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 25,
+      "negative": 54,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

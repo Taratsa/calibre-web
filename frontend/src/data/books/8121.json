@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 7758,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "kematian",
@@ -112,48 +112,48 @@
         58
       ],
       [
-        "senjakala",
-        9
-      ],
-      [
         "duka",
         23
-      ],
-      [
-        "antikristus",
-        7
-      ],
-      [
-        "borjuis",
-        18
-      ],
-      [
-        "bintang-bintang",
-        13
-      ],
-      [
-        "sosialisme",
-        20
-      ],
-      [
-        "pupil",
-        8
-      ],
-      [
-        "spiritual",
-        18
       ],
       [
         "darah",
         33
       ],
       [
-        "heroik",
-        12
+        "sang",
+        37
       ],
       [
-        "berdansa",
+        "sosialisme",
+        20
+      ],
+      [
+        "borjuis",
+        18
+      ],
+      [
+        "senjakala",
         9
+      ],
+      [
+        "hebat",
+        25
+      ],
+      [
+        "bintang-bintang",
+        13
+      ],
+      [
+        "gagasan",
+        26
+      ],
+      [
+        "spiritual",
+        18
+      ],
+      [
+        "tertawa",
+        22
       ]
     ],
     "phrases": [
@@ -201,20 +201,77 @@
       ],
       [
         2109,
-        0.54
+        0.56
       ],
       [
         7367,
-        0.53
+        0.56
       ],
       [
         8114,
-        0.32
+        0.34
       ],
       [
         2525,
-        0.31
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 217,
+      "negative": 302,
+      "trend": [
+        0,
+        0,
+        0.04,
+        -0.21,
+        -0.33,
+        -0.45,
+        0,
+        -0.21,
+        -0.35,
+        -0.47,
+        0.07,
+        -0.07,
+        -0.12,
+        -0.12,
+        -0.32,
+        -0.03
+      ],
+      "emotions": [
+        [
+          "sadness",
+          120
+        ],
+        [
+          "anger",
+          55
+        ],
+        [
+          "joy",
+          49
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "disgust",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

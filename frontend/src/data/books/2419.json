@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4443,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "nihilisme",
@@ -111,40 +111,40 @@
         8
       ],
       [
-        "sains",
-        10
-      ],
-      [
-        "premis",
-        7
-      ],
-      [
-        "pascamodernisme",
-        4
-      ],
-      [
         "revolusioner",
         16
+      ],
+      [
+        "sains",
+        10
       ],
       [
         "praktik",
         15
       ],
       [
+        "premis",
+        7
+      ],
+      [
+        "politik",
+        22
+      ],
+      [
+        "pascamodernisme",
+        4
+      ],
+      [
         "tsar",
         6
       ],
       [
-        "pascamodern",
-        4
+        "sosial",
+        21
       ],
       [
         "anarki",
         8
-      ],
-      [
-        "konsekuensi",
-        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2414,
-        0.3
+        0.33
       ],
       [
         7228,
         0.2
       ],
       [
-        7317,
-        0.17
+        2701,
+        0.19
       ],
       [
         1815,
-        0.17
+        0.19
       ],
       [
-        2583,
-        0.15
+        2813,
+        0.18
       ],
       [
-        2153,
-        0.15
+        17828,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 69,
+      "negative": 62,
+      "trend": [
+        0.33,
+        0.16,
+        -0.18,
+        -0.11,
+        null,
+        0.25,
+        null,
+        null,
+        0.2,
+        -0.56,
+        0.6,
+        0.11,
+        0.6,
+        -0.82,
+        -0.67,
+        0.75
+      ],
+      "emotions": []
+    }
   }
 }

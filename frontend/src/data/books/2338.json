@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 6880,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "masyarakat",
@@ -111,44 +111,44 @@
         57
       ],
       [
-        "lubicon",
-        10
+        "pribumi",
+        32
       ],
       [
         "kanada",
         27
       ],
       [
-        "pribumi",
-        32
+        "lubicon",
+        10
       ],
       [
         "gord",
         10
       ],
       [
-        "peltier",
-        10
+        "adat",
+        44
       ],
       [
         "olimpiade",
         15
       ],
       [
+        "peltier",
+        10
+      ],
+      [
+        "masyarakat",
+        58
+      ],
+      [
         "suwet",
         6
       ],
       [
-        "adat",
-        44
-      ],
-      [
         "reality",
         14
-      ],
-      [
-        "columbia",
-        12
       ]
     ],
     "phrases": [
@@ -188,28 +188,77 @@
     "similar": [
       [
         2181,
-        0.25
+        0.23
       ],
       [
         2026,
-        0.21
-      ],
-      [
-        2385,
-        0.15
+        0.2
       ],
       [
         2596,
-        0.13
+        0.2
       ],
       [
-        2353,
-        0.12
+        2385,
+        0.19
       ],
       [
-        7427,
-        0.11
+        17179,
+        0.17
+      ],
+      [
+        7911,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 83,
+      "negative": 62,
+      "trend": [
+        0.11,
+        null,
+        null,
+        null,
+        0.17,
+        1,
+        -0.05,
+        0.6,
+        0.14,
+        -0.53,
+        0.67,
+        -0.25,
+        null,
+        0.2,
+        0.33,
+        0.11
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

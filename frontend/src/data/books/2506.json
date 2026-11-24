@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1355,
-    "longer_than": 17,
+    "longer_than": 57,
     "top": [
       [
         "graeber",
@@ -107,12 +107,12 @@
         7
       ],
       [
-        "occupy",
-        4
-      ],
-      [
         "demokrasi",
         10
+      ],
+      [
+        "occupy",
+        4
       ],
       [
         "wall",
@@ -131,31 +131,31 @@
         4
       ],
       [
-        "anarkis",
-        4
+        "orang",
+        13
       ],
       [
         "mahasiswa",
         5
       ],
       [
-        "aksi",
-        5
+        "anarkis",
+        4
       ],
       [
-        "aktivis",
-        3
+        "politik",
+        7
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2315,
-        0.36
+        0.35
       ],
       [
         8112,
-        0.22
+        0.21
       ],
       [
         7882,
@@ -167,12 +167,19 @@
       ],
       [
         3752,
-        0.11
+        0.14
       ],
       [
         7134,
-        0.1
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.59,
+      "positive": 43,
+      "negative": 11,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

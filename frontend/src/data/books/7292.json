@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2822,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "indonesia",
@@ -114,24 +114,28 @@
         22
       ],
       [
-        "mercatoria",
-        7
-      ],
-      [
         "law",
         24
+      ],
+      [
+        "mercatoria",
+        7
       ],
       [
         "cilaka",
         10
       ],
       [
+        "ruu",
+        12
+      ],
+      [
         "neoliberal",
         10
       ],
       [
-        "ruu",
-        12
+        "indonesia",
+        43
       ],
       [
         "lex",
@@ -148,10 +152,6 @@
       [
         "suharto",
         8
-      ],
-      [
-        "investasi",
-        10
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         9013,
-        0.19
+        0.21
       ],
       [
         2678,
-        0.17
+        0.19
       ],
       [
         8544,
-        0.16
-      ],
-      [
-        8740,
-        0.15
+        0.19
       ],
       [
         8614,
-        0.15
+        0.18
       ],
       [
-        120,
-        0.14
+        8740,
+        0.17
+      ],
+      [
+        8233,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 38,
+      "negative": 47,
+      "trend": [
+        -0.71,
+        0.45,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        0.14,
+        null,
+        null,
+        -0.75,
+        -0.2,
+        0,
+        -0.33
+      ],
+      "emotions": []
+    }
   }
 }

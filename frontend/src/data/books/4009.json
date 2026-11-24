@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2492,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "indonesia",
@@ -108,16 +108,20 @@
     ],
     "distinct": [
       [
-        "disaman",
-        6
-      ],
-      [
         "justeru",
         11
       ],
       [
+        "disaman",
+        6
+      ],
+      [
         "konfrontasi",
         11
+      ],
+      [
+        "kebudayaan",
+        15
       ],
       [
         "by-sa",
@@ -128,60 +132,57 @@
         3
       ],
       [
-        "sastera",
-        5
-      ],
-      [
-        "pujangga",
-        5
-      ],
-      [
-        "roman",
-        6
-      ],
-      [
-        "kebudayaan",
-        15
+        "revolusi",
+        12
       ],
       [
         "krisis",
         10
       ],
       [
-        "masasilam",
-        4
+        "sastera",
+        5
       ],
       [
         "kesenian",
         8
+      ],
+      [
+        "roman",
+        6
+      ],
+      [
+        "pujangga",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        6755,
-        0.27
-      ],
-      [
-        3991,
-        0.27
-      ],
-      [
         4023,
+        0.28
+      ],
+      [
+        4019,
         0.26
       ],
       [
-        4035,
+        6755,
+        0.25
+      ],
+      [
+        3991,
+        0.25
+      ],
+      [
+        4017,
         0.24
       ],
       [
         4029,
         0.24
-      ],
-      [
-        4017,
-        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

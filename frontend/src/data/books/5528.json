@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 17248,
-    "longer_than": 73,
+    "longer_than": 87,
     "top": [
       [
         "sri",
@@ -129,20 +129,20 @@
         136
       ],
       [
-        "citrawati",
-        60
-      ],
-      [
         "sri",
         200
       ],
       [
-        "samya",
-        69
+        "citrawati",
+        60
       ],
       [
         "prang",
         88
+      ],
+      [
+        "samya",
+        69
       ],
       [
         "ingkang",
@@ -190,24 +190,81 @@
       ],
       [
         5290,
-        0.47
+        0.48
       ],
       [
         5289,
-        0.46
+        0.48
       ],
       [
         5374,
-        0.39
+        0.4
       ],
       [
         1755,
-        0.36
+        0.38
       ],
       [
         6110,
-        0.36
+        0.38
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 100,
+      "negative": 91,
+      "trend": [
+        0.25,
+        -0.21,
+        -0.17,
+        -0.23,
+        0.11,
+        0.67,
+        null,
+        0.43,
+        null,
+        null,
+        null,
+        null,
+        -0.14,
+        0.25,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          35
+        ],
+        [
+          "anger",
+          30
+        ],
+        [
+          "joy",
+          25
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

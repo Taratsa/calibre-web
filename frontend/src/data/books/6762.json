@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2273,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "gerakan",
@@ -108,44 +108,44 @@
         35
       ],
       [
-        "opendemocracy",
-        4
-      ],
-      [
         "sipil",
         16
       ],
       [
-        "pinochet",
+        "opendemocracy",
         4
-      ],
-      [
-        "agensi",
-        5
       ],
       [
         "disiplin",
         11
       ],
       [
-        "keterampilan",
-        8
-      ],
-      [
-        "capaian",
-        5
+        "pinochet",
+        4
       ],
       [
         "perlawanan",
         12
       ],
       [
-        "atribut-atribut",
-        3
+        "agensi",
+        5
       ],
       [
-        "perencanaan",
-        7
+        "keterampilan",
+        8
+      ],
+      [
+        "persatuan",
+        9
+      ],
+      [
+        "keberhasilan",
+        8
+      ],
+      [
+        "capaian",
+        5
       ]
     ],
     "phrases": [
@@ -185,28 +185,52 @@
     "similar": [
       [
         6766,
-        0.3
+        0.35
       ],
       [
         6779,
-        0.29
+        0.32
       ],
       [
         6777,
-        0.2
+        0.25
       ],
       [
         6768,
-        0.19
+        0.24
       ],
       [
         7911,
-        0.16
+        0.22
       ],
       [
         7980,
-        0.16
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 74,
+      "negative": 28,
+      "trend": [
+        0.43,
+        0.14,
+        -0.14,
+        0.2,
+        0.71,
+        0.78,
+        0.33,
+        null,
+        0.2,
+        1,
+        0.6,
+        0,
+        1,
+        0.27,
+        0.67,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

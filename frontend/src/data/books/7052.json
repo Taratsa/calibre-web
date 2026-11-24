@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 850,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "hidup",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "komoditas",
-        5
+        "hidup",
+        25
       ],
       [
-        "alienasi",
-        3
+        "komoditas",
+        5
       ],
       [
         "barang-barang",
@@ -122,16 +122,20 @@
         5
       ],
       [
-        "dirampas",
-        4
-      ],
-      [
         "bertahan",
         7
       ],
       [
-        "hidup",
-        25
+        "alienasi",
+        3
+      ],
+      [
+        "dirampas",
+        4
+      ],
+      [
+        "membeli",
+        5
       ],
       [
         "benda-benda",
@@ -142,15 +146,11 @@
         3
       ],
       [
-        "membeli",
+        "perjuangan",
         5
       ],
       [
-        "energi",
-        3
-      ],
-      [
-        "perjuangan",
+        "menciptakan",
         5
       ]
     ],
@@ -158,28 +158,29 @@
     "similar": [
       [
         9175,
-        0.59
+        0.62
       ],
       [
         4684,
-        0.27
+        0.28
       ],
       [
         2672,
-        0.27
-      ],
-      [
-        7193,
-        0.17
+        0.28
       ],
       [
         2155,
-        0.17
+        0.19
       ],
       [
         7178,
-        0.17
+        0.18
+      ],
+      [
+        3750,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

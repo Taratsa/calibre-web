@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1000,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "bahasa",
@@ -111,6 +111,10 @@
         8
       ],
       [
+        "bahasa",
+        36
+      ],
+      [
         "khasi",
         5
       ],
@@ -125,10 +129,6 @@
       [
         "malagasi",
         4
-      ],
-      [
-        "tonsea",
-        3
       ],
       [
         "djuga",
@@ -173,6 +173,7 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

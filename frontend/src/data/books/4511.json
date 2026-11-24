@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2451,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "aesthetic",
@@ -108,20 +108,12 @@
         15
       ],
       [
-        "exhibition",
-        9
-      ],
-      [
         "art",
         19
       ],
       [
-        "advertisements",
-        6
-      ],
-      [
-        "artworks",
-        5
+        "exhibition",
+        9
       ],
       [
         "cultural",
@@ -132,15 +124,23 @@
         12
       ],
       [
-        "exhibit",
+        "artworks",
         5
       ],
       [
-        "fine",
-        7
+        "advertisements",
+        6
       ],
       [
-        "lighting",
+        "fantasi",
+        8
+      ],
+      [
+        "social",
+        12
+      ],
+      [
+        "exhibit",
         5
       ]
     ],
@@ -181,7 +181,7 @@
     "similar": [
       [
         4441,
-        0.32
+        0.33
       ],
       [
         4555,
@@ -189,20 +189,21 @@
       ],
       [
         4537,
-        0.19
+        0.18
       ],
       [
         4119,
         0.15
       ],
       [
-        6873,
-        0.14
+        4188,
+        0.15
       ],
       [
-        4188,
-        0.14
+        6873,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

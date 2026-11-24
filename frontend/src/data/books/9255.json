@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2433,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "indonesia",
@@ -104,8 +104,16 @@
         20
       ],
       [
+        "indonesia",
+        50
+      ],
+      [
         "kongres",
         16
+      ],
+      [
+        "rakyat",
+        29
       ],
       [
         "proklamasi",
@@ -116,32 +124,24 @@
         13
       ],
       [
-        "berunding",
-        10
+        "kemerdekaan",
+        16
       ],
       [
         "terhormat",
         11
       ],
       [
-        "rakyat",
-        29
+        "berunding",
+        10
       ],
       [
-        "kemerdekaan",
-        16
-      ],
-      [
-        "linggarjati",
-        4
+        "sidang",
+        10
       ],
       [
         "membulatkan",
         5
-      ],
-      [
-        "belanda-indonesia",
-        3
       ]
     ],
     "phrases": [
@@ -181,28 +181,35 @@
     "similar": [
       [
         9251,
-        0.24
+        0.27
       ],
       [
         9258,
-        0.21
+        0.23
       ],
       [
         9254,
-        0.2
+        0.21
       ],
       [
         4650,
-        0.19
+        0.21
       ],
       [
         380,
-        0.19
+        0.21
       ],
       [
         299,
-        0.19
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 40,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

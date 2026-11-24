@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2139,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "neoliberalisme",
@@ -134,16 +134,16 @@
         8
       ],
       [
+        "politik",
+        19
+      ],
+      [
         "sialan",
         5
       ],
       [
         "bercinta",
         4
-      ],
-      [
-        "politik",
-        19
       ],
       [
         "nuansa",
@@ -178,17 +178,61 @@
         0.14
       ],
       [
-        2551,
+        1806,
         0.11
       ],
       [
-        1806,
+        12591,
+        0.11
+      ],
+      [
+        1779,
+        0.11
+      ],
+      [
+        2551,
         0.1
       ],
       [
-        7180,
+        8233,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 36,
+      "negative": 43,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

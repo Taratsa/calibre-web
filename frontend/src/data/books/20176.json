@@ -1,0 +1,213 @@
+{
+  "id": 20176,
+  "title": "Openldap: Instalasi",
+  "slug": "openldap-instalasi-onno-widodo-purbo",
+  "slugBase": "openldap-instalasi-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-05-30",
+  "timestamp": "2026-11-24 06:28:00.040366",
+  "last_modified": "2026-11-24 06:28:00.040368",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:467eb492-c4f2-5c4f-9f76-d1dfd08541f3"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20176?v=1795476480",
+  "cover_og_url": "/cover/20176/og?v=1795476480",
+  "url": "/book/openldap-instalasi-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Instalasi apt-get install slapd ldap-utils ldapscripts Masukan administrator password dalam proses instalasi. Instalasi CPAN LDAP untuk Webmin apt-get install libconvert-asn1-perl libnet-ldap-perl Tambahkan beberapa schema sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/cosine.ldif sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/nis.ldif sudo ldapadd -Y EXTERNAL -H ldapi:///",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3259,
+      "name": "Openldap_ Instalasi - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 454,
+    "longer_than": 38,
+    "top": [
+      [
+        "objectclass",
+        15
+      ],
+      [
+        "john",
+        12
+      ],
+      [
+        "ldap",
+        11
+      ],
+      [
+        "ldif",
+        9
+      ],
+      [
+        "admin",
+        7
+      ],
+      [
+        "instalasi",
+        5
+      ],
+      [
+        "ldapadd",
+        5
+      ],
+      [
+        "sudo",
+        5
+      ],
+      [
+        "backend",
+        4
+      ],
+      [
+        "external",
+        4
+      ],
+      [
+        "ldapi",
+        4
+      ],
+      [
+        "olcaccess",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "ldap",
+        11
+      ],
+      [
+        "ldapi",
+        4
+      ],
+      [
+        "john",
+        12
+      ],
+      [
+        "userpassword",
+        3
+      ],
+      [
+        "hdb",
+        3
+      ],
+      [
+        "admin",
+        7
+      ],
+      [
+        "uid",
+        4
+      ],
+      [
+        "schema",
+        4
+      ],
+      [
+        "backend",
+        4
+      ],
+      [
+        "frontend",
+        3
+      ],
+      [
+        "external",
+        4
+      ],
+      [
+        "write",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "ldapadd y external",
+        4
+      ],
+      [
+        "external h ldapi",
+        4
+      ],
+      [
+        "sudo ldapadd",
+        5
+      ],
+      [
+        "set lk max",
+        3
+      ],
+      [
+        "uid john",
+        4
+      ],
+      [
+        "olcdbconfig set",
+        4
+      ],
+      [
+        "ldap schema",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20177,
+        0.26
+      ],
+      [
+        13251,
+        0.24
+      ],
+      [
+        20175,
+        0.22
+      ],
+      [
+        9440,
+        0.19
+      ],
+      [
+        15795,
+        0.17
+      ],
+      [
+        15192,
+        0.17
+      ]
+    ],
+    "sentiment": null
+  }
+}

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8563,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "sosial",
@@ -99,24 +99,12 @@
     ],
     "distinct": [
       [
+        "sosial",
+        72
+      ],
+      [
         "mcd",
         12
-      ],
-      [
-        "swa-kelola",
-        11
-      ],
-      [
-        "bookchin",
-        14
-      ],
-      [
-        "potensialitas",
-        9
-      ],
-      [
-        "ekologis",
-        19
       ],
       [
         "relasi",
@@ -127,24 +115,36 @@
         29
       ],
       [
-        "ekologi",
-        17
+        "swa-kelola",
+        11
       ],
       [
-        "non-hierarkis",
+        "alam",
+        49
+      ],
+      [
+        "bookchin",
+        14
+      ],
+      [
+        "ekologis",
+        19
+      ],
+      [
+        "potensialitas",
         9
+      ],
+      [
+        "ekologi",
+        17
       ],
       [
         "ekosistem",
         16
       ],
       [
-        "sosial",
-        72
-      ],
-      [
-        "hierarki",
-        15
+        "masyarakat",
+        47
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         7967,
-        0.61
+        0.62
       ],
       [
         1820,
-        0.22
+        0.25
       ],
       [
         2631,
-        0.21
+        0.24
       ],
       [
         8107,
-        0.19
+        0.22
       ],
       [
         2308,
-        0.18
+        0.2
       ],
       [
-        2709,
-        0.17
+        43,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 109,
+      "negative": 54,
+      "trend": [
+        -0.05,
+        0,
+        -0.56,
+        -0.09,
+        0.09,
+        0.25,
+        0.54,
+        0.2,
+        1,
+        0.8,
+        1,
+        0.71,
+        0.33,
+        0.64,
+        0.6,
+        -0.09
+      ],
+      "emotions": []
+    }
   }
 }

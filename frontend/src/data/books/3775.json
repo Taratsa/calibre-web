@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1718,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "kaum",
@@ -103,32 +103,40 @@
         23
       ],
       [
+        "borjuis",
+        18
+      ],
+      [
         "borjuis-liberal",
         6
       ],
       [
-        "borjuis",
-        18
+        "kaum",
+        26
       ],
       [
         "etis",
         10
       ],
       [
-        "anarko-sindikalisme",
-        5
-      ],
-      [
         "rasional",
         10
+      ],
+      [
+        "produksi",
+        14
+      ],
+      [
+        "anarko-sindikalisme",
+        5
       ],
       [
         "bufe",
         3
       ],
       [
-        "kaum",
-        26
+        "masyarakat",
+        19
       ],
       [
         "borjuasi",
@@ -137,14 +145,6 @@
       [
         "faun",
         3
-      ],
-      [
-        "feral",
-        3
-      ],
-      [
-        "produksi",
-        14
       ]
     ],
     "phrases": [
@@ -188,24 +188,31 @@
       ],
       [
         7385,
-        0.36
+        0.35
       ],
       [
         3790,
-        0.22
-      ],
-      [
-        7444,
-        0.16
+        0.24
       ],
       [
         7875,
-        0.14
+        0.19
       ],
       [
         2540,
-        0.14
+        0.19
+      ],
+      [
+        7444,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 48,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

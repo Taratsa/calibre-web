@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 6284,
-    "longer_than": 49,
+    "longer_than": 75,
     "top": [
       [
         "karya",
@@ -108,40 +108,40 @@
         177
       ],
       [
-        "hardi",
-        25
-      ],
-      [
         "seni",
         87
       ],
       [
-        "moderator",
-        22
+        "hardi",
+        25
       ],
       [
         "saudara",
         61
       ],
       [
-        "pelukis",
-        23
+        "moderator",
+        22
       ],
       [
         "bambang",
         28
       ],
       [
-        "nashar",
-        10
+        "pelukis",
+        23
+      ],
+      [
+        "bermain",
+        39
       ],
       [
         "pameran",
         21
       ],
       [
-        "mustika",
-        12
+        "nashar",
+        10
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         4576,
-        0.29
+        0.31
       ],
       [
         4335,
-        0.26
+        0.27
       ],
       [
         4414,
-        0.24
-      ],
-      [
-        4478,
-        0.22
+        0.25
       ],
       [
         4528,
+        0.22
+      ],
+      [
+        4478,
         0.21
       ],
       [
         4324,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 111,
+      "negative": 45,
+      "trend": [
+        null,
+        -0.33,
+        0.43,
+        0.18,
+        1,
+        0.75,
+        null,
+        0.69,
+        0.43,
+        0.14,
+        0.54,
+        0,
+        null,
+        0.54,
+        1,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          35
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

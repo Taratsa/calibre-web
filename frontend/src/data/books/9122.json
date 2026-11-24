@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 5443,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "ham",
@@ -109,40 +109,40 @@
         41
       ],
       [
-        "ankum",
-        15
+        "militer",
+        73
       ],
       [
         "peradilan",
         44
       ],
       [
-        "militer",
-        73
-      ],
-      [
-        "arniati",
-        10
+        "ankum",
+        15
       ],
       [
         "pengadilan",
         49
       ],
       [
-        "lami",
-        18
-      ],
-      [
         "pelanggaran",
         43
       ],
       [
-        "suardana",
-        7
+        "arniati",
+        10
+      ],
+      [
+        "lami",
+        18
       ],
       [
         "pidana",
         27
+      ],
+      [
+        "kewenangan",
+        22
       ]
     ],
     "phrases": [
@@ -182,28 +182,73 @@
     "similar": [
       [
         6900,
-        0.33
+        0.36
       ],
       [
         6954,
-        0.3
-      ],
-      [
-        6945,
-        0.29
+        0.33
       ],
       [
         8994,
-        0.29
+        0.32
+      ],
+      [
+        6945,
+        0.32
       ],
       [
         8326,
-        0.28
+        0.31
       ],
       [
         8968,
-        0.27
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 63,
+      "negative": 87,
+      "trend": [
+        -0.2,
+        null,
+        -0.43,
+        -0.6,
+        0.33,
+        null,
+        null,
+        -0.6,
+        -0.3,
+        null,
+        0.33,
+        -0.23,
+        0.41,
+        -0.33,
+        -0.27,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          57
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
   }
 }

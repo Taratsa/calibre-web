@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2559,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "warga",
@@ -107,12 +107,12 @@
         34
       ],
       [
-        "muller",
-        16
-      ],
-      [
         "warga",
         57
+      ],
+      [
+        "muller",
+        16
       ],
       [
         "putusan",
@@ -127,20 +127,20 @@
         6
       ],
       [
-        "partizan",
-        6
-      ],
-      [
         "nino",
         8
       ],
       [
-        "bandungbergerak",
-        5
+        "partizan",
+        6
       ],
       [
         "lahan",
         20
+      ],
+      [
+        "bandungbergerak",
+        5
       ],
       [
         "kasasi",
@@ -200,12 +200,36 @@
       ],
       [
         135,
-        0.33
+        0.34
       ],
       [
         134,
-        0.31
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 39,
+      "negative": 29,
+      "trend": [
+        -0.2,
+        -0.14,
+        -0.11,
+        0,
+        -0.33,
+        null,
+        0.43,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        0.2,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

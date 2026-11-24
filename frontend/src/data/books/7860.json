@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2541,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "pendidikan",
@@ -103,12 +103,12 @@
         50
       ],
       [
-        "persekolahan",
-        8
-      ],
-      [
         "pendidikan",
         68
+      ],
+      [
+        "persekolahan",
+        8
       ],
       [
         "deschooling",
@@ -119,32 +119,32 @@
         7
       ],
       [
-        "postman",
-        4
+        "ideologi",
+        15
       ],
       [
-        "deinstitusionalisasi",
-        3
+        "postman",
+        4
       ],
       [
         "freire",
         5
       ],
       [
-        "terlembaga",
-        5
-      ],
-      [
-        "ideologi",
-        15
-      ],
-      [
         "ibid",
         9
       ],
       [
-        "perombakan",
-        6
+        "menekankan",
+        12
+      ],
+      [
+        "deinstitusionalisasi",
+        3
+      ],
+      [
+        "terlembaga",
+        5
       ]
     ],
     "phrases": [
@@ -188,24 +188,31 @@
       ],
       [
         3725,
-        0.13
-      ],
-      [
-        2815,
-        0.13
+        0.16
       ],
       [
         7003,
-        0.13
+        0.16
       ],
       [
         6730,
-        0.12
+        0.16
       ],
       [
         2203,
-        0.12
+        0.16
+      ],
+      [
+        2815,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 47,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

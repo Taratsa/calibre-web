@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2747,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "mahasiswa",
@@ -111,24 +111,24 @@
         9
       ],
       [
-        "kakak-kakak",
-        9
-      ],
-      [
         "kawan-kawan",
         19
+      ],
+      [
+        "kakak-kakak",
+        9
       ],
       [
         "kriminal",
         12
       ],
       [
-        "senior",
-        11
-      ],
-      [
         "lembaga",
         20
+      ],
+      [
+        "senior",
+        11
       ],
       [
         "kampus",
@@ -139,12 +139,12 @@
         5
       ],
       [
-        "stock",
+        "kawankawan",
         5
       ],
       [
-        "mixtape",
-        3
+        "stock",
+        5
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         2050,
-        0.18
+        0.17
       ],
       [
         2480,
@@ -192,16 +192,44 @@
       ],
       [
         2740,
-        0.16
+        0.15
       ],
       [
         2246,
         0.14
       ],
       [
+        2378,
+        0.11
+      ],
+      [
         3079,
-        0.12
+        0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.21,
+      "positive": 38,
+      "negative": 58,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.71,
+        -0.6,
+        null,
+        null,
+        0.08,
+        -1,
+        0,
+        -0.33,
+        0,
+        -1
+      ],
+      "emotions": []
+    }
   }
 }

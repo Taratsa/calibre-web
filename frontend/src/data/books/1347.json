@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 6042,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "palestina",
@@ -112,40 +112,40 @@
         15
       ],
       [
-        "sumud",
-        12
+        "film",
+        47
       ],
       [
         "israel",
         27
       ],
       [
-        "balfour",
+        "sumud",
         12
       ],
       [
-        "film",
-        47
-      ],
-      [
-        "proyekdekolonial",
-        10
+        "balfour",
+        12
       ],
       [
         "cinema",
         16
       ],
       [
+        "proyekdekolonial",
+        10
+      ],
+      [
         "aida",
         14
       ],
       [
-        "zionis",
-        13
+        "yahudi",
+        20
       ],
       [
-        "nakba",
-        9
+        "zionis",
+        13
       ]
     ],
     "phrases": [
@@ -185,28 +185,73 @@
     "similar": [
       [
         7950,
-        0.25
+        0.26
       ],
       [
         2353,
-        0.22
+        0.24
       ],
       [
         2574,
-        0.2
+        0.22
       ],
       [
         2254,
-        0.19
-      ],
-      [
-        7216,
-        0.18
+        0.21
       ],
       [
         114,
-        0.18
+        0.2
+      ],
+      [
+        113,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 66,
+      "negative": 65,
+      "trend": [
+        -1,
+        -0.6,
+        -0.14,
+        -0.05,
+        0.11,
+        0.75,
+        0.14,
+        0.2,
+        -0.14,
+        -0.43,
+        0.33,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "anger",
+          18
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

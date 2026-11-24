@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3205,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "angkatan",
@@ -111,11 +111,11 @@
         6
       ],
       [
-        "pudjan",
-        4
+        "sesungguhnja",
+        10
       ],
       [
-        "angkatin",
+        "pudjan",
         4
       ],
       [
@@ -123,27 +123,27 @@
         6
       ],
       [
-        "sesungguhnja",
-        10
-      ],
-      [
         "kekurangannja",
         6
       ],
       [
-        "mendyadi",
+        "angkatin",
         4
       ],
       [
-        "comedia",
-        4
+        "adanja",
+        10
       ],
       [
         "masanja",
         6
       ],
       [
-        "angkatannja",
+        "hidup",
+        31
+      ],
+      [
+        "mendyadi",
         4
       ]
     ],
@@ -172,28 +172,73 @@
     "similar": [
       [
         7820,
-        0.63
+        0.65
       ],
       [
         3444,
-        0.63
+        0.65
       ],
       [
         6761,
-        0.32
+        0.33
       ],
       [
         3416,
-        0.17
+        0.19
+      ],
+      [
+        7585,
+        0.16
       ],
       [
         7693,
-        0.14
-      ],
-      [
-        3433,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 41,
+      "negative": 48,
+      "trend": [
+        null,
+        null,
+        null,
+        0,
+        -0.6,
+        -0.4,
+        -0.2,
+        -0.4,
+        0.14,
+        null,
+        -0.14,
+        0,
+        0,
+        null,
+        -0.33,
+        0.43
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4162,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "indonesia",
@@ -100,6 +100,10 @@
         128
       ],
       [
+        "indonesia",
+        161
+      ],
+      [
         "marxisme-leninisme",
         19
       ],
@@ -116,32 +120,28 @@
         19
       ],
       [
-        "indonesia",
-        161
-      ],
-      [
-        "sasaran-sasaran",
-        8
-      ],
-      [
-        "revolusioner",
-        24
-      ],
-      [
-        "borjuis-demokratis",
-        5
-      ],
-      [
-        "pki",
-        15
-      ],
-      [
         "rakyat",
         44
       ],
       [
         "kaum",
         40
+      ],
+      [
+        "revolusioner",
+        24
+      ],
+      [
+        "pki",
+        15
+      ],
+      [
+        "sasaran-sasaran",
+        8
+      ],
+      [
+        "pokok",
+        21
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         427,
-        0.49
+        0.52
       ],
       [
         4878,
-        0.45
+        0.48
       ],
       [
         4810,
-        0.45
+        0.48
       ],
       [
         1896,
-        0.45
+        0.48
       ],
       [
         9273,
-        0.29
+        0.33
       ],
       [
         9275,
-        0.29
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 97,
+      "negative": 55,
+      "trend": [
+        0.71,
+        0.87,
+        0.2,
+        0.45,
+        -1,
+        -0.33,
+        0.71,
+        1,
+        0.43,
+        0,
+        0,
+        0.33,
+        0.62,
+        -0.2,
+        0.2,
+        0.14
+      ],
+      "emotions": []
+    }
   }
 }

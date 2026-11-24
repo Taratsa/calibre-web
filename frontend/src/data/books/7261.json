@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1635,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "myanmar",
@@ -110,12 +110,16 @@
         22
       ],
       [
-        "crph",
-        4
-      ],
-      [
         "etnis",
         14
+      ],
+      [
+        "militer",
+        20
+      ],
+      [
+        "crph",
+        4
       ],
       [
         "bamar",
@@ -126,20 +130,20 @@
         4
       ],
       [
-        "militer",
-        20
-      ],
-      [
         "junta",
         6
+      ],
+      [
+        "kudeta",
+        7
       ],
       [
         "anti-kudeta",
         3
       ],
       [
-        "kudeta",
-        7
+        "minoritas",
+        8
       ],
       [
         "kachin",
@@ -148,10 +152,6 @@
       [
         "burma",
         5
-      ],
-      [
-        "minoritas",
-        8
       ]
     ],
     "phrases": [
@@ -191,7 +191,7 @@
     "similar": [
       [
         7118,
-        0.29
+        0.28
       ],
       [
         2098,
@@ -207,12 +207,13 @@
       ],
       [
         7194,
-        0.22
+        0.21
       ],
       [
-        2697,
-        0.16
+        1759,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

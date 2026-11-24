@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2365,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "negara",
@@ -103,6 +103,10 @@
         29
       ],
       [
+        "negara",
+        52
+      ],
+      [
         "pemilu",
         10
       ],
@@ -111,40 +115,36 @@
         6
       ],
       [
-        "negara",
-        52
+        "kekuasaan",
+        16
       ],
       [
         "mengkreasikan",
         4
       ],
       [
-        "dipecundangi",
-        3
+        "hidup",
+        23
+      ],
+      [
+        "kebebasan",
+        13
       ],
       [
         "interaksi",
         8
       ],
       [
-        "posting",
-        4
+        "memilih",
+        15
       ],
       [
-        "dipilihkan",
-        3
-      ],
-      [
-        "katalis",
-        4
+        "pemimpin",
+        12
       ],
       [
         "wujud",
         8
-      ],
-      [
-        "kebebasan",
-        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         3068,
-        0.41
+        0.46
       ],
       [
         14,
-        0.41
+        0.46
+      ],
+      [
+        2343,
+        0.23
+      ],
+      [
+        2508,
+        0.22
+      ],
+      [
+        2377,
+        0.22
       ],
       [
         2512,
         0.21
-      ],
-      [
-        2508,
-        0.19
-      ],
-      [
-        2343,
-        0.19
-      ],
-      [
-        2377,
-        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 45,
+      "negative": 34,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

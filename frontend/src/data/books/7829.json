@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 5143,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "historical",
@@ -118,12 +118,12 @@
         56
       ],
       [
-        "ahistorical",
-        10
-      ],
-      [
         "indonesian",
         35
+      ],
+      [
+        "ahistorical",
+        10
       ],
       [
         "events",
@@ -138,20 +138,20 @@
         10
       ],
       [
-        "subjectivity",
-        7
-      ],
-      [
-        "nationalist",
-        9
-      ],
-      [
         "society",
         19
       ],
       [
         "life",
         18
+      ],
+      [
+        "subjectivity",
+        7
+      ],
+      [
+        "nationalist",
+        9
       ]
     ],
     "phrases": [
@@ -191,28 +191,29 @@
     "similar": [
       [
         1904,
-        0.32
+        0.33
       ],
       [
         460,
-        0.32
+        0.33
       ],
       [
         7830,
-        0.26
+        0.27
       ],
       [
         6890,
-        0.26
+        0.27
       ],
       [
         3112,
-        0.22
+        0.23
       ],
       [
         738,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2645,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "lingkungan",
@@ -107,12 +107,20 @@
         8
       ],
       [
+        "lingkungan",
+        31
+      ],
+      [
         "ketidakpastian",
         13
       ],
       [
         "penalaran",
         9
+      ],
+      [
+        "filsafat",
+        15
       ],
       [
         "sisyphus",
@@ -127,12 +135,8 @@
         5
       ],
       [
-        "filsafat",
-        15
-      ],
-      [
-        "lingkungan",
-        31
+        "pemikiran",
+        13
       ],
       [
         "eko-absurdisme",
@@ -141,10 +145,6 @@
       [
         "absurd",
         7
-      ],
-      [
-        "pemikiran",
-        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         7237,
-        0.76
+        0.77
       ],
       [
         2410,
-        0.23
+        0.26
       ],
       [
         2667,
-        0.19
+        0.21
       ],
       [
         3987,
-        0.16
+        0.17
       ],
       [
         2441,
-        0.14
+        0.16
       ],
       [
         2069,
         0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 48,
+      "negative": 65,
+      "trend": [
+        0.25,
+        0.09,
+        0,
+        -0.6,
+        null,
+        null,
+        -0.33,
+        null,
+        -0.5,
+        0.33,
+        0.07,
+        -1,
+        -0.6,
+        0.25,
+        -0.25,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
   }
 }

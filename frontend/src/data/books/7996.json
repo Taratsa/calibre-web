@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3873,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "baca",
@@ -119,31 +119,31 @@
         25
       ],
       [
-        "chomsky",
-        8
-      ],
-      [
-        "afra",
-        5
-      ],
-      [
         "anarkis",
         17
+      ],
+      [
+        "chomsky",
+        8
       ],
       [
         "marxisme",
         11
       ],
       [
+        "afra",
+        5
+      ],
+      [
         "libertarian",
         9
       ],
       [
-        "jafnus",
-        4
+        "anarki",
+        10
       ],
       [
-        "anarki",
+        "komunisme",
         10
       ]
     ],
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        7247,
-        0.18
-      ],
-      [
         6730,
-        0.16
+        0.21
       ],
       [
         2203,
-        0.16
+        0.21
+      ],
+      [
+        7247,
+        0.21
       ],
       [
         6721,
-        0.16
+        0.2
       ],
       [
         4776,
-        0.16
+        0.2
       ],
       [
         3989,
-        0.15
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.18,
+      "positive": 40,
+      "negative": 58,
+      "trend": [
+        0.2,
+        null,
+        -0.78,
+        null,
+        null,
+        -0.29,
+        0.2,
+        0.67,
+        -0.6,
+        null,
+        -0.14,
+        -0.09,
+        -0.2,
+        -0.43,
+        null,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

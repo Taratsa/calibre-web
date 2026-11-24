@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1497,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "cinta",
@@ -107,16 +107,28 @@
         3
       ],
       [
+        "pulang",
+        9
+      ],
+      [
         "pilu",
         4
       ],
       [
-        "kanvas",
-        3
-      ],
-      [
         "tanganku",
         4
+      ],
+      [
+        "luka",
+        6
+      ],
+      [
+        "kau",
+        7
+      ],
+      [
+        "kanvas",
+        3
       ],
       [
         "berulangkali",
@@ -131,48 +143,64 @@
         3
       ],
       [
-        "luka",
-        6
-      ],
-      [
-        "pulang",
-        9
-      ],
-      [
         "membuatku",
         3
-      ],
-      [
-        "kau",
-        7
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        6702,
-        0.17
-      ],
-      [
         137,
-        0.15
+        0.18
       ],
       [
         3026,
-        0.14
+        0.16
       ],
       [
         3142,
-        0.13
+        0.16
       ],
       [
         4943,
-        0.13
+        0.15
       ],
       [
-        4220,
-        0.12
+        6702,
+        0.15
+      ],
+      [
+        2999,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 49,
+      "negative": 34,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          28
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
   }
 }

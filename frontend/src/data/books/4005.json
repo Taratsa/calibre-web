@@ -11,7 +11,7 @@
   ],
   "author_sort": "Aidit, D. N.",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 12709,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "buruh",
@@ -112,32 +112,36 @@
         203
       ],
       [
-        "serikatburuh",
-        51
+        "kaum",
+        182
       ],
       [
-        "vstp",
-        35
+        "serikatburuh",
+        51
       ],
       [
         "pemogokan",
         62
       ],
       [
-        "monopolii",
-        23
-      ],
-      [
-        "kaum",
-        182
-      ],
-      [
-        "ppkb",
-        24
+        "vstp",
+        35
       ],
       [
         "kapital",
         66
+      ],
+      [
+        "belanda",
+        88
+      ],
+      [
+        "monopolii",
+        23
+      ],
+      [
+        "ppkb",
+        24
       ],
       [
         "semaun",
@@ -148,12 +152,8 @@
         47
       ],
       [
-        "partikulir",
-        23
-      ],
-      [
-        "belanda",
-        88
+        "indonesia",
+        158
       ]
     ],
     "phrases": [
@@ -209,12 +209,69 @@
       ],
       [
         6771,
-        0.27
+        0.32
       ],
       [
         4022,
-        0.23
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 158,
+      "negative": 118,
+      "trend": [
+        0.33,
+        -0.5,
+        0.75,
+        0.07,
+        0.57,
+        0.52,
+        -0.15,
+        0.38,
+        0.68,
+        -0.05,
+        1,
+        0.12,
+        -0.14,
+        -0.71,
+        -0.36,
+        0.04
+      ],
+      "emotions": [
+        [
+          "anger",
+          34
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

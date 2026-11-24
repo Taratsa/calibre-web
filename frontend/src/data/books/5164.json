@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 7655,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "tatu",
@@ -133,20 +133,20 @@
         36
       ],
       [
+        "kai",
+        79
+      ],
+      [
         "ise",
         50
       ],
       [
-        "baloa",
-        27
+        "aha",
+        66
       ],
       [
         "pute",
         45
-      ],
-      [
-        "kai",
-        79
       ]
     ],
     "phrases": [
@@ -183,6 +183,59 @@
         28
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 45,
+      "negative": 38,
+      "trend": [
+        -0.5,
+        null,
+        null,
+        0.6,
+        -0.33,
+        null,
+        null,
+        0.6,
+        0.23,
+        null,
+        0.45,
+        -0.6,
+        null,
+        null,
+        0.8,
+        -1
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

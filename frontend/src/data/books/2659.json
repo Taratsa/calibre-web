@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4567,
-    "longer_than": 41,
+    "longer_than": 72,
     "top": [
       [
         "orang",
@@ -119,32 +119,32 @@
         17
       ],
       [
-        "fucked",
-        8
-      ],
-      [
         "radikal",
         25
       ],
       [
-        "sobriety",
-        5
-      ],
-      [
-        "punk",
-        11
+        "fucked",
+        8
       ],
       [
         "komunitas",
         25
       ],
       [
-        "hardcore",
-        8
+        "sadar",
+        28
       ],
       [
-        "kecanduan",
-        7
+        "orang-orang",
+        34
+      ],
+      [
+        "punk",
+        11
+      ],
+      [
+        "sobriety",
+        5
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         2323,
-        0.27
+        0.29
       ],
       [
         4862,
@@ -196,7 +196,7 @@
       ],
       [
         7115,
-        0.22
+        0.23
       ],
       [
         3912,
@@ -204,8 +204,61 @@
       ],
       [
         3900,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 81,
+      "negative": 58,
+      "trend": [
+        0.25,
+        0.64,
+        -0.4,
+        -0.09,
+        -0.38,
+        0.11,
+        -0.45,
+        0.75,
+        0.83,
+        null,
+        0.67,
+        null,
+        -0.45,
+        null,
+        0,
+        0.71
+      ],
+      "emotions": [
+        [
+          "trust",
+          18
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

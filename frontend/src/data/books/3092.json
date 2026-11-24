@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1562,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "pekerja",
@@ -105,16 +105,12 @@
         41
       ],
       [
-        "koperasi",
-        37
-      ],
-      [
         "pekerja",
         65
       ],
       [
-        "bersindikat",
-        3
+        "koperasi",
+        37
       ],
       [
         "perusahaan",
@@ -125,24 +121,28 @@
         15
       ],
       [
+        "bersindikat",
+        3
+      ],
+      [
         "sel-sel",
         5
       ],
       [
-        "manajer",
-        5
+        "kerja",
+        16
       ],
       [
         "bisnis",
         8
       ],
       [
-        "didalam",
-        7
+        "manajer",
+        5
       ],
       [
-        "abc",
-        3
+        "didalam",
+        7
       ],
       [
         "kolektif",
@@ -186,28 +186,29 @@
     "similar": [
       [
         3093,
-        0.28
+        0.29
       ],
       [
         7288,
-        0.21
+        0.25
       ],
       [
         2469,
-        0.21
+        0.25
       ],
       [
         2779,
-        0.18
-      ],
-      [
-        4236,
-        0.16
+        0.22
       ],
       [
         3713,
-        0.16
+        0.2
+      ],
+      [
+        3706,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

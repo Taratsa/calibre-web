@@ -15,7 +15,7 @@
   ],
   "author_sort": "Apin, Rivai & Dharta, A.S.",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Seni"
   ],
@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 12349,
-    "longer_than": 66,
+    "longer_than": 83,
     "top": [
       [
         "indonesia",
@@ -116,8 +116,8 @@
         35
       ],
       [
-        "kalkuta",
-        14
+        "film",
+        47
       ],
       [
         "fruit",
@@ -128,36 +128,36 @@
         27
       ],
       [
-        "film",
-        47
-      ],
-      [
-        "ilyitsy",
-        10
-      ],
-      [
-        "yamamoto",
-        11
+        "kalkuta",
+        14
       ],
       [
         "india",
         39
       ],
       [
-        "bigha",
-        8
-      ],
-      [
-        "sujoyono",
-        8
-      ],
-      [
-        "wladimir",
+        "ilyitsy",
         10
       ],
       [
-        "kum",
-        15
+        "amerika",
+        43
+      ],
+      [
+        "yamamoto",
+        11
+      ],
+      [
+        "persahabatan",
+        28
+      ],
+      [
+        "pameran",
+        22
+      ],
+      [
+        "company",
+        22
       ]
     ],
     "phrases": [
@@ -197,28 +197,85 @@
     "similar": [
       [
         4599,
-        0.18
+        0.2
       ],
       [
         1582,
-        0.12
+        0.14
       ],
       [
-        4337,
-        0.11
+        6745,
+        0.13
       ],
       [
-        4137,
-        0.11
+        9250,
+        0.13
       ],
       [
-        4452,
-        0.11
+        4597,
+        0.13
       ],
       [
         1099,
-        0.11
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 163,
+      "negative": 112,
+      "trend": [
+        -0.68,
+        -0.52,
+        -0.25,
+        0.5,
+        0.74,
+        -0.2,
+        0.38,
+        0.25,
+        0.86,
+        0.5,
+        0.33,
+        0.73,
+        0.27,
+        0.17,
+        0,
+        0.3
+      ],
+      "emotions": [
+        [
+          "anger",
+          40
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

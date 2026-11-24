@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2573,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "negara",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "resistencia",
-        4
-      ],
-      [
         "patriarki",
         8
+      ],
+      [
+        "resistencia",
+        4
       ],
       [
         "kauka",
@@ -115,36 +115,36 @@
         8
       ],
       [
-        "komunal",
-        7
+        "negara",
+        21
       ],
       [
-        "naif",
-        5
+        "komunal",
+        7
       ],
       [
         "pemberontakan",
         9
       ],
       [
-        "mereproduksi",
-        4
+        "politik",
+        13
+      ],
+      [
+        "naif",
+        5
       ],
       [
         "partai",
         8
       ],
       [
-        "pengecualian",
-        4
+        "perjuangan",
+        9
       ],
       [
-        "pemogokan",
-        4
-      ],
-      [
-        "kandidat",
-        3
+        "memilih",
+        11
       ]
     ],
     "phrases": [
@@ -183,29 +183,78 @@
     ],
     "similar": [
       [
-        7242,
-        0.16
-      ],
-      [
         2508,
-        0.15
-      ],
-      [
-        2702,
-        0.15
+        0.19
       ],
       [
         7035,
-        0.14
-      ],
-      [
-        2239,
-        0.14
+        0.18
       ],
       [
         7970,
-        0.14
+        0.18
+      ],
+      [
+        2377,
+        0.18
+      ],
+      [
+        2596,
+        0.17
+      ],
+      [
+        7242,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 50,
+      "negative": 57,
+      "trend": [
+        null,
+        0.5,
+        0.6,
+        0.2,
+        null,
+        -0.8,
+        0.14,
+        0.14,
+        null,
+        0.33,
+        -0.12,
+        -0.2,
+        -0.2,
+        -0.45,
+        null,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

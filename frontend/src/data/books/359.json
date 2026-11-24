@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1712,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "perempuan",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "perempuan",
+        23
+      ],
+      [
         "feminist",
         7
       ],
@@ -107,28 +111,28 @@
         5
       ],
       [
-        "dram",
-        3
+        "zine",
+        6
       ],
       [
-        "perempuan",
-        23
+        "dram",
+        3
       ],
       [
         "iskan",
         3
       ],
       [
-        "zine",
-        6
+        "pamflet",
+        5
       ],
       [
         "cra",
         3
       ],
       [
-        "pamflet",
-        5
+        "gerakan",
+        11
       ],
       [
         "gentong",
@@ -139,12 +143,8 @@
         3
       ],
       [
-        "bridge",
-        3
-      ],
-      [
-        "awareness",
-        3
+        "gender",
+        5
       ]
     ],
     "phrases": [
@@ -175,15 +175,19 @@
     ],
     "similar": [
       [
-        52,
-        0.15
-      ],
-      [
         1258,
-        0.15
+        0.17
       ],
       [
-        263,
+        3802,
+        0.12
+      ],
+      [
+        9210,
+        0.12
+      ],
+      [
+        7269,
         0.12
       ],
       [
@@ -191,9 +195,10 @@
         0.12
       ],
       [
-        4772,
-        0.11
+        52,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

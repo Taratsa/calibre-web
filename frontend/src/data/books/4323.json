@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1176,
-    "longer_than": 15,
+    "longer_than": 54,
     "top": [
       [
         "topeng",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "topcng",
-        4
-      ],
-      [
         "topeng",
         10
+      ],
+      [
+        "topcng",
+        4
       ],
       [
         "antigone",
@@ -123,16 +123,16 @@
         5
       ],
       [
+        "naskah",
+        7
+      ],
+      [
         "coretan",
         3
       ],
       [
         "jad",
         3
-      ],
-      [
-        "naskah",
-        7
       ],
       [
         "pus",
@@ -151,7 +151,7 @@
     "similar": [
       [
         4317,
-        0.2
+        0.21
       ],
       [
         8047,
@@ -171,8 +171,9 @@
       ],
       [
         4583,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

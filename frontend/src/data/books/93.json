@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 6396,
-    "longer_than": 49,
+    "longer_than": 76,
     "top": [
       [
         "musik",
@@ -107,36 +107,36 @@
     ],
     "distinct": [
       [
-        "pemutar",
-        30
+        "musik",
+        81
       ],
       [
-        "gig",
-        32
+        "pemutar",
+        30
       ],
       [
         "kaset",
         40
       ],
       [
-        "musik",
-        81
+        "gig",
+        32
       ],
       [
         "cakram",
         19
       ],
       [
-        "ipod",
-        12
+        "music",
+        22
       ],
       [
         "viny",
         9
       ],
       [
-        "music",
-        22
+        "ipod",
+        12
       ],
       [
         "pemutarnya",
@@ -151,8 +151,8 @@
         12
       ],
       [
-        "apple",
-        11
+        "yogyakarta",
+        25
       ]
     ],
     "phrases": [
@@ -192,28 +192,52 @@
     "similar": [
       [
         80,
-        0.28
+        0.29
       ],
       [
         57,
-        0.28
+        0.29
       ],
       [
         58,
-        0.18
+        0.19
+      ],
+      [
+        1527,
+        0.17
       ],
       [
         1530,
         0.16
       ],
       [
-        1527,
-        0.16
-      ],
-      [
         1525,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 74,
+      "negative": 46,
+      "trend": [
+        0.09,
+        -0.25,
+        0.75,
+        0.4,
+        -0.27,
+        -0.05,
+        0.64,
+        0,
+        0.5,
+        null,
+        null,
+        null,
+        0.43,
+        null,
+        0.43,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

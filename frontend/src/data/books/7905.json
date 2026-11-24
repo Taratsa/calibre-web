@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 1975,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "subsidi",
@@ -119,20 +119,24 @@
         5
       ],
       [
-        "anti-hirarki",
-        3
+        "pencabutan",
+        6
       ],
       [
         "nada-nada",
         4
       ],
       [
-        "pencabutan",
-        6
+        "anti-hirarki",
+        3
       ],
       [
         "serum",
         3
+      ],
+      [
+        "macam-macam",
+        5
       ],
       [
         "repetitif",
@@ -143,12 +147,8 @@
         3
       ],
       [
-        "macam-macam",
-        5
-      ],
-      [
-        "pemotongan",
-        4
+        "ekonomi",
+        10
       ]
     ],
     "phrases": [
@@ -192,16 +192,40 @@
       ],
       [
         7861,
-        0.12
+        0.14
       ],
       [
         3783,
-        0.12
+        0.14
       ],
       [
-        1964,
-        0.11
+        3713,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 42,
+      "negative": 22,
+      "trend": [
+        null,
+        null,
+        null,
+        0.2,
+        0.67,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        1,
+        0.2,
+        -0.67,
+        0.6
+      ],
+      "emotions": []
+    }
   }
 }

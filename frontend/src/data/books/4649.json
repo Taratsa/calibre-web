@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 5126,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "partai",
@@ -91,6 +91,10 @@
     ],
     "distinct": [
       [
+        "partai",
+        83
+      ],
+      [
         "pandanganpartairakyat",
         15
       ],
@@ -99,20 +103,20 @@
         17
       ],
       [
-        "partai",
-        83
-      ],
-      [
         "malaka",
         32
+      ],
+      [
+        "tani",
+        35
       ],
       [
         "marxists",
         15
       ],
       [
-        "tani",
-        35
+        "rakyat",
+        53
       ],
       [
         "murba",
@@ -123,20 +127,16 @@
         9
       ],
       [
-        "archive",
-        15
-      ],
-      [
-        "rakyat",
-        53
-      ],
-      [
-        "tentangan",
-        10
-      ],
-      [
         "pertanian",
         22
+      ],
+      [
+        "golongan",
+        23
+      ],
+      [
+        "archive",
+        15
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         9247,
-        0.23
+        0.27
       ],
       [
         9261,
-        0.21
+        0.25
       ],
       [
         9251,
-        0.2
+        0.24
       ],
       [
-        4650,
-        0.2
+        9245,
+        0.23
       ],
       [
-        380,
-        0.2
+        9250,
+        0.21
       ],
       [
-        299,
-        0.2
+        9244,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 83,
+      "negative": 41,
+      "trend": [
+        0.33,
+        0.4,
+        0.2,
+        0.67,
+        null,
+        null,
+        0,
+        null,
+        0.5,
+        0.2,
+        0.78,
+        null,
+        0.33,
+        0,
+        0.33,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

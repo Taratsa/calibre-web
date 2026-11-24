@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3625,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "purbakala",
@@ -105,40 +105,40 @@
         57
       ],
       [
-        "wisanggeni",
-        8
+        "lembaga",
+        37
       ],
       [
-        "suroto",
-        9
+        "wisanggeni",
+        8
       ],
       [
         "anom",
         13
       ],
       [
-        "kepurbakalaan",
-        8
-      ],
-      [
-        "lembaga",
-        37
-      ],
-      [
-        "arkeologi",
-        10
-      ],
-      [
-        "cagar",
-        11
+        "suroto",
+        9
       ],
       [
         "wayang",
         16
       ],
       [
-        "budhaya",
-        5
+        "cagar",
+        11
+      ],
+      [
+        "arkeologi",
+        10
+      ],
+      [
+        "kepurbakalaan",
+        8
+      ],
+      [
+        "budaya",
+        28
       ],
       [
         "direktorat",
@@ -186,28 +186,35 @@
     "similar": [
       [
         1601,
-        0.22
+        0.23
       ],
       [
         2965,
-        0.17
+        0.2
       ],
       [
         1498,
-        0.16
+        0.18
       ],
       [
         7565,
-        0.13
+        0.16
       ],
       [
         1599,
-        0.12
+        0.15
       ],
       [
         1027,
-        0.11
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 57,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

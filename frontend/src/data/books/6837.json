@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1295,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "kebebasan",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "kebebasan",
+        18
+      ],
+      [
         "kebebasanku",
         4
       ],
       [
-        "kebebasan",
-        18
+        "berbicara",
+        13
       ],
       [
         "adilan",
@@ -115,11 +119,11 @@
         3
       ],
       [
-        "berbicara",
-        13
+        "diriku",
+        6
       ],
       [
-        "diriku",
+        "engkau",
         6
       ],
       [
@@ -127,48 +131,55 @@
         4
       ],
       [
-        "engkau",
-        6
+        "bebas",
+        10
       ],
       [
         "bersalah",
         6
       ],
       [
+        "adil",
+        6
+      ],
+      [
         "leave",
-        3
-      ],
-      [
-        "facebook",
-        3
-      ],
-      [
-        "kegelisahan",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        18000,
+        0.19
+      ],
+      [
+        14094,
+        0.19
+      ],
+      [
+        19053,
+        0.15
+      ],
+      [
         2325,
-        0.12
+        0.14
       ],
       [
         6863,
-        0.11
+        0.14
       ],
       [
-        8050,
-        0.11
-      ],
-      [
-        8524,
-        0.11
-      ],
-      [
-        7447,
-        0.1
+        19773,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 41,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

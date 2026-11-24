@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 37004,
-    "longer_than": 89,
+    "longer_than": 95,
     "top": [
       [
         "teknologi",
@@ -103,48 +103,48 @@
         195
       ],
       [
+        "manusia",
+        167
+      ],
+      [
         "transhumanis",
         24
       ],
       [
-        "tekno-ilmiah",
-        19
-      ],
-      [
-        "eugenika",
-        19
+        "dunia",
+        173
       ],
       [
         "buatan",
         65
       ],
       [
-        "kecerdasan",
-        48
-      ],
-      [
-        "digital",
-        58
-      ],
-      [
         "sistem",
         129
-      ],
-      [
-        "genom",
-        18
       ],
       [
         "industri",
         82
       ],
       [
-        "genetik",
-        27
+        "tekno-ilmiah",
+        19
       ],
       [
-        "otomatisasi",
-        21
+        "kecerdasan",
+        48
+      ],
+      [
+        "eugenika",
+        19
+      ],
+      [
+        "digital",
+        58
+      ],
+      [
+        "genetik",
+        27
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        3707,
-        0.24
+        2110,
+        0.26
       ],
       [
         8062,
-        0.2
+        0.26
       ],
       [
-        8070,
-        0.19
-      ],
-      [
-        2017,
-        0.19
-      ],
-      [
-        7315,
-        0.19
+        3707,
+        0.25
       ],
       [
         1776,
-        0.19
+        0.25
+      ],
+      [
+        2811,
+        0.24
+      ],
+      [
+        2099,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 710,
+      "negative": 439,
+      "trend": [
+        -0.03,
+        0.13,
+        0.05,
+        0.3,
+        0.09,
+        0.44,
+        0.12,
+        0.09,
+        0.16,
+        0.35,
+        0.46,
+        0.74,
+        0.65,
+        0.4,
+        0.17,
+        -0.21
+      ],
+      "emotions": [
+        [
+          "anger",
+          67
+        ],
+        [
+          "fear",
+          52
+        ],
+        [
+          "sadness",
+          51
+        ],
+        [
+          "trust",
+          37
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

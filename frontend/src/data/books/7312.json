@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2090,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "feminisme",
@@ -126,31 +126,31 @@
         18
       ],
       [
-        "kolonialisme",
-        17
-      ],
-      [
         "perempuan",
         36
       ],
       [
-        "wacana",
-        14
-      ],
-      [
-        "anti-feminisme",
-        3
+        "kolonialisme",
+        17
       ],
       [
         "kulit",
         20
       ],
       [
+        "wacana",
+        14
+      ],
+      [
         "ketimpangan",
         9
       ],
       [
-        "anti-feminis",
+        "putih",
+        17
+      ],
+      [
+        "anti-feminisme",
         3
       ]
     ],
@@ -194,25 +194,32 @@
         0.17
       ],
       [
+        2415,
+        0.17
+      ],
+      [
         3954,
         0.15
       ],
       [
         7060,
-        0.14
-      ],
-      [
-        2415,
-        0.14
+        0.15
       ],
       [
         2002,
-        0.13
+        0.15
       ],
       [
         2034,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 31,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

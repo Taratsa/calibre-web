@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 821,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "orang",
@@ -101,16 +101,24 @@
         4
       ],
       [
-        "chairawan",
-        3
-      ],
-      [
         "aceh",
         9
       ],
       [
         "letjen",
         4
+      ],
+      [
+        "chairawan",
+        3
+      ],
+      [
+        "komnas",
+        6
+      ],
+      [
+        "kuburan",
+        6
       ],
       [
         "dipensiunkan",
@@ -121,20 +129,12 @@
         3
       ],
       [
-        "komnas",
-        6
+        "aktivis",
+        7
       ],
       [
         "dkp",
         3
-      ],
-      [
-        "subagyo",
-        3
-      ],
-      [
-        "kuburan",
-        6
       ]
     ],
     "phrases": [
@@ -178,7 +178,7 @@
       ],
       [
         199,
-        0.38
+        0.37
       ],
       [
         203,
@@ -193,9 +193,10 @@
         0.3
       ],
       [
-        192,
+        161,
         0.29
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

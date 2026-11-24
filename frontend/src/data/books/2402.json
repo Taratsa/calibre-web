@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7479,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "negara",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "sangkala",
-        20
-      ],
-      [
         "negara",
         216
       ],
       [
-        "chiefdom",
-        9
-      ],
-      [
-        "ketidaksamaan",
-        9
-      ],
-      [
-        "demolisi",
-        5
-      ],
-      [
-        "hirarkis",
-        10
+        "sangkala",
+        20
       ],
       [
         "sosial",
         62
       ],
       [
+        "chiefdom",
+        9
+      ],
+      [
+        "masyarakat",
+        60
+      ],
+      [
         "institusi",
         21
       ],
       [
-        "homo",
-        10
+        "kekuasaan",
+        32
+      ],
+      [
+        "ketidaksamaan",
+        9
+      ],
+      [
+        "politik",
+        32
       ],
       [
         "rupiah",
         17
       ],
       [
-        "homini",
-        5
+        "kelas",
+        25
       ],
       [
-        "otoritas",
-        17
+        "hirarkis",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         7057,
-        0.45
+        0.46
       ],
       [
         2586,
-        0.43
+        0.45
       ],
       [
         3065,
-        0.39
+        0.42
       ],
       [
         1961,
-        0.34
+        0.35
       ],
       [
         3057,
-        0.2
+        0.26
       ],
       [
-        7906,
-        0.19
+        4684,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 126,
+      "negative": 107,
+      "trend": [
+        -0.19,
+        -0.82,
+        0.06,
+        0.18,
+        0.17,
+        0.05,
+        0.39,
+        -0.38,
+        0.18,
+        null,
+        0.4,
+        0.14,
+        null,
+        0.4,
+        0.11,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          43
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

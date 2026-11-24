@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 3967,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "encik",
@@ -110,44 +110,44 @@
         65
       ],
       [
-        "nuh",
-        75
-      ],
-      [
         "meriam",
         98
+      ],
+      [
+        "nuh",
+        75
       ],
       [
         "cendawan",
         24
       ],
       [
-        "lesung",
-        14
-      ],
-      [
         "memindahkan",
         21
       ],
       [
-        "pekarangan",
-        17
+        "lesung",
+        14
       ],
       [
         "suaminya",
         23
       ],
       [
-        "gazali",
-        7
-      ],
-      [
-        "faisal",
-        8
+        "pekarangan",
+        17
       ],
       [
         "mengangkat",
         25
+      ],
+      [
+        "gazali",
+        7
+      ],
+      [
+        "istrinya",
+        15
       ]
     ],
     "phrases": [
@@ -187,24 +187,81 @@
     "similar": [
       [
         5337,
-        0.13
+        0.16
       ],
       [
         4982,
-        0.11
+        0.14
       ],
       [
         3510,
-        0.11
+        0.14
       ],
       [
         3565,
-        0.11
+        0.14
       ],
       [
         5076,
-        0.1
+        0.14
+      ],
+      [
+        5143,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 61,
+      "negative": 30,
+      "trend": [
+        1,
+        0.6,
+        0.43,
+        null,
+        0.8,
+        0.33,
+        null,
+        -0.2,
+        null,
+        0.2,
+        null,
+        -0.33,
+        0.09,
+        1,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 8109,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "gender",
@@ -111,44 +111,44 @@
         49
       ],
       [
-        "reproduktif",
-        28
-      ],
-      [
         "sistem",
         147
       ],
       [
-        "seksual",
-        36
+        "reproduktif",
+        28
       ],
       [
         "kelas",
         71
       ],
       [
+        "seksual",
+        36
+      ],
+      [
         "identitas",
         43
-      ],
-      [
-        "akselerasionisme",
-        7
-      ],
-      [
-        "akselerasionis",
-        7
       ],
       [
         "kelamin",
         28
       ],
       [
-        "queerness",
-        9
+        "laki-laki",
+        43
       ],
       [
-        "suprastruktur",
-        11
+        "kekerasan",
+        38
+      ],
+      [
+        "perempuan",
+        44
+      ],
+      [
+        "basis",
+        30
       ]
     ],
     "phrases": [
@@ -188,28 +188,81 @@
     "similar": [
       [
         7179,
-        0.25
+        0.3
       ],
       [
         4723,
-        0.2
+        0.25
       ],
       [
         2708,
-        0.2
+        0.25
       ],
       [
         7079,
-        0.2
+        0.24
       ],
       [
         8095,
-        0.19
+        0.23
       ],
       [
         2646,
-        0.18
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 97,
+      "negative": 132,
+      "trend": [
+        -0.23,
+        0.06,
+        null,
+        -0.69,
+        -0.33,
+        0.25,
+        -0.11,
+        -0.14,
+        -0.5,
+        -0.3,
+        -0.6,
+        0.08,
+        0.26,
+        0.43,
+        -0.31,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          68
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

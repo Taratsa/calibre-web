@@ -1,0 +1,86 @@
+{
+  "id": 10300,
+  "title": "Mediawiki ubah password user",
+  "slug": "mediawiki-ubah-password-user-onno-widodo-purbo",
+  "slugBase": "mediawiki-ubah-password-user-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-11-19",
+  "timestamp": "2026-11-23 19:24:25.820850",
+  "last_modified": "2026-11-23 19:24:25.820855",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:674d55dd-0dd7-535d-8716-3070ad20cffb"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10300?v=1795436665",
+  "cover_og_url": "/cover/10300/og?v=1795436665",
+  "url": "/book/mediawiki-ubah-password-user-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "changePassword.php can be used to change the password of a user on your wiki. Usage php changePassword.php --user=target_username --password=new_password An example: php changePassword.php --user=JohnSmith --password=Secret12 Usernames and passwords can have spaces, which will need to be protected from your shell (be it bash or cmd.exe ;) Referensi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2252,
+      "name": "Mediawiki ubah password user - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 80,
+    "longer_than": 11,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        9426,
+        0.57
+      ],
+      [
+        10410,
+        0.56
+      ],
+      [
+        9541,
+        0.55
+      ],
+      [
+        10218,
+        0.55
+      ],
+      [
+        16786,
+        0.51
+      ],
+      [
+        17976,
+        0.49
+      ]
+    ],
+    "sentiment": null
+  }
+}

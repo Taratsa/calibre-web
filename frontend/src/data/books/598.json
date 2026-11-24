@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 63363,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "poem",
@@ -97,16 +97,12 @@
         241
       ],
       [
-        "sentence",
-        168
-      ],
-      [
         "anwar",
         227
       ],
       [
-        "lines",
-        182
+        "sentence",
+        168
       ],
       [
         "construction",
@@ -117,24 +113,28 @@
         191
       ],
       [
+        "lines",
+        182
+      ],
+      [
         "translation",
         159
       ],
       [
-        "transitive",
-        70
+        "poems",
+        102
       ],
       [
         "raffel",
         71
       ],
       [
-        "syntactic",
+        "transitive",
         70
       ],
       [
-        "poems",
-        102
+        "syntactic",
+        70
       ]
     ],
     "phrases": [
@@ -174,15 +174,15 @@
     "similar": [
       [
         3111,
-        0.25
+        0.24
       ],
       [
         616,
-        0.25
+        0.24
       ],
       [
         520,
-        0.21
+        0.2
       ],
       [
         2087,
@@ -194,8 +194,9 @@
       ],
       [
         686,
-        0.15
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 650,
-    "longer_than": 7,
+    "longer_than": 45,
     "top": [
       [
         "asri",
@@ -124,24 +124,24 @@
         3
       ],
       [
-        "kemahasiswaan",
-        3
-      ],
-      [
         "yogya",
         5
       ],
       [
-        "dies",
+        "kemahasiswaan",
         3
+      ],
+      [
+        "lukisan",
+        5
       ],
       [
         "pelukis",
         4
       ],
       [
-        "lukisan",
-        5
+        "dies",
+        3
       ]
     ],
     "phrases": [
@@ -165,7 +165,7 @@
     "similar": [
       [
         4269,
-        0.36
+        0.37
       ],
       [
         4150,
@@ -177,16 +177,17 @@
       ],
       [
         4122,
-        0.32
+        0.31
       ],
       [
         4557,
-        0.32
+        0.3
       ],
       [
         4482,
-        0.29
+        0.28
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

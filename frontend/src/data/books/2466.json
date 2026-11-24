@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3183,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "turki",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "kurdi",
-        64
-      ],
-      [
         "turki",
         90
+      ],
+      [
+        "kurdi",
+        64
       ],
       [
         "öcalan",
@@ -123,11 +123,11 @@
         11
       ],
       [
-        "talabani",
-        5
+        "amerika",
+        29
       ],
       [
-        "atatürk",
+        "talabani",
         5
       ],
       [
@@ -135,16 +135,16 @@
         7
       ],
       [
-        "damaskus",
-        6
+        "atatürk",
+        5
+      ],
+      [
+        "serikat",
+        21
       ],
       [
         "kurdistan",
         7
-      ],
-      [
-        "amerika",
-        29
       ]
     ],
     "phrases": [
@@ -187,16 +187,16 @@
         0.4
       ],
       [
-        3778,
-        0.33
+        271,
+        0.32
       ],
       [
-        271,
+        3778,
         0.31
       ],
       [
         7208,
-        0.3
+        0.29
       ],
       [
         2293,
@@ -204,8 +204,57 @@
       ],
       [
         2778,
-        0.26
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 48,
+      "negative": 49,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        1,
+        null,
+        -0.4,
+        null,
+        null,
+        0.56,
+        -0.6,
+        -0.11,
+        1,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

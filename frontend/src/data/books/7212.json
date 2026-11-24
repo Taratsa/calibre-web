@@ -61,7 +61,7 @@
   ],
   "text": {
     "words": 2293,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "orang",
@@ -114,24 +114,20 @@
     ],
     "distinct": [
       [
-        "pengorganisasian",
-        8
-      ],
-      [
         "acara",
         13
       ],
       [
-        "gratis",
-        6
+        "pengorganisasian",
+        8
       ],
       [
-        "grup",
-        5
+        "orang",
+        28
       ],
       [
-        "pemutaran",
-        3
+        "kelompok",
+        13
       ],
       [
         "proyek",
@@ -142,15 +138,15 @@
         9
       ],
       [
-        "kelompok",
-        13
+        "grup",
+        5
       ],
       [
-        "sandi",
-        3
+        "gratis",
+        6
       ],
       [
-        "pastikan",
+        "pemutaran",
         3
       ],
       [
@@ -158,8 +154,12 @@
         5
       ],
       [
-        "film",
-        5
+        "konteks",
+        6
+      ],
+      [
+        "lingkungan",
+        8
       ]
     ],
     "phrases": [
@@ -179,28 +179,35 @@
     "similar": [
       [
         2144,
-        0.19
+        0.21
       ],
       [
         2231,
-        0.14
-      ],
-      [
-        7363,
-        0.13
-      ],
-      [
-        2743,
-        0.13
+        0.19
       ],
       [
         2596,
-        0.13
+        0.19
       ],
       [
-        3768,
-        0.12
+        8141,
+        0.15
+      ],
+      [
+        6998,
+        0.15
+      ],
+      [
+        7468,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 43,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

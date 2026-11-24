@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 14017,
-    "longer_than": 69,
+    "longer_than": 85,
     "top": [
       [
         "negara",
@@ -111,40 +111,40 @@
         26
       ],
       [
-        "dikecualikan",
-        23
-      ],
-      [
         "produktif",
         38
       ],
       [
-        "kapital",
-        34
+        "dikecualikan",
+        23
       ],
       [
         "proyek",
         52
       ],
       [
-        "disertakan",
-        17
-      ],
-      [
-        "pengangguran",
-        25
+        "kapital",
+        34
       ],
       [
         "produksi",
         45
       ],
       [
-        "pasca-industri",
-        9
+        "pengangguran",
+        25
       ],
       [
-        "probabilitas",
-        10
+        "disertakan",
+        17
+      ],
+      [
+        "pekerjaan",
+        44
+      ],
+      [
+        "kenaikan",
+        23
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2099,
-        0.49
+        0.52
       ],
       [
         2110,
-        0.36
+        0.4
       ],
       [
         2807,
-        0.34
+        0.38
       ],
       [
         2484,
-        0.31
+        0.35
       ],
       [
         7007,
-        0.29
+        0.34
       ],
       [
         1807,
-        0.28
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 266,
+      "negative": 160,
+      "trend": [
+        0.38,
+        0.33,
+        0.33,
+        0.42,
+        0.24,
+        0.16,
+        0.48,
+        -0.22,
+        0.08,
+        -0.03,
+        0.33,
+        0.28,
+        0.1,
+        0.67,
+        0.28,
+        0.29
+      ],
+      "emotions": [
+        [
+          "anger",
+          33
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

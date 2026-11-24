@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4530,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "kerja",
@@ -99,10 +99,6 @@
     ],
     "distinct": [
       [
-        "otonomis",
-        27
-      ],
-      [
         "pekerja",
         74
       ],
@@ -111,11 +107,7 @@
         107
       ],
       [
-        "resistensi",
-        22
-      ],
-      [
-        "marxis",
+        "otonomis",
         27
       ],
       [
@@ -123,8 +115,12 @@
         33
       ],
       [
-        "swaaktivitas",
-        8
+        "marxis",
+        27
+      ],
+      [
+        "resistensi",
+        22
       ],
       [
         "kapitalisme",
@@ -135,12 +131,16 @@
         46
       ],
       [
-        "swavalorisasi",
-        6
+        "swaaktivitas",
+        8
       ],
       [
         "beragam",
         30
+      ],
+      [
+        "swavalorisasi",
+        6
       ],
       [
         "pembebanan",
@@ -184,28 +184,52 @@
     "similar": [
       [
         2108,
-        0.18
+        0.22
       ],
       [
         7061,
-        0.18
+        0.22
       ],
       [
         6820,
-        0.16
-      ],
-      [
-        2090,
-        0.15
-      ],
-      [
-        1762,
-        0.15
+        0.21
       ],
       [
         2800,
-        0.15
+        0.2
+      ],
+      [
+        2485,
+        0.2
+      ],
+      [
+        1762,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 78,
+      "negative": 21,
+      "trend": [
+        0.82,
+        null,
+        null,
+        0.43,
+        1,
+        0.33,
+        null,
+        null,
+        1,
+        null,
+        null,
+        0.33,
+        0.53,
+        null,
+        null,
+        0.11
+      ],
+      "emotions": []
+    }
   }
 }

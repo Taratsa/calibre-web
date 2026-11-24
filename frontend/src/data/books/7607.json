@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2904,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "wanita",
@@ -110,6 +110,10 @@
         91
       ],
       [
+        "gerakan",
+        44
+      ],
+      [
         "professionil",
         7
       ],
@@ -118,40 +122,36 @@
         9
       ],
       [
-        "ketrampilan-ketrampilan",
-        5
-      ],
-      [
-        "gerakan",
-        44
-      ],
-      [
         "didalam",
         18
       ],
       [
-        "keakhlian",
-        4
+        "ketrampilan-ketrampilan",
+        5
       ],
       [
         "organisasi-organisasi",
         10
       ],
       [
+        "perjuangan",
+        17
+      ],
+      [
         "perobahan",
         7
       ],
       [
-        "tradisionil",
-        5
+        "keakhlian",
+        4
+      ],
+      [
+        "usaha",
+        18
       ],
       [
         "dibidang",
         7
-      ],
-      [
-        "perjuangan",
-        17
       ]
     ],
     "phrases": [
@@ -188,6 +188,32 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        1430,
+        0.18
+      ],
+      [
+        7570,
+        0.18
+      ],
+      [
+        3420,
+        0.15
+      ],
+      [
+        7560,
+        0.14
+      ],
+      [
+        7593,
+        0.13
+      ],
+      [
+        8492,
+        0.12
+      ]
+    ],
+    "sentiment": null
   }
 }

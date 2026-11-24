@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1286,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "kucing",
@@ -121,20 +121,20 @@
         3
       ],
       [
-        "pagar",
-        3
-      ],
-      [
-        "ingatan",
-        3
-      ],
-      [
         "lari",
         4
       ],
       [
         "kebiasaan",
         4
+      ],
+      [
+        "pagar",
+        3
+      ],
+      [
+        "ingatan",
+        3
       ],
       [
         "halaman",
@@ -149,7 +149,7 @@
     "similar": [
       [
         37,
-        0.32
+        0.33
       ],
       [
         8081,
@@ -166,11 +166,8 @@
       [
         1920,
         0.12
-      ],
-      [
-        9209,
-        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

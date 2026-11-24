@@ -1,0 +1,184 @@
+{
+  "id": 20162,
+  "title": "Ushare",
+  "slug": "ushare-onno-widodo-purbo",
+  "slugBase": "ushare-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-05-16",
+  "timestamp": "2026-11-24 06:27:02.756727",
+  "last_modified": "2026-11-24 06:27:02.756729",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:c1621199-9385-587d-a8c6-d22b3e8aeb2d"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20162?v=1795476422",
+  "cover_og_url": "/cover/20162/og?v=1795476422",
+  "url": "/book/ushare-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Naga-naganya gmediaserver lebih banyak untuk streaming audio / lagu saja. Kita perlu menset / memastikan bahwa router yang ada siap untuk UPnP message. Kita dapat menggunakan setup manual seperti route add -net 239.0.0.0 netmask 255.0.0.0 eth0 Instalasi ushare menggunakan perintah apt-get install ushare uShare jalan melalui konsol. Cara menjalankan uShare dapat di ketahui melalui option --help",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3752,
+      "name": "Ushare - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 427,
+    "longer_than": 37,
+    "top": [
+      [
+        "ushare",
+        18
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "files",
+        6
+      ],
+      [
+        "media",
+        6
+      ],
+      [
+        "port",
+        6
+      ],
+      [
+        "default",
+        5
+      ],
+      [
+        "file",
+        5
+      ],
+      [
+        "rtorrent",
+        5
+      ],
+      [
+        "bittorrent",
+        3
+      ],
+      [
+        "buffalo",
+        3
+      ],
+      [
+        "content",
+        3
+      ],
+      [
+        "control",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ushare",
+        18
+      ],
+      [
+        "rtorrent",
+        5
+      ],
+      [
+        "bittorrent",
+        3
+      ],
+      [
+        "upnp",
+        3
+      ],
+      [
+        "files",
+        6
+      ],
+      [
+        "port",
+        6
+      ],
+      [
+        "shares",
+        3
+      ],
+      [
+        "buffalo",
+        3
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "default",
+        5
+      ],
+      [
+        "display",
+        3
+      ],
+      [
+        "file",
+        5
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        20170,
+        0.5
+      ],
+      [
+        20163,
+        0.43
+      ],
+      [
+        20161,
+        0.34
+      ],
+      [
+        20157,
+        0.26
+      ],
+      [
+        20156,
+        0.23
+      ],
+      [
+        14237,
+        0.17
+      ]
+    ],
+    "sentiment": null
+  }
+}

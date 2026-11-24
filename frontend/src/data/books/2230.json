@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1712,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "puisi",
@@ -101,20 +101,20 @@
     ],
     "distinct": [
       [
-        "rifki",
-        14
-      ],
-      [
         "puisi",
         32
       ],
       [
-        "ketaksaan",
-        5
+        "rifki",
+        14
       ],
       [
         "stensil",
         7
+      ],
+      [
+        "ketaksaan",
+        5
       ],
       [
         "audiens",
@@ -137,16 +137,16 @@
         4
       ],
       [
+        "citraan",
+        3
+      ],
+      [
         "ccc",
         3
       ],
       [
-        "exp",
-        3
-      ],
-      [
-        "citraan",
-        3
+        "puisi-puisi",
+        4
       ]
     ],
     "phrases": [
@@ -186,24 +186,31 @@
       ],
       [
         2176,
-        0.17
+        0.18
       ],
       [
         280,
-        0.17
+        0.18
+      ],
+      [
+        2556,
+        0.16
+      ],
+      [
+        2305,
+        0.15
       ],
       [
         3098,
         0.15
-      ],
-      [
-        2556,
-        0.15
-      ],
-      [
-        2305,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 28,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

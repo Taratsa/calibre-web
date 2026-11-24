@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1420,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "aceh",
@@ -93,16 +93,12 @@
         31
       ],
       [
-        "anthoni",
-        12
-      ],
-      [
         "aceh",
         44
       ],
       [
-        "laksamana",
-        17
+        "anthoni",
+        12
       ],
       [
         "kapal",
@@ -113,27 +109,31 @@
         20
       ],
       [
+        "laksamana",
+        17
+      ],
+      [
         "nakoda",
         10
+      ],
+      [
+        "laut",
+        28
       ],
       [
         "meriam",
         15
       ],
       [
-        "mughayat",
-        6
+        "sultan",
+        17
       ],
       [
         "turki",
         13
       ],
       [
-        "sultan",
-        17
-      ],
-      [
-        "pedir",
+        "mughayat",
         6
       ]
     ],
@@ -178,7 +178,7 @@
       ],
       [
         635,
-        0.26
+        0.27
       ],
       [
         6980,
@@ -186,16 +186,23 @@
       ],
       [
         6184,
-        0.14
-      ],
-      [
-        6036,
-        0.13
+        0.15
       ],
       [
         5311,
-        0.13
+        0.14
+      ],
+      [
+        6156,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 25,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2515,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "gender",
@@ -103,6 +103,10 @@
         58
       ],
       [
+        "identitas",
+        11
+      ],
+      [
         "biner",
         5
       ],
@@ -111,12 +115,28 @@
         4
       ],
       [
-        "identitas",
-        11
+        "politik",
+        13
       ],
       [
         "adit",
         3
+      ],
+      [
+        "penentuan",
+        6
+      ],
+      [
+        "mengusulkan",
+        6
+      ],
+      [
+        "kaum",
+        10
+      ],
+      [
+        "trans",
+        4
       ],
       [
         "menggoyahkan",
@@ -125,26 +145,6 @@
       [
         "hapuskan",
         3
-      ],
-      [
-        "penentuan",
-        6
-      ],
-      [
-        "trans",
-        4
-      ],
-      [
-        "mengusulkan",
-        6
-      ],
-      [
-        "feminisme",
-        3
-      ],
-      [
-        "kubu",
-        4
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         3734,
+        0.23
+      ],
+      [
+        2415,
         0.21
       ],
       [
         7013,
-        0.19
+        0.2
       ],
       [
         3795,
-        0.16
+        0.18
       ],
       [
-        2415,
-        0.16
-      ],
-      [
-        7179,
-        0.15
+        9210,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 43,
+      "negative": 45,
+      "trend": [
+        0,
+        null,
+        -0.14,
+        0.67,
+        null,
+        -0.56,
+        null,
+        -0.67,
+        0,
+        null,
+        null,
+        0.2,
+        null,
+        0.4,
+        -0.14,
+        -0.56
+      ],
+      "emotions": []
+    }
   }
 }

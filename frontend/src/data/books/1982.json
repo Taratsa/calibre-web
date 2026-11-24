@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4447,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "prd",
@@ -111,39 +111,39 @@
         19
       ],
       [
-        "yayaya",
-        7
+        "partai",
+        28
       ],
       [
         "leninis",
         12
       ],
       [
+        "yayaya",
+        7
+      ],
+      [
         "behom",
         6
-      ],
-      [
-        "partai",
-        28
-      ],
-      [
-        "neo-liberalisme",
-        7
       ],
       [
         "aja",
         15
       ],
       [
+        "neo-liberalisme",
+        7
+      ],
+      [
+        "pertemuan",
+        20
+      ],
+      [
+        "marx",
+        11
+      ],
+      [
         "faisol",
-        5
-      ],
-      [
-        "stalinisme",
-        5
-      ],
-      [
-        "columbus",
         5
       ]
     ],
@@ -184,28 +184,85 @@
     "similar": [
       [
         2007,
-        0.18
+        0.2
       ],
       [
         3738,
-        0.16
+        0.17
       ],
       [
         2436,
-        0.16
+        0.17
       ],
       [
         2462,
-        0.14
+        0.17
       ],
       [
         2055,
-        0.13
+        0.17
       ],
       [
         4656,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 56,
+      "negative": 49,
+      "trend": [
+        0,
+        null,
+        null,
+        0,
+        null,
+        0.09,
+        0,
+        0.54,
+        -0.4,
+        null,
+        -0.43,
+        0.43,
+        null,
+        null,
+        -0.14,
+        0.75
+      ],
+      "emotions": [
+        [
+          "anger",
+          10
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 25336,
-    "longer_than": 81,
+    "longer_than": 91,
     "top": [
       [
         "belajar",
@@ -93,48 +93,48 @@
         251
       ],
       [
-        "ketuntasan",
-        89
-      ],
-      [
         "pembelajaran",
         233
-      ],
-      [
-        "remedial",
-        92
-      ],
-      [
-        "kompetensi",
-        153
       ],
       [
         "peserta",
         259
       ],
       [
+        "ketuntasan",
+        89
+      ],
+      [
         "penilaian",
         234
       ],
       [
-        "siswa",
-        169
+        "kompetensi",
+        153
       ],
       [
-        "windows",
-        68
-      ],
-      [
-        "tombol",
-        76
+        "remedial",
+        92
       ],
       [
         "belajar",
         304
       ],
       [
+        "siswa",
+        169
+      ],
+      [
         "skor",
         71
+      ],
+      [
+        "pengayaan",
+        82
+      ],
+      [
+        "tombol",
+        76
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         875,
-        0.58
+        0.59
       ],
       [
         880,
-        0.56
+        0.58
       ],
       [
         868,
+        0.4
+      ],
+      [
+        890,
+        0.39
+      ],
+      [
+        885,
         0.39
       ],
       [
         870,
         0.37
-      ],
-      [
-        890,
-        0.33
-      ],
-      [
-        885,
-        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 505,
+      "negative": 165,
+      "trend": [
+        0.86,
+        0.77,
+        0.69,
+        0.43,
+        0.24,
+        0.35,
+        0.14,
+        0.87,
+        0.54,
+        0.69,
+        0.7,
+        0.06,
+        0.25,
+        0.3,
+        0.44,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          18
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

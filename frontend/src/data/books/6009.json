@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 24319,
-    "longer_than": 80,
+    "longer_than": 90,
     "top": [
       [
         "sunan",
@@ -95,47 +95,47 @@
         335
       ],
       [
-        "santang",
-        103
+        "rahmat",
+        233
       ],
       [
         "rasulullah",
         159
       ],
       [
-        "rahmat",
-        233
+        "santang",
+        103
       ],
       [
         "hamba",
         183
       ],
       [
-        "pajajaran",
-        79
-      ],
-      [
         "baginda",
         126
       ],
       [
-        "lumayung",
-        47
+        "pajajaran",
+        79
       ],
       [
         "ananda",
         100
       ],
       [
+        "lumayung",
+        47
+      ],
+      [
         "prabu",
         88
       ],
       [
-        "syahadat",
-        60
+        "ali",
+        125
       ],
       [
-        "siliwangi",
+        "syahadat",
         60
       ]
     ],
@@ -176,15 +176,15 @@
     "similar": [
       [
         5489,
-        0.4
+        0.42
       ],
       [
         951,
-        0.3
+        0.31
       ],
       [
         6104,
-        0.2
+        0.22
       ],
       [
         5576,
@@ -192,12 +192,69 @@
       ],
       [
         5430,
-        0.16
+        0.19
       ],
       [
         6059,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 516,
+      "negative": 167,
+      "trend": [
+        0.77,
+        0.48,
+        0.45,
+        0.8,
+        0.78,
+        0.41,
+        -0.17,
+        0.5,
+        0.52,
+        -0.11,
+        0.4,
+        0.8,
+        0.79,
+        0.33,
+        0.58,
+        0.77
+      ],
+      "emotions": [
+        [
+          "joy",
+          68
+        ],
+        [
+          "fear",
+          26
+        ],
+        [
+          "trust",
+          26
+        ],
+        [
+          "surprise",
+          18
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

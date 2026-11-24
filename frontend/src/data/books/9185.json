@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 781,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "individu",
@@ -111,12 +111,12 @@
         20
       ],
       [
-        "stirner",
-        12
-      ],
-      [
         "individu",
         28
+      ],
+      [
+        "stirner",
+        12
       ],
       [
         "gosalnk",
@@ -127,19 +127,15 @@
         7
       ],
       [
-        "rasionalitas",
-        5
-      ],
-      [
         "kebebasan",
         14
       ],
       [
-        "egoisme",
-        4
+        "rasionalitas",
+        5
       ],
       [
-        "max",
+        "egoisme",
         4
       ],
       [
@@ -147,40 +143,45 @@
         4
       ],
       [
-        "kesetaraan",
-        4
+        "negara",
+        11
       ],
       [
-        "moralitas",
-        3
+        "gagasan",
+        6
+      ],
+      [
+        "max",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        2545,
+        0.36
+      ],
+      [
         4093,
         0.34
       ],
       [
-        2545,
-        0.33
-      ],
-      [
         3753,
-        0.32
+        0.34
       ],
       [
         9220,
-        0.3
+        0.33
       ],
       [
         4687,
-        0.28
+        0.29
       ],
       [
         2095,
-        0.27
+        0.29
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

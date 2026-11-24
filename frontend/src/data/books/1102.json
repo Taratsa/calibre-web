@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3514,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "revolusi",
@@ -91,32 +91,32 @@
     ],
     "distinct": [
       [
-        "sistim",
-        23
-      ],
-      [
-        "sosialisme",
-        26
-      ],
-      [
         "revolusi",
         41
       ],
       [
-        "penjelenggaraan",
-        11
+        "sistim",
+        23
       ],
       [
         "saudara",
         40
       ],
       [
-        "abdulgani",
-        10
+        "sosialisme",
+        26
+      ],
+      [
+        "penjelenggaraan",
+        11
       ],
       [
         "conscience",
         11
+      ],
+      [
+        "abdulgani",
+        10
       ],
       [
         "revolusimu",
@@ -131,12 +131,12 @@
         7
       ],
       [
-        "ummat",
-        9
-      ],
-      [
         "rakjat",
         14
+      ],
+      [
+        "didalam",
+        17
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         8771,
-        0.24
+        0.26
       ],
       [
         680,
-        0.19
+        0.21
       ],
       [
         5947,
-        0.17
+        0.19
       ],
       [
         2838,
-        0.17
+        0.18
       ],
       [
         683,
-        0.16
+        0.18
       ],
       [
         599,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 33,
+      "negative": 18,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

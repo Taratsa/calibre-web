@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2172,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "teknologi",
@@ -99,15 +99,19 @@
     ],
     "distinct": [
       [
-        "otomatisasi",
-        10
-      ],
-      [
         "teknologi",
         34
       ],
       [
+        "otomatisasi",
+        10
+      ],
+      [
         "perkakas",
+        14
+      ],
+      [
+        "kapital",
         14
       ],
       [
@@ -115,36 +119,32 @@
         6
       ],
       [
+        "ekonomi",
+        23
+      ],
+      [
         "ellul",
         5
-      ],
-      [
-        "kapital",
-        14
-      ],
-      [
-        "gee",
-        5
-      ],
-      [
-        "teknik",
-        14
       ],
       [
         "kapitalis",
         13
       ],
       [
-        "permesinan",
-        4
-      ],
-      [
-        "riil",
-        8
-      ],
-      [
         "kapitalisme",
         13
+      ],
+      [
+        "gee",
+        5
+      ],
+      [
+        "manusia",
+        26
+      ],
+      [
+        "teknik",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2129,
-        0.34
+        0.35
       ],
       [
         7470,
-        0.31
+        0.32
       ],
       [
         2067,
-        0.24
+        0.26
       ],
       [
         7469,
-        0.22
+        0.25
       ],
       [
         2390,
-        0.2
+        0.22
       ],
       [
         7890,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 44,
+      "negative": 16,
+      "trend": [
+        null,
+        0.2,
+        null,
+        0.6,
+        0.71,
+        0.6,
+        0.33,
+        1,
+        null,
+        0.2,
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1351,
-    "longer_than": 17,
+    "longer_than": 57,
     "top": [
       [
         "masyarakat",
@@ -111,6 +111,10 @@
         3
       ],
       [
+        "masyarakat",
+        15
+      ],
+      [
         "anarki",
         5
       ],
@@ -127,11 +131,11 @@
         3
       ],
       [
-        "masyarakat",
-        15
+        "keberanian",
+        4
       ],
       [
-        "keberanian",
+        "dilarang",
         4
       ],
       [
@@ -141,10 +145,6 @@
       [
         "pria",
         3
-      ],
-      [
-        "dilarang",
-        4
       ]
     ],
     "phrases": [
@@ -164,28 +164,35 @@
     "similar": [
       [
         8052,
-        0.56
+        0.57
       ],
       [
         8117,
-        0.5
+        0.47
       ],
       [
         8092,
-        0.39
-      ],
-      [
-        8120,
-        0.39
+        0.38
       ],
       [
         2325,
-        0.36
+        0.37
       ],
       [
         7437,
         0.36
+      ],
+      [
+        2088,
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 40,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

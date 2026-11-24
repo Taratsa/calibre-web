@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1008,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "kebebasan",
@@ -115,24 +115,28 @@
         10
       ],
       [
-        "proletariat",
-        3
+        "revolusi",
+        6
       ],
       [
         "peraturan",
         6
       ],
       [
+        "proletariat",
+        3
+      ],
+      [
         "pergantian",
         3
       ],
       [
-        "revolusi",
-        6
-      ],
-      [
         "bijak",
         3
+      ],
+      [
+        "hukuman",
+        4
       ],
       [
         "mencuri",
@@ -141,38 +145,41 @@
       [
         "dewa",
         3
-      ],
-      [
-        "hukuman",
-        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        7258,
-        0.16
-      ],
-      [
-        7539,
-        0.14
-      ],
-      [
         7064,
-        0.12
+        0.13
+      ],
+      [
+        7258,
+        0.13
+      ],
+      [
+        7349,
+        0.13
       ],
       [
         3742,
         0.12
       ],
       [
-        7281,
-        0.11
+        7450,
+        0.12
       ],
       [
-        4289,
-        0.1
+        9185,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 41,
+      "negative": 27,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

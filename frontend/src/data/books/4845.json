@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1832,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "pengarang",
@@ -103,16 +103,16 @@
         23
       ],
       [
-        "simposion",
-        10
+        "pengarang",
+        25
       ],
       [
         "jassin",
         14
       ],
       [
-        "pengarang",
-        25
+        "simposion",
+        10
       ],
       [
         "sdr",
@@ -131,20 +131,20 @@
         11
       ],
       [
-        "kritikseni",
-        4
-      ],
-      [
         "tanggung-djawab",
         6
       ],
       [
-        "penjair",
-        6
+        "kritikseni",
+        4
       ],
       [
-        "kritikussastera",
-        3
+        "ukuran",
+        16
+      ],
+      [
+        "penjair",
+        6
       ]
     ],
     "phrases": [
@@ -192,7 +192,7 @@
       ],
       [
         1237,
-        0.5
+        0.49
       ],
       [
         1238,
@@ -204,8 +204,15 @@
       ],
       [
         3416,
-        0.27
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 33,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

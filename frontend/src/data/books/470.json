@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 9923,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "development",
@@ -89,12 +89,12 @@
     ],
     "distinct": [
       [
-        "development",
-        105
-      ],
-      [
         "economic",
         93
+      ],
+      [
+        "development",
+        105
       ],
       [
         "pattern",
@@ -113,28 +113,28 @@
         35
       ],
       [
-        "structure",
-        28
+        "political",
+        36
       ],
       [
         "village",
         27
       ],
       [
-        "change",
-        32
-      ],
-      [
-        "political",
-        36
+        "structure",
+        28
       ],
       [
         "life",
         33
       ],
       [
-        "industrialization",
-        13
+        "change",
+        32
+      ],
+      [
+        "question",
+        22
       ]
     ],
     "phrases": [
@@ -174,28 +174,29 @@
     "similar": [
       [
         3112,
-        0.24
+        0.26
       ],
       [
         738,
+        0.26
+      ],
+      [
+        1471,
+        0.24
+      ],
+      [
+        445,
         0.24
       ],
       [
         1904,
-        0.22
+        0.23
       ],
       [
         460,
-        0.22
-      ],
-      [
-        1471,
-        0.22
-      ],
-      [
-        445,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

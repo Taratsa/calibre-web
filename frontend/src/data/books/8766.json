@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 93497,
-    "longer_than": 97,
+    "longer_than": 99,
     "top": [
       [
         "lingkungan",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "energi",
+        570
+      ],
+      [
         "dayadukung",
         136
       ],
       [
-        "energi",
-        570
+        "lingkungan",
+        683
       ],
       [
         "sumberdaya",
@@ -115,36 +119,32 @@
         237
       ],
       [
-        "lingkungan",
-        683
+        "daerah",
+        515
       ],
       [
         "erosi",
         148
       ],
       [
-        "keanekaan",
-        86
-      ],
-      [
-        "pencemaran",
-        144
+        "air",
+        493
       ],
       [
         "hewan",
         243
       ],
       [
-        "fotosintesis",
-        64
+        "jenis",
+        386
       ],
       [
-        "gen",
-        132
+        "keanekaan",
+        86
       ],
       [
-        "varietas",
-        85
+        "hutan",
+        293
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         4882,
-        0.21
+        0.24
       ],
       [
         2632,
-        0.21
+        0.24
       ],
       [
         1820,
-        0.19
+        0.23
       ],
       [
         7890,
-        0.19
+        0.23
       ],
       [
         8469,
-        0.19
+        0.22
       ],
       [
         5108,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 1572,
+      "negative": 1094,
+      "trend": [
+        -0.02,
+        0.16,
+        -0.11,
+        0.24,
+        0.33,
+        -0.07,
+        0.42,
+        0.17,
+        0.47,
+        0.14,
+        0.04,
+        0.11,
+        0.16,
+        0.02,
+        0.44,
+        0.17
+      ],
+      "emotions": [
+        [
+          "fear",
+          91
+        ],
+        [
+          "sadness",
+          89
+        ],
+        [
+          "joy",
+          78
+        ],
+        [
+          "anger",
+          42
+        ],
+        [
+          "trust",
+          38
+        ],
+        [
+          "disgust",
+          12
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ]
+      ]
+    }
   }
 }

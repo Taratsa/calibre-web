@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3379,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "jerman",
@@ -118,15 +118,23 @@
         9
       ],
       [
-        "keyakinanku",
-        3
-      ],
-      [
         "bersatu",
         10
       ],
       [
         "filsafat",
+        9
+      ],
+      [
+        "negara",
+        19
+      ],
+      [
+        "keyakinanku",
+        3
+      ],
+      [
+        "eropa",
         9
       ],
       [
@@ -138,20 +146,12 @@
         5
       ],
       [
-        "terhubung",
-        5
-      ],
-      [
-        "eropa",
+        "jiwa",
         9
       ],
       [
-        "kehendakmu",
-        3
-      ],
-      [
-        "kebanggaan",
-        5
+        "gagasan",
+        8
       ]
     ],
     "phrases": [
@@ -171,28 +171,85 @@
     "similar": [
       [
         8096,
-        0.34
+        0.36
       ],
       [
         2509,
-        0.13
+        0.16
       ],
       [
         2045,
-        0.13
+        0.15
       ],
       [
         7298,
-        0.13
+        0.15
       ],
       [
         8097,
-        0.13
+        0.15
       ],
       [
-        1836,
-        0.12
+        4714,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 101,
+      "negative": 49,
+      "trend": [
+        0.33,
+        null,
+        -0.5,
+        0,
+        0.2,
+        1,
+        0.54,
+        -0.2,
+        0.57,
+        0.43,
+        0.5,
+        1,
+        0.45,
+        null,
+        0.33,
+        0.2
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

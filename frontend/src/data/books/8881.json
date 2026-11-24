@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1944,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "pelayanan",
@@ -105,32 +105,32 @@
         24
       ],
       [
-        "rencan",
-        17
-      ],
-      [
         "pelayanan",
         53
+      ],
+      [
+        "rencan",
+        17
       ],
       [
         "priorita",
         13
       ],
       [
-        "resp",
-        13
+        "publik",
+        51
       ],
       [
         "metod",
         12
       ],
       [
-        "juml",
-        14
+        "resp",
+        13
       ],
       [
-        "pelaya",
-        10
+        "juml",
+        14
       ],
       [
         "onde",
@@ -141,8 +141,8 @@
         14
       ],
       [
-        "perbaik",
-        11
+        "pelaya",
+        10
       ]
     ],
     "phrases": [
@@ -186,24 +186,31 @@
       ],
       [
         9041,
-        0.24
+        0.25
       ],
       [
         8969,
-        0.24
-      ],
-      [
-        8943,
-        0.2
+        0.25
       ],
       [
         8945,
-        0.2
+        0.21
+      ],
+      [
+        8943,
+        0.21
       ],
       [
         8899,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.92,
+      "positive": 50,
+      "negative": 2,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

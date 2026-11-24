@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 33892,
-    "longer_than": 87,
+    "longer_than": 94,
     "top": [
       [
         "bentuk",
@@ -113,28 +113,28 @@
         264
       ],
       [
-        "iyarega",
-        131
-      ],
-      [
         "cairan",
         288
       ],
       [
-        "pannessaenngi",
-        93
+        "iyarega",
+        131
       ],
       [
         "diminum",
         251
       ],
       [
-        "disapukan",
-        134
+        "pannessaenngi",
+        93
       ],
       [
         "dihaluskan",
         171
+      ],
+      [
+        "disapukan",
+        134
       ],
       [
         "narekko",
@@ -149,8 +149,8 @@
         105
       ],
       [
-        "folium",
-        74
+        "cuka",
+        133
       ]
     ],
     "phrases": [
@@ -190,7 +190,7 @@
     "similar": [
       [
         2217,
-        0.24
+        0.25
       ],
       [
         2232,
@@ -201,17 +201,70 @@
         0.16
       ],
       [
-        1126,
-        0.14
+        5220,
+        0.15
       ],
       [
-        5220,
-        0.14
+        1126,
+        0.15
       ],
       [
         5626,
-        0.13
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.56,
+      "positive": 154,
+      "negative": 544,
+      "trend": [
+        0.19,
+        -0.43,
+        null,
+        null,
+        null,
+        -0.45,
+        -0.26,
+        -0.71,
+        -0.72,
+        -0.24,
+        -0.84,
+        -0.92,
+        -0.35,
+        -0.89,
+        -0.92,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "fear",
+          42
+        ],
+        [
+          "disgust",
+          15
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

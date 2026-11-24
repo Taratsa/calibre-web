@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1448,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "api",
@@ -106,20 +106,12 @@
         30
       ],
       [
-        "polri",
-        17
-      ],
-      [
         "senjata",
         36
       ],
       [
-        "penyalahgunaan",
-        16
-      ],
-      [
-        "kepolisian",
-        18
+        "polri",
+        17
       ],
       [
         "api",
@@ -128,6 +120,14 @@
       [
         "korban",
         31
+      ],
+      [
+        "penyalahgunaan",
+        16
+      ],
+      [
+        "kepolisian",
+        18
       ],
       [
         "tewas",
@@ -142,12 +142,12 @@
         14
       ],
       [
-        "kapolrestabes",
-        3
+        "anggota",
+        19
       ],
       [
-        "tawuran",
-        4
+        "warga",
+        15
       ]
     ],
     "phrases": [
@@ -187,28 +187,69 @@
     "similar": [
       [
         6935,
-        0.45
+        0.49
       ],
       [
         6919,
-        0.42
+        0.46
       ],
       [
         6914,
-        0.3
+        0.33
       ],
       [
         6940,
-        0.29
+        0.31
       ],
       [
         291,
-        0.27
+        0.3
       ],
       [
-        6848,
-        0.24
+        4852,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.75,
+      "positive": 12,
+      "negative": 84,
+      "trend": [
+        null,
+        null,
+        -0.6,
+        null,
+        0.2,
+        -0.75,
+        -0.71,
+        -1,
+        -0.75,
+        null,
+        -1,
+        -0.8,
+        null,
+        -0.2,
+        -0.75,
+        -1
+      ],
+      "emotions": [
+        [
+          "sadness",
+          19
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

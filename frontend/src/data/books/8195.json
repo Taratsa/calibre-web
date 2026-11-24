@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1025,
-    "longer_than": 13,
+    "longer_than": 52,
     "top": [
       [
         "data",
@@ -107,16 +107,24 @@
         28
       ],
       [
+        "pelanggaran",
+        15
+      ],
+      [
         "teknologi",
         20
       ],
       [
-        "openevsys",
-        3
+        "hak",
+        23
       ],
       [
-        "pelanggaran",
-        15
+        "manusia",
+        25
+      ],
+      [
+        "openevsys",
+        3
       ],
       [
         "platform",
@@ -127,23 +135,15 @@
         7
       ],
       [
-        "applications",
-        3
+        "informasi",
+        10
       ],
       [
-        "video",
-        5
-      ],
-      [
-        "hak",
-        23
+        "analisis",
+        6
       ],
       [
         "elsam",
-        3
-      ],
-      [
-        "pendokumentasian",
         3
       ]
     ],
@@ -167,29 +167,30 @@
     ],
     "similar": [
       [
-        351,
-        0.17
+        16971,
+        0.2
       ],
       [
-        8253,
-        0.16
-      ],
-      [
-        9093,
-        0.16
+        15995,
+        0.2
       ],
       [
         6946,
-        0.15
+        0.19
       ],
       [
         1007,
-        0.15
+        0.19
       ],
       [
-        1054,
-        0.14
+        14912,
+        0.19
+      ],
+      [
+        9338,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

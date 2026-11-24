@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 6898,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "alya",
@@ -123,12 +123,12 @@
         62
       ],
       [
-        "alek",
-        61
-      ],
-      [
         "singa",
         107
+      ],
+      [
+        "alek",
+        61
       ],
       [
         "maida",
@@ -147,8 +147,8 @@
         18
       ],
       [
-        "umela",
-        18
+        "rina",
+        33
       ]
     ],
     "phrases": [
@@ -185,6 +185,59 @@
         6
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 77,
+      "negative": 35,
+      "trend": [
+        1,
+        0.6,
+        null,
+        0.2,
+        0.56,
+        1,
+        null,
+        null,
+        null,
+        null,
+        -0.2,
+        null,
+        null,
+        -0.75,
+        0,
+        0.87
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1159,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "kota",
@@ -114,44 +114,44 @@
         4
       ],
       [
+        "permukaan",
+        9
+      ],
+      [
         "garden",
         5
       ],
       [
-        "permukaan",
-        9
+        "kota",
+        15
       ],
       [
         "kota-kota",
         6
       ],
       [
+        "perkotaan",
+        5
+      ],
+      [
         "city",
         5
       ],
       [
-        "perkotaan",
-        5
+        "menciptakan",
+        9
       ],
       [
         "konstruksi",
         5
       ],
       [
-        "ruang-ruang",
-        4
-      ],
-      [
-        "membolehkan",
-        3
-      ],
-      [
         "ide",
         7
       ],
       [
-        "menciptakan",
-        9
+        "ruang-ruang",
+        4
       ]
     ],
     "phrases": [
@@ -171,20 +171,29 @@
     "similar": [
       [
         2149,
-        0.11
+        0.14
       ],
       [
         44,
+        0.13
+      ],
+      [
+        19326,
+        0.13
+      ],
+      [
+        15227,
+        0.12
+      ],
+      [
+        2019,
         0.11
       ],
       [
-        7424,
-        0.1
-      ],
-      [
-        7061,
-        0.1
+        16863,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2891,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "klas",
@@ -111,40 +111,40 @@
         14
       ],
       [
-        "kediktatoran",
-        6
-      ],
-      [
         "kiri",
         14
       ],
       [
-        "hirarkis",
-        4
+        "kediktatoran",
+        6
       ],
       [
         "perjuangan",
         12
       ],
       [
+        "hirarkis",
+        4
+      ],
+      [
         "proletariat",
         5
       ],
       [
-        "andre",
-        3
+        "hidup",
+        15
+      ],
+      [
+        "penguasa",
+        7
       ],
       [
         "bayangkan",
         5
       ],
       [
-        "birokrat",
-        4
-      ],
-      [
-        "untukmu",
-        4
+        "metode",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         26,
-        0.14
+        0.17
       ],
       [
-        1803,
-        0.13
+        2784,
+        0.16
       ],
       [
         2584,
-        0.12
-      ],
-      [
-        2347,
-        0.12
-      ],
-      [
-        3698,
-        0.11
+        0.16
       ],
       [
         2800,
-        0.11
+        0.15
+      ],
+      [
+        7875,
+        0.15
+      ],
+      [
+        2540,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 42,
+      "negative": 43,
+      "trend": [
+        null,
+        0.14,
+        0.4,
+        -0.33,
+        0.6,
+        null,
+        -0.5,
+        -0.33,
+        0.33,
+        null,
+        1,
+        null,
+        -0.6,
+        -0.33,
+        null,
+        -0.14
+      ],
+      "emotions": []
+    }
   }
 }

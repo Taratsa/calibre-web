@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 63421,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "sumatra",
@@ -113,28 +113,28 @@
         196
       ],
       [
-        "soils",
-        91
-      ],
-      [
         "plantations",
         123
       ],
       [
-        "plantation",
-        123
+        "soils",
+        91
       ],
       [
         "population",
         149
       ],
       [
-        "nienhuys",
-        64
+        "plantation",
+        123
       ],
       [
         "hectares",
         93
+      ],
+      [
+        "nienhuys",
+        64
       ]
     ],
     "phrases": [
@@ -174,11 +174,11 @@
     "similar": [
       [
         8734,
-        0.26
+        0.27
       ],
       [
         546,
-        0.22
+        0.23
       ],
       [
         8662,
@@ -186,16 +186,17 @@
       ],
       [
         8682,
-        0.2
-      ],
-      [
-        676,
-        0.2
+        0.21
       ],
       [
         8480,
-        0.2
+        0.21
+      ],
+      [
+        676,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

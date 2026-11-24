@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1395,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "matahari",
@@ -108,6 +108,10 @@
     ],
     "distinct": [
       [
+        "matahari",
+        9
+      ],
+      [
         "liris",
         3
       ],
@@ -116,16 +120,12 @@
         3
       ],
       [
-        "meneguk",
-        3
-      ],
-      [
-        "matahari",
-        9
-      ],
-      [
         "kegelapan",
         5
+      ],
+      [
+        "meneguk",
+        3
       ],
       [
         "dihukum",
@@ -136,52 +136,105 @@
         3
       ],
       [
-        "bunga-bunga",
-        3
+        "sinar",
+        5
       ],
       [
         "menari",
         4
       ],
       [
-        "berbaring",
-        3
-      ],
-      [
-        "suram",
-        3
-      ],
-      [
-        "sinar",
+        "kejahatan",
         5
+      ],
+      [
+        "hutan",
+        6
+      ],
+      [
+        "bunga-bunga",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         267,
-        0.25
+        0.27
       ],
       [
         8123,
-        0.22
-      ],
-      [
-        7367,
-        0.17
-      ],
-      [
-        2525,
-        0.17
+        0.24
       ],
       [
         8128,
-        0.17
+        0.19
       ],
       [
-        8114,
-        0.17
+        7367,
+        0.19
+      ],
+      [
+        2109,
+        0.18
+      ],
+      [
+        2525,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 38,
+      "negative": 53,
+      "trend": [
+        null,
+        -0.6,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        -0.83,
+        -1,
+        -0.6,
+        0.33,
+        0.45
+      ],
+      "emotions": [
+        [
+          "joy",
+          19
+        ],
+        [
+          "sadness",
+          17
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

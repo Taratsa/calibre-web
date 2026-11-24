@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2916,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "klas",
@@ -111,40 +111,40 @@
         14
       ],
       [
-        "kediktatoran",
-        6
-      ],
-      [
-        "andre",
-        4
-      ],
-      [
         "kiri",
         14
       ],
       [
-        "chapter",
-        4
+        "kediktatoran",
+        6
       ],
       [
         "perjuangan",
         12
       ],
       [
+        "andre",
+        4
+      ],
+      [
         "proletariat",
         5
       ],
       [
+        "hidup",
+        15
+      ],
+      [
+        "chapter",
+        4
+      ],
+      [
+        "penguasa",
+        7
+      ],
+      [
         "bayangkan",
         5
-      ],
-      [
-        "pilihlah",
-        3
-      ],
-      [
-        "birokrat",
-        4
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         26,
-        0.13
+        0.17
       ],
       [
-        1803,
-        0.12
+        2784,
+        0.15
       ],
       [
         2584,
-        0.12
+        0.15
       ],
       [
-        2347,
-        0.11
+        7875,
+        0.15
       ],
       [
-        3698,
-        0.11
+        2540,
+        0.15
       ],
       [
         2800,
-        0.1
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 43,
+      "negative": 45,
+      "trend": [
+        null,
+        null,
+        -0.67,
+        null,
+        0.17,
+        -0.33,
+        0.33,
+        -0.2,
+        0.14,
+        1,
+        null,
+        null,
+        -0.5,
+        -0.33,
+        0.14,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

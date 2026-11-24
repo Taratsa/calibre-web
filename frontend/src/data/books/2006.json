@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2459,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "individu",
@@ -119,6 +119,18 @@
         5
       ],
       [
+        "industri",
+        14
+      ],
+      [
+        "sosial",
+        21
+      ],
+      [
+        "filosofis",
+        7
+      ],
+      [
         "bresci",
         3
       ],
@@ -127,23 +139,11 @@
         3
       ],
       [
-        "filosofis",
-        7
-      ],
-      [
-        "industri",
-        14
-      ],
-      [
-        "belati",
-        4
+        "ideologi",
+        9
       ],
       [
         "individu-individu",
-        6
-      ],
-      [
-        "otoriter",
         6
       ]
     ],
@@ -184,28 +184,56 @@
     "similar": [
       [
         2668,
-        0.18
-      ],
-      [
-        2133,
-        0.18
-      ],
-      [
-        2167,
-        0.17
+        0.22
       ],
       [
         1926,
-        0.17
+        0.21
+      ],
+      [
+        2167,
+        0.21
+      ],
+      [
+        2133,
+        0.19
       ],
       [
         6730,
-        0.16
+        0.19
       ],
       [
         2203,
-        0.16
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 43,
+      "negative": 44,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

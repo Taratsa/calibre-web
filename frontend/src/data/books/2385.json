@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2269,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "amerika",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "amerika",
+        25
+      ],
+      [
         "individualisme",
         12
       ],
@@ -115,36 +119,32 @@
         6
       ],
       [
-        "amerika",
-        25
+        "egoisme",
+        7
       ],
       [
         "myrick",
         3
       ],
       [
-        "egoisme",
-        7
-      ],
-      [
         "cante",
         3
       ],
       [
-        "dakota",
-        4
+        "masyarakat",
+        22
       ],
       [
         "indian",
         7
       ],
       [
-        "penerj",
+        "dakota",
         4
       ],
       [
-        "dekolonisasi",
-        4
+        "kepentingan",
+        15
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        2205,
-        0.18
-      ],
-      [
         2338,
-        0.15
+        0.19
       ],
       [
-        7950,
-        0.15
+        2205,
+        0.19
       ],
       [
         1956,
-        0.15
+        0.18
       ],
       [
         7151,
-        0.15
+        0.18
       ],
       [
-        7364,
-        0.14
+        7950,
+        0.18
+      ],
+      [
+        17192,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 36,
+      "negative": 40,
+      "trend": [
+        null,
+        null,
+        0.56,
+        null,
+        0.2,
+        null,
+        -0.2,
+        -0.75,
+        null,
+        null,
+        null,
+        -0.6,
+        -0.14,
+        -0.11,
+        0.2,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 32074,
-    "longer_than": 86,
+    "longer_than": 93,
     "top": [
       [
         "rural",
@@ -108,16 +108,16 @@
         134
       ],
       [
-        "entrepreneurs",
-        87
+        "west",
+        154
       ],
       [
         "java",
         173
       ],
       [
-        "west",
-        154
+        "entrepreneurs",
+        87
       ],
       [
         "non-farm",
@@ -128,16 +128,16 @@
         120
       ],
       [
+        "capital",
+        113
+      ],
+      [
         "investment",
         90
       ],
       [
         "business",
         116
-      ],
-      [
-        "capital",
-        113
       ]
     ],
     "phrases": [
@@ -177,7 +177,7 @@
     "similar": [
       [
         8517,
-        0.55
+        0.56
       ],
       [
         8754,
@@ -196,9 +196,10 @@
         0.23
       ],
       [
-        8507,
+        8566,
         0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

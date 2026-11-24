@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1691,
-    "longer_than": 21,
+    "longer_than": 60,
     "top": [
       [
         "kematian",
@@ -120,8 +120,20 @@
         7
       ],
       [
+        "musik",
+        10
+      ],
+      [
         "sekitarku",
         4
+      ],
+      [
+        "ayo",
+        8
+      ],
+      [
+        "kematian",
+        10
       ],
       [
         "apocalypse",
@@ -132,28 +144,16 @@
         3
       ],
       [
-        "vinci",
-        3
+        "wanita",
+        10
       ],
       [
         "membawamu",
         4
       ],
       [
-        "ayo",
-        8
-      ],
-      [
-        "musik",
-        10
-      ],
-      [
-        "nihil",
-        4
-      ],
-      [
-        "kulihat",
-        5
+        "vinci",
+        3
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         267,
-        0.42
+        0.44
       ],
       [
         8124,
-        0.23
+        0.26
       ],
       [
         8127,
-        0.17
+        0.19
       ],
       [
         2097,
-        0.16
+        0.18
       ],
       [
-        8123,
-        0.14
+        2742,
+        0.17
       ],
       [
         3956,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 32,
+      "negative": 48,
+      "trend": [
+        -0.6,
+        null,
+        -0.2,
+        null,
+        null,
+        0.2,
+        -0.33,
+        null,
+        null,
+        -0.25,
+        -0.71,
+        -0.2,
+        null,
+        -1,
+        -0.11,
+        0.43
+      ],
+      "emotions": [
+        [
+          "sadness",
+          22
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

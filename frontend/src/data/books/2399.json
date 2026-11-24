@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1461,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "pesimisme",
@@ -107,16 +107,16 @@
         12
       ],
       [
+        "kebodohan",
+        16
+      ],
+      [
         "flaubert",
         8
       ],
       [
         "taine",
         7
-      ],
-      [
-        "kebodohan",
-        16
       ],
       [
         "stendhal",
@@ -177,19 +177,59 @@
         3
       ]
     ],
-    "similar": [
-      [
-        7317,
-        0.12
+    "similar": [],
+    "sentiment": {
+      "score": -0.38,
+      "positive": 25,
+      "negative": 56,
+      "trend": [
+        -0.67,
+        -1,
+        -0.45,
+        -1,
+        null,
+        -0.14,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        0.11,
+        -0.75,
+        null,
+        null
       ],
-      [
-        2722,
-        0.11
-      ],
-      [
-        7546,
-        0.11
+      "emotions": [
+        [
+          "sadness",
+          12
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
       ]
-    ]
+    }
   }
 }

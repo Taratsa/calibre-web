@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1936,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "sastra",
@@ -108,16 +108,16 @@
         7
       ],
       [
+        "kekuasaan",
+        26
+      ],
+      [
         "garde",
         6
       ],
       [
         "mytos",
         3
-      ],
-      [
-        "kekuasaan",
-        26
       ],
       [
         "pengarang",
@@ -128,24 +128,24 @@
         8
       ],
       [
-        "sensor",
-        5
-      ],
-      [
         "jawa",
         13
       ],
       [
-        "bertautan",
-        3
-      ],
-      [
-        "mataram",
-        5
+        "karya",
+        15
       ],
       [
         "individu",
         11
+      ],
+      [
+        "politik",
+        14
+      ],
+      [
+        "sensor",
+        5
       ]
     ],
     "phrases": [
@@ -184,17 +184,30 @@
     ],
     "similar": [
       [
+        4127,
+        0.15
+      ],
+      [
         7231,
         0.13
       ],
       [
-        9283,
+        2150,
+        0.12
+      ],
+      [
+        4322,
+        0.12
+      ],
+      [
+        7233,
         0.11
       ],
       [
-        4127,
+        4896,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

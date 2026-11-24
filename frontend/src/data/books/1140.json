@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2112,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "amir",
@@ -111,12 +111,12 @@
         9
       ],
       [
-        "bindjai",
-        5
-      ],
-      [
         "kesusasteraan",
         10
+      ],
+      [
+        "bindjai",
+        5
       ],
       [
         "mendjadi",
@@ -127,16 +127,16 @@
         6
       ],
       [
+        "djuga",
+        9
+      ],
+      [
         "penjair",
         5
       ],
       [
         "sjair",
         5
-      ],
-      [
-        "pamannja",
-        4
       ]
     ],
     "phrases": [
@@ -180,11 +180,11 @@
       ],
       [
         1231,
-        0.7
+        0.69
       ],
       [
         4598,
-        0.49
+        0.51
       ],
       [
         7688,
@@ -198,6 +198,7 @@
         6711,
         0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 8441,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "lukisan",
@@ -108,44 +108,44 @@
         39
       ],
       [
-        "klungkung",
-        28
+        "bali",
+        87
       ],
       [
         "kol",
         40
       ],
       [
-        "belacu",
-        20
+        "klungkung",
+        28
       ],
       [
-        "bali",
-        87
+        "belacu",
+        20
       ],
       [
         "ceritera",
         31
       ],
       [
-        "sutasoma",
-        19
+        "warna",
+        65
       ],
       [
         "hiasan",
         37
       ],
       [
-        "arjuna",
-        26
-      ],
-      [
         "wayang",
         37
       ],
       [
-        "purusada",
-        11
+        "sutasoma",
+        19
+      ],
+      [
+        "arjuna",
+        26
       ]
     ],
     "phrases": [
@@ -185,28 +185,81 @@
     "similar": [
       [
         1503,
-        0.4
+        0.41
       ],
       [
         1578,
-        0.18
+        0.2
       ],
       [
         1508,
-        0.16
+        0.18
       ],
       [
         1595,
-        0.15
+        0.17
       ],
       [
         1753,
-        0.15
+        0.16
       ],
       [
         1487,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 127,
+      "negative": 66,
+      "trend": [
+        0.68,
+        0.94,
+        0.65,
+        0.67,
+        0.22,
+        0.5,
+        0.14,
+        -0.4,
+        -0.2,
+        -0.33,
+        -0.12,
+        -0.78,
+        -0.5,
+        null,
+        null,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          31
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

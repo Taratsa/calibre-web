@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3023,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "stirner",
@@ -119,20 +119,16 @@
         21
       ],
       [
-        "mengandaikan",
-        12
-      ],
-      [
         "anarkis",
         20
       ],
       [
-        "fondasi",
-        13
+        "mengandaikan",
+        12
       ],
       [
-        "lacan",
-        6
+        "fondasi",
+        13
       ],
       [
         "label",
@@ -143,8 +139,12 @@
         12
       ],
       [
-        "individualis",
-        8
+        "lacan",
+        6
+      ],
+      [
+        "mengklaim",
+        13
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         9219,
-        0.21
+        0.23
       ],
       [
         2095,
-        0.2
-      ],
-      [
-        3721,
-        0.2
+        0.22
       ],
       [
         3952,
-        0.2
-      ],
-      [
-        4687,
-        0.19
+        0.22
       ],
       [
         3746,
-        0.19
+        0.22
+      ],
+      [
+        4687,
+        0.21
+      ],
+      [
+        3986,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 56,
+      "negative": 23,
+      "trend": [
+        null,
+        0.33,
+        0.78,
+        0.6,
+        0.5,
+        null,
+        0.6,
+        null,
+        0.67,
+        -0.6,
+        null,
+        null,
+        null,
+        0,
+        null,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

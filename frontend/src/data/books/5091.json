@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5492,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "kapitan",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "matahaa",
-        71
-      ],
-      [
         "kapitan",
         127
+      ],
+      [
+        "matahaa",
+        71
       ],
       [
         "pattiyawaello",
@@ -143,8 +143,8 @@
         11
       ],
       [
-        "kapltan",
-        8
+        "raja",
+        46
       ]
     ],
     "phrases": [
@@ -181,6 +181,76 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5092,
+        0.78
+      ],
+      [
+        3672,
+        0.12
+      ],
+      [
+        5361,
+        0.11
+      ],
+      [
+        3531,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 61,
+      "negative": 42,
+      "trend": [
+        0.67,
+        0.75,
+        null,
+        0.2,
+        null,
+        0.57,
+        null,
+        -0.67,
+        null,
+        0.11,
+        null,
+        null,
+        -0.5,
+        0.2,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 5259,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "breakdance",
@@ -112,12 +112,12 @@
         27
       ],
       [
-        "yarobin",
-        13
-      ],
-      [
         "hip",
         27
+      ],
+      [
+        "yarobin",
+        13
       ],
       [
         "track",
@@ -136,12 +136,12 @@
         7
       ],
       [
-        "cereal",
-        8
-      ],
-      [
         "julian",
         12
+      ],
+      [
+        "cereal",
+        8
       ],
       [
         "chronical",
@@ -189,19 +189,19 @@
     "similar": [
       [
         2777,
-        0.28
+        0.27
       ],
       [
         2703,
-        0.19
+        0.2
       ],
       [
         1711,
-        0.19
+        0.2
       ],
       [
         4741,
-        0.17
+        0.18
       ],
       [
         9170,
@@ -211,6 +211,59 @@
         4076,
         0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 59,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -0.43,
+        -0.25,
+        1,
+        null,
+        0,
+        0.2,
+        -0.5,
+        0.6,
+        0,
+        0.11,
+        0.14,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          8
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

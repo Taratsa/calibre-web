@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1817,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "cuman",
@@ -107,6 +107,14 @@
         6
       ],
       [
+        "notif",
+        5
+      ],
+      [
+        "tolong",
+        13
+      ],
+      [
         "twing",
         3
       ],
@@ -115,24 +123,20 @@
         3
       ],
       [
-        "tolong",
-        13
+        "spotify",
+        4
       ],
       [
         "step",
         7
       ],
       [
-        "spotify",
-        4
+        "tarik",
+        8
       ],
       [
-        "algoritma",
-        4
-      ],
-      [
-        "bablas",
-        3
+        "mawar",
+        6
       ],
       [
         "menggaruk",
@@ -141,10 +145,6 @@
       [
         "puntung",
         4
-      ],
-      [
-        "mawar",
-        6
       ]
     ],
     "phrases": [
@@ -184,16 +184,21 @@
     "similar": [
       [
         7278,
-        0.17
+        0.18
       ],
       [
         3928,
-        0.13
+        0.12
+      ],
+      [
+        17869,
+        0.12
       ],
       [
         7169,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

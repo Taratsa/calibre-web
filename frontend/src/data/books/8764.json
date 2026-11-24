@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 109113,
-    "longer_than": 98,
+    "longer_than": 99,
     "top": [
       [
         "tumbuhan",
@@ -111,40 +111,40 @@
         353
       ],
       [
-        "spesimen",
-        237
-      ],
-      [
         "bahawa",
         240
+      ],
+      [
+        "spesimen",
+        237
       ],
       [
         "botani",
         229
       ],
       [
-        "semulajadi",
-        143
+        "spesies",
+        353
       ],
       [
         "maklumat",
         287
       ],
       [
-        "spesies",
-        353
+        "semulajadi",
+        143
       ],
       [
         "berbeza",
         138
       ],
       [
-        "ubatan",
-        95
-      ],
-      [
         "mengumpul",
         183
+      ],
+      [
+        "ubatan",
+        95
       ]
     ],
     "phrases": [
@@ -196,12 +196,69 @@
       ],
       [
         3898,
-        0.13
+        0.14
       ],
       [
         1565,
         0.12
+      ],
+      [
+        8579,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 1053,
+      "negative": 296,
+      "trend": [
+        0.64,
+        0.41,
+        0.71,
+        0.53,
+        0.61,
+        0.35,
+        0.51,
+        0.45,
+        0.59,
+        0.77,
+        0.71,
+        0.54,
+        0.63,
+        0.61,
+        0.57,
+        0.63
+      ],
+      "emotions": [
+        [
+          "joy",
+          43
+        ],
+        [
+          "trust",
+          37
+        ],
+        [
+          "fear",
+          32
+        ],
+        [
+          "sadness",
+          27
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

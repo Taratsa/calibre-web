@@ -41,7 +41,7 @@
   ],
   "text": {
     "words": 3472,
-    "longer_than": 36,
+    "longer_than": 68,
     "top": [
       [
         "tni",
@@ -106,16 +106,16 @@
         51
       ],
       [
+        "sipil",
+        34
+      ],
+      [
         "kdmp",
         8
       ],
       [
         "militeristik",
         14
-      ],
-      [
-        "sipil",
-        34
       ],
       [
         "pelibatan",
@@ -126,20 +126,20 @@
         24
       ],
       [
-        "divonis",
-        10
+        "penjara",
+        22
       ],
       [
-        "kogoya",
-        6
+        "negara",
+        39
       ],
       [
         "nasionalisme",
         14
       ],
       [
-        "definus",
-        4
+        "divonis",
+        10
       ]
     ],
     "phrases": [
@@ -179,28 +179,69 @@
     "similar": [
       [
         4893,
-        0.17
+        0.19
       ],
       [
         6321,
-        0.16
-      ],
-      [
-        8310,
-        0.15
-      ],
-      [
-        8768,
-        0.15
+        0.17
       ],
       [
         6900,
-        0.15
+        0.17
+      ],
+      [
+        8310,
+        0.17
       ],
       [
         2678,
-        0.15
+        0.17
+      ],
+      [
+        348,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.31,
+      "positive": 31,
+      "negative": 59,
+      "trend": [
+        0.33,
+        null,
+        null,
+        -0.6,
+        null,
+        0,
+        null,
+        0.2,
+        null,
+        null,
+        0.33,
+        -1,
+        -0.67,
+        -0.56,
+        -1,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "fear",
+          16
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1010,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "kau",
@@ -122,23 +122,15 @@
         3
       ],
       [
-        "berpura-pura",
-        3
-      ],
-      [
         "teman",
         5
       ],
       [
-        "halnya",
-        4
-      ],
-      [
-        "paham",
+        "berpura-pura",
         3
       ],
       [
-        "sisi",
+        "halnya",
         4
       ],
       [
@@ -146,8 +138,16 @@
         4
       ],
       [
-        "kelompok",
+        "sisi",
+        4
+      ],
+      [
+        "paham",
         3
+      ],
+      [
+        "manusia",
+        5
       ],
       [
         "jalan",
@@ -155,6 +155,32 @@
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        7027,
+        0.15
+      ],
+      [
+        7147,
+        0.15
+      ],
+      [
+        2126,
+        0.14
+      ],
+      [
+        18382,
+        0.14
+      ],
+      [
+        1222,
+        0.13
+      ],
+      [
+        2322,
+        0.12
+      ]
+    ],
+    "sentiment": null
   }
 }

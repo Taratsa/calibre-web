@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 2575,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "hutan",
@@ -105,44 +105,44 @@
         27
       ],
       [
-        "hektar",
-        20
-      ],
-      [
-        "folu",
-        5
-      ],
-      [
-        "juta",
-        26
-      ],
-      [
         "hutan",
         36
+      ],
+      [
+        "hektar",
+        20
       ],
       [
         "adat",
         35
       ],
       [
-        "ekstraktif",
-        9
+        "juta",
+        26
       ],
       [
-        "penyeimbangan",
-        6
+        "wilayah",
+        30
+      ],
+      [
+        "folu",
+        5
       ],
       [
         "sektor",
         19
       ],
       [
-        "walhi",
+        "ekstraktif",
         9
       ],
       [
-        "gambut",
-        7
+        "ton",
+        13
+      ],
+      [
+        "iklim",
+        14
       ]
     ],
     "phrases": [
@@ -182,14 +182,18 @@
     "similar": [
       [
         9145,
-        0.31
+        0.34
       ],
       [
         6814,
-        0.29
+        0.31
       ],
       [
         8723,
+        0.28
+      ],
+      [
+        9143,
         0.27
       ],
       [
@@ -197,13 +201,16 @@
         0.26
       ],
       [
-        9143,
-        0.26
-      ],
-      [
-        8852,
-        0.24
+        8479,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 21,
+      "negative": 46,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

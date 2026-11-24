@@ -76,7 +76,7 @@
   ],
   "text": {
     "words": 5861,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "demokrasi",
@@ -149,10 +149,6 @@
         28
       ],
       [
-        "consulta",
-        6
-      ],
-      [
         "delegasi",
         16
       ],
@@ -161,20 +157,24 @@
         15
       ],
       [
+        "consulta",
+        6
+      ],
+      [
         "zapatista",
         9
       ],
       [
-        "pemilihnya",
-        6
+        "keputusan",
+        25
       ],
       [
-        "munisipal",
-        6
+        "pemilu",
+        13
       ],
       [
-        "pilkadal",
-        4
+        "anggota",
+        27
       ]
     ],
     "phrases": [
@@ -214,28 +214,77 @@
     "similar": [
       [
         3800,
-        0.51
+        0.52
       ],
       [
         2751,
-        0.51
+        0.52
       ],
       [
         2427,
-        0.29
+        0.3
       ],
       [
         2521,
-        0.25
+        0.28
       ],
       [
         2598,
-        0.21
+        0.26
       ],
       [
         2390,
-        0.2
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 89,
+      "negative": 61,
+      "trend": [
+        null,
+        -0.33,
+        -0.11,
+        0.4,
+        -0.64,
+        0,
+        -0.25,
+        0.33,
+        0.17,
+        0.33,
+        0.2,
+        0,
+        null,
+        0.56,
+        0.54,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          14
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

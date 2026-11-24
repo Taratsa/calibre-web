@@ -12,7 +12,7 @@
   "author_sort": "Aidit, D.N.",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 14548,
-    "longer_than": 70,
+    "longer_than": 85,
     "top": [
       [
         "partai",
@@ -112,48 +112,48 @@
         253
       ],
       [
-        "sastroamijoyo",
-        30
-      ],
-      [
-        "borjuasi",
-        47
-      ],
-      [
         "kaum",
         161
       ],
       [
-        "imperialisme",
-        53
-      ],
-      [
-        "persatuan",
-        82
+        "sastroamijoyo",
+        30
       ],
       [
         "rakyat",
         146
       ],
       [
+        "borjuasi",
+        47
+      ],
+      [
+        "persatuan",
+        82
+      ],
+      [
+        "nasional",
+        120
+      ],
+      [
+        "imperialisme",
+        53
+      ],
+      [
+        "politik",
+        109
+      ],
+      [
+        "indonesia",
+        169
+      ],
+      [
         "tani",
         62
       ],
       [
-        "soviet",
-        38
-      ],
-      [
         "perdamaian",
         51
-      ],
-      [
-        "negeri-negeri",
-        32
-      ],
-      [
-        "imperialis",
-        35
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         4790,
-        0.51
+        0.55
       ],
       [
         435,
-        0.51
+        0.55
       ],
       [
         1325,
-        0.42
+        0.47
       ],
       [
         9270,
-        0.42
+        0.47
       ],
       [
         9280,
-        0.37
+        0.44
       ],
       [
         9267,
-        0.37
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 368,
+      "negative": 208,
+      "trend": [
+        0,
+        0.2,
+        0.33,
+        0.1,
+        0.09,
+        0.67,
+        0.05,
+        0.18,
+        0.1,
+        0.6,
+        0.31,
+        0.62,
+        -0.03,
+        0.74,
+        0.14,
+        0.72
+      ],
+      "emotions": [
+        [
+          "anger",
+          62
+        ],
+        [
+          "trust",
+          48
+        ],
+        [
+          "fear",
+          30
+        ],
+        [
+          "joy",
+          29
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

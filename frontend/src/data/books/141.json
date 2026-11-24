@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 58602,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "keyakinan",
@@ -103,36 +103,36 @@
     ],
     "distinct": [
       [
-        "epistemik",
-        269
-      ],
-      [
         "epistemologi",
         319
       ],
       [
-        "terjustifikasi",
-        127
-      ],
-      [
-        "justifikasi",
-        236
+        "epistemik",
+        269
       ],
       [
         "keyakinan",
         517
       ],
       [
-        "probabilitas",
-        101
+        "justifikasi",
+        236
+      ],
+      [
+        "terjustifikasi",
+        127
+      ],
+      [
+        "pengetahuan",
+        494
       ],
       [
         "proposisi",
         113
       ],
       [
-        "pengetahuan",
-        494
+        "probabilitas",
+        101
       ],
       [
         "skeptisisme",
@@ -143,12 +143,12 @@
         90
       ],
       [
-        "penahu",
-        40
-      ],
-      [
         "testimoni",
         71
+      ],
+      [
+        "penahu",
+        40
       ]
     ],
     "phrases": [
@@ -188,28 +188,85 @@
     "similar": [
       [
         254,
-        0.25
+        0.27
       ],
       [
         7963,
-        0.22
+        0.25
       ],
       [
         1246,
-        0.22
+        0.25
       ],
       [
         7961,
-        0.2
+        0.23
       ],
       [
         7962,
-        0.2
+        0.22
       ],
       [
         7960,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 1191,
+      "negative": 536,
+      "trend": [
+        0.57,
+        0.38,
+        0.33,
+        0.54,
+        0.56,
+        0.17,
+        0.45,
+        0.34,
+        0.21,
+        0.59,
+        0.41,
+        0.36,
+        0.04,
+        0.19,
+        0.6,
+        0.34
+      ],
+      "emotions": [
+        [
+          "trust",
+          147
+        ],
+        [
+          "joy",
+          53
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

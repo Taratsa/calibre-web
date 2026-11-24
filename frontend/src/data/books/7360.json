@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1707,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "bougainville",
@@ -118,20 +118,20 @@
         7
       ],
       [
-        "png",
-        11
-      ],
-      [
         "bva",
         6
       ],
       [
-        "rtz",
-        5
-      ],
-      [
         "revolution",
         15
+      ],
+      [
+        "png",
+        11
+      ],
+      [
+        "rtz",
+        5
       ],
       [
         "bcl",
@@ -146,11 +146,11 @@
         4
       ],
       [
-        "copper",
-        5
+        "tambang",
+        11
       ],
       [
-        "tambang",
+        "kelapa",
         11
       ]
     ],
@@ -188,6 +188,26 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        8504,
+        0.16
+      ],
+      [
+        3792,
+        0.1
+      ],
+      [
+        8503,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 30,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

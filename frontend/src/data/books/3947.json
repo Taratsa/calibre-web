@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2107,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "anarchist",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "anarchism",
-        22
-      ],
-      [
         "anarchist",
         32
+      ],
+      [
+        "anarchism",
+        22
       ],
       [
         "indonesian",
         20
       ],
       [
-        "bidge",
-        4
-      ],
-      [
         "dickhead",
         4
       ],
       [
-        "muhee",
+        "bidge",
         4
-      ],
-      [
-        "texts",
-        7
       ],
       [
         "books",
         11
       ],
       [
-        "publishing",
-        9
+        "texts",
+        7
       ],
       [
-        "narratives",
-        5
+        "muhee",
+        4
+      ],
+      [
+        "publishing",
+        9
       ],
       [
         "collective",
         8
       ],
       [
-        "support",
+        "movement",
         9
+      ],
+      [
+        "narratives",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         3896,
-        0.23
+        0.24
       ],
       [
         1463,
-        0.22
+        0.24
       ],
       [
         3920,
-        0.22
+        0.23
       ],
       [
         3966,
-        0.18
+        0.19
       ],
       [
         1945,
-        0.17
+        0.19
       ],
       [
         2551,
-        0.16
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -42,7 +42,7 @@
   ],
   "text": {
     "words": 2070,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "koko",
@@ -131,15 +131,15 @@
         8
       ],
       [
+        "bahasa",
+        42
+      ],
+      [
         "onos",
         5
       ],
       [
         "alfons",
-        6
-      ],
-      [
-        "kanguru",
         6
       ]
     ],
@@ -177,6 +177,13 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": 0.86,
+      "positive": 54,
+      "negative": 4,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

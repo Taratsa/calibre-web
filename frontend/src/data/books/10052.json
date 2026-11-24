@@ -1,0 +1,220 @@
+{
+  "id": 10052,
+  "title": "OpenBTS: Set SQLite parameter smqueue",
+  "slug": "openbts-set-sqlite-parameter-smqueue-onno-widodo-purbo",
+  "slugBase": "openbts-set-sqlite-parameter-smqueue-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Selular",
+    "Wireless"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2014-02-24",
+  "timestamp": "2026-11-23 19:11:19.770065",
+  "last_modified": "2026-11-23 19:11:19.770069",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:3436b3bb-4b97-5e36-ab97-d425c5c82d91"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/10052?v=1795435879",
+  "cover_og_url": "/cover/10052/og?v=1795435879",
+  "url": "/book/openbts-set-sqlite-parameter-smqueue-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit sqlite3 /etc/OpenBTS/smqueue.db kemudian ketik misalnya DELETE from \"CONFIG\" where KEYSTRING = 'SC.Register.Digits.Max'; INSERT INTO \"CONFIG\" VALUES('SC.Register.Digits.Max','12',0,0,'The maximum number of digits a phone number can have.'); DELETE from \"CONFIG\" where KEYSTRING = 'SC.Register.Digits.Min'; INSERT INTO \"CONFIG\" VALUES('SC.Register.Digits.Min','4',0,0,'The minimum number of",
+  "data": [
+    {
+      "format": "epub",
+      "size": 7243,
+      "name": "OpenBTS_ Set SQLite parameter smqueue - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1070,
+    "longer_than": 53,
+    "top": [
+      [
+        "openbts",
+        134
+      ],
+      [
+        "gnuradio",
+        53
+      ],
+      [
+        "recommended",
+        43
+      ],
+      [
+        "ubuntu",
+        31
+      ],
+      [
+        "install",
+        22
+      ],
+      [
+        "uhd",
+        15
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "clock",
+        12
+      ],
+      [
+        "mhz",
+        12
+      ],
+      [
+        "rangenetwork",
+        12
+      ],
+      [
+        "instal",
+        11
+      ],
+      [
+        "instalasi",
+        11
+      ]
+    ],
+    "distinct": [
+      [
+        "openbts",
+        134
+      ],
+      [
+        "gnuradio",
+        53
+      ],
+      [
+        "recommended",
+        43
+      ],
+      [
+        "uhd",
+        15
+      ],
+      [
+        "usrp",
+        15
+      ],
+      [
+        "ubuntu",
+        31
+      ],
+      [
+        "rangenetwork",
+        12
+      ],
+      [
+        "yate",
+        10
+      ],
+      [
+        "clock",
+        12
+      ],
+      [
+        "digits",
+        8
+      ],
+      [
+        "mhz",
+        12
+      ],
+      [
+        "instal",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "gnuradio ubuntu",
+        19
+      ],
+      [
+        "ubuntu instal gnuradio",
+        11
+      ],
+      [
+        "gnuradio not recommended",
+        7
+      ],
+      [
+        "ubuntu install",
+        10
+      ],
+      [
+        "openbts rangenetwork",
+        10
+      ],
+      [
+        "openbts dari svn",
+        6
+      ],
+      [
+        "clock mhz",
+        9
+      ],
+      [
+        "svn install clock",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        10068,
+        0.85
+      ],
+      [
+        9964,
+        0.84
+      ],
+      [
+        9883,
+        0.84
+      ],
+      [
+        9903,
+        0.83
+      ],
+      [
+        10046,
+        0.82
+      ],
+      [
+        9454,
+        0.82
+      ]
+    ],
+    "sentiment": null
+  }
+}

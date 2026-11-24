@@ -1,0 +1,201 @@
+{
+  "id": 11935,
+  "title": "ZCash Miner: silentarmy",
+  "slug": "zcash-miner-silentarmy-onno-widodo-purbo",
+  "slugBase": "zcash-miner-silentarmy-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2017-09-15",
+  "timestamp": "2026-11-23 20:38:50.160885",
+  "last_modified": "2026-11-23 20:38:50.160890",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:feed87f7-4b63-5713-8940-63009f88dd5b"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/11935?v=1795441130",
+  "cover_og_url": "/cover/11935/og?v=1795441130",
+  "url": "/book/zcash-miner-silentarmy-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Compilation and installation The steps below describe how to obtain the dependencies needed by SILENTARMY, how to compile it, and how to install it. Contents 1 Step 1: OpenCL 1.1 Ubuntu 14.04 / fglrx 2 Ubuntu 16.04 / Nvidia 2.1 Ubuntu 16.04 / Intel 3 Step 2: Python 3.3 4 Step 3: C compiler 5 Step 4: Get SILENTARMY 6 Step 5: Compile and install Step 1: OpenCL OpenCL support comes with the graphic",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3697,
+      "name": "ZCash Miner_ silentarmy - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 461,
+    "longer_than": 38,
+    "top": [
+      [
+        "silentarmy",
+        15
+      ],
+      [
+        "install",
+        13
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "usr",
+        9
+      ],
+      [
+        "local",
+        7
+      ],
+      [
+        "opencl",
+        7
+      ],
+      [
+        "ubuntu",
+        7
+      ],
+      [
+        "apt-get",
+        5
+      ],
+      [
+        "python",
+        5
+      ],
+      [
+        "src",
+        5
+      ],
+      [
+        "step",
+        5
+      ],
+      [
+        "driver",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "silentarmy",
+        15
+      ],
+      [
+        "opencl",
+        7
+      ],
+      [
+        "install",
+        13
+      ],
+      [
+        "usr",
+        9
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "headers",
+        4
+      ],
+      [
+        "python",
+        5
+      ],
+      [
+        "src",
+        5
+      ],
+      [
+        "nvidia",
+        3
+      ],
+      [
+        "ubuntu",
+        7
+      ],
+      [
+        "compiler",
+        3
+      ],
+      [
+        "step",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local src",
+        5
+      ],
+      [
+        "sudo apt-get install",
+        5
+      ],
+      [
+        "local src silentarmy",
+        3
+      ],
+      [
+        "opencl headers",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        11944,
+        0.4
+      ],
+      [
+        11352,
+        0.4
+      ],
+      [
+        10146,
+        0.38
+      ],
+      [
+        11883,
+        0.37
+      ],
+      [
+        15419,
+        0.36
+      ],
+      [
+        15434,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
+}

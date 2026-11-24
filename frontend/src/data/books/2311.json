@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1948,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "hantu",
@@ -123,20 +123,16 @@
         17
       ],
       [
-        "bergentayangan",
-        3
-      ],
-      [
-        "internet",
-        7
-      ],
-      [
-        "cemeti",
-        3
+        "manusia",
+        18
       ],
       [
         "relasi",
         7
+      ],
+      [
+        "bergentayangan",
+        3
       ],
       [
         "peradaban",
@@ -145,34 +141,45 @@
       [
         "hewan",
         7
+      ],
+      [
+        "cemeti",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        8118,
+        3794,
         0.23
       ],
       [
-        3794,
-        0.22
-      ],
-      [
-        2166,
-        0.18
+        8118,
+        0.2
       ],
       [
         7328,
+        0.19
+      ],
+      [
+        2166,
         0.17
       ],
       [
         2396,
-        0.13
+        0.16
       ],
       [
-        4113,
-        0.13
+        1999,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 31,
+      "negative": 31,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

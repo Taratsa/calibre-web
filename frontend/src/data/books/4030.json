@@ -11,7 +11,7 @@
   ],
   "author_sort": "Sjahrir, Sutan",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6496,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "perjuangan",
@@ -112,24 +112,20 @@
         79
       ],
       [
-        "jepang",
-        42
-      ],
-      [
         "revolusi",
         59
       ],
       [
-        "kerakyatan",
-        18
+        "jepang",
+        42
       ],
       [
         "kebangsaan",
         25
       ],
       [
-        "buruh",
-        32
+        "kerakyatan",
+        18
       ],
       [
         "kaum",
@@ -140,20 +136,24 @@
         45
       ],
       [
-        "balatentara",
-        8
+        "buruh",
+        32
       ],
       [
-        "pangrehpraja",
-        4
-      ],
-      [
-        "kedudukan",
-        18
+        "dunia",
+        62
       ],
       [
         "pemuda",
         23
+      ],
+      [
+        "negeri",
+        31
+      ],
+      [
+        "desa",
+        24
       ]
     ],
     "phrases": [
@@ -192,29 +192,78 @@
     ],
     "similar": [
       [
-        7233,
-        0.18
+        1312,
+        0.23
       ],
       [
         4605,
-        0.17
-      ],
-      [
-        1312,
-        0.17
+        0.22
       ],
       [
         9268,
-        0.17
+        0.22
+      ],
+      [
+        7233,
+        0.21
       ],
       [
         6744,
-        0.16
+        0.21
       ],
       [
-        395,
-        0.15
+        9276,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 110,
+      "negative": 110,
+      "trend": [
+        -0.33,
+        -0.74,
+        -0.38,
+        -0.7,
+        -0.5,
+        -0.38,
+        0.2,
+        null,
+        0.37,
+        0.54,
+        0.62,
+        0.36,
+        0.54,
+        0.75,
+        null,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          5
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 12830,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "perempuan",
@@ -114,20 +114,32 @@
         128
       ],
       [
-        "kurdi",
-        28
+        "masyarakat",
+        193
       ],
       [
         "perbudakan",
         53
       ],
       [
+        "kurdi",
+        28
+      ],
+      [
         "housewifization",
         14
       ],
       [
-        "masyarakat",
-        193
+        "peradaban",
+        43
+      ],
+      [
+        "kebebasan",
+        57
+      ],
+      [
+        "kekuasaan",
+        63
       ],
       [
         "sumeria",
@@ -138,20 +150,8 @@
         16
       ],
       [
-        "peradaban",
-        43
-      ],
-      [
-        "perempuan-ibu",
-        9
-      ],
-      [
-        "neolitik",
-        14
-      ],
-      [
-        "matriarkal",
-        11
+        "sosial",
+        65
       ]
     ],
     "phrases": [
@@ -191,28 +191,85 @@
     "similar": [
       [
         2093,
-        0.71
-      ],
-      [
-        2156,
-        0.25
+        0.73
       ],
       [
         2293,
-        0.22
+        0.29
+      ],
+      [
+        2156,
+        0.28
       ],
       [
         2707,
-        0.2
-      ],
-      [
-        2119,
-        0.2
+        0.27
       ],
       [
         2633,
-        0.2
+        0.26
+      ],
+      [
+        2374,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 359,
+      "negative": 210,
+      "trend": [
+        0.4,
+        0.27,
+        0.39,
+        0.44,
+        0.3,
+        -0.08,
+        -0.12,
+        0.18,
+        0.33,
+        0.4,
+        -0.11,
+        0.33,
+        -0.22,
+        0.38,
+        0.69,
+        0.73
+      ],
+      "emotions": [
+        [
+          "anger",
+          45
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "joy",
+          22
+        ],
+        [
+          "fear",
+          16
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

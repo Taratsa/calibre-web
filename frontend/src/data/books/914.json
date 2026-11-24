@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3492,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "manusia",
@@ -97,44 +97,44 @@
         56
       ],
       [
-        "nativisme",
-        9
-      ],
-      [
-        "kepribadian",
-        26
-      ],
-      [
         "pendidikan",
         82
-      ],
-      [
-        "fungsi",
-        36
-      ],
-      [
-        "borneo",
-        13
-      ],
-      [
-        "fitrahnya",
-        7
-      ],
-      [
-        "allah",
-        23
       ],
       [
         "manusia",
         94
       ],
       [
-        "empirisme",
-        6
+        "kepribadian",
+        26
       ],
       [
-        "didik",
-        12
+        "nativisme",
+        9
+      ],
+      [
+        "fungsi",
+        36
+      ],
+      [
+        "allah",
+        23
+      ],
+      [
+        "borneo",
+        13
+      ],
+      [
+        "aliran",
+        21
+      ],
+      [
+        "fitrahnya",
+        7
+      ],
+      [
+        "lingkungan",
+        30
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         891,
-        0.14
+        0.16
       ],
       [
         5333,
-        0.13
+        0.15
       ],
       [
-        915,
-        0.12
-      ],
-      [
-        912,
-        0.12
+        6976,
+        0.14
       ],
       [
         851,
-        0.12
+        0.14
       ],
       [
-        2895,
-        0.11
+        903,
+        0.14
+      ],
+      [
+        912,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.83,
+      "positive": 74,
+      "negative": 7,
+      "trend": [
+        0.71,
+        1,
+        1,
+        null,
+        null,
+        0.4,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0.71,
+        1,
+        0.67,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

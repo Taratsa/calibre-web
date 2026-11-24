@@ -76,7 +76,7 @@
   ],
   "text": {
     "words": 4857,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "gula",
@@ -129,48 +129,48 @@
     ],
     "distinct": [
       [
-        "ptpn",
-        40
-      ],
-      [
         "gula",
         78
+      ],
+      [
+        "ptpn",
+        40
       ],
       [
         "takalar",
         29
       ],
       [
-        "polongbangkeng",
-        14
+        "petani",
+        69
       ],
       [
         "xiv",
         33
       ],
       [
-        "petani",
-        69
+        "polongbangkeng",
+        14
       ],
       [
         "punna",
         16
       ],
       [
-        "rafinasi",
-        8
-      ],
-      [
         "tebu",
         23
+      ],
+      [
+        "lahan",
+        33
       ],
       [
         "karaeng",
         13
       ],
       [
-        "lahan",
-        33
+        "rafinasi",
+        8
       ],
       [
         "tena",
@@ -213,29 +213,74 @@
     ],
     "similar": [
       [
-        8658,
-        0.14
-      ],
-      [
         8710,
-        0.14
+        0.17
       ],
       [
         8773,
-        0.13
+        0.16
       ],
       [
-        6803,
-        0.13
+        8658,
+        0.15
       ],
       [
         6808,
-        0.13
+        0.15
       ],
       [
-        8486,
-        0.12
+        6803,
+        0.15
+      ],
+      [
+        2621,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 42,
+      "negative": 43,
+      "trend": [
+        -0.6,
+        null,
+        null,
+        -0.67,
+        0.67,
+        null,
+        -0.33,
+        -0.4,
+        0.33,
+        0.33,
+        0.6,
+        0.43,
+        null,
+        -0.2,
+        null,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

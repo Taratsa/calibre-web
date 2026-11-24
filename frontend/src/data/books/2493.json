@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4942,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "anarkis",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "anarkis",
+        82
+      ],
+      [
         "fakb",
         19
       ],
       [
-        "anarkis",
-        82
+        "organisasi",
+        78
       ],
       [
         "bulgaria",
@@ -115,16 +119,20 @@
         22
       ],
       [
-        "organisasi",
-        78
-      ],
-      [
         "anarkisme",
         28
       ],
       [
-        "anarquismo",
-        8
+        "pekerja",
+        36
+      ],
+      [
+        "massa",
+        35
+      ],
+      [
+        "gerakan",
+        43
       ],
       [
         "dualisme",
@@ -135,16 +143,8 @@
         13
       ],
       [
-        "pekerja",
-        36
-      ],
-      [
-        "sindikalisme",
-        10
-      ],
-      [
-        "massa",
-        35
+        "anarquismo",
+        8
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2412,
-        0.32
-      ],
-      [
-        7859,
-        0.28
-      ],
-      [
-        2553,
-        0.28
+        0.35
       ],
       [
         7019,
-        0.28
+        0.35
+      ],
+      [
+        7859,
+        0.35
+      ],
+      [
+        2553,
+        0.35
       ],
       [
         2381,
-        0.28
+        0.34
       ],
       [
-        2383,
-        0.22
+        7142,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 61,
+      "negative": 24,
+      "trend": [
+        null,
+        0.33,
+        0.11,
+        null,
+        0.75,
+        -0.2,
+        0.85,
+        0.6,
+        0.78,
+        0.6,
+        0.6,
+        -0.25,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

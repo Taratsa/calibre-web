@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 47694,
-    "longer_than": 92,
+    "longer_than": 96,
     "top": [
       [
         "pekerja",
@@ -107,44 +107,44 @@
         223
       ],
       [
-        "internasionale",
-        120
-      ],
-      [
         "buruh",
         349
       ],
       [
-        "sindikalisme",
-        66
-      ],
-      [
-        "anarko-sindikalis",
-        61
-      ],
-      [
-        "prancis",
-        102
+        "internasionale",
+        120
       ],
       [
         "revolusi",
         199
       ],
       [
-        "komune",
-        71
-      ],
-      [
         "serikat",
         168
       ],
       [
-        "bakunin",
-        65
+        "kelas",
+        191
       ],
       [
-        "bolshevik",
-        56
+        "sindikalisme",
+        66
+      ],
+      [
+        "prancis",
+        102
+      ],
+      [
+        "anarko-sindikalis",
+        61
+      ],
+      [
+        "anarkis",
+        112
+      ],
+      [
+        "komune",
+        71
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         8102,
-        0.4
-      ],
-      [
-        8101,
-        0.37
+        0.45
       ],
       [
         2727,
-        0.31
-      ],
-      [
-        8100,
-        0.31
+        0.4
       ],
       [
         6730,
-        0.3
+        0.39
       ],
       [
         2203,
-        0.3
+        0.39
+      ],
+      [
+        8101,
+        0.39
+      ],
+      [
+        8100,
+        0.36
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 1032,
+      "negative": 715,
+      "trend": [
+        0.15,
+        0.26,
+        0.51,
+        0.1,
+        0.14,
+        0.1,
+        0.01,
+        0.26,
+        0.31,
+        0.43,
+        0.17,
+        0.17,
+        0.13,
+        0.31,
+        0.1,
+        -0.1
+      ],
+      "emotions": [
+        [
+          "anger",
+          124
+        ],
+        [
+          "trust",
+          77
+        ],
+        [
+          "joy",
+          71
+        ],
+        [
+          "sadness",
+          61
+        ],
+        [
+          "fear",
+          38
+        ],
+        [
+          "anticipation",
+          35
+        ],
+        [
+          "disgust",
+          14
+        ],
+        [
+          "surprise",
+          8
+        ]
+      ]
+    }
   }
 }

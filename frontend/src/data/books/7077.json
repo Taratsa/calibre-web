@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 870,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "lsm",
@@ -130,12 +130,20 @@
         7
       ],
       [
+        "perlawanan",
+        8
+      ],
+      [
         "roy",
         3
       ],
       [
-        "perlawanan",
-        8
+        "politik",
+        9
+      ],
+      [
+        "negara",
+        11
       ],
       [
         "spesies",
@@ -144,30 +152,27 @@
       [
         "indikator",
         3
-      ],
-      [
-        "negara-negara",
-        4
-      ],
-      [
-        "politik",
-        9
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        19619,
+        0.22
+      ],
+      [
         4220,
-        0.2
+        0.21
       ],
       [
-        3892,
-        0.11
+        1784,
+        0.1
       ],
       [
-        3144,
+        1809,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

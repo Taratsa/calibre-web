@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2567,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "lagu",
@@ -103,40 +103,40 @@
         14
       ],
       [
-        "hymne",
-        8
-      ],
-      [
         "djiwa",
         17
+      ],
+      [
+        "hymne",
+        8
       ],
       [
         "pangkal",
         16
       ],
       [
-        "simandjuntak",
-        6
-      ],
-      [
         "nada",
         17
+      ],
+      [
+        "simandjuntak",
+        6
       ],
       [
         "perdjoangan",
         8
       ],
       [
-        "sudjasmin",
-        3
-      ],
-      [
-        "pudjaan",
-        5
+        "susunan",
+        13
       ],
       [
         "gaja",
         7
+      ],
+      [
+        "sud",
+        8
       ]
     ],
     "phrases": [
@@ -180,24 +180,31 @@
       ],
       [
         1201,
-        0.16
+        0.18
       ],
       [
         7803,
-        0.14
+        0.15
       ],
       [
         1184,
-        0.13
+        0.14
       ],
       [
         7665,
-        0.13
+        0.14
       ],
       [
-        661,
-        0.12
+        761,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.7,
+      "positive": 46,
+      "negative": 8,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

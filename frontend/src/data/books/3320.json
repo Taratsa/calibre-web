@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 6950,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "gay",
@@ -123,40 +123,40 @@
         16
       ],
       [
-        "lbl",
-        6
+        "spanyol",
+        15
       ],
       [
         "coming",
         13
       ],
       [
-        "anggt",
-        5
+        "alamat",
+        22
+      ],
+      [
+        "film",
+        19
+      ],
+      [
+        "lbl",
+        6
       ],
       [
         "iga",
         9
       ],
       [
-        "spanyol",
-        15
+        "anggt",
+        5
       ],
       [
-        "alamat",
-        22
+        "scorang",
+        8
       ],
       [
-        "lambda",
-        6
-      ],
-      [
-        "vitalku",
-        4
-      ],
-      [
-        "film",
-        19
+        "liberacion",
+        5
       ]
     ],
     "phrases": [
@@ -196,7 +196,7 @@
     "similar": [
       [
         3319,
-        0.27
+        0.29
       ],
       [
         3324,
@@ -204,20 +204,69 @@
       ],
       [
         3322,
-        0.26
+        0.27
       ],
       [
         3318,
-        0.24
+        0.25
       ],
       [
         3321,
-        0.23
+        0.24
       ],
       [
-        3347,
-        0.18
+        3323,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.55,
+      "positive": 90,
+      "negative": 26,
+      "trend": [
+        1,
+        0.75,
+        1,
+        0.88,
+        -0.23,
+        0.09,
+        0.71,
+        1,
+        null,
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        -0.14,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          31
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

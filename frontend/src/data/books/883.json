@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1829,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "paud",
@@ -105,36 +105,36 @@
         19
       ],
       [
-        "orangtua",
-        26
-      ],
-      [
         "ramah",
         43
       ],
       [
-        "terapis",
-        6
+        "orangtua",
+        26
       ],
       [
         "anak",
         62
       ],
       [
-        "bp-paud",
-        3
-      ],
-      [
-        "suryaman",
-        3
-      ],
-      [
-        "satuan",
-        10
+        "pendidikan",
+        36
       ],
       [
         "guru",
         20
+      ],
+      [
+        "terapis",
+        6
+      ],
+      [
+        "khusus",
+        22
+      ],
+      [
+        "usia",
+        17
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         869,
-        0.22
+        0.24
       ],
       [
         888,
-        0.18
-      ],
-      [
-        907,
-        0.17
-      ],
-      [
-        856,
-        0.17
+        0.22
       ],
       [
         854,
-        0.17
+        0.2
       ],
       [
-        363,
-        0.17
+        5614,
+        0.2
+      ],
+      [
+        907,
+        0.2
+      ],
+      [
+        856,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.96,
+      "positive": 96,
+      "negative": 2,
+      "trend": [
+        null,
+        0.67,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

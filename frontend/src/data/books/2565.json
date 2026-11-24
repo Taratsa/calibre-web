@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2198,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "orang",
@@ -111,24 +111,12 @@
         12
       ],
       [
-        "kurikulum",
-        6
-      ],
-      [
-        "penguji",
-        3
+        "orang",
+        28
       ],
       [
         "program",
         16
-      ],
-      [
-        "produktif",
-        7
-      ],
-      [
-        "keterampilan",
-        6
       ],
       [
         "sekolah",
@@ -139,12 +127,24 @@
         11
       ],
       [
-        "membuang-buang",
-        3
+        "kurikulum",
+        6
       ],
       [
-        "konten",
-        4
+        "individu",
+        10
+      ],
+      [
+        "produktif",
+        7
+      ],
+      [
+        "keterampilan",
+        6
+      ],
+      [
+        "pekerjaan",
+        11
       ]
     ],
     "phrases": [
@@ -167,29 +167,53 @@
     ],
     "similar": [
       [
-        2721,
-        0.19
+        7373,
+        0.21
       ],
       [
-        7373,
-        0.17
+        10828,
+        0.2
       ],
       [
         7003,
-        0.16
+        0.2
+      ],
+      [
+        2721,
+        0.2
       ],
       [
         881,
-        0.15
+        0.19
       ],
       [
         6976,
-        0.14
-      ],
-      [
-        913,
-        0.14
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 54,
+      "negative": 27,
+      "trend": [
+        0.73,
+        0.5,
+        null,
+        -0.14,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        -0.2,
+        0.6,
+        null,
+        null,
+        null,
+        1,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

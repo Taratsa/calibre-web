@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1893,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "saitō",
@@ -103,19 +103,11 @@
         25
       ],
       [
-        "degrowth",
-        5
-      ],
-      [
         "marx",
         15
       ],
       [
-        "anthropocene",
-        3
-      ],
-      [
-        "pdb",
+        "degrowth",
         5
       ],
       [
@@ -123,28 +115,36 @@
         10
       ],
       [
-        "pandemi",
+        "pdb",
         5
       ],
       [
-        "komunisme",
-        7
+        "anthropocene",
+        3
       ],
       [
         "kapitalisme",
         10
       ],
       [
+        "komunisme",
+        7
+      ],
+      [
+        "pandemi",
+        5
+      ],
+      [
         "iklim",
         6
       ],
       [
-        "eksemplar",
-        3
-      ],
-      [
         "krisis",
         7
+      ],
+      [
+        "pertumbuhan",
+        6
       ]
     ],
     "phrases": [
@@ -172,28 +172,35 @@
     "similar": [
       [
         3706,
-        0.15
+        0.19
       ],
       [
         7890,
-        0.14
-      ],
-      [
-        917,
-        0.13
+        0.17
       ],
       [
         7886,
-        0.13
+        0.17
       ],
       [
         1958,
-        0.13
+        0.17
       ],
       [
-        6784,
-        0.12
+        8000,
+        0.17
+      ],
+      [
+        14286,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 41,
+      "negative": 43,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 716,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "negara",
@@ -110,6 +110,10 @@
         8
       ],
       [
+        "anggaran",
+        7
+      ],
+      [
         "tersentral",
         3
       ],
@@ -118,47 +122,55 @@
         3
       ],
       [
-        "anggaran",
-        7
-      ],
-      [
-        "teknisi",
-        3
+        "perang",
+        9
       ],
       [
         "kontinum",
         3
       ],
       [
-        "pesawat",
-        4
+        "teknisi",
+        3
       ],
       [
-        "naif",
-        3
+        "negara",
+        11
+      ],
+      [
+        "pesawat",
+        4
       ],
       [
         "kontrol",
         5
       ],
       [
-        "perang",
-        9
-      ],
-      [
-        "pertahanan",
+        "naif",
         3
       ],
       [
-        "negara",
-        11
+        "kekuasaan",
+        6
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        7258,
+        12588,
+        0.19
+      ],
+      [
+        17303,
         0.13
+      ],
+      [
+        17937,
+        0.12
+      ],
+      [
+        8310,
+        0.12
       ],
       [
         7906,
@@ -167,19 +179,8 @@
       [
         2645,
         0.12
-      ],
-      [
-        3935,
-        0.11
-      ],
-      [
-        7259,
-        0.11
-      ],
-      [
-        2584,
-        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

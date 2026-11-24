@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1843,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "orang",
@@ -114,19 +114,23 @@
         13
       ],
       [
-        "diberitahu",
-        6
+        "pendidikan",
+        18
+      ],
+      [
+        "sekolah",
+        15
       ],
       [
         "publik",
         12
       ],
       [
-        "diajari",
-        4
+        "diberitahu",
+        6
       ],
       [
-        "sekolah",
+        "masyarakat",
         15
       ],
       [
@@ -134,20 +138,16 @@
         13
       ],
       [
-        "pendidikan",
+        "diajari",
+        4
+      ],
+      [
+        "orang",
         18
       ],
       [
-        "mengajarkan",
-        5
-      ],
-      [
-        "memaksimalkan",
-        3
-      ],
-      [
-        "diperintahkan",
-        4
+        "kelas",
+        8
       ],
       [
         "kaya",
@@ -183,24 +183,31 @@
       ],
       [
         2467,
-        0.24
+        0.29
       ],
       [
         2764,
-        0.18
+        0.17
       ],
       [
-        7248,
-        0.16
+        2565,
+        0.17
       ],
       [
-        2126,
-        0.13
+        2151,
+        0.15
       ],
       [
-        7451,
-        0.1
+        2075,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 30,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

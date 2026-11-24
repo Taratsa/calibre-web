@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 26631,
-    "longer_than": 82,
+    "longer_than": 91,
     "top": [
       [
         "wawu",
@@ -131,16 +131,16 @@
         107
       ],
       [
+        "raja",
+        231
+      ],
+      [
         "owutango",
         41
       ],
       [
         "wonu",
         43
-      ],
-      [
-        "yilo",
-        38
       ],
       [
         "tawu",
@@ -181,6 +181,76 @@
         16
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        3056,
+        0.39
+      ],
+      [
+        3642,
+        0.11
+      ],
+      [
+        5356,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 179,
+      "negative": 130,
+      "trend": [
+        0.63,
+        -0.45,
+        0,
+        0.26,
+        0.41,
+        0.74,
+        -0.1,
+        0.17,
+        0.06,
+        -0.1,
+        0.64,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          28
+        ],
+        [
+          "sadness",
+          22
+        ],
+        [
+          "surprise",
+          17
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

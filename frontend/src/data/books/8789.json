@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8257,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "perempuan",
@@ -103,48 +103,48 @@
         108
       ],
       [
-        "komnas",
-        65
-      ],
-      [
         "kekerasan",
         130
-      ],
-      [
-        "curiae",
-        25
       ],
       [
         "perempuan",
         149
       ],
       [
-        "amicus",
-        23
+        "komnas",
+        65
+      ],
+      [
+        "curiae",
+        25
+      ],
+      [
+        "korban",
+        78
       ],
       [
         "pemohon",
         31
       ],
       [
-        "termohon",
-        19
+        "amicus",
+        23
       ],
       [
         "permohonan",
         49
       ],
       [
-        "permendikbudristek",
-        14
+        "termohon",
+        19
       ],
       [
         "uji",
         39
       ],
       [
-        "korban",
-        78
+        "permendikbudristek",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         8792,
-        0.38
-      ],
-      [
-        8844,
-        0.31
+        0.4
       ],
       [
         6954,
-        0.3
+        0.34
+      ],
+      [
+        8844,
+        0.33
       ],
       [
         8788,
-        0.29
+        0.32
       ],
       [
         8791,
-        0.29
+        0.32
       ],
       [
         8790,
-        0.29
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 140,
+      "negative": 175,
+      "trend": [
+        -0.39,
+        -0.38,
+        -0.18,
+        0.5,
+        0,
+        0.27,
+        0.36,
+        -0.73,
+        -0.4,
+        1,
+        -0.28,
+        0.38,
+        0.5,
+        -0.75,
+        0.1,
+        0.41
+      ],
+      "emotions": [
+        [
+          "anger",
+          131
+        ],
+        [
+          "trust",
+          20
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

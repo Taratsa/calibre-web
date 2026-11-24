@@ -66,7 +66,7 @@
   ],
   "text": {
     "words": 17277,
-    "longer_than": 73,
+    "longer_than": 87,
     "top": [
       [
         "negara",
@@ -123,48 +123,48 @@
         47
       ],
       [
-        "luddite",
-        12
-      ],
-      [
-        "antiperadaban",
-        10
-      ],
-      [
         "pekerja",
         54
+      ],
+      [
+        "negara",
+        82
       ],
       [
         "anarkis",
         34
       ],
       [
-        "teknologi",
-        38
+        "hidup",
+        77
       ],
       [
-        "ishmael",
-        8
+        "luddite",
+        12
+      ],
+      [
+        "air",
+        58
+      ],
+      [
+        "antiperadaban",
+        10
       ],
       [
         "sistem",
         54
       ],
       [
-        "institusi",
-        27
+        "masyarakat",
+        60
       ],
       [
-        "kapitalisme",
-        28
+        "sosial",
+        53
       ],
       [
-        "primitivis",
-        8
-      ],
-      [
-        "naomi",
-        8
+        "teknologi",
+        38
       ]
     ],
     "phrases": [
@@ -203,29 +203,86 @@
     ],
     "similar": [
       [
-        7057,
-        0.28
-      ],
-      [
-        2586,
-        0.27
-      ],
-      [
         4700,
-        0.27
+        0.31
       ],
       [
         7463,
-        0.26
+        0.3
+      ],
+      [
+        7057,
+        0.29
+      ],
+      [
+        2586,
+        0.29
       ],
       [
         2432,
-        0.24
+        0.29
       ],
       [
-        2133,
-        0.23
+        4684,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 294,
+      "negative": 248,
+      "trend": [
+        0.5,
+        0.03,
+        0.36,
+        0.38,
+        0.09,
+        0.33,
+        -0.42,
+        0.44,
+        -0.2,
+        0.14,
+        0,
+        0.5,
+        0.02,
+        -0.13,
+        -0.02,
+        -0.3
+      ],
+      "emotions": [
+        [
+          "anger",
+          47
+        ],
+        [
+          "sadness",
+          24
+        ],
+        [
+          "joy",
+          19
+        ],
+        [
+          "fear",
+          16
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

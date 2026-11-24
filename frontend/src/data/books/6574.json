@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 5160,
-    "longer_than": 44,
+    "longer_than": 73,
     "top": [
       [
         "orang",
@@ -116,19 +116,15 @@
         15
       ],
       [
-        "benkoelen",
-        9
-      ],
-      [
         "soedah",
         14
       ],
       [
-        "boeloe",
-        10
+        "benkoelen",
+        9
       ],
       [
-        "boeroeng",
+        "boeloe",
         10
       ],
       [
@@ -136,16 +132,20 @@
         12
       ],
       [
+        "boeroeng",
+        10
+      ],
+      [
         "roepa",
         11
       ],
       [
-        "djocjakarta",
-        7
+        "orang",
+        69
       ],
       [
-        "dehoeloe",
-        6
+        "boelan",
+        11
       ]
     ],
     "phrases": [
@@ -189,7 +189,7 @@
       ],
       [
         6567,
-        0.42
+        0.43
       ],
       [
         6566,
@@ -197,16 +197,40 @@
       ],
       [
         4635,
-        0.22
+        0.23
       ],
       [
         756,
-        0.22
+        0.23
       ],
       [
         771,
-        0.2
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 40,
+      "negative": 32,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -1,
+        -0.33,
+        1,
+        null,
+        null,
+        0.33,
+        0.06,
+        0.2,
+        null,
+        0,
+        0.33,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

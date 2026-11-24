@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2588,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "tuhan",
@@ -108,27 +108,35 @@
         20
       ],
       [
+        "hamzah",
+        15
+      ],
+      [
         "rintrik",
         8
       ],
       [
-        "hamzah",
-        15
+        "tuhan",
+        32
       ],
       [
         "amir",
         14
       ],
       [
-        "aveling",
-        6
-      ],
-      [
         "cerpennya",
         8
       ],
       [
+        "aveling",
+        6
+      ],
+      [
         "cerpen-cerpen",
+        7
+      ],
+      [
+        "rifat",
         7
       ],
       [
@@ -136,16 +144,8 @@
         4
       ],
       [
-        "tuhan",
-        32
-      ],
-      [
-        "rifat",
-        7
-      ],
-      [
-        "mistisisme",
-        6
+        "penghayatan",
+        8
       ]
     ],
     "phrases": [
@@ -185,11 +185,11 @@
     "similar": [
       [
         4320,
-        0.36
+        0.35
       ],
       [
         4512,
-        0.32
+        0.34
       ],
       [
         4247,
@@ -204,9 +204,10 @@
         0.27
       ],
       [
-        4446,
-        0.22
+        4321,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

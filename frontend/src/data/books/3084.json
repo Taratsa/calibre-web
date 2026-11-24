@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1991,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "desa",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "mangoli",
-        14
-      ],
-      [
         "kou",
         18
       ],
       [
-        "nuklir",
-        15
-      ],
-      [
-        "perusahaan",
-        33
+        "mangoli",
+        14
       ],
       [
         "desa",
         41
       ],
       [
-        "radioaktif",
-        7
+        "perusahaan",
+        33
       ],
       [
-        "limbah",
-        12
+        "nuklir",
+        15
       ],
       [
         "kebun",
         19
       ],
       [
+        "limbah",
+        12
+      ],
+      [
+        "radioaktif",
+        7
+      ],
+      [
         "jepang",
         12
       ],
       [
-        "isotop",
-        3
+        "laut",
+        16
+      ],
+      [
+        "izin",
+        15
       ],
       [
         "diolah",
         10
-      ],
-      [
-        "fukushima",
-        3
       ]
     ],
     "phrases": [
@@ -183,29 +183,57 @@
     ],
     "similar": [
       [
+        8820,
+        0.16
+      ],
+      [
         8503,
-        0.14
+        0.16
       ],
       [
         8636,
-        0.13
+        0.15
       ],
       [
         6816,
-        0.13
+        0.15
       ],
       [
-        8820,
-        0.13
+        8701,
+        0.15
       ],
       [
-        8505,
-        0.12
-      ],
-      [
-        8560,
-        0.11
+        9154,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.26,
+      "positive": 21,
+      "negative": 36,
+      "trend": [],
+      "emotions": [
+        [
+          "fear",
+          17
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

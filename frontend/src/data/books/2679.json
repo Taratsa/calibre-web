@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 3574,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "debord",
@@ -115,12 +115,12 @@
         21
       ],
       [
-        "détournement",
-        9
-      ],
-      [
         "tesis",
         21
+      ],
+      [
+        "détournement",
+        9
       ],
       [
         "komoditas",
@@ -135,20 +135,20 @@
         10
       ],
       [
-        "comments",
-        5
+        "seni",
+        14
+      ],
+      [
+        "kapitalisme",
+        10
       ],
       [
         "terorisme",
         6
       ],
       [
-        "selebritas",
-        3
-      ],
-      [
-        "iklan",
-        7
+        "menggambarkan",
+        11
       ]
     ],
     "phrases": [
@@ -176,28 +176,52 @@
     "similar": [
       [
         7893,
-        0.27
+        0.29
       ],
       [
         2221,
-        0.27
+        0.29
       ],
       [
         2009,
-        0.25
+        0.26
       ],
       [
         7255,
-        0.25
+        0.26
       ],
       [
         2701,
-        0.19
+        0.21
       ],
       [
-        8061,
-        0.19
+        2213,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 46,
+      "negative": 35,
+      "trend": [
+        null,
+        null,
+        null,
+        0.2,
+        null,
+        null,
+        0.14,
+        -0.11,
+        0.2,
+        0.5,
+        -0.43,
+        null,
+        -0.43,
+        0.6,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

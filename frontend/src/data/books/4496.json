@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2551,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "dunia",
@@ -112,6 +112,10 @@
         13
       ],
       [
+        "dunia",
+        57
+      ],
+      [
         "alternatif",
         25
       ],
@@ -120,32 +124,28 @@
         4
       ],
       [
-        "kumpulannya",
-        5
-      ],
-      [
         "absurd",
         9
-      ],
-      [
-        "penafsirannya",
-        5
-      ],
-      [
-        "gibran",
-        5
-      ],
-      [
-        "cerpen-cerpen",
-        5
       ],
       [
         "kumpulan",
         15
       ],
       [
+        "kumpulannya",
+        5
+      ],
+      [
+        "penafsirannya",
+        5
+      ],
+      [
         "fiksi",
         8
+      ],
+      [
+        "gibran",
+        5
       ]
     ],
     "phrases": [
@@ -189,7 +189,7 @@
       ],
       [
         4458,
-        0.26
+        0.28
       ],
       [
         4247,
@@ -205,8 +205,9 @@
       ],
       [
         4306,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

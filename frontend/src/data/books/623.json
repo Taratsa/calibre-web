@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 71705,
-    "longer_than": 96,
+    "longer_than": 98,
     "top": [
       [
         "raffles",
@@ -101,12 +101,16 @@
         248
       ],
       [
+        "java",
+        371
+      ],
+      [
         "mackenzie",
         157
       ],
       [
-        "java",
-        371
+        "land",
+        352
       ],
       [
         "minto",
@@ -117,24 +121,20 @@
         126
       ],
       [
-        "land",
-        352
+        "government",
+        287
       ],
       [
         "revenue",
         161
       ],
       [
-        "government",
-        287
+        "districts",
+        147
       ],
       [
         "crawfurd",
         102
-      ],
-      [
-        "regents",
-        114
       ]
     ],
     "phrases": [
@@ -178,11 +178,11 @@
       ],
       [
         767,
-        0.24
+        0.25
       ],
       [
         8360,
-        0.23
+        0.24
       ],
       [
         649,
@@ -196,6 +196,7 @@
         746,
         0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

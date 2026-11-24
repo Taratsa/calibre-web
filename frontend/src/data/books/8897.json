@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 29476,
-    "longer_than": 84,
+    "longer_than": 92,
     "top": [
       [
         "ham",
@@ -109,40 +109,40 @@
         337
       ],
       [
-        "pokja",
-        125
-      ],
-      [
         "mediasi",
         187
+      ],
+      [
+        "pokja",
+        125
       ],
       [
         "penanganan",
         196
       ],
       [
-        "penegakan",
-        117
-      ],
-      [
         "pelanggaran",
         166
       ],
       [
-        "rempang",
-        45
-      ],
-      [
-        "rekomendasi",
-        116
+        "penegakan",
+        117
       ],
       [
         "penyelidikan",
         111
       ],
       [
-        "pengadu",
-        60
+        "rekomendasi",
+        116
+      ],
+      [
+        "pemantauan",
+        88
+      ],
+      [
+        "rempang",
+        45
       ]
     ],
     "phrases": [
@@ -182,28 +182,73 @@
     "similar": [
       [
         8924,
-        0.57
+        0.61
       ],
       [
         8882,
-        0.55
+        0.57
       ],
       [
         8950,
-        0.52
+        0.56
       ],
       [
         8971,
-        0.52
+        0.56
       ],
       [
         8947,
-        0.51
+        0.54
       ],
       [
-        8871,
-        0.5
+        8939,
+        0.53
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 408,
+      "negative": 319,
+      "trend": [
+        -0.19,
+        0.05,
+        0.55,
+        0.68,
+        0.06,
+        0.04,
+        0.18,
+        0.51,
+        0,
+        0.63,
+        0.5,
+        0.2,
+        0.3,
+        -0.02,
+        -0.45,
+        -0.44
+      ],
+      "emotions": [
+        [
+          "anger",
+          246
+        ],
+        [
+          "trust",
+          61
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "fear",
+          14
+        ],
+        [
+          "sadness",
+          11
+        ]
+      ]
+    }
   }
 }

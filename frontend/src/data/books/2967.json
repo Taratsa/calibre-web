@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 7820,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "semi",
@@ -103,16 +103,16 @@
     ],
     "distinct": [
       [
+        "semi",
+        97
+      ],
+      [
         "kitlv",
         62
       ],
       [
         "canvas",
         48
-      ],
-      [
-        "semi",
-        97
       ],
       [
         "soure",
@@ -123,16 +123,16 @@
         27
       ],
       [
-        "lasenas",
-        24
-      ],
-      [
         "leiden",
         67
       ],
       [
         "troops",
         48
+      ],
+      [
+        "lasenas",
+        24
       ],
       [
         "kanvas",
@@ -143,12 +143,12 @@
         40
       ],
       [
-        "explanation",
-        49
+        "denpasar",
+        56
       ],
       [
-        "badung",
-        38
+        "explanation",
+        49
       ]
     ],
     "phrases": [
@@ -187,21 +187,22 @@
     ],
     "similar": [
       [
-        3052,
-        0.12
+        4404,
+        0.13
       ],
       [
         5974,
-        0.11
+        0.12
       ],
       [
-        4404,
-        0.11
+        3052,
+        0.12
       ],
       [
         4462,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

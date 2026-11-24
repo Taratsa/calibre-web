@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1947,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "seni",
@@ -96,35 +96,39 @@
     ],
     "distinct": [
       [
-        "setanisme",
-        5
-      ],
-      [
         "seni",
         26
+      ],
+      [
+        "setanisme",
+        5
       ],
       [
         "rupa",
         24
       ],
       [
-        "iklan",
-        11
-      ],
-      [
         "persen",
         13
+      ],
+      [
+        "iklan",
+        11
       ],
       [
         "urban",
         10
       ],
       [
+        "fantasi",
+        7
+      ],
+      [
         "gedongan",
         4
       ],
       [
-        "fantasi",
+        "pameran",
         7
       ],
       [
@@ -134,10 +138,6 @@
       [
         "yuliman",
         3
-      ],
-      [
-        "pameran",
-        7
       ],
       [
         "kardinal",
@@ -188,21 +188,22 @@
         0.24
       ],
       [
+        4570,
+        0.22
+      ],
+      [
         4155,
         0.22
       ],
       [
         4291,
-        0.21
+        0.22
       ],
       [
-        4570,
+        4196,
         0.2
-      ],
-      [
-        4160,
-        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

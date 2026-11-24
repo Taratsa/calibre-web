@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1869,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "perempuan",
@@ -114,12 +114,20 @@
         6
       ],
       [
+        "wanita",
+        24
+      ],
+      [
+        "perempuan",
+        27
+      ],
+      [
         "patriarki",
         9
       ],
       [
-        "wanita",
-        24
+        "ruang",
+        22
       ],
       [
         "rojava",
@@ -130,28 +138,20 @@
         5
       ],
       [
-        "perempuan",
-        27
-      ],
-      [
         "patriarkal",
         5
       ],
       [
-        "ruang",
-        22
-      ],
-      [
-        "komune",
-        5
-      ],
-      [
-        "terhubung",
-        6
+        "desa",
+        13
       ],
       [
         "etika",
         7
+      ],
+      [
+        "komune",
+        5
       ]
     ],
     "phrases": [
@@ -175,28 +175,35 @@
     "similar": [
       [
         2293,
-        0.24
+        0.27
       ],
       [
         2093,
-        0.23
+        0.27
       ],
       [
         2415,
-        0.23
+        0.26
       ],
       [
         2156,
-        0.22
+        0.26
+      ],
+      [
+        2589,
+        0.26
       ],
       [
         7144,
-        0.2
-      ],
-      [
-        7544,
-        0.2
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 56,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

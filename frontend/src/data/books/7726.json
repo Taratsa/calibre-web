@@ -61,7 +61,7 @@
   ],
   "text": {
     "words": 4981,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "tiada",
@@ -114,24 +114,28 @@
     ],
     "distinct": [
       [
-        "tjinta",
-        28
+        "tiada",
+        56
       ],
       [
-        "ajahku",
-        13
+        "tjinta",
+        28
       ],
       [
         "perdamaian",
         39
       ],
       [
-        "tiada",
-        56
+        "ajahku",
+        13
       ],
       [
         "nelajan",
         12
+      ],
+      [
+        "manusia",
+        55
       ],
       [
         "penjair",
@@ -146,20 +150,16 @@
         7
       ],
       [
-        "nazim",
-        6
-      ],
-      [
         "dibumi",
         10
       ],
       [
-        "tjutjuku",
+        "nazim",
         6
       ],
       [
-        "nagasaki",
-        7
+        "atom",
+        12
       ]
     ],
     "phrases": [
@@ -199,28 +199,29 @@
     "similar": [
       [
         4886,
-        0.16
+        0.18
       ],
       [
         7651,
-        0.15
-      ],
-      [
-        277,
-        0.15
+        0.17
       ],
       [
         1288,
-        0.15
+        0.17
+      ],
+      [
+        277,
+        0.17
       ],
       [
         4879,
-        0.12
+        0.15
       ],
       [
         4750,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

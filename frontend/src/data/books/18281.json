@@ -1,0 +1,90 @@
+{
+  "id": 18281,
+  "title": "SchoolOnffLine: Konfigurasi /etc/resolv.conf DNS resolver",
+  "slug": "schoolonffline-konfigurasi-etc-resolv-conf-dns-resolver-onno-widodo-purbo",
+  "slugBase": "schoolonffline-konfigurasi-etc-resolv-conf-dns-resolver-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Distro_Linux",
+    "Linux",
+    "SchoolOnffLine"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-01-06",
+  "timestamp": "2026-11-24 04:12:46.534283",
+  "last_modified": "2026-11-24 04:12:46.534287",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:053f7088-1f6c-56de-817d-e9e5db9a0adc"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/18281?v=1795468366",
+  "cover_og_url": "/cover/18281/og?v=1795468366",
+  "url": "/book/schoolonffline-konfigurasi-etc-resolv-conf-dns-resolver-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Edit # vi /etc/resolv.conf Ubah nameserver 127.0.0.1 nameserver 203.34.118.10 nameserver 203.34.118.12 nameserver 208.67.222.222 nameserver 208.67.220.220 Backup Konfigurasi DNS Backup konfigurasi DNS terdapat di /etc/resolv.conf.nawala Copykan ke # cp /etc/resolv.conf.nawala /etc/resolv.conf Pranala Menarik Distro SchoolOnffLine SchoolOnffLine: Manual Administrator SchoolOnffLine: Server",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2341,
+      "name": "SchoolOnffLine_ Konfigurasi _etc_resolv.co - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 66,
+    "longer_than": 9,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        19823,
+        0.81
+      ],
+      [
+        17126,
+        0.69
+      ],
+      [
+        17721,
+        0.59
+      ],
+      [
+        17973,
+        0.55
+      ],
+      [
+        13085,
+        0.49
+      ],
+      [
+        15255,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
+}

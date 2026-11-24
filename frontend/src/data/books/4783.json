@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 775,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "fiksi",
@@ -103,28 +103,32 @@
         23
       ],
       [
-        "autobiografi",
-        3
-      ],
-      [
-        "non-fiksi",
-        3
-      ],
-      [
         "kebenaran",
         14
       ],
       [
-        "diverifikasi",
-        4
+        "autobiografi",
+        3
       ],
       [
         "biografi",
         5
       ],
       [
+        "non-fiksi",
+        3
+      ],
+      [
+        "diverifikasi",
+        4
+      ],
+      [
         "fiktif",
         4
+      ],
+      [
+        "realitas",
+        6
       ],
       [
         "chairil",
@@ -133,10 +137,6 @@
       [
         "jassin",
         3
-      ],
-      [
-        "realitas",
-        6
       ],
       [
         "pembelaan",
@@ -151,16 +151,21 @@
     "similar": [
       [
         4366,
-        0.21
+        0.22
       ],
       [
         4545,
-        0.13
+        0.14
+      ],
+      [
+        4542,
+        0.11
       ],
       [
         5672,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

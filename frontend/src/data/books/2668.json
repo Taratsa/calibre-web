@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2435,
-    "longer_than": 29,
+    "longer_than": 64,
     "top": [
       [
         "dunia",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "liar",
+        14
+      ],
+      [
         "destruksi",
         6
       ],
@@ -107,20 +111,24 @@
         8
       ],
       [
-        "liar",
-        14
-      ],
-      [
         "anarki",
         9
+      ],
+      [
+        "utopia",
+        7
       ],
       [
         "keliaran",
         5
       ],
       [
-        "utopia",
-        7
+        "hasrat",
+        9
+      ],
+      [
+        "serangan",
+        11
       ],
       [
         "flower",
@@ -135,15 +143,7 @@
         3
       ],
       [
-        "dipolitisasi",
-        3
-      ],
-      [
         "nihilis",
-        4
-      ],
-      [
-        "stagnasi",
         4
       ]
     ],
@@ -184,10 +184,18 @@
     "similar": [
       [
         2167,
-        0.83
+        0.84
+      ],
+      [
+        2787,
+        0.24
       ],
       [
         9193,
+        0.23
+      ],
+      [
+        2006,
         0.22
       ],
       [
@@ -195,17 +203,66 @@
         0.22
       ],
       [
-        2787,
-        0.2
-      ],
-      [
         2638,
-        0.19
-      ],
-      [
-        2006,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 56,
+      "negative": 41,
+      "trend": [
+        -0.67,
+        null,
+        0.2,
+        null,
+        null,
+        -0.67,
+        0.09,
+        0.25,
+        0.14,
+        0.5,
+        0,
+        null,
+        0.11,
+        null,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

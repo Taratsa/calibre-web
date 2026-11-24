@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4936,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "seni",
@@ -116,32 +116,32 @@
         24
       ],
       [
-        "spesialisme",
-        8
+        "gerakan",
+        61
       ],
       [
         "acuan",
         25
       ],
       [
-        "berkarya",
-        16
-      ],
-      [
-        "geometrik",
-        7
+        "spesialisme",
+        8
       ],
       [
         "bandung",
         34
       ],
       [
-        "gerakan",
-        61
+        "berkarya",
+        16
       ],
       [
-        "lukis",
-        12
+        "aliran",
+        25
+      ],
+      [
+        "geometrik",
+        7
       ]
     ],
     "phrases": [
@@ -181,11 +181,11 @@
     "similar": [
       [
         4475,
-        0.24
+        0.27
       ],
       [
         4570,
-        0.23
+        0.24
       ],
       [
         4484,
@@ -193,16 +193,40 @@
       ],
       [
         4133,
-        0.18
-      ],
-      [
-        4335,
-        0.17
+        0.19
       ],
       [
         4196,
-        0.17
+        0.19
+      ],
+      [
+        4335,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 57,
+      "negative": 48,
+      "trend": [
+        null,
+        1,
+        -0.71,
+        null,
+        0.5,
+        0.14,
+        null,
+        null,
+        -0.71,
+        -0.33,
+        null,
+        null,
+        0.2,
+        -0.08,
+        0.29,
+        -0.11
+      ],
+      "emotions": []
+    }
   }
 }

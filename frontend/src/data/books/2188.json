@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1534,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "afinitas",
@@ -119,60 +119,67 @@
         10
       ],
       [
-        "anarkisme",
-        8
-      ],
-      [
         "partai",
         12
       ],
       [
-        "solusinya",
-        3
+        "anarkisme",
+        8
       ],
       [
         "hierarki",
         4
       ],
       [
-        "pertemanan",
-        3
+        "membahas",
+        6
       ],
       [
         "contoh",
         10
       ],
       [
-        "lingkar",
+        "pertemanan",
+        3
+      ],
+      [
+        "solusinya",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        3946,
+        7046,
         0.21
       ],
       [
-        7046,
+        2521,
         0.2
       ],
       [
-        7544,
-        0.19
+        1921,
+        0.2
       ],
       [
         2021,
+        0.2
+      ],
+      [
+        3946,
         0.19
       ],
       [
-        2521,
-        0.18
-      ],
-      [
-        1921,
-        0.17
+        7544,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 31,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

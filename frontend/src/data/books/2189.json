@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1168,
-    "longer_than": 15,
+    "longer_than": 54,
     "top": [
       [
         "hidup",
@@ -99,39 +99,19 @@
     ],
     "distinct": [
       [
-        "ktk",
-        3
+        "kau",
+        12
+      ],
+      [
+        "hidup",
+        23
       ],
       [
         "katalis",
         5
       ],
       [
-        "posting",
-        4
-      ],
-      [
-        "kau",
-        12
-      ],
-      [
-        "jalani",
-        4
-      ],
-      [
-        "bertahan",
-        9
-      ],
-      [
-        "kontrak",
-        5
-      ],
-      [
-        "aktivitas",
-        8
-      ],
-      [
-        "rutinitas",
+        "ktk",
         3
       ],
       [
@@ -139,12 +119,32 @@
         14
       ],
       [
-        "pemerasan",
+        "posting",
+        4
+      ],
+      [
+        "bertahan",
+        9
+      ],
+      [
+        "aktivitas",
+        8
+      ],
+      [
+        "jalani",
+        4
+      ],
+      [
+        "kontrak",
+        5
+      ],
+      [
+        "rutinitas",
         3
       ],
       [
-        "keseharian",
-        3
+        "proyek",
+        6
       ]
     ],
     "phrases": [
@@ -164,19 +164,19 @@
     "similar": [
       [
         7058,
-        0.72
+        0.76
       ],
       [
         7462,
-        0.34
+        0.36
       ],
       [
         2537,
-        0.3
+        0.33
       ],
       [
         1995,
-        0.24
+        0.22
       ],
       [
         2084,
@@ -186,6 +186,7 @@
         1803,
         0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

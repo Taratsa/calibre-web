@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 338,
-    "longer_than": 3,
+    "longer_than": 32,
     "top": [
       [
         "imperialisme",
@@ -106,12 +106,12 @@
         5
       ],
       [
-        "beratoes",
-        3
-      ],
-      [
         "imperialisme",
         8
+      ],
+      [
+        "beratoes",
+        3
       ],
       [
         "nippon",
@@ -126,24 +126,24 @@
         6
       ],
       [
-        "bangsa-bangsa",
-        3
-      ],
-      [
         "maret",
         5
+      ],
+      [
+        "bangsa-bangsa",
+        3
       ],
       [
         "rantai",
         3
       ],
       [
-        "terima",
-        3
-      ],
-      [
         "barat",
         4
+      ],
+      [
+        "terima",
+        3
       ]
     ],
     "phrases": [
@@ -174,21 +174,22 @@
         0.28
       ],
       [
-        4716,
+        1899,
         0.11
+      ],
+      [
+        544,
+        0.11
+      ],
+      [
+        4716,
+        0.1
       ],
       [
         3730,
-        0.11
-      ],
-      [
-        1425,
-        0.11
-      ],
-      [
-        7608,
-        0.11
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

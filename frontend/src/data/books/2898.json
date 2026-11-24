@@ -42,7 +42,7 @@
   ],
   "text": {
     "words": 13529,
-    "longer_than": 68,
+    "longer_than": 85,
     "top": [
       [
         "sang",
@@ -119,27 +119,27 @@
         62
       ],
       [
+        "yen",
+        69
+      ],
+      [
         "bagaspati",
         37
       ],
       [
-        "yen",
-        69
+        "sang",
+        147
       ],
       [
         "bancak",
         30
       ],
       [
-        "carangwaspa",
-        26
-      ],
-      [
         "jangkung",
         44
       ],
       [
-        "keyong",
+        "carangwaspa",
         26
       ]
     ],
@@ -180,28 +180,85 @@
     "similar": [
       [
         5374,
-        0.63
+        0.64
       ],
       [
         1755,
-        0.38
+        0.4
       ],
       [
         5223,
-        0.38
+        0.39
       ],
       [
         5528,
-        0.35
+        0.36
       ],
       [
         3538,
-        0.34
+        0.36
       ],
       [
         1484,
-        0.33
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 105,
+      "negative": 76,
+      "trend": [
+        0.3,
+        -0.04,
+        0.6,
+        0.31,
+        -0.33,
+        -0.43,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          29
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

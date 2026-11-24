@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2070,
-    "longer_than": 26,
+    "longer_than": 62,
     "top": [
       [
         "perempuan",
@@ -119,20 +119,8 @@
         5
       ],
       [
-        "rojava",
-        4
-      ],
-      [
-        "internasionalis",
-        4
-      ],
-      [
-        "kurdi",
-        4
-      ],
-      [
-        "feminis",
-        5
+        "melawan",
+        16
       ],
       [
         "kapitalis",
@@ -143,8 +131,20 @@
         9
       ],
       [
-        "liberal",
-        7
+        "wanita",
+        11
+      ],
+      [
+        "rojava",
+        4
+      ],
+      [
+        "internasionalis",
+        4
+      ],
+      [
+        "kurdi",
+        4
       ]
     ],
     "phrases": [
@@ -176,28 +176,81 @@
     "similar": [
       [
         2778,
-        0.27
+        0.31
       ],
       [
         2707,
-        0.26
+        0.31
       ],
       [
         2497,
-        0.25
+        0.28
       ],
       [
         2239,
-        0.24
-      ],
-      [
-        7211,
-        0.23
+        0.27
       ],
       [
         2587,
-        0.21
+        0.27
+      ],
+      [
+        7211,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 38,
+      "negative": 53,
+      "trend": [
+        -0.71,
+        -0.14,
+        0.43,
+        -1,
+        null,
+        null,
+        null,
+        -0.6,
+        -0.2,
+        0.2,
+        null,
+        -0.5,
+        null,
+        -0.43,
+        0.5,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          27
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

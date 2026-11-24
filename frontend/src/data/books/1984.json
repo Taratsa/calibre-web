@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 754,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "destroy",
@@ -111,15 +111,23 @@
         7
       ],
       [
-        "terafiliasi",
-        4
-      ],
-      [
         "israel",
         6
       ],
       [
+        "terafiliasi",
+        4
+      ],
+      [
         "platform",
+        7
+      ],
+      [
+        "perlawanan",
+        9
+      ],
+      [
+        "solidaritas",
         7
       ],
       [
@@ -127,12 +135,8 @@
         7
       ],
       [
-        "solidaritas",
-        7
-      ],
-      [
-        "perlawanan",
-        9
+        "penindasan",
+        5
       ],
       [
         "pemutusan",
@@ -141,10 +145,6 @@
       [
         "infrastruktur",
         4
-      ],
-      [
-        "penindasan",
-        5
       ]
     ],
     "phrases": [],
@@ -154,25 +154,26 @@
         0.22
       ],
       [
-        6867,
-        0.2
-      ],
-      [
         2395,
-        0.2
+        0.19
       ],
       [
         7216,
         0.19
       ],
       [
-        7232,
+        6867,
         0.18
       ],
       [
         2060,
+        0.18
+      ],
+      [
+        7232,
         0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

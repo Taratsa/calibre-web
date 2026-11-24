@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 2901,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "anarkis",
@@ -127,16 +127,16 @@
         14
       ],
       [
+        "anarkis",
+        30
+      ],
+      [
         "fedeli",
         9
       ],
       [
         "cdm",
         9
-      ],
-      [
-        "anarkis",
-        30
       ],
       [
         "olivetti",
@@ -147,16 +147,16 @@
         8
       ],
       [
+        "perpustakaan",
+        18
+      ],
+      [
         "perpustakaannya",
         6
       ],
       [
         "luce",
         6
-      ],
-      [
-        "ivrea",
-        4
       ]
     ],
     "phrases": [
@@ -200,24 +200,31 @@
       ],
       [
         9166,
-        0.31
+        0.32
       ],
       [
         7038,
-        0.18
+        0.19
+      ],
+      [
+        2001,
+        0.17
       ],
       [
         7219,
-        0.16
+        0.17
       ],
       [
         8067,
-        0.15
-      ],
-      [
-        2136,
-        0.15
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 35,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

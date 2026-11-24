@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4572,
-    "longer_than": 41,
+    "longer_than": 72,
     "top": [
       [
         "perempuan",
@@ -107,16 +107,20 @@
         64
       ],
       [
+        "perempuan",
+        132
+      ],
+      [
         "kurdi",
         37
       ],
       [
-        "konfederalisme",
-        28
-      ],
-      [
         "gender",
         60
+      ],
+      [
+        "konfederalisme",
+        28
       ],
       [
         "militerisme",
@@ -127,20 +131,16 @@
         17
       ],
       [
-        "perempuan",
-        132
+        "dominasi",
+        49
       ],
       [
         "feminisme",
         26
       ],
       [
-        "dominasi",
-        49
-      ],
-      [
-        "patriarkis",
-        18
+        "demokratis",
+        40
       ],
       [
         "feminis",
@@ -184,28 +184,73 @@
     "similar": [
       [
         2293,
-        0.39
+        0.41
       ],
       [
         2093,
-        0.29
-      ],
-      [
-        2389,
-        0.29
+        0.33
       ],
       [
         7144,
-        0.28
+        0.31
+      ],
+      [
+        2389,
+        0.3
       ],
       [
         7351,
-        0.28
+        0.3
       ],
       [
         3778,
-        0.27
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 50,
+      "negative": 67,
+      "trend": [
+        0.33,
+        0.43,
+        0,
+        -0.33,
+        -1,
+        0,
+        -0.6,
+        0,
+        -0.83,
+        0,
+        0.33,
+        0.2,
+        0.2,
+        0.25,
+        -0.45,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          54
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

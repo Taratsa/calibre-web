@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 891,
-    "longer_than": 10,
+    "longer_than": 50,
     "top": [
       [
         "kesusasteraan",
@@ -136,38 +136,42 @@
         3
       ],
       [
-        "e-book",
-        3
-      ],
-      [
         "gejala",
         5
       ],
       [
-        "kenali",
-        3
+        "revolusi",
+        7
       ],
       [
         "membawakan",
         4
       ],
       [
-        "revolusi",
-        7
+        "e-book",
+        3
+      ],
+      [
+        "manusia",
+        11
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7738,
-        0.74
+        0.71
       ],
       [
         6749,
-        0.32
+        0.33
       ],
       [
         3996,
+        0.25
+      ],
+      [
+        4016,
         0.24
       ],
       [
@@ -175,13 +179,10 @@
         0.24
       ],
       [
-        4016,
-        0.24
-      ],
-      [
         4008,
         0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

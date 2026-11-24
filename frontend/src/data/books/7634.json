@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1609,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "people",
@@ -122,6 +122,10 @@
         5
       ],
       [
+        "people",
+        11
+      ],
+      [
         "yesterday",
         5
       ],
@@ -134,8 +138,12 @@
         5
       ],
       [
-        "people",
-        11
+        "struggle",
+        7
+      ],
+      [
+        "hands",
+        6
       ],
       [
         "beirut",
@@ -144,14 +152,6 @@
       [
         "eternally",
         3
-      ],
-      [
-        "hands",
-        6
-      ],
-      [
-        "struggle",
-        7
       ]
     ],
     "phrases": [
@@ -175,11 +175,11 @@
     "similar": [
       [
         4870,
-        0.29
+        0.3
       ],
       [
         587,
-        0.29
+        0.3
       ],
       [
         5957,
@@ -197,6 +197,7 @@
         786,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

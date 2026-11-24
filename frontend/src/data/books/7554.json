@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 12955,
-    "longer_than": 67,
+    "longer_than": 84,
     "top": [
       [
         "party",
@@ -122,20 +122,24 @@
         80
       ],
       [
-        "bourgeoisie",
-        43
-      ],
-      [
         "people",
         101
       ],
       [
-        "struggle",
-        62
+        "bourgeoisie",
+        43
       ],
       [
         "indonesian",
         80
+      ],
+      [
+        "national",
+        82
+      ],
+      [
+        "struggle",
+        62
       ],
       [
         "government",
@@ -144,10 +148,6 @@
       [
         "peasants",
         43
-      ],
-      [
-        "national",
-        82
       ],
       [
         "dutch",
@@ -195,28 +195,29 @@
     "similar": [
       [
         6292,
-        0.58
+        0.59
       ],
       [
         5935,
-        0.42
+        0.43
       ],
       [
         404,
-        0.39
+        0.4
       ],
       [
         1472,
-        0.36
+        0.37
       ],
       [
         645,
-        0.36
+        0.37
       ],
       [
         1900,
-        0.31
+        0.32
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

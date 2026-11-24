@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7032,
-    "longer_than": 52,
+    "longer_than": 77,
     "top": [
       [
         "yogyakarta",
@@ -99,36 +99,44 @@
     ],
     "distinct": [
       [
-        "kasultanan",
-        31
-      ],
-      [
         "yogyakarta",
         87
+      ],
+      [
+        "kasultanan",
+        31
       ],
       [
         "sultan",
         53
       ],
       [
-        "ngayogyokarto",
-        13
+        "belanda",
+        66
       ],
       [
         "keraton",
         31
       ],
       [
+        "ngayogyokarto",
+        13
+      ],
+      [
         "giyanti",
         17
+      ],
+      [
+        "republik",
+        56
       ],
       [
         "hadiningrat",
         16
       ],
       [
-        "belanda",
-        66
+        "hindia",
+        28
       ],
       [
         "koninkrijk",
@@ -137,14 +145,6 @@
       [
         "pakualaman",
         14
-      ],
-      [
-        "hamengku",
-        15
-      ],
-      [
-        "hindia",
-        28
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         6812,
-        0.36
+        0.37
       ],
       [
         2286,
-        0.21
+        0.22
       ],
       [
         1481,
-        0.2
-      ],
-      [
-        9234,
-        0.15
+        0.21
       ],
       [
         2840,
-        0.14
+        0.18
       ],
       [
-        209,
-        0.13
+        9234,
+        0.16
+      ],
+      [
+        4349,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 59,
+      "negative": 28,
+      "trend": [
+        0.45,
+        null,
+        0.67,
+        -0.14,
+        null,
+        null,
+        0.71,
+        null,
+        null,
+        0.2,
+        1,
+        0,
+        -0.33,
+        null,
+        null,
+        0.56
+      ],
+      "emotions": []
+    }
   }
 }

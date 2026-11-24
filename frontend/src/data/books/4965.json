@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4754,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "usuf",
@@ -115,23 +115,23 @@
         53
       ],
       [
-        "nang",
-        62
-      ],
-      [
         "kayu",
         109
+      ],
+      [
+        "nang",
+        62
       ],
       [
         "saleh",
         61
       ],
       [
-        "pikap",
-        18
+        "ayahnya",
+        58
       ],
       [
-        "hanyar",
+        "pikap",
         18
       ],
       [
@@ -139,12 +139,12 @@
         19
       ],
       [
-        "wan",
-        44
+        "hanyar",
+        18
       ],
       [
-        "ayahnya",
-        58
+        "wan",
+        44
       ],
       [
         "kada",
@@ -202,6 +202,13 @@
         2992,
         0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.82,
+      "positive": 61,
+      "negative": 6,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2334,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "situasionis",
@@ -119,16 +119,16 @@
         3
       ],
       [
-        "apapun",
-        11
-      ],
-      [
         "gerakan",
         15
       ],
       [
-        "senggang",
-        3
+        "apapun",
+        11
+      ],
+      [
+        "seni",
+        8
       ],
       [
         "pemahaman",
@@ -139,12 +139,12 @@
         6
       ],
       [
-        "penulisnya",
-        3
+        "masyarakat",
+        12
       ],
       [
-        "seni",
-        8
+        "senggang",
+        3
       ]
     ],
     "phrases": [
@@ -164,7 +164,7 @@
     "similar": [
       [
         2213,
-        0.2
+        0.22
       ],
       [
         1829,
@@ -172,20 +172,27 @@
       ],
       [
         8035,
-        0.18
+        0.17
       ],
       [
         2576,
-        0.18
+        0.17
       ],
       [
         2324,
         0.16
       ],
       [
-        2698,
-        0.13
+        7893,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 37,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

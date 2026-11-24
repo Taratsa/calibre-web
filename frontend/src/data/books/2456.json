@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4680,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "album",
@@ -115,16 +115,24 @@
         9
       ],
       [
-        "tech",
-        12
-      ],
-      [
         "bronson",
         9
       ],
       [
+        "tech",
+        12
+      ],
+      [
+        "musik",
+        27
+      ],
+      [
         "mixtape",
         9
+      ],
+      [
+        "lagu",
+        25
       ],
       [
         "album-album",
@@ -135,16 +143,8 @@
         6
       ],
       [
-        "musik",
-        27
-      ],
-      [
         "selektah",
         5
-      ],
-      [
-        "lagu",
-        25
       ]
     ],
     "phrases": [
@@ -196,7 +196,7 @@
       ],
       [
         9167,
-        0.28
+        0.29
       ],
       [
         9181,
@@ -204,8 +204,15 @@
       ],
       [
         9189,
-        0.24
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 38,
+      "negative": 36,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

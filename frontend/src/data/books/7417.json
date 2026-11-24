@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2457,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "orang",
@@ -114,44 +114,44 @@
         12
       ],
       [
+        "orang",
+        35
+      ],
+      [
         "anti-sosial",
         5
+      ],
+      [
+        "masyarakat",
+        20
       ],
       [
         "mendominasi",
         8
       ],
       [
-        "penj",
-        4
+        "langsung",
+        20
+      ],
+      [
+        "kekuatan",
+        15
       ],
       [
         "egaliter",
         5
       ],
       [
-        "libertarian",
-        5
+        "penj",
+        4
       ],
       [
         "delegasi",
         6
       ],
       [
-        "menindas",
-        7
-      ],
-      [
-        "elit",
-        6
-      ],
-      [
         "komunitas",
         10
-      ],
-      [
-        "penindasan",
-        8
       ]
     ],
     "phrases": [
@@ -191,28 +191,69 @@
     "similar": [
       [
         2011,
-        0.18
-      ],
-      [
-        7348,
-        0.15
-      ],
-      [
-        7073,
-        0.14
-      ],
-      [
-        2308,
-        0.14
+        0.22
       ],
       [
         2758,
-        0.13
+        0.22
       ],
       [
-        2356,
-        0.13
+        2596,
+        0.21
+      ],
+      [
+        7348,
+        0.21
+      ],
+      [
+        6730,
+        0.2
+      ],
+      [
+        2203,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 81,
+      "negative": 35,
+      "trend": [
+        0.6,
+        0.27,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0.6,
+        -0.33,
+        -0.33,
+        -0.25,
+        0.67,
+        1,
+        0.83,
+        0.33,
+        0.78
+      ],
+      "emotions": [
+        [
+          "anger",
+          19
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

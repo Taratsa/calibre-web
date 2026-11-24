@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2862,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "peperangan",
@@ -93,28 +93,32 @@
         108
       ],
       [
-        "bergerombolan",
-        7
+        "rakyat",
+        52
       ],
       [
         "gerilya",
         14
       ],
       [
-        "rakyat",
-        52
+        "bergerombolan",
+        7
       ],
       [
-        "pasukan-pasukan",
-        8
+        "gerombolan",
+        12
       ],
       [
         "kepala-kepala",
         9
       ],
       [
-        "gerombolan",
-        12
+        "pasukan-pasukan",
+        8
+      ],
+      [
+        "aceh",
+        13
       ],
       [
         "paderi",
@@ -125,16 +129,12 @@
         4
       ],
       [
-        "aceh",
-        13
+        "berperang",
+        11
       ],
       [
-        "oorlog",
-        5
-      ],
-      [
-        "pangeran-pangeran",
-        4
+        "watak",
+        11
       ]
     ],
     "phrases": [
@@ -174,20 +174,81 @@
     "similar": [
       [
         765,
-        0.16
+        0.17
       ],
       [
-        807,
-        0.12
+        18215,
+        0.15
       ],
       [
         2840,
-        0.12
+        0.14
+      ],
+      [
+        807,
+        0.14
       ],
       [
         387,
-        0.1
+        0.12
+      ],
+      [
+        9251,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 42,
+      "negative": 44,
+      "trend": [
+        -1,
+        null,
+        0,
+        null,
+        -0.14,
+        0,
+        0.14,
+        null,
+        0.5,
+        0.2,
+        0,
+        null,
+        null,
+        0.14,
+        -0.11,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          12
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -66,7 +66,7 @@
   ],
   "text": {
     "words": 12535,
-    "longer_than": 66,
+    "longer_than": 84,
     "top": [
       [
         "dunia",
@@ -119,52 +119,52 @@
     ],
     "distinct": [
       [
-        "teknologi",
-        56
-      ],
-      [
         "peradaban",
         42
+      ],
+      [
+        "teknologi",
+        56
       ],
       [
         "modernitas",
         19
       ],
       [
-        "netral",
-        17
-      ],
-      [
-        "komputer",
-        15
-      ],
-      [
-        "animisme",
-        9
-      ],
-      [
-        "postmodernis",
-        6
-      ],
-      [
-        "kau",
-        26
-      ],
-      [
-        "kebohongan",
-        13
+        "dunia",
+        68
       ],
       [
         "budaya",
         41
       ],
       [
-        "mesin",
-        22
+        "manusia",
+        53
       ],
       [
-        "alamiah",
-        13
+        "kau",
+        26
+      ],
+      [
+        "netral",
+        17
+      ],
+      [
+        "hidup",
+        47
+      ],
+      [
+        "sosial",
+        35
+      ],
+      [
+        "animisme",
+        9
+      ],
+      [
+        "asing",
+        27
       ]
     ],
     "phrases": [
@@ -204,28 +204,85 @@
     "similar": [
       [
         8068,
-        0.33
+        0.34
       ],
       [
         2057,
-        0.33
+        0.34
       ],
       [
         2053,
-        0.26
+        0.28
+      ],
+      [
+        2445,
+        0.25
       ],
       [
         2347,
-        0.2
+        0.25
       ],
       [
-        2548,
-        0.2
-      ],
-      [
-        8070,
-        0.19
+        7889,
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 240,
+      "negative": 216,
+      "trend": [
+        0,
+        -0.2,
+        -0.14,
+        -0.18,
+        0.14,
+        0.03,
+        -0.24,
+        0.03,
+        0.03,
+        0.16,
+        0.1,
+        -0.17,
+        0.14,
+        0.69,
+        0.19,
+        0.39
+      ],
+      "emotions": [
+        [
+          "sadness",
+          44
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

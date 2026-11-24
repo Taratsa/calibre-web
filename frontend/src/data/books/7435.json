@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2646,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "demokrasi",
@@ -126,32 +126,32 @@
         7
       ],
       [
-        "alienatif",
-        3
+        "masyarakat",
+        28
       ],
       [
         "demokratis",
         10
       ],
       [
-        "polarisasi",
-        4
+        "alienatif",
+        3
+      ],
+      [
+        "kekuasaan",
+        14
+      ],
+      [
+        "kaum",
+        12
       ],
       [
         "demagogi",
         3
       ],
       [
-        "lobi-lobi",
-        3
-      ],
-      [
-        "masyarakat",
-        28
-      ],
-      [
-        "minoritas",
-        5
+        "polarisasi",
+        4
       ]
     ],
     "phrases": [
@@ -183,28 +183,52 @@
     "similar": [
       [
         2377,
-        0.19
+        0.24
       ],
       [
         2508,
-        0.18
+        0.24
       ],
       [
         7035,
-        0.18
+        0.23
       ],
       [
         7970,
-        0.18
+        0.23
       ],
       [
-        2071,
-        0.16
+        1978,
+        0.2
       ],
       [
-        3766,
-        0.15
+        3058,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 44,
+      "negative": 24,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        -0.2,
+        0.14,
+        0.33,
+        null,
+        1,
+        0.25,
+        0.6,
+        0.2,
+        0,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

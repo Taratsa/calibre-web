@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 504,
-    "longer_than": 5,
+    "longer_than": 40,
     "top": [
       [
         "pemeriksaan",
@@ -97,15 +97,15 @@
         5
       ],
       [
-        "mahmil",
-        3
+        "pemeriksaan",
+        9
       ],
       [
         "abri",
         6
       ],
       [
-        "chairawan",
+        "mahmil",
         3
       ],
       [
@@ -113,24 +113,24 @@
         4
       ],
       [
-        "pemeriksaan",
-        9
+        "kol",
+        5
+      ],
+      [
+        "chairawan",
+        3
       ],
       [
         "chaniago",
         3
       ],
       [
-        "kol",
-        5
-      ],
-      [
         "prabowo",
         4
       ],
       [
-        "kopassus",
-        3
+        "pimpinan",
+        8
       ],
       [
         "haji",
@@ -141,7 +141,7 @@
     "similar": [
       [
         197,
-        0.49
+        0.5
       ],
       [
         199,
@@ -153,16 +153,17 @@
       ],
       [
         161,
-        0.44
+        0.43
       ],
       [
         230,
-        0.39
+        0.38
       ],
       [
         203,
         0.38
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

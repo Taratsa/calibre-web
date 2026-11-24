@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5019,
-    "longer_than": 43,
+    "longer_than": 73,
     "top": [
       [
         "wanita",
@@ -111,6 +111,10 @@
         74
       ],
       [
+        "wanita",
+        109
+      ],
+      [
         "pekerdjaan",
         51
       ],
@@ -119,16 +123,12 @@
         32
       ],
       [
-        "wanita",
-        109
-      ],
-      [
-        "direktur-djenderal",
-        9
-      ],
-      [
         "buruh",
         63
+      ],
+      [
+        "pasal",
+        41
       ],
       [
         "perburuhan",
@@ -139,20 +139,20 @@
         29
       ],
       [
-        "pasal",
-        41
+        "direktur-djenderal",
+        9
       ],
       [
         "nilainja",
         14
       ],
       [
-        "ratifikasi",
-        13
+        "upah",
+        25
       ],
       [
-        "rumusan",
-        17
+        "ratifikasi",
+        13
       ]
     ],
     "phrases": [
@@ -192,28 +192,35 @@
     "similar": [
       [
         1886,
-        0.38
+        0.4
+      ],
+      [
+        9333,
+        0.32
       ],
       [
         6667,
-        0.29
+        0.3
       ],
       [
         6799,
-        0.21
-      ],
-      [
-        5939,
-        0.21
-      ],
-      [
-        8745,
-        0.21
+        0.24
       ],
       [
         799,
-        0.2
+        0.23
+      ],
+      [
+        618,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 47,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

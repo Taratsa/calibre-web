@@ -11,7 +11,7 @@
   ],
   "author_sort": "Anderson, Ben",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 11016,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "negara",
@@ -108,20 +108,20 @@
     ],
     "distinct": [
       [
-        "suharto",
-        37
-      ],
-      [
-        "sukarno",
-        41
+        "negara",
+        196
       ],
       [
         "aparat",
         60
       ],
       [
-        "negara",
-        196
+        "suharto",
+        37
+      ],
+      [
+        "sukarno",
+        41
       ],
       [
         "kolonial",
@@ -132,16 +132,16 @@
         31
       ],
       [
-        "orde",
-        31
-      ],
-      [
         "lembaga",
         49
       ],
       [
-        "jepang",
-        25
+        "orde",
+        31
+      ],
+      [
+        "politik",
+        58
       ],
       [
         "militer",
@@ -152,8 +152,8 @@
         35
       ],
       [
-        "cornell",
-        14
+        "jepang",
+        25
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         6321,
-        0.18
+        0.23
       ],
       [
         8768,
-        0.18
+        0.23
       ],
       [
         8373,
-        0.16
+        0.22
       ],
       [
-        4904,
-        0.15
+        8484,
+        0.2
       ],
       [
-        4872,
-        0.15
+        8679,
+        0.19
       ],
       [
-        4871,
-        0.15
+        8763,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 214,
+      "negative": 107,
+      "trend": [
+        0.86,
+        0.57,
+        0.33,
+        -0.09,
+        -0.05,
+        0.31,
+        -0.25,
+        0.1,
+        0.2,
+        0.52,
+        0.36,
+        0.29,
+        0.8,
+        0.71,
+        0.43,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

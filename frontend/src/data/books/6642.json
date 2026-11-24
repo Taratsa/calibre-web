@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 10894,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "wanita",
@@ -108,28 +108,24 @@
         46
       ],
       [
-        "tjab",
-        18
-      ],
-      [
-        "moersadik",
-        12
-      ],
-      [
         "wanita",
         86
+      ],
+      [
+        "tjab",
+        18
       ],
       [
         "djuga",
         39
       ],
       [
-        "sukanto",
-        15
+        "moersadik",
+        12
       ],
       [
-        "bratadiningrat",
-        9
+        "sukanto",
+        15
       ],
       [
         "handel",
@@ -140,12 +136,16 @@
         20
       ],
       [
-        "supangkat",
-        14
+        "sadja",
+        28
       ],
       [
-        "djamsari",
-        8
+        "bratadiningrat",
+        9
+      ],
+      [
+        "supangkat",
+        14
       ]
     ],
     "phrases": [
@@ -185,28 +185,81 @@
     "similar": [
       [
         6637,
-        0.26
+        0.29
       ],
       [
         6640,
-        0.26
+        0.29
       ],
       [
         6638,
-        0.25
+        0.28
       ],
       [
         6639,
-        0.24
+        0.27
       ],
       [
         6641,
-        0.23
+        0.26
       ],
       [
         6635,
-        0.22
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 133,
+      "negative": 45,
+      "trend": [
+        null,
+        0.54,
+        0.88,
+        -0.1,
+        0.73,
+        0.75,
+        1,
+        0.8,
+        0.18,
+        0.5,
+        1,
+        null,
+        0.54,
+        0.75,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          18
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

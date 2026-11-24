@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 3063,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "kancil",
@@ -113,12 +113,12 @@
         22
       ],
       [
-        "fofo",
-        24
-      ],
-      [
         "harimau",
         57
+      ],
+      [
+        "fofo",
+        24
       ],
       [
         "siput",
@@ -133,24 +133,24 @@
         37
       ],
       [
-        "ranau",
-        7
-      ],
-      [
         "gong",
         14
       ],
       [
-        "cil",
-        8
+        "ranau",
+        7
+      ],
+      [
+        "burung",
+        19
       ],
       [
         "lubang",
         16
       ],
       [
-        "burung",
-        19
+        "cil",
+        8
       ]
     ],
     "phrases": [
@@ -190,28 +190,81 @@
     "similar": [
       [
         5638,
-        0.41
+        0.43
       ],
       [
         5637,
-        0.36
+        0.37
       ],
       [
         5194,
-        0.32
+        0.33
       ],
       [
         5195,
-        0.29
+        0.31
       ],
       [
         5196,
-        0.25
+        0.28
       ],
       [
         5398,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 41,
+      "negative": 38,
+      "trend": [
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        -0.69,
+        -0.33,
+        -0.14,
+        -0.71,
+        null,
+        0.33,
+        null,
+        0.14,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

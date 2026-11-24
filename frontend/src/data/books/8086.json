@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1511,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "muda",
@@ -106,28 +106,32 @@
     ],
     "distinct": [
       [
-        "swafoto",
-        4
-      ],
-      [
         "muda",
         29
-      ],
-      [
-        "soalan",
-        4
       ],
       [
         "anak-anak",
         21
       ],
       [
+        "swafoto",
+        4
+      ],
+      [
         "sinis",
         6
       ],
       [
+        "soalan",
+        4
+      ],
+      [
         "subkultur",
         4
+      ],
+      [
+        "seni",
+        8
       ],
       [
         "cemoohan",
@@ -138,40 +142,45 @@
         3
       ],
       [
-        "seni",
-        8
-      ],
-      [
-        "taktik",
-        4
-      ],
-      [
-        "kacamata",
-        3
+        "dunia",
+        12
       ],
       [
         "generasi",
         6
+      ],
+      [
+        "taktik",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8084,
+        0.15
+      ],
+      [
+        2561,
+        0.14
+      ],
+      [
+        1970,
+        0.14
+      ],
+      [
+        2798,
+        0.14
+      ],
+      [
+        4195,
         0.13
       ],
       [
         6872,
-        0.12
-      ],
-      [
-        1970,
-        0.11
-      ],
-      [
-        2798,
-        0.11
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

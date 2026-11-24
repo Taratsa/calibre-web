@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 731,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "bahasa",
@@ -100,24 +100,24 @@
     ],
     "distinct": [
       [
-        "alor",
-        4
+        "bahasa",
+        31
       ],
       [
         "kurikulum",
         7
       ],
       [
-        "pragmatik",
-        3
+        "alor",
+        4
       ],
       [
         "bujang",
         5
       ],
       [
-        "bahasa",
-        31
+        "pragmatik",
+        3
       ],
       [
         "xvi",
@@ -128,23 +128,23 @@
         4
       ],
       [
+        "edisi",
+        6
+      ],
+      [
+        "guru",
+        7
+      ],
+      [
+        "indonesia",
+        14
+      ],
+      [
         "dialek",
         3
       ],
       [
         "diplomasi",
-        3
-      ],
-      [
-        "kebahasaan",
-        3
-      ],
-      [
-        "edisi",
-        6
-      ],
-      [
-        "persimpangan",
         3
       ]
     ],
@@ -182,6 +182,32 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        11356,
+        0.16
+      ],
+      [
+        17231,
+        0.14
+      ],
+      [
+        10828,
+        0.14
+      ],
+      [
+        14780,
+        0.13
+      ],
+      [
+        6316,
+        0.12
+      ],
+      [
+        3488,
+        0.11
+      ]
+    ],
+    "sentiment": null
   }
 }

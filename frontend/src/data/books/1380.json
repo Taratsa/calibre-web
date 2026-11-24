@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 15229,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "wanita",
@@ -101,52 +101,52 @@
     ],
     "distinct": [
       [
-        "spartakus",
-        28
-      ],
-      [
         "djuga",
         77
       ],
       [
-        "banjak",
-        62
+        "spartakus",
+        28
       ],
       [
         "wanita",
         107
       ],
       [
-        "psychologi",
-        18
+        "banjak",
+        62
       ],
       [
         "rakjat",
         44
       ],
       [
-        "perdjuangan",
-        35
+        "psychologi",
+        18
       ],
       [
-        "crassus",
-        11
+        "perdjuangan",
+        35
       ],
       [
         "jaitu",
         35
       ],
       [
+        "kaum",
+        76
+      ],
+      [
         "nja",
         38
       ],
       [
-        "kjahi",
-        12
-      ],
-      [
         "mendjadi",
         38
+      ],
+      [
+        "anak",
+        87
       ]
     ],
     "phrases": [
@@ -186,28 +186,81 @@
     "similar": [
       [
         1382,
-        0.29
+        0.33
       ],
       [
         1383,
-        0.27
+        0.31
       ],
       [
         1384,
-        0.25
+        0.3
       ],
       [
         1377,
-        0.25
-      ],
-      [
-        6621,
-        0.25
+        0.29
       ],
       [
         1386,
-        0.24
+        0.29
+      ],
+      [
+        6621,
+        0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 182,
+      "negative": 152,
+      "trend": [
+        -0.04,
+        0.48,
+        0,
+        0.43,
+        0.3,
+        0.33,
+        0.78,
+        -0.22,
+        0.08,
+        -0.4,
+        -0.25,
+        0.5,
+        -0.16,
+        -0.08,
+        0.04,
+        0.13
+      ],
+      "emotions": [
+        [
+          "sadness",
+          30
+        ],
+        [
+          "anger",
+          27
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

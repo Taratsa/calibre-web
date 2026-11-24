@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 4439,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "south",
@@ -113,12 +113,12 @@
         19
       ],
       [
-        "kiosks",
-        12
-      ],
-      [
         "south",
         32
+      ],
+      [
+        "kiosks",
+        12
       ],
       [
         "discs",
@@ -129,24 +129,24 @@
         10
       ],
       [
-        "techniques",
-        13
-      ],
-      [
-        "south-south",
-        7
+        "cultural",
+        19
       ],
       [
         "cassettes",
         8
       ],
       [
-        "local",
-        20
-      ],
-      [
         "knowledge",
         18
+      ],
+      [
+        "south-south",
+        7
+      ],
+      [
+        "shopping",
+        11
       ]
     ],
     "phrases": [
@@ -190,7 +190,7 @@
       ],
       [
         4083,
-        0.18
+        0.19
       ],
       [
         4092,
@@ -198,7 +198,7 @@
       ],
       [
         4063,
-        0.17
+        0.18
       ],
       [
         1540,
@@ -208,6 +208,7 @@
         1724,
         0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

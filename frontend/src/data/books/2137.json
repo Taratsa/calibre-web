@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1512,
-    "longer_than": 20,
+    "longer_than": 58,
     "top": [
       [
         "negara",
@@ -103,28 +103,40 @@
         12
       ],
       [
+        "hutang",
+        11
+      ],
+      [
         "multitude",
         6
       ],
       [
-        "hutang",
-        11
+        "negara",
+        27
       ],
       [
         "wto",
         6
       ],
       [
-        "imf",
-        6
+        "negara-negara",
+        11
       ],
       [
         "korporasi",
         8
       ],
       [
-        "negara-negara",
-        11
+        "imf",
+        6
+      ],
+      [
+        "perdagangan",
+        10
+      ],
+      [
+        "global",
+        10
       ],
       [
         "korporasi-korporasi",
@@ -133,18 +145,6 @@
       [
         "multinasional",
         5
-      ],
-      [
-        "global",
-        10
-      ],
-      [
-        "perdagangan",
-        10
-      ],
-      [
-        "neo-liberalisme",
-        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7066,
-        0.42
+        0.43
       ],
       [
         2340,
-        0.36
-      ],
-      [
-        2686,
-        0.2
+        0.37
       ],
       [
         7897,
-        0.19
+        0.21
+      ],
+      [
+        2686,
+        0.21
       ],
       [
         8683,
-        0.19
+        0.21
       ],
       [
-        8450,
-        0.18
+        7867,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 38,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

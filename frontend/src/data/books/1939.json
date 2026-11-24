@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 2413,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "penjara",
@@ -109,6 +109,10 @@
         23
       ],
       [
+        "tahanan",
+        12
+      ],
+      [
         "toby",
         5
       ],
@@ -117,40 +121,36 @@
         5
       ],
       [
-        "tahanan",
-        12
+        "anarkis",
+        11
       ],
       [
         "belajarlah",
         5
       ],
       [
-        "anarkis",
-        11
+        "aksi",
+        12
       ],
       [
         "solidaritas",
         9
       ],
       [
-        "aksi",
-        12
-      ],
-      [
         "sel",
         6
       ],
       [
-        "sipir",
-        3
+        "gerakan",
+        11
       ],
       [
-        "anti-kapitalis",
-        3
+        "kawan-kawan",
+        6
       ],
       [
-        "pemenjaraan",
-        3
+        "kelompok",
+        10
       ]
     ],
     "phrases": [
@@ -186,28 +186,35 @@
     "similar": [
       [
         7304,
-        0.22
+        0.25
       ],
       [
         2144,
-        0.21
+        0.24
       ],
       [
         7267,
-        0.2
+        0.23
       ],
       [
         7002,
-        0.19
-      ],
-      [
-        2183,
-        0.18
+        0.21
       ],
       [
         2185,
-        0.16
+        0.2
+      ],
+      [
+        2183,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 47,
+      "negative": 30,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

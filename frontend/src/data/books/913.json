@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2923,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "siswa",
@@ -89,16 +89,20 @@
     ],
     "distinct": [
       [
-        "kontinental",
-        23
-      ],
-      [
         "siswa",
         55
       ],
       [
+        "kontinental",
+        23
+      ],
+      [
         "contextual",
         17
+      ],
+      [
+        "penelitian",
+        49
       ],
       [
         "smk",
@@ -109,8 +113,12 @@
         17
       ],
       [
-        "penelitian",
-        49
+        "pembelajaran",
+        27
+      ],
+      [
+        "teaching",
+        16
       ],
       [
         "ctl",
@@ -119,14 +127,6 @@
       [
         "learning",
         18
-      ],
-      [
-        "teaching",
-        16
-      ],
-      [
-        "pembelajaran",
-        27
       ],
       [
         "keterampilan",
@@ -173,29 +173,53 @@
     ],
     "similar": [
       [
+        5272,
+        0.26
+      ],
+      [
         882,
         0.25
       ],
       [
-        5272,
-        0.24
-      ],
-      [
         877,
-        0.23
+        0.25
       ],
       [
         871,
-        0.21
+        0.22
       ],
       [
         915,
-        0.19
+        0.22
       ],
       [
-        5333,
-        0.18
+        868,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.61,
+      "positive": 54,
+      "negative": 13,
+      "trend": [
+        null,
+        1,
+        0.43,
+        1,
+        0.6,
+        null,
+        null,
+        null,
+        0.6,
+        0.75,
+        null,
+        -0.2,
+        0.33,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

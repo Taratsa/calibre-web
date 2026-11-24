@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2540,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "anarkis",
@@ -107,28 +107,36 @@
         45
       ],
       [
-        "especifis",
-        6
-      ],
-      [
         "organisasi",
         38
       ],
       [
-        "calle",
-        5
+        "especifis",
+        6
+      ],
+      [
+        "gerakan",
+        30
+      ],
+      [
+        "revolusioner",
+        19
+      ],
+      [
+        "kaum",
+        25
       ],
       [
         "anarquista",
         6
       ],
       [
-        "fag",
+        "calle",
         5
       ],
       [
-        "revolusioner",
-        19
+        "fag",
+        5
       ],
       [
         "platform",
@@ -137,14 +145,6 @@
       [
         "federação",
         4
-      ],
-      [
-        "gerakan",
-        30
-      ],
-      [
-        "sintesis",
-        6
       ]
     ],
     "phrases": [
@@ -183,29 +183,36 @@
     ],
     "similar": [
       [
+        7019,
+        0.34
+      ],
+      [
         7859,
-        0.28
+        0.34
       ],
       [
         2553,
-        0.28
-      ],
-      [
-        7019,
-        0.28
+        0.34
       ],
       [
         2381,
-        0.21
+        0.27
       ],
       [
         7541,
-        0.2
+        0.25
       ],
       [
         2383,
-        0.18
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 36,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 182,
-    "longer_than": 2,
+    "longer_than": 22,
     "top": [
       [
         "oktober",
@@ -97,16 +97,16 @@
     ],
     "distinct": [
       [
+        "rights",
+        12
+      ],
+      [
         "rabu",
         9
       ],
       [
         "humans",
         5
-      ],
-      [
-        "rights",
-        12
       ],
       [
         "oktober",
@@ -125,12 +125,12 @@
         4
       ],
       [
-        "lanjutan",
-        4
-      ],
-      [
         "ham",
         5
+      ],
+      [
+        "lanjutan",
+        4
       ],
       [
         "kabupaten",
@@ -173,6 +173,10 @@
     ],
     "similar": [
       [
+        16811,
+        0.18
+      ],
+      [
         4449,
         0.15
       ],
@@ -190,12 +194,9 @@
       ],
       [
         3144,
-        0.12
-      ],
-      [
-        220,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1844,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "punk",
@@ -115,20 +115,28 @@
         7
       ],
       [
-        "hardcore-punk",
-        4
-      ],
-      [
         "seksual",
         12
+      ],
+      [
+        "lingkup",
+        12
+      ],
+      [
+        "hardcore-punk",
+        4
       ],
       [
         "bikini",
         4
       ],
       [
-        "lingkup",
-        12
+        "perempuan",
+        15
+      ],
+      [
+        "ruang",
+        15
       ],
       [
         "kancah",
@@ -137,14 +145,6 @@
       [
         "band",
         6
-      ],
-      [
-        "kill",
-        4
-      ],
-      [
-        "maskulinitas",
-        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         1988,
-        0.22
+        0.26
       ],
       [
         2320,
-        0.22
-      ],
-      [
-        4185,
-        0.18
+        0.25
       ],
       [
         56,
-        0.16
+        0.19
       ],
       [
-        1778,
-        0.15
+        4185,
+        0.19
       ],
       [
-        3925,
-        0.15
+        2227,
+        0.18
+      ],
+      [
+        2312,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 18,
+      "negative": 35,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

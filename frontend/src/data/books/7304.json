@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2503,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "penjara",
@@ -114,72 +114,125 @@
         8
       ],
       [
-        "penjahat",
-        6
-      ],
-      [
         "kejahatan",
         10
+      ],
+      [
+        "penjahat",
+        6
       ],
       [
         "tahanan",
         7
       ],
       [
-        "narapidana",
-        4
-      ],
-      [
         "sistem",
         15
       ],
       [
-        "foucault",
-        3
+        "masyarakat",
+        15
       ],
       [
-        "kriminal",
+        "narapidana",
         4
       ],
       [
-        "kelas",
-        8
+        "negara",
+        13
       ],
       [
-        "mediasi",
-        3
+        "kekuasaan",
+        9
       ],
       [
         "menghadapi",
         9
+      ],
+      [
+        "foucault",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7267,
-        0.25
+        0.29
       ],
       [
         7330,
-        0.24
+        0.26
       ],
       [
         1939,
-        0.22
+        0.25
       ],
       [
         2518,
-        0.21
-      ],
-      [
-        3808,
-        0.21
+        0.24
       ],
       [
         2314,
-        0.21
+        0.22
+      ],
+      [
+        3808,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 60,
+      "negative": 73,
+      "trend": [
+        -0.5,
+        0,
+        0.2,
+        -0.6,
+        null,
+        -0.25,
+        -0.29,
+        0.5,
+        null,
+        0.27,
+        -0.27,
+        1,
+        0.14,
+        -0.43,
+        -0.43,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          22
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2647,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "sekolah",
@@ -110,20 +110,20 @@
         8
       ],
       [
-        "letin",
-        4
+        "sekolah",
+        28
       ],
       [
-        "aritmatika",
-        5
+        "letin",
+        4
       ],
       [
         "alexandria",
         5
       ],
       [
-        "sekolah",
-        28
+        "aritmatika",
+        5
       ],
       [
         "pengajaran",
@@ -134,24 +134,24 @@
         9
       ],
       [
-        "etin",
-        3
+        "anak-anak",
+        16
       ],
       [
         "sekuler",
         5
       ],
       [
-        "geografi",
-        5
+        "buku",
+        18
       ],
       [
-        "grave",
-        4
+        "etin",
+        3
       ],
       [
-        "cita-cita",
-        9
+        "agama",
+        13
       ]
     ],
     "phrases": [
@@ -191,28 +191,52 @@
     "similar": [
       [
         7176,
-        0.44
+        0.46
       ],
       [
         2075,
-        0.38
+        0.41
       ],
       [
         4877,
-        0.14
+        0.17
       ],
       [
         2482,
-        0.13
+        0.17
       ],
       [
         2727,
-        0.13
+        0.16
       ],
       [
         7373,
-        0.11
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 62,
+      "negative": 39,
+      "trend": [
+        0.14,
+        0,
+        null,
+        0.14,
+        -0.2,
+        0.43,
+        0.67,
+        null,
+        0.6,
+        0.33,
+        null,
+        -0.25,
+        -0.11,
+        0.33,
+        0.5,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

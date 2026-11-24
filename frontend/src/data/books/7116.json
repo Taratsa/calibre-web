@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4022,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "kau",
@@ -114,44 +114,44 @@
         34
       ],
       [
-        "security",
-        14
+        "aksi",
+        27
+      ],
+      [
+        "orang",
+        54
       ],
       [
         "culture",
         14
       ],
       [
-        "aksi",
-        27
-      ],
-      [
         "resiko",
         12
       ],
       [
-        "proyekan",
-        4
+        "security",
+        14
       ],
       [
         "kerja-kerja",
         10
       ],
       [
+        "orang-orang",
+        23
+      ],
+      [
+        "proyekan",
+        4
+      ],
+      [
         "pawai",
         7
       ],
       [
-        "musuhmu",
-        5
-      ],
-      [
-        "mencemaskan",
-        5
-      ],
-      [
-        "meresikokan",
-        3
+        "kelompok",
+        19
       ]
     ],
     "phrases": [
@@ -183,7 +183,15 @@
     "similar": [
       [
         7121,
-        0.18
+        0.21
+      ],
+      [
+        6764,
+        0.16
+      ],
+      [
+        3900,
+        0.15
       ],
       [
         2716,
@@ -194,17 +202,54 @@
         0.14
       ],
       [
-        3900,
+        12110,
         0.14
-      ],
-      [
-        6764,
-        0.12
-      ],
-      [
-        1912,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 61,
+      "negative": 43,
+      "trend": [
+        0.14,
+        -0.25,
+        -0.11,
+        null,
+        0.33,
+        null,
+        0.2,
+        -0.14,
+        0.43,
+        -0.17,
+        0.09,
+        null,
+        0.33,
+        1,
+        null,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          50
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

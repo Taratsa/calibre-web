@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1869,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "orang",
@@ -97,28 +97,28 @@
         17
       ],
       [
-        "soedah",
-        22
-      ],
-      [
         "pandjang",
         35
       ],
       [
-        "seriati",
-        11
+        "soedah",
+        22
       ],
       [
         "gendoet",
         13
       ],
       [
-        "engkoe",
+        "seriati",
         11
       ],
       [
         "kamoe",
         17
+      ],
+      [
+        "engkoe",
+        11
       ],
       [
         "penjakit",
@@ -174,28 +174,35 @@
     "similar": [
       [
         652,
-        0.26
+        0.27
       ],
       [
         411,
-        0.24
+        0.25
       ],
       [
         4621,
-        0.23
+        0.25
       ],
       [
         664,
-        0.23
+        0.25
       ],
       [
         444,
-        0.22
+        0.23
       ],
       [
         771,
-        0.22
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 41,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

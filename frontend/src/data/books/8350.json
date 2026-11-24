@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 24809,
-    "longer_than": 81,
+    "longer_than": 90,
     "top": [
       [
         "digital",
@@ -111,40 +111,40 @@
         86
       ],
       [
-        "kbgo",
-        37
+        "pelanggaran",
+        113
       ],
       [
-        "platform",
-        82
+        "kbgo",
+        37
       ],
       [
         "komdigi",
         32
       ],
       [
-        "data",
-        159
+        "instrumen",
+        86
       ],
       [
-        "pengguna",
-        71
+        "platform",
+        82
+      ],
+      [
+        "kebebasan",
+        127
+      ],
+      [
+        "penelitian",
+        102
       ],
       [
         "pemblokiran",
         41
       ],
       [
-        "pelanggaran",
-        113
-      ],
-      [
-        "instrumen",
-        86
-      ],
-      [
-        "internet",
-        66
+        "data",
+        159
       ]
     ],
     "phrases": [
@@ -184,18 +184,18 @@
     "similar": [
       [
         6989,
-        0.45
+        0.46
       ],
       [
         1055,
-        0.39
-      ],
-      [
-        1051,
-        0.36
+        0.41
       ],
       [
         1054,
+        0.37
+      ],
+      [
+        1051,
         0.36
       ],
       [
@@ -204,8 +204,61 @@
       ],
       [
         1053,
-        0.31
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 328,
+      "negative": 335,
+      "trend": [
+        0.31,
+        0.18,
+        -0.14,
+        0.15,
+        0.56,
+        0.35,
+        0.2,
+        -0.04,
+        -0.6,
+        -0.27,
+        0.08,
+        -0.29,
+        -0.45,
+        -0.33,
+        -0.31,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          156
+        ],
+        [
+          "trust",
+          49
+        ],
+        [
+          "fear",
+          35
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

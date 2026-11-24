@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 47258,
-    "longer_than": 92,
+    "longer_than": 96,
     "top": [
       [
         "image",
@@ -97,6 +97,10 @@
         210
       ],
       [
+        "singasari",
+        142
+      ],
+      [
         "images",
         209
       ],
@@ -105,20 +109,16 @@
         242
       ],
       [
-        "singasari",
-        142
-      ],
-      [
         "bhairava",
         65
       ],
       [
-        "krtanagara",
-        70
-      ],
-      [
         "temples",
         95
+      ],
+      [
+        "krtanagara",
+        70
       ],
       [
         "pedestal",
@@ -174,11 +174,11 @@
     "similar": [
       [
         786,
-        0.21
+        0.2
       ],
       [
         603,
-        0.19
+        0.18
       ],
       [
         737,
@@ -196,6 +196,7 @@
         1870,
         0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

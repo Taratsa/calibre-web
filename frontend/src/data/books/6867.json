@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2306,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "cancel",
@@ -111,27 +111,23 @@
         8
       ],
       [
-        "joy",
-        8
-      ],
-      [
-        "destroy",
-        8
-      ],
-      [
         "keadilan",
         21
       ],
       [
-        "punitif",
-        4
+        "joy",
+        8
       ],
       [
-        "epistemik",
-        5
+        "gerakan",
+        23
       ],
       [
-        "penghukuman",
+        "sosial",
+        26
+      ],
+      [
+        "destroy",
         8
       ],
       [
@@ -139,12 +135,16 @@
         17
       ],
       [
-        "mekanisme",
-        12
+        "penghukuman",
+        8
       ],
       [
-        "daub",
-        3
+        "epistemik",
+        5
+      ],
+      [
+        "punitif",
+        4
       ]
     ],
     "phrases": [
@@ -184,28 +184,69 @@
     "similar": [
       [
         1833,
-        0.53
+        0.54
       ],
       [
-        1984,
-        0.2
+        2805,
+        0.21
       ],
       [
         6833,
         0.19
       ],
       [
-        2805,
-        0.16
-      ],
-      [
-        2530,
-        0.15
+        1984,
+        0.18
       ],
       [
         7267,
-        0.15
+        0.17
+      ],
+      [
+        2156,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 50,
+      "negative": 58,
+      "trend": [
+        null,
+        null,
+        -0.6,
+        null,
+        null,
+        -0.71,
+        -0.65,
+        -0.2,
+        0.2,
+        -0.33,
+        0.23,
+        -0.71,
+        0.78,
+        0.67,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          30
+        ],
+        [
+          "fear",
+          26
+        ],
+        [
+          "anger",
+          13
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

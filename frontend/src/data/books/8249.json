@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 8372,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "politik",
@@ -104,48 +104,48 @@
         52
       ],
       [
-        "partai",
-        66
+        "politik",
+        107
       ],
       [
-        "ketidak",
-        27
+        "partai",
+        66
       ],
       [
         "reformasi",
         41
       ],
       [
-        "politik",
-        107
-      ],
-      [
-        "orba",
-        14
-      ],
-      [
-        "demokrasi",
-        41
-      ],
-      [
-        "kapital",
-        28
-      ],
-      [
-        "kebijaksanaan",
-        25
-      ],
-      [
-        "sistem",
-        60
+        "ketidak",
+        27
       ],
       [
         "pemerintahan",
         53
       ],
       [
-        "dpr",
-        22
+        "demokrasi",
+        41
+      ],
+      [
+        "negara",
+        69
+      ],
+      [
+        "sistem",
+        60
+      ],
+      [
+        "kapital",
+        28
+      ],
+      [
+        "rakyat",
+        52
+      ],
+      [
+        "kebijaksanaan",
+        25
       ]
     ],
     "phrases": [
@@ -185,28 +185,77 @@
     "similar": [
       [
         8630,
-        0.17
+        0.21
       ],
       [
         8619,
-        0.16
-      ],
-      [
-        8763,
-        0.15
+        0.19
       ],
       [
         8627,
-        0.15
+        0.19
       ],
       [
         8616,
-        0.14
+        0.18
       ],
       [
-        8246,
-        0.14
+        8763,
+        0.18
+      ],
+      [
+        8687,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 152,
+      "negative": 114,
+      "trend": [
+        -0.31,
+        -0.38,
+        -0.79,
+        -0.29,
+        1,
+        0.78,
+        0.83,
+        0.11,
+        0.74,
+        0.57,
+        0.57,
+        0.27,
+        null,
+        0.44,
+        0.26,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          19
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1642,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "engkau",
@@ -99,16 +99,16 @@
     ],
     "distinct": [
       [
+        "engkau",
+        22
+      ],
+      [
         "kinky",
         8
       ],
       [
         "ninja",
         8
-      ],
-      [
-        "engkau",
-        22
       ],
       [
         "kedai",
@@ -123,20 +123,8 @@
         3
       ],
       [
-        "bonnano",
-        3
-      ],
-      [
-        "memories",
-        4
-      ],
-      [
-        "gregorius",
-        3
-      ],
-      [
-        "adidas",
-        3
+        "makan",
+        13
       ],
       [
         "kehancuran",
@@ -145,6 +133,18 @@
       [
         "kopi",
         8
+      ],
+      [
+        "memories",
+        4
+      ],
+      [
+        "bonnano",
+        3
+      ],
+      [
+        "gregorius",
+        3
       ]
     ],
     "phrases": [
@@ -187,11 +187,11 @@
         0.61
       ],
       [
-        6859,
+        6826,
         0.51
       ],
       [
-        6826,
+        6859,
         0.5
       ],
       [
@@ -200,12 +200,13 @@
       ],
       [
         6868,
-        0.44
+        0.42
       ],
       [
         6834,
-        0.42
+        0.41
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -55,7 +55,7 @@
   ],
   "author_sort": "Wispi, Agam & Hamid, Amarsan Ismail & Cung, Benni & Hamid, Chalik & Rissakota, F.L. & Bandaharo, HR. & Akustia, Klara & Ratini & Rumambi & Aidit, Sobron & Anantaguna, S. & A.S., T. Iskandar",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Koleksi Sastra",
     "Puisi"
   ],
@@ -99,7 +99,7 @@
   ],
   "text": {
     "words": 3178,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "tanah",
@@ -152,12 +152,28 @@
     ],
     "distinct": [
       [
+        "tanah",
+        77
+      ],
+      [
         "latini",
         9
       ],
       [
         "tani",
         28
+      ],
+      [
+        "petani",
+        31
+      ],
+      [
+        "revolusi",
+        30
+      ],
+      [
+        "padi",
+        21
       ],
       [
         "repolusi",
@@ -168,32 +184,16 @@
         9
       ],
       [
-        "tanah",
-        77
-      ],
-      [
-        "petani",
-        31
+        "dik",
+        14
       ],
       [
         "traktor",
         10
       ],
       [
-        "dik",
-        14
-      ],
-      [
-        "padi",
-        21
-      ],
-      [
-        "revolusi",
-        30
-      ],
-      [
-        "rissakota",
-        4
+        "selembar",
+        12
       ],
       [
         "simbar",
@@ -237,24 +237,77 @@
     "similar": [
       [
         5946,
-        0.52
+        0.54
       ],
       [
         4886,
-        0.16
-      ],
-      [
-        1288,
-        0.1
+        0.19
       ],
       [
         7651,
-        0.1
+        0.13
       ],
       [
-        4531,
-        0.1
+        1288,
+        0.13
+      ],
+      [
+        3136,
+        0.12
+      ],
+      [
+        4606,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 68,
+      "negative": 49,
+      "trend": [
+        null,
+        -0.6,
+        0,
+        null,
+        -1,
+        0.25,
+        -0.44,
+        0.82,
+        -0.25,
+        0.67,
+        null,
+        0.14,
+        0.43,
+        0.64,
+        0.71,
+        0.67
+      ],
+      "emotions": [
+        [
+          "sadness",
+          30
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          4
+        ]
+      ]
+    }
   }
 }

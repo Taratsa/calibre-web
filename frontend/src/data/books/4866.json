@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 11184,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "produksi",
@@ -113,40 +113,40 @@
         175
       ],
       [
-        "barangdagangan",
-        35
+        "kapitalis",
+        106
       ],
       [
         "mendjadi",
         80
       ],
       [
+        "kaum",
+        144
+      ],
+      [
         "klas",
         61
       ],
       [
-        "kapitalis",
-        106
+        "barangdagangan",
+        35
       ],
       [
         "feodal",
         61
       ],
       [
-        "pemilikan-budak",
-        18
-      ],
-      [
         "jalah",
         42
       ],
       [
-        "alat²",
-        30
+        "sosialis",
+        58
       ],
       [
-        "hubungan²",
-        24
+        "tani",
+        62
       ]
     ],
     "phrases": [
@@ -186,28 +186,73 @@
     "similar": [
       [
         1580,
-        0.55
+        0.57
       ],
       [
         553,
-        0.43
+        0.46
       ],
       [
         5954,
-        0.43
+        0.46
       ],
       [
         590,
-        0.4
+        0.44
       ],
       [
         4859,
-        0.4
+        0.44
       ],
       [
         6726,
-        0.33
+        0.37
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 241,
+      "negative": 99,
+      "trend": [
+        0.68,
+        0.89,
+        0.78,
+        1,
+        0.18,
+        0.45,
+        0.83,
+        0.43,
+        -0.09,
+        0,
+        0,
+        0.09,
+        -0.18,
+        0.4,
+        0.56,
+        0.64
+      ],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 10804,
-    "longer_than": 62,
+    "longer_than": 82,
     "top": [
       [
         "lisensi",
@@ -107,44 +107,44 @@
         152
       ],
       [
-        "server",
-        108
+        "piranti",
+        80
       ],
       [
         "windows",
         99
       ],
       [
-        "piranti",
-        80
-      ],
-      [
-        "aktifasi",
-        40
-      ],
-      [
         "pelanggan",
         89
-      ],
-      [
-        "enterprise",
-        71
-      ],
-      [
-        "software",
-        58
       ],
       [
         "cal",
         63
       ],
       [
-        "lunak",
-        90
+        "enterprise",
+        71
+      ],
+      [
+        "aktifasi",
+        40
+      ],
+      [
+        "office",
+        86
       ],
       [
         "assurance",
         51
+      ],
+      [
+        "lunak",
+        90
+      ],
+      [
+        "pembelian",
+        74
       ]
     ],
     "phrases": [
@@ -183,29 +183,53 @@
     ],
     "similar": [
       [
-        7021,
+        12492,
+        0.21
+      ],
+      [
+        17918,
         0.16
       ],
       [
-        1265,
+        17936,
+        0.16
+      ],
+      [
+        13656,
         0.15
       ],
       [
-        8256,
-        0.12
+        15532,
+        0.14
       ],
       [
-        4091,
-        0.12
-      ],
-      [
-        3786,
-        0.11
-      ],
-      [
-        1061,
-        0.11
+        13320,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.74,
+      "positive": 93,
+      "negative": 14,
+      "trend": [
+        0.25,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.07,
+        0.75,
+        1,
+        null,
+        1,
+        0.8,
+        1,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3186,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "mahasiswa",
@@ -114,6 +114,14 @@
         8
       ],
       [
+        "gerakan",
+        19
+      ],
+      [
+        "permainan",
+        12
+      ],
+      [
         "lmnd",
         4
       ],
@@ -126,32 +134,24 @@
         6
       ],
       [
-        "permainan",
+        "revolusi",
         12
       ],
       [
-        "kedangkalan",
-        4
-      ],
-      [
-        "kapital",
-        8
-      ],
-      [
-        "akut",
-        5
-      ],
-      [
-        "kegagalan-kegagalan",
-        3
+        "hidup",
+        23
       ],
       [
         "kapitalisme",
         10
       ],
       [
-        "revolusi",
-        12
+        "kapital",
+        8
+      ],
+      [
+        "organisasi",
+        14
       ]
     ],
     "phrases": [
@@ -187,28 +187,52 @@
     "similar": [
       [
         7861,
-        0.67
+        0.68
       ],
       [
         3783,
-        0.67
+        0.68
       ],
       [
         1964,
-        0.16
+        0.19
       ],
       [
         7301,
-        0.16
+        0.19
       ],
       [
         1928,
-        0.15
+        0.18
       ],
       [
         2115,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 55,
+      "negative": 49,
+      "trend": [
+        null,
+        0,
+        -0.2,
+        -0.33,
+        -0.33,
+        null,
+        0.75,
+        null,
+        0.11,
+        0.33,
+        0.09,
+        0.43,
+        null,
+        null,
+        0.6,
+        -0.09
+      ],
+      "emotions": []
+    }
   }
 }

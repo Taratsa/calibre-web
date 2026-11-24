@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3796,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "agraria",
@@ -120,16 +120,20 @@
         16
       ],
       [
+        "perkebunan",
+        17
+      ],
+      [
+        "tanah",
+        35
+      ],
+      [
         "luasan",
         10
       ],
       [
         "areal",
         12
-      ],
-      [
-        "perkebunan",
-        17
       ],
       [
         "pertambangan",
@@ -140,12 +144,8 @@
         9
       ],
       [
-        "koridor",
-        9
-      ],
-      [
-        "pertanahan",
-        10
+        "sulawesi",
+        15
       ]
     ],
     "phrases": [
@@ -185,28 +185,77 @@
     "similar": [
       [
         8551,
-        0.47
+        0.51
       ],
       [
         8552,
-        0.41
+        0.45
       ],
       [
         8549,
-        0.4
+        0.44
       ],
       [
         8544,
-        0.37
-      ],
-      [
-        8545,
-        0.37
+        0.42
       ],
       [
         8546,
-        0.37
+        0.41
+      ],
+      [
+        8545,
+        0.41
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 48,
+      "negative": 43,
+      "trend": [
+        0.25,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        null,
+        -0.71,
+        0.67,
+        0.11,
+        -0.29,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          97
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

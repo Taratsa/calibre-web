@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4235,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "indonesia",
@@ -96,32 +96,32 @@
     ],
     "distinct": [
       [
-        "president",
-        23
-      ],
-      [
         "people",
         36
       ],
       [
-        "czechoslovakia",
-        9
+        "president",
+        23
       ],
       [
         "fighting",
         14
       ],
       [
+        "czechoslovakia",
+        9
+      ],
+      [
         "yugoslavia",
         13
       ],
       [
-        "madame",
-        10
-      ],
-      [
         "tito",
         11
+      ],
+      [
+        "madame",
+        10
       ],
       [
         "indonesin",
@@ -136,12 +136,12 @@
         5
       ],
       [
-        "novotny",
-        5
+        "freedom",
+        15
       ],
       [
-        "industrious",
-        6
+        "novotny",
+        5
       ]
     ],
     "phrases": [
@@ -181,28 +181,29 @@
     "similar": [
       [
         6891,
-        0.18
+        0.19
       ],
       [
         7831,
-        0.18
-      ],
-      [
-        540,
-        0.14
+        0.19
       ],
       [
         1228,
-        0.14
+        0.15
+      ],
+      [
+        540,
+        0.15
+      ],
+      [
+        7849,
+        0.15
       ],
       [
         6888,
-        0.14
-      ],
-      [
-        7713,
-        0.14
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

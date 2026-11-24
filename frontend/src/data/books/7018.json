@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1970,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "klub",
@@ -130,20 +130,20 @@
         9
       ],
       [
-        "wimbledon",
-        7
-      ],
-      [
         "sepakbola",
         12
       ],
       [
-        "liverpool",
+        "wimbledon",
         7
       ],
       [
         "olahraga",
         14
+      ],
+      [
+        "liverpool",
+        7
       ],
       [
         "football",
@@ -191,15 +191,11 @@
     "similar": [
       [
         109,
-        0.37
+        0.35
       ],
       [
         2503,
         0.31
-      ],
-      [
-        3714,
-        0.28
       ],
       [
         3723,
@@ -210,9 +206,14 @@
         0.27
       ],
       [
-        49,
+        3714,
         0.26
+      ],
+      [
+        49,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

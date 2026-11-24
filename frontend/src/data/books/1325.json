@@ -11,7 +11,7 @@
   ],
   "author_sort": "Aidit, D.N.",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 10306,
-    "longer_than": 62,
+    "longer_than": 81,
     "top": [
       [
         "partai",
@@ -116,12 +116,12 @@
         199
       ],
       [
-        "borjuasi",
-        44
-      ],
-      [
         "kaum",
         148
+      ],
+      [
+        "borjuasi",
+        44
       ],
       [
         "buruh",
@@ -132,28 +132,28 @@
         81
       ],
       [
+        "rakyat",
+        99
+      ],
+      [
         "tani",
         52
+      ],
+      [
+        "indonesia",
+        135
       ],
       [
         "persatuan",
         52
       ],
       [
-        "rakyat",
-        99
-      ],
-      [
-        "komunis",
-        40
+        "nasional",
+        78
       ],
       [
         "belanda",
         52
-      ],
-      [
-        "kader-kader",
-        17
       ]
     ],
     "phrases": [
@@ -193,28 +193,77 @@
     "similar": [
       [
         4817,
-        0.55
+        0.59
       ],
       [
         484,
-        0.55
+        0.59
       ],
       [
         4884,
-        0.5
+        0.54
       ],
       [
         1319,
-        0.42
+        0.47
       ],
       [
         9318,
-        0.38
+        0.44
       ],
       [
-        4022,
-        0.37
+        9273,
+        0.42
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 228,
+      "negative": 148,
+      "trend": [
+        0,
+        0.64,
+        0.14,
+        -0.1,
+        0.04,
+        -0.18,
+        0.05,
+        -0.09,
+        0.24,
+        0.42,
+        -0.08,
+        0.58,
+        0.27,
+        1,
+        0.33,
+        0.79
+      ],
+      "emotions": [
+        [
+          "anger",
+          37
+        ],
+        [
+          "fear",
+          30
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

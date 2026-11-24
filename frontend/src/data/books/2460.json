@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 923,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "malatesta",
@@ -111,20 +111,20 @@
         3
       ],
       [
-        "posting",
-        4
-      ],
-      [
         "anarkis",
         9
+      ],
+      [
+        "london",
+        8
       ],
       [
         "katalis",
         4
       ],
       [
-        "london",
-        8
+        "posting",
+        4
       ],
       [
         "pemogokan",
@@ -139,11 +139,11 @@
         3
       ],
       [
-        "demonstrasi",
-        4
+        "pekerja",
+        6
       ],
       [
-        "mengunjungi",
+        "demonstrasi",
         4
       ]
     ],
@@ -151,28 +151,29 @@
     "similar": [
       [
         7343,
-        0.27
+        0.29
       ],
       [
         1995,
-        0.24
-      ],
-      [
-        2177,
-        0.18
+        0.23
       ],
       [
         2052,
-        0.17
+        0.19
       ],
       [
-        2413,
-        0.16
+        7858,
+        0.18
       ],
       [
-        2073,
-        0.16
+        2061,
+        0.18
+      ],
+      [
+        2653,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

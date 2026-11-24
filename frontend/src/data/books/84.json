@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 856,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "orang",
@@ -99,6 +99,14 @@
         5
       ],
       [
+        "dipaksa",
+        8
+      ],
+      [
+        "jurang",
+        6
+      ],
+      [
         "ilalang",
         4
       ],
@@ -107,27 +115,11 @@
         4
       ],
       [
-        "jurang",
-        6
-      ],
-      [
-        "dipaksa",
-        8
-      ],
-      [
-        "terjal",
-        3
-      ],
-      [
         "ganda",
         5
       ],
       [
-        "kampus",
-        4
-      ],
-      [
-        "pelukan",
+        "terjal",
         3
       ],
       [
@@ -135,7 +127,15 @@
         5
       ],
       [
-        "keresahan",
+        "kampus",
+        4
+      ],
+      [
+        "musik",
+        5
+      ],
+      [
+        "pelukan",
         3
       ]
     ],
@@ -172,7 +172,7 @@
     "similar": [
       [
         3763,
-        0.16
+        0.15
       ],
       [
         8120,
@@ -180,8 +180,9 @@
       ],
       [
         8119,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

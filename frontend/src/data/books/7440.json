@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1625,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "proletariat",
@@ -114,28 +114,28 @@
         21
       ],
       [
-        "kerah",
-        13
-      ],
-      [
         "pekerja",
         33
+      ],
+      [
+        "kerah",
+        13
       ],
       [
         "kelas",
         22
       ],
       [
-        "kerja-upahan",
-        4
+        "kerja",
+        25
       ],
       [
         "buruh",
         16
       ],
       [
-        "kerja",
-        25
+        "kerja-upahan",
+        4
       ],
       [
         "menjual",
@@ -146,12 +146,12 @@
         9
       ],
       [
-        "mendeskripsikan",
-        5
-      ],
-      [
         "industri",
         11
+      ],
+      [
+        "kapitalis",
+        8
       ]
     ],
     "phrases": [
@@ -191,7 +191,7 @@
     "similar": [
       [
         2535,
-        0.57
+        0.58
       ],
       [
         2090,
@@ -199,20 +199,21 @@
       ],
       [
         2559,
-        0.35
+        0.38
       ],
       [
         4780,
-        0.17
+        0.2
       ],
       [
         2599,
-        0.16
+        0.2
       ],
       [
-        7866,
-        0.12
+        283,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

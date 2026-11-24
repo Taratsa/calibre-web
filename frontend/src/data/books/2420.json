@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 19586,
-    "longer_than": 76,
+    "longer_than": 88,
     "top": [
       [
         "orang",
@@ -103,48 +103,48 @@
         95
       ],
       [
-        "propaganda",
-        48
-      ],
-      [
         "kekerasan",
         77
       ],
       [
-        "anarkisme",
-        31
+        "orang",
+        162
+      ],
+      [
+        "propaganda",
+        48
       ],
       [
         "pemerintah",
         83
       ],
       [
-        "libertarian",
-        18
+        "anarkisme",
+        31
       ],
       [
         "kolektif",
         39
       ],
       [
-        "mercka",
-        14
+        "kaum",
+        53
       ],
       [
-        "swiss",
-        17
+        "negara",
+        71
+      ],
+      [
+        "memiliki",
+        70
+      ],
+      [
+        "masyarakat",
+        61
       ],
       [
         "jerman",
         27
-      ],
-      [
-        "federasi",
-        20
-      ],
-      [
-        "olch",
-        16
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         6730,
-        0.26
+        0.35
       ],
       [
         2203,
-        0.26
+        0.35
       ],
       [
         4877,
-        0.24
+        0.33
       ],
       [
         2482,
-        0.24
+        0.33
       ],
       [
         7875,
-        0.23
+        0.32
       ],
       [
         2540,
-        0.23
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 464,
+      "negative": 444,
+      "trend": [
+        -0.16,
+        0.37,
+        0.46,
+        0.43,
+        0.15,
+        -0.17,
+        0.01,
+        -0.2,
+        0.82,
+        0.21,
+        -0.19,
+        0.24,
+        -0.43,
+        -0.42,
+        0.04,
+        0.05
+      ],
+      "emotions": [
+        [
+          "anger",
+          148
+        ],
+        [
+          "trust",
+          50
+        ],
+        [
+          "sadness",
+          29
+        ],
+        [
+          "joy",
+          29
+        ],
+        [
+          "fear",
+          25
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

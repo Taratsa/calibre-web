@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 333,
-    "longer_than": 3,
+    "longer_than": 32,
     "top": [
       [
         "hidup",
@@ -99,19 +99,19 @@
         4
       ],
       [
-        "memberontak",
-        3
-      ],
-      [
-        "abstrak",
-        3
-      ],
-      [
         "perlawanan",
         5
       ],
       [
-        "logika",
+        "memberontak",
+        3
+      ],
+      [
+        "menolak",
+        6
+      ],
+      [
+        "abstrak",
         3
       ],
       [
@@ -119,16 +119,16 @@
         5
       ],
       [
-        "menolak",
-        6
-      ],
-      [
-        "memilih",
+        "logika",
         3
       ],
       [
         "hidup",
         6
+      ],
+      [
+        "memilih",
+        3
       ],
       [
         "kehidupan",
@@ -143,15 +143,15 @@
     "similar": [
       [
         2289,
-        0.36
+        0.38
       ],
       [
         8039,
-        0.22
+        0.23
       ],
       [
         2421,
-        0.22
+        0.23
       ],
       [
         7009,
@@ -159,12 +159,13 @@
       ],
       [
         2741,
-        0.16
+        0.18
       ],
       [
-        1942,
-        0.14
+        4066,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

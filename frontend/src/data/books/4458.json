@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4185,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "dunia",
@@ -103,20 +103,28 @@
         41
       ],
       [
+        "tokoh",
+        43
+      ],
+      [
         "cerpen",
         24
+      ],
+      [
+        "cerita",
+        45
+      ],
+      [
+        "proses",
+        54
       ],
       [
         "godlob",
         11
       ],
       [
-        "tokoh",
-        43
-      ],
-      [
-        "cerita",
-        45
+        "dunia",
+        54
       ],
       [
         "cerpennya",
@@ -127,24 +135,16 @@
         6
       ],
       [
-        "proses",
-        54
+        "pendek",
+        21
       ],
       [
         "berhala",
         9
       ],
       [
-        "kayam",
-        6
-      ],
-      [
-        "duano",
-        4
-      ],
-      [
-        "sonya",
-        5
+        "pendeknya",
+        9
       ]
     ],
     "phrases": [
@@ -184,11 +184,11 @@
     "similar": [
       [
         4496,
-        0.26
+        0.28
       ],
       [
         4333,
-        0.24
+        0.25
       ],
       [
         4393,
@@ -200,12 +200,19 @@
       ],
       [
         4186,
-        0.21
+        0.22
       ],
       [
-        4476,
-        0.19
+        4512,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 51,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

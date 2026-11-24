@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 29788,
-    "longer_than": 85,
+    "longer_than": 92,
     "top": [
       [
         "aid",
@@ -99,12 +99,12 @@
         155
       ],
       [
-        "neutrals",
-        107
-      ],
-      [
         "aid",
         308
+      ],
+      [
+        "neutrals",
+        107
       ],
       [
         "conference",
@@ -115,12 +115,12 @@
         146
       ],
       [
-        "congressional",
-        68
-      ],
-      [
         "president",
         124
+      ],
+      [
+        "congressional",
+        68
       ],
       [
         "administration",
@@ -135,8 +135,8 @@
         108
       ],
       [
-        "policy",
-        116
+        "american",
+        105
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         1474,
-        0.23
+        0.24
       ],
       [
         721,
-        0.23
+        0.24
       ],
       [
         1869,
-        0.18
+        0.19
       ],
       [
         760,
-        0.18
+        0.19
       ],
       [
         1472,
-        0.17
+        0.18
       ],
       [
         645,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

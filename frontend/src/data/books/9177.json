@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 823,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "bertindak",
@@ -111,16 +111,16 @@
         4
       ],
       [
-        "ekspropriasi",
-        3
+        "bertindak",
+        11
       ],
       [
         "solidaritas",
         8
       ],
       [
-        "bertindak",
-        11
+        "ekspropriasi",
+        3
       ],
       [
         "mengharapkan",
@@ -131,16 +131,16 @@
         4
       ],
       [
+        "situasi",
+        6
+      ],
+      [
         "cita-cita",
         4
       ],
       [
         "individu",
         5
-      ],
-      [
-        "situasi",
-        6
       ],
       [
         "anarkis",
@@ -151,32 +151,37 @@
         3
       ],
       [
-        "menyadari",
-        3
+        "alasan",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         2065,
-        0.7
+        0.72
       ],
       [
         2730,
+        0.14
+      ],
+      [
+        8021,
+        0.13
+      ],
+      [
+        7105,
+        0.13
+      ],
+      [
+        1813,
+        0.13
+      ],
+      [
+        7073,
         0.12
-      ],
-      [
-        7552,
-        0.11
-      ],
-      [
-        7153,
-        0.11
-      ],
-      [
-        1779,
-        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

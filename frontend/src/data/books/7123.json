@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 8511,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "komunitas",
@@ -110,24 +110,24 @@
         106
       ],
       [
+        "anarkis",
+        34
+      ],
+      [
         "kelangsungan",
         28
       ],
       [
-        "anarkis",
-        34
+        "orang",
+        85
       ],
       [
         "kapitalisme",
         30
       ],
       [
-        "rekonsiliasi",
-        11
-      ],
-      [
-        "infrastruktur",
-        13
+        "hidup",
+        62
       ],
       [
         "wilayah",
@@ -138,20 +138,20 @@
         23
       ],
       [
-        "perawatan",
-        13
+        "rekonsiliasi",
+        11
+      ],
+      [
+        "masyarakat",
+        35
       ],
       [
         "perumahan",
         14
       ],
       [
-        "penyembuhan",
-        7
-      ],
-      [
-        "milisi",
-        7
+        "perawatan",
+        13
       ]
     ],
     "phrases": [
@@ -191,28 +191,77 @@
     "similar": [
       [
         2596,
-        0.2
+        0.29
       ],
       [
         1956,
-        0.17
+        0.23
       ],
       [
         7151,
-        0.17
+        0.23
       ],
       [
         7886,
-        0.16
+        0.21
       ],
       [
         1958,
-        0.16
+        0.21
       ],
       [
-        7267,
-        0.14
+        2256,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 233,
+      "negative": 132,
+      "trend": [
+        0.5,
+        0.39,
+        0,
+        -0.1,
+        0.53,
+        0.47,
+        0.1,
+        0.54,
+        0.47,
+        0.33,
+        0.24,
+        -0.2,
+        -0.03,
+        0.25,
+        0.38,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          48
+        ],
+        [
+          "trust",
+          26
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

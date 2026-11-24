@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 8336,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "anak",
@@ -104,16 +104,28 @@
         29
       ],
       [
-        "gotong-royong",
-        27
-      ],
-      [
         "kebijaksanaan",
         41
       ],
       [
+        "gotong-royong",
+        27
+      ],
+      [
+        "anak-anak",
+        67
+      ],
+      [
         "pelayanan",
         40
+      ],
+      [
+        "anak",
+        83
+      ],
+      [
+        "miskin",
+        41
       ],
       [
         "kebutuhan-kebutuhan",
@@ -124,28 +136,16 @@
         19
       ],
       [
-        "anak-anak",
-        67
-      ],
-      [
         "program-program",
         22
       ],
       [
-        "si-anak",
-        9
-      ],
-      [
-        "tradisionil",
-        12
+        "pembangunan",
+        39
       ],
       [
         "perencanaan",
         24
-      ],
-      [
-        "pelayanan-pelayanan",
-        8
       ]
     ],
     "phrases": [
@@ -184,29 +184,74 @@
     ],
     "similar": [
       [
-        7593,
-        0.2
+        3440,
+        0.24
       ],
       [
-        3440,
-        0.2
+        7593,
+        0.24
       ],
       [
         8492,
-        0.19
+        0.22
       ],
       [
         8601,
+        0.2
+      ],
+      [
+        1430,
         0.19
       ],
       [
-        8614,
-        0.15
-      ],
-      [
-        8397,
-        0.15
+        7570,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 291,
+      "negative": 126,
+      "trend": [
+        0.47,
+        -0.26,
+        -0.11,
+        0.59,
+        0.69,
+        -0.2,
+        0.53,
+        0.67,
+        0.35,
+        0.62,
+        0.25,
+        0.6,
+        0.52,
+        0.77,
+        0.44,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          15
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

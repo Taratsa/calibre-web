@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 922,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "mukhil",
@@ -101,6 +101,10 @@
     ],
     "distinct": [
       [
+        "darah",
+        15
+      ],
+      [
         "suntik",
         5
       ],
@@ -109,44 +113,40 @@
         3
       ],
       [
-        "darah",
-        15
+        "jarum",
+        5
       ],
       [
         "zahra",
         3
       ],
       [
-        "jarum",
-        5
-      ],
-      [
         "tes",
         5
-      ],
-      [
-        "darahmu",
-        3
-      ],
-      [
-        "luthfi",
-        3
       ],
       [
         "riset",
         6
       ],
       [
+        "darahmu",
+        3
+      ],
+      [
         "bacaan",
         7
       ],
       [
-        "penerjemahan",
-        4
+        "luthfi",
+        3
       ],
       [
         "pembinaan",
         7
+      ],
+      [
+        "ibunya",
+        6
       ]
     ],
     "phrases": [
@@ -186,28 +186,29 @@
     "similar": [
       [
         5652,
-        0.36
+        0.44
       ],
       [
         5815,
-        0.26
+        0.34
       ],
       [
         5792,
-        0.22
+        0.29
       ],
       [
         4970,
-        0.15
+        0.21
       ],
       [
         5097,
-        0.15
+        0.2
       ],
       [
-        5710,
-        0.14
+        6262,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

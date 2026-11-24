@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2510,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "pki",
@@ -100,48 +100,48 @@
         51
       ],
       [
-        "reaksioner",
-        15
-      ],
-      [
         "komunis",
         22
-      ],
-      [
-        "imperialis",
-        13
-      ],
-      [
-        "partai",
-        22
-      ],
-      [
-        "marxisme-leninisme",
-        8
-      ],
-      [
-        "imperialisme",
-        12
-      ],
-      [
-        "perjuangan",
-        25
       ],
       [
         "kaum",
         33
       ],
       [
-        "nasution-suharto",
-        3
+        "reaksioner",
+        15
       ],
       [
-        "dibenggoli",
-        3
+        "partai",
+        22
       ],
       [
-        "subyektivisme",
-        3
+        "perjuangan",
+        25
+      ],
+      [
+        "imperialis",
+        13
+      ],
+      [
+        "imperialisme",
+        12
+      ],
+      [
+        "marxisme-leninisme",
+        8
+      ],
+      [
+        "rakyat",
+        24
+      ],
+      [
+        "indonesia",
+        33
+      ],
+      [
+        "kanan",
+        15
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         9318,
-        0.34
-      ],
-      [
-        9320,
-        0.33
+        0.38
       ],
       [
         9317,
-        0.33
+        0.38
       ],
       [
-        1325,
-        0.3
-      ],
-      [
-        9270,
-        0.3
+        9320,
+        0.36
       ],
       [
         9301,
-        0.3
+        0.36
+      ],
+      [
+        1325,
+        0.36
+      ],
+      [
+        9270,
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 84,
+      "negative": 48,
+      "trend": [
+        -0.75,
+        -0.11,
+        0,
+        1,
+        0.27,
+        0.14,
+        0,
+        0.38,
+        1,
+        -0.5,
+        null,
+        0.2,
+        1,
+        0.64,
+        null,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

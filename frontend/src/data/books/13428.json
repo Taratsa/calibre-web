@@ -1,0 +1,86 @@
+{
+  "id": 13428,
+  "title": "Ubuntu: Repair ntfs",
+  "slug": "ubuntu-repair-ntfs-onno-widodo-purbo",
+  "slugBase": "ubuntu-repair-ntfs-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2019-11-22",
+  "timestamp": "2026-11-23 21:58:42.654575",
+  "last_modified": "2026-11-23 21:58:42.654581",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:35e21cff-c8ff-50a9-be01-0afa13d4307c"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/13428?v=1795445922",
+  "cover_og_url": "/cover/13428/og?v=1795445922",
+  "url": "/book/ubuntu-repair-ntfs-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Install ntfs-3g with sudo apt-get install ntfs-3g. Then run the ntfsfix command on your NTFS partition. For example: ntfsfix /dev/hda6 ntfsfix v2.0.0 (libntfs 10:0:0) Usage: ntfsfix [options] device Attempt to fix an NTFS partition. -h, --help Display this help -V, --version Display version information Developers' email address: linux-ntfs-dev@lists.sf.net Linux NTFS homepage:",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2476,
+      "name": "Ubuntu_ Repair ntfs - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 156,
+    "longer_than": 20,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        10209,
+        0.21
+      ],
+      [
+        15631,
+        0.2
+      ],
+      [
+        16008,
+        0.19
+      ],
+      [
+        16752,
+        0.17
+      ],
+      [
+        15466,
+        0.15
+      ],
+      [
+        16060,
+        0.15
+      ]
+    ],
+    "sentiment": null
+  }
+}

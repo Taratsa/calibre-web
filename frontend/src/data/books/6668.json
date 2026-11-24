@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 11190,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "djagung",
@@ -108,44 +108,44 @@
         87
       ],
       [
-        "membuatnja",
-        53
-      ],
-      [
         "daun",
         134
       ],
       [
-        "tepung",
-        67
+        "membuatnja",
+        53
       ],
       [
         "gula",
         90
       ],
       [
-        "tjara",
-        72
+        "tepung",
+        67
       ],
       [
-        "santan",
-        45
+        "tjara",
+        72
       ],
       [
         "kelapa",
         82
       ],
       [
-        "protein",
-        37
+        "santan",
+        45
       ],
       [
-        "katjang",
-        33
+        "garam",
+        57
       ],
       [
         "bumbu",
         51
+      ],
+      [
+        "protein",
+        37
       ]
     ],
     "phrases": [
@@ -185,28 +185,52 @@
     "similar": [
       [
         139,
-        0.61
+        0.62
       ],
       [
         6644,
-        0.29
+        0.3
       ],
       [
         6646,
-        0.27
+        0.28
       ],
       [
         5222,
-        0.24
+        0.25
       ],
       [
         5220,
-        0.23
+        0.24
       ],
       [
-        5312,
-        0.2
+        6596,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.71,
+      "positive": 131,
+      "negative": 22,
+      "trend": [
+        0.47,
+        0.69,
+        0.8,
+        0.7,
+        0.67,
+        1,
+        1,
+        0.6,
+        0.6,
+        0.86,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

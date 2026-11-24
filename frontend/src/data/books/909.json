@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1637,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "pdkba",
@@ -89,20 +89,28 @@
     ],
     "distinct": [
       [
+        "bencana",
+        28
+      ],
+      [
         "layanan",
         28
       ],
       [
-        "bencana",
-        28
+        "pendidikan",
+        48
       ],
       [
         "sekolah",
         35
       ],
       [
-        "pendidikan",
-        48
+        "pemerintah",
+        31
+      ],
+      [
+        "guru",
+        20
       ],
       [
         "didik",
@@ -113,28 +121,20 @@
         9
       ],
       [
+        "kebijakan",
+        14
+      ],
+      [
         "healing",
         5
       ],
       [
-        "guru",
-        20
-      ],
-      [
-        "pemerintah",
-        31
-      ],
-      [
-        "disdik",
-        3
+        "pemda",
+        7
       ],
       [
         "paska",
         6
-      ],
-      [
-        "pemda",
-        7
       ]
     ],
     "phrases": [
@@ -174,28 +174,35 @@
     "similar": [
       [
         869,
-        0.19
+        0.23
       ],
       [
         853,
-        0.18
+        0.21
       ],
       [
         9022,
-        0.17
+        0.2
       ],
       [
         912,
-        0.16
+        0.2
       ],
       [
         854,
-        0.14
+        0.18
       ],
       [
-        855,
-        0.13
+        8752,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.29,
+      "positive": 27,
+      "negative": 49,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

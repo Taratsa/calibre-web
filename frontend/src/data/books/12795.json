@@ -1,0 +1,86 @@
+{
+  "id": 12795,
+  "title": "Cisco: OSPF Redistribute Connected",
+  "slug": "cisco-ospf-redistribute-connected-onno-widodo-purbo",
+  "slugBase": "cisco-ospf-redistribute-connected-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2018-12-25",
+  "timestamp": "2026-11-23 21:22:42.975580",
+  "last_modified": "2026-11-23 21:22:42.975584",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:56fceedf-b83f-5719-8be3-f2e326761a50"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/12795?v=1795443762",
+  "cover_og_url": "/cover/12795/og?v=1795443762",
+  "url": "/book/cisco-ospf-redistribute-connected-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Sumber: https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/113339-ospf-connected-net.html router ospf 100 log-adjacency-changes redistribute connected redistribute static subnet router ospf 1 area 0 nextwork x.x.x.x redistribute static subnet ! ip route 192.168.0.0 255.255.192.0 10.x.x.x ip route 192.168.100.10 255.255.255.255 10.x.x.x ip route 192.168.100.11",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2279,
+      "name": "Cisco_ OSPF Redistribute Connected - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 83,
+    "longer_than": 12,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        12747,
+        0.67
+      ],
+      [
+        12849,
+        0.63
+      ],
+      [
+        12816,
+        0.57
+      ],
+      [
+        12796,
+        0.56
+      ],
+      [
+        12744,
+        0.55
+      ],
+      [
+        12797,
+        0.5
+      ]
+    ],
+    "sentiment": null
+  }
+}

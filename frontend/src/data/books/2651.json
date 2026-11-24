@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 14894,
-    "longer_than": 70,
+    "longer_than": 86,
     "top": [
       [
         "perjuangan",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "ekonomik",
-        27
-      ],
-      [
-        "nasionalitas",
-        25
+        "perjuangan",
+        105
       ],
       [
         "politis",
         64
       ],
       [
+        "ekonomik",
+        27
+      ],
+      [
         "pembebasan",
         75
       ],
       [
-        "perjuangan",
-        105
+        "nasionalitas",
+        25
       ],
       [
-        "sisilia",
-        22
+        "kaum",
+        90
+      ],
+      [
+        "nasional",
+        100
       ],
       [
         "borjuasi",
         31
       ],
       [
-        "slavia",
-        17
-      ],
-      [
-        "mapuche",
-        15
+        "sisilia",
+        22
       ],
       [
         "revolusioner",
         53
       ],
       [
-        "swa-determinasi",
-        9
+        "slavia",
+        17
       ],
       [
-        "anarkis",
-        43
+        "negara",
+        98
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         2485,
-        0.3
+        0.35
       ],
       [
         2800,
-        0.27
+        0.34
       ],
       [
         2110,
-        0.25
+        0.32
       ],
       [
         2287,
-        0.24
+        0.29
+      ],
+      [
+        4715,
+        0.27
       ],
       [
         3942,
-        0.2
-      ],
-      [
-        2542,
-        0.2
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 258,
+      "negative": 180,
+      "trend": [
+        0.2,
+        0.76,
+        0.18,
+        0.43,
+        0.12,
+        0.26,
+        -0.04,
+        0.21,
+        -0.13,
+        0.33,
+        0.06,
+        0.18,
+        0.15,
+        -0.06,
+        0.05,
+        0.57
+      ],
+      "emotions": [
+        [
+          "anger",
+          40
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
   }
 }

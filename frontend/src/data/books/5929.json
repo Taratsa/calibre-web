@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 5831,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "partai",
@@ -95,32 +95,24 @@
         102
       ],
       [
-        "rakjat",
-        44
-      ],
-      [
         "tentara",
         69
       ],
       [
-        "bethune",
-        11
-      ],
-      [
-        "membetulkannja",
-        12
-      ],
-      [
-        "membabi-butaisme",
-        9
+        "rakjat",
+        44
       ],
       [
         "didalam",
         41
       ],
       [
-        "ultra-demokrasi",
-        9
+        "membetulkannja",
+        12
+      ],
+      [
+        "bethune",
+        11
       ],
       [
         "pekerdjaan",
@@ -131,12 +123,20 @@
         28
       ],
       [
+        "membabi-butaisme",
+        9
+      ],
+      [
+        "merah",
+        48
+      ],
+      [
         "sadja",
         27
       ],
       [
-        "jalah",
-        19
+        "ultra-demokrasi",
+        9
       ]
     ],
     "phrases": [
@@ -176,28 +176,77 @@
     "similar": [
       [
         5927,
-        0.39
+        0.43
       ],
       [
         6322,
-        0.31
+        0.35
       ],
       [
         6799,
-        0.28
+        0.32
       ],
       [
         4792,
-        0.27
+        0.32
       ],
       [
         453,
-        0.27
+        0.32
       ],
       [
-        703,
-        0.27
+        6713,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 116,
+      "negative": 93,
+      "trend": [
+        -0.17,
+        0.33,
+        0.43,
+        0.68,
+        0.11,
+        0.2,
+        0.29,
+        -0.64,
+        0,
+        0.27,
+        -0.2,
+        0,
+        0.33,
+        -0.67,
+        0,
+        -0.08
+      ],
+      "emotions": [
+        [
+          "sadness",
+          17
+        ],
+        [
+          "joy",
+          13
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
   }
 }

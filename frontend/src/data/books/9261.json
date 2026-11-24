@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 3882,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "masyarakat",
@@ -108,16 +108,32 @@
         22
       ],
       [
-        "kemurbaan",
-        6
+        "kaum",
+        38
+      ],
+      [
+        "jaman",
+        21
       ],
       [
         "maksimum",
         16
       ],
       [
-        "jaman",
-        21
+        "kemurbaan",
+        6
+      ],
+      [
+        "masyarakat",
+        44
+      ],
+      [
+        "rakyat",
+        34
+      ],
+      [
+        "pasal",
+        18
       ],
       [
         "kolektifisasi",
@@ -126,22 +142,6 @@
       [
         "feudal",
         8
-      ],
-      [
-        "formula",
-        10
-      ],
-      [
-        "kaum",
-        38
-      ],
-      [
-        "pasal",
-        18
-      ],
-      [
-        "sosialisme",
-        13
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         9247,
-        0.25
+        0.29
       ],
       [
         9245,
-        0.24
+        0.28
       ],
       [
         9252,
-        0.22
+        0.26
       ],
       [
         4649,
-        0.21
+        0.25
       ],
       [
         385,
-        0.21
+        0.25
       ],
       [
         9250,
-        0.2
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.64,
+      "positive": 69,
+      "negative": 15,
+      "trend": [
+        null,
+        0.78,
+        null,
+        null,
+        0.6,
+        null,
+        null,
+        null,
+        0.33,
+        0.2,
+        1,
+        0.6,
+        0.89,
+        null,
+        null,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

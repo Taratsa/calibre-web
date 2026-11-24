@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 999,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "belanda",
@@ -123,40 +123,40 @@
         7
       ],
       [
+        "belanda",
+        17
+      ],
+      [
         "dipanegara",
         4
       ],
       [
-        "padmi",
-        4
+        "raja",
+        15
       ],
       [
         "keraton",
         7
       ],
       [
-        "belanda",
-        17
-      ],
-      [
         "pangeran",
         9
+      ],
+      [
+        "padmi",
+        4
       ],
       [
         "mangkunegaran",
         4
       ],
       [
-        "garwa",
-        4
+        "jawa",
+        12
       ],
       [
-        "hamengku",
-        4
-      ],
-      [
-        "raja",
-        15
+        "hindia",
+        7
       ]
     ],
     "phrases": [
@@ -180,28 +180,29 @@
     "similar": [
       [
         6812,
-        0.17
+        0.19
       ],
       [
         6718,
-        0.15
+        0.16
       ],
       [
         1481,
+        0.14
+      ],
+      [
+        999,
         0.12
       ],
       [
-        209,
-        0.11
+        3483,
+        0.12
       ],
       [
         8076,
-        0.11
-      ],
-      [
-        3483,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4191,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "kinerja",
@@ -105,12 +105,12 @@
         66
       ],
       [
-        "belanja",
-        53
-      ],
-      [
         "ham",
         66
+      ],
+      [
+        "belanja",
+        53
       ],
       [
         "biro",
@@ -121,28 +121,28 @@
         49
       ],
       [
-        "kepegawaian",
-        17
-      ],
-      [
         "keuangan",
         34
-      ],
-      [
-        "lkip",
-        10
-      ],
-      [
-        "capaian",
-        18
       ],
       [
         "laporan",
         42
       ],
       [
-        "persuratan",
-        9
+        "kepegawaian",
+        17
+      ],
+      [
+        "pelaksanaan",
+        35
+      ],
+      [
+        "capaian",
+        18
+      ],
+      [
+        "reformasi",
+        25
       ]
     ],
     "phrases": [
@@ -182,28 +182,35 @@
     "similar": [
       [
         8980,
-        0.63
+        0.66
       ],
       [
         8938,
-        0.61
+        0.64
       ],
       [
         8960,
-        0.57
+        0.59
       ],
       [
         8922,
-        0.5
+        0.54
       ],
       [
         8901,
-        0.48
+        0.52
       ],
       [
         8879,
-        0.45
+        0.49
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.72,
+      "positive": 67,
+      "negative": 11,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 5354,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "tutu",
@@ -143,12 +143,12 @@
         16
       ],
       [
-        "entap",
-        12
-      ],
-      [
         "perin",
         20
+      ],
+      [
+        "gerobak",
+        25
       ]
     ],
     "phrases": [
@@ -210,6 +210,59 @@
         3003,
         0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 60,
+      "negative": 31,
+      "trend": [
+        1,
+        0.9,
+        1,
+        null,
+        null,
+        null,
+        -0.6,
+        -0.33,
+        null,
+        null,
+        -0.33,
+        1,
+        null,
+        0.25,
+        -1,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          19
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

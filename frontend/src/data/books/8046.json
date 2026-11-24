@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 737,
-    "longer_than": 8,
+    "longer_than": 47,
     "top": [
       [
         "fiksi",
@@ -110,16 +110,16 @@
         22
       ],
       [
+        "kebenaran",
+        14
+      ],
+      [
         "autobiografi",
         3
       ],
       [
         "non-fiksi",
         3
-      ],
-      [
-        "kebenaran",
-        14
       ],
       [
         "diverifikasi",
@@ -158,20 +158,21 @@
     "similar": [
       [
         4366,
-        0.23
+        0.24
       ],
       [
         4545,
-        0.14
-      ],
-      [
-        5672,
-        0.11
+        0.15
       ],
       [
         4542,
         0.11
+      ],
+      [
+        5672,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

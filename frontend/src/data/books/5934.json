@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3316,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "gunung",
@@ -99,44 +99,44 @@
         22
       ],
       [
-        "saldju",
-        9
+        "gunung",
+        31
       ],
       [
         "liu",
         12
       ],
       [
-        "tjendra",
-        5
-      ],
-      [
-        "tjiangsi",
-        5
-      ],
-      [
-        "gunung",
-        31
-      ],
-      [
-        "puntjak",
-        10
+        "saldju",
+        9
       ],
       [
         "lagu",
         22
       ],
       [
+        "tjendra",
+        5
+      ],
+      [
+        "puntjak",
+        10
+      ],
+      [
+        "tjiangsi",
+        5
+      ],
+      [
         "tjatatan",
         9
       ],
       [
-        "penggubah",
-        6
+        "musim",
+        17
       ],
       [
-        "pengarungan",
-        4
+        "penggubah",
+        6
       ]
     ],
     "phrases": [
@@ -175,25 +175,61 @@
     ],
     "similar": [
       [
-        6711,
-        0.12
-      ],
-      [
-        1065,
-        0.12
-      ],
-      [
         5930,
-        0.12
+        0.13
       ],
       [
         4879,
-        0.11
+        0.13
+      ],
+      [
+        6711,
+        0.13
+      ],
+      [
+        1065,
+        0.13
       ],
       [
         6322,
+        0.12
+      ],
+      [
+        7795,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 40,
+      "negative": 33,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

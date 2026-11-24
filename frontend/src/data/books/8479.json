@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 8854,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "gambut",
@@ -119,36 +119,36 @@
         136
       ],
       [
-        "penyengat",
-        36
-      ],
-      [
         "ekosistem",
         73
       ],
       [
-        "meranti",
-        33
+        "penyengat",
+        36
+      ],
+      [
+        "masyarakat",
+        183
       ],
       [
         "sagu",
         45
       ],
       [
-        "bagan",
-        41
-      ],
-      [
-        "rapp",
-        21
+        "meranti",
+        33
       ],
       [
         "kawasan",
         73
       ],
       [
-        "teluk",
-        37
+        "bagan",
+        41
+      ],
+      [
+        "desa",
+        90
       ],
       [
         "hutan",
@@ -192,28 +192,52 @@
     "similar": [
       [
         8508,
-        0.33
+        0.35
       ],
       [
         8641,
-        0.3
+        0.32
       ],
       [
         9145,
-        0.27
-      ],
-      [
-        8194,
-        0.25
+        0.3
       ],
       [
         8385,
-        0.24
+        0.29
       ],
       [
-        9146,
-        0.22
+        8194,
+        0.27
+      ],
+      [
+        8705,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 85,
+      "negative": 31,
+      "trend": [
+        0.14,
+        null,
+        null,
+        0.14,
+        -0.33,
+        0.2,
+        0.75,
+        null,
+        null,
+        null,
+        1,
+        0.83,
+        null,
+        0.5,
+        0.38,
+        0.75
+      ],
+      "emotions": []
+    }
   }
 }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 81191,
-    "longer_than": 97,
+    "longer_than": 98,
     "top": [
       [
         "perempuan",
@@ -100,52 +100,52 @@
     ],
     "distinct": [
       [
-        "perjoangan",
-        199
-      ],
-      [
-        "peribuan",
-        107
-      ],
-      [
         "wanita",
         743
+      ],
+      [
+        "perjoangan",
+        199
       ],
       [
         "perempuan",
         814
       ],
       [
-        "patriarchat",
-        84
+        "peribuan",
+        107
       ],
       [
         "laki-laki",
         534
       ],
       [
-        "berjoang",
-        71
-      ],
-      [
         "kaum",
         550
       ],
       [
-        "perbapaan",
-        42
+        "patriarchat",
+        84
+      ],
+      [
+        "revolusi",
+        269
+      ],
+      [
+        "berjoang",
+        71
+      ],
+      [
+        "masyarakat",
+        406
       ],
       [
         "pergerakan",
         177
       ],
       [
-        "jermania",
-        44
-      ],
-      [
-        "revolusi",
-        269
+        "perbapaan",
+        42
       ]
     ],
     "phrases": [
@@ -184,29 +184,86 @@
     ],
     "similar": [
       [
-        745,
-        0.31
-      ],
-      [
         1306,
-        0.29
+        0.33
       ],
       [
         693,
-        0.29
+        0.33
+      ],
+      [
+        745,
+        0.32
       ],
       [
         1400,
-        0.2
-      ],
-      [
-        6744,
-        0.17
+        0.24
       ],
       [
         1312,
-        0.15
+        0.22
+      ],
+      [
+        6744,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 1221,
+      "negative": 698,
+      "trend": [
+        0.33,
+        0.35,
+        0.22,
+        0.12,
+        0.3,
+        0.23,
+        0.13,
+        0.35,
+        0.14,
+        0.13,
+        0.04,
+        0.63,
+        0.35,
+        0.45,
+        0.36,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          226
+        ],
+        [
+          "sadness",
+          106
+        ],
+        [
+          "trust",
+          94
+        ],
+        [
+          "anger",
+          93
+        ],
+        [
+          "anticipation",
+          54
+        ],
+        [
+          "fear",
+          51
+        ],
+        [
+          "surprise",
+          17
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
   }
 }

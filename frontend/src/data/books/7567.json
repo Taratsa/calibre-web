@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2266,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "berasal",
@@ -122,36 +122,36 @@
         15
       ],
       [
-        "molenvliet",
-        5
+        "berasal",
+        27
       ],
       [
-        "pantjoran",
-        4
+        "kampung",
+        19
       ],
       [
-        "kapten",
-        9
+        "tuan",
+        19
       ],
       [
         "disana",
         13
       ],
       [
-        "laan",
-        6
+        "molenvliet",
+        5
+      ],
+      [
+        "kapten",
+        9
       ],
       [
         "tionghoa",
         10
       ],
       [
-        "djatinegara",
-        5
-      ],
-      [
-        "belandongan",
-        3
+        "laan",
+        6
       ]
     ],
     "phrases": [
@@ -191,24 +191,29 @@
     "similar": [
       [
         627,
-        0.13
-      ],
-      [
-        566,
-        0.11
+        0.14
       ],
       [
         784,
-        0.11
+        0.12
+      ],
+      [
+        566,
+        0.12
       ],
       [
         7683,
-        0.1
+        0.11
       ],
       [
         3432,
-        0.1
+        0.11
+      ],
+      [
+        7721,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

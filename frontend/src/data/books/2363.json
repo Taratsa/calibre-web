@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2902,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "kota",
@@ -111,40 +111,40 @@
         13
       ],
       [
-        "andalusia",
-        10
-      ],
-      [
         "spanyol",
         22
       ],
       [
-        "artichoke",
-        3
-      ],
-      [
-        "utopia",
-        8
-      ],
-      [
-        "sevilla",
-        3
-      ],
-      [
-        "krisis",
-        12
-      ],
-      [
-        "koperasi",
-        7
+        "andalusia",
+        10
       ],
       [
         "kota",
         29
       ],
       [
-        "walikota",
-        5
+        "utopia",
+        8
+      ],
+      [
+        "krisis",
+        12
+      ],
+      [
+        "artichoke",
+        3
+      ],
+      [
+        "sevilla",
+        3
+      ],
+      [
+        "koperasi",
+        7
+      ],
+      [
+        "lahan",
+        8
       ]
     ],
     "phrases": [
@@ -183,25 +183,36 @@
     ],
     "similar": [
       [
+        17386,
+        0.21
+      ],
+      [
         8446,
-        0.14
+        0.15
       ],
       [
         2476,
-        0.11
+        0.13
       ],
       [
         8110,
-        0.11
+        0.13
       ],
       [
         7895,
-        0.11
+        0.13
       ],
       [
         3744,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 33,
+      "negative": 47,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

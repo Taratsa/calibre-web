@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3001,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "teknologi",
@@ -119,31 +119,31 @@
         5
       ],
       [
-        "mendefenisikan",
-        4
-      ],
-      [
         "kebohongan",
         9
+      ],
+      [
+        "mendefenisikan",
+        4
       ],
       [
         "mobil",
         11
       ],
       [
-        "posting",
-        4
-      ],
-      [
-        "memeroleh",
-        3
-      ],
-      [
         "katalis",
         4
       ],
       [
-        "bla",
+        "posting",
+        4
+      ],
+      [
+        "berkaitan",
+        9
+      ],
+      [
+        "memeroleh",
         3
       ]
     ],
@@ -151,19 +151,19 @@
     "similar": [
       [
         2253,
-        0.26
-      ],
-      [
-        4113,
-        0.19
+        0.28
       ],
       [
         2627,
-        0.17
+        0.19
       ],
       [
-        7193,
-        0.15
+        4113,
+        0.18
+      ],
+      [
+        1820,
+        0.16
       ],
       [
         2432,
@@ -171,8 +171,32 @@
       ],
       [
         2413,
-        0.15
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 46,
+      "negative": 48,
+      "trend": [
+        0.4,
+        1,
+        0.33,
+        -0.67,
+        0.2,
+        -0.29,
+        -1,
+        null,
+        -0.43,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

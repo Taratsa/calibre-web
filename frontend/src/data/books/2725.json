@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 930,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "persatuan",
@@ -99,8 +99,8 @@
     ],
     "distinct": [
       [
-        "posting",
-        4
+        "persatuan",
+        10
       ],
       [
         "individu-individu",
@@ -111,12 +111,12 @@
         4
       ],
       [
-        "persatuan",
-        10
-      ],
-      [
         "argumentasi",
         5
+      ],
+      [
+        "posting",
+        4
       ],
       [
         "otoritas",
@@ -127,20 +127,20 @@
         6
       ],
       [
-        "konflik-konflik",
-        3
+        "konflik",
+        6
       ],
       [
         "hasrat",
         5
       ],
       [
-        "ranah",
-        4
+        "konflik-konflik",
+        3
       ],
       [
-        "konflik",
-        6
+        "ranah",
+        4
       ],
       [
         "semenjak",
@@ -151,11 +151,15 @@
     "similar": [
       [
         7168,
-        0.82
+        0.85
       ],
       [
         1995,
-        0.26
+        0.24
+      ],
+      [
+        1967,
+        0.21
       ],
       [
         2004,
@@ -166,13 +170,10 @@
         0.19
       ],
       [
-        1967,
-        0.19
-      ],
-      [
-        2413,
-        0.18
+        4095,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4165,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "demokrasi",
@@ -107,20 +107,32 @@
         28
       ],
       [
-        "camatte",
-        8
-      ],
-      [
         "mistifikasi",
         11
+      ],
+      [
+        "camatte",
+        8
       ],
       [
         "klas",
         16
       ],
       [
+        "masyarakat",
+        46
+      ],
+      [
         "klas-klas",
         7
+      ],
+      [
+        "komunis",
+        17
+      ],
+      [
+        "manusia",
+        38
       ],
       [
         "diktatorian",
@@ -133,18 +145,6 @@
       [
         "proletariat",
         12
-      ],
-      [
-        "komunis",
-        17
-      ],
-      [
-        "borjuis",
-        12
-      ],
-      [
-        "komunisme",
-        11
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2701,
-        0.17
+        0.23
       ],
       [
-        4661,
-        0.16
-      ],
-      [
-        3063,
-        0.16
-      ],
-      [
-        6820,
-        0.15
+        3725,
+        0.21
       ],
       [
         2086,
-        0.15
+        0.21
       ],
       [
         7142,
-        0.15
+        0.21
+      ],
+      [
+        6820,
+        0.2
+      ],
+      [
+        3057,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 81,
+      "negative": 26,
+      "trend": [
+        0.6,
+        null,
+        0.71,
+        null,
+        0.71,
+        0.64,
+        null,
+        null,
+        0.75,
+        0.4,
+        null,
+        0.33,
+        null,
+        0,
+        0.25,
+        0.33
+      ],
+      "emotions": []
+    }
   }
 }

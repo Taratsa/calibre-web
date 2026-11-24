@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2565,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "saudara-saudara",
@@ -104,12 +104,12 @@
         32
       ],
       [
-        "konperensi",
-        30
-      ],
-      [
         "saudara-saudara",
         43
+      ],
+      [
+        "konperensi",
+        30
       ],
       [
         "gerwani",
@@ -136,16 +136,16 @@
         7
       ],
       [
+        "aldjazair",
+        9
+      ],
+      [
         "kemarin-dulu",
         6
       ],
       [
         "buatura",
         5
-      ],
-      [
-        "aldjazair",
-        9
       ]
     ],
     "phrases": [
@@ -185,28 +185,29 @@
     "similar": [
       [
         2838,
-        0.2
+        0.22
       ],
       [
         5947,
-        0.19
+        0.21
       ],
       [
         5948,
-        0.18
+        0.2
       ],
       [
         8771,
-        0.18
-      ],
-      [
-        1281,
-        0.17
+        0.19
       ],
       [
         599,
-        0.17
+        0.19
+      ],
+      [
+        301,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

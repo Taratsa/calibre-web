@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4785,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "teks",
@@ -126,28 +126,28 @@
         23
       ],
       [
-        "twitter",
-        17
-      ],
-      [
         "langkah-langkah",
         24
       ],
       [
-        "virus",
-        15
-      ],
-      [
-        "pembelajaran",
-        20
+        "twitter",
+        17
       ],
       [
         "peserta",
         23
       ],
       [
-        "kualifkasi",
-        4
+        "pembelajaran",
+        20
+      ],
+      [
+        "kegiatan",
+        33
+      ],
+      [
+        "virus",
+        15
       ]
     ],
     "phrases": [
@@ -187,28 +187,52 @@
     "similar": [
       [
         890,
-        0.22
+        0.23
       ],
       [
         5673,
-        0.21
+        0.22
       ],
       [
         891,
-        0.19
+        0.21
       ],
       [
         885,
-        0.19
+        0.21
       ],
       [
         868,
-        0.19
+        0.2
       ],
       [
-        5674,
-        0.18
+        867,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.62,
+      "positive": 116,
+      "negative": 27,
+      "trend": [
+        null,
+        0.67,
+        null,
+        0.75,
+        0.6,
+        0.64,
+        0.57,
+        0.6,
+        0.56,
+        0.47,
+        0.82,
+        0.64,
+        0.69,
+        0.67,
+        0.78,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

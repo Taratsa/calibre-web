@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2757,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "warga",
@@ -111,28 +111,28 @@
         12
       ],
       [
-        "mogok",
-        16
-      ],
-      [
         "warga",
         37
       ],
       [
-        "pertamina",
-        8
+        "mogok",
+        16
       ],
       [
         "buruh",
         20
       ],
       [
-        "apartemen",
-        6
+        "pertamina",
+        8
       ],
       [
-        "kbu",
-        3
+        "bandung",
+        15
+      ],
+      [
+        "apartemen",
+        6
       ],
       [
         "tamansari",
@@ -143,8 +143,8 @@
         5
       ],
       [
-        "vendor",
-        4
+        "kbu",
+        3
       ]
     ],
     "phrases": [
@@ -184,7 +184,7 @@
     "similar": [
       [
         2048,
-        0.32
+        0.33
       ],
       [
         3102,
@@ -192,20 +192,44 @@
       ],
       [
         4064,
-        0.24
+        0.25
       ],
       [
         3829,
-        0.23
+        0.24
       ],
       [
         2300,
-        0.18
+        0.19
       ],
       [
-        79,
-        0.15
+        7907,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 43,
+      "negative": 36,
+      "trend": [
+        -0.2,
+        null,
+        -0.67,
+        0.2,
+        0.5,
+        -0.6,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        null,
+        -0.6,
+        0.11,
+        0.75,
+        0.67
+      ],
+      "emotions": []
+    }
   }
 }

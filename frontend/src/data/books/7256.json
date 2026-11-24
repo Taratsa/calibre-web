@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2417,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "pekerja",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "nasionalisasi",
-        23
-      ],
-      [
         "pekerja",
         59
+      ],
+      [
+        "nasionalisasi",
+        23
       ],
       [
         "venezuela",
@@ -126,32 +126,32 @@
         6
       ],
       [
+        "negara",
+        39
+      ],
+      [
         "chevron-texaco",
         4
       ],
       [
+        "perusahaan",
+        17
+      ],
+      [
+        "kapitalisme",
+        14
+      ],
+      [
+        "kapitalis",
+        13
+      ],
+      [
+        "produksi",
+        16
+      ],
+      [
         "sidor",
         3
-      ],
-      [
-        "alcasa",
-        3
-      ],
-      [
-        "pdvsa",
-        3
-      ],
-      [
-        "ko-manajemen",
-        3
-      ],
-      [
-        "invepal",
-        3
-      ],
-      [
-        "manajemen",
-        11
       ]
     ],
     "phrases": [
@@ -183,28 +183,35 @@
     "similar": [
       [
         3713,
-        0.63
+        0.65
       ],
       [
         7066,
-        0.19
-      ],
-      [
-        7288,
-        0.18
-      ],
-      [
-        2469,
-        0.18
+        0.23
       ],
       [
         2340,
-        0.18
+        0.22
       ],
       [
-        1758,
-        0.14
+        7288,
+        0.21
+      ],
+      [
+        2469,
+        0.21
+      ],
+      [
+        7259,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 37,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

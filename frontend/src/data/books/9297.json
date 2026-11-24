@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4621,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "ekonomi",
@@ -100,48 +100,48 @@
         61
       ],
       [
-        "mprs",
-        24
-      ],
-      [
         "ekonomi",
         74
       ],
       [
-        "resolusi",
-        19
+        "mprs",
+        24
       ],
       [
         "sektor",
         26
       ],
       [
-        "devaluasi",
-        10
+        "rakyat",
+        43
+      ],
+      [
+        "resolusi",
+        19
+      ],
+      [
+        "kaum",
+        36
       ],
       [
         "peraturan-peraturan",
         15
       ],
       [
+        "devaluasi",
+        10
+      ],
+      [
         "swasta",
         20
       ],
       [
+        "nasional",
+        36
+      ],
+      [
         "kesulitan-kesulitan",
         10
-      ],
-      [
-        "rakyat",
-        43
-      ],
-      [
-        "koperasi",
-        13
-      ],
-      [
-        "perusahaan-perusahaan",
-        12
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         9298,
-        0.49
+        0.5
       ],
       [
         9292,
-        0.42
+        0.44
       ],
       [
         9296,
-        0.37
+        0.38
       ],
       [
         462,
-        0.34
+        0.36
       ],
       [
         6763,
-        0.33
+        0.35
       ],
       [
         9306,
-        0.3
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 91,
+      "negative": 44,
+      "trend": [
+        0.2,
+        0.5,
+        0.67,
+        1,
+        1,
+        null,
+        0.2,
+        0.23,
+        -0.33,
+        -0.07,
+        0.64,
+        0.6,
+        null,
+        0.09,
+        0.67,
+        0.29
+      ],
+      "emotions": []
+    }
   }
 }

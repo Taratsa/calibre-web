@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 931,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "film",
@@ -105,28 +105,16 @@
         7
       ],
       [
-        "missing",
-        5
-      ],
-      [
         "film",
         9
       ],
       [
-        "penyiksaan",
-        6
-      ],
-      [
-        "kamboja",
-        4
-      ],
-      [
-        "memori",
+        "missing",
         5
       ],
       [
-        "memilukan",
-        4
+        "penyiksaan",
+        6
       ],
       [
         "jutaan",
@@ -137,16 +125,28 @@
         6
       ],
       [
-        "pictures",
-        3
+        "kamboja",
+        4
       ],
       [
-        "dokumenter",
+        "memilukan",
+        4
+      ],
+      [
+        "memori",
+        5
+      ],
+      [
+        "pictures",
         3
       ],
       [
         "rezim",
         5
+      ],
+      [
+        "penguasa",
+        6
       ]
     ],
     "phrases": [
@@ -169,13 +169,26 @@
         0.22
       ],
       [
+        19661,
+        0.19
+      ],
+      [
         1803,
-        0.14
+        0.16
+      ],
+      [
+        10835,
+        0.15
+      ],
+      [
+        18004,
+        0.13
       ],
       [
         4401,
-        0.13
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

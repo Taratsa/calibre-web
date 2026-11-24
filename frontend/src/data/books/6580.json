@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1784,
-    "longer_than": 23,
+    "longer_than": 60,
     "top": [
       [
         "perkawinan",
@@ -104,44 +104,44 @@
         47
       ],
       [
-        "pertjeraian",
-        11
-      ],
-      [
         "wanita",
         44
       ],
       [
-        "sumari",
-        6
-      ],
-      [
-        "rentjana",
-        10
+        "pertjeraian",
+        11
       ],
       [
         "kongres",
         15
       ],
       [
-        "talak",
-        7
-      ],
-      [
-        "rudjuk",
-        5
-      ],
-      [
-        "panitya",
-        7
+        "sumari",
+        6
       ],
       [
         "islam",
         20
       ],
       [
-        "poligami",
-        6
+        "rentjana",
+        10
+      ],
+      [
+        "agama",
+        24
+      ],
+      [
+        "talak",
+        7
+      ],
+      [
+        "panitya",
+        7
+      ],
+      [
+        "rudjuk",
+        5
       ],
       [
         "supaja",
@@ -184,29 +184,30 @@
     ],
     "similar": [
       [
+        9333,
+        0.27
+      ],
+      [
         6667,
         0.25
       ],
       [
         1290,
+        0.22
+      ],
+      [
+        6639,
         0.19
       ],
       [
         6647,
-        0.18
-      ],
-      [
-        6639,
-        0.18
+        0.19
       ],
       [
         6638,
-        0.15
-      ],
-      [
-        6640,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

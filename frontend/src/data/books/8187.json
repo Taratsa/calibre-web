@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 158,
-    "longer_than": 2,
+    "longer_than": 20,
     "top": [
       [
         "proyek",
@@ -91,16 +91,16 @@
         5
       ],
       [
+        "proyek",
+        6
+      ],
+      [
         "partisipatif",
         3
       ],
       [
         "negosiasi",
         3
-      ],
-      [
-        "proyek",
-        6
       ],
       [
         "kesepakatan",
@@ -111,31 +111,31 @@
         3
       ],
       [
+        "masyarakat",
+        4
+      ],
+      [
         "hukum",
         3
       ],
       [
         "proses",
         3
-      ],
-      [
-        "masyarakat",
-        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         8723,
-        0.21
+        0.2
       ],
       [
         8189,
-        0.19
+        0.18
       ],
       [
         8644,
-        0.19
+        0.18
       ],
       [
         8186,
@@ -143,12 +143,13 @@
       ],
       [
         8673,
-        0.15
+        0.14
       ],
       [
         9146,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2577,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "tuan",
@@ -103,8 +103,8 @@
         11
       ],
       [
-        "bandrol",
-        4
+        "tuan",
+        19
       ],
       [
         "nyamuk",
@@ -115,16 +115,16 @@
         7
       ],
       [
+        "bandrol",
+        4
+      ],
+      [
         "mengepalkan",
         6
       ],
       [
         "tanpo",
         4
-      ],
-      [
-        "tuan",
-        19
       ],
       [
         "serangga",
@@ -139,11 +139,11 @@
         4
       ],
       [
-        "kesenyapan",
-        3
+        "semenjak",
+        7
       ],
       [
-        "sopo",
+        "kesenyapan",
         3
       ]
     ],
@@ -183,17 +183,57 @@
     ],
     "similar": [
       [
-        4315,
-        0.13
-      ],
-      [
         6970,
-        0.1
+        0.12
       ],
       [
         2575,
-        0.1
+        0.12
+      ],
+      [
+        4315,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 29,
+      "negative": 47,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          17
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

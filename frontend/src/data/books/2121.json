@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2969,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "sistem",
@@ -111,36 +111,36 @@
         37
       ],
       [
-        "bulldozer",
-        9
+        "engkau",
+        28
       ],
       [
         "penebangan",
         14
       ],
       [
-        "engkau",
-        28
-      ],
-      [
-        "tekno-industrial",
-        7
+        "bulldozer",
+        9
       ],
       [
         "industri",
         26
       ],
       [
+        "tekno-industrial",
+        7
+      ],
+      [
         "radikal",
         17
       ],
       [
-        "biotek",
-        4
-      ],
-      [
         "genetik",
         7
+      ],
+      [
+        "mematikan",
+        12
       ],
       [
         "mengeliminasi",
@@ -184,16 +184,52 @@
     "similar": [
       [
         2766,
-        0.73
+        0.72
       ],
       [
         4735,
-        0.18
+        0.2
       ],
       [
         279,
-        0.18
+        0.2
+      ],
+      [
+        4698,
+        0.12
+      ],
+      [
+        2148,
+        0.12
+      ],
+      [
+        1820,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 50,
+      "negative": 51,
+      "trend": [
+        -0.2,
+        -0.2,
+        -0.14,
+        0.33,
+        0.5,
+        -0.14,
+        -0.75,
+        0.2,
+        -0.6,
+        null,
+        -0.09,
+        0.33,
+        null,
+        0.2,
+        null,
+        0.25
+      ],
+      "emotions": []
+    }
   }
 }

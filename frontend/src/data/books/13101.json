@@ -1,0 +1,217 @@
+{
+  "id": 13101,
+  "title": "BIND: Memasukan Record",
+  "slug": "bind-memasukan-record-onno-widodo-purbo",
+  "slugBase": "bind-memasukan-record-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2019-02-20",
+  "timestamp": "2026-11-23 21:40:11.947088",
+  "last_modified": "2026-11-23 21:40:11.947093",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:dba59f3b-989c-5369-bf3a-93516183edf3"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/13101?v=1795444811",
+  "cover_og_url": "/cover/13101/og?v=1795444811",
+  "url": "/book/bind-memasukan-record-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Konfigurasi Local File 2 Buat Forward Zone File 3 Buat Reverse Zone File 4 Buat Reverse Zone IPv6 5 Cek Syntax Konfigurasi BIND 6 Restart BIND 7 Pranala Menarik Konfigurasi Local File Edit sudo vi /etc/bind/named.conf.local Di file ini kita bisa tambahkan forward dan revese zone dari sebuah domain, contoh zone \"nyc3.contoh.web.id\" { type master; file",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3408,
+      "name": "BIND_ Memasukan Record - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 570,
+    "longer_than": 42,
+    "top": [
+      [
+        "contoh",
+        31
+      ],
+      [
+        "nyc",
+        30
+      ],
+      [
+        "bind",
+        19
+      ],
+      [
+        "sudo",
+        13
+      ],
+      [
+        "zone",
+        13
+      ],
+      [
+        "ttl",
+        12
+      ],
+      [
+        "zones",
+        12
+      ],
+      [
+        "localhost",
+        11
+      ],
+      [
+        "ptr",
+        10
+      ],
+      [
+        "file",
+        9
+      ],
+      [
+        "host",
+        8
+      ],
+      [
+        "delete",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "nyc",
+        30
+      ],
+      [
+        "bind",
+        19
+      ],
+      [
+        "ptr",
+        10
+      ],
+      [
+        "zones",
+        12
+      ],
+      [
+        "ttl",
+        12
+      ],
+      [
+        "zone",
+        13
+      ],
+      [
+        "contoh",
+        31
+      ],
+      [
+        "localhost",
+        11
+      ],
+      [
+        "retry",
+        6
+      ],
+      [
+        "expire",
+        6
+      ],
+      [
+        "sudo",
+        13
+      ],
+      [
+        "refresh",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "nyc contoh",
+        30
+      ],
+      [
+        "bind zones",
+        12
+      ],
+      [
+        "ttl in soa",
+        6
+      ],
+      [
+        "host nyc",
+        8
+      ],
+      [
+        "serial refresh retry",
+        5
+      ],
+      [
+        "retry expire negative",
+        5
+      ],
+      [
+        "refresh retry expire",
+        5
+      ],
+      [
+        "negative cache ttl",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        12478,
+        0.79
+      ],
+      [
+        12482,
+        0.71
+      ],
+      [
+        14659,
+        0.69
+      ],
+      [
+        12454,
+        0.69
+      ],
+      [
+        12538,
+        0.68
+      ],
+      [
+        12912,
+        0.62
+      ]
+    ],
+    "sentiment": null
+  }
+}

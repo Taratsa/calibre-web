@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1934,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "musik",
@@ -103,24 +103,20 @@
         10
       ],
       [
-        "atonaal",
-        7
-      ],
-      [
         "musik",
         34
       ],
       [
-        "polytonaal",
-        4
+        "atonaal",
+        7
       ],
       [
         "djaman",
         10
       ],
       [
-        "lima-serangkai",
-        3
+        "polytonaal",
+        4
       ],
       [
         "komponis",
@@ -131,20 +127,24 @@
         6
       ],
       [
-        "haydn",
-        3
-      ],
-      [
         "tjiptaan",
         6
       ],
       [
-        "tjiptaan²",
+        "lima-serangkai",
         3
       ],
       [
-        "schubert",
+        "nasional",
+        20
+      ],
+      [
+        "haydn",
         3
+      ],
+      [
+        "kultur",
+        7
       ]
     ],
     "phrases": [
@@ -175,29 +175,30 @@
     ],
     "similar": [
       [
-        7599,
-        0.19
+        1204,
+        0.2
       ],
       [
-        1204,
-        0.18
+        7599,
+        0.2
       ],
       [
         1184,
-        0.16
+        0.18
       ],
       [
         1093,
-        0.14
+        0.16
       ],
       [
         6683,
-        0.12
+        0.13
       ],
       [
         1191,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

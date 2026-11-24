@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 15225,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "djawa",
@@ -105,36 +105,36 @@
         76
       ],
       [
-        "pendjadjahan",
-        45
-      ],
-      [
-        "mempunjai",
-        60
+        "sumatera",
+        82
       ],
       [
         "maluku",
         68
       ],
       [
-        "sumatera",
-        82
+        "mempunjai",
+        60
+      ],
+      [
+        "pendjadjahan",
+        45
       ],
       [
         "mendjadi",
         57
       ],
       [
-        "kolonialisme",
-        53
-      ],
-      [
         "kalimantan",
         67
       ],
       [
-        "kepulauan",
-        55
+        "kolonialisme",
+        53
+      ],
+      [
+        "bangsa",
+        112
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         387,
-        0.54
+        0.56
       ],
       [
         6799,
-        0.24
+        0.28
       ],
       [
         8771,
-        0.22
-      ],
-      [
-        9323,
-        0.22
+        0.25
       ],
       [
         6291,
-        0.21
+        0.25
+      ],
+      [
+        9323,
+        0.25
       ],
       [
         7916,
-        0.21
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 134,
+      "negative": 113,
+      "trend": [
+        -0.57,
+        0.25,
+        0.71,
+        0.2,
+        0.14,
+        1,
+        -0.2,
+        0.05,
+        0.08,
+        0.23,
+        -0.83,
+        0.41,
+        -0.44,
+        0.78,
+        0.81,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          35
+        ],
+        [
+          "trust",
+          21
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

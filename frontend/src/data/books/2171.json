@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1635,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "seksual",
@@ -103,20 +103,28 @@
         32
       ],
       [
+        "kebebasan",
+        28
+      ],
+      [
         "armand",
         6
+      ],
+      [
+        "kehidupan",
+        30
       ],
       [
         "tanyalah",
         6
       ],
       [
-        "kebebasan",
-        28
-      ],
-      [
         "mabuk",
         11
+      ],
+      [
+        "pengalaman",
+        22
       ],
       [
         "baudelaire",
@@ -127,24 +135,16 @@
         5
       ],
       [
-        "émile",
-        3
-      ],
-      [
-        "mabuklah",
-        3
+        "emosional",
+        7
       ],
       [
         "sensual",
         4
       ],
       [
-        "emosional",
-        7
-      ],
-      [
-        "pengalaman",
-        22
+        "émile",
+        3
       ]
     ],
     "phrases": [
@@ -184,16 +184,31 @@
     "similar": [
       [
         7549,
-        0.77
+        0.79
       ],
       [
         4336,
-        0.15
+        0.13
       ],
       [
         2674,
+        0.12
+      ],
+      [
+        2797,
+        0.1
+      ],
+      [
+        2407,
         0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 61,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

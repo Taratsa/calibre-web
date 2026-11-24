@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1787,
-    "longer_than": 23,
+    "longer_than": 60,
     "top": [
       [
         "buku",
@@ -97,20 +97,20 @@
         34
       ],
       [
-        "rtsp",
-        5
+        "buku",
+        45
       ],
       [
         "petani",
         22
       ],
       [
-        "buku",
-        45
+        "rtsp",
+        5
       ],
       [
-        "sumberejo",
-        3
+        "perjuangan",
+        16
       ],
       [
         "menebus",
@@ -121,20 +121,20 @@
         6
       ],
       [
-        "perjuangan",
-        16
+        "diskusi",
+        11
       ],
       [
-        "kawankawan",
-        5
+        "sumberejo",
+        3
       ],
       [
         "arsip",
         7
       ],
       [
-        "diskusi",
-        11
+        "kawankawan",
+        5
       ]
     ],
     "phrases": [
@@ -174,7 +174,7 @@
     "similar": [
       [
         2613,
-        0.23
+        0.24
       ],
       [
         2744,
@@ -185,13 +185,18 @@
         0.17
       ],
       [
-        3070,
-        0.11
+        1345,
+        0.12
       ],
       [
-        1345,
-        0.11
+        15616,
+        0.12
+      ],
+      [
+        15194,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

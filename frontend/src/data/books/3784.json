@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3361,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "bendera",
@@ -107,8 +107,8 @@
         49
       ],
       [
-        "drapeau",
-        4
+        "anarkis",
+        17
       ],
       [
         "louise",
@@ -119,28 +119,28 @@
         8
       ],
       [
-        "anarkis",
-        17
+        "drapeau",
+        4
+      ],
+      [
+        "merah",
+        16
       ],
       [
         "noir",
         4
       ],
       [
-        "flag",
-        6
+        "demonstrasi",
+        9
       ],
       [
         "negasi",
         6
       ],
       [
-        "demonstrasi",
-        9
-      ],
-      [
-        "mengibarkan",
-        5
+        "flag",
+        6
       ],
       [
         "paris",
@@ -184,24 +184,81 @@
     "similar": [
       [
         9236,
-        0.15
-      ],
-      [
-        4531,
-        0.13
+        0.16
       ],
       [
         7316,
-        0.13
+        0.15
       ],
       [
-        4577,
-        0.11
+        2313,
+        0.15
       ],
       [
         2687,
-        0.11
+        0.14
+      ],
+      [
+        2443,
+        0.14
+      ],
+      [
+        7104,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 65,
+      "negative": 61,
+      "trend": [
+        null,
+        null,
+        null,
+        0.16,
+        null,
+        null,
+        -0.33,
+        null,
+        0.83,
+        0.25,
+        0.71,
+        1,
+        -0.33,
+        0,
+        -0.33,
+        -0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          24
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

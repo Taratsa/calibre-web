@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1998,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "pekerja",
@@ -111,12 +111,24 @@
         26
       ],
       [
+        "partai",
+        13
+      ],
+      [
         "kardelj",
         3
       ],
       [
-        "partai",
-        13
+        "demokrasi",
+        10
+      ],
+      [
+        "komunis",
+        8
+      ],
+      [
+        "perusahaan",
+        10
       ],
       [
         "manajer",
@@ -127,24 +139,12 @@
         7
       ],
       [
-        "komunis",
-        8
+        "budaya",
+        12
       ],
       [
-        "demokrasi",
-        10
-      ],
-      [
-        "spesialis",
-        4
-      ],
-      [
-        "perusahaan",
-        10
-      ],
-      [
-        "demokratisasi",
-        4
+        "demokratis",
+        7
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         1845,
-        0.17
+        0.22
       ],
       [
         3713,
-        0.13
+        0.18
       ],
       [
-        3092,
-        0.12
-      ],
-      [
-        8763,
-        0.12
+        7887,
+        0.16
       ],
       [
         3800,
-        0.12
+        0.15
       ],
       [
         2751,
-        0.12
+        0.15
+      ],
+      [
+        8763,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 51,
+      "negative": 26,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1406,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "kecurangan",
@@ -113,12 +113,12 @@
         12
       ],
       [
-        "prabowo",
-        15
-      ],
-      [
         "pemilu",
         21
+      ],
+      [
+        "prabowo",
+        15
       ],
       [
         "urut",
@@ -129,12 +129,16 @@
         10
       ],
       [
-        "tercoblos",
-        5
+        "kampanye",
+        17
       ],
       [
         "subianto",
         9
+      ],
+      [
+        "tercoblos",
+        5
       ],
       [
         "tps",
@@ -143,10 +147,6 @@
       [
         "pencoblosan",
         6
-      ],
-      [
-        "kampanye",
-        17
       ]
     ],
     "phrases": [
@@ -186,7 +186,7 @@
     "similar": [
       [
         347,
-        0.3
+        0.31
       ],
       [
         6933,
@@ -194,20 +194,44 @@
       ],
       [
         9065,
-        0.23
+        0.24
       ],
       [
         8986,
         0.23
       ],
       [
-        9071,
+        9035,
         0.22
       ],
       [
-        9035,
-        0.21
+        9071,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.83,
+      "positive": 6,
+      "negative": 64,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

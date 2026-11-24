@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 4712,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "bahasa",
@@ -111,52 +111,52 @@
     ],
     "distinct": [
       [
-        "sda",
-        54
+        "bahasa",
+        227
       ],
       [
         "banjarmasin",
         52
       ],
       [
+        "sda",
+        54
+      ],
+      [
         "dkk",
         61
-      ],
-      [
-        "kesastraan",
-        38
-      ],
-      [
-        "bahasa",
-        227
       ],
       [
         "balai",
         71
       ],
       [
-        "kebahasaan",
-        33
+        "kesastraan",
+        38
       ],
       [
         "sastra",
         69
       ],
       [
+        "kebahasaan",
+        33
+      ],
+      [
         "durasid",
         9
       ],
       [
-        "yulianto",
-        12
-      ],
-      [
-        "durdje",
-        7
+        "indonesia",
+        87
       ],
       [
         "kalimantan",
         29
+      ],
+      [
+        "yulianto",
+        12
       ]
     ],
     "phrases": [
@@ -196,28 +196,52 @@
     "similar": [
       [
         3047,
-        0.24
-      ],
-      [
-        3017,
-        0.15
+        0.28
       ],
       [
         5705,
-        0.14
+        0.19
+      ],
+      [
+        3017,
+        0.18
       ],
       [
         5704,
-        0.14
+        0.18
+      ],
+      [
+        6242,
+        0.16
       ],
       [
         5795,
-        0.13
-      ],
-      [
-        3488,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.84,
+      "positive": 82,
+      "negative": 7,
+      "trend": [
+        null,
+        0.78,
+        null,
+        1,
+        1,
+        0.8,
+        1,
+        0,
+        1,
+        1,
+        0.71,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

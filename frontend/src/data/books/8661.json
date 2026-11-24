@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 38429,
-    "longer_than": 90,
+    "longer_than": 95,
     "top": [
       [
         "masyarakat",
@@ -92,52 +92,52 @@
     ],
     "distinct": [
       [
-        "adat",
-        224
-      ],
-      [
-        "kesejahteraan",
-        153
-      ],
-      [
         "hukum",
         304
-      ],
-      [
-        "ulayat",
-        66
-      ],
-      [
-        "importasi",
-        30
-      ],
-      [
-        "pjs",
-        38
-      ],
-      [
-        "agraria",
-        96
-      ],
-      [
-        "pembangunan",
-        213
-      ],
-      [
-        "pertanian",
-        125
       ],
       [
         "masyarakat",
         364
       ],
       [
-        "pertanahan",
-        54
+        "adat",
+        224
       ],
       [
-        "kemiskinan",
-        90
+        "pembangunan",
+        213
+      ],
+      [
+        "kesejahteraan",
+        153
+      ],
+      [
+        "negara",
+        279
+      ],
+      [
+        "tanah",
+        234
+      ],
+      [
+        "agraria",
+        96
+      ],
+      [
+        "ulayat",
+        66
+      ],
+      [
+        "pertanian",
+        125
+      ],
+      [
+        "pjs",
+        38
+      ],
+      [
+        "importasi",
+        30
       ]
     ],
     "phrases": [
@@ -177,28 +177,85 @@
     "similar": [
       [
         8494,
-        0.31
-      ],
-      [
-        8372,
-        0.31
+        0.38
       ],
       [
         8344,
-        0.3
+        0.37
+      ],
+      [
+        8372,
+        0.37
       ],
       [
         8427,
-        0.28
-      ],
-      [
-        8598,
-        0.28
+        0.37
       ],
       [
         8676,
-        0.28
+        0.36
+      ],
+      [
+        8749,
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 949,
+      "negative": 373,
+      "trend": [
+        0.7,
+        -0.23,
+        0.31,
+        0.41,
+        0.28,
+        0.73,
+        0.4,
+        0.44,
+        0.8,
+        0.6,
+        0.4,
+        0.38,
+        0.28,
+        0.1,
+        0.57,
+        0.51
+      ],
+      "emotions": [
+        [
+          "trust",
+          106
+        ],
+        [
+          "anger",
+          40
+        ],
+        [
+          "anticipation",
+          28
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "sadness",
+          18
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

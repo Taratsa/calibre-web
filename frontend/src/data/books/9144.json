@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1286,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "containers",
@@ -113,12 +113,16 @@
         5
       ],
       [
-        "mse",
-        6
+        "tanjung",
+        14
       ],
       [
         "re-exported",
         5
+      ],
+      [
+        "mse",
+        6
       ],
       [
         "re-export",
@@ -133,16 +137,12 @@
         6
       ],
       [
-        "tanjung",
-        14
-      ],
-      [
         "notification",
         5
       ],
       [
-        "port",
-        7
+        "waste",
+        6
       ]
     ],
     "phrases": [
@@ -179,6 +179,7 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": null
   }
 }

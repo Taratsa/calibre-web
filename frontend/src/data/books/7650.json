@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 3147,
-    "longer_than": 34,
+    "longer_than": 67,
     "top": [
       [
         "pram",
@@ -120,15 +120,19 @@
         17
       ],
       [
+        "bikin",
+        14
+      ],
+      [
+        "bilang",
+        16
+      ],
+      [
         "skhaak",
         4
       ],
       [
         "dialoog",
-        5
-      ],
-      [
-        "sumarni",
         5
       ],
       [
@@ -140,20 +144,16 @@
         8
       ],
       [
-        "bikin",
-        14
-      ],
-      [
         "isterinya",
         9
       ],
       [
-        "bilang",
-        16
+        "sumarni",
+        5
       ],
       [
-        "pratikto",
-        4
+        "ananta",
+        7
       ]
     ],
     "phrases": [
@@ -193,11 +193,15 @@
     "similar": [
       [
         7564,
-        0.64
+        0.65
       ],
       [
         1079,
-        0.56
+        0.57
+      ],
+      [
+        17843,
+        0.2
       ],
       [
         7765,
@@ -209,12 +213,57 @@
       ],
       [
         7771,
-        0.16
-      ],
-      [
-        3997,
-        0.14
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 70,
+      "negative": 34,
+      "trend": [
+        0.78,
+        0.71,
+        null,
+        null,
+        -0.38,
+        null,
+        -0.67,
+        null,
+        0.67,
+        0.5,
+        null,
+        0.14,
+        1,
+        null,
+        null,
+        0.71
+      ],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2488,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "sosialisme",
@@ -99,16 +99,16 @@
     ],
     "distinct": [
       [
+        "sosialisme",
+        31
+      ],
+      [
         "cnt",
         17
       ],
       [
         "libertarian",
         22
-      ],
-      [
-        "sosialisme",
-        31
       ],
       [
         "spanyol",
@@ -119,32 +119,32 @@
         28
       ],
       [
-        "franco",
-        8
-      ],
-      [
         "sosialis",
         17
+      ],
+      [
+        "franco",
+        8
       ],
       [
         "diemer",
         3
       ],
       [
-        "helem",
-        3
+        "anarkis",
+        10
       ],
       [
-        "inagurasi",
-        3
-      ],
-      [
-        "otoritarian",
-        6
+        "komunis",
+        10
       ],
       [
         "anarkisme",
         8
+      ],
+      [
+        "helem",
+        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8110,
-        0.29
+        0.34
       ],
       [
         2476,
-        0.29
+        0.33
       ],
       [
         7895,
-        0.29
+        0.33
       ],
       [
         7348,
-        0.26
+        0.31
       ],
       [
         6721,
-        0.23
+        0.3
       ],
       [
         4776,
-        0.23
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 46,
+      "negative": 26,
+      "trend": [
+        1,
+        null,
+        0.2,
+        null,
+        -0.33,
+        -0.33,
+        0.33,
+        0.2,
+        null,
+        null,
+        -0.71,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

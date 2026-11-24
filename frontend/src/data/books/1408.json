@@ -12,7 +12,7 @@
   "author_sort": "Semaun",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 10916,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "buruh",
@@ -112,12 +112,12 @@
         285
       ],
       [
-        "serikat",
-        121
-      ],
-      [
         "kaum",
         183
+      ],
+      [
+        "serikat",
+        121
       ],
       [
         "majikan",
@@ -132,6 +132,14 @@
         39
       ],
       [
+        "cabang",
+        33
+      ],
+      [
+        "organisasi",
+        56
+      ],
+      [
         "iuran",
         22
       ],
@@ -140,20 +148,12 @@
         16
       ],
       [
-        "cabang",
-        33
+        "rakyat",
+        50
       ],
       [
-        "saudagar",
-        18
-      ],
-      [
-        "organisasi",
-        56
-      ],
-      [
-        "sepur",
-        9
+        "anggota",
+        47
       ]
     ],
     "phrases": [
@@ -192,29 +192,78 @@
     ],
     "similar": [
       [
-        1311,
-        0.18
+        1302,
+        0.23
       ],
       [
-        403,
-        0.18
+        4646,
+        0.22
       ],
       [
-        292,
-        0.18
+        406,
+        0.22
+      ],
+      [
+        5885,
+        0.22
       ],
       [
         395,
-        0.18
+        0.21
       ],
       [
         9241,
-        0.18
-      ],
-      [
-        1302,
-        0.18
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.64,
+      "positive": 297,
+      "negative": 66,
+      "trend": [
+        0.52,
+        1,
+        0.71,
+        0,
+        0.29,
+        0.45,
+        0.89,
+        0.9,
+        0.43,
+        0.62,
+        0.8,
+        0.89,
+        0.44,
+        0.71,
+        1,
+        0.63
+      ],
+      "emotions": [
+        [
+          "trust",
+          35
+        ],
+        [
+          "joy",
+          30
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

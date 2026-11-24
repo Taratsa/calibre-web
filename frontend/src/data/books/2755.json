@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2137,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "ruang",
@@ -99,52 +99,52 @@
     ],
     "distinct": [
       [
-        "kapital",
-        22
-      ],
-      [
         "ruang",
         50
+      ],
+      [
+        "kapital",
+        22
       ],
       [
         "swakelola",
         9
       ],
       [
-        "ruang-ruang",
-        6
-      ],
-      [
-        "konsensus",
-        5
-      ],
-      [
-        "eksploitasi",
-        7
+        "sosial",
+        20
       ],
       [
         "perjuangan",
         12
       ],
       [
+        "ruang-ruang",
+        6
+      ],
+      [
+        "eksploitasi",
+        7
+      ],
+      [
+        "konsensus",
+        5
+      ],
+      [
+        "produksi",
+        8
+      ],
+      [
         "pengulangan",
         4
-      ],
-      [
-        "okupasi",
-        3
-      ],
-      [
-        "sosial",
-        20
       ],
       [
         "otonom",
         5
       ],
       [
-        "kontrol",
-        6
+        "okupasi",
+        3
       ]
     ],
     "phrases": [
@@ -168,28 +168,35 @@
     "similar": [
       [
         2256,
-        0.29
+        0.35
       ],
       [
         7259,
-        0.23
-      ],
-      [
-        166,
-        0.19
-      ],
-      [
-        3713,
-        0.18
+        0.22
       ],
       [
         1807,
-        0.17
+        0.22
+      ],
+      [
+        2099,
+        0.21
       ],
       [
         2290,
-        0.17
+        0.21
+      ],
+      [
+        3713,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 39,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

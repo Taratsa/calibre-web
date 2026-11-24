@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 2902,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "politik",
@@ -97,44 +97,44 @@
         8
       ],
       [
-        "alavi",
-        6
-      ],
-      [
         "elite",
         13
       ],
       [
-        "dependensia",
-        3
+        "alavi",
+        6
       ],
       [
-        "transisi",
-        9
+        "ekonomi",
+        25
+      ],
+      [
+        "kekuatan",
+        26
+      ],
+      [
+        "negara",
+        30
       ],
       [
         "orde",
         10
       ],
       [
-        "orba",
-        5
-      ],
-      [
-        "berdayaan",
-        3
+        "transisi",
+        9
       ],
       [
         "pasca",
         10
       ],
       [
-        "civil",
-        8
+        "mahasiswa",
+        13
       ],
       [
-        "ekonomi",
-        25
+        "dependensia",
+        3
       ]
     ],
     "phrases": [
@@ -174,28 +174,52 @@
     "similar": [
       [
         8756,
-        0.17
+        0.21
       ],
       [
         8247,
-        0.16
+        0.19
       ],
       [
         343,
-        0.15
+        0.19
       ],
       [
-        8614,
-        0.13
+        5911,
+        0.18
       ],
       [
-        2377,
-        0.13
+        8677,
+        0.18
       ],
       [
-        7035,
-        0.13
+        8687,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 81,
+      "negative": 32,
+      "trend": [
+        null,
+        null,
+        -0.2,
+        -0.25,
+        0.4,
+        0.71,
+        0.6,
+        null,
+        null,
+        0.6,
+        0.37,
+        1,
+        0.6,
+        0.64,
+        1,
+        0.45
+      ],
+      "emotions": []
+    }
   }
 }

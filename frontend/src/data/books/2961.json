@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 51451,
-    "longer_than": 93,
+    "longer_than": 97,
     "top": [
       [
         "tuanta",
@@ -108,20 +108,24 @@
         192
       ],
       [
+        "anjo",
+        212
+      ],
+      [
         "siagaang",
         150
       ],
       [
-        "anjo",
-        212
+        "mange",
+        229
       ],
       [
         "karaenga",
         182
       ],
       [
-        "mange",
-        229
+        "berkatalah",
+        286
       ],
       [
         "taala",
@@ -130,10 +134,6 @@
       [
         "punna",
         170
-      ],
-      [
-        "berkatalah",
-        286
       ],
       [
         "niak",
@@ -177,15 +177,15 @@
     "similar": [
       [
         6077,
-        0.52
+        0.53
       ],
       [
         6037,
-        0.48
+        0.47
       ],
       [
         2941,
-        0.35
+        0.36
       ],
       [
         6302,
@@ -193,12 +193,69 @@
       ],
       [
         6080,
-        0.28
+        0.29
       ],
       [
         2960,
         0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 306,
+      "negative": 152,
+      "trend": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        0.59,
+        0.51,
+        0.1,
+        0.77,
+        0.56,
+        0.38,
+        0.28,
+        -0.08
+      ],
+      "emotions": [
+        [
+          "joy",
+          55
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "anger",
+          21
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "disgust",
+          7
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
   }
 }

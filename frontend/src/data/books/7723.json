@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1446,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "prancis",
@@ -113,24 +113,28 @@
         24
       ],
       [
-        "juridique",
-        3
+        "paris",
+        11
       ],
       [
         "doktor",
         7
       ],
       [
-        "paris",
-        11
+        "juridique",
+        3
+      ],
+      [
+        "administrasi",
+        10
       ],
       [
         "sorbonne",
         4
       ],
       [
-        "administrasi",
-        10
+        "pendidikan",
+        18
       ],
       [
         "stage",
@@ -141,20 +145,16 @@
         7
       ],
       [
-        "peradilan",
-        5
-      ],
-      [
-        "menjabat",
-        5
-      ],
-      [
-        "pendidikan",
-        18
+        "negara",
+        14
       ],
       [
         "pengadilan",
         7
+      ],
+      [
+        "peradilan",
+        5
       ]
     ],
     "phrases": [
@@ -194,10 +194,10 @@
     "similar": [
       [
         7691,
-        0.24
+        0.28
       ],
       [
-        7798,
+        7714,
         0.18
       ],
       [
@@ -205,17 +205,18 @@
         0.17
       ],
       [
-        7714,
-        0.16
+        7798,
+        0.17
       ],
       [
         7565,
-        0.15
+        0.16
       ],
       [
-        7703,
-        0.14
+        10222,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

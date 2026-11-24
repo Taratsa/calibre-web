@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 41390,
-    "longer_than": 91,
+    "longer_than": 95,
     "top": [
       [
         "perempuan",
@@ -92,52 +92,52 @@
     ],
     "distinct": [
       [
-        "asppuk",
-        130
+        "perempuan",
+        812
       ],
       [
         "mikro",
         282
       ],
       [
-        "genteng",
-        170
+        "asppuk",
+        130
       ],
       [
-        "pengepul",
-        121
+        "genteng",
+        170
       ],
       [
         "produsen",
         249
       ],
       [
-        "perempuan",
-        812
-      ],
-      [
         "usaha",
         550
       ],
       [
-        "perdesaan",
-        108
+        "pengepul",
+        121
       ],
       [
         "gula",
         181
       ],
       [
+        "perdesaan",
+        108
+      ],
+      [
+        "ekonomi",
+        251
+      ],
+      [
         "ornop",
         68
       ],
       [
-        "marjinalisasi",
-        59
-      ],
-      [
-        "pemberdayaan",
-        89
+        "kelompok",
+        203
       ]
     ],
     "phrases": [
@@ -176,29 +176,78 @@
     ],
     "similar": [
       [
-        8559,
-        0.22
+        8404,
+        0.26
       ],
       [
-        8404,
-        0.21
+        8559,
+        0.25
       ],
       [
         8378,
-        0.18
+        0.23
       ],
       [
         8749,
-        0.17
-      ],
-      [
-        8567,
-        0.17
+        0.23
       ],
       [
         8669,
-        0.16
+        0.21
+      ],
+      [
+        8666,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 691,
+      "negative": 336,
+      "trend": [
+        0.19,
+        0.11,
+        null,
+        0.53,
+        0.19,
+        0.32,
+        0.16,
+        0.15,
+        0.2,
+        0.03,
+        0.55,
+        0.42,
+        0.47,
+        0.53,
+        0.51,
+        0.34
+      ],
+      "emotions": [
+        [
+          "trust",
+          27
+        ],
+        [
+          "anticipation",
+          23
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ]
+      ]
+    }
   }
 }

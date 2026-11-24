@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8999,
-    "longer_than": 58,
+    "longer_than": 80,
     "top": [
       [
         "buruh",
@@ -111,12 +111,28 @@
         91
       ],
       [
+        "mahasiswa",
+        51
+      ],
+      [
         "maiiasiswa",
         9
       ],
       [
-        "mahasiswa",
-        51
+        "massa",
+        40
+      ],
+      [
+        "organisasi",
+        42
+      ],
+      [
+        "aparat",
+        26
+      ],
+      [
+        "dalarn",
+        17
       ],
       [
         "kfm",
@@ -129,22 +145,6 @@
       [
         "rnahasiswa",
         7
-      ],
-      [
-        "massa",
-        40
-      ],
-      [
-        "dalarn",
-        17
-      ],
-      [
-        "aparat",
-        26
-      ],
-      [
-        "clan",
-        14
       ]
     ],
     "phrases": [
@@ -181,6 +181,88 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        179,
+        0.13
+      ],
+      [
+        5877,
+        0.12
+      ],
+      [
+        6790,
+        0.12
+      ],
+      [
+        5890,
+        0.12
+      ],
+      [
+        7907,
+        0.12
+      ],
+      [
+        3692,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 62,
+      "negative": 59,
+      "trend": [
+        0.43,
+        -0.14,
+        0,
+        0,
+        0.43,
+        null,
+        0.14,
+        0.11,
+        null,
+        -0.08,
+        -0.67,
+        -0.6,
+        null,
+        0.6,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

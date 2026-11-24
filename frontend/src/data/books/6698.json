@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1494,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "polisi",
@@ -111,68 +111,121 @@
         3
       ],
       [
-        "petugas",
-        5
-      ],
-      [
-        "dominasi",
-        4
-      ],
-      [
         "melawan",
         9
+      ],
+      [
+        "petugas",
+        5
       ],
       [
         "hukum",
         8
       ],
       [
-        "menindas",
-        3
+        "dominasi",
+        4
       ],
       [
         "menang",
         4
       ],
       [
+        "menindas",
+        3
+      ],
+      [
+        "orang",
+        10
+      ],
+      [
+        "memiliki",
+        8
+      ],
+      [
         "budak",
-        3
-      ],
-      [
-        "penindasan",
-        3
-      ],
-      [
-        "membela",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        2478,
+        0.18
+      ],
+      [
         7289,
-        0.14
+        0.15
       ],
       [
-        7414,
-        0.12
+        2026,
+        0.15
       ],
       [
-        7223,
-        0.11
-      ],
-      [
-        4724,
-        0.11
+        18215,
+        0.15
       ],
       [
         2247,
-        0.11
+        0.14
       ],
       [
-        4715,
-        0.11
+        3057,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 36,
+      "negative": 51,
+      "trend": [
+        null,
+        null,
+        -0.6,
+        null,
+        -0.14,
+        null,
+        null,
+        -0.14,
+        0.2,
+        -0.14,
+        0.17,
+        -1,
+        null,
+        0,
+        -0.14,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

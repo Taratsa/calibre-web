@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1358,
-    "longer_than": 17,
+    "longer_than": 57,
     "top": [
       [
         "pengetahuan",
@@ -106,24 +106,16 @@
     ],
     "distinct": [
       [
+        "pengetahuan",
+        25
+      ],
+      [
         "wir",
         6
       ],
       [
         "toga",
         5
-      ],
-      [
-        "pengetahuan",
-        25
-      ],
-      [
-        "kwantitas",
-        3
-      ],
-      [
-        "effisiensi",
-        3
       ],
       [
         "universitas",
@@ -134,12 +126,24 @@
         8
       ],
       [
+        "kwantitas",
+        3
+      ],
+      [
         "existential",
+        3
+      ],
+      [
+        "effisiensi",
         3
       ],
       [
         "sistim",
         5
+      ],
+      [
+        "dimana",
+        10
       ],
       [
         "solving",
@@ -148,13 +152,35 @@
       [
         "kurikulum",
         4
-      ],
-      [
-        "dimana",
-        10
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        10092,
+        0.17
+      ],
+      [
+        3024,
+        0.16
+      ],
+      [
+        7306,
+        0.12
+      ],
+      [
+        1935,
+        0.11
+      ],
+      [
+        2224,
+        0.11
+      ],
+      [
+        6977,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

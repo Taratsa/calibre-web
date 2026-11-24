@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 3965,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "indonesia",
@@ -102,16 +102,20 @@
     ],
     "distinct": [
       [
-        "volskrant",
-        11
-      ],
-      [
         "belanda",
         66
       ],
       [
+        "volskrant",
+        11
+      ],
+      [
         "album",
         22
+      ],
+      [
+        "indonesia",
+        73
       ],
       [
         "enschede",
@@ -122,32 +126,28 @@
         17
       ],
       [
-        "mailinglist",
-        5
+        "foto",
+        22
       ],
       [
         "volkskrant",
         6
       ],
       [
-        "foto",
-        22
-      ],
-      [
-        "caribisch",
-        4
+        "bangsa",
+        29
       ],
       [
         "uitzicht",
         5
       ],
       [
-        "toer",
-        8
+        "mailinglist",
+        5
       ],
       [
-        "nasionalisme",
-        11
+        "caribisch",
+        4
       ]
     ],
     "phrases": [
@@ -184,6 +184,13 @@
         6
       ]
     ],
-    "similar": []
+    "similar": [],
+    "sentiment": {
+      "score": -0.24,
+      "positive": 27,
+      "negative": 44,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

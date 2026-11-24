@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 948,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "madjalah",
@@ -103,10 +103,6 @@
         5
       ],
       [
-        "nampaknja",
-        4
-      ],
-      [
         "bermutu",
         6
       ],
@@ -115,28 +111,32 @@
         6
       ],
       [
-        "illustrasi",
-        3
-      ],
-      [
-        "sebenarnja",
-        5
-      ],
-      [
-        "enteng",
+        "nampaknja",
         4
       ],
       [
-        "tjerita",
-        4
+        "seni",
+        10
       ],
       [
         "didalam",
         7
       ],
       [
-        "seni",
-        10
+        "sebenarnja",
+        5
+      ],
+      [
+        "illustrasi",
+        3
+      ],
+      [
+        "tjerita",
+        4
+      ],
+      [
+        "enteng",
+        4
       ]
     ],
     "phrases": [
@@ -167,8 +167,12 @@
     ],
     "similar": [
       [
+        11660,
+        0.19
+      ],
+      [
         1106,
-        0.17
+        0.18
       ],
       [
         3416,
@@ -176,20 +180,17 @@
       ],
       [
         7563,
-        0.17
+        0.16
       ],
       [
         3421,
-        0.17
+        0.16
       ],
       [
         1097,
         0.15
-      ],
-      [
-        1168,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

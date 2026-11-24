@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 3396,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "rodang",
@@ -114,32 +114,32 @@
         39
       ],
       [
-        "tatung",
-        15
-      ],
-      [
         "gasing",
         21
+      ],
+      [
+        "tatung",
+        15
       ],
       [
         "mamak",
         23
       ],
       [
-        "senar",
-        16
-      ],
-      [
         "talang",
         21
       ],
       [
-        "datuk",
-        22
+        "senar",
+        16
       ],
       [
         "festival",
         26
+      ],
+      [
+        "datuk",
+        22
       ],
       [
         "rakit",
@@ -183,28 +183,77 @@
     "similar": [
       [
         6003,
-        0.18
+        0.2
       ],
       [
         5583,
-        0.15
+        0.17
       ],
       [
         3611,
-        0.14
+        0.16
       ],
       [
         5248,
-        0.14
+        0.16
       ],
       [
         5504,
-        0.12
+        0.15
       ],
       [
         5499,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 50,
+      "negative": 31,
+      "trend": [
+        1,
+        0.5,
+        null,
+        null,
+        null,
+        -0.71,
+        -0.43,
+        0,
+        1,
+        null,
+        0.14,
+        1,
+        null,
+        0.5,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
   }
 }

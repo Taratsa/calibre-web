@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2677,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "kelompok",
@@ -111,40 +111,40 @@
         23
       ],
       [
-        "diskusi",
-        30
-      ],
-      [
         "kelompok",
         47
       ],
       [
-        "usulan",
-        15
-      ],
-      [
-        "dipecahkan",
-        11
-      ],
-      [
-        "mesti",
-        20
+        "diskusi",
+        30
       ],
       [
         "keputusan",
         29
       ],
       [
+        "usulan",
+        15
+      ],
+      [
+        "mesti",
+        20
+      ],
+      [
+        "dipecahkan",
+        11
+      ],
+      [
         "usul",
         15
       ],
       [
-        "terpecahkan",
-        6
+        "pertemuan",
+        20
       ],
       [
-        "posting",
-        5
+        "terpecahkan",
+        6
       ]
     ],
     "phrases": [
@@ -184,24 +184,31 @@
       ],
       [
         7882,
-        0.16
+        0.18
       ],
       [
         2734,
-        0.16
+        0.18
       ],
       [
         8167,
-        0.16
+        0.17
       ],
       [
         2021,
-        0.14
+        0.16
       ],
       [
         7046,
-        0.13
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.68,
+      "positive": 42,
+      "negative": 8,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

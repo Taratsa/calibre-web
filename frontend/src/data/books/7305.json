@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4401,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "manusia",
@@ -122,6 +122,14 @@
         24
       ],
       [
+        "manusia",
+        47
+      ],
+      [
+        "kematian",
+        23
+      ],
+      [
         "socrates",
         7
       ],
@@ -130,28 +138,20 @@
         4
       ],
       [
-        "kematian",
-        23
+        "schopenhauer",
+        5
       ],
       [
         "aldy",
         4
       ],
       [
-        "schopenhauer",
-        5
+        "kesadaran",
+        16
       ],
       [
-        "dazai",
-        4
-      ],
-      [
-        "hal-perihal",
-        3
-      ],
-      [
-        "heidegger",
-        5
+        "nietzsche",
+        7
       ]
     ],
     "phrases": [
@@ -191,14 +191,18 @@
     "similar": [
       [
         9202,
-        0.21
+        0.22
       ],
       [
         2607,
-        0.2
+        0.21
       ],
       [
         3964,
+        0.19
+      ],
+      [
+        3961,
         0.18
       ],
       [
@@ -206,13 +210,62 @@
         0.17
       ],
       [
-        3961,
-        0.16
-      ],
-      [
         2233,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 85,
+      "negative": 116,
+      "trend": [
+        -0.29,
+        -0.33,
+        -1,
+        0.45,
+        0.12,
+        -0.56,
+        -0.2,
+        -0.17,
+        0.25,
+        0.08,
+        -0.14,
+        0.11,
+        0.17,
+        -0.41,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          64
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "anger",
+          13
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

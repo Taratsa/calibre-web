@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2322,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "dunia",
@@ -117,11 +117,11 @@
         13
       ],
       [
-        "keliaran",
-        4
+        "liar",
+        10
       ],
       [
-        "liar",
+        "pemberontakan",
         10
       ],
       [
@@ -129,12 +129,12 @@
         6
       ],
       [
-        "pemberontakan",
-        10
+        "individu",
+        11
       ],
       [
-        "dipolitisasi",
-        3
+        "keliaran",
+        4
       ],
       [
         "nihilis",
@@ -145,8 +145,8 @@
         4
       ],
       [
-        "otoriter",
-        5
+        "identitas",
+        8
       ]
     ],
     "phrases": [
@@ -178,10 +178,14 @@
     "similar": [
       [
         2668,
-        0.83
+        0.84
       ],
       [
         2787,
+        0.28
+      ],
+      [
+        1926,
         0.24
       ],
       [
@@ -189,17 +193,70 @@
         0.23
       ],
       [
+        7173,
+        0.23
+      ],
+      [
         9193,
         0.22
-      ],
-      [
-        1926,
-        0.19
-      ],
-      [
-        2638,
-        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 61,
+      "negative": 47,
+      "trend": [
+        -1,
+        0.2,
+        0.33,
+        null,
+        0,
+        -1,
+        0.33,
+        -0.11,
+        0.43,
+        0.45,
+        0.2,
+        1,
+        -0.14,
+        null,
+        0.14,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

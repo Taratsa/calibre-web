@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 15559,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "mendjadi",
@@ -89,32 +89,36 @@
     ],
     "distinct": [
       [
-        "masjarakat",
-        110
-      ],
-      [
         "mendjadi",
         126
       ],
       [
-        "bordjuis",
-        47
+        "masjarakat",
+        110
       ],
       [
         "rakjat",
         107
       ],
       [
+        "bordjuis",
+        47
+      ],
+      [
         "radja",
         77
       ],
       [
-        "logica",
-        29
+        "kapitalis",
+        92
       ],
       [
         "proletar",
         66
+      ],
+      [
+        "logica",
+        29
       ],
       [
         "kasta",
@@ -125,16 +129,12 @@
         41
       ],
       [
-        "kapitalis",
-        92
-      ],
-      [
         "pertentangan",
         61
       ],
       [
-        "pelahan",
-        27
+        "modal",
+        79
       ]
     ],
     "phrases": [
@@ -174,28 +174,81 @@
     "similar": [
       [
         9263,
-        0.58
+        0.61
       ],
       [
         478,
-        0.32
+        0.36
       ],
       [
         7698,
-        0.23
+        0.25
       ],
       [
         414,
-        0.22
+        0.25
       ],
       [
         308,
-        0.22
+        0.25
       ],
       [
         9161,
-        0.18
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 248,
+      "negative": 129,
+      "trend": [
+        0.12,
+        0.2,
+        -0.05,
+        0.66,
+        -0.3,
+        0.71,
+        0.44,
+        0.88,
+        0.5,
+        -0.11,
+        0.12,
+        0.2,
+        0.4,
+        0.49,
+        0.69,
+        0.57
+      ],
+      "emotions": [
+        [
+          "joy",
+          32
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "anger",
+          30
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

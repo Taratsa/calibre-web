@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4680,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "politik",
@@ -126,12 +126,24 @@
         49
       ],
       [
-        "post-strukturalisme",
-        10
+        "politik",
+        74
       ],
       [
         "universal",
         39
+      ],
+      [
+        "dimensi",
+        30
+      ],
+      [
+        "post-strukturalisme",
+        10
+      ],
+      [
+        "humanisme",
+        18
       ],
       [
         "derrida",
@@ -140,18 +152,6 @@
       [
         "lacan",
         13
-      ],
-      [
-        "humanisme",
-        18
-      ],
-      [
-        "dimensi",
-        30
-      ],
-      [
-        "universalitas",
-        12
       ]
     ],
     "phrases": [
@@ -190,29 +190,53 @@
     ],
     "similar": [
       [
-        2507,
-        0.3
+        2273,
+        0.32
       ],
       [
-        2273,
-        0.3
+        2507,
+        0.32
       ],
       [
         2095,
-        0.29
+        0.31
       ],
       [
         2545,
-        0.29
+        0.3
       ],
       [
         7389,
-        0.28
+        0.3
       ],
       [
         2748,
-        0.28
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.14,
+      "positive": 36,
+      "negative": 48,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        -0.11,
+        -0.43,
+        0,
+        -0.4,
+        null,
+        -1,
+        -0.6,
+        -0.5,
+        null,
+        0,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

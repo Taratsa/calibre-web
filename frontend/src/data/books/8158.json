@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 4129,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "papua",
@@ -127,36 +127,36 @@
         9
       ],
       [
-        "makar",
-        13
-      ],
-      [
         "surabaya",
         26
+      ],
+      [
+        "makar",
+        13
       ],
       [
         "ham",
         23
       ],
       [
-        "tahanan",
-        18
+        "orang",
+        62
       ],
       [
-        "polres",
-        11
+        "tahanan",
+        18
       ],
       [
         "tersangka",
         13
       ],
       [
-        "jokowi",
-        10
+        "pemerintah",
+        33
       ],
       [
-        "elsam",
-        9
+        "polres",
+        11
       ]
     ],
     "phrases": [
@@ -196,28 +196,73 @@
     "similar": [
       [
         8814,
-        0.32
+        0.35
       ],
       [
         8944,
-        0.31
-      ],
-      [
-        8285,
-        0.25
-      ],
-      [
-        4852,
-        0.25
+        0.33
       ],
       [
         8176,
-        0.25
+        0.28
       ],
       [
-        4667,
-        0.24
+        8285,
+        0.27
+      ],
+      [
+        8174,
+        0.27
+      ],
+      [
+        4852,
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 48,
+      "negative": 55,
+      "trend": [
+        -0.78,
+        0.14,
+        0.33,
+        -0.12,
+        0.11,
+        null,
+        null,
+        null,
+        0.25,
+        null,
+        0.6,
+        -0.2,
+        0,
+        -0.56,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "trust",
+          24
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

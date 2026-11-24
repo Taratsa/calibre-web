@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3601,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "mati",
@@ -91,48 +91,48 @@
     ],
     "distinct": [
       [
-        "akheiron",
-        8
-      ],
-      [
         "diriku",
         23
       ],
       [
-        "rifki",
+        "akheiron",
         8
-      ],
-      [
-        "mayat",
-        14
-      ],
-      [
-        "mayatku",
-        6
-      ],
-      [
-        "puisi",
-        17
       ],
       [
         "kau",
         22
       ],
       [
-        "masalalu",
-        5
+        "puisi",
+        17
+      ],
+      [
+        "mayat",
+        14
+      ],
+      [
+        "rifki",
+        8
+      ],
+      [
+        "mayatku",
+        6
       ],
       [
         "jurang",
         12
       ],
       [
-        "menikahlah",
-        4
+        "mati",
+        24
       ],
       [
-        "bayanganku",
-        4
+        "masalalu",
+        5
+      ],
+      [
+        "batu",
+        17
       ],
       [
         "dadaku",
@@ -167,29 +167,82 @@
     ],
     "similar": [
       [
+        2556,
+        0.27
+      ],
+      [
         2614,
         0.26
       ],
       [
-        2556,
-        0.24
-      ],
-      [
         360,
-        0.21
+        0.23
       ],
       [
         2305,
-        0.18
+        0.2
       ],
       [
         2230,
-        0.17
+        0.18
       ],
       [
-        3798,
-        0.15
+        137,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.52,
+      "positive": 31,
+      "negative": 98,
+      "trend": [
+        null,
+        -0.14,
+        -0.8,
+        -0.82,
+        -0.33,
+        -0.71,
+        -0.5,
+        -0.43,
+        -1,
+        -0.75,
+        -0.6,
+        -0.6,
+        -0.2,
+        null,
+        null,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "sadness",
+          53
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

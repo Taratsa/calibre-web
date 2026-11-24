@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 16203,
-    "longer_than": 72,
+    "longer_than": 87,
     "top": [
       [
         "press",
@@ -103,52 +103,52 @@
     ],
     "distinct": [
       [
-        "journalists",
-        84
-      ],
-      [
         "press",
         220
+      ],
+      [
+        "journalists",
+        84
       ],
       [
         "perpetrator",
         62
       ],
       [
-        "victim",
-        61
-      ],
-      [
         "violence",
         81
+      ],
+      [
+        "victim",
+        61
       ],
       [
         "aji",
         75
       ],
       [
-        "motive",
-        44
-      ],
-      [
         "council",
         68
       ],
       [
-        "journalist",
-        44
-      ],
-      [
-        "type",
-        62
+        "media",
+        155
       ],
       [
         "freedom",
         77
       ],
       [
-        "infotainment",
-        22
+        "motive",
+        44
+      ],
+      [
+        "journalist",
+        44
+      ],
+      [
+        "court",
+        47
       ]
     ],
     "phrases": [
@@ -192,7 +192,7 @@
       ],
       [
         8335,
-        0.24
+        0.26
       ],
       [
         6942,
@@ -200,16 +200,17 @@
       ],
       [
         407,
-        0.21
-      ],
-      [
-        8197,
-        0.21
+        0.22
       ],
       [
         8895,
-        0.19
+        0.2
+      ],
+      [
+        8197,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

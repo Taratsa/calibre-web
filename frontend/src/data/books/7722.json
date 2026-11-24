@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1009,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "kehidupan",
@@ -110,24 +110,40 @@
         21
       ],
       [
-        "djuga",
-        8
+        "kehidupan",
+        22
       ],
       [
-        "merobah",
-        5
+        "djuga",
+        8
       ],
       [
         "mendjadi",
         8
       ],
       [
+        "susunan",
+        9
+      ],
+      [
+        "merobah",
+        5
+      ],
+      [
         "kota-kota",
         8
       ],
       [
-        "susunan",
+        "industri",
         9
+      ],
+      [
+        "kota",
+        14
+      ],
+      [
+        "kebudajaan",
+        5
       ],
       [
         "dimasjarakat",
@@ -136,22 +152,6 @@
       [
         "dikota-kota",
         3
-      ],
-      [
-        "kebudajaan",
-        5
-      ],
-      [
-        "industri",
-        9
-      ],
-      [
-        "kehidupan",
-        22
-      ],
-      [
-        "mempunjai",
-        4
       ]
     ],
     "phrases": [
@@ -183,7 +183,7 @@
     "similar": [
       [
         7665,
-        0.18
+        0.21
       ],
       [
         1197,
@@ -191,20 +191,21 @@
       ],
       [
         3435,
-        0.16
+        0.17
       ],
       [
         7701,
+        0.17
+      ],
+      [
+        1184,
         0.16
       ],
       [
         621,
-        0.14
-      ],
-      [
-        9226,
-        0.14
+        0.16
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

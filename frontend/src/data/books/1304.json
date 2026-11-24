@@ -11,7 +11,7 @@
   ],
   "author_sort": "Hatta, Drs. Mohammad",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6072,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "demokrasi",
@@ -112,44 +112,44 @@
         106
       ],
       [
+        "rakyat",
+        72
+      ],
+      [
         "menyadi",
         16
+      ],
+      [
+        "indonesia",
+        90
       ],
       [
         "soekarno",
         22
       ],
       [
-        "sistim",
-        21
-      ],
-      [
-        "peri-kemanusiaan",
-        10
-      ],
-      [
-        "rakyat",
-        72
+        "presiden",
+        36
       ],
       [
         "perwakilan",
         31
       ],
       [
-        "presiden",
-        36
+        "sistim",
+        21
       ],
       [
         "dewan",
         34
       ],
       [
-        "presidensiil",
-        7
+        "politik",
+        45
       ],
       [
-        "maha-esa",
-        5
+        "peri-kemanusiaan",
+        10
       ],
       [
         "cita-cita",
@@ -193,28 +193,77 @@
     "similar": [
       [
         1434,
-        0.66
+        0.68
       ],
       [
         7589,
-        0.66
+        0.68
       ],
       [
         7588,
-        0.22
+        0.26
       ],
       [
         9284,
-        0.19
+        0.23
       ],
       [
         9273,
-        0.17
+        0.21
       ],
       [
-        6742,
-        0.16
+        9280,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 122,
+      "negative": 69,
+      "trend": [
+        0.14,
+        0.83,
+        -0.17,
+        0.14,
+        -0.45,
+        -0.23,
+        -0.69,
+        0.44,
+        -0.2,
+        0.6,
+        0.43,
+        0.89,
+        0.22,
+        1,
+        null,
+        0.87
+      ],
+      "emotions": [
+        [
+          "trust",
+          29
+        ],
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
   }
 }

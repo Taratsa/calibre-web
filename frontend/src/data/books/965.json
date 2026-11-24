@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 10879,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "lampung",
@@ -89,32 +89,44 @@
     ],
     "distinct": [
       [
-        "punyimbang",
-        41
-      ],
-      [
         "lampung",
         124
+      ],
+      [
+        "punyimbang",
+        41
       ],
       [
         "koentara",
         30
       ],
       [
+        "mak",
+        63
+      ],
+      [
+        "adat",
+        90
+      ],
+      [
         "pupatih",
         17
       ],
       [
-        "mak",
-        63
+        "sai",
+        38
       ],
       [
         "niti",
         29
       ],
       [
-        "sai",
-        38
+        "perkara",
+        61
+      ],
+      [
+        "ganjaran",
+        31
       ],
       [
         "jenong",
@@ -123,18 +135,6 @@
       [
         "bator",
         17
-      ],
-      [
-        "kaliyoman",
-        13
-      ],
-      [
-        "ganjaran",
-        31
-      ],
-      [
-        "bebai",
-        15
       ]
     ],
     "phrases": [
@@ -174,16 +174,73 @@
     "similar": [
       [
         960,
-        0.16
+        0.17
       ],
       [
         2983,
-        0.11
+        0.12
       ],
       [
         3612,
-        0.1
+        0.11
+      ],
+      [
+        8698,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 221,
+      "negative": 72,
+      "trend": [
+        0.5,
+        0.7,
+        null,
+        null,
+        0.85,
+        0.25,
+        0.44,
+        0.57,
+        0.15,
+        0.3,
+        0.75,
+        0.47,
+        0.53,
+        0.63,
+        0.6,
+        0.73
+      ],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "disgust",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "fear",
+          3
+        ]
+      ]
+    }
   }
 }

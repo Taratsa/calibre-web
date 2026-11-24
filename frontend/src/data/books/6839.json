@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2615,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "kebebasan",
@@ -111,16 +111,16 @@
         4
       ],
       [
+        "kebebasan",
+        19
+      ],
+      [
         "sheni",
         3
       ],
       [
         "kulakukan",
         6
-      ],
-      [
-        "kebebasan",
-        19
       ],
       [
         "kawanku",
@@ -131,11 +131,11 @@
         4
       ],
       [
-        "lancer",
-        3
+        "kawan",
+        10
       ],
       [
-        "spider",
+        "lancer",
         3
       ],
       [
@@ -172,20 +172,31 @@
     "similar": [
       [
         6853,
-        0.18
+        0.2
       ],
       [
         8059,
-        0.13
+        0.12
       ],
       [
         6832,
-        0.11
+        0.12
+      ],
+      [
+        2610,
+        0.12
       ],
       [
         13,
-        0.11
+        0.1
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 61,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

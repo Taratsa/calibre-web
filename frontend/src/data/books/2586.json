@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1730,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "negara",
@@ -99,40 +99,44 @@
     ],
     "distinct": [
       [
-        "institusi-institusi",
-        8
-      ],
-      [
         "negara",
         51
-      ],
-      [
-        "institusi",
-        13
-      ],
-      [
-        "ketentraman",
-        6
-      ],
-      [
-        "kapitalis",
-        11
-      ],
-      [
-        "multinasional",
-        5
       ],
       [
         "milik",
         22
       ],
       [
-        "posting",
-        4
+        "institusi-institusi",
+        8
       ],
       [
-        "katalis",
-        4
+        "institusi",
+        13
+      ],
+      [
+        "hak",
+        23
+      ],
+      [
+        "kapitalis",
+        11
+      ],
+      [
+        "ketentraman",
+        6
+      ],
+      [
+        "sosial",
+        17
+      ],
+      [
+        "kekuatan",
+        15
+      ],
+      [
+        "multinasional",
+        5
       ],
       [
         "melanggengkan",
@@ -141,10 +145,6 @@
       [
         "surplus",
         5
-      ],
-      [
-        "berpunya",
-        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         2402,
-        0.43
+        0.45
       ],
       [
         3057,
-        0.27
+        0.29
       ],
       [
         4684,
-        0.18
+        0.22
       ],
       [
         2672,
-        0.18
+        0.22
       ],
       [
         2340,
-        0.16
+        0.18
       ],
       [
         7898,
-        0.16
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 40,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2260,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "politik",
@@ -110,16 +110,16 @@
         33
       ],
       [
+        "politik",
+        44
+      ],
+      [
         "anarkisme",
         17
       ],
       [
         "anarkis",
         19
-      ],
-      [
-        "politik",
-        44
       ],
       [
         "politisi",
@@ -130,28 +130,28 @@
         11
       ],
       [
-        "identias",
-        3
-      ],
-      [
         "kelompok",
         18
       ],
       [
-        "hierarkis",
-        4
-      ],
-      [
-        "ruang-ruang",
-        5
+        "identias",
+        3
       ],
       [
         "kelas",
         12
       ],
       [
-        "queer",
-        3
+        "ruang-ruang",
+        5
+      ],
+      [
+        "kelompok-kelompok",
+        6
+      ],
+      [
+        "hierarkis",
+        4
       ]
     ],
     "phrases": [
@@ -183,28 +183,52 @@
     "similar": [
       [
         7179,
-        0.24
-      ],
-      [
-        7345,
-        0.19
+        0.27
       ],
       [
         2791,
-        0.18
-      ],
-      [
-        2415,
-        0.18
-      ],
-      [
-        7995,
-        0.17
+        0.22
       ],
       [
         7341,
-        0.17
+        0.21
+      ],
+      [
+        3729,
+        0.21
+      ],
+      [
+        7995,
+        0.21
+      ],
+      [
+        2415,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 47,
+      "negative": 42,
+      "trend": [
+        null,
+        null,
+        null,
+        -0.25,
+        0.25,
+        0.43,
+        -0.11,
+        0.43,
+        -0.25,
+        null,
+        0.14,
+        -0.33,
+        0.33,
+        null,
+        null,
+        -0.2
+      ],
+      "emotions": []
+    }
   }
 }

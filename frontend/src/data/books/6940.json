@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 2275,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "polri",
@@ -110,28 +110,20 @@
         39
       ],
       [
-        "tangkap",
-        17
-      ],
-      [
-        "narkotika",
-        10
-      ],
-      [
         "pasal",
         25
+      ],
+      [
+        "tangkap",
+        17
       ],
       [
         "tindak",
         22
       ],
       [
-        "kontras",
-        13
-      ],
-      [
-        "kuhap",
-        8
+        "narkotika",
+        10
       ],
       [
         "penangkapan",
@@ -142,11 +134,19 @@
         15
       ],
       [
-        "polsek",
+        "kontras",
+        13
+      ],
+      [
+        "kuhap",
         8
       ],
       [
-        "penyidikan",
+        "anggota",
+        25
+      ],
+      [
+        "polsek",
         8
       ]
     ],
@@ -187,28 +187,69 @@
     "similar": [
       [
         6995,
-        0.32
+        0.35
       ],
       [
         291,
-        0.29
+        0.31
       ],
       [
         6901,
-        0.29
+        0.31
       ],
       [
         6919,
-        0.28
+        0.3
       ],
       [
         8994,
-        0.27
+        0.29
       ],
       [
         9063,
-        0.26
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.5,
+      "positive": 29,
+      "negative": 87,
+      "trend": [
+        -0.71,
+        -0.6,
+        null,
+        null,
+        null,
+        0.11,
+        0.43,
+        null,
+        -0.33,
+        -1,
+        -0.82,
+        -1,
+        -1,
+        -0.75,
+        -0.33,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "sadness",
+          3
+        ]
+      ]
+    }
   }
 }

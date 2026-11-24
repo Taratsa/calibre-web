@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 827,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "jalan",
@@ -119,6 +119,10 @@
         3
       ],
       [
+        "jalan",
+        7
+      ],
+      [
         "surabaya",
         3
       ],
@@ -129,10 +133,6 @@
       [
         "mesti",
         3
-      ],
-      [
-        "jalan",
-        7
       ],
       [
         "pusat",
@@ -148,6 +148,20 @@
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        4166,
+        0.24
+      ],
+      [
+        15314,
+        0.19
+      ],
+      [
+        19921,
+        0.11
+      ]
+    ],
+    "sentiment": null
   }
 }

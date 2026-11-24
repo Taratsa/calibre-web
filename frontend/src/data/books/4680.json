@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3364,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "perempuan",
@@ -111,6 +111,10 @@
         12
       ],
       [
+        "perempuan",
+        73
+      ],
+      [
         "freewoman",
         12
       ],
@@ -127,16 +131,12 @@
         7
       ],
       [
-        "perempuan",
-        73
+        "feminisme",
+        14
       ],
       [
         "freewomen",
         6
-      ],
-      [
-        "feminisme",
-        14
       ],
       [
         "penerj",
@@ -184,28 +184,52 @@
     "similar": [
       [
         2431,
-        0.27
+        0.3
       ],
       [
         2307,
-        0.2
+        0.22
+      ],
+      [
+        7349,
+        0.17
       ],
       [
         2681,
         0.15
       ],
       [
-        7349,
+        3093,
         0.14
       ],
       [
         2693,
         0.13
-      ],
-      [
-        3093,
-        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 79,
+      "negative": 29,
+      "trend": [
+        null,
+        -0.14,
+        0.2,
+        null,
+        0.2,
+        0.64,
+        null,
+        null,
+        -0.33,
+        null,
+        0.47,
+        0.6,
+        0.78,
+        0.5,
+        0.5,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

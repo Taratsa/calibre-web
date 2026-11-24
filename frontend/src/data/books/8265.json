@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2242,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "pki",
@@ -108,12 +108,12 @@
         19
       ],
       [
-        "orde",
-        14
-      ],
-      [
         "militer",
         20
+      ],
+      [
+        "orde",
+        14
       ],
       [
         "pembantaian",
@@ -124,28 +124,28 @@
         9
       ],
       [
-        "risalah",
-        6
-      ],
-      [
         "film",
         11
       ],
       [
-        "jendral",
+        "peristiwa",
+        14
+      ],
+      [
+        "risalah",
         6
       ],
       [
-        "suharto",
-        6
-      ],
-      [
-        "horison",
-        4
+        "karya",
+        15
       ],
       [
         "kebencian",
         8
+      ],
+      [
+        "suharto",
+        6
       ]
     ],
     "phrases": [
@@ -185,28 +185,73 @@
     "similar": [
       [
         6987,
-        0.16
-      ],
-      [
-        2483,
-        0.16
+        0.18
       ],
       [
         5867,
-        0.15
+        0.17
       ],
       [
         992,
-        0.15
+        0.17
       ],
       [
-        2532,
-        0.13
+        2483,
+        0.17
       ],
       [
         9070,
-        0.13
+        0.15
+      ],
+      [
+        1006,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.35,
+      "positive": 26,
+      "negative": 54,
+      "trend": [
+        -0.8,
+        -1,
+        -0.25,
+        -1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        null,
+        0,
+        0.67,
+        0.43,
+        -1
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
   }
 }

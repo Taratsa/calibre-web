@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2451,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "awang",
@@ -113,24 +113,16 @@
         23
       ],
       [
-        "patin",
-        9
-      ],
-      [
         "bujang",
         14
       ],
       [
-        "bbpr",
-        5
+        "patin",
+        9
       ],
       [
         "bayi",
         18
-      ],
-      [
-        "indragiri",
-        7
       ],
       [
         "ibunya",
@@ -143,6 +135,14 @@
       [
         "sungai",
         21
+      ],
+      [
+        "bbpr",
+        5
+      ],
+      [
+        "indragiri",
+        7
       ],
       [
         "penerjemah",
@@ -186,28 +186,81 @@
     "similar": [
       [
         3505,
-        0.29
+        0.32
       ],
       [
         3504,
-        0.24
+        0.27
       ],
       [
         3507,
-        0.22
+        0.25
       ],
       [
         4989,
-        0.22
+        0.25
       ],
       [
         3569,
-        0.2
+        0.22
       ],
       [
-        5204,
-        0.2
+        3509,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.7,
+      "positive": 84,
+      "negative": 15,
+      "trend": [
+        null,
+        -0.2,
+        1,
+        0.6,
+        0.83,
+        null,
+        null,
+        null,
+        0.6,
+        0.75,
+        1,
+        0.09,
+        null,
+        null,
+        null,
+        0.71
+      ],
+      "emotions": [
+        [
+          "joy",
+          15
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

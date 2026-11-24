@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 850,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "lampu",
@@ -130,27 +130,27 @@
         3
       ],
       [
-        "kiriman",
-        3
+        "terang",
+        6
       ],
       [
         "seminggu",
         4
       ],
       [
+        "kiriman",
+        3
+      ],
+      [
         "mempunjai",
         3
       ],
       [
-        "djuga",
-        3
+        "hati",
+        7
       ],
       [
-        "sadja",
-        3
-      ],
-      [
-        "sahabat",
+        "engkau",
         4
       ]
     ],
@@ -172,6 +172,20 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        18746,
+        0.14
+      ],
+      [
+        1360,
+        0.1
+      ],
+      [
+        6631,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

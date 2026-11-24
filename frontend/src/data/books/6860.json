@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1144,
-    "longer_than": 14,
+    "longer_than": 54,
     "top": [
       [
         "sang",
@@ -99,24 +99,28 @@
     ],
     "distinct": [
       [
-        "reply",
-        10
+        "march",
+        13
       ],
       [
-        "thoughtcrime",
-        5
+        "reply",
+        10
       ],
       [
         "kinky",
         6
       ],
       [
-        "march",
-        13
+        "thoughtcrime",
+        5
       ],
       [
         "ninja",
         6
+      ],
+      [
+        "sang",
+        14
       ],
       [
         "memories",
@@ -131,20 +135,16 @@
         3
       ],
       [
-        "sang",
-        14
-      ],
-      [
         "pengkhianatan",
         4
       ],
       [
-        "pam",
-        3
+        "lelaki",
+        6
       ],
       [
-        "penghujung",
-        3
+        "perempuan",
+        8
       ]
     ],
     "phrases": [
@@ -172,28 +172,29 @@
     "similar": [
       [
         6874,
-        0.59
+        0.56
       ],
       [
         6876,
-        0.43
+        0.39
       ],
       [
         6826,
-        0.42
+        0.39
       ],
       [
         6868,
-        0.36
-      ],
-      [
-        6825,
-        0.35
+        0.33
       ],
       [
         6866,
-        0.34
+        0.33
+      ],
+      [
+        6825,
+        0.32
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

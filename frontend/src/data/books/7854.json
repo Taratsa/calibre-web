@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2880,
-    "longer_than": 32,
+    "longer_than": 67,
     "top": [
       [
         "dprd",
@@ -107,40 +107,40 @@
         15
       ],
       [
-        "ooo",
-        8
-      ],
-      [
         "partai",
         18
-      ],
-      [
-        "bupati",
-        11
-      ],
-      [
-        "warga",
-        20
       ],
       [
         "kelompok",
         24
       ],
       [
-        "presentasi",
-        5
+        "warga",
+        20
+      ],
+      [
+        "ooo",
+        8
+      ],
+      [
+        "bupati",
+        11
+      ],
+      [
+        "rakyat",
+        19
+      ],
+      [
+        "orang",
+        31
       ],
       [
         "wakil",
         11
       ],
       [
-        "kabupaten",
-        10
-      ],
-      [
-        "suap",
-        4
+        "masyarakat",
+        20
       ],
       [
         "ketua",
@@ -183,17 +183,36 @@
     ],
     "similar": [
       [
+        752,
+        0.13
+      ],
+      [
         8755,
-        0.11
+        0.13
       ],
       [
         8763,
-        0.11
+        0.13
       ],
       [
-        752,
-        0.11
+        13164,
+        0.12
+      ],
+      [
+        9067,
+        0.12
+      ],
+      [
+        2356,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 34,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

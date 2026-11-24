@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2743,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "spectacle",
@@ -103,48 +103,48 @@
         71
       ],
       [
-        "keterpisahan",
-        7
-      ],
-      [
         "citra",
         13
+      ],
+      [
+        "keterpisahan",
+        7
       ],
       [
         "modern",
         20
       ],
       [
-        "ketidakaktifan",
-        3
+        "sosial",
+        24
       ],
       [
         "produksi",
         15
       ],
       [
-        "ilusi",
-        7
-      ],
-      [
-        "penampakan",
-        4
+        "manusia",
+        26
       ],
       [
         "nyata",
         16
       ],
       [
-        "logika",
-        8
+        "masyarakat",
+        22
       ],
       [
-        "terpisah",
-        10
+        "dunia",
+        22
       ],
       [
-        "representasi",
-        6
+        "ilusi",
+        7
+      ],
+      [
+        "ketidakaktifan",
+        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         8061,
-        0.72
+        0.73
       ],
       [
         2701,
-        0.34
+        0.36
       ],
       [
         2128,
-        0.26
+        0.28
       ],
       [
         7430,
-        0.23
+        0.26
       ],
       [
         2513,
-        0.23
+        0.25
       ],
       [
         1931,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 49,
+      "negative": 19,
+      "trend": [
+        null,
+        null,
+        0.2,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        -0.33,
+        0.67,
+        0.67,
+        -0.2,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

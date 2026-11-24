@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 7768,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "masyarakat",
@@ -121,8 +121,24 @@
         14
       ],
       [
+        "masyarakat",
+        69
+      ],
+      [
+        "revolusi",
+        37
+      ],
+      [
         "kurdi",
         14
+      ],
+      [
+        "demokratis",
+        28
+      ],
+      [
+        "kontrak",
+        23
       ],
       [
         "festinger",
@@ -133,32 +149,16 @@
         11
       ],
       [
-        "shuttleworth",
-        6
-      ],
-      [
-        "miliband",
-        7
-      ],
-      [
         "rojava",
         11
       ],
       [
-        "kontrak",
-        23
+        "kiri",
+        32
       ],
       [
-        "demokratis",
-        28
-      ],
-      [
-        "revolusi",
-        37
-      ],
-      [
-        "mirowski",
-        5
+        "miliband",
+        7
       ]
     ],
     "phrases": [
@@ -198,28 +198,85 @@
     "similar": [
       [
         2293,
-        0.32
+        0.36
       ],
       [
         2093,
-        0.31
+        0.35
       ],
       [
         2374,
-        0.28
+        0.32
       ],
       [
         2589,
-        0.27
+        0.31
       ],
       [
         271,
-        0.26
+        0.31
       ],
       [
         6922,
-        0.26
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 162,
+      "negative": 125,
+      "trend": [
+        -0.16,
+        0.33,
+        0.55,
+        0.21,
+        -0.04,
+        0,
+        0.07,
+        0.2,
+        0.07,
+        0.62,
+        0.2,
+        -0.57,
+        0.69,
+        0.29,
+        0.05,
+        -0.38
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

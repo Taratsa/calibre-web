@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1638,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "amerika",
@@ -89,12 +89,16 @@
     ],
     "distinct": [
       [
+        "amerika",
+        56
+      ],
+      [
         "serikat",
         52
       ],
       [
-        "amerika",
-        56
+        "kebudayaan",
+        45
       ],
       [
         "komprador",
@@ -105,20 +109,16 @@
         22
       ],
       [
-        "kebudayaan",
-        45
-      ],
-      [
         "ampai",
         10
       ],
       [
-        "menjebol",
-        6
-      ],
-      [
         "imperialisme",
         11
+      ],
+      [
+        "menjebol",
+        6
       ],
       [
         "ganyang",
@@ -129,12 +129,12 @@
         8
       ],
       [
-        "kedok",
-        7
-      ],
-      [
         "kawan-kawan",
         11
+      ],
+      [
+        "kedok",
+        7
       ]
     ],
     "phrases": [
@@ -173,29 +173,36 @@
     ],
     "similar": [
       [
-        298,
-        0.12
+        17192,
+        0.24
       ],
       [
-        9275,
-        0.11
-      ],
-      [
-        1534,
-        0.11
-      ],
-      [
-        9264,
-        0.11
+        19340,
+        0.17
       ],
       [
         1603,
-        0.11
+        0.13
       ],
       [
         1319,
-        0.1
+        0.13
+      ],
+      [
+        11489,
+        0.13
+      ],
+      [
+        9275,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.14,
+      "positive": 29,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

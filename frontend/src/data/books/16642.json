@@ -1,0 +1,217 @@
+{
+  "id": 16642,
+  "title": "GPU: CUDA",
+  "slug": "gpu-cuda-onno-widodo-purbo",
+  "slugBase": "gpu-cuda-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2025-09-29",
+  "timestamp": "2026-11-24 02:30:28.437368",
+  "last_modified": "2026-11-24 02:30:28.437373",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:e21ea5a5-f01d-55ac-b5c0-ef7878a1edf0"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/16642?v=1795462228",
+  "cover_og_url": "/cover/16642/og?v=1795462228",
+  "url": "/book/gpu-cuda-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Penjelasan Detail tentang CUDA 2 Arsitektur CUDA 3 Model Pemrograman 4 Fitur Kunci 5 Bagaimana CUDA Memungkinkan Komputasi GPU 6 Cara Instalasi CUDA di Ubuntu 24.04 7 Prerequisites 8 Langkah Instalasi (Metode Network Repository - Direkomendasikan) 9 Post-Instalasi 10 Pranala Menarik Penjelasan Detail tentang CUDA CUDA (Compute Unified Device Architecture) adalah platform komputasi",
+  "data": [
+    {
+      "format": "epub",
+      "size": 6102,
+      "name": "GPU_ CUDA - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1074,
+    "longer_than": 53,
+    "top": [
+      [
+        "cuda",
+        35
+      ],
+      [
+        "gpu",
+        26
+      ],
+      [
+        "memori",
+        13
+      ],
+      [
+        "nvidia",
+        11
+      ],
+      [
+        "thread",
+        11
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "kernel",
+        9
+      ],
+      [
+        "komputasi",
+        9
+      ],
+      [
+        "paralel",
+        8
+      ],
+      [
+        "versi",
+        8
+      ],
+      [
+        "arsitektur",
+        7
+      ],
+      [
+        "blok",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "cuda",
+        35
+      ],
+      [
+        "gpu",
+        26
+      ],
+      [
+        "nvidia",
+        11
+      ],
+      [
+        "thread",
+        11
+      ],
+      [
+        "komputasi",
+        9
+      ],
+      [
+        "memori",
+        13
+      ],
+      [
+        "kernel",
+        9
+      ],
+      [
+        "paralel",
+        8
+      ],
+      [
+        "warp",
+        4
+      ],
+      [
+        "compute",
+        5
+      ],
+      [
+        "toolkit",
+        5
+      ],
+      [
+        "runtime",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo apt install",
+        4
+      ],
+      [
+        "usr local cuda",
+        3
+      ],
+      [
+        "transfer data",
+        4
+      ],
+      [
+        "gpu nvidia",
+        4
+      ],
+      [
+        "cuda toolkit",
+        4
+      ],
+      [
+        "ribuan thread",
+        3
+      ],
+      [
+        "model pemrograman",
+        3
+      ],
+      [
+        "instalasi cuda",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16643,
+        0.39
+      ],
+      [
+        16637,
+        0.35
+      ],
+      [
+        11933,
+        0.34
+      ],
+      [
+        11941,
+        0.34
+      ],
+      [
+        16584,
+        0.29
+      ],
+      [
+        16826,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
+}

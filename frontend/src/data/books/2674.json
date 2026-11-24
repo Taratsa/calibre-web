@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1494,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "masyarakat",
@@ -99,16 +99,16 @@
     ],
     "distinct": [
       [
+        "individualis",
+        20
+      ],
+      [
         "martucci",
         11
       ],
       [
         "armand",
         12
-      ],
-      [
-        "individualis",
-        20
       ],
       [
         "novatore",
@@ -123,28 +123,28 @@
         13
       ],
       [
-        "enzo",
-        3
-      ],
-      [
         "individu",
         16
       ],
       [
-        "individualisme",
-        5
+        "masyarakat",
+        21
+      ],
+      [
+        "enzo",
+        3
       ],
       [
         "anarki",
         6
       ],
       [
-        "renzo",
-        3
+        "individualisme",
+        5
       ],
       [
-        "masyarakat",
-        21
+        "renzo",
+        3
       ]
     ],
     "phrases": [
@@ -167,29 +167,30 @@
     ],
     "similar": [
       [
+        8092,
+        0.35
+      ],
+      [
         2325,
         0.35
       ],
       [
-        8092,
-        0.33
-      ],
-      [
         7437,
-        0.27
+        0.28
       ],
       [
         2088,
         0.27
       ],
       [
-        8117,
-        0.26
+        3699,
+        0.25
       ],
       [
-        3699,
-        0.23
+        8117,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

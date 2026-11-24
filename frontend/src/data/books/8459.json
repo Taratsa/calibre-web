@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3569,
-    "longer_than": 36,
+    "longer_than": 69,
     "top": [
       [
         "telematika",
@@ -111,6 +111,10 @@
         23
       ],
       [
+        "media",
+        58
+      ],
+      [
         "satudunia",
         10
       ],
@@ -119,32 +123,28 @@
         10
       ],
       [
-        "media",
-        58
+        "ruu",
+        15
       ],
       [
         "cipg",
         6
       ],
       [
-        "internet",
-        21
-      ],
-      [
-        "ruu",
-        15
-      ],
-      [
-        "informatika",
-        10
+        "kebijakan",
+        23
       ],
       [
         "infrastruktur",
         17
       ],
       [
-        "tweet",
-        6
+        "informatika",
+        10
+      ],
+      [
+        "indonesia",
+        47
       ]
     ],
     "phrases": [
@@ -183,29 +183,36 @@
     ],
     "similar": [
       [
-        8254,
+        10692,
         0.22
+      ],
+      [
+        12646,
+        0.19
+      ],
+      [
+        8254,
+        0.18
       ],
       [
         8311,
         0.18
       ],
       [
-        1055,
-        0.17
-      ],
-      [
-        1054,
-        0.17
-      ],
-      [
         8337,
-        0.16
+        0.18
       ],
       [
-        4056,
-        0.16
+        12455,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 43,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

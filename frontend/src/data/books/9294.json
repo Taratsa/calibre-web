@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4909,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "indonesia",
@@ -96,52 +96,52 @@
     ],
     "distinct": [
       [
-        "manipol",
-        26
+        "revolusi",
+        69
       ],
       [
         "kepolisian",
         47
       ],
       [
-        "revolusi",
-        69
+        "rakyat",
+        78
+      ],
+      [
+        "manipol",
+        26
+      ],
+      [
+        "indonesia",
+        95
       ],
       [
         "ceramah",
         23
       ],
       [
-        "rakyat",
-        78
+        "polisi",
+        40
       ],
       [
         "wejangan",
         14
       ],
       [
-        "polisi",
-        40
-      ],
-      [
-        "retuling",
-        8
-      ],
-      [
-        "partai-partai",
-        17
+        "partai",
+        30
       ],
       [
         "revolusioner",
         27
       ],
       [
-        "partai",
-        30
+        "partai-partai",
+        17
       ],
       [
-        "tubapi",
-        6
+        "negara",
+        50
       ]
     ],
     "phrases": [
@@ -181,28 +181,73 @@
     "similar": [
       [
         415,
-        0.5
+        0.53
       ],
       [
         9309,
-        0.32
+        0.35
       ],
       [
         9290,
-        0.3
+        0.33
       ],
       [
         9307,
-        0.28
+        0.32
       ],
       [
         9300,
-        0.28
+        0.31
       ],
       [
         9314,
-        0.25
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 88,
+      "negative": 29,
+      "trend": [
+        null,
+        -0.17,
+        1,
+        null,
+        1,
+        0.33,
+        0.25,
+        null,
+        0.75,
+        0.67,
+        1,
+        0.78,
+        0.27,
+        0.6,
+        null,
+        0.17
+      ],
+      "emotions": [
+        [
+          "trust",
+          20
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 2133,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "environmental",
@@ -125,24 +125,24 @@
         12
       ],
       [
-        "mobility",
-        10
+        "regional",
+        18
       ],
       [
         "practical",
         12
       ],
       [
-        "learning",
-        13
-      ],
-      [
         "climate",
         11
       ],
       [
-        "regional",
-        18
+        "mobility",
+        10
+      ],
+      [
+        "learning",
+        13
       ]
     ],
     "phrases": [
@@ -186,14 +186,10 @@
       ],
       [
         8631,
-        0.23
+        0.21
       ],
       [
         8284,
-        0.18
-      ],
-      [
-        8628,
         0.17
       ],
       [
@@ -203,7 +199,12 @@
       [
         3438,
         0.17
+      ],
+      [
+        8628,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

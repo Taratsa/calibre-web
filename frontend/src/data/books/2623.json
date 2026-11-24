@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1651,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "organisasi",
@@ -119,14 +119,6 @@
         4
       ],
       [
-        "katalis",
-        5
-      ],
-      [
-        "afiniti",
-        3
-      ],
-      [
         "anarkis",
         10
       ],
@@ -135,16 +127,24 @@
         7
       ],
       [
+        "katalis",
+        5
+      ],
+      [
+        "afiniti",
+        3
+      ],
+      [
         "grup-grup",
         4
       ],
       [
-        "posting",
-        4
+        "organisasi-organisasi",
+        6
       ],
       [
-        "organiser",
-        3
+        "aksi",
+        10
       ]
     ],
     "phrases": [
@@ -184,28 +184,29 @@
     "similar": [
       [
         2676,
-        0.22
-      ],
-      [
-        7209,
-        0.18
+        0.26
       ],
       [
         3718,
-        0.18
+        0.24
+      ],
+      [
+        7209,
+        0.23
       ],
       [
         7467,
-        0.18
+        0.22
       ],
       [
         3804,
-        0.18
+        0.21
       ],
       [
         4663,
-        0.15
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

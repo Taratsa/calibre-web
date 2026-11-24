@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1814,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "rock",
@@ -91,16 +91,20 @@
     ],
     "distinct": [
       [
-        "lagu²",
-        18
-      ],
-      [
         "roll",
         26
       ],
       [
+        "lagu²",
+        18
+      ],
+      [
         "rock",
         27
+      ],
+      [
+        "lagu",
+        25
       ],
       [
         "jazz",
@@ -109,10 +113,6 @@
       [
         "lagua",
         6
-      ],
-      [
-        "lagu",
-        25
       ],
       [
         "musik",
@@ -127,16 +127,16 @@
         5
       ],
       [
-        "ngak-ngikngok",
-        3
+        "nasional",
+        23
       ],
       [
         "kepribadian",
         11
       ],
       [
-        "tjabul",
-        4
+        "hiburan",
+        11
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         1204,
-        0.18
+        0.19
       ],
       [
         7599,
-        0.14
+        0.15
       ],
       [
         6687,
-        0.12
+        0.13
       ],
       [
         1199,
-        0.12
+        0.13
       ],
       [
         1184,
-        0.11
+        0.12
       ],
       [
         1168,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 35,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 13863,
-    "longer_than": 69,
+    "longer_than": 85,
     "top": [
       [
         "jawa",
@@ -101,48 +101,48 @@
         69
       ],
       [
-        "kolonialis",
-        98
-      ],
-      [
         "jawa",
         262
       ],
       [
-        "acheh-sumatra",
-        32
+        "kolonialis",
+        98
       ],
       [
         "bangsa",
         231
       ],
       [
-        "acheh-sumatera",
-        17
-      ],
-      [
-        "acheh",
-        23
-      ],
-      [
-        "maluku",
-        56
-      ],
-      [
-        "penjajahan",
-        47
+        "acheh-sumatra",
+        32
       ],
       [
         "belanda",
         83
       ],
       [
-        "kolonialisme",
-        44
+        "maluku",
+        56
+      ],
+      [
+        "acheh-sumatera",
+        17
+      ],
+      [
+        "penjajahan",
+        47
+      ],
+      [
+        "acheh",
+        23
       ],
       [
         "sulawesi",
         57
+      ],
+      [
+        "kolonialisme",
+        44
       ]
     ],
     "phrases": [
@@ -182,28 +182,81 @@
     "similar": [
       [
         566,
-        0.54
+        0.56
       ],
       [
         9245,
-        0.15
-      ],
-      [
-        9323,
-        0.15
+        0.2
       ],
       [
         2840,
-        0.15
+        0.19
+      ],
+      [
+        9323,
+        0.18
       ],
       [
         1426,
-        0.13
+        0.16
       ],
       [
-        1424,
-        0.12
+        4876,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 152,
+      "negative": 207,
+      "trend": [
+        -0.62,
+        -0.87,
+        0.17,
+        -0.27,
+        -0.65,
+        0,
+        0,
+        -0.26,
+        -0.23,
+        0.18,
+        -0.46,
+        -0.31,
+        -0.28,
+        0,
+        0.48,
+        0.54
+      ],
+      "emotions": [
+        [
+          "anger",
+          53
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

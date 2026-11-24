@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2221,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "negara",
@@ -103,16 +103,24 @@
         10
       ],
       [
-        "terstruktur",
-        8
-      ],
-      [
         "organisasi",
         20
       ],
       [
-        "paradigma",
-        6
+        "terstruktur",
+        8
+      ],
+      [
+        "negara",
+        23
+      ],
+      [
+        "kekuasaan",
+        17
+      ],
+      [
+        "rakyat",
+        16
       ],
       [
         "kolektif",
@@ -123,28 +131,20 @@
         11
       ],
       [
+        "bentuk",
+        18
+      ],
+      [
+        "gerakan",
+        13
+      ],
+      [
         "kepemimpinan",
         7
       ],
       [
-        "kekuasaan",
-        17
-      ],
-      [
-        "rojava",
-        3
-      ],
-      [
-        "reaksioner",
-        5
-      ],
-      [
-        "terpusat",
-        5
-      ],
-      [
-        "dominasi",
-        7
+        "paradigma",
+        6
       ]
     ],
     "phrases": [
@@ -168,28 +168,52 @@
     "similar": [
       [
         2626,
-        0.23
-      ],
-      [
-        2619,
-        0.23
+        0.28
       ],
       [
         2156,
-        0.22
+        0.27
+      ],
+      [
+        2619,
+        0.26
       ],
       [
         2091,
-        0.19
+        0.23
       ],
       [
-        3147,
-        0.17
+        6922,
+        0.22
       ],
       [
-        2407,
-        0.17
+        2589,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 50,
+      "negative": 33,
+      "trend": [
+        null,
+        0.25,
+        null,
+        null,
+        0,
+        -0.33,
+        1,
+        1,
+        null,
+        -0.5,
+        null,
+        0.5,
+        null,
+        0.5,
+        -0.2,
+        -0.2
+      ],
+      "emotions": []
+    }
   }
 }

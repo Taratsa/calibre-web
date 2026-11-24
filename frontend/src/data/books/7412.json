@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 4421,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "sistem",
@@ -110,6 +110,10 @@
         122
       ],
       [
+        "propaganda",
+        26
+      ],
+      [
         "memberontak",
         21
       ],
@@ -122,12 +126,12 @@
         8
       ],
       [
-        "propaganda",
-        26
-      ],
-      [
         "rasisme",
         11
+      ],
+      [
+        "berkuasa",
+        20
       ],
       [
         "dorongan-dorongan",
@@ -138,20 +142,16 @@
         7
       ],
       [
-        "interseks",
-        5
+        "nilai-nilai",
+        17
       ],
       [
         "seksisme",
         7
       ],
       [
-        "berkuasa",
-        20
-      ],
-      [
-        "macropedia",
-        3
+        "interseks",
+        5
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         4735,
-        0.14
+        0.18
       ],
       [
         279,
-        0.14
-      ],
-      [
-        1942,
-        0.13
-      ],
-      [
-        2046,
-        0.13
+        0.18
       ],
       [
         6855,
-        0.13
+        0.16
       ],
       [
-        2514,
-        0.13
+        1942,
+        0.15
+      ],
+      [
+        2046,
+        0.15
+      ],
+      [
+        3067,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.22,
+      "positive": 68,
+      "negative": 106,
+      "trend": [
+        null,
+        -0.62,
+        0.33,
+        -0.27,
+        0.38,
+        -0.33,
+        -0.45,
+        0,
+        null,
+        -0.33,
+        0.2,
+        -0.57,
+        -0.57,
+        null,
+        -0.08,
+        0.14
+      ],
+      "emotions": [
+        [
+          "anger",
+          45
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 5460,
-    "longer_than": 45,
+    "longer_than": 74,
     "top": [
       [
         "ham",
@@ -113,36 +113,36 @@
         65
       ],
       [
+        "kelompok",
+        62
+      ],
+      [
+        "agama",
+        48
+      ],
+      [
         "berkeyakinan",
         20
-      ],
-      [
-        "purwakarta",
-        14
-      ],
-      [
-        "disabilitas",
-        17
-      ],
-      [
-        "desk",
-        13
       ],
       [
         "beragama",
         26
       ],
       [
-        "jender-seksualitas",
-        6
+        "hak",
+        59
       ],
       [
-        "jayadi",
-        9
+        "disabilitas",
+        17
       ],
       [
-        "penyandang",
-        16
+        "purwakarta",
+        14
+      ],
+      [
+        "desk",
+        13
       ]
     ],
     "phrases": [
@@ -181,29 +181,74 @@
     ],
     "similar": [
       [
-        8962,
-        0.33
+        9091,
+        0.36
       ],
       [
         8845,
-        0.32
+        0.35
       ],
       [
-        9091,
-        0.32
+        8962,
+        0.35
       ],
       [
         8982,
-        0.3
+        0.33
       ],
       [
         8961,
-        0.3
+        0.33
       ],
       [
         9046,
-        0.29
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 117,
+      "negative": 51,
+      "trend": [
+        -0.14,
+        1,
+        0.4,
+        0.67,
+        -0.23,
+        0.43,
+        1,
+        0.14,
+        1,
+        0.88,
+        1,
+        0.33,
+        -0.33,
+        -0.11,
+        -0.14,
+        0.67
+      ],
+      "emotions": [
+        [
+          "anger",
+          34
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

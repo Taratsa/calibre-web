@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1613,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "demokratis",
@@ -114,6 +114,10 @@
         18
       ],
       [
+        "negara",
+        23
+      ],
+      [
         "negara-bangsa",
         6
       ],
@@ -122,8 +126,16 @@
         10
       ],
       [
+        "masyarakat",
+        21
+      ],
+      [
         "konferensi",
         7
+      ],
+      [
+        "sejarah",
+        11
       ],
       [
         "kurdi",
@@ -134,24 +146,12 @@
         4
       ],
       [
-        "negara",
-        23
+        "kapitalisme",
+        6
       ],
       [
-        "sejarah",
-        11
-      ],
-      [
-        "masyarakat",
-        21
-      ],
-      [
-        "komune",
-        3
-      ],
-      [
-        "sosialis",
-        5
+        "hukum",
+        9
       ]
     ],
     "phrases": [
@@ -187,28 +187,35 @@
     "similar": [
       [
         2589,
-        0.26
+        0.3
       ],
       [
         6922,
-        0.25
-      ],
-      [
-        2293,
-        0.18
-      ],
-      [
-        2156,
-        0.18
-      ],
-      [
-        2093,
-        0.18
+        0.3
       ],
       [
         2707,
-        0.17
+        0.22
+      ],
+      [
+        2093,
+        0.22
+      ],
+      [
+        2587,
+        0.21
+      ],
+      [
+        2156,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 42,
+      "negative": 24,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

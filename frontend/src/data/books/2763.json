@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 964,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "industri",
@@ -111,11 +111,27 @@
         5
       ],
       [
+        "masyarakat",
+        10
+      ],
+      [
+        "abstrak",
+        4
+      ],
+      [
+        "suka",
+        7
+      ],
+      [
         "cintai",
         3
       ],
       [
-        "abstrak",
+        "kemanusiaan",
+        4
+      ],
+      [
+        "menghancurkan",
         4
       ],
       [
@@ -123,24 +139,8 @@
         3
       ],
       [
-        "suka",
-        7
-      ],
-      [
-        "kemanusiaan",
-        4
-      ],
-      [
-        "mesin",
-        4
-      ],
-      [
         "membenarkan",
         3
-      ],
-      [
-        "menghancurkan",
-        4
       ],
       [
         "revolusi",
@@ -151,10 +151,14 @@
     "similar": [
       [
         4113,
-        0.21
+        0.18
       ],
       [
         7138,
+        0.18
+      ],
+      [
+        3057,
         0.14
       ],
       [
@@ -163,16 +167,13 @@
       ],
       [
         7248,
-        0.14
-      ],
-      [
-        3057,
         0.13
       ],
       [
-        7192,
-        0.13
+        7461,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

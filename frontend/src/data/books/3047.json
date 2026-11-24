@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3201,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "bahasa",
@@ -100,6 +100,10 @@
     ],
     "distinct": [
       [
+        "bahasa",
+        156
+      ],
+      [
         "medan",
         74
       ],
@@ -112,40 +116,36 @@
         23
       ],
       [
-        "bahasa",
-        156
+        "sastra",
+        44
       ],
       [
-        "stat",
-        12
+        "pendidikan",
+        64
       ],
       [
         "teknis",
         35
       ],
       [
-        "ors",
-        12
+        "staf",
+        28
       ],
       [
-        "sastra",
-        44
+        "ors",
+        12
       ],
       [
         "kebahasaan",
         16
       ],
       [
-        "sta",
+        "stat",
         12
       ],
       [
-        "unimed",
-        7
-      ],
-      [
-        "staf",
-        28
+        "sta",
+        12
       ]
     ],
     "phrases": [
@@ -185,28 +185,52 @@
     "similar": [
       [
         3123,
-        0.24
+        0.28
       ],
       [
         6242,
-        0.2
+        0.23
       ],
       [
         5795,
-        0.17
+        0.19
       ],
       [
         6316,
-        0.15
+        0.18
       ],
       [
         6315,
-        0.13
+        0.16
       ],
       [
-        854,
-        0.12
+        8309,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.86,
+      "positive": 68,
+      "negative": 5,
+      "trend": [
+        1,
+        0.43,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0.2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        0.67
+      ],
+      "emotions": []
+    }
   }
 }

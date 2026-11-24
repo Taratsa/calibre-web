@@ -74,7 +74,7 @@
   ],
   "text": {
     "words": 4016,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "mahasiswa",
@@ -131,20 +131,20 @@
         12
       ],
       [
-        "banjar",
-        19
-      ],
-      [
         "mahasiswa",
         43
       ],
       [
-        "msrm",
-        4
+        "banjar",
+        19
       ],
       [
         "street",
         12
+      ],
+      [
+        "msrm",
+        4
       ],
       [
         "squad",
@@ -155,7 +155,15 @@
         5
       ],
       [
+        "art",
+        12
+      ],
+      [
         "joey",
+        4
+      ],
+      [
+        "rafdi",
         4
       ],
       [
@@ -163,16 +171,8 @@
         3
       ],
       [
-        "art",
-        12
-      ],
-      [
-        "rafdi",
-        4
-      ],
-      [
-        "bsa",
-        4
+        "estetika",
+        7
       ]
     ],
     "phrases": [
@@ -209,6 +209,76 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2644,
+        0.12
+      ],
+      [
+        7306,
+        0.12
+      ],
+      [
+        1935,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 61,
+      "negative": 38,
+      "trend": [
+        null,
+        -0.25,
+        null,
+        -0.2,
+        0.6,
+        null,
+        null,
+        -0.08,
+        0.2,
+        null,
+        1,
+        -0.2,
+        0.67,
+        0.71,
+        -0.09,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

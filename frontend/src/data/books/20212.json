@@ -1,0 +1,52 @@
+{
+  "id": 20212,
+  "title": "ProxMox: Backup - Restore - Live Migration",
+  "slug": "proxmox-backup-restore-live-migration-onno-widodo-purbo",
+  "slugBase": "proxmox-backup-restore-live-migration-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-13",
+  "timestamp": "2026-11-24 06:29:41.913568",
+  "last_modified": "2026-11-24 06:29:41.913572",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:2f4f154b-04f8-580c-b279-f5790b671672"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20212?v=1795476581",
+  "cover_og_url": "/cover/20212/og?v=1795476581",
+  "url": "/book/proxmox-backup-restore-live-migration-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Backup adalah salah satu fitur yang penting yang ada di Proxmox VE. Contents 1 Backup menggunakan VZDump 1.1 Contoh 1.1.1 Backup 1.1.2 Restore 2 Interface Web 3 Restore menggunakan vzrestore dan qmrestore 4 Live Migration 4.1 Referensi 4.2 Pranala Menarik Backup menggunakan VZDump VZDump adalah tool yang dapat digunakan untuk membuat snapshot dari Virtual Machine (OpenVZ dan KVM) yang sedang",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4397,
+      "name": "ProxMox_ Backup - Restore - Live Migration - Onno Widodo Purbo"
+    }
+  ]
+}

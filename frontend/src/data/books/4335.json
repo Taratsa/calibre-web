@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 8048,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "saudara",
@@ -104,44 +104,44 @@
         30
       ],
       [
-        "moderator",
-        17
-      ],
-      [
-        "jimi",
-        11
-      ],
-      [
-        "nashar",
-        11
+        "seni",
+        50
       ],
       [
         "barangkali",
         40
       ],
       [
+        "moderator",
+        17
+      ],
+      [
         "karya-karya",
         28
       ],
       [
-        "pelukis-pelukis",
-        10
+        "jimi",
+        11
       ],
       [
-        "seni",
-        50
+        "kesenian",
+        27
       ],
       [
-        "sublimasi",
-        10
+        "nashar",
+        11
       ],
       [
         "pelukis",
         18
       ],
       [
-        "sanento",
-        9
+        "saudara-saudara",
+        20
+      ],
+      [
+        "pelukis-pelukis",
+        10
       ]
     ],
     "phrases": [
@@ -181,28 +181,81 @@
     "similar": [
       [
         4414,
-        0.43
+        0.44
       ],
       [
         4324,
-        0.29
+        0.3
       ],
       [
         4381,
-        0.26
+        0.27
       ],
       [
         4527,
-        0.23
+        0.24
       ],
       [
         4475,
-        0.21
+        0.24
       ],
       [
         4576,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 106,
+      "negative": 45,
+      "trend": [
+        0.5,
+        1,
+        0,
+        0.23,
+        null,
+        0.45,
+        0.62,
+        0.71,
+        0.2,
+        0.87,
+        -0.25,
+        0.6,
+        0.33,
+        -0.11,
+        0.14,
+        0.27
+      ],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

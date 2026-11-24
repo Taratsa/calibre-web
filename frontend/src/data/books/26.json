@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 11089,
-    "longer_than": 63,
+    "longer_than": 82,
     "top": [
       [
         "dunia",
@@ -99,24 +99,28 @@
     ],
     "distinct": [
       [
-        "mythopoesis",
-        7
-      ],
-      [
         "kapitalisme",
         28
+      ],
+      [
+        "mythopoesis",
+        7
       ],
       [
         "musim",
         26
       ],
       [
-        "holloway",
-        5
+        "dunia",
+        56
       ],
       [
-        "leviathan",
-        6
+        "hidup",
+        52
+      ],
+      [
+        "gerakan",
+        33
       ],
       [
         "seni",
@@ -131,20 +135,16 @@
         22
       ],
       [
-        "resistensi",
-        8
+        "sosial",
+        29
       ],
       [
-        "gerakan",
-        33
+        "orang",
+        44
       ],
       [
-        "kapital",
-        12
-      ],
-      [
-        "socrates",
-        5
+        "negara",
+        30
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         1983,
-        0.33
+        0.34
       ],
       [
         7045,
-        0.32
+        0.34
       ],
       [
         3058,
-        0.19
+        0.25
       ],
       [
         3057,
-        0.17
+        0.23
       ],
       [
-        4740,
-        0.16
+        4877,
+        0.23
       ],
       [
-        7414,
-        0.16
+        2064,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 196,
+      "negative": 174,
+      "trend": [
+        -0.03,
+        -0.54,
+        -0.04,
+        0.14,
+        0.41,
+        0.31,
+        0,
+        0.22,
+        -0.29,
+        0.24,
+        -0.27,
+        0,
+        0.23,
+        0.11,
+        0.39,
+        0.36
+      ],
+      "emotions": [
+        [
+          "sadness",
+          50
+        ],
+        [
+          "joy",
+          27
+        ],
+        [
+          "fear",
+          23
+        ],
+        [
+          "anger",
+          22
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "surprise",
+          4
+        ]
+      ]
+    }
   }
 }

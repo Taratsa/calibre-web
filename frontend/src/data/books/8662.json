@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 42623,
-    "longer_than": 91,
+    "longer_than": 96,
     "top": [
       [
         "production",
@@ -96,24 +96,28 @@
         296
       ],
       [
-        "biodiesel",
-        273
-      ],
-      [
         "production",
         546
       ],
       [
-        "jatropha",
-        201
+        "biodiesel",
+        273
       ],
       [
         "tonnes",
         229
       ],
       [
+        "jatropha",
+        201
+      ],
+      [
         "curcas",
         174
+      ],
+      [
+        "oil",
+        400
       ],
       [
         "litres",
@@ -124,20 +128,16 @@
         223
       ],
       [
-        "oil",
-        400
-      ],
-      [
-        "feedstock",
-        125
-      ],
-      [
         "hectares",
         217
       ],
       [
         "palm",
         268
+      ],
+      [
+        "feedstock",
+        125
       ]
     ],
     "phrases": [
@@ -177,28 +177,29 @@
     "similar": [
       [
         8682,
-        0.28
+        0.29
       ],
       [
         8480,
-        0.26
+        0.27
       ],
       [
         8660,
-        0.23
+        0.24
       ],
       [
         8625,
-        0.22
+        0.23
       ],
       [
         8566,
-        0.22
+        0.23
       ],
       [
         736,
         0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

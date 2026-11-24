@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 1200,
-    "longer_than": 15,
+    "longer_than": 55,
     "top": [
       [
         "keluarga",
@@ -107,12 +107,12 @@
     ],
     "distinct": [
       [
-        "imut",
-        4
-      ],
-      [
         "keluarga",
         29
+      ],
+      [
+        "imut",
+        4
       ],
       [
         "konsumsi",
@@ -123,16 +123,24 @@
         12
       ],
       [
+        "hubungan",
+        13
+      ],
+      [
         "pernikahan",
         5
       ],
       [
-        "reproduksi",
-        4
-      ],
-      [
         "institusi",
         6
+      ],
+      [
+        "cinta",
+        7
+      ],
+      [
+        "reproduksi",
+        4
       ],
       [
         "intim",
@@ -143,16 +151,8 @@
         3
       ],
       [
-        "hubungan",
-        13
-      ],
-      [
-        "cinta",
+        "ekonomi",
         7
-      ],
-      [
-        "otoritas",
-        4
       ]
     ],
     "phrases": [
@@ -176,28 +176,29 @@
     "similar": [
       [
         4684,
-        0.27
+        0.29
       ],
       [
         2672,
-        0.27
+        0.29
       ],
       [
         7546,
-        0.18
+        0.19
       ],
       [
         2407,
         0.17
       ],
       [
-        2178,
-        0.14
+        7155,
+        0.16
       ],
       [
-        7155,
-        0.13
+        2178,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

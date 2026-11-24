@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1587,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "ham",
@@ -109,43 +109,43 @@
         23
       ],
       [
-        "luhut",
-        12
-      ],
-      [
         "pembela",
         25
+      ],
+      [
+        "luhut",
+        12
       ],
       [
         "ham",
         25
       ],
       [
-        "somasi",
-        6
+        "aktivis",
+        17
       ],
       [
-        "kriminalisasi",
-        10
+        "kekerasan",
+        22
       ],
       [
         "mediasi",
         11
       ],
       [
-        "aktivis",
-        17
+        "kriminalisasi",
+        10
+      ],
+      [
+        "somasi",
+        6
+      ],
+      [
+        "kepolisian",
+        12
       ],
       [
         "pandjaitan",
-        5
-      ],
-      [
-        "nnoovveemmbbeerr",
-        3
-      ],
-      [
-        "binsar",
         5
       ]
     ],
@@ -186,28 +186,52 @@
     "similar": [
       [
         6953,
-        0.28
+        0.3
       ],
       [
         124,
-        0.28
+        0.3
       ],
       [
         6903,
+        0.29
+      ],
+      [
+        6914,
         0.28
       ],
       [
         8998,
-        0.27
-      ],
-      [
-        6914,
-        0.26
+        0.28
       ],
       [
         142,
-        0.24
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.44,
+      "positive": 20,
+      "negative": 52,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ]
+      ]
+    }
   }
 }

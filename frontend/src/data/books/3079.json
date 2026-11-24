@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 962,
-    "longer_than": 12,
+    "longer_than": 51,
     "top": [
       [
         "perempuan",
@@ -105,36 +105,28 @@
         7
       ],
       [
-        "arogansi",
-        4
+        "perempuan",
+        15
       ],
       [
         "ketidakadilan",
         7
       ],
       [
-        "perempuan",
-        15
+        "arogansi",
+        4
       ],
       [
         "luka",
         7
       ],
       [
-        "komedi",
-        3
-      ],
-      [
         "gender",
         5
       ],
       [
-        "tau",
-        4
-      ],
-      [
-        "kau",
-        5
+        "komedi",
+        3
       ],
       [
         "politik",
@@ -143,6 +135,14 @@
       [
         "kepentingan",
         7
+      ],
+      [
+        "tau",
+        4
+      ],
+      [
+        "kau",
+        5
       ],
       [
         "perjuangan",
@@ -170,28 +170,29 @@
     "similar": [
       [
         2740,
-        0.17
+        0.15
+      ],
+      [
+        1760,
+        0.14
       ],
       [
         6776,
-        0.13
+        0.12
       ],
       [
         2050,
         0.12
       ],
       [
-        2775,
-        0.12
-      ],
-      [
         2480,
-        0.12
+        0.11
       ],
       [
-        2630,
-        0.1
+        82,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

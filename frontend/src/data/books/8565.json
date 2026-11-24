@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 77115,
-    "longer_than": 96,
+    "longer_than": 98,
     "top": [
       [
         "stewards",
@@ -112,10 +112,6 @@
         490
       ],
       [
-        "workgroup",
-        141
-      ],
-      [
         "full-time",
         214
       ],
@@ -124,20 +120,24 @@
         216
       ],
       [
-        "white-collar",
-        175
-      ],
-      [
-        "management",
-        381
-      ],
-      [
         "role",
         377
       ],
       [
-        "blue-collar",
-        135
+        "latrobe",
+        130
+      ],
+      [
+        "white-collar",
+        175
+      ],
+      [
+        "industrial",
+        365
+      ],
+      [
+        "management",
+        381
       ]
     ],
     "phrases": [
@@ -177,7 +177,7 @@
     "similar": [
       [
         6794,
-        0.26
+        0.27
       ],
       [
         8716,
@@ -197,8 +197,9 @@
       ],
       [
         8566,
-        0.17
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

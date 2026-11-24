@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2661,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "dutch",
@@ -106,12 +106,12 @@
     ],
     "distinct": [
       [
-        "imperialists",
-        29
-      ],
-      [
         "dutch",
         51
+      ],
+      [
+        "imperialists",
+        29
       ],
       [
         "west",
@@ -134,20 +134,20 @@
         13
       ],
       [
-        "imperialist",
-        8
-      ],
-      [
         "domination",
         10
+      ],
+      [
+        "imperialist",
+        8
       ],
       [
         "people",
         17
       ],
       [
-        "colonialists",
-        5
+        "war",
+        12
       ],
       [
         "military",
@@ -191,28 +191,29 @@
     "similar": [
       [
         6292,
-        0.23
-      ],
-      [
-        1472,
-        0.21
-      ],
-      [
-        645,
-        0.21
+        0.24
       ],
       [
         5935,
-        0.21
+        0.22
+      ],
+      [
+        1472,
+        0.22
+      ],
+      [
+        645,
+        0.22
       ],
       [
         1474,
-        0.19
+        0.2
       ],
       [
         721,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

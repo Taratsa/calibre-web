@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 20764,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "humor",
@@ -125,28 +125,28 @@
         150
       ],
       [
-        "pengungkapan",
-        103
-      ],
-      [
         "pelanggaran",
         166
-      ],
-      [
-        "percakapan",
-        125
       ],
       [
         "prinsip",
         191
       ],
       [
+        "percakapan",
+        125
+      ],
+      [
+        "pengungkapan",
+        103
+      ],
+      [
         "sopan-santun",
         43
       ],
       [
-        "penggalan",
-        48
+        "dokter",
+        85
       ]
     ],
     "phrases": [
@@ -183,6 +183,76 @@
         51
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        5633,
+        0.15
+      ],
+      [
+        906,
+        0.11
+      ],
+      [
+        899,
+        0.11
+      ],
+      [
+        876,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": -0.22,
+      "positive": 255,
+      "negative": 403,
+      "trend": [
+        0.2,
+        0.48,
+        0.08,
+        -0.37,
+        0.09,
+        -0.58,
+        -0.1,
+        -0.61,
+        -0.06,
+        -0.09,
+        -0.12,
+        -0.52,
+        -0.39,
+        -0.1,
+        -0.32,
+        -0.37
+      ],
+      "emotions": [
+        [
+          "anger",
+          179
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "sadness",
+          16
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "anticipation",
+          6
+        ]
+      ]
+    }
   }
 }

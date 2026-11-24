@@ -70,7 +70,7 @@
   ],
   "text": {
     "words": 5345,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "musik",
@@ -123,28 +123,28 @@
     ],
     "distinct": [
       [
-        "drumband",
-        20
-      ],
-      [
         "musik",
         81
       ],
       [
-        "sessions",
-        17
+        "drumband",
+        20
       ],
       [
         "gitar",
         21
       ],
       [
-        "yayat",
-        12
-      ],
-      [
         "live",
         27
+      ],
+      [
+        "sessions",
+        17
+      ],
+      [
+        "yayat",
+        12
       ],
       [
         "bajo",
@@ -163,12 +163,12 @@
         7
       ],
       [
-        "jacson",
-        4
+        "sekolah",
+        37
       ],
       [
-        "vls",
-        4
+        "band",
+        13
       ]
     ],
     "phrases": [
@@ -208,19 +208,19 @@
     "similar": [
       [
         1547,
-        0.13
+        0.14
       ],
       [
         1524,
+        0.13
+      ],
+      [
+        1526,
         0.12
       ],
       [
         2543,
-        0.11
-      ],
-      [
-        1526,
-        0.11
+        0.12
       ],
       [
         1527,
@@ -228,8 +228,15 @@
       ],
       [
         1465,
-        0.1
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 56,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

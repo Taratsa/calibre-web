@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 4291,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "fikri",
@@ -127,24 +127,24 @@
         25
       ],
       [
-        "tambang",
-        42
+        "ayah",
+        57
       ],
       [
-        "geureudong",
-        11
+        "tambang",
+        42
       ],
       [
         "hafiz",
         16
       ],
       [
-        "ayah",
-        57
+        "bak",
+        35
       ],
       [
-        "wate",
-        14
+        "geureudong",
+        11
       ],
       [
         "ngen",
@@ -188,11 +188,11 @@
     "similar": [
       [
         4930,
-        0.28
+        0.29
       ],
       [
         5663,
-        0.22
+        0.23
       ],
       [
         823,
@@ -210,6 +210,38 @@
         3579,
         0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 43,
+      "negative": 21,
+      "trend": [],
+      "emotions": [
+        [
+          "fear",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

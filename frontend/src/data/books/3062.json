@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 15365,
-    "longer_than": 71,
+    "longer_than": 86,
     "top": [
       [
         "masyarakat",
@@ -117,12 +117,12 @@
         32
       ],
       [
-        "pencurian",
-        52
-      ],
-      [
         "anarkis",
         69
+      ],
+      [
+        "pencurian",
+        52
       ],
       [
         "insureksi",
@@ -133,32 +133,32 @@
         18
       ],
       [
+        "sosial",
+        71
+      ],
+      [
+        "masyarakat",
+        73
+      ],
+      [
+        "orang-orang",
+        58
+      ],
+      [
         "resistensi",
         20
       ],
       [
+        "perlawanan",
+        38
+      ],
+      [
+        "krisis",
+        31
+      ],
+      [
         "insureksionis",
         12
-      ],
-      [
-        "urbanisme",
-        10
-      ],
-      [
-        "aktifis",
-        14
-      ],
-      [
-        "emma",
-        16
-      ],
-      [
-        "anti-kekerasan",
-        10
-      ],
-      [
-        "anarkisme",
-        22
       ]
     ],
     "phrases": [
@@ -198,28 +198,81 @@
     "similar": [
       [
         4663,
-        0.21
+        0.27
       ],
       [
         2064,
-        0.17
+        0.23
       ],
       [
         4740,
-        0.16
-      ],
-      [
-        7030,
-        0.16
+        0.22
       ],
       [
         1758,
-        0.15
+        0.22
       ],
       [
-        1914,
-        0.15
+        3058,
+        0.21
+      ],
+      [
+        7911,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 230,
+      "negative": 182,
+      "trend": [
+        0.11,
+        0.23,
+        0.07,
+        0.05,
+        0.02,
+        0.16,
+        -0.14,
+        -0.2,
+        -0.17,
+        0.21,
+        0.19,
+        0.4,
+        0.04,
+        0.16,
+        0.33,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          72
+        ],
+        [
+          "trust",
+          24
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

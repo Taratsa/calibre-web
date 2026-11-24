@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3898,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "bahasa",
@@ -91,12 +91,12 @@
     ],
     "distinct": [
       [
-        "melaju",
-        57
-      ],
-      [
         "bahasa",
         235
+      ],
+      [
+        "melaju",
+        57
       ],
       [
         "kesusasteraan",
@@ -105,6 +105,10 @@
       [
         "fokker",
         14
+      ],
+      [
+        "indonesia",
+        110
       ],
       [
         "djuga",
@@ -119,6 +123,10 @@
         14
       ],
       [
+        "daerah",
+        54
+      ],
+      [
         "tatabahasa",
         11
       ],
@@ -127,16 +135,8 @@
         19
       ],
       [
-        "persurat",
-        6
-      ],
-      [
         "pudjangga",
         10
-      ],
-      [
-        "kabaran",
-        6
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         3416,
-        0.22
+        0.24
       ],
       [
         1139,
         0.21
       ],
       [
+        7665,
+        0.2
+      ],
+      [
         1140,
-        0.18
+        0.19
       ],
       [
         6694,
-        0.18
-      ],
-      [
-        1231,
-        0.18
+        0.19
       ],
       [
         1189,
         0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 43,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

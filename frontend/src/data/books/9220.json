@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 1700,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "liberalisme",
@@ -123,32 +123,32 @@
         20
       ],
       [
+        "politik",
+        27
+      ],
+      [
         "sosialisme",
         9
       ],
       [
-        "humanisme",
-        5
-      ],
-      [
-        "politik",
-        27
+        "individu",
+        12
       ],
       [
         "egois",
         6
       ],
       [
-        "liberalism",
-        3
+        "humanisme",
+        5
       ],
       [
         "fase",
         6
       ],
       [
-        "individu",
-        12
+        "konsep",
+        10
       ],
       [
         "sistem",
@@ -187,29 +187,30 @@
     ],
     "similar": [
       [
-        2545,
-        0.3
+        9185,
+        0.33
       ],
       [
-        9185,
-        0.3
+        2545,
+        0.32
+      ],
+      [
+        7349,
+        0.27
+      ],
+      [
+        4093,
+        0.25
       ],
       [
         2327,
         0.25
       ],
       [
-        4093,
-        0.24
-      ],
-      [
         4687,
-        0.24
-      ],
-      [
-        7349,
-        0.23
+        0.25
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

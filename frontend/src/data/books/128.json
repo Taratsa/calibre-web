@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 661,
-    "longer_than": 7,
+    "longer_than": 45,
     "top": [
       [
         "aturan",
@@ -107,6 +107,10 @@
         5
       ],
       [
+        "peraturan",
+        6
+      ],
+      [
         "punk",
         3
       ],
@@ -115,28 +119,24 @@
         3
       ],
       [
-        "peraturan",
-        6
-      ],
-      [
         "tuhan",
         6
-      ],
-      [
-        "larangan",
-        3
       ],
       [
         "kebebasan",
         5
       ],
       [
-        "allah",
+        "larangan",
         3
       ],
       [
         "sungguh",
         4
+      ],
+      [
+        "allah",
+        3
       ],
       [
         "individu",
@@ -148,6 +148,32 @@
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        2691,
+        0.22
+      ],
+      [
+        10566,
+        0.19
+      ],
+      [
+        1839,
+        0.17
+      ],
+      [
+        16192,
+        0.15
+      ],
+      [
+        17369,
+        0.15
+      ],
+      [
+        19589,
+        0.15
+      ]
+    ],
+    "sentiment": null
   }
 }

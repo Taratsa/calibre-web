@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1590,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "internet",
@@ -89,15 +89,23 @@
     ],
     "distinct": [
       [
-        "internet",
-        20
-      ],
-      [
         "sejiwa",
         8
       ],
       [
+        "internet",
+        20
+      ],
+      [
+        "foto",
+        13
+      ],
+      [
         "video",
+        12
+      ],
+      [
+        "telepon",
         12
       ],
       [
@@ -105,35 +113,27 @@
         5
       ],
       [
-        "telepon",
-        12
-      ],
-      [
-        "di-bully",
-        3
-      ],
-      [
-        "foto",
-        13
+        "pertolongan",
+        10
       ],
       [
         "online",
         10
       ],
       [
+        "di-bully",
+        3
+      ],
+      [
         "hubungi",
         6
       ],
       [
-        "pertolongan",
-        10
+        "laporkan",
+        5
       ],
       [
         "crc",
-        4
-      ],
-      [
-        "gadget",
         4
       ]
     ],
@@ -174,28 +174,35 @@
     "similar": [
       [
         367,
-        0.24
+        0.23
+      ],
+      [
+        11835,
+        0.2
+      ],
+      [
+        12091,
+        0.17
+      ],
+      [
+        19059,
+        0.16
       ],
       [
         3768,
         0.16
       ],
       [
-        368,
+        12122,
         0.15
-      ],
-      [
-        1343,
-        0.14
-      ],
-      [
-        362,
-        0.13
-      ],
-      [
-        355,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 32,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

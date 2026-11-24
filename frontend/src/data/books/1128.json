@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2011,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "manusia",
@@ -101,16 +101,16 @@
     ],
     "distinct": [
       [
+        "setjara",
+        15
+      ],
+      [
         "erotik",
         8
       ],
       [
         "seksuil",
         6
-      ],
-      [
-        "setjara",
-        15
       ],
       [
         "nja",
@@ -121,8 +121,8 @@
         9
       ],
       [
-        "pilm",
-        3
+        "larangan",
+        10
       ],
       [
         "djelas",
@@ -133,31 +133,27 @@
         6
       ],
       [
-        "penelandjangan",
+        "pilm",
         3
+      ],
+      [
+        "manusia",
+        20
       ],
       [
         "pornografi",
         5
       ],
       [
-        "larangan",
-        10
-      ],
-      [
-        "roman",
-        6
+        "penelandjangan",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        7563,
-        0.15
-      ],
-      [
-        3421,
-        0.15
+        11660,
+        0.19
       ],
       [
         1189,
@@ -165,16 +161,27 @@
       ],
       [
         7785,
-        0.14
+        0.15
+      ],
+      [
+        1184,
+        0.15
       ],
       [
         1096,
-        0.14
+        0.15
       ],
       [
-        1211,
-        0.13
+        3968,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 36,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

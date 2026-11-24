@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 334,
-    "longer_than": 3,
+    "longer_than": 32,
     "top": [
       [
         "konflik",
@@ -91,12 +91,12 @@
     ],
     "distinct": [
       [
-        "mediasi",
-        10
-      ],
-      [
         "konflik",
         17
+      ],
+      [
+        "mediasi",
+        10
       ],
       [
         "gakkum",
@@ -115,16 +115,16 @@
         3
       ],
       [
+        "lingkungan",
+        6
+      ],
+      [
         "memperjuangkan",
         3
       ],
       [
         "penyelesaian",
         3
-      ],
-      [
-        "lingkungan",
-        6
       ],
       [
         "nasional",
@@ -135,7 +135,7 @@
     "similar": [
       [
         8187,
-        0.19
+        0.18
       ],
       [
         8730,
@@ -147,16 +147,17 @@
       ],
       [
         8726,
-        0.15
+        0.14
       ],
       [
-        9130,
+        18393,
         0.11
       ],
       [
-        9128,
+        8729,
         0.11
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

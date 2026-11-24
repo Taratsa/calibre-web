@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1698,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "peradaban",
@@ -110,12 +110,16 @@
         28
       ],
       [
+        "anarkis",
+        18
+      ],
+      [
         "coeurderoy",
         5
       ],
       [
-        "anarkis",
-        18
+        "revolusioner",
+        14
       ],
       [
         "bakunin",
@@ -130,10 +134,6 @@
         5
       ],
       [
-        "revolusioner",
-        14
-      ],
-      [
         "dejacque",
         3
       ],
@@ -142,44 +142,68 @@
         4
       ],
       [
+        "teknologi",
+        11
+      ],
+      [
         "barbarian",
         3
       ],
       [
-        "anti-peradaban",
-        3
-      ],
-      [
-        "teknologi",
-        11
+        "kritik",
+        9
       ]
     ],
     "phrases": [],
     "similar": [
       [
-        2675,
-        0.84
-      ],
-      [
         7044,
-        0.62
+        0.65
       ],
       [
         2052,
-        0.61
+        0.63
       ],
       [
         3715,
-        0.29
-      ],
-      [
-        4113,
-        0.19
+        0.32
       ],
       [
         2133,
-        0.17
+        0.21
+      ],
+      [
+        7181,
+        0.19
+      ],
+      [
+        3716,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 34,
+      "negative": 28,
+      "trend": [
+        null,
+        0.6,
+        -0.2,
+        null,
+        null,
+        0.6,
+        0.2,
+        null,
+        0.33,
+        0.2,
+        null,
+        null,
+        null,
+        -1,
+        null,
+        -0.33
+      ],
+      "emotions": []
+    }
   }
 }

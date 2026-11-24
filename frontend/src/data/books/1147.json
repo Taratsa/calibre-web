@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1008,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "belanda",
@@ -91,6 +91,10 @@
     ],
     "distinct": [
       [
+        "belanda",
+        23
+      ],
+      [
         "ajahnja",
         10
       ],
@@ -103,40 +107,36 @@
         7
       ],
       [
-        "belanda",
-        23
+        "rakjat",
+        11
       ],
       [
         "tiahahu",
         4
       ],
       [
-        "rakjat",
-        11
+        "maluku",
+        10
       ],
       [
         "saparua",
         5
       ],
       [
-        "maluku",
-        10
-      ],
-      [
-        "buyskes",
-        3
+        "tentara",
+        13
       ],
       [
         "sedjarah",
         8
       ],
       [
-        "kepulau",
-        4
+        "nusa",
+        9
       ],
       [
-        "didjatuhkan",
-        4
+        "buyskes",
+        3
       ]
     ],
     "phrases": [
@@ -176,10 +176,18 @@
     "similar": [
       [
         6753,
-        0.75
+        0.76
+      ],
+      [
+        4289,
+        0.18
       ],
       [
         6590,
+        0.15
+      ],
+      [
+        9230,
         0.15
       ],
       [
@@ -187,17 +195,10 @@
         0.14
       ],
       [
-        4289,
-        0.12
-      ],
-      [
-        9230,
-        0.11
-      ],
-      [
-        5141,
+        1105,
         0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

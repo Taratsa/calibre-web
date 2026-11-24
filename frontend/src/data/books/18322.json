@@ -1,0 +1,261 @@
+{
+  "id": 18322,
+  "title": "GnuPG Privacy Handbook",
+  "slug": "gnupg-privacy-handbook-onno-widodo-purbo",
+  "slugBase": "gnupg-privacy-handbook-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-01-11",
+  "timestamp": "2026-11-24 04:14:57.286173",
+  "last_modified": "2026-11-24 04:14:57.286179",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:3c5046b3-a8ea-5e88-a163-6a6046cdfdad"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/18322?v=1795468497",
+  "cover_og_url": "/cover/18322/og?v=1795468497",
+  "url": "/book/gnupg-privacy-handbook-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Copyright © 1999 by The Free Software Foundation Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled \"GNU Free",
+  "data": [
+    {
+      "format": "epub",
+      "size": 27927,
+      "name": "GnuPG Privacy Handbook - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 11359,
+    "longer_than": 82,
+    "top": [
+      [
+        "kunci",
+        520
+      ],
+      [
+        "publik",
+        119
+      ],
+      [
+        "tanda",
+        102
+      ],
+      [
+        "tangan",
+        89
+      ],
+      [
+        "gnupg",
+        83
+      ],
+      [
+        "key",
+        81
+      ],
+      [
+        "dokumen",
+        73
+      ],
+      [
+        "pengguna",
+        72
+      ],
+      [
+        "chloe",
+        68
+      ],
+      [
+        "alice",
+        64
+      ],
+      [
+        "blake",
+        61
+      ],
+      [
+        "trust",
+        60
+      ]
+    ],
+    "distinct": [
+      [
+        "kunci",
+        520
+      ],
+      [
+        "chloe",
+        68
+      ],
+      [
+        "gnupg",
+        83
+      ],
+      [
+        "blake",
+        61
+      ],
+      [
+        "alice",
+        64
+      ],
+      [
+        "cyb",
+        35
+      ],
+      [
+        "cipher",
+        44
+      ],
+      [
+        "key",
+        81
+      ],
+      [
+        "publik",
+        119
+      ],
+      [
+        "trust",
+        60
+      ],
+      [
+        "keypair",
+        29
+      ],
+      [
+        "gpg",
+        42
+      ]
+    ],
+    "phrases": [
+      [
+        "kunci publik",
+        105
+      ],
+      [
+        "tanda tangan",
+        88
+      ],
+      [
+        "created expires",
+        29
+      ],
+      [
+        "kunci pribadi",
+        21
+      ],
+      [
+        "frasa sandi",
+        19
+      ],
+      [
+        "jester chloe cyb",
+        11
+      ],
+      [
+        "chloe jester chloe",
+        11
+      ],
+      [
+        "menandatangani kunci",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        18321,
+        0.48
+      ],
+      [
+        15202,
+        0.43
+      ],
+      [
+        20018,
+        0.41
+      ],
+      [
+        15963,
+        0.29
+      ],
+      [
+        19488,
+        0.24
+      ],
+      [
+        19680,
+        0.24
+      ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 150,
+      "negative": 65,
+      "trend": [
+        0.45,
+        0.78,
+        0.14,
+        0.67,
+        0.27,
+        -0.22,
+        0.2,
+        -0.5,
+        0.2,
+        0.71,
+        0.67,
+        0.09,
+        0.57,
+        0.64,
+        0.76,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          72
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
+}

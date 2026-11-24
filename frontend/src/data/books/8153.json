@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 9632,
-    "longer_than": 60,
+    "longer_than": 81,
     "top": [
       [
         "environmental",
@@ -111,12 +111,12 @@
     ],
     "distinct": [
       [
-        "defenders",
-        89
-      ],
-      [
         "environmental",
         109
+      ],
+      [
+        "defenders",
+        89
       ],
       [
         "human",
@@ -127,36 +127,36 @@
         109
       ],
       [
-        "polanyi",
-        26
-      ],
-      [
         "victims",
         42
       ],
       [
-        "actors",
-        32
+        "polanyi",
+        26
       ],
       [
         "movement",
         50
       ],
       [
+        "actors",
+        32
+      ],
+      [
         "elsam",
         33
+      ],
+      [
+        "law",
+        48
       ],
       [
         "actions",
         34
       ],
       [
-        "counter",
-        30
-      ],
-      [
-        "market",
-        35
+        "violence",
+        36
       ]
     ],
     "phrases": [
@@ -199,25 +199,26 @@
         0.38
       ],
       [
-        8154,
+        6942,
         0.3
       ],
       [
-        6942,
+        8154,
         0.29
       ],
       [
         8725,
-        0.22
+        0.23
       ],
       [
-        6815,
-        0.22
+        8674,
+        0.23
       ],
       [
         6794,
-        0.21
+        0.23
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

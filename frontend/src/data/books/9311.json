@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 1917,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "seni",
@@ -104,24 +104,28 @@
         11
       ],
       [
-        "berkepribadian",
-        15
-      ],
-      [
-        "pki",
-        20
-      ],
-      [
         "seni",
         38
+      ],
+      [
+        "berkepribadian",
+        15
       ],
       [
         "sastra",
         32
       ],
       [
+        "pki",
+        20
+      ],
+      [
         "revolusioner",
         17
+      ],
+      [
+        "rakyat",
+        27
       ],
       [
         "kebudayaan",
@@ -136,12 +140,8 @@
         4
       ],
       [
-        "rakyat",
-        27
-      ],
-      [
-        "seniman-seniman",
-        4
+        "revolusi",
+        12
       ]
     ],
     "phrases": [
@@ -181,28 +181,29 @@
     "similar": [
       [
         3994,
-        0.35
+        0.38
       ],
       [
         9312,
-        0.32
+        0.36
       ],
       [
         4796,
-        0.28
+        0.3
       ],
       [
         464,
-        0.28
+        0.3
       ],
       [
         295,
-        0.28
+        0.3
       ],
       [
         9313,
-        0.25
+        0.29
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -1,0 +1,216 @@
+{
+  "id": 19759,
+  "title": "UEC: Manajemen Storage",
+  "slug": "uec-manajemen-storage-onno-widodo-purbo",
+  "slugBase": "uec-manajemen-storage-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Cloud_Computing",
+    "Linux"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2010-10-21",
+  "timestamp": "2026-11-24 06:00:45.746023",
+  "last_modified": "2026-11-24 06:00:45.746027",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:7d50098f-6531-5270-ab02-274c92db637b"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/19759?v=1795474845",
+  "cover_og_url": "/cover/19759/og?v=1795474845",
+  "url": "/book/uec-manajemen-storage-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Contents 1 Storage Controller 2 Interaksi dengan Storage Controller 2.1 Linux Instances 3 WS3 Storage Controller 4 Snapshots 5 Referensi 6 Pranala Menarik Storage Controller Storage Controller adalah komponen Eucalyptus yang memberikan layanan persistent block storage yang compatible dengan Amazon Elastic Block Store. Perintah euca2ools atau EC2 dapat digunakan untuk manajemen volume. Berikut",
+  "data": [
+    {
+      "format": "epub",
+      "size": 4379,
+      "name": "UEC_ Manajemen Storage - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 652,
+    "longer_than": 45,
+    "top": [
+      [
+        "volume",
+        20
+      ],
+      [
+        "storage",
+        15
+      ],
+      [
+        "snapshot",
+        12
+      ],
+      [
+        "client",
+        9
+      ],
+      [
+        "dev",
+        9
+      ],
+      [
+        "uecadmin",
+        9
+      ],
+      [
+        "walrus",
+        8
+      ],
+      [
+        "block",
+        6
+      ],
+      [
+        "controller",
+        6
+      ],
+      [
+        "eucalyptus",
+        6
+      ],
+      [
+        "sdb",
+        6
+      ],
+      [
+        "tool",
+        6
+      ]
+    ],
+    "distinct": [
+      [
+        "uecadmin",
+        9
+      ],
+      [
+        "snapshot",
+        12
+      ],
+      [
+        "walrus",
+        8
+      ],
+      [
+        "storage",
+        15
+      ],
+      [
+        "volume",
+        20
+      ],
+      [
+        "eucalyptus",
+        6
+      ],
+      [
+        "sdb",
+        6
+      ],
+      [
+        "cylinders",
+        4
+      ],
+      [
+        "controller",
+        6
+      ],
+      [
+        "dev",
+        9
+      ],
+      [
+        "client",
+        9
+      ],
+      [
+        "euca-describe-volumes",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "uecadmin client",
+        9
+      ],
+      [
+        "dev sdb",
+        6
+      ],
+      [
+        "storage controller",
+        5
+      ],
+      [
+        "eucalyptus com wiki",
+        3
+      ],
+      [
+        "block storage",
+        4
+      ],
+      [
+        "disk dev",
+        3
+      ],
+      [
+        "dev sda",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19729,
+        0.5
+      ],
+      [
+        19731,
+        0.29
+      ],
+      [
+        19754,
+        0.28
+      ],
+      [
+        19762,
+        0.27
+      ],
+      [
+        19755,
+        0.25
+      ],
+      [
+        19757,
+        0.24
+      ]
+    ],
+    "sentiment": null
+  }
+}

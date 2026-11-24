@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4375,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "masyarakat",
@@ -119,32 +119,32 @@
         6
       ],
       [
-        "dhahar",
-        5
-      ],
-      [
-        "narkoba",
-        7
-      ],
-      [
         "literasi",
         11
-      ],
-      [
-        "stigma",
-        8
       ],
       [
         "pustaka",
         14
       ],
       [
-        "mahluk",
-        7
+        "dhahar",
+        5
       ],
       [
-        "buto",
-        4
+        "masyarakat",
+        25
+      ],
+      [
+        "stigma",
+        8
+      ],
+      [
+        "merdeka",
+        14
+      ],
+      [
+        "narkoba",
+        7
       ]
     ],
     "phrases": [
@@ -184,20 +184,81 @@
     "similar": [
       [
         2750,
+        0.13
+      ],
+      [
+        4742,
         0.11
       ],
       [
-        4287,
+        132,
         0.11
       ],
       [
-        8023,
-        0.1
+        2683,
+        0.11
       ],
       [
-        3747,
-        0.1
+        3738,
+        0.11
+      ],
+      [
+        2436,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.29,
+      "positive": 73,
+      "negative": 40,
+      "trend": [
+        0.11,
+        0.71,
+        null,
+        -0.27,
+        0.2,
+        null,
+        -0.33,
+        0.43,
+        0.86,
+        0.6,
+        0.11,
+        -0.14,
+        0.2,
+        0.5,
+        0.2,
+        0.71
+      ],
+      "emotions": [
+        [
+          "joy",
+          13
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

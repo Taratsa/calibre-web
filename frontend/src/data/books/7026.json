@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1659,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "fumiko",
@@ -130,15 +130,11 @@
         5
       ],
       [
-        "memoarnya",
-        3
-      ],
-      [
         "kesepian",
         6
       ],
       [
-        "bibinya",
+        "memoarnya",
         3
       ],
       [
@@ -146,12 +142,16 @@
         8
       ],
       [
-        "kawan-kawannya",
-        4
+        "bibinya",
+        3
       ],
       [
         "masa-masa",
         5
+      ],
+      [
+        "ibunya",
+        6
       ]
     ],
     "phrases": [
@@ -179,7 +179,7 @@
     "similar": [
       [
         6831,
-        0.54
+        0.51
       ],
       [
         2304,
@@ -195,12 +195,65 @@
       ],
       [
         7382,
-        0.2
+        0.21
       ],
       [
         2590,
         0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.13,
+      "positive": 34,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        0.2,
+        1,
+        0.2,
+        -0.33,
+        null,
+        null,
+        0,
+        -0.2,
+        -0.6,
+        null,
+        -0.5,
+        -0.71,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "sadness",
+          18
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

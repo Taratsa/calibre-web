@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3083,
-    "longer_than": 33,
+    "longer_than": 67,
     "top": [
       [
         "partai",
@@ -99,35 +99,31 @@
     ],
     "distinct": [
       [
-        "uspd",
-        9
-      ],
-      [
         "partai",
         44
       ],
       [
-        "kpd",
-        10
-      ],
-      [
-        "proletar",
-        19
-      ],
-      [
-        "revolusioner",
-        31
+        "uspd",
+        9
       ],
       [
         "revolusi",
         40
       ],
       [
-        "parlemen",
-        20
+        "revolusioner",
+        31
       ],
       [
-        "rusia",
+        "proletar",
+        19
+      ],
+      [
+        "kpd",
+        10
+      ],
+      [
+        "parlemen",
         20
       ],
       [
@@ -135,16 +131,20 @@
         23
       ],
       [
-        "partai-partai",
-        12
+        "rusia",
+        20
+      ],
+      [
+        "kaum",
+        36
       ],
       [
         "pekerja",
         25
       ],
       [
-        "kaum",
-        36
+        "partai-partai",
+        12
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         2055,
-        0.3
+        0.36
       ],
       [
         9237,
-        0.24
+        0.31
       ],
       [
         1845,
-        0.22
+        0.29
       ],
       [
         7142,
-        0.18
+        0.26
       ],
       [
         2086,
-        0.18
+        0.25
       ],
       [
         9239,
-        0.18
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 55,
+      "negative": 22,
+      "trend": [
+        null,
+        null,
+        0.2,
+        null,
+        null,
+        -0.33,
+        null,
+        0.75,
+        null,
+        null,
+        0.67,
+        0.67,
+        1,
+        null,
+        1,
+        -0.78
+      ],
+      "emotions": []
+    }
   }
 }

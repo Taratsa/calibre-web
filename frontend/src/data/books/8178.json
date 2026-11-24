@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 2645,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "aceh",
@@ -111,16 +111,20 @@
         34
       ],
       [
-        "amm",
-        18
-      ],
-      [
         "kesepahaman",
         22
       ],
       [
+        "amm",
+        18
+      ],
+      [
         "nota",
         22
+      ],
+      [
+        "pemerintah",
+        45
       ],
       [
         "helsinki",
@@ -131,24 +135,20 @@
         12
       ],
       [
-        "monitoring",
-        16
-      ],
-      [
         "terjemahan",
         20
+      ],
+      [
+        "monitoring",
+        16
       ],
       [
         "misi",
         16
       ],
       [
-        "penandatanganan",
-        10
-      ],
-      [
-        "amnesti",
-        8
+        "ditandatangani",
+        13
       ]
     ],
     "phrases": [
@@ -188,28 +188,29 @@
     "similar": [
       [
         8324,
-        0.21
+        0.22
       ],
       [
         8297,
-        0.19
-      ],
-      [
-        8900,
-        0.15
+        0.2
       ],
       [
         1012,
+        0.16
+      ],
+      [
+        8900,
+        0.16
+      ],
+      [
+        6945,
+        0.16
+      ],
+      [
+        6954,
         0.15
-      ],
-      [
-        8915,
-        0.14
-      ],
-      [
-        7928,
-        0.14
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

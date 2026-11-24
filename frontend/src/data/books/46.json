@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4543,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "gue",
@@ -111,32 +111,28 @@
         19
       ],
       [
-        "cewe",
-        7
-      ],
-      [
         "kalo",
         15
-      ],
-      [
-        "solomon",
-        8
-      ],
-      [
-        "kisi",
-        7
       ],
       [
         "minoritas",
         16
       ],
       [
-        "nyatain",
-        3
+        "solomon",
+        8
       ],
       [
-        "portal",
-        6
+        "cewe",
+        7
+      ],
+      [
+        "kisi",
+        7
+      ],
+      [
+        "nyatain",
+        3
       ],
       [
         "sayang-sayangnya",
@@ -145,6 +141,10 @@
       [
         "symbols",
         6
+      ],
+      [
+        "band",
+        9
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
-        1557,
-        0.18
+        2655,
+        0.2
       ],
       [
-        2655,
-        0.18
+        1557,
+        0.19
       ],
       [
         2739,
-        0.17
+        0.18
       ],
       [
         2400,
-        0.16
+        0.18
+      ],
+      [
+        1556,
+        0.17
       ],
       [
         3078,
-        0.16
-      ],
-      [
-        2554,
-        0.16
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 52,
+      "negative": 43,
+      "trend": [
+        1,
+        null,
+        -0.25,
+        0.17,
+        -0.25,
+        null,
+        null,
+        0.2,
+        null,
+        -0.33,
+        null,
+        -0.5,
+        0.71,
+        0.6,
+        0,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          15
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

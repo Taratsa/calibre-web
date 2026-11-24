@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2241,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "manusia",
@@ -106,19 +106,19 @@
     ],
     "distinct": [
       [
-        "penderitaan",
-        22
-      ],
-      [
         "manusia",
         86
       ],
       [
-        "dazai",
-        4
+        "penderitaan",
+        22
       ],
       [
-        "ludd",
+        "masyarakat",
+        25
+      ],
+      [
+        "dazai",
         4
       ],
       [
@@ -130,20 +130,12 @@
         12
       ],
       [
-        "definisi",
-        8
-      ],
-      [
-        "kiamat",
+        "ludd",
         4
       ],
       [
-        "masyarakat",
-        25
-      ],
-      [
-        "menertawakan",
-        3
+        "definisi",
+        8
       ],
       [
         "keberadaan",
@@ -152,6 +144,14 @@
       [
         "nilai-nilai",
         7
+      ],
+      [
+        "kiamat",
+        4
+      ],
+      [
+        "kapitalisme",
+        6
       ]
     ],
     "phrases": [
@@ -194,25 +194,74 @@
         0.17
       ],
       [
-        7167,
-        0.13
+        3735,
+        0.14
       ],
       [
         7305,
+        0.14
+      ],
+      [
+        3928,
         0.13
       ],
       [
-        7078,
+        6855,
         0.13
       ],
       [
-        2760,
+        7098,
         0.13
-      ],
-      [
-        8039,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 30,
+      "negative": 58,
+      "trend": [
+        -0.43,
+        null,
+        null,
+        -1,
+        -0.56,
+        null,
+        -1,
+        null,
+        -0.6,
+        0.6,
+        0,
+        null,
+        null,
+        null,
+        null,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          28
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 712,
-    "longer_than": 8,
+    "longer_than": 46,
     "top": [
       [
         "peradaban",
@@ -119,12 +119,20 @@
         6
       ],
       [
-        "jaringan",
-        4
+        "kehidupan",
+        8
+      ],
+      [
+        "masyarakat",
+        8
       ],
       [
         "dominasi",
         3
+      ],
+      [
+        "individu",
+        4
       ],
       [
         "kepemilikan",
@@ -135,20 +143,12 @@
         3
       ],
       [
-        "individu",
+        "jaringan",
         4
-      ],
-      [
-        "kehidupan",
-        8
       ],
       [
         "struktur",
         3
-      ],
-      [
-        "masyarakat",
-        8
       ],
       [
         "dimiliki",
@@ -159,15 +159,15 @@
     "similar": [
       [
         4113,
-        0.41
-      ],
-      [
-        2039,
-        0.31
+        0.33
       ],
       [
         9193,
         0.3
+      ],
+      [
+        2039,
+        0.29
       ],
       [
         8006,
@@ -175,12 +175,13 @@
       ],
       [
         7016,
-        0.27
+        0.26
       ],
       [
-        7241,
-        0.19
+        4684,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

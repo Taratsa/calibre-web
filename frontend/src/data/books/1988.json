@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 802,
-    "longer_than": 9,
+    "longer_than": 48,
     "top": [
       [
         "perempuan",
@@ -103,28 +103,28 @@
         13
       ],
       [
-        "pembunuhan",
-        20
-      ],
-      [
         "perempuan",
         37
       ],
       [
-        "patriarki",
-        7
+        "pembunuhan",
+        20
       ],
       [
         "kekerasan",
         18
       ],
       [
-        "rape",
-        3
+        "patriarki",
+        7
       ],
       [
         "mencuat",
         4
+      ],
+      [
+        "rape",
+        3
       ],
       [
         "pelecehan",
@@ -143,8 +143,8 @@
         4
       ],
       [
-        "culture",
-        3
+        "pelaku",
+        4
       ]
     ],
     "phrases": [
@@ -164,28 +164,48 @@
     "similar": [
       [
         1245,
-        0.27
+        0.3
       ],
       [
         8799,
-        0.26
+        0.29
       ],
       [
         2216,
-        0.22
+        0.26
       ],
       [
         88,
-        0.22
+        0.26
       ],
       [
         4185,
-        0.21
+        0.23
       ],
       [
-        2154,
-        0.17
+        2312,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.76,
+      "positive": 7,
+      "negative": 52,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          4
+        ]
+      ]
+    }
   }
 }

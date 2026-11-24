@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7685,
-    "longer_than": 54,
+    "longer_than": 78,
     "top": [
       [
         "perempuan",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "perempuan",
+        228
+      ],
+      [
         "cibetus",
         27
       ],
       [
-        "perempuan",
-        228
+        "lingkungan",
+        135
       ],
       [
         "komnas",
@@ -115,36 +119,32 @@
         46
       ],
       [
-        "lingkungan",
-        135
-      ],
-      [
-        "padarincang",
-        14
-      ],
-      [
-        "pencemaran",
-        29
-      ],
-      [
-        "asasi",
-        43
+        "hak",
+        105
       ],
       [
         "dampak",
         53
       ],
       [
-        "ktun",
-        11
+        "asasi",
+        43
       ],
       [
-        "terdampak",
-        19
+        "pencemaran",
+        29
       ],
       [
         "warga",
         61
+      ],
+      [
+        "hukum",
+        66
+      ],
+      [
+        "padarincang",
+        14
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         8798,
-        0.36
+        0.39
       ],
       [
         8844,
-        0.28
+        0.33
       ],
       [
         8989,
-        0.28
-      ],
-      [
-        8876,
-        0.27
+        0.32
       ],
       [
         9093,
-        0.26
+        0.31
       ],
       [
-        9013,
-        0.23
+        8876,
+        0.31
+      ],
+      [
+        9096,
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 224,
+      "negative": 131,
+      "trend": [
+        -0.64,
+        0.33,
+        0.2,
+        -0.04,
+        0.71,
+        0,
+        0,
+        0.04,
+        0.31,
+        0.65,
+        0.53,
+        0.38,
+        0,
+        0.28,
+        0.3,
+        0.84
+      ],
+      "emotions": [
+        [
+          "anger",
+          64
+        ],
+        [
+          "trust",
+          38
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

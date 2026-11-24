@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2218,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "anarkis",
@@ -99,20 +99,20 @@
     ],
     "distinct": [
       [
-        "palestina",
-        25
-      ],
-      [
         "anarkis",
         44
       ],
       [
-        "nimer",
-        6
+        "palestina",
+        25
       ],
       [
         "anarkisme",
         22
+      ],
+      [
+        "nimer",
+        6
       ],
       [
         "munir",
@@ -127,24 +127,24 @@
         6
       ],
       [
-        "buky",
-        3
+        "barat",
+        21
       ],
       [
         "ramadan",
         6
       ],
       [
+        "buky",
+        3
+      ],
+      [
         "kolonialisme",
         8
       ],
       [
-        "mencintai",
-        8
-      ],
-      [
-        "pembebasan",
-        10
+        "perjuangan",
+        14
       ]
     ],
     "phrases": [
@@ -188,24 +188,56 @@
       ],
       [
         7015,
-        0.52
+        0.57
       ],
       [
         7446,
-        0.25
-      ],
-      [
-        2424,
-        0.22
+        0.28
       ],
       [
         113,
-        0.21
+        0.24
       ],
       [
-        2395,
-        0.2
+        2771,
+        0.23
+      ],
+      [
+        2424,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 46,
+      "negative": 34,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2010,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "pemerintah",
@@ -96,12 +96,28 @@
     ],
     "distinct": [
       [
+        "persatuan",
+        27
+      ],
+      [
+        "pemerintah",
+        39
+      ],
+      [
+        "perjuangan",
+        30
+      ],
+      [
         "murba",
         11
       ],
       [
-        "persatuan",
-        27
+        "program",
+        34
+      ],
+      [
+        "revolusi",
+        23
       ],
       [
         "linggarjati",
@@ -112,35 +128,19 @@
         8
       ],
       [
-        "perjuangan",
-        30
-      ],
-      [
-        "program",
-        34
-      ],
-      [
         "minimum",
         14
       ],
       [
-        "revolusi",
-        23
+        "rakyat",
+        21
       ],
       [
-        "pemerintah",
-        39
-      ],
-      [
-        "fdr",
-        4
+        "revolusioner",
+        12
       ],
       [
         "malaka",
-        8
-      ],
-      [
-        "borjuis",
         8
       ]
     ],
@@ -184,6 +184,10 @@
         0.26
       ],
       [
+        9254,
+        0.24
+      ],
+      [
         4650,
         0.24
       ],
@@ -196,13 +200,16 @@
         0.24
       ],
       [
-        9254,
-        0.22
-      ],
-      [
-        9251,
-        0.2
+        9247,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 25,
+      "negative": 42,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

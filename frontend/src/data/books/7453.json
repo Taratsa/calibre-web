@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2869,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "pengarsipan",
@@ -110,12 +110,12 @@
         38
       ],
       [
-        "materi-materi",
-        19
-      ],
-      [
         "arsip",
         28
+      ],
+      [
+        "materi-materi",
+        19
       ],
       [
         "archive",
@@ -126,12 +126,12 @@
         8
       ],
       [
-        "anti-otoritarian",
-        10
-      ],
-      [
         "kerja-kerja",
         14
+      ],
+      [
+        "anti-otoritarian",
+        10
       ],
       [
         "koleksi",
@@ -150,8 +150,8 @@
         6
       ],
       [
-        "ksl",
-        4
+        "zine",
+        9
       ]
     ],
     "phrases": [
@@ -203,16 +203,23 @@
       ],
       [
         2477,
-        0.32
+        0.33
       ],
       [
         7489,
-        0.3
+        0.31
       ],
       [
         7219,
         0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 29,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

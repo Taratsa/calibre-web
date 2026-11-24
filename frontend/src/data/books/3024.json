@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 490,
-    "longer_than": 5,
+    "longer_than": 39,
     "top": [
       [
         "sind",
@@ -116,27 +116,23 @@
         5
       ],
       [
-        "semantics",
-        3
-      ],
-      [
         "ist",
         5
       ],
       [
-        "purnama",
-        4
+        "semantics",
+        3
       ],
       [
         "sahabat",
         6
       ],
       [
-        "cambridge",
-        3
+        "purnama",
+        4
       ],
       [
-        "merek",
+        "cambridge",
         3
       ],
       [
@@ -144,8 +140,12 @@
         3
       ],
       [
-        "ekspresi",
+        "merek",
         3
+      ],
+      [
+        "air",
+        8
       ]
     ],
     "phrases": [],
@@ -160,12 +160,21 @@
       ],
       [
         2406,
-        0.13
+        0.12
       ],
       [
         3551,
         0.11
+      ],
+      [
+        11504,
+        0.1
+      ],
+      [
+        12125,
+        0.1
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

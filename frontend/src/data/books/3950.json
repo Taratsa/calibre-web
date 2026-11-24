@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2460,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "mahasiswa",
@@ -119,32 +119,32 @@
         12
       ],
       [
-        "rogers",
-        4
-      ],
-      [
-        "bem",
-        5
-      ],
-      [
-        "pengorganisiran",
-        5
-      ],
-      [
         "belajar",
         18
-      ],
-      [
-        "covid",
-        5
       ],
       [
         "universitas",
         14
       ],
       [
+        "rogers",
+        4
+      ],
+      [
+        "budi",
+        12
+      ],
+      [
+        "bem",
+        5
+      ],
+      [
         "narasi",
         7
+      ],
+      [
+        "pengorganisiran",
+        5
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7306,
-        0.19
+        0.21
       ],
       [
         1935,
-        0.18
-      ],
-      [
-        6991,
-        0.13
-      ],
-      [
-        7969,
-        0.13
-      ],
-      [
-        3943,
-        0.13
+        0.2
       ],
       [
         7253,
-        0.12
+        0.14
+      ],
+      [
+        7969,
+        0.14
+      ],
+      [
+        2224,
+        0.13
+      ],
+      [
+        1921,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 43,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

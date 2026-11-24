@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4219,
-    "longer_than": 39,
+    "longer_than": 71,
     "top": [
       [
         "anarchist",
@@ -97,32 +97,28 @@
     ],
     "distinct": [
       [
-        "collectives",
-        18
-      ],
-      [
         "anarchists",
         24
+      ],
+      [
+        "collectives",
+        18
       ],
       [
         "anarchist",
         29
       ],
       [
-        "anarchism",
-        14
-      ],
-      [
         "people",
         26
       ],
       [
-        "movement",
-        19
+        "anarchism",
+        14
       ],
       [
-        "sikep",
-        10
+        "movement",
+        19
       ],
       [
         "individuals",
@@ -133,16 +129,20 @@
         14
       ],
       [
-        "time",
-        20
+        "sikep",
+        10
       ],
       [
         "mayday",
         8
       ],
       [
-        "sedulur",
-        7
+        "time",
+        20
+      ],
+      [
+        "friends",
+        11
       ]
     ],
     "phrases": [
@@ -182,28 +182,29 @@
     "similar": [
       [
         1945,
-        0.28
+        0.29
       ],
       [
         3896,
-        0.24
+        0.26
       ],
       [
         2551,
-        0.23
+        0.24
       ],
       [
         3947,
-        0.22
+        0.24
       ],
       [
         3920,
-        0.2
+        0.22
       ],
       [
         7979,
-        0.19
+        0.2
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

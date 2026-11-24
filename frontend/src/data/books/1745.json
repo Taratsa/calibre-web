@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2862,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "sersan",
@@ -119,12 +119,12 @@
         17
       ],
       [
-        "loji",
-        14
-      ],
-      [
         "hantu",
         27
+      ],
+      [
+        "loji",
+        14
       ],
       [
         "pelayan",
@@ -135,24 +135,24 @@
         12
       ],
       [
-        "harja",
-        6
-      ],
-      [
         "jin",
         11
       ],
       [
-        "batere",
-        4
+        "harja",
+        6
+      ],
+      [
+        "obor",
+        9
+      ],
+      [
+        "masasilam",
+        6
       ],
       [
         "peri-peri",
         4
-      ],
-      [
-        "ra-ja",
-        3
       ]
     ],
     "phrases": [
@@ -192,28 +192,81 @@
     "similar": [
       [
         4846,
-        0.42
+        0.44
       ],
       [
         1077,
-        0.42
+        0.44
       ],
       [
         8118,
-        0.19
+        0.16
       ],
       [
         4531,
         0.16
       ],
       [
-        2311,
+        13515,
         0.12
       ],
       [
-        1574,
-        0.1
+        2311,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.08,
+      "positive": 41,
+      "negative": 48,
+      "trend": [
+        0,
+        null,
+        0.11,
+        null,
+        null,
+        -0.12,
+        null,
+        0.71,
+        0.25,
+        -0.2,
+        -0.2,
+        null,
+        -1,
+        0.33,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          7
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "disgust",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

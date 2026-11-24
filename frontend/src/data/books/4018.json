@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2732,
-    "longer_than": 31,
+    "longer_than": 66,
     "top": [
       [
         "krisis",
@@ -112,6 +112,10 @@
         51
       ],
       [
+        "krisis",
+        58
+      ],
+      [
         "jassin",
         27
       ],
@@ -120,16 +124,12 @@
         25
       ],
       [
-        "krisis",
-        58
+        "modern",
+        57
       ],
       [
         "sasterawan",
         15
-      ],
-      [
-        "modern",
-        57
       ],
       [
         "rasa-susila",
@@ -144,16 +144,16 @@
         6
       ],
       [
+        "kebudayaan",
+        23
+      ],
+      [
         "sewajarinya",
         5
       ],
       [
         "segelintiran",
         5
-      ],
-      [
-        "impasse",
-        6
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         4024,
-        0.36
+        0.37
       ],
       [
         3416,
-        0.29
+        0.3
       ],
       [
         4023,
-        0.25
+        0.26
       ],
       [
         3991,
         0.25
       ],
       [
-        3997,
-        0.24
+        6747,
+        0.25
       ],
       [
-        6747,
+        4009,
         0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.33,
+      "positive": 32,
+      "negative": 63,
+      "trend": [
+        -0.6,
+        null,
+        -0.33,
+        0.43,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -1,
+        -0.6,
+        -1,
+        -0.64,
+        -0.2,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

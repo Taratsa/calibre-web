@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1895,
-    "longer_than": 24,
+    "longer_than": 61,
     "top": [
       [
         "kau",
@@ -106,28 +106,36 @@
     ],
     "distinct": [
       [
-        "kecemburuan",
-        12
-      ],
-      [
         "kau",
         26
+      ],
+      [
+        "kecemburuan",
+        12
       ],
       [
         "cinta",
         19
       ],
       [
-        "emosi-emosi",
-        4
+        "hubungan",
+        21
       ],
       [
         "semestinya",
         10
       ],
       [
-        "monogami",
+        "penolakan",
+        11
+      ],
+      [
+        "emosi-emosi",
         4
+      ],
+      [
+        "dirimu",
+        9
       ],
       [
         "seks",
@@ -138,15 +146,7 @@
         7
       ],
       [
-        "penolakan",
-        11
-      ],
-      [
-        "dirimu",
-        9
-      ],
-      [
-        "kukenal",
+        "monogami",
         4
       ],
       [
@@ -171,28 +171,73 @@
     "similar": [
       [
         1817,
-        0.3
+        0.32
       ],
       [
         7157,
-        0.23
+        0.25
       ],
       [
         8042,
-        0.21
+        0.22
       ],
       [
         1996,
-        0.21
+        0.22
+      ],
+      [
+        19064,
+        0.19
       ],
       [
         8041,
-        0.12
-      ],
-      [
-        1824,
-        0.12
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 67,
+      "negative": 39,
+      "trend": [
+        0.56,
+        null,
+        null,
+        -0.11,
+        0,
+        0.2,
+        0.33,
+        null,
+        null,
+        0.11,
+        null,
+        null,
+        null,
+        null,
+        0.45,
+        0.29
+      ],
+      "emotions": [
+        [
+          "joy",
+          36
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

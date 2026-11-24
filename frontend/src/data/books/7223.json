@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1764,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "dunia",
@@ -106,80 +106,87 @@
     ],
     "distinct": [
       [
+        "politik",
+        13
+      ],
+      [
         "taktik",
         6
       ],
       [
-        "korporat",
-        3
+        "dunia",
+        16
       ],
       [
         "anarkis",
         6
       ],
       [
+        "kebebasan",
+        8
+      ],
+      [
         "komunitas",
         7
+      ],
+      [
+        "korporat",
+        3
       ],
       [
         "libertarian",
         3
       ],
       [
-        "politik",
-        13
-      ],
-      [
-        "kebebasan",
-        8
+        "tindakan",
+        7
       ],
       [
         "anarki",
         3
       ],
       [
-        "pemilu",
-        3
+        "membentuk",
+        6
       ],
       [
         "politisi",
-        3
-      ],
-      [
-        "revolusioner",
-        4
-      ],
-      [
-        "otonomi",
         3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        2064,
+        0.22
+      ],
+      [
         2071,
         0.21
       ],
       [
-        7277,
+        2508,
+        0.21
+      ],
+      [
+        3744,
         0.2
       ],
       [
-        2508,
-        0.17
+        4867,
+        0.2
       ],
       [
-        7035,
-        0.16
-      ],
-      [
-        2377,
-        0.16
-      ],
-      [
-        7970,
-        0.16
+        7128,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 57,
+      "negative": 15,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

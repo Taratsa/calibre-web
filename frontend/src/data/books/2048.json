@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5872,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "warga",
@@ -103,10 +103,6 @@
         24
       ],
       [
-        "pertamina",
-        20
-      ],
-      [
         "buruh",
         58
       ],
@@ -115,36 +111,40 @@
         65
       ],
       [
-        "komarudin",
-        9
-      ],
-      [
-        "tangki",
-        13
-      ],
-      [
-        "bandara",
-        18
-      ],
-      [
-        "jemaja",
-        7
+        "pertamina",
+        20
       ],
       [
         "perusahaan",
         42
       ],
       [
+        "bandara",
+        18
+      ],
+      [
         "mogok",
         20
+      ],
+      [
+        "tangki",
+        13
+      ],
+      [
+        "komarudin",
+        9
+      ],
+      [
+        "pertemuan",
+        36
       ],
       [
         "patra",
         12
       ],
       [
-        "hamburg",
-        11
+        "jemaja",
+        7
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         7903,
-        0.32
+        0.33
       ],
       [
         2455,
-        0.32
+        0.33
       ],
       [
         5913,
-        0.21
+        0.24
       ],
       [
         2562,
-        0.2
+        0.22
       ],
       [
         5868,
-        0.17
+        0.21
       ],
       [
         7907,
-        0.16
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 71,
+      "negative": 75,
+      "trend": [
+        null,
+        0,
+        0.4,
+        -0.25,
+        0.2,
+        0,
+        -0.23,
+        -0.33,
+        0.6,
+        null,
+        -0.5,
+        -0.18,
+        -1,
+        -0.47,
+        0.67,
+        0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

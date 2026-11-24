@@ -1,0 +1,86 @@
+{
+  "id": 12670,
+  "title": "Siege: POST",
+  "slug": "siege-post-onno-widodo-purbo",
+  "slugBase": "siege-post-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2018-12-07",
+  "timestamp": "2026-11-23 21:16:19.940205",
+  "last_modified": "2026-11-23 21:16:19.940210",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:2677c1f3-94c5-53c4-8225-d8494763ced1"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/12670?v=1795443379",
+  "cover_og_url": "/cover/12670/og?v=1795443379",
+  "url": "/book/siege-post-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "POST plain text data - plain-text-content-here siege --concurrent=50 --content-type=\"text/plain\" ' http://example.com/api POST plain-text-content-here' API accepts JSON instead of plain text, gunakan siege --concurrent=50 --content-type=\"application/json\" ' http://example.com/api POST {\"key1\":\"value1\",\"key2\":\"value2\"}' POST JSON data dari file siege --concurrent=50",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2241,
+      "name": "Siege_ POST - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 81,
+    "longer_than": 12,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        12663,
+        0.53
+      ],
+      [
+        12664,
+        0.38
+      ],
+      [
+        4309,
+        0.36
+      ],
+      [
+        12665,
+        0.35
+      ],
+      [
+        12666,
+        0.35
+      ],
+      [
+        9812,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
+}

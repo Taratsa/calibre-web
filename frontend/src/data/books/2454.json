@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5269,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "negara",
@@ -103,16 +103,24 @@
         49
       ],
       [
-        "gramsci",
-        21
-      ],
-      [
         "marxisme",
         38
       ],
       [
+        "gramsci",
+        21
+      ],
+      [
+        "ideologi",
+        43
+      ],
+      [
         "hegemoni",
         26
+      ],
+      [
+        "kapitalisme",
+        38
       ],
       [
         "mouffe",
@@ -123,28 +131,20 @@
         11
       ],
       [
-        "ideologi",
-        43
-      ],
-      [
-        "post-marxisme",
-        7
-      ],
-      [
-        "kapitalisme",
-        38
-      ],
-      [
         "globalisasi",
         21
       ],
       [
-        "post",
+        "sosialisme",
         22
       ],
       [
-        "sosialisme",
-        22
+        "negara",
+        55
+      ],
+      [
+        "kapitalis",
+        26
       ]
     ],
     "phrases": [
@@ -184,28 +184,52 @@
     "similar": [
       [
         1957,
-        0.22
-      ],
-      [
-        1587,
-        0.19
-      ],
-      [
-        2522,
-        0.19
+        0.25
       ],
       [
         9287,
-        0.18
+        0.23
+      ],
+      [
+        9237,
+        0.23
+      ],
+      [
+        2522,
+        0.23
       ],
       [
         9289,
-        0.18
+        0.23
       ],
       [
-        3746,
-        0.18
+        1587,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 89,
+      "negative": 35,
+      "trend": [
+        0.4,
+        0.6,
+        0.33,
+        0.11,
+        0.08,
+        null,
+        -0.14,
+        0.6,
+        1,
+        0.71,
+        null,
+        0.14,
+        1,
+        0.64,
+        0.57,
+        0
+      ],
+      "emotions": []
+    }
   }
 }

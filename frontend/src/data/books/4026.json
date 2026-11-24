@@ -11,7 +11,7 @@
   ],
   "author_sort": "Nursuhud",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 8467,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "partai",
@@ -116,12 +116,16 @@
         112
       ],
       [
+        "dewan",
+        83
+      ],
+      [
         "psi",
         34
       ],
       [
-        "dewan",
-        83
+        "rakyat",
+        90
       ],
       [
         "fasis",
@@ -132,28 +136,24 @@
         9
       ],
       [
-        "rakyat",
-        90
-      ],
-      [
-        "putusan-putusan",
-        13
-      ],
-      [
-        "fasisme",
-        19
+        "kaum",
+        48
       ],
       [
         "komunis",
         28
       ],
       [
-        "pamflet-pamflet",
-        9
+        "fasisme",
+        19
       ],
       [
-        "samasekali",
-        15
+        "perjuangan",
+        37
+      ],
+      [
+        "putusan-putusan",
+        13
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         4891,
-        0.56
+        0.59
       ],
       [
         1874,
-        0.56
+        0.59
       ],
       [
         1325,
-        0.21
+        0.26
       ],
       [
         9270,
-        0.21
+        0.26
       ],
       [
         6742,
-        0.21
+        0.24
       ],
       [
-        9271,
-        0.17
+        9280,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 150,
+      "negative": 131,
+      "trend": [
+        -0.08,
+        0.18,
+        -0.39,
+        -0.29,
+        0.11,
+        0.33,
+        -0.33,
+        0.6,
+        -0.33,
+        -0.06,
+        -0.07,
+        0.29,
+        -0.5,
+        -0.43,
+        0.67,
+        0.85
+      ],
+      "emotions": [
+        [
+          "anger",
+          29
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

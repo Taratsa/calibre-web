@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 6087,
-    "longer_than": 48,
+    "longer_than": 75,
     "top": [
       [
         "pola",
@@ -100,27 +100,23 @@
     ],
     "distinct": [
       [
-        "struktural",
-        43
-      ],
-      [
         "kemiskinan",
         53
       ],
       [
-        "pola",
-        61
+        "struktural",
+        43
       ],
       [
         "golongan",
         56
       ],
       [
-        "ketimpangan-ketimpangan",
-        9
+        "pola",
+        61
       ],
       [
-        "kebijaksanaan-kebijaksanaan",
+        "ketimpangan-ketimpangan",
         9
       ],
       [
@@ -128,24 +124,28 @@
         25
       ],
       [
+        "kebijaksanaan-kebijaksanaan",
+        9
+      ],
+      [
         "rural",
         16
+      ],
+      [
+        "miskin",
+        31
+      ],
+      [
+        "tingkat",
+        38
       ],
       [
         "stratifikasi",
         12
       ],
       [
-        "pemelaratan",
-        7
-      ],
-      [
-        "effektifitas",
-        5
-      ],
-      [
-        "pedesaan",
-        18
+        "sosial",
+        42
       ]
     ],
     "phrases": [
@@ -184,29 +184,53 @@
     ],
     "similar": [
       [
-        7570,
-        0.22
+        7560,
+        0.25
       ],
       [
-        7560,
-        0.21
+        7570,
+        0.25
       ],
       [
         1430,
-        0.21
+        0.24
       ],
       [
         3420,
-        0.2
+        0.24
       ],
       [
         8492,
-        0.19
+        0.23
       ],
       [
         8497,
-        0.19
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.12,
+      "positive": 110,
+      "negative": 141,
+      "trend": [
+        -0.33,
+        -0.41,
+        0.18,
+        0.05,
+        -0.71,
+        -0.33,
+        0.2,
+        0.17,
+        -0.04,
+        -0.26,
+        -0.27,
+        0.19,
+        -0.25,
+        0.07,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

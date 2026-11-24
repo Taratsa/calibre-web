@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 2661,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "bojonegoro",
@@ -113,16 +113,20 @@
         46
       ],
       [
-        "moderator",
-        13
-      ],
-      [
         "bupati",
         25
       ],
       [
+        "moderator",
+        13
+      ],
+      [
         "pembicara",
         16
+      ],
+      [
+        "kabupaten",
+        22
       ],
       [
         "pleno",
@@ -141,16 +145,12 @@
         6
       ],
       [
-        "kabupaten",
-        22
+        "komnas",
+        11
       ],
       [
         "infid",
         7
-      ],
-      [
-        "suyoto",
-        4
       ]
     ],
     "phrases": [
@@ -190,28 +190,35 @@
     "similar": [
       [
         9045,
-        0.18
+        0.2
       ],
       [
         8920,
-        0.13
+        0.14
       ],
       [
         9044,
-        0.13
+        0.14
       ],
       [
-        6490,
-        0.11
+        8942,
+        0.12
       ],
       [
-        4278,
-        0.11
+        8956,
+        0.12
       ],
       [
-        8148,
-        0.11
+        9141,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 44,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

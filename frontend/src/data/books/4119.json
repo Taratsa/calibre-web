@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 457,
-    "longer_than": 5,
+    "longer_than": 38,
     "top": [
       [
         "jakarta",
@@ -102,15 +102,11 @@
     ],
     "distinct": [
       [
-        "oedipus",
-        4
-      ],
-      [
         "relief",
         6
       ],
       [
-        "exhibition",
+        "oedipus",
         4
       ],
       [
@@ -118,35 +114,39 @@
         6
       ],
       [
+        "exhibition",
+        4
+      ],
+      [
         "drama",
         7
-      ],
-      [
-        "pementasan",
-        4
-      ],
-      [
-        "fine",
-        4
-      ],
-      [
-        "floating",
-        3
-      ],
-      [
-        "artistic",
-        3
-      ],
-      [
-        "pameran",
-        5
       ],
       [
         "seni",
         10
       ],
       [
-        "marzuki",
+        "pementasan",
+        4
+      ],
+      [
+        "rupa",
+        9
+      ],
+      [
+        "pameran",
+        5
+      ],
+      [
+        "fine",
+        4
+      ],
+      [
+        "artistic",
+        3
+      ],
+      [
+        "floating",
         3
       ]
     ],
@@ -187,28 +187,29 @@
     "similar": [
       [
         4191,
-        0.31
+        0.3
+      ],
+      [
+        4570,
+        0.26
       ],
       [
         4441,
         0.26
       ],
       [
-        4570,
-        0.24
+        4196,
+        0.23
       ],
       [
         8035,
-        0.23
+        0.22
       ],
       [
         2576,
-        0.23
-      ],
-      [
-        4196,
         0.22
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

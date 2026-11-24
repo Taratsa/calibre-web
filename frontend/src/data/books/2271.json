@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1951,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "persatuan",
@@ -127,30 +127,42 @@
         4
       ],
       [
-        "penerj",
-        3
+        "ketiadaan",
+        6
+      ],
+      [
+        "ide-ide",
+        6
+      ],
+      [
+        "individu",
+        9
       ],
       [
         "entitas",
         5
       ],
       [
-        "ketiadaan",
-        6
-      ],
-      [
-        "trans",
-        4
-      ],
-      [
-        "ide-ide",
-        6
+        "penerj",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7349,
+        0.21
+      ],
+      [
+        2585,
+        0.19
+      ],
+      [
+        3093,
+        0.18
+      ],
+      [
+        7168,
         0.18
       ],
       [
@@ -158,21 +170,16 @@
         0.18
       ],
       [
-        2585,
-        0.17
-      ],
-      [
-        3093,
-        0.17
-      ],
-      [
-        7168,
-        0.16
-      ],
-      [
         1999,
-        0.15
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 35,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

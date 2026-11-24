@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 490,
-    "longer_than": 5,
+    "longer_than": 39,
     "top": [
       [
         "kerja",
@@ -99,15 +99,11 @@
     ],
     "distinct": [
       [
-        "federici",
-        4
-      ],
-      [
         "kerja",
         21
       ],
       [
-        "price",
+        "federici",
         4
       ],
       [
@@ -115,7 +111,11 @@
         7
       ],
       [
-        "komoditas",
+        "rumah",
+        13
+      ],
+      [
+        "price",
         4
       ],
       [
@@ -123,24 +123,24 @@
         8
       ],
       [
-        "mereproduksi",
-        3
+        "komoditas",
+        4
       ],
       [
         "produksi",
         6
       ],
       [
-        "rumah",
-        13
-      ],
-      [
-        "merawat",
+        "mereproduksi",
         3
       ],
       [
         "buruh",
         5
+      ],
+      [
+        "merawat",
+        3
       ],
       [
         "pabrik",
@@ -164,28 +164,29 @@
     "similar": [
       [
         2599,
-        0.18
+        0.21
       ],
       [
         4777,
-        0.13
+        0.19
       ],
       [
         5854,
-        0.11
-      ],
-      [
-        9218,
-        0.1
-      ],
-      [
-        3755,
-        0.1
+        0.14
       ],
       [
         7455,
-        0.1
+        0.13
+      ],
+      [
+        4684,
+        0.13
+      ],
+      [
+        2672,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

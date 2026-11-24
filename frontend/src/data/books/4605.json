@@ -11,7 +11,7 @@
   ],
   "author_sort": "Musso",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6630,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "pki",
@@ -112,48 +112,48 @@
         92
       ],
       [
-        "polit-biro",
-        16
-      ],
-      [
         "komunis",
         54
+      ],
+      [
+        "polit-biro",
+        16
       ],
       [
         "partai",
         56
       ],
       [
-        "anti-imperialis",
-        20
-      ],
-      [
         "revolusi",
         60
       ],
       [
-        "klas",
-        24
-      ],
-      [
-        "selekas-lekasnya",
-        12
-      ],
-      [
-        "musso",
-        14
-      ],
-      [
-        "imperialisme",
-        26
+        "kaum",
+        72
       ],
       [
         "buruh",
         48
       ],
       [
-        "burjuis",
-        11
+        "anti-imperialis",
+        20
+      ],
+      [
+        "klas",
+        24
+      ],
+      [
+        "rakyat",
+        55
+      ],
+      [
+        "imperialisme",
+        26
+      ],
+      [
+        "nasional",
+        57
       ]
     ],
     "phrases": [
@@ -193,28 +193,73 @@
     "similar": [
       [
         6723,
-        0.53
+        0.56
       ],
       [
         653,
-        0.53
+        0.56
       ],
       [
         306,
-        0.53
+        0.56
       ],
       [
         9280,
-        0.3
+        0.36
       ],
       [
         4022,
-        0.3
+        0.35
       ],
       [
         1325,
-        0.3
+        0.35
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 110,
+      "negative": 79,
+      "trend": [
+        0.75,
+        -0.2,
+        0.13,
+        0.23,
+        0.2,
+        -0.57,
+        -0.09,
+        0.2,
+        0.6,
+        -0.4,
+        0.5,
+        0,
+        0.56,
+        0.16,
+        0.78,
+        0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

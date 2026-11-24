@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2588,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "seattle",
@@ -130,28 +130,28 @@
         6
       ],
       [
+        "massa",
+        10
+      ],
+      [
+        "hitam",
+        10
+      ],
+      [
         "occupy",
         4
       ],
       [
-        "polos",
-        4
-      ],
-      [
-        "taruhannya",
-        3
-      ],
-      [
-        "spectacle",
-        3
+        "polisi",
+        9
       ],
       [
         "sampah",
         6
       ],
       [
-        "massa",
-        10
+        "menang",
+        7
       ]
     ],
     "phrases": [
@@ -174,17 +174,78 @@
     ],
     "similar": [
       [
-        7893,
-        0.11
+        7203,
+        0.17
+      ],
+      [
+        4768,
+        0.14
+      ],
+      [
+        2762,
+        0.14
+      ],
+      [
+        1722,
+        0.14
       ],
       [
         3793,
-        0.1
+        0.14
       ],
       [
-        7129,
-        0.1
+        7893,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.2,
+      "positive": 40,
+      "negative": 60,
+      "trend": [
+        null,
+        -0.27,
+        -0.2,
+        null,
+        null,
+        0.33,
+        0.2,
+        0,
+        -0.25,
+        0,
+        -0.33,
+        0,
+        null,
+        -0.75,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

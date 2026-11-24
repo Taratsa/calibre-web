@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 6777,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "daerah",
@@ -101,47 +101,47 @@
         91
       ],
       [
-        "singkil",
-        26
+        "penelitian",
+        80
       ],
       [
         "kebijakan",
         76
       ],
       [
-        "penelitian",
-        80
-      ],
-      [
-        "jal",
-        25
-      ],
-      [
-        "bekasi",
-        32
+        "singkil",
+        26
       ],
       [
         "kabupaten",
         62
       ],
       [
-        "tasikmalaya",
-        23
+        "daerah",
+        101
       ],
       [
-        "ahmadiyah",
-        18
+        "pemerintah",
+        87
       ],
       [
-        "katagori",
-        16
+        "bekasi",
+        32
+      ],
+      [
+        "jal",
+        25
+      ],
+      [
+        "hak",
+        89
       ],
       [
         "ibadah",
         33
       ],
       [
-        "diskriminatif",
+        "tasikmalaya",
         23
       ]
     ],
@@ -182,28 +182,52 @@
     "similar": [
       [
         8961,
-        0.48
+        0.5
       ],
       [
         8962,
-        0.48
+        0.5
       ],
       [
         8982,
-        0.41
+        0.43
       ],
       [
         8274,
-        0.31
+        0.34
       ],
       [
         8845,
-        0.31
+        0.34
       ],
       [
         9024,
-        0.3
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 110,
+      "negative": 80,
+      "trend": [
+        0.67,
+        0.64,
+        -0.17,
+        -0.38,
+        -0.11,
+        0.33,
+        0.33,
+        0.23,
+        -0.4,
+        0.13,
+        -0.2,
+        0,
+        0.75,
+        0.33,
+        0.2,
+        0.37
+      ],
+      "emotions": []
+    }
   }
 }

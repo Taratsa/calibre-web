@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4227,
-    "longer_than": 40,
+    "longer_than": 71,
     "top": [
       [
         "palestina",
@@ -115,36 +115,36 @@
         13
       ],
       [
-        "zionis",
-        9
-      ],
-      [
         "anarkis",
         25
       ],
       [
-        "yahudi",
-        10
+        "zionis",
+        9
       ],
       [
-        "pendudukan",
-        14
+        "gerakan",
+        31
       ],
       [
         "perlawanan",
         22
       ],
       [
-        "apartheid",
-        6
+        "pendudukan",
+        14
+      ],
+      [
+        "yahudi",
+        10
       ],
       [
         "disunting",
         7
       ],
       [
-        "gerakan",
-        31
+        "apartheid",
+        6
       ]
     ],
     "phrases": [
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        113,
-        0.47
+        2771,
+        0.5
       ],
       [
-        2771,
-        0.47
+        113,
+        0.49
       ],
       [
         7166,
-        0.44
+        0.41
       ],
       [
         2574,
-        0.36
+        0.38
       ],
       [
         2254,
-        0.28
+        0.31
       ],
       [
         2353,
-        0.27
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 63,
+      "negative": 67,
+      "trend": [
+        -0.29,
+        0,
+        0.2,
+        0.2,
+        null,
+        -0.6,
+        0.43,
+        0.14,
+        -0.75,
+        0.33,
+        null,
+        0,
+        0,
+        null,
+        -0.14,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
   }
 }

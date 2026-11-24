@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1672,
-    "longer_than": 21,
+    "longer_than": 60,
     "top": [
       [
         "mahasiswa",
@@ -107,36 +107,36 @@
         44
       ],
       [
-        "pengaderan",
-        5
+        "organisasi",
+        38
       ],
       [
         "senior",
         16
       ],
       [
+        "pengaderan",
+        5
+      ],
+      [
         "senioritas",
         7
-      ],
-      [
-        "organisasi",
-        38
-      ],
-      [
-        "khayati",
-        4
       ],
       [
         "junior",
         7
       ],
       [
-        "strasbourg",
+        "khayati",
         4
       ],
       [
         "kampus",
         9
+      ],
+      [
+        "strasbourg",
+        4
       ],
       [
         "mustapha",
@@ -184,28 +184,35 @@
     "similar": [
       [
         2740,
-        0.26
+        0.25
       ],
       [
         2775,
-        0.18
+        0.17
       ],
       [
         1935,
-        0.14
+        0.15
       ],
       [
         7306,
-        0.14
+        0.15
+      ],
+      [
+        182,
+        0.13
       ],
       [
         3079,
         0.12
-      ],
-      [
-        6991,
-        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.36,
+      "positive": 17,
+      "negative": 36,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

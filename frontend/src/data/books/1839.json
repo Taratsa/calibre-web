@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2622,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "negara",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
-        "kamisan",
-        6
-      ],
-      [
         "anarkisme",
         14
+      ],
+      [
+        "kebebasan",
+        21
+      ],
+      [
+        "kamisan",
+        6
       ],
       [
         "punk",
@@ -123,28 +127,24 @@
         4
       ],
       [
-        "kebebasan",
-        21
-      ],
-      [
-        "monopoli",
-        7
+        "negara",
+        22
       ],
       [
         "otoritas",
         9
       ],
       [
+        "monopoli",
+        7
+      ],
+      [
         "public",
         8
       ],
       [
-        "menjarah",
-        4
-      ],
-      [
-        "pandemi",
-        4
+        "politik",
+        12
       ]
     ],
     "phrases": [
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        7042,
-        0.17
-      ],
-      [
-        2444,
-        0.17
+        3959,
+        0.22
       ],
       [
         7222,
-        0.16
+        0.21
       ],
       [
         7203,
-        0.16
+        0.2
       ],
       [
-        3959,
-        0.16
+        6730,
+        0.2
       ],
       [
-        7386,
-        0.15
+        2203,
+        0.2
+      ],
+      [
+        7042,
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 71,
+      "negative": 50,
+      "trend": [
+        0.33,
+        0,
+        0.56,
+        0.75,
+        0.43,
+        0.78,
+        0,
+        -0.4,
+        null,
+        null,
+        null,
+        null,
+        -0.6,
+        -1,
+        0.11,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          12
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

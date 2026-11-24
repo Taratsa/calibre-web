@@ -12,7 +12,7 @@
   "author_sort": "Semaun",
   "tags": [
     "Fiksi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 47001,
-    "longer_than": 92,
+    "longer_than": 96,
     "top": [
       [
         "kadirun",
@@ -132,28 +132,28 @@
         309
       ],
       [
-        "nenggolo",
-        46
+        "rakyat",
+        352
       ],
       [
         "residen",
         98
       ],
       [
-        "citro",
-        54
-      ],
-      [
-        "suket",
-        52
+        "nenggolo",
+        46
       ],
       [
         "hamba",
         138
       ],
       [
-        "rakyat",
-        352
+        "citro",
+        54
+      ],
+      [
+        "hindia",
+        108
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         1299,
-        0.18
-      ],
-      [
-        5921,
-        0.18
+        0.23
       ],
       [
         1408,
-        0.18
+        0.23
+      ],
+      [
+        5921,
+        0.23
       ],
       [
         1298,
-        0.17
-      ],
-      [
-        1300,
-        0.16
+        0.22
       ],
       [
         5910,
-        0.16
+        0.21
+      ],
+      [
+        1300,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 1277,
+      "negative": 726,
+      "trend": [
+        0.06,
+        0.05,
+        0.25,
+        0.11,
+        0.15,
+        0.02,
+        -0.02,
+        0.66,
+        0.46,
+        0.54,
+        0.57,
+        0.15,
+        0.64,
+        0.34,
+        0.21,
+        0.44
+      ],
+      "emotions": [
+        [
+          "joy",
+          283
+        ],
+        [
+          "trust",
+          128
+        ],
+        [
+          "fear",
+          63
+        ],
+        [
+          "anger",
+          62
+        ],
+        [
+          "sadness",
+          61
+        ],
+        [
+          "surprise",
+          47
+        ],
+        [
+          "anticipation",
+          23
+        ],
+        [
+          "disgust",
+          22
+        ]
+      ]
+    }
   }
 }

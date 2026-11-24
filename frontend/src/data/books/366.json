@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 1176,
-    "longer_than": 15,
+    "longer_than": 54,
     "top": [
       [
         "orang",
@@ -97,31 +97,19 @@
         11
       ],
       [
-        "bundaku",
-        6
-      ],
-      [
-        "suwaryani",
-        3
-      ],
-      [
         "ayah",
         18
+      ],
+      [
+        "bundaku",
+        6
       ],
       [
         "sentuhan",
         8
       ],
       [
-        "nanik",
-        3
-      ],
-      [
-        "nyaman",
-        9
-      ],
-      [
-        "guruku",
+        "suwaryani",
         3
       ],
       [
@@ -129,12 +117,24 @@
         13
       ],
       [
-        "utami",
+        "nyaman",
+        9
+      ],
+      [
+        "nanik",
         3
       ],
       [
-        "temanku",
-        3
+        "menjaga",
+        10
+      ],
+      [
+        "orang",
+        20
+      ],
+      [
+        "sehat",
+        8
       ]
     ],
     "phrases": [
@@ -170,20 +170,35 @@
     "similar": [
       [
         362,
-        0.21
+        0.2
       ],
       [
         1351,
         0.15
       ],
       [
-        5652,
-        0.13
+        3041,
+        0.14
       ],
       [
-        3041,
-        0.13
+        5652,
+        0.14
+      ],
+      [
+        5015,
+        0.12
+      ],
+      [
+        12123,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.58,
+      "positive": 52,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

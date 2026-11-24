@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1869,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "orang",
@@ -107,44 +107,44 @@
         3
       ],
       [
-        "khomeini",
-        3
-      ],
-      [
         "jepang",
         9
       ],
       [
-        "hong",
-        4
+        "khomeini",
+        3
       ],
       [
         "radikal",
         7
       ],
       [
+        "surat",
+        10
+      ],
+      [
+        "hong",
+        4
+      ],
+      [
         "kong",
         4
       ],
       [
-        "tokyo",
-        3
-      ],
-      [
-        "surat",
-        10
+        "kelompok",
+        9
       ],
       [
         "anarkis",
         5
       ],
       [
-        "paris",
-        4
+        "tokyo",
+        3
       ],
       [
-        "poster",
-        3
+        "paris",
+        4
       ]
     ],
     "phrases": [
@@ -163,29 +163,36 @@
     ],
     "similar": [
       [
-        2697,
+        2714,
         0.27
       ],
       [
-        7239,
-        0.23
-      ],
-      [
-        2714,
-        0.23
+        2697,
+        0.22
       ],
       [
         7075,
-        0.19
+        0.21
       ],
       [
-        4759,
+        7239,
+        0.2
+      ],
+      [
+        3780,
         0.16
       ],
       [
-        1519,
+        2195,
         0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 32,
+      "negative": 43,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

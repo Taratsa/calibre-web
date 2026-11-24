@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1293,
-    "longer_than": 16,
+    "longer_than": 56,
     "top": [
       [
         "matahari",
@@ -116,10 +116,6 @@
         6
       ],
       [
-        "menciumku",
-        3
-      ],
-      [
         "matahari",
         13
       ],
@@ -128,7 +124,7 @@
         7
       ],
       [
-        "baret",
+        "menciumku",
         3
       ],
       [
@@ -136,16 +132,12 @@
         11
       ],
       [
-        "kegelapan",
-        5
+        "baret",
+        3
       ],
       [
-        "kulihat",
-        4
-      ],
-      [
-        "jurang",
-        5
+        "malam",
+        11
       ],
       [
         "musim",
@@ -154,6 +146,14 @@
       [
         "emas",
         7
+      ],
+      [
+        "kegelapan",
+        5
+      ],
+      [
+        "jurang",
+        5
       ]
     ],
     "phrases": [
@@ -181,28 +181,35 @@
     "similar": [
       [
         267,
-        0.44
+        0.45
       ],
       [
         8127,
-        0.22
+        0.24
       ],
       [
         8114,
-        0.17
+        0.19
       ],
       [
         8121,
-        0.17
+        0.18
       ],
       [
         8124,
-        0.16
+        0.17
       ],
       [
-        4725,
-        0.16
+        2525,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 25,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

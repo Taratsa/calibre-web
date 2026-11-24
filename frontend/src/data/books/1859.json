@@ -40,7 +40,7 @@
   ],
   "text": {
     "words": 954,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "kebebasan",
@@ -109,12 +109,24 @@
         3
       ],
       [
+        "negara",
+        15
+      ],
+      [
+        "orang-orang",
+        12
+      ],
+      [
         "fanatik",
         4
       ],
       [
         "hinaan",
         3
+      ],
+      [
+        "orang",
+        14
       ],
       [
         "kebencian",
@@ -125,20 +137,8 @@
         4
       ],
       [
-        "otoriter",
-        3
-      ],
-      [
-        "kebohongan",
-        3
-      ],
-      [
-        "anarki",
-        3
-      ],
-      [
-        "orang-orang",
-        12
+        "otoritas",
+        4
       ]
     ],
     "phrases": [
@@ -157,29 +157,53 @@
     ],
     "similar": [
       [
-        7177,
-        0.24
-      ],
-      [
-        1975,
-        0.24
-      ],
-      [
-        1803,
+        7181,
         0.21
       ],
       [
-        1978,
-        0.16
+        3716,
+        0.21
       ],
       [
         2444,
-        0.15
+        0.21
       ],
       [
-        4724,
-        0.14
+        7177,
+        0.21
+      ],
+      [
+        1975,
+        0.21
+      ],
+      [
+        1803,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 41,
+      "negative": 34,
+      "trend": [
+        null,
+        0.71,
+        null,
+        -0.71,
+        -0.33,
+        0.67,
+        null,
+        null,
+        0.6,
+        0.33,
+        0.25,
+        null,
+        0.2,
+        null,
+        null,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4226,
-    "longer_than": 39,
+    "longer_than": 71,
     "top": [
       [
         "negara",
@@ -99,6 +99,10 @@
     ],
     "distinct": [
       [
+        "negara",
+        63
+      ],
+      [
         "leno",
         7
       ],
@@ -111,40 +115,36 @@
         7
       ],
       [
-        "negara",
-        63
-      ],
-      [
-        "gak",
-        9
+        "kekuasaan",
+        22
       ],
       [
         "butuh",
         13
       ],
       [
-        "vipaldi",
-        3
+        "gak",
+        9
       ],
       [
-        "ardi",
-        5
+        "rakyat",
+        21
       ],
       [
-        "desta",
-        3
-      ],
-      [
-        "oligarki",
-        5
-      ],
-      [
-        "hobbes",
-        4
+        "pendidikan",
+        21
       ],
       [
         "institusi",
         11
+      ],
+      [
+        "manusia",
+        23
+      ],
+      [
+        "vipaldi",
+        3
       ]
     ],
     "phrases": [
@@ -177,6 +177,88 @@
         3
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        6721,
+        0.13
+      ],
+      [
+        4776,
+        0.13
+      ],
+      [
+        3057,
+        0.13
+      ],
+      [
+        2561,
+        0.13
+      ],
+      [
+        2631,
+        0.13
+      ],
+      [
+        2596,
+        0.13
+      ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 83,
+      "negative": 83,
+      "trend": [
+        null,
+        -0.33,
+        null,
+        0.33,
+        0,
+        -0.17,
+        0.17,
+        -0.25,
+        -0.4,
+        -0.3,
+        0.75,
+        0.27,
+        -0.14,
+        -0.56,
+        0.18,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          22
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 49395,
-    "longer_than": 93,
+    "longer_than": 96,
     "top": [
       [
         "manusia",
@@ -103,48 +103,48 @@
         232
       ],
       [
-        "tepito",
-        44
-      ],
-      [
         "haji",
         145
       ],
       [
-        "pandangan-dunia",
-        50
+        "tepito",
+        44
       ],
       [
         "januari",
         181
       ],
       [
-        "suteja",
-        38
-      ],
-      [
-        "hardiansyah",
-        32
-      ],
-      [
         "oktober",
         183
+      ],
+      [
+        "pandangan-dunia",
+        50
       ],
       [
         "nomor",
         179
       ],
       [
-        "descartes",
-        35
+        "suteja",
+        38
       ],
       [
-        "gempabumi",
-        22
+        "manusia",
+        232
       ],
       [
-        "puasa",
-        52
+        "hardiansyah",
+        32
+      ],
+      [
+        "kehidupan",
+        197
+      ],
+      [
+        "sosial",
+        160
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         2608,
-        0.31
+        0.34
       ],
       [
         2631,
-        0.17
+        0.24
       ],
       [
         2701,
-        0.16
+        0.24
       ],
       [
-        140,
-        0.16
+        3057,
+        0.23
       ],
       [
-        3735,
-        0.16
+        44,
+        0.22
       ],
       [
-        8061,
-        0.16
+        2561,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 661,
+      "negative": 535,
+      "trend": [
+        0.38,
+        0.02,
+        0.07,
+        0.32,
+        0.03,
+        0.26,
+        -0.11,
+        -0.32,
+        0.05,
+        0.28,
+        0.17,
+        0.15,
+        0.25,
+        -0.18,
+        0.04,
+        0.38
+      ],
+      "emotions": [
+        [
+          "sadness",
+          60
+        ],
+        [
+          "anger",
+          59
+        ],
+        [
+          "joy",
+          39
+        ],
+        [
+          "anticipation",
+          34
+        ],
+        [
+          "fear",
+          29
+        ],
+        [
+          "trust",
+          28
+        ],
+        [
+          "surprise",
+          10
+        ]
+      ]
+    }
   }
 }

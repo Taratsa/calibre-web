@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 3830,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "marx",
@@ -128,32 +128,32 @@
         16
       ],
       [
+        "teori",
+        22
+      ],
+      [
         "nyoto",
         7
       ],
       [
-        "gejalal-gejalal",
-        4
-      ],
-      [
-        "bibliotik",
-        5
-      ],
-      [
-        "carakerja",
-        4
-      ],
-      [
-        "teori",
-        22
+        "ilmu",
+        24
       ],
       [
         "lenin",
         11
       ],
       [
-        "feuerbakh",
-        3
+        "gejalal-gejalal",
+        4
+      ],
+      [
+        "ilmiah",
+        17
+      ],
+      [
+        "bibliotik",
+        5
       ]
     ],
     "phrases": [
@@ -193,28 +193,35 @@
     "similar": [
       [
         4890,
-        0.54
+        0.56
       ],
       [
         4820,
-        0.54
+        0.56
       ],
       [
         9289,
-        0.39
+        0.42
       ],
       [
         748,
-        0.27
+        0.29
       ],
       [
         1582,
-        0.2
+        0.22
       ],
       [
         2454,
-        0.19
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.61,
+      "positive": 50,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

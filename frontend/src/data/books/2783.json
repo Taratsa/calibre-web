@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 7749,
-    "longer_than": 55,
+    "longer_than": 78,
     "top": [
       [
         "demokrasi",
@@ -111,40 +111,40 @@
         12
       ],
       [
-        "simulasi",
-        6
+        "individu",
+        17
+      ],
+      [
+        "manusia",
+        28
+      ],
+      [
+        "kehidupan",
+        25
+      ],
+      [
+        "kota",
+        23
+      ],
+      [
+        "kegiatan",
+        18
+      ],
+      [
+        "hidup",
+        26
       ],
       [
         "urbanisme",
         4
       ],
       [
-        "individu",
-        17
-      ],
-      [
         "konsepsi",
         9
       ],
       [
-        "kesenangan",
-        9
-      ],
-      [
-        "tiap-tiap",
-        9
-      ],
-      [
-        "komoditi",
+        "simulasi",
         6
-      ],
-      [
-        "format",
-        7
-      ],
-      [
-        "terpengaruh",
-        7
       ]
     ],
     "phrases": [
@@ -183,29 +183,82 @@
     ],
     "similar": [
       [
-        2539,
-        0.21
-      ],
-      [
         4659,
-        0.19
+        0.24
       ],
       [
         3064,
-        0.19
+        0.24
+      ],
+      [
+        2539,
+        0.23
       ],
       [
         3750,
-        0.18
+        0.22
+      ],
+      [
+        2566,
+        0.2
       ],
       [
         7187,
-        0.17
-      ],
-      [
-        4691,
-        0.17
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 159,
+      "negative": 95,
+      "trend": [
+        -0.18,
+        0.37,
+        0.25,
+        -0.07,
+        -0.12,
+        0.58,
+        0.52,
+        1,
+        0,
+        -0.11,
+        0.19,
+        0,
+        0.6,
+        0.71,
+        0.64,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          23
+        ],
+        [
+          "trust",
+          21
+        ],
+        [
+          "anger",
+          19
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
   }
 }

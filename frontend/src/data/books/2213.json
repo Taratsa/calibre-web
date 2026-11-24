@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2653,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "seni",
@@ -103,16 +103,16 @@
         22
       ],
       [
+        "seni",
+        33
+      ],
+      [
         "avant-garde",
         12
       ],
       [
         "lettris",
         5
-      ],
-      [
-        "seni",
-        33
       ],
       [
         "debord",
@@ -123,28 +123,28 @@
         15
       ],
       [
-        "spektakel",
-        3
-      ],
-      [
-        "surealisme",
-        3
-      ],
-      [
-        "skandal",
-        4
-      ],
-      [
-        "artistik",
-        5
-      ],
-      [
         "revolusi",
         11
       ],
       [
         "pekerja",
         11
+      ],
+      [
+        "spektakel",
+        3
+      ],
+      [
+        "budaya",
+        12
+      ],
+      [
+        "artistik",
+        5
+      ],
+      [
+        "gagasan",
+        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         7893,
-        0.24
+        0.3
       ],
       [
         2221,
-        0.23
+        0.29
       ],
       [
         8035,
-        0.21
+        0.23
       ],
       [
         2576,
-        0.21
+        0.23
       ],
       [
         1951,
-        0.2
+        0.22
       ],
       [
         8131,
-        0.19
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 34,
+      "negative": 29,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

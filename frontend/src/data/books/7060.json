@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1311,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "perempuan",
@@ -106,31 +106,31 @@
     ],
     "distinct": [
       [
-        "anarka-feminisme",
-        6
-      ],
-      [
         "perempuan",
         34
+      ],
+      [
+        "anarka-feminisme",
+        6
       ],
       [
         "penindasan",
         14
       ],
       [
-        "anarka-feminis",
-        3
-      ],
-      [
         "anarkis",
         10
       ],
       [
-        "feminisme",
-        5
+        "laki-laki",
+        12
       ],
       [
-        "feminis",
+        "anarka-feminis",
+        3
+      ],
+      [
+        "feminisme",
         5
       ],
       [
@@ -138,8 +138,8 @@
         7
       ],
       [
-        "laki-laki",
-        12
+        "feminis",
+        5
       ],
       [
         "seksisme",
@@ -171,28 +171,29 @@
     "similar": [
       [
         2514,
-        0.23
+        0.28
       ],
       [
         4897,
-        0.19
+        0.23
       ],
       [
         4779,
-        0.19
+        0.23
       ],
       [
         3729,
-        0.19
+        0.23
       ],
       [
         7341,
-        0.19
+        0.23
       ],
       [
-        3954,
-        0.18
+        2415,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

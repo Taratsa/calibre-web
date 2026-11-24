@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4861,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "rakyat",
@@ -100,48 +100,48 @@
         25
       ],
       [
-        "imperialis",
-        41
-      ],
-      [
         "rakyat",
         113
       ],
       [
-        "diktator",
-        24
+        "imperialis",
+        41
       ],
       [
         "revolusi",
         60
       ],
       [
-        "militer-fasis",
-        9
+        "indonesia",
+        112
       ],
       [
-        "kapitalisme-birokrasi",
-        7
+        "kaum",
+        62
+      ],
+      [
+        "diktator",
+        24
+      ],
+      [
+        "buruh",
+        41
       ],
       [
         "borjuis",
         25
       ],
       [
-        "fasis",
-        23
-      ],
-      [
-        "kapitalis-birokrat",
-        8
-      ],
-      [
-        "rejim",
-        14
-      ],
-      [
         "tani",
         32
+      ],
+      [
+        "kelas",
+        44
+      ],
+      [
+        "fasis",
+        23
       ]
     ],
     "phrases": [
@@ -181,28 +181,77 @@
     "similar": [
       [
         9317,
-        0.51
+        0.54
       ],
       [
         703,
-        0.39
-      ],
-      [
-        9320,
-        0.38
+        0.42
       ],
       [
         9318,
-        0.35
+        0.4
+      ],
+      [
+        9320,
+        0.39
       ],
       [
         9275,
-        0.31
+        0.37
       ],
       [
         9276,
-        0.28
+        0.34
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 115,
+      "negative": 91,
+      "trend": [
+        0.27,
+        0.33,
+        0.33,
+        -0.27,
+        -0.2,
+        -0.5,
+        -0.25,
+        -0.41,
+        -0.18,
+        0.29,
+        0.09,
+        0.45,
+        0.33,
+        0.25,
+        0.5,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          32
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

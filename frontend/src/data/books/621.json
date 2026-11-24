@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 4928,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "demokrasi",
@@ -93,6 +93,10 @@
         18
       ],
       [
+        "demokrasi",
+        51
+      ],
+      [
         "masarakat",
         21
       ],
@@ -103,10 +107,6 @@
       [
         "sutatmo",
         11
-      ],
-      [
-        "demokrasi",
-        51
       ],
       [
         "rakjat",
@@ -121,20 +121,20 @@
         22
       ],
       [
-        "madjelis",
-        13
-      ],
-      [
-        "terpimpin",
-        15
+        "taman",
+        34
       ],
       [
         "adanja",
         19
       ],
       [
-        "kebidjaksanaan",
-        12
+        "madjelis",
+        13
+      ],
+      [
+        "terpimpin",
+        15
       ]
     ],
     "phrases": [
@@ -174,28 +174,77 @@
     "similar": [
       [
         684,
-        0.37
+        0.39
       ],
       [
         742,
-        0.32
+        0.34
       ],
       [
         533,
-        0.26
+        0.28
       ],
       [
         516,
-        0.24
+        0.27
       ],
       [
         305,
-        0.24
+        0.27
       ],
       [
         8771,
-        0.22
+        0.24
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.68,
+      "positive": 88,
+      "negative": 17,
+      "trend": [
+        1,
+        0.6,
+        1,
+        0.6,
+        null,
+        null,
+        1,
+        1,
+        0.5,
+        1,
+        0.6,
+        1,
+        -0.2,
+        0.14,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          17
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

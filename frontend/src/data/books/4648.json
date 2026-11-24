@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 3870,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "islam",
@@ -95,48 +95,48 @@
         46
       ],
       [
-        "madilog",
-        15
+        "islam",
+        47
       ],
       [
         "nabi",
         33
       ],
       [
-        "islam",
-        47
+        "madilog",
+        15
       ],
       [
         "malaka",
         22
       ],
       [
+        "arab",
+        24
+      ],
+      [
+        "tuhan",
+        32
+      ],
+      [
         "marxists",
         10
       ],
       [
-        "arab",
-        24
+        "tiada",
+        23
       ],
       [
         "esaan",
         6
       ],
       [
-        "isa",
-        12
-      ],
-      [
         "abdullah",
         13
       ],
       [
-        "bin",
-        14
-      ],
-      [
-        "tuhan",
-        32
+        "isa",
+        12
       ]
     ],
     "phrases": [
@@ -176,28 +176,77 @@
     "similar": [
       [
         6729,
-        0.32
+        0.35
       ],
       [
         1301,
-        0.3
+        0.33
       ],
       [
         4604,
-        0.26
+        0.29
       ],
       [
         4819,
-        0.24
+        0.26
       ],
       [
         9262,
-        0.23
+        0.26
       ],
       [
-        4894,
-        0.2
+        9256,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 57,
+      "negative": 32,
+      "trend": [
+        null,
+        0.43,
+        null,
+        null,
+        -0.43,
+        -0.56,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        0.38,
+        0.33,
+        0.67,
+        0.67,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          15
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

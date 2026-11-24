@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2485,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "siswa",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "kostya",
-        6
-      ],
-      [
         "siswa",
         22
+      ],
+      [
+        "kostya",
+        6
       ],
       [
         "ukraina",
@@ -115,6 +115,18 @@
         13
       ],
       [
+        "sekolah",
+        16
+      ],
+      [
+        "pendidikan",
+        18
+      ],
+      [
+        "publik",
+        12
+      ],
+      [
         "penerbitramu",
         3
       ],
@@ -123,28 +135,16 @@
         6
       ],
       [
-        "publik",
-        12
-      ],
-      [
-        "sekolah",
+        "masyarakat",
         16
-      ],
-      [
-        "diajari",
-        4
       ],
       [
         "sma",
         6
       ],
       [
-        "sistem",
-        13
-      ],
-      [
-        "pendidikan",
-        18
+        "kelas",
+        10
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         2467,
-        0.22
+        0.29
       ],
       [
-        2764,
+        1815,
+        0.16
+      ],
+      [
+        2596,
         0.15
       ],
       [
-        2394,
-        0.13
-      ],
-      [
-        7248,
-        0.13
-      ],
-      [
         3698,
-        0.12
+        0.15
+      ],
+      [
+        1943,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 35,
+      "negative": 36,
+      "trend": [
+        null,
+        -0.6,
+        null,
+        0.2,
+        null,
+        null,
+        -0.6,
+        null,
+        -0.2,
+        0.2,
+        1,
+        0.14,
+        0.67,
+        null,
+        null,
+        -0.43
+      ],
+      "emotions": []
+    }
   }
 }

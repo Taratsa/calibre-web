@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1181,
-    "longer_than": 15,
+    "longer_than": 54,
     "top": [
       [
         "cinta",
@@ -122,7 +122,19 @@
         6
       ],
       [
+        "memahami",
+        12
+      ],
+      [
+        "unik",
+        6
+      ],
+      [
         "max",
+        5
+      ],
+      [
+        "pengorbanan",
         5
       ],
       [
@@ -130,28 +142,16 @@
         3
       ],
       [
-        "unik",
-        6
-      ],
-      [
-        "pengorbanan",
-        5
-      ],
-      [
-        "memahami",
-        12
-      ],
-      [
         "nietzsche",
         3
       ],
       [
-        "egois",
-        3
+        "hubungan",
+        8
       ],
       [
-        "kesenangan",
-        4
+        "individu",
+        6
       ]
     ],
     "phrases": [
@@ -175,28 +175,52 @@
     "similar": [
       [
         2193,
-        0.35
+        0.36
       ],
       [
         1817,
         0.33
       ],
       [
-        2327,
-        0.27
+        7349,
+        0.26
       ],
       [
         7396,
+        0.25
+      ],
+      [
+        2276,
         0.24
       ],
       [
         7546,
         0.24
-      ],
-      [
-        2276,
-        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 43,
+      "negative": 14,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          47
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

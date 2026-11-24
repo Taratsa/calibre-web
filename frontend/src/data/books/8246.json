@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 5840,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "aktor",
@@ -105,40 +105,40 @@
         57
       ],
       [
-        "perangkat",
-        60
-      ],
-      [
         "demokrasi",
         84
       ],
       [
-        "perangkat-perangkat",
-        24
+        "perangkat",
+        60
       ],
       [
         "survei",
         38
       ],
       [
-        "peringkat",
-        21
+        "perangkat-perangkat",
+        24
       ],
       [
-        "berpengaruh",
-        34
-      ],
-      [
-        "alternatif",
-        36
+        "politik",
+        82
       ],
       [
         "kebebasan",
         54
       ],
       [
-        "politik",
-        82
+        "berpengaruh",
+        34
+      ],
+      [
+        "peringkat",
+        21
+      ],
+      [
+        "alternatif",
+        36
       ],
       [
         "representasi",
@@ -181,29 +181,82 @@
     ],
     "similar": [
       [
-        8250,
-        0.15
-      ],
-      [
         8717,
-        0.15
+        0.18
       ],
       [
-        8476,
-        0.14
+        8250,
+        0.17
       ],
       [
         8249,
-        0.14
+        0.17
+      ],
+      [
+        3990,
+        0.17
+      ],
+      [
+        8476,
+        0.16
       ],
       [
         8500,
-        0.13
-      ],
-      [
-        8649,
-        0.12
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 195,
+      "negative": 61,
+      "trend": [
+        0.25,
+        0.6,
+        0.27,
+        0.64,
+        -0.07,
+        0.71,
+        0.62,
+        0.45,
+        0.73,
+        0.22,
+        0.67,
+        0.6,
+        1,
+        0.71,
+        0.75,
+        0.48
+      ],
+      "emotions": [
+        [
+          "anger",
+          10
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

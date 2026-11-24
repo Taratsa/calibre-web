@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 3691,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "sastra",
@@ -111,10 +111,6 @@
         42
       ],
       [
-        "zulfaisal",
-        5
-      ],
-      [
         "revisi",
         17
       ],
@@ -123,32 +119,36 @@
         15
       ],
       [
-        "gerunum",
+        "pekerja",
+        25
+      ],
+      [
+        "zulfaisal",
         5
-      ],
-      [
-        "banjarmasin",
-        10
-      ],
-      [
-        "tempur",
-        10
-      ],
-      [
-        "madihin",
-        4
       ],
       [
         "lagu",
         20
       ],
       [
-        "pekerja",
+        "banjarmasin",
+        10
+      ],
+      [
+        "gerunum",
+        5
+      ],
+      [
+        "tempur",
+        10
+      ],
+      [
+        "media",
         25
       ],
       [
-        "uzdah",
-        3
+        "madihin",
+        4
       ]
     ],
     "phrases": [
@@ -188,28 +188,52 @@
     "similar": [
       [
         3017,
-        0.15
+        0.17
       ],
       [
         1044,
-        0.14
+        0.15
       ],
       [
         4067,
         0.13
       ],
       [
+        3123,
+        0.12
+      ],
+      [
         1046,
         0.12
       ],
       [
-        3123,
-        0.1
-      ],
-      [
         4524,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 40,
+      "negative": 33,
+      "trend": [
+        null,
+        null,
+        null,
+        0.2,
+        null,
+        null,
+        -0.6,
+        -0.2,
+        -0.14,
+        0.45,
+        0.25,
+        -0.67,
+        null,
+        null,
+        null,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

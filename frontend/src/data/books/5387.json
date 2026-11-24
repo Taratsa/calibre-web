@@ -63,7 +63,7 @@
   ],
   "text": {
     "words": 4075,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "didik",
@@ -124,12 +124,12 @@
         74
       ],
       [
-        "sasak",
-        33
-      ],
-      [
         "peserta",
         74
+      ],
+      [
+        "sasak",
+        33
       ],
       [
         "pembelajaran",
@@ -140,6 +140,10 @@
         15
       ],
       [
+        "baca",
+        48
+      ],
+      [
         "penumbuhan",
         17
       ],
@@ -148,20 +152,16 @@
         38
       ],
       [
-        "baca",
-        48
-      ],
-      [
         "teks",
         36
       ],
       [
-        "minimal",
-        27
+        "cerita",
+        46
       ],
       [
-        "pendidik",
-        20
+        "pendidikan",
+        57
       ]
     ],
     "phrases": [
@@ -201,28 +201,52 @@
     "similar": [
       [
         5333,
-        0.57
+        0.58
       ],
       [
         5231,
-        0.5
+        0.51
       ],
       [
         5790,
-        0.39
+        0.4
       ],
       [
         5384,
-        0.26
+        0.28
       ],
       [
         890,
-        0.22
+        0.24
       ],
       [
         885,
-        0.21
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.98,
+      "positive": 106,
+      "negative": 1,
+      "trend": [
+        1,
+        0.71,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

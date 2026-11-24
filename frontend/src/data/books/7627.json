@@ -12,7 +12,7 @@
   "author_sort": "Semaoen",
   "tags": [
     "Bisnis & Ekonomi",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Sejarah"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2135,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "tuan-tuan",
@@ -116,44 +116,44 @@
         13
       ],
       [
-        "saudara-saudara",
-        19
-      ],
-      [
         "belanda",
         36
+      ],
+      [
+        "saudara-saudara",
+        19
       ],
       [
         "priayi",
         8
       ],
       [
+        "rakyat",
+        33
+      ],
+      [
         "berikhtiar",
         8
+      ],
+      [
+        "negeri",
+        31
       ],
       [
         "ingatlah",
         11
       ],
       [
+        "bangsa",
+        22
+      ],
+      [
         "vergadering-vergadering",
         4
       ],
       [
-        "rakyat",
-        33
-      ],
-      [
-        "politie",
-        5
-      ],
-      [
-        "kehasilan",
-        4
-      ],
-      [
-        "keperluannya",
-        5
+        "kaum",
+        19
       ]
     ],
     "phrases": [
@@ -193,16 +193,31 @@
     "similar": [
       [
         4876,
-        0.11
+        0.13
       ],
       [
         437,
-        0.11
+        0.13
       ],
       [
         294,
+        0.13
+      ],
+      [
+        395,
+        0.11
+      ],
+      [
+        9241,
         0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 28,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

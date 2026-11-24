@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 4533,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "ham",
@@ -109,28 +109,32 @@
         19
       ],
       [
-        "tngl",
-        12
-      ],
-      [
         "militer",
         55
       ],
       [
-        "leuser",
-        9
+        "tngl",
+        12
       ],
       [
         "tni",
         22
       ],
       [
-        "langkat",
+        "leuser",
         9
       ],
       [
         "reformasi",
         19
+      ],
+      [
+        "langkat",
+        9
+      ],
+      [
+        "kepolisian",
+        17
       ],
       [
         "mimika",
@@ -139,10 +143,6 @@
       [
         "dwifungsi",
         7
-      ],
-      [
-        "kepolisian",
-        17
       ]
     ],
     "phrases": [
@@ -182,28 +182,81 @@
     "similar": [
       [
         8950,
-        0.25
+        0.29
       ],
       [
         8974,
-        0.24
+        0.28
       ],
       [
         8967,
-        0.22
+        0.26
       ],
       [
         9139,
-        0.22
-      ],
-      [
-        8984,
-        0.22
+        0.25
       ],
       [
         1017,
-        0.21
+        0.25
+      ],
+      [
+        8984,
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 68,
+      "negative": 40,
+      "trend": [
+        0.25,
+        0.6,
+        0.2,
+        0.56,
+        1,
+        0.83,
+        null,
+        null,
+        -1,
+        -0.6,
+        null,
+        0.47,
+        0,
+        -0.2,
+        -0.6,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

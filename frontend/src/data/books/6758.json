@@ -11,7 +11,7 @@
   ],
   "author_sort": "Aidit, D. N.",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 36726,
-    "longer_than": 89,
+    "longer_than": 95,
     "top": [
       [
         "indonesia",
@@ -116,20 +116,20 @@
         483
       ],
       [
-        "tepuktangan",
-        109
+        "revolusi",
+        374
       ],
       [
         "komunis",
         289
       ],
       [
-        "revolusi",
-        374
+        "tepuktangan",
+        109
       ],
       [
-        "marxisme-leninisme",
-        97
+        "indonesia",
+        745
       ],
       [
         "rakyat",
@@ -140,16 +140,16 @@
         387
       ],
       [
+        "marxisme-leninisme",
+        97
+      ],
+      [
         "imperialisme",
         134
       ],
       [
         "klas",
         101
-      ],
-      [
-        "gki",
-        63
       ],
       [
         "imperialis",
@@ -193,28 +193,85 @@
     "similar": [
       [
         9301,
-        0.73
-      ],
-      [
-        9304,
-        0.63
+        0.75
       ],
       [
         9302,
-        0.63
+        0.66
+      ],
+      [
+        9304,
+        0.66
       ],
       [
         6713,
-        0.58
+        0.62
       ],
       [
         4814,
-        0.58
+        0.62
       ],
       [
         471,
-        0.56
+        0.6
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 1034,
+      "negative": 284,
+      "trend": [
+        0.22,
+        0.69,
+        0.59,
+        0.7,
+        0.9,
+        0.43,
+        0.4,
+        0.5,
+        0.68,
+        0.57,
+        0.44,
+        0.69,
+        0.74,
+        0.51,
+        0.48,
+        0.56
+      ],
+      "emotions": [
+        [
+          "joy",
+          80
+        ],
+        [
+          "anger",
+          55
+        ],
+        [
+          "trust",
+          40
+        ],
+        [
+          "fear",
+          35
+        ],
+        [
+          "anticipation",
+          23
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "surprise",
+          5
+        ]
+      ]
+    }
   }
 }

@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 5020,
-    "longer_than": 43,
+    "longer_than": 73,
     "top": [
       [
         "bola",
@@ -107,52 +107,52 @@
     ],
     "distinct": [
       [
-        "sukajaya",
-        21
-      ],
-      [
         "sepak",
         51
       ],
       [
-        "rainfall",
-        20
+        "sukajaya",
+        21
       ],
       [
         "bola",
         56
       ],
       [
-        "rivalitas",
-        8
+        "rainfall",
+        20
+      ],
+      [
+        "pekerjaan",
+        36
+      ],
+      [
+        "ruang",
+        35
       ],
       [
         "klub",
         12
       ],
       [
-        "pertandingan",
-        12
-      ],
-      [
-        "ronda",
+        "rivalitas",
         8
       ],
       [
-        "kujang",
-        6
-      ],
-      [
-        "salengkah",
-        4
+        "pertandingan",
+        12
       ],
       [
         "solidaritas",
         18
       ],
       [
-        "pekerjaan",
+        "kehidupan",
         36
+      ],
+      [
+        "kekerasan",
+        21
       ]
     ],
     "phrases": [
@@ -192,28 +192,81 @@
     "similar": [
       [
         2284,
-        0.21
+        0.22
       ],
       [
         2405,
-        0.2
+        0.22
       ],
       [
         2404,
-        0.16
+        0.19
       ],
       [
-        3714,
-        0.16
+        6840,
+        0.19
       ],
       [
         109,
-        0.16
+        0.17
       ],
       [
-        3741,
-        0.16
+        3714,
+        0.17
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 111,
+      "negative": 60,
+      "trend": [
+        0.33,
+        null,
+        0.11,
+        -0.11,
+        0.56,
+        1,
+        0,
+        0.6,
+        0.75,
+        -0.45,
+        0.4,
+        -0.29,
+        0.25,
+        0.67,
+        0.1,
+        0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

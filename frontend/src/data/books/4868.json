@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 5538,
-    "longer_than": 46,
+    "longer_than": 74,
     "top": [
       [
         "ajah",
@@ -108,6 +108,10 @@
         64
       ],
       [
+        "belanda",
+        41
+      ],
+      [
         "djanda",
         15
       ],
@@ -116,24 +120,16 @@
         15
       ],
       [
-        "djamal",
-        10
-      ],
-      [
         "bunji",
         13
       ],
       [
-        "republiken",
+        "djamal",
         10
       ],
       [
-        "belanda",
-        41
-      ],
-      [
-        "mengadji",
-        8
+        "republiken",
+        10
       ],
       [
         "mengintip",
@@ -144,8 +140,12 @@
         13
       ],
       [
-        "kelaut",
-        9
+        "djauh",
+        15
+      ],
+      [
+        "mengadji",
+        8
       ]
     ],
     "phrases": [
@@ -185,28 +185,85 @@
     "similar": [
       [
         4929,
-        0.21
+        0.24
       ],
       [
         7555,
-        0.21
+        0.24
       ],
       [
         7683,
-        0.2
+        0.23
       ],
       [
         3432,
-        0.2
+        0.23
       ],
       [
         3439,
-        0.17
+        0.19
       ],
       [
         7590,
-        0.17
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 64,
+      "negative": 44,
+      "trend": [
+        0,
+        null,
+        0.4,
+        0.33,
+        -0.14,
+        -0.5,
+        0.33,
+        -0.14,
+        -0.5,
+        0.25,
+        1,
+        0.67,
+        null,
+        0.33,
+        null,
+        0.6
+      ],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
   }
 }

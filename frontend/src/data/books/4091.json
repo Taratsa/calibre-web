@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 6749,
-    "longer_than": 51,
+    "longer_than": 76,
     "top": [
       [
         "film",
@@ -113,36 +113,36 @@
         67
       ],
       [
-        "download",
-        41
+        "pembajakan",
+        38
       ],
       [
         "bajakan",
         31
       ],
       [
-        "pembajakan",
-        38
-      ],
-      [
-        "platform",
-        49
-      ],
-      [
         "partisipan",
         39
-      ],
-      [
-        "digital",
-        59
       ],
       [
         "sirkulasi",
         37
       ],
       [
+        "platform",
+        49
+      ],
+      [
         "praktik",
         61
+      ],
+      [
+        "digital",
+        59
+      ],
+      [
+        "download",
+        41
       ],
       [
         "ilegal",
@@ -186,7 +186,7 @@
     "similar": [
       [
         4090,
-        0.42
+        0.41
       ],
       [
         4085,
@@ -194,20 +194,44 @@
       ],
       [
         4087,
-        0.36
+        0.35
       ],
       [
         4089,
-        0.25
+        0.27
       ],
       [
         4088,
-        0.2
+        0.21
       ],
       [
         4052,
-        0.18
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 60,
+      "negative": 30,
+      "trend": [
+        1,
+        1,
+        0.33,
+        -0.27,
+        0.25,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.25,
+        0,
+        0.14,
+        0.09,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

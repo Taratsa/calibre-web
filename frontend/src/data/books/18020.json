@@ -1,0 +1,219 @@
+{
+  "id": 18020,
+  "title": "Address Resolution Protocol",
+  "slug": "address-resolution-protocol-onno-widodo-purbo",
+  "slugBase": "address-resolution-protocol-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [
+    "Teknologi_Internet"
+  ],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2009-12-19",
+  "timestamp": "2026-11-24 03:53:51.864130",
+  "last_modified": "2026-11-24 03:53:51.864135",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:be8d73f5-a83d-5647-aca7-76396ecd3931"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/18020?v=1795467231",
+  "cover_og_url": "/cover/18020/og?v=1795467231",
+  "url": "/book/address-resolution-protocol-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Address Resolution Protocol disingkat ARP adalah sebuah protokol dalam TCP/IP Protocol Suite yang bertanggungjawab dalam melakukan resolusi alamat IP ke dalam alamat Media Access Control (MAC Address) . ARP didefinisikan di dalam RFC 826. ARP stands for Address Resolution Protocol and it allows the network to translate IP addresses into MAC addresses. Basically, ARP works like this: When one host",
+  "data": [
+    {
+      "format": "epub",
+      "size": 6675,
+      "name": "Address Resolution Protocol - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 1298,
+    "longer_than": 56,
+    "top": [
+      [
+        "address",
+        61
+      ],
+      [
+        "mac",
+        43
+      ],
+      [
+        "arp",
+        38
+      ],
+      [
+        "komputer",
+        34
+      ],
+      [
+        "paket",
+        15
+      ],
+      [
+        "router",
+        15
+      ],
+      [
+        "jaringan",
+        12
+      ],
+      [
+        "tabel",
+        11
+      ],
+      [
+        "alamat",
+        10
+      ],
+      [
+        "tujuan",
+        9
+      ],
+      [
+        "dituju",
+        8
+      ],
+      [
+        "lan",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "arp",
+        38
+      ],
+      [
+        "mac",
+        43
+      ],
+      [
+        "address",
+        61
+      ],
+      [
+        "komputer",
+        34
+      ],
+      [
+        "router",
+        15
+      ],
+      [
+        "paket",
+        15
+      ],
+      [
+        "tabel",
+        11
+      ],
+      [
+        "resolution",
+        7
+      ],
+      [
+        "dituju",
+        8
+      ],
+      [
+        "nic",
+        5
+      ],
+      [
+        "ether",
+        5
+      ],
+      [
+        "eth",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "mac address",
+        37
+      ],
+      [
+        "address resolution protocol",
+        6
+      ],
+      [
+        "tabel arp",
+        8
+      ],
+      [
+        "ether on eth",
+        5
+      ],
+      [
+        "address komputer",
+        6
+      ],
+      [
+        "komputer tujuan",
+        5
+      ],
+      [
+        "komputer akan mengirimkan",
+        3
+      ],
+      [
+        "arp request",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        18526,
+        0.4
+      ],
+      [
+        19219,
+        0.39
+      ],
+      [
+        17595,
+        0.38
+      ],
+      [
+        17887,
+        0.34
+      ],
+      [
+        19217,
+        0.28
+      ],
+      [
+        18617,
+        0.26
+      ]
+    ],
+    "sentiment": null
+  }
+}

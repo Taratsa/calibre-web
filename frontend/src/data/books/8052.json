@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1411,
-    "longer_than": 18,
+    "longer_than": 57,
     "top": [
       [
         "novatore",
@@ -128,6 +128,10 @@
         6
       ],
       [
+        "masyarakat",
+        10
+      ],
+      [
         "kepekaan",
         3
       ],
@@ -140,19 +144,15 @@
         3
       ],
       [
-        "italia",
-        3
-      ],
-      [
-        "ketiadaan",
-        3
-      ],
-      [
         "pemberontakan",
         4
       ],
       [
-        "ide-ide",
+        "edisi",
+        4
+      ],
+      [
+        "italia",
         3
       ]
     ],
@@ -173,28 +173,35 @@
     "similar": [
       [
         8117,
-        0.63
+        0.6
       ],
       [
         1955,
-        0.56
+        0.57
       ],
       [
         8092,
-        0.52
+        0.51
       ],
       [
         8010,
-        0.46
+        0.47
       ],
       [
         7437,
-        0.42
+        0.43
       ],
       [
         2088,
-        0.41
+        0.42
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 36,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

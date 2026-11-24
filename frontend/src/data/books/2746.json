@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4677,
-    "longer_than": 42,
+    "longer_than": 72,
     "top": [
       [
         "demo",
@@ -103,12 +103,12 @@
         30
       ],
       [
-        "hardcore",
-        21
-      ],
-      [
         "zine",
         30
+      ],
+      [
+        "hardcore",
+        21
       ],
       [
         "band",
@@ -123,20 +123,8 @@
         15
       ],
       [
-        "riffs",
-        7
-      ],
-      [
         "bass",
         12
-      ],
-      [
-        "track",
-        14
-      ],
-      [
-        "bandcamp",
-        9
       ],
       [
         "album",
@@ -145,6 +133,18 @@
       [
         "vokal",
         15
+      ],
+      [
+        "bandcamp",
+        9
+      ],
+      [
+        "riffs",
+        7
+      ],
+      [
+        "track",
+        14
       ]
     ],
     "phrases": [
@@ -206,6 +206,51 @@
         2669,
         0.28
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.33,
+      "positive": 80,
+      "negative": 40,
+      "trend": [
+        0.8,
+        0.11,
+        0.5,
+        -0.4,
+        0.33,
+        null,
+        0.4,
+        0.14,
+        0.33,
+        0.25,
+        null,
+        0.5,
+        0.25,
+        0.25,
+        0.71,
+        1
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
   }
 }

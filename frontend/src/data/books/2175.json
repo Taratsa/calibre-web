@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1461,
-    "longer_than": 19,
+    "longer_than": 58,
     "top": [
       [
         "kiri",
@@ -99,16 +99,20 @@
     ],
     "distinct": [
       [
-        "primitivis",
-        5
-      ],
-      [
         "kiri",
         21
       ],
       [
+        "primitivis",
+        5
+      ],
+      [
         "anarki",
         7
+      ],
+      [
+        "anarkisme",
+        6
       ],
       [
         "insureksionis",
@@ -119,8 +123,8 @@
         3
       ],
       [
-        "anarkisme",
-        6
+        "kaum",
+        10
       ],
       [
         "global",
@@ -135,16 +139,12 @@
         5
       ],
       [
-        "kaum",
-        10
+        "massa",
+        5
       ],
       [
         "forum",
         4
-      ],
-      [
-        "spiritual",
-        3
       ]
     ],
     "phrases": [
@@ -168,7 +168,7 @@
     "similar": [
       [
         8072,
-        0.75
+        0.74
       ],
       [
         8071,
@@ -180,16 +180,17 @@
       ],
       [
         4662,
-        0.21
-      ],
-      [
-        4106,
-        0.18
+        0.22
       ],
       [
         2201,
-        0.18
+        0.22
+      ],
+      [
+        3907,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1565,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "anarkisme",
@@ -122,64 +122,71 @@
         5
       ],
       [
-        "ravachol",
-        3
-      ],
-      [
         "kekerasan",
         15
       ],
       [
-        "individualis",
-        5
+        "ravachol",
+        3
       ],
       [
         "pemberontakan",
         9
       ],
       [
+        "individualis",
+        5
+      ],
+      [
+        "masyarakat",
+        14
+      ],
+      [
         "berkman",
         3
       ],
       [
-        "bandit",
-        3
+        "individu",
+        8
       ],
       [
-        "moralitas",
-        4
-      ],
-      [
-        "dihukum",
-        5
+        "perspektif",
+        6
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        7203,
+        0.28
+      ],
+      [
         2687,
-        0.23
+        0.25
       ],
       [
         7072,
-        0.22
+        0.24
       ],
       [
         1972,
-        0.21
+        0.24
       ],
       [
         2024,
-        0.21
+        0.23
       ],
       [
         4690,
-        0.21
-      ],
-      [
-        7340,
-        0.21
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.26,
+      "positive": 21,
+      "negative": 36,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

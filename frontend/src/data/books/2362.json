@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4499,
-    "longer_than": 41,
+    "longer_than": 71,
     "top": [
       [
         "kau",
@@ -99,12 +99,20 @@
     ],
     "distinct": [
       [
+        "kau",
+        22
+      ],
+      [
+        "polisi",
+        18
+      ],
+      [
         "pacarku",
         6
       ],
       [
-        "kau",
-        22
+        "keamanan",
+        17
       ],
       [
         "komjen",
@@ -123,28 +131,20 @@
         4
       ],
       [
-        "polisi",
-        18
-      ],
-      [
-        "keamanan",
-        17
+        "sipil",
+        10
       ],
       [
         "hastag",
         3
       ],
       [
-        "indekos",
-        3
+        "kepolisian",
+        8
       ],
       [
         "polri",
         6
-      ],
-      [
-        "kuasa-kuasa",
-        3
       ]
     ],
     "phrases": [
@@ -184,28 +184,81 @@
     "similar": [
       [
         8310,
-        0.16
-      ],
-      [
-        4533,
-        0.14
+        0.17
       ],
       [
         1017,
-        0.14
+        0.15
       ],
       [
         2478,
-        0.13
+        0.14
       ],
       [
         329,
-        0.12
+        0.14
       ],
       [
-        225,
-        0.12
+        4533,
+        0.13
+      ],
+      [
+        6945,
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.1,
+      "positive": 51,
+      "negative": 62,
+      "trend": [
+        null,
+        null,
+        0,
+        -0.67,
+        null,
+        null,
+        -0.25,
+        0.12,
+        0.2,
+        -0.12,
+        -0.45,
+        -0.2,
+        0.25,
+        null,
+        0,
+        0.25
+      ],
+      "emotions": [
+        [
+          "trust",
+          23
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -58,7 +58,7 @@
   ],
   "text": {
     "words": 1102,
-    "longer_than": 13,
+    "longer_than": 53,
     "top": [
       [
         "manusia",
@@ -143,20 +143,20 @@
         9
       ],
       [
-        "alex",
-        3
-      ],
-      [
         "radikal",
         6
+      ],
+      [
+        "alex",
+        3
       ],
       [
         "john",
         4
       ],
       [
-        "globalisasi",
-        3
+        "tatanan",
+        4
       ]
     ],
     "phrases": [
@@ -187,21 +187,28 @@
         0.2
       ],
       [
+        9555,
+        0.2
+      ],
+      [
         2105,
         0.19
       ],
       [
         8008,
-        0.19
-      ],
-      [
-        2794,
         0.18
       ],
       [
         7241,
         0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 35,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

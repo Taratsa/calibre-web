@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 4930,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "kaum",
@@ -121,40 +121,40 @@
         10
       ],
       [
-        "mustakbirin",
-        8
-      ],
-      [
-        "tertindas",
-        29
+        "kaum",
+        58
       ],
       [
         "ayat",
         32
       ],
       [
-        "gliger",
-        6
+        "tertindas",
+        29
       ],
       [
         "islam",
         35
       ],
       [
-        "kaum",
-        58
+        "mustakbirin",
+        8
       ],
       [
         "pergulatan",
         14
       ],
       [
-        "membumikan",
-        8
+        "gliger",
+        6
       ],
       [
-        "tapol",
-        8
+        "surat",
+        32
+      ],
+      [
+        "agama",
+        29
       ]
     ],
     "phrases": [
@@ -194,28 +194,77 @@
     "similar": [
       [
         6973,
-        0.16
+        0.18
       ],
       [
         4593,
-        0.14
-      ],
-      [
-        4331,
-        0.13
+        0.17
       ],
       [
         9314,
-        0.11
+        0.14
       ],
       [
-        594,
-        0.11
+        1407,
+        0.13
       ],
       [
         2927,
-        0.11
+        0.13
+      ],
+      [
+        4331,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 49,
+      "negative": 96,
+      "trend": [
+        null,
+        -0.14,
+        -0.65,
+        -0.18,
+        null,
+        null,
+        0.11,
+        null,
+        0,
+        -0.69,
+        0,
+        0,
+        0.14,
+        -0.62,
+        -0.6,
+        -0.75
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
   }
 }

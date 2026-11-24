@@ -90,7 +90,7 @@
   ],
   "text": {
     "words": 488,
-    "longer_than": 5,
+    "longer_than": 39,
     "top": [
       [
         "kau",
@@ -131,16 +131,16 @@
     ],
     "distinct": [
       [
-        "persenjatai",
-        5
+        "kau",
+        20
       ],
       [
         "revolver",
         6
       ],
       [
-        "kau",
-        20
+        "persenjatai",
+        5
       ],
       [
         "dirimu",
@@ -170,17 +170,26 @@
     "phrases": [],
     "similar": [
       [
-        2615,
-        0.11
+        7027,
+        0.15
       ],
       [
-        7307,
-        0.11
+        21,
+        0.14
       ],
       [
         1960,
-        0.11
+        0.14
+      ],
+      [
+        7307,
+        0.14
+      ],
+      [
+        2615,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

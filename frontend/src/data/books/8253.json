@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 2657,
-    "longer_than": 30,
+    "longer_than": 66,
     "top": [
       [
         "layanan",
@@ -109,10 +109,6 @@
         23
       ],
       [
-        "operator",
-        26
-      ],
-      [
         "konten",
         29
       ],
@@ -121,20 +117,24 @@
         21
       ],
       [
-        "internet",
-        33
-      ],
-      [
-        "telekomunikasi",
-        20
+        "operator",
+        26
       ],
       [
         "penapisan",
         10
       ],
       [
+        "telekomunikasi",
+        20
+      ],
+      [
         "penyadapan",
         12
+      ],
+      [
+        "internet",
+        33
       ],
       [
         "pengguna",
@@ -182,28 +182,29 @@
     "similar": [
       [
         8254,
-        0.43
+        0.4
+      ],
+      [
+        18768,
+        0.27
       ],
       [
         350,
         0.22
       ],
       [
-        1055,
-        0.22
-      ],
-      [
-        8311,
+        364,
         0.21
       ],
       [
-        1054,
-        0.2
+        1055,
+        0.19
       ],
       [
-        364,
+        8311,
         0.19
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

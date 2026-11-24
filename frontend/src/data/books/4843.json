@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3403,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "indonesia",
@@ -127,24 +127,24 @@
         14
       ],
       [
-        "doenia",
-        12
-      ],
-      [
         "malaka",
         19
       ],
       [
+        "rakjat",
+        20
+      ],
+      [
+        "doenia",
+        12
+      ],
+      [
+        "beliau",
+        26
+      ],
+      [
         "boeat",
         11
-      ],
-      [
-        "berdjoeang",
-        8
-      ],
-      [
-        "moengkin",
-        8
       ]
     ],
     "phrases": [
@@ -188,24 +188,52 @@
       ],
       [
         6699,
-        0.33
+        0.35
       ],
       [
         745,
-        0.33
+        0.34
       ],
       [
         4912,
-        0.32
+        0.33
       ],
       [
         4834,
-        0.32
+        0.33
       ],
       [
         532,
-        0.32
+        0.33
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 35,
+      "negative": 32,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          12
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

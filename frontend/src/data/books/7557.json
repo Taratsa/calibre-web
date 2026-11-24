@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2230,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "kebudayaan",
@@ -126,32 +126,32 @@
         8
       ],
       [
+        "kebudayaan",
+        17
+      ],
+      [
         "taufiq",
         5
-      ],
-      [
-        "mocopat",
-        3
-      ],
-      [
-        "sukito",
-        3
       ],
       [
         "dusta",
         6
       ],
       [
-        "sitor",
-        4
+        "mocopat",
+        3
       ],
       [
         "sastera",
         5
       ],
       [
-        "kebudayaan",
-        17
+        "sukito",
+        3
+      ],
+      [
+        "artistik",
+        6
       ]
     ],
     "phrases": [
@@ -183,11 +183,11 @@
     "similar": [
       [
         4855,
-        0.23
+        0.25
       ],
       [
         8393,
-        0.23
+        0.25
       ],
       [
         5938,
@@ -195,16 +195,17 @@
       ],
       [
         8035,
-        0.17
+        0.16
       ],
       [
         2576,
-        0.17
+        0.16
       ],
       [
         7942,
-        0.13
+        0.15
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

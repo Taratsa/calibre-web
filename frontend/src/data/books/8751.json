@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 118703,
-    "longer_than": 98,
+    "longer_than": 99,
     "top": [
       [
         "bank",
@@ -103,36 +103,40 @@
         1631
       ],
       [
-        "lending",
-        476
-      ],
-      [
         "countries",
         798
       ],
       [
-        "projects",
-        391
+        "lending",
+        476
       ],
       [
         "development",
         673
       ],
       [
-        "loans",
-        225
+        "projects",
+        391
       ],
       [
-        "staff",
-        292
+        "loans",
+        225
       ],
       [
         "ida",
         296
       ],
       [
+        "staff",
+        292
+      ],
+      [
         "ibrd",
         145
+      ],
+      [
+        "economic",
+        277
       ],
       [
         "credit",
@@ -141,10 +145,6 @@
       [
         "project",
         299
-      ],
-      [
-        "economic",
-        277
       ]
     ],
     "phrases": [
@@ -183,11 +183,11 @@
     ],
     "similar": [
       [
-        8571,
+        8570,
         0.43
       ],
       [
-        8570,
+        8571,
         0.43
       ],
       [
@@ -200,12 +200,13 @@
       ],
       [
         8625,
-        0.35
+        0.34
       ],
       [
         8631,
         0.32
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -41,7 +41,7 @@
   ],
   "text": {
     "words": 858,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "cinta",
@@ -106,28 +106,28 @@
         3
       ],
       [
-        "hey",
-        3
-      ],
-      [
-        "nyala",
-        3
-      ],
-      [
         "cinta",
         7
       ],
       [
-        "menghisap",
+        "hey",
         3
+      ],
+      [
+        "kau",
+        6
       ],
       [
         "luka",
         5
       ],
       [
-        "kau",
-        6
+        "nyala",
+        3
+      ],
+      [
+        "menghisap",
+        3
       ],
       [
         "diatas",
@@ -138,32 +138,72 @@
         3
       ],
       [
-        "pola",
-        3
+        "malam",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
         269,
-        0.15
+        0.14
+      ],
+      [
+        4739,
+        0.13
       ],
       [
         7012,
-        0.12
+        0.13
       ],
       [
         6970,
-        0.11
+        0.13
       ],
       [
         2575,
-        0.11
+        0.13
       ],
       [
         7368,
-        0.1
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 34,
+      "negative": 24,
+      "trend": [],
+      "emotions": [
+        [
+          "joy",
+          13
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

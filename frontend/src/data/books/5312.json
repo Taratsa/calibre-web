@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 6570,
-    "longer_than": 50,
+    "longer_than": 76,
     "top": [
       [
         "bubur",
@@ -112,36 +112,36 @@
         41
       ],
       [
-        "sekoi",
-        20
-      ],
-      [
         "sagu",
         41
       ],
       [
-        "tinutuan",
-        17
+        "sekoi",
+        20
       ],
       [
         "sumsum",
         29
       ],
       [
-        "srontol",
-        14
+        "tinutuan",
+        17
       ],
       [
         "kacang",
         39
       ],
       [
-        "mengguh",
-        12
+        "srontol",
+        14
       ],
       [
         "ketan",
         28
+      ],
+      [
+        "mengguh",
+        12
       ],
       [
         "barobbo",
@@ -189,28 +189,52 @@
     "similar": [
       [
         5222,
-        0.38
+        0.4
       ],
       [
         5109,
-        0.28
+        0.3
       ],
       [
         5220,
-        0.26
+        0.27
       ],
       [
         5079,
-        0.24
+        0.26
       ],
       [
         5137,
-        0.2
+        0.21
       ],
       [
-        6668,
-        0.2
+        3615,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.68,
+      "positive": 109,
+      "negative": 21,
+      "trend": [
+        0.82,
+        0.92,
+        null,
+        0.5,
+        0.33,
+        0.25,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        1,
+        null,
+        0.14,
+        0.43,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

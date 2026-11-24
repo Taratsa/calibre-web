@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2220,
-    "longer_than": 27,
+    "longer_than": 63,
     "top": [
       [
         "muda",
@@ -107,16 +107,16 @@
         19
       ],
       [
+        "muda",
+        38
+      ],
+      [
         "gaulle",
         8
       ],
       [
         "insureksi",
         10
-      ],
-      [
-        "muda",
-        38
       ],
       [
         "paris",
@@ -127,24 +127,24 @@
         12
       ],
       [
-        "katalis",
-        4
-      ],
-      [
         "polisi",
         12
-      ],
-      [
-        "pemberontak",
-        6
       ],
       [
         "generasi",
         11
       ],
       [
-        "posting",
-        3
+        "anak",
+        17
+      ],
+      [
+        "anak-anak",
+        12
+      ],
+      [
+        "militer",
+        9
       ]
     ],
     "phrases": [
@@ -184,28 +184,35 @@
     "similar": [
       [
         3777,
-        0.31
+        0.33
       ],
       [
         7043,
-        0.27
+        0.3
       ],
       [
         2303,
-        0.26
+        0.27
       ],
       [
         2792,
-        0.24
+        0.21
       ],
       [
-        1932,
-        0.16
+        2811,
+        0.2
       ],
       [
-        2000,
-        0.16
+        2313,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 46,
+      "negative": 22,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

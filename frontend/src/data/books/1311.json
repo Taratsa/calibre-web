@@ -11,7 +11,7 @@
   ],
   "author_sort": "Malaka, Tan",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 31586,
-    "longer_than": 86,
+    "longer_than": 93,
     "top": [
       [
         "kaum",
@@ -112,10 +112,6 @@
         299
       ],
       [
-        "kemodalan",
-        69
-      ],
-      [
         "kaum",
         474
       ],
@@ -124,36 +120,40 @@
         108
       ],
       [
-        "hindustan",
-        44
+        "kemodalan",
+        69
       ],
       [
-        "hindia",
-        81
+        "negeri",
+        210
       ],
       [
-        "mesti",
-        120
-      ],
-      [
-        "tiada",
-        136
+        "rakyat",
+        191
       ],
       [
         "buruh",
         141
       ],
       [
+        "tiada",
+        136
+      ],
+      [
+        "mesti",
+        120
+      ],
+      [
         "modal",
         125
       ],
       [
-        "sungguhpun",
-        43
+        "hindia",
+        81
       ],
       [
-        "rakyat",
-        191
+        "hindustan",
+        44
       ]
     ],
     "phrases": [
@@ -193,28 +193,85 @@
     "similar": [
       [
         9241,
-        0.4
+        0.43
       ],
       [
         395,
-        0.39
+        0.42
       ],
       [
         9247,
-        0.29
+        0.32
       ],
       [
         1312,
-        0.24
+        0.28
       ],
       [
         4652,
-        0.23
+        0.27
       ],
       [
         390,
-        0.23
+        0.27
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 495,
+      "negative": 296,
+      "trend": [
+        0.38,
+        0.29,
+        0.1,
+        0.26,
+        0.26,
+        0.6,
+        0.28,
+        0.41,
+        0.3,
+        0.45,
+        0.38,
+        0.03,
+        0.35,
+        -0.04,
+        -0.06,
+        0.38
+      ],
+      "emotions": [
+        [
+          "trust",
+          53
+        ],
+        [
+          "anger",
+          51
+        ],
+        [
+          "joy",
+          43
+        ],
+        [
+          "sadness",
+          22
+        ],
+        [
+          "fear",
+          18
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

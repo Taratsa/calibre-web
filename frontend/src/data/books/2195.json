@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1632,
-    "longer_than": 21,
+    "longer_than": 59,
     "top": [
       [
         "surat",
@@ -115,16 +115,24 @@
         4
       ],
       [
+        "surat",
+        14
+      ],
+      [
         "poster",
         6
+      ],
+      [
+        "hubungan",
+        11
       ],
       [
         "contradiction",
         3
       ],
       [
-        "surat",
-        14
+        "paris",
+        5
       ],
       [
         "remarks",
@@ -135,16 +143,8 @@
         3
       ],
       [
-        "paris",
-        5
-      ],
-      [
         "sifat-sifat",
         4
-      ],
-      [
-        "pamflet",
-        3
       ]
     ],
     "phrases": [
@@ -172,20 +172,21 @@
       ],
       [
         1925,
-        0.19
+        0.18
       ],
       [
         2023,
-        0.13
+        0.16
       ],
       [
         2031,
-        0.13
+        0.15
       ],
       [
         2698,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

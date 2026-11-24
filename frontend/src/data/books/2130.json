@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 506,
-    "longer_than": 5,
+    "longer_than": 40,
     "top": [
       [
         "ketertiban",
@@ -115,23 +115,19 @@
         5
       ],
       [
-        "moralitas",
-        3
+        "massa",
+        6
       ],
       [
         "logika",
         4
       ],
       [
-        "massa",
-        6
-      ],
-      [
-        "tertib",
+        "moralitas",
         3
       ],
       [
-        "busuk",
+        "tertib",
         3
       ],
       [
@@ -139,11 +135,15 @@
         4
       ],
       [
-        "menilai",
+        "busuk",
         3
       ],
       [
-        "menengah",
+        "kekerasan",
+        4
+      ],
+      [
+        "menilai",
         3
       ]
     ],
@@ -151,7 +151,7 @@
     "similar": [
       [
         2498,
-        0.24
+        0.22
       ],
       [
         7988,
@@ -166,13 +166,14 @@
         0.14
       ],
       [
-        7371,
+        2478,
         0.13
       ],
       [
-        2478,
-        0.11
+        7371,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

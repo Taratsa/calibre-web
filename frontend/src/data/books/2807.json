@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 9542,
-    "longer_than": 60,
+    "longer_than": 81,
     "top": [
       [
         "teknologi",
@@ -99,44 +99,44 @@
     ],
     "distinct": [
       [
-        "teknologi",
-        65
-      ],
-      [
         "realitas",
         49
+      ],
+      [
+        "teknologi",
+        65
       ],
       [
         "revolusioner",
         39
       ],
       [
-        "prostesis",
-        8
+        "ekonomi",
+        46
       ],
       [
         "perusahaan",
         32
       ],
       [
-        "saintifik",
+        "prostesis",
         8
-      ],
-      [
-        "ekonomi",
-        46
-      ],
-      [
-        "komputer",
-        13
       ],
       [
         "krisis",
         21
       ],
       [
-        "linguistik",
-        9
+        "saintifik",
+        8
+      ],
+      [
+        "produksi",
+        22
+      ],
+      [
+        "bahasa",
+        35
       ],
       [
         "instrumen",
@@ -184,28 +184,85 @@
     "similar": [
       [
         2099,
-        0.38
+        0.43
       ],
       [
         1933,
-        0.34
+        0.38
       ],
       [
         2110,
-        0.29
+        0.33
       ],
       [
         2484,
-        0.25
+        0.3
       ],
       [
         1807,
-        0.24
+        0.29
       ],
       [
         7007,
-        0.24
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 156,
+      "negative": 137,
+      "trend": [
+        0.14,
+        0.43,
+        -0.12,
+        0.23,
+        -0.3,
+        0.41,
+        -0.17,
+        0.44,
+        0,
+        -0.14,
+        0.11,
+        -0.04,
+        0,
+        0.11,
+        0.76,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

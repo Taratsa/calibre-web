@@ -60,7 +60,7 @@
   ],
   "text": {
     "words": 1930,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "tanah",
@@ -129,19 +129,15 @@
         5
       ],
       [
-        "g-zo",
-        3
-      ],
-      [
         "muller",
         5
       ],
       [
-        "eigendom",
-        5
+        "g-zo",
+        3
       ],
       [
-        "subsidi",
+        "eigendom",
         5
       ],
       [
@@ -153,12 +149,16 @@
         14
       ],
       [
+        "tanah",
+        18
+      ],
+      [
         "bandung",
         10
       ],
       [
-        "pemkot",
-        3
+        "subsidi",
+        5
       ]
     ],
     "phrases": [
@@ -194,7 +194,7 @@
     "similar": [
       [
         3102,
-        0.79
+        0.77
       ],
       [
         2300,
@@ -206,7 +206,7 @@
       ],
       [
         4064,
-        0.31
+        0.3
       ],
       [
         135,
@@ -216,6 +216,30 @@
         6870,
         0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 39,
+      "negative": 31,
+      "trend": [
+        null,
+        null,
+        1,
+        0.67,
+        -0.14,
+        -0.2,
+        -0.2,
+        -0.75,
+        null,
+        0.14,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.43
+      ],
+      "emotions": []
+    }
   }
 }

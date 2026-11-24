@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 7407,
-    "longer_than": 53,
+    "longer_than": 77,
     "top": [
       [
         "bahasa",
@@ -116,12 +116,24 @@
         251
       ],
       [
-        "didaktik",
-        14
+        "indonesia",
+        151
       ],
       [
         "pelajaran",
         58
+      ],
+      [
+        "belanda",
+        45
+      ],
+      [
+        "didaktik",
+        14
+      ],
+      [
+        "murid",
+        30
       ],
       [
         "linguistic",
@@ -132,28 +144,16 @@
         13
       ],
       [
-        "murid",
-        30
-      ],
-      [
-        "method",
-        19
+        "pengajaran",
+        21
       ],
       [
         "ilmupengetahuan",
         9
       ],
       [
-        "belanda",
-        45
-      ],
-      [
-        "pengajaran",
-        21
-      ],
-      [
-        "indonesia",
-        151
+        "method",
+        19
       ],
       [
         "merombak",
@@ -197,11 +197,11 @@
     "similar": [
       [
         3488,
-        0.19
+        0.21
       ],
       [
         1104,
-        0.15
+        0.17
       ],
       [
         4033,
@@ -209,16 +209,40 @@
       ],
       [
         815,
-        0.12
+        0.15
       ],
       [
         6275,
-        0.12
+        0.13
       ],
       [
         1409,
-        0.11
+        0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 103,
+      "negative": 45,
+      "trend": [
+        0.4,
+        0.78,
+        -0.2,
+        null,
+        0,
+        null,
+        0,
+        0.6,
+        0.6,
+        0.6,
+        0.2,
+        null,
+        0.6,
+        0.33,
+        0.27,
+        0.29
+      ],
+      "emotions": []
+    }
   }
 }

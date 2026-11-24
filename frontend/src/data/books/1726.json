@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 3933,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "buto",
@@ -121,24 +121,24 @@
         20
       ],
       [
+        "jawa",
+        24
+      ],
+      [
         "mertamu",
         6
+      ],
+      [
+        "laut",
+        20
       ],
       [
         "grasak",
         4
       ],
       [
-        "megaproyek",
-        5
-      ],
-      [
-        "bohang",
-        4
-      ],
-      [
-        "jawa",
-        24
+        "ratu",
+        12
       ],
       [
         "monster",
@@ -182,16 +182,81 @@
     "similar": [
       [
         8034,
-        0.13
+        0.12
       ],
       [
         1812,
-        0.13
+        0.12
       ],
       [
         5620,
-        0.1
+        0.12
+      ],
+      [
+        1481,
+        0.12
+      ],
+      [
+        2945,
+        0.12
+      ],
+      [
+        6984,
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 58,
+      "negative": 49,
+      "trend": [
+        null,
+        -0.2,
+        null,
+        0.11,
+        0.23,
+        0,
+        0.5,
+        0.14,
+        0.33,
+        0.2,
+        null,
+        null,
+        null,
+        -0.6,
+        -0.5,
+        null
+      ],
+      "emotions": [
+        [
+          "fear",
+          21
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

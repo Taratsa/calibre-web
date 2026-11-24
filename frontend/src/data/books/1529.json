@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 1019,
-    "longer_than": 12,
+    "longer_than": 52,
     "top": [
       [
         "joe",
@@ -115,16 +115,16 @@
         6
       ],
       [
+        "anna",
+        5
+      ],
+      [
         "dajjal",
         3
       ],
       [
         "vampir",
         3
-      ],
-      [
-        "anna",
-        5
       ],
       [
         "kucing",
@@ -135,23 +135,41 @@
         4
       ],
       [
-        "pemain",
-        3
-      ],
-      [
         "istrinya",
         4
       ],
       [
-        "ajak",
+        "tuan",
+        5
+      ],
+      [
+        "pemain",
         3
       ],
       [
-        "video",
+        "ajak",
         3
       ]
     ],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        37,
+        0.19
+      ],
+      [
+        14912,
+        0.14
+      ],
+      [
+        9338,
+        0.14
+      ],
+      [
+        17183,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

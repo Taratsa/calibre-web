@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 53912,
-    "longer_than": 94,
+    "longer_than": 97,
     "top": [
       [
         "perempuan",
@@ -103,48 +103,48 @@
         144
       ],
       [
-        "ferrer",
-        69
-      ],
-      [
         "perempuan",
         399
+      ],
+      [
+        "ferrer",
+        69
       ],
       [
         "prostitusi",
         62
       ],
       [
-        "puritanisme",
-        39
-      ],
-      [
-        "anarkisme",
-        84
+        "manusia",
+        254
       ],
       [
         "amerika",
         151
       ],
       [
-        "anarkis",
-        92
+        "anarkisme",
+        84
       ],
       [
-        "kejahatan",
-        97
+        "puritanisme",
+        39
       ],
       [
         "cinta",
         120
       ],
       [
-        "emansipasi",
-        47
+        "anarkis",
+        92
       ],
       [
-        "emma",
-        36
+        "orang",
+        270
+      ],
+      [
+        "kejahatan",
+        97
       ]
     ],
     "phrases": [
@@ -183,29 +183,86 @@
     ],
     "similar": [
       [
+        2420,
+        0.33
+      ],
+      [
         7159,
-        0.29
+        0.33
       ],
       [
         2727,
-        0.26
+        0.32
       ],
       [
         7156,
-        0.26
-      ],
-      [
-        2420,
-        0.24
+        0.32
       ],
       [
         6767,
-        0.23
+        0.32
       ],
       [
         1930,
-        0.23
+        0.32
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.03,
+      "positive": 1504,
+      "negative": 1418,
+      "trend": [
+        -0.1,
+        0.03,
+        0.18,
+        0.17,
+        -0.16,
+        -0.13,
+        -0.41,
+        -0.25,
+        -0.13,
+        0.17,
+        -0.12,
+        0.16,
+        0.16,
+        0.35,
+        0.35,
+        0.13
+      ],
+      "emotions": [
+        [
+          "anger",
+          310
+        ],
+        [
+          "joy",
+          239
+        ],
+        [
+          "sadness",
+          175
+        ],
+        [
+          "trust",
+          126
+        ],
+        [
+          "fear",
+          115
+        ],
+        [
+          "anticipation",
+          85
+        ],
+        [
+          "disgust",
+          34
+        ],
+        [
+          "surprise",
+          29
+        ]
+      ]
+    }
   }
 }

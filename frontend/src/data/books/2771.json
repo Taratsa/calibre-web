@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2060,
-    "longer_than": 25,
+    "longer_than": 62,
     "top": [
       [
         "palestina",
@@ -143,8 +143,8 @@
         5
       ],
       [
-        "pemadaman",
-        3
+        "anarkis",
+        7
       ]
     ],
     "phrases": [
@@ -183,29 +183,61 @@
     ],
     "similar": [
       [
+        7166,
+        0.83
+      ],
+      [
         7910,
-        0.47
+        0.5
       ],
       [
         1805,
-        0.47
+        0.5
       ],
       [
         2574,
-        0.34
+        0.36
       ],
       [
         7950,
-        0.29
-      ],
-      [
-        2060,
-        0.28
+        0.3
       ],
       [
         2254,
-        0.26
+        0.29
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.02,
+      "positive": 32,
+      "negative": 31,
+      "trend": [],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

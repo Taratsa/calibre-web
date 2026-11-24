@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8645,
-    "longer_than": 57,
+    "longer_than": 79,
     "top": [
       [
         "kaoem",
@@ -135,16 +135,16 @@
         18
       ],
       [
-        "kekoeasaan",
-        13
+        "rakjat",
+        29
+      ],
+      [
+        "masjarakat",
+        26
       ],
       [
         "poen",
         17
-      ],
-      [
-        "rakjat",
-        29
       ]
     ],
     "phrases": [
@@ -188,24 +188,77 @@
       ],
       [
         4843,
-        0.33
+        0.35
       ],
       [
         4856,
-        0.33
+        0.34
       ],
       [
         745,
-        0.32
+        0.34
       ],
       [
         5931,
-        0.32
+        0.33
       ],
       [
-        4912,
-        0.29
+        5953,
+        0.3
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 53,
+      "negative": 43,
+      "trend": [
+        0.6,
+        null,
+        0.6,
+        null,
+        null,
+        0,
+        -0.5,
+        -0.25,
+        0.2,
+        0.2,
+        0.6,
+        null,
+        0.14,
+        0.33,
+        0.2,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          13
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

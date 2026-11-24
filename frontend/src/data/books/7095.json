@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2101,
-    "longer_than": 26,
+    "longer_than": 63,
     "top": [
       [
         "individualisme",
@@ -122,6 +122,14 @@
         6
       ],
       [
+        "individu",
+        25
+      ],
+      [
+        "pemberontakan",
+        19
+      ],
+      [
         "individualis",
         11
       ],
@@ -130,12 +138,8 @@
         9
       ],
       [
-        "pemberontakan",
-        19
-      ],
-      [
-        "individu",
-        25
+        "pemikiran",
+        16
       ],
       [
         "camus",
@@ -143,10 +147,6 @@
       ],
       [
         "okupasiruang",
-        4
-      ],
-      [
-        "yang-unik",
         4
       ],
       [
@@ -179,28 +179,29 @@
     "similar": [
       [
         2172,
-        0.36
+        0.37
+      ],
+      [
+        3753,
+        0.23
       ],
       [
         8092,
         0.22
       ],
       [
-        3753,
+        9185,
         0.21
       ],
       [
-        8117,
+        2674,
         0.19
       ],
       [
-        7437,
-        0.18
-      ],
-      [
-        2088,
+        8117,
         0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

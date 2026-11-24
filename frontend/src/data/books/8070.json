@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 939,
-    "longer_than": 11,
+    "longer_than": 51,
     "top": [
       [
         "mesin",
@@ -107,12 +107,16 @@
     ],
     "distinct": [
       [
+        "mesin",
+        19
+      ],
+      [
         "komputer",
         12
       ],
       [
-        "mesin",
-        19
+        "manusia",
+        16
       ],
       [
         "genetik",
@@ -131,56 +135,53 @@
         4
       ],
       [
-        "kamus",
-        3
+        "keputusan",
+        6
       ],
       [
-        "manusia",
-        16
+        "kamus",
+        3
       ],
       [
         "otak",
         3
       ],
       [
-        "keputusan",
-        6
-      ],
-      [
         "permainan",
         3
       ],
       [
-        "teknologi",
-        3
+        "pikiran",
+        4
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        17236,
+        0.31
+      ],
+      [
+        17944,
+        0.2
+      ],
+      [
         2253,
-        0.19
+        0.18
       ],
       [
-        4430,
-        0.19
+        17964,
+        0.18
       ],
       [
-        7000,
-        0.19
+        9942,
+        0.18
       ],
       [
-        7193,
-        0.19
-      ],
-      [
-        2660,
-        0.19
-      ],
-      [
-        3933,
-        0.19
+        17265,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

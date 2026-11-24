@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2833,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "mall",
@@ -107,20 +107,20 @@
         9
       ],
       [
-        "baudrillard",
-        5
-      ],
-      [
         "idul",
         6
       ],
       [
-        "fitri",
-        6
+        "baudrillard",
+        5
       ],
       [
         "religius",
         8
+      ],
+      [
+        "fitri",
+        6
       ],
       [
         "lebaran",
@@ -139,12 +139,12 @@
         5
       ],
       [
-        "mall-mall",
-        3
+        "dimana",
+        13
       ],
       [
-        "kawanku",
-        4
+        "tampil",
+        8
       ]
     ],
     "phrases": [
@@ -172,16 +172,23 @@
     "similar": [
       [
         2536,
-        0.3
+        0.31
       ],
       [
         107,
-        0.3
+        0.31
       ],
       [
-        4126,
-        0.1
+        17294,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 44,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

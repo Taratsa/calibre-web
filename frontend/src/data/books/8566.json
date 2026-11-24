@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 36587,
-    "longer_than": 89,
+    "longer_than": 94,
     "top": [
       [
         "workers",
@@ -112,32 +112,32 @@
         111
       ],
       [
-        "auto",
-        152
-      ],
-      [
         "production",
         193
+      ],
+      [
+        "auto",
+        152
       ],
       [
         "unions",
         135
       ],
       [
-        "nissan",
-        75
-      ],
-      [
         "labour",
         164
       ],
       [
-        "management",
-        178
+        "nissan",
+        75
       ],
       [
-        "automobile",
-        78
+        "company",
+        167
+      ],
+      [
+        "management",
+        178
       ]
     ],
     "phrases": [
@@ -185,20 +185,21 @@
       ],
       [
         8480,
-        0.26
+        0.27
       ],
       [
         8625,
-        0.25
-      ],
-      [
-        5905,
-        0.25
+        0.26
       ],
       [
         6792,
+        0.26
+      ],
+      [
+        8747,
         0.25
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

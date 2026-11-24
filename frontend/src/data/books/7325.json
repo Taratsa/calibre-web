@@ -53,10 +53,24 @@
   ],
   "text": {
     "words": 512,
-    "longer_than": 5,
+    "longer_than": 40,
     "top": [],
     "distinct": [],
     "phrases": [],
-    "similar": []
+    "similar": [
+      [
+        7321,
+        0.12
+      ],
+      [
+        4305,
+        0.1
+      ],
+      [
+        7281,
+        0.1
+      ]
+    ],
+    "sentiment": null
   }
 }

@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3436,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "karnaen",
@@ -111,20 +111,20 @@
         40
       ],
       [
-        "banyark",
-        4
-      ],
-      [
-        "kemuning",
-        7
+        "kau",
+        20
       ],
       [
         "teman-teman",
         16
       ],
       [
-        "kau",
-        20
+        "banyark",
+        4
+      ],
+      [
+        "kemuning",
+        7
       ],
       [
         "masasilam",
@@ -139,20 +139,20 @@
         6
       ],
       [
-        "tutti",
-        3
+        "marah",
+        12
       ],
       [
         "rupa-rupanya",
         5
       ],
       [
-        "pemalu",
-        5
+        "tutti",
+        3
       ],
       [
-        "berdialan",
-        3
+        "pemalu",
+        5
       ]
     ],
     "phrases": [
@@ -184,16 +184,81 @@
     "similar": [
       [
         4847,
-        0.47
+        0.5
       ],
       [
         1089,
-        0.47
+        0.5
+      ],
+      [
+        778,
+        0.12
       ],
       [
         6755,
         0.12
+      ],
+      [
+        3684,
+        0.12
+      ],
+      [
+        3618,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.03,
+      "positive": 49,
+      "negative": 52,
+      "trend": [
+        null,
+        0.67,
+        0.5,
+        null,
+        -0.33,
+        0.2,
+        -0.14,
+        null,
+        -0.33,
+        -0.33,
+        -0.4,
+        -0.78,
+        0.4,
+        -1,
+        0.17,
+        0.6
+      ],
+      "emotions": [
+        [
+          "joy",
+          21
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
   }
 }

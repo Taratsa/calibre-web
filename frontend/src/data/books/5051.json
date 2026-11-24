@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 21092,
-    "longer_than": 77,
+    "longer_than": 89,
     "top": [
       [
         "preposisi",
@@ -119,32 +119,32 @@
         251
       ],
       [
-        "pelengkapnya",
-        27
-      ],
-      [
-        "pelengkap",
-        58
-      ],
-      [
-        "akhiran",
-        32
+        "bahasa",
+        203
       ],
       [
         "kalimat",
         93
       ],
       [
-        "konjungsi",
-        25
-      ],
-      [
-        "preposisional",
-        16
+        "pelengkap",
+        58
       ],
       [
         "dinyatakan",
         78
+      ],
+      [
+        "pelengkapnya",
+        27
+      ],
+      [
+        "akhiran",
+        32
+      ],
+      [
+        "konjungsi",
+        25
       ]
     ],
     "phrases": [
@@ -188,11 +188,15 @@
       ],
       [
         6276,
-        0.23
+        0.24
       ],
       [
         6243,
-        0.21
+        0.22
+      ],
+      [
+        6234,
+        0.18
       ],
       [
         5658,
@@ -201,11 +205,56 @@
       [
         6168,
         0.17
-      ],
-      [
-        6234,
-        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 196,
+      "negative": 86,
+      "trend": [
+        0.69,
+        0.64,
+        0.74,
+        0.67,
+        0.55,
+        0.62,
+        0,
+        0.44,
+        null,
+        0.2,
+        null,
+        0.12,
+        -0.08,
+        0.26,
+        -0.2,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
   }
 }

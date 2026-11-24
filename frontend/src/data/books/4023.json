@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1760,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "indonesia",
@@ -124,35 +124,35 @@
         7
       ],
       [
-        "by-sa",
-        5
+        "pengarang",
+        10
       ],
       [
         "kesusasteraan",
         7
       ],
       [
-        "pengarang",
-        10
+        "by-sa",
+        5
       ],
       [
         "masasilam",
         4
       ],
       [
-        "metoda",
-        3
+        "indonesia",
+        20
       ],
       [
-        "e-book",
-        3
+        "puisi",
+        6
+      ],
+      [
+        "simbol",
+        6
       ],
       [
         "anwar",
-        4
-      ],
-      [
-        "roman",
         4
       ]
     ],
@@ -177,11 +177,19 @@
     "similar": [
       [
         6755,
-        0.3
+        0.29
       ],
       [
         4007,
         0.29
+      ],
+      [
+        4009,
+        0.28
+      ],
+      [
+        3996,
+        0.28
       ],
       [
         3991,
@@ -190,15 +198,8 @@
       [
         4010,
         0.27
-      ],
-      [
-        4035,
-        0.27
-      ],
-      [
-        4020,
-        0.26
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

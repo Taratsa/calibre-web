@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1947,
-    "longer_than": 24,
+    "longer_than": 62,
     "top": [
       [
         "cinta",
@@ -118,12 +118,12 @@
         7
       ],
       [
-        "seksisme",
-        5
-      ],
-      [
         "isolasi",
         7
+      ],
+      [
+        "seksisme",
+        5
       ],
       [
         "romantis",
@@ -134,6 +134,14 @@
         5
       ],
       [
+        "revolusioner",
+        8
+      ],
+      [
+        "masyarakat",
+        15
+      ],
+      [
         "anonimitas",
         3
       ],
@@ -142,16 +150,8 @@
         4
       ],
       [
-        "revolusioner",
-        8
-      ],
-      [
-        "mencintaimu",
-        3
-      ],
-      [
-        "pernikahan",
-        5
+        "berjuang",
+        7
       ]
     ],
     "phrases": [
@@ -179,28 +179,77 @@
     "similar": [
       [
         2178,
-        0.73
+        0.75
       ],
       [
         1817,
-        0.24
+        0.29
       ],
       [
         7381,
         0.24
       ],
       [
+        2374,
+        0.23
+      ],
+      [
         2407,
-        0.18
+        0.21
       ],
       [
         9218,
-        0.18
-      ],
-      [
-        7060,
-        0.15
+        0.19
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 113,
+      "negative": 46,
+      "trend": [
+        1,
+        0.33,
+        0.56,
+        1,
+        0,
+        -0.2,
+        -0.6,
+        0.09,
+        0.5,
+        0.38,
+        0,
+        null,
+        0.25,
+        0.78,
+        1,
+        0.27
+      ],
+      "emotions": [
+        [
+          "joy",
+          83
+        ],
+        [
+          "anger",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

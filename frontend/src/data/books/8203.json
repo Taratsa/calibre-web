@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 2344,
-    "longer_than": 28,
+    "longer_than": 64,
     "top": [
       [
         "pekerja",
@@ -107,24 +107,32 @@
         25
       ],
       [
-        "hcv",
-        10
-      ],
-      [
-        "certified",
-        13
-      ],
-      [
         "palm",
         18
+      ],
+      [
+        "hcv",
+        10
       ],
       [
         "sawit",
         21
       ],
       [
+        "certified",
+        13
+      ],
+      [
         "oil",
         19
+      ],
+      [
+        "pekerja",
+        33
+      ],
+      [
+        "prinsip",
+        26
       ],
       [
         "cspo",
@@ -135,20 +143,12 @@
         7
       ],
       [
-        "pekerja",
-        33
+        "pengelolaan",
+        16
       ],
       [
         "tonnes",
         6
-      ],
-      [
-        "sustainable",
-        10
-      ],
-      [
-        "commitment",
-        9
       ]
     ],
     "phrases": [
@@ -188,28 +188,35 @@
     "similar": [
       [
         8202,
-        0.2
+        0.21
       ],
       [
         8182,
-        0.18
+        0.21
       ],
       [
         8165,
-        0.18
+        0.21
       ],
       [
-        8151,
-        0.18
-      ],
-      [
-        8201,
-        0.17
+        8193,
+        0.19
       ],
       [
         8166,
-        0.17
+        0.19
+      ],
+      [
+        8201,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 39,
+      "negative": 12,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

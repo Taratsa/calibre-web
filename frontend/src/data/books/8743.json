@@ -39,7 +39,7 @@
   ],
   "text": {
     "words": 60396,
-    "longer_than": 95,
+    "longer_than": 97,
     "top": [
       [
         "ekonomi",
@@ -96,48 +96,48 @@
         203
       ],
       [
-        "potlatch",
-        73
-      ],
-      [
         "ekonomi",
         448
       ],
       [
-        "barang-barang",
-        163
-      ],
-      [
-        "sistem",
-        309
-      ],
-      [
-        "masyarakat-masyarakat",
-        64
+        "potlatch",
+        73
       ],
       [
         "pasar",
         263
       ],
       [
-        "trobriand",
-        35
+        "sistem",
+        309
       ],
       [
-        "kwakiutl",
-        34
-      ],
-      [
-        "dahomey",
-        34
+        "barang-barang",
+        163
       ],
       [
         "perdagangan",
         142
       ],
       [
-        "hubungan-hubungan",
-        63
+        "masyarakat-masyarakat",
+        64
+      ],
+      [
+        "hubungan",
+        215
+      ],
+      [
+        "masyarakat",
+        259
+      ],
+      [
+        "sosial",
+        223
+      ],
+      [
+        "trobriand",
+        35
       ]
     ],
     "phrases": [
@@ -177,28 +177,85 @@
     "similar": [
       [
         8669,
-        0.25
+        0.29
       ],
       [
         8492,
-        0.19
+        0.22
       ],
       [
         8601,
-        0.17
-      ],
-      [
-        8738,
-        0.17
+        0.21
       ],
       [
         8559,
-        0.17
+        0.2
       ],
       [
-        8415,
-        0.16
+        8450,
+        0.2
+      ],
+      [
+        8430,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.53,
+      "positive": 844,
+      "negative": 257,
+      "trend": [
+        0.19,
+        0.75,
+        0.7,
+        0.38,
+        0.52,
+        0.45,
+        0.72,
+        0.71,
+        0.36,
+        0.32,
+        0.45,
+        0.51,
+        0.77,
+        0.62,
+        0.44,
+        0.65
+      ],
+      "emotions": [
+        [
+          "trust",
+          48
+        ],
+        [
+          "anger",
+          20
+        ],
+        [
+          "fear",
+          17
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

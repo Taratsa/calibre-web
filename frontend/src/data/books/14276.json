@@ -1,0 +1,86 @@
+{
+  "id": 14276,
+  "title": "Gvm: install",
+  "slug": "gvm-install-onno-widodo-purbo",
+  "slugBase": "gvm-install-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2020-12-29",
+  "timestamp": "2026-11-23 22:54:49.811529",
+  "last_modified": "2026-11-23 22:54:49.811534",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:afe909b3-e877-5672-bae4-c8b7af6ae144"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/14276?v=1795449289",
+  "cover_og_url": "/cover/14276/og?v=1795449289",
+  "url": "/book/gvm-install-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "instalasi sudo apt install gvm -y sudo gvm-setup sudo gvm-feed-update sudo gvm-start Akses melalui https://127.0.0.1:9392 Pranala Menarik gvm",
+  "data": [
+    {
+      "format": "epub",
+      "size": 2005,
+      "name": "Gvm_ install - Onno Widodo Purbo"
+    }
+  ],
+  "text": {
+    "words": 30,
+    "longer_than": 3,
+    "top": [],
+    "distinct": [],
+    "phrases": [],
+    "similar": [
+      [
+        14275,
+        0.44
+      ],
+      [
+        13423,
+        0.4
+      ],
+      [
+        15085,
+        0.4
+      ],
+      [
+        15178,
+        0.4
+      ],
+      [
+        14278,
+        0.36
+      ],
+      [
+        13969,
+        0.34
+      ]
+    ],
+    "sentiment": null
+  }
+}

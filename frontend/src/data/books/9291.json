@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4110,
-    "longer_than": 39,
+    "longer_than": 70,
     "top": [
       [
         "ekonomi",
@@ -104,24 +104,12 @@
         43
       ],
       [
-        "kebijaksanaan",
-        13
-      ],
-      [
-        "potensi",
-        19
-      ],
-      [
-        "jangka",
-        17
-      ],
-      [
         "pemerintah",
         39
       ],
       [
-        "kegotongroyongan",
-        5
+        "potensi",
+        19
       ],
       [
         "produksi",
@@ -132,12 +120,24 @@
         20
       ],
       [
-        "impor",
-        8
+        "jangka",
+        17
       ],
       [
-        "swasta",
-        12
+        "kebijaksanaan",
+        13
+      ],
+      [
+        "indonesia",
+        40
+      ],
+      [
+        "nasional",
+        25
+      ],
+      [
+        "negara",
+        27
       ],
       [
         "pertumbuhan",
@@ -181,28 +181,52 @@
     "similar": [
       [
         9292,
-        0.37
+        0.39
       ],
       [
         9297,
-        0.27
+        0.29
       ],
       [
         462,
-        0.23
+        0.26
       ],
       [
         9298,
-        0.22
-      ],
-      [
-        9306,
-        0.2
+        0.25
       ],
       [
         9310,
-        0.2
+        0.23
+      ],
+      [
+        9306,
+        0.23
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.87,
+      "positive": 116,
+      "negative": 8,
+      "trend": [
+        0.71,
+        1,
+        0.83,
+        0.75,
+        0.71,
+        1,
+        1,
+        null,
+        1,
+        0.6,
+        1,
+        null,
+        1,
+        0.75,
+        1,
+        0.67
+      ],
+      "emotions": []
+    }
   }
 }

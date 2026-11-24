@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 1668,
-    "longer_than": 21,
+    "longer_than": 60,
     "top": [
       [
         "indonesia",
@@ -112,12 +112,20 @@
         30
       ],
       [
+        "kemunduran",
+        11
+      ],
+      [
         "alisyahbana",
         6
       ],
       [
-        "kemunduran",
-        11
+        "indonesia",
+        39
+      ],
+      [
+        "modern",
+        20
       ],
       [
         "simposion",
@@ -128,32 +136,24 @@
         5
       ],
       [
-        "modern",
-        20
+        "dewasa",
+        15
       ],
       [
         "salon",
         5
       ],
       [
-        "kacamatanya",
-        3
+        "sebab-sebab",
+        5
       ],
       [
         "udin",
         4
       ],
       [
-        "sebab-sebab",
-        5
-      ],
-      [
-        "masasilam",
-        4
-      ],
-      [
-        "dewasa",
-        15
+        "kacamatanya",
+        3
       ]
     ],
     "phrases": [
@@ -193,28 +193,29 @@
     "similar": [
       [
         7704,
-        0.6
+        0.62
       ],
       [
         3973,
-        0.6
+        0.62
       ],
       [
         4024,
-        0.28
+        0.29
       ],
       [
         6749,
-        0.2
-      ],
-      [
-        3996,
-        0.2
+        0.23
       ],
       [
         6750,
-        0.2
+        0.22
+      ],
+      [
+        4028,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

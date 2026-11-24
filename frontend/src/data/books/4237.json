@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8293,
-    "longer_than": 56,
+    "longer_than": 79,
     "top": [
       [
         "jakarta",
@@ -99,48 +99,48 @@
     ],
     "distinct": [
       [
-        "gallery",
-        71
-      ],
-      [
         "pelukis",
         98
       ],
       [
-        "pameran",
-        97
+        "gallery",
+        71
       ],
       [
         "yogyakarta",
         143
       ],
       [
-        "tamansiswa",
-        35
+        "pameran",
+        97
       ],
       [
         "jakarta",
         180
       ],
       [
-        "art",
-        48
+        "tamansiswa",
+        35
       ],
       [
         "seni",
         82
       ],
       [
-        "bentara",
-        19
+        "art",
+        48
+      ],
+      [
+        "budaya",
+        69
       ],
       [
         "lukis",
         25
       ],
       [
-        "ubud",
-        16
+        "bentara",
+        19
       ],
       [
         "galeri",
@@ -184,28 +184,52 @@
     "similar": [
       [
         4300,
-        0.39
+        0.4
       ],
       [
         4534,
-        0.33
+        0.34
       ],
       [
         4248,
-        0.32
+        0.33
       ],
       [
         4133,
-        0.25
+        0.27
       ],
       [
         4556,
-        0.22
+        0.25
       ],
       [
         4132,
-        0.22
+        0.25
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.67,
+      "positive": 135,
+      "negative": 27,
+      "trend": [
+        0.53,
+        0.62,
+        0.73,
+        1,
+        0.33,
+        0.5,
+        null,
+        null,
+        1,
+        null,
+        0.75,
+        0.33,
+        0.45,
+        0.86,
+        0.43,
+        0.8
+      ],
+      "emotions": []
+    }
   }
 }

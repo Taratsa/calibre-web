@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 4906,
-    "longer_than": 43,
+    "longer_than": 72,
     "top": [
       [
         "kehidupan",
@@ -103,12 +103,16 @@
         45
       ],
       [
+        "kehidupan",
+        94
+      ],
+      [
         "indd",
         14
       ],
       [
-        "kehidupan",
-        94
+        "sehari-hari",
+        32
       ],
       [
         "aster",
@@ -117,10 +121,6 @@
       [
         "historikal",
         6
-      ],
-      [
-        "sehari-hari",
-        32
       ],
       [
         "terminasi",
@@ -135,16 +135,16 @@
         5
       ],
       [
-        "kerahputih",
-        3
-      ],
-      [
         "kapitalisme",
         14
       ],
       [
-        "moderen",
-        5
+        "kegiatan",
+        18
+      ],
+      [
+        "kerahputih",
+        3
       ]
     ],
     "phrases": [
@@ -188,24 +188,48 @@
       ],
       [
         4659,
-        0.18
+        0.22
       ],
       [
         3064,
-        0.18
+        0.22
+      ],
+      [
+        4661,
+        0.21
+      ],
+      [
+        3063,
+        0.21
       ],
       [
         2783,
-        0.16
-      ],
-      [
-        3801,
-        0.16
-      ],
-      [
-        2157,
-        0.15
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 61,
+      "negative": 47,
+      "trend": [
+        0.14,
+        0.33,
+        0,
+        0.5,
+        -0.5,
+        -0.11,
+        0.25,
+        -0.09,
+        0.25,
+        -0.2,
+        -0.14,
+        0.43,
+        null,
+        null,
+        null,
+        0.25
+      ],
+      "emotions": []
+    }
   }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1719,
-    "longer_than": 22,
+    "longer_than": 60,
     "top": [
       [
         "negara",
@@ -99,6 +99,14 @@
     ],
     "distinct": [
       [
+        "negara",
+        29
+      ],
+      [
+        "kekuasaan",
+        18
+      ],
+      [
         "kapitalisme",
         12
       ],
@@ -115,36 +123,28 @@
         7
       ],
       [
-        "kekuasaan",
-        18
+        "revolusi",
+        9
       ],
       [
         "ketidaksetaraan",
         4
       ],
       [
-        "negara",
-        29
+        "kelas",
+        9
+      ],
+      [
+        "kaum",
+        9
       ],
       [
         "tiran",
         3
       ],
       [
-        "revolusi",
-        9
-      ],
-      [
         "neoliberal",
         3
-      ],
-      [
-        "kelas",
-        9
-      ],
-      [
-        "anarkis",
-        5
       ]
     ],
     "phrases": [
@@ -179,29 +179,36 @@
     ],
     "similar": [
       [
-        9198,
-        0.18
+        3989,
+        0.23
       ],
       [
-        7316,
-        0.17
+        2298,
+        0.22
       ],
       [
         7204,
-        0.16
+        0.2
       ],
       [
-        1803,
-        0.14
+        6767,
+        0.2
       ],
       [
-        7538,
-        0.13
+        1930,
+        0.2
       ],
       [
-        2587,
-        0.13
+        2778,
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 29,
+      "negative": 23,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3158,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "arsitektur",
@@ -126,15 +126,11 @@
         4
       ],
       [
-        "chirico",
-        3
-      ],
-      [
         "pigalle",
         3
       ],
       [
-        "urbanisme",
+        "chirico",
         3
       ],
       [
@@ -142,15 +138,19 @@
         9
       ],
       [
+        "hasrat",
+        8
+      ],
+      [
+        "urbanisme",
+        3
+      ],
+      [
+        "paris",
+        7
+      ],
+      [
         "perbintangan",
-        3
-      ],
-      [
-        "kastil",
-        3
-      ],
-      [
-        "kosmik",
         3
       ]
     ],
@@ -171,7 +171,7 @@
     "similar": [
       [
         1924,
-        0.18
+        0.17
       ],
       [
         8056,
@@ -182,17 +182,74 @@
         0.13
       ],
       [
+        2539,
+        0.12
+      ],
+      [
         2020,
-        0.11
+        0.12
       ],
       [
         2225,
-        0.11
-      ],
-      [
-        7804,
-        0.11
+        0.12
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 56,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        0.29,
+        0.5,
+        null,
+        -0.56,
+        null,
+        0.25,
+        null,
+        -0.33,
+        -0.25,
+        0.33,
+        0.78,
+        0.33,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          13
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
   }
 }

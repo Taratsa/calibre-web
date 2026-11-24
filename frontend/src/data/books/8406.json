@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 11757,
-    "longer_than": 64,
+    "longer_than": 83,
     "top": [
       [
         "dunia",
@@ -103,48 +103,48 @@
         80
       ],
       [
-        "gatt",
-        54
-      ],
-      [
         "negara-negara",
         140
+      ],
+      [
+        "gatt",
+        54
       ],
       [
         "putaran",
         71
       ],
       [
-        "paten",
-        45
+        "ketiga",
+        152
       ],
       [
         "perdagangan",
         91
       ],
       [
+        "dunia",
+        197
+      ],
+      [
+        "paten",
+        45
+      ],
+      [
         "transnasional",
         38
-      ],
-      [
-        "ketiga",
-        152
-      ],
-      [
-        "perusahaan-perusahaan",
-        45
       ],
       [
         "jasa",
         66
       ],
       [
-        "investasi",
-        47
-      ],
-      [
         "industri",
         77
+      ],
+      [
+        "perusahaan-perusahaan",
+        45
       ]
     ],
     "phrases": [
@@ -184,28 +184,77 @@
     "similar": [
       [
         8407,
-        0.22
+        0.24
       ],
       [
         8613,
-        0.18
+        0.21
       ],
       [
         8226,
-        0.17
-      ],
-      [
-        8469,
-        0.17
+        0.21
       ],
       [
         6739,
-        0.17
+        0.2
+      ],
+      [
+        8469,
+        0.19
       ],
       [
         8614,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.54,
+      "positive": 276,
+      "negative": 82,
+      "trend": [
+        0.33,
+        0.9,
+        0.32,
+        0.28,
+        0.79,
+        0.7,
+        0.89,
+        0.09,
+        0.38,
+        0.83,
+        0.27,
+        0.6,
+        0.22,
+        0.77,
+        0.59,
+        0.76
+      ],
+      "emotions": [
+        [
+          "trust",
+          19
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

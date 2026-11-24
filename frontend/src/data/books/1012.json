@@ -16,7 +16,7 @@
     "DOM",
     "Komisi Untuk Orang Hilang dan Korban Tindak Kekerasan",
     "Kontras",
-    "militer",
+    "Militer",
     "Nangroe Aceh Darussalam",
     "Operasi Militer"
   ],
@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 29854,
-    "longer_than": 85,
+    "longer_than": 93,
     "top": [
       [
         "aceh",
@@ -102,20 +102,20 @@
         639
       ],
       [
-        "gam",
-        136
-      ],
-      [
         "militer",
         290
       ],
       [
-        "operasi",
-        207
+        "gam",
+        136
       ],
       [
         "darurat",
         148
+      ],
+      [
+        "operasi",
+        207
       ],
       [
         "dom",
@@ -126,24 +126,24 @@
         139
       ],
       [
-        "lilawangsa",
-        36
+        "kekerasan",
+        177
       ],
       [
         "tni",
         105
       ],
       [
-        "kekerasan",
-        177
-      ],
-      [
         "sipil",
         128
       ],
       [
-        "kopassus",
-        42
+        "lilawangsa",
+        36
+      ],
+      [
+        "korban",
+        129
       ]
     ],
     "phrases": [
@@ -183,28 +183,85 @@
     "similar": [
       [
         245,
-        0.42
+        0.45
       ],
       [
         7928,
-        0.34
+        0.37
       ],
       [
         7957,
-        0.31
-      ],
-      [
-        8297,
-        0.28
+        0.35
       ],
       [
         6900,
-        0.27
+        0.32
       ],
       [
         6920,
-        0.26
+        0.31
+      ],
+      [
+        1016,
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.42,
+      "positive": 335,
+      "negative": 811,
+      "trend": [
+        -0.29,
+        -0.58,
+        -0.14,
+        -0.16,
+        -0.61,
+        -0.6,
+        -0.67,
+        -0.56,
+        -0.38,
+        0.12,
+        -0.49,
+        -0.39,
+        -0.48,
+        -0.44,
+        -0.6,
+        -0.24
+      ],
+      "emotions": [
+        [
+          "anger",
+          386
+        ],
+        [
+          "trust",
+          177
+        ],
+        [
+          "fear",
+          99
+        ],
+        [
+          "sadness",
+          42
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

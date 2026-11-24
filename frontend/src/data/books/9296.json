@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 2506,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "harga",
@@ -104,12 +104,12 @@
         54
       ],
       [
-        "pdn",
-        10
-      ],
-      [
         "peraturan-peraturan",
         20
+      ],
+      [
+        "pdn",
+        10
       ],
       [
         "kenaikan-kenaikan",
@@ -120,28 +120,28 @@
         20
       ],
       [
+        "barang-barang",
+        21
+      ],
+      [
         "tarif",
         12
+      ],
+      [
+        "ekonomi",
+        31
       ],
       [
         "konseptor-konseptor",
         5
       ],
       [
-        "barang-barang",
-        21
+        "rakyat",
+        27
       ],
       [
         "eksportir",
         7
-      ],
-      [
-        "mprs",
-        9
-      ],
-      [
-        "impor",
-        10
       ]
     ],
     "phrases": [
@@ -181,28 +181,52 @@
     "similar": [
       [
         9297,
-        0.37
+        0.38
       ],
       [
         9306,
-        0.35
+        0.37
       ],
       [
         9298,
-        0.32
+        0.33
       ],
       [
         9292,
-        0.26
+        0.29
       ],
       [
         462,
-        0.26
+        0.28
       ],
       [
         6763,
-        0.24
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 47,
+      "negative": 22,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.67,
+        0.2,
+        0.25,
+        0.33,
+        -0.2,
+        0.2,
+        0.33,
+        0.6,
+        1
+      ],
+      "emotions": []
+    }
   }
 }

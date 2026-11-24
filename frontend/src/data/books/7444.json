@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1840,
-    "longer_than": 23,
+    "longer_than": 61,
     "top": [
       [
         "anarkis",
@@ -106,32 +106,32 @@
     ],
     "distinct": [
       [
-        "cnt",
-        13
-      ],
-      [
         "anarkis",
         30
+      ],
+      [
+        "cnt",
+        13
       ],
       [
         "sindikalisme",
         12
       ],
       [
-        "reformis",
-        13
-      ],
-      [
         "buruh",
         29
       ],
       [
-        "libertarian",
-        11
+        "reformis",
+        13
       ],
       [
         "spanyol",
         14
+      ],
+      [
+        "libertarian",
+        11
       ],
       [
         "anarko-sindikalisme",
@@ -142,16 +142,16 @@
         7
       ],
       [
+        "anarkisme",
+        11
+      ],
+      [
         "sindikat",
         6
       ],
       [
         "anarko-sindikalis",
         6
-      ],
-      [
-        "anarkisme",
-        11
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         7385,
-        0.32
+        0.3
       ],
       [
         2476,
-        0.23
+        0.27
       ],
       [
         8110,
-        0.23
+        0.27
       ],
       [
         2800,
-        0.23
+        0.26
       ],
       [
         7895,
-        0.23
+        0.26
       ],
       [
-        3955,
-        0.22
+        3989,
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 34,
+      "negative": 21,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

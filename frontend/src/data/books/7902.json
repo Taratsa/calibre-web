@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2540,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "organisasi",
@@ -107,6 +107,22 @@
         11
       ],
       [
+        "produksi",
+        17
+      ],
+      [
+        "monarki",
+        7
+      ],
+      [
+        "buruh",
+        15
+      ],
+      [
+        "bangsawan",
+        10
+      ],
+      [
         "pmpri",
         3
       ],
@@ -115,36 +131,20 @@
         3
       ],
       [
-        "monarki",
-        7
-      ],
-      [
         "inisiat",
         3
       ],
       [
-        "bangsawan",
-        10
-      ],
-      [
-        "produksi",
-        17
-      ],
-      [
-        "absolut",
-        7
-      ],
-      [
-        "buruh",
-        15
+        "revolusioner",
+        11
       ],
       [
         "didalam",
         10
       ],
       [
-        "pelatihan-pelatihan",
-        4
+        "budak",
+        9
       ]
     ],
     "phrases": [
@@ -181,6 +181,38 @@
         4
       ]
     ],
-    "similar": []
+    "similar": [
+      [
+        2064,
+        0.17
+      ],
+      [
+        8450,
+        0.17
+      ],
+      [
+        8430,
+        0.17
+      ],
+      [
+        7094,
+        0.16
+      ],
+      [
+        6730,
+        0.16
+      ],
+      [
+        2203,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 55,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

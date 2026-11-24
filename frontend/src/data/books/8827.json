@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5445,
-    "longer_than": 45,
+    "longer_than": 73,
     "top": [
       [
         "buruh",
@@ -111,40 +111,40 @@
         38
       ],
       [
-        "saudi",
-        22
+        "timur",
+        64
       ],
       [
         "pesantren",
         26
       ],
       [
-        "arabia",
-        18
+        "saudi",
+        22
       ],
       [
         "lombok",
         24
       ],
       [
-        "arab",
-        32
+        "arabia",
+        18
       ],
       [
-        "timur",
-        64
+        "arab",
+        32
       ],
       [
         "dialog",
         27
       ],
       [
-        "interregional",
-        6
+        "budaya",
+        36
       ],
       [
-        "hadrami",
-        5
+        "indonesia",
+        58
       ]
     ],
     "phrases": [
@@ -184,28 +184,69 @@
     "similar": [
       [
         8807,
-        0.17
+        0.2
       ],
       [
         8786,
-        0.17
+        0.2
       ],
       [
         8756,
-        0.16
+        0.19
+      ],
+      [
+        8780,
+        0.18
+      ],
+      [
+        9132,
+        0.18
       ],
       [
         8828,
-        0.15
-      ],
-      [
-        67,
-        0.15
-      ],
-      [
-        8220,
-        0.15
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 85,
+      "negative": 35,
+      "trend": [
+        0.87,
+        1,
+        0.29,
+        0.2,
+        1,
+        0,
+        null,
+        0.67,
+        0.4,
+        0.14,
+        -0.25,
+        null,
+        null,
+        0.17,
+        -0.14,
+        0.6
+      ],
+      "emotions": [
+        [
+          "anticipation",
+          15
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
   }
 }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3392,
-    "longer_than": 35,
+    "longer_than": 68,
     "top": [
       [
         "perempuan",
@@ -110,14 +110,6 @@
         37
       ],
       [
-        "domestikasi",
-        8
-      ],
-      [
-        "divisi",
-        12
-      ],
-      [
         "perempuan",
         42
       ],
@@ -126,32 +118,40 @@
         20
       ],
       [
-        "zihlman",
-        4
+        "divisi",
+        12
       ],
       [
         "women",
         13
       ],
       [
-        "leacock",
-        4
+        "peradaban",
+        16
+      ],
+      [
+        "domestikasi",
+        8
       ],
       [
         "cambridge",
         10
       ],
       [
-        "peradaban",
-        16
+        "zihlman",
+        4
       ],
       [
-        "adrienne",
+        "leacock",
         4
       ],
       [
         "peramu",
         5
+      ],
+      [
+        "adrienne",
+        4
       ]
     ],
     "phrases": [
@@ -191,28 +191,35 @@
     "similar": [
       [
         2810,
-        0.19
-      ],
-      [
-        9188,
-        0.17
+        0.22
       ],
       [
         7226,
-        0.16
+        0.19
       ],
       [
         2008,
-        0.16
+        0.18
+      ],
+      [
+        9188,
+        0.15
       ],
       [
         2794,
-        0.12
+        0.15
       ],
       [
         7488,
-        0.11
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.24,
+      "positive": 31,
+      "negative": 19,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

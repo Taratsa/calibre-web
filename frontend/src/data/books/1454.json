@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 10110,
-    "longer_than": 61,
+    "longer_than": 81,
     "top": [
       [
         "maharaja",
@@ -106,10 +106,6 @@
     ],
     "distinct": [
       [
-        "duryodana",
-        55
-      ],
-      [
         "maharaja",
         107
       ],
@@ -118,8 +114,16 @@
         90
       ],
       [
+        "duryodana",
+        55
+      ],
+      [
         "sakula",
         32
+      ],
+      [
+        "mahabharata",
+        42
       ],
       [
         "draupadi",
@@ -134,10 +138,6 @@
         36
       ],
       [
-        "mahabharata",
-        42
-      ],
-      [
         "sadewa",
         34
       ],
@@ -150,8 +150,8 @@
         31
       ],
       [
-        "darsana",
-        21
+        "hamba",
+        61
       ]
     ],
     "phrases": [
@@ -191,28 +191,81 @@
     "similar": [
       [
         1756,
-        0.26
+        0.27
       ],
       [
         1482,
-        0.21
+        0.22
       ],
       [
         1504,
-        0.17
+        0.18
       ],
       [
         1462,
-        0.14
+        0.16
       ],
       [
         1508,
-        0.13
+        0.14
       ],
       [
         1502,
         0.13
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 74,
+      "negative": 52,
+      "trend": [
+        0.76,
+        0.67,
+        0,
+        -0.5,
+        -0.2,
+        0.17,
+        0.17,
+        null,
+        null,
+        0.67,
+        -0.6,
+        -1,
+        0.8,
+        null,
+        0.6,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          28
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
   }
 }

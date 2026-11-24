@@ -57,7 +57,7 @@
   ],
   "text": {
     "words": 2615,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "penulis",
@@ -118,43 +118,43 @@
         3
       ],
       [
-        "sigil",
-        4
-      ],
-      [
-        "fiksi",
-        6
+        "penulis",
+        15
       ],
       [
         "bilang",
         10
       ],
       [
-        "cumbu",
-        4
-      ],
-      [
         "puisi",
         9
-      ],
-      [
-        "baudelaire",
-        3
       ],
       [
         "kawan",
         11
       ],
       [
+        "membaca",
+        14
+      ],
+      [
+        "fiksi",
+        6
+      ],
+      [
+        "sigil",
+        4
+      ],
+      [
+        "cumbu",
+        4
+      ],
+      [
         "memengaruhi",
         5
       ],
       [
-        "penulis",
-        15
-      ],
-      [
-        "bonang",
+        "baudelaire",
         3
       ]
     ],
@@ -183,28 +183,52 @@
     "similar": [
       [
         8051,
-        0.24
+        0.22
       ],
       [
         2685,
-        0.24
+        0.22
       ],
       [
         4737,
-        0.23
+        0.21
       ],
       [
         4679,
-        0.17
+        0.16
       ],
       [
         268,
-        0.17
+        0.16
       ],
       [
-        8044,
-        0.14
+        2534,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 44,
+      "negative": 35,
+      "trend": [
+        null,
+        0,
+        0.33,
+        null,
+        null,
+        -0.75,
+        null,
+        1,
+        null,
+        -0.25,
+        0.4,
+        0.6,
+        null,
+        null,
+        0.6,
+        null
+      ],
+      "emotions": []
+    }
   }
 }

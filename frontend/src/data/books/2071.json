@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3693,
-    "longer_than": 37,
+    "longer_than": 69,
     "top": [
       [
         "orang",
@@ -107,44 +107,44 @@
         11
       ],
       [
-        "otonomus",
-        4
-      ],
-      [
         "otonomi",
         12
       ],
       [
-        "yahoo",
-        8
+        "kebebasan",
+        16
       ],
       [
-        "grup",
-        9
-      ],
-      [
-        "mayoritas",
-        10
-      ],
-      [
-        "komunitas",
-        13
-      ],
-      [
-        "pemilu",
-        7
+        "otonomus",
+        4
       ],
       [
         "dimana",
         17
       ],
       [
-        "representatif",
-        5
+        "grup",
+        9
       ],
       [
-        "kebebasan",
-        16
+        "yahoo",
+        8
+      ],
+      [
+        "komunitas",
+        13
+      ],
+      [
+        "mayoritas",
+        10
+      ],
+      [
+        "orang",
+        29
+      ],
+      [
+        "presiden",
+        11
       ]
     ],
     "phrases": [
@@ -180,19 +180,19 @@
     "similar": [
       [
         7035,
-        0.63
+        0.65
       ],
       [
         2508,
-        0.62
+        0.65
       ],
       [
         7970,
-        0.62
+        0.65
       ],
       [
         2377,
-        0.58
+        0.61
       ],
       [
         7223,
@@ -200,8 +200,57 @@
       ],
       [
         2007,
-        0.2
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 111,
+      "negative": 41,
+      "trend": [
+        -0.08,
+        0.33,
+        0.43,
+        0.33,
+        0.5,
+        0.86,
+        1,
+        null,
+        1,
+        0.33,
+        0.5,
+        -0.23,
+        0.45,
+        0.8,
+        null,
+        0.56
+      ],
+      "emotions": [
+        [
+          "anger",
+          9
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ]
+      ]
+    }
   }
 }

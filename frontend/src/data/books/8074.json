@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 924,
-    "longer_than": 11,
+    "longer_than": 50,
     "top": [
       [
         "kesedihan",
@@ -139,6 +139,10 @@
         3
       ],
       [
+        "sosial",
+        4
+      ],
+      [
         "pribadi",
         3
       ],
@@ -147,40 +151,72 @@
         3
       ],
       [
-        "sosial",
-        4
-      ],
-      [
-        "dunia",
-        4
+        "orang",
+        5
       ]
     ],
     "phrases": [],
     "similar": [
       [
         7167,
-        0.38
+        0.35
       ],
       [
         7365,
-        0.21
+        0.2
+      ],
+      [
+        18200,
+        0.2
       ],
       [
         7448,
-        0.19
+        0.18
       ],
       [
         4744,
         0.18
       ],
       [
-        1772,
-        0.17
-      ],
-      [
-        137,
-        0.14
+        12104,
+        0.16
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.52,
+      "positive": 18,
+      "negative": 57,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          34
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
   }
 }

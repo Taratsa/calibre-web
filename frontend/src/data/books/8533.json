@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 2599,
-    "longer_than": 30,
+    "longer_than": 65,
     "top": [
       [
         "agraria",
@@ -95,19 +95,23 @@
         17
       ],
       [
+        "globalisasi",
+        12
+      ],
+      [
         "reforma",
         9
       ],
       [
-        "globalisasi",
-        12
+        "tani",
+        14
       ],
       [
         "isyu",
         5
       ],
       [
-        "tani",
+        "revolusi",
         14
       ],
       [
@@ -115,28 +119,24 @@
         7
       ],
       [
+        "orde",
+        8
+      ],
+      [
         "neo-liberalisme",
         4
+      ],
+      [
+        "bangsa",
+        14
       ],
       [
         "perkins",
         3
       ],
       [
-        "orde",
+        "jalur",
         8
-      ],
-      [
-        "revolusi",
-        14
-      ],
-      [
-        "susan",
-        4
-      ],
-      [
-        "hakekatnya",
-        5
       ]
     ],
     "phrases": [
@@ -176,28 +176,35 @@
     "similar": [
       [
         8489,
-        0.26
+        0.29
       ],
       [
         8487,
-        0.26
+        0.29
       ],
       [
         8538,
-        0.25
+        0.27
       ],
       [
         8499,
-        0.25
+        0.27
       ],
       [
         8495,
-        0.25
+        0.27
       ],
       [
         8522,
-        0.24
+        0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 47,
+      "negative": 25,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

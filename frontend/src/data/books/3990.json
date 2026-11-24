@@ -12,7 +12,7 @@
   "author_sort": "Agency, United States Information",
   "tags": [
     "Hukum",
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial"
   ],
   "publisher": {
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 13406,
-    "longer_than": 68,
+    "longer_than": 84,
     "top": [
       [
         "demokrasi",
@@ -116,44 +116,44 @@
         80
       ],
       [
-        "pemilihan",
-        58
-      ],
-      [
         "pemerintah",
         120
       ],
       [
-        "hak-hak",
-        52
+        "negara",
+        121
       ],
       [
-        "pemilih",
-        23
+        "pemilihan",
+        58
       ],
       [
         "kebebasan",
         72
       ],
       [
+        "hak-hak",
+        52
+      ],
+      [
         "warga",
         69
+      ],
+      [
+        "politik",
+        81
+      ],
+      [
+        "masyarakat",
+        94
       ],
       [
         "partai",
         46
       ],
       [
-        "mayoritas",
-        36
-      ],
-      [
-        "konstitusi",
-        30
-      ],
-      [
-        "amerika",
-        48
+        "pemilih",
+        23
       ]
     ],
     "phrases": [
@@ -192,29 +192,86 @@
     ],
     "similar": [
       [
-        8606,
-        0.19
-      ],
-      [
-        1978,
-        0.19
-      ],
-      [
-        8616,
-        0.19
+        2106,
+        0.23
       ],
       [
         8500,
-        0.18
+        0.23
       ],
       [
-        2106,
-        0.17
+        8606,
+        0.22
       ],
       [
-        9057,
-        0.16
+        1978,
+        0.22
+      ],
+      [
+        8616,
+        0.21
+      ],
+      [
+        2598,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.43,
+      "positive": 343,
+      "negative": 138,
+      "trend": [
+        0.68,
+        0.65,
+        0.57,
+        0.61,
+        0.33,
+        0.53,
+        0,
+        0.62,
+        0.62,
+        0.15,
+        -0.29,
+        -0.22,
+        0.42,
+        0.15,
+        0.73,
+        0.56
+      ],
+      "emotions": [
+        [
+          "trust",
+          41
+        ],
+        [
+          "anger",
+          30
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

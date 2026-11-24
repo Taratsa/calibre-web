@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 5767,
-    "longer_than": 47,
+    "longer_than": 74,
     "top": [
       [
         "industri",
@@ -107,44 +107,44 @@
         25
       ],
       [
-        "imbas",
-        12
-      ],
-      [
         "konsumen",
         20
       ],
       [
-        "hadirnya",
-        15
+        "imbas",
+        12
       ],
       [
         "produksi",
         29
       ],
       [
-        "rekanan",
-        7
+        "hadirnya",
+        15
       ],
       [
         "pangan",
         16
       ],
       [
+        "rekanan",
+        7
+      ],
+      [
+        "masyarakat",
+        32
+      ],
+      [
+        "manusia",
+        31
+      ],
+      [
         "munculnya",
         14
       ],
       [
-        "maap",
-        4
-      ],
-      [
-        "industrialisasindustri",
-        3
-      ],
-      [
-        "anoreksia",
-        3
+        "uang",
+        21
       ]
     ],
     "phrases": [
@@ -184,28 +184,85 @@
     "similar": [
       [
         3831,
-        0.48
+        0.51
       ],
       [
         2627,
-        0.18
+        0.21
       ],
       [
         2238,
-        0.14
+        0.18
       ],
       [
         8669,
-        0.14
+        0.17
       ],
       [
         7890,
-        0.13
+        0.16
       ],
       [
-        2538,
-        0.12
+        7886,
+        0.15
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 96,
+      "negative": 50,
+      "trend": [
+        0.6,
+        0.67,
+        0,
+        0.2,
+        null,
+        0,
+        0.33,
+        0.6,
+        0.18,
+        0.65,
+        0.08,
+        0.4,
+        0.54,
+        0.6,
+        0.09,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          10
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "fear",
+          6
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

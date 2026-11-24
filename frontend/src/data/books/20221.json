@@ -1,0 +1,52 @@
+{
+  "id": 20221,
+  "title": "NTP: Tranparant Proxy untuk NTP",
+  "slug": "ntp-tranparant-proxy-untuk-ntp-onno-widodo-purbo",
+  "slugBase": "ntp-tranparant-proxy-untuk-ntp-onno-widodo-purbo",
+  "authors": [
+    {
+      "id": 6928,
+      "name": "Onno Widodo Purbo"
+    }
+  ],
+  "author_sort": "Purbo, Onno Widodo",
+  "tags": [],
+  "publisher": {
+    "id": 731,
+    "name": "Taratsa"
+  },
+  "publishers": [
+    {
+      "id": 731,
+      "name": "Taratsa"
+    }
+  ],
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2011-06-16",
+  "timestamp": "2026-11-24 06:30:11.541229",
+  "last_modified": "2026-11-24 06:30:11.541232",
+  "series": null,
+  "identifiers": [
+    {
+      "type": "bookid",
+      "value": "urn:uuid:69e528a6-e183-50be-aae3-ec4a943b3862"
+    }
+  ],
+  "formats": [
+    "epub"
+  ],
+  "cover_url": "/cover_thumb/20221?v=1795476611",
+  "cover_og_url": "/cover/20221/og?v=1795476611",
+  "url": "/book/ntp-tranparant-proxy-untuk-ntp-onno-widodo-purbo/",
+  "rating": null,
+  "comment": "Perintah yang penting iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 123 -j DNAT --to 192.168.1.1:123 Contoh Script #!/bin/sh # squid server IP SQUID_SERVER=\"192.168.1.1\" # Interface connected to Internet INTERNET=\"eth0\" # Interface connected to LAN LAN_IN=\"eth1\" # Squid port SQUID_PORT=\"3128\" # DO NOT MODIFY BELOW # Clean old firewall iptables -F iptables -X iptables -t nat -F iptables -t",
+  "data": [
+    {
+      "format": "epub",
+      "size": 3109,
+      "name": "NTP_ Tranparant Proxy untuk NTP - Onno Widodo Purbo"
+    }
+  ]
+}

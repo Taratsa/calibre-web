@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1313,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "negara",
@@ -111,20 +111,32 @@
         5
       ],
       [
+        "anarkis",
+        10
+      ],
+      [
         "demonstran",
         6
+      ],
+      [
+        "negara",
+        18
+      ],
+      [
+        "kekerasan",
+        11
       ],
       [
         "menggeneralisir",
         3
       ],
       [
-        "anarkis",
-        10
-      ],
-      [
         "perusakan",
         6
+      ],
+      [
+        "polisi",
+        10
       ],
       [
         "tersentral",
@@ -133,18 +145,6 @@
       [
         "stirner",
         4
-      ],
-      [
-        "makasar",
-        4
-      ],
-      [
-        "kekerasan",
-        11
-      ],
-      [
-        "widya",
-        3
       ]
     ],
     "phrases": [
@@ -183,29 +183,36 @@
     ],
     "similar": [
       [
-        2327,
-        0.16
-      ],
-      [
-        7029,
-        0.13
-      ],
-      [
-        2697,
-        0.12
+        7203,
+        0.17
       ],
       [
         7472,
-        0.12
+        0.16
       ],
       [
-        7260,
-        0.11
+        2697,
+        0.16
+      ],
+      [
+        7128,
+        0.14
       ],
       [
         4768,
-        0.11
+        0.14
+      ],
+      [
+        2762,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.27,
+      "positive": 22,
+      "negative": 38,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

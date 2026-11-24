@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 1344,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "narkoba",
@@ -114,12 +114,16 @@
         12
       ],
       [
+        "gerakan",
+        26
+      ],
+      [
         "ketergantungan",
         9
       ],
       [
-        "gerakan",
-        26
+        "politik",
+        14
       ],
       [
         "lsd",
@@ -130,24 +134,20 @@
         10
       ],
       [
-        "kecanduan",
-        3
-      ],
-      [
-        "alkohol",
-        3
-      ],
-      [
-        "politik",
-        14
+        "sosial",
+        12
       ],
       [
         "individu",
         8
       ],
       [
-        "komunitas",
-        6
+        "kecanduan",
+        3
+      ],
+      [
+        "alkohol",
+        3
       ]
     ],
     "phrases": [
@@ -183,7 +183,7 @@
     "similar": [
       [
         2323,
-        0.23
+        0.24
       ],
       [
         2659,
@@ -191,7 +191,7 @@
       ],
       [
         7267,
-        0.15
+        0.18
       ],
       [
         7329,
@@ -202,9 +202,16 @@
         0.15
       ],
       [
-        1985,
-        0.13
+        2488,
+        0.14
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 28,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

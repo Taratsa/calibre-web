@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 3993,
-    "longer_than": 38,
+    "longer_than": 70,
     "top": [
       [
         "intelijen",
@@ -109,12 +109,12 @@
         21
       ],
       [
-        "dkp",
-        13
-      ],
-      [
         "panglima",
         27
+      ],
+      [
+        "dkp",
+        13
       ],
       [
         "operasi",
@@ -178,15 +178,15 @@
       ],
       [
         150,
-        0.37
+        0.38
       ],
       [
         151,
-        0.34
+        0.35
       ],
       [
         181,
-        0.29
+        0.3
       ],
       [
         201,
@@ -196,6 +196,55 @@
         161,
         0.26
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": -0.22,
+      "positive": 39,
+      "negative": 61,
+      "trend": [
+        null,
+        null,
+        null,
+        -0.5,
+        0.12,
+        null,
+        -0.45,
+        -0.75,
+        null,
+        -0.22,
+        null,
+        null,
+        0.33,
+        0.14,
+        null,
+        -1
+      ],
+      "emotions": [
+        [
+          "fear",
+          14
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

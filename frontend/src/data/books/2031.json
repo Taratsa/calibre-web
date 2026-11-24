@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 2478,
-    "longer_than": 29,
+    "longer_than": 65,
     "top": [
       [
         "hubungan",
@@ -111,6 +111,10 @@
         9
       ],
       [
+        "hubungan",
+        32
+      ],
+      [
         "pemutusan",
         11
       ],
@@ -121,10 +125,6 @@
       [
         "isaac",
         6
-      ],
-      [
-        "hubungan",
-        32
       ],
       [
         "notice",
@@ -139,12 +139,12 @@
         5
       ],
       [
-        "eksklusi",
-        3
+        "memutuskan",
+        10
       ],
       [
-        "contradiction",
-        3
+        "proyek",
+        9
       ]
     ],
     "phrases": [
@@ -180,7 +180,7 @@
       ],
       [
         1925,
-        0.26
+        0.23
       ],
       [
         2187,
@@ -188,12 +188,23 @@
       ],
       [
         2195,
-        0.13
+        0.15
       ],
       [
         1829,
         0.13
+      ],
+      [
+        17386,
+        0.11
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 35,
+      "negative": 28,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

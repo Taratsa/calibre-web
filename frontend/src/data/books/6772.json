@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1304,
-    "longer_than": 17,
+    "longer_than": 56,
     "top": [
       [
         "masyarakat",
@@ -105,24 +105,16 @@
         31
       ],
       [
-        "kekerasan",
-        25
-      ],
-      [
         "masyarakat",
         44
       ],
       [
+        "kekerasan",
+        25
+      ],
+      [
         "kepatuhan",
         7
-      ],
-      [
-        "pergerakan",
-        7
-      ],
-      [
-        "etis",
-        4
       ],
       [
         "perubahan",
@@ -133,12 +125,20 @@
         12
       ],
       [
-        "korporasi",
+        "pergerakan",
+        7
+      ],
+      [
+        "etis",
         4
       ],
       [
         "pola",
         7
+      ],
+      [
+        "korporasi",
+        4
       ],
       [
         "sipil",
@@ -177,29 +177,36 @@
     ],
     "similar": [
       [
-        7362,
-        0.2
-      ],
-      [
-        8000,
-        0.16
-      ],
-      [
-        261,
-        0.14
-      ],
-      [
-        7894,
-        0.13
-      ],
-      [
-        1831,
-        0.13
+        6766,
+        0.22
       ],
       [
         7911,
-        0.13
+        0.2
+      ],
+      [
+        17192,
+        0.2
+      ],
+      [
+        7980,
+        0.2
+      ],
+      [
+        8726,
+        0.19
+      ],
+      [
+        6768,
+        0.18
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.67,
+      "positive": 56,
+      "negative": 11,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

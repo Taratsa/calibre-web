@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1579,
-    "longer_than": 20,
+    "longer_than": 59,
     "top": [
       [
         "rekaman",
@@ -109,16 +109,16 @@
     ],
     "distinct": [
       [
+        "rekaman",
+        13
+      ],
+      [
         "gloath",
         5
       ],
       [
         "albini",
         4
-      ],
-      [
-        "rekaman",
-        13
       ],
       [
         "band",
@@ -149,18 +149,26 @@
         3
       ],
       [
-        "royalti",
-        3
-      ],
-      [
         "consciousness",
         4
+      ],
+      [
+        "royalti",
+        3
       ]
     ],
     "phrases": [],
     "similar": [
       [
+        11247,
+        0.2
+      ],
+      [
         9197,
+        0.14
+      ],
+      [
+        12252,
         0.14
       ],
       [
@@ -173,16 +181,9 @@
       ],
       [
         9213,
-        0.12
-      ],
-      [
-        2641,
-        0.12
-      ],
-      [
-        72,
-        0.12
+        0.13
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

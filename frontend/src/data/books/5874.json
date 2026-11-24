@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2264,
-    "longer_than": 27,
+    "longer_than": 64,
     "top": [
       [
         "buruh",
@@ -108,12 +108,16 @@
         26
       ],
       [
+        "aksi",
+        40
+      ],
+      [
         "perburuhan",
         17
       ],
       [
-        "aksi",
-        40
+        "kerja",
+        38
       ],
       [
         "informalisasi",
@@ -124,28 +128,24 @@
         12
       ],
       [
+        "pengusaha",
+        14
+      ],
+      [
         "lips",
         7
       ],
       [
-        "pengusaha",
-        14
+        "serikat",
+        16
       ],
       [
         "atp",
         4
       ],
       [
-        "ter-phk",
-        4
-      ],
-      [
-        "kerja",
-        38
-      ],
-      [
-        "penganggur",
-        6
+        "sektor",
+        12
       ]
     ],
     "phrases": [
@@ -185,28 +185,35 @@
     "similar": [
       [
         5872,
-        0.46
+        0.47
       ],
       [
         5873,
-        0.38
+        0.4
       ],
       [
         5904,
-        0.33
+        0.36
       ],
       [
         5871,
-        0.33
+        0.35
       ],
       [
         5870,
-        0.33
+        0.35
       ],
       [
         6785,
-        0.29
+        0.31
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 30,
+      "negative": 20,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

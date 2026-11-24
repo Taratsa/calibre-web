@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 3221,
-    "longer_than": 34,
+    "longer_than": 68,
     "top": [
       [
         "masyarakat",
@@ -117,36 +117,36 @@
         5
       ],
       [
-        "armand",
-        4
-      ],
-      [
         "anarki",
         8
       ],
       [
-        "arcola",
-        3
-      ],
-      [
-        "moralitas",
-        7
-      ],
-      [
-        "contemplative",
-        3
-      ],
-      [
-        "kebebasanku",
-        3
+        "armand",
+        4
       ],
       [
         "kebebasan",
         14
       ],
       [
-        "terkendali",
-        5
+        "moralitas",
+        7
+      ],
+      [
+        "arcola",
+        3
+      ],
+      [
+        "masyarakat",
+        18
+      ],
+      [
+        "manusia",
+        16
+      ],
+      [
+        "contemplative",
+        3
       ]
     ],
     "phrases": [
@@ -166,11 +166,11 @@
     "similar": [
       [
         8052,
-        0.37
+        0.38
       ],
       [
         1955,
-        0.36
+        0.37
       ],
       [
         2674,
@@ -178,16 +178,73 @@
       ],
       [
         8120,
-        0.28
-      ],
-      [
-        8117,
         0.27
       ],
       [
-        8092,
-        0.21
+        8117,
+        0.25
+      ],
+      [
+        3699,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 90,
+      "negative": 72,
+      "trend": [
+        0.14,
+        -0.07,
+        null,
+        -0.43,
+        0.4,
+        0.67,
+        0.4,
+        -0.33,
+        0.08,
+        0,
+        0,
+        0.54,
+        -0.11,
+        null,
+        -0.17,
+        -0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
   }
 }

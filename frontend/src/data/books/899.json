@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 33031,
-    "longer_than": 87,
+    "longer_than": 94,
     "top": [
       [
         "orang",
@@ -97,12 +97,16 @@
         320
       ],
       [
+        "pembelajaran",
+        192
+      ],
+      [
         "plb",
         79
       ],
       [
-        "pembelajaran",
-        192
+        "keterampilan",
+        155
       ],
       [
         "autism",
@@ -113,28 +117,24 @@
         99
       ],
       [
-        "keterampilan",
-        155
+        "anak",
+        331
+      ],
+      [
+        "sosial",
+        286
       ],
       [
         "komunikan",
         53
       ],
       [
-        "kesantunan",
-        39
-      ],
-      [
-        "komunikator",
-        36
+        "orang",
+        354
       ],
       [
         "tuturan",
         50
-      ],
-      [
-        "hfa",
-        21
       ]
     ],
     "phrases": [
@@ -174,28 +174,85 @@
     "similar": [
       [
         891,
-        0.39
+        0.42
       ],
       [
         895,
-        0.37
+        0.4
       ],
       [
         876,
-        0.37
+        0.39
       ],
       [
         892,
-        0.36
+        0.39
       ],
       [
         897,
-        0.34
+        0.38
       ],
       [
         902,
-        0.33
+        0.37
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.61,
+      "positive": 894,
+      "negative": 220,
+      "trend": [
+        0.82,
+        0.79,
+        0.36,
+        0.57,
+        0.07,
+        0.74,
+        0.88,
+        0.46,
+        0.81,
+        0.44,
+        0.66,
+        0.76,
+        0.43,
+        0.8,
+        1,
+        0.59
+      ],
+      "emotions": [
+        [
+          "trust",
+          160
+        ],
+        [
+          "joy",
+          48
+        ],
+        [
+          "anger",
+          46
+        ],
+        [
+          "fear",
+          33
+        ],
+        [
+          "anticipation",
+          32
+        ],
+        [
+          "sadness",
+          17
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
   }
 }

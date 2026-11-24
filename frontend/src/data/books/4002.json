@@ -11,7 +11,7 @@
   ],
   "author_sort": "Tedjasukmana, Iskandar",
   "tags": [
-    "Ilmu Politik",
+    "Ilmu politik",
     "Ilmu Sosial",
     "Sejarah"
   ],
@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 39160,
-    "longer_than": 90,
+    "longer_than": 95,
     "top": [
       [
         "buruh",
@@ -108,20 +108,16 @@
     ],
     "distinct": [
       [
-        "serikat-serikat",
-        405
-      ],
-      [
         "buruh",
         1116
       ],
       [
-        "sobsi",
-        237
+        "serikat-serikat",
+        405
       ],
       [
-        "kbsi",
-        88
+        "sobsi",
+        237
       ],
       [
         "serikat",
@@ -132,28 +128,32 @@
         316
       ],
       [
+        "kbsi",
+        88
+      ],
+      [
         "federasi",
         150
       ],
       [
-        "hissbi",
-        47
-      ],
-      [
-        "sbii",
-        54
+        "kaum",
+        299
       ],
       [
         "komunis",
         179
       ],
       [
+        "sosialis",
+        159
+      ],
+      [
         "perburuhan",
         107
       ],
       [
-        "sosialis",
-        159
+        "politik",
+        270
       ]
     ],
     "phrases": [
@@ -193,28 +193,81 @@
     "similar": [
       [
         7948,
-        0.32
+        0.34
       ],
       [
         5882,
-        0.22
+        0.27
       ],
       [
         5883,
-        0.2
-      ],
-      [
-        3116,
-        0.2
-      ],
-      [
-        687,
-        0.2
+        0.26
       ],
       [
         7887,
-        0.18
+        0.23
+      ],
+      [
+        9280,
+        0.23
+      ],
+      [
+        2481,
+        0.22
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 464,
+      "negative": 208,
+      "trend": [
+        0.62,
+        -0.11,
+        0.12,
+        0.2,
+        0.53,
+        0.67,
+        0.45,
+        0.19,
+        0.65,
+        0.59,
+        0.55,
+        0.37,
+        0.36,
+        0.11,
+        0.26,
+        0.53
+      ],
+      "emotions": [
+        [
+          "anger",
+          47
+        ],
+        [
+          "trust",
+          41
+        ],
+        [
+          "joy",
+          25
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "surprise",
+          4
+        ]
+      ]
+    }
   }
 }

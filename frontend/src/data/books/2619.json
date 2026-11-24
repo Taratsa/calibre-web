@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 847,
-    "longer_than": 10,
+    "longer_than": 49,
     "top": [
       [
         "revolusi",
@@ -99,27 +99,23 @@
     ],
     "distinct": [
       [
-        "mentalitas",
-        4
-      ],
-      [
         "revolusi",
         8
+      ],
+      [
+        "mentalitas",
+        4
       ],
       [
         "revolusioner",
         5
       ],
       [
-        "koperasi",
-        3
-      ],
-      [
         "realitas",
         4
       ],
       [
-        "solidaritas",
+        "koperasi",
         3
       ],
       [
@@ -127,12 +123,16 @@
         4
       ],
       [
-        "menawarkan",
+        "sejarah",
+        5
+      ],
+      [
+        "solidaritas",
         3
       ],
       [
-        "sejarah",
-        5
+        "menawarkan",
+        3
       ],
       [
         "teori",
@@ -150,29 +150,30 @@
     "phrases": [],
     "similar": [
       [
-        2805,
+        2488,
         0.26
       ],
       [
-        2488,
-        0.23
+        2805,
+        0.25
       ],
       [
         2091,
         0.22
       ],
       [
-        1959,
-        0.21
+        2156,
+        0.22
       ],
       [
         3708,
-        0.18
+        0.21
       ],
       [
-        2156,
-        0.18
+        1959,
+        0.21
       ]
-    ]
+    ],
+    "sentiment": null
   }
 }

@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 2875,
-    "longer_than": 32,
+    "longer_than": 66,
     "top": [
       [
         "ekologi",
@@ -108,12 +108,12 @@
     ],
     "distinct": [
       [
-        "devall",
-        13
-      ],
-      [
         "ekologi",
         34
+      ],
+      [
+        "devall",
+        13
       ],
       [
         "sessions",
@@ -124,6 +124,14 @@
         11
       ],
       [
+        "sosial",
+        30
+      ],
+      [
+        "alam",
+        25
+      ],
+      [
         "evolusi",
         10
       ],
@@ -132,28 +140,20 @@
         7
       ],
       [
-        "foreman",
-        4
+        "masyarakat",
+        23
       ],
       [
         "spesies",
         7
       ],
       [
-        "biosfer",
+        "manusia",
+        23
+      ],
+      [
+        "foreman",
         4
-      ],
-      [
-        "sosial",
-        30
-      ],
-      [
-        "ekologis",
-        6
-      ],
-      [
-        "alam",
-        25
       ]
     ],
     "phrases": [
@@ -193,28 +193,52 @@
     "similar": [
       [
         8105,
-        0.37
+        0.36
       ],
       [
         1820,
-        0.31
+        0.34
       ],
       [
         8107,
-        0.26
+        0.28
       ],
       [
         2631,
-        0.18
+        0.21
       ],
       [
         7310,
-        0.17
+        0.21
       ],
       [
         2445,
-        0.17
+        0.2
       ]
-    ]
+    ],
+    "sentiment": {
+      "score": 0.07,
+      "positive": 47,
+      "negative": 41,
+      "trend": [
+        null,
+        0,
+        0.75,
+        -0.25,
+        null,
+        0,
+        -0.33,
+        null,
+        -0.6,
+        0,
+        null,
+        -0.14,
+        null,
+        0.2,
+        0.67,
+        null
+      ],
+      "emotions": []
+    }
   }
 }
