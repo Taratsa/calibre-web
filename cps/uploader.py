@@ -226,12 +226,16 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension, no_cove
         tags = ""
 
     if doc_info:
+        # pypdf returns a NullObject (truthy, not a str) for a literal `/Title null`; only real strings count.
+        info_title = doc_info.title if isinstance(doc_info.title, str) else ""
+        info_author = doc_info.author if isinstance(doc_info.author, str) else ""
+        info_subject = doc_info.subject if isinstance(doc_info.subject, str) else ""
         if author == "":
-            author = " & ".join(split_authors([doc_info.author])) if doc_info.author else "Unknown"
+            author = " & ".join(split_authors([info_author])) if info_author else "Unknown"
         if title == "":
-            title = doc_info.title or original_file_name
+            title = info_title or original_file_name
         if subject == "":
-            subject = doc_info.subject or ""
+            subject = info_subject
         if tags == "" and "/Keywords" in doc_info:
             keywords = doc_info["/Keywords"]
             if not isinstance(keywords, NullObject):  # pyright: ignore[reportPossiblyUnboundVariable]
