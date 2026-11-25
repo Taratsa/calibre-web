@@ -8,8 +8,8 @@ FROM python:${PYTHON_VERSION}-slim-bookworm AS builder
 ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
-ARG KEPUBIFY_RELEASE=v4.0.4
-ARG CALIBRE_RELEASE=9.17.0
+ARG KEPUBIFY_RELEASE=v5.0.0
+ARG CALIBRE_RELEASE=9.19.0
 LABEL maintainer="notdriz"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -52,8 +52,8 @@ FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
 ARG BUILD_DATE
 ARG VERSION
 ARG CALIBREWEB_RELEASE
-ARG KEPUBIFY_RELEASE=v4.0.4
-ARG CALIBRE_RELEASE=9.17.0
+ARG KEPUBIFY_RELEASE=v5.0.0
+ARG CALIBRE_RELEASE=9.19.0
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="notdriz"
 
