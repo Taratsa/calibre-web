@@ -1,6 +1,7 @@
 import { getAllAuthors, getAllBooks, getAllCategories, getAllLanguages, getAllPublishers, getAllSeries, getShelves } from '~/data';
 import { clippings, clippingPath } from '~/data/clippings';
 import ocrReady from '~/data/ocr-ready.json';
+import fileUrls from '~/data/file-urls.json';
 import { videos } from '~/data/videos';
 import { authorPath } from './author-url';
 import { bookPath } from './book-url';
@@ -106,7 +107,12 @@ export function getSitemapEntries(): SitemapEntry[] {
   for (const shelf of getShelves()) addEntry(entries, `/shelf/${shelf.id}`);
   for (const clipping of clippings) addEntry(entries, clippingPath(clipping.id), /^\d{4}-\d{2}-\d{2}$/.test(clipping.date) ? clipping.date : undefined);
   for (const video of videos) addEntry(entries, `/video/${encodeURIComponent(video.id)}`);
-
+  // Canonical PDF/EPUB URLs, the target of the Link: rel="canonical" header on /files and /show.
+  // Added directly: addEntry would append a trailing slash these URLs do not have.
+  for (const file of fileUrls as { url: string; lastmod?: string }[]) {
+    const loc = `${SITE_URL}${file.url}`;
+    entries.set(loc, { loc, lastmod: file.lastmod });
+  }
   return [...entries.values()].sort((a, b) => a.loc.localeCompare(b.loc));
 }
 

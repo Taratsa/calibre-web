@@ -22,6 +22,7 @@
  * Read-only — never writes to the calibre DB. PRAGMA query_only=1 enforces it.
  */
 
+import { createHmac } from 'node:crypto';
 import Database from 'better-sqlite3';
 import { mkdir, open, readdir, readFile, writeFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
@@ -527,13 +528,48 @@ async function main() {
         `).all().filter(row => validBookIds.has(row.book_id));
         await writeJson('popular.json', popularRows);
         console.log(`[seed] wrote ${popularRows.length} popular books`);
+
+        // Canonical file URLs for the sitemap; the sitemap and the `Link: rel="canonical"` header
+        // cps/helper.py emits must agree. Mirrors `_file_version`/`_file_signature` there:
+        // version = last_modified epoch (UTC; the app container runs TZ=UTC) + "-" + size,
+        // sig = first 32 hex of HMAC-SHA256(app secret key, "<id>:<format>:<version>").
+        const appSecret = appDb.prepare('SELECT flask_session_key AS key FROM flask_settings').get()?.key;
+        const fileCanonicals = [];
+        if (appSecret) {
+          const fileRows = db.prepare(`
+            SELECT d.book AS id, lower(d.format) AS format, d.uncompressed_size AS size, b.last_modified AS modified
+            FROM data d
+            JOIN books b ON b.id = d.book
+            WHERE lower(d.format) IN ('pdf', 'epub')
+          `).all();
+          for (const row of fileRows) {
+            if (!validBookIds.has(row.id)) continue;
+            const iso = row.modified.replace(' ', 'T').replace(/\.(\d{3})\d*$/, '.$1') + 'Z';
+            const epoch = Math.floor(Date.parse(iso) / 1000);
+            if (!Number.isFinite(epoch)) continue;
+            const version = `${epoch}-${row.size}`;
+            const sig = createHmac('sha256', appSecret)
+              .update(`${row.id}:${row.format}:${version}`)
+              .digest('hex')
+              .slice(0, 32);
+            fileCanonicals.push({
+              url: `/files/${row.id}/${row.format}/${version}/${sig}`,
+              lastmod: row.modified.slice(0, 10),
+            });
+          }
+        } else {
+          console.warn('[seed] app.db has no flask_settings key; file-urls.json will be empty');
+        }
+        await writeJson('file-urls.json', fileCanonicals);
+        console.log(`[seed] wrote ${fileCanonicals.length} canonical file URLs`);
       } finally {
         appDb.close();
       }
     } else {
       await writeJson('shelves.json', []);
       await writeJson('popular.json', []);
-      console.log('[seed] no app.db — wrote empty shelves and popular.json');
+      await writeJson('file-urls.json', []);
+      console.log('[seed] no app.db — wrote empty shelves, popular.json and file-urls.json');
     }
   } finally {
     db.close();
