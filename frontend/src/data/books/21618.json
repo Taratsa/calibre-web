@@ -48,5 +48,193 @@
       "size": 9561883,
       "name": "Tenaga Atom dan Kedokteran - Sjahriar Rasad"
     }
-  ]
+  ],
+  "text": {
+    "words": 4375,
+    "longer_than": 68,
+    "top": [
+      [
+        "atom",
+        63
+      ],
+      [
+        "sinar",
+        47
+      ],
+      [
+        "oléh",
+        30
+      ],
+      [
+        "penjakit",
+        28
+      ],
+      [
+        "pengobatan",
+        25
+      ],
+      [
+        "tenaga",
+        24
+      ],
+      [
+        "alat",
+        22
+      ],
+      [
+        "röntgen",
+        20
+      ],
+      [
+        "djuga",
+        19
+      ],
+      [
+        "dinamakan",
+        18
+      ],
+      [
+        "ilmu",
+        18
+      ],
+      [
+        "radio-aktif",
+        18
+      ]
+    ],
+    "distinct": [
+      [
+        "atom",
+        63
+      ],
+      [
+        "sél",
+        18
+      ],
+      [
+        "oléh",
+        30
+      ],
+      [
+        "röntgen",
+        20
+      ],
+      [
+        "radio-aktif",
+        18
+      ],
+      [
+        "penjinaran",
+        17
+      ],
+      [
+        "sinar-x",
+        17
+      ],
+      [
+        "sinar",
+        47
+      ],
+      [
+        "penjakit",
+        28
+      ],
+      [
+        "pengobatan",
+        25
+      ],
+      [
+        "potrét",
+        8
+      ],
+      [
+        "proton",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "sinar radio-aktif",
+        9
+      ],
+      [
+        "proton dan éléktron",
+        6
+      ],
+      [
+        "pengobatan sinar-x",
+        8
+      ],
+      [
+        "tumor ganas",
+        7
+      ],
+      [
+        "bom atom",
+        7
+      ],
+      [
+        "tenaga atom",
+        6
+      ],
+      [
+        "sebelah menjebelah",
+        6
+      ],
+      [
+        "menjebelah maka terdapatlah",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        15223,
+        0.17
+      ],
+      [
+        12740,
+        0.17
+      ],
+      [
+        12217,
+        0.16
+      ],
+      [
+        1084,
+        0.15
+      ],
+      [
+        6631,
+        0.15
+      ],
+      [
+        20971,
+        0.15
+      ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 36,
+      "negative": 36,
+      "trend": [
+        null,
+        null,
+        0.5,
+        null,
+        0.2,
+        0.6,
+        null,
+        null,
+        null,
+        0.6,
+        -0.75,
+        null,
+        -0.43,
+        null,
+        0.14,
+        0.67
+      ],
+      "emotions": []
+    }
+  }
 }

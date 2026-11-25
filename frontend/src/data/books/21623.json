@@ -44,5 +44,226 @@
       "size": 24600806,
       "name": "Si Rawan dan Tanah Airnya - Siti Rukiah Kertapati"
     }
-  ]
+  ],
+  "text": {
+    "words": 22550,
+    "longer_than": 89,
+    "top": [
+      [
+        "rawun",
+        179
+      ],
+      [
+        "runtjing",
+        172
+      ],
+      [
+        "sadja",
+        115
+      ],
+      [
+        "engkau",
+        110
+      ],
+      [
+        "anak",
+        84
+      ],
+      [
+        "djuga",
+        78
+      ],
+      [
+        "katanja",
+        63
+      ],
+      [
+        "rembing",
+        63
+      ],
+      [
+        "tikus",
+        62
+      ],
+      [
+        "mendjadi",
+        61
+      ],
+      [
+        "lebah",
+        58
+      ],
+      [
+        "anak²",
+        57
+      ]
+    ],
+    "distinct": [
+      [
+        "rawun",
+        179
+      ],
+      [
+        "runtjing",
+        172
+      ],
+      [
+        "rembing",
+        63
+      ],
+      [
+        "lantjip",
+        54
+      ],
+      [
+        "sadja",
+        115
+      ],
+      [
+        "buaja",
+        52
+      ],
+      [
+        "engkau",
+        110
+      ],
+      [
+        "anak²",
+        57
+      ],
+      [
+        "tahilalat",
+        31
+      ],
+      [
+        "djuga",
+        78
+      ],
+      [
+        "lebah",
+        58
+      ],
+      [
+        "katanja",
+        63
+      ]
+    ],
+    "phrases": [
+      [
+        "mbok luis",
+        21
+      ],
+      [
+        "tukang sepatu",
+        15
+      ],
+      [
+        "lebah adjaib",
+        15
+      ],
+      [
+        "buah labu",
+        14
+      ],
+      [
+        "mendjadi anak",
+        13
+      ],
+      [
+        "anak kambing",
+        11
+      ],
+      [
+        "tanja pak runtjing",
+        7
+      ],
+      [
+        "sekantung uang perak",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        7802,
+        0.33
+      ],
+      [
+        1041,
+        0.32
+      ],
+      [
+        1446,
+        0.31
+      ],
+      [
+        6708,
+        0.28
+      ],
+      [
+        7684,
+        0.27
+      ],
+      [
+        9325,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 396,
+      "negative": 205,
+      "trend": [
+        0.69,
+        0.14,
+        0.07,
+        0.53,
+        0.62,
+        0.58,
+        0.54,
+        0.06,
+        0.03,
+        -0.08,
+        0.33,
+        -0.16,
+        0.47,
+        0,
+        0.35,
+        0.63
+      ],
+      "emotions": [
+        [
+          "joy",
+          75
+        ],
+        [
+          "fear",
+          32
+        ],
+        [
+          "sadness",
+          28
+        ],
+        [
+          "anger",
+          20
+        ],
+        [
+          "trust",
+          13
+        ],
+        [
+          "surprise",
+          13
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
+  }
 }

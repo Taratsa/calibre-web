@@ -44,5 +44,226 @@
       "size": 6360947,
       "name": "Satu-satunja djalan jang benar bagi umat m - Palmiro Togliatti"
     }
-  ]
+  ],
+  "text": {
+    "words": 6229,
+    "longer_than": 73,
+    "top": [
+      [
+        "djalan",
+        50
+      ],
+      [
+        "kaum",
+        47
+      ],
+      [
+        "orang",
+        40
+      ],
+      [
+        "masjarakat",
+        37
+      ],
+      [
+        "demokrasi",
+        35
+      ],
+      [
+        "soviet",
+        34
+      ],
+      [
+        "ekonomi",
+        30
+      ],
+      [
+        "kekuasaan",
+        27
+      ],
+      [
+        "manusia",
+        26
+      ],
+      [
+        "revolusi",
+        26
+      ],
+      [
+        "uni",
+        24
+      ],
+      [
+        "mendjadi",
+        22
+      ]
+    ],
+    "distinct": [
+      [
+        "djalan",
+        50
+      ],
+      [
+        "masjarakat",
+        37
+      ],
+      [
+        "soviet",
+        34
+      ],
+      [
+        "klas²",
+        17
+      ],
+      [
+        "umatmanusia",
+        16
+      ],
+      [
+        "kebebasan²",
+        13
+      ],
+      [
+        "bangsa²",
+        15
+      ],
+      [
+        "demokrasi",
+        35
+      ],
+      [
+        "kaum",
+        47
+      ],
+      [
+        "klas",
+        20
+      ],
+      [
+        "setjara",
+        21
+      ],
+      [
+        "uni",
+        24
+      ]
+    ],
+    "phrases": [
+      [
+        "soviet uni",
+        24
+      ],
+      [
+        "revolusi oktober",
+        12
+      ],
+      [
+        "klas² jang berkuasa",
+        6
+      ],
+      [
+        "klas buruh",
+        9
+      ],
+      [
+        "kaum buruh",
+        9
+      ],
+      [
+        "kaum pekerdja",
+        8
+      ],
+      [
+        "dasar ekonomi masjarakat",
+        4
+      ],
+      [
+        "palmiro togliatti",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        13998,
+        0.33
+      ],
+      [
+        15427,
+        0.32
+      ],
+      [
+        4859,
+        0.31
+      ],
+      [
+        484,
+        0.31
+      ],
+      [
+        4817,
+        0.31
+      ],
+      [
+        9329,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 136,
+      "negative": 76,
+      "trend": [
+        0,
+        -0.43,
+        0.23,
+        0.2,
+        0,
+        0.88,
+        0.2,
+        null,
+        0.33,
+        0.38,
+        0.12,
+        0.5,
+        -0.09,
+        0.38,
+        0.57,
+        0.53
+      ],
+      "emotions": [
+        [
+          "anger",
+          31
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

@@ -44,5 +44,214 @@
       "size": 6761005,
       "name": "Dari Bumi Merah turbo - Bandaharo Harahap"
     }
-  ]
+  ],
+  "text": {
+    "words": 5461,
+    "longer_than": 71,
+    "top": [
+      [
+        "kau",
+        46
+      ],
+      [
+        "tanah",
+        28
+      ],
+      [
+        "mati",
+        26
+      ],
+      [
+        "tiada",
+        26
+      ],
+      [
+        "sungai",
+        25
+      ],
+      [
+        "rakjat",
+        24
+      ],
+      [
+        "hati",
+        22
+      ],
+      [
+        "kelahiran",
+        20
+      ],
+      [
+        "merah",
+        19
+      ],
+      [
+        "indonesia",
+        18
+      ],
+      [
+        "mendjadi",
+        17
+      ],
+      [
+        "kehidupan",
+        16
+      ]
+    ],
+    "distinct": [
+      [
+        "kau",
+        46
+      ],
+      [
+        "njanjikanlah",
+        11
+      ],
+      [
+        "rakjat",
+        24
+      ],
+      [
+        "sandjak",
+        9
+      ],
+      [
+        "sungai",
+        25
+      ],
+      [
+        "tiada",
+        26
+      ],
+      [
+        "kanton",
+        10
+      ],
+      [
+        "kelahiran",
+        20
+      ],
+      [
+        "mendjadi",
+        17
+      ],
+      [
+        "dibumi",
+        10
+      ],
+      [
+        "mendjulang",
+        8
+      ],
+      [
+        "bernjanji",
+        8
+      ]
+    ],
+    "phrases": [
+      [
+        "kau mati",
+        8
+      ],
+      [
+        "penggarap tanah",
+        6
+      ],
+      [
+        "njanjikanlah dia njanjikanlah",
+        4
+      ],
+      [
+        "sungai mutiara",
+        5
+      ],
+      [
+        "kau berhak",
+        5
+      ],
+      [
+        "dimana sadja",
+        5
+      ],
+      [
+        "dibumi merah",
+        5
+      ],
+      [
+        "daerah seribu pulau",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        1288,
+        0.26
+      ],
+      [
+        4886,
+        0.21
+      ],
+      [
+        6724,
+        0.2
+      ],
+      [
+        21613,
+        0.2
+      ],
+      [
+        7726,
+        0.18
+      ],
+      [
+        1334,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 106,
+      "negative": 86,
+      "trend": [
+        0.67,
+        0,
+        0.5,
+        0.4,
+        0.56,
+        -0.56,
+        0.67,
+        0.67,
+        -0.17,
+        0.1,
+        0.08,
+        -0.68,
+        0.11,
+        -0.14,
+        0.62,
+        -0.08
+      ],
+      "emotions": [
+        [
+          "sadness",
+          58
+        ],
+        [
+          "joy",
+          27
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
+  }
 }

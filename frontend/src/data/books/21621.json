@@ -60,5 +60,226 @@
       "size": 38912659,
       "name": "Wartawan Wanita Berkisah - S.K Trimurti"
     }
-  ]
+  ],
+  "text": {
+    "words": 35517,
+    "longer_than": 94,
+    "top": [
+      [
+        "orang",
+        159
+      ],
+      [
+        "wartawan",
+        159
+      ],
+      [
+        "wanita",
+        133
+      ],
+      [
+        "indonesia",
+        93
+      ],
+      [
+        "rumah",
+        84
+      ],
+      [
+        "jepang",
+        79
+      ],
+      [
+        "majalah",
+        56
+      ],
+      [
+        "masuk",
+        55
+      ],
+      [
+        "dunia",
+        54
+      ],
+      [
+        "jalan",
+        53
+      ],
+      [
+        "pekerjaan",
+        53
+      ],
+      [
+        "hidup",
+        51
+      ]
+    ],
+    "distinct": [
+      [
+        "wartawan",
+        159
+      ],
+      [
+        "wanita",
+        133
+      ],
+      [
+        "kluyur",
+        23
+      ],
+      [
+        "jepang",
+        79
+      ],
+      [
+        "suratkabar",
+        40
+      ],
+      [
+        "jurnalistik",
+        38
+      ],
+      [
+        "orang",
+        159
+      ],
+      [
+        "majalah",
+        56
+      ],
+      [
+        "leopold",
+        23
+      ],
+      [
+        "mengetik",
+        29
+      ],
+      [
+        "partindo",
+        23
+      ],
+      [
+        "pria",
+        48
+      ]
+    ],
+    "phrases": [
+      [
+        "wartawan wanita",
+        21
+      ],
+      [
+        "mas kluyur",
+        21
+      ],
+      [
+        "surat kabar",
+        15
+      ],
+      [
+        "kaum pria",
+        15
+      ],
+      [
+        "pindah ke bandung",
+        9
+      ],
+      [
+        "sinar selatan",
+        13
+      ],
+      [
+        "pemerintah jajahan",
+        13
+      ],
+      [
+        "dunia jurnalistik",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        5978,
+        0.21
+      ],
+      [
+        7943,
+        0.21
+      ],
+      [
+        5912,
+        0.2
+      ],
+      [
+        7946,
+        0.19
+      ],
+      [
+        3684,
+        0.19
+      ],
+      [
+        7686,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 527,
+      "negative": 300,
+      "trend": [
+        -0.11,
+        0.24,
+        0.17,
+        -0.11,
+        -0.1,
+        0.52,
+        0.1,
+        0.19,
+        0.62,
+        0.36,
+        0.42,
+        0.3,
+        0.46,
+        0.32,
+        0.19,
+        0.35
+      ],
+      "emotions": [
+        [
+          "joy",
+          78
+        ],
+        [
+          "trust",
+          45
+        ],
+        [
+          "sadness",
+          43
+        ],
+        [
+          "anger",
+          37
+        ],
+        [
+          "fear",
+          35
+        ],
+        [
+          "anticipation",
+          20
+        ],
+        [
+          "surprise",
+          17
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

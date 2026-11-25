@@ -44,5 +44,226 @@
       "size": 12345822,
       "name": "Sekumpulan Fabel Junani Kuno - Siti Rukiah Kertapati"
     }
-  ]
+  ],
+  "text": {
+    "words": 12379,
+    "longer_than": 82,
+    "top": [
+      [
+        "seekor",
+        81
+      ],
+      [
+        "mendjadi",
+        63
+      ],
+      [
+        "burung",
+        62
+      ],
+      [
+        "orang",
+        60
+      ],
+      [
+        "keledai",
+        59
+      ],
+      [
+        "sadja",
+        55
+      ],
+      [
+        "anak",
+        54
+      ],
+      [
+        "rubah",
+        51
+      ],
+      [
+        "djuga",
+        39
+      ],
+      [
+        "andjing",
+        38
+      ],
+      [
+        "tua",
+        36
+      ],
+      [
+        "serigala",
+        35
+      ]
+    ],
+    "distinct": [
+      [
+        "keledai",
+        59
+      ],
+      [
+        "rubah",
+        51
+      ],
+      [
+        "seekor",
+        81
+      ],
+      [
+        "mendjadi",
+        63
+      ],
+      [
+        "andjing",
+        38
+      ],
+      [
+        "sadja",
+        55
+      ],
+      [
+        "serigala",
+        35
+      ],
+      [
+        "burung",
+        62
+      ],
+      [
+        "djuga",
+        39
+      ],
+      [
+        "penju",
+        16
+      ],
+      [
+        "singa",
+        31
+      ],
+      [
+        "kaju",
+        25
+      ]
+    ],
+    "phrases": [
+      [
+        "tukang kaju",
+        16
+      ],
+      [
+        "burung elang",
+        15
+      ],
+      [
+        "perempuan tua",
+        11
+      ],
+      [
+        "orang tua",
+        10
+      ],
+      [
+        "burung dara",
+        10
+      ],
+      [
+        "seekor rubah",
+        9
+      ],
+      [
+        "seekor burung",
+        9
+      ],
+      [
+        "tikus desa",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        1446,
+        0.24
+      ],
+      [
+        7802,
+        0.24
+      ],
+      [
+        4917,
+        0.24
+      ],
+      [
+        6708,
+        0.2
+      ],
+      [
+        7598,
+        0.2
+      ],
+      [
+        2946,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 225,
+      "negative": 186,
+      "trend": [
+        0.1,
+        0.08,
+        0.17,
+        -0.11,
+        -0.14,
+        -0.19,
+        -0.04,
+        0.48,
+        0,
+        -0.29,
+        0.14,
+        0.2,
+        0.52,
+        0.29,
+        0.1,
+        0.1
+      ],
+      "emotions": [
+        [
+          "sadness",
+          46
+        ],
+        [
+          "joy",
+          44
+        ],
+        [
+          "fear",
+          24
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "anticipation",
+          10
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
+  }
 }
