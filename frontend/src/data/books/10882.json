@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10882?v=1795438352",
   "cover_og_url": "/cover/10882/og?v=1795438352",
+  "has_cover": false,
   "url": "/book/androdi-studio-playsound-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.c-sharpcorner.com/UploadFile/1e5156/add-sound-to-your-application-in-android-studio/ Di sini akan di jelasnkan cara agar android akan mengeluarkan suara setelah tombol Start di tekan. Media player untuk menjalankan suara yang ada di folder raw dapat di aktifkan menggunakan perintah berikut MediaPlayer player=MediaPlayer.create(MainActivity.this,R.raw.dog); Contents 1 Folder",

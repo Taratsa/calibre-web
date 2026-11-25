@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19306?v=1795472599",
   "cover_og_url": "/cover/19306/og?v=1795472599",
+  "has_cover": false,
   "url": "/book/delay-pool-squid-untuk-managed-download-manager-onno-widodo-purbo/",
   "rating": null,
   "comment": "Date: Tue, 22 Jun 2010 07:20:03 +0700 From: \"mbah Darmo\"  Reply-To: tanya-jawab@linux.or.id To: tanya-jawab@linux.or.id Subject: Re: [tanya-jawab] (ask) cara nge-blok download manager? Hello Om vavai...,ini delay pools saya: acl download urlpath_regex -i ftp$ \\.exe$ \\.mp3$ \\.mp4$ \\.tar.gz$ \\.gz$ \\.tar.bz2$ \\.rpm$ \\.zip$ \\.rar$ \\.avi$ \\.mpg$ \\.mpeg$ \\.rm$ \\.iso$ \\.wav$ \\.mov$",

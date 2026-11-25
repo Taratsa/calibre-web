@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13888?v=1795447816",
   "cover_og_url": "/cover/13888/og?v=1795447816",
+  "has_cover": false,
   "url": "/book/gns3-reset-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala GNS3 bermasalah dengan hypervisor &amp; ubridge-nya. Untuk install ulang gns3 &amp; ubridge lakukan perintah, sudo apt remove --purge gns3 gns3-gui gns3-iou gns3-server libpcap-dev ubridge sudo apt -y install gns3 gns3-gui gns3-iou gns3-server libpcap-dev ubridge Atau sekiranya cukup gns3-server &amp; ubridge, dapat menggunakan perintah apt remove --purge gns3-gui gns3-server ubridge apt -y",

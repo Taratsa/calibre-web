@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12473?v=1795442836",
   "cover_og_url": "/cover/12473/og?v=1795442836",
+  "has_cover": false,
   "url": "/book/raspbian-install-samba-file-sharing-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt-get install samba cifs-utils Konfigurasi vi /etc/samba/smb.conf Tambahkan [public] path = /home/public available = yes browsable = yes public = yes writable = yes [data] path = /home/data available = yes browsable = yes public = yes writable = no Kemudian buat directory, ubah permission &amp; owner yang dibutuhkan mkdir /home/public mkdir /home/data chown -Rf nobody: /home/public",

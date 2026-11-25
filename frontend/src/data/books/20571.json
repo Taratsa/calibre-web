@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20571?v=1795477614",
   "cover_og_url": "/cover/20571/og?v=1795477614",
+  "has_cover": false,
   "url": "/book/instalasi-openser-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara ini cukup stabil digunakan di Ubuntu 7.10. Tapi tampaknya tidak terlalu stabil di Ubuntu 8.04. Instalasi OpenSER menggunakan apt-get dapat dilakukan dengan perintah berikut, Perhatikan kita menginstalasi menggunakan user biasa, bukan root, $ sudo apt-get install openser openser-mysql-module mysql-server [sudo] password for user: Sayang, tampaknya teknik ini tidak stabil untuk OpenSER versi",

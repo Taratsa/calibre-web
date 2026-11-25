@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15171?v=1795453512",
   "cover_og_url": "/cover/15171/og?v=1795453512",
+  "has_cover": false,
   "url": "/book/5g-srsepc-enb-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk compile kita perlu colok Ettus B210 dengan kondisi nyala. Untuk operasional kita butuh Ettus B210 tersambung. Contents 1 Set CPU Freq 2 Build 3 Configure 3.1 srsEPC 3.2 srsENB 4 Run 5 Referensi 6 Pranala Menarik Set CPU Freq sudo apt-get install cpufrequtils echo 'GOVERNOR=\"performance\"' | sudo tee /etc/default/cpufrequtils sudo systemctl disable ondemand cek cat",

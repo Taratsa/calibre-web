@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20205?v=1795476563",
   "cover_og_url": "/cover/20205/og?v=1795476563",
+  "has_cover": false,
   "url": "/book/openldap-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Downoad source code dari http://www.openldap.org/software/download/ Contents 1 Compile 2 Edit konfigurasi 3 Running 4 Testing 5 Masukan data 6 Cari 7 Referensi 8 Pranala Menarik Compile Siapkan aplikasi pendukung untuk compile sudo apt-get install kernel-package libncurses5-dev fakeroot wget \\ bzip2 g++ libssl-dev libxml2-dev doxygen Lakukan .. cp openldap-stable-20100719.tgz /usr/local/src/ cd",

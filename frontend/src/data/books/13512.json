@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13512?v=1795446252",
   "cover_og_url": "/cover/13512/og?v=1795446252",
+  "has_cover": false,
   "url": "/book/cpu-reset-speed-onno-widodo-purbo/",
   "rating": null,
   "comment": "disable the current driver: add intel_pstate=disable to your kernel boot line boot, then load the userspace module: modprobe cpufreq_userspace set the governor: cpupower frequency-set --governor userspace set the frequency: cpupower --cpu all frequency-set --freq 800MHz Contents 1 Cek Speed 2 Reset 3 Menggunakan cpupower 4 Penggunaan 5 Pranala Menarik Cek Speed sudo -i # paste &lt;(cat",

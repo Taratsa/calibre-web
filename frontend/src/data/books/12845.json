@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12845?v=1795443950",
   "cover_og_url": "/cover/12845/og?v=1795443950",
+  "has_cover": false,
   "url": "/book/virtualbox-dengan-bridged-host-interface-tidak-permanen-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Aplikasi Pendukung # apt-get install uml-utilities bridge-utils Tambahkan Username Anda # adduser  uml-net Cara yang tidak permanen &amp; akan hilang sesudah booting # tunctl -t tap0 -u  # chown root.vboxusers /dev/net/tun # chmod g+rw /dev/net/tun Edit /etc/udev/rules.d/20-names.rules # vi /etc/udev/rules.d/20-names.rules Ubah KERNEL==\"tun\", NAME=\"net/%k\" Menjadi",

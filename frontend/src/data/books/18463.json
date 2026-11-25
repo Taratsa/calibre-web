@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18463?v=1795468959",
   "cover_og_url": "/cover/18463/og?v=1795468959",
+  "has_cover": false,
   "url": "/book/voip-asterisk-gui-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Aktifkan Interface Web 2 Instalasi Asterisk GUI 3 Konfigirasi Manager.conf 4 Akses Asterisk GUI 5 Pranala Menarik Aktifkan Interface Web Edit /etc/asterisk/http.conf # vi /etc/asterisk/http.conf Pastikan enabled=yes enablestatic=yes bindaddr=0.0.0.0 ; bindaddr=127.0.0.1 Akses ke Web Lihat Status HTTP Server Asterisk http://127.0.0.1:8088/asterisk/httpstatus Instalasi Asterisk GUI",

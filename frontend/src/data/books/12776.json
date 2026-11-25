@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12776?v=1795443709",
   "cover_og_url": "/cover/12776/og?v=1795443709",
+  "has_cover": false,
   "url": "/book/cisco-bridge-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.cisco.com/c/en/us/support/docs/lan-switching/integrated-routing-bridging-irb/17054-741-10.html Agar VLAN memperluas span router, router harus mampu meneruskan frame dari satu interface ke interface lainnya, sambil mempertahankan header VLAN. Jika router dikonfigurasikan untuk merutekan protokol Layer 3 (layer jaringan), itu akan menghentikan lapisan VLAN dan MAC pada interface",

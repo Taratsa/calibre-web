@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16823?v=1795463349",
   "cover_og_url": "/cover/16823/og?v=1795463349",
+  "has_cover": false,
   "url": "/book/lmstudio-ubuntu-26-04-nvidia-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install NVIDIA Driver di Ubuntu 26.04 Desktop 1.1 1. Cek GPU 1.2 2. Update sistem 1.3 3. Cek driver yang direkomendasikan Ubuntu 1.4 4. Install otomatis driver rekomendasi 1.5 5. Reboot 1.6 6. Cek setelah reboot 1.7 Jika Secure Boot aktif dan driver tidak jalan 1.8 Untuk AI lokal / LM Studio / Ollama Install NVIDIA Driver di Ubuntu 26.04 Desktop 1. Cek GPU lspci | grep -Ei",
@@ -160,7 +161,7 @@
       ],
       [
         16629,
-        0.46
+        0.47
       ],
       [
         11938,

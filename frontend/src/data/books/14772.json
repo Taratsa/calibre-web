@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14772?v=1795451633",
   "cover_og_url": "/cover/14772/og?v=1795451633",
+  "has_cover": false,
   "url": "/book/arduino-lcd-shield-detect-button-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Arduino 2x16 LCD - Detect Buttons modified on 18 Feb 2019 by Saeed Hosseini @ Electropeak https://electropeak.com/learn/ */ #include  //LCD pin to Arduino const int pin_RS = 8; const int pin_EN = 9; const int pin_d4 = 4; const int pin_d5 = 5; const int pin_d6 = 6; const int pin_d7 = 7; const int pin_BL = 10; LiquidCrystal lcd( pin_RS, pin_EN, pin_d4, pin_d5, pin_d6, pin_d7);",

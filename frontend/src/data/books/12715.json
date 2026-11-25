@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12715?v=1795443521",
   "cover_og_url": "/cover/12715/og?v=1795443521",
+  "has_cover": false,
   "url": "/book/dbench-internet-offline-vm-1-4core-512-4096m-ram-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Run 2 dbench-vmall.sh 3 dbench-vm1.sh 4 Pranala Menarik Run chmod 777 dbench* dbench-vmall.sh dbench-vmall.sh cd /home/onno /home/onno/dbench-vm1.sh /home/onno/dbench-vm2.sh /home/onno/dbench-vm3.sh /home/onno/dbench-vm4.sh dbench-vm1.sh # sudo umount /mnt/public # sudo mount -t cifs //192.168.0.3/public /mnt/public -o username=onno,password=123456 rm -Rf hasiltest.txt touch",

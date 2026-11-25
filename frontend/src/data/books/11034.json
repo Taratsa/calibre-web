@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11034?v=1795438835",
   "cover_og_url": "/cover/11034/og?v=1795438835",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-web-server-control-led-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://startingelectronics.org/tutorials/arduino/ethernet-shield-web-server-tutorial/web-server-LED-control/ Code /*-------------------------------------------------------------- Program: eth_websrv_LED Description: Arduino web server that serves up a web page allowing the user to control an LED Hardware: - Arduino Uno and official Arduino Ethernet shield. Should work with other Arduinos",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 516,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "client",

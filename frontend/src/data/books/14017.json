@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14017?v=1795448334",
   "cover_og_url": "/cover/14017/og?v=1795448334",
+  "has_cover": false,
   "url": "/book/nginx-instalasi-https-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://nginx.org/en/docs/http/configuring_https_servers.html To configure an HTTPS server, the ssl parameter must be enabled on listening sockets in the server block, and the locations of the server certificate and private key files should be specified: server { listen 443 ssl; server_name www.example.com; ssl_certificate www.example.com.crt; ssl_certificate_key www.example.com.key;",

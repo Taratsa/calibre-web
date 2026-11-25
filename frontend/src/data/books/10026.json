@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10026?v=1795435791",
   "cover_og_url": "/cover/10026/og?v=1795435791",
+  "has_cover": false,
   "url": "/book/opensips-rewritehostport-onno-widodo-purbo/",
   "rating": null,
   "comment": "if (uri=~\"^ sip:021 [0-9]*@*\") { rewritehostport( \"192.168.0.200:5061\"); ## 192.168.0.200:5061 adalah Analog Telepon Adapter (ATA) route(1); }; Contents 1 Lebih Dalam 1.1 Asterisk Round Robin 1.2 OpenSIPS 1.3 OpenSIPS round robin 2 Pranala Menarik 2.1 Persiapan 2.2 Script 2.3 OpenBTS 2.6 2.4 OpenBTS 2.8 2.5 Multi OpenBTS 2.8 2.6 OpenBTS 3.1.x 2.7 Ettus E110 2.8 Ettus N210 2.9 RangeNetworks 2.10",

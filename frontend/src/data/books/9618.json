@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9618?v=1795433470",
   "cover_og_url": "/cover/9618/og?v=1795433470",
+  "has_cover": false,
   "url": "/book/proxmox-2-2-membuat-cluster-cloud-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Pada Master 2 Pada Node Lain 3 Pranala Menarik 4 Proxmox 2.0 5 Proxmox 2.2 Pada Master ssh dan masuk ke Shell Mesin Proxmox Utama Create Cluster misalnya namanya \"rainer\" pvecm create rainer harusnya keluar Generating public/private rsa key pair. Your identification has been saved in /root/.ssh/id_rsa. Your public key has been saved in /root/.ssh/id_rsa.pub. The key fingerprint is:",
@@ -136,12 +137,12 @@
         3
       ],
       [
-        "quorum",
-        3
-      ],
-      [
         "dlm",
         4
+      ],
+      [
+        "quorum",
+        3
       ],
       [
         "checking",

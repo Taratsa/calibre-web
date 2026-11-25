@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16828?v=1795463366",
   "cover_og_url": "/cover/16828/og?v=1795463366",
+  "has_cover": false,
   "url": "/book/gns3-instalasi-di-ubuntu-26-04-venv-docker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut cara instalasi GNS3 di Python virtual environment menggunakan folder: ~/Apps/GNS3 Catatan penting: instalasi via `pip/venv` cocok untuk GNS3 GUI + GNS3 server , tetapi emulator seperti QEMU/KVM, Dynamips, uBridge, VPCS, Wireshark, Docker tetap lebih aman dipasang dari package OS. GNS3 server memang bertugas mengelola QEMU/KVM, Docker, VPCS, VirtualBox, VMware, dan Dynamips. ([PyPI][1])",

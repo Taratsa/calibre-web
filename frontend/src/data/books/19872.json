@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19872?v=1795475383",
   "cover_og_url": "/cover/19872/og?v=1795475383",
+  "has_cover": false,
   "url": "/book/uec-axis2c-log-error-x509-c-287-in-openssl-x509-get-subject-key-identifier-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada saat tail /var/log/eucalyptus/axis2c.log tampak [Mon Dec 27 06:43:12 2010] [error] error.c(94) OXS ERROR [x509.c:287 in openssl_x509_get_subject_key_identifier] oxs defualt error , The extenension index of NID_subject_key_identifier is not valid [Mon Dec 27 06:43:12 2010] [error] error.c(94) OXS ERROR [x509.c:287 in openssl_x509_get_subject_key_identifier] oxs defualt error , The extenension",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17474?v=1795465339",
   "cover_og_url": "/cover/17474/og?v=1795465339",
+  "has_cover": false,
   "url": "/book/mengembalikan-rescue-grub-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika /dev/sdb1 bukan EFI disk /dev/sdb tidak punya EFI System Partition. Struktur disk Bapak: /dev/sdb1 1M BIOS boot /dev/sdb2 111.8G Linux filesystem /dev/sdb3 354G Linux filesystem sudo mount /dev/sdb2 /mnt/sdb2 sudo grub-install \\ --target=i386-pc \\ --boot-directory=/mnt/sdb2/boot \\ /dev/sdb ngembaliin GRUB ubuntu : 1. boot live cd ubuntu 2. setelah masuk live session buka",

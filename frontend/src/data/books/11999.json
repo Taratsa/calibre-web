@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11999?v=1795441278",
   "cover_og_url": "/cover/11999/og?v=1795441278",
+  "has_cover": false,
   "url": "/book/ethereum-install-ethminer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://insights.ubuntu.com/2017/09/20/mining-ethereum-on-ubuntu-with-a-gtx-1070/ add-apt-repository ppa:ethereum/ethereum -y apt update apt install ethereum -y cd /usr/local/src wget https://github.com/ethereum-mining/ethminer/releases/download/v0.12.0/ethminer-0.12.0-Linux.tar.gz tar zxvf ethminer-0.12.0-Linux.tar.gz cp /usr/local/src/bin/* /usr/bin/ Referensi",

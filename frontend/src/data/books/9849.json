@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9849?v=1795435148",
   "cover_og_url": "/cover/9849/og?v=1795435148",
+  "has_cover": false,
   "url": "/book/red-alert-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenRA is a Libre/Free Real Time Strategy game engine supporting early Westwood games like Command &amp; Conquer and Command &amp; Conquer: Red Alert. Contents 1 Flatpak (official, from Flathub) 2 Install Snap 3 Install .deb 4 Compile dari Source Code 5 Referensi Flatpak (official, from Flathub) Install Flatpak if not present: sudo apt install flatpak Add Flathub: flatpak remote-add --if-not-exists",
@@ -200,15 +201,15 @@
         0.21
       ],
       [
+        14798,
+        0.2
+      ],
+      [
         15431,
         0.2
       ],
       [
         14964,
-        0.2
-      ],
-      [
-        14798,
         0.2
       ]
     ],

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12389?v=1795442600",
   "cover_og_url": "/cover/12389/og?v=1795442600",
+  "has_cover": false,
   "url": "/book/ipv6-konfigurasi-ipv6-presisten-di-suse-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di versi 7.x ke atas, dukungan tersedia. Lihat /etc/rc.config untuk lebih detail. Karena berbeda konfigurasi maupun struktur file script maka sulit (kalau tidak mustahil) untuk menggunakan Red Hat Linux script di distribusi ini. Sejak versi 8.x mereka mengubah setup konfigurasi. SuSE Linux 8.0 Konfigurasi Address IPv6 , edit file /etc/sysconfig/network/ifcfg- dan setup nilai",

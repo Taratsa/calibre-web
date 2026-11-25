@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12183?v=1795441778",
   "cover_og_url": "/cover/12183/og?v=1795441778",
+  "has_cover": false,
   "url": "/book/dradis-instalasi-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi aplikasi pendukung 2 Install Dradis 3 Inisialisasi Directory yang dibutuhkan 4 Perbaiki Konfigurasi 5 Akses Dradis Instalasi aplikasi pendukung sudo su nano /etc/apt/sources.list deb http://archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse sudo su rm /var/lib/apt/lists/lock apt update apt install -y openssh-server apt install -y git redis-server ruby",

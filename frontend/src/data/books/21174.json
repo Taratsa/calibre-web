@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21174?v=1795480666",
   "cover_og_url": "/cover/21174/og?v=1795480666",
+  "has_cover": false,
   "url": "/book/wifi-mengaktifkan-wep-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk memproteksi agar data yang dikirim tidak bisa dilihat oleh orang yang melakukan sniffing, biasanya kita mengenkrip paket data yang dikirim. Salah satu fasilitas yang sering digunakan adalah menggunakan enkripsi Wired Equivalent Privacy ( WEP ). Di linux , menggunakan perintah iwconfig kita dapat memasukan kunci (key) untuk enkripsi WEP tersebut, sebagai contoh, # iwconfig wlan0 key",

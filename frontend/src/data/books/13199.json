@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13199?v=1795445124",
   "cover_og_url": "/cover/13199/og?v=1795445124",
+  "has_cover": false,
   "url": "/book/x86-install-samba-file-sharing-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt -y install samba cifs-utils Konfigurasi vi /etc/samba/smb.conf Tambahkan [public] path = /home/public available = yes browsable = yes public = yes writable = yes [data] path = /home/data available = yes browsable = yes public = yes writable = no Kemudian buat directory, ubah permission &amp; owner yang dibutuhkan mkdir /home/public mkdir /home/data chown -Rf nobody: /home/public",

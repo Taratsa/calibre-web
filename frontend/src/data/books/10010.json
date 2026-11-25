@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10010?v=1795435733",
   "cover_og_url": "/cover/10010/og?v=1795435733",
+  "has_cover": false,
   "url": "/book/voip-asterisk-route-ke-arah-ip-pbx-lain-dengan-kode-area-onno-widodo-purbo/",
   "rating": null,
   "comment": "di sip.conf [IPPBX-lain] ipaddr = xxx.xxx.xxx.xxx di extensions.conf SIP/devicename SIP/username@domain (SIP uri) SIP/username[:password[:md5secret[:authname[:transport]]]]@host[:port] SIP/devicename/extension SIP/devicename/extension/IPorHost SIP/username@domain//IPorHost exten =&gt; _3.,1,Dial(SIP/${EXTEN}@IPPBX-lain,20,rt) exten =&gt; _3.,1,Dial(SIP/${EXTEN}@ip-address,20,rt) exten =&gt;",

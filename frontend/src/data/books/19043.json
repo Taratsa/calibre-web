@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19043?v=1795471377",
   "cover_og_url": "/cover/19043/og?v=1795471377",
+  "has_cover": false,
   "url": "/book/voip-cookbook-installation-of-sipp-webfrontend-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download SIPp Webfrontend from http://sourceforge.net/projects/sipp/files/sipp/3.1/ Copy &amp; Extract mkdir /var/www/sipp cp sipp_webfrontend_v1.2.tgz /var/www/sipp/ cd /var/www/sipp/ tar zxvf sipp_webfrontend_v1.2.tgz mv /var/www/sipp/src/* /var/www/sipp/ Create database mysql -u root -p password: CREATE DATABASE SIPpDB; USE SIPpDB; \\. /var/www/sipp/tables.sql quit Edit config.ini.php vi",

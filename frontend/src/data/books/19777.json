@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19777?v=1795474930",
   "cover_og_url": "/cover/19777/og?v=1795474930",
+  "has_cover": false,
   "url": "/book/instalasi-egroupware-menggunakan-apt-get-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/apt/sources.list.d/egroupware.sources.list Isi dengan deb http://download.opensuse.org/repositories/server:/eGroupWare/Debian_6.0/ ./ Import Key wget -O - http://download.opensuse.org/repositories/server:/eGroupWare/Debian_6.0/Release.key | apt-key add - Instal menggunakan apt-get menggunakan meta package apt-get install egroupware Perlu memasukan Header admin user name: admin",

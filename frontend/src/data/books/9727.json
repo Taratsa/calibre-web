@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9727?v=1795434665",
   "cover_og_url": "/cover/9727/og?v=1795434665",
+  "has_cover": false,
   "url": "/book/proxmox-2-2-menggunakan-beberapa-nic-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://pve.proxmox.com/wiki/Network_Model Proxmox VE uses a bridged networking model. Each host can have up to 4094 bridges. Bridges are like physical network switches implemented in software on the Proxmox VE host. All VMs can share one bridge as if virtual network cables from each guest were all plugged into the same switch. For connecting VMs to the outside world, bridges are attached",

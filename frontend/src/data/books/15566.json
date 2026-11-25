@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15566?v=1795455532",
   "cover_og_url": "/cover/15566/og?v=1795455532",
+  "has_cover": false,
   "url": "/book/minikube-file-sync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/filesync/ File Sync How to sync files into minikube Built-in sync minikube has a built-in file sync mechanism, but it only syncs when minikube start is run, though before Kubernetes is started. Examples where this may be useful are custom versions of system or Kubernetes configuration files, such as: DNS configuration SSL certificates Kubernetes",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 187,
-    "longer_than": 23,
+    "longer_than": 22,
     "top": [],
     "distinct": [],
     "phrases": [],

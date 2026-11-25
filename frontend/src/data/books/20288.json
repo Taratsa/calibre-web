@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20288?v=1795476800",
   "cover_og_url": "/cover/20288/og?v=1795476800",
+  "has_cover": false,
   "url": "/book/rockcluster-submit-job-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Submit Job Menggunaan mpirun 2 Submit Job Menggunakan qsub 3 Referensi 4 Pranala Menarik Submit Job Menggunaan mpirun Ambil source code tachyon dari http://www.photonlimited.com/~johns/tachyon/ http://www.photonlimited.com/~johns/tachyon/files/0.99b2/ Copy ke front end rockcluster scp tachyon-0.99b2.tar.gz root@192.168.0.120: Masuk ke front end rockcluster ssh root@192.168.0.120",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10676?v=1795437813",
   "cover_og_url": "/cover/10676/og?v=1795437813",
+  "has_cover": false,
   "url": "/book/mediawiki-nuke-page-spam-onno-widodo-purbo/",
   "rating": null,
   "comment": "Utk membuang page spam yang ada. Catat nama page-nya, misalnya, http://opensource.telkomspeedy.com/wiki/index.php/NamePageSpam Delete dari shell folder wiki/maintenance cd /var/www/wiki/maintenance php nukePage.php NamePageSpam",
@@ -74,7 +75,7 @@
       ],
       [
         19937,
-        0.41
+        0.42
       ],
       [
         17244,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16520?v=1795461337",
   "cover_og_url": "/cover/16520/og?v=1795461337",
+  "has_cover": false,
   "url": "/book/deployment-aplikasi-flask-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Deployment Aplikasi Flask di Ubuntu 24.04, dari awal sampai bisa diakses via browser pakai domain atau IP publik. Kita akan deploy menggunakan Gunicorn + Nginx supaya production-ready. Contents 1 Install Dependensi Dasar 2 Siapkan Direktori Project 3 Install Flask dan Gunicorn 4 Buat Aplikasi Flask (`app.py`) 5 Test Jalankan Lokal 6 Jalankan dengan Gunicorn 7 (Opsional) Buat File Service Systemd",

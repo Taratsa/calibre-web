@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19124?v=1795471728",
   "cover_og_url": "/cover/19124/og?v=1795471728",
+  "has_cover": false,
   "url": "/book/membuat-beberapa-repository-lokal-di-satu-mesin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala kita ingin membuat beberapa repository lokal di sebuah mesin. Misalnya untuk Ubuntu 9.10 Ubuntu 10.04 Yang perlu dilakukan Instalasi Apache Mirror Repository misalnya /var/data/repo-9.10 /var/data/repo-10.04 Buat statik link, ada baiknya diletakan di /etc/rc.local ln -s /var/data/repo-9.10 /var/www/ubuntu-9.10 ln -s /var/data/repo-10.04 /var/www/ubuntu-10.04 atau mount --bind",

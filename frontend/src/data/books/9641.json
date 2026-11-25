@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9641?v=1795433572",
   "cover_og_url": "/cover/9641/og?v=1795433572",
+  "has_cover": false,
   "url": "/book/membuat-installer-liveusb-menggunakan-perintah-dd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara paling sederhana sekali untuk membuat liveusb yang sederhana menggunakan dd if=file.iso of=/dev/sdc yang agak lengkap dd bs=1M if=file.iso of=/dev/sdc count=1024 asumsinya USB terpasang pada /dev/sdc. Ini bisa dilihat menggunakan perintah fdisk -l perhatikan of=/dev/sdc bukan /dev/sdc1 atau /dev/sdc2, ini artinya USB akan di partisi sesuai dengan isi file.iso Pranala Menarik LiveUSB Membuat",

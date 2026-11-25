@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13377?v=1795445754",
   "cover_og_url": "/cover/13377/og?v=1795445754",
+  "has_cover": false,
   "url": "/book/snort-rules-drop-packet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://sublimerobots.com/2016/02/snort-ips-inline-mode-on-ubuntu/ Edit /etc/snort/snort.conf Pastikan ################################################### # Step #5: Configure preprocessors # Inline packet normalization. For more information, see README.normalize preprocessor normalize_ip4 preprocessor normalize_tcp: ips ecn stream preprocessor normalize_icmp4 preprocessor normalize_ip6",

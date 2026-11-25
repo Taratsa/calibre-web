@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19126?v=1795471738",
   "cover_og_url": "/cover/19126/og?v=1795471738",
+  "has_cover": false,
   "url": "/book/reset-password-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat merecover password server database MySQL dengan 5 langkah berikut: Hentikan (stop) proses server MySQL. Jalankan (start) proses server atau daemon MySQL (mysqld) dengan opsi -skip-grant-tables sehingga tidak akan menampilkan prompt password. Masuk (login melalui tool mysql) ke server MySQL sebagai pengguna root. Tulis password baru bagi root. Keluar dan restart server MySQL. Berikut",

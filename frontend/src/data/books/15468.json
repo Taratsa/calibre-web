@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15468?v=1795454996",
   "cover_og_url": "/cover/15468/og?v=1795454996",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-tm1650-test-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menghubungkan display TM1650 ke board Wemos D1, Anda dapat menggunakan pin-pin berikut: Pin TM1650 SDA dihubungkan ke pin D2 (GPIO4) pada board Wemos D1. Pin TM1650 SCL dihubungkan ke pin D1 (GPIO5) pada board Wemos D1. B erikut adalah contoh kode untuk menggunakan display TM1650 dengan board Wemos D1 menggunakan library TM1650: Code #include  #include  TM1650 d; void",

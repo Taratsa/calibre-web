@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11208?v=1795439313",
   "cover_og_url": "/cover/11208/og?v=1795439313",
+  "has_cover": false,
   "url": "/book/hardware-cek-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Secara Umum 2 Cek Ethernet 3 Cek VGA 4 Cek Multimedia / Audio 5 Cek Bus Secara Umum lshw Cek Ethernet lspci | awk '/net/ {print $1}' | xargs -i% lspci -ks % contoh output 00:04.0 Ethernet controller: Silicon Integrated Systems [SiS] 191 Gigabit Ethernet Adapter (rev 02) Subsystem: CLEVO/KAPOK Computer 191 Gigabit Ethernet Adapter Kernel driver in use: sis190 Kernel modules: sis190 atau",

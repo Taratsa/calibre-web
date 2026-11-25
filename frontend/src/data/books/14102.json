@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14102?v=1795448615",
   "cover_og_url": "/cover/14102/og?v=1795448615",
+  "has_cover": false,
   "url": "/book/apache-hardening-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cek Vulnerability Cek vulnerability (mis, apache di 192.168.12.120) nmap -Pn --script vuln 192.168.12.120 nikto -host 192.168.12.120 Cek Log ssh user@ip-server -p 22 Cek log /var/log/apache2 /var/log/apache2/access.log /var/log/auth.log Cek access.log mis. utk scan Cek auth.log mis. utk brute force attack",

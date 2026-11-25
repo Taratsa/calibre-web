@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13902?v=1795447875",
   "cover_og_url": "/cover/13902/og?v=1795447875",
+  "has_cover": false,
   "url": "/book/suricata-test-ddos-attack-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kifarunix.com/install-and-setup-suricata-on-ubuntu-18-04/ Kita akan uji nyali melakukan DDoS Attack ke server yang menjalankan SURICATA. Contents 1 Menyiapkan Rules 2 Persiapan Attack 3 Run Suricata 4 Kali Linux Attack 5 Referensi 6 Pranala Menarik Menyiapkan Rules Edit file vi /etc/suricata/rules/test-ddos.rules alert tcp any any -&gt; $HOME_NET 80 (msg: \"Possible DDoS attack\";",

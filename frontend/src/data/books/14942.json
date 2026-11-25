@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14942?v=1795452520",
   "cover_og_url": "/cover/14942/og?v=1795452520",
+  "has_cover": false,
   "url": "/book/mqtt-install-di-debian-11-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt update -y &amp;&amp; sudo apt install mosquitto mosquitto-clients -y Check &amp; Start sudo systemctl status mosquitto sudo systemctl start mosquitto sudo systemctl enable mosquitto Subscribe mosquitto_sub -h address -t topic Publish mosquitto_pub -h address -t topic -m \"message\" Config password sudo mosquitto_passwd -c /etc/mosquitto/passwd test sudo mosquitto_passwd -c",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20230?v=1795476638",
   "cover_og_url": "/cover/20230/og?v=1795476638",
+  "has_cover": false,
   "url": "/book/ntp-setup-ntp-server-lokal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi NTP seperti biasa. Kemudian, edit vi /etc/ntp.conf Tambahkan server 127.127.1.1 fudge 127.127.1.1 stratum 8 refid NIST restrict default notrust nomodify restrict 127.127.0.0 mask 255.255.0.0 nomodify driftfile /var/lib/ntp/drift broadcastdelay 0.008 keys /etc/ntp/keys Restart /etc/init.d/ntp restart Check Menggunakan Gunakan perintah watch ntpq -c lpee akan tampak pada layar remote",

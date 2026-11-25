@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12808?v=1795443806",
   "cover_og_url": "/cover/12808/og?v=1795443806",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-x86-quagga-routing-all-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd openwrt make clean make defconfig make menuconfig Contents 1 Config 2 Compile 3 Buat file vdi atau vmdk 4 Buat folder di /usr/local/src 5 Pranala Menarik Config Target System &gt; X86 Network &gt; Routing and Redirection &gt; bird1 bird2 olsrd quagga Compile make world make -j1 -V=sc world # alternatif untuk debugging Buat file vdi atau vmdk Hasil openwrt-x86-generic-combined-ext4.img.gz di",

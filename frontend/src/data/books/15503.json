@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15503?v=1795455185",
   "cover_og_url": "/cover/15503/og?v=1795455185",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-lcd-i2c-rtc-ntp-sync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/doleynikov/esp-01-ds1307-ntp-clock/blob/master/working_clock_b_8266.ino // This is for compatibility with both arduino 1.0 and previous versions //#include  #include  #include  #define printByte(args) write(args); #include \"RTClib.h\" #include  #include  //char ssid[] = \"mao\"; // your network SSID (name)",

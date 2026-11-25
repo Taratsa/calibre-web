@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14930?v=1795452462",
   "cover_og_url": "/cover/14930/og?v=1795452462",
+  "has_cover": false,
   "url": "/book/mqtt-android-simple-connect-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 setting.gradle 2 build.gradle app 3 AndroidManifest.xml 4 Referensi setting.gradle pluginManagement { repositories { gradlePluginPortal() google() mavenCentral() maven { url \" https://repo.eclipse.org/content/repositories/paho-releases/ \" } } } dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) repositories { google() mavenCentral() maven {",

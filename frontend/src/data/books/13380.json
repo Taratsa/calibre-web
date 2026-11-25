@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13380?v=1795445761",
   "cover_og_url": "/cover/13380/og?v=1795445761",
+  "has_cover": false,
   "url": "/book/orange-word-cloud-dari-file-text-onno-widodo-purbo/",
   "rating": null,
   "comment": "Word Cloud data dapat di bangun dari file text (ASCII) yang kita miliki seperti pada workflow di bawah ini. Pertama-tama data dari Widget Text Files harus di segmented menjadi word menggunakan Widget Segment. Kemudian output segmented data perlu di konversikan dari segmented data menjadi corpus agar bisa di proses oleh toolbox text mining menggunakan Widget Interchange. Sebelum di tampilkan",

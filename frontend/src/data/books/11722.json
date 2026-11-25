@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11722?v=1795440588",
   "cover_og_url": "/cover/11722/og?v=1795440588",
+  "has_cover": false,
   "url": "/book/proxmox-convert-vdi-virtualbix-ke-qemu-onno-widodo-purbo/",
   "rating": null,
   "comment": "install apt-get install qemu-utils convert qemu-img convert -f vdi -O raw ~/\"VirtualBox VMs\"/TestMachine/TestMachine.vdi ~/Desktop/TestMachine1.img Upload ke folder /var/lib/vz/template/qemu Misalnya, scp *.img root@192.168.0.13:/var/lib/vz/template/qemu",

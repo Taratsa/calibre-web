@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11452?v=1795439914",
   "cover_og_url": "/cover/11452/og?v=1795439914",
+  "has_cover": false,
   "url": "/book/nltk-membuang-kata-penghubung-yang-tidak-bermakna-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kata penghubung yang tidak bermakna, seperti, yang, ke, dari, hello, apa, mau, ..... bisa dibuang menggunakan cara print kata 400 ranking teratas yang banyak dipakai edit buang kata yang bermakna sisa kata yang tidak bermakna di edit dari outputnya script python-nya adalah import os,nltk,os.path,re,string import argparse from nltk.stem.porter import PorterStemmer from collections import Counter",

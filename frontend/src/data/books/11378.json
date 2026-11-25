@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11378?v=1795439733",
   "cover_og_url": "/cover/11378/og?v=1795439733",
+  "has_cover": false,
   "url": "/book/twitter-streamlistener-old-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "Twitter Stream Listener # tweepy setup import time from tweepy import Stream from tweepy import OAuthHandler from tweepy.streaming import StreamListener import io import os import json # twitter OAuth ckey = '*CONSUMER KEY*' consumer_secret = '*CONSUMER SECRET*' access_token_key = '*ACCESS TOKEN*' access_token_secret = '*ACCESS SECRET*' #Listener Class Override class listener(StreamListener): def",

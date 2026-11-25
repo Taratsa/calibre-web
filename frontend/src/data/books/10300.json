@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10300?v=1795436665",
   "cover_og_url": "/cover/10300/og?v=1795436665",
+  "has_cover": false,
   "url": "/book/mediawiki-ubah-password-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "changePassword.php can be used to change the password of a user on your wiki. Usage php changePassword.php --user=target_username --password=new_password An example: php changePassword.php --user=JohnSmith --password=Secret12 Usernames and passwords can have spaces, which will need to be protected from your shell (be it bash or cmd.exe ;) Referensi",

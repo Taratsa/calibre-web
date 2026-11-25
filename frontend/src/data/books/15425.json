@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15425?v=1795454844",
   "cover_og_url": "/cover/15425/og?v=1795454844",
+  "has_cover": false,
   "url": "/book/ctf-instalasi-ctfd-di-ubuntu-22-04-dengan-docker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.ctfd.io/docs/deployment/installation Spec: VirtualBox Ubuntu 22.04 Memory 3G Core 2 Sebagian besar dilakukan sebagai user biasa. Contents 1 Basic 2 Install Docker atau Docker Compose 3 Install CTFd 4 Run 5 Start &amp; Stop 6 Alternatif Instalasi docker yang kemungkinan error 6.1 Install Docker 6.2 Install Docker Compose 7 Referensi Basic Sebagai user biasa. sudo su sudo apt",

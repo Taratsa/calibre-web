@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9588?v=1795433369",
   "cover_og_url": "/cover/9588/og?v=1795433369",
+  "has_cover": false,
   "url": "/book/instalasi-ejabberd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi eJabberd # apt-get install ejabberd Contents 1 Konfigurasi Server 2 Start &amp; Stop Server 3 Add &amp; Remove User 4 Web Admin 5 Pranala Menarik Konfigurasi Server Edit /etc/ejabberd/ejabberd.cfg # vi /etc/ejabberd/ejabberd.cfg {hosts, [\"namamesinanda.com\"]}. Set Previlige Admin {acl, admins, {user, \"namauserjadiadmin\", \"namamesinanda.org\"}}. {access, configure, [{allow, admins}]}. Start &amp;",

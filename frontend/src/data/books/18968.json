@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18968?v=1795471061",
   "cover_og_url": "/cover/18968/og?v=1795471061",
+  "has_cover": false,
   "url": "/book/voip-cookbook-test-dns-for-enum-query-onno-widodo-purbo/",
   "rating": null,
   "comment": "We can use the dig command on the localhost of the DNS server to query the ENUM entries, for example, $ dig NAPTR 0.0.0.2.5.2.6.e164.id @127.0.0.1 The output would be approximately ; &lt;&lt;&gt;&gt; DiG 9.6.1-P1 &lt;&lt;&gt;&gt; NAPTR 0.0.0.2.5.2.6.e164.id @127.0.0.1 ;; global options: +cmd ;; Got answer: ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 10744 ;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1,",

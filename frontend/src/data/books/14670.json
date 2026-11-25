@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14670?v=1795451152",
   "cover_og_url": "/cover/14670/og?v=1795451152",
+  "has_cover": false,
   "url": "/book/membuat-layanan-otomatis-start-saat-server-on-onno-widodo-purbo/",
   "rating": null,
   "comment": "Seringkali kita membutuhkan agar sebuah layanan/service dapat langsung jalan pada saat server boot. Untuk melakukan itu di ubuntu 20.04, kita perlu mengedit file /etc/rc.local, misalnya, sudo nano /etc/rc.local Isi dengan, misalnya, !/bin/bash .sh exit 0 Jangan lupa save file rc.local. Ganti nama .sh dengan nama yang anda suka. Contoh isi file .sh,",

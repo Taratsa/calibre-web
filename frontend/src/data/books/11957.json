@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11957?v=1795441176",
   "cover_og_url": "/cover/11957/og?v=1795441176",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-cgminer-dragon-untuk-gekkoscience-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su sudo apt-get install build-essential autoconf automake libtool pkg-config libcurl4-openssl-dev \\ libudev-dev libjansson-dev libncurses5-dev libudev-dev libjansson-dev libudev1 git cd /usr/local/src git clone https://wareck@bitbucket.org/wareck/cgminer-dragon.git cd cgminer-dragon sh autogen.sh ./configure --enable-scrypt --enable-zeus --enable-gekko make Pemakaian ./cgminer --sha256",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20370?v=1795477029",
   "cover_og_url": "/cover/20370/og?v=1795477029",
+  "has_cover": false,
   "url": "/book/apache-enable-mod-rewrite-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lakukan a2enmod rewrite Untuk instalasi social networking yang aman perlu di AllowOverride All vi /etc/apache2/sites-enabled/000-default DocumentRoot /var/www  Options FollowSymLinks AllowOverride All   Options Indexes FollowSymLinks MultiViews AllowOverride All Order allow,deny allow from all  Jangan lupa restart Apache",

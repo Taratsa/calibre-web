@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16825?v=1795463357",
   "cover_og_url": "/cover/16825/og?v=1795463357",
+  "has_cover": false,
   "url": "/book/ml-python-virtual-environment-gpu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut setup praktis di Ubuntu/Linux. mkdir -p ~/Apps/Python cd ~/Apps/Python Contents 1 1. Install paket dasar 2 2. Buat virtual environment 3 3. Install paket Python ML 4 4. Install TensorFlow + Keras GPU 5 5. Daftarkan kernel Jupyter 6 6. Test TensorFlow GPU 7 7. Test Keras GPU sederhana 8 8. Cara pakai setiap hari 1. Install paket dasar sudo apt update sudo apt install -y python3",

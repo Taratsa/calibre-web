@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16829?v=1795463368",
   "cover_og_url": "/cover/16829/og?v=1795463368",
+  "has_cover": false,
   "url": "/book/pm-install-virtual-environment-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut langkah lengkap membuat virtualenv PM4Py di `~/Apps/PM4Py` untuk *process mining*. PM4Py resmi bisa di-install dengan `pip install -U pm4py`, dan saat ini mendukung Python 3.9-3.14. ([PyPI][1]) Contents 1 1. Install dependency sistem 2 2. Buat folder kerja 3 3. Buat virtualenv 4 4. Upgrade pip dan tools dasar 5 5. Install PM4Py + library pendukung 6 6. Daftarkan kernel Jupyter 7 7. Buat",

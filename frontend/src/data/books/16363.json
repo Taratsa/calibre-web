@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16363?v=1795460390",
   "cover_og_url": "/cover/16363/og?v=1795460390",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-untuk-dataset-boston-housing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuat model prediksi menggunakan dataset Boston Housing tanpa menggunakan Google Colab, Anda dapat mengikuti langkah-langkah berikut: 1. Mengimpor Library yang Diperlukan : import numpy as np import pandas as pd import matplotlib.pyplot as plt from sklearn.datasets import load_boston from sklearn.model_selection import train_test_split from sklearn.linear_model import LinearRegression",

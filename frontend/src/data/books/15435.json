@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15435?v=1795454890",
   "cover_og_url": "/cover/15435/og?v=1795454890",
+  "has_cover": false,
   "url": "/book/ctf-red-1-walkthrough-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://readysetexploit.gitlab.io/home/vulnhub/red/ Contents 1 nmap 2 Web 3 Local File Inclusion 4 Referensi nmap Di kali linux. Cek IP address Kali Linux hostname -I 192.168.0.156 fddc:e149:a774::5b6 fddc:e149:a774:0:f944:23ee:7982:825 Cari IP address Red netdiscover -r 192.168.0.0/24 Currently scanning: Finished! | Screen View: Unique Hosts 19 Captured ARP Req/Rep packets, from 19",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1573,
-    "longer_than": 57,
+    "longer_than": 56,
     "top": [
       [
         "usr",

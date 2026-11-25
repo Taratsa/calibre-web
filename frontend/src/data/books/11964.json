@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11964?v=1795441191",
   "cover_og_url": "/cover/11964/og?v=1795441191",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-raspberrypi-cgminer-bitmain-untuk-gekkoscience-onno-widodo-purbo/",
   "rating": null,
   "comment": "cgminer untuk ASIC gekkoscience sudo su sudo apt-get install libusb-1.0-0-dev libusb-1.0-0 libcurl4-openssl-dev libncurses5-dev libudev-dev \\ screen libtool automake pkg-config libjansson-dev screen git cd /usr/local/src git clone https://github.com/bitmaintech/cgminer cd /usr/local/src/cgminer sudo ./autogen.sh export LIBCURL_CFLAGS='-I/usr/include/curl' sudo ./configure --enable-bmsc",

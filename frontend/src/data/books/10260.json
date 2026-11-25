@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10260?v=1795436537",
   "cover_og_url": "/cover/10260/og?v=1795436537",
+  "has_cover": false,
   "url": "/book/ffmpeg-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan key sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1DB8ADC1CFCA9579 Edit /etc/apt/sources.list masukan deb http://ppa.launchpad.net/jon-severinsson/ffmpeg/ubuntu trusty main deb-src http://ppa.launchpad.net/jon-severinsson/ffmpeg/ubuntu trusty main Save, kemudian lakukan apt-get update Instal ffmpeg menggunakan perintah apt-get install ffmpeg Cara Lain Instalasi ffmpeg",

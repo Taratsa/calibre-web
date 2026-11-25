@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11871?v=1795440963",
   "cover_og_url": "/cover/11871/og?v=1795440963",
+  "has_cover": false,
   "url": "/book/android-screencast-di-linux-menggunakan-ashot-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/804332/is-it-possible-to-show-the-display-of-my-android-phone-on-my-pc-screen-in-ubuntu Download https://sourceforge.net/projects/ashot/ Jalankan cd ~/Downloads/ mv AndroidScreenCapture-1.1.zip /usr/local/src/ cd /usr/local/src unzip AndroidScreenCapture-1.1.zip cd /usr/local/src/AndroidScreenCapture_1.1/ java -jar AShot-1.1.jar It will ask you for the",

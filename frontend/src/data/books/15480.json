@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15480?v=1795455050",
   "cover_og_url": "/cover/15480/og?v=1795455050",
+  "has_cover": false,
   "url": "/book/esp32-i2c-scanner-onno-widodo-purbo/",
   "rating": null,
   "comment": "/********* I2C Device ESP32 SDA SDA (default is GPIO 21) SCL SCL (default is GPIO 22) GND GND VCC usually 3.3V or 5V Rui Santos Complete project details at https://randomnerdtutorials.com *********/ #include  void setup() { Wire.begin(); Serial.begin(115200); Serial.println(\"\\nI2C Scanner\"); } void loop() { byte error, address; int nDevices; Serial.println(\"Scanning...\"); nDevices = 0;",

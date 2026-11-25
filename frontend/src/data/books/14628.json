@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14628?v=1795450932",
   "cover_og_url": "/cover/14628/og?v=1795450932",
+  "has_cover": false,
   "url": "/book/instalasi-apache-dan-php-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apache dapat dilakukan menggunakan perintah, sudo apt update apt -y install apache2 sudo ufw allow 'Apache' Dilanjutkan dengan instalasi PHP 7.4 menggunakan perintah, sudo apt -y install software-properties-common sudo add-apt-repository ppa:ondrej/php sudo apt update sudo apt -y install php7.4 Instalasi extension lainnya yang dibutuhkan untuk operasional moodle adalah sebagai berikut,",

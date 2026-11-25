@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19766?v=1795474879",
   "cover_og_url": "/cover/19766/og?v=1795474879",
+  "has_cover": false,
   "url": "/book/uec-hacks-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bringing up a windows instance without using kernel and ramdisk images Edit /usr/share/eucalyptus/gen_kvm_libvirt_xml to remove the lines that add \"-kernel\" and \"-initrd\" options in the libvirt.xml. Here is the patch for /usr/share/eucalyptus/gen_kvm_libvirt_xml that ships with Ubuntu 10.04 (Lucid Lynx) DISCLAIMER: This patch works with the windows instances on Lucid Lynx. This would work as long",

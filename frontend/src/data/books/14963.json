@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14963?v=1795452615",
   "cover_og_url": "/cover/14963/og?v=1795452615",
+  "has_cover": false,
   "url": "/book/ids-cicflowmeter-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "Installation git clone https://github.com/datthinh1801/cicflowmeter.git cd cicflowmeter python3 setup.py install Usage usage: cicflowmeter [-h] (-i INPUT_INTERFACE | -f INPUT_FILE) [-c] [-u URL_MODEL] output positional arguments: output output file name (in flow mode) or directory (in sequence mode) optional arguments: -h, --help show this help message and exit -i INPUT_INTERFACE capture online",

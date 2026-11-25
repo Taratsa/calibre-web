@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20075?v=1795476084",
   "cover_og_url": "/cover/20075/og?v=1795476084",
+  "has_cover": false,
   "url": "/book/gpg-error-http-ppa-launchpad-net-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika keluar error kira-kira sebagai berikut: GPG error: http://ppa.launchpad.net/ lucid Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A445E8CCD1A0D2FB Solusinya: gpg --keyserver keyserver.ubuntu.com --recv A445E8CCD1A0D2FB gpg --export --armor A445E8CCD1A0D2FB | sudo apt-key add - Pranala Menarik Linux Howto",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15689?v=1795456212",
   "cover_og_url": "/cover/15689/og?v=1795456212",
+  "has_cover": false,
   "url": "/book/java-instalasi-openjdk-1-7-di-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04 sudo apt update Cek java yang tersedia java -version Output apt install openjdk-11-jre-headless # version 11.0.20+8-1ubuntu1~22.04, or apt install default-jre # version 2:1.11-72build2 apt install openjdk-17-jre-headless # version 17.0.8+7-1~22.04 apt install openjdk-18-jre-headless # version",

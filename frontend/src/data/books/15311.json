@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15311?v=1795454114",
   "cover_og_url": "/cover/15311/og?v=1795454114",
+  "has_cover": false,
   "url": "/book/konfigurasi-enb-conf-rr-conf-usrp-b200-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada kesempatan akan di perlihatkan konfigurasi srsRAN bekerja dengan Ettus B200 sebagai eNB. Kita perlu mengkonfigurasi enb.conf dengan mengedit file konfigurasi sebagai berikut, cd /usr/local/src/srsRAN nano srsenb/enb.conf Kita perlu menyesuaikan konfigurasi eNB dengan kondisi jaringan yang kita gunakan, seperti MCC, MNC, dan IP address Core Network, sebagai berikut, [enb] enb_id = 0x17B mcc =",

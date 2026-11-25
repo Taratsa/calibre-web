@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14246?v=1795449189",
   "cover_og_url": "/cover/14246/og?v=1795449189",
+  "has_cover": false,
   "url": "/book/menempelkan-interface-virtualbox-ke-interface-mesin-host-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menempelkan Interface VBOX ke Internet Mesin / Host dapat dilakukan dengan mengedit file # vi /etc/vbox/interfaces Isi misalnya vbox0  eth0 vbox1  eth1",

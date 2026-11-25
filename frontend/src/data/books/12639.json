@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12639?v=1795443288",
   "cover_og_url": "/cover/12639/og?v=1795443288",
+  "has_cover": false,
   "url": "/book/python3-asynchronous-mixins-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Server side 2 Client side 3 Pranala Menarik 4 Pranala Menarik Server side import socket import threading import socketserver class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler): def handle(self): data = str(self.request.recv(1024), 'ascii') cur_thread = threading.current_thread() response = bytes(\"{}: {}\".format(cur_thread.name, data), 'ascii')",

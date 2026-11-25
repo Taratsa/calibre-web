@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16890?v=1795463554",
   "cover_og_url": "/cover/16890/og?v=1795463554",
+  "has_cover": false,
   "url": "/book/menggunakan-unixodbc-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di ambil dari http://www.besy.co.uk/debian/how_to_install_and_configure_unixodbc UnixODBC HOWTO # aptitude install unixodbc unixodbc-bin unixodbc-dev odbcinst1debian1 libmyodbc Configure drivers in /etc/odbcinst.ini: [MySQL] Description = MySQL driver for Linux &amp; Win32 Driver = /usr/lib/odbc/libmyodbc.so Setup = /usr/lib/odbc/libodbcmyS.so FileUsage = 1 UsageCount = 1 Configure data-sources in",

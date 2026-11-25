@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17732?v=1795466130",
   "cover_og_url": "/cover/17732/og?v=1795466130",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-samba-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang masih membutuhkan sharing file dengan komputer Windows maka yang perlu dilakukan adalah menggunakan SMB ( Server Message Block ) untuk sharing file di jaringan. SMB sering dikenal sebagai SAMBA di Linux . Pertama-tama buat directory yang akan di share di jaringan mkdir /var/data/public mkdir /var/data/ chown -Rf nobody.nogroup /var/data chmod -Rf 777 /var/data Cara instalasi dan",

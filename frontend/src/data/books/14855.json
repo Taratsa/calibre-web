@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14855?v=1795452080",
   "cover_og_url": "/cover/14855/og?v=1795452080",
+  "has_cover": false,
   "url": "/book/mikrotik-hotspot-setup-onno-widodo-purbo/",
   "rating": null,
   "comment": "Seluruh LAN (eth2-eth8) akan dibuat hotspot /ip dhcp-client print /ip dhcp-client add interface=ether1 disable=no /interface bridge add name=bridge1 /interface bridge port add bridge=bridge1 interface=ether2 add bridge=bridge1 interface=ether3 add bridge=bridge1 interface=ether4 add bridge=bridge1 interface=ether5 add bridge=bridge1 interface=ether6 add bridge=bridge1 interface=ether7 add",

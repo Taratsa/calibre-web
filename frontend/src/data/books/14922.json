@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14922?v=1795452424",
   "cover_og_url": "/cover/14922/og?v=1795452424",
+  "has_cover": false,
   "url": "/book/openwrt-menggunakan-di-mesin-yang-hanya-ada-python3-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tidak bisa pakai python3 harus buat virtualenv di python2 Since Python3 is not backward compatible you need to provide Python2 for installation. Follow this instructions to create an isolated Python2 environment in your system: Install Python2 (add repository if needed): sudo apt install python2 Install pip (package manager): curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py sudo",

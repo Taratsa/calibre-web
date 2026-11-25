@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20138?v=1795476278",
   "cover_og_url": "/cover/20138/og?v=1795476278",
+  "has_cover": false,
   "url": "/book/linux-driver-untuk-canon-pixma-ip1880-onno-widodo-purbo/",
   "rating": null,
   "comment": "Walaupun sudah di lalukan System &gt; Administration &gt; Print Sudah ada tanda hijau (canono-ip1880-series) Sebaiknya tetap lakukan langkah berikut Sambungkan laptop / pc ke Internet Buka terminal sudo add-apt-repository ppa:michael-gruz/canon sudo apt-get update sudo apt-get install cnijfilter-ip1800series Colok dan hidupkan printer Pranala Menarik Linux Howto",

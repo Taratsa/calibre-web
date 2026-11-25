@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17094?v=1795464114",
   "cover_og_url": "/cover/17094/og?v=1795464114",
+  "has_cover": false,
   "url": "/book/instalasi-nagios-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi NAGIOS # apt-get install nagios3 Pada saat instalasi kita perlu menset SMTP Server \"Internet with smarthost\" SMTP Server \"smtp.telkom.net\" (jika tersambung ke Telkom) password untuk nagiosadmin password untuk nagiosadmin (diulangi) Cara lain untuk menset user nagiosadmin untuk web admin # htpasswd -c /etc/nagios3/htpasswd.users nagiosadmin New password:  Re-type new password:",

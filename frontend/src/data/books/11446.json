@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11446?v=1795439900",
   "cover_og_url": "/cover/11446/og?v=1795439900",
+  "has_cover": false,
   "url": "/book/python-translate-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instal pip install goslate Code import goslate gs = goslate.Goslate() print(gs.translate('hello world', 'de')) Hasilnya Hallo Welt id kayanya tidak jalan :( ... hik hik .. Referensi https://pypi.python.org/pypi/goslate",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11432?v=1795439865",
   "cover_og_url": "/cover/11432/og?v=1795439865",
+  "has_cover": false,
   "url": "/book/python-cari-stopwords-freq-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "import os,nltk,os.path,re,string import argparse from nltk.stem.porter import PorterStemmer from collections import Counter import re ps=PorterStemmer() def hanya_huruf( input ): r=re.match('^[a-zA-Z]+$', input) if r==None: return False else: return True def parse_args(): parser = argparse.ArgumentParser() parser.add_argument('-i', '--infile', default= , help='input filename') return",

@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17394?v=1795465123",
   "cover_og_url": "/cover/17394/og?v=1795465123",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-ftp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi FTP Server &amp; Membuat Folder untuk Public apt-get install vsftpd mkdir /home/ftp chown -Rf root.root /home/ftp /etc/init.d/vsftpd restart mkdir /home/ftp/pub mkdir /home/ftp/pub/repo chown -Rf ftp.nogroup /home/ftp/pub Pranala Menarik Remaster Ubuntu untuk SchoolOnffLine Menggunakan UCK SchoolOnffLine: Server Berbasis Sabily 9.04 SchoolOnffLine: Server Berbasis Ubuntu 9.04",
@@ -55,7 +56,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [
       [
         "server",
@@ -165,7 +166,7 @@
       ],
       [
         17202,
-        0.58
+        0.59
       ],
       [
         17125,

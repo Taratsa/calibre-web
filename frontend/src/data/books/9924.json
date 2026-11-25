@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9924?v=1795435449",
   "cover_og_url": "/cover/9924/og?v=1795435449",
+  "has_cover": false,
   "url": "/book/voip-enum-untuk-yate-softswitch-onno-widodo-purbo/",
   "rating": null,
   "comment": "In Yate routing modules are equal, there's no central hub. You can use the message handler priorities to impose a certain order of passing through the routing modules - numerically lower priorities will be tried first. There are several ways of debugging ENUM routing: - use tcpdump or Ethereal/Wireshark to sniff for UDP packets on port 53 - start Yate with -vvvv or in rmanager type \"debug",

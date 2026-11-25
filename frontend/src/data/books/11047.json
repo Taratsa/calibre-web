@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11047?v=1795438874",
   "cover_og_url": "/cover/11047/og?v=1795438874",
+  "has_cover": false,
   "url": "/book/arduino-read-ascii-string-onno-widodo-purbo/",
   "rating": null,
   "comment": "This sketch uses the Serial.parseInt() function to locate values separated by a non-alphanumeric character. Often people use a comma to indicate different pieces of information (this format is commonly referred to as comma-separated-values or CSV), but other characters like a space or a period will work too. The values are parsed into integers and used to determine the color of a RGB LED. You'll",

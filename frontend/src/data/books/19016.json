@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19016?v=1795471274",
   "cover_og_url": "/cover/19016/og?v=1795471274",
+  "has_cover": false,
   "url": "/book/voip-cookbook-connect-pstn-using-linksys-spa9000-and-linksys-spa400-onno-widodo-purbo/",
   "rating": null,
   "comment": "Connecting PBX softswitch like Linksys SPA9000 to the PSTN can be carried out in several ways. One of them is to use the Linksys SPA400 as mediator to PSTN. What you have to do is to make SPA400's IP address to be fixed, enable User ID to register itself to SPA400, enable SPA9000 to register itself to SPA400, and enable SPA9000 to use SPA400's trunk for PSTN calls. SPA400 configuration can be",

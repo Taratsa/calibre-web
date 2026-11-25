@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19067?v=1795471482",
   "cover_og_url": "/cover/19067/og?v=1795471482",
+  "has_cover": false,
   "url": "/book/iscsi-connect-ubuntu-ke-iscsi-volume-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Aplikasi 2 Edit Konfigurasi 3 Restart 4 Discovery Target 5 Cara Cepat 6 Format iSCSI Volume 7 Referensi 8 Pranala Menarik Install Aplikasi Install $ sudo apt-get install open-iscsi Pastikan ada /etc/iscsi supaya iscsiadm tidak complain ln -s /etc/{iscsid.conf,initiatorname.iscsi} /etc/iscsi/ Edit Konfigurasi Konfigurasi default ada di /etc/iscsi/iscsid.conf atau ~/.iscsid.conf.",
@@ -140,12 +141,12 @@
         8
       ],
       [
-        "sdc",
-        5
-      ],
-      [
         "session",
         9
+      ],
+      [
+        "sdc",
+        5
       ],
       [
         "conn",

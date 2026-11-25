@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/20330?v=1795476913",
   "cover_og_url": "/cover/20330/og?v=1795476913",
+  "has_cover": false,
   "url": "/book/schoolonffline-desktop-berbasis-ubuntu-menggunakan-remastersys-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat user administrator sudo su adduser administrator Enter new UNIX password: &lt;123456&gt; Retype new UNIX password: &lt;123456&gt; Edit vi /etc/sudoers isi dengan administrator ALL=(ALL:ALL) ALL Setup sources.list cd /etc/apt/ cp sources.list sources.list.original vi sources.list masukan deb http://192.168.0.3/ubuntu-9.10/ karmic main multiverse restricted universe deb http://192.168.0.3/ubuntu-9.10/",

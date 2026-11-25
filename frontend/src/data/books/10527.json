@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10527?v=1795437370",
   "cover_og_url": "/cover/10527/og?v=1795437370",
+  "has_cover": false,
   "url": "/book/script-untuk-mirror-repository-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setup Mirror Keyring Secara sederhana keyring dibutuhkan untuk authentikasi bahwa repository software tersebut memang benar dari distro tertentu &amp; versi tertentu. Update keyring sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 mkdir -p /var/data/mirrorkeyring gpg --no-default-keyring",

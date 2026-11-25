@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20176?v=1795476480",
   "cover_og_url": "/cover/20176/og?v=1795476480",
+  "has_cover": false,
   "url": "/book/openldap-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt-get install slapd ldap-utils ldapscripts Masukan administrator password dalam proses instalasi. Instalasi CPAN LDAP untuk Webmin apt-get install libconvert-asn1-perl libnet-ldap-perl Tambahkan beberapa schema sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/cosine.ldif sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/nis.ldif sudo ldapadd -Y EXTERNAL -H ldapi:///",

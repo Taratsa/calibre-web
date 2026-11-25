@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18924?v=1795470857",
   "cover_og_url": "/cover/18924/og?v=1795470857",
+  "has_cover": false,
   "url": "/book/voip-cookbook-enum-conf-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "There is not much to be changed in ENUM.CONF. However, you need to make sure that there are the following entries: search =&gt; e164.arpa search =&gt; e164.org search =&gt; e164.or.id This way, we can ensure that the information contained in ENUM e164.arpa, e164.org and e164.or.id will be recognized by Asterisk. See Also VoIP Cookbook: Building your own Telecommunication Infrastructure VoIP Cookbook:",

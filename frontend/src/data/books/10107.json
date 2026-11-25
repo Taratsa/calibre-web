@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10107?v=1795436052",
   "cover_og_url": "/cover/10107/og?v=1795436052",
+  "has_cover": false,
   "url": "/book/contekan-git-onno-widodo-purbo/",
   "rating": null,
   "comment": "Rollback to specific version * git log * git checkout [commit_hash] [file_name] -&gt; use . at file_name for whole tree Alias git config --global alias.co checkout git config --global alias.br branch git config --global alias.ci commit git config --global alias.st status Push and create remote branch automatically based on local branch. git push -u origin local_branch_name",

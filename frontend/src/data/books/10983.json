@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10983?v=1795438680",
   "cover_og_url": "/cover/10983/og?v=1795438680",
+  "has_cover": false,
   "url": "/book/python-print-waktu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Time Source import datetime print datetime.datetime.now() Jika dijalankan akan keluar kira-kira 2015-11-28 09:12:03.465258 Time Stamp import time import datetime n = datetime.datetime.now() unix_time = time.mktime(n.timetuple()) Ambil Menit dan Detik Saja now=datetime.datetime.now() string_i_want=('%02d:%02d.%d'%(now.minute,now.second,now.microsecond))[:-4] now=datetime.now()",

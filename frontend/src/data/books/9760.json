@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9760?v=1795434793",
   "cover_og_url": "/cover/9760/og?v=1795434793",
+  "has_cover": false,
   "url": "/book/ipv6-route-membuang-ipv6-route-melalui-sebuah-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Membuang IPv6 route melalui interface biasanya tidak dilakukan menggunakan tangan, script konfigurasi akan melakukan hal tersebut saat shutdown. Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route del / dev  Contoh # /sbin/ip -6 route del 2000::/3 dev eth0 Menggunakan \"route\" Penggunaan # /sbin/route -A inet6 del / dev  Contoh #",

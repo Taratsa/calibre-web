@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10056?v=1795435891",
   "cover_og_url": "/cover/10056/og?v=1795435891",
+  "has_cover": false,
   "url": "/book/openwrt-multcast-forwarding-onno-widodo-purbo/",
   "rating": null,
   "comment": "the proper way to do so: add option in your /etc/config/network against br-lan option igmp_snooping 1 echo \"1\" &gt; /sys/devices/virtual/net/br-lan/bridge/multicast_snooping or set it in file sysctl.conf Add the following in /etc/rc.local echo \"0\" &gt; /sys/devices/virtual/net/br-lan/bridge/multicast_snooping Replace br-lan with your actual bridge interface, sometimes also called br0. This will forward",

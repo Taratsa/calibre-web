@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12624?v=1795443248",
   "cover_og_url": "/cover/12624/og?v=1795443248",
+  "has_cover": false,
   "url": "/book/openwrt-quagga-ospf-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.nongnu.org/quagga/docs/docs-multi/OSPF-Configuration-Examples.html#OSPF-Configuration-Examples ! interface bge0 ip ospf authentication message-digest ip ospf message-digest-key 1 md5 ABCDEFGHIJK ! router ospf network 192.168.0.0/16 area 0.0.0.1 area 0.0.0.1 authentication message-digest An ABR router, with MD5 authentication and performing summarisation of networks between the",

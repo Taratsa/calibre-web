@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16519?v=1795461333",
   "cover_og_url": "/cover/16519/og?v=1795461333",
+  "has_cover": false,
   "url": "/book/dokumentasi-api-dengan-swagger-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita akan pakai FastAPI + Swagger UI karena simpel dan cocok buat dokumentasi REST API secara otomatis. Contents 1 Install Python dan pip 2 Buat Virtual Environment (opsional tapi disarankan) 3 Install FastAPI dan Uvicorn 4 Buat File Project: `main.py` 5 Jalankan API 6 Akses Swagger UI 7 Akses Redoc (Alternatif UI) 8 Export Dokumentasi ke JSON atau YAML 9 Catatan: 10 Pranala Menarik Install",

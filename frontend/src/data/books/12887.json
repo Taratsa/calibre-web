@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12887?v=1795444095",
   "cover_og_url": "/cover/12887/og?v=1795444095",
+  "has_cover": false,
   "url": "/book/instalasi-punbb-bahasa-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil terjemahan bahasa Indonesia PunBB dari http://punbb.informer.com/downloads.php . Kita harus ber terima kasih kepada rekan Kemas Yunus Antonius yang sudah bersusah payah menterjemahkan PunBB ke dalam bahasa Indonesia. Copykan file indonesia.zip ke folder bahasa, misalnya # cp Indonesian.zip /var/www/forum/lang/ Unzip terjemahan PunBB tersebut # cd /var/www/forum/lang/ # unzip Indonesian.zip",

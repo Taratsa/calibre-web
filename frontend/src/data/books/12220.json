@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12220?v=1795441892",
   "cover_og_url": "/cover/12220/og?v=1795441892",
+  "has_cover": false,
   "url": "/book/wspr-protocol-onno-widodo-purbo/",
   "rating": null,
   "comment": "Protocol specification The standard message is  + &lt;4 digit locator&gt; + ; for example \"K1ABC FN20 37\" is a signal from station K1ABC in Maidenhead grid cell \"FN20\", sending 103.7milliwatts, or about 5.0 Watts (legal limit for 630 m). Messages with a compound callsign and/or 6 digit locator use a two-transmission sequence. The first transmission carries compound",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15312?v=1795454117",
   "cover_og_url": "/cover/15312/og?v=1795454117",
+  "has_cover": false,
   "url": "/book/konfigurasi-gnb-srsran-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah srsRAN di instalasi kita perlu mengkonfigurasi srsRAN sesuai dengan keperluan kita. Pada kesempatan ini, kita akan mengkonfigurasi srsRAN untuk beroperasi sebagai gNodeB (gNB). Untuk keperluan tersebut kita perlu mengedit gnb.conf melalui perintah berikut, cd /usr/local/src/srsRAN nano srsgnb/gnb.conf Pastikan isi konfigurasi gnb kira-kira sebagai berikut, [enb] enb_id = 0x17B mcc = 510",

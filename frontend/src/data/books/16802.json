@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16802?v=1795463287",
   "cover_og_url": "/cover/16802/og?v=1795463287",
+  "has_cover": false,
   "url": "/book/cyber-security-ollama-startegi-analisa-log-jsonl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Metode terbaik: jangan kirim seluruh `alerts.json` langsung ke Ollama 2 Hasil awal file Anda 3 Temuan yang perlu diprioritaskan 3.1 1. Rootcheck pada `server-webtest` 3.2 2. User dan group `wazuh-dashboard` dibuat 3.3 3. Sebagian besar alert adalah compliance scan 4 Script siap pakai 5 1. Pilih model Ollama 5.1 Pilihan utama: `qwen3:8b` 5.2 Pilihan lebih ringan dan cepat: `gemma3:4b` 6",

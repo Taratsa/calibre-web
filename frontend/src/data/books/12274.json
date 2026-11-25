@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/12274?v=1795442113",
   "cover_og_url": "/cover/12274/og?v=1795442113",
+  "has_cover": false,
   "url": "/book/pptp-instalasi-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Cek MPPE di Kernel 2 Instalasi PPTP 3 Restart PPTP 4 Menambahkan User PPTP ke PPP Password 5 Enable IP Forwarding 6 Untuk Latihan Sederhana 7 Clinet 7.1 Cek Sambungan 8 Referensi 9 Pranala Menarik Cek MPPE di Kernel cek apakah kernel yang anda gunakan mendukung untuk melakukan MPPE. modprobe ppp-compress-18 &amp;&amp; echo success Instalasi PPTP sudo su locale-gen id_ID.UTF-8 apt update apt -y",

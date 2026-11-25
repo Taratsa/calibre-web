@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17039?v=1795463959",
   "cover_og_url": "/cover/17039/og?v=1795463959",
+  "has_cover": false,
   "url": "/book/tip-mempelajari-command-shell-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "cara belajar perintah shell yang lengkap lihat isi folder /bin /sbin /usr/bin/ /usr/sbin/ semua perintah shell linux ada di folder tersebut. Cara melihatnya bisa pakai perintah di shell sebagai berikut $ ls /bin $ ls /sbin $ ls /usr/bin $ ls /usr/sbin Kalau mau tahu cara pakai perintah-nya, lihat help-nya pakai perintah $ namaperintah -h $ namaperintah --help $ man namaperintah $ info",

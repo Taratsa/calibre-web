@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12689?v=1795443438",
   "cover_og_url": "/cover/12689/og?v=1795443438",
+  "has_cover": false,
   "url": "/book/dbench-internet-offline-rpi-10-100-concurrent-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Mount 3 dbenchscript-10-100.sh 4 Script Evaluasi VM 4.1 Caller VM Main 4.2 Contoh dbench-vm1-0.sh 4.3 Contoh dbench-vm4-4.sh 5 Melihat hasil 6 Pranala Menarik Install apt update apt -y install dbench Mount Mount RaspberryPi mkdir -p /mnt/public umount /mnt/public/ mount.cifs //192.168.0.1/public /mnt/public -o username=pi,password=raspberry mount -t cifs //192.168.0.1/public",

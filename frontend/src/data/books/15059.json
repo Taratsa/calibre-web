@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15059?v=1795452972",
   "cover_og_url": "/cover/15059/og?v=1795452972",
+  "has_cover": false,
   "url": "/book/gnupg-extend-expire-key-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://makandracards.com/makandra-orga/13644-what-to-do-when-your-gpg-pgp-key-expires Suggested way: Extend your key expiry Find the ID of the expiring key, e.g. with gpg --list-secret-keys Note your key ID (after the slash). Start editing the key with gpg --edit-key KEY_ID View your selected key and subkeys with list Select the primary key with key 0 Interactively select a new expiry",

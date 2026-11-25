@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9973?v=1795435617",
   "cover_og_url": "/cover/9973/og?v=1795435617",
+  "has_cover": false,
   "url": "/book/squid-https-proxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi: http://wiki.squid-cache.org/Features/HTTPS When a browser comes across an https:// URL, it does one of two things: opens an SSL/TLS connection directly to the origin server or opens a TCP tunnel through Squid to the origin server using the CONNECT request method. Squid interaction with these two traffic types is discussed below. Contents 1 CONNECT tunnel 2 CONNECT tunnel through Squid",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9607?v=1795433427",
   "cover_og_url": "/cover/9607/og?v=1795433427",
+  "has_cover": false,
   "url": "/book/netstat-melihat-port-yang-aktif-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://linuxers.org/howto/how-find-out-active-connections-or-which-ports-are-openlistening-linux Melihat port yang di listen netstat -plnt # listen semua netstat -n -A inet # listen semua lsof -i # listen semua netstat -n -A inet -t # listen TCP netstat -n -A inet -u # listen UDP lsof -i4TCP # listen IPv4 TCP Contoh memfilter netstat -plnt | grep ':80' # web netstat -A inet -n -p | grep",

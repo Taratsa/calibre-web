@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9994?v=1795435688",
   "cover_og_url": "/cover/9994/og?v=1795435688",
+  "has_cover": false,
   "url": "/book/voip-cara-mengkonfigurasi-trunk-di-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.alkia.net/index.php/faqs/137-how-to-configure-sip-trunk-with-asterisk Disain asterisk memisahkan antara in-bound dan out-bound call. In-bound call membutuhkan untuk di terima oleh SIP dan di arahkan ke context call plan. Out-bound call aplikasi dial membutuhkan profile spesifik di konfigurasi SIP atau registrasi ke tujuan. Contents 1 Context 2 Konfigurasi Sederhana 3 Call di",
@@ -143,12 +144,12 @@
         7
       ],
       [
-        "telepon",
-        11
-      ],
-      [
         "pbx",
         5
+      ],
+      [
+        "telepon",
+        11
       ],
       [
         "callerid",

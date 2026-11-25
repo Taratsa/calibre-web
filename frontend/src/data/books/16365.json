@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16365?v=1795460401",
   "cover_og_url": "/cover/16365/og?v=1795460401",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-untuk-dataset-reuters-newswire-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuat model prediksi menggunakan dataset Reuters Newswire dan memvisualisasikan hasilnya di layar tanpa menggunakan Google Colab, Anda dapat mengikuti langkah-langkah berikut: 1. Mengimpor Library yang Diperlukan : Pastikan Anda mengimpor semua library yang dibutuhkan, seperti `keras`, `numpy`, `pandas`, dan `matplotlib`. import keras import numpy as np import pandas as pd import",

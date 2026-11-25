@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13873?v=1795447759",
   "cover_og_url": "/cover/13873/og?v=1795447759",
+  "has_cover": false,
   "url": "/book/konfigurasi-access-point-untuk-jaringan-yang-padat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada jaringan yang padat yang biasanya terjadi di infrastruktur WiFi outdoor , kita dapat menkonfigrasi RTS Threshold lebih kecil dari nilai default-nya (biasanya default 2432 byte). Dalam contoh ini, RST Threshold di konfigurasi pada 256 seperti juga pada contoh Planet WAP-1965.. Mekanisme Request To Send ( RTS ) bekerja bersama dengan mekanisme Clear To Send ( CTS ). Jika paket yang akan",
@@ -144,11 +145,11 @@
         3
       ],
       [
-        "mengirimkan",
+        "konfigurasi",
         3
       ],
       [
-        "konfigurasi",
+        "mengirimkan",
         3
       ]
     ],

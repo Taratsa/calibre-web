@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13520?v=1795446306",
   "cover_og_url": "/cover/13520/og?v=1795446306",
+  "has_cover": false,
   "url": "/book/nvme-grub-edit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.howtogeek.com/196655/how-to-configure-the-grub2-boot-loaders-settings/ saat boot , tekan F6 terus saat ada tulisan boot option seperti gambar masukkan nvme_core.default_ps_max_latency_us=0 kalo sudah kedeteksi dan di install ubuntu, saat boot grub ubuntu yang sudah diintall tambah kan itu lagi nvme_core.default_ps_max_latency_us=0 saat sudah masuk ubuntu baru di tambahkan di",

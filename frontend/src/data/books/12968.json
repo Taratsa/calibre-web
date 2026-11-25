@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12968?v=1795444364",
   "cover_og_url": "/cover/12968/og?v=1795444364",
+  "has_cover": false,
   "url": "/book/bird2-static-routing-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi Shell 3 Routing 4 Cek 5 Test 6 Setting Client 7 Referensi 8 Pranala Menarik Topologi R1 e1 --&gt; CLOUD nat0 e2 --&gt; R2 e1 e3 --&gt; LAN 192.168.1.1/24 R2 e1 --&gt; R1 e2 e2 --&gt; LAN 192.168.2.1/24 Jika menggunakan BIRD appliance di GNS3, maka PC / laptop kita perlu menjalankan sudo chown root:onno /dev/kvm Tapi jika menggunakan BIRD VirtualBox (dari OpenWRT), kita tidak",

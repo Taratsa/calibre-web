@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13038?v=1795444625",
   "cover_og_url": "/cover/13038/og?v=1795444625",
+  "has_cover": false,
   "url": "/book/ipv6-cara-wiki-ubuntu-tersambung-ke-hurricane-electric-onno-widodo-purbo/",
   "rating": null,
   "comment": "Supaya Router Advertisement (RA) tidak mengganggu ada baiknya lakukan echo 0 &gt;/proc/sys/net/ipv6/conf/enp3s0/accept_ra ganti enp3s0 sesuai dengan nama interface yang ingin di disable RA-nya. Edit /etc/network/interfaces Edit auto he-ipv6 iface he-ipv6 inet6 v4tunnel address 2001:470:a:d29f::2 netmask 64 mtu 1280 local 200.200.2.183 endpoint 216.218.226.238 ttl 255 gateway 2001:470:a:d29f::1",

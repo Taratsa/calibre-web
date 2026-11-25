@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16430?v=1795460828",
   "cover_og_url": "/cover/16430/og?v=1795460828",
+  "has_cover": false,
   "url": "/book/dataset-k-fold-cross-validation-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python untuk menerapkan K-Fold Cross-Validation pada dataset yang memiliki 10 fitur dan 1 target menggunakan pustaka `scikit-learn`. Dalam contoh ini, kita akan menggunakan model Regresi Linier sebagai estimator. import numpy as np from sklearn.model_selection import KFold, cross_val_score from sklearn.linear_model import LinearRegression # Contoh: Membuat dataset dummy",

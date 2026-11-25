@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15270?v=1795453941",
   "cover_og_url": "/cover/15270/og?v=1795453941",
+  "has_cover": false,
   "url": "/book/konfigurasi-simcard-menggunakan-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install software pendukung sudo apt-get install pcscd pcsc-tools libccid libpcsclite-dev python-pyscard Install pysim sudo apt-get install python-pyscard python-serial python-pip pip install pytlv git clone git://git.osmocom.org/pysim Untuk membaca SimCard ./pySim-read.py -p0 or ./pySim-read.py -p1 Untuk menulis SimCard ./pySim-prog.py -p 0 -n Open5GS -a 62416296 -s 8988211000000213010 -i",

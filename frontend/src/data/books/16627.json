@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16627?v=1795462072",
   "cover_og_url": "/cover/16627/og?v=1795462072",
+  "has_cover": false,
   "url": "/book/pm-transition-system-miner-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap! Berikut script Transition System Miner dengan PM4Py yang membaca file XES terlampir (`/mnt/data/BPIC_2012_A.xes`), menambang Transition System (TS) , lalu: Cetak ringkasan jumlah state dan transition Simpan gambar TS (`transition_system.png`) Ekspor daftar state (`ts_states.csv`) dan transition (`ts_transitions.csv`) Install dulu (sekali saja): pip install pm4py pandas graphviz # pastikan",

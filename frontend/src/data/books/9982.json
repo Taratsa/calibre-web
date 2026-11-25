@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9982?v=1795435644",
   "cover_og_url": "/cover/9982/og?v=1795435644",
+  "has_cover": false,
   "url": "/book/openwrt-mengembalikan-setting-default-config-in-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Setting Original Config.in 2 Referensi 3 Pranala Menarik 3.1 Build Firmware 3.2 APRX 3.3 IPv6 3.4 Flash Firmware 3.5 Misc 3.6 UBNT Setting Original Config.in Untuk mengembalikan setting Config.in ke kondisi semula dapat menggunakan perintah berikut, ~/openwrt/trunk&gt; svn up ~/openwrt/trunk&gt; rm .config ~/openwrt/trunk&gt; make menuconfig Untuk kemudian membuat image firmware dari scratch:",

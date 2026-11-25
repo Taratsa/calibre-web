@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20807?v=1795478230",
   "cover_og_url": "/cover/20807/og?v=1795478230",
+  "has_cover": false,
   "url": "/book/mp3-instalasi-codec-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi CODEC agar player di Ubuntu mengenali format MP3 apt-get install gstreamer0.10-fluendo-mp3 gstreamer1.0-libav \\ gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly sudo add-apt-repository ppa:mc3man/trusty-media sudo apt-get update sudo apt-get install gstreamer0.10-ffmpeg Referensi Pranala Menarik Multimedia di Linux MP3: Instalasi CODEC di Ubuntu Driver dan CODEC untuk Multimedia di",

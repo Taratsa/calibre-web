@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18281?v=1795468366",
   "cover_og_url": "/cover/18281/og?v=1795468366",
+  "has_cover": false,
   "url": "/book/schoolonffline-konfigurasi-etc-resolv-conf-dns-resolver-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit # vi /etc/resolv.conf Ubah nameserver 127.0.0.1 nameserver 203.34.118.10 nameserver 203.34.118.12 nameserver 208.67.222.222 nameserver 208.67.220.220 Backup Konfigurasi DNS Backup konfigurasi DNS terdapat di /etc/resolv.conf.nawala Copykan ke # cp /etc/resolv.conf.nawala /etc/resolv.conf Pranala Menarik Distro SchoolOnffLine SchoolOnffLine: Manual Administrator SchoolOnffLine: Server",

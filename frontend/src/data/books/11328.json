@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11328?v=1795439603",
   "cover_og_url": "/cover/11328/og?v=1795439603",
+  "has_cover": false,
   "url": "/book/python-generating-network-graph-of-twitter-follower-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Langkah Secara umum 3 Cara Cepat 4 Step 1. Collect follower data from the Twitter API 5 Step 2. Process twitter data to generate an output file of relationships between twitter accounts 6 Python file: twitter_network.py 7 Step 3. Visualizing the Network using the NetworkX library 8 Python file: visualize.py 9 Referensi Persiapan Instalasi sudo apt install python-pip sudo",
@@ -128,12 +129,12 @@
         18
       ],
       [
-        "friends",
-        24
-      ],
-      [
         "print",
         28
+      ],
+      [
+        "friends",
+        24
       ],
       [
         "taboo",

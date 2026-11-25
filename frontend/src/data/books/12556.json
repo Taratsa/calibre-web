@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12556?v=1795443058",
   "cover_og_url": "/cover/12556/og?v=1795443058",
+  "has_cover": false,
   "url": "/book/r-bigram-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.rpubs.com/rgcmme/PLN-09 library(tm) library(ggplot2) library(reshape2) library(wordcloud) library(RWeka) # Needed for a bug when calculating n-grams with weka options(mc.cores=1) setwd(\"~/Youtube\") path = \"./review_polarity/txt_sentoken/\" dir = DirSource(paste(path,\"pos/\",sep=\"\"), encoding = \"UTF-8\") corpus = Corpus(dir) # check how many document loaded length(corpus) ## [1]",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20718?v=1795477974",
   "cover_og_url": "/cover/20718/og?v=1795477974",
+  "has_cover": false,
   "url": "/book/moodle-copy-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "A Moodle system comprises three parts: The data stored in the database (For example, a MySQL database) The uploaded files (For example, site and course files uploaded via Moodle located in moodledata) The Moodle code (For example, everything in server/htdocs/moodle) You can confirm where all these things are located in a Moodle installation by checking the config.php file. $CFG-&gt;dbname shows the",

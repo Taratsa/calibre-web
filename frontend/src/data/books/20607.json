@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20607?v=1795477704",
   "cover_og_url": "/cover/20607/og?v=1795477704",
+  "has_cover": false,
   "url": "/book/openbts-e110-instalasi-openbts-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lakukan Ubah Master Clock ke 52MHz Contents 1 Instalasi Aplikasi Pendukung 2 Compile osip2 3 Instalasi OpenBTS 4 Download OpenBTS 5 Compile OpenBTS 5.1 Error \"assuming TRX is dead\" 5.2 Error File System Kurang Baik 5.3 Error autoreconf 6 Compile Smqueue 6.1 Error saat compile / make Smqueue 7 Instalasi Subscriber Registry 7.1 Error di Template Database 8 Instalasi Sipauthserve 9 Menjalankan",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 2168,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "openbts",

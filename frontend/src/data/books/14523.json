@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14523?v=1795450374",
   "cover_og_url": "/cover/14523/og?v=1795450374",
+  "has_cover": false,
   "url": "/book/fldigi-compile-di-debian-11-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://sourceforge.net/p/fldigi/wiki/debian_howto/ Install aptitude &amp; development packages dpkg-reconfigure locales sudo locale-gen \"en_US.UTF-8\" export LC_ALL=\"en_US.UTF-8\" locale en_US.UTF-8 sudo apt -y install aptitude wget libfltk1.3 libfltk1.3-dev libsamplerate0-dev \\ libsamplerate0 portaudio19-dev libsndfile1 libsndfile1-dev libhamlib-dev \\ libhamlib4 libhamlib++4 libhamlib++-dev",

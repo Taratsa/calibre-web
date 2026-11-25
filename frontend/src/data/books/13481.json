@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13481?v=1795446105",
   "cover_og_url": "/cover/13481/og?v=1795446105",
+  "has_cover": false,
   "url": "/book/sound-mic-ke-speaker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/123798/how-to-hear-my-voice-in-speakers-with-a-mic Install PulseAudio Volume Control (pavucontrol): sudo apt install pavucontrol Now we will route your microphone to your speakers. Do this by running the following command: pactl load-module module-loopback latency_msec=1 On the Recording tab of pavucontrol, you can show all streams (combobox at the bottom)",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10493?v=1795437262",
   "cover_og_url": "/cover/10493/og?v=1795437262",
+  "has_cover": false,
   "url": "/book/knavalbattle-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan pendukung apt-get install cmake git-core libqt4-dev kdebase-workspace-dev g++ \\ libkdegames-dev Download source code cd /usr/local/src git clone git://anongit.kde.org/knavalbattle Compile cd knavalbattle mkdir build cd build cmake .. -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` -DCMAKE_BUILD_TYPE=debugfull make make install Menjalankan, ketik knavalbattle Referensi KDE: Aplikasi di KDE",

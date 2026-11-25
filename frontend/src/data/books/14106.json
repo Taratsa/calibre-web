@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14106?v=1795448625",
   "cover_og_url": "/cover/14106/og?v=1795448625",
+  "has_cover": false,
   "url": "/book/ssh-ubah-port-firewall-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ubah nano -w /etc/ssh/sshd_config Port 22 ---&gt; 2022 Ubah firewall iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 2022 -j ACCEPT",

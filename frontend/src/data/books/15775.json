@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15775?v=1795456757",
   "cover_og_url": "/cover/15775/og?v=1795456757",
+  "has_cover": false,
   "url": "/book/ffmpeg-extract-audio-dari-mp4-onno-widodo-purbo/",
   "rating": null,
   "comment": "So either ffmpeg -i video.mp4 -acodec copy -ss 00:30:00 -to 00:60:00 extract.aac ffmpeg -i video.mp4 -acodec copy extract.aac or ffmpeg -i video.mp4 -vn -ss 00:30:00 -to 00:60:00 extract.mp3",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16633?v=1795462134",
   "cover_og_url": "/cover/16633/og?v=1795462134",
+  "has_cover": false,
   "url": "/book/cyber-security-wazuh-install-docker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Oke 👍 saya jelaskan langkah-langkah **instalasi Wazuh dengan Docker di Ubuntu 24.04**. Cara ini lebih simpel karena pakai *docker-compose* resmi dari Wazuh. --- 1. Persiapan Server Pastikan Ubuntu sudah update dan punya akses root/sudo: ```bash sudo apt update &amp;&amp; sudo apt upgrade -y ``` Install paket dasar: ```bash sudo apt install -y curl apt-transport-https ca-certificates gnupg lsb-release ```",

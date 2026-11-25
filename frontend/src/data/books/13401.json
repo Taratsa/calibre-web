@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13401?v=1795445838",
   "cover_og_url": "/cover/13401/og?v=1795445838",
+  "has_cover": false,
   "url": "/book/wemos-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code ///////////////////////////////// // Generated with a lot of love// // with TUNIOT FOR ESP8266 // // Website: Easycoding.tn // ///////////////////////////////// void setup() { Serial.begin(115200); } void loop() { Serial.println(analogRead(A0)); delay(1000); } Code dengan 7 segmen #include  #include  TM1650 d; void setup() { Wire.begin(); //Join the bus as master",
@@ -70,7 +71,7 @@
       ],
       [
         15041,
-        0.52
+        0.51
       ],
       [
         13416,

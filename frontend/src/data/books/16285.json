@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16285?v=1795459942",
   "cover_og_url": "/cover/16285/og?v=1795459942",
+  "has_cover": false,
   "url": "/book/postfix-smtp-authentication-for-clients-with-dovecot-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Prepare Dovecot 2 Edit Postfix 3 Ensure all mail functions 4 Setup in Mail Android 5 References Prepare Dovecot Edit to prepare Dovecot as an auth server for Postfix: vim /etc/dovecot/conf.d/10-master.conf Ensure: service auth { ... unix_listener /var/spool/postfix/private/auth { mode = 0660 user = postfix group = postfix } ##end listener ... } Edit: vim",

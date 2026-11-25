@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10680?v=1795437822",
   "cover_og_url": "/cover/10680/og?v=1795437822",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-membuat-gateway-6to4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.openwrt.org/doc/howto/barrier.breaker.ipv6.6to4 If you are like most people, native ipv6 is not going to happen any time soon; you may also not want to setup a tunnel with a broker because of various limitations. Now assuming you can ping 192.88.99.1, you can also traceroute to make sure it's nearby, 6to4 automatic tunnels will work for you. After this configuration even if",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 334,
-    "longer_than": 32,
+    "longer_than": 31,
     "top": [
       [
         "option",

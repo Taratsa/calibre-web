@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10344?v=1795436794",
   "cover_og_url": "/cover/10344/og?v=1795436794",
+  "has_cover": false,
   "url": "/book/rom-android-backup-imei-onno-widodo-purbo/",
   "rating": null,
   "comment": "1) if u have made the backup of MP0B_001 file in /data/nvram/md/NVRAM/NVD_IMEI/MP0B_001 , then install root explorer and simply replace your current file with the backed up MP0B_001 and set the permissions to rw-rw---- and restart. lakukan adb devices adb shell su cd /data/nvram/md/NVRAM/NVD_IMEI disitu file IMEI MP0B_001 ST6TA001 ST6TB001 :: backup to sdcard IF /I \"%option%\" == \"b\" ( ECHO",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12824?v=1795443872",
   "cover_og_url": "/cover/12824/og?v=1795443872",
+  "has_cover": false,
   "url": "/book/cisco-vlan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.dummies.com/programming/networking/creating-a-vlan-for-cisco-networking/ When working with your Cisco network, you may want to separate users into different broadcast domains for security or traffic reduction. You can do this by implementing VLANs. The following example will create VLAN (VLAN2) and place the ports on a switch (from 1-12) into VLAN2. enable configure terminal",

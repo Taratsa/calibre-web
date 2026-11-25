@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21151?v=1795480581",
   "cover_og_url": "/cover/21151/og?v=1795480581",
+  "has_cover": false,
   "url": "/book/os-android-mirror-source-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk beberapa client sekaligus, sebaiknya kita menggunakan mirror. Asumsinya kita melalukan mirror pada /usr/local/aosp/mirror. Lakukan sebagai user biasa sudo mkdir -p /usr/local/aosp/mirror sudo mount --bind /media/onno/onnolibrary/repository/android-source/mirror/ /usr/local/aosp/mirror/ sudo chmod -Rf 777 /usr/local/aosp sudo chown -Rf nobody.nogroup /usr/local/aosp cd /usr/local/aosp/mirror",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 228,
-    "longer_than": 26,
+    "longer_than": 25,
     "top": [
       [
         "mirror",

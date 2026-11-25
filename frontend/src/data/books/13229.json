@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13229?v=1795445219",
   "cover_og_url": "/cover/13229/og?v=1795445219",
+  "has_cover": false,
   "url": "/book/satu-data-ckan-test-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Tambahan apps yang dibutuhkan 2 Database 3 Active Multicore Solr 4 Test 5 Referensi 6 Pranala Menarik Tambahan apps yang dibutuhkan cd /usr/lib/ckan/default/src/ckan . /usr/lib/ckan/default/bin/activate pip install -r /usr/lib/ckan/default/src/ckan/dev-requirements.txt Database Create account &amp; password sudo -u postgres createdb -O ckan_default ckan_test -E utf-8 sudo -u postgres",

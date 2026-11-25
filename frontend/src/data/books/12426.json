@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12426?v=1795442713",
   "cover_og_url": "/cover/12426/og?v=1795442713",
+  "has_cover": false,
   "url": "/book/powerdns-cek-dari-komputer-lain-onno-widodo-purbo/",
   "rating": null,
   "comment": "Format perintah dig domain.id @IPv6-DNS dig A domain.id @IPv6-DNS dig NS domain.id @IPv6-DNS dig MX domain.id @IPv6-DNS dig AAAA domain.id @IPv6-DNS Contoh Cek A dig www.contoh.web.id @2001:470:36:ab6::100 ; &lt;&lt;&gt;&gt; DiG 9.9.5-3-Ubuntu &lt;&lt;&gt;&gt; www.contoh.web.id @2001:470:36:ab6::100 ;; global options: +cmd ;; Got answer: ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 7037 ;; flags: qr aa rd; QUERY:",

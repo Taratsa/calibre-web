@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16177?v=1795459277",
   "cover_og_url": "/cover/16177/og?v=1795459277",
+  "has_cover": false,
   "url": "/book/python-ubuntu-24-04-read-csv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membaca dan mem-parsing file CSV di Ubuntu 24.04 menggunakan Python, Anda dapat memanfaatkan modul bawaan `csv`. Berikut adalah contoh kode yang menunjukkan cara membaca file CSV dan mengakses kolom-kolomnya: import csv # Membuka file CSV with open('data.csv', mode='r', newline= ) as file: reader = csv.reader(file) # Membaca header (baris pertama) header = next(reader) print(f\"Header:",

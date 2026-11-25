@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17750?v=1795466183",
   "cover_og_url": "/cover/17750/og?v=1795466183",
+  "has_cover": false,
   "url": "/book/instalasi-sshd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install SSH Server # apt-get install openssh-server Restart SSH Server # /etc/init.d/ssh restart Mengubah Port SSH Standard Port SSH adalah 22, sayangnya di Internet Port 22 menjadi sasaran empuk para cracker untuk menyerang server di Internet. Oleh karena itu sebaiknya di ubah ke Port lain. Cara mengubahnya dengan mengedit file /etc/ssh/sshd_config # vi /etc/ssh/sshd_config Ubah Port 22 Menjadi",

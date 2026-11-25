@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12025?v=1795441341",
   "cover_og_url": "/cover/12025/og?v=1795441341",
+  "has_cover": false,
   "url": "/book/wspr-rtl-sdr-di-ubuntu-14-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.rtl-sdr.com/forum/viewtopic.php?f=7&amp;t=111 Cptnmike: Instructions as follows sudo apt-get install git sudo apt-get install cmake sudo apt-get install libusb-1.0-0.dev sudo apt-get install build-essential git clone git://git.osmocom.org/rtl-sdr.git cd rtl-sdr/ mkdir build cd build cmake ../ -DINSTALL_UDEV_RULES=ON make sudo make install sudo ldconfig cp ../rtl-sdr.rules",

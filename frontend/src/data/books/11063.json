@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11063?v=1795438916",
   "cover_og_url": "/cover/11063/og?v=1795438916",
+  "has_cover": false,
   "url": "/book/voip-codec-latency-vs-bandwidth-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://toncar.cz/Tutorials/VoIP/VoIP_Basics_Codec_Latency_vs_Bandwidth.html As we have shown in the overview of codecs, the low-bandwidth codecs are quite efficient. For example, G.729 will compress 10 milliseconds of audio to 10 bytes and G.723.1 encodes 30ms frames to 24 or 20 bytes. However, since we send compressed audio frames as payload in RTP packets which are in turn sent over",

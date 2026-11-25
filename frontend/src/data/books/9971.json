@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9971?v=1795435609",
   "cover_og_url": "/cover/9971/og?v=1795435609",
+  "has_cover": false,
   "url": "/book/openwrt-flash-mikrotik-rb433-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gambaran umum tiga langkah cara instalasi: Boot board dengan OpenWRT dari jaringan (netboot): server DHCP dan TFTP dibutuhkan di host. Instal OpenWRT ke internal flash dengan wget2nand: server HTTP atau FTP dibutuhkan di host. Reboot dengan instalasi baru, lakukan konfigurasi dll. Contents 1 Netboot 2 Build Image 3 Setup Host 4 Setup Target 5 Instalasi Permanen 6 Target Image 7 Save your RouterOS",

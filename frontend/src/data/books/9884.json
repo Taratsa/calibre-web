@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9884?v=1795435296",
   "cover_og_url": "/cover/9884/og?v=1795435296",
+  "has_cover": false,
   "url": "/book/os-android-mirror-source-aokp-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo mkdir -p /usr/local/aokp/mirror sudo mount --bind /media/onno/onnolibrary/repository/android-source/mirror-aokp/ /usr/local/aokp/mirror/ sudo chmod -Rf 777 /usr/local/aokp sudo chown -Rf nobody.nogroup /usr/local/aokp cd /usr/local/aokp/mirror repo init -u git://github.com/AOKP/platform_manifest.git -b jb --mirror repo sync Referensi http://soupdawg.wordpress.com/ Pranala Menarik Android",

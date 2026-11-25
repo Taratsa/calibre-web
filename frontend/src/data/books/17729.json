@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17729?v=1795466114",
   "cover_og_url": "/cover/17729/og?v=1795466114",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-tinyproxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi # apt-get install tinyproxy Edit Konfigurasi Edit # vi /etc/tinyproxy/tinyproxy.conf Ubah # User nobody # Group nogroup User root Group root # Port 8888 Port 3128 Allow 127.0.0.1 Allow 192.168.0.0/16 Allow 172.16.0.0/12 Allow 10.0.0.0/8 Restart # /etc/init.d/tinyproxy restart Pranala Menarik SMEOnffLine: Server Berbasis Sabily SMEOnffLine: Server Berbasis Ubuntu",

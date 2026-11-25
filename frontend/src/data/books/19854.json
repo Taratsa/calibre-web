@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19854?v=1795475321",
   "cover_og_url": "/cover/19854/og?v=1795475321",
+  "has_cover": false,
   "url": "/book/instalasi-kvm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Prasyarat 2 Membuka dan mengkonfigurasi komponen KVM 3 Membuat Disk Image untuk Guest 4 Install Sistem Operasi Guest 5 Menjalankan guest yang baru di install 6 Referensi 7 Pranala Menarik Prasyarat kita akan membutuhkan qemu-kvm-release.tar.gz kvm-kmod-release.tar.bz2 (jika kita membutuhkan untuk mengcompile module itu sendiri) Intel processor yang punya VT, atau AMD processor dengan",

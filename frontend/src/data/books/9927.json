@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9927?v=1795435463",
   "cover_og_url": "/cover/9927/og?v=1795435463",
+  "has_cover": false,
   "url": "/book/asterisk-web-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengaktifkan Web Interface Asterisk # vi /etc/asterisk/http.conf Pastikan [general] enabled=yes bindaddr=127.0.0.1 bindport=8088 prefix=asterisk enablestatic=yes redirect = / /asterisk/static/config/cfgbasic.html Pranala Menarik Asterisk Softswitch VoIP",

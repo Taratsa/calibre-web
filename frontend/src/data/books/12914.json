@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12914?v=1795444208",
   "cover_og_url": "/cover/12914/og?v=1795444208",
+  "has_cover": false,
   "url": "/book/share-folder-di-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita sudah membuat virtual machine dan menginstalasi OS di dalam-nya. Kita dapat menshare filder antara host dengan guest. Misalnya sebuah virtual machine dengan nama WinXP dan folder yang akan di share adalah /home/user/shared. Matikan virtual machine dan lakukan langkah berikut, VBoxManage sharedfolder add winXP -name \"sharedfolder\" -hostpath \"/home/user/shared\" Mount shared folder dalam",

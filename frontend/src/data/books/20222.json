@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20222?v=1795476614",
   "cover_og_url": "/cover/20222/og?v=1795476614",
+  "has_cover": false,
   "url": "/book/script-nat-transparant-proxy-squid-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/bin/sh # squid server IP SQUID_SERVER=\"192.168.1.1\" # Interface connected to Internet INTERNET=\"eth0\" # Interface connected to LAN LAN_IN=\"eth1\" # Squid port SQUID_PORT=\"3128\" # DO NOT MODIFY BELOW # Clean old firewall iptables -F iptables -X iptables -t nat -F iptables -t nat -X iptables -t mangle -F iptables -t mangle -X # Load IPTABLES modules for NAT and IP conntrack support modprobe",

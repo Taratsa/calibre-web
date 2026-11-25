@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12750?v=1795443616",
   "cover_og_url": "/cover/12750/og?v=1795443616",
+  "has_cover": false,
   "url": "/book/juniper-ospf-multiarea-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.juniper.net/documentation/en_US/junos/topics/example/ospf-multiarea-configuring.html This example shows how to configure a multiarea OSPF network. To reduce traffic and topology maintenance for the devices in an OSPF autonomous system (AS), you can group the OSPF-enabled routing devices into multiple areas. Requirements Before you begin: Configure the device interfaces. See",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 862,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "ospf",

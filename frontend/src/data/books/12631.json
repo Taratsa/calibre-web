@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12631?v=1795443267",
   "cover_og_url": "/cover/12631/og?v=1795443267",
+  "has_cover": false,
   "url": "/book/mikrotik-ospf-dengan-quagga-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 GNS3 Connector 2 Konfigurasi 3 Verify 4 Referensi 5 Pranala Menarik GNS3 Connector R1 ethernet0 - R3 ethernet0 R1 ethernet1 - R2 ethernet0 R2 ethernet1 - R3 ethernet1 R2 ethernet2 - 172.16.1.1/16 R3 ethernet2 - 192.168.1.1/24 Konfigurasi Router1: /ip address add address=10.10.1.1/30 interface=ether1 /ip address add address=10.10.1.5/30 interface=ether2 /ip dhcp-client add",

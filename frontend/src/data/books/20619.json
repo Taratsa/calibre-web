@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20619?v=1795477731",
   "cover_og_url": "/cover/20619/og?v=1795477731",
+  "has_cover": false,
   "url": "/book/perl-compile-dari-source-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lakukan wget http://www.cpan.org/src/5.0/perl-5.14.2.tar.gz tar zxvf perl-5.14.2.tar.gz cd perl-5.14.2 ./Configure -des # ./Configure -des -Dprefix=$HOME/localperl make make test make install Kalau 'make test' tidak 100% berhasil kita bisa mengevaluasi menggunakan export LD_LIBRARY_PATH=`pwd`; cd t; ./perl harness Untuk instalasi make install Referensi http://www.cpan.org/src/README.html",

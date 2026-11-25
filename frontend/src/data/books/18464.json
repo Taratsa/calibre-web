@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18464?v=1795468963",
   "cover_og_url": "/cover/18464/og?v=1795468963",
+  "has_cover": false,
   "url": "/book/voip-asterisk-demo-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/asterisk/sip.conf Demo user [2000] context=default type=friend defaultuser=2000 secret=123456 host=dynamic dtmfmode=rfc2833 rfc2833compensate=yes insecure=port,invite [2001] context=default type=friend defaultuser=2001 secret=123456 host=dynamic dtmfmode=rfc2833 rfc2833compensate=yes insecure=port,invite [2002] context=default type=friend defaultuser=2002 secret=123456 host=dynamic",

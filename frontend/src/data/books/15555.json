@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15555?v=1795455461",
   "cover_og_url": "/cover/15555/og?v=1795455461",
+  "has_cover": false,
   "url": "/book/minikube-registries-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/registry/ Registries How to interact with registries Using a Private Registry GCR/ECR/ACR/Docker: minikube has an addon, registry-creds which maps credentials into minikube to support pulling from Google Container Registry (GCR), Amazon's EC2 Container Registry (ECR), Azure Container Registry (ACR), and Private Docker registries. You will need to",

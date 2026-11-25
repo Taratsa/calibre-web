@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12420?v=1795442696",
   "cover_og_url": "/cover/12420/og?v=1795442696",
+  "has_cover": false,
   "url": "/book/powerdns-create-powerdns-database-dan-user-di-percona-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke database sudo mysql -u root -h ::1 -p123456 Siapkan tabel CREATE DATABASE powerdns; GRANT ALL ON powerdns.* TO 'powerdns'@'localhost' \\ IDENTIFIED BY 'ubuntu'; FLUSH PRIVILEGES; USE powerdns; CREATE TABLE domains ( id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL, master VARCHAR(128) DEFAULT NULL, last_check INT DEFAULT NULL, type VARCHAR(6) NOT NULL, notified_serial INT UNSIGNED",

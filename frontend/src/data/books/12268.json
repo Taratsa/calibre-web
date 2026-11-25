@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12268?v=1795442084",
   "cover_og_url": "/cover/12268/og?v=1795442084",
+  "has_cover": false,
   "url": "/book/arduino-tinygps-onno-widodo-purbo/",
   "rating": null,
   "comment": "library cd ~/Arduino/libraries/ wget https://github.com/mikalhart/TinyGPS/archive/master.zip unzip master.zip Code #include  #include  long lat,lon; // create variable for latitude and longitude object SoftwareSerial gpsSerial(3, 4); // RX 3 TX 4 create gps sensor connection TinyGPS gps; // create gps object void setup(){ Serial.begin(9600); // connect serial",

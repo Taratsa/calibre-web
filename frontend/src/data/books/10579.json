@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10579?v=1795437530",
   "cover_og_url": "/cover/10579/og?v=1795437530",
+  "has_cover": false,
   "url": "/book/powerdns-membuat-zone-dan-record-di-powerdns-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Konfigurasi PowerDNS 1.1 Allowed Zone Transfers 1.2 Enable Zone Transfers 1.3 Server IP Address 1.4 Berfungsi sebagai Master Server 1.5 Source Address 2 Server Restart 3 Import Zone-Files 4 Secondary Server 5 Install MariaDB and PowerDNS 6 Add Domain Record on Slave Server 7 Delete a Domain 8 Referensi Konfigurasi PowerDNS Di sisi MASTER: Ubah konfigurasi /etc/powerdns/pdns.conf:",

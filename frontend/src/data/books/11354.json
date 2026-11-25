@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11354?v=1795439667",
   "cover_og_url": "/cover/11354/og?v=1795439667",
+  "has_cover": false,
   "url": "/book/python-create-gephi-network-graphs-from-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "I have just found out about GephiStreamer. https://pypi.python.org/pypi/GephiStreamer Using this package one can send instructions from python to Gephi to create nodes and edges in Gephi. # Create a node with a custom_property node_a = graph.Node(\"A\",custom_property=1) # Create edge edge_ab = graph.Edge(node_a,node_b,custom_property=\"hello\") stream.add_edge(edge_ab) Similarly I want to do",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13477?v=1795446097",
   "cover_og_url": "/cover/13477/og?v=1795446097",
+  "has_cover": false,
   "url": "/book/gns3-openwrt-download-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke https://downloads.openwrt.org/releases/ https://downloads.openwrt.org/releases/19.07.2/targets/x86/generic/ Download file combined-squashfs.img.gz Unzip gzip -d openwrt-19.07.2-x86-generic-combined-squashfs.img.gz Tambahkan size dd if=openwrt-19.07.2-x86-generic-combined-squashfs.img of=openwrt-combined-squashfs.img bs=128000 conv=sync Convert menjadi VDI / VMDK VBoxManage convertfromraw",

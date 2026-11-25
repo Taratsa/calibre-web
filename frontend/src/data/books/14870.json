@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14870?v=1795452165",
   "cover_og_url": "/cover/14870/og?v=1795452165",
+  "has_cover": false,
   "url": "/book/debian-network-bonding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt-get install ifenslave apt -y install ifenslave modprobe bonding modprobe 8021q echo 'bonding' &gt;&gt; /etc/modules echo '8021q' &gt;&gt; /etc/modules Interface Down ifdown eth0 (Repeat for all interfaces included in the bond) ifdown enp3s0 ifdown enp2s0 /etc/init.d/networking stop Edit vi /etc/network/interfaces # The primary network interface allow-hotplug enp2s0 allow-hotplug enp3s0 auto",

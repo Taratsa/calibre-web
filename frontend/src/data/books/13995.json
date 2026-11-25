@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13995?v=1795448242",
   "cover_og_url": "/cover/13995/og?v=1795448242",
+  "has_cover": false,
   "url": "/book/dvd-wodim-burn-dvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt -y install wodim Cek devices wodim --devices wodim: Overview of accessible drives (1 found) : ------------------------------------------------------------------------- 0 dev='/dev/sg2' rwrw-- : 'HL-DT-ST' 'DVDRAM GP65NB60' ------------------------------------------------------------------------- Format DVD-RW cdrecord dev=/dev/sg2 blank=all cdrecord dev=/dev/sg2 blank=fast Burn",

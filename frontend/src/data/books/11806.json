@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11806?v=1795440791",
   "cover_og_url": "/cover/11806/og?v=1795440791",
+  "has_cover": false,
   "url": "/book/dansguardian-instalasi-dengan-squid-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Konfigurasi 3 Start Service 4 Setup di Sisi Client 5 Pranala Menarik Install sudo su locale-gen id_ID.UTF-8 apt update apt install squid dansguardian freshclam &amp; Konfigurasi Edit vi /etc/dansguardian/dansguardian.conf Ubah, accessdeniedaddress = ' http://YOURSERVER.YOURDOMAIN/cgi-bin/dansguardian.pl' Misalnya (IP server 192.168.0.100) accessdeniedaddress = '",

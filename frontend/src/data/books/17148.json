@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17148?v=1795464261",
   "cover_og_url": "/cover/17148/og?v=1795464261",
+  "has_cover": false,
   "url": "/book/shell-script-untuk-ftp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadangkala kita membutuhkan untuk upload secara automatis menggunakan FTP . Shell Script berikut akan membantu, Edit Script # vi myftp.sh isinya #! /bin/sh REMOTE='namamesin' USER='namauser' PASSWORD='passworduser' FTPLOG='/tmp/ftplog' date &gt;&gt; $FTPLOG ftp -n $REMOTE &lt;&lt;_FTP&gt;&gt;$FTPLOG quote USER $USER quote PASS $PASSWORD bin cd /myraid/dailyjpgs mput *.jpg quit _FTP Jalankan di shell dan di",

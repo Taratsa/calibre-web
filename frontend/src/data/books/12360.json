@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12360?v=1795442498",
   "cover_og_url": "/cover/12360/og?v=1795442498",
+  "has_cover": false,
   "url": "/book/ipv6-mengkonfigurasi-interface-untuk-network-device-yang-berbeda-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada sebuah node, ada beberapa device network. Mereka tergabung dalam beberapa kelas. Secara fisik, seperti eth0, tr0 Secara virtual, seperti ppp0, tun0, tap0, sit0, isdn0, ippp0 Contents 1 Secara Fisik 2 Secara Virtual 3 Interface tunnel IPv6-in-IPv4 3.1 Interface PPP 3.2 Interface ISDN HDLC 3.3 Interface ISDN PPP 3.4 SLIP + PLIP 3.5 Ether-tap device 4 Pranala Menarik Secara Fisik Menempel",
@@ -160,7 +161,7 @@
       ],
       [
         9765,
-        0.41
+        0.4
       ],
       [
         9768,

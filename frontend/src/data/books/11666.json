@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11666?v=1795440448",
   "cover_og_url": "/cover/11666/og?v=1795440448",
+  "has_cover": false,
   "url": "/book/arduino-rtc-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://tronixstuff.com/2014/12/01/tutorial-using-ds1307-and-ds3231-real-time-clock-modules-with-arduino/ Sambungan: SDA - pin A4 SCL - pin A5 Source: #include \"Wire.h\" #define DS3231_I2C_ADDRESS 0x68 // Convert normal decimal numbers to binary coded decimal byte decToBcd(byte val) { return( (val/10*16) + (val%10) ); } // Convert binary coded decimal to normal decimal numbers byte",

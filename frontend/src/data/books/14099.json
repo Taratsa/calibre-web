@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14099?v=1795448603",
   "cover_og_url": "/cover/14099/og?v=1795448603",
+  "has_cover": false,
   "url": "/book/mqtt-install-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://linoxide.com/tools/setup-mosquitto-mqtt-server-ubuntu-16-04/ Mosquitto MQTT Server adalah message broker yang bekerja di atas protokol MQTT. MQTT adalah protokol messaging ringan yang standar ISO untuk digunakan di atas protokol TCP/IP. Hal ini banyak digunakan untuk berkomunikasi dengan perangkat Internet of Things. Kami akan menginstal Mosquitto di server Ubuntu 20.04 dan kami",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 616,
-    "longer_than": 43,
+    "longer_than": 42,
     "top": [
       [
         "mosquitto",

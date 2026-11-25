@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16191?v=1795459351",
   "cover_og_url": "/cover/16191/og?v=1795459351",
+  "has_cover": false,
   "url": "/book/python-ubuntu-24-04-virtualenv-ide-spyder-tensorflow-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt update sudo apt install python3-virtualenv mkdir tensorflow_env cd tensorflow_env virtualenv --python=python3 venv source venv/bin/activate pip install tensorflow-cpu pip install spyder spyder mkdir pythonenv cd pythonenv virtualenv --python=python3 venv source venv/bin/activate sudo apt install python3-pip # pip install tensorflow # optional jika memiliki GPU pip install tensorflow",

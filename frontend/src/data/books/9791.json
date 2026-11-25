@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9791?v=1795434931",
   "cover_og_url": "/cover/9791/og?v=1795434931",
+  "has_cover": false,
   "url": "/book/ipv6-security-pembatasan-akses-onno-widodo-purbo/",
   "rating": null,
   "comment": "Banyak layanan menggunakan library tcp_wrapper untuk kontrol akses. Library tcp_wrapper dapat menolong kita untuk memproteksi layanan dari penggunaan yang salah. Contents 1 Kemampuan Filtering 2 Program mana yang mengunakan tcp_wrapper 3 Penggunaan 3.1 Contoh Untuk /etc/hosts.allow 3.2 Untuk /etc/hosts.deny 4 Logging 4.1 Penolakan Sambungan 4.2 Mengijinkan Sambungan 5 Referensi 6 Pranala Menarik",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 441,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "ipv",

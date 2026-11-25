@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15838?v=1795457128",
   "cover_og_url": "/cover/15838/og?v=1795457128",
+  "has_cover": false,
   "url": "/book/llm-ollama-pdf-rag-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/tonykipkemboi/ollama_pdf_rag Install ollama ollama pull llama3 ollama pull nomic-embed-text Download source sudo apt install python3-virtualenv python3-pip libgl1 virtualenv --python=python3 venv source venv/bin/activate git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git Install cd ollama_pdf_rag pip install -r requirements.txt Jalankan apps streamlit run",

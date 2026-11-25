@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12641?v=1795443296",
   "cover_og_url": "/cover/12641/og?v=1795443296",
+  "has_cover": false,
   "url": "/book/slowhttptest-onno-widodo-purbo/",
   "rating": null,
   "comment": "apt install slowhttptest Type the following command − slowhttptest -c 500 -H -g -o outputfile -i 10 -r 200 -t GET -u http://192.168.42.99/index.php -x 24 -p 2 Where, (-c 500) = 500 connections (-H) = Slowloris mode -g = Generate statistics -o outputfile = Output file name -i 10 = Use 10 seconds to wait for data -r 200 = 200 connections with -t GET = GET requests -u http://192.168.1.202/index.php",

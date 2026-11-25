@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11386?v=1795439752",
   "cover_og_url": "/cover/11386/og?v=1795439752",
+  "has_cover": false,
   "url": "/book/twitter-jsonparser-utf8-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "__author__ = 'seandolinar' import json import csv import io creates a .csv file using a Twitter .json file the fields have to be set manually data_json = io.open('raw_tweets.json', mode='r', encoding='utf-8').read() #reads in the JSON file data_python = json.loads(data_json) csv_out = io.open('tweets_out_utf8.csv', mode='w', encoding='utf-8') #opens csv file fields =",

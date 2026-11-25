@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15678?v=1795456141",
   "cover_og_url": "/cover/15678/og?v=1795456141",
+  "has_cover": false,
   "url": "/book/open5gs-menambahkan-subscriber-via-cli-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/open5gs/open5gs/blob/main/misc/db/open5gs-dbctl mongo use open5gs db.subscribers.find().pretty() { \"_id\" : ObjectId(\"609715fda08851a0744e6ae7\"), \"imsi\" : \"901700000021309\", \"__v\" : 0, \"access_restriction_data\" : 32, \"ambr\" : { \"downlink\" : NumberLong(1024000), \"uplink\" : NumberLong(1024000) }, \"network_access_mode\" : 2, \"pdn\" : [ { \"apn\" : \"internet\", \"_id\" :",

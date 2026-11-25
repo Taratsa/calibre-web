@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9451?v=1795432918",
   "cover_og_url": "/cover/9451/og?v=1795432918",
+  "has_cover": false,
   "url": "/book/yate-cek-registered-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mencek apakah user berhasil register atau tidak gunakan tail /var/log/yate atau vi /var/log/yate Harusnya terlihat ada kata-kata kira-kira sebagai berikut ------  Registered '2032' via 'sip/ sip:2032@192.168.0.150:5061' &lt; sip:NOTE &gt; Registered user '2032' expires in 3600 s &lt; sip:INFO &gt; Sending code 200 0xabe05168 to 192.168.0.150:5061 ------ SIP/2.0 200 OK Via: SIP/2.0/UDP",

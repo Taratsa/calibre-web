@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14408?v=1795449844",
   "cover_og_url": "/cover/14408/og?v=1795449844",
+  "has_cover": false,
   "url": "/book/nginx-instalasi-rtmp-hls-dash-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi Build Tools &amp; Dependencies 2 Compile NGINX + RTMP 3 Konfigurasi 3.1 HLS 3.2 DASH 4 Validasi Konfigurasi &amp; Start NGINX 5 Test dari Studio 6 Test Client 7 Referensi Instalasi Build Tools &amp; Dependencies sudo apt update sudo apt install build-essential git libpcre3-dev libssl-dev zlib1g-dev Compile NGINX + RTMP sudo su cd /usr/local/src/ git clone",

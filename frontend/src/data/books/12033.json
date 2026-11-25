@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12033?v=1795441364",
   "cover_og_url": "/cover/12033/og?v=1795441364",
+  "has_cover": false,
   "url": "/book/debian-menambahkan-repository-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/apt/sources.list Tambahkan deb http://packages.dotdeb.org jessie all Install key sudo su cd /etc/apt/ wget https://www.dotdeb.org/dotdeb.gpg sudo apt-key add dotdeb.gpg Update apt update",

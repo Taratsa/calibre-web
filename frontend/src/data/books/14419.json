@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14419?v=1795449892",
   "cover_og_url": "/cover/14419/og?v=1795449892",
+  "has_cover": false,
   "url": "/book/mikrotik-vpn-pptp-onno-widodo-purbo/",
   "rating": null,
   "comment": "# /ip pool add name=PPTP-Pool ranges=192.168.99.10-192.168.99.200 # /ppp profile add change-tcp-mss=yes local-address=PPTP-Pool name=PPTP-Profile only-one=yes remote-address=PPTP-Pool use-encryption=yes dns-server=8.8.8.8,8.8.4.4 /ppp profile add change-tcp-mss=yes local-address=dhcp_pool0 name=PPTP-Profile only-one=yes remote-address=dhcp_pool0 use-encryption=yes dns-server=8.8.8.8,8.8.4.4",

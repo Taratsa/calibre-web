@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14197?v=1795449005",
   "cover_og_url": "/cover/14197/og?v=1795449005",
+  "has_cover": false,
   "url": "/book/kubectl-pods-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kubernetes.io/docs/tutorials/hello-minikube/ Contents 1 Create Deployment 2 Create Service 3 Enable addons 4 Clear 5 Test nginx 6 Test Hello World 7 Test Hello Apps 8 Create an Ingress Resource 8.1 2nd Deployment 9 Etc 10 Referensi Create Deployment kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4 kubectl create deployment nginx --image=nginx kubectl get",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13223?v=1795445198",
   "cover_og_url": "/cover/13223/og?v=1795445198",
+  "has_cover": false,
   "url": "/book/satu-data-setup-datastore-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Enable Plugin 2 Database 3 Storage 4 Restart Web 5 Test 6 Referensi 7 Pranala Menarik Enable Plugin Edit sudo vi /etc/ckan/default/development.ini ckan.plugins = datastore Database Create Datastore &amp; masukan password sudo -u postgres createuser -S -D -R -P -l datastore_default Buat database sudo -u postgres createdb -O ckan_default datastore_default -E utf-8 Edit sudo vi",

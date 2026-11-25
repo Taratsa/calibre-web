@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18923?v=1795470853",
   "cover_og_url": "/cover/18923/og?v=1795470853",
+  "has_cover": false,
   "url": "/book/voip-cookbook-configuring-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "As the Asterisk installed, we need to configure it so Asterisk functions the way you want it to be. All files that you need to configure are stored in the folder: /etc/asterisk The minimal configuration files need to edited are: sip.conf - for user authentication with a phone number and password. extensions.conf - to set the dialplan. enum.conf - for ENUM, for example, for country code +62. Aside",

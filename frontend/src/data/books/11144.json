@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11144?v=1795439129",
   "cover_og_url": "/cover/11144/og?v=1795439129",
+  "has_cover": false,
   "url": "/book/arduino-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library Download dari http://playground.arduino.cc/Code/Time http://playground.arduino.cc/uploads/Code/DateTime.zip Tambahkan ke cd /usr/share/arduino/libraries wget http://playground.arduino.cc/uploads/Code/DateTime.zip unzip DateTime.zip Code #include  #include  #define TIME_MSG_LEN 11 // time sync to PC is HEADER and unix time_t as ten ascii digits #define",

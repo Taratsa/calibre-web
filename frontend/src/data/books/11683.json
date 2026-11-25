@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11683?v=1795440491",
   "cover_og_url": "/cover/11683/og?v=1795440491",
+  "has_cover": false,
   "url": "/book/mqtt-allow-anonymous-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://mosquitto.org/man/mosquitto-conf-5.html Agar di ijinkan login tanpa username &amp; password, edit vi /etc/mosquitto/mosquitto.conf isi allow_anonymous [ true | false ] Nilai di atas menentukan apakah client di ijinkan untuk connect tanpa memberikan username. Jika di set false, maka client harus memberikan username. Default \"true\" Referensi",

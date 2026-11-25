@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20925?v=1795478525",
   "cover_og_url": "/cover/20925/og?v=1795478525",
+  "has_cover": false,
   "url": "/book/segmented-sftp-download-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lftp merupakan salah satu tool download manager yang lengkap. Selain http dan ftp, lftp juga bisa digunakan untuk mendownload dari protokol sftp. lftp -e 'pget /direktori/file.mkv' sftp://username@ipataudomain Masukkan password yang sesuai. Untuk segmented download, seperti yang biasa dilakukan oleh IDM : lftp -e 'pget -n8 /direktori/file.mkv' sftp://username@ipataudomain Parameter '-n8'",

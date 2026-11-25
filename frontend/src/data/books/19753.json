@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19753?v=1795474817",
   "cover_og_url": "/cover/19753/og?v=1795474817",
+  "has_cover": false,
   "url": "/book/masalah-mysqld-sock-yang-cukup-menjengkelkan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pernahkan anda menemukan masalah, saat menjalankan mysql...?. terutama kalo muncul seperti ini : ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (40) sebenarnya itu mudah saja, solusinya. jika memang symbolic symlink telah benar, silahkan ganti permission folder-nya dan akses-nya. chown -R mysql.mysql /var/run/mysqld/ chmod 755 /var/run/mysqld/",

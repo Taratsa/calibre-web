@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20113?v=1795476200",
   "cover_og_url": "/cover/20113/og?v=1795476200",
+  "has_cover": false,
   "url": "/book/cloudmin-onno-widodo-purbo/",
   "rating": null,
   "comment": "The installer should ideally only be used on systems that are not currently running Webmin or Virtualmin, but since it only installs packages it won't destroy any existing settings. The only supported Linux distributions are CentOS 5, Redhat Enterprise 5, Debian 4.0 and Ubuntu 8.04. The install script should download and setup a Xen-capable kernel on the system you run it on, and then register",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14571?v=1795450611",
   "cover_og_url": "/cover/14571/og?v=1795450611",
+  "has_cover": false,
   "url": "/book/menggunakan-mysqlslap-untuk-membandingkan-engine-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat membandingkan engine dengan argumen --engine. Sebagai contoh, jika kita ingin menggunakan engine innodb mysqlslap -h localhost -u root -p123456 --auto-generate-sql --concurrency=100 --number-of-queries=1000 --engine=innodb Output mysqlslap kira-kira sebagai berikut, Benchmark Running for engine innodb Average number of seconds to run all queries: 0.435 seconds Minimum number of seconds",
@@ -177,7 +178,7 @@
       ],
       [
         10605,
-        0.56
+        0.55
       ],
       [
         12726,

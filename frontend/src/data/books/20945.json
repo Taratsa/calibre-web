@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20945?v=1795478585",
   "cover_og_url": "/cover/20945/og?v=1795478585",
+  "has_cover": false,
   "url": "/book/koleksi-query-onno-widodo-purbo/",
   "rating": null,
   "comment": "Date/Time Hitung penjualan tahunan dikelompokkan per tahun, per bulan, dan per minggu (#mysql) Kasus --&gt; Query SELECT YEAR( tglTransaksiJual ) AS tahun, MONTH( tglTransaksiJual ) AS bulan, WEEK( tglTransaksiJual, 5 ) - WEEK( DATE_SUB( tglTransaksiJual, INTERVAL DAYOFMONTH( tglTransaksiJual ) - 1 DAY ) , 5 ) +1 AS minggu, SUM( uangDibayar ) AS total_sales FROM transaksijual GROUP BY tahun, bulan,",

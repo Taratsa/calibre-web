@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10795?v=1795438132",
   "cover_og_url": "/cover/10795/og?v=1795438132",
+  "has_cover": false,
   "url": "/book/sms-cb-analisa-dari-source-code-openbts-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wush.net/svn/range/software/public/openbts/trunk/Control/SMSCB.cpp Specification 03.41 describes a hierarchy of servers to distribute content for the SMSCB service and a protocol in L3 for delivery of SMSCB content to the BTS.A.4. GENERAL PACKET RADIO SERVICE (GPRS) OpenBTS does not follow this model. Instead, OpenBTS takes messages for delivery from an sqlite3 database table at a",

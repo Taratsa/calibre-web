@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9885?v=1795435299",
   "cover_og_url": "/cover/9885/og?v=1795435299",
+  "has_cover": false,
   "url": "/book/os-android-mirror-source-cyanogenmod-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo mkdir -p /usr/local/cyanogenmod/mirror sudo mount --bind /media/onno/onnolibrary/repository/android-source/mirror-cyanogenmod/ /usr/local/cyanogenmod/mirror/ sudo chmod -Rf 777 /usr/local/cyanogenmod sudo chown -Rf nobody.nogroup /usr/local/cyanogenmod cd /usr/local/cyanogenmod/mirror repo init -u git://github.com/CyanogenMod/android.git -b cm-10.2 --mirror repo sync atau kalau mau memaksa",

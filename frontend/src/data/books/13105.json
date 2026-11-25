@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13105?v=1795444821",
   "cover_og_url": "/cover/13105/og?v=1795444821",
+  "has_cover": false,
   "url": "/book/email-mempersiapkan-dns-dan-mx-record-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "eMail server sangat tergantung pada DNS Server untuk informasi Mail Exchange (MX). Kesalahan pada konfigurasi DNS akan menyebabkan eMail tidak bisa berjalan dengan baik. Kita perlu secara hati2 mengkonfigurasi DNS IPv6 agar eMail berjalan dengan baik. Lakukan di DNS Server, Server A dengan alamat IPv6 2345::1. Konsekuensinya setup semua file /etc/resolv.conf nameserver 2345::1 Contents 1",

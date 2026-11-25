@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12269?v=1795442090",
   "cover_og_url": "/cover/12269/og?v=1795442090",
+  "has_cover": false,
   "url": "/book/arduino-gps-serial-level-shifting-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebaiknya menggunakan level-shifter asli yang menggunakan FET. Mahluk tersebut cepat, dan anda dapat menggunakannya untuk SPI interface, seperti kartu SD, dan mereka bi-directional (5V ke atau dari 3.3V). Dan harganya murah. Berikut ini cara melakukannya dengan beberapa resistor dan dioda sembarang: R3 = 2.2k s/d 22k R1 &amp; R2 harus dibuat agar R1 + R2 = 5k s/d 50k R2 = 2 * R1 Contoh R1 = 4.7k R2 =",

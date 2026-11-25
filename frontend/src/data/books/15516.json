@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15516?v=1795455240",
   "cover_og_url": "/cover/15516/og?v=1795455240",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-prayer-time-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* * Calculate Prayer Time */ int Y = 2023; int M = 4; int D = 4; int H = 16; int m = 25; int s = 0; int Z = 7; // # define PI = 3.14159265359; float LAT = -6.16858549901122; float LONG = 106.865053367193; float FAJR_ANGLE = 20; float ISHA_ANGLE = 18; float SF = 1; // Imam Safii float DESCEND_CORRECTION = 2/60; float FAJR; float SUNRISE; float ZUHR; float ASR; float MAGHRIB; float ISHA; void",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 396,
-    "longer_than": 35,
+    "longer_than": 34,
     "top": [
       [
         "float",

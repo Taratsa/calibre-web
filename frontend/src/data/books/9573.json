@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9573?v=1795433320",
   "cover_og_url": "/cover/9573/og?v=1795433320",
+  "has_cover": false,
   "url": "/book/network-bonding-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ethernet bonding howto in Ubuntu 10.10 January 9, 2011ricoch3nLeave a commentGo to comments Tested in 64bit environment. 1) echo \"alias bond0 bonding\" &gt; /etc/modprobe.d/bonding.conf 2) apt-get install ifenslave 3) edit /etc/network/interfaces as follows # The loopback network interface auto lo iface lo inet loopback auto bond0 iface bond0 inet static # change the next three lines according to",

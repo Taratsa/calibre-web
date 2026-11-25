@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12552?v=1795443048",
   "cover_og_url": "/cover/12552/og?v=1795443048",
+  "has_cover": false,
   "url": "/book/r-wordcloud-onno-widodo-purbo/",
   "rating": null,
   "comment": "The 5 main steps to create word clouds in R Create a text file Install and load the required packages Text mining Build a term-document matrix Generate the Word cloud Contents 1 Install Packages 2 Text Mining 3 Term Document Matrix 4 Wordcloud 5 Pranala Menarik Install Packages # Install install.packages(\"tm\") # for text mining install.packages(\"SnowballC\") # for text stemming",

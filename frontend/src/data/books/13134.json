@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13134?v=1795444905",
   "cover_og_url": "/cover/13134/og?v=1795444905",
+  "has_cover": false,
   "url": "/book/ipv6-ospfv3-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "The configuration options of OSPFv3 are the same as those for OSPFv2. Process IDs and areas need to be specified. Interfaces and addresses need to be included in the process. Areas can be defined as stubs, totally stubby or not so stubby area (NSSA). Prefixes can be summarized between areas. OSPFv3 can be configured over demand circuits and on NBMA networks. Much of the configuration for OSPFv3",

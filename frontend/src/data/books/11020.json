@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11020?v=1795438788",
   "cover_og_url": "/cover/11020/og?v=1795438788",
+  "has_cover": false,
   "url": "/book/arduino-state-change-detection-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/StateChangeDetection Once you've got a pushbutton working, you often want to do some action based on how many times the button is pushed. To do this, you need to know when the button changes state from off to on, and count how many times this change of state happens. This is called state change detection or edge detection. In this tutorial we learn how",

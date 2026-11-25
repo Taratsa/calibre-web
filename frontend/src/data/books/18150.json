@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18150?v=1795467879",
   "cover_og_url": "/cover/18150/og?v=1795467879",
+  "has_cover": false,
   "url": "/book/cara-cepat-melakukan-remastering-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Install UCK 3 UNPACK file iso untuk di remaster 4 Isikan aplikasi yang anda inginkan 5 PACK menjadi file iso yang baru 6 Referensi 7 Pranala Menarik Persiapan Siapkan file iso Ubuntu Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Install UCK sudo apt-get install libfribidi-bin sudo apt-get install uck UNPACK file iso untuk di remaster sudo",

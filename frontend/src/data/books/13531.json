@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13531?v=1795446352",
   "cover_og_url": "/cover/13531/og?v=1795446352",
+  "has_cover": false,
   "url": "/book/gnuradio-gr-sqlite-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/mhostetter/gr-sqlite#installation Contents 1 Install apps pendukung 2 Download Compile Install 3 Referensi 4 Pranala Menarik Install apps pendukung sudo apt install sqlitebrowser Download Compile Install cd /usr/local/src git clone https://github.com/mhostetter/gr-sqlite.git cd /usr/local/src/gr-sqlite/ mkdir build cd build/ cmake ../ # or cmake",

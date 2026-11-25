@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13263?v=1795445324",
   "cover_og_url": "/cover/13263/og?v=1795445324",
+  "has_cover": false,
   "url": "/book/trains-a-simple-deep-cnn-on-the-cifar10-small-images-dataset-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/keras-team/keras/blob/master/examples/cifar10_cnn.py # Train a simple deep CNN on the CIFAR10 small images dataset. # It gets to 75% validation accuracy in 25 epochs, and 79% after 50 epochs. # (it's still underfitting at that point, though). from __future__ import print_function import keras from keras.datasets import cifar10 from keras.preprocessing.image import",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10182?v=1795436287",
   "cover_og_url": "/cover/10182/og?v=1795436287",
+  "has_cover": false,
   "url": "/book/ffmpeg-screen-capture-video-onno-widodo-purbo/",
   "rating": null,
   "comment": "See also: High quality screen capture with avconv Contents 1 Capture without audio 2 Capturing with audio 3 References 4 Referensi Capture without audio ffmpeg -f x11grab -r 25 -s 1280x720 -i :0.0+0,24 -vcodec libx264 -vpre lossless_ultrafast -threads 0 video.mkv Compress and convert to MP4 format (Youtube ready): ffmpeg -i video.mkv -vcodec libx264 -vpre hq -crf 22 -threads 0 video.mp4 Lower",

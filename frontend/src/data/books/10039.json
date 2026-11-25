@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10039?v=1795435833",
   "cover_og_url": "/cover/10039/og?v=1795435833",
+  "has_cover": false,
   "url": "/book/uck-remaster-minimal-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://serverfault.com/questions/334078/how-to-make-my-very-own-ubuntu-minimal-install // check the dependencies of that package to find out what other // flavors you could use. apt-get --with-install-recommends install ubiquity-frontend-kde // get a util to help with creating the image sudo apt-get install uck // clean any previous stuff sudo uck-remaster-clean // unpack the iso sudo",

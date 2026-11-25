@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15263?v=1795453916",
   "cover_og_url": "/cover/15263/og?v=1795453916",
+  "has_cover": false,
   "url": "/book/run-ue-ueransim-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan UE Ueransim, pastikan kita berada di folder tempat source code Ueransim berada. Selanjutnya kita dapat menjalankan perintah berikut untuk menjalakan nr-ue dengan konfigurasi open5gs-ue, cd /usr/local/src/UERANSIM/ sudo ./build/nr-ue -c config/open5gs-ue.yaml Sesudah tersambung ke gNB Ueransim, kita dapat mencoba ping ke Internet (disini dicontohkan ping ke google.com) melalui",

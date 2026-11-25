@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10559?v=1795437471",
   "cover_og_url": "/cover/10559/og?v=1795437471",
+  "has_cover": false,
   "url": "/book/powerdns-sambungan-ke-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Chapter 4. Basic setup: configuring database connectivity Table of Contents 1. Example: configuring MySQL 1.1. Common problems This chapter shows you how to configure the Generic MySQL backend, which we like a lot. But feel free to use any of the myriad other backends. This backend is called 'gmysql', and needs to be configured in pdns.conf. Add the following lines, adjusted for your local setup:",

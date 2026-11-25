@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17768?v=1795466231",
   "cover_og_url": "/cover/17768/og?v=1795466231",
+  "has_cover": false,
   "url": "/book/instalasi-openpne-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil source code OpenPNE di http://sourceforge.net/projects/openpne/ Install OpenPNE cp OpenPNE-3.1.2.zip /var/www cd /var/www unzip OpenPNE-3.1.2.zip cd /var/www/OpenPNE-3.1.2 Buat database openpne pada MySQL, siapkan user database untuk mengakses database openpne melalui perintah # mysql -u root -p Enter password: (isi password root untuk MySQL) mysql&gt; create database openpnedb; mysql&gt; grant",

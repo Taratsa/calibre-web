@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10134?v=1795436132",
   "cover_og_url": "/cover/10134/og?v=1795436132",
+  "has_cover": false,
   "url": "/book/nodejs-echo-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Here is an example of a simple TCP server which listens on port 1337 and echoes whatever you send it: var net = require('net'); var server = net.createServer(function (socket) { socket.write('Echo server\\r\\n'); socket.pipe(socket); }); server.listen(1337, '127.0.0.1'); Referensi http://chat.nodejs.org/",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14607?v=1795450818",
   "cover_og_url": "/cover/14607/og?v=1795450818",
+  "has_cover": false,
   "url": "/book/samba-file-sharing-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika dibutuhkan kita dapat menjalankan file sharing server agar siswa/mahasiswa dapat dengan mudah mengambil ebook/video pembelajaran dari folder yang di sharing di server Internet OFFLINE. Agar file sharing dapat dilakukan, kita perlu menginstal samba. Proses instalasi samba tidak terlalu sulit, melalui perintah berikut, sudo su apt update apt -y install samba cifs-utils Selanjutnya kita perlu",

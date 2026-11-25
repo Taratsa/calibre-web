@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19938?v=1795475607",
   "cover_og_url": "/cover/19938/og?v=1795475607",
+  "has_cover": false,
   "url": "/book/blok-spam-menggunakan-postfix-dan-bogofilter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Disini akan di terangkan cara menggunakan bogofilter untuk mem-filter e-mail yang melalui postfix . Contents 1 Teori 2 Asumsi 3 Instalasi 4 Melakukan Filter 5 Modifikasi /etc/postfix/master.cf 6 Registrasi dan Koreksi 7 Pranala Menarik Teori Kita akan mensetup bogofilter di mail server dan akan mem-filter semua mail yang masuk. Ada beberapa keuntungan yang akan di peroleh karena hal tersebut,",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10240?v=1795436476",
   "cover_og_url": "/cover/10240/og?v=1795436476",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-konfigurasi-olsr-6and4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://dev.openwrt.org/ticket/4803 Agar OLSR dapat beroperasi sekaligus untuk IPv4 &amp; IPv6 kita harus menggunakan IpVersion '6and4'. Kita dapat mengedit file Contents 1 /etc/config/olsrd 2 /etc/config/network 3 /etc/config/network 4 /etc/config/wireless 5 /etc/config/ahcpd 6 /etc/rc.local 7 Referensi 8 Pranala Menarik 8.1 Build Firmware 8.2 APRX 8.3 IPv6 8.4 Flash Firmware 8.5 Misc 8.6",

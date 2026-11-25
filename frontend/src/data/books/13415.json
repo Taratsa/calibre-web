@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13415?v=1795445880",
   "cover_og_url": "/cover/13415/og?v=1795445880",
+  "has_cover": false,
   "url": "/book/wemos-wifi-thingspeak-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "// analogRead &gt; Thingspeak.com // #include  // replace with your channel's thingspeak API key, String apiKey = \"0C2X0PGNFHOEGYZA\"; const char* ssid = \"HUAWEI-1A73\"; const char* password = \"52408495\"; const char* server = \"api.thingspeak.com\"; WiFiClient client; void setup() { Serial.begin(115200); delay(10); WiFi.begin(ssid, password); Serial.println(); Serial.println();",

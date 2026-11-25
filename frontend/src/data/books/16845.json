@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16845?v=1795463430",
   "cover_og_url": "/cover/16845/og?v=1795463430",
+  "has_cover": false,
   "url": "/book/mcp-regenerate-vector-database-untuk-update-content-documents-onno-widodo-purbo/",
   "rating": null,
   "comment": "Teknik memperbarui vector database AnythingLLM Prinsip utama Tidak perlu me-reset seluruh vector database setiap kali ada file `.md` baru.** Gunakan dua pola: | Perubahan folder | Tindakan | | --------------------------- | -------------------------------------------------------- | | Ada file `.md` baru | Upload dan embed file baru saja | | Isi file `.md` lama berubah | Hapus embedding versi lama,",

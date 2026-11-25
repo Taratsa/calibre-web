@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14610?v=1795450833",
   "cover_og_url": "/cover/14610/og?v=1795450833",
+  "has_cover": false,
   "url": "/book/menempelkan-share-ke-folder-local-pc-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di sisi client/user, kita perlu menempelkan folder yang di share di server ke folder di PC / laptop client. Langkah untuk menempelkan folder server ke folder di PC client adalah sebagai berikut, buat folder untuk menempelkan folder dari file sharing server, misalnya, mkdir -p /mnt/coba-sharing/ Pada client ubuntu atau debian, tulis perintah, mount -t cifs ///",

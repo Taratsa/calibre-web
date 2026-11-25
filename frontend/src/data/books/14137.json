@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14137?v=1795448737",
   "cover_og_url": "/cover/14137/og?v=1795448737",
+  "has_cover": false,
   "url": "/book/anbox-install-kernel-modul-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.anbox.io/userguide/install_kernel_modules.html Starting with Ubuntu 19.04 binder and ashmem are now build with the standard Ubuntu kernel (&gt;= 5.0) and you don't have to install the modules from the PPA anymore. In order to add the PPA to your Ubuntu system please run the following commands: sudo add-apt-repository ppa:morphis/anbox-support sudo apt update Error message E: The",

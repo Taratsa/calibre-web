@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17734?v=1795466138",
   "cover_og_url": "/cover/17734/og?v=1795466138",
+  "has_cover": false,
   "url": "/book/smeonffline-menyiapkan-server-repository-ubuntu-lokal-onno-widodo-purbo/",
   "rating": null,
   "comment": "SMEOnffLine: Instalasi FTP Server mkdir /var/data mkdir /var/data/public mkdir /var/data/repo chown -Rf nobody.nogroup /var/data chmod -Rf 777 /var/data mkdir /home/ftp/pub mkdir /home/ftp/pub/repo chown -Rf ftp.nogroup /home/ftp/pub chown -Rf root.root /var/data/repo chmod -Rf 571 /var/data/repo mkdir /var/www/ubuntu mkdir /home/ftp/pub/repo mount --bind /var/data/repo /var/www/ubuntu mount",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11687?v=1795440502",
   "cover_og_url": "/cover/11687/og?v=1795440502",
+  "has_cover": false,
   "url": "/book/security-basic-os-security-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Disable Services 2 Files Security 3 File Transfer 4 Sharing Files 5 Password 6 Memory Disable Services Remote Desktop Disable check active port nmap -sT -O localhost netstat -tulpn netstat -ntlupa check daemon, di Ubuntu, bisa menggunakan apt-get install sysv-rc-conf sysv-rc-conf --list | grep '3:on' service serviceName stop sysv-rc-conf serviceName off Alternatif perintah yang menarik",

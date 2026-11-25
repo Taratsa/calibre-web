@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9866?v=1795435214",
   "cover_og_url": "/cover/9866/og?v=1795435214",
+  "has_cover": false,
   "url": "/book/openbts-n210-gnuradio-onno-widodo-purbo/",
   "rating": null,
   "comment": "Persiapan sudo apt-get -y install libboost-all-dev libusb-1.0-0-dev python-cheetah doxygen python-docutils \\ git python cmake ethtool libfontconfig1-dev libxrender-dev libpulse-dev \\ gcc-4.7 g++ automake libtool python-dev libfftw3-dev \\ libcppunit-dev libboost-all-dev libusb-dev fort77 \\ libsdl1.2-dev python-wxgtk2.8 subversion git-core guile-1.8-dev \\ libqt4-dev python-numpy ccache",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 2375,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "openbts",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15826?v=1795457047",
   "cover_og_url": "/cover/15826/og?v=1795457047",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-buzzer-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Wemos D1 mini/D1 lite Buzzer Shield example by Petr Lukas Simple music, sound efects and cricket chirp sounds */ int buzzer=D5; //Buzzer control port, default D5 void setup() { pinMode(buzzer, OUTPUT); digitalWrite(buzzer, LOW); Serial.begin(115200); Serial.println(\"Buzzer Test...\"); musicTest(); delay(1000); ohhh(); delay(1000); uhoh(); delay(1000); cricketChirp(); cricketChirp();",

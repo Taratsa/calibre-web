@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20263?v=1795476732",
   "cover_og_url": "/cover/20263/og?v=1795476732",
+  "has_cover": false,
   "url": "/book/icecast-menjalankan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebelum IceCast dapat di jalankan, kita perlu mengedit vi /etc/default/icecast2 Ubah agar ENABLE=true Edit /etc/icecast2/icecast.xml Selanjutnya edit vi /etc/icecast2/icecast.xml Minimal sekali, kita bisa mengedit \"password\" berikut  hackme hackme admin",

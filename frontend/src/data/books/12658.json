@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12658?v=1795443344",
   "cover_og_url": "/cover/12658/og?v=1795443344",
+  "has_cover": false,
   "url": "/book/ssl-tunnel-ubuntu-setup-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ssl-tunnel-using-stunnel-on-ubuntu stunnel di rancang untuk menjadi wrapper SSL encryption antara client dan server. Bisa digunakan untuk menambahkan fungi SSL dalam sebuah sambungan. Pad dasarnya, stunnel membuat sebuah TCP port yang tidak secure menjadi sebuah port encrypted yang secure menggunakan package cryptography",

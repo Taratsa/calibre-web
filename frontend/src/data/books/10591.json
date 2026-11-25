@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10591?v=1795437566",
   "cover_og_url": "/cover/10591/og?v=1795437566",
+  "has_cover": false,
   "url": "/book/psad-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Edit File Konfigurasi 3 Tambahkan LOG rules ke iptables 4 Reload &amp; update PSAD 5 Cek Status 6 Referensi Install apt-get update apt-get install psad Edit File Konfigurasi vi /etc/psad/psad.conf Edit EMAIL_ADDRESSES HOSTNAME ENABLE_AUTO_IDS - set ke Y jika anda ingin PSAD men-set firewall automatis. ENABLE_AUTO_IDS_EMAILS - set ke Y jika anda ingin menerima email notifikasi.",

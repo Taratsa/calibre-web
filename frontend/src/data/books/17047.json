@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17047?v=1795463979",
   "cover_og_url": "/cover/17047/og?v=1795463979",
+  "has_cover": false,
   "url": "/book/menangkap-layar-monitor-menggunakan-ffmpeg-onno-widodo-purbo/",
   "rating": null,
   "comment": "FFmpeg dapat digunakan untuk membuat film dari layar monitor kita. Capure video screen biasanya sangat bermanfaat saat kita ingin membuat tutorial agar teman-teman yang lain dapat melihat secara langsung apa yang harus kita kerjakan. FFmpeg dapat secara langsung menangkap video dan audio dari device yang kita berikan melalui perintah berikut, $ ffmpeg -f oss -i /dev/dsp -f video4linux2 -i",

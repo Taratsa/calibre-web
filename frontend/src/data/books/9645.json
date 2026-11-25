@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9645?v=1795433588",
   "cover_og_url": "/cover/9645/og?v=1795433588",
+  "has_cover": false,
   "url": "/book/os-build-in-monitoring-tool-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html Apakah anda butuh melihat performance Linux? coba gunakan built-in command dan beberapa tool tambahan berikut. Kebanyakan distribusi linux di persenjatai oleh banyak sekali tool untuk melakukan monitoring. Tool ini memberikan informasi tentang aktifitas sistem. Kita dapat menggunakan tool ini untuk melihat masalah dalam",
@@ -140,12 +141,12 @@
         15
       ],
       [
-        "pid",
-        10
-      ],
-      [
         "r-x",
         5
+      ],
+      [
+        "pid",
+        10
       ],
       [
         "acct",

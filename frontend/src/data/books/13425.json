@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13425?v=1795445910",
   "cover_og_url": "/cover/13425/og?v=1795445910",
+  "has_cover": false,
   "url": "/book/ubuntu-rc-local-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://vpsfix.com/community/server-administration/no-etc-rc-local-file-on-ubuntu-18-04-heres-what-to-do/ Di Ubuntu 18.04, rc.local di tiadakan. Kita dapat membuatnya dengan mengedit file, nano /etc/rc.local vi /etc/rc.local Paste kalimat berikut, #!/bin/sh -e # # rc.local # # This script is executed at the end of each multiuser runlevel. # Make sure that the script will \"exit 0\" on",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10956?v=1795438592",
   "cover_og_url": "/cover/10956/og?v=1795438592",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-dhcp-address-printer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/DhcpAddressPrinter Sketch ini menggunakan DHCP extensions dari Ethernet library untuk memperoleh IP address via DHCP dan print IP address yang di peroleh menggunakan Arduino Ethernet shield. DHCP menggunakan IP address yang dialokasikan saat Ethernet.begin(mac) dipanggil. Menggunakan DHCP akan sangat memperbesar size sketch. Menggunakan fungsi localIP(),",

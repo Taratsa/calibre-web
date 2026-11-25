@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10883?v=1795438357",
   "cover_og_url": "/cover/10883/og?v=1795438357",
+  "has_cover": false,
   "url": "/book/android-studio-tekan-tombol-playsound-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Folder ~/AndroidStudioProjects/Sapi/app/src/main/res/drawable 2 Folder ~/AndroidStudioProjects/Sapi/app/src/main/res/raw 3 MainActivity.java 4 content_main.xml 5 AndroidManifest.xml Folder ~/AndroidStudioProjects/Sapi/app/src/main/res/drawable isi cat1.png cat2.png cow1.png Folder ~/AndroidStudioProjects/Sapi/app/src/main/res/raw isi believeme.wav catmeow.wav catpurr.wav cow1.wav",
@@ -112,12 +113,12 @@
         8
       ],
       [
-        "import",
-        12
-      ],
-      [
         "layout",
         11
+      ],
+      [
+        "import",
+        12
       ],
       [
         "mainactivity",

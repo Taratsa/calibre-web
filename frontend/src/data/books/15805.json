@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15805?v=1795456939",
   "cover_og_url": "/cover/15805/og?v=1795456939",
+  "has_cover": false,
   "url": "/book/gns3-instalasi-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan sudo su apt update apt -y install virtualbox Tambahkan repository sudo su sudo add-apt-repository ppa:gns3/ppa Install GNS3 sudo apt update &amp;&amp; sudo apt -y install gns3-server gns3-gui Install GNS3 IOU sudo dpkg --add-architecture i386 sudo apt-get update sudo apt -y install gns3-iou",

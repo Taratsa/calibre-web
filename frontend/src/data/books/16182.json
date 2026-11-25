@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16182?v=1795459305",
   "cover_og_url": "/cover/16182/og?v=1795459305",
+  "has_cover": false,
   "url": "/book/python-ubuntu-24-04-generate-random-array-2-kolom-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python di Ubuntu untuk menghasilkan array dengan dua kolom yang diisi oleh angka acak. Anda dapat menggunakan numpy untuk membangkitkan data ini, yang berguna untuk latihan data science atau TensorFlow. import numpy as np # Set jumlah baris yang diinginkan jumlah_baris = 1000 # Misalnya, 1000 baris data # Generate array dengan dua kolom angka acak antara 0 dan 1 data =",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11857?v=1795440925",
   "cover_og_url": "/cover/11857/og?v=1795440925",
+  "has_cover": false,
   "url": "/book/sarg-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.server-world.info/en/note?os=Ubuntu_16.04&amp;p=squid&amp;f=8 apt-get -y install sarg vi /etc/sarg/sarg.conf # line 120,121: uncomment and comment out output_dir /var/www/html/squid-reports # output_dir /var/lib/sarg # line 132: add resolve_ip yes # line 377: change charset UTF-8 vi /etc/sarg/exclude_hosts # write hosts you'd like to exclude from log reports 127.0.0.1 www.google.co.jp",

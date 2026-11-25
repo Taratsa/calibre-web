@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13138?v=1795444917",
   "cover_og_url": "/cover/13138/og?v=1795444917",
+  "has_cover": false,
   "url": "/book/ipv6-route-control-route-redistribution-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring Redistribution Redistribution is configured in two steps: Step 1. In the routing protocol configuration that is to receive the redistributed routes, use the redistribute command to specify the source of the routes. Step 2. Specify the metric to be assigned to the redistributed routes. For example, the EIGRP configuration of Lajoie in Figure 11-7 is displayed in Example 11-12. Figure",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13490?v=1795446135",
   "cover_og_url": "/cover/13490/og?v=1795446135",
+  "has_cover": false,
   "url": "/book/rtl-sdr-rtl-fm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://kmkeen.com/rtl-demod-guide/ Contents 1 FM 2 Police Scanner 3 AirBand Scanner 4 Referensi 5 Pranala Menarik FM apt install sox rtl_fm -M wbfm -f 92.0M | play -r 32k -t raw -e s -b 16 -c 1 -V1 - rtl_fm -f 92.0M -M fm -s 170k -A fast -r 32k -l 0 -E deemp | play -r 32k ... '-f ...' indicated the frequency to tune to -M fm means narrowband FM -s 170k means to sample the radio at",

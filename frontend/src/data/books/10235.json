@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10235?v=1795436459",
   "cover_og_url": "/cover/10235/og?v=1795436459",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-samba-untuk-file-sharing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt-get install samba cifs-utils Menempelkan folder yang di sharing dari komputer lain. Pertama-tama buat folder tempat menempalnya, misalnya, mkdir -p /var/data/media/temp chmod -Rf 777 /var/data/media/temp chown -Rf nobody.nogroup /var/data/media/temp Mount mount -t cifs //192.168.0.9/media /mnt/server9 -o username=xxxx -o password=123456789 mount -t cifs //192.168.0.9/media2",

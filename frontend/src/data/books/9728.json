@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9728?v=1795434668",
   "cover_og_url": "/cover/9728/og?v=1795434668",
+  "has_cover": false,
   "url": "/book/openwrt-setup-pptp-vpn-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.openwrt.org/doc/howto/vpn.server.pptpd Contents 1 Paket yang Dibutuhkan 2 OpenWrt Generic 3 Konfigurasi 4 Tunnel Remote IP Address 5 Firewall 6 Konfigurasi Routing 7 Setup for Windows filesharing 8 Referensi 9 Pranala Menarik Paket yang Dibutuhkan opkg install pptpd kmod-mppe /etc/init.d/pptpd enable /etc/init.d/pptpd start pptpd akan jalan, dan akan jangan saat boot.",

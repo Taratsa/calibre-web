@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11799?v=1795440776",
   "cover_og_url": "/cover/11799/og?v=1795440776",
+  "has_cover": false,
   "url": "/book/voip-mengukur-menggunakan-wireshark-onno-widodo-purbo/",
   "rating": null,
   "comment": "The delta is the time difference between the current packet and the previous packet in the stream. max delta is the largest delta value. Please take a look how Wireshark caluclates the jitter value: http://wiki.wireshark.org/RTP_statistics (search for: How jitter is calculated). The mean jitter value is the arithmetic mean value of all jitter values. Skew calculation is defined as follows (from:",

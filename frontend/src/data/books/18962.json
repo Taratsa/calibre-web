@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18962?v=1795471034",
   "cover_og_url": "/cover/18962/og?v=1795471034",
+  "has_cover": false,
   "url": "/book/voip-cookbook-enum-routing-table-in-opensips-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "The short version if (uri=~\"^ sip:00 [1-9][0-9]*@*\") { strip(2); prefix(\"+\"); }; if (uri=~\" sip:\\+ [0-9]+@*\") enum_query(\"e164.id.\"); The above example will allow all client from all server to access our ENUM query routing. A more complete version of ENUM query may be as follows, # Somewhere in the route[x] section: # if you want to make ENUM work with numbers starting with \"00\", # use the",

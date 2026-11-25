@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11763?v=1795440693",
   "cover_og_url": "/cover/11763/og?v=1795440693",
+  "has_cover": false,
   "url": "/book/msf-apkwash-untuk-mengelabuhi-antivirus-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://github.com/jbreed/apkwash apkwash Android APK Antivirus evasion for msfvenom generated payloads. Tested on Kali linux rolling. Setup: apt-get update &amp;&amp; apt-get dist-upgrade chmod +x apkwash mv apkwash /usr/local/bin/. On first run: Downloads and places apktool.jar in the user's /usr/local/bin directory Generates debug keystore for signing. Places it in ~/.android/ Usage Example:",

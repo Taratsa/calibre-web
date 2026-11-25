@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14871?v=1795452173",
   "cover_og_url": "/cover/14871/og?v=1795452173",
+  "has_cover": false,
   "url": "/book/debian-samba-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt -y install samba Enable saat start systemctl enable smbd Edit /etc/samba/smb.conf [share] path = /home/share browseable = yes read only = no guest ok = yes [share] path = /home/share browseable = yes read only = no guest ok = yes valid users = onno,derry,reza [share1] path = /home/share1 browseable = yes read only = no guest ok = yes valid users = onno,derry,reza Tambahkan SMBuser",

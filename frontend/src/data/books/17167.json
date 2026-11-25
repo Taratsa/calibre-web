@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17167?v=1795464320",
   "cover_og_url": "/cover/17167/og?v=1795464320",
+  "has_cover": false,
   "url": "/book/instalasi-antivirus-clamav-onno-widodo-purbo/",
   "rating": null,
   "comment": "untuk menginstalasi antivirus clamav , lakukan, apt-get install clamav atau kalau mau di jalan dengan MailScanner apt-get install clamav clamav-daemon proses update database clamav akan dilakukan secara automatis. Jika kita ingin memaksa untuk melakukan update database , hal ini dapat dilakukan menggunakan perintah freshclam Pastikan komputer tersambung ke Internet , karena pusat database virus",

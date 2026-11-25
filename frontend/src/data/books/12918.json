@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12918?v=1795444222",
   "cover_og_url": "/cover/12918/og?v=1795444222",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-dua-router-static-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: e0 - ke Internet e1 - R2: e0 e2 - LAN 192.168.1.0/24 R2: e0 - R1: e1 e1 - LAN 192.168.2.0/24 R1: vtysh configure terminal ipv6 forwarding interface eth0 ip address 192.168.122.100/24 ip address 192.168.122.101/24 ip address 192.168.122.102/24 no shutdown exit ipv6 forwarding interface eth1 ip address 172.16.1.1/30 ipv6 address 2001:172:16:1::1/64 no shutdown exit ipv6 forwarding interface",

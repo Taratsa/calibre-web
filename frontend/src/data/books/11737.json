@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11737?v=1795440632",
   "cover_og_url": "/cover/11737/og?v=1795440632",
+  "has_cover": false,
   "url": "/book/virtualbox-mengatasi-vboxdrv-yang-tidak-bisa-jalan-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/760671/could-not-load-vboxdrv-after-upgrade-to-ubuntu-16-04-and-i-want-to-keep-secur Contents 1 BIOS 2 MOK 3 Alternatif Lain 4 Alternatif Lain 5 Alternatif 6 Referensi BIOS Pastikan VT (Virtualization Technology) ENABLED SecureBoot DISABLED MOK On my system I did the following to make it work: Run mokutil: sudo mokutil --disable-validation Then mokutil",

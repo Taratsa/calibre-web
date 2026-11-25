@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15517?v=1795455246",
   "cover_og_url": "/cover/15517/og?v=1795455246",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-lcd-i2c-ntp-prayer-time-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* * Calculate Prayer Time * * Time &amp; Date From NTP */ #include  #include  #include  #include \"Arduino.h\" #include \"uRTCLib.h\" // uRTCLib rtc; uRTCLib rtc(0x68); /* I2C LCD ESP8266-Wenos D1 Mini GND GND VCC VIN SDA D2 SCL D1 */ #include  // set the LCD number of columns and rows int lcdColumns = 16; int lcdRows = 2; LiquidCrystal_I2C",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14905?v=1795452359",
   "cover_og_url": "/cover/14905/og?v=1795452359",
+  "has_cover": false,
   "url": "/book/android-studio-link-activity-to-class-onno-widodo-purbo/",
   "rating": null,
   "comment": "The much i got is that you want to go SurfaceViewExample from your main activity for that you need to use intent on button click like Intent i = new Intent(this, SurfaceViewExample.class); startActivity(i) ; and you have to add a permission in menifest to got to that activity like  Cara Lain # Start the activity connect to the #",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20065?v=1795476048",
   "cover_og_url": "/cover/20065/og?v=1795476048",
+  "has_cover": false,
   "url": "/book/tripwire-notifikasi-e-mail-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat melaporkan kejadian menggunakan tripwire dan ini harus ditulis pada file Tripwire /etc/tripwire/twpol.txt contoh e-mail admin bob@domain.com;sam@domain.com ( rulename = \"Networking Programs\", severity = $(SIG_HI), emailto = bob@domain.com;sam@domain.com ) encrypt policy cd /etc/tripwire twadmin --create-polfile --cfgfile ./tw.cfg --site-keyfile ./site.key ./twpol.txt Contents 1",

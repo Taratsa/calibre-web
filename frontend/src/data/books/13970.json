@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13970?v=1795448139",
   "cover_og_url": "/cover/13970/og?v=1795448139",
+  "has_cover": false,
   "url": "/book/arduino-usb-serial-ttl-converter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://gist.github.com/wmhilton/6034455 /* * Arduino Serial Bypass - use an Arduino as a dumb USB 2 Serial Converter * * This code makes the Arduino not interfere with pins 0 and 1 * which are connected to RX and TX on the FTDI chip. This allows * the data coming from the FTDI USB 2 Serial chip to flow directly * to another device. Since RX and TX are labeled from the Arduino's * point",

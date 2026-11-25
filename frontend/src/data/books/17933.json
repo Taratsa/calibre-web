@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/17933?v=1795466758",
   "cover_og_url": "/cover/17933/og?v=1795466758",
+  "has_cover": false,
   "url": "/book/orarinux-memastikan-semua-server-di-mesin-pembuat-distro-dimatikan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Matikan seluruh server yang ada di mesin host pembuat Distro, melalui shell dengan perintah sudo /etc/init.d/mysql stop sudo /etc/init.d/apache2 stop sudo /etc/init.d/postfix stop sudo /etc/init.d/vsftpd stop sudo /etc/init.d/dovecot stop sudo /etc/init.d/webmin stop sudo /etc/init.d/dhcp3-server stop sudo /etc/init.d/bind9 stop sudo /etc/init.d/ntp stop sudo /etc/init.d/tinyproxy stop sudo",

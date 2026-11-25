@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/14494?v=1795450257",
   "cover_og_url": "/cover/14494/og?v=1795450257",
+  "has_cover": false,
   "url": "/book/mikrotik-menggunakan-squid-sebagai-web-proxy-sehingga-lebih-optimal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber AdeldiaN http://opensource.telkomspeedy.com/forum/viewtopic.php?pid=18262 untuk lebih mudah saya menggunakan 2 virtual server, yaitu : 1. IP Mikrotik: - 192.168.10.15 = local - 192.168.12.15 = proxy - 192.168.5.181 = public/ke modem speedy 2. IP squid (pakai IPCop) - 192.168.12.1 = ip green(procy) 3. IP Client: 192.168.10.0/24 ok di ipcop disetting dulu bahwa web proxynya jalan di port 878",

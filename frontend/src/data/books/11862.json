@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11862?v=1795440935",
   "cover_og_url": "/cover/11862/og?v=1795440935",
+  "has_cover": false,
   "url": "/book/squidanalyzer-konfigurasi-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/838654/problem-setting-up-squidanalyzer You need to edit your /etc/apache2/apache2.conf file Add: Alias /squidreport /var/www/html/squidanalyzer  Options +FollowSymLinks +MultiViews -Indexes AllowOverride None Order deny,allow Deny from all Allow from 127.0.0.1 Allow from all  My web directory is",

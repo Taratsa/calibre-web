@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12815?v=1795443834",
   "cover_og_url": "/cover/12815/og?v=1795443834",
+  "has_cover": false,
   "url": "/book/cisco-bgp-dua-link-no-transit-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://routerric.blogspot.com/2010/03/bgp-transit-ass-and-how-to-avoid.html Mungkinkah kita membuat supaya BGP AS yang kita gunakan tidak menjadi transit path? BB1 ------ R1 (AS 101) ------- R2 (AS 101) ------- BB2 Hal ini dapat dengan mudah dilakukan dengan (1) distribute-list. Cara ini tidak scale dengan mudah jika ip address berubah dikemudian hari karena harus melihat access lists",

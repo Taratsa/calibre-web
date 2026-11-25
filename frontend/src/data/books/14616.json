@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14616?v=1795450866",
   "cover_og_url": "/cover/14616/og?v=1795450866",
+  "has_cover": false,
   "url": "/book/set-start-kiwix-setiap-boot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar kiwix dapat jalan secara otomatis setiap kali mesin/server di boot, kita perlu membuat script dan menambahkan di file /etc/rc.local . Langkah yang perlu dilakukan adalah, Buat shell script untuk menjalankan Kiwix di /root/ misalnya sudo su nano /root/kiwix-jalan.sh isi dengan, cd /usr/local/src/kiwix-tools_linux-x86_64-3.1.2-5/ ./kiwix-serve --port=8080 wikipedia_id_top_maxi_2021-09.zim &amp;",

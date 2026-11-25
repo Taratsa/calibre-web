@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12210?v=1795441852",
   "cover_og_url": "/cover/12210/og?v=1795441852",
+  "has_cover": false,
   "url": "/book/openbr-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://openbiometrics.org/docs/install/#linux Contents 1 Instalasi Aplikasi Pendukung 2 Instasi OpenCV 3 Instalasi OpenBR 3.1 Build OpenBR! 4 Hack OpenBR! 4.1 (Optional) Test OpenBR! 4.2 (Optional) Package OpenBR! 4.3 (Optional) Build OpenBR documentation! 5 Referensi Instalasi Aplikasi Pendukung sudo su apt update apt -y install build-essential cmake cmake-curses-gui \\ qt5-default",

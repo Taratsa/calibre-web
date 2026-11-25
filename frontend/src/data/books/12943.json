@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12943?v=1795444293",
   "cover_og_url": "/cover/12943/og?v=1795444293",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-ospf-example-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://www.fredrikholmberg.com/2012/05/configuring-single-area-ospfv3/ Configuring OSPFv3 is not very different from configuring OSPF for IPv4. It's actually simpler and much cooler since it's running on IPv6. Either prepare a topology using GNSparser or use this one: The first thing to do is to enable IPv6 globally and configure the interfaces on each router. This includes loopback",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9756?v=1795434780",
   "cover_og_url": "/cover/9756/og?v=1795434780",
+  "has_cover": false,
   "url": "/book/ipv6-route-display-route-ipv6-yang-ada-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat men-cek apakah IPv6 sudah terkonfigurasi secara automatis. Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route show [dev ] Contoh # /sbin/ip -6 route show dev eth0 2001:0db8:0:f101::/64 proto kernel metric 256 mtu 1500 advmss 1440 fe80::/10 proto kernel metric 256 mtu 1500 advmss 1440 ff00::/8 proto kernel metric 256 mtu 1500 advmss 1440 default proto kernel metric 256 mtu 1500",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19109?v=1795471667",
   "cover_og_url": "/cover/19109/og?v=1795471667",
+  "has_cover": false,
   "url": "/book/instalasi-dan-konfigurasi-rsync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install rsync apt-get install rsync Contents 1 Server 1.1 Edit /etc/default/rsync 1.2 Edit /etc/rsyncd.conf 2 Client 3 Contoh di http://opensource.telkomspeedy.com 4 Pranala Menarik Server Edit /etc/default/rsync Agar rsync aktif dan dapat digunakan, kita perlu mengedit file, vi /etc/default/rsync pastikan RSYNC_ENABLE=true Edit /etc/rsyncd.conf Edit vi /etc/rsyncd.conf Pastikan ada pid file =",

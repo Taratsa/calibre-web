@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10239?v=1795436474",
   "cover_og_url": "/cover/10239/og?v=1795436474",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-konfigurasi-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi sederhana Masuk ke Administration Network &gt; IPv6 ULA-Prefix &gt; isi dengan alokasi IPv6 yang kita miliki. Network &gt; LAN &gt; Edit &gt; IPv6 assignment length &gt; isi dengan 64 jika di perlukan Network &gt; LAN &gt; Edit &gt; DHCP Server &gt; IPv6 Settings &gt; Router Advertisement-Service server mode DHCPv6-Service server mode NDP-Proxy disable DHCPv6-Mode stateless + statefull Always announce default router",

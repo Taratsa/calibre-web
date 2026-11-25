@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10618?v=1795437653",
   "cover_og_url": "/cover/10618/og?v=1795437653",
+  "has_cover": false,
   "url": "/book/dnsperf-mengevaluasi-dns-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menjalankan dnsperf -h DNS Performance Testing Tool Nominum Version 2.0.0.0 Usage: dnsperf [-f family] [-s server_addr] [-p port] [-a local_addr] [-x local_port] [-d datafile] [-c clients] [-n maxruns] [-l timelimit] [-b buffer_size] [-t timeout] [-e] [-D] [-y [alg:]name:secret] [-q num_queries] [-Q max_qps] [-S stats_interval] [-u] [-v] [-h] -f address family of DNS transport, inet or inet6",

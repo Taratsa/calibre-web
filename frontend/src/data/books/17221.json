@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17221?v=1795464477",
   "cover_og_url": "/cover/17221/og?v=1795464477",
+  "has_cover": false,
   "url": "/book/schoolonffline-copy-source-code-semua-cms-ke-var-www-onno-widodo-purbo/",
   "rating": null,
   "comment": "apt-get install unrar cd /usr/local/src mv /usr/local/src/wordpress-3.2.1-id_ID.tar.gz /var/www/ cd /var/www tar zxvf wordpress-3.2.1-id_ID.tar.gz cd /usr/local/src tar zxvf Epiware_4.8.6.tar.gz mv /usr/local/src/Epiware_4.8.6 /usr/local/src/epi /usr/local/src/epi/install mkdir /storage chown -Rf www-data.www-data /storage/ chmod -Rf 777 /storage/ cp -Rf /usr/local/src/epi/epi /var/www/ chown -Rf",

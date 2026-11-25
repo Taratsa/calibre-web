@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13073?v=1795444738",
   "cover_og_url": "/cover/13073/og?v=1795444738",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-nd-ra-contoh-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology 2 Mikrotik 3 Client 4 Pranala Menarik Topology C1 -- R1 -- NAT R1 e0 -- NAT e1 -- C1 e0 C1 e0 -- R1 e1 Mikrotik /ipv6 address add address=2345::1/64 interface=ether2 /ipv6 nd prefix add prefix=2345::/64 interface=ether2 Penting alokasi prefix nd, satu keluarga dengan ipv6 address di interface. Client OS: Ubuntu interface tidak perlu di konfigurasi / di sentuh, karena automatis",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 201,
-    "longer_than": 24,
+    "longer_than": 23,
     "top": [
       [
         "ipv",

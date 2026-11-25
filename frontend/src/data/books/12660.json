@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12660?v=1795443351",
   "cover_og_url": "/cover/12660/og?v=1795443351",
+  "has_cover": false,
   "url": "/book/docker-instalasi-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 2 Membuat agar tidak perlu sudo lagi 3 Perintah Docker 4 Menggunakan Docker Image 5 Run Docker Container 6 Managing Docker 7 Pranala Menarik Instalasi apt install curl curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" sudo apt update",

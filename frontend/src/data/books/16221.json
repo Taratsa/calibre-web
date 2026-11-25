@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16221?v=1795459546",
   "cover_og_url": "/cover/16221/og?v=1795459546",
+  "has_cover": false,
   "url": "/book/firewall-melawan-ransomware-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di bawah ini adalah panduan dalam bahasa Indonesia mengenai solusi firewall open-source di Linux untuk mengurangi risiko ransomware. Perlu diingat, firewall saja biasanya tidak cukup untuk mencegah serangan ransomware sepenuhnya. Kebanyakan serangan ransomware berasal dari tautan berbahaya, lampiran email, kredensial yang bocor, atau celah keamanan pada perangkat lunak. Maka dari itu, firewall",
@@ -120,12 +121,12 @@
         10
       ],
       [
-        "suricata",
-        6
-      ],
-      [
         "linux",
         19
+      ],
+      [
+        "suricata",
+        6
       ],
       [
         "mendeteksi",

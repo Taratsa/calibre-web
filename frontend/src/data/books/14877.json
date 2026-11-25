@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14877?v=1795452206",
   "cover_og_url": "/cover/14877/og?v=1795452206",
+  "has_cover": false,
   "url": "/book/android-studio-call-activity-onno-widodo-purbo/",
   "rating": null,
   "comment": "How can I call another activity from one (the current) activity? Use the Intent to call another Activity. In the Manifest, you should add    And in your current activity, btListe = (ImageButton)findViewById(R.id.Button_Liste); btListe.setOnClickListener(new OnClickListener() {",

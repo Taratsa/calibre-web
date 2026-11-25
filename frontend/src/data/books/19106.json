@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19106?v=1795471654",
   "cover_og_url": "/cover/19106/og?v=1795471654",
+  "has_cover": false,
   "url": "/book/instalasi-squid-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan DNS berjalan dengan baik, cek dig www.detik.com Edit vi /etc/resolv.conf nameserver 8.8.8.8 Instalasi Squid apt -y install squid Edit konfigurasi squid agar komputer di LAN kita dapat menggunakan Squid tersebut vi /etc/squid/squid.conf Beberapa contoh setting yang penting # visible_hostname 192.168.0.1 # IP address server Squid anda # Example rule allowing access from your local",

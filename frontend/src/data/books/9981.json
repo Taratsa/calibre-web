@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9981?v=1795435641",
   "cover_og_url": "/cover/9981/og?v=1795435641",
+  "has_cover": false,
   "url": "/book/openwrt-setup-aprx-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file /etc/aprx.conf Setup iGATE &amp; DIGIPEATER mycall N0CALL-1  passcode -1 # harus di hitung server rotate.aprs2.net   serial-device /dev/ttyS0 19200 8n1 KISS tx-ok true   beacon symbol \"I#\" lat \"111.11S\" lon \"11111.91E\" # hitung koordinat menggunakan http://digined.pe1mew.nl/?How_to:Convert_coordinates   transmitter $mycall",

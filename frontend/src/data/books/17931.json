@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17931?v=1795466750",
   "cover_og_url": "/cover/17931/og?v=1795466750",
+  "has_cover": false,
   "url": "/book/download-database-speedywiki-menggunakan-wget-dan-cron-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat file vi /root/ambilspeedywiki.sh Isi dengan misalnya wget http://125.160.17.21/speedyorari/view.php?file=datawiki/wikidb.sql.gz -O /home/library/library/datawiki/wikidb.sql.gz wget http://125.160.17.21/speedyorari/view.php?file=datawiki/images.tar.gz -O /home/library/library/datawiki/images.tar.gz cp /home/library/library/datawiki/*",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13042?v=1795444638",
   "cover_og_url": "/cover/13042/og?v=1795444638",
+  "has_cover": false,
   "url": "/book/ipv6-autoconfiguration-disable-listen-ke-ra-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masalah yang sering terjadi dengan Router Advertisement (RA) adalah jika di jaringan kita ternyata tidak mempunyai / tidak memperoleh alokasi IPv6 dari ISP / Router, padahal fasilitas RA di aktifkan di router. Hal ini akan menyebabkan client jaringan akan memperoleh routing default untuk IPv6 ( ::/0 ) yang di arahkan ke alamat link seperti fe80::1 Akibatnya jika adalah mesin IPv6 yang akan",

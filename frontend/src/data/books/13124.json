@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13124?v=1795444874",
   "cover_og_url": "/cover/13124/og?v=1795444874",
+  "has_cover": false,
   "url": "/book/ipv6-tabel-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk memahami jenis informasi yang ada dalam tabel rute, akan bermanfaat untuk memulai dengan memeriksa apa yang terjadi ketika paket tiba di salah satu interface router. Identifier data-link dalam kolom alamat tujuan di periksa. Apakah berisi identifier interface router atau identifier broadcast, router melepaskan frame dan melewati paket di dalamnya ke lapisan jaringan yang lebih tinggi. Pada",

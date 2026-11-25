@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14239?v=1795449165",
   "cover_og_url": "/cover/14239/og?v=1795449165",
+  "has_cover": false,
   "url": "/book/utorrent-install-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download 64 bits cd /usr/local/src wget http://download.ap.bittorrent.com/track/beta/endpoint/utserver/os/linux-x64-ubuntu-13-04 -O utserver.tar.gz 32 bits cd /usr/local/src wget http://download-hr.utorrent.com/track/beta/endpoint/utserver/os/linux-i386-ubuntu-13-04 -O utserver.tar.gz Install sudo su cd /usr/local/src sudo tar xvf utserver.tar.gz -C /opt/ cd /usr/local/src sudo apt install",

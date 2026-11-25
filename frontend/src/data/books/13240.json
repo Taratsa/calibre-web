@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13240?v=1795445253",
   "cover_og_url": "/cover/13240/og?v=1795445253",
+  "has_cover": false,
   "url": "/book/tensorflow-linear-regression-generate-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Import libraries (Numpy, matplotlib) import numpy as np import matplotlib.pyplot as plt # Create 1000 points following a function y=0.1 * x + 0.4 (i.e. y \\= W * x + b) with some normal random distribution: num_points = 1000 vectors_set = [] for i in range(num_points): W = 0.1 # W b = 0.4 # b x1 = np.random.normal(0.0, 1.0) nd = np.random.normal(0.0, 0.05) y1 = W * x1 + b # Add some impurity",

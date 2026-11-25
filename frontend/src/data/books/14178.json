@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14178?v=1795448930",
   "cover_og_url": "/cover/14178/og?v=1795448930",
+  "has_cover": false,
   "url": "/book/mikrotik-l7p-block-dns-onno-widodo-purbo/",
   "rating": null,
   "comment": "/ip firewall layer7-protocol add name=adult regexp=\"www.dodgy-site.com|freeprontube21.com|www.nakedpapis.com|lustylist.com\" /ip firewall filter add action=drop chain=forward comment=dropDNS layer7-protocol=adult protocol=udp",

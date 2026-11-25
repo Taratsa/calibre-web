@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16849?v=1795463444",
   "cover_og_url": "/cover/16849/og?v=1795463444",
+  "has_cover": false,
   "url": "/book/ffmpeg-extract-text-indonesia-dari-mp4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara paling mudah dan gratis adalah memakai **OpenAI Whisper secara lokal**. Whisper mendukung Bahasa Indonesia, dapat membaca video secara langsung, serta menghasilkan teks biasa dan subtitle. Cara paling singkat di Ubuntu 1. Instal FFmpeg dan Python ```bash sudo apt update sudo apt install -y ffmpeg python3-pip python3-venv ``` 2. Buat lingkungan Python ```bash python3 -m venv whisper-env",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 353,
-    "longer_than": 33,
+    "longer_than": 32,
     "top": [
       [
         "whisper",

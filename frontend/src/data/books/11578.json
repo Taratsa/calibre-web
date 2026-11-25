@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11578?v=1795440235",
   "cover_og_url": "/cover/11578/og?v=1795440235",
+  "has_cover": false,
   "url": "/book/dvwa-check-sqli-vulnerability-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini kita akan menggunakan DVWA SQLi. Siapkan DVWA: Browse ke DVWA http://192.168.0.100/DVWA-1.9/security.php Set Low &gt; Submit Masuk ke http://192.168.0.100/DVWA-1.9/vulnerabilities/sqli/ Untuk mencek SQLi vulnerability, seorang hacking kadang menyelipkan perintah berikut. 1' or '0'='0 1' or '1'='1 1' or '2'='2 1' or '3'='3 1' or '4'='4 %' or '0'='0 Deteksi SNORT snort rules untuk",

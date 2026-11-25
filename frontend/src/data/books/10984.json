@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10984?v=1795438684",
   "cover_og_url": "/cover/10984/og?v=1795438684",
+  "has_cover": false,
   "url": "/book/bokeh-server-terima-tcp-dengan-x-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "client.py import sys import time import socket import random # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('192.168.0.100', 2000) sock.connect(server_address) try: for i in xrange(100000): m0 = random.random() message = \"%1.4f\" % m0 print &gt;&gt;sys.stderr, 'sending ' , message",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 277,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "socket",

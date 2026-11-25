@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10830?v=1795438220",
   "cover_og_url": "/cover/10830/og?v=1795438220",
+  "has_cover": false,
   "url": "/book/android-screencast-di-komputer-menggunakan-androidscreencast-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Install adb sudo apt-get install android-tools-adb android-tools-fastboot Pastikan handphone terdetek oleh laptop, pakai perintah adb devices Akan keluar, misalnya, * daemon not running. starting it now on port 5037 * * daemon started successfully * List of devices attached .. .. Sebagai user biasa, download androidscreencast mkdir -p ~/Android_Screencast &amp;&amp; cd Android_Screencast wget",

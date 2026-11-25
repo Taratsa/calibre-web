@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/13345?v=1795445625",
   "cover_og_url": "/cover/13345/og?v=1795445625",
+  "has_cover": false,
   "url": "/book/menggunakan-sipp-mengevaluasi-asterisk-softswitch-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masukan perintah berikut ke extensions.conf [sipp] exten =&gt; 1234,1,Answer exten =&gt; 1234,2,SetMusicOnHold(default) exten =&gt; 1234,3,WaitMusicOnHold(20) exten =&gt; 1234,4,Hangup exten =&gt; 1235,1,Answer exten =&gt; 1235,2,Goto(MENUCONTEXTORSIMILARCONTEXT,s,1) exten =&gt; 1235,3,Hangup Masukan perintah berikut ke file sip.conf [sipp] type=friend context=sipp host=dynamic port=6000 user=sipp canreinvite=no",

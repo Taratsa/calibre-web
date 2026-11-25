@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14346?v=1795449583",
   "cover_og_url": "/cover/14346/og?v=1795449583",
+  "has_cover": false,
   "url": "/book/nuclei-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/projectdiscovery/nuclei Instalasi sudo su cd /usr/local/src wget https://github.com/projectdiscovery/nuclei/releases/download/v2.2.0/nuclei_2.2.0_linux_amd64.tar.gz tar zxvf nuclei_2.2.0_linux_amd64.tar.gz mv nuclei /usr/local/bin/ Cek nuclei -version Referensi https://github.com/projectdiscovery/nuclei",

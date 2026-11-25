@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10351?v=1795436818",
   "cover_og_url": "/cover/10351/og?v=1795436818",
+  "has_cover": false,
   "url": "/book/rom-android-backup-image-partisi-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Backup Partisi 1.1 Di LG Optimus GPro 1.2 Di Evercoss A80A 2 adb pull 3 fastboot flash Backup Partisi Di LG Optimus GPro Contoh untuk AOSP based ROM, seperti LG Optimus GPro dengan Xiaomi ROM System: dd if=/dev/block/platform/msm_sdcc.1/by-name/system of=/sdcard/system.img Data: (This is quite impossible to backup since you internal storage is binded with this partition, hence it will",

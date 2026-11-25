@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13225?v=1795445207",
   "cover_og_url": "/cover/13225/og?v=1795445207",
+  "has_cover": false,
   "url": "/book/satu-data-setup-filestore-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat file sudo mkdir -p /var/lib/ckan/default Edit sudo vi /etc/ckan/default/development.ini ckan.storage_path = /var/lib/ckan/default Edit permission (misalnya pakai Apache Web Server) sudo chown www-data /var/lib/ckan/default sudo chmod u+rwx /var/lib/ckan/default Restart Apache sudo service apache2 reload Referensi https://docs.ckan.org/en/latest/maintaining/filestore.html Pranala Menarik SATU",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11375?v=1795439728",
   "cover_og_url": "/cover/11375/og?v=1795439728",
+  "has_cover": false,
   "url": "/book/twitter-streamr-scraper-r-onno-widodo-purbo/",
   "rating": null,
   "comment": "#install.packages(\"streamR\") #install.packages(\"ROAuth\") library(ROAuth) library(streamR) #sets your working directory setwd('/home/stats/data') #create your OAuth credential credential &lt;- OAuthFactory$new(consumerKey='***CONSUMER KEY***', consumerSecret='***CONSUMER SECRET KEY***', requestURL=' https://api.twitter.com/oauth/request_token' , accessURL=' https://api.twitter.com/oauth/access_token'",

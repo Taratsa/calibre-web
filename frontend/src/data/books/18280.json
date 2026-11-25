@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18280?v=1795468362",
   "cover_og_url": "/cover/18280/og?v=1795468362",
+  "has_cover": false,
   "url": "/book/schoolonffline-konfigurasi-etc-network-interfaces-untuk-ip-address-statik-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit # vi /etc/network/interfaces Ubah # The primary network interface auto eth0 iface eth0 inet static address 192.168.0.254 netmask 255.255.255.0 network 192.168.0.0 broadcast 192.168.0.255 gateway 192.168.0.1 # dns-* options are implemented by the resolvconf package, if installed dns-nameservers 192.168.0.254, 203.34.118.10, 203.34.118.12, 208.67.222.222 dns-search sekolah.sch.id Pranala",

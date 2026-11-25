@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13373?v=1795445744",
   "cover_og_url": "/cover/13373/og?v=1795445744",
+  "has_cover": false,
   "url": "/book/esp32-wifi-contoh-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://learn.sparkfun.com/tutorials/esp32-thing-hookup-guide/arduino-example-wifi #include  // WiFi network name and password: const char * networkName = \"YOUR_NETWORK_HERE\"; const char * networkPswd = \"YOUR_PASSWORD_HERE\"; // Internet domain to request from: const char * hostDomain = \"example.com\"; const int hostPort = 80; const int BUTTON_PIN = 15; const int LED_PIN = 2; void",

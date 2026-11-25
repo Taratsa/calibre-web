@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12945?v=1795444296",
   "cover_og_url": "/cover/12945/og?v=1795444296",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-bgp-enabling-feature-onno-widodo-purbo/",
   "rating": null,
   "comment": "enable configure terminal router bgp as-number no bgp default ipv4-unicast bgp router-id ip-address enable configure terminal router bgp as-number neighbor {ip-address | ipv6-address [%] | peer-group-name} remote-as autonomous-system-number [alternate-as autonomous-system-number ...] address-family ipv6 [unicast | multicast] neighbor {ip-address | peer-group-name | ipv6-address %} activate enable",

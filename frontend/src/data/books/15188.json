@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15188?v=1795453582",
   "cover_og_url": "/cover/15188/og?v=1795453582",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-22-04-install-moodle-apache2-mariadb-php-8-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Update Repo 2 Install Apache2 3 Install PHP 8.1 Extension 4 Install MariaDB 5 Install Moodle 6 Setup Database 6.1 Kalau Operasional 6.2 Kalau hanya Latihan 7 Siapkan folder /var/moodledata/ 8 Install Moodle 9 Akses Moodle 10 Youtube 11 Pranala Menarik Update Repo sudo apt update sudo apt -y install software-properties-common ca-certificates lsb-release \\ apt-transport-https unzip",

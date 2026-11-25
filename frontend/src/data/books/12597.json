@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12597?v=1795443172",
   "cover_og_url": "/cover/12597/og?v=1795443172",
+  "has_cover": false,
   "url": "/book/r-read-csv-onno-widodo-purbo/",
   "rating": null,
   "comment": "9 down vote favorite 9 I am trying to work with the tm package in R, and have a CSV file of customer feedback with each line being a different instance of feedback. I want to import all the content of this feedback into a corpus but I want each line to be a different document within the corpus, so that I can compare the feedback in a DocTerms Matrix. There are over 10,000 rows in my data set.",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17219?v=1795464471",
   "cover_og_url": "/cover/17219/og?v=1795464471",
+  "has_cover": false,
   "url": "/book/instalasi-tinyproxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi # apt-get install tinyproxy Edit Konfigurasi Edit # vi /etc/tinyproxy/tinyproxy.conf Ubah # User nobody # Group nogroup User root Group root # Port 8888 Port 3128 Allow 127.0.0.1 Allow 192.168.0.0/16 Restart # /etc/init.d/tinyproxy restart Pranala Menarik Linux Howto",

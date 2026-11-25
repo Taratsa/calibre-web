@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10525?v=1795437365",
   "cover_og_url": "/cover/10525/og?v=1795437365",
+  "has_cover": false,
   "url": "/book/ipv6-mematikan-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://askubuntu.com/questions/346126/how-to-disable-ipv6-on-ubuntu Edit vi /etc/sysctl.conf set net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 Jalankan sudo sysctl -p Referensi http://askubuntu.com/questions/346126/how-to-disable-ipv6-on-ubuntu",

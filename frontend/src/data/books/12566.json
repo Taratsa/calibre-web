@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12566?v=1795443085",
   "cover_og_url": "/cover/12566/og?v=1795443085",
+  "has_cover": false,
   "url": "/book/r-tidytext-data-frame-onno-widodo-purbo/",
   "rating": null,
   "comment": "Flow Chart # text asli # text &lt;- c(\"Because I could not stop for Death -\", \"He kindly stopped for me -\", \"The Carriage held but just Ourselves -\", \"and Immortality\") text # konversi ke data fame # library(dplyr) text_df &lt;- data_frame(line = 1:4, text = text) text_df # konversi menjadi token # library(tidytext) text_df %&gt;% unnest_tokens(word, text) Pranala Menarik R",

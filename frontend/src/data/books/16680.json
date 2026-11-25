@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16680?v=1795462491",
   "cover_og_url": "/cover/16680/og?v=1795462491",
+  "has_cover": false,
   "url": "/book/mediawiki-maintenance-dumping-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut versi yang **lebih benar, aman, dan rapi** untuk backup MediaWiki (DB + images). Saya perbaiki: urutan argumen `mysqldump`, pemakaian password (hindari terlihat di process list), opsi konsistensi (`--single-transaction`), charset, dan path file (di contoh Anda `file.xml` vs `wikidb.xml` belum konsisten). Contents 1 Persiapan 2 Script backup (disarankan) 3 Cara pakai 4 Kalau Anda BUTUH",

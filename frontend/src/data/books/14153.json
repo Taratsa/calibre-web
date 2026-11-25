@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14153?v=1795448818",
   "cover_og_url": "/cover/14153/og?v=1795448818",
+  "has_cover": false,
   "url": "/book/qemu-emulasi-arm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://gist.github.com/Liryna/10710751 Contents 1 Install 2 Create 3 Referensi 4 Pranala Menarik Install Install untuk armel &amp; armhf sudo su apt -y update apt -y install gcc-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user-static qemu Cek qemu-system-arm -cpu help qemu-system-arm -machine help qemu-system-arm -M help Create sudo su mkdir /usr/local/src/arm-test cd",

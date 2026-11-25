@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16385?v=1795460535",
   "cover_og_url": "/cover/16385/og?v=1795460535",
+  "has_cover": false,
   "url": "/book/llm-rag-ollama-menggunakan-open-webui-dan-postgresql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menginstal Ollama, Node.js, Open WebUI, dan PostgreSQL tanpa Docker di Ubuntu 24.04, serta menyimpan dokumen Retrieval-Augmented Generation (RAG) di basis data vektor, Anda dapat mengikuti langkah-langkah berikut: 1. Instalasi Ollama dan Model LLM: Ollama adalah alat untuk mengelola dan menjalankan model bahasa besar (LLM) secara lokal. Unduh dan Instal Ollama: sudo apt install curl",

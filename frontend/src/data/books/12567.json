@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12567?v=1795443087",
   "cover_og_url": "/cover/12567/og?v=1795443087",
+  "has_cover": false,
   "url": "/book/r-tidytext-jane-austen-book-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(janeaustenr) library(dplyr) library(stringr) original_books &lt;- austen_books() %&gt;% group_by(book) %&gt;% mutate(linenumber = row_number(), chapter = cumsum(str_detect(text, regex(\"^chapter [\\\\divxlc]\", ignore_case = TRUE)))) %&gt;% ungroup() original_books # konversi ke token # library(tidytext) tidy_books &lt;- original_books %&gt;% unnest_tokens(word, text) tidy_books # buang stopwords #",

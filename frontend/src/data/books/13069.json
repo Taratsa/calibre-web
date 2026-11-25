@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13069?v=1795444726",
   "cover_og_url": "/cover/13069/og?v=1795444726",
+  "has_cover": false,
   "url": "/book/ipv6-autoconfiguration-stateful-radvd-redistribusi-ulang-alokasi-ipv6-6project-onno-widodo-purbo/",
   "rating": null,
   "comment": "router advertisement daemon (RAdvD) hanya berfungsi jika kita mempunyai alokasi IPv6 &lt;64 di bawah itu akan bermasalah. Jadi alokasi dari 6project.org ( /80 ) tidak bisa di distribusi ulang menggunakan radvd. Reset IPv6 tun0 interface, misalnya awal perolehan IPv6 address tun0: flags=4305 mtu 1500 inet 10.8.0.21 netmask 255.255.255.0 destination 10.8.0.21",

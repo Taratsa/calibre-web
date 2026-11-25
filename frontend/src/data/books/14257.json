@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14257?v=1795449223",
   "cover_og_url": "/cover/14257/og?v=1795449223",
+  "has_cover": false,
   "url": "/book/kite-com-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Sebagai user biasa, bash -c \"$(wget -q -O - https://linux.kite.com/dls/linux/current )\" Akan mendownload sekitar 500Mbyte Run with systemd, run systemctl --user start kite-autostart without systemd, run /home/onno/.local/share/kite/kited Untuk Ubuntu 20.04, saya pakai /home/onno/.local/share/kite/kited",

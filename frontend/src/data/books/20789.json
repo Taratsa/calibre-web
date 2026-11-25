@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20789?v=1795478181",
   "cover_og_url": "/cover/20789/og?v=1795478181",
+  "has_cover": false,
   "url": "/book/rtorrent-menjalankan-di-background-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tampaknya rtorrent tidak bisa berjalan sebagai daemon di background. Oleh karenanya kalau kita ingin menjalankan di background tanpa interface kita perlu menjalankan dengan session yang terpisah, seperti sleep 3s &amp;&amp; screen -d -m -S rtorrent rtorrent &amp; Jika kita perlu mengakses interface kita dapat mengetik screen -x rtorrent Jika kita tidak membutuhkan kita dapat menekan tombol +<a> di</a>",

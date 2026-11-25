@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14208?v=1795449044",
   "cover_og_url": "/cover/14208/og?v=1795449044",
+  "has_cover": false,
   "url": "/book/minikube-penggunaan-ambassador-ingress-controller-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/tutorials/ambassador_ingress_controller/ minikube addons enable ambassador minikube tunnel kubectl get service ambassador -n ambassador NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE ambassador LoadBalancer 10.108.56.81 10.108.56.81 80:30687/TCP,443:31481/TCP 24s kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4 kubectl expose",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14339?v=1795449558",
   "cover_og_url": "/cover/14339/og?v=1795449558",
+  "has_cover": false,
   "url": "/book/kali-mobsf-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.qualibrate.com/blog/implement-mobsf-on-kali-linux Contents 1 Instalasi apps pendukung 2 Download Source 3 Create &amp; Activate Virtual Environment 4 Run 5 Browse 6 Referensi Instalasi apps pendukung sudo su apt update sudo apt install -y default-jdk sudo java -version sudo apt -y install python3-pip ‍ Download Source sudo su cd /usr/local/src git clone",

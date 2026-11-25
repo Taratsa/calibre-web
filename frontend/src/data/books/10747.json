@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10747?v=1795438012",
   "cover_og_url": "/cover/10747/og?v=1795438012",
+  "has_cover": false,
   "url": "/book/python-transfer-file-multithread-di-localhost-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar server dapat berinteraksi dengan banyak client, kita perlu menggunakan multi-threading. Berikut adalah script server yang dapat menerima sambungan banyak client. Contents 1 Server Script 2 Client 3 Output 4 Referensi 5 Pranala Menarik Server Script # server2.py import socket from threading import Thread from SocketServer import ThreadingMixIn TCP_IP = 'localhost' TCP_PORT = 9001 BUFFER_SIZE",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16832?v=1795463383",
   "cover_og_url": "/cover/16832/og?v=1795463383",
+  "has_cover": false,
   "url": "/book/comfyui-instalasi-via-docker-compose-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut rangkuman final yang sesuai dengan instalasi yang baru dilakukan. Instalasi ComfyUI GPU dengan Docker Compose di Ubuntu 24.04 Panduan ini mendokumentasikan instalasi ComfyUI pada server Ubuntu 24.04 dengan alamat IP `192.168.0.230`. ComfyUI ditambahkan ke dalam Docker Compose yang sebelumnya sudah menjalankan Ollama, Open-WebUI, n8n, dan WAHA. Server menggunakan GPU NVIDIA GeForce RTX",

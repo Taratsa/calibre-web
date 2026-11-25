@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20639?v=1795477785",
   "cover_og_url": "/cover/20639/og?v=1795477785",
+  "has_cover": false,
   "url": "/book/ntfs-format-harddisk-ke-ntfs-onno-widodo-purbo/",
   "rating": null,
   "comment": "Format harddisk / USB harddisk ke NTFS # mkntfs /dev/sdX1 dimana /dev/sdX1 adalah USB harddisk anda .. Cara yang lebih cepat tidak di fill dengan NULL sebaiknya menggunakan switch # mkntfs -Q /dev/sdX1 atau # mkntfs -f /dev/sdX1 Pranala Menarik Linux Howto Instalasi NTFS NTFS: Memperbaiki Partisi NTFS NTFS: Format Harddisk ke NTFS",

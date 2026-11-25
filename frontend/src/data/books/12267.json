@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12267?v=1795442079",
   "cover_og_url": "/cover/12267/og?v=1795442079",
+  "has_cover": false,
   "url": "/book/arduino-tinygpsplus-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library https://github.com/mikalhart/TinyGPSPlus/releases cd ~/Arduino/libraries wget https://github.com/mikalhart/TinyGPSPlus/archive/v1.0.2.zip unzip v1.0.2.zip Code #include  #include  /*This sample sketch demonstrates the normal use of a TinyGPS++ (TinyGPSPlus) object. It requires the use of SoftwareSerial, and assumes that you have a 9600-baud serial GPS device",
@@ -177,7 +178,7 @@
       ],
       [
         12254,
-        0.35
+        0.34
       ],
       [
         15505,

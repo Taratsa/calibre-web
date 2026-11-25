@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11542?v=1795440152",
   "cover_og_url": "/cover/11542/og?v=1795440152",
+  "has_cover": false,
   "url": "/book/aosp-troubleshooting-build-errors-yang-umum-onno-widodo-purbo/",
   "rating": null,
   "comment": "Salah Versi Java Jika kita berusaha build sebuah versi Android dengan versi Java yang yang salah, akan gagal dengan message berikut, ************************************************************ You are attempting to build with the incorrect version of java. Your version is: WRONG_VERSION. The correct version is: RIGHT_VERSION. Please follow the machine setup instructions at",

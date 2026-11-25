@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10773?v=1795438080",
   "cover_og_url": "/cover/10773/og?v=1795438080",
+  "has_cover": false,
   "url": "/book/voip-mengijinkan-guest-call-dari-asterisk-lain-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/asterisk/sip.conf Pastikan allowguest=yes autocreatepeer=no disallow=all allow=gsm ; GSM allow=ulaw ; ISDN US allow=alaw ; ISDN EU allow=g722 allow=g726",

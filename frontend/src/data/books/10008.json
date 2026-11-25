@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10008?v=1795435727",
   "cover_og_url": "/cover/10008/og?v=1795435727",
+  "has_cover": false,
   "url": "/book/opensips-rewrite-uri-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.opensips.org/Documentation/Script-CoreFunctions#toc40 WARNING: Perlu di cek cara yang benar utk memakai rewriteuri Contents 1 Contoh perintah 2 Perlu dicoba 3 Lebih Dalam 3.1 Asterisk Round Robin 3.2 OpenSIPS 3.3 OpenSIPS round robin 4 Referensi 5 Pranala Menarik Contoh perintah rewriteuri(\" sip:test@opensips.org \"); Perlu dicoba # call ke PABX lain dengan kode area 3 if",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10129?v=1795436117",
   "cover_og_url": "/cover/10129/og?v=1795436117",
+  "has_cover": false,
   "url": "/book/python-web-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: ini hanya untuk python 2.7, tidak bisa untuk 3.x akan conflict Script Sederhana sudo su cd ~ vi SimpleHTTPServer.py Isi dengan import sys import BaseHTTPServer from SimpleHTTPServer import SimpleHTTPRequestHandler HandlerClass = SimpleHTTPRequestHandler ServerClass = BaseHTTPServer.HTTPServer Protocol = \"HTTP/1.0\" if sys.argv[1:]: port = int(sys.argv[1]) else: port = 8000 server_address",

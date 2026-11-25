@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15690?v=1795456219",
   "cover_og_url": "/cover/15690/og?v=1795456219",
+  "has_cover": false,
   "url": "/book/linux-wireless-network-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo su apt update apt upgrade apt -y install wireless-network iw network-manager Cek wireless extension iwconfig wlp2s0 IEEE 802.11 ESSID:off/any Mode:Managed Access Point: Not-Associated Tx-Power=-2147483648 dBm Retry short limit:7 RTS Fragment thr:off Encryption key:off Power Management:on Setup menggunakan nmcli nmcli d nmcli r wifi on nmcli d wifi list Ganti my_wifi dengan access",

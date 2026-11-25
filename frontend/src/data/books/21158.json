@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21158?v=1795480607",
   "cover_og_url": "/cover/21158/og?v=1795480607",
+  "has_cover": false,
   "url": "/book/ubuntu-install-26-04-di-laptop-hp-nvme-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Format Laptop HP NVMe dan Install Ubuntu 26.04 1.1 1. Siapkan USB Installer 1.2 2. Masuk Boot Menu Laptop HP 1.3 3. Pilih Mode Install 1.4 4. Cara Aman: Format Otomatis oleh Installer 1.5 5. Cara Manual Format NVMe 1.6 6. Format NVMe via Terminal dari Live USB 1.7 7. Masalah yang Sering Terjadi di Laptop HP 1.7.1 USB tidak muncul di Boot Menu 1.7.2 Installer tidak melihat NVMe 1.7.3",
@@ -148,8 +149,8 @@
         7
       ],
       [
-        "pilih",
-        17
+        "efi",
+        6
       ]
     ],
     "phrases": [

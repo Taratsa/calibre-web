@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17595?v=1795465716",
   "cover_og_url": "/cover/17595/og?v=1795465716",
+  "has_cover": false,
   "url": "/book/wndw-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gambar 3.6: Computer A ingin mengirimkan data ke 192.168.1.3. Tetapi terlebih dulu harus meminta kepada seluruh komputer di jaringan untuk memperoleh alamat MAC yang di tanggapi oleh 192.168.1.3. Bayangkan sebuah jaringan dengan tiga buah mesin: A, B, dan C. Mereka menggunakan alamat IP berikut 192,168,1,1, 192,168,1,2 dan 192,168,1,3. Mesin tersebut merupakan bagian dari jaringan /24, masker",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 740,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "mesin",
@@ -177,7 +178,7 @@
       ],
       [
         17603,
-        0.42
+        0.43
       ],
       [
         17600,

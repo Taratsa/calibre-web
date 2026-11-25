@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11934?v=1795441127",
   "cover_og_url": "/cover/11934/og?v=1795441127",
+  "has_cover": false,
   "url": "/book/nvidia-detect-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada beberapa cara lshw -C display lspci -v lspci | grep -i nvidia lshw -numeric -C display lspci -vnn | grep VGA egrep -i \" connected|card detect|primary dev\" /var/log/Xorg.0.log nvidia-smi -a sudo fuser -v /dev/nvidia* Pranala Menarik Nvidia",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10737?v=1795437985",
   "cover_og_url": "/cover/10737/og?v=1795437985",
+  "has_cover": false,
   "url": "/book/gns3-membuat-simulasi-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam Simulasi ini akan dibuat topologi sangat sederhana ubuntu1 --- Switch ---- ubuntu2 Coba untuk ping satu sama lain Membuat Project Nyalakan GNS3 &gt; akan muncul \"New Project\" Project Settings &gt; Project name &gt; masukan \"Nama Project\" Tekan \"OK\" Langkah Pembuatan Topologi Klik Browse End Devices &gt; Drag VirtualBox Guest ke ruang simulasi &gt; Pilih ubuntu1 Klik Browse End Devices &gt; Drag VirtualBox",
@@ -144,7 +145,7 @@
       ],
       [
         13476,
-        0.3
+        0.29
       ],
       [
         10741,

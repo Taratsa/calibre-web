@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11448?v=1795439906",
   "cover_og_url": "/cover/11448/og?v=1795439906",
+  "has_cover": false,
   "url": "/book/nltk-membuat-movie-review-bahasa-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "untuk menganalisa sentimen, nltk membutuhkan training / referensi tentang sentimen. Ini dilakukan menggunakan 1000 file text sentimen positif dan 1000 file text sentimen negatif. file tersebut terletak di folder, ~/nltk_data/corpora/movie_reviews ada dua folder, pos dan neg. format nama file-nya kira-kira cv000_29590.txt cv001_18431.txt cv002_15918.txt cv003_11664.txt cv004_11636.txt",

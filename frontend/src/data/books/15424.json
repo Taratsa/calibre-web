@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15424?v=1795454841",
   "cover_og_url": "/cover/15424/og?v=1795454841",
+  "has_cover": false,
   "url": "/book/ctf-instalasi-ctfd-di-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nopresearcher.github.io/Deploying-CTFd/ Spec: VirtualBox Ubuntu 22.04 Memory 3G Core 2 Contents 1 Basic 2 Testing 3 Setup enviroment 4 Operasional 5 Referensi Basic sudo su apt update apt install net-tools Setup user ctfd # setup user ctfd adduser ctfd # masukan password usermod -aG sudo ctfd Aktifkan firewall, # UFW Firewall ufw allow openssh ufw allow http ufw allow https ufw",

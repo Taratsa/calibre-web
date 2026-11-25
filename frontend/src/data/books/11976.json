@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11976?v=1795441222",
   "cover_og_url": "/cover/11976/og?v=1795441222",
+  "has_cover": false,
   "url": "/book/virtualbox-instalasi-dari-sumber-oracle-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan di /etc/apt/sources.list deb http://download.virtualbox.org/virtualbox/debian yakkety contrib Download https://www.virtualbox.org/download/oracle_vbox_2016.asc Tambahkan sudo apt-key add Downloads/oracle_vbox_2016.asc Atau pakai perintah wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - Error saat instalasi apt install virtualbox-5.1 Reading",

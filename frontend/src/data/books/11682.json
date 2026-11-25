@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11682?v=1795440489",
   "cover_og_url": "/cover/11682/og?v=1795440489",
+  "has_cover": false,
   "url": "/book/mqtt-arduino-simple-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Publishing in the callback - connects to an MQTT server - subscribes to the topic \"inTopic\" - when a message is received, republishes it to \"outTopic\" This example shows how to publish messages within the callback function. The callback function header needs to be declared before the PubSubClient constructor and the actual callback defined afterwards. This ensures the client reference in the",

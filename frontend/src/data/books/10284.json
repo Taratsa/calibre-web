@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10284?v=1795436612",
   "cover_og_url": "/cover/10284/og?v=1795436612",
+  "has_cover": false,
   "url": "/book/sqlmap-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download wget https://github.com/sqlmapproject/sqlmap/tarball/master sqlmapproject-sqlmap-0.9-3832-g74eacf9.tar.gz Ektrak sudo su cp sqlmapproject-sqlmap-0.9-3832-g74eacf9.tar.gz /usr/local/src/ cd /usr/local/src/ tar zxvf sqlmapproject-sqlmap-0.9-3832-g74eacf9.tar.gz mv sqlmapproject-sqlmap-74eacf9 sqlmap Pemakaian sudo su cd /usr/local/src/sqlmap python sqlmap.py -u URL-yang-akan-diserang",

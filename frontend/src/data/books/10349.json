@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10349?v=1795436809",
   "cover_og_url": "/cover/10349/og?v=1795436809",
+  "has_cover": false,
   "url": "/book/kamailio-konfigurasi-awal-di-openwrt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Buat Database MySQL 2 Edit file konfigurasi 3 Edit /etc/default 4 Menjalankan Kamailio 5 Menambahkan user 6 Referensi Buat Database MySQL Edit cd /etc/kamailio/ nano -w /etc/kamailio/kamctlrc Ubah DBENGINE=SQLITE DB_PATH=\"/etc/kamailio/sqlite\" Setelah kamctlrc di ubah, jalankan kamdbctl create kamailio.db You can call this script without any parameter to get some help for the usage.",

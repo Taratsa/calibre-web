@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11274?v=1795439482",
   "cover_og_url": "/cover/11274/og?v=1795439482",
+  "has_cover": false,
   "url": "/book/arduino-dds-source-code-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Main code by Richard Visokey AD7C - www.ad7c.com Revision 2.0 - November 6th, 2013 */ // Include the library code #include  #include  #include  //Setup some items #define W_CLK 8 // Pin 8 - connect to AD9850 module word load clock pin (CLK) #define FQ_UD 9 // Pin 9 - connect to freq update pin (FQ) #define DATA 10 // Pin 10 - connect to serial data load pin",

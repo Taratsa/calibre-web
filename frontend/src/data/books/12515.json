@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12515?v=1795442957",
   "cover_og_url": "/cover/12515/og?v=1795442957",
+  "has_cover": false,
   "url": "/book/python-pdf-onno-widodo-purbo/",
   "rating": null,
   "comment": "pyPDF2 #install pyPDF2 pip install PyPDF2 # importing all the required modules import PyPDF2 # creating an object file = open('example.pdf', 'rb') # creating a pdf reader object fileReader = PyPDF2.PdfFileReader(file) # print the number of pages in pdf file print(fileReader.numPages) textract pip install textract # for read pdf import textract text = textract.process('path/to/pdf/file',",

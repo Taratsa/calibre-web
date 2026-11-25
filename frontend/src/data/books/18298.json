@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18298?v=1795468416",
   "cover_og_url": "/cover/18298/og?v=1795468416",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-knowledgetree-digital-library-versi-3-5-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pertama-tama siapkan beberapa fasiltas pendukung KnowledgeTree seperti MySQL -server, PHP dll, antara lain dapat di install melalui perintah apt-get install libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php-pear postfix catdoc Restart beberapa server yang di perlukan &amp; pastikan jalan /etc/init.d/postfix restart /etc/init.d/apache2 restart /etc/init.d/mysql",

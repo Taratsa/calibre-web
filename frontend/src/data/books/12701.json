@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12701?v=1795443479",
   "cover_og_url": "/cover/12701/og?v=1795443479",
+  "has_cover": false,
   "url": "/book/virtualbox-kvm-vs-vboxdrv-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.dedoimedo.com/computers/kvm-virtualbox.html Masalah: VirtualBox tidak bisa jalan berbarengan dengan KVM. Yang masalah sebetulnya di VirtualBox :( .. Contents 1 Cek 2 Mematikan KVM 3 Re-insert kvm 4 VirtualBox Start / Stop 5 Referensi 6 Pranala Menarik Cek sudo /sbin/lsmod | grep vbox sudo /sbin/lsmod | grep kvm sudo /sbin/lsmod | grep vbox vboxpci 24576 0 vboxnetadp 28672 0",

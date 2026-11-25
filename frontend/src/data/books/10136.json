@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10136?v=1795436139",
   "cover_og_url": "/cover/10136/og?v=1795436139",
+  "has_cover": false,
   "url": "/book/nodejs-walkietalkie-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.npmjs.org/package/walkietalkie walkietalkie multi-agent, multi-channel, duplex-emitter network npm install walkietalkie WalkieTalkie About For managining 2-way communication between multiple autonomous entities Create a channel, then a bunch of 'walkie-talkies', then send and receive events over them! each walkie-talkie acts like a duplex-emitter Examples var WTChannel =",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16288?v=1795459958",
   "cover_og_url": "/cover/16288/og?v=1795459958",
+  "has_cover": false,
   "url": "/book/server-list-smtp-servers-various-isp-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "The format here uses the Postfix configuration format so that it can be directly cut-and-pasted into the Postfix configuration at `/etc/postfix/main.cf`: relayhost = smtp.telkom.net relayhost = 222.124.18.79 relayhost = mail.fast.net.id relayhost = 202.73.97.30 relayhost = smtp.idola.net.id relayhost = 202.152.0.5 relayhost = smtp.indosat.net.id relayhost = 219.83.54.112 relayhost = 219.83.54.113",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14515?v=1795450338",
   "cover_og_url": "/cover/14515/og?v=1795450338",
+  "has_cover": false,
   "url": "/book/wsjt-z-compile-di-debian-11-32bit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://aaron-brown.net/blog/?p=203 Contents 1 Install Aplikasi Pendukung 2 Compile 3 Download &amp; Buka source code WSJT-Z 4 Referensi Install Aplikasi Pendukung dpkg-reconfigure locales sudo locale-gen \"en_US.UTF-8\" export LC_ALL=\"en_US.UTF-8\" locale en_US.UTF-8 sudo apt update sudo apt -y install build-essential gfortran autoconf automake libtool cmake git sudo apt -y install tex-common",

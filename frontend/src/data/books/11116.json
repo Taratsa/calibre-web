@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11116?v=1795439058",
   "cover_og_url": "/cover/11116/og?v=1795439058",
+  "has_cover": false,
   "url": "/book/nmap-retrieve-http-login-scheme-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/http-auth.html Contents 1 File http-auth 2 Penggunaan 3 Contoh Penggunaan 4 Contoh Output 5 Referensi File http-auth Script types: portrule Categories: default, auth, safe Download: http://nmap.org/svn/scripts/http-auth.nse Penggunaan Retrieves the authentication scheme and realm of a web service that requires authentication. Contoh Penggunaan nmap --script",

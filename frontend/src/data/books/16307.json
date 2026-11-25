@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16307?v=1795460064",
   "cover_og_url": "/cover/16307/og?v=1795460064",
+  "has_cover": false,
   "url": "/book/foto-edit-metadata-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengubah lokasi di metadata foto di Ubuntu dapat dilakukan dengan menggunakan alat **ExifTool**. Berikut adalah langkah-langkahnya: Contents 1 Install ExifTool 2 Periksa Metadata Foto 3 Ubah Lokasi di Metadata 4 Periksa Hasilnya 5 Opsional: Hapus File Asli 6 Catatan: Install ExifTool Buka terminal dan jalankan perintah berikut untuk menginstal ExifTool: sudo apt update sudo apt -y install",

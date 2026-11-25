@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13062?v=1795444706",
   "cover_og_url": "/cover/13062/og?v=1795444706",
+  "has_cover": false,
   "url": "/book/ubuntu-bridge-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt install bridge-utils Konfigurasi /etc/network/interfaces # The local network bridge auto br0 iface br0 inet static bridge_ports enp3s0 tun0 address 192.168.0.10 netmask 255.255.255.0 iproute2 Create # ip link add name bridge_name type bridge # ip link set bridge_name up # ip link set eth0 up # ip link set eth0 master bridge_name Utility # bridge link # ip link set eth0 nomaster # ip",

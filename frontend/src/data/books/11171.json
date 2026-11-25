@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11171?v=1795439206",
   "cover_og_url": "/cover/11171/og?v=1795439206",
+  "has_cover": false,
   "url": "/book/mirror-repository-ubuntu-14-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "folder repo : /var/data/repository/repo-13.04-32 server : kambing.ui.ac.id atau 152.118.24.30 GNUPGHOME : /var/data/mirrorkeyring Update Keyring sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 mkdir -p /var/data/mirrorkeyring gpg --no-default-keyring --keyring",

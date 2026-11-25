@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17804?v=1795466342",
   "cover_og_url": "/cover/17804/og?v=1795466342",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-prestashop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi aplikasi pendukung apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear vsftpd Download source code di http://www.prestashop.com/en/downloads/ Copy source code cp prestashop_1.2.5.0.zip /var/www/ cd /var/www/ unzip prestashop_1.2.5.0.zip mv /usr/local/src/odc-prestashop.jpg /var/www/prestashop chown -Rf",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13400?v=1795445834",
   "cover_og_url": "/cover/13400/og?v=1795445834",
+  "has_cover": false,
   "url": "/book/wemos-tm1650-7-segmen-display-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk TM16560 http://downloads.arduino.cc/libraries/github.com/arkhipenko/TM1650-1.1.0.zip mv TM1650-1.1.0.zip ~/Arduino/libraries/ cd ~/Arduino/libraries unzip TM1650-1.1.0.zip Code #include  #include  TM1650 d; void setup() { Wire.begin(); //Join the bus as master Serial.begin(115200); //Start serial communication at 9600 for debug statements Serial.println(\"TM1650 Example",

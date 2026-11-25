@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11709?v=1795440556",
   "cover_og_url": "/cover/11709/og?v=1795440556",
+  "has_cover": false,
   "url": "/book/virtualbox-menambahkan-vdi-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://superuser.com/questions/187598/how-to-open-existing-vms-in-virtualbox As of version 4 of the Oracle VirtualBox Manager, the \"Add\" option is hidden in the \"Machine\" menu (which is an operating system menu). Just select Add, and navigate to the .vbox file you want. This works great even if the vbox file is on an external drive: if the drive is later removed, the missing boxes are",

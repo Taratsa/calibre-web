@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19713?v=1795474645",
   "cover_og_url": "/cover/19713/og?v=1795474645",
+  "has_cover": false,
   "url": "/book/wd-mybook-shell-ijin-akses-folder-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Informasi Ijin Akses Folder Data ada di /usr/private/user_smb_conf/.overall_share Edit Menggunakan perintah vi /usr/private/user_smb_conf/.overall_share Contoh untuk masing-masing folder [library] path = /DataVolume/library comment = Perpustakaan Onno preallocate = yes public = yes browseable = yes writable = yes guest ok = yes map read only = no Ubah writeable menjadi no jika di inginkan.",

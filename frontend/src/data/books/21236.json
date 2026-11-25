@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21236?v=1795480954",
   "cover_og_url": "/cover/21236/og?v=1795480954",
+  "has_cover": false,
   "url": "/book/ipteknux-berbasis-sabily-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Persiapan 3 UNPACK file iso untuk di remaster 4 Customisasi 5 Instalasi Aplikasi Pendidikan 5.1 Versi Pendek untuk Sabily 6 PACK menjadi file iso yang baru 7 Pranala Menarik Persiapan Siapkan file iso Sabily Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Persiapan sudo apt-get install uck sudo modprobe squashfs Matikan Server yang tidak",

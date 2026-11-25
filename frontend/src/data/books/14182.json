@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14182?v=1795448948",
   "cover_og_url": "/cover/14182/og?v=1795448948",
+  "has_cover": false,
   "url": "/book/mikrotik-belajar-regex-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://mikrotik.tips/understanding-regex-mikrotik-routeros/ Contents 1 Langkah 2 Contoh 3 Keterangan 4 Referensi Langkah Setup tujuan Buat matcher terjemahkan ke regex Contoh ingin match url yang ada youtube-nya pattern-nya xxx.youtube.xxx xxxyoutubexxx.com regex-nya adalah ^.+\\.youtube\\..+$ ^.*youtube.*\\.com$ Keterangan ^ match beginning of the string . match single character + * \\.",

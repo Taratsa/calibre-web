@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16616?v=1795461991",
   "cover_og_url": "/cover/16616/og?v=1795461991",
+  "has_cover": false,
   "url": "/book/gpt4all-pilihan-model-bahasa-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini beberapa **model lokal (gguf) yang mendukung Bahasa Indonesia** dan bisa langsung dipakai di GPT4All + Open WebUI atau melalui CLI `llama.cpp`: --- 1. **MiaLatte‐Indo‐Mistral‐7B (Q4\\_K\\_M gguf)** Versi instruksi dari Mistral‐7B khusus bahasa Indonesia 🇮🇩 Format: `.gguf`, quantization Q4\\_K\\_M (\\~4.5 GB) Cepat, seimbang antara kualitas dan ukuran ([toolify.ai][1], [huggingface.co][2])",

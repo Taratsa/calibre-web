@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16042?v=1795458393",
   "cover_og_url": "/cover/16042/og?v=1795458393",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-24-04-webmin-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su apt update cd /usr/local/src/ curl -o webmin-setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/webmin-setup-repos.sh sh webmin-setup-repos.sh apt-get install --install-recommends webmin https://192.168.0.10:10000 username:password onno:123456",
@@ -74,7 +75,7 @@
       ],
       [
         20225,
-        0.73
+        0.72
       ],
       [
         17140,

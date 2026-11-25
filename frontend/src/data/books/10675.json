@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10675?v=1795437810",
   "cover_og_url": "/cover/10675/og?v=1795437810",
+  "has_cover": false,
   "url": "/book/mediawiki-mendelete-user-spam-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi tables dalam database wiki_* Cek struktur database desc wiki_user; desc wiki_user_group; Temukan user select user_id, user_name from wiki_user; Delete DELETE FROM `wiki_user_groups` WHERE ug_user = ID; DELETE FROM `wiki_user` WHERE user_id = ID;",

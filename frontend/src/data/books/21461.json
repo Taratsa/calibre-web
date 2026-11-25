@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21461?v=1795482093",
   "cover_og_url": "/cover/21461/og?v=1795482093",
+  "has_cover": false,
   "url": "/book/instalasi-nessus-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download Nessus dari http://www.nessus.org/download/nessus_download.php http://downloads.nessus.org/nessus3dl.php?file=Nessus-4.2.2-ubuntu910_i386.deb&amp;licence_accept=yes&amp;t=e5294db690e377ef93405ee7ce0d4b1b install Nessus # dpkg -i Nessus-4.2.2-ubuntu910_i386.deb Tambahkan user admin /opt/nessus/sbin/nessus-adduser # nessus-adduser admin  password password ^D y Contents 1 Register 2 Operasi",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 187,
-    "longer_than": 23,
+    "longer_than": 22,
     "top": [],
     "distinct": [],
     "phrases": [

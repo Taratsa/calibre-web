@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10728?v=1795437953",
   "cover_og_url": "/cover/10728/og?v=1795437953",
+  "has_cover": false,
   "url": "/book/gns3-membuat-image-openwrt-untuk-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk uji nyali ada baiknya membuat image openwrt untuk virtual box, yang nantinya dapat di jalankan di GNS3. Yang penting untuk di perhatikan saat make menuconfig adalah: Target System (x86) ---&gt; Subtarget (Generic) ---&gt; Target Profile (Generic) ---&gt; Target Images ---&gt; *** Root filesystem images *** [*] iso -*- Build GRUB images (Linux x86 or x86_64 host only) [*] Build VirtualBox image files",

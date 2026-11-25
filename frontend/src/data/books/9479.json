@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9479?v=1795433004",
   "cover_og_url": "/cover/9479/og?v=1795433004",
+  "has_cover": false,
   "url": "/book/relay-ke-pstn-menggunakan-ser-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh sederhana cara merelay ke PSTN # attempt handoff to PSTN if (uri=~\"^ sip:9 [0-9]*@mydomain.com\") { ## This assumes that the caller is log(\"Forwarding to PSTN\\n\"); ## registered in our realm t_relay_to( \"192.168.0.2\", \"5060\"); ## Our Cisco router break; };",

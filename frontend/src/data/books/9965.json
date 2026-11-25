@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9965?v=1795435590",
   "cover_og_url": "/cover/9965/og?v=1795435590",
+  "has_cover": false,
   "url": "/book/openbts-set-sqlite-subscriber-registry-secara-manual-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke Database SubscriberRegistry sudo su sqlite3 /var/lib/asterisk/sqlite3dir/sqlite3.db akan keluar sqlite&gt; Contents 1 Cek database 2 Cek table 3 Cek isi table DIALDATA_TABLE 4 Cek isi table SIP_BUDDIES 5 Masukan Sebuah IMSI / Sebuah Handphone 6 Masukan SIP Phone 7 Masukan ke Table DIALDATA_TABLE 7.1 DELETE data DIALDATA_TABLE 8 Masukan ke Table SIP_BUDDIES 8.1 DELETE data SIP_BUDDIES 9 Test",

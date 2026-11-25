@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11751?v=1795440667",
   "cover_og_url": "/cover/11751/og?v=1795440667",
+  "has_cover": false,
   "url": "/book/korban-install-dvwa-1-9-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Download 2 Persiapan 3 Install Percona 4 unzip DVWA 5 Konfigurasi 6 Restart Download cd /usr/local/src wget https://github.com/RandomStorm/DVWA/archive/v1.9.zip Persiapan Edit vi /etc/apt/sources.list deb http://archive.ubuntu.com/ubuntu bionic main universe multiverse deb http://archive.ubuntu.com/ubuntu bionic-security main universe multiverse deb http://archive.ubuntu.com/ubuntu",

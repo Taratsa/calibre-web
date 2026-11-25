@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10981?v=1795438673",
   "cover_og_url": "/cover/10981/og?v=1795438673",
+  "has_cover": false,
   "url": "/book/bokeh-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menjalankan server versi baru bokeh serve Untuk IP tertentu bokeh serve --address=0.0.0.0 bokeh serve --address=192.168.0.100 --host 192.168.0.100:5006 Untuk aplikasi tertentu bokeh serve myapp.py di akses melalui http://localhost:5006/myapp/ Untuk yang lebih lengkap bokeh serve --address=192.168.0.100 --host 192.168.0.100:5006 myapp.py di akses melalui http://192.168.0.100:5006/myapp/ Versi Lama",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12474?v=1795442842",
   "cover_og_url": "/cover/12474/og?v=1795442842",
+  "has_cover": false,
   "url": "/book/raspbian-edit-rc-local-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/rc.local Tambahkan perintah2 yang harus dijalankan saat booting /etc/init.d/ssh restart &amp; /etc/init.d/smbd restart &amp; /etc/init.d/apache2 restart &amp; /etc/init.d/bind9 restart &amp; Pranala Menarik Internet Offline",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9752?v=1795434765",
   "cover_og_url": "/cover/9752/og?v=1795434765",
+  "has_cover": false,
   "url": "/book/ipv6-membuat-interface-up-down-onno-widodo-purbo-9752/",
   "rating": null,
   "comment": "Ada dua metoda yang dapat digunakan untuk membuat sebuah interface up atau down Menggunakan \"ip\" Penggunaan # ip link set dev  up # ip link set dev  down Contoh # ip link set dev eth0 up # ip link set dev eth0 down Menggunakan \"ifconfig\" Penggunaan # /sbin/ifconfig  up # /sbin/ifconfig  down Contoh # /sbin/ifconfig eth0 up # /sbin/ifconfig eth0 down",

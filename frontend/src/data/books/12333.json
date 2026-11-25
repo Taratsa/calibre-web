@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12333?v=1795442428",
   "cover_og_url": "/cover/12333/og?v=1795442428",
+  "has_cover": false,
   "url": "/book/ipv6-sejarah-ipv6-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sejarah IPv6 di Linux Code network pertama IPv6 yang di tambahkan ke source code kernel Linux terjadi pada versi 2.1.8 di bulan November 1996 oleh Pedro Roque. Network code tersebut berbasis pada BSD API diff -u --recursive --new-file v2.1.7/linux/include/linux/in6.h ¬ linux/include/linux/in6.h --- v2.1.7/linux/include/linux/in6.h Thu Jan 1 02:00:00 1970 +++ linux/include/linux/in6.h Sun Nov 3",

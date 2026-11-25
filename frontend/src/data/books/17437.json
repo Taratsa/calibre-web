@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17437?v=1795465243",
   "cover_og_url": "/cover/17437/og?v=1795465243",
+  "has_cover": false,
   "url": "/book/instalasi-openvpn-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install openvpn 2 Membuat Certificate Authority (CA) 3 Membuat Server Key 4 Buat Key User 5 Test key 6 Test sambungan di 2 windows 7 Edit Server.conf 8 Cara menjalankan VPN Server 9 Pranala Menarik Install openvpn Install openvpn di Ubuntu apt-get install openvpn cp -Rf /usr/share/doc/openvpn/examples/easy-rsa/* /etc/openvpn/ Pada Ubuntu 8.10 akan di terlihat folder /etc/openvpn/1.0",

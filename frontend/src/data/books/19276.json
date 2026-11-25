@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19276?v=1795472455",
   "cover_og_url": "/cover/19276/og?v=1795472455",
+  "has_cover": false,
   "url": "/book/backtrack-kismet-siapkan-kernel-untuk-rt8270-linksys-wusb600n-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://forums.remote-exploit.org/backtrack-3-final/19545-linksys-wusb600n.html Open with gedit the file named config.mk, that is placed in the subfolder os/linux. Replace the lines \"HAS_WPA_SUPPLICANT=n\" and \"HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=n\", with the lines \"HAS_WPA_SUPPLICANT=y\" and \"HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=y\" (without the quotes). Save and close. Now open the file named",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19015?v=1795471272",
   "cover_og_url": "/cover/19015/og?v=1795471272",
+  "has_cover": false,
   "url": "/book/voip-cookbook-configure-asterisk-to-talk-to-linksys-spa400-onno-widodo-purbo/",
   "rating": null,
   "comment": "On Asterisk /etc/asterisk/sip.conf, you need to configure the account exactly similar to User ID of SPA400 The entries in sip.conf to enable Asterisk register to SPA400 are as follow: [general] register =&gt; 9000@192.168.0.6/9000 Replace 9000 with the value you entered in the User ID of SPA400, and replace 192.168.0.2 with the IP address of the SPA400. Create a SIP entry for SPA400, with the",

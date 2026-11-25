@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12955?v=1795444328",
   "cover_og_url": "/cover/12955/og?v=1795444328",
+  "has_cover": false,
   "url": "/book/vyos-static-routing-sedehana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi 3 Cek 4 Setting Client 5 Referensi 6 Pranala Menarik Topologi R1 e1 --&gt; CLOUD nat0 e2 --&gt; R2 e1 e3 --&gt; LAN 192.168.1.1/24 R2 e1 --&gt; R1 e2 e2 --&gt; LAN 192.168.2.1/24 Setiap kali menjalankan VM VyOS di GNS3, lakukan sudo chown root:useranda /dev/kvm sebelum me-RUN setiap VM VyOS satu per satu. Konfigurasi R1: configure set interfaces ethernet eth1 address",
@@ -140,12 +141,12 @@
         7
       ],
       [
-        "mikrotik",
-        3
-      ],
-      [
         "address",
         5
+      ],
+      [
+        "mikrotik",
+        3
       ],
       [
         "router",

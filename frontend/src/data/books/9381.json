@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9381?v=1795432689",
   "cover_og_url": "/cover/9381/og?v=1795432689",
+  "has_cover": false,
   "url": "/book/firmware-update-menggunakan-tftp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.openwrt.org/toh/buffalo/wzr-hp-g300h#oem.installation.using.the.tftp.method Install TFTP client, sudo apt-get update sudo apt-get install tftp Siapkan interface PC anda # untuk UBNT sudo ifconfig eth0:1 192.168.1.100 # untuk Buffalo sudo ifconfig eth0:1 192.168.11.2 Cek MAC address Router # untuk UBNT ping 192.168.1.10 # untuk Buffalo ping 192.168.11.1 Ketik arp -n Akan keluar",

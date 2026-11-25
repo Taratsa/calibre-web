@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12398?v=1795442635",
   "cover_og_url": "/cover/12398/og?v=1795442635",
+  "has_cover": false,
   "url": "/book/ipv6-openwrt-router-advertisement-dhcpv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenWRT dapat memberikan RA &amp; DHCPv6 server dan relay. Secara default SLAAC, stateless dan stateful DHCPv6 di enable di sebuah interface. Jika ada prefix yang besarnya /64 atau lebih besar maka address yang akan di berikan dari masing-masing prefix. Jika semua prefix di sebuah interface mempunyai besar lebih dari /64 maka DHCPv6-Prefix Delegation akan diaktifkan untuk downstream-router. Jika",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15041?v=1795452897",
   "cover_og_url": "/cover/15041/og?v=1795452897",
+  "has_cover": false,
   "url": "/book/wemos-wifi-connect-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  void setup() { Serial.begin(115200); //Baudrate Serial.println(\"WeMOS 2866 starts\"); WiFi.begin(\"Kampus ITTS\",\"itts2021\"); Serial.print(\"Connecting...\"); while(WiFi.status()!=WL_CONNECTED){ //Loop which makes a point every 500ms until the connection process has finished delay(500); Serial.print(\".\"); } Serial.println(); Serial.print(\"Connected! IP-Address: \");",
@@ -74,7 +75,7 @@
       ],
       [
         13401,
-        0.52
+        0.51
       ],
       [
         13359,

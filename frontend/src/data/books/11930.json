@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11930?v=1795441113",
   "cover_og_url": "/cover/11930/og?v=1795441113",
+  "has_cover": false,
   "url": "/book/zcash-miner-nheqminer-onno-widodo-purbo/",
   "rating": null,
   "comment": "nheqminer sebaiknya di jalankan di arsitektur 64bit. sudo apt-get update sudo apt install qt5-default sudo apt-get install cmake build-essential libboost-all-dev cd /usr/local/src git clone https://github.com/sarath-hotspot/nheqminer cd /usr/local/src cd nheqminer/nheqminer mkdir build cd build cmake .. make Contoh menjalankan /usr/local/src/nheqminer/nheqminer/build/nheqminer -l",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18786?v=1795470046",
   "cover_og_url": "/cover/18786/og?v=1795470046",
+  "has_cover": false,
   "url": "/book/raid-menangani-kegagalan-harddisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cepat atau lambat salah satu harddisk pada RAID akan tewas / gagal. Sebaiknya kita jalankan smartd pada semua harddisk yang digunakan di RAID untuk memberitahukan jika ada kegagalan atau harddisk yang menuju gagal secepatnya. Dalam experimen kita dapat saja mencabut salah satu partisi dari RAID menggunakan perintah berikut, # /sbin/mdadm /dev/md0 -f /dev/hdb1 mdadm: set /dev/hdb1 faulty in",

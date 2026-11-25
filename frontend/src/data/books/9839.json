@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9839?v=1795435106",
   "cover_og_url": "/cover/9839/og?v=1795435106",
+  "has_cover": false,
   "url": "/book/ipv6-orek-orekan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Mengaktifkan forward IPv6 2 Apache2 3 SSH Server 4 DNS Server 5 Menambahkan Protocol IPv6 6 Sumber Mengaktifkan forward IPv6 Untuk mengaktifkan forward sebagai mesin gateway, hilangkan tanda # pada file sysctl.conf. file tersebut berada pada file /etc/. # Uncomment the next line to enable packet forwarding for IPv6 # Enabling this option disables Stateless Address Autoconfiguration #",

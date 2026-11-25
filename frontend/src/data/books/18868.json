@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18868?v=1795470484",
   "cover_og_url": "/cover/18868/og?v=1795470484",
+  "has_cover": false,
   "url": "/book/unixbench-4-1-0-xeon-quad-final-score-867-0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Detail proses evaluasi oleh UnixBench tampak pada cuplikan di bawah ini. Pada dasarnya yang perlu kita lakukan hanya (1) membuka file tar, dan (2) menjalankan ./Run dari folder UnixBench. Tampilannya adalah sebagai berikut, make all make[1]: Entering directory `/usr/local/src/unixbench-4.1.0' Checking distribution of files ./pgms exists ./src exists ./testdir exists ./tmp exists ./results exists",

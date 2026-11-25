@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10624?v=1795437672",
   "cover_og_url": "/cover/10624/og?v=1795437672",
+  "has_cover": false,
   "url": "/book/curl-loader-install-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi curl-loader Contents 1 Cek Versi 2 Instalasi Aplikasi Pendukung 3 Download curl-loader 4 Instalasi 5 Help curl-load 6 Ubah Sysctl 7 Contoh Konfigurasi 8 run test 9 Log File 10 Cek Access Log di Server 11 Referensi Cek Versi uname -ri; tail -1 /etc/lsb-release 3.13.0-24-generic x86_64 DISTRIB_DESCRIPTION=\"Ubuntu 14.04 LTS\" Instalasi Aplikasi Pendukung apt-get install libssl-dev",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1200,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "url",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20592?v=1795477664",
   "cover_og_url": "/cover/20592/og?v=1795477664",
+  "has_cover": false,
   "url": "/book/gnuradio-ubuntu-11-10-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara ini tampaknya tidak recommended jika kita menggunakan USRP1, pada saat compile OpenBTS akan muncul. configure: error: Package requirements (usrp &gt; 3.1) were not met: No package 'usrp' found Consider adjusting the PKG_CONFIG_PATH environment variable if you installed software in a non-standard prefix. Alternatively, you may set the environment variables USRP_CFLAGS and USRP_LIBS to avoid the",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 1446,
-    "longer_than": 56,
+    "longer_than": 55,
     "top": [
       [
         "openbts",
@@ -192,7 +193,7 @@
     "similar": [
       [
         20654,
-        0.75
+        0.76
       ],
       [
         19838,

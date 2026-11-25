@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12806?v=1795443802",
   "cover_og_url": "/cover/12806/og?v=1795443802",
+  "has_cover": false,
   "url": "/book/cisco-bgp-as-path-prepend-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.noction.com/blog/as-path-and-as-path-prepending In earlier articles, we discussed the next hop and local preference attributes. Today we'll be looking at the AS_PATH attribute as well as the AS4_PATH attribute. What is an AS PATH? The BGP AS path is a well-known mandatory attribute, which means that it's present for all prefixes exchanged between BGP neighbors. When a BGP",

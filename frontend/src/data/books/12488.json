@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12488?v=1795442892",
   "cover_og_url": "/cover/12488/og?v=1795442892",
+  "has_cover": false,
   "url": "/book/raspbian-aktifkan-https-di-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04 Agar komunikasi dapat dilakukan dengan aman kita perlu meng-enkripsi komunikasi menggunakan TLS/SSL. Contents 1 Install Apache 2 Aktifkan SSL module 3 Buat Self-Signed SSL Certificate 4 Konfigurasi apache untuk menggunakan SSL 5 Aktifkan SSL Virtual Host 6 Test Setup 7 Referensi 8",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10195?v=1795436335",
   "cover_og_url": "/cover/10195/og?v=1795436335",
+  "has_cover": false,
   "url": "/book/memperbaiki-superblock-ext4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/ Cek partisi yang ada, sudo fdisk -l Dapatkan nomor partisi yang digunakan,seperti, /dev/sda3 atau /dev/hdb1. Pastikan superblock yang menjadi masalah, cek filesystem ganti xxx dengan nama partisi. Kita dapat mengubah ext4 menjadi ext3 atau ext2 sudo fsck.ext4 -v /dev/xxx Jika superblock korup,",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 228,
-    "longer_than": 26,
+    "longer_than": 25,
     "top": [
       [
         "superblock",

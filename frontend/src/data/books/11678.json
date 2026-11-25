@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11678?v=1795440480",
   "cover_og_url": "/cover/11678/og?v=1795440480",
+  "has_cover": false,
   "url": "/book/mqtt-arduino-reconnect-non-blocking-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Reconnecting MQTT example - non-blocking This sketch demonstrates how to keep the client connected using a non-blocking reconnect function. If the client loses its connection, it attempts to reconnect every 5 seconds without blocking the main loop. */ #include  #include  #include  // Update these with values suitable for your hardware/network. byte mac[] = {",

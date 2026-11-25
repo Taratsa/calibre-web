@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13078?v=1795444753",
   "cover_og_url": "/cover/13078/og?v=1795444753",
+  "has_cover": false,
   "url": "/book/postfix-mengatasi-blockir-email-oleh-google-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengatasi blokir email oleh google relay melalui mailgun.com pastikan dapat saran entry TXT untuk domain yan kita kelola, misalnya domain.kita TXT \"v=spf1 include:mailgun.org ~all\" krs._domainkey.domain.kita TXT \"k=rsa; p=MIGfMA0GCSqGSIb3DQ....\" Edit DNS domain kita sesuai saran mailgun.com tunggu verifikasi dapatkan username:password utk relay email smtp.mailgun.org",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15753?v=1795456628",
   "cover_og_url": "/cover/15753/og?v=1795456628",
+  "has_cover": false,
   "url": "/book/appinventor-post-data-ke-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "To post data to a MySQL server from an App Inventor 2 app, you need to use a web service (typically a server-side script) as an intermediary. Here's a simple example using PHP as the server-side script: Create a PHP script on your server: Save the following PHP script as post_data.php on your server: ",

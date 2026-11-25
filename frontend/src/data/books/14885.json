@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14885?v=1795452251",
   "cover_og_url": "/cover/14885/og?v=1795452251",
+  "has_cover": false,
   "url": "/book/android-studio-listview-lagi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 ListDisplay.java 2 activity_main.xml 3 strings.xml 4 activity_listview.xml 5 Referensi ListDisplay.java package com.example.listdisplay; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.app.Activity; import android.view.Menu; import android.widget.ArrayAdapter; import android.widget.ListView; public class MainActivity extends AppCompatActivity {",

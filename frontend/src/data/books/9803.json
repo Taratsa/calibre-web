@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9803?v=1795434974",
   "cover_og_url": "/cover/9803/og?v=1795434974",
+  "has_cover": false,
   "url": "/book/ipv6-server-daemon-lainnya-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada saat ini harusnya relatif sederhana. Cari perintah / opsi command line atau parameter konfigurasi untuk meng-enable listening IPv6. Lihat manual dari server / daemon atau cek berbagai FAQ terkait. Mungkin kita bisa bind sebuah daemon server hanya ke IPv6 \"any\" address (::) dan tidak ke IPv6 tertentu karena kurang dukungan. Semua ini tergantung pada si pemrogram.",

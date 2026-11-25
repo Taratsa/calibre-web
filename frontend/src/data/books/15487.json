@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15487?v=1795455094",
   "cover_og_url": "/cover/15487/og?v=1795455094",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-oled-0-91-128x32-onno-widodo-purbo/",
   "rating": null,
   "comment": "http://www.getmicros.net/esp8266-and-128-x-32-oled-example.php #include  #include  #include  #include  #define OLED_RESET 0 Adafruit_SSD1306 display(OLED_RESET); #define NUMFLAKES 10 #define XPOS 0 #define YPOS 1 #define DELTAY 2 #define LOGO16_GLCD_HEIGHT 16 #define LOGO16_GLCD_WIDTH 16 static const unsigned char PROGMEM logo16_glcd_bmp[] = {",

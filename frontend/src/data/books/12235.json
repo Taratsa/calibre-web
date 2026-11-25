@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12235?v=1795441982",
   "cover_og_url": "/cover/12235/og?v=1795441982",
+  "has_cover": false,
   "url": "/book/wspr-arduni-ds1302-timer-led-monitor-status-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // time RTC sync // pin PIN_AUD - kuning - audio SD // pin PIN_PTT - merah - PTT // pin PIN_SYN - hijau - NTP sync // // file WAV WSPR diambil dari rekaman wsjt-x #include  #include \"TMRpcm.h\" #include  #include  // Init the DS1302 // DS1302 rtc([CE/RST], [I/O], [CLOCK]); DS1302 rtc(8, 7, 6); Time waktu; const int CS_PIN = 4; const int PIN_AUD = 13; const int PIN_PTT",

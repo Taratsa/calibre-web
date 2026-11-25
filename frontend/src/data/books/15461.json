@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15461?v=1795454973",
   "cover_og_url": "/cover/15461/og?v=1795454973",
+  "has_cover": false,
   "url": "/book/objectblocks-slider-blink-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include \"Channel.h\" #include  #include \"TM1650.h\" TM1650 display; void setup() { // Pin Mode Definition pinMode(13, OUTPUT); Channel.connect(\"mFPdJAqtBzpu7t\"); Wire.begin(); display.init(); } void loop() { Channel.sendNumber(\"SLIDER\", analogRead(A0)); display.displayNumber((analogRead(A0))); Channel.sendNumber(\"SLIDER\", analogRead(A0)); delay(1000); digitalWrite(13, HIGH); delay(1000);",

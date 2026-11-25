@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12677?v=1795443404",
   "cover_og_url": "/cover/12677/og?v=1795443404",
+  "has_cover": false,
   "url": "/book/netplan-dhcp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/netplan/50-cloud-init.yaml isi network: ethernets: enp2s0: addresses: [] dhcp4: true version: 2 Pranala Menarik netplan",

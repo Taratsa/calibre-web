@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9434?v=1795432861",
   "cover_og_url": "/cover/9434/og?v=1795432861",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-dengan-3g-modem-support-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan usb-modeswitch ./scripts/feeds update packages ./scripts/feeds install usb-modeswitch usb-modeswitch-data usbutils multiwan Jalankan make menuconfig dan pilih, Target System (Atheros AR7xxx/AR9xxx) Target Profile (Buffalo WZR-HP-G450H) Base System qos-scripts: &lt;*&gt; Network multiwan: &lt;*&gt; wpad: &lt;*&gt; WWAN: adb-enablemodem comgt comgt-directip comgt-ncm uqmi chat ppp ppp-mod-pppoa",

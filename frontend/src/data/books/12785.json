@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12785?v=1795443735",
   "cover_og_url": "/cover/12785/og?v=1795443735",
+  "has_cover": false,
   "url": "/book/quagga-dua-router-static-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: eth1 - ke Internet eth2 - R2: eth1 eth3 - LAN R2: eth1 - R1: eth2 eth2 - LAN R1: vtysh configure terminal interface eth1 ip address 192.168.122.100/24 ip address 192.168.122.101/24 ip address 192.168.122.102/24 no shutdown ip route 0.0.0.0 0.0.0.0 192.168.122.1 interface eth2 ip address 172.16.1.1/30 exit interface eth3 ip address 192.168.1.1/24 exit ip route 192.168.2.0 255.255.255.0",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12571?v=1795443097",
   "cover_og_url": "/cover/12571/og?v=1795443097",
+  "has_cover": false,
   "url": "/book/r-tidytext-rpjp-bappenas-onno-widodo-purbo/",
   "rating": null,
   "comment": "install.packages(\"rJava\") install.packages(\"xlsx\") install.packages(\"tm\") install.packages(\"wordcloud\") install.packages(\"ggplot2\") install.packages(\"RWeka\") library(xlsx) library(tm) library(wordcloud) library(ggplot2) library(tidyverse) library(tidytext) library(RWeka) library(tm) directory &lt;- \"data-pdf\" # create corpus from pdfs docs &lt;- VCorpus(DirSource(directory), readerControl = list(reader",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16300?v=1795460030",
   "cover_og_url": "/cover/16300/og?v=1795460030",
+  "has_cover": false,
   "url": "/book/firewall-iptables-create-dmz-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Port forwarding for iptables (DMZ) Posted by Steve on Fri 7 Jan 2005 at 10:52 Tags: iptables, networking, port forwarding If you have a network gateway that is running Linux, you might sometimes want to allow access to machines behind it from the internet. This is simple enough to do with iptables, which you will probably be using for the gateway's normal operation anyway. Normally, you'd deny",

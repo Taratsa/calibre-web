@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13101?v=1795444811",
   "cover_og_url": "/cover/13101/og?v=1795444811",
+  "has_cover": false,
   "url": "/book/bind-memasukan-record-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Konfigurasi Local File 2 Buat Forward Zone File 3 Buat Reverse Zone File 4 Buat Reverse Zone IPv6 5 Cek Syntax Konfigurasi BIND 6 Restart BIND 7 Pranala Menarik Konfigurasi Local File Edit sudo vi /etc/bind/named.conf.local Di file ini kita bisa tambahkan forward dan revese zone dari sebuah domain, contoh zone \"nyc3.contoh.web.id\" { type master; file",

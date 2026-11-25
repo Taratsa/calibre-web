@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12920?v=1795444231",
   "cover_og_url": "/cover/12920/og?v=1795444231",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-static-routing-sedehana-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: ether1 - ke Internet ether2 - R2: ether1 ether3 - LAN R2: ether1 - R1: ether2 ether2 - LAN R1: # cek nomor interface agar sama dengan yang digunakan dengan GNS3 /interface print # # /ip address add address 192.168.122.100/24 interface=ether1 /ip address add address 192.168.122.101/24 interface=ether1 /ip address add address 192.168.122.102/24 interface=ether1 /ip address add address",

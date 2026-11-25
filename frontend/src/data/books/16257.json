@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16257?v=1795459770",
   "cover_og_url": "/cover/16257/og?v=1795459770",
+  "has_cover": false,
   "url": "/book/postfix-smtp-authentication-for-clients-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Prepare Dovecot 2 Generate Certificate 3 Preparing Postfix 4 Restart Postfix 5 Check Relay 6 Check SMTP AUTH Support 7 References Prepare Dovecot Edit to configure Dovecot as the authentication server for Postfix: vim /etc/dovecot/conf.d/10-master.conf Ensure the following: ## The listener is added under the service auth section ## service auth { unix_listener",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 803,
-    "longer_than": 47,
+    "longer_than": 46,
     "top": [
       [
         "smtpd",

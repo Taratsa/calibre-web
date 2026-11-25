@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16887?v=1795463549",
   "cover_og_url": "/cover/16887/og?v=1795463549",
+  "has_cover": false,
   "url": "/book/instalasi-zimbra-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah yang perlu dilakukan Download Zimbra .deb dari http://www.zimbra.com/community/downloads.html http://h.yimg.com/lo/downloads/5.0.14_GA/zcs-5.0.14_GA_2850.UBUNTU8.20090303190551.tgz Sayang tidak ada Zimbra untuk Ubuntu 8.10. Menggunakan Zimbra untuk 8.04 di 8.10 akan membuat masalah .. Copy ke /usr/local/src $ sudo su - # cp zcs-5.0.14_GA_2850.UBUNTU8.20090303190551.tgz /usr/local/src/ #",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20576?v=1795477625",
   "cover_og_url": "/cover/20576/og?v=1795477625",
+  "has_cover": false,
   "url": "/book/mengkonfigurasi-interface-di-ubuntu-shell-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengkonfigurasi Interface di Shell dapat melalui dua cara Melalui Command Line Mengedit file /etc/network/interfaces Melalui Command Line Menggunakan perintah ifconfig eth0 192.168.0.3 netmask 255.255.255.0 Untuk Wireless iwconfig wlan0 essid namahotspot iwconfig wlan0 mode managed Untuk Scanning Wireless iwlist scanning Melalui /etc/network/interfaces Edit file vi /etc/network/interfaces Untuk",

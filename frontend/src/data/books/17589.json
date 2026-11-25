@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17589?v=1795465696",
   "cover_og_url": "/cover/17589/og?v=1795465696",
+  "has_cover": false,
   "url": "/book/menyambung-ke-hotspot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menyambungkan diri ke HotSpot menggunakan text mode . Langkah yang biasa digunakan 1. Scanning frekuensi # iwlist scanning 2. Set ESSID interface wireless (misalnya eth1) agar sama dengan HotSpot # iwconfig eth1 essid HotSpotSSID 3. Cek apakah sudah tersambung # iwconfig eth1 4. Minta IP address ke DHCP Server # dhclient eth1 Beberapa Cara untuk Cek Sambungan 1. Cek apakah routing ke",

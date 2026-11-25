@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12629?v=1795443262",
   "cover_og_url": "/cover/12629/og?v=1795443262",
+  "has_cover": false,
   "url": "/book/openwrt-kosongkan-konfigurasi-untuk-gns3-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar menjadi router kosongan untuk GNS3. Install Quagga Pastikan OpenWRT tersambung ke Internet opkg update opkg install quagga-bgpd quagga-isisd quagga-libospf \\ quagga-libzebra quagga-ospf6d quagga-ospfd quagga-ripd \\ quagga-ripngd quagga-vtysh quagga-watchquagga \\ quagga-zebra quagga Kosongkan Semua Konfigurasi Jaringan Masuk ke shell, dan buang semua konfigurasi rm -Rf /etc/config/firewall*",

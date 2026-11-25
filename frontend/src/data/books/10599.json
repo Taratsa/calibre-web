@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10599?v=1795437591",
   "cover_og_url": "/cover/10599/og?v=1795437591",
+  "has_cover": false,
   "url": "/book/nc-mengukur-bandwidth-onno-widodo-purbo/",
   "rating": null,
   "comment": "Topologi: Sebuah Server (misalnya 192.168.0.1) Sebuah Client (misalnya 192.168.0.x/24) tersambung melalui jaringan port 12345 Contents 1 Di Sisi Server 2 Di Sisi Client 3 Referensi 4 Pranala Menarik Di Sisi Server Di mesin server (192.168.0.1) nc -vvlnp 12345 &gt;/dev/null Di Sisi Client Di sisi client kirim gigabyte zero melalui dd lewat nc tunnel dd if=/dev/zero bs=1M count=1K | nc -vvn",

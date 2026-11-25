@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11684?v=1795440495",
   "cover_og_url": "/cover/11684/og?v=1795440495",
+  "has_cover": false,
   "url": "/book/mqtt-arduino-light-sensor-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code: #include  #include  #include  /* * LightSensorMqttDemo * * A simple m2m.io platform demo for Arduino. */ #define MQTT_SERVER \"192.168.0.100\" // MAC Address of Arduino Ethernet Sheild (on sticker on shield) byte MAC_ADDRESS[] = { 0x90, 0xA2, 0xDA, 0x0D, 0x31, 0xB8 }; IPAddress ip(192, 168, 0, 4); IPAddress server(192, 168, 0, 100); EthernetClient ethClient;",

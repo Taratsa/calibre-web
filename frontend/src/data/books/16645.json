@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16645?v=1795462246",
   "cover_og_url": "/cover/16645/og?v=1795462246",
+  "has_cover": false,
   "url": "/book/llm-fine-tuning-onno-widodo-purbo/",
   "rating": null,
   "comment": "Model Ollama yang Direkomendasikan untuk Fine-Tuning Dengan spesifikasi RTX 4060 (8GB VRAM) di Ubuntu 24.04, saya merekomendasikan **Llama 3.1 8B** sebagai model yang paling mungkin di-fine-tune. Alasan: - Ukuran model (sekitar 4-5GB saat dikuantisasi 4-bit) muat di 8GB VRAM menggunakan teknik efisien seperti LoRA/QLoRA, yang hanya butuh ~6-8GB VRAM untuk training. - Model ini populer di Ollama,",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 988,
-    "longer_than": 50,
+    "longer_than": 49,
     "top": [
       [
         "model",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15563?v=1795455515",
   "cover_og_url": "/cover/15563/og?v=1795455515",
+  "has_cover": false,
   "url": "/book/minikube-persistent-volume-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/ Persistent Volumes About persistent volumes (hostPath) minikube supports PersistentVolumes of type hostPath out of the box. These PersistentVolumes are mapped to a directory inside the running minikube instance (usually a VM, unless you use --driver=none, --driver=docker, or --driver=podman). For more information on how this",

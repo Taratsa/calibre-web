@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15744?v=1795456574",
   "cover_og_url": "/cover/15744/og?v=1795456574",
+  "has_cover": false,
   "url": "/book/ipv6-static-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tool yang digunakan GNS3 3 Router Mikrotik 2 Linux Sambungan R1 e0 -&gt; R2 e0 R1 e1 -&gt; R3 e0 R2 e1 -&gt; linux R3 e1 -&gt; linux Aktifkan IPv6 R1 /system package enable ipv6 /system reset-configuration no-defaults=yes R2 /system package enable ipv6 /system reset-configuration no-defaults=yes R3 /system package enable ipv6 /system reset-configuration no-defaults=yes Set IPv6 address R1 /ip address add",

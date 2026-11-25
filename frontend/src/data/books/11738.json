@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11738?v=1795440636",
   "cover_og_url": "/cover/11738/og?v=1795440636",
+  "has_cover": false,
   "url": "/book/dvwa-upload-php-backdoor-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson8/index.html Contents 1 Di Server DVWA 2 Di Kali Linux 2.1 Cek ip address 2.2 Buat PHP msfpayload 2.3 Start Payload Listener 3 Browse ke DVWA 3.1 hack 4 Dari metasploit 5 Referensi Di Server DVWA Ubah ijin folder uploads sudo su chown www-data.www-data /var/www/html/DVWA-1.9/hackable/uploads/ chmod 775",

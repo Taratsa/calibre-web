@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15462?v=1795454976",
   "cover_og_url": "/cover/15462/og?v=1795454976",
+  "has_cover": false,
   "url": "/book/objectblocks-slider-meredup-led-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include \"TM1650.h\" #include \"Channel.h\" TM1650 display; void setup() { // Pin Mode Definition pinMode(9, OUTPUT); Channel.connect(\"mFPdJAqtBzpu7t\"); Wire.begin(); display.init(); } void loop() { display.displayNumber((analogRead(A0))); Channel.sendNumber(\"SLIDER\", analogRead(A0)); delay(1000); analogWrite(9, round(analogRead(A0) / 4)); }",

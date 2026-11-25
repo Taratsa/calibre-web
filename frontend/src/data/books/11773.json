@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11773?v=1795440714",
   "cover_og_url": "/cover/11773/og?v=1795440714",
+  "has_cover": false,
   "url": "/book/korban-install-pam-tally-untuk-mencatat-kegagalan-ke-faillog-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://notblog.org/log-failed-login-attempts/ Contents 1 Step 1 2 Step 2 3 Step 3 4 Step 4 5 Referensi Step 1 Edit vi /etc/pam.d/common-auth Masukan di paling atas # Log failed logins to /var/log/faillog auth required pam_tally.so per_user magic_root onerr=fail Step 2 Edit vi /etc/pam.d/sshd Masukan sebelum @include common-auth: # Log failed login attempts to /var/log/faillog auth",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10496?v=1795437271",
   "cover_og_url": "/cover/10496/og?v=1795437271",
+  "has_cover": false,
   "url": "/book/openbts-4-0-demo-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Aktifkan NAT iptables -t nat -A POSTROUTING -o em0 -j MASQUERADE echo 1 &gt; /proc/sys/net/ipv4/ip_forward Masuk ke cd /home/openbts /home/openbts/CLI Paramter untuk demo txatten 0 config GSM.Radio.C0 51 config GSM.Identity.MCC 525 config GSM.Identity.MNC 01 config GSM.Identity.ShortName SingTel config GPRS.Enable 1 config Control.LUR.OpenRegistration .* config Control.LUR.OpenRegistration.Message",

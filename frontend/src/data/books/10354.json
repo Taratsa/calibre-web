@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10354?v=1795436827",
   "cover_og_url": "/cover/10354/og?v=1795436827",
+  "has_cover": false,
   "url": "/book/rom-android-porting-a80a-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Dapatkan /system/build.prop 2 Teliti Struktur Partisi 3 Teliti dmesg 4 Teliti Modules yang perlu di perhatikan 5 Dapatkan boot.img dan ramdisk.gz 5.1 Jika Beruntung Memperoleh upgrade ROM 5.2 Extrak dari boot.img upgrade ROM MTK 6 Dapatkan recovery.img 7 Dapatkan /proc/config.gz dan /proc/version 8 Menggunakan script mkvendor.sh untuk membuat file 9 Siapkan Kernel 9.1 Ujicoba compile",

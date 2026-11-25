@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13421?v=1795445900",
   "cover_og_url": "/cover/13421/og?v=1795445900",
+  "has_cover": false,
   "url": "/book/wemos-mqtt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://techtutorialsx.com/2017/04/09/esp8266-connecting-to-mqtt-broker/ Contents 1 Code 2 ERROR: Publish 3 Ubuntu 4 Pranala Menarik Code #include  #include  const char* ssid = \"o\"; const char* password = \"\"; const char* mqttServer = \"192.168.0.192\"; const int mqttPort = 1883; # pastikan MQTT allow user anonymous const char* mqttUser = \"\"; const char*",

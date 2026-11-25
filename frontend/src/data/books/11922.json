@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11922?v=1795441093",
   "cover_og_url": "/cover/11922/og?v=1795441093",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-bfgminer-onno-widodo-purbo/",
   "rating": null,
   "comment": "BFGMiner bisa digunakan untuk usbstick miner Contents 1 Install 2 Compile 3 Menjalankan 4 Slushpool 5 NiceHash Install Instalasi dari binary tidak detect gekkoscience add-apt-repository ppa:eugenesan/ppa -y apt update apt-get install bfgminer -y Compile Jika anda ingin meng-compile dapat menggunakan perintah sudo su cd /usr/local/src apt-get install git autoconf automake libtool pkg-config",

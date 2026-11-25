@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21269?v=1795481090",
   "cover_og_url": "/cover/21269/og?v=1795481090",
+  "has_cover": false,
   "url": "/book/script-nat-proxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contoh script NAT / Proxy Untuk menjalankan # ./script.sh start Untuk mematikan # ./script.sh stop Agar script.sh langsung on waktu komputer di booting, anda dapat menuliskan script tersebut di folder (misalnya) /root. Masukan pada file /etc/rc/local perintah /root/script.sh start Isi script.sh adalah seperti tampak di bawah ini. Ada beberapa parameter yang perlu di perhatikan yaitu UPLINK NAT",

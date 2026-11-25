@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10573?v=1795437512",
   "cover_og_url": "/cover/10573/og?v=1795437512",
+  "has_cover": false,
   "url": "/book/wireshark-capture-sql-traffic-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala kita perlu menangkap komunikasi antara server Web dengan database server. Melalui wireshark kita data memfilter Capture Options (ctrl-K). Untuk mem-filter komunikasi ke SQL server, kita butuh informasi host  port  Filter yang diberikan dapat menggunakan format, ip.addr ==  &amp;&amp; tcp.port ==  Biasanya SQL Server port adalah",

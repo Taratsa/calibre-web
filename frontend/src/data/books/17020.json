@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/17020?v=1795463903",
   "cover_og_url": "/cover/17020/og?v=1795463903",
+  "has_cover": false,
   "url": "/book/build-dan-deploy-aplikasi-di-netbeans-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setalah kita menulis dan menjalankan aplikasi, kita dapat menggunakan perintah \"Clean and Build\" (Shift F11) untuk membuat aplikasi untuk di deploy. Jika kita menggunakan perintah \"Clean and Build\" (Shift F11), maka NetBeans akan membuat script yang akan melakukan pekerjaan berikut, Men-delete semua file hasil compile dan keluaran sebelumnya Mengcompile ulang aplikasi dan membuat file JAR berisi",

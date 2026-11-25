@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13186?v=1795445071",
   "cover_og_url": "/cover/13186/og?v=1795445071",
+  "has_cover": false,
   "url": "/book/python-read-url-onno-widodo-purbo/",
   "rating": null,
   "comment": "pip3 install urllib pip3 install requests pip3 install BeautifulSoup4 Contoh 1 import requests from BeautifulSoup import BeautifulSoup link = \" http://www.somesite.com/details.pl?urn=2344 \" f = requests.get(link) print(f.text) soup = BeautifulSoup(f) all_text = .join(soup.findAll(text=True)) print(all_text) Contoh 2 import requests import urllib.request from bs4 import BeautifulSoup import urllib",

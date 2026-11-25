@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10597?v=1795437584",
   "cover_og_url": "/cover/10597/og?v=1795437584",
+  "has_cover": false,
   "url": "/book/upref-onno-widodo-purbo/",
   "rating": null,
   "comment": "Microbenchmarks rarely measure real world performance. This is especially true in networking where applications can use multiple protocols, use different types of communication, interleave CPU processing with communication, etc. However, popular microbenchmarks like iPerf and netperf are very simplistic, supporting only one protocol at a time, fixed message sized communication, no support for",

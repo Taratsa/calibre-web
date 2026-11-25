@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11133?v=1795439100",
   "cover_og_url": "/cover/11133/og?v=1795439100",
+  "has_cover": false,
   "url": "/book/nmap-mysql-brute-force-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/mysql-brute.html Contents 1 File mysql-brute 2 User Summary 3 Example Usage 4 Script Output 5 Referensi File mysql-brute Script types: portrule Categories: intrusive, brute Download: http://nmap.org/svn/scripts/mysql-brute.nse User Summary Performs password guessing against MySQL. Example Usage nmap --script=mysql-brute  Script Output 3306/tcp open",

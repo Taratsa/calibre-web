@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16544?v=1795461496",
   "cover_og_url": "/cover/16544/og?v=1795461496",
+  "has_cover": false,
   "url": "/book/strategi-optimasi-query-dan-analisis-execution-plan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Tujuan Pembelajaran 2 Apa Itu Optimasi Query? 3 Analisis Query dengan EXPLAIN 4 Strategi Optimasi Query 5 Gunakan Indeks pada Kolom WHERE atau JOIN 6 Gunakan LIMIT untuk Batasi Data 7 Hindari Fungsi di Kolom WHERE 8 Gunakan JOIN daripada Subquery jika memungkinka 9 Studi Kasus: Bandingkan Kinerja Query 10 Tools Tambahan untuk Optimasi di Ubuntu 11 Kesimpulan 12 Pranala Menarik Tujuan",
@@ -120,12 +121,12 @@
         7
       ],
       [
-        "mahasiswa",
-        14
-      ],
-      [
         "nim",
         6
+      ],
+      [
+        "mahasiswa",
+        14
       ],
       [
         "indeks",

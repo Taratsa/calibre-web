@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13301?v=1795445445",
   "cover_og_url": "/cover/13301/og?v=1795445445",
+  "has_cover": false,
   "url": "/book/keras-labelencoder-onno-widodo-purbo/",
   "rating": null,
   "comment": "sklearn.preprocessing.LabelEncoder class sklearn.preprocessing.LabelEncoder[source] Encode labels with value between 0 and n_classes-1. Read more in the User Guide. Attributes: classes_ : array of shape (n_class,) Holds the label for each class. See also sklearn.preprocessing.OrdinalEncoder encode categorical features using a one-hot or ordinal encoding scheme. Examples LabelEncoder can be used",

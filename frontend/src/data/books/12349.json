@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12349?v=1795442467",
   "cover_og_url": "/cover/12349/og?v=1795442467",
+  "has_cover": false,
   "url": "/book/ipv6-network-device-yang-siap-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tidak semua network device yang ada mendukung (akan mendukung) kemampuan untuk membawa paket IPv6. Masalah utama yang ada karena struktur lapisan jaringan dari implementasi kernel yang ada. IPv6 paket tidak di kenali dengan nomor IP header (6 bukan 4). Tapi di kenali oleh nomor protokol di protokol lapisan ke 2. Oleh karenanya, protokol transport yang tidak mengggunakan nomor protokol tersebut",

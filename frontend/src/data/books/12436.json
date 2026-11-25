@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12436?v=1795442742",
   "cover_og_url": "/cover/12436/og?v=1795442742",
+  "has_cover": false,
   "url": "/book/dns-linux-systemd-resolved-onno-widodo-purbo/",
   "rating": null,
   "comment": "Open the file /etc/systemd/resolved.conf in a text editor and make the desired changes. Afterwards run sudo systemctl restart systemd-resolved to activate the changes. Common options to change in that file are in the [Resolve] section, for example: DNS=192.168.1.1 Domains=mynet Will set your dns server and search domain. The resolved.conf manual page is a good source for information on how to",

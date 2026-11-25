@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12363?v=1795442509",
   "cover_og_url": "/cover/12363/og?v=1795442509",
+  "has_cover": false,
   "url": "/book/ipv6-menambahkan-ipv6-address-ke-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menambahkan address IPv6 sama dengan mekanisme address \"IP ALIAS\" di Linux IPv4 interface. Contents 1 Menggunakan \"ip\" 2 Menggunakan \"ifconfig\" 3 Mengedit file /etc/network/interfaces 4 Pranala Menarik Menggunakan \"ip\" Kita dapat menggunakan perintah ini beberapa kali untuk menambahkan beberapa IPv6 address ke sebuah interface. Penggunaan: # /sbin/ip -6 addr add / dev",

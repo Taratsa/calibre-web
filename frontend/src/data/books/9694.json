@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9694?v=1795434543",
   "cover_og_url": "/cover/9694/og?v=1795434543",
+  "has_cover": false,
   "url": "/book/kali-linux-membuat-liveusb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://docs.kali.org/installation/kali-linux-live-usb-install Contents 1 burn menggunakan dd 2 burn menggunakan unetbootin 3 Buat Partisi Presistance 4 Referensi 5 Pranala Menarik burn menggunakan dd Delete semua partisi di flashdisk dengan (asumsi flashdisk = /dev/sdb) fdisk /dev/sdb d d d d w Perintahnya kira-kira dd if=kali-linux-2017.2-amd64.iso of=/dev/sdb bs=512k dd",

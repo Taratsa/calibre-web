@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12181?v=1795441774",
   "cover_og_url": "/cover/12181/og?v=1795441774",
+  "has_cover": false,
   "url": "/book/dradis-bind-all-interfaces-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk bind all interface ke Dradis cd /lib/systemd/system vi /lib/systemd/system/dradis.service Edit dradis.service [Unit] Description=Dradis web application [Install] WantedBy=multi-user.target [Service] WorkingDirectory=/usr/lib/dradis ExecStartPre=/bin/sh -c 'test -e /var/lib/dradis/secretkey || (umask 077; echo \" SECRET_KEY_BASE=$(pwgen -1 -s -n 100)\" &gt;/var/lib/dradis/secretkey)'",

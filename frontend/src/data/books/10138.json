@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10138?v=1795436146",
   "cover_og_url": "/cover/10138/og?v=1795436146",
+  "has_cover": false,
   "url": "/book/perl-chat-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://poe.perl.org/?POE_Cookbook/Chat_Server #!/usr/bin/perl # This program is a simple chat server. It allows multiple people to # connect and exchange messages. It's a very simple example, but it # can be the basis of many multiuser things. use warnings; use strict; use POE; use POE::Component::Server::TCP; # Create the server on port 32080, and start it running.",

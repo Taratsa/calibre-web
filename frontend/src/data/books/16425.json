@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16425?v=1795460801",
   "cover_og_url": "/cover/16425/og?v=1795460801",
+  "has_cover": false,
   "url": "/book/pm4py-analisa-performance-dari-xes-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut contoh source code Python untuk melakukan analisis performa (performance analysis) atau deteksi congestion (kemacetan/bottleneck) menggunakan library `pm4py` pada file `.xes` yang telah kamu lampirkan (`Production.xes`): # Pertama, pastikan pm4py terinstal: # !pip install pm4py import pm4py from pm4py.objects.log.importer.xes import importer as xes_importer from",

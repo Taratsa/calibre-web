@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14411?v=1795449857",
   "cover_og_url": "/cover/14411/og?v=1795449857",
+  "has_cover": false,
   "url": "/book/mikrotik-redirect-traffic-onno-widodo-purbo/",
   "rating": null,
   "comment": "/ip firewall nat add chain=dstnat dst-address=139.177.184.75 dst-port=443 protocol=tcp action=dst-nat to-addresses=202.89.117.244 To redirect packets destined for 10.20.30.1:2020 to 192.168.20.1:3040 , you add a DNAT rule in the firewall like this: /ip firewall nat add dst-address=10.20.30.1 dst-port=2020 action=dst-nat to-addresses=192.168.20.1 to-ports=3040 /ip firewall nat add",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11557?v=1795440186",
   "cover_og_url": "/cover/11557/og?v=1795440186",
+  "has_cover": false,
   "url": "/book/snort-rules-rules-headers-onno-widodo-purbo/",
   "rating": null,
   "comment": "3.2 Rules Headers 3.2.1 Rule Actions The rule header contains the information that defines the who, where, and what of a packet, as well as what to do in the event that a packet with all the attributes indicated in the rule should show up. The first item in a rule is the rule action. The rule action tells Snort what to do when it finds a packet that matches the rule criteria. There are 5",

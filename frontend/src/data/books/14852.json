@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14852?v=1795452064",
   "cover_og_url": "/cover/14852/og?v=1795452064",
+  "has_cover": false,
   "url": "/book/fldigi-compile-di-ubuntu-21-10-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://sourceforge.net/p/fldigi/wiki/debian_howto/ Install aptitude &amp; development packages sudo dpkg-reconfigure locales sudo locale-gen \"en_US.UTF-8\" export LC_ALL=\"en_US.UTF-8\" locale en_US.UTF-8 sudo apt -y install aptitude wget libfltk1.3 libfltk1.3-dev libsamplerate0-dev \\ libsamplerate0 portaudio19-dev libsndfile1 libsndfile1-dev \\ libhamlib++-dev libhamlib++4 libhamlib-dev",

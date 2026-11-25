@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16619?v=1795462013",
   "cover_og_url": "/cover/16619/og?v=1795462013",
+  "has_cover": false,
   "url": "/book/openwebui-python-knowledge-pdf-cli-api-upload-onno-widodo-purbo/",
   "rating": null,
   "comment": "owui_upload_kb.py #!/usr/bin/env python3 # -*- coding: utf-8 -*- \"\"\" Upload PDF ke Open WebUI Knowledge via API (tanpa GUI). Fitur: - Buat knowledge collection (jika belum ada) - Upload banyak PDF (folder / list path) - Tambah setiap file ke collection - Anti-duplikat sederhana (skip jika server balas \"Duplicate content\") - Uji query RAG terhadap collection (opsional) Dok: - Upload file: POST",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10416?v=1795437024",
   "cover_og_url": "/cover/10416/og?v=1795437024",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-dvwa-onno-widodo-purbo/",
   "rating": null,
   "comment": "DVWA (Damn Vurnelabel Web App) dapat digunakan untuk belajar SQL Injection / SQLmap untuk melakukan serangan ke Web &amp; Database-nya Contents 1 Download 2 Instalasi Aplikasi Pendukung 3 Extract 4 Extract 5 Edit konfigurasi Database 6 Akses ke DVWA 7 Login ke DVWA Download wget https://github.com/RandomStorm/DVWA/archive/v1.0.8.zip Instalasi Aplikasi Pendukung sudo apt-get install apache2 php5",

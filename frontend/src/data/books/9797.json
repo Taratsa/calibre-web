@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9797?v=1795434950",
   "cover_og_url": "/cover/9797/og?v=1795434950",
+  "has_cover": false,
   "url": "/book/openser-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Beberapa tip routing sederhana Untuk mengarahkan ke semua nomor 08* ke PSTN Gateway, yang misalnya berada di alamat 192.168.0.95:5061 . Lakukan perintah if( uri=~\" sip:08 [0-9]+@.*\" ) { # forward ke PSTN gateway di 192.168.0.95:5061 rewritehostport(\"192.168.0.95:5061\"); route(1); } route[1] { # send it out now; use stateful forwarding as it works reliably # even for UDP2TCP if (!t_relay()) {",

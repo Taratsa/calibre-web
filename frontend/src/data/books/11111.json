@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11111?v=1795439044",
   "cover_og_url": "/cover/11111/og?v=1795439044",
+  "has_cover": false,
   "url": "/book/nmap-brute-force-hack-mysql-password-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/mysql-brute.html Contents 1 File mysql-brute 2 User Summary 3 Example Usage 4 Catatan NSE 5 Script Output 6 Buat Hole di MySQL 7 Referensi File mysql-brute Script types: portrule Categories: intrusive, brute Download: http://nmap.org/svn/scripts/mysql-brute.nse User Summary Lakukan hack pada password MySQL. Example Usage isi user.txt admin root dll isi",

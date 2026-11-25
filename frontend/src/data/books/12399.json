@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12399?v=1795442637",
   "cover_og_url": "/cover/12399/og?v=1795442637",
+  "has_cover": false,
   "url": "/book/ipv6-openwrt-routing-mangement-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenWRT menggunakan source-address dan source-interface sebagai dasar untuk policy-routing system. Teknik ini dibutuhkan agar dapat secara benar menangani berbagai uplink interface. Setiap delegated prefix akan ditambahkan dengan unreachable route untuk menghindari IPv6-routing loops. Untuk menentukan status dari route, kita dapat melihat informasi yang diberikan oleh ifstatus. Contoh (ifstatus",

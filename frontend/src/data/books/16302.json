@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16302?v=1795460037",
   "cover_og_url": "/cover/16302/og?v=1795460037",
+  "has_cover": false,
   "url": "/book/firewall-iptables-setup-default-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "If we want to clear all iptables &amp; ip6tables rules and allow all packets to be accepted: iptables -F ip6tables -F iptables -P INPUT ACCEPT iptables -P OUTPUT ACCEPT iptables -P FORWARD ACCEPT ip6tables -P INPUT ACCEPT ip6tables -P OUTPUT ACCEPT ip6tables -P FORWARD ACCEPT",

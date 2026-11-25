@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12981?v=1795444406",
   "cover_og_url": "/cover/12981/og?v=1795444406",
+  "has_cover": false,
   "url": "/book/ipv6-bird1-static-routing-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi Shell 3 Routing 4 Cek 5 Test 6 Setting Client 7 Referensi 8 Pranala Menarik Topologi R1 e1 --&gt; CLOUD nat0 e2 --&gt; R2 e1 e3 --&gt; LAN 192.168.1.1/24 R2 e1 --&gt; R1 e2 e2 --&gt; LAN 192.168.2.1/24 PC GNS3 tidak baik untuk IPv6, sebaiknya pakai Ubuntu atau Kali. Konfigurasi Shell R1: ifconfig eth1 2001:192:168:122::100/64 ifconfig eth2 2001:172:16:1::1/64 ifconfig eth3",

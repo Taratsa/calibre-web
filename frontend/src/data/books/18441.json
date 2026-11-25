@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18441?v=1795468878",
   "cover_og_url": "/cover/18441/og?v=1795468878",
+  "has_cover": false,
   "url": "/book/dial-menggunakan-wvdial-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah WvDial di instalasi . Pastikan modem usb terdeteksi system operasi lsusb ls -la /dev/ttyU* lakukan $ sudo wvdialconf Akan tampak tampilan sebagai berikut Editing `/etc/wvdial.conf'. Scanning your serial ports for a modem. Modem Port Scan&lt;*1&gt;: S0 S1 S2 S3 WvModem&lt;*1&gt;: Cannot get information for serial port. ttyUSB0&lt;*1&gt;: ATQ0 V1 E1 -- OK ttyUSB0&lt;*1&gt;: ATQ0 V1 E1 Z -- OK ttyUSB0&lt;*1&gt;: ATQ0 V1",

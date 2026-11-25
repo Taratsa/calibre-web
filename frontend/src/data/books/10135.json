@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10135?v=1795436135",
   "cover_og_url": "/cover/10135/og?v=1795436135",
+  "has_cover": false,
   "url": "/book/instalasi-usb-modem-zte-mf620-di-linux-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan SIM Card yang digunakan tidak ada PIN-nya. Kalau ada PIN, tolong dibuang, karena PIN akan membuat pusing proses instalasi di Linux. Install usb_modeswitch sudo apt-get install usb-modeswitch libusb-0.1-4 libusb-dev Pastikan USB modem ZTE MF620 terdeteksi sudo lsusb akan keluar Bus 006 Device 002: ID 19d2:2000 ONDA Communication S.p.A. Lakukan beberapa kali, sambil cabut &amp; masukan USB",

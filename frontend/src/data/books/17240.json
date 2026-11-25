@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17240?v=1795464558",
   "cover_og_url": "/cover/17240/og?v=1795464558",
+  "has_cover": false,
   "url": "/book/membersihkan-purge-clean-paket-debian-yang-pernah-di-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install # apt-get install deborphan debfoster Buang paket # apt-get remove --purge paket # apt-get clean apt-get clean akan membersihkan /var # debfoster akan memperlihatkan file dan library yang masih tinggal setelah apt-get remove --purge. Anda akan ditanya mana yang akan di \"keep\" dan mana yang akan di buang. # deborphan akan memperlihatkan daftar dari library yang menggantung, untuk",

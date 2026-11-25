@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13372?v=1795445741",
   "cover_og_url": "/cover/13372/og?v=1795445741",
+  "has_cover": false,
   "url": "/book/esp32-blink-onno-widodo-purbo/",
   "rating": null,
   "comment": "Blink Onboard LED (Warna Biru) di pin 2 /*** * LED Blinking * Code Written by TechMartian */ const int ledPin = 2; void setup() { // setup pin 2 as a digital output pin pinMode (ledPin, OUTPUT); } void loop() { digitalWrite (ledPin, HIGH); // turn on the LED delay(1000); // wait for half a second or 500 milliseconds digitalWrite (ledPin, LOW); // turn off the LED delay(1000); // wait for half a",

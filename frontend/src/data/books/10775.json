@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10775?v=1795438083",
   "cover_og_url": "/cover/10775/og?v=1795438083",
+  "has_cover": false,
   "url": "/book/voip-membuat-kode-area-statik-antar-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file vi /etc/asterisk/extensions.conf Contoh exten =&gt; _09.,1,Dial(SIP/${EXTEN:2}@192.168.88.9,60,rt) exten =&gt; _08.,1,Dial(SIP/${EXTEN:2}@192.168.88.8,60,rt) exten =&gt; _07.,1,Dial(SIP/${EXTEN:2}@192.168.88.7,60,rt) exten =&gt; _03.,1,Dial(SIP/${EXTEN:2}@192.168.88.3,60,rt)",

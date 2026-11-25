@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/17324?v=1795464927",
   "cover_og_url": "/cover/17324/og?v=1795464927",
+  "has_cover": false,
   "url": "/book/ripping-dvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang suka menonton DVD dalam format VOB , biasanya akan penasaran karena sering kali DVD tersebut di enkripsi . Untuk mengkonversi VOB yang terenkripsi tersebut menjadi format AVI dapat dilakukan mengggunakan perintah, $ ffmpeg -i snatch_1.vob -f avi -vcodec mpeg4 -b 800k -g 300 -bf 2 -acodec libmp3lame -ab 128k snatch.avi Contoh di atas adalah cara melakukan ripping DVD , dengan input",

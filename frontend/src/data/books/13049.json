@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13049?v=1795444661",
   "cover_og_url": "/cover/13049/og?v=1795444661",
+  "has_cover": false,
   "url": "/book/ipv6-mengatasi-fe80-1-sebagai-default-routing-0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Salah satu masalah paling besar yang sering terjadi di client IPv6 adalah saat Router Advertisement (RA) salah memberikan tabel routing. Ini terutama akan terjadi pada saat Router Advertisement Server (RA) tidak mempunyai alokasi IPv6 global, akibatnya routing default di arahkan ke fe80::1. Ini berakibat, client LAN akan salah routing dan tidak akan tersambung ke host IPv6 yang sebenarnya yang",

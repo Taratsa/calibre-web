@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21286?v=1795481143",
   "cover_og_url": "/cover/21286/og?v=1795481143",
+  "has_cover": false,
   "url": "/book/mengembalikan-icon-network-di-ubuntu-yang-hilang-onno-widodo-purbo/",
   "rating": null,
   "comment": "ternyata begini carannya Jika Icon Network Manager , dan lain-lain Hilang di Ubuntu , yaitu: Klik kanan pada Task Bar dan pilih Add to Panel, Pilih Notification Area dan klik Add, Ta-Da! Network Manager Applet kembali muncul di kanan atas. Bisa juga coba perintah ini di shell service network-manager restart Atau juga perintah ini di shell /etc/init.d/network-manager restart Pranala Menarik Linux",

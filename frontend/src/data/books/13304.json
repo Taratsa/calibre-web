@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13304?v=1795445452",
   "cover_og_url": "/cover/13304/og?v=1795445452",
+  "has_cover": false,
   "url": "/book/keras-5-step-life-cycle-for-long-short-term-memory-model-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://machinelearningmastery.com/5-step-life-cycle-long-short-term-memory-models-keras/ Deep learning neural network sangat mudah dibuat dan dievaluasi menggunakan Python dengan Keras, tetapi kita harus mengikuti model life-cycle yang ketat. Dalam tulisan ini, kita akan menemukan step-by-step life-cycle untuk untuk membuat, melatih, dan mengevaluasi Long Short-Term Memory (LSTM)",
@@ -112,12 +113,12 @@
         21
       ],
       [
-        "model",
-        56
-      ],
-      [
         "network",
         47
+      ],
+      [
+        "model",
+        56
       ],
       [
         "loss",

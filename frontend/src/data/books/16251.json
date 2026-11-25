@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16251?v=1795459735",
   "cover_og_url": "/cover/16251/og?v=1795459735",
+  "has_cover": false,
   "url": "/book/squirrelmail-installation-on-ubuntu-16-04-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: Squirrelmail has issues with PHP 7.0. Downgrade to PHP 5.6 Set up POP3 , IMAP &amp; SMTP Server Contents 1 Set Up Additional Repo 2 Ubuntu 16.04 3 SquirrelMail Configuration 4 SMTP Postfix Configuration 5 Fetching Emails to INBOX 6 Error 6.1 IPv6 Problem 7 References 8 Interesting Links Set Up Additional Repo sudo add-apt-repository ppa:ondrej/php sudo apt-get update Ubuntu 16.04 sudo",

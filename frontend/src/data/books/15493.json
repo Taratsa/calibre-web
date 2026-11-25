@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15493?v=1795455126",
   "cover_og_url": "/cover/15493/og?v=1795455126",
+  "has_cover": false,
   "url": "/book/arduino-lcd-1602-i2c-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download Library https://github.com/johnrickman/LiquidCrystal_I2C Copy file zip ke mv *zip ~/Arduino/library/ Code /* * Sambungan di Arduino UNO * SDA - pin SDA * SCL - pin SCL */ #include  LiquidCrystal_I2C lcd(0x27, 16, 2); void setup() { lcd.init(); lcd.backlight(); lcd.backlight(); lcd.setCursor(0,0); lcd.print(\"TEST LCD I2C\"); lcd.setCursor(0,1); lcd.print(\"Hello",

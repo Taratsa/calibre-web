@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16726?v=1795462749",
   "cover_og_url": "/cover/16726/og?v=1795462749",
+  "has_cover": false,
   "url": "/book/ki-praktek-11-ai-untuk-audit-data-pribadi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di dunia nyata, kebocoran data sering bukan karena hacker super canggih-tapi karena data pribadi \"nyangkut\" di tempat yang tidak seharusnya: file CSV di folder proyek, log aplikasi, backup SQL lama, export Excel, atau chat yang dipaste ke dokumen. Di sesi ini, mahasiswa akan bikin tool audit yang bertindak seperti \"robot auditor\": ia masuk ke folder data, membaca file satu per satu, lalu",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1578,
-    "longer_than": 57,
+    "longer_than": 56,
     "top": [
       [
         "audit",

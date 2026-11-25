@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17674?v=1795465940",
   "cover_og_url": "/cover/17674/og?v=1795465940",
+  "has_cover": false,
   "url": "/book/instalasi-jpskmail-onno-widodo-purbo/",
   "rating": null,
   "comment": "Organisasi Amatir Radio Indonesia Kita membutuhkan JRE agar jpskmail dapat beroperasi. Install melalui perintah sudo apt-get install default-jre librxtx-java Ambil source code jpskmail http://hermes.esrac.ele.tue.nl/pskmail/ Lakukan cp -Rf jPSKmail-0.5.1.0-Linux-x86-Install ~ cd ~ sudo chmod -Rf 777 jPSKmail-0.5.1.0-Linux-x86-Install sudo ./jPSKmail-0.5.1.0-Linux-x86-Install $ sudo chmod -Rf 777",
@@ -78,7 +79,7 @@
       ],
       [
         13423,
-        0.27
+        0.28
       ]
     ],
     "sentiment": null

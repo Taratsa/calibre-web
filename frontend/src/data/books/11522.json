@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11522?v=1795440097",
   "cover_og_url": "/cover/11522/og?v=1795440097",
+  "has_cover": false,
   "url": "/book/dvwa-sqli-blind-onno-widodo-purbo/",
   "rating": null,
   "comment": "DVWA-BLIND SQL INJECTION : LOW Level Buka DVWA, misalnya http://localhost/DVWA-1.9 Username : Admin Password : Password Pilih SQL Injection BLIND dan dalam kolom ID masukan 1' and 1=1# 1' and 1=1 order by 2 # ID: 'or' 1=1-- Kita akan lihat ada 5 user Melihat informasi table 1' and 1=0 union select null,table_name from information_schema.tables# 1' and 1=0 union select null,table_name from",

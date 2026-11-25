@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19492?v=1795473571",
   "cover_og_url": "/cover/19492/og?v=1795473571",
+  "has_cover": false,
   "url": "/book/mengikat-gnupg-dan-alpine-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang membutuhkan digital signature di alpine. Langkah yang perlu dilakukan Pindah ke folder .gnupg $ cd .gnupg/ Buat static link $ ln -s /usr/bin/gpg gpgencrypt; ln -s /usr/bin/gpg gpgclearsign Pindah ke home directory $ cd .. Jalankan Alpine $ alpine Masuk ke setup (M untuk main menu, S untuk setup). \"C\" ke Config menu panah ke bawah sampai hampir ke bawah. Edit \"display-filters\"",

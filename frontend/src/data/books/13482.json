@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13482?v=1795446108",
   "cover_og_url": "/cover/13482/og?v=1795446108",
+  "has_cover": false,
   "url": "/book/gnuradio-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo su apt update apt -y install gnuradio gnuradio-dev sox Dukungan OsmoSDR (kalau mau pakai RTL-SDR) , naga-2nya lebih baik compile gr-osmosdr daripada install. apt -y install gr-osmosdr Blacklist driver rtl28xx cd /etc/modprobe.d/ sudo vi ban-rtl.conf Tambahakan blacklist dvb_usb_rtl28xxu Optional Install compiler dkk apt -y install git cmake g++ libboost-all-dev libgmp-dev swig",

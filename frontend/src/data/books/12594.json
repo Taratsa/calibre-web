@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12594?v=1795443164",
   "cover_og_url": "/cover/12594/og?v=1795443164",
+  "has_cover": false,
   "url": "/book/r-rserve-onno-widodo-purbo/",
   "rating": null,
   "comment": "install.packages(\"Rserve\") library(Rserve); Rserve(args = \"-vanilla --RS-enable-remote\", port=XXXX); The default Rserve port is 6311, make sure it is accessible. You can test whether Rserve responds by typing: telnet localhost 6311 If Rserve works, you should get: Trying 127.0.0.1... Connected to localhost. Escape character is '^]'. Rsrv0103QAP1 Pranala Menarik R",

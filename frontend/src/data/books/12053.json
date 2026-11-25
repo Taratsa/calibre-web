@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12053?v=1795441419",
   "cover_og_url": "/cover/12053/og?v=1795441419",
+  "has_cover": false,
   "url": "/book/ubuntu-install-mssql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu Instalasi MSSQL di Ubuntu 16.04 Server. Contents 1 Peralatan 2 Import Repo dan Instalasi 3 Setup 4 Cek Status 5 Install sqlcmd dan bcp 6 Perbaiki Path sqlcmd 7 sqlcmd 8 Referensi Peralatan Ubuntu 16.04 Server 2G RAM Import Repo dan Instalasi sudo su wget -qO- https://packages.microsoft.com/keys/microsoft.asc |",

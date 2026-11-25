@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19841?v=1795475267",
   "cover_og_url": "/cover/19841/og?v=1795475267",
+  "has_cover": false,
   "url": "/book/openbts-konfigurasi-asterisk-untuk-openbts-onno-widodo-purbo/",
   "rating": null,
   "comment": "Integrasi OpenBTS ke Asterisk sangat sederhana secara prinsip. Setiap SIM akan di konfigurasi sebagai SIP user menggunakan IMSI sebagai username. Proses memasukan pelanggan OpenBTS melalui dua tahap: Mendapatkan IMSI dari SIM, hal ini di implementasi dengan mengirim SMS saat handphone tersambung ke OpenBTS Masukan ke sip.conf dan extensions.conf untuk mendukung SIP user baru tersebut. Pada",

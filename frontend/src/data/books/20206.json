@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20206?v=1795476566",
   "cover_og_url": "/cover/20206/og?v=1795476566",
+  "has_cover": false,
   "url": "/book/flightgear-kalibrasi-joystick-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.mail-archive.com/flightgear-users@flightgear.org/msg10501.html Flightgear tampaknya tidak menggunakan fie ~/.joystick yang di hasilkan oleh jscalibrator. Kalibrasi Joystick dapat menggunakan perintah jscal. Caranya menggunakan perintah sudo apt-get install joystick jscal -c /dev/input/js0 Selanjutnya jalankan perintah jscal -p /dev/input/js0 &gt; calibrate-stick.sh untuk membuat",

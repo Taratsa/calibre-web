@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9725?v=1795434659",
   "cover_og_url": "/cover/9725/og?v=1795434659",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-download-source-pendukung-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenWRT biasanya akan mendownload secara automatis berbagai source code pendukung yang dibutuhkan. Ini akan memakan waktu lumayan lama dan banyak memakan bandwidth. Sangat disarankan bagi mereka yang ingin mengcompile untuk bisa mengcopy isi folder ~/openwrt.trunk/trunk/dl dari teman-teman yang sudah mengcompile sebelumnya supaya proses compile jadi lebih cepat. Jika ada yang kurang sebaiknya di",

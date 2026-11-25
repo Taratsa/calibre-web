@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13122?v=1795444870",
   "cover_og_url": "/cover/13122/og?v=1795444870",
+  "has_cover": false,
   "url": "/book/disable-user-registration-onno-widodo-purbo/",
   "rating": null,
   "comment": "If you want to disable the option for your MediaWiki visitors to register accounts at your MediaWiki website you will have to add the following line in the LocalSettings.php file: $wgGroupPermissions['*']['createaccount'] = false;",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12938?v=1795444281",
   "cover_og_url": "/cover/12938/og?v=1795444281",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-bgp-konfigurasi-minimal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.occaid.org/tutorial-ipv6bgp.html Contoh: ! router bgp 64512 neighbor 3ffe:401d:1f00:baa::1 remote-as 30071 neighbor 3ffe:401d:1f00:baa::1 description Ethernet to OCCAID Boston no neighbor 3ffe:401d:1f00:baa::1 activate ! Contoh: ! router bgp 65001 no bgp default ipv4-unicast neighbor 2001:0DB8::B remote-as 65002 neighbor 2001:0DB8::C remote-as 65003 ! address-family ipv6",

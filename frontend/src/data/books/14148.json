@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14148?v=1795448793",
   "cover_og_url": "/cover/14148/og?v=1795448793",
+  "has_cover": false,
   "url": "/book/qemu-bridge-network-adapter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://gist.github.com/extremecoders-re/e8fd8a67a515fee0c873dcafc81d811c Contents 1 Install 2 Setup 3 Cleanup 4 Release IP 5 Referensi 6 Pranala Menarik Install Install untuk tunctl apt -y install uml-utilities Setup Create a bridge sudo su brctl addbr br0 ip addr flush dev enp3s0 brctl addif br0 enp3s0 tunctl -t tap0 -u `whoami` brctl addif br0 tap0 Make sure everything is up ifconfig",

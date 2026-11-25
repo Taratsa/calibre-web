@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/21432?v=1795481875",
   "cover_og_url": "/cover/21432/og?v=1795481875",
+  "has_cover": false,
   "url": "/book/konfigurasi-wireless-interface-ke-access-point-dengan-enkripsi-wpa-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file sudo apt-get install wpasupplicant Edit /etc/wpa_supplicant.conf Masukan network={ ssid=\"ssid_name\" psk=\"password\" } Masukan sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant.conf -Dwext sudo dhclient wlan0 Cara Lain Jika anda ingin mengkonfigurasi wireless interface agar mau konek ke sebuah AP dengan enkripsi WPA , maka anda perlu menggunakan langkah berikut ini # wpa_passphrase",

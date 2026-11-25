@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13283?v=1795445391",
   "cover_og_url": "/cover/13283/og?v=1795445391",
+  "has_cover": false,
   "url": "/book/panda-read-csv-datetime-index-plot-onno-widodo-purbo/",
   "rating": null,
   "comment": "import pandas as pd import glob csv_file = '/home/onno/TensorFlow/TEMP-train.csv' df = pd.read_csv(csv_file, names=['Time', 'Value']) df['Time'] = pd.to_datetime(df['Time'], errors='coerce') df['Value'] = pd.to_numeric(df['Value'], errors='coerce') # print df print df.head() print df.shape print df.dtypes df = df.set_index('Time') df = df.resample('1 Min').mean() print df print df.head() import",

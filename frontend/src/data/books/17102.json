@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17102?v=1795464133",
   "cover_og_url": "/cover/17102/og?v=1795464133",
+  "has_cover": false,
   "url": "/book/asterisk-video-call-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengaktifkan fitur video call pada Asterisk # vi /etc/asterisk/sip.conf Aktifkan opsi-opsi yang berkenaan dengan fitur video call Pertama, aktifkan codec untuk video call [general] ... ... disallow=all allow=ulaw allow=alaw allow=gsm allow=h264 allow=h263p allow=h263 allow=h261 ... ... Kedua, aktifkan opsi video support [general] ... ... videosupport=yes maxcallbitrate=384 ... ... Softphone yang",

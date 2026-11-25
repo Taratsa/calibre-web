@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18470?v=1795468983",
   "cover_og_url": "/cover/18470/og?v=1795468983",
+  "has_cover": false,
   "url": "/book/opensips-demo-dial-plan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /usr/local/etc/opensips/opensips.cfg Isi loadmodule \"enum.so\" modparam(\"enum\", \"domain_suffix\", \"e164.id.\") modparam(\"enum\", \"i_enum_suffix\", \"e164.id.\") # attempt handoff to PSTN if (uri=~\"^ sip:021 [0-9]*@*\") { rewritehostport( \"192.168.0.200:5061\"); ## 192.168.0.200:5061 adalah Analog Telepon Adapter (ATA) route(1); }; # attempt handoff to Selular if (uri=~\"^ sip:08 [0-9]*@*\") {",

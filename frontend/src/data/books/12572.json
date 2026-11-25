@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12572?v=1795443100",
   "cover_og_url": "/cover/12572/og?v=1795443100",
+  "has_cover": false,
   "url": "/book/r-read-multi-pdf-ke-tidytext-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 baca banyak PDF 2 dengan tidytext dan tm 3 dengan tidytest tanpa tm 4 Pranala Menarik baca banyak PDF library(pdftools) library(tidyverse) library(tidytext) map_df(all_pdfs, ~ data_frame(txt = pdf_text(.x)) %&gt;% mutate(filename = .x) %&gt;% unnest_tokens(word, txt)) # list PDF file yang ada all_pdfs &lt;- list.files(pattern = \".pdf$\") dengan tidytext dan tm library(tidyverse)",

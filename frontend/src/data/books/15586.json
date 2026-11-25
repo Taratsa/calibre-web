@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15586?v=1795455644",
   "cover_og_url": "/cover/15586/og?v=1795455644",
+  "has_cover": false,
   "url": "/book/wemos-d1-mini-dht11-read-suhu-dan-humidity-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://dewo.wordpress.com/2016/07/10/pemantau-suhu-kelembaban-udara-dengan-wemos-d1-mini-dht11/ Contents 1 Library 2 Sambungan ke Wemos D1 mini 3 Contoh 4 Referensi Library Download dari https://github.com/adafruit/Adafruit_Sensor mv Adafruit_Sensor-master.zip ../Arduino/libraries/ https://github.com/adafruit/DHT-sensor-library/archive/refs/heads/master.zip mv",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 465,
-    "longer_than": 38,
+    "longer_than": 37,
     "top": [
       [
         "dht",

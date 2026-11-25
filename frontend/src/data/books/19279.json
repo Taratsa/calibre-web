@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19279?v=1795472471",
   "cover_og_url": "/cover/19279/og?v=1795472471",
+  "has_cover": false,
   "url": "/book/backtrack-mengaktifkan-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Biasanya interface tidak aktif saat backtrack di boot. Untuk melihat daftar interface yang ada ketik # ifconfig Kita harus mengaktifkan interface dengan perintah # ifconfig namainterface up misalnya # ifconfig eth0 up # ifconfig wlan0 up # ifconfig wlan1 up Catatan eth0 - biasanya LAN card. wlan0 - biasanya Wireless / HotSpot interface. Pranala Menarik Backtrack Backtrack: Mengaktifkan Interface",

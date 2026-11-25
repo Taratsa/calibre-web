@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16361?v=1795460374",
   "cover_og_url": "/cover/16361/og?v=1795460374",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-untuk-dataset-cifar-100-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python yang memuat dataset CIFAR-100, membangun model Convolutional Neural Network (CNN) menggunakan Keras, melatih model tersebut, melakukan prediksi, dan memvisualisasikan hasilnya: import tensorflow as tf from tensorflow.keras import datasets, layers, models import matplotlib.pyplot as plt import numpy as np # Memuat dataset CIFAR-100 (train_images, train_labels),",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19884?v=1795475422",
   "cover_og_url": "/cover/19884/og?v=1795475422",
+  "has_cover": false,
   "url": "/book/ubuntu-enterprise-cloud-menjalankan-cc-dan-nc-di-satu-mesin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Working on Ubuntu Enterprise Cloud, I was wondering if both CC and NC could run on a single machine. Ofcourse, this is not a recommended UEC topology for production use, but thought of giving it a try. Moreover, for experimenting purposes this would be an ideal case, not requiring too many hardware resources. So here goes the process.... Eucalyptus Packages The eucalyptus packages that form the",

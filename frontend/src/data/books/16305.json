@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16305?v=1795460057",
   "cover_og_url": "/cover/16305/og?v=1795460057",
+  "has_cover": false,
   "url": "/book/ssh-remote-execute-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "example ssh user1@server1 command1 ssh user1@server1 'command2' ssh user1@server1 'command1 | command2' ssh user1@server1 date ssh user1@server1 'df -H' ssh root@nas01 uname -mrs ssh root@nas01 lsb_release -a ssh -t user@server \"time sudo /home/user/script.sh\" Where: -t - provides terminal access if the script requests a password sudo - to allow execution as superuser Copy id_dsa.pub &amp; id_rsa.pub",

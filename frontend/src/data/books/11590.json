@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11590?v=1795440263",
   "cover_og_url": "/cover/11590/og?v=1795440263",
+  "has_cover": false,
   "url": "/book/mitm-mitm-ssh-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://www.atechnote.com/2016/10/intercept-username-and-password-using.html Contents 1 Diagram 2 ARPspoofing 3 Download 4 Generate Keys 5 Instal SSH key server yang akan di serang 6 Jalankan proxy 7 Instalasi 8 Jika Error 9 Referensi Diagram client --&gt; mitmproxy --&gt; ssh server ip client: 192.168.0.106 (misalnya) ip server: 192.168.0.100 (misalnya) ARPspoofing ARP Spoof sudo su arpspoof -t",

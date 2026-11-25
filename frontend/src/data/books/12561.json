@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12561?v=1795443072",
   "cover_og_url": "/cover/12561/og?v=1795443072",
+  "has_cover": false,
   "url": "/book/r-ngram-dan-frekuensi-nya-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(tau) library(data.table) createNgram &lt;-function(stringVector, ngramSize){ ngram &lt;- data.table() ng &lt;- textcnt(stringVector, method = \"string\", n=ngramSize, tolower = FALSE) if(ngramSize==1){ ngram &lt;- data.table(w1 = names(ng), freq = unclass(ng), length=nchar(names(ng))) } else { ngram &lt;- data.table(w1w2 = names(ng), freq = unclass(ng), length=nchar(names(ng))) } return(ngram) } text &lt;-",

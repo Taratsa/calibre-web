@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10854?v=1795438278",
   "cover_og_url": "/cover/10854/og?v=1795438278",
+  "has_cover": false,
   "url": "/book/integrasi-squidguard-ke-squid-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan file blacklist dan db dimiliki oleh user squid. Jika squid tidak bisa akses maka proses blocking tidak jalan. Test squidGuard # echo \" http://www.example.com 10.0.0.1/ - - GET\" | squidGuard -c /tmp/test.cfg -d Jika berjalan dengan baik &amp; situs example.com bukan situs yang di block maka akan tampak pada log 2007-03-25 16:18:05 [30042] squidGuard ready for requests (1174832285.085)",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16401?v=1795460629",
   "cover_og_url": "/cover/16401/og?v=1795460629",
+  "has_cover": false,
   "url": "/book/scrapping-google-search-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini adalah script Python sederhana untuk scraping hasil pencarian Google berdasarkan keyword , lalu menyimpan hasilnya ke file (CSV atau TXT) . Catatan: Kita tidak bisa scraping langsung dari ` https://www.google.com` karena Google melindungi halamannya dengan anti-bot. Sebagai alternatif legal dan lebih stabil, kita bisa gunakan SerpApi (gratis hingga 100 permintaan/bulan) atau Bing",

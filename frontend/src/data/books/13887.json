@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13887?v=1795447807",
   "cover_og_url": "/cover/13887/og?v=1795447807",
+  "has_cover": false,
   "url": "/book/gns3-menyambungkan-lan-switch-ke-nat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sambungan yang paling sederhana dan paling menantang di GNS3 adalah menyambungkan NAT GNS3 ke LAN internal GNS3. Pada gambar di perlihatkan contoh sambungan NAT ke Switch LAN yang kemudian menghubungkan PC Kali Linux dan VPCS. NAT pada dasarnya proxy server yang biasanya hanya mengijinkan inisiasi komunikasi dari PC Kali Linux dan VPCS ke luar melalui PC host yang menjalankan GNS3, tapi tidak",

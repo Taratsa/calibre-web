@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19838?v=1795475254",
   "cover_og_url": "/cover/19838/og?v=1795475254",
+  "has_cover": false,
   "url": "/book/gnuradio-ubuntu-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://gnuradio.org/redmine/wiki/gnuradio/UbuntuInstall Development Tool yang dibutuhkan: g++ subversion make autoconf, automake, libtool sdcc guile ccache Library yang dibutuhkan untuk runtime dan proses compile python-dev FFTW 3.X (fftw3, fftw3-dev) cppunit (libcppunit and libcppunit-dev) Boost 1.35 (or later) libusb and libusb-dev wxWidgets (wx-common) and wxPython (python-wxgtk2.8)",

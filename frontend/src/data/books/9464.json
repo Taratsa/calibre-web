@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9464?v=1795432957",
   "cover_og_url": "/cover/9464/og?v=1795432957",
+  "has_cover": false,
   "url": "/book/linux-search-path-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.troubleshooters.com/linux/prepostpath.htm Pre and Post Pathing Linux determines the executable search path with the $PATH environment variable. To add directory /data/myscripts to the beginning of the $PATH environment variable, use the following: PATH=/data/myscripts:$PATH To add that directory to the end of the path, use the following command: PATH=$PATH:/data/myscripts But",

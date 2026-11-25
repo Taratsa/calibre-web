@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15823?v=1795457033",
   "cover_og_url": "/cover/15823/og?v=1795457033",
+  "has_cover": false,
   "url": "/book/arduino-minicom-9600bps-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt-get install minicom sudo dmesg | grep tty [ 0.145092] printk: legacy console [tty0] enabled [ 0.489285] 0000:00:16.3: ttyS4 at I/O 0xf0a0 (irq = 19, base_baud = 115200) is a 16550A [ 2434.115161] usb 1-1: pl2303 converter now attached to ttyUSB0 sudo minicom -b 9600 -o -D /dev/ttyUSB0",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12560?v=1795443069",
   "cover_og_url": "/cover/12560/og?v=1795443069",
+  "has_cover": false,
   "url": "/book/r-melihat-informasi-dari-data-set-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah beberapa fungsi untuk melihat content sebuah object / dataset # list objects in the working environment ls() # list the variables in mydata names(mydata) # list the structure of mydata str(mydata) # list levels of factor v1 in mydata levels(mydata$v1) # dimensions of an object dim(object) # class of an object (numeric, matrix, data frame, etc) class(object) # print mydata mydata #",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10998?v=1795438724",
   "cover_og_url": "/cover/10998/og?v=1795438724",
+  "has_cover": false,
   "url": "/book/bokeh-plot-beberapa-graph-dalam-satu-canvas-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://bokeh.pydata.org/en/0.9.3/docs/user_guide/layout.html from bokeh.io import output_file, show, vplot from bokeh.plotting import figure output_file(\"layout.html\") x = list(range(11)) y0 = x y1 = [10 - i for i in x] y2 = [abs(i - 5) for i in x] # create a new plot s1 = figure(width=250, plot_height=250, title=None) s1.circle(x, y0, size=10, color=\"navy\", alpha=0.5) # create another",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12005?v=1795441290",
   "cover_og_url": "/cover/12005/og?v=1795441290",
+  "has_cover": false,
   "url": "/book/nvidia-install-driver-tesla-c1060-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update # apt install nvidia-profiler nvidia-cuda-dev nvidia-visual-profiler nvidia-cuda-toolkit apt -y install nvidia-340 ln -s /usr/lib/nvidia-340/bin/* /usr/bin/ ln -s /usr/lib/nvidia-340/lib* /usr/lib/ Test lspci | grep -i nvidia 01:00.0 3D controller: NVIDIA Corporation GT200GL [Tesla C1060 / M1060] (rev a1)",

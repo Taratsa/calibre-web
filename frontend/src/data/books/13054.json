@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13054?v=1795444677",
   "cover_og_url": "/cover/13054/og?v=1795444677",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-router-advertisement-ra-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology 2 Contoh 3 Perintah lainnya 4 Pranala Menarik 5 Pranala Menarik Topology Contoh ip -6 addr add 2345::1/64 dev eth0 vtysh enable configure terminal interface eth1 no ipv6 nd suppress-ra ipv6 nd prefix 2345::/64 # router-address Perintah lainnya no ipv6 nd suppress-ra # send router advertisment messages ipv6 nd suppress-ra ipv6 nd prefix  [valid-lifetime]",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21458?v=1795482067",
   "cover_og_url": "/cover/21458/og?v=1795482067",
+  "has_cover": false,
   "url": "/book/instalasi-dyndns-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke http://www.dyndns.com Masuk ke support --&gt; download update clients ambil ddclient.tar.gz Lakukan # cp ddclient.tar.gz /usr/local/src # cd /usr/local/src # tar zxvf ddclient.tar.gz # cd ddclient-3.7.1/ # cp ddclient /usr/sbin/ # mkdir /etc/ddclient # cp sample-etc_ddclient.conf /etc/ddclient/ddclient.conf Setup konfigurasi # vi /etc/ddclient/ddclient.conf use=web, web=checkip.dyndns.org/,",

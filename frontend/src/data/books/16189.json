@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16189?v=1795459341",
   "cover_og_url": "/cover/16189/og?v=1795459341",
+  "has_cover": false,
   "url": "/book/python-ubuntu-24-04-tensorflow-analisa-umkm-target-omzet-save-model-predict-new-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dari data yang ada, kita dapat membuat model untuk memprediksi kolom OMZET menggunakan beberapa kolom lain sebagai fitur. Kita perlu melakukan beberapa langkah untuk menyiapkan data ini, seperti mengonversi data kategori menjadi numerik dan membersihkan data jika ada nilai yang hilang. Berikut adalah langkah-langkah untuk membuat model prediksi omzet menggunakan TensorFlow dan Keras, menyimpan",

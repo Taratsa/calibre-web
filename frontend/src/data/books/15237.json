@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15237?v=1795453805",
   "cover_og_url": "/cover/15237/og?v=1795453805",
+  "has_cover": false,
   "url": "/book/openairinterface-set-cpu-governor-to-performance-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melihat nilai scaling_governor sebelumnya per CPU, jalankan perintah: cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor powersave powersave powersave powersave powersave powersave powersave ... Untuk set scaling_governor ke \"performance\" mode untuk setiap CPU, jalankan: echo performance &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor echo performance &gt;",

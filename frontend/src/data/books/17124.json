@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17124?v=1795464198",
   "cover_og_url": "/cover/17124/og?v=1795464198",
+  "has_cover": false,
   "url": "/book/schoolonffline-memastikan-semua-server-beroperasi-saat-nyala-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file vi /etc/rc.local Contents 1 Versi IP address Statik 2 Versi IP address dynamic 3 Copy rc.local IP dynamic ke rc.local 4 Pranala Menarik Versi IP address Statik Edit cp /etc/rc.local /etc/rc.local.ip.statik vi /etc/rc.local.ip.statik Isi sebelum kata-kata exit0. Biasanya jika jaringan LAN terdapat DHCP server akan mengubah IP address eth0. Untuk menjamin bahwa IP address 192.168.0.254",

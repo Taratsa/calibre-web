@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15267?v=1795453927",
   "cover_og_url": "/cover/15267/og?v=1795453927",
+  "has_cover": false,
   "url": "/book/konfigurasi-core-network-4g-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah yang perlu dilakukan untuk mengkonfigurasi core network 4G yang menggunakan open5gs adalah mengikuti langkah-langkah berikut, Edit File mme.yaml menggunakan nano nano /etc/open5gs/mme.yaml s1ap: - addr: 192.168.100.236 gtpc: - addr: 127.0.0.2 metrics: addr: 127.0.0.2 port: 9090 gummei: plmn_id: mcc: 510 mnc: 33 mme_gid: 2 mme_code: 1 tai: plmn_id: mcc: 510 mnc: 33 tac: 1 Beberapa",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10255?v=1795436520",
   "cover_og_url": "/cover/10255/og?v=1795436520",
+  "has_cover": false,
   "url": "/book/olsr-di-ubuntu-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar dapat jalan sekaligus IPv4 dan IPv6, lakukan: iwconfig wlan0 mode ad-hoc iwconfig wlan0 essid MESH iwconfig wlan0 ap 02:ca:ff:ee:ba:be iwconfig wlan0 channel 1 ifconfig wlan0 10.123.123.123 ifconfig wlan0 netmask 255.0.0.0 ip -6 addr add 2001:123:123::123/64 dev wlan0 atau edit /etc/network/interfaces auto wlan0 allow-hot plug wlan0 iface wlan0 inet static address 10.123.123.123 broadcast",

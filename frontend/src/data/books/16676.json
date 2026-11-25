@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16676?v=1795462471",
   "cover_og_url": "/cover/16676/og?v=1795462471",
+  "has_cover": false,
   "url": "/book/mediawiki-instalasi-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pertama-tama siapkan beberapa fasiltas pendukung MediaWiki seperti MySQL Server , PHP dll, antara lain dapat di install melalui perintah sudo apt update sudo apt-get install apache2 php php-xmlrpc php-mysql php-gd php-cli php-curl \\ libphp-adodb libgd-dev php-pear \\ php-common libapache2-mod-php php-fpm \\ php-bz2 php-xml imagemagick git php-mbstring \\ mariadb-server mariadb-client \\ php8.3-intl",
@@ -53,7 +54,7 @@
   ],
   "text": {
     "words": 803,
-    "longer_than": 47,
+    "longer_than": 46,
     "top": [
       [
         "mediawiki",

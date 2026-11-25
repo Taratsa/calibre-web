@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12688?v=1795443435",
   "cover_og_url": "/cover/12688/og?v=1795443435",
+  "has_cover": false,
   "url": "/book/dbench-internet-offline-60-concurrent-onno-widodo-purbo/",
   "rating": null,
   "comment": "VM 1 Core 1024M RAM mkdir -p /mnt/public umount /mnt/public/ mount.cifs //192.168.0.3/public /mnt/public -o username=onno,password=123456 dbench --directory=/mnt/public/ --loadfile=/usr/share/dbench/client.txt --skip-cleanup 60 Operation Count AvgLat MaxLat ---------------------------------------- NTCreateX 252673 49.736 291.032 Close 184827 13.896 170.178 Rename 10493 104.109 248.663 Unlink",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11074?v=1795438946",
   "cover_og_url": "/cover/11074/og?v=1795438946",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-udp-send-isi-1-analog-input-0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Code 2 Di sisi Server 2.1 Menerima Menggunakan nc 2.2 Menerima Menggunakan python Code /* UDPSendAnalogInput: created 27 Nov 2015 by Onno W. Purbo This code is in the public domain. */ #include  // needed for Arduino versions later than 0018 #include  #include  // UDP library from: bjoern@cs.stanford.edu 12/30/2008 // Enter a MAC address and IP address",

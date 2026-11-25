@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14146?v=1795448782",
   "cover_og_url": "/cover/14146/og?v=1795448782",
+  "has_cover": false,
   "url": "/book/android-emulator-brotli-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Please consider updating brotli to version 1.0.9 (latest). Version 1.0.9 contains a fix to \"integer overflow\" problem. This happens when \"one-shot\" decoding API is used (or input chunk for streaming API is not limited), input size (chunk size) is larger than 2GiB, and input contains uncompressed blocks. After the overflow happens, memcpy is invoked with a gigantic num value, that will likely",

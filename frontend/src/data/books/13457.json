@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13457?v=1795446015",
   "cover_og_url": "/cover/13457/og?v=1795446015",
+  "has_cover": false,
   "url": "/book/r-tidytext-tidytext-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/01-tidy-text.Rmd # The tidy text format {#tidytext} library(knitr) opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE) options(width = 100, dplyr.width = 100) library(ggplot2) theme_set(theme_light()) ## The `unnest_tokens` function text &lt;- c(\"Because I could not stop for Death -\", \"He kindly stopped for me -\", \"The Carriage",

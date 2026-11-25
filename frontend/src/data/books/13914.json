@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13914?v=1795447931",
   "cover_og_url": "/cover/13914/og?v=1795447931",
+  "has_cover": false,
   "url": "/book/quagga-dua-router-static-routing-eth07-wan-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: eth7 - ke Cloud Internet eth0 - R2: eth0 eth6 - LAN (192.168.123.x/24) R2: eth0 - R1: eth0 eth6 - LAN (192.168.124.x/24) R1: vtysh configure terminal interface eth0 ip address 172.16.1.1/30 exit ip route 192.168.124.0 255.255.255.0 172.16.1.2 exit R2: vtysh config terminal interface eth0 ip address 172.16.1.2/30 exit ip route 192.168.123.0 255.255.255.0 172.16.1.1 ip route 0.0.0.0 0.0.0.0",

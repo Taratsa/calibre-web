@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11554?v=1795440181",
   "cover_og_url": "/cover/11554/og?v=1795440181",
+  "has_cover": false,
   "url": "/book/snort-menjalankan-sebagai-daemon-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gunakan switch -D Jika snort di instalasi dengan apt install. Logging ASCII tampaknya lebih memudahkan SNORT Untuk deteksi serangan jika kita membuat local.rules. Logging ASCII snort -c /etc/snort/snort.conf -l /var/log/snort/ -K ascii -D Logging binary snort -c /etc/snort/snort.conf -l /var/log/snort/ -b -D atau /usr/sbin/snort -d -h 192.168.0.0/24 -l /var/log/snort/ -c /etc/snort/snort.conf -s",

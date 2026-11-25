@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9543?v=1795433212",
   "cover_og_url": "/cover/9543/og?v=1795433212",
+  "has_cover": false,
   "url": "/book/sdr-gqrx-ubuntu-12-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Install GNURadio 3 Install rtl_sdr 4 Install gr_osmoSDR 5 Install gqrx 6 Referensi 7 Pranala Menarik Persiapan Buat directory mkdir /usr/local/src/SDR cd /usr/local/src/SDR Instalasi paket pendukung sudo apt-get install cmake swig libcppunit-dev python-cheetah doxygen \\ libboost-all-dev python-sphinx fftw3-dev python-numpy libqwt-dev \\ libusb++-dev libusb-dev",

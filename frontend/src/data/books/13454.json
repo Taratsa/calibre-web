@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13454?v=1795446001",
   "cover_og_url": "/cover/13454/og?v=1795446001",
+  "has_cover": false,
   "url": "/book/r-regression-multicollinearity-essentials-and-vif-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ref: http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/ library(tidyverse) library(caret) # Load the data data(\"Boston\", package = \"MASS\") # Split the data into training and test set set.seed(123) training.samples &lt;- Boston$medv %&gt;% createDataPartition(p = 0.8, list = FALSE) train.data &lt;- Boston[training.samples, ] test.data &lt;-",

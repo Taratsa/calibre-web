@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9421?v=1795432821",
   "cover_og_url": "/cover/9421/og?v=1795432821",
+  "has_cover": false,
   "url": "/book/android-download-repo-source-code-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install aplikasi pendukung sudo apt-get install curl Buat path mkdir ~/bin PATH=~/bin:$PATH Download Repo script dan pastikan executable: curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo &gt; ~/bin/repo chmod a+x ~/bin/repo Buat directory android-source cd ~ mkdir android-source cd android-source Kalau perlu mount external USB harddisk tempat source-nya mount /dev/sdX1 android-source",

@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17217?v=1795464463",
   "cover_og_url": "/cover/17217/og?v=1795464463",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-tinyproxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt-get install tinyproxy Edit Konfigurasi Edit vi /etc/tinyproxy/tinyproxy.conf Ubah # User nobody # Group nogroup User root Group root # Port 8888 Port 3128 Allow 127.0.0.1 Allow 192.168.0.0/16 Allow 172.16.0.0/12 Allow 10.0.0.0/8 Restart # /etc/init.d/tinyproxy restart Pranala Menarik Remaster Ubuntu untuk SchoolOnffLine Menggunakan UCK SchoolOnffLine: Server Berbasis Sabily 9.04",

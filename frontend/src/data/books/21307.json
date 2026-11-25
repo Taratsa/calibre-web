@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21307?v=1795481242",
   "cover_og_url": "/cover/21307/og?v=1795481242",
+  "has_cover": false,
   "url": "/book/create-a-testdisk-freedos-livecd-onno-widodo-purbo/",
   "rating": null,
   "comment": "This document explains how to create under Linux a LiveCD running FreeDOS that automatically start TestDisk . Download FreeDOS OEM CD-ROM disc builder assistant wget -N http://www.fdos.org/bootdisks/ISO/FDOEMCD.builder.zip Download the DOS version of TestDisk &amp; PhotoRec wget -N http://www.cgsecurity.org/testdisk-6.11.3.dos.zip Cleanup the work directory if it already exists rm -rf FDOEMCD",
@@ -185,7 +186,7 @@
       ],
       [
         16151,
-        0.28
+        0.29
       ],
       [
         17268,

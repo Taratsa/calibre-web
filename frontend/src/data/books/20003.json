@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20003?v=1795475823",
   "cover_og_url": "/cover/20003/og?v=1795475823",
+  "has_cover": false,
   "url": "/book/linux-log-file-locations-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.cyberciti.biz/faq/linux-log-files-location-and-how-do-i-view-logs-files/ Q. I am new to Linux and I would like to know where are the log files located under Debian or Cento OS Linux server? How do I open or view log files? A. Almost all logfiles are located under /var/log directory (and subdirectory). You can change to this directory using cd command but you need to be the root",

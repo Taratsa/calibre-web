@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12410?v=1795442668",
   "cover_og_url": "/cover/12410/og?v=1795442668",
+  "has_cover": false,
   "url": "/book/ipv6-database-mysql-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi dengan menggunakan perintah apt update apt -y install mysql-server mysql-client Restart MySQL Server /etc/init.d/mysql restart Untuk test IPv6. Edit vi /etc/hosts Edit ::1 localhost ::1 localhost6 Test sambungan MySQL ke localhost (localhost) dengan IPv6 mysql -u root -h ::1 -p123456 Jika berhasil maka akan keluar kira-kira: mysql: [Warning] Using a password on the command line",

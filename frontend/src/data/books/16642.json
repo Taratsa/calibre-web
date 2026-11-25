@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16642?v=1795462228",
   "cover_og_url": "/cover/16642/og?v=1795462228",
+  "has_cover": false,
   "url": "/book/gpu-cuda-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Penjelasan Detail tentang CUDA 2 Arsitektur CUDA 3 Model Pemrograman 4 Fitur Kunci 5 Bagaimana CUDA Memungkinkan Komputasi GPU 6 Cara Instalasi CUDA di Ubuntu 24.04 7 Prerequisites 8 Langkah Instalasi (Metode Network Repository - Direkomendasikan) 9 Post-Instalasi 10 Pranala Menarik Penjelasan Detail tentang CUDA CUDA (Compute Unified Device Architecture) adalah platform komputasi",
@@ -120,12 +121,12 @@
         11
       ],
       [
-        "komputasi",
-        9
-      ],
-      [
         "memori",
         13
+      ],
+      [
+        "komputasi",
+        9
       ],
       [
         "kernel",

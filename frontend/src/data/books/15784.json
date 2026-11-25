@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15784?v=1795456812",
   "cover_og_url": "/cover/15784/og?v=1795456812",
+  "has_cover": false,
   "url": "/book/moodle-clone-site-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara cepat cp /var/www/html/moodle* cp /var/moodledata* cp /var/lib/mysql/moodle* chmod 777 semua If you have shell access on both servers, here is a quick command-line based method. Set up a new empty database on the new server. Place your existing Moodle site into maintenance mode. Login to shell on the old existing server. Use rsync to copy moodledata and public_html or moodle folders (or",

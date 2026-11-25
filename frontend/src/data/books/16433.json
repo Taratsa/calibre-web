@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16433?v=1795460848",
   "cover_og_url": "/cover/16433/og?v=1795460848",
+  "has_cover": false,
   "url": "/book/dataset-akurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengevaluasi akurasi model machine learning dalam klasifikasi, kita dapat menggunakan pustaka Scikit-Learn di Python. Berikut adalah contoh kode yang menunjukkan cara melatih model Decision Tree dan menghitung akurasinya: import pandas as pd from sklearn.model_selection import train_test_split from sklearn.tree import DecisionTreeClassifier from sklearn.metrics import accuracy_score,",

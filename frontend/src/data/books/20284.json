@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20284?v=1795476791",
   "cover_og_url": "/cover/20284/og?v=1795476791",
+  "has_cover": false,
   "url": "/book/proxmox-monitoring-install-host-sflow-agent-onno-widodo-purbo/",
   "rating": null,
   "comment": "Proxmox VE is an open source, bare metal, virtualization platform supporting KVM and OpenVZ. This article describes how to install and configure sFlow monitoring on a Proxmox VE server using the open source Host sFlow agent. First install the development tools needed to compile the Host sFlow agent apt-get update apt-get install gcc make Next, download the Host sFlow agent sources and compile and",

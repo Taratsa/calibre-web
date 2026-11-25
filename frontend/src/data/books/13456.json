@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13456?v=1795446010",
   "cover_og_url": "/cover/13456/og?v=1795446010",
+  "has_cover": false,
   "url": "/book/r-regression-penalized-regression-essentials-ridge-lasso-elastic-net-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: http://www.sthda.com/english/articles/37-model-selection-essentials-in-r/153-penalized-regression-essentials-ridge-lasso-elastic-net/ library(tidyverse) library(caret) library(glmnet) # Preparing the data # Load the data data(\"Boston\", package = \"MASS\") # Split the data into training and test set set.seed(123) training.samples &lt;- Boston$medv %&gt;% createDataPartition(p = 0.8, list = FALSE)",

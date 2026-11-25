@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12617?v=1795443231",
   "cover_og_url": "/cover/12617/og?v=1795443231",
+  "has_cover": false,
   "url": "/book/mikrotik-set-dns-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menset DNS server di Mikrotik menggunakan console. Misalnya untuk query ke DNS 8.8.8.8 dapat menggunakan perintah, ip dns set servers=8.8.8.8,8.8.4.4,1.1.1.1 ip dns set allow-remote-request=yes ip dhcp-server network set 0 dns-server=192.168.88.1 Pranala Menarik Mikrotik",

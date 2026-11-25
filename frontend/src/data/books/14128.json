@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14128?v=1795448697",
   "cover_og_url": "/cover/14128/og?v=1795448697",
+  "has_cover": false,
   "url": "/book/binwalk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://embeddedbits.org/reverse-engineering-router-firmware-with-binwalk/ A few days ago I decided to reverse engineer my router's firmware image with binwalk. I've bought the TP-Link Archer C7 home router. Not one of the best, but good enough for my needs. One thing I always do when I buy a new router is install OpenWRT. Why? Because the manufacturer's firmware quality is usually bad,",
@@ -144,12 +145,12 @@
         41
       ],
       [
-        "scan",
-        17
-      ],
-      [
         "busybox",
         10
+      ],
+      [
+        "scan",
+        17
       ]
     ],
     "phrases": [

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15283?v=1795453993",
   "cover_og_url": "/cover/15283/og?v=1795453993",
+  "has_cover": false,
   "url": "/book/openairinterface-cn-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://open-cells.com/index.php/2019/09/22/all-in-one-openairinterface/ Contents 1 Download modifikasi open-cells 2 Download dan patch EPC 3 Install third party SW untuk EPC 4 Compile EPC node 5 Referensi 6 Pranala Menarik Download modifikasi open-cells Download dan ekstrak data-nya, cd ~ wget https://open-cells.com/opencells-mods-20190923.tgz tar xf opencells-mods-20190923.tgz Download",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 490,
-    "longer_than": 39,
+    "longer_than": 38,
     "top": [
       [
         "epc",

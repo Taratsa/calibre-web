@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13418?v=1795445891",
   "cover_og_url": "/cover/13418/og?v=1795445891",
+  "has_cover": false,
   "url": "/book/mqtt-managed-password-onno-widodo-purbo/",
   "rating": null,
   "comment": "mosquitto_passwd [ -c | -D ] passwordfile username mosquitto_passwd -b passwordfile username password mosquitto_passwd -U passwordfile Switch -c create -D delete -b batch -U update Contoh cd /etc/mosquitto/ mosquitto_passwd -b pwfile user1 123456 Pranala Menarik MQTT",

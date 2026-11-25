@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19084?v=1795471552",
   "cover_og_url": "/cover/19084/og?v=1795471552",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-dd-wrt-port-forwarding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke menu NAT / QoS -&gt; Port Forwarding Isi Application nama aplikasi (misalnya SSH) Port From 222 IP Address IP address server di LAN (misalnya 192.168.1.11) Port To 22 Enable contreng Jangan lupa di Save Jadi user di WAN dapat mengakses mesin 192.168.1.11:22 dari ip-wan:222 menggunakan perintah ssh -p 222 user@ip-wan Pranala Menarik WiFi: HotSpot Wireless Internet Berbasis WiFi",

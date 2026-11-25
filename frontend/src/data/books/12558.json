@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12558?v=1795443066",
   "cover_og_url": "/cover/12558/og?v=1795443066",
+  "has_cover": false,
   "url": "/book/r-trigram-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(dplyr) library(tidytext) library(janeaustenr) library(tidyr) library(igraph) library(ggplot2) library(ggraph) library(readtext) text &lt;- readtext(\"out.txt\") text_trigrams &lt;- text %&gt;% unnest_tokens(trigram, text, token = \"ngrams\", n = 3) text_trigrams trigrams_separated &lt;- text_trigrams %&gt;% separate(trigram, c(\"word1\", \"word2\", \"word3\"), sep = \" \") # stopwords Indonesia trigrams_filtered &lt;-",

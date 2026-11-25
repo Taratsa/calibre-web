@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12568?v=1795443090",
   "cover_og_url": "/cover/12568/og?v=1795443090",
+  "has_cover": false,
   "url": "/book/r-read-pdf-onno-widodo-purbo/",
   "rating": null,
   "comment": "dengan pdftools install.packages(\"pdftools\") library(pdftools) text &lt;- pdf_text(\"folder/tempat/data/namafile.pdf\") text &lt;- pdf_text(\"data/BUSINESSCENTER.pdf\") dengan tm install.packages(\"tm\") library(tm) read &lt;- readPDF(control = list(text = \"-layout\")) document &lt;- Corpus(URISource(\"./71_PV.62.pdf\"), readerControl = list(reader = read)) doc &lt;- content(document 1 ) head(doc) Pranala Menarik R",

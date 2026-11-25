@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12603?v=1795443193",
   "cover_og_url": "/cover/12603/og?v=1795443193",
+  "has_cover": false,
   "url": "/book/mikrotik-dhcp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setup DHCP Server di Mikrotik melalui console /ip address add interface=bridge1 address=x.x.x.x/x /ip dhcp-server setup Alternatif Secara manual Setup DHCP Server di Mikrotik secara manual menggunakan console, /ip pool add name=pool8 ranges=YYY.YYY.YYY.100-YYY.YYY.YYY.120 /ip dhcp-server network add address=YYY.YYY.YYY.0/24 gateway=YYY.YYY.YYY.1 /ip dhcp-server add interface=ether8",

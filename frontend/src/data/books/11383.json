@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11383?v=1795439746",
   "cover_og_url": "/cover/11383/og?v=1795439746",
+  "has_cover": false,
   "url": "/book/python-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "The time module This module provides a number of functions to deal with dates and the time within a day. It's a thin layer on top of the C runtime library. A given date and time can either be represented as a floating point value (the number of seconds since a reference date, usually January 1st, 1970), or as a time tuple. Getting the current time Example: Using the time module to get the current",

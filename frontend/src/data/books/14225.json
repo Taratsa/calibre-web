@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14225?v=1795449113",
   "cover_og_url": "/cover/14225/og?v=1795449113",
+  "has_cover": false,
   "url": "/book/mikrotik-port-forwarding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contoh: /ip address print # ADDRESS NETWORK INTERFACE 0 D 192.168.0.168/24 192.168.0.0 ether1 1 192.168.100.1/24 192.168.100.0 bridge1 /ip firewall nat add chain=dstnat dst-address=192.168.0.168 action=dst-nat to-addresses=192.168.100.1 /ip firewall nat add chain=dstnat dst-port=80 action=dst-nat protocol=tcp to-address=192.168.100.200 to-port=80 Supaya bisa berjalan lancar port service 80 di",

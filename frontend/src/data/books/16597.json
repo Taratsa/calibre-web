@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16597?v=1795461830",
   "cover_og_url": "/cover/16597/og?v=1795461830",
+  "has_cover": false,
   "url": "/book/llm-create-model-tanpa-huggingface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuat library atau model Ollama berbahasa Indonesia tanpa bergantung pada Hugging Face , kamu bisa membangun atau melatih (fine-tune) model LLM secara lokal, lalu menjalankannya melalui Ollama . Berikut adalah langkah-langkah ringkas dan teknisnya : Contents 1 Tujuan: 2 PRA-SYARAT: 3 ALUR UMUM: 4 Ambil Dataset Bahasa Indonesia 5 Preprocessing Dataset 6 Fine-tune Model (LLaMA/Mistral) 7",

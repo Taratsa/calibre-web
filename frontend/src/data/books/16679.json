@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16679?v=1795462481",
   "cover_og_url": "/cover/16679/og?v=1795462481",
+  "has_cover": false,
   "url": "/book/mediawiki-maintence-delete-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "ini lumayan berbahaya masuk ke mysql START TRANSACTION; DELETE FROM user_groups WHERE ug_user &gt; 5; DELETE FROM user_properties WHERE up_user &gt; 5; DELETE FROM user_former_groups WHERE ufg_user &gt; 5; DELETE FROM user_newtalk WHERE user_id &gt; 5; DELETE FROM user WHERE user_id &gt; 5; DELETE FROM wiki_user_groups WHERE ug_user &gt; 5; DELETE FROM wiki_user_properties WHERE up_user &gt; 5; DELETE FROM",

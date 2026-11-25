@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11129?v=1795439090",
   "cover_og_url": "/cover/11129/og?v=1795439090",
+  "has_cover": false,
   "url": "/book/nmap-enumeration-smb-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/smb-enum-users.html Contents 1 File smb-enum-users 2 User Summary 3 Example Usage 4 Script Output 5 Referensi File smb-enum-users Script types: hostrule Categories: auth, intrusive Download: http://nmap.org/svn/scripts/smb-enum-users.nse User Summary Attempts to enumerate the users on a remote Windows system, with as much information as possible, through",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14351?v=1795449598",
   "cover_og_url": "/cover/14351/og?v=1795449598",
+  "has_cover": false,
   "url": "/book/belajar-c-compile-hello-world-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Buat Source Code 2 Compile 3 Run 4 Referensi 5 Pranala Menarik Buat Source Code vi helloworld.c #include  int main() { // printf() displays the string inside quotation printf(\"Hello, World!\"); return 0; } Compile gcc helloworld.c -o a.out Run ./a.out Referensi https://www.programiz.com/c-programming/examples/print-sentence Pranala Menarik Belajar C Programming",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10412?v=1795437010",
   "cover_og_url": "/cover/10412/og?v=1795437010",
+  "has_cover": false,
   "url": "/book/rt2860v2-sh-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/bin/sh # # by lintel@gmail.com, hoowa.sun@gmail.com # # by memccpy@gmail.com 2014.8 append DRIVERS \"rt2860v2\" prepare_config() { #获取参数 存储配置的变量 目标配置关键字 # Get parameter storage configuration variable target configuration keyword local num=0 mode disabled #准备产生RaX的无线配置 # Ready to produce RaX wireless configuration local device=$1 #获取当前用户配置的无线Mac # Get current user configurable wireless Mac",

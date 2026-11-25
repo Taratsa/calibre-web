@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/10418?v=1795437029",
   "cover_og_url": "/cover/10418/og?v=1795437029",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-postfix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install postfix di Ubuntu dapat dilakukan menggunakan perintah # apt-get install postfix Dalam proses instalasi Pilih Postfix agar beroperasi sebagai - internet site. Isi hostname dengan Fully Qualified Domain Name ( FQDN ), misalnya, server.perusahaan.com Jika ingin menjadi relay untuk mesin-mesin di LAN , kita perlu mengedit # vi /etc/postfix/main.cf Pastikan ada isi mydestination =",

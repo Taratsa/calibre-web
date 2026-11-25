@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11476?v=1795439973",
   "cover_og_url": "/cover/11476/og?v=1795439973",
+  "has_cover": false,
   "url": "/book/python-mining-tcpdump-onno-widodo-purbo/",
   "rating": null,
   "comment": "import subprocess as sub p = sub.Popen(('sudo', 'tcpdump', '-l'), stdout=sub.PIPE) for row in iter(p.stdout.readline, b ): print row.rstrip() # process here Referensi http://stackoverflow.com/questions/17904231/handling-tcpdump-output-in-python",

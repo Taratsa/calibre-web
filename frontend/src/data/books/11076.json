@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11076?v=1795438953",
   "cover_og_url": "/cover/11076/og?v=1795438953",
+  "has_cover": false,
   "url": "/book/bokeh-server-terima-udp-dengan-x-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Sisi CLIENT 1.1 client.py 1.2 Arduino Program 2 Sisi SERVER 2.1 udp-server.py 2.2 Server Sisi CLIENT client.py python script untuk testing server bokeh import sys import time import socket import random # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('192.168.0.80', 8888)",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12068?v=1795441452",
   "cover_og_url": "/cover/12068/og?v=1795441452",
+  "has_cover": false,
   "url": "/book/samba-versi-1-0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala server rewel perlu di set secara manual agar pakai versi lama, caranya, mount -t cifs //192.168.0.7/share1 /mnt/tera1/ -o password=123456 \\ -o username=userkita -o vers=1.0,_netdev -o vers=1.0,_netdev",

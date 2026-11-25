@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12684?v=1795443423",
   "cover_og_url": "/cover/12684/og?v=1795443423",
+  "has_cover": false,
   "url": "/book/dbench-internet-offline-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 RaspberryPi 2 Asus MiniPC 3 VM 1 Core 1024M RAM 4 VM 2 Core 2048M RAM 5 VM 4 Core 4096M RAM 6 Pranala Menarik RaspberryPi mkdir -p /mnt/public umount /mnt/public/ mount.cifs //192.168.0.1/public /mnt/public -o username=pi,password=raspberry dbench --directory=/mnt/public/ --loadfile=/usr/share/dbench/client.txt --skip-cleanup 20 Hasil Operation Count AvgLat MaxLat",

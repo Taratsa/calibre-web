@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/10183?v=1795436290",
   "cover_og_url": "/cover/10183/og?v=1795436290",
+  "has_cover": false,
   "url": "/book/high-quality-screen-capture-with-avconv-onno-widodo-purbo/",
   "rating": null,
   "comment": "avconv -f x11grab -r 25 -s 1280x720 -i :0.0+0,0 -vcodec libx264 -pre lossless_ultrafast -threads 0 video.mkv Presets are now called .avpreset When capturing with audio, we need to specify stream ID for the -pre option: avconv -f alsa -i pulse -f x11grab -r 25 -s 1280x720 -i :0.0+0,0 -acodec libfaac -vcodec libx264 -pre:0 lossless_ultrafast -threads 0 video.mkv Note that on Mint 13 -acodec",

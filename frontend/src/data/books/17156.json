@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17156?v=1795464287",
   "cover_og_url": "/cover/17156/og?v=1795464287",
+  "has_cover": false,
   "url": "/book/edit-konfigurasi-pemblokiran-dansguardian-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadangkala kita perlu menambahkan atau mengurangi hal yang di blokir oleh Dansguardian. Caranya melalui mengedit file konfigurasi yang ada di folder cd /etc/dansguardian/lists Edit salah satu dari file berikut untuk memblokir bannedextensionlist bannediplist bannedmimetypelist bannedphraselist bannedregexpheaderlist bannedregexpurllist bannedsitelist bannedurllist contentregexplist",

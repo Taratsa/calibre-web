@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13667?v=1795446999",
   "cover_og_url": "/cover/13667/og?v=1795446999",
+  "has_cover": false,
   "url": "/book/openwrt-luci-app-statistics-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://oldwiki.archive.openwrt.org/doc/howto/luci_app_statistics luci-app-statistics Out of the box, OpenWRT can show you real-time statistics, however it will not store the data for historical view. Install luci-app-statistics to have a nice historical data graphs for router, eg: ping, interfaces bandwidth utilization, cpu load, ram, disk, uptime, etc... To see all the available",

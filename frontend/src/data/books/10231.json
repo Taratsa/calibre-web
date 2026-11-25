@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10231?v=1795436445",
   "cover_og_url": "/cover/10231/og?v=1795436445",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-ssh-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi ssh server sudo su apt-get update apt-get install openssh-server Supaya start waktu boot, edit vi /etc/rc.local Tambahkan sebelum exit 0 service ssh start Pranala Menarik RaspberryPi",

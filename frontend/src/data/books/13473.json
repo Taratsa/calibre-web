@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13473?v=1795446074",
   "cover_og_url": "/cover/13473/og?v=1795446074",
+  "has_cover": false,
   "url": "/book/r-tidytext-document-term-matrices-mining-financial-articles-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/05-document-term-matrices.Rmd library(tm.plugin.webmining) library(purrr) company &lt;- c(\"Microsoft\", \"Apple\", \"Google\", \"Amazon\", \"Facebook\", \"Twitter\", \"IBM\", \"Yahoo\", \"Netflix\") symbol &lt;- c(\"MSFT\", \"AAPL\", \"GOOG\", \"AMZN\", \"FB\", \"TWTR\", \"IBM\", \"YHOO\", \"NFLX\") download_articles &lt;- function(symbol) {",

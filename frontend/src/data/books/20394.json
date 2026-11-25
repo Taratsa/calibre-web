@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20394?v=1795477109",
   "cover_og_url": "/cover/20394/og?v=1795477109",
+  "has_cover": false,
   "url": "/book/nat-masquarade-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melakukan masquarade kita menggunakan perintah berikut (dengan asumsi sambungan ke Internet melalui usb0) echo 1 &gt; /proc/sys/net/ipv4/ip_forward iptables -t nat -A POSTROUTING -o usb0 -j MASQUERADE Jika LAN menuju ke Internet menggunakan WLAN wlp2s0 echo 1 &gt; /proc/sys/net/ipv4/ip_forward iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE Jika LAN menuju ke Internet mengggunakan eth0",

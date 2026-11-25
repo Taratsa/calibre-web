@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17399?v=1795465137",
   "cover_og_url": "/cover/17399/og?v=1795465137",
+  "has_cover": false,
   "url": "/book/schoolonffline-memastikan-semua-server-di-mesin-pembuat-distro-dimatikan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Karena kita akan membuat banyak server di Distro SchoolOnffLine . Matikan seluruh server yang ada di mesin host pembuat Distro, melalui shell dengan perintah sudo /etc/init.d/mysql stop sudo /etc/init.d/apache2 stop sudo /etc/init.d/postfix stop sudo /etc/init.d/vsftpd stop sudo /etc/init.d/dovecot stop sudo /etc/init.d/webmin stop sudo /etc/init.d/dhcp3-server stop sudo /etc/init.d/bind9 stop",

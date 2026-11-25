@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13270?v=1795445349",
   "cover_og_url": "/cover/13270/og?v=1795445349",
+  "has_cover": false,
   "url": "/book/keras-read-csv-timeseries-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://stackoverflow.com/questions/47408427/tensorflow-timeseries-data-import-with-datetime According to the source code, a RandomWindowInputFn accepts either a CSVReader or a NumpyReader. So you could use pandas to read the CSV, do the date parsing and then feed the transformed dates into a NumpyReader My time-series data looks like this timestamp value 0 2014-02-14 14:30:00 0.132 1",

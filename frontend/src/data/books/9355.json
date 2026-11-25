@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9355?v=1795432598",
   "cover_og_url": "/cover/9355/og?v=1795432598",
+  "has_cover": false,
   "url": "/book/openbts-2-8-menjalankan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cek USRP ls -lR /dev/bus/usb | grep usrp Harus keluar kira-kira crw-rw-r-- 1 root usrp 189, 9 Sep 21 10:07 010 Bisa dilakukan di tiga (3) windows yang berbeda cd /usr/local/src/openbts-2.8.0/subscriberRegistry/trunk/ ./sipauthserve &amp; cd /usr/local/src/openbts-2.8.0/smqueue/trunk/smqueue/ ./smqueue &amp; cd /usr/local/src/yate rm -Rf /var/log/yate ./run -t -l /var/log/yate -vvvv -c /usr/local/etc/yate",

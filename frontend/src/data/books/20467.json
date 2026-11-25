@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20467?v=1795477322",
   "cover_og_url": "/cover/20467/og?v=1795477322",
+  "has_cover": false,
   "url": "/book/mediawiki-mereset-isi-database-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsinya username root password 123456 database mediawiki username mediawiki password mediawiki lokasi /var/www/wiki Lakukan service mysql stop service mysql start mysqladmin --user=root --password=123456 --force drop mediawiki mysqladmin --user=root --password=123456 create mediawiki mysql -u mediawiki -pmediawiki mediawiki &lt; /var/www/wiki/maintenance/tables.sql service mysql stop service mysql",

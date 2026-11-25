@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12722?v=1795443538",
   "cover_og_url": "/cover/12722/og?v=1795443538",
+  "has_cover": false,
   "url": "/book/internet-offline-mengukur-kiwix-x86-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Server 1.1 kiwix-on.sh 1.2 kiwix-off.sh 2 Install Siege 3 URL kiwix 4 Client Test 4.1 Script kiwixtest.sh 4.2 Script kiwix-vmall.sh 5 Pranala Menarik Server kiwix-on.sh echo 123456 | sudo -S killall kiwix-serve echo 123456 | sudo -S killall kiwix-serve echo 123456 | sudo -S killall kiwix-serve echo 123456 | sudo -S killall kiwix-serve cd /usr/local/src/kiwix-0.10-x86_84/bin/",

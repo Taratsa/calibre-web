@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10030?v=1795435803",
   "cover_og_url": "/cover/10030/og?v=1795435803",
+  "has_cover": false,
   "url": "/book/voip-astersk-dial-round-robin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi: http://thr3ads.net/asterisk-users/2011/07/1464366-Macro-to-Dial-a-Channel-Group-using-Round-robin [macro-round-robin] exten =&gt; s, 1, Dial(SIP/1, 30) ; dial SIP/1 for 30\" exten =&gt; s, n, Dial(SIP/2, 30) ; dial SIP/2 for 30\" exten =&gt; s, n, Dial(SIP/3, 30) ; dial SIP/3 for 30\" exten =&gt; s, n, Dial(SIP/4, 30) ; dial SIP/4 for 30\" exten =&gt; s, n, Goto(1) ; start again Referensi",

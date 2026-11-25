@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17766?v=1795466225",
   "cover_og_url": "/cover/17766/og?v=1795466225",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-webmin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Webmin adalah software yang memudahkan kita untuk mengkonfigurasi Server Linux menggunakan tampilan Grafis , Source Code Webmin dapat di ambil di alamat http://www.webmin.com/download.html Agar Webmin dapat di jalankan menggunakan HTTPS , kita perlu menginstall SSLEAY. Gunakan perintah # apt-get install libnet-ssleay-perl Copy &amp; extract Webmin cd /usr/local/src/ tar zxvf webmin-1.530.tar.gz Setup",

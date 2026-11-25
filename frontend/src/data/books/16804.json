@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16804?v=1795463292",
   "cover_og_url": "/cover/16804/og?v=1795463292",
+  "has_cover": false,
   "url": "/book/cyber-security-python-kirim-wazuh-alert-ke-ollama-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Script Python 2 1. Simpan script 3 2. Periksa model Ollama 4 3. Uji tanpa menghubungi Ollama 5 4. Kirim alert ke Ollama 6 5. Membaca hasil 7 6. Mode monitoring langsung 8 Bagian penting dalam script 8.1 `compact_alert()` 8.2 `get_rule_level()` 8.3 `build_prompt()` 8.4 `SYSTEM_PROMPT` 8.5 `analyze_with_ollama()` 8.6 `append_jsonl()` 9 Bila Ollama berada di komputer lain Script Python",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 860,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "ollama",

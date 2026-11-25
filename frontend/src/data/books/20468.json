@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20468?v=1795477325",
   "cover_og_url": "/cover/20468/og?v=1795477325",
+  "has_cover": false,
   "url": "/book/wikipedia-mereset-isi-database-wikipedia-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsinya username root password 123456 database wikipedia username wikipedia password wikipedia lokasi /var/www/wikipedia Lakukan service mysql stop service mysql start mysqladmin --user=root --password=123456 --force drop wikipedia mysqladmin --user=root --password=123456 create wikipedia mysql -u wikipedia -pwikipedia wikipedia &lt; /var/www/wikipedia/maintenance/tables.sql service mysql stop",

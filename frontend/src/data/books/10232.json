@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10232?v=1795436448",
   "cover_og_url": "/cover/10232/og?v=1795436448",
+  "has_cover": false,
   "url": "/book/raspbian-setup-network-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/network/interfaces Isi dengan # Please note that this file is written to be used with dhcpcd # For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf' # Include files from /etc/network/interfaces.d: source-directory /etc/network/interfaces.d auto lo iface lo inet loopback auto eth0 iface eth0 inet manual allow-hotplug wlan0 iface wlan0 inet manual wpa-conf",

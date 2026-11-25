@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14076?v=1795448533",
   "cover_og_url": "/cover/14076/og?v=1795448533",
+  "has_cover": false,
   "url": "/book/mariadb-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt update sudo apt -y install mariadb-client mariadb-server Supaya aman sudo mysql_secure_installation Update user root mysql -u [user] -p sudo mysql -u root -p update mysql.user set plugin='' where user='root'; Restart /etc/init.d/mysql restart",

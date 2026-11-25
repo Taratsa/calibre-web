@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15411?v=1795454780",
   "cover_og_url": "/cover/15411/og?v=1795454780",
+  "has_cover": false,
   "url": "/book/ctf-dev-random-walkthrough-onno-widodo-purbo/",
   "rating": null,
   "comment": "Objective: /root/flag.txt Contents 1 Download &amp; Install 2 netdiscover 3 Port Scan 4 Cek Web Server 5 Cek FTP server 6 Referensi Download &amp; Install Download https://vulnhub.com/entry/devrandom-relativity-v101,55/#download Install VirtualBox berbentuk vdmk Pastikan network bridge jangan NAT netdiscover Lakukan, netdiscover -r 192.168.0.0/24 Hasilnya, Currently scanning: Finished! | Screen View:",

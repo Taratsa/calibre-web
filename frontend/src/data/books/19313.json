@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19313?v=1795472629",
   "cover_og_url": "/cover/19313/og?v=1795472629",
+  "has_cover": false,
   "url": "/book/akses-smb-file-server-windows-file-server-menggunakan-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Akses ke SMB / File Server / Windows File Server / XP Network Neighbourgood caranya Melalui Desktop klik Places -&gt; Connect to Server .. -&gt; Service Type -&gt; Windows Share -&gt; Server: IP address File Server yang di maksud Melalui Shell mkdir /mnt/sharefolder mount -t cifs //ipaddressfileserver/sharefolder /mnt/sharefolder -o password= Pranala Menarik Linux Howto",

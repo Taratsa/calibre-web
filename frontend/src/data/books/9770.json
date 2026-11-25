@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9770?v=1795434822",
   "cover_og_url": "/cover/9770/og?v=1795434822",
+  "has_cover": false,
   "url": "/book/ipv4-in-ipv6-tunnel-membuang-point-to-point-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara membuang tunnel device # /sbin/ip -6 tunnel del  Penggunaan (contoh membuang tiga tunnel) # /sbin/ip -6 route del  dev ip6tnl1 # /sbin/ip link set ip6tnl1 down # /sbin/ip -6 tunnel del ip6tnl1 # /sbin/ip -6 route del  dev ip6tnl2 # /sbin/ip link set ip6tnl2 down # /sbin/ip -6 tunnel del ip6tnl2 # /sbin/ip -6 route del  dev ip6tnl3 #",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12910?v=1795444192",
   "cover_og_url": "/cover/12910/og?v=1795444192",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-static-routing-sedehana-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: Ethernet1/1 - ke Internet Ethernet1/2 - R2: Ethernet 1/1 Ethernet1/3 - LAN R2: Ethernet1/1 - R1: Ethernet1/2 Ethernet1/2 - LAN R1: enable configure terminal ipv6 unicast-routing interface ethernet1/1 ip address dhcp ip dhcp client request no shutdown exit interface ethernet1/2 ip address 172.16.1.1 255.255.255.252 ipv6 address 2001:172:16:1::1/64 no shutdown exit interface ethernet1/3 ip",

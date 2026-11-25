@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20389?v=1795477095",
   "cover_og_url": "/cover/20389/og?v=1795477095",
+  "has_cover": false,
   "url": "/book/menghilangkan-plymount-di-ubuntu-agak-menjadi-splash-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit sudo gedit /etc/default/grub cari GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\" ganti GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash text\" simpan Update sudo update-grub Pranala Menarik Ganti Splash Screen Ubuntu",

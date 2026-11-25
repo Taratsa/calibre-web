@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/18467?v=1795468976",
   "cover_og_url": "/cover/18467/og?v=1795468976",
+  "has_cover": false,
   "url": "/book/voip-enum-demo-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit named.conf.local vi /etc/bind/named.conf.local masukan entry domain 5.2.6.e164.id zone \"5.2.6.e164.id\" IN { type master; file \"/etc/bind/5.2.6.e164.id.db\"; }; Semua data nomor telepon harus dimasukan ke file /etc/bind/5.2.6.e164.id.db vi /etc/bind/5.2.6.e164.id.db $TTL 86400 @ IN SOA ns.warnet.co.id admin.warnet.co.id. ( 42 ; serial (d. adams) 3H ; refresh 15M ; retry 1W ; expiry 1D ) ;",

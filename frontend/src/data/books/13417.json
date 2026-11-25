@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13417?v=1795445888",
   "cover_og_url": "/cover/13417/og?v=1795445888",
+  "has_cover": false,
   "url": "/book/mqtt-mosquitto-client-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt update apt install mosquitto-clients Pemakaian mosquitto_sub -h localhost -t test -u \"your-user\" -P \"your-password\" mosquitto_pub -h localhost -t test -m \"hello world\" -u \"your-user\" -P \"your-password\" mosquitto_sub -h mqtt.mydomain.com -t test -p 8883 --capath /etc/ssl/certs/ -u \"your-username\" -P \"your-password\" mosquitto_pub -h mqtt.mydomain.com -t test -m \"hello world\" -p 8883",

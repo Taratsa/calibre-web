@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12777?v=1795443712",
   "cover_og_url": "/cover/12777/og?v=1795443712",
+  "has_cover": false,
   "url": "/book/cisco-bridge-dengan-nat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi bridge irb !-- This command enables the IRB feature on this router. interface Ethernet1/0 no ip address no ip directed-broadcast bridge-group 1 no shutdown !-- The interface E1/0 is in bridge-group 1. Interface Ethernet1/1 no ip address no ip directed-broadcast bridge-group 1 no shutdown !-- The interface E1/1 is in bridge-group 1. interface Ethernet1/2 no ip address no ip",

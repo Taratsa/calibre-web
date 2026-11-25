@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16017?v=1795458252",
   "cover_og_url": "/cover/16017/og?v=1795458252",
+  "has_cover": false,
   "url": "/book/nmap-check-ssh2-chiper-onno-widodo-purbo/",
   "rating": null,
   "comment": "nmap -p 22 -Pn --script ssh2-enum-algos --script-args ssh2-enum-algos.mode=weak-macs localhost",

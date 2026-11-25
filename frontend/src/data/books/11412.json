@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11412?v=1795439813",
   "cover_og_url": "/cover/11412/og?v=1795439813",
+  "has_cover": false,
   "url": "/book/python-selenium-crawler-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING masih belum jalan / saya tidak bisa install / pakainya dengan benar Quickstart pip install -e git+ https://github.com/cmwslw/selenium-crawler.git#egg=selenium-crawler from seleniumcrawler import handle_url print handle_url(' https://news.ycombinator.com/item?id=5626377' ) This will open up a browser window, 'click' on the main link, and load the article. It will print the following: {",

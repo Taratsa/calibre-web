@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19240?v=1795472321",
   "cover_og_url": "/cover/19240/og?v=1795472321",
+  "has_cover": false,
   "url": "/book/backtrack-instalsi-liveusb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara membuat LiveUSB Backtrack Masukan USB drive (minimal 2Gbyte) Format USB drive ke FAT32 (misalnya USB drive di /dev/sdb1) # mkfs.vfat /dev/sdb1 Install UNetbootin Jalankan UNetbootin gunakan backtrack-finel ISO. Pilih USB drive &amp; klik \"OK\" Masuk ke BackTrack dengan default username &amp; password root / toor. Referensi http://www.backtrack-linux.org/tutorials/usb-live-install/",

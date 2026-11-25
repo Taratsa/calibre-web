@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11435?v=1795439870",
   "cover_og_url": "/cover/11435/og?v=1795439870",
+  "has_cover": false,
   "url": "/book/python-nltk-twitter-sentiment-analysis-onno-widodo-purbo/",
   "rating": null,
   "comment": "This post describes the implementation of sentiment analysis of tweets using Python and the natural language toolkit NLTK. The post also describes the internals of NLTK related to this implementation. Background The purpose of the implementation is to be able to automatically classify a tweet as a positive or negative tweet sentiment wise. The classifier needs to be trained and to do that, we",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1999,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "false",

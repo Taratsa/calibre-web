@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19340?v=1795472779",
   "cover_og_url": "/cover/19340/og?v=1795472779",
+  "has_cover": false,
   "url": "/book/backtrack-menjebol-ssh-secara-bruteforce-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menjebol akses SSH menggunakan sniffing lumayan susah. Oleh karenanya ada mencoba menjebol SSH mungkin dapat menggunakan cara kasar dengan mencoba password satu per satu. Perintah yang dapat digunakan adalah python brutessh.py -h targethost -u user -d passwordict Contoh python brutessh.py -h 192.168.0.2 -u namauser -d /pentest/passwords/wordlists/darkc0de.lst Pranala Menarik Backtrack",

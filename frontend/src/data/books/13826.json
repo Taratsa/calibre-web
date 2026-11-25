@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13826?v=1795447608",
   "cover_og_url": "/cover/13826/og?v=1795447608",
+  "has_cover": false,
   "url": "/book/wemos-analogread-a0-udp-send-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include  /* WiFi network name and password */ const char * ssid = \"HUAWEI-1A73\"; const char * pwd = \"52408495\"; // IP address to send UDP data to. // it can be ip address of the server or // a network broadcast address // here is broadcast address const char * udpAddress = \"192.168.8.102\"; const int udpPort = 8888; //create UDP instance WiFiUDP udp; void",

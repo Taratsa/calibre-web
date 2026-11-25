@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15482?v=1795455067",
   "cover_og_url": "/cover/15482/og?v=1795455067",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-lcd-i2c-contoh-lagi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://microdigisoft.com/how-to-use-i2c-lcd-with-esp8266-wemos-d1-mini/ Download https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip /* I2C LCD ESP8266-Wenos D1 Mini GND GND VCC VIN SDA D2 SCL D1 */ #include &lt; LiquidCrystal_I2C.h &gt; // set the LCD number of columns and rows int lcdColumns = 16; int lcdRows = 2; // set LCD address, number of columns and rows // if you",

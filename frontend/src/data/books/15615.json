@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15615?v=1795455774",
   "cover_og_url": "/cover/15615/og?v=1795455774",
+  "has_cover": false,
   "url": "/book/usb-offline-debian-11-7-install-kiwix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Download zim backup wikipedia dan wikitionary 3 Run 4 Script start-kiwix.sh 5 Pranala Menarik Install sudo su apt -y install kiwix-tools Download zim backup wikipedia dan wikitionary sudo mkdir -p /usr/local/src/kiwix cd /usr/local/src/kiwix wget https://download.kiwix.org/zim/wikipedia/wikipedia_id_all_nopic_2022-12.zim wget",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12215?v=1795441871",
   "cover_og_url": "/cover/12215/og?v=1795441871",
+  "has_cover": false,
   "url": "/book/arduino-format-sd-card-onno-widodo-purbo/",
   "rating": null,
   "comment": "Linux: With a SD card inserted, open a terminal window. At the prompt, type df, and press enter. The windows will report the device name of your SD card, it should look something like /dev/sdb1. Unmount the SD card, but leave it in the computer. Type sudo mkdosfs -F 16 /dev/sdb1 replacing the device name with yours. Remove the SD card and replace it to verify it works.",

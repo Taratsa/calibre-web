@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10242?v=1795436482",
   "cover_og_url": "/cover/10242/og?v=1795436482",
+  "has_cover": false,
   "url": "/book/ipv6-route-ipv6-enable-forwarding-di-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar router dapat memforward IPv6 kita perlu meng-enable sudo sysctl -w net.ipv6.conf.all.forwarding=1",

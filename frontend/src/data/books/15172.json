@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15172?v=1795453517",
   "cover_og_url": "/cover/15172/og?v=1795453517",
+  "has_cover": false,
   "url": "/book/5g-srsepc-enb-mcc-510-mnc-33-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Config EPC 1.1 config epc.conf 1.2 config user_db.csv 2 Config eNB 2.1 edit enb.conf 2.2 edit rr.conf Config EPC cd ~/srsLTE/srsepc config epc.conf vi epc.conf tac = 0x0002 mcc = 510 mnc = 33 config user_db.csv vi user_db.csv # # .csv to store UE's information in HSS # Kept in the following format: \"Name,Auth,IMSI,Key,OP_Type,OP/OPc,AMF,SQN,QCI,IP_alloc\" # # Name: Human readable name",

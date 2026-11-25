@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19789?v=1795474994",
   "cover_og_url": "/cover/19789/og?v=1795474994",
+  "has_cover": false,
   "url": "/book/samba-permission-problem-waktu-create-folder-share-onno-widodo-purbo/",
   "rating": null,
   "comment": "Itu kemungkinan masalah permission di folder /var/lib/samba/usershares aja coba di ketik chmod -Rf 777 /var/lib/samba/usershares chown -Rf nobody.nogroup /var/lib/samba/usershares kemudian lakukan perintah sharing folder samba kembali Pranala Menarik SAMBA Instalasi dan Konfigurasi SMB Samba Network Neighbourhood Instalasi Samba SAMBA: Permission Problem waktu Create Folder Share SAMBA:",

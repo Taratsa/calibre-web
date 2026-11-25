@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12623?v=1795443245",
   "cover_og_url": "/cover/12623/og?v=1795443245",
+  "has_cover": false,
   "url": "/book/openwrt-quagga-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://openmaniak.com/quagga_tutorial.php Contents 1 Install 2 Quagga Daemon 3 Konfigurasi 4 Referensi 5 Pranala Menarik Install opkg update opkg install quagga Quagga Daemon Restart Quagga service: /etc/init.d/quagga restart Cek ps Konfigurasi File /etc/quagga/zebra.conf: hostname jandakot ! define password for bgpd daemon (for connecting to daemon via telnet) password",

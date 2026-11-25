@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13261?v=1795445317",
   "cover_og_url": "/cover/13261/og?v=1795445317",
+  "has_cover": false,
   "url": "/book/trains-a-simple-deep-multi-layer-perceptron-on-the-mnist-dataset-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/keras-team/keras/blob/master/examples/mnist_mlp.py # Trains a simple deep NN on the MNIST dataset. # Gets to 98.40% test accuracy after 20 epochs # (there is *a lot* of margin for parameter tuning). # 2 seconds per epoch on a K520 GPU. from __future__ import print_function import keras from keras.datasets import mnist from keras.models import Sequential from",

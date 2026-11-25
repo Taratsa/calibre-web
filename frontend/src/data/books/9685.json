@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9685?v=1795434513",
   "cover_og_url": "/cover/9685/og?v=1795434513",
+  "has_cover": false,
   "url": "/book/instalasi-groupoffice-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan vi /etc/apt/sources.list Kalimat deb http://repos.groupoffice.eu/ threeseven main Lakukan gpg --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 01F1AE44 gpg --export --armor 01F1AE44 | sudo apt-key add - apt-get update Instalasi sudo apt-get install php5-dev php-pear sudo apt-get install groupoffice-com Masukan Password root MySQL Password akses ke database groupoffice Informasi",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12718?v=1795443529",
   "cover_og_url": "/cover/12718/og?v=1795443529",
+  "has_cover": false,
   "url": "/book/sudo-menjalankan-command-di-script-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/425754/how-do-i-run-a-sudo-command-inside-a-script Cara yang normal tambahkan sudo sebelum menjalankan script sudo myscript.sh Atau jika hanya salah satu command saja, bisa sudo -u username \"perintah\" Atau kalau mau memaksa, bisa exec sudo su -c \"perintah\" Jika di tanya password Tambahkan script echo passwordsudonya | sudo -S 'script.sh' Referensi",
@@ -70,7 +71,7 @@
       ],
       [
         9869,
-        0.46
+        0.47
       ],
       [
         13423,

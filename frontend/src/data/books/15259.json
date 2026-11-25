@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15259?v=1795453901",
   "cover_og_url": "/cover/15259/og?v=1795453901",
+  "has_cover": false,
   "url": "/book/konfigurasi-gnb-yaml-ueransim-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengkonfigurasi gNB yang berhubungan dengan open5gs pada Ueransim, kita dapat mengedit file open5gs-gnb berikut ini, nano /usr/local/src/UERANSIM/config/open5gs-gnb.yaml Parameter yang perlu di masukan adalah IP address gnb, misalnya, # configure with server1 IP linkIp: 192.168.100.237 # gNB's local IP address for Radio Link Simulation (Usually same with local IP) ngapIp: 192.168.100.237 #",

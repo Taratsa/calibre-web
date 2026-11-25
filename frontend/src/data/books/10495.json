@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10495?v=1795437268",
   "cover_og_url": "/cover/10495/og?v=1795437268",
+  "has_cover": false,
   "url": "/book/openbts-5-0-demo-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Aktifkan NAT iptables -t nat -A POSTROUTING -o enp0s4 -j MASQUERADE echo 1 &gt; /proc/sys/net/ipv4/ip_forward Entah kenapa harus start manual cd /usr/local/sbin ./sipauthserve &amp; ./smqueue &amp; asterisk &amp; cd /OpenBTS/ ./OpenBTS Masuk ke cd /OpenBTS/ ./OpenBTSCLI Paramter demo (Singtel) config GSM.Radio.C0 51 config GSM.Identity.MCC 525 config GSM.Identity.MNC 01 config GSM.Identity.ShortName SingTel",

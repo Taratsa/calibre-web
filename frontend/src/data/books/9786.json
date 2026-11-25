@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9786?v=1795434908",
   "cover_og_url": "/cover/9786/og?v=1795434908",
+  "has_cover": false,
   "url": "/book/openser-dengan-backend-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat menggabungkan beberapa mesin asterisk di belakang sebuah Server OpenSER. Persiapan di sisi Asterisk Siapkan dan Edit /etc/asterisk/sip.conf # vi /etc/asterisk/sip.conf Pastikan [general] allowguest=yes allowexternalinvite=yes Persiapan di sisi OpenSER Siapkan dan Edit file /etc/openser/openser.cfg Lakukan rewrite untuk nomor-nomor yang ada di Asterisk. Misalnya ke nomor 600 di arahkan",

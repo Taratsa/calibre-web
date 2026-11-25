@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16844?v=1795463428",
   "cover_og_url": "/cover/16844/og?v=1795463428",
+  "has_cover": false,
   "url": "/book/mcp-instalasi-pip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Error tersebut berarti Python sudah ada, tetapi modul **pip** belum terpasang. Gunakan virtual environment supaya tidak mengganggu Python sistem Ubuntu. Ubuntu juga merekomendasikan penggunaan `venv` untuk paket yang dipasang melalui pip. ([Ubuntu Documentation][1]) Jalankan sebagai `root`: ```bash cd /opt/ai-stack/batch apt update apt install -y python3-full python3-venv python3-pip ``` Buat",

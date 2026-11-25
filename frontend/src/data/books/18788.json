@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18788?v=1795470054",
   "cover_og_url": "/cover/18788/og?v=1795470054",
+  "has_cover": false,
   "url": "/book/raid-membandingkan-performance-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini kita akan mencoba membandingkan performance beberapa konfigurasi software RAID . Harddisk yang digunakan disini adalah harddisk SATA dua (2) buah dengan besar 250Gbyte. Proses yang dilakukan adalah, fdisk - untuk mengkonfigurasi partsisi harddisk . Pada partisi di set bahwa tipe partisi adalah Linux . mdam - membuat RAID dari dua (2) harddisk SATA . hdparm - melihat effek RAID untuk",

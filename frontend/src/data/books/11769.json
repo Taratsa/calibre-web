@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11769?v=1795440707",
   "cover_og_url": "/cover/11769/og?v=1795440707",
+  "has_cover": false,
   "url": "/book/openssl-encrypt-decrypt-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://tombuntu.com/index.php/2007/12/12/simple-file-encryption-with-openssl/ Contents 1 Encrypt File 2 Decrypt file 3 Cara lain 4 Referensi Encrypt File Contoh perintahnya openssl aes-256-cbc -a -salt -in secrets.txt -out secrets.txt.enc Dimana, openssl - perintah untuk OpenSSL tookit aes-256-cbc - encryption cipher yang digunakan. 256bit AES digunakan oleh pemerintah US untuk encrypt",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14071?v=1795448518",
   "cover_og_url": "/cover/14071/og?v=1795448518",
+  "has_cover": false,
   "url": "/book/log-cek-auth-log-dll-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su cd /var/log cat /var/log/auth.log cat /var/log/vsftp.log cat /var/log/syslog Supaya tidak bisa di ubah chattr +a /var/log/auth.log",

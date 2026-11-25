@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9872?v=1795435238",
   "cover_og_url": "/cover/9872/og?v=1795435238",
+  "has_cover": false,
   "url": "/book/openbts-n210-gnuradio-3-7-0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebaiknya menggunakan GNURadio yang terbaru untuk menjalankan N210 karena lebih mudah. Persiapan sudo apt-get --force-yes -y install libboost-all-dev libusb-1.0-0-dev python-cheetah \\ doxygen python-docutils \\ git python cmake ethtool libfontconfig1-dev libxrender-dev libpulse-dev \\ gcc-4.7 g++ automake libtool python-dev libfftw3-dev \\ libcppunit-dev libboost-all-dev libusb-dev fort77 \\",

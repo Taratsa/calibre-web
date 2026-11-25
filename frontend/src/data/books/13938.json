@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13938?v=1795448036",
   "cover_og_url": "/cover/13938/og?v=1795448036",
+  "has_cover": false,
   "url": "/book/windows-netshell-wireless-profile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.serverwatch.com/server-tutorials/using-netsh-commands-for-wi-fi-management-in-windows-8.html Thankfully there are at least the following Netsh, or network shell, WLAN commands that allow you to access the Wi-Fi profiles: Show the list of wireless profiles: netsh wlan show profiles Retrieve the stored key (WPA, WEP, etc) of a profile: netsh wlan show profiles name=[profile",

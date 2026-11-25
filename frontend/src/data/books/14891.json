@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14891?v=1795452283",
   "cover_og_url": "/cover/14891/og?v=1795452283",
+  "has_cover": false,
   "url": "/book/android-studio-hms-setup-sdk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Add Configuration File Download agconnect-services.json Copy ke cp agconnect-services.json ~/AndroidStudioProjects/MyApplication/app/src/ Add SDK Project-level build.gradle buildscript{ dependencies { // Add dependencies. classpath 'com.huawei.agconnect:agcp:1.5.2.300' } } App-level build.gradle plugins { id 'com.android.application' id 'com.huawei.agconnect' // tambahkan } android { .... }",

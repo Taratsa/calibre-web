@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14358?v=1795449622",
   "cover_og_url": "/cover/14358/og?v=1795449622",
+  "has_cover": false,
   "url": "/book/wake-on-lan-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.techrepublic.com/article/how-to-enable-wake-on-lan-in-ubuntu-server-18-04/ Contents 1 Install ethtool 2 Cek Nama Interface 3 Aktifkan WOL 4 Make It STICK 5 Di Desktop yang akan menyalakan 6 Referensi 7 Pranala Menarik Install ethtool sudo apt update sudo apt -y install ethtool Cek Nama Interface ip a Contoh hasil enp3s0 4c:e6:76:1f:15:4c enp2s0 4c:e6:76:1f:15:4c bond0",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 187,
-    "longer_than": 23,
+    "longer_than": 22,
     "top": [
       [
         "sudo",

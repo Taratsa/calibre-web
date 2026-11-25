@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12405?v=1795442653",
   "cover_og_url": "/cover/12405/og?v=1795442653",
+  "has_cover": false,
   "url": "/book/ipv6-mobility-prinsip-operasi-mobile-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Saat sebuah mobile node pergi dari home, dia akan mengirimkan informasi tentang lokasinya ke home agent. Sebuah node yang ingin berkomunikasi dengan sebuah mobile node akan menggunakan home address dari mobile node untuk mengirim paket. Home agent akan menangkap paket ini, dan menggunakan table, tunnel paket tersebut ke mobile node care-of address. Mobile IPv6 menggunakan care-of address sebagai",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12367?v=1795442538",
   "cover_og_url": "/cover/12367/og?v=1795442538",
+  "has_cover": false,
   "url": "/book/ipv6-menampilkan-route-ipv6-yang-ada-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat men-cek apakah IPv6 sudah terkonfigurasi secara automatis. Contents 1 Install net-tools 2 Menggunakan \"ip\" 3 Penggunaan \"route\" 4 Pranala Menarik Install net-tools apt install net-tools Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route show [dev ] Contoh # /sbin/ip -6 route show dev eth0 Hasilnya kira-kira: 2001:0db8:0:f101::/64 proto kernel metric 256 mtu 1500 advmss 1440",

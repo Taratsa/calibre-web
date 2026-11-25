@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16653?v=1795462305",
   "cover_og_url": "/cover/16653/og?v=1795462305",
+  "has_cover": false,
   "url": "/book/llm-fine-tune-ollama-gemma3-270m-onno-widodo-purbo/",
   "rating": null,
   "comment": "Panduan Fine-Tuning Model Gemma 3:270M dengan Dataset JSONL untuk Ollama Model Gemma 3 270M (dari `google/gemma-3-270m` di Hugging Face) adalah varian ringan yang cocok untuk fine-tuning efisien, terutama pada perangkat dengan sumber daya terbatas. Proses fine-tuning menggunakan Parameter-Efficient Fine-Tuning (PEFT) seperti QLoRA untuk menghemat memori, dengan dataset dalam format JSONL",

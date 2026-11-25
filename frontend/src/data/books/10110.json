@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10110?v=1795436061",
   "cover_og_url": "/cover/10110/og?v=1795436061",
+  "has_cover": false,
   "url": "/book/go-language-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://technosophos.com/2013/12/02/go-1-2-on-ubuntu-12-10.html Instalasi Go Language versi terbaru Contents 1 Install godeb 2 Uninstall golang 3 Buat Go Debian Package 4 Folder tempat go Install godeb Lakukan $ sudo apt-get install golang-go $ sudo apt-get install bzr $ cd $GOPATH $ sudo go get launchpad.net/godeb Cek $ $GOPATH/bin/godeb --help atau /usr/lib/go/bin/godeb --help Uninstall",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16585?v=1795461738",
   "cover_og_url": "/cover/16585/og?v=1795461738",
+  "has_cover": false,
   "url": "/book/backup-restic-onno-widodo-purbo/",
   "rating": null,
   "comment": "Running `restic` every 5 seconds to back up a MySQL database on a remote Ubuntu server is technically possible but not recommended due to: Backup overhead (even incremental backups every 5 seconds is resource-intensive). Potential data inconsistency and corruption due to overlapping jobs. `cron` does not support per-second precision; you'd need `systemd` timers for that. That said, here's a safe",

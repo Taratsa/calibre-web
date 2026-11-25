@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9838?v=1795435102",
   "cover_og_url": "/cover/9838/og?v=1795435102",
+  "has_cover": false,
   "url": "/book/openwrt-setup-upnp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan waktu compile OpenWRT menggunakan menu ./scripts/feeds install kmod-usb-storage block-mount kmod-fs-ext4 kmod-fs-vfat kmod-nls-cp437 kmod-nls-iso8859-1 Jika USB flashdisk yang digunakan menggunakan filesystem ext4. Lakukan mkdir -p /mnt/usb mount /dev/sda1 /mnt/usb rm /var/run/minidlna/* /etc/init.d/minidlna restart Masukan ke /etc/rc.local supaya setiap booting di mount.",

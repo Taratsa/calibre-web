@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19378?v=1795472961",
   "cover_og_url": "/cover/19378/og?v=1795472961",
+  "has_cover": false,
   "url": "/book/download-youtube-ke-flv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Get the video_id from the url. It is the string after v= Next, you need the t-parameter. You can find it in the HTML source, by searching for &amp;t= and copying what is in between the equal sign (=) and the ampersand (&amp;). Now use the following command to download the video: wget -O outfile.flv \" http://www.youtube.com/get_video.php?video_id=xxxxx&amp;t=xxxxx&amp;fmt=18 \" Substitude the x'es by the video_id",

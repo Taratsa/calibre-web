@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11240?v=1795439402",
   "cover_og_url": "/cover/11240/og?v=1795439402",
+  "has_cover": false,
   "url": "/book/postfix-block-sender-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.cyberciti.biz/faq/howto-blacklist-reject-sender-email-address/ cd /etc/postfix vi sender_access Masukan address yang ingin di block user@abadboy.com REJECT myfriend@example.com OK junk@spam.com REJECT marketing@ REJECT theboss@ OK deals.marketing.com REJECT somedomain.com OK Save &amp; close file. Lakukan postmap untuk membuat database postmap hash:sender_access Edit main.cf &amp;",

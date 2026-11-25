@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13074?v=1795444742",
   "cover_og_url": "/cover/13074/og?v=1795444742",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-dhcpv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Summary 2 General 3 Bindings 3.1 Menu specific commands 3.2 Rate limiting 3.2.1 RADIUS Support 4 Configuration Examples 4.1 Enabling IPv6 Prefix delegation 5 Pranala Menarik Summary Standards: RFC 3315, RFC 3633 Package: dhcp,ipv6 Starting from v5.9 DHCP-PD server is moved to /ipv6 sub menu Single DUID is used for client and server identification, only IAID will vary between cients",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1275,
-    "longer_than": 54,
+    "longer_than": 53,
     "top": [
       [
         "ipv",

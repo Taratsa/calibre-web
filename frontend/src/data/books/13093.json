@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13093?v=1795444790",
   "cover_og_url": "/cover/13093/og?v=1795444790",
+  "has_cover": false,
   "url": "/book/openvpn-ipv4-routed-2-lan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology 2 Konfigurasi Server 3 Konfigurasi Client Gateway 4 Referensi 5 Pranala Menarik Topology LAN 1 ---------- HOST A ---------------- HOST B -------------- LAN 2 ovpn server ovpn client HOST A OpenVPN Server OS : Ubuntu 18.04 IP : 192.168.0.239/24 LAN1 : 10.10.10.0/24 HOST B OpenVPN Client OS : Ubuntu 18.04 LAN2 : 10.10.20.0/24 Konfigurasi Server echo 1 &gt;",

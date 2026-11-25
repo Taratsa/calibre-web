@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14531?v=1795450417",
   "cover_og_url": "/cover/14531/og?v=1795450417",
+  "has_cover": false,
   "url": "/book/sftp-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara install SFTP: sudo apt update sudo apt install openssh-server sudo systemctl restart ssh.service sudo nano /etc/ssh/sshd_config tambah kan # pada baris berikut dari: Subsystem sftp /usr/lib/openssh/sftp-server menjadi: #Subsystem sftp /usr/lib/openssh/sftp-server kemudian tambahkan script berikut dibawahnya menjadi berikut: #Subsystem sftp /usr/lib/openssh/sftp-server Subsystem sftp",

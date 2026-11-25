@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20494?v=1795477402",
   "cover_og_url": "/cover/20494/og?v=1795477402",
+  "has_cover": false,
   "url": "/book/ssh-menjalankan-perintah-secara-remote-onno-widodo-purbo/",
   "rating": null,
   "comment": "contoh ssh user1@server1 command1 ssh user1@server1 'command2' ssh user1@server1 'command1 | command2' ssh user1@server1 date ssh user1@server1 'df -H' ssh root@nas01 uname -mrs ssh root@nas01 lsb_release -a ssh -t user@server \"time sudo /home/user/script.sh\" Dimana -t - memberikan akses terminal jika script menanyakan password sudo - supaya bisa di jalankan sebagai su Copy id_dsa.pub &amp;",

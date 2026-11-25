@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19037?v=1795471360",
   "cover_og_url": "/cover/19037/og?v=1795471360",
+  "has_cover": false,
   "url": "/book/voip-cookbook-activate-vqmanager-web-service-onno-widodo-purbo/",
   "rating": null,
   "comment": "When we run VQManager Web Service for the first time, we need to activate the Web Service. Firstly, we need to start VQManager as background process, such as, sudo su - cd /root/ManageEngine/VQManager/bin/ /root/ManageEngine/VQManager/bin/run.sh &amp; Access via Web to http://localhost:8647 with default username &amp; password admin &amp; admin. Login Menu in VQManager Welcome Message of VQManager As we",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10628?v=1795437684",
   "cover_og_url": "/cover/10628/og?v=1795437684",
+  "has_cover": false,
   "url": "/book/postfix-smtp-source-onno-widodo-purbo/",
   "rating": null,
   "comment": "Postfix sudah menyediakan aplikasi smtp-source untuk mengirim e-mail dalam jumlah besar untuk melakukan stress test ke server SMTP. Menjalankan Sinkronkan waktu di ke dua mesin yang melakukan test. Di server maupun di client ntpdate pool.ntp.org Test time smtp-source -s 20 -l 5120 -m 1000 -C 4 -f onno@indo.net.id -t onno@korban.com 192.168.0.80:25 Dimana -s jumlah paralel session -l besar message",

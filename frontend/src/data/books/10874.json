@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10874?v=1795438334",
   "cover_og_url": "/cover/10874/og?v=1795438334",
+  "has_cover": false,
   "url": "/book/memblok-situs-tidak-baik-menggunakan-acl-squid-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat file utk blok vi /etc/squid/blok.txt Format / isi blok.txt, misalnya, ^.*my-site-dont-access-with-proxy\\.com$ .*you-can-write-any-regex-here.* .*bokep.* .*ngentot.* Edit file /etc/squid/squid.conf tambahkan acl blok url_regex -i \"/etc/squid/blok.txt\" http_access deny blok Jika ingin memblok domain, edit file /etc/squid/squid.conf tambahkan acl blok dstdom_regex -i \"/etc/squid/blok.txt\"",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11781?v=1795440736",
   "cover_og_url": "/cover/11781/og?v=1795440736",
+  "has_cover": false,
   "url": "/book/netstat-melihat-layanan-dari-jarak-jauh-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.cyberciti.biz/tips/find-remote-information-services.html Menggunakan telnet telnet server-name netstat telnet 192.168.1.5 15 Lebih aman menggunakan ssh, contoh ssh user@remote-box netstat -a ssh user@remote-box df -H ssh user@remote-box free -m ssh user@remote-box /path/to/script.pl Referensi https://www.cyberciti.biz/tips/find-remote-information-services.html",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9784?v=1795434900",
   "cover_og_url": "/cover/9784/og?v=1795434900",
+  "has_cover": false,
   "url": "/book/ipv6-server-dynamic-host-configuration-v6-server-dhcp6s-onno-widodo-purbo/",
   "rating": null,
   "comment": "DHCPv6 dapat digunakan untuk konfigurasi stateful. Daemon DHCPv6 tidak harus di operasikan di default IPv6 gateway router. Dengan DHCPv6 kita dapat memberikan lebih banyak informasi daripada menggunakan radvd. Kira-kira hampir sama dengan DHCP Server IPv4. Setelah di konfigurasi dengan benar, daemon akan beraksi ketika menerima multicast ICMPv6 yang dikirim oleh client ke address ff02::1:2",

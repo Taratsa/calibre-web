@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20122?v=1795476228",
   "cover_og_url": "/cover/20122/og?v=1795476228",
+  "has_cover": false,
   "url": "/book/nginx-monitoring-statistics-onno-widodo-purbo/",
   "rating": null,
   "comment": "Script untuk monitoring statistics Nginx relatif mudah di instalasi dan di konfigurasi. Kita perlu melakukan langkah berikut untuk memperoleh gambar statistik dari server nginx. Ubah konfigurasi file ngix dan tambahkan kalimat berikut vi /etc/nginx/sites-enabled/default http { ... server { listen SOME.IP.ADD.RESS; ... location /nginx_status { stub_status on; access_log off; allow SOME.IP.ADD.RESS;",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11037?v=1795438843",
   "cover_og_url": "/cover/11037/og?v=1795438843",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-tcp-web-control-led-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://embeddedlifehelp.blogspot.co.id/2014/10/turn-on-led-onoff-from-internet-using.html Code /* Web Server A simple web server that shows the value of the analog input pins. using an Arduino Wiznet Ethernet shield. Circuit: * Ethernet shield attached to pins 10, 11, 12, 13 * Pin 13 as LED output created 16 Oct 2014 by Macjan Camilo Fernandes */ #include  #include  //",

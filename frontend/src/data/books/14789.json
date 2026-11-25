@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/14789?v=1795451727",
   "cover_og_url": "/cover/14789/og?v=1795451727",
+  "has_cover": false,
   "url": "/book/instalasi-apache-php7-mariadb-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 2 Database 3 Copy Source CMS Mediawiki 4 Restart Apache 5 Selesaikan Konfigurasi Mediawiki 6 Versi 1.17 ke atas 7 Versi &lt; 1.17 8 Untuk Mediawiki versi Baru 9 Untuk Mediawiki versi lama 10 Pranala Menarik Instalasi sudo locale-gen id_ID.UTF-8 sudo apt update sudo apt-get install apache2 php php-xmlrpc php-mysql php-gd php-cli php-curl \\ mariadb-server libphp-adodb libgd-dev",

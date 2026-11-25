@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13070?v=1795444730",
   "cover_og_url": "/cover/13070/og?v=1795444730",
+  "has_cover": false,
   "url": "/book/ipv6-menggunakan-neighbor-discovery-proxy-ndp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Skenario yang ada, upstream provider memberikan satu block IPv6 address, misalnya, 2a01:XXX:8b25:7ea0::/64 (eth0), dengan gateway (tun0) di sisi kita 2a01:XXX:8b25:7ea0::1. Salah satu client mencoba ping6 tapi tidak berhasil, ping6 2a01:XXX:8b25:7ea0::22 PING 2a01:XXX:8b25:7ea0::22(2a01:XXX:8b25:7ea0::22) 56 data bytes From 2a01:XXX:8b25:7ea0::1 icmp_seq=1 Destination unreachable: Address",

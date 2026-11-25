@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16133?v=1795458957",
   "cover_og_url": "/cover/16133/og?v=1795458957",
+  "has_cover": false,
   "url": "/book/report-penetration-test-example-of-mitigation-recommendations-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Temporary Mitigation Recommendations Findings: SQL Injection in the web application login form. Risk: Potential unauthorized access to the database, including data manipulation or privilege escalation. Temporary Mitigation Steps: Temporary Input Validation: Implement input sanitization at the application level by ensuring that all data entering the login form is escaped and filtered from special",

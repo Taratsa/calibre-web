@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12693?v=1795443450",
   "cover_og_url": "/cover/12693/og?v=1795443450",
+  "has_cover": false,
   "url": "/book/kiwix-install-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Compile (NOT RECOMMENDED) 3 apt install?(NOT RECOMMENDED) 4 Run 5 Pranala Menarik Install cd /usr/local/src wget http://download.kiwix.org/bin/0.10/kiwix-0.10-linux-x86_64.tar.bz2 tar xvjf kiwix-0.10-linux-x86_64.tar.bz2 cd /usr/local/src/kiwix-0.10-x86_84/bin Compile (NOT RECOMMENDED) Susah kayanya ... sudo su apt update apt -y install python3 apt -y install libssl-dev",

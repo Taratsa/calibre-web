@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13279?v=1795445381",
   "cover_og_url": "/cover/13279/og?v=1795445381",
+  "has_cover": false,
   "url": "/book/panda-datetime-to-seconds-onno-widodo-purbo/",
   "rating": null,
   "comment": "import pandas as pd import datetime as dt df = pd.DataFrame({'date1':pd.date_range('2015-01-01', periods=3), 'date2':pd.date_range('2015-01-01 02:00:00', periods=3, freq='23H')}) print (df) df['diff'] = df['date2'] - df['date1'] df['seconds'] = df['diff'].dt.total_seconds() print (df) print df['diff'].dt.total_seconds() df['diff'] = df['date2'] - df['date1'] df['diff'] =",

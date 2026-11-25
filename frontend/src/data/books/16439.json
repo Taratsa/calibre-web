@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16439?v=1795460878",
   "cover_og_url": "/cover/16439/og?v=1795460878",
+  "has_cover": false,
   "url": "/book/scrapping-tor-python-source-code-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melakukan web scraping melalui jaringan Tor di Kali Linux 2024.4 menggunakan Python, Anda dapat mengikuti langkah-langkah berikut: 1. Instalasi dan Konfigurasi Tor: Instal Tor: sudo apt-get update sudo apt-get install tor Konfigurasi Tor: Edit file konfigurasi Tor untuk mengatur port SOCKS dan kontrol: sudo nano /etc/tor/torrc Tambahkan atau sesuaikan baris berikut: SOCKSPort 9050",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 441,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "tor",

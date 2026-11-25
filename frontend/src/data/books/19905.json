@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19905?v=1795475498",
   "cover_og_url": "/cover/19905/og?v=1795475498",
+  "has_cover": false,
   "url": "/book/ubuntu-enterprise-cloud-mendaftarkan-menggunakan-uec-publish-tarball-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara sederhana untuk mendaftarkan Image ke Cloud Controller adalah sebagai berikut tar zxvf ubuntu-10.10-server-uec-amd64.tar.gz maverick-server-uec-amd64.img maverick-server-uec-amd64-vmlinuz-virtual maverick-server-uec-amd64-loader maverick-server-uec-amd64-floppy README.files Publikasi tarball ke CloudController uec-publish-tarball -R maverick-server-uec-amd64-loader",

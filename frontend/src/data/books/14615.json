@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14615?v=1795450861",
   "cover_og_url": "/cover/14615/og?v=1795450861",
+  "has_cover": false,
   "url": "/book/run-kiwix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kiwix akan beroperasi sebagai web server, dan masing-masing backup akan diidentifikasi dengan nomor port yang digunakan. Dalam contoh berikut port 8080 digunakan oleh wikipedia, sedang port 8081 digunakan oleh wiktionary. Cara menjalankan lebih lengkapnya adalah sebagai berikut, sudo cd /usr/local/src/kiwix-tools_linux-x86_64-3.1.2-5/ ./kiwix-serve --port=8080 wikipedia_id_top_maxi_2021-09.zim &amp;",

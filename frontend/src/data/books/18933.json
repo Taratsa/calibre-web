@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18933?v=1795470891",
   "cover_og_url": "/cover/18933/og?v=1795470891",
+  "has_cover": false,
   "url": "/book/voip-cookbook-generic-sip-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "In [general] section in sip.conf, there are some variables that we can setup, some of which are allow =  ; a Codec that is allowed based on preferences. Prior to using this, use disallow=all. disallow = all ; disallow all codecs to be used. allowexternalinvites = yes|no ; Enable or Disable INVITE &amp; REFER to non-local domain. The default is yes. allowguest = yes|no ; Allows or rejects calls",

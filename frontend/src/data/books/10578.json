@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10578?v=1795437527",
   "cover_og_url": "/cover/10578/og?v=1795437527",
+  "has_cover": false,
   "url": "/book/wireshark-mengukur-rtt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Wireshark or tshark can give you the TCP RTT for each received ACK packet using tcp.analysis.ack_rtt which measures the time delta between capturing a TCP packet and the ACK for that packet. You need to be careful with this as most of your ACK packets will be from your office machines ACKing packets received from the internet, so you will be measuring the RTT between your router seeing the packet",

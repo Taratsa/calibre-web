@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15262?v=1795453911",
   "cover_og_url": "/cover/15262/og?v=1795453911",
+  "has_cover": false,
   "url": "/book/konfigurasi-ue-yaml-ueransim-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan UE Ueransim kita perlu mengedit konfigurasi open5gs-ue dari UE Ueransim pada folder berikut, nano /usr/local/src/UERANSIM/config/open5gs-ue.yaml Pastikan parameter berikut sesuai dengan jaringan 5G yang kita operasikan # ue device config # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 digits) supi: 'imsi-510330000012345 # Mobile Country Code value of HPLMN mcc: 510",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 228,
-    "longer_than": 26,
+    "longer_than": 25,
     "top": [
       [
         "ueransim",

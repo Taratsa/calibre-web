@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10549?v=1795437439",
   "cover_og_url": "/cover/10549/og?v=1795437439",
+  "has_cover": false,
   "url": "/book/rom-android-ridon-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Install dependency 3 Inisialisasi Directory 4 Ambil Repo Tools 5 Setup source code 6 Sync source code 7 Persiapan untuk Build 8 Referensi Persiapan Baca https://github.com/ridon/ridon/wiki/Installing-Dependencies sudo dpkg --add-architecture i386 sudo apt-get update Install dependency sudo apt-get install aptitude sudo aptitude install bison flex git-core gperf",
@@ -136,12 +137,12 @@
         3
       ],
       [
-        "export",
-        3
-      ],
-      [
         "sudo",
         4
+      ],
+      [
+        "export",
+        3
       ],
       [
         "build",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11387?v=1795439755",
   "cover_og_url": "/cover/11387/og?v=1795439755",
+  "has_cover": false,
   "url": "/book/python-tweepy-twitter-streaming-onno-widodo-purbo/",
   "rating": null,
   "comment": "import tweepy import json consumer_key = ' ' consumer_secret = ' ' access_token = ' ' access_token_secret = ' ' # This is the listener, resposible for receiving data class StdOutListener(tweepy.StreamListener): def on_data(self, data): # Twitter returns data in JSON format - we need to decode it first decoded = json.loads(data) # Also, we convert UTF-8 to ASCII ignoring all bad characters sent by",

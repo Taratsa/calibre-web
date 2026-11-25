@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15253?v=1795453871",
   "cover_og_url": "/cover/15253/og?v=1795453871",
+  "has_cover": false,
   "url": "/book/konfigurasi-enb-conf-rr-conf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita perlu menjalankan srsRAN sebagai BTS, konfigurasi dapat dilakukan dengan mengedit file konfigurasi yang ada di folder, cd /usr/local/src/srsRAN Edit file konfigurasi enb.conf nano srsenb/enb.conf Parameter di dalam-nya kira-kira sebagai berikut, [enb] enb_id = 0x17B mcc = 510 mnc = 33 mme_addr = 192.168.100.236 gtp_bind_addr = 192.168.100.238 s1c_bind_addr = 192.168.100.238 [rf] device_name",

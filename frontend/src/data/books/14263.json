@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14263?v=1795449240",
   "cover_og_url": "/cover/14263/og?v=1795449240",
+  "has_cover": false,
   "url": "/book/python3-echo-tcp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Client #!/usr/bin/env python import socket TCP_IP = '192.168.0.162' TCP_PORT = 5005 BUFFER_SIZE = 1024 MESSAGE = b\"Apa Kabar?\" s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) s.connect((TCP_IP, TCP_PORT)) s.send(MESSAGE) data = s.recv(BUFFER_SIZE) s.close() print( \"received data:\", data ) Server #!/usr/bin/env python import socket TCP_IP = '127.0.0.1' TCP_PORT = 5005 BUFFER_SIZE = 20 #",

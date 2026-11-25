@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16429?v=1795460824",
   "cover_og_url": "/cover/16429/og?v=1795460824",
+  "has_cover": false,
   "url": "/book/dataset-holdout-validation-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python yang menerapkan Holdout Validation pada dataset dengan 10 fitur dan 1 target menggunakan pustaka `scikit-learn`: import numpy as np from sklearn.model_selection import train_test_split from sklearn.ensemble import RandomForestClassifier from sklearn.metrics import accuracy_score # Contoh: Membuat dataset dummy dengan 100 sampel, 10 fitur, dan 1 target",

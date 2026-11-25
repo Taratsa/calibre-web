@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18996?v=1795471180",
   "cover_og_url": "/cover/18996/og?v=1795471180",
+  "has_cover": false,
   "url": "/book/voip-cookbook-file-usr-local-etc-opensips-cfg-test-uas-cfg-onno-widodo-purbo/",
   "rating": null,
   "comment": "# ----------- global configuration parameters ------------------------ debug=3 # debug level (cmd line: -dddddddddd) fork=yes log_stderror=no # (cmd line: -E) children=8 disable_tcp=yes disable_dns_blacklist=yes disable_dns_failover=yes # Uncomment these lines to enter debugging mode #fork=no #log_stderror=yes #listen=udp:192.168.2.102:5070 #listen=192.168.0.2:5060 #------------------ module",

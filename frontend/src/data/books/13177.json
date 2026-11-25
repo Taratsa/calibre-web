@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13177?v=1795445046",
   "cover_og_url": "/cover/13177/og?v=1795445046",
+  "has_cover": false,
   "url": "/book/ipv6-ospf-cost-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cost OSPF uses a reference bandwidth of 100 Mbps (10^8) for cost calculation. The formula to calculate the cost is reference bandwidth divided by interface bandwidth ; Interface Cost= 10^8/(interface bandwidth). Calculated values are rounded up to the nearest single decimal value. This means that OSPF will calculate interfaces with speeds higher than 10 Mbps as a cost of 1 (Table 1). T he result",

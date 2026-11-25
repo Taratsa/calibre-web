@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15845?v=1795457188",
   "cover_og_url": "/cover/15845/og?v=1795457188",
+  "has_cover": false,
   "url": "/book/llm-tips-untuk-cpu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kata CGPT: saat pake CPU, coba: 1. Batch Processing u. kurangi overhead &amp; speedup embedding. 2. Kurangi presisi model; float32-&gt;float16/int8; speedup tanpa korbankan akurasi. 3. Buat versi kecil dari model yg sama. 4. Multi-threading. 5. Gunakan Intel MKL / OpenBLAS. saya pakai model intfloat pak, lumayan cepet di CPU https://huggingface.co/intfloat/multilingual-e5-large kalo pdf bisanya saya",
@@ -62,7 +63,7 @@
       ],
       [
         14806,
-        0.41
+        0.4
       ],
       [
         15174,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16601?v=1795461863",
   "cover_og_url": "/cover/16601/og?v=1795461863",
+  "has_cover": false,
   "url": "/book/instalasi-operasi-dan-strategi-rapid-jurnal-backup-dengan-restic-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah panduan instalasi, setup, dan strategi rapid backup dengan interval jurnal 1-2 menit menggunakan Restic di Ubuntu 24.04 . Restic adalah software backup yang cepat, aman, dan open-source, ideal untuk penggunaan di server atau workstation. Contents 1 Instalasi Restic di Ubuntu 24.04 2 Setup Awal: Direktori, Repo &amp; Password 3 Strategi Rapid Backup (Jurnal 1-2 Menit Sekali) 4 Setup",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 353,
-    "longer_than": 33,
+    "longer_than": 32,
     "top": [
       [
         "backup",

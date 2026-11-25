@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18288?v=1795468386",
   "cover_og_url": "/cover/18288/og?v=1795468386",
+  "has_cover": false,
   "url": "/book/distro-sekolahnux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Persiapan 3 UNPACK file iso untuk di remaster 4 Customisasi 5 Instalasi Aplikasi Pendidikan 6 PACK menjadi file iso yang baru 7 Pranala Menarik Persiapan Siapkan file iso Ubuntu Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Persiapan sudo apt-get install uck sudo modprobe squashfs UNPACK file iso untuk di remaster sudo uck-remaster-unpack-iso",

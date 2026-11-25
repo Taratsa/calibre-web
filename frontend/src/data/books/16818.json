@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16818?v=1795463332",
   "cover_og_url": "/cover/16818/og?v=1795463332",
+  "has_cover": false,
   "url": "/book/cyber-security-python-compare-isolasi-outliar-vs-alert-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python3 \"\"\" compare_outlier_alerts.py Membandingkan hasil outlier Wazuh dengan alerts.json. Tujuan: - Membaca semua file hasil outlier dari folder tertentu. - Membaca alerts.json Wazuh. - Menormalkan metadata penting seperti timestamp, agent, rule, location, srcip, dstip, full_log. - Mencocokkan outlier dengan alert berdasarkan metadata yang tersedia. - Menghasilkan CSV ringkasan",

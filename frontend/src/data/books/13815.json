@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13815?v=1795447569",
   "cover_og_url": "/cover/13815/og?v=1795447569",
+  "has_cover": false,
   "url": "/book/gqrx-virtual-audio-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.rtl-sdr.com/tutorial-setting-up-a-low-cost-qrp-ft8-jt9-wspr-etc-monitoring-station-with-an-rtl-sdr-v3-and-raspberry-pi-3/ sudo su apt -y install pulseaudio pavucontrol mplayer Tambahkan Virtual Audio Device sudo su vi /etc/pulse/default.pa Di akhir tambahkan load-module module-null-sink sink_name=Virtual0 sink_properties=device.description=\"Virtual0\" load-module",

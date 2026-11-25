@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16511?v=1795461279",
   "cover_og_url": "/cover/16511/og?v=1795461279",
+  "has_cover": false,
   "url": "/book/mengelola-formulir-dan-validasi-input-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam pengembangan aplikasi web, pengelolaan formulir dan validasi input pengguna merupakan aspek penting untuk memastikan data yang diterima sesuai dengan yang diharapkan dan menjaga keamanan aplikasi. Flask, sebagai salah satu framework web Python yang ringan, dapat dipadukan dengan Flask-WTF untuk mempermudah proses ini. Flask-WTF adalah ekstensi yang mengintegrasikan Flask dengan WTForms,",
@@ -140,12 +141,12 @@
         5
       ],
       [
-        "validator",
-        6
-      ],
-      [
         "username",
         14
+      ],
+      [
+        "validator",
+        6
       ],
       [
         "input",

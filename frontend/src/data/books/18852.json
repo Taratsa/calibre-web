@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18852?v=1795470397",
   "cover_og_url": "/cover/18852/og?v=1795470397",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-coovachilli-instalasi-radius-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Radius Server dan Database sudo apt-get install freeradius freeradius-mysql Buat database untuk menyimpan username dan password mysql -u root -p Enter password: CREATE DATABASE radius; quit Asumsi password root mysql adalah 123456. Lanjutkan dengan perintah sudo su - mysql -u root -p123456 radius &lt; /etc/freeradius/sql/mysql/schema.sql mysql -u root -p123456 radius &lt;",

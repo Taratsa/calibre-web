@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/13777?v=1795447403",
   "cover_og_url": "/cover/13777/og?v=1795447403",
+  "has_cover": false,
   "url": "/book/mengkonfigurasi-sound-card-untuk-campcaster-onno-widodo-purbo/",
   "rating": null,
   "comment": "Campcaster perlu di kenalkan sound card yang kita gunakan. Pertama-tama kita perlu cek dulu sound card yang di kenal oleh komputer yang kita gunakan, masukan perintah $ cat /proc/asound/cards Kita akan memperoleh hasil seperti 0 [Intel ]: HDA-Intel - HDA Intel HDA Intel at 0x50300000 irq 21 Jika kita menggunakan lebih dari satu (1) sound card maka akan tampil beberapa sound card dari hasil cat",

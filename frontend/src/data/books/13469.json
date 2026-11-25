@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13469?v=1795446058",
   "cover_og_url": "/cover/13469/og?v=1795446058",
+  "has_cover": false,
   "url": "/book/r-tidytext-tf-idf-jane-austen-novels-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/03-tf-idf.Rmd library(knitr) opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE) options(width = 100, dplyr.width = 100) library(ggplot2) theme_set(theme_light()) library(dplyr) library(janeaustenr) library(tidytext) book_words &lt;- austen_books() %&gt;% unnest_tokens(word, text) %&gt;% count(book, word, sort = TRUE) total_words &lt;-",

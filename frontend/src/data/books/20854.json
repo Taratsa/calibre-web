@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20854?v=1795478341",
   "cover_og_url": "/cover/20854/og?v=1795478341",
+  "has_cover": false,
   "url": "/book/tcp-ip-quagga-prasyarat-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melihat versi Quagga yang tersedia dapat menggunakan perintah: apt-cache policy quagga Hasilnya: quagga: Installed: (none) Candidate: 0.99.22-1 Version table: 0.99.22-1 0 500 http://192.168.1.10/ubuntu-13.04/ raring/main i386 Packages Untuk men-download dan menginstalasi Quagga dapat menggunakan perintah: apt-get install quagga quagga-doc Untuk melihat dependensi yang dibutuhkan Quagga:",

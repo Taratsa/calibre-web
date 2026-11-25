@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19097?v=1795471611",
   "cover_og_url": "/cover/19097/og?v=1795471611",
+  "has_cover": false,
   "url": "/book/persiapan-ssh-untuk-scp-batch-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar SSH dapat dilakukan tanpa perlu memasukan password sehingga dapat memudahkan proses scp secara batch kita perlu melakukan hal berikut. Mesin Server Install SSH Server # apt-get install openssh-server Restart SSH Server # /etc/init.d/ssh restart Mesin Client $ ssh-keygen -t dsa    /home/user/.ssh/id_dsa.pub $ chmod 600 /home/user/.ssh/id_dsa.pub Copykan ke mesin server,",

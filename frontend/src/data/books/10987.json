@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10987?v=1795438693",
   "cover_og_url": "/cover/10987/og?v=1795438693",
+  "has_cover": false,
   "url": "/book/bokeh-plot-stock-dengan-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://bokeh.pydata.org/en/latest/docs/gallery/correlation.html import time from numpy import cumprod, linspace, random from bokeh.plotting import figure, show, output_file, vplot, output_server num_points = 300 now = time.time() dt = 24*3600 # days in seconds dates = linspace(now, now + num_points*dt, num_points) * 1000 # times in ms acme = cumprod(random.lognormal(0.0, 0.04,",

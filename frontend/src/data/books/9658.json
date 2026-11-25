@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9658?v=1795434102",
   "cover_og_url": "/cover/9658/og?v=1795434102",
+  "has_cover": false,
   "url": "/book/os-complete-teori-tuning-i-o-performance-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://doc.opensuse.org/documentation/html/openSUSE/opensuse-tuning/cha.tuning.io.html I/O scheduling mengontrol bagaimana operasi input/output akan dikirim ke storage. Linux memberikan berbagai algoritma I/O - disebut elevator - yang cocok untuk berbagai beban kerja. Elevators dapat membantu untuk mengurangi operasi seek (pencarian), dapat memprioritaskan permohonan I/O, dan memastikan",

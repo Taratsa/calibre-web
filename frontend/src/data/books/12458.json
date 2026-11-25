@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12458?v=1795442796",
   "cover_og_url": "/cover/12458/og?v=1795442796",
+  "has_cover": false,
   "url": "/book/mitm-burpsuite-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 arpspoof 2 Redirect &amp; IP Forwarding 3 Burpsuite 4 Pranala Menarik arpspoof Lakukan arpspoof ke client saja .. arpspoof -i  -t   Redirect &amp; IP Forwarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward sysctl -w net.ipv4.ip_forward=1 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport",

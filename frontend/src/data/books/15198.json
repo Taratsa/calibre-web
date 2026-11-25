@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15198?v=1795453629",
   "cover_og_url": "/cover/15198/og?v=1795453629",
+  "has_cover": false,
   "url": "/book/rtl8723de-via-github-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/1247915/realtek-rtl8723de-wifi-not-working-with-a-new-kernel sudo apt -y install git build-essential dkms cd /tmp git clone -b extended https://github.com/lwfinger/rtlwifi_new.git sudo dkms add ./rtlwifi_new sudo dkms install rtlwifi-new/0.6 sudo modprobe -r rtl8723de &amp;&amp; sudo modprobe rtl8723de",

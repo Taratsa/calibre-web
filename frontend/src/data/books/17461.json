@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17461?v=1795465306",
   "cover_og_url": "/cover/17461/og?v=1795465306",
+  "has_cover": false,
   "url": "/book/instalasi-postgresql-onno-widodo-purbo/",
   "rating": null,
   "comment": "PostgresQL biasanya dibutuhkan untuk aplikasi yang kompleks seperti Compiere dan Adempiere. Untuk aplikasi ini biasanya selain PostgresQL juga dibutuhkan Java. Instalasi PostgresQL sebetulnya tidak terlalu sulit, yang perlu dilakukan adalah membuat user postgres dan bila di perlukan kita dapat menset password untuk user postgres. Perintah yang dijalankan adalah sebagai berikut, $ su # useradd -d",

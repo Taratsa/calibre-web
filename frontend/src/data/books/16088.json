@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16088?v=1795458677",
   "cover_og_url": "/cover/16088/og?v=1795458677",
+  "has_cover": false,
   "url": "/book/mkfifo-how-it-works-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "mkfifo stands for make first-in-first-out . It is a command in Unix-based operating systems like Ubuntu that is used to create a *named pipe*. A pipe is an inter-process communication mechanism that allows one process to write data into the pipe while another process reads that data. Contents 1 Difference between `mkfifo` and a regular pipe: 2 Why Use `mkfifo`? 3 How to Use `mkfifo` 3.1 Creating",

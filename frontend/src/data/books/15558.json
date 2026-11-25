@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15558?v=1795455479",
   "cover_og_url": "/cover/15558/og?v=1795455479",
+  "has_cover": false,
   "url": "/book/minikube-certificates-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/untrusted_certs/ Certificates All about TLS certificates Untrusted Root Certificates Many organizations deploy their own Root Certificate and CA service inside the corporate networks. Internal websites, image repositories and other resources may install SSL server certificates issued by this CA service for security and privacy concerns. You may",

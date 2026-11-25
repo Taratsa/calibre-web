@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20099?v=1795476159",
   "cover_og_url": "/cover/20099/og?v=1795476159",
+  "has_cover": false,
   "url": "/book/membuat-repository-debian-lokal-menggunakan-debmirror-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install debian archive keyring aptitude search keyring apt-get install debian-archive-keyring Buat folder untuk mirror keyring mkdir /var/data/mirrorkeyring gpg --no-default-keyring --keyring /var/data/mirrorkeyring/trustedkeys.gpg --import /usr/share/keyrings/debian-archive-keyring.gpg Sebelum bisa digunakan dengan baik, kadang kala kita perlu beberapa kali menjalankan perintah gpg",
@@ -53,7 +54,7 @@
   ],
   "text": {
     "words": 516,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "server",

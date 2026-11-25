@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11424?v=1795439846",
   "cover_og_url": "/cover/11424/og?v=1795439846",
+  "has_cover": false,
   "url": "/book/python-regex-onno-widodo-purbo/",
   "rating": null,
   "comment": "Hanya a-zA-Z dalam string def hanya_huruf( input ): r=re.match('^[a-zA-Z]+$', input) if r==None: return False else: return True Batas ^ start string $ akhir string",

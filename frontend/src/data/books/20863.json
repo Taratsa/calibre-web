@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20863?v=1795478365",
   "cover_og_url": "/cover/20863/og?v=1795478365",
+  "has_cover": false,
   "url": "/book/tcp-ip-quagga-ospf-lanjut-onno-widodo-purbo/",
   "rating": null,
   "comment": "1. CASE PRINCIPLE We will test in this third example a medium difficulty level environment where two routers (Cisco 3750 &amp; Quagga B) are linked together with two OPSF areas, one OSPF area is tagged as stub area. The Quagga B router and the Cisco 2651 are located in a stub area. They have OPSF intra (O) and inter-area routes (OIA) in their routing tables but no external OSPF route. To route these",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12929?v=1795444256",
   "cover_og_url": "/cover/12929/og?v=1795444256",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-bgp-redistribute-routes-onno-widodo-purbo/",
   "rating": null,
   "comment": "/routing bgp peer add remote-address=10.0.0.134 remote-as=65000 address-families=ip,ipv6 /ipv6 route add dst-address=2001::/16 gateway=fe80::1%ether1 /routing bgp network add network=2001::/16 /routing bgp advertisements print Pranala Menarik TCP/IP: Advanced Routing Quagga Mikrotik Cisco Juniper BIRD: Routing IPv6 TCP/IP: Advanced Routing IPv6: Advanced Routing IPv6: Quagga IPv6: Mikrotik IPv6:",

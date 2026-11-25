@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14956?v=1795452586",
   "cover_og_url": "/cover/14956/og?v=1795452586",
+  "has_cover": false,
   "url": "/book/mqtt-android-studio-mqtt-test-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 settings.gradle 2 build.gradle 3 build.gradle app 4 activity_main.xml 5 activity_mqttmain.xml 6 MainActivity.java 7 MQTTMain.java 8 MqttManager.java 9 MqttCallbackBus.java 10 Pranala Menarik settings.gradle pluginManagement { repositories { gradlePluginPortal() google() mavenCentral() maven { url \" https://repo.eclipse.org/content/repositories/paho-snapshots/ \" } } }",

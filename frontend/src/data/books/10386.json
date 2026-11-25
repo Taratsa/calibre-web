@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/10386?v=1795436929",
   "cover_og_url": "/cover/10386/og?v=1795436929",
+  "has_cover": false,
   "url": "/book/instalasi-openvpn-client-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install aplikasi GUI utuk client # apt-get install kvpnc # apt-get install network-manager-openvpn openvpn Copy setting OpenVPN # cp -Rf /usr/share/doc/openvpn/examples/easy-rsa/* /etc/openvpn/ Pada Ubuntu Hardy 8.04 tampaknya ada beberapa versi konfigurasi, kita dapat menggunakan salah satu dengan cara # cp -Rf /etc/openvpn/2.0/* /etc/openvpn/ Selanjutnya lakukan langkah berikut, yang sama",

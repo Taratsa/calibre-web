@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12000?v=1795441280",
   "cover_og_url": "/cover/12000/og?v=1795441280",
+  "has_cover": false,
   "url": "/book/ethereum-mining-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit ~/miner.sh, masukan set GPU_FORCE_64BIT_PTR 0 set GPU_MAX_HEAP_SIZE 100 set GPU_USE_SYNC_OBJECTS 1 set GPU_MAX_ALLOC_PERCENT 100 set GPU_SINGLE_ALLOC_PERCENT 100 ethminer --farm-recheck 200 -G -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O . ethminer --farm-recheck 200 -G -S asia1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O",

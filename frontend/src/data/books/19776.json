@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19776?v=1795474923",
   "cover_og_url": "/cover/19776/og?v=1795474923",
+  "has_cover": false,
   "url": "/book/linux-driver-untuk-easycap-usb2-0-video-adapter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan ada kernel headers. Di Debian biasanya di kenali sebagai \"linux-headers-...\". Dengan menggunakan perintah `uname -r` kita dapat mengetahui apa yang cocok untuk system kita. Jika di install maka folder berikut akan di isi /usr/src/linux-headers-X.X.XX-.../*. Instalasi paket program pendukung sudo apt-get install doxygen linux-headers-2.6.32-21-generic bin86 libqt3-headers libqt3-mt-dev",

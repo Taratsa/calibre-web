@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16604?v=1795461893",
   "cover_og_url": "/cover/16604/og?v=1795461893",
+  "has_cover": false,
   "url": "/book/ipv6-address-private-experimental-network-onno-widodo-purbo/",
   "rating": null,
   "comment": "For private, experimental, or lab networks, you can use ULA (similar to IPv4 private IPs): Prefix: fc00::/7 (commonly used: fd00::/8) Structure: fdxx:xxxx:xxxx::/48 (randomly generate the 40-bit Global ID) Example: fd12:3456:789a::/48 → gives you 65,536 /64 subnets. Tools: You can generate the ULA prefix using https://cd34.com/rfc4193/ 3 Network /52 fddd:0000:0000::/52 fddd:0000:0000::/64 s/d",

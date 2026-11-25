@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19028?v=1795471327",
   "cover_og_url": "/cover/19028/og?v=1795471327",
+  "has_cover": false,
   "url": "/book/voip-cookbook-mos-and-r-factor-values-for-g-711-g-723-and-g-729-onno-widodo-purbo/",
   "rating": null,
   "comment": "The effect caused by packet loss occurring in a given network will make the MOS and R Factor value decreasing, as shown on table above. The higher the packet loss, the lower the value of MOS and R Factor. Codec Frame Packet Loss MOS R Factor Kbps G.729 20ms 0% 4.1 83 24.8 G.729 20ms 5% 3.3 64 24.8 G.729 20ms 10% 2.7 52 24.8 G.729 20ms 20% 1.9 37 24.8 Typically, the frame size used for measurement",

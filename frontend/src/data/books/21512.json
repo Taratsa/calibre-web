@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21512?v=1795482432",
   "cover_og_url": "/cover/21512/og?v=1795482432",
+  "has_cover": false,
   "url": "/book/mini-howto-iptables-untuk-firewall-onno-widodo-purbo/",
   "rating": null,
   "comment": "iptables adalah firewall , yang default di install di hampir semua distribusi Linux , seperti, Ubuntu , Kubuntu , Xubutu , Fedora Core , dll. Pada saat kita menginstalasi Ubuntu , iptables memang sudah terinstall, tapi default-nya mengijinkan semua traffic untuk lewat. Memang banyak sekali dan bisa menjadi sangat sangat kompleks teknik konfigurasi iptables. Pada kesempatan ini kita hanya mencoba",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 2163,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "iptables",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12703?v=1795443487",
   "cover_og_url": "/cover/12703/og?v=1795443487",
+  "has_cover": false,
   "url": "/book/gns3-re-install-dynamips-untuk-ios-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/GNS3/gns3-server/issues/1363#issuecomment-403817051 sudo apt -y install libc6-dev-i386 sudo apt -y install libelf-dev:i386 libpcap0.8-dev:i386 sudo apt -y install git cmake libelf-dev libpcap0.8-dev mkdir /usr/local/src git clone https://github.com/GNS3/dynamips.git cd dynamips mkdir build cd build cmake .. -DDYNAMIPS_ARCH=x86 make sudo make install Referensi",

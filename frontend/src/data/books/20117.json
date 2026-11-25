@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20117?v=1795476212",
   "cover_og_url": "/cover/20117/og?v=1795476212",
+  "has_cover": false,
   "url": "/book/membuat-mirrorkeyring-untuk-debmirror-debian-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masih belum berhasil dengan Debian di Kambing berikut beberapa langkah yang sedang di coba dan gagal gpg --no-default-keyring --keyring trustedkeys.gpg --import gpg: keyring `/root/.gnupg/trustedkeys.gpg' created buat /home/mirror/.gnupg/trustedkeys.gpg -&gt; /etc/apt/trusted.gpg juga ini touch /usr/share/keyrings/debian-role-keys.gpg touch /usr/share/keyrings/debian-keyring.gpg touch",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12606?v=1795443200",
   "cover_og_url": "/cover/12606/og?v=1795443200",
+  "has_cover": false,
   "url": "/book/mikrotik-lan-bridge-onno-widodo-purbo/",
   "rating": null,
   "comment": "interface bridge add name=lanBridge interface bridge port add bridge=lanBridge interface=ether8 interface bridge port add bridge=lanBridge interface=ether7 interface bridge port add bridge=lanBridge interface=ether6 atau /interface bridge add name=bridge1 /interface bridge port add bridge=bridge1 interface=ether2 add bridge=bridge1 interface=ether3 add bridge=bridge1 interface=ether4 add",

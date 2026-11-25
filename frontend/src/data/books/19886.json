@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19886?v=1795475429",
   "cover_og_url": "/cover/19886/og?v=1795475429",
+  "has_cover": false,
   "url": "/book/uec-no-ramdisk-pada-publish-tarball-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita mempublih secara langsung file release tar.gz uec-publish-tarball maverick-server-uec-i386.tar.gz mybucket Fri Dec 24 09:54:10 WIT 2010: ====== extracting image ====== Warning: no ramdisk found, assuming '--ramdisk none' kernel : maverick-server-uec-i386-vmlinuz-virtual ramdisk: none image : maverick-server-uec-i386.img Fri Dec 24 09:54:21 WIT 2010: ====== bundle/upload kernel ======",
@@ -196,7 +197,7 @@
       ],
       [
         19887,
-        0.46
+        0.47
       ],
       [
         19727,
@@ -204,7 +205,7 @@
       ],
       [
         19904,
-        0.41
+        0.42
       ],
       [
         19871,

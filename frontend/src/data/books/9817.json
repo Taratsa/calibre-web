@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9817?v=1795435023",
   "cover_og_url": "/cover/9817/og?v=1795435023",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-setup-tunnel-ke-tunnelbroker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan parameter di tunnelbroker.net, untuk openwrt versi baru sudah ada interface wan6 yang dapat kita ubah menggunakan parameter dari tunnelbroker menjadi, misalnya, uci set network.wan6=interface uci set network.wan6.proto=6in4 uci set network.wan6.peeraddr=216.218.221.42 uci set network.wan6.ip6addr='2001:470:35:ab6::2/64' uci set network.wan6.tunnelid=208951 uci set",

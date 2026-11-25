@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18955?v=1795471000",
   "cover_og_url": "/cover/18955/og?v=1795471000",
+  "has_cover": false,
   "url": "/book/voip-cookbook-prepare-user-database-server-in-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenSIPS uses database server, such as, MySQL for handling user registration. Install MySQL Server and make sure it works using the following command, # apt-get install mysql-server libmysqlclient15-dev mysql-client-5.0 # /etc/init.d/mysql restart To setup the database server, we need to edit /usr/local/etc/opensips/opensipsctlrc or /etc/opensips/opensipsctlrc, such as, # vi",

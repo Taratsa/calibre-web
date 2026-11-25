@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20224?v=1795476620",
   "cover_og_url": "/cover/20224/og?v=1795476620",
+  "has_cover": false,
   "url": "/book/ntp-dns-spoofing-ntp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengoperasikan cloud pada jaringan yang tidak ada Internet kita terpaksa melakukan spoofing DNS agar semua request DNS ke NTP Server di arahkan ke IP address NTP server lokal yang ada. Alternatif taktik Buat DNS Server lokal Set DNS Server di jaringan ke IP address DNS lokal Set supaya mapping ke IP address NTP server lokal ntp.ubuntu.com 192.168.0.3 0.debian.pool.ntp.org 192.168.0.3",

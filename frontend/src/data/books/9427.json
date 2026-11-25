@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/9427?v=1795432840",
   "cover_og_url": "/cover/9427/og?v=1795432840",
+  "has_cover": false,
   "url": "/book/block-spam-menggunakan-postfix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Memblokir spam menggunakan spamassasin untuk 1000 mail / menit bisa membuat CPU tewas. Cara yang lebih cerdas untuk memblokir spam sebelum mencapai spamassasin adalah menggunakan RBL (Realtime Blacklists) dan RHBL (sama tapi beda dengan RBL), Greylistings dan Helo Checks. Kita ubah sedikit konfigurasi /etc/postfix/main.cf agar menambahkan pertahanan di smtpd dan cek seluruh host, ### Checks to",

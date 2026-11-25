@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11149?v=1795439143",
   "cover_og_url": "/cover/11149/og?v=1795439143",
+  "has_cover": false,
   "url": "/book/arduino-time-dengan-milis-periodik-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Reference/Millis Code unsigned long time; void setup(){ Serial.begin(9600); } void loop(){ Serial.print(\"Time: \"); time = millis(); //prints time since program started Serial.println(time); // wait a second so as not to send massive amounts of data delay(1000); } Referensi https://www.arduino.cc/en/Reference/Millis",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/10468?v=1795437182",
   "cover_og_url": "/cover/10468/og?v=1795437182",
+  "has_cover": false,
   "url": "/book/instalasi-pptp-onno-widodo-purbo/",
   "rating": null,
   "comment": "cek apakah kernel yang anda gunakan mendukung untuk melakukan MPPE. # modprobe ppp-compress-18 &amp;&amp; echo success Instalasi PPTP # apt-get install pptpd Edit /etc/pptpd.conf # vi /etc/pptpd.conf Pastikan ada alokasi IP address localip 192.168.0.1 remoteip 192.168.0.234-238,192.168.0.245 Restart PPTP # /etc/init.d/pptpd restart Menambahkan User PPTP ke PPP Password # echo \"username pptpd password *\"",

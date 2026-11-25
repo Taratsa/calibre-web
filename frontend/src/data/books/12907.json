@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12907?v=1795444183",
   "cover_og_url": "/cover/12907/og?v=1795444183",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-dhcp-onno-widodo-purbo/",
   "rating": null,
   "comment": "This example shows how to configure a pool called engineering with an IPv6 address prefix : configure terminal ipv6 dhcp pool engineering address prefix 2001:1000::0/64 end This example shows how to configure a pool called testgroup with three link-addresses and an IPv6 address prefix: configure terminal ipv6 dhcp pool testgroup link-address 2001:1001::0/64 link-address 2001:1002::0/64",

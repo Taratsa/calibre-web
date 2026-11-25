@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19322?v=1795472674",
   "cover_og_url": "/cover/19322/og?v=1795472674",
+  "has_cover": false,
   "url": "/book/apache2-mengaktifkan-public-html-untuk-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "UserDir tidak di aktifkan di awal instalasi apache, tapi sudah di siapkan di folder /etc/apache2/mods-available. Agar aktif yang perlu dilakukan ln -s /etc/apache2/mods-available/userdir.conf /etc/apache2/mods-enabled/userdir.conf ln -s /etc/apache2/mods-available/userdir.load /etc/apache2/mods-enabled/userdir.load /etc/init.d/apache2 restart Pranala Menarik Linux Howto",

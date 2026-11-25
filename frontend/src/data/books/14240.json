@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14240?v=1795449167",
   "cover_og_url": "/cover/14240/og?v=1795449167",
+  "has_cover": false,
   "url": "/book/nginx-instalasi-ubuntu-20-04-php8-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://linuxize.com/post/how-to-install-php-8-on-ubuntu-20-04/ Contents 1 Tambahkan Repository 2 Install Nginx 3 Install 4 Tambahkan di Konfigurasi Nginx 5 Referensi Tambahkan Repository sudo apt -y install software-properties-common sudo add-apt-repository ppa:ondrej/php sudo apt update Install Nginx sudo su apt update apt -y install nginx Install sudo apt update sudo apt -y install",

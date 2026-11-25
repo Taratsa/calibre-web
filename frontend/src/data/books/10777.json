@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10777?v=1795438089",
   "cover_og_url": "/cover/10777/og?v=1795438089",
+  "has_cover": false,
   "url": "/book/openssl-beberapa-situs-e-banking-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Cek Menggunakan OpenSSL 2 Internet Banking 3 e-Commerce 4 BUMN 5 Lembaga Pemerintah 6 Tidak bisa connect https Cek Menggunakan OpenSSL Internet Banking openssl s_client -connect www.permatae-business.com:443 | more openssl s_client -connect ib.bankmandiri.co.id:443 | more openssl s_client -connect ibank.klikbca.com:443 | more openssl s_client -connect ib.bri.co.id:443 | more openssl",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15349?v=1795454309",
   "cover_og_url": "/cover/15349/og?v=1795454309",
+  "has_cover": false,
   "url": "/book/5g-nr-link-budget-calculator-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://5g-tools.com/5g-nr-link-budget-calculator/ Disini akan di bahas sedikit tentang 5G NR Link budget calculator. Сalculator memungkinkan untuk menghitung Link budget maksimum jaringan 5G NR tergantung pada Cell Radius, gNodeB/UT configuration, Propagation model, attenuations, dll. Kita dapat menghitung Link budget (Signal level di receiver), kemudian membandingkannya dengan",
@@ -108,11 +109,11 @@
         4
       ],
       [
-        "radius",
+        "cell",
         3
       ],
       [
-        "cell",
+        "radius",
         3
       ],
       [

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11152?v=1795439153",
   "cover_og_url": "/cover/11152/og?v=1795439153",
+  "has_cover": false,
   "url": "/book/graphite-aktifkan-carbon-udp-listener-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar Carbon dapat menerima data via UDP, edit vi /etc/carbon/carbon.conf Pastikan ENABLE_UDP_LISTENER = True UDP_RECEIVER_INTERFACE = 0.0.0.0 UDP_RECEIVER_PORT = 2003 Restart Carbon /etc/init.d/carbon-cache restart",

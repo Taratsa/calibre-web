@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12868?v=1795444034",
   "cover_og_url": "/cover/12868/og?v=1795444034",
+  "has_cover": false,
   "url": "/book/mikrotik-ospf-authentication-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dimungkinkan untuk mengamankan pertukaran paket OSPF, MikroTik RouterOS menyediakan dua metode otentikasi, simple dan MD5. Otentikasi OSPF dinonaktifkan secara default. Otentikasi dikonfigurasi per interface. Tambahkan entri static ospf interface dan tentukan properti otentikasi untuk mengamankan pertukaran informasi OSPF. Konfigurasi otentikasi md5 pada ether1 ditunjukkan di bawah ini: /routing",

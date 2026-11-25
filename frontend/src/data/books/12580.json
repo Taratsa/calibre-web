@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12580?v=1795443123",
   "cover_og_url": "/cover/12580/og?v=1795443123",
+  "has_cover": false,
   "url": "/book/r-tidytext-nasa-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(jsonlite) metadata &lt;- fromJSON(\" https://data.nasa.gov/data.json \") names(metadata$dataset) save(metadata,file=\"metadata.Rdata\") class(metadata$dataset$title) class(metadata$dataset$description) class(metadata$dataset$keyword) # ambil judul2 library(dplyr) nasa_title &lt;- data_frame(id = metadata$dataset$`_id`$`$oid`, title = metadata$dataset$title) nasa_title",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10431?v=1795437067",
   "cover_og_url": "/cover/10431/og?v=1795437067",
+  "has_cover": false,
   "url": "/book/gns3-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 2 Menjalankan 3 Konfigurasi Pertama Kali 3.1 Next 1 3.2 Klik 2 3.3 Klik 3 3.4 FINISH 4 Referensi 5 Pranala Menarik Instalasi Lakukan sudo apt update sudo apt -y install libc6-dev libc6-i386 libssl3:i386 libc6 sudo add-apt-repository ppa:gns3/ppa sudo dpkg --add-architecture i386 sudo apt update sudo apt -y install gns3-gui gns3-iou gns3-server virtualbox qemu wireshark",

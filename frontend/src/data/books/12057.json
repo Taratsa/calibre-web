@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12057?v=1795441427",
   "cover_og_url": "/cover/12057/og?v=1795441427",
+  "has_cover": false,
   "url": "/book/ubuntu-memperbesar-swap-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://sysadminnotebook.blogspot.co.id/2011/09/add-extra-swap-file.html Membuat 1Gb swap dd if=/dev/zero of=/mnt/extra.swap count=1024 bs=1048576 #(where 1048576 bytes = 1Mb) sudo chmod 600 /mnt/extra.swap sudo mkswap /mnt/extra.swap Membuat 2Gb swap dd if=/dev/zero of=/mnt/extra.swap count=2048 bs=1048576 #(where 1048576 bytes = 1Mb) sudo chmod 600 /mnt/extra.swap sudo mkswap",

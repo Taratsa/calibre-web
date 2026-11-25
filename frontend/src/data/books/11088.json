@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11088?v=1795438981",
   "cover_og_url": "/cover/11088/og?v=1795438981",
+  "has_cover": false,
   "url": "/book/mikrotik-hotspot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.mikrotik.com/wiki/Hotspot_server_setup Masuk ke menu Web Buka menu IP, akan terlihat menu HotSpot Klik Menu HotSpot Klik \"HotSpot Setup\", pastikan HotSpot Interface \"bridge-local\", klik Next Pastikan Address 192.168.88.1/24 dan Masquerade, klik Next Set Address Pool of Network untuk client, contoh 192.168.88.100-192.168.88.254 Select Sertificate \"none\", kecuali kalau kita",

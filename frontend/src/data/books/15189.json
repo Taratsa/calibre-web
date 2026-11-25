@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15189?v=1795453585",
   "cover_og_url": "/cover/15189/og?v=1795453585",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-22-04-install-kiwix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Download zim backup wikipedia dan wikitionary 3 Run 4 Script start-kiwix.sh 5 Edit /etc/rc.local 6 Pranala Menarik Install sudo su apt -y install kiwix-tools Download zim backup wikipedia dan wikitionary sudo mkdir -p /var/www/html/kiwix chmod -Rf 777 /var/www/html/kiwix/ chown -Rf nobody: /var/www/html/kiwix/ cd /var/www/html/kiwix wget",

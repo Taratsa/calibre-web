@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16838?v=1795463412",
   "cover_og_url": "/cover/16838/og?v=1795463412",
+  "has_cover": false,
   "url": "/book/rag-pdf-to-md-onno-widodo-purbo/",
   "rating": null,
   "comment": "File Python pdf_to_rag_md.py requirements-pdf-to-rag-md.txt Skrip sudah diperiksa dengan `py_compile` dan diuji pada: PDF dengan bookmark dan struktur heading. PDF tanpa heading, menggunakan fallback setiap lima halaman. Instalasi ```bash mkdir -p ~/Apps/pdf-to-rag cd ~/Apps/pdf-to-rag python3 -m venv .venv source .venv/bin/activate pip install --upgrade pip pip install -r",

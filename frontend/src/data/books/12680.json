@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12680?v=1795443411",
   "cover_og_url": "/cover/12680/og?v=1795443411",
+  "has_cover": false,
   "url": "/book/netplan-statik-onno-widodo-purbo/",
   "rating": null,
   "comment": "edit file sudo su vi /etc/netplan/50-cloud-init.yaml isi network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: no addresses: - 192.168.1.10/24 routes: - to: default via: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 1.1.1.1 Pranala Menarik netplan",

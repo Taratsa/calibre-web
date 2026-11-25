@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21175?v=1795480669",
   "cover_og_url": "/cover/21175/og?v=1795480669",
+  "has_cover": false,
   "url": "/book/wifi-firewall-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengenkrip paket yang dikirim tidak cukup. Kita perlu memperketat kontrol apa yang bisa akses ke / dari mesin kita. Kontrol akses demikin dapat dilakukan oleh Firewall. Di Linux, proses Firewall ini dapat dilakukan menggunakan, # iptables Pada kondisi normal / default, iptables akan menerima (Accept) semua paket masuk (INPUT), keluar (OUTPUT), forward (FORWARD). Kondisi / settingan firewall dapat",

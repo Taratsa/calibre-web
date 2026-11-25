@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/16976?v=1795463790",
   "cover_og_url": "/cover/16976/og?v=1795463790",
+  "has_cover": false,
   "url": "/book/konversi-file-video-mod-ke-dv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kino membutuhkan input file dengan format DV. Hanya saja pada Ubuntu 8.10 tampaknya ada bug sedikit, kita perlu install # apt-get install liba52-0.7.4 sebelum ffmpeg bisa melakukan konversi .MOD ke .dv Bagi anda yang menggunakan handycam JVC yang menyimpan dalam format .MOD. Kita dapat melakukan konversi .MOD ke .avi kemudian .avi ke .dv melalui perintah $ transcode -i MyFilm.MOD -o MyFilm.avi -y",

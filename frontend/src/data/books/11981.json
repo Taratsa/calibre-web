@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11981?v=1795441232",
   "cover_og_url": "/cover/11981/og?v=1795441232",
+  "has_cover": false,
   "url": "/book/compile-kernel-buat-kernel-headers-untuk-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/dnschneid/crouton/wiki/Build-kernel-headers-and-install-Virtualbox-%28x86%29 cd /usr/src/linux cp Documentation/admin-guide/reporting-bugs.rst REPORTING-BUGS make-kpkg --rootcmd fakeroot kernel_image kernel_headers dpkg -i linux-image-4.13.7_4.13.7-10.00.Custom_amd64.deb dpkg -i linux-headers-4.13.7_4.13.7-10.00.Custom_amd64.deb update-grub Referensi",

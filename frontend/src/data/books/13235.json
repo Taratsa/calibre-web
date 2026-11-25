@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13235?v=1795445238",
   "cover_og_url": "/cover/13235/og?v=1795445238",
+  "has_cover": false,
   "url": "/book/tensorflow-shape-onno-widodo-purbo/",
   "rating": null,
   "comment": "python import tensorflow as tf scalar = tf.constant(100) vector = tf.constant([1,2,3,4,5]) matrix = tf.constant([[1,2,3],[4,5,6]]) cube_matrix = tf.constant([[[1],[2],[3]],[[4],[5],[6]],[[7],[8],[9]]]) print(scalar.get_shape()) print(vector.get_shape()) print(matrix.get_shape()) print(cube_matrix.get_shape()) scalar.get_shape() vector.get_shape() matrix.get_shape() cube_matrix.get_shape() Pranala",

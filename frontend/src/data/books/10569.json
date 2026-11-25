@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10569?v=1795437501",
   "cover_og_url": "/cover/10569/og?v=1795437501",
+  "has_cover": false,
   "url": "/book/tcpdump-capture-paket-dalam-format-pcap-utk-wireshark-onno-widodo-purbo/",
   "rating": null,
   "comment": "tcpdump -ni eth0 -s0 -w /var/tmp/capture.pcap tcpdump -i eth0 -s 0 -w ./dump.pcap is sufficient. Referensi https://ask.wireshark.org/questions/19054/tcpdump-text-output-to-pcap",

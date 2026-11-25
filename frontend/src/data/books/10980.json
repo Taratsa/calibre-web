@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10980?v=1795438669",
   "cover_og_url": "/cover/10980/og?v=1795438669",
+  "has_cover": false,
   "url": "/book/bokeh-server-plot-line-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat line.py from bokeh.plotting import figure, output_server, show output_server(\"line\", url=' http://192.168.0.100:5006' ) # THIS LINE HAS CHANGED! p = figure(plot_width=400, plot_height=400) # add a line renderer p.line([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], line_width=2) show(p) Jalankan Server bokeh serve --address=192.168.0.100 --host 192.168.0.100:5006 line.py Browse ke",

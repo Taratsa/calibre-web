@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16432?v=1795460837",
   "cover_og_url": "/cover/16432/og?v=1795460837",
+  "has_cover": false,
   "url": "/book/dataset-stratifikasi-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk memastikan pembagian dataset secara stratifikasi dalam Python, Anda dapat menggunakan fungsi `train_test_split` dari pustaka scikit-learn . Stratifikasi memastikan bahwa proporsi kelas dalam subset data (misalnya, data pelatihan dan pengujian) mencerminkan proporsi kelas dalam dataset asli. Hal ini sangat penting ketika bekerja dengan dataset yang memiliki distribusi kelas yang tidak",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 396,
-    "longer_than": 35,
+    "longer_than": 34,
     "top": [
       [
         "dataset",

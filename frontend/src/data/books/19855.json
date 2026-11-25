@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19855?v=1795475324",
   "cover_og_url": "/cover/19855/og?v=1795475324",
+  "has_cover": false,
   "url": "/book/postfix-konfigurasi-relayhost-dengan-authentikasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan di /etc/postfix/main.cf vi /etc/postfix/main.cf smtp_sasl_auth_enable = yes smtp_sasl_security_options = noanonymous smtp_sasl_password_maps = hash:/etc/postfix/saslpasswd smtp_always_send_ehlo = yes relayhost = smtp-global.indo.net.id Edit /etc/postfix/saslpasswd vi /etc/postfix/saslpasswd smtp-global.indo.net.id yourlogin:yourpassword Hash /etc/postfix/saslpasswd postmap",

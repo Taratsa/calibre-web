@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12483?v=1795442874",
   "cover_og_url": "/cover/12483/og?v=1795442874",
+  "has_cover": false,
   "url": "/book/raspbian-rpi3-stand-alone-access-point-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md Membuat RaspberryPi 3 menjadi stand alone access point WiFi. Contents 1 Instalasi 2 IP Statik 3 Konfigurasi DHCP Server (dnsmasq) 4 Konfigurasi Access Point (hostap) 5 Restart 6 Reboot 7 Referensi 8 Pranala Menarik Instalasi Instalasi sudo su apt-get update apt-get upgrade apt-get install dnsmasq hostapd",

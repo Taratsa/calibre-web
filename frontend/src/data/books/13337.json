@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13337?v=1795445579",
   "cover_og_url": "/cover/13337/og?v=1795445579",
+  "has_cover": false,
   "url": "/book/arduino-dht22-sensor-suhu-dan-humidity-onno-widodo-purbo/",
   "rating": null,
   "comment": "DHT-22 (juga dikenal sebagai AM2302) adalah digital-output, sensor relative humidity dan sensor temperature. Ia menggunakan sensor kelembaban kapasitif dan termistor untuk mengukur udara di sekitarnya, dan mengirimkan sinyal digital pada pin data. Gambar Source Code // Example testing sketch for various DHT humidity/temperature sensors #include \"DHT.h\" #define DHTPIN 2 // what digital pin we're",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 353,
-    "longer_than": 33,
+    "longer_than": 32,
     "top": [
       [
         "dht",

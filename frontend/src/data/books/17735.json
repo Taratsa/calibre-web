@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17735?v=1795466142",
   "cover_og_url": "/cover/17735/og?v=1795466142",
+  "has_cover": false,
   "url": "/book/smeonffline-copy-source-code-semua-cms-ke-var-www-onno-widodo-purbo/",
   "rating": null,
   "comment": "mv /usr/local/src/wordpress-2.9-id_ID.tar.gz /var/www/ cd /var/www tar zxvf wordpress-2.9-id_ID.tar.gz mv /usr/local/src/mediawiki-1.15.3.tar.gz /var/www/ cd /var/www tar zxvf mediawiki-1.15.3.tar.gz mv mediawiki-1.15.3 wiki mv /usr/local/src/odc-wiki.jpg /var/www/wiki chmod a+w wiki/config chown -Rf www-data.www-data /var/www/wiki/images chmod -Rf 777 /var/www/wiki/images rm -Rf",

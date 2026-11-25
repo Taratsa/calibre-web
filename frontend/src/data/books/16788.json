@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16788?v=1795463186",
   "cover_og_url": "/cover/16788/og?v=1795463186",
+  "has_cover": false,
   "url": "/book/orange-install-di-ubuntu-24-04-1-gpu-rtx-4060-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut **versi update** yang lebih rapi, relevan untuk **Ubuntu 24.04.1 + Orange Data Mining + Word Cloud**, sekaligus menyiapkan **GPU RTX 4060 internal** agar **siap dipakai oleh Python/CUDA** bila workflow Orange memanggil library yang mendukung GPU. Yang penting: **Word Cloud di Orange Text sendiri bukan widget yang secara umum membutuhkan GPU**, jadi RTX 4060 tidak akan otomatis mempercepat",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13402?v=1795445841",
   "cover_og_url": "/cover/13402/og?v=1795445841",
+  "has_cover": false,
   "url": "/book/wemos-wifi-local-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include  // replace with your channel's thingspeak API key and your SSID and password const char* ssid = \"Wisma Anggrek\"; const char* password = \"@nggr3kbul@n\"; WiFiClient client; // IP address to send UDP data to. // it can be ip address of the server or // a network broadcast address // here is broadcast address const char * udpAddress = \"10.11.12.143\";",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11797?v=1795440771",
   "cover_og_url": "/cover/11797/og?v=1795440771",
+  "has_cover": false,
   "url": "/book/voip-astrisk-meetme-audio-conference-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://projects.kmi.open.ac.uk/era/vowlan/2009/10/12/set-up-asterisk-conference-calling-with-meetme/ Contents 1 meetme.conf 2 extensions.conf 3 Reference Clodk 4 Referensi meetme.conf vi /etc/asterisk/meetme.conf isi minimal [general] audiobuffers=32 [rooms] ; ; Usage is conf =&gt; confno[,pin][,adminpin] ; conf =&gt; 1234 extensions.conf vi /etc/asterisk/extensions.conf isi exten =&gt;",

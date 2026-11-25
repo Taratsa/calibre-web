@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16648?v=1795462268",
   "cover_og_url": "/cover/16648/og?v=1795462268",
+  "has_cover": false,
   "url": "/book/llm-lora-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap, Pak Onno. Berikut \"how-to\" singkat &amp; praktis memakai **LoRA** di **Ollama**-mulai dari melatih adapter (QLoRA/PEFT), mengonversi (bila perlu), sampai **meng-attach** adapter itu ke model base via **Modelfile**. 1) Pilih base model di Ollama Contoh aman &amp; ringan untuk RTX 4060 8 GB: `llama3.2:3b` atau `llama3.1:8b` `gemma2:2b` Tarik dulu basisnya: ```bash ollama pull llama3.2:3b atau ollama",

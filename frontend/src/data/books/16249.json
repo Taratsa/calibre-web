@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16249?v=1795459728",
   "cover_og_url": "/cover/16249/og?v=1795459728",
+  "has_cover": false,
   "url": "/book/squirrelmail-installation-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Set up POP3 , IMAP &amp; SMTP Server Contents 1 Ubuntu 16.04 2 Older Ubuntu 3 SquirrelMail Configuration 4 SMTP Postfix Configuration 5 Fetching email to INBOX 6 Error 6.1 Error Syslog 6.2 IPv6 Problem 7 Several Squirrelmail Screen Captures 8 References 9 Interesting Links Ubuntu 16.04 apt-get install apache2 php7.0 php7.0-xmlrpc php7.0-mysql php7.0-gd php7.0-cli \\ php7.0-curl mysql-client",
@@ -53,7 +54,7 @@
   ],
   "text": {
     "words": 490,
-    "longer_than": 39,
+    "longer_than": 38,
     "top": [
       [
         "squirrelmail",

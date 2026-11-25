@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20250?v=1795476692",
   "cover_og_url": "/cover/20250/og?v=1795476692",
+  "has_cover": false,
   "url": "/book/dns-spoofing-ubuntu-pool-ntp-org-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file /etc/bind/named.conf.local Isi dengan zone \"ubuntu.pool.ntp.org\" { type master; file \"/var/lib/bind/ubuntu.pool.ntp.org.hosts\"; }; Edit file /var/lib/bind/ubuntu.pool.ntp.org.hosts Isi dengan $ttl 38400 ubuntu.pool.ntp.org. IN SOA 192.168.0.3. onno.indo.net.id. ( 1308191782 10800 3600 604800 38400 ) debian.pool.ntp.org. IN NS 192.168.0.3 0.ubuntu.pool.ntp.org. IN A 192.168.0.3",

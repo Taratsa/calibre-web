@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12551?v=1795443046",
   "cover_og_url": "/cover/12551/og?v=1795443046",
+  "has_cover": false,
   "url": "/book/r-twitter-persiapan-onno-widodo-purbo/",
   "rating": null,
   "comment": "install.packages(c(\"devtools\", \"rjson\", \"bit64\", \"httr\")) #RESTART R session! library(devtools) install_github(\"geoffjentry/twitteR\", username=\"geoffjentry\") library(twitteR) # # request ke https://apps.twitter.com/ # api_key &lt;- \"YOUR API KEY\" api_secret &lt;- \"YOUR API SECRET\" access_token &lt;- \"YOUR ACCESS TOKEN\" access_token_secret &lt;- \"YOUR ACCESS TOKEN SECRET\"",

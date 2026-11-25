@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14227?v=1795449122",
   "cover_og_url": "/cover/14227/og?v=1795449122",
+  "has_cover": false,
   "url": "/book/ols-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Repo 2 Siapkan Firewall 3 Install OpenLiteSpeed 4 Install PHP7 5 Install MariaDB 6 Konfigurasi OpenLiteSpeed 6.1 Switch Port ke 80 6.2 Konfigure PHP 6.3 Virtual Hosts 6.4 Restart Server 6.5 Cek 7 Pranala Menarik Siapkan Repo sudo apt update sudo apt -y install net-tools Siapkan Firewall Jika di perlukan saja, sudo ufw allow OpenSSH sudo ufw allow http sudo ufw allow https sudo",

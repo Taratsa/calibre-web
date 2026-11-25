@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12925?v=1795444247",
   "cover_og_url": "/cover/12925/og?v=1795444247",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-onno-widodo-purbo/",
   "rating": null,
   "comment": "routing ospf-v3 interface add interface=ether1 area=backbone /routing ospf-v3 export /routing ospf-v3 instance set [ find default=yes ] disabled=no redistribute-connected=as-type-1 router-id=192.168.110.251 /routing ospf-v3 interface add area=backbone disabled=no interface=\"eth2 - crs1 to crs2\" #Lan2 /ipv6 address add address=2001:470:dcd9:2::1/64 advertise=yes interface=ether3 /routing ospf-v3",

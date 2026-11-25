@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15046?v=1795452913",
   "cover_og_url": "/cover/15046/og?v=1795452913",
+  "has_cover": false,
   "url": "/book/wemos-mqtt-send-a0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code #include  #include  const char* ssid = \"Kampus ITTS\"; const char* password = \"itts2020\"; const char* mqttServer = \"192.168.17.25\"; const int mqttPort = 1883; const char* mqttUser = \"\"; const char* mqttPassword = \"\"; WiFiClient espClient; PubSubClient client(espClient); void setup() { Serial.begin(115200); WiFi.begin(ssid, password); while (WiFi.status() !=",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15803?v=1795456928",
   "cover_og_url": "/cover/15803/og?v=1795456928",
+  "has_cover": false,
   "url": "/book/youtube-download-video-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/63270/how-do-i-download-a-youtube-video 337 youtube-dl Installation from official site: sudo su apt update apt install curl cd /usr/local/src sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl sudo chmod a+rx /usr/local/bin/youtube-dl It's also on Ubuntu repos but you will often need to keep it up-to-date with sudo",

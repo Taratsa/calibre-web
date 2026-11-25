@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15807?v=1795456951",
   "cover_og_url": "/cover/15807/og?v=1795456951",
+  "has_cover": false,
   "url": "/book/wemos-install-driver-ch340-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://0xsuk.github.io/posts/2022-07-19-how-to-install-ch340-on-ubuntu-22.04/ sudo su apt -y install dwarves git cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/ sudo su cd /usr/local/src git clone https://github.com/juliagoda/CH341SER.git cd /usr/local/src/CH341SER make sudo make load Load module find . -name *.ko | xargs gzip sudo cp ch34x.ko.gz /usr/lib/modules/$(uname",

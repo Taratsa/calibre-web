@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15158?v=1795453456",
   "cover_og_url": "/cover/15158/og?v=1795453456",
+  "has_cover": false,
   "url": "/book/wemos-d1-mini-d1-read-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* * D1 read data * * * */ void setup() { pinMode(D1,INPUT); // initialize serial communications at 9600 bps Serial.begin(9600); } void loop() { in = digitalRead(D1); Serial.println(in); Serial.println(\"\\n\"); delay(1000); }",

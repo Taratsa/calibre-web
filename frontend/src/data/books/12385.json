@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12385?v=1795442590",
   "cover_og_url": "/cover/12385/og?v=1795442590",
+  "has_cover": false,
   "url": "/book/ipv6-debugging-melihat-server-socket-binding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gunakan \"netstat\" untuk server cek socket binding. Biasanya akan menarik untuk melihat soket yang aktif di sebuah node. Karena kita dapat melihat dengan jelas siapa / apa tersambung ke mana dan apa yang dikerjakan. Menggunakan \"netstat\" adalah cara yang paling cepat untuk memperoleh informasi tersebut. Untuk itu kita perlu menggunakan opsi: -nlptu Contoh: # netstat -nlptu Hasilnya IPv6 yang",

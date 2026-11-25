@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13412?v=1795445875",
   "cover_og_url": "/cover/13412/og?v=1795445875",
+  "has_cover": false,
   "url": "/book/tuniot-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code ///////////////////////////////// // Generated with a lot of love// // with TUNIOT FOR ESP8266 // // Website: Easycoding.tn // ///////////////////////////////// void setup() { Serial.begin(115200); } void loop() { Serial.println(analogRead(A0)); delay(200); } Pranala Menarik WeMOS",

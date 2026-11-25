@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14646?v=1795451029",
   "cover_og_url": "/cover/14646/og?v=1795451029",
+  "has_cover": false,
   "url": "/book/restart-bind-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah kita selesai melakukan perubahan zone file, BIND9 perlu di restart agar perubahan tersebut berlaku: sudo /etc/init.d/bind9 restart",

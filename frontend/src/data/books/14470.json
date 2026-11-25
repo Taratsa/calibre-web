@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14470?v=1795450129",
   "cover_og_url": "/cover/14470/og?v=1795450129",
+  "has_cover": false,
   "url": "/book/font-google-noto-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd ~/Downloads # or wherever you downloaded a font pack. unzip .zip # for a single user mkdir -p ~/.fonts cp *otf *otc ~/.fonts fc-cache -f -v # optional # for all users sudo mkdir -p /usr/share/fonts/opentype/noto sudo cp *otf *otc /usr/share/fonts/opentype/noto sudo fc-cache -f -v # optional",

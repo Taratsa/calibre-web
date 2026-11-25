@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13195?v=1795445107",
   "cover_og_url": "/cover/13195/og?v=1795445107",
+  "has_cover": false,
   "url": "/book/linux-apt-upgrade-automatic-di-disable-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit /etc/apt/apt.conf.d/20auto-upgrades sudo su vi /etc/apt/apt.conf.d/20auto-upgrades Ubah 1 menjadi 0 APT::Periodic::Update-Package-Lists \"0\"; APT::Periodic::Unattended-Upgrade \"1\";",

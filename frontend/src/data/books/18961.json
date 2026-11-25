@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18961?v=1795471030",
   "cover_og_url": "/cover/18961/og?v=1795471030",
+  "has_cover": false,
   "url": "/book/voip-cookbook-test-enum-query-in-opensip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Assuming: An Asterisk Server Running at 192.168.0.2 Echo test ready at number 600 ENUM Server is ready to resolve ENUM Query for e164.id. Data in ENUM Server ready to map +62555666666600 to 600@192.168.0.2 Test test routing table would be rewriteuri(\" sip:62555666666600@192.168.0.2 \"); prefix(\"+\"); enum_query(\"e164.id.\"); route(1); route[1] { # send it out now; use stateful forwarding as it works",

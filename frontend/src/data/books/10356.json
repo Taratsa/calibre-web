@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10356?v=1795436833",
   "cover_og_url": "/cover/10356/og?v=1795436833",
+  "has_cover": false,
   "url": "/book/rom-android-compile-kernel-untuk-mediatek-onno-widodo-purbo/",
   "rating": null,
   "comment": "MTK KERNEL BUIDER - Cach tao kernel hoan chinh cho MTK chip KConfig Process Concerned about point 1 : kernel builder: @ makeMtk make-f mediatek / build / makemtk.mk kernel @ mediatek / build / makemtk.mk kernel / build.sh @ kernel / build.sh make mediatek-configs nice make $ {makeflags} $ {makedefs} silentoldconfig make $ {makeflags} $ {makejobs} $ {makedefs} mediatek-configs goal is how original",

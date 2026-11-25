@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11939?v=1795441138",
   "cover_og_url": "/cover/11939/og?v=1795441138",
+  "has_cover": false,
   "url": "/book/nvidia-install-driver-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su sudo add-apt-repository ppa:graphics-drivers/ppa -y apt update apt install nvidia-opencl-icd-340 nvidia-opencl-icd-387 apt install nvidia-361 nvidia-384 nvidia-387 update-initramfs -u shutdown -r now Satu Per Satu VERSION: 304 sudo apt-get install nvidia-304 sudo modprobe nvidia_304 VERSION: 340 sudo apt-get install nvidia-340 nvidia-cuda-toolkit nvidia-340* nvidia-cuda* sudo modprobe",
@@ -94,7 +95,7 @@
         0.48
       ],
       [
-        15431,
+        14798,
         0.47
       ]
     ],

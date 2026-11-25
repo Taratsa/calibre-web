@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16817?v=1795463329",
   "cover_og_url": "/cover/16817/og?v=1795463329",
+  "has_cover": false,
   "url": "/book/cyber-security-python-isolasi-outliar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bisa. Ini skrip Python read-only untuk menganalisis: /opt/wazuh-data/logs/archives/archives.json Tujuannya: membaca log Wazuh, membuat fitur sederhana, lalu memakai Isolation Forest untuk menemukan event yang polanya tidak umum / outlier. Contents 1 1. Buat folder kerja 2 2. Buat virtual environment 3 3. Buat script 4 4. Jalankan langsung ke file Wazuh 5 5. Kalau permission denied 6 6. Lihat",

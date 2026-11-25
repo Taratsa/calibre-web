@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10993?v=1795438709",
   "cover_og_url": "/cover/10993/og?v=1795438709",
+  "has_cover": false,
   "url": "/book/python-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buka File file_ = open('contoh.txt', 'w') file_.write('whatever') file_.close() Argumen usage: test.py -i  -o  Here is the following script to test.py − #!/usr/bin/python import sys, getopt def main(argv): inputfile = outputfile = try: opts, args = getopt.getopt(argv,\"hi:o:\",[\"ifile=\",\"ofile=\"]) except getopt.GetoptError: print 'test.py -i  -o '",

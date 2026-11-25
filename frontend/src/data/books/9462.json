@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9462?v=1795432950",
   "cover_og_url": "/cover/9462/og?v=1795432950",
+  "has_cover": false,
   "url": "/book/squid-block-https-onno-widodo-purbo/",
   "rating": null,
   "comment": "memblock seluruh akses https acl secure proto https http_access deny securehttp atau kalau untuk spesifik host acl CONNECT method CONNECT acl httpsfail dstdomain .facebook.com acl httpsfail dstdomain .orkut.com http_access deny httpsfail CONNECT Referensi http://wiki.squid-cache.org/SquidFaq/SquidAcl",

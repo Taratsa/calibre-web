@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16803?v=1795463290",
   "cover_og_url": "/cover/16803/og?v=1795463290",
+  "has_cover": false,
   "url": "/book/llm-docker-shell-access-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk masuk ke shell container Docker Ollama: docker ps Cari nama container Ollama pada kolom `NAMES`, misalnya: CONTAINER ID IMAGE NAMES abc123456789 ollama/ollama ollama Kemudian masuk dengan: docker exec -it ollama /bin/bash Penjelasan: `docker exec` menjalankan perintah di dalam container yang sedang aktif. `-i` menjaga input terminal tetap terbuka. `-t` membuat terminal interaktif. `ollama`",

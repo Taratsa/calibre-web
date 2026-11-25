@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13207?v=1795445153",
   "cover_og_url": "/cover/13207/og?v=1795445153",
+  "has_cover": false,
   "url": "/book/internet-offline-ipv6-ipref-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Benchmarking IPv6 3 Benchmark UDP Jitter 4 Bandwidth Install apt install iperf Benchmarking IPv6 Server side: iperf -s -m -V Client side: iperf -c  -V&gt; iperf -c  Benchmark UDP Jitter iperf -s -u -i 1 -V iperf -s -u -l 32k -w 128k -i 1 -V iperf -c  -u -b 10m -V iperf -c  -u -b 10m iperf -c  -u -b 100000pps -V",
@@ -66,7 +67,7 @@
       ],
       [
         19915,
-        0.68
+        0.67
       ],
       [
         9749,

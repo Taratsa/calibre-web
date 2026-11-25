@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11595?v=1795440276",
   "cover_og_url": "/cover/11595/og?v=1795440276",
+  "has_cover": false,
   "url": "/book/mitm-arpspoof-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://pdworks.wordpress.com/2009/03/29/arpspoof-for-dummies-a-howto-guide/ Contents 1 Install arpspoof 2 Setup 3 Cek arpspoof 4 Ciri2 Kena ARPspoof 5 Referensi Install arpspoof apt install dsniff Setup Set agar komputer kita menjadi router echo 1 &gt; /proc/sys/net/ipv4/ip_forward sysctl net.ipv4.ip_forward=1 Format arpspoof arpspoof -t target gateway Tipu kedua komputer (misalnya target",

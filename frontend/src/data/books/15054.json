@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15054?v=1795452944",
   "cover_og_url": "/cover/15054/og?v=1795452944",
+  "has_cover": false,
   "url": "/book/raspberryos-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.raspberrypi.com/software/ Masukan MicroSD Buang semua partisi fdisk /dev/sdb d d d w Install menggunakan sudo snap install rpi-imager # sudo apt install rpi-imager Sebagai user biasa jalankan rpi-imager Referensi https://www.raspberrypi.com/software/",

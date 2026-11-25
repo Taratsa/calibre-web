@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12549?v=1795443040",
   "cover_og_url": "/cover/12549/og?v=1795443040",
+  "has_cover": false,
   "url": "/book/r-evaluasi-twit-onno-widodo-purbo/",
   "rating": null,
   "comment": "maruti_tweets = userTimeline(\"Maruti_suzuki\", n=1000,cainfo=\"cacert.pem\") hyundai_tweets = userTimeline(\"HyundaiIndia\", n=1000,cainfo=\"cacert.pem\") tata_tweets = userTimeline(\"TataMotors\", n=1000,cainfo=\"cacert.pem\") toyota_tweets = userTimeline(\"Toyota_India\", n=1000,cainfo=\"cacert.pem\") # get text maruti_txt = sapply(maruti_tweets, function(x) x$getText()) hyundai_txt = sapply(hyundai_tweets,",

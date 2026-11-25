@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11551?v=1795440173",
   "cover_og_url": "/cover/11551/og?v=1795440173",
+  "has_cover": false,
   "url": "/book/snort-cara-membaca-snort-log-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.safaribooksonline.com/library/view/snort-cookbook/0596007914/ch01s20.html Gunakan opsi -r  untuk membaca capture file binary dari libpcap format, snort -dv -r /var/log/snort/snort.log.1085148255 Jika kita ingin menbaca binary file snort.log.1085148255 dan menyimpan semua taffic dalam bentuk format ASCII di directory, snort -r /var/log/snort/snort.log.1085148255 -l",

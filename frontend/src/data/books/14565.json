@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14565?v=1795450583",
   "cover_og_url": "/cover/14565/og?v=1795450583",
+  "has_cover": false,
   "url": "/book/mengukur-sql-menggunakan-mysqlslap-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengukur kinerja database mysql kita dapat menggunakan mysqlslap. Dengan asumsi root password mysql 123456 hostname localhost Test dapat dilakukan menggunakan contoh perintah dibawah ini, mysqlslap -v -h localhost -u root -p123456 --auto-generate-sql Output mysqlslap kira-kira sebagai berikut, Benchmark Average number of seconds to run all queries: 0.009 seconds Minimum number of seconds to",
@@ -169,7 +170,7 @@
       ],
       [
         14569,
-        0.69
+        0.68
       ],
       [
         14568,

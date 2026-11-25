@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12531?v=1795442996",
   "cover_og_url": "/cover/12531/og?v=1795442996",
+  "has_cover": false,
   "url": "/book/python-siapkan-nltk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan sudo apt install python-pip pip install nltk Buat script dl-data-nltk.py untuk download data vi dl-data-nltk.py import nltk nltk.download('stopwords') Jalankan python dl-data-nltk.py Data akan ada di ~/nltk-data/ Pranala Menarik Python",

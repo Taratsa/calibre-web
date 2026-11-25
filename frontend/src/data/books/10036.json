@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10036?v=1795435822",
   "cover_og_url": "/cover/10036/og?v=1795435822",
+  "has_cover": false,
   "url": "/book/voip-asterisk-pakai-gotoif-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.spinics.net/lists/asterisk/msg157160.html exten =&gt; _7NXXXXXX,1,Dial(SIP/7780${EXTEN:1}@pstn-5665,60,tr) exten =&gt; _7NXXXXXX,n,NoOp(DialStatus=\"${DIALSTATUS}\") exten =&gt; _7NXXXXXX,n,GotoIf($[$[\"${DIALSTATUS}\" = \"BUSY\"] | $[\"${DIALSTATUS}\" = \"CONGESTION\"]]?line2) exten =&gt; _7NXXXXXX,n,Hangup() exten =&gt; _7NXXXXXX,n(line2),Dial(SIP/9780${EXTEN:1}@pstn-1270,60,tr) exten =&gt;",
@@ -212,7 +213,7 @@
       ],
       [
         20944,
-        0.7
+        0.71
       ]
     ],
     "sentiment": null

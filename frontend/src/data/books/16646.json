@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16646?v=1795462254",
   "cover_og_url": "/cover/16646/og?v=1795462254",
+  "has_cover": false,
   "url": "/book/llm-fine-tuning-ollama-gemma3-1b-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap! Berikut **paket lengkap** untuk *fine-tuning* **Ollama `gemma3:1b`** dengan *open-source stack* (Python + Unsloth/PEFT) lalu **dipakai di Ollama** via LoRA *adapter*. Alurnya: 1. **Siapkan data** (JSON/JSONL). 2. **Fine-tune di Python** → hasilkan **LoRA adapter**. 3. **Bungkus ke Ollama** dengan **Modelfile** (`FROM gemma3:1b` + `ADAPTER ...`). ([Ollama][1]) --- 0) Persiapan lingkungan",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/14770?v=1795451626",
   "cover_og_url": "/cover/14770/og?v=1795451626",
+  "has_cover": false,
   "url": "/book/instalasi-x-lite-voip-client-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "NOT RECOMMENED: akan mengeluarkan banyak error seperti ./xtensoftphone: /usr/lib/libstdc++.so.5: version `GLIBCPP_3.2' not found (required by ./xtensoftphone) ./xtensoftphone: /usr/lib/libstdc++.so.5: version `CXXABI_1.2' not found (required by ./xtensoftphone) karena x-lite di compile untuk libstdc++5 bukan libstdc++6 :(( .. Sebaiknya menggunakan versi lama sudo apt-get install libstdc++5 Bagi",

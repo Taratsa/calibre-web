@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12690?v=1795443441",
   "cover_og_url": "/cover/12690/og?v=1795443441",
+  "has_cover": false,
   "url": "/book/internet-offline-ukur-bandwidth-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Server RPi 192.168.0.1 2 Client 3 Hasil 4 Pranala Menarik Server RPi 192.168.0.1 nc -vvlnp 12345 &gt;/dev/null Client Di sisi client kirim gigabyte zero melalui dd lewat nc tunnel dd if=/dev/zero bs=1M count=1K | nc -vvn 192.168.0.1 12345 Hasil Rpi 11,8 MB/s 94.4Mbps Asus 11,8 MB/s 94.4Mbps VM 4CORE 4096MB 245 MB/s 1960Mbps VM 1CORE 1000MB 271 MB/s 2168Mbps Pranala Menarik Internet",

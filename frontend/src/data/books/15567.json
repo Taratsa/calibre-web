@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15567?v=1795455537",
   "cover_og_url": "/cover/15567/og?v=1795455537",
+  "has_cover": false,
   "url": "/book/minikube-troubleshooting-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/troubleshooting/ Troubleshooting How to troubleshoot minikube issues Enabling debug logs Pass --alsologtostderr to minikube commands to see detailed log output. To increase the log verbosity, you can use: -v=1: verbose messages -v=2: really verbose messages -v=8: more log messages than you can possibly handle. Example: minikube start",

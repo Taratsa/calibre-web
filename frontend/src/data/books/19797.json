@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19797?v=1795475035",
   "cover_og_url": "/cover/19797/og?v=1795475035",
+  "has_cover": false,
   "url": "/book/install-openkm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install aplikasi pendukung sudo aptitude install tesseract-ocr openoffice.org imagemagick swftools clamav Copy dan extrak cp OpenKM-5.0-RC1_JBoss-4.2.3.GA.zip /usr/local/src/ cd /usr/local/src unzip OpenKM-5.0-RC1_JBoss-4.2.3.GA.zip Edit vi /usr/local/src/jboss-4.2.3.GA/OpenKM.cfg system.ocr=/usr/bin/tesseract system.openoffice=/usr/lib/openoffice system.img2pdf=/usr/bin/convert",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10105?v=1795436047",
   "cover_og_url": "/cover/10105/og?v=1795436047",
+  "has_cover": false,
   "url": "/book/melihat-statistik-wordpress-onno-widodo-purbo/",
   "rating": null,
   "comment": "Statistik aktifitas di Wordpress dapat dilihat melalui langkah berikut Login sebagai admin Sebelah kanan bawah ada BlogStats Klik menu category http://web-wordpress/wp-admin/categories.php Cara lain akses langsung ke MySQL database # mysql -u root -p password: mysql&gt; use wordpress; mysql&gt; select * from wp_posts; Lihat di bagian ID Comment Count Kita akan memperoleh bayangan tingkat aktifitas yang",

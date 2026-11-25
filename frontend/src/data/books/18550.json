@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/18550?v=1795469250",
   "cover_og_url": "/cover/18550/og?v=1795469250",
+  "has_cover": false,
   "url": "/book/wifi-grounding-system-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada dasarnya ada tiga (3) jenis grounding system, yaitu: Safety ground , ini untuk daya listrik berteganggan tinggi (PLN) Lightning ground , ini untuk menyalurkan petir ke tanah. RF ground , ini untuk grounding sinyal RF (radio). Yang kita perlukan dalam operasional WLAN adalah Lightning Ground dan RF Ground, kedua-nya harus diletakan pada tempat yang terpisah, jangan di jadikan satu. RF",
@@ -107,12 +108,12 @@
     ],
     "distinct": [
       [
-        "grounding",
-        10
-      ],
-      [
         "ground",
         18
+      ],
+      [
+        "grounding",
+        10
       ],
       [
         "wifi",

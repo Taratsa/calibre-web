@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13085?v=1795444773",
   "cover_og_url": "/cover/13085/og?v=1795444773",
+  "has_cover": false,
   "url": "/book/ipv6-setup-resolve-dns-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Disisi client sering kali kita perlu men-set DNS untuk bisa resolve. Biasanya untuk IPv4 menggunakan DNS layanan Google, seperti, 8.8.8.8 8.8.4.4 Untuk IPv6, kita bisa mengedit vi /etc/resolv.conf Isi dengan, misalnya, # Google nameserver 2001:4860:4860::8888 nameserver 2001:4860:4860::8844 # OpenDNS nameserver 2620:119:35::35 nameserver 2620:119:53::53 # Quad9 nameserver 2620:fe::fe nameserver",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

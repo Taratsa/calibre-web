@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12636?v=1795443282",
   "cover_og_url": "/cover/12636/og?v=1795443282",
+  "has_cover": false,
   "url": "/book/python3-socketserver-tcpserver-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Server side 2 Client side 3 Run 4 Pranala Menarik Server side import socketserver class MyTCPHandler(socketserver.BaseRequestHandler): \"\"\" The request handler class for our server. It is instantiated once per connection to the server, and must override the handle() method to implement communication to the client. \"\"\" def handle(self): # self.request is the TCP socket connected to the",

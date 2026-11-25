@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16908?v=1795463607",
   "cover_og_url": "/cover/16908/og?v=1795463607",
+  "has_cover": false,
   "url": "/book/isi-file-source-list-onno-widodo-purbo/",
   "rating": null,
   "comment": "File sources.list di /etc/apt/sources.list menentukan repository mana yang akan kita gunakan untuk mengupdate / download source Ubuntu. Beberapa contoh sources.list sources.list intrepid sources.list intrepid Indonesia Jangan lupa menjalankan perintah berikut sesudah mengubah file /etc/apt/sources.list # apt-get update Pranala Menarik Linux Howto",

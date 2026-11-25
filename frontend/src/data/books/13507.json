@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13507?v=1795446220",
   "cover_og_url": "/cover/13507/og?v=1795446220",
+  "has_cover": false,
   "url": "/book/gnuradio-out-of-tree-oot-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://wiki.gnuradio.org/index.php/GNU_Radio_3.8_OOT_Module_Porting_Guide Brace yourself! 3.8 is here. This document, hopefully, eases the transition of your OOT to our new major version. Furthermore, we think it is a good occasion to establish some standards on how an OOT module should be structured and maintained. More uniformity is an advantage for the users, for you as a OOT",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1453,
-    "longer_than": 56,
+    "longer_than": 55,
     "top": [
       [
         "cmake",

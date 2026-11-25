@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14546?v=1795450490",
   "cover_og_url": "/cover/14546/og?v=1795450490",
+  "has_cover": false,
   "url": "/book/linux-driver-tp-link-tl-wn422g-onno-widodo-purbo/",
   "rating": null,
   "comment": "May 5th, 2010, 08:50 PM Okay, here's one thing to try: Download this file to cour Desktop: http://git.kernel.org/?p=linux/kernel/git/dwmw2/linux-firmware.git;a=blob;f=ar9271.fw;h=2398e5517b0ad7da 7adad54763b91705a3d2acb7;hb=HEAD then open up a terminal and enter these commands one after the other (you will be asked for your password on the last step) cd Desktop sudo mv ar9271.fw /lib/firmware",

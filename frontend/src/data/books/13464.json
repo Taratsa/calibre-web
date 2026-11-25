@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13464?v=1795446035",
   "cover_og_url": "/cover/13464/og?v=1795446035",
+  "has_cover": false,
   "url": "/book/r-tidytext-sentiment-comparing-the-three-sentiment-dictionaries-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/02-sentiment-analysis.Rmd library(knitr) opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE) options(width = 100, dplyr.width = 100) library(ggplot2) theme_set(theme_light()) library(tidytext) get_sentiments(\"afinn\") get_sentiments(\"bing\") get_sentiments(\"nrc\") pride_prejudice &lt;- tidy_books %&gt;% filter(book == \"Pride &amp;",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16805?v=1795463295",
   "cover_og_url": "/cover/16805/og?v=1795463295",
+  "has_cover": false,
   "url": "/book/wazuh-to-ollama-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python3 \"\"\" wazuh_to_ollama.py Membaca alert JSONL Wazuh, menyaring berdasarkan level rule, mengirim alert ke Ollama, lalu menyimpan hasil analisis sebagai JSONL. Tidak membutuhkan library Python tambahan: hanya memakai standard library. Contoh: python3 wazuh_to_ollama.py --mode batch --limit 5 python3 wazuh_to_ollama.py --mode follow --min-level 10 \"\"\" from __future__ import",

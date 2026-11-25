@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15738?v=1795456529",
   "cover_og_url": "/cover/15738/og?v=1795456529",
+  "has_cover": false,
   "url": "/book/cisco-dual-stack-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tool yang digunakan adalah: GNS3 Cisco C7200 + PA-8E di salah satu slot 2 Virtual PC 1 Kali Linux 2023.2 Sambungan: Cisco C7200 Ethernet 1/0 -&gt; Switch Ethernet 0 Switch Ethernet 1 -&gt; PC1 Switch Ethernet 2 -&gt; PC2 Switch Ethernet 3 -&gt; Kali Linux 2023.2 Konfigurasi R1 C7200 enable configure terminal interface Ethernet 1/0 no shutdown ipv6 address 2001:1234:ABCD::1/64 ip address 192.168.1.1",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 201,
-    "longer_than": 24,
+    "longer_than": 23,
     "top": [
       [
         "ipv",

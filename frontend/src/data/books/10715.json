@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10715?v=1795437917",
   "cover_og_url": "/cover/10715/og?v=1795437917",
+  "has_cover": false,
   "url": "/book/cacti-instalasi-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebelum instalasi Cacti kita perlu menginstalasi semua dependency. Instal Dependency sudo apt-get install apache2 mysql-server php5 libapache2-mod-php5 sudo apt-get -y install rrdtool sudo apt-get -y install snmp snmpd Install Cacti dan Spine sudo apt-get -y install cacti cacti-spine Pada Popup message pilih OK. 1 Now it will ask you for a webserver that you will use it, we choose Apache2 since",

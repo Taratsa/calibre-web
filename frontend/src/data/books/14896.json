@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14896?v=1795452311",
   "cover_og_url": "/cover/14896/og?v=1795452311",
+  "has_cover": false,
   "url": "/book/android-studio-hms-video-play-kit-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: TIDAK BISA UNTUK INDONESIA Configure Maven dependencies in the build.gradle file under the app directory of your Android Studio project. dependencies { ...... implementation \"com.huawei.hms:videokit-player:1.0.10.300\" } If you want your app to use Video Kit without relying on HMS Core (APK), add the following fallback dependencies in the dependencies block. dependencies { implementation",

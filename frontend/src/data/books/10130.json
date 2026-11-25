@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10130?v=1795436120",
   "cover_og_url": "/cover/10130/og?v=1795436120",
+  "has_cover": false,
   "url": "/book/python-echo-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Simple Echo Server 2 Sebuah Echo Client Sederhana 3 Alternatif Test menggunakan nc 4 Referensi Simple Echo Server Sebuah simple echo server (echoserver-simple.py): #!/usr/bin/env python import socket host = port = 50000 backlog = 5 size = 1024 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) s.bind((host,port)) s.listen(backlog) while 1: client, address = s.accept() data =",

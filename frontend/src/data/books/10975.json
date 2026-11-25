@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10975?v=1795438656",
   "cover_og_url": "/cover/10975/og?v=1795438656",
+  "has_cover": false,
   "url": "/book/bokeh-menerima-tcp-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://stackoverflow.com/questions/33241229/real-time-bokeh-socket-python/33275677#33275677 client.py import sys import time import socket import random # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('192.168.0.100', 2000) sock.connect(server_address) try: for i in",

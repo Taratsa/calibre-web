@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19659?v=1795474398",
   "cover_og_url": "/cover/19659/og?v=1795474398",
+  "has_cover": false,
   "url": "/book/mengirimkan-e-mail-menggunakan-telnet-tanpa-bantuan-software-apapun-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi yang iseng ingin mengirimkan e-mail secara anonymous dapat menggunakan telnet. Beberapa langkah yang perlu dilakukan cek SMTP Server sasaran yang ingin dikirimi e-mail , misalnya, untuk ke user@yahoo.com dig MX yahoo.com setelah kita memperoleh informasi SMTP server untuk me-relay ke mail tujuan, ketik telnet berikut telnet smtp.server.tujuan 25 Setelah kita tersambung ke SMTP Server",

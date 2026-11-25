@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17740?v=1795466156",
   "cover_og_url": "/cover/17740/og?v=1795466156",
+  "has_cover": false,
   "url": "/book/instalasi-gpsdrive-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah mengaktifkan GPS Sambungan &amp; nyalakan GPS ke PC. Pastikan serial terdetect, jika menggunakan USB menggunakan perintah. # lsusb Install GPSdrive menggunakan perintah # apt-get install gpsdrive Konfigurasi gpsd # dpkg-reconfigure gpsd Pastikan: serial port yang digunakan benar yaitu /dev/ttyS0 (COM1) atau /dev/ttyUSB0 (USB) Pranala Menarik Linux Howto GoogleMap",

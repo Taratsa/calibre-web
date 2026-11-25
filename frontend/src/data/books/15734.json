@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15734?v=1795456496",
   "cover_og_url": "/cover/15734/og?v=1795456496",
+  "has_cover": false,
   "url": "/book/nginx-rtmp-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-video-streaming-server-using-nginx-rtmp-on-ubuntu-22-04 Install nginx sudo apt update sudo apt install nginx Cek systemctl status nginx Install Nginx RTMP sudo apt update sudo apt install libnginx-mod-rtmp Edit nginx.conf sudo nano /etc/nginx/nginx.conf Contoh, . . . rtmp { server { listen 1935; chunk_size 4096; allow",

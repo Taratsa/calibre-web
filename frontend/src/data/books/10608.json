@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10608?v=1795437617",
   "cover_og_url": "/cover/10608/og?v=1795437617",
+  "has_cover": false,
   "url": "/book/mysqlslap-tutorial-stress-test-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Penggunaan Dasar 2 Run test lebih dari satu kali 3 Menentukan total queries 4 Menggunakan Tables yang besar 5 Menggunakan Custom Query 6 Membandingkan tabel engine 7 Menyimpan Laporan 8 Referensi Penggunaan Dasar mysqlslap --user=root --password=123456 --auto-generate-sql Output: Benchmark Average number of seconds to run all queries: 0.008 seconds Minimum number of seconds to run all",

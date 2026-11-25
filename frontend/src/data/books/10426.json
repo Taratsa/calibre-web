@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10426?v=1795437051",
   "cover_og_url": "/cover/10426/og?v=1795437051",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-raspberry-pi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Aplikasi Pendukung 2 Compile Menggunakan Development Trunk 3 Konfigurasi Default 4 Flash SD Card 5 Reset Password Root Siapkan Aplikasi Pendukung sudo su apt-get update apt-get install subversion gawk flex sharutils bison libz-dev zlib1g-dev patch \\ fakeroot lzma git-core build-essential unzip libncurses5-dev curl php-xml-parser \\ libexpat1 libexpat1-dev libssl-dev libdaemon*",

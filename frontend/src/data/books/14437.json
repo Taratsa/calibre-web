@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14437?v=1795449967",
   "cover_og_url": "/cover/14437/og?v=1795449967",
+  "has_cover": false,
   "url": "/book/logcheck-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt install logcheck Konfigurasi Edit file /etc/logcheck/logcheck.conf Ubah SENDMAILTO=\"email@addres_anda\" Edit /etc/logcheck/logcheck.logfiles Isi /var/log/syslog /var/log/auth.log Run sudo -u logcheck logcheck",

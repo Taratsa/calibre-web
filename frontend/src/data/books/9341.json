@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9341?v=1795432559",
   "cover_og_url": "/cover/9341/og?v=1795432559",
+  "has_cover": false,
   "url": "/book/instalasi-astersik-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Proses instalasi asterisk ini biasanya membutuhkan sambungan ke Internet karena asterisk membutuhkan download firmware dari interface VoIP card Digium. Jika tidak ada sambungan ke Internet kemungkinan kita akan memperoleh beberapa error terutama DAHDI tidak terinstalasi. Hal ini tidak apa-apa untuk menjalankan asterisk sebagai softswitch . Instalasi yang aman apt-get install asterisk atau apt-get",

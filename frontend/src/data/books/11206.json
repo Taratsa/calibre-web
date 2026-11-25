@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11206?v=1795439310",
   "cover_og_url": "/cover/11206/og?v=1795439310",
+  "has_cover": false,
   "url": "/book/liveusb-dd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bersihkan fs wipefs -a /dev/sdb Tambahkan oflag=direct sudo dd if=~/Desktop/linuxmint.iso of=/dev/sdb1 oflag=direct bs=1048576 sudo dd if=file.iso of=/dev/sdb1 oflag=direct bs=4M",

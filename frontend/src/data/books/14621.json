@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/14621?v=1795450889",
   "cover_og_url": "/cover/14621/og?v=1795450889",
+  "has_cover": false,
   "url": "/book/membuka-fasilitas-upload-di-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file # vi /var/www/wiki/LocalSettings.php Pastikan $wgEnableUploads = true; Ubah ijin folder /var/www/wiki/images sudo su chmod -Rf 777 /var/www/wiki/images chown -Rf www-data.www-data /var/www/wiki/images Pranala Menarik Mediawiki Instalasi MediaWiki Melihat Aktifitas dan Statistik Mediawiki Dumping Seluruh Database MediaWiki Replikasi Database dan Image MediaWiki Membuka Fasilitas Upload",

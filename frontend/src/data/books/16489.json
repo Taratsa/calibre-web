@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16489?v=1795461163",
   "cover_og_url": "/cover/16489/og?v=1795461163",
+  "has_cover": false,
   "url": "/book/praktik-mengamankan-formulir-login-dari-serangan-dasar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Formulir login merupakan salah satu komponen penting dalam aplikasi web yang sering menjadi target serangan seperti SQL Injection dan Cross-Site Scripting (XSS) . Memahami dan menerapkan teknik pengamanan yang tepat pada formulir login akan membantu mencegah akses tidak sah dan melindungi data pengguna. Contents 1 1. Persiapan Lingkungan 2 2. Membuat Formulir Login yang Aman 3 3. Mencegah",
@@ -116,12 +117,12 @@
         4
       ],
       [
-        "formulir",
-        7
-      ],
-      [
         "username",
         9
+      ],
+      [
+        "formulir",
+        7
       ],
       [
         "session",

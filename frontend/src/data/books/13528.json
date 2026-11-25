@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13528?v=1795446335",
   "cover_og_url": "/cover/13528/og?v=1795446335",
+  "has_cover": false,
   "url": "/book/openwrt-3g-modem-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://openwrt.org/docs/guide-user/network/wan/wwan/3gdongle Use 3g/UMTS USB Dongle for WAN connection This tutorial explains how to setup and configure OpenWrt for using a USB 3g/UMTS-modem for WAN connection using the older (and slower) ppp protocol. Many modern (and most LTE) usb modems provide qmi, mbim, ncm, rndis protocol for connection instead of legacy ppp protocol, they are",

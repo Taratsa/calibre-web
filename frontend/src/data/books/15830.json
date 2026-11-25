@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15830?v=1795457080",
   "cover_og_url": "/cover/15830/og?v=1795457080",
+  "has_cover": false,
   "url": "/book/gpsd-instalasi-jalankan-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt install gpsd gpsd-clients matikan gpsd sudo su systemctl stop gpsd.socket systemctl stop gpsd Pastikan GPS tersambung ls /dev/ttyUSB0 Jalankan gpsd -D 5 -N -n /dev/ttyUSB0 Jalankan sebagai user biasa xgps localhost:2947 cgps localhost:2947",
@@ -66,7 +67,7 @@
       ],
       [
         17977,
-        0.25
+        0.24
       ],
       [
         16891,

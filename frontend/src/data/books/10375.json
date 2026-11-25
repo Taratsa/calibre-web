@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10375?v=1795436895",
   "cover_og_url": "/cover/10375/og?v=1795436895",
+  "has_cover": false,
   "url": "/book/membangun-server-cloud-dengan-owncloud-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah - langkah instalasi owncloud di Ubuntu 14.04 : 1.Pertama kita lakukan update dulu pc kita ,dengan perintah : apt-get update 2.Jalankan apache2 , jika belum ada ,install dengan perintah : apt-get install apache2 3.Setelah itu install php5 pada server,perintahnya : apt-get install php5 php5-mysql 4.Selain itu ,owncloud juga membutuhkan beberapa modules php, install modules php yang",

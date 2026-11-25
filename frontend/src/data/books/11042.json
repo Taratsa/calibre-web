@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11042?v=1795438859",
   "cover_og_url": "/cover/11042/og?v=1795438859",
+  "has_cover": false,
   "url": "/book/backup-harddisk-dan-cloning-komputer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: Anthony.Rasat http://opensource.telkomspeedy.com/forum/viewtopic.php?pid=14872 Belom pernah sih cloning di Linux, tapi kalau bikin dua HDD nyaris sama (cue buat veteran : tinggal GRUB saja yang blom disalin) sih dengan perintah tar saja bisa. Langkah-langkah: Jalankan Linux , pastikan sebuah directory kosong. Saya sih biasanya pakai /mnt/disk. Mount HDD target ke /mnt/disk. Berangkatlah",

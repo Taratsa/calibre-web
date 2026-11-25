@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13158?v=1795444988",
   "cover_og_url": "/cover/13158/og?v=1795444988",
+  "has_cover": false,
   "url": "/book/ipv6-bgp-fundamental-onno-widodo-purbo/",
   "rating": null,
   "comment": "BGP Basics Like EGP, BGP forms a unique, unicast-based connection to each of its BGP-speaking peers. To increase the reliability of the peer connection, BGP uses TCP (port 179) as its underlying delivery mechanism. The update mechanisms of BGP are also somewhat simplified by allowing the TCP layer to handle such duties as acknowledgment, retransmission, and sequencing. Because BGP rides on TCP, a",

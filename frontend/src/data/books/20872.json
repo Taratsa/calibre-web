@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20872?v=1795478389",
   "cover_og_url": "/cover/20872/og?v=1795478389",
+  "has_cover": false,
   "url": "/book/tcp-ip-quagga-rip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/quagga/daemons Supaya zebra=yes bgpd=no ospfd=no ospf6d=no ripd=yes ripngd=yes isisd=no Copy konfigurasi cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conf cp /usr/share/doc/quagga/examples/ripd.conf.sample /etc/quagga/ripd.conf cp /usr/share/doc/quagga/examples/ripngd.conf.sample /etc/quagga/ripngd.conf Contoh Konfigurasi RIP ! -*- rip -*- ! ! RIPd sample",

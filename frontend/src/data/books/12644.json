@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12644?v=1795443305",
   "cover_og_url": "/cover/12644/og?v=1795443305",
+  "has_cover": false,
   "url": "/book/openwrt-setup-ova-supaya-eth0-wan-sisanya-lan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit board.d/01_leds: ucidef_set_led_netdev \"wan\" \"WAN\" \"apu2:green:led3\" \"eth0\" ucidef_set_led_netdev \"wan\" \"WAN\" \"apu2:green:led3\" \"eth0\" Edit board.d/02_network: ucidef_set_interfaces_lan_wan \"eth1 eth2\" \"eth0\" ucidef_set_interface_lan \"eth1 eth2\" macaddr=\"$(cat /sys/class/net/eth0/address)\" 2&gt;/dev/null board.d/99_default_network ucidef_set_interface_lan 'eth1' [ -d /sys/class/net/eth0 ] &amp;&amp;",

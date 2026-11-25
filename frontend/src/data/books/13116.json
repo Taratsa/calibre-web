@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13116?v=1795444853",
   "cover_og_url": "/cover/13116/og?v=1795444853",
+  "has_cover": false,
   "url": "/book/openvpn-ipv6-server-openvpn-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setup Server OpenVPN relatif sama untuk single PC client maupun LAN. Asumsi topologi yang digunakan adalah seperti gambar di bawah ini, CLIENT 1 ------- HOST A ---------------- HOST B ovpn server ovpn client 2345::1/64 Host A akan berfungsi sebagai OpenVPN Server. OS : Ubuntu 18.04 IP : 192.168.0.239/24 (ini bisa berupa IPv4 public) hostname : vpnserver Host B akan berfungsi sebagai OpenVPN PC",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21251?v=1795481038",
   "cover_og_url": "/cover/21251/og?v=1795481038",
+  "has_cover": false,
   "url": "/book/backup-isi-database-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dump isi database MySQL /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c &gt; isidatabase.sql jika kita menginginkan agar file yang di hasilkan langsung di gz, kita dapat menggunakan perintah /usr/bin/mysqldump -u usernamemysql -ppasswordmysql namadb -c | /bin/gzip -9 &gt; isidatabse.sql.gz Database akan tersimpan di file",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12354?v=1795442482",
   "cover_og_url": "/cover/12354/og?v=1795442482",
+  "has_cover": false,
   "url": "/book/ipv6-cek-ipv6-ready-beberapa-contoh-client-program-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan test ini, kita membutuhkan sistem yang siap dengan IPv6. Cek DNS untuk me-resolve address IPv6 Karena security update beberapa tahun belakangan ini, seharusnya semua DNS server menjalankan software terbaru yang harusnya mengerti tentang address IPv6 tipe AAAA. Test sederhana tampak berikut ini, host -t AAAA ipv6.google.com dan harusnya akan tampak sebagai berikut:",

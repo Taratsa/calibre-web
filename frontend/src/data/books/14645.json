@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14645?v=1795451018",
   "cover_og_url": "/cover/14645/og?v=1795451018",
+  "has_cover": false,
   "url": "/book/buat-record-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gunakan zone file yang ada sebagai template, misalnya: sudo cp /etc/bind/db.local /etc/bind/db.example.com Edit zone file yang baru /etc/bind/db.example.com ubah localhost. ke FQDN dari server anda, biarkan tambahan \".\" di akhir. Ubah 127.0.0.1 ke server IP Address dan root.localhost ke email address yang valid, tapi dengan \".\" bukan \"@\". juga biarkan \".\" di akhirnya. Juga, buat A record untuk",

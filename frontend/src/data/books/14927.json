@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14927?v=1795452445",
   "cover_og_url": "/cover/14927/og?v=1795452445",
+  "has_cover": false,
   "url": "/book/mqtt-android-client-example-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 settings.gradle 2 build.gradle :app 3 AndroidManifest.xml 4 activity_main.xml 5 MainActivity.java 6 Referensi settings.gradle pluginManagement { repositories { gradlePluginPortal() google() mavenCentral() maven { url \" https://repo.eclipse.org/content/repositories/paho-releases/ \" } } } dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)",

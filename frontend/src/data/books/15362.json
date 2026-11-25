@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15362?v=1795454401",
   "cover_og_url": "/cover/15362/og?v=1795454401",
+  "has_cover": false,
   "url": "/book/openvpn-routing-lan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://openvpn.net/community-resources/expanding-the-scope-of-the-vpn-to-include-additional-machines-on-either-the-client-or-server-subnet/ Banyak mesin di belakang OpenVPN (dev tun) Tambahkan di config server OpenVPN push \"route 10.66.0.0 255.255.255.0\" Asumsinya IP LAN di belakang OpenVPN server adalah 10.66.0.0/24 Alternatif lain, disisi client OpenVPN tambahkan route 10.66.0.0",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11814?v=1795440810",
   "cover_og_url": "/cover/11814/og?v=1795440810",
+  "has_cover": false,
   "url": "/book/squid-log-analyzer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara paling sederhana, pakai tail -f tail -f /var/log/squid/access.log | awk '{print$3 \" \" $8 \" \" $7}' Referensi http://www.webalizer.org/ https://awstats.sourceforge.io/ https://awstats.sourceforge.io/docs/awstats_compare.html https://sourceforge.net/projects/sarg/",

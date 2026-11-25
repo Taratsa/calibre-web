@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10556?v=1795437462",
   "cover_og_url": "/cover/10556/og?v=1795437462",
+  "has_cover": false,
   "url": "/book/powerdns-instalasi-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install PowerDNS di Ubuntu Operating system: Ubuntu 14.04 LTS server IP Address: 192.168.0.100/24 Hostname: refserver Contents 1 Update apps 2 Instalasi &amp; Setup MySQL 3 Install PowerDNS 4 Create PowerDNS Database dan User di MySQL 5 Konfigurasi PowerDNS 6 Test PowerDNS 7 Referensi Update apps sudo apt-get update sudo apt-get upgrade -y Instalasi &amp; Setup MySQL sudo apt-get install mysql-server",

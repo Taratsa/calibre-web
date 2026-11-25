@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13398?v=1795445829",
   "cover_og_url": "/cover/13398/og?v=1795445829",
+  "has_cover": false,
   "url": "/book/wemos-7-segmen-display-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk TM1637 Download cd ~/Arduino/libraries rm master* wget https://github.com/avishorp/TM1637/archive/master.zip unzip master.zip Code #include  // Module connection pins (Digital Pins) // #define CLK 5 //A5 // #define DIO 4 //A4 TM1637Display display(D1, D2); // Create array that turns all segments on: const uint8_t data[] = {0xff, 0xff, 0xff, 0xff}; // Create array that turns",

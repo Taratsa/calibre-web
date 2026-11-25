@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19068?v=1795471486",
   "cover_og_url": "/cover/19068/og?v=1795471486",
+  "has_cover": false,
   "url": "/book/iscsi-penggunaan-iscsi-di-ubuntu-sebagai-initiator-dan-target-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tulisan ini akan menjelaskan bagaimana mensetup iSCSI target dan iSCSI initiator (client), yang di jalankan di Ubuntu. iSCSI protokol adalah protokol yang digunakan di Storage Area Network ( SAN ) yang memungkinkan iSCSI initiator untuk menggunakan storage device di (remote) iSCSI target menggunakan kabel LAN biasa. Bagi iSCSI inisiator, remote storage akan tampak normal seperti harddisk yang di",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1702,
-    "longer_than": 58,
+    "longer_than": 57,
     "top": [
       [
         "dev",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12924?v=1795444242",
   "cover_og_url": "/cover/12924/og?v=1795444242",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi 3 Verify 4 Referensi 5 Pranala Menarik Topologi R1 e0 -- R3: e0 e1 -- R2: e0 e2 -- LAN: 192.168.1.1/24 R2 e0 -- R1: e1 e1 -- R3: e1 e2 -- LAN 192.168.2.1/16 R3 e0 -- R1: e0 e1 -- R2: e1 e2 -- LAN 192.168.3.1/24 Konfigurasi Jika di perlukan cek nomor interface /interface print Router1: /ip address add address=10.10.1.1/30 interface=ether1 /ip address add",

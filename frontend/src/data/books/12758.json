@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12758?v=1795443641",
   "cover_og_url": "/cover/12758/og?v=1795443641",
+  "has_cover": false,
   "url": "/book/cisco-bgp-peer-configure-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring BGP Peers You can configure a BGP peer within a BGP process. Each BGP peer has an associated keepalive timer and hold timers. You can set these timers either globally or for each BGP peer. A peer configuration overrides a global configuration. Note You must configure the address family under neighbor configuration mode for each peer. BEFORE YOU BEGIN Ensure that you have enabled the",

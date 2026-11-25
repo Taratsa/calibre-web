@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10743?v=1795438001",
   "cover_og_url": "/cover/10743/og?v=1795438001",
+  "has_cover": false,
   "url": "/book/gns3-port-socat-pada-ubuntu-image-agar-bisa-di-remote-di-gns3-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk Image Ubuntu, tampaknya kita akan kesulitan untuk menggunakan telnet di GNS3. Sarann-nya di host tempat GNS3 kita menginstalasi socat apt-get install socat Di preference GNS3, bisa di ujicoba, konsole --new-tab -p tabtitle=%d -e telnet %h %p xterm -T %d -e 'telnet %h %p' &gt;/dev/null 2&gt;&amp;1 &amp; gnome-terminal -t %d -e 'telnet %h %p' &gt;/dev/null 2&gt;&amp;1 &amp; gnome-terminal -t %d -e 'ssh onno@%h'",

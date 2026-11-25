@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15703?v=1795456300",
   "cover_og_url": "/cover/15703/og?v=1795456300",
+  "has_cover": false,
   "url": "/book/open5gs-portainer-manajemen-docker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install docker apt-get update &amp;&amp; sudo apt-get upgrade apt-get install docker.io systemctl start docker systemctl enable docker systemctl status docker Install portainer docker pull portainer/portainer-ce:latest docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce:latest The above command will start a Portainer container in the background",

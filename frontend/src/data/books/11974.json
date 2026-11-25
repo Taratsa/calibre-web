@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11974?v=1795441219",
   "cover_og_url": "/cover/11974/og?v=1795441219",
+  "has_cover": false,
   "url": "/book/dell-latitude-5280-5288-onno-widodo-purbo/",
   "rating": null,
   "comment": "Service Tag: 5PGBBH2 Express Service Code: 12422968022 Contents 1 Driver WiFi 2 Driver Ethernet 3 Gagal 3.1 Gagal Driver WiFi Intel Wireless 8265 / 8275 sudo su cd /lib/firmware wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/iwlwifi-8265-31.ucode atau cp iwlwifi-8265-31.ucode /lib/firmware/ atau",

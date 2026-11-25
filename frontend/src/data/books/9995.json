@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9995?v=1795435690",
   "cover_og_url": "/cover/9995/og?v=1795435690",
+  "has_cover": false,
   "url": "/book/voip-cara-mengkonfigurasi-dial-out-melalui-trunk-di-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.beardy.se/how-to-set-up-a-sip-trunk-in-the-asterisk-pbx In my previous article we configured Asterisk with some SIP-devices, and created a basic dialplan so that they could dial eachother. We also created two additional extensions for test purposes. This time I will show you how to configure a SIP trunk, and add extensions in the dialplan so that the telephones can dial out",

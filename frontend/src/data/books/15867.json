@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15867?v=1795457351",
   "cover_og_url": "/cover/15867/og?v=1795457351",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-24-04-bind-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo apt update sudo apt install -y bind9 bind9utils bind9-doc dnsutils Edit $ cd /etc/bind $ sudo vi named.conf.options acl internal-network { 192.168.0.0/24; }; options { directory \"/var/cache/bind\"; allow-query { localhost; internal-network; }; allow-transfer { localhost; }; forwarders { 8.8.8.8; 1.1.1.1; // 192.168.0.222; // 192.168.0.1; // 192.168.88.1; }; recursion yes;",

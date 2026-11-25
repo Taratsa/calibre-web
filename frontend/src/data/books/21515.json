@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21515?v=1795482454",
   "cover_og_url": "/cover/21515/og?v=1795482454",
+  "has_cover": false,
   "url": "/book/openbts-operasi-1800-mhz-onno-widodo-purbo/",
   "rating": null,
   "comment": "Test kemampuan FFT di sebuah frekuensi dalam hal ini 1.724GHz cd /usr/local/src/gnuradio-3.3.0/gnuradio-examples/python/usrp usrp_fft.py -R A -f 1724.4e6 usrp_fft.py -R B -f 1724.4e6 Test signal generator cd /usr/local/src/gnuradio-3.3.0/gr-usrp/apps usrp_siggen.py -T A -f 1819.4e6 usrp_siggen.py -T B -f 1819.4e6 Contents 1 Konfigurasi OpenBTS.config 2 Referensi 3 Pranala Menarik 3.1 Persiapan",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 742,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "openbts",

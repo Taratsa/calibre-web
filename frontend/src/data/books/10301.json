@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10301?v=1795436668",
   "cover_og_url": "/cover/10301/og?v=1795436668",
+  "has_cover": false,
   "url": "/book/mediawiki-user-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "nama database : mediawiki (kalau masih belajar) nama tabel : user atau wiki_user Contents 1 DESCRIBE wiki_user 2 Script Menambahkan User 1.13 3 Fields 3.1 user_id 3.2 user_name 3.3 user_real_name 3.4 user_password 3.5 user_newpassword 3.6 user_newpass_time 3.7 user_email 3.8 user_options 3.9 user_touched 3.10 user_token 3.11 user_email_authenticated 3.12 user_email_token 3.13",
@@ -189,7 +190,7 @@
     "similar": [
       [
         10300,
-        0.41
+        0.42
       ],
       [
         10762,

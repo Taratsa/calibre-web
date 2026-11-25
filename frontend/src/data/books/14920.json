@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14920?v=1795452416",
   "cover_og_url": "/cover/14920/og?v=1795452416",
+  "has_cover": false,
   "url": "/book/android-studio-siapkan-app-signing-untuk-upload-ke-app-gallery-onno-widodo-purbo/",
   "rating": null,
   "comment": "/usr/local/android-studio-bumblebee/jre/bin/keytool -export -rfc -keystore ittsinternetoffline.jks -alias key0 -file upload_certificate.pem Enter keystore password: Certificate stored in file  Pastikan alias sesuai dengan alias yang ada disini key0",

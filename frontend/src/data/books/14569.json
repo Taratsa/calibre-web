@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14569?v=1795450601",
   "cover_og_url": "/cover/14569/og?v=1795450601",
+  "has_cover": false,
   "url": "/book/menggunakan-mysqlslap-custom-queries-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita ingin men-test ke database yang sudah ada, kita dapat menggunakan custom query, seperti mysqlslap -h localhost -u root -p123456 --create-schema=DATABASE_NAME --query=\"SELECT * from table_name;\" --concurrency=100 --number-of-queries=100 Pranala Menarik BENCHMARKING: mengukur kemampuan system Mengukur packet per second Mengukur Bandwidth mengukur SQL - menggunakan mysqlslap Menggunakan",
@@ -62,7 +63,7 @@
       ],
       [
         14565,
-        0.69
+        0.68
       ],
       [
         14571,

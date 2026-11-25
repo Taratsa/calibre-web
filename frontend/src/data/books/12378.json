@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12378?v=1795442573",
   "cover_og_url": "/cover/12378/og?v=1795442573",
+  "has_cover": false,
   "url": "/book/ipv6-ipv6-in-ipv4-tunnel-display-tunnel-yang-ada-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat melihat tunnel yang ada Menggunakan \"ip\" Penggunaan: # /sbin/ip -6 tunnel show [] Contoh: # /sbin/ip -6 tunnel show Hasilnya kira-kira: sit0: ipv6/ip remote any local any ttl 64 nopmtudisc sit1: ipv6/ip remote 195.226.187.50 local any ttl 64 Menggunakan \"route\" Penggunaan # /sbin/route -A inet6 Contoh (output di filter untuk memperlihatkan hanya tunnel melalui virtual interface",

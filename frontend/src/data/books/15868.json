@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15868?v=1795457362",
   "cover_og_url": "/cover/15868/og?v=1795457362",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-24-04-moodle-backup-onno-widodo-purbo/",
   "rating": null,
   "comment": "Moodle Backup mkdir -p /var/www/html/pustaka/backupmoodle cd /var/www/html/pustaka/backupmoodle mv moodle-database.sql.gz moodle-database-old.sql.gz mysqldump -h localhost -u moodle --password=moodle -C -Q -e --create-options moodle &gt; moodle-database.sql gzip moodle-database.sql tar czf /var/www/html/pustaka/backupmoodle/moodlecms.tar.gz /var/www/html/moodle tar czf",

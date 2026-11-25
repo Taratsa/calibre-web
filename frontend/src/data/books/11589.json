@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11589?v=1795440260",
   "cover_og_url": "/cover/11589/og?v=1795440260",
+  "has_cover": false,
   "url": "/book/mitm-sslstrip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cybrary.it/0p3n/sslstrip-in-man-in-the-middle-attack/ Langkah untuk melakukan serangan menggunakan ssltrip adalah sebagai berikut. Cek routing, route -n netstat -nr Contents 1 aktifkan ip forwarding 2 arp spoofing 3 redirect packet 4 sslstrip 5 lihat log 6 Crashing 7 Referensi aktifkan ip forwarding enable forward paket, echo 1 &gt; /proc/sys/net/ipv4/ip_forward sysctl -w",

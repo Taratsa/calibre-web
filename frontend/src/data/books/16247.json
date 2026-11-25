@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16247?v=1795459713",
   "cover_og_url": "/cover/16247/og?v=1795459713",
+  "has_cover": false,
   "url": "/book/block-spam-using-postfix-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Blocking spam using SpamAssassin for 1000 emails/minute can overload the CPU. A smarter way to block spam before it reaches SpamAssassin is using RBL (Realtime Blacklists) and RHBL (similar but different from RBL), Greylisting, and HELO checks. We slightly modify the configuration in /etc/postfix/main.cf to add defenses at smtpd and check all hosts: ### Checks to remove badly formed email",

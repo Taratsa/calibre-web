@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19139?v=1795471797",
   "cover_og_url": "/cover/19139/og?v=1795471797",
+  "has_cover": false,
   "url": "/book/kismet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Kismet 2 Cara Cek Chipset 3 Edit Konfigurasi 4 Tipe Driver 5 Menjalankan Kismet 6 Pranala Menarik Install Kismet sudo apt-get install kismet Cara Cek Chipset lspci | grep Network jika menggunakan USB WiFi lsusb Edit Konfigurasi vi /etc/kismet/kismet.conf Beberapa source yang penting source=mac80211,wlan0,srcmac8011 source=zd1211,wlan1,srczd source=ipw3945,wlan0,srcipw3945",

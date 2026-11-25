@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12031?v=1795441360",
   "cover_og_url": "/cover/12031/og?v=1795441360",
+  "has_cover": false,
   "url": "/book/instalasi-moodle-di-debian-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Repo dotdeb 2 Pendukung 3 Setup Database 4 Download 5 Install 6 Untuk Versi 2.1 ke atas 7 Untuk Versi &lt; 2.1 8 Referensi 9 Pranala Menarik Install Repo dotdeb Edit vi /etc/apt/sources.list Tambahkan deb http://packages.dotdeb.org jessie all Install key sudo su cd /etc/apt/ wget https://www.dotdeb.org/dotdeb.gpg sudo apt-key add dotdeb.gpg Update apt update Pendukung Untuk Debian",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 616,
-    "longer_than": 43,
+    "longer_than": 42,
     "top": [
       [
         "moodle",

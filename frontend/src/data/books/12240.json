@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12240?v=1795441997",
   "cover_og_url": "/cover/12240/og?v=1795441997",
+  "has_cover": false,
   "url": "/book/nmap-brute-force-hack-telnet-password-onno-widodo-purbo/",
   "rating": null,
   "comment": "nmap -p23 --script telnet-brute.nse --script-args \\ userdb=/root/Desktop/user.txt,passdb=/root/Desktop/pass.txt 192.168.1.105 Pranala Menarik Nmap",

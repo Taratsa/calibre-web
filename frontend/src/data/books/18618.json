@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18618?v=1795469453",
   "cover_og_url": "/cover/18618/og?v=1795469453",
+  "has_cover": false,
   "url": "/book/mengaktifkan-math-di-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "masuk ke /var/www/wiki atau /var/www/html/wiki tempat file LocalSettings.php edit file LocalSettings.php supaya # $wgUseTeX = true; menjadi $wgUseTeX = true; Pastikan ada folder berikut, di directory MediaWiki: /images/math /images/tmp Jika tidak ada, buat folder tersebut dengan permission 755. Download binary texvc dari http://sourceforge.net/project/showfiles.php?group_id=34373 . Letakan di",

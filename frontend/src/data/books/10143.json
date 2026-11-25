@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10143?v=1795436161",
   "cover_og_url": "/cover/10143/og?v=1795436161",
+  "has_cover": false,
   "url": "/book/membuat-git-repository-untuk-website-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di komputer kita $ mkdir website &amp;&amp; cd website $ git init Initialized empty Git repository in /home/ams/website/.git/ $ echo 'Hello, world!' &gt; index.html $ git add index.html $ git commit -q -m \"The humble beginnings of my web site.\" Di server $ mkdir website.git &amp;&amp; cd website.git $ git init --bare Initialized empty Git repository in /home/ams/website.git/ $ mkdir /var/www/www.example.org $ cat &gt;",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16035?v=1795458360",
   "cover_og_url": "/cover/16035/og?v=1795458360",
+  "has_cover": false,
   "url": "/book/forensic-nmap-smb-enum-users-nse-attack-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Nmap smb-enum-users.nse is a script used to enumerate users on Windows systems with active SMB (Server Message Block) services. This script employs two main methods: SAMR enumeration: This method is subtler and requires fewer packets for each user account. However, the information obtained may not be as complete as that from the LSA method. LSA bruteforcing: This method is noisier, generating",

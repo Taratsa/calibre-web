@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13447?v=1795445984",
   "cover_og_url": "/cover/13447/og?v=1795445984",
+  "has_cover": false,
   "url": "/book/r-regression-simple-linear-regression-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: http://www.sthda.com/english/articles/40-regression-analysis/167-simple-linear-regression-in-r/ if(!require(devtools)) install.packages(\"devtools\") devtools::install_github(\"kassambara/datarium\") data(\"marketing\", package = \"datarium\") head(marketing, 3) data(\"swiss\") head(swiss, 3) data(\"Boston\", package = \"MASS\") head(Boston, 3) install.packages(\"tidyverse\") install.packages(\"ggpubr\")",

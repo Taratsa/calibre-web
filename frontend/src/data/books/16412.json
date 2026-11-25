@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16412?v=1795460711",
   "cover_og_url": "/cover/16412/og?v=1795460711",
+  "has_cover": false,
   "url": "/book/pm4py-collab-source-sederhana-data-csv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Langkah 1: Copy-Paste ke Google Colab 2 Langkah 2: Format Ulang &amp; Konversi ke Event Log PM4Py 3 Langkah 3: Tampilkan Visualisasi Proses Sederhana (DFG) 4 Catatan Format CSV 5 Pranala Menarik Langkah 1: Copy-Paste ke Google Colab # Install PM4Py !pip install -q pm4py # Upload file CSV from google.colab import files uploaded = files.upload() # Load CSV import pandas as pd df =",

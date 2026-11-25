@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16308?v=1795460069",
   "cover_og_url": "/cover/16308/og?v=1795460069",
+  "has_cover": false,
   "url": "/book/foto-edit-metadata-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah langkah-langkah untuk mengedit metadata waktu pada foto menggunakan **ExifTool** di Ubuntu: Contents 1 Install ExifTool 2 Cek Metadata Foto 3 Mengedit Metadata Waktu 3.1 Contoh: Ubah **DateTimeOriginal** menjadi waktu tertentu 3.2 Contoh: Ubah **CreateDate** menjadi waktu tertentu 3.3 Contoh: Ubah **ModifyDate** menjadi waktu tertentu 3.4 Mengubah semua metadata waktu sekaligus 3.5",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 214,
-    "longer_than": 25,
+    "longer_than": 24,
     "top": [
       [
         "exiftool",

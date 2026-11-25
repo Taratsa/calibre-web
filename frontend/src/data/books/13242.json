@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13242?v=1795445258",
   "cover_og_url": "/cover/13242/og?v=1795445258",
+  "has_cover": false,
   "url": "/book/masalah-file-tmp-openser-fifo-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tampaknya file /tmp/openser_fifo paling sering membuat masalah. Ada beberapa fix yang dapat dilakukan Beberapa cara untuk openser versi lama Cara berikut ini tidak berhasil di lakukan di openser versi 1.3 Isi di file /etc/openser/openser.cfg dengan line fifo=\"/tmp/openser_fifo\" fifo mode=0666 Pranala Menarik Instalasi openser Linux Howto",

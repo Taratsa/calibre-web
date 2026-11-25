@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/18350?v=1795468581",
   "cover_og_url": "/cover/18350/og?v=1795468581",
+  "has_cover": false,
   "url": "/book/mengambil-gmail-menggunakan-fetchmail-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit .fetchmailrc, gunakan entry sebagai berikut: poll pop.gmail.com with proto POP3 service 995 user 'eric.schmidt@gmail.com' there with password 'xxxxxxxx' is eric here options keep ssl sslfingerprint '6B:C4:63:05:87:1E:72:88:ED:81:C5:A2:51:6B:B7:B6' sslcertck sslcertpath /usr/share/purple/ca-certs Pastikan bahwa chmod 600 ~/.fetchmailrc Pastikan mkdir /usr/share/purple mkdir",

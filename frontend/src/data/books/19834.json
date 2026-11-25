@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19834?v=1795475236",
   "cover_og_url": "/cover/19834/og?v=1795475236",
+  "has_cover": false,
   "url": "/book/openbts-ubuntu-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Compile dan Install GNURadio 3.3.0 . Tanpa GNURadio terinstall maka OpenBTS tidak mungkin di instalasi. Instalasi Astersik di Ubuntu tanpa Asterisk, tidak bisa melakukan authentikasi. Instalasi paket / library pendukung tambahan apt-get install libortp8 libortp-dev libosip2-4 libosip2-dev Contents 1 Compile osip 2 Install OpenBTS 2.1 Modifikasi USRP Device untuk Single Doughterboard 3 Compile",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 988,
-    "longer_than": 50,
+    "longer_than": 49,
     "top": [
       [
         "openbts",

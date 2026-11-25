@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10241?v=1795436479",
   "cover_og_url": "/cover/10241/og?v=1795436479",
+  "has_cover": false,
   "url": "/book/raspbian-burn-ke-cd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Download Raspbian 2 Burn ke SD card 3 Contoh Lain 4 Pranala Menarik 5 Youtube Download Raspbian Download dari http://www.raspberrypi.org/downloads/ Burn ke SD card Buang semua partisi dari SD card di /dev/sdb fdisk /dev/sdb d d d d w Burn Raspbian IMG ke SD card untuk RaspberryPi dapat mengunakan perintah sudo su unzip 2020-05-27-raspios-buster-lite-armhf.zip dd",

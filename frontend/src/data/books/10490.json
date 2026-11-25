@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10490?v=1795437253",
   "cover_og_url": "/cover/10490/og?v=1795437253",
+  "has_cover": false,
   "url": "/book/openbts-gprs-debugging-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 RXGain 2 Turunkan RSSI Target 3 Mengatasi Tidak dialokasikan IP ke MS 4 Menaikan Channel GPRS RXGain Kita perlu menset GSM.Radio.RxGain agar FER cukup baik &amp; MS memperoleh IP address. Masuk ke CLI. Set devconfig GSM.Radio.RxGain 44 Nilai default GSM.Radio.RxGain 48 Kemudian Reboot Cek gprs list gprs list Pastikan FER agak lebih besar sedikit dari 0%, misalnya",

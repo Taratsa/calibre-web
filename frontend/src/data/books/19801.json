@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19801?v=1795475050",
   "cover_og_url": "/cover/19801/og?v=1795475050",
+  "has_cover": false,
   "url": "/book/install-epiware-onno-widodo-purbo/",
   "rating": null,
   "comment": "siapkan aplikasi pendukung apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear Dengan asumsi root mysql password 123456 Copy &amp; ekstrak source code cp Epiware_4.8.6.tar.gz /usr/local/src cd /usr/local/src tar zxvf Epiware_4.8.6.tar.gz /usr/local/src/Epiware_4.8.6/install chown -Rf www-data.www-data /storage/ chmod",

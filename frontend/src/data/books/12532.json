@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12532?v=1795442999",
   "cover_og_url": "/cover/12532/og?v=1795442999",
+  "has_cover": false,
   "url": "/book/python-siapkan-stopwords-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "ini sudah tidak perlu di siapkan. NLTK sudah siap dengan stopwords indonesian ~/nltk_data/corpora/stopwords/indonesian Download ID-Stopwords sudo apt install git git clone https://github.com/masdevid/ID-Stopwords.git File ada di ID-Stopwords/id.stopwords.02.01.2016.txt Mencari Stopwords Sendiri import os,nltk,os.path,re,string import argparse, re from collections import Counter def hanya_huruf(",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12723?v=1795443541",
   "cover_og_url": "/cover/12723/og?v=1795443541",
+  "has_cover": false,
   "url": "/book/internet-offline-mengukur-kiwix-dengan-ab-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 2 Mengukur 3 Script kiwix-ab.sh 4 Script kiwix-ab-vmall.sh Instalasi apt update apt -y install apache2-utils Mengukur Secara umum: ab -kc 20 -t 60 http://192.168.0.3:8080/wikipedia_id_all_novid_2018-07/ Script kiwix-ab.sh ssh pi@192.168.0.1 /home/pi/kiwix-on.sh &amp; sleep 5 rm -Rf hasil-kiwix-ab-192.168.0.1.txt touch hasil-kiwix-ab-192.168.0.1.txt echo 10 &gt;&gt;",

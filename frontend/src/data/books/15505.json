@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15505?v=1795455192",
   "cover_og_url": "/cover/15505/og?v=1795455192",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-rtc-ds1307-set-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library https://github.com/adafruit/RTClib Code /* * SDA =&gt; D2 * SCL =&gt; D1 */ #include  #include \"RTClib.h\" RTC_DS1307 rtc; char namaHari[7][12] = {\"Minggu\", \"Senin\", \"Selasa\", \"Rabu\", \"Kamis\", \"Jumat\", \"Sabtu\"}; void setup () { Serial.begin(9600); if (! rtc.begin()) { Serial.println(\"RTC TIDAK TERBACA\"); while (1); } if (! rtc.isrunning()) { Serial.println(\"RTC is NOT running!\");",
@@ -75,7 +76,7 @@
     "similar": [
       [
         15498,
-        0.62
+        0.61
       ],
       [
         11668,

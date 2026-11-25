@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11545?v=1795440160",
   "cover_og_url": "/cover/11545/og?v=1795440160",
+  "has_cover": false,
   "url": "/book/aosp-build-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Halaman ini merinci bagaimana mem-build hanya kernel. Petunjuk berikut berasumsi bahwa kita belum download semua AOSP; jika kita sudah melakukannya, kita dapat melewati langkah-langkah git clone kecuali langkah yang men-download kernel source. Sebagian contoh di bagian ini menggunakan hikey kernel sebagai contoh. Contents 1 Memilih kernel 2 Mengidentifikasi versi kernel 3 Downloading source 4",

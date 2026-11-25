@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16889?v=1795463551",
   "cover_og_url": "/cover/16889/og?v=1795463551",
+  "has_cover": false,
   "url": "/book/menggunakan-opensipsdbctl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita menggunakan database, maka kita perlu melakukan setup database . Setup database vi /usr/local/etc/opensips/opensipsctlrc atau vi /etc/opensips/opensipsctlrc Pastikan DBENGINE=MYSQL DBHOST=localhost DBROUSER=opensipsro DBROPW=opensipsro DBNAME=opensips DBRWUSER=opensips DBRWPW=\"opensipsrw\" DBROOTUSER=\"root\" Pastikan MySQL beroperasi sudo su /etc/init.d/mysql restart Contents 1 Menu Help",

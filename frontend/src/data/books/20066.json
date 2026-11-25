@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20066?v=1795476052",
   "cover_og_url": "/cover/20066/og?v=1795476052",
+  "has_cover": false,
   "url": "/book/joining-menyatukan-file-flv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi mencoder sudo apt-get install mencoder Menyatukan flv file menggunakan perintah mencoder -forceidx -of lavf -oac copy -ovc copy -o output.flv clip1.flv clip2.flv clip3.flv Konversi format ke MPG Kadang kala kita perlu konversi format ke .mpg hal ini dapat dilakukan menggunakan sudo apt-get install ffmpeg ffmpeg -i output.flv -s 320x240 output.mpg ffmpeg -i output.flv -s 640x480",

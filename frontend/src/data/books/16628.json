@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16628?v=1795462083",
   "cover_og_url": "/cover/16628/og?v=1795462083",
+  "has_cover": false,
   "url": "/book/pm4py-ilp-miner-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap-ini **script paling sederhana** untuk menjalankan **ILP Miner** di PM4Py, memuat XES, menambang *Petri net*, lalu menyimpan gambarnya. &gt; Install (sekali saja): &gt; &gt; ```bash &gt; pip install pm4py graphviz &gt; # pastikan OS punya Graphviz (dot). Ubuntu/Debian: &gt; # sudo apt-get install graphviz &gt; ``` `ilp_miner_simple.py` ```python !/usr/bin/env python3 from pm4py.objects.log.importer.xes import",

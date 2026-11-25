@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18926?v=1795470864",
   "cover_og_url": "/cover/18926/og?v=1795470864",
+  "has_cover": false,
   "url": "/book/voip-cookbook-extensions-conf-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "The dial plan or routing table of a softswitch is normally stored in /etc/asterisk/extensions.conf. In extensions.conf we can configure what Asterisk needs to do as it receives a call on a certain extension. The simplest example of dial plan is: exten =&gt; _20XX,1,Dial(SIP/${EXTEN},20,rt) exten =&gt; _20XX,2,HangUp which means that if there is someone who calls extension 20XX, then the first step",

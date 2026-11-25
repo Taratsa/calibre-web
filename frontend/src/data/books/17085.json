@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17085?v=1795464090",
   "cover_og_url": "/cover/17085/og?v=1795464090",
+  "has_cover": false,
   "url": "/book/instalasi-sisfokol-smp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan dependencies apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear unrar Siapkan database mysql -u root -p123456 create database sisfokol_sltp; GRANT ALL PRIVILEGES ON sisfokol_sltp.* TO 'sisfokol_sltp'@'localhost' IDENTIFIED BY 'sisfokol_sltp'; GRANT ALL PRIVILEGES ON sisfokol_sltp.* TO 'sisfokol_sltp'",

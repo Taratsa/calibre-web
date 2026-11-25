@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11726?v=1795440598",
   "cover_og_url": "/cover/11726/og?v=1795440598",
+  "has_cover": false,
   "url": "/book/mqtt-python-tutorials-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install pip install paho-mqtt Contoh sederhana import paho.mqtt.client as mqtt # The callback for when the client receives a CONNACK response from the server. def on_connect(client, userdata, flags, rc): print(\"Connected with result code \"+str(rc)) # Subscribing in on_connect() means that if we lose the connection and # reconnect then subscriptions will be renewed. client.subscribe(\"$SYS/#\") #",

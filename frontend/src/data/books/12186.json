@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12186?v=1795441785",
   "cover_og_url": "/cover/12186/og?v=1795441785",
+  "has_cover": false,
   "url": "/book/dradis-zap-output-xml-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jalankan zap di kali linux zaproxy Masukan URL http://192.168.0.99/DVWA-1.9 http://192.168.0.99/squirrelmail dll Klik Report &gt; Generate XML Report &gt; masukan nama file, misalnya: 20180911-zap.xml Dradis Upload Upload ke dradis Dradis::Plugins::Nmap Supaya keluar di Dradis, di server restart dradis-ce-worker systemctl restart dradis-ce-worker.service Dradis Hasil Cek di Issues",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16826?v=1795463361",
   "cover_og_url": "/cover/16826/og?v=1795463361",
+  "has_cover": false,
   "url": "/book/ml-python-virtual-environment-keras-gpu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bisa. Tapi untuk Ubuntu 26.04 , hati-hati: TensorFlow resmi masih mensyaratkan Python 3.9-3.12 untuk instalasi pip, sedangkan Ubuntu 26.04 memakai Python lebih baru. Jadi jalur aman: pakai Python 3.12 via venv/pyenv , jangan ubah Python sistem. ([TensorFlow][1]) Contents 1 1. Install driver NVIDIA 2 2. Install CUDA Toolkit 3 3. Siapkan Python 3.12 untuk TensorFlow/Keras 4 4. Buat virtual",

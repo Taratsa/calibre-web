@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11858?v=1795440927",
   "cover_og_url": "/cover/11858/og?v=1795440927",
+  "has_cover": false,
   "url": "/book/sarg-report-user-akses-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.howtoforge.com/monitoring_squid Konfigurasi title \"Squid User Access Reports\" output_dir /home/squid/report/ To generate reports based on behalf of user (it requires a Proxy configured with authentication of users). user_ip no This option allows to specify the place generated for log theirs Squid# TAG: access_log file # #access_log /usr/local/squid/logs/access.log #access_log",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 277,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "report",

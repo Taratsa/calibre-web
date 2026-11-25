@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12502?v=1795442926",
   "cover_og_url": "/cover/12502/og?v=1795442926",
+  "has_cover": false,
   "url": "/book/orangepi-burn-debian-img-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Download 3 Username &amp; Password 4 Pranala Menarik Persiapan apt install p7zip-full Download &amp; Install Etcher dari https://etcher.io/ https://github.com/resin-io/etcher/releases/download/v1.4.5/etcher-electron_1.4.5_amd64.deb apt install libpango1.0-0 libpangox-1.0-0 dpkg -i etcher-electron_1.4.5_amd64.deb # delete semua partisi yang ada di sdcard fdisk /dev/sdc d d w",

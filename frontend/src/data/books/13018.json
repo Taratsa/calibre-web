@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13018?v=1795444516",
   "cover_og_url": "/cover/13018/og?v=1795444516",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-bgp-sederhana-filter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada tiga (3) ISP ISP1: IP 192.168.1.1/24 menuju ISP3 IP 192.168.3.1/24 menuju ISP2 AS 10 IP 10.100.100.0/24 IP 10.100.200.0/24 ISP2 IP 192.168.2.1/24 - menuju ISP3 IP 192.168.3.2/24 - menuju ISP1 AS 20 IP 10.10.10.0/24 IP 10.10.20.0/24 ISP3 (kita) IP 192.168.1.2/24 - menuju ISP1 IP 192.168.2.2/24 - menuju ISP2 AS 30 IP 10.1.1.0/24 IP 10.1.2.0/24 Contents 1 Sambungan 2 Setup connection 3 BGP",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 860,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "add",

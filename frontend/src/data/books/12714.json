@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12714?v=1795443518",
   "cover_og_url": "/cover/12714/og?v=1795443518",
+  "has_cover": false,
   "url": "/book/internet-offline-automatic-ssh-remote-login-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat id_dsa.pub &amp; id_rsa.pub chmod 700 ~/.ssh ssh-keygen -t dsa ssh-keygen -t rsa ssh-copy-id user@machine ssh-copy-id pi@192.168.0.1 ssh pi@192.168.0.1 'chmod -R go= ~/.ssh' ssh pi@192.168.0.1 'chown -R pi:pi ~/.ssh' Alternative yang lebih panjang:( ssh pi@192.168.0.1 'mkdir .ssh' ssh pi@192.168.0.1 'touch ~/.ssh/authorized_keys' cat ~/.ssh/id_dsa.pub | ssh pi@192.168.0.1 'cat &gt;&gt;",

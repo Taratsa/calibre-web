@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12476?v=1795442853",
   "cover_og_url": "/cover/12476/og?v=1795442853",
+  "has_cover": false,
   "url": "/book/raspbian-cek-ip-address-server-raspberry-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika raspberrypi di operasikan dengan meminta IP address, maka IP address-nya akan dynamic. Cek IP address dapat di scan menggunakan nmap, misalnya, sudo su nmap -sn 192.168.0.0/24 Hasilnya ... .. .. Nmap scan report for 192.168.0.107 Host is up (0.00034s latency). MAC Address: B8:27:EB:E4:5B:82 (Raspberry Pi Foundation) .. .. Pranala Menarik Internet Offline",

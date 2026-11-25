@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12719?v=1795443532",
   "cover_og_url": "/cover/12719/og?v=1795443532",
+  "has_cover": false,
   "url": "/book/ssh-sudo-no-tty-present-and-no-askpass-program-specified-error-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://stackoverflow.com/questions/21659637/how-to-fix-sudo-no-tty-present-and-no-askpass-program-specified-error Coba ssh -t remotehost \"sudo \" Atau Granting the user to use that command without prompting for password should resolve the problem. First open a shell console and type: sudo visudo Then edit that file to add to the very end: username ALL = NOPASSWD:",

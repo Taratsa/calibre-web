@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11539?v=1795440145",
   "cover_og_url": "/cover/11539/og?v=1795440145",
+  "has_cover": false,
   "url": "/book/aosp-persiapan-build-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instruksi build berikut berlaku untuk Android source tree untuk semua branch, termasuk master. Langkah yang perlu dilakukan akan di jelaskan pada bagian ini. Pada saat kita mem-build Android 6.0 atau yang lebih baru, sebetulnya kita akan meng-compile menggunakan Jack. Jack adalah toolchain Android yang baru yang akan meng-compile Java source menjadi Android dex bytecode. Jack menggantikan",

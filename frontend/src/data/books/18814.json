@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18814?v=1795470198",
   "cover_og_url": "/cover/18814/og?v=1795470198",
+  "has_cover": false,
   "url": "/book/raid-apakah-saya-dapat-menggunakan-software-raid-atau-mempartisi-seluruh-harddisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Secara umum sebetulnya tidak baik mencampurkan partisi RAID dengan partisi non- RAID . Alasannya sangat sederhana aja, jika ada kegagalan harddisk maka akan menyebabkan kegagalan seluruh sistem. Jika kita memutuskan untuk menggunakan RAID , semua partisi di semua harddisk RAID harus menjadi bagian dari RAID. Umumnya orang memudahkan proses dengan cara memperpartisi harddisk RAID hanya dengan satu",

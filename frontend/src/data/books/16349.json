@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16349?v=1795460290",
   "cover_og_url": "/cover/16349/og?v=1795460290",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-prediction-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melakukan prediksi menggunakan TensorFlow dengan data yang disimpan dalam file Excel di Google Colab, Anda dapat mengikuti langkah-langkah berikut: 1. Mengunggah File Excel ke Google Colab: Gunakan antarmuka Colab untuk mengunggah file Excel Anda. 2. Memuat Data dari File Excel: Gunakan pustaka `pandas` dan `openpyxl` untuk membaca data dari file Excel. 3. Mempersiapkan Data: Lakukan",

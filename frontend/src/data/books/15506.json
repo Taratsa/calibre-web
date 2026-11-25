@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15506?v=1795455198",
   "cover_og_url": "/cover/15506/og?v=1795455198",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-rtc-ntp-set-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library https://github.com/Naguissa/uRTCLib Code #include  // #include \"RTClib.h\" #include \"uRTCLib.h\" #include  #include  #include  // RTC_DS1307 rtc; // uRTCLib rtc; uRTCLib rtc(0x68); const char *ssid = \"o1\"; const char *password = \"Dzaq1993!\"; const long utcOffsetInSeconds = 25200; // GMT+7 Jakarta char daysOfTheWeek[7][12] = {\"Sunday\", \"Monday\",",

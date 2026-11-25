@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12264?v=1795442068",
   "cover_og_url": "/cover/12264/og?v=1795442068",
+  "has_cover": false,
   "url": "/book/orangepi-mengoperasikan-rtl-sdr-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Power Supply 2 Instalasi Pendukung 3 Instalasi Driver RTL-SDR 4 Instalasi multimonNG 5 Kalibrasi Drift 6 Instalasi MultimonAPRS 7 Edit init 8 Referensi Power Supply Tampaknya power supply akan menjadi sangat penting sekali. Charger 5V 2.1A tampaknya kurang. Kalau arus kurang, maka tidak akan kuat mengangkat RTL-SDR-nya. Instalasi Pendukung sudo su apt-get update apt-get -y install git",

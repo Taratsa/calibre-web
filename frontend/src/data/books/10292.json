@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10292?v=1795436641",
   "cover_og_url": "/cover/10292/og?v=1795436641",
+  "has_cover": false,
   "url": "/book/nmap-cek-sql-injection-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mencek apakah sebuah situs dapat di serang menggunakan SQL Injection. Kita dapat menggunakan nmap nmap -sV --script=http-sql-injection  Referensi http://nmap.org/nsedoc/scripts/http-sql-injection.html",

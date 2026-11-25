@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16797?v=1795463271",
   "cover_og_url": "/cover/16797/og?v=1795463271",
+  "has_cover": false,
   "url": "/book/mikrotik-7-bgp-sedehana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sambungan ISP1: eth0 --&gt; ISP3 eth0 eth1 --&gt; ISP2 eth1 ISP2 eth0 --&gt; ISP3 eth1 eth1 --&gt; ISP1 eth1 ISP3 eth0 --&gt; ISP1 eth0 eth1 --&gt; ISP2 eth0 Ada tiga (3) ISP ISP1: IP 192.168.1.1/24 menuju ISP3 IP 192.168.3.1/24 menuju ISP2 AS 10 IP 10.100.100.0/24 IP 10.100.200.0/24 ISP2 IP 192.168.2.1/24 - menuju ISP3 IP 192.168.3.2/24 - menuju ISP1 AS 20 IP 10.10.10.0/24 IP 10.10.20.0/24 ISP3 (kita) IP",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 860,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "isp",

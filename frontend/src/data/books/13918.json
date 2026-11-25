@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13918?v=1795447948",
   "cover_og_url": "/cover/13918/og?v=1795447948",
+  "has_cover": false,
   "url": "/book/scp-pada-port-non-22-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada dasarnya scp bekerja di atas ssh. Maka jika ssh di set pada port bukan 22, maka port yang digunakan scp harus di uba. Perintah scp untuk bekerja pada ssh yang bukan port 22 (misalnya 12345). Copy file dari from_host ke local: scp -P12345 username@from_host:file.txt /local/directory/ Copy file dari local host ke to_host: scp -P12345 file.txt username@to_host:/remote/directory/ Copy directory",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10888?v=1795438369",
   "cover_og_url": "/cover/10888/og?v=1795438369",
+  "has_cover": false,
   "url": "/book/android-studio-reject-incoming-call-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://stackoverflow.com/questions/3809588/how-to-reject-incoming-call-programatically-in-android?rq=1 Let us implement this solution in 3 steps : a. Define this class or receiver : This is your main class : package com.sample; import java.lang.reflect.Method; import android.app.Activity; import android.content.BroadcastReceiver; import android.content.Context; import",

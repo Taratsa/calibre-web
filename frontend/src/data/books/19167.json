@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19167?v=1795471926",
   "cover_og_url": "/cover/19167/og?v=1795471926",
+  "has_cover": false,
   "url": "/book/instalasi-google-chrome-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download Google Chrome dari http://www.google.com/chrome/?hl=id sudo chmod -Rf 777 /usr/local/src cd /usr/local/src wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb Install cd /usr/local/src sudo dpkg -i google-chrome-stable_current_amd64.deb Alternatif lain dapat menggunakan perintah (NOT RECOMMENDED Untuk nonton Netflix) sudo su apt update apt -y install",

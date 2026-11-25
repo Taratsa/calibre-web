@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21456?v=1795482061",
   "cover_og_url": "/cover/21456/og?v=1795482061",
+  "has_cover": false,
   "url": "/book/lighttpd-ubah-port-web-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadangkala port 80 digunakan untuk Apache. Oleh karenana jika ada dua web server sekaligus, Lighttpd harus diganti ke port lain misalnya 81. Caranya dengan mengedit vi /etc/lighttpd/lighttpd.conf buka parameter ## bind to port (default: 80) server.port = 81 Pranala Menarik Instalasi Lighttpd Linux Howto",

@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/18468?v=1795468979",
   "cover_og_url": "/cover/18468/og?v=1795468979",
+  "has_cover": false,
   "url": "/book/voip-enum-test-server-enum-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan resolv.conf benar vi /etc/resolv.conf nameserver 127.0.0.1 Restart BIND /etc/init.d/bind9 restart Asumsi nomor +6252000 0.0.0.2.5.2.6.e164.id Mengunakan perintah dig di lokalhost BIND dig NAPTR 0.0.0.2.5.2.6.e164.id @127.0.0.1 Harus keluar jawaban kira-kira berbunyi ; &lt;&lt;&gt;&gt; DiG 9.6.1-P1 &lt;&lt;&gt;&gt; NAPTR 0.0.0.2.5.2.6.e164.id @127.0.0.1 ;; global options: +cmd ;; Got answer: ;; -&gt;&gt;HEADER&lt;&lt;-",

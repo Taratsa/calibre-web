@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11685?v=1795440497",
   "cover_og_url": "/cover/11685/og?v=1795440497",
+  "has_cover": false,
   "url": "/book/openbts-set-sqlite-subscriber-setup-manual-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cek IMSI dari TMSIS OpenBTS&gt; tmsis IMSI TMSI IMEI AUTH CREATED ACCESSED TMSI_ASSIGNED 901550000000149 - 353907055098370 2 53s 53s 0 Lakukan sudo su sqlite3 /var/lib/asterisk/sqlite3dir/sqlite3.db Pada prompt sqlite&gt; Ketik INSERT INTO dialdata_table (exten, dial) VALUES ('2001', 'IMSI001010000000001'); insert into sip_buddies (name,username,callerid,ipaddr,type,context,host) values",

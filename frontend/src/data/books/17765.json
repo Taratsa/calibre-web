@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17765?v=1795466222",
   "cover_og_url": "/cover/17765/og?v=1795466222",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-ejabberd-chatting-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan anda sebagai root. Instalasi eJabberd dapat dilakukan menggunakan perintah su - apt-get install ejabberd Contents 1 Konfigurasi Server 2 Start &amp; Stop Server 3 Setup Demo User 4 Web Admin 5 Pranala Menarik Konfigurasi Server Edit /etc/ejabberd/ejabberd.cfg # vi /etc/ejabberd/ejabberd.cfg {hosts, [\"localhost\",\"192.168.0.254\",\"ukm\",\"ukm.co.id\"]}. Restart eJabberd # /etc/init.d/ejabberd",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13366?v=1795445720",
   "cover_og_url": "/cover/13366/og?v=1795445720",
+  "has_cover": false,
   "url": "/book/linux-interface-bonding-dengan-netplan-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.snel.com/support/how-to-set-up-lacp-bonding-on-ubuntu-18-04-with-netplan/ Contents 1 Install Pendukung 2 Aktifkan Module 3 Edit Interface 4 Reboot and Check 5 Referensi 6 Pranala Menarik Install Pendukung apt install ifupdown ifenslave Aktifkan Module sudo su vi /etc/modules # /etc/modules: kernel modules to load at boot time. # # This file contains the names of kernel modules",

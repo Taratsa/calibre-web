@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9446?v=1795432901",
   "cover_og_url": "/cover/9446/og?v=1795432901",
+  "has_cover": false,
   "url": "/book/sqlite-compile-dari-source-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan pendukung sudo apt-get install build-essential Compile SQLite: wget https://sqlite.org/2014/sqlite-autoconf-3080401.tar.gz cp sqlite-autoconf-3080401.tar.gz /usr/local/src cd /usr/local/src tar zxvf sqlite-autoconf-3080401.tar.gz cd /usr/local/src/sqlite-autoconf-3080401 ./configure make sudo make install sudo ldconfig Pastikan ldconfig di jalankan Cek sqlite3 sqlite3 --version Error",

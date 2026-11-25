@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10903?v=1795438410",
   "cover_og_url": "/cover/10903/og?v=1795438410",
+  "has_cover": false,
   "url": "/book/hadoop-pemrogramman-dengan-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/ In this tutorial I will describe how to write a simple MapReduce program for Hadoop in the Python programming language. Contents 1 Motivation 2 What we want to do 3 Prerequisites 4 Python MapReduce Code 5 Improved Mapper and Reducer code: using Python iterators and generators 6 Referensi Motivation Even",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 2377,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "hadoop",

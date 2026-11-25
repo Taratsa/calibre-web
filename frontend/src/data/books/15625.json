@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15625?v=1795455825",
   "cover_og_url": "/cover/15625/og?v=1795455825",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-pir-sensor-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.esp8266learning.com/wemos-mini-pir-sensor-example.php Source int pirPin = D7; int val; void setup() { Serial.begin(9600); } void loop() { val = digitalRead(pirPin); //low = no motion, high = motion if (val == LOW) Serial.println(\"No motion\"); else Serial.println(\"Motion detected ALARM\"); delay(1000); } Referensi http://www.esp8266learning.com/wemos-mini-pir-sensor-example.php",

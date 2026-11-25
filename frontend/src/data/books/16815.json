@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16815?v=1795463325",
   "cover_og_url": "/cover/16815/og?v=1795463325",
+  "has_cover": false,
   "url": "/book/cyber-security-ubuntu-26-04-wazuh-agent-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Prompt: install wazuh agent untuk IP wazuh manager 192.168.0.105 nama device server-korban-192.168.0.100 CLI: sudo apt-get update sudo apt-get install -y gnupg apt-transport-https curl curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | \\ sudo gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import sudo chmod 644 /usr/share/keyrings/wazuh.gpg echo \"deb",

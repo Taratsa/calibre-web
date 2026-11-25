@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13036?v=1795444616",
   "cover_og_url": "/cover/13036/og?v=1795444616",
+  "has_cover": false,
   "url": "/book/raspbian-nat-hostap-ke-eth0-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengaktifkan NAT (masquerade) ke eth0 Edit /etc/sysctl.conf net.ipv4.ip_forward=1 Masquerade sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE sudo sh -c \"iptables-save &gt; /etc/iptables.ipv4.nat\" Edit /etc/rc.local sebelum \"exit 0\" tambahkan iptables-restore &lt; /etc/iptables.ipv4.nat Reboot reboot Pranala Menarik Internet Offline",

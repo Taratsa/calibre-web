@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18971?v=1795471070",
   "cover_og_url": "/cover/18971/og?v=1795471070",
+  "has_cover": false,
   "url": "/book/voip-cookbook-configuring-conference-room-meetme-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asterisk's conference room is set up in /etc/asterisk/meetme.conf. All conference rooms should be listed under header [rooms]. The syntax used to configure conference room is: conf =&gt; conference_number[,pin][,adminpin] The following is an example of a conference room setup with the number 2500 and PIN 1234: [rooms] conf =&gt; 2500,1234 If we set up more than one room, it is recommended that you",

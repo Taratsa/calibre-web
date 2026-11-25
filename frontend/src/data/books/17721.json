@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17721?v=1795466083",
   "cover_og_url": "/cover/17721/og?v=1795466083",
+  "has_cover": false,
   "url": "/book/smeonffline-gunakan-dns-dari-opendns-nawala-project-onno-widodo-purbo/",
   "rating": null,
   "comment": "Penggunakan DNS dari OpenDNS http://www.opendns.com dan Nawala Project http://nawala.org/ sangat penting untuk memblokir situs tidak baik # vi /etc/resolv.conf Edit /etc/resolv.conf, pastikan search ukm.co.id nameserver 127.0.0.1 nameserver 180.131.144.144 nameserver 180.131.145.145 nameserver 208.67.222.222 nameserver 208.67.220.220 Copy sebagai backup agar aman jika tertimpa DHCP # cp",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10902?v=1795438407",
   "cover_og_url": "/cover/10902/og?v=1795438407",
+  "has_cover": false,
   "url": "/book/hadoop-contoh-program-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.drdobbs.com/database/hadoop-writing-and-running-your-first-pr/240153197 https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html Contents 1 Source Code 2 Compile 3 Penggunaan 4 Referensi Source Code Contoh source code WordCount.java untuk menghitung jumlah masing-masing kata dari sebuah input set. cd ~ vi WordCount.java package org.myorg; import java.io.IOException; import",

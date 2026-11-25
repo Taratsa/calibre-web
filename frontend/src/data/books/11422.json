@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11422?v=1795439840",
   "cover_og_url": "/cover/11422/og?v=1795439840",
+  "has_cover": false,
   "url": "/book/graphing-live-twitter-sentiment-analysis-with-nltk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Now that we have live data coming in from the Twitter streaming API, why not also have a live graph that shows the sentiment trend? To do this, we're going to combine this tutorial with the live matplotlib graphing tutorial. If you want to know more about how the code works, see that tutorial. Otherwise: import matplotlib.pyplot as plt import matplotlib.animation as animation from matplotlib",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14103?v=1795448618",
   "cover_og_url": "/cover/14103/og?v=1795448618",
+  "has_cover": false,
   "url": "/book/kali-linux-wpscan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://dafid01.blogspot.com/2019/04/cara-install-wpscan-di-kali-linux.html#:~:text=Instal%20Pemindai%20Kerentanan%20WordPress%20WPScan,kerentanan%20WordPress%20lain%20yang%20ada . sudo apt-get install git ruby ruby-dev libcurl4-openssl-dev make git clone https://github.com/wpscanteam/wpscan.git sudo gem install bundler &amp;&amp; bundle install --without test ruby wpscan.rb -u",

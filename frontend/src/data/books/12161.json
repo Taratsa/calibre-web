@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12161?v=1795441705",
   "cover_og_url": "/cover/12161/og?v=1795441705",
+  "has_cover": false,
   "url": "/book/apache-check-kalau-apache-mati-restart-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Script #!/bin/bash if [ `pgrep apache2 -c` -le \"0\" ]; then /etc/init.d/apache2 restart fi Masukan ke crontab */5 * * * * /usr/local/bin/check-apache2.sh",

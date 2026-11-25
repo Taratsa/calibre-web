@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18973?v=1795471076",
   "cover_og_url": "/cover/18973/og?v=1795471076",
+  "has_cover": false,
   "url": "/book/voip-cookbook-activating-conference-while-operating-onno-widodo-purbo/",
   "rating": null,
   "comment": "One of needs that may arise is the setting of a conference room at anytime during operating VoIP. For this purpose, it is not necessary for us to change the content of extensions.conf file. However we need to set up a conference that its general context in the extensions.conf file and meetme.conf: ;meetme.conf [rooms] ;general-purpose conference room conf =&gt; 3500,1234 ;extensions.conf ;generic",

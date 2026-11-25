@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12370?v=1795442549",
   "cover_og_url": "/cover/12370/og?v=1795442549",
+  "has_cover": false,
   "url": "/book/ipv6-membuang-ipv6-route-dari-gateway-onno-widodo-purbo/",
   "rating": null,
   "comment": "Membuang IPv6 route melalui gateway, sering kali tidak di perlukan secara manual. Kebanyakan dilakukan oleh script konfigurasi network pada saat shutdown (full atau per interface). Contents 1 Install net-tools 2 Menggunakan \"ip\" 3 Menggunakan \"route\" 4 Yang Perlu di Delete 5 Pranala Menarik Install net-tools apt install net-tools Menggunakan \"ip\" Membuang IPv6 route melalui gateway, sering kali",

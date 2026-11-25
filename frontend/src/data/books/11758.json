@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11758?v=1795440681",
   "cover_og_url": "/cover/11758/og?v=1795440681",
+  "has_cover": false,
   "url": "/book/korban-install-ftp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo su apt -y install vsftpd Konfigurasi Edit vi /etc/vsftpd.conf Pastikan write_enable=YES anonymous_enable=YES anon_upload_enable=YES anon_mkdir_write_enable=YES Folder di /srv/ftp Restart /etc/init.d/vsftpd restart",

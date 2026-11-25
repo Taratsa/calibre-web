@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20366?v=1795477017",
   "cover_og_url": "/cover/20366/og?v=1795477017",
+  "has_cover": false,
   "url": "/book/sysadminguide-onno-widodo-purbo/",
   "rating": null,
   "comment": "This page is intended to give a slightly deeper insight into what the various btrfs features are doing behind the scenes. Contents 1 Data usage and allocation 1.1 RAID and data replication 1.2 Balancing 2 Copy on Write 3 Subvolumes 3.1 Snapshots 3.2 Managing snapshots Data usage and allocation Btrfs, at its lowest level, manages a pool of raw storage, from which it allocates space for different",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 924,
-    "longer_than": 49,
+    "longer_than": 48,
     "top": [
       [
         "btrfs",

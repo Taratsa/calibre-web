@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12744?v=1795443600",
   "cover_og_url": "/cover/12744/og?v=1795443600",
+  "has_cover": false,
   "url": "/book/cisco-ospf-interface-parameter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring OSPF Interface Parameters SUMMARY STEPS enable configure terminal interface type number ip ospf cost cost ip ospf retransmit-interval seconds ip ospf transmit-delay seconds ip ospf priority number-value ip ospf hello-interval seconds ip ospf dead-interval seconds ip ospf authentication-key key ip ospf message-digest-key key-id md5 key ip ospf authentication [message-digest | null] end",

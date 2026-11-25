@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12366?v=1795442536",
   "cover_og_url": "/cover/12366/og?v=1795442536",
+  "has_cover": false,
   "url": "/book/ipv6-mengaktifkan-ipv6-forwarding-di-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita menginginkan komputer kita berfungsi sebagai router dan bisa memforward paket IPv6 dari / ke berbagai interfacenya. Agar Ubuntu / Linux dapat bertindak sebagai router dan dapat memforward IPv6 maka kita perlu meng-enable kernel dengan perintah sudo sysctl -w net.ipv6.conf.all.forwarding=1 atau echo 1 &gt; /proc/sys/net/ipv6/conf/all/forwarding interface all bisa di ganti dengan default",

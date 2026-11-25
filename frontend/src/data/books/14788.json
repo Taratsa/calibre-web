@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14788?v=1795451719",
   "cover_og_url": "/cover/14788/og?v=1795451719",
+  "has_cover": false,
   "url": "/book/arduino-nano-ppt-vox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Analog In /* Detect A0 Switch PTT D4 */ int State; int outPin=4; // the setup function runs once when you press reset or power the board void setup() { // initialize digital pin 4 as an output. pinMode(outPin, OUTPUT); Serial.begin(9600); } // the loop function runs over and over again forever void loop() { State=(analogRead(A0)+analogRead(A0)+analogRead(A0)+analogRead(A0))/4; //",

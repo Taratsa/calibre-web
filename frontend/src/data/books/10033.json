@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10033?v=1795435813",
   "cover_og_url": "/cover/10033/og?v=1795435813",
+  "has_cover": false,
   "url": "/book/sfg-test-relay-cfg-onno-widodo-purbo/",
   "rating": null,
   "comment": "# $Id: openser.cfg 1676 2007-02-21 13:16:34Z bogdan_iancu $ # # simple quick-start config script # Please refer to the Core CookBook at http://www.openser.org/dokuwiki/doku.php # for a explanation of possible statements, functions and parameters. # # ----------- global configuration parameters ------------------------ debug=3 # debug level (cmd line: -dddddddddd) fork=yes log_stderror=no # (cmd",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16881?v=1795463531",
   "cover_og_url": "/cover/16881/og?v=1795463531",
+  "has_cover": false,
   "url": "/book/membuat-installer-ubuntu-di-usb-flashdisk-menjadi-liveusb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi: https://help.ubuntu.com/community/Installation/FromUSBStick Format USB FlashDisk Kosong .. $ sudo su - # mkfs.ext3 /dev/sdX1 Sebaiknya di format ke ext3, walaupun ke FAT32 atau NTFS kemungkinan juga bisa. Untuk memformat ke FAT32 gunakan perintah # mkfs.vfat /dev/sdX1 dimana /dev/sdX1 adalah USB flashdisk anda. Langkah yang perlu dilakukan $ sudo su - # apt-get install syslinux mtools",

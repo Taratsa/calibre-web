@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18465?v=1795468966",
   "cover_og_url": "/cover/18465/og?v=1795468966",
+  "has_cover": false,
   "url": "/book/voip-asterisk-demo-dial-plan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/asterisk/extensions.conf Isi sesudah bagian [default] include =&gt; demo [default] ; ; By default we include the demo. In a production system, you ; probably don't want to have the demo there. ; include =&gt; demo exten =&gt; _20XX,1,Dial(SIP/${EXTEN},30,rt) exten =&gt; _20XX,2,HangUp Beberapa contoh tambahan untuk konfigurasi extensions.conf exten =&gt; _21XX,1,Dial(DAHDI/g0/${EXTEN:1},30,rt)",

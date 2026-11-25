@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18074?v=1795467525",
   "cover_og_url": "/cover/18074/og?v=1795467525",
+  "has_cover": false,
   "url": "/book/konfigurasi-modem-smart-haier-c700-untuk-akses-internet-cdma-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://khazanaharham.wordpress.com/2009/11/14/smart-haier-c700-di-ubuntu-9-10/ Untuk menggunakan modem CDMA Smart tipe Haier C700 di Ubuntu 9.10 Karmic Koala, ikuti langkah berikut. Colok usb ponsel ke komputer. Aktifkan ponsel agar dikenali Ubuntu dengan perintah di Terminal (kode vendor dan product didapat dari perintah lsusb): sudo modprobe usbserial vendor=0×05c6 product=0×9004 (agar",
@@ -136,12 +137,12 @@
         3
       ],
       [
-        "mobile",
-        3
-      ],
-      [
         "komputer",
         4
+      ],
+      [
+        "mobile",
+        3
       ],
       [
         "connection",

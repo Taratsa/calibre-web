@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20442?v=1795477250",
   "cover_og_url": "/cover/20442/og?v=1795477250",
+  "has_cover": false,
   "url": "/book/wikipedia-membuat-server-lokal-onno-widodo-purbo/",
   "rating": null,
   "comment": "CATATAN: Cara Ini masih Belum Berhasil dengan baik. Contents 1 Instalasi Mediawiki 2 Instalasi Wikipedia 3 Referensi 4 Pranala Menarik Instalasi Mediawiki Pertama-tama siapkan beberapa fasiltas pendukung MediaWiki seperti MySQL Server , PHP dll, antara lain dapat di install melalui perintah sudo apt-get install lamp-server^ libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-curl php-pear Siapkan",

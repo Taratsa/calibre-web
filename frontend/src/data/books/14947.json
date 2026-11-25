@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14947?v=1795452543",
   "cover_og_url": "/cover/14947/og?v=1795452543",
+  "has_cover": false,
   "url": "/book/mqtt-android-eventbus-onno-widodo-purbo/",
   "rating": null,
   "comment": "I think to share some facts with you which I collected from my current android project.I have to handle lots of API callings while developing that app.So when we come to networking part of our Android app we can not neglect Retrofit because that has a capability to handle API callings smoothly without affecting UI thread.But today I'm not going to talk about Retrofit instead of that worth to",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 419,
-    "longer_than": 36,
+    "longer_than": 35,
     "top": [
       [
         "eventbus",

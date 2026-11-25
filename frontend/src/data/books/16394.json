@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16394?v=1795460589",
   "cover_og_url": "/cover/16394/og?v=1795460589",
+  "has_cover": false,
   "url": "/book/docker-docker-compose-onno-widodo-purbo/",
   "rating": null,
   "comment": "curl -L \" https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose docker-compose --version",

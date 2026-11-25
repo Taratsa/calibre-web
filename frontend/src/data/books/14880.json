@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14880?v=1795452226",
   "cover_og_url": "/cover/14880/og?v=1795452226",
+  "has_cover": false,
   "url": "/book/android-studio-start-another-activity-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Respond to the Send button 2 Build an intent 3 Create the second activity 4 Add a text view 5 Display the message 6 activity_display_message.xml 7 Add upward navigation 8 Referensi Respond to the Send button file app &gt; java &gt; com.example.myfirstapp &gt; MainActivity, add the following sendMessage() method stub: import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle;",

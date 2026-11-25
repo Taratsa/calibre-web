@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14796?v=1795451751",
   "cover_og_url": "/cover/14796/og?v=1795451751",
+  "has_cover": false,
   "url": "/book/arduino-nano-ptt-vox-via-analog-out-mic-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Rig PTT VOX Detect A0 dari Audio Output D5 ke Switch modified 2021 Dec 3 by Onno W. Purbo */ int State=LOW; int inPin=A0; int outPin=5; void setup() { pinMode(outPin, OUTPUT); } void loop() { State=analogRead(inPin); if( State&gt;30) digitalWrite(outPin, HIGH); else digitalWrite(outPin, LOW); delay(100); }",

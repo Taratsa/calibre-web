@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14643?v=1795451010",
   "cover_og_url": "/cover/14643/og?v=1795451010",
+  "has_cover": false,
   "url": "/book/ubah-zone-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menambahkan DNS zone ke BIND9, dan membuat BIND9 menjadi server Primary Master, yang kita perlu lakukan adalah masuk ke folder /etc/bind/ edit named.conf.local (misalnya): [...] zone \"example.com\" { type master; file \"/etc/bind/db.example.com\"; }; [...]",

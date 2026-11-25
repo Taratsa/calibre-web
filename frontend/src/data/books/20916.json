@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20916?v=1795478497",
   "cover_og_url": "/cover/20916/og?v=1795478497",
+  "has_cover": false,
   "url": "/book/proxmox-2-0-konfigurasi-ntp-agar-bisa-offline-onno-widodo-purbo/",
   "rating": null,
   "comment": "Rupanya Proxmox 2.0 mengandalkan NTP Server di Internet untuk mengatur waktu-nya. Agar tidak tergantung Internet kita perlu mengedit konfigurasi NTP Server cd /etc cp ntp.conf ntp.conf.original vi /etc/ntp.conf Agar menjadi NTP Server referensi utama seperti di Internet Jika Server Proxmox Menggunakan IP address 192.168.0.4 maka, perlu diubah agar menjadi # pool.ntp.org maps to about 1000",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14157?v=1795448839",
   "cover_og_url": "/cover/14157/og?v=1795448839",
+  "has_cover": false,
   "url": "/book/iptables-block-torrent-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.digitalocean.com/community/questions/updating-iptables-to-block-torrent-traffic I am running a VPN server but need to block illegal torrent downloads. The VPN plugin is provided by safesrv.net I have had updated Iptables prepared but I am interested in feedback from anyone who has experience with this. Our updated iptables are below: iptables -I INPUT -p udp --dport 1024:1193",

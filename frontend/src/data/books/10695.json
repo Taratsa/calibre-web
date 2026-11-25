@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10695?v=1795437858",
   "cover_og_url": "/cover/10695/og?v=1795437858",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-nat64-dan-dns64-menggunakan-bind-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://blog.raorn.name/2012/02/ipv6-only-lan-with-dual-stack-openwrt.html http://wiki.openwrt.org/doc/howto/ipv6 http://tech.sybreon.com/2015/05/05/nat64dns64-on-openwrt/ Siapkan OpenWRT yang sudah tercompile di dalam-nya tayga bind kmod netfilter semua di aktifkan kmod-tun Konfigurasi NAT64 interface: # /etc/config/network config 'interface' 'nat64' option 'proto' 'tayga' option",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1841,
-    "longer_than": 59,
+    "longer_than": 58,
     "top": [
       [
         "ipv",

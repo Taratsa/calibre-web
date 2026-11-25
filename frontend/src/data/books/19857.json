@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19857?v=1795475332",
   "cover_og_url": "/cover/19857/og?v=1795475332",
+  "has_cover": false,
   "url": "/book/script-untuk-mencuri-file-youtube-di-tmp-onno-widodo-purbo/",
   "rating": null,
   "comment": "vi curiyoutube.sh #!/bin/bash flash=$(ls -t /tmp/Flash* | head -n 1) destination=$(find ~/.mozilla -name sessionstore.js -exec sed 's/.*title:\"\\([^\"]*\\).*selected.*/\\1/' {} \\;) echo \"waiting for download to finish ...\" size=$(du $flash) while sleep 5s; do if [ \"$size\" != \"$(du $flash)\" ]; then size=$(du $flash) continue else break fi done cp \"$flash\" \"$HOME/${destination////%2f}.swf\" Caranya:",

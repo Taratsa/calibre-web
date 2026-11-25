@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15785?v=1795456819",
   "cover_og_url": "/cover/15785/og?v=1795456819",
+  "has_cover": false,
   "url": "/book/moodle-mysql-database-lokasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "By default, MySQL stores database files in the /var/lib/mysql directory, but this can be changed in the configuration file. The file is usually /etc/mysql/mysql.conf.d/mysqld.cnf To find the current data directory, use the command mysql&gt; select @@datadir at the mysql prompt.",

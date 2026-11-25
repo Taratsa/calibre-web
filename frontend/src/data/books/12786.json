@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12786?v=1795443738",
   "cover_og_url": "/cover/12786/og?v=1795443738",
+  "has_cover": false,
   "url": "/book/quagga-ospf-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sambungan: R1 eth1: -- R3: eth1 eth2: -- R2: eth1 eth3: -- Internet R2: eth1: -- R1: eth2 eth2: -- R3: eth2 eth3: -- LAN 172.16.1.1/16 R3: eth1: -- R1: eth1 eth2: -- R2: eth2 eth3: -- LAN 192.168.1.1/24 Router1: vtysh configure terminal interface eth1 ip address 10.10.1.1/30 exit interface eth2 ip address 10.10.1.5/30 exit ! ! NAT GNS3 gw 192.168.122.1 interface eth3 ip address 192.168.122.100/24",

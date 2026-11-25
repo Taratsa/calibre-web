@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13434?v=1795445938",
   "cover_og_url": "/cover/13434/og?v=1795445938",
+  "has_cover": false,
   "url": "/book/wemos-lcd-ntp-jam-digital-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include  #include  #include  // initialize the library with the numbers of the interface pins // LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // LiquidCrystal lcd(8, 9, 4, 5, 6, 7); LiquidCrystal lcd(D6, D7, D2, D3, D4, D5); const char *ssid = \"ssid\"; const char *password = \"password\"; const long utcOffsetInSeconds = 3600; char",

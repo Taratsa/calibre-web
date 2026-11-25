@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14516?v=1795450344",
   "cover_og_url": "/cover/14516/og?v=1795450344",
+  "has_cover": false,
   "url": "/book/dhcp-server-internet-offline-ut-onno-widodo-purbo/",
   "rating": null,
   "comment": "option domain-name \"utakses.ac.id\"; option domain-name-servers 192.168.88.8, ns1.utakses.ac.id; default-lease-time 600; max-lease-time 7200; ddns-update-style none; authoritative; subnet 192.168.88.0 netmask 255.255.255.0 { range 192.168.88.10 192.168.88.200; option routers 192.168.88.1; option domain-name-servers 192.168.88.8; }",

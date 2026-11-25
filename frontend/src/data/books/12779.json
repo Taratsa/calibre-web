@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12779?v=1795443717",
   "cover_og_url": "/cover/12779/og?v=1795443717",
+  "has_cover": false,
   "url": "/book/cisco-dhcp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Single subnet enable configure terminal ip dhcp excluded-address 192.168.1.1 192.168.1.3 ip dhcp pool DHCPPool network 192.168.1.0 255.255.255.0 domain-name cisco.com dns-server 192.168.1.1 192.168.1.21 dns-server 192.168.1.102 192.168.2.102 netbios-name-server 192.168.1.103 192.168.2.103 netbios-node-type h-node default-router 192.168.1.1 lease 0 0 10 exit exit Multi subnet-address enable",

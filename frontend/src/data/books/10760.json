@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10760?v=1795438044",
   "cover_og_url": "/cover/10760/og?v=1795438044",
+  "has_cover": false,
   "url": "/book/membuka-uif-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://ubuntuforums.org/showthread.php?t=1082788 Kita bisa cari uif2iso.exe dan menggunakan wine, contoh $ wine uif2iso.exe .uif  Alternatif Lain Instalasi sudo apt-get install uif2iso Konversi uif2iso [input.uif] [output.iso] Mount iso Buat folder $ sudo mkdir /mnt/virtualcd Mount file iso ke folder Virtual CD $ sudo mount -t iso9660 -o loop /path/ke/file.iso",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11456?v=1795439924",
   "cover_og_url": "/cover/11456/og?v=1795439924",
+  "has_cover": false,
   "url": "/book/testing-the-nltk-classifier-on-specific-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "The following code run Naive Bayes movie review classifier. The code generate a list of the most informative features. Note: **movie review** folder is in the nltk. from itertools import chain from nltk.corpus import stopwords from nltk.probability import FreqDist from nltk.classify import NaiveBayesClassifier from nltk.corpus import movie_reviews stop = stopwords.words('english') documents =",
@@ -148,8 +149,8 @@
         16
       ],
       [
-        "classify",
-        10
+        "txt",
+        15
       ]
     ],
     "phrases": [

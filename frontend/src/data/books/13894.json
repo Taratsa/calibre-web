@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13894?v=1795447836",
   "cover_og_url": "/cover/13894/og?v=1795447836",
+  "has_cover": false,
   "url": "/book/mikrotik-static-routing-sedehana-dengan-cloud-internet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi 3 Setting Client 4 Youtube 5 Referensi 6 Pranala Menarik Topologi R1 e0 --&gt; NAT e1 --&gt; R2 e0 e2 --&gt; LAN 192.168.10.1/24 R2 e0 --&gt; R1 e1 e1 --&gt; LAN 192.168.20.1/24 Konfigurasi Router1: /ip dhcp-client add interface=ether1 disabled=no /ip dhcp-client enable 0 /ip address add address=172.16.1.1/30 interface=ether2 add address=192.168.10.1/24 interface=ether3 /ip",

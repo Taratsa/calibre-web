@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10977?v=1795438663",
   "cover_og_url": "/cover/10977/og?v=1795438663",
+  "has_cover": false,
   "url": "/book/python-soket-udp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 UDP Send / Client 2 UDP Receive / Server 3 Alternatif Server 4 Referensi UDP Send / Client import socket UDP_IP = \"127.0.0.1\" UDP_PORT = 5005 MESSAGE = \"Hello, World!\" print( \"UDP target IP:\", UDP_IP ) print( \"UDP target port:\", UDP_PORT ) print( \"message:\", MESSAGE ) sock = socket.socket(socket.AF_INET, # Internet socket.SOCK_DGRAM) # UDP sock.connect(UDP_IP,UDP_PORT)",

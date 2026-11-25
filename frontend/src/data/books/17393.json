@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17393?v=1795465121",
   "cover_og_url": "/cover/17393/og?v=1795465121",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-dan-konfigurasi-server-standard-onno-widodo-purbo/",
   "rating": null,
   "comment": "su - cp /etc/resolv.conf /etc/resolv.conf.nawala ifconfig eth0:254 192.168.0.254 vi /etc/hosts 192.168.0.254 sekolah.sch.id sekolah www.sekolah.sch.id Entah kenapa Instalasi mysql-server agak tricky. Sebaiknya dilakukan manual apt-get install mysql-server Sampai \"hang\". Melalui terminal lain cek ps ax 4912 pts/4 S+ 0:00 /bin/bash -e /var/lib/dpkg/info/mysql-server-5.1.pos... $ sudo kill 4912",

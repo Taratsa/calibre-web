@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11750?v=1795440664",
   "cover_og_url": "/cover/11750/og?v=1795440664",
+  "has_cover": false,
   "url": "/book/korban-install-squirrelmail-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Download 3 Konfigurasi 4 Restart 5 Pancing email di INBOX Persiapan Tambahkan repo sudo apt -y install software-properties-common sudo apt -y install python3-software-properties sudo apt -y install python-software-properties sudo add-apt-repository ppa:ondrej/php Install sudo apt-get update sudo locale-gen id_ID.UTF-8 apt -y install apache2 php php-xmlrpc php-mysql php-gd",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15035?v=1795452878",
   "cover_og_url": "/cover/15035/og?v=1795452878",
+  "has_cover": false,
   "url": "/book/android-services-onno-widodo-purbo/",
   "rating": null,
   "comment": "Service Layanan adalah komponen yang berjalan di background untuk melakukan operasi yang berjalan lama tanpa perlu berinteraksi dengan pengguna dan berfungsi bahkan jika aplikasi destroyed. Sebuah service pada dasarnya ada dua state State dari Service Sr.No. State Description 1 Started A service is started when an application component, such as an activity, starts it by calling startService().",

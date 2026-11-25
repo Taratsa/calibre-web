@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12259?v=1795442053",
   "cover_og_url": "/cover/12259/og?v=1795442053",
+  "has_cover": false,
   "url": "/book/arduino-rtc-ds3231-pc-sync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://playground.arduino.cc/Code/time Contents 1 Siapkan Library 2 Code 3 PC Sync 4 Referensi Siapkan Library Download dari http://playground.arduino.cc/uploads/Code/Time.zip Extrak cd /usr/share/arduino/libraries/ atau cd ~/Arduino/libraries wget http://playground.arduino.cc/uploads/Code/Time.zip unzip Time.zip cd Time gedit DateStrings.cpp Tambahkan di char &gt; char const PGM_P &gt; PGM_P",

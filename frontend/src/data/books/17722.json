@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17722?v=1795466085",
   "cover_og_url": "/cover/17722/og?v=1795466085",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-dhcp-server-untuk-pemberian-ip-address-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi DHCP Server # apt-get install dhcp3-server Konfigurasi dhcpd.conf # vi /etc/dhcp3/dhcpd.conf Isinya kira-kira sebagai berikut ddns-update-style none; option domain-name \"ukm.co.id\" option domain-name-servers 192.168.0.254, 203.34.118.10, 203.34.118.12, 208.67.222.222, 208.67.220.220; default-lease-time 86400; # 24 jam max-lease-time 172800; # 48 jam authoritative; subnet 192.168.0.0",

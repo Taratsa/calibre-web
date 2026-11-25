@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17720?v=1795466080",
   "cover_og_url": "/cover/17720/og?v=1795466080",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-dan-konfigurasi-server-standard-onno-widodo-purbo/",
   "rating": null,
   "comment": "su - cp /etc/resolv.conf /etc/resolv.conf.nawala ifconfig eth0:254 192.168.0.254 apt-get install dhcp3-server postfix apache2 mysql-server libmysqlclient15-dev libphp-adodb \\ libgd2-xpm libgd2-xpm-dev php5-mysql php5-gd php5-curl php-pear unzip php5-xmlrpc vsftpd \\ libnet-ssleay-perl openssh-server catdoc dnsutils bind9 ntp tinyproxy dansguardian smbfs \\ samba vsftpd ubiquity",

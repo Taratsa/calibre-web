@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9896?v=1795435340",
   "cover_og_url": "/cover/9896/og?v=1795435340",
+  "has_cover": false,
   "url": "/book/os-android-build-untuk-motorola-onno-widodo-purbo/",
   "rating": null,
   "comment": "HOWTO: Build and Flash Motorola's kernel from source DISCLAIMER: I'm not responsible for any damages done to your phone. Please read carefully, and also please, please do a nandroid backup. If any of the following fails, don't continue. And post your errors on this thread. Prepare your system Code: $ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 861,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "git",

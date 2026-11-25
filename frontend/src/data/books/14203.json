@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14203?v=1795449027",
   "cover_og_url": "/cover/14203/og?v=1795449027",
+  "has_cover": false,
   "url": "/book/minikube-addons-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/ Contents 1 Create a Minikube cluster 2 Enable the Ingress controller 3 Deploy a hello, world app 4 Referensi Create a Minikube cluster minikube start Enable the Ingress controller minikube addons enable ingress kubectl get pods -n kube-system Deploy a hello, world app kubectl create deployment web",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12826?v=1795443880",
   "cover_og_url": "/cover/12826/og?v=1795443880",
+  "has_cover": false,
   "url": "/book/cisco-bgp-2-bgp-redistribute-2-ospf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada tiga (3) ISP ISP1: IP 192.168.1.1/24 menuju ISP3 IP 192.168.3.1/24 menuju ISP2 AS 10 IP 10.100.100.0/24 IP 10.100.200.0/24 ISP3 (kita) IP 192.168.1.2/24 - menuju ISP1 IP 192.168.2.2/24 - menuju ISP2 AS 30 IP 10.1.1.0/24 IP 10.1.2.0/24 R4 IP 10.1.1.2/24 menuju ISP3 IP 172.16.1.1 menuju R5 IP 172.16.10.1 LAN IP 172.16.20.1 LAN R5 IP 10.1.2.2/24 menuju ISP3 IP 172.16.1.2 menuju R4 IP",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20004?v=1795475827",
   "cover_og_url": "/cover/20004/og?v=1795475827",
+  "has_cover": false,
   "url": "/book/how-to-set-red-hat-centos-linux-remote-backup-snapshot-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.cyberciti.biz/faq/redhat-cetos-linux-remote-backup-snapshot-server/ Q. I've HP RAID 6 server running RHEL 5.x. I'd like to act this box as a backup server for my other Red Hat DNS and Web server. The server must keep backup in hourly, daily and monthly format. How do I configure my Red Hat / CentOS Linux server as remote backup or snapshot server? A. rsnapshot is easy, reliable",

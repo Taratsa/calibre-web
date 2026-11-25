@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/13535?v=1795446377",
   "cover_og_url": "/cover/13535/og?v=1795446377",
+  "has_cover": false,
   "url": "/book/instalasi-virtualbox-di-ubuntu-mengunakan-apt-get-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi VirtualBox dapat dilakukan mengunakan perintah sudo su apt update apt install virtualbox Pada masa lalu kita menginstalasi menggunakan perintah # apt-get install virtualbox-ose vboxgtk Kita juga perlu menginstalasi module kernel . Ada beberapa pilihan module kernel, yaitu, virtualbox-ose-modules-386 virtualbox-ose-modules-generic virtualbox-ose-modules-openvz virtualbox-ose-modules-rt",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11641?v=1795440385",
   "cover_og_url": "/cover/11641/og?v=1795440385",
+  "has_cover": false,
   "url": "/book/google-chrome-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/510056/how-to-install-google-chrome add key wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - set repository sudo sh -c 'echo \"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main\" &gt;&gt; /etc/apt/sources.list.d/google-chrome.list' Install sudo apt-get update sudo apt-get install google-chrome-stable",

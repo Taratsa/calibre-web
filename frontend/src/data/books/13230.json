@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13230?v=1795445221",
   "cover_og_url": "/cover/13230/og?v=1795445221",
+  "has_cover": false,
   "url": "/book/menggunakan-openserdbctl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebaiknya restart MySQL # /etc/init.d/mysql restart Pastikan file /etc/openser/openserctlrc sudah di edit dengan benar # vi /etc/openser/openserctlrc Pastikan ada DBENGINE=MYSQL Atau database lainnya. Untuk menggunakan openserdbctl dapat menggunakan perintah berikut # openserdbctl create  .....(creates a new database) # openserdbctl drop ",

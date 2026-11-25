@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12392?v=1795442617",
   "cover_og_url": "/cover/12392/og?v=1795442617",
+  "has_cover": false,
   "url": "/book/ipv6-openwrt-konfigurasi-upstream-wan-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada bagian ini akan di terangkan cara konfigurasi sambungan IPv6 ke ISP atau ke upstream router. Perlu di catat bahwa sebagian besar mekanisme tunneling seperti 6in4, 6rd dan 6to4 tidak dapat beroperasi dibelakang NAT-router. Contents 1 Sambungan Native IPv6 2 Sambungan IPv6 Statik 3 6in4 tunnel (HEnet tunnelbroker, sixxs static tunnel, ...) 4 6rd tunnel (Dukungan untuk Transisi ISP IPv6) 5 6to4",

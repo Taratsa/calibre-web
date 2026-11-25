@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11060?v=1795438909",
   "cover_og_url": "/cover/11060/og?v=1795438909",
+  "has_cover": false,
   "url": "/book/kali-linux-install-driver-tp-link-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit /etc/apt/sources.list Tambahkan deb http://http.kali.org/kali sana main non-free contrib deb http://security.kali.org/kali-security sana/updates main contrib non-free deb http://http.kali.org/kali sana main non-free deb http://http.kali.org/kali safi main non-free Lakukan cd /usr/local/src apt-get install -y linux-headers-$(uname -r) sudo apt-get install build-essential git git clone",

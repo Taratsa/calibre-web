@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11602?v=1795440296",
   "cover_og_url": "/cover/11602/og?v=1795440296",
+  "has_cover": false,
   "url": "/book/apache-aktifkan-https-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04 Agar komunikasi dapat dilakukan dengan aman kita perlu meng-enkripsi komunikasi menggunakan TLS/SSL. Berikut ini adalah caranya di Ubuntu 16.04. Contents 1 Install Apache 2 Aktifkan SSL module 3 Buat Self-Signed SSL Certificate 4 Konfigurasi apache untuk menggunakan SSL 5 Aktifkan",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 615,
-    "longer_than": 43,
+    "longer_than": 42,
     "top": [
       [
         "apache",

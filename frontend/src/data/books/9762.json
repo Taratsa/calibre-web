@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9762?v=1795434798",
   "cover_og_url": "/cover/9762/og?v=1795434798",
+  "has_cover": false,
   "url": "/book/ipv6-display-tetangga-neighbor-menggunakan-perintah-ip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Melihat tetangga / neighbor menggunakan \"ip\" Dengan perintah berikut kita dapat melihat / mempelajari tetangga yang menjalankan IPv6 # ip -6 neigh show [dev ] Contoh berikut memperlihatkan satu tetangga, yang kebetulan sebuah router # ip -6 neigh show Hasilnya kira-kira: fe80::5e2e:59ff:fe35:14eb dev br-lan lladdr 5c:2e:59:35:14:eb STALE fe80::225:9cff:fe49:e965 dev eth5 lladdr",

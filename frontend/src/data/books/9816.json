@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9816?v=1795435020",
   "cover_og_url": "/cover/9816/og?v=1795435020",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-build-firmware-linksys-wrt160nl-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: ini akan membutuhkan banyak akses ke Internet untuk download, termasuk waktu proses make. Termasuk download kernel linux, waktu compile toolchain :( ... Tampaknya tidak bisa OFFLINE :( Dalam contoh ini akan di perlihatkan cara compile firmware Linksys WRT160NL untuk keperluah MESH dengan OLSRD. oleh karenanya membutuhkan aplikasi seperti luci olsrd freifunk Pastikan Compile untuk AR71xx",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 801,
-    "longer_than": 47,
+    "longer_than": 46,
     "top": [
       [
         "openwrt",

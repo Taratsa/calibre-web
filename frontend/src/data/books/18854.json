@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18854?v=1795470406",
   "cover_og_url": "/cover/18854/og?v=1795470406",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-coovachilli-instalasi-firewall-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pembuat CoovaChilli sudah membuat aturan untuk iptables, tapi script mereka membutuhkan sedikit bantuan untuk dapat berjalan dengan baik. Konfigurasi iptables di CoovaChilli dilakukan melalui script /etc/chilli/up.sh yang di jalankan sesudah interface tun beroperasi, sehingga interface tun yang pasti sudah di ketahui. Perbaikan up.sh dapat dilaukan dengan menambahkan line berikut di ujung akhir",

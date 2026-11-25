@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14562?v=1795450571",
   "cover_og_url": "/cover/14562/og?v=1795450571",
+  "has_cover": false,
   "url": "/book/mengukur-packet-per-second-onno-widodo-purbo/",
   "rating": null,
   "comment": "Salah satu kinerja yang perlu diukur untuk memperkirakan kemampuan sebuah sistem adalah berapa paket per detik yang dapat ditangani. Pengukuran throughput jaringan (paket per detik) dilakukan dengan mengirimkan banyak paket (blasting) ke interface jaringan dari perangkat yang diuji. Opsi yang paling sederhana adalah menggunakan perintah ping secara bersamaan yang berjalan di beberapa instance.",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10605?v=1795437608",
   "cover_og_url": "/cover/10605/og?v=1795437608",
+  "has_cover": false,
   "url": "/book/mysqlslap-benchmark-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi root password mysql 123456 hostname localhost Test mysqlslap -v -h localhost -u root -p123456 --auto-generate-sql Output : Benchmark Average number of seconds to run all queries: 0.009 seconds Minimum number of seconds to run all queries: 0.009 seconds Maximum number of seconds to run all queries: 0.009 seconds Number of clients running queries: 1 Average number of queries per client: 0",
@@ -201,7 +202,7 @@
       ],
       [
         14571,
-        0.56
+        0.55
       ],
       [
         12729,

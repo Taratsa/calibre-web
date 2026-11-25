@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9933?v=1795435487",
   "cover_og_url": "/cover/9933/og?v=1795435487",
+  "has_cover": false,
   "url": "/book/instalasi-openvz-di-centos-5-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi OpenVZ Tambahkan repository OpenVZ ke yum: cd /etc/yum.repos.d wget http://download.openvz.org/openvz.repo rpm --import http://download.openvz.org/RPM-GPG-Key-OpenVZ Buka openvz.repo vi openvz.repo Matikan repository [openvz-kernel-rhel6] (enabled=0) dan hidupkan repository [openvz-kernel-rhel5] (enabled=1): [openvz-kernel-rhel6] name=OpenVZ RHEL6-based kernel #baseurl=",

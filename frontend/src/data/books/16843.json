@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16843?v=1795463424",
   "cover_og_url": "/cover/16843/og?v=1795463424",
+  "has_cover": false,
   "url": "/book/batch-pdf-to-md-sh-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env bash # Batch wrapper untuk pdf_to_rag_md.py # # Penggunaan: # ./batch_pdf_to_md.sh /path/folder_pdf # ./batch_pdf_to_md.sh /path/folder_pdf /path/folder_output # ./batch_pdf_to_md.sh /path/folder_pdf /path/folder_output /path/pdf_to_rag_md.py # # Hasil: # OUTPUT_DIR/// # ├── *.md # └── manifest.json set -Eeuo pipefail IFS=$'\\n\\t' PROGRAM_NAME=\"$(basename",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10131?v=1795436123",
   "cover_og_url": "/cover/10131/og?v=1795436123",
+  "has_cover": false,
   "url": "/book/python-echo-udp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Script untuk Server #!/usr/bin/env python \"\"\" A simple echo server that uses UDP \"\"\" import optparse import select import socket import sys # setup variables host = \"\" backlog = 5 size = 1024 # parse options parser = optparse.OptionParser(usage = \"%prog [options]\", version = \"%prog 0.1\") parser.add_option(\"-p\", \"--port\", type=\"int\",dest=\"port\", metavar=\"PORT\",default=0, help=\"port number for the",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11004?v=1795438737",
   "cover_og_url": "/cover/11004/og?v=1795438737",
+  "has_cover": false,
   "url": "/book/pyhton-numpy-matrix-dan-aljabar-linear-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.bogotobogo.com/python/python_numpy_matrix_tutorial.php Contents 1 Apa beda antara numpy dot() and inner() 2 NumPy Matrix 3 Vector sebagai matrix 4 Rank 5 Eigen Value dan Vector 6 Quadrature 7 Referensi Apa beda antara numpy dot() and inner() Mari kita lihat ke 2D array: import numpy as np a=np.array([[1,2],[3,4]]) b=np.array([[11,12],[13,14]]) np.dot(a,b) array([[37, 40], [85,",

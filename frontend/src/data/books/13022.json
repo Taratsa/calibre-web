@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13022?v=1795444539",
   "cover_og_url": "/cover/13022/og?v=1795444539",
+  "has_cover": false,
   "url": "/book/ipv6-cara-men-disable-ipv6-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala kita butuh untuk mendisable layanan IPv6. Di Ubuntu untuk men-disable ipv6, kita bisa meng-edit /etc/sysctl.conf dan tambahkan kalimat berikut dibagian bawah: net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 Jika ipv6 belum juga mati / disable, kemungkinan sysctl.conf belum di aktifan. Untuk mengaktifkan sysctl.conf masuk ke",

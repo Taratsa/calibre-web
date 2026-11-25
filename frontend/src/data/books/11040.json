@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11040?v=1795438850",
   "cover_og_url": "/cover/11040/og?v=1795438850",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-tcp-read-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://forum.arduino.cc/index.php?topic=123756.0 MASIH GAGAL Code // Hardware // * Arduino UNO // * Ethernet Shield // * pin 4 LED #include  #include  byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; //physical mac address byte ip[] = { 192, 168, 0, 3 }; // ip in lan byte gateway[] = { 192, 168, 0, 223 }; // internet access via router byte subnet[] = { 255, 255,",

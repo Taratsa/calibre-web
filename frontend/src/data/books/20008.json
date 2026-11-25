@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20008?v=1795475839",
   "cover_og_url": "/cover/20008/og?v=1795475839",
+  "has_cover": false,
   "url": "/book/chkrootkit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 What's chkrootkit? 2 Instalasi 3 Menjalankan 4 Penggunaan 5 Output Messages 6 Sebuah trojan di temukan. Apa yang perlu saya lakukan? 7 Referensi 8 Pranala Menarik What's chkrootkit? Chkrootkit adalah tool untuk memeriksa tanda-tanda rootkit secara lokal. Instalasi Siapkan compiler sudo su apt install make gcc Download source code cd /usr/local/src wget",
@@ -53,7 +54,7 @@
   ],
   "text": {
     "words": 465,
-    "longer_than": 38,
+    "longer_than": 37,
     "top": [
       [
         "chkrootkit",

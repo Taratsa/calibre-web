@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14550?v=1795450512",
   "cover_og_url": "/cover/14550/og?v=1795450512",
+  "has_cover": false,
   "url": "/book/debian-reboot-onno-widodo-purbo/",
   "rating": null,
   "comment": "systemctl reboot systemctl poweroff As 'root' -&gt; Edit /root/.bashrc Add to the end of the file: alias reboot='systemctl reboot' alias poweroff='systemctl poweroff'",

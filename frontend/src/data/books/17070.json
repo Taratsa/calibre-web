@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17070?v=1795464051",
   "cover_og_url": "/cover/17070/og?v=1795464051",
+  "has_cover": false,
   "url": "/book/instalasi-mailman-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Mailman # apt-get install mailman Set beberapa hal Language to Support -&gt; en -&gt; OK # newlist mailman Enter the email of the person running the list: -masukan e-mail anda disini- Initial mailman password: -masukan password administrator mailman- Hit enter to notify mailman owner... Restart mailman # /etc/init.d/mailman restart Pranala Menarik Linux Howto",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10706?v=1795437889",
   "cover_og_url": "/cover/10706/og?v=1795437889",
+  "has_cover": false,
   "url": "/book/openwrt-menuconfig-agar-quagga-di-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar quagga di compile masuk ke dalam firmware openwrt yang kita buat, pastikan saat make menuconfig Network &gt; Routing and Redirection &gt; &lt;*&gt; quagga &gt; &lt;*&gt; quagga-babeld &lt;*&gt; quagga-bgpd &lt;*&gt; quagga-isisd -*- quagga-libospf -*- quagga-libzebra &lt;*&gt; quagga-ospf6d &lt;*&gt; quagga-ospfd &lt;*&gt; quagga-ripd &lt;*&gt; quagga-ripngd &lt;*&gt; quagga-vtysh &lt;*&gt; quagga-watchquagga &lt;*&gt; quagga-zebra",

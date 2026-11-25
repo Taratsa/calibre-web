@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13251?v=1795445287",
   "cover_og_url": "/cover/13251/og?v=1795445287",
+  "has_cover": false,
   "url": "/book/keras-konfigurasi-backend-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit sudo vi .keras/keras.json , isi { \"epsilon\": 1e-07, \"floatx\": \"float32\", \"image_data_format\": \"channels_last\", \"backend\": \"tensorflow\" } Simply change the field backend to \"theano\", \"tensorflow\", or \"cntk\", and Keras will use the new configuration next time you run any Keras code. Pranala Menarik Keras",

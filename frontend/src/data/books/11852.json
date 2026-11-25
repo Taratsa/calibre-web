@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11852?v=1795440914",
   "cover_og_url": "/cover/11852/og?v=1795440914",
+  "has_cover": false,
   "url": "/book/webalizer-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://linuxpitstop.com/install-and-configure-webalizer-on-ubuntu/ Contents 1 Instal Apache 2 Instal Webalizer 3 Konfigurasi 4 Jalankan 5 Referensi Instal Apache sudo apt-get install apache sudo /etc/init.d/apache2 start Instal Webalizer sudo apt-get install webalizer Konfigurasi sudo mv /var/www/webalizer /var/www/html/ sudo gedit /etc/webalizer/webalizer.conf Pastikan LogFile:",

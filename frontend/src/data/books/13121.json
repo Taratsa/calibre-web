@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13121?v=1795444867",
   "cover_og_url": "/cover/13121/og?v=1795444867",
+  "has_cover": false,
   "url": "/book/orange-install-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "SEBAIKNYA Menggunakan Anaconda, kareena lebih STABIL Contents 1 Repository 2 Install Orange3 2.1 Versi yang lebih Lengkap 3 Optional 4 Pranala Menarik Repository Edit vi /etc/apt/sources.list Pastikan deb http://id.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse Install Orange3 sudo su apt update apt remove python3-pip python3-dev rm -Rf",

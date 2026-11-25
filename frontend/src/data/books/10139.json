@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10139?v=1795436149",
   "cover_og_url": "/cover/10139/og?v=1795436149",
+  "has_cover": false,
   "url": "/book/python-udp-multicast-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tambahkan routing sudo su route add -net 224.0.0.0 netmask 255.0.0.0 eth0 ifconfig eth0 allmulti Script Transmitter import socket MCAST_GRP = '224.1.1.1' MCAST_PORT = 5007 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 10) sock.sendto(\"robot\", (MCAST_GRP, MCAST_PORT)) Script Receiver import socket import",

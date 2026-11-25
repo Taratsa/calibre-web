@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14805?v=1795451795",
   "cover_og_url": "/cover/14805/og?v=1795451795",
+  "has_cover": false,
   "url": "/book/cpu-cpupower-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar bisa berfungsi dengan baik pada saat boot tambahkan perintah intel_pstate=disable bisa di install melalui, apt install linux-oem-5.6-tools-common # version 5.6.0-1017.17, or apt install linux-tools-common # version 5.4.0-91.102 apt -y install linux-tools-5.11.0-41-generic linux-cloud-tools-5.11.0-41-generic apt install linux-tools-generic apt install linux-cloud-tools-generic Ada baiknya",

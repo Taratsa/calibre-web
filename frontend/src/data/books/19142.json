@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19142?v=1795471810",
   "cover_og_url": "/cover/19142/og?v=1795471810",
+  "has_cover": false,
   "url": "/book/membuat-repository-ubuntu-lokal-tanpa-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang ingin membuat repository Ubuntu lokal di harddisk tanpa server sama sekali dapat melakukan Pastikan harddisk anda punya sisa sekitar 40Gbyte-an sebaiknya lebih. copy isi repository ke sebuah folder misalnya mkdir /var/data mkdir /var/data/repo cp -Rf repository/* /var/data/repo chown -Rf nobody.nogroup /var/data/repo chmod -Rf 777 /var/data/repo Kalau mau di siapkan supaya bisa",

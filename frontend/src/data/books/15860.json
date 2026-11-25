@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15860?v=1795457300",
   "cover_og_url": "/cover/15860/og?v=1795457300",
+  "has_cover": false,
   "url": "/book/bind-install-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.linuxtechi.com/install-configure-bind-9-dns-server-ubuntu-debian/#google_vignette sudo apt update sudo apt install -y bind9 bind9utils bind9-doc dnsutils sudo vi /etc/bind/named.conf.options acl internal-network { 192.168.0.0/24; }; options { directory \"/var/cache/bind\"; allow-query { localhost; internal-network; }; allow-transfer { localhost; }; forwarders { 8.8.8.8; };",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15176?v=1795453528",
   "cover_og_url": "/cover/15176/og?v=1795453528",
+  "has_cover": false,
   "url": "/book/4g-instalasi-uhd-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Set CPU Freq sudo apt-get install cpufrequtils echo 'GOVERNOR=\"performance\"' | sudo tee /etc/default/cpufrequtils sudo systemctl disable ondemand cek cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor reboot komputer Install UHD sudo apt update sudo apt -y install libuhd-dev libuhd003 uhd-host sudo updatedb sudo cd /usr/lib/uhd/utils sudo cp uhd-usrp.rules /etc/udev/rules.d/ sudo udevadm",

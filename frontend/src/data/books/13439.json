@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13439?v=1795445951",
   "cover_og_url": "/cover/13439/og?v=1795445951",
+  "has_cover": false,
   "url": "/book/r-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "data() # Loading data(mtcars) # Print the first 6 rows head(mtcars, 6) # 1. Loading data(\"mtcars\") # 2. Print head(mtcars) summary(mtcars) # Number of rows (observations) nrow(mtcars) # Number of columns (variables) ncol(mtcars) data(\"iris\") head(iris) data(\"ToothGrowth\") head(ToothGrowth) data(\"PlantGrowth\") head(PlantGrowth) data(\"USArrests\") head(USArrests) Basic R Functions data(mtcars)",

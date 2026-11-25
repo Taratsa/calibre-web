@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15800?v=1795456914",
   "cover_og_url": "/cover/15800/og?v=1795456914",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-24-04-moodle-config-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /var/www/html/moodle/config.php Pastikan ada $CFG-&gt;wwwroot = ' http://192.168.0.190/moodle' ; // $CFG-&gt;wwwroot = ' http://192.168.88.2/moodle' ; // $CFG-&gt;wwwroot = ' http://192.168.68.68/moodle' ; // $CFG-&gt;wwwroot = ' http://192.168.0.190/moodle' ; // $CFG-&gt;wwwroot = ' http://192.168.0.190/moodle' ; Supaya admin server mudah mengubah2 IP address server nantinya",

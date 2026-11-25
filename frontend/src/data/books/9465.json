@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9465?v=1795432960",
   "cover_og_url": "/cover/9465/og?v=1795432960",
+  "has_cover": false,
   "url": "/book/arduino-instalasi-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 1.1 Jika ingin compile Arduino 2 Set Ijin ke Serial Port 3 Instalasi IDE 4 Referensi 5 Pranala Menarik Instalasi apt-get install arduino Jika ingin compile Arduino Siapkan repo java sudo add-apt-repository ppa:webupd8team/java -y sudo apt-get update sudo apt-get install oracle-java8-installer Kalau kita ingin compile sudo apt-get install gcc-avr avrdude gcc avr-libc \\",

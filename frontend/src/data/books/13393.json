@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13393?v=1795445812",
   "cover_og_url": "/cover/13393/og?v=1795445812",
+  "has_cover": false,
   "url": "/book/esp32-wifi-udp-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include  /* WiFi network name and password */ const char * ssid = \"o3\"; const char * pwd = \"Dzaq1993!\"; // IP address to send UDP data to. // it can be ip address of the server or // a network broadcast address // here is broadcast address const char * udpAddress = \"192.168.0.159\"; const int udpPort = 8888; //create UDP instance WiFiUDP udp; void setup(){",

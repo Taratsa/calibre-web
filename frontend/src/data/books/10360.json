@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10360?v=1795436844",
   "cover_og_url": "/cover/10360/og?v=1795436844",
+  "has_cover": false,
   "url": "/book/rom-android-modifikasi-config-kernel-e980-untuk-f240k-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kebetulan LGE e980 mirip sekali dengan LGE f240k salah satu yang beda adalah pada audio / sound. Tampaknya cara yang lebih mudah untuk membuat ROM lge f240k adalah Lakukan ROM Android: Porting F240K Sambungkan handphone LGE f240k ke komputer Lakukan adb devices adb pull /proc/config.gz gzip -d config.gz Siapkan source lge f240k cd ~/android-cyanogenmod repo sync",

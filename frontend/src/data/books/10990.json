@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10990?v=1795438700",
   "cover_og_url": "/cover/10990/og?v=1795438700",
+  "has_cover": false,
   "url": "/book/python-parsing-onno-widodo-purbo/",
   "rating": null,
   "comment": "\"hello world sample text\".split() will split on any whitespace. If you only want to split on spaces \"hello world sample text\".split(\" \") regex version would be something like this re.split(\" +\", \"hello world sample text\") which works if you have multiple spaces between the words",

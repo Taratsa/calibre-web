@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12940?v=1795444284",
   "cover_og_url": "/cover/12940/og?v=1795444284",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-type-unreachable-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://forum.mikrotik.com/viewtopic.php?t=123724 This is best practice anyway, even w/o dynamic routing: On the router with the pool, create a static route type=unreachable with the /48. This is so that traffic bound for unassigned addresses within that pool should get sinkholed at the pool router. Since the pool is routed to this one router, it's safe to assume that if this router has",

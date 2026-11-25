@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11177?v=1795439225",
   "cover_og_url": "/cover/11177/og?v=1795439225",
+  "has_cover": false,
   "url": "/book/wspr-persiapan-raspberrypi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Download Raspbian 2 Burn ke SD card 3 Default Username &amp; Password 3.1 Matikan ipv6 4 Instalasi ssh server 5 Perbaiki locale 6 Set Interface 7 Set DNS 8 Instalasi WSPR Download Raspbian Download dari http://www.raspberrypi.org/downloads/ Burn ke SD card Buang semua partisi dari SD card di /dev/sdb fdisk /dev/sdb d d d d w Burn Raspbian IMG ke SD card untuk RaspberryPi dapat mengunakan",

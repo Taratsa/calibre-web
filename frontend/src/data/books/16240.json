@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16240?v=1795459671",
   "cover_og_url": "/cover/16240/og?v=1795459671",
+  "has_cover": false,
   "url": "/book/postfix-installation-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Installing postfix on Ubuntu can be done using the command: apt update apt -y install postfix During the installation process: Select Postfix to operate as an - internet site. Fill in the hostname with your Fully Qualified Domain Name ( FQDN ), for example, server.company.com If you want to act as a relay for machines on your LAN , you need to edit: # vi /etc/postfix/main.cf Ensure it contains:",

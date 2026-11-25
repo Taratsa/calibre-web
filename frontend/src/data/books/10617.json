@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10617?v=1795437650",
   "cover_og_url": "/cover/10617/og?v=1795437650",
+  "has_cover": false,
   "url": "/book/powerdns-memasukan-record-soa-ns-a-mx-ke-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke MySQL mysql -u root -p123456 Contents 1 Gunakan database 2 Domain / Zone 3 SOA 4 NS 5 A 6 AAAA 7 MX 8 Contoh Sebuah Domain 9 Cek dari komputer lain 10 A 11 NS 11.1 MX Gunakan database misalnya use powerdns; Domain / Zone Membuat sebuah zone / domain INSERT INTO domains (name, type) values ('example.com', 'NATIVE'); SOA INSERT INTO records (domain_id, name, content, type,ttl,prio) VALUES",

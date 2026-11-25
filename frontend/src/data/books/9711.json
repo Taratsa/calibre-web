@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9711?v=1795434612",
   "cover_og_url": "/cover/9711/og?v=1795434612",
+  "has_cover": false,
   "url": "/book/openwrt-flash-ubnt-nanostation-loco-m2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Coba Menggunakan Shell Scipt 2 Pranala Menarik 2.1 Build Firmware 2.2 APRX 2.3 IPv6 2.4 Flash Firmware 2.5 Misc 2.6 UBNT Coba Menggunakan Shell Scipt Buat shell script sederhana isinya ifconfig eth0 192.168.1.254 cp openwrt-ar71xx-generic-ubnt-nano-m-squashfs-factory.bin code.bin echo -e \"binary\\nrexmt 1\\ntimeout 60\\ntrace\\nput code.bin flash_update\\n\" | tftp 192.168.1.20 lakukan chmod",

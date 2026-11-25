@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17349?v=1795464997",
   "cover_og_url": "/cover/17349/og?v=1795464997",
+  "has_cover": false,
   "url": "/book/instalasi-dan-konfigurasi-smb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang masih membutuhkan sharing file dengan komputer Windows maka yang perlu dilakukan adalah menggunakan SMB ( Server Message Block ) untuk sharing file di jaringan. SMB sering dikenal sebagai SAMBA di Linux . Cara instalasi dan konfigurasi SAMBA sangat mudah. Instalasi di Ubuntu dapat dilakukan menggunakan perintah sudo apt update sudo apt -y install samba cifs-utils Selanjutnya kita",

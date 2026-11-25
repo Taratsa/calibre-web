@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10879?v=1795438346",
   "cover_og_url": "/cover/10879/og?v=1795438346",
+  "has_cover": false,
   "url": "/book/android-studio-ubah-setting-sdk-minimum-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://stackoverflow.com/questions/19465049/changing-api-level-android-studio Edit manifest file  Dalam  tag, tapi BUKAN dalam  tag Atau up vote 233 down vote accepted When you want to update your minSdkVersion in an existent project... Update src/build.gradle - Make sure is the one under src",

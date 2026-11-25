@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10425?v=1795437049",
   "cover_og_url": "/cover/10425/og?v=1795437049",
+  "has_cover": false,
   "url": "/book/partisi-hard-disk-lvm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Resize partisi lvm Tutorial ini menjelaskan bagaimana kita memperkecil partisi root yang menggunakan lvm dan membuat sisanya menjadi partisi home. Boot Ubuntu Live CD Untuk scan partisi lvm lakukan lvscan e2fsck -f /dev/ubuntu-vg/root Contents 1 Memperkecil Partisi 2 Membuat Partisi Baru 3 Format Partisi 4 Mount sebagai home 5 Referensi Memperkecil Partisi memperkecil ukuran partisi root (partisi",

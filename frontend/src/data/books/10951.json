@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10951?v=1795438544",
   "cover_og_url": "/cover/10951/og?v=1795438544",
+  "has_cover": false,
   "url": "/book/arduino-cara-upload-software-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perbaiki Premission Jika kabel serial tidak bisa di akses maka kemungkinan kita perlu memberikan akses IDE arduino menggunakan perintah,misalnya, sudo chmod -Rf 777 /dev/ttyACM0 sudo chmod -Rf 777 /dev/ttyUSB0 Upload Cara upload software Arduino / sketch Arduino Masuk ke IDE Arduino Tulis sketch yang ingin di coba Lakukan Sketch &gt; Verify / Compile Lakukan Klik Upload Pranala Menarik Arduino",

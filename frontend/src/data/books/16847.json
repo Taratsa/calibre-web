@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16847?v=1795463436",
   "cover_og_url": "/cover/16847/og?v=1795463436",
+  "has_cover": false,
   "url": "/book/mcp-reset-dari-nol-embed-semua-doc-isi-vector-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Rekomendasi Tidak perlu install ulang AnythingLLM.** Gunakan reset melalui API lalu lakukan **restart normal**, bukan `docker kill` atau force restart. Menghapus dan membuat ulang container dengan storage volume yang sama tidak menghapus workspace, dokumen, atau vector database karena data AnythingLLM disimpan di `/app/server/storage` dan memang dirancang tetap ada setelah rebuild atau pull image",

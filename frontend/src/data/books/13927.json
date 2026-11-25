@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13927?v=1795447996",
   "cover_og_url": "/cover/13927/og?v=1795447996",
+  "has_cover": false,
   "url": "/book/apache2-instalasi-apache-php7-percona-8-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://ekozel.com/2019/10/05/install-ubuntu-18-4-apache2-php-7-3-and-mysql-5-6/ sudo apt update Contents 1 Install Apache2 2 Install PHP 7.3 3 Install Percona 4 Referensi Install Apache2 apt install apache2 sudo ufw allow 'Apache' Install PHP 7.3 sudo apt update sudo apt upgrade sudo apt install software-properties-common sudo add-apt-repository ppa:ondrej/php sudo apt update sudo apt",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15313?v=1795454123",
   "cover_og_url": "/cover/15313/og?v=1795454123",
+  "has_cover": false,
   "url": "/book/konfigurasi-gnb-openairinterface-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd /usr/local/src/openairinterface5g/ci-scripts/conf_files/ nano nano gnb.band78.tm1.fr1.106PRB.usrpb210.conf tracking_area_code = 1; plmn_list = ({mcc = 510; mnc = 33; mnc_length = 2;}); target_enb_x2_ip_address = ( { ipv4 = \"192.168.100.236\"; ipv6 = \"192:168:30::17\"; preference = \"ipv4\"; } ); NETWORK_INTERFACES : { GNB_INTERFACE_NAME_FOR_S1_MME = \"enp1s0\"; GNB_IPV4_ADDRESS_FOR_S1_MME =",

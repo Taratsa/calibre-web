@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14216?v=1795449078",
   "cover_og_url": "/cover/14216/og?v=1795449078",
+  "has_cover": false,
   "url": "/book/helm-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://continuous.lu/2017/04/28/minikube-and-helm-kubernetes-package-manager/ Contents 1 Minikube 2 Install helm 3 Penggunaan 4 Referensi 5 Pranala Menarik Minikube minikube start minikube docker-env minikube dashboard Install helm curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get &gt; get_helm.sh chmod 700 get_helm.sh ./get_helm.sh helm init Penggunaan helm search",

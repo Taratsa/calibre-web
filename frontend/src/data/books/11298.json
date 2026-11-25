@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11298?v=1795439536",
   "cover_og_url": "/cover/11298/og?v=1795439536",
+  "has_cover": false,
   "url": "/book/ubuntu-lid-ignore-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara memaksa Ubuntu agar meng-ignore kalau layar laptop di tutup &amp; tidak hybernate .. vi /etc/systemd/logind.conf Pastikan HandleLidSwitch=ignore",

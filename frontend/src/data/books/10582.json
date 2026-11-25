@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10582?v=1795437539",
   "cover_og_url": "/cover/10582/og?v=1795437539",
+  "has_cover": false,
   "url": "/book/powerdns-instalasi-master-dan-slave-sekaligus-jadi-satu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam tutorial ini akan di coba untuk mengkonfigurasi powerdns agar bisa berjalan sebagai master dan slave di satu mesin. Disini akan digunakan IP address 192.168.0.100 (powerdns server) IP address 127.0.01 (recursor) Contents 1 Instalasi powerdns 2 Konfigurasi Database 3 Konfigurasi powerdns 4 Restart 5 Referensi Instalasi powerdns apt-get install pdns-server pdns-backend-mysql pdns-recursor",

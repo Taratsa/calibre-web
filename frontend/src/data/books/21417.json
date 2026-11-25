@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/21417?v=1795481786",
   "cover_og_url": "/cover/21417/og?v=1795481786",
+  "has_cover": false,
   "url": "/book/samba-primary-domain-controller-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://kramotak.net/?p=16 Sebenarnya cara ini sudah lama dan cukup banyak tutorial ataupun buku yang membahas. Hanya masih saja bingung saat melakukan konfigurasinya. Disini saya mencoba untuk menerapkan langkah demi langkah, bagaimana membuat samba sebagai domaian controller. Pertama dowload program samba dan accesorisnya : yum install samba samba-common samba-doc libcupsys2-gnutls10",

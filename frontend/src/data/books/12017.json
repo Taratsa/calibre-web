@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12017?v=1795441316",
   "cover_og_url": "/cover/12017/og?v=1795441316",
+  "has_cover": false,
   "url": "/book/grub-gfxmode-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cek hwinfo hwinfo --framebuffer Edit /etc/default/grub vi /etc/default/grub GRUB_GFXMODE=1024x768 update update-grub Restart shutdown -r now",

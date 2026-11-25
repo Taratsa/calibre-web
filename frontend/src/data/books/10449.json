@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10449?v=1795437125",
   "cover_og_url": "/cover/10449/og?v=1795437125",
+  "has_cover": false,
   "url": "/book/os-menambahkan-driver-ke-kernel-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "To cross compile your own driver in the arm architecture you have to follow some steps as mentioned below. Create a directory like my_drvr inside drivers(which is in the Linux source code) for your driver and put your driver (my_driver.c) file inside this directory. It will looks like /linux_source_code/drivers/my_drvr/my_driver.c Create one Makefile inside your driver directory (using vi any",

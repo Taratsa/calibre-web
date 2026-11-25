@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14427?v=1795449926",
   "cover_og_url": "/cover/14427/og?v=1795449926",
+  "has_cover": false,
   "url": "/book/gnupg-gnupg-permission-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perbaiki / Pastikan permission .gnupg sebagai berikut find ~/.gnupg -type f -exec chmod 600 {} \\; find ~/.gnupg -type d -exec chmod 700 {} \\;",

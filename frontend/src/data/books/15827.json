@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15827?v=1795457056",
   "cover_og_url": "/cover/15827/og?v=1795457056",
+  "has_cover": false,
   "url": "/book/compile-kernel-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Source code kernel (inti) sistem operasi Linux dapat di ambil secara bebas dari situs http://www.kernel.org . Proses / langkah membuat sistem operasi Linux dengan cara meng- compile kernel dapat di lakukan di sistem operasi linux yang kita operasikan dan menjalankan perintah-perintah berikut. Siapkan kernel package apt update apt -y install libncurses-dev fakeroot wget bzip2 \\ kernel-wedge",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 988,
-    "longer_than": 50,
+    "longer_than": 49,
     "top": [
       [
         "kernel",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11083?v=1795438971",
   "cover_og_url": "/cover/11083/og?v=1795438971",
+  "has_cover": false,
   "url": "/book/os-tuning-tcp-presistance-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://kaivanov.blogspot.co.id/2010/09/linux-tcp-tuning.html To make persistent changes to the kernel settings described bellow, add the entries to the /etc/sysctl.conf file and then run \"sysctl -p\" to apply. Like all operating systems, the default maximum Linux TCP buffer sizes are way too small. I suggest changing them to the following settings: To increase TCP max buffer size setable",

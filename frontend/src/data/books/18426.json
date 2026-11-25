@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18426?v=1795468827",
   "cover_og_url": "/cover/18426/og?v=1795468827",
+  "has_cover": false,
   "url": "/book/konversi-dari-instalasi-ubuntu-standar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengkonversi Ubuntu menjadi Sabily, ikuti langkah berikut: Buka jendela terminal (Aplikasi→Aksesori→Terminal), dan jalankan perintah berikut: sudo aptitude update &amp;&amp; sudo aptitude safe-upgrade sudo aptitude dist-upgrade sudo wget http://www.sabily.org/sources.list.d/`lsb_release -cs`.list --output-document=/etc/apt/sources.list.d /sabily.list; sudo apt-get -q update; sudo apt-get --yes -q",

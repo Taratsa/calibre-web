@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14491?v=1795450241",
   "cover_og_url": "/cover/14491/og?v=1795450241",
+  "has_cover": false,
   "url": "/book/dhcp-server-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt-get install isc-dhcp-server -y systemctl start isc-dhcp-server systemctl enable isc-dhcp-server Konfigurasi Edit default nano /etc/default/isc-dhcp-server INTERFACESv4=\"enp3s0\" Edit konfigurasi DHCPD nano /etc/dhcp/dhcpd.conf default-lease-time 600; max-lease-time 7200; authoritative; subnet 10.254.239.0 netmask 255.255.255.224 { range 10.254.239.0 10.254.239.20; option routers",

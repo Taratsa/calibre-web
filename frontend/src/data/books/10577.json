@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10577?v=1795437524",
   "cover_og_url": "/cover/10577/og?v=1795437524",
+  "has_cover": false,
   "url": "/book/tshark-mengukur-jitter-onno-widodo-purbo/",
   "rating": null,
   "comment": "tshark -nr rtp.pcap -q -z rtp,streams The output will also show jitter values. #!/bin/bash if [ -z $1 ] then echo \"[+] $0 capture.pcap\" exit fi if [ ! -z $2 ] then limit=$2 else limit=0 fi #tshark -r $1 | grep \"1.1.1.1 -&gt; 1.1.1.2\" | grep -v \"ICMP\"| grep -i \"\\[Data\\] Seq\\|UDP\\|TCP\" | awk '{if(NR==1){f=$2;s=$2};print ($2-f),($2-s)*1000;s=$2;}' &gt; jitter.tmp tshark -r $1 | grep \"1.1.1.1 -&gt; 1.1.1.2\" |",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14842?v=1795452010",
   "cover_og_url": "/cover/14842/og?v=1795452010",
+  "has_cover": false,
   "url": "/book/ssl-multi-domain-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.thesecmaster.com/how-to-generate-a-csr-for-multi-domain-ssl-certificates-using-openssl/ Contents 1 openssl config di ubah 2 private key generate 3 Certificate Signing Request (CSR) generate 4 CNAME DNS Authentication 5 Referensi 6 Pranala Menarik openssl config di ubah Edit /etc/ssl/openssl.cnf atau /usr/lib/ssl/openssl.cnf Di bagian [ req ], buka # agar req_extensions =",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12931?v=1795444263",
   "cover_og_url": "/cover/12931/og?v=1795444263",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-authentication-onno-widodo-purbo/",
   "rating": null,
   "comment": "What do you want to accomplish by running OSPF to the Fortinet via IPSec Tunnel ? When running dynamic protocols in a tunnel, one has to pay attention to a few key items. You have to setup the External Routing as static, so that when you activate the dynamic routing protocol, the external routes don't get overridden by the routes being exchanged via the dynamic routes. If you have a multi-homed",

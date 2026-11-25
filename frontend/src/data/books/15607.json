@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15607?v=1795455739",
   "cover_og_url": "/cover/15607/og?v=1795455739",
+  "has_cover": false,
   "url": "/book/usb-offline-debian-11-7-install-sudoer-onno-widodo-purbo/",
   "rating": null,
   "comment": "su root apt -y install sudo /usr/sbin/adduser onno sudo /usr/sbin/adduser offline sudo Cek vi /etc/sudoers pastikan # User privilege specification root ALL=(ALL:ALL) ALL onno ALL=(ALL:ALL) ALL offline ALL=(ALL:ALL) ALL",

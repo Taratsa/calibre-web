@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11951?v=1795441162",
   "cover_og_url": "/cover/11951/og?v=1795441162",
+  "has_cover": false,
   "url": "/book/zcash-miner-nheqminer-nicehash-onno-widodo-purbo/",
   "rating": null,
   "comment": "https://github.com/nicehash/nheqminer/releases/tag/0.5c wget https://github.com/nicehash/nheqminer/releases/download/0.5c/Ubuntu_16_04_x64_cuda_djezo_avx_nheqminer-5c.zip Alternatif lain sudo apt-get install nvidia-340 nvidia-cuda-toolkit nvidia-340* nvidia-cuda* sudo apt-get install cmake build-essential libboost-all-dev git sudo modprobe nvidia_340 cd /usr/local/src/ git clone -b Linux",

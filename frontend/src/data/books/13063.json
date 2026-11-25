@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13063?v=1795444710",
   "cover_og_url": "/cover/13063/og?v=1795444710",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-dhcpv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipv6/configuration/15-2mt/ipv6-15-2mt-book/ip6-dhcp.html enable configure terminal ipv6 dhcp pool poolname domain-name domain dns-server ipv6-address prefix-delegation ipv6-prefix / prefix-length client-duid [iaid iaid] [lifetime] prefix-delegation pool poolname [lifetime valid-lifetime preferred-lifetime] exit interface type number ipv6",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

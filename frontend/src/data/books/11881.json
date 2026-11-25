@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11881?v=1795440989",
   "cover_og_url": "/cover/11881/og?v=1795440989",
+  "has_cover": false,
   "url": "/book/orange-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi orange 2 Pip 3 Anaconda 4 Installing from source 5 Previous version 6 Installing add-ons Instalasi orange sudo su apt install ruby linuxbrew-wrapper ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )\" brew tap homebrew/science brew install python3 qt # cd /usr/local/src # pip3 install virtualenv # virtualenv -p python3 orange3env #",

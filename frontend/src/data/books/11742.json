@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11742?v=1795440646",
   "cover_og_url": "/cover/11742/og?v=1795440646",
+  "has_cover": false,
   "url": "/book/virtualbox-network-bridging-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit vi /etc/NetworkManager/NetworkManager.conf Set [ifupdown] managed=true Set echo 1 &gt; /proc/sys/net/ipv4/ip_forward",

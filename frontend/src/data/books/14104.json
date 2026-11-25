@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14104?v=1795448621",
   "cover_og_url": "/cover/14104/og?v=1795448621",
+  "has_cover": false,
   "url": "/book/vsftp-hardening-onno-widodo-purbo/",
   "rating": null,
   "comment": "Locate find -iname \"vsftpd.conf\" locate vsftpd.conf Edit /etc/vsftpd.conf Buang anonymous anonymous_enable=YES --&gt; NO Restart service vsftpd restart Cek (mis. 192.168.12.30) ftp 192.168.12.30 pastikan anonymous disable Pranala Menarik Kali Linux",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13326?v=1795445537",
   "cover_og_url": "/cover/13326/og?v=1795445537",
+  "has_cover": false,
   "url": "/book/keras-imdb-sentiment-analysis-keras-and-tensorflow-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python3 # -*- coding: utf-8 -*- \"\"\" Created on Fri Sep 6 08:49:48 2019 @author: onno \"\"\" # IMPORT MODULES # TURN ON the GPU !!! # If importing dataset from outside - like this IMDB - Internet must be \"connected\" import os from operator import itemgetter import numpy as np import pandas as pd import matplotlib.pyplot as plt import warnings warnings.filterwarnings('ignore')",

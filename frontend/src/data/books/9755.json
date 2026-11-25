@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9755?v=1795434776",
   "cover_og_url": "/cover/9755/og?v=1795434776",
+  "has_cover": false,
   "url": "/book/ipv6-membuang-ipv6-address-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tidak terlalu sering dibutuhkan. Hati-hati dalam membuang IPv6 address yang tidak eksis, karena di kernel yang lama kemungkinan akan menyebabkan crash. Menggunakan \"ip\" Penggunaan: # /sbin/ip -6 addr del / dev  Contoh: # /sbin/ip -6 addr del 2001:0db8:0:f101::1/64 dev eth0 Menggunakan \"ifconfig\" Penggunaan: # /sbin/ifconfig  inet6 del",

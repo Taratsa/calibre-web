@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12231?v=1795441970",
   "cover_og_url": "/cover/12231/og?v=1795441970",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-ntp-time-sync-dan-play-audio-onno-widodo-purbo/",
   "rating": null,
   "comment": "// time ntp sync #include  #include  #include  #include  #include \"TMRpcm.h\" #include  // Ethernet library configuration byte mac[] = { 0x24, 0x7B, 0xA2, 0x4A, 0x52, 0x10 }; IPAddress timeServer(128, 138, 140, 44 ); unsigned int localPort = 8888; const int NTP_PACKET_SIZE= 48; byte packetBuffer[NTP_PACKET_SIZE]; EthernetUDP Udp; const int CS_PIN =",

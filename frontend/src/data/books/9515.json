@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9515?v=1795433122",
   "cover_og_url": "/cover/9515/og?v=1795433122",
+  "has_cover": false,
   "url": "/book/openwrt-konfigurasi-ubnt-nanostation2-tanpa-webgui-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam salah satu contoh compile firmware di bagian sebelumnya adalah firmware OpenWRT yang sengaja di compile tanpa HTTP dan LuCI. Akibatnya, firmware tersebut jadi sangat ringan karena di operasikan tanpa WebGUI. Konfigurasinya sebetulnya relatif sederhana juga. Secara umum langkah yan perlu di lakukan ada empat (4) yaitu, Aktifkan Wifi menjadi adhoc network. Set IP address agar statik Set",

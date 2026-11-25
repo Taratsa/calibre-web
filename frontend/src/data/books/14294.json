@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14294?v=1795449349",
   "cover_og_url": "/cover/14294/og?v=1795449349",
+  "has_cover": false,
   "url": "/book/ssh-reverse-ssh-untuk-tunnel-web-lokal-ke-vps-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di VPS domain-nya misalnya coba.vps.com Server Lokal (80) -- coba.vps.com (80)&lt;--- user http://coba.vps.com Atau bisa di coba Ngrok di Server Lokal ssh -NR portvps:localhost:portlocal user@domain.di.vps untuk coba.vps.com:8080 ke localhost:80 ssh -NR 8080:localhost:80 user@coba.vps.com untuk coba.vps.com:80 ke localhost:80 bisa di coba ssh -R \\*:80:localhost:80 -N user@coba.vps.com Di Server VPS",

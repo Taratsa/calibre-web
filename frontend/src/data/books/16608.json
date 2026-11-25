@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16608?v=1795461930",
   "cover_og_url": "/cover/16608/og?v=1795461930",
+  "has_cover": false,
   "url": "/book/python-colab-mount-gdrive-onno-widodo-purbo/",
   "rating": null,
   "comment": "from google.colab import drive # 1. Mount Google Drive drive.mount('/content/gdrive') # Setelah kode di atas dijalankan, Anda akan melihat pesan yang meminta otorisasi. # Ikuti instruksi berikut: # a. Klik URL yang diberikan. # b. Pilih akun Google Anda. # c. Izinkan akses. # d. Salin kode otorisasi yang muncul. # e. Tempel kode tersebut ke kolom input di Colab dan tekan Enter. # 2. Verifikasi",

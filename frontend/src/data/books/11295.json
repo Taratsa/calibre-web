@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11295?v=1795439530",
   "cover_og_url": "/cover/11295/og?v=1795439530",
+  "has_cover": false,
   "url": "/book/repository-untuk-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ternyata untuk ubuntu 16.04 walaupun sudah di copy menggunakan debmirror, kita tetap perlu mengcopy file di folder dists/xenial/main/dep11 dists/xenial/restricted/dep11 dists/xenial/universe/dep11 dists/xenial/multiverse/dep11 File-nya adalah Components-amd64.yml.gz Components-i386.yml.gz icons-128x128.tar.gz icons-64x64.tar.gz dan folder dists/xenial/main/i18n dists/xenial/restricted/i18n",

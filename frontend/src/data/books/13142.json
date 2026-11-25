@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13142?v=1795444929",
   "cover_og_url": "/cover/13142/og?v=1795444929",
+  "has_cover": false,
   "url": "/book/ipv6-route-control-default-route-dan-odr-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring Default Routes and ODR Default routes can be configured either on each router that needs a default route or on one router that in turn advertises the routes to its peers. The case studies of this section examine both methods. Recall from the discussion of classful route lookups in Chapter 5, \"Routing Information Protocol (RIP),\" that a router first matches a major network number and",

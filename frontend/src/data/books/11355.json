@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11355?v=1795439670",
   "cover_og_url": "/cover/11355/og?v=1795439670",
+  "has_cover": false,
   "url": "/book/python-gephi-streamer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download GephiStreamer-2.0.3.zip Tools to stream data to gephi GephiStreamer Contents 1 = 2 == 3 == 4 = 5 = 6 = 7 = 8 Referensi = Python classes for streaming graph to gephi ![Demo]( http://matthieu-totet.fr/Koumin/wp-content/uploads/2015/12/GephiStreamDemo.gif ) Install == `pip install gephistreamer` Quick use == ```python # Basic import from gephistreamer import graph from gephistreamer import",

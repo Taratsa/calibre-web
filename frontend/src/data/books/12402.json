@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12402?v=1795442642",
   "cover_og_url": "/cover/12402/og?v=1795442642",
+  "has_cover": false,
   "url": "/book/ipv6-enkripsi-contoh-ipsec-tunnel-menggunakan-racoon-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada kesempatan ini akan di berikan contoh untuk membuat Ipsec tunnel menggunakan racoon pada dua gateway Linux berbasis sistem operasi Ubuntu 18.04. Gateway A: IPv6 2345::100/64 LAN Network: 2002::/64 Gateway B: IPv6 2345::101/64 LAN Network: 2003::/64 Contents 1 Topology Jaringan 2 Konfigurasi interface 3 Kernel IP Forwarding 4 Instalasi racoon dan ipsec-tools 5 Konfigurasi racoon 5.1",

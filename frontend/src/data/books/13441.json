@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13441?v=1795445959",
   "cover_og_url": "/cover/13441/og?v=1795445959",
+  "has_cover": false,
   "url": "/book/r-export-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Loading mtcars data data(\"mtcars\") # Write data to txt file: tab separated values # sep = \"\\t\" write.table(mtcars, file = \"mtcars.txt\", sep = \"\\t\", row.names = TRUE, col.names = NA) # Write data to csv files: # decimal point = \".\" and value separators = comma (\",\") write.csv(mtcars, file = \"mtcars.csv\") # Write data to csv files: # decimal point = comma (\",\") and value separators = semicolon",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11549?v=1795440171",
   "cover_og_url": "/cover/11549/og?v=1795440171",
+  "has_cover": false,
   "url": "/book/snort-compile-snort-saja-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Aplikasi Pendukung 2 Download &amp; Compile 3 Set Konfigurasi 3.1 Download rules 3.2 Edit Konfigurasi 4 Load Library &amp; check snort 5 Referensi Siapkan Aplikasi Pendukung sudo locale-gen id_ID.UTF-8 apt update apt install kernel-package libncurses5-dev fakeroot wget bzip2 \\ fakeroot kernel-wedge build-essential makedumpfile libncurses5 \\ libpcre3 libpcre3-dev libpcrecpp0v5",

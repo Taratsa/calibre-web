@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11024?v=1795438800",
   "cover_og_url": "/cover/11024/og?v=1795438800",
+  "has_cover": false,
   "url": "/book/arduino-for-loop-iteration-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/ForLoopIteration Seringkali kita ingin mengulangi serangkaian pin dan melakukan sesuatu untuk masing-masing pin. Misalnya, contoh ini mengedipkan 6 LED yang terpasang pada Arduino atau Genuino dengan menggunakan loop for() untuk menggilir bolak-balik melalui pin digital 2-7. LED dinyalakan dan dimatikan, secara berurutan, dengan menggunakan fungsi",
@@ -177,7 +178,7 @@
       ],
       [
         10950,
-        0.38
+        0.39
       ],
       [
         11005,

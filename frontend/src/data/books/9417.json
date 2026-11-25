@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9417?v=1795432809",
   "cover_og_url": "/cover/9417/og?v=1795432809",
+  "has_cover": false,
   "url": "/book/zoneminder-instalasi-melalui-deb-onno-widodo-purbo/",
   "rating": null,
   "comment": "ZoneMinder is now in the Debian repositories. There are downloadable .deb files for Ubuntu for Edgy and Feisty. At this point it is in the repository for Gutsy. After you install, you will need to do some additional work, which is documented in the readme file included in the package. These steps have worked for several people as of the end of Summer 07. Link Apache sudo ln -s /etc/zm/apache.conf",

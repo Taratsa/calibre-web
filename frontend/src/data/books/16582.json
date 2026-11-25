@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16582?v=1795461714",
   "cover_og_url": "/cover/16582/og?v=1795461714",
+  "has_cover": false,
   "url": "/book/cyber-security-target-sql-injection-ke-id-serderhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini adalah contoh file PHP sederhana yang bisa digunakan untuk testing SQLMap . File ini menerima parameter `id` melalui URL (misalnya: ` http://localhost/test.php?id=1` ) dan menjalankan query langsung ke database tanpa proteksi - rentan terhadap SQL Injection - sehingga SQLMap bisa mendeteksinya dan melakukan pengujian. PERINGATAN: Script ini tidak boleh dijalankan di server publik",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12547?v=1795443037",
   "cover_og_url": "/cover/12547/og?v=1795443037",
+  "has_cover": false,
   "url": "/book/r-wordcloud-dari-dua-sumber-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(NLP) library(RColorBrewer) library(tm) library(wordcloud) tryTolower &lt;- function(x){ y = NA try_error = tryCatch(tolower(x), error = function(e) e) if (!inherits(try_error, 'error')) y = tolower(x) return(y) } custom.stopwords &lt;- c(stopwords('english'), 'sorry', 'amp', 'delta', 'amazon') clean.vec &lt;- function(text.vec){ text.vec &lt;- tryTolower(text.vec) text.vec &lt;- removeWords(text.vec,",

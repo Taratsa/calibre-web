@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12741?v=1795443590",
   "cover_og_url": "/cover/12741/og?v=1795443590",
+  "has_cover": false,
   "url": "/book/gns3-dynamips-compile-untuk-simulator-cisco-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://github.com/GNS3/dynamips Contents 1 instalasi 2 Compile 3 Referensi 4 Pranala Menarik instalasi apt install libelf-dev libpcap0.8-dev libpcap-dev cmake Compile sudo su apt install libc6-dev-i386 apt install libelf-dev:i386 libpcap0.8-dev:i386 apt install git cmake cd /usr/local/src git clone https://github.com/GNS3/dynamips.git cd dynamips mkdir build cd build cmake ..",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [
       [
         "dynamips",

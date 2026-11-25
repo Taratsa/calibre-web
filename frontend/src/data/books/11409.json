@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11409?v=1795439803",
   "cover_og_url": "/cover/11409/og?v=1795439803",
+  "has_cover": false,
   "url": "/book/python-search-google-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python2 # -*- coding: utf8 -*- import sys import time import random import argparse from selenium import webdriver from selenium.webdriver.support.ui import Select, WebDriverWait from selenium.common.exceptions import NoSuchFrameException from selenium.webdriver.common.keys import Keys # If this script no longer fetches any results check the XPath def parse_args(): parser =",

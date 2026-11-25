@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/21238?v=1795480980",
   "cover_og_url": "/cover/21238/og?v=1795480980",
+  "has_cover": false,
   "url": "/book/ipteknux-berbasis-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Persiapan 3 UNPACK file iso untuk di remaster 4 Customisasi 5 Instalasi Aplikasi Pendidikan 6 PACK menjadi file iso yang baru 7 Pranala Menarik Persiapan Siapkan file iso Ubuntu Install software pendukung Buang folder tmp di home directory sudo rm -Rf tmp Persiapan sudo apt-get install uck sudo modprobe squashfs Matikan Server yang tidak diperlukan sudo /etc/init.d/mysql",

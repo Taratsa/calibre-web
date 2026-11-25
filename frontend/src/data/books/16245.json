@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16245?v=1795459703",
   "cover_og_url": "/cover/16245/og?v=1795459703",
+  "has_cover": false,
   "url": "/book/postfix-block-spam-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit /etc/postfix/main.cf Add smtpd_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access, reject_invalid_hostname, reject_unknown_recipient_domain, reject_unauth_pipelining, permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_rbl_client multi.uribl.com, reject_rbl_client dsn.rfc-ignorant.org, reject_rbl_client dul.dnsbl.sorbs.net,",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18783?v=1795470033",
   "cover_og_url": "/cover/18783/og?v=1795470033",
+  "has_cover": false,
   "url": "/book/raid-membuat-raid-setelah-harddisk-di-partisi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah semua harddisk yang akan di RAID selesai di partisi , selanjutnya kita harus menyatukan semua harddisk tersebut menjadi satu partisi RAID yang dapat kita format dan mount. Berikut ini adalah cara melakukan hal tersebut. Contents 1 Cara Membuat RAID 2 Konfirmasi Inisialisasi RAID 3 Memformat Harddisk RAID baru 4 Membuat File Konfigurasi mdadm.conf 5 Cara Mount RAID 6 Edit File /etc/fstab 7",

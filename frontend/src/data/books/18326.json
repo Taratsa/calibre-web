@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18326?v=1795468509",
   "cover_og_url": "/cover/18326/og?v=1795468509",
+  "has_cover": false,
   "url": "/book/mikrotik-teknik-memblok-ym-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut cara block YM , jadi bukan YM yg liwat web base. Cara yg digunakan block IP yg di akses oleh YM , karena kalo block port YM kadang pake port 80. Cara ini sudah saya terapkan dan sejauh ini berhasil. 1. IP - Firewall - Address List - add address list ip YM server sbb dan namai sesuai keinginan anda : 66.94.226.0/24 66.218.70.0/24 68.142.194.0/24 68.142.213.0/24 68.142.233.0/24",

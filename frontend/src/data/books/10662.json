@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10662?v=1795437775",
   "cover_og_url": "/cover/10662/og?v=1795437775",
+  "has_cover": false,
   "url": "/book/ipv6-percona-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Percona memanage repo-nya sendiri. Kemungkinan besar tidak ada di distribusi Ubuntu / Debian anda. kita perlu menambahkan secara manual ke repo kita. Untuk Debian dan Ubuntu, kita perlu mengambil key menggunakan perintah apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A Akan keluar Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir",

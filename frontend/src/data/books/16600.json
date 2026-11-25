@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16600?v=1795461854",
   "cover_og_url": "/cover/16600/og?v=1795461854",
+  "has_cover": false,
   "url": "/book/openvpn-instalasi-di-ubuntu-24-04-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo apt update sudo apt install openvpn network-manager-openvpn network-manager-openvpn-gnome Configure sudo cp client.ovpn /etc/openvpn/client.conf sudo systemctl start openvpn-client@client sudo systemctl enable openvpn-client@client sudo systemctl status openvpn-client@client Config via GUI Open Settings &gt; Network &gt; VPN. Click \"+\" to add a new VPN. Select Import from file..., and",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14499?v=1795450280",
   "cover_og_url": "/cover/14499/og?v=1795450280",
+  "has_cover": false,
   "url": "/book/moodle-ubuntu-20-04-instalasi-moodle-apache2-mariadb-php-7-4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Update Repo 2 Install Apache2 3 Install PHP 7.4 4 Install MariaDB 5 Install Moodle 6 Setup Database 6.1 Kalau Operasional 6.2 Kalau hanya Latihan 7 Siapkan folder /var/moodledata/ 8 Install Moodle 9 Akses Moodle 10 Youtube 11 Pranala Menarik Update Repo sudo apt update Install Apache2 apt -y install apache2 sudo ufw allow 'Apache' Install PHP 7.4 sudo apt update sudo apt -y install",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13500?v=1795446178",
   "cover_og_url": "/cover/13500/og?v=1795446178",
+  "has_cover": false,
   "url": "/book/sound-loopback-device-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/403416/how-to-listen-live-sounds-from-input-from-external-sound-card Your problem is likely that the automatically picked source and/or sink for the loopback module is wrong. If you don't specify the source and sink when loading the module, e.g. with: pactl load-module module-loopback latency_msec=1 source=1 sink=0 then the source and sink are picked",

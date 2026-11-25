@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13455?v=1795446004",
   "cover_og_url": "/cover/13455/og?v=1795446004",
+  "has_cover": false,
   "url": "/book/r-regression-stepwise-regression-essentials-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: http://www.sthda.com/english/articles/37-model-selection-essentials-in-r/154-stepwise-regression-essentials-in-r/ library(tidyverse) library(caret) library(leaps) # Computing stepwise regression library(MASS) # Fit the full model full.model &lt;- lm(Fertility ~., data = swiss) # Stepwise regression model step.model &lt;- stepAIC(full.model, direction = \"both\", trace = FALSE) summary(step.model)",
@@ -112,12 +113,12 @@
         7
       ],
       [
-        "model",
-        21
-      ],
-      [
         "finalmodel",
         4
+      ],
+      [
+        "model",
+        21
       ],
       [
         "stepwise",

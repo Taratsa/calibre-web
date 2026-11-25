@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12933?v=1795444269",
   "cover_og_url": "/cover/12933/og?v=1795444269",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-over-gre-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "SUmber: https://forum.mikrotik.com/viewtopic.php?t=68950 IPSec can't transfer multicast traffic, so it is not possible to configure IPSec policy for it. Instead, you can use GRE6 tunnel between your routers and add this GRE interfaces to OSPF-v3. For example, if we have two routers, R1 and R2 with IPv6 addresses 2001:db8::1 and 2001:db8::2, instead of adding ether1 interfaces to OSPF-v3, R1",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15534?v=1795455332",
   "cover_og_url": "/cover/15534/og?v=1795455332",
+  "has_cover": false,
   "url": "/book/python-anaconda-install-activasi-beberapa-versi-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "conda create -n py37 python=3.7 conda create -n py38 python=3.8 conda create -n py39 python=3.9 conda activate py37 conda activate py38 conda activate py39 conda activate env conda deactivate",

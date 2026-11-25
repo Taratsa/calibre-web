@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12179?v=1795441769",
   "cover_og_url": "/cover/12179/og?v=1795441769",
+  "has_cover": false,
   "url": "/book/arduino-instalasi-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Guide/Linux Install sudo apt update sudo apt -y install libxtst6 canberra* Download https://www.arduino.cc/en/Main/Software Sebagai end-user / user biasa, lakukan extract &amp; install cd ~/Downloads sudo mv arduino-1.8.13-linux64.tar.xz /usr/local/src/ cd /usr/local/src sudo chmod -Rf 777 /usr/local/src/ tar -xJf arduino-1.8.13-linux64.tar.xz cd arduino-1.8.13 sudo",

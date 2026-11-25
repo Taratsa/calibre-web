@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21466?v=1795482151",
   "cover_og_url": "/cover/21466/og?v=1795482151",
+  "has_cover": false,
   "url": "/book/instalasi-ntfs-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi NTFS # apt-get install ntfs-3g ntfsprogs ntfs-config Memformat Harddisk NTFS Format harddisk / USB harddisk ke NTFS # mkntfs /dev/sdX1 dimana /dev/sdX1 adalah USB harddisk anda .. Cara yang lebih cepat tidak di fill dengan NULL sebaiknya menggunakan switch # mkntfs -Q /dev/sdX1 atau # mkntfs -f /dev/sdX1 Pranala Menarik Linux Howto Instalasi NTFS NTFS: Memperbaiki Partisi NTFS NTFS:",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17204?v=1795464419",
   "cover_og_url": "/cover/17204/og?v=1795464419",
+  "has_cover": false,
   "url": "/book/gconftool-2-untuk-mengkonfigurasi-gnome-desktop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Format secara umum gconftool-2 --set /path/to/setting --type  \"value\" Contents 1 Melihat Konfigurasi 2 Get Parameter 3 Tipe Paramater 4 Set Font Widget 5 Set Background Picture 6 Proxy Automatis 7 Gnome ScreenSaver Lock 8 Set Nautilus File Browser 9 Pranala Menarik Melihat Konfigurasi $ gconftool-2 -R / Get Parameter Melihat lokasi gambar background $ gconftool-2 --get",

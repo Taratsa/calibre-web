@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12341?v=1795442450",
   "cover_og_url": "/cover/12341/og?v=1795442450",
+  "has_cover": false,
   "url": "/book/ipv6-cek-ipv6-ready-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di distribusi Linux modern biasanya kernel sudah siap IPv6. Kemampuan IPv6 biasanya di compile sebagai modul. Pada sistem operasi Linux modern, biasanya modul IPv6 secara default di load saat di nyalakan. Akan tetapi mungkin, modul tersebut tidak di load secara automatis jika kita menggunakan sistem operasi dengan versi agak lama. Catatan: sebaiknya tidak menggunakan kernel seri 2.2.x lagi,",

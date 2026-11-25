@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/16883?v=1795463537",
   "cover_og_url": "/cover/16883/og?v=1795463537",
+  "has_cover": false,
   "url": "/book/membuat-repository-ubuntu-lokal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Repository lokal di bangun menggunakan FTP server menggunakan vsftpd. Beberapa langkah awal untuk menyiapkan FTP server maupun home directory-nya adalah sebagai berikut # apt-get install vsftpd # mkdir /home/ftp # chown -Rf root.root /home/ftp # /etc/init.d/vsftpd restart # mkdir /home/ftp/pub # chown -Rf ftp.nogroup /home/ftp/pub Logika membuat repository lokal sangat mudah, yaitu buat iso dari",

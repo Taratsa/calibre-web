@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11098?v=1795439009",
   "cover_og_url": "/cover/11098/og?v=1795439009",
+  "has_cover": false,
   "url": "/book/ssh-instalasi-openssh-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi openssh server apt-get install openssh-server Mengubah Port Praktek yang aman agar lebih sulit di serang, ada baiknya mengubah port ssh yang digunakan. Mengubah konfigurasi dengan cara mengedit file sudo su vi /etc/ssh/sshd_config Ubah Port 22 Menjadi port yang lain, misalnya Port 12345 Pastikan # di depan kata Port kita delete",
@@ -58,7 +59,7 @@
     "similar": [
       [
         13916,
-        0.62
+        0.63
       ],
       [
         10231,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14851?v=1795452058",
   "cover_og_url": "/cover/14851/og?v=1795452058",
+  "has_cover": false,
   "url": "/book/linux-firmware-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download versi terbaru (sekitar 400+ Mbyte) dari https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git cp atau scp file terbaru tersebut misalnya cp linux-firmware-20220610.tar.gz ~ tar zxvf linux-firmware-20220610.tar.gz Copy ke /lib/firmware cp -Rf ~/linux-firmware-20220610/* /lib/firmware/",

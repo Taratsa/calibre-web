@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18981?v=1795471113",
   "cover_og_url": "/cover/18981/og?v=1795471113",
+  "has_cover": false,
   "url": "/book/voip-cookbook-attaching-context-onno-widodo-purbo/",
   "rating": null,
   "comment": "A context containing extensions can be incorporated into or associated with others. For example, consider the following context: Context \"default\": Extension Note 101 Mark Spencer 102 Will Meadows 0 Operator Context \"local\": Extension Note _9NXXXXXX Local calls include =&gt; \"default\" Context \"longdistance\": Extension Note _91NXXNXXXXXX Long distance calls include =&gt; \"local\" We have defined three",

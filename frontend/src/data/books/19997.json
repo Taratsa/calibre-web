@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19997?v=1795475805",
   "cover_og_url": "/cover/19997/og?v=1795475805",
+  "has_cover": false,
   "url": "/book/procmail-edit-procmailrc-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Check Shell 2 Buat ~/.procmailrc 3 Check lokasi procmail dan ID myid 4 Konfigurasi .forward 5 Cek permission myid 6 Pranala Menarik Check Shell Check shell which sh akan keluar /bin/sh Buat ~/.procmailrc Edit file ~/.procmailrc vi ~/.procmailrc #Preliminaries SHELL=/bin/sh #Use the Bourne shell (check your path!) MAILDIR=/var/spool/mail/ #First check what your mail directory is!",

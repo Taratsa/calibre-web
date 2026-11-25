@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17527?v=1795465493",
   "cover_og_url": "/cover/17527/og?v=1795465493",
+  "has_cover": false,
   "url": "/book/wndw-ssh-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gambar 6.6: Tunnel SSH melindungi trafik web sampai kepada server SSH. Kebanyakan orang berpikir SSH adalah pengganti telnet yang aman, seperti scp dan sftp adalah aplikasi yang sama dengan rcp dan ftp tapi lebih aman. SSH melakukan lebih dari hanya sekedar meng-enkripsi remote shell. Seperti SSL, dia menggunakan public key cryptography yang kuat untuk mencek server dan meng-enkripsi data.",

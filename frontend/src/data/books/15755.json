@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15755?v=1795456645",
   "cover_og_url": "/cover/15755/og?v=1795456645",
+  "has_cover": false,
   "url": "/book/appinventor-menyiapkan-server-apache-dan-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo su apt update apt install apache2 php php-common php-mysql libapache2-mod-php mariadb-server mysql -u root -p123456 CREATE DATABASE iot; CREATE USER 'iot' IDENTIFIED BY 'iot'; GRANT ALL PRIVILEGES ON iot.* TO 'iot'; FLUSH PRIVILEGES; exit mysql -u root -p123456 USE iot; CREATE TABLE iot ( iotID int, iottime varchar(100), iotsensor varchar(255), iotdata varchar(255) ); exit Edit",

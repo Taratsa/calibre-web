@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13691?v=1795447097",
   "cover_og_url": "/cover/13691/og?v=1795447097",
+  "has_cover": false,
   "url": "/book/windows-membuat-liveusb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebaiknya USB 16GB minimal sudo add-apt-repository ppa:tomtomtom/woeusb sudo apt update &amp;&amp; sudo apt install woeusb-frontend-wxgtk Burn file .iso windows fdisk /dev/sdc # buang semua partisi di /dev/sdc/ sudo dd if=Windows\\ 7\\ SP1\\ Ultimate\\ \\(64\\ Bit\\).iso of=/dev/sdc status=progress sudo dd bs=4M if=windows7.iso of=/dev/sdc status=progress sudo dd bs=4M if=Windows\\ 10\\ Pro\\ en-US\\ v1909\\ x64\\",

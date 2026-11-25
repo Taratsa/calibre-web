@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13899?v=1795447860",
   "cover_og_url": "/cover/13899/og?v=1795447860",
+  "has_cover": false,
   "url": "/book/suricata-instalasi-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kifarunix.com/install-and-setup-suricata-on-ubuntu-18-04/ Cara yang paling sederhana untuk instalasi Suricata adalah menggunakan repository. Untuk versi terakhir, sebaiknya menggunakan repostory PPA, sebagai berikut, sudo add-apt-repository ppa:oisf/suricata-stable sudo apt update Instalasi normal, sudo apt -y install suricata Instalasi dengan fasilitas debugging di enabled, sudo",
@@ -140,11 +141,11 @@
     ],
     "similar": [
       [
-        10563,
+        13900,
         0.76
       ],
       [
-        13900,
+        10563,
         0.76
       ],
       [

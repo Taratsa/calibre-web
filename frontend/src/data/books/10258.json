@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10258?v=1795436530",
   "cover_og_url": "/cover/10258/og?v=1795436530",
+  "has_cover": false,
   "url": "/book/nginx-instalasi-dengan-rtmp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi aplikasi pendukung sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev unzip Download source code cd /usr/local/src wget http://nginx.org/download/nginx-1.7.7.tar.gz wget https://github.com/arut/nginx-rtmp-module/archive/master.zip Buka source code cd /usr/local/src tar -zxvf nginx-1.7.7.tar.gz unzip master.zip Compile cd /usr/local/src/nginx-1.7.7 ./configure",

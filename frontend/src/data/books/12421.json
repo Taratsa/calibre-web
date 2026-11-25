@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12421?v=1795442699",
   "cover_og_url": "/cover/12421/og?v=1795442699",
+  "has_cover": false,
   "url": "/book/powerdns-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi PowerDNS untuk menggunakan MySQL sebagai backend untuk menyimpan file Zone dan records. Edit vi /etc/powerdns/pdns.d/pdns.local.gmysql.conf Isi dengan # MySQL Configuration # Launch gmysql backend launch+=gmysql # gmysql parameters gmysql-host=localhost gmysql-port=3306 gmysql-dbname=powerdns gmysql-user=powerdns gmysql-password=ubuntu gmysql-dnssec=yes # gmysql-socket= Restart",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13416?v=1795445883",
   "cover_og_url": "/cover/13416/og?v=1795445883",
+  "has_cover": false,
   "url": "/book/wemos-wifi-thingspeak-analogread2-onno-widodo-purbo/",
   "rating": null,
   "comment": "///////////////////////////////// // Generated with a lot of love// // with TUNIOT FOR ESP8266 // // Website: Easycoding.tn // ///////////////////////////////// #include  #include  WiFiClient client; String thingSpeakAddress= \" http://api.thingspeak.com/update ?\"; String request_string; HTTPClient http; void setup() { Serial.begin(115200); if (WiFi.status() !=",

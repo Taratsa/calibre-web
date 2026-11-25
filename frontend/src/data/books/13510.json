@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13510?v=1795446237",
   "cover_og_url": "/cover/13510/og?v=1795446237",
+  "has_cover": false,
   "url": "/book/gnuradio-compile-gnuradio-uhd-onno-widodo-purbo/",
   "rating": null,
   "comment": "NOTE: GNURadio 3.7 - ada QT &amp; WX widgets. RECOMMENDED GNURadio 3.8 - QT &amp; WX widget tidak terinstalasi. Contents 1 Persiapan 2 Upgrade CMAKE ke versi terakhir 3 Compile SWIG 4 Compile rtl_sdr 5 Compile UHD 6 Compile GNURadio 7 Compile gr_osmoSDR 8 Referensi 9 Pranala Menarik Persiapan Instalasi paket pendukung sudo su apt update apt -y install libcppunit-dev python-cheetah doxygen \\",

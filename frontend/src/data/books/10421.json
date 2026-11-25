@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10421?v=1795437038",
   "cover_og_url": "/cover/10421/og?v=1795437038",
+  "has_cover": false,
   "url": "/book/openwrt-setup-chillispot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Hi guys I'm new on this world, I'm not a guru, I'm starting with ervery this of embed linux and linux, so take care, I did install the chilli without problems, but remember, I don't have enough knowledge. Ok I did this.... first time edit /etc/config/network and modify the vlan configuration here is mi file #### VLAN configuration config switch eth0 option vlan0 \"1 2 3 5*\" option vlan1 \"4 5\"",

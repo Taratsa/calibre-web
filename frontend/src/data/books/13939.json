@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13939?v=1795448042",
   "cover_og_url": "/cover/13939/og?v=1795448042",
+  "has_cover": false,
   "url": "/book/mikrotik-regex-url-block-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://support.1blocker.com/hc/en-us/articles/360002309778-Using-Regex-to-Block-URLs Berikut adalah catatan umum tentang regex, belum tentu 100% jalan di Mikrotik terutama pakai CLI. Sarannya harus di coba2 mana yang bisa jalan. Tampaknya ?, (, [ sering bermasalah terutama di CLI Mikrotik. Dalam regex, setiap karakter \"encoded\" dan divalidasi simbol demi simbol dari kiri ke kanan. Kita",

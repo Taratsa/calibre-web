@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14248?v=1795449195",
   "cover_og_url": "/cover/14248/og?v=1795449195",
+  "has_cover": false,
   "url": "/book/wordpress-install-openlitespeed-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install OpenLiteSpeed OLS: instalasi Edit Konfigurasi PHP sudo vi /etc/php/7.4/apache2/php.ini upload_max_filesize = 100M post_max_size = 48M memory_limit = 512M max_execution_time = 600 max_input_vars = 3000 max_input_time = 1000 Install Wordpress Ambil source code Wordpress di https://wordpress.org/ https://wordpress.org/download/ https://wordpress.org/latest.zip",

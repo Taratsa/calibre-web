@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14629?v=1795450937",
   "cover_og_url": "/cover/14629/og?v=1795450937",
+  "has_cover": false,
   "url": "/book/instalasi-database-server-mariadb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Selanjutnya kita perlu menginstal database server. Disini digunakan database server l MariaDB, Instalasi MariaDB menggunakan perintah, sudo apt -y install mariadb-server Untuk merestart dan meng-enable database server MariaDB dapat menggunakan perintah, sudo systemctl start mariadb sudo systemctl enable mariadb Jika diperlukan secure instalasi dari database server MariaDB dapat menjalankan",

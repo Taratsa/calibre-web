@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17128?v=1795464209",
   "cover_og_url": "/cover/17128/og?v=1795464209",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-dhcp-server-untuk-pemberian-ip-address-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi DHCP Server # apt-get install dhcp3-server Konfigurasi dhcpd.conf # vi /etc/dhcp3/dhcpd.conf Isinya kira-kira sebagai berikut ddns-update-style none; option domain-name \"sekolah.sch.id\" option domain-name-servers 192.168.0.254; default-lease-time 86400; # 24 jam max-lease-time 172800; # 48 jam authoritative; subnet 192.168.0.0 netmask 255.255.255.0 { range 192.168.0.30 192.168.0.70;",

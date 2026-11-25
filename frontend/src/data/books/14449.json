@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14449?v=1795450009",
   "cover_og_url": "/cover/14449/og?v=1795450009",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-router-ipv6-dhcp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Simulasi Router IPv6 Mikrotik Sederhana. Reset Mikrotik /system reset-configuration no-defaults=yes Membuat router IPv6 sederhana # LAN Bridge /interface bridge add name=bridge1 /interface bridge port add bridge=bridge1 interface=ether2 add bridge=bridge1 interface=ether3 add bridge=bridge1 interface=ether4 add bridge=bridge1 interface=ether5 add bridge=bridge1 interface=ether6 add bridge=bridge1",

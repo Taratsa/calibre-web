@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11145?v=1795439133",
   "cover_og_url": "/cover/11145/og?v=1795439133",
+  "has_cover": false,
   "url": "/book/arduino-menambahkan-library-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menambahkan library, bisa ke folder /usr/share/arduino/libraries/ atau ~/Arduino/libraries/ Download, copy dan extrak library tersebut, misalnya # TM1650 cd ~/Arduino/libraries/ rm *zip wget http://downloads.arduino.cc/libraries/github.com/arkhipenko/TM1650-1.1.0.zip unzip TM1650-1.1.0.zip # time cd ~/Arduino/libraries/ rm *zip wget https://github.com/PaulStoffregen/Time/archive/master.zip",

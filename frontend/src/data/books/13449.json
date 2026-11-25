@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13449?v=1795445988",
   "cover_og_url": "/cover/13449/og?v=1795445988",
+  "has_cover": false,
   "url": "/book/r-regression-linear-regression-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: http://www.sthda.com/english/articles/40-regression-analysis/165-linear-regression-essentials-in-r/ if(!require(devtools)) install.packages(\"devtools\") devtools::install_github(\"kassambara/datarium\") data(\"marketing\", package = \"datarium\") head(marketing, 3) data(\"swiss\") head(swiss, 3) data(\"Boston\", package = \"MASS\") head(Boston, 3) install.packages(\"tidyverse\") install.packages(\"caret\")",

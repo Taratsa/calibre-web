@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16793?v=1795463224",
   "cover_og_url": "/cover/16793/og?v=1795463224",
+  "has_cover": false,
   "url": "/book/llm-ubuntu-24-04-desktop-pull-ollama-model-onno-widodo-purbo/",
   "rating": null,
   "comment": "# embedding docker exec -it ollama ollama pull nomic-embed-text:latest docker exec -it ollama ollama pull nomic-embed-text-v2-moe:latest docker exec -it ollama ollama pull embeddinggemma:latest docker exec -it ollama ollama pull mxbai-embed-large:latest docker exec -it ollama ollama pull embeddinggemma:latest # small models docker exec -it ollama ollama pull gemma3:270m docker exec -it ollama",

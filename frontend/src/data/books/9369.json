@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9369?v=1795432648",
   "cover_og_url": "/cover/9369/og?v=1795432648",
+  "has_cover": false,
   "url": "/book/vlc-streaming-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Stream sebuah file dengan VLC # vlc -vvv video1.mpg --sout udp:192.168.0.42 --ttl 12 # vlc -vvv video1.mpg --sout udp:192.168.0.42 --ttl 12 --loop dimana: video1.xyz adalah file yang akan di stream 192.168.0.42 adalah IP address mesin yang akan dikirimi stream DNS / hostname dari mesin yang akan dikirimi stream IP address multicast kalau mau 12 adalah nilai dari TTL (Time To Live) dari paket IP",

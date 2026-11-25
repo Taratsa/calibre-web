@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/13015?v=1795444509",
   "cover_og_url": "/cover/13015/og?v=1795444509",
+  "has_cover": false,
   "url": "/book/ipv6-bgp-best-path-selection-algorithm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://wiki.mikrotik.com/wiki/Manual:BGP_Best_Path_Selection_Algorithm Introduction With the full Internet BGP routing table being upward of 300K routes and with a BGP router having the potential to be receiving multiple copies of that routing table from multiple providers, it has to have some way to compare those multiple BGP routing tables and select only the best route to go into the",

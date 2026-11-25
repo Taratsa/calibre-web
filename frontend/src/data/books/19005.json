@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19005?v=1795471216",
   "cover_og_url": "/cover/19005/og?v=1795471216",
+  "has_cover": false,
   "url": "/book/export-video-menjadi-dvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk Export Video menjadi DVD menggunakan Kino. Pastikan # apt-get install avidemux Kemudian dari menu di Kino lakukan Export -&gt; MPEG Pastikan file format DVD . File yang di hasilkan akan berextension .mpeg. Pada dasarnya Kino akan mengenerate mp2 &amp; mpv file misalnya menggunakan script mpgfix berikut ffmpeg -i $1 -vcodec copy -an -f rawvideo foo.mpv ffmpeg -i $1 -vn -acodec copy -f mp2 foo.mp2",

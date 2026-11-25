@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19184?v=1795471998",
   "cover_og_url": "/cover/19184/og?v=1795471998",
+  "has_cover": false,
   "url": "/book/membuat-script-sederhana-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kita membutuhkan pekerjaan yang di ulang-ulang. Untuk itu kita dapat membuat script sederhana sekali melalui cara Masuk ke shell Edit sebuah file. Beri extension .sh Isi dengan perintah yang kita inginkan yang biasanya di jalankan di shell, misalnya cp file.a /var/data/ rm -Rf /var/data/filetidakdiperlukan chmod -Rf 777 /var/www/perpustakaan chown -Rf nobody.nogroup /var/www/library dst ..",

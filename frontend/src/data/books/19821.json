@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19821?v=1795475144",
   "cover_og_url": "/cover/19821/og?v=1795475144",
+  "has_cover": false,
   "url": "/book/instal-wine-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan anda tersambung ke Internet karena kita perlu mendownload beberapa font Contents 1 Install di Ubuntu 22.04 2 Install di Ubuntu 22.04 3 Cara 1 4 Cara 2 5 Cara 3 6 cek run 7 Pranala Menarik Install di Ubuntu 22.04 apt install wine64 wine --version Install di Ubuntu 22.04 sudo dpkg --add-architecture i386 apt update wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -",
@@ -198,15 +199,15 @@
         0.35
       ],
       [
+        14798,
+        0.33
+      ],
+      [
         15431,
         0.33
       ],
       [
         14964,
-        0.33
-      ],
-      [
-        14798,
         0.33
       ],
       [

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12683?v=1795443420",
   "cover_og_url": "/cover/12683/og?v=1795443420",
+  "has_cover": false,
   "url": "/book/dbench-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Run 3 Option 4 Pranala Menarik Install apt install dbench Run dbench [options]numclients tbench [options]numclientsserver tbench_srv [options] Folder yang akan di test /mnt/public yang di link ke salah satu SMB Server yang akan di test Gunakan client.txt bawaan dari dbench dbench --directory=/mnt/public/ --loadfile=/usr/share/dbench/client.txt --skip-cleanup 20 Switch",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12345?v=1795442458",
   "cover_og_url": "/cover/12345/og?v=1795442458",
+  "has_cover": false,
   "url": "/book/ipv6-meload-module-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat mencoba me-load module IPv6 dengan menjalankan # modprobe ipv6 Jika load tersebut berhasil, maka module IPv6 harusnya terdaftar dan dapat di test menggunakan script berikut secara automatis # lsmod |grep -w 'ipv6' &amp;&amp; echo \"IPv6 module successfully loaded\" Harusnya jalan dengan baik Catatan: di Ubuntu 18.04 atau yang baru tampaknya ipv6 bukan lagi berbentuk modul, jadi cara ini tidak",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/18172?v=1795467976",
   "cover_og_url": "/cover/18172/og?v=1795467976",
+  "has_cover": false,
   "url": "/book/update-speedywiki-lokal-secara-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi username root password 123456 database mediawiki Lokasi file images.tar.gz dan wikidb.sql.gz di /var/data/library/datawiki/ Lokasi file images.tar.gz dan wikidb.sql.gz di /usr/local/src Buat Script misalnya vi /usr/local/bin/updatewiki.sh Isi dengan rm -Rf /var/data/library/datawiki/* rm -Rf /usr/local/src/var rm -Rf /usr/local/src/wikidb* wget",

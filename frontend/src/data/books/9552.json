@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9552?v=1795433247",
   "cover_og_url": "/cover/9552/og?v=1795433247",
+  "has_cover": false,
   "url": "/book/sdr-test-usb-dongle-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Persiapan 2 Install GNURadio 3 Install rtl_sdr 4 Testing 5 Referensi 6 Pranala Menarik Persiapan Buat directory mkdir /usr/local/src/SDR cd /usr/local/src/SDR Instalasi paket pendukung sudo apt-get install cmake swig libcppunit-dev python-cheetah doxygen \\ libboost-all-dev python-sphinx fftw3-dev python-numpy libqwt-dev \\ libusb++-dev libusb-dev libusb-1.0-0-dev libgsl0-dev",

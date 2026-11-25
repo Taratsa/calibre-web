@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15692?v=1795456228",
   "cover_og_url": "/cover/15692/og?v=1795456228",
+  "has_cover": false,
   "url": "/book/netplan-wifi-onno-widodo-purbo/",
   "rating": null,
   "comment": "vi /etc/netplan/00-installer-config-wifi.yaml network: ethernets: enp0s31f6: addresses: - 10.150.15.25/24 wifis: wlp2s0: dhcp4: yes dhcp6: yes access-points: \"IDontLikeSand15\": password: \"Supersecure123\" version: 2 renderer: NetworkManager",

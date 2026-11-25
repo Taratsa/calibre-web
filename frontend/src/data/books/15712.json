@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15712?v=1795456354",
   "cover_og_url": "/cover/15712/og?v=1795456354",
+  "has_cover": false,
   "url": "/book/apromore-docker-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sistem operasi Ubuntu 22.04 OK Ubuntu 18.04, 20.04 tidak recommended Sebagai user biasa Install docker sudo apt update sudo apt upgrade sudo apt -y install apt-transport-https ca-certificates curl software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg echo \"deb [arch=$(dpkg --print-architecture)",

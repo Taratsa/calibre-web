@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14784?v=1795451700",
   "cover_og_url": "/cover/14784/og?v=1795451700",
+  "has_cover": false,
   "url": "/book/arduino-vox-voice-operated-transmit-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* 14CORE TEST CODE FOR SOUND DETECTION */ int MySound = 4; // Sound Sensor Connected to Pin 4 int MyRelay = 5; // Relay Module in Connected to Pin 5 void setup() { pinMode(MyRelay, OUTPUT); pinMode(MySound, INPUT); } void loop() { if (digitalRead(MySound) == HIGH) { digitalWrite(MyRelay, HIGH); delay(10); } else { digitalWrite(MyRelay, LOW); } }",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16669?v=1795462420",
   "cover_og_url": "/cover/16669/og?v=1795462420",
+  "has_cover": false,
   "url": "/book/mqtt-install-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt update -y &amp;&amp; sudo apt install mosquitto mosquitto-clients -y Check &amp; Start sudo systemctl status mosquitto sudo systemctl start mosquitto sudo systemctl enable mosquitto Subscribe mosquitto_sub -h address -t topic Publish mosquitto_pub -h address -t topic -m \"message\" Config password sudo mosquitto_passwd -c /etc/mosquitto/passwd test sudo mosquitto_passwd -c",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12242?v=1795442002",
   "cover_og_url": "/cover/12242/og?v=1795442002",
+  "has_cover": false,
   "url": "/book/nmap-hack-password-via-http-onno-widodo-purbo/",
   "rating": null,
   "comment": "File http-passwd Script types: portrule Categories: intrusive, vuln Download: https://svn.nmap.org/nmap/scripts/http-passwd.nse User Summary Checks if a web server is vulnerable to directory traversal by attempting to retrieve /etc/passwd or \\boot.ini. The script uses several technique: Generic directory traversal by requesting paths like ../../../../etc/passwd. Known specific traversals of",

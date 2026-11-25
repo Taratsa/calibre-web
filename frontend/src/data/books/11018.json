@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11018?v=1795438781",
   "cover_og_url": "/cover/11018/og?v=1795438781",
+  "has_cover": false,
   "url": "/book/arduino-smoothing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/Smoothing This sketch reads repeatedly from an analog input, calculating a running average and printing it to the computer. This example is useful for smoothing out the values from jumpy or erratic sensors, and also demonstrates the use of arrays to store data. Hardware Arduino or Genuino Board 10k ohm potentiometer Rangkaian Code /* Smoothing Reads",

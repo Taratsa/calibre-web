@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13013?v=1795444503",
   "cover_og_url": "/cover/13013/og?v=1795444503",
+  "has_cover": false,
   "url": "/book/ipv6-cost-metric-administrative-distance-onno-widodo-purbo/",
   "rating": null,
   "comment": "metric and cost is similar. the router use the metric/cost to decide which route is the best for a destination. in ospf terminology we use cost which is calculated from interface bandwidth. but we use composit metric for eigrp which is calculated from bw and delay by default. in your ospf domain the routes from eigrp will use the 25 cost on that router in which you perform redistribution. than,",

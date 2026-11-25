@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12243?v=1795442008",
   "cover_og_url": "/cover/12243/og?v=1795442008",
+  "has_cover": false,
   "url": "/book/kali-linux-web-directory-traversal-vulnerability-onno-widodo-purbo/",
   "rating": null,
   "comment": "Directory traversal (atau path traversal) merupakan eksploitasi kekurangan validasi keamanan / sanitasi nama file input yang disediakan pengguna, seperti karakter yang merepresentasikan \"pelintasan / traverse ke direktori induk\" dilewatkan ke file API. Sasaran serangan ini adalah menggunakan aplikasi yang salah konfigurasi untuk mendapatkan akses tidak sah ke sistem file. Serangan ini",

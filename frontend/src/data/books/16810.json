@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16810?v=1795463309",
   "cover_og_url": "/cover/16810/og?v=1795463309",
+  "has_cover": false,
   "url": "/book/mediawiki-1-31-instalasi-docker-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Catatan penting 2 1. Periksa apakah Docker sudah terpasang 3 2. Instal Docker di Ubuntu 26.04 4 3. Siapkan direktori instalasi 5 4. Buat Dockerfile PHP 7.4 6 5. Buat password database 7 6. Buat konfigurasi Docker Compose 8 7. Bangun dan jalankan container 9 8. Buka installer MediaWiki 9.1 Bila Ubuntu menggunakan desktop 9.2 Bila Ubuntu adalah server jarak jauh 10 9. Isi konfigurasi",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1204,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "mediawiki",
@@ -205,7 +206,7 @@
       ],
       [
         12034,
-        0.38
+        0.39
       ],
       [
         16833,

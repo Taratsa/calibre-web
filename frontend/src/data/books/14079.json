@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14079?v=1795448542",
   "cover_og_url": "/cover/14079/og?v=1795448542",
+  "has_cover": false,
   "url": "/book/wordpress-install-fresh-dengan-nginx-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Apps pendukung apt -y install php php-mysql Download https://wordpress.org/latest.zip https://id.wordpress.org/latest-id_ID.zip Install mkdir /var/www/html cp Wordpress.zip /var/www/html unzip Wordpress.zip Buat database mysql -u root -p create database wordpress; Config cd /var/www/html cp wp-config.sample.php wp-config.php vi wp-config.php Sesuaikan db_user, db_password, db_name",

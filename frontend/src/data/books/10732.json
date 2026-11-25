@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10732?v=1795437971",
   "cover_og_url": "/cover/10732/og?v=1795437971",
+  "has_cover": false,
   "url": "/book/tcpdump-menangkap-paket-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melakukan capture packet, dapat di jalankan perintah # tcpdump -t -n -i eth0 -vv Untuk melakukan capture packet IPv6, dapat di jalankan perintah # tcpdump -t -n -i eth0 -s 512 -vv ip6 or proto ipv6 Dimana: -s 512 : menaikan panjang snap saat menangkap paket 512 bytes -vv : output lebih verbose -n : jangan resolve address ke hostname. Ini terutama bermanfaat jika reverse DNS tidak berjalan",

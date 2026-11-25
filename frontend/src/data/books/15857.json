@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15857?v=1795457266",
   "cover_og_url": "/cover/15857/og?v=1795457266",
+  "has_cover": false,
   "url": "/book/orange-install-dengan-pip-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cahyo.web.id/2024/01/pasang-orange-data-mining-di-ubuntu.html Contents 1 Instal Pip dan Virtualenv 2 Buat Lingkungan Virtual Python 3 Instal Orange 4 Jalankan Orange 5 ICON di Desktop 6 Referensi Instal Pip dan Virtualenv sudo apt update sudo apt install build-essential python3-dev python3-pip python3-virtualenv Buat Lingkungan Virtual Python mkdir ~/orangenv cd ~/orangenv",

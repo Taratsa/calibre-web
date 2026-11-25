@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13445?v=1795445977",
   "cover_og_url": "/cover/13445/og?v=1795445977",
+  "has_cover": false,
   "url": "/book/r-plot-ggplot2-extensions-for-ts-objects-onno-widodo-purbo/",
   "rating": null,
   "comment": "install.packages( c(\"ggfortify\", \"changepoint\", \"strucchange\", \"ggpmisc\") ) Then use the autoplot.ts() function to visualize time series objects, as follow: library(ggfortify) library(magrittr) # for piping %&gt;% # Plot ts objects autoplot(AirPassengers) # Identify change points in mean and variance AirPassengers %&gt;% changepoint:: cpt.meanvar() %&gt;% # Identify change points autoplot() # Detect jump",

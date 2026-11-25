@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11959?v=1795441179",
   "cover_og_url": "/cover/11959/og?v=1795441179",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-cgminer-vthoang-untuk-gekkoscience-onno-widodo-purbo/",
   "rating": null,
   "comment": "cgminer untuk ASIC gekkoscience sudo su sudo apt-get install build-essential autoconf automake libtool pkg-config libcurl4-openssl-dev \\ libudev-dev libjansson-dev libncurses5-dev libudev-dev libjansson-dev libudev1 cd /usr/local/src git clone https://github.com/vthoang/cgminer.git cd /usr/local/src/cgminer CFLAGS='-O2 -march=native' ./autogen.sh ./configure --enable-gekko make make install",

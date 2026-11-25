@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19125?v=1795471731",
   "cover_og_url": "/cover/19125/og?v=1795471731",
+  "has_cover": false,
   "url": "/book/virtualbox-shared-directory-unknown-filesystem-type-vboxsf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.tanjir.net/2009/01/virtualbox-shared-directory/ I got the error message \"unknown filesystem type vboxsf\" while I was trying to share a directory from my Windows XP host to Ubuntu Interpid Ibex (8.10). In almost every where it said to install Guest additions. After spending few hours I found the solution. So decided to share with you for reference. Step 1: Install host additions",

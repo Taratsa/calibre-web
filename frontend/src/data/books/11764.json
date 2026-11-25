@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11764?v=1795440696",
   "cover_og_url": "/cover/11764/og?v=1795440696",
+  "has_cover": false,
   "url": "/book/modsecurity-owasp-crs3-menambahkan-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://2buntu.com/articles/1571/installing-lamp-modsecurity-modsecurity-crs-on-ubuntu-1604/ Contents 1 Install Apache 2 Install ModSecurity 3 Install ModSecurity Core Rule Set (CRS) 4 Setup ModSecurity CRS 5 Konfigurasi 6 Reload Apache 7 Test 7.1 XSS 7.2 SQLi 7.3 Responds 7.4 Cek Log 8 Referensi Install Apache sudo add-apt-repository ppa:ondrej/php sudo apt-get update apt-get install",

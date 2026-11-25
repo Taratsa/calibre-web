@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19575?v=1795473993",
   "cover_og_url": "/cover/19575/og?v=1795473993",
+  "has_cover": false,
   "url": "/book/foremost-untuk-recovery-harddisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "pake foremost aja ,, sudo apt-get install foremost liat partisi mana yg bkl di recover sudo fdisk -l cara pkenya: sudo foremost /dev/hd_ente -t  -o  contoh: sudo foremost /dev/sda5 -t jpg -o /home/user/dir maka akan recovery file yg formatx jpg dari partisi sda5 dan output hasil recovery di folder dir,, buat liat extensi file yg bisa di pakai bisa dilihat di manualx",

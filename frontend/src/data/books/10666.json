@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10666?v=1795437785",
   "cover_og_url": "/cover/10666/og?v=1795437785",
+  "has_cover": false,
   "url": "/book/ipv6-instalasi-powerdns-dengan-percona-database-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install PowerDNS di Ubuntu 18.04 Contents 1 /etc/apt/source.list /etc/hosts IPv6 interface 2 Instalasi 3 Install PowerDNS 4 Create PowerDNS Database dan User di MySQL 5 Konfigurasi PowerDNS 6 HACK Konfigurasi 7 Test PowerDNS 8 Referensi 9 Paranala Menarik /etc/apt/source.list /etc/hosts IPv6 interface Edit /etc/apt/sources.list pastikan ada category universe dan multiverse deb",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1361,
-    "longer_than": 55,
+    "longer_than": 54,
     "top": [
       [
         "powerdns",

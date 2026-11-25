@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9681?v=1795434500",
   "cover_og_url": "/cover/9681/og?v=1795434500",
+  "has_cover": false,
   "url": "/book/openwrt-flash-buffalo-wzrhp300n-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.openwrt.org/toh/buffalo/whr-hp-g300n Install sudo su apt-get install curl Buat Script vi buatflashbuffalo.sh Isi dengan ifconfig eth0 192.168.11.2 arp -s 192.168.11.1 02:aa:bb:cc:dd:1a curl -T openwrt-19.07.0-ar71xx-generic-wzr-hp-g300nh-squashfs-tftp.bin tftp://192.168.11.1 &amp; Buat Script vi setip.sh Isi dengan #!/bin/bash while [ true ]; do ifconfig eth0 192.168.11.2 arp -s",

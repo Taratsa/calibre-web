@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10101?v=1795436034",
   "cover_og_url": "/cover/10101/og?v=1795436034",
+  "has_cover": false,
   "url": "/book/ipsec-howto-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://help.ubuntu.com/community/IPSecHowTo introduction This covers using manually-keyed connections, and is geared toward very small or primarily star toplogy networks (an NIS server and all it's clients, for example). Larger networks (if all the NIS clients want to talk to each other in an encrypted fashion) would benefit from the use of an automated keying agent, such as racoon.",

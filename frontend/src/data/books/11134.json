@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11134?v=1795439103",
   "cover_og_url": "/cover/11134/og?v=1795439103",
+  "has_cover": false,
   "url": "/book/mysql-membuka-lock-akses-karena-terlalu-banyak-gagal-login-onno-widodo-purbo/",
   "rating": null,
   "comment": "MySQL mempunyai kemampuan untuk mengunci / memblokir akses bagi IP address yang terlalu banyak gagal login. Untuk membuka blokir dapat menggunakan perintah mysqladmin flush-hosts mysqladmin -u  -p flush-hosts mysqladmin -u root -p123456 flush-hosts",

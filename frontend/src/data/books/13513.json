@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13513?v=1795446263",
   "cover_og_url": "/cover/13513/og?v=1795446263",
+  "has_cover": false,
   "url": "/book/cpu-info-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 lscpu 2 cat /proc/cpuinfo 3 cpuid 4 dmidecode 5 inxi 6 lshw -c CPU 7 hardinfo 8 hwinfo 9 nproc 10 CoreFreq 11 Pranala Menarik lscpu sudo lscpu cat /proc/cpuinfo cat /proc/cpuinfo cat /proc/cpuinfo | grep 'vendor' | uniq #view vendor name cat /proc/cpuinfo | grep 'model name' | uniq #display model name cat /proc/cpuinfo | grep processor | wc -l #count the number of processing units cat",

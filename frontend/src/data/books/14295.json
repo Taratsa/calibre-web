@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14295?v=1795449355",
   "cover_og_url": "/cover/14295/og?v=1795449355",
+  "has_cover": false,
   "url": "/book/mikrotik-certificate-generate-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Make certificate templates 2 Sign certificates and add CRL url 3 Trust Certificate 4 Export Certificate 4.1 Client Linux - Downloat crt &amp; key 5 Print 6 Client Kali Linux 7 Client UBUNTU Make certificate templates /certificate add name=ca-template common-name=myCa key-usage=key-cert-sign,crl-sign add name=server-template common-name=server add name=client1-template common-name=client1",

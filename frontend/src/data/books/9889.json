@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9889?v=1795435316",
   "cover_og_url": "/cover/9889/og?v=1795435316",
+  "has_cover": false,
   "url": "/book/os-android-membuat-folder-untuk-bekerja-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah kita membuat mirror. Maka kita dapat membuat folder untuk bekerja. Contents 1 Mengambil dari Mirror 1.1 Untuk AOSP 1.2 Untuk AOKP 1.3 Untuk CyanogenMod 2 Sync Folder Tempat Kerja 3 Sync Mirror Source Code 4 Pranala Menarik Mengambil dari Mirror Di sisi client, dapat melakukan sebagai userbiasa Untuk AOSP mkdir -p ~/android-aosp cd ~/android-aosp git config --global user.email",

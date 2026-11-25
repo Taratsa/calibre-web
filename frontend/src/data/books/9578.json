@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9578?v=1795433338",
   "cover_og_url": "/cover/9578/og?v=1795433338",
+  "has_cover": false,
   "url": "/book/mount-sftp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo aptitude update sudo aptitude install sshfs sudo adduser yourusername fuse Mount mkdir /mnt/sftp sshfs HOSTuser@remote.host.or.ip:/host/dir/to/mount /mnt/sftp sshfs onno@192.168.0.7:/share /mnt/sftp Error Kalau ada error sshfs HOSTuser@remote.host.or.ip:/host/dir/to/mount ~/Desktop/sftp fusermount: failed to open /dev/fuse: No such file or directory Coba lakukan sudo mknod -m 666",

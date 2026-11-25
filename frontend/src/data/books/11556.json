@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11556?v=1795440184",
   "cover_og_url": "/cover/11556/og?v=1795440184",
+  "has_cover": false,
   "url": "/book/snort-rules-the-basics-onno-widodo-purbo/",
   "rating": null,
   "comment": "Snort menggunakan description language yang sederhana tapi flexible dan sangat power full. Ada beberapa aturan yang mudah di ingat. Sebagian besar snort rules adalah single line. Di versi snort yang baru, kita bisa membuat rules dalam beberapa line dengan menambahkan backslash \\ di akhir kalimat. Snort rules are divided into two logical sections, the rule header and the rule options. The rule",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 277,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "rule",

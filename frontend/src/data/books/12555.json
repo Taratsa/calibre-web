@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12555?v=1795443054",
   "cover_og_url": "/cover/12555/og?v=1795443054",
+  "has_cover": false,
   "url": "/book/r-stopwords-onno-widodo-purbo/",
   "rating": null,
   "comment": "install.packages(\"stopwords\") # atau install.packages(\"devtools\") devtools::install_github(\"quanteda/stopwords\") head(stopwords::stopwords(\"de\", source = \"snowball\"), 20) head(stopwords::stopwords(\"id\", source = \"stopwords-iso\"), 20) stopwords::stopwords_getsources() stopwords::stopwords_getlanguages(\"snowball\") stopwords::stopwords_getlanguages(\"stopwords-iso\") Contoh 1 documents = c(\"She had",

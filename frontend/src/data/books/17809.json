@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17809?v=1795466360",
   "cover_og_url": "/cover/17809/og?v=1795466360",
+  "has_cover": false,
   "url": "/book/smeonffline-replikasi-database-dan-image-speedywiki-versi-cepat-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd /usr/local/src tar zxvf images.tar.gz gunzip wikidb.sql.gz cd /usr/local/src cp -Rf /usr/local/src/var/www/html/wiki/images /var/www/wiki/ chown -Rf www-data.www-data /var/www/wiki rm -Rf /usr/local/src/var mysql -u mediawiki -pmediawiki mediawiki &lt; /usr/local/src/wikidb.sql /etc/init.d/mysql restart rm /usr/local/src/images.tar.gz rm /usr/local/src/wikidb.sql cd /var/www/wiki/ cp",

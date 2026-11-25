@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12425?v=1795442710",
   "cover_og_url": "/cover/12425/og?v=1795442710",
+  "has_cover": false,
   "url": "/book/powerdns-memasukan-record-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke SQL Server mysql -u root -p123456 Gunakan Database PowerDNS misalnya use powerdns; Contoh membuat Domain / Zone INSERT INTO domains (name, type) values ('example.com', 'NATIVE'); Contoh membuat Record SOA INSERT INTO records (domain_id, name, content, type,ttl,prio) VALUES (1,'example.com','localhost ahu@ds9a.nl 1','SOA',86400,NULL); Contoh membuat Record NS INSERT INTO records",

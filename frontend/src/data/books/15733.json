@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15733?v=1795456491",
   "cover_og_url": "/cover/15733/og?v=1795456491",
+  "has_cover": false,
   "url": "/book/gerbera-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://installati.one/install-gerbera-ubuntu-22-04/ Setup network sudo su route add -net 239.0.0.0 netmask 255.0.0.0 eth1 ifconfig eth1 allmulti Instalasi sudo apt-get update sudo apt-get -y install gerbera Edit Konfigurasi Default tempat file media ada di /var/lib/gerbera Isi /var/lib/mediatomb dengan file avi, mp3 dll yang ingin di akses. Jangan lupa untuk chmod -Rf 777",

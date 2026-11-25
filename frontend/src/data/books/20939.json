@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20939?v=1795478567",
   "cover_og_url": "/cover/20939/og?v=1795478567",
+  "has_cover": false,
   "url": "/book/wifi-mengaktifkan-broadcom-bcm4312-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://blog.somat.web.id/2012/05/blankon-rote-dan-broadcom-bcm4312.html?spref=tw Laptop yang saya gunakan memiliki perangkat jaringan nirkabel sebagai berikut : $ lspci | grep Network 03:00.0 Network controller: Broadcom Corporation BCM4312 802.11b/g LP-PHY (rev 01) Untuk mengaktifkannya adalah sebagai berikut : Pasang broadcom-sta-dkms $ sudo apt-get install broadcom-sta-dkms Nyalakan",

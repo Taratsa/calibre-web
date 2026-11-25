@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16437?v=1795460865",
   "cover_og_url": "/cover/16437/og?v=1795460865",
+  "has_cover": false,
   "url": "/book/dataset-missing-values-imputation-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menangani missing values dalam dataset adalah langkah penting dalam proses analisis data untuk memastikan kualitas dan akurasi hasil. Berikut adalah contoh kode Python yang menunjukkan cara mengidentifikasi dan mengatasi missing values menggunakan pustaka pandas dan scikit-learn . 1. Mengidentifikasi Missing Values Langkah pertama adalah mendeteksi keberadaan missing values dalam dataset. Fungsi",

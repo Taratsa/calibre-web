@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14626?v=1795450918",
   "cover_og_url": "/cover/14626/og?v=1795450918",
+  "has_cover": false,
   "url": "/book/mengaktifkan-https-di-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar komunikasi dapat dilakukan dengan aman kita perlu meng-enkripsi komunikasi menggunakan TLS/SSL. Berikut ini adalah caranya di Ubuntu 16.04. Cara di Ubuntu dan Debian yang baru kemungkinan besar hampir sama, Install Apache menggunakan perintah sudo apt update sudo apt -y install apache2 Untuk mengaktifkan SSL module dapat menggunakan perintah, sudo a2enmod ssl Selanjutnya kita perlu",

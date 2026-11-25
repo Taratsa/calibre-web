@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16945?v=1795463708",
   "cover_og_url": "/cover/16945/og?v=1795463708",
+  "has_cover": false,
   "url": "/book/relay-ke-pstn-menggunakan-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh sederhana cara merelay ke PSTN . Asumsi yang digunakan. ATA Berada di IP address 192.168.0.200 port 5061. Dari semua domain # attempt handoff to PSTN if (uri=~\"^ sip:021 [0-9]*@*\") { rewritehostport( \"192.168.0.200:5061\"); ## 192.168.0.200:5061 adalah Analog Telepon Adapter ( ATA ) route(1); }; Hanya dari mydomain.com # attempt handoff to PSTN if (uri=~\"^ sip:021",

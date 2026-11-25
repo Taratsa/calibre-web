@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13359?v=1795445695",
   "cover_og_url": "/cover/13359/og?v=1795445695",
+  "has_cover": false,
   "url": "/book/wemos-ntp-jam-digital-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code #include  #include  #include  const char *ssid = \"ssid\"; const char *password = \"password\"; const long utcOffsetInSeconds = 3600; char daysOfTheWeek[7][12] = {\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"}; // Define NTP Client to get time WiFiUDP ntpUDP; NTPClient timeClient(ntpUDP, \"pool.ntp.org\", utcOffsetInSeconds);",

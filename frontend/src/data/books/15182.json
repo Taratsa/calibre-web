@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15182?v=1795453554",
   "cover_og_url": "/cover/15182/og?v=1795453554",
+  "has_cover": false,
   "url": "/book/4g-openairinterface-instalasi-dari-github-onno-widodo-purbo/",
   "rating": null,
   "comment": "apt update apt -y install git git config --global user.name \"Your Name\" git config --global user.email \"Your email address\" cd /usr/local/src git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git cd /usr/local/src/openairinterface5g source oaienv cd cmake_targets/ ./build_oai -I -w USRP --eNB --UE Konfigurasi conf ada di",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14848?v=1795452041",
   "cover_og_url": "/cover/14848/og?v=1795452041",
+  "has_cover": false,
   "url": "/book/debian-single-mode-reset-password-root-onno-widodo-purbo/",
   "rating": null,
   "comment": "First screen - grub - press e Modify kernel line: add single between ro quiet and at the end of this line add init=/bin/bash Press F10 When the prompt is root@(none):/# you have to remount the / partition to have read-write access: mount / -rw -o remount Now you are ready to modify the root password: type passwd and change it!",

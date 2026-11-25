@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11965?v=1795441194",
   "cover_og_url": "/cover/11965/og?v=1795441194",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-raspberrypi-bfgminer-untuk-gekkoscience-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt-get update sudo apt-get install autoconf autogen libtool uthash-dev libjansson-dev \\ libcurl4-openssl-dev libusb-dev libncurses-dev git-core -y cd /usr/local/src git clone https://github.com/luke-jr/bfgminer.git cd bfgminer ./autogen.sh ./configure --enable-gekko # semoga ini bisa :( make ./bfgminer -o stratum.bitcoin.cz:3333 -O username.worker:password -S all",

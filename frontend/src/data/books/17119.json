@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17119?v=1795464181",
   "cover_og_url": "/cover/17119/og?v=1795464181",
+  "has_cover": false,
   "url": "/book/schoolonffline-melihat-aplikasi-yang-terinstall-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk melihat aplikasi yang terinstall dapat dilihat menggunakan perintah # dpkg-query -W --showformat='${Installed-Size} ${Package}\\n' | sort -nr | less Jika kita ingin membuat sebuah paket program (nama-paket-program), lakukan menggunakan perintah berikut # aptitude purge nama-paket-program Pranala Menarik Remaster Ubuntu untuk SchoolOnffLine Menggunakan UCK SchoolOnffLine: Server Berbasis",

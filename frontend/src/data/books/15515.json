@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/15515?v=1795455237",
   "cover_og_url": "/cover/15515/og?v=1795455237",
+  "has_cover": false,
   "url": "/book/load-balancing-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Router Load Balancing di Ubuntu 1.1 Setup iproute2 1.2 Setup iptables 1.3 Setup /etc/iproute2/rt_tables 2 Referensi 3 Pranala Menarik Install Router Load Balancing di Ubuntu insert ubuntu disc boot Selanjutnya install a command line system Login ke system yang baru kita install. Lakukan sudo root. $ sudo passwd root # su - Edit IP address interface # vi /etc/network/interfaces",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19165?v=1795471918",
   "cover_og_url": "/cover/19165/og?v=1795471918",
+  "has_cover": false,
   "url": "/book/sabily-konversi-ubuntu-menjadi-sabily-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika anda menggunakan Ubuntu &lt; 9.10 harus di upgrade dulu sudo aptitude update &amp;&amp; sudo aptitude safe-upgrade sudo aptitude dist-upgrade Untuk konversi Ubuntu ke Sabily sudo add-apt-repository ppa:sabily.team/ppa &amp;&amp; sudo apt-get -q update sudo apt-get install sabily Jawab 'Yes' jika di perlukan. Untuk menginstalasi WebStrict (Web Content Filtering tool), jalankan sudo aptitude install webstrict",

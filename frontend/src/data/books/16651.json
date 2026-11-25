@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16651?v=1795462282",
   "cover_og_url": "/cover/16651/og?v=1795462282",
+  "has_cover": false,
   "url": "/book/llm-lora-tidak-bisa-dijalankan-di-ollama-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pertanyaan yang **sangat bagus dan penting**, Pak 🙏 Jawaban singkatnya: &gt; ⚙️ **Ollama tidak langsung menjalankan file `.safetensors` sebagai model utama.** &gt; Tetapi - Ollama **bisa memanfaatkan file `.safetensors` jika isinya adalah *LoRA adapter*** yang ditempelkan ke model dasar melalui **Modelfile**. Mari saya jelaskan dengan rinci dan praktis. --- 🧠 1. Struktur Umum Model di Ollama Ollama",

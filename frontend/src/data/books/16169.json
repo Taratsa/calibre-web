@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16169?v=1795459224",
   "cover_og_url": "/cover/16169/og?v=1795459224",
+  "has_cover": false,
   "url": "/book/hands-on-target-port-services-and-vulnerability-identification-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Before we begin, it's important to understand some basic concepts: Port: Think of a port as the doorway to an application or service on a system. Each application or service uses a specific port to communicate. Service: A service is an application that runs on a system and provides a specific function, such as a web server, database server, or email server. Vulnerability: A vulnerability is a",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1118,
-    "longer_than": 52,
+    "longer_than": 51,
     "top": [
       [
         "nmap",

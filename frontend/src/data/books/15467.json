@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15467?v=1795454994",
   "cover_og_url": "/cover/15467/og?v=1795454994",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-ntp-via-serial-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* NTP Display via Serial */ #include  #include  #include  const char *ssid = \"o1\"; const char *password = \"Dzaq1993!\"; const long utcOffsetInSeconds = 25200; char daysOfTheWeek[7][12] = {\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"}; // Define NTP Client to get time WiFiUDP ntpUDP; NTPClient timeClient(ntpUDP,",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 465,
-    "longer_than": 38,
+    "longer_than": 37,
     "top": [
       [
         "serial",

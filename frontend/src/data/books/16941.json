@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16941?v=1795463698",
   "cover_og_url": "/cover/16941/og?v=1795463698",
+  "has_cover": false,
   "url": "/book/compiling-freeswitch-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.freeswitch.org/wiki/Linux_Quick_Install_Guide Contents 1 Perbaiki locale 2 Install 3 Download source code 4 Compile 5 Install 6 Start FreeSWITCH 7 Testing 8 Referensi 9 Pranala Menarik Perbaiki locale sudo locale-gen id_ID.UTF-8 Install sudo su sudo apt-get install git-core build-essential autoconf automake libtool libncurses5 \\ libncurses5-dev make libjpeg-dev pkg-config",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11451?v=1795439912",
   "cover_og_url": "/cover/11451/og?v=1795439912",
+  "has_cover": false,
   "url": "/book/nltk-membuang-kata-yang-tidak-penting-dan-jarang-dipakai-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuang kata2 yang tidak penting, langkah-nya print kata yang frekuensi penggunaannya kecil, misalnya &lt;20 masukan ke dalam daftar corpus, misalnya, ~/nltk_data/corpora/stopwords/indonesia cara yang sederhana, menggunakan Python script berikut import os,nltk,os.path,re,string import argparse from nltk.stem.porter import PorterStemmer from collections import Counter import re",

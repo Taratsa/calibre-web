@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16097?v=1795458727",
   "cover_og_url": "/cover/16097/og?v=1795458727",
+  "has_cover": false,
   "url": "/book/mitigation-to-secure-files-and-file-systems-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 General Mitigations: 2 Mitigations for Files and File Systems: 3 Mitigations for Specific Vulnerabilities: 4 Firewall Configuration Example (UFW): 5 Permission Setting Example: 6 Important: 7 Interesting Links General Mitigations: Update the System Regularly: Install system updates regularly to fix known security vulnerabilities. Use the command `sudo apt update &amp;&amp; sudo apt upgrade`.",

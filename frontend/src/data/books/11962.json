@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11962?v=1795441186",
   "cover_og_url": "/cover/11962/og?v=1795441186",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-raspberrypi-cgminer-untuk-gekkoscience-onno-widodo-purbo/",
   "rating": null,
   "comment": "cgminer untuk ASIC gekkoscience sudo su sudo apt-get install libusb-1.0-0-dev libusb-1.0-0 libcurl4-openssl-dev libncurses5-dev libudev-dev \\ screen libtool automake pkg-config libjansson-dev screen git cd /usr/local/src git clone https://github.com/wareck/cgminer-gekko.git cd /usr/local/src/cgminer-gekko ./autogen.sh ./configure --enable-gekko make make install Cek ./cgminer -n displays akan",

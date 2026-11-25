@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14417?v=1795449885",
   "cover_og_url": "/cover/14417/og?v=1795449885",
+  "has_cover": false,
   "url": "/book/cpu-speed-laptop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Supaya speed laptop rendah saat booting di /etc/default/grub tambahkan GRUB_CMDLINE_LINUX_DEFAULT=\"... intel_pstate=disable p4-clockmod\" sudo update-grub di shell lakukan echo 1 &gt; /sys/devices/system/cpu/intel_pstate/no_turbo install acpi sudo apt-get install acpi-support acpid acpi sudo apt install linux-intel-iotg-5.15-tools-common sudo cpupower frequency-set -g powersave nonaktifkan driver",

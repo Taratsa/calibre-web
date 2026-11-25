@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12346?v=1795442460",
   "cover_og_url": "/cover/12346/og?v=1795442460",
+  "has_cover": false,
   "url": "/book/ipv6-load-module-secara-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Alternatif lain adalah meload modul IPv6 secara automatis / on demand. Kita hanya perlu menambahkan kalimat berikut di file konfigurasi untuk kernel modul loader (biasanya /etc/modules.conf atau /etc/conf.modules atau /etc/modules) : # untuk load IPv6 module on demand secara automatis alias net-pf-10 ipv6 Juga kita bisa men-disable load IPv6 module secara automatis menggunakan kalimat berikut: #",

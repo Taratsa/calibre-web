@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19120?v=1795471712",
   "cover_og_url": "/cover/19120/og?v=1795471712",
+  "has_cover": false,
   "url": "/book/partisi-harddisk-menggunakan-fdisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Misalnya kita akan memmbuat sebuah USB harddisk dengan partisi /opt 512 Mb swap 64 Mb /jffs 256 Mb data sisanya Partisi menggunakan fdisk Ganti /dev/sd? dengan device yang sebenarnya (misalnya /dev/sde) fdisk /dev/sd? Command (m for help): d (deletes the partition) Selected partition 1 Command (m for help): p Disk /dev/sdd: 8015 MB, 8015314944 bytes 255 heads, 63 sectors/track, 974 cylinders",

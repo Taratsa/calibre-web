@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11558?v=1795440189",
   "cover_og_url": "/cover/11558/og?v=1795440189",
+  "has_cover": false,
   "url": "/book/snort-melihat-alert-interval-periodik-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kalau untuk bisa melihat secara periodik alert yang terjad bisa pakai watch -n 2 tail /var/log/snort/snort.log.1234567",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/11510?v=1795440065",
   "cover_og_url": "/cover/11510/og?v=1795440065",
+  "has_cover": false,
   "url": "/book/instalasi-squirrelmail-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: Squirrelmail bermasalah dengan PHP 7.0. Downgrade ke PHP 5.6 Siapkan POP3 , IMAP &amp; SMTP Server Contents 1 Siapkan Repo Tambahan 2 Ubuntu 16.04 3 Konfigurasi Squirrelmail 4 Konfigurasi SMTP Postfix 5 Memancing e-mail ke INBOX 6 Error 6.1 Problem IPv6 7 Referensi 8 Pranala Menarik Siapkan Repo Tambahan sudo add-apt-repository ppa:ondrej/php sudo apt-get update Ubuntu 16.04 sudo locale-gen",

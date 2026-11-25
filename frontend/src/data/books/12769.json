@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12769?v=1795443676",
   "cover_og_url": "/cover/12769/og?v=1795443676",
+  "has_cover": false,
   "url": "/book/cisco-nat-contoh-allowing-internal-users-to-access-the-internet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam contoh ini, anda ingin NAT mengizinkan perangkat tertentu (31 pertama dari setiap subnet) dari inside untuk memulai komunikasi dengan perangkat di outside dengan men-translate alamat yang tidak valid ke alamat yang valid atau kumpulan alamat. Kumpulan telah didefinisikan sebagai range alamat 172.16.10.1 hingga 172.16.10.63. CATATAN NAT GNS3: Catatan NAT GNS3 menggunakan IP 192.168.122.x,",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 693,
-    "longer_than": 45,
+    "longer_than": 44,
     "top": [
       [
         "nat",

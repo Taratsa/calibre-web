@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19114?v=1795471688",
   "cover_og_url": "/cover/19114/og?v=1795471688",
+  "has_cover": false,
   "url": "/book/dumping-seluruh-database-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk dumping seluruh database MediaWiki seperti Situs SpeedyWiki Untuk 16.04 /usr/bin/mysqldump -u wikiuser -pwikipasswd wikidatabase --xml &gt; file.xml /usr/bin/mysqldump -u wikiuser -pwikipasswd wikidatabase -c &gt; /var/www/html/pustaka/datawiki/wikidb.sql tar czf /var/www/html/pustaka/datawiki/images.tar.gz /var/www/html/wiki/images/ tar czf /var/www/html/pustaka/datawiki/wikidb.sql.tar.gz",

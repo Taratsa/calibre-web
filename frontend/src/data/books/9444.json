@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9444?v=1795432895",
   "cover_og_url": "/cover/9444/og?v=1795432895",
+  "has_cover": false,
   "url": "/book/menggunkan-sipsak-mengevaluasi-performance-softswitch-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sipsak # apt-get install sipsak Pemakaian sipsak Send an OPTIONS request to nobody@foo.bar and display received replies: # sipsak -vv -s sip:nobody@foo.bar Trace the SIP path to nobody@foo.bar: # sipsak -T -s sip:nobody@foo.bar Insert a forwarding contact for myself at work to me at home for one hour and authenticated with password if required: # sipsak -U -C sip:me@home -x 3600 -a",

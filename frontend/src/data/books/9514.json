@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9514?v=1795433119",
   "cover_og_url": "/cover/9514/og?v=1795433119",
+  "has_cover": false,
   "url": "/book/openwrt-setup-firewall-onno-widodo-purbo/",
   "rating": null,
   "comment": "Firewall di OpenWRT sebetulnya relatif sederhana dan mudah digunakan secara umum kita hanya butuh dua (2) zone, yaitu LAN (tidak ada proxy &amp; relatif terbuka) WAN (ada proxy) Semua traffic ke WAN akan di proxy. Jika kita membuka / mengaktifkan sebuah interface baru, kita perlu men-set firewall. Secara umum ada dua (2) tahap, yaitu, Menset interface termasuk pada zone firewall yang mana. Mengatur",

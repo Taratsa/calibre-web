@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10972?v=1795438650",
   "cover_og_url": "/cover/10972/og?v=1795438650",
+  "has_cover": false,
   "url": "/book/bokeh-plot-dengan-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "Plot dengan axis datetime. Lakukan cd /var/www/html vi stocks.html Source import numpy as np from bokeh.plotting import figure, output_file, show from bokeh.sampledata.stocks import AAPL # prepare some data aapl = np.array(AAPL['adj_close']) aapl_dates = np.array(AAPL['date'], dtype=np.datetime64) window_size = 30 window = np.ones(window_size)/float(window_size) aapl_avg = np.convolve(aapl,",

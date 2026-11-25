@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/21416?v=1795481782",
   "cover_og_url": "/cover/21416/og?v=1795481782",
+  "has_cover": false,
   "url": "/book/apache-mengatasi-overload-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://goodmanemail.com/apache-setup.html Contents 1 Masalah 2 Solusi 3 Implementasi 4 Saran Lain 5 Referensi 6 Pranala Menarik Masalah Konfigurasi default apache mengijinkan banyak sekali process jika banyak traffic. Memory mungkin aman-aman saja. Yang akan menjadi masalah adalah cputime, mungkin setiap request akan memperoleh 0.3-5% cputime saja. Akibatnya, proses menjadi terlalu lama",

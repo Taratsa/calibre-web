@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12596?v=1795443169",
   "cover_og_url": "/cover/12596/og?v=1795443169",
+  "has_cover": false,
   "url": "/book/virtualbox-instalasi-openwrt-image-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm Untuk menginstalasi OpenWRT image ke VirtualBox. Asumsinya adalah, VirtualBox sudah di instalasi Download dari https://downloads.openwrt.org/releases/18.06.1/targets/ atau buat sendiri file openwrt-x86-64-combined-squashfs.img openwrt-x86-64-combined-ext4.img Dari hasil compile openwrt-x86-generic-combined-ext4.img.gz gunzip",

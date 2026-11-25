@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12953?v=1795444324",
   "cover_og_url": "/cover/12953/og?v=1795444324",
+  "has_cover": false,
   "url": "/book/bird-dari-openwrt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar menjadi router kosongan untuk GNS3. Masuk ke shell, dan buang semua konfigurasi # cp /etc/bird.conf /etc/bird.conf.example rm -Rf /etc/config/firewall* rm -Rf /etc/config/luci* rm -Rf /etc/config/ucitrack* rm -Rf /etc/config/freifunk* ifconfig eth0 0.0.0.0 ifconfig eth1 0.0.0.0 ifconfig eth2 0.0.0.0 ifconfig eth3 0.0.0.0 ifconfig eth4 0.0.0.0 ifconfig eth5 0.0.0.0 ifconfig eth6 0.0.0.0",

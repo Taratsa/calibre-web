@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15839?v=1795457139",
   "cover_og_url": "/cover/15839/og?v=1795457139",
+  "has_cover": false,
   "url": "/book/llm-rag-contoh-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contoh: https://www.youtube.com/watch?v=7VAs22LC7WE python3 -m venv venv source venv/bin/activate mkdir pdf mkdir db pip3 install langchain_community pip3 install langchain-text-splitters pip3 install fastembed pip3 install pdfplumber pip3 install chromadb Edit apps.py from langchain_community.llms import Ollama llm = Ollama(model=\"llama3\") responds=llm.invoke(\"Why the sky is blue?\")",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12224?v=1795441948",
   "cover_og_url": "/cover/12224/og?v=1795441948",
+  "has_cover": false,
   "url": "/book/arduino-pcm-audio-play-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install TMRpcm library cd ~/Arduino/libraries/ wget https://github.com/TMRh20/TMRpcm/archive/master.zip unzip master.zip mv TMRpcm-master/ TMRpcm Edit cd ~/Arduino/libraries/TMRpcm vi pcmConfig.h Pastikan, #define DISABLE_SPEAKER2 Code #include \"TMRpcm.h\" #include  #include  char mychar; const int CS_PIN = 4; TMRpcm audio; void setup() { audio.speakerPin = 9; audio.setVolume(3); //",

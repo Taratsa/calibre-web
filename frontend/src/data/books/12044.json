@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12044?v=1795441398",
   "cover_og_url": "/cover/12044/og?v=1795441398",
+  "has_cover": false,
   "url": "/book/arduino-cd-card-check-info-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* SD card test This example shows how use the utility libraries on which the' SD library is based in order to get info about your SD card. Very useful for testing a card when you're not sure whether its working or not. The circuit: * SD card attached to SPI bus as follows: ** MOSI - pin 11 on Arduino Uno/Duemilanove/Diecimila ** MISO - pin 12 on Arduino Uno/Duemilanove/Diecimila ** CLK - pin 13",

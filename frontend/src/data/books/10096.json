@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10096?v=1795436018",
   "cover_og_url": "/cover/10096/og?v=1795436018",
+  "has_cover": false,
   "url": "/book/sqlite-instalasi-menggunakan-apt-get-onno-widodo-purbo/",
   "rating": null,
   "comment": "jika sebelumnya pernah di instalasi sqlite3 ada baiknya lakukan rm /usr/local/bin/sqlite3 Install sqlite3 apt-get install sqlite3 libsqlite3-dev SQLite3 suka rewel, coba di test dulu sqlite3 --version Yang seharusnya keluar 3.7.15.2 2013-01-09 11:53:05 c0e09560d26f0a6456be9dd3447f5311eb4f238f Kalau ada error, SQLite header mismatch seperti di bawah ini SQLite header and source version mismatch",

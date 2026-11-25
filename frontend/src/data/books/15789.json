@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15789?v=1795456839",
   "cover_og_url": "/cover/15789/og?v=1795456839",
+  "has_cover": false,
   "url": "/book/dd-larger-disk-to-smaller-disk-onno-widodo-purbo/",
   "rating": null,
   "comment": "15 As others have mentioned here using just dd won't work due to the copy of the GPT table placed at the end of the disk. I have managed to perform a migration to a smaller drive using the following method: First - boot into liveCD distro of your choice. Resize the source drive partitions to indeed fit within the smaller drive's constraints (using gparted for example). Then, assuming sda is the",

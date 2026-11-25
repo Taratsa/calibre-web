@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11227?v=1795439368",
   "cover_og_url": "/cover/11227/og?v=1795439368",
+  "has_cover": false,
   "url": "/book/ubuntu-cek-temperatur-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://askubuntu.com/questions/15832/how-do-i-get-the-cpu-temperature sudo apt-get install lm-sensors hddtemp sudo sensors-detect sudo service kmod start It will ask you few questions. Answer Yes for all of them. Finally to get your CPU temperature type sensors in your terminal. sensors",

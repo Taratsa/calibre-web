@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14622?v=1795450896",
   "cover_og_url": "/cover/14622/og?v=1795450896",
+  "has_cover": false,
   "url": "/book/instal-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk instalasi apache amat sangat sederhana sekali, kita dapat menggunakan perintah berikut, sudo su apt -y install apache2 Setelah di instalasi, maka halaman HTML biasanya dapat diletakkan di folder /var/www/html/ Dan konfigurasi Web server apache dapat di akses di /etc/apache2/ Pada dasarnya Apache dapat digunakan tanpa perlu terlalu banyak harus diubah konfigurasinya.",

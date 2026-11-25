@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10297?v=1795436657",
   "cover_og_url": "/cover/10297/og?v=1795436657",
+  "has_cover": false,
   "url": "/book/ffmpeg-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Compile FFmpeg di Ubuntu, Debian, atau Mint Contents 1 Instalasi aplikasi pendukung 2 Compilation &amp; Installation 3 Yasm 4 libx264 5 libfdk-aac 6 libmp3lame 7 libopus 8 libvpx 9 ffmpeg 10 Penutup 11 Persistent Environment Variables 12 Updating FFmpeg 13 Referensi Instalasi aplikasi pendukung sudo apt-get update sudo apt-get -y install autoconf automake build-essential libass-dev libfreetype6-dev \\",

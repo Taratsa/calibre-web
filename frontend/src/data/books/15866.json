@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15866?v=1795457347",
   "cover_og_url": "/cover/15866/og?v=1795457347",
+  "has_cover": false,
   "url": "/book/mkfifo-onno-widodo-purbo/",
   "rating": null,
   "comment": "Apa itu mkfifo? mkfifo adalah singkatan dari \"make first-in-first-out\". Ini adalah perintah di shell Linux yang digunakan untuk membuat named pipe atau FIFO (First-In-First-Out). FIFO adalah jenis file khusus yang berfungsi sebagai saluran komunikasi antar proses (inter-process communication/IPC). Data yang ditulis ke satu ujung FIFO akan dibaca dari ujung yang lain dalam urutan yang sama seperti",

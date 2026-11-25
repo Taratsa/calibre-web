@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18835?v=1795470292",
   "cover_og_url": "/cover/18835/og?v=1795470292",
+  "has_cover": false,
   "url": "/book/client-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi client di Linux agar memperoleh IP address secara automatis dari router ADSL tidak terlalu sulit. Sebagian besar konfigurasi yang anda butuhkan terdapat pada folder /etc/sysconfig. Anda perlu memastikan bahwa file /etc/sysconfig/network Isinya kira-kira NETWORKING=yes HOSTNAME=hostname.mesin.anda Dan, misalnya nama interface yang tersambung ke LAN adalah eth1, maka file",

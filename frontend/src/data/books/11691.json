@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11691?v=1795440511",
   "cover_og_url": "/cover/11691/og?v=1795440511",
+  "has_cover": false,
   "url": "/book/tripwire-policy-reference-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://linux.die.net/man/4/twpolicy Name twpolicy - Tripwire policy file reference Description The policy file describes system objects to be monitored by Tripwire, and specifies what properties for each object should be collected and stored in the database file. Each object in the policy file is associated with a property mask, which describes what changes to the file or directory",

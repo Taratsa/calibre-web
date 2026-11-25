@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15651?v=1795455985",
   "cover_og_url": "/cover/15651/og?v=1795455985",
+  "has_cover": false,
   "url": "/book/cyber-security-thehive-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Application Stack TheHive dapat di deploy pada standalone server atau sebagai cluster. Aplikasi TheHive bergantung pada: Apache Cassandra untuk menyimpan data (Versi yang didukung: 4.x). Elasticsearch sebagai mesin pengindeksan (Versi yang didukung: 7.x). Sebuah solusi penyimpanan file juga diperlukan; sistem berkas lokal dari server yang menghosting aplikasi memadai dalam skenario server",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 548,
-    "longer_than": 41,
+    "longer_than": 40,
     "top": [
       [
         "thehive",

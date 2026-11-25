@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13532?v=1795446358",
   "cover_og_url": "/cover/13532/og?v=1795446358",
+  "has_cover": false,
   "url": "/book/gnuradio-gr-adsb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/mhostetter/gr-adsb#webserver-dependencies Contents 1 Instalasi Pendukung 2 Jalankan Web Server + Google Maps 2.1 Client 3 Referensi 4 Pranala Menarik Instalasi Pendukung Install gr-sqlite seperti di terangkan di GNURadio: gr-sqlite Jika menggunakan built-in Google Maps webserver, kita perlu menginstalasi package Python berikut, sudo su apt update apt -y install",

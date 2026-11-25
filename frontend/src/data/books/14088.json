@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14088?v=1795448564",
   "cover_og_url": "/cover/14088/og?v=1795448564",
+  "has_cover": false,
   "url": "/book/anydesk-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.krizna.com/ubuntu/install-anydesk-ubuntu-20-04/ sudo su wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add - echo \"deb http://deb.anydesk.com/ all main\" &gt; /etc/apt/sources.list.d/anydesk-stable.list apt update apt -y install anydesk Referensi https://www.krizna.com/ubuntu/install-anydesk-ubuntu-20-04/ Pranala Menarik AnyDesk",

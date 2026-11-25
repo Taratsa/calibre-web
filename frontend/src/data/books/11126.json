@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11126?v=1795439083",
   "cover_og_url": "/cover/11126/og?v=1795439083",
+  "has_cover": false,
   "url": "/book/nmap-smtp-commands-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/smtp-commands.html Contents 1 File smtp-commands 2 User Summary 3 Example Usage 4 Script Output 5 Referensi File smtp-commands Script types: portrule Categories: default, discovery, safe Download: http://nmap.org/svn/scripts/smtp-commands.nse User Summary Attempts to use EHLO and HELP to gather the Extended commands supported by an SMTP server. Example",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 214,
-    "longer_than": 25,
+    "longer_than": 24,
     "top": [
       [
         "nmap",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20300?v=1795476834",
   "cover_og_url": "/cover/20300/og?v=1795476834",
+  "has_cover": false,
   "url": "/book/intel-mpi-benchmark-onno-widodo-purbo/",
   "rating": null,
   "comment": "Intel MPI Benchmark From Rocks Clusters Intel MPI Benchmark Contents [hide] * 1 Initial steps * 2 Get the source: * 3 Build the application: * 4 Running IMB * 5 Viewing output [edit] Initial steps Create directory structure in the shared applications mount point: cd /share/apps mkdir benchmarks mkdir benchmarks/IMB cd benchmarks/IMB [edit] Get the source: IMB is available on the Intel web site:",

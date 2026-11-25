@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12211?v=1795441856",
   "cover_og_url": "/cover/12211/og?v=1795441856",
+  "has_cover": false,
   "url": "/book/openface-contoh-face-detection-system-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://gist.github.com/ageitgey/63304fce6963cddec800afac5e3b065e Step 1 Make a folder called ./training-images/ inside the openface folder. mkdir training-images Step 2 Make a subfolder for each person you want to recognize. For example: mkdir ./training-images/will-ferrell/ mkdir ./training-images/chad-smith/ mkdir ./training-images/jimmy-fallon/ Step 3 Copy all your images of each",

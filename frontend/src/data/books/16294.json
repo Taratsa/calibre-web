@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/16294?v=1795459990",
   "cover_og_url": "/cover/16294/og?v=1795459990",
+  "has_cover": false,
   "url": "/book/server-mailscanner-installation-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setting up MailScanner on Ubuntu may not work as expected. If you have already installed it, it is advisable to remove it first: /etc/init.d/mailscanner stop apt-get remove mailscanner Contents 1 Postfix Installation 2 MailScanner Installation 3 Fix for Ubuntu 8.04 4 References 5 Interesting Links Postfix Installation Install Postfix: sudo apt-get install postfix Add to the end of",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 516,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "mailscanner",

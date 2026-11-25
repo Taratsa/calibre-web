@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18166?v=1795467956",
   "cover_og_url": "/cover/18166/og?v=1795467956",
+  "has_cover": false,
   "url": "/book/voip-voicemail-di-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Voicemail digunakan di Asterisk untuk meninggalkan pesan, jika tidak ada yang menerima telepon yang masuk. Konfigurasi Voicemail di asterisk ada di file voicemail.conf yang ada di /etc/asterisk/ Kita dapat membuat mailbox di default mailbox context - [default] atau membuat di context yang lain. Perlu di perhatikan bahwa context di mailbox voicemail dengan context di extensions.conf tidak ada",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 516,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "mailbox",

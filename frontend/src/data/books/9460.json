@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9460?v=1795432945",
   "cover_og_url": "/cover/9460/og?v=1795432945",
+  "has_cover": false,
   "url": "/book/serctl-untuk-administrator-ser-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan file yang dibutuhkan # touch /tmp/ser_fifo # chown -Rf www-data /tmp/ser_fifo Menggunakan SERctl # serctl /usr/sbin/serctl $Revision: 1.83.2.2 $ parameter usage: * subscribers * add    .. add a new subscriber (*) passwd   ......... change user's password (*) rm  ...................... delete a user (*) mail ",

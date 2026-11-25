@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15239?v=1795453811",
   "cover_og_url": "/cover/15239/og?v=1795453811",
+  "has_cover": false,
   "url": "/book/open5gs-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sistem Operasi Ubuntu 22.04 Contents 1 Install MongoDB 2 Setup TUN device (not persistent) 3 Install Pendukung 4 Git clone &amp; Compile 5 Test 6 Install Open5gs 7 Pranala Menarik Install MongoDB Import public key sudo apt update sudo apt install gnupg curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg --dearmor Buat file",

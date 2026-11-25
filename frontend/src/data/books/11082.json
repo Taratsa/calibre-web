@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11082?v=1795438968",
   "cover_og_url": "/cover/11082/og?v=1795438968",
+  "has_cover": false,
   "url": "/book/arduino-ping-dengan-hc-sr04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.instructables.com/id/Easy-ultrasonic-4-pin-sensor-monitoring-hc-sr04/ Contents 1 Diagram 2 Code 3 Monitor 4 Referensi Diagram Code int vcc = 2; //attach pin 2 to vcc int trig = 3; // attach pin 3 to Trig int echo = 4; //attach pin 4 to Echo int gnd = 5; //attach pin 5 to GND void setup() { pinMode (vcc,OUTPUT); pinMode (gnd,OUTPUT); // initialize serial communication:",

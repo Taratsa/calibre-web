@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12546?v=1795443034",
   "cover_og_url": "/cover/12546/og?v=1795443034",
+  "has_cover": false,
   "url": "/book/r-contoh-dataframesource-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(tm) docs &lt;- data.frame(doc_id = c(\"doc_1\", \"doc_2\"), text = c(\"This is a text.\", \"This another one.\"), dmeta1 = 1:2, dmeta2 = letters[1:2], stringsAsFactors = FALSE) (ds &lt;- DataframeSource(docs)) x &lt;- Corpus(ds) inspect(x) meta(x) Pranala Menarik R",
@@ -66,7 +67,7 @@
       ],
       [
         20198,
-        0.29
+        0.3
       ],
       [
         19488,

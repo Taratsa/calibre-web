@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14211?v=1795449057",
   "cover_og_url": "/cover/14211/og?v=1795449057",
+  "has_cover": false,
   "url": "/book/minikube-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Layanan bertipe LoadBalancer dapat diekspos melalui perintah minikube tunnel. Itu harus dijalankan di jendela terminal terpisah agar LoadBalancer tetap berjalan. Ctrl-C di terminal dapat digunakan untuk menghentikan proses saat rute jaringan di cleanup. Aktifkan minikube tunnel Delete minikube tunnel --cleanup Pranala menarik minikube",

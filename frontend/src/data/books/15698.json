@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15698?v=1795456263",
   "cover_og_url": "/cover/15698/og?v=1795456263",
+  "has_cover": false,
   "url": "/book/java-convert-java-ke-jar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://stackoverflow.com/questions/9941296/how-do-i-make-a-jar-from-a-java-file Simply with command line: javac MyApp.java jar -cf myJar.jar MyApp.class Sure IDEs avoid using command line terminal Ok this is the solution I would have liked to find, instead here I write it: First create the directory structure corresponding to the package defined for the .java file, if it is",

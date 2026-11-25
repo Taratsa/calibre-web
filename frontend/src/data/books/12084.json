@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12084?v=1795441493",
   "cover_og_url": "/cover/12084/og?v=1795441493",
+  "has_cover": false,
   "url": "/book/nmap-outfile-ke-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Nmap Output Formats Save default output to file nmap -oN outputfile.txt 192.168.1.1 Save results as XML nmap -oX outputfile.xml 192.168.1.1 Save results in a format for grep nmap -oG outputfile.txt 192.168.1.1 Save in all formats nmap -oA outputfile 192.168.1.1",

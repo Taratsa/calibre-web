@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9419?v=1795432815",
   "cover_og_url": "/cover/9419/og?v=1795432815",
+  "has_cover": false,
   "url": "/book/buffalo-cara-recovery-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Buat Script 2 Lakukan Recovery 3 Perintah ARP untuk Beberapa Device Buffalo 4 Pranala Menarik 4.1 Wireless 4.2 Storage Server 4.3 Beberapa Teknik Operasi NAS Buat Script Buat Script vi buatflashbuffalo.sh Untuk Buffalo WZR HP G450H isi dengan ifconfig eth0:11 192.168.11.2 arp -s 192.168.11.1 02:aa:bb:cc:dd:23 curl -T openwrt-ar71xx-generic-wzr-hp-g450h-squashfs-tftp.bin",

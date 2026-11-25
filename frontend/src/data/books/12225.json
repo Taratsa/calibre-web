@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12225?v=1795441951",
   "cover_og_url": "/cover/12225/og?v=1795441951",
+  "has_cover": false,
   "url": "/book/wspr-rekam-wspr-audio-onno-widodo-purbo/",
   "rating": null,
   "comment": "If I'm not wrong, then I guess you are talking about recording \"Stereo Mix\" or loopback Output. In layman's terms, Recording Stereo Mix means recording sound from speaker output. Here's how to do it: Install pavucontrol from Ubuntu Software Center. Install audacity from Ubuntu Software Center. Select pulse* as recording device in Audacity. Click Record Button. Open PulseAudio Volume Control",

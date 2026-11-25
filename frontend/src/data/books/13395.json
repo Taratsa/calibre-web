@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13395?v=1795445817",
   "cover_og_url": "/cover/13395/og?v=1795445817",
+  "has_cover": false,
   "url": "/book/esp32-wifi-udp-second-since-boot-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include  /* WiFi network name and password */ const char * ssid = \"HUAWEI-1A73\"; const char * pwd = \"52408495\"; // IP address to send UDP data to. // it can be ip address of the server or // a network broadcast address // here is broadcast address const char * udpAddress = \"192.168.8.100\"; const int udpPort = 44444; //create UDP instance WiFiUDP udp; void setup(){",

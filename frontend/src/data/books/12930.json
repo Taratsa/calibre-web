@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12930?v=1795444259",
   "cover_og_url": "/cover/12930/og?v=1795444259",
+  "has_cover": false,
   "url": "/book/ospf-type-1-dan-type-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "When OSPF exports route information from external autonomous systems (ASs), it includes a cost, or external metric, in the route. OSPF supports two types of external metrics: Type 1 and Type 2. The difference between the two metrics is how OSPF calculates the cost of the route. Type 1 external metrics are equivalent to the link-state metric, where the cost is equal to the sum of the internal",

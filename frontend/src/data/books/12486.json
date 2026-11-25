@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12486?v=1795442881",
   "cover_og_url": "/cover/12486/og?v=1795442881",
+  "has_cover": false,
   "url": "/book/apache-virtual-host-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Buat Directory 3 Buat Demo Page 4 Success! The test.ac.id virtual host is working! 5 Success! The coba.ac.id virtual host is working! 5.1 Buat Virtual Host 5.2 Konfigurasi Apache2 5.3 Enable Virtual Host 5.4 Client 5.5 Pranala Menarik Install sudo apt update sudo apt install apache2 Buat Directory sudo mkdir -p /var/www/html/webmirror/test.ac.id/ sudo mkdir -p",

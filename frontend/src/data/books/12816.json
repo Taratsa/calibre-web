@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12816?v=1795443839",
   "cover_og_url": "/cover/12816/og?v=1795443839",
+  "has_cover": false,
   "url": "/book/cisco-bgp-redistribute-ospf-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://community.cisco.com/t5/routing/ospf-to-bgp-redistribution/td-p/1165332 router ospf 6 router-id x.x.x.x auto-cost reference-bandwidth 10000 area 38 stub no-summary timers throttle spf 10 100 5000 timers throttle lsa all 10 100 5000 redistribute bgp 65500 metric 500 subnets network x.x.x.x 0.0.0.255 area 38 router bgp 65500 no synchronization bgp log-neighbor-changes redistribute",

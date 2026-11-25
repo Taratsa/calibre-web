@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12687?v=1795443432",
   "cover_og_url": "/cover/12687/og?v=1795443432",
+  "has_cover": false,
   "url": "/book/apache-menghitung-max-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "\"You can, and should, control the MaxClients setting so that your server does not spawn so many children it starts swapping. This procedure for doing this is simple: determine the size of your average Apache process, by looking at your process list via a tool such as top, and divide this into your total available memory, leaving some room for other processes.\" Get the Apache process average size:",

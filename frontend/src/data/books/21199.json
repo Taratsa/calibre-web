@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/21199?v=1795480783",
   "cover_og_url": "/cover/21199/og?v=1795480783",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-mounting-shared-disk-dari-linksys-ke-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah sharing disk di lakukan di linksys WRT160NL atau WRT610N, kita dapat mount di Linux menggunakan perintah mkdir /mnt/sharedlinksys mount -t cifs //192.168.0.1/public /mnt/public -o username=admin -o password=admin Folder yang di shared dapat di akses di /mnt/sharedlinksys Untuk mengcopy file dapat dilakukan menggunakan perintah cp fileyangakandicopy /mnt/sharedlinksys Pranala Menarik WiFi:",

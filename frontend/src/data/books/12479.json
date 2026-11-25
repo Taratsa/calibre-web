@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12479?v=1795442862",
   "cover_og_url": "/cover/12479/og?v=1795442862",
+  "has_cover": false,
   "url": "/book/apache-virtual-host-lagi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://serversforhackers.com/c/configuring-apache-virtual-hosts Apache memungkinkan kita untuk menjalankan beberapa situs dalam sebuah server apache. Ubuntu menggunakan dua (2) directory untuk virtual host, yaitu: /etc/apache2/sites-available /etc/apache2/sites-enabled Folder site-enabled berisi symlink ke site-available, dengan cara ini kita dapat mengkonfigurasi dengan aman di",

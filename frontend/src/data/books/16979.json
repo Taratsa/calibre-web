@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16979?v=1795463800",
   "cover_og_url": "/cover/16979/og?v=1795463800",
+  "has_cover": false,
   "url": "/book/download-file-dan-web-menggunakan-wget-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Beberapa Contoh Penggunaan wget 1.1 Download Sebuah File 1.2 Download Recursive 2 Meneruskan Download 3 Menset Level Mirror 4 Mirror Web 5 Mirror Web CSS image 6 Referensi 7 Pranala Menarik Beberapa Contoh Penggunaan wget Download Sebuah File Mendownload file menggunakan wget # wget -c --limit-rate=20k url-file-yang-akan-di-download file-tujuan contoh # wget -c --limit-rate=20k",

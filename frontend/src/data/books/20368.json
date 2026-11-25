@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20368?v=1795477023",
   "cover_og_url": "/cover/20368/og?v=1795477023",
+  "has_cover": false,
   "url": "/book/btrfs-design-onno-widodo-purbo/",
   "rating": null,
   "comment": "Btrfs is implemented with simple and well known constructs. It should perform well, but the long term goal of maintaining performance as the FS system ages and grows is more important than winning a short lived benchmark. To that end, benchmarks are being used to try and simulate performance over the life of a filesystem. Contents 1 Btree Data structures 2 Filesystem Data Structures 3 Inodes 4",

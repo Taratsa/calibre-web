@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13285?v=1795445398",
   "cover_og_url": "/cover/13285/og?v=1795445398",
+  "has_cover": false,
   "url": "/book/panda-scaling-select-colums-onno-widodo-purbo/",
   "rating": null,
   "comment": "import pandas as pd import numpy as np from sklearn import preprocessing dfTest = pd.DataFrame({'A':[14.00,90.20,90.95,96.27,91.21],'B':[103.02,107.26,110.35,114.23,114.68], 'C':['big','small','big','small','small']}) min_max_scaler = preprocessing.MinMaxScaler() def scaleColumns(df, cols_to_scale): for col in cols_to_scale: df[col] =",

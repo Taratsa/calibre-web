@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16335?v=1795460227",
   "cover_og_url": "/cover/16335/og?v=1795460227",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-colab-onno-widodo-purbo/",
   "rating": null,
   "comment": "TensorFlow adalah pustaka open-source yang digunakan untuk machine learning dan deep learning. Salah satu keuntungan besar menggunakan Google Colab adalah bahwa TensorFlow sudah terpasang secara bawaan , sehingga tidak perlu menginstalnya secara manual. Kita bisa langsung menggunakannya dengan perintah berikut: import tensorflow as tf print(tf.__version__) Kode ini akan menampilkan versi",

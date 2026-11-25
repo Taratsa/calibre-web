@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18956?v=1795471005",
   "cover_og_url": "/cover/18956/og?v=1795471005",
+  "has_cover": false,
   "url": "/book/voip-cookbook-use-opensipsctl-in-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "Opensipsctl is a usefull tool provided by OpenSIPS, that can be used for, Adding users Check who's online Monitoring opensips activities To add user, we can use # opensipsctl add number@host password # opensipsctl add 2000@192.168.0.3 123456 To see who's online # opensipsctl ul show number@host # opensipsctl ul show 2000@192.168.0.3 To monitor OpenSIPS Softswitch activities # opensipsctl monitor",

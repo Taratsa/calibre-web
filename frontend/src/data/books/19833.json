@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19833?v=1795475203",
   "cover_og_url": "/cover/19833/og?v=1795475203",
+  "has_cover": false,
   "url": "/book/webhtb-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "How To Install download latest version from downloads section or direct download link put the packet into your web document root (ex.: Fedora normaly: \"/var/www/html\") extract the packet, ex.: tar -jxvf WebHTB_V2.9.bz2 setup permision, (see in \"httpd.conf\" the user who start apache server) and after that run command \"chown -R apacheuser.apacheuser webhtb\" from apache document root Note: replace",

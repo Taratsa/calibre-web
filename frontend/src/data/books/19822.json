@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19822?v=1795475150",
   "cover_og_url": "/cover/19822/og?v=1795475150",
+  "has_cover": false,
   "url": "/book/instal-playonlinux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi wget -q \" http://deb.playonlinux.com/public.gpg \" -O- | sudo apt-key add - sudo wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list sudo apt-get update sudo apt-get install playonlinux Referensi http://www.playonlinux.com/en/download.html Pranala Menarik Linux Howto",

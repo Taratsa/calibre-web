@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16791?v=1795463210",
   "cover_og_url": "/cover/16791/og?v=1795463210",
+  "has_cover": false,
   "url": "/book/llm-ubuntu-24-04-desktop-ollama-n8n-open-webui-waha-yaml-ringan-onno-widodo-purbo/",
   "rating": null,
   "comment": "docker-compose.yaml services: ################################ # 1. OLLAMA (GPU) ################################ ollama: image: ollama/ollama:latest container_name: ollama restart: unless-stopped ports: - \"11434:11434\" volumes: - ollama_data:/root/.ollama environment: - OLLAMA_HOST=0.0.0.0:11434 - NVIDIA_VISIBLE_DEVICES=all - NVIDIA_DRIVER_CAPABILITIES=compute,utility - TZ=Asia/Jakarta deploy:",

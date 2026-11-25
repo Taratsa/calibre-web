@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10759?v=1795438041",
   "cover_og_url": "/cover/10759/og?v=1795438041",
+  "has_cover": false,
   "url": "/book/membuka-daa-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://ubuntuforums.org/showthread.php?t=909792 Download &amp; buka sudo wget http://poweriso.com/poweriso-1.1.tar.gz cp poweriso-1.1.tar.gz /usr/local/src/ cd /usr/local/src sudo tar zxvf poweriso-1.1.tar.gz Konversikan ./poweriso convert /source_folder/filename.daa -o newfile.iso -ot iso Alternatif Lain Menggunakan wine wine PowerISO6.exe convert fileinput.daa -o fileoutput.iso -ot iso Atau",

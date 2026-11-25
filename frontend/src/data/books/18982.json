@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18982?v=1795471118",
   "cover_og_url": "/cover/18982/og?v=1795471118",
+  "has_cover": false,
   "url": "/book/voip-cookbook-the-extension-pattern-onno-widodo-purbo/",
   "rating": null,
   "comment": "When Asterisk accepts incoming connection through a channel, Asterisk will see the context defined for such a channel to see what commands that need to be carried out by Asterisk. Context will define a set of commands depending on the extension called by the user. For example, a given context may give a set of commands if a user calls the number \"123\", and a set of other commands if the user",

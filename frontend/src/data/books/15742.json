@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15742?v=1795456561",
   "cover_og_url": "/cover/15742/og?v=1795456561",
+  "has_cover": false,
   "url": "/book/cisco-tunnel-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tool yang digunakan GNS3 3 Router Cisco C7200 1 Kali Linux 1 Virtual PC Sambungan: R1 Ethernet 1/0 -&gt; R2 Ethernet 1/0 R1 Ethernet 1/1 -&gt; R3 Ethernet 1/0 R2 Ethernet 1/1 -&gt; PC1 R3 Ethernet 1/1 -&gt; PC2 Setup IP address R1 enable configure terminal interface Ethernet 1/0 no shutdown ip address 12.12.12.1 255.255.255.0 exit interface Ethernet 1/1 no shutdown ip address 13.13.13.1 255.255.255.0 exit R2",

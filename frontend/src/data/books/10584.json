@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/10584?v=1795437545",
   "cover_og_url": "/cover/10584/og?v=1795437545",
+  "has_cover": false,
   "url": "/book/firewall-untuk-router-mikrotik-onno-widodo-purbo/",
   "rating": null,
   "comment": "Written by harijanto@datautama.net.id http://www.datautama.net.id Thursday, 09 November 2006 Untuk mengamankan router mikrotik dari traffic virus dan excess ping dapat digunakan skrip firewall berikut Pertama buat address-list \"ournetwork\" yang berisi alamat IP radio, IP LAN dan IP WAN atau IP lainnya yang dapat dipercaya Dalam contoh berikut alamat IP radio adalah = 10.0.0.0/16, IP LAN =",

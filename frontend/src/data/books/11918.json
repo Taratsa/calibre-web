@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11918?v=1795441084",
   "cover_og_url": "/cover/11918/og?v=1795441084",
+  "has_cover": false,
   "url": "/book/libreoffice-menu-di-atas-hilang-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kalau menu di atas libreoffice hilang, lakukan initctl restart unity-panel-service Kalau upstart refused To check if it's there: sudo systemctl list-unit-files | grep -i dynatrace To start: sudo systemctl start dynatrace To check status: systemctl status dynatrace To enable at boot: sudo systemctl enable dynatarce",

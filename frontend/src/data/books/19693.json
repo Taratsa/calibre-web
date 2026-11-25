@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19693?v=1795474562",
   "cover_og_url": "/cover/19693/og?v=1795474562",
+  "has_cover": false,
   "url": "/book/error-could-not-get-lock-waktu-update-repository-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kejadan .. # apt-get update [enter] E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable) E: Unable to lock the list directory Solusinya antara lain adalah lakukan sebelum apt-get update sudo rm -Rf /var/lib/apt/lists/lock Pranala Menarik Linux Howto",

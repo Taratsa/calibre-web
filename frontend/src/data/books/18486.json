@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18486?v=1795469034",
   "cover_og_url": "/cover/18486/og?v=1795469034",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-beberapa-batch-file-bermanfaat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 mirrorbuild.sh 2 updatewiki.sh 3 nobody.sh 4 aktifkanproxy.sh 5 Set IP Statik 6 Set IP Dinamik 7 Set Executable 8 Pranala Menarik mirrorbuild.sh apt-get install debmirror mkdir /var/data/mirrorkeyring gpg --no-default-keyring --keyring /var/data/mirrorkeyring/trustedkeys.gpg --import /usr/share/keyrings/ubuntu-archive-keyring.gpg vi /usr/local/bin/mirrorbuild.sh #### Start script to",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1122,
-    "longer_than": 52,
+    "longer_than": 51,
     "top": [
       [
         "iptables",

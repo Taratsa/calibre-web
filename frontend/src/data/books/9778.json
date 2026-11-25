@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9778?v=1795434855",
   "cover_og_url": "/cover/9778/og?v=1795434855",
+  "has_cover": false,
   "url": "/book/ipv6-konfigurasi-red-hat-linux-dan-clones-onno-widodo-purbo/",
   "rating": null,
   "comment": "Test dukungan IPv6 untuk script konfigurasi network Kita dapat men-test, apakah distro Linux yang kita gunakan mendukung konfigurasi IPv6 yang presisten. Library script berikut harusnya ada: /etc/sysconfig/network-scripts/network-functions-ipv6 Secara automatis test: # test -f /etc/sysconfig/network-scripts/network-functions-ipv6 &amp;&amp; echo \"Main IPv6 script library exists\" Versi dari library",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14193?v=1795448991",
   "cover_og_url": "/cover/14193/og?v=1795448991",
+  "has_cover": false,
   "url": "/book/mount-file-iso-membuat-virtual-cd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat Folder Untuk Mount File iso $ sudo mkdir /mnt/virtualcd Mount file iso ke folder Virtual CD $ sudo mount -t iso9660 -o loop /path/ke/file.iso /mnt/virtualcd Kadang-kadang untuk HD ISO lebih baik menggunakan perintah $ sudo mount -o loop /path/ke/file.iso /mnt/virtualcd Anda dapat melihat isi file yang ada di Virtual CD dengan menggunakan perintah $ ls /mnt/virtualcd Pranala Menarik Linux",

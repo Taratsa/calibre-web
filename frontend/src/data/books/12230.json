@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12230?v=1795441967",
   "cover_og_url": "/cover/12230/og?v=1795441967",
+  "has_cover": false,
   "url": "/book/instalasi-zekr-onno-widodo-purbo/",
   "rating": null,
   "comment": "Zekr adalah aplikasi open source yang di gunakan untuk pembelajaran Al-Quran dan Pembacaan Al-Quran. Untuk pemasangan zekr caranya adalah sebagai berikut: sudo apt-get install flashplugin-nonfree ttf-farsiweb Cek Java update-java-alternatives -l jika belum ada Java sudo apt-get install openjdk-6-jre Tambahkan di /etc/apt/sources.list deb http://ppa.launchpad.net/zekr/ubuntu karmic main deb",

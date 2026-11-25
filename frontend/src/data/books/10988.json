@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10988?v=1795438695",
   "cover_og_url": "/cover/10988/og?v=1795438695",
+  "has_cover": false,
   "url": "/book/bokeh-plot-random-data-dengan-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "import sys import time import socket import random import datetime from numpy import cumprod, linspace, random from bokeh.plotting import figure, output_server, show, cursession, vplot, output_file TOOLS = \"pan,wheel_zoom,box_zoom,reset,save\" output_file(\"coba5.html\") x = [0] y = [0] i = 0 n = datetime.datetime.now() x = ['%d.%d'%(n.minute*60+n.second,n.microsecond)] y = [random.random()] for i",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11421?v=1795439836",
   "cover_og_url": "/cover/11421/og?v=1795439836",
+  "has_cover": false,
   "url": "/book/twitter-sentiment-analysis-with-nltk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Now that we have a sentiment analysis module, we can apply it to just about any text, but preferrably short bits of text, like from Twitter! To do this, we're going to combine this tutorial with the Twitter streaming API tutorial. The initial code from that tutorial is: from tweepy import Stream from tweepy import OAuthHandler from tweepy.streaming import StreamListener consumer key, consumer",

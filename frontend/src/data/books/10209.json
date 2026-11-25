@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10209?v=1795436378",
   "cover_og_url": "/cover/10209/og?v=1795436378",
+  "has_cover": false,
   "url": "/book/open-vswitch-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://askubuntu.com/questions/333170/how-do-i-install-open-vswitch 0 down vote favorite How do I install Open vSwitch on raring? I can't find any official Ubuntu docs on this anywhere. DevStack seems to do this: kernel_version=`cat /proc/version | cut -d \" \" -f3` apt-get install make fakeroot dkms openvswitch-switch openvswitch-datapath-dkms linux-headers-$kernel_version On the other",

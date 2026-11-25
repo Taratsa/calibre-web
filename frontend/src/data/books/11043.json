@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11043?v=1795438863",
   "cover_og_url": "/cover/11043/og?v=1795438863",
+  "has_cover": false,
   "url": "/book/arduino-serial-event-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/SerialEvent This example demonstrates use of the SerialEvent() function. This function is called inside the loop(). If there is serial data in the buffer each character found is added to a string until a newline is found. In this case the string made by the characters received so far is printed and set back to null. Hardware Arduino or Genuino Board Code",

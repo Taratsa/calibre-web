@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18997?v=1795471183",
   "cover_og_url": "/cover/18997/og?v=1795471183",
+  "has_cover": false,
   "url": "/book/voip-cookbook-sipp-commands-onno-widodo-purbo/",
   "rating": null,
   "comment": "Usage: sipp remote_host[:remote_port] [options] Available options: -v : Display version and copyright information. -aa : Enable automatic 200 OK answer for INFO, UPDATE and NOTIFY messages. -auth_uri : Force the value of the URI for authentication. By default, the URI is composed of remote_ip:remote_port. -base_cseq : Start value of [cseq] for each call. -bg : Launch SIPp in background mode.",

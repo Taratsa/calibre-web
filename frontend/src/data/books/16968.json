@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16968?v=1795463769",
   "cover_og_url": "/cover/16968/og?v=1795463769",
+  "has_cover": false,
   "url": "/book/mengatasi-masalah-touchpad-di-jaunty-9-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang touchpad laptop tidak jalan di Jounty (9.04) untuk mengaktifkan tinggal ketik $ sudo modprobe -r psmouse $ sudo modprobe psmouse proto=imps Agar permanen saat booting sebaiknya masukan perintah modprobe -r psmouse modprobe psmouse proto=imps pada file /etc/rc.local Semoga sukses Pranala Menarik Linux Howto",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11680?v=1795440486",
   "cover_og_url": "/cover/11680/og?v=1795440486",
+  "has_cover": false,
   "url": "/book/mqtt-arduino-authentication-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Basic MQTT example with Authentication - connects to an MQTT server, providing username and password - publishes \"hello world\" to the topic \"outTopic\" - subscribes to the topic \"inTopic\" */ #include  #include  #include  // Update these with values suitable for your network. byte mac[] = { 0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED }; IPAddress ip(192, 168, 0, 4);",

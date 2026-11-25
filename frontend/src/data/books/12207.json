@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12207?v=1795441841",
   "cover_og_url": "/cover/12207/og?v=1795441841",
+  "has_cover": false,
   "url": "/book/openface-instalasi-di-ubuntu-18-04-desktop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition Untuk instalasi di Ubuntu, akan membutuhkan gcc clang cmake opencv tbb boost Contents 1 Instalasi dependency 2 Instalasi OpenFace 3 Test 4 Referensi Instalasi dependency sudo su apt update apt -y install build-essential cmake libopenblas-dev",

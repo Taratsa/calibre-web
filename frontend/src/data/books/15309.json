@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15309?v=1795454110",
   "cover_og_url": "/cover/15309/og?v=1795454110",
+  "has_cover": false,
   "url": "/book/konfigurasi-enb-openairinterface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengkonfigurasi eNB OpenAirInterface dapat dilakukan sebagai berikut. Pertama-tama, kita perlu masuk ke folder tempat file konfigurasi berada, seperti, cd /usr/local/src/openairinterface5g/ci-scripts/conf_files/ edit file konfigurasi enb, misalnya untuk band 7 menggunakan perintah, nano enb.band7.tm1.25PRB.usrpb210.conf Edit supaya sesuai dengan parameter yang kita inginkan, seperti IPv4,",

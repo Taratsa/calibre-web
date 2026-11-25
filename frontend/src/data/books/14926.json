@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14926?v=1795452440",
   "cover_og_url": "/cover/14926/og?v=1795452440",
+  "has_cover": false,
   "url": "/book/mqtt-android-client-simple-onno-widodo-purbo/",
   "rating": null,
   "comment": "PROBLEM: class startMqtt(); Contents 1 settings.gradle 2 build.gradle (app) 3 main_activity.xml 4 Package helpers 5 MainActivity.java 6 Referensi settings.gradle pluginManagement { repositories { gradlePluginPortal() google() mavenCentral() maven { url \" https://repo.eclipse.org/content/repositories/paho-snapshots/ \" } } } dependencyResolutionManagement {",

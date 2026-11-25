@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15112?v=1795453179",
   "cover_og_url": "/cover/15112/og?v=1795453179",
+  "has_cover": false,
   "url": "/book/kotlin-data-type-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.tutorialspoint.com/kotlin/kotlin_data_types.htm Kotlin data type is a classification of data which tells the compiler how the programmer intends to use the data. For example, Kotlin data could be numeric, string, boolean etc. Kotlin treats everything as an object which means that we can call member functions and properties on any variable. Kotlin is a statically typed",
@@ -128,12 +129,12 @@
         55
       ],
       [
-        "tipe",
-        24
-      ],
-      [
         "val",
         17
+      ],
+      [
+        "tipe",
+        24
       ],
       [
         "array",

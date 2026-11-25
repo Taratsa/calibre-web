@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15268?v=1795453933",
   "cover_og_url": "/cover/15268/og?v=1795453933",
+  "has_cover": false,
   "url": "/book/konfigurasi-core-network-5g-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk experimen 5G, kita dapat menggunakan core network 5G menggunakan open5gs. Ada beberapa konfigurasi yang perlu di set di open5gs agar dapat beroperasi dengan baik untuk 5G dengan konfigurasi, MCC 510 MNC 33 IP Address 192.168.100.238 Kita perlu mengedit konfigurasi AMF melalui perintah nano /etc/open5gs/amf.yaml Sesuai dengan parameter yang kita inginkan, isinya kira-kira sebagai berikut,",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9754?v=1795434772",
   "cover_og_url": "/cover/9754/og?v=1795434772",
+  "has_cover": false,
   "url": "/book/ipv6-menambahkan-ipv6-address-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menambahkan address IPv6 sama dengan mekanisme address \"IP ALIAS\" di Linux IPv4 interface. Menggunakan \"ip\" Penggunaan: # /sbin/ip -6 addr add / dev  Contoh: # /sbin/ip -6 addr add 2001:0db8:0:f101::1/64 dev eth0 Menggunakan \"ifconfig\" Penggunaan: # /sbin/ifconfig  inet6 add / Contoh # /sbin/ifconfig eth0 inet6 add",

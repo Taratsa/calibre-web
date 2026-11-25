@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10372?v=1795436883",
   "cover_og_url": "/cover/10372/og?v=1795436883",
+  "has_cover": false,
   "url": "/book/ffmpeg-command-onno-widodo-purbo/",
   "rating": null,
   "comment": "FFMPEG COMMAND / Perintah pada ffmpeg | Coretan : Jordan Penggunaan Command FFPLAY untuk menjalankan webcam melalui terminal linux,perintahnya : fplay -f v4l2 -i /dev/video0 -s 320x320 Memutar video menggunakan ffplay melalui terminal linux,perintahnya : ffplay namavideo.mp4 FFMPEG juga bisa melakukan perekaman desktop dan kemudian bisa menyimpannya ,Perintahnya adalah : ffmpeg -framerate 25",

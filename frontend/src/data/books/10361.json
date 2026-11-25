@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10361?v=1795436849",
   "cover_og_url": "/cover/10361/og?v=1795436849",
+  "has_cover": false,
   "url": "/book/rom-android-porting-f240k-modifikasi-kernel-dari-opensource-lg-com-onno-widodo-purbo/",
   "rating": null,
   "comment": "LGE F240K mirip dengan LGE E980. Oleh karenanya kita dapat menggunakan e980 hanya mengubah kernel-nya saja. Ambil.config dari LGE f240k Sambungkan handphone LGE f240k ke komputer Lakukan adb devices adb pull /proc/config.gz gzip -d config.gz cp .config ~/android-cyanogenmod/kernel/lge/gproj/arch/arm/configs/cyanogenmod_e980_defconfig Download kernel dari",

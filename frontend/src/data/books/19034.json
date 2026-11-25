@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19034?v=1795471350",
   "cover_og_url": "/cover/19034/og?v=1795471350",
+  "has_cover": false,
   "url": "/book/voip-cookbook-vqmanager-installation-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download VQManager from http://www.manageengine.com/products/vqmanager/91408665/ManageEngine_VQManager.bin Do the following on shell sudo su - cp ManageEngine_VQManager.bin /usr/local/src/ cd /usr/local/src chmod a+x ManageEngine_VQManager.bin ./ManageEngine_VQManager.bin -console We need to press  several times. Normally, VQManager will be installed in /root/ManageEngine/VQManager All",

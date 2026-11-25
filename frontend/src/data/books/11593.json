@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11593?v=1795440273",
   "cover_og_url": "/cover/11593/og?v=1795440273",
+  "has_cover": false,
   "url": "/book/mitm-aprspoof-switch-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.irongeek.com/i.php?page=security/arpspoof Untuk melakukan arpspoofing pada switch. Contents 1 Set IP forwarding 2 Asumsi Jaringa 3 Aktifkan arpspoofing 4 Siapkan ettercap 5 Sadap dengan Ettercap 6 Referensi Set IP forwarding Set IP fowarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward sysctl net.ipv4.ip_forward=1 sysctl -w net.inet.ip.forwarding=1 Asumsi Jaringa 192.168.0.106 ---",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 228,
-    "longer_than": 26,
+    "longer_than": 25,
     "top": [
       [
         "ettercap",

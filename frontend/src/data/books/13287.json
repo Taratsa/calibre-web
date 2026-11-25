@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13287?v=1795445403",
   "cover_og_url": "/cover/13287/og?v=1795445403",
+  "has_cover": false,
   "url": "/book/keras-image-classification-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python2 # -*- coding: utf-8 -*- \"\"\" Created on Sat Aug 10 07:51:56 2019 https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d \"\"\" import tensorflow as tf (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data() # import matplotlib.pyplot as plt image_index = 7777 # You may select anything up to 60,000",

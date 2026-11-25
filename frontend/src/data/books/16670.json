@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16670?v=1795462426",
   "cover_og_url": "/cover/16670/og?v=1795462426",
+  "has_cover": false,
   "url": "/book/https-bypass-self-signed-di-google-chrome-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil Server Sertifikat echo | openssl s_client -connect 192.168.0.173:443 -servername 192.168.0.173 \\ 2&gt;/dev/null | openssl x509 &gt; server.crt Masukan ke List di Linux sudo cp server.crt /usr/local/share/ca-certificates/myserver.crt sudo update-ca-certificates pkill chrome",

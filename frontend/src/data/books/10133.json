@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10133?v=1795436129",
   "cover_og_url": "/cover/10133/og?v=1795436129",
+  "has_cover": false,
   "url": "/book/nodejs-web-server-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://stackoverflow.com/questions/6084360/node-js-as-a-simple-web-server Web Server Amat Sangat Sederhana Simplest nodejs server is just .... $ npm install http-server -g Now you can run a server via $ cd MyApp $ http-server OR $ http-server -o --cors - which opens your web browser and enables CORS requests. For more options, check out https://github.com/nodeapps/http-server OR run: $",

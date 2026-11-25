@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17403?v=1795465149",
   "cover_og_url": "/cover/17403/og?v=1795465149",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-sisfokol-janissari-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan dependencies apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear Siapkan database mysql -u root -p123456 create database sisfokol_janissari_v1; GRANT ALL PRIVILEGES ON sisfokol_janissari_v1.* TO 'janissari'@'localhost' IDENTIFIED BY 'sisfokol_janissari_v1'; GRANT ALL PRIVILEGES ON sisfokol_janissari_v1.*",

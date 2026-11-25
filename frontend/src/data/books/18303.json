@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18303?v=1795468433",
   "cover_og_url": "/cover/18303/og?v=1795468433",
+  "has_cover": false,
   "url": "/book/schoolonffline-repository-lokal-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Beberapa Asumsi: Folder Repository : /var/data/repo GNUPGHOME : /var/data/mirrorkeyring Server Repository : dl2.foss-id.web.id atau 125.160.17.22 User akses lokal : Melalui Web di /var/www/ubuntu ( http://192.168.0.254/ubuntu ) Contents 1 Copy Repository dari Teman 2 Mengkonfigurasi debmirror 3 Membuat Repository di Web 4 Cron supaya secara periodik di update 5 Setup di sisi Client 6 Pranala",

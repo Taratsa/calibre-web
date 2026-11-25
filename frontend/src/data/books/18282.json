@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18282?v=1795468369",
   "cover_og_url": "/cover/18282/og?v=1795468369",
+  "has_cover": false,
   "url": "/book/schoolonffline-konfigurasi-etc-dhcp3-dhcpd-conf-dhcp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi DHCP Server Ubah range alokasi IP address . Edit # vi /etc/dhcp3/dhcpd.conf Ubah subnet 192.168.0.0 netmask 255.255.255.0 { range 192.168.0.30 192.168.0.70; option routers 192.168.0.1; } Pranala Menarik Distro SchoolOnffLine SchoolOnffLine: Manual Administrator SchoolOnffLine: Server Berbasis Ubuntu",

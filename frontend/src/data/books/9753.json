@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9753?v=1795434768",
   "cover_og_url": "/cover/9753/og?v=1795434768",
+  "has_cover": false,
   "url": "/book/ipv6-display-ipv6-address-yang-ada-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat mencek, apakah IPv6 address sudah dikonfigurasi secara automatic saat stateless auto-configuration. Menggunakan \"ip\" Penggunaan # /sbin/ip -6 addr show dev  Contoh untuk host dengan statik konfigurasi # /sbin/ip -6 addr show dev eth0 2: eth0:  mtu 1500 qlen 1000 inet6 2001:470:36:ab6::4f0/128 scope global inet6",

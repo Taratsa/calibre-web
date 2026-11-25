@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16584?v=1795461726",
   "cover_og_url": "/cover/16584/og?v=1795461726",
+  "has_cover": false,
   "url": "/book/llm-ubuntu-24-04-ollama-instalasi-cuda-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dari: Sanaya Almatin Lakukan nvidia: ubuntu 24.04 Perintah instalasi CUDA core versi 12.8 pada ubuntu versi 24.04: sudo docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda Isi tambahan docker-compose agar dapat memanfaatkan GPU: ollama: container_name: ollama image:",

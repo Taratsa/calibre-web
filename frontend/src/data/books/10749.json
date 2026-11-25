@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10749?v=1795438015",
   "cover_og_url": "/cover/10749/og?v=1795438015",
+  "has_cover": false,
   "url": "/book/kali-linux-masalah-dengan-grub-pc-failed-to-install-into-target-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://forums.kali.org/showthread.php?20854-Fix-quot-grub-pc-failed-to-install-into-target-quot-Fix Jika anda memperoleh error berikut: grub-pc failed to install into /target/ Solusi Yang perlu kita lakukan adalah boot ke liveusb kali linux. Chroot ke disk system: sudo mount /dev/sdaX /mnt sudo mount --bind /dev /mnt/dev sudo mount --bind /dev/pts /mnt/dev/pts sudo mount --bind /sys",

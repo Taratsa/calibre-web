@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16657?v=1795462335",
   "cover_og_url": "/cover/16657/og?v=1795462335",
+  "has_cover": false,
   "url": "/book/llm-fine-tune-ollama-qwen3-1-7b-onno-widodo-purbo/",
   "rating": null,
   "comment": "Panduan Fine-Tuning Model Qwen2-1.5B dengan Dataset JSONL dan Deployment ke Ollama Halo! Saya asumsikan \"qwen3:1.7b\" merujuk pada model Qwen2-1.5B atau Qwen2.5-1.5B (versi terbaru dari Alibaba, karena Qwen3 belum dirilis secara luas per Oktober 2025). Model ini bisa di-fine-tune menggunakan dataset dalam format JSONL (misalnya, format Alpaca: `{\"instruction\": \"...\", \"input\": \"...\", \"output\":",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 859,
-    "longer_than": 48,
+    "longer_than": 47,
     "top": [
       [
         "qwen",

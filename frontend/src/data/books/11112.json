@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11112?v=1795439048",
   "cover_og_url": "/cover/11112/og?v=1795439048",
+  "has_cover": false,
   "url": "/book/nmap-enumeration-smb-share-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/smb-enum-shares.html Contents 1 File smb-enum-shares 2 Penggunaan 3 Contoh Pemakaian 4 Contoh Hasil Output 5 Referensi File smb-enum-shares Script types: hostrule Categories: discovery, intrusive Download: http://nmap.org/svn/scripts/smb-enum-shares.nse Penggunaan Upaya untuk mencatatkan share menggunakan fungsi srvsvc.NetShareEnum Semua MSRPC dan mengambil",

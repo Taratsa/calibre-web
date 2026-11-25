@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/11410?v=1795439807",
   "cover_og_url": "/cover/11410/og?v=1795439807",
+  "has_cover": false,
   "url": "/book/teknik-mengkonfigurasi-ip-address-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Ubuntu 20.04 2 Ubuntu &lt;18.04 3 IPv6 4 Pranala Menarik Ubuntu 20.04 Edit vi /etc/netplan/00-installer-config.yaml Contoh isi: # This is the network config written by 'subiquity' network: ethernets: enp0s3: dhcp4: true version: 2 Untuk IP Static network: version: 2 ethernets: enp0s3: addresses: [192.168.20.160/24] gateway4: 192.168.20.2 nameservers: addresses: [192.168.20.2, 8.8.8.8]",

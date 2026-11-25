@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10095?v=1795436015",
   "cover_og_url": "/cover/10095/og?v=1795436015",
+  "has_cover": false,
   "url": "/book/linux-membackup-harddisk-laptop-ke-usb-harddisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita dapat dengan mudah meng-\"Ghost\" harddisk laptop / komputer ke usb harddisk external. Caranya: Masukan liveusb / livecd ubuntu. Buka terminal masukan usb harddisk external ketik df -h Biasanya akan di kenali /dev/sda - harddisk laptop /dev/sdc - usb harddisk misalnya, /dev/sdc1 menempel pada /media/username/usbhdd backup harddisk laptop menggunakan dd if=/dev/sda",

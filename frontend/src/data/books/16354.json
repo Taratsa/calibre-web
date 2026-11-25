@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16354?v=1795460328",
   "cover_og_url": "/cover/16354/og?v=1795460328",
+  "has_cover": false,
   "url": "/book/tf-training-data-untuk-google-colab-onno-widodo-purbo/",
   "rating": null,
   "comment": "Google Colab menyediakan berbagai cara untuk mengakses dan memuat data pelatihan saat belajar menggunakan TensorFlow. Berikut beberapa metode yang dapat Anda gunakan: 1. Menggunakan Dataset Bawaan TensorFlow : TensorFlow menyediakan sejumlah dataset populer yang dapat diakses langsung melalui modul `tf.keras.datasets`. Misalnya, untuk memuat dataset MNIST, Anda dapat menggunakan kode berikut:",

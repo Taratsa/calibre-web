@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15152?v=1795453430",
   "cover_og_url": "/cover/15152/og?v=1795453430",
+  "has_cover": false,
   "url": "/book/wemos-d1-mini-blink-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ref: https://github.com/wemos/D1_mini_Examples Build-In LED = D4 /* * Blink * Turns on the onboard LED on for one second, then off for one second, repeatedly. * This uses delay() to pause between LED toggles. */ void setup() { pinMode(BUILTIN_LED, OUTPUT); // initialize onboard LED as output } void loop() { digitalWrite(BUILTIN_LED, HIGH); // turn on LED with voltage HIGH delay(1000); // wait one",
@@ -62,7 +63,7 @@
       ],
       [
         10950,
-        0.5
+        0.51
       ],
       [
         15151,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11093?v=1795438994",
   "cover_og_url": "/cover/11093/og?v=1795438994",
+  "has_cover": false,
   "url": "/book/os-android-flash-twrp-pakai-fastboot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://longren.io/flash-twrp-img-file-from-ubuntu-using-fastboot/ Install adb &amp; fastboot sudo apt-get install android-tools-adb android-tools-fastboot Untuk Nexus 4 Download http://techerrata.com/browse/twrp2/mako Set device agar masuk ke mode fastboot, cek fastboot devices Lakukan adb reboot-bootloader fastboot devices fastboot flash recovery openrecovery-twrp-2.7.0.0-mako.img fastboot",

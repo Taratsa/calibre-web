@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13371?v=1795445738",
   "cover_og_url": "/cover/13371/og?v=1795445738",
+  "has_cover": false,
   "url": "/book/esp32-arduino-ide-support-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan Arduino IDE untuk mensupport ESP32. Contents 1 Install apps pendukung 2 Preferences 3 Tools Board 4 Select 5 Pranala Menarik Install apps pendukung apt update apt install python-pip pip install pyserial Preferences File &gt; Preferences. Pada \"Additional Boards Manager URLs\" masukan https://dl.espressif.com/dl/package_esp32_index.json Klik OK Matikan &amp; Nyalakan lagi arduino IDE Tools Board",

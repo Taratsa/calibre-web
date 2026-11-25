@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9408?v=1795432778",
   "cover_og_url": "/cover/9408/og?v=1795432778",
+  "has_cover": false,
   "url": "/book/instalasi-enum-di-asterisk-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Secara sederhana ENUM adalah penggunaan Nomor Telepon di Internet . Ada baiknya anda membaca Konsep Dasar ENUM sebelum melakukan Implementasi ENUM . ENUM Server pada dasarnya DNS Server , dapat di konfigurasi dengan Instalasi BIND ( DNS Server ) Implementasi ENUM Server dengan mengedit file database BIND untuk masing-masing ENUM Agar call di astersik dapat mengenal ENUM, kita perlu mengedit File",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1050,
-    "longer_than": 51,
+    "longer_than": 50,
     "top": [
       [
         "exten",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9650?v=1795433671",
   "cover_og_url": "/cover/9650/og?v=1795433671",
+  "has_cover": false,
   "url": "/book/os-tuning-completely-fair-queueing-cfq-i-o-scheduler-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://publib.boulder.ibm.com/infocenter/lnxinfo/v3r0m0/index.jsp?topic=%2Fliaai%2Fsaptuning%2Fsaptuningadjust.htm Completely Fair Queueing (CFQ) I/O scheduler mengatur komitmen bagaimana Linux kernel membaca dan menulis ke disk dan bekerja untuk mengoptimasi waktu akses ke disk. Tanpa I/O Scheduler, kernel akan langsung menjalankan setiap request pada saat di terima, dan ini akan",

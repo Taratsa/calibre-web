@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18947?v=1795470952",
   "cover_og_url": "/cover/18947/og?v=1795470952",
+  "has_cover": false,
   "url": "/book/voip-cookbook-briker-s-inbound-routes-onno-widodo-purbo/",
   "rating": null,
   "comment": "Inbound Routes functions to manage the destination of the call coming from the trunk. When a call comes from the trunk, the system will check whether the call is in compliant with the Inbound Routes configuration. If it is, then the call will be forwarded to its destination according to the configuration. In IP PBX Administration menu, choose Inbound Routes. Then choose Add Incoming Route.",

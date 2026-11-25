@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18985?v=1795471129",
   "cover_og_url": "/cover/18985/og?v=1795471129",
+  "has_cover": false,
   "url": "/book/voip-cookbook-defining-extension-onno-widodo-purbo/",
   "rating": null,
   "comment": "Unlike the extensions in traditional PABX, where the extension is usually associated with a phone, interface or menu in, the extension in Asterisk is defined as a set of commands to run. These commands are usually executed according to their level of priority. Some commands, such as Dial or GotoIf, have the ability to follow other commands depending on a certain circumstance. At the time when the",

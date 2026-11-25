@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/11066?v=1795438924",
   "cover_og_url": "/cover/11066/og?v=1795438924",
+  "has_cover": false,
   "url": "/book/instalasi-proxy-server-di-belakang-modem-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: AdeldiaN http://opensource.telkomspeedy.com/forum/viewtopic.php?pid=14890 kalo mo ngisntall proxy server, tidak usah ngobok-ngobok modem bisa kok. pakai cara sederhana bisa kok : install squid dioperator. rubah squid.conf nya. jalankan untuk pertama kali di dos dengan perintah \"squid -z\" untuk setersunya bisa diinstal sebagai service \"squid -i\" nah untuk mematikan/menghidupkan bukan",

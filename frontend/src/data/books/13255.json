@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13255?v=1795445298",
   "cover_og_url": "/cover/13255/og?v=1795445298",
+  "has_cover": false,
   "url": "/book/keras-konsep-secara-umum-onno-widodo-purbo/",
   "rating": null,
   "comment": "Persiapan: 30 detik Mengenal Keras Inti Struktur data Keras adalah model, cara untuk mengatur lapisan. Jenis model paling sederhana adalah model Sequential, setumpuk linear lapisan. Untuk arsitektur yang lebih kompleks, anda harus menggunakan API fungsional Keras, yang memungkinkan untuk membuat lapisan graph secara bebas. Berikut adalah model Sequential: from keras.models import Sequential model",

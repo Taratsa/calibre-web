@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12626?v=1795443255",
   "cover_og_url": "/cover/12626/og?v=1795443255",
+  "has_cover": false,
   "url": "/book/openwrt-dhcp-client-di-salah-satu-eth-onno-widodo-purbo/",
   "rating": null,
   "comment": "uci set network.lan.ipaddr='new-ip-address' uci set network.lan.gateway='your-gateway-address' uci set network.lan.dns='dns-address-here' uci commit &amp;&amp; service network restart Pranala Menarik OpenWRT",

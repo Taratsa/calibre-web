@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12237?v=1795441988",
   "cover_og_url": "/cover/12237/og?v=1795441988",
+  "has_cover": false,
   "url": "/book/wspr-arduino-ds1302-set-via-ntp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // time ntp RTC DS1302 set #include  #include  #include  #include  #include  // Init the DS1302 // DS1302 rtc([CE/RST], [I/O], [CLOCK]); DS1302 rtc(8, 7, 6); // Ethernet library configuration byte mac[] = { 0x24, 0x7B, 0xA2, 0x4A, 0x52, 0x10 }; IPAddress timeServer(128, 138, 140, 44 ); // time.nist.gov unsigned int localPort = 8888; const",

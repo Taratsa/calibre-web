@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/17075?v=1795464064",
   "cover_og_url": "/cover/17075/og?v=1795464064",
+  "has_cover": false,
   "url": "/book/ubuntu-customization-kit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi 2 Instalasi Alternatif 3 Instalasi Alternatif 4 Menjalankan UCK 4.1 Versi 2.0.8 5 Test LiveCD 6 Pranala Menarik Instalasi WARNING: uck tampaknya sudah di delete dari ubuntu yang resmi. Instalasi uck lebih aman sudo su apt update apt -y install uck Instalasi Alternatif Download dari launchpad apt update apt -y install gfxboot gfxboot-dev libfribidi-bin /usr/local/src wget",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14014?v=1795448322",
   "cover_og_url": "/cover/14014/og?v=1795448322",
+  "has_cover": false,
   "url": "/book/mysql-import-csv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.mysqltutorial.org/import-csv-file-mysql-table/ Disini kita akan menggunakan LOAD DATA INFILE statement untuk import CSV file ke MySQL table. Sebelum import, siapkan Database yang akan menerima data. CSV file yang kolom-nya persis dengan kolom tabel di database. Account di MySQL database server, yang punya ijin FILE &amp; INSERT. Misalkan, kita mempunyai table discount dengan",

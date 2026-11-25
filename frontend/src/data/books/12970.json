@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12970?v=1795444369",
   "cover_og_url": "/cover/12970/og?v=1795444369",
+  "has_cover": false,
   "url": "/book/bird2-ospf-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Sambungan 2 IP address 3 OSPF 4 Verify 5 Referensi 6 Pranala Menarik Sambungan R1 eth1: -- R3: eth1 eth2: -- R2: eth1 eth3: -- Internet R2: eth1: -- R1: eth2 eth2: -- R3: eth2 eth3: -- LAN 172.16.1.1/16 R3: eth1: -- R1: eth1 eth2: -- R2: eth2 eth3: -- LAN 192.168.1.1/24 IP address Reset konfigurasi OpenWRT menggunakan teknik BIRD: dari OpenWRT R1: ifconfig eth1 10.10.1.1 netmask",

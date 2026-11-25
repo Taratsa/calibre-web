@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11011?v=1795438758",
   "cover_og_url": "/cover/11011/og?v=1795438758",
+  "has_cover": false,
   "url": "/book/arduino-fade-onno-widodo-purbo/",
   "rating": null,
   "comment": "This example demonstrates the use of the analogWrite() function in fading an LED off and on. AnalogWrite uses pulse width modulation (PWM), turning a digital pin on and off very quickly with different ratio between on and off, to create a fading effect. Hardware Required Arduino or Genuino board LED 220 ohm resistor hook-up wires breadboard Rangakaian Code /* Fade This example shows how to fade",

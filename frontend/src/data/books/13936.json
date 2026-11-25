@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13936?v=1795448032",
   "cover_og_url": "/cover/13936/og?v=1795448032",
+  "has_cover": false,
   "url": "/book/bind-cache-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengaktifkan DNS Cache Server Edit cd /etc/bind sudo vi named.conf.options options { directory \"/var/cache/bind\"; dnssec-validation auto; auth-nxdomain no; # conform to RFC1035 listen-on-v6 { any; }; }; Pranala Menarik BIND",

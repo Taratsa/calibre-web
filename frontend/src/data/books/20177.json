@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20177?v=1795476483",
   "cover_og_url": "/cover/20177/og?v=1795476483",
+  "has_cover": false,
   "url": "/book/openldap-webmin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Webmin Masuk ke web https://ip-server:10000 Lokasi konfigurasi webmin di Servers &gt; LDAP Server Instalasi modul CPAN utk Webmin. Modul yang perlu di install jika di mungkinkan Authen::Libwrap 0.22 Authen::PAM 0.16 IO::Tty 1.10 Net::SSLeay 1.36 Sys::Syslog 0.29 Konfigurasi LDAP Server Servers &gt; LDAP Server &gt; OpenLDAP Server Configuration pastikan parameter berikut Root DN for LDAP",

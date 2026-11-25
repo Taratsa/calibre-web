@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9837?v=1795435096",
   "cover_og_url": "/cover/9837/og?v=1795435096",
+  "has_cover": false,
   "url": "/book/openwrt-ipv6-konfigurasi-wan6-dengan-radvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 /etc/config/6relayd 2 /etc/config/dhcp 3 /etc/config/radvd 4 /etc/config/network 5 /etc/config/system 6 /etc/config/wireless 7 /etc/sysctl.conf 8 /etc/config/firewall 9 /var/etc/dnsmasq.conf 10 Pranala Menarik 10.1 Build Firmware 10.2 IPv6 10.3 Flash Firmware 10.4 Misc 10.5 UBNT /etc/config/6relayd config server 'default' option master 'wan6' list network 'lan' option fallback_relay",

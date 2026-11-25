@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11668?v=1795440454",
   "cover_og_url": "/cover/11668/og?v=1795440454",
+  "has_cover": false,
   "url": "/book/arduino-rtc-and-lcd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://microcontrollerslab.com/real-time-clock-ds1307-interfacing-arduino/ Source: #include  #include  #include  LiquidCrystal lcd(12, 11, 5, 4, 3, 2); RTC_DS1307 RTC; void setup () { Serial.begin(9600); Wire.begin(); RTC.begin(); lcd.begin(16, 2); pinMode(8,OUTPUT); if (! RTC.isrunning()) { Serial.println(\"RTC is NOT running!\"); // following line sets",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14210?v=1795449052",
   "cover_og_url": "/cover/14210/og?v=1795449052",
+  "has_cover": false,
   "url": "/book/minikube-service-list-onno-widodo-purbo/",
   "rating": null,
   "comment": "minikube service list |----------------------|------------------------------------|--------------|-----------------------------| | NAMESPACE | NAME | TARGET PORT | URL | |----------------------|------------------------------------|--------------|-----------------------------| | ambassador | ambassador | http/80 | http://192.168.99.100:30687 | | | | https/443 | http://192.168.99.100:31481 | |",
@@ -120,11 +121,11 @@
         4
       ],
       [
-        "service",
+        "list",
         3
       ],
       [
-        "list",
+        "service",
         3
       ]
     ],

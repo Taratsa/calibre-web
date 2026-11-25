@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16660?v=1795462349",
   "cover_og_url": "/cover/16660/og?v=1795462349",
+  "has_cover": false,
   "url": "/book/llm-extract-jsonl-dari-file-pdf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengenerate file `.jsonl` dari sebuah referensi buku dalam format PDF, Anda perlu mengekstrak konten dari PDF, memprosesnya menjadi format terstruktur (misalnya, pasangan instruction-output atau Q&amp;A), dan menyimpannya sebagai file JSONL. Berikut adalah panduan langkah demi langkah menggunakan Python, dengan asumsi tujuan Anda adalah membuat dataset untuk fine-tuning model seperti Qwen2.",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14640?v=1795450995",
   "cover_og_url": "/cover/14640/og?v=1795450995",
+  "has_cover": false,
   "url": "/book/instal-bind-onno-widodo-purbo/",
   "rating": null,
   "comment": "BIND (Berkeley Internet Name Domain) adalah implementasi dari protokol Domain Name System (DNS). Di dalam-nya termasuk, Domain Name Server (named) Library untuk Domain Name System (DNS) resolver Berbagai tool / alat untuk mengecek apakah DNS Server bekerja dengan baik. Di Ubuntu, Instalasi BIND secara minimal sangat mudah, cukup menggunakan perintah sudo su apt update apt -y install bind9 Jika",

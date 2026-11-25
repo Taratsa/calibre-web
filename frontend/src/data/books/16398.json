@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16398?v=1795460613",
   "cover_og_url": "/cover/16398/og?v=1795460613",
+  "has_cover": false,
   "url": "/book/llm-ollama-create-modelfile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menggunakan perintah `ollama create` secara efektif, Anda perlu memahami struktur dan parameter yang digunakan dalam sebuah Modelfile . Modelfile berfungsi sebagai cetak biru untuk membuat dan membagikan model dalam ekosistem Ollama. Struktur Dasar Modelfile: # komentar INSTRUKSI argumen Setiap baris dalam *Modelfile* terdiri dari instruksi yang diikuti oleh argumen yang sesuai. Berikut",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13339?v=1795445590",
   "cover_og_url": "/cover/13339/og?v=1795445590",
+  "has_cover": false,
   "url": "/book/thingspeak-ethernet-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* WriteMultipleFields Description: Writes values to fields 1,2,3 and 4 in a single ThingSpeak update every 20 seconds. Hardware: Arduino Ethernet !!! IMPORTANT - Modify the secrets.h file for this project with your network connection and ThingSpeak channel details. !!! Note: - Requires the Ethernet library ThingSpeak ( https://www.thingspeak.com ) is an analytic IoT platform service that allows",

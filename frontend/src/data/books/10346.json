@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10346?v=1795436800",
   "cover_og_url": "/cover/10346/og?v=1795436800",
+  "has_cover": false,
   "url": "/book/rom-android-mengubah-partisi-rom-onno-widodo-purbo/",
   "rating": null,
   "comment": "At first boot there will be default partition layout and fastboot mode. Connect it to your pc and change layout if you want, if not just flash cwm and restore your data. Contoh layout partisi misc:1Mb recovery:5 boot:5 sboot:5 system:150 cache:10 userdata:0 - AUTOSIZE Perintah fastboot dan penggunaannya Fastboot command list and usage: Cek keberadaan handphone fastboot devices fastboot devices -l",

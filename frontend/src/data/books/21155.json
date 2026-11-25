@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21155?v=1795480592",
   "cover_og_url": "/cover/21155/og?v=1795480592",
+  "has_cover": false,
   "url": "/book/python-nulis-nama-di-pdf-sertifikat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bisa. Cara paling aman biasanya begini: siapkan 1 file template sertifikat PDF siapkan 1 file daftar nama jalankan script untuk membuat 1 PDF per nama Di bawah ini script Python yang umum dipakai. Script ini akan: membaca nama dari file `nama.txt` menaruh nama di posisi tertentu pada template PDF menghasilkan file baru seperti `sertifikat_Andi.pdf`, `sertifikat_Budi.pdf`, dst. import os import re",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16605?v=1795461908",
   "cover_og_url": "/cover/16605/og?v=1795461908",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-router-sederhana-wan-statik-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology 2 Setup WAN 3 Setup LAN 4 Setup Server Ubuntu di WAN fddd::/64 Topology WAN : fddd:0000:0000::/64 LAN : fddd:0000:1000::/64 Setup WAN # enable IPv6 /system package enable ipv6 # Disable RA di semua interface # /ipv6 nd set [ find default=yes ] disabled=yes /ipv6 nd set disabled=yes # WAN IPv6 static # /ipv6 address add address=fddd:0000:0000::1/64 interface=ether1",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9763?v=1795434801",
   "cover_og_url": "/cover/9763/og?v=1795434801",
+  "has_cover": false,
   "url": "/book/ipv6-manipulasi-tabel-tetangga-neighbor-menggunakan-perintah-ip-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Menambahkan entri secara manual 2 Membuang entri secara manual 3 Setting Lanjut 4 Pranala Menarik Menambahkan entri secara manual Perintah berikut akan menambahkan entri secara manual # ip -6 neigh add  lladdr  dev  Contoh: # ip -6 neigh add fec0::1 lladdr 02:01:02:03:04:05 dev eth0 Membuang entri secara manual Penggunaan # ip -6 neigh del",

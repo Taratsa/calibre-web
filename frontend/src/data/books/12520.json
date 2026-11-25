@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12520?v=1795442968",
   "cover_og_url": "/cover/12520/og?v=1795442968",
+  "has_cover": false,
   "url": "/book/r-menggunakan-library-cran-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menggunakan library, contoh (txtplot) install.packages('txtplot') library('txtplot') Menggunakan datasets yang ada di txtplot txtplot(cars[,1], cars[,2], xlab = \"speed\", ylab = \"distance\") Help help(txtplot) Contoh program ## basic plotting function require(stats) txtplot(cars[,1], cars[,2]) ## can include axis labels when desired txtplot(cars[,1], cars[,2], xlab = \"speed\", ylab = \"distance\") ##",

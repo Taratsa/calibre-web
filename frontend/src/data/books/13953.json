@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13953?v=1795448090",
   "cover_og_url": "/cover/13953/og?v=1795448090",
+  "has_cover": false,
   "url": "/book/nvidia-install-cuda-10-2-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Apps Pendukung 2 Instalasi 3 Error 4 Referensi Apps Pendukung apt update apt -y instal gcc Instalasi sudo su cd /usr/local/src wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run chmod 777 cuda* ./cuda_10.2.89_440.33.01_linux.run Error more /var/log/cuda-installer.log [INFO]: Driver not installed. [INFO]: Checking compiler",

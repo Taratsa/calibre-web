@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15261?v=1795453907",
   "cover_og_url": "/cover/15261/og?v=1795453907",
+  "has_cover": false,
   "url": "/book/run-gnb-ueransim-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan gNB Ueransim dan log-nya, dapat dilakukan melalui windows tersendiri. Pastikan kita berada di folder source gNB Ueransim, kemudian ketik perintah berikut, cd /usr/local/src/UERANSIM/ ./build/nr-gnb -c config/open5gs-gnb.yaml tail -F /var/log/open5gs/amf.log Pranala Menarik 5G",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11754?v=1795440673",
   "cover_og_url": "/cover/11754/og?v=1795440673",
+  "has_cover": false,
   "url": "/book/korban-install-mediatomb-onno-widodo-purbo/",
   "rating": null,
   "comment": "mediatomb belum tersedia di Ubuntu 18.04 Contents 1 Konfigurasi Multicast 2 Instalasi 3 Konfigurasi 4 Restart 5 Pranala Menarik Konfigurasi Multicast Cek nama interface ifconfig -a misalnya nama interface adalah enp0s4 Edit /etc/rc.local masukan sebelum exit /sbin/route add -net 239.0.0.0 netmask 255.0.0.0 enp0s4 /sbin/ifconfig enp0s4 allmulti Save &amp; beri ijin untuk di execute chmod +x",

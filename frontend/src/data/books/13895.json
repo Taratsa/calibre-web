@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13895?v=1795447845",
   "cover_og_url": "/cover/13895/og?v=1795447845",
+  "has_cover": false,
   "url": "/book/ossec-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Pendukung 2 Download &amp; Install 3 Cuplikan Proses Instalasi 4 Selesai Compile 5 Run 6 Log 7 Pranala Menarik Install Pendukung sudo su apt update apt -y install build-essential make zlib1g-dev libpcre2-dev libz-dev libssl-dev libevent-dev Download &amp; Install sudo su cd /usr/local/src wget https://github.com/ossec/ossec-hids/archive/3.6.0.tar.gz tar zxvf 3.6.0.tar.gz cd",

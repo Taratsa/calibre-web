@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9677?v=1795434486",
   "cover_og_url": "/cover/9677/og?v=1795434486",
+  "has_cover": false,
   "url": "/book/os-mengerti-system-call-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.linuxchix.org/content/courses/kernel_hacking/lesson7 Saat kita membaca-baca code device driver akan mulai berfikir, \"Bagaimana function foo_read() di panggil?\" Atau kita berfikir, \"Ketika kita menulis cat /proc/cpuinfo, bagaimana function cpuinfo() dipanggil?\" Setelah kernel selesai booting, flow control berubah dari yang bersifat langsung \"Function mana yang akan di panggil",

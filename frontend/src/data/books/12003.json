@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12003?v=1795441285",
   "cover_og_url": "/cover/12003/og?v=1795441285",
+  "has_cover": false,
   "url": "/book/ethereum-git-clone-genoil-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://github.com/nanopool/genoil-ethereum sudo su wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.5-18_amd64.deb sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb add-apt-repository -y ppa:ethereum/ethereum apt update apt-get -y install software-properties-common git apt-get install git libcryptopp-dev libleveldb-dev libjsoncpp-dev",

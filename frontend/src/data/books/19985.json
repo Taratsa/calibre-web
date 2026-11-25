@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19985?v=1795475769",
   "cover_og_url": "/cover/19985/og?v=1795475769",
+  "has_cover": false,
   "url": "/book/bogofilter-spam-subject-tag-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mengubah subject e-mail untuk memberikan tanda akan e-mail Spam yang masuk dapat dengan cara mengedit vi /etc/bogofilter.cf Ubah agar #### SPAM_SUBJECT_TAG # # tag added to \"Subject: \" line for identifying spam or unsure # default is to add nothing. # spam_subject_tag=***SPAM*** unsure_subject_tag=???UNSURE??? Pranala Menarik Teknik Anti Spam Bogofilter Bogofilter: Spam Subject Tag Blok Spam",

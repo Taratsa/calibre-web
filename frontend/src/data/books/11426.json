@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11426?v=1795439851",
   "cover_og_url": "/cover/11426/og?v=1795439851",
+  "has_cover": false,
   "url": "/book/python-cari-stopwords-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install dulu pip install nltk Source code import os,nltk,os.path,re,string import argparse from nltk.stem.porter import PorterStemmer ps=PorterStemmer() def hanya_huruf( input ): r=re.match('^[a-zA-Z]+$', input) if r==None: return False else: return True def parse_args(): parser = argparse.ArgumentParser() parser.add_argument('-i', '--infile', default= , help='input filename') return",

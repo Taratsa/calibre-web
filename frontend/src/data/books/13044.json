@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13044?v=1795444644",
   "cover_og_url": "/cover/13044/og?v=1795444644",
+  "has_cover": false,
   "url": "/book/openvpn-free-vpn-untuk-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://askubuntu.com/questions/975827/whats-a-good-free-vpn-for-ubuntu/975829 Akses Free VPN yang baik untuk Ubuntu bisa melirik OpenVPN. Langkahnya: Install sudo apt update sudo apt -y install openvpn network-manager-openvpn network-manager-openvpn-gnome sudo /etc/init.d/networking restart. Masuk ke https://www.vpnbook.com/ m and download the package you want under 'OpenVPN'. Make sure",

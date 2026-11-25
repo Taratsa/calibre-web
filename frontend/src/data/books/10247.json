@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10247?v=1795436497",
   "cover_og_url": "/cover/10247/og?v=1795436497",
+  "has_cover": false,
   "url": "/book/autoconf-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buang autoconf yang sudah ada apt-get remove --purge autoconf Download mkdir /tmp/autoconf cd /tmp/autoconf wget http://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.gz Extrak cd /tmp/autoconf gzip -dc &lt; autoconf-latest.tar.gz | tar -xf - cd autoconf-2.69 Build Autoconf sudo su cd autoconf-2.69 ./configure --prefix=/usr make make install",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13450?v=1795445992",
   "cover_og_url": "/cover/13450/og?v=1795445992",
+  "has_cover": false,
   "url": "/book/r-regression-categorical-variables-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.sthda.com/english/articles/40-regression-analysis/163-regression-with-categorical-variables-dummy-coding-essentials-in-r/#example-of-data-set install.packages(\"car\") library(car) library(tidyverse) data(\"Salaries\", package = \"car\") # Inspect the data sample_n(Salaries, 3) # Compute the model model &lt;- lm(salary ~ sex, data = Salaries) summary(model)$coef # Buat Dummy Variable",

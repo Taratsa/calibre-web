@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13472?v=1795446069",
   "cover_og_url": "/cover/13472/og?v=1795446069",
+  "has_cover": false,
   "url": "/book/r-tidytext-word-combinations-tokenizing-by-n-gram-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/04-word-combinations.Rmd library(knitr) opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE) options(width = 100, dplyr.width = 100) library(ggplot2) theme_set(theme_light()) ## Tokenizing by n-gram library(dplyr) library(tidytext) library(janeaustenr) austen_bigrams &lt;- austen_books() %&gt;% unnest_tokens(bigram, text, token =",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18785?v=1795470041",
   "cover_og_url": "/cover/18785/og?v=1795470041",
+  "has_cover": false,
   "url": "/book/membangun-raid-dan-lvm-menggunakan-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini adalah sebuah contoh panduan mensetup RAID-5 dan LVM di sebuah sistem Linux . Beberapa perintah yang diberikan disini umumnya berbasis pada kernel 2.6. Beberapa instruksi mungkin tidak dapat dijalankan di distro yang lain. Contents 1 Apakah RAID dan LVM? 2 Percobaan Menginisialisasi RAID-5 3 Menginisialisasi LVM di atas RAID 4 Pranala Menarik Apakah RAID dan LVM? LVM merupakan",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1119,
-    "longer_than": 52,
+    "longer_than": 51,
     "top": [
       [
         "raid",

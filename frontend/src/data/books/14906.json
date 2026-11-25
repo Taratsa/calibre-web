@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14906?v=1795452362",
   "cover_og_url": "/cover/14906/og?v=1795452362",
+  "has_cover": false,
   "url": "/book/android-studio-onclick-onno-widodo-purbo/",
   "rating": null,
   "comment": "A. Make sure your other activity is declared in manifest:   All activities must be declared in manifest, even if they do not have an intent filter assigned to them. B. In your MainActivity do something like this: Button btn = (Button)findViewById(R.id.open_activity_button); btn.setOnClickListener(new",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21257?v=1795481056",
   "cover_og_url": "/cover/21257/og?v=1795481056",
+  "has_cover": false,
   "url": "/book/moodle-konfigurasi-cms-onno-widodo-purbo/",
   "rating": null,
   "comment": "Parameter wwwroot Parameter wwwroot menentukan tampilan Moodle akan bermasalah jika CMS berbeda IP address $CFG-&gt;wwwroot = ' http://192.168.0.1/moodle' ; harus di pasang pada IP Address 192.168.0.1 Isi File /var/www/moodle/config.php dbtype = 'mysql'; $CFG-&gt;dbhost = 'localhost'; $CFG-&gt;dbname = 'moodle'; $CFG-&gt;dbuser =",

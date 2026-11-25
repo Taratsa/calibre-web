@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/12411?v=1795442672",
   "cover_og_url": "/cover/12411/og?v=1795442672",
+  "has_cover": false,
   "url": "/book/instalasi-dovecot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan POP3 &amp; IMAP Server Dovecot apt -y install dovecot-core dovecot-imapd dovecot-pop3d Pada saat instalasi, masukan hostname anda, misalnya webanda.id pastikan dovecot mendukung imap cd /etc/dovecot/conf.d/ vi 10-master.conf ada kalimat berikut &amp; tidak di # service imap-login { inet_listener imap { inet_listener imaps { service imap { Pastikan lokasi mail di /var/mail cd /etc/dovecot/conf.d/",

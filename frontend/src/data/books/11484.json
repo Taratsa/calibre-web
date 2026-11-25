@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11484?v=1795439994",
   "cover_og_url": "/cover/11484/og?v=1795439994",
+  "has_cover": false,
   "url": "/book/python-penggunaan-interpreter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Passing Argument Ketika diketahui oleh interpreter, nama script dan argumen tambahan akan di ubah menjadi list string dan assign variabel argv dalam modul sys. Kita dapat mengaksis list tersebut dengan mengeksekusi import sys. Panjang string paling tidak satu; jika tidak ada script dan tidak ada argumen yang diberikan, sys.argv[0] adalah string kosong. Jika nama script yang diberikan adalah '-'",

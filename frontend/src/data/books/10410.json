@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10410?v=1795437004",
   "cover_og_url": "/cover/10410/og?v=1795437004",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi paket pendukung sudo apt-get install apache2 php5 php5-xmlrpc php5-mysql php5-gd \\ php5-cli php5-curl mysql-client mysql-server libphp-adodb \\ libgd2-xpm-dev php5-curl php-pear Setup database (asumsi root password 123456) mysql -u root -p123456 create database mediawiki; grant ALL on root.* to mediawiki@localhost; grant ALL on mediawiki.* to mediawiki@localhost identified by",

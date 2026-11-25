@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15564?v=1795455525",
   "cover_og_url": "/cover/15564/og?v=1795455525",
+  "has_cover": false,
   "url": "/book/minikube-mounting-filesystem-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/mount/ Mounting filesystems How to mount a host directory into the VM 9P Mounts 9P mounts are flexible and work across all hypervisors, but suffers from performance and reliability issues when used with large folders (&gt;600 files). See Driver Mounts as an alternative. To mount a directory from the host into the guest using the mount subcommand:",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17091?v=1795464105",
   "cover_og_url": "/cover/17091/og?v=1795464105",
+  "has_cover": false,
   "url": "/book/membuat-distro-sendiri-secara-manual-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di sini akan di jelaskan teknik membuat LiveCD berbasis Ubuntu. Anda dapat menambah, mengurangi paket program sehingga LiveCD tersebut lebih cocok untuk anda. Contents 1 Kebutuhan Sistem Pendukung 2 Persiapan 3 Copy CD Ubuntu LiveCD Desktop Referensi 4 Ekstrak Sistem Desktop 5 Persiapan dan Menggunakan chroot 6 Customisasi 6.1 apt-get 6.2 Mengubah background GNOME 6.3 Mengubah nilai gconf (fonts,",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1049,
-    "longer_than": 51,
+    "longer_than": 50,
     "top": [
       [
         "extract-cd",

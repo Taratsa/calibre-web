@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13075?v=1795444747",
   "cover_og_url": "/cover/13075/og?v=1795444747",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-dhcpv6-contoh-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology 2 Mikrotik 3 Untuk Interface bridge 4 Client 5 Pranala Menarik Topology C1 -- R1 -- NAT R1 e0 -- NAT e1 -- C1 e0 C1 e0 -- R1 e1 Mikrotik Set IPv6 interface /ipv6 address add address=2345::1/64 interface=ether2 Set DHCP Server /ipv6 pool add name=myPool prefix=2345::/48 prefix-length=64 /ipv6 dhcp-server add name=myServer address-pool=myPool interface=ether2 /ipv6 dhcp-server",

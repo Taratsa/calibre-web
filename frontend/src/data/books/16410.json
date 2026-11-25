@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16410?v=1795460695",
   "cover_og_url": "/cover/16410/og?v=1795460695",
+  "has_cover": false,
   "url": "/book/pm4py-analisa-bottleneck-dari-csv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh source code Python menggunakan pustaka PM4Py untuk menganalisis *bottleneck* dalam proses bisnis menggunakan file CSV dan menghasilkan visualisasi bottleneck dalam bentuk grafik: Contents 1 1. Install PM4Py (jika belum) 2 2. Contoh CSV Format 3 3. Source Code Analisis Bottleneck + Visualisasi 4 Output: 5 Tips 6 Pranala Menarik 1. Install PM4Py (jika belum) pip install pm4py",
@@ -132,12 +133,12 @@
         5
       ],
       [
-        "import",
-        9
-      ],
-      [
         "timestamp",
         5
+      ],
+      [
+        "import",
+        9
       ],
       [
         "spectrum",

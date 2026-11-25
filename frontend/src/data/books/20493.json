@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20493?v=1795477400",
   "cover_og_url": "/cover/20493/og?v=1795477400",
+  "has_cover": false,
   "url": "/book/ssh-automatic-login-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wp.uberdose.com/2006/10/16/ssh-automatic-login/ public ssh key, cek pastikan ada file id_dsa.pub ~/.ssh kalau belum ada id_dsa.pub di ~/.ssh lakukan chmod 700 ~/.ssh ssh-keygen -t dsa ssh-keygen -t rsa copykan ke remote server scp ~/.ssh/id_dsa.pub remoteuser@remoteserver.com: scp ~/.ssh/id_rsa.pub remoteuser@remoteserver.com: di remote server append content public key id_dsa.pub",

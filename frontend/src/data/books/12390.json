@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12390?v=1795442609",
   "cover_og_url": "/cover/12390/og?v=1795442609",
+  "has_cover": false,
   "url": "/book/ipv6-konfigurasi-ipv6-presisten-debian-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi IPv6 Presistance di Ubuntu sama dengan Debian. Pastikan IPv6 di load, bisa karena di compile di kernel atau module di load. Untuk versi yang terbaru, ada tiga solusi, menambahkan ke /etc/modules, menggunakan trik pre-up yang akan di jelaskan berikutini atau menggunakan kmod. Sekedar catatan saja, saat ini biasanya kernel linux sudah mengaktifkan modul IPv6 saat di aktifkan, jadi kita",

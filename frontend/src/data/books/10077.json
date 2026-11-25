@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10077?v=1795435956",
   "cover_og_url": "/cover/10077/og?v=1795435956",
+  "has_cover": false,
   "url": "/book/magicsim-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://openbsc.osmocom.org/trac/wiki/MagicSIM When you want to use OpenBSC with actual cryptographic authentication, then the secret Ki of the SIM needs to be known. Extracting the Ki of regular SIM cards issued by GSM operators is typically not possible. Therefore, we need some alternative solution: A SIM with a known A3/A8 algorithm, where we can program the actual Ki. Magic SIM / Super",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 990,
-    "longer_than": 50,
+    "longer_than": 49,
     "top": [
       [
         "file",

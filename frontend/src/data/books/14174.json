@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14174?v=1795448918",
   "cover_og_url": "/cover/14174/og?v=1795448918",
+  "has_cover": false,
   "url": "/book/mikrotik-multiple-gateway-load-balancing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada 2 sambungan ke Internet lewat ether1 dan ether2 # Kalau WAN IP Dynamic /ip dhcp-client print /ip dhcp-client add interface=ether1 disable=no /ip dhcp-client add interface=ether2 disable=no /ip route print # kalau WAN IP Statik dapat menggunakan perintah di bawah ini. /ip address add address=192.168.101.2/30 interface=ether1 add address=192.168.102.2/30 interface=ether2 add",

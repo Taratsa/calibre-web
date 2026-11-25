@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10293?v=1795436645",
   "cover_og_url": "/cover/10293/og?v=1795436645",
+  "has_cover": false,
   "url": "/book/nmap-cek-username-password-network-neighbourhood-windows-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lakukan nmap --script smb-enum-users.nse -p445  sudo nmap -sU -sS --script smb-enum-users.nse -p U:137,T:139  Referensi http://nmap.org/nsedoc/scripts/smb-enum-users.html",

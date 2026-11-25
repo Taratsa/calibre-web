@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15002?v=1795452758",
   "cover_og_url": "/cover/15002/og?v=1795452758",
+  "has_cover": false,
   "url": "/book/java-delete-file-onno-widodo-purbo/",
   "rating": null,
   "comment": "Java menyediakan method untuk menghapus file menggunakan program java. Berbeda dengan operasi penghapusan normal di sistem operasi apa pun, file yang dihapus menggunakan program java akan dihapus secara permanen tanpa dipindahkan ke tempat sampah/daur ulang. Method yang digunakan untuk men-delete file di Java, adalah: 1. Menggunakan fungsi java.io.File.delete(): Delete file atau directory yang",

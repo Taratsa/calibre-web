@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20610?v=1795477709",
   "cover_og_url": "/cover/20610/og?v=1795477709",
+  "has_cover": false,
   "url": "/book/label-fat32-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install mlabel apt-get install mtools Label Disk (misalnya /dev/sdc1) sudo mlabel -i /dev/sdc1 ::NAMALABELDISK Backup Boot Sector Kalau perlu membackup boot sector sudo dosfsck -ar /dev/sdc1 Kalau Rewel tanya jumlah sector Edit vi ~/.mtoolsrc Masukan mtools_skip_check=1 Pranala Menarik Format dan Set Harddisk Label Format Disk Format harddisk Linux Howto Label harddisk Label FAT32",

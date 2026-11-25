@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12948?v=1795444304",
   "cover_og_url": "/cover/12948/og?v=1795444304",
+  "has_cover": false,
   "url": "/book/bird-konfigurasi-ip-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Login ke appliance BIRD Di Shell Contents 1 IPv4 2 IPv6 3 Cek 4 Pranala Menarik IPv4 sudo ifconfig eth1 192.168.2.1 netmask 255.255.255 sudo ifconfig eth0 192.168.1.1 netmask 255.255.255 IPv6 sudo ifconfig eth0 2001::1/64 Cek ifconfig netstat -nr ip -6 route ip route Pranala Menarik TCP/IP: Advanced Routing Quagga Mikrotik Cisco Juniper BIRD: Routing IPv6 TCP/IP: Advanced Routing IPv6: Advanced",

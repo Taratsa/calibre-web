@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16397?v=1795460607",
   "cover_og_url": "/cover/16397/og?v=1795460607",
+  "has_cover": false,
   "url": "/book/llm-multiple-open-webui-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan beberapa instance Open WebUI pada port yang berbeda dan semuanya terhubung ke satu instance Ollama LLM , kamu bisa menggunakan Docker Compose atau `docker run` manual. Berikut adalah panduan lengkap dan jelas menggunakan Docker . Contents 1 ✅ Langkah 1: Jalankan Ollama (LLM Server) 2 ✅ Langkah 2: Tarik dan Load Model LLM (opsional) 3 ✅ Langkah 3: Jalankan Beberapa Open WebUI (di",

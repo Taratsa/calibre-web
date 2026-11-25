@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12562?v=1795443074",
   "cover_og_url": "/cover/12562/og?v=1795443074",
+  "has_cover": false,
   "url": "/book/r-sort-onno-widodo-purbo/",
   "rating": null,
   "comment": "# sorting examples using the mtcars dataset attach(mtcars) # sort by mpg newdata &lt;- mtcars[order(mpg),] # sort by mpg and cyl newdata &lt;- mtcars[order(mpg, cyl),] #sort by mpg (ascending) and cyl (descending) newdata &lt;- mtcars[order(mpg, -cyl),] detach(mtcars) Pranala Menarik R",

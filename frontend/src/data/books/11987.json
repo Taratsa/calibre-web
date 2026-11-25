@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11987?v=1795441248",
   "cover_og_url": "/cover/11987/og?v=1795441248",
+  "has_cover": false,
   "url": "/book/bitcoin-instalasi-bitcoind-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt-add-repository ppa:bitcoin/bitcoin -y sudo apt-get update Opsi untuk instalasi sudo apt-get install bitcoin-qt sudo apt-get install bitcoind sudo apt-get install bitcoind bitcoin-qt Menjalankan Tunggu agak lama untuk menjalakan bitcoind pertama kali, karena harus mendownload semua transaksi bitcoin dari awal. bitcoind -daemon bitcoin-cli getblockchaininfo bitcoin-cli getnetworkinfo",

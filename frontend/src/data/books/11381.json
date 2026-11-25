@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11381?v=1795439742",
   "cover_og_url": "/cover/11381/og?v=1795439742",
+  "has_cover": false,
   "url": "/book/twitter-jsonparser-ascii-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "__author__ = 'seandolinar' import json import csv creates a .csv file using a Twitter .json file the fields have to be set manually data_json = open('raw_tweets.json', mode='r').read() #reads in the JSON file into Python as a string data_python = json.loads(data_json) #turns the string into a json Python object csv_out = open('tweets_out_ASCII.csv', mode='w') #opens csv file writer =",

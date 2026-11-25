@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16656?v=1795462323",
   "cover_og_url": "/cover/16656/og?v=1795462323",
+  "has_cover": false,
   "url": "/book/llm-fine-tune-ollama-qwen3-0-6b-onno-widodo-purbo/",
   "rating": null,
   "comment": "Panduan Fine-Tuning Model Qwen2-0.5B dengan Dataset JSONL untuk Ollama Saya asumsikan \"qwen3:0.6b\" merujuk pada model Qwen2-0.5B (atau varian serupa seperti Qwen2.5-0.5B-Instruct, karena Qwen3 belum dirilis secara luas per Oktober 2025). Model ini ringan dan cocok untuk fine-tuning lokal. Proses ini menggunakan **LLaMA-Factory** untuk fine-tuning (mudah dan efisien), dataset dalam format JSONL",

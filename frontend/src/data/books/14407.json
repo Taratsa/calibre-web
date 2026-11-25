@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14407?v=1795449839",
   "cover_og_url": "/cover/14407/og?v=1795449839",
+  "has_cover": false,
   "url": "/book/mediacms-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install dependency 2 Install MediaCMS 3 Referensi 4 Pranala Menarik Install dependency BAGIAN INI BISA DI SKIP Proses instalasi dependency harusnya di handel secara automatis oleh installer mediacms, jadi tidak perlu di install manual. Tampaknya di butuhkan Python3, Django3, Celery, PostgreSQL, Redis, ffmpeg sudo apt update sudo apt -y install python3.9 sudo apt -y install",
@@ -168,15 +169,15 @@
         0.48
       ],
       [
+        14798,
+        0.42
+      ],
+      [
         15431,
         0.42
       ],
       [
         14964,
-        0.42
-      ],
-      [
-        14798,
         0.42
       ]
     ],

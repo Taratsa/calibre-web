@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15842?v=1795457164",
   "cover_og_url": "/cover/15842/og?v=1795457164",
+  "has_cover": false,
   "url": "/book/llm-rag-gpt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/gpt-open/rag-gpt?tab=readme-ov-file#using-local-llms Buat API di LLamaCloud, login mengggunakan email https://cloud.llamaindex.ai/api-key Sebagai user biasa, clone RAG-GPT git clone https://github.com/open-kf/rag-gpt.git &amp;&amp; cd rag-gpt cp env_of_ollama .env Edit .env LLM_NAME=\"Ollama\" OLLAMA_MODEL_NAME=\"xxxx\" OLLAMA_BASE_URL=\" http://127.0.0.1:11434 \"",

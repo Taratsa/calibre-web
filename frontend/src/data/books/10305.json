@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10305?v=1795436679",
   "cover_og_url": "/cover/10305/og?v=1795436679",
+  "has_cover": false,
   "url": "/book/nginx-transcoding-video-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.helping-squad.com/transcoding-your-video-with-nginx/ Today we want to take a look at the transcoding options nginx gives us. Under Linux we can directly use the exec directive to call ffmpeg as soon as a stream connects for example. On Windows we would have to do this by ourselves each time we want to start a transcoding, but more on that later. Now lets take at the example",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 741,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "ffmpeg",

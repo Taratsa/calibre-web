@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9750?v=1795434756",
   "cover_og_url": "/cover/9750/og?v=1795434756",
+  "has_cover": false,
   "url": "/book/faq-ipv6-ready-system-check-onno-widodo-purbo/",
   "rating": null,
   "comment": "Q: Tidak dapat ping6 ke address link-local Error message: \"connect: Invalid argument\" Kernel tidak mengetahui, Kernel tidak mengetahui, link fisik maupun virtual, yang perlu digunakan untuk mengirimkan paket ICMPv6. Oleh karenanya akan mengeluarkan error seperti itu. Solusi: Beri tahu interace yang digunakan seperti: ping6 -I eth0 fe80::2e0:18ff:fe90:9205 Q: Tidak dapat ping6 atau traceroute6",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13386?v=1795445785",
   "cover_og_url": "/cover/13386/og?v=1795445785",
+  "has_cover": false,
   "url": "/book/php-instalasi-php-7-2-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.rosehosting.com/blog/how-to-install-php-7-2-on-ubuntu-16-04/ Contents 1 Upgrade 2 Repository 3 Install 4 Aktifasi 5 Referensi Upgrade apt update apt upgrade Repository sudo apt-get install software-properties-common python-software-properties sudo add-apt-repository -y ppa:ondrej/php sudo apt-get update Install sudo apt-get install php7.3 php7.3-cli php7.3-common sudo apt-get",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16650?v=1795462276",
   "cover_og_url": "/cover/16650/og?v=1795462276",
+  "has_cover": false,
   "url": "/book/llm-lora-vs-fine-tuning-onno-widodo-purbo/",
   "rating": null,
   "comment": "Baik Pak Onno 🙏 berikut perbandingan lengkap dan jelas antara **LoRA** dan **Fine-Tuning penuh**, fokus pada konteks model seperti **Ollama / LLM open-source (LLaMA, Gemma, Mistral, dsb)** di hardware lokal (mis. RTX 4060 8 GB). --- 🧠 1. Konsep Utama | Aspek | **Fine-Tuning Penuh** | **LoRA (Low-Rank Adaptation)** | | :-------------- |",
@@ -144,12 +145,12 @@
         3
       ],
       [
-        "penuh",
-        11
-      ],
-      [
         "bobot",
         4
+      ],
+      [
+        "penuh",
+        11
       ]
     ],
     "phrases": [

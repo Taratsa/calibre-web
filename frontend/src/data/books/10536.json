@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10536?v=1795437398",
   "cover_og_url": "/cover/10536/og?v=1795437398",
+  "has_cover": false,
   "url": "/book/postfix-authentikasi-smtp-untuk-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://postfix.state-of-mind.de/patrick.koetter/smtpauth/smtp_auth_mailclients.html Contents 1 Siapkan Dovecot 2 Generate Certificate 3 Preparing Postfix 4 Restart Postfix 5 Cek Relay 6 Cek SMTP AUTH Support 7 Referensi Siapkan Dovecot Edit agar dovecot siap digunakan sebagai auth server untuk postfix vim /etc/dovecot/conf.d/10-master.conf Pastikan ## The listener is added under the",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 801,
-    "longer_than": 47,
+    "longer_than": 46,
     "top": [
       [
         "smtpd",

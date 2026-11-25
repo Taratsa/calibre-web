@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12681?v=1795443413",
   "cover_og_url": "/cover/12681/og?v=1795443413",
+  "has_cover": false,
   "url": "/book/internet-offline-packets-per-second-benchmark-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Metoda1: ping 2 Metoda2: hping3 3 Hasil Pengukuran 4 Pranala Menarik Metoda1: ping sudo su ping -q -s 1 -f 192.168.0.1 Metoda2: hping3 time hping3 192.168.0.2 -q -i u20 --icmp|tail -n10 Hasil Pengukuran Sample switch \"-i uX\" packet loss packets-per-second (pps) RaspberryPi 3 -i u17 1% 68625 Asus UN45H -i u9 1% 115999 VM 1 Core 512M RAM -i u9 1% 128866 VM 4 core 4096M RAM -i u9 7%",

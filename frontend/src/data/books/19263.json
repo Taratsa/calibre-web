@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19263?v=1795472401",
   "cover_og_url": "/cover/19263/og?v=1795472401",
+  "has_cover": false,
   "url": "/book/nmap-scanning-sebuah-mesin-onno-widodo-purbo/",
   "rating": null,
   "comment": "teknik scanning sederhana sebuah mesin nmap -v -sS -O 192.168.0.254 Nmap -sV -O 192.168.12.120 nmap -Pn --script vuln 192.168.12.120 Keterangan -v - untuk verbose supaya banyak keluar informasi -sS - scanning port dengan mengirim paket SYNC -O - dicoba juga untuk menebak sistem operasi yang digunakan Beberapa Contoh Penggunaan nmap nmap -v -A scanme.nmap.org nmap -v -sP 192.168.0.0/16 10.0.0.0/8",

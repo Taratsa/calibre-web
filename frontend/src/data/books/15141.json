@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15141?v=1795453374",
   "cover_og_url": "/cover/15141/og?v=1795453374",
+  "has_cover": false,
   "url": "/book/kotlin-delegation-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.tutorialspoint.com/kotlin/kotlin_delegation.htm Kotlin supports \"delegation\" design pattern by introducing a new keyword \"by\". Using this keyword or delegation methodology, Kotlin allows the derived class to access all the implemented public methods of an interface through a specific object. The following example demonstrates how this happens in Kotlin. interface Base { fun",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12004?v=1795441288",
   "cover_og_url": "/cover/12004/og?v=1795441288",
+  "has_cover": false,
   "url": "/book/ethereum-genoil-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://github.com/nanopool/genoil-ethereum sudo su add-apt-repository ppa:ethereum/ethereum -y apt update apt install ethereum -y apt-get -y install software-properties-common git apt-get install git libcryptopp-dev libleveldb-dev libjsoncpp-dev \\ libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 \\ opencl-headers mesa-common-dev libmicrohttpd-dev",

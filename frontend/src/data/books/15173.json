@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15173?v=1795453520",
   "cover_og_url": "/cover/15173/og?v=1795453520",
+  "has_cover": false,
   "url": "/book/5g-srsepc-env-coba-di-900mhz-onno-widodo-purbo/",
   "rating": null,
   "comment": "Calculator https://5g-tools.com/4g-lte-earfcn-calculator/ LTE band 8 earfcn 3450 DL 925 UL 880 Config rr.conf cd ~/srsLTE/srsenb vi rr.conf cell_list = ( { ... dl_earfcn = 3450; ... } ) Config enb.conf cd ~/srsLTE/srsenb vi enb.conf [rf] dl_earfcn = 3450",

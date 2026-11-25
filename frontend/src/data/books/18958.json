@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18958?v=1795471015",
   "cover_og_url": "/cover/18958/og?v=1795471015",
+  "has_cover": false,
   "url": "/book/voip-cookbook-how-to-route-to-pstn-and-cellular-in-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "Basically, we need an Analog Telephone Adapter (ATA) to interconnect a VoIP network to PSTN or Cellular network. In this example, we assume ATA is located at IP address 192.168.0.200 ATA is using port 5061 Area code for PSTN is 021 Area code for Cellullar is 08 We need to add to the opensips configuration file /usr/local/etc/opensips/opensips.cfg For example, to be able to use the ATA to call",

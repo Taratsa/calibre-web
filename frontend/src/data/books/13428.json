@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13428?v=1795445922",
   "cover_og_url": "/cover/13428/og?v=1795445922",
+  "has_cover": false,
   "url": "/book/ubuntu-repair-ntfs-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install ntfs-3g with sudo apt-get install ntfs-3g. Then run the ntfsfix command on your NTFS partition. For example: ntfsfix /dev/hda6 ntfsfix v2.0.0 (libntfs 10:0:0) Usage: ntfsfix [options] device Attempt to fix an NTFS partition. -h, --help Display this help -V, --version Display version information Developers' email address: linux-ntfs-dev@lists.sf.net Linux NTFS homepage:",

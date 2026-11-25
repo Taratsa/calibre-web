@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12795?v=1795443762",
   "cover_og_url": "/cover/12795/og?v=1795443762",
+  "has_cover": false,
   "url": "/book/cisco-ospf-redistribute-connected-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/113339-ospf-connected-net.html router ospf 100 log-adjacency-changes redistribute connected redistribute static subnet router ospf 1 area 0 nextwork x.x.x.x redistribute static subnet ! ip route 192.168.0.0 255.255.192.0 10.x.x.x ip route 192.168.100.10 255.255.255.255 10.x.x.x ip route 192.168.100.11",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10565?v=1795437490",
   "cover_og_url": "/cover/10565/og?v=1795437490",
+  "has_cover": false,
   "url": "/book/suricata-konfigurasi-dasar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat directory log Suricata sudo mkdir /var/log/suricata Untuk menyiapkan sistem sebelum menggunakannya, tulis sudo mkdir /etc/suricata Selanjutnya copy classification.config, reference.config dan suricata.yaml dari directory build/installation ke directory /etc/suricata . Lakukan hal berikut ini. sudo cp classification.config /etc/suricata sudo cp reference.config /etc/suricata sudo cp",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15481?v=1795455058",
   "cover_og_url": "/cover/15481/og?v=1795455058",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-i2c-scanner-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* I2C Scanner untuk dapatkan address I2C */ #include  void setup() { Wire.begin(); Serial.begin(115200); Serial.println(\"\\nI2C Scanner\"); } void loop() { byte error, address; int nDevices; Serial.println(\"Scanning...\"); nDevices = 0; for(address = 1; address &lt; 127; address++ ) { Wire.beginTransmission(address); error = Wire.endTransmission(); if (error == 0) { Serial.print(\"I2C device",
@@ -136,7 +137,7 @@
       ],
       [
         15476,
-        0.36
+        0.35
       ],
       [
         15505,

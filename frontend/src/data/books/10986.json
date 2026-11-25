@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10986?v=1795438690",
   "cover_og_url": "/cover/10986/og?v=1795438690",
+  "has_cover": false,
   "url": "/book/bokeh-server-random-data-dengan-x-axis-datetime-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi IP address 192.168.0.100 Sisi Server Buat randomaja.py import sys import time import socket import random import datetime from bokeh.plotting import figure, output_server, show output_server(\"randomaja\",url=' http://192.168.0.100:5006' ) x = [0] y = [0] i = 0 n = datetime.datetime.now() x = ['%d.%d'%(n.minute*60+n.second,n.microsecond)] y = [random.random()] for i in xrange(100): n =",

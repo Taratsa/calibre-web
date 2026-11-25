@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12728?v=1795443556",
   "cover_og_url": "/cover/12728/og?v=1795443556",
+  "has_cover": false,
   "url": "/book/internet-offline-sql-rpi-onno-widodo-purbo/",
   "rating": null,
   "comment": "mysqlslap tidak ada di raspberrypi, jadi agak susah untuk melakukan benchmark untuk MySQL. mysqlslap -v -h localhost -u root -p123456 --auto-generate-sql mysqlslap -vvv -h localhost -u root -p123456 --auto-generate-sql --concurrency=100 --number-of-queries=1 mysqlslap -h localhost -u root -p123456 --auto-generate-sql --concurrency=100 --number-of-queries=10000 mysqlslap -h localhost -u root",

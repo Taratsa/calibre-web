@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12796?v=1795443766",
   "cover_og_url": "/cover/12796/og?v=1795443766",
+  "has_cover": false,
   "url": "/book/cisco-ospf-distribute-default-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/47868-ospfdb9.html Contoh router ospf 2 network 5.0.0.0 0.255.255.255 area 1 network 6.0.0.0 0.255.255.255 area 0 default-information originate ip route 0.0.0.0 0.0.0.0 6.0.0.3 atau router ospf 2 network 5.0.0.0 0.255.255.255 area 1 network 6.0.0.0 0.255.255.255 area 0 network 0.0.0.0 255.255.255.255 area 0.0.0.0",

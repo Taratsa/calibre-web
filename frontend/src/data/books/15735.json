@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15735?v=1795456509",
   "cover_og_url": "/cover/15735/og?v=1795456509",
+  "has_cover": false,
   "url": "/book/icecast-instalasi-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.atlantic.net/dedicated-server-hosting/how-to-install-icecast-audio-streaming-server-on-ubuntu/ sudo su apt update apt -y install icecast2 Beberapa informasi hostname icecast.itts password hackme (ada 3 password) Restart systemctl start icecast2 systemctl enable icecast2 Cek Port 8000 ss -tunelp | grep 8000 Akses ke Web port 8000 username admin password hackme Nginx Jika",

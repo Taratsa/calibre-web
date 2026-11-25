@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18447?v=1795468898",
   "cover_og_url": "/cover/18447/og?v=1795468898",
+  "has_cover": false,
   "url": "/book/compile-kernel-alternatif-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan software pendukung apt-get update apt-get install kernel-package libncurses5-dev fakeroot wget bzip2 libncurses5 libncurses5-dev download source code kernel cd /usr/src wget http://www.kernel.org/pub/linux/kernel/v2.6/testing/linux-2.6.33-rc4.tar.bz2 tar xjf linux-2.6.33-rc4.tar.bz2 -C /usr/src ln -s linux-2.6.33-rc4 linux cd /usr/src/linux cp /boot/config-`uname -r` ./.config pilih salah",

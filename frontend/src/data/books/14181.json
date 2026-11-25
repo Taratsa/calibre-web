@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14181?v=1795448945",
   "cover_og_url": "/cover/14181/og?v=1795448945",
+  "has_cover": false,
   "url": "/book/mikrotik-l7p-block-content-onno-widodo-purbo/",
   "rating": null,
   "comment": "/ip firewall mangle add chain=prerouting content=togel \\ action=mark-connection new-connection-mark=drop add chain=prerouting content=porn \\ action=mark-connection new-connection-mark=drop add chain=prerouting content=TOGEL \\ action=mark-connection new-connection-mark=drop /ip firewall filter add chain=input connection-mark=drop \\ action=jump jump-target=drop comment=\"block content\" add",

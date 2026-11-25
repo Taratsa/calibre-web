@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12233?v=1795441976",
   "cover_og_url": "/cover/12233/og?v=1795441976",
+  "has_cover": false,
   "url": "/book/wspr-arduino-automatic-timer-led-monitor-status-onno-widodo-purbo/",
   "rating": null,
   "comment": "// time ntp sync // pin PIN_AUD - kuning - audio SD // pin PIN_PTT - merah - PTT // pin PIN_SYN - hijau - NTP sync // // file WAV WSPR diambil dari rekaman wsjt-x #include  #include  #include  #include  #include \"TMRpcm.h\" #include  // Ethernet library configuration byte mac[] = { 0x24, 0x7B, 0xA2, 0x4A, 0x52, 0x10 }; IPAddress timeServer(128, 138,",

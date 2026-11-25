@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15389?v=1795454619",
   "cover_og_url": "/cover/15389/og?v=1795454619",
+  "has_cover": false,
   "url": "/book/ueransim-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/aligungr/UERANSIM/wiki/Configuration Konfigurasi adalah bagian terpenting, dan hampir semua masalah disebabkan oleh konfigurasi yang salah (baik UERANSIM atau sisi core network). nr-ue menerima file konfigurasi UE sebagai parameter, dan nr-gnb menerima file konfigurasi gNB sebagai parameter. Sintaksnya adalah sebagai berikut: nr-ue -c myconfig1.yaml nr-gnb -c",

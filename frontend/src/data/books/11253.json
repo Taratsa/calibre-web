@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11253?v=1795439431",
   "cover_og_url": "/cover/11253/og?v=1795439431",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-ntp-dapatkan-waktu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://forum.arduino.cc/index.php?topic=58915.0 Code // NTP time issue // IDE 1.0.3 // DHCP Server required // Arduino Mega2560 + Ethernetshield for Mega with SD-slot #include  #include  #include  #include  #include  #define SD_CS 4 // Ethernet library configuration byte mac[] = { 0x24, 0x7B, 0xA2, 0x4A, 0x52, 0x10 }; IPAddress",

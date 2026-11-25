@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15780?v=1795456792",
   "cover_og_url": "/cover/15780/og?v=1795456792",
+  "has_cover": false,
   "url": "/book/woeusb-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo add-apt-repository ppa:tomtomtom/woeusb -y sudo apt update &amp;&amp; sudo apt upgrade sudo apt install woeusb woeusb-frontend-wxgtk -y woeusb --version woeusb --help sudo woeusb --target-filesystem NTFS --device win11.iso /dev/sdb Error Kalau stuck, check /tmp/ grub-install --target=i386-pc --boot-directory=/tmp/woeusb-target-20210302-110441-Tuesday.72gQle --force /dev/sdb",

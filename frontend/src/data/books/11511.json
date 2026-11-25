@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11511?v=1795440068",
   "cover_og_url": "/cover/11511/og?v=1795440068",
+  "has_cover": false,
   "url": "/book/php-downgrade-php7-ke-php5-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo add-apt-repository ppa:ondrej/php sudo apt-get update sudo apt-get install php7.0 php5.6 php5.6-mysql php-gettext php5.6-mbstring php-mbstring php7.0-mbstring php-xdebug libapache2-mod-php5.6 libapache2-mod-php7.0 Switch From php5.6 to php7.0 : Apache: sudo a2dismod php5.6 ; sudo a2enmod php7.0 ; sudo service apache2 restart CLI: update-alternatives --set php /usr/bin/php7.0 From",

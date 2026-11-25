@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15773?v=1795456747",
   "cover_og_url": "/cover/15773/og?v=1795456747",
+  "has_cover": false,
   "url": "/book/prom-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Java sudo su apt install default-jre Download https://promtools.org/?sdm_process_download=1&amp;download_id=610 Kemudian lakukan sebagai super user, sudo su cd ~/Downloads mv prom-6.13-all-platforms.tar.gz /usr/local/src/ cd /usr/local/src tar zxvf prom-6.13-all-platforms.tar.gz ./ProMPM613.sh Install Plugins Install RunnerUpPackages, tampaknya akan menginstalasi sebagian besar plugin yang",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12533?v=1795443002",
   "cover_og_url": "/cover/12533/og?v=1795443002",
+  "has_cover": false,
   "url": "/book/python-file-stemming-dengan-sastrawi-onno-widodo-purbo/",
   "rating": null,
   "comment": "import sys, getopt import argparse import os,nltk,os.path,re,string import argparse import Sastrawi from nltk.stem.porter import PorterStemmer from Sastrawi.Stemmer.StemmerFactory import StemmerFactory def parse_args(): parser = argparse.ArgumentParser() parser.add_argument('-i', '--infile', default= , help='input filename') parser.add_argument('-o', '--outfile', default= , help='output",

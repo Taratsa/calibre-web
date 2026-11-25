@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9863?v=1795435200",
   "cover_og_url": "/cover/9863/og?v=1795435200",
+  "has_cover": false,
   "url": "/book/ipv6-router-setting-nat64-dns64-onno-widodo-purbo/",
   "rating": null,
   "comment": "In this post, I will try to explain how to setup NAT64 &amp; DNS64 in order to enable an IPv6 LAN (no IPv4 enabled) to talk to a mixed IPv4 en IPv6 Internet. It is assumed that there are no IPv4 hosts left in the LAN. In the setup there is one gateway for both native IPv6 traffic and translated (NAT64) IPv4 traffic. This gateway is also the DNS64 server. Contents 1 Operating system and packages 2",

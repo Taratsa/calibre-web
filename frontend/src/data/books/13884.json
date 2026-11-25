@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13884?v=1795447794",
   "cover_og_url": "/cover/13884/og?v=1795447794",
+  "has_cover": false,
   "url": "/book/gns3-router-fisik-dekat-pc-running-gns3-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tampaknya GNS3 mengasumsikan bahwa LAN tempat mesin host tersambung cukup relible dengan delay ke router terdekat sangat kecil. Untuk jaringan LAN yang lambat akan bermasalah dengan widget Cloud &amp; NAT di GNS3. Untuk mengatasi hal tersebut, di LAN yang lambat, sebaiknya dipasang sebuah Router fisik tambahan sebelum masuk ke PC yang running GNS3. Sehingga topologi yang akan terjadi adalah Internet",

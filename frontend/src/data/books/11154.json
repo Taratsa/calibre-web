@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11154?v=1795439156",
   "cover_og_url": "/cover/11154/og?v=1795439156",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-udp-send-isi-analog-input-0-ke-graphite-di-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code /* UDPSendAnalogInput: Kirim pakai UDP ke 192.168.0.100:2003 Format test.data analogdata unixtime Sinkronisasi waktu dari PC linux menggunakan perintah date +T%s\\n &gt; /dev/ttyACM0 date +T%s\\n &gt; /dev/ttyACM1 date +T%s\\n &gt; /dev/ttyACMx created 27 Feb 2016 by Onno W. Purbo */ #include  // needed for Arduino versions later than 0018 #include  #include  // UDP",

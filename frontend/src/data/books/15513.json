@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15513?v=1795455229",
   "cover_og_url": "/cover/15513/og?v=1795455229",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-prayer-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library https://github.com/PaulStoffregen/Time https://github.com/asmaklad/Arduino-Prayer-Times Code #include  #include  // get this library from https://github.com/PaulStoffregen/Time #include  // get this librarty from https://github.com/asmaklad/Arduino-Prayer-Times #include \"PrayerTimes.h\" double times[sizeof(TimeName)/sizeof(char*)]; void p(char *fmt, ... ){ char",
@@ -193,7 +194,7 @@
       ],
       [
         15046,
-        0.3
+        0.29
       ],
       [
         15467,

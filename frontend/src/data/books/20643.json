@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20643?v=1795477794",
   "cover_og_url": "/cover/20643/og?v=1795477794",
+  "has_cover": false,
   "url": "/book/mirror-repository-ubuntu-10-10-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Asumsi 2 Siapkan 3 Mengkonfigurasi debmirror 4 Pranala Menarik Asumsi folder repo : /var/data/repository/repo-10.10 server : dl2.foss-id.web.id atau 125.160.17.22 GNUPGHOME : /var/data/mirrorkeyring Ubah informasi tersebut di sesuaikan dengan kondisi komputer anda Siapkan Membuat Mirrorkeyring untuk debmirror Mengkonfigurasi debmirror Install debmirror &amp; buat folder tempat repo apt-get",

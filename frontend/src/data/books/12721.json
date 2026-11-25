@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12721?v=1795443536",
   "cover_og_url": "/cover/12721/og?v=1795443536",
+  "has_cover": false,
   "url": "/book/internet-offline-unixbench-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install 2 Compile 3 Run 4 Run ssh &amp; Script 4.1 Script unixbench-run.sh 5 Run untuk VirtualBox 5.1 ub-vmall.sh 6 Pranala Menarik Install apt update apt install mesa-common-dev libsdl-net1.2-dev libsdl-net1.2 unzip # untuk RaspberryPi apt install mesa-common-dev libsdl* unzip # untuk PC Compile cd /usr/local/src wget https://github.com/kdlucas/byte-unixbench/archive/master.zip unzip",

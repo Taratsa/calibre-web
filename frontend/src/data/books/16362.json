@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16362?v=1795460384",
   "cover_og_url": "/cover/16362/og?v=1795460384",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-untuk-dataset-fashion-mnist-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python yang membangun model Convolutional Neural Network (CNN) menggunakan Keras untuk dataset Fashion-MNIST, melakukan prediksi, dan menampilkan visualisasi hasilnya: import numpy as np import matplotlib.pyplot as plt from tensorflow.keras.datasets import fashion_mnist from tensorflow.keras.models import Sequential from tensorflow.keras.layers import Conv2D,",

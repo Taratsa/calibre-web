@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12710?v=1795443507",
   "cover_og_url": "/cover/12710/og?v=1795443507",
+  "has_cover": false,
   "url": "/book/vboxmanage-cpu-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.virtualbox.org/manual/ch09.html#cpuhotplug At this time, CPU hot-plugging requires using the VBoxManage command-line interface. First, hot-plugging needs to be enabled for a virtual machine: VBoxManage controlvm \"VM name\" acpipowerbutton VBoxManage modifyvm \"VM name\" --cpuhotplug on After that, the --cpus option specifies the maximum number of CPUs that the virtual machine can",

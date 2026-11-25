@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13407?v=1795445858",
   "cover_og_url": "/cover/13407/og?v=1795445858",
+  "has_cover": false,
   "url": "/book/objectblocks-weatherstation-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  #include \"Channel.h\" DHT dht(2, DHT11); void setup() { Channel.connect(\"mFPdJAqtBzpu7t\"); dht.begin(); } void loop() { Channel.sendNumber(\"TEMP\", dht.readTemperature()); delay(1000); Channel.sendNumber(\"HUMIDITY\", dht.readHumidity()); delay(1000); } Pranala Menarik Arduino ObjectBlocks",

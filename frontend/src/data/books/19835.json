@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19835?v=1795475240",
   "cover_og_url": "/cover/19835/og?v=1795475240",
+  "has_cover": false,
   "url": "/book/modem-advan-dt-8l-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Aktifkan Terminal sudo su lsmod | grep usb_storage rmmod usb-storage lsusb, lihat vendor port dan product port yang belum ada keterangannya modprobe usbserial vendor=0x1c9e product=0x9605 System -&gt; Preferences -&gt; Network Connections -&gt; Mobile Broadband -&gt; Add, setting deh sesuai operator anda Catatan : vendor=0x1c9e dan product =0x9605 merupakan hasil pengamatan vendor port dan product port pada",

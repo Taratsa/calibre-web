@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14061?v=1795448485",
   "cover_og_url": "/cover/14061/og?v=1795448485",
+  "has_cover": false,
   "url": "/book/raspberrypi-ubuntu-20-04-default-username-password-onno-widodo-purbo/",
   "rating": null,
   "comment": "The login username is \"ubuntu\", password is \"ubuntu\". You will be asked to change the password on first login. Alternatively, you may wish to customize the initial user by editing the cloud-init configuration before first boot. To do so, remove and re-insert your freshly written SD card, then edit the \"user-data\" file on the \"system-boot\" partition. This is a text file in YAML format with several",

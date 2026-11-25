@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15632?v=1795455870",
   "cover_og_url": "/cover/15632/og?v=1795455870",
+  "has_cover": false,
   "url": "/book/suricata-instalasi-di-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kifarunix.com/install-and-setup-suricata-on-ubuntu-18-04/ Contents 1 Update Repo dan Install 2 Perbaikan konfigurasi 3 Start Restart Stop 4 Cek 5 Install Rules 6 Referensi 7 Pranala Menarik Update Repo dan Install Update sudo apt update Instalasi normal, sudo apt -y install suricata Instalasi dengan fasilitas debugging di enabled, sudo apt -y install suricata-dbg Selesai sudah,",

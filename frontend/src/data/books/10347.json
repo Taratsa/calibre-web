@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10347?v=1795436802",
   "cover_og_url": "/cover/10347/og?v=1795436802",
+  "has_cover": false,
   "url": "/book/rom-android-fastboot-unlock-onno-widodo-purbo/",
   "rating": null,
   "comment": "Unlocking the device {{#if:| Template:Note }} {{#if:| Template:Note }} {{#if:| Template:Note }} Pastikan adb &amp; fastboot terinstalasi dan berjalan dengan baik apt-get install android-tools-adb android-tools-fastboot Aktifkan USB debugging di handphone Sambungkan device ke komputer melalui USB Cek apakah berhasil berkomunikasi dengan handphone adb devices adb devices -l Dari terminal kompuputer,",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16664?v=1795462389",
   "cover_og_url": "/cover/16664/og?v=1795462389",
+  "has_cover": false,
   "url": "/book/n8n-ollama-n8n-telegram-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap! Ini resep ringkas biar **Telegram ↔ n8n ↔ Ollama** bisa ngobrol dua arah. Arsitektur singkat Telegram (user) ⇄ **n8n** (workflow) ⇄ **Ollama** (REST API /api/chat) **Telegram**: bot untuk terima &amp; kirim pesan. **n8n**: ambil pesan Telegram → kirim ke Ollama → balikan jawaban ke Telegram. **Ollama**: jalankan model lokal (mis. `llama3`, `llama3.1:8b-instruct`, `qwen2.5`). --- 1) Jalankan",

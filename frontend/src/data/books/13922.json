@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13922?v=1795447966",
   "cover_og_url": "/cover/13922/og?v=1795447966",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-router-48-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita cukup beruntung dapat /48 Reset Mikrotik /system reset-configuration no-defaults=yes Membuat router IPv6 sederhana # LAN Bridge /interface bridge add name=bridge1 /interface bridge port add bridge=bridge1 interface=ether2 add bridge=bridge1 interface=ether3 add bridge=bridge1 interface=ether4 add bridge=bridge1 interface=ether5 .. .. # Setup WAN /ipv6 settings set",

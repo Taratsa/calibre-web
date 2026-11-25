@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16757?v=1795462975",
   "cover_og_url": "/cover/16757/og?v=1795462975",
+  "has_cover": false,
   "url": "/book/os-kernel-tuning-performance-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Kernel Tuning sebagai Tahap \"Naik Level\" 2 sysctl - Mengendalikan Perilaku Kernel Secara Runtime 2.1 Konsep Akademik 2.2 Observasi Awal (Wajib sebelum Tuning) 2.3 Contoh Praktek Nyata: Optimasi Network Buffer 2.4 Persistensi Konfigurasi 3 Scheduler Tuning - Mengatur Cara CPU Dibagi 3.1 Konsep Akademik 3.2 Observasi Dasar Scheduler 3.3 Eksperimen Scheduler: Beban CPU 3.4 Tuning Contoh:",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 803,
-    "longer_than": 47,
+    "longer_than": 46,
     "top": [
       [
         "kernel",

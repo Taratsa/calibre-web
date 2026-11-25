@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20819?v=1795478259",
   "cover_og_url": "/cover/20819/og?v=1795478259",
+  "has_cover": false,
   "url": "/book/wordpress-instalasi-smashing-multimedi-theme-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Aktifkan Mod Rewrite di Apache 2 Download 3 Instalasi Smashing Multimedia 4 Pranala Menarik Aktifkan Mod Rewrite di Apache Enable mod_rewrite di apache sudo a2enmod rewrite Alternatif lain untuk enable mod_rewrite vi /etc/apache2/sites-enabled/000-default DocumentRoot /var/www  Options FollowSymLinks AllowOverride all   Options Indexes",

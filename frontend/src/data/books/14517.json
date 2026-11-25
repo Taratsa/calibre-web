@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14517?v=1795450348",
   "cover_og_url": "/cover/14517/og?v=1795450348",
+  "has_cover": false,
   "url": "/book/netplan-statik-internet-offline-ut-onno-widodo-purbo/",
   "rating": null,
   "comment": "root@ut:/etc/dhcp# more /etc/netplan/00-installer-config.yaml-INTERNET-OFFLINE # This is the network config written by 'subiquity' network: ethernets: enp3s0: addresses: [192.168.88.8/24] gateway4: 192.168.88.1 nameservers: addresses: [192.168.88.8] version: 2",

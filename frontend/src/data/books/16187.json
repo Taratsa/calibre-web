@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16187?v=1795459334",
   "cover_og_url": "/cover/16187/og?v=1795459334",
+  "has_cover": false,
   "url": "/book/python-ubuntu-24-04-tensorflow-analisa-umkm-target-omzet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dataset ini memiliki kolom \"OMZET\" yang ingin Anda klasifikasikan. Untuk memulai klasifikasi dengan TensorFlow, kita perlu melakukan beberapa langkah: Preprocessing Data: Melakukan encoding untuk data kategorikal dan normalisasi data numerik. Defining Target Classes: Menetapkan kategori untuk kolom \"OMZET\". Building a Neural Network Model: Menggunakan TensorFlow untuk membangun model klasifikasi.",

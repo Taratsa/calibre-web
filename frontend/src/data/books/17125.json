@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17125?v=1795464200",
   "cover_og_url": "/cover/17125/og?v=1795464200",
+  "has_cover": false,
   "url": "/book/schoolonffline-set-static-ip-address-untuk-ethernet-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tidak di sarankan untuk menset ini supaya menset /etc/rc.local menjadi mudah. Edit /etc/network/interfaces # vi /etc/network/interfaces Bisa di isi dengan # The loopback network interface auto lo iface lo inet loopback # The primary network interface auto eth0 iface eth0 inet static address 192.168.0.254 netmask 255.255.255.0 network 192.168.0.0 broadcast 192.168.0.255 gateway 192.168.0.1 # dns-*",

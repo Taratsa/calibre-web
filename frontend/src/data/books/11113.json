@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11113?v=1795439051",
   "cover_og_url": "/cover/11113/og?v=1795439051",
+  "has_cover": false,
   "url": "/book/nmap-cek-sql-injection-vulnerability-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/http-sql-injection.html Contents 1 File http-sql-injection 2 Penggunaan 3 Contoh Penggunaan 4 Contoh Output File http-sql-injection Script types: portrule Categories: intrusive, vuln Download: http://nmap.org/svn/scripts/http-sql-injection.nse Penggunaan Spiders an HTTP server looking for URLs containing queries vulnerable to an SQL injection attack. It",

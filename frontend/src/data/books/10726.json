@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10726?v=1795437950",
   "cover_og_url": "/cover/10726/og?v=1795437950",
+  "has_cover": false,
   "url": "/book/zabbix-instalasi-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit apt source list to add the PPA: sudo nano /etc/apt/sources.list Add the following items at the end of the file: # Zabbix Application PPA deb http://ppa.launchpad.net/tbfr/zabbix/ubuntu precise main deb-src http://ppa.launchpad.net/tbfr/zabbix/ubuntu precise main Add the PPA's key so that apt-get trusts the source: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C407E17D5F76A32B",

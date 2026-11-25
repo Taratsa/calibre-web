@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9767?v=1795434813",
   "cover_og_url": "/cover/9767/og?v=1795434813",
+  "has_cover": false,
   "url": "/book/ipv6-in-ipv4-tunnel-setup-6to4-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perhatikan bahwa dukungan untuk 6to4 tunnel tidak baik di kernel versi 2.2.x. Juga perhatikan bahwa panjang prefix untuk 6to4 address adalah 16 karena cara pandang jaringan, semua host 6to4 host berada pada layer 2 yang sama. Contents 1 Menambahkan 6to4 tunnel 1.1 Menggunakan \"ip\" dan device tunnel dedicated 1.2 Menggunakan \"ifconfig\" dan \"route\" dan generic tunnel device \"sit0\" (deprecated) 2",

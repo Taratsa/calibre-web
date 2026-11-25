@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12171?v=1795441734",
   "cover_og_url": "/cover/12171/og?v=1795441734",
+  "has_cover": false,
   "url": "/book/linux-file-etc-rc-local-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di ubuntu baru tampaknya /etc/rc.local di buang .. Contents 1 Cek 2 Buat /etc/rc.local 3 Isi /etc/rc.local 4 Alternatif Lain Cek Untuk mencek apakah /etc/rc.local akan di eksekusi sudo systemctl edit --full rc-local Akan keluar, antara lain # This unit gets pulled automatically into multi-user.target by # systemd-rc-local-generator if /etc/rc.local is executable. Artinya kalau ada /etc/rc.local",

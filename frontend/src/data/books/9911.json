@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9911?v=1795435407",
   "cover_og_url": "/cover/9911/og?v=1795435407",
+  "has_cover": false,
   "url": "/book/compile-asterisk-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pengalaman menunjukan asterisk softswitch dari hasil compiling tampaknya lebih bagus dari astrisk dari apt-get. Siapkan Ubuntu untuk Compile Software sudo apt-get install kernel-package libncurses5-dev fakeroot wget \\ bzip2 g++ libssl-dev libxml2-dev doxygen Pastikan sambungan ke Internet beroperasi karena kita harus download voice untuk asterisk 1.8. Ambil Source Code zaptel, asterisk,",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18960?v=1795471024",
   "cover_og_url": "/cover/18960/og?v=1795471024",
+  "has_cover": false,
   "url": "/book/voip-cookbook-how-to-route-enum-query-in-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "Steps to route ENUM query in OpenSIPS is as follows, Prepare ENUM modul in OpenSIPS configuration Create routing table for ENUM ENUM query in OpenSIPS is basically transform the URI address from ENUM to URI SIP. Call process is normally done using the URI SIP. To prepare the ENUM module in OpenSIPS configuration, we need to edit /usr/local/etc/opensips/opensips.cfg or /etc/opensips/opensips.cfg #",

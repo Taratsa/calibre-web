@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10417?v=1795437027",
   "cover_og_url": "/cover/10417/og?v=1795437027",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-squirrelmail-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Squirrelmail apt-get install apache2 php5 php5-xmlrpc php5-mysql php5-gd php5-cli \\ php5-curl mysql-client mysql-server dovecot-common dovecot-imapd \\ dovecot-pop3d postfix squirrelmail squirrelmail-decode Pastikan dovecot mendukung imap , biasanya default-nya sudah ok vi /etc/dovecot/dovecot.conf listen = * protocols = imap pop3 Pastikan Postfix hanya untuk IPv4 vi /etc/postfix/main.cf",

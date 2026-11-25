@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13127?v=1795444882",
   "cover_og_url": "/cover/13127/og?v=1795444882",
+  "has_cover": false,
   "url": "/book/ipv6-distance-vector-routing-protocol-onno-widodo-purbo/",
   "rating": null,
   "comment": "Distance Vector Routing Protocols Most routing protocols fall into one of two classes: distance vector or link state. The basics of distance vector routing protocols are examined here; the next section covers link state routing protocols. Most distance vector algorithms are based on the work done of R. E. Bellman, [3] L. R. Ford, and D. R. Fulkerson, [4] and for this reason occasionally are",
@@ -136,12 +137,12 @@
         19
       ],
       [
-        "horizon",
-        19
-      ],
-      [
         "unreachable",
         13
+      ],
+      [
+        "horizon",
+        19
       ],
       [
         "update",

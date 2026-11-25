@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19699?v=1795474583",
   "cover_og_url": "/cover/19699/og?v=1795474583",
+  "has_cover": false,
   "url": "/book/instalasi-mailscanner-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setup MailScanner di Ubuntu tampaknya tidak jalan. Jika anda sudah menginstall-nya ada baiknya di delete terlebih dulu /etc/init.d/mailscanner stop apt-get remove mailscanner Contents 1 Instalasi Postfix 2 Instalasi MailScanner 3 Perbaikan untuk Ubuntu 8.04 4 Referensi 5 Referensi 6 Pranala Menarik Instalasi Postfix install postfix sudo apt-get install postfix Masukan di akhir",

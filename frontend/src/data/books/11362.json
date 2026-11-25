@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11362?v=1795439693",
   "cover_og_url": "/cover/11362/og?v=1795439693",
+  "has_cover": false,
   "url": "/book/os-aosp-merge-manufacturer-source-code-onno-widodo-purbo/",
   "rating": null,
   "comment": "1. Android buid - Download original android source code (gingerbread) from http://source.android.com - Untar opensource packages of p500_gb_open_source.tar.gz into downloaded android source directory - And, merge the source into the android source code(gingerbread) - Run following scripts to build android a) . build/envsetup.sh B) make -j4 - When you compile the android source code, you have to",

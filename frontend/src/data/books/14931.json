@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14931?v=1795452468",
   "cover_og_url": "/cover/14931/og?v=1795452468",
+  "has_cover": false,
   "url": "/book/android-studio-build-signed-release-apps-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuat Signed Relase Apps Pastikan ICON bukan Android Avatar Delete Folder res/drawable res/mipmap Generate Project &gt; app &gt; res &gt; New &gt; Image Asset &amp; pilih Foreground &gt; Source Asset = Image &gt; Path Pilih Asset Background Select Variant Project &gt; Build &gt; Select Build Variant &gt; release Edit build.gradle app Edit Project &gt; Grade Scripts &gt; build.gradle app Pastikan setting signingConfigs -",

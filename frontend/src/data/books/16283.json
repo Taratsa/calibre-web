@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16283?v=1795459931",
   "cover_og_url": "/cover/16283/og?v=1795459931",
+  "has_cover": false,
   "url": "/book/postfix-delivery-speed-control-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "One of the challenges in sending email is how to send them as quickly as possible while also not overwhelming our neighbors with emails. On the client side, the Postfix SMTP Server must provide mechanisms to defend against email attacks. All parameters to be described here are for the main.cf file. Don't forget to execute the reload command after changing the configuration. Some of the parameters",

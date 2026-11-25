@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11455?v=1795439920",
   "cover_og_url": "/cover/11455/og?v=1795439920",
+  "has_cover": false,
   "url": "/book/python-browse-url-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "from selenium import webdriver import sys, getopt import argparse firefox_profile = webdriver.FirefoxProfile() firefox_profile.set_preference('permissions.default.image', 2) firefox_profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false') driver = webdriver.Firefox(firefox_profile=firefox_profile) def parse_args(): parser = argparse.ArgumentParser() parser.add_argument('-i',",

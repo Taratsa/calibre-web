@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11414?v=1795439818",
   "cover_og_url": "/cover/11414/og?v=1795439818",
+  "has_cover": false,
   "url": "/book/python-stopwords-indonesia-onno-widodo-purbo/",
   "rating": null,
   "comment": "https://github.com/masdevid/ID-Stopwords Cara lain adalah mengumpulkan sendiri stopwords Jalankan script cari-stopwords.py -i input.txt &gt; kumpulan-words.txt Edit vi kumpulan-words.txt buang kata-kata yang bukan stopwords kata-kata yang penting yang akan menjadi node di graph simpan stopwords rename cp kumpulan-words.txt indonesia-sementara merging dengan berbagai stopwords yang ada rm",

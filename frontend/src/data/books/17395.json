@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/17395?v=1795465126",
   "cover_og_url": "/cover/17395/og?v=1795465126",
+  "has_cover": false,
   "url": "/book/instalasi-ntop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan dependencies .. sudo apt-get install rrdcollect rrdtool rrdtool-tcl Install NTOP sudo apt-get install ntop Ini agak aneh, ternyata NTOP tidak menyediakan folder yang dibutuhkannya. Jadi kita harus menyediakan secara manual .. mkdir /var/lib/ntop/rrd mkdir /var/lib/ntop/rrd/graphics mkdir /var/lib/ntop/rrd/flows mkdir /var/lib/ntop/rrd/interfaces mkdir /var/lib/ntop/rrd/interfaces/eth0",

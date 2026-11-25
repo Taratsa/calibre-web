@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11755?v=1795440676",
   "cover_og_url": "/cover/11755/og?v=1795440676",
+  "has_cover": false,
   "url": "/book/korban-install-snort-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Cek Interface 2 Install 3 Cek 4 Jalankan Cek Interface ifconfig -a Biasanya ens18 / enp0s3 / enp0s4 / enp0s5 / enp0s8 dst Install apt update apt -y install oinkmaster snort snort-common snort-rules-default snort-doc Cek snort -C Jalankan killall snort killall snort snort -c /etc/snort/snort.conf -l /var/log/snort/ -K ascii -D Atau kalau menggunakan interface &amp; IP lain snort -c",

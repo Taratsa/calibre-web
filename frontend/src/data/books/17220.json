@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17220?v=1795464474",
   "cover_og_url": "/cover/17220/og?v=1795464474",
+  "has_cover": false,
   "url": "/book/schoolonffline-setup-mysql-untuk-semua-cms-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk memudahkan pembuatan Distro ada baiknya setup MySQL untuk semua CMS di satukan mysql -u root -p123456 create database wordpress; grant INSERT,SELECT on root.* to wordpress@localhost; grant ALL on wordpress.* to wordpress@localhost identified by 'wordpress'; grant ALL on wordpress.* to wordpress identified by 'wordpress'; create database mediawiki; grant INSERT,SELECT on root.* to",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18621?v=1795469460",
   "cover_og_url": "/cover/18621/og?v=1795469460",
+  "has_cover": false,
   "url": "/book/mengubah-logo-di-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat gambar logo dengan dimensi 135x135 pixel format .png (format .gif dan .jpeg juga ok) Contents 1 Edit resource/asset 2 Atau Upload ke Image 3 Upload ke Skin 4 Pranala Menarik Edit resource/asset ## The URL paths to the logo. Make sure you change this from the default, ## or else you'll overwrite your logo when you upgrade! $wgLogos = [ '1x' =&gt;",

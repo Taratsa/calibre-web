@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12424?v=1795442707",
   "cover_og_url": "/cover/12424/og?v=1795442707",
+  "has_cover": false,
   "url": "/book/powerdns-test-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology Jaringan 2 DNS Server 3 Client 4 Pranala Menarik Topology Jaringan SERVER DNS ------ CLIENT DNS 2345::1/64 2345::2/64 DNS Server Set IPv6 misalnya ip addr add 2345::1/64 dev enp0s3 Cek PowerDNS sudo netstat -tap | grep pdns Pastikan harus ada tcp dan tcp6: tcp 0 0 0.0.0.0:domain 0.0.0.0:* LISTEN 6676/pdns_server tcp6 0 0 [::]:domain [::]:* LISTEN 6676/pdns_server Cek apakah",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19488?v=1795473544",
   "cover_og_url": "/cover/19488/og?v=1795473544",
+  "has_cover": false,
   "url": "/book/menggunakan-gnupg-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install GnuPG 2 Perintah Penting 3 Encrypt Decrypt Dokumen 4 Membuat Tanda Tangan &amp; Verifikasi Tanda Tangan 5 Membuat Key baru 6 Pranala Menarik Install GnuPG # apt-get install gnupg Perintah Penting $ gpg --gen-key $ gpg -gen-revoke nobody@york.ac.uk $ gpg -armour --export nobody@york.ac.uk $ gpg --keyserver certserver.pgp.com --send nobody@york.ac.uk Encrypt Decrypt Dokumen $ gpg",

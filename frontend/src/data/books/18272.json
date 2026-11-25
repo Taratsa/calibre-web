@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18272?v=1795468339",
   "cover_og_url": "/cover/18272/og?v=1795468339",
+  "has_cover": false,
   "url": "/book/schoolonffline-update-speedywiki-automatis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Update isi Wiki agar sesuai dengan SpeedyWiki dilakukan secara automatis. cron Cron dilakukan setiap jam 4 pagi oleh root crontab -e isi dengan 0 4 * * * /usr/local/bin/updatewiki.sh Script Script yang di jalankan adalah /usr/local/bin/updatewiki.sh Pranala Menarik Update SpeedyWiki lokal secara automatis Distro SchoolOnffLine SchoolOnffLine: Manual Administrator SchoolOnffLine: Server Berbasis",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16396?v=1795460601",
   "cover_og_url": "/cover/16396/og?v=1795460601",
+  "has_cover": false,
   "url": "/book/llm-ubuntu-24-04-ollama-open-webui-postgresql-full-docker-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menginstal Ollama , Open-WebUI , dan PostgreSQL sebagai basis data vektor menggunakan Docker Compose , Anda dapat mengikuti langkah-langkah berikut: 1. Persiapan Lingkungan: Pastikan Docker dan Docker Compose telah terinstal di sistem Anda. sudo apt update sudo apt install -y docker.io curl -L \" https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname",

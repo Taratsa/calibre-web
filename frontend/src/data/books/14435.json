@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14435?v=1795449954",
   "cover_og_url": "/cover/14435/og?v=1795449954",
+  "has_cover": false,
   "url": "/book/openwrt-samba-sharing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://openwrt.org/docs/guide-user/services/nas/samba_configuration Disini akan di coba menggunakan samba4 yang terbaru Contents 1 Cek 2 Instal 3 Konfigurasi Awal 4 Referensi Cek Pastikan routing &amp; DNS jalan smbd -V opkg list-installed | grep samba opkg update opkg list | grep samba Instal opkg install luci-app-samba4 samba4-admin samba4-client samba4-libs samba4-server samba4-utils",

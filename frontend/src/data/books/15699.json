@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15699?v=1795456271",
   "cover_og_url": "/cover/15699/og?v=1795456271",
+  "has_cover": false,
   "url": "/book/open5gs-fhoss-membuat-file-jar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://stackoverflow.com/questions/9941296/how-do-i-make-a-jar-from-a-java-file Contents 1 Langkah Secara Umum 2 Catatan 3 Lakukan untuk FHoSS 4 Referensi Langkah Secara Umum Masuk ke CLI Masuk ke directory tempat .java Buat build directory mkdir build Run java compilation javac -d ./build *.java Jika tidak ada error, kita akan dapat class tree di build directory Pindah ke build",

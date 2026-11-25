@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17139?v=1795464236",
   "cover_og_url": "/cover/17139/og?v=1795464236",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-moodle-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pertama-tama siapkan beberapa fasiltas pendukung Moodle seperti MySQL -server, PHP dll, antara lain dapat di install melalui perintah apt-get install mysql-server libmysqlclient15-dev \\ libphp-adodb libgd2-xpm libgd2-xpm-dev php5-mysql \\ php5-gd php5-curl php5-xmlrpc php-pear Asumsi root MySQL password 123456. Siapkan database untuk Moodle mysql -u root -p123456 create database moodle; grant",

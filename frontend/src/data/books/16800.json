@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16800?v=1795463280",
   "cover_og_url": "/cover/16800/og?v=1795463280",
+  "has_cover": false,
   "url": "/book/cyber-security-ubuntu-26-04-wazuh-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Prompt: install wazuh all-in-one docker di ubuntu 26.04. pastikan bisa dengan mudah akses alerts.json dan archives.json juga agar wazuh agents mudah report / connect Berikut cara yang paling enak untuk Wazuh all-in-one / single-node Docker di Ubuntu 26.04 , dengan akses langsung ke: /opt/wazuh-data/logs/alerts/alerts.json /opt/wazuh-data/logs/archives/archives.json Docker Engine resmi sudah",

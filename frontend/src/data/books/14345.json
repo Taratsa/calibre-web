@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14345?v=1795449580",
   "cover_og_url": "/cover/14345/og?v=1795449580",
+  "has_cover": false,
   "url": "/book/palapa-install-palapa-desktop-onno-widodo-purbo/",
   "rating": null,
   "comment": "unduh file palapa (.tar.gz). simpan di folder Downloads. buka terminal, pindah direktori ke folder Downloads, ekstrak file-nya: sudo tar -zxvf nama_file.tar.gz input password linux anda cp -r nama_folder /opt cd /opt/nama_folder chmod +x palapa-desktop sudo chmod 4755 /usr/local/src/palapa-xcp-desktop/chrome-sandbox sudo chown root: /usr/local/src/palapa-xcp-desktop/chrome-sandbox ./palapa-desktop",

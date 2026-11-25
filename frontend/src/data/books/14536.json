@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14536?v=1795450440",
   "cover_og_url": "/cover/14536/og?v=1795450440",
+  "has_cover": false,
   "url": "/book/iperf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Topologi: Sebuah Server (misalnya 192.168.0.100) Sebuah Client (misalnya 192.168.0.101) tersambung melalui jaringan Firewall terbuka untuk port 5001 Pada kedua mesin, install iperf sudo apt-get install iperf Di Sisi Server Pada Server: iperf -s Akan keluar ------------------------------------------------------------ Server listening on TCP port 5001 TCP window size: 85.3 KByte (default)",

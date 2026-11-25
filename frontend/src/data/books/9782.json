@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9782?v=1795434867",
   "cover_og_url": "/cover/9782/og?v=1795434867",
+  "has_cover": false,
   "url": "/book/ipv6-autoconfiguration-stateful-auto-configuration-menggunakan-router-advertisement-daemon-radvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "router advertisement daemon (RAdvD) hanya berfungsi jika kita mempunyai alokasi IPv6 &gt;64 di bawah itu akan bermasalah. router advertisement daemon sangat bermanfaat di LAN, terutama jika client harus auto-configure. Daemon itu sendiri harus jalan di linux dengan default IPv6 gateway router. Perlu di catat bahwa tidak ada keharusan RAdvD ini merupakan gateway default IPv4 juga, oleh karena itu",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 694,
-    "longer_than": 45,
+    "longer_than": 44,
     "top": [
       [
         "advertisement",

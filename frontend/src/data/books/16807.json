@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16807?v=1795463302",
   "cover_og_url": "/cover/16807/og?v=1795463302",
+  "has_cover": false,
   "url": "/book/cyber-security-python-kirim-wazuh-archive-ke-ollama-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Script Python 2 Sumber data yang digunakan 3 1. Aktifkan arsip JSON Wazuh 4 2. Pasang script 5 3. Pastikan Ollama Docker dapat diakses 6 4. Uji preprocessing tanpa Ollama 7 5. Simpan hasil preprocessing 8 6. Preprocessing dan kirim ke Ollama 9 7. Memantau event baru secara langsung 10 Filter yang tersedia 11 Catatan penting Docker Script Python Download `wazuh_sensor_to_ollama.py`",

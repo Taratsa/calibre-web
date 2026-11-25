@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17339?v=1795464968",
   "cover_og_url": "/cover/17339/og?v=1795464968",
+  "has_cover": false,
   "url": "/book/instalasi-dan-konfigurasi-nfs-onno-widodo-purbo/",
   "rating": null,
   "comment": "NFS memungkinkan mesin *nix lain untuk mount share folder / file untuk langsung di gunakan. Sangat mudah untuk di setup di Linux. Pada Linux Ubuntu, instalasi NFS dapat dilakukan menggunakan # apt-get install nfs-common nfs-kernel-server Bila kita ingin mengijinkan user di komputer kita men-share folder melalui jaringan, kita perlu juga menginstalasi NFS untuk user menggunakan perintah # apt-get",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15428?v=1795454853",
   "cover_og_url": "/cover/15428/og?v=1795454853",
+  "has_cover": false,
   "url": "/book/gnupg-catatan-singkat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Generate Key &amp; List Key gpg --full-generate-key gpg --gen-key gpg --list-keys Export Import Public Key &amp; Secret Key gpg --output public.pgp --armor --export username@email gpg --output private.pgp --armor --export-secret-key username@email gpg --import public.gpg pgp --import private.gpg Encrypt &amp; Decrypt gpg -e -a -r  file gpg -d -o newdecryptedfile file.asc gpg -d -o",

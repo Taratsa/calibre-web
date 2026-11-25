@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10350?v=1795436814",
   "cover_og_url": "/cover/10350/og?v=1795436814",
+  "has_cover": false,
   "url": "/book/openwrt-smstools-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gsm modem and sms sending in OpenWrt On the stage of configuration OpenWrt the following modules are to be selected: Kernel modules: Video Support:  kmod-usb-serial  kmod-usb-serial-option  kmod-usb-serial-wwan I had a problem with the installation of the module kmod-usb-serial-wwan. mesg gave out the following after downloading: option: Unknown symbol usb_wwan_write (err 0) option:",

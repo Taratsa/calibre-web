@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19844?v=1795475278",
   "cover_og_url": "/cover/19844/og?v=1795475278",
+  "has_cover": false,
   "url": "/book/samba-menempelkan-share-directory-remote-ke-folder-lokal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi smbfs apt-get install smbfs Buat folder tempat mount mkdir /mnt/backup mount folder backup di komputer 192.168.0.1 ke /mnt/backup mount -t cifs //192.168.0.1/backup /mnt/backup -o password= Jika ada username &amp; password harus menggunakan perintah mount -t cifs //192.168.0.1/backup /mnt/backup -o username=name,password=password contoh lain sudo su mkdir /mnt/public2 mkdir /mnt/library2",

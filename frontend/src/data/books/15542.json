@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15542?v=1795455378",
   "cover_og_url": "/cover/15542/og?v=1795455378",
+  "has_cover": false,
   "url": "/book/minikube-kubectl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/kubectl/ Penggunaan kubectl dalam minikube Secara default, kubectl terkonfigurasi untuk mengakses control plane kubernetes cluster di dalam minikube ketika perintah minikube start dijalankan. Namun jika kubectl tidak diinstal secara lokal, minikube sudah menyertakan kubectl yang dapat digunakan seperti ini: minikube kubectl -- ",

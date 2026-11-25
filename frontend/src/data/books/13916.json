@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13916?v=1795447941",
   "cover_og_url": "/cover/13916/og?v=1795447941",
+  "has_cover": false,
   "url": "/book/ssh-masuk-ke-mesin-pada-port-bukan-22-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk masuk ke mesinserver dengan ssh dengan port bukan 22 (misalnya port ssh di 12345], kita perlu menambahkan parameter -p, seperti di bawah ini, ssh -p 12345 user@mesinserver Pranala Menarik ssh",
@@ -78,7 +79,7 @@
       ],
       [
         11098,
-        0.62
+        0.63
       ]
     ],
     "sentiment": null

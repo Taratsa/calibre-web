@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16682?v=1795462496",
   "cover_og_url": "/cover/16682/og?v=1795462496",
+  "has_cover": false,
   "url": "/book/mediawiki-maintenance-add-user-dan-editor-via-cli-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menambahkan user ke grup editor: cd /var/www/html/wiki php maintenance/run.php userRights --add editor UsernameEditor Cek grup user: php maintenance/run.php showUserRights UsernameEditor ✔ Aman ✔ Tidak perlu akses UI ✔ Cocok untuk server headless / SSH-only Berikut **cara menambahkan user MediaWiki via CLI (SSH)** - **lengkap &amp; sesuai MediaWiki terbaru (≥ 1.40)**. 1️⃣ Masuk ke direktori MediaWiki",

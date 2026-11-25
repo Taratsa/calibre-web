@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14532?v=1795450421",
   "cover_og_url": "/cover/14532/og?v=1795450421",
+  "has_cover": false,
   "url": "/book/scanning-hotspot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Scanning Keberadaan HotSpot dapat dilakukan menggunakan text mode . iwlist Cara yang paling sederhana adalah menggunakan perintah # iwlist scanning Kismet cara yang lebih rumit menggunakan kismet # apt-get install kismet # vi /etc/kismet/kismet.conf source=none,none,addme --&gt; source=ipw3945,wlan0,ipwsource source=none,none,addme --&gt; source=zd1211,eth1,zysource source=none,none,addme --&gt;",

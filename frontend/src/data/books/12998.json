@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12998?v=1795444461",
   "cover_og_url": "/cover/12998/og?v=1795444461",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-bgp-dua-link-main-backup-onno-widodo-purbo/",
   "rating": null,
   "comment": "ERROR: OpenWrt(config-router)# neighbor 2001:198:168:1::1 route-map PREPEND out % Specify remote-as or peer-group commands first Ada tiga (3) ISP ISP1: IP 192.168.1.1/24 menuju ISP3 IP 192.168.3.1/24 menuju ISP2 AS 10 IP 10.100.100.0/24 IP 10.100.200.0/24 ISP2 IP 192.168.2.1/24 - menuju ISP3 IP 192.168.3.2/24 - menuju ISP1 AS 20 IP 10.10.10.0/24 IP 10.10.20.0/24 ISP3 (kita) IP 192.168.1.2/24 -",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 616,
-    "longer_than": 43,
+    "longer_than": 42,
     "top": [
       [
         "ipv",

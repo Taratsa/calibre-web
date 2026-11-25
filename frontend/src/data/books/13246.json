@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13246?v=1795445273",
   "cover_og_url": "/cover/13246/og?v=1795445273",
+  "has_cover": false,
   "url": "/book/tensorflow-movie-rating-prediction-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download https://github.com/fivethirtyeight/data/blob/master/fandango/fandango_score_comparison.csv https://github.com/fivethirtyeight/data/blob/master/fandango/fandango_scrape.csv Source import numpy as np import pandas as pd from scipy import stats import sklearn from sklearn.model_selection import train_test_split import tensorflow as tf import matplotlib import matplotlib.pyplot as plt import",

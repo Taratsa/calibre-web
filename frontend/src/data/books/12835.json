@@ -45,6 +45,7 @@
   ],
   "cover_url": "/cover_thumb/12835?v=1795443926",
   "cover_og_url": "/cover/12835/og?v=1795443926",
+  "has_cover": false,
   "url": "/book/oslr-onno-widodo-purbo/",
   "rating": null,
   "comment": "Template:Redirect Diagram of OLSR data flow. The Optimized Link State Routing Protocol ( OLSR )RFC 3626 is an IP routing protocol optimized for mobile ad hoc networks , which can also be used on other wireless ad hoc networks . OLSR is a proactive link-state routing protocol , which uses hello and topology control (TC) messages to discover and then disseminate link state information",
@@ -154,8 +155,8 @@
         10
       ],
       [
-        "hop",
-        8
+        "node",
+        10
       ]
     ],
     "phrases": [

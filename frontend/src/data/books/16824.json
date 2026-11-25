@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16824?v=1795463353",
   "cover_og_url": "/cover/16824/og?v=1795463353",
+  "has_cover": false,
   "url": "/book/ml-python-virtual-environment-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Miniconda di Ubuntu 26.04 bisa langsung di home folder, tidak perlu `sudo` . Ini cocok untuk kasus Bapak karena `apt` tidak menyediakan Python 3.12, sedangkan TensorFlow belum cocok dengan Python 3.14. Miniconda adalah installer minimal untuk `conda`, Python, dan paket dasar saja. ([Anaconda][1]) Contents 1 1. Install dependency dasar 2 2. Download installer Miniconda 3 3. Jalankan",

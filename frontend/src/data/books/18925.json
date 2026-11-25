@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18925?v=1795470861",
   "cover_og_url": "/cover/18925/og?v=1795470861",
+  "has_cover": false,
   "url": "/book/voip-cookbook-sip-conf-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "The user database is stored in /etc/asterisk/sip.conf. An example for an account with phone number 2099, password 123456, dynamic IP address using DHCP is as follows: [2099] context=default type=friend username=2099 secret=123456 host=dynamic dtmfmode=rfc2833 mailbox=2099@default To ensure that the dial tone is handled properly in Asterisk 1.6, we may add the following entry:",

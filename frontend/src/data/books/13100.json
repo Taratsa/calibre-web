@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13100?v=1795444809",
   "cover_og_url": "/cover/13100/og?v=1795444809",
+  "has_cover": false,
   "url": "/book/bind-instalasi-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo su apt update apt install bind9 bind9utils bind9-doc Konfigurasi named.conf.options Jika di perlukan, kita bisa mengedit named.conf.options. Tapi untuk operasi biasa saja, konfigurasi ini tidak perlu di edit sama sekali. Contoh konfigurasi named.conf.options sudo vi /etc/bind/named.conf.options Misalnya mengubah ns1 IP address yang benar, options { directory \"/var/cache/bind\";",

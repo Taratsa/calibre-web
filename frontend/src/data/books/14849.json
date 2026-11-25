@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14849?v=1795452048",
   "cover_og_url": "/cover/14849/og?v=1795452048",
+  "has_cover": false,
   "url": "/book/kamailio-instalasi-mariadb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Repository 2 Instalasi 3 Perbaiki Konfigurasi 4 Siapkan Database MariaDB 5 Menggunakan TLS 6 Manajemen User 7 Monitoring Kamailio Siapkan Repository Edit sources.list vi /etc/apt/sources.list Update repo apt update Instalasi apt-get -y install kamailio kamailio-extra-modules kamailio-ims-modules \\ kamailio-mysql-modules kamailio-presence-modules \\ kamailio-tls-modules",

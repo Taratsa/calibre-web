@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15343?v=1795454274",
   "cover_og_url": "/cover/15343/og?v=1795454274",
+  "has_cover": false,
   "url": "/book/nmap-ddos-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/categories/dos.html Scripts broadcast-avahi-dos Attempts to discover hosts in the local network using the DNS Service Discovery protocol and sends a NULL UDP packet to each host to test if it is vulnerable to the Avahi NULL UDP packet denial of service (CVE-2011-1002). http-slowloris Tests a web server for vulnerability to the Slowloris DoS attack by launching a",

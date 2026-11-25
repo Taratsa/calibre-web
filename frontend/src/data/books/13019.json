@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13019?v=1795444519",
   "cover_og_url": "/cover/13019/og?v=1795444519",
+  "has_cover": false,
   "url": "/book/ipv6-bgp-weight-local-preference-onno-widodo-purbo/",
   "rating": null,
   "comment": "The metrics \"weight\" and \"local preference\" will have exactly the same effect on the routing decisions as they would in any other BGP implementation, because those are part of the spec of BGP - well, actually \"weight\" is originally a cisco thing and other implementations have done the same thing. Weight is the most important metric of BGP - a higher weight prefix will win over any other version",

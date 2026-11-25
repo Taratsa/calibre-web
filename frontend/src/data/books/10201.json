@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10201?v=1795436353",
   "cover_og_url": "/cover/10201/og?v=1795436353",
+  "has_cover": false,
   "url": "/book/git-compile-dari-source-code-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.mikepilat.com/blog/2011/06/how-to-build-git-from-source-on-ubuntu/ Contents 1 Buang git 2 Install aplikasi pendukung 3 Download source code git 4 Build 5 Cek Versi 6 Referensi Buang git sudo apt-get remove --purge git git-core apt-get autoremove Install aplikasi pendukung sudo apt-get install bzip2 curl ssh expat zlib1g zlib1g-dev tk python \\ libcurl3 libcurl3-dbg",

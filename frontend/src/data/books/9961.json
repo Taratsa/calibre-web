@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9961?v=1795435576",
   "cover_og_url": "/cover/9961/og?v=1795435576",
+  "has_cover": false,
   "url": "/book/openwrt-flash-ubnt-bullet-m2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Coba Menggunakan Shell Scipt 2 Coba Firmware Install 3 Referensi 4 Pranala Menarik 4.1 Build Firmware 4.2 APRX 4.3 IPv6 4.4 Flash Firmware 4.5 Misc 4.6 UBNT Coba Menggunakan Shell Scipt Buat shell script sederhana isinya ifconfig eth0 192.168.1.254 cp openwrt-ar71xx-generic-ubnt-bullet-m-squashfs-factory.bin code.bin echo -e \"binary\\nrexmt 1\\ntimeout 60\\ntrace\\nput code.bin",

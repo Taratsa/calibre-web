@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9385?v=1795432702",
   "cover_og_url": "/cover/9385/og?v=1795432702",
+  "has_cover": false,
   "url": "/book/ubnt-rebuild-firmware-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mereka yang iseng ingin ujicoba rebuild firmware Contents 1 Siapkan Aplikasi Pendukung 2 Compile Firmware 3 Upload Firmware 4 Referensi 5 Pranala Menarik Siapkan Aplikasi Pendukung Siapkan aplikasi pendukung sudo apt-get update sudo apt-get install sharutils bison flex libz-dev patch fakeroot lzma Compile Firmware Sebagai super user, lakukan sudo su mkdir ubnt-4.x cd ubnt-4.x wget",

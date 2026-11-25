@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18918?v=1795470819",
   "cover_og_url": "/cover/18918/og?v=1795470819",
+  "has_cover": false,
   "url": "/book/instalasi-samba-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi SAMBA sudo apt-get install samba smbfs Di Ubuntu 12.10 ke atas di ubah menjadi sudo apt-get install samba cifs-utils Contents 1 SAMBA Server 2 SAMBA Client 2.1 Contoh SAMBA 3 Pranala Menarik SAMBA Server Edit file /etc/samba/smb.conf Pastikan ada parameter netbios name = namakomputeranda workgroup = namajaringan security = share Pastikan ada folder yang di share, misalnya seperti",

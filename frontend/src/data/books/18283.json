@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18283?v=1795468372",
   "cover_og_url": "/cover/18283/og?v=1795468372",
+  "has_cover": false,
   "url": "/book/schoolonffline-konfigurasi-etc-postfix-main-cf-postfix-smtp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "SMTP Relay Server tergantung ISP yang anda gunakan. Ubah / sesuaikan dengan ISP anda. Edit file # vi /etc/postfix/main.cf Beberapa SMTP Server milik beberapa ISP adalah, relayhost = smtp.telkom.net (TelkomSpeedy) relayhost = mail.fast.net.id (FastNet / KabelVision) relayhost = smtp.indo.net.id (IndoNet) relayhost = smtp.cbn.net.id (CBN) Jika tidak di ketahui sama sekali, kita dapat membiarkan",

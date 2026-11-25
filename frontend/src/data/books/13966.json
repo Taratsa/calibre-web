@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13966?v=1795448128",
   "cover_og_url": "/cover/13966/og?v=1795448128",
+  "has_cover": false,
   "url": "/book/kazam-audio-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/1234314/screen-recording-applications-are-not-detecting-audio-in-ubuntu-20-04?fbclid=IwAR2RQQCCskrxoR01LhSTc6RElujBcPIAi_ZvP5O8EQarJmveGKK0Ba7uaHY Edit file sudo gedit /usr/lib/python3/dist-packages/kazam/pulseaudio/pulseaudio.py Delete isinya Ganti (copas) isinya dengan isi",

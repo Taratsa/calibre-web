@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15285?v=1795454000",
   "cover_og_url": "/cover/15285/og?v=1795454000",
+  "has_cover": false,
   "url": "/book/openairinterface-konfigurasi-enb-conf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi Radio Access Network (RAN) Open Air Interface dapat dilakukan dengan mengedit file konfigurasi untuk band yang ingin kita gunakan sebagai berikut, cd /usr/local/src/openairinterface5g/ci-scripts/conf_files/ nano enb.band7.tm1.25PRB.usrpb210.conf Di atas kita mengedit file konfigurasi enb untuk beroperasi pada band7. Isi konfigurasi di sesuaikan dengan kondisi jarigan yang kita",

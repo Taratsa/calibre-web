@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12042?v=1795441392",
   "cover_og_url": "/cover/12042/og?v=1795441392",
+  "has_cover": false,
   "url": "/book/ubuntu-virtual-audio-connector-onno-widodo-purbo/",
   "rating": null,
   "comment": "If your looking for a virtual audio cable (VAC), that's free, open source and works on Linux, Windows and OSX check out jackaudio. you can download the source code from http://jackaudio.org/downloads/ Or you can install it via apt-get: sudo apt-get install jack A Gui tool to use is qjackctl sudo apt-get install qjackctl A quick start for jack can be found http://www.64studio.com/quickstart_jack",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

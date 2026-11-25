@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14520?v=1795450362",
   "cover_og_url": "/cover/14520/og?v=1795450362",
+  "has_cover": false,
   "url": "/book/forensic-ntfsundelete-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://recoverit.wondershare.com/file-recovery/undelete-ntfs-linux.html sudo apt install ntfs-3g sudo ntfsundelete /dev/sdb1 --scan sudo ntfsundelete /dev/sdb1 --undelete --inodes 39 sudo ntfsundelete /dev/sdb1 --undelete --inodes 39-42 sudo ntfsundelete /dev/sdb1 --undelete --truncate --match '*.jpg' mkdir recovery cd recovery sudo ntfsundelete /dev/sdb1 --undelete --truncate --match",

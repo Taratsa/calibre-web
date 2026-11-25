@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16809?v=1795463306",
   "cover_og_url": "/cover/16809/og?v=1795463306",
+  "has_cover": false,
   "url": "/book/download-wazuh-sensor-to-ollama-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python3 \"\"\" wazuh_sensor_to_ollama.py Pipeline data sensor penuh Wazuh: archives.json -&gt; validasi JSON -&gt; normalisasi field -&gt; sensor credential/secret -&gt; pembatasan ukuran data -&gt; deduplikasi event -&gt; pembuatan batch -&gt; JSONL siap analisis -&gt; opsional: kirim ke Ollama Script hanya menggunakan Python standard library. Contoh penggunaan: 1. Uji preprocessing tanpa Ollama: sudo",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14117?v=1795448663",
   "cover_og_url": "/cover/14117/og?v=1795448663",
+  "has_cover": false,
   "url": "/book/routersploit-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apps pendukung apt -y install python3-idna python3-urllib3 python3-requests* python3-pycryptodome Installation on Kali Linux sudo su apt update apt -y install python3-pip cd /usr/local/src git clone https://www.github.com/threat9/routersploit cd /usr/local/src/routersploit python3 -m pip install -r requirements.txt python3 rsf.py Bluetooth Low Energy support: apt-get install",

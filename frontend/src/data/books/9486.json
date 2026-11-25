@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9486?v=1795433035",
   "cover_og_url": "/cover/9486/og?v=1795433035",
+  "has_cover": false,
   "url": "/book/raspberrypi-compile-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://androidpi.wikia.com/wiki/CM7_Compilation First, we will need to set up the tools and libraries needed to download Android. This guide assumes you're running Ubuntu 12.04 LTS. Downloads needed libraries: $ sudo apt-get install git-core gnupg flex bison gperf build-essential \\ zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \\ libx11-dev:i386 libreadline6-dev:i386",

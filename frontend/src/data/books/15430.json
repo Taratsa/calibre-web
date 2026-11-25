@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15430?v=1795454867",
   "cover_og_url": "/cover/15430/og?v=1795454867",
+  "has_cover": false,
   "url": "/book/orange-install-dengan-anaconda-ubuntu-22-04-1-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Anaconda Download dari https://www.anaconda.com/download/ Sebagai user biasa, jalankan (untuk Python3) cd ~/Downloads/ bash Anaconda3-2023.09-0-Linux-x86_64.sh Setelah selesai, jalankan source ~/.bashrc Install Orange Sebelum melakukan ini, kita perlu menginstalasi Anaconda. conda config --add channels conda-forge conda config --set channel_priority strict conda create python=3 --yes",

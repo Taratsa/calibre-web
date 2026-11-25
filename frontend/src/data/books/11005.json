@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11005?v=1795438741",
   "cover_og_url": "/cover/11005/og?v=1795438741",
+  "has_cover": false,
   "url": "/book/arduino-bare-minimum-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/BareMinimum Penampakan program Arduino yang paling minimal adalah sebagai berikut, Code void setup() { // put your setup code here, to run once: } void loop() { // put your main code here, to run repeatedly: } Secara umum ada bagian setup untuk menginisialisasi peralatan. loop, program sebenarnya yang akan loop terus menerus. Referensi",

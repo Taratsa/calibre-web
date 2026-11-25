@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10682?v=1795437828",
   "cover_og_url": "/cover/10682/og?v=1795437828",
+  "has_cover": false,
   "url": "/book/asterisk-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://blog.voicebyip.com/?p=147 Configuring IPv6 support in Asterisk: Enabling IPv6 support in Asterisk is incredibly simple. In your sip.conf enable SIP on all addresses by placing bindaddr=:: in the [general] section sip.conf [general] bindaddr=:: Asterisk will now route SIP traffic over IPv6 for any peers/users that have either a valid AAAA record for their hostname, or if you specify",

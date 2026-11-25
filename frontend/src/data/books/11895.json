@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11895?v=1795441025",
   "cover_og_url": "/cover/11895/og?v=1795441025",
+  "has_cover": false,
   "url": "/book/orange-word-cloud-dari-dokumen-onno-widodo-purbo/",
   "rating": null,
   "comment": "Word Cloud dapat di bangun dari Dokumen yang kita miliki. Di toolbox text mining telah tersedia widget Import Documents untuk membaca file dokumen. Sebelum di tampilkan sebagai word cloud ada baiknya dilewatkan ke widget Preprocess Text terlebih dulu, untuk mengurangi berbagai kata yang tidak dibutuhkan, seperti kata penghubungi dll. Selanjutnya kita dapat lewatkan ke widget Bag of Words terlebih",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

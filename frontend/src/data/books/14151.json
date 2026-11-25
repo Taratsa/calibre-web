@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14151?v=1795448809",
   "cover_og_url": "/cover/14151/og?v=1795448809",
+  "has_cover": false,
   "url": "/book/qemu-qemuarmvexpress-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instructions on how to successfully setup qemu to emulate an arm vexpress a9/a15 board (and possibly any other arm hw that qemu emulates): 1) setup the rootfs sudo apt -y install qemu-user-static qemu-system-arm sudo apt -y install debootstrap qemu-user-static schroot cd /usr/local/src mkdir arm-test cd /usr/local/src/arm-test mkdir vexpress cd vexpress mkdir qemu-img # 4GBs should be enough dd",

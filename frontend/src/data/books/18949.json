@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18949?v=1795470964",
   "cover_og_url": "/cover/18949/og?v=1795470964",
+  "has_cover": false,
   "url": "/book/voip-cookbook-briker-s-setup-recordings-onno-widodo-purbo/",
   "rating": null,
   "comment": "Make a record for IVR that you will use (you can use the MS. Recorder application). For example, you can record \"Welcome to PT Jelajah Media Information, press 1 for operator,\" and set the encode to 16 bit, 8,000 Hz, and save it using the .wav extension (i.e. Welcome-jmi.wav). Upload the .wav file you have just created to the menu: IPPBX Administration &gt; System Recordings, upload and name the",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13234?v=1795445233",
   "cover_og_url": "/cover/13234/og?v=1795445233",
+  "has_cover": false,
   "url": "/book/tensorflow-test-graph-untuk-berhitung-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ketik python Ketik import tensorflow as tf x = tf.constant(8) y = tf.constant(9) z = tf.multiply(x, y) sess = tf.Session() out_z = sess.run(z) sess.close() print('The multiplicaiton of x and y: %d' % out_z) quit() Atau ketik import tensorflow as tf with tf.Session() as sess: x = tf.placeholder(tf.float32, name=\"x\") y = tf.placeholder(tf.float32, name=\"y\") z = tf.multiply(x,y) z_output =",

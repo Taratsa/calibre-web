@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10820?v=1795438196",
   "cover_og_url": "/cover/10820/og?v=1795438196",
+  "has_cover": false,
   "url": "/book/extract-metadata-word-document-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Tools sudo su perl -MCPAN -e \"install Bundle::CPAN\" perl -MCPAN -e shell Dari shell CPAN install OLE::Storage install OLE::PropertySet install Startup install Carp install Unicode::Map Download &amp; extract file testwd.pl wget http://www.cpan.org/modules/by-authors/id/H/HC/HCARVEY/File-MSWord-0.1.zip unzip File-MSWord-0.1.zip mv MSWord.pm /usr/lib/perl5/File/ Lakukan perl testwd.pl",

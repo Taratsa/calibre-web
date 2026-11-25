@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20204?v=1795476560",
   "cover_og_url": "/cover/20204/og?v=1795476560",
+  "has_cover": false,
   "url": "/book/flightgear-joystick-onno-widodo-purbo/",
   "rating": null,
   "comment": "Deteksi Joystick adalah automatis. cek menggunakan perintah dmesg | grep Joystick akan keluar kurang lebih [ 2330.865722] generic-usb 0003:04B4:1010.0001: input,hidraw0: USB HID v1.00 Joystick [USB Game Device] on usb-0000:00:1d.0-1/input0 cek gerakan joystick menggunakan perintah js_demo Akan keluar kurang lebih Joystick test program. 19:30, 5 June 2011 (WIT)19:30, 5 June 2011 (WIT)19:30, 5 June",

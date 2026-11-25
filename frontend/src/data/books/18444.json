@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18444?v=1795468887",
   "cover_og_url": "/cover/18444/og?v=1795468887",
+  "has_cover": false,
   "url": "/book/koneksi-internet-smart-dengan-haier-ce100-built-in-di-netbook-smart-dengan-ubuntu-9-10-onno-widodo-purbo/",
   "rating": null,
   "comment": "instalasi usb-modeswitch sudo apt-get install usb-modeswitch wvdial Contents 1 Downgrade Network Manager 2 Set udev 3 Cek keberadaan USB Modem 4 Pranala Menarik Downgrade Network Manager sudo killall nm-applet sudo killall NetworkManager sudo apt-get purge modemmanager network-manager* sudo apt-get install libpolkit-dbus2 libpolkit2 libpolkit-gnome0 libpolkit-grant2 sudo apt-get install",

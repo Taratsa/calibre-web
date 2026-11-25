@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9481?v=1795433009",
   "cover_og_url": "/cover/9481/og?v=1795433009",
+  "has_cover": false,
   "url": "/book/konversi-dmg-ke-img-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install apt-get install dmg2img Lakukan cd /path/tempat/file/dmg/berada/ dmg2img file.dmg file.img Mount cd /path/tempat/file/dmg/berada/ sudo mkdir /mnt/contoh sudo modprobe hfsplus sudo mount -t hfsplus -o loop file.img /mnt/contoh Referensi http://www.ehow.com/how_5847479_convert-dmg-iso-ubuntu.html Pranala Menarik",

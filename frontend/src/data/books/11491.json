@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11491?v=1795440011",
   "cover_og_url": "/cover/11491/og?v=1795440011",
+  "has_cover": false,
   "url": "/book/hadoop-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "Writing an Hadoop MapReduce Program in Python Table of Contents Motivation What we want to do Prerequisites Python MapReduce Code Map step: mapper.py Reduce step: reducer.py Test your code (cat data | map | sort | reduce) Running the Python Code on Hadoop Download example input data Copy local example data to HDFS Run the MapReduce job Improved Mapper and Reducer code: using Python iterators and",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12645?v=1795443308",
   "cover_og_url": "/cover/12645/og?v=1795443308",
+  "has_cover": false,
   "url": "/book/mikrotik-vlan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 VLAN Basic 2 VLAN trunking 3 VLAN Corporate 4 Referensi 5 Pranala Menarik VLAN Basic /interface vlan add name=vlan1 vlan-id=11 interface=ether1 add name=vlan2 vlan-id=12 interface=vlan1 /interface vlan add name=VLAN2 vlan-id=2 interface=ether1 disabled=no add name=VLAN3 vlan-id=3 interface=ether1 disabled=no add name=VLAN4 vlan-id=4 interface=ether1 disabled=no /ip address add",

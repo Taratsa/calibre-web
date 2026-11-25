@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16040?v=1795458387",
   "cover_og_url": "/cover/16040/og?v=1795458387",
+  "has_cover": false,
   "url": "/book/forensic-msfconsole-use-auxiliary-scanner-smb-smb-login-attack-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 What is `smb_login` Attack? 2 Example Attack 3 Forensic Footprint 4 Prevention 5 Interesting Links What is `smb_login` Attack? The `smb_login` attack is a module in Metasploit used for enumerating and authenticating against the Server Message Block (SMB) service. SMB is a network protocol used for sharing files and printers on Windows networks. By using this module, an attacker can try",

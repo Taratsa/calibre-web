@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16997?v=1795463848",
   "cover_og_url": "/cover/16997/og?v=1795463848",
+  "has_cover": false,
   "url": "/book/instalasi-webid-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download source code Webid dari http://sourceforge.net/projects/simpleauction/ Siapkan Database MySQL untuk WeBid # mysql -u root -p Enter password: create database webid; grant INSERT,SELECT on root.* to webid@localhost; grant CREATE, INSERT, SELECT, DELETE, UPDATE on webid.* to webid@localhost identified by \"webidpass\"; grant CREATE, INSERT, SELECT, DELETE, UPDATE on webid.* to webid identified",

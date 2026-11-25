@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12637?v=1795443284",
   "cover_og_url": "/cover/12637/og?v=1795443284",
+  "has_cover": false,
   "url": "/book/python3-socketserver-udpserver-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Server side 2 Client side 3 Run 4 Pranala Menarik Server side import socketserver class MyUDPHandler(socketserver.BaseRequestHandler): \"\"\" This class works similar to the TCP handler class, except that self.request consists of a pair of data and client socket, and since there is no connection the client address must be given explicitly when sending data back via sendto(). \"\"\" def",

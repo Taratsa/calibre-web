@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13508?v=1795446225",
   "cover_og_url": "/cover/13508/og?v=1795446225",
+  "has_cover": false,
   "url": "/book/gnuradio-instalasi-uhd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://stackoverflow.com/questions/33293835/cannot-import-name-uhd-in-gnu-radio-python Jika perlu kita bisa remove aplikasi yang pernah di install cd usr/local/src/SDR/gnuradio/build/ sudo make uninstall sudo apt-get remove gnuradio \\ gr-osmosdr gr-radar gr-radar-doc libgnuradio-radar3.7 libgnuradio-uhd3.7.11 \\ libuhd-dev libuhd003.010.003 soapysdr-module-uhd soapysdr0.6-module-uhd \\",

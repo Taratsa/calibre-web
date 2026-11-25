@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11994?v=1795441263",
   "cover_og_url": "/cover/11994/og?v=1795441263",
+  "has_cover": false,
   "url": "/book/litecoin-bfgminer-onno-widodo-purbo/",
   "rating": null,
   "comment": "bfgminer --scrypt --url=stratum+tcp://litecoinpool.org:3333 --userpass=guest.1:1 --url=stratum+tcp://us.litecoinpool.org:3333 --userpass=guest.1:1 --failover-only --shaders=800 --intensity=10",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11267?v=1795439465",
   "cover_og_url": "/cover/11267/og?v=1795439465",
+  "has_cover": false,
   "url": "/book/moodle-penggunaan-mariadb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengubah database yang digunakan, Dari Mysqli ke Mariadb edit file configurasi moodlenya saja: nano /var/www/html/moodle/config.php ganti dbtype ke mariadb $CFG-&gt;dbtype = 'mariadb'; Dbhost juga jika boleh diganti dengan alamat IP dari server moodlenya, biar dapat diakses oleh client lain yang satu jaringan. :) semisal alamatnya server moodlenya di : 192.168.10.1 $CFG-&gt;dbhost =",

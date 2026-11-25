@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10031?v=1795435806",
   "cover_og_url": "/cover/10031/og?v=1795435806",
+  "has_cover": false,
   "url": "/book/opensips-dispatcher-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi http://www.opensips.org/html/docs/modules/1.6.x/dispatcher.html 1.4.1. ds_select_dst(set, alg) The method selects a destination from addresses set. Meaning of the parameters is as follows: set - the id of the set from where to pick up destination address. It is the first column in destination list file. alg - the algorithm used to select the destination address. \"0\" - hash over callid",

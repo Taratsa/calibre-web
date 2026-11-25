@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13451?v=1795445995",
   "cover_og_url": "/cover/13451/og?v=1795445995",
+  "has_cover": false,
   "url": "/book/r-ml-load-dataset-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: http://www.sthda.com/english/articles/36-classification-methods-essentials/ install.packages(\"mlbench\") # Load the data set PIMA INDIAN data(\"PimaIndiansDiabetes2\", package = \"mlbench\") # Inspect the data head(PimaIndiansDiabetes2, 4) # Load the data IRTIS data(\"iris\") # Inspect the data head(iris, 4) Referensi http://www.sthda.com/english/articles/36-classification-methods-essentials/",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13178?v=1795445048",
   "cover_og_url": "/cover/13178/og?v=1795445048",
+  "has_cover": false,
   "url": "/book/ubuntu-install-di-usb-flashdisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cek partisi USB fdisk -l Misalnya /dev/sdc Buang semua partisi fdisk /dev/sdc d d d d w Install sudo qemu-system-x86_64 /dev/sdc -cdrom /var/data/iso/ubuntu-18.04/ubuntu-18.04.1-live-server-amd64.iso",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14170?v=1795448897",
   "cover_og_url": "/cover/14170/og?v=1795448897",
+  "has_cover": false,
   "url": "/book/mikrotik-block-content-url-onno-widodo-purbo/",
   "rating": null,
   "comment": "Filter content /ip firewall filter add chain=forward content=porn action=drop /ip firewall filter add chain=forward content=.3gp action=drop Filter HTTPS traffic /ip firewall filter add action=drop chain=forward dst-port=443 in-interface=ether3 protocol=tcp tls-host=*facebook.com* add action=drop chain=forward dst-port=443 in-interface=ether3 protocol=tcp tls-host=*mikrotik.com* add action=drop",

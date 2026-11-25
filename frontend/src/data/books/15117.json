@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15117?v=1795453209",
   "cover_og_url": "/cover/15117/og?v=1795453209",
+  "has_cover": false,
   "url": "/book/kotlin-array-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.tutorialspoint.com/kotlin/kotlin_arrays.htm Arrays are used to store multiple items of the same data-type in a single variable, such as an integer or string under a single variable name. For example, if we need to store names of 1000 employees, then instead of creating 1000 different string variables, we can simply define an array of string whose capacity will be 1000. Like",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1282,
-    "longer_than": 54,
+    "longer_than": 53,
     "top": [
       [
         "array",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9869?v=1795435224",
   "cover_og_url": "/cover/9869/og?v=1795435224",
+  "has_cover": false,
   "url": "/book/linux-membuat-shell-script-onno-widodo-purbo/",
   "rating": null,
   "comment": "Beberapa perintah penting di shell antara lain adalah echo touch mv Contoh membuat shell script buat sebuah file masukan 123456 ke file tersebut buat folder copy file tersebut ke folder tersebut caranya vi scriptsaya.sh isi misalnya dengan touch filepercobaan.sh echo 123456 &gt;&gt; filepercobaan.txt mkdir /var/data/ mv filepercobaan.txt /var/data",
@@ -62,7 +63,7 @@
       ],
       [
         12718,
-        0.46
+        0.47
       ],
       [
         19278,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14282?v=1795449305",
   "cover_og_url": "/cover/14282/og?v=1795449305",
+  "has_cover": false,
   "url": "/book/ubuntu-wifi-ap-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo apt install snapd snap install wifi-ap sudo wifi-ap.status Config sudo wifi-ap.config set wifi.interface=wlx00e02d2a0540 sudo wifi-ap.config set wifi.security-passphrase=1234567890 sudo wifi-ap.config set wifi.ssid=Ubuntu20.04 sudo wifi-ap.config get Enable &amp; Disable WiFiAP sudo wifi-ap.config set disabled=true sudo wifi-ap.config set disabled=false Restart sudo wifi-ap.status",

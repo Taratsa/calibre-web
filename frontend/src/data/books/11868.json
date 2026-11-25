@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11868?v=1795440953",
   "cover_og_url": "/cover/11868/og?v=1795440953",
+  "has_cover": false,
   "url": "/book/squid-transparan-proxy-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.tldp.org/HOWTO/TransparentProxy-6.html#ss6.1 iptables -t nat -A PREROUTING -i eth0 -s ! squid-box -p tcp --dport 80 -j DNAT --to squid-box:3128 iptables -t nat -A POSTROUTING -o eth0 -s local-network -d squid-box -j SNAT --to iptables-box iptables -A FORWARD -s local-network -d squid-box -i eth0 -o eth0 -p tcp --dport 3128 -j ACCEPT Referensi",

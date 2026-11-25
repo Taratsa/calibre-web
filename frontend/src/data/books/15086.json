@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15086?v=1795453068",
   "cover_og_url": "/cover/15086/og?v=1795453068",
+  "has_cover": false,
   "url": "/book/debian-rc-local-onno-widodo-purbo/",
   "rating": null,
   "comment": "https://unix.stackexchange.com/questions/471824/what-is-the-correct-substitute-for-rc-local-in-systemd-instead-of-re-creating-rc https://caklihat.com/baca/berita/menggunakan-rclocal-di-debian-10-buster Pada debian 10 tidak ditemukan adanya rc.local yang dungsinya biasanya untuk startup sebuah script tanpa repot membuat systemctl dan sebagainya.. jadi disini saya akan coba membuat rc.local",

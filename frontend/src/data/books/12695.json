@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12695?v=1795443460",
   "cover_og_url": "/cover/12695/og?v=1795443460",
+  "has_cover": false,
   "url": "/book/gns3-kvm-dan-qemu-permission-deny-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika ada error QEMU process has stopped, return code: 1 Start QEMU with -- Execution log: Could not access KVM kernel module: Permission denied qemu-system-x86_64: failed to initialize KVM: Permission denied Cara menangani-nya sudo su chown root:usernameanda /dev/kvm Bisa coba install pip3 pip3 install -U yarl==0.9.8 pip3 install -U aiohttp-cors==0.5.1 Pranala Menarik GNS3",

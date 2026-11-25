@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15307?v=1795454103",
   "cover_og_url": "/cover/15307/og?v=1795454103",
+  "has_cover": false,
   "url": "/book/konfigurasi-enb-srsran-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah beberapa catatan untuk mengkonfigurasi eNB dengan parameter sebagai berikut IP Core Network 192.168.100.238 MCC 510 MNC 33 Di samping itu, ada beberapa parameter lainnya yang perlu di sesuaikan dengan eNB yang kita konfigurasi seperti Cell ID, TAC dll. Pada srsENB Langkah yang perlu dilakukan adalah mengedit file enb.conf melalui perintah sebagai berikut cd /usr/local/src/srsRAN",

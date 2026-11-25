@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12759?v=1795443644",
   "cover_og_url": "/cover/12759/og?v=1795443644",
+  "has_cover": false,
   "url": "/book/cisco-bgp-dynamic-as-numbers-untuk-prefix-peer-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring Dynamic AS Numbers for Prefix Peers You can configure multiple BGP peers within a BGP process. You can limit BGP session establishment to a single AS number or multiple AS numbers in a route map. BGP sessions configured through dynamic AS numbers for prefix peers ignore the ebgp-multihop command and the disable-connected-check command. You can change the list of AS numbers in the",

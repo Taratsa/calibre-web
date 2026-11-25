@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10067?v=1795435923",
   "cover_og_url": "/cover/10067/og?v=1795435923",
+  "has_cover": false,
   "url": "/book/snmp-instalasi-konfigurasi-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.it-slav.net/blogs/2009/02/05/install-and-configure-snmp-on-ubuntu/ Cara menginstalasi &amp; konfigurasi SNMP di Ubuntu. Contents 1 Installation 2 Configuration 3 Edit /etc/default/snmpd 4 Test 5 Contoh Monitor 6 Referensi 7 Pranala Menarik Installation apt-get install snmpd Configuration Backup /etc/snmp/snmpd.conf mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.org Buat file baru",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12541?v=1795443021",
   "cover_og_url": "/cover/12541/og?v=1795443021",
+  "has_cover": false,
   "url": "/book/r-tidy-text-dataset-tibble-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Text Vector 2 Tidy Text Dataset 3 Tidy Text Novel 4 Tidy Text gutenbergr 5 Pranala Menarik Text Vector text &lt;- c(\"Because I could not stop for Death -\", \"He kindly stopped for me -\", \"The Carriage held but just Ourselves -\", \"and Immortality\") text Tidy Text Dataset install.packages(\"dplyr\") library(dplyr) text_df &lt;- data_frame(line = 1:4, text = text) text_df Tidy Text Novel",

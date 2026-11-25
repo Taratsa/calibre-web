@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10188?v=1795436308",
   "cover_og_url": "/cover/10188/og?v=1795436308",
+  "has_cover": false,
   "url": "/book/instalasi-punbb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil souce code punbb di http://punbb.org/downloads.php Install punbb cp punbb-1.3.4.tar.gz /var/www/ cd /var/www tar zxvf punbb-1.3.4.tar.gz mv punbb-1.3.4 forum Buat database punbb pada MySQL, siapkan user database untuk mengakses database punbb melalui perintah # mysql mysql&gt; SET PASSWORD FOR root@localhost=PASSWORD('password'); atau # mysql -u root -p Enter password: (isi password root untuk",

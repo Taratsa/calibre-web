@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17726?v=1795466104",
   "cover_og_url": "/cover/17726/og?v=1795466104",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-bind-dns-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi BIND # apt-get install dnsutils bind9 Contents 1 Isi data DNS ukm.co.id 2 Data DNS ukm.co.id 3 Restart DNS 4 Pranala Menarik Isi data DNS ukm.co.id Lebih aman dan mudah menggunakan Webmin . Silahkan membaca SMEOnffLine:Manual DNS Server Menggunakan Webmin Tapi kalau maksa mau menggunakan text bisa juga. Kira-kira langkah yang perlu dilakukan adalah, edit # vi /etc/bind/named.conf.local",

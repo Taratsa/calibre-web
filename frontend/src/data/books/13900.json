@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13900?v=1795447865",
   "cover_og_url": "/cover/13900/og?v=1795447865",
+  "has_cover": false,
   "url": "/book/suricata-konfigurasi-minimal-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kifarunix.com/install-and-setup-suricata-on-ubuntu-18-04/ File konfigurasi Suricata adalah /etc/suricata/suricata.yaml. Dalam file tersebut tersedia cukup comment, sehingga memudahkan kita untuk membaca. Konfigurasi minimal sekali dari Suricata hanya perlu mendefinisikan mana internet network yang kita proteksi, dan membedakannya dengan external network. Ini dapat di definisikan",

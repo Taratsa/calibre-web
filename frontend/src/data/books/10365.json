@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10365?v=1795436862",
   "cover_og_url": "/cover/10365/og?v=1795436862",
+  "has_cover": false,
   "url": "/book/rom-android-menambahkan-builtin-aplikasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "  Contents 1 Intro: Adding a new app to the build 1.1 The \"easy\" way-- Add it to the zip manually 1.2 The \"right\" way: Make a part of the build repository so it auto-builds 1.2.1 Add app source to /packages/apps 1.2.2 Determine the name of the project from Android.mk 1.2.3 Add the project to device.mk (or whatever .mk) in the device folder 2 Referensi Intro: Adding a new",

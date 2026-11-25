@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11944?v=1795441148",
   "cover_og_url": "/cover/11944/og?v=1795441148",
+  "has_cover": false,
   "url": "/book/zcash-miner-ewbf-onno-widodo-purbo/",
   "rating": null,
   "comment": "EWBF bisa menggunakan nvidia cuda untuk komputasi / proses mining. EWBF _TIDAK_ bisa digunakan untuk driver nvidia 340 Install Cuda wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb sudo apt update sudo apt install cuda sudo apt install nvidia-375",

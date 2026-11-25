@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16943?v=1795463703",
   "cover_og_url": "/cover/16943/og?v=1795463703",
+  "has_cover": false,
   "url": "/book/format-flashdisk-di-shell-onno-widodo-purbo/",
   "rating": null,
   "comment": "Format flashdisk di shell cukup mudah masuk ke shell &amp; menjadi administrator $ sudo su - # Cek partisi yang digunakan oleh flashdisk melalui perintah # df -h biasanya flashdisk di mount di /media/disk umount flashdisk (asumsi termount di /media/disk) # umount /media/disk format flashdisk menggunakan FAT32 menggunakan perintah # mkfs.vfat /dev/sdb1 Pranala Menarik Linux Howto",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12874?v=1795444056",
   "cover_og_url": "/cover/12874/og?v=1795444056",
+  "has_cover": false,
   "url": "/book/instalasi-punbb-plugins-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil plugins untuk punBB dari alamat http://punbb.informer.com/downloads.php . Ada cukup banyak plugins, biasanya tersedia dalam bentuk *.zip. Copy file plugin *.zip ke folder punBB misalnya # cp *zip /var/www/forum/upload/plugins Unzip masing-masing file plugins, misalnya, # cd /var/www/forum/upload/plugins # unzip AMP_Global_topic.zip # unzip AP_Author_Update.zip # unzip AP_Backup.zip dll ..",

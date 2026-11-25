@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11125?v=1795439079",
   "cover_og_url": "/cover/11125/og?v=1795439079",
+  "has_cover": false,
   "url": "/book/nmap-nbstat-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://nmap.org/nsedoc/scripts/nbstat.html Contents 1 File nbstat 2 User Summary 3 Example Usage 4 Script Output 5 Referensi File nbstat Script types: hostrule Categories: default, discovery, safe Download: http://nmap.org/svn/scripts/nbstat.nse User Summary Attempts to retrieve the target's NetBIOS names and MAC address. By default, the script displays the name of the computer and the",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 214,
-    "longer_than": 25,
+    "longer_than": 24,
     "top": [
       [
         "nbstat",

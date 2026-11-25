@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9892?v=1795435325",
   "cover_og_url": "/cover/9892/og?v=1795435325",
+  "has_cover": false,
   "url": "/book/os-android-build-aokp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Build Environment 2 Instalasi Aplikasi Pendukung 3 Instalasi Oracle Java 6 4 Siapkan Perintah Repo 5 Siapkan Source Code 6 Build 7 Referensi 8 Pranala Menarik Build Environment Linux based operating system -- Tested on Ubuntu 12.04, 12.10, 13.04 (64bit) Terminal Decent hardware (minimum of at least a dual core CPU and 4 GB of RAM) Optimally have an SSD (standard mechanical drives work",
@@ -140,11 +141,11 @@
         4
       ],
       [
-        "dev",
+        "apt-get",
         4
       ],
       [
-        "apt-get",
+        "dev",
         4
       ],
       [

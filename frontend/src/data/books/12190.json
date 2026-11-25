@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12190?v=1795441795",
   "cover_og_url": "/cover/12190/og?v=1795441795",
+  "has_cover": false,
   "url": "/book/msf-mengaktifkan-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Aktifkan database postgresql di Kali Linux systemctl start postgresql Init msf msfdb init Hasilnya kira2 Creating database user 'msf' Enter password for new role: Enter it again: Creating databases 'msf' and 'msf_test' Creating configuration file in /usr/share/metasploit-framework/config/database.yml Creating initial database schema Masil ke msf cek database connection msfconsole msf &gt; db_status",

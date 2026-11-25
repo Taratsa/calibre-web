@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12608?v=1795443206",
   "cover_og_url": "/cover/12608/og?v=1795443206",
+  "has_cover": false,
   "url": "/book/mikrotik-static-routing-sedehana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topologi 2 Konfigurasi 3 Tambahan Kalau Membutuhkan NAT 4 Setting Client 5 Referensi 6 Pranala Menarik Topologi R1 e0 --&gt; NAT e1 --&gt; R2 e0 e2 --&gt; LAN 192.168.1.1/24 R2 e0 --&gt; R1 e1 e1 --&gt; LAN 192.168.2.1/24 Konfigurasi Router1: /ip address add address=192.168.122.100/24 interface=ether1 add address=192.168.122.101/24 interface=ether1 add address=192.168.122.102/24 interface=ether1 add",

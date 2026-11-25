@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9519?v=1795433135",
   "cover_og_url": "/cover/9519/og?v=1795433135",
+  "has_cover": false,
   "url": "/book/openwrt-flash-linksys-wrt54gl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Flash via TFTP 2 Flash via Web 3 Set NVRAM 4 Referensi 5 Pranala Menarik 5.1 Build Firmware 5.2 APRX 5.3 IPv6 5.4 Flash Firmware 5.5 Misc 5.6 UBNT Flash via TFTP Sambungkan LAN laptop ke LAN router Cek sambungan ping 192.168.1.1 Matikan router Pindah ke folder tempat firmware berada, misalnya cd ~/openwrt.trunk/trunk/bin-final/brcm47xx Set IP laptop statik dan lakukan TFTP cp",

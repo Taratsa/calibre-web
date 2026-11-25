@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20131?v=1795476254",
   "cover_og_url": "/cover/20131/og?v=1795476254",
+  "has_cover": false,
   "url": "/book/faq-menaikan-upload-limit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit file vi /etc/php5/apache2/php.ini ubah upload_max_filesize = 2M post_max_size = 8M menjadi upload_max_filesize = 100M post_max_size = 100M atau ke ukuran / size yang anda inginkan. Kemudian restart apache /etc/init.d/apache2 restart Referensi http://wptheming.com/2009/07/upload_max_filesize/ http://wptheming.com/wp-content/uploads/2009/07/php.ini",

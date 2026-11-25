@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13911?v=1795447919",
   "cover_og_url": "/cover/13911/og?v=1795447919",
+  "has_cover": false,
   "url": "/book/quagga-openwrt-berdampingan-dengan-quagga-tanpa-delete-config-web-onno-widodo-purbo/",
   "rating": null,
   "comment": "Objective akhir adalah OpenWRT dan Quagga bisa hidup berdampingan. Dari sisi ethernet, eth7 - WAN / Internet eth6 - LAN br-lan OpenWRT eth0-5 di kontrol Quagga Kondisi Awal OpenWRT, hanya eth0 br-lan. Install Quagga Dengan GNS3 OpenWRT tersambung ke Internet Connect PC ke eth0 Set eth7 ke Internet Set eth0-6 ke br-lan Install Quagga opkg update opkg install quagga-bgpd quagga-isisd quagga-libospf",

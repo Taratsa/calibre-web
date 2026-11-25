@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12891?v=1795444117",
   "cover_og_url": "/cover/12891/og?v=1795444117",
+  "has_cover": false,
   "url": "/book/quagga-ospf-multi-area-network-dengan-md5-authentication-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology Jaringan 2 Setup IP address 3 Setup OSPF 4 Cek route 5 Pranala Menarik Topology Jaringan R1: eth1: -- R2: eth1 eth2: -- R3: eth1 R2: eth1: -- R1: eth1 eth2: -- R4: eth1 eth3: -- nat0: Internet R3: eth1: -- R1: eth2 eth2: -- LAN: 192.168.1.1/24 R4: eth1: -- R2: eth2 eth2: -- LAN: 192.168.2.1/24 Setup IP address R1: vtysh configure terminal interface eth1 ip address 10.0.1.1/30",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19733?v=1795474732",
   "cover_og_url": "/cover/19733/og?v=1795474732",
+  "has_cover": false,
   "url": "/book/nfs-konfigurasi-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install paket apt-get install nfs-common nfs-kernel-server Cara mount mount ip-address-server:/folder/share /folder/lokal mount -t nfs ip-address-server:/folder/share /folder/lokal mount.nfs ip-address-server:/folder/share /folder/lokal contoh yang agak rumit Asumsi Server NFS 192.168.0.1 Nama Folder /album /iso /media /library /backup /repository /public mkdir /mnt/album mkdir /mnt/iso mkdir",

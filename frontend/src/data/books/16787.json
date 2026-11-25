@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16787?v=1795463180",
   "cover_og_url": "/cover/16787/og?v=1795463180",
+  "has_cover": false,
   "url": "/book/mediawiki-reinstall-database-di-ubuntu-24-04-mediawiki-1-39-onno-widodo-purbo/",
   "rating": null,
   "comment": "rm -Rf /usr/local/src/var cd /usr/local/src tar zxvf images.tar.gz cp -Rf var/www/html/wiki/images/* /var/www/html/wiki/images/ &amp; chown -Rf www-data:www-data /var/www/html/wiki &amp; service mysql stop service mysql start /usr/bin/mysqladmin --user=mediawiki --password=mediawiki --force drop mediawiki /usr/bin/mysqladmin --user=mediawiki --password=mediawiki create mediawiki /usr/bin/mysql -u",

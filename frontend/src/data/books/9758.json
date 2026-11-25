@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9758?v=1795434786",
   "cover_og_url": "/cover/9758/og?v=1795434786",
+  "has_cover": false,
   "url": "/book/ipv6-route-membuang-ipv6-route-dari-gateway-onno-widodo-purbo/",
   "rating": null,
   "comment": "Membuang IPv6 route melalui gateway, sering kali tidak di perlukan secara manual. Kebanyakan dilakukan oleh script konfigurasi network pada saat shutdown (full atau per interface). Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route del / via  [dev ] Contoh # /sbin/ip -6 route del 2000::/3 via 2001:0db8:0:f101::1 Menggunakan \"route\" Penggunaan #",

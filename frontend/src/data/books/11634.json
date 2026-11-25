@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11634?v=1795440371",
   "cover_og_url": "/cover/11634/og?v=1795440371",
+  "has_cover": false,
   "url": "/book/msf-smb-login-cek-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.offensive-security.com/metasploit-unleashed/smb-login-check/ Kita bisa mencoba login ke SMB share dengan kombinasi username &amp; password tertentu. Kita juga bisa mencek sekelompok IP address yang mempunyai folder yang di sharing dengan kombinasi username/password tertentu. Keberhasilan login akan dimasukan ke modul exploit windows/smb/psexec yang dapat digunakan pada sesi",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 315,
-    "longer_than": 31,
+    "longer_than": 30,
     "top": [
       [
         "smb",

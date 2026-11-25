@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9769?v=1795434820",
   "cover_og_url": "/cover/9769/og?v=1795434820",
+  "has_cover": false,
   "url": "/book/ipv4-in-ipv6-tunnel-setup-point-to-point-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Skenario 2 Gateway A 3 Gateway B 4 Cek dari Gateway A 5 Altrenatif Penjelasan Lain 6 Pranala Menarik Skenario 192.168.100.0/24 -- A 2001::100 -- B 2001::101 B -- 10.10.0.0/24 Gateway A IPv6 2001::100 Tunnel 192.168.100.0/24 Gateway B IPv6 2001::101 Tunnel 10.10.0.0/24 Gateway A echo 1 &gt; /proc/sys/net/ipv4/conf/all/forwarding echo 1 &gt; /proc/sys/net/ipv4/conf/default/forwarding echo 1 &gt;",

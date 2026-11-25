@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10257?v=1795436526",
   "cover_og_url": "/cover/10257/og?v=1795436526",
+  "has_cover": false,
   "url": "/book/raspbian-nginx-rtmp-dengan-hls-dan-dash-onno-widodo-purbo/",
   "rating": null,
   "comment": "We already looked at using our nginx-rtmp server to transcode our streams or to deliver them to more than one location. But another very nice feature, especially for mobile devices is the option to offer streams using HLS or Mpeg-Dash. Dash explanation HLS explanation In nginx-rtmp, both features are actually quite easy to use, but they depend on a few factors: both HLS and DASH need their own",

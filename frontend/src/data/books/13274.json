@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13274?v=1795445364",
   "cover_og_url": "/cover/13274/og?v=1795445364",
+  "has_cover": false,
   "url": "/book/timeseries-using-tensorflow-for-time-series-modelling-and-forecasting-onno-widodo-purbo/",
   "rating": null,
   "comment": "This is a quick example on using TensorFlow to learn about a time series and perform forecasting. This can be used as an entry point for detecting anomalies. Module import import numpy as np import tensorflow as tf from tensorflow.contrib.timeseries.python.timeseries import NumpyReader tf.logging.set_verbosity(tf.logging.WARN) tf.__version__ 1.4.0 Plots customisation %matplotlib inline import",

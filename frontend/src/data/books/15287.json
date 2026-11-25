@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15287?v=1795454011",
   "cover_og_url": "/cover/15287/og?v=1795454011",
+  "has_cover": false,
   "url": "/book/openairinterface-running-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan OpenAirInterface, kita perlu membuka window tersendiri dan menjalankan perintah berikut, cd /usr/local/src/openairinterface5g/cmake_targets sudo -E ./lte_build_oai/build/lte-softmodem -O ../ci-scripts/conf_files/enb.band7.tm1.b200.conf &gt; enb.log 2&gt;&amp;1 File konfigurasi .conf yang digunakan tergantung pada file konfigurasi enb yang kita gunakan. Pranala Menarik 5G",

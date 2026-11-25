@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12481?v=1795442869",
   "cover_og_url": "/cover/12481/og?v=1795442869",
+  "has_cover": false,
   "url": "/book/raspbian-install-dhcp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo su apt update apt install isc-dhcp-server Edit default vi /etc/default/isc-dhcp-server INTERFACESv4=\"eth0 wlan0\" Konfigurasi vi /etc/dhcp/dhcpd.conf Parameter ddns-updates on; ddns-update-style interim; ddns-domainname \"mydomain.home\"; ddns-rev-domainname \"0.1.10.in-addr.arpa\"; ignore client-updates; # If you have fixed-address entries you want to use dynamic dns",

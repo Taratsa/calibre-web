@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17728?v=1795466110",
   "cover_og_url": "/cover/17728/og?v=1795466110",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-ntp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi NTP Server # apt-get install ntp Edit Konfigurasi # vi /etc/ntp.conf Beberapa konfigurasi yang bisa di tambahkan server ntp.ubuntu.com server pool.ntp.org restrict 192.168.0.0 mask 255.255.255.0 trust broadcast 192.168.0.255 Pranala Menarik SMEOnffLine: Server Berbasis Sabily SMEOnffLine: Server Berbasis Ubuntu",

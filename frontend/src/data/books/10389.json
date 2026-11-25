@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10389?v=1795436939",
   "cover_og_url": "/cover/10389/og?v=1795436939",
+  "has_cover": false,
   "url": "/book/rom-android-porting-lg-p710-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat untuk LG L7 II (p700) yang sudah ada di CyanogenMod cd ~/android-cyanogenmod ~/android-cyanogenmod/vendor/cm/get-prebuilts . build/envsetup.sh brunch p700 Keluar including vendor/cm/vendorsetup.sh ls: cannot access device/*/p700/cm.mk: No such file or directory build/core/product_config.mk:234: *** Can not locate config makefile for product \"cm_p700\". Stop. Device p700 not found. Attempting",

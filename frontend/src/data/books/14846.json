@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14846?v=1795452033",
   "cover_og_url": "/cover/14846/og?v=1795452033",
+  "has_cover": false,
   "url": "/book/openwrt-instal-image-img-gz-ke-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm Butuh x86 64 bit version of OpenWrt. combined-squashfs.img.gz combined-ext4.img.gz (lebih baik) Lakukan gzip -d openwrt-*x86-64-combined*.img.gz. gunzip openwrt-*x86-64-combined*.img.gz Konvert ke VDI VBoxManage convertfromraw --format VDI openwrt-*x86-64-combined*.img openwrt.vdi",

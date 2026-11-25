@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17820?v=1795466395",
   "cover_og_url": "/cover/17820/og?v=1795466395",
+  "has_cover": false,
   "url": "/book/sahana-mendelete-wiki-gis-yang-salah-entry-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "Masuk ke shell di server mysql -u sahana_sys -p password: use sahana; select * from gis_wiki; Selanjutnya: Perhatikan kalau-kalau ada beberapa line / row yang kacau. Catat wiki_uuid dari line yang kacau tersebut Delete line tersebut menggunakan perintah: delete from gis_wiki where wiki_uuid=\"729ewm-12\"; Pranala Menarik Trik Add Marker di SAHANA SAHANA: Mengubah Posisi Peta SAHANA: Mengubah zoom",

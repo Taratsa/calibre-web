@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14568?v=1795450591",
   "cover_og_url": "/cover/14568/og?v=1795450591",
+  "has_cover": false,
   "url": "/book/menggunakan-mysqlslap-iterations-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk memastikan bahwa hasil test cukup konsisten, ada baiknya dilakukan iterasi. Mengulangi query lebih dari satu menggunakan iterations dapat menggunakan perintah, mysqlslap -h localhost -u root -p123456 --auto-generate-sql --concurrency=100 --number-of-queries=10000 --iterations=5 Output mysqlslap kira-kira sebagai berikut, Benchmark Average number of seconds to run all queries: 9.278 seconds",

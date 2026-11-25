@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19904?v=1795475496",
   "cover_og_url": "/cover/19904/og?v=1795475496",
+  "has_cover": false,
   "url": "/book/ubuntu-enterprise-cloid-mendaftarkan-file-distribusi-ubuntu-secara-manual-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan pada home directory ada file *.img dan pendukungnya. Misalnya kita ingin menggunakan ls maverick-server-uec-i386* ls ~/maverick-server-uec-i386* maverick-server-uec-i386-floppy maverick-server-uec-i386-loader maverick-server-uec-i386-vmlinuz-virtual maverick-server-uec-i386.img maverick-server-uec-i386.tar.gz Kalau tidak ada, copy dan extract mengunakan perintah cp",
@@ -196,7 +197,7 @@
       ],
       [
         19886,
-        0.41
+        0.42
       ],
       [
         19871,

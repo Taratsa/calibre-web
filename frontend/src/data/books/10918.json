@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10918?v=1795438449",
   "cover_og_url": "/cover/10918/og?v=1795438449",
+  "has_cover": false,
   "url": "/book/hadoop-instal-hadoop-native-library-di-ubuntu-14-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/NativeLibraries.html Cek Native Library hadoop checknative -a Hasil yang akan bermasalah 15/11/09 16:11:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable Native library checking: hadoop: false zlib: false snappy: false lz4: false",

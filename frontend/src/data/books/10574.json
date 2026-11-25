@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10574?v=1795437515",
   "cover_og_url": "/cover/10574/og?v=1795437515",
+  "has_cover": false,
   "url": "/book/wireshark-mengukur-video-streaming-delay-onno-widodo-purbo/",
   "rating": null,
   "comment": "Identifying network latency / jitter issues w/ Wireshark Issue : sporadically and randomly clients would see jitter (picture freezing for a small number of seconds) when viewing live video streams such as BBC news To start tackling the above issue it is first important to observe the normal behaviour of the video stream. In BBC's case, the video stream is using RTMP (port 1935), however it is",

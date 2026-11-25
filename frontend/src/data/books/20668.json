@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20668?v=1795477856",
   "cover_og_url": "/cover/20668/og?v=1795477856",
+  "has_cover": false,
   "url": "/book/usrp-menyambungkan-clocktamer-ke-usrp1-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tulisan ini akan fokus pada cara menyambungkan ClockTamer ke USRP1. Sebetulnya ClockTamer dapat digunakan untuk USRP 2, N2x0, E1x0 dan B1x0. Secara umum, untuk menggunakan ClockTamer dengan USRP selain USRP1 kita perlu menyambungkannya ke \"input 10MHz external reference\" dan mengkonfigurasi ClockTamer agar membangkitkan frekuensi 10MHz. Contents 1 USRP1 2 Modifikasi USRP1 3 Terminasi clock input",

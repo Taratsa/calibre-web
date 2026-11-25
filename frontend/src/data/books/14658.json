@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14658?v=1795451099",
   "cover_og_url": "/cover/14658/og?v=1795451099",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-apache-web-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Web merupakan aplikasi yang banyak digunakan untuk menampilkan informasi dari Server. Salah satu aplikasi Web yang sering digunakan adalah Apache. Cara instalasinya tidak terlalu sulit menggunakan perintah berikut, sudo su apt update apt install apache2 php php-xmlrpc php-mysql php-gd php-cli php-curl Untuk start/stop/restart server Apache menggunakan perintah berikut, sudo su /etc/init.d/apache2",

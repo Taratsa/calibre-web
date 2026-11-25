@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12788?v=1795443745",
   "cover_og_url": "/cover/12788/og?v=1795443745",
+  "has_cover": false,
   "url": "/book/juniper-setting-ip-address-onno-widodo-purbo/",
   "rating": null,
   "comment": "cli configure set interfaces me0 unit 0 family inet address 192.168.122.100/24 ! buat supaya bisa di ping set security zones security-zone untrust interfaces me0 set security zones security zone host inbound traffic system services ping exit commit Cek ping 192.168.122.1 Pranala Menarik Quagga Mikrotik Cisco Juniper",

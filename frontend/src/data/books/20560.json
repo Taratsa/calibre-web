@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20560?v=1795477587",
   "cover_og_url": "/cover/20560/og?v=1795477587",
+  "has_cover": false,
   "url": "/book/instalasi-smokeping-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Smokeping # apt-get install smokeping Edit konfigurasi # vi /etc/smokeping/config Isi tentang anda owner = Nama Anda contact = email@anda.host.com cgiurl = http://127.0.0.1/cgi-bin/smokeping.cgi mailhost = 127.0.0.1 # specify this to get syslog logging syslogfacility = local0 # each probe is now run in its own process # disable this to revert to the old behaviour # concurrentprobes = no",

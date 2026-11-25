@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13824?v=1795447604",
   "cover_og_url": "/cover/13824/og?v=1795447604",
+  "has_cover": false,
   "url": "/book/wemos-ntp-jam-digital-7-segmen-display-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su cd ~/Arduino/libraries rm master.zip wget https://github.com/arduino-libraries/NTPClient/archive/master.zip unzip master.zip Source Code #include  #include  #include  #include  #include  const char *ssid = \"ssid\"; const char *password = \"password\"; const long utcOffsetInSeconds = 3600; char daysOfTheWeek[7][12] = {\"Sunday\",",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10934?v=1795438495",
   "cover_og_url": "/cover/10934/og?v=1795438495",
+  "has_cover": false,
   "url": "/book/hadoop-sqoop-contoh-import-dari-mysql-ke-hadoop-onno-widodo-purbo/",
   "rating": null,
   "comment": "IMPORTING DATA FROM HADOOP TO MYSQL Steps to install mysql Run the command :sudo apt-get install mysql-server and give appropriate username and password. Using sqoop to perform import to hadoop from sql Download mysql-connector-java-5.1.28-bin.jar and move to /usr/lib/sqoop/lib using command user@ubuntu:~$ sudo cp mysql-connnectpr-java-5.1.28-bin.jar /usr/lib/sqoop/lib/ Login to mysql using",

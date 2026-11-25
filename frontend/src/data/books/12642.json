@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12642?v=1795443301",
   "cover_og_url": "/cover/12642/og?v=1795443301",
+  "has_cover": false,
   "url": "/book/python3-http-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "import http.server import socketserver PORT = 8000 Handler = http.server.SimpleHTTPRequestHandler with socketserver.TCPServer((\"\", PORT), Handler) as httpd: print(\"serving at port\", PORT) httpd.serve_forever() Run python3 -m http.server 8000 python3 -m http.server 8000 --bind 127.0.0.1 python3 -m http.server --directory /tmp/ Referensi https://docs.python.org/3/library/http.server.html Pranala",

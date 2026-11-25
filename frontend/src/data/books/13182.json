@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13182?v=1795445059",
   "cover_og_url": "/cover/13182/og?v=1795445059",
+  "has_cover": false,
   "url": "/book/bind-setup-dmki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Adding a DKIM record to your DNS is quite simple. First, your create a key pair with openssl: openssl genrsa -out private.key 1024 openssl rsa -in private.key -pubout -out public.key Your public key looks now like: -----BEGIN PUBLIC KEY----- MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDfA14QIpOjnPT8sN/uLc8aoUpM PJQS47UYyn0+VhcTACZuxEMxCKBatAdOMFcNxlqPsXxjxPH1o/A9fOZJ8Uf+Ff2n",

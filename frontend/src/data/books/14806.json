@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14806?v=1795451802",
   "cover_og_url": "/cover/14806/og?v=1795451802",
+  "has_cover": false,
   "url": "/book/cpu-disable-enable-core-onno-widodo-purbo/",
   "rating": null,
   "comment": "You can dynamically disable CPUs via /sys/devices/system/cpu/cpuN/online, for example to disable CPU 1, use: echo 0 | sudo tee /sys/devices/system/cpu/cpu1/online and to re-enable, use: echo 1 | sudo tee /sys/devices/system/cpu/cpu1/online",
@@ -66,7 +67,7 @@
       ],
       [
         15845,
-        0.41
+        0.4
       ],
       [
         15237,

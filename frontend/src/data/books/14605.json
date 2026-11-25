@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/14605?v=1795450810",
   "cover_og_url": "/cover/14605/og?v=1795450810",
+  "has_cover": false,
   "url": "/book/instalasi-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk instalasi Web Server Apache saja relatif sederhana melalui perintah sudo apt update sudo apt -y install apache2 Sebaiknya install apache saja seperti di atas jangan di lakukan. Sebaiknya kita menginstalasi secara lengkap Apache , PHP dan database server MySQL sudo apt-get install apache2 php php-xmlrpc php-mysql php-gd php-cli \\ php-curl mysql-client mysql-server Contents 1 Ubuntu 16.04 2",

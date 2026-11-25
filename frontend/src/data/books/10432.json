@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10432?v=1795437070",
   "cover_og_url": "/cover/10432/og?v=1795437070",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-x86-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Aplikasi Pendukung 2 Compile Menggunakan Development Trunk 3 Konfigurasi Default 4 Konfigurasi untuk Kemampuan Routing 5 Pranala Menarik Siapkan Aplikasi Pendukung sudo su apt update apt -y install subversion gawk flex sharutils bison libz-dev zlib1g-dev patch \\ fakeroot lzma git git-core build-essential unzip libncurses5-dev curl \\ libexpat1 libexpat1-dev libssl-dev libdaemon*",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16789?v=1795463197",
   "cover_og_url": "/cover/16789/og?v=1795463197",
+  "has_cover": false,
   "url": "/book/llm-ubuntu-24-04-desktop-ollama-n8n-open-webui-orange-gpu-4060-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bisa. Ini jalur yang paling gampang untuk Ubuntu 24.04 Desktop + RTX 4060 8GB , akses lokal saja , memakai Docker Compose untuk Ollama + Open WebUI + n8n , lalu Orange Data Mining dipasang terpisah di host dalam *virtual environment*. Saya sengaja pilih desain ini karena paling mudah dirawat: GPU dipakai oleh Ollama di container, Open WebUI hanya jadi UI yang mengarah ke Ollama, dan n8n tetap",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13919?v=1795447953",
   "cover_og_url": "/cover/13919/og?v=1795447953",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-dhcp-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Request Address /ipv6 dhcp-client add request=address interface=ether1 Request POOL Address /ipv6 dhcp-client add request=prefix pool-name=test-ipv6 pool-prefix-length=64 interface=ether1 contoh lain /ipv6 dhcp-client add request=prefix pool-name=test-ipv6 pool-prefix-length=51 interface=ether1 /ipv6 dhcp-client add request=prefix add-default-route=yes pool-name=test-ipv6 pool-prefix-length=51",

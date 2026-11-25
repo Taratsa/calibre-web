@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18987?v=1795471136",
   "cover_og_url": "/cover/18987/og?v=1795471136",
+  "has_cover": false,
   "url": "/book/voip-cookbook-an-interesting-extension-examples-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asterisk is able to transfer calls. This can be done by adding the parameter \"t\" (lowercaps) to the user context, such as in the following syntax: exten =&gt; 250,1,Dial(SIP/alrac,10,rt) This way, the call transfer can be done by pressing \"#\", followed by the extension number. Asterisk will say \"transfer\" when you press \"#\" and sounds a dial tone until we enter the extension number to which we wish",
@@ -136,12 +137,12 @@
         7
       ],
       [
-        "parked",
-        3
-      ],
-      [
         "phone",
         6
+      ],
+      [
+        "parked",
+        3
       ],
       [
         "cookbook",

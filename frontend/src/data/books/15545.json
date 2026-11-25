@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15545?v=1795455390",
   "cover_og_url": "/cover/15545/og?v=1795455390",
+  "has_cover": false,
   "url": "/book/minikube-akses-apps-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/accessing/ How to access applications running within minikube There are two major categories of services in Kubernetes: Berikut adalah cara mengakses aplikasi yang berjalan di dalam minikube. Ada dua kategori utama layanan di Kubernetes: NodePort LoadBalancer minikube mendukung ke dua-nya. Contents 1 NodePort access 1.1 Mendapatkan NodePort",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16632?v=1795462127",
   "cover_og_url": "/cover/16632/og?v=1795462127",
+  "has_cover": false,
   "url": "/book/comfyui-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi: https://marcqualie.com/blog/post/install-comfyui-on-ubuntu Install dependency sudo apt update sudo apt install git python3 python3-venv python3-dev build-essential libgl1 ssh systemd-timesyncd -y Install nvidia drivers sudo ubuntu-drivers list --gpgpu sudo apt update sudo ubuntu-drivers install --gpgpu sudo nvidia-cuda-toolkit sudo nvidia-smi Clone ComfyUI into ~/src git clone",

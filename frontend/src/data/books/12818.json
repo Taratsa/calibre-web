@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12818?v=1795443852",
   "cover_og_url": "/cover/12818/og?v=1795443852",
+  "has_cover": false,
   "url": "/book/cisco-bgp-prefix-list-onno-widodo-purbo/",
   "rating": null,
   "comment": "router bgp 100 network 105.7.0.0 mask 255.255.0.0 neighbor 102.10.1.1 remote-as 110 neighbor 102.10.1.1 prefix-list PEER-IN in neighbor 102.10.1.1 prefix-list PEER-OUT out ! ! ip prefix-list PEER-IN deny 218.10.0.0/16 ip prefix-list PEER-IN permit 0.0.0.0/0 le 32 ip prefix-list PEER-OUT permit 105.7.0.0/16 ip prefix-list PEER-OUT deny 0.0.0.0/0 le 3 2 Pranala Menarik Quagga Mikrotik Cisco Juniper",

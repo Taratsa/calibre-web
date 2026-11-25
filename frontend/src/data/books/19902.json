@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19902?v=1795475489",
   "cover_og_url": "/cover/19902/og?v=1795475489",
+  "has_cover": false,
   "url": "/book/ubuntu-enterprise-cloud-memperoleh-kernel-dan-ramdisk-untuk-image-buatan-sendiri-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika anda membuat kernel sendiri dan tidak memiliki vmlinux dan initrd, kita dapat mengupload vmlinux &amp; initrd yang ada di /boot ke Could Controller Eucalyptus. File yang perlu di upload untuk contoh di atas adalah /boot/vmlinuz-2.6.35-22-generic-pae /boot/initrd.img-2.6.35-22-generic-pae Copy kernel dan initrd image dari VM image (atau Node Controller) ke mesin client yang akan mengupload image",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15676?v=1795456132",
   "cover_og_url": "/cover/15676/og?v=1795456132",
+  "has_cover": false,
   "url": "/book/open5gs-ims-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/ Install paket pendukung di ubuntu 18.04 apt update apt upgrade -y apt install -y mysql-server tcpdump screen ntp ntpdate git dkms gcc flex bison \\ libmysqlclient-dev make libssl-dev libcurl4-openssl-dev libxml2-dev \\ libpcre3-dev bash-completion g++ autoconf rtpproxy libmnl-dev libsctp-dev ipsec-tools \\ libradcli-dev libradcli4",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 5150,
-    "longer_than": 71,
+    "longer_than": 70,
     "top": [
       [
         "kamailio",

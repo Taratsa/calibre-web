@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19774?v=1795474915",
   "cover_og_url": "/cover/19774/og?v=1795474915",
+  "has_cover": false,
   "url": "/book/linux-driver-untuk-stk11-webcam-video-adapter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Nampaknya driver ini belum di program untuk EasyCAP device. Setelah kita colok ke PC, hardware info memberikan berbagai ALSA input tapi tidak memberikan video chip yang sebenarnya. Langkah yang perlu dilakukan: Update the library of hardwares PCI and USB: sudo update-pciids sudo update-usbids Siapkan software pendukung sudo apt-get install doxygen linux-headers-2.6.32-21-generic bin86",

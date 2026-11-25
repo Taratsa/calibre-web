@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14034?v=1795448386",
   "cover_og_url": "/cover/14034/og?v=1795448386",
+  "has_cover": false,
   "url": "/book/dovecot-ipv6-enable-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://efod.se/dovecot-postfix-ipv6/ Contents 1 Postfix 2 Dovecot 3 Apache 4 Referensi 5 Pranala Menarik Postfix Default Postfix (MTA) tidak mendengarkan IPv6. Agar Postfix mendengarkan IPv6 dan IPv4, kita dapat mengubah parameter di/etc/postfix/main.cf agar, inet_protocols=all Default value adalah ipv4. Dovecot Default Dovecot tidak mendengarkan IPv6. Agar default mendengarkan IPv6 dan",

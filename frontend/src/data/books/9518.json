@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9518?v=1795433133",
   "cover_og_url": "/cover/9518/og?v=1795433133",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-linksys-wrt54gl-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: ini akan membutuhkan banyak akses ke Internet untuk download, termasuk waktu proses make. Termasuk download kernel linux, waktu compile toolchain :( ... Tampaknya tidak bisa OFFLINE :( Dalam contoh ini akan di perlihatkan cara compile firmware Linksys WRT54GL untuk keperluah MESH dengan OLSRD. oleh karenanya membutuhkan aplikasi seperti luci olsrd freifunk Pastikan Compile untuk Broadcom",

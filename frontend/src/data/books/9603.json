@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/9603?v=1795433415",
   "cover_og_url": "/cover/9603/og?v=1795433415",
+  "has_cover": false,
   "url": "/book/mysql-memperbaiki-corrupt-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Error: Table 'mysql.user' doesn't exist Solusi: Ini biasanya karena instalasi mysql tidak beres. Cara yang manjur: mysql_install_db --user=mysql Untuk username root, password 123456 mysqlcheck -u root -p123456 --all-databases --auto-repair Pranala Menarik Perintah MySQL Instalasi MySQL Linux Howto Backup isi database MySQL Reset Password MySQL Mengatasi Masalah Can't connect to local MySQL server",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10919?v=1795438451",
   "cover_og_url": "/cover/10919/og?v=1795438451",
+  "has_cover": false,
   "url": "/book/hadoop-menjalankan-mapreduce-job-wordcount-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.apache.org/hadoop/WordCount Contents 1 Buat File Data Sederhana 2 Jalankan WordCount 3 Copy Hasil 4 Ujicoba menggunakan dataset 10Gbyte 5 Referensi Buat File Data Sederhana cd ~ touch file01 touch file02 echo \"Hello World Bye World\" &gt; file01 echo \"Hello Hadoop Goodbye Hadoop\" &gt; file02 hadoop fs -mkdir /user/hduser/input hadoop fs -put file* /user/hduser/input/ Cek hadoop fs",

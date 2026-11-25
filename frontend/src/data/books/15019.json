@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15019?v=1795452818",
   "cover_og_url": "/cover/15019/og?v=1795452818",
+  "has_cover": false,
   "url": "/book/java-perbedaan-antara-thread-start-dan-thread-run-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam konsep multi-threading Java, start() dan run() adalah dua method yang paling penting. Berikut adalah beberapa perbedaan antara metode Thread.start() dan Thread.run(): Pembuatan New Thread: Ketika sebuah program memanggil method start(), sebuah thread baru dibuat dan kemudian method run() dijalankan. Tetapi jika kita secara langsung memanggil method run() maka tidak ada thread baru yang akan",

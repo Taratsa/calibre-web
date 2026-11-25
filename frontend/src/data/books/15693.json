@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15693?v=1795456235",
   "cover_og_url": "/cover/15693/og?v=1795456235",
+  "has_cover": false,
   "url": "/book/open5gs-konfigurasi-ogstun-dan-ogstun2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Asumsi Konfigurasi 2 Setup TUN device (not persistent) 3 Tambahkan Route Untuk UE ke WAN / Internet 4 Konfigurasi dua interface TUN ogstun dan ogstun2 5 Pranala Menarik Asumsi Konfigurasi OS Ubuntu 22.04 Open5GS &amp; IMS satu mesin Satu Interface enp0s3 IP Statik enp0s3 192.168.0.5/24 gateway 192.168.0.222 IP Statik ogstun 10.45.0.1/16 &amp; 2001:db8:cafe::1/48 IP Statik ogstun2 10.123.0.1/16",

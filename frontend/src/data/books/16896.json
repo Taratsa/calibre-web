@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16896?v=1795463572",
   "cover_og_url": "/cover/16896/og?v=1795463572",
+  "has_cover": false,
   "url": "/book/menggunakan-opensipsctl-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menggunakan opensipsctl yang sering digunakan adalah untuk Menambahkan user Melihat user yang sedang login Memonitor aktifitas OpenSIPS Softswitch Menambahkan user # opensipsctl add nomor@host password # opensipsctl add 2000@192.168.0.111 123456 Melihat user yang sedang login # opensipsctl ul show nomor@host # opensipsctl ul show 2000@192.168.0.111 Lihat Online User opensipsctl online Monitor",

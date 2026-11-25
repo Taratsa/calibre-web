@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16284?v=1795459936",
   "cover_og_url": "/cover/16284/og?v=1795459936",
+  "has_cover": false,
   "url": "/book/postfix-limiting-message-size-reception-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Do, postconf -e message_size_limit=52428800 or edit /etc/postfix/main.cf Example Parameter: message_size_limit = 50000000 Restart /etc/init.d/postfix restart References http://www.postfix.org/postconf.5.html",

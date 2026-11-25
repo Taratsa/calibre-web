@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15014?v=1795452802",
   "cover_og_url": "/cover/15014/og?v=1795452802",
+  "has_cover": false,
   "url": "/book/java-start-function-di-multithreading-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kami telah membahas bahwa thread Java biasanya dibuat menggunakan salah satu dari dua (2) metode: Extend thread class. Implement Runnable Dalam kedua pendekatan tersebut, kita override/menimpa fungsi run(), tetapi kita memulai sebuah thread dengan memanggil fungsi start(). Jadi mengapa kita tidak langsung memanggil fungsi run() yang ditimpa? Mengapa selalu fungsi start dipanggil untuk",

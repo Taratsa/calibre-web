@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11403?v=1795439787",
   "cover_og_url": "/cover/11403/og?v=1795439787",
+  "has_cover": false,
   "url": "/book/python-nltk-cleaning-text-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cleaning Text 01 May 2016 Python Data Wrangling Create some raw text # Create a list of three strings. incoming_reports = [\"We are attacking on their left flank but are losing many men.\", \"We cannot see the enemy army. Nothing else to report.\", \"We are ready to attack but are waiting for your orders.\"] Seperate by word # import word tokenizer from nltk.tokenize import word_tokenize # Apply",

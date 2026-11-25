@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14978?v=1795452668",
   "cover_og_url": "/cover/14978/og?v=1795452668",
+  "has_cover": false,
   "url": "/book/ubuntu-install-pihole-onno-widodo-purbo/",
   "rating": null,
   "comment": "How to Install &amp; Configure Pihole on Ubuntu 20.04 1. Installation - Run these commands: sudo apt-get install gamin -y sudo curl -sSL https://install.pi-hole.net | bash - Possible problem: lighttpd service not running (when gamin has not been preinstalled) - Fix: run these commands sudo pihole uninstall rambo@pihole:~$ sudo pihole uninstall [?] Are you sure you would like to remove Pi-hole? [y/N]",

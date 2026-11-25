@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11603?v=1795440300",
   "cover_og_url": "/cover/11603/og?v=1795440300",
+  "has_cover": false,
   "url": "/book/mitm-mitmssh-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://andrewmichaelsmith.com/2014/03/quick-and-easy-ssh-mitm/ # Download mitmproxy git clone https://github.com/mitmproxy/mitmproxy.git #Generate mitm keys (these go to ~/.mitmkeys) ./mitmkeys Now you want to install the SSH key you just generated to the server you want to mitm. #Install SSH key ssh-copy-id -i ~/.mitmkeys/id_rsa.pub user@victimserver Then run the proxy, pointing it at",

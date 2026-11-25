@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15070?v=1795453017",
   "cover_og_url": "/cover/15070/og?v=1795453017",
+  "has_cover": false,
   "url": "/book/android-intent-filter-onno-widodo-purbo/",
   "rating": null,
   "comment": "An Android Intent is an abstract description of an operation to be performed. It can be used with startActivity to launch an Activity, broadcastIntent to send it to any interested BroadcastReceiver components, and startService(Intent) or bindService(Intent, ServiceConnection, int) to communicate with a background Service. The intent itself, an Intent object, is a passive data structure holding an",

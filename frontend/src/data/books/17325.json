@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17325?v=1795464929",
   "cover_og_url": "/cover/17325/og?v=1795464929",
+  "has_cover": false,
   "url": "/book/relay-ke-selular-menggunakan-opensips-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh sederhana cara merelay ke Selular. Asumsi yang digunakan. ATA Berada di IP address 192.168.0.200 port 5061. Dari Semua Domain # attempt handoff to Selular if (uri=~\"^ sip:08 [0-9]*@*\") { rewritehostport( \"192.168.0.200:5061\"); ## 192.168.0.200:5061 adalah Analog Telepon Adapter ( ATA ) route(1); }; Hanya dari mydomain.com # attempt handoff to Selular if (uri=~\"^ sip:08",

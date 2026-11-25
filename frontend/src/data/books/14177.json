@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14177?v=1795448926",
   "cover_og_url": "/cover/14177/og?v=1795448926",
+  "has_cover": false,
   "url": "/book/mikrotik-filter-streaming-onno-widodo-purbo/",
   "rating": null,
   "comment": "/ip firewall layer7-protocol add name=http-video regexp=\"http/(0.9|1.0|1.1)[x09-x0d ][1-5][0-9][0-9][x09-x0d -~]*(content-type: video)\" /ip firewall mangle add action=mark-packet chain=prerouting comment=\"http-video mark-packet\" disabled=no layer7-protocol=http-video new-packet-mark=http-video passthrough=no /queue simple add max-limit=0/64000 name=http-video packet-marks=http-video",

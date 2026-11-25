@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13430?v=1795445928",
   "cover_og_url": "/cover/13430/og?v=1795445928",
+  "has_cover": false,
   "url": "/book/ubuntu-install-exfat-onno-widodo-purbo/",
   "rating": null,
   "comment": "exFAT adalah file system yang diperkenalkan oleh Microsoft pada tahun 2006 dan dioptimalkan untuk flash memori seperti USB flash drive dan SD card. exFAT adalah proprietary hingga 28 Agustus 2019, ketika Microsoft menerbitkan spesifikasinya. Microsoft memiliki paten pada beberapa elemen desainnya. Install sudo apt update sudo apt -y install exfat-fuse exfat-utils Ubuntu 22.04 sudo apt -y install",

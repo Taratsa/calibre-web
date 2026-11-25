@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11065?v=1795438921",
   "cover_og_url": "/cover/11065/og?v=1795438921",
+  "has_cover": false,
   "url": "/book/suricata-basic-setup-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Basic_Setup Bila menggunakan Debian atau FreeBSD, pastikan anda memasukkan semua perintah sebagai root / super-user karena untuk sistem operasi itu tidak mungkin untuk menggunakan 'sudo' tanpa menginstal dan mengkonfigurasinya. Mulai dengan membuat directory untuk mencatat berbagai informasi dari Suricata. sudo mkdir",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 651,
-    "longer_than": 44,
+    "longer_than": 43,
     "top": [
       [
         "suricata",

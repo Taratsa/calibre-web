@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18536?v=1795469200",
   "cover_og_url": "/cover/18536/og?v=1795469200",
+  "has_cover": false,
   "url": "/book/maximum-transmission-unit-mtu-di-jaringan-wireless-onno-widodo-purbo/",
   "rating": null,
   "comment": "Nilai default MTU adalah 1500 byte. MTU menset berapa panjang paket yang dapat dikirim melalui sebuah interface / device. Semakin panjang MTU, semakin tidak reliable proses pengiriman data. Jika ada kerusakan paket dalam pengiriman maka seluruh paket yang rusak akan dikirim ulang oleh protokol TCP (Transmission Control Protocol). Bayangkan, jika kita menggunakan jaringan wireless internet yang",

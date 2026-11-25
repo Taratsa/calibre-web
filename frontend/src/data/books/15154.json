@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15154?v=1795453438",
   "cover_og_url": "/cover/15154/og?v=1795453438",
+  "has_cover": false,
   "url": "/book/wemos-d1-mini-hello-world-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ref: https://github.com/wemos/D1_mini_Examples/blob/master/examples/01.Basics/HelloWorld/HelloWorld.ino /* * Hello World * Simply prints Hello World to the serial monitor. */ void setup() { // initialize serial communications at 9600 bps Serial.begin(9600); } void loop() { Serial.println(\"Hello World.\"); delay(2000); }",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10739?v=1795437990",
   "cover_og_url": "/cover/10739/og?v=1795437990",
+  "has_cover": false,
   "url": "/book/gns3-edit-preferences-untuk-qemu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita Perlu mengaktifkan semua mesin / router virtual yang dibutuhkan di Qemu agar dikenali oleh GNS3. Untuk masing-masing mesin virtual yang akan digunakan di GNS3, kita perlu aktifkan melalui cara berikut Klik Edit &gt; Preferences &gt; Qemu &gt; Qemu Guest Qemu Guest Settings Qemu flavor: -i386 Identifier name: OpenWRT1 Binary image:",

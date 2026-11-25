@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9402?v=1795432755",
   "cover_og_url": "/cover/9402/og?v=1795432755",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: ini akan membutuhkan banyak akses ke Internet untuk download, termasuk waktu proses make. Termasuk download kernel linux , waktu compile toolchain :( ... Tampaknya tidak bisa OFFLINE :( Sumber: https://forum.openwrt.org/viewtopic.php?id=15201 http://wiki.openwrt.org/doc/howto/build http://downloads.openwrt.org/docs/buildroot-documentation.html Contents 1 Prosedur 2 Persiapan 3",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1121,
-    "longer_than": 52,
+    "longer_than": 51,
     "top": [
       [
         "openwrt",

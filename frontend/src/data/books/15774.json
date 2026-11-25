@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15774?v=1795456753",
   "cover_og_url": "/cover/15774/og?v=1795456753",
+  "has_cover": false,
   "url": "/book/pm4py-deteksi-bottleneck-onno-widodo-purbo/",
   "rating": null,
   "comment": "import pm4py from pm4py.objects.log.importer.xes import factory as xes_importer from pm4py.algo.discovery.inductive import factory as inductive_miner from pm4py.visualization.petrinet import factory as pn_vis_factory # Load event log log = xes_importer.import_log(\"your_event_log.xes\") # Discover process model using Inductive Miner net, initial_marking, final_marking = inductive_miner.apply(log) #",

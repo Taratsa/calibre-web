@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20221?v=1795476611",
   "cover_og_url": "/cover/20221/og?v=1795476611",
+  "has_cover": false,
   "url": "/book/ntp-tranparant-proxy-untuk-ntp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perintah yang penting iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 123 -j DNAT --to 192.168.1.1:123 Contoh Script #!/bin/sh # squid server IP SQUID_SERVER=\"192.168.1.1\" # Interface connected to Internet INTERNET=\"eth0\" # Interface connected to LAN LAN_IN=\"eth1\" # Squid port SQUID_PORT=\"3128\" # DO NOT MODIFY BELOW # Clean old firewall iptables -F iptables -X iptables -t nat -F iptables -t",

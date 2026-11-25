@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11978?v=1795441227",
   "cover_og_url": "/cover/11978/og?v=1795441227",
+  "has_cover": false,
   "url": "/book/compile-kernel-ubuntu-16-04-source-dari-apt-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Edit sources.list 2 Siapkan pendukung 3 Download source code 4 Compile 5 Install &amp; Test 6 Debug Edit sources.list Edit source deb-src di uncomment update apt update Siapkan pendukung Siapkan kernel package apt update apt install kernel-package libncurses5-dev fakeroot wget bzip2 \\ kernel-wedge build-essential makedumpfile libncurses5 libssl-dev Download source code Download source code",

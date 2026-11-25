@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15730?v=1795456479",
   "cover_og_url": "/cover/15730/og?v=1795456479",
+  "has_cover": false,
   "url": "/book/roundcube-instalasi-di-ubuntu-22-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://tecadmin.net/how-to-install-roundcube-webmail-on-ubuntu-20-04/ Contents 1 Install IMAP, POP3 &amp; SMTP Server 2 Install MariaDB 3 Setup database 4 Install PHP 5 Install Apache 6 Install Roundcube 7 Akses Web 8 Referensi Install IMAP, POP3 &amp; SMTP Server Install sudo apt update sudo apt -y install postfix dovecot-core dovecot-imapd dovecot-pop3d Set servername misalnya",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 440,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "roundcube",

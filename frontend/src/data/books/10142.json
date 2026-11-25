@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10142?v=1795436157",
   "cover_og_url": "/cover/10142/og?v=1795436157",
+  "has_cover": false,
   "url": "/book/perl-socket-programming-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.tutorialspoint.com/perl/perl_socket_programming.htm Server #!/usr/bin/perl -w # Filename : server.pl use strict; use Socket; # use port 7890 as default my $port = shift || 7890; my $proto = getprotobyname('tcp'); my $server = \"localhost\"; # Host IP running the server # create a socket, make it reusable socket(SOCKET, PF_INET, SOCK_STREAM, $proto) or die \"Can't open socket",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 277,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "socket",

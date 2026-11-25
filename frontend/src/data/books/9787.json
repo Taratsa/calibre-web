@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9787?v=1795434912",
   "cover_og_url": "/cover/9787/og?v=1795434912",
+  "has_cover": false,
   "url": "/book/ipv6-firewall-menggunakan-netfilter6-onno-widodo-purbo/",
   "rating": null,
   "comment": "Native IPv6 firewall hanya di dukung di versi kernel 2.4+. Di kernel lama 2.2- kita hanya dapat memfilter IPv6-in-IPv4 menggunakan protocol 41. Perhatikan: tidak ada garansi bahwa aturan yang di terangkan disini akan memproteksi sistem kita. Ada baiknya melakukan audit dari ruleset setelah instalasi. Sejak kernel versi 2.6.20 IPv6 connection tracking berjalan dengan baik dan tidak merusak IPv4",

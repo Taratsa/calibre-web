@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14037?v=1795448397",
   "cover_og_url": "/cover/14037/og?v=1795448397",
+  "has_cover": false,
   "url": "/book/kernel-upgrade-yang-mudah-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://itsfoss.com/upgrade-linux-kernel-ubuntu/ Disini digunakan Ukuu (Ubuntu Kernel Update Utility). Contents 1 Install 1.1 Catatan Error di Ubuntu 20.04 2 Upgrade Kernel 3 Referensi 4 Pranala Menarik Install di Ubuntu 20.04 sudo su apt update apt -y install libgee-0.8-dev libjson-glib-dev libvte-2.91-dev valac cd /usr/local/src/ git clone https://github.com/teejee2008/ukuu.git cd",

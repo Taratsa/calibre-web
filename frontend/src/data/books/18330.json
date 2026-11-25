@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18330?v=1795468524",
   "cover_og_url": "/cover/18330/og?v=1795468524",
+  "has_cover": false,
   "url": "/book/mikrotik-2-isp-in-1-router-load-balancing-onno-widodo-purbo/",
   "rating": null,
   "comment": "/ ip address add address=192.168.0.1/24 network=192.168.0.0 broadcast=192.168.0.255 interface=Local comment=\"\" \\ disabled=no add address=10.111.0.2/24 network=10.111.0.0 broadcast=10.111.0.255 interface=wlan2 \\ comment=\"\" disabled=no add address=10.112.0.2/24 network=10.112.0.0 broadcast=10.112.0.255 interface=wlan1 \\ comment=\"\" disabled=no / ip firewall mangle add chain=prerouting",

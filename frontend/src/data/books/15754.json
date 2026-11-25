@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15754?v=1795456637",
   "cover_og_url": "/cover/15754/og?v=1795456637",
+  "has_cover": false,
   "url": "/book/appinventor-put-data-ke-mysql-onno-widodo-purbo/",
   "rating": null,
   "comment": "To update (PUT) data in a MySQL server from an App Inventor 2 app, you also need to use a web service (typically a server-side script) as an intermediary. The server-side script will handle the update operation and communicate with your App Inventor app. Here's a simple example using PHP as the server-side script: Create a PHP script on your server: Save the following PHP script as put_data.php",

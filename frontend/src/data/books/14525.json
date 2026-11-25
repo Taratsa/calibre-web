@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14525?v=1795450389",
   "cover_og_url": "/cover/14525/og?v=1795450389",
+  "has_cover": false,
   "url": "/book/sublime-text-onno-widodo-purbo/",
   "rating": null,
   "comment": "Referensi: https://jagongoding.com/linux/ubuntu/cara-terbaru-install-sublime-text-di-ubuntu/ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - echo \"deb https://download.sublimetext.com/ apt/stable/\" | sudo tee /etc/apt/sources.list.d/sublime-text.list sudo apt update sudo apt install sublime-text Referensi",

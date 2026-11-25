@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21190?v=1795480735",
   "cover_og_url": "/cover/21190/og?v=1795480735",
+  "has_cover": false,
   "url": "/book/voip-cookbook-minimal-requirement-configuration-onno-widodo-purbo/",
   "rating": null,
   "comment": "Use 100 Mbps LAN switch hub with dedicated segment. Use Gigabit Ethernet to switch / router that connected to the server. Use a good IP Phone, it may be beneficial to use a switch that can prioritized voice traffic. Talk to your ISP, make sure we receive enough bandwidth. It would be beneficial if the ISP can prioritize Real Time Protocol (RTP) traffic. Make sure the router may prioritize RTP",

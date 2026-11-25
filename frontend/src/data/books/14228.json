@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14228?v=1795449127",
   "cover_og_url": "/cover/14228/og?v=1795449127",
+  "has_cover": false,
   "url": "/book/ols-setup-virtual-host-onno-widodo-purbo/",
   "rating": null,
   "comment": "Buat Folder sudo mkdir /usr/local/lsws/example.com/{html,logs} -p Buka Admin OLS http://:7080/ Klik Virtual Hosts &gt; Virtual Host Name: example.com Virtual Host Root: $SERVER_ROOT/example.com/ Config File: $SERVER_ROOT/conf/vhosts/$VH_NAME/vhconf.conf Follow Symbolic Link: Yes Enable Scripts/ExtApps: Yes Restrained: Yes External App Set UID Mode: Server UID Klik Virtual Hosts &gt;",

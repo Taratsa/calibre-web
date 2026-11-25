@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12236?v=1795441984",
   "cover_og_url": "/cover/12236/og?v=1795441984",
+  "has_cover": false,
   "url": "/book/wspr-arduino-ntp-ds1302-timer-led-monitor-status-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // time ntp sync // pin PIN_AUD - kuning - audio SD // pin PIN_PTT - merah - PTT // pin PIN_SYN - hijau - NTP sync // // file WAV WSPR diambil dari rekaman wsjt-x // Kalau lampu kuning tidak nyala, keluarkan SD card &amp; masukan lagi #include  #include  #include  #include  #include \"TMRpcm.h\" #include  #include  // Init the DS1302 //",

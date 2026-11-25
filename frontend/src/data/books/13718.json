@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13718?v=1795447221",
   "cover_og_url": "/cover/13718/og?v=1795447221",
+  "has_cover": false,
   "url": "/book/orange-duplicate-detection-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://orange3-text.readthedocs.io/en/latest/widgets/duplicatedetection.html Widget Duplicate Detection mendeteksi dan membuang semua duplikasi di corpus. Contents 1 Input 2 Output 3 Contoh 4 Youtube 5 Referensi 6 Pranala Menarik Input Distances: A distance matrix. Output Corpus Without Duplicated: Corpus with duplicates removed. Duplicates Cluster: Documents belonging to selected",
@@ -173,7 +174,7 @@
     "similar": [
       [
         13734,
-        0.36
+        0.37
       ],
       [
         14019,

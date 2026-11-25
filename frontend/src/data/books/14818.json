@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14818?v=1795451870",
   "cover_og_url": "/cover/14818/og?v=1795451870",
+  "has_cover": false,
   "url": "/book/ssl-install-let-s-encrypt-di-ubuntu-14-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04 Step 1 - Download the Let's Encrypt Client sudo add-apt-repository ppa:certbot/certbot sudo apt-get update sudo apt-get install python-certbot-apache Step 2 - Set Up the SSL Certificate sudo certbot --apache -d example.com sudo certbot --apache -d example.com -d www.example.com Verify",

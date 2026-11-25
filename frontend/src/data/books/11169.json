@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11169?v=1795439201",
   "cover_og_url": "/cover/11169/og?v=1795439201",
+  "has_cover": false,
   "url": "/book/postfix-authentikasi-smtp-untuk-client-dengan-dovecot-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki2.dovecot.org/HowTo/PostfixAndDovecotSASL Cek apakah postfix mendukung dovecot postconf -a Contents 1 Edit konfigurasi dovecot 2 Edit Postfix 3 Pastikan semua mail berjalan 4 Setup di Mail Android 5 Referensi Edit konfigurasi dovecot vi /etc/dovecot/conf.d/10-master.conf Pastikan service auth { ... unix_listener /var/spool/postfix/private/auth { mode = 0660 user = postfix group",

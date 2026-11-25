@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14172?v=1795448903",
   "cover_og_url": "/cover/14172/og?v=1795448903",
+  "has_cover": false,
   "url": "/book/mikrotik-queue-rate-limit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://sudonull.com/post/12537-Guide-on-Simple-Queues-in-Mikrotik /queue type add kind=pcq name=pcq-upload-default pcq-burst-rate=0 pcq-burst-threshold=0 pcq-burst-time=10s pcq- classifier=src-address pcq-dst-address-mask=32 pcq-dst-address6-mask=128 pcq-limit=50KiB pcq-rate=0 pcq- src-address-mask=32 pcq-src-address6-mask=128 pcq-total-limit=2000KiB add kind=pcq",

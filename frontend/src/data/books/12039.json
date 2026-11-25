@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12039?v=1795441381",
   "cover_og_url": "/cover/12039/og?v=1795441381",
+  "has_cover": false,
   "url": "/book/arduino-lcd-clock-ntp-sync-onno-widodo-purbo/",
   "rating": null,
   "comment": "//sample code originated at http://www.openreefs.com/ntpServer //modified by Steve Spence, http://arduinotronics.blogspot.com #include  #include  #include  #include  #include  /* ******** Ethernet Card Settings ******** */ // Set this to your Ethernet Card Mac Address byte mac[] = { 0x90, 0xA2, 0xDA, 0x00, 0x23, 0x36 }; /* ******** NTP",

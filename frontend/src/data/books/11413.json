@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11413?v=1795439815",
   "cover_og_url": "/cover/11413/og?v=1795439815",
+  "has_cover": false,
   "url": "/book/python-nltk-stopwords-onno-widodo-purbo/",
   "rating": null,
   "comment": "Directory ~/nltk_data/corpora/stopwords Script untuk scan apakah stopwords yang kita inginkan bekerja dengan baik import os,nltk,os.path,re,string import argparse from nltk.stem.porter import PorterStemmer ps=PorterStemmer() def parse_args(): parser = argparse.ArgumentParser() parser.add_argument('-i', '--infile', default= , help='input filename') return parser.parse_args() args = parse_args()",

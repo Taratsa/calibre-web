@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/17987?v=1795467076",
   "cover_og_url": "/cover/17987/og?v=1795467076",
+  "has_cover": false,
   "url": "/book/orarinux-memastikan-hostname-orari-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Set /etc/hostname 2 Set /etc/hosts 3 Jika sudah di siapkan 4 Pranala Menarik Set /etc/hostname echo orari &gt; /etc/hostname Set /etc/hosts vi /etc/hosts isi dengan 127.0.0.1 localhost orari # The following lines are desirable for IPv6 capable hosts ::1 ip6-localhost ip6-loopback fe00::0 ip6-localnet ff00::0 ip6-mcastprefix ff02::1 ip6-allnodes ff02::2 ip6-allrouters ff02::3 ip6-allhosts",
@@ -56,7 +57,7 @@
   ],
   "text": {
     "words": 93,
-    "longer_than": 14,
+    "longer_than": 13,
     "top": [],
     "distinct": [],
     "phrases": [],

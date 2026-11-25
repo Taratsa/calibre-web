@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11061?v=1795438911",
   "cover_og_url": "/cover/11061/og?v=1795438911",
+  "has_cover": false,
   "url": "/book/voip-jitter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://toncar.cz/Tutorials/VoIP/VoIP_Basics_Jitter.html In this series, I have already mentioned jitter twice (in Codec Latency vs. Bandwidth Optimization and in the piece about the Real Time Protocol) so I guess we should have a closer look what jitter is and how to deal with it. If you ever experimented with the program ping you probably know that if you send a sequence of packets from",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1051,
-    "longer_than": 51,
+    "longer_than": 50,
     "top": [
       [
         "jitter",

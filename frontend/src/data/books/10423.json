@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10423?v=1795437043",
   "cover_og_url": "/cover/10423/og?v=1795437043",
+  "has_cover": false,
   "url": "/book/apache-membuka-sebuah-folder-ke-web-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk membuka sebuah folder ke web, misalnya /var/www/pustaka Tambahkan di vi /etc/apache2/sites-enabled/000-default.conf Kata-kata  Options Indexes FollowSymLinks MultiViews AllowOverride All Require all granted allow from all  Ubah ijin chmod -Rf 650 /var/www/pustaka/ chown -Rf www-data.www-data /var/www/pustaka",
@@ -62,7 +63,7 @@
       ],
       [
         9661,
-        0.34
+        0.35
       ],
       [
         12161,

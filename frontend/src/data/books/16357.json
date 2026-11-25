@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16357?v=1795460349",
   "cover_og_url": "/cover/16357/og?v=1795460349",
+  "has_cover": false,
   "url": "/book/tf-tensorflow-untuk-dataset-mnist-modified-national-institute-of-standards-and-technology-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode untuk membuat model menggunakan dataset MNIST dan melakukan prediksi di Google Colab: 1. Mengimpor Library dan Memuat Dataset : Pertama, impor library yang diperlukan dan muat dataset MNIST. import tensorflow as tf from tensorflow.keras import layers, models import matplotlib.pyplot as plt # Memuat dataset MNIST (x_train, y_train), (x_test, y_test) =",

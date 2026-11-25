@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12937?v=1795444278",
   "cover_og_url": "/cover/12937/og?v=1795444278",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-ospf-contoh-minimal-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.nongnu.org/quagga/docs/docs-multi/OSPF6-Configuration-Examples.html#OSPF6-Configuration-Examples interface eth0 ipv6 ospf6 instance-id 0 ! router ospf6 router-id 212.17.55.53 area 0.0.0.0 range 2001:770:105:2::/64 interface eth0 area 0.0.0.0 ! Referensi https://www.nongnu.org/quagga/docs/docs-multi/OSPF6-Configuration-Examples.html#OSPF6-Configuration-Examples Pranala Menarik",

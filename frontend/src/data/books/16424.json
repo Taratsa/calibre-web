@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16424?v=1795460796",
   "cover_og_url": "/cover/16424/og?v=1795460796",
+  "has_cover": false,
   "url": "/book/compfyui-simple-workflow-onno-widodo-purbo/",
   "rating": null,
   "comment": "Oke Dzaq, ini dia **workflow visual paling dasar di ComfyUI** buat **Text-to-Image** (generate gambar dari teks) supaya kamu ngerti alurnya dulu sebelum masuk ke yang lebih kompleks kayak video 🎥 --- 🔧 **Basic Workflow: Text to Image di ComfyUI** 📌 Node-by-Node Flow: ``` [CheckpointLoaderSimple] → Load model (misal: sd15.safetensors) ↓ [CLIPTextEncode] → Encode prompt teks kamu (misal: \"anime",

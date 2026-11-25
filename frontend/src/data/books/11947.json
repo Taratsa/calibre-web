@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11947?v=1795441154",
   "cover_og_url": "/cover/11947/og?v=1795441154",
+  "has_cover": false,
   "url": "/book/nvidia-install-tesla-driver-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd ~/Downloads/ wget http://us.download.nvidia.com/tesla/375.51/nvidia-driver-local-repo-ubuntu1604_375.51-1_amd64.deb sudo dpkg -i nvidia-driver-local-repo-ubuntu1604_375.51-1_amd64.deb sudo apt-get update sudo apt-get -y install cuda-drivers",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20226?v=1795476628",
   "cover_og_url": "/cover/20226/og?v=1795476628",
+  "has_cover": false,
   "url": "/book/dns-spoofing-ntp-ubuntu-com-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit /etc/bind/named.conf.local Isi dengan zone \"ntp.ubuntu.com\" { type master; file \"/var/lib/bind/ntp.ubuntu.com.hosts\"; }; Edit /var/lib/bind/ntp.ubuntu.com.hosts Isi dengan $ttl 38400 ntp.ubuntu.com. IN SOA 192.168.0.3. onno.indo.net.id. ( 1308191523 10800 3600 604800 38400 ) ntp.ubuntu.com. IN NS 192.168.0.3. ntp.ubuntu.com. IN A 192.168.0.3 Pranala Menarik NTP Linux Howto Instalasi NTP NTP:",

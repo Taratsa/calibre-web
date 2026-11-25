@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14938?v=1795452505",
   "cover_og_url": "/cover/14938/og?v=1795452505",
+  "has_cover": false,
   "url": "/book/mqtt-install-di-ubuntu-20-04-lebih-simple-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi sudo apt update -y &amp;&amp; sudo apt install mosquitto mosquitto-clients -y Check &amp; Start sudo systemctl status mosquitto sudo systemctl start mosquitto sudo systemctl enable mosquitto Subscribe mosquitto_sub -h address -t topic Publish mosquitto_pub -h address -t topic -m \"message\" Config password sudo mosquitto_passwd -c /etc/mosquitto/passwd test sudo mosquitto_passwd -c",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11119?v=1795439064",
   "cover_og_url": "/cover/11119/og?v=1795439064",
+  "has_cover": false,
   "url": "/book/ssh-pertama-kali-login-ke-sebuah-mesin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Saat kita pertama kali login ke sebuah server menggunakan ssh, misalnya ssh onno@192.168.0.80 maka komputer kita berusaha mengenali identitas server tersebut, jika keluar The authenticity of host '192.168.0.80 (192.168.0.80)' can't be established. ECDSA key fingerprint is 10:d9:c9:21:24:8e:91:3e:3c:80:65:43:d2:96:59:1a. Are you sure you want to continue connecting (yes/no)? Berarti identitas",

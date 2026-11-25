@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20159?v=1795476413",
   "cover_og_url": "/cover/20159/og?v=1795476413",
+  "has_cover": false,
   "url": "/book/fax-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi aplikasi FAX di Linux Pastikan software driver untuk modem telah di install System &gt; Administration &gt; Additional Drivers &gt; Software Modem &gt; Activate Install aplikasi apt-get install xane gfax sudo mkdir /var/spool/gfax sudo chmod -Rf 777 /var/spool/gfax/ sudo chown -Rf nobody.nogroup /var/spool/gfax/ Menjalankan Klik Applications &gt; Office &gt; Gfax Facsimile Progam Edit konfigurasi Edit &gt;",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15535?v=1795455338",
   "cover_og_url": "/cover/15535/og?v=1795455338",
+  "has_cover": false,
   "url": "/book/ubuntu-disable-unattended-upgrade-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://linuxhint.com/enable-disable-unattended-upgrades-ubuntu/#:~:text=In%20case%20you%20don't,%2DPackage%2DLists%20to%200.&amp;text=After%20executing%20the%20command%2C%20change%20the%20select%20No%20and%20press,button%20to%20disable%20unattended%20upgrades.&amp;text=This%20command%20will%20not%20harm,features%20of%20your%20Ubuntu%20system . vi /etc/apt/apt.conf.d/20auto-upgrades Edit",
@@ -78,7 +79,7 @@
       ],
       [
         10525,
-        0.46
+        0.45
       ]
     ],
     "sentiment": null

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10304?v=1795436676",
   "cover_og_url": "/cover/10304/og?v=1795436676",
+  "has_cover": false,
   "url": "/book/ffmpeg-ubah-resolusi-video-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk 320x240 ffmpeg -i input.mpeg -s 320x240 output.mpeg ffmpeg -i input.mp4 -s 320x240 output.mpeg Untuk handphone 640x480 ffmpeg -i input.mpeg -s 640x480 output.mpeg ffmpeg -i input.mp4 -s 640x480 output.mpeg",

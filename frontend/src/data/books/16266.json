@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16266?v=1795459827",
   "cover_og_url": "/cover/16266/og?v=1795459827",
+  "has_cover": false,
   "url": "/book/sharing-printer-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk sharing printer yang perlu di lakukan Di sisi Server Konfigurasi Server Printer melalui menu System -&gt; Administration -&gt; Printing. Klik \"Server Settings\" Pastikan bahwa \"Shared published printer dlll..\" Seperti tampak pada gambar Edit file /etc/samba/smb.conf, pastikan bahwa [printers] comment = All Printers browseable = no path = /var/spool/samba printable = yes guest ok = yes read only =",

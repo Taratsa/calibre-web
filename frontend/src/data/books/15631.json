@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15631?v=1795455860",
   "cover_og_url": "/cover/15631/og?v=1795455860",
+  "has_cover": false,
   "url": "/book/partisi-hard-disk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Partisi Hard Disk Pada dasarnya MBR (Master Boot Record) hanya menampung 4 entri (1 entri=16 byte) untuk partisi, artinya maksimal memang cuma bisa menandai 4 partisi primer. Dalam entri ini secara explisit ditetapkan \"apa\" jenis partisinya. Dari Norton Utility (dan sumber lainnya) beberapa Partition ID adalah: 01 = DOS FAT12, 01=DOS FAT12 (Hidden) 02 = Xenix 04 = DOS FAT16, 14=DOS FAT16 (Hidden)",

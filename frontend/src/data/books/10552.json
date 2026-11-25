@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10552?v=1795437449",
   "cover_og_url": "/cover/10552/og?v=1795437449",
+  "has_cover": false,
   "url": "/book/wireshark-filter-sql-traffic-onno-widodo-purbo/",
   "rating": null,
   "comment": "Wireshark has display filters and capture filters. The capture filter captures only certain packets, resulting in a small capture file. Capture filters are set in Capture Options (ctrl-K). An example to capture SQL Server traffic would be: host  and port  A display filter is set in the toolbar. A display filter does not reduce the size of the capture. You can",

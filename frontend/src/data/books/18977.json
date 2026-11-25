@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18977?v=1795471089",
   "cover_og_url": "/cover/18977/og?v=1795471089",
+  "has_cover": false,
   "url": "/book/voip-cookbook-voicemail-in-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Voicemail is used in Asterisk to leave a message, when there is no one to receive the incoming call. Voicemail configuration for Asterisk is available in voicemail.conf file available in /etc/asterisk/. We can create a mailbox within the default mailbox context, either use the one already available or create another in different context. It is important to understand that the context in voicemail",

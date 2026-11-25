@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11815?v=1795440814",
   "cover_og_url": "/cover/11815/og?v=1795440814",
+  "has_cover": false,
   "url": "/book/squidguard-instalasi-di-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Squid 2 Konfigurasi squid 3 Instalasi SquidGuard 4 Konfigurasi 5 Restart 6 Test 7 Referensi Squid sudo su locale-gen id_ID.UTF-8 apt update apt install squid3 Konfigurasi squid Edit vi /etc/squid/squid.conf Tuning konfigurasi # visible_hostname your-machines-hostname # http_port 3128 # cache_dir ufs /var/spool/squid 1000 16 256 # cache_access_log /var/log/squid/access.log # ijinkan",

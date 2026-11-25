@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21450?v=1795482007",
   "cover_og_url": "/cover/21450/og?v=1795482007",
+  "has_cover": false,
   "url": "/book/compile-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Source code kernel (inti) sistem operasi Linux dapat di ambil secara bebas dari situs http://www.kernel.org . Proses / langkah membuat sistem operasi Linux dengan cara meng- compile kernel dapat di lakukan di sistem operasi linux yang kita operasikan dan menjalankan perintah-perintah berikut. Siapkan kernel package apt update apt -y install libncurses5-dev fakeroot wget bzip2 \\ kernel-wedge",

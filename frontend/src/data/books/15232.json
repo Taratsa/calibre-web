@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15232?v=1795453782",
   "cover_og_url": "/cover/15232/og?v=1795453782",
+  "has_cover": false,
   "url": "/book/open5gs-nat-port-forwarding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut ini adalah untuk melakukan port forwarding agar UE mendapatkan internet dari Open5gs sudo sysctl -w net.ipv4.ip_forward=1 sudo iptables -t nat -A POSTROUTING -o ens18 -j MASQUERADE sudo systemctl stop ufw sudo iptables -I FORWARD 1 -j ACCEPT Jika cara diatas tidak berhasil, coba tambahkan manual tun interface dan lakukan nat forwarding ulang sudo ip tuntap add name ogstun mode tun sudo ip",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11282?v=1795439497",
   "cover_og_url": "/cover/11282/og?v=1795439497",
+  "has_cover": false,
   "url": "/book/lvm-mount-dari-usb-harddisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.tuxradar.com/answers/296 apt-get install lvm2 fdisk -lu pvscan vgscan vgchange -a y lvscan ACTIVE '/dev/VolGroup00/LogVol00' [72.44 GB] inherit ACTIVE '/dev/VolGroup00/LogVol01' [1.94 GB] inherit mount /dev/VolGroup00/LogVol00 /mnt Referensi http://www.tuxradar.com/answers/296 https://quonn.wordpress.com/2010/12/01/how-to-mount-lvm-partition-on-ubuntu/",

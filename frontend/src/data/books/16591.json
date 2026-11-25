@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16591?v=1795461777",
   "cover_og_url": "/cover/16591/og?v=1795461777",
+  "has_cover": false,
   "url": "/book/slm-ubuntu-24-04-script-sh-automatis-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah script `.sh` otomatis untuk **setup Ollama + Open WebUI** di Ubuntu 24.04 agar kamu bisa langsung menjalankan Small Language Model (SLM) secara lokal (seperti `phi`, `mistral`, dll). --- ✅ **Script: `setup_ollama_webui.sh`** ```bash !/bin/bash echo \"🚀 Mulai setup Ollama + Open WebUI di Ubuntu 24.04...\" Update sistem dan install dependensi dasar echo \"📦 Update &amp; install",

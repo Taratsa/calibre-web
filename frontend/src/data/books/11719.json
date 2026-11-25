@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11719?v=1795440581",
   "cover_og_url": "/cover/11719/og?v=1795440581",
+  "has_cover": false,
   "url": "/book/proxmox-migrasi-vdi-virtualbox-ke-proxmox-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://forum.proxmox.com/threads/migrating-virtualbox-vdi-to-proxmox-ve.9672/ Contents 1 Cari .vdi file 2 Convert .vdi ke .img 3 Buat ProxMox VM kosong 4 Upload .img file 5 Hack 998.conf 6 Boot it! 7 Referensi Cari .vdi file Buka VirtualBox GUI Klik pada VM yang ingin dimigrasi, klik Setting. Klik pada Storage &amp; klik .vdi file yang ada pada IDE Controller Mouse over the Hard Disk:",

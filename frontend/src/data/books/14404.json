@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14404?v=1795449829",
   "cover_og_url": "/cover/14404/og?v=1795449829",
+  "has_cover": false,
   "url": "/book/openwrt-printer-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "ssh -o HostKeyAlgorithms=+ssh-rsa \\ -o PubkeyAcceptedAlgorithms=+ssh-rsa \\ root@192.168.1.1 opkg update opkg install kmod-usb-printer opkg install p910nd luci-app-p910nd Cek ls /dev/usb/lp* Contents 1 rc.local 2 Allow Firewall 3 Linux &amp; Windows 4 Android rc.local Edit /etc/rc.local tambah sebelum exit 0 /etc/init.d/p910nd restart Allow Firewall uci add firewall rule uci set",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14445?v=1795449992",
   "cover_og_url": "/cover/14445/og?v=1795449992",
+  "has_cover": false,
   "url": "/book/netplan-bonding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuration To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots. network: version: 2 renderer: networkd ethernets: enp1s0: dhcp4: no enp2s0: dhcp4: no",

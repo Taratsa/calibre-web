@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20740?v=1795478028",
   "cover_og_url": "/cover/20740/og?v=1795478028",
+  "has_cover": false,
   "url": "/book/oxwall-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi aplikasi pendukung apt-get update apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb \\ libgd2-xpm libgd2-xpm-dev php5-mysql php5-gd php5-curl php-pear \\ unzip mysql-doc-5.0 postfix Enable mod_rewrite di apache sudo a2enmod rewrite Alternatif lain vi /etc/apache2/sites-enabled/000-default DocumentRoot /var/www  Options FollowSymLinks AllowOverride all",

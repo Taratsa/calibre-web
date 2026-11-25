@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11891?v=1795441011",
   "cover_og_url": "/cover/11891/og?v=1795441011",
+  "has_cover": false,
   "url": "/book/orange-bag-of-words-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://orange3-text.readthedocs.io/en/latest/widgets/bagofwords-widget.html Widget Bag of Words membuat sebuah bag of words dari input corpus. Contents 1 Input 2 Output 3 Contoh 4 Contoh Lain 5 Youtube 6 Referensi 7 Pranala Menarik Input Corpus: A collection of documents. Output Corpus: Corpus with bag of words features appended. Bag of Words model membuat sebuah corpus dengan word",
@@ -177,7 +178,7 @@
     "similar": [
       [
         11900,
-        0.53
+        0.54
       ],
       [
         13534,
@@ -197,7 +198,7 @@
       ],
       [
         13717,
-        0.33
+        0.34
       ]
     ],
     "sentiment": null

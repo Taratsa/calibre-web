@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15562?v=1795455502",
   "cover_og_url": "/cover/15562/og?v=1795455502",
+  "has_cover": false,
   "url": "/book/minikube-network-policy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://minikube.sigs.k8s.io/docs/handbook/network_policy/ Network Policy Controlling traffic flowing through the cluster minikube allows users to create and test network policies in the local Kubernetes cluster. This is useful since it allows the network policies to be, considered, built, and evaluated during the application development, as an integral part of the process rather than",

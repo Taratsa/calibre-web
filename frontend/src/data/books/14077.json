@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14077?v=1795448535",
   "cover_og_url": "/cover/14077/og?v=1795448535",
+  "has_cover": false,
   "url": "/book/kali-linux-redhawk-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://security-darknet.blogspot.com/2017/10/install-red-hawk-di-kali-linux.html Untuk yang pakai termux (android) apt update &amp;&amp; apt upgrade -y apt install python &amp;&amp; apt install git -y Untuk Kali Linux, bisa langsung ke sudo su apt -y install php-curl php-xml git clone https://github.com/Tuhinshubhra/RED_HAWK.git cd RED_HAWK php rhawk.php Masukan URL (bisa https atau http) yang ingin di",
@@ -73,11 +74,11 @@
         0.53
       ],
       [
-        15431,
+        14798,
         0.53
       ],
       [
-        14964,
+        15431,
         0.53
       ]
     ],

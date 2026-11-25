@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13717?v=1795447215",
   "cover_og_url": "/cover/13717/og?v=1795447215",
+  "has_cover": false,
   "url": "/book/orange-word-enrichment-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://orange3-text.readthedocs.io/en/latest/widgets/wordenrichment.html Widget Word Enrichment melakukan analisis word enrichment pada dokumen yang dipilih. Contents 1 Input 2 Output 3 Contoh 4 Referensi 5 Pranala Menarik Input Corpus: A collection of documents. Selected Data: Selected instances from corpus. Output None Widget Word Enrichment menampilkan daftar kata dengan p-value yang",
@@ -189,7 +190,7 @@
       ],
       [
         11891,
-        0.33
+        0.34
       ]
     ],
     "sentiment": null

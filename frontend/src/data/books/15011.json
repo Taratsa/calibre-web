@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15011?v=1795452790",
   "cover_og_url": "/cover/15011/og?v=1795452790",
+  "has_cover": false,
   "url": "/book/java-thread-priority-di-multithreading-onno-widodo-purbo/",
   "rating": null,
   "comment": "Seperti yang telah kita ketahui, Java sepenuhnya object-oriented bekerja dalam lingkungan multithreading di mana penjadwal thread menetapkan prosesor ke thread berdasarkan prioritas thread . Setiap kali kita membuat thread di Java, selalu ada prioritas yang ditetapkan padanya. Prioritas dapat diberikan oleh JVM saat membuat thread atau dapat diberikan oleh programmer secara eksplisit. Prioritas",

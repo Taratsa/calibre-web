@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20121?v=1795476225",
   "cover_og_url": "/cover/20121/og?v=1795476225",
+  "has_cover": false,
   "url": "/book/nginx-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika ada apache, lakukan sudo service apache2 stop Instalasi Nginx saja sudo su apt update apt -y install nginx Instalasi lengkap dengan mysql dan PHP, kira2 seperti di bawah ini, sudo su apt update apt -y install nginx php5 php5-xmlrpc php5-mysql php5-gd php5-cli php5-curl \\ mysql-client mysql-server Cek / Test Restart nginx /etc/init.d/nginx restart /etc/init.d/nginx reload akses melalui web",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10132?v=1795436127",
   "cover_og_url": "/cover/10132/og?v=1795436127",
+  "has_cover": false,
   "url": "/book/python-read-microphone-onno-widodo-purbo/",
   "rating": null,
   "comment": "instalasi pyaudio apt-get install python-pyaudio One way I've done it: read a block of samples at a time, say 0.05 seconds worth compute the RMS amplitude of the block (square root of the average of the squares of the individual samples) if the block's RMS amplitude is greater than a threshold, it's a \"noisy block\" else it's a \"quiet block\" a sudden tap would be a quiet block followed by a small",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 693,
-    "longer_than": 45,
+    "longer_than": 44,
     "top": [
       [
         "block",

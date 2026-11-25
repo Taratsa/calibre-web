@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13831?v=1795447622",
   "cover_og_url": "/cover/13831/og?v=1795447622",
+  "has_cover": false,
   "url": "/book/kali-linux-how-to-fix-flickering-in-some-versions-of-linux-on-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://medium.com/@gevorggalstyan/how-to-fix-flickering-in-some-versions-of-linux-on-virtualbox-822fb41a263d Some recent versions of Fedora and other desktop environments run a version of Gnome that has Wayland display server instead of GNOME XOrg. This can introduce a screen flicker which is most noticeable on VirtualBox especially on macOS. This is easy to fix. You just need to switch",

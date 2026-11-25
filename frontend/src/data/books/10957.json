@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10957?v=1795438596",
   "cover_og_url": "/cover/10957/og?v=1795438596",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-udp-send-receive-string-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/UDPSendReceiveString Pada contoh ini, kita akan menggunakan Ethernet Shield dan Arduino anda untuk send dan receive text string via UDP Protocol. Kita akan membutuhkan device lain untuk untuk menjadi lawan send dan receive-nya. Contents 1 Kebutuhan Hardware 2 Circuit 3 Code 4 Contoh Aplikasi Pengirim Data &amp; Penerima Data 4.1 Tampilan di Serial Monitor 5",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 441,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "udp",

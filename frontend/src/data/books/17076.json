@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17076?v=1795464067",
   "cover_og_url": "/cover/17076/og?v=1795464067",
+  "has_cover": false,
   "url": "/book/qemu-generic-machine-emulator-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo su apt update apt -y install qemu qemu-system-arm qemu-efi \\ qemu-utils qemu-kvm virt-manager \\ libvirt-daemon-system libvirt-clients bridge-utils Menjalankan livecd hasil Ubuntu Customization Kit $ qemu -cdrom /home/username/tmp/remaster-new-files/livecd.iso -boot d -m 256 Cara Lain $ qemu-img create igos.img 3500M $ qemu -boot d -cdrom file.iso -m 192 -hda igos.img Pranala Menarik",

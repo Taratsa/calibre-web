@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11178?v=1795439228",
   "cover_og_url": "/cover/11178/og?v=1795439228",
+  "has_cover": false,
   "url": "/book/wspr-raspberrypi-operasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengoperasikan secara automatis Contents 1 Edit 2 Console akan keluar 3 Untuk mematikan 4 Contoh Hasil RaspberryPi WSPR Edit vi /etc/rc.local Tambahkan, misalnya /usr/local/bin/wspr --repeat --offset --self-calibration YC0MLC OI33 10 40m 0 0 0 0 20m 0 0 0 0 15m 0 0 0 0 &amp; /usr/local/bin/wspr -r -o -s YC0MLC OI33 10 40m 0 0 20m 0 0 15m 0 0 &amp; Console akan keluar Akan keluar kira2 WSPR packet",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10234?v=1795436457",
   "cover_og_url": "/cover/10234/og?v=1795436457",
+  "has_cover": false,
   "url": "/book/raspbian-instalasi-upnp-mediatomb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Setup Jaringan 2 Instalasi 3 Edit konfigurasi 4 Restart Setup Jaringan sudo su route add -net 239.0.0.0 netmask 255.0.0.0 eth0 ifconfig eth0 allmulti Instalasi apt-get install sqlite mediatomb Edit konfigurasi vi /etc/mediatomb/config.xml Bisa di edit supaya    ",

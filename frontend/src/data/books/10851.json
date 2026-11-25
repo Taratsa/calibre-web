@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10851?v=1795438270",
   "cover_og_url": "/cover/10851/og?v=1795438270",
+  "has_cover": false,
   "url": "/book/os-android-kernel-menuconfig-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada sistem operasi android, kernel yang digunakan adalah kernel linux yang dapat di ambil di http://www.kernel.org Tergantung jenis handphone yang digunakan, misalnya untuk LG Optimus G Pro, menuconfig dari kernel dapat di akses di ~/android-cyanogenmod/kernel/lge/gproj Untuk mengkonfigurasi menuconfig kernel dapat dilakukan dengan cd ~/android-cyanogenmod/kernel/lge/gproj make menuconfig",

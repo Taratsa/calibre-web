@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13272?v=1795445358",
   "cover_og_url": "/cover/13272/og?v=1795445358",
+  "has_cover": false,
   "url": "/book/timeseries-anomaly-detection-in-a-time-series-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.gilgalad.co.uk/post/erosion-dilation/ In this example I am going to explain how to detect a type of anomaly in a time series. The time series is composed by a slow varying background signal with gaussian noise on top of which we simulate a anomaly (aka feature) defined as a set of continuous values above the average. For a Gaussian distribution the probability of a value",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 746,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "signal",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/16678?v=1795462477",
   "cover_og_url": "/cover/16678/og?v=1795462477",
+  "has_cover": false,
   "url": "/book/script-re-install-speedywiki-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi username root password 123456 database mediawiki Lokasi file images.tar.gz dan wikidb.sql.tar.gz di /usr/local/src Lakukan persiapan mkdir -p /var/data/library/datawiki/ Copy datawiki ke folder di atas Buat Script misalnya vi /usr/local/bin/reinstall-wiki.sh isi dengan rm -Rf /usr/local/src/var rm -Rf /usr/local/src/wikidb* cp -Rf /var/data/library/datawiki/* /usr/local/src cd",

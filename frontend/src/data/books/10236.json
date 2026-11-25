@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10236?v=1795436463",
   "cover_og_url": "/cover/10236/og?v=1795436463",
+  "has_cover": false,
   "url": "/book/ipv6-konfigurasi-di-openwrt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://wiki.openwrt.org/doc/uci/network6 Obtaining IPv6 support Barrier Breaker and later Native IPv6-support with DHCPv6, an RA &amp; DHCPv6-Server and an IPv6-firewall are installed and configured by default. Transitioning technologies like 6in4, 6rd, 6to4 or ds-lite can be installed using the packages with the same names. For WebUI-support install the package luci-proto-ipv6.",

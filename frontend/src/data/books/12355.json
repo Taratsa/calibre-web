@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12355?v=1795442485",
   "cover_og_url": "/cover/12355/og?v=1795442485",
+  "has_cover": false,
   "url": "/book/ipv6-cek-client-ssh-siap-dengan-ipv6-onno-widodo-purbo/",
   "rating": null,
   "comment": "openssh Versi terakhir openssh sudah siap dengan IPv6. Tergantung konfigurasi saat compile, openssh client mempunyai dua kemungkinan perilaku, --without-ipv4-default: client berusaha untuk menyambungkan ke IPv6 terlebih dulu, jika gagal baru ke IPv4. --with-ipv4-default: sambungan default adalah IPv4, sambungan IPv6 harus di paksa menggunakan perintah berikut, $ ssh -6 ::1 Akan keluar user@::1's",

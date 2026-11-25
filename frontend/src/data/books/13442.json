@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13442?v=1795445962",
   "cover_og_url": "/cover/13442/og?v=1795445962",
+  "has_cover": false,
   "url": "/book/r-plot-basics-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(ggplot2) theme_set(theme_minimal()) # Demo dataset head(economics) # Basic line plot ggplot(data = economics, aes(x = date, y = pop))+ geom_line(color = \"#00AFBB\", size = 2) # Plot a subset of the data ss &lt;- subset(economics, date &gt; as.Date(\"2006-1-1\")) ggplot(data = ss, aes(x = date, y = pop)) + geom_line(color = \"#FC4E07\", size = 2) # Control line size by the value of a continuous",

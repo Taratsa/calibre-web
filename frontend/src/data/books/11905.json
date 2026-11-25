@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11905?v=1795441049",
   "cover_og_url": "/cover/11905/og?v=1795441049",
+  "has_cover": false,
   "url": "/book/orange-membuat-data-file-dengan-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://blog.biolab.si/2015/08/07/creating-a-new-data-table-in-orange-through-python/ IMPORT DATA Salah satu tugas pertama dalam analisis data Oranye tentu saja me-load data anda. Jika anda menggunakan Orange via Python, ini sangat mudah dilakukan menggunakan perintah di bawah ini: import Orange data = Orange.data.Table(\"iris\") print (data) Ini akan menghasilkan tabel data rapi dari",
@@ -140,12 +141,12 @@
         5
       ],
       [
-        "import",
-        4
-      ],
-      [
         "color",
         3
+      ],
+      [
+        "import",
+        4
       ],
       [
         "domain",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10326?v=1795436742",
   "cover_og_url": "/cover/10326/og?v=1795436742",
+  "has_cover": false,
   "url": "/book/mediatomb-reset-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Stop mediatomb sudo /etc/init.d/mediatomb stop Delete database cd /var/lib/mediatomb/ sudo mv mediatomb.db mediatomb.db.bak atau rm * Restart sudo /etc/init.d/mediatomb start Referensi http://socrateos.blogspot.com/2011/01/reset-mediatomb-database.html",

@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/12927?v=1795444253",
   "cover_og_url": "/cover/12927/og?v=1795444253",
+  "has_cover": false,
   "url": "/book/instalasi-awstats-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi AWStats dapat dilakukan dengan menggunakan perintah # apt-get install awstats Edit file konfigurasi AWStats /etc/awstats/awstats.conf # vi /etc/awstats/awstats.conf Beberapa parameter yang perlu di perhatikan / di ubah LogFile=\"/var/log/apache/access.log\" menjadi LogFile=\"/var/log/apache2/access.log\" SiteDomain=\"\" menjadi SiteDomain=\"localhost\" atau SiteDomain=\"domainanda.com\" Akses ke",

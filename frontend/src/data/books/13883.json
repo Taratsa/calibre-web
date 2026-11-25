@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13883?v=1795447790",
   "cover_og_url": "/cover/13883/og?v=1795447790",
+  "has_cover": false,
   "url": "/book/gns3-vpcs-ip-setup-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perintah VPCS terkait IP yang penting, antara lain adalah show clear ip ip xxx.xxx.xxx.xxx/xxx (ipstatic) xxx.xxx.xxx.xxx (ip gateway) ip 192.168.0.10/24 192.168.0.1 ping xxx.xxx.xxx.xxx ping 192.168.0.1 Walaupun di VPCS tersedia perintah utk IP dynamic dari DHCP Server ip dhcp Tapi tampaknya tidak terlalu reliable. Sebaiknya VPCS menggunakan IP Static. Pranala Menarik gns3",

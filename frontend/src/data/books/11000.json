@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11000?v=1795438727",
   "cover_og_url": "/cover/11000/og?v=1795438727",
+  "has_cover": false,
   "url": "/book/python-twitter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://code.google.com/p/python-twitter/ Contents 1 Instal Dependency dan Python Twitter 2 Test API Twitter Credential 3 Interaksi dengan Twitter 4 Bacaan 5 Referensi Instal Dependency dan Python Twitter Lakukan cd /usr/local/src wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py python ez_setup.py --insecure easy_install simplejson easy_install httplib2-master.zip",

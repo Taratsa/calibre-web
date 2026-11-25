@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12662?v=1795443356",
   "cover_og_url": "/cover/12662/og?v=1795443356",
+  "has_cover": false,
   "url": "/book/sitespeed-io-onno-widodo-purbo/",
   "rating": null,
   "comment": "Run sudo docker run --shm-size=1g --rm -v \"$(pwd)\":/browsertime sitespeedio/browsertime:3.12.0 --video --visualMetrics https://www.sitespeed.io/ Pranala Menarik Network Benchmarking Docker",

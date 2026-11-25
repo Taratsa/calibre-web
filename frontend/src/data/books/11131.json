@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11131?v=1795439095",
   "cover_og_url": "/cover/11131/og?v=1795439095",
+  "has_cover": false,
   "url": "/book/mysql-mengijinkan-sambungan-dari-non-localhost-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar sambungan dari non-localhost dapat dilakukan, kita perlu mengedit vi /etc/mysql/my.cnf Di bagian [mysqld] Tambahkan skip-name-resolve skip-networking Default bind hanya dari localhost bind-address = 127.0.0.1 Ubah menjadi bind-address = ip.address.anda Atau kalau mau mengijinkan sambungan dari semua IP address, ubah menjadi bind-address = 0.0.0.0 Ini sangat berbahaya, karena server mysql",

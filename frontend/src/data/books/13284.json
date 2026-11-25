@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13284?v=1795445395",
   "cover_og_url": "/cover/13284/og?v=1795445395",
+  "has_cover": false,
   "url": "/book/panda-scaling-onno-widodo-purbo/",
   "rating": null,
   "comment": "from sklearn.preprocessing import MinMaxScaler data = [[-1, 2], [-0.5, 6], [0, 10], [1, 18]] scaler = MinMaxScaler() print(scaler.fit(data)) print(scaler.data_max_) D = scaler.transform(data) print(scaler.transform(data)) print(scaler.transform( 2, 2 )) print(scaler.inverse_transform(D))",

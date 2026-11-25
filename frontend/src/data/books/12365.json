@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12365?v=1795442533",
   "cover_og_url": "/cover/12365/og?v=1795442533",
+  "has_cover": false,
   "url": "/book/ipv6-konfigurasi-ipv6-di-openwrt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi kita yang mengoperasikan router menggunakan OpenWRT, IPv6 dapat di set menggunakan GUI maupun CLI. Pada bagian ini akan di jelaskan sedikit cara mengkonfigurasi IPv6 pada OpenWRT menggunakan CLI. Untuk uplink / WAN dengan sambungan native IPv6 kita dapat menggunakan contoh konfigurasi berikut. Contoh ini dapat bekerja pada uplink yang mendukung DHCPv6 dengan Prefix Delegation maupun yang",

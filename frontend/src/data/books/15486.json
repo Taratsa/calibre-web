@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15486?v=1795455084",
   "cover_og_url": "/cover/15486/og?v=1795455084",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-lcd-i2c-pcf8574-ntp-tanpa-serial-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* * I2C Connector WeMOS D1 Mini Pro SDA - pin D2 SCL - pin D1 */ // This example shows various featues of the library for LCD with 16 chars and 2 lines. // Library https://github.com/mathertel/LiquidCrystal_PCF8574 #include  #include  #include  #include  #include  #include  LiquidCrystal_PCF8574 lcd(0x27); // set",

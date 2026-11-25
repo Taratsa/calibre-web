@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12732?v=1795443568",
   "cover_og_url": "/cover/12732/og?v=1795443568",
+  "has_cover": false,
   "url": "/book/bind-ptr-record-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.zytrax.com/books/dns/ch8/ptr.html Pointer records are the opposite of A and AAAA RRs and are used in Reverse Map zone files to map an IP address (IPv4 or IPv6) to a host name. Format name ttl class rr name 15 IN PTR www.example.com. The value '15' (the base IP address) in the above example is actually a name (an owner-name or left-hand name) and because it does not teminate",

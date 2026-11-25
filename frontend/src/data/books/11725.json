@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11725?v=1795440595",
   "cover_og_url": "/cover/11725/og?v=1795440595",
+  "has_cover": false,
   "url": "/book/mqtt-arduino-install-library-untuk-pubsubclient-h-onno-widodo-purbo/",
   "rating": null,
   "comment": "MQTT membutuhkan library untuk PubSubClient.h Download dari https://github.com/knolleary/pubsubclient/archive/master.zip bisa dengan cd ~/Downloads wget https://github.com/knolleary/pubsubclient/archive/master.zip Lebih baik add melalui menu Sketch &gt; Include Library &gt; Add .ZIP Library Atau wget https://github.com/knolleary/pubsubclient/archive/master.zip mv master.zip ~/Arduino/libraries/ cd",

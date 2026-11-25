@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10966?v=1795438630",
   "cover_og_url": "/cover/10966/og?v=1795438630",
+  "has_cover": false,
   "url": "/book/arduino-ethernet-udp-send-isi-analog-input-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* UDPSendAnalogInput: created 27 Nov 2015 by Onno W. Purbo This code is in the public domain. */ #include  // needed for Arduino versions later than 0018 #include  #include  // UDP library from: bjoern@cs.stanford.edu 12/30/2008 // Enter a MAC address and IP address for your controller below. // The IP address will be dependent on your local network: byte mac[]",

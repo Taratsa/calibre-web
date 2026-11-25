@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10923?v=1795438461",
   "cover_og_url": "/cover/10923/og?v=1795438461",
+  "has_cover": false,
   "url": "/book/hadoop-giraph-graph-analysis-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://giraph.apache.org/quick_start.html Deploying Giraph We will now deploy Giraph. In order to build Giraph from the repository, you need first to install Git and Maven 3 by running the following commands: su - hdadmin sudo apt-get install git sudo apt-get install maven mvn -version Make sure that you have installed Maven 3 or higher. Giraph uses the Munge plugin, which requires Mave",

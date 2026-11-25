@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20611?v=1795477712",
   "cover_og_url": "/cover/20611/og?v=1795477712",
+  "has_cover": false,
   "url": "/book/openbts-2-8-instalasi-real-time-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Konfigurasi Asterisk Realtime 2 Cleaning sebelum Install 3 Instalasi Aplikasi yang dibutuhkan 3.1 Compile SQLite 3.2 Instalasi Libsqlite &amp; erlang 3.3 Instalasi sqliteodbc 4 (Re)Building Asterisk 5 File Konfigurasi ODBC 5.1 Edit /etc/odbcinst.ini 5.2 Edit /etc/odbc.ini 5.3 Link Simbolik 6 File konfigurasi Asterisk 6.1 Copy Contoh yang ada di openbts 6.2 Edit /etc/asterisk/modules.conf",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 1581,
-    "longer_than": 57,
+    "longer_than": 56,
     "top": [
       [
         "openbts",

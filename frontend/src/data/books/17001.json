@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17001?v=1795463857",
   "cover_og_url": "/cover/17001/og?v=1795463857",
+  "has_cover": false,
   "url": "/book/instalasi-webauction-onno-widodo-purbo/",
   "rating": null,
   "comment": "Web Auction dapat di ambil dari http://sourceforge.net/projects/webauction/ Copy &amp; Extract webauction $ sudo su - # cp -Rf webauction-0.3.5.tar.gz /var/www/ # cd /var/www # tar zxvf webauction-0.3.5.tar.gz # cd /var/www/webauction-0.3.5 Cara instalasi dapat di baca di http://localhost/webauction-0.3.5/install.php Buat Database MySQL # mysql -u root -p Enter password: mysql&gt; create database",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19040?v=1795471368",
   "cover_og_url": "/cover/19040/og?v=1795471368",
+  "has_cover": false,
   "url": "/book/voip-cookbook-inserting-new-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "In some cases, we have inserted a new interface into the server and need to monitor this particular new interface. To do so, we need to reset the database, sudo su - /root/ManageEngine/VQManager/bin/reinitializeDB.sh then activate the interface through VQManager Web again See Also VoIP Cookbook: Building your own Telecommunication Infrastructure VoIP Cookbook: VoIP Evaluation",

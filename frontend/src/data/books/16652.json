@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16652?v=1795462288",
   "cover_og_url": "/cover/16652/og?v=1795462288",
+  "has_cover": false,
   "url": "/book/llm-fine-tune-ollama-gemma3-1b-onno-widodo-purbo/",
   "rating": null,
   "comment": "Panduan Fine-Tuning Model Gemma 3 1B dengan Dataset JSONL untuk Penggunaan Langsung di Ollama Halo! Pertanyaanmu tentang fine-tuning model **Gemma 3 1B** (dari Google, tersedia di Hugging Face sebagai `google/gemma-3-1b-it` atau `google/gemma-3-1b-pt` untuk pre-trained) menggunakan file JSONL sebagai input dataset, dan outputnya siap pakai di **Ollama**, sangat relevan. Gemma 3 1B adalah model",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1049,
-    "longer_than": 51,
+    "longer_than": 50,
     "top": [
       [
         "model",

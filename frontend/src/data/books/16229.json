@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16229?v=1795459597",
   "cover_og_url": "/cover/16229/og?v=1795459597",
+  "has_cover": false,
   "url": "/book/kali-linux-web-directory-traversal-vulnerability-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Directory traversal (or path traversal) is the exploitation of a lack of security validation/sanitization of user-supplied file names, such as characters representing \"traverse to parent directory\" passed to file APIs. The goal of this attack is to use misconfigured applications to gain unauthorized access to the file system. This attack exploits the lack of security (although the software acts",

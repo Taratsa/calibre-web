@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9888?v=1795435313",
   "cover_og_url": "/cover/9888/og?v=1795435313",
+  "has_cover": false,
   "url": "/book/os-android-membuat-mirror-source-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Mirror Source AOSP (Google) 2 Mirror Source AOKP 3 Mirror Source CyanogenMod 4 Inisialisasi Repo 4.1 Alternatif Inisialisasi 5 Update Mirror Repo 6 Referensi 7 Pranala Menarik Mirror Source AOSP (Google) sudo mkdir -p /usr/local/aosp/mirror sudo mount --bind /media/onno/onnolibrary/repository/android-source/mirror/ /usr/local/aosp/mirror/ sudo chmod -Rf 777 /usr/local/aosp sudo chown",

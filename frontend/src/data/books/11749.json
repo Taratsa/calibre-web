@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11749?v=1795440661",
   "cover_og_url": "/cover/11749/og?v=1795440661",
+  "has_cover": false,
   "url": "/book/korban-install-bind-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo apt -y install dnsutils bind9 Restart /etc/init.d/bind9 restart Konfigurasi Edit vi /etc/bind/named.conf.options options { directory \"/var/cache/bind\"; recursion yes; allow-recursion { any; }; allow-query { any; }; allow-query-cache { any; }; };",

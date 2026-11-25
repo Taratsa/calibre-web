@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17779?v=1795466262",
   "cover_og_url": "/cover/17779/og?v=1795466262",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-wordpress-multi-user-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan beberapa fasiltas pendukung Wordpress seperti MySQL-server , PHP dll, antara lain dapat di install melalui perintah # apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear unzip Siapkan Apache Web Server vi /etc/apache2/httpd.conf LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so vi",

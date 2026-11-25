@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12634?v=1795443276",
   "cover_og_url": "/cover/12634/og?v=1795443276",
+  "has_cover": false,
   "url": "/book/virtualbox-dengan-bridged-host-interface-permanen-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Aplikasi Pendukung # apt-get install bridge-utils Tambahkan ke file /etc/network/interfaces # vi /etc/network/interfaces Misalnya kita ingin membuat bridge br0 yang di bridged ke LAN eth0. Isi informasi berikut, auto br0 iface br0 inet dhcp bridge_ports eth0 Jika anda mempunyai dua (2) atau lebih LAN interface, maka anda dapat menambahkan auto br1 iface br1 inet dhcp bridge_ports eth1",

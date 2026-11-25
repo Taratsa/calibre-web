@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13926?v=1795447990",
   "cover_og_url": "/cover/13926/og?v=1795447990",
+  "has_cover": false,
   "url": "/book/percoba-instalasi-percona-mysql-8-0-di-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://computingforgeeks.com/install-percona-mysql-server-ubuntu-debian/ Contents 1 Update Repo 2 Enable Repo &amp; Install 3 Test 4 Managed Service 5 Referensi Update Repo Update repository sudo apt update sudo apt -y install wget wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb Enable Repo &amp;",

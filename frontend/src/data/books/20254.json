@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20254?v=1795476704",
   "cover_og_url": "/cover/20254/og?v=1795476704",
+  "has_cover": false,
   "url": "/book/xen-installasi-pada-processor-yang-tidak-mendukung-vt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kelebihan Xen adalah bisa di install pada Processor yang tidak mendukung VT. Kita akan mempraktekkan pada laptop dengan spesifikasi sebagai berikut : user-laptop:~$ cat /proc/cpuinfo processor : 0 vendor_id : GenuineIntel cpu family : 6 model : 23 model name : Pentium(R) Dual-Core CPU T4300 @ 2.10GHz stepping : 10 cpu MHz : 1200.000 cache size : 1024 KB physical id : 0 siblings : 2 core id : 0",

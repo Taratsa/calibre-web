@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/12477?v=1795442856",
   "cover_og_url": "/cover/12477/og?v=1795442856",
+  "has_cover": false,
   "url": "/book/membuat-file-iso-dari-cd-atau-dvd-onno-widodo-purbo/",
   "rating": null,
   "comment": "Membuat iso dari CD atau DVD Misalnya, CD atau DVD terdapat di /media/cdrom atau /dev/cdrom File iso akan di simpan di folder /folder/ Nama file iso adalah file.iso Perintah yang perlu di jalankan adalah # dd if=/dev/cdrom of=/folder/file.iso Kalau ingin ada progress bar dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync File iso tampaknya tidak peduli format yang digunakan",

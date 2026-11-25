@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10622?v=1795437664",
   "cover_og_url": "/cover/10622/og?v=1795437664",
+  "has_cover": false,
   "url": "/book/curl-loader-fast-start-onno-widodo-purbo/",
   "rating": null,
   "comment": "Fast Start Instructions. BUILDING CURL-LOADER. Build it using general C development environment with bash, gcc compiler (3 or 4 series), make, etc on a linux machine. Building pre-requirements are: 1. openssl binaries; 2. openssl development package with include files (on debian package libssl-dev); Adjust Makefile variables to point to the openssl headers and libraries. If you want to specify an",

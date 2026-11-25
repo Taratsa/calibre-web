@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15264?v=1795453919",
   "cover_og_url": "/cover/15264/og?v=1795453919",
+  "has_cover": false,
   "url": "/book/konfigurasi-mme-sgwu-open5gs-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi MME Konfigurasi MME dapat dilakukan dengan mengedit file, nano /etc/open5gs/mme.yaml Kita perlu menyesuaikan konfigurasi dengan kondisi jaringan yang kita operasikan, kira-kira sebagai berikut, s1ap: - addr: 192.168.100.236 gtpc: - addr: 127.0.0.2 metrics: addr: 127.0.0.2 port: 9090 gummei: plmn_id: mcc: 510 mnc: 33 mme_gid: 2 mme_code: 1 tai: plmn_id: mcc: 510 mnc: 33 tac: 1 Beberapa",

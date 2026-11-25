@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11637?v=1795440376",
   "cover_og_url": "/cover/11637/og?v=1795440376",
+  "has_cover": false,
   "url": "/book/proxmox-4-0-buat-liveusb-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://pve.proxmox.com/wiki/Install_from_USB_Stick Download iso proxmox ve dari https://www.proxmox.com/en/downloads/category/iso-images-pve Gunakan, dd if=proxmox-ve_*.iso of=/dev/XYZ bs=1M dd if=proxmox-ve_4.4-eb2d6f1e-2.iso of=/dev/sdb bs=1M asumsi usb di /dev/XYZ Referensi https://pve.proxmox.com/wiki/Install_from_USB_Stick",

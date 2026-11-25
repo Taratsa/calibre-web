@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12670?v=1795443379",
   "cover_og_url": "/cover/12670/og?v=1795443379",
+  "has_cover": false,
   "url": "/book/siege-post-onno-widodo-purbo/",
   "rating": null,
   "comment": "POST plain text data - plain-text-content-here siege --concurrent=50 --content-type=\"text/plain\" ' http://example.com/api POST plain-text-content-here' API accepts JSON instead of plain text, gunakan siege --concurrent=50 --content-type=\"application/json\" ' http://example.com/api POST {\"key1\":\"value1\",\"key2\":\"value2\"}' POST JSON data dari file siege --concurrent=50",

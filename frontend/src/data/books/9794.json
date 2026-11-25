@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9794?v=1795434941",
   "cover_og_url": "/cover/9794/og?v=1795434941",
+  "has_cover": false,
   "url": "/book/ipv6-server-internet-super-daemon-xinetd-onno-widodo-purbo/",
   "rating": null,
   "comment": "IPv6 is supported since xinetd version around 1.8.9. Always use newest available version. At least version 2.3.3 must be used, older versions can contain remote exploitable security holes. Some Linux distribution contain an extra package for the IPv6 enabled xinetd, some others start the IPv6-enabled xinetd if following variable is set: NETWORKING_IPV6=\"yes\", mostly done by /etc/sysconfig/network",

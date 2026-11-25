@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15254?v=1795453875",
   "cover_og_url": "/cover/15254/og?v=1795453875",
+  "has_cover": false,
   "url": "/book/run-srsenb-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk menjalankan srsENB atau srsRAN kita perlu masuk ke folder berikut, cd /usr/local/src/srsRAN/srsenb/ Jalankan sebagai sudo perintah berikut dengan konfigurasi enb.conf seperti berikut, sudo ../build/srsenb/src/srsenb enb.conf Pranala Menarik 5G",

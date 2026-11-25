@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17068?v=1795464046",
   "cover_og_url": "/cover/17068/og?v=1795464046",
+  "has_cover": false,
   "url": "/book/instalasi-gforge-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil source code gForge Community Edition dari http://gforgegroup.com/es/download.php http://gforgegroup.com/dl/install-gforge-ce-561-src.zip Instalasi software pendukung # apt-get -y install apache2 cvs postgresql postgresql-contrib libapache2-svn subversion subversion-tools \\ curl ssh libapache2-mod-php5 php5 php5-cgi php5-cli php5-gd php5-curl php5-pgsql php5-ldap ntpdate \\ xpdf rcs wv gcc",

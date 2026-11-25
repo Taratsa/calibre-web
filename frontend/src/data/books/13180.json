@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13180?v=1795445054",
   "cover_og_url": "/cover/13180/og?v=1795445054",
+  "has_cover": false,
   "url": "/book/postfix-setup-dns-spf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Caranya: Name/Host/Alias: Enter @ or leave it blank. Your other DNS records might indicate which entry is correct. Time to Live (TTL): Enter 3600 or leave the default. Value/Answer/Destination: Enter v=spf1 include:_spf.google.com ~all Misalnya: onnocenter.or.id. IN TXT \"v=spf1 mx include:_spf.google.com ~all\" Example 2 Allow mail from a specific host: v=spf1 a:mail.example.com -all The v=spf1",

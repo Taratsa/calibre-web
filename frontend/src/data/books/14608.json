@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14608?v=1795450823",
   "cover_og_url": "/cover/14608/og?v=1795450823",
+  "has_cover": false,
   "url": "/book/men-share-folder-di-samba-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita tentu saja perlu menset folder yang akan di share ke dalam konfigurasi samba. Langkah yang perlu dilakukan adalah sebagai berikut, Buat folder yang akan di share, ubah permission &amp; owner menjadi nobody.nogroup agar memudahkan proses file sharing, misalnya, mkdir -p /home/public mkdir -p /home/data chown -Rf nobody.nogroup /home/public chown -Rf nobody.nogroup /home/data chmod -Rf 777",

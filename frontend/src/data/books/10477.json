@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10477?v=1795437212",
   "cover_og_url": "/cover/10477/og?v=1795437212",
+  "has_cover": false,
   "url": "/book/w3af-running-onno-widodo-purbo/",
   "rating": null,
   "comment": "Finding SQL injections and Cross-Site Scriptings is one of the most common tasks performed by w3af users, so lets explain how to do it. First you'll have to start w3af's GUI, from the command line run \"w3af_gui\" and you should see the main window: The first step is to set the target URL to the web application you want to scan, this example we'll use \" http://target.tld/\" Next, you need to",

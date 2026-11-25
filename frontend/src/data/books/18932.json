@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18932?v=1795470888",
   "cover_og_url": "/cover/18932/og?v=1795470888",
+  "has_cover": false,
   "url": "/book/voip-cookbook-asterisk-as-sip-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asterisk can register itself to another SIP server and becomes a client. For this, the command used in sip.conf under [general] for registration to the SIP server is: register =&gt; user[:secret[:authuser]]@host[:port][/extension] If you have problems with your computer network, such as an unstable connectivity, frequent connectivity breakdowns, and losing established registration to your SIP",

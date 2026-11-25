@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16171?v=1795459233",
   "cover_og_url": "/cover/16171/og?v=1795459233",
+  "has_cover": false,
   "url": "/book/grep-scanning-for-backdoor-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "grep And the last but not the least, we have the grep command which is a powerful command-line tool in Unix and Linux. It is used for searching and probing data sets for lines that matches a regular expression. As a short history, this utility was coded by Ken Thompson on March 3, 1973 for Unix. Nowadays, Grep is known for detecting and searching for pesky backdoor shells and malicious scripts",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 353,
-    "longer_than": 33,
+    "longer_than": 32,
     "top": [
       [
         "grep",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15376?v=1795454522",
   "cover_og_url": "/cover/15376/og?v=1795454522",
+  "has_cover": false,
   "url": "/book/mikrotik-openvpn-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://agusprasetia.com/2019/1332/instalasi-openvpn-client-di-mikrotik/ Login ke dalam mikrotik menggunakan winbox. Kemudian jalankan proses import di system mikrotik. /certificate import file=mikrotik.crt import file=mikrotik.pem import file=ca.crt Buat interface virtual untuk openvpn-client masuk ke terminal mikrotik dan jalankan: /interface ovpn-client add \\ name=agusprasetia-vpn",

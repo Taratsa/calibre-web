@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13360?v=1795445699",
   "cover_og_url": "/cover/13360/og?v=1795445699",
+  "has_cover": false,
   "url": "/book/wemos-dht11-sensor-suhu-dan-humidity-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.esp8266learning.com/dht11-sensor-data-to-thingspeak-using-a-wemos-d1.php Code #include  #include  // replace with your channel's thingspeak API key and your SSID and password String apiKey = \"0C2X0PGNFHOEGYZA1\"; const char* ssid = \"ssid\"; const char* password = \"password\"; const char* server = \"api.thingspeak.com\"; #define DHTPIN D7 #define DHTTYPE DHT11",

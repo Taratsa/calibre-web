@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15844?v=1795457175",
   "cover_og_url": "/cover/15844/og?v=1795457175",
+  "has_cover": false,
   "url": "/book/llm-rag-streamlit-llamaindex-ollama-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://lightning.ai/maxidiazbattan/studios/rag-streamlit-llamaindex-ollama?tab=overview Install aplikasi pendukung sudo su apt install curl net-tools Download curl -fsSL https://ollama.com/install.sh | sh Sebagai user biasa run &amp; download model ollama serve ollama pull llama3 Aktifkan virtual environment sudo apt install python3.12-venv python3 -m venv venv source venv/bin/activate",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12743?v=1795443597",
   "cover_og_url": "/cover/12743/og?v=1795443597",
+  "has_cover": false,
   "url": "/book/juniper-catatan-untuk-menjalankan-di-gns3-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada beberapa catatan untuk menjalankan Juniper di GNS3 GNS3 di jalankan sebagai root sudo su gns3 &amp; Pastikan /root/GNS3/images berisi img &amp; bin appliance yang dibutuhkan sudo mkdir /root/GNS3/images cp -Rf ~/GNS3/images/* /root/GNS3/images/ chmod -Rf 777 /root/GNS3/ chown -Rf nobody: /root/GNS3 Sebaiknya biar aman /dev/kvm masuk ke group usernameanda, kalau dijalankan sebagai user biasa chown",

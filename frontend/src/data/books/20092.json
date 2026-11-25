@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20092?v=1795476137",
   "cover_og_url": "/cover/20092/og?v=1795476137",
+  "has_cover": false,
   "url": "/book/disable-ipv6-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.ubuntugeek.com/how-to-disable-ipv6-in-ubuntu.html Contents 1 Method 1 2 Method2 3 Method 3 4 Referensi 5 Pranala Menarik Method 1 Edit file alias menggunakan perintah berikut gksudo gedit /etc/modprobe.d/aliases Cari kalimat alias net-pf-10 ipv6 ubah alias net-pf-10 off Jika cara di atas tidak jalan maka kita perlu mengubah menjadi alias net-pf-10 off ipv6 Save file dan reboot",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12381?v=1795442578",
   "cover_og_url": "/cover/12381/og?v=1795442578",
+  "has_cover": false,
   "url": "/book/ipv6-perintah-tunnel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kita akan banyak menggunakan perintah tunnel berikut # ip -6 tunnel help Cara menggunakan-nya kira-kira: Usage: ip -f inet6 tunnel { add | change | del | show } [ NAME ] [ mode { ip6ip6 | ipip6 | ip6gre | any } ] [ remote ADDR local ADDR ] [ dev PHYS_DEV ] [ encaplimit ELIM ] [ hoplimit TTL ] [ tclass TCLASS ] [ flowlabel FLOWLABEL ] [ dscp inherit ] [ [i|o]seq ] [ [i|o]key KEY ] [ [i|o]csum ]",
@@ -136,7 +137,7 @@
       ],
       [
         12378,
-        0.27
+        0.28
       ],
       [
         9765,

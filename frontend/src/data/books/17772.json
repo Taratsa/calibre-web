@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17772?v=1795466240",
   "cover_og_url": "/cover/17772/og?v=1795466240",
+  "has_cover": false,
   "url": "/book/smeonffline-replikasi-database-dan-image-speedywiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi yang tidak sabar dapat memilih untuk melakukan versi cepat Ambil Image dan isi database SpeedyWiki dari http://opensource.telkomspeedy.com/speedyorari/ di folder datawiki Buka dan extract seluruh data, melalui shell cd /usr/local/src tar zxvf images.tar.gz gunzip wikidb.sql.gz Copy Image ke folder image di MediaWiki, melalui shell cd /usr/local/src cp -Rf",

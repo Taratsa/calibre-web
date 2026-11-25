@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15497?v=1795455146",
   "cover_og_url": "/cover/15497/og?v=1795455146",
+  "has_cover": false,
   "url": "/book/arduino-ds1307-rtc-i2c-setup-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.labelektronika.com/2018/02/cara-program-rtc-ds1307-menggunakan-Arduino.html RTC DS1307 Arduino SCL A5 SDA A4 VCC +5V GND Gnd Library https://github.com/adafruit/RTClib Code #include  #include \"RTClib.h\" RTC_DS1307 rtc; char namaHari[7][12] = {\"Minggu\", \"Senin\", \"Selasa\", \"Rabu\", \"Kamis\", \"Jumat\", \"Sabtu\"}; void setup () { Serial.begin(9600); if (! rtc.begin()) {",

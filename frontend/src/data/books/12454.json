@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12454?v=1795442783",
   "cover_og_url": "/cover/12454/og?v=1795442783",
+  "has_cover": false,
   "url": "/book/raspbian-install-dns-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadangkala, kita membutuhkan DNS Server lokal agar para user/siswa yang mengakses server Raspberry Pi tidak perlu mengetik IP address akan tetapi menggunakan nama mesin. Di Linux, termasuk di Raspberry Pi, salah satu DNS server lokal yang sering digunakan adalah BIND. Instalasi BIND cukup mudah menggunakan perintah berikut, sudo su apt update apt install bind9 bind9utils bind9-doc Jika kita hanya",

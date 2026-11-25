@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15750?v=1795456610",
   "cover_og_url": "/cover/15750/og?v=1795456610",
+  "has_cover": false,
   "url": "/book/openwrt-ssh-versi-lama-onno-widodo-purbo/",
   "rating": null,
   "comment": "ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.0.4 Ini **error klasik SSH modern vs OpenWRT lama** 👍 Bukan salah jaringan-**algoritma kriptografinya tidak cocok**. --- 🔍 Akar Masalah Pesan error: ``` Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-rsa ``` Artinya: **OpenWRT** hanya menawarkan *host key* lama: **`ssh-rsa`** **OpenSSH modern (Ubuntu",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 334,
-    "longer_than": 32,
+    "longer_than": 31,
     "top": [
       [
         "ssh",

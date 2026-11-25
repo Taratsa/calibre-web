@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12372?v=1795442556",
   "cover_og_url": "/cover/12372/og?v=1795442556",
+  "has_cover": false,
   "url": "/book/ipv6-membuang-ipv6-route-dari-sebuah-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "Membuang IPv6 route melalui interface biasanya tidak dilakukan menggunakan tangan, script konfigurasi akan melakukan hal tersebut saat shutdown. Contents 1 Install net-tools 2 Menggunakan \"ip\" 3 Menggunakan \"route\" 4 Pranala Menarik Install net-tools apt install net-tools Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route del / dev  Contoh # /sbin/ip -6 route del",

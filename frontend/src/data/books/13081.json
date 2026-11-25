@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13081?v=1795444764",
   "cover_og_url": "/cover/13081/og?v=1795444764",
+  "has_cover": false,
   "url": "/book/openvpn-simple-server-using-script-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.cyberciti.biz/faq/howto-setup-openvpn-server-on-ubuntu-linux-14-04-or-16-04-lts/ Contents 1 Cek IP Publik Kita 2 Download openvpn-install.sh script 3 Setup Firewall 4 ufw firewall rules (optional) 5 Menambah CLIENT 6 Referensi 7 Pranala Menarik Cek IP Publik Kita Jika Server tersambung langsung ke Internet, dapat menggunakan ip addr show eth0 ip addr show enp0s3 ip a atau",

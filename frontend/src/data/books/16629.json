@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16629?v=1795462096",
   "cover_og_url": "/cover/16629/og?v=1795462096",
+  "has_cover": false,
   "url": "/book/nvidia-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Oke, untuk RTX 4060 di Ubuntu 24.04 (Noble Numbat) , kamu butuh driver seri 550 atau lebih baru , karena RTX 40-series hanya dikenali di driver terbaru. Berikut langkahnya: Contents 1 1. Cek GPU Terdeteksi 2 2. Update Sistem 3 3. Tambah NVIDIA Driver PPA (agar dapat versi terbaru) 4 4. Cek Driver yang Direkomendasikan 5 5. Instal Driver NVIDIA 6 6. Reboot 7 7. Verifikasi 8 8. (Opsional) Instal",

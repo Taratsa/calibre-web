@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12782?v=1795443726",
   "cover_og_url": "/cover/12782/og?v=1795443726",
+  "has_cover": false,
   "url": "/book/quagga-setting-ip-address-onno-widodo-purbo/",
   "rating": null,
   "comment": "vtysh configure terminal ! eth0 tersambung nat0 GNS3 interface eth0 ip address 192.168.122.100/24 ip address 192.168.122.101/24 ip address 192.168.122.102/24 exit ip route 0.0.0.0 0.0.0.0 192.168.122.1 ! eth1 ke client interface eth1 ip address 10.10.10.1/24 exit ! eth2 ke client interface eth2 ip address 10.10.20.1/24 exit ! end Pranala Menarik Quagga",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13151?v=1795444967",
   "cover_og_url": "/cover/13151/og?v=1795444967",
+  "has_cover": false,
   "url": "/book/ipv6-route-control-route-map-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Configuring Route Maps Like access lists (see Appendix B, \"Tutorial: Access Lists\"), route maps by themselves affect nothing; they must be \"called\" by some command. The command will most likely be either a policy routing command or a redistribution command. Policy routing will send packets to the route map, whereas redistribution will send routes to the route map. The case studies in this section",

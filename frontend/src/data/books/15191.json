@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15191?v=1795453591",
   "cover_og_url": "/cover/15191/og?v=1795453591",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-22-04-setup-etc-rc-local-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ubuntu 22.04 - start program after boot Edit sudo nano /etc/rc.local Isi dengan #!/bin/sh -e .sh exit 0 Save file rc.local Pastikan file script bisa di jalankan dengan chmod chmod 777 .sh chmod +x .sh make rc.local executable: sudo chmod +x /etc/rc.local sudo chmod -Rf 744 /etc/rc.local edit /etc/systemd/system/rc-local.service: sudo nano",

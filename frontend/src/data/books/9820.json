@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9820?v=1795435037",
   "cover_og_url": "/cover/9820/og?v=1795435037",
+  "has_cover": false,
   "url": "/book/implementasi-enum-di-asterisk-1-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi Asterisk enum.conf Agar ENUM mekanisme dapat berjalan dengan baik di Asterisk, kita perlu mengedit file enum.conf dan menambahkan entry berikut search =&gt; e164.id search =&gt; e164.org search =&gt; e164.arpa search =&gt; e164.or.id Jika kita mempunyai ENUM server sendiri, dapat saja menambahkan entry sendiri misalnya search =&gt; 6.6.6.6.6.6.5.5.5.2.6.e164.id Tentunya sebuah ENUM server tidak",

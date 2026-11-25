@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12544?v=1795443026",
   "cover_og_url": "/cover/12544/og?v=1795443026",
+  "has_cover": false,
   "url": "/book/r-bigram-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(dplyr) library(tidytext) library(janeaustenr) library(tidyr) library(igraph) library(ggplot2) library(ggraph) library(readtext) text &lt;- readtext(\"out.txt\") text_bigrams &lt;- text %&gt;% unnest_tokens(bigram, text, token = \"ngrams\", n = 2) text_bigrams bigrams_separated &lt;- text_bigrams %&gt;% separate(bigram, c(\"word1\", \"word2\"), sep = \" \") # # stopwords default bigrams_filtered &lt;-",

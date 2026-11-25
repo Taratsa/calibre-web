@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12775?v=1795443701",
   "cover_og_url": "/cover/12775/og?v=1795443701",
+  "has_cover": false,
   "url": "/book/cisco-nat-dua-router-static-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "R1: Ethernet1/1 - ke Internet Ethernet1/2 - R2: Ethernet 1/1 Ethernet1/3 - LAN R2: Ethernet1/1 - R1: Ethernet1/2 Ethernet1/2 - LAN R1: enable configure terminal ! ! NAT GNS3 gw 192.168.122.1 interface ethernet1/1 ip address 192.168.122.100 255.255.255.0 ip address 192.168.122.101 255.255.255.0 secondary ip address 192.168.122.102 255.255.255.0 secondary ip nat outside no shutdown ip route 0.0.0.0",

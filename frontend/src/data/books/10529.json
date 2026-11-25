@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10529?v=1795437376",
   "cover_og_url": "/cover/10529/og?v=1795437376",
+  "has_cover": false,
   "url": "/book/script-mirror-ubuntu-14-04-32-64-bit-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/bin/bash export GNUPGHOME=/var/data/mirrorkeyring debmirror -a i386,amd64 --no-source -s main,restricted,universe,multiverse \\ -h 152.118.24.30 \\ -d trusty,trusty-backports,trusty-security,trusty-updates \\ -r ubuntu --progress -e http /var/data/repository/repo-14.04/",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10243?v=1795436485",
   "cover_og_url": "/cover/10243/og?v=1795436485",
+  "has_cover": false,
   "url": "/book/repository-blankon-9-onno-widodo-purbo/",
   "rating": null,
   "comment": "Date: Sun, 28 Sep 2014 22:40:48 +0700 From: Utian Ayuba  To: Onno W. Purbo  Subject: Re: cara update repo? Pak Onno, 1. Instal debmirror aptitude update &amp;&amp; aptitude install debmirror 2. Tambahkan keyring ke file trustedkey.gpg gpg --keyring /usr/share/keyrings/blankon-archive-keyring.gpg --export \\ | gpg --no-default-keyring --keyring trustedkeys.gpg",
@@ -189,7 +190,7 @@
     "similar": [
       [
         19909,
-        0.49
+        0.5
       ],
       [
         20117,

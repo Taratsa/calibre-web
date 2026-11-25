@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10705?v=1795437886",
   "cover_og_url": "/cover/10705/og?v=1795437886",
+  "has_cover": false,
   "url": "/book/iptables-default-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika kita ingin membersihkan semua rule iptables &amp; ip6tables dan membuat semua paket dapat di accept iptables -F ip6tables -F iptables -P INPUT ACCEPT iptables -P OUTPUT ACCEPT iptables -P FORWARD ACCEPT ip6tables -P INPUT ACCEPT ip6tables -P OUTPUT ACCEPT ip6tables -P FORWARD ACCEPT",

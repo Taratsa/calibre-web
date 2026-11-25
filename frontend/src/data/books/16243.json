@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16243?v=1795459688",
   "cover_og_url": "/cover/16243/og?v=1795459688",
+  "has_cover": false,
   "url": "/book/postfix-block-sender-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "cd /etc/postfix vi sender_access Enter the addresses you want to block: user@abadboy.com REJECT myfriend@example.com OK junk@spam.com REJECT marketing@ REJECT theboss@ OK deals.marketing.com REJECT somedomain.com OK Save &amp; close file. Run postmap to create the database: postmap hash:sender_access Edit main.cf &amp; add: smtpd_recipient_restrictions = check_sender_access",

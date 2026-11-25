@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15476?v=1795455031",
   "cover_og_url": "/cover/15476/og?v=1795455031",
+  "has_cover": false,
   "url": "/book/esp32-wifi-connect-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* * ESP32 WiFi Connect */ #include  const char* ssid = \"o1\"; const char* password = \"Dzaq1993!\"; void setup() { Serial.begin(115200); Serial.print(\"Connecting to \"); Serial.println(ssid); WiFi.begin(ssid, password); while (WiFi.status() != WL_CONNECTED) { delay(500); Serial.print(\".\"); } // Print local IP address and start web server Serial.println(\"\"); Serial.println(\"WiFi connected.\");",

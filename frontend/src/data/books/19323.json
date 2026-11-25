@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19323?v=1795472679",
   "cover_og_url": "/cover/19323/og?v=1795472679",
+  "has_cover": false,
   "url": "/book/apache2-mengaktifkan-modul-apache-onno-widodo-purbo/",
   "rating": null,
   "comment": "Modul apache2 ada pada folder /etc/apache2/mods-available. Agar Modul \"namamodul\" aktif yang perlu dilakukan ln -s /etc/apache2/mods-available/namamodul.conf /etc/apache2/mods-enabled/namamodul.conf ln -s /etc/apache2/mods-available/namamodul.load /etc/apache2/mods-enabled/namamodul.load /etc/init.d/apache2 restart Pranala Menarik Linux Howto Apache2: Mengaktifkan public html untuk user",

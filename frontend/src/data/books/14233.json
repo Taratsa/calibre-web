@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14233?v=1795449144",
   "cover_og_url": "/cover/14233/og?v=1795449144",
+  "has_cover": false,
   "url": "/book/rsync-slow-supaya-harddisk-tidak-jebol-onno-widodo-purbo/",
   "rating": null,
   "comment": "rsync biasanya akan memaksimalkan kecepatan transfer. Akibatnya banyak harddisk tidak kuat untuk transfer pada kecepatan tinggi dalam waktu lama, terutama yang non-WD. Beberapa sudah saya jebolkan. Solusinya kecepatan harus di batasi, menggunakan, --bwlimit=xxxx Contoh # ini masih besar kecepatannya .. rsync --bwlimit=4000 -ur rsync://192.168.0.9/data/iso/* /mnt/pustaka/iso/ # kecepatan download",

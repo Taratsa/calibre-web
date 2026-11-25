@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9488?v=1795433041",
   "cover_og_url": "/cover/9488/og?v=1795433041",
+  "has_cover": false,
   "url": "/book/raspberrypi-burn-sd-card-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://elinux.org/RPi_Easy_SD_Card_Setup Contents 1 Download 2 Burn SD 3 Burn SD untuk extension xz 4 Referensi 5 Pranala Menarik Download Download dari http://www.raspberrypi.org/downloads Unzip cd ~/Downloads unzip 2017-09-07-raspbian-stretch-lite.zip unzip 2019-09-26-raspbian-buster-lite.zip Burn SD Masukan SD card. Umount semua partisi SD card. Burn SD card cd ~/Downloads dd bs=1M",

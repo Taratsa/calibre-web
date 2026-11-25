@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10581?v=1795437536",
   "cover_og_url": "/cover/10581/og?v=1795437536",
+  "has_cover": false,
   "url": "/book/powerdns-instalasi-dns-recursor-onno-widodo-purbo/",
   "rating": null,
   "comment": "PowerDNS Recursor adalah sebuah resolving DNS server, yang berjalan sebagai proses yang berbeda. Sebuah authoritative pdns_server dapat di konfigurasi untuk proxy recursive query ke recursor, dan optional bisa authoritive zone data. Install pdns-recursor package apt-get install pdns-recursor Konfigurasi server untuk mendengar semua interface dan mengijinkan query dari jaringan local-nya vi",

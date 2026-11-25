@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13048?v=1795444658",
   "cover_og_url": "/cover/13048/og?v=1795444658",
+  "has_cover": false,
   "url": "/book/ipv6-masalah-proto-41-di-router-forwarding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Tunneling IPv6 hanya bisa berhasil jika semua router yang di lewati dengan senang hati melalukan protocol number 41 (proto-41) yang resminya adalah IPv6 in IPv4 (6in4). Mohon di mengerti bahwa 41 adalah nomor protocol, BUKAN nomor port! Sialnya: Kebanyakan Networking &amp; Firewall hanya meloloskan traffic yang menggunakan protocol selain TCP, UDP, dan ICMP biasanya di blok, kecuali secara explisit",

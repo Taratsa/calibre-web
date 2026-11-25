@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13969?v=1795448134",
   "cover_og_url": "/cover/13969/og?v=1795448134",
+  "has_cover": false,
   "url": "/book/ubuntu-20-04-sound-problem-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://askubuntu.com/questions/1230363/20-04-internal-speaker-audio-is-not-working-in-ubuntu-20-04-lts-after-upgradi delete the .config/pulse folder go reboot and get back to your desktop Your speakers may be detected as unplugged which causes them to be ignored. Temporary fix: sudo apt install pavucontrol sudo pavucontrol Configuration tab &gt; Profile &gt; Analogue Stereo Output (unplugged)",

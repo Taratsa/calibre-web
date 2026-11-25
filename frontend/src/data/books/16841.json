@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16841?v=1795463417",
   "cover_og_url": "/cover/16841/og?v=1795463417",
+  "has_cover": false,
   "url": "/book/pdf-to-rag-md-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python3 \"\"\" Convert a text-based PDF into RAG-friendly Markdown files, one file per topic. Main features ------------- - Uses the PDF table of contents when available. - Falls back to font-size / bold / numbering heuristics for headings. - Falls back again to page groups if no reliable headings exist. - Ignores images and other non-text PDF blocks. - Removes repeated headers and",

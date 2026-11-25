@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12906?v=1795444180",
   "cover_og_url": "/cover/12906/og?v=1795444180",
+  "has_cover": false,
   "url": "/book/ipv6-cisco-konfigurasi-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "enable configure terminal ipv6 unicast-routing interface type number ipv6 address ipv6-prefix /prefix-length ipv6 address ipv6-prefix /prefix-length eui-64 ipv6 address ipv6-address / prefix-length link-local ipv6 enable no shutdown exit Contoh enable configure terminal ipv6 unicast-routing interface ethernet1/0 ipv6 address 2001::1/64 ipv6 enable no shutdown end Dual stack IPv4 &amp; IPv6. Multiple",

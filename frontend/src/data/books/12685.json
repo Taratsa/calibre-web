@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12685?v=1795443426",
   "cover_og_url": "/cover/12685/og?v=1795443426",
+  "has_cover": false,
   "url": "/book/dbench-alternatif-loadfile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contoh 1 Edit vi /usr/share/dbench/contoh1.txt Isi # Create a bunch of files # OPEN # Flags are the combination of these flags, ored together # 0x01 O_RDONLY # 0x02 O_WRONLY # 0x04 O_RDWR # # 0x08 O_CREAT create the file if it does nto exist # 0x10 O_EXCL fail if the file already exists # 0x20 O_TRUNC if the file exists, truncate it # 0x40 O_APPEND open in append mode only OPEN \"/file0\" 0x1c",

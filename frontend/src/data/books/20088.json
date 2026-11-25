@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/20088?v=1795476125",
   "cover_og_url": "/cover/20088/og?v=1795476125",
+  "has_cover": false,
   "url": "/book/gnuradio-spectrum-analizer-gsm-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setelah instalasi GNURadio . Kita dapat menjalankan spectrum analizer dengan menjalankan perintah /usr/local/bin/usrp_fft.py Hasilnya kira-kira sebagai berikut Tampilan Spectrum Analyzer Test FFT GNURadio pada frekuensi 900MHz cd /usr/local/src/gnuradio-3.3.0/gnuradio-examples/python/usrp usrp_fft.py -R A -f 900.0e6 Contents 1 Cek Frekuensi Yang Digunakan 2 Pranala Menarik 2.1 Persiapan 2.2",

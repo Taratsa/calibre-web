@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15955?v=1795457866",
   "cover_og_url": "/cover/15955/og?v=1795457866",
+  "has_cover": false,
   "url": "/book/report-penetration-test-contoh-rekomendasi-mitigasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Rekomendasi Mitigasi Sementara Temuan: SQL Injection pada form login aplikasi web. Risiko: Potensi akses tidak sah ke basis data, termasuk manipulasi data atau eskalasi hak akses. Langkah-langkah mitigasi sementara: Validasi Input Sementara: Implementasikan sanitasi input pada level aplikasi dengan memastikan setiap data yang masuk ke form login di-*escape* dan difilter dari karakter khusus",
@@ -148,8 +149,8 @@
         4
       ],
       [
-        "basis",
-        3
+        "data",
+        5
       ]
     ],
     "phrases": [

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11956?v=1795441173",
   "cover_og_url": "/cover/11956/og?v=1795441173",
+  "has_cover": false,
   "url": "/book/bitcoin-miner-cgminer-untuk-gekkoscience-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "cgminer untuk ASIC gekkoscience sudo su sudo apt-get install build-essential autoconf automake libtool pkg-config libcurl4-openssl-dev \\ libudev-dev libjansson-dev libncurses5-dev libudev-dev libjansson-dev libudev1 git cd /usr/local/src git clone https://github.com/wareck/cgminer-gekko.git cd /usr/local/src/cgminer-gekko ./autogen.sh ./configure --enable-gekko make make install Cek ./cgminer -n",

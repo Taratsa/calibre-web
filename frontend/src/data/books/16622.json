@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16622?v=1795462036",
   "cover_og_url": "/cover/16622/og?v=1795462036",
+  "has_cover": false,
   "url": "/book/ner-scan-jpg-ner-json-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siap! Berikut **script Python all-in-one** untuk: 1. baca gambar hasil scan (JPG/PNG), 2. lakukan OCR (Tesseract via `pytesseract`), 3. lakukan **NER via Ollama** (model lokal, mis. `llama3`/`llama3.1`/`mistral`), 4. keluaran **JSON** yang rapi. Termasuk sedikit **pre-processing** (grayscale, denoise, threshold, auto-deskew ringan) agar OCR lebih stabil pada hasil scan. --- Prasyarat **Tesseract",

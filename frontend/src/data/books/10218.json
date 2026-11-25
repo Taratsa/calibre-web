@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10218?v=1795436406",
   "cover_og_url": "/cover/10218/og?v=1795436406",
+  "has_cover": false,
   "url": "/book/mediawiki-smtp-server-untuk-authentikasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.mediawiki.org/wiki/Manual_talk:$wgSMTP Edit file LocalSettings.php, isi dengan $wgSMTP = array( 'host' =&gt; \"smtp.gmail.com\", 'IDHost' =&gt; \"opensource.telkomspeedy.com\", 'port' =&gt; 465, 'auth' =&gt; true, 'username' =&gt; \"opensourcespeedywiki\", 'password' =&gt; \"RAHASIA\" ); Referensi http://www.mediawiki.org/wiki/Manual_talk:$wgSMTP",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14260?v=1795449233",
   "cover_og_url": "/cover/14260/og?v=1795449233",
+  "has_cover": false,
   "url": "/book/spyder4-install-conda-spyder4-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.spyder-ide.org/current/installation.html Install conda create -n spyder-env spyder=4 Atau conda create -n spyder-env spyder=4 numpy scipy pandas matplotlib sympy cython seaborn tensorflow keras # sudo pip install sklearn features Aktivasi conda activate spyder-env Referensi https://docs.spyder-ide.org/current/installation.html Pranala Menarik Python",

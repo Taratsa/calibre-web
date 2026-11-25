@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19804?v=1795475058",
   "cover_og_url": "/cover/19804/og?v=1795475058",
+  "has_cover": false,
   "url": "/book/schoolonffline-instalasi-nfs-dan-rsync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi apt-get install nfs-common nfs-kernel-server rsync Siapkan Contoh Konfigurasi vi /etc/export.contoh /home/backup *(ro,sync,subtree_check) /home/backup/public *(rw,sync,subtree_check) /home/library *(ro,sync,subtree_check) /home/media *(ro,sync,subtree_check) vi /etc/rsyncd.conf pid file = /var/run/rsyncd.pid max connections = 5 use chroot = yes uid = nobody gid = nogroup [backup]",

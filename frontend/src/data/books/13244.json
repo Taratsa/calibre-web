@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13244?v=1795445263",
   "cover_og_url": "/cover/13244/og?v=1795445263",
+  "has_cover": false,
   "url": "/book/mp4-convert-ke-avi-onno-widodo-purbo/",
   "rating": null,
   "comment": "ffmpeg -r 30 -i input.mp4 -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 -codec:a libmp3lame output.avi Not Recommended ffmpeg -i filename.mp4 -qscale 1 -vcodec mpeg4 -acodec ac3 output.avi ffmpeg -i filename.mp4 -vcodec copy -acodec copy filename.avi ffmpeg -i filename.mp4 -b:v 1000K -vcodec msmpeg4v2 -acodec adpcm_ima_wav filename.avi Pranala Menarik",

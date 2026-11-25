@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20410?v=1795477157",
   "cover_og_url": "/cover/20410/og?v=1795477157",
+  "has_cover": false,
   "url": "/book/instalasi-ntp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instal NTP apt-get install ntp Edit ntp.conf vi /etc/ntp.conf Pastikan ada server ntp.ubuntu.com server pool.ntp.org server time.nist.gov Restart server /etc/init.d/ntp restart Mengijinkan Akses &amp; Broadcast Waktu NTP di Subnet Jika anda ingin membroadcast waktu di sebuah Subnet, anda dapat mengedit file konfigurasi NTP vi /etc/ntp.conf Masukan broadcast address subnet yang anda inginkan, misalnya",

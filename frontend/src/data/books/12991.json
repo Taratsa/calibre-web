@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12991?v=1795444439",
   "cover_og_url": "/cover/12991/og?v=1795444439",
+  "has_cover": false,
   "url": "/book/ipv6-vyos-ospf-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Sambungan 2 IP address 3 OSPF 4 Verify 5 Setting Client 6 Referensi 7 Pranala Menarik Sambungan R1 eth1: -- R3: eth1 eth2: -- R2: eth1 eth3: -- Internet R2: eth1: -- R1: eth2 eth2: -- R3: eth2 eth3: -- LAN 2001:172:16:1::1/64 R3: eth1: -- R1: eth1 eth2: -- R2: eth2 eth3: -- LAN 2001:192:168:1::1/64 Jika ada masalah dengan VM VyOS di GNS3, lakukan sudo chown root:useranda /dev/kvm",

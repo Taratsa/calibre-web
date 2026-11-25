@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9388?v=1795432711",
   "cover_og_url": "/cover/9388/og?v=1795432711",
+  "has_cover": false,
   "url": "/book/ubnt-upload-firmware-onno-widodo-purbo/",
   "rating": null,
   "comment": "Teknik upload firmware sama dengan teknik recovery Set IP PC 192.168.1.254/24 ifconfig eth5 192.168.1.254 netmask 255.255.255.0 Pindah ke folder tempat image, misalnya ~/openwrt.trunk/trunk/bin/atheros Matikan Device UBNT Tekan tombol Reset Nyalakan Device UBNT Lepaskan tombol Reset setelah ~10 detik (tidak lebih) sesudah device UBNT di nyalakan. Kita akan mengetahui-nya karena LED akan berubah /",

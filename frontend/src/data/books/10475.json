@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10475?v=1795437206",
   "cover_og_url": "/cover/10475/og?v=1795437206",
+  "has_cover": false,
   "url": "/book/ironbee-konfigurasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Example Trafficserver Configuration # Insert this into trafficserver's plugin.config. # Adjust paths as appropriate for your installation. # First we need to load libraries the Ironbee plugin relies on. libloader.so /usr/local/ironbee/libexec/libironbee.so # Now we can load the ironbee plugin. The argument to this is ironbee's # configuration file: see ironbee-config.txt",

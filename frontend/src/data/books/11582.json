@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11582?v=1795440243",
   "cover_og_url": "/cover/11582/og?v=1795440243",
+  "has_cover": false,
   "url": "/book/script-mirror-repository-ubuntu-16-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/bin/bash export GNUPGHOME=/var/data/mirrorkeyring /usr/bin/debmirror -a i386,amd64 --no-source -s main,restricted,universe,multiverse \\ -h 152.118.24.30 \\ -d xenial,xenial-backports,xenial-security,xenial-updates \\ -r ubuntu --progress -e http /var/data/repository/repo-16.04/",
@@ -74,7 +75,7 @@
       ],
       [
         19157,
-        0.54
+        0.55
       ],
       [
         19140,

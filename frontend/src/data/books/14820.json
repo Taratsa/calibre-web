@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14820?v=1795451881",
   "cover_og_url": "/cover/14820/og?v=1795451881",
+  "has_cover": false,
   "url": "/book/ssl-generate-ssl-certificate-request-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/ Contents 1 Step 1: Generate a private key 2 Step 2: Generate the CSR 3 Alternative Method of generating a CSR 4 CNAME DNS Authentication 5 Referensi 6 Pranala Menarik Step 1: Generate a private key sudo openssl genrsa -out domain.key 2048 Step 2: Generate the CSR sudo openssl req -new -key domain.key -out",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12344?v=1795442455",
   "cover_og_url": "/cover/12344/og?v=1795442455",
+  "has_cover": false,
   "url": "/book/ipv6-cek-dukungan-ipv6-di-kernel-yang-berjalan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mencek apakah kernel yang berjalan mendukung IPv6, file berikut harus ada /proc/net/if_inet6 jika kita lihat isinya, kita akan mendapati isinya informasi IPv6 address di interface yang ada. atau kalau mau automatis dapat menggunakan script berikut # test -f /proc/net/if_inet6 &amp;&amp; echo \"Running kernel is IPv6 ready\" atau # [ -f /proc/net/if_inet6 ] &amp;&amp; echo 'IPv6 ready system!' || echo 'No",

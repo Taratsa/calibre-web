@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12482?v=1795442871",
   "cover_og_url": "/cover/12482/og?v=1795442871",
+  "has_cover": false,
   "url": "/book/raspbian-konfigurasi-dns-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install BIND 2 Konfigurasi Local File 3 Buat Forward Zone File 4 Buat Reverse Zone File 5 Cek Syntax Konfigurasi BIND 6 Restart BIND 7 Pranala Menarik Install BIND install BIND sudo su apt update apt install bind9 bind9utils bind9-doc Setup hanya untuk IPv4 (-4) jika dibutuhkan vi /etc/default/bind9 Tambahkan (-4) OPTIONS=\"-4 -u bind\" Konfigurasi Local File Edit sudo vi",

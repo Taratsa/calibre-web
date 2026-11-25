@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15841?v=1795457152",
   "cover_og_url": "/cover/15841/og?v=1795457152",
+  "has_cover": false,
   "url": "/book/llm-rag-thomas-jay-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://github.com/ThomasJay/RAG Persiapkan ollama ollama pull llama3 Persiapkan Virtualenv sudo apt install python3-virtualenv python3-pip libgl1 virtualenv --python=python3 venv source venv/bin/activate Clone Source git clone https://github.com/ThomasJay/RAG.git cd RAG/ mkdir db pip install -r requirements.txt Run python3 app.py Akses http://ipaddress:8080 masih bingung cara pakainya ..",

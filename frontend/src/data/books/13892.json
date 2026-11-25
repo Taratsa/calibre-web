@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13892?v=1795447831",
   "cover_og_url": "/cover/13892/og?v=1795447831",
+  "has_cover": false,
   "url": "/book/gns3-jaringan-sederhana-dengan-openwrt-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mensimulasikan OpenWRT menggunakan GNS3 dapat menggunakan topologi seperti tampak pada gambar di bawah ini. Topologi yang digunakan menggunakan Cloud GND3 - OpenWRT - dan client (dalam contoh ini digunakan VPCS dan Kali Linux). Alokasi ethernet di OpenWRT eth0 s/d eth6 untuk LAN (bridge) eth7 untuk WAN IP LAN 192.168.100.x/24 - agar tidak conflict dengan OpenWRT lain yang ada di Cloud.",

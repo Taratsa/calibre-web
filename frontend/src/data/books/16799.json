@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16799?v=1795463277",
   "cover_og_url": "/cover/16799/og?v=1795463277",
+  "has_cover": false,
   "url": "/book/instalasi-microsoft-truetype-font-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pastikan repository Universe di enable &amp; juga pastikan sambungan ke Internet anda beroperasi karena font microsoft akan di ambil dari source forge . Lakukan perintah $ sudo apt-get install msttcorefonts Logout &amp; login kembali untuk mengaktifkan font yang baru. Atau regenerate font cache menggunakan perintah $ sudo fc-cache -fv Pranala Menarik Instalasi Font",

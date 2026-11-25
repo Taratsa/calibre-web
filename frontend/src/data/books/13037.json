@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13037?v=1795444621",
   "cover_og_url": "/cover/13037/og?v=1795444621",
+  "has_cover": false,
   "url": "/book/ipv6-script-he-short-ubuntu-18-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "echo 0 &gt;/proc/sys/net/ipv6/conf/enp3s0/accept_ra modprobe ipv6 ip link set enp3s0 down ip link set enp3s0 up ip addr add 192.168.0.10/24 dev enp3s0 ip route add 0.0.0.0/0 via 192.168.0.223 dev enp3s0 ip link set he-ipv6 down ip tunnel del he-ipv6 ip tunnel add he-ipv6 mode sit remote 216.66.80.26 local 192.168.0.10 ttl 255 ip link set he-ipv6 up ip addr add 2001:470:1f08:65d::2/64 dev he-ipv6 ip",

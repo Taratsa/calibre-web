@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18320?v=1795468487",
   "cover_og_url": "/cover/18320/og?v=1795468487",
+  "has_cover": false,
   "url": "/book/fix-install-hh-server-di-virtualbox-onno-widodo-purbo/",
   "rating": null,
   "comment": "Dalam rangka project di lab Cidepoker's, ketemu error ini waktu install HH server di virtualbox: This kernel requires the following features not present on the CPU: 0:6 Ternyata fix-nya sangat sederhana yaitu menghidupkan pilihan 'Enable PAE/NX (Settings &gt;&gt; General &gt;&gt; Advanced tab) Voila! Server ****** dapat diakses :) Referensinya:",

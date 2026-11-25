@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19779?v=1795474948",
   "cover_og_url": "/cover/19779/og?v=1795474948",
+  "has_cover": false,
   "url": "/book/instalasi-phpgroupware-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan database Password root MySQL di set sebagai password. Perintah yang digunakan untuk mengkonfigurasi adalah mysql mysql&gt; SET PASSWORD FOR root@localhost=PASSWORD('password'); Jika password Root MySQL database sudah di set maka kita dapat langsung mengkonfigurasi MySQL menggunakan perintah # mysql -u root -p Enter password: create database phpgroupware; grant INSERT,SELECT on root.* to",

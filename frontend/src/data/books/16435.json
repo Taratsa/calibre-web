@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16435?v=1795460859",
   "cover_og_url": "/cover/16435/og?v=1795460859",
+  "has_cover": false,
   "url": "/book/dataset-confusion-matrix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh kode Python untuk menghitung dan menampilkan confusion matrix menggunakan pustaka `scikit-learn`. Confusion matrix adalah alat evaluasi yang penting dalam masalah klasifikasi untuk memahami performa model dengan membandingkan prediksi dengan nilai aktual. import numpy as np from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay import matplotlib.pyplot as plt #",

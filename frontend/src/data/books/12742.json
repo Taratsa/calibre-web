@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12742?v=1795443593",
   "cover_og_url": "/cover/12742/og?v=1795443593",
+  "has_cover": false,
   "url": "/book/gns3-remove-purge-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo su apt -y remove --purge gns3 rm -Rf /usr/bin/gns3* rm -Rf /etc/gns3* rm -Rf /usr/share/gns3 rm -Rf /root/.config/GNS3 rm -Rf /home/onno/.config/GNS3 rm -Rf /usr/bin/dynamips Install ulang sudo su apt -y install gns3* dynamips Pranala Menarik GNS3",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9970?v=1795435606",
   "cover_og_url": "/cover/9970/og?v=1795435606",
+  "has_cover": false,
   "url": "/book/tftp-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install sudo apt-get install xinetd tftpd tftp Buat vi /etc/xinetd.d/tftp isi dengan service tftp { protocol = udp port = 69 socket_type = dgram wait = yes user = nobody server = /usr/sbin/in.tftpd server_args = /tftpboot disable = no } Buat folder /tftpboot sudo mkdir /tftpboot sudo chmod -R 777 /tftpboot sudo chown -R nobody /tftpboot Restart xinetd service. sudo /etc/init.d/xinetd restart",

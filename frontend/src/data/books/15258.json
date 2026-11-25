@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15258?v=1795453896",
   "cover_og_url": "/cover/15258/og?v=1795453896",
+  "has_cover": false,
   "url": "/book/konfigurasi-amf-upf-open5gs-onno-widodo-purbo/",
   "rating": null,
   "comment": "Selanjutnya kita perlu mengedit konfigurasi AMF dari open5gs melalui perintah, nano /etc/open5gs/amf.yaml Di sesuaikan dengan parameter jaringan 5G yang kita operasikan, konfigurasi AMF kira-kira sebagai berikut, amf: sbi: - addr: 127.0.0.5 port: 7777 ngap: - addr: 192.168.100.238 guami: - plmn_id: mcc: 510 mnc: 33 amf_id: region: 2 set: 1 tai: - plmn_id: mcc: 510 mnc: 33 tac: 1 plmn_support: -",

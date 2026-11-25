@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11400?v=1795439782",
   "cover_og_url": "/cover/11400/og?v=1795439782",
+  "has_cover": false,
   "url": "/book/python-mining-twitter-for-gamergate-visualization-onno-widodo-purbo/",
   "rating": null,
   "comment": "Disini kita akan extrak semua informasi yang dibutuhkan menggunakan NetworkX untuk membuat directed graph dan mem-visualisasikan menggunakan Gephi untuk melihat siapa me-retweet siapa, mencatat umur tweet dalam hari, jumlah follower setiap user agar dikemudian hari dapat di filter jika kita menginginkannya. Instalasi NetworkX, sudo pip install networkx jangan lupa instalasi Gephi. Asumsinya tweet",

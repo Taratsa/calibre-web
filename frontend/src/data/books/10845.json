@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10845?v=1795438257",
   "cover_og_url": "/cover/10845/og?v=1795438257",
+  "has_cover": false,
   "url": "/book/konfigurasi-squidguard-onno-widodo-purbo/",
   "rating": null,
   "comment": "Konfigurasi Default SquidGuard ada di /etc/squidGuard/squidGuard.conf Konfigurasi yang paling sederhana hanya satu kategori, satu aturan untuk semua. dbhome /var/lib/squidguard/db logdir /var/log/squidguard dest porn { domainlist porn/domains urllist porn/urls } acl { default { pass !porn all redirect http://localhost/block.html } } Jika kita memilih lebih dari satu kategori untuk di blok dapat",

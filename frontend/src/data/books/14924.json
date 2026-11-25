@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14924?v=1795452433",
   "cover_og_url": "/cover/14924/og?v=1795452433",
+  "has_cover": false,
   "url": "/book/mqtt-android-client-encryption-onno-widodo-purbo/",
   "rating": null,
   "comment": "Creating an SSL/TLS Android MQTT Client Photo by cottonbro from Pexels In this guide, we will be creating an Android MQTT client application that can send and receive messages to and from an Eclipse Mosquitto broker. It also assumes you already have a self-signed CA certificate and the corresponding files. Note that when you generate keys to work with MQTT, you shouldn't use encryption (the -ds3",

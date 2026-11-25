@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14280?v=1795449298",
   "cover_og_url": "/cover/14280/og?v=1795449298",
+  "has_cover": false,
   "url": "/book/iwconfig-akses-dengan-wpa-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant Contents 1 Lakukan rfkill 2 Cek WiFi 3 Set wpa_supplicant 4 Connect 5 Referensi Lakukan rfkill apt -y install rfkill rfkill list pastikan tidak ada interface wifi yang di block # sudo systemctl stop NetworkManager Cek WiFi iwconfig Jika di perlukan untuk up sudo ifconfig wlp2s0 up Scan sudo iwlist wlp2s0 scan |",

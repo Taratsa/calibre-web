@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16029?v=1795458329",
   "cover_og_url": "/cover/16029/og?v=1795458329",
+  "has_cover": false,
   "url": "/book/forensic-nmap-smb-enum-users-nse-attack-onno-widodo-purbo/",
   "rating": null,
   "comment": "Nmap smb-enum-users.nse adalah sebuah skrip yang digunakan untuk melakukan enumerasi pengguna pada sistem Windows yang memiliki layanan SMB (Server Message Block) aktif. Skrip ini memanfaatkan dua metode utama: SAMR enumeration: Metode ini lebih halus dan membutuhkan lebih sedikit paket untuk setiap akun pengguna. Namun, informasi yang didapatkan mungkin tidak selengkap metode LSA. LSA",

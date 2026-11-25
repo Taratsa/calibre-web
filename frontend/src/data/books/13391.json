@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13391?v=1795445801",
   "cover_og_url": "/cover/13391/og?v=1795445801",
+  "has_cover": false,
   "url": "/book/esp32-analogread-onno-widodo-purbo/",
   "rating": null,
   "comment": "void setup() { Serial.begin(115200); } void loop() { int sensorReading = analogRead(4); // connect ke D4 Serial.println(sensorReading); delay(1000); } // nilai max 4096 Pranala Menarik ESP32",

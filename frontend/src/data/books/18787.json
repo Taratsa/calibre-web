@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18787?v=1795470049",
   "cover_og_url": "/cover/18787/og?v=1795470049",
+  "has_cover": false,
   "url": "/book/raid-menambahkan-filesystem-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mungkinkan menambahkan RAID-5 ? Jawabannya sangat sederhana - TIDAK BISA . Memang kita tidak dapat secara langsung menambahkan harddisk ke RAID-5 , tetapi kita cukup beruntung karena Linux DAPAT menambahkan harddisk pada Logical Volume yang ada dan mengexpansi filesystem ext3 di atas-nya. Itu adalah alasan utama mengapa kita menjalankan LVM di atas RAID . Sebelum kita melakukan expansi harddisk",

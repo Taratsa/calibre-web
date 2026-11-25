@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19475?v=1795473493",
   "cover_og_url": "/cover/19475/og?v=1795473493",
+  "has_cover": false,
   "url": "/book/backtrack-upgrade-ke-versi-terbaru-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mengupdate Backtrack ke versi terbaru, masuk ke console lalu ketikkan perintah di bawah ini. 1. buka /etc/sources.list - tambahin 1 baris deb http://sun.backtrack-linux.org pwnsauce main microverse macroverse multiverse universe restricted 2. ketik perintah # apt-get update 3. lalu baru install # apt-get install backtrack-dragon 4. upgrade backtrack dengan perintah # dragon 5. pilih upgrade",

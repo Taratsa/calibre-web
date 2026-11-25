@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13495?v=1795446159",
   "cover_og_url": "/cover/13495/og?v=1795446159",
+  "has_cover": false,
   "url": "/book/gnuradio-direct-sampling-untuk-monitoring-hf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.rtl-sdr.com/rtl-sdr-blog-v-3-dongles-user-guide/ Other software like HDSDR and GQRX can also support direct sampling. It may entail setting a device string, and for the Q-branch, the value should be 2 (or sometimes 3). In GQRX the device string would be \"rtl=0,direct_samp=2\" (without the quotes). In some installs that use different drivers it may be \"rtl=0,direct_samp=3\"",

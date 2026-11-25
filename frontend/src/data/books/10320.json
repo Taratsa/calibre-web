@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10320?v=1795436723",
   "cover_og_url": "/cover/10320/og?v=1795436723",
+  "has_cover": false,
   "url": "/book/node-js-simple-web-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "An example: Webserver This simple web server written in Node responds with \"Hello World\" for every request. var http = require('http'); http.createServer(function (req, res) { res.writeHead(200, {'Content-Type': 'text/plain'}); res.end('Hello World\\n'); }).listen(1337, '127.0.0.1'); console.log('Server running at http://127.0.0.1:1337/' ); To run the server, put the code into a file example.js",

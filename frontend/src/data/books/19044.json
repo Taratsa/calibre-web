@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19044?v=1795471380",
   "cover_og_url": "/cover/19044/og?v=1795471380",
+  "has_cover": false,
   "url": "/book/voip-cookbook-transaction-oriented-test-using-sipp-onno-widodo-purbo/",
   "rating": null,
   "comment": "In this example, we assume the IP address of the softswitch is 192.168.0.3. Firstly, we need to setup the configuration file /usr/local/etc/opensips/cfg-test-uas.cfg at the server side. The list of cfg-test-uas.cfg is in the Appendix. Test the opensips configuration file, it can be done via, # opensips -c -f /usr/local/etc/opensips/cfg-test-uas.cfg If no error, we can run the server using #",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15077?v=1795453041",
   "cover_og_url": "/cover/15077/og?v=1795453041",
+  "has_cover": false,
   "url": "/book/android-sending-sms-onno-widodo-purbo/",
   "rating": null,
   "comment": "In Android, you can use SmsManager API or devices Built-in SMS application to send SMS's. In this tutorial, we shows you two basic examples to send SMS message − SmsManager API SmsManager smsManager = SmsManager.getDefault(); smsManager.sendTextMessage(\"phoneNo\", null, \"sms message\", null, null); Built-in SMS application Intent sendIntent = new Intent(Intent.ACTION_VIEW);",

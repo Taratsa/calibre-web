@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11251?v=1795439425",
   "cover_og_url": "/cover/11251/og?v=1795439425",
+  "has_cover": false,
   "url": "/book/arduino-rotary-encoder-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include  Rotary r = Rotary(2, 3); void setup() { Serial.begin(9600); PCICR |= (1 &lt;&lt; PCIE2); PCMSK2 |= (1 &lt;&lt; PCINT18) | (1 &lt;&lt; PCINT19); sei(); } void loop() { } ISR(PCINT2_vect) { unsigned char result = r.process(); if (result) { Serial.println(result == DIR_CW ? \"Right\" : \"Left\"); } }",

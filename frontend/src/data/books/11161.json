@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11161?v=1795439174",
   "cover_og_url": "/cover/11161/og?v=1795439174",
+  "has_cover": false,
   "url": "/book/arduino-rtc-ds3231-unix-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // DS3231_UnixTime (C)2014 Henning Karlsen // web: http://electronics.henningkarlsen.com/ // // A quick demo of how to use my DS3231-library to // convert date and time to UnixTime // // To use the hardware I2C (TWI) interface of the Arduino you must connect // the pins as follows: // // Arduino Uno/2009: // ---------------------- // DS3231: SDA pin -&gt; Arduino Analog 4 or the dedicated SDA",

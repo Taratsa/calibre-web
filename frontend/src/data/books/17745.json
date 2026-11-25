@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/17745?v=1795466168",
   "cover_og_url": "/cover/17745/og?v=1795466168",
+  "has_cover": false,
   "url": "/book/instalasi-dhcp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "DHCP Server berfungsi untuk memberikan IP address secara automatis ke mesin-mesin di Jaringan LAN . Tentunya mesin / client di LAN tersebut harus di set agar dapat menerima alokasi IP address secara automatic. Contents 1 Instalasi 2 Konfigurasi 3 Restart 4 DHCP Server Dengan Beberapa LAN Card 5 Pranala Menarik Instalasi Instalasi DHCP Server di Ubuntu sudo apt-get install isc-dhcp-server Dalam",

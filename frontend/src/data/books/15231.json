@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15231?v=1795453776",
   "cover_og_url": "/cover/15231/og?v=1795453776",
+  "has_cover": false,
   "url": "/book/open5gs-allow-webui-access-from-network-onno-widodo-purbo/",
   "rating": null,
   "comment": "Agar WebUI bisa di akses dengan mudah dari jaringan. Edit file open5gs-webui.service, nano /lib/systemd/system/open5gs-webui.service Tambah atau edit seperti dibawah ini, setelah itu simpan file Environment=HOSTNAME=0.0.0.0 Environment=PORT=8080 Kemudian restrart open5gs-webui sudo systemctl daemon-reload sudo systemctl restart open5gs-webui Pranala Menarik 5G",

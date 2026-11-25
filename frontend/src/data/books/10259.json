@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10259?v=1795436534",
   "cover_og_url": "/cover/10259/og?v=1795436534",
+  "has_cover": false,
   "url": "/book/nginx-konfigurasi-rtmp-dengan-hls-dan-dash-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mendukung HLS &amp; Dash, kita perlu mengubah sedikit konfigurasi nginx.conf vi /usr/local/nginx/conf/nginx.conf ubah agar http { server { listen 80; location /hls { # Serve HLS fragments types { application/vnd.apple.mpegurl m3u8; video/mp2t ts; } root /tmp; add_header Cache-Control no-cache; } location /dash { # Serve DASH fragments root /tmp; add_header Cache-Control no-cache; } } } Kita",

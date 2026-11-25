@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20101?v=1795476166",
   "cover_og_url": "/cover/20101/og?v=1795476166",
+  "has_cover": false,
   "url": "/book/x11-forwarding-di-ssh-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk bisa forwarding X11 saat kita melakukan SSH dapat menggunakan perintah ssh -X -C username@hostname -X agar bisa forwarding traffic X11 (GUI) -C agar bisa melakukan kompresi lakukan test menggunakan simple program seperti xclock Pranala Menarik Linux Howto",

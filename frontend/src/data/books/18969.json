@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18969?v=1795471065",
   "cover_og_url": "/cover/18969/og?v=1795471065",
+  "has_cover": false,
   "url": "/book/voip-cookbook-setup-bind-for-enum-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "For example, we are assigned for +625XXXX. We need to edit, /etc/bind/named.conf.local Entry for domain 5.2.6.e164.id zone \"5.2.6.e164.id\" IN { type master; file \"/etc/bind/5.2.6.e164.id.db\"; }; All subscriber numbers must be listed in /etc/bind/5.2.6.e164.id.db. An example of the DNS file of /etc/bind/5.2.6.e164.id.db is as follows, $TTL 86400 @ IN SOA ns.warnet.co.id admin.warnet.co.id. ( 42 ;",

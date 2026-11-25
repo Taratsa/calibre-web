@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9774?v=1795434838",
   "cover_og_url": "/cover/9774/og?v=1795434838",
+  "has_cover": false,
   "url": "/book/ipv6-kernel-ipv6-entri-di-proc-net-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di /proc/net ada beberapa entri yang sifatnya read-only. Entri ini tidak bisa di baca mnggunakan \"sysctl\", oleh karenanya gunakan \"cat\". Contents 1 if_inet6 2 ipv6_route 3 sockstat6 4 tcp6 5 udp6 6 igmp6 7 raw6 8 ip6_flowlabel 9 rt6_stats 10 snmp6 11 ip6_tables_names if_inet6 Type: Satu line per address berisi beberapa nilai Disini semua address IPv6 yang di konfigurasi di simpan dalam format",

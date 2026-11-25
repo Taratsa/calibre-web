@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11900?v=1795441036",
   "cover_og_url": "/cover/11900/og?v=1795441036",
+  "has_cover": false,
   "url": "/book/orange-bag-of-words-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: http://orange3-text.readthedocs.io/en/latest/widgets/bagofwords.html Workflow berikut memperlihatkan proses klasifikasi dokumen. Kita dapat menggunakan beberapa contoh yang ada di widget Corpus, seperti book-excerpt.tab. Untuk memudahkan proses klasifikasi, semua kata penghubung, tanda baca dibuang menggunakan widget Preprocess Text. Keluaran dari widget Preprocess Text dimasukan ke",
@@ -62,7 +63,7 @@
       ],
       [
         11891,
-        0.53
+        0.54
       ],
       [
         13560,

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9757?v=1795434783",
   "cover_og_url": "/cover/9757/og?v=1795434783",
+  "has_cover": false,
   "url": "/book/ipv6-route-menambahkan-ipv6-route-melalui-sebuah-gateway-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika dibutuhkan untuk menjangkau jaringan di luar dengan IPv6 melalui router yang IPv6-enabled Menggunakan \"ip\" Penggunaan # /sbin/ip -6 route add / via  [dev ] Contoh # /sbin/ip -6 route add 2000::/3 via 2001:0db8:0:f101::1 Menggunakan \"route\" Penggunaan # /sbin/route -A inet6 add / gw  [dev ] Device",

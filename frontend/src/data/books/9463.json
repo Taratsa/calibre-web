@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9463?v=1795432953",
   "cover_og_url": "/cover/9463/og?v=1795432953",
+  "has_cover": false,
   "url": "/book/squid-block-berdasarkan-waktu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://andrecht.wordpress.com/2009/07/30/blocking-akses-internet-berdasar-waktu-dengan-squid/ skenario: akses website tertentu dilarang pada jam kerja. dengan kata lain antara jam 8.30 - 12.00 dan jam 13.30 - 17.00. selain jam tersebut bebas. edit file vi /etc/squid/squid.conf tambahkan parameter ACL sebagai berikut: buat daftar situs yang akan diblok di file /etc/squid/social.network",

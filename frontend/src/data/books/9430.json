@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9430?v=1795432848",
   "cover_og_url": "/cover/9430/og?v=1795432848",
+  "has_cover": false,
   "url": "/book/openwrt-build-firmware-mikrotik-rb433-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: ini akan membutuhkan banyak akses ke Internet untuk download, termasuk waktu proses make. Termasuk download kernel linux, waktu compile toolchain :( ... Tampaknya tidak bisa OFFLINE :( Dalam contoh ini akan di perlihatkan cara compile firmware Mikrotik RB433 untuk keperluah MESH dengan OLSRD. oleh karenanya membutuhkan aplikasi seperti luci olsrd freifunk Pastikan Target System AR71xx",

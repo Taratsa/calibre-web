@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/17323?v=1795464924",
   "cover_og_url": "/cover/17323/og?v=1795464924",
+  "has_cover": false,
   "url": "/book/konversi-video-ke-gambar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kadang kala kita ingin mengambil foto atau gambar dari sebuah video atau membuat video dari kumpulan gambar melalui perintah, $ ffmpeg -i foo.avi -r 1 -s WxH -f image2 foo-%03d.jpeg Perintah di atas akan mengextract satu video frame per detik menjadi gambar dengan nama `foo-001.jpeg', `foo-002.jpeg', dst. Gambar adalah di buat dengan ukuran WxH. Jika anda hanya ingin mengambil beberapa frame",

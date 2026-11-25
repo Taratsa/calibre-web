@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16835?v=1795463401",
   "cover_og_url": "/cover/16835/og?v=1795463401",
+  "has_cover": false,
   "url": "/book/comfyui-text-to-speech-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut catatan instalasi yang telah dibersihkan dari langkah percobaan yang tidak diperlukan. Prosedur ini khusus untuk konfigurasi server Anda. Instalasi ComfyUI EdgeTTS Bahasa Indonesia di Docker 1. Tujuan Menambahkan kemampuan *text-to-speech* Bahasa Indonesia pada ComfyUI menggunakan custom node `ComfyUI-EdgeTTS`. Workflow yang digunakan terdiri dari: ```text EdgeTTS → SaveAudio ```",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19903?v=1795475492",
   "cover_og_url": "/cover/19903/og?v=1795475492",
+  "has_cover": false,
   "url": "/book/ubuntu-enterprise-cloud-mendaftarkan-secara-manual-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Mendaftarkan kernel image 2 Mendaftarkan ramdisk image 3 Mendaftarkan disk image 4 Pranala Menarik Mendaftarkan kernel image Jalankan perintah berikut dari salah satu komputer client untuk mem-bundel dan mendaftarkan kernel image (karmic-server-uec-i386-vmlinuz-virtual) . ~/.euca/eucarc source ~/.euca/eucarc euca-bundle-image -i karmic-server-uec-i386-vmlinuz-virtual -r i386 --kernel",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19230?v=1795472266",
   "cover_og_url": "/cover/19230/og?v=1795472266",
+  "has_cover": false,
   "url": "/book/menjalankan-winbox-exe-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk dapat menjalankan winbox.exe di Linux , kita harus menginstalasi wine (Windows Emulator). Di Ubuntu caranya apt-get install wine Ambil winbox.exe dari http://www.mikrotik.co.id/download.php Menjalankan winbox.exe dari shell biasa $ wine winbox $ wine winbox.exe $ wine winbox-2.2.15.exe Tampilan Saat Winbox di aktifkan &amp; login Referensi http://www.mikrotik.co.id/download.php",

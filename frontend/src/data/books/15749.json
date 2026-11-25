@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15749?v=1795456605",
   "cover_og_url": "/cover/15749/og?v=1795456605",
+  "has_cover": false,
   "url": "/book/ipv6-dynamic-tunnel-isatap-onno-widodo-purbo/",
   "rating": null,
   "comment": "WARNING: MIKROTIK tampaknya belum / tidak ada support untuk ISATAP. Berikut adalah usaha untuk mentest ISATAP tapi gagal total. R1, /interface ethernet set ether1 disabled=no /interface ethernet set ether2 disabled=no /interface ethernet set ether3 disabled=no /ip address add address=12.12.12.1/24 interface=ether1 /ip address add address=13.13.13.1/24 interface=ether2 /ip address add",

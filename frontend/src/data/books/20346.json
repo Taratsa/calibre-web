@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20346?v=1795476955",
   "cover_og_url": "/cover/20346/og?v=1795476955",
+  "has_cover": false,
   "url": "/book/red5-benchmarking-dan-testing-onno-widodo-purbo/",
   "rating": null,
   "comment": "Red5Bench is a custom JMeter http://jakarta.apache.org/jmeter/ benchmark tool which will be able to profile and mimick multiple concurrent streams and connections to the Red5 server. It uses an extended RTMPClient which produces custom callback methods for wrapping resultRecieved, wraps to extend the send params, aswell as implementing RTMPTClient.",

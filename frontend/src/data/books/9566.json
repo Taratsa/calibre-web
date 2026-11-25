@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9566?v=1795433297",
   "cover_og_url": "/cover/9566/og?v=1795433297",
+  "has_cover": false,
   "url": "/book/diff-untuk-membandingkan-file-atau-folder-onno-widodo-purbo/",
   "rating": null,
   "comment": "Compare Directories using Diff in Linux To compare 2 files, we use the diff command. How do we compare 2 directories? Specifically, we want to know what files/subdirectories are common, what are only in 1 directory but not the other. Unix old-timers may remember the dircmp command. Alas, that command is not available in Linux. In Linux, we use the same diff command to compare directories as well",

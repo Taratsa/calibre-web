@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19407?v=1795473142",
   "cover_og_url": "/cover/19407/og?v=1795473142",
+  "has_cover": false,
   "url": "/book/instalasi-suricata-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Siapkan Aplikasi Pendukung 2 Download htp 3 Download suricata 4 Referensi 5 Pranala Menarik Siapkan Aplikasi Pendukung Siapkan berbagai aplikasi pendukung sebelum menginstalasi suricata sudo apt-get -y install libpcre3 libpcre3-dbg libpcre3-dev \\ build-essential autoconf automake libtool libpcap-dev libnet1-dev \\ libyaml-0-2 libyaml-dev zlib1g zlib1g-dev libcap-ng-dev libcap-ng0 \\ make",

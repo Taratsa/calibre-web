@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11170?v=1795439204",
   "cover_og_url": "/cover/11170/og?v=1795439204",
+  "has_cover": false,
   "url": "/book/apache-error-could-not-reliably-determine-the-server-s-fully-qualified-domain-name-onno-widodo-purbo/",
   "rating": null,
   "comment": "Saat /etc/init.d/apache2 restart Keluar * Restarting web server apache2 Dan keluar ERROR : AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message Yang perlu di edit /etc/apache2/apache2.conf Tambahkan di paling bawah ServerName namaserveranda.com",

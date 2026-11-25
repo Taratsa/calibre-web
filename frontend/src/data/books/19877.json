@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19877?v=1795475401",
   "cover_og_url": "/cover/19877/og?v=1795475401",
+  "has_cover": false,
   "url": "/book/uec-tidak-bisa-ssh-ke-instance-onno-widodo-purbo/",
   "rating": null,
   "comment": "Jika saat kita berusaha melakukan SSH ke Instance keluar error Warning: Identity file mykey.priv not accessible: No such file or directory. Maka ada tiga (3) kemungkinan Belum dibuat ijin akses SSH ke Instance Anda belum membuat pasangan kunci. Anda belum masuk ke folder ~/.euca Contents 1 Membuat Pasangan Kunci 2 Membuat ijin akses SSH ke Instance 3 Masuk ke folder ~/.ueca sebelum akses SSH 4",

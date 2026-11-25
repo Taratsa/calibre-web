@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11622?v=1795440341",
   "cover_og_url": "/cover/11622/og?v=1795440341",
+  "has_cover": false,
   "url": "/book/modsecurity-write-rules-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://support.kemptechnologies.com/hc/en-us/articles/209635223-How-to-write-a-WAF-rule-Modsecurity-Rule-Writing The ModSecurity Reference Manual should be consulted in any cases where questions arise relating to the syntax of commands: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual In terms of rule writing, the main directive to know is SecRule, which is used to create",

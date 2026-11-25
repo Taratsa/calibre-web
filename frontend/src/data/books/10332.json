@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10332?v=1795436758",
   "cover_og_url": "/cover/10332/og?v=1795436758",
+  "has_cover": false,
   "url": "/book/sqlmap-contoh-cara-remote-hack-database-onno-widodo-purbo/",
   "rating": null,
   "comment": "Misalnya, kita memperoleh URL yang vulnerable adalah, http://localhost/weak.php?id=10 dimana parameter id tidak escape secara benar di code php dan vulner sql injection. Perintah untuk me-list semua database yang ada di server tersebut adalah, $ python ./sqlmap.py -u \" http://localhost/weak.php?id=10 \" --dbs Kemudian gunakan opsi -T --columns dan --dump untuk melihat table yang ada di sebuah",

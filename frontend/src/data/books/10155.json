@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10155?v=1795436198",
   "cover_og_url": "/cover/10155/og?v=1795436198",
+  "has_cover": false,
   "url": "/book/aprs-setup-console-terminal-komunikasi-serial-di-linux-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Aplikasi screen sudo apt-get install screen Parameter serial untuk TNC biasanya Baud Rate: 19200 Data: 8-bit Parity: None Stop: 1-bit Flow Control: None Jalankan dmesg Jika USB serial baru di colok di bagian bawah akan tampak kira-kira usb 3-1: new full-speed USB device number 2 using uhci_hcd usb 3-1: New USB device found, idVendor=067b, idProduct=2303 usb 3-1: New USB device strings:",

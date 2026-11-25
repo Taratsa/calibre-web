@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17066?v=1795464039",
   "cover_og_url": "/cover/17066/og?v=1795464039",
+  "has_cover": false,
   "url": "/book/membuat-installan-ubuntu-remix-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download image ubuntu remix ke harddisk buka terminal &amp; masukan USB flashdisk lihat dmesg untuk melihat nomor device dari USB flashdisk format USB flashdisk # mkfs /dev/sdX1 Lakukan # dd if=ubuntu-netbook-remix.img of=/dev/sdX1 bs=1M Pranala Menarik Linux Howto",

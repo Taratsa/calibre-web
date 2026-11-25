@@ -44,6 +44,7 @@
   ],
   "cover_url": "/cover_thumb/17971?v=1795466955",
   "cover_og_url": "/cover/17971/og?v=1795466955",
+  "has_cover": false,
   "url": "/book/orarinux-ubah-file-etc-apt-sources-list-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Ubah sources.list 2 /etc/apt/sources.list.untuk-web-ke-mesin-01 3 Jika sudah di siapkan 4 Update repository 5 Pranala Menarik Ubah sources.list Kadangkala kita perlu mengubah isi sources.list agar menggunakan repository lokal di harddisk &amp; jaringan yang kita managed.Ubah file sources.list dalam lingkungan chroot cp /etc/apt/sources.list /etc/apt/sources.list.original vi",
@@ -56,7 +57,7 @@
   ],
   "text": {
     "words": 228,
-    "longer_than": 26,
+    "longer_than": 25,
     "top": [
       [
         "list",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14251?v=1795449206",
   "cover_og_url": "/cover/14251/og?v=1795449206",
+  "has_cover": false,
   "url": "/book/ols-instalasi-joomla-openlitespeed-php7-mariadb-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instalasi OpenLiteSpeed 2 Instalasi Joomla 3 Setup Database 4 Akses Joomla Instalasi OpenLiteSpeed OLS: instalasi Instalasi Joomla apt -y install unzip cd /usr/local/src wget https://downloads.joomla.org/cms/joomla3/3-9-23/Joomla_3-9-23-Stable-Full_Package.zip mkdir /usr/local/lsws/Example/html/joomla cp Joomla_3-9-23-Stable-Full_Package.zip /usr/local/lsws/Example/html/joomla/ cd",

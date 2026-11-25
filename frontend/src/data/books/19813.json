@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/19813?v=1795475107",
   "cover_og_url": "/cover/19813/og?v=1795475107",
+  "has_cover": false,
   "url": "/book/konfigurasi-modem-gee-onno-widodo-purbo/",
   "rating": null,
   "comment": "kebetulan pake flexi lumayan kenceng..ni settingan wvdialnya [Dialer flexi] Init1 = ATZ Init2 = ATQ0 V1 E1 S0=0 &amp;C1 &amp;D2 +FCLASS=0 Init3 = AT+CRM=1 Username = telkomnet@flexi Password = telkom Phone = #777 Idle Seconds = 300 Modem Type = Analog Modem Stupid Mode = 1 Compuserve = 0 Baud = 9600 New PPPD = Yes Dial Command = ATDT Modem = /dev/ttyUSB0 ISDN = 0 Carrier Check = no FlowControl = CRTSCTS",

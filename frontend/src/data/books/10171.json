@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10171?v=1795436252",
   "cover_og_url": "/cover/10171/og?v=1795436252",
+  "has_cover": false,
   "url": "/book/proxmox-3-0-replikasi-mesin-onno-widodo-purbo/",
   "rating": null,
   "comment": "Replikasi mesin virtual dapat dilakukan menggunakan Copy Backup Para proxmox pertama Buat storage untuk backup, misalnya di /var/backup/ Backup masing-masing mesin virtual Buat mesin proxmox ke dua Buat storage untuk backup, misalnya di /var/backup ssh ke mesin proxmox ke dua copy scp -r root@proxmoxpertama:/var/backup/* /var/backup Akses Web proxmox ke dua Masuk ke menu backup Restore",

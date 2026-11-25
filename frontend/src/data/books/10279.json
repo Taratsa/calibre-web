@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10279?v=1795436596",
   "cover_og_url": "/cover/10279/og?v=1795436596",
+  "has_cover": false,
   "url": "/book/rom-android-porting-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Beberapa tip untuk porting CyanogenMod ke device lain 2 Kebutuhan 3 Kumpulkan informasi tentang device kita 3.1 Lihat pada device /system/build.prop 3.2 Pelajari boot.img dan recovery.img 3.3 Kumpulkan source code yang tersedia 3.4 Meneliti struktur partisi 4 Set up tiga directory baru 4.1 Method 1: Menggunakan script mkvendor.sh untuk membuat file 4.2 Method 2: Fork dari device yang",

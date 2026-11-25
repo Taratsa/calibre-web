@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12234?v=1795441979",
   "cover_og_url": "/cover/12234/og?v=1795441979",
+  "has_cover": false,
   "url": "/book/arduino-rtc-ds1302-ntp-sync-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // time ntp RTC DS1302 set #include  #include  #include  #include  #include  // Init the DS1302 // DS1302 rtc([CE/RST], [I/O], [CLOCK]); DS1302 rtc(8, 7, 6); // Ethernet library configuration byte mac[] = { 0x24, 0x7B, 0xA2, 0x4A, 0x52, 0x10 }; IPAddress timeServer(128, 138, 140, 44 ); // time.nist.gov unsigned int localPort = 8888; const",

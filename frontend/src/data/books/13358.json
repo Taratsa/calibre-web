@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13358?v=1795445690",
   "cover_og_url": "/cover/13358/og?v=1795445690",
+  "has_cover": false,
   "url": "/book/wemos-ntp-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* NTP-TZ-DST NetWork Time Protocol - Time Zone - Daylight Saving Time This example shows how to read and set time, and how to use NTP (set NTP0_OR_LOCAL1 to 0 below) or an external RTC (set NTP0_OR_LOCAL1 to 1 below) TZ and DST below have to be manually set according to your local settings. This example code is in the public domain. */ #include  #include  // time() ctime()",

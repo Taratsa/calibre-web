@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10185?v=1795436297",
   "cover_og_url": "/cover/10185/og?v=1795436297",
+  "has_cover": false,
   "url": "/book/ffmpeg-streaming-server-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.organicdesign.co.nz/Simple_video_streaming_with_ffserver Dalam contoh ini kita menggunakan Logitech QuickCam Express web camera untuk men-stream video ke halaman web menggunakan ffserver ffserver adalah bagian dari paket ffmpeg. apt-get -y install ffmpeg ffserver akan membuat soket network yang akan tersedia bagi mesin client untuk melihat video. Jika dijalankan, kita dapat",

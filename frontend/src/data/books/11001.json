@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11001?v=1795438729",
   "cover_og_url": "/cover/11001/og?v=1795438729",
+  "has_cover": false,
   "url": "/book/python-email-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.python.org/2/library/email-examples.html Here are a few examples of how to use the email package to read, write, and send simple email messages, as well as more complex MIME messages. First, let's see how to create and send a simple text message: # Import smtplib for the actual sending function import smtplib # Import the email modules we'll need from email.mime.text import",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1449,
-    "longer_than": 56,
+    "longer_than": 55,
     "top": [
       [
         "email",

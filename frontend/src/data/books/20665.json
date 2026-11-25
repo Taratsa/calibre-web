@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20665?v=1795477850",
   "cover_og_url": "/cover/20665/og?v=1795477850",
+  "has_cover": false,
   "url": "/book/tar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Membackup Isi Folder 2 Melihat Isi tar 3 Membuka Isi tar 4 Menggunakan Kompresi 5 Referensi 6 Pranala Menarik Membackup Isi Folder Pindah ke directory tempat file-file yang akan di backup berada. Kemudian ketik: $ tar cvf backup.tar . Misalnya akan keluar ./ picture.jpg doucment.doc database.db tar: backup.tar is the archive; not dumped Catatan: c=create (an archive) v=verbose (just",

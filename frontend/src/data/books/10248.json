@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10248?v=1795436500",
   "cover_og_url": "/cover/10248/og?v=1795436500",
+  "has_cover": false,
   "url": "/book/ffmpeg-encoder-rtmp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://cyberlearning.web.id/moodle/mod/page/view.php?id=251 Untuk proses encoder RTMP dengan menggunakan FFMPEG cukup mudah: SUMBER VIDEO DAN AUDIO ( KAMERA DAN MIC ) Untuk meng encoder Video Audio yang bersumber dari Device Video ( Kamera ) dan Audio ( Mic Sound Card ) dengan menggunakan aplikasi FFMPEG di Linux adalah dengan perintah ffmpeg -f v4l2 -i /dev/video0 -f alsa -i hw0,0",

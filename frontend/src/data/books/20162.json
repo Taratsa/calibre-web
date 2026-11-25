@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20162?v=1795476422",
   "cover_og_url": "/cover/20162/og?v=1795476422",
+  "has_cover": false,
   "url": "/book/ushare-onno-widodo-purbo/",
   "rating": null,
   "comment": "Naga-naganya gmediaserver lebih banyak untuk streaming audio / lagu saja. Kita perlu menset / memastikan bahwa router yang ada siap untuk UPnP message. Kita dapat menggunakan setup manual seperti route add -net 239.0.0.0 netmask 255.0.0.0 eth0 Instalasi ushare menggunakan perintah apt-get install ushare uShare jalan melalui konsol. Cara menjalankan uShare dapat di ketahui melalui option --help",

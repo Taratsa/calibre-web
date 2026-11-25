@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11392?v=1795439766",
   "cover_og_url": "/cover/11392/og?v=1795439766",
+  "has_cover": false,
   "url": "/book/python-python-twitter-view-status-py-onno-widodo-purbo/",
   "rating": null,
   "comment": "from __future__ import print_function import twitter CONSUMER_KEY = ' ' CONSUMER_SECRET = ' ' ACCESS_TOKEN = ' ' ACCESS_TOKEN_SECRET = ' ' # Create an Api instance. api = twitter.Api(consumer_key=CONSUMER_KEY, consumer_secret=CONSUMER_SECRET, access_token_key=ACCESS_TOKEN, access_token_secret=ACCESS_TOKEN_SECRET) user = 90134078 # ganti dengan ID twitter yang anda inginkan statuses =",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10781?v=1795438097",
   "cover_og_url": "/cover/10781/og?v=1795438097",
+  "has_cover": false,
   "url": "/book/php-memanggil-python-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://stackoverflow.com/questions/166944/calling-python-in-php Contoh 1 You can run a python script via php, and outputs on browser. Basically you have to call the python script this way: $command = \"python /path/to/python_script.py 2&gt;&amp;1\"; $pid = popen( $command,\"r\"); while( !feof( $pid ) ) { echo fread($pid, 256); flush(); ob_flush(); usleep(100000); } pclose($pid); Note: if you run any",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13466?v=1795446048",
   "cover_og_url": "/cover/13466/og?v=1795446048",
+  "has_cover": false,
   "url": "/book/r-tidytext-sentiment-wordcloud-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/02-sentiment-analysis.Rmd library(RColorBrewer) library(wordcloud) tidy_books %&gt;% anti_join(stop_words) %&gt;% count(word) %&gt;% with(wordcloud(word, n, max.words = 100)) # In other functions, such as `comparison.cloud()`, you may need to turn the data frame # into a matrix with reshape2's `acast()`. Let's do the sentiment analysis # to tag",

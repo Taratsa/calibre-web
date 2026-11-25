@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17731?v=1795466124",
   "cover_og_url": "/cover/17731/og?v=1795466124",
+  "has_cover": false,
   "url": "/book/smeonffline-instalasi-dansguardian-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi # su - # apt-get install dansguardian # freshclam Edit Konfigurasi Edit # vi /etc/dansguardian/dansguardian.conf Ubah # UNCONFIGURED - Please remove this line after configuration # accessdeniedaddress = ' http://YOURSERVER.YOURDOMAIN/cgi-bin/dansguardian.pl' accessdeniedaddress = ' http://192.168.0.254/cgi-bin/dansguardian.pl' Restart # /etc/init.d/dansguardian restart Pranala Menarik",

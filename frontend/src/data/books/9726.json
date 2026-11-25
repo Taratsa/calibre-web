@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9726?v=1795434663",
   "cover_og_url": "/cover/9726/og?v=1795434663",
+  "has_cover": false,
   "url": "/book/openwrt-setup-wifi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Setup Wireless Masuk ke Administration &gt; Network &gt; Wifi Masuk ke Wireless Overview &gt; Edit Lakukan Wireless network is disable &gt; Enable Channel &gt; pilih channel yang anda suka Transmit Power &gt; pilih max 20 dBm agar awet ESSID &gt; pilih yang anda suka Mode &gt; Access Point Network &gt; LAN Jika Wifi ingin berada pada jaringan yang berbeda dengan LAN lakukan Network &gt; WIFI (misalnya) Setup Interface",
@@ -116,11 +117,11 @@
         3
       ],
       [
-        "pilih",
+        "lan",
         3
       ],
       [
-        "lan",
+        "pilih",
         3
       ],
       [

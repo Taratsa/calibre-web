@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16588?v=1795461758",
   "cover_og_url": "/cover/16588/og?v=1795461758",
+  "has_cover": false,
   "url": "/book/slm-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut adalah contoh implementasi Small Language Model (SLM) di Ubuntu 24.04, menggunakan LLaMA.cpp dan model Phi-2 (Microsoft) atau Mistral 7B (quantized) yang bisa dijalankan secara lokal tanpa GPU besar: Contents 1 Langkah-langkah Implementasi SLM di Ubuntu 24.04 (Tanpa GPU) 1.1 1. Siapkan Dependensi 1.2 2. Clone dan Build `llama.cpp` 1.3 3. Unduh Model SLM (Contoh: Mistral 7B GGUF) 1.4 4.",

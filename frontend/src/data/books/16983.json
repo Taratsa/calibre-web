@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16983?v=1795463809",
   "cover_og_url": "/cover/16983/og?v=1795463809",
+  "has_cover": false,
   "url": "/book/menggunakan-mount-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Mount File ISO 2 Mount Folder ke Folder lain 3 Mount Folder di Mesin Lain ke Folder Lokal 4 Pranala Menarik Mount File ISO # mkdir /folder/tujuan # mount -t iso9660 -o loop /tempat/file/file.iso /folder/tujuan Mount Folder ke Folder lain # mkdir /folder/tujuan # mount --bind /folder/asal /folder/tujuan Mount Folder di Mesin Lain ke Folder Lokal # mkdir /folder/lokal # mount -t cifs",

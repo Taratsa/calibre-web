@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16661?v=1795462358",
   "cover_og_url": "/cover/16661/og?v=1795462358",
+  "has_cover": false,
   "url": "/book/arduino-instalasi-di-ubuntu-24-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Guide/Linux Install sudo apt update sudo apt -y install libxtst6 libcanberra-gtk3-module libfuse2t64 Download arduino zip https://www.arduino.cc/en/Main/Software download arduino-ide_2.3.10_Linux_64bit.zip Sebagai end-user / user biasa, lakukan extract &amp; install sudo mv arduino-ide_2.3.10_Linux_64bit.zip /usr/local/src/ cd /usr/local/src sudo chmod -Rf 777",
@@ -128,12 +129,12 @@
         7
       ],
       [
-        "chmod",
-        5
-      ],
-      [
         "linux",
         9
+      ],
+      [
+        "chmod",
+        5
       ],
       [
         "zip",

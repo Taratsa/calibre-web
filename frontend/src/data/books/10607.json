@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10607?v=1795437614",
   "cover_og_url": "/cover/10607/og?v=1795437614",
+  "has_cover": false,
   "url": "/book/mysqlstap-tutorial-dasar-onno-widodo-purbo/",
   "rating": null,
   "comment": "Perintah dasar mysqlslap --user=USERNAME --PASSWORD --host=localhost/IP ADDRESS --auto-generate-sql --verbose Menambahkan concurrency dan iterations mysqlslap --user=USERNAME --PASSWORD --host=localhost --concurrency=40 --iterations=20 --auto-generate-sql --verbose Contoh perintah ke database wordpress mysqlslap --user=root --password --host=localhost --concurrency=40 --iterations=10",

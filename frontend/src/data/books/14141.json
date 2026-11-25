@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14141?v=1795448755",
   "cover_og_url": "/cover/14141/og?v=1795448755",
+  "has_cover": false,
   "url": "/book/qemu-emulasi-android-onno-widodo-purbo/",
   "rating": null,
   "comment": "Now you'll need to create pflash volumes for UEFI. Two volumes are required, one static one for the UEFI firmware, and another dynamic one to store variables. Both need to be exactly 64M in size. dd if=/dev/zero of=flash0.img bs=1M count=64 dd if=/usr/share/qemu-efi/QEMU_EFI.fd of=flash0.img conv=notrunc dd if=/dev/zero of=flash1.img bs=1M count=64 For emulated VMs (e.g. x86 host) sudo",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16821?v=1795463342",
   "cover_og_url": "/cover/16821/og?v=1795463342",
+  "has_cover": false,
   "url": "/book/roundcube-ubuntu-26-04-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut setup Roundcube + SMTP + IMAP + POP3 di Ubuntu 26.04 untuk latihan pentest lokal , tanpa firewall , dan tanpa database server . Roundcube tetap butuh database kecil untuk session/preference; jadi kita pakai SQLite lokal , bukan MariaDB/PostgreSQL. Ini sesuai requirement Roundcube yang membutuhkan SMTP, IMAP, HTTP/PHP, dan database backend seperti SQLite. ([GitHub][1]) Desain lab: Postfix",

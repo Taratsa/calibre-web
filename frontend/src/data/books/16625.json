@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16625?v=1795462061",
   "cover_og_url": "/cover/16625/og?v=1795462061",
+  "has_cover": false,
   "url": "/book/pm-bottleneck-detection-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mantap. Aku siapkan script siap-pakai untuk mendeteksi bottleneck dari file XES terlampir (`/mnt/data/BPIC_2012_A.xes`) memakai PM4Py . Script menghitung: Service time per aktivitas dari pasangan `lifecycle:start`-`complete` Waiting time antar-aktivitas di dalam tiap case Ringkasan metrik (mean/median/p95/count) + bottleneck score (gabungan z-score service &amp; waiting) Ekspor ke CSV dan tampilkan",

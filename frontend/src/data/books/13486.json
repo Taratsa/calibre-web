@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13486?v=1795446125",
   "cover_og_url": "/cover/13486/og?v=1795446125",
+  "has_cover": false,
   "url": "/book/gnuradio-instalasi-rtl-sdr-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Instal Pendukung 2 Blocklist rtl28xxxu 3 Compile rtl-sdr 4 Compile gr-osmosdr 5 Pranala Menarik Instal Pendukung Install compiler dkk apt -y install git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy \\ python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev libcomedi-dev \\ libsdl1.2-dev libgsl-dev libqwt-qt5-dev libqt5opengl5-dev python3-pyqt5 \\ liblog4cpp5-dev",

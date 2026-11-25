@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14466?v=1795450114",
   "cover_og_url": "/cover/14466/og?v=1795450114",
+  "has_cover": false,
   "url": "/book/wsjt-z-compile-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://aaron-brown.net/blog/?p=203 Contents 1 Install Aplikasi Pendukung 2 Compile 3 Download &amp; Buka source code WSJT-Z 4 Referensi Install Aplikasi Pendukung sudo apt update sudo apt -y install build-essential gfortran autoconf automake libtool cmake git sudo apt -y install asciidoctor libfftw3-dev qtdeclarative5-dev texinfo libqt5multimedia5 \\ libqt5multimedia5-plugins",

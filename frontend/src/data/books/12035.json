@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12035?v=1795441370",
   "cover_og_url": "/cover/12035/og?v=1795441370",
+  "has_cover": false,
   "url": "/book/debian-restore-backup-wiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Asumsi user mysql ROOT pass mysql PASSWORD path data /var/data/library/datawiki/ database mediawiki script /bin/rm -Rf /usr/local/src/var /bin/rm -Rf /usr/local/src/wikidb* /bin/cp -Rf /var/data/library/datawiki/* /usr/local/src # /bin/rm -Rr /usr/local/src/wikidb.sql /bin/mkdir -p /usr/local/src/var/www/html/wiki/images cd /usr/local/src /bin/tar zxvf images.tar.gz # /bin/tar zxvf",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 214,
-    "longer_than": 25,
+    "longer_than": 24,
     "top": [
       [
         "usr",

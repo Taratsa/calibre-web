@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20365?v=1795477014",
   "cover_og_url": "/cover/20365/og?v=1795477014",
+  "has_cover": false,
   "url": "/book/mkfs-btrfs-onno-widodo-purbo/",
   "rating": null,
   "comment": "The common mkfs program to format a device with Btrfs. Usage mkfs.btrfs [-A ] [-b ] [-l ] [-n ] [-L ] [-s ] [-m raid0|raid1|raid10|single] [-d raid0|raid1|raid10|single]  Description of parameters \"alloc-start\" or \"-A\": At what offset to start the fs. \"byte-count\" or \"-b\": Size of the filesystem in bytes. \"leafsize\" or \"-l\": Size of the leaves,",

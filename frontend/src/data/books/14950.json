@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14950?v=1795452558",
   "cover_og_url": "/cover/14950/og?v=1795452558",
+  "has_cover": false,
   "url": "/book/android-studio-passing-variable-between-activities-onno-widodo-purbo/",
   "rating": null,
   "comment": "// in 1 activity -&gt; String idValue = \"hellow world\"; Intent intent = new Intent(getApplicationContext(), SecondActivity.class); intent.putExtra(\"ID\", idValue); startActivity(intent); //in second Activity-&gt; String i = getIntent().getStringExtra(\"ID\"); Alternatif In your current Activity, create a new Intent: String value=\"Hello world\"; Intent i = new Intent(CurrentActivity.this,",

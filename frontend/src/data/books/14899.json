@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14899?v=1795452329",
   "cover_og_url": "/cover/14899/og?v=1795452329",
+  "has_cover": false,
   "url": "/book/android-studio-video-player-sederhana-2-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Copy Video .AVI 2 activity_main.xml 3 AndroidManifest.xml 4 MainActivity.java Copy Video .AVI mkdir ~/AndroidStudioProjects/videoplayer2/app/src/main/res/raw cp video1.avi ~/AndroidStudioProjects/videoplayer2/app/src/main/res/raw activity_main.xml  ",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 441,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "android",

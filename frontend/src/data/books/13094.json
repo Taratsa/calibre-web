@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13094?v=1795444792",
   "cover_og_url": "/cover/13094/og?v=1795444792",
+  "has_cover": false,
   "url": "/book/openvpn-ipv6-routed-2-lan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Pada kesempatan ini akan di perlihatan konfigurasi OpenVPN untuk memberikan akses sebuah LAN client. Jaringan tempat mesin bekerja adalah IPv4, sementara jaringan yang dimasukan ke tunnel adalah IPv6. Topologi jaringan yang di bangun kira-kira seperti gambar terlampir, LAN 1 ---------- HOST A ---------------- HOST B -------------- LAN 2 ovpn server ovpn client 2002::/64 2345::1/64 2345::2/64",

@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19586?v=1795474052",
   "cover_og_url": "/cover/19586/og?v=1795474052",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-linksys-wrt160nl-mengaktifkan-usb-modem-e1550-onno-widodo-purbo/",
   "rating": null,
   "comment": "Using firmware 14929 ( brainslayer ) For wrt160nl, the libusb file seems not to be working, so the workaround is to use terminal software ( for eg. In winxp we use hyperterminal or in linux we can use putty ) and key the following command to make the e1550 modem only mode : AT^U2DIAG=0 Make sure the terminal returns an \"OK\". Pranala Menarik WiFi: HotSpot Wireless Internet Berbasis WiFi WiFi:",

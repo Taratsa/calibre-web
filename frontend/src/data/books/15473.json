@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15473?v=1795455017",
   "cover_og_url": "/cover/15473/og?v=1795455017",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-send-a0-via-udp-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "/* Mengirim data dari A0 ke Server 192.168.0.159 port 8888 */ #include  #include  /* WiFi network name and password */ const char * ssid = \"o3\"; const char * pwd = \"Dzaq1993!\"; // IP address to send UDP data to. // it can be ip address of the server or // a network broadcast address // here is broadcast address const char * udpAddress = \"192.168.0.159\"; const int udpPort",

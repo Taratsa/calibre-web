@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9932?v=1795435482",
   "cover_og_url": "/cover/9932/og?v=1795435482",
+  "has_cover": false,
   "url": "/book/olsr-nat-di-ubnt-dengan-olsr-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sebaiknya di perhatikan 3 file konfigurasi berikut /etc/config/firewall /etc/config/network /etc/config/wireless Contoh Contents 1 /etc/config/firewall 2 /etc/config/network 3 /etc/config/wireless 4 Pranala Menarik 4.1 Build Firmware 4.2 APRX 4.3 IPv6 4.4 Flash Firmware 4.5 Misc 4.6 UBNT /etc/config/firewall config defaults option syn_flood '1' option input 'ACCEPT' option output 'ACCEPT' option",

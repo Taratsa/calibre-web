@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9415?v=1795432803",
   "cover_og_url": "/cover/9415/og?v=1795432803",
+  "has_cover": false,
   "url": "/book/zoneminder-cara-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "For a new installation the next thing you will need to do is create your database and database users. So type the commands as follows when in the folder of the extracted zm files, Create the ZoneMinder database 'zm' and populate it with the tables for ZoneMinder: $ mysql mysql&gt; create database zm; mysql&gt; exit; $ mysql zm &lt; db/zm_create.sql  Finally,",

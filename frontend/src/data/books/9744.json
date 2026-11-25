@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9744?v=1795434737",
   "cover_og_url": "/cover/9744/og?v=1795434737",
+  "has_cover": false,
   "url": "/book/ipv6-ready-kernel-onno-widodo-purbo/",
   "rating": null,
   "comment": "Di distribusi Linux modern biasanya kernel sudah siap IPv6. Kemampuan IPv6 biasanya di compile sebagai modul. Akan tetapi sangat mungkin, modul tersebut tidak di load secara automatis, Catatan: sebaiknya tidak menggunakan kernel seri 2.2.x lagi, karena IPv6 tidak update. Juga dukungan IPv6 di kernel 2.4.x tidak lagi sesuai dengan definisi RFC. Lebih di rekomendasikan menggunakan kernel seri 2.6.x",

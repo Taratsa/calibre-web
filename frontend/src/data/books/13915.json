@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13915?v=1795447936",
   "cover_og_url": "/cover/13915/og?v=1795447936",
+  "has_cover": false,
   "url": "/book/scp-contoh-onno-widodo-purbo/",
   "rating": null,
   "comment": "Beberapa contoh sintaks / penggunaan scp Copy file dari from_host ke local: scp username@from_host:file.txt /local/directory/ Copy file dari local host ke to_host: scp file.txt username@to_host:/remote/directory/ Copy directory dari from_host ke local: scp -r username@from_host:/remote/directory/ /local/directory/ Copy directory dari local ke to_host: scp -r /local/directory/",

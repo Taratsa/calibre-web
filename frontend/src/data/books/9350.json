@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9350?v=1795432584",
   "cover_og_url": "/cover/9350/og?v=1795432584",
+  "has_cover": false,
   "url": "/book/dns-resolver-onno-widodo-purbo/",
   "rating": null,
   "comment": "The client-side of the DNS is called a DNS resolver. It is responsible for initiating and sequencing the queries that ultimately lead to a full resolution (translation) of the resource sought, e.g., translation of a domain name into an IP address. A DNS query may be either a non-recursive query or a recursive query: A non-recursive query is one in which the DNS server provides a record for a",

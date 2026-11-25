@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14867?v=1795452149",
   "cover_og_url": "/cover/14867/og?v=1795452149",
+  "has_cover": false,
   "url": "/book/android-studio-di-ubuntu-21-10-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install library: sudo apt -y install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 Download Android Studio dari (~900Mb) https://developer.android.com/studio Lakukan (sebagai user biasa) sudo chmod -Rf 777 /usr/local/ sudo chown -Rf nobody: /usr/local/ cd ~/Downloads/ cp android-studio-2021.1.1.22-linux.tar.gz /usr/local/ cd /usr/local/ tar zxvf",

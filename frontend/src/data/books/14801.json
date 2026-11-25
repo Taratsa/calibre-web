@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14801?v=1795451771",
   "cover_og_url": "/cover/14801/og?v=1795451771",
+  "has_cover": false,
   "url": "/book/grub-ubah-kernel-parameter-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit bash# cd /etc/default bash# sudo vi grub # Use the vi editor to add the boot options to the line GRUB_CMDLINE_LINUX_DEFAULT= Tambahkan, misalnya, GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash pci=noacpi nvme_core.default_ps_max_latency_us=0\" Pilihan lain, nolapic noapic acpi_osi=\"Linux\" acpi_osi=\"Windows 2006\" acpi=ht pci=noacpi acpi=noirq pnpacpi=off nvme_core.default_ps_max_latency_us=0 Update",

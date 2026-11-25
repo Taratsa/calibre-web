@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15050?v=1795452926",
   "cover_og_url": "/cover/15050/og?v=1795452926",
+  "has_cover": false,
   "url": "/book/moodle-debian-11-2-instalasi-moodle-apache2-mariadb-php-7-4-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Update Repo 2 Install Apache2 3 Install PHP 7.4 4 Install MariaDB 5 Install Moodle 6 Setup Database 6.1 Kalau Operasional 6.2 Kalau hanya Latihan 7 Siapkan folder /var/moodledata/ 8 Install Moodle 9 Akses Moodle 10 Youtube 11 Pranala Menarik Update Repo su apt update Install Apache2 su apt -y install apache2 Install PHP 7.4 su apt update apt -y install php7.4 Install extension su apt",

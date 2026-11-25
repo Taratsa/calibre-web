@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11988?v=1795441250",
   "cover_og_url": "/cover/11988/og?v=1795441250",
+  "has_cover": false,
   "url": "/book/raspbian-setting-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "tzdata sudo dpkg-reconfigure tzdata config sudo raspi-config date sudo date -s \"01/04/2017 11:00\" ntp sudo systemctl stop ntp.service sudo ntpd -gqc /etc/ntpd.conf sudo systemctl start ntp.service",

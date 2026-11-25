@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13497?v=1795446166",
   "cover_og_url": "/cover/13497/og?v=1795446166",
+  "has_cover": false,
   "url": "/book/ads-b-dump1090-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.rtl-sdr.com/adsb-aircraft-radar-with-rtl-sdr/ ADS-B Receiver menggunakan CLI sudo su cd /usr/local/src git clone git://github.com/MalcolmRobb/dump1090.git cd /usr/local/src/dump1090 make Jalankan cd /usr/local/src/dump1090 ./dump1090 --interactive ./dump1090 --interactive --net ./dump1090 --quiet --no-fix --gain -10 --net &amp; ./dump1090 --quiet --no-fix --gain -10 --net",

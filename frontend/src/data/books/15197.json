@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15197?v=1795453624",
   "cover_og_url": "/cover/15197/og?v=1795453624",
+  "has_cover": false,
   "url": "/book/hp-nvme-ubuntu-install-onno-widodo-purbo/",
   "rating": null,
   "comment": "Itu SSD nya ga ke detect jadi saat boot grub tambahin : nvme_core.default_ps_max_latency_us=0 Di bagian baris yang ada quiet splash",

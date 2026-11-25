@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12579?v=1795443118",
   "cover_og_url": "/cover/12579/og?v=1795443118",
+  "has_cover": false,
   "url": "/book/r-ngram-word-clouds-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.rpubs.com/rgcmme/PLN-09 Load required libraries. library(tm) library(ggplot2) library(reshape2) library(wordcloud) library(RWeka) Needed for a bug when calculating n-grams with weka options(mc.cores=1) Set the working directory to the location of the script and data. setwd(\"~/Youtube\") Load corpus from local files. Load the Sentiment polarity dataset version 2.0 from the Movie",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 1362,
-    "longer_than": 55,
+    "longer_than": 54,
     "top": [
       [
         "freq",

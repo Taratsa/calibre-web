@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14857?v=1795452098",
   "cover_og_url": "/cover/14857/og?v=1795452098",
+  "has_cover": false,
   "url": "/book/orange-install-dengan-anaconda-ubuntu-20-04-1-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Anaconda Download dari https://www.continuum.io/downloads https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-x86_64.sh Sebagai user biasa, jalankan (untuk Python3) cd ~/Downloads/ bash Anaconda3-2023.07-2-Linux-x86_64.sh Setelah selesai, jalankan source ~/.bashrc Install Orange conda config --add channels conda-forge conda config --set channel_priority strict conda create",

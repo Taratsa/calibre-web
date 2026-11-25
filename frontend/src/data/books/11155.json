@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11155?v=1795439158",
   "cover_og_url": "/cover/11155/og?v=1795439158",
+  "has_cover": false,
   "url": "/book/arduino-rtc-ds1302-unix-time-onno-widodo-purbo/",
   "rating": null,
   "comment": "Code // Example sketch for interfacing with the DS1302 timekeeping chip. // #include  #include  #include  // Create a DS1302 object. DS1302 rtc(8, 7, 6); void setup() { Serial.begin(9600); // Initialize a new chip by turning off write protection and clearing the // clock halt flag. These methods needn't always be called. See the DS1302 // datasheet for details.",

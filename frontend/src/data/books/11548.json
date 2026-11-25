@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11548?v=1795440168",
   "cover_og_url": "/cover/11548/og?v=1795440168",
+  "has_cover": false,
   "url": "/book/snort-sniffer-mode-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node4.html Perintah yang penting snort -v snort -vd snort -vde Jika kita ingin melihat TCP/IP header di layar (sniffer mode), jalankan perintah snort -v Jika kita juga ingin melihat data aplikasi / payload yang di bawa oleh paket, gunakan perintah snort -vd Jika ingin lebih lengkap lagi dengan penjelasan, dan header data link",

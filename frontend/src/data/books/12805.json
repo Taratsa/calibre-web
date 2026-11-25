@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12805?v=1795443797",
   "cover_og_url": "/cover/12805/og?v=1795443797",
+  "has_cover": false,
   "url": "/book/cisco-bgp-multipath-loadbalancing-maximum-paths-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://learningnetwork.cisco.com/thread/42531 have read that BGP does not really support load balancing, but now I have discovered the BGP maximum-paths command. maximum-paths (BGP) To control the maximum number of parallel routes that the Border Gateway Protocol (BGP) can support, use the maximum-paths command. To restore the default number of parallel routes, use the no form of this",

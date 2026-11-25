@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20749?v=1795478060",
   "cover_og_url": "/cover/20749/og?v=1795478060",
+  "has_cover": false,
   "url": "/book/mediawiki-ganti-ip-address-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Kalau kita mengubah IP address server kita perlu mengedit vi /var/www/wiki/LocalSettings.php Ganti nilai parameter $wgServer ke IP address atau domain yang digunakan ## The protocol and server name to use in fully-qualified URLs $wgServer = \" http://192.168.0.4 \"; Pranala Menarik Mediawiki Instalasi MediaWiki Melihat Aktifitas dan Statistik Mediawiki Dumping Seluruh Database MediaWiki Replikasi",

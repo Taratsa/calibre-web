@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13446?v=1795445981",
   "cover_og_url": "/cover/13446/og?v=1795445981",
+  "has_cover": false,
   "url": "/book/r-regression-dataset-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.sthda.com/english/articles/40-regression-analysis/ Code if(!require(devtools)) install.packages(\"devtools\") devtools::install_github(\"kassambara/datarium\") data(\"marketing\", package = \"datarium\") head(marketing, 3) data(\"swiss\") head(swiss, 3) data(\"Boston\", package = \"MASS\") head(Boston, 3) install.packages(\"tidyverse\") install.packages(\"caret\") library(tidyverse)",
@@ -70,15 +71,15 @@
       ],
       [
         15850,
-        0.26
+        0.27
       ],
       [
         14962,
-        0.26
+        0.27
       ],
       [
         12725,
-        0.26
+        0.27
       ]
     ],
     "sentiment": null

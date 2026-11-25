@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13443?v=1795445964",
   "cover_og_url": "/cover/13443/og?v=1795445964",
+  "has_cover": false,
   "url": "/book/r-plot-multiple-time-series-data-onno-widodo-purbo/",
   "rating": null,
   "comment": "library(tidyr) library(dplyr) df &lt;- economics %&gt;% select(date, psavert, uempmed) %&gt;% gather(key = \"variable\", value = \"value\", -date) head(df, 3) # Multiple line plot ggplot(df, aes(x = date, y = value)) + geom_line(aes(color = variable), size = 1) + scale_color_manual(values = c(\"#00AFBB\", \"#E7B800\")) + theme_minimal() # Area plot ggplot(df, aes(x = date, y = value)) + geom_area(aes(color =",

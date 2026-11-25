@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/21443?v=1795481931",
   "cover_og_url": "/cover/21443/og?v=1795481931",
+  "has_cover": false,
   "url": "/book/instalasi-aplikasi-backtrack-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.facebook.com/note.php?note_id=194985257200434 langsung aza, tanpa basa basi: buka terminal ubuntu ente,,ketik ini: 1. Edit sudo gedit /etc/apt/sources.list trus tambahin ini di baris paling bawah: deb http://archive.offensive-security.com/ pwnsauce main microverse macroverse restricted universe multiverse OK kemudian kluar dari geditnya,, 2. buat Add key sudo wget -q",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9899?v=1795435349",
   "cover_og_url": "/cover/9899/og?v=1795435349",
+  "has_cover": false,
   "url": "/book/os-android-modifikasi-build-prop-onno-widodo-purbo/",
   "rating": null,
   "comment": "Mount system via recovery. Open a cmd cd into your tools folder adb pull /system/build.prop Edit it. adb push build.prop /system/build.prop adb reboot You need to get the build.prop off of the device (you can also get it from the os zip file). To do this you will need adb running and connected to your device. adb pull /system/build.prop Make the changes to the file. Now you put the file back on",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15608?v=1795455744",
   "cover_og_url": "/cover/15608/og?v=1795455744",
+  "has_cover": false,
   "url": "/book/usb-offline-debian-11-7-edit-sources-list-onno-widodo-purbo/",
   "rating": null,
   "comment": "vi /etc/apt/sources.list Pastikan diberi pagar, # deb cdrom:[Debian GNU/Linux 11.7.0 _Bullseye_ - Official i386 DVD Binary-1 20230429-11:50]/ bullseye contrib main # deb cdrom:[Debian GNU/Linux 11.7.0 _Bullseye_ - Official i386 DVD Binary-1 20230429-11:50]/ bullseye contrib main Save, dan lakukan apt update",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/19483?v=1795473522",
   "cover_og_url": "/cover/19483/og?v=1795473522",
+  "has_cover": false,
   "url": "/book/topal-pengikat-gnupg-dan-alpine-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang membutuhkan digital signature di alpine. Install Topal # apt-get install topal Install GnuPG # apt-get install gnupg Edit Konfigurasi Alpine $ vi .pinerc Asumsi binary topal di /usr/bin/topal. Tambahkan # Tambahan untuk Topal display-filters=_BEGINNING(\"-----BEGIN PGP \")_ /usr/bin/topal -display _TMPFILE_ _RESULTFILE_ sending-filters=/usr/bin/topal -send _TMPFILE_ _RESULTFILE_",

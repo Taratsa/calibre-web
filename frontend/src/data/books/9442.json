@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9442?v=1795432889",
   "cover_og_url": "/cover/9442/og?v=1795432889",
+  "has_cover": false,
   "url": "/book/android-repo-sync-error-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://rechtzeit.wordpress.com/2011/03/21/android-repo-sync-error/ Pada saat kita melakukan repo sync Dan memperoleh message berwarna merah error: .repo/manifests/: contains uncommitted changes Pemecahannya adalah, masuk ke folder source code android dan lakukan cd ~/android-source cd .repo/manifests git reset --hard repo sync &amp; Semoga lancar Selesai Download Repo Biasanya saat selesai",

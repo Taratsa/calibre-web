@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9662?v=1795434418",
   "cover_og_url": "/cover/9662/og?v=1795434418",
+  "has_cover": false,
   "url": "/book/apache-enable-mod-qos-onno-widodo-purbo/",
   "rating": null,
   "comment": "Cara ini juga mungkin bisa digunakan untuk mengatasi serangan slowloris Download cd /tmp/ wget http://ncu.dl.sourceforge.net/project/mod-qos/mod_qos-10.14.tar.gz tar xvfz mod_qos-10.14.tar.gz Instalasi paket pendukung apt-get install apache2-threaded-dev gcc Compile cd mod_qos-10.14/apache2/ apxs2 -i -c mod_qos.c Konfigurasi cd /etc/apache2/mods-available/ Edit vi qos.load isi dengan LoadModule",

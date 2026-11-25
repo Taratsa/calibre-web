@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15675?v=1795456124",
   "cover_og_url": "/cover/15675/og?v=1795456124",
+  "has_cover": false,
   "url": "/book/meredirect-port-transparant-proxy-onno-widodo-purbo/",
   "rating": null,
   "comment": "Salah satu cara paling sederhana untuk membangun transparan proxy adalah menggunakan fasilitas redirect port di iptables, contoh, iptables -t nat -A PREROUTING -s 192.168.0.0/24 -i eth0 -p tcp --dport 80 -j REDIRECT --to-ports 3128 Biasanya Dansguardian untuk filter situs tidak baik akan bekerja di port 8080. Oleh karena itu transparan proxy adalah sbb: iptables -t nat -A PREROUTING -s",

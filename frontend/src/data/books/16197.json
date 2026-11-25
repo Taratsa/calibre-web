@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16197?v=1795459375",
   "cover_og_url": "/cover/16197/og?v=1795459375",
+  "has_cover": false,
   "url": "/book/llm-rag-open-source-no-api-di-google-collab-onno-widodo-purbo/",
   "rating": null,
   "comment": "Here's an example of a **Retrieval-Augmented Generation (RAG)** implementation in Python, using Gemini for vector embeddings and a local retrieval system. This setup does not rely on external APIs and can be run on Google Colab. The system uses a local vector store with FAISS for similarity search. Contents 1 Installation Requirements 2 RAG Implementation with Gemini and Local Vector Search 3",

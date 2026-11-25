@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11948?v=1795441157",
   "cover_og_url": "/cover/11948/og?v=1795441157",
+  "has_cover": false,
   "url": "/book/nvidia-install-driver-tesla-c1060-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi aplikasi pendukung sudo su apt -y install gcc make Kemungkinan driver Tesla c1060 ada di versi lama nvidia 340 sudo su cd /usr/local/src/ wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run chmod +x cuda_6.5.14_linux_64.run ./cuda_6.5.14_linux_64.run sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update apt install",

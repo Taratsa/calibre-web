@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/18851?v=1795470392",
   "cover_og_url": "/cover/18851/og?v=1795470392",
+  "has_cover": false,
   "url": "/book/wifi-hotspot-coovachilli-kebutuhan-hardware-dan-software-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Kebutuhan Hardware 2 Versi Software 3 Instalasi Software 4 Root 5 Konfigurasi Repository 6 Setup Network 7 Pranala Menarik Kebutuhan Hardware Komputer dengan dua network Interface / NIC Versi Software Software yang digunakan Ubuntu CoovaChilli http://coova.org/wiki/index.php/CoovaChilli Instalasi Software Pastikan kita menginstalasi Instalasi Apache Instalasi SSHD Instalasi BIND Kalau",
@@ -136,11 +137,11 @@
         4
       ],
       [
-        "auto",
+        "eth",
         3
       ],
       [
-        "eth",
+        "auto",
         3
       ],
       [

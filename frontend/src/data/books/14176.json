@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14176?v=1795448923",
   "cover_og_url": "/cover/14176/og?v=1795448923",
+  "has_cover": false,
   "url": "/book/mikrotik-loadbalancing-ecmp-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://wiki.mikrotik.com/wiki/ECMP_load_balancing_with_masquerade Quick Start for Impatient Configuration export from the gateway router: / ip address add address=192.168.0.1/24 network=192.168.0.0 broadcast=192.168.0.255 interface=Local add address=10.111.0.2/24 network=10.111.0.0 broadcast=10.111.0.255 interface=wlan1 add address=10.112.0.2/24 network=10.112.0.0 broadcast=10.112.0.255",

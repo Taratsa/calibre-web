@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/11425?v=1795439849",
   "cover_og_url": "/cover/11425/og?v=1795439849",
+  "has_cover": false,
   "url": "/book/firewall-untuk-proxy-dansguardian-onno-widodo-purbo/",
   "rating": null,
   "comment": "Bagi anda yang membutuhkan firewall bersama DansGuardian. Dapat menginstalasi script berikut. Siapkan port ke Firewall . Bagian ini memang sifatnya optional, tapi sangat di sarankan. Copy perintah berikut ke file /etc/network/if-up.d/iptables-config #!/bin/bash iptables -F # set the default policy for each of the pre-defined chains iptables -P INPUT ACCEPT iptables -P OUTPUT ACCEPT iptables -P",

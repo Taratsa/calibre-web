@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16794?v=1795463234",
   "cover_og_url": "/cover/16794/og?v=1795463234",
+  "has_cover": false,
   "url": "/book/comfyui-instalasi-venv-onno-widodo-purbo/",
   "rating": null,
   "comment": "Berikut cara yang paling aman dan rapi untuk instal ComfyUI di Ubuntu 24.04 , lalu menaruh model gambar seperti SDXL , LoRA , dan opsi FLUX . Saya sarankan jalur Python virtual environment (`venv`) karena ini memang selaras dengan dokumentasi resmi ComfyUI untuk Linux: buat venv, clone repo, install dependensi, lalu jalankan. ComfyUI juga punya `comfy-cli`, tetapi untuk Ubuntu server/desktop saya",

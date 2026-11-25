@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13460?v=1795446022",
   "cover_og_url": "/cover/13460/og?v=1795446022",
+  "has_cover": false,
   "url": "/book/r-tidytext-bronte-onno-widodo-purbo/",
   "rating": null,
   "comment": "# Ref: https://github.com/dgrtwo/tidy-text-mining/blob/master/01-tidy-text.Rmd library(knitr) opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE) options(width = 100, dplyr.width = 100) library(ggplot2) theme_set(theme_light()) library(dplyr) library(stringr) bronte &lt;- gutenberg_download(c(1260, 768, 969, 9182, 767)) tidy_bronte &lt;- bronte %&gt;% unnest_tokens(word, text) %&gt;%",

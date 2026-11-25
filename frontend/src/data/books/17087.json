@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/17087?v=1795464095",
   "cover_og_url": "/cover/17087/og?v=1795464095",
+  "has_cover": false,
   "url": "/book/instalasi-sisfokol-smk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Siapkan dependencies apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb libgd2-xpm libgd2-xpm-dev \\ php5-mysql php5-gd php5-curl php-pear Siapkan database mysql -u root -p123456 create database sisfokol_smk; GRANT ALL PRIVILEGES ON sisfokol_smk.* TO 'sisfokol_smk'@'localhost' IDENTIFIED BY 'sisfokol_smk'; GRANT ALL PRIVILEGES ON sisfokol_smk.* TO 'sisfokol_smk' IDENTIFIED BY",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 277,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "sisfokol",

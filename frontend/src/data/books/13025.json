@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13025?v=1795444558",
   "cover_og_url": "/cover/13025/og?v=1795444558",
+  "has_cover": false,
   "url": "/book/ipv6-vyos-vlan-onno-widodo-purbo/",
   "rating": null,
   "comment": "VLAN Sub-Interfaces (802.1Q) 802.1Q VLAN interfaces are represented as virtual sub-interfaces in VyOS. The term used for this is vif. Configuration of a tagged sub-interface is accomplished using the configuration command set interfaces ethernet  vif . set interfaces ethernet eth1 vif 100 description 'VLAN 100' set interfaces ethernet eth1 vif 100 address '192.168.100.1/24' VLAN",

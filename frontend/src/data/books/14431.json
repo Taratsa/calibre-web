@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14431?v=1795449940",
   "cover_og_url": "/cover/14431/og?v=1795449940",
+  "has_cover": false,
   "url": "/book/gns3-install-ubridge-onno-widodo-purbo/",
   "rating": null,
   "comment": "Proses instalasi di atas akan secara automatis menginstall ubridge. Ubridge dari ubuntu tampaknya tidak stabil. Tampaknya masih lebih baik compile ubridge sendiri sebagai berikut, sudo su apt -y install libpcap-dev git cd /usr/local/src rm -Rf /usr/local/src/ubridge/ git clone git://github.com/GNS3/ubridge.git cd ubridge make make install cp -p ubridge /usr/bin setcap cap_net_admin,cap_net_raw=ep",

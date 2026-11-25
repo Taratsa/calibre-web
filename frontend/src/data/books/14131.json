@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14131?v=1795448712",
   "cover_og_url": "/cover/14131/og?v=1795448712",
+  "has_cover": false,
   "url": "/book/inject-ads-mikrotik-untuk-blokir-onno-widodo-purbo/",
   "rating": null,
   "comment": "Anggara Chandra M@anggaracm 3 hours ago tinggal paste ke terminal kalo mau nyoba: ip firewall filter add chain=forward content=welcome.indihome.co.id action=reject reject-with=icmp-network-unreachable",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15213?v=1795453708",
   "cover_og_url": "/cover/15213/og?v=1795453708",
+  "has_cover": false,
   "url": "/book/srsran-download-onno-widodo-purbo/",
   "rating": null,
   "comment": "Untuk mendownload &amp; menginstalasi srsRAN langkah yang perlu dilakukan tidak banyak. Pertama, kira perlu menambahkan repositori srsRAN melalui perintah berikut, sudo add-apt-repository ppa:softwareradiosystems/srsran Proses instalasi srsRAN tidak sukar, cukup menulis perintah berikut, sudo apt-get update sudo apt-get install -y srsran Selanjutnya, kita dapat menginstalasi konfigurasi srsRAN",

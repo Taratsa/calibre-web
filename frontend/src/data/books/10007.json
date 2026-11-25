@@ -42,6 +42,7 @@
   ],
   "cover_url": "/cover_thumb/10007?v=1795435724",
   "cover_og_url": "/cover/10007/og?v=1795435724",
+  "has_cover": false,
   "url": "/book/voip-opensips-route-ke-arah-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8 Contoh hook ke Asterisk # ASTERISK HOOK - BEGIN # media service number? (digits starting with *) if ($rU=~\"^\\*[1-9]+\") { # we do provide access to media services only to our # subscribers, who were previously authenticated if (!is_from_local()) { send_reply(\"403\",\"Forbidden access to media service\"); exit; }",
@@ -54,7 +55,7 @@
   ],
   "text": {
     "words": 441,
-    "longer_than": 37,
+    "longer_than": 36,
     "top": [
       [
         "voip",

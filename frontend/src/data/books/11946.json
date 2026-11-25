@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11946?v=1795441151",
   "cover_og_url": "/cover/11946/og?v=1795441151",
+  "has_cover": false,
   "url": "/book/melihat-list-interface-terpasang-onno-widodo-purbo/",
   "rating": null,
   "comment": "Melihat list interface terpasang. ip link show atau netstat -i Jika tahu nama interface-nya, dapat menggunakan perintah, ifconfig eth0 iwconfig wlp1s0 Untuk meng-up interface dapat di tambahkan \"up\" ifconfig eth0 up iwconfig wlp1s0 up",
@@ -62,7 +63,7 @@
       ],
       [
         11431,
-        0.28
+        0.29
       ],
       [
         16908,

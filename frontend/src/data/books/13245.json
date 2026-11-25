@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13245?v=1795445269",
   "cover_og_url": "/cover/13245/og?v=1795445269",
+  "has_cover": false,
   "url": "/book/tensorflow-linear-regression-onno-widodo-purbo/",
   "rating": null,
   "comment": "#!/usr/bin/env python2 # -*- coding: utf-8 -*- \"\"\" Created on Tue Jul 30 09:00:48 2019 @author: onno \"\"\" # Import libraries (Numpy, Tensorflow, matplotlib) import numpy as np import matplotlib.pyplot as plot # Create 1000 points following a function y=0.1 * x + 0.4 (i.e. y = W * x + b) with some normal random distribution: num_points = 1000 vectors_set = [] for i in range(num_points): W = 0.1 # W",

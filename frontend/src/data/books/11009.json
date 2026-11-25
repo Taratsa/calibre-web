@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11009?v=1795438750",
   "cover_og_url": "/cover/11009/og?v=1795438750",
+  "has_cover": false,
   "url": "/book/arduino-digital-read-serial-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.arduino.cc/en/Tutorial/DigitalReadSerial Contents 1 Hardware Required 2 Rangkaian 3 Code 4 Code Indonesia 5 Referensi Hardware Required Arduino or Genuino Board A momentary switch, button, or toggle switch 10k ohm resistor hook-up wires breadboard Rangkaian Code /* DigitalReadSerial Reads a digital input on pin 2, prints the result to the serial monitor This example code is in",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 214,
-    "longer_than": 25,
+    "longer_than": 24,
     "top": [
       [
         "pushbutton",

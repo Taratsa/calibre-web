@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20827?v=1795478280",
   "cover_og_url": "/cover/20827/og?v=1795478280",
+  "has_cover": false,
   "url": "/book/dokeos-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi Aplikasi Pendukung apt-get update apt-get install apache2 mysql-server libmysqlclient15-dev libphp-adodb \\ libgd2-xpm libgd2-xpm-dev php5-mysql php5-gd php5-curl \\ php-pear unzip Agar dokeos dapat bekerja dengan baik, edit php.ini vi /etc/php5/apache2/php.ini Menjadi max_execution_time = 300 ; Maximum execution time of each script, in seconds max_input_time = 600 ; Maximum amount of",

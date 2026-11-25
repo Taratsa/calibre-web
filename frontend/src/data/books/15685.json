@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15685?v=1795456190",
   "cover_og_url": "/cover/15685/og?v=1795456190",
+  "has_cover": false,
   "url": "/book/open5gs-setup-dns-untuk-ims-dan-epc-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install BIND, apt install -y bind9 Gunakan contoh di bawah untuk DNS Zone file termasuk edit /etc/bind/named.conf.local /etc/bind/named.conf.options Lakukan, cd /etc/bind Dalam contoh ini Kamailio IMS &amp; DNS server jalan di 10.45.0.1/192.168.0.5 (Floating IP) dan PCRF pada 10.45.0.1/192.168.0.5 (Floating IP) vi /etc/bind/ims.mnc070.mcc999.3gppnetwork.org $ORIGIN ims.mnc070.mcc999.3gppnetwork.org.",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13088?v=1795444779",
   "cover_og_url": "/cover/13088/og?v=1795444779",
+  "has_cover": false,
   "url": "/book/openvpn-ipv4-32-multi-client-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.ostechnix.com/easiest-way-install-configure-openvpn-server-linux/ Contents 1 Topology 2 Buat Client Config di Server 3 Konfigurasi OpenVPN Client 4 Referensi 5 Pranala Menarik Topology CLIENT 1 ------- HOST A ---------------- HOST B ovpn server ovpn client HOST C ovpn client Host A akan berfungsi sebagai OpenVPN Server. OS : Ubuntu 18.04 IP : 192.168.0.239/24 hostname :",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11503?v=1795440049",
   "cover_og_url": "/cover/11503/og?v=1795440049",
+  "has_cover": false,
   "url": "/book/metasplot-smb-exploit-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah pertama nmap scan untuk mengetahui OS yang digunakan, misalnya ke IP 192.168.0.100 #nmap -sS -A -O 192.168.0.100 yang penting untuk diperoleh dari mesin target adalah adanya, smb dan user level authentication. Artinya kita bisa authentikasi smb menggunakan username dan password. Selanjutnya masukke msfconsole, dan lakukan smb login module #msfconsole #msf &gt; use",
@@ -193,7 +194,7 @@
       ],
       [
         16033,
-        0.39
+        0.4
       ],
       [
         11106,

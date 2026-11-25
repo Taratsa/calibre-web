@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10616?v=1795437646",
   "cover_og_url": "/cover/10616/og?v=1795437646",
+  "has_cover": false,
   "url": "/book/percona-instalasi-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ambil repo percona terakhir sudo apt update sudo apt -y install wget wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb Install sudo percona-release setup ps57 sudo apt -y install percona-server-server-5.7 Ubah sedikit config sudo vi /etc/mysql/percona-server.conf.d/mysqld.cnf [mysqld]",

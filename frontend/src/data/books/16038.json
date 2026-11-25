@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/16038?v=1795458374",
   "cover_og_url": "/cover/16038/og?v=1795458374",
+  "has_cover": false,
   "url": "/book/forensic-nmap-ssh2-enum-algos-attack-en-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Understanding Nmap ssh2-enum-algos 2 Example Attack and Forensic Analysis 3 Mitigation 4 Conclusion 5 Interesting Links Understanding Nmap ssh2-enum-algos What is Nmap ssh2-enum-algos? Nmap is a powerful open-source utility for network reconnaissance. The `ssh2-enum-algos` script in Nmap is used to identify the cryptographic algorithms supported by an SSH server. By knowing these",

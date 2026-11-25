@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13670?v=1795447011",
   "cover_og_url": "/cover/13670/og?v=1795447011",
+  "has_cover": false,
   "url": "/book/orange-test-and-score-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://docs.biolab.si//3/visual-programming/widgets/evaluate/testandscore.html Widget Test &amp; Score men-test algoritma learning pada data. Contents 1 Input 2 Output 3 Contoh 4 Referensi 5 Pranala Menarik Input Data: input dataset Test Data: separate data for testing Learner: learning algorithm(s) Output Evaluation Results: results of testing classification algorithms Widget Test &amp; Score",
@@ -140,12 +141,12 @@
         4
       ],
       [
-        "learner",
-        3
-      ],
-      [
         "dataset",
         4
+      ],
+      [
+        "learner",
+        3
       ],
       [
         "scores",

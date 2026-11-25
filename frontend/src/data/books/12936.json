@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12936?v=1795444275",
   "cover_og_url": "/cover/12936/og?v=1795444275",
+  "has_cover": false,
   "url": "/book/ipv6-quagga-ospf-sederhana-onno-widodo-purbo/",
   "rating": null,
   "comment": "ERROR: IPv4 OSPF OK IPv6 OSPF6 - routing tidak ter-broadcast ke neighbor Contents 1 Topologi 2 Konfigurasi Interface 3 Konfigurasi OSPF 4 Verify 5 Referensi 6 Pranala Menarik Topologi R1 e1 -- R3: e1 e2 -- R2: e1 e3 -- NAT: Internet R2 e1 -- R2: e1 e2 -- R3: e2 e3 -- LAN 172.16.1.1 R3 e1 -- R1: e1 e2 -- R2: e2 e3 -- LAN 192.168.1.1 Konfigurasi Interface Router1: vtysh configure terminal ! ipv6",

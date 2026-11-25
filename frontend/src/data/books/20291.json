@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/20291?v=1795476808",
   "cover_og_url": "/cover/20291/og?v=1795476808",
+  "has_cover": false,
   "url": "/book/rockcluster-instalasi-compute-node-onno-widodo-purbo/",
   "rating": null,
   "comment": "Instalasi compute-node sangat mudah dilakukan jika seluruh node dapat boot dari network menggunakan PXE. Untuk itu, pertama-tama pada front-end jalankan: # insert-ethers --rack 0 Sesuaikan nomor rack dengan kelompok compute node. Pada layar awal Insert Ethers, pilih menu compute. Maka akan tampak tampilan front end yang siap menerima permohonan booting dari compute node Selanjutnya, Boot komputer",

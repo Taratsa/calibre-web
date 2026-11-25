@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/20751?v=1795478065",
   "cover_og_url": "/cover/20751/og?v=1795478065",
+  "has_cover": false,
   "url": "/book/format-disk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Langkah sederhana memformat disk / usb harddisk di linux Cek disk fdisk -l Buat partisi (misalnya /dev/sdb) fdisk /dev/sdb format menggunakan (misalnya partisi /dev/sda1) mkfs.vfat /dev/sdb1 mkfs.ext2 /dev/sdb1 mkfs.ext3 /dev/sdb1 mkntfs /dev/sdb1 Kalau harddisk sudah mulai rusak, cuma di tambah -c mkfs.ext2 -cc /dev/sda1 Pranala Menarik Format dan Set Harddisk Label Format Disk Format harddisk",

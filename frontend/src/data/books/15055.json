@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/15055?v=1795452949",
   "cover_og_url": "/cover/15055/og?v=1795452949",
+  "has_cover": false,
   "url": "/book/raspberryos-install-mediawiki-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Install Apache2 PHP7 MariaDB 2 Set locale 3 Database 4 Copy Source CMS Mediawiki 5 Restart Apache2 6 Selesaikan Konfigurasi Mediawiki 7 Versi 1.17 ke atas 8 Versi &lt; 1.17 9 Untuk Mediawiki versi Baru 10 Untuk Mediawiki versi lama 11 Pranala Menarik Install Apache2 PHP7 MariaDB sudo apt update sudo apt-get install apache2 php php-xmlrpc \\ php-mysql php-gd php-cli php-curl \\ libphp-adodb",

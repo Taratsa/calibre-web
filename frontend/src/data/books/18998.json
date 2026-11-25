@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18998?v=1795471186",
   "cover_og_url": "/cover/18998/og?v=1795471186",
+  "has_cover": false,
   "url": "/book/voip-cookbook-example-of-etc-sip-conf-onno-widodo-purbo/",
   "rating": null,
   "comment": "; ; SIP configuration for Asterisk ; [general] disallow=all allow=ulaw port=5060 ; the SIP port which has to be bind (attach). bindaddr=0.0.0.0 ; Address in the SIP bind externip=xxx.xxx.xxx.xxx ; if we know the public IP address that we use localnet=192.168.0.0 localmask=255.255.255.0 context=inbound-sip ; Default context for incoming calls maxexpirey=180 defaultexpirey=160 tos=reliability",

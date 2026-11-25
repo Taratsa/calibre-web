@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18526?v=1795469150",
   "cover_og_url": "/cover/18526/og?v=1795469150",
+  "has_cover": false,
   "url": "/book/wifi-pertahanan-arp-table-onno-widodo-purbo/",
   "rating": null,
   "comment": "Lihat secara seksama tabel ARP # arp -an Tabel ARP akan terlihat, seperti, ? (192.168.0.1) at 00:03:0d:e3:db:76 [ether] on eth0 ? (192.168.0.72) at 00:1d:7d:4b:26:e0 [ether] on eth0 ? (192.168.0.221) at 00:03:c9:06:ab:92 [ether] on eth0 Sebuah entry static di tabel ARP dapat di masukan menggunakan perintah, misalnya, arp -s 192.168.0.1 00:03:0d:e3:db:76 Dengan cara ini maka IP address 192.168.0.1",

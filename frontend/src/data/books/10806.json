@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10806?v=1795438162",
   "cover_og_url": "/cover/10806/og?v=1795438162",
+  "has_cover": false,
   "url": "/book/plex-software-onno-widodo-purbo/",
   "rating": null,
   "comment": "Install Plex Media Server Ubuntu sudo apt-get install curl -y sudo curl http://shell.ninthgate.se/packages/shell-ninthgate-se-keyring.key | sudo apt-key add - echo \"deb http://www.deb-multimedia.org wheezy main non-free\" | sudo tee -a /etc/apt/sources.list.d/deb-multimedia.list echo \"deb http://shell.ninthgate.se/packages/debian wheezy main\" | sudo tee -a /etc/apt/sources.list.d/plex.list sudo",

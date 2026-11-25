@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12437?v=1795442745",
   "cover_og_url": "/cover/12437/og?v=1795442745",
+  "has_cover": false,
   "url": "/book/raspbian-install-ssh-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Aplikasi yang sangat dibutuhkan dalam sebuah server adalah SSH. SSH digunakan agar admin server dapat melakukan remote login ke server. Cara instalasi SSH di Raspbian adalah sebagai berikut, sudo su apt update apt install openssh-server Untuk start/stop/restart server SSH menggunakan perintah berikut, sudo su /etc/init.d/ssh start /etc/init.d/ssh stop /etc/init.d/ssh restart Pranala Menarik",

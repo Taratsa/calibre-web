@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18991?v=1795471152",
   "cover_og_url": "/cover/18991/og?v=1795471152",
+  "has_cover": false,
   "url": "/book/voip-cookbook-forwarding-to-another-asterisk-onno-widodo-purbo/",
   "rating": null,
   "comment": "To forward calls to other Asterisk server, we can use the following syntax: [iaxprovider] switch =&gt; IAX2/user:[key]@server/context The above command will carry out forwarding to other server. However, User and key have to be defined in iax.conf file of the server to which the calls will be forwarded. The context for this server is the same as that of extensions.conf of the server that does the",

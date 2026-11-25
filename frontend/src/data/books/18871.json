@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/18871?v=1795470501",
   "cover_og_url": "/cover/18871/og?v=1795470501",
+  "has_cover": false,
   "url": "/book/sudo-tanpa-password-di-ubuntu-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.abie-azki.co.cc/2010/03/sudo-tanpa-password-di-ubuntu.html Edit vi /etc/sudoers Masukan user yang di kasi ijin username ALL=NOPASSWD: ALL username ALL=(ALL:ALL) NOPASSWD:/path/aplikasi.sh Contoh pradna ALL=NOPASSWD: ALL pradna ALL=(ALL:ALL) NOPASSWD:/path/aplikasi.sh Pranala Menarik Linux Howto sudo: menjalankan command di script",

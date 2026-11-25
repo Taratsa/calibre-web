@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10630?v=1795437688",
   "cover_og_url": "/cover/10630/og?v=1795437688",
+  "has_cover": false,
   "url": "/book/postfix-smtp-sink-onno-widodo-purbo/",
   "rating": null,
   "comment": "Postfix sudah menyediakan smtp-sink untuk mentest postfix dalam mengirimkan e-mail dalam jumlah besar. Menjalankan Pertama-tama sinkronkan waktu di kedua mesin ntpdate pool.ntp.org Setup SMTP listenser di port 25 (misalnya di localhost) smtp-sink -c localhost:25 1000 Bisa menggunakan postfix untuk mengirim atau dengan smtp-source. time smtp-source -s 20 -l 5120 -m 100 -c 100 -f sender@example.com",

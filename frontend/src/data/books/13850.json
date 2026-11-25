@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13850?v=1795447682",
   "cover_og_url": "/cover/13850/og?v=1795447682",
+  "has_cover": false,
   "url": "/book/pajek-format-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://gephi.org/users/supported-graph-formats/pajek-net-format/ This format use NET extension and is easy to use. Attributes support is however missing, only the network topology can be represented with a Pajek File. The structure is easy, Pajek files are text files, where each line is an element, and the list of edges follows the list of nodes. It is supported by nearly most of graph",
@@ -51,7 +52,7 @@
   ],
   "text": {
     "words": 334,
-    "longer_than": 32,
+    "longer_than": 31,
     "top": [
       [
         "nodes",

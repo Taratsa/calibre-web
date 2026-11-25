@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10358?v=1795436838",
   "cover_og_url": "/cover/10358/og?v=1795436838",
+  "has_cover": false,
   "url": "/book/rom-androud-manipulasi-boot-img-onno-widodo-purbo/",
   "rating": null,
   "comment": "Menggunakan unpack-MT.pl Download dari https://github.com/bgcngm/mtk-tools/ Caranya cd ~/Downloads wget https://github.com/bgcngm/mtk-tools/archive/master.zip mv master.zip MTK-tools.zip Buka unzip MTK-tools.zip unpack boot.img dari upgrade ROM MTK cd ~/lokasi-upgrade-ROM-MTK/ ~/Downloads/mtk-tools-master/unpack-MTK.pl boot.img Menggunakan split_bootimg.pl The Android boot.img file contains a",

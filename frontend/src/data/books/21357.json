@@ -41,6 +41,7 @@
   ],
   "cover_url": "/cover_thumb/21357?v=1795481491",
   "cover_og_url": "/cover/21357/og?v=1795481491",
+  "has_cover": false,
   "url": "/book/mediawiki-proteksi-spammer-menggunakan-wgspamregex-onno-widodo-purbo/",
   "rating": null,
   "comment": "Edit cd /var/www/wiki vi LocalSettings.php tambahkan $wgSpamRegex = \"/\\&lt;.*style.*?(display|position|overflow|visibility|height)\\s*:.*?&gt;/i\"; Pranala Menarik Mediawiki Instalasi MediaWiki Melihat Aktifitas dan Statistik Mediawiki Dumping Seluruh Database MediaWiki Replikasi Database dan Image MediaWiki Membuka Fasilitas Upload di MediaWiki Mengaktifkan Math di MediaWiki Mengubah Logo di MediaWiki",

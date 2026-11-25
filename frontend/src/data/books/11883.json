@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11883?v=1795440993",
   "cover_og_url": "/cover/11883/og?v=1795440993",
+  "has_cover": false,
   "url": "/book/orange-compile-python-terakhir-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Step 1 - Install Required Packages 2 Step 2 - Download Python 3 Step 3 - Compile Python Source 4 Step 4 - Check the Python Version Step 1 - Install Required Packages sudo apt-get install build-essential checkinstall sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev Step 2 - Download Python cd /usr/src sudo wget",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11632?v=1795440366",
   "cover_og_url": "/cover/11632/og?v=1795440366",
+  "has_cover": false,
   "url": "/book/msf-enable-remote-desktop-onno-widodo-purbo/",
   "rating": null,
   "comment": "sumber: https://www.offensive-security.com/metasploit-unleashed/enabling-remote-desktop/ Let's look at another situation where Metasploit makes it very easy to backdoor the system using nothing more than built-in system tools. We will utilize Carlos Perez's 'getgui' script, which enables Remote Desktop and creates a user account for you to log into it with. Utilization of this script could not be",

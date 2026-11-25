@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15174?v=1795453524",
   "cover_og_url": "/cover/15174/og?v=1795453524",
+  "has_cover": false,
   "url": "/book/4g-instalasi-uhd-di-ubuntu-20-04-onno-widodo-purbo/",
   "rating": null,
   "comment": "Set CPU Freq sudo apt-get install cpufrequtils echo 'GOVERNOR=\"performance\"' | sudo tee /etc/default/cpufrequtils sudo systemctl disable ondemand cek cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor reboot komputer Install UHD sudo apt -y install libuhd-dev libuhd3.15.0 uhd-host Download &amp; Cek Ettus B210 sudo uhd_find_devices sudo uhd_images_downloader sudo uhd_usrp_probe",

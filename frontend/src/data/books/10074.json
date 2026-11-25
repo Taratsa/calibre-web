@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10074?v=1795435946",
   "cover_og_url": "/cover/10074/og?v=1795435946",
+  "has_cover": false,
   "url": "/book/ethernet-mengubah-kecepatan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://www.ubuntugeek.com/how-to-change-ethernet-network-card-speed-and-duplex-settings-in-ubuntu.html Using ethtool ethtool can be used to query and change settings such as speed, auto- negotiation and checksum offload on many network devices, especially Ethernet devices. Install ethtool in ubuntu sudo apt-get install ethtool You can check the current Ethernet network card speed and",

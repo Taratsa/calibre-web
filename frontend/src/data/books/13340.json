@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13340?v=1795445597",
   "cover_og_url": "/cover/13340/og?v=1795445597",
+  "has_cover": false,
   "url": "/book/thingspeak-suhu-dan-humidity-onno-widodo-purbo/",
   "rating": null,
   "comment": "#include \"ThingSpeak.h\" #include  #include \"secrets.h\" #include \"DHT.h\" #define DHTPIN 2 // what digital pin we're connected to // Uncomment whatever type you're using! #define DHTTYPE DHT11 // DHT 11 // define DHTTYPE DHT22 // DHT 22 (AM2302), AM2321 DHT dht(DHTPIN, DHTTYPE); byte mac[] = SECRET_MAC; // Set the static IP address to use if the DHCP fails to assign IPAddress ip(192,",

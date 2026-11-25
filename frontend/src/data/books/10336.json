@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/10336?v=1795436770",
   "cover_og_url": "/cover/10336/og?v=1795436770",
+  "has_cover": false,
   "url": "/book/cd-r-burn-menggunakan-cli-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://linuxconfig.org/using-command-line-wodim-tool-to-burn-iso-image Instalasi apt-get install wodim cdrecord Cek device # wodim --devices Hasilnya wodim: Overview of accessible drives (1 found) : ------------------------------------------------------------------------- 0 dev='/dev/scd0' rwrw-- : 'TSSTcorp' 'CD/DVDW SH-S183L'",

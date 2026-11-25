@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11059?v=1795438905",
   "cover_og_url": "/cover/11059/og?v=1795438905",
+  "has_cover": false,
   "url": "/book/linux-driver-tp-link-tl-wn727n-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: http://askubuntu.com/questions/577941/installing-the-driver-for-tp-link-tl-wn727n-on-ubuntu-14-04 sudo apt-get install linux-headers-generic build-essential git cd /usr/local/src git clone https://github.com/porjo/mt7601.git cd mt7601/src make sudo make install sudo mkdir -p /etc/Wireless/RT2870STA/ sudo cp RT2870STA.dat /etc/Wireless/RT2870STA/ sudo modprobe mt7601Usta Kali Linux",

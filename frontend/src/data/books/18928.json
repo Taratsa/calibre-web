@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18928?v=1795470871",
   "cover_og_url": "/cover/18928/og?v=1795470871",
+  "has_cover": false,
   "url": "/book/voip-cookbook-defining-sip-channel-in-sip-conf-onno-widodo-purbo/",
   "rating": null,
   "comment": "Every SIP client and server is identified with a text block such as the following: [xxx] type=yyy parameter1=value parameter2=value Where \"xxx\" is the name associated with the SIP client, or any arbitrary name used by other configuration file to refer to a SIP device. Typically, a SIP phone with extension number 123 will have an entry that begins with [123]. Please note that you still have to",

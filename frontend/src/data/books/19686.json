@@ -43,6 +43,7 @@
   ],
   "cover_url": "/cover_thumb/19686?v=1795474535",
   "cover_og_url": "/cover/19686/og?v=1795474535",
+  "has_cover": false,
   "url": "/book/mikrotik-setup-untuk-anti-netcut-onno-widodo-purbo/",
   "rating": null,
   "comment": "Ada beberapa cara: Blok paket ICMP. Netcut berusaha cek jaringan menggunakan ping. Set netmask menjadi 32. Caranya pertama masuk di mikrotik, lalau masuk ke ip, dhcp server, network, lalu isi netmasknya dengan angka 32 ini contoh scriptnya : /ip dhcp-server network add address=x.x.x.x/x gateway=x.x.x.x netmask=32 Buat Tabel ARP statik dengan arp=reply-only Di sisi Client buat MAC address gateway",

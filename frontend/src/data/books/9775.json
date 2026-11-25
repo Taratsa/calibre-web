@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/9775?v=1795434843",
   "cover_og_url": "/cover/9775/og?v=1795434843",
+  "has_cover": false,
   "url": "/book/ipv6-debugging-server-socket-binding-onno-widodo-purbo/",
   "rating": null,
   "comment": "Gunakan \"netstat\" untuk server cek socket binding Biasanya akan menarik untuk melihat soket yang aktif di sebuah node. Menggunakan \"netstat\" adalah cara yang paling cepat untuk memperoleh informasi tersebut. Gunakan opsi: -nlptu Contoh: # netstat -nlptu Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:873 0.0.0.0:*",

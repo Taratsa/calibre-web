@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11459?v=1795439929",
   "cover_og_url": "/cover/11459/og?v=1795439929",
+  "has_cover": false,
   "url": "/book/nltk-stemming-onno-widodo-purbo/",
   "rating": null,
   "comment": "A word stem is part of a word. It is sort of a normalization idea, but linguistic. For example, the stem of the word waiting is wait. word-stem word stem Given words, NLTK can find the stems. NLTK - stemming Start by defining some words: words = [\"game\",\"gaming\",\"gamed\",\"games\"] We import the module: from nltk.stem import PorterStemmer from nltk.tokenize import sent_tokenize, word_tokenize And",

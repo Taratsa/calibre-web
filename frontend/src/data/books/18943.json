@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18943?v=1795470936",
   "cover_og_url": "/cover/18943/og?v=1795470936",
+  "has_cover": false,
   "url": "/book/voip-cookbook-briker-s-h323-trunk-onno-widodo-purbo/",
   "rating": null,
   "comment": "Go to the Trunks menu in IPPBX Administration menu. There is no option specifically for H.323. So you have to choose Custom Trunk Then choose Add Custom Trunk. The general settings of Add Custom Trunk For customized Trunk, fill in the Custom Dial String by using the format H323//$OUTNUM$. As shown in Figure 5.23, the gateway address of H323 is 119.18.159.20. Then click",

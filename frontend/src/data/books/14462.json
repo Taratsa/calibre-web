@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14462?v=1795450085",
   "cover_og_url": "/cover/14462/og?v=1795450085",
+  "has_cover": false,
   "url": "/book/ubuntu-printer-setting-cli-onno-widodo-purbo/",
   "rating": null,
   "comment": "sudo apt install cups sudo lpadmin -p printername -E -v ipp://192.168.1.111/ipp/print -m everywhere",

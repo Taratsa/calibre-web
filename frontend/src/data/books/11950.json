@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/11950?v=1795441159",
   "cover_og_url": "/cover/11950/og?v=1795441159",
+  "has_cover": false,
   "url": "/book/zcash-miner-nheqminer-cuda-onno-widodo-purbo/",
   "rating": null,
   "comment": "nheqminer sebaiknya di jalankan di arsitektur 64bit. Contents 1 Install Driver NVidia 340 2 Install CUDA 3 Install Aplikasi Pendukung 4 Download Source Code 5 Compile Assembler 6 Compile nheqminer Install Driver NVidia 340 sudo apt-get install nvidia-340 nvidia-cuda-toolkit nvidia-340* nvidia-cuda* sudo modprobe nvidia_340 Cara ini berhasil mendetect Tesla c1060, tapi akan gagal saat compile",

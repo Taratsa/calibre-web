@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12393?v=1795442621",
   "cover_og_url": "/cover/12393/og?v=1795442621",
+  "has_cover": false,
   "url": "/book/ipv6-openwrt-konfigurasi-downstream-lan-interface-onno-widodo-purbo/",
   "rating": null,
   "comment": "OpenWRT menyediakan mekanisme delegasi prefix local yang flexible. Ini dapat di aktifkan untuk masing-masing LAN-interface dengan 3 parameter yang masing-masing optional: ip6assign: Prefix size digunakan untuk assigned prefix ke interface (contoh, 64 akan assign /64-prefixes) ip6hint: Subprefix ID yang akan digunakan jika ada (contoh, 1234 dengan ip6assign 64 akan assign prefix :1234::/64)",

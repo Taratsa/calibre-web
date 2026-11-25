@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12671?v=1795443384",
   "cover_og_url": "/cover/12671/og?v=1795443384",
+  "has_cover": false,
   "url": "/book/siege-test-dvwa-onno-widodo-purbo/",
   "rating": null,
   "comment": "test menu Buka web DVWA, login, capture Cookie menggunakan Wireshark tambahan di siege --header= siege -u http://192.168.88.240/DVWA-1.9/vulnerabilities/exec/ --header='Cookie: security=low; PHPSESSID=n4rbm0nva5qatce4c3jp8b8pk1' -d1 -r10 -c25 siege -u http://192.168.88.240/DVWA-1.9/vulnerabilities/sqli/ --header='Cookie: security=low; PHPSESSID=n4rbm0nva5qatce4c3jp8b8pk1' -d1 -r10 -c25 siege -u",

@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15618?v=1795455789",
   "cover_og_url": "/cover/15618/og?v=1795455789",
+  "has_cover": false,
   "url": "/book/usb-offline-ubuntu-22-04-install-os-server-onno-widodo-purbo/",
   "rating": null,
   "comment": "Download Ubuntu https://ubuntu.com/download Bersihkan fs wipefs -a /dev/sdc Tambahkan oflag=direct sudo dd if=ubuntu-server.iso of=/dev/sdc oflag=direct bs=1M status=progress dd : Start the dd command to write DVD/CD iso image. if=ubuntu-server.iso : Path to input file. of=/dev/sdc : Path to destination USB disk/stick. bs=1M : read and write up to BYTES bytes at a time. In this example, 1M at a",

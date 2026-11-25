@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/18945?v=1795470944",
   "cover_og_url": "/cover/18945/og?v=1795470944",
+  "has_cover": false,
   "url": "/book/voip-cookbook-briker-s-outbound-routes-onno-widodo-purbo/",
   "rating": null,
   "comment": "Outbound routes are used to manage where the call should go to, the one going out through the trunk. It is these Outbound routes that define all the outgoing calls. For example, for connecting to PSTN, Briker uses prefix 9, which is followed by the destination number. The following is an example of its configuration. Setting Outbound Routes In IPPBX Administration, choose Outbound Routes. Choose",

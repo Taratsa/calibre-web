@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/15507?v=1795455202",
   "cover_og_url": "/cover/15507/og?v=1795455202",
+  "has_cover": false,
   "url": "/book/wemos-d1-r1-mini-lcd-ds1307-i2c-rtc-onno-widodo-purbo/",
   "rating": null,
   "comment": "Library https://github.com/Naguissa/uRTCLib Code #include \"Arduino.h\" #include \"uRTCLib.h\" // uRTCLib rtc; uRTCLib rtc(0x68); /* I2C LCD ESP8266-Wenos D1 Mini GND GND VCC VIN SDA D2 SCL D1 */ #include  // set the LCD number of columns and rows int lcdColumns = 16; int lcdRows = 2; LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows); char cMonth[12][4] = {\"Jan\", \"Feb\", \"Mar\",",

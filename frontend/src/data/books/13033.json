@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13033?v=1795444603",
   "cover_og_url": "/cover/13033/og?v=1795444603",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-multi-area-network-onno-widodo-purbo/",
   "rating": null,
   "comment": "Contents 1 Topology Jaringan 2 Setup IP address 3 Setup OSPF 4 Cek route 5 Youtube 6 Pranala Menarik Topology Jaringan R1: e0: -- R2: e0 e1: -- R3: e0 R2: e0: -- R1: e0 e1: -- R4: e0 e2: -- nat0: Internet R3: e0: -- R1: e1 e1: -- LAN: 192.168.1.1/24 R4: e0: -- R2: e1 e1: -- LAN: 192.168.2.1/24 Setup IP address Jika di perlukan cek nomor interface /interface print R1: /ip address add",

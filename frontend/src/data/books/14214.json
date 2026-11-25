@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14214?v=1795449071",
   "cover_og_url": "/cover/14214/og?v=1795449071",
+  "has_cover": false,
   "url": "/book/minikube-install-pvc-mysql-dan-wordpress-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/ Contents 1 Objectif 2 Download 3 Kustomization.yaml 4 Apply &amp; Verify 5 Referensi Objectif Create PersistentVolumeClaims and PersistentVolumes Create a kustomization.yaml with a Secret generator MySQL resource configs WordPress resource configs Apply the kustomization directory by kubectl apply -k",

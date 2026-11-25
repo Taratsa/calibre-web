@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/13092?v=1795444787",
   "cover_og_url": "/cover/13092/og?v=1795444787",
+  "has_cover": false,
   "url": "/book/openvpn-ipv4-routed-lan-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://backreference.org/2009/11/15/openvpn-and-iroute/ Contents 1 gwA 2 gwB 3 gwC 4 Cek 5 Teori 6 Referensi 7 Pranala Menarik gwA gwA # cat /etc/openvpn/server.conf # gwA local 172.20.0.1 port 1194 proto udp dev tun topology subnet mode server tls-server ifconfig 10.0.0.1 255.255.255.0 route 192.168.2.0 255.255.255.0 10.0.0.2 route 192.168.3.0 255.255.255.0 10.0.0.3 client-config-dir",

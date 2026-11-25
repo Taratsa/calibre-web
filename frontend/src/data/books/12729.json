@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12729?v=1795443560",
   "cover_og_url": "/cover/12729/og?v=1795443560",
+  "has_cover": false,
   "url": "/book/internet-offline-mysqlslap-script-onno-widodo-purbo/",
   "rating": null,
   "comment": "Script mysqlslap-test.sh rm -Rf hasil-mysqlslap-test.txt touch hasil-mysqlslap-test.txt echo 'default' &gt;&gt; hasil-mysqlslap-test.txt mysqlslap -h localhost -u root -p123456 --auto-generate-sql &gt;&gt; hasil-mysqlslap-test.txt echo 'number-of-queries=1' &gt;&gt; hasil-mysqlslap-test.txt mysqlslap -h localhost -u root -p123456 --auto-generate-sql --concurrency=100 --number-of-queries=1 &gt;&gt;",

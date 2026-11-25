@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/14355?v=1795449613",
   "cover_og_url": "/cover/14355/og?v=1795449613",
+  "has_cover": false,
   "url": "/book/makefile-simple-makefile-untuk-bahasa-c-onno-widodo-purbo/",
   "rating": null,
   "comment": "Sumber: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ Contents 1 Buat 3 file 2 Tanpa Makefile 3 Makefile 1 4 Makefile 2 5 Makefile 3 6 Makefile 4 7 Makefile 5 8 Referensi 9 Pranala Menarik Buat 3 file hellomake.c #include  int main() { // call a function in another file myPrintHelloMake(); return(0); } hellofunc.c #include  #include  void",

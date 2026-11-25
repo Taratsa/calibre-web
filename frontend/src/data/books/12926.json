@@ -39,6 +39,7 @@
   ],
   "cover_url": "/cover_thumb/12926?v=1795444251",
   "cover_og_url": "/cover/12926/og?v=1795444251",
+  "has_cover": false,
   "url": "/book/ipv6-mikrotik-ospf-redistribute-routing-onno-widodo-purbo/",
   "rating": null,
   "comment": "/routing ospf-v3 interface add interface=ether1 area=backbone /ipv6 route add dst-address=2001::/16 gateway=fe80::1%ether1 /routing ospf-v3 instance set default redistribute-static=as-type-1 /routing ospf-v3 route print Referensi https://wiki.mikrotik.com/wiki/Manual:IPv6_Overview#OSPF Pranala Menarik TCP/IP: Advanced Routing Quagga VyOS Mikrotik Cisco Juniper BIRD1 BIRD2 IPv6 TCP/IP: Advanced",
