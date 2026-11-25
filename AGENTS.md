@@ -645,6 +645,19 @@ Two live search systems (plus the legacy advanced-search form):
   Drive and books without a PDF format keep the `/show` URL. `/show/<id>/<fmt>` is still used by the other readers
   (txt, cbr, djvu, audio) and by the EPUB reader's routes. The reader PAGE (`/read/<id>/pdf`, ~55 KB, 30-300 ms) is
   still rendered by Flask on every load because it carries the session CSRF token and must not be cached
+- **Search engines index the raw files**: `/files/*` and `/show/<id>/<fmt>` both answer with
+  `Link: <https://pustaka.taratsa.id/files/<id>/<fmt>/<version>/<sig>>; rel="canonical"` (`_signed_file_url()` in
+  `cps/helper.py`, no filename in the canonical form), so the `/show`, `/download` and filename variants all point at
+  ONE cacheable URL; without it Search Console reported "Duplicate without user-selected canonical" for ~925 crawled
+  `/files`/`/show` PDF/EPUB URLs. Google indexes both PDF and EPUB. `X-Robots-Tag: noindex` is limited to the viewer
+  shells (`web.read_book`) and the `/show/readium/` chapter assets. `/files` copies are edge-cached for a year, so a
+  header change there reaches crawlers only after a purge (`/files/*` or Purge Everything)
+- The same canonical URLs are in the sitemap (`file-urls.json`, written by `seed.mjs` from `metadata.db` + the
+  `flask_settings.flask_session_key` in `app.db`; only visible books, pdf/epub only). Sitemap inclusion and the
+  `rel="canonical"` header must always name the same URL. The Node copy of `_file_version`/`_file_signature` in
+  `seed.mjs` must be changed together with `cps/helper.py`; it relies on the app container's `TZ=UTC` when turning
+  `last_modified` into an epoch. ~20.7k file URLs, 75.5k sitemap entries in 2 chunks
+
 
 ### Cover Images
 - `Cache-Control: public, max-age=86400` (1 day) from Caddy's `@covers` block; the URL carries no version, so a changed
@@ -676,19 +689,6 @@ Two live search systems (plus the legacy advanced-search form):
   error. Check Cloudflare's Cache Rule "books cover caching" for per-status Edge TTLs
 - `Onion-Location` appears twice on every Flask response behind Caddy: Flask adds it from `ONION_LOCATION` and the
   `pustaka.taratsa.id` Caddy block adds it too. Pre-existing and harmless; drop one source to tidy it
-
-- **Search engines index the raw files**: `/files/*` and `/show/<id>/<fmt>` both answer with
-  `Link: <https://pustaka.taratsa.id/files/<id>/<fmt>/<version>/<sig>>; rel="canonical"` (`_signed_file_url()` in
-  `cps/helper.py`, no filename in the canonical form), so the `/show`, `/download` and filename variants all point at
-  ONE cacheable URL; without it Search Console reported "Duplicate without user-selected canonical" for ~925 crawled
-  `/files`/`/show` PDF/EPUB URLs. Google indexes both PDF and EPUB. `X-Robots-Tag: noindex` is limited to the viewer
-  shells (`web.read_book`) and the `/show/readium/` chapter assets. `/files` copies are edge-cached for a year, so a
-  header change there reaches crawlers only after a purge (`/files/*` or Purge Everything)
-- The same canonical URLs are in the sitemap (`file-urls.json`, written by `seed.mjs` from `metadata.db` + the
-  `flask_settings.flask_session_key` in `app.db`; only visible books, pdf/epub only). Sitemap inclusion and the
-  `rel="canonical"` header must always name the same URL. The Node copy of `_file_version`/`_file_signature` in
-  `seed.mjs` must be changed together with `cps/helper.py`; it relies on the app container's `TZ=UTC` when turning
-  `last_modified` into an epoch. ~20.7k file URLs, 75.5k sitemap entries in 2 chunks
 
 ### Cloudflare caching
 Cache policy lives in Caddy and the app, not in Cloudflare (decided 2026-11).
