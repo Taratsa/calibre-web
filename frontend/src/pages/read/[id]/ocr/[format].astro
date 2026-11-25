@@ -161,6 +161,10 @@ const ocrDescription = document && plainText
               <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 5h14M3 9h14M3 13h14M3 17h14" /></svg>
             </button>
           </div>
+          <div class="ocr-reader__segmented" role="group" aria-label="Unduh teks" data-download data-title={book.title} data-authors={authorNames} data-format={requestedFormat} data-ocr={String(isOcr)}>
+            <button type="button" data-download-format="txt" title="Unduh sebagai teks biasa (.txt)" aria-label="Unduh sebagai teks biasa (.txt)">Unduh .txt</button>
+            <button type="button" data-download-format="md" title="Unduh sebagai Markdown (.md)" aria-label="Unduh sebagai Markdown (.md)">Unduh .md</button>
+          </div>
         </div>
       )}
     </nav>
@@ -355,6 +359,157 @@ const ocrDescription = document && plainText
     };
     for (const button of buttons) button.addEventListener('click', () => apply(button.dataset.alignValue ?? 'left'));
     apply(document.documentElement.getAttribute('data-ocr-align') === 'justify' ? 'justify' : 'left');
+  }
+</script>
+
+<script>
+  // Download the text as it is shown, converted from the rendered article: the API only returns sanitised HTML.
+  const group = document.querySelector<HTMLElement>('[data-download]');
+  const article = document.querySelector<HTMLElement>('.ocr-reader__content');
+  if (group && article) {
+    type Mode = 'md' | 'txt';
+    const BLOCKS = new Set([
+      'P', 'DIV', 'ASIDE', 'SECTION', 'ARTICLE', 'BLOCKQUOTE', 'UL', 'OL', 'LI', 'TABLE', 'PRE', 'HR', 'FIGURE',
+      'FIGCAPTION', 'DL', 'DT', 'DD', 'NAV', 'HEADER', 'FOOTER', 'MAIN', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6',
+    ]);
+    const squash = (value: string) => value.replace(/\s+/g, ' ');
+    // Emphasis marks hug the text: "a *b* c", never "a * b * c".
+    const wrap = (text: string, mark: string) => {
+      const core = text.trim();
+      if (!core) return text;
+      return `${text.slice(0, text.length - text.trimStart().length)}${mark}${core}${mark}${text.slice(text.trimEnd().length)}`;
+    };
+
+    const inline = (node: Node, mode: Mode): string => {
+      if (node.nodeType === Node.TEXT_NODE) return squash(node.textContent ?? '');
+      if (!(node instanceof Element)) return '';
+      const tag = node.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return '';
+      if (tag === 'BR') return mode === 'md' ? '  \n' : '\n';
+      if (tag === 'IMG') {
+        const alt = node.getAttribute('alt')?.trim() ?? '';
+        const src = (node as HTMLImageElement).src;
+        return mode === 'md' && alt && src && !src.startsWith('data:') ? `![${alt}](${src})` : alt;
+      }
+      const inner = [...node.childNodes].map((child) => inline(child, mode)).join('');
+      if (mode === 'txt') return inner;
+      if (tag === 'STRONG' || tag === 'B') return wrap(inner, '**');
+      if (tag === 'EM' || tag === 'I') return wrap(inner, '*');
+      if (tag === 'CODE') return wrap(inner, '`');
+      if (tag === 'A') {
+        const href = node.getAttribute('href') ?? '';
+        // In-page anchors mean nothing outside this page.
+        if (!href || href.startsWith('#') || !inner.trim()) return inner;
+        return `[${inner.trim()}](${(node as HTMLAnchorElement).href})`;
+      }
+      return inner;
+    };
+
+    // Children of a container as blocks (paragraphs): consecutive inline nodes form one block.
+    const blocks = (parent: Element, mode: Mode): string[] => {
+      const out: string[] = [];
+      let run = '';
+      const flush = () => {
+        const text = run.replace(/\n +/g, '\n').trim();
+        if (text) out.push(text);
+        run = '';
+      };
+      for (const child of parent.childNodes) {
+        if (child instanceof Element && BLOCKS.has(child.tagName)) {
+          flush();
+          out.push(...block(child, mode));
+        } else {
+          run += inline(child, mode);
+        }
+      }
+      flush();
+      return out;
+    };
+
+    const quote = (inner: string[], mode: Mode) => inner
+      .join('\n\n')
+      .split('\n')
+      .map((line) => (mode === 'md' ? (line ? `> ${line}` : '>') : line ? `    ${line}` : ''))
+      .join('\n');
+
+    const list = (el: Element, mode: Mode): string[] => {
+      let number = Number((el as HTMLOListElement).start) || 1;
+      const items: string[] = [];
+      for (const item of el.children) {
+        if (item.tagName !== 'LI') continue;
+        const body = blocks(item, mode).join('\n').split('\n');
+        if (!body.join('').trim()) continue;
+        const marker = el.tagName === 'OL' ? `${number++}. ` : '- ';
+        items.push(marker + body.map((line, index) => (index ? `${' '.repeat(marker.length)}${line}` : line)).join('\n'));
+      }
+      return items.length ? [items.join('\n')] : [];
+    };
+
+    const table = (el: Element, mode: Mode): string[] => {
+      const rows = [...el.querySelectorAll('tr')]
+        .map((row) => [...row.children]
+          .filter((cell) => cell.tagName === 'TH' || cell.tagName === 'TD')
+          .map((cell) => {
+            const text = squash(blocks(cell, mode).join(' ')).trim();
+            return mode === 'md' ? text.replace(/\|/g, '\\|') : text;
+          }))
+        .filter((cells) => cells.length);
+      const width = Math.max(0, ...rows.map((cells) => cells.length));
+      if (!width) return [];
+      const padded = rows.map((cells) => [...cells, ...new Array<string>(width - cells.length).fill('')]);
+      if (mode === 'txt') return [padded.map((cells) => cells.join(' | ').trimEnd()).join('\n')];
+      const line = (cells: string[]) => `| ${cells.join(' | ')} |`;
+      return [[line(padded[0]), line(new Array<string>(width).fill('---')), ...padded.slice(1).map(line)].join('\n')];
+    };
+
+    const block = (el: Element, mode: Mode): string[] => {
+      const tag = el.tagName;
+      if (tag.length === 2 && tag[0] === 'H') {
+        const text = squash(inline(el, mode)).trim();
+        if (!text) return [];
+        return [mode === 'md' ? `${'#'.repeat(Number(tag[1]))} ${text}` : text];
+      }
+      if (tag === 'HR') return [mode === 'md' ? '---' : '* * *'];
+      if (tag === 'PRE') {
+        const text = (el.textContent ?? '').trimEnd();
+        if (!text.trim()) return [];
+        return [mode === 'md' ? `\`\`\`\n${text}\n\`\`\`` : text];
+      }
+      if (tag === 'UL' || tag === 'OL') return list(el, mode);
+      if (tag === 'TABLE') return table(el, mode);
+      const inner = blocks(el, mode);
+      if (!inner.length) return [];
+      if (tag === 'BLOCKQUOTE' || el.classList.contains('ocr-footnotes')) return [quote(inner, mode)];
+      return inner;
+    };
+
+    const title = group.dataset.title ?? '';
+    const authors = group.dataset.authors ?? '';
+    const build = (mode: Mode) => {
+      const head = [mode === 'md' ? `# ${title}` : title];
+      if (authors) head.push(`Penulis: ${authors}`);
+      head.push(`Sumber: ${location.origin}${location.pathname}`);
+      if (group.dataset.ocr === 'true') head.push('Teks hasil OCR dapat mengandung kesalahan eja dan tata letak.');
+      if (mode === 'md') head.push('---');
+      return `${[...head, ...blocks(article, mode)].join('\n\n')}\n`;
+    };
+    const slug = title.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80).replace(/-$/, '')
+      || 'buku';
+
+    for (const button of group.querySelectorAll<HTMLButtonElement>('[data-download-format]')) {
+      button.addEventListener('click', () => {
+        const mode: Mode = button.dataset.downloadFormat === 'md' ? 'md' : 'txt';
+        const blob = new Blob([build(mode)], { type: `${mode === 'md' ? 'text/markdown' : 'text/plain'};charset=utf-8` });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `${slug}-${group.dataset.format ?? 'teks'}.${mode}`;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 10000);
+      });
+    }
   }
 </script>
 
@@ -697,8 +852,34 @@ const ocrDescription = document && plainText
     line-height: 1.7;
     overflow-wrap: anywhere;
   }
+  /* Document headings arrive demoted one level (the page title is the only h1), and Tailwind's reset gives
+     h3-h6 the body's size and weight, so each level needs its own step or the structure is invisible. */
   .ocr-reader__content :global(h2) {
-    font-size: 1.18em;
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+  .ocr-reader__content :global(h3) {
+    margin-bottom: 0.5rem;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  .ocr-reader__content :global(h4) {
+    margin-bottom: 0.5rem;
+    font-size: 1.05em;
+    font-weight: 700;
+  }
+  .ocr-reader__content :global(h5) {
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--muted-strong);
+  }
+  .ocr-reader__content :global(h6) {
+    margin-bottom: 0.5rem;
+    font-size: 0.95em;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--muted-strong);
   }
   .ocr-reader__content :global(.ocr-footnotes) {
     margin: 1.5rem 0;

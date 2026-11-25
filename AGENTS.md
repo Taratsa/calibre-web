@@ -633,6 +633,17 @@ Two live search systems (plus the legacy advanced-search form):
   heading lands (`scroll-margin-top`), found by binary search over heading offsets measured on load, resize and when the
   article is resized (text size, alignment, images). A document without headings shows only the title and percent.
   Chain items are created by the script, so their styles use `:global()` inside the Astro `<style>`
+- Heading look (same page): the page title is the only `h1`, document headings are demoted one level, and Tailwind's reset
+  gives `h3`-`h6` the body's size and weight, so `[format].astro` styles `h2`-`h6` as a size/weight ladder inside
+  `.ocr-reader__content`; without it the heading structure was invisible (only `h2` had a size)
+- Download buttons (same page toolbar, "Unduh .txt" / "Unduh .md"): built in the browser from the rendered article, so the
+  file is exactly what the reader sees and nothing new is requested from Flask. The API returns only sanitised HTML, so a
+  small DOM walker (script in `[format].astro`) writes Markdown (`#` headings by tag level, emphasis, links made absolute,
+  `>` blockquotes and footnote boxes, `-`/`1.` lists, pipe tables, `---`) or plain text (same blocks, no marks; footnotes
+  and quotes indented, tables as ` | ` rows). The file starts with the title, authors, the source URL and, for PDFs, the
+  OCR warning. Heading levels in the file are the page's (demoted) levels, so the document's top heading is `##` under
+  the book's `#`. File name `<title slug>-<pdf|epub>.<md|txt>`. Checked in Chromium against books 21620 (PDF), 8141
+  (EPUB), 7958 (PDF and EPUB): no HTML tags left, Markdown length within 1% of the article's `innerText` for the last three
 - A PDF format whose file is not a PDF (68 MP3, 2 MP4, 8 saved Google Drive "virus scan" HTML pages were uploaded under
   the PDF format) gets `OcrNoTextError("File is not a PDF")` from `_check_pdf_file()` (cps/ocr_service.py, looks for
   `%PDF-` in the first KB). `/api/read/<id>/ocr/status/pdf`, the POST queue and the page answer 404, so the book page
