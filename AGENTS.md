@@ -642,6 +642,14 @@ Two live search systems (plus the legacy advanced-search form):
   present). The cache key has no mode, so changing it does not redo cached books. To redo books on purpose, call
   `scan_book_ocr` with `ocr_service._load_cache` stubbed to return None (the new text replaces the old atomically and
   only after a successful run). Books added since 2026-11-18 were refreshed this way
+- OCR coverage (2026-11-26): 20,672 of 20,774 PDF/EPUB formats have cached text (9,249 pdf, 11,423 epub). The remaining
+  formats fail permanently and must not be queued again: 78 "PDF" files that are MP3/MP4/HTML (rejected by
+  `_check_pdf_file`), 4 PDFs the OCR server cannot open (`INVALID_PDF`: 6972, 6967, 6966, 3820), 8365
+  (`PDF_RENDER_FAILED` at page 102/110; Ghostscript rasterizes those pages fine, so it is the server's renderer),
+  1 EPUB with no text layer at all (1339, 53 images only), 3 junk 2 KB EPUBs (7501-7503), and 2 PDFs over the OCR
+  server's page limit (`PDF_TOO_LARGE`, default `MAX_PDF_PAGES` 2000: 17326 has 3,053 pages, 17813 has 2,595). Raise
+  that limit on the server (a RAGFlow deployment at `TURBOOCR_URL`) before retrying those two. Queue work through
+  `POST /api/read/<id>/ocr/<fmt>` (cap 5 pending), never many at once: the server is the bottleneck
 - The Flask viewer shells (`/read/<id>/<fmt>` -> epub.js/pdf.js/etc.) send `X-Robots-Tag: noindex`
   (`add_security_headers` in `cps/web.py`); do not also `Disallow` them in robots.txt or crawlers never see it
 
