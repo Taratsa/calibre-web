@@ -278,8 +278,14 @@ Two live search systems (plus the legacy advanced-search form):
   first sync makes the SDK store `{status:{value:"error",expiresAt:+10min}}` with NO config; until it expires the SDK
   skips initialization and its page-view check throws "config is null, maybe the init function was not called?" on
   every page load (also seen as an unhandled `Cannot read properties of undefined (reading 'data')`). The embed
-  therefore drops a stored `error` status before calling `setup`, so one transient failure costs one visit. The
-  failure itself is upstream (one edge 503 on `/js/surveys.umd.cjs` and aborted CORS preflights on
+  therefore drops a stored `error` status before calling `setup`, so a visit made after a failure is not wasted. That
+  alone was NOT enough (still reported 2026-11-25 from an iOS webview): when the VERY FIRST sync fails, `setup()`
+  stores the error state and the SDK then runs its page-view check anyway, which throws the unhandled rejection from
+  inside the SDK (no `try/catch` of ours can reach it). Reproduced in Chromium with the `/environment` request aborted
+  or answered 503: the old embed threw on every load, the new one never. So the embed now makes the SDK's own first
+  request itself (`GET .../api/v1/client/<workspace>/environment`, same `Content-Type` header, so the same CORS
+  preflight) and only calls `setup()` when it answers `ok`; otherwise the widget stays off for that page view and
+  nothing is stored. The failure itself is upstream (one edge 503 on `/js/surveys.umd.cjs` and aborted CORS preflights on
   `/api/v1/client/<workspace>/environment` were observed); `user` identification is enterprise-only on that server
 - Anonymous download tracking for Hot Books
 - OPDS feed for ebook reader compatibility

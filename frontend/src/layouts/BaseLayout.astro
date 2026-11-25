@@ -159,22 +159,35 @@ const moreNav: NavLink[] = [
         t.async = true;
         t.src = appUrl + "/js/formbricks.umd.cjs";
         t.onload = function () {
-          try {
-            // A failed sync leaves {status:{value:"error",expiresAt:+10min}} in localStorage with NO config. Until it
-            // expires the SDK skips initialization, and its page-view check then throws "config is null, maybe the init
-            // function was not called?" on every page load. Drop that backoff so a transient failure (edge 5xx, a
-            // blocked request) costs one visit instead of leaving the widget dead for ten minutes.
-            var stored = null;
+          var start = function () {
             try {
-              stored = JSON.parse(localStorage.getItem("formbricks-js"));
-            } catch (ignore) {}
-            if (stored && stored.status && stored.status.value === "error") {
-              localStorage.removeItem("formbricks-js");
+              // A failed sync leaves {status:{value:"error",expiresAt:+10min}} in localStorage with NO config. Until it
+              // expires the SDK skips initialization. Drop that backoff so a visit made while the server is reachable
+              // again is not wasted on a stale error.
+              var stored = null;
+              try {
+                stored = JSON.parse(localStorage.getItem("formbricks-js"));
+              } catch (ignore) {}
+              if (stored && stored.status && stored.status.value === "error") {
+                localStorage.removeItem("formbricks-js");
+              }
+              window.formbricks.setup({ workspaceId: workspaceId, appUrl: appUrl });
+            } catch (ignore) {
+              // The widget is optional: never let it break the page.
             }
-            window.formbricks.setup({ workspaceId: workspaceId, appUrl: appUrl });
-          } catch (ignore) {
-            // The widget is optional: never let it break the page.
-          }
+          };
+          // When the very first sync fails (blocked or flaky request, common in in-app webviews), the SDK stores the
+          // error state and then runs its page-view check anyway, which throws "config is null, maybe the init function
+          // was not called?" as an unhandled rejection from inside the SDK, where we cannot catch it. So only call
+          // setup() once the request the SDK makes first (same URL and header, so the same CORS preflight) works.
+          if (typeof fetch !== "function") return;
+          fetch(appUrl + "/api/v1/client/" + workspaceId + "/environment", {
+            headers: { "Content-Type": "application/json" },
+          })
+            .then(function (response) {
+              if (response.ok) start();
+            })
+            .catch(function () {});
         };
         var e = document.getElementsByTagName("script")[0];
         e.parentNode.insertBefore(t, e);
