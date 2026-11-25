@@ -21,14 +21,16 @@ services:
       - TURBOOCR_MODE=${TURBOOCR_MODE:-ocr}
       - OCR_SCAN_CRON=${OCR_SCAN_CRON:-}
       - MANTICORE_URL=http://manticore:9308
+      - BOOK_SLUGS_PATH=/app/calibre-web/seed-data/book-slugs.json
     ports:
       - "127.0.0.1:8083:8083"
     volumes:
       - ./data:/config
       - ./library:/calibre-library
-      # seed.mjs rewrites this file after each catalog rebuild; mount it live
-      # so numeric /book/<id>/ redirects never depend on an image rebuild.
-      - ./frontend/src/data/book-slugs.json:/app/calibre-web/book-slugs.json:ro
+      # seed.mjs rewrites book-slugs.json after each catalog rebuild. Mount the DIRECTORY, not the file: a
+      # single-file bind mount follows the inode, so a git stash/checkout/pull (which replaces the file) strands the
+      # container on a deleted copy and new books 404 on /book/<id>/ until a restart.
+      - ./frontend/src/data:/app/calibre-web/seed-data:ro
     restart: unless-stopped
     networks:
       - caddy_net
