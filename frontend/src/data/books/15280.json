@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1466,
-    "longer_than": 58,
+    "longer_than": 56,
     "top": [
       [
         "sudo",
@@ -128,12 +128,16 @@
         9
       ],
       [
+        "systemd-networkd",
+        4
+      ],
+      [
         "eof",
         6
       ],
       [
-        "systemd-networkd",
-        4
+        "ipv",
+        11
       ],
       [
         "golang",
@@ -144,12 +148,8 @@
         10
       ],
       [
-        "ipv",
-        11
-      ],
-      [
-        "mme",
-        6
+        "networkd",
+        4
       ]
     ],
     "phrases": [
@@ -197,7 +197,7 @@
       ],
       [
         15680,
-        0.34
+        0.35
       ],
       [
         15258,

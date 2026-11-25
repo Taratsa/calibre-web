@@ -45,5 +45,193 @@
       "size": 45425936,
       "name": "Bahoewa inilah kitab permoela-an pengetaoe - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 13053,
+    "longer_than": 83,
+    "top": [
+      [
+        "orang",
+        254
+      ],
+      [
+        "ija",
+        157
+      ],
+      [
+        "adapon",
+        88
+      ],
+      [
+        "kapada",
+        78
+      ],
+      [
+        "tiada",
+        78
+      ],
+      [
+        "kitab",
+        73
+      ],
+      [
+        "djikaloe",
+        65
+      ],
+      [
+        "ataw",
+        59
+      ],
+      [
+        "laloe",
+        55
+      ],
+      [
+        "saperti",
+        55
+      ],
+      [
+        "poela",
+        54
+      ],
+      [
+        "nagri",
+        53
+      ]
+    ],
+    "distinct": [
+      [
+        "ija",
+        157
+      ],
+      [
+        "adapon",
+        88
+      ],
+      [
+        "ataw",
+        59
+      ],
+      [
+        "djikaloe",
+        65
+      ],
+      [
+        "kapada",
+        78
+      ],
+      [
+        "hoeroep",
+        40
+      ],
+      [
+        "angkaoe",
+        37
+      ],
+      [
+        "itoepon",
+        40
+      ],
+      [
+        "kamoedian",
+        50
+      ],
+      [
+        "satelah",
+        50
+      ],
+      [
+        "saperti",
+        55
+      ],
+      [
+        "sa-orang",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "kareta asap",
+        19
+      ],
+      [
+        "orang toewah",
+        18
+      ],
+      [
+        "mata benda",
+        17
+      ],
+      [
+        "kapal asap",
+        17
+      ],
+      [
+        "anak radja",
+        16
+      ],
+      [
+        "toekang roti",
+        15
+      ],
+      [
+        "hoeroep timah",
+        13
+      ],
+      [
+        "djikaloe kiranja",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        15128,
+        0.42
+      ],
+      [
+        10940,
+        0.26
+      ],
+      [
+        10871,
+        0.26
+      ],
+      [
+        13077,
+        0.24
+      ],
+      [
+        17634,
+        0.23
+      ],
+      [
+        13480,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 55,
+      "negative": 39,
+      "trend": [
+        null,
+        null,
+        null,
+        0.71,
+        0.33,
+        0.33,
+        -0.2,
+        null,
+        null,
+        null,
+        0.86,
+        -0.5,
+        -1,
+        null,
+        -0.4,
+        0.11
+      ],
+      "emotions": []
+    }
+  }
 }

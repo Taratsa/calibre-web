@@ -49,5 +49,176 @@
       "size": 12662142,
       "name": "Pengantar ilmu kimia - O.A. Emanuel"
     }
-  ]
+  ],
+  "text": {
+    "words": 9733,
+    "longer_than": 79,
+    "top": [
+      [
+        "atom",
+        173
+      ],
+      [
+        "air",
+        125
+      ],
+      [
+        "zat",
+        112
+      ],
+      [
+        "oksigen",
+        111
+      ],
+      [
+        "asam",
+        105
+      ],
+      [
+        "molekul",
+        105
+      ],
+      [
+        "hidrogen",
+        103
+      ],
+      [
+        "berat",
+        93
+      ],
+      [
+        "gram",
+        79
+      ],
+      [
+        "persenjawaan",
+        78
+      ],
+      [
+        "reaksi",
+        74
+      ],
+      [
+        "garam",
+        65
+      ]
+    ],
+    "distinct": [
+      [
+        "persenjawaan",
+        78
+      ],
+      [
+        "atom",
+        173
+      ],
+      [
+        "hidrogen",
+        103
+      ],
+      [
+        "molekul",
+        105
+      ],
+      [
+        "oksigen",
+        111
+      ],
+      [
+        "bersenjawa",
+        49
+      ],
+      [
+        "oksida",
+        59
+      ],
+      [
+        "zat",
+        112
+      ],
+      [
+        "asam",
+        105
+      ],
+      [
+        "bervalensi",
+        37
+      ],
+      [
+        "gram",
+        79
+      ],
+      [
+        "basa",
+        63
+      ]
+    ],
+    "phrases": [
+      [
+        "berat atom",
+        36
+      ],
+      [
+        "air raksa",
+        33
+      ],
+      [
+        "atom hidrogen",
+        26
+      ],
+      [
+        "oksid air",
+        16
+      ],
+      [
+        "sisa asam",
+        15
+      ],
+      [
+        "oksida basa",
+        15
+      ],
+      [
+        "bersenjawa dengan atom",
+        10
+      ],
+      [
+        "banjak atom",
+        15
+      ]
+    ],
+    "similar": [
+      [
+        12282,
+        0.16
+      ],
+      [
+        2959,
+        0.16
+      ],
+      [
+        1594,
+        0.15
+      ],
+      [
+        1383,
+        0.12
+      ],
+      [
+        6621,
+        0.12
+      ],
+      [
+        6651,
+        0.11
+      ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 39,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
+  }
 }

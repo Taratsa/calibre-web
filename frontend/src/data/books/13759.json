@@ -45,5 +45,218 @@
       "size": 19454280,
       "name": "Riwajat pergerakan wanita Indonesia - Sri Mangunsarkoro"
     }
-  ]
+  ],
+  "text": {
+    "words": 10764,
+    "longer_than": 80,
+    "top": [
+      [
+        "indonesia",
+        204
+      ],
+      [
+        "wanita",
+        183
+      ],
+      [
+        "oentoek",
+        79
+      ],
+      [
+        "doenia",
+        72
+      ],
+      [
+        "nippon",
+        48
+      ],
+      [
+        "hidoep",
+        47
+      ],
+      [
+        "kemanoesiaan",
+        44
+      ],
+      [
+        "perdjoangan",
+        39
+      ],
+      [
+        "negara",
+        38
+      ],
+      [
+        "kebangsaan",
+        37
+      ],
+      [
+        "kemerdekaan",
+        36
+      ],
+      [
+        "politik",
+        36
+      ]
+    ],
+    "distinct": [
+      [
+        "wanita",
+        183
+      ],
+      [
+        "oentoek",
+        79
+      ],
+      [
+        "doenia",
+        72
+      ],
+      [
+        "kemanoesiaan",
+        44
+      ],
+      [
+        "nippon",
+        48
+      ],
+      [
+        "poeteri",
+        35
+      ],
+      [
+        "qpca",
+        28
+      ],
+      [
+        "hidoep",
+        47
+      ],
+      [
+        "wanita-rakjat",
+        23
+      ],
+      [
+        "indonesia",
+        204
+      ],
+      [
+        "ketoehanan",
+        22
+      ],
+      [
+        "perdjoangan",
+        39
+      ]
+    ],
+    "phrases": [
+      [
+        "wanita indonesia",
+        48
+      ],
+      [
+        "repoeblik indonesia",
+        20
+      ],
+      [
+        "poeteri kartini",
+        17
+      ],
+      [
+        "balatentara dai nippon",
+        11
+      ],
+      [
+        "gerakan wanita",
+        16
+      ],
+      [
+        "kemerdekaan indonesia",
+        15
+      ],
+      [
+        "pemerintah balatentara dai",
+        9
+      ],
+      [
+        "seloeroeh doenia",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        18673,
+        0.34
+      ],
+      [
+        19173,
+        0.34
+      ],
+      [
+        6699,
+        0.31
+      ],
+      [
+        4856,
+        0.27
+      ],
+      [
+        4906,
+        0.26
+      ],
+      [
+        5931,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 98,
+      "negative": 32,
+      "trend": [
+        -0.5,
+        0.27,
+        0.71,
+        -0.6,
+        0.56,
+        0,
+        0.71,
+        1,
+        0.14,
+        0.67,
+        1,
+        0.75,
+        0.67,
+        1,
+        null,
+        0.56
+      ],
+      "emotions": [
+        [
+          "trust",
+          21
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

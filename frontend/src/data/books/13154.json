@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 454,
-    "longer_than": 38,
+    "longer_than": 37,
     "top": [
       [
         "bgp",
@@ -120,12 +120,12 @@
         10
       ],
       [
-        "egp",
-        4
-      ],
-      [
         "routing",
         8
+      ],
+      [
+        "egp",
+        4
       ],
       [
         "synchronization",
@@ -136,11 +136,11 @@
         6
       ],
       [
-        "classless",
+        "cidr",
         3
       ],
       [
-        "cidr",
+        "classless",
         3
       ],
       [
@@ -169,7 +169,7 @@
     "similar": [
       [
         13130,
-        0.31
+        0.32
       ],
       [
         12929,
@@ -189,7 +189,7 @@
       ],
       [
         19223,
-        0.22
+        0.23
       ]
     ],
     "sentiment": null

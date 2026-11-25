@@ -45,5 +45,193 @@
       "size": 10043185,
       "name": "Masalah tuli - Mohammad Zaman"
     }
-  ]
+  ],
+  "text": {
+    "words": 6317,
+    "longer_than": 73,
+    "top": [
+      [
+        "tuli",
+        70
+      ],
+      [
+        "orang",
+        51
+      ],
+      [
+        "jalah",
+        39
+      ],
+      [
+        "djuga",
+        32
+      ],
+      [
+        "indonesia",
+        31
+      ],
+      [
+        "sadja",
+        31
+      ],
+      [
+        "telinga",
+        27
+      ],
+      [
+        "banjak",
+        25
+      ],
+      [
+        "pendengaran",
+        25
+      ],
+      [
+        "angka²",
+        22
+      ],
+      [
+        "media",
+        21
+      ],
+      [
+        "otitis",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "tuli",
+        70
+      ],
+      [
+        "otitis",
+        21
+      ],
+      [
+        "jalah",
+        39
+      ],
+      [
+        "sjaraf",
+        21
+      ],
+      [
+        "angka²",
+        22
+      ],
+      [
+        "pendengaran",
+        25
+      ],
+      [
+        "djuga",
+        32
+      ],
+      [
+        "anak²",
+        20
+      ],
+      [
+        "intensitet",
+        12
+      ],
+      [
+        "kht",
+        11
+      ],
+      [
+        "sadja",
+        31
+      ],
+      [
+        "telinga",
+        27
+      ]
+    ],
+    "phrases": [
+      [
+        "otitis media",
+        21
+      ],
+      [
+        "tuli dibagian sjaraf",
+        8
+      ],
+      [
+        "orang indonesia",
+        11
+      ],
+      [
+        "orang jang tuli",
+        7
+      ],
+      [
+        "keturunan tionghwa",
+        10
+      ],
+      [
+        "fakultas kedokteran",
+        10
+      ],
+      [
+        "tuli semendjak lahir",
+        5
+      ],
+      [
+        "tambahan produksi",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        20971,
+        0.22
+      ],
+      [
+        11619,
+        0.18
+      ],
+      [
+        6638,
+        0.18
+      ],
+      [
+        6663,
+        0.17
+      ],
+      [
+        6640,
+        0.17
+      ],
+      [
+        6654,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": -0.11,
+      "positive": 55,
+      "negative": 68,
+      "trend": [
+        0,
+        -0.33,
+        -0.5,
+        0.4,
+        null,
+        -1,
+        null,
+        -0.54,
+        null,
+        0.33,
+        null,
+        -0.56,
+        -0.23,
+        0.25,
+        0.85,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

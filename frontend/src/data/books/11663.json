@@ -45,5 +45,218 @@
       "size": 5969001,
       "name": "Lima tjerita - Sutan Madjolelo Junus"
     }
-  ]
+  ],
+  "text": {
+    "words": 5195,
+    "longer_than": 71,
+    "top": [
+      [
+        "rahmat",
+        35
+      ],
+      [
+        "alifba",
+        32
+      ],
+      [
+        "djabai",
+        32
+      ],
+      [
+        "guru",
+        32
+      ],
+      [
+        "pergi",
+        27
+      ],
+      [
+        "tuan",
+        27
+      ],
+      [
+        "ishak",
+        26
+      ],
+      [
+        "orang",
+        26
+      ],
+      [
+        "engkau",
+        25
+      ],
+      [
+        "sadja",
+        20
+      ],
+      [
+        "aman",
+        19
+      ],
+      [
+        "djuga",
+        19
+      ]
+    ],
+    "distinct": [
+      [
+        "alifba",
+        32
+      ],
+      [
+        "ishak",
+        26
+      ],
+      [
+        "tempajan",
+        17
+      ],
+      [
+        "uuu",
+        19
+      ],
+      [
+        "rahmat",
+        35
+      ],
+      [
+        "embatjang",
+        11
+      ],
+      [
+        "uuuuuu",
+        7
+      ],
+      [
+        "engkau",
+        25
+      ],
+      [
+        "guru",
+        32
+      ],
+      [
+        "katanja",
+        17
+      ],
+      [
+        "djuga",
+        19
+      ],
+      [
+        "sadja",
+        20
+      ]
+    ],
+    "phrases": [
+      [
+        "tuan puteri",
+        10
+      ],
+      [
+        "djabai dan ishak",
+        6
+      ],
+      [
+        "uuu uuuuuu",
+        7
+      ],
+      [
+        "tuan guru",
+        7
+      ],
+      [
+        "aluku dilanda kuda",
+        4
+      ],
+      [
+        "pulau intan",
+        5
+      ],
+      [
+        "pergi naik hadji",
+        3
+      ],
+      [
+        "junus st madjolelo",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        11049,
+        0.19
+      ],
+      [
+        4905,
+        0.19
+      ],
+      [
+        1446,
+        0.19
+      ],
+      [
+        7802,
+        0.19
+      ],
+      [
+        7684,
+        0.18
+      ],
+      [
+        6708,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 90,
+      "negative": 60,
+      "trend": [
+        0.75,
+        null,
+        -0.5,
+        null,
+        0.14,
+        -0.67,
+        0.4,
+        0,
+        0.18,
+        0.6,
+        0.67,
+        -0.11,
+        null,
+        0.67,
+        -0.25,
+        0
+      ],
+      "emotions": [
+        [
+          "trust",
+          25
+        ],
+        [
+          "sadness",
+          20
+        ],
+        [
+          "joy",
+          12
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
+  }
 }

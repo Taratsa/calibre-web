@@ -45,5 +45,222 @@
       "size": 17488147,
       "name": "Djawaban kumpulan soal-soal udjian _ masuk - H.A. Batubara"
     }
-  ]
+  ],
+  "text": {
+    "words": 6118,
+    "longer_than": 73,
+    "top": [
+      [
+        "pendapatan",
+        129
+      ],
+      [
+        "landjutan",
+        54
+      ],
+      [
+        "djam",
+        52
+      ],
+      [
+        "kesekolah",
+        51
+      ],
+      [
+        "negeri",
+        51
+      ],
+      [
+        "tingkatan",
+        51
+      ],
+      [
+        "udjian",
+        48
+      ],
+      [
+        "indonesia",
+        47
+      ],
+      [
+        "orang",
+        45
+      ],
+      [
+        "masuk",
+        40
+      ],
+      [
+        "djawa",
+        25
+      ],
+      [
+        "pengetahuan",
+        23
+      ]
+    ],
+    "distinct": [
+      [
+        "pendapatan",
+        129
+      ],
+      [
+        "landjutan",
+        54
+      ],
+      [
+        "kesekolah",
+        51
+      ],
+      [
+        "udjian",
+        48
+      ],
+      [
+        "djam",
+        52
+      ],
+      [
+        "tingkatan",
+        51
+      ],
+      [
+        "djawa",
+        25
+      ],
+      [
+        "negeri",
+        51
+      ],
+      [
+        "berhitung",
+        15
+      ],
+      [
+        "sumatera",
+        23
+      ],
+      [
+        "didaerah",
+        16
+      ],
+      [
+        "djakarta",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "kesekolah landjutan tingkatan",
+        48
+      ],
+      [
+        "tingkatan pertama negeri",
+        47
+      ],
+      [
+        "udjian masuk kesekolah",
+        27
+      ],
+      [
+        "masuk kesekolah landjutan",
+        27
+      ],
+      [
+        "bahasa indonesia",
+        19
+      ],
+      [
+        "pengetahuan umum djam",
+        12
+      ],
+      [
+        "berhitung djam",
+        14
+      ],
+      [
+        "indonesia djam",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        14530,
+        0.22
+      ],
+      [
+        13816,
+        0.19
+      ],
+      [
+        18095,
+        0.17
+      ],
+      [
+        784,
+        0.16
+      ],
+      [
+        1905,
+        0.14
+      ],
+      [
+        788,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.06,
+      "positive": 66,
+      "negative": 58,
+      "trend": [
+        null,
+        -0.54,
+        null,
+        0.14,
+        0.11,
+        null,
+        0.5,
+        -0.17,
+        0.43,
+        0.56,
+        0.11,
+        -0.23,
+        0.43,
+        null,
+        0.33,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          19
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

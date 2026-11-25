@@ -45,5 +45,222 @@
       "size": 14165306,
       "name": "Perbaikan kampung dan rumah rakjat - Abikusno Tjokrosujoso"
     }
-  ]
+  ],
+  "text": {
+    "words": 6054,
+    "longer_than": 73,
+    "top": [
+      [
+        "rumah",
+        85
+      ],
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "perumahan",
+        66
+      ],
+      [
+        "supaja",
+        40
+      ],
+      [
+        "pemerintah",
+        34
+      ],
+      [
+        "kesehatan",
+        30
+      ],
+      [
+        "pekerdjaan",
+        28
+      ],
+      [
+        "mendjadi",
+        27
+      ],
+      [
+        "air",
+        26
+      ],
+      [
+        "pembangunan",
+        25
+      ],
+      [
+        "ruangan",
+        25
+      ],
+      [
+        "djuga",
+        24
+      ]
+    ],
+    "distinct": [
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "perumahan",
+        66
+      ],
+      [
+        "supaja",
+        40
+      ],
+      [
+        "rumah",
+        85
+      ],
+      [
+        "pekerdjaan",
+        28
+      ],
+      [
+        "pembelandjaan",
+        11
+      ],
+      [
+        "kaju",
+        19
+      ],
+      [
+        "mendjadi",
+        27
+      ],
+      [
+        "sjarat-sjarat",
+        14
+      ],
+      [
+        "djuga",
+        24
+      ],
+      [
+        "dibikin",
+        21
+      ],
+      [
+        "djika",
+        21
+      ]
+    ],
+    "phrases": [
+      [
+        "perumahan rakjat",
+        35
+      ],
+      [
+        "pembangunan rumah",
+        15
+      ],
+      [
+        "ditindjau dari sudut",
+        5
+      ],
+      [
+        "pembikinan rumah",
+        7
+      ],
+      [
+        "rumah rakjat",
+        6
+      ],
+      [
+        "dibikin dari semen",
+        4
+      ],
+      [
+        "sudut kesehatan",
+        5
+      ],
+      [
+        "sjarat-sjarat kesehatan",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        20971,
+        0.19
+      ],
+      [
+        6643,
+        0.19
+      ],
+      [
+        6630,
+        0.19
+      ],
+      [
+        8392,
+        0.16
+      ],
+      [
+        15036,
+        0.16
+      ],
+      [
+        6651,
+        0.15
+      ]
+    ],
+    "sentiment": {
+      "score": 0.42,
+      "positive": 148,
+      "negative": 61,
+      "trend": [
+        0.62,
+        0.08,
+        0.76,
+        -0.07,
+        0.71,
+        0.71,
+        0.27,
+        0.43,
+        0.7,
+        0.25,
+        0.33,
+        1,
+        0.67,
+        1,
+        0.5,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "disgust",
+          8
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "trust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

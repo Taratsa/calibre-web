@@ -48,5 +48,150 @@
       "size": 6103,
       "name": "Btrfs - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 871,
+    "longer_than": 48,
+    "top": [
+      [
+        "btrfs",
+        42
+      ],
+      [
+        "filesystem",
+        12
+      ],
+      [
+        "linux",
+        11
+      ],
+      [
+        "compression",
+        7
+      ],
+      [
+        "file",
+        7
+      ],
+      [
+        "files",
+        6
+      ],
+      [
+        "data",
+        5
+      ],
+      [
+        "ext",
+        5
+      ],
+      [
+        "features",
+        5
+      ],
+      [
+        "performance",
+        5
+      ],
+      [
+        "raid",
+        5
+      ],
+      [
+        "released",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "btrfs",
+        42
+      ],
+      [
+        "filesystem",
+        12
+      ],
+      [
+        "compression",
+        7
+      ],
+      [
+        "lzo",
+        3
+      ],
+      [
+        "snapshots",
+        4
+      ],
+      [
+        "benchmarks",
+        4
+      ],
+      [
+        "raid",
+        5
+      ],
+      [
+        "linux",
+        11
+      ],
+      [
+        "ext",
+        5
+      ],
+      [
+        "released",
+        5
+      ],
+      [
+        "filesystems",
+        3
+      ],
+      [
+        "ssd",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "space cache",
+        4
+      ],
+      [
+        "linux released",
+        4
+      ],
+      [
+        "btrfs file",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        9456,
+        0.42
+      ],
+      [
+        20376,
+        0.39
+      ],
+      [
+        9457,
+        0.38
+      ],
+      [
+        20366,
+        0.34
+      ],
+      [
+        20369,
+        0.32
+      ],
+      [
+        20367,
+        0.32
+      ]
+    ],
+    "sentiment": null
+  }
 }

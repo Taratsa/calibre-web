@@ -45,5 +45,226 @@
       "size": 24223616,
       "name": "Boekoe tjerita hong Kiauw Lie Tan _ bagian - Kiauw Lei Tan Hong"
     }
-  ]
+  ],
+  "text": {
+    "words": 16486,
+    "longer_than": 86,
+    "top": [
+      [
+        "sih",
+        282
+      ],
+      [
+        "poenja",
+        249
+      ],
+      [
+        "kong",
+        216
+      ],
+      [
+        "lantas",
+        205
+      ],
+      [
+        "tiada",
+        186
+      ],
+      [
+        "angkau",
+        172
+      ],
+      [
+        "hamba",
+        162
+      ],
+      [
+        "sampe",
+        150
+      ],
+      [
+        "pegi",
+        132
+      ],
+      [
+        "soeda",
+        124
+      ],
+      [
+        "maoe",
+        117
+      ],
+      [
+        "orang",
+        111
+      ]
+    ],
+    "distinct": [
+      [
+        "poenja",
+        249
+      ],
+      [
+        "angkau",
+        172
+      ],
+      [
+        "sih",
+        282
+      ],
+      [
+        "kong",
+        216
+      ],
+      [
+        "pegi",
+        132
+      ],
+      [
+        "soeda",
+        124
+      ],
+      [
+        "soldadoe",
+        98
+      ],
+      [
+        "sampe",
+        150
+      ],
+      [
+        "bole",
+        106
+      ],
+      [
+        "lantas",
+        205
+      ],
+      [
+        "maoe",
+        117
+      ],
+      [
+        "hamba",
+        162
+      ]
+    ],
+    "phrases": [
+      [
+        "sih kong",
+        174
+      ],
+      [
+        "boe sam soe",
+        41
+      ],
+      [
+        "sih gie",
+        49
+      ],
+      [
+        "kie loan eng",
+        27
+      ],
+      [
+        "lie keng",
+        39
+      ],
+      [
+        "lie tan",
+        32
+      ],
+      [
+        "lie kaij hong",
+        20
+      ],
+      [
+        "angkau poenja",
+        25
+      ]
+    ],
+    "similar": [
+      [
+        14086,
+        0.56
+      ],
+      [
+        12198,
+        0.52
+      ],
+      [
+        16232,
+        0.42
+      ],
+      [
+        18459,
+        0.42
+      ],
+      [
+        20859,
+        0.33
+      ],
+      [
+        13394,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": 0.04,
+      "positive": 86,
+      "negative": 79,
+      "trend": [
+        1,
+        0.6,
+        0.67,
+        -0.23,
+        0.09,
+        -0.25,
+        -0.25,
+        -0.27,
+        0.25,
+        null,
+        -0.18,
+        -0.1,
+        0.12,
+        0,
+        0.43,
+        0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          47
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "surprise",
+          18
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

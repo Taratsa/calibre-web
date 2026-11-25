@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 1007,
-    "longer_than": 52,
+    "longer_than": 50,
     "top": [
       [
         "hacking",
@@ -118,24 +118,28 @@
         6
       ],
       [
-        "web-security",
-        4
-      ],
-      [
         "injection",
         8
+      ],
+      [
+        "web-security",
+        4
       ],
       [
         "echo",
         10
       ],
       [
+        "sql",
+        9
+      ],
+      [
         "projects",
         10
       ],
       [
-        "sql",
-        9
+        "dvwa",
+        6
       ],
       [
         "sourceforge",
@@ -144,10 +148,6 @@
       [
         "tanyarezaervani",
         4
-      ],
-      [
-        "dvwa",
-        6
       ],
       [
         "backtrack",
@@ -187,18 +187,18 @@
     "similar": [
       [
         10333,
-        0.32
-      ],
-      [
-        19342,
-        0.31
-      ],
-      [
-        15933,
         0.31
       ],
       [
         10294,
+        0.3
+      ],
+      [
+        19342,
+        0.3
+      ],
+      [
+        15933,
         0.3
       ],
       [
@@ -207,7 +207,7 @@
       ],
       [
         19238,
-        0.29
+        0.28
       ]
     ],
     "sentiment": null

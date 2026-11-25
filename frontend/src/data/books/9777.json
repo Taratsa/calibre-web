@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 947,
-    "longer_than": 51,
+    "longer_than": 49,
     "top": [
       [
         "blogger",
@@ -108,12 +108,12 @@
         21
       ],
       [
-        "twitter",
-        14
-      ],
-      [
         "blog",
         15
+      ],
+      [
+        "twitter",
+        14
       ],
       [
         "linimassa",
@@ -128,15 +128,11 @@
         3
       ],
       [
-        "internetsehat",
-        3
-      ],
-      [
         "media",
         12
       ],
       [
-        "ictwatch",
+        "internetsehat",
         3
       ],
       [
@@ -144,12 +140,16 @@
         6
       ],
       [
-        "menggandeng",
+        "sosial",
+        10
+      ],
+      [
+        "ictwatch",
         3
       ],
       [
-        "sosial",
-        10
+        "menggandeng",
+        3
       ]
     ],
     "phrases": [
@@ -169,11 +169,15 @@
     "similar": [
       [
         17947,
-        0.4
+        0.41
       ],
       [
         18681,
-        0.34
+        0.35
+      ],
+      [
+        20277,
+        0.35
       ],
       [
         9525,
@@ -181,15 +185,11 @@
       ],
       [
         19646,
-        0.31
+        0.32
       ],
       [
         9453,
         0.31
-      ],
-      [
-        9577,
-        0.28
       ]
     ],
     "sentiment": null

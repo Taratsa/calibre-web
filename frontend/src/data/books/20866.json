@@ -50,5 +50,154 @@
       "size": 4356,
       "name": "ProxMox_ Upgrade 1.9 ke 2.0 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 700,
+    "longer_than": 45,
+    "top": [
+      [
+        "upgrade",
+        18
+      ],
+      [
+        "proxmox",
+        14
+      ],
+      [
+        "cluster",
+        12
+      ],
+      [
+        "script",
+        12
+      ],
+      [
+        "pve-upgrade",
+        9
+      ],
+      [
+        "boot",
+        7
+      ],
+      [
+        "grub",
+        6
+      ],
+      [
+        "import",
+        6
+      ],
+      [
+        "backup",
+        5
+      ],
+      [
+        "hardware",
+        4
+      ],
+      [
+        "installation",
+        4
+      ],
+      [
+        "packages",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "proxmox",
+        14
+      ],
+      [
+        "upgrade",
+        18
+      ],
+      [
+        "cluster",
+        12
+      ],
+      [
+        "script",
+        12
+      ],
+      [
+        "grub",
+        6
+      ],
+      [
+        "pve",
+        4
+      ],
+      [
+        "in-place",
+        3
+      ],
+      [
+        "boot",
+        7
+      ],
+      [
+        "backup",
+        5
+      ],
+      [
+        "import",
+        6
+      ],
+      [
+        "squeeze",
+        3
+      ],
+      [
+        "packages",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "upgrade script",
+        5
+      ],
+      [
+        "pve-upgrade to import",
+        3
+      ],
+      [
+        "proxmox ve cluster",
+        3
+      ],
+      [
+        "in-place upgrade",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21523,
+        0.36
+      ],
+      [
+        20211,
+        0.33
+      ],
+      [
+        20742,
+        0.33
+      ],
+      [
+        20179,
+        0.33
+      ],
+      [
+        20276,
+        0.32
+      ],
+      [
+        9618,
+        0.3
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -48,5 +48,170 @@
       "size": 17008,
       "name": "Konsep Proxy - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 5367,
+    "longer_than": 71,
+    "top": [
+      [
+        "server",
+        123
+      ],
+      [
+        "proxy",
+        114
+      ],
+      [
+        "cache",
+        97
+      ],
+      [
+        "object",
+        83
+      ],
+      [
+        "pengguna",
+        42
+      ],
+      [
+        "jaringan",
+        39
+      ],
+      [
+        "internet",
+        38
+      ],
+      [
+        "aplikasi",
+        37
+      ],
+      [
+        "klien",
+        36
+      ],
+      [
+        "peer",
+        29
+      ],
+      [
+        "port",
+        29
+      ],
+      [
+        "squid",
+        28
+      ]
+    ],
+    "distinct": [
+      [
+        "proxy",
+        114
+      ],
+      [
+        "cache",
+        97
+      ],
+      [
+        "object",
+        83
+      ],
+      [
+        "server",
+        123
+      ],
+      [
+        "squid",
+        28
+      ],
+      [
+        "sibling",
+        24
+      ],
+      [
+        "klien",
+        36
+      ],
+      [
+        "peer",
+        29
+      ],
+      [
+        "socks",
+        19
+      ],
+      [
+        "layer",
+        26
+      ],
+      [
+        "pengguna",
+        42
+      ],
+      [
+        "acl",
+        18
+      ]
+    ],
+    "phrases": [
+      [
+        "proxy server",
+        45
+      ],
+      [
+        "cache server",
+        29
+      ],
+      [
+        "jaringan lokal",
+        15
+      ],
+      [
+        "nomor port",
+        11
+      ],
+      [
+        "layer aplikasi",
+        11
+      ],
+      [
+        "level sirkuit",
+        7
+      ],
+      [
+        "cache dir",
+        7
+      ],
+      [
+        "transparent proxy",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        17625,
+        0.29
+      ],
+      [
+        20630,
+        0.23
+      ],
+      [
+        20500,
+        0.22
+      ],
+      [
+        19106,
+        0.21
+      ],
+      [
+        19222,
+        0.2
+      ],
+      [
+        17626,
+        0.2
+      ]
+    ],
+    "sentiment": null
+  }
 }

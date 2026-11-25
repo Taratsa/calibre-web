@@ -48,5 +48,166 @@
       "size": 7533,
       "name": "IMEI - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1581,
+    "longer_than": 57,
+    "top": [
+      [
+        "imei",
+        52
+      ],
+      [
+        "digit",
+        18
+      ],
+      [
+        "phone",
+        18
+      ],
+      [
+        "check",
+        17
+      ],
+      [
+        "mobile",
+        14
+      ],
+      [
+        "digits",
+        13
+      ],
+      [
+        "gsm",
+        12
+      ],
+      [
+        "device",
+        10
+      ],
+      [
+        "tac",
+        10
+      ],
+      [
+        "code",
+        9
+      ],
+      [
+        "equipment",
+        8
+      ],
+      [
+        "network",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "imei",
+        52
+      ],
+      [
+        "digit",
+        18
+      ],
+      [
+        "digits",
+        13
+      ],
+      [
+        "phone",
+        18
+      ],
+      [
+        "tac",
+        10
+      ],
+      [
+        "luhn",
+        6
+      ],
+      [
+        "imeisv",
+        6
+      ],
+      [
+        "ceir",
+        6
+      ],
+      [
+        "gsm",
+        12
+      ],
+      [
+        "check",
+        17
+      ],
+      [
+        "mobile",
+        14
+      ],
+      [
+        "imeis",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "check digit",
+        15
+      ],
+      [
+        "software version",
+        5
+      ],
+      [
+        "version number svn",
+        3
+      ],
+      [
+        "mobile equipment",
+        4
+      ],
+      [
+        "mobile phone",
+        3
+      ],
+      [
+        "imei allocation",
+        3
+      ],
+      [
+        "equipment identity",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        10245,
+        0.37
+      ],
+      [
+        15262,
+        0.24
+      ],
+      [
+        21181,
+        0.2
+      ],
+      [
+        20711,
+        0.17
+      ],
+      [
+        18894,
+        0.15
+      ],
+      [
+        15389,
+        0.14
+      ]
+    ],
+    "sentiment": null
+  }
 }

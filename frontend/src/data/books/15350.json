@@ -35,5 +35,226 @@
       "size": 36110384,
       "name": "PERIkAWINAN DEBBIE REYNOLDS - Selecta No.53 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 22114,
+    "longer_than": 89,
+    "top": [
+      [
+        "orang",
+        90
+      ],
+      [
+        "film",
+        80
+      ],
+      [
+        "djuga",
+        74
+      ],
+      [
+        "banjak",
+        66
+      ],
+      [
+        "sadja",
+        66
+      ],
+      [
+        "wanita",
+        65
+      ],
+      [
+        "sdr",
+        63
+      ],
+      [
+        "debbie",
+        56
+      ],
+      [
+        "lagu",
+        55
+      ],
+      [
+        "mendjadi",
+        51
+      ],
+      [
+        "hanja",
+        50
+      ],
+      [
+        "farida",
+        44
+      ]
+    ],
+    "distinct": [
+      [
+        "debbie",
+        56
+      ],
+      [
+        "djuga",
+        74
+      ],
+      [
+        "farida",
+        44
+      ],
+      [
+        "sdr",
+        63
+      ],
+      [
+        "film",
+        80
+      ],
+      [
+        "sadja",
+        66
+      ],
+      [
+        "banjak",
+        66
+      ],
+      [
+        "bhargawa",
+        18
+      ],
+      [
+        "hanja",
+        50
+      ],
+      [
+        "mendjadi",
+        51
+      ],
+      [
+        "lagu",
+        55
+      ],
+      [
+        "wanita",
+        65
+      ]
+    ],
+    "phrases": [
+      [
+        "sosial roman perdjalanan",
+        11
+      ],
+      [
+        "roman perdjalanan pengobatan",
+        11
+      ],
+      [
+        "hubungan sosial roman",
+        11
+      ],
+      [
+        "rumah tangga",
+        15
+      ],
+      [
+        "zat putih telur",
+        9
+      ],
+      [
+        "penghasilan hubungan sosial",
+        9
+      ],
+      [
+        "pekerdjaan penghasilan hubungan",
+        9
+      ],
+      [
+        "tanggal terbaik",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        17975,
+        0.37
+      ],
+      [
+        15207,
+        0.32
+      ],
+      [
+        14972,
+        0.32
+      ],
+      [
+        15528,
+        0.32
+      ],
+      [
+        15180,
+        0.31
+      ],
+      [
+        15146,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 337,
+      "negative": 218,
+      "trend": [
+        -0.03,
+        -0.24,
+        0.06,
+        0.52,
+        0.38,
+        0.33,
+        0.45,
+        0.48,
+        0.56,
+        0.54,
+        0.56,
+        -0.08,
+        0.48,
+        0.16,
+        -0.02,
+        0.3
+      ],
+      "emotions": [
+        [
+          "joy",
+          71
+        ],
+        [
+          "sadness",
+          53
+        ],
+        [
+          "anger",
+          32
+        ],
+        [
+          "anticipation",
+          22
+        ],
+        [
+          "fear",
+          15
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
+  }
 }

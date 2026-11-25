@@ -50,5 +50,170 @@
       "size": 9524,
       "name": "Btrfs design - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 3280,
+    "longer_than": 65,
+    "top": [
+      [
+        "tree",
+        51
+      ],
+      [
+        "block",
+        50
+      ],
+      [
+        "extent",
+        45
+      ],
+      [
+        "root",
+        44
+      ],
+      [
+        "btrfs",
+        39
+      ],
+      [
+        "file",
+        31
+      ],
+      [
+        "data",
+        30
+      ],
+      [
+        "objectid",
+        30
+      ],
+      [
+        "key",
+        29
+      ],
+      [
+        "reference",
+        28
+      ],
+      [
+        "disk",
+        25
+      ],
+      [
+        "item",
+        25
+      ]
+    ],
+    "distinct": [
+      [
+        "btrfs",
+        39
+      ],
+      [
+        "objectid",
+        30
+      ],
+      [
+        "btree",
+        24
+      ],
+      [
+        "tree",
+        51
+      ],
+      [
+        "block",
+        50
+      ],
+      [
+        "extent",
+        45
+      ],
+      [
+        "subvolume",
+        16
+      ],
+      [
+        "root",
+        44
+      ],
+      [
+        "extents",
+        14
+      ],
+      [
+        "subvolumes",
+        12
+      ],
+      [
+        "reference",
+        28
+      ],
+      [
+        "disk",
+        25
+      ]
+    ],
+    "phrases": [
+      [
+        "struct btrfs",
+        13
+      ],
+      [
+        "tree roots",
+        10
+      ],
+      [
+        "tree of tree",
+        6
+      ],
+      [
+        "root tree",
+        9
+      ],
+      [
+        "root block",
+        9
+      ],
+      [
+        "extent trees",
+        8
+      ],
+      [
+        "root objectid",
+        7
+      ],
+      [
+        "reference counted",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        20366,
+        0.31
+      ],
+      [
+        20367,
+        0.25
+      ],
+      [
+        20364,
+        0.23
+      ],
+      [
+        20369,
+        0.23
+      ],
+      [
+        9456,
+        0.2
+      ],
+      [
+        9457,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
 }

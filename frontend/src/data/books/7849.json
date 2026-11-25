@@ -43,7 +43,7 @@
   ],
   "text": {
     "words": 4871,
-    "longer_than": 72,
+    "longer_than": 70,
     "top": [
       [
         "indonesia",
@@ -124,20 +124,20 @@
         18
       ],
       [
-        "peace",
-        19
-      ],
-      [
         "indonesian",
         23
       ],
       [
-        "foreign",
-        17
+        "peace",
+        19
       ],
       [
         "international",
         26
+      ],
+      [
+        "foreign",
+        17
       ],
       [
         "government",
@@ -181,14 +181,6 @@
     "similar": [
       [
         6292,
-        0.31
-      ],
-      [
-        1474,
-        0.3
-      ],
-      [
-        721,
         0.3
       ],
       [
@@ -200,8 +192,16 @@
         0.3
       ],
       [
-        731,
+        1474,
         0.29
+      ],
+      [
+        721,
+        0.29
+      ],
+      [
+        731,
+        0.28
       ]
     ],
     "sentiment": null

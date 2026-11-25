@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1813,
-    "longer_than": 60,
+    "longer_than": 58,
     "top": [
       [
         "sqlmap",
@@ -144,12 +144,12 @@
         11
       ],
       [
-        "remote",
-        11
+        "error-based",
+        4
       ],
       [
-        "columns",
-        8
+        "remote",
+        11
       ]
     ],
     "phrases": [
@@ -189,7 +189,7 @@
     "similar": [
       [
         10332,
-        0.45
+        0.46
       ],
       [
         9815,
@@ -209,7 +209,7 @@
       ],
       [
         10333,
-        0.34
+        0.35
       ]
     ],
     "sentiment": null

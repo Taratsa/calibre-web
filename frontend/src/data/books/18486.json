@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1122,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "iptables",
@@ -104,11 +104,11 @@
     ],
     "distinct": [
       [
-        "iptables",
+        "sbin",
         25
       ],
       [
-        "sbin",
+        "iptables",
         25
       ],
       [
@@ -128,16 +128,16 @@
         14
       ],
       [
-        "nat",
-        12
-      ],
-      [
         "input",
         14
       ],
       [
         "local",
         18
+      ],
+      [
+        "nat",
+        12
       ],
       [
         "debian-installer",
@@ -148,8 +148,8 @@
         9
       ],
       [
-        "wikidb",
-        5
+        "activate",
+        7
       ]
     ],
     "phrases": [
@@ -188,6 +188,10 @@
     ],
     "similar": [
       [
+        21269,
+        0.69
+      ],
+      [
         12422,
         0.6
       ],
@@ -206,10 +210,6 @@
       [
         17404,
         0.44
-      ],
-      [
-        19077,
-        0.43
       ]
     ],
     "sentiment": null

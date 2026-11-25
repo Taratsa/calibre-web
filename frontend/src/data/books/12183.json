@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 259,
-    "longer_than": 28,
+    "longer_than": 27,
     "top": [
       [
         "service",
@@ -108,12 +108,12 @@
         12
       ],
       [
-        "service",
-        19
-      ],
-      [
         "dradis",
         6
+      ],
+      [
+        "service",
+        19
       ],
       [
         "dradis-ce-worker",
@@ -124,15 +124,15 @@
         6
       ],
       [
+        "systemd",
+        4
+      ],
+      [
         "opt",
         5
       ],
       [
         "ruby",
-        4
-      ],
-      [
-        "systemd",
         4
       ],
       [
@@ -189,7 +189,7 @@
       ],
       [
         12181,
-        0.35
+        0.36
       ],
       [
         12184,

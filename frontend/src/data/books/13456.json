@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 570,
-    "longer_than": 42,
+    "longer_than": 41,
     "top": [
       [
         "data",
@@ -124,20 +124,24 @@
         10
       ],
       [
-        "elastic",
-        10
+        "data",
+        46
       ],
       [
         "regression",
         11
       ],
       [
-        "ridge",
+        "elastic",
         10
       ],
       [
-        "data",
-        46
+        "rsquare",
+        6
+      ],
+      [
+        "ridge",
+        10
       ],
       [
         "model",
@@ -146,10 +150,6 @@
       [
         "coef",
         6
-      ],
-      [
-        "besttune",
-        5
       ]
     ],
     "phrases": [
@@ -189,11 +189,11 @@
     "similar": [
       [
         13454,
-        0.52
+        0.53
       ],
       [
         13449,
-        0.35
+        0.36
       ],
       [
         13644,

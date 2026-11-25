@@ -48,5 +48,122 @@
       "size": 2653,
       "name": "Ssh - remote display X forwarding - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 141,
+    "longer_than": 18,
+    "top": [
+      [
+        "remote",
+        10
+      ],
+      [
+        "ssh",
+        9
+      ],
+      [
+        "display",
+        4
+      ],
+      [
+        "komputer",
+        4
+      ],
+      [
+        "beddb",
+        3
+      ],
+      [
+        "forwarding",
+        3
+      ],
+      [
+        "mesinyangingindiremote",
+        3
+      ],
+      [
+        "mit-magic-cookie",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ssh",
+        9
+      ],
+      [
+        "remote",
+        10
+      ],
+      [
+        "mesinyangingindiremote",
+        3
+      ],
+      [
+        "mit-magic-cookie",
+        3
+      ],
+      [
+        "display",
+        4
+      ],
+      [
+        "forwarding",
+        3
+      ],
+      [
+        "komputer",
+        4
+      ],
+      [
+        "perintah",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "ssh remote display",
+        3
+      ],
+      [
+        "display x forwarding",
+        3
+      ],
+      [
+        "mit-magic-cookie beddb",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20101,
+        0.52
+      ],
+      [
+        20492,
+        0.47
+      ],
+      [
+        16303,
+        0.45
+      ],
+      [
+        14873,
+        0.42
+      ],
+      [
+        14195,
+        0.42
+      ],
+      [
+        13198,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
 }

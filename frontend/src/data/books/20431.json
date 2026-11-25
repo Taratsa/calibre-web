@@ -48,5 +48,158 @@
       "size": 4307,
       "name": "Linux VLAN - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 690,
+    "longer_than": 44,
+    "top": [
+      [
+        "vlan",
+        34
+      ],
+      [
+        "eth",
+        11
+      ],
+      [
+        "ifcfg-eth",
+        11
+      ],
+      [
+        "interface",
+        10
+      ],
+      [
+        "network",
+        10
+      ],
+      [
+        "perintah",
+        10
+      ],
+      [
+        "sysconfig",
+        10
+      ],
+      [
+        "network-scripts",
+        9
+      ],
+      [
+        "switch",
+        7
+      ],
+      [
+        "file",
+        6
+      ],
+      [
+        "lan",
+        6
+      ],
+      [
+        "address",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "vlan",
+        34
+      ],
+      [
+        "ifcfg-eth",
+        11
+      ],
+      [
+        "network-scripts",
+        9
+      ],
+      [
+        "sysconfig",
+        10
+      ],
+      [
+        "eth",
+        11
+      ],
+      [
+        "vconfig",
+        4
+      ],
+      [
+        "interface",
+        10
+      ],
+      [
+        "switch",
+        7
+      ],
+      [
+        "ifconfig",
+        5
+      ],
+      [
+        "network",
+        10
+      ],
+      [
+        "layer",
+        5
+      ],
+      [
+        "mengkonfigurasi",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "sysconfig network-scripts ifcfg-eth",
+        9
+      ],
+      [
+        "file etc sysconfig",
+        4
+      ],
+      [
+        "mengkonfigurasi vlan",
+        3
+      ],
+      [
+        "interface vlan",
+        3
+      ],
+      [
+        "ifconfig eth",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        9778,
+        0.35
+      ],
+      [
+        14073,
+        0.33
+      ],
+      [
+        18835,
+        0.31
+      ],
+      [
+        12388,
+        0.31
+      ],
+      [
+        12776,
+        0.3
+      ],
+      [
+        9779,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
 }

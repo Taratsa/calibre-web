@@ -48,5 +48,121 @@
       "size": 2880,
       "name": "Perintah Linux A - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 177,
+    "longer_than": 22,
+    "top": [
+      [
+        "perintah",
+        7
+      ],
+      [
+        "apt-get",
+        6
+      ],
+      [
+        "menampilkan",
+        5
+      ],
+      [
+        "package",
+        4
+      ],
+      [
+        "paket",
+        4
+      ],
+      [
+        "acpi",
+        3
+      ],
+      [
+        "deb",
+        3
+      ],
+      [
+        "history",
+        3
+      ],
+      [
+        "meng-upgrade",
+        3
+      ],
+      [
+        "paket-paket",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "meng-upgrade",
+        3
+      ],
+      [
+        "acpi",
+        3
+      ],
+      [
+        "apt-get",
+        6
+      ],
+      [
+        "paket-paket",
+        3
+      ],
+      [
+        "package",
+        4
+      ],
+      [
+        "menampilkan",
+        5
+      ],
+      [
+        "deb",
+        3
+      ],
+      [
+        "perintah",
+        7
+      ],
+      [
+        "paket",
+        4
+      ],
+      [
+        "history",
+        3
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        21473,
+        0.42
+      ],
+      [
+        17261,
+        0.27
+      ],
+      [
+        14801,
+        0.26
+      ],
+      [
+        20891,
+        0.25
+      ],
+      [
+        10768,
+        0.25
+      ],
+      [
+        21500,
+        0.21
+      ]
+    ],
+    "sentiment": null
+  }
 }

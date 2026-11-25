@@ -48,5 +48,130 @@
       "size": 3351,
       "name": "Bazooka GPRS - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 225,
+    "longer_than": 25,
+    "top": [
+      [
+        "bazooka",
+        12
+      ],
+      [
+        "antenna",
+        6
+      ],
+      [
+        "gprs",
+        6
+      ],
+      [
+        "cdma",
+        5
+      ],
+      [
+        "wajanbolic",
+        5
+      ],
+      [
+        "evdo",
+        4
+      ],
+      [
+        "berbeda",
+        3
+      ],
+      [
+        "frekuensi",
+        3
+      ],
+      [
+        "mhz",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "bazooka",
+        12
+      ],
+      [
+        "gprs",
+        6
+      ],
+      [
+        "cdma",
+        5
+      ],
+      [
+        "evdo",
+        4
+      ],
+      [
+        "wajanbolic",
+        5
+      ],
+      [
+        "antenna",
+        6
+      ],
+      [
+        "mhz",
+        3
+      ],
+      [
+        "frekuensi",
+        3
+      ],
+      [
+        "berbeda",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "bazooka cdma",
+        4
+      ],
+      [
+        "wajanbolic bazooka",
+        3
+      ],
+      [
+        "bazooka gprs",
+        3
+      ],
+      [
+        "bazooka evdo",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        18313,
+        0.45
+      ],
+      [
+        21518,
+        0.42
+      ],
+      [
+        18403,
+        0.32
+      ],
+      [
+        9826,
+        0.31
+      ],
+      [
+        13762,
+        0.29
+      ],
+      [
+        13758,
+        0.27
+      ]
+    ],
+    "sentiment": null
+  }
 }

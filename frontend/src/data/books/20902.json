@@ -48,5 +48,118 @@
       "size": 3142,
       "name": "Perintah Linux T - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 237,
+    "longer_than": 26,
+    "top": [
+      [
+        "pulseaudio",
+        8
+      ],
+      [
+        "events",
+        7
+      ],
+      [
+        "ratelimit",
+        7
+      ],
+      [
+        "suppressed",
+        7
+      ],
+      [
+        "log",
+        5
+      ],
+      [
+        "tar",
+        5
+      ],
+      [
+        "file",
+        4
+      ],
+      [
+        "telnet",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ratelimit",
+        7
+      ],
+      [
+        "pulseaudio",
+        8
+      ],
+      [
+        "suppressed",
+        7
+      ],
+      [
+        "events",
+        7
+      ],
+      [
+        "telnet",
+        3
+      ],
+      [
+        "log",
+        5
+      ],
+      [
+        "tar",
+        5
+      ],
+      [
+        "file",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "ratelimit c events",
+        7
+      ],
+      [
+        "pulseaudio ratelimit",
+        7
+      ],
+      [
+        "events suppressed",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        13966,
+        0.29
+      ],
+      [
+        11120,
+        0.25
+      ],
+      [
+        12043,
+        0.22
+      ],
+      [
+        11121,
+        0.22
+      ],
+      [
+        13815,
+        0.21
+      ],
+      [
+        11650,
+        0.14
+      ]
+    ],
+    "sentiment": null
+  }
 }

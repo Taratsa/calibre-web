@@ -48,5 +48,158 @@
       "size": 4031,
       "name": "Perintah Linux C - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 656,
+    "longer_than": 44,
+    "top": [
+      [
+        "file",
+        62
+      ],
+      [
+        "direktori",
+        16
+      ],
+      [
+        "user",
+        12
+      ],
+      [
+        "cat",
+        11
+      ],
+      [
+        "menampilkan",
+        11
+      ],
+      [
+        "chmod",
+        9
+      ],
+      [
+        "chattr",
+        8
+      ],
+      [
+        "isi",
+        8
+      ],
+      [
+        "proc",
+        7
+      ],
+      [
+        "bit",
+        6
+      ],
+      [
+        "mengubah",
+        6
+      ],
+      [
+        "dev",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "file",
+        62
+      ],
+      [
+        "chattr",
+        8
+      ],
+      [
+        "direktori",
+        16
+      ],
+      [
+        "chmod",
+        9
+      ],
+      [
+        "cat",
+        11
+      ],
+      [
+        "proc",
+        7
+      ],
+      [
+        "menampilkan",
+        11
+      ],
+      [
+        "user",
+        12
+      ],
+      [
+        "sgid",
+        3
+      ],
+      [
+        "menyalin",
+        5
+      ],
+      [
+        "mengeset",
+        3
+      ],
+      [
+        "comm",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "cat proc",
+        7
+      ],
+      [
+        "comm file file",
+        3
+      ],
+      [
+        "membandingkan isi",
+        4
+      ],
+      [
+        "menampilkan isi",
+        3
+      ],
+      [
+        "isi file",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16448,
+        0.34
+      ],
+      [
+        17567,
+        0.24
+      ],
+      [
+        11697,
+        0.22
+      ],
+      [
+        19889,
+        0.22
+      ],
+      [
+        11698,
+        0.21
+      ],
+      [
+        11700,
+        0.2
+      ]
+    ],
+    "sentiment": null
+  }
 }

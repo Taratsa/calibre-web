@@ -45,5 +45,193 @@
       "size": 28489246,
       "name": "Penjoeratan pekerdja-an perang di Negeri A - W.J Philips"
     }
-  ]
+  ],
+  "text": {
+    "words": 4757,
+    "longer_than": 69,
+    "top": [
+      [
+        "benteng",
+        73
+      ],
+      [
+        "orang",
+        72
+      ],
+      [
+        "moesoeh",
+        71
+      ],
+      [
+        "soldadoe",
+        56
+      ],
+      [
+        "satoe",
+        50
+      ],
+      [
+        "atjeh",
+        49
+      ],
+      [
+        "tida",
+        47
+      ],
+      [
+        "bataljon",
+        46
+      ],
+      [
+        "patrouille",
+        40
+      ],
+      [
+        "djoega",
+        32
+      ],
+      [
+        "kampoeng",
+        30
+      ],
+      [
+        "perang",
+        27
+      ]
+    ],
+    "distinct": [
+      [
+        "moesoeh",
+        71
+      ],
+      [
+        "soldadoe",
+        56
+      ],
+      [
+        "patrouille",
+        40
+      ],
+      [
+        "bataljon",
+        46
+      ],
+      [
+        "benteng",
+        73
+      ],
+      [
+        "satoe",
+        50
+      ],
+      [
+        "atjeh",
+        49
+      ],
+      [
+        "tida",
+        47
+      ],
+      [
+        "kampoeng",
+        30
+      ],
+      [
+        "sampej",
+        18
+      ],
+      [
+        "djoega",
+        32
+      ],
+      [
+        "tembaki",
+        16
+      ]
+    ],
+    "phrases": [
+      [
+        "orang atjeh",
+        25
+      ],
+      [
+        "sabentar djoega",
+        15
+      ],
+      [
+        "tembok benteng",
+        11
+      ],
+      [
+        "satoe compagnie",
+        9
+      ],
+      [
+        "pakan atjeh",
+        9
+      ],
+      [
+        "kena loeka",
+        8
+      ],
+      [
+        "patrouille jang berdjalan",
+        5
+      ],
+      [
+        "mendjadi ketjil hati",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        1317,
+        0.54
+      ],
+      [
+        539,
+        0.31
+      ],
+      [
+        13205,
+        0.25
+      ],
+      [
+        15337,
+        0.18
+      ],
+      [
+        14829,
+        0.14
+      ],
+      [
+        11721,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": -0.35,
+      "positive": 24,
+      "negative": 50,
+      "trend": [],
+      "emotions": [
+        [
+          "anger",
+          35
+        ],
+        [
+          "surprise",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

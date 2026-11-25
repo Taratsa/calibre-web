@@ -43,5 +43,218 @@
       "size": 68146329,
       "name": "Sedjarah Indonesia I - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 26762,
+    "longer_than": 91,
+    "top": [
+      [
+        "orang",
+        325
+      ],
+      [
+        "radja",
+        147
+      ],
+      [
+        "djawa",
+        115
+      ],
+      [
+        "banjak",
+        78
+      ],
+      [
+        "didalam",
+        78
+      ],
+      [
+        "djuga",
+        67
+      ],
+      [
+        "agama",
+        59
+      ],
+      [
+        "portugis",
+        55
+      ],
+      [
+        "tanah",
+        54
+      ],
+      [
+        "dongan",
+        53
+      ],
+      [
+        "itn",
+        49
+      ],
+      [
+        "jeng",
+        47
+      ]
+    ],
+    "distinct": [
+      [
+        "radja",
+        147
+      ],
+      [
+        "djawa",
+        115
+      ],
+      [
+        "orang",
+        325
+      ],
+      [
+        "dongan",
+        53
+      ],
+      [
+        "itn",
+        49
+      ],
+      [
+        "tidnk",
+        38
+      ],
+      [
+        "portugis",
+        55
+      ],
+      [
+        "madjapait",
+        33
+      ],
+      [
+        "banjak",
+        78
+      ],
+      [
+        "djuga",
+        67
+      ],
+      [
+        "djin",
+        42
+      ],
+      [
+        "jeng",
+        47
+      ]
+    ],
+    "phrases": [
+      [
+        "orang portugis",
+        45
+      ],
+      [
+        "tanah air",
+        13
+      ],
+      [
+        "orang hindu",
+        13
+      ],
+      [
+        "kerap kali",
+        11
+      ],
+      [
+        "ditanah djawa",
+        11
+      ],
+      [
+        "hajam wuruk",
+        10
+      ],
+      [
+        "orang djawa",
+        9
+      ],
+      [
+        "orang asing",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        19117,
+        0.34
+      ],
+      [
+        21089,
+        0.26
+      ],
+      [
+        21087,
+        0.26
+      ],
+      [
+        15847,
+        0.21
+      ],
+      [
+        784,
+        0.2
+      ],
+      [
+        19752,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 157,
+      "negative": 81,
+      "trend": [
+        -0.04,
+        0.39,
+        0.33,
+        0.45,
+        null,
+        0.33,
+        0.64,
+        0.13,
+        0.11,
+        0.54,
+        0.57,
+        0.4,
+        0.71,
+        0.47,
+        0.29,
+        0.25
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

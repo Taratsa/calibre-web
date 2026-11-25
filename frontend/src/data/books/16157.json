@@ -45,5 +45,222 @@
       "size": 46167193,
       "name": "Sjair Riwayat Nabi Muhammad SAW - Amak F. Zain"
     }
-  ]
+  ],
+  "text": {
+    "words": 3731,
+    "longer_than": 67,
+    "top": [
+      [
+        "nabi",
+        96
+      ],
+      [
+        "islam",
+        53
+      ],
+      [
+        "muhammad",
+        41
+      ],
+      [
+        "kafir",
+        30
+      ],
+      [
+        "tentara",
+        30
+      ],
+      [
+        "mekah",
+        29
+      ],
+      [
+        "mendjadi",
+        20
+      ],
+      [
+        "agama",
+        18
+      ],
+      [
+        "djuga",
+        18
+      ],
+      [
+        "madinah",
+        18
+      ],
+      [
+        "abu",
+        17
+      ],
+      [
+        "bah",
+        16
+      ]
+    ],
+    "distinct": [
+      [
+        "nabi",
+        96
+      ],
+      [
+        "mekah",
+        29
+      ],
+      [
+        "kafir",
+        30
+      ],
+      [
+        "islam",
+        53
+      ],
+      [
+        "muhammad",
+        41
+      ],
+      [
+        "sehabat",
+        14
+      ],
+      [
+        "madinah",
+        18
+      ],
+      [
+        "denganlah",
+        9
+      ],
+      [
+        "tentara",
+        30
+      ],
+      [
+        "talib",
+        9
+      ],
+      [
+        "mendjadi",
+        20
+      ],
+      [
+        "djuga",
+        18
+      ]
+    ],
+    "phrases": [
+      [
+        "tentara islam",
+        11
+      ],
+      [
+        "agama islam",
+        11
+      ],
+      [
+        "rang islam",
+        9
+      ],
+      [
+        "nabi muhammad",
+        9
+      ],
+      [
+        "tentara kafir",
+        6
+      ],
+      [
+        "baginda nabi",
+        6
+      ],
+      [
+        "siang dan malam",
+        3
+      ],
+      [
+        "datanglah lagi utusan",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        15905,
+        0.25
+      ],
+      [
+        11571,
+        0.21
+      ],
+      [
+        16663,
+        0.15
+      ],
+      [
+        5096,
+        0.15
+      ],
+      [
+        850,
+        0.14
+      ],
+      [
+        7783,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 112,
+      "negative": 79,
+      "trend": [
+        null,
+        -0.41,
+        0.5,
+        0.4,
+        0.38,
+        0.64,
+        -0.4,
+        -0.33,
+        0.33,
+        0.33,
+        0.23,
+        0.06,
+        0.22,
+        -0.06,
+        0.71,
+        0.43
+      ],
+      "emotions": [
+        [
+          "anger",
+          18
+        ],
+        [
+          "sadness",
+          17
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
+  }
 }

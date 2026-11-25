@@ -48,5 +48,150 @@
       "size": 3845,
       "name": "European Institute for Health Records - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 348,
+    "longer_than": 32,
+    "top": [
+      [
+        "health",
+        18
+      ],
+      [
+        "european",
+        15
+      ],
+      [
+        "institute",
+        9
+      ],
+      [
+        "record",
+        4
+      ],
+      [
+        "records",
+        4
+      ],
+      [
+        "certification",
+        3
+      ],
+      [
+        "ehealth",
+        3
+      ],
+      [
+        "electronic",
+        3
+      ],
+      [
+        "informatics",
+        3
+      ],
+      [
+        "prorec",
+        3
+      ],
+      [
+        "systems",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "health",
+        18
+      ],
+      [
+        "european",
+        15
+      ],
+      [
+        "prorec",
+        3
+      ],
+      [
+        "ehealth",
+        3
+      ],
+      [
+        "institute",
+        9
+      ],
+      [
+        "informatics",
+        3
+      ],
+      [
+        "certification",
+        3
+      ],
+      [
+        "records",
+        4
+      ],
+      [
+        "record",
+        4
+      ],
+      [
+        "electronic",
+        3
+      ],
+      [
+        "systems",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "institute for health",
+        4
+      ],
+      [
+        "health records",
+        4
+      ],
+      [
+        "european institute",
+        4
+      ],
+      [
+        "health record",
+        3
+      ],
+      [
+        "european health",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20477,
+        0.54
+      ],
+      [
+        20481,
+        0.47
+      ],
+      [
+        20473,
+        0.46
+      ],
+      [
+        20478,
+        0.46
+      ],
+      [
+        20482,
+        0.3
+      ],
+      [
+        20487,
+        0.27
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -45,5 +45,226 @@
       "size": 82640181,
       "name": "Affandi pelukis - Nasyah Djamin"
     }
-  ]
+  ],
+  "text": {
+    "words": 14944,
+    "longer_than": 85,
+    "top": [
+      [
+        "affandi",
+        283
+      ],
+      [
+        "agus",
+        151
+      ],
+      [
+        "paman",
+        135
+      ],
+      [
+        "pelukis",
+        132
+      ],
+      [
+        "melukis",
+        107
+      ],
+      [
+        "orang",
+        91
+      ],
+      [
+        "sekolah",
+        74
+      ],
+      [
+        "belajar",
+        63
+      ],
+      [
+        "hidup",
+        61
+      ],
+      [
+        "lukisan",
+        60
+      ],
+      [
+        "gus",
+        57
+      ],
+      [
+        "indonesia",
+        55
+      ]
+    ],
+    "distinct": [
+      [
+        "affandi",
+        283
+      ],
+      [
+        "pelukis",
+        132
+      ],
+      [
+        "agus",
+        151
+      ],
+      [
+        "melukis",
+        107
+      ],
+      [
+        "paman",
+        135
+      ],
+      [
+        "gus",
+        57
+      ],
+      [
+        "pelukis-pelukis",
+        33
+      ],
+      [
+        "mbak",
+        46
+      ],
+      [
+        "lukisan",
+        60
+      ],
+      [
+        "menggambar",
+        44
+      ],
+      [
+        "painah",
+        16
+      ],
+      [
+        "sekolah",
+        74
+      ]
+    ],
+    "phrases": [
+      [
+        "pelukis affandi",
+        30
+      ],
+      [
+        "mbak jum",
+        24
+      ],
+      [
+        "sekolah gambar",
+        17
+      ],
+      [
+        "basuki abdullah",
+        17
+      ],
+      [
+        "republik indonesia",
+        12
+      ],
+      [
+        "museum affandi",
+        11
+      ],
+      [
+        "masuk sekolah",
+        11
+      ],
+      [
+        "seni lukis",
+        10
+      ]
+    ],
+    "similar": [
+      [
+        4534,
+        0.21
+      ],
+      [
+        4556,
+        0.2
+      ],
+      [
+        4132,
+        0.2
+      ],
+      [
+        4133,
+        0.19
+      ],
+      [
+        3684,
+        0.19
+      ],
+      [
+        4237,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 319,
+      "negative": 125,
+      "trend": [
+        0.88,
+        0.74,
+        0.81,
+        0.8,
+        0.16,
+        0.88,
+        0.62,
+        0.5,
+        0.46,
+        0.55,
+        0,
+        -0.11,
+        0.16,
+        -0.2,
+        0.03,
+        0.77
+      ],
+      "emotions": [
+        [
+          "joy",
+          79
+        ],
+        [
+          "sadness",
+          31
+        ],
+        [
+          "trust",
+          30
+        ],
+        [
+          "surprise",
+          19
+        ],
+        [
+          "anger",
+          16
+        ],
+        [
+          "anticipation",
+          14
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
+  }
 }

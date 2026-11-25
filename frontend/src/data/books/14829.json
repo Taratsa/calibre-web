@@ -45,5 +45,193 @@
       "size": 30294932,
       "name": "Kitab pengajaran menembak bagi mitrailleur - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 32889,
+    "longer_than": 93,
+    "top": [
+      [
+        "menembak",
+        455
+      ],
+      [
+        "matjam",
+        318
+      ],
+      [
+        "kerdja",
+        316
+      ],
+      [
+        "mitrailleur",
+        300
+      ],
+      [
+        "sesaran",
+        286
+      ],
+      [
+        "atawa",
+        250
+      ],
+      [
+        "pengadjaran",
+        212
+      ],
+      [
+        "pakei",
+        202
+      ],
+      [
+        "tida",
+        178
+      ],
+      [
+        "schutter",
+        161
+      ],
+      [
+        "sakiranja",
+        160
+      ],
+      [
+        "terseboet",
+        159
+      ]
+    ],
+    "distinct": [
+      [
+        "sesaran",
+        286
+      ],
+      [
+        "mitrailleur",
+        300
+      ],
+      [
+        "menembak",
+        455
+      ],
+      [
+        "sakiranja",
+        160
+      ],
+      [
+        "pakei",
+        202
+      ],
+      [
+        "memitar",
+        126
+      ],
+      [
+        "matjam",
+        318
+      ],
+      [
+        "kerdja",
+        316
+      ],
+      [
+        "atawa",
+        250
+      ],
+      [
+        "schutter",
+        161
+      ],
+      [
+        "pengadjaran",
+        212
+      ],
+      [
+        "terseboet",
+        159
+      ]
+    ],
+    "phrases": [
+      [
+        "kapal oedara",
+        129
+      ],
+      [
+        "menembak matjam",
+        118
+      ],
+      [
+        "kerdja menembak",
+        99
+      ],
+      [
+        "begitoe matjam",
+        53
+      ],
+      [
+        "matjam menembak",
+        31
+      ],
+      [
+        "mitrailleur van richting",
+        20
+      ],
+      [
+        "menembak dengan mitrailleur",
+        20
+      ],
+      [
+        "matjam strooien",
+        30
+      ]
+    ],
+    "similar": [
+      [
+        15337,
+        0.36
+      ],
+      [
+        11721,
+        0.23
+      ],
+      [
+        16972,
+        0.21
+      ],
+      [
+        13453,
+        0.18
+      ],
+      [
+        20782,
+        0.18
+      ],
+      [
+        11277,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 124,
+      "negative": 55,
+      "trend": [
+        0,
+        0.47,
+        0,
+        0.71,
+        -0.67,
+        0.06,
+        0.56,
+        0.83,
+        0.78,
+        -0.09,
+        0.43,
+        0.56,
+        0.67,
+        1,
+        0,
+        0.5
+      ],
+      "emotions": []
+    }
+  }
 }

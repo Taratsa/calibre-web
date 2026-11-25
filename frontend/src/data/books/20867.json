@@ -48,5 +48,150 @@
       "size": 4410,
       "name": "Udev - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 644,
+    "longer_than": 43,
+    "top": [
+      [
+        "udev",
+        20
+      ],
+      [
+        "device",
+        19
+      ],
+      [
+        "kernel",
+        9
+      ],
+      [
+        "linux",
+        7
+      ],
+      [
+        "dev",
+        5
+      ],
+      [
+        "devices",
+        5
+      ],
+      [
+        "rules",
+        5
+      ],
+      [
+        "devfs",
+        4
+      ],
+      [
+        "properties",
+        4
+      ],
+      [
+        "space",
+        4
+      ],
+      [
+        "directory",
+        3
+      ],
+      [
+        "hotplug",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "udev",
+        20
+      ],
+      [
+        "device",
+        19
+      ],
+      [
+        "devfs",
+        4
+      ],
+      [
+        "kernel",
+        9
+      ],
+      [
+        "hotplug",
+        3
+      ],
+      [
+        "devices",
+        5
+      ],
+      [
+        "properties",
+        4
+      ],
+      [
+        "rules",
+        5
+      ],
+      [
+        "dev",
+        5
+      ],
+      [
+        "nodes",
+        3
+      ],
+      [
+        "linux",
+        7
+      ],
+      [
+        "socket",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "user space",
+        3
+      ],
+      [
+        "device manager",
+        3
+      ],
+      [
+        "dev directory",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        9642,
+        0.26
+      ],
+      [
+        20868,
+        0.25
+      ],
+      [
+        19772,
+        0.25
+      ],
+      [
+        19134,
+        0.22
+      ],
+      [
+        18444,
+        0.22
+      ],
+      [
+        9552,
+        0.22
+      ]
+    ],
+    "sentiment": null
+  }
 }

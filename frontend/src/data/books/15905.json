@@ -45,5 +45,226 @@
       "size": 43000602,
       "name": "Imbauan ka'bah _ sadjak-sadjak perlawatan - Emzita"
     }
-  ]
+  ],
+  "text": {
+    "words": 19263,
+    "longer_than": 87,
+    "top": [
+      [
+        "islam",
+        131
+      ],
+      [
+        "tuhan",
+        126
+      ],
+      [
+        "allah",
+        79
+      ],
+      [
+        "nabi",
+        78
+      ],
+      [
+        "hati",
+        64
+      ],
+      [
+        "hidup",
+        60
+      ],
+      [
+        "iman",
+        53
+      ],
+      [
+        "ummat",
+        53
+      ],
+      [
+        "bah",
+        52
+      ],
+      [
+        "mendjadi",
+        52
+      ],
+      [
+        "dunia",
+        48
+      ],
+      [
+        "muhammad",
+        48
+      ]
+    ],
+    "distinct": [
+      [
+        "islam",
+        131
+      ],
+      [
+        "ilahy",
+        30
+      ],
+      [
+        "ummat",
+        53
+      ],
+      [
+        "emzita",
+        27
+      ],
+      [
+        "tuhan",
+        126
+      ],
+      [
+        "nabi",
+        78
+      ],
+      [
+        "mekkah",
+        45
+      ],
+      [
+        "hadji",
+        45
+      ],
+      [
+        "allah",
+        79
+      ],
+      [
+        "sutji",
+        39
+      ],
+      [
+        "iman",
+        53
+      ],
+      [
+        "djihad",
+        22
+      ]
+    ],
+    "phrases": [
+      [
+        "imbauan ka bah",
+        12
+      ],
+      [
+        "tanah sutji",
+        17
+      ],
+      [
+        "saudi arabia",
+        15
+      ],
+      [
+        "hadj jang mabrur",
+        9
+      ],
+      [
+        "ummat islam",
+        12
+      ],
+      [
+        "islam dan iman",
+        7
+      ],
+      [
+        "ummat utama",
+        9
+      ],
+      [
+        "pemimpin utama",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        16157,
+        0.25
+      ],
+      [
+        11731,
+        0.21
+      ],
+      [
+        7783,
+        0.19
+      ],
+      [
+        6638,
+        0.18
+      ],
+      [
+        7824,
+        0.17
+      ],
+      [
+        9165,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 444,
+      "negative": 207,
+      "trend": [
+        0.78,
+        0.5,
+        0.45,
+        0.82,
+        0.58,
+        0.33,
+        0.62,
+        0.35,
+        0.24,
+        0.5,
+        0.15,
+        0.33,
+        0.38,
+        0.33,
+        -0.06,
+        0.47
+      ],
+      "emotions": [
+        [
+          "joy",
+          66
+        ],
+        [
+          "sadness",
+          51
+        ],
+        [
+          "trust",
+          47
+        ],
+        [
+          "anticipation",
+          30
+        ],
+        [
+          "anger",
+          20
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

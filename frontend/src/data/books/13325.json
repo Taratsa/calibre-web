@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 560,
-    "longer_than": 42,
+    "longer_than": 41,
     "top": [
       [
         "data",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "twt",
-        7
-      ],
-      [
         "sentiment",
         12
+      ],
+      [
+        "twt",
+        7
       ],
       [
         "argmax",
@@ -144,12 +144,12 @@
         8
       ],
       [
-        "neg",
-        7
-      ],
-      [
         "cnt",
         6
+      ],
+      [
+        "import",
+        10
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         13302,
-        0.25
+        0.26
       ]
     ],
     "sentiment": null

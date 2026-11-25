@@ -45,5 +45,222 @@
       "size": 14989397,
       "name": "Sedjatinja peladjaran Boedha - H. Pilchowsky"
     }
-  ]
+  ],
+  "text": {
+    "words": 11584,
+    "longer_than": 81,
+    "top": [
+      [
+        "tida",
+        281
+      ],
+      [
+        "orang",
+        229
+      ],
+      [
+        "dengen",
+        182
+      ],
+      [
+        "poenja",
+        176
+      ],
+      [
+        "boedha",
+        135
+      ],
+      [
+        "atawa",
+        130
+      ],
+      [
+        "moesti",
+        108
+      ],
+      [
+        "doenia",
+        107
+      ],
+      [
+        "boeat",
+        102
+      ],
+      [
+        "djadi",
+        101
+      ],
+      [
+        "dalem",
+        89
+      ],
+      [
+        "menoesia",
+        85
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        281
+      ],
+      [
+        "boedha",
+        135
+      ],
+      [
+        "poenja",
+        176
+      ],
+      [
+        "dengen",
+        182
+      ],
+      [
+        "moesti",
+        108
+      ],
+      [
+        "atawa",
+        130
+      ],
+      [
+        "menoesia",
+        85
+      ],
+      [
+        "doenia",
+        107
+      ],
+      [
+        "boeat",
+        102
+      ],
+      [
+        "pladjaran",
+        59
+      ],
+      [
+        "dalem",
+        89
+      ],
+      [
+        "kaloe",
+        60
+      ]
+    ],
+    "phrases": [
+      [
+        "pladjarannja boedha",
+        18
+      ],
+      [
+        "orang moesti",
+        17
+      ],
+      [
+        "pladjaran boedha",
+        16
+      ],
+      [
+        "dengen tida",
+        14
+      ],
+      [
+        "djadi satoe",
+        13
+      ],
+      [
+        "laen orang",
+        12
+      ],
+      [
+        "boedha tida",
+        12
+      ],
+      [
+        "poenja badan",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        13277,
+        0.42
+      ],
+      [
+        14900,
+        0.41
+      ],
+      [
+        596,
+        0.38
+      ],
+      [
+        479,
+        0.37
+      ],
+      [
+        4636,
+        0.36
+      ],
+      [
+        694,
+        0.36
+      ]
+    ],
+    "sentiment": {
+      "score": -0.37,
+      "positive": 45,
+      "negative": 97,
+      "trend": [
+        0.43,
+        -1,
+        -0.64,
+        -0.83,
+        -1,
+        1,
+        0.4,
+        -0.2,
+        -0.69,
+        -0.82,
+        -0.4,
+        -0.23,
+        null,
+        -0.6,
+        -0.27,
+        0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          41
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

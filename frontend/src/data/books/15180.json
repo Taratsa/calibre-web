@@ -35,5 +35,226 @@
       "size": 33462881,
       "name": "PESAWAT DiKOTA DIPAkAI diUNIA - Selecta No.56 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 22307,
+    "longer_than": 89,
+    "top": [
+      [
+        "orang",
+        107
+      ],
+      [
+        "djuga",
+        91
+      ],
+      [
+        "pesawat",
+        59
+      ],
+      [
+        "sadja",
+        58
+      ],
+      [
+        "banjak",
+        55
+      ],
+      [
+        "film",
+        51
+      ],
+      [
+        "toto",
+        50
+      ],
+      [
+        "mendjadi",
+        48
+      ],
+      [
+        "dakota",
+        45
+      ],
+      [
+        "raffles",
+        44
+      ],
+      [
+        "tuan",
+        42
+      ],
+      [
+        "mang",
+        40
+      ]
+    ],
+    "distinct": [
+      [
+        "marlon",
+        38
+      ],
+      [
+        "djuga",
+        91
+      ],
+      [
+        "dakota",
+        45
+      ],
+      [
+        "farag",
+        26
+      ],
+      [
+        "toto",
+        50
+      ],
+      [
+        "hamud",
+        22
+      ],
+      [
+        "raffles",
+        44
+      ],
+      [
+        "pesawat",
+        59
+      ],
+      [
+        "koko",
+        33
+      ],
+      [
+        "palmer",
+        30
+      ],
+      [
+        "farida",
+        33
+      ],
+      [
+        "sadja",
+        58
+      ]
+    ],
+    "phrases": [
+      [
+        "mang koko",
+        33
+      ],
+      [
+        "pesawat dakota",
+        25
+      ],
+      [
+        "hubungan roman sosial",
+        12
+      ],
+      [
+        "roman sosial pengobatan",
+        11
+      ],
+      [
+        "puteri gunung ledang",
+        11
+      ],
+      [
+        "penghasilan hubungan roman",
+        10
+      ],
+      [
+        "sheik hamud",
+        14
+      ],
+      [
+        "terbaik untuk pekerdjaan",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        15300,
+        0.38
+      ],
+      [
+        18036,
+        0.34
+      ],
+      [
+        17975,
+        0.32
+      ],
+      [
+        15146,
+        0.32
+      ],
+      [
+        15350,
+        0.31
+      ],
+      [
+        15528,
+        0.31
+      ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 329,
+      "negative": 212,
+      "trend": [
+        0,
+        -0.03,
+        0,
+        -0.33,
+        -0.06,
+        0.13,
+        0.71,
+        0.25,
+        0.17,
+        0.52,
+        0.71,
+        0.07,
+        0.54,
+        0.41,
+        0.5,
+        0.22
+      ],
+      "emotions": [
+        [
+          "joy",
+          56
+        ],
+        [
+          "sadness",
+          36
+        ],
+        [
+          "anger",
+          28
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "fear",
+          19
+        ],
+        [
+          "surprise",
+          15
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
+  }
 }

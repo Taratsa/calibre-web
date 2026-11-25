@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1428,
-    "longer_than": 57,
+    "longer_than": 55,
     "top": [
       [
         "history",
@@ -131,10 +131,6 @@
         9
       ],
       [
-        "raleigh",
-        4
-      ],
-      [
         "narrators",
         4
       ],
@@ -145,6 +141,10 @@
       [
         "recommended",
         9
+      ],
+      [
+        "raleigh",
+        4
       ]
     ],
     "phrases": [
@@ -181,7 +181,20 @@
         3
       ]
     ],
-    "similar": [],
+    "similar": [
+      [
+        14063,
+        0.11
+      ],
+      [
+        4908,
+        0.11
+      ],
+      [
+        13849,
+        0.1
+      ]
+    ],
     "sentiment": null
   }
 }

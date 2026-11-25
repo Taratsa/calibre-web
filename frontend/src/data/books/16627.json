@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 718,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "transition",
@@ -112,12 +112,12 @@
         19
       ],
       [
-        "transition",
-        21
-      ],
-      [
         "getattr",
         9
+      ],
+      [
+        "transition",
+        21
       ],
       [
         "path",
@@ -132,12 +132,12 @@
         12
       ],
       [
-        "str",
-        10
-      ],
-      [
         "visualizer",
         6
+      ],
+      [
+        "str",
+        10
       ],
       [
         "transitions",
@@ -148,8 +148,8 @@
         8
       ],
       [
-        "obj",
-        6
+        "graphviz",
+        5
       ]
     ],
     "phrases": [
@@ -189,11 +189,11 @@
     "similar": [
       [
         16628,
-        0.44
+        0.45
       ],
       [
         16407,
-        0.37
+        0.38
       ],
       [
         15774,

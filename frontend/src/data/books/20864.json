@@ -48,5 +48,170 @@
       "size": 10656,
       "name": "TCP_IP_ Quagga BGP - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 3861,
+    "longer_than": 67,
+    "top": [
+      [
+        "bgp",
+        105
+      ],
+      [
+        "eth",
+        63
+      ],
+      [
+        "quagga",
+        54
+      ],
+      [
+        "cisco",
+        52
+      ],
+      [
+        "ospf",
+        50
+      ],
+      [
+        "connected",
+        48
+      ],
+      [
+        "router",
+        41
+      ],
+      [
+        "route",
+        35
+      ],
+      [
+        "interface",
+        31
+      ],
+      [
+        "fastethernet",
+        29
+      ],
+      [
+        "path",
+        27
+      ],
+      [
+        "network",
+        26
+      ]
+    ],
+    "distinct": [
+      [
+        "bgp",
+        105
+      ],
+      [
+        "quagga",
+        54
+      ],
+      [
+        "ospf",
+        50
+      ],
+      [
+        "eth",
+        63
+      ],
+      [
+        "cisco",
+        52
+      ],
+      [
+        "fastethernet",
+        29
+      ],
+      [
+        "fasteth",
+        20
+      ],
+      [
+        "connected",
+        48
+      ],
+      [
+        "is-is",
+        20
+      ],
+      [
+        "subnetted",
+        18
+      ],
+      [
+        "router",
+        41
+      ],
+      [
+        "subnets",
+        20
+      ]
+    ],
+    "phrases": [
+      [
+        "bytes of memory",
+        23
+      ],
+      [
+        "entries using bytes",
+        18
+      ],
+      [
+        "subnetted subnets",
+        18
+      ],
+      [
+        "memory bgp",
+        17
+      ],
+      [
+        "external type",
+        16
+      ],
+      [
+        "neighbor remote-as neighbor",
+        9
+      ],
+      [
+        "type e ospf",
+        8
+      ],
+      [
+        "router age seq",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        20863,
+        0.43
+      ],
+      [
+        13133,
+        0.41
+      ],
+      [
+        13142,
+        0.4
+      ],
+      [
+        13138,
+        0.39
+      ],
+      [
+        20862,
+        0.39
+      ],
+      [
+        13144,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
 }

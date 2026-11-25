@@ -54,5 +54,226 @@
       "size": 59250314,
       "name": "Ichtisar sedjarah R.I. (1945 - sekarang) - Notosoesanto"
     }
-  ]
+  ],
+  "text": {
+    "words": 39950,
+    "longer_than": 95,
+    "top": [
+      [
+        "indonesia",
+        342
+      ],
+      [
+        "tanggal",
+        338
+      ],
+      [
+        "belanda",
+        217
+      ],
+      [
+        "presiden",
+        216
+      ],
+      [
+        "pemerintah",
+        199
+      ],
+      [
+        "kabinet",
+        179
+      ],
+      [
+        "negara",
+        162
+      ],
+      [
+        "politik",
+        160
+      ],
+      [
+        "angkatan",
+        152
+      ],
+      [
+        "jenderal",
+        148
+      ],
+      [
+        "pki",
+        142
+      ],
+      [
+        "daerah",
+        135
+      ]
+    ],
+    "distinct": [
+      [
+        "kabinet",
+        179
+      ],
+      [
+        "tanggal",
+        338
+      ],
+      [
+        "pki",
+        142
+      ],
+      [
+        "presiden",
+        216
+      ],
+      [
+        "belanda",
+        217
+      ],
+      [
+        "jenderal",
+        148
+      ],
+      [
+        "angkatan",
+        152
+      ],
+      [
+        "kolonel",
+        98
+      ],
+      [
+        "abri",
+        93
+      ],
+      [
+        "sukarno",
+        104
+      ],
+      [
+        "yalah",
+        60
+      ],
+      [
+        "indonesia",
+        342
+      ]
+    ],
+    "phrases": [
+      [
+        "presiden sukarno",
+        86
+      ],
+      [
+        "republik indonesia",
+        59
+      ],
+      [
+        "angkatan darat",
+        51
+      ],
+      [
+        "tanggal september",
+        40
+      ],
+      [
+        "tanggal maret",
+        39
+      ],
+      [
+        "politik luar negeri",
+        26
+      ],
+      [
+        "letnan kolonel",
+        38
+      ],
+      [
+        "irian barat",
+        36
+      ]
+    ],
+    "similar": [
+      [
+        4904,
+        0.36
+      ],
+      [
+        4461,
+        0.34
+      ],
+      [
+        8621,
+        0.33
+      ],
+      [
+        8768,
+        0.3
+      ],
+      [
+        6321,
+        0.3
+      ],
+      [
+        4349,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 509,
+      "negative": 331,
+      "trend": [
+        0.38,
+        -0.14,
+        -0.06,
+        -0.1,
+        -0.16,
+        0.06,
+        0.17,
+        0.04,
+        0.32,
+        0.48,
+        0.21,
+        0.2,
+        0.07,
+        0.26,
+        0.76,
+        0.76
+      ],
+      "emotions": [
+        [
+          "anger",
+          114
+        ],
+        [
+          "trust",
+          98
+        ],
+        [
+          "fear",
+          28
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "anticipation",
+          16
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

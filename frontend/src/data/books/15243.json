@@ -43,5 +43,218 @@
       "size": 34870632,
       "name": "DIKTATUR DEMOKRASI RAKJAT - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 10479,
+    "longer_than": 80,
+    "top": [
+      [
+        "rakjat",
+        262
+      ],
+      [
+        "tiongkok",
+        171
+      ],
+      [
+        "negara",
+        90
+      ],
+      [
+        "kaum",
+        89
+      ],
+      [
+        "negeri",
+        87
+      ],
+      [
+        "orang",
+        79
+      ],
+      [
+        "demokrasi",
+        56
+      ],
+      [
+        "pemerintah",
+        54
+      ],
+      [
+        "partai",
+        47
+      ],
+      [
+        "republik",
+        47
+      ],
+      [
+        "daerah",
+        44
+      ],
+      [
+        "kelas",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "rakjat",
+        262
+      ],
+      [
+        "tiongkok",
+        171
+      ],
+      [
+        "diktatur",
+        31
+      ],
+      [
+        "kaum",
+        89
+      ],
+      [
+        "burdjuis",
+        30
+      ],
+      [
+        "shek",
+        21
+      ],
+      [
+        "demokrasi",
+        56
+      ],
+      [
+        "negeri",
+        87
+      ],
+      [
+        "djuga",
+        40
+      ],
+      [
+        "chiang",
+        23
+      ],
+      [
+        "kuomintang",
+        22
+      ],
+      [
+        "reaksioner",
+        33
+      ]
+    ],
+    "phrases": [
+      [
+        "rakjat tiongkok",
+        69
+      ],
+      [
+        "republik rakjat",
+        37
+      ],
+      [
+        "demokrasi rakjat",
+        32
+      ],
+      [
+        "sun yat sen",
+        21
+      ],
+      [
+        "chiang kai shek",
+        21
+      ],
+      [
+        "partai komunis",
+        23
+      ],
+      [
+        "kaum reaksioner",
+        20
+      ],
+      [
+        "dewan perwakilan rakjat",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        798,
+        0.36
+      ],
+      [
+        6799,
+        0.34
+      ],
+      [
+        6778,
+        0.34
+      ],
+      [
+        790,
+        0.33
+      ],
+      [
+        6291,
+        0.33
+      ],
+      [
+        5939,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 199,
+      "negative": 94,
+      "trend": [
+        0.2,
+        0.5,
+        0.31,
+        0.33,
+        0.5,
+        0.17,
+        -0.17,
+        0.1,
+        0.57,
+        0.29,
+        0.45,
+        0.88,
+        0.79,
+        0.4,
+        0.13,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          38
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
+  }
 }

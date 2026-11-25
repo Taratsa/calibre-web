@@ -43,5 +43,226 @@
       "size": 63973412,
       "name": "Tjerita Aboe Nawas dengen radja Haroen Arr - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 63514,
+    "longer_than": 98,
+    "top": [
+      [
+        "aboe",
+        1351
+      ],
+      [
+        "nawas",
+        1316
+      ],
+      [
+        "poen",
+        869
+      ],
+      [
+        "tiada",
+        647
+      ],
+      [
+        "radja",
+        629
+      ],
+      [
+        "orang",
+        602
+      ],
+      [
+        "laloe",
+        460
+      ],
+      [
+        "baginda",
+        457
+      ],
+      [
+        "angkau",
+        421
+      ],
+      [
+        "akoe",
+        410
+      ],
+      [
+        "hamba",
+        409
+      ],
+      [
+        "dalem",
+        339
+      ]
+    ],
+    "distinct": [
+      [
+        "nawas",
+        1316
+      ],
+      [
+        "aboe",
+        1351
+      ],
+      [
+        "poen",
+        869
+      ],
+      [
+        "angkau",
+        421
+      ],
+      [
+        "radja",
+        629
+      ],
+      [
+        "laloe",
+        460
+      ],
+      [
+        "akoe",
+        410
+      ],
+      [
+        "arrasid",
+        187
+      ],
+      [
+        "baginda",
+        457
+      ],
+      [
+        "patik",
+        312
+      ],
+      [
+        "haroen",
+        197
+      ],
+      [
+        "tiada",
+        647
+      ]
+    ],
+    "phrases": [
+      [
+        "aboe nawas",
+        1229
+      ],
+      [
+        "sjah alam",
+        227
+      ],
+      [
+        "nawas poen",
+        214
+      ],
+      [
+        "haroen arrasid",
+        178
+      ],
+      [
+        "baginda poen",
+        102
+      ],
+      [
+        "soelthan haroen",
+        82
+      ],
+      [
+        "radja haroen",
+        81
+      ],
+      [
+        "doeli sjah",
+        81
+      ]
+    ],
+    "similar": [
+      [
+        13608,
+        0.4
+      ],
+      [
+        14790,
+        0.32
+      ],
+      [
+        524,
+        0.28
+      ],
+      [
+        13484,
+        0.27
+      ],
+      [
+        652,
+        0.27
+      ],
+      [
+        16755,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": -0.01,
+      "positive": 287,
+      "negative": 294,
+      "trend": [
+        0.27,
+        -0.41,
+        -0.16,
+        -0.55,
+        -0.31,
+        -0.33,
+        -0.33,
+        -0.86,
+        0.04,
+        0,
+        0.69,
+        0.57,
+        0.55,
+        0.36,
+        0.17,
+        -0.32
+      ],
+      "emotions": [
+        [
+          "sadness",
+          82
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "surprise",
+          24
+        ],
+        [
+          "disgust",
+          15
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "anger",
+          13
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

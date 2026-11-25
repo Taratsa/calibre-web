@@ -48,5 +48,170 @@
       "size": 8271,
       "name": "Motherboard - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1620,
+    "longer_than": 57,
+    "top": [
+      [
+        "slot",
+        36
+      ],
+      [
+        "server",
+        33
+      ],
+      [
+        "intel",
+        29
+      ],
+      [
+        "konektor",
+        29
+      ],
+      [
+        "motherboard",
+        28
+      ],
+      [
+        "pci",
+        24
+      ],
+      [
+        "processor",
+        21
+      ],
+      [
+        "xeon",
+        20
+      ],
+      [
+        "kapasitas",
+        18
+      ],
+      [
+        "tipe",
+        17
+      ],
+      [
+        "socket",
+        16
+      ],
+      [
+        "ddr",
+        15
+      ]
+    ],
+    "distinct": [
+      [
+        "motherboard",
+        28
+      ],
+      [
+        "konektor",
+        29
+      ],
+      [
+        "slot",
+        36
+      ],
+      [
+        "pci",
+        24
+      ],
+      [
+        "xeon",
+        20
+      ],
+      [
+        "intel",
+        29
+      ],
+      [
+        "processor",
+        21
+      ],
+      [
+        "ddr",
+        15
+      ],
+      [
+        "pentium",
+        15
+      ],
+      [
+        "rack-optimized",
+        9
+      ],
+      [
+        "bios",
+        14
+      ],
+      [
+        "socket",
+        16
+      ]
+    ],
+    "phrases": [
+      [
+        "ddr slot kapasitas",
+        14
+      ],
+      [
+        "intel xeon",
+        15
+      ],
+      [
+        "kapasitas gb rack-optimized",
+        9
+      ],
+      [
+        "kapasitas gb pedestal",
+        8
+      ],
+      [
+        "pci express",
+        9
+      ],
+      [
+        "socket processor",
+        8
+      ],
+      [
+        "xeon ddr slot",
+        5
+      ],
+      [
+        "motherboard server",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        18299,
+        0.64
+      ],
+      [
+        18346,
+        0.41
+      ],
+      [
+        18301,
+        0.38
+      ],
+      [
+        18287,
+        0.37
+      ],
+      [
+        18302,
+        0.35
+      ],
+      [
+        20067,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -51,5 +51,170 @@
       "size": 4353,
       "name": "CMS Identification Menggunakan whatweb - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 864,
+    "longer_than": 48,
+    "top": [
+      [
+        "string",
+        20
+      ],
+      [
+        "description",
+        18
+      ],
+      [
+        "ubuntu",
+        18
+      ],
+      [
+        "apache",
+        16
+      ],
+      [
+        "server",
+        15
+      ],
+      [
+        "books",
+        14
+      ],
+      [
+        "php",
+        12
+      ],
+      [
+        "email",
+        11
+      ],
+      [
+        "foo",
+        11
+      ],
+      [
+        "whatweb",
+        11
+      ],
+      [
+        "title",
+        10
+      ],
+      [
+        "wordpress",
+        9
+      ]
+    ],
+    "distinct": [
+      [
+        "whatweb",
+        11
+      ],
+      [
+        "string",
+        20
+      ],
+      [
+        "description",
+        18
+      ],
+      [
+        "foo",
+        11
+      ],
+      [
+        "apache",
+        16
+      ],
+      [
+        "httpserver",
+        6
+      ],
+      [
+        "x-powered-by",
+        6
+      ],
+      [
+        "books",
+        14
+      ],
+      [
+        "ubuntu",
+        18
+      ],
+      [
+        "title",
+        10
+      ],
+      [
+        "geoip",
+        4
+      ],
+      [
+        "wordpress",
+        9
+      ]
+    ],
+    "phrases": [
+      [
+        "foo org books",
+        11
+      ],
+      [
+        "ubuntu linux apache",
+        4
+      ],
+      [
+        "linux apache ubuntu",
+        4
+      ],
+      [
+        "httpserver ubuntu linux",
+        4
+      ],
+      [
+        "php ubuntu",
+        5
+      ],
+      [
+        "gnucitizen org thomas",
+        3
+      ],
+      [
+        "description http server",
+        3
+      ],
+      [
+        "books xmlrpc php",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        11424,
+        0.2
+      ],
+      [
+        17229,
+        0.2
+      ],
+      [
+        18379,
+        0.19
+      ],
+      [
+        14619,
+        0.19
+      ],
+      [
+        11511,
+        0.18
+      ],
+      [
+        14622,
+        0.18
+      ]
+    ],
+    "sentiment": null
+  }
 }

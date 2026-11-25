@@ -48,5 +48,170 @@
       "size": 7647,
       "name": "Mini Howto iptables untuk Firewall - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 2163,
+    "longer_than": 61,
+    "top": [
+      [
+        "iptables",
+        68
+      ],
+      [
+        "aturan",
+        46
+      ],
+      [
+        "accept",
+        45
+      ],
+      [
+        "tcp",
+        35
+      ],
+      [
+        "input",
+        33
+      ],
+      [
+        "perintah",
+        24
+      ],
+      [
+        "rules",
+        23
+      ],
+      [
+        "traffic",
+        23
+      ],
+      [
+        "sudo",
+        19
+      ],
+      [
+        "ssh",
+        17
+      ],
+      [
+        "mengijinkan",
+        15
+      ],
+      [
+        "rantai",
+        15
+      ]
+    ],
+    "distinct": [
+      [
+        "iptables",
+        68
+      ],
+      [
+        "accept",
+        45
+      ],
+      [
+        "tcp",
+        35
+      ],
+      [
+        "iptables-save",
+        13
+      ],
+      [
+        "input",
+        33
+      ],
+      [
+        "aturan",
+        46
+      ],
+      [
+        "logndrop",
+        9
+      ],
+      [
+        "traffic",
+        23
+      ],
+      [
+        "rules",
+        23
+      ],
+      [
+        "iptables-restore",
+        10
+      ],
+      [
+        "log-prefix",
+        8
+      ],
+      [
+        "ssh",
+        17
+      ]
+    ],
+    "phrases": [
+      [
+        "iptables rules",
+        21
+      ],
+      [
+        "accept a input",
+        10
+      ],
+      [
+        "sudo iptables",
+        13
+      ],
+      [
+        "target prot opt",
+        8
+      ],
+      [
+        "prot opt source",
+        7
+      ],
+      [
+        "policy accept target",
+        7
+      ],
+      [
+        "opt source destination",
+        7
+      ],
+      [
+        "accept target prot",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        16298,
+        0.8
+      ],
+      [
+        9789,
+        0.38
+      ],
+      [
+        11425,
+        0.32
+      ],
+      [
+        11597,
+        0.28
+      ],
+      [
+        21269,
+        0.26
+      ],
+      [
+        13058,
+        0.22
+      ]
+    ],
+    "sentiment": null
+  }
 }

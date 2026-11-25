@@ -48,5 +48,170 @@
       "size": 5595,
       "name": "Telepon mobil - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1086,
+    "longer_than": 51,
+    "top": [
+      [
+        "telepon",
+        68
+      ],
+      [
+        "mobil",
+        52
+      ],
+      [
+        "stasiun",
+        26
+      ],
+      [
+        "induk",
+        16
+      ],
+      [
+        "pelanggan",
+        13
+      ],
+      [
+        "komunikasi",
+        11
+      ],
+      [
+        "radio",
+        11
+      ],
+      [
+        "frekuensi",
+        10
+      ],
+      [
+        "panggilan",
+        10
+      ],
+      [
+        "sinyal",
+        9
+      ],
+      [
+        "perangkat",
+        7
+      ],
+      [
+        "sentral",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "telepon",
+        68
+      ],
+      [
+        "mobil",
+        52
+      ],
+      [
+        "stasiun",
+        26
+      ],
+      [
+        "pelanggan",
+        13
+      ],
+      [
+        "induk",
+        16
+      ],
+      [
+        "sinyal",
+        9
+      ],
+      [
+        "frekuensi",
+        10
+      ],
+      [
+        "panggilan",
+        10
+      ],
+      [
+        "radio",
+        11
+      ],
+      [
+        "komunikasi",
+        11
+      ],
+      [
+        "sentral",
+        7
+      ],
+      [
+        "mhz",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "telepon mobil",
+        39
+      ],
+      [
+        "stasiun induk",
+        15
+      ],
+      [
+        "stasiun mobil",
+        11
+      ],
+      [
+        "sentral telepon",
+        7
+      ],
+      [
+        "telepon rumah",
+        5
+      ],
+      [
+        "perangkat radio",
+        4
+      ],
+      [
+        "sistem telepon",
+        3
+      ],
+      [
+        "pesawat telepon",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        18222,
+        0.31
+      ],
+      [
+        17942,
+        0.3
+      ],
+      [
+        18168,
+        0.27
+      ],
+      [
+        18143,
+        0.22
+      ],
+      [
+        19906,
+        0.22
+      ],
+      [
+        14399,
+        0.21
+      ]
+    ],
+    "sentiment": null
+  }
 }

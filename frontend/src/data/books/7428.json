@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 591,
-    "longer_than": 43,
+    "longer_than": 42,
     "top": [
       [
         "kelompok",
@@ -126,11 +126,11 @@
         5
       ],
       [
-        "binatang",
+        "perilaku",
         5
       ],
       [
-        "perilaku",
+        "binatang",
         5
       ],
       [
@@ -155,7 +155,20 @@
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        1774,
+        0.11
+      ],
+      [
+        2725,
+        0.11
+      ],
+      [
+        7168,
+        0.11
+      ]
+    ],
     "sentiment": null
   }
 }

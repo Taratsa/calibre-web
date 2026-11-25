@@ -116,12 +116,16 @@
         8
       ],
       [
+        "ethernet",
+        7
+      ],
+      [
         "eth",
         7
       ],
       [
-        "ethernet",
-        7
+        "next-hop",
+        4
       ],
       [
         "static",
@@ -130,10 +134,6 @@
       [
         "ping",
         8
-      ],
-      [
-        "next-hop",
-        4
       ],
       [
         "routing",

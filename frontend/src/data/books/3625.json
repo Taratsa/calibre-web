@@ -73,7 +73,7 @@
   ],
   "text": {
     "words": 6020,
-    "longer_than": 75,
+    "longer_than": 72,
     "top": [
       [
         "uhang",
@@ -208,7 +208,20 @@
         12
       ]
     ],
-    "similar": [],
+    "similar": [
+      [
+        3628,
+        0.17
+      ],
+      [
+        14563,
+        0.17
+      ],
+      [
+        5781,
+        0.11
+      ]
+    ],
     "sentiment": null
   }
 }

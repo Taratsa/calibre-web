@@ -48,5 +48,193 @@
       "size": 11109,
       "name": "Jawaban KOMPAS Kita - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 2719,
+    "longer_than": 63,
+    "top": [
+      [
+        "indonesia",
+        42
+      ],
+      [
+        "internet",
+        17
+      ],
+      [
+        "bangsa",
+        16
+      ],
+      [
+        "kasih",
+        16
+      ],
+      [
+        "server",
+        16
+      ],
+      [
+        "jaringan",
+        13
+      ],
+      [
+        "orang",
+        13
+      ],
+      [
+        "terima",
+        13
+      ],
+      [
+        "gmail",
+        10
+      ],
+      [
+        "komunitas",
+        10
+      ],
+      [
+        "onno",
+        10
+      ],
+      [
+        "rakyat",
+        10
+      ]
+    ],
+    "distinct": [
+      [
+        "indonesia",
+        42
+      ],
+      [
+        "onno",
+        10
+      ],
+      [
+        "cloud",
+        9
+      ],
+      [
+        "server",
+        16
+      ],
+      [
+        "openbts",
+        7
+      ],
+      [
+        "internet",
+        17
+      ],
+      [
+        "gmail",
+        10
+      ],
+      [
+        "frekuensi",
+        9
+      ],
+      [
+        "innovasi",
+        4
+      ],
+      [
+        "kasih",
+        16
+      ],
+      [
+        "bangsa",
+        16
+      ],
+      [
+        "jaringan",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "terima kasih",
+        13
+      ],
+      [
+        "rakyat indonesia",
+        6
+      ],
+      [
+        "server luar negeri",
+        3
+      ],
+      [
+        "teknologi informasi",
+        3
+      ],
+      [
+        "super wifi",
+        3
+      ],
+      [
+        "sumber daya",
+        3
+      ],
+      [
+        "sistem pendidikan",
+        3
+      ],
+      [
+        "sentral openbts",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20634,
+        0.28
+      ],
+      [
+        9635,
+        0.27
+      ],
+      [
+        11669,
+        0.25
+      ],
+      [
+        21427,
+        0.24
+      ],
+      [
+        20393,
+        0.22
+      ],
+      [
+        14398,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 105,
+      "negative": 19,
+      "trend": [
+        0.71,
+        0.43,
+        0.56,
+        0.67,
+        null,
+        0.67,
+        1,
+        0.11,
+        1,
+        1,
+        0.6,
+        0.73,
+        1,
+        0.67,
+        1,
+        0.75
+      ],
+      "emotions": []
+    }
+  }
 }

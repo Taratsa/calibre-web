@@ -43,5 +43,176 @@
       "size": 17455157,
       "name": "Reglement boewat adjar bersannja Stabelan - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 11673,
+    "longer_than": 81,
+    "top": [
+      [
+        "koeda",
+        356
+      ],
+      [
+        "djalan",
+        303
+      ],
+      [
+        "streng",
+        284
+      ],
+      [
+        "orang",
+        278
+      ],
+      [
+        "moesti",
+        223
+      ],
+      [
+        "bikin",
+        159
+      ],
+      [
+        "tida",
+        143
+      ],
+      [
+        "lantas",
+        134
+      ],
+      [
+        "kasi",
+        114
+      ],
+      [
+        "pembalikan",
+        109
+      ],
+      [
+        "voertuig",
+        107
+      ],
+      [
+        "boewat",
+        105
+      ]
+    ],
+    "distinct": [
+      [
+        "koeda",
+        356
+      ],
+      [
+        "streng",
+        284
+      ],
+      [
+        "moesti",
+        223
+      ],
+      [
+        "djalan",
+        303
+      ],
+      [
+        "voertuig",
+        107
+      ],
+      [
+        "boewat",
+        105
+      ],
+      [
+        "pembalikan",
+        109
+      ],
+      [
+        "tida",
+        143
+      ],
+      [
+        "bespanning",
+        62
+      ],
+      [
+        "koedanja",
+        71
+      ],
+      [
+        "bikin",
+        159
+      ],
+      [
+        "kasi",
+        114
+      ]
+    ],
+    "phrases": [
+      [
+        "orang streng",
+        212
+      ],
+      [
+        "bikin pembalikan",
+        73
+      ],
+      [
+        "djalan stap",
+        35
+      ],
+      [
+        "streng moesti",
+        28
+      ],
+      [
+        "djalan draf",
+        28
+      ],
+      [
+        "satoe di blakang",
+        17
+      ],
+      [
+        "moesti djalan",
+        25
+      ],
+      [
+        "kasi djalan",
+        23
+      ]
+    ],
+    "similar": [
+      [
+        14340,
+        0.65
+      ],
+      [
+        16827,
+        0.63
+      ],
+      [
+        20782,
+        0.52
+      ],
+      [
+        11277,
+        0.42
+      ],
+      [
+        11800,
+        0.38
+      ],
+      [
+        13196,
+        0.36
+      ]
+    ],
+    "sentiment": {
+      "score": 0.67,
+      "positive": 71,
+      "negative": 14,
+      "trend": [],
+      "emotions": []
+    }
+  }
 }

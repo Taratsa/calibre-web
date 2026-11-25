@@ -48,5 +48,170 @@
       "size": 3100,
       "name": "TCP_IP_ Quagga Statik Routing - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 324,
+    "longer_than": 31,
+    "top": [
+      [
+        "quagga",
+        21
+      ],
+      [
+        "interface",
+        10
+      ],
+      [
+        "address",
+        8
+      ],
+      [
+        "route",
+        8
+      ],
+      [
+        "hostname",
+        7
+      ],
+      [
+        "password",
+        6
+      ],
+      [
+        "router",
+        5
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "cisco",
+        4
+      ],
+      [
+        "conf",
+        4
+      ],
+      [
+        "daemons",
+        4
+      ],
+      [
+        "enable",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "quagga",
+        21
+      ],
+      [
+        "link-detect",
+        4
+      ],
+      [
+        "hostname",
+        7
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "vty",
+        4
+      ],
+      [
+        "interface",
+        10
+      ],
+      [
+        "route",
+        8
+      ],
+      [
+        "vtysh",
+        4
+      ],
+      [
+        "daemons",
+        4
+      ],
+      [
+        "vim",
+        4
+      ],
+      [
+        "address",
+        8
+      ],
+      [
+        "cisco",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "route ip route",
+        6
+      ],
+      [
+        "quagga vtysh conf",
+        4
+      ],
+      [
+        "vty no login",
+        3
+      ],
+      [
+        "vim etc quagga",
+        3
+      ],
+      [
+        "shutdown interface eth",
+        3
+      ],
+      [
+        "eth ip address",
+        3
+      ],
+      [
+        "address no shutdown",
+        3
+      ],
+      [
+        "hostname quagga",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        20863,
+        0.78
+      ],
+      [
+        12781,
+        0.42
+      ],
+      [
+        10712,
+        0.41
+      ],
+      [
+        10678,
+        0.41
+      ],
+      [
+        20856,
+        0.39
+      ],
+      [
+        12785,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
 }

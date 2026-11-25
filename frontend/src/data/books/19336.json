@@ -45,5 +45,218 @@
       "size": 86402842,
       "name": "Pengantar hukum internasional - Ali Sastroamidjojo"
     }
-  ]
+  ],
+  "text": {
+    "words": 128875,
+    "longer_than": 99,
+    "top": [
+      [
+        "negara",
+        1769
+      ],
+      [
+        "hukum",
+        1274
+      ],
+      [
+        "internasional",
+        1114
+      ],
+      [
+        "didalam",
+        864
+      ],
+      [
+        "perang",
+        785
+      ],
+      [
+        "perdjandjian",
+        475
+      ],
+      [
+        "djuga",
+        394
+      ],
+      [
+        "pbb",
+        366
+      ],
+      [
+        "mempunjai",
+        335
+      ],
+      [
+        "mendjadi",
+        322
+      ],
+      [
+        "article",
+        321
+      ],
+      [
+        "wilajah",
+        317
+      ]
+    ],
+    "distinct": [
+      [
+        "negara",
+        1769
+      ],
+      [
+        "didalam",
+        864
+      ],
+      [
+        "internasional",
+        1114
+      ],
+      [
+        "hukum",
+        1274
+      ],
+      [
+        "perdjandjian",
+        475
+      ],
+      [
+        "negara²",
+        276
+      ],
+      [
+        "wilajah",
+        317
+      ],
+      [
+        "perang",
+        785
+      ],
+      [
+        "djuga",
+        394
+      ],
+      [
+        "pbb",
+        366
+      ],
+      [
+        "mempunjai",
+        335
+      ],
+      [
+        "article",
+        321
+      ]
+    ],
+    "phrases": [
+      [
+        "hukum internasional",
+        594
+      ],
+      [
+        "united nations",
+        157
+      ],
+      [
+        "security council",
+        136
+      ],
+      [
+        "piagam pbb",
+        92
+      ],
+      [
+        "dewan keamanan",
+        92
+      ],
+      [
+        "wilajah negara",
+        91
+      ],
+      [
+        "amerika serikat",
+        72
+      ],
+      [
+        "didalam hukum",
+        67
+      ]
+    ],
+    "similar": [
+      [
+        17826,
+        0.21
+      ],
+      [
+        12429,
+        0.21
+      ],
+      [
+        16982,
+        0.21
+      ],
+      [
+        12976,
+        0.2
+      ],
+      [
+        4790,
+        0.2
+      ],
+      [
+        435,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": -0.38,
+      "positive": 706,
+      "negative": 1568,
+      "trend": [
+        -0.14,
+        0.05,
+        0.15,
+        0.09,
+        -0.37,
+        0.33,
+        -0.24,
+        0.13,
+        -0.51,
+        -0.66,
+        -0.66,
+        -0.49,
+        -0.93,
+        null,
+        null,
+        -0.35
+      ],
+      "emotions": [
+        [
+          "anger",
+          959
+        ],
+        [
+          "trust",
+          244
+        ],
+        [
+          "sadness",
+          49
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

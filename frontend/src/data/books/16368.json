@@ -47,5 +47,206 @@
       "size": 48730050,
       "name": "Prawan toewa _ babon basa mlajoe - Khing Han Ong"
     }
-  ]
+  ],
+  "text": {
+    "words": 33117,
+    "longer_than": 93,
+    "top": [
+      [
+        "akoe",
+        535
+      ],
+      [
+        "ingkang",
+        516
+      ],
+      [
+        "boten",
+        470
+      ],
+      [
+        "ora",
+        460
+      ],
+      [
+        "sang",
+        423
+      ],
+      [
+        "jèn",
+        276
+      ],
+      [
+        "kowé",
+        275
+      ],
+      [
+        "sampoen",
+        234
+      ],
+      [
+        "king",
+        201
+      ],
+      [
+        "hok",
+        193
+      ],
+      [
+        "ajoe",
+        191
+      ],
+      [
+        "dipoen",
+        182
+      ]
+    ],
+    "distinct": [
+      [
+        "akoe",
+        535
+      ],
+      [
+        "ingkang",
+        516
+      ],
+      [
+        "boten",
+        470
+      ],
+      [
+        "kowé",
+        275
+      ],
+      [
+        "jèn",
+        276
+      ],
+      [
+        "ora",
+        460
+      ],
+      [
+        "sampoen",
+        234
+      ],
+      [
+        "dipoen",
+        182
+      ],
+      [
+        "ajoe",
+        191
+      ],
+      [
+        "embok",
+        166
+      ],
+      [
+        "djaka",
+        175
+      ],
+      [
+        "poenika",
+        155
+      ]
+    ],
+    "phrases": [
+      [
+        "king hok",
+        186
+      ],
+      [
+        "sang ajoe",
+        175
+      ],
+      [
+        "embok rara",
+        125
+      ],
+      [
+        "kim lian",
+        123
+      ],
+      [
+        "sang retna",
+        95
+      ],
+      [
+        "liong tjwan",
+        81
+      ],
+      [
+        "akoe ora",
+        65
+      ],
+      [
+        "ora ana",
+        58
+      ]
+    ],
+    "similar": [
+      [
+        4613,
+        0.45
+      ],
+      [
+        667,
+        0.45
+      ],
+      [
+        13252,
+        0.41
+      ],
+      [
+        12032,
+        0.41
+      ],
+      [
+        17802,
+        0.4
+      ],
+      [
+        14480,
+        0.37
+      ]
+    ],
+    "sentiment": {
+      "score": -0.73,
+      "positive": 14,
+      "negative": 90,
+      "trend": [
+        null,
+        -1,
+        -0.71,
+        null,
+        null,
+        -1,
+        null,
+        -0.33,
+        null,
+        null,
+        null,
+        -1,
+        -1,
+        0.2,
+        -1,
+        -0.43
+      ],
+      "emotions": [
+        [
+          "sadness",
+          44
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

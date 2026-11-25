@@ -48,5 +48,150 @@
       "size": 2593,
       "name": "Mengkonfigurasi Interface di Ubuntu Shell - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 141,
+    "longer_than": 18,
+    "top": [
+      [
+        "eth",
+        11
+      ],
+      [
+        "auto",
+        4
+      ],
+      [
+        "iface",
+        4
+      ],
+      [
+        "inet",
+        4
+      ],
+      [
+        "wlan",
+        4
+      ],
+      [
+        "interface",
+        3
+      ],
+      [
+        "interfaces",
+        3
+      ],
+      [
+        "iwconfig",
+        3
+      ],
+      [
+        "mengkonfigurasi",
+        3
+      ],
+      [
+        "netmask",
+        3
+      ],
+      [
+        "network",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "eth",
+        11
+      ],
+      [
+        "iface",
+        4
+      ],
+      [
+        "iwconfig",
+        3
+      ],
+      [
+        "wlan",
+        4
+      ],
+      [
+        "inet",
+        4
+      ],
+      [
+        "auto",
+        4
+      ],
+      [
+        "netmask",
+        3
+      ],
+      [
+        "interfaces",
+        3
+      ],
+      [
+        "mengkonfigurasi",
+        3
+      ],
+      [
+        "interface",
+        3
+      ],
+      [
+        "network",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "iface eth inet",
+        4
+      ],
+      [
+        "eth iface eth",
+        4
+      ],
+      [
+        "auto eth",
+        4
+      ],
+      [
+        "network interfaces",
+        3
+      ],
+      [
+        "mengkonfigurasi interface",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        14073,
+        0.51
+      ],
+      [
+        11410,
+        0.51
+      ],
+      [
+        12363,
+        0.5
+      ],
+      [
+        10232,
+        0.44
+      ],
+      [
+        20543,
+        0.42
+      ],
+      [
+        14870,
+        0.4
+      ]
+    ],
+    "sentiment": null
+  }
 }

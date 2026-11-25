@@ -45,5 +45,193 @@
       "size": 8996504,
       "name": "Tentang pengerdjaan padi mendjadi beras - Sin Houw Tan"
     }
-  ]
+  ],
+  "text": {
+    "words": 5031,
+    "longer_than": 70,
+    "top": [
+      [
+        "beras",
+        88
+      ],
+      [
+        "padi",
+        72
+      ],
+      [
+        "mesin",
+        41
+      ],
+      [
+        "gabah",
+        38
+      ],
+      [
+        "djuga",
+        30
+      ],
+      [
+        "penggilingan",
+        28
+      ],
+      [
+        "setjara",
+        24
+      ],
+      [
+        "hasil",
+        22
+      ],
+      [
+        "petjah",
+        18
+      ],
+      [
+        "djika",
+        17
+      ],
+      [
+        "mendjadi",
+        17
+      ],
+      [
+        "pengerdjaan",
+        17
+      ]
+    ],
+    "distinct": [
+      [
+        "beras",
+        88
+      ],
+      [
+        "padi",
+        72
+      ],
+      [
+        "gabah",
+        38
+      ],
+      [
+        "pengerdjaan",
+        17
+      ],
+      [
+        "penggilingan",
+        28
+      ],
+      [
+        "pendjemuran",
+        14
+      ],
+      [
+        "brondol",
+        11
+      ],
+      [
+        "djuga",
+        30
+      ],
+      [
+        "kerugian²",
+        12
+      ],
+      [
+        "mesin",
+        41
+      ],
+      [
+        "setjara",
+        24
+      ],
+      [
+        "petjah",
+        18
+      ]
+    ],
+    "phrases": [
+      [
+        "penggilingan beras",
+        15
+      ],
+      [
+        "brondol putih",
+        11
+      ],
+      [
+        "pengusaha penggilingan",
+        8
+      ],
+      [
+        "mesin huller",
+        8
+      ],
+      [
+        "butir beras",
+        8
+      ],
+      [
+        "padi mendjadi beras",
+        5
+      ],
+      [
+        "setjara kunstmatig",
+        7
+      ],
+      [
+        "petjah kulit",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        6651,
+        0.16
+      ],
+      [
+        6576,
+        0.15
+      ],
+      [
+        10842,
+        0.15
+      ],
+      [
+        8460,
+        0.15
+      ],
+      [
+        12982,
+        0.14
+      ],
+      [
+        5959,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 57,
+      "negative": 28,
+      "trend": [
+        null,
+        -1,
+        null,
+        0.54,
+        null,
+        0,
+        0.5,
+        0,
+        0.67,
+        null,
+        1,
+        null,
+        null,
+        0.43,
+        null,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

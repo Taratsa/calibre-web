@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1131,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "bootloader",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "bootloader",
-        45
-      ],
-      [
         "fastboot",
         42
+      ],
+      [
+        "bootloader",
+        45
       ],
       [
         "flash",
@@ -136,12 +136,12 @@
         12
       ],
       [
-        "raw",
-        14
-      ],
-      [
         "cache",
         12
+      ],
+      [
+        "raw",
+        14
       ],
       [
         "recovery",
@@ -189,7 +189,7 @@
     "similar": [
       [
         10127,
-        0.53
+        0.54
       ],
       [
         10341,
@@ -209,7 +209,7 @@
       ],
       [
         11822,
-        0.37
+        0.38
       ]
     ],
     "sentiment": null

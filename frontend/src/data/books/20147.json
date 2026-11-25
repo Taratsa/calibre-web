@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 830,
-    "longer_than": 49,
+    "longer_than": 47,
     "top": [
       [
         "srtm",
@@ -129,16 +129,16 @@
         7
       ],
       [
-        "interpolation",
-        4
-      ],
-      [
         "data",
         22
       ],
       [
         "resolution",
         7
+      ],
+      [
+        "interpolation",
+        4
       ],
       [
         "tiles",
@@ -185,6 +185,10 @@
         0.23
       ],
       [
+        20580,
+        0.21
+      ],
+      [
         20146,
         0.19
       ],
@@ -195,10 +199,6 @@
       [
         20095,
         0.14
-      ],
-      [
-        18392,
-        0.13
       ]
     ],
     "sentiment": null

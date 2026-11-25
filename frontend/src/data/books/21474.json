@@ -50,5 +50,162 @@
       "size": 2293,
       "name": "ACPI_ Menjalankan - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 102,
+    "longer_than": 15,
+    "top": [
+      [
+        "acpi",
+        7
+      ],
+      [
+        "battery",
+        5
+      ],
+      [
+        "degrees",
+        5
+      ],
+      [
+        "thermal",
+        5
+      ],
+      [
+        "capacity",
+        4
+      ],
+      [
+        "mah",
+        4
+      ],
+      [
+        "cooling",
+        3
+      ],
+      [
+        "menjalankan",
+        3
+      ],
+      [
+        "mode",
+        3
+      ],
+      [
+        "switches",
+        3
+      ],
+      [
+        "temperature",
+        3
+      ],
+      [
+        "trip",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "acpi",
+        7
+      ],
+      [
+        "thermal",
+        5
+      ],
+      [
+        "battery",
+        5
+      ],
+      [
+        "degrees",
+        5
+      ],
+      [
+        "cooling",
+        3
+      ],
+      [
+        "switches",
+        3
+      ],
+      [
+        "temperature",
+        3
+      ],
+      [
+        "capacity",
+        4
+      ],
+      [
+        "trip",
+        3
+      ],
+      [
+        "mah",
+        4
+      ],
+      [
+        "mode",
+        3
+      ],
+      [
+        "menjalankan",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "degrees c thermal",
+        4
+      ],
+      [
+        "trip point switches",
+        3
+      ],
+      [
+        "switches to mode",
+        3
+      ],
+      [
+        "capacity mah",
+        4
+      ],
+      [
+        "thermal trip",
+        3
+      ],
+      [
+        "temperature degrees",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21473,
+        0.4
+      ],
+      [
+        14801,
+        0.24
+      ],
+      [
+        21480,
+        0.18
+      ],
+      [
+        18335,
+        0.15
+      ],
+      [
+        14593,
+        0.12
+      ],
+      [
+        20314,
+        0.12
+      ]
+    ],
+    "sentiment": null
+  }
 }

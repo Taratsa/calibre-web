@@ -49,5 +49,226 @@
       "size": 54818284,
       "name": "Bahaja komunisme di Asia - Douglas Hyde"
     }
-  ]
+  ],
+  "text": {
+    "words": 13309,
+    "longer_than": 83,
+    "top": [
+      [
+        "komunis",
+        222
+      ],
+      [
+        "partai",
+        97
+      ],
+      [
+        "komunisme",
+        73
+      ],
+      [
+        "kaum",
+        72
+      ],
+      [
+        "orang",
+        71
+      ],
+      [
+        "negara",
+        60
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "asia",
+        47
+      ],
+      [
+        "mendjadi",
+        47
+      ],
+      [
+        "india",
+        46
+      ],
+      [
+        "perang",
+        39
+      ],
+      [
+        "djuga",
+        36
+      ]
+    ],
+    "distinct": [
+      [
+        "komunis",
+        222
+      ],
+      [
+        "komunisme",
+        73
+      ],
+      [
+        "partai",
+        97
+      ],
+      [
+        "rrt",
+        34
+      ],
+      [
+        "viet",
+        26
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "mendjadi",
+        47
+      ],
+      [
+        "kaum",
+        72
+      ],
+      [
+        "vietcong",
+        15
+      ],
+      [
+        "tiongkok",
+        36
+      ],
+      [
+        "orang²",
+        25
+      ],
+      [
+        "djuga",
+        36
+      ]
+    ],
+    "phrases": [
+      [
+        "partai komunis",
+        58
+      ],
+      [
+        "kaum komunis",
+        35
+      ],
+      [
+        "komunis di asia",
+        7
+      ],
+      [
+        "orang komunis",
+        10
+      ],
+      [
+        "banjak orang",
+        10
+      ],
+      [
+        "asia tenggara",
+        10
+      ],
+      [
+        "muang thai",
+        9
+      ],
+      [
+        "komunisme di asia",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        6799,
+        0.26
+      ],
+      [
+        484,
+        0.25
+      ],
+      [
+        799,
+        0.25
+      ],
+      [
+        4817,
+        0.25
+      ],
+      [
+        6291,
+        0.24
+      ],
+      [
+        4884,
+        0.24
+      ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 232,
+      "negative": 212,
+      "trend": [
+        0,
+        0.1,
+        -0.06,
+        -0.24,
+        -0.1,
+        -0.13,
+        0.09,
+        0.25,
+        -0.13,
+        0,
+        0.14,
+        -0.25,
+        0.28,
+        0.06,
+        0.5,
+        0.29
+      ],
+      "emotions": [
+        [
+          "anger",
+          68
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

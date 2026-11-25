@@ -35,5 +35,222 @@
       "size": 102619994,
       "name": "Riwajat Semarang 1416-1931 - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 96150,
+    "longer_than": 99,
+    "top": [
+      [
+        "orang",
+        1163
+      ],
+      [
+        "tionghoa",
+        1080
+      ],
+      [
+        "dengen",
+        989
+      ],
+      [
+        "boeat",
+        931
+      ],
+      [
+        "satoe",
+        870
+      ],
+      [
+        "dalem",
+        685
+      ],
+      [
+        "poenja",
+        595
+      ],
+      [
+        "taon",
+        588
+      ],
+      [
+        "semarang",
+        582
+      ],
+      [
+        "djadi",
+        541
+      ],
+      [
+        "toean",
+        536
+      ],
+      [
+        "atawa",
+        535
+      ]
+    ],
+    "distinct": [
+      [
+        "dengen",
+        989
+      ],
+      [
+        "boeat",
+        931
+      ],
+      [
+        "tionghoa",
+        1080
+      ],
+      [
+        "satoe",
+        870
+      ],
+      [
+        "taon",
+        588
+      ],
+      [
+        "poenja",
+        595
+      ],
+      [
+        "dalem",
+        685
+      ],
+      [
+        "toean",
+        536
+      ],
+      [
+        "atawa",
+        535
+      ],
+      [
+        "poen",
+        417
+      ],
+      [
+        "laloe",
+        412
+      ],
+      [
+        "sebagi",
+        423
+      ]
+    ],
+    "phrases": [
+      [
+        "orang tionghoa",
+        266
+      ],
+      [
+        "toean tan",
+        175
+      ],
+      [
+        "berhoeboeng dengen",
+        110
+      ],
+      [
+        "orang-orang tionghoa",
+        102
+      ],
+      [
+        "tan tiang tjhing",
+        51
+      ],
+      [
+        "soerat kabar",
+        74
+      ],
+      [
+        "pembesar negri",
+        70
+      ],
+      [
+        "orang poenja",
+        66
+      ]
+    ],
+    "similar": [
+      [
+        679,
+        0.38
+      ],
+      [
+        13277,
+        0.35
+      ],
+      [
+        14754,
+        0.34
+      ],
+      [
+        4635,
+        0.33
+      ],
+      [
+        756,
+        0.33
+      ],
+      [
+        718,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 491,
+      "negative": 187,
+      "trend": [
+        0.52,
+        0.53,
+        0.66,
+        0.33,
+        0.36,
+        0.19,
+        0.35,
+        0.33,
+        0.53,
+        0.27,
+        0.61,
+        0.33,
+        0.29,
+        0.78,
+        0.8,
+        0.35
+      ],
+      "emotions": [
+        [
+          "trust",
+          44
+        ],
+        [
+          "joy",
+          40
+        ],
+        [
+          "anger",
+          35
+        ],
+        [
+          "sadness",
+          21
+        ],
+        [
+          "surprise",
+          18
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

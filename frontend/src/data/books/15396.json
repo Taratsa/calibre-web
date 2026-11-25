@@ -45,5 +45,226 @@
       "size": 37323814,
       "name": "Masalah Irian Barat di Perserikatan Bangsa - Pusat Penelitian dan Pengembangan Sumber D"
     }
-  ]
+  ],
+  "text": {
+    "words": 24166,
+    "longer_than": 90,
+    "top": [
+      [
+        "belanda",
+        465
+      ],
+      [
+        "indonesia",
+        428
+      ],
+      [
+        "barat",
+        337
+      ],
+      [
+        "irian",
+        317
+      ],
+      [
+        "rakjat",
+        130
+      ],
+      [
+        "kolonial",
+        109
+      ],
+      [
+        "kemerdekaan",
+        96
+      ],
+      [
+        "pemerintah",
+        96
+      ],
+      [
+        "tuan",
+        96
+      ],
+      [
+        "politik",
+        93
+      ],
+      [
+        "bangsa",
+        82
+      ],
+      [
+        "setjara",
+        78
+      ]
+    ],
+    "distinct": [
+      [
+        "irian",
+        317
+      ],
+      [
+        "belanda",
+        465
+      ],
+      [
+        "barat",
+        337
+      ],
+      [
+        "indonesia",
+        428
+      ],
+      [
+        "rakjat",
+        130
+      ],
+      [
+        "luns",
+        53
+      ],
+      [
+        "madjelis",
+        67
+      ],
+      [
+        "kolonial",
+        109
+      ],
+      [
+        "setjara",
+        78
+      ],
+      [
+        "wilajah",
+        51
+      ],
+      [
+        "rentjana",
+        55
+      ],
+      [
+        "kemerdekaan",
+        96
+      ]
+    ],
+    "phrases": [
+      [
+        "irian barat",
+        303
+      ],
+      [
+        "pemerintah belanda",
+        54
+      ],
+      [
+        "republik indonesia",
+        52
+      ],
+      [
+        "rakjat irian",
+        45
+      ],
+      [
+        "hak menentukan nasib",
+        29
+      ],
+      [
+        "tuan luns",
+        41
+      ],
+      [
+        "tuan ketua",
+        41
+      ],
+      [
+        "menteri luar negeri",
+        21
+      ]
+    ],
+    "similar": [
+      [
+        8771,
+        0.35
+      ],
+      [
+        21558,
+        0.35
+      ],
+      [
+        14317,
+        0.35
+      ],
+      [
+        566,
+        0.34
+      ],
+      [
+        9323,
+        0.32
+      ],
+      [
+        21036,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.35,
+      "positive": 409,
+      "negative": 195,
+      "trend": [
+        0.31,
+        0.4,
+        0.6,
+        0.21,
+        0.08,
+        0.38,
+        0.31,
+        0.66,
+        0.32,
+        0.69,
+        0.13,
+        0.14,
+        0.38,
+        0.16,
+        0.45,
+        0.38
+      ],
+      "emotions": [
+        [
+          "trust",
+          80
+        ],
+        [
+          "anger",
+          76
+        ],
+        [
+          "joy",
+          23
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "sadness",
+          20
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

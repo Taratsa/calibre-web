@@ -48,5 +48,146 @@
       "size": 2282,
       "name": "NAT MASQUARADE - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 122,
+    "longer_than": 17,
+    "top": [
+      [
+        "nat",
+        8
+      ],
+      [
+        "echo",
+        4
+      ],
+      [
+        "internet",
+        4
+      ],
+      [
+        "iptables",
+        4
+      ],
+      [
+        "ipv",
+        4
+      ],
+      [
+        "masquerade",
+        4
+      ],
+      [
+        "postrouting",
+        4
+      ],
+      [
+        "proc",
+        4
+      ],
+      [
+        "sys",
+        4
+      ],
+      [
+        "lan",
+        3
+      ],
+      [
+        "masquarade",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "masquarade",
+        3
+      ],
+      [
+        "nat",
+        8
+      ],
+      [
+        "postrouting",
+        4
+      ],
+      [
+        "masquerade",
+        4
+      ],
+      [
+        "proc",
+        4
+      ],
+      [
+        "iptables",
+        4
+      ],
+      [
+        "sys",
+        4
+      ],
+      [
+        "echo",
+        4
+      ],
+      [
+        "ipv",
+        4
+      ],
+      [
+        "internet",
+        4
+      ],
+      [
+        "lan",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "sys net ipv",
+        4
+      ],
+      [
+        "nat a postrouting",
+        4
+      ],
+      [
+        "iptables t nat",
+        4
+      ],
+      [
+        "echo proc sys",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        13036,
+        0.63
+      ],
+      [
+        13042,
+        0.42
+      ],
+      [
+        12366,
+        0.42
+      ],
+      [
+        13049,
+        0.41
+      ],
+      [
+        13079,
+        0.4
+      ],
+      [
+        13061,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
 }

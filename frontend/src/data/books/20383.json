@@ -48,5 +48,170 @@
       "size": 2974,
       "name": "OrangeHRM_ Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 355,
+    "longer_than": 33,
+    "top": [
+      [
+        "orangehrm",
+        33
+      ],
+      [
+        "php",
+        17
+      ],
+      [
+        "var",
+        14
+      ],
+      [
+        "www-data",
+        12
+      ],
+      [
+        "database",
+        9
+      ],
+      [
+        "apache",
+        8
+      ],
+      [
+        "openhrm",
+        8
+      ],
+      [
+        "admin",
+        6
+      ],
+      [
+        "chmod",
+        6
+      ],
+      [
+        "chown",
+        6
+      ],
+      [
+        "symfony",
+        6
+      ],
+      [
+        "user",
+        6
+      ]
+    ],
+    "distinct": [
+      [
+        "orangehrm",
+        33
+      ],
+      [
+        "www-data",
+        12
+      ],
+      [
+        "symfony",
+        6
+      ],
+      [
+        "var",
+        14
+      ],
+      [
+        "apache",
+        8
+      ],
+      [
+        "chown",
+        6
+      ],
+      [
+        "database",
+        9
+      ],
+      [
+        "chmod",
+        6
+      ],
+      [
+        "libgd",
+        4
+      ],
+      [
+        "admin",
+        6
+      ],
+      [
+        "htaccess",
+        3
+      ],
+      [
+        "php-pear",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "var www orangehrm",
+        12
+      ],
+      [
+        "www-data www-data var",
+        6
+      ],
+      [
+        "chown rf www-data",
+        6
+      ],
+      [
+        "chmod rf var",
+        6
+      ],
+      [
+        "orangehrm symfony",
+        6
+      ],
+      [
+        "php gd php",
+        3
+      ],
+      [
+        "user password",
+        4
+      ],
+      [
+        "orangehrm lib",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        20382,
+        0.5
+      ],
+      [
+        15806,
+        0.35
+      ],
+      [
+        19778,
+        0.33
+      ],
+      [
+        17976,
+        0.33
+      ],
+      [
+        17720,
+        0.32
+      ],
+      [
+        12031,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -48,5 +48,52 @@
       "size": 2871,
       "name": "Perintah Linux I - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 157,
+    "longer_than": 20,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "kartu jaringan",
+        6
+      ],
+      [
+        "ifconfig eth",
+        4
+      ],
+      [
+        "jaringan eth",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        12953,
+        0.42
+      ],
+      [
+        12629,
+        0.4
+      ],
+      [
+        20907,
+        0.38
+      ],
+      [
+        9752,
+        0.37
+      ],
+      [
+        12361,
+        0.36
+      ],
+      [
+        12948,
+        0.33
+      ]
+    ],
+    "sentiment": null
+  }
 }

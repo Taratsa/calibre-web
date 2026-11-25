@@ -48,5 +48,158 @@
       "size": 3052,
       "name": "RockCluster_ Web Server Lokal - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 209,
+    "longer_than": 24,
+    "top": [
+      [
+        "rockcluster",
+        9
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "lokal",
+        5
+      ],
+      [
+        "cluster",
+        4
+      ],
+      [
+        "ganglia",
+        4
+      ],
+      [
+        "https",
+        4
+      ],
+      [
+        "accept",
+        3
+      ],
+      [
+        "dport",
+        3
+      ],
+      [
+        "eth",
+        3
+      ],
+      [
+        "input",
+        3
+      ],
+      [
+        "iptables",
+        3
+      ],
+      [
+        "tcp",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "rockcluster",
+        9
+      ],
+      [
+        "ganglia",
+        4
+      ],
+      [
+        "dport",
+        3
+      ],
+      [
+        "cluster",
+        4
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "iptables",
+        3
+      ],
+      [
+        "eth",
+        3
+      ],
+      [
+        "accept",
+        3
+      ],
+      [
+        "tcp",
+        3
+      ],
+      [
+        "lokal",
+        5
+      ],
+      [
+        "input",
+        3
+      ],
+      [
+        "https",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "server lokal",
+        5
+      ],
+      [
+        "rockcluster web server",
+        3
+      ],
+      [
+        "input i eth",
+        3
+      ],
+      [
+        "eth p tcp",
+        3
+      ],
+      [
+        "tcp dport",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20239,
+        0.5
+      ],
+      [
+        11425,
+        0.46
+      ],
+      [
+        20241,
+        0.46
+      ],
+      [
+        20240,
+        0.43
+      ],
+      [
+        20306,
+        0.41
+      ],
+      [
+        11597,
+        0.37
+      ]
+    ],
+    "sentiment": null
+  }
 }

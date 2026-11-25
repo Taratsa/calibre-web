@@ -43,5 +43,226 @@
       "size": 19849272,
       "name": "Carita Biasa (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 23082,
+    "longer_than": 89,
+    "top": [
+      [
+        "kuring",
+        1049
+      ],
+      [
+        "teu",
+        439
+      ],
+      [
+        "teh",
+        381
+      ],
+      [
+        "manehna",
+        306
+      ],
+      [
+        "geus",
+        250
+      ],
+      [
+        "jeung",
+        235
+      ],
+      [
+        "anjeun",
+        208
+      ],
+      [
+        "mah",
+        206
+      ],
+      [
+        "dina",
+        177
+      ],
+      [
+        "deui",
+        167
+      ],
+      [
+        "kana",
+        134
+      ],
+      [
+        "aya",
+        133
+      ]
+    ],
+    "distinct": [
+      [
+        "kuring",
+        1049
+      ],
+      [
+        "teu",
+        439
+      ],
+      [
+        "manehna",
+        306
+      ],
+      [
+        "anjeun",
+        208
+      ],
+      [
+        "geus",
+        250
+      ],
+      [
+        "jeung",
+        235
+      ],
+      [
+        "teh",
+        381
+      ],
+      [
+        "deui",
+        167
+      ],
+      [
+        "kitu",
+        133
+      ],
+      [
+        "mah",
+        206
+      ],
+      [
+        "dina",
+        177
+      ],
+      [
+        "keur",
+        107
+      ]
+    ],
+    "phrases": [
+      [
+        "kuring teu",
+        61
+      ],
+      [
+        "cek kuring",
+        54
+      ],
+      [
+        "kuring mah",
+        36
+      ],
+      [
+        "kuring geus",
+        33
+      ],
+      [
+        "anak kuring",
+        29
+      ],
+      [
+        "hate kuring",
+        26
+      ],
+      [
+        "nyi halimah",
+        25
+      ],
+      [
+        "yen kuring",
+        24
+      ]
+    ],
+    "similar": [
+      [
+        11579,
+        0.63
+      ],
+      [
+        11281,
+        0.59
+      ],
+      [
+        11368,
+        0.58
+      ],
+      [
+        6231,
+        0.55
+      ],
+      [
+        11735,
+        0.5
+      ],
+      [
+        6002,
+        0.5
+      ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 185,
+      "negative": 167,
+      "trend": [
+        -0.45,
+        0.65,
+        0.17,
+        -0.54,
+        0.2,
+        0.25,
+        0.12,
+        0.43,
+        -0.12,
+        -0.21,
+        null,
+        0.17,
+        0.29,
+        0.43,
+        0.3,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          43
+        ],
+        [
+          "trust",
+          29
+        ],
+        [
+          "surprise",
+          20
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "disgust",
+          13
+        ],
+        [
+          "anger",
+          12
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

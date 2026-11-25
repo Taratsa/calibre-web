@@ -43,5 +43,218 @@
       "size": 38831415,
       "name": "UNDANG UNDANG SIMBURTJAHAJA - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 10238,
+    "longer_than": 80,
+    "top": [
+      [
+        "pasal",
+        274
+      ],
+      [
+        "djika",
+        220
+      ],
+      [
+        "ringgit",
+        199
+      ],
+      [
+        "orang",
+        165
+      ],
+      [
+        "denda",
+        127
+      ],
+      [
+        "dusun",
+        101
+      ],
+      [
+        "gadis",
+        92
+      ],
+      [
+        "pasirah",
+        86
+      ],
+      [
+        "rumah",
+        82
+      ],
+      [
+        "dihukum",
+        79
+      ],
+      [
+        "budjang",
+        77
+      ],
+      [
+        "marga",
+        75
+      ]
+    ],
+    "distinct": [
+      [
+        "ringgit",
+        199
+      ],
+      [
+        "djika",
+        220
+      ],
+      [
+        "pasal",
+        274
+      ],
+      [
+        "pasirah",
+        86
+      ],
+      [
+        "budjang",
+        77
+      ],
+      [
+        "denda",
+        127
+      ],
+      [
+        "empunja",
+        48
+      ],
+      [
+        "dusun",
+        101
+      ],
+      [
+        "proatin",
+        41
+      ],
+      [
+        "marga",
+        75
+      ],
+      [
+        "membajar",
+        62
+      ],
+      [
+        "gadis",
+        92
+      ]
+    ],
+    "phrases": [
+      [
+        "denda sampai ringgit",
+        55
+      ],
+      [
+        "dihukum denda",
+        64
+      ],
+      [
+        "dikenakan denda ringgit",
+        26
+      ],
+      [
+        "tekap malu",
+        28
+      ],
+      [
+        "djika seorang laki-laki",
+        17
+      ],
+      [
+        "gadis atau randa",
+        16
+      ],
+      [
+        "empunja rumah",
+        23
+      ],
+      [
+        "kepala dusun",
+        21
+      ]
+    ],
+    "similar": [
+      [
+        6649,
+        0.14
+      ],
+      [
+        1361,
+        0.14
+      ],
+      [
+        1364,
+        0.13
+      ],
+      [
+        6578,
+        0.12
+      ],
+      [
+        6653,
+        0.12
+      ],
+      [
+        6590,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": -0.36,
+      "positive": 46,
+      "negative": 97,
+      "trend": [
+        null,
+        0.33,
+        0,
+        null,
+        -0.33,
+        -0.33,
+        0,
+        -0.38,
+        null,
+        -0.88,
+        -0.33,
+        -0.56,
+        -0.78,
+        -0.89,
+        0.23,
+        -0.11
+      ],
+      "emotions": [
+        [
+          "anger",
+          20
+        ],
+        [
+          "sadness",
+          18
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
+  }
 }

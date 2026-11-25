@@ -43,5 +43,218 @@
       "size": 21368812,
       "name": "ABC GERAKAN BURUH INTERNASIONAL - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 5768,
+    "longer_than": 72,
+    "top": [
+      [
+        "kaum",
+        65
+      ],
+      [
+        "klas",
+        62
+      ],
+      [
+        "revolusi",
+        53
+      ],
+      [
+        "gerakan",
+        52
+      ],
+      [
+        "buruh",
+        48
+      ],
+      [
+        "komunis",
+        42
+      ],
+      [
+        "rusia",
+        42
+      ],
+      [
+        "dunia",
+        41
+      ],
+      [
+        "partai",
+        41
+      ],
+      [
+        "rakjat",
+        38
+      ],
+      [
+        "marx",
+        36
+      ],
+      [
+        "negeri",
+        35
+      ]
+    ],
+    "distinct": [
+      [
+        "klas",
+        62
+      ],
+      [
+        "rusia",
+        42
+      ],
+      [
+        "rakjat",
+        38
+      ],
+      [
+        "imperialis",
+        34
+      ],
+      [
+        "revolusi",
+        53
+      ],
+      [
+        "komunis",
+        42
+      ],
+      [
+        "proletar",
+        32
+      ],
+      [
+        "marx",
+        36
+      ],
+      [
+        "kaum",
+        65
+      ],
+      [
+        "proletariat",
+        31
+      ],
+      [
+        "internasionale",
+        20
+      ],
+      [
+        "buruh",
+        48
+      ]
+    ],
+    "phrases": [
+      [
+        "klas proletar",
+        23
+      ],
+      [
+        "gerakan pembebasan nasional",
+        15
+      ],
+      [
+        "klas buruh",
+        19
+      ],
+      [
+        "partai komunis",
+        17
+      ],
+      [
+        "amerika serikat",
+        16
+      ],
+      [
+        "kaum imperialis",
+        14
+      ],
+      [
+        "eropa barat",
+        13
+      ],
+      [
+        "marx dan engels",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        4617,
+        0.41
+      ],
+      [
+        15427,
+        0.4
+      ],
+      [
+        418,
+        0.39
+      ],
+      [
+        4807,
+        0.39
+      ],
+      [
+        471,
+        0.39
+      ],
+      [
+        6713,
+        0.39
+      ]
+    ],
+    "sentiment": {
+      "score": 0.34,
+      "positive": 121,
+      "negative": 60,
+      "trend": [
+        0.43,
+        0.75,
+        null,
+        0.45,
+        0.17,
+        0.14,
+        0.29,
+        0.45,
+        -0.6,
+        0.27,
+        -0.29,
+        0.79,
+        0.54,
+        0.57,
+        0.43,
+        0.6
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

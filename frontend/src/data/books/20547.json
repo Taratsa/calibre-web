@@ -44,5 +44,218 @@
       "size": 13989422,
       "name": "Surat-surat edaran dari Komite Bumi Putra - Comite Boemi Poetra"
     }
-  ]
+  ],
+  "text": {
+    "words": 18764,
+    "longer_than": 87,
+    "top": [
+      [
+        "orang",
+        129
+      ],
+      [
+        "tida",
+        104
+      ],
+      [
+        "bangsa",
+        91
+      ],
+      [
+        "den",
+        85
+      ],
+      [
+        "soedah",
+        85
+      ],
+      [
+        "kamoe",
+        77
+      ],
+      [
+        "gij",
+        59
+      ],
+      [
+        "belanda",
+        55
+      ],
+      [
+        "napoleon",
+        55
+      ],
+      [
+        "djoega",
+        53
+      ],
+      [
+        "tiada",
+        53
+      ],
+      [
+        "blanda",
+        51
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        104
+      ],
+      [
+        "kamoe",
+        77
+      ],
+      [
+        "soedah",
+        85
+      ],
+      [
+        "indiërs",
+        46
+      ],
+      [
+        "blanda",
+        51
+      ],
+      [
+        "gij",
+        59
+      ],
+      [
+        "napoleon",
+        55
+      ],
+      [
+        "djoega",
+        53
+      ],
+      [
+        "boeat",
+        42
+      ],
+      [
+        "haroes",
+        40
+      ],
+      [
+        "den",
+        85
+      ],
+      [
+        "negri",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "negri blanda",
+        15
+      ],
+      [
+        "negeri belanda",
+        15
+      ],
+      [
+        "orang belanda",
+        14
+      ],
+      [
+        "bangsa blanda",
+        13
+      ],
+      [
+        "suardy suryaningrat",
+        10
+      ],
+      [
+        "comité boemipoetra",
+        10
+      ],
+      [
+        "bangsa belanda",
+        10
+      ],
+      [
+        "douwes dekker tjipto",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        19767,
+        0.22
+      ],
+      [
+        529,
+        0.22
+      ],
+      [
+        21183,
+        0.22
+      ],
+      [
+        17938,
+        0.21
+      ],
+      [
+        1903,
+        0.2
+      ],
+      [
+        21231,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 81,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.33,
+        -0.4,
+        0.33,
+        0.11,
+        0.29,
+        0.65,
+        0.41,
+        0.56
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
+  }
 }

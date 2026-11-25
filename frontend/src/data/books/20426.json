@@ -46,5 +46,222 @@
       "size": 19681418,
       "name": "Pola wasita (Vol. 1) - Ki Hadjar Dewantara"
     }
-  ]
+  ],
+  "text": {
+    "words": 20371,
+    "longer_than": 88,
+    "top": [
+      [
+        "oentoek",
+        177
+      ],
+      [
+        "perempoean",
+        132
+      ],
+      [
+        "anak",
+        124
+      ],
+      [
+        "djoega",
+        111
+      ],
+      [
+        "jaitoe",
+        105
+      ],
+      [
+        "anak-anak",
+        100
+      ],
+      [
+        "soedah",
+        97
+      ],
+      [
+        "haroes",
+        93
+      ],
+      [
+        "pendidikan",
+        93
+      ],
+      [
+        "hidoep",
+        90
+      ],
+      [
+        "orang",
+        86
+      ],
+      [
+        "pengadjaran",
+        84
+      ]
+    ],
+    "distinct": [
+      [
+        "oentoek",
+        177
+      ],
+      [
+        "perempoean",
+        132
+      ],
+      [
+        "jaitoe",
+        105
+      ],
+      [
+        "djoega",
+        111
+      ],
+      [
+        "soedah",
+        97
+      ],
+      [
+        "hidoep",
+        90
+      ],
+      [
+        "haroes",
+        93
+      ],
+      [
+        "taman-siswa",
+        56
+      ],
+      [
+        "pengadjaran",
+        84
+      ],
+      [
+        "goeroe",
+        65
+      ],
+      [
+        "systeem",
+        52
+      ],
+      [
+        "itoelah",
+        53
+      ]
+    ],
+    "phrases": [
+      [
+        "laki-laki dan perempoean",
+        17
+      ],
+      [
+        "taman siswa",
+        22
+      ],
+      [
+        "terseboet diatas",
+        17
+      ],
+      [
+        "orang laki-laki",
+        14
+      ],
+      [
+        "anak laki-laki",
+        11
+      ],
+      [
+        "lahir dan batin",
+        7
+      ],
+      [
+        "permainan anak",
+        9
+      ],
+      [
+        "nationaal onderwijs",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        21275,
+        0.31
+      ],
+      [
+        21274,
+        0.31
+      ],
+      [
+        20479,
+        0.3
+      ],
+      [
+        6632,
+        0.3
+      ],
+      [
+        19173,
+        0.29
+      ],
+      [
+        20712,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 185,
+      "negative": 52,
+      "trend": [
+        1,
+        0.6,
+        null,
+        0.54,
+        0.64,
+        0.62,
+        1,
+        0.56,
+        0.04,
+        0.75,
+        0.67,
+        0.76,
+        0.39,
+        0.24,
+        0.64,
+        0.64
+      ],
+      "emotions": [
+        [
+          "joy",
+          32
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

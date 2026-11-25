@@ -48,5 +48,170 @@
       "size": 5662,
       "name": "Compile Kernel - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1004,
+    "longer_than": 50,
+    "top": [
+      [
+        "kernel",
+        45
+      ],
+      [
+        "linux",
+        34
+      ],
+      [
+        "custom",
+        24
+      ],
+      [
+        "src",
+        15
+      ],
+      [
+        "usr",
+        15
+      ],
+      [
+        "compile",
+        14
+      ],
+      [
+        "boot",
+        12
+      ],
+      [
+        "config",
+        11
+      ],
+      [
+        "initrd",
+        10
+      ],
+      [
+        "grub",
+        9
+      ],
+      [
+        "install",
+        9
+      ],
+      [
+        "konfigurasi",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "kernel",
+        45
+      ],
+      [
+        "custom",
+        24
+      ],
+      [
+        "linux",
+        34
+      ],
+      [
+        "initrd",
+        10
+      ],
+      [
+        "src",
+        15
+      ],
+      [
+        "grub",
+        9
+      ],
+      [
+        "compile",
+        14
+      ],
+      [
+        "boot",
+        12
+      ],
+      [
+        "usr",
+        15
+      ],
+      [
+        "uuid",
+        6
+      ],
+      [
+        "recordfail",
+        4
+      ],
+      [
+        "config",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "usr src linux",
+        11
+      ],
+      [
+        "compile kernel",
+        9
+      ],
+      [
+        "konfigurasi kernel",
+        7
+      ],
+      [
+        "vmlinuz custom root",
+        4
+      ],
+      [
+        "sistem operasi",
+        6
+      ],
+      [
+        "initrd img custom",
+        4
+      ],
+      [
+        "initrd boot initrd",
+        4
+      ],
+      [
+        "custom root uuid",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        18447,
+        0.6
+      ],
+      [
+        16750,
+        0.38
+      ],
+      [
+        17238,
+        0.34
+      ],
+      [
+        9675,
+        0.33
+      ],
+      [
+        16752,
+        0.32
+      ],
+      [
+        10149,
+        0.3
+      ]
+    ],
+    "sentiment": null
+  }
 }

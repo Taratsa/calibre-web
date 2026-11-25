@@ -45,5 +45,214 @@
       "size": 4991107,
       "name": "Angkatan perang tetaplah waspada tetaplah - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 1733,
+    "longer_than": 58,
+    "top": [
+      [
+        "indonesia",
+        39
+      ],
+      [
+        "bangsa",
+        37
+      ],
+      [
+        "angkatan",
+        28
+      ],
+      [
+        "perang",
+        23
+      ],
+      [
+        "republik",
+        21
+      ],
+      [
+        "barat",
+        16
+      ],
+      [
+        "irian",
+        16
+      ],
+      [
+        "tanggal",
+        14
+      ],
+      [
+        "saudara-saudara",
+        13
+      ],
+      [
+        "berdiri",
+        11
+      ],
+      [
+        "negara",
+        11
+      ],
+      [
+        "punja",
+        11
+      ]
+    ],
+    "distinct": [
+      [
+        "angkatan",
+        28
+      ],
+      [
+        "bangsa",
+        37
+      ],
+      [
+        "irian",
+        16
+      ],
+      [
+        "punja",
+        11
+      ],
+      [
+        "saudara-saudara",
+        13
+      ],
+      [
+        "republik",
+        21
+      ],
+      [
+        "perang",
+        23
+      ],
+      [
+        "indonesia",
+        39
+      ],
+      [
+        "sabang",
+        9
+      ],
+      [
+        "potensi-potensi",
+        7
+      ],
+      [
+        "merauke",
+        9
+      ],
+      [
+        "fihak",
+        9
+      ]
+    ],
+    "phrases": [
+      [
+        "angkatan perang",
+        23
+      ],
+      [
+        "republik indonesia",
+        20
+      ],
+      [
+        "irian barat",
+        16
+      ],
+      [
+        "bangsa indonesia",
+        14
+      ],
+      [
+        "perang republik",
+        10
+      ],
+      [
+        "tanggal agustus",
+        7
+      ],
+      [
+        "sabang sampai merauke",
+        4
+      ],
+      [
+        "sabang dan merauke",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        11241,
+        0.34
+      ],
+      [
+        13365,
+        0.3
+      ],
+      [
+        11003,
+        0.25
+      ],
+      [
+        11349,
+        0.25
+      ],
+      [
+        11505,
+        0.24
+      ],
+      [
+        11765,
+        0.24
+      ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 40,
+      "negative": 32,
+      "trend": [
+        -1,
+        -0.67,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        -0.33,
+        null,
+        null,
+        0,
+        null,
+        0.2,
+        null,
+        0.6,
+        0.71
+      ],
+      "emotions": [
+        [
+          "anger",
+          23
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

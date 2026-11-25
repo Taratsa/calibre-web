@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 1023,
-    "longer_than": 52,
+    "longer_than": 50,
     "top": [
       [
         "kesunyian",
@@ -131,20 +131,20 @@
         4
       ],
       [
-        "silence",
-        3
-      ],
-      [
         "biner",
         3
       ],
       [
-        "nietzsche",
+        "silence",
         3
       ],
       [
         "komposisi",
         4
+      ],
+      [
+        "nietzsche",
+        3
       ],
       [
         "persepsi",
@@ -158,6 +158,10 @@
     "phrases": [],
     "similar": [
       [
+        20527,
+        0.29
+      ],
+      [
         2242,
         0.26
       ],
@@ -166,20 +170,16 @@
         0.21
       ],
       [
-        3101,
+        17881,
         0.13
       ],
       [
-        17881,
+        3101,
         0.13
       ],
       [
         2396,
         0.12
-      ],
-      [
-        2291,
-        0.11
       ]
     ],
     "sentiment": null

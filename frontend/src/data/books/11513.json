@@ -43,5 +43,226 @@
       "size": 4750800,
       "name": "Babad Mangkubumi (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 85181,
+    "longer_than": 98,
+    "top": [
+      [
+        "kangjeng",
+        2221
+      ],
+      [
+        "pangeran",
+        1675
+      ],
+      [
+        "raden",
+        1620
+      ],
+      [
+        "sultan",
+        1481
+      ],
+      [
+        "tuan",
+        1115
+      ],
+      [
+        "patih",
+        799
+      ],
+      [
+        "ingkang",
+        682
+      ],
+      [
+        "notokusumo",
+        579
+      ],
+      [
+        "dhateng",
+        543
+      ],
+      [
+        "sampun",
+        529
+      ],
+      [
+        "minister",
+        522
+      ],
+      [
+        "tuwan",
+        482
+      ]
+    ],
+    "distinct": [
+      [
+        "kangjeng",
+        2221
+      ],
+      [
+        "pangeran",
+        1675
+      ],
+      [
+        "notokusumo",
+        579
+      ],
+      [
+        "raden",
+        1620
+      ],
+      [
+        "sultan",
+        1481
+      ],
+      [
+        "ingkang",
+        682
+      ],
+      [
+        "dhateng",
+        543
+      ],
+      [
+        "patih",
+        799
+      ],
+      [
+        "tuwan",
+        482
+      ],
+      [
+        "sampun",
+        529
+      ],
+      [
+        "notodiningrat",
+        280
+      ],
+      [
+        "tuan",
+        1115
+      ]
+    ],
+    "phrases": [
+      [
+        "kangjeng sultan",
+        1132
+      ],
+      [
+        "kangjeng pangeran notokusumo",
+        444
+      ],
+      [
+        "raden patih",
+        579
+      ],
+      [
+        "kangjeng gusti pangeran",
+        265
+      ],
+      [
+        "gusti pangeran adipati",
+        257
+      ],
+      [
+        "raden tumenggung",
+        384
+      ],
+      [
+        "tuan gubernur jenderal",
+        208
+      ],
+      [
+        "pangeran adipati anom",
+        191
+      ]
+    ],
+    "similar": [
+      [
+        11343,
+        0.32
+      ],
+      [
+        11605,
+        0.29
+      ],
+      [
+        2940,
+        0.28
+      ],
+      [
+        6079,
+        0.28
+      ],
+      [
+        5040,
+        0.28
+      ],
+      [
+        11609,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 723,
+      "negative": 759,
+      "trend": [
+        0.3,
+        0.74,
+        -0.08,
+        -0.08,
+        0.08,
+        -0.15,
+        0.09,
+        -0.02,
+        0.1,
+        -0.12,
+        -0.05,
+        -0.07,
+        -0.12,
+        0.09,
+        -0.03,
+        -0.21
+      ],
+      "emotions": [
+        [
+          "anger",
+          150
+        ],
+        [
+          "sadness",
+          133
+        ],
+        [
+          "joy",
+          124
+        ],
+        [
+          "trust",
+          101
+        ],
+        [
+          "fear",
+          96
+        ],
+        [
+          "anticipation",
+          56
+        ],
+        [
+          "surprise",
+          26
+        ],
+        [
+          "disgust",
+          12
+        ]
+      ]
+    }
+  }
 }

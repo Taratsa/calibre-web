@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 958,
-    "longer_than": 51,
+    "longer_than": 49,
     "top": [
       [
         "client",
@@ -120,16 +120,16 @@
         15
       ],
       [
-        "cert",
-        14
-      ],
-      [
         "bridge",
         21
       ],
       [
         "ca-certificate",
         9
+      ],
+      [
+        "cert",
+        14
       ],
       [
         "client-certificate",
@@ -148,8 +148,8 @@
         6
       ],
       [
-        "export",
-        14
+        "password",
+        19
       ]
     ],
     "phrases": [
@@ -205,11 +205,11 @@
       ],
       [
         13080,
-        0.34
+        0.35
       ],
       [
         13044,
-        0.32
+        0.33
       ]
     ],
     "sentiment": null

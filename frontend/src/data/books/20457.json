@@ -46,5 +46,150 @@
       "size": 6724556,
       "name": "Serat Condrorini - Ranggawarsita"
     }
-  ]
+  ],
+  "text": {
+    "words": 1699,
+    "longer_than": 57,
+    "top": [
+      [
+        "ann",
+        12
+      ],
+      [
+        "annn",
+        10
+      ],
+      [
+        "asn",
+        9
+      ],
+      [
+        "asl",
+        7
+      ],
+      [
+        "gth",
+        7
+      ],
+      [
+        "tamansiswa",
+        7
+      ],
+      [
+        "ast",
+        6
+      ],
+      [
+        "dewi",
+        6
+      ],
+      [
+        "berpusatdi",
+        5
+      ],
+      [
+        "bibliotheek",
+        5
+      ],
+      [
+        "boekhandel",
+        5
+      ],
+      [
+        "wignjosoeroto",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "annn",
+        10
+      ],
+      [
+        "ann",
+        12
+      ],
+      [
+        "gth",
+        7
+      ],
+      [
+        "berpusatdi",
+        5
+      ],
+      [
+        "wignjosoeroto",
+        5
+      ],
+      [
+        "asn",
+        9
+      ],
+      [
+        "asl",
+        7
+      ],
+      [
+        "tamansiswa",
+        7
+      ],
+      [
+        "ratmakan",
+        4
+      ],
+      [
+        "ast",
+        6
+      ],
+      [
+        "boekhandel",
+        5
+      ],
+      [
+        "bibliotheek",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "boekhandel bibliotheek wignjosoeroto",
+        3
+      ],
+      [
+        "berpusatdi tamansiswa",
+        4
+      ],
+      [
+        "tamansiswa yogyakarta",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20469,
+        0.45
+      ],
+      [
+        20484,
+        0.37
+      ],
+      [
+        20287,
+        0.33
+      ],
+      [
+        20462,
+        0.32
+      ],
+      [
+        20227,
+        0.31
+      ],
+      [
+        20210,
+        0.3
+      ]
+    ],
+    "sentiment": null
+  }
 }

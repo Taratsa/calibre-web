@@ -53,5 +53,226 @@
       "size": 66219817,
       "name": "Bunga rampai sejarah Maluku (1) - Paramita R. Abdurrachman"
     }
-  ]
+  ],
+  "text": {
+    "words": 53498,
+    "longer_than": 97,
+    "top": [
+      [
+        "maluku",
+        388
+      ],
+      [
+        "portugis",
+        362
+      ],
+      [
+        "hitu",
+        327
+      ],
+      [
+        "voc",
+        308
+      ],
+      [
+        "ternate",
+        239
+      ],
+      [
+        "ambon",
+        230
+      ],
+      [
+        "tanah",
+        203
+      ],
+      [
+        "pulau",
+        186
+      ],
+      [
+        "negeri",
+        184
+      ],
+      [
+        "orang",
+        174
+      ],
+      [
+        "daerah",
+        168
+      ],
+      [
+        "belanda",
+        149
+      ]
+    ],
+    "distinct": [
+      [
+        "hitu",
+        327
+      ],
+      [
+        "portugis",
+        362
+      ],
+      [
+        "voc",
+        308
+      ],
+      [
+        "maluku",
+        388
+      ],
+      [
+        "ternate",
+        239
+      ],
+      [
+        "ambon",
+        230
+      ],
+      [
+        "rijali",
+        95
+      ],
+      [
+        "rumphius",
+        79
+      ],
+      [
+        "orangkaya",
+        65
+      ],
+      [
+        "hoamoal",
+        49
+      ],
+      [
+        "pulau",
+        186
+      ],
+      [
+        "luhu",
+        64
+      ]
+    ],
+    "phrases": [
+      [
+        "tanah hitu",
+        140
+      ],
+      [
+        "nusa laut",
+        42
+      ],
+      [
+        "kapitan hitu",
+        42
+      ],
+      [
+        "kerajaan ternate",
+        40
+      ],
+      [
+        "sultan ternate",
+        38
+      ],
+      [
+        "hikayat tanah",
+        38
+      ],
+      [
+        "voc di ambon",
+        25
+      ],
+      [
+        "abad ke tujuhbelas",
+        25
+      ]
+    ],
+    "similar": [
+      [
+        16630,
+        0.41
+      ],
+      [
+        6980,
+        0.3
+      ],
+      [
+        286,
+        0.25
+      ],
+      [
+        5052,
+        0.22
+      ],
+      [
+        8474,
+        0.19
+      ],
+      [
+        6979,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": 0.13,
+      "positive": 364,
+      "negative": 280,
+      "trend": [
+        0.49,
+        -0.45,
+        -0.53,
+        -0.19,
+        -0.13,
+        0.36,
+        0.51,
+        -0.11,
+        0.36,
+        0.14,
+        0.19,
+        -0.04,
+        -0.2,
+        0.52,
+        0.43,
+        0.22
+      ],
+      "emotions": [
+        [
+          "anger",
+          73
+        ],
+        [
+          "trust",
+          39
+        ],
+        [
+          "sadness",
+          25
+        ],
+        [
+          "fear",
+          21
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

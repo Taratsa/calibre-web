@@ -45,5 +45,222 @@
       "size": 33749057,
       "name": "Pengalaman sedjarah kediktatoran proletari - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 10322,
+    "longer_than": 80,
+    "top": [
+      [
+        "negeri",
+        140
+      ],
+      [
+        "sovjet",
+        102
+      ],
+      [
+        "uni",
+        99
+      ],
+      [
+        "komunis",
+        93
+      ],
+      [
+        "sosialis",
+        82
+      ],
+      [
+        "partai",
+        81
+      ],
+      [
+        "proletariat",
+        78
+      ],
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "kaum",
+        55
+      ],
+      [
+        "stalin",
+        54
+      ],
+      [
+        "djuga",
+        46
+      ],
+      [
+        "kesalahan",
+        42
+      ]
+    ],
+    "distinct": [
+      [
+        "sovjet",
+        102
+      ],
+      [
+        "uni",
+        99
+      ],
+      [
+        "proletariat",
+        78
+      ],
+      [
+        "komunis",
+        93
+      ],
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "sosialis",
+        82
+      ],
+      [
+        "stalin",
+        54
+      ],
+      [
+        "kesalahan²",
+        35
+      ],
+      [
+        "negeri",
+        140
+      ],
+      [
+        "partai",
+        81
+      ],
+      [
+        "djuga",
+        46
+      ],
+      [
+        "hongaria",
+        27
+      ]
+    ],
+    "phrases": [
+      [
+        "sovjet uni",
+        98
+      ],
+      [
+        "partai komunis",
+        34
+      ],
+      [
+        "kediktatoran proletariat",
+        25
+      ],
+      [
+        "diberbagai negeri",
+        25
+      ],
+      [
+        "gerakan komunis",
+        18
+      ],
+      [
+        "negeri sosialis",
+        17
+      ],
+      [
+        "kesalahan² stalin",
+        14
+      ],
+      [
+        "kaum komunis",
+        14
+      ]
+    ],
+    "similar": [
+      [
+        6778,
+        0.44
+      ],
+      [
+        6799,
+        0.41
+      ],
+      [
+        471,
+        0.41
+      ],
+      [
+        13998,
+        0.4
+      ],
+      [
+        6713,
+        0.4
+      ],
+      [
+        4814,
+        0.4
+      ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 247,
+      "negative": 193,
+      "trend": [
+        -0.1,
+        -0.19,
+        -0.17,
+        0.59,
+        0.33,
+        0.15,
+        -0.17,
+        0,
+        0.42,
+        0.11,
+        0.57,
+        0.05,
+        0.45,
+        0.54,
+        0.09,
+        -0.16
+      ],
+      "emotions": [
+        [
+          "anger",
+          25
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "sadness",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

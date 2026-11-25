@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1418,
-    "longer_than": 57,
+    "longer_than": 55,
     "top": [
       [
         "den",
@@ -99,12 +99,16 @@
     ],
     "distinct": [
       [
+        "filterwagen",
+        13
+      ],
+      [
         "ketels",
         15
       ],
       [
-        "filterwagen",
-        13
+        "zuigslang",
+        10
       ],
       [
         "water",
@@ -123,28 +127,24 @@
         12
       ],
       [
-        "gevuld",
-        7
-      ],
-      [
-        "deksel",
-        5
-      ],
-      [
-        "gebruik",
-        7
-      ],
-      [
         "bus",
         12
       ],
       [
-        "waarna",
-        5
+        "filtreeren",
+        4
       ],
       [
-        "uiteinde",
+        "gevuld",
+        7
+      ],
+      [
+        "filterwagens",
         4
+      ],
+      [
+        "vulling",
+        5
       ]
     ],
     "phrases": [
@@ -180,19 +180,27 @@
     "similar": [
       [
         11200,
-        0.37
+        0.32
       ],
       [
-        11022,
-        0.21
-      ],
-      [
-        11114,
-        0.18
-      ],
-      [
-        10738,
+        16840,
         0.15
+      ],
+      [
+        17310,
+        0.14
+      ],
+      [
+        17990,
+        0.13
+      ],
+      [
+        13264,
+        0.13
+      ],
+      [
+        16736,
+        0.13
       ]
     ],
     "sentiment": null

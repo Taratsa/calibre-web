@@ -48,5 +48,150 @@
       "size": 2773,
       "name": "Proxmox 2.0_ Konfigurasi NTP agar bisa off - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 179,
+    "longer_than": 22,
+    "top": [
+      [
+        "ntp",
+        19
+      ],
+      [
+        "server",
+        11
+      ],
+      [
+        "proxmox",
+        9
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "konfigurasi",
+        5
+      ],
+      [
+        "debian",
+        4
+      ],
+      [
+        "iburst",
+        4
+      ],
+      [
+        "conf",
+        3
+      ],
+      [
+        "internet",
+        3
+      ],
+      [
+        "offline",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ntp",
+        19
+      ],
+      [
+        "proxmox",
+        9
+      ],
+      [
+        "iburst",
+        4
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "server",
+        11
+      ],
+      [
+        "debian",
+        4
+      ],
+      [
+        "offline",
+        3
+      ],
+      [
+        "konfigurasi",
+        5
+      ],
+      [
+        "conf",
+        3
+      ],
+      [
+        "internet",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "server debian pool",
+        4
+      ],
+      [
+        "pool ntp",
+        6
+      ],
+      [
+        "ntp org iburst",
+        4
+      ],
+      [
+        "proxmox konfigurasi ntp",
+        3
+      ],
+      [
+        "iburst server debian",
+        3
+      ],
+      [
+        "ntp server",
+        3
+      ],
+      [
+        "ntp conf",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20220,
+        0.64
+      ],
+      [
+        20218,
+        0.6
+      ],
+      [
+        20224,
+        0.54
+      ],
+      [
+        20228,
+        0.54
+      ],
+      [
+        20230,
+        0.46
+      ],
+      [
+        20250,
+        0.45
+      ]
+    ],
+    "sentiment": null
+  }
 }

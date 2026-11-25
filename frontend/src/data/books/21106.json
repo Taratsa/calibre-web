@@ -38,5 +38,150 @@
       "size": 3683742,
       "name": "[Finance Department letter on Taman Siswa - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 454,
+    "longer_than": 37,
+    "top": [
+      [
+        "siswa",
+        6
+      ],
+      [
+        "taman",
+        6
+      ],
+      [
+        "den",
+        5
+      ],
+      [
+        "bedrijf",
+        4
+      ],
+      [
+        "vergadering",
+        4
+      ],
+      [
+        "adviseur",
+        3
+      ],
+      [
+        "afschrift",
+        3
+      ],
+      [
+        "artikel",
+        3
+      ],
+      [
+        "inlandsche",
+        3
+      ],
+      [
+        "onderwijzers",
+        3
+      ],
+      [
+        "werknemer",
+        3
+      ],
+      [
+        "zaken",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "werknemer",
+        3
+      ],
+      [
+        "bedrijf",
+        4
+      ],
+      [
+        "adviseur",
+        3
+      ],
+      [
+        "vergadering",
+        4
+      ],
+      [
+        "onderwijzers",
+        3
+      ],
+      [
+        "siswa",
+        6
+      ],
+      [
+        "afschrift",
+        3
+      ],
+      [
+        "taman",
+        6
+      ],
+      [
+        "inlandsche",
+        3
+      ],
+      [
+        "zaken",
+        3
+      ],
+      [
+        "den",
+        5
+      ],
+      [
+        "artikel",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "taman siswa",
+        6
+      ],
+      [
+        "adviseur voor inlandsche",
+        3
+      ],
+      [
+        "inlandsche zaken",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21110,
+        0.4
+      ],
+      [
+        21109,
+        0.4
+      ],
+      [
+        21114,
+        0.21
+      ],
+      [
+        21113,
+        0.21
+      ],
+      [
+        21118,
+        0.16
+      ],
+      [
+        21080,
+        0.16
+      ]
+    ],
+    "sentiment": null
+  }
 }

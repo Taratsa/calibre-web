@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 878,
-    "longer_than": 49,
+    "longer_than": 48,
     "top": [
       [
         "dd-wrt",
@@ -136,20 +136,20 @@
         11
       ],
       [
-        "hellointerval",
+        "tcvaliditytime",
         3
       ],
       [
-        "networking",
-        7
+        "tcinterval",
+        3
       ],
       [
-        "node",
-        7
+        "midvaliditytime",
+        3
       ],
       [
-        "ipaddr",
-        4
+        "midinterval",
+        3
       ]
     ],
     "phrases": [
@@ -193,23 +193,23 @@
       ],
       [
         19354,
-        0.38
+        0.37
+      ],
+      [
+        20563,
+        0.34
+      ],
+      [
+        20543,
+        0.34
+      ],
+      [
+        20577,
+        0.34
       ],
       [
         9506,
         0.33
-      ],
-      [
-        19085,
-        0.33
-      ],
-      [
-        16763,
-        0.32
-      ],
-      [
-        19159,
-        0.32
       ]
     ],
     "sentiment": null

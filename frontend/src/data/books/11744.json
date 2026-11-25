@@ -35,5 +35,150 @@
       "size": 6743873,
       "name": "Buku Bahasa Arab - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 651,
+    "longer_than": 44,
+    "top": [
+      [
+        "kana",
+        8
+      ],
+      [
+        "toeng",
+        8
+      ],
+      [
+        "letah",
+        6
+      ],
+      [
+        "handap",
+        5
+      ],
+      [
+        "hoentoe",
+        5
+      ],
+      [
+        "loehoer",
+        5
+      ],
+      [
+        "anoe",
+        4
+      ],
+      [
+        "eta",
+        4
+      ],
+      [
+        "nja",
+        4
+      ],
+      [
+        "aja",
+        3
+      ],
+      [
+        "hoeroep",
+        3
+      ],
+      [
+        "ieu",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "toeng",
+        8
+      ],
+      [
+        "hoentoe",
+        5
+      ],
+      [
+        "letah",
+        6
+      ],
+      [
+        "kana",
+        8
+      ],
+      [
+        "handap",
+        5
+      ],
+      [
+        "loehoer",
+        5
+      ],
+      [
+        "hoeroep",
+        3
+      ],
+      [
+        "njanghareupan",
+        3
+      ],
+      [
+        "toengtoeng",
+        3
+      ],
+      [
+        "anoe",
+        4
+      ],
+      [
+        "ngit",
+        3
+      ],
+      [
+        "eta",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "nja eta nalika",
+        3
+      ],
+      [
+        "eta nalika njanghareupan",
+        3
+      ],
+      [
+        "hoentoe loehoer",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        4610,
+        0.2
+      ],
+      [
+        487,
+        0.2
+      ],
+      [
+        672,
+        0.17
+      ],
+      [
+        19991,
+        0.16
+      ],
+      [
+        4920,
+        0.16
+      ],
+      [
+        628,
+        0.16
+      ]
+    ],
+    "sentiment": null
+  }
 }

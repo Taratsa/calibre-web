@@ -48,5 +48,158 @@
       "size": 2463,
       "name": "Ssh - menjalankan perintah secara remote - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 139,
+    "longer_than": 18,
+    "top": [
+      [
+        "ssh",
+        20
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "user",
+        7
+      ],
+      [
+        "pub",
+        5
+      ],
+      [
+        "command",
+        4
+      ],
+      [
+        "remote",
+        4
+      ],
+      [
+        "dsa",
+        3
+      ],
+      [
+        "menjalankan",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ],
+      [
+        "remoteserver",
+        3
+      ],
+      [
+        "remoteuser",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ssh",
+        20
+      ],
+      [
+        "remoteuser",
+        3
+      ],
+      [
+        "remoteserver",
+        3
+      ],
+      [
+        "pub",
+        5
+      ],
+      [
+        "dsa",
+        3
+      ],
+      [
+        "user",
+        7
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "remote",
+        4
+      ],
+      [
+        "command",
+        4
+      ],
+      [
+        "menjalankan",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "ssh user server",
+        5
+      ],
+      [
+        "user server command",
+        3
+      ],
+      [
+        "ssh menjalankan perintah",
+        3
+      ],
+      [
+        "ssh l remoteuser",
+        3
+      ],
+      [
+        "perintah secara remote",
+        3
+      ],
+      [
+        "remoteuser remoteserver",
+        3
+      ],
+      [
+        "dsa pub",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16304,
+        0.74
+      ],
+      [
+        20493,
+        0.73
+      ],
+      [
+        19097,
+        0.52
+      ],
+      [
+        12714,
+        0.47
+      ],
+      [
+        14873,
+        0.43
+      ],
+      [
+        14195,
+        0.43
+      ]
+    ],
+    "sentiment": null
+  }
 }

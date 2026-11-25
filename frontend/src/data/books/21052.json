@@ -46,5 +46,210 @@
       "size": 71906288,
       "name": "Perdjandjian dari pemborongan (Voorwaarden - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 16681,
+    "longer_than": 86,
+    "top": [
+      [
+        "misti",
+        485
+      ],
+      [
+        "aannemer",
+        317
+      ],
+      [
+        "tiada",
+        314
+      ],
+      [
+        "oetawa",
+        272
+      ],
+      [
+        "boewat",
+        253
+      ],
+      [
+        "barang",
+        248
+      ],
+      [
+        "djikalook",
+        245
+      ],
+      [
+        "dalem",
+        234
+      ],
+      [
+        "dengen",
+        231
+      ],
+      [
+        "fatsal",
+        201
+      ],
+      [
+        "satoe",
+        179
+      ],
+      [
+        "bole",
+        150
+      ]
+    ],
+    "distinct": [
+      [
+        "misti",
+        485
+      ],
+      [
+        "djikalook",
+        245
+      ],
+      [
+        "aannemer",
+        317
+      ],
+      [
+        "oetawa",
+        272
+      ],
+      [
+        "boewat",
+        253
+      ],
+      [
+        "fatsal",
+        201
+      ],
+      [
+        "dengen",
+        231
+      ],
+      [
+        "dalem",
+        234
+      ],
+      [
+        "satoe",
+        179
+      ],
+      [
+        "bole",
+        150
+      ],
+      [
+        "tiada",
+        314
+      ],
+      [
+        "pakee",
+        80
+      ]
+    ],
+    "phrases": [
+      [
+        "terseboet di dalem",
+        68
+      ],
+      [
+        "tiada bole",
+        70
+      ],
+      [
+        "misti di pakee",
+        32
+      ],
+      [
+        "departement van oorlog",
+        32
+      ],
+      [
+        "dalem fatsal",
+        48
+      ],
+      [
+        "djikalook aannemer",
+        41
+      ],
+      [
+        "bri taoe",
+        39
+      ],
+      [
+        "boewat satoe",
+        38
+      ]
+    ],
+    "similar": [
+      [
+        16755,
+        0.17
+      ],
+      [
+        13394,
+        0.17
+      ],
+      [
+        16509,
+        0.17
+      ],
+      [
+        15286,
+        0.17
+      ],
+      [
+        4636,
+        0.17
+      ],
+      [
+        694,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": -0.29,
+      "positive": 40,
+      "negative": 73,
+      "trend": [
+        -0.25,
+        0.2,
+        0.8,
+        -0.75,
+        null,
+        -0.25,
+        null,
+        -0.85,
+        0.6,
+        -0.33,
+        -0.2,
+        -0.2,
+        -1,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          20
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "anger",
+          3
+        ]
+      ]
+    }
+  }
 }

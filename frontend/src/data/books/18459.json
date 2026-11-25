@@ -49,5 +49,226 @@
       "size": 76753590,
       "name": "Boekoe tjerita doeloe kala di negri Tjina - O.H.T"
     }
-  ]
+  ],
+  "text": {
+    "words": 58108,
+    "longer_than": 97,
+    "top": [
+      [
+        "poenja",
+        1219
+      ],
+      [
+        "lantas",
+        976
+      ],
+      [
+        "dengen",
+        667
+      ],
+      [
+        "nio",
+        472
+      ],
+      [
+        "soeda",
+        387
+      ],
+      [
+        "tiada",
+        362
+      ],
+      [
+        "dalem",
+        337
+      ],
+      [
+        "kasi",
+        332
+      ],
+      [
+        "orang",
+        327
+      ],
+      [
+        "satoe",
+        310
+      ],
+      [
+        "bole",
+        300
+      ],
+      [
+        "loe",
+        298
+      ]
+    ],
+    "distinct": [
+      [
+        "poenja",
+        1219
+      ],
+      [
+        "dengen",
+        667
+      ],
+      [
+        "lantas",
+        976
+      ],
+      [
+        "nio",
+        472
+      ],
+      [
+        "soeda",
+        387
+      ],
+      [
+        "saija",
+        262
+      ],
+      [
+        "prenta",
+        269
+      ],
+      [
+        "bole",
+        300
+      ],
+      [
+        "boeat",
+        295
+      ],
+      [
+        "satoe",
+        310
+      ],
+      [
+        "loe",
+        298
+      ],
+      [
+        "kasi",
+        332
+      ]
+    ],
+    "phrases": [
+      [
+        "nio nio",
+        141
+      ],
+      [
+        "masoek di dalem",
+        70
+      ],
+      [
+        "oeij ho tin",
+        65
+      ],
+      [
+        "tio ouw",
+        79
+      ],
+      [
+        "denger lantas",
+        65
+      ],
+      [
+        "song tiauw",
+        58
+      ],
+      [
+        "loe poenja",
+        58
+      ],
+      [
+        "lam ban",
+        56
+      ]
+    ],
+    "similar": [
+      [
+        12198,
+        0.44
+      ],
+      [
+        14331,
+        0.42
+      ],
+      [
+        14086,
+        0.39
+      ],
+      [
+        20859,
+        0.34
+      ],
+      [
+        16232,
+        0.33
+      ],
+      [
+        4637,
+        0.31
+      ]
+    ],
+    "sentiment": {
+      "score": -0.25,
+      "positive": 98,
+      "negative": 165,
+      "trend": [
+        0.11,
+        0.71,
+        0.25,
+        0.37,
+        -0.04,
+        -0.52,
+        -0.33,
+        -0.44,
+        0.17,
+        -0.54,
+        -0.45,
+        -0.64,
+        -0.57,
+        -0.75,
+        -0.47,
+        -0.31
+      ],
+      "emotions": [
+        [
+          "sadness",
+          87
+        ],
+        [
+          "surprise",
+          61
+        ],
+        [
+          "joy",
+          50
+        ],
+        [
+          "trust",
+          24
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
+  }
 }

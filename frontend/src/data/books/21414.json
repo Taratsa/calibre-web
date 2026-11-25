@@ -48,5 +48,150 @@
       "size": 2848,
       "name": "Konversi mkv ke avi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 231,
+    "longer_than": 26,
+    "top": [
+      [
+        "avi",
+        10
+      ],
+      [
+        "temp",
+        6
+      ],
+      [
+        "filename",
+        5
+      ],
+      [
+        "print",
+        5
+      ],
+      [
+        "basename",
+        4
+      ],
+      [
+        "file",
+        4
+      ],
+      [
+        "message",
+        4
+      ],
+      [
+        "mkv",
+        4
+      ],
+      [
+        "script",
+        4
+      ],
+      [
+        "sys",
+        4
+      ],
+      [
+        "video",
+        4
+      ],
+      [
+        "argv",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "avi",
+        10
+      ],
+      [
+        "mkv",
+        4
+      ],
+      [
+        "basename",
+        4
+      ],
+      [
+        "temp",
+        6
+      ],
+      [
+        "filename",
+        5
+      ],
+      [
+        "argv",
+        3
+      ],
+      [
+        "ogg",
+        3
+      ],
+      [
+        "sys",
+        4
+      ],
+      [
+        "print",
+        5
+      ],
+      [
+        "message",
+        4
+      ],
+      [
+        "script",
+        4
+      ],
+      [
+        "usage",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "temp video avi",
+        3
+      ],
+      [
+        "temp audio ogg",
+        3
+      ],
+      [
+        "sys argv",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        13244,
+        0.33
+      ],
+      [
+        13238,
+        0.32
+      ],
+      [
+        11484,
+        0.27
+      ],
+      [
+        13239,
+        0.27
+      ],
+      [
+        17030,
+        0.25
+      ],
+      [
+        17159,
+        0.24
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -36,7 +36,7 @@
   ],
   "text": {
     "words": 10465,
-    "longer_than": 82,
+    "longer_than": 80,
     "top": [
       [
         "borobudur",
@@ -89,16 +89,20 @@
     ],
     "distinct": [
       [
+        "maharajah",
+        13
+      ],
+      [
         "deva",
         17
       ],
       [
-        "plate",
-        19
-      ],
-      [
         "borobudur",
         23
+      ],
+      [
+        "plate",
+        19
       ],
       [
         "lord",
@@ -109,32 +113,28 @@
         9
       ],
       [
-        "java",
-        21
-      ],
-      [
-        "edifice",
-        8
+        "buddha",
+        13
       ],
       [
         "lake",
         12
       ],
       [
-        "buddha",
-        13
+        "edifice",
+        8
       ],
       [
-        "monument",
-        9
-      ],
-      [
-        "carvings",
-        7
+        "java",
+        21
       ],
       [
         "sakaji",
         5
+      ],
+      [
+        "carvings",
+        7
       ]
     ],
     "phrases": [
@@ -173,6 +173,10 @@
     ],
     "similar": [
       [
+        15089,
+        0.22
+      ],
+      [
         4645,
         0.18
       ],
@@ -181,20 +185,16 @@
         0.18
       ],
       [
-        787,
-        0.18
+        786,
+        0.17
       ],
       [
-        786,
-        0.18
+        787,
+        0.16
       ],
       [
         663,
-        0.17
-      ],
-      [
-        677,
-        0.17
+        0.16
       ]
     ],
     "sentiment": null

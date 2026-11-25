@@ -45,5 +45,193 @@
       "size": 16995889,
       "name": "Tata guna tanah (land use) - I Made Sandy"
     }
-  ]
+  ],
+  "text": {
+    "words": 5145,
+    "longer_than": 70,
+    "top": [
+      [
+        "tanah",
+        126
+      ],
+      [
+        "penggunaan",
+        48
+      ],
+      [
+        "manusia",
+        42
+      ],
+      [
+        "indonesia",
+        41
+      ],
+      [
+        "kehidupan",
+        29
+      ],
+      [
+        "penduduk",
+        28
+      ],
+      [
+        "kota",
+        26
+      ],
+      [
+        "djumlah",
+        25
+      ],
+      [
+        "sen",
+        24
+      ],
+      [
+        "perubahan",
+        23
+      ],
+      [
+        "tabel",
+        22
+      ],
+      [
+        "pola",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "tanah",
+        126
+      ],
+      [
+        "pedusunan",
+        20
+      ],
+      [
+        "djumlah",
+        25
+      ],
+      [
+        "penggunaan",
+        48
+      ],
+      [
+        "wilajah",
+        18
+      ],
+      [
+        "penjebaran",
+        13
+      ],
+      [
+        "relatip",
+        10
+      ],
+      [
+        "sen",
+        24
+      ],
+      [
+        "tabel",
+        22
+      ],
+      [
+        "djuga",
+        20
+      ],
+      [
+        "kwalitas",
+        11
+      ],
+      [
+        "adanja",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "penggunaan tanah",
+        27
+      ],
+      [
+        "djumlah manusia",
+        13
+      ],
+      [
+        "sen per sen",
+        6
+      ],
+      [
+        "djuta pasang",
+        7
+      ],
+      [
+        "tata guna tanah",
+        4
+      ],
+      [
+        "taraf kehidupan",
+        6
+      ],
+      [
+        "pola penggunaan",
+        6
+      ],
+      [
+        "djenis penggunaan",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        1885,
+        0.19
+      ],
+      [
+        681,
+        0.19
+      ],
+      [
+        6657,
+        0.18
+      ],
+      [
+        7819,
+        0.17
+      ],
+      [
+        5959,
+        0.17
+      ],
+      [
+        4591,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 44,
+      "negative": 17,
+      "trend": [
+        0.6,
+        null,
+        -0.67,
+        0.67,
+        0.6,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.14,
+        1,
+        -0.2,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

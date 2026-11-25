@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 2651,
-    "longer_than": 65,
+    "longer_than": 63,
     "top": [
       [
         "model",
@@ -104,16 +104,20 @@
     ],
     "distinct": [
       [
-        "model",
-        101
-      ],
-      [
         "dataset",
         42
       ],
       [
+        "model",
+        101
+      ],
+      [
         "neural",
         17
+      ],
+      [
+        "keras",
+        59
       ],
       [
         "epoch",
@@ -122,10 +126,6 @@
       [
         "accuracy",
         18
-      ],
-      [
-        "keras",
-        59
       ],
       [
         "pima-indians-diabetes",
@@ -148,8 +148,8 @@
         13
       ],
       [
-        "loss",
-        18
+        "relu",
+        10
       ]
     ],
     "phrases": [
@@ -201,7 +201,7 @@
       ],
       [
         13295,
-        0.43
+        0.44
       ],
       [
         13306,

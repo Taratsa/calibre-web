@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 3965,
-    "longer_than": 70,
+    "longer_than": 67,
     "top": [
       [
         "indonesia",
@@ -118,16 +118,16 @@
         73
       ],
       [
-        "enschede",
-        7
-      ],
-      [
         "penemuan",
         17
       ],
       [
         "foto",
         22
+      ],
+      [
+        "enschede",
+        7
       ],
       [
         "volkskrant",
@@ -142,12 +142,12 @@
         5
       ],
       [
-        "uitzicht",
-        5
-      ],
-      [
         "caribisch",
         4
+      ],
+      [
+        "pemuda",
+        18
       ]
     ],
     "phrases": [
@@ -184,7 +184,20 @@
         6
       ]
     ],
-    "similar": [],
+    "similar": [
+      [
+        8502,
+        0.1
+      ],
+      [
+        5867,
+        0.1
+      ],
+      [
+        992,
+        0.1
+      ]
+    ],
     "sentiment": {
       "score": -0.24,
       "positive": 27,

@@ -45,5 +45,214 @@
       "size": 47779058,
       "name": "Hikajat fileas fogg atawa tjariteranja ora - Jules Verne"
     }
-  ]
+  ],
+  "text": {
+    "words": 26703,
+    "longer_than": 91,
+    "top": [
+      [
+        "trada",
+        523
+      ],
+      [
+        "ija",
+        426
+      ],
+      [
+        "saia",
+        401
+      ],
+      [
+        "toean",
+        355
+      ],
+      [
+        "dengen",
+        324
+      ],
+      [
+        "orang",
+        267
+      ],
+      [
+        "soedah",
+        237
+      ],
+      [
+        "inie",
+        225
+      ],
+      [
+        "fogg",
+        198
+      ],
+      [
+        "kapal",
+        198
+      ],
+      [
+        "api",
+        179
+      ],
+      [
+        "lantas",
+        171
+      ]
+    ],
+    "distinct": [
+      [
+        "trada",
+        523
+      ],
+      [
+        "saia",
+        401
+      ],
+      [
+        "ija",
+        426
+      ],
+      [
+        "fogg",
+        198
+      ],
+      [
+        "inie",
+        225
+      ],
+      [
+        "toean",
+        355
+      ],
+      [
+        "dengen",
+        324
+      ],
+      [
+        "soedah",
+        237
+      ],
+      [
+        "fogo",
+        98
+      ],
+      [
+        "djoega",
+        169
+      ],
+      [
+        "sampei",
+        121
+      ],
+      [
+        "sahoetnja",
+        77
+      ]
+    ],
+    "phrases": [
+      [
+        "kapal api",
+        96
+      ],
+      [
+        "fileas fogg",
+        61
+      ],
+      [
+        "kreta api",
+        44
+      ],
+      [
+        "ija trada",
+        37
+      ],
+      [
+        "saia poenja",
+        35
+      ],
+      [
+        "saia trada",
+        27
+      ],
+      [
+        "toean poenja",
+        25
+      ],
+      [
+        "trada taoe",
+        23
+      ]
+    ],
+    "similar": [
+      [
+        16755,
+        0.29
+      ],
+      [
+        13905,
+        0.27
+      ],
+      [
+        4637,
+        0.27
+      ],
+      [
+        754,
+        0.27
+      ],
+      [
+        13484,
+        0.27
+      ],
+      [
+        14247,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.59,
+      "positive": 147,
+      "negative": 38,
+      "trend": [
+        0.71,
+        1,
+        0.73,
+        1,
+        0.2,
+        0.4,
+        0.38,
+        0.47,
+        0.33,
+        0.57,
+        0.6,
+        null,
+        0.71,
+        0.75,
+        0.33,
+        0.45
+      ],
+      "emotions": [
+        [
+          "surprise",
+          26
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
+  }
 }

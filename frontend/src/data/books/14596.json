@@ -37,5 +37,56 @@
       "size": 27852980,
       "name": "Lakad, menak - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 350,
+    "longer_than": 32,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "perpustakaan nasional",
+        8
+      ],
+      [
+        "perpustakaan nasio",
+        4
+      ],
+      [
+        "nasional ard",
+        4
+      ],
+      [
+        "nasio ard",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        13747,
+        0.77
+      ],
+      [
+        16099,
+        0.66
+      ],
+      [
+        13909,
+        0.57
+      ],
+      [
+        21206,
+        0.56
+      ],
+      [
+        21203,
+        0.56
+      ],
+      [
+        21546,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
 }

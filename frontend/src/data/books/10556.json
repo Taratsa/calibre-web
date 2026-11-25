@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 858,
-    "longer_than": 49,
+    "longer_than": 47,
     "top": [
       [
         "powerdns",
@@ -124,12 +124,12 @@
         19
       ],
       [
-        "poweruser",
-        5
-      ],
-      [
         "sudo",
         16
+      ],
+      [
+        "poweruser",
+        5
       ],
       [
         "gmysql",
@@ -148,8 +148,8 @@
         14
       ],
       [
-        "auto",
-        8
+        "pdns-backend-mysql",
+        4
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         10582,
-        0.65
+        0.64
       ]
     ],
     "sentiment": null

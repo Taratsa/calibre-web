@@ -35,5 +35,226 @@
       "size": 34392070,
       "name": "Djika kota djakarta dilanda banjir - Selecta No.54 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 22459,
+    "longer_than": 89,
+    "top": [
+      [
+        "orang",
+        122
+      ],
+      [
+        "djuga",
+        86
+      ],
+      [
+        "film",
+        85
+      ],
+      [
+        "sadja",
+        64
+      ],
+      [
+        "george",
+        53
+      ],
+      [
+        "indonesia",
+        53
+      ],
+      [
+        "dumas",
+        52
+      ],
+      [
+        "sdr",
+        50
+      ],
+      [
+        "rumah",
+        48
+      ],
+      [
+        "mempunjai",
+        45
+      ],
+      [
+        "djalan",
+        43
+      ],
+      [
+        "hanja",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "dumas",
+        52
+      ],
+      [
+        "keyes",
+        35
+      ],
+      [
+        "djuga",
+        86
+      ],
+      [
+        "film",
+        85
+      ],
+      [
+        "kommandos",
+        22
+      ],
+      [
+        "sadja",
+        64
+      ],
+      [
+        "raffles",
+        38
+      ],
+      [
+        "george",
+        53
+      ],
+      [
+        "sdr",
+        50
+      ],
+      [
+        "sajur",
+        28
+      ],
+      [
+        "mempunjai",
+        45
+      ],
+      [
+        "selecta",
+        22
+      ]
+    ],
+    "phrases": [
+      [
+        "thomas cup",
+        14
+      ],
+      [
+        "geoffrey keyes",
+        12
+      ],
+      [
+        "bintang film",
+        10
+      ],
+      [
+        "band tjilik",
+        9
+      ],
+      [
+        "sersan terry",
+        8
+      ],
+      [
+        "pengusaha bioskop",
+        8
+      ],
+      [
+        "george hamilton",
+        8
+      ],
+      [
+        "film indonesia",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        15146,
+        0.32
+      ],
+      [
+        15350,
+        0.32
+      ],
+      [
+        15788,
+        0.31
+      ],
+      [
+        15180,
+        0.3
+      ],
+      [
+        15300,
+        0.29
+      ],
+      [
+        14972,
+        0.28
+      ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 315,
+      "negative": 171,
+      "trend": [
+        0.13,
+        0.47,
+        -0.08,
+        0.19,
+        0.13,
+        0.43,
+        0.41,
+        0.67,
+        0.67,
+        0.08,
+        0.86,
+        0.52,
+        0.51,
+        0.19,
+        0.04,
+        -0.06
+      ],
+      "emotions": [
+        [
+          "joy",
+          38
+        ],
+        [
+          "sadness",
+          29
+        ],
+        [
+          "anger",
+          28
+        ],
+        [
+          "anticipation",
+          22
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

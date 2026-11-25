@@ -45,5 +45,218 @@
       "size": 47014518,
       "name": "Boekoe tjerita dahoeloe kala di benoewa ne - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 16147,
+    "longer_than": 86,
+    "top": [
+      [
+        "poenja",
+        359
+      ],
+      [
+        "orang",
+        236
+      ],
+      [
+        "lantas",
+        209
+      ],
+      [
+        "satoe",
+        197
+      ],
+      [
+        "tiada",
+        194
+      ],
+      [
+        "iboenja",
+        175
+      ],
+      [
+        "anak",
+        165
+      ],
+      [
+        "iboe",
+        152
+      ],
+      [
+        "sampe",
+        151
+      ],
+      [
+        "nja",
+        150
+      ],
+      [
+        "kasi",
+        129
+      ],
+      [
+        "pegi",
+        120
+      ]
+    ],
+    "distinct": [
+      [
+        "poenja",
+        359
+      ],
+      [
+        "iboenja",
+        175
+      ],
+      [
+        "satoe",
+        197
+      ],
+      [
+        "iboe",
+        152
+      ],
+      [
+        "pegi",
+        120
+      ],
+      [
+        "keradjahan",
+        69
+      ],
+      [
+        "baë",
+        70
+      ],
+      [
+        "sampe",
+        151
+      ],
+      [
+        "angkauw",
+        60
+      ],
+      [
+        "lantas",
+        209
+      ],
+      [
+        "boeat",
+        111
+      ],
+      [
+        "soeda",
+        99
+      ]
+    ],
+    "phrases": [
+      [
+        "satoe anak",
+        57
+      ],
+      [
+        "tjerita tempo keradjahan",
+        30
+      ],
+      [
+        "iboe nja",
+        43
+      ],
+      [
+        "iboe bapanja",
+        31
+      ],
+      [
+        "orang toewa",
+        30
+      ],
+      [
+        "poenja iboe",
+        23
+      ],
+      [
+        "iboenja poenja",
+        23
+      ],
+      [
+        "orang toewanja",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        12198,
+        0.48
+      ],
+      [
+        14086,
+        0.43
+      ],
+      [
+        14331,
+        0.42
+      ],
+      [
+        13394,
+        0.34
+      ],
+      [
+        20859,
+        0.33
+      ],
+      [
+        18459,
+        0.33
+      ]
+    ],
+    "sentiment": {
+      "score": -0.32,
+      "positive": 67,
+      "negative": 129,
+      "trend": [
+        -0.23,
+        -0.69,
+        -0.6,
+        -0.25,
+        -0.11,
+        -0.17,
+        -0.38,
+        0.16,
+        -0.75,
+        -0.04,
+        -0.5,
+        -0.56,
+        -0.33,
+        null,
+        -0.5,
+        -0.45
+      ],
+      "emotions": [
+        [
+          "sadness",
+          35
+        ],
+        [
+          "surprise",
+          21
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

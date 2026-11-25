@@ -43,5 +43,176 @@
       "size": 29709349,
       "name": "PERUNDANG - UNDANGAN PERBURUHAN DI INDONES - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 6317,
+    "longer_than": 73,
+    "top": [
+      [
+        "perburuhan",
+        108
+      ],
+      [
+        "stbl",
+        82
+      ],
+      [
+        "buruh",
+        77
+      ],
+      [
+        "kerdja",
+        75
+      ],
+      [
+        "undang-undang",
+        69
+      ],
+      [
+        "perusahaan",
+        51
+      ],
+      [
+        "peraturan-peraturan",
+        49
+      ],
+      [
+        "indonesia",
+        42
+      ],
+      [
+        "pemerintah",
+        41
+      ],
+      [
+        "peraturan",
+        37
+      ],
+      [
+        "pekerdjaan",
+        31
+      ],
+      [
+        "panitya",
+        29
+      ]
+    ],
+    "distinct": [
+      [
+        "stbl",
+        82
+      ],
+      [
+        "perburuhan",
+        108
+      ],
+      [
+        "kerdja",
+        75
+      ],
+      [
+        "peraturan-peraturan",
+        49
+      ],
+      [
+        "buruh",
+        77
+      ],
+      [
+        "panitya",
+        29
+      ],
+      [
+        "undang-undang",
+        69
+      ],
+      [
+        "ketjelakaan",
+        22
+      ],
+      [
+        "madjikan",
+        24
+      ],
+      [
+        "perdjandjian",
+        27
+      ],
+      [
+        "perusahaan",
+        51
+      ],
+      [
+        "pekerdjaan",
+        31
+      ]
+    ],
+    "phrases": [
+      [
+        "dibidang perburuhan",
+        23
+      ],
+      [
+        "dewan perusahaan",
+        16
+      ],
+      [
+        "menteri perburuhan",
+        15
+      ],
+      [
+        "perdjandjian perburuhan",
+        12
+      ],
+      [
+        "peraturan pemerintah",
+        12
+      ],
+      [
+        "panitya daerah",
+        11
+      ],
+      [
+        "perdjandjian kerdja",
+        9
+      ],
+      [
+        "hubungan kerdja",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        9225,
+        0.28
+      ],
+      [
+        8745,
+        0.25
+      ],
+      [
+        12046,
+        0.23
+      ],
+      [
+        1886,
+        0.21
+      ],
+      [
+        12429,
+        0.2
+      ],
+      [
+        618,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 46,
+      "negative": 17,
+      "trend": [],
+      "emotions": []
+    }
+  }
 }

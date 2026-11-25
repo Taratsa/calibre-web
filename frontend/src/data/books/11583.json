@@ -43,5 +43,222 @@
       "size": 5280727,
       "name": "Carios Raden Ustama (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 33986,
+    "longer_than": 94,
+    "top": [
+      [
+        "anu",
+        769
+      ],
+      [
+        "eta",
+        663
+      ],
+      [
+        "teh",
+        494
+      ],
+      [
+        "raden",
+        465
+      ],
+      [
+        "ustama",
+        464
+      ],
+      [
+        "geus",
+        421
+      ],
+      [
+        "jeung",
+        406
+      ],
+      [
+        "bae",
+        354
+      ],
+      [
+        "aya",
+        348
+      ],
+      [
+        "pisan",
+        316
+      ],
+      [
+        "anjeunna",
+        280
+      ],
+      [
+        "kapal",
+        272
+      ]
+    ],
+    "distinct": [
+      [
+        "eta",
+        663
+      ],
+      [
+        "anu",
+        769
+      ],
+      [
+        "jeung",
+        406
+      ],
+      [
+        "geus",
+        421
+      ],
+      [
+        "anjeunna",
+        280
+      ],
+      [
+        "teh",
+        494
+      ],
+      [
+        "bae",
+        354
+      ],
+      [
+        "henteu",
+        257
+      ],
+      [
+        "raden",
+        465
+      ],
+      [
+        "deui",
+        259
+      ],
+      [
+        "pisan",
+        316
+      ],
+      [
+        "aya",
+        348
+      ]
+    ],
+    "phrases": [
+      [
+        "raden ustama",
+        426
+      ],
+      [
+        "kangjeng dalem",
+        103
+      ],
+      [
+        "eta kapal",
+        67
+      ],
+      [
+        "kangjeng tuan",
+        60
+      ],
+      [
+        "tuan raffles",
+        58
+      ],
+      [
+        "pulo jawa",
+        46
+      ],
+      [
+        "geus kitu",
+        43
+      ],
+      [
+        "tuan elias",
+        42
+      ]
+    ],
+    "similar": [
+      [
+        6002,
+        0.5
+      ],
+      [
+        13808,
+        0.48
+      ],
+      [
+        11272,
+        0.47
+      ],
+      [
+        6231,
+        0.47
+      ],
+      [
+        11281,
+        0.45
+      ],
+      [
+        11774,
+        0.45
+      ]
+    ],
+    "sentiment": {
+      "score": 0.08,
+      "positive": 144,
+      "negative": 123,
+      "trend": [
+        0.3,
+        0.33,
+        -0.11,
+        -0.33,
+        -0.78,
+        0,
+        0.53,
+        1,
+        0.69,
+        -0.64,
+        0,
+        0.38,
+        0.6,
+        -0.47,
+        0.09,
+        0.07
+      ],
+      "emotions": [
+        [
+          "anger",
+          41
+        ],
+        [
+          "joy",
+          24
+        ],
+        [
+          "surprise",
+          23
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

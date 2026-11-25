@@ -45,5 +45,222 @@
       "size": 81221168,
       "name": "Idris Bek El Homra _ satie tjerita yjang b - Ahmed Kiamil Bin Abdullah Kadri"
     }
-  ]
+  ],
+  "text": {
+    "words": 28268,
+    "longer_than": 92,
+    "top": [
+      [
+        "orang",
+        450
+      ],
+      [
+        "idris",
+        318
+      ],
+      [
+        "tida",
+        276
+      ],
+      [
+        "angkau",
+        268
+      ],
+      [
+        "satoe",
+        260
+      ],
+      [
+        "poetri",
+        200
+      ],
+      [
+        "soeda",
+        141
+      ],
+      [
+        "perampoean",
+        137
+      ],
+      [
+        "kaloe",
+        129
+      ],
+      [
+        "djadi",
+        124
+      ],
+      [
+        "boeat",
+        120
+      ],
+      [
+        "dianja",
+        106
+      ]
+    ],
+    "distinct": [
+      [
+        "angkau",
+        268
+      ],
+      [
+        "idris",
+        318
+      ],
+      [
+        "poetri",
+        200
+      ],
+      [
+        "satoe",
+        260
+      ],
+      [
+        "tida",
+        276
+      ],
+      [
+        "perampoean",
+        137
+      ],
+      [
+        "soeda",
+        141
+      ],
+      [
+        "dianja",
+        106
+      ],
+      [
+        "kaloe",
+        129
+      ],
+      [
+        "oelema",
+        61
+      ],
+      [
+        "kaäba",
+        67
+      ],
+      [
+        "boeat",
+        120
+      ]
+    ],
+    "phrases": [
+      [
+        "nabi mohamad",
+        28
+      ],
+      [
+        "angkau tida",
+        23
+      ],
+      [
+        "kaloe angkau",
+        21
+      ],
+      [
+        "tida bole",
+        20
+      ],
+      [
+        "orang banjak",
+        20
+      ],
+      [
+        "istri idris",
+        19
+      ],
+      [
+        "orang hadji",
+        18
+      ],
+      [
+        "goenoeng arafat",
+        18
+      ]
+    ],
+    "similar": [
+      [
+        13193,
+        0.27
+      ],
+      [
+        16755,
+        0.26
+      ],
+      [
+        14247,
+        0.25
+      ],
+      [
+        11097,
+        0.25
+      ],
+      [
+        16767,
+        0.25
+      ],
+      [
+        13484,
+        0.25
+      ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 137,
+      "negative": 142,
+      "trend": [
+        -0.1,
+        -0.27,
+        -0.3,
+        0.2,
+        -0.25,
+        0.33,
+        -0.33,
+        -0.43,
+        0.06,
+        0.1,
+        0.56,
+        0.44,
+        -0.26,
+        0.4,
+        0.09,
+        0.25
+      ],
+      "emotions": [
+        [
+          "sadness",
+          45
+        ],
+        [
+          "surprise",
+          27
+        ],
+        [
+          "joy",
+          19
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "disgust",
+          3
+        ]
+      ]
+    }
+  }
 }

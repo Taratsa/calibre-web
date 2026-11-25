@@ -48,5 +48,52 @@
       "size": 1942,
       "name": "ASCI Purple Benchmark - ior mpiio - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 31,
+    "longer_than": 4,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "purple benchmark ior",
+        3
+      ],
+      [
+        "benchmark ior mpiio",
+        3
+      ],
+      [
+        "asci purple benchmark",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20296,
+        0.42
+      ],
+      [
+        18396,
+        0.39
+      ],
+      [
+        17244,
+        0.2
+      ],
+      [
+        9541,
+        0.2
+      ],
+      [
+        12681,
+        0.19
+      ],
+      [
+        18350,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
 }

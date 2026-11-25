@@ -48,5 +48,170 @@
       "size": 4384,
       "name": "James Gosling - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 560,
+    "longer_than": 41,
+    "top": [
+      [
+        "gosling",
+        18
+      ],
+      [
+        "java",
+        17
+      ],
+      [
+        "james",
+        16
+      ],
+      [
+        "isbn",
+        11
+      ],
+      [
+        "addison-wesley",
+        8
+      ],
+      [
+        "language",
+        8
+      ],
+      [
+        "sun",
+        7
+      ],
+      [
+        "universitas",
+        7
+      ],
+      [
+        "programming",
+        6
+      ],
+      [
+        "edition",
+        5
+      ],
+      [
+        "microsystems",
+        5
+      ],
+      [
+        "specification",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "gosling",
+        18
+      ],
+      [
+        "addison-wesley",
+        8
+      ],
+      [
+        "james",
+        16
+      ],
+      [
+        "java",
+        17
+      ],
+      [
+        "microsystems",
+        5
+      ],
+      [
+        "calgary",
+        4
+      ],
+      [
+        "isbn",
+        11
+      ],
+      [
+        "specification",
+        5
+      ],
+      [
+        "language",
+        8
+      ],
+      [
+        "programming",
+        6
+      ],
+      [
+        "mellon",
+        3
+      ],
+      [
+        "steele",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "james gosling",
+        16
+      ],
+      [
+        "ken arnold james",
+        4
+      ],
+      [
+        "java programming language",
+        4
+      ],
+      [
+        "sun microsystems",
+        5
+      ],
+      [
+        "edition addison-wesley",
+        5
+      ],
+      [
+        "addison-wesley isbn",
+        5
+      ],
+      [
+        "universitas carnegie mellon",
+        3
+      ],
+      [
+        "java language specification",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20324,
+        0.32
+      ],
+      [
+        19374,
+        0.28
+      ],
+      [
+        18377,
+        0.19
+      ],
+      [
+        13188,
+        0.15
+      ],
+      [
+        10120,
+        0.14
+      ],
+      [
+        19136,
+        0.14
+      ]
+    ],
+    "sentiment": null
+  }
 }

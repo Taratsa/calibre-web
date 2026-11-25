@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1361,
-    "longer_than": 57,
+    "longer_than": 55,
     "top": [
       [
         "powerdns",
@@ -128,12 +128,12 @@
         12
       ],
       [
-        "innodb",
-        7
-      ],
-      [
         "create",
         18
+      ],
+      [
+        "innodb",
+        7
       ],
       [
         "percona",
@@ -148,8 +148,8 @@
         9
       ],
       [
-        "dig",
-        9
+        "gmysql",
+        5
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         12420,
-        0.55
+        0.54
       ]
     ],
     "sentiment": null

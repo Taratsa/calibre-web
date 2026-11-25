@@ -45,5 +45,210 @@
       "size": 23488840,
       "name": "Pengaroenja konde litjin - M. Preanger"
     }
-  ]
+  ],
+  "text": {
+    "words": 20045,
+    "longer_than": 88,
+    "top": [
+      [
+        "tida",
+        274
+      ],
+      [
+        "dengen",
+        219
+      ],
+      [
+        "djadi",
+        184
+      ],
+      [
+        "soekir",
+        175
+      ],
+      [
+        "akoe",
+        170
+      ],
+      [
+        "orang",
+        165
+      ],
+      [
+        "boeat",
+        146
+      ],
+      [
+        "soeda",
+        146
+      ],
+      [
+        "neng",
+        138
+      ],
+      [
+        "djoega",
+        130
+      ],
+      [
+        "satoe",
+        128
+      ],
+      [
+        "asia",
+        126
+      ]
+    ],
+    "distinct": [
+      [
+        "soekir",
+        175
+      ],
+      [
+        "tida",
+        274
+      ],
+      [
+        "dengen",
+        219
+      ],
+      [
+        "akoe",
+        170
+      ],
+      [
+        "soeda",
+        146
+      ],
+      [
+        "boeat",
+        146
+      ],
+      [
+        "neng",
+        138
+      ],
+      [
+        "kaloe",
+        107
+      ],
+      [
+        "djoega",
+        130
+      ],
+      [
+        "satoe",
+        128
+      ],
+      [
+        "djadi",
+        184
+      ],
+      [
+        "poenja",
+        92
+      ]
+    ],
+    "phrases": [
+      [
+        "neng asia",
+        80
+      ],
+      [
+        "raden soekir",
+        41
+      ],
+      [
+        "pah soediro",
+        29
+      ],
+      [
+        "akoe tida",
+        24
+      ],
+      [
+        "sigra djoega",
+        19
+      ],
+      [
+        "dengen soeara",
+        18
+      ],
+      [
+        "orang toea",
+        17
+      ],
+      [
+        "dengen tida",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        16767,
+        0.58
+      ],
+      [
+        4632,
+        0.52
+      ],
+      [
+        631,
+        0.52
+      ],
+      [
+        13962,
+        0.51
+      ],
+      [
+        13825,
+        0.46
+      ],
+      [
+        4633,
+        0.45
+      ]
+    ],
+    "sentiment": {
+      "score": 0.12,
+      "positive": 46,
+      "negative": 36,
+      "trend": [
+        null,
+        0.25,
+        null,
+        null,
+        -0.14,
+        null,
+        0,
+        null,
+        null,
+        -0.64,
+        -0.33,
+        0.33,
+        0.6,
+        0.6,
+        null,
+        0.71
+      ],
+      "emotions": [
+        [
+          "joy",
+          16
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "surprise",
+          11
+        ],
+        [
+          "trust",
+          5
+        ]
+      ]
+    }
+  }
 }

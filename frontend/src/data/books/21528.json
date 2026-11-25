@@ -51,5 +51,170 @@
       "size": 2888,
       "name": "XBMC_ Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 356,
+    "longer_than": 33,
+    "top": [
+      [
+        "ppa",
+        37
+      ],
+      [
+        "ubuntu",
+        21
+      ],
+      [
+        "team-xbmc",
+        20
+      ],
+      [
+        "launchpad",
+        18
+      ],
+      [
+        "main",
+        18
+      ],
+      [
+        "xbmc",
+        11
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "deb",
+        9
+      ],
+      [
+        "deb-src",
+        9
+      ],
+      [
+        "install",
+        5
+      ],
+      [
+        "update",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "team-xbmc",
+        20
+      ],
+      [
+        "ppa",
+        37
+      ],
+      [
+        "launchpad",
+        18
+      ],
+      [
+        "xbmc",
+        11
+      ],
+      [
+        "deb-src",
+        9
+      ],
+      [
+        "ubuntu",
+        21
+      ],
+      [
+        "deb",
+        9
+      ],
+      [
+        "main",
+        18
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "update",
+        5
+      ],
+      [
+        "title",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "team-xbmc ppa ubuntu",
+        18
+      ],
+      [
+        "launchpad net team-xbmc",
+        18
+      ],
+      [
+        "ppa launchpad",
+        18
+      ],
+      [
+        "deb-src http ppa",
+        9
+      ],
+      [
+        "deb http ppa",
+        9
+      ],
+      [
+        "sudo apt-get",
+        9
+      ],
+      [
+        "main deb-src",
+        9
+      ],
+      [
+        "main deb",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        19141,
+        0.6
+      ],
+      [
+        12230,
+        0.53
+      ],
+      [
+        9957,
+        0.51
+      ],
+      [
+        20075,
+        0.42
+      ],
+      [
+        21478,
+        0.4
+      ],
+      [
+        12534,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
 }

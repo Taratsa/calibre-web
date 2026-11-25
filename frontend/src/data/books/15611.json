@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 666,
-    "longer_than": 45,
+    "longer_than": 44,
     "top": [
       [
         "moodle",
@@ -116,12 +116,12 @@
         9
       ],
       [
-        "var",
-        13
-      ],
-      [
         "database",
         14
+      ],
+      [
+        "var",
+        13
       ],
       [
         "sudo",
@@ -140,16 +140,16 @@
         10
       ],
       [
-        "localhost",
-        8
-      ],
-      [
         "install",
         14
       ],
       [
-        "apt",
-        9
+        "localhost",
+        8
+      ],
+      [
+        "php",
+        40
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         13067,
-        0.66
+        0.65
       ]
     ],
     "sentiment": null

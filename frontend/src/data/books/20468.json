@@ -48,5 +48,52 @@
       "size": 2216,
       "name": "Wikipedia - Mereset Isi Database Wikipedia - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 72,
+    "longer_than": 11,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "service mysql",
+        4
+      ],
+      [
+        "root password",
+        3
+      ],
+      [
+        "database wikipedia",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        12443,
+        0.52
+      ],
+      [
+        20429,
+        0.52
+      ],
+      [
+        15785,
+        0.46
+      ],
+      [
+        20466,
+        0.44
+      ],
+      [
+        13702,
+        0.42
+      ],
+      [
+        17083,
+        0.41
+      ]
+    ],
+    "sentiment": null
+  }
 }

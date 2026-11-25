@@ -45,5 +45,226 @@
       "size": 53947661,
       "name": "Langgam sastra lama _ perkembangan kesusas - Gazali"
     }
-  ]
+  ],
+  "text": {
+    "words": 53160,
+    "longer_than": 97,
+    "top": [
+      [
+        "radja",
+        571
+      ],
+      [
+        "orang",
+        329
+      ],
+      [
+        "muhammad",
+        183
+      ],
+      [
+        "sultan",
+        181
+      ],
+      [
+        "hikajat",
+        174
+      ],
+      [
+        "djuga",
+        171
+      ],
+      [
+        "nabi",
+        170
+      ],
+      [
+        "bahasa",
+        159
+      ],
+      [
+        "anak",
+        156
+      ],
+      [
+        "puteri",
+        156
+      ],
+      [
+        "islam",
+        152
+      ],
+      [
+        "tiada",
+        130
+      ]
+    ],
+    "distinct": [
+      [
+        "radja",
+        571
+      ],
+      [
+        "hikajat",
+        174
+      ],
+      [
+        "tjeritera",
+        125
+      ],
+      [
+        "puteri",
+        156
+      ],
+      [
+        "djuga",
+        171
+      ],
+      [
+        "sultan",
+        181
+      ],
+      [
+        "nabi",
+        170
+      ],
+      [
+        "muhammad",
+        183
+      ],
+      [
+        "sjah",
+        95
+      ],
+      [
+        "malaka",
+        106
+      ],
+      [
+        "baginda",
+        100
+      ],
+      [
+        "keradjaan",
+        78
+      ]
+    ],
+    "phrases": [
+      [
+        "hang tuah",
+        53
+      ],
+      [
+        "nabi muhammad",
+        35
+      ],
+      [
+        "hikajat amir hamzah",
+        23
+      ],
+      [
+        "sultan mansur sjah",
+        21
+      ],
+      [
+        "muhammad ali hanafiah",
+        18
+      ],
+      [
+        "umat islam",
+        26
+      ],
+      [
+        "orang tua",
+        25
+      ],
+      [
+        "malim deman",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        784,
+        0.36
+      ],
+      [
+        2986,
+        0.24
+      ],
+      [
+        434,
+        0.2
+      ],
+      [
+        17496,
+        0.2
+      ],
+      [
+        723,
+        0.2
+      ],
+      [
+        1231,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": -0.02,
+      "positive": 488,
+      "negative": 512,
+      "trend": [
+        0.62,
+        -0.33,
+        0,
+        -0.34,
+        0.39,
+        -0.45,
+        -0.04,
+        0.26,
+        0.07,
+        -0.53,
+        -0.4,
+        0.17,
+        0.14,
+        -0.2,
+        -0.03,
+        0.3
+      ],
+      "emotions": [
+        [
+          "sadness",
+          115
+        ],
+        [
+          "anger",
+          104
+        ],
+        [
+          "joy",
+          60
+        ],
+        [
+          "trust",
+          50
+        ],
+        [
+          "fear",
+          46
+        ],
+        [
+          "disgust",
+          10
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "anticipation",
+          6
+        ]
+      ]
+    }
+  }
 }

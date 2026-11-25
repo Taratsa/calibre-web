@@ -43,5 +43,176 @@
       "size": 191196,
       "name": "Jurnal Teh ke-1 - Zagros"
     }
-  ]
+  ],
+  "text": {
+    "words": 2204,
+    "longer_than": 61,
+    "top": [
+      [
+        "teh",
+        84
+      ],
+      [
+        "kolonial",
+        18
+      ],
+      [
+        "kelas",
+        17
+      ],
+      [
+        "daun",
+        16
+      ],
+      [
+        "eropa",
+        14
+      ],
+      [
+        "sejarah",
+        12
+      ],
+      [
+        "perkebunan",
+        11
+      ],
+      [
+        "tanah",
+        11
+      ],
+      [
+        "tiongkok",
+        10
+      ],
+      [
+        "komunal",
+        9
+      ],
+      [
+        "lokal",
+        9
+      ],
+      [
+        "masyarakat",
+        9
+      ]
+    ],
+    "distinct": [
+      [
+        "teh",
+        84
+      ],
+      [
+        "kolonial",
+        18
+      ],
+      [
+        "daun",
+        16
+      ],
+      [
+        "mentalitas",
+        9
+      ],
+      [
+        "tiongkok",
+        10
+      ],
+      [
+        "komunal",
+        9
+      ],
+      [
+        "kelas",
+        17
+      ],
+      [
+        "eropa",
+        14
+      ],
+      [
+        "perkebunan",
+        11
+      ],
+      [
+        "imperium",
+        6
+      ],
+      [
+        "oolong",
+        3
+      ],
+      [
+        "fanon",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "daun teh",
+        8
+      ],
+      [
+        "teh debu",
+        5
+      ],
+      [
+        "menikmati teh",
+        5
+      ],
+      [
+        "teh putih",
+        4
+      ],
+      [
+        "teh hitam",
+        4
+      ],
+      [
+        "budaya teh",
+        4
+      ],
+      [
+        "tanah jajahan",
+        3
+      ],
+      [
+        "perkebunan teh",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        3946,
+        0.15
+      ],
+      [
+        7182,
+        0.14
+      ],
+      [
+        7498,
+        0.14
+      ],
+      [
+        6984,
+        0.13
+      ],
+      [
+        7488,
+        0.13
+      ],
+      [
+        2093,
+        0.12
+      ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 37,
+      "negative": 16,
+      "trend": [],
+      "emotions": []
+    }
+  }
 }

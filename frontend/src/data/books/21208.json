@@ -48,5 +48,218 @@
       "size": 6533533,
       "name": "Soeara Rakjat (1921-01-16) - Soeara Rakjat editorial board (Semarang)"
     }
-  ]
+  ],
+  "text": {
+    "words": 7303,
+    "longer_than": 75,
+    "top": [
+      [
+        "kaoem",
+        188
+      ],
+      [
+        "djoega",
+        73
+      ],
+      [
+        "orang",
+        53
+      ],
+      [
+        "mendjadi",
+        45
+      ],
+      [
+        "doenia",
+        37
+      ],
+      [
+        "negeri",
+        37
+      ],
+      [
+        "kapital",
+        35
+      ],
+      [
+        "jaitoe",
+        29
+      ],
+      [
+        "oentoek",
+        29
+      ],
+      [
+        "boeroeh",
+        26
+      ],
+      [
+        "jat",
+        25
+      ],
+      [
+        "negeri-negeri",
+        24
+      ]
+    ],
+    "distinct": [
+      [
+        "kaoem",
+        188
+      ],
+      [
+        "djoega",
+        73
+      ],
+      [
+        "doenia",
+        37
+      ],
+      [
+        "boeroeh",
+        26
+      ],
+      [
+        "oentoek",
+        29
+      ],
+      [
+        "jaitoe",
+        29
+      ],
+      [
+        "mendjadi",
+        45
+      ],
+      [
+        "akantetapi",
+        16
+      ],
+      [
+        "socialist",
+        24
+      ],
+      [
+        "soedah",
+        24
+      ],
+      [
+        "kapital",
+        35
+      ],
+      [
+        "soepaja",
+        24
+      ]
+    ],
+    "phrases": [
+      [
+        "kaoem boeroeh",
+        23
+      ],
+      [
+        "kaoem kapital",
+        22
+      ],
+      [
+        "kaoem socialist",
+        16
+      ],
+      [
+        "kaoem proletar",
+        15
+      ],
+      [
+        "kaoem assistent",
+        11
+      ],
+      [
+        "soeara ra jat",
+        6
+      ],
+      [
+        "negeri-negeri ketjil",
+        9
+      ],
+      [
+        "orang banjak",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        21213,
+        0.5
+      ],
+      [
+        21210,
+        0.5
+      ],
+      [
+        21224,
+        0.37
+      ],
+      [
+        21222,
+        0.37
+      ],
+      [
+        21275,
+        0.36
+      ],
+      [
+        21274,
+        0.36
+      ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 41,
+      "negative": 58,
+      "trend": [
+        -0.67,
+        null,
+        null,
+        -0.75,
+        -0.6,
+        0.2,
+        -0.5,
+        -1,
+        -0.14,
+        0,
+        null,
+        0.2,
+        -0.33,
+        0.56,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          26
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

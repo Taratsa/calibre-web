@@ -49,5 +49,193 @@
       "size": 19912913,
       "name": "Ilmu bumi - Habib St. Maharadja"
     }
-  ]
+  ],
+  "text": {
+    "words": 11320,
+    "longer_than": 81,
+    "top": [
+      [
+        "indonesia",
+        113
+      ],
+      [
+        "djepang",
+        80
+      ],
+      [
+        "bangsa",
+        75
+      ],
+      [
+        "negara",
+        71
+      ],
+      [
+        "australia",
+        66
+      ],
+      [
+        "tiongkok",
+        62
+      ],
+      [
+        "banjak",
+        60
+      ],
+      [
+        "inggeris",
+        59
+      ],
+      [
+        "penduduknja",
+        58
+      ],
+      [
+        "orang",
+        56
+      ],
+      [
+        "selatan",
+        52
+      ],
+      [
+        "djiwa",
+        50
+      ]
+    ],
+    "distinct": [
+      [
+        "djepang",
+        80
+      ],
+      [
+        "penduduknja",
+        58
+      ],
+      [
+        "inggeris",
+        59
+      ],
+      [
+        "tiongkok",
+        62
+      ],
+      [
+        "australia",
+        66
+      ],
+      [
+        "banjak",
+        60
+      ],
+      [
+        "jaitu",
+        50
+      ],
+      [
+        "negara²",
+        33
+      ],
+      [
+        "djiwa",
+        50
+      ],
+      [
+        "luasnja",
+        34
+      ],
+      [
+        "djumlah",
+        44
+      ],
+      [
+        "perhubungan",
+        38
+      ]
+    ],
+    "phrases": [
+      [
+        "timur dan selatan",
+        15
+      ],
+      [
+        "tiong hoa",
+        19
+      ],
+      [
+        "asia timur",
+        18
+      ],
+      [
+        "djuta djiwa",
+        17
+      ],
+      [
+        "san a djumlah",
+        10
+      ],
+      [
+        "saidi st sati",
+        9
+      ],
+      [
+        "djumlah san",
+        13
+      ],
+      [
+        "politik dan kebudajaan",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        16709,
+        0.21
+      ],
+      [
+        14530,
+        0.2
+      ],
+      [
+        1885,
+        0.19
+      ],
+      [
+        681,
+        0.19
+      ],
+      [
+        13489,
+        0.19
+      ],
+      [
+        9323,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 81,
+      "negative": 15,
+      "trend": [
+        1,
+        null,
+        1,
+        0.67,
+        0.71,
+        null,
+        null,
+        0.82,
+        1,
+        null,
+        0.11,
+        0.8,
+        0.67,
+        0.11,
+        null,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

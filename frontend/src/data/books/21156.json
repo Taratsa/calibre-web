@@ -48,5 +48,52 @@
       "size": 2099,
       "name": "GNS3_ Instalasi di Ubuntu 26.04 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 63,
+    "longer_than": 9,
+    "top": [],
+    "distinct": [],
+    "phrases": [
+      [
+        "apt y install",
+        3
+      ],
+      [
+        "install gns",
+        4
+      ],
+      [
+        "sudo apt",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        10741,
+        0.7
+      ],
+      [
+        12730,
+        0.66
+      ],
+      [
+        10431,
+        0.65
+      ],
+      [
+        15431,
+        0.63
+      ],
+      [
+        14964,
+        0.63
+      ],
+      [
+        14798,
+        0.63
+      ]
+    ],
+    "sentiment": null
+  }
 }

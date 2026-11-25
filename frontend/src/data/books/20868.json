@@ -48,5 +48,170 @@
       "size": 15486,
       "name": "Udev_ cara menulis rules - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 6164,
+    "longer_than": 73,
+    "top": [
+      [
+        "device",
+        137
+      ],
+      [
+        "udev",
+        77
+      ],
+      [
+        "rules",
+        75
+      ],
+      [
+        "rule",
+        67
+      ],
+      [
+        "dev",
+        52
+      ],
+      [
+        "kernel",
+        52
+      ],
+      [
+        "devices",
+        41
+      ],
+      [
+        "match",
+        38
+      ],
+      [
+        "attrs",
+        35
+      ],
+      [
+        "disk",
+        34
+      ],
+      [
+        "node",
+        34
+      ],
+      [
+        "usb",
+        33
+      ]
+    ],
+    "distinct": [
+      [
+        "udev",
+        77
+      ],
+      [
+        "device",
+        137
+      ],
+      [
+        "attrs",
+        35
+      ],
+      [
+        "rules",
+        75
+      ],
+      [
+        "rule",
+        67
+      ],
+      [
+        "sysfs",
+        29
+      ],
+      [
+        "kernel",
+        52
+      ],
+      [
+        "symlink",
+        25
+      ],
+      [
+        "dev",
+        52
+      ],
+      [
+        "devices",
+        41
+      ],
+      [
+        "match",
+        38
+      ],
+      [
+        "disk",
+        34
+      ]
+    ],
+    "phrases": [
+      [
+        "device node",
+        25
+      ],
+      [
+        "udev rules",
+        18
+      ],
+      [
+        "hard disk",
+        14
+      ],
+      [
+        "device nodes",
+        14
+      ],
+      [
+        "symbolic link",
+        12
+      ],
+      [
+        "device namer",
+        9
+      ],
+      [
+        "device in question",
+        6
+      ],
+      [
+        "subsystem block",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        20867,
+        0.25
+      ],
+      [
+        21154,
+        0.16
+      ],
+      [
+        11691,
+        0.16
+      ],
+      [
+        19068,
+        0.16
+      ],
+      [
+        19987,
+        0.15
+      ],
+      [
+        19277,
+        0.15
+      ]
+    ],
+    "sentiment": null
+  }
 }

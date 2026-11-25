@@ -46,5 +46,218 @@
       "size": 6545292,
       "name": "Asmara moerni - Saeroen"
     }
-  ]
+  ],
+  "text": {
+    "words": 10584,
+    "longer_than": 80,
+    "top": [
+      [
+        "tati",
+        219
+      ],
+      [
+        "amir",
+        171
+      ],
+      [
+        "kau",
+        104
+      ],
+      [
+        "pardi",
+        76
+      ],
+      [
+        "waktoe",
+        69
+      ],
+      [
+        "toean",
+        67
+      ],
+      [
+        "orang",
+        65
+      ],
+      [
+        "boeat",
+        64
+      ],
+      [
+        "dokter",
+        61
+      ],
+      [
+        "soedah",
+        55
+      ],
+      [
+        "bibi",
+        45
+      ],
+      [
+        "ikah",
+        45
+      ]
+    ],
+    "distinct": [
+      [
+        "tati",
+        219
+      ],
+      [
+        "amir",
+        171
+      ],
+      [
+        "pardi",
+        76
+      ],
+      [
+        "ikah",
+        45
+      ],
+      [
+        "waktoe",
+        69
+      ],
+      [
+        "boeat",
+        64
+      ],
+      [
+        "toean",
+        67
+      ],
+      [
+        "soedah",
+        55
+      ],
+      [
+        "tjigading",
+        24
+      ],
+      [
+        "kau",
+        104
+      ],
+      [
+        "bibi",
+        45
+      ],
+      [
+        "roemah",
+        38
+      ]
+    ],
+    "phrases": [
+      [
+        "toean abdul sidik",
+        33
+      ],
+      [
+        "nji r partiah",
+        19
+      ],
+      [
+        "bibi ikah",
+        24
+      ],
+      [
+        "tati dan amir",
+        9
+      ],
+      [
+        "kau poenja",
+        12
+      ],
+      [
+        "toean dokter",
+        10
+      ],
+      [
+        "ikah dan tati",
+        6
+      ],
+      [
+        "dokter pardi",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        20491,
+        0.37
+      ],
+      [
+        714,
+        0.3
+      ],
+      [
+        652,
+        0.29
+      ],
+      [
+        640,
+        0.29
+      ],
+      [
+        6632,
+        0.28
+      ],
+      [
+        771,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.21,
+      "positive": 95,
+      "negative": 62,
+      "trend": [
+        0,
+        null,
+        -0.6,
+        0.8,
+        -0.12,
+        0.56,
+        0.71,
+        0.4,
+        0.4,
+        0.29,
+        -0.4,
+        -1,
+        0.2,
+        0.47,
+        -0.14,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

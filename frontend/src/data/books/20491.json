@@ -46,5 +46,193 @@
       "size": 8917783,
       "name": "Sorga ka toedjoe [Novelisation] - L_"
     }
-  ]
+  ],
+  "text": {
+    "words": 12345,
+    "longer_than": 82,
+    "top": [
+      [
+        "rasminah",
+        212
+      ],
+      [
+        "soedah",
+        166
+      ],
+      [
+        "akoe",
+        163
+      ],
+      [
+        "parta",
+        126
+      ],
+      [
+        "kasimin",
+        123
+      ],
+      [
+        "hadidjah",
+        109
+      ],
+      [
+        "hoesin",
+        102
+      ],
+      [
+        "kau",
+        96
+      ],
+      [
+        "djadi",
+        88
+      ],
+      [
+        "djoega",
+        84
+      ],
+      [
+        "doel",
+        82
+      ],
+      [
+        "sadja",
+        75
+      ]
+    ],
+    "distinct": [
+      [
+        "kasimin",
+        123
+      ],
+      [
+        "hadidjah",
+        109
+      ],
+      [
+        "akoe",
+        163
+      ],
+      [
+        "soedah",
+        166
+      ],
+      [
+        "parta",
+        126
+      ],
+      [
+        "hoesin",
+        102
+      ],
+      [
+        "djoega",
+        84
+      ],
+      [
+        "satoe",
+        72
+      ],
+      [
+        "doel",
+        82
+      ],
+      [
+        "toean",
+        65
+      ],
+      [
+        "djadi",
+        88
+      ],
+      [
+        "marsiti",
+        26
+      ]
+    ],
+    "phrases": [
+      [
+        "parta dan doel",
+        24
+      ],
+      [
+        "toean tanah",
+        17
+      ],
+      [
+        "masoek kedalam",
+        14
+      ],
+      [
+        "rasminah soedah",
+        13
+      ],
+      [
+        "akoe soedah",
+        13
+      ],
+      [
+        "bang min",
+        12
+      ],
+      [
+        "rasminah djadi",
+        11
+      ],
+      [
+        "sesa at kemoedian",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        20391,
+        0.37
+      ],
+      [
+        4633,
+        0.29
+      ],
+      [
+        713,
+        0.29
+      ],
+      [
+        13193,
+        0.27
+      ],
+      [
+        4636,
+        0.27
+      ],
+      [
+        694,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 59,
+      "negative": 47,
+      "trend": [
+        null,
+        -0.33,
+        0,
+        0.23,
+        null,
+        -0.33,
+        0.11,
+        -0.2,
+        null,
+        null,
+        0.56,
+        -0.33,
+        1,
+        0.2,
+        -0.25,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

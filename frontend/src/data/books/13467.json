@@ -45,5 +45,214 @@
       "size": 15438158,
       "name": "Setialah kepada penderitaan bangsamu _ per - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 4236,
+    "longer_than": 68,
+    "top": [
+      [
+        "angkatan",
+        80
+      ],
+      [
+        "perang",
+        49
+      ],
+      [
+        "negara",
+        46
+      ],
+      [
+        "indonesia",
+        38
+      ],
+      [
+        "republik",
+        26
+      ],
+      [
+        "bangsa",
+        24
+      ],
+      [
+        "proklamasi",
+        18
+      ],
+      [
+        "laut",
+        17
+      ],
+      [
+        "pemerintah",
+        17
+      ],
+      [
+        "mendjadi",
+        16
+      ],
+      [
+        "pradjurit",
+        16
+      ],
+      [
+        "pemberontakan",
+        15
+      ]
+    ],
+    "distinct": [
+      [
+        "angkatan",
+        80
+      ],
+      [
+        "perang",
+        49
+      ],
+      [
+        "pradjurit",
+        16
+      ],
+      [
+        "proklamasi",
+        18
+      ],
+      [
+        "setialah",
+        8
+      ],
+      [
+        "negara",
+        46
+      ],
+      [
+        "republik",
+        26
+      ],
+      [
+        "permesta",
+        9
+      ],
+      [
+        "mendjadi",
+        16
+      ],
+      [
+        "saudara-saudara",
+        14
+      ],
+      [
+        "ke-xiii",
+        6
+      ],
+      [
+        "sapta",
+        9
+      ]
+    ],
+    "phrases": [
+      [
+        "angkatan perang",
+        46
+      ],
+      [
+        "republik indonesia",
+        24
+      ],
+      [
+        "angkatan laut",
+        17
+      ],
+      [
+        "sapta marga",
+        9
+      ],
+      [
+        "perang republik",
+        9
+      ],
+      [
+        "proklamasi agustus",
+        8
+      ],
+      [
+        "negara republik",
+        8
+      ],
+      [
+        "negara dan bangsa",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        8771,
+        0.26
+      ],
+      [
+        13365,
+        0.24
+      ],
+      [
+        10789,
+        0.22
+      ],
+      [
+        11241,
+        0.22
+      ],
+      [
+        15210,
+        0.21
+      ],
+      [
+        21558,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 80,
+      "negative": 79,
+      "trend": [
+        -1,
+        0.29,
+        0.33,
+        -0.6,
+        0,
+        0.14,
+        0.75,
+        0.56,
+        0.6,
+        0,
+        -0.14,
+        0.43,
+        -0.4,
+        -0.22,
+        -0.33,
+        0.16
+      ],
+      "emotions": [
+        [
+          "anger",
+          49
+        ],
+        [
+          "trust",
+          17
+        ],
+        [
+          "sadness",
+          11
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

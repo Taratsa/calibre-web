@@ -43,5 +43,214 @@
       "size": 51985862,
       "name": "Kitab pembatjaan - D.P. Siahaija"
     }
-  ]
+  ],
+  "text": {
+    "words": 22678,
+    "longer_than": 89,
+    "top": [
+      [
+        "orang",
+        463
+      ],
+      [
+        "soedah",
+        390
+      ],
+      [
+        "deri",
+        388
+      ],
+      [
+        "tiada",
+        262
+      ],
+      [
+        "poenja",
+        216
+      ],
+      [
+        "beta",
+        183
+      ],
+      [
+        "satoe",
+        180
+      ],
+      [
+        "soewatoe",
+        155
+      ],
+      [
+        "maoe",
+        144
+      ],
+      [
+        "anak",
+        137
+      ],
+      [
+        "didalam",
+        134
+      ],
+      [
+        "djoega",
+        131
+      ]
+    ],
+    "distinct": [
+      [
+        "deri",
+        388
+      ],
+      [
+        "soedah",
+        390
+      ],
+      [
+        "poenja",
+        216
+      ],
+      [
+        "soewatoe",
+        155
+      ],
+      [
+        "satoe",
+        180
+      ],
+      [
+        "beta",
+        183
+      ],
+      [
+        "bekin",
+        97
+      ],
+      [
+        "kalapa",
+        124
+      ],
+      [
+        "maoe",
+        144
+      ],
+      [
+        "toewan",
+        108
+      ],
+      [
+        "djoega",
+        131
+      ],
+      [
+        "tiada",
+        262
+      ]
+    ],
+    "phrases": [
+      [
+        "orang poenja",
+        45
+      ],
+      [
+        "soedah djadi",
+        38
+      ],
+      [
+        "maha besar toehan",
+        22
+      ],
+      [
+        "pohon kalapa",
+        31
+      ],
+      [
+        "sabantar itoe djoega",
+        19
+      ],
+      [
+        "beta soedah",
+        28
+      ],
+      [
+        "tiada maoe",
+        27
+      ],
+      [
+        "beta poenja",
+        27
+      ]
+    ],
+    "similar": [
+      [
+        14763,
+        0.31
+      ],
+      [
+        16755,
+        0.3
+      ],
+      [
+        13077,
+        0.28
+      ],
+      [
+        3606,
+        0.24
+      ],
+      [
+        21540,
+        0.23
+      ],
+      [
+        13480,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.37,
+      "positive": 278,
+      "negative": 127,
+      "trend": [
+        0.71,
+        0.1,
+        0.61,
+        0.43,
+        0.71,
+        -0.4,
+        -0.07,
+        0.7,
+        0.24,
+        0.55,
+        0.7,
+        0.56,
+        0.33,
+        0.24,
+        0.46,
+        0.17
+      ],
+      "emotions": [
+        [
+          "sadness",
+          35
+        ],
+        [
+          "trust",
+          24
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

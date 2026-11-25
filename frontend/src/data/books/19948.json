@@ -45,5 +45,218 @@
       "size": 101725165,
       "name": "Sjair pengaroeh tjeritera yang telah kedja - S.M. Tajib"
     }
-  ]
+  ],
+  "text": {
+    "words": 7851,
+    "longer_than": 76,
+    "top": [
+      [
+        "amir",
+        116
+      ],
+      [
+        "tiada",
+        92
+      ],
+      [
+        "pengeran",
+        83
+      ],
+      [
+        "siti",
+        72
+      ],
+      [
+        "hati",
+        68
+      ],
+      [
+        "soedah",
+        55
+      ],
+      [
+        "orang",
+        54
+      ],
+      [
+        "moeda",
+        45
+      ],
+      [
+        "hamba",
+        41
+      ],
+      [
+        "toean",
+        37
+      ],
+      [
+        "didalam",
+        36
+      ],
+      [
+        "banjak",
+        34
+      ]
+    ],
+    "distinct": [
+      [
+        "pengeran",
+        83
+      ],
+      [
+        "amir",
+        116
+      ],
+      [
+        "soedah",
+        55
+      ],
+      [
+        "siti",
+        72
+      ],
+      [
+        "moeda",
+        45
+      ],
+      [
+        "tiada",
+        92
+      ],
+      [
+        "toean",
+        37
+      ],
+      [
+        "amirpoen",
+        15
+      ],
+      [
+        "sitti",
+        26
+      ],
+      [
+        "laloe",
+        32
+      ],
+      [
+        "aini",
+        22
+      ],
+      [
+        "boekan",
+        27
+      ]
+    ],
+    "phrases": [
+      [
+        "noer aini",
+        21
+      ],
+      [
+        "kanan dan kiri",
+        11
+      ],
+      [
+        "amir moeda",
+        13
+      ],
+      [
+        "toehan jang esa",
+        7
+      ],
+      [
+        "tiada dipandjangkan madah",
+        6
+      ],
+      [
+        "siang dan malam",
+        6
+      ],
+      [
+        "moeda bestari",
+        9
+      ],
+      [
+        "didalam tjita",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        10811,
+        0.24
+      ],
+      [
+        6567,
+        0.21
+      ],
+      [
+        771,
+        0.21
+      ],
+      [
+        296,
+        0.21
+      ],
+      [
+        524,
+        0.21
+      ],
+      [
+        652,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.18,
+      "positive": 101,
+      "negative": 70,
+      "trend": [
+        0.14,
+        0.33,
+        0.37,
+        0.33,
+        -0.11,
+        -0.6,
+        0.64,
+        0.56,
+        0.8,
+        0.29,
+        0.71,
+        0.25,
+        0.2,
+        0,
+        0,
+        -0.6
+      ],
+      "emotions": [
+        [
+          "sadness",
+          28
+        ],
+        [
+          "joy",
+          18
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

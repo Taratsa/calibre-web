@@ -43,5 +43,193 @@
       "size": 26596065,
       "name": "Sedjarah Ringkas Irak - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 8337,
+    "longer_than": 77,
+    "top": [
+      [
+        "irak",
+        48
+      ],
+      [
+        "bangsa",
+        34
+      ],
+      [
+        "arab",
+        26
+      ],
+      [
+        "turki",
+        26
+      ],
+      [
+        "djiwa",
+        22
+      ],
+      [
+        "sedjarah",
+        22
+      ],
+      [
+        "djuga",
+        21
+      ],
+      [
+        "orang",
+        20
+      ],
+      [
+        "inggeris",
+        18
+      ],
+      [
+        "mendjadi",
+        17
+      ],
+      [
+        "tid",
+        16
+      ],
+      [
+        "hidup",
+        14
+      ]
+    ],
+    "distinct": [
+      [
+        "irak",
+        48
+      ],
+      [
+        "turki",
+        26
+      ],
+      [
+        "sedjarah",
+        22
+      ],
+      [
+        "djiwa",
+        22
+      ],
+      [
+        "gnet",
+        9
+      ],
+      [
+        "inggeris",
+        18
+      ],
+      [
+        "arab",
+        26
+      ],
+      [
+        "djuga",
+        21
+      ],
+      [
+        "tjita-tjita",
+        14
+      ],
+      [
+        "tidnk",
+        10
+      ],
+      [
+        "tid",
+        16
+      ],
+      [
+        "defo",
+        7
+      ]
+    ],
+    "phrases": [
+      [
+        "bangsa arab",
+        7
+      ],
+      [
+        "kenjataan jang objektif",
+        4
+      ],
+      [
+        "bangsa turki",
+        6
+      ],
+      [
+        "negeri arab",
+        5
+      ],
+      [
+        "keempatan mas",
+        5
+      ],
+      [
+        "rasjid ali",
+        4
+      ],
+      [
+        "peperangan dunia",
+        4
+      ],
+      [
+        "kemerdekaan negeri",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        14031,
+        0.34
+      ],
+      [
+        14027,
+        0.34
+      ],
+      [
+        12489,
+        0.18
+      ],
+      [
+        13216,
+        0.18
+      ],
+      [
+        11919,
+        0.18
+      ],
+      [
+        17496,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 42,
+      "negative": 22,
+      "trend": [
+        null,
+        0.2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.5,
+        0.33,
+        0.2,
+        null,
+        0.78,
+        0.71,
+        null,
+        0.6,
+        1
+      ],
+      "emotions": []
+    }
+  }
 }

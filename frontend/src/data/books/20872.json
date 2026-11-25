@@ -48,5 +48,170 @@
       "size": 2940,
       "name": "TCP_IP_ Quagga RIP - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 253,
+    "longer_than": 27,
+    "top": [
+      [
+        "quagga",
+        19
+      ],
+      [
+        "rip",
+        12
+      ],
+      [
+        "tcp",
+        11
+      ],
+      [
+        "ripd",
+        8
+      ],
+      [
+        "conf",
+        7
+      ],
+      [
+        "router",
+        5
+      ],
+      [
+        "sample",
+        5
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "log",
+        4
+      ],
+      [
+        "ospf",
+        4
+      ],
+      [
+        "doc",
+        3
+      ],
+      [
+        "examples",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "quagga",
+        19
+      ],
+      [
+        "rip",
+        12
+      ],
+      [
+        "ripd",
+        8
+      ],
+      [
+        "tcp",
+        11
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "conf",
+        7
+      ],
+      [
+        "ripngd",
+        3
+      ],
+      [
+        "sample",
+        5
+      ],
+      [
+        "ospf",
+        4
+      ],
+      [
+        "router",
+        5
+      ],
+      [
+        "log",
+        4
+      ],
+      [
+        "doc",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "tcp ip quagga",
+        11
+      ],
+      [
+        "usr share doc",
+        3
+      ],
+      [
+        "share doc quagga",
+        3
+      ],
+      [
+        "sample etc quagga",
+        3
+      ],
+      [
+        "doc quagga examples",
+        3
+      ],
+      [
+        "conf sample",
+        4
+      ],
+      [
+        "ripd conf",
+        3
+      ],
+      [
+        "quagga rip",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20856,
+        0.56
+      ],
+      [
+        20850,
+        0.45
+      ],
+      [
+        10678,
+        0.43
+      ],
+      [
+        20854,
+        0.42
+      ],
+      [
+        20853,
+        0.42
+      ],
+      [
+        12937,
+        0.3
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -51,5 +51,170 @@
       "size": 3747,
       "name": "Script NAT Proxy - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 587,
+    "longer_than": 42,
+    "top": [
+      [
+        "iptables",
+        26
+      ],
+      [
+        "sbin",
+        25
+      ],
+      [
+        "nat",
+        18
+      ],
+      [
+        "input",
+        14
+      ],
+      [
+        "uplink",
+        13
+      ],
+      [
+        "script",
+        11
+      ],
+      [
+        "eth",
+        10
+      ],
+      [
+        "activate",
+        8
+      ],
+      [
+        "drop",
+        8
+      ],
+      [
+        "echo",
+        8
+      ],
+      [
+        "tcp",
+        8
+      ],
+      [
+        "accept",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "iptables",
+        26
+      ],
+      [
+        "sbin",
+        25
+      ],
+      [
+        "uplink",
+        13
+      ],
+      [
+        "nat",
+        18
+      ],
+      [
+        "input",
+        14
+      ],
+      [
+        "activate",
+        8
+      ],
+      [
+        "eth",
+        10
+      ],
+      [
+        "script",
+        11
+      ],
+      [
+        "drop",
+        8
+      ],
+      [
+        "echo",
+        8
+      ],
+      [
+        "tcp",
+        8
+      ],
+      [
+        "interfaces",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "sbin iptables",
+        25
+      ],
+      [
+        "iptables a input",
+        7
+      ],
+      [
+        "iptables t nat",
+        5
+      ],
+      [
+        "iptables i input",
+        4
+      ],
+      [
+        "drop sbin",
+        6
+      ],
+      [
+        "echo activate",
+        5
+      ],
+      [
+        "accept sbin",
+        5
+      ],
+      [
+        "script nat proxy",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16299,
+        0.85
+      ],
+      [
+        18486,
+        0.69
+      ],
+      [
+        18487,
+        0.63
+      ],
+      [
+        11597,
+        0.52
+      ],
+      [
+        11425,
+        0.47
+      ],
+      [
+        20221,
+        0.4
+      ]
+    ],
+    "sentiment": null
+  }
 }

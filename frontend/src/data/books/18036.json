@@ -35,5 +35,226 @@
       "size": 67089027,
       "name": "Marilah saling bermaafan - Selecta No.58 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 21320,
+    "longer_than": 88,
+    "top": [
+      [
+        "orang",
+        85
+      ],
+      [
+        "rock",
+        64
+      ],
+      [
+        "djuga",
+        62
+      ],
+      [
+        "sdr",
+        60
+      ],
+      [
+        "sadja",
+        53
+      ],
+      [
+        "kelana",
+        51
+      ],
+      [
+        "mendjadi",
+        48
+      ],
+      [
+        "film",
+        47
+      ],
+      [
+        "bang",
+        46
+      ],
+      [
+        "ular",
+        38
+      ],
+      [
+        "banjak",
+        37
+      ],
+      [
+        "hati",
+        37
+      ]
+    ],
+    "distinct": [
+      [
+        "djiun",
+        34
+      ],
+      [
+        "kelana",
+        51
+      ],
+      [
+        "rock",
+        64
+      ],
+      [
+        "sdr",
+        60
+      ],
+      [
+        "djuga",
+        62
+      ],
+      [
+        "linda",
+        31
+      ],
+      [
+        "tjiptaning",
+        21
+      ],
+      [
+        "gendrosakti",
+        18
+      ],
+      [
+        "sadja",
+        53
+      ],
+      [
+        "mardinah",
+        16
+      ],
+      [
+        "ponggawa",
+        24
+      ],
+      [
+        "merpati",
+        33
+      ]
+    ],
+    "phrases": [
+      [
+        "bang djiun",
+        34
+      ],
+      [
+        "hubungan sosial roman",
+        12
+      ],
+      [
+        "panembahan tjiptaning",
+        15
+      ],
+      [
+        "adipati gendrosakti",
+        13
+      ],
+      [
+        "tanggal terbaik",
+        12
+      ],
+      [
+        "perdjalanan pengobatan",
+        12
+      ],
+      [
+        "pekerdjaan penghasilan",
+        12
+      ],
+      [
+        "merpati djantan",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        17975,
+        0.41
+      ],
+      [
+        15180,
+        0.34
+      ],
+      [
+        14996,
+        0.32
+      ],
+      [
+        14613,
+        0.3
+      ],
+      [
+        14609,
+        0.3
+      ],
+      [
+        14972,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0.31,
+      "positive": 319,
+      "negative": 169,
+      "trend": [
+        0.39,
+        0.3,
+        0.21,
+        0.21,
+        0.11,
+        0.26,
+        0.49,
+        0,
+        -0.18,
+        0.25,
+        0.11,
+        0.52,
+        0.78,
+        0.43,
+        0.17,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          49
+        ],
+        [
+          "sadness",
+          25
+        ],
+        [
+          "anger",
+          16
+        ],
+        [
+          "surprise",
+          16
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "anticipation",
+          13
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
+  }
 }

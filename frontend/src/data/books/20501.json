@@ -48,5 +48,113 @@
       "size": 3639,
       "name": "MP3 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 328,
+    "longer_than": 31,
+    "top": [
+      [
+        "encoder",
+        8
+      ],
+      [
+        "bit",
+        4
+      ],
+      [
+        "frekuensi",
+        4
+      ],
+      [
+        "audio",
+        3
+      ],
+      [
+        "berkas",
+        3
+      ],
+      [
+        "ranah",
+        3
+      ],
+      [
+        "rate",
+        3
+      ],
+      [
+        "suara",
+        3
+      ],
+      [
+        "ukuran",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "encoder",
+        8
+      ],
+      [
+        "frekuensi",
+        4
+      ],
+      [
+        "bit",
+        4
+      ],
+      [
+        "berkas",
+        3
+      ],
+      [
+        "audio",
+        3
+      ],
+      [
+        "rate",
+        3
+      ],
+      [
+        "ranah",
+        3
+      ],
+      [
+        "ukuran",
+        3
+      ],
+      [
+        "suara",
+        3
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        10248,
+        0.43
+      ],
+      [
+        12271,
+        0.29
+      ],
+      [
+        17806,
+        0.23
+      ],
+      [
+        19321,
+        0.22
+      ],
+      [
+        9570,
+        0.2
+      ],
+      [
+        17899,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
 }

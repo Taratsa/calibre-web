@@ -50,5 +50,158 @@
       "size": 2731,
       "name": "Repository_ Contoh sources.list ke 10.150. - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 385,
+    "longer_than": 34,
+    "top": [
+      [
+        "ubuntu",
+        37
+      ],
+      [
+        "deb",
+        35
+      ],
+      [
+        "main",
+        35
+      ],
+      [
+        "multiverse",
+        35
+      ],
+      [
+        "restricted",
+        35
+      ],
+      [
+        "universe",
+        35
+      ],
+      [
+        "list",
+        14
+      ],
+      [
+        "sources",
+        14
+      ],
+      [
+        "repository",
+        13
+      ],
+      [
+        "contoh",
+        12
+      ],
+      [
+        "bit",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "multiverse",
+        35
+      ],
+      [
+        "universe",
+        35
+      ],
+      [
+        "restricted",
+        35
+      ],
+      [
+        "deb",
+        35
+      ],
+      [
+        "ubuntu",
+        37
+      ],
+      [
+        "main",
+        35
+      ],
+      [
+        "repository",
+        13
+      ],
+      [
+        "sources",
+        14
+      ],
+      [
+        "list",
+        14
+      ],
+      [
+        "contoh",
+        12
+      ],
+      [
+        "bit",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "multiverse restricted universe",
+        35
+      ],
+      [
+        "main multiverse restricted",
+        35
+      ],
+      [
+        "deb http ubuntu",
+        35
+      ],
+      [
+        "restricted universe deb",
+        34
+      ],
+      [
+        "repository contoh sources",
+        11
+      ],
+      [
+        "contoh sources list",
+        11
+      ],
+      [
+        "list ke bit",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19147,
+        0.81
+      ],
+      [
+        19124,
+        0.81
+      ],
+      [
+        19142,
+        0.8
+      ],
+      [
+        17971,
+        0.78
+      ],
+      [
+        9831,
+        0.77
+      ],
+      [
+        21289,
+        0.73
+      ]
+    ],
+    "sentiment": null
+  }
 }

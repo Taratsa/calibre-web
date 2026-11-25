@@ -38,7 +38,7 @@
   ],
   "text": {
     "words": 1241,
-    "longer_than": 55,
+    "longer_than": 53,
     "top": [
       [
         "middag",
@@ -91,20 +91,24 @@
     ],
     "distinct": [
       [
-        "diepten",
-        38
-      ],
-      [
         "decimeters",
         39
       ],
       [
-        "middag",
-        40
-      ],
-      [
         "weekdag",
         36
+      ],
+      [
+        "diepten",
+        38
+      ],
+      [
+        "middernacht",
+        35
+      ],
+      [
+        "middag",
+        40
       ],
       [
         "datum",
@@ -123,15 +127,11 @@
         3
       ],
       [
-        "engelsche",
-        3
-      ],
-      [
         "barito",
         3
       ],
       [
-        "staat",
+        "engelsche",
         3
       ],
       [
@@ -140,7 +140,32 @@
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        12836,
+        0.84
+      ],
+      [
+        16105,
+        0.8
+      ],
+      [
+        16505,
+        0.79
+      ],
+      [
+        11967,
+        0.77
+      ],
+      [
+        16471,
+        0.77
+      ],
+      [
+        21574,
+        0.76
+      ]
+    ],
     "sentiment": null
   }
 }

@@ -53,5 +53,226 @@
       "size": 11774546,
       "name": "Anggana memanah angkasa _ kumpulan cerita - Adam"
     }
-  ]
+  ],
+  "text": {
+    "words": 29609,
+    "longer_than": 92,
+    "top": [
+      [
+        "arman",
+        182
+      ],
+      [
+        "baba",
+        154
+      ],
+      [
+        "kau",
+        92
+      ],
+      [
+        "orang",
+        91
+      ],
+      [
+        "rumah",
+        77
+      ],
+      [
+        "wanita",
+        77
+      ],
+      [
+        "anak",
+        67
+      ],
+      [
+        "ang",
+        53
+      ],
+      [
+        "kali",
+        50
+      ],
+      [
+        "kamar",
+        49
+      ],
+      [
+        "mati",
+        49
+      ],
+      [
+        "ati",
+        47
+      ]
+    ],
+    "distinct": [
+      [
+        "arman",
+        182
+      ],
+      [
+        "baba",
+        154
+      ],
+      [
+        "warouw",
+        44
+      ],
+      [
+        "kau",
+        92
+      ],
+      [
+        "mbok",
+        41
+      ],
+      [
+        "oom",
+        37
+      ],
+      [
+        "abi",
+        36
+      ],
+      [
+        "tok",
+        40
+      ],
+      [
+        "wanita",
+        77
+      ],
+      [
+        "ati",
+        47
+      ],
+      [
+        "bongkok",
+        27
+      ],
+      [
+        "ang",
+        53
+      ]
+    ],
+    "phrases": [
+      [
+        "mas tok",
+        35
+      ],
+      [
+        "oom warouw",
+        24
+      ],
+      [
+        "robert warouw",
+        13
+      ],
+      [
+        "daging segar",
+        9
+      ],
+      [
+        "orang tua",
+        8
+      ],
+      [
+        "pondok si bongkok",
+        5
+      ],
+      [
+        "djiwa djarot djati",
+        5
+      ],
+      [
+        "anggana memanah angkasa",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        3684,
+        0.25
+      ],
+      [
+        2980,
+        0.24
+      ],
+      [
+        7659,
+        0.24
+      ],
+      [
+        5978,
+        0.24
+      ],
+      [
+        7943,
+        0.23
+      ],
+      [
+        1702,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 430,
+      "negative": 361,
+      "trend": [
+        -0.04,
+        -0.19,
+        0.42,
+        -0.07,
+        0.1,
+        -0.03,
+        0.06,
+        0.08,
+        0.38,
+        0.18,
+        -0.02,
+        0.03,
+        0.07,
+        0.16,
+        0.38,
+        0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          79
+        ],
+        [
+          "joy",
+          63
+        ],
+        [
+          "fear",
+          42
+        ],
+        [
+          "trust",
+          34
+        ],
+        [
+          "anger",
+          33
+        ],
+        [
+          "anticipation",
+          23
+        ],
+        [
+          "surprise",
+          17
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
+  }
 }

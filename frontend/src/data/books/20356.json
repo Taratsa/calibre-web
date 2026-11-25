@@ -48,5 +48,170 @@
       "size": 4033,
       "name": "ViMP_ Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 655,
+    "longer_than": 44,
+    "top": [
+      [
+        "showvid",
+        44
+      ],
+      [
+        "php",
+        21
+      ],
+      [
+        "var",
+        20
+      ],
+      [
+        "data",
+        14
+      ],
+      [
+        "apache",
+        11
+      ],
+      [
+        "vimp",
+        9
+      ],
+      [
+        "logs",
+        7
+      ],
+      [
+        "mysql",
+        7
+      ],
+      [
+        "serveralias",
+        7
+      ],
+      [
+        "directory",
+        6
+      ],
+      [
+        "error",
+        6
+      ],
+      [
+        "instalasi",
+        6
+      ]
+    ],
+    "distinct": [
+      [
+        "showvid",
+        44
+      ],
+      [
+        "vimp",
+        9
+      ],
+      [
+        "var",
+        20
+      ],
+      [
+        "serveralias",
+        7
+      ],
+      [
+        "apache",
+        11
+      ],
+      [
+        "virtualhost",
+        6
+      ],
+      [
+        "logs",
+        7
+      ],
+      [
+        "gstreamer",
+        4
+      ],
+      [
+        "mysql",
+        7
+      ],
+      [
+        "loader",
+        4
+      ],
+      [
+        "symfony",
+        3
+      ],
+      [
+        "rewriteengine",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "var www showvid",
+        20
+      ],
+      [
+        "showvid data",
+        13
+      ],
+      [
+        "showvid com serveralias",
+        5
+      ],
+      [
+        "showvid logs",
+        7
+      ],
+      [
+        "virtualhost documentroot var",
+        3
+      ],
+      [
+        "serveralias www showvid",
+        3
+      ],
+      [
+        "rewriteengine on options",
+        3
+      ],
+      [
+        "options indexes followsymlinks",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20371,
+        0.46
+      ],
+      [
+        12479,
+        0.36
+      ],
+      [
+        12486,
+        0.36
+      ],
+      [
+        14623,
+        0.34
+      ],
+      [
+        17774,
+        0.34
+      ],
+      [
+        14667,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

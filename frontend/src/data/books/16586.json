@@ -46,5 +46,226 @@
       "size": 52730766,
       "name": "Sedjarah peperangan Diponegoro, pahlawan k - Muhammad Yamin"
     }
-  ]
+  ],
+  "text": {
+    "words": 34630,
+    "longer_than": 94,
+    "top": [
+      [
+        "dipanegara",
+        714
+      ],
+      [
+        "peperangan",
+        311
+      ],
+      [
+        "oléh",
+        302
+      ],
+      [
+        "belanda",
+        247
+      ],
+      [
+        "orang",
+        228
+      ],
+      [
+        "rakjat",
+        221
+      ],
+      [
+        "beliau",
+        196
+      ],
+      [
+        "mendjadi",
+        172
+      ],
+      [
+        "oentoek",
+        172
+      ],
+      [
+        "waktoe",
+        167
+      ],
+      [
+        "tahoen",
+        154
+      ],
+      [
+        "djoega",
+        153
+      ]
+    ],
+    "distinct": [
+      [
+        "dipanegara",
+        714
+      ],
+      [
+        "oléh",
+        302
+      ],
+      [
+        "peperangan",
+        311
+      ],
+      [
+        "soeltan",
+        137
+      ],
+      [
+        "oentoek",
+        172
+      ],
+      [
+        "waktoe",
+        167
+      ],
+      [
+        "tahoen",
+        154
+      ],
+      [
+        "rakjat",
+        221
+      ],
+      [
+        "perdjoeangan",
+        102
+      ],
+      [
+        "djoega",
+        153
+      ],
+      [
+        "jaitoe",
+        111
+      ],
+      [
+        "belanda",
+        247
+      ]
+    ],
+    "phrases": [
+      [
+        "peperangan dipanegara",
+        46
+      ],
+      [
+        "tentara belanda",
+        42
+      ],
+      [
+        "kiai madja",
+        40
+      ],
+      [
+        "soeltan sepoeh",
+        35
+      ],
+      [
+        "oléh dipanegara",
+        30
+      ],
+      [
+        "pemerintah belanda",
+        27
+      ],
+      [
+        "agama islam",
+        25
+      ],
+      [
+        "orang belanda",
+        24
+      ]
+    ],
+    "similar": [
+      [
+        4843,
+        0.35
+      ],
+      [
+        18673,
+        0.29
+      ],
+      [
+        19318,
+        0.29
+      ],
+      [
+        6699,
+        0.27
+      ],
+      [
+        19173,
+        0.27
+      ],
+      [
+        7689,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 311,
+      "negative": 248,
+      "trend": [
+        0.26,
+        -0.03,
+        0.3,
+        0.23,
+        -0.02,
+        0.35,
+        0.21,
+        0.08,
+        0.26,
+        -0.07,
+        0.02,
+        -0.03,
+        0.23,
+        -0.04,
+        0.03,
+        -0.27
+      ],
+      "emotions": [
+        [
+          "anger",
+          100
+        ],
+        [
+          "joy",
+          75
+        ],
+        [
+          "trust",
+          69
+        ],
+        [
+          "sadness",
+          29
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

@@ -48,5 +48,166 @@
       "size": 2663,
       "name": "Ssh - automatic login - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 218,
+    "longer_than": 25,
+    "top": [
+      [
+        "ssh",
+        25
+      ],
+      [
+        "dsa",
+        10
+      ],
+      [
+        "pub",
+        10
+      ],
+      [
+        "remoteserver",
+        7
+      ],
+      [
+        "remoteuser",
+        7
+      ],
+      [
+        "authorized",
+        6
+      ],
+      [
+        "cat",
+        4
+      ],
+      [
+        "remote",
+        4
+      ],
+      [
+        "rsa",
+        4
+      ],
+      [
+        "ssh-keygen",
+        4
+      ],
+      [
+        "file",
+        3
+      ],
+      [
+        "login",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ssh",
+        25
+      ],
+      [
+        "remoteuser",
+        7
+      ],
+      [
+        "remoteserver",
+        7
+      ],
+      [
+        "dsa",
+        10
+      ],
+      [
+        "pub",
+        10
+      ],
+      [
+        "ssh-keygen",
+        4
+      ],
+      [
+        "authorized",
+        6
+      ],
+      [
+        "rsa",
+        4
+      ],
+      [
+        "scp",
+        3
+      ],
+      [
+        "remote",
+        4
+      ],
+      [
+        "cat",
+        4
+      ],
+      [
+        "login",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "dsa pub",
+        8
+      ],
+      [
+        "remoteuser remoteserver",
+        7
+      ],
+      [
+        "ssh l remoteuser",
+        4
+      ],
+      [
+        "ssh authorized",
+        6
+      ],
+      [
+        "authorized keys cat",
+        3
+      ],
+      [
+        "remote server",
+        3
+      ],
+      [
+        "pub ssh",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16305,
+        0.75
+      ],
+      [
+        20494,
+        0.73
+      ],
+      [
+        12714,
+        0.66
+      ],
+      [
+        19097,
+        0.59
+      ],
+      [
+        20045,
+        0.34
+      ],
+      [
+        11596,
+        0.32
+      ]
+    ],
+    "sentiment": null
+  }
 }

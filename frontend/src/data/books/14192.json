@@ -49,5 +49,170 @@
       "size": 22687957,
       "name": "Second book of sanskrit _ a treatise on gr - Ramkrishna Gopal Bhandarkar"
     }
-  ]
+  ],
+  "text": {
+    "words": 65075,
+    "longer_than": 98,
+    "top": [
+      [
+        "conj",
+        623
+      ],
+      [
+        "parasm",
+        595
+      ],
+      [
+        "pers",
+        315
+      ],
+      [
+        "sing",
+        225
+      ],
+      [
+        "adv",
+        181
+      ],
+      [
+        "ātm",
+        176
+      ],
+      [
+        "roots",
+        171
+      ],
+      [
+        "pass",
+        159
+      ],
+      [
+        "plur",
+        157
+      ],
+      [
+        "terminations",
+        150
+      ],
+      [
+        "vowel",
+        136
+      ],
+      [
+        "dual",
+        132
+      ]
+    ],
+    "distinct": [
+      [
+        "conj",
+        623
+      ],
+      [
+        "plur",
+        157
+      ],
+      [
+        "terminations",
+        150
+      ],
+      [
+        "adv",
+        181
+      ],
+      [
+        "vowel",
+        136
+      ],
+      [
+        "pers",
+        315
+      ],
+      [
+        "roots",
+        171
+      ],
+      [
+        "sing",
+        225
+      ],
+      [
+        "atm",
+        131
+      ],
+      [
+        "optionally",
+        98
+      ],
+      [
+        "conjugation",
+        66
+      ],
+      [
+        "dual",
+        132
+      ]
+    ],
+    "phrases": [
+      [
+        "parasm and ātm",
+        58
+      ],
+      [
+        "pers sing",
+        63
+      ],
+      [
+        "parasm and atm",
+        40
+      ],
+      [
+        "dual plur",
+        50
+      ],
+      [
+        "conj parasm",
+        39
+      ],
+      [
+        "weak terminations",
+        20
+      ],
+      [
+        "pers plur",
+        20
+      ],
+      [
+        "conjunct consonant",
+        20
+      ]
+    ],
+    "similar": [
+      [
+        520,
+        0.22
+      ],
+      [
+        612,
+        0.17
+      ],
+      [
+        3111,
+        0.15
+      ],
+      [
+        616,
+        0.15
+      ],
+      [
+        677,
+        0.14
+      ],
+      [
+        783,
+        0.14
+      ]
+    ],
+    "sentiment": null
+  }
 }

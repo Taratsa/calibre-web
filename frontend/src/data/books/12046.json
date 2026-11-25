@@ -43,5 +43,214 @@
       "size": 9380209,
       "name": "Undang-undang Dasar Sementara Republik Ind - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 7158,
+    "longer_than": 75,
+    "top": [
+      [
+        "pasal",
+        169
+      ],
+      [
+        "undang-undang",
+        162
+      ],
+      [
+        "indonesia",
+        92
+      ],
+      [
+        "rakjat",
+        79
+      ],
+      [
+        "dewan",
+        78
+      ],
+      [
+        "perwakilan",
+        65
+      ],
+      [
+        "republik",
+        65
+      ],
+      [
+        "pemerintah",
+        61
+      ],
+      [
+        "presiden",
+        56
+      ],
+      [
+        "negara",
+        54
+      ],
+      [
+        "dasar",
+        53
+      ],
+      [
+        "ditetapkan",
+        44
+      ]
+    ],
+    "distinct": [
+      [
+        "pasal",
+        169
+      ],
+      [
+        "undang-undang",
+        162
+      ],
+      [
+        "rakjat",
+        79
+      ],
+      [
+        "dewan",
+        78
+      ],
+      [
+        "perwakilan",
+        65
+      ],
+      [
+        "republik",
+        65
+      ],
+      [
+        "anggauta-anggauta",
+        21
+      ],
+      [
+        "presiden",
+        56
+      ],
+      [
+        "wakil-presiden",
+        16
+      ],
+      [
+        "ditetapkan",
+        44
+      ],
+      [
+        "anggauta",
+        22
+      ],
+      [
+        "pemerintah",
+        61
+      ]
+    ],
+    "phrases": [
+      [
+        "dewan perwakilan rakjat",
+        61
+      ],
+      [
+        "republik indonesia",
+        59
+      ],
+      [
+        "undang-undang dasar",
+        34
+      ],
+      [
+        "ditetapkan dengan undang-undang",
+        14
+      ],
+      [
+        "diatur dengan undang-undang",
+        11
+      ],
+      [
+        "mahkamah agung",
+        15
+      ],
+      [
+        "dewan pengawas keuangan",
+        8
+      ],
+      [
+        "aturan-aturan jang ditetapkan",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        11681,
+        0.37
+      ],
+      [
+        16949,
+        0.25
+      ],
+      [
+        1886,
+        0.25
+      ],
+      [
+        14779,
+        0.23
+      ],
+      [
+        11211,
+        0.22
+      ],
+      [
+        6667,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.44,
+      "positive": 78,
+      "negative": 30,
+      "trend": [
+        null,
+        0.75,
+        0.54,
+        0.67,
+        0.85,
+        null,
+        null,
+        null,
+        1,
+        -0.33,
+        0.45,
+        0.5,
+        -0.45,
+        null,
+        null,
+        1
+      ],
+      "emotions": [
+        [
+          "trust",
+          20
+        ],
+        [
+          "anger",
+          15
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

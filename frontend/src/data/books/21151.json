@@ -48,5 +48,162 @@
       "size": 2850,
       "name": "OS_ Android - Mirror Source - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 228,
+    "longer_than": 26,
+    "top": [
+      [
+        "mirror",
+        20
+      ],
+      [
+        "android",
+        17
+      ],
+      [
+        "aosp",
+        9
+      ],
+      [
+        "local",
+        8
+      ],
+      [
+        "source",
+        8
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "repo",
+        6
+      ],
+      [
+        "sync",
+        5
+      ],
+      [
+        "android-source",
+        4
+      ],
+      [
+        "build",
+        4
+      ],
+      [
+        "sudo",
+        4
+      ],
+      [
+        "cyanogenmod",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "mirror",
+        20
+      ],
+      [
+        "android",
+        17
+      ],
+      [
+        "aosp",
+        9
+      ],
+      [
+        "android-source",
+        4
+      ],
+      [
+        "sync",
+        5
+      ],
+      [
+        "repo",
+        6
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "cyanogenmod",
+        3
+      ],
+      [
+        "local",
+        8
+      ],
+      [
+        "source",
+        8
+      ],
+      [
+        "build",
+        4
+      ],
+      [
+        "sudo",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local aosp",
+        8
+      ],
+      [
+        "local aosp mirror",
+        6
+      ],
+      [
+        "android mirror source",
+        5
+      ],
+      [
+        "repo sync",
+        4
+      ],
+      [
+        "mirror repo",
+        3
+      ],
+      [
+        "android build",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        9885,
+        0.75
+      ],
+      [
+        9697,
+        0.72
+      ],
+      [
+        10163,
+        0.69
+      ],
+      [
+        9888,
+        0.69
+      ],
+      [
+        9889,
+        0.69
+      ],
+      [
+        9901,
+        0.57
+      ]
+    ],
+    "sentiment": null
+  }
 }

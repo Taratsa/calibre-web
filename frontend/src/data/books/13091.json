@@ -43,5 +43,222 @@
       "size": 14936667,
       "name": "Sejarah Cirebon (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 24002,
+    "longer_than": 90,
+    "top": [
+      [
+        "cirebon",
+        380
+      ],
+      [
+        "pangeran",
+        249
+      ],
+      [
+        "sunan",
+        192
+      ],
+      [
+        "jati",
+        186
+      ],
+      [
+        "gunung",
+        169
+      ],
+      [
+        "islam",
+        165
+      ],
+      [
+        "syekh",
+        120
+      ],
+      [
+        "sultan",
+        113
+      ],
+      [
+        "orang",
+        106
+      ],
+      [
+        "ratu",
+        100
+      ],
+      [
+        "jawa",
+        99
+      ],
+      [
+        "agama",
+        94
+      ]
+    ],
+    "distinct": [
+      [
+        "cirebon",
+        380
+      ],
+      [
+        "sunan",
+        192
+      ],
+      [
+        "pangeran",
+        249
+      ],
+      [
+        "syekh",
+        120
+      ],
+      [
+        "jati",
+        186
+      ],
+      [
+        "cakrabuana",
+        55
+      ],
+      [
+        "lemahabang",
+        57
+      ],
+      [
+        "prabhu",
+        57
+      ],
+      [
+        "gunung",
+        169
+      ],
+      [
+        "islam",
+        165
+      ],
+      [
+        "sultan",
+        113
+      ],
+      [
+        "kanoman",
+        50
+      ]
+    ],
+    "phrases": [
+      [
+        "sunan gunung jati",
+        136
+      ],
+      [
+        "agama islam",
+        63
+      ],
+      [
+        "syekh lemahabang",
+        55
+      ],
+      [
+        "ratu mas",
+        49
+      ],
+      [
+        "pangeran cakrabuana",
+        40
+      ],
+      [
+        "wali sanga",
+        35
+      ],
+      [
+        "syarif hidayatullah",
+        29
+      ],
+      [
+        "dewan wali",
+        28
+      ]
+    ],
+    "similar": [
+      [
+        5976,
+        0.36
+      ],
+      [
+        600,
+        0.29
+      ],
+      [
+        6323,
+        0.25
+      ],
+      [
+        6979,
+        0.17
+      ],
+      [
+        3042,
+        0.16
+      ],
+      [
+        5489,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 262,
+      "negative": 157,
+      "trend": [
+        0.69,
+        0.4,
+        0.56,
+        0.12,
+        0.22,
+        0.16,
+        -0.21,
+        0.33,
+        -0.11,
+        0.68,
+        0.48,
+        0.45,
+        0.5,
+        -0.09,
+        0.22,
+        0.4
+      ],
+      "emotions": [
+        [
+          "anger",
+          36
+        ],
+        [
+          "trust",
+          32
+        ],
+        [
+          "sadness",
+          22
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "fear",
+          12
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

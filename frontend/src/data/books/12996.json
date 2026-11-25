@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 566,
-    "longer_than": 42,
+    "longer_than": 41,
     "top": [
       [
         "ipv",
@@ -128,15 +128,11 @@
         11
       ],
       [
-        "eth",
-        18
-      ],
-      [
         "remote-as",
         12
       ],
       [
-        "ping",
+        "eth",
         18
       ],
       [
@@ -144,12 +140,16 @@
         12
       ],
       [
-        "shutdown",
-        12
+        "ping",
+        18
       ],
       [
         "address",
         24
+      ],
+      [
+        "shutdown",
+        12
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         12997,
-        0.76
+        0.77
       ]
     ],
     "sentiment": null

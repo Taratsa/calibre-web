@@ -48,5 +48,170 @@
       "size": 4128,
       "name": "Wikipedia - Membuat Server Lokal - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 544,
+    "longer_than": 40,
+    "top": [
+      [
+        "wikipedia",
+        35
+      ],
+      [
+        "mediawiki",
+        15
+      ],
+      [
+        "php",
+        12
+      ],
+      [
+        "data",
+        7
+      ],
+      [
+        "var",
+        7
+      ],
+      [
+        "wiki",
+        7
+      ],
+      [
+        "basis",
+        6
+      ],
+      [
+        "database",
+        6
+      ],
+      [
+        "dumps",
+        6
+      ],
+      [
+        "nama",
+        6
+      ],
+      [
+        "wikimedia",
+        6
+      ],
+      [
+        "idwiki-latest-pages-articles",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "wikipedia",
+        35
+      ],
+      [
+        "mediawiki",
+        15
+      ],
+      [
+        "idwiki-latest-pages-articles",
+        5
+      ],
+      [
+        "wikimedia",
+        6
+      ],
+      [
+        "dumps",
+        6
+      ],
+      [
+        "localsettings",
+        5
+      ],
+      [
+        "idwiki",
+        3
+      ],
+      [
+        "xml",
+        5
+      ],
+      [
+        "var",
+        7
+      ],
+      [
+        "localhost",
+        5
+      ],
+      [
+        "database",
+        6
+      ],
+      [
+        "dump",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "var www wikipedia",
+        5
+      ],
+      [
+        "basis data",
+        6
+      ],
+      [
+        "localsettings php",
+        5
+      ],
+      [
+        "idwiki-latest-pages-articles xml",
+        5
+      ],
+      [
+        "dumps wikimedia",
+        5
+      ],
+      [
+        "wikimedia org idwiki",
+        3
+      ],
+      [
+        "usr local src",
+        3
+      ],
+      [
+        "konfigurasi mediawiki",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20466,
+        0.81
+      ],
+      [
+        12034,
+        0.52
+      ],
+      [
+        10410,
+        0.49
+      ],
+      [
+        17976,
+        0.46
+      ],
+      [
+        16865,
+        0.46
+      ],
+      [
+        16675,
+        0.46
+      ]
+    ],
+    "sentiment": null
+  }
 }

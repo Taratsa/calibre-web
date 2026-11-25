@@ -46,5 +46,214 @@
       "size": 24477845,
       "name": "Soal transmigrasi adalah soal mati-hidup b - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 6691,
+    "longer_than": 74,
+    "top": [
+      [
+        "transmigrasi",
+        84
+      ],
+      [
+        "indonesia",
+        54
+      ],
+      [
+        "saudara-saudara",
+        52
+      ],
+      [
+        "rakjat",
+        44
+      ],
+      [
+        "revolusi",
+        43
+      ],
+      [
+        "nasional",
+        41
+      ],
+      [
+        "djawa",
+        37
+      ],
+      [
+        "peaceful",
+        37
+      ],
+      [
+        "djuta",
+        36
+      ],
+      [
+        "saudara",
+        33
+      ],
+      [
+        "presiden",
+        29
+      ],
+      [
+        "perkataan",
+        26
+      ]
+    ],
+    "distinct": [
+      [
+        "transmigrasi",
+        84
+      ],
+      [
+        "protjot",
+        24
+      ],
+      [
+        "peaceful",
+        37
+      ],
+      [
+        "saudara-saudara",
+        52
+      ],
+      [
+        "djuta",
+        36
+      ],
+      [
+        "rakjat",
+        44
+      ],
+      [
+        "achadi",
+        14
+      ],
+      [
+        "transmigran",
+        23
+      ],
+      [
+        "musjawarah",
+        23
+      ],
+      [
+        "djawa",
+        37
+      ],
+      [
+        "padang-pasir",
+        13
+      ],
+      [
+        "kaju",
+        24
+      ]
+    ],
+    "phrases": [
+      [
+        "gerakan nasional transmigrasi",
+        15
+      ],
+      [
+        "protjot protjot protjot",
+        11
+      ],
+      [
+        "paduka jang mulia",
+        11
+      ],
+      [
+        "presiden dan saudara-saudara",
+        9
+      ],
+      [
+        "musjawarah gerakan nasional",
+        9
+      ],
+      [
+        "peaceful peaceful",
+        13
+      ],
+      [
+        "ketjil hinggap dipulau",
+        8
+      ],
+      [
+        "bangsa indonesia",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        11690,
+        0.26
+      ],
+      [
+        18657,
+        0.24
+      ],
+      [
+        10892,
+        0.24
+      ],
+      [
+        11407,
+        0.23
+      ],
+      [
+        680,
+        0.22
+      ],
+      [
+        11017,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.62,
+      "positive": 111,
+      "negative": 26,
+      "trend": [
+        0.71,
+        null,
+        1,
+        null,
+        -0.36,
+        null,
+        1,
+        null,
+        0.8,
+        1,
+        1,
+        1,
+        0.69,
+        1,
+        0.27,
+        1
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "joy",
+          3
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

@@ -43,5 +43,210 @@
       "size": 15173618,
       "name": "Practisch Nederlands _ (bahasa Belanda tan - A. Effendi Harahap"
     }
-  ]
+  ],
+  "text": {
+    "words": 12478,
+    "longer_than": 82,
+    "top": [
+      [
+        "bahasa",
+        165
+      ],
+      [
+        "huruf",
+        153
+      ],
+      [
+        "kalimat",
+        110
+      ],
+      [
+        "dipakai",
+        99
+      ],
+      [
+        "belanda",
+        97
+      ],
+      [
+        "tjontoh",
+        79
+      ],
+      [
+        "suku",
+        70
+      ],
+      [
+        "indonesia",
+        69
+      ],
+      [
+        "ali",
+        68
+      ],
+      [
+        "suara",
+        65
+      ],
+      [
+        "orang",
+        54
+      ],
+      [
+        "terletak",
+        54
+      ]
+    ],
+    "distinct": [
+      [
+        "werkw",
+        49
+      ],
+      [
+        "huruf",
+        153
+      ],
+      [
+        "nmw",
+        39
+      ],
+      [
+        "tjontoh",
+        79
+      ],
+      [
+        "kalimat",
+        110
+      ],
+      [
+        "umpamanja",
+        48
+      ],
+      [
+        "bahasa",
+        165
+      ],
+      [
+        "kata²",
+        41
+      ],
+      [
+        "meerv",
+        24
+      ],
+      [
+        "belanda",
+        97
+      ],
+      [
+        "badoe",
+        23
+      ],
+      [
+        "dipakai",
+        99
+      ]
+    ],
+    "phrases": [
+      [
+        "bahasa belanda",
+        89
+      ],
+      [
+        "bahasa indonesia",
+        54
+      ],
+      [
+        "terletak pada suku",
+        17
+      ],
+      [
+        "suku hidup",
+        24
+      ],
+      [
+        "huruf mati",
+        24
+      ],
+      [
+        "kalimat bertanja",
+        23
+      ],
+      [
+        "suku mati",
+        22
+      ],
+      [
+        "huruf hidup",
+        21
+      ]
+    ],
+    "similar": [
+      [
+        1139,
+        0.13
+      ],
+      [
+        1121,
+        0.12
+      ],
+      [
+        1094,
+        0.12
+      ],
+      [
+        12401,
+        0.11
+      ],
+      [
+        13232,
+        0.11
+      ],
+      [
+        12655,
+        0.1
+      ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 67,
+      "negative": 77,
+      "trend": [
+        0.27,
+        -0.48,
+        -0.04,
+        0.08,
+        null,
+        -1,
+        0,
+        null,
+        1,
+        -1,
+        -0.33,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          51
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

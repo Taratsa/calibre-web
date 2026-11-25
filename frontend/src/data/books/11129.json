@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 725,
-    "longer_than": 47,
+    "longer_than": 45,
     "top": [
       [
         "account",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "account",
-        24
-      ],
-      [
         "smb-enum-users",
         9
+      ],
+      [
+        "account",
+        24
       ],
       [
         "nmap",
@@ -128,24 +128,24 @@
         17
       ],
       [
-        "accounts",
-        8
-      ],
-      [
         "enumeration",
         6
+      ],
+      [
+        "accounts",
+        8
       ],
       [
         "guest",
         7
       ],
       [
-        "description",
-        9
-      ],
-      [
         "samr",
         4
+      ],
+      [
+        "description",
+        9
       ],
       [
         "expire",
@@ -201,7 +201,7 @@
       ],
       [
         11110,
-        0.31
+        0.32
       ],
       [
         16029,
@@ -209,7 +209,7 @@
       ],
       [
         11125,
-        0.26
+        0.27
       ]
     ],
     "sentiment": null

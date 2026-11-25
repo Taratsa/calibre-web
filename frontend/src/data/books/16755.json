@@ -45,5 +45,214 @@
       "size": 55568222,
       "name": "Lek-botan _ tjerita di negri tjina djeman - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 15517,
+    "longer_than": 85,
+    "top": [
+      [
+        "lantas",
+        344
+      ],
+      [
+        "poenja",
+        231
+      ],
+      [
+        "orang",
+        200
+      ],
+      [
+        "soedah",
+        188
+      ],
+      [
+        "djoega",
+        181
+      ],
+      [
+        "djadi",
+        173
+      ],
+      [
+        "tjengtjhian",
+        171
+      ],
+      [
+        "tida",
+        166
+      ],
+      [
+        "ongloen",
+        165
+      ],
+      [
+        "sadja",
+        155
+      ],
+      [
+        "satoe",
+        139
+      ],
+      [
+        "kaloe",
+        131
+      ]
+    ],
+    "distinct": [
+      [
+        "honghoen",
+        117
+      ],
+      [
+        "poenja",
+        231
+      ],
+      [
+        "lantas",
+        344
+      ],
+      [
+        "kongtjoe",
+        109
+      ],
+      [
+        "soedah",
+        188
+      ],
+      [
+        "bagitoe",
+        128
+      ],
+      [
+        "djoega",
+        181
+      ],
+      [
+        "kaloe",
+        131
+      ],
+      [
+        "tida",
+        166
+      ],
+      [
+        "satoe",
+        139
+      ],
+      [
+        "djadi",
+        173
+      ],
+      [
+        "maoe",
+        111
+      ]
+    ],
+    "phrases": [
+      [
+        "tjengtjhian dan honghoen",
+        32
+      ],
+      [
+        "kasih taoe",
+        35
+      ],
+      [
+        "lantas sadja",
+        28
+      ],
+      [
+        "ongloen lantas",
+        26
+      ],
+      [
+        "habis bilang bagitoe",
+        17
+      ],
+      [
+        "tjengtjhian lantas",
+        25
+      ],
+      [
+        "hosinaj lantas",
+        23
+      ],
+      [
+        "soedah djadi",
+        20
+      ]
+    ],
+    "similar": [
+      [
+        12649,
+        0.41
+      ],
+      [
+        13480,
+        0.35
+      ],
+      [
+        4636,
+        0.34
+      ],
+      [
+        694,
+        0.34
+      ],
+      [
+        4637,
+        0.32
+      ],
+      [
+        754,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 211,
+      "negative": 38,
+      "trend": [
+        0.33,
+        0.75,
+        0.53,
+        0.69,
+        0.73,
+        0.67,
+        1,
+        0.88,
+        0.5,
+        0.8,
+        0.86,
+        1,
+        0.69,
+        0.83,
+        0.39,
+        0.8
+      ],
+      "emotions": [
+        [
+          "joy",
+          15
+        ],
+        [
+          "trust",
+          15
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "anger",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ]
+      ]
+    }
+  }
 }

@@ -48,5 +48,146 @@
       "size": 2601,
       "name": "PERL_ Mengetahui isi INC - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 161,
+    "longer_than": 20,
+    "top": [
+      [
+        "perl",
+        20
+      ],
+      [
+        "usr",
+        11
+      ],
+      [
+        "lib",
+        10
+      ],
+      [
+        "share",
+        7
+      ],
+      [
+        "automake",
+        4
+      ],
+      [
+        "daftar",
+        3
+      ],
+      [
+        "directory",
+        3
+      ],
+      [
+        "isi",
+        3
+      ],
+      [
+        "local",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "perl",
+        20
+      ],
+      [
+        "lib",
+        10
+      ],
+      [
+        "usr",
+        11
+      ],
+      [
+        "automake",
+        4
+      ],
+      [
+        "share",
+        7
+      ],
+      [
+        "directory",
+        3
+      ],
+      [
+        "local",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ],
+      [
+        "daftar",
+        3
+      ],
+      [
+        "isi",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "perl usr",
+        7
+      ],
+      [
+        "usr share",
+        6
+      ],
+      [
+        "perl lib",
+        4
+      ],
+      [
+        "usr local",
+        3
+      ],
+      [
+        "share perl",
+        3
+      ],
+      [
+        "lib perl",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20619,
+        0.51
+      ],
+      [
+        10820,
+        0.34
+      ],
+      [
+        10120,
+        0.3
+      ],
+      [
+        20122,
+        0.27
+      ],
+      [
+        11860,
+        0.26
+      ],
+      [
+        20616,
+        0.25
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -43,5 +43,166 @@
       "size": 38714856,
       "name": "Balans-opgaven ontleend aan de praetijk en - A.P.F Michel"
     }
-  ]
+  ],
+  "text": {
+    "words": 9282,
+    "longer_than": 79,
+    "top": [
+      [
+        "winst",
+        168
+      ],
+      [
+        "debiteuren",
+        163
+      ],
+      [
+        "balans",
+        141
+      ],
+      [
+        "onkosten",
+        132
+      ],
+      [
+        "intrest",
+        119
+      ],
+      [
+        "kas",
+        112
+      ],
+      [
+        "saldo",
+        89
+      ],
+      [
+        "crediteuren",
+        80
+      ],
+      [
+        "kapitaal",
+        78
+      ],
+      [
+        "reserve",
+        71
+      ],
+      [
+        "verlies",
+        64
+      ],
+      [
+        "afschr",
+        63
+      ]
+    ],
+    "distinct": [
+      [
+        "debiteuren",
+        163
+      ],
+      [
+        "intrest",
+        119
+      ],
+      [
+        "winst",
+        168
+      ],
+      [
+        "balans",
+        141
+      ],
+      [
+        "onkosten",
+        132
+      ],
+      [
+        "crediteuren",
+        80
+      ],
+      [
+        "afschr",
+        63
+      ],
+      [
+        "saldo",
+        89
+      ],
+      [
+        "kapitaal",
+        78
+      ],
+      [
+        "kas",
+        112
+      ],
+      [
+        "dub",
+        58
+      ],
+      [
+        "verliesen",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "verliesen winst",
+        43
+      ],
+      [
+        "voorafgaande journaalposten",
+        27
+      ],
+      [
+        "kas bank",
+        23
+      ],
+      [
+        "debiteuren crediteuren",
+        22
+      ],
+      [
+        "winst balans",
+        21
+      ],
+      [
+        "verlies en winst",
+        14
+      ],
+      [
+        "saldo winst",
+        21
+      ],
+      [
+        "dubieuse debiteuren",
+        19
+      ]
+    ],
+    "similar": [
+      [
+        16250,
+        0.58
+      ],
+      [
+        17930,
+        0.31
+      ],
+      [
+        12757,
+        0.25
+      ],
+      [
+        14054,
+        0.22
+      ],
+      [
+        15136,
+        0.1
+      ]
+    ],
+    "sentiment": null
+  }
 }

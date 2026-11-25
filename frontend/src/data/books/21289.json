@@ -51,5 +51,122 @@
       "size": 2353,
       "name": "Ubuntu Repository di FOSS-ID - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 253,
+    "longer_than": 27,
+    "top": [
+      [
+        "ubuntu",
+        25
+      ],
+      [
+        "foss-id",
+        20
+      ],
+      [
+        "deb",
+        18
+      ],
+      [
+        "main",
+        18
+      ],
+      [
+        "multiverse",
+        18
+      ],
+      [
+        "restricted",
+        18
+      ],
+      [
+        "universe",
+        18
+      ],
+      [
+        "repository",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "foss-id",
+        20
+      ],
+      [
+        "multiverse",
+        18
+      ],
+      [
+        "universe",
+        18
+      ],
+      [
+        "restricted",
+        18
+      ],
+      [
+        "deb",
+        18
+      ],
+      [
+        "ubuntu",
+        25
+      ],
+      [
+        "main",
+        18
+      ],
+      [
+        "repository",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "restricted universe multiverse",
+        18
+      ],
+      [
+        "main restricted universe",
+        18
+      ],
+      [
+        "universe multiverse deb",
+        14
+      ],
+      [
+        "ubuntu repository",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19147,
+        0.74
+      ],
+      [
+        20707,
+        0.74
+      ],
+      [
+        9592,
+        0.73
+      ],
+      [
+        9665,
+        0.73
+      ],
+      [
+        9579,
+        0.73
+      ],
+      [
+        9593,
+        0.73
+      ]
+    ],
+    "sentiment": null
+  }
 }

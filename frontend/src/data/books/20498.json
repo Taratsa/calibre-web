@@ -48,5 +48,150 @@
       "size": 3487,
       "name": "Membuat Proxy dgn UBUNTU _ LUSCA - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 347,
+    "longer_than": 32,
+    "top": [
+      [
+        "squid",
+        17
+      ],
+      [
+        "install",
+        11
+      ],
+      [
+        "sudo",
+        11
+      ],
+      [
+        "lusca",
+        10
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "proxy",
+        8
+      ],
+      [
+        "cache",
+        7
+      ],
+      [
+        "ubuntu",
+        6
+      ],
+      [
+        "usr",
+        6
+      ],
+      [
+        "file",
+        4
+      ],
+      [
+        "fmi",
+        3
+      ],
+      [
+        "perintah",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "squid",
+        17
+      ],
+      [
+        "lusca",
+        10
+      ],
+      [
+        "cache",
+        7
+      ],
+      [
+        "proxy",
+        8
+      ],
+      [
+        "sudo",
+        11
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "install",
+        11
+      ],
+      [
+        "fmi",
+        3
+      ],
+      [
+        "usr",
+        6
+      ],
+      [
+        "ubuntu",
+        6
+      ],
+      [
+        "tar",
+        3
+      ],
+      [
+        "file",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo apt-get install",
+        8
+      ],
+      [
+        "ubuntu lusca",
+        3
+      ],
+      [
+        "lusca fmi",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20500,
+        0.59
+      ],
+      [
+        20106,
+        0.56
+      ],
+      [
+        11066,
+        0.38
+      ],
+      [
+        13386,
+        0.36
+      ],
+      [
+        9463,
+        0.33
+      ],
+      [
+        19106,
+        0.33
+      ]
+    ],
+    "sentiment": null
+  }
 }

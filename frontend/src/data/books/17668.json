@@ -45,5 +45,214 @@
       "size": 60577750,
       "name": "Pidato P.J.M. Presiden Sukarno pada upacar - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 8454,
+    "longer_than": 77,
+    "top": [
+      [
+        "saudara-saudara",
+        65
+      ],
+      [
+        "eropa",
+        47
+      ],
+      [
+        "gerakan",
+        47
+      ],
+      [
+        "indonesia",
+        47
+      ],
+      [
+        "doctor",
+        44
+      ],
+      [
+        "gelar",
+        43
+      ],
+      [
+        "promovendus",
+        41
+      ],
+      [
+        "universitas",
+        41
+      ],
+      [
+        "imperialisme",
+        37
+      ],
+      [
+        "mendjadi",
+        36
+      ],
+      [
+        "asia",
+        34
+      ],
+      [
+        "didalam",
+        34
+      ]
+    ],
+    "distinct": [
+      [
+        "promovendus",
+        41
+      ],
+      [
+        "saudara-saudara",
+        65
+      ],
+      [
+        "antithese",
+        30
+      ],
+      [
+        "doctor",
+        44
+      ],
+      [
+        "honoris",
+        21
+      ],
+      [
+        "gelar",
+        43
+      ],
+      [
+        "imperialisme",
+        37
+      ],
+      [
+        "hasanuddin",
+        24
+      ],
+      [
+        "gooth",
+        11
+      ],
+      [
+        "causa",
+        20
+      ],
+      [
+        "ilmijah",
+        15
+      ],
+      [
+        "eropa",
+        47
+      ]
+    ],
+    "phrases": [
+      [
+        "doctor honoris causa",
+        20
+      ],
+      [
+        "gelar doktor kehormatan",
+        17
+      ],
+      [
+        "gelar doctor honoris",
+        16
+      ],
+      [
+        "gerakan nasional",
+        20
+      ],
+      [
+        "universitas hasanuddin",
+        18
+      ],
+      [
+        "hubungan antar negara",
+        12
+      ],
+      [
+        "doctor of law",
+        12
+      ],
+      [
+        "kapitalisme di eropa",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        13106,
+        0.41
+      ],
+      [
+        4927,
+        0.32
+      ],
+      [
+        4590,
+        0.32
+      ],
+      [
+        12600,
+        0.32
+      ],
+      [
+        7632,
+        0.31
+      ],
+      [
+        13893,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 77,
+      "negative": 29,
+      "trend": [
+        1,
+        null,
+        0.82,
+        1,
+        null,
+        null,
+        -0.33,
+        0.71,
+        null,
+        null,
+        0.5,
+        0.5,
+        -0.2,
+        0,
+        null,
+        0
+      ],
+      "emotions": [
+        [
+          "joy",
+          10
+        ],
+        [
+          "anger",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "trust",
+          3
+        ]
+      ]
+    }
+  }
 }

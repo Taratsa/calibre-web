@@ -49,5 +49,210 @@
       "size": 61884308,
       "name": "Hak suara dalam perseroan terbatas _ undan - Indonesia. Departemen Kehakiman"
     }
-  ]
+  ],
+  "text": {
+    "words": 18965,
+    "longer_than": 87,
+    "top": [
+      [
+        "pasal",
+        228
+      ],
+      [
+        "undang-undang",
+        205
+      ],
+      [
+        "saham",
+        204
+      ],
+      [
+        "modal",
+        167
+      ],
+      [
+        "hukum",
+        146
+      ],
+      [
+        "suara",
+        135
+      ],
+      [
+        "pemerintah",
+        124
+      ],
+      [
+        "perubahan",
+        112
+      ],
+      [
+        "ketentuan",
+        103
+      ],
+      [
+        "pemegang",
+        103
+      ],
+      [
+        "kitab",
+        94
+      ],
+      [
+        "dagang",
+        93
+      ]
+    ],
+    "distinct": [
+      [
+        "saham",
+        204
+      ],
+      [
+        "pasal",
+        228
+      ],
+      [
+        "kuhd",
+        60
+      ],
+      [
+        "ajat",
+        83
+      ],
+      [
+        "undang-undang",
+        205
+      ],
+      [
+        "modal",
+        167
+      ],
+      [
+        "perseroan",
+        70
+      ],
+      [
+        "dpr-gr",
+        58
+      ],
+      [
+        "ruu",
+        80
+      ],
+      [
+        "pemegang",
+        103
+      ],
+      [
+        "fraksi",
+        66
+      ],
+      [
+        "penambahan",
+        80
+      ]
+    ],
+    "phrases": [
+      [
+        "perubahan dan penambahan",
+        71
+      ],
+      [
+        "pemegang saham",
+        101
+      ],
+      [
+        "undang-undang hukum dagang",
+        65
+      ],
+      [
+        "kitab undang-undang hukum",
+        65
+      ],
+      [
+        "penambahan atas ketentuan",
+        49
+      ],
+      [
+        "ketentuan pasal",
+        65
+      ],
+      [
+        "hak suara",
+        64
+      ],
+      [
+        "pasal ajat",
+        52
+      ]
+    ],
+    "similar": [
+      [
+        6667,
+        0.25
+      ],
+      [
+        9333,
+        0.25
+      ],
+      [
+        8745,
+        0.23
+      ],
+      [
+        542,
+        0.22
+      ],
+      [
+        12046,
+        0.22
+      ],
+      [
+        1886,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.8,
+      "positive": 311,
+      "negative": 35,
+      "trend": [
+        1,
+        1,
+        0.78,
+        null,
+        0.89,
+        0.58,
+        0.92,
+        0.52,
+        0.78,
+        0.82,
+        0.88,
+        0.81,
+        1,
+        1,
+        0.3,
+        0.81
+      ],
+      "emotions": [
+        [
+          "trust",
+          39
+        ],
+        [
+          "anticipation",
+          27
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
+  }
 }

@@ -45,5 +45,189 @@
       "size": 29403980,
       "name": "Deru tjampur debu - 192-1949 Chairil Anwar"
     }
-  ]
+  ],
+  "text": {
+    "words": 1868,
+    "longer_than": 59,
+    "top": [
+      [
+        "kau",
+        30
+      ],
+      [
+        "djuga",
+        14
+      ],
+      [
+        "beta",
+        12
+      ],
+      [
+        "djadi",
+        12
+      ],
+      [
+        "darah",
+        11
+      ],
+      [
+        "mati",
+        11
+      ],
+      [
+        "hilang",
+        9
+      ],
+      [
+        "sepi",
+        9
+      ],
+      [
+        "adjal",
+        7
+      ],
+      [
+        "djauh",
+        7
+      ],
+      [
+        "dunia",
+        7
+      ],
+      [
+        "tinggal",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "kau",
+        30
+      ],
+      [
+        "beta",
+        12
+      ],
+      [
+        "mengutjur",
+        6
+      ],
+      [
+        "djuga",
+        14
+      ],
+      [
+        "adjal",
+        7
+      ],
+      [
+        "pattiradjawane",
+        5
+      ],
+      [
+        "djadi",
+        12
+      ],
+      [
+        "tjintaku",
+        4
+      ],
+      [
+        "djauh",
+        7
+      ],
+      [
+        "sepi",
+        9
+      ],
+      [
+        "darah",
+        11
+      ],
+      [
+        "datu-datu",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "mengutjur darah",
+        5
+      ],
+      [
+        "beta pattiradjawane",
+        5
+      ],
+      [
+        "tubuh mengutjur",
+        3
+      ],
+      [
+        "selamat tinggal",
+        3
+      ],
+      [
+        "djauh dipulau",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        720,
+        0.31
+      ],
+      [
+        276,
+        0.31
+      ],
+      [
+        1297,
+        0.23
+      ],
+      [
+        7651,
+        0.22
+      ],
+      [
+        7788,
+        0.17
+      ],
+      [
+        277,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": -0.23,
+      "positive": 22,
+      "negative": 35,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          18
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

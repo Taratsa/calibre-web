@@ -48,5 +48,158 @@
       "size": 4172,
       "name": "POLISI_ Tindakan Pertama Apabila Terlibat - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 640,
+    "longer_than": 43,
+    "top": [
+      [
+        "kecelakaan",
+        14
+      ],
+      [
+        "korban",
+        13
+      ],
+      [
+        "petugas",
+        11
+      ],
+      [
+        "kendaraan",
+        10
+      ],
+      [
+        "lintas",
+        7
+      ],
+      [
+        "kejadian",
+        6
+      ],
+      [
+        "terlibat",
+        6
+      ],
+      [
+        "menghubungi",
+        5
+      ],
+      [
+        "pertolongan",
+        5
+      ],
+      [
+        "polisi",
+        5
+      ],
+      [
+        "sikap",
+        4
+      ],
+      [
+        "terdekat",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "kecelakaan",
+        14
+      ],
+      [
+        "petugas",
+        11
+      ],
+      [
+        "kendaraan",
+        10
+      ],
+      [
+        "korban",
+        13
+      ],
+      [
+        "lintas",
+        7
+      ],
+      [
+        "menghubungi",
+        5
+      ],
+      [
+        "pertolongan",
+        5
+      ],
+      [
+        "kejadian",
+        6
+      ],
+      [
+        "terdekat",
+        4
+      ],
+      [
+        "catat",
+        3
+      ],
+      [
+        "terlibat",
+        6
+      ],
+      [
+        "polisi",
+        5
+      ]
+    ],
+    "phrases": [
+      [
+        "kecelakaan lalu lintas",
+        7
+      ],
+      [
+        "terlibat kecelakaan",
+        5
+      ],
+      [
+        "menghubungi petugas",
+        4
+      ],
+      [
+        "rumah sakit",
+        3
+      ],
+      [
+        "menolong korban",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        15227,
+        0.39
+      ],
+      [
+        8058,
+        0.15
+      ],
+      [
+        2789,
+        0.15
+      ],
+      [
+        20693,
+        0.14
+      ],
+      [
+        4111,
+        0.13
+      ],
+      [
+        7126,
+        0.12
+      ]
+    ],
+    "sentiment": null
+  }
 }

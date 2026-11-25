@@ -45,5 +45,210 @@
       "size": 19022039,
       "name": "Boekoe pantoen karang-karangan - Si Nona Boedjang"
     }
-  ]
+  ],
+  "text": {
+    "words": 5648,
+    "longer_than": 72,
+    "top": [
+      [
+        "ikan",
+        72
+      ],
+      [
+        "orang",
+        61
+      ],
+      [
+        "dalem",
+        58
+      ],
+      [
+        "djangan",
+        46
+      ],
+      [
+        "nona",
+        40
+      ],
+      [
+        "bikin",
+        33
+      ],
+      [
+        "tida",
+        33
+      ],
+      [
+        "sampe",
+        32
+      ],
+      [
+        "boedjang",
+        31
+      ],
+      [
+        "maoe",
+        30
+      ],
+      [
+        "djadi",
+        29
+      ],
+      [
+        "mati",
+        29
+      ]
+    ],
+    "distinct": [
+      [
+        "dalem",
+        58
+      ],
+      [
+        "boedjang",
+        31
+      ],
+      [
+        "nona",
+        40
+      ],
+      [
+        "ikan",
+        72
+      ],
+      [
+        "djangan",
+        46
+      ],
+      [
+        "maoe",
+        30
+      ],
+      [
+        "sair",
+        23
+      ],
+      [
+        "sampe",
+        32
+      ],
+      [
+        "bersobat",
+        18
+      ],
+      [
+        "pegi",
+        22
+      ],
+      [
+        "tida",
+        33
+      ],
+      [
+        "djikaloe",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "sair dikarang",
+        15
+      ],
+      [
+        "dikarang si ikan",
+        9
+      ],
+      [
+        "orang boedjang",
+        8
+      ],
+      [
+        "pasang pelita",
+        7
+      ],
+      [
+        "toekang laksa",
+        6
+      ],
+      [
+        "tali djangan ditjaboet",
+        4
+      ],
+      [
+        "pisang kepok dalem",
+        4
+      ],
+      [
+        "pinggir kali",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        11932,
+        0.4
+      ],
+      [
+        12802,
+        0.27
+      ],
+      [
+        13962,
+        0.26
+      ],
+      [
+        11897,
+        0.26
+      ],
+      [
+        11097,
+        0.26
+      ],
+      [
+        13394,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": -0.51,
+      "positive": 21,
+      "negative": 64,
+      "trend": [
+        -0.5,
+        -0.67,
+        0,
+        null,
+        null,
+        -0.33,
+        null,
+        -0.6,
+        -0.62,
+        -1,
+        null,
+        0.2,
+        -0.8,
+        null,
+        null,
+        -0.67
+      ],
+      "emotions": [
+        [
+          "sadness",
+          29
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "joy",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

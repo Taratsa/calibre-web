@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 890,
-    "longer_than": 50,
+    "longer_than": 48,
     "top": [
       [
         "kebudayaan",
@@ -150,12 +150,25 @@
         6
       ],
       [
-        "segi",
+        "ideologi",
         4
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        15709,
+        0.16
+      ],
+      [
+        15741,
+        0.13
+      ],
+      [
+        11127,
+        0.11
+      ]
+    ],
     "sentiment": null
   }
 }

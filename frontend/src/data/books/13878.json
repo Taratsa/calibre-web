@@ -45,5 +45,226 @@
       "size": 20394047,
       "name": "Sedjarah kesenian Indonesia - S. Saripin"
     }
-  ]
+  ],
+  "text": {
+    "words": 25451,
+    "longer_than": 91,
+    "top": [
+      [
+        "seni",
+        180
+      ],
+      [
+        "tjandi",
+        177
+      ],
+      [
+        "zaman",
+        148
+      ],
+      [
+        "batu",
+        138
+      ],
+      [
+        "mesdjid",
+        115
+      ],
+      [
+        "kesenian",
+        113
+      ],
+      [
+        "islam",
+        94
+      ],
+      [
+        "djuga",
+        92
+      ],
+      [
+        "indonesia",
+        92
+      ],
+      [
+        "didalam",
+        89
+      ],
+      [
+        "bentuk",
+        88
+      ],
+      [
+        "ragam",
+        70
+      ]
+    ],
+    "distinct": [
+      [
+        "tjandi",
+        177
+      ],
+      [
+        "mesdjid",
+        115
+      ],
+      [
+        "çiva",
+        42
+      ],
+      [
+        "seni",
+        180
+      ],
+      [
+        "kesenian",
+        113
+      ],
+      [
+        "djuga",
+        92
+      ],
+      [
+        "zaman",
+        148
+      ],
+      [
+        "batu",
+        138
+      ],
+      [
+        "tjandi-tjandi",
+        31
+      ],
+      [
+        "hias",
+        49
+      ],
+      [
+        "didalam",
+        89
+      ],
+      [
+        "stupa",
+        34
+      ]
+    ],
+    "phrases": [
+      [
+        "seni rupa",
+        44
+      ],
+      [
+        "ragam hias",
+        39
+      ],
+      [
+        "sedjarah kesenian",
+        28
+      ],
+      [
+        "zaman batu",
+        23
+      ],
+      [
+        "zaman perunggu",
+        18
+      ],
+      [
+        "kesenian islam",
+        16
+      ],
+      [
+        "tanah liat",
+        15
+      ],
+      [
+        "seni bangunan",
+        15
+      ]
+    ],
+    "similar": [
+      [
+        4838,
+        0.18
+      ],
+      [
+        1069,
+        0.18
+      ],
+      [
+        661,
+        0.17
+      ],
+      [
+        1885,
+        0.15
+      ],
+      [
+        681,
+        0.15
+      ],
+      [
+        6648,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 194,
+      "negative": 66,
+      "trend": [
+        0.95,
+        0.75,
+        0.5,
+        0.14,
+        0.45,
+        0.75,
+        0.2,
+        0.43,
+        0.64,
+        0.05,
+        0,
+        0,
+        0.5,
+        0.46,
+        0,
+        0.71
+      ],
+      "emotions": [
+        [
+          "joy",
+          55
+        ],
+        [
+          "anger",
+          11
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

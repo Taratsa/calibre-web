@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 534,
-    "longer_than": 41,
+    "longer_than": 40,
     "top": [
       [
         "log",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "log",
-        16
-      ],
-      [
         "sql",
         12
+      ],
+      [
+        "log",
+        16
       ],
       [
         "injection",
@@ -200,8 +200,8 @@
         0.35
       ],
       [
-        11551,
-        0.35
+        15962,
+        0.34
       ]
     ],
     "sentiment": null

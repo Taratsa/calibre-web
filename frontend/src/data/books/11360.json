@@ -43,5 +43,226 @@
       "size": 3418216,
       "name": "Carita Badak Pamalang 2 (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 32369,
+    "longer_than": 93,
+    "top": [
+      [
+        "geuning",
+        415
+      ],
+      [
+        "geulis",
+        290
+      ],
+      [
+        "geus",
+        288
+      ],
+      [
+        "bae",
+        260
+      ],
+      [
+        "teu",
+        229
+      ],
+      [
+        "kasep",
+        205
+      ],
+      [
+        "badak",
+        190
+      ],
+      [
+        "baheula",
+        185
+      ],
+      [
+        "meureun",
+        183
+      ],
+      [
+        "nagara",
+        182
+      ],
+      [
+        "pamalang",
+        173
+      ],
+      [
+        "kana",
+        158
+      ]
+    ],
+    "distinct": [
+      [
+        "geuning",
+        415
+      ],
+      [
+        "geulis",
+        290
+      ],
+      [
+        "geus",
+        288
+      ],
+      [
+        "ndeuk",
+        157
+      ],
+      [
+        "pamalang",
+        173
+      ],
+      [
+        "kasep",
+        205
+      ],
+      [
+        "bae",
+        260
+      ],
+      [
+        "cenah",
+        157
+      ],
+      [
+        "meureun",
+        183
+      ],
+      [
+        "teu",
+        229
+      ],
+      [
+        "baheula",
+        185
+      ],
+      [
+        "badak",
+        190
+      ]
+    ],
+    "phrases": [
+      [
+        "badak pamalang",
+        170
+      ],
+      [
+        "nusa bali",
+        110
+      ],
+      [
+        "kuta tambaga",
+        108
+      ],
+      [
+        "cenah geuning",
+        85
+      ],
+      [
+        "demang rangsang bentang",
+        55
+      ],
+      [
+        "parakan wayang",
+        78
+      ],
+      [
+        "nagara kuta",
+        65
+      ],
+      [
+        "kasep badak",
+        65
+      ]
+    ],
+    "similar": [
+      [
+        3601,
+        0.66
+      ],
+      [
+        11454,
+        0.66
+      ],
+      [
+        5975,
+        0.35
+      ],
+      [
+        6121,
+        0.35
+      ],
+      [
+        11735,
+        0.3
+      ],
+      [
+        11644,
+        0.28
+      ]
+    ],
+    "sentiment": {
+      "score": 0.27,
+      "positive": 278,
+      "negative": 160,
+      "trend": [
+        0.45,
+        0.62,
+        0.38,
+        0.42,
+        0.28,
+        -0.04,
+        0.08,
+        0.4,
+        0.18,
+        0.19,
+        0.45,
+        -0.3,
+        -0.11,
+        0.1,
+        -0.2,
+        null
+      ],
+      "emotions": [
+        [
+          "joy",
+          31
+        ],
+        [
+          "disgust",
+          26
+        ],
+        [
+          "anger",
+          23
+        ],
+        [
+          "fear",
+          11
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "surprise",
+          5
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

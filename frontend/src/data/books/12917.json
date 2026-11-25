@@ -45,5 +45,222 @@
       "size": 9671130,
       "name": "Abdikanlah hidupmu kepada Indonesia - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 6880,
+    "longer_than": 74,
+    "top": [
+      [
+        "indonesia",
+        74
+      ],
+      [
+        "belanda",
+        63
+      ],
+      [
+        "saudara-saudara",
+        50
+      ],
+      [
+        "didalam",
+        49
+      ],
+      [
+        "rakjat",
+        32
+      ],
+      [
+        "revolusi",
+        30
+      ],
+      [
+        "barat",
+        29
+      ],
+      [
+        "irian",
+        28
+      ],
+      [
+        "mengadakan",
+        28
+      ],
+      [
+        "djikalau",
+        27
+      ],
+      [
+        "kaum",
+        26
+      ],
+      [
+        "buruh",
+        24
+      ]
+    ],
+    "distinct": [
+      [
+        "saudara-saudara",
+        50
+      ],
+      [
+        "belanda",
+        63
+      ],
+      [
+        "didalam",
+        49
+      ],
+      [
+        "djikalau",
+        27
+      ],
+      [
+        "jaurès",
+        14
+      ],
+      [
+        "rakjat",
+        32
+      ],
+      [
+        "djandji",
+        21
+      ],
+      [
+        "irian",
+        28
+      ],
+      [
+        "punja",
+        20
+      ],
+      [
+        "indonesia",
+        74
+      ],
+      [
+        "djuga",
+        23
+      ],
+      [
+        "jaitu",
+        21
+      ]
+    ],
+    "phrases": [
+      [
+        "irian barat",
+        28
+      ],
+      [
+        "kaum buruh",
+        20
+      ],
+      [
+        "hadji agus salim",
+        7
+      ],
+      [
+        "rosa luxemburg",
+        9
+      ],
+      [
+        "minum air",
+        8
+      ],
+      [
+        "gerakan kaum",
+        8
+      ],
+      [
+        "machtsvorming dan machtsaanwending",
+        5
+      ],
+      [
+        "bangsa indonesia",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        12832,
+        0.26
+      ],
+      [
+        12177,
+        0.26
+      ],
+      [
+        683,
+        0.23
+      ],
+      [
+        12118,
+        0.22
+      ],
+      [
+        13106,
+        0.22
+      ],
+      [
+        10969,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 66,
+      "negative": 48,
+      "trend": [
+        0.14,
+        null,
+        -0.43,
+        0.33,
+        0.71,
+        null,
+        -0.29,
+        0.75,
+        0.5,
+        -0.2,
+        1,
+        -0.27,
+        null,
+        0.6,
+        null,
+        0
+      ],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

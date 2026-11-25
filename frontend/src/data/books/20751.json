@@ -50,5 +50,118 @@
       "size": 2310,
       "name": "Format Disk - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 84,
+    "longer_than": 12,
+    "top": [
+      [
+        "dev",
+        8
+      ],
+      [
+        "format",
+        6
+      ],
+      [
+        "sdb",
+        6
+      ],
+      [
+        "disk",
+        5
+      ],
+      [
+        "harddisk",
+        5
+      ],
+      [
+        "mkfs",
+        4
+      ],
+      [
+        "ext",
+        3
+      ],
+      [
+        "label",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "sdb",
+        6
+      ],
+      [
+        "mkfs",
+        4
+      ],
+      [
+        "dev",
+        8
+      ],
+      [
+        "harddisk",
+        5
+      ],
+      [
+        "disk",
+        5
+      ],
+      [
+        "format",
+        6
+      ],
+      [
+        "ext",
+        3
+      ],
+      [
+        "label",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "dev sdb",
+        6
+      ],
+      [
+        "mkfs ext",
+        3
+      ],
+      [
+        "format disk",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19958,
+        0.74
+      ],
+      [
+        19577,
+        0.71
+      ],
+      [
+        9857,
+        0.58
+      ],
+      [
+        19959,
+        0.47
+      ],
+      [
+        11206,
+        0.44
+      ],
+      [
+        20610,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
 }

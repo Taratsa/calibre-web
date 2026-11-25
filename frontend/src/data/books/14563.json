@@ -43,5 +43,226 @@
       "size": 26757562,
       "name": "Tambo sakti alam kerinci _ Buku Pertama - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 46113,
+    "longer_than": 96,
+    "top": [
+      [
+        "orang",
+        477
+      ],
+      [
+        "adat",
+        301
+      ],
+      [
+        "rumah",
+        295
+      ],
+      [
+        "kerinci",
+        267
+      ],
+      [
+        "depati",
+        248
+      ],
+      [
+        "ngan",
+        216
+      ],
+      [
+        "anak",
+        214
+      ],
+      [
+        "tua",
+        170
+      ],
+      [
+        "kamai",
+        137
+      ],
+      [
+        "tengganai",
+        135
+      ],
+      [
+        "kayo",
+        130
+      ],
+      [
+        "mamak",
+        114
+      ]
+    ],
+    "distinct": [
+      [
+        "depati",
+        248
+      ],
+      [
+        "kerinci",
+        267
+      ],
+      [
+        "tengganai",
+        135
+      ],
+      [
+        "kamai",
+        137
+      ],
+      [
+        "ideak",
+        87
+      ],
+      [
+        "kayo",
+        130
+      ],
+      [
+        "ngan",
+        216
+      ],
+      [
+        "ninik",
+        110
+      ],
+      [
+        "adat",
+        301
+      ],
+      [
+        "mamak",
+        114
+      ],
+      [
+        "pado",
+        85
+      ],
+      [
+        "orang",
+        477
+      ]
+    ],
+    "phrases": [
+      [
+        "orang tua",
+        119
+      ],
+      [
+        "ninik mamak",
+        100
+      ],
+      [
+        "orang kerinci",
+        37
+      ],
+      [
+        "parno adat",
+        34
+      ],
+      [
+        "helai kain",
+        31
+      ],
+      [
+        "orang semenda",
+        28
+      ],
+      [
+        "depati ninik",
+        28
+      ],
+      [
+        "depati iv helai",
+        18
+      ]
+    ],
+    "similar": [
+      [
+        2866,
+        0.24
+      ],
+      [
+        2936,
+        0.21
+      ],
+      [
+        2964,
+        0.19
+      ],
+      [
+        2889,
+        0.18
+      ],
+      [
+        8384,
+        0.18
+      ],
+      [
+        5982,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 502,
+      "negative": 353,
+      "trend": [
+        0.47,
+        0.09,
+        0.07,
+        0.03,
+        -0.22,
+        0.09,
+        0.08,
+        0.73,
+        0.77,
+        0.24,
+        0.38,
+        -0.29,
+        0.51,
+        0.42,
+        0.28,
+        0.28
+      ],
+      "emotions": [
+        [
+          "sadness",
+          59
+        ],
+        [
+          "trust",
+          52
+        ],
+        [
+          "joy",
+          35
+        ],
+        [
+          "anger",
+          32
+        ],
+        [
+          "anticipation",
+          28
+        ],
+        [
+          "fear",
+          22
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

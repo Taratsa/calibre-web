@@ -48,5 +48,170 @@
       "size": 4678,
       "name": "RockCluster_ Administrasi Pemakaian - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 751,
+    "longer_than": 46,
+    "top": [
+      [
+        "node",
+        24
+      ],
+      [
+        "compute",
+        18
+      ],
+      [
+        "rocks",
+        16
+      ],
+      [
+        "paket",
+        11
+      ],
+      [
+        "install",
+        9
+      ],
+      [
+        "rockcluster",
+        9
+      ],
+      [
+        "yum",
+        8
+      ],
+      [
+        "export",
+        7
+      ],
+      [
+        "file",
+        7
+      ],
+      [
+        "perintah",
+        7
+      ],
+      [
+        "reinstall",
+        7
+      ],
+      [
+        "tamu",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "compute",
+        18
+      ],
+      [
+        "node",
+        24
+      ],
+      [
+        "rocks",
+        16
+      ],
+      [
+        "rockcluster",
+        9
+      ],
+      [
+        "reinstall",
+        7
+      ],
+      [
+        "yum",
+        8
+      ],
+      [
+        "front-end",
+        6
+      ],
+      [
+        "paket",
+        11
+      ],
+      [
+        "export",
+        7
+      ],
+      [
+        "rpms",
+        3
+      ],
+      [
+        "centos",
+        4
+      ],
+      [
+        "boot",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "compute os compute",
+        7
+      ],
+      [
+        "compute node",
+        8
+      ],
+      [
+        "export rocks install",
+        5
+      ],
+      [
+        "rocks install contrib",
+        3
+      ],
+      [
+        "rockcluster administrasi pemakaian",
+        3
+      ],
+      [
+        "login sebagai root",
+        3
+      ],
+      [
+        "contrib x rpms",
+        3
+      ],
+      [
+        "menambah paket",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20291,
+        0.4
+      ],
+      [
+        20240,
+        0.3
+      ],
+      [
+        20239,
+        0.27
+      ],
+      [
+        10319,
+        0.21
+      ],
+      [
+        21262,
+        0.2
+      ],
+      [
+        20288,
+        0.18
+      ]
+    ],
+    "sentiment": null
+  }
 }

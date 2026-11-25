@@ -43,5 +43,218 @@
       "size": 27746699,
       "name": "Djepang 1937 - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 9013,
+    "longer_than": 78,
+    "top": [
+      [
+        "djepang",
+        216
+      ],
+      [
+        "tiongkok",
+        55
+      ],
+      [
+        "tentera",
+        54
+      ],
+      [
+        "amerika",
+        47
+      ],
+      [
+        "perang",
+        47
+      ],
+      [
+        "laut",
+        44
+      ],
+      [
+        "angkatan",
+        42
+      ],
+      [
+        "inggeris",
+        31
+      ],
+      [
+        "tokio",
+        29
+      ],
+      [
+        "pasukan",
+        26
+      ],
+      [
+        "pasukan-pasukan",
+        25
+      ],
+      [
+        "depang",
+        24
+      ]
+    ],
+    "distinct": [
+      [
+        "djepang",
+        216
+      ],
+      [
+        "tentera",
+        54
+      ],
+      [
+        "tiongkok",
+        55
+      ],
+      [
+        "tokio",
+        29
+      ],
+      [
+        "depang",
+        24
+      ],
+      [
+        "pasukan-pasukan",
+        25
+      ],
+      [
+        "diepang",
+        18
+      ],
+      [
+        "inggeris",
+        31
+      ],
+      [
+        "angkatan",
+        42
+      ],
+      [
+        "djapang",
+        11
+      ],
+      [
+        "amerika",
+        47
+      ],
+      [
+        "laut",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "angkatan laut",
+        23
+      ],
+      [
+        "tentera djepang",
+        15
+      ],
+      [
+        "pasukan-pasukan djepang",
+        11
+      ],
+      [
+        "menteri luar negeri",
+        7
+      ],
+      [
+        "mac arthur",
+        9
+      ],
+      [
+        "dibawah pimpinan",
+        9
+      ],
+      [
+        "tentara djepang",
+        8
+      ],
+      [
+        "perdana menteri",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        14833,
+        0.25
+      ],
+      [
+        19389,
+        0.23
+      ],
+      [
+        13990,
+        0.22
+      ],
+      [
+        16982,
+        0.19
+      ],
+      [
+        4808,
+        0.17
+      ],
+      [
+        6783,
+        0.15
+      ]
+    ],
+    "sentiment": {
+      "score": -0.46,
+      "positive": 38,
+      "negative": 102,
+      "trend": [
+        -0.5,
+        null,
+        -0.71,
+        null,
+        -0.43,
+        null,
+        -0.56,
+        -0.33,
+        -0.25,
+        -0.6,
+        -0.43,
+        -0.39,
+        -0.78,
+        -0.67,
+        -0.33,
+        -0.71
+      ],
+      "emotions": [
+        [
+          "anger",
+          70
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

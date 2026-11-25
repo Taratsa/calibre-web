@@ -48,5 +48,170 @@
       "size": 11024,
       "name": "Linux Malware Detect - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 3589,
+    "longer_than": 66,
+    "top": [
+      [
+        "file",
+        49
+      ],
+      [
+        "maldet",
+        42
+      ],
+      [
+        "malware",
+        37
+      ],
+      [
+        "php",
+        34
+      ],
+      [
+        "user",
+        33
+      ],
+      [
+        "lmd",
+        29
+      ],
+      [
+        "scan",
+        29
+      ],
+      [
+        "monitor",
+        26
+      ],
+      [
+        "quarantine",
+        23
+      ],
+      [
+        "inotify",
+        22
+      ],
+      [
+        "paths",
+        21
+      ],
+      [
+        "signatures",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "lmd",
+        29
+      ],
+      [
+        "inotify",
+        22
+      ],
+      [
+        "malware",
+        37
+      ],
+      [
+        "quarantine",
+        23
+      ],
+      [
+        "cmdshell",
+        15
+      ],
+      [
+        "scan",
+        29
+      ],
+      [
+        "signatures",
+        21
+      ],
+      [
+        "paths",
+        21
+      ],
+      [
+        "clamav",
+        14
+      ],
+      [
+        "file",
+        49
+      ],
+      [
+        "monitor",
+        26
+      ],
+      [
+        "modsec",
+        10
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local maldetect",
+        11
+      ],
+      [
+        "php cmdshell",
+        15
+      ],
+      [
+        "perl ircbot",
+        12
+      ],
+      [
+        "mod security",
+        7
+      ],
+      [
+        "conf maldet",
+        7
+      ],
+      [
+        "sample ignore entry",
+        4
+      ],
+      [
+        "maldet monitor",
+        6
+      ],
+      [
+        "local maldetect ignore",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        20010,
+        0.19
+      ],
+      [
+        11546,
+        0.17
+      ],
+      [
+        10587,
+        0.17
+      ],
+      [
+        11050,
+        0.17
+      ],
+      [
+        9575,
+        0.15
+      ],
+      [
+        20084,
+        0.15
+      ]
+    ],
+    "sentiment": null
+  }
 }

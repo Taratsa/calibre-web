@@ -48,5 +48,162 @@
       "size": 2743,
       "name": "Modem Smart ZTE AC2791 Rev B - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 231,
+    "longer_than": 26,
+    "top": [
+      [
+        "bus",
+        11
+      ],
+      [
+        "device",
+        11
+      ],
+      [
+        "modem",
+        8
+      ],
+      [
+        "foundation",
+        7
+      ],
+      [
+        "hub",
+        7
+      ],
+      [
+        "linux",
+        7
+      ],
+      [
+        "root",
+        7
+      ],
+      [
+        "dev",
+        6
+      ],
+      [
+        "ttyusb",
+        6
+      ],
+      [
+        "pastikan",
+        4
+      ],
+      [
+        "rev",
+        4
+      ],
+      [
+        "smart",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "ttyusb",
+        6
+      ],
+      [
+        "bus",
+        11
+      ],
+      [
+        "device",
+        11
+      ],
+      [
+        "hub",
+        7
+      ],
+      [
+        "modem",
+        8
+      ],
+      [
+        "zte",
+        4
+      ],
+      [
+        "foundation",
+        7
+      ],
+      [
+        "root",
+        7
+      ],
+      [
+        "dev",
+        6
+      ],
+      [
+        "rev",
+        4
+      ],
+      [
+        "cdma",
+        3
+      ],
+      [
+        "smart",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "bus device",
+        11
+      ],
+      [
+        "root hub bus",
+        7
+      ],
+      [
+        "linux foundation root",
+        7
+      ],
+      [
+        "foundation root hub",
+        7
+      ],
+      [
+        "dev ttyusb",
+        6
+      ],
+      [
+        "ttyusb dev",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19111,
+        0.55
+      ],
+      [
+        18445,
+        0.53
+      ],
+      [
+        18438,
+        0.41
+      ],
+      [
+        18819,
+        0.4
+      ],
+      [
+        10149,
+        0.38
+      ],
+      [
+        19774,
+        0.36
+      ]
+    ],
+    "sentiment": null
+  }
 }

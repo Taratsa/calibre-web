@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1128,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "juno",
@@ -127,12 +127,12 @@
         3
       ],
       [
-        "gambar",
-        3
-      ],
-      [
         "mata",
         4
+      ],
+      [
+        "gambar",
+        3
       ],
       [
         "dimana",
@@ -148,7 +148,20 @@
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        21479,
+        0.14
+      ],
+      [
+        10173,
+        0.12
+      ],
+      [
+        3755,
+        0.11
+      ]
+    ],
     "sentiment": null
   }
 }

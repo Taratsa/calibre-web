@@ -48,5 +48,170 @@
       "size": 6566,
       "name": "Apache_ Keamanan - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1499,
+    "longer_than": 56,
+    "top": [
+      [
+        "apache",
+        30
+      ],
+      [
+        "server",
+        29
+      ],
+      [
+        "file",
+        22
+      ],
+      [
+        "pengguna",
+        22
+      ],
+      [
+        "cgi",
+        18
+      ],
+      [
+        "directory",
+        12
+      ],
+      [
+        "keamanan",
+        12
+      ],
+      [
+        "root",
+        12
+      ],
+      [
+        "usr",
+        12
+      ],
+      [
+        "direktori",
+        10
+      ],
+      [
+        "httpd",
+        10
+      ],
+      [
+        "local",
+        10
+      ]
+    ],
+    "distinct": [
+      [
+        "apache",
+        30
+      ],
+      [
+        "cgi",
+        18
+      ],
+      [
+        "httpd",
+        10
+      ],
+      [
+        "server",
+        29
+      ],
+      [
+        "pengguna",
+        22
+      ],
+      [
+        "skrip",
+        10
+      ],
+      [
+        "ssi",
+        7
+      ],
+      [
+        "direktori",
+        10
+      ],
+      [
+        "file",
+        22
+      ],
+      [
+        "directory",
+        12
+      ],
+      [
+        "jsp",
+        6
+      ],
+      [
+        "usr",
+        12
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local apache",
+        8
+      ],
+      [
+        "local apache bin",
+        4
+      ],
+      [
+        "bin conf logs",
+        4
+      ],
+      [
+        "apache bin httpd",
+        3
+      ],
+      [
+        "skrip cgi",
+        4
+      ],
+      [
+        "perangkat lunak",
+        4
+      ],
+      [
+        "pengguna non-root",
+        4
+      ],
+      [
+        "source jsp",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        11706,
+        0.25
+      ],
+      [
+        11050,
+        0.23
+      ],
+      [
+        11052,
+        0.21
+      ],
+      [
+        18855,
+        0.21
+      ],
+      [
+        11860,
+        0.2
+      ],
+      [
+        17763,
+        0.2
+      ]
+    ],
+    "sentiment": null
+  }
 }

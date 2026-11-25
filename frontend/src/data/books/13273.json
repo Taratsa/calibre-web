@@ -45,5 +45,218 @@
       "size": 12869579,
       "name": "Pidato Presiden Soekarno pada pembukaan pa - Kementerian Penerangan RI"
     }
-  ]
+  ],
+  "text": {
+    "words": 7279,
+    "longer_than": 75,
+    "top": [
+      [
+        "pemerintah",
+        116
+      ],
+      [
+        "rakjat",
+        50
+      ],
+      [
+        "negara",
+        42
+      ],
+      [
+        "indonesia",
+        35
+      ],
+      [
+        "parlemen",
+        28
+      ],
+      [
+        "djuga",
+        26
+      ],
+      [
+        "djuta",
+        24
+      ],
+      [
+        "kekurangan",
+        22
+      ],
+      [
+        "sidang",
+        22
+      ],
+      [
+        "mendjadi",
+        19
+      ],
+      [
+        "gadji",
+        18
+      ],
+      [
+        "konstitusi",
+        18
+      ]
+    ],
+    "distinct": [
+      [
+        "pemerintah",
+        116
+      ],
+      [
+        "rakjat",
+        50
+      ],
+      [
+        "djuta",
+        24
+      ],
+      [
+        "pindjaman",
+        18
+      ],
+      [
+        "parlemen",
+        28
+      ],
+      [
+        "gadji",
+        18
+      ],
+      [
+        "djuga",
+        26
+      ],
+      [
+        "westerling",
+        10
+      ],
+      [
+        "prae-federal",
+        6
+      ],
+      [
+        "supaja",
+        17
+      ],
+      [
+        "sidang",
+        22
+      ],
+      [
+        "terhormat",
+        18
+      ]
+    ],
+    "phrases": [
+      [
+        "sidang jang terhormat",
+        17
+      ],
+      [
+        "angkatan perang",
+        11
+      ],
+      [
+        "penjerahan kedaulatan",
+        10
+      ],
+      [
+        "bangsa indonesia",
+        8
+      ],
+      [
+        "dewan perwakilan rakjat",
+        5
+      ],
+      [
+        "peraturan gadji",
+        7
+      ],
+      [
+        "kesedjahteraan rakjat",
+        7
+      ],
+      [
+        "djuta rupiah",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        15036,
+        0.27
+      ],
+      [
+        16949,
+        0.27
+      ],
+      [
+        7916,
+        0.25
+      ],
+      [
+        497,
+        0.25
+      ],
+      [
+        420,
+        0.24
+      ],
+      [
+        6799,
+        0.24
+      ]
+    ],
+    "sentiment": {
+      "score": 0.36,
+      "positive": 141,
+      "negative": 66,
+      "trend": [
+        0.11,
+        1,
+        0.18,
+        0.56,
+        0.82,
+        1,
+        1,
+        0.71,
+        0.22,
+        -0.26,
+        -0.4,
+        0.25,
+        -0.2,
+        -0.08,
+        0,
+        0.67
+      ],
+      "emotions": [
+        [
+          "trust",
+          26
+        ],
+        [
+          "anger",
+          14
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "sadness",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

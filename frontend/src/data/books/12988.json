@@ -45,5 +45,218 @@
       "size": 11665560,
       "name": "Segala aktiviteit kita adalah untuk menjel - Indonesia. Departemen Koperasi. Inspektora"
     }
-  ]
+  ],
+  "text": {
+    "words": 9106,
+    "longer_than": 78,
+    "top": [
+      [
+        "indonesia",
+        125
+      ],
+      [
+        "barat",
+        103
+      ],
+      [
+        "irian",
+        101
+      ],
+      [
+        "saudara-saudara",
+        97
+      ],
+      [
+        "revolusi",
+        86
+      ],
+      [
+        "republik",
+        85
+      ],
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "belanda",
+        54
+      ],
+      [
+        "didalam",
+        49
+      ],
+      [
+        "kekuasaan",
+        49
+      ],
+      [
+        "wilajah",
+        47
+      ],
+      [
+        "djuga",
+        45
+      ]
+    ],
+    "distinct": [
+      [
+        "irian",
+        101
+      ],
+      [
+        "saudara-saudara",
+        97
+      ],
+      [
+        "rakjat",
+        76
+      ],
+      [
+        "wilajah",
+        47
+      ],
+      [
+        "revolusi",
+        86
+      ],
+      [
+        "republik",
+        85
+      ],
+      [
+        "barat",
+        103
+      ],
+      [
+        "dialogkan",
+        16
+      ],
+      [
+        "djuga",
+        45
+      ],
+      [
+        "depertan",
+        14
+      ],
+      [
+        "didalam",
+        49
+      ],
+      [
+        "indonesia",
+        125
+      ]
+    ],
+    "phrases": [
+      [
+        "irian barat",
+        101
+      ],
+      [
+        "kedalam wilajah kekuasaan",
+        37
+      ],
+      [
+        "wilajah kekuasaan republik",
+        33
+      ],
+      [
+        "republik indonesia",
+        44
+      ],
+      [
+        "revolusi indonesia",
+        33
+      ],
+      [
+        "masuk kedalam wilajah",
+        22
+      ],
+      [
+        "barat masuk kedalam",
+        15
+      ],
+      [
+        "rakjat indonesia",
+        19
+      ]
+    ],
+    "similar": [
+      [
+        10769,
+        0.33
+      ],
+      [
+        11039,
+        0.31
+      ],
+      [
+        8771,
+        0.31
+      ],
+      [
+        12939,
+        0.3
+      ],
+      [
+        11993,
+        0.3
+      ],
+      [
+        11017,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 140,
+      "negative": 78,
+      "trend": [
+        0.75,
+        0.75,
+        -0.09,
+        0.69,
+        -0.45,
+        0.47,
+        0.2,
+        0.57,
+        0,
+        0.82,
+        -0.4,
+        0.5,
+        0.17,
+        -0.09,
+        0.45,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          23
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "anger",
+          8
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ]
+      ]
+    }
+  }
 }

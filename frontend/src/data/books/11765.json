@@ -49,5 +49,214 @@
       "size": 6951490,
       "name": "Guru adalah pembangun masjarakat. Amanat P - Soekarno"
     }
-  ]
+  ],
+  "text": {
+    "words": 4011,
+    "longer_than": 68,
+    "top": [
+      [
+        "bangsa",
+        73
+      ],
+      [
+        "indonesia",
+        51
+      ],
+      [
+        "didalam",
+        34
+      ],
+      [
+        "irian",
+        32
+      ],
+      [
+        "barat",
+        31
+      ],
+      [
+        "saudara-saudara",
+        28
+      ],
+      [
+        "guru",
+        27
+      ],
+      [
+        "mendjadi",
+        25
+      ],
+      [
+        "republik",
+        19
+      ],
+      [
+        "pendidikan",
+        18
+      ],
+      [
+        "orang",
+        17
+      ],
+      [
+        "revolusi",
+        17
+      ]
+    ],
+    "distinct": [
+      [
+        "bangsa",
+        73
+      ],
+      [
+        "re-generation",
+        11
+      ],
+      [
+        "irian",
+        32
+      ],
+      [
+        "saudara-saudara",
+        28
+      ],
+      [
+        "subiadinata",
+        10
+      ],
+      [
+        "didalam",
+        34
+      ],
+      [
+        "vivekananda",
+        10
+      ],
+      [
+        "mendjadi",
+        25
+      ],
+      [
+        "guru",
+        27
+      ],
+      [
+        "achievement",
+        11
+      ],
+      [
+        "indonesia",
+        51
+      ],
+      [
+        "djikalau",
+        12
+      ]
+    ],
+    "phrases": [
+      [
+        "irian barat",
+        28
+      ],
+      [
+        "bangsa indonesia",
+        20
+      ],
+      [
+        "republik indonesia",
+        15
+      ],
+      [
+        "mendjadi satu bangsa",
+        8
+      ],
+      [
+        "saudara subiadinata",
+        9
+      ],
+      [
+        "mengadjar dirinja",
+        9
+      ],
+      [
+        "orang tua",
+        7
+      ],
+      [
+        "wilajah kekuasaan republik",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        12988,
+        0.25
+      ],
+      [
+        11856,
+        0.24
+      ],
+      [
+        11676,
+        0.24
+      ],
+      [
+        13543,
+        0.24
+      ],
+      [
+        13365,
+        0.23
+      ],
+      [
+        11017,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 56,
+      "negative": 21,
+      "trend": [
+        0.33,
+        0.71,
+        0,
+        null,
+        null,
+        0.43,
+        1,
+        null,
+        0.5,
+        null,
+        1,
+        null,
+        null,
+        null,
+        -0.14,
+        0.8
+      ],
+      "emotions": [
+        [
+          "joy",
+          11
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

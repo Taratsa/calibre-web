@@ -51,5 +51,134 @@
       "size": 2747,
       "name": "WiFi_ HotSpot - Linksys WRT54GL Upgrade dd - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 160,
+    "longer_than": 20,
+    "top": [
+      [
+        "wrt",
+        14
+      ],
+      [
+        "wifi",
+        13
+      ],
+      [
+        "hotspot",
+        12
+      ],
+      [
+        "linksys",
+        11
+      ],
+      [
+        "dd-wrt",
+        8
+      ],
+      [
+        "olsr",
+        8
+      ],
+      [
+        "upgrade",
+        8
+      ],
+      [
+        "freifunk",
+        4
+      ],
+      [
+        "mesh",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "wrt",
+        14
+      ],
+      [
+        "linksys",
+        11
+      ],
+      [
+        "hotspot",
+        12
+      ],
+      [
+        "dd-wrt",
+        8
+      ],
+      [
+        "wifi",
+        13
+      ],
+      [
+        "olsr",
+        8
+      ],
+      [
+        "upgrade",
+        8
+      ],
+      [
+        "freifunk",
+        4
+      ],
+      [
+        "mesh",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "wifi hotspot linksys",
+        10
+      ],
+      [
+        "hotspot linksys wrt",
+        10
+      ],
+      [
+        "wrt gl upgrade",
+        5
+      ],
+      [
+        "upgrade dd-wrt",
+        5
+      ],
+      [
+        "dd-wrt olsr",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20572,
+        0.85
+      ],
+      [
+        19071,
+        0.84
+      ],
+      [
+        19070,
+        0.82
+      ],
+      [
+        20569,
+        0.81
+      ],
+      [
+        9506,
+        0.71
+      ],
+      [
+        19176,
+        0.66
+      ]
+    ],
+    "sentiment": null
+  }
 }

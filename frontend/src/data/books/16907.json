@@ -45,5 +45,222 @@
       "size": 58031494,
       "name": "4 tahun sedjarah Indonesia dalam gambaran - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 21468,
+    "longer_than": 89,
+    "top": [
+      [
+        "djuga",
+        103
+      ],
+      [
+        "orang",
+        97
+      ],
+      [
+        "negara",
+        92
+      ],
+      [
+        "indonesia",
+        86
+      ],
+      [
+        "amerika",
+        71
+      ],
+      [
+        "mendjadi",
+        69
+      ],
+      [
+        "radio",
+        61
+      ],
+      [
+        "sadja",
+        61
+      ],
+      [
+        "mempunjai",
+        57
+      ],
+      [
+        "inggeris",
+        54
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "djakarta",
+        46
+      ]
+    ],
+    "distinct": [
+      [
+        "djuga",
+        103
+      ],
+      [
+        "inggeris",
+        54
+      ],
+      [
+        "mendjadi",
+        69
+      ],
+      [
+        "pemantjar",
+        26
+      ],
+      [
+        "mempunjai",
+        57
+      ],
+      [
+        "sadja",
+        61
+      ],
+      [
+        "djl",
+        34
+      ],
+      [
+        "djepang",
+        39
+      ],
+      [
+        "djerman",
+        35
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "djakarta",
+        46
+      ],
+      [
+        "radio",
+        61
+      ]
+    ],
+    "phrases": [
+      [
+        "amerika serikat",
+        38
+      ],
+      [
+        "pekan raya",
+        18
+      ],
+      [
+        "sovjet rusia",
+        13
+      ],
+      [
+        "toko buku",
+        12
+      ],
+      [
+        "sir thomas",
+        9
+      ],
+      [
+        "neighbor s wife",
+        6
+      ],
+      [
+        "kaum wanita",
+        9
+      ],
+      [
+        "bintang film",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        7916,
+        0.33
+      ],
+      [
+        16982,
+        0.27
+      ],
+      [
+        6799,
+        0.25
+      ],
+      [
+        6630,
+        0.25
+      ],
+      [
+        6291,
+        0.24
+      ],
+      [
+        1377,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 239,
+      "negative": 142,
+      "trend": [
+        0.27,
+        0.12,
+        0.8,
+        0.39,
+        0.08,
+        0.08,
+        0.09,
+        0.45,
+        0.07,
+        0.26,
+        0.39,
+        0.5,
+        0,
+        0.14,
+        -0.22,
+        0.8
+      ],
+      "emotions": [
+        [
+          "anger",
+          41
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "trust",
+          16
+        ],
+        [
+          "anticipation",
+          14
+        ],
+        [
+          "sadness",
+          10
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
+  }
 }

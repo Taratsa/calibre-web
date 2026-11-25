@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 879,
-    "longer_than": 49,
+    "longer_than": 48,
     "top": [
       [
         "orang",
@@ -150,7 +150,20 @@
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        9547,
+        0.15
+      ],
+      [
+        4541,
+        0.15
+      ],
+      [
+        8750,
+        0.14
+      ]
+    ],
     "sentiment": null
   }
 }

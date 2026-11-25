@@ -45,5 +45,226 @@
       "size": 79994793,
       "name": "Gelora konfrontasi mengganjang Malaysia - Pusat Penelitian dan Pengembangan Sumber D"
     }
-  ]
+  ],
+  "text": {
+    "words": 91229,
+    "longer_than": 99,
+    "top": [
+      [
+        "indonesia",
+        1071
+      ],
+      [
+        "malaysia",
+        590
+      ],
+      [
+        "rakjat",
+        482
+      ],
+      [
+        "saudara-saudara",
+        433
+      ],
+      [
+        "revolusi",
+        359
+      ],
+      [
+        "bangsa",
+        329
+      ],
+      [
+        "presiden",
+        314
+      ],
+      [
+        "pemerintah",
+        261
+      ],
+      [
+        "djuga",
+        242
+      ],
+      [
+        "menteri",
+        239
+      ],
+      [
+        "republik",
+        231
+      ],
+      [
+        "didalam",
+        222
+      ]
+    ],
+    "distinct": [
+      [
+        "malaysia",
+        590
+      ],
+      [
+        "rakjat",
+        482
+      ],
+      [
+        "saudara-saudara",
+        433
+      ],
+      [
+        "indonesia",
+        1071
+      ],
+      [
+        "manila",
+        199
+      ],
+      [
+        "malaya",
+        189
+      ],
+      [
+        "revolusi",
+        359
+      ],
+      [
+        "djuga",
+        242
+      ],
+      [
+        "inggeris",
+        197
+      ],
+      [
+        "sukarno",
+        205
+      ],
+      [
+        "presiden",
+        314
+      ],
+      [
+        "tengku",
+        135
+      ]
+    ],
+    "phrases": [
+      [
+        "republik indonesia",
+        204
+      ],
+      [
+        "kalimantan utara",
+        156
+      ],
+      [
+        "tengku abdul rahman",
+        100
+      ],
+      [
+        "rakjat indonesia",
+        146
+      ],
+      [
+        "revolusi indonesia",
+        110
+      ],
+      [
+        "abdul rahman putra",
+        65
+      ],
+      [
+        "bangsa indonesia",
+        97
+      ],
+      [
+        "presiden republik",
+        72
+      ]
+    ],
+    "similar": [
+      [
+        8771,
+        0.38
+      ],
+      [
+        10925,
+        0.35
+      ],
+      [
+        11649,
+        0.35
+      ],
+      [
+        21036,
+        0.33
+      ],
+      [
+        21031,
+        0.33
+      ],
+      [
+        9323,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 1145,
+      "negative": 311,
+      "trend": [
+        0.65,
+        0.77,
+        0.83,
+        0.55,
+        0.52,
+        0.78,
+        0.6,
+        0.69,
+        0.52,
+        0.77,
+        0.41,
+        0.22,
+        0.49,
+        0.49,
+        0.44,
+        0.33
+      ],
+      "emotions": [
+        [
+          "trust",
+          131
+        ],
+        [
+          "joy",
+          92
+        ],
+        [
+          "anticipation",
+          71
+        ],
+        [
+          "anger",
+          66
+        ],
+        [
+          "sadness",
+          32
+        ],
+        [
+          "surprise",
+          12
+        ],
+        [
+          "fear",
+          10
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

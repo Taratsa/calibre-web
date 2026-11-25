@@ -43,5 +43,193 @@
       "size": 39679262,
       "name": "Kesah pelajaran - A. F. Von de Wall"
     }
-  ]
+  ],
+  "text": {
+    "words": 17745,
+    "longer_than": 87,
+    "top": [
+      [
+        "sahaja",
+        345
+      ],
+      [
+        "orang",
+        296
+      ],
+      [
+        "tijada",
+        261
+      ],
+      [
+        "negeri",
+        164
+      ],
+      [
+        "djoega",
+        162
+      ],
+      [
+        "adapon",
+        126
+      ],
+      [
+        "didalam",
+        126
+      ],
+      [
+        "terlaloe",
+        109
+      ],
+      [
+        "poelau",
+        104
+      ],
+      [
+        "goenoeng",
+        102
+      ],
+      [
+        "disitoe",
+        98
+      ],
+      [
+        "doewa",
+        94
+      ]
+    ],
+    "distinct": [
+      [
+        "tijada",
+        261
+      ],
+      [
+        "sahaja",
+        345
+      ],
+      [
+        "adapon",
+        126
+      ],
+      [
+        "djoega",
+        162
+      ],
+      [
+        "seboewah",
+        75
+      ],
+      [
+        "poelau",
+        104
+      ],
+      [
+        "terlaloe",
+        109
+      ],
+      [
+        "disitoe",
+        98
+      ],
+      [
+        "doewa",
+        94
+      ],
+      [
+        "melainken",
+        76
+      ],
+      [
+        "goenoeng",
+        102
+      ],
+      [
+        "ja-itoe",
+        62
+      ]
+    ],
+    "phrases": [
+      [
+        "sahaja lihat",
+        39
+      ],
+      [
+        "orang alfoeroe",
+        31
+      ],
+      [
+        "djam poekoel",
+        19
+      ],
+      [
+        "pergilah sahaja",
+        18
+      ],
+      [
+        "kapal api",
+        18
+      ],
+      [
+        "ditepi laoet",
+        16
+      ],
+      [
+        "didalam telok",
+        16
+      ],
+      [
+        "doewa boewah",
+        15
+      ]
+    ],
+    "similar": [
+      [
+        459,
+        0.3
+      ],
+      [
+        708,
+        0.29
+      ],
+      [
+        20918,
+        0.28
+      ],
+      [
+        13621,
+        0.24
+      ],
+      [
+        13145,
+        0.24
+      ],
+      [
+        16138,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 58,
+      "negative": 26,
+      "trend": [
+        -0.33,
+        0.6,
+        1,
+        null,
+        0.56,
+        1,
+        0.2,
+        1,
+        -0.2,
+        0.33,
+        -0.2,
+        null,
+        null,
+        -0.25,
+        null,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

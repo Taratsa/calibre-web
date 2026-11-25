@@ -45,5 +45,222 @@
       "size": 17534033,
       "name": "Sair tjerita pertjidraan poeti dan hitam a - Cheong"
     }
-  ]
+  ],
+  "text": {
+    "words": 8770,
+    "longer_than": 78,
+    "top": [
+      [
+        "masrodjat",
+        146
+      ],
+      [
+        "tida",
+        139
+      ],
+      [
+        "soeda",
+        97
+      ],
+      [
+        "hamid",
+        88
+      ],
+      [
+        "orang",
+        78
+      ],
+      [
+        "sitti",
+        73
+      ],
+      [
+        "nja",
+        66
+      ],
+      [
+        "toean",
+        53
+      ],
+      [
+        "dengen",
+        49
+      ],
+      [
+        "kapada",
+        49
+      ],
+      [
+        "djangan",
+        47
+      ],
+      [
+        "poeti",
+        47
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        139
+      ],
+      [
+        "soeda",
+        97
+      ],
+      [
+        "sitti",
+        73
+      ],
+      [
+        "hamid",
+        88
+      ],
+      [
+        "poeti",
+        47
+      ],
+      [
+        "saperti",
+        45
+      ],
+      [
+        "kapada",
+        49
+      ],
+      [
+        "toean",
+        53
+      ],
+      [
+        "dengen",
+        49
+      ],
+      [
+        "satelah",
+        36
+      ],
+      [
+        "nja",
+        66
+      ],
+      [
+        "poenja",
+        41
+      ]
+    ],
+    "phrases": [
+      [
+        "poeti dan hitam",
+        11
+      ],
+      [
+        "tjiong koen liong",
+        7
+      ],
+      [
+        "satelah masrodjat",
+        8
+      ],
+      [
+        "sie djin koei",
+        5
+      ],
+      [
+        "djin koei tjeng",
+        5
+      ],
+      [
+        "satelah soeda",
+        7
+      ],
+      [
+        "djika tida",
+        7
+      ],
+      [
+        "boekit doeri",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        20859,
+        0.38
+      ],
+      [
+        11897,
+        0.35
+      ],
+      [
+        12802,
+        0.35
+      ],
+      [
+        4637,
+        0.34
+      ],
+      [
+        754,
+        0.34
+      ],
+      [
+        16130,
+        0.34
+      ]
+    ],
+    "sentiment": {
+      "score": 0.5,
+      "positive": 76,
+      "negative": 25,
+      "trend": [
+        0.67,
+        1,
+        0.43,
+        1,
+        0.5,
+        0.33,
+        1,
+        1,
+        0.6,
+        0.45,
+        0.67,
+        -0.14,
+        null,
+        -0.33,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          9
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

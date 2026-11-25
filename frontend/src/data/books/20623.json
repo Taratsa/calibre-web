@@ -48,5 +48,170 @@
       "size": 8723,
       "name": "SQLite_ Command Line Shell - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 2613,
+    "longer_than": 63,
+    "top": [
+      [
+        "sqlite",
+        121
+      ],
+      [
+        "command",
+        33
+      ],
+      [
+        "table",
+        33
+      ],
+      [
+        "mode",
+        31
+      ],
+      [
+        "database",
+        29
+      ],
+      [
+        "output",
+        29
+      ],
+      [
+        "tbl",
+        29
+      ],
+      [
+        "file",
+        28
+      ],
+      [
+        "sql",
+        28
+      ],
+      [
+        "column",
+        26
+      ],
+      [
+        "select",
+        23
+      ],
+      [
+        "list",
+        18
+      ]
+    ],
+    "distinct": [
+      [
+        "sqlite",
+        121
+      ],
+      [
+        "tbl",
+        29
+      ],
+      [
+        "column",
+        26
+      ],
+      [
+        "sql",
+        28
+      ],
+      [
+        "command",
+        33
+      ],
+      [
+        "table",
+        33
+      ],
+      [
+        "schema",
+        17
+      ],
+      [
+        "database",
+        29
+      ],
+      [
+        "output",
+        29
+      ],
+      [
+        "select",
+        23
+      ],
+      [
+        "query",
+        18
+      ],
+      [
+        "mode",
+        31
+      ]
+    ],
+    "phrases": [
+      [
+        "select from tbl",
+        10
+      ],
+      [
+        "sqlite master",
+        12
+      ],
+      [
+        "select from sqlite",
+        7
+      ],
+      [
+        "sqlite select",
+        10
+      ],
+      [
+        "sqlite temp master",
+        6
+      ],
+      [
+        "create table tbl",
+        6
+      ],
+      [
+        "output mode",
+        8
+      ],
+      [
+        "goodbye sqlite",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        11136,
+        0.31
+      ],
+      [
+        16074,
+        0.3
+      ],
+      [
+        10780,
+        0.27
+      ],
+      [
+        17738,
+        0.27
+      ],
+      [
+        9962,
+        0.25
+      ],
+      [
+        10160,
+        0.24
+      ]
+    ],
+    "sentiment": null
+  }
 }

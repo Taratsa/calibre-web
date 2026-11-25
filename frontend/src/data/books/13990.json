@@ -43,5 +43,218 @@
       "size": 20999892,
       "name": "Sejarah Singkat Manstjukwo - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 9111,
+    "longer_than": 78,
+    "top": [
+      [
+        "japan",
+        156
+      ],
+      [
+        "jeng",
+        127
+      ],
+      [
+        "tiongkok",
+        112
+      ],
+      [
+        "den",
+        64
+      ],
+      [
+        "djuga",
+        60
+      ],
+      [
+        "mantsjukwo",
+        56
+      ],
+      [
+        "tentera",
+        47
+      ],
+      [
+        "negara",
+        41
+      ],
+      [
+        "deri",
+        37
+      ],
+      [
+        "peda",
+        34
+      ],
+      [
+        "rusia",
+        31
+      ],
+      [
+        "dengen",
+        30
+      ]
+    ],
+    "distinct": [
+      [
+        "jeng",
+        127
+      ],
+      [
+        "japan",
+        156
+      ],
+      [
+        "mantsjukwo",
+        56
+      ],
+      [
+        "tiongkok",
+        112
+      ],
+      [
+        "tentera",
+        47
+      ],
+      [
+        "jepen",
+        27
+      ],
+      [
+        "djuga",
+        60
+      ],
+      [
+        "deri",
+        37
+      ],
+      [
+        "mantajukwo",
+        18
+      ],
+      [
+        "peda",
+        34
+      ],
+      [
+        "sjanghai",
+        20
+      ],
+      [
+        "den",
+        64
+      ]
+    ],
+    "phrases": [
+      [
+        "tentera japan",
+        15
+      ],
+      [
+        "tentera tiongkok",
+        13
+      ],
+      [
+        "djalan kereta api",
+        8
+      ],
+      [
+        "perserikatan bangsa",
+        9
+      ],
+      [
+        "pemerintah tiongkok",
+        9
+      ],
+      [
+        "negara jang merdeka",
+        5
+      ],
+      [
+        "japan dan tiongkok",
+        5
+      ],
+      [
+        "djuta yen",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        13216,
+        0.28
+      ],
+      [
+        11928,
+        0.24
+      ],
+      [
+        14656,
+        0.22
+      ],
+      [
+        309,
+        0.21
+      ],
+      [
+        5932,
+        0.21
+      ],
+      [
+        14833,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 57,
+      "negative": 41,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.6,
+        0.45,
+        0.2,
+        0.23,
+        -0.33,
+        -0.14,
+        0.07,
+        -0.6,
+        0,
+        0.5
+      ],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "trust",
+          11
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

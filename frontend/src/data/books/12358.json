@@ -45,5 +45,218 @@
       "size": 11573304,
       "name": "Penoendjoek bagaimana orang patoet meminta - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 6691,
+    "longer_than": 74,
+    "top": [
+      [
+        "sahaja",
+        156
+      ],
+      [
+        "engkau",
+        131
+      ],
+      [
+        "toehan",
+        91
+      ],
+      [
+        "soedah",
+        83
+      ],
+      [
+        "allah",
+        66
+      ],
+      [
+        "jesoes",
+        51
+      ],
+      [
+        "djoega",
+        48
+      ],
+      [
+        "oléh",
+        45
+      ],
+      [
+        "orang",
+        43
+      ],
+      [
+        "soepaja",
+        41
+      ],
+      [
+        "soetji",
+        41
+      ],
+      [
+        "kiranja",
+        39
+      ]
+    ],
+    "distinct": [
+      [
+        "sahaja",
+        156
+      ],
+      [
+        "toehan",
+        91
+      ],
+      [
+        "jesoes",
+        51
+      ],
+      [
+        "soedah",
+        83
+      ],
+      [
+        "engkau",
+        131
+      ],
+      [
+        "oléh",
+        45
+      ],
+      [
+        "djoega",
+        48
+      ],
+      [
+        "soetji",
+        41
+      ],
+      [
+        "soepaja",
+        41
+      ],
+      [
+        "allah",
+        66
+      ],
+      [
+        "kiranja",
+        39
+      ],
+      [
+        "kristoes",
+        18
+      ]
+    ],
+    "phrases": [
+      [
+        "toehan jesoes",
+        35
+      ],
+      [
+        "engkau soedah",
+        20
+      ],
+      [
+        "maha besar toehan",
+        11
+      ],
+      [
+        "tafsir soerat",
+        13
+      ],
+      [
+        "toehan allah",
+        12
+      ],
+      [
+        "soepaja sahaja",
+        12
+      ],
+      [
+        "jesoes kristoes",
+        12
+      ],
+      [
+        "engkau poen",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        20712,
+        0.36
+      ],
+      [
+        771,
+        0.29
+      ],
+      [
+        296,
+        0.29
+      ],
+      [
+        652,
+        0.26
+      ],
+      [
+        10940,
+        0.26
+      ],
+      [
+        21540,
+        0.25
+      ]
+    ],
+    "sentiment": {
+      "score": 0.16,
+      "positive": 96,
+      "negative": 69,
+      "trend": [
+        -0.43,
+        0.73,
+        0,
+        0.29,
+        -0.64,
+        -0.05,
+        0.43,
+        0.23,
+        0.67,
+        0.25,
+        -0.2,
+        0.07,
+        0.54,
+        0.43,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          20
+        ],
+        [
+          "joy",
+          8
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

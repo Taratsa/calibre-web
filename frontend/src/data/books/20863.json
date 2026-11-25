@@ -48,5 +48,170 @@
       "size": 3858,
       "name": "TCP_IP_ Quagga OSPF lanjut - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 728,
+    "longer_than": 45,
+    "top": [
+      [
+        "quagga",
+        53
+      ],
+      [
+        "ospf",
+        29
+      ],
+      [
+        "interface",
+        22
+      ],
+      [
+        "cisco",
+        19
+      ],
+      [
+        "router",
+        19
+      ],
+      [
+        "route",
+        13
+      ],
+      [
+        "network",
+        12
+      ],
+      [
+        "address",
+        10
+      ],
+      [
+        "stub",
+        7
+      ],
+      [
+        "hostname",
+        6
+      ],
+      [
+        "password",
+        6
+      ],
+      [
+        "daemons",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "quagga",
+        53
+      ],
+      [
+        "ospf",
+        29
+      ],
+      [
+        "cisco",
+        19
+      ],
+      [
+        "router",
+        19
+      ],
+      [
+        "interface",
+        22
+      ],
+      [
+        "opsf",
+        5
+      ],
+      [
+        "stub",
+        7
+      ],
+      [
+        "route",
+        13
+      ],
+      [
+        "link-detect",
+        5
+      ],
+      [
+        "daemons",
+        5
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "vty",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "quagga b router",
+        5
+      ],
+      [
+        "quagga a router",
+        5
+      ],
+      [
+        "network area network",
+        5
+      ],
+      [
+        "vty no login",
+        4
+      ],
+      [
+        "quagga vtysh conf",
+        4
+      ],
+      [
+        "address link-detect",
+        5
+      ],
+      [
+        "vim etc quagga",
+        3
+      ],
+      [
+        "shutdown interface eth",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20861,
+        0.78
+      ],
+      [
+        10678,
+        0.46
+      ],
+      [
+        20862,
+        0.45
+      ],
+      [
+        12631,
+        0.43
+      ],
+      [
+        20864,
+        0.43
+      ],
+      [
+        20856,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
 }

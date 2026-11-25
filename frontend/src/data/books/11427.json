@@ -43,5 +43,226 @@
       "size": 3912823,
       "name": "Serat Nitiprana (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 19622,
+    "longer_than": 88,
+    "top": [
+      [
+        "tan",
+        134
+      ],
+      [
+        "orang",
+        112
+      ],
+      [
+        "hati",
+        106
+      ],
+      [
+        "yen",
+        80
+      ],
+      [
+        "ingkang",
+        75
+      ],
+      [
+        "den",
+        74
+      ],
+      [
+        "iku",
+        70
+      ],
+      [
+        "raja",
+        64
+      ],
+      [
+        "maha",
+        55
+      ],
+      [
+        "wus",
+        54
+      ],
+      [
+        "saking",
+        53
+      ],
+      [
+        "manusia",
+        51
+      ]
+    ],
+    "distinct": [
+      [
+        "ingkang",
+        75
+      ],
+      [
+        "tan",
+        134
+      ],
+      [
+        "yen",
+        80
+      ],
+      [
+        "iku",
+        70
+      ],
+      [
+        "nitisruti",
+        30
+      ],
+      [
+        "wus",
+        54
+      ],
+      [
+        "mangkana",
+        42
+      ],
+      [
+        "tyas",
+        35
+      ],
+      [
+        "mring",
+        35
+      ],
+      [
+        "saking",
+        53
+      ],
+      [
+        "myang",
+        31
+      ],
+      [
+        "lamun",
+        39
+      ]
+    ],
+    "phrases": [
+      [
+        "maha agung",
+        17
+      ],
+      [
+        "sang raja",
+        16
+      ],
+      [
+        "serat nitisruti",
+        15
+      ],
+      [
+        "yen wus",
+        12
+      ],
+      [
+        "tata krama",
+        12
+      ],
+      [
+        "pandangan muka",
+        12
+      ],
+      [
+        "tan ana",
+        11
+      ],
+      [
+        "harta benda",
+        10
+      ]
+    ],
+    "similar": [
+      [
+        2882,
+        0.45
+      ],
+      [
+        5043,
+        0.35
+      ],
+      [
+        2910,
+        0.32
+      ],
+      [
+        2976,
+        0.3
+      ],
+      [
+        983,
+        0.3
+      ],
+      [
+        5527,
+        0.28
+      ]
+    ],
+    "sentiment": {
+      "score": 0.4,
+      "positive": 570,
+      "negative": 246,
+      "trend": [
+        0.63,
+        0.42,
+        0.33,
+        0.79,
+        0.53,
+        0.16,
+        0.21,
+        0.51,
+        0.54,
+        0.47,
+        -0.01,
+        0.43,
+        0.38,
+        0.57,
+        0.58,
+        0.23
+      ],
+      "emotions": [
+        [
+          "joy",
+          62
+        ],
+        [
+          "sadness",
+          44
+        ],
+        [
+          "trust",
+          37
+        ],
+        [
+          "anger",
+          30
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

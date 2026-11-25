@@ -49,5 +49,218 @@
       "size": 18912841,
       "name": "Boekoe sairan _ dari tjeritanja ,, Tan Sha - Y. L. M_"
     }
-  ]
+  ],
+  "text": {
+    "words": 10077,
+    "longer_than": 80,
+    "top": [
+      [
+        "tan",
+        206
+      ],
+      [
+        "nio",
+        163
+      ],
+      [
+        "tiada",
+        121
+      ],
+      [
+        "sía",
+        112
+      ],
+      [
+        "soeda",
+        86
+      ],
+      [
+        "orang",
+        83
+      ],
+      [
+        "tjerita",
+        75
+      ],
+      [
+        "poenja",
+        74
+      ],
+      [
+        "dalem",
+        66
+      ],
+      [
+        "hati",
+        59
+      ],
+      [
+        "sha",
+        57
+      ],
+      [
+        "tjioe",
+        55
+      ]
+    ],
+    "distinct": [
+      [
+        "nio",
+        163
+      ],
+      [
+        "sía",
+        112
+      ],
+      [
+        "tan",
+        206
+      ],
+      [
+        "soeda",
+        86
+      ],
+      [
+        "tjioe",
+        55
+      ],
+      [
+        "poenja",
+        74
+      ],
+      [
+        "kauw",
+        49
+      ],
+      [
+        "srenta",
+        46
+      ],
+      [
+        "tjerita",
+        75
+      ],
+      [
+        "sha",
+        57
+      ],
+      [
+        "kamoe",
+        53
+      ],
+      [
+        "tiada",
+        121
+      ]
+    ],
+    "phrases": [
+      [
+        "tan sía",
+        89
+      ],
+      [
+        "kauw neng",
+        44
+      ],
+      [
+        "tie tjioe",
+        31
+      ],
+      [
+        "oeij kauw",
+        22
+      ],
+      [
+        "tan sha",
+        21
+      ],
+      [
+        "tax sía",
+        20
+      ],
+      [
+        "franco di post",
+        11
+      ],
+      [
+        "tan sua",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        11897,
+        0.39
+      ],
+      [
+        12198,
+        0.39
+      ],
+      [
+        13484,
+        0.38
+      ],
+      [
+        12802,
+        0.37
+      ],
+      [
+        16130,
+        0.37
+      ],
+      [
+        4637,
+        0.36
+      ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 55,
+      "negative": 44,
+      "trend": [
+        0.71,
+        0.11,
+        null,
+        null,
+        0.6,
+        -0.2,
+        -0.6,
+        0,
+        1,
+        null,
+        null,
+        -0.33,
+        -0.25,
+        -0.14,
+        0.67,
+        -0.2
+      ],
+      "emotions": [
+        [
+          "joy",
+          17
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
+  }
 }

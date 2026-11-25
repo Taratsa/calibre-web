@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1253,
-    "longer_than": 55,
+    "longer_than": 53,
     "top": [
       [
         "wazuh",
@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "kibana",
-        41
-      ],
-      [
         "wazuh",
         48
+      ],
+      [
+        "kibana",
+        41
       ],
       [
         "elasticsearch",
@@ -124,12 +124,12 @@
         17
       ],
       [
-        "wazuh-manager",
-        6
-      ],
-      [
         "systemctl",
         11
+      ],
+      [
+        "wazuh-manager",
+        6
       ],
       [
         "server-ip",
@@ -197,7 +197,7 @@
       ],
       [
         16801,
-        0.32
+        0.33
       ],
       [
         16815,
@@ -209,7 +209,7 @@
       ],
       [
         15652,
-        0.27
+        0.28
       ]
     ],
     "sentiment": null

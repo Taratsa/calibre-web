@@ -45,5 +45,218 @@
       "size": 24627815,
       "name": "Saier boeroeng Baijan, dan saier boeroeng - Tan Kit Tjoan"
     }
-  ]
+  ],
+  "text": {
+    "words": 10906,
+    "longer_than": 81,
+    "top": [
+      [
+        "tiada",
+        209
+      ],
+      [
+        "njang",
+        172
+      ],
+      [
+        "boekoe",
+        115
+      ],
+      [
+        "adinda",
+        104
+      ],
+      [
+        "tamat",
+        97
+      ],
+      [
+        "kakenda",
+        95
+      ],
+      [
+        "toean",
+        94
+      ],
+      [
+        "sepertie",
+        78
+      ],
+      [
+        "hamba",
+        75
+      ],
+      [
+        "hatie",
+        75
+      ],
+      [
+        "radja",
+        67
+      ],
+      [
+        "noerie",
+        66
+      ]
+    ],
+    "distinct": [
+      [
+        "njang",
+        172
+      ],
+      [
+        "kakenda",
+        95
+      ],
+      [
+        "hatie",
+        75
+      ],
+      [
+        "noerie",
+        66
+      ],
+      [
+        "sepertie",
+        78
+      ],
+      [
+        "boekoe",
+        115
+      ],
+      [
+        "baijan",
+        55
+      ],
+      [
+        "tiada",
+        209
+      ],
+      [
+        "adinda",
+        104
+      ],
+      [
+        "toean",
+        94
+      ],
+      [
+        "mendjadie",
+        44
+      ],
+      [
+        "tioeng",
+        40
+      ]
+    ],
+    "phrases": [
+      [
+        "boekoe tamat",
+        67
+      ],
+      [
+        "ekoe f ekoe",
+        13
+      ],
+      [
+        "siang dan malam",
+        12
+      ],
+      [
+        "tamat f tjerita",
+        10
+      ],
+      [
+        "toeankoe radja",
+        10
+      ],
+      [
+        "tiada njang",
+        10
+      ],
+      [
+        "poetie koening",
+        10
+      ],
+      [
+        "adinda goenoeng",
+        10
+      ]
+    ],
+    "similar": [
+      [
+        13424,
+        0.77
+      ],
+      [
+        17138,
+        0.27
+      ],
+      [
+        16509,
+        0.22
+      ],
+      [
+        20859,
+        0.21
+      ],
+      [
+        13484,
+        0.2
+      ],
+      [
+        15660,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": -0.26,
+      "positive": 46,
+      "negative": 78,
+      "trend": [
+        0.43,
+        -0.33,
+        -0.33,
+        -0.73,
+        -0.71,
+        0.14,
+        -0.5,
+        -0.33,
+        -0.14,
+        -0.33,
+        null,
+        -0.33,
+        -0.25,
+        0.6,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "anger",
+          16
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

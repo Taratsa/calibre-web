@@ -43,5 +43,222 @@
       "size": 60329161,
       "name": "Pengantar ilmu kesehatan lingkungan - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 42576,
+    "longer_than": 96,
+    "top": [
+      [
+        "air",
+        644
+      ],
+      [
+        "makanan",
+        306
+      ],
+      [
+        "kesehatan",
+        284
+      ],
+      [
+        "manusia",
+        243
+      ],
+      [
+        "lingkungan",
+        222
+      ],
+      [
+        "penyakit",
+        187
+      ],
+      [
+        "udara",
+        184
+      ],
+      [
+        "bahan",
+        181
+      ],
+      [
+        "sampah",
+        164
+      ],
+      [
+        "zat",
+        140
+      ],
+      [
+        "rumah",
+        137
+      ],
+      [
+        "pelbagai",
+        134
+      ]
+    ],
+    "distinct": [
+      [
+        "air",
+        644
+      ],
+      [
+        "kesehatan",
+        284
+      ],
+      [
+        "makanan",
+        306
+      ],
+      [
+        "pelbagai",
+        134
+      ],
+      [
+        "zat",
+        140
+      ],
+      [
+        "sampah",
+        164
+      ],
+      [
+        "penyakit",
+        187
+      ],
+      [
+        "tikus",
+        112
+      ],
+      [
+        "udara",
+        184
+      ],
+      [
+        "lingkungan",
+        222
+      ],
+      [
+        "kimia",
+        98
+      ],
+      [
+        "nyamuk",
+        75
+      ]
+    ],
+    "phrases": [
+      [
+        "bahan makanan",
+        134
+      ],
+      [
+        "kesehatan lingkungan",
+        101
+      ],
+      [
+        "air limbah",
+        71
+      ],
+      [
+        "zat kimia",
+        57
+      ],
+      [
+        "air minum",
+        42
+      ],
+      [
+        "ilmu kesehatan",
+        40
+      ],
+      [
+        "bibit penyakit",
+        39
+      ],
+      [
+        "sumber cahaya",
+        30
+      ]
+    ],
+    "similar": [
+      [
+        8766,
+        0.2
+      ],
+      [
+        2959,
+        0.2
+      ],
+      [
+        8421,
+        0.18
+      ],
+      [
+        19235,
+        0.16
+      ],
+      [
+        12982,
+        0.15
+      ],
+      [
+        12536,
+        0.15
+      ]
+    ],
+    "sentiment": {
+      "score": 0.2,
+      "positive": 858,
+      "negative": 574,
+      "trend": [
+        0.56,
+        0.41,
+        0.45,
+        0,
+        0.2,
+        -0.01,
+        0.37,
+        0.54,
+        -0.05,
+        0.06,
+        -0.35,
+        0.01,
+        -0.1,
+        0.35,
+        0.08,
+        0.23
+      ],
+      "emotions": [
+        [
+          "disgust",
+          52
+        ],
+        [
+          "fear",
+          40
+        ],
+        [
+          "sadness",
+          38
+        ],
+        [
+          "anger",
+          28
+        ],
+        [
+          "joy",
+          19
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "anticipation",
+          5
+        ]
+      ]
+    }
+  }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3026,
-    "longer_than": 67,
+    "longer_than": 65,
     "top": [
       [
         "indonesia",
@@ -99,12 +99,12 @@
     ],
     "distinct": [
       [
-        "kebudajaan",
-        45
-      ],
-      [
         "hindu",
         47
+      ],
+      [
+        "kebudajaan",
+        45
       ],
       [
         "indonesia-hindu",
@@ -127,11 +127,11 @@
         15
       ],
       [
-        "hanja",
-        16
+        "indonesia",
+        50
       ],
       [
-        "sadja",
+        "hanja",
         16
       ],
       [
@@ -139,8 +139,8 @@
         15
       ],
       [
-        "indonesia",
-        50
+        "sadja",
+        16
       ],
       [
         "india",
@@ -188,10 +188,6 @@
       ],
       [
         7822,
-        0.19
-      ],
-      [
-        7701,
         0.18
       ],
       [
@@ -203,8 +199,12 @@
         0.18
       ],
       [
-        7838,
-        0.17
+        7701,
+        0.18
+      ],
+      [
+        13878,
+        0.18
       ]
     ],
     "sentiment": null

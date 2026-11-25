@@ -43,5 +43,222 @@
       "size": 41786517,
       "name": "Sejarah Singkat Malaja - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 16264,
+    "longer_than": 86,
+    "top": [
+      [
+        "orang",
+        211
+      ],
+      [
+        "tiada",
+        77
+      ],
+      [
+        "malaka",
+        71
+      ],
+      [
+        "melaju",
+        69
+      ],
+      [
+        "inggris",
+        64
+      ],
+      [
+        "radja",
+        64
+      ],
+      [
+        "abad",
+        55
+      ],
+      [
+        "djohor",
+        49
+      ],
+      [
+        "dalem",
+        41
+      ],
+      [
+        "djuga",
+        41
+      ],
+      [
+        "mendjadi",
+        41
+      ],
+      [
+        "djuta",
+        37
+      ]
+    ],
+    "distinct": [
+      [
+        "djohor",
+        49
+      ],
+      [
+        "melaju",
+        69
+      ],
+      [
+        "malaka",
+        71
+      ],
+      [
+        "singgapur",
+        26
+      ],
+      [
+        "radja",
+        64
+      ],
+      [
+        "orang",
+        211
+      ],
+      [
+        "tiada",
+        77
+      ],
+      [
+        "kompeni",
+        33
+      ],
+      [
+        "djuta",
+        37
+      ],
+      [
+        "dalem",
+        41
+      ],
+      [
+        "jeng",
+        33
+      ],
+      [
+        "matu",
+        25
+      ]
+    ],
+    "phrases": [
+      [
+        "orang melaju",
+        28
+      ],
+      [
+        "djuta dollar",
+        20
+      ],
+      [
+        "orang portugis",
+        12
+      ],
+      [
+        "abad ke-l",
+        11
+      ],
+      [
+        "radja hadji",
+        9
+      ],
+      [
+        "radja ali",
+        7
+      ],
+      [
+        "radja muda",
+        6
+      ],
+      [
+        "orang-orang melaju",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        17496,
+        0.64
+      ],
+      [
+        19117,
+        0.21
+      ],
+      [
+        18095,
+        0.21
+      ],
+      [
+        16236,
+        0.18
+      ],
+      [
+        16663,
+        0.18
+      ],
+      [
+        784,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.17,
+      "positive": 111,
+      "negative": 78,
+      "trend": [
+        0.71,
+        0.47,
+        -0.4,
+        0.17,
+        0,
+        0.27,
+        0.26,
+        -0.25,
+        -0.43,
+        0.64,
+        -0.14,
+        0.5,
+        0.56,
+        0.11,
+        null,
+        -0.09
+      ],
+      "emotions": [
+        [
+          "anger",
+          33
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

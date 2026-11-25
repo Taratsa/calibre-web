@@ -47,5 +47,170 @@
       "size": 36329852,
       "name": "Open Brief - J. Van Swieten"
     }
-  ]
+  ],
+  "text": {
+    "words": 5880,
+    "longer_than": 72,
+    "top": [
+      [
+        "gij",
+        100
+      ],
+      [
+        "den",
+        92
+      ],
+      [
+        "generaal",
+        61
+      ],
+      [
+        "expeditie",
+        37
+      ],
+      [
+        "oorlog",
+        35
+      ],
+      [
+        "atjeh",
+        26
+      ],
+      [
+        "werk",
+        26
+      ],
+      [
+        "zoo",
+        25
+      ],
+      [
+        "uwe",
+        23
+      ],
+      [
+        "roo",
+        21
+      ],
+      [
+        "gouverneur-generaal",
+        20
+      ],
+      [
+        "oordeel",
+        20
+      ]
+    ],
+    "distinct": [
+      [
+        "gij",
+        100
+      ],
+      [
+        "generaal",
+        61
+      ],
+      [
+        "den",
+        92
+      ],
+      [
+        "expeditie",
+        37
+      ],
+      [
+        "oorlog",
+        35
+      ],
+      [
+        "roo",
+        21
+      ],
+      [
+        "uwe",
+        23
+      ],
+      [
+        "atjeh",
+        26
+      ],
+      [
+        "werk",
+        26
+      ],
+      [
+        "gouverneur-generaal",
+        20
+      ],
+      [
+        "oordeel",
+        20
+      ],
+      [
+        "enquète",
+        10
+      ]
+    ],
+    "phrases": [
+      [
+        "den oorlog",
+        13
+      ],
+      [
+        "den gouverneur-generaal",
+        12
+      ],
+      [
+        "expeditie tegen atjeh",
+        6
+      ],
+      [
+        "beter weten",
+        9
+      ],
+      [
+        "vaderland van juni",
+        5
+      ],
+      [
+        "kennis van zaken",
+        5
+      ],
+      [
+        "gij den",
+        7
+      ],
+      [
+        "deel bladz",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        18583,
+        0.27
+      ],
+      [
+        18509,
+        0.25
+      ],
+      [
+        16447,
+        0.23
+      ],
+      [
+        14238,
+        0.23
+      ],
+      [
+        11070,
+        0.22
+      ],
+      [
+        16785,
+        0.22
+      ]
+    ],
+    "sentiment": null
+  }
 }

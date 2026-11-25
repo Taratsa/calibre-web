@@ -48,5 +48,170 @@
       "size": 5855,
       "name": "UseCases - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1223,
+    "longer_than": 53,
+    "top": [
+      [
+        "btrfs",
+        38
+      ],
+      [
+        "filesystem",
+        20
+      ],
+      [
+        "mount",
+        16
+      ],
+      [
+        "dev",
+        15
+      ],
+      [
+        "raid",
+        15
+      ],
+      [
+        "subvolume",
+        15
+      ],
+      [
+        "snapshot",
+        14
+      ],
+      [
+        "mnt",
+        9
+      ],
+      [
+        "zfs",
+        9
+      ],
+      [
+        "fstab",
+        8
+      ],
+      [
+        "file",
+        6
+      ],
+      [
+        "create",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "btrfs",
+        38
+      ],
+      [
+        "subvolume",
+        15
+      ],
+      [
+        "filesystem",
+        20
+      ],
+      [
+        "snapshot",
+        14
+      ],
+      [
+        "raid",
+        15
+      ],
+      [
+        "zfs",
+        9
+      ],
+      [
+        "mount",
+        16
+      ],
+      [
+        "fstab",
+        8
+      ],
+      [
+        "dev",
+        15
+      ],
+      [
+        "mnt",
+        9
+      ],
+      [
+        "gmane",
+        4
+      ],
+      [
+        "resize",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "btrfs subvolume",
+        7
+      ],
+      [
+        "resize g mnt",
+        3
+      ],
+      [
+        "raid dev sda",
+        3
+      ],
+      [
+        "raid d raid",
+        3
+      ],
+      [
+        "path to subvolume",
+        3
+      ],
+      [
+        "dev sda dev",
+        3
+      ],
+      [
+        "create a raid",
+        3
+      ],
+      [
+        "btrfs m raid",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20366,
+        0.53
+      ],
+      [
+        20365,
+        0.35
+      ],
+      [
+        9456,
+        0.32
+      ],
+      [
+        20364,
+        0.32
+      ],
+      [
+        20376,
+        0.3
+      ],
+      [
+        20369,
+        0.29
+      ]
+    ],
+    "sentiment": null
+  }
 }

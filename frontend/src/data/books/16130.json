@@ -43,5 +43,218 @@
       "size": 45599191,
       "name": "Sair Sam Pek Eng Taij atawa ketjintaan dar - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 8532,
+    "longer_than": 77,
+    "top": [
+      [
+        "eng",
+        182
+      ],
+      [
+        "taij",
+        173
+      ],
+      [
+        "tida",
+        165
+      ],
+      [
+        "sam",
+        120
+      ],
+      [
+        "pek",
+        117
+      ],
+      [
+        "djangan",
+        79
+      ],
+      [
+        "dengen",
+        78
+      ],
+      [
+        "soeda",
+        63
+      ],
+      [
+        "orang",
+        62
+      ],
+      [
+        "poenja",
+        60
+      ],
+      [
+        "sampe",
+        50
+      ],
+      [
+        "kaloe",
+        46
+      ]
+    ],
+    "distinct": [
+      [
+        "taij",
+        173
+      ],
+      [
+        "tida",
+        165
+      ],
+      [
+        "eng",
+        182
+      ],
+      [
+        "pek",
+        117
+      ],
+      [
+        "sam",
+        120
+      ],
+      [
+        "dengen",
+        78
+      ],
+      [
+        "soeda",
+        63
+      ],
+      [
+        "poenja",
+        60
+      ],
+      [
+        "djangan",
+        79
+      ],
+      [
+        "kaloe",
+        46
+      ],
+      [
+        "matjoen",
+        21
+      ],
+      [
+        "sampe",
+        50
+      ]
+    ],
+    "phrases": [
+      [
+        "eng taij",
+        173
+      ],
+      [
+        "sam pek",
+        114
+      ],
+      [
+        "pek eng",
+        16
+      ],
+      [
+        "taij poenja",
+        11
+      ],
+      [
+        "hang tjioe",
+        11
+      ],
+      [
+        "djangan sampe",
+        11
+      ],
+      [
+        "papah dan mama",
+        6
+      ],
+      [
+        "tida perdoeli",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        20859,
+        0.37
+      ],
+      [
+        13484,
+        0.34
+      ],
+      [
+        13905,
+        0.34
+      ],
+      [
+        4636,
+        0.33
+      ],
+      [
+        694,
+        0.33
+      ],
+      [
+        4639,
+        0.33
+      ]
+    ],
+    "sentiment": {
+      "score": -0.16,
+      "positive": 46,
+      "negative": 64,
+      "trend": [
+        -0.5,
+        0.6,
+        null,
+        null,
+        0.33,
+        null,
+        -0.14,
+        1,
+        0.2,
+        -0.43,
+        -0.54,
+        -0.56,
+        -0.83,
+        -0.45,
+        null,
+        0.14
+      ],
+      "emotions": [
+        [
+          "sadness",
+          32
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
+  }
 }

@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 1280,
-    "longer_than": 56,
+    "longer_than": 54,
     "top": [
       [
         "artikel",
@@ -99,16 +99,32 @@
     ],
     "distinct": [
       [
-        "leden",
-        25
+        "leergangen",
+        12
+      ],
+      [
+        "secretaris-penningmeester",
+        13
       ],
       [
         "bestuur",
         28
       ],
       [
+        "leden",
+        25
+      ],
+      [
+        "begunstigers",
+        10
+      ],
+      [
         "vergadering",
         18
+      ],
+      [
+        "artikel",
+        39
       ],
       [
         "voorzitter",
@@ -119,32 +135,16 @@
         12
       ],
       [
-        "artikel",
-        39
-      ],
-      [
         "donateurs",
         8
-      ],
-      [
-        "algemeene",
-        13
       ],
       [
         "vereeniging",
         12
       ],
       [
-        "minste",
-        7
-      ],
-      [
-        "doel",
-        9
-      ],
-      [
-        "wetenschappelijke",
-        6
+        "algemeene",
+        13
       ]
     ],
     "phrases": [
@@ -183,28 +183,28 @@
     ],
     "similar": [
       [
+        14327,
+        0.33
+      ],
+      [
         11109,
-        0.32
+        0.22
       ],
       [
-        10989,
-        0.18
-      ],
-      [
-        11091,
+        13699,
         0.17
       ],
       [
-        1473,
-        0.13
+        15771,
+        0.17
       ],
       [
-        622,
-        0.13
+        16500,
+        0.16
       ],
       [
-        10827,
-        0.12
+        13725,
+        0.15
       ]
     ],
     "sentiment": null

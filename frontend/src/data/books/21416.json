@@ -50,5 +50,126 @@
       "size": 2992,
       "name": "Apache_ Mengatasi Overload - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 204,
+    "longer_than": 24,
+    "top": [
+      [
+        "apache",
+        8
+      ],
+      [
+        "ifmodule",
+        8
+      ],
+      [
+        "maxrequestsperchild",
+        5
+      ],
+      [
+        "maxclients",
+        4
+      ],
+      [
+        "startservers",
+        4
+      ],
+      [
+        "conf",
+        3
+      ],
+      [
+        "module",
+        3
+      ],
+      [
+        "mpm",
+        3
+      ],
+      [
+        "overload",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "ifmodule",
+        8
+      ],
+      [
+        "maxrequestsperchild",
+        5
+      ],
+      [
+        "startservers",
+        4
+      ],
+      [
+        "maxclients",
+        4
+      ],
+      [
+        "apache",
+        8
+      ],
+      [
+        "mpm",
+        3
+      ],
+      [
+        "overload",
+        3
+      ],
+      [
+        "module",
+        3
+      ],
+      [
+        "conf",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "maxclients maxrequestsperchild ifmodule",
+        3
+      ],
+      [
+        "module startservers",
+        3
+      ],
+      [
+        "ifmodule mpm",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        12687,
+        0.25
+      ],
+      [
+        14622,
+        0.24
+      ],
+      [
+        9661,
+        0.19
+      ],
+      [
+        12161,
+        0.19
+      ],
+      [
+        14619,
+        0.19
+      ],
+      [
+        12488,
+        0.16
+      ]
+    ],
+    "sentiment": null
+  }
 }

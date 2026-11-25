@@ -43,5 +43,210 @@
       "size": 18617021,
       "name": "Hikajat Robinson Crusoe _ terkarang pada b - A.F. Von De Wall"
     }
-  ]
+  ],
+  "text": {
+    "words": 21973,
+    "longer_than": 89,
+    "top": [
+      [
+        "robinson",
+        488
+      ],
+      [
+        "tiada",
+        308
+      ],
+      [
+        "orang",
+        243
+      ],
+      [
+        "djoega",
+        174
+      ],
+      [
+        "laloe",
+        148
+      ],
+      [
+        "poen",
+        143
+      ],
+      [
+        "olēh",
+        139
+      ],
+      [
+        "bolēh",
+        138
+      ],
+      [
+        "kemoedian",
+        125
+      ],
+      [
+        "poela",
+        115
+      ],
+      [
+        "soedah",
+        115
+      ],
+      [
+        "merēka",
+        113
+      ]
+    ],
+    "distinct": [
+      [
+        "robinson",
+        488
+      ],
+      [
+        "bolēh",
+        138
+      ],
+      [
+        "olēh",
+        139
+      ],
+      [
+        "merēka",
+        113
+      ],
+      [
+        "djoega",
+        174
+      ],
+      [
+        "tiada",
+        308
+      ],
+      [
+        "laloe",
+        148
+      ],
+      [
+        "djoem",
+        96
+      ],
+      [
+        "kemoedian",
+        125
+      ],
+      [
+        "poen",
+        143
+      ],
+      [
+        "poela",
+        115
+      ],
+      [
+        "soedah",
+        115
+      ]
+    ],
+    "phrases": [
+      [
+        "robinson poen",
+        70
+      ],
+      [
+        "pokok kajoe",
+        52
+      ],
+      [
+        "olēh robinson",
+        32
+      ],
+      [
+        "olēh karena itoelah",
+        19
+      ],
+      [
+        "allah ta ala",
+        19
+      ],
+      [
+        "tiada bolēh",
+        26
+      ],
+      [
+        "kemoedian maka robinson",
+        16
+      ],
+      [
+        "robinson tiada",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        14790,
+        0.36
+      ],
+      [
+        459,
+        0.33
+      ],
+      [
+        13324,
+        0.32
+      ],
+      [
+        529,
+        0.32
+      ],
+      [
+        524,
+        0.32
+      ],
+      [
+        652,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 68,
+      "negative": 62,
+      "trend": [
+        0.25,
+        -0.11,
+        -0.47,
+        0.2,
+        null,
+        -0.2,
+        0.67,
+        0.25,
+        -0.8,
+        null,
+        0.6,
+        0.75,
+        0.69,
+        null,
+        -0.2,
+        0.25
+      ],
+      "emotions": [
+        [
+          "sadness",
+          26
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "trust",
+          4
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
+  }
 }

@@ -53,5 +53,214 @@
       "size": 16079353,
       "name": "Penoentoen ke basa Bippon (paramasastera d - Pane"
     }
-  ]
+  ],
+  "text": {
+    "words": 9940,
+    "longer_than": 80,
+    "top": [
+      [
+        "bahasa",
+        132
+      ],
+      [
+        "masu",
+        129
+      ],
+      [
+        "nama",
+        111
+      ],
+      [
+        "watakusi",
+        66
+      ],
+      [
+        "bentoek",
+        65
+      ],
+      [
+        "desu",
+        65
+      ],
+      [
+        "ano",
+        62
+      ],
+      [
+        "nippon",
+        61
+      ],
+      [
+        "hito",
+        58
+      ],
+      [
+        "djadi",
+        55
+      ],
+      [
+        "masita",
+        55
+      ],
+      [
+        "orang",
+        55
+      ]
+    ],
+    "distinct": [
+      [
+        "masu",
+        129
+      ],
+      [
+        "desu",
+        65
+      ],
+      [
+        "masita",
+        55
+      ],
+      [
+        "bentoek",
+        65
+      ],
+      [
+        "hito",
+        58
+      ],
+      [
+        "masen",
+        48
+      ],
+      [
+        "nippon",
+        61
+      ],
+      [
+        "deshô",
+        31
+      ],
+      [
+        "ano",
+        62
+      ],
+      [
+        "toean",
+        48
+      ],
+      [
+        "kudasai",
+        20
+      ],
+      [
+        "pekerdjaan",
+        53
+      ]
+    ],
+    "phrases": [
+      [
+        "ano hito",
+        54
+      ],
+      [
+        "nama pekerdjaan",
+        39
+      ],
+      [
+        "bahasa nippon",
+        35
+      ],
+      [
+        "ari masu",
+        29
+      ],
+      [
+        "bahasa indonesia",
+        26
+      ],
+      [
+        "nama benda",
+        22
+      ],
+      [
+        "bahasa djepang",
+        16
+      ],
+      [
+        "pengganti nama",
+        14
+      ]
+    ],
+    "similar": [
+      [
+        15915,
+        0.3
+      ],
+      [
+        11728,
+        0.22
+      ],
+      [
+        16614,
+        0.13
+      ],
+      [
+        1903,
+        0.13
+      ],
+      [
+        20391,
+        0.13
+      ],
+      [
+        18946,
+        0.13
+      ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 81,
+      "negative": 30,
+      "trend": [
+        null,
+        0,
+        null,
+        0.33,
+        0.8,
+        0.82,
+        null,
+        0,
+        null,
+        0.85,
+        null,
+        null,
+        0.6,
+        0.38,
+        0.67,
+        0.23
+      ],
+      "emotions": [
+        [
+          "trust",
+          42
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "anticipation",
+          3
+        ],
+        [
+          "joy",
+          2
+        ]
+      ]
+    }
+  }
 }

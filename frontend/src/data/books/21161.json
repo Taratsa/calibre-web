@@ -48,5 +48,170 @@
       "size": 3405,
       "name": "NVME_ Ubuntu 26.04 Deteksi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 404,
+    "longer_than": 35,
+    "top": [
+      [
+        "nvme",
+        40
+      ],
+      [
+        "syntaxhighlight",
+        24
+      ],
+      [
+        "bash",
+        12
+      ],
+      [
+        "dev",
+        12
+      ],
+      [
+        "lang",
+        12
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "cek",
+        9
+      ],
+      [
+        "storage",
+        7
+      ],
+      [
+        "ubuntu",
+        7
+      ],
+      [
+        "grep",
+        6
+      ],
+      [
+        "ssd",
+        6
+      ],
+      [
+        "echo",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "nvme",
+        40
+      ],
+      [
+        "syntaxhighlight",
+        24
+      ],
+      [
+        "bash",
+        12
+      ],
+      [
+        "ssd",
+        6
+      ],
+      [
+        "dev",
+        12
+      ],
+      [
+        "lang",
+        12
+      ],
+      [
+        "lspci",
+        4
+      ],
+      [
+        "storage",
+        7
+      ],
+      [
+        "dmesg",
+        4
+      ],
+      [
+        "grep",
+        6
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "lsblk",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "syntaxhighlight lang bash",
+        12
+      ],
+      [
+        "dev nvme",
+        10
+      ],
+      [
+        "lang bash sudo",
+        6
+      ],
+      [
+        "grep ie nvme",
+        3
+      ],
+      [
+        "sudo nvme",
+        3
+      ],
+      [
+        "sudo apt",
+        3
+      ],
+      [
+        "nvme syntaxhighlight",
+        3
+      ],
+      [
+        "nvme ssd",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        15197,
+        0.44
+      ],
+      [
+        13516,
+        0.44
+      ],
+      [
+        21158,
+        0.36
+      ],
+      [
+        13518,
+        0.33
+      ],
+      [
+        13520,
+        0.32
+      ],
+      [
+        13519,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

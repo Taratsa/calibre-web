@@ -51,5 +51,170 @@
       "size": 4831,
       "name": "Java_ Logging API - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1174,
+    "longer_than": 52,
+    "top": [
+      [
+        "logger",
+        42
+      ],
+      [
+        "logging",
+        37
+      ],
+      [
+        "buf",
+        32
+      ],
+      [
+        "java",
+        32
+      ],
+      [
+        "append",
+        28
+      ],
+      [
+        "log",
+        25
+      ],
+      [
+        "import",
+        22
+      ],
+      [
+        "formatter",
+        20
+      ],
+      [
+        "level",
+        20
+      ],
+      [
+        "util",
+        19
+      ],
+      [
+        "info",
+        17
+      ],
+      [
+        "handler",
+        15
+      ]
+    ],
+    "distinct": [
+      [
+        "logger",
+        42
+      ],
+      [
+        "buf",
+        32
+      ],
+      [
+        "formatter",
+        20
+      ],
+      [
+        "logging",
+        37
+      ],
+      [
+        "append",
+        28
+      ],
+      [
+        "util",
+        19
+      ],
+      [
+        "handler",
+        15
+      ],
+      [
+        "java",
+        32
+      ],
+      [
+        "log",
+        25
+      ],
+      [
+        "import",
+        22
+      ],
+      [
+        "rec",
+        12
+      ],
+      [
+        "getlevel",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "buf append",
+        28
+      ],
+      [
+        "import java util",
+        18
+      ],
+      [
+        "java util logging",
+        17
+      ],
+      [
+        "append buf",
+        10
+      ],
+      [
+        "method is called",
+        6
+      ],
+      [
+        "info log logger",
+        6
+      ],
+      [
+        "logging level",
+        7
+      ],
+      [
+        "logger logger",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        20319,
+        0.21
+      ],
+      [
+        20317,
+        0.21
+      ],
+      [
+        14999,
+        0.2
+      ],
+      [
+        15002,
+        0.19
+      ],
+      [
+        15092,
+        0.17
+      ],
+      [
+        14985,
+        0.17
+      ]
+    ],
+    "sentiment": null
+  }
 }

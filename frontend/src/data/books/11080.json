@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 8871,
-    "longer_than": 80,
+    "longer_than": 78,
     "top": [
       [
         "den",
@@ -99,20 +99,24 @@
     ],
     "distinct": [
       [
-        "officieren",
-        71
-      ],
-      [
-        "ranglijst",
-        43
+        "den",
+        147
       ],
       [
         "adressant",
         41
       ],
       [
-        "den",
-        147
+        "ranglijst",
+        43
+      ],
+      [
+        "officieren",
+        71
+      ],
+      [
+        "luitenant-kwartiermeester",
+        31
       ],
       [
         "leger",
@@ -123,6 +127,14 @@
         26
       ],
       [
+        "herplaatsing",
+        22
+      ],
+      [
+        "besluit",
+        46
+      ],
+      [
         "administratie",
         40
       ],
@@ -131,20 +143,8 @@
         39
       ],
       [
-        "besluit",
-        46
-      ],
-      [
         "luitenant",
         35
-      ],
-      [
-        "bevordering",
-        30
-      ],
-      [
-        "luitenants",
-        23
       ]
     ],
     "phrases": [
@@ -183,28 +183,28 @@
     ],
     "similar": [
       [
-        10827,
-        0.28
+        18308,
+        0.49
       ],
       [
-        10661,
+        12291,
+        0.48
+      ],
+      [
+        14894,
+        0.47
+      ],
+      [
+        17529,
         0.27
       ],
       [
-        11070,
+        14699,
         0.25
       ],
       [
-        10684,
-        0.25
-      ],
-      [
-        10985,
+        14204,
         0.23
-      ],
-      [
-        11091,
-        0.22
       ]
     ],
     "sentiment": null

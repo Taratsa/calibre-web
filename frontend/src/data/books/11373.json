@@ -43,5 +43,218 @@
       "size": 3468481,
       "name": "Tetekon Padalangan Sunda (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 56918,
+    "longer_than": 97,
+    "top": [
+      [
+        "anu",
+        1215
+      ],
+      [
+        "jeung",
+        861
+      ],
+      [
+        "dina",
+        840
+      ],
+      [
+        "dalang",
+        680
+      ],
+      [
+        "teh",
+        672
+      ],
+      [
+        "wayang",
+        515
+      ],
+      [
+        "eta",
+        432
+      ],
+      [
+        "atawa",
+        366
+      ],
+      [
+        "mah",
+        330
+      ],
+      [
+        "padalangan",
+        317
+      ],
+      [
+        "kana",
+        300
+      ],
+      [
+        "aya",
+        281
+      ]
+    ],
+    "distinct": [
+      [
+        "jeung",
+        861
+      ],
+      [
+        "anu",
+        1215
+      ],
+      [
+        "dina",
+        840
+      ],
+      [
+        "dalang",
+        680
+      ],
+      [
+        "padalangan",
+        317
+      ],
+      [
+        "teh",
+        672
+      ],
+      [
+        "eta",
+        432
+      ],
+      [
+        "wayang",
+        515
+      ],
+      [
+        "atawa",
+        366
+      ],
+      [
+        "deui",
+        252
+      ],
+      [
+        "taun",
+        266
+      ],
+      [
+        "kana",
+        300
+      ]
+    ],
+    "phrases": [
+      [
+        "jawa barat",
+        116
+      ],
+      [
+        "wayang golek",
+        85
+      ],
+      [
+        "dina taun",
+        82
+      ],
+      [
+        "anu di luhur",
+        54
+      ],
+      [
+        "jeung rea-rea deui",
+        52
+      ],
+      [
+        "dalang anu",
+        58
+      ],
+      [
+        "anu geus",
+        48
+      ],
+      [
+        "seni padalangan",
+        45
+      ]
+    ],
+    "similar": [
+      [
+        13808,
+        0.4
+      ],
+      [
+        11579,
+        0.37
+      ],
+      [
+        11281,
+        0.36
+      ],
+      [
+        11583,
+        0.36
+      ],
+      [
+        11774,
+        0.35
+      ],
+      [
+        11724,
+        0.34
+      ]
+    ],
+    "sentiment": {
+      "score": 0.11,
+      "positive": 273,
+      "negative": 220,
+      "trend": [
+        0.66,
+        0.25,
+        0.5,
+        0.73,
+        0.48,
+        0.17,
+        -0.15,
+        -0.21,
+        0.16,
+        0.22,
+        0.02,
+        0,
+        0.09,
+        -0.73,
+        1,
+        -0.39
+      ],
+      "emotions": [
+        [
+          "anger",
+          80
+        ],
+        [
+          "sadness",
+          34
+        ],
+        [
+          "trust",
+          18
+        ],
+        [
+          "surprise",
+          12
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
+  }
 }

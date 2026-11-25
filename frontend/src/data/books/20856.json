@@ -48,5 +48,170 @@
       "size": 5778,
       "name": "TCP_IP_ Quagga Bagaimana cara menggunakan - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1382,
+    "longer_than": 55,
+    "top": [
+      [
+        "quagga",
+        91
+      ],
+      [
+        "conf",
+        50
+      ],
+      [
+        "daemon",
+        32
+      ],
+      [
+        "vtysh",
+        28
+      ],
+      [
+        "zebra",
+        26
+      ],
+      [
+        "file",
+        21
+      ],
+      [
+        "ospfd",
+        19
+      ],
+      [
+        "tcp",
+        19
+      ],
+      [
+        "ospf",
+        15
+      ],
+      [
+        "usr",
+        14
+      ],
+      [
+        "doc",
+        11
+      ],
+      [
+        "examples",
+        11
+      ]
+    ],
+    "distinct": [
+      [
+        "quagga",
+        91
+      ],
+      [
+        "vtysh",
+        28
+      ],
+      [
+        "conf",
+        50
+      ],
+      [
+        "zebra",
+        26
+      ],
+      [
+        "daemon",
+        32
+      ],
+      [
+        "ospfd",
+        19
+      ],
+      [
+        "ospf",
+        15
+      ],
+      [
+        "isisd",
+        9
+      ],
+      [
+        "ripngd",
+        10
+      ],
+      [
+        "ripd",
+        10
+      ],
+      [
+        "bgpd",
+        10
+      ],
+      [
+        "tcp",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "usr share doc",
+        11
+      ],
+      [
+        "tcp ip quagga",
+        11
+      ],
+      [
+        "share doc quagga",
+        11
+      ],
+      [
+        "doc quagga examples",
+        11
+      ],
+      [
+        "sample etc quagga",
+        10
+      ],
+      [
+        "conf cp usr",
+        8
+      ],
+      [
+        "options daemon",
+        10
+      ],
+      [
+        "conf sample",
+        10
+      ]
+    ],
+    "similar": [
+      [
+        20854,
+        0.64
+      ],
+      [
+        20872,
+        0.56
+      ],
+      [
+        10678,
+        0.51
+      ],
+      [
+        20863,
+        0.42
+      ],
+      [
+        20861,
+        0.39
+      ],
+      [
+        20853,
+        0.37
+      ]
+    ],
+    "sentiment": null
+  }
 }

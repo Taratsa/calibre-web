@@ -35,5 +35,214 @@
       "size": 47871796,
       "name": "Babad Mataram - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 76548,
+    "longer_than": 98,
+    "top": [
+      [
+        "woes",
+        827
+      ],
+      [
+        "sampoen",
+        824
+      ],
+      [
+        "pan",
+        818
+      ],
+      [
+        "sang",
+        696
+      ],
+      [
+        "ingkang",
+        576
+      ],
+      [
+        "tan",
+        523
+      ],
+      [
+        "lan",
+        477
+      ],
+      [
+        "mentaram",
+        435
+      ],
+      [
+        "samya",
+        425
+      ],
+      [
+        "sira",
+        418
+      ],
+      [
+        "jèn",
+        391
+      ],
+      [
+        "pangéran",
+        376
+      ]
+    ],
+    "distinct": [
+      [
+        "woes",
+        827
+      ],
+      [
+        "sampoen",
+        824
+      ],
+      [
+        "mentaram",
+        435
+      ],
+      [
+        "ingkang",
+        576
+      ],
+      [
+        "jèn",
+        391
+      ],
+      [
+        "pangéran",
+        376
+      ],
+      [
+        "samya",
+        425
+      ],
+      [
+        "mentawis",
+        289
+      ],
+      [
+        "pan",
+        818
+      ],
+      [
+        "ingsoen",
+        291
+      ],
+      [
+        "wadya",
+        358
+      ],
+      [
+        "dipati",
+        369
+      ]
+    ],
+    "phrases": [
+      [
+        "sang nata",
+        172
+      ],
+      [
+        "pan sampoen",
+        96
+      ],
+      [
+        "tan ana",
+        76
+      ],
+      [
+        "sang praboe",
+        74
+      ],
+      [
+        "zang pag",
+        72
+      ],
+      [
+        "djeng pangéran",
+        58
+      ],
+      [
+        "sampoen prapta",
+        57
+      ],
+      [
+        "tan kawarna",
+        46
+      ]
+    ],
+    "similar": [
+      [
+        21576,
+        0.37
+      ],
+      [
+        20731,
+        0.33
+      ],
+      [
+        21531,
+        0.3
+      ],
+      [
+        10629,
+        0.3
+      ],
+      [
+        3108,
+        0.27
+      ],
+      [
+        768,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": -0.23,
+      "positive": 101,
+      "negative": 162,
+      "trend": [
+        -0.62,
+        -0.3,
+        -0.5,
+        0,
+        -0.58,
+        0.58,
+        -0.9,
+        null,
+        0,
+        -0.08,
+        -0.3,
+        -0.8,
+        0.69,
+        0.12,
+        -0.83,
+        -0.71
+      ],
+      "emotions": [
+        [
+          "sadness",
+          114
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

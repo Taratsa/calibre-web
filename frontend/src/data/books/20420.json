@@ -48,5 +48,170 @@
       "size": 17752,
       "name": "Konsep IPSec - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 6106,
+    "longer_than": 73,
+    "top": [
+      [
+        "header",
+        110
+      ],
+      [
+        "esp",
+        106
+      ],
+      [
+        "security",
+        76
+      ],
+      [
+        "mode",
+        69
+      ],
+      [
+        "ipsec",
+        63
+      ],
+      [
+        "protokol",
+        63
+      ],
+      [
+        "ipv",
+        56
+      ],
+      [
+        "data",
+        47
+      ],
+      [
+        "paket",
+        47
+      ],
+      [
+        "tunnel",
+        47
+      ],
+      [
+        "field",
+        46
+      ],
+      [
+        "layanan",
+        41
+      ]
+    ],
+    "distinct": [
+      [
+        "esp",
+        106
+      ],
+      [
+        "header",
+        110
+      ],
+      [
+        "ipsec",
+        63
+      ],
+      [
+        "hdr",
+        31
+      ],
+      [
+        "tunnel",
+        47
+      ],
+      [
+        "protokol",
+        63
+      ],
+      [
+        "security",
+        76
+      ],
+      [
+        "ipv",
+        56
+      ],
+      [
+        "mode",
+        69
+      ],
+      [
+        "icv",
+        18
+      ],
+      [
+        "padding",
+        23
+      ],
+      [
+        "field",
+        46
+      ]
+    ],
+    "phrases": [
+      [
+        "mode tunnel",
+        31
+      ],
+      [
+        "security gateway",
+        29
+      ],
+      [
+        "orig ip hdr",
+        16
+      ],
+      [
+        "mode transport",
+        24
+      ],
+      [
+        "security association",
+        21
+      ],
+      [
+        "tcp data",
+        18
+      ],
+      [
+        "penerapan esp",
+        14
+      ],
+      [
+        "protokol layer",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        15333,
+        0.39
+      ],
+      [
+        9804,
+        0.3
+      ],
+      [
+        19225,
+        0.27
+      ],
+      [
+        17677,
+        0.26
+      ],
+      [
+        18016,
+        0.23
+      ],
+      [
+        19221,
+        0.22
+      ]
+    ],
+    "sentiment": null
+  }
 }

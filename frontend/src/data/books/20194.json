@@ -48,5 +48,121 @@
       "size": 3076,
       "name": "Menangkal Serangan XSS - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 231,
+    "longer_than": 26,
+    "top": [
+      [
+        "judul",
+        8
+      ],
+      [
+        "script",
+        7
+      ],
+      [
+        "xss",
+        7
+      ],
+      [
+        "php",
+        5
+      ],
+      [
+        "serangan",
+        5
+      ],
+      [
+        "function",
+        4
+      ],
+      [
+        "karakter",
+        4
+      ],
+      [
+        "alert",
+        3
+      ],
+      [
+        "htmlentities",
+        3
+      ],
+      [
+        "menangkal",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "xss",
+        7
+      ],
+      [
+        "htmlentities",
+        3
+      ],
+      [
+        "script",
+        7
+      ],
+      [
+        "judul",
+        8
+      ],
+      [
+        "menangkal",
+        3
+      ],
+      [
+        "alert",
+        3
+      ],
+      [
+        "function",
+        4
+      ],
+      [
+        "serangan",
+        5
+      ],
+      [
+        "karakter",
+        4
+      ],
+      [
+        "php",
+        5
+      ]
+    ],
+    "phrases": [],
+    "similar": [
+      [
+        19977,
+        0.27
+      ],
+      [
+        9869,
+        0.25
+      ],
+      [
+        19978,
+        0.24
+      ],
+      [
+        18666,
+        0.22
+      ],
+      [
+        12641,
+        0.22
+      ],
+      [
+        19979,
+        0.21
+      ]
+    ],
+    "sentiment": null
+  }
 }

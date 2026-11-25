@@ -43,5 +43,170 @@
       "size": 88863587,
       "name": "Handboek ernstvuurwerken - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 16768,
+    "longer_than": 86,
+    "top": [
+      [
+        "onderzoek",
+        219
+      ],
+      [
+        "den",
+        188
+      ],
+      [
+        "projectielen",
+        102
+      ],
+      [
+        "kisten",
+        101
+      ],
+      [
+        "stuks",
+        96
+      ],
+      [
+        "patronen",
+        88
+      ],
+      [
+        "aantal",
+        70
+      ],
+      [
+        "trommels",
+        65
+      ],
+      [
+        "onderzocht",
+        63
+      ],
+      [
+        "bussen",
+        61
+      ],
+      [
+        "kruit",
+        60
+      ],
+      [
+        "luchtdichtheid",
+        60
+      ]
+    ],
+    "distinct": [
+      [
+        "onderzoek",
+        219
+      ],
+      [
+        "projectielen",
+        102
+      ],
+      [
+        "luchtdichtheid",
+        60
+      ],
+      [
+        "kisten",
+        101
+      ],
+      [
+        "stuks",
+        96
+      ],
+      [
+        "buskruitkisten",
+        53
+      ],
+      [
+        "patronen",
+        88
+      ],
+      [
+        "trommels",
+        65
+      ],
+      [
+        "ernstvuurwerken",
+        55
+      ],
+      [
+        "den",
+        188
+      ],
+      [
+        "bussen",
+        61
+      ],
+      [
+        "kruit",
+        60
+      ]
+    ],
+    "phrases": [
+      [
+        "projectielen en patronen",
+        48
+      ],
+      [
+        "bussen en trommels",
+        23
+      ],
+      [
+        "onderzoek op luchtdichtheid",
+        22
+      ],
+      [
+        "bus of trommel",
+        21
+      ],
+      [
+        "den directeur",
+        26
+      ],
+      [
+        "ter herstelling",
+        25
+      ],
+      [
+        "officier belast",
+        24
+      ],
+      [
+        "luchtdichtheid onderzocht",
+        18
+      ]
+    ],
+    "similar": [
+      [
+        13550,
+        0.25
+      ],
+      [
+        14990,
+        0.22
+      ],
+      [
+        16681,
+        0.22
+      ],
+      [
+        16808,
+        0.21
+      ],
+      [
+        17584,
+        0.21
+      ],
+      [
+        21534,
+        0.21
+      ]
+    ],
+    "sentiment": null
+  }
 }

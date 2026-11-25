@@ -48,5 +48,150 @@
       "size": 3986,
       "name": "Rtorrent.rc - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 563,
+    "longer_than": 41,
+    "top": [
+      [
+        "rtorrent",
+        11
+      ],
+      [
+        "dht",
+        9
+      ],
+      [
+        "hash",
+        9
+      ],
+      [
+        "directory",
+        8
+      ],
+      [
+        "torrents",
+        7
+      ],
+      [
+        "enable",
+        6
+      ],
+      [
+        "port",
+        6
+      ],
+      [
+        "bind",
+        5
+      ],
+      [
+        "peers",
+        5
+      ],
+      [
+        "schedule",
+        5
+      ],
+      [
+        "session",
+        5
+      ],
+      [
+        "start",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "rtorrent",
+        11
+      ],
+      [
+        "dht",
+        9
+      ],
+      [
+        "torrents",
+        7
+      ],
+      [
+        "hash",
+        9
+      ],
+      [
+        "diskspace",
+        4
+      ],
+      [
+        "rakshasa",
+        4
+      ],
+      [
+        "peers",
+        5
+      ],
+      [
+        "directory",
+        8
+      ],
+      [
+        "schedule",
+        5
+      ],
+      [
+        "trackers",
+        3
+      ],
+      [
+        "bind",
+        5
+      ],
+      [
+        "plaintext",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "media server",
+        4
+      ],
+      [
+        "session directory",
+        3
+      ],
+      [
+        "port range",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20747,
+        0.4
+      ],
+      [
+        20793,
+        0.36
+      ],
+      [
+        20796,
+        0.36
+      ],
+      [
+        20798,
+        0.35
+      ],
+      [
+        20787,
+        0.34
+      ],
+      [
+        20386,
+        0.32
+      ]
+    ],
+    "sentiment": null
+  }
 }

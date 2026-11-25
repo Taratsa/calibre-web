@@ -48,5 +48,170 @@
       "size": 3258,
       "name": "NTP_ File ntp.conf - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 357,
+    "longer_than": 33,
+    "top": [
+      [
+        "ntp",
+        32
+      ],
+      [
+        "server",
+        9
+      ],
+      [
+        "file",
+        7
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "conf",
+        6
+      ],
+      [
+        "restrict",
+        6
+      ],
+      [
+        "configuration",
+        4
+      ],
+      [
+        "debian",
+        4
+      ],
+      [
+        "dynamic",
+        4
+      ],
+      [
+        "enable",
+        4
+      ],
+      [
+        "iburst",
+        4
+      ],
+      [
+        "time",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "ntp",
+        32
+      ],
+      [
+        "iburst",
+        4
+      ],
+      [
+        "restrict",
+        6
+      ],
+      [
+        "pool",
+        7
+      ],
+      [
+        "conf",
+        6
+      ],
+      [
+        "server",
+        9
+      ],
+      [
+        "debian",
+        4
+      ],
+      [
+        "dynamic",
+        4
+      ],
+      [
+        "subnet",
+        3
+      ],
+      [
+        "clients",
+        3
+      ],
+      [
+        "file",
+        7
+      ],
+      [
+        "servers",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "server debian pool",
+        4
+      ],
+      [
+        "pool ntp",
+        6
+      ],
+      [
+        "ntp org iburst",
+        4
+      ],
+      [
+        "ntp conf",
+        6
+      ],
+      [
+        "type day enable",
+        3
+      ],
+      [
+        "ntp file ntp",
+        3
+      ],
+      [
+        "iburst dynamic server",
+        3
+      ],
+      [
+        "dynamic server debian",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20916,
+        0.6
+      ],
+      [
+        20220,
+        0.55
+      ],
+      [
+        20410,
+        0.48
+      ],
+      [
+        20228,
+        0.48
+      ],
+      [
+        20224,
+        0.46
+      ],
+      [
+        20230,
+        0.41
+      ]
+    ],
+    "sentiment": null
+  }
 }

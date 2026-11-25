@@ -49,5 +49,214 @@
       "size": 13791541,
       "name": "Peladjaran bahasa sendiri - M. Zain Saidi (Mozasa)"
     }
-  ]
+  ],
+  "text": {
+    "words": 3681,
+    "longer_than": 66,
+    "top": [
+      [
+        "ajah",
+        30
+      ],
+      [
+        "adik",
+        29
+      ],
+      [
+        "kartini",
+        24
+      ],
+      [
+        "ajam",
+        20
+      ],
+      [
+        "anak",
+        20
+      ],
+      [
+        "air",
+        18
+      ],
+      [
+        "peladjaran",
+        18
+      ],
+      [
+        "murid",
+        16
+      ],
+      [
+        "buku",
+        15
+      ],
+      [
+        "burung",
+        15
+      ],
+      [
+        "sekolah",
+        15
+      ],
+      [
+        "engkau",
+        14
+      ]
+    ],
+    "distinct": [
+      [
+        "ajah",
+        30
+      ],
+      [
+        "kartini",
+        24
+      ],
+      [
+        "ajam",
+        20
+      ],
+      [
+        "adik",
+        29
+      ],
+      [
+        "peladjaran",
+        18
+      ],
+      [
+        "tjetaknja",
+        7
+      ],
+      [
+        "sempurnakanlah",
+        8
+      ],
+      [
+        "nenas",
+        10
+      ],
+      [
+        "tjeraikan",
+        7
+      ],
+      [
+        "imlak",
+        6
+      ],
+      [
+        "murid",
+        16
+      ],
+      [
+        "paman",
+        14
+      ]
+    ],
+    "phrases": [
+      [
+        "memilih dan mengisi",
+        9
+      ],
+      [
+        "tjeraikan atas sukunja",
+        5
+      ],
+      [
+        "tebal tjetaknja",
+        7
+      ],
+      [
+        "peladjaran diatas",
+        7
+      ],
+      [
+        "meng meng meng",
+        4
+      ],
+      [
+        "diatas kemudian salin",
+        4
+      ],
+      [
+        "peladjaran bahasa",
+        5
+      ],
+      [
+        "tulis dengan angka",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        14156,
+        0.39
+      ],
+      [
+        7802,
+        0.15
+      ],
+      [
+        1477,
+        0.14
+      ],
+      [
+        1446,
+        0.14
+      ],
+      [
+        11663,
+        0.14
+      ],
+      [
+        7816,
+        0.13
+      ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 60,
+      "negative": 44,
+      "trend": [
+        null,
+        0.5,
+        null,
+        null,
+        1,
+        null,
+        0,
+        -0.4,
+        -0.25,
+        -0.2,
+        1,
+        0.11,
+        -0.2,
+        0,
+        0.6,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          15
+        ],
+        [
+          "fear",
+          7
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "disgust",
+          6
+        ],
+        [
+          "anticipation",
+          3
+        ]
+      ]
+    }
+  }
 }

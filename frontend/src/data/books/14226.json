@@ -45,5 +45,222 @@
       "size": 23428621,
       "name": "Subversif asing di Indonesia - Soeripto Putera Djaja"
     }
-  ]
+  ],
+  "text": {
+    "words": 21903,
+    "longer_than": 89,
+    "top": [
+      [
+        "indonesia",
+        365
+      ],
+      [
+        "belanda",
+        264
+      ],
+      [
+        "kuomintang",
+        201
+      ],
+      [
+        "djuga",
+        144
+      ],
+      [
+        "amerika",
+        125
+      ],
+      [
+        "subversif",
+        124
+      ],
+      [
+        "orang",
+        114
+      ],
+      [
+        "republik",
+        101
+      ],
+      [
+        "fihak",
+        84
+      ],
+      [
+        "mendjadi",
+        84
+      ],
+      [
+        "negara",
+        79
+      ],
+      [
+        "islam",
+        71
+      ]
+    ],
+    "distinct": [
+      [
+        "kuomintang",
+        201
+      ],
+      [
+        "belanda",
+        264
+      ],
+      [
+        "subversif",
+        124
+      ],
+      [
+        "jungschlager",
+        54
+      ],
+      [
+        "djuga",
+        144
+      ],
+      [
+        "westerling",
+        71
+      ],
+      [
+        "indonesia",
+        365
+      ],
+      [
+        "fihak",
+        84
+      ],
+      [
+        "darul",
+        62
+      ],
+      [
+        "mendjadi",
+        84
+      ],
+      [
+        "amerika",
+        125
+      ],
+      [
+        "nigo",
+        27
+      ]
+    ],
+    "phrases": [
+      [
+        "republik indonesia",
+        82
+      ],
+      [
+        "darul islam",
+        57
+      ],
+      [
+        "fihak belanda",
+        48
+      ],
+      [
+        "sulthan abdul hamid",
+        21
+      ],
+      [
+        "tjong hu nji",
+        20
+      ],
+      [
+        "kegiatan subversif",
+        26
+      ],
+      [
+        "orang kuomintang",
+        24
+      ],
+      [
+        "gerakan subversif",
+        24
+      ]
+    ],
+    "similar": [
+      [
+        6799,
+        0.27
+      ],
+      [
+        7916,
+        0.25
+      ],
+      [
+        6291,
+        0.24
+      ],
+      [
+        15243,
+        0.24
+      ],
+      [
+        16709,
+        0.21
+      ],
+      [
+        15727,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 184,
+      "negative": 204,
+      "trend": [
+        0.19,
+        -0.14,
+        -0.47,
+        0.41,
+        -0.26,
+        -0.37,
+        -0.68,
+        -0.4,
+        0,
+        0.25,
+        -0.03,
+        0.27,
+        -0.26,
+        -0.27,
+        0.08,
+        0.27
+      ],
+      "emotions": [
+        [
+          "anger",
+          67
+        ],
+        [
+          "fear",
+          20
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

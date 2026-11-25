@@ -48,5 +48,170 @@
       "size": 4226,
       "name": "Moodle_ Copy Database - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 708,
+    "longer_than": 45,
+    "top": [
+      [
+        "moodle",
+        70
+      ],
+      [
+        "var",
+        26
+      ],
+      [
+        "php",
+        19
+      ],
+      [
+        "backup",
+        18
+      ],
+      [
+        "config",
+        12
+      ],
+      [
+        "database",
+        11
+      ],
+      [
+        "moodledata",
+        10
+      ],
+      [
+        "www-data",
+        10
+      ],
+      [
+        "root",
+        9
+      ],
+      [
+        "chown",
+        8
+      ],
+      [
+        "mysql",
+        8
+      ],
+      [
+        "user",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "moodle",
+        70
+      ],
+      [
+        "var",
+        26
+      ],
+      [
+        "backup",
+        18
+      ],
+      [
+        "moodledata",
+        10
+      ],
+      [
+        "www-data",
+        10
+      ],
+      [
+        "config",
+        12
+      ],
+      [
+        "moodle-database",
+        4
+      ],
+      [
+        "configs",
+        5
+      ],
+      [
+        "chown",
+        8
+      ],
+      [
+        "scp",
+        6
+      ],
+      [
+        "database",
+        11
+      ],
+      [
+        "mysql",
+        8
+      ]
+    ],
+    "phrases": [
+      [
+        "moodle backup php",
+        10
+      ],
+      [
+        "var www moodle",
+        8
+      ],
+      [
+        "var moodledata",
+        8
+      ],
+      [
+        "www-data www-data var",
+        5
+      ],
+      [
+        "moodle config php",
+        5
+      ],
+      [
+        "chown rf www-data",
+        5
+      ],
+      [
+        "tools moodle backup",
+        4
+      ],
+      [
+        "scp r root",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        15868,
+        0.47
+      ],
+      [
+        14637,
+        0.45
+      ],
+      [
+        10808,
+        0.45
+      ],
+      [
+        14631,
+        0.43
+      ],
+      [
+        15800,
+        0.42
+      ],
+      [
+        12031,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
 }

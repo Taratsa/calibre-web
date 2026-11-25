@@ -35,5 +35,226 @@
       "size": 33258479,
       "name": "CONNIE STEVENS DigerBANG PERKawinAN - Selecta No.57 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 21338,
+    "longer_than": 88,
+    "top": [
+      [
+        "orang",
+        104
+      ],
+      [
+        "film",
+        86
+      ],
+      [
+        "sdr",
+        79
+      ],
+      [
+        "djuga",
+        75
+      ],
+      [
+        "sadja",
+        51
+      ],
+      [
+        "banjak",
+        47
+      ],
+      [
+        "raffles",
+        46
+      ],
+      [
+        "gadis",
+        44
+      ],
+      [
+        "lagu",
+        44
+      ],
+      [
+        "mendjadi",
+        44
+      ],
+      [
+        "connie",
+        41
+      ],
+      [
+        "hanja",
+        38
+      ]
+    ],
+    "distinct": [
+      [
+        "connie",
+        41
+      ],
+      [
+        "sdr",
+        79
+      ],
+      [
+        "djuga",
+        75
+      ],
+      [
+        "film",
+        86
+      ],
+      [
+        "raffles",
+        46
+      ],
+      [
+        "cantlie",
+        16
+      ],
+      [
+        "gemblak",
+        21
+      ],
+      [
+        "sadja",
+        51
+      ],
+      [
+        "perfilman",
+        26
+      ],
+      [
+        "banjak",
+        47
+      ],
+      [
+        "lagu²",
+        20
+      ],
+      [
+        "mendjadi",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "perfilman nasional",
+        16
+      ],
+      [
+        "keradjaan tiongkok",
+        10
+      ],
+      [
+        "woman in white",
+        6
+      ],
+      [
+        "mah geuning",
+        9
+      ],
+      [
+        "sensor film",
+        8
+      ],
+      [
+        "perusahaan film negara",
+        5
+      ],
+      [
+        "pendjual es lilin",
+        5
+      ],
+      [
+        "lagu es lilin",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        15207,
+        0.32
+      ],
+      [
+        15180,
+        0.32
+      ],
+      [
+        15300,
+        0.3
+      ],
+      [
+        15528,
+        0.3
+      ],
+      [
+        14972,
+        0.3
+      ],
+      [
+        15350,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 283,
+      "negative": 165,
+      "trend": [
+        0.39,
+        -0.07,
+        0.08,
+        0.52,
+        0.38,
+        0.42,
+        0.05,
+        0.44,
+        0.12,
+        0.57,
+        0.5,
+        0.35,
+        0.27,
+        -0.04,
+        0.21,
+        -0.07
+      ],
+      "emotions": [
+        [
+          "joy",
+          40
+        ],
+        [
+          "anger",
+          21
+        ],
+        [
+          "sadness",
+          19
+        ],
+        [
+          "surprise",
+          17
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "fear",
+          5
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

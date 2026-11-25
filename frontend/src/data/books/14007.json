@@ -45,5 +45,218 @@
       "size": 21534352,
       "name": "Mendjelang 29 September 1955 _ Pidato-pida - Indonesia. Kementerian Penerangan R.I"
     }
-  ]
+  ],
+  "text": {
+    "words": 3843,
+    "longer_than": 67,
+    "top": [
+      [
+        "rakjat",
+        57
+      ],
+      [
+        "indonesia",
+        44
+      ],
+      [
+        "suara",
+        32
+      ],
+      [
+        "saudara",
+        30
+      ],
+      [
+        "pemilihan",
+        29
+      ],
+      [
+        "negara",
+        26
+      ],
+      [
+        "pemungutan",
+        26
+      ],
+      [
+        "demokrasi",
+        25
+      ],
+      [
+        "nasional",
+        25
+      ],
+      [
+        "perpustakaan",
+        24
+      ],
+      [
+        "september",
+        24
+      ],
+      [
+        "memilih",
+        23
+      ]
+    ],
+    "distinct": [
+      [
+        "rakjat",
+        57
+      ],
+      [
+        "pemungutan",
+        26
+      ],
+      [
+        "republikindonesia",
+        20
+      ],
+      [
+        "pemilihan",
+        29
+      ],
+      [
+        "pendengar-pendengar",
+        8
+      ],
+      [
+        "saudara",
+        30
+      ],
+      [
+        "demokrasi",
+        25
+      ],
+      [
+        "suara",
+        32
+      ],
+      [
+        "perpustakaan",
+        24
+      ],
+      [
+        "september",
+        24
+      ],
+      [
+        "indonesia",
+        44
+      ],
+      [
+        "djangan",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "perpustakaan nasional republikindonesia",
+        19
+      ],
+      [
+        "pemungutan suara",
+        26
+      ],
+      [
+        "dewan perwakilan rakjat",
+        10
+      ],
+      [
+        "tanggal september",
+        14
+      ],
+      [
+        "pendengar-pendengar jang terhormat",
+        8
+      ],
+      [
+        "bangsa indonesia",
+        9
+      ],
+      [
+        "republik indonesia",
+        7
+      ],
+      [
+        "rakjat indonesia",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        1434,
+        0.22
+      ],
+      [
+        7589,
+        0.22
+      ],
+      [
+        18657,
+        0.2
+      ],
+      [
+        8771,
+        0.19
+      ],
+      [
+        21036,
+        0.18
+      ],
+      [
+        21031,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.56,
+      "positive": 84,
+      "negative": 24,
+      "trend": [
+        0.64,
+        0.14,
+        0.67,
+        null,
+        null,
+        0.56,
+        null,
+        1,
+        0.38,
+        1,
+        1,
+        1,
+        0.71,
+        null,
+        null,
+        0
+      ],
+      "emotions": [
+        [
+          "trust",
+          21
+        ],
+        [
+          "fear",
+          4
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

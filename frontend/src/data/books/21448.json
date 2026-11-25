@@ -51,5 +51,150 @@
       "size": 3900,
       "name": "MythTV - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 552,
+    "longer_than": 41,
+    "top": [
+      [
+        "mythtv",
+        16
+      ],
+      [
+        "frontend",
+        7
+      ],
+      [
+        "backend",
+        5
+      ],
+      [
+        "client",
+        4
+      ],
+      [
+        "digital",
+        4
+      ],
+      [
+        "install",
+        4
+      ],
+      [
+        "recording",
+        4
+      ],
+      [
+        "server",
+        4
+      ],
+      [
+        "watch",
+        4
+      ],
+      [
+        "access",
+        3
+      ],
+      [
+        "apt-get",
+        3
+      ],
+      [
+        "center",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "mythtv",
+        16
+      ],
+      [
+        "frontend",
+        7
+      ],
+      [
+        "backend",
+        5
+      ],
+      [
+        "recording",
+        4
+      ],
+      [
+        "servers",
+        3
+      ],
+      [
+        "watch",
+        4
+      ],
+      [
+        "client",
+        4
+      ],
+      [
+        "listen",
+        3
+      ],
+      [
+        "music",
+        3
+      ],
+      [
+        "digital",
+        4
+      ],
+      [
+        "apt-get",
+        3
+      ],
+      [
+        "files",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo apt-get install",
+        3
+      ],
+      [
+        "media center",
+        3
+      ],
+      [
+        "backend servers",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        13251,
+        0.32
+      ],
+      [
+        10806,
+        0.27
+      ],
+      [
+        14041,
+        0.25
+      ],
+      [
+        10049,
+        0.24
+      ],
+      [
+        20791,
+        0.21
+      ],
+      [
+        17181,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 521,
-    "longer_than": 41,
+    "longer_than": 40,
     "top": [
       [
         "apache",
@@ -124,28 +124,28 @@
         5
       ],
       [
-        "log",
-        9
-      ],
-      [
         "symlink",
         4
+      ],
+      [
+        "log",
+        9
       ],
       [
         "site-available",
         3
       ],
       [
-        "sites-available",
-        4
+        "reload",
+        5
       ],
       [
         "conf",
         8
       ],
       [
-        "reload",
-        5
+        "sites-available",
+        4
       ],
       [
         "virtualhost",
@@ -173,7 +173,7 @@
     "similar": [
       [
         14667,
-        0.84
+        0.83
       ],
       [
         12486,
@@ -184,16 +184,16 @@
         0.4
       ],
       [
+        20356,
+        0.36
+      ],
+      [
         12414,
         0.3
       ],
       [
         16484,
-        0.27
-      ],
-      [
-        16503,
-        0.25
+        0.28
       ]
     ],
     "sentiment": null

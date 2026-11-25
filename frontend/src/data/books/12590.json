@@ -57,5 +57,214 @@
       "size": 12572318,
       "name": "Tjatatan tentang segi-segi messianistis da - Sartono"
     }
-  ]
+  ],
+  "text": {
+    "words": 10351,
+    "longer_than": 80,
+    "top": [
+      [
+        "sedjarah",
+        104
+      ],
+      [
+        "djajabaja",
+        91
+      ],
+      [
+        "pralambang",
+        82
+      ],
+      [
+        "pikiran",
+        62
+      ],
+      [
+        "manusia",
+        57
+      ],
+      [
+        "djawa",
+        52
+      ],
+      [
+        "historis",
+        51
+      ],
+      [
+        "djaman",
+        50
+      ],
+      [
+        "alam",
+        49
+      ],
+      [
+        "adil",
+        47
+      ],
+      [
+        "kebudajaan",
+        45
+      ],
+      [
+        "keradjaan",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "djajabaja",
+        91
+      ],
+      [
+        "pralambang",
+        82
+      ],
+      [
+        "sedjarah",
+        104
+      ],
+      [
+        "messianistis",
+        32
+      ],
+      [
+        "messianisme",
+        25
+      ],
+      [
+        "djaman",
+        50
+      ],
+      [
+        "keradjaan",
+        43
+      ],
+      [
+        "djawa",
+        52
+      ],
+      [
+        "kebudajaan",
+        45
+      ],
+      [
+        "mitis",
+        23
+      ],
+      [
+        "historis",
+        51
+      ],
+      [
+        "filsafah",
+        23
+      ]
+    ],
+    "phrases": [
+      [
+        "pralambang djajabaja",
+        48
+      ],
+      [
+        "ratu adil",
+        41
+      ],
+      [
+        "filsafah sedjarah",
+        22
+      ],
+      [
+        "serat djajabaja",
+        20
+      ],
+      [
+        "struktur pikiran",
+        16
+      ],
+      [
+        "imam mahdi",
+        15
+      ],
+      [
+        "pangeran dipanegara",
+        13
+      ],
+      [
+        "kedatangan ratu",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        3416,
+        0.15
+      ],
+      [
+        7665,
+        0.15
+      ],
+      [
+        4838,
+        0.14
+      ],
+      [
+        1069,
+        0.14
+      ],
+      [
+        7822,
+        0.14
+      ],
+      [
+        7838,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": 0.48,
+      "positive": 163,
+      "negative": 57,
+      "trend": [
+        0.5,
+        1,
+        0.44,
+        -0.33,
+        0.6,
+        0.6,
+        0.38,
+        0.3,
+        0.39,
+        0.5,
+        0.43,
+        0.5,
+        1,
+        0.43,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "trust",
+          58
+        ],
+        [
+          "anticipation",
+          23
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          6
+        ]
+      ]
+    }
+  }
 }

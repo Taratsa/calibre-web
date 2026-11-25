@@ -45,5 +45,226 @@
       "size": 53314273,
       "name": "Timbulnya militerisme Ambon _ sebagai suat - I.O. Manulaitta"
     }
-  ]
+  ],
+  "text": {
+    "words": 33722,
+    "longer_than": 94,
+    "top": [
+      [
+        "orang",
+        377
+      ],
+      [
+        "rakjat",
+        351
+      ],
+      [
+        "ambon",
+        322
+      ],
+      [
+        "belanda",
+        275
+      ],
+      [
+        "jonker",
+        185
+      ],
+      [
+        "hitu",
+        175
+      ],
+      [
+        "maluku",
+        147
+      ],
+      [
+        "portugis",
+        136
+      ],
+      [
+        "kompeni",
+        119
+      ],
+      [
+        "ternate",
+        114
+      ],
+      [
+        "mendjadi",
+        109
+      ],
+      [
+        "didalam",
+        98
+      ]
+    ],
+    "distinct": [
+      [
+        "jonker",
+        185
+      ],
+      [
+        "ambon",
+        322
+      ],
+      [
+        "rakjat",
+        351
+      ],
+      [
+        "hitu",
+        175
+      ],
+      [
+        "belanda",
+        275
+      ],
+      [
+        "portugis",
+        136
+      ],
+      [
+        "kompeni",
+        119
+      ],
+      [
+        "tjengkih",
+        66
+      ],
+      [
+        "ternate",
+        114
+      ],
+      [
+        "maluku",
+        147
+      ],
+      [
+        "uliase",
+        48
+      ],
+      [
+        "kimelaha",
+        47
+      ]
+    ],
+    "phrases": [
+      [
+        "orang kaja",
+        44
+      ],
+      [
+        "orang portugis",
+        38
+      ],
+      [
+        "ambon dan uliase",
+        24
+      ],
+      [
+        "orang belanda",
+        32
+      ],
+      [
+        "orang ambon",
+        31
+      ],
+      [
+        "tjengkih dan pala",
+        18
+      ],
+      [
+        "militerisme ambon",
+        27
+      ],
+      [
+        "rakjat maluku",
+        23
+      ]
+    ],
+    "similar": [
+      [
+        17890,
+        0.41
+      ],
+      [
+        6980,
+        0.25
+      ],
+      [
+        15153,
+        0.24
+      ],
+      [
+        14833,
+        0.23
+      ],
+      [
+        16982,
+        0.19
+      ],
+      [
+        17496,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": -0.05,
+      "positive": 300,
+      "negative": 333,
+      "trend": [
+        0.07,
+        -0.14,
+        -0.25,
+        0,
+        -0.2,
+        -0.42,
+        0.05,
+        -0.33,
+        -0.41,
+        0.11,
+        -0.04,
+        -0.09,
+        0.23,
+        0.35,
+        0.4,
+        0.2
+      ],
+      "emotions": [
+        [
+          "anger",
+          107
+        ],
+        [
+          "trust",
+          30
+        ],
+        [
+          "sadness",
+          29
+        ],
+        [
+          "joy",
+          17
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

@@ -43,5 +43,170 @@
       "size": 32491799,
       "name": "Bataviasche kunstkring - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 5710,
+    "longer_than": 72,
+    "top": [
+      [
+        "piano",
+        107
+      ],
+      [
+        "viool",
+        87
+      ],
+      [
+        "concert",
+        71
+      ],
+      [
+        "muziekavond",
+        64
+      ],
+      [
+        "den",
+        54
+      ],
+      [
+        "kamermuziekavond",
+        33
+      ],
+      [
+        "cello",
+        27
+      ],
+      [
+        "zang",
+        27
+      ],
+      [
+        "heer",
+        26
+      ],
+      [
+        "conoert",
+        22
+      ],
+      [
+        "kamermuziek",
+        21
+      ],
+      [
+        "kunstkring",
+        17
+      ]
+    ],
+    "distinct": [
+      [
+        "viool",
+        87
+      ],
+      [
+        "piano",
+        107
+      ],
+      [
+        "concert",
+        71
+      ],
+      [
+        "cello",
+        27
+      ],
+      [
+        "solisten",
+        17
+      ],
+      [
+        "solist",
+        16
+      ],
+      [
+        "zang",
+        27
+      ],
+      [
+        "kunstkring",
+        17
+      ],
+      [
+        "soliste",
+        13
+      ],
+      [
+        "den",
+        54
+      ],
+      [
+        "movr",
+        11
+      ],
+      [
+        "marinus",
+        14
+      ]
+    ],
+    "phrases": [
+      [
+        "den heer",
+        13
+      ],
+      [
+        "salomons piano",
+        9
+      ],
+      [
+        "den kunstkring",
+        9
+      ],
+      [
+        "conoert kamermuziek",
+        9
+      ],
+      [
+        "concert kamermuziek",
+        9
+      ],
+      [
+        "ruyter korver",
+        8
+      ],
+      [
+        "muziekavond concert",
+        8
+      ],
+      [
+        "kamermuziek solisten",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        11420,
+        0.23
+      ],
+      [
+        13559,
+        0.18
+      ],
+      [
+        14638,
+        0.16
+      ],
+      [
+        13725,
+        0.12
+      ],
+      [
+        21092,
+        0.12
+      ],
+      [
+        21091,
+        0.12
+      ]
+    ],
+    "sentiment": null
+  }
 }

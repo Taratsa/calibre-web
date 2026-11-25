@@ -48,5 +48,170 @@
       "size": 4096,
       "name": "Mirror Repository Ubuntu 12.04 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 578,
+    "longer_than": 42,
+    "top": [
+      [
+        "ubuntu",
+        27
+      ],
+      [
+        "repository",
+        22
+      ],
+      [
+        "mirror",
+        21
+      ],
+      [
+        "server",
+        11
+      ],
+      [
+        "data",
+        9
+      ],
+      [
+        "var",
+        9
+      ],
+      [
+        "debmirror",
+        8
+      ],
+      [
+        "mirrorbuild",
+        8
+      ],
+      [
+        "repo",
+        8
+      ],
+      [
+        "release",
+        7
+      ],
+      [
+        "bin",
+        6
+      ],
+      [
+        "local",
+        6
+      ]
+    ],
+    "distinct": [
+      [
+        "mirror",
+        21
+      ],
+      [
+        "repository",
+        22
+      ],
+      [
+        "ubuntu",
+        27
+      ],
+      [
+        "mirrorbuild",
+        8
+      ],
+      [
+        "debmirror",
+        8
+      ],
+      [
+        "debian-installer",
+        5
+      ],
+      [
+        "mirrorkeyring",
+        5
+      ],
+      [
+        "repo",
+        8
+      ],
+      [
+        "var",
+        9
+      ],
+      [
+        "release",
+        7
+      ],
+      [
+        "old-releases",
+        3
+      ],
+      [
+        "server",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "mirror repository ubuntu",
+        13
+      ],
+      [
+        "var data repository",
+        6
+      ],
+      [
+        "usr local bin",
+        5
+      ],
+      [
+        "local bin mirrorbuild",
+        5
+      ],
+      [
+        "data repository repo",
+        5
+      ],
+      [
+        "ubuntu pakai old-releases",
+        3
+      ],
+      [
+        "ubuntu com ubuntu",
+        3
+      ],
+      [
+        "repository ubuntu pakai",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        17734,
+        0.8
+      ],
+      [
+        17404,
+        0.79
+      ],
+      [
+        18304,
+        0.75
+      ],
+      [
+        18303,
+        0.75
+      ],
+      [
+        20099,
+        0.75
+      ],
+      [
+        19243,
+        0.68
+      ]
+    ],
+    "sentiment": null
+  }
 }

@@ -35,5 +35,226 @@
       "size": 31520594,
       "name": "RAHSIA PATUNG Emas - Selecta No.61 - 1961"
     }
-  ]
+  ],
+  "text": {
+    "words": 19826,
+    "longer_than": 88,
+    "top": [
+      [
+        "orang",
+        99
+      ],
+      [
+        "djuga",
+        56
+      ],
+      [
+        "sadja",
+        56
+      ],
+      [
+        "mendjadi",
+        54
+      ],
+      [
+        "wanita",
+        50
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "brigitte",
+        48
+      ],
+      [
+        "film",
+        46
+      ],
+      [
+        "indonesia",
+        46
+      ],
+      [
+        "pemuda",
+        38
+      ],
+      [
+        "kota",
+        36
+      ],
+      [
+        "hidup",
+        34
+      ]
+    ],
+    "distinct": [
+      [
+        "brigitte",
+        48
+      ],
+      [
+        "djuga",
+        56
+      ],
+      [
+        "tjahjaningsih",
+        21
+      ],
+      [
+        "sadja",
+        56
+      ],
+      [
+        "mendjadi",
+        54
+      ],
+      [
+        "vadim",
+        19
+      ],
+      [
+        "puspasari",
+        20
+      ],
+      [
+        "banjak",
+        49
+      ],
+      [
+        "fella",
+        16
+      ],
+      [
+        "pena-peluru",
+        12
+      ],
+      [
+        "film",
+        46
+      ],
+      [
+        "wanita",
+        50
+      ]
+    ],
+    "phrases": [
+      [
+        "dewi tjahjaningsih",
+        21
+      ],
+      [
+        "mao mei",
+        17
+      ],
+      [
+        "wanita indonesia",
+        10
+      ],
+      [
+        "pemuda bertombak",
+        10
+      ],
+      [
+        "cinder fella",
+        10
+      ],
+      [
+        "tuan dan njonja",
+        6
+      ],
+      [
+        "tjahjaningsih dan puspasari",
+        6
+      ],
+      [
+        "dilajar putih",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        14996,
+        0.38
+      ],
+      [
+        14613,
+        0.36
+      ],
+      [
+        14609,
+        0.36
+      ],
+      [
+        17975,
+        0.33
+      ],
+      [
+        15350,
+        0.32
+      ],
+      [
+        15146,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 248,
+      "negative": 135,
+      "trend": [
+        0.14,
+        0.33,
+        -0.21,
+        0.79,
+        0.5,
+        0.56,
+        0.06,
+        0.89,
+        0.44,
+        0.21,
+        0.52,
+        0,
+        0.25,
+        0.33,
+        0.06,
+        0.4
+      ],
+      "emotions": [
+        [
+          "joy",
+          46
+        ],
+        [
+          "sadness",
+          42
+        ],
+        [
+          "anger",
+          23
+        ],
+        [
+          "surprise",
+          9
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "disgust",
+          5
+        ]
+      ]
+    }
+  }
 }

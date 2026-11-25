@@ -49,5 +49,218 @@
       "size": 48637339,
       "name": "Kitab riwajat negeri Kediri - Purbowijoyo"
     }
-  ]
+  ],
+  "text": {
+    "words": 9497,
+    "longer_than": 79,
+    "top": [
+      [
+        "baginda",
+        98
+      ],
+      [
+        "orang",
+        97
+      ],
+      [
+        "raden",
+        97
+      ],
+      [
+        "kediri",
+        96
+      ],
+      [
+        "pandji",
+        88
+      ],
+      [
+        "praboe",
+        87
+      ],
+      [
+        "radja",
+        83
+      ],
+      [
+        "tida",
+        83
+      ],
+      [
+        "dewi",
+        66
+      ],
+      [
+        "laloe",
+        58
+      ],
+      [
+        "mendjadi",
+        56
+      ],
+      [
+        "soedah",
+        54
+      ]
+    ],
+    "distinct": [
+      [
+        "praboe",
+        87
+      ],
+      [
+        "pandji",
+        88
+      ],
+      [
+        "djenggolo",
+        42
+      ],
+      [
+        "kediri",
+        96
+      ],
+      [
+        "baginda",
+        98
+      ],
+      [
+        "tida",
+        83
+      ],
+      [
+        "raden",
+        97
+      ],
+      [
+        "radja",
+        83
+      ],
+      [
+        "laloe",
+        58
+      ],
+      [
+        "soedah",
+        54
+      ],
+      [
+        "kilisoetji",
+        21
+      ],
+      [
+        "djoega",
+        47
+      ]
+    ],
+    "phrases": [
+      [
+        "raden pandji",
+        61
+      ],
+      [
+        "gendam semorodono",
+        20
+      ],
+      [
+        "djoko pegadoeng",
+        20
+      ],
+      [
+        "dewi kilisoetji",
+        18
+      ],
+      [
+        "pandji koedorawisrenggo",
+        17
+      ],
+      [
+        "mendjadi radja",
+        17
+      ],
+      [
+        "boeto lotjojo",
+        17
+      ],
+      [
+        "dewi sekartadji",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        19318,
+        0.23
+      ],
+      [
+        4621,
+        0.22
+      ],
+      [
+        664,
+        0.22
+      ],
+      [
+        14790,
+        0.21
+      ],
+      [
+        583,
+        0.21
+      ],
+      [
+        524,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 69,
+      "negative": 41,
+      "trend": [
+        null,
+        1,
+        0.56,
+        null,
+        null,
+        0.11,
+        -0.14,
+        null,
+        -0.11,
+        0.5,
+        0.5,
+        0.56,
+        0.25,
+        -0.75,
+        0.33,
+        0.33
+      ],
+      "emotions": [
+        [
+          "sadness",
+          25
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

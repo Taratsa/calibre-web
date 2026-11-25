@@ -45,5 +45,193 @@
       "size": 9291957,
       "name": "Kaum buruh dalam proses produksi - Raden Hasan Nata Permana"
     }
-  ]
+  ],
+  "text": {
+    "words": 7367,
+    "longer_than": 75,
+    "top": [
+      [
+        "buruh",
+        61
+      ],
+      [
+        "masjarakat",
+        43
+      ],
+      [
+        "hasil",
+        36
+      ],
+      [
+        "kapital",
+        34
+      ],
+      [
+        "sadja",
+        34
+      ],
+      [
+        "perusahaan",
+        33
+      ],
+      [
+        "mendjadi",
+        32
+      ],
+      [
+        "fihak",
+        31
+      ],
+      [
+        "madjikan",
+        27
+      ],
+      [
+        "produksi",
+        27
+      ],
+      [
+        "tenaga",
+        27
+      ],
+      [
+        "upah",
+        26
+      ]
+    ],
+    "distinct": [
+      [
+        "masjarakat",
+        43
+      ],
+      [
+        "perdjandjian-kerdja",
+        14
+      ],
+      [
+        "madjikan",
+        27
+      ],
+      [
+        "buruh",
+        61
+      ],
+      [
+        "kerdja-bersama",
+        14
+      ],
+      [
+        "fihak",
+        31
+      ],
+      [
+        "kapital",
+        34
+      ],
+      [
+        "sadja",
+        34
+      ],
+      [
+        "mendjadi",
+        32
+      ],
+      [
+        "perusahaan",
+        33
+      ],
+      [
+        "tudjuan",
+        18
+      ],
+      [
+        "mempunjai",
+        20
+      ]
+    ],
+    "phrases": [
+      [
+        "kapital dan tenaga-buruh",
+        7
+      ],
+      [
+        "buruh dan madjikan",
+        5
+      ],
+      [
+        "pengawasan dari pemerintah",
+        4
+      ],
+      [
+        "pemerintah pusat",
+        6
+      ],
+      [
+        "kebutuhan masjarakat",
+        6
+      ],
+      [
+        "kapital dan buruh",
+        4
+      ],
+      [
+        "hasan nata permana",
+        4
+      ],
+      [
+        "beserta keluarganja",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        1303,
+        0.5
+      ],
+      [
+        7819,
+        0.24
+      ],
+      [
+        8392,
+        0.23
+      ],
+      [
+        5959,
+        0.23
+      ],
+      [
+        4591,
+        0.23
+      ],
+      [
+        498,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 96,
+      "negative": 36,
+      "trend": [
+        1,
+        1,
+        null,
+        0.2,
+        0.27,
+        0.67,
+        null,
+        -0.71,
+        -0.2,
+        1,
+        0.33,
+        0.8,
+        null,
+        0.27,
+        0.5,
+        0.67
+      ],
+      "emotions": []
+    }
+  }
 }

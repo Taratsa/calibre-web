@@ -48,5 +48,166 @@
       "size": 4397,
       "name": "ProxMox_ Backup - Restore - Live Migration - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 627,
+    "longer_than": 43,
+    "top": [
+      [
+        "backup",
+        25
+      ],
+      [
+        "vzdump",
+        17
+      ],
+      [
+        "restore",
+        12
+      ],
+      [
+        "file",
+        11
+      ],
+      [
+        "proxmox",
+        9
+      ],
+      [
+        "snapshot",
+        9
+      ],
+      [
+        "storage",
+        9
+      ],
+      [
+        "suspend",
+        8
+      ],
+      [
+        "tar",
+        8
+      ],
+      [
+        "downtime",
+        6
+      ],
+      [
+        "files",
+        6
+      ],
+      [
+        "exclude",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "vzdump",
+        17
+      ],
+      [
+        "backup",
+        25
+      ],
+      [
+        "proxmox",
+        9
+      ],
+      [
+        "restore",
+        12
+      ],
+      [
+        "snapshot",
+        9
+      ],
+      [
+        "suspend",
+        8
+      ],
+      [
+        "downtime",
+        6
+      ],
+      [
+        "lvm",
+        5
+      ],
+      [
+        "storage",
+        9
+      ],
+      [
+        "openvz",
+        4
+      ],
+      [
+        "kvm",
+        5
+      ],
+      [
+        "vmid",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "virtual machine",
+        5
+      ],
+      [
+        "live migration",
+        5
+      ],
+      [
+        "contoh restore backup",
+        3
+      ],
+      [
+        "backup restore live",
+        3
+      ],
+      [
+        "suspend resume",
+        3
+      ],
+      [
+        "space backup",
+        3
+      ],
+      [
+        "backup file",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20185,
+        0.31
+      ],
+      [
+        20745,
+        0.28
+      ],
+      [
+        14632,
+        0.27
+      ],
+      [
+        14832,
+        0.27
+      ],
+      [
+        20746,
+        0.27
+      ],
+      [
+        10171,
+        0.26
+      ]
+    ],
+    "sentiment": null
+  }
 }

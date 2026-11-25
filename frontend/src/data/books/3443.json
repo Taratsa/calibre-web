@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 884,
-    "longer_than": 50,
+    "longer_than": 48,
     "top": [
       [
         "kebudayaan",
@@ -149,7 +149,20 @@
       ]
     ],
     "phrases": [],
-    "similar": [],
+    "similar": [
+      [
+        15709,
+        0.17
+      ],
+      [
+        15741,
+        0.13
+      ],
+      [
+        11127,
+        0.11
+      ]
+    ],
     "sentiment": null
   }
 }

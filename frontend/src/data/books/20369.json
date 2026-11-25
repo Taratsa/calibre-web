@@ -51,5 +51,162 @@
       "size": 3401,
       "name": "Conversion from Ext3 - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 540,
+    "longer_than": 40,
+    "top": [
+      [
+        "ext",
+        33
+      ],
+      [
+        "btrfs",
+        22
+      ],
+      [
+        "conversion",
+        15
+      ],
+      [
+        "file",
+        9
+      ],
+      [
+        "filesystem",
+        9
+      ],
+      [
+        "blocks",
+        8
+      ],
+      [
+        "mount",
+        8
+      ],
+      [
+        "original",
+        8
+      ],
+      [
+        "dev",
+        6
+      ],
+      [
+        "xxx",
+        6
+      ],
+      [
+        "image",
+        5
+      ],
+      [
+        "saved",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "btrfs",
+        22
+      ],
+      [
+        "ext",
+        33
+      ],
+      [
+        "conversion",
+        15
+      ],
+      [
+        "filesystem",
+        9
+      ],
+      [
+        "blocks",
+        8
+      ],
+      [
+        "mount",
+        8
+      ],
+      [
+        "xxx",
+        6
+      ],
+      [
+        "original",
+        8
+      ],
+      [
+        "saved",
+        5
+      ],
+      [
+        "snapshot",
+        4
+      ],
+      [
+        "metadata",
+        4
+      ],
+      [
+        "umount",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "original ext",
+        6
+      ],
+      [
+        "dev xxx",
+        6
+      ],
+      [
+        "ext saved",
+        5
+      ],
+      [
+        "conversion from ext",
+        3
+      ],
+      [
+        "ext filesystem",
+        4
+      ],
+      [
+        "btrfs filesystem",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        9456,
+        0.4
+      ],
+      [
+        20376,
+        0.37
+      ],
+      [
+        20366,
+        0.36
+      ],
+      [
+        9379,
+        0.35
+      ],
+      [
+        20364,
+        0.32
+      ],
+      [
+        9457,
+        0.32
+      ]
+    ],
+    "sentiment": null
+  }
 }

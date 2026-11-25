@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 497,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "isp",
@@ -120,11 +120,11 @@
         12
       ],
       [
-        "eth",
+        "ethernet",
         12
       ],
       [
-        "ethernet",
+        "eth",
         12
       ],
       [
@@ -132,12 +132,12 @@
         12
       ],
       [
-        "access-list",
-        5
-      ],
-      [
         "remote-as",
         6
+      ],
+      [
+        "access-list",
+        5
       ],
       [
         "route-map",
@@ -148,8 +148,8 @@
         12
       ],
       [
-        "permit",
-        7
+        "address",
+        13
       ]
     ],
     "phrases": [
@@ -209,7 +209,7 @@
       ],
       [
         12855,
-        0.8
+        0.81
       ]
     ],
     "sentiment": null

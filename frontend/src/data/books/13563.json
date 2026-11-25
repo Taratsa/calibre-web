@@ -43,5 +43,226 @@
       "size": 18221246,
       "name": "Puspa Rinonce (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 18981,
+    "longer_than": 87,
+    "top": [
+      [
+        "lan",
+        255
+      ],
+      [
+        "bangsa",
+        196
+      ],
+      [
+        "ora",
+        143
+      ],
+      [
+        "marang",
+        122
+      ],
+      [
+        "gandhi",
+        113
+      ],
+      [
+        "sarta",
+        108
+      ],
+      [
+        "kaum",
+        93
+      ],
+      [
+        "padha",
+        92
+      ],
+      [
+        "wis",
+        83
+      ],
+      [
+        "rakyat",
+        76
+      ],
+      [
+        "india",
+        74
+      ],
+      [
+        "luhur",
+        72
+      ]
+    ],
+    "distinct": [
+      [
+        "lan",
+        255
+      ],
+      [
+        "marang",
+        122
+      ],
+      [
+        "gandhi",
+        113
+      ],
+      [
+        "ora",
+        143
+      ],
+      [
+        "sarta",
+        108
+      ],
+      [
+        "padha",
+        92
+      ],
+      [
+        "mahatma",
+        60
+      ],
+      [
+        "wis",
+        83
+      ],
+      [
+        "njur",
+        44
+      ],
+      [
+        "bangsa",
+        196
+      ],
+      [
+        "yaiku",
+        47
+      ],
+      [
+        "klawan",
+        43
+      ]
+    ],
+    "phrases": [
+      [
+        "sang mahatma",
+        36
+      ],
+      [
+        "nyambut gawe",
+        34
+      ],
+      [
+        "mahadev desai",
+        30
+      ],
+      [
+        "mahatma gandhi",
+        23
+      ],
+      [
+        "putra lan",
+        18
+      ],
+      [
+        "bangsa belanda",
+        18
+      ],
+      [
+        "bangsa walanda",
+        17
+      ],
+      [
+        "bangsa lan",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        5810,
+        0.38
+      ],
+      [
+        5805,
+        0.38
+      ],
+      [
+        5812,
+        0.37
+      ],
+      [
+        5807,
+        0.37
+      ],
+      [
+        5800,
+        0.36
+      ],
+      [
+        5811,
+        0.36
+      ]
+    ],
+    "sentiment": {
+      "score": 0.51,
+      "positive": 478,
+      "negative": 155,
+      "trend": [
+        0.64,
+        0.57,
+        0.61,
+        0.28,
+        0.52,
+        0.59,
+        0.54,
+        0.08,
+        0.74,
+        0.63,
+        0.64,
+        0.6,
+        0.53,
+        0.87,
+        0.18,
+        0.33
+      ],
+      "emotions": [
+        [
+          "joy",
+          48
+        ],
+        [
+          "sadness",
+          36
+        ],
+        [
+          "trust",
+          28
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "fear",
+          9
+        ],
+        [
+          "surprise",
+          7
+        ],
+        [
+          "disgust",
+          4
+        ]
+      ]
+    }
+  }
 }

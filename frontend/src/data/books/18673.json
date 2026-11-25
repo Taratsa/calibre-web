@@ -45,5 +45,214 @@
       "size": 77790184,
       "name": "Negara tjiptaan rakjat _ sedjarah perdjoea - Bahrun Rangkuti"
     }
-  ]
+  ],
+  "text": {
+    "words": 20447,
+    "longer_than": 88,
+    "top": [
+      [
+        "indonesia",
+        373
+      ],
+      [
+        "bangsa",
+        169
+      ],
+      [
+        "rakjat",
+        156
+      ],
+      [
+        "djepang",
+        132
+      ],
+      [
+        "oentoek",
+        127
+      ],
+      [
+        "belanda",
+        105
+      ],
+      [
+        "djoega",
+        82
+      ],
+      [
+        "negara",
+        79
+      ],
+      [
+        "repoeblik",
+        78
+      ],
+      [
+        "didalam",
+        76
+      ],
+      [
+        "kemerdekaan",
+        74
+      ],
+      [
+        "doenia",
+        62
+      ]
+    ],
+    "distinct": [
+      [
+        "oentoek",
+        127
+      ],
+      [
+        "djepang",
+        132
+      ],
+      [
+        "repoeblik",
+        78
+      ],
+      [
+        "rakjat",
+        156
+      ],
+      [
+        "indonesia",
+        373
+      ],
+      [
+        "djoega",
+        82
+      ],
+      [
+        "indonesin",
+        46
+      ],
+      [
+        "doenia",
+        62
+      ],
+      [
+        "soedah",
+        62
+      ],
+      [
+        "bangsa",
+        169
+      ],
+      [
+        "belanda",
+        105
+      ],
+      [
+        "tahoen",
+        44
+      ]
+    ],
+    "phrases": [
+      [
+        "bangsa indonesia",
+        77
+      ],
+      [
+        "repoeblik indonesia",
+        39
+      ],
+      [
+        "rakjat indonesia",
+        17
+      ],
+      [
+        "kemerdekaan indonesia",
+        17
+      ],
+      [
+        "tenang dan tenteram",
+        8
+      ],
+      [
+        "pemerintah repoeblik",
+        12
+      ],
+      [
+        "dai nippon",
+        12
+      ],
+      [
+        "bangaa indonesia",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        19173,
+        0.36
+      ],
+      [
+        4843,
+        0.34
+      ],
+      [
+        13759,
+        0.34
+      ],
+      [
+        4856,
+        0.32
+      ],
+      [
+        5931,
+        0.32
+      ],
+      [
+        6699,
+        0.31
+      ]
+    ],
+    "sentiment": {
+      "score": 0.3,
+      "positive": 176,
+      "negative": 95,
+      "trend": [
+        0.33,
+        -0.41,
+        0.1,
+        -0.07,
+        0.57,
+        0.62,
+        0.65,
+        0.65,
+        null,
+        0.85,
+        0.45,
+        0.14,
+        -0.33,
+        0.56,
+        -0.47,
+        0.57
+      ],
+      "emotions": [
+        [
+          "trust",
+          46
+        ],
+        [
+          "anger",
+          34
+        ],
+        [
+          "anticipation",
+          21
+        ],
+        [
+          "sadness",
+          19
+        ],
+        [
+          "joy",
+          7
+        ]
+      ]
+    }
+  }
 }

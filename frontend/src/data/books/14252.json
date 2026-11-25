@@ -45,5 +45,218 @@
       "size": 23433977,
       "name": "Sedjarah tanah air - K.A. Ardjana"
     }
-  ]
+  ],
+  "text": {
+    "words": 6142,
+    "longer_than": 73,
+    "top": [
+      [
+        "belanda",
+        115
+      ],
+      [
+        "orang",
+        75
+      ],
+      [
+        "indonesia",
+        73
+      ],
+      [
+        "rakjat",
+        71
+      ],
+      [
+        "pemerintah",
+        65
+      ],
+      [
+        "perang",
+        57
+      ],
+      [
+        "tentera",
+        45
+      ],
+      [
+        "djuga",
+        42
+      ],
+      [
+        "bab",
+        41
+      ],
+      [
+        "jakni",
+        32
+      ],
+      [
+        "sultan",
+        32
+      ],
+      [
+        "daerah",
+        31
+      ]
+    ],
+    "distinct": [
+      [
+        "belanda",
+        115
+      ],
+      [
+        "tentera",
+        45
+      ],
+      [
+        "rakjat",
+        71
+      ],
+      [
+        "jakni",
+        32
+      ],
+      [
+        "djuga",
+        42
+      ],
+      [
+        "atjeh",
+        28
+      ],
+      [
+        "pemerintah",
+        65
+      ],
+      [
+        "bab",
+        41
+      ],
+      [
+        "perang",
+        57
+      ],
+      [
+        "sultan",
+        32
+      ],
+      [
+        "djepang",
+        24
+      ],
+      [
+        "baharu",
+        15
+      ]
+    ],
+    "phrases": [
+      [
+        "pemerintah belanda",
+        39
+      ],
+      [
+        "orang belanda",
+        33
+      ],
+      [
+        "rakjat indonesia",
+        21
+      ],
+      [
+        "orang inggris",
+        15
+      ],
+      [
+        "tentera belanda",
+        14
+      ],
+      [
+        "bab perang",
+        11
+      ],
+      [
+        "pemerintah hindia-belanda",
+        8
+      ],
+      [
+        "tentera djepang",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        14833,
+        0.2
+      ],
+      [
+        4808,
+        0.18
+      ],
+      [
+        566,
+        0.18
+      ],
+      [
+        16982,
+        0.17
+      ],
+      [
+        15153,
+        0.16
+      ],
+      [
+        12489,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": -0.27,
+      "positive": 58,
+      "negative": 101,
+      "trend": [
+        0.09,
+        null,
+        -0.2,
+        0,
+        -0.65,
+        -0.67,
+        -0.27,
+        -0.33,
+        -0.57,
+        -0.33,
+        0.25,
+        0.67,
+        null,
+        -0.23,
+        0.11,
+        -0.83
+      ],
+      "emotions": [
+        [
+          "anger",
+          61
+        ],
+        [
+          "sadness",
+          13
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

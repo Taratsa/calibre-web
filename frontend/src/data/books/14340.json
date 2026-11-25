@@ -43,5 +43,193 @@
       "size": 24317740,
       "name": "Reglement dari Veldartillerie - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 14650,
+    "longer_than": 84,
+    "top": [
+      [
+        "moesti",
+        356
+      ],
+      [
+        "koeda",
+        352
+      ],
+      [
+        "orang",
+        313
+      ],
+      [
+        "djalan",
+        288
+      ],
+      [
+        "streng",
+        274
+      ],
+      [
+        "voertuig",
+        189
+      ],
+      [
+        "satoe",
+        174
+      ],
+      [
+        "tida",
+        172
+      ],
+      [
+        "atawa",
+        171
+      ],
+      [
+        "boeat",
+        169
+      ],
+      [
+        "kasih",
+        167
+      ],
+      [
+        "bikin",
+        136
+      ]
+    ],
+    "distinct": [
+      [
+        "moesti",
+        356
+      ],
+      [
+        "koeda",
+        352
+      ],
+      [
+        "streng",
+        274
+      ],
+      [
+        "voertuig",
+        189
+      ],
+      [
+        "djalan",
+        288
+      ],
+      [
+        "boeat",
+        169
+      ],
+      [
+        "satoe",
+        174
+      ],
+      [
+        "atawa",
+        171
+      ],
+      [
+        "span",
+        132
+      ],
+      [
+        "tida",
+        172
+      ],
+      [
+        "pembalikan",
+        118
+      ],
+      [
+        "bespanning",
+        68
+      ]
+    ],
+    "phrases": [
+      [
+        "orang streng",
+        205
+      ],
+      [
+        "bikin pembalikan",
+        75
+      ],
+      [
+        "saperti terseboet",
+        66
+      ],
+      [
+        "terseboet didalam",
+        45
+      ],
+      [
+        "ganti roepa djalan",
+        26
+      ],
+      [
+        "moesti orang",
+        33
+      ],
+      [
+        "berdiri djalan",
+        29
+      ],
+      [
+        "lantas moesti",
+        24
+      ]
+    ],
+    "similar": [
+      [
+        13453,
+        0.65
+      ],
+      [
+        16827,
+        0.45
+      ],
+      [
+        20782,
+        0.41
+      ],
+      [
+        11277,
+        0.38
+      ],
+      [
+        20124,
+        0.29
+      ],
+      [
+        13346,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": 0.88,
+      "positive": 186,
+      "negative": 12,
+      "trend": [
+        null,
+        null,
+        1,
+        1,
+        0.85,
+        0.81,
+        0.78,
+        1,
+        1,
+        0.71,
+        0.88,
+        1,
+        1,
+        0.71,
+        null,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

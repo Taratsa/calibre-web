@@ -45,5 +45,222 @@
       "size": 38129841,
       "name": "Titian - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 32338,
+    "longer_than": 93,
+    "top": [
+      [
+        "amerika",
+        242
+      ],
+      [
+        "orang",
+        96
+      ],
+      [
+        "presiden",
+        91
+      ],
+      [
+        "serikat",
+        89
+      ],
+      [
+        "kebijaksanaan",
+        71
+      ],
+      [
+        "tanah",
+        65
+      ],
+      [
+        "kongres",
+        62
+      ],
+      [
+        "program",
+        60
+      ],
+      [
+        "dunia",
+        59
+      ],
+      [
+        "pertanian",
+        55
+      ],
+      [
+        "masyarakat",
+        54
+      ],
+      [
+        "negara-negara",
+        53
+      ]
+    ],
+    "distinct": [
+      [
+        "amerika",
+        242
+      ],
+      [
+        "tva",
+        35
+      ],
+      [
+        "organis",
+        43
+      ],
+      [
+        "amax",
+        25
+      ],
+      [
+        "kebijaksanaan",
+        71
+      ],
+      [
+        "luarnegeri",
+        43
+      ],
+      [
+        "presiden",
+        91
+      ],
+      [
+        "serikat",
+        89
+      ],
+      [
+        "freeman",
+        30
+      ],
+      [
+        "kongres",
+        62
+      ],
+      [
+        "pengkajian",
+        49
+      ],
+      [
+        "crested",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "amerika serikat",
+        46
+      ],
+      [
+        "serikat buruh",
+        39
+      ],
+      [
+        "pengkajian amerika",
+        36
+      ],
+      [
+        "foreign affairs",
+        34
+      ],
+      [
+        "lingkungan hidup",
+        18
+      ],
+      [
+        "crested butte",
+        18
+      ],
+      [
+        "prof harsja",
+        16
+      ],
+      [
+        "anggauta kongres",
+        15
+      ]
+    ],
+    "similar": [
+      [
+        8743,
+        0.19
+      ],
+      [
+        7890,
+        0.18
+      ],
+      [
+        8669,
+        0.18
+      ],
+      [
+        8658,
+        0.17
+      ],
+      [
+        15356,
+        0.17
+      ],
+      [
+        8614,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.57,
+      "positive": 578,
+      "negative": 158,
+      "trend": [
+        0.79,
+        0.65,
+        0.75,
+        0.5,
+        0.58,
+        0.43,
+        0.53,
+        0.36,
+        0.64,
+        0.72,
+        0.57,
+        0.38,
+        0.55,
+        0.57,
+        0.68,
+        0.4
+      ],
+      "emotions": [
+        [
+          "trust",
+          35
+        ],
+        [
+          "joy",
+          32
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          13
+        ],
+        [
+          "anticipation",
+          12
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "surprise",
+          5
+        ]
+      ]
+    }
+  }
 }

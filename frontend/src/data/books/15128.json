@@ -49,5 +49,210 @@
       "size": 33606749,
       "name": "Rantjana hikajat doenia_ terkarang oleh to - J. Bosscha"
     }
-  ]
+  ],
+  "text": {
+    "words": 34002,
+    "longer_than": 94,
+    "top": [
+      [
+        "orang",
+        691
+      ],
+      [
+        "nagri",
+        475
+      ],
+      [
+        "orang-orang",
+        361
+      ],
+      [
+        "marika",
+        312
+      ],
+      [
+        "tanah",
+        248
+      ],
+      [
+        "ija",
+        222
+      ],
+      [
+        "radja",
+        214
+      ],
+      [
+        "kapada",
+        208
+      ],
+      [
+        "roem",
+        203
+      ],
+      [
+        "soeatoe",
+        193
+      ],
+      [
+        "tiada",
+        181
+      ],
+      [
+        "bebrapa",
+        173
+      ]
+    ],
+    "distinct": [
+      [
+        "nagri",
+        475
+      ],
+      [
+        "marika",
+        312
+      ],
+      [
+        "karadjaän",
+        156
+      ],
+      [
+        "grika",
+        115
+      ],
+      [
+        "itoepon",
+        139
+      ],
+      [
+        "kapada",
+        208
+      ],
+      [
+        "ija",
+        222
+      ],
+      [
+        "soeatoe",
+        193
+      ],
+      [
+        "adapon",
+        142
+      ],
+      [
+        "roem",
+        203
+      ],
+      [
+        "benoea",
+        149
+      ],
+      [
+        "bebrapa",
+        173
+      ]
+    ],
+    "phrases": [
+      [
+        "orang-orang roem",
+        63
+      ],
+      [
+        "benoea asia",
+        55
+      ],
+      [
+        "tahoen lamanja",
+        50
+      ],
+      [
+        "nagri roem",
+        45
+      ],
+      [
+        "tanah grika",
+        33
+      ],
+      [
+        "satelah soedah",
+        33
+      ],
+      [
+        "orang orang",
+        31
+      ],
+      [
+        "orang-orang grika",
+        29
+      ]
+    ],
+    "similar": [
+      [
+        16138,
+        0.42
+      ],
+      [
+        20918,
+        0.23
+      ],
+      [
+        657,
+        0.22
+      ],
+      [
+        13077,
+        0.19
+      ],
+      [
+        15601,
+        0.19
+      ],
+      [
+        10940,
+        0.18
+      ]
+    ],
+    "sentiment": {
+      "score": 0.28,
+      "positive": 111,
+      "negative": 63,
+      "trend": [
+        0.82,
+        0.56,
+        -0.43,
+        0.17,
+        -0.33,
+        -0.2,
+        0.78,
+        1,
+        -0.09,
+        0.64,
+        0.33,
+        0.5,
+        -0.08,
+        0.2,
+        0.36,
+        -1
+      ],
+      "emotions": [
+        [
+          "sadness",
+          33
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "trust",
+          5
+        ],
+        [
+          "anger",
+          2
+        ]
+      ]
+    }
+  }
 }

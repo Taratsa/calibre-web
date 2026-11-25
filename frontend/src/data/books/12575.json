@@ -47,5 +47,226 @@
       "size": 12518203,
       "name": "Djalan kebenaran _ penghidupan Mahatma Gan - Shanta"
     }
-  ]
+  ],
+  "text": {
+    "words": 6819,
+    "longer_than": 74,
+    "top": [
+      [
+        "gandhi",
+        93
+      ],
+      [
+        "india",
+        65
+      ],
+      [
+        "orang",
+        60
+      ],
+      [
+        "orang-orang",
+        43
+      ],
+      [
+        "djuga",
+        35
+      ],
+      [
+        "sadja",
+        35
+      ],
+      [
+        "kaum",
+        30
+      ],
+      [
+        "manusia",
+        30
+      ],
+      [
+        "kebenaran",
+        27
+      ],
+      [
+        "bangsa",
+        24
+      ],
+      [
+        "mendjadi",
+        23
+      ],
+      [
+        "inggeris",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "gandhi",
+        93
+      ],
+      [
+        "india",
+        65
+      ],
+      [
+        "djuga",
+        35
+      ],
+      [
+        "sadja",
+        35
+      ],
+      [
+        "inggeris",
+        21
+      ],
+      [
+        "jawaharlal",
+        11
+      ],
+      [
+        "mohandas",
+        9
+      ],
+      [
+        "mendjadi",
+        23
+      ],
+      [
+        "orang-orang",
+        43
+      ],
+      [
+        "mahatma",
+        11
+      ],
+      [
+        "kebenaran",
+        27
+      ],
+      [
+        "orang",
+        60
+      ]
+    ],
+    "phrases": [
+      [
+        "afrika selatan",
+        13
+      ],
+      [
+        "orang-orang india",
+        10
+      ],
+      [
+        "india di afrika",
+        5
+      ],
+      [
+        "memakai kekerasan",
+        7
+      ],
+      [
+        "djalan kebenaran",
+        7
+      ],
+      [
+        "roda penjering",
+        6
+      ],
+      [
+        "orang-orang hindu",
+        6
+      ],
+      [
+        "orang india",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        7783,
+        0.23
+      ],
+      [
+        7598,
+        0.21
+      ],
+      [
+        6650,
+        0.2
+      ],
+      [
+        6648,
+        0.2
+      ],
+      [
+        1905,
+        0.2
+      ],
+      [
+        788,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 144,
+      "negative": 107,
+      "trend": [
+        0.17,
+        -0.29,
+        null,
+        0.25,
+        0.26,
+        0.42,
+        0,
+        0.14,
+        0.12,
+        0.25,
+        0.2,
+        -0.2,
+        0.11,
+        -0.3,
+        0.4,
+        0.54
+      ],
+      "emotions": [
+        [
+          "fear",
+          18
+        ],
+        [
+          "anger",
+          16
+        ],
+        [
+          "joy",
+          15
+        ],
+        [
+          "trust",
+          13
+        ],
+        [
+          "sadness",
+          12
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

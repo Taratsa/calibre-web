@@ -45,5 +45,218 @@
       "size": 58873061,
       "name": "Sedjarah hubungan internasional - C.N Filipovitch"
     }
-  ]
+  ],
+  "text": {
+    "words": 50674,
+    "longer_than": 97,
+    "top": [
+      [
+        "bangsa",
+        525
+      ],
+      [
+        "djérman",
+        446
+      ],
+      [
+        "perang",
+        350
+      ],
+      [
+        "negeri",
+        296
+      ],
+      [
+        "rusia",
+        296
+      ],
+      [
+        "oléh",
+        280
+      ],
+      [
+        "tentera",
+        247
+      ],
+      [
+        "austria",
+        239
+      ],
+      [
+        "perantjis",
+        223
+      ],
+      [
+        "inggeris",
+        217
+      ],
+      [
+        "sekutu",
+        215
+      ],
+      [
+        "pemerintah",
+        206
+      ]
+    ],
+    "distinct": [
+      [
+        "djérman",
+        446
+      ],
+      [
+        "oléh",
+        280
+      ],
+      [
+        "tentera",
+        247
+      ],
+      [
+        "austria",
+        239
+      ],
+      [
+        "serbia",
+        161
+      ],
+      [
+        "austria-hongaria",
+        118
+      ],
+      [
+        "perantjis",
+        223
+      ],
+      [
+        "rusia",
+        296
+      ],
+      [
+        "negeri²",
+        164
+      ],
+      [
+        "inggeris",
+        217
+      ],
+      [
+        "bangsa",
+        525
+      ],
+      [
+        "sekutu",
+        215
+      ]
+    ],
+    "phrases": [
+      [
+        "amerika serikat",
+        106
+      ],
+      [
+        "negeri² sekutu",
+        83
+      ],
+      [
+        "negeri sekutu",
+        55
+      ],
+      [
+        "bangsa polandia",
+        48
+      ],
+      [
+        "central powers",
+        38
+      ],
+      [
+        "bangsa serbia",
+        38
+      ],
+      [
+        "tentera djérman",
+        35
+      ],
+      [
+        "djuta orang",
+        32
+      ]
+    ],
+    "similar": [
+      [
+        14833,
+        0.36
+      ],
+      [
+        16907,
+        0.27
+      ],
+      [
+        4807,
+        0.25
+      ],
+      [
+        6799,
+        0.23
+      ],
+      [
+        9329,
+        0.22
+      ],
+      [
+        418,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": -0.15,
+      "positive": 649,
+      "negative": 872,
+      "trend": [
+        0.04,
+        -0.01,
+        0,
+        -0.21,
+        -0.35,
+        -0.43,
+        -0.24,
+        -0.14,
+        -0.33,
+        -0.18,
+        -0.05,
+        0.15,
+        0.04,
+        -0.06,
+        0.01,
+        -0.15
+      ],
+      "emotions": [
+        [
+          "anger",
+          487
+        ],
+        [
+          "joy",
+          85
+        ],
+        [
+          "trust",
+          61
+        ],
+        [
+          "sadness",
+          40
+        ],
+        [
+          "anticipation",
+          32
+        ],
+        [
+          "fear",
+          11
+        ]
+      ]
+    }
+  }
 }

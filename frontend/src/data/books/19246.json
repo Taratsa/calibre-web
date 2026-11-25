@@ -45,5 +45,218 @@
       "size": 85958648,
       "name": "Riwajatnja enampoeloeh orang termashoer da - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 29431,
+    "longer_than": 92,
+    "top": [
+      [
+        "soeda",
+        499
+      ],
+      [
+        "dalem",
+        470
+      ],
+      [
+        "taon",
+        325
+      ],
+      [
+        "satoe",
+        310
+      ],
+      [
+        "dengen",
+        301
+      ],
+      [
+        "boeat",
+        280
+      ],
+      [
+        "djadi",
+        279
+      ],
+      [
+        "peladjaran",
+        261
+      ],
+      [
+        "orang",
+        219
+      ],
+      [
+        "ilmoe",
+        204
+      ],
+      [
+        "tiada",
+        164
+      ],
+      [
+        "sebagi",
+        135
+      ]
+    ],
+    "distinct": [
+      [
+        "soeda",
+        499
+      ],
+      [
+        "taon",
+        325
+      ],
+      [
+        "dalem",
+        470
+      ],
+      [
+        "dengen",
+        301
+      ],
+      [
+        "satoe",
+        310
+      ],
+      [
+        "boeat",
+        280
+      ],
+      [
+        "ilmoe",
+        204
+      ],
+      [
+        "peladjaran",
+        261
+      ],
+      [
+        "djadi",
+        279
+      ],
+      [
+        "pamerenta",
+        79
+      ],
+      [
+        "sebagi",
+        135
+      ],
+      [
+        "blakangan",
+        80
+      ]
+    ],
+    "phrases": [
+      [
+        "ilmoe peladjaran",
+        108
+      ],
+      [
+        "dalem taon",
+        83
+      ],
+      [
+        "soeda djadi",
+        41
+      ],
+      [
+        "sebagi satoe",
+        39
+      ],
+      [
+        "dalem ilmoe",
+        36
+      ],
+      [
+        "soeda dapet",
+        28
+      ],
+      [
+        "meninggal pada taon",
+        18
+      ],
+      [
+        "dengen maksoed boeat",
+        18
+      ]
+    ],
+    "similar": [
+      [
+        13825,
+        0.36
+      ],
+      [
+        14247,
+        0.34
+      ],
+      [
+        679,
+        0.34
+      ],
+      [
+        12570,
+        0.34
+      ],
+      [
+        14900,
+        0.33
+      ],
+      [
+        4633,
+        0.32
+      ]
+    ],
+    "sentiment": {
+      "score": -0.31,
+      "positive": 31,
+      "negative": 59,
+      "trend": [
+        -0.14,
+        0.2,
+        null,
+        -0.33,
+        null,
+        null,
+        -0.56,
+        -0.71,
+        -0.2,
+        null,
+        0.2,
+        -0.6,
+        null,
+        -0.41,
+        null,
+        null
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

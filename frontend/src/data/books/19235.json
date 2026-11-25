@@ -59,5 +59,222 @@
       "size": 86828479,
       "name": "Peternakan _ artikel yang bersumber dari R - Perpustakaan Nasional"
     }
-  ]
+  ],
+  "text": {
+    "words": 455875,
+    "longer_than": 99,
+    "top": [
+      [
+        "ternak",
+        4627
+      ],
+      [
+        "sapi",
+        3597
+      ],
+      [
+        "pakan",
+        2752
+      ],
+      [
+        "peternak",
+        2630
+      ],
+      [
+        "peternakan",
+        1855
+      ],
+      [
+        "usaha",
+        1726
+      ],
+      [
+        "hasil",
+        1697
+      ],
+      [
+        "penelitian",
+        1560
+      ],
+      [
+        "potong",
+        1524
+      ],
+      [
+        "ayam",
+        1328
+      ],
+      [
+        "kabupaten",
+        1186
+      ],
+      [
+        "produksi",
+        1126
+      ]
+    ],
+    "distinct": [
+      [
+        "ternak",
+        4627
+      ],
+      [
+        "peternak",
+        2630
+      ],
+      [
+        "pakan",
+        2752
+      ],
+      [
+        "sapi",
+        3597
+      ],
+      [
+        "peternakan",
+        1855
+      ],
+      [
+        "potong",
+        1524
+      ],
+      [
+        "ayam",
+        1328
+      ],
+      [
+        "hijauan",
+        434
+      ],
+      [
+        "penelitian",
+        1560
+      ],
+      [
+        "perah",
+        599
+      ],
+      [
+        "pembibitan",
+        555
+      ],
+      [
+        "tabel",
+        1044
+      ]
+    ],
+    "phrases": [
+      [
+        "sapi potong",
+        1388
+      ],
+      [
+        "ternak sapi",
+        865
+      ],
+      [
+        "sapi perah",
+        559
+      ],
+      [
+        "usaha ternak",
+        446
+      ],
+      [
+        "peternak sapi",
+        409
+      ],
+      [
+        "pakan ternak",
+        377
+      ],
+      [
+        "hasil penelitian",
+        321
+      ],
+      [
+        "kelompok tani",
+        274
+      ]
+    ],
+    "similar": [
+      [
+        8659,
+        0.24
+      ],
+      [
+        8658,
+        0.23
+      ],
+      [
+        8766,
+        0.2
+      ],
+      [
+        8708,
+        0.2
+      ],
+      [
+        8602,
+        0.19
+      ],
+      [
+        8617,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 6434,
+      "negative": 2445,
+      "trend": [
+        0.68,
+        0.25,
+        0.46,
+        0.04,
+        0.15,
+        0.14,
+        0.52,
+        0.54,
+        0.54,
+        0.37,
+        0.58,
+        0.74,
+        0.32,
+        0.32,
+        0.67,
+        0.73
+      ],
+      "emotions": [
+        [
+          "sadness",
+          230
+        ],
+        [
+          "trust",
+          153
+        ],
+        [
+          "fear",
+          126
+        ],
+        [
+          "anger",
+          59
+        ],
+        [
+          "joy",
+          46
+        ],
+        [
+          "disgust",
+          32
+        ],
+        [
+          "anticipation",
+          31
+        ]
+      ]
+    }
+  }
 }

@@ -48,5 +48,170 @@
       "size": 3078,
       "name": "TCP_IP_ Quagga Prasyarat & Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 323,
+    "longer_than": 31,
+    "top": [
+      [
+        "daemon",
+        24
+      ],
+      [
+        "options",
+        24
+      ],
+      [
+        "quagga",
+        23
+      ],
+      [
+        "tcp",
+        11
+      ],
+      [
+        "depends",
+        9
+      ],
+      [
+        "ospf",
+        5
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "conf",
+        4
+      ],
+      [
+        "debian",
+        4
+      ],
+      [
+        "babeld",
+        3
+      ],
+      [
+        "bgpd",
+        3
+      ],
+      [
+        "debconf",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "daemon",
+        24
+      ],
+      [
+        "quagga",
+        23
+      ],
+      [
+        "options",
+        24
+      ],
+      [
+        "depends",
+        9
+      ],
+      [
+        "tcp",
+        11
+      ],
+      [
+        "zebra",
+        5
+      ],
+      [
+        "debconf",
+        3
+      ],
+      [
+        "babeld",
+        3
+      ],
+      [
+        "ospf",
+        5
+      ],
+      [
+        "isisd",
+        3
+      ],
+      [
+        "ripngd",
+        3
+      ],
+      [
+        "ripd",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "options daemon",
+        24
+      ],
+      [
+        "tcp ip quagga",
+        11
+      ],
+      [
+        "quagga debian conf",
+        4
+      ],
+      [
+        "quagga prasyarat instalasi",
+        3
+      ],
+      [
+        "ospf d options",
+        3
+      ],
+      [
+        "enable yes zebra",
+        3
+      ],
+      [
+        "zebra options",
+        3
+      ],
+      [
+        "vtysh enable",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20856,
+        0.64
+      ],
+      [
+        20853,
+        0.42
+      ],
+      [
+        20872,
+        0.42
+      ],
+      [
+        20850,
+        0.38
+      ],
+      [
+        12623,
+        0.37
+      ],
+      [
+        12781,
+        0.36
+      ]
+    ],
+    "sentiment": null
+  }
 }

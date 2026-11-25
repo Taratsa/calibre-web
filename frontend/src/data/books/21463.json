@@ -51,5 +51,146 @@
       "size": 2563,
       "name": "VLC_ Instalasi - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 158,
+    "longer_than": 20,
+    "top": [
+      [
+        "vlc",
+        14
+      ],
+      [
+        "plugin",
+        10
+      ],
+      [
+        "output",
+        8
+      ],
+      [
+        "audio",
+        5
+      ],
+      [
+        "install",
+        5
+      ],
+      [
+        "video",
+        4
+      ],
+      [
+        "apt-get",
+        3
+      ],
+      [
+        "instalasi",
+        3
+      ],
+      [
+        "sound",
+        3
+      ],
+      [
+        "sudo",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "vlc",
+        14
+      ],
+      [
+        "plugin",
+        10
+      ],
+      [
+        "output",
+        8
+      ],
+      [
+        "audio",
+        5
+      ],
+      [
+        "sound",
+        3
+      ],
+      [
+        "install",
+        5
+      ],
+      [
+        "video",
+        4
+      ],
+      [
+        "apt-get",
+        3
+      ],
+      [
+        "sudo",
+        3
+      ],
+      [
+        "instalasi",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "plugin for vlc",
+        8
+      ],
+      [
+        "output plugin",
+        8
+      ],
+      [
+        "audio output",
+        5
+      ],
+      [
+        "vlc install",
+        3
+      ],
+      [
+        "video output",
+        3
+      ],
+      [
+        "sudo apt-get",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21464,
+        0.63
+      ],
+      [
+        21462,
+        0.49
+      ],
+      [
+        9369,
+        0.44
+      ],
+      [
+        10184,
+        0.43
+      ],
+      [
+        12271,
+        0.31
+      ],
+      [
+        9511,
+        0.29
+      ]
+    ],
+    "sentiment": null
+  }
 }

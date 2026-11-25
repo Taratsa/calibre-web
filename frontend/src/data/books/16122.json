@@ -43,5 +43,170 @@
       "size": 45575067,
       "name": "Order voor de genie_ 1923-1924 - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 4323,
+    "longer_than": 68,
+    "top": [
+      [
+        "vertrek",
+        70
+      ],
+      [
+        "den",
+        35
+      ],
+      [
+        "verlichting",
+        27
+      ],
+      [
+        "genietroepen",
+        23
+      ],
+      [
+        "keuken",
+        23
+      ],
+      [
+        "klasse",
+        23
+      ],
+      [
+        "genie",
+        22
+      ],
+      [
+        "woningen",
+        19
+      ],
+      [
+        "lampen",
+        18
+      ],
+      [
+        "aantal",
+        17
+      ],
+      [
+        "kamer",
+        17
+      ],
+      [
+        "looplamp",
+        17
+      ]
+    ],
+    "distinct": [
+      [
+        "vertrek",
+        70
+      ],
+      [
+        "verlichting",
+        27
+      ],
+      [
+        "stopcontact",
+        15
+      ],
+      [
+        "genietroepen",
+        23
+      ],
+      [
+        "keuken",
+        23
+      ],
+      [
+        "nachtverlichting",
+        14
+      ],
+      [
+        "electr",
+        16
+      ],
+      [
+        "geschakeld",
+        12
+      ],
+      [
+        "lampen",
+        18
+      ],
+      [
+        "genie",
+        22
+      ],
+      [
+        "klasse",
+        23
+      ],
+      [
+        "woningen",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "avondverlichting nachtverlichting",
+        11
+      ],
+      [
+        "verlichting een stopcontact",
+        7
+      ],
+      [
+        "eigenlijke keuken",
+        8
+      ],
+      [
+        "bataljon genietroepen",
+        7
+      ],
+      [
+        "maten en gewichten",
+        4
+      ],
+      [
+        "maleisch sprekend kader",
+        4
+      ],
+      [
+        "electr verlichting",
+        6
+      ],
+      [
+        "electr gloeilampen",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        15479,
+        0.25
+      ],
+      [
+        19743,
+        0.18
+      ],
+      [
+        16109,
+        0.18
+      ],
+      [
+        14907,
+        0.17
+      ],
+      [
+        13859,
+        0.16
+      ],
+      [
+        19019,
+        0.16
+      ]
+    ],
+    "sentiment": null
+  }
 }

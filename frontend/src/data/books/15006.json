@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 540,
-    "longer_than": 41,
+    "longer_than": 40,
     "top": [
       [
         "exception",
@@ -136,20 +136,20 @@
         6
       ],
       [
-        "unchecked",
-        4
-      ],
-      [
         "arithmeticexception",
         3
+      ],
+      [
+        "unchecked",
+        4
       ],
       [
         "counter",
         6
       ],
       [
-        "throw",
-        5
+        "main",
+        14
       ]
     ],
     "phrases": [
@@ -193,23 +193,23 @@
       ],
       [
         14999,
-        0.44
+        0.43
       ],
       [
         15003,
-        0.39
-      ],
-      [
-        15001,
-        0.34
+        0.37
       ],
       [
         14998,
         0.34
       ],
       [
-        14985,
-        0.3
+        15001,
+        0.32
+      ],
+      [
+        20319,
+        0.31
       ]
     ],
     "sentiment": null

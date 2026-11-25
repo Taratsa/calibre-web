@@ -48,5 +48,150 @@
       "size": 2941,
       "name": "Openldap_ Compile - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 269,
+    "longer_than": 28,
+    "top": [
+      [
+        "openldap",
+        11
+      ],
+      [
+        "local",
+        8
+      ],
+      [
+        "manager",
+        8
+      ],
+      [
+        "objectclass",
+        8
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "my-domain",
+        6
+      ],
+      [
+        "compile",
+        5
+      ],
+      [
+        "ldif",
+        4
+      ],
+      [
+        "edit",
+        3
+      ],
+      [
+        "organization",
+        3
+      ],
+      [
+        "slapd",
+        3
+      ],
+      [
+        "src",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "openldap",
+        11
+      ],
+      [
+        "objectclass",
+        8
+      ],
+      [
+        "ldif",
+        4
+      ],
+      [
+        "slapd",
+        3
+      ],
+      [
+        "manager",
+        8
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "local",
+        8
+      ],
+      [
+        "compile",
+        5
+      ],
+      [
+        "src",
+        3
+      ],
+      [
+        "organization",
+        3
+      ],
+      [
+        "edit",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "usr local",
+        8
+      ],
+      [
+        "manager dc my-domain",
+        3
+      ],
+      [
+        "openldap compile",
+        3
+      ],
+      [
+        "local src",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20175,
+        0.47
+      ],
+      [
+        20176,
+        0.39
+      ],
+      [
+        20177,
+        0.31
+      ],
+      [
+        17790,
+        0.3
+      ],
+      [
+        19772,
+        0.26
+      ],
+      [
+        15419,
+        0.25
+      ]
+    ],
+    "sentiment": null
+  }
 }

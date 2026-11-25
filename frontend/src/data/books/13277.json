@@ -43,5 +43,201 @@
       "size": 16122004,
       "name": "Sair tjap dji kie dan sang korban - Bok - Ik"
     }
-  ]
+  ],
+  "text": {
+    "words": 8545,
+    "longer_than": 78,
+    "top": [
+      [
+        "tida",
+        156
+      ],
+      [
+        "njonja",
+        86
+      ],
+      [
+        "tjap-dji-kie",
+        81
+      ],
+      [
+        "dengen",
+        75
+      ],
+      [
+        "orang",
+        73
+      ],
+      [
+        "satoe",
+        65
+      ],
+      [
+        "djadi",
+        63
+      ],
+      [
+        "boeat",
+        61
+      ],
+      [
+        "begitoe",
+        58
+      ],
+      [
+        "sampe",
+        58
+      ],
+      [
+        "moengil",
+        56
+      ],
+      [
+        "banjak",
+        55
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        156
+      ],
+      [
+        "moengil",
+        56
+      ],
+      [
+        "njonja",
+        86
+      ],
+      [
+        "dengen",
+        75
+      ],
+      [
+        "boeat",
+        61
+      ],
+      [
+        "satoe",
+        65
+      ],
+      [
+        "dato",
+        54
+      ],
+      [
+        "begitoe",
+        58
+      ],
+      [
+        "kaloe",
+        44
+      ],
+      [
+        "poenja",
+        49
+      ],
+      [
+        "sampe",
+        58
+      ],
+      [
+        "dalem",
+        55
+      ]
+    ],
+    "phrases": [
+      [
+        "njonja moengil",
+        56
+      ],
+      [
+        "njonja dompet",
+        17
+      ],
+      [
+        "banjak orang",
+        11
+      ],
+      [
+        "djangan sampe",
+        10
+      ],
+      [
+        "tjap-dji-kie poenja",
+        9
+      ],
+      [
+        "agent tjap-dji-kie",
+        9
+      ],
+      [
+        "sampe begitoe",
+        7
+      ],
+      [
+        "tida perdoeli",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        13097,
+        0.42
+      ],
+      [
+        14900,
+        0.41
+      ],
+      [
+        14247,
+        0.41
+      ],
+      [
+        16767,
+        0.4
+      ],
+      [
+        13962,
+        0.4
+      ],
+      [
+        13193,
+        0.39
+      ]
+    ],
+    "sentiment": {
+      "score": -0.09,
+      "positive": 31,
+      "negative": 37,
+      "trend": [],
+      "emotions": [
+        [
+          "surprise",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "trust",
+          2
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

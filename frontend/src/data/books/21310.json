@@ -50,5 +50,118 @@
       "size": 2676,
       "name": "WiFi_ Access Point - Ubiquiti NanoStation - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 97,
+    "longer_than": 14,
+    "top": [
+      [
+        "wifi",
+        5
+      ],
+      [
+        "access",
+        4
+      ],
+      [
+        "menset",
+        4
+      ],
+      [
+        "setup",
+        4
+      ],
+      [
+        "wireless",
+        4
+      ],
+      [
+        "loco",
+        3
+      ],
+      [
+        "nanostation",
+        3
+      ],
+      [
+        "ubiquiti",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "menset",
+        4
+      ],
+      [
+        "wifi",
+        5
+      ],
+      [
+        "nanostation",
+        3
+      ],
+      [
+        "loco",
+        3
+      ],
+      [
+        "ubiquiti",
+        3
+      ],
+      [
+        "wireless",
+        4
+      ],
+      [
+        "setup",
+        4
+      ],
+      [
+        "access",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "ubiquiti nanostation loco",
+        3
+      ],
+      [
+        "access point ubiquiti",
+        3
+      ],
+      [
+        "wifi access",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        19613,
+        0.84
+      ],
+      [
+        19605,
+        0.84
+      ],
+      [
+        19608,
+        0.83
+      ],
+      [
+        19614,
+        0.78
+      ],
+      [
+        19612,
+        0.78
+      ],
+      [
+        19616,
+        0.76
+      ]
+    ],
+    "sentiment": null
+  }
 }

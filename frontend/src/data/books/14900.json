@@ -45,5 +45,214 @@
       "size": 31241165,
       "name": "Sair roemah tangga atawa begimana orang ha - K"
     }
-  ]
+  ],
+  "text": {
+    "words": 10815,
+    "longer_than": 80,
+    "top": [
+      [
+        "orang",
+        185
+      ],
+      [
+        "tida",
+        158
+      ],
+      [
+        "kaloe",
+        133
+      ],
+      [
+        "poenja",
+        110
+      ],
+      [
+        "djangan",
+        99
+      ],
+      [
+        "djadi",
+        98
+      ],
+      [
+        "satoe",
+        98
+      ],
+      [
+        "soeda",
+        94
+      ],
+      [
+        "dengen",
+        92
+      ],
+      [
+        "moesti",
+        92
+      ],
+      [
+        "roema",
+        84
+      ],
+      [
+        "djoega",
+        70
+      ]
+    ],
+    "distinct": [
+      [
+        "kaloe",
+        133
+      ],
+      [
+        "tida",
+        158
+      ],
+      [
+        "poenja",
+        110
+      ],
+      [
+        "moesti",
+        92
+      ],
+      [
+        "roema",
+        84
+      ],
+      [
+        "soeda",
+        94
+      ],
+      [
+        "satoe",
+        98
+      ],
+      [
+        "dengen",
+        92
+      ],
+      [
+        "djangan",
+        99
+      ],
+      [
+        "atoeran",
+        65
+      ],
+      [
+        "djoega",
+        70
+      ],
+      [
+        "boekoe",
+        68
+      ]
+    ],
+    "phrases": [
+      [
+        "roema tangga",
+        54
+      ],
+      [
+        "peng gie sie",
+        25
+      ],
+      [
+        "boekoe tamat",
+        33
+      ],
+      [
+        "orang toea",
+        29
+      ],
+      [
+        "sian-ie tong",
+        26
+      ],
+      [
+        "dalem roema",
+        16
+      ],
+      [
+        "poenja atoeran",
+        13
+      ],
+      [
+        "oeroesan roema",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        596,
+        0.43
+      ],
+      [
+        4633,
+        0.42
+      ],
+      [
+        713,
+        0.42
+      ],
+      [
+        13825,
+        0.42
+      ],
+      [
+        13277,
+        0.41
+      ],
+      [
+        16767,
+        0.41
+      ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 64,
+      "negative": 20,
+      "trend": [
+        null,
+        0.43,
+        null,
+        0.29,
+        0.67,
+        1,
+        null,
+        0.33,
+        null,
+        null,
+        null,
+        0.25,
+        null,
+        1,
+        1,
+        0.25
+      ],
+      "emotions": [
+        [
+          "joy",
+          20
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "sadness",
+          3
+        ],
+        [
+          "surprise",
+          3
+        ],
+        [
+          "disgust",
+          2
+        ]
+      ]
+    }
+  }
 }

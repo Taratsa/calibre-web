@@ -43,5 +43,218 @@
       "size": 24962565,
       "name": "Vlugschriften van het Comite Boemi Poetra - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 21307,
+    "longer_than": 88,
+    "top": [
+      [
+        "orang",
+        146
+      ],
+      [
+        "tida",
+        112
+      ],
+      [
+        "bangsa",
+        97
+      ],
+      [
+        "den",
+        95
+      ],
+      [
+        "soedah",
+        87
+      ],
+      [
+        "kamoe",
+        81
+      ],
+      [
+        "belanda",
+        63
+      ],
+      [
+        "gij",
+        63
+      ],
+      [
+        "napoleon",
+        56
+      ],
+      [
+        "djoega",
+        54
+      ],
+      [
+        "tiada",
+        54
+      ],
+      [
+        "blanda",
+        53
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        112
+      ],
+      [
+        "kamoe",
+        81
+      ],
+      [
+        "soedah",
+        87
+      ],
+      [
+        "blanda",
+        53
+      ],
+      [
+        "gij",
+        63
+      ],
+      [
+        "indiërs",
+        36
+      ],
+      [
+        "napoleon",
+        56
+      ],
+      [
+        "djoega",
+        54
+      ],
+      [
+        "boeat",
+        50
+      ],
+      [
+        "indiers",
+        31
+      ],
+      [
+        "den",
+        95
+      ],
+      [
+        "haroes",
+        43
+      ]
+    ],
+    "phrases": [
+      [
+        "negeri belanda",
+        15
+      ],
+      [
+        "orang belanda",
+        14
+      ],
+      [
+        "negri blanda",
+        14
+      ],
+      [
+        "bangsa blanda",
+        14
+      ],
+      [
+        "comité boemipoetra",
+        10
+      ],
+      [
+        "suardy suryaningrat",
+        9
+      ],
+      [
+        "douwes dekker tjipto",
+        6
+      ],
+      [
+        "bangsa belanda",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        19767,
+        0.23
+      ],
+      [
+        529,
+        0.22
+      ],
+      [
+        17938,
+        0.22
+      ],
+      [
+        21183,
+        0.22
+      ],
+      [
+        1903,
+        0.21
+      ],
+      [
+        6593,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.32,
+      "positive": 85,
+      "negative": 44,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.08,
+        -0.33,
+        0.33,
+        0.27,
+        0.33,
+        0.62,
+        0.41,
+        0.63
+      ],
+      "emotions": [
+        [
+          "trust",
+          12
+        ],
+        [
+          "joy",
+          11
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "surprise",
+          4
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "sadness",
+          2
+        ]
+      ]
+    }
+  }
 }

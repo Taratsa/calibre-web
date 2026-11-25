@@ -43,5 +43,222 @@
       "size": 5034801,
       "name": "Babad Kemalon (Pakunagara) II (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 61562,
+    "longer_than": 97,
+    "top": [
+      [
+        "pangeran",
+        1004
+      ],
+      [
+        "kumpeni",
+        668
+      ],
+      [
+        "adipati",
+        591
+      ],
+      [
+        "sang",
+        489
+      ],
+      [
+        "pangran",
+        452
+      ],
+      [
+        "tumenggung",
+        358
+      ],
+      [
+        "lan",
+        346
+      ],
+      [
+        "sri",
+        346
+      ],
+      [
+        "dipati",
+        340
+      ],
+      [
+        "ingkang",
+        334
+      ],
+      [
+        "mantri",
+        300
+      ],
+      [
+        "pasukan",
+        295
+      ]
+    ],
+    "distinct": [
+      [
+        "kumpeni",
+        668
+      ],
+      [
+        "pangeran",
+        1004
+      ],
+      [
+        "pangran",
+        452
+      ],
+      [
+        "adipati",
+        591
+      ],
+      [
+        "dipati",
+        340
+      ],
+      [
+        "tumenggung",
+        358
+      ],
+      [
+        "ingkang",
+        334
+      ],
+      [
+        "nulya",
+        240
+      ],
+      [
+        "mring",
+        260
+      ],
+      [
+        "kanjeng",
+        263
+      ],
+      [
+        "mantri",
+        300
+      ],
+      [
+        "nata",
+        259
+      ]
+    ],
+    "phrases": [
+      [
+        "pangeran adipati",
+        517
+      ],
+      [
+        "pangran dipati",
+        197
+      ],
+      [
+        "sang nata",
+        182
+      ],
+      [
+        "kanjeng pangeran",
+        167
+      ],
+      [
+        "sang prabu",
+        121
+      ],
+      [
+        "sri narendra",
+        104
+      ],
+      [
+        "pangeran dipati",
+        103
+      ],
+      [
+        "pangran dipatya",
+        84
+      ]
+    ],
+    "similar": [
+      [
+        11343,
+        0.35
+      ],
+      [
+        3541,
+        0.33
+      ],
+      [
+        3540,
+        0.32
+      ],
+      [
+        2856,
+        0.32
+      ],
+      [
+        11494,
+        0.31
+      ],
+      [
+        3538,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0,
+      "positive": 410,
+      "negative": 414,
+      "trend": [
+        -0.26,
+        -0.08,
+        -0.15,
+        -0.22,
+        0.34,
+        -0.19,
+        -0.15,
+        0.08,
+        -0.19,
+        0.17,
+        0.11,
+        0.33,
+        0.28,
+        -0.18,
+        0.31,
+        0.62
+      ],
+      "emotions": [
+        [
+          "anger",
+          146
+        ],
+        [
+          "joy",
+          144
+        ],
+        [
+          "sadness",
+          88
+        ],
+        [
+          "fear",
+          45
+        ],
+        [
+          "trust",
+          35
+        ],
+        [
+          "anticipation",
+          7
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

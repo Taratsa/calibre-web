@@ -48,5 +48,170 @@
       "size": 2992,
       "name": "Moodle_ Administrasi User - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 228,
+    "longer_than": 26,
+    "top": [
+      [
+        "user",
+        26
+      ],
+      [
+        "guru",
+        20
+      ],
+      [
+        "siswa",
+        20
+      ],
+      [
+        "moodle",
+        13
+      ],
+      [
+        "sch",
+        10
+      ],
+      [
+        "sekolah",
+        10
+      ],
+      [
+        "accounts",
+        8
+      ],
+      [
+        "administrasi",
+        5
+      ],
+      [
+        "authentication",
+        5
+      ],
+      [
+        "pengguna",
+        4
+      ],
+      [
+        "upload",
+        4
+      ],
+      [
+        "file",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "moodle",
+        13
+      ],
+      [
+        "user",
+        26
+      ],
+      [
+        "siswa",
+        20
+      ],
+      [
+        "sch",
+        10
+      ],
+      [
+        "guru",
+        20
+      ],
+      [
+        "accounts",
+        8
+      ],
+      [
+        "authentication",
+        5
+      ],
+      [
+        "sekolah",
+        10
+      ],
+      [
+        "permissions",
+        3
+      ],
+      [
+        "upload",
+        4
+      ],
+      [
+        "administrasi",
+        5
+      ],
+      [
+        "pengguna",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "siswa siswa siswa",
+        10
+      ],
+      [
+        "guru guru guru",
+        10
+      ],
+      [
+        "sekolah sch",
+        10
+      ],
+      [
+        "user accounts",
+        8
+      ],
+      [
+        "siswa siswa sekolah",
+        5
+      ],
+      [
+        "sch id guru",
+        5
+      ],
+      [
+        "guru guru sekolah",
+        5
+      ],
+      [
+        "sch id siswa",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        17233,
+        0.63
+      ],
+      [
+        18275,
+        0.47
+      ],
+      [
+        17201,
+        0.38
+      ],
+      [
+        21485,
+        0.37
+      ],
+      [
+        9594,
+        0.37
+      ],
+      [
+        17401,
+        0.35
+      ]
+    ],
+    "sentiment": null
+  }
 }

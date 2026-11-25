@@ -43,5 +43,214 @@
       "size": 12723720,
       "name": "Ampir Loepoet menika - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 9122,
+    "longer_than": 78,
+    "top": [
+      [
+        "akoe",
+        307
+      ],
+      [
+        "kaoe",
+        174
+      ],
+      [
+        "ija",
+        141
+      ],
+      [
+        "soeij",
+        137
+      ],
+      [
+        "siansing",
+        129
+      ],
+      [
+        "tida",
+        116
+      ],
+      [
+        "nio",
+        113
+      ],
+      [
+        "tan",
+        89
+      ],
+      [
+        "kam",
+        88
+      ],
+      [
+        "kiem",
+        80
+      ],
+      [
+        "satoe",
+        68
+      ],
+      [
+        "maoe",
+        64
+      ]
+    ],
+    "distinct": [
+      [
+        "akoe",
+        307
+      ],
+      [
+        "soeij",
+        137
+      ],
+      [
+        "siansing",
+        129
+      ],
+      [
+        "kaoe",
+        174
+      ],
+      [
+        "ija",
+        141
+      ],
+      [
+        "nio",
+        113
+      ],
+      [
+        "kiem",
+        80
+      ],
+      [
+        "tida",
+        116
+      ],
+      [
+        "saraja",
+        46
+      ],
+      [
+        "kam",
+        88
+      ],
+      [
+        "satoe",
+        68
+      ],
+      [
+        "maoe",
+        64
+      ]
+    ],
+    "phrases": [
+      [
+        "kiem nio",
+        45
+      ],
+      [
+        "kam soeij giok",
+        27
+      ],
+      [
+        "soeij nio",
+        39
+      ],
+      [
+        "soeij pan",
+        34
+      ],
+      [
+        "tan tjong liang",
+        20
+      ],
+      [
+        "akoe tida",
+        23
+      ],
+      [
+        "akoe poenja",
+        23
+      ],
+      [
+        "akoe maoe",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        16755,
+        0.41
+      ],
+      [
+        4636,
+        0.34
+      ],
+      [
+        694,
+        0.34
+      ],
+      [
+        4633,
+        0.32
+      ],
+      [
+        713,
+        0.32
+      ],
+      [
+        13193,
+        0.31
+      ]
+    ],
+    "sentiment": {
+      "score": 0.6,
+      "positive": 87,
+      "negative": 22,
+      "trend": [
+        null,
+        null,
+        1,
+        null,
+        0.6,
+        0.6,
+        -0.2,
+        null,
+        null,
+        0.75,
+        0.69,
+        0.69,
+        0.5,
+        0.71,
+        0.64,
+        0.33
+      ],
+      "emotions": [
+        [
+          "surprise",
+          11
+        ],
+        [
+          "joy",
+          10
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
+  }
 }

@@ -43,5 +43,210 @@
       "size": 15760899,
       "name": "Hikajat prang di Edi pada boelan Mei 1889 - J.P. Toean Schoemaker"
     }
-  ]
+  ],
+  "text": {
+    "words": 9295,
+    "longer_than": 79,
+    "top": [
+      [
+        "orang",
+        234
+      ],
+      [
+        "soedah",
+        230
+      ],
+      [
+        "tiada",
+        124
+      ],
+      [
+        "moesoeh",
+        113
+      ],
+      [
+        "soldadoe",
+        110
+      ],
+      [
+        "toean",
+        92
+      ],
+      [
+        "djoega",
+        82
+      ],
+      [
+        "doewa",
+        71
+      ],
+      [
+        "atjeh",
+        70
+      ],
+      [
+        "kompanji",
+        70
+      ],
+      [
+        "edi",
+        57
+      ],
+      [
+        "banjak",
+        51
+      ]
+    ],
+    "distinct": [
+      [
+        "soedah",
+        230
+      ],
+      [
+        "soldadoe",
+        110
+      ],
+      [
+        "kompanji",
+        70
+      ],
+      [
+        "moesoeh",
+        113
+      ],
+      [
+        "toean",
+        92
+      ],
+      [
+        "kaptèn",
+        42
+      ],
+      [
+        "doewa",
+        71
+      ],
+      [
+        "patroeli",
+        39
+      ],
+      [
+        "djoega",
+        82
+      ],
+      [
+        "koempeni",
+        40
+      ],
+      [
+        "atjeh",
+        70
+      ],
+      [
+        "tiada",
+        124
+      ]
+    ],
+    "phrases": [
+      [
+        "orang atjeh",
+        55
+      ],
+      [
+        "kompanji doewa",
+        30
+      ],
+      [
+        "toean kaptèn",
+        28
+      ],
+      [
+        "orang a tjeh",
+        18
+      ],
+      [
+        "toean luitenant",
+        24
+      ],
+      [
+        "kaptèn hansen",
+        23
+      ],
+      [
+        "kompanji ampat",
+        19
+      ],
+      [
+        "negri edi",
+        15
+      ]
+    ],
+    "similar": [
+      [
+        1324,
+        0.56
+      ],
+      [
+        539,
+        0.38
+      ],
+      [
+        14683,
+        0.25
+      ],
+      [
+        16279,
+        0.2
+      ],
+      [
+        18459,
+        0.19
+      ],
+      [
+        16755,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": 0.05,
+      "positive": 55,
+      "negative": 50,
+      "trend": [
+        0.6,
+        null,
+        0.09,
+        null,
+        0.14,
+        0.43,
+        0.75,
+        0.11,
+        -0.67,
+        0.14,
+        null,
+        null,
+        null,
+        -0.25,
+        null,
+        0.06
+      ],
+      "emotions": [
+        [
+          "sadness",
+          30
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "trust",
+          2
+        ]
+      ]
+    }
+  }
 }

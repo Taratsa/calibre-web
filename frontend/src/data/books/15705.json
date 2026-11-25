@@ -45,5 +45,222 @@
       "size": 40635230,
       "name": "Kitab pri halnja adat sopan dan lembaga da - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 31697,
+    "longer_than": 93,
+    "top": [
+      [
+        "dengen",
+        588
+      ],
+      [
+        "tiada",
+        579
+      ],
+      [
+        "djikalau",
+        431
+      ],
+      [
+        "aken",
+        412
+      ],
+      [
+        "djangan",
+        310
+      ],
+      [
+        "pri",
+        310
+      ],
+      [
+        "orang",
+        268
+      ],
+      [
+        "istri",
+        235
+      ],
+      [
+        "adapoen",
+        185
+      ],
+      [
+        "soerat",
+        172
+      ],
+      [
+        "misti",
+        171
+      ],
+      [
+        "adat",
+        167
+      ]
+    ],
+    "distinct": [
+      [
+        "dengen",
+        588
+      ],
+      [
+        "djikalau",
+        431
+      ],
+      [
+        "aken",
+        412
+      ],
+      [
+        "pri",
+        310
+      ],
+      [
+        "tiada",
+        579
+      ],
+      [
+        "bolèh",
+        147
+      ],
+      [
+        "sampé",
+        144
+      ],
+      [
+        "djangan",
+        310
+      ],
+      [
+        "adapoen",
+        185
+      ],
+      [
+        "misti",
+        171
+      ],
+      [
+        "kerna",
+        158
+      ],
+      [
+        "bekalahi",
+        81
+      ]
+    ],
+    "phrases": [
+      [
+        "djangan sampé",
+        85
+      ],
+      [
+        "adat sopan",
+        72
+      ],
+      [
+        "tiada pantes",
+        52
+      ],
+      [
+        "adapoen djikalau",
+        47
+      ],
+      [
+        "pri lakoe",
+        41
+      ],
+      [
+        "dengen istri",
+        36
+      ],
+      [
+        "melakoeken pri",
+        33
+      ],
+      [
+        "dalem perhimpoenan",
+        33
+      ]
+    ],
+    "similar": [
+      [
+        16279,
+        0.24
+      ],
+      [
+        13484,
+        0.23
+      ],
+      [
+        16755,
+        0.22
+      ],
+      [
+        17634,
+        0.22
+      ],
+      [
+        14247,
+        0.21
+      ],
+      [
+        16130,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.49,
+      "positive": 477,
+      "negative": 164,
+      "trend": [
+        0.52,
+        0.38,
+        0.46,
+        0.65,
+        0.53,
+        0.6,
+        0.62,
+        0.8,
+        0.55,
+        0.86,
+        0.74,
+        0.7,
+        -0.13,
+        0.6,
+        0.3,
+        -0.23
+      ],
+      "emotions": [
+        [
+          "trust",
+          33
+        ],
+        [
+          "sadness",
+          19
+        ],
+        [
+          "disgust",
+          8
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anger",
+          1
+        ]
+      ]
+    }
+  }
 }

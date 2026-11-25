@@ -48,5 +48,170 @@
       "size": 4418,
       "name": "Wikipedia - Membuat Server Lokal dengan MW - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 787,
+    "longer_than": 46,
+    "top": [
+      [
+        "wikipedia",
+        63
+      ],
+      [
+        "mysql",
+        28
+      ],
+      [
+        "mediawiki",
+        16
+      ],
+      [
+        "service",
+        16
+      ],
+      [
+        "mwdumper",
+        15
+      ],
+      [
+        "root",
+        13
+      ],
+      [
+        "jar",
+        12
+      ],
+      [
+        "password",
+        12
+      ],
+      [
+        "wiki",
+        10
+      ],
+      [
+        "user",
+        9
+      ],
+      [
+        "var",
+        9
+      ],
+      [
+        "mysqladmin",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "wikipedia",
+        63
+      ],
+      [
+        "mwdumper",
+        15
+      ],
+      [
+        "mysql",
+        28
+      ],
+      [
+        "mediawiki",
+        16
+      ],
+      [
+        "pwikipedia",
+        8
+      ],
+      [
+        "idwiki-latest-pages-articles",
+        6
+      ],
+      [
+        "mysqladmin",
+        8
+      ],
+      [
+        "jar",
+        12
+      ],
+      [
+        "service",
+        16
+      ],
+      [
+        "wikimedia",
+        6
+      ],
+      [
+        "dumps",
+        6
+      ],
+      [
+        "root",
+        13
+      ]
+    ],
+    "phrases": [
+      [
+        "service mysql",
+        16
+      ],
+      [
+        "wikipedia pwikipedia wikipedia",
+        8
+      ],
+      [
+        "user root password",
+        8
+      ],
+      [
+        "mysqladmin user root",
+        8
+      ],
+      [
+        "mysql u wikipedia",
+        8
+      ],
+      [
+        "mysql stop service",
+        8
+      ],
+      [
+        "var www wikipedia",
+        7
+      ],
+      [
+        "usr local src",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        20442,
+        0.81
+      ],
+      [
+        16787,
+        0.44
+      ],
+      [
+        20468,
+        0.44
+      ],
+      [
+        10411,
+        0.42
+      ],
+      [
+        16786,
+        0.42
+      ],
+      [
+        12035,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
 }

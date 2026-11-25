@@ -50,5 +50,154 @@
       "size": 3379,
       "name": "IPTEKNux_ Berbasis Ubuntu - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 361,
+    "longer_than": 33,
+    "top": [
+      [
+        "sudo",
+        25
+      ],
+      [
+        "init",
+        14
+      ],
+      [
+        "install",
+        10
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "gstreamer",
+        8
+      ],
+      [
+        "ipteknux",
+        8
+      ],
+      [
+        "iso",
+        7
+      ],
+      [
+        "ubuntu",
+        6
+      ],
+      [
+        "distro",
+        5
+      ],
+      [
+        "file",
+        5
+      ],
+      [
+        "tmp",
+        5
+      ],
+      [
+        "kgeography",
+        4
+      ]
+    ],
+    "distinct": [
+      [
+        "sudo",
+        25
+      ],
+      [
+        "gstreamer",
+        8
+      ],
+      [
+        "ipteknux",
+        8
+      ],
+      [
+        "init",
+        14
+      ],
+      [
+        "kgeography",
+        4
+      ],
+      [
+        "iso",
+        7
+      ],
+      [
+        "apt-get",
+        9
+      ],
+      [
+        "tmp",
+        5
+      ],
+      [
+        "install",
+        10
+      ],
+      [
+        "distro",
+        5
+      ],
+      [
+        "umount",
+        3
+      ],
+      [
+        "ubuntu",
+        6
+      ]
+    ],
+    "phrases": [
+      [
+        "sudo etc init",
+        14
+      ],
+      [
+        "apt-get install",
+        9
+      ],
+      [
+        "apt sources list",
+        3
+      ],
+      [
+        "file iso",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        21236,
+        0.82
+      ],
+      [
+        18150,
+        0.55
+      ],
+      [
+        18288,
+        0.5
+      ],
+      [
+        18293,
+        0.46
+      ],
+      [
+        20807,
+        0.43
+      ],
+      [
+        21444,
+        0.39
+      ]
+    ],
+    "sentiment": null
+  }
 }

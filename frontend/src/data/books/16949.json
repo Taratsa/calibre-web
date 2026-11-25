@@ -43,5 +43,218 @@
       "size": 58167755,
       "name": "SOAL NEGARA INDONESIA SERIKAT DAN UNI BELA - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 19138,
+    "longer_than": 87,
+    "top": [
+      [
+        "negara",
+        365
+      ],
+      [
+        "serikat",
+        315
+      ],
+      [
+        "indonesia",
+        271
+      ],
+      [
+        "pemerintah",
+        223
+      ],
+      [
+        "belanda",
+        149
+      ],
+      [
+        "federal",
+        111
+      ],
+      [
+        "dasar",
+        92
+      ],
+      [
+        "sistim",
+        90
+      ],
+      [
+        "republik",
+        78
+      ],
+      [
+        "undang-undang",
+        78
+      ],
+      [
+        "uni",
+        77
+      ],
+      [
+        "pemerintahan",
+        76
+      ]
+    ],
+    "distinct": [
+      [
+        "serikat",
+        315
+      ],
+      [
+        "negara",
+        365
+      ],
+      [
+        "federal",
+        111
+      ],
+      [
+        "pemerintah",
+        223
+      ],
+      [
+        "sistim",
+        90
+      ],
+      [
+        "belanda",
+        149
+      ],
+      [
+        "indonesia",
+        271
+      ],
+      [
+        "konstitusi",
+        74
+      ],
+      [
+        "uni",
+        77
+      ],
+      [
+        "swis",
+        35
+      ],
+      [
+        "misalnja",
+        58
+      ],
+      [
+        "mempunjai",
+        61
+      ]
+    ],
+    "phrases": [
+      [
+        "indonesia serikat",
+        119
+      ],
+      [
+        "negara indonesia",
+        73
+      ],
+      [
+        "amerika serikat",
+        45
+      ],
+      [
+        "pemerintah serikat",
+        42
+      ],
+      [
+        "negara serikat",
+        40
+      ],
+      [
+        "keradjaan belanda",
+        32
+      ],
+      [
+        "undang-undang dasar",
+        31
+      ],
+      [
+        "pemerintah interim",
+        31
+      ]
+    ],
+    "similar": [
+      [
+        13273,
+        0.27
+      ],
+      [
+        12046,
+        0.25
+      ],
+      [
+        1434,
+        0.25
+      ],
+      [
+        7589,
+        0.25
+      ],
+      [
+        6799,
+        0.22
+      ],
+      [
+        1875,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.47,
+      "positive": 170,
+      "negative": 61,
+      "trend": [
+        0.88,
+        0.43,
+        0.47,
+        0.71,
+        0.71,
+        0.08,
+        0.3,
+        0.7,
+        -0.18,
+        0.45,
+        1,
+        0.43,
+        null,
+        0.33,
+        0.38,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          17
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "sadness",
+          1
+        ]
+      ]
+    }
+  }
 }

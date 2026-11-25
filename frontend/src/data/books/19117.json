@@ -43,5 +43,226 @@
       "size": 82311371,
       "name": "Pilipina - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 41583,
+    "longer_than": 95,
+    "top": [
+      [
+        "orang",
+        630
+      ],
+      [
+        "spanjol",
+        242
+      ],
+      [
+        "pilipina",
+        228
+      ],
+      [
+        "amerika",
+        106
+      ],
+      [
+        "manila",
+        100
+      ],
+      [
+        "kaum",
+        99
+      ],
+      [
+        "banjak",
+        98
+      ],
+      [
+        "djuga",
+        98
+      ],
+      [
+        "rakjat",
+        79
+      ],
+      [
+        "pemerintah",
+        76
+      ],
+      [
+        "dongan",
+        75
+      ],
+      [
+        "agama",
+        72
+      ]
+    ],
+    "distinct": [
+      [
+        "pilipina",
+        228
+      ],
+      [
+        "spanjol",
+        242
+      ],
+      [
+        "orang",
+        630
+      ],
+      [
+        "manila",
+        100
+      ],
+      [
+        "dongan",
+        75
+      ],
+      [
+        "aguinaldo",
+        40
+      ],
+      [
+        "djuga",
+        98
+      ],
+      [
+        "dnn",
+        52
+      ],
+      [
+        "banjak",
+        98
+      ],
+      [
+        "djenderal",
+        59
+      ],
+      [
+        "jmng",
+        30
+      ],
+      [
+        "rakjat",
+        79
+      ]
+    ],
+    "phrases": [
+      [
+        "orang spanjol",
+        54
+      ],
+      [
+        "gubernur djenderal",
+        29
+      ],
+      [
+        "orang tionghoa",
+        23
+      ],
+      [
+        "orang pilipina",
+        23
+      ],
+      [
+        "golongan agama",
+        16
+      ],
+      [
+        "kaum pemberontak",
+        15
+      ],
+      [
+        "amerika serikat",
+        15
+      ],
+      [
+        "tanggal april",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        18095,
+        0.34
+      ],
+      [
+        21089,
+        0.32
+      ],
+      [
+        21087,
+        0.32
+      ],
+      [
+        15847,
+        0.21
+      ],
+      [
+        11919,
+        0.2
+      ],
+      [
+        16236,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 282,
+      "negative": 308,
+      "trend": [
+        0.18,
+        -0.12,
+        0,
+        0.29,
+        0.05,
+        -0.15,
+        -0.17,
+        0.43,
+        0.06,
+        -0.48,
+        0,
+        -0.43,
+        -0.4,
+        -0.22,
+        0.36,
+        0.23
+      ],
+      "emotions": [
+        [
+          "anger",
+          108
+        ],
+        [
+          "sadness",
+          71
+        ],
+        [
+          "joy",
+          27
+        ],
+        [
+          "trust",
+          22
+        ],
+        [
+          "fear",
+          21
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "disgust",
+          3
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }

@@ -48,5 +48,170 @@
       "size": 4847,
       "name": "Mengenal Serangan Man-in-The-Middle MITM - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 844,
+    "longer_than": 47,
+    "top": [
+      [
+        "mitm",
+        37
+      ],
+      [
+        "alice",
+        26
+      ],
+      [
+        "bob",
+        26
+      ],
+      [
+        "charlie",
+        21
+      ],
+      [
+        "otentikasi",
+        13
+      ],
+      [
+        "serangan",
+        13
+      ],
+      [
+        "berbicara",
+        11
+      ],
+      [
+        "komunikasi",
+        8
+      ],
+      [
+        "orang",
+        8
+      ],
+      [
+        "attack",
+        7
+      ],
+      [
+        "attacker",
+        7
+      ],
+      [
+        "berkomunikasi",
+        7
+      ]
+    ],
+    "distinct": [
+      [
+        "mitm",
+        37
+      ],
+      [
+        "alice",
+        26
+      ],
+      [
+        "charlie",
+        21
+      ],
+      [
+        "bob",
+        26
+      ],
+      [
+        "otentikasi",
+        13
+      ],
+      [
+        "attacker",
+        7
+      ],
+      [
+        "sniffing",
+        6
+      ],
+      [
+        "serangan",
+        13
+      ],
+      [
+        "menyamar",
+        7
+      ],
+      [
+        "ilmuhacking",
+        3
+      ],
+      [
+        "attack",
+        7
+      ],
+      [
+        "mitmproxy",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "alice dan bob",
+        5
+      ],
+      [
+        "serangan mitm",
+        5
+      ],
+      [
+        "mitm attack",
+        5
+      ],
+      [
+        "orang yang salah",
+        3
+      ],
+      [
+        "berbicara dengan orang",
+        3
+      ],
+      [
+        "serangan man-in-the-middle",
+        3
+      ],
+      [
+        "mitm mitmproxy",
+        3
+      ],
+      [
+        "jenis serangan",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21352,
+        0.32
+      ],
+      [
+        20217,
+        0.31
+      ],
+      [
+        11604,
+        0.31
+      ],
+      [
+        11603,
+        0.24
+      ],
+      [
+        12446,
+        0.21
+      ],
+      [
+        12448,
+        0.2
+      ]
+    ],
+    "sentiment": null
+  }
 }

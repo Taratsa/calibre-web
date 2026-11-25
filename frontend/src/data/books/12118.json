@@ -45,5 +45,222 @@
       "size": 9977823,
       "name": "Kumpulan ilmu pengetahuan untuk pembanguna - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 6075,
+    "longer_than": 73,
+    "top": [
+      [
+        "saudara-saudara",
+        72
+      ],
+      [
+        "revolusi",
+        46
+      ],
+      [
+        "indonesia",
+        37
+      ],
+      [
+        "didalam",
+        35
+      ],
+      [
+        "rakjat",
+        33
+      ],
+      [
+        "cuba",
+        32
+      ],
+      [
+        "sardjana",
+        31
+      ],
+      [
+        "ilmu",
+        28
+      ],
+      [
+        "bertemu",
+        27
+      ],
+      [
+        "supaja",
+        24
+      ],
+      [
+        "pengetahuan",
+        23
+      ],
+      [
+        "banjak",
+        21
+      ]
+    ],
+    "distinct": [
+      [
+        "saudara-saudara",
+        72
+      ],
+      [
+        "cuba",
+        32
+      ],
+      [
+        "sardjana",
+        31
+      ],
+      [
+        "rakjat",
+        33
+      ],
+      [
+        "revolusi",
+        46
+      ],
+      [
+        "didalam",
+        35
+      ],
+      [
+        "supaja",
+        24
+      ],
+      [
+        "masjarakat",
+        20
+      ],
+      [
+        "djuta",
+        16
+      ],
+      [
+        "sosialisme",
+        21
+      ],
+      [
+        "prejudiced",
+        9
+      ],
+      [
+        "banjak",
+        21
+      ]
+    ],
+    "phrases": [
+      [
+        "ilmu pengetahuan",
+        23
+      ],
+      [
+        "revolusi cuba",
+        16
+      ],
+      [
+        "revolusi indonesia",
+        13
+      ],
+      [
+        "adil dan makmur",
+        8
+      ],
+      [
+        "djuta ton",
+        11
+      ],
+      [
+        "revolution of rising",
+        7
+      ],
+      [
+        "universal voice",
+        9
+      ],
+      [
+        "rising demands",
+        8
+      ]
+    ],
+    "similar": [
+      [
+        11017,
+        0.29
+      ],
+      [
+        11856,
+        0.25
+      ],
+      [
+        17668,
+        0.24
+      ],
+      [
+        11851,
+        0.22
+      ],
+      [
+        12917,
+        0.22
+      ],
+      [
+        12988,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.45,
+      "positive": 90,
+      "negative": 34,
+      "trend": [
+        0.75,
+        null,
+        0.57,
+        -0.25,
+        0.45,
+        1,
+        1,
+        null,
+        0.33,
+        1,
+        0,
+        -0.14,
+        0.33,
+        -0.33,
+        null,
+        0.78
+      ],
+      "emotions": [
+        [
+          "sadness",
+          11
+        ],
+        [
+          "trust",
+          10
+        ],
+        [
+          "joy",
+          7
+        ],
+        [
+          "surprise",
+          6
+        ],
+        [
+          "anger",
+          4
+        ],
+        [
+          "anticipation",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

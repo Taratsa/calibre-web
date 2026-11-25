@@ -45,5 +45,189 @@
       "size": 5509294,
       "name": "Nasakom bersatu - Nasakom djiwaku! _ amana - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 2825,
+    "longer_than": 64,
+    "top": [
+      [
+        "indonesia",
+        64
+      ],
+      [
+        "tani",
+        53
+      ],
+      [
+        "kaum",
+        44
+      ],
+      [
+        "revolusi",
+        40
+      ],
+      [
+        "ikatan",
+        30
+      ],
+      [
+        "saudara-saudara",
+        24
+      ],
+      [
+        "menderita",
+        23
+      ],
+      [
+        "rakjat",
+        22
+      ],
+      [
+        "hidup",
+        20
+      ],
+      [
+        "merdeka",
+        20
+      ],
+      [
+        "orang",
+        19
+      ],
+      [
+        "sokoguru",
+        19
+      ]
+    ],
+    "distinct": [
+      [
+        "tani",
+        53
+      ],
+      [
+        "sokoguru",
+        19
+      ],
+      [
+        "revolusi",
+        40
+      ],
+      [
+        "saudara-saudara",
+        24
+      ],
+      [
+        "ikatan",
+        30
+      ],
+      [
+        "kaum",
+        44
+      ],
+      [
+        "djiwaku",
+        11
+      ],
+      [
+        "tudjuan",
+        19
+      ],
+      [
+        "nasakom",
+        15
+      ],
+      [
+        "rakjat",
+        22
+      ],
+      [
+        "indonesia",
+        64
+      ],
+      [
+        "menderita",
+        23
+      ]
+    ],
+    "phrases": [
+      [
+        "kaum tani",
+        36
+      ],
+      [
+        "revolusi indonesia",
+        26
+      ],
+      [
+        "rakjat indonesia",
+        11
+      ],
+      [
+        "sokoguru daripada revolusi",
+        7
+      ],
+      [
+        "adil dan makmur",
+        7
+      ],
+      [
+        "kepadamu kepadamu kepadamu",
+        6
+      ],
+      [
+        "nasakom djiwaku",
+        8
+      ],
+      [
+        "tudjuan daripada revolusi",
+        5
+      ]
+    ],
+    "similar": [
+      [
+        11851,
+        0.26
+      ],
+      [
+        11809,
+        0.25
+      ],
+      [
+        13064,
+        0.23
+      ],
+      [
+        11017,
+        0.22
+      ],
+      [
+        8771,
+        0.21
+      ],
+      [
+        683,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": -0.04,
+      "positive": 35,
+      "negative": 38,
+      "trend": [],
+      "emotions": [
+        [
+          "sadness",
+          36
+        ],
+        [
+          "trust",
+          7
+        ],
+        [
+          "joy",
+          1
+        ]
+      ]
+    }
+  }
 }

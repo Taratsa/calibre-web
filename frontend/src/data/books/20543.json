@@ -51,5 +51,170 @@
       "size": 5507,
       "name": "OLSR - di Ubuntu - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 944,
+    "longer_than": 49,
+    "top": [
+      [
+        "olsrd",
+        43
+      ],
+      [
+        "conf",
+        20
+      ],
+      [
+        "wlan",
+        19
+      ],
+      [
+        "olsr",
+        15
+      ],
+      [
+        "eth",
+        14
+      ],
+      [
+        "wifi",
+        11
+      ],
+      [
+        "hotspot",
+        10
+      ],
+      [
+        "sudo",
+        10
+      ],
+      [
+        "wrt",
+        10
+      ],
+      [
+        "edit",
+        9
+      ],
+      [
+        "error",
+        8
+      ],
+      [
+        "linksys",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "olsrd",
+        43
+      ],
+      [
+        "wlan",
+        19
+      ],
+      [
+        "olsr",
+        15
+      ],
+      [
+        "conf",
+        20
+      ],
+      [
+        "eth",
+        14
+      ],
+      [
+        "wrt",
+        10
+      ],
+      [
+        "iwconfig",
+        7
+      ],
+      [
+        "hotspot",
+        10
+      ],
+      [
+        "plparam",
+        5
+      ],
+      [
+        "ad-hoc",
+        7
+      ],
+      [
+        "mesh",
+        8
+      ],
+      [
+        "linkqualitydijkstralimit",
+        4
+      ]
+    ],
+    "phrases": [
+      [
+        "olsrd conf",
+        20
+      ],
+      [
+        "wifi hotspot linksys",
+        8
+      ],
+      [
+        "hotspot linksys wrt",
+        8
+      ],
+      [
+        "olsr di ubuntu",
+        4
+      ],
+      [
+        "iwconfig wlan",
+        5
+      ],
+      [
+        "wrt gl upgrade",
+        3
+      ],
+      [
+        "wlan inet static",
+        3
+      ],
+      [
+        "wireless-mode ad-hoc wireless-channel",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20569,
+        0.45
+      ],
+      [
+        20563,
+        0.44
+      ],
+      [
+        10255,
+        0.43
+      ],
+      [
+        20577,
+        0.43
+      ],
+      [
+        20565,
+        0.43
+      ],
+      [
+        20576,
+        0.42
+      ]
+    ],
+    "sentiment": null
+  }
 }

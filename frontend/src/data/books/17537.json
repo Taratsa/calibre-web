@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 719,
-    "longer_than": 46,
+    "longer_than": 45,
     "top": [
       [
         "jaringan",
@@ -144,12 +144,12 @@
         4
       ],
       [
-        "probe",
+        "notifikasi",
         3
       ],
       [
-        "notifikasi",
-        3
+        "memberitahu",
+        5
       ]
     ],
     "phrases": [
@@ -168,6 +168,14 @@
     ],
     "similar": [
       [
+        21164,
+        0.39
+      ],
+      [
+        21162,
+        0.35
+      ],
+      [
         10025,
         0.32
       ],
@@ -182,14 +190,6 @@
       [
         9634,
         0.29
-      ],
-      [
-        9636,
-        0.27
-      ],
-      [
-        9638,
-        0.27
       ]
     ],
     "sentiment": null

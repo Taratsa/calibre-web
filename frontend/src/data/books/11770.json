@@ -43,5 +43,226 @@
       "size": 6968665,
       "name": "Arjuna Krama (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 51808,
+    "longer_than": 97,
+    "top": [
+      [
+        "prabu",
+        653
+      ],
+      [
+        "sri",
+        442
+      ],
+      [
+        "raden",
+        415
+      ],
+      [
+        "sang",
+        369
+      ],
+      [
+        "sumbadra",
+        363
+      ],
+      [
+        "arjuna",
+        346
+      ],
+      [
+        "dewi",
+        290
+      ],
+      [
+        "kresna",
+        278
+      ],
+      [
+        "wara",
+        240
+      ],
+      [
+        "baladewa",
+        218
+      ],
+      [
+        "patih",
+        208
+      ],
+      [
+        "engkau",
+        195
+      ]
+    ],
+    "distinct": [
+      [
+        "prabu",
+        653
+      ],
+      [
+        "sumbadra",
+        363
+      ],
+      [
+        "arjuna",
+        346
+      ],
+      [
+        "kresna",
+        278
+      ],
+      [
+        "baladewa",
+        218
+      ],
+      [
+        "raden",
+        415
+      ],
+      [
+        "sri",
+        442
+      ],
+      [
+        "wara",
+        240
+      ],
+      [
+        "dwarawati",
+        171
+      ],
+      [
+        "burisrawa",
+        132
+      ],
+      [
+        "gatotkaca",
+        151
+      ],
+      [
+        "dewi",
+        290
+      ]
+    ],
+    "phrases": [
+      [
+        "sri kresna",
+        245
+      ],
+      [
+        "wara sumbadra",
+        235
+      ],
+      [
+        "sang prabu",
+        228
+      ],
+      [
+        "prabu baladewa",
+        144
+      ],
+      [
+        "dewi wara",
+        93
+      ],
+      [
+        "raden arjuna",
+        78
+      ],
+      [
+        "kakanda prabu",
+        77
+      ],
+      [
+        "patih sakuni",
+        69
+      ]
+    ],
+    "similar": [
+      [
+        11233,
+        0.26
+      ],
+      [
+        5059,
+        0.25
+      ],
+      [
+        5060,
+        0.25
+      ],
+      [
+        2858,
+        0.22
+      ],
+      [
+        3566,
+        0.22
+      ],
+      [
+        1579,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.25,
+      "positive": 1018,
+      "negative": 611,
+      "trend": [
+        0.16,
+        0.3,
+        0.12,
+        0.04,
+        0.21,
+        0.38,
+        0.4,
+        0.11,
+        0.69,
+        0.54,
+        0.4,
+        0.74,
+        0.29,
+        -0.06,
+        -0.1,
+        0.06
+      ],
+      "emotions": [
+        [
+          "joy",
+          260
+        ],
+        [
+          "anger",
+          142
+        ],
+        [
+          "sadness",
+          142
+        ],
+        [
+          "surprise",
+          57
+        ],
+        [
+          "fear",
+          56
+        ],
+        [
+          "trust",
+          53
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "disgust",
+          8
+        ]
+      ]
+    }
+  }
 }

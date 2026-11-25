@@ -45,5 +45,218 @@
       "size": 70670528,
       "name": "Kesehatan rakjat di Indonesia _ pandangan - J. Leimena"
     }
-  ]
+  ],
+  "text": {
+    "words": 41260,
+    "longer_than": 95,
+    "top": [
+      [
+        "kesehatan",
+        378
+      ],
+      [
+        "pendidikan",
+        236
+      ],
+      [
+        "usaha",
+        230
+      ],
+      [
+        "dilapangan",
+        188
+      ],
+      [
+        "djumlah",
+        170
+      ],
+      [
+        "health",
+        166
+      ],
+      [
+        "rakjat",
+        162
+      ],
+      [
+        "indonesia",
+        159
+      ],
+      [
+        "penjakit",
+        154
+      ],
+      [
+        "tenaga",
+        132
+      ],
+      [
+        "rentjana",
+        131
+      ],
+      [
+        "dokter",
+        127
+      ]
+    ],
+    "distinct": [
+      [
+        "pembanterasan",
+        125
+      ],
+      [
+        "kesehatan",
+        378
+      ],
+      [
+        "dilapangan",
+        188
+      ],
+      [
+        "djumlah",
+        170
+      ],
+      [
+        "health",
+        166
+      ],
+      [
+        "penjakit",
+        154
+      ],
+      [
+        "rentjana",
+        131
+      ],
+      [
+        "rakjat",
+        162
+      ],
+      [
+        "rumah-sakit",
+        75
+      ],
+      [
+        "usaha²",
+        96
+      ],
+      [
+        "tenaga²",
+        75
+      ],
+      [
+        "pekerdjaan",
+        124
+      ]
+    ],
+    "phrases": [
+      [
+        "kementerian kesehatan",
+        63
+      ],
+      [
+        "public health",
+        58
+      ],
+      [
+        "rumah sakit",
+        49
+      ],
+      [
+        "pendidikan kesehatan",
+        46
+      ],
+      [
+        "pembanterasan penjakit",
+        46
+      ],
+      [
+        "kesehatan kepada rakjat",
+        24
+      ],
+      [
+        "dilapangan kesehatan",
+        33
+      ],
+      [
+        "usaha dilapangan",
+        31
+      ]
+    ],
+    "similar": [
+      [
+        6640,
+        0.23
+      ],
+      [
+        12217,
+        0.22
+      ],
+      [
+        12536,
+        0.19
+      ],
+      [
+        12982,
+        0.19
+      ],
+      [
+        6635,
+        0.19
+      ],
+      [
+        6575,
+        0.17
+      ]
+    ],
+    "sentiment": {
+      "score": 0.46,
+      "positive": 851,
+      "negative": 312,
+      "trend": [
+        0.72,
+        0.37,
+        0.18,
+        -0.04,
+        0.21,
+        0.23,
+        0.14,
+        0.62,
+        0.57,
+        0.38,
+        0.75,
+        0.81,
+        0.62,
+        0.48,
+        0.67,
+        0.5
+      ],
+      "emotions": [
+        [
+          "sadness",
+          77
+        ],
+        [
+          "anger",
+          26
+        ],
+        [
+          "anticipation",
+          5
+        ],
+        [
+          "fear",
+          2
+        ],
+        [
+          "joy",
+          2
+        ],
+        [
+          "trust",
+          1
+        ]
+      ]
+    }
+  }
 }

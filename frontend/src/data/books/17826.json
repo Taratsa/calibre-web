@@ -45,5 +45,222 @@
       "size": 65270379,
       "name": "Bentuk-bentuk kerdjasama di desa U.R.S.S. - Y. Borisov"
     }
-  ]
+  ],
+  "text": {
+    "words": 20652,
+    "longer_than": 88,
+    "top": [
+      [
+        "indonesia",
+        521
+      ],
+      [
+        "sovjet",
+        350
+      ],
+      [
+        "rakjat",
+        194
+      ],
+      [
+        "negeri",
+        158
+      ],
+      [
+        "republik",
+        152
+      ],
+      [
+        "urss",
+        136
+      ],
+      [
+        "uni",
+        117
+      ],
+      [
+        "pemerintah",
+        76
+      ],
+      [
+        "djuga",
+        74
+      ],
+      [
+        "kaum",
+        69
+      ],
+      [
+        "ekonomi",
+        65
+      ],
+      [
+        "negara",
+        60
+      ]
+    ],
+    "distinct": [
+      [
+        "sovjet",
+        350
+      ],
+      [
+        "urss",
+        136
+      ],
+      [
+        "rakjat",
+        194
+      ],
+      [
+        "indonesia",
+        521
+      ],
+      [
+        "uni",
+        117
+      ],
+      [
+        "republik",
+        152
+      ],
+      [
+        "worosjilov",
+        35
+      ],
+      [
+        "rakjat²",
+        44
+      ],
+      [
+        "sovjet-indonesia",
+        31
+      ],
+      [
+        "kerdjasama",
+        56
+      ],
+      [
+        "djuga",
+        74
+      ],
+      [
+        "negeri",
+        158
+      ]
+    ],
+    "phrases": [
+      [
+        "republik indonesia",
+        120
+      ],
+      [
+        "uni sovjet",
+        105
+      ],
+      [
+        "rakjat indonesia",
+        72
+      ],
+      [
+        "rakjat sovjet",
+        56
+      ],
+      [
+        "presiden sukarno",
+        34
+      ],
+      [
+        "presidium sovjet tertinggi",
+        21
+      ],
+      [
+        "sovjet tertinggi urss",
+        17
+      ],
+      [
+        "menteri luar negeri",
+        17
+      ]
+    ],
+    "similar": [
+      [
+        1110,
+        0.39
+      ],
+      [
+        6799,
+        0.32
+      ],
+      [
+        4804,
+        0.31
+      ],
+      [
+        12976,
+        0.28
+      ],
+      [
+        798,
+        0.27
+      ],
+      [
+        9329,
+        0.27
+      ]
+    ],
+    "sentiment": {
+      "score": 0.55,
+      "positive": 366,
+      "negative": 105,
+      "trend": [
+        0.71,
+        0.28,
+        0.3,
+        0.62,
+        0.62,
+        0.74,
+        0.52,
+        0.66,
+        0.21,
+        0.64,
+        0.73,
+        0.5,
+        0.82,
+        0.9,
+        0.46,
+        0.43
+      ],
+      "emotions": [
+        [
+          "trust",
+          69
+        ],
+        [
+          "anger",
+          41
+        ],
+        [
+          "joy",
+          33
+        ],
+        [
+          "anticipation",
+          17
+        ],
+        [
+          "sadness",
+          4
+        ],
+        [
+          "disgust",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

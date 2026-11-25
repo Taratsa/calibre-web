@@ -48,5 +48,158 @@
       "size": 2906,
       "name": "RockCluster_ Submit Job - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 284,
+    "longer_than": 29,
+    "top": [
+      [
+        "tachyon",
+        17
+      ],
+      [
+        "job",
+        7
+      ],
+      [
+        "compute",
+        6
+      ],
+      [
+        "linux-mpich",
+        5
+      ],
+      [
+        "mpich",
+        5
+      ],
+      [
+        "rockcluster",
+        5
+      ],
+      [
+        "submit",
+        5
+      ],
+      [
+        "ubah",
+        5
+      ],
+      [
+        "wiki",
+        5
+      ],
+      [
+        "gnu",
+        4
+      ],
+      [
+        "opt",
+        4
+      ],
+      [
+        "bin",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "linux-mpich",
+        5
+      ],
+      [
+        "mpich",
+        5
+      ],
+      [
+        "rockcluster",
+        5
+      ],
+      [
+        "compute",
+        6
+      ],
+      [
+        "qconf",
+        3
+      ],
+      [
+        "job",
+        7
+      ],
+      [
+        "submit",
+        5
+      ],
+      [
+        "opt",
+        4
+      ],
+      [
+        "gnu",
+        4
+      ],
+      [
+        "ubah",
+        5
+      ],
+      [
+        "machines",
+        3
+      ],
+      [
+        "compile",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "opt mpich gnu",
+        4
+      ],
+      [
+        "submit job",
+        5
+      ],
+      [
+        "wiki index php",
+        3
+      ],
+      [
+        "qconf sq compute",
+        3
+      ],
+      [
+        "compile linux-mpich",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        20291,
+        0.34
+      ],
+      [
+        20240,
+        0.27
+      ],
+      [
+        20239,
+        0.22
+      ],
+      [
+        20306,
+        0.22
+      ],
+      [
+        20293,
+        0.22
+      ],
+      [
+        20241,
+        0.19
+      ]
+    ],
+    "sentiment": null
+  }
 }

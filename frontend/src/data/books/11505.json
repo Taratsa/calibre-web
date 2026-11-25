@@ -45,5 +45,170 @@
       "size": 3400412,
       "name": "Amanat dan perintah harian Presiden_Pangli - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 1061,
+    "longer_than": 51,
+    "top": [
+      [
+        "angkatan",
+        30
+      ],
+      [
+        "indonesia",
+        23
+      ],
+      [
+        "udara",
+        20
+      ],
+      [
+        "republik",
+        16
+      ],
+      [
+        "perang",
+        12
+      ],
+      [
+        "saudara",
+        10
+      ],
+      [
+        "barat",
+        9
+      ],
+      [
+        "irian",
+        9
+      ],
+      [
+        "saudara-saudara",
+        9
+      ],
+      [
+        "dani",
+        8
+      ],
+      [
+        "laksamana",
+        8
+      ],
+      [
+        "omar",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "angkatan",
+        30
+      ],
+      [
+        "udara",
+        20
+      ],
+      [
+        "omar",
+        8
+      ],
+      [
+        "ksau",
+        5
+      ],
+      [
+        "laksamana",
+        8
+      ],
+      [
+        "dani",
+        8
+      ],
+      [
+        "republik",
+        16
+      ],
+      [
+        "sudarso",
+        5
+      ],
+      [
+        "saudara-saudara",
+        9
+      ],
+      [
+        "irian",
+        9
+      ],
+      [
+        "jos",
+        5
+      ],
+      [
+        "indonesia",
+        23
+      ]
+    ],
+    "phrases": [
+      [
+        "republik indonesia",
+        14
+      ],
+      [
+        "angkatan udara",
+        13
+      ],
+      [
+        "angkatan perang",
+        12
+      ],
+      [
+        "irian barat",
+        9
+      ],
+      [
+        "omar dani",
+        8
+      ],
+      [
+        "saudara jos sudarso",
+        5
+      ],
+      [
+        "laksamana muda udara",
+        5
+      ],
+      [
+        "perintah harian",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        11039,
+        0.31
+      ],
+      [
+        11241,
+        0.27
+      ],
+      [
+        12988,
+        0.24
+      ],
+      [
+        11676,
+        0.24
+      ],
+      [
+        10837,
+        0.24
+      ],
+      [
+        12939,
+        0.22
+      ]
+    ],
+    "sentiment": null
+  }
 }

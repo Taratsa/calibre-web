@@ -45,5 +45,218 @@
       "size": 5465593,
       "name": "Amanat presiden Sukarno pada konperensi be - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 3476,
+    "longer_than": 66,
+    "top": [
+      [
+        "indonesia",
+        30
+      ],
+      [
+        "engkau",
+        26
+      ],
+      [
+        "didalam",
+        25
+      ],
+      [
+        "djikalau",
+        22
+      ],
+      [
+        "saudara-saudara",
+        21
+      ],
+      [
+        "buku-buku",
+        18
+      ],
+      [
+        "pemuda",
+        16
+      ],
+      [
+        "hidup",
+        14
+      ],
+      [
+        "menteri",
+        14
+      ],
+      [
+        "punja",
+        14
+      ],
+      [
+        "berkenalan",
+        13
+      ],
+      [
+        "pemuda-pemudi",
+        13
+      ]
+    ],
+    "distinct": [
+      [
+        "djikalau",
+        22
+      ],
+      [
+        "notwendigkeit",
+        10
+      ],
+      [
+        "saudara-saudara",
+        21
+      ],
+      [
+        "engkau",
+        26
+      ],
+      [
+        "pemuda-pemudi",
+        13
+      ],
+      [
+        "didalam",
+        25
+      ],
+      [
+        "punja",
+        14
+      ],
+      [
+        "ippi",
+        8
+      ],
+      [
+        "trikora",
+        10
+      ],
+      [
+        "pemudi",
+        11
+      ],
+      [
+        "historische",
+        10
+      ],
+      [
+        "kurangi",
+        9
+      ]
+    ],
+    "phrases": [
+      [
+        "pemuda dan pemudi",
+        10
+      ],
+      [
+        "adil dan makmur",
+        8
+      ],
+      [
+        "masjarakat jang adil",
+        7
+      ],
+      [
+        "konperensi besar ippi",
+        6
+      ],
+      [
+        "historische notwendigkeit",
+        9
+      ],
+      [
+        "vivere pericoloso",
+        7
+      ],
+      [
+        "thomas jefferson",
+        6
+      ],
+      [
+        "perdjoangkan engkau perdjoangkan",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        12118,
+        0.25
+      ],
+      [
+        11765,
+        0.24
+      ],
+      [
+        11017,
+        0.24
+      ],
+      [
+        11003,
+        0.22
+      ],
+      [
+        12988,
+        0.21
+      ],
+      [
+        10807,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": 0.69,
+      "positive": 102,
+      "negative": 19,
+      "trend": [
+        1,
+        0.75,
+        0.6,
+        1,
+        1,
+        null,
+        1,
+        0.2,
+        1,
+        0.89,
+        1,
+        null,
+        -0.2,
+        0.43,
+        0.56,
+        0.43
+      ],
+      "emotions": [
+        [
+          "joy",
+          14
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

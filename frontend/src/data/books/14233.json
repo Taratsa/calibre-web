@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 94,
-    "longer_than": 13,
+    "longer_than": 14,
     "top": [
       [
         "rsync",
@@ -86,7 +86,40 @@
         3
       ]
     ],
-    "distinct": [],
+    "distinct": [
+      [
+        "rsync",
+        9
+      ],
+      [
+        "bwlimit",
+        4
+      ],
+      [
+        "mnt",
+        3
+      ],
+      [
+        "kecepatan",
+        5
+      ],
+      [
+        "harddisk",
+        3
+      ],
+      [
+        "library",
+        4
+      ],
+      [
+        "pustaka",
+        3
+      ],
+      [
+        "data",
+        3
+      ]
+    ],
     "phrases": [
       [
         "bwlimit ur rsync",
@@ -112,7 +145,7 @@
       ],
       [
         10708,
-        0.66
+        0.65
       ],
       [
         19109,

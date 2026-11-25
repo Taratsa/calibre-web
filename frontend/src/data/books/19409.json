@@ -45,5 +45,226 @@
       "size": 88496109,
       "name": "Kitab pertimbangan adat lembaga orang alam - Abdul Karim Amaroellah Alddanawi"
     }
-  ]
+  ],
+  "text": {
+    "words": 38370,
+    "longer_than": 95,
+    "top": [
+      [
+        "orang",
+        604
+      ],
+      [
+        "adat",
+        269
+      ],
+      [
+        "tiada",
+        182
+      ],
+      [
+        "allah",
+        162
+      ],
+      [
+        "poela",
+        151
+      ],
+      [
+        "sjara",
+        148
+      ],
+      [
+        "akal",
+        135
+      ],
+      [
+        "sadja",
+        129
+      ],
+      [
+        "ija",
+        128
+      ],
+      [
+        "adapoen",
+        125
+      ],
+      [
+        "djoea",
+        125
+      ],
+      [
+        "nan",
+        125
+      ]
+    ],
+    "distinct": [
+      [
+        "sjara",
+        148
+      ],
+      [
+        "djoea",
+        125
+      ],
+      [
+        "ijalah",
+        102
+      ],
+      [
+        "manti",
+        120
+      ],
+      [
+        "poela",
+        151
+      ],
+      [
+        "adapoen",
+        125
+      ],
+      [
+        "datoek",
+        103
+      ],
+      [
+        "orang",
+        604
+      ],
+      [
+        "ija",
+        128
+      ],
+      [
+        "adat",
+        269
+      ],
+      [
+        "itoelah",
+        104
+      ],
+      [
+        "jaitoe",
+        100
+      ]
+    ],
+    "phrases": [
+      [
+        "allah taala",
+        78
+      ],
+      [
+        "adat jang kawi",
+        31
+      ],
+      [
+        "wallahoe alam",
+        33
+      ],
+      [
+        "sjara jang lazim",
+        22
+      ],
+      [
+        "alam minang kabau",
+        21
+      ],
+      [
+        "perpatih nan sebatang",
+        17
+      ],
+      [
+        "adi atiwarman",
+        21
+      ],
+      [
+        "adat lembaga",
+        21
+      ]
+    ],
+    "similar": [
+      [
+        16614,
+        0.48
+      ],
+      [
+        524,
+        0.29
+      ],
+      [
+        16462,
+        0.27
+      ],
+      [
+        20712,
+        0.24
+      ],
+      [
+        12807,
+        0.23
+      ],
+      [
+        660,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.26,
+      "positive": 395,
+      "negative": 231,
+      "trend": [
+        0.24,
+        0.35,
+        0.45,
+        -0.16,
+        -0.31,
+        0.22,
+        0.56,
+        0.08,
+        0.47,
+        0.17,
+        0.06,
+        0.44,
+        0.09,
+        0.31,
+        0.35,
+        0.38
+      ],
+      "emotions": [
+        [
+          "trust",
+          42
+        ],
+        [
+          "anger",
+          26
+        ],
+        [
+          "sadness",
+          25
+        ],
+        [
+          "disgust",
+          16
+        ],
+        [
+          "joy",
+          14
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
+    }
+  }
 }

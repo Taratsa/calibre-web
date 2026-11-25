@@ -43,5 +43,222 @@
       "size": 89999987,
       "name": "Maleische taal tweede stuk _ overzicht der - C. Spat"
     }
-  ]
+  ],
+  "text": {
+    "words": 63355,
+    "longer_than": 98,
+    "top": [
+      [
+        "màka",
+        611
+      ],
+      [
+        "poen",
+        562
+      ],
+      [
+        "toean",
+        440
+      ],
+      [
+        "tiàda",
+        324
+      ],
+      [
+        "orang",
+        316
+      ],
+      [
+        "dangan",
+        309
+      ],
+      [
+        "soedah",
+        303
+      ],
+      [
+        "àda",
+        258
+      ],
+      [
+        "imperf",
+        252
+      ],
+      [
+        "baginda",
+        232
+      ],
+      [
+        "satělah",
+        172
+      ],
+      [
+        "den",
+        169
+      ]
+    ],
+    "distinct": [
+      [
+        "màka",
+        611
+      ],
+      [
+        "tiàda",
+        324
+      ],
+      [
+        "poen",
+        562
+      ],
+      [
+        "imperf",
+        252
+      ],
+      [
+        "àda",
+        258
+      ],
+      [
+        "toean",
+        440
+      ],
+      [
+        "satělah",
+        172
+      ],
+      [
+        "dangan",
+        309
+      ],
+      [
+        "soedah",
+        303
+      ],
+      [
+        "poetěri",
+        132
+      ],
+      [
+        "sěrta",
+        142
+      ],
+      [
+        "děri",
+        118
+      ]
+    ],
+    "phrases": [
+      [
+        "toean raffles",
+        46
+      ],
+      [
+        "těngkoe panglima běsar",
+        29
+      ],
+      [
+        "padoeka toean",
+        43
+      ],
+      [
+        "sěri padoeka",
+        40
+      ],
+      [
+        "satělah soedah",
+        36
+      ],
+      [
+        "màka àda",
+        36
+      ],
+      [
+        "màka ia poen",
+        22
+      ],
+      [
+        "màka kàta",
+        29
+      ]
+    ],
+    "similar": [
+      [
+        19617,
+        0.25
+      ],
+      [
+        19626,
+        0.21
+      ],
+      [
+        17634,
+        0.17
+      ],
+      [
+        13480,
+        0.16
+      ],
+      [
+        18946,
+        0.15
+      ],
+      [
+        20124,
+        0.14
+      ]
+    ],
+    "sentiment": {
+      "score": -0.17,
+      "positive": 106,
+      "negative": 149,
+      "trend": [
+        null,
+        -1,
+        -1,
+        -1,
+        -1,
+        null,
+        0.11,
+        -1,
+        -0.67,
+        0.63,
+        0.08,
+        0.36,
+        null,
+        null,
+        -1,
+        -0.87
+      ],
+      "emotions": [
+        [
+          "sadness",
+          78
+        ],
+        [
+          "trust",
+          26
+        ],
+        [
+          "anger",
+          17
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "anticipation",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

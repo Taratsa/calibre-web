@@ -48,5 +48,210 @@
       "size": 2685256,
       "name": "Soeara Rakjat (1921-08-31) - Soeara Rakjat editorial board (Semarang)"
     }
-  ]
+  ],
+  "text": {
+    "words": 7349,
+    "longer_than": 75,
+    "top": [
+      [
+        "kaoem",
+        104
+      ],
+      [
+        "boeroeh",
+        99
+      ],
+      [
+        "orang",
+        54
+      ],
+      [
+        "soedah",
+        44
+      ],
+      [
+        "oeang",
+        40
+      ],
+      [
+        "mendjadi",
+        37
+      ],
+      [
+        "satoe",
+        30
+      ],
+      [
+        "djoega",
+        26
+      ],
+      [
+        "pengadjaran",
+        26
+      ],
+      [
+        "boeat",
+        25
+      ],
+      [
+        "pergerakan",
+        25
+      ],
+      [
+        "semoea",
+        20
+      ]
+    ],
+    "distinct": [
+      [
+        "boeroeh",
+        99
+      ],
+      [
+        "kaoem",
+        104
+      ],
+      [
+        "oeang",
+        40
+      ],
+      [
+        "soedah",
+        44
+      ],
+      [
+        "holz",
+        19
+      ],
+      [
+        "satoe",
+        30
+      ],
+      [
+        "boeat",
+        25
+      ],
+      [
+        "pengadjaran",
+        26
+      ],
+      [
+        "djoega",
+        26
+      ],
+      [
+        "mendjadi",
+        37
+      ],
+      [
+        "semoea",
+        20
+      ],
+      [
+        "oentoek",
+        19
+      ]
+    ],
+    "phrases": [
+      [
+        "kaoem boeroeh",
+        33
+      ],
+      [
+        "kaoem oeang",
+        30
+      ],
+      [
+        "pergerakan boeroeh",
+        15
+      ],
+      [
+        "communistische internationale",
+        10
+      ],
+      [
+        "kaoem kromo",
+        9
+      ],
+      [
+        "perhimpoenan-perhimpoenan boeroeh",
+        8
+      ],
+      [
+        "orang banjak",
+        8
+      ],
+      [
+        "pasar derma",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        21250,
+        0.52
+      ],
+      [
+        21249,
+        0.52
+      ],
+      [
+        21271,
+        0.47
+      ],
+      [
+        21270,
+        0.47
+      ],
+      [
+        21228,
+        0.44
+      ],
+      [
+        21226,
+        0.44
+      ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 44,
+      "negative": 30,
+      "trend": [
+        -0.43,
+        0.67,
+        null,
+        1,
+        null,
+        null,
+        0.33,
+        0.2,
+        null,
+        null,
+        -0.14,
+        -0.67,
+        -0.43,
+        null,
+        0.67,
+        1
+      ],
+      "emotions": [
+        [
+          "anger",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          8
+        ],
+        [
+          "trust",
+          8
+        ]
+      ]
+    }
+  }
 }

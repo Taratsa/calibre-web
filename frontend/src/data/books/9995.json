@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 927,
-    "longer_than": 50,
+    "longer_than": 49,
     "top": [
       [
         "voip",
@@ -123,24 +123,20 @@
         12
       ],
       [
-        "trunk",
-        10
-      ],
-      [
         "exten",
         7
       ],
       [
-        "mask",
-        8
+        "trunk",
+        10
       ],
       [
         "opensips",
         6
       ],
       [
-        "foo",
-        6
+        "mask",
+        8
       ],
       [
         "phone",
@@ -149,6 +145,10 @@
       [
         "provider",
         8
+      ],
+      [
+        "foo",
+        6
       ],
       [
         "telepon",
@@ -192,7 +192,7 @@
     "similar": [
       [
         9994,
-        0.56
+        0.57
       ],
       [
         10010,

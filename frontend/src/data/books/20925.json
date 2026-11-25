@@ -48,5 +48,138 @@
       "size": 2485,
       "name": "Segmented Sftp Download - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 122,
+    "longer_than": 17,
+    "top": [
+      [
+        "lftp",
+        7
+      ],
+      [
+        "download",
+        6
+      ],
+      [
+        "sftp",
+        6
+      ],
+      [
+        "direktori",
+        3
+      ],
+      [
+        "file",
+        3
+      ],
+      [
+        "ipataudomain",
+        3
+      ],
+      [
+        "mkv",
+        3
+      ],
+      [
+        "pget",
+        3
+      ],
+      [
+        "segmented",
+        3
+      ],
+      [
+        "username",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "lftp",
+        7
+      ],
+      [
+        "sftp",
+        6
+      ],
+      [
+        "pget",
+        3
+      ],
+      [
+        "mkv",
+        3
+      ],
+      [
+        "segmented",
+        3
+      ],
+      [
+        "download",
+        6
+      ],
+      [
+        "direktori",
+        3
+      ],
+      [
+        "username",
+        3
+      ],
+      [
+        "file",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "sftp username ipataudomain",
+        3
+      ],
+      [
+        "mkv sftp username",
+        3
+      ],
+      [
+        "lftp e pget",
+        3
+      ],
+      [
+        "file mkv sftp",
+        3
+      ],
+      [
+        "direktori file mkv",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        14529,
+        0.57
+      ],
+      [
+        13238,
+        0.43
+      ],
+      [
+        14531,
+        0.38
+      ],
+      [
+        13239,
+        0.37
+      ],
+      [
+        9578,
+        0.34
+      ],
+      [
+        10609,
+        0.27
+      ]
+    ],
+    "sentiment": null
+  }
 }

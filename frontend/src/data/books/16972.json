@@ -45,5 +45,193 @@
       "size": 58504421,
       "name": "Soerat peratoeran akan alat sendjata dan m - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 13035,
+    "longer_than": 83,
+    "top": [
+      [
+        "orang",
+        214
+      ],
+      [
+        "menembak",
+        182
+      ],
+      [
+        "pistool",
+        165
+      ],
+      [
+        "tiada",
+        146
+      ],
+      [
+        "boewat",
+        139
+      ],
+      [
+        "mesti",
+        121
+      ],
+      [
+        "lantas",
+        91
+      ],
+      [
+        "patroon",
+        86
+      ],
+      [
+        "satoe",
+        85
+      ],
+      [
+        "dija",
+        82
+      ],
+      [
+        "pakei",
+        78
+      ],
+      [
+        "atawa",
+        76
+      ]
+    ],
+    "distinct": [
+      [
+        "pistool",
+        165
+      ],
+      [
+        "boewat",
+        139
+      ],
+      [
+        "menembak",
+        182
+      ],
+      [
+        "pakei",
+        78
+      ],
+      [
+        "patroon",
+        86
+      ],
+      [
+        "sekip",
+        62
+      ],
+      [
+        "dija",
+        82
+      ],
+      [
+        "sampei",
+        71
+      ],
+      [
+        "satoe",
+        85
+      ],
+      [
+        "kadalam",
+        52
+      ],
+      [
+        "atawa",
+        76
+      ],
+      [
+        "tiada",
+        146
+      ]
+    ],
+    "phrases": [
+      [
+        "orang jang menembak",
+        33
+      ],
+      [
+        "tangan kiri",
+        20
+      ],
+      [
+        "orang menembak",
+        19
+      ],
+      [
+        "djikalau orang",
+        19
+      ],
+      [
+        "tangan kanan",
+        18
+      ],
+      [
+        "barang koelit",
+        18
+      ],
+      [
+        "orang mesti",
+        17
+      ],
+      [
+        "moeka soerat",
+        16
+      ]
+    ],
+    "similar": [
+      [
+        11721,
+        0.41
+      ],
+      [
+        11800,
+        0.35
+      ],
+      [
+        11277,
+        0.32
+      ],
+      [
+        15573,
+        0.28
+      ],
+      [
+        13453,
+        0.28
+      ],
+      [
+        16827,
+        0.26
+      ]
+    ],
+    "sentiment": {
+      "score": 0.68,
+      "positive": 67,
+      "negative": 13,
+      "trend": [
+        0.2,
+        0.75,
+        1,
+        null,
+        null,
+        null,
+        0.43,
+        0.67,
+        0.6,
+        0.6,
+        0.75,
+        null,
+        1,
+        1,
+        1,
+        -0.2
+      ],
+      "emotions": []
+    }
+  }
 }

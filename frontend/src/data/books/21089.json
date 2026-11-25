@@ -43,5 +43,218 @@
       "size": 71105559,
       "name": "Sedjarah Tiongkok - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 28665,
+    "longer_than": 92,
+    "top": [
+      [
+        "tiongkok",
+        189
+      ],
+      [
+        "jeng",
+        106
+      ],
+      [
+        "djuga",
+        102
+      ],
+      [
+        "den",
+        99
+      ],
+      [
+        "dongan",
+        91
+      ],
+      [
+        "rakjat",
+        69
+      ],
+      [
+        "jong",
+        57
+      ],
+      [
+        "deri",
+        55
+      ],
+      [
+        "djopang",
+        48
+      ],
+      [
+        "kopada",
+        45
+      ],
+      [
+        "djepang",
+        44
+      ],
+      [
+        "tolah",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "tiongkok",
+        189
+      ],
+      [
+        "dongan",
+        91
+      ],
+      [
+        "jeng",
+        106
+      ],
+      [
+        "djopang",
+        48
+      ],
+      [
+        "djuga",
+        102
+      ],
+      [
+        "kopada",
+        45
+      ],
+      [
+        "tolah",
+        43
+      ],
+      [
+        "deri",
+        55
+      ],
+      [
+        "totapi",
+        38
+      ],
+      [
+        "oloh",
+        41
+      ],
+      [
+        "fiongkok",
+        28
+      ],
+      [
+        "jong",
+        57
+      ]
+    ],
+    "phrases": [
+      [
+        "bogitu djuga",
+        8
+      ],
+      [
+        "rakjat tiongkok",
+        7
+      ],
+      [
+        "tanah air",
+        5
+      ],
+      [
+        "sun jat-son",
+        5
+      ],
+      [
+        "bangea tionghoa",
+        5
+      ],
+      [
+        "bangan tionghon",
+        5
+      ],
+      [
+        "rakjat jang tolah",
+        3
+      ],
+      [
+        "djepang dan tiongkok",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        19117,
+        0.32
+      ],
+      [
+        18095,
+        0.26
+      ],
+      [
+        19752,
+        0.23
+      ],
+      [
+        4924,
+        0.22
+      ],
+      [
+        709,
+        0.22
+      ],
+      [
+        16236,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.1,
+      "positive": 100,
+      "negative": 82,
+      "trend": [
+        -0.16,
+        0.43,
+        0.6,
+        0,
+        -0.23,
+        null,
+        0.27,
+        0.25,
+        0.14,
+        0.2,
+        0.33,
+        0.71,
+        -0.29,
+        0,
+        0.07,
+        -0.12
+      ],
+      "emotions": [
+        [
+          "anger",
+          21
+        ],
+        [
+          "sadness",
+          20
+        ],
+        [
+          "anticipation",
+          9
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "trust",
+          6
+        ],
+        [
+          "fear",
+          2
+        ]
+      ]
+    }
+  }
 }

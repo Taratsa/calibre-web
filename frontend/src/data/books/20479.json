@@ -46,5 +46,218 @@
       "size": 28722063,
       "name": "Rapat tahoenan pertama Persatuan Bangsa In - Persatuan Bangsa Indonesia"
     }
-  ]
+  ],
+  "text": {
+    "words": 28068,
+    "longer_than": 92,
+    "top": [
+      [
+        "oentoek",
+        206
+      ],
+      [
+        "jat",
+        144
+      ],
+      [
+        "djoega",
+        134
+      ],
+      [
+        "soedah",
+        132
+      ],
+      [
+        "haroes",
+        121
+      ],
+      [
+        "boeat",
+        117
+      ],
+      [
+        "didalam",
+        114
+      ],
+      [
+        "soepaja",
+        105
+      ],
+      [
+        "kaoem",
+        100
+      ],
+      [
+        "tjabang",
+        100
+      ],
+      [
+        "anggauta",
+        96
+      ],
+      [
+        "bestuur",
+        95
+      ]
+    ],
+    "distinct": [
+      [
+        "oentoek",
+        206
+      ],
+      [
+        "soedah",
+        132
+      ],
+      [
+        "djoega",
+        134
+      ],
+      [
+        "jat",
+        144
+      ],
+      [
+        "haroes",
+        121
+      ],
+      [
+        "boeat",
+        117
+      ],
+      [
+        "kaoem",
+        100
+      ],
+      [
+        "soepaja",
+        105
+      ],
+      [
+        "tjabang",
+        100
+      ],
+      [
+        "anggauta",
+        96
+      ],
+      [
+        "soerabaja",
+        89
+      ],
+      [
+        "satoe",
+        84
+      ]
+    ],
+    "phrases": [
+      [
+        "centraal bestuur",
+        61
+      ],
+      [
+        "kaoem boeroeh",
+        52
+      ],
+      [
+        "tjabang soerabaja",
+        18
+      ],
+      [
+        "bangsa indonesia",
+        17
+      ],
+      [
+        "bangsa dan tanah",
+        11
+      ],
+      [
+        "secretaris oemoem",
+        16
+      ],
+      [
+        "roekoen tani",
+        14
+      ],
+      [
+        "kaoem tani",
+        14
+      ]
+    ],
+    "similar": [
+      [
+        16703,
+        0.31
+      ],
+      [
+        21275,
+        0.31
+      ],
+      [
+        21274,
+        0.31
+      ],
+      [
+        21256,
+        0.3
+      ],
+      [
+        21254,
+        0.3
+      ],
+      [
+        21245,
+        0.3
+      ]
+    ],
+    "sentiment": {
+      "score": 0.52,
+      "positive": 159,
+      "negative": 50,
+      "trend": [
+        0.83,
+        0.87,
+        0.6,
+        -0.33,
+        0.54,
+        0.5,
+        0.45,
+        0.33,
+        0.67,
+        0.05,
+        null,
+        0.38,
+        0.53,
+        1,
+        0.6,
+        0.45
+      ],
+      "emotions": [
+        [
+          "trust",
+          19
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "joy",
+          9
+        ],
+        [
+          "sadness",
+          6
+        ],
+        [
+          "anger",
+          2
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

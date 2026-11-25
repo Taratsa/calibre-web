@@ -45,5 +45,214 @@
       "size": 29244798,
       "name": "Atoeran soerat-soerat terisi beberapa tjon - G. Francis"
     }
-  ]
+  ],
+  "text": {
+    "words": 36869,
+    "longer_than": 95,
+    "top": [
+      [
+        "das",
+        291
+      ],
+      [
+        "jaag",
+        95
+      ],
+      [
+        "orang",
+        81
+      ],
+      [
+        "isi",
+        79
+      ],
+      [
+        "tada",
+        77
+      ],
+      [
+        "daa",
+        75
+      ],
+      [
+        "dai",
+        70
+      ],
+      [
+        "soerat",
+        69
+      ],
+      [
+        "jag",
+        60
+      ],
+      [
+        "tiada",
+        57
+      ],
+      [
+        "jany",
+        53
+      ],
+      [
+        "mista",
+        53
+      ]
+    ],
+    "distinct": [
+      [
+        "das",
+        291
+      ],
+      [
+        "jaag",
+        95
+      ],
+      [
+        "mista",
+        53
+      ],
+      [
+        "tada",
+        77
+      ],
+      [
+        "jasg",
+        44
+      ],
+      [
+        "jany",
+        53
+      ],
+      [
+        "daa",
+        75
+      ],
+      [
+        "jag",
+        60
+      ],
+      [
+        "soerat",
+        69
+      ],
+      [
+        "sajs",
+        38
+      ],
+      [
+        "dai",
+        70
+      ],
+      [
+        "jng",
+        47
+      ]
+    ],
+    "phrases": [
+      [
+        "sri padoeka",
+        6
+      ],
+      [
+        "laki laki",
+        6
+      ],
+      [
+        "kasih kabar",
+        5
+      ],
+      [
+        "den e maart",
+        3
+      ],
+      [
+        "tada mase",
+        4
+      ],
+      [
+        "sita orang",
+        4
+      ],
+      [
+        "megala hormat",
+        4
+      ],
+      [
+        "massek rekest",
+        4
+      ]
+    ],
+    "similar": [
+      [
+        16227,
+        0.38
+      ],
+      [
+        15483,
+        0.29
+      ],
+      [
+        13007,
+        0.28
+      ],
+      [
+        12112,
+        0.24
+      ],
+      [
+        13608,
+        0.22
+      ],
+      [
+        16028,
+        0.2
+      ]
+    ],
+    "sentiment": {
+      "score": 0.23,
+      "positive": 58,
+      "negative": 36,
+      "trend": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.09,
+        null,
+        0.2,
+        0.67,
+        0.5,
+        0.14,
+        0.43,
+        -0.2,
+        0,
+        -0.33
+      ],
+      "emotions": [
+        [
+          "trust",
+          24
+        ],
+        [
+          "sadness",
+          15
+        ],
+        [
+          "anger",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

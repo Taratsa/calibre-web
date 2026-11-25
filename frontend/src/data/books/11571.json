@@ -45,5 +45,222 @@
       "size": 5134457,
       "name": "Keimanan dan achlak - Abbas Hassan"
     }
-  ]
+  ],
+  "text": {
+    "words": 11229,
+    "longer_than": 81,
+    "top": [
+      [
+        "orang",
+        155
+      ],
+      [
+        "nabi",
+        135
+      ],
+      [
+        "beliau",
+        93
+      ],
+      [
+        "tuhan",
+        72
+      ],
+      [
+        "islam",
+        65
+      ],
+      [
+        "muhammad",
+        65
+      ],
+      [
+        "agama",
+        46
+      ],
+      [
+        "suka",
+        44
+      ],
+      [
+        "didalam",
+        43
+      ],
+      [
+        "senantiasa",
+        36
+      ],
+      [
+        "bin",
+        34
+      ],
+      [
+        "anak",
+        32
+      ]
+    ],
+    "distinct": [
+      [
+        "nabi",
+        135
+      ],
+      [
+        "beliau",
+        93
+      ],
+      [
+        "sjorga",
+        24
+      ],
+      [
+        "muhammad",
+        65
+      ],
+      [
+        "orang",
+        155
+      ],
+      [
+        "islam",
+        65
+      ],
+      [
+        "tuhan",
+        72
+      ],
+      [
+        "noraka",
+        20
+      ],
+      [
+        "medinah",
+        19
+      ],
+      [
+        "didalam",
+        43
+      ],
+      [
+        "thalib",
+        20
+      ],
+      [
+        "beriman",
+        27
+      ]
+    ],
+    "phrases": [
+      [
+        "agama islam",
+        21
+      ],
+      [
+        "nabi muhammad",
+        19
+      ],
+      [
+        "bin abi thalib",
+        10
+      ],
+      [
+        "ali bin abi",
+        10
+      ],
+      [
+        "fir aun",
+        13
+      ],
+      [
+        "abu bakar",
+        13
+      ],
+      [
+        "umar bin chathab",
+        8
+      ],
+      [
+        "ahli nudjum",
+        12
+      ]
+    ],
+    "similar": [
+      [
+        7783,
+        0.21
+      ],
+      [
+        16157,
+        0.21
+      ],
+      [
+        16663,
+        0.18
+      ],
+      [
+        14379,
+        0.17
+      ],
+      [
+        15905,
+        0.16
+      ],
+      [
+        7824,
+        0.16
+      ]
+    ],
+    "sentiment": {
+      "score": 0.39,
+      "positive": 302,
+      "negative": 133,
+      "trend": [
+        0.47,
+        -0.12,
+        0.47,
+        0.2,
+        0.08,
+        0.67,
+        0.26,
+        0.3,
+        0.67,
+        0.74,
+        0.89,
+        0.36,
+        0.5,
+        0.33,
+        0.2,
+        0.38
+      ],
+      "emotions": [
+        [
+          "joy",
+          81
+        ],
+        [
+          "sadness",
+          36
+        ],
+        [
+          "trust",
+          23
+        ],
+        [
+          "anger",
+          16
+        ],
+        [
+          "fear",
+          8
+        ],
+        [
+          "disgust",
+          5
+        ],
+        [
+          "anticipation",
+          5
+        ]
+      ]
+    }
+  }
 }

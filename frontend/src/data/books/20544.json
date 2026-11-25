@@ -48,5 +48,170 @@
       "size": 8449,
       "name": "OpenBTS _ Alokasi Frekuensi Operator GSM I - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1922,
+    "longer_than": 59,
+    "top": [
+      [
+        "frekuensi",
+        93
+      ],
+      [
+        "gsm",
+        62
+      ],
+      [
+        "arfcn",
+        59
+      ],
+      [
+        "operator",
+        54
+      ],
+      [
+        "mhz",
+        49
+      ],
+      [
+        "kanal",
+        46
+      ],
+      [
+        "alokasi",
+        41
+      ],
+      [
+        "telkomsel",
+        21
+      ],
+      [
+        "uplink",
+        20
+      ],
+      [
+        "nomor",
+        17
+      ],
+      [
+        "dipakai",
+        16
+      ],
+      [
+        "downlink",
+        16
+      ]
+    ],
+    "distinct": [
+      [
+        "arfcn",
+        59
+      ],
+      [
+        "frekuensi",
+        93
+      ],
+      [
+        "gsm",
+        62
+      ],
+      [
+        "mhz",
+        49
+      ],
+      [
+        "operator",
+        54
+      ],
+      [
+        "kanal",
+        46
+      ],
+      [
+        "alokasi",
+        41
+      ],
+      [
+        "uplink",
+        20
+      ],
+      [
+        "telkomsel",
+        21
+      ],
+      [
+        "downlink",
+        16
+      ],
+      [
+        "indosat",
+        16
+      ],
+      [
+        "pita",
+        14
+      ]
+    ],
+    "phrases": [
+      [
+        "alokasi frekuensi",
+        35
+      ],
+      [
+        "kanal arfcn",
+        28
+      ],
+      [
+        "nomor kanal",
+        17
+      ],
+      [
+        "operator gsm",
+        13
+      ],
+      [
+        "frekuensi gsm",
+        10
+      ],
+      [
+        "guard band",
+        9
+      ],
+      [
+        "gsm di indonesia",
+        6
+      ],
+      [
+        "arfcn untuk frekuensi",
+        6
+      ]
+    ],
+    "similar": [
+      [
+        20129,
+        0.4
+      ],
+      [
+        20539,
+        0.32
+      ],
+      [
+        20587,
+        0.29
+      ],
+      [
+        20585,
+        0.28
+      ],
+      [
+        20586,
+        0.28
+      ],
+      [
+        15351,
+        0.28
+      ]
+    ],
+    "sentiment": null
+  }
 }

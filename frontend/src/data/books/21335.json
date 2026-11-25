@@ -48,5 +48,158 @@
       "size": 3068,
       "name": "Melihat Paket Software Aplikasi yang terin - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 308,
+    "longer_than": 30,
+    "top": [
+      [
+        "install",
+        22
+      ],
+      [
+        "php",
+        20
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "dpkg",
+        6
+      ],
+      [
+        "apache",
+        4
+      ],
+      [
+        "installed",
+        4
+      ],
+      [
+        "lib",
+        4
+      ],
+      [
+        "packages",
+        4
+      ],
+      [
+        "get-selections",
+        3
+      ],
+      [
+        "howto",
+        3
+      ],
+      [
+        "linux",
+        3
+      ],
+      [
+        "list",
+        3
+      ]
+    ],
+    "distinct": [
+      [
+        "install",
+        22
+      ],
+      [
+        "dpkg",
+        6
+      ],
+      [
+        "get-selections",
+        3
+      ],
+      [
+        "usr",
+        8
+      ],
+      [
+        "packages",
+        4
+      ],
+      [
+        "installed",
+        4
+      ],
+      [
+        "lib",
+        4
+      ],
+      [
+        "apache",
+        4
+      ],
+      [
+        "php",
+        20
+      ],
+      [
+        "howto",
+        3
+      ],
+      [
+        "share",
+        3
+      ],
+      [
+        "list",
+        3
+      ]
+    ],
+    "phrases": [
+      [
+        "install php",
+        9
+      ],
+      [
+        "usr lib php",
+        3
+      ],
+      [
+        "install apache",
+        4
+      ],
+      [
+        "usr share",
+        3
+      ],
+      [
+        "dpkg get-selections",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        16964,
+        0.35
+      ],
+      [
+        11511,
+        0.35
+      ],
+      [
+        18666,
+        0.32
+      ],
+      [
+        12641,
+        0.32
+      ],
+      [
+        14628,
+        0.32
+      ],
+      [
+        13386,
+        0.29
+      ]
+    ],
+    "sentiment": null
+  }
 }

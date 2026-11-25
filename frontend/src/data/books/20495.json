@@ -48,5 +48,162 @@
       "size": 4231,
       "name": "Scp - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 641,
+    "longer_than": 43,
+    "top": [
+      [
+        "scp",
+        50
+      ],
+      [
+        "klien",
+        16
+      ],
+      [
+        "ssh",
+        16
+      ],
+      [
+        "host",
+        14
+      ],
+      [
+        "file",
+        13
+      ],
+      [
+        "program",
+        12
+      ],
+      [
+        "protokol",
+        10
+      ],
+      [
+        "mode",
+        9
+      ],
+      [
+        "remote",
+        9
+      ],
+      [
+        "server",
+        9
+      ],
+      [
+        "perintah",
+        6
+      ],
+      [
+        "secure",
+        5
+      ]
+    ],
+    "distinct": [
+      [
+        "scp",
+        50
+      ],
+      [
+        "klien",
+        16
+      ],
+      [
+        "ssh",
+        16
+      ],
+      [
+        "host",
+        14
+      ],
+      [
+        "protokol",
+        10
+      ],
+      [
+        "remote",
+        9
+      ],
+      [
+        "sftp",
+        4
+      ],
+      [
+        "winscp",
+        3
+      ],
+      [
+        "file",
+        13
+      ],
+      [
+        "rcp",
+        3
+      ],
+      [
+        "mode",
+        9
+      ],
+      [
+        "program",
+        12
+      ]
+    ],
+    "phrases": [
+      [
+        "program scp",
+        8
+      ],
+      [
+        "user host directory",
+        4
+      ],
+      [
+        "host directory sourcefile",
+        3
+      ],
+      [
+        "protokol scp",
+        4
+      ],
+      [
+        "klien scp",
+        4
+      ],
+      [
+        "server scp",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        13918,
+        0.58
+      ],
+      [
+        13915,
+        0.53
+      ],
+      [
+        20492,
+        0.38
+      ],
+      [
+        16303,
+        0.37
+      ],
+      [
+        19097,
+        0.35
+      ],
+      [
+        15977,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

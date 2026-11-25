@@ -43,5 +43,226 @@
       "size": 4653566,
       "name": "Babad Jaka Tingkir (Jawa-Sunda) - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 59698,
+    "longer_than": 97,
+    "top": [
+      [
+        "pengging",
+        420
+      ],
+      [
+        "jaka",
+        392
+      ],
+      [
+        "sang",
+        348
+      ],
+      [
+        "ageng",
+        341
+      ],
+      [
+        "jeng",
+        341
+      ],
+      [
+        "kyai",
+        329
+      ],
+      [
+        "demak",
+        291
+      ],
+      [
+        "raja",
+        289
+      ],
+      [
+        "tan",
+        285
+      ],
+      [
+        "pan",
+        223
+      ],
+      [
+        "kudus",
+        205
+      ],
+      [
+        "raden",
+        201
+      ]
+    ],
+    "distinct": [
+      [
+        "pengging",
+        420
+      ],
+      [
+        "jaka",
+        392
+      ],
+      [
+        "ageng",
+        341
+      ],
+      [
+        "jeng",
+        341
+      ],
+      [
+        "kyai",
+        329
+      ],
+      [
+        "demak",
+        291
+      ],
+      [
+        "malangsumirang",
+        118
+      ],
+      [
+        "prabangkara",
+        146
+      ],
+      [
+        "mring",
+        184
+      ],
+      [
+        "seh",
+        199
+      ],
+      [
+        "wus",
+        187
+      ],
+      [
+        "kudus",
+        205
+      ]
+    ],
+    "phrases": [
+      [
+        "kyai ageng",
+        253
+      ],
+      [
+        "ageng pengging",
+        159
+      ],
+      [
+        "jeng sunan kudus",
+        92
+      ],
+      [
+        "raden jaka",
+        104
+      ],
+      [
+        "seh malangsumirang",
+        99
+      ],
+      [
+        "jaka sungging prabangkara",
+        66
+      ],
+      [
+        "jaka karewet",
+        92
+      ],
+      [
+        "sultan demak",
+        77
+      ]
+    ],
+    "similar": [
+      [
+        3541,
+        0.43
+      ],
+      [
+        3538,
+        0.42
+      ],
+      [
+        1755,
+        0.38
+      ],
+      [
+        3540,
+        0.36
+      ],
+      [
+        11343,
+        0.35
+      ],
+      [
+        2852,
+        0.34
+      ]
+    ],
+    "sentiment": {
+      "score": 0.19,
+      "positive": 583,
+      "negative": 398,
+      "trend": [
+        0.45,
+        -0.08,
+        0.35,
+        0.35,
+        0.69,
+        0.22,
+        0.09,
+        0.15,
+        -0.12,
+        0.12,
+        -0.21,
+        0.2,
+        0.67,
+        0.43,
+        0.43,
+        -0.08
+      ],
+      "emotions": [
+        [
+          "sadness",
+          143
+        ],
+        [
+          "joy",
+          82
+        ],
+        [
+          "anger",
+          32
+        ],
+        [
+          "trust",
+          28
+        ],
+        [
+          "fear",
+          26
+        ],
+        [
+          "surprise",
+          10
+        ],
+        [
+          "disgust",
+          8
+        ],
+        [
+          "anticipation",
+          7
+        ]
+      ]
+    }
+  }
 }

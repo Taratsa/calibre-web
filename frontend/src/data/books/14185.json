@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 3164,
-    "longer_than": 67,
+    "longer_than": 65,
     "top": [
       [
         "kubernetes",
@@ -112,12 +112,12 @@
         56
       ],
       [
-        "pods",
-        19
-      ],
-      [
         "container",
         26
+      ],
+      [
+        "pods",
+        19
       ],
       [
         "cluster",
@@ -148,8 +148,8 @@
         6
       ],
       [
-        "replication",
-        7
+        "resource",
+        13
       ]
     ],
     "phrases": [
@@ -205,7 +205,7 @@
       ],
       [
         15562,
-        0.24
+        0.23
       ],
       [
         15567,

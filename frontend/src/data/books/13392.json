@@ -104,12 +104,12 @@
     ],
     "distinct": [
       [
-        "buffer",
-        11
-      ],
-      [
         "udp",
         12
+      ],
+      [
+        "buffer",
+        11
       ],
       [
         "serial",
@@ -124,12 +124,12 @@
         8
       ],
       [
-        "udpport",
-        3
-      ],
-      [
         "println",
         5
+      ],
+      [
+        "udpport",
+        3
       ],
       [
         "const",

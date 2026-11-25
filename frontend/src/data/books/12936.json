@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 459,
-    "longer_than": 38,
+    "longer_than": 37,
     "top": [
       [
         "ipv",
@@ -104,20 +104,20 @@
     ],
     "distinct": [
       [
-        "ospf",
-        37
-      ],
-      [
         "ipv",
         53
       ],
       [
-        "instance-id",
-        8
+        "ospf",
+        37
       ],
       [
         "eth",
         18
+      ],
+      [
+        "instance-id",
+        8
       ],
       [
         "interface",
@@ -200,16 +200,16 @@
         0.63
       ],
       [
+        12739,
+        0.63
+      ],
+      [
         12863,
         0.63
       ],
       [
         12864,
         0.63
-      ],
-      [
-        12739,
-        0.62
       ]
     ],
     "sentiment": null

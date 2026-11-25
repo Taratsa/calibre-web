@@ -48,5 +48,162 @@
       "size": 4667,
       "name": "Chmod - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 936,
+    "longer_than": 49,
+    "top": [
+      [
+        "file",
+        43
+      ],
+      [
+        "chmod",
+        20
+      ],
+      [
+        "permission",
+        18
+      ],
+      [
+        "fred",
+        16
+      ],
+      [
+        "directory",
+        15
+      ],
+      [
+        "prog",
+        14
+      ],
+      [
+        "direktori",
+        10
+      ],
+      [
+        "menunjukan",
+        10
+      ],
+      [
+        "mode",
+        9
+      ],
+      [
+        "izin",
+        8
+      ],
+      [
+        "joe",
+        8
+      ],
+      [
+        "owner",
+        8
+      ]
+    ],
+    "distinct": [
+      [
+        "prog",
+        14
+      ],
+      [
+        "file",
+        43
+      ],
+      [
+        "fred",
+        16
+      ],
+      [
+        "chmod",
+        20
+      ],
+      [
+        "permission",
+        18
+      ],
+      [
+        "umask",
+        8
+      ],
+      [
+        "directory",
+        15
+      ],
+      [
+        "direktori",
+        10
+      ],
+      [
+        "rwx",
+        5
+      ],
+      [
+        "joe",
+        8
+      ],
+      [
+        "r-x",
+        4
+      ],
+      [
+        "owner",
+        8
+      ]
+    ],
+    "phrases": [
+      [
+        "fred prog",
+        5
+      ],
+      [
+        "karakter menunjukan permission",
+        3
+      ],
+      [
+        "rwx r-x",
+        3
+      ],
+      [
+        "mengubah mode",
+        3
+      ],
+      [
+        "memiliki izin",
+        3
+      ],
+      [
+        "directory fred",
+        3
+      ]
+    ],
+    "similar": [
+      [
+        21482,
+        0.19
+      ],
+      [
+        11698,
+        0.18
+      ],
+      [
+        19491,
+        0.15
+      ],
+      [
+        16448,
+        0.15
+      ],
+      [
+        14427,
+        0.15
+      ],
+      [
+        14997,
+        0.14
+      ]
+    ],
+    "sentiment": null
+  }
 }

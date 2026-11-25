@@ -45,5 +45,218 @@
       "size": 13291851,
       "name": "Tjeritera isra dan mi'radj nabi Muhammad R - A. Salim"
     }
-  ]
+  ],
+  "text": {
+    "words": 12215,
+    "longer_than": 82,
+    "top": [
+      [
+        "çlm",
+        152
+      ],
+      [
+        "rasoeloellah",
+        143
+      ],
+      [
+        "allah",
+        130
+      ],
+      [
+        "oléh",
+        113
+      ],
+      [
+        "orang",
+        97
+      ],
+      [
+        "meréka",
+        82
+      ],
+      [
+        "didalam",
+        77
+      ],
+      [
+        "poela",
+        61
+      ],
+      [
+        "nabi",
+        60
+      ],
+      [
+        "berita",
+        48
+      ],
+      [
+        "bin",
+        46
+      ],
+      [
+        "aboe",
+        43
+      ]
+    ],
+    "distinct": [
+      [
+        "çlm",
+        152
+      ],
+      [
+        "rasoeloellah",
+        143
+      ],
+      [
+        "oléh",
+        113
+      ],
+      [
+        "meréka",
+        82
+      ],
+      [
+        "djibril",
+        41
+      ],
+      [
+        "allah",
+        130
+      ],
+      [
+        "poela",
+        61
+      ],
+      [
+        "hadith",
+        39
+      ],
+      [
+        "aboe",
+        43
+      ],
+      [
+        "clm",
+        26
+      ],
+      [
+        "didalam",
+        77
+      ],
+      [
+        "djizat",
+        24
+      ]
+    ],
+    "phrases": [
+      [
+        "rasoeloellah çlm",
+        114
+      ],
+      [
+        "allah ta ala",
+        18
+      ],
+      [
+        "moe djizat",
+        23
+      ],
+      [
+        "rasoeloellah clm",
+        21
+      ],
+      [
+        "oléh allah",
+        17
+      ],
+      [
+        "nabi moesa",
+        12
+      ],
+      [
+        "oléh rasoeloellah",
+        11
+      ],
+      [
+        "hai moehammad",
+        11
+      ]
+    ],
+    "similar": [
+      [
+        16462,
+        0.37
+      ],
+      [
+        11804,
+        0.26
+      ],
+      [
+        660,
+        0.25
+      ],
+      [
+        11813,
+        0.25
+      ],
+      [
+        771,
+        0.25
+      ],
+      [
+        296,
+        0.25
+      ]
+    ],
+    "sentiment": {
+      "score": 0.15,
+      "positive": 72,
+      "negative": 53,
+      "trend": [
+        null,
+        null,
+        0.33,
+        0.25,
+        -0.33,
+        null,
+        -0.2,
+        0.37,
+        null,
+        -0.17,
+        0.14,
+        0.33,
+        0.2,
+        -0.33,
+        0.33,
+        0.43
+      ],
+      "emotions": [
+        [
+          "sadness",
+          16
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "fear",
+          1
+        ],
+        [
+          "disgust",
+          1
+        ]
+      ]
+    }
+  }
 }

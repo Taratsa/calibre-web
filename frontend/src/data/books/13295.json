@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1916,
-    "longer_than": 61,
+    "longer_than": 59,
     "top": [
       [
         "model",
@@ -112,43 +112,43 @@
         27
       ],
       [
-        "dense",
-        28
-      ],
-      [
         "minmaxscaler",
         17
+      ],
+      [
+        "dense",
+        28
       ],
       [
         "activation",
         21
       ],
       [
-        "predicted",
-        21
+        "ynew",
+        12
       ],
       [
         "scalar",
         14
       ],
       [
-        "regression",
-        18
+        "predicted",
+        21
       ],
       [
-        "fit",
-        25
+        "regression",
+        18
       ],
       [
         "import",
         30
       ],
       [
-        "relu",
-        14
+        "fit",
+        25
       ],
       [
-        "sklearn",
+        "relu",
         14
       ]
     ],
@@ -197,18 +197,18 @@
       ],
       [
         13298,
-        0.43
+        0.44
       ],
       [
         13304,
-        0.39
+        0.4
       ],
       [
         13299,
-        0.32
+        0.33
       ],
       [
-        16335,
+        13292,
         0.32
       ]
     ],

@@ -45,5 +45,193 @@
       "size": 54529473,
       "name": "Pengantar ilmu hukum merek - Raden Mas Suryoningrat"
     }
-  ]
+  ],
+  "text": {
+    "words": 12349,
+    "longer_than": 82,
+    "top": [
+      [
+        "merek",
+        456
+      ],
+      [
+        "pendaftaran",
+        169
+      ],
+      [
+        "pasal",
+        159
+      ],
+      [
+        "permohonan",
+        118
+      ],
+      [
+        "barang",
+        81
+      ],
+      [
+        "barang-barang",
+        68
+      ],
+      [
+        "indonesia",
+        68
+      ],
+      [
+        "orang",
+        57
+      ],
+      [
+        "milik",
+        54
+      ],
+      [
+        "hukum",
+        53
+      ],
+      [
+        "kantor",
+        53
+      ],
+      [
+        "hak",
+        52
+      ]
+    ],
+    "distinct": [
+      [
+        "merek",
+        456
+      ],
+      [
+        "pendaftaran",
+        169
+      ],
+      [
+        "pasal",
+        159
+      ],
+      [
+        "permohonan",
+        118
+      ],
+      [
+        "patent",
+        42
+      ],
+      [
+        "perindustrian",
+        48
+      ],
+      [
+        "didaftarkan",
+        44
+      ],
+      [
+        "mereknya",
+        25
+      ],
+      [
+        "barang-barang",
+        68
+      ],
+      [
+        "terdaftar",
+        40
+      ],
+      [
+        "ayat",
+        49
+      ],
+      [
+        "barang",
+        81
+      ]
+    ],
+    "phrases": [
+      [
+        "pendaftaran merek",
+        117
+      ],
+      [
+        "kantor milik perindustrian",
+        41
+      ],
+      [
+        "permohonan pendaftaran",
+        35
+      ],
+      [
+        "pasal ayat",
+        31
+      ],
+      [
+        "mengajukan permohonan",
+        25
+      ],
+      [
+        "surat permohonan",
+        24
+      ],
+      [
+        "merek terdaftar",
+        19
+      ],
+      [
+        "tgl nop",
+        18
+      ]
+    ],
+    "similar": [
+      [
+        8651,
+        0.27
+      ],
+      [
+        8589,
+        0.27
+      ],
+      [
+        6809,
+        0.24
+      ],
+      [
+        8653,
+        0.24
+      ],
+      [
+        8352,
+        0.23
+      ],
+      [
+        8575,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": 0.22,
+      "positive": 70,
+      "negative": 45,
+      "trend": [
+        0.38,
+        -0.71,
+        null,
+        -0.6,
+        0.47,
+        null,
+        0.69,
+        0.78,
+        -0.23,
+        null,
+        null,
+        null,
+        -0.14,
+        0.14,
+        0.33,
+        null
+      ],
+      "emotions": []
+    }
+  }
 }

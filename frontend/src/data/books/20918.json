@@ -43,5 +43,193 @@
       "size": 63055169,
       "name": "Dari tanah Hindia berkeliling boemi _ kita - W. van Gelder"
     }
-  ]
+  ],
+  "text": {
+    "words": 16919,
+    "longer_than": 86,
+    "top": [
+      [
+        "orang",
+        265
+      ],
+      [
+        "poelau",
+        240
+      ],
+      [
+        "tanah",
+        213
+      ],
+      [
+        "residenan",
+        198
+      ],
+      [
+        "ia-itoe",
+        187
+      ],
+      [
+        "adapon",
+        172
+      ],
+      [
+        "negeri",
+        164
+      ],
+      [
+        "djawa",
+        139
+      ],
+      [
+        "banjak",
+        127
+      ],
+      [
+        "soengai",
+        85
+      ],
+      [
+        "laoet",
+        80
+      ],
+      [
+        "goenoeng",
+        70
+      ]
+    ],
+    "distinct": [
+      [
+        "residenan",
+        198
+      ],
+      [
+        "ia-itoe",
+        187
+      ],
+      [
+        "poelau",
+        240
+      ],
+      [
+        "adapon",
+        172
+      ],
+      [
+        "iboe-negerinja",
+        66
+      ],
+      [
+        "poelau-poelau",
+        69
+      ],
+      [
+        "soengai",
+        85
+      ],
+      [
+        "sjahadan",
+        61
+      ],
+      [
+        "djawa",
+        139
+      ],
+      [
+        "goepermen",
+        55
+      ],
+      [
+        "iboe-negeri",
+        43
+      ],
+      [
+        "sabelah",
+        65
+      ]
+    ],
+    "phrases": [
+      [
+        "tanah djawa",
+        82
+      ],
+      [
+        "poelau soematra",
+        34
+      ],
+      [
+        "bandar jang ramai",
+        14
+      ],
+      [
+        "djalan kareta-api",
+        18
+      ],
+      [
+        "dibawah parentah",
+        18
+      ],
+      [
+        "afdeelingnja ia-itoe",
+        18
+      ],
+      [
+        "poelau selebes",
+        17
+      ],
+      [
+        "poelau beroenei",
+        17
+      ]
+    ],
+    "similar": [
+      [
+        18140,
+        0.31
+      ],
+      [
+        657,
+        0.28
+      ],
+      [
+        15601,
+        0.28
+      ],
+      [
+        4027,
+        0.25
+      ],
+      [
+        15128,
+        0.23
+      ],
+      [
+        459,
+        0.19
+      ]
+    ],
+    "sentiment": {
+      "score": 0.41,
+      "positive": 69,
+      "negative": 29,
+      "trend": [
+        null,
+        -0.6,
+        0.33,
+        0.75,
+        -0.2,
+        0.43,
+        0.14,
+        0.33,
+        null,
+        null,
+        0.43,
+        null,
+        null,
+        1,
+        0.25,
+        0.33
+      ],
+      "emotions": []
+    }
+  }
 }

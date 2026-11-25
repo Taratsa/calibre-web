@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 274,
-    "longer_than": 29,
+    "longer_than": 28,
     "top": [
       [
         "model",
@@ -120,12 +120,12 @@
         5
       ],
       [
-        "dense",
-        3
-      ],
-      [
         "keras",
         11
+      ],
+      [
+        "dense",
+        3
       ],
       [
         "loss",
@@ -176,7 +176,7 @@
       ],
       [
         16335,
-        0.32
+        0.31
       ]
     ],
     "sentiment": null

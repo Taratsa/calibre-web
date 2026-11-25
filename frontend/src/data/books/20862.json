@@ -48,5 +48,170 @@
       "size": 6219,
       "name": "TCP_IP_ Quagga OSPF sederhana - Onno Widodo Purbo"
     }
-  ]
+  ],
+  "text": {
+    "words": 1398,
+    "longer_than": 55,
+    "top": [
+      [
+        "router",
+        42
+      ],
+      [
+        "ospf",
+        30
+      ],
+      [
+        "interface",
+        27
+      ],
+      [
+        "address",
+        24
+      ],
+      [
+        "eth",
+        23
+      ],
+      [
+        "link",
+        19
+      ],
+      [
+        "neighbor",
+        17
+      ],
+      [
+        "network",
+        17
+      ],
+      [
+        "cisco",
+        16
+      ],
+      [
+        "quagga",
+        16
+      ],
+      [
+        "connected",
+        13
+      ],
+      [
+        "count",
+        13
+      ]
+    ],
+    "distinct": [
+      [
+        "ospf",
+        30
+      ],
+      [
+        "router",
+        42
+      ],
+      [
+        "fastethernet",
+        13
+      ],
+      [
+        "eth",
+        23
+      ],
+      [
+        "quagga-router",
+        9
+      ],
+      [
+        "neighbor",
+        17
+      ],
+      [
+        "interface",
+        27
+      ],
+      [
+        "quagga",
+        16
+      ],
+      [
+        "cisco",
+        16
+      ],
+      [
+        "address",
+        24
+      ],
+      [
+        "link",
+        19
+      ],
+      [
+        "designated",
+        11
+      ]
+    ],
+    "phrases": [
+      [
+        "designated router",
+        11
+      ],
+      [
+        "neighbor count",
+        10
+      ],
+      [
+        "router id network",
+        6
+      ],
+      [
+        "router id interface",
+        6
+      ],
+      [
+        "count is adjacent",
+        6
+      ],
+      [
+        "timer intervals configured",
+        5
+      ],
+      [
+        "cost transmit delay",
+        5
+      ],
+      [
+        "internet address",
+        7
+      ]
+    ],
+    "similar": [
+      [
+        20863,
+        0.45
+      ],
+      [
+        20864,
+        0.39
+      ],
+      [
+        13134,
+        0.37
+      ],
+      [
+        13132,
+        0.37
+      ],
+      [
+        12943,
+        0.32
+      ],
+      [
+        20861,
+        0.31
+      ]
+    ],
+    "sentiment": null
+  }
 }

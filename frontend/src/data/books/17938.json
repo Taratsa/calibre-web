@@ -43,5 +43,218 @@
       "size": 29230278,
       "name": "Persdelict Semaoen - Semaun"
     }
-  ]
+  ],
+  "text": {
+    "words": 10535,
+    "longer_than": 80,
+    "top": [
+      [
+        "tida",
+        140
+      ],
+      [
+        "kaoem",
+        101
+      ],
+      [
+        "soedah",
+        87
+      ],
+      [
+        "toean",
+        81
+      ],
+      [
+        "boeat",
+        75
+      ],
+      [
+        "karangan",
+        60
+      ],
+      [
+        "sneevliet",
+        60
+      ],
+      [
+        "soepaja",
+        56
+      ],
+      [
+        "djoega",
+        53
+      ],
+      [
+        "hindia",
+        53
+      ],
+      [
+        "orang",
+        52
+      ],
+      [
+        "pemerintah",
+        51
+      ]
+    ],
+    "distinct": [
+      [
+        "tida",
+        140
+      ],
+      [
+        "kaoem",
+        101
+      ],
+      [
+        "soedah",
+        87
+      ],
+      [
+        "sneevliet",
+        60
+      ],
+      [
+        "toean",
+        81
+      ],
+      [
+        "boeat",
+        75
+      ],
+      [
+        "peprintahan",
+        32
+      ],
+      [
+        "merika",
+        45
+      ],
+      [
+        "rajat",
+        47
+      ],
+      [
+        "soepaja",
+        56
+      ],
+      [
+        "djoega",
+        53
+      ],
+      [
+        "sebagi",
+        51
+      ]
+    ],
+    "phrases": [
+      [
+        "kaoem wang",
+        37
+      ],
+      [
+        "saudara sneevliet",
+        31
+      ],
+      [
+        "officier van justitie",
+        14
+      ],
+      [
+        "toean president",
+        18
+      ],
+      [
+        "melanggar wet",
+        17
+      ],
+      [
+        "raad van justitie",
+        11
+      ],
+      [
+        "sinar hindia",
+        16
+      ],
+      [
+        "karangannja saudara",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        21260,
+        0.29
+      ],
+      [
+        21259,
+        0.29
+      ],
+      [
+        21183,
+        0.28
+      ],
+      [
+        21265,
+        0.28
+      ],
+      [
+        21264,
+        0.28
+      ],
+      [
+        21189,
+        0.28
+      ]
+    ],
+    "sentiment": {
+      "score": -0.27,
+      "positive": 52,
+      "negative": 91,
+      "trend": [
+        -0.11,
+        null,
+        0.23,
+        0.11,
+        null,
+        null,
+        null,
+        null,
+        -0.33,
+        -0.73,
+        -1,
+        0.11,
+        -0.73,
+        -0.33,
+        0.27,
+        -0.29
+      ],
+      "emotions": [
+        [
+          "anger",
+          13
+        ],
+        [
+          "trust",
+          9
+        ],
+        [
+          "sadness",
+          5
+        ],
+        [
+          "joy",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "fear",
+          1
+        ]
+      ]
+    }
+  }
 }

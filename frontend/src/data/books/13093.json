@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 293,
-    "longer_than": 30,
+    "longer_than": 29,
     "top": [
       [
         "openvpn",
@@ -112,11 +112,11 @@
         20
       ],
       [
-        "proc",
+        "forwarding",
         10
       ],
       [
-        "forwarding",
+        "proc",
         10
       ],
       [
@@ -148,8 +148,8 @@
         4
       ],
       [
-        "lan",
-        10
+        "ifconfig",
+        5
       ]
     ],
     "phrases": [

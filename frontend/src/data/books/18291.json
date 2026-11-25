@@ -45,5 +45,218 @@
       "size": 74317410,
       "name": "Sedjarah kebangoenan Turkie Baroe dan Moes - H. Aminoellah"
     }
-  ]
+  ],
+  "text": {
+    "words": 18128,
+    "longer_than": 87,
+    "top": [
+      [
+        "kemal",
+        175
+      ],
+      [
+        "turkie",
+        144
+      ],
+      [
+        "orang",
+        120
+      ],
+      [
+        "tahoen",
+        92
+      ],
+      [
+        "oentoek",
+        85
+      ],
+      [
+        "balatentera",
+        72
+      ],
+      [
+        "keradjaan",
+        68
+      ],
+      [
+        "pasha",
+        65
+      ],
+      [
+        "nja",
+        64
+      ],
+      [
+        "perang",
+        61
+      ],
+      [
+        "satoe",
+        61
+      ],
+      [
+        "djadi",
+        60
+      ]
+    ],
+    "distinct": [
+      [
+        "turkie",
+        144
+      ],
+      [
+        "kemal",
+        175
+      ],
+      [
+        "balatentera",
+        72
+      ],
+      [
+        "tahoen",
+        92
+      ],
+      [
+        "pasha",
+        65
+      ],
+      [
+        "oentoek",
+        85
+      ],
+      [
+        "istanboel",
+        37
+      ],
+      [
+        "sesoedah",
+        58
+      ],
+      [
+        "keradjaan",
+        68
+      ],
+      [
+        "anatolie",
+        31
+      ],
+      [
+        "angora",
+        36
+      ],
+      [
+        "satoe",
+        61
+      ]
+    ],
+    "phrases": [
+      [
+        "moesthafa kemal",
+        27
+      ],
+      [
+        "kemal pasha",
+        17
+      ],
+      [
+        "anwar pasha",
+        15
+      ],
+      [
+        "madjlis wathani",
+        14
+      ],
+      [
+        "salah satoe",
+        13
+      ],
+      [
+        "poetra mahkota",
+        13
+      ],
+      [
+        "diangkat djadi",
+        10
+      ],
+      [
+        "opsir perang",
+        9
+      ]
+    ],
+    "similar": [
+      [
+        16586,
+        0.26
+      ],
+      [
+        19173,
+        0.26
+      ],
+      [
+        5931,
+        0.24
+      ],
+      [
+        745,
+        0.23
+      ],
+      [
+        21275,
+        0.23
+      ],
+      [
+        21274,
+        0.23
+      ]
+    ],
+    "sentiment": {
+      "score": -0.06,
+      "positive": 112,
+      "negative": 127,
+      "trend": [
+        -0.11,
+        -0.71,
+        -0.56,
+        0.17,
+        0.33,
+        0.29,
+        -0.16,
+        0,
+        0.14,
+        0.2,
+        0.23,
+        0.17,
+        -0.33,
+        -0.38,
+        0,
+        -0.38
+      ],
+      "emotions": [
+        [
+          "anger",
+          66
+        ],
+        [
+          "joy",
+          20
+        ],
+        [
+          "sadness",
+          14
+        ],
+        [
+          "trust",
+          14
+        ],
+        [
+          "anticipation",
+          6
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
+  }
 }

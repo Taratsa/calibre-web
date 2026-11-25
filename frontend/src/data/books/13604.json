@@ -45,5 +45,222 @@
       "size": 18554361,
       "name": "Ringkasan sedjarah Islam Indonesia - Oemar Amin Hoesin"
     }
-  ]
+  ],
+  "text": {
+    "words": 12394,
+    "longer_than": 82,
+    "top": [
+      [
+        "bangsa",
+        154
+      ],
+      [
+        "islam",
+        121
+      ],
+      [
+        "agama",
+        108
+      ],
+      [
+        "keradjaan",
+        104
+      ],
+      [
+        "orang",
+        99
+      ],
+      [
+        "indonesia",
+        91
+      ],
+      [
+        "arab",
+        89
+      ],
+      [
+        "tahoen",
+        85
+      ],
+      [
+        "raden",
+        81
+      ],
+      [
+        "radja",
+        78
+      ],
+      [
+        "kaoem",
+        76
+      ],
+      [
+        "djoega",
+        67
+      ]
+    ],
+    "distinct": [
+      [
+        "keradjaan",
+        104
+      ],
+      [
+        "tahoen",
+        85
+      ],
+      [
+        "kaoem",
+        76
+      ],
+      [
+        "modjopahit",
+        46
+      ],
+      [
+        "djoega",
+        67
+      ],
+      [
+        "boedha",
+        39
+      ],
+      [
+        "poela",
+        58
+      ],
+      [
+        "radja",
+        78
+      ],
+      [
+        "islam",
+        121
+      ],
+      [
+        "widjaja",
+        48
+      ],
+      [
+        "soeatoe",
+        53
+      ],
+      [
+        "raden",
+        81
+      ]
+    ],
+    "phrases": [
+      [
+        "agama islam",
+        64
+      ],
+      [
+        "bangsa arab",
+        54
+      ],
+      [
+        "radja bra widjaja",
+        27
+      ],
+      [
+        "raden rahmat",
+        39
+      ],
+      [
+        "kaoem moeslimin",
+        28
+      ],
+      [
+        "raden patah",
+        25
+      ],
+      [
+        "keradjaan modjopahit",
+        23
+      ],
+      [
+        "malik ibrahim",
+        22
+      ]
+    ],
+    "similar": [
+      [
+        19318,
+        0.31
+      ],
+      [
+        5931,
+        0.26
+      ],
+      [
+        16586,
+        0.24
+      ],
+      [
+        20426,
+        0.22
+      ],
+      [
+        434,
+        0.22
+      ],
+      [
+        18291,
+        0.22
+      ]
+    ],
+    "sentiment": {
+      "score": 0.01,
+      "positive": 73,
+      "negative": 72,
+      "trend": [
+        0.5,
+        0.09,
+        -0.44,
+        null,
+        -0.5,
+        null,
+        null,
+        null,
+        0.2,
+        0.33,
+        null,
+        0.33,
+        0.5,
+        0.14,
+        -0.2,
+        0
+      ],
+      "emotions": [
+        [
+          "sadness",
+          26
+        ],
+        [
+          "trust",
+          8
+        ],
+        [
+          "anticipation",
+          8
+        ],
+        [
+          "anger",
+          6
+        ],
+        [
+          "joy",
+          6
+        ],
+        [
+          "fear",
+          3
+        ],
+        [
+          "surprise",
+          2
+        ]
+      ]
+    }
+  }
 }

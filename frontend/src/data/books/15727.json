@@ -46,5 +46,218 @@
       "size": 41116490,
       "name": "Djenderal Soedirman _ pahlawan kemerdekaan - Solichin Salam 1933-"
     }
-  ]
+  ],
+  "text": {
+    "words": 20230,
+    "longer_than": 88,
+    "top": [
+      [
+        "dirman",
+        290
+      ],
+      [
+        "soedirman",
+        244
+      ],
+      [
+        "indonesia",
+        205
+      ],
+      [
+        "djenderal",
+        144
+      ],
+      [
+        "perang",
+        133
+      ],
+      [
+        "tentara",
+        128
+      ],
+      [
+        "republik",
+        109
+      ],
+      [
+        "angkatan",
+        96
+      ],
+      [
+        "rakjat",
+        92
+      ],
+      [
+        "panglima",
+        88
+      ],
+      [
+        "negara",
+        83
+      ],
+      [
+        "belanda",
+        80
+      ]
+    ],
+    "distinct": [
+      [
+        "dirman",
+        290
+      ],
+      [
+        "soedirman",
+        244
+      ],
+      [
+        "djenderal",
+        144
+      ],
+      [
+        "tentara",
+        128
+      ],
+      [
+        "rakjat",
+        92
+      ],
+      [
+        "panglima",
+        88
+      ],
+      [
+        "angkatan",
+        96
+      ],
+      [
+        "perang",
+        133
+      ],
+      [
+        "republik",
+        109
+      ],
+      [
+        "mendjadi",
+        75
+      ],
+      [
+        "indonesia",
+        205
+      ],
+      [
+        "gerilja",
+        39
+      ]
+    ],
+    "phrases": [
+      [
+        "republik indonesia",
+        104
+      ],
+      [
+        "angkatan perang",
+        92
+      ],
+      [
+        "djenderal soedirman",
+        80
+      ],
+      [
+        "perang republik",
+        49
+      ],
+      [
+        "panglima besar angkatan",
+        20
+      ],
+      [
+        "letnan djenderal",
+        27
+      ],
+      [
+        "tentara nasional indonesia",
+        14
+      ],
+      [
+        "tentara keamanan rakjat",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        6627,
+        0.22
+      ],
+      [
+        516,
+        0.22
+      ],
+      [
+        305,
+        0.22
+      ],
+      [
+        8771,
+        0.21
+      ],
+      [
+        14226,
+        0.21
+      ],
+      [
+        7916,
+        0.21
+      ]
+    ],
+    "sentiment": {
+      "score": -0.07,
+      "positive": 284,
+      "negative": 327,
+      "trend": [
+        0.18,
+        0.06,
+        0.22,
+        0.53,
+        0,
+        -0.3,
+        -0.42,
+        -0.11,
+        -0.17,
+        -0.15,
+        -0.13,
+        0.1,
+        -0.05,
+        -0.52,
+        0.07,
+        -0.1
+      ],
+      "emotions": [
+        [
+          "anger",
+          152
+        ],
+        [
+          "trust",
+          67
+        ],
+        [
+          "sadness",
+          45
+        ],
+        [
+          "joy",
+          21
+        ],
+        [
+          "anticipation",
+          11
+        ],
+        [
+          "surprise",
+          3
+        ]
+      ]
+    }
+  }
 }

@@ -45,5 +45,218 @@
       "size": 84748315,
       "name": "Pembaharuan negeri - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "words": 15690,
+    "longer_than": 85,
+    "top": [
+      [
+        "nippon",
+        221
+      ],
+      [
+        "oentoek",
+        146
+      ],
+      [
+        "negeri",
+        116
+      ],
+      [
+        "bangsa",
+        107
+      ],
+      [
+        "rakjat",
+        106
+      ],
+      [
+        "baroe",
+        88
+      ],
+      [
+        "indonesia",
+        85
+      ],
+      [
+        "orang",
+        82
+      ],
+      [
+        "djoega",
+        79
+      ],
+      [
+        "ilmoe",
+        72
+      ],
+      [
+        "haroes",
+        66
+      ],
+      [
+        "meizi",
+        66
+      ]
+    ],
+    "distinct": [
+      [
+        "nippon",
+        221
+      ],
+      [
+        "oentoek",
+        146
+      ],
+      [
+        "meizi",
+        66
+      ],
+      [
+        "baroe",
+        88
+      ],
+      [
+        "ilmoe",
+        72
+      ],
+      [
+        "djoega",
+        79
+      ],
+      [
+        "rakjat",
+        106
+      ],
+      [
+        "haroes",
+        66
+      ],
+      [
+        "tahoen",
+        63
+      ],
+      [
+        "pengetahoean",
+        50
+      ],
+      [
+        "kaoem",
+        56
+      ],
+      [
+        "pembaharoean",
+        23
+      ]
+    ],
+    "phrases": [
+      [
+        "bangsa nippon",
+        35
+      ],
+      [
+        "ilmoe pengetahoean",
+        24
+      ],
+      [
+        "hoekoem dasar",
+        17
+      ],
+      [
+        "rakjat nippon",
+        16
+      ],
+      [
+        "tahoen meizi",
+        14
+      ],
+      [
+        "perpustakaan nasional",
+        14
+      ],
+      [
+        "negeri nippon",
+        13
+      ],
+      [
+        "negara baroe",
+        13
+      ]
+    ],
+    "similar": [
+      [
+        18673,
+        0.36
+      ],
+      [
+        13759,
+        0.34
+      ],
+      [
+        745,
+        0.32
+      ],
+      [
+        6699,
+        0.31
+      ],
+      [
+        5931,
+        0.31
+      ],
+      [
+        21275,
+        0.29
+      ]
+    ],
+    "sentiment": {
+      "score": 0.38,
+      "positive": 166,
+      "negative": 74,
+      "trend": [
+        0.82,
+        0.71,
+        0,
+        0.54,
+        0.56,
+        0.2,
+        0.27,
+        0.67,
+        0.6,
+        0.64,
+        0.03,
+        0.38,
+        0.25,
+        0,
+        0.2,
+        0.33
+      ],
+      "emotions": [
+        [
+          "anger",
+          30
+        ],
+        [
+          "anticipation",
+          30
+        ],
+        [
+          "trust",
+          20
+        ],
+        [
+          "joy",
+          16
+        ],
+        [
+          "sadness",
+          9
+        ],
+        [
+          "surprise",
+          4
+        ]
+      ]
+    }
+  }
 }

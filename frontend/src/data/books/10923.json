@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 1023,
-    "longer_than": 52,
+    "longer_than": 50,
     "top": [
       [
         "arg",
@@ -120,19 +120,15 @@
         8
       ],
       [
-        "vertex",
-        7
-      ],
-      [
         "giraph-examples",
         6
       ],
       [
-        "graph",
-        10
+        "vertex",
+        7
       ],
       [
-        "jar",
+        "graph",
         10
       ],
       [
@@ -142,6 +138,10 @@
       [
         "jar-with-dependencies",
         4
+      ],
+      [
+        "jar",
+        10
       ],
       [
         "input",

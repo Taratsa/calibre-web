@@ -45,5 +45,222 @@
       "size": 103669824,
       "name": "Pengakoean saja _ pengadjaran agama di Kat - Hilbrandt Boschma"
     }
-  ]
+  ],
+  "text": {
+    "words": 22333,
+    "longer_than": 89,
+    "top": [
+      [
+        "toehan",
+        700
+      ],
+      [
+        "allah",
+        414
+      ],
+      [
+        "manoesia",
+        279
+      ],
+      [
+        "orang",
+        250
+      ],
+      [
+        "jesoes",
+        217
+      ],
+      [
+        "soetji",
+        178
+      ],
+      [
+        "perkara",
+        143
+      ],
+      [
+        "didalam",
+        142
+      ],
+      [
+        "djoega",
+        140
+      ],
+      [
+        "dosa",
+        138
+      ],
+      [
+        "hidoep",
+        138
+      ],
+      [
+        "kitab",
+        126
+      ]
+    ],
+    "distinct": [
+      [
+        "toehan",
+        700
+      ],
+      [
+        "jesoes",
+        217
+      ],
+      [
+        "manoesia",
+        279
+      ],
+      [
+        "allah",
+        414
+      ],
+      [
+        "soetji",
+        178
+      ],
+      [
+        "hidoep",
+        138
+      ],
+      [
+        "kristoes",
+        76
+      ],
+      [
+        "djoega",
+        140
+      ],
+      [
+        "semoea",
+        117
+      ],
+      [
+        "haroes",
+        89
+      ],
+      [
+        "dosa",
+        138
+      ],
+      [
+        "didalam",
+        142
+      ]
+    ],
+    "phrases": [
+      [
+        "toehan allah",
+        285
+      ],
+      [
+        "toehan jesoes",
+        209
+      ],
+      [
+        "kitab soetji",
+        102
+      ],
+      [
+        "orang kristen",
+        33
+      ],
+      [
+        "roh soetji",
+        29
+      ],
+      [
+        "semoea perkara",
+        24
+      ],
+      [
+        "hidoep baharoe",
+        22
+      ],
+      [
+        "didalam hati",
+        20
+      ]
+    ],
+    "similar": [
+      [
+        16590,
+        0.37
+      ],
+      [
+        12358,
+        0.36
+      ],
+      [
+        16462,
+        0.32
+      ],
+      [
+        21540,
+        0.28
+      ],
+      [
+        20426,
+        0.27
+      ],
+      [
+        16614,
+        0.25
+      ]
+    ],
+    "sentiment": {
+      "score": 0.09,
+      "positive": 319,
+      "negative": 269,
+      "trend": [
+        0.28,
+        null,
+        0.22,
+        0.35,
+        -0.08,
+        -0.4,
+        -0.2,
+        0.43,
+        0.32,
+        -0.12,
+        0.33,
+        0.06,
+        0.66,
+        0.43,
+        0.36,
+        -0.22
+      ],
+      "emotions": [
+        [
+          "joy",
+          29
+        ],
+        [
+          "sadness",
+          27
+        ],
+        [
+          "trust",
+          12
+        ],
+        [
+          "anger",
+          5
+        ],
+        [
+          "disgust",
+          4
+        ],
+        [
+          "surprise",
+          2
+        ],
+        [
+          "anticipation",
+          2
+        ]
+      ]
+    }
+  }
 }
