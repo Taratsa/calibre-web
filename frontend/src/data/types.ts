@@ -24,6 +24,7 @@ export interface BookSummary {
   formats: string[];
   cover_url: string;
   cover_og_url: string;
+  has_cover: boolean;
   url: string;
   rating: { avg: number; count: number } | null;
 }

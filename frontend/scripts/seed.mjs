@@ -71,8 +71,11 @@ function ocrCacheVersion() {
 }
 
 /**
- * Book ids per format with a ready cache entry of the current CACHE_VERSION whose file name and size still match
- * the library. Reads only the head of each cache file (`{"request": {...}, "result": {"status": ...`).
+ * Per format, the books with a ready cache entry of the current CACHE_VERSION whose file name and size still match
+ * the library, each mapped to the UTC date (YYYY-MM-DD) its text was last written (the cache file's mtime: entries are
+ * replaced atomically, so it moves only when the text itself changes). The sitemap needs that date for `<lastmod>` of
+ * /read/<id>/ocr/<format>/, whose content is that text and not the book's metadata.
+ * Reads only the head of each cache file (`{"request": {...}, "result": {"status": ...`).
  * Returns null when the cache directory is absent so a stale manifest is kept instead of emptied.
  */
 async function loadReadyOcr(db) {
@@ -90,15 +93,17 @@ async function loadReadyOcr(db) {
   }
   const requestPrefix = '{"request": ';
   const resultMarker = '}, "result": ';
-  const ready = { pdf: new Set(), epub: new Set() };
+  const ready = { pdf: new Map(), epub: new Map() };
   const buffer = Buffer.alloc(OCR_CACHE_HEAD_BYTES);
   for (const file of files) {
     if (!file.endsWith('.json') || file.startsWith('.')) continue;
     const handle = await open(join(OCR_CACHE_DIR, file), 'r');
     let head;
+    let modified;
     try {
       const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0);
       head = buffer.toString('utf8', 0, bytesRead);
+      modified = (await handle.stat()).mtime.toISOString().slice(0, 10);
     } finally {
       await handle.close();
     }
@@ -114,12 +119,12 @@ async function loadReadyOcr(db) {
     if (request.version !== version) continue;
     const live = current.get(`${request.book_id}:${request.format}`);
     if (!live || live.name !== request.name || Number(live.size) !== request.size) continue;
-    ready[String(request.format).toLowerCase()].add(request.book_id);
+    const formatReady = ready[String(request.format).toLowerCase()];
+    const previous = formatReady.get(request.book_id);
+    if (!previous || modified > previous) formatReady.set(request.book_id, modified);
   }
-  return {
-    pdf: [...ready.pdf].sort((a, b) => a - b),
-    epub: [...ready.epub].sort((a, b) => a - b),
-  };
+  const toObject = (formatReady) => Object.fromEntries([...formatReady].sort((a, b) => a[0] - b[0]));
+  return { pdf: toObject(ready.pdf), epub: toObject(ready.epub) };
 }
 
 function cleanAuthorName(name) {
@@ -393,6 +398,9 @@ async function loadBooks(db, bookText) {
       // same URLs, so every book has a /cover_thumb and /cover URL.
       cover_url: `/cover_thumb/${book.id}?v=${coverVersion(book)}`,
       cover_og_url: `/cover/${book.id}/og?v=${coverVersion(book)}`,
+      // True only for a real cover file; false means Flask serves the generated text card. The sitemap lists images
+      // for real covers only (Google advises against indexing generic or text-only images).
+      has_cover: book.has_cover === 1,
       url: `/book/${slug}/`,
       rating: rating,
     };
@@ -435,7 +443,7 @@ async function main() {
     const readyOcr = await loadReadyOcr(db);
     if (readyOcr) {
       await writeJson('ocr-ready.json', readyOcr);
-      console.log(`[seed] wrote OCR manifest (${readyOcr.pdf.length} pdf, ${readyOcr.epub.length} epub)`);
+      console.log(`[seed] wrote OCR manifest (${Object.keys(readyOcr.pdf).length} pdf, ${Object.keys(readyOcr.epub).length} epub)`);
     } else {
       console.warn(`[seed] OCR cache dir ${OCR_CACHE_DIR} not found; kept existing ocr-ready.json`);
     }

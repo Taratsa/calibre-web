@@ -599,8 +599,17 @@ Two live search systems (plus the legacy advanced-search form):
 - The sitemap lists `/read/<id>/ocr/<fmt>/` only for books in `frontend/src/data/ocr-ready.json`, written by
   `seed.mjs` from the OCR cache (`OCR_CACHE_DIR`, set by `build-frontend.sh`): entries of the current
   `CACHE_VERSION` (read from `cps/ocr_service.py`) that are `ready` and still match the library file's name
-  and size. Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
+  and size. The file is `{pdf: {<book id>: "YYYY-MM-DD"}, epub: {...}}`: the date is the cache file's mtime (entries are
+  replaced atomically, so it moves only when the text changes) and is that page's `<lastmod>`. It used to be the
+  book's Calibre `last_modified`, which was older than the text for 14,268 of 20,639 pages (6,132 by more than 30
+  days), so a recrawl was never prompted. Book pages keep Calibre's `last_modified` (verified 2026-11-26: it equals
+  the date added for 20,446 of 20,759 books, so the 12,258 dated 2026-11-23/24 are two real bulk imports, not a
+  bulk touch). Pages for unprocessed books render a `noindex` stub, so they stay out of the sitemap. New OCR results
   appear in the sitemap after the next `./build-frontend.sh`; without the cache dir the previous manifest is kept
+- Image sitemap: each `/book/<slug>/` entry carries `<image:image>` for `/cover/<id>/og` ONLY when the book has a
+  real cover (`has_cover` in `books.json`, from Calibre's `has_cover`; 9,703 of 20,769). The other 11,066 are served a
+  generated title card (`cps/cover_placeholder.py`), which is text on grey; Google's image guidance says to avoid
+  generic or text-only images, so they are left out. Videos, authors and clippings have no image entries (no own image).
 - EPUB text pages (`/read/<id>/ocr/epub/`, "Baca EPUB (teks)") are crawlable plain SSR HTML. The book page links them
   for every EPUB whose text extracts (`/api/read/<id>/ocr/status/epub` extracts inline, no GPU, so `available` means
   "has extractable text"); a corrupt EPUB (no `container.xml`, no text) gets no link and its API/page answer 404, not

@@ -80,23 +80,23 @@ function imageUrl(path: string): string | undefined {
   return url.href;
 }
 
-const readyOcrIds = {
-  pdf: new Set<number>(ocrReady.pdf),
-  epub: new Set<number>(ocrReady.epub),
-};
+// Per format, book id -> date (YYYY-MM-DD) the cached text was last written; see loadReadyOcr() in seed.mjs.
+const readyOcrDates = ocrReady as { pdf: Record<string, string>; epub: Record<string, string> };
 
 export function getSitemapEntries(): SitemapEntry[] {
   const entries = new Map<string, SitemapEntry>();
 
   for (const path of STATIC_PATHS) addEntry(entries, path);
   for (const book of getAllBooks()) {
-    const cover = imageUrl(book.cover_og_url);
+    // Only a real cover goes into the image sitemap. A book without one is served a generated title card
+    // (cps/cover_placeholder.py) at the same URL, which is text on grey, not a picture worth indexing.
+    const cover = book.has_cover ? imageUrl(book.cover_og_url) : undefined;
     addEntry(entries, bookPath(book), dateOnly(book.last_modified), cover ? [cover] : undefined);
-    // Only books whose text is already cached have an indexable reader page; the rest render a noindex stub.
+    // Only books whose text is already cached have an indexable reader page; the rest render a noindex stub. That
+    // page's content is the cached text, so its lastmod is the date the text was written, not the book's.
     for (const format of OCR_FORMATS) {
-      if (readyOcrIds[format as 'pdf' | 'epub'].has(book.id)) {
-        addEntry(entries, `/read/${book.id}/ocr/${format}`, dateOnly(book.last_modified));
-      }
+      const textDate = readyOcrDates[format as 'pdf' | 'epub'][String(book.id)];
+      if (textDate) addEntry(entries, `/read/${book.id}/ocr/${format}`, dateOnly(textDate));
     }
   }
   for (const author of getAllAuthors()) addEntry(entries, authorPath(author));
@@ -160,7 +160,7 @@ export function getCachedSitemapChunks(): SitemapChunk[] {
 
 export function renderSitemapIndex(chunkCount: number): string {
   const entries = Array.from({ length: chunkCount }, (_, index) =>
-    `<sitemap><loc>${escapeXml(absoluteUrl(`/sitemaps/${index}.xml`))}</loc></sitemap>`
+    `<sitemap><loc>${escapeXml(new URL(`/sitemaps/${index}.xml`, SITE_URL).href)}</loc></sitemap>`
   ).join('');
   return `${XML_HEADER}<sitemapindex xmlns="${SITEMAP_NAMESPACE}">${entries}</sitemapindex>\n`;
 }

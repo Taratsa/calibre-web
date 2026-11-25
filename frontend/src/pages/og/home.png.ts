@@ -20,6 +20,7 @@ const homeCard: BookSummary = {
   formats: [],
   cover_url: '/static/images/Header_Beranda.webp',
   cover_og_url: '/static/images/Header_Beranda.webp',
+  has_cover: false,
   url: '/',
   rating: null,
 };
