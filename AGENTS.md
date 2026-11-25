@@ -268,6 +268,9 @@ Two live search systems (plus the legacy advanced-search form):
 
 ### Key Features
 - Umami analytics tracking for downloads (browser + server-side)
+- Browser error tracking (Umami v3.5+, `data-errors="true"` on the tracker in `BaseLayout.astro`): uncaught JS errors
+  and unhandled promise rejections are grouped under Umami's Monitoring → Errors. The self-hosted server must be on
+  v3.5+ (migration `27_add_error_tracking`)
 - Umami `epub-read` / `pdf-read` events (`book_id`, `format`, `title`) fired on load by the standalone
   reader pages `read.html` / `readpdf.html` via the shared `cps/templates/umami_reader.html` partial
   (these pages do not extend `layout.html`, so they load the Umami script themselves)
@@ -543,6 +546,18 @@ Two live search systems (plus the legacy advanced-search form):
   (`utils/sitemap.ts`) and nav; filtered/paged list views are `noindex`
 - Production Caddy forwards only listed prefixes to Flask; `/admin/*` already goes to Flask, so no proxy change. `/kliping/*`
   is served by Astro (the default), so no Caddy change either
+
+### Agent discovery (Link header, WebMCP)
+- The homepage `/` answers with a `Link` header (`api-catalog`, `service-desc`, `service-doc`, `describedby`), set in
+  `frontend/src/middleware.ts`; Astro serves `/`, so the one in Flask's `web.index()` never reaches visitors. Keep the
+  targets in step with the `<link>` tags in `BaseLayout.astro`
+- WebMCP: `frontend/src/scripts/webmcp.ts`, bundled into every page by `BaseLayout.astro`. It registers 5 tools through
+  `navigator.modelContext.registerTool()` (`document.modelContext` in the current draft; both are tried):
+  `search_catalog`, `search_book_text`, `list_sections`, `navigate`, `get_page_content`. They are client-side only: they
+  fetch the same public SSR pages a visitor sees and parse the HTML (`/search/` results via `.book-card`, `#search-status`), so a markup
+  change in `BookCard.astro` or `search.astro` must keep those selectors. `navigate` accepts only same-origin paths.
+  One `AbortController` owns all registrations (aborted on `pagehide`, re-registered on a bfcache `pageshow`). Nothing
+  happens in browsers without the API. Tool text returned to an agent is untrusted page content (`untrustedContentHint`)
 
 ### Structured Data (JSON-LD)
 

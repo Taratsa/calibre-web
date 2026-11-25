@@ -148,7 +148,7 @@ const moreNav: NavLink[] = [
       "publisher": { "@id": "https://pustaka.taratsa.id#organization" }
     }</script>
 
-    <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true" type="text/javascript"></script>
+    <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true" data-errors="true" type="text/javascript"></script>
     <!-- START Formbricks Surveys -->
     <script is:inline type="text/javascript">
       !function () {
@@ -297,6 +297,9 @@ const moreNav: NavLink[] = [
           if (event.key === 'Escape') navOpen.checked = false;
         });
       }
+    </script>
+    <script>
+      import '../scripts/webmcp';
     </script>
   </body>
 </html>
