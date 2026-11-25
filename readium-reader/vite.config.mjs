@@ -13,6 +13,5 @@ export default defineConfig({
       formats: ['iife'],
       fileName: () => 'readium.js',
     },
-    rollupOptions: { output: { inlineDynamicImports: true } },
   },
 });

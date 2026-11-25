@@ -7,10 +7,10 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@readium/navigator": "2.15.0",
+    "@readium/navigator": "2.16.1",
     "@readium/shared": "2.9.0"
   },
   "devDependencies": {
-    "vite": "^6.4.5"
+    "vite": "^8.3.8"
   }
 }
