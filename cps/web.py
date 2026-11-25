@@ -75,6 +75,7 @@ from .helper import (
     get_pdf_reader_url,
     get_series_cover_thumbnail,
     get_signed_file,
+    get_signed_file_url,
     get_valid_filename,
     reset_password,
     send_mail,
@@ -245,8 +246,9 @@ def add_security_headers(resp):
     resp.headers["X-Content-Type-Options"] = "nosniff"
     resp.headers["X-Frame-Options"] = "SAMEORIGIN"
     resp.headers["X-XSS-Protection"] = "1; mode=block"
-    if request.endpoint == "web.read_book":
-        # Viewer shells (epub.js/pdf.js) have no indexable text; the indexable reading page is the Astro /read/<id>/ocr/<fmt>/.
+    if request.endpoint == "web.read_book" or request.path.startswith("/show/readium/"):
+        # Viewer shells (epub.js/pdf.js) and Readium chapter assets have no page of their own. The
+        # raw files under /files and /show stay indexable: they carry a canonical Link header instead.
         resp.headers["X-Robots-Tag"] = "noindex"
     resp.headers["Strict-Transport-Security"] = "max-age=31536000"
     onion_location = os.environ.get("ONION_LOCATION", "").strip()
@@ -2133,6 +2135,11 @@ def serve_book(book_id, book_format, anyname):
         )  # pyright: ignore[reportCallIssue,reportArgumentType]
         if not range_header:
             response.headers["Accept-Ranges"] = "bytes"
+        # Same bytes as the signed /files URL; the /files form is versioned and edge-cached, so it
+        # is the canonical copy search engines should index.
+        canonical = get_signed_file_url(book, book_format, external=True)
+        if canonical:
+            response.headers["Link"] = f'<{canonical}>; rel="canonical"'
         return response
 
 

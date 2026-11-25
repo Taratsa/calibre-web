@@ -1384,6 +1384,29 @@ def _file_signature(book_id, book_format, version):
     return hmac.new(key, f"{book_id}:{book_format}:{version}".encode(), hashlib.sha256).hexdigest()[:32]
 
 
+def _signed_file_url(book, data, book_format, external=False):
+    """Immutable download URL for one format; no session needed, so it is also the canonical URL
+    crawlers keep for these bytes (`serve_book` and every `/files` variant point here)."""
+    version = _file_version(book, data)
+    url = url_for(
+        "web.serve_file",
+        book_id=book.id,
+        book_format=book_format,
+        version=version,
+        sig=_file_signature(book.id, book_format, version),
+        _external=external,
+    )
+    # Caddy terminates TLS and the app has no ProxyFix, so `_external` says http. A canonical
+    # must name the https URL the site is served from.
+    return "https://" + url[len("http://") :] if url.startswith("http://") else url
+
+
+def get_signed_file_url(book, book_format, external=False):
+    """Canonical URL for one format of `book`, or None when the book has no such format."""
+    data = calibre_db.get_book_format(book.id, book_format.upper())
+    return _signed_file_url(book, data, book_format.lower(), external) if data else None
+
+
 def get_download_redirect(book_id, book_format):
     """Authorize and count a download, then 302 to the immutable /files URL.
 
@@ -1436,6 +1459,9 @@ def get_signed_file(book_id, book_format, version, sig):
     response = get_download_link(book_id, book_format, "", count=False)
     response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
     response.headers.pop("Vary", None)
+    # The same bytes are also served at /show and /download; name this URL canonical so search
+    # engines index one copy instead of reporting duplicates.
+    response.headers["Link"] = f'<{_signed_file_url(book, data, book_format, external=True)}>; rel="canonical"'
     return response
 
 
@@ -1446,18 +1472,9 @@ def get_pdf_reader_url(book):
     through Flask (4644: ~250 reads in 5 minutes). The /files URL carries no session and never counts a download, which
     is right for viewing. Falls back to /show when the file is not a plain local PDF (Google Drive, no such format).
     """
-    data = calibre_db.get_book_format(book.id, "PDF")
-    if not data or config.config_use_google_drive:
+    if config.config_use_google_drive:
         return url_for("web.serve_book", book_id=book.id, book_format="pdf")
-    version = _file_version(book, data)
-    return url_for(
-        "web.serve_file",
-        book_id=book.id,
-        book_format="pdf",
-        version=version,
-        sig=_file_signature(book.id, "pdf", version),
-        anyname=get_valid_filename(data.name, replace_whitespace=False) + ".pdf",
-    )
+    return get_signed_file_url(book, "pdf") or url_for("web.serve_book", book_id=book.id, book_format="pdf")
 
 
 def clear_cover_thumbnail_cache(book_id):
