@@ -296,7 +296,7 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
               <h3>Frasa yang berulang</h3>
               <ul class="book-text__phrases">
                 {text.phrases.map(([phrase, count]) => (
-                  <li title={`${count} kali`}>{phrase}</li>
+                  <li><a href={`/search/text/?${new URLSearchParams({ q: `"${phrase.replaceAll('"', '')}"` })}`} title={`${count} kali di buku ini. Cari frasa ini di dalam teks semua buku`}>{phrase}</a></li>
                 ))}
               </ul>
             </div>

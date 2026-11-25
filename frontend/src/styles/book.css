@@ -194,10 +194,15 @@
   gap: 0.5rem;
 }
 .book-detail .book-text__phrases li {
-  padding: 0.25rem 0.75rem;
   background: var(--surface-3);
   border-radius: 4px;
   font-size: 0.85rem;
   line-height: 1.3;
-  cursor: default;
 }
+.book-detail .book-text__phrases a {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+.book-detail .book-text__phrases a:hover { text-decoration: underline; }
