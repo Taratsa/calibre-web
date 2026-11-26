@@ -44,3 +44,8 @@ pub const SENTIMENT_TREND_MIN_HITS: u64 = 5;
 pub const SENTIMENT_EMOTION_MIN_HITS: u64 = 30;
 /// A trend with fewer scored sections than this is not drawn.
 pub const SENTIMENT_TREND_MIN_SHOWN: usize = 8;
+/// Sentence-level sentiment sample: at most this many sentences per book (uniform random, deterministic per book).
+/// 60 x ~20.7k books is ~1.2M sentences: about two days at the measured ~6 sentences/s of the fp32 model.
+pub const SENTIMENT_SAMPLE: usize = 60;
+/// A book needs this many scored sample sentences before its transformer tone is shown.
+pub const SENTIMENT_SAMPLE_MIN: usize = 30;

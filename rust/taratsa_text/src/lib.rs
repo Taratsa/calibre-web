@@ -1,7 +1,9 @@
 //! Python bindings for the corpus text analysis: one `CorpusBuilder` class and the `html_to_blocks` helper.
 
+mod classifier;
 mod constants;
 mod corpus;
+mod orthography;
 mod sentiment;
 mod text;
 use std::collections::HashSet;
@@ -140,6 +142,8 @@ fn settings(py: Python<'_>) -> PyResult<Py<PyDict>> {
     values.set_item("SENTIMENT_MIN_HITS", c::SENTIMENT_MIN_HITS)?;
     values.set_item("SENTIMENT_EMOTION_MIN_HITS", c::SENTIMENT_EMOTION_MIN_HITS)?;
     values.set_item("SENTIMENT_TREND_BUCKETS", c::SENTIMENT_TREND_BUCKETS)?;
+    values.set_item("SENTIMENT_SAMPLE", c::SENTIMENT_SAMPLE)?;
+    values.set_item("SENTIMENT_SAMPLE_MIN", c::SENTIMENT_SAMPLE_MIN)?;
     Ok(values.unbind())
 }
 
@@ -149,10 +153,46 @@ fn html_to_blocks(markup: &str) -> Vec<String> {
     crate::text::html_to_blocks(markup)
 }
 
+/// Point the sentence classifier at its model directory (`model.safetensors`, `tokenizer.json`, `config.json`).
+#[pyfunction]
+fn configure_sentiment_model(directory: &str) {
+    classifier::configure(directory);
+}
+
+/// `[negative, neutral, positive]` probabilities per text, in order. The forward passes run without the GIL.
+#[pyfunction]
+fn sentiment_sentences(py: Python<'_>, texts: Vec<String>) -> PyResult<Vec<[f32; 3]>> {
+    py.detach(|| classifier::probabilities_parallel(&texts))
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// `(mean polarity -1..1, share of sentences that are not neutral)` for a book's sampled sentences.
+#[pyfunction]
+fn sentiment_summary(probabilities: Vec<[f32; 3]>) -> Option<(f64, f64)> {
+    classifier::summarize(&probabilities)
+}
+
+/// Up to `limit` uniformly sampled sentences of a book, rewritten to modern spelling when the text shows old spelling.
+#[pyfunction]
+fn sentiment_sample(py: Python<'_>, markup: &str, book_id: i64, limit: usize) -> Vec<String> {
+    py.detach(|| classifier::sample_sentences(markup, book_id, limit))
+}
+
+/// The spelling system a text is written in: `modern`, `soewandi` or `van_ophuijsen`.
+#[pyfunction]
+fn spelling_of(markup: &str) -> &'static str {
+    classifier::spelling_name(markup)
+}
+
 #[pymodule]
 fn taratsa_text(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_class::<PyCorpusBuilder>()?;
     module.add_function(wrap_pyfunction!(html_to_blocks, module)?)?;
     module.add_function(wrap_pyfunction!(settings, module)?)?;
+    module.add_function(wrap_pyfunction!(configure_sentiment_model, module)?)?;
+    module.add_function(wrap_pyfunction!(sentiment_sentences, module)?)?;
+    module.add_function(wrap_pyfunction!(sentiment_summary, module)?)?;
+    module.add_function(wrap_pyfunction!(sentiment_sample, module)?)?;
+    module.add_function(wrap_pyfunction!(spelling_of, module)?)?;
     Ok(())
 }
