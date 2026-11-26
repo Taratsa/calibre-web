@@ -471,6 +471,16 @@ Two live search systems (plus the legacy advanced-search form):
   fine-tuned IndoBERT (published ~93% smsa / ~72% emot) is the only large accuracy jump, at days of CPU for the library. No Rust crate covers Indonesian emotions (the crates are English polarity
   or NPC affect models; NRC's emotion lexicon is English and research-only), so the mapping lives in the lexicon file. A BERT/rust-bert scorer was rejected: ~120-290 CPU hours for the library plus
   1-2 GB of weights, against milliseconds for the lexicon
+  Two token rules (2026-11-26 audit of book 21708, "Symposion ...": 567 positive / 515 negative was labelled
+  "cenderung negatif"): a reduplicated token (`kesulitan-kesulitan`) scores as its base word, because the hyphenated
+  form matched nothing and the lexicon only holds bare forms; and `salah` followed by `satu`/`seorang`/`sebuah`/a
+  small number ("salah satu" = "one of") is neutral (`partitive_heads`/`partitive_tails` in the lexicon; 64% of all
+  `salah` in a 4,000-book sample was this phrase, 8.9% of every negative hit). The page label says "cenderung
+  negatif" only when negative words are the majority (positive share < 0.5), "cenderung positif" from 0.70, and
+  "berimbang" between; an older corpus-quartile cut-off (0.53) labelled 336 of 6,090 books "negatif" while they had
+  more positive than negative words. Not done, and measured as the next biggest error: old-spelling Indonesian
+  (`jang`, `dj`, `tj`; about 1,500 books) misses the lexicon, English books (about 2,400) are not scored, and
+  `perang`/`benar`/`terang` are scored out of context. A multilingual transformer pilot is the next step
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)

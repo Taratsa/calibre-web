@@ -135,6 +135,10 @@ pub struct SentimentConfig {
     negators: Vec<String>,
     boosters: Vec<String>,
     contrasts: Vec<String>,
+    /// Words that open a neutral "one of" phrase ("salah" in "salah satu").
+    partitive_heads: Vec<String>,
+    /// Words that complete it ("satu", "seorang").
+    partitive_tails: Vec<String>,
     /// Emotion name -> words; names outside `sentiment::EMOTIONS` are ignored.
     emotions: std::collections::HashMap<String, Vec<String>>,
 }
@@ -153,6 +157,8 @@ struct SentimentSets {
     negators: FxHashSet<Box<str>>,
     boosters: FxHashSet<Box<str>>,
     contrasts: FxHashSet<Box<str>>,
+    partitive_heads: FxHashSet<Box<str>>,
+    partitive_tails: FxHashSet<Box<str>>,
     indonesian: FxHashSet<Box<str>>,
     english: FxHashSet<Box<str>>,
     /// In `sentiment::EMOTIONS` order; bit `i` of a word's mask means it belongs to set `i`.
@@ -181,6 +187,8 @@ impl SentimentSets {
             negators: set(config.negators),
             boosters: set(config.boosters),
             contrasts: set(config.contrasts),
+            partitive_heads: set(config.partitive_heads),
+            partitive_tails: set(config.partitive_tails),
             indonesian: set(language.ind),
             english: set(language.eng),
             emotions,
@@ -205,16 +213,18 @@ impl SentimentSets {
     }
 
     fn word(&self, word: &str) -> sentiment::Word {
-        let sign = if self.positive.contains(word) {
+        // A reduplicated plural ("kesulitan-kesulitan") is one occurrence of its base word.
+        let base = reduplicated_base(word).unwrap_or(word);
+        let sign = if self.positive.contains(base) {
             1
-        } else if self.negative.contains(word) {
+        } else if self.negative.contains(base) {
             -1
         } else {
             0
         };
         let mut emotions = 0u8;
         for (index, set) in self.emotions.iter().enumerate() {
-            if set.contains(word) {
+            if set.contains(base) {
                 emotions |= 1 << index;
             }
         }
@@ -223,9 +233,17 @@ impl SentimentSets {
             negator: self.negators.contains(word),
             booster: self.boosters.contains(word),
             contrast: self.contrasts.contains(word),
+            partitive_head: self.partitive_heads.contains(word),
+            partitive_tail: self.partitive_tails.contains(word),
             emotions,
         }
     }
+}
+
+/// "kata-kata" -> "kata": the base of a token made of one word repeated across a hyphen.
+fn reduplicated_base(word: &str) -> Option<&str> {
+    let (left, right) = word.split_once('-')?;
+    (!left.is_empty() && left == right).then_some(left)
 }
 
 enum Median {
@@ -1155,6 +1173,8 @@ mod tests {
                 negators: vec!["tidak".into()],
                 boosters: vec!["sangat".into()],
                 contrasts: vec!["tetapi".into()],
+                partitive_heads: vec!["salah".into()],
+                partitive_tails: vec!["satu".into()],
                 emotions: Default::default(),
             },
             LanguageWords {
@@ -1222,5 +1242,29 @@ mod tests {
         assert_eq!(serial.books.len(), batched.books.len());
         assert_eq!(serial.document_count(), 4);
         assert_eq!(batched.document_count(), 4);
+    }
+
+    #[test]
+    fn a_reduplicated_word_scores_as_its_base() {
+        let sets = SentimentSets::new(
+            SentimentConfig {
+                positive: vec!["baik".into()],
+                negative: vec!["buruk".into()],
+                negators: Vec::new(),
+                boosters: Vec::new(),
+                contrasts: Vec::new(),
+                partitive_heads: Vec::new(),
+                partitive_tails: Vec::new(),
+                emotions: Default::default(),
+            },
+            LanguageWords {
+                ind: Vec::new(),
+                eng: Vec::new(),
+            },
+        );
+        assert_eq!(sets.word("buruk-buruk").sign, -1);
+        assert_eq!(sets.word("baik-baik").sign, 1);
+        // Two different words are not a reduplication.
+        assert_eq!(sets.word("baik-buruk").sign, 0);
     }
 }

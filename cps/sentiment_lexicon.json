@@ -468,6 +468,8 @@
     "though",
     "yet"
   ],
+  "partitive_heads": ["salah"],
+  "partitive_tails": ["satu", "satunya", "seorang", "sebuah", "dua", "tiga", "empat", "lima"],
   "_emotion_source": "Plutchik's eight emotions, hand-mapped onto the polarity vocabulary plus a few emotion words (kaget, jijik, harapan); one word may carry several emotions. Counted per book with the same negation rules: a negated emotion word is dropped, not flipped.",
   "emotions": {
     "anger": [

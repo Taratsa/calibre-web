@@ -11,6 +11,10 @@ pub struct Word {
     pub negator: bool,
     pub booster: bool,
     pub contrast: bool,
+    /// First word of a "one of" phrase ("salah" in "salah satu"): not a polarity word when a tail follows.
+    pub partitive_head: bool,
+    /// Second word of a "one of" phrase ("satu", "seorang").
+    pub partitive_tail: bool,
     /// Bit per emotion (see `EMOTIONS`), so one word can carry several.
     pub emotions: u8,
 }
@@ -45,6 +49,14 @@ where
     let mut negative = 0;
     for (index, &token) in tokens.iter().enumerate() {
         let entry = word(token);
+        // "salah satu" means "one of", not "wrong": the phrase is neutral.
+        if entry.partitive_head
+            && tokens
+                .get(index + 1)
+                .is_some_and(|&next| word(next).partitive_tail)
+        {
+            continue;
+        }
         // Emotion-only words ("mencintai") carry no polarity sign but still need to be recorded.
         if entry.sign == 0 && entry.emotions == 0 {
             continue;
@@ -97,6 +109,7 @@ mod tests {
             booster,
             contrast,
             emotions: 0,
+            ..Word::default()
         }
     }
 
@@ -197,6 +210,35 @@ mod tests {
         assert_eq!(
             score(&[0, 1], |id| words[id as usize], |_, _, _, _| {}),
             (1, 0)
+        );
+    }
+
+    #[test]
+    fn a_one_of_phrase_is_not_a_polarity_hit() {
+        let words = [
+            Word {
+                sign: -1,
+                partitive_head: true,
+                ..Word::default()
+            },
+            Word {
+                partitive_tail: true,
+                ..Word::default()
+            },
+        ];
+        // "salah satu": neutral.
+        assert_eq!(
+            score(&[0, 1], |id| words[id as usize], |_, _, _, _| {}),
+            (0, 0)
+        );
+        // "salah" without a tail ("adalah salah") still counts, also when another "salah" follows.
+        assert_eq!(
+            score(&[0], |id| words[id as usize], |_, _, _, _| {}),
+            (0, 1)
+        );
+        assert_eq!(
+            score(&[0, 0], |id| words[id as usize], |_, _, _, _| {}),
+            (0, 2)
         );
     }
 }

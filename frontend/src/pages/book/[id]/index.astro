@@ -118,9 +118,10 @@ const textFacts = text
 const sentiment = text?.sentiment ?? null;
 const sentimentHits = sentiment ? sentiment.positive + sentiment.negative : 0;
 const positiveShare = sentimentHits > 0 ? sentiment.positive / sentimentHits : 0;
-// Bands are this library's corpus quartiles (5,584 scored books, 2026-11): the middle half is "berimbang" because
-// Indonesian prose has a positive baseline (median 0.61 positive share), so absolute thresholds would label ~70% positive.
-const toneLabel = positiveShare >= 0.70 ? 'cenderung positif' : positiveShare <= 0.53 ? 'cenderung negatif' : 'berimbang';
+// "cenderung negatif" is shown only when negative words really are the majority: the label must not contradict the
+// counts printed beside it (a 52% positive share used to read "negatif" under an older, corpus-quartile cut-off).
+// "cenderung positif" starts at 0.70 because Indonesian prose has a positive baseline (median ~0.61 positive share).
+const toneLabel = positiveShare >= 0.70 ? 'cenderung positif' : positiveShare < 0.5 ? 'cenderung negatif' : 'berimbang';
 
 // Trend: 16 sections, null where a section had too few polarity words; each run of scored sections becomes one line.
 const trend = sentiment?.trend ?? [];
