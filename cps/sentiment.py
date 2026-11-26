@@ -15,7 +15,7 @@ from collections.abc import Iterable, Sequence
 from statistics import median
 
 # Bump when the calibration, the sample rules or the profile keys change; the seed ignores another version.
-SENTENCE_TONE_VERSION = 2
+SENTENCE_TONE_VERSION = 3
 
 # Per-book values: (mean polarity, share of decision sentences that are positive, sentences scored,
 # top emotion labels [(label, share of labelled sentences)], emotion language).
@@ -54,16 +54,28 @@ def score(mean: float, shift: float, scale: float) -> float:
     return max(-1.0, min(1.0, (mean + shift) * scale))
 
 
-def profiles(books: dict[int, BookTone]) -> dict[int, dict[str, object]]:
-    """Per-book tone records, calibrated across the corpus given all book means at once."""
-    shift, scale = calibration([mean for mean, _, _, _, _ in books.values()])
+def record(book: BookTone) -> dict[str, object]:
+    """The stored raw record of one book. ``mean`` stays raw: ``calibrated`` derives every ``score`` from it."""
+    mean, share, sentences, emotions, language = book
     return {
-        book_id: {
-            "score": round(score(mean, shift, scale), 4),
-            "positive_share": round(share, 4) if sentences >= 30 else None,
-            "sentences": sentences,
-            "emotions": [[label, round(fraction, 4)] for label, fraction in emotions],
-            "emotion_language": language,
-        }
-        for book_id, (mean, share, sentences, emotions, language) in books.items()
+        "mean": round(mean, 5),
+        "positive_share": round(share, 4) if sentences >= 30 else None,
+        "sentences": sentences,
+        "emotions": [[label, round(fraction, 4)] for label, fraction in emotions],
+        "emotion_language": language,
+    }
+
+
+def calibrated(records: dict[str, dict[str, object]]) -> dict[str, dict[str, object]]:
+    """Every record with its ``score``, calibrated across ALL given records.
+
+    Calibration needs the whole library: it centres the median book on 0, so a record scored alone (the book-page
+    button) must be calibrated together with the stored ones, never against itself (that would always give 0).
+    Records without a raw ``mean`` (an older file layout) are dropped.
+    """
+    usable = {key: value for key, value in records.items() if isinstance(value.get("mean"), (int, float))}
+    shift, scale = calibration([float(value["mean"]) for value in usable.values()])  # pyright: ignore[reportArgumentType]
+    return {
+        key: {**value, "score": round(score(float(value["mean"]), shift, scale), 4)}  # pyright: ignore[reportArgumentType]
+        for key, value in usable.items()
     }

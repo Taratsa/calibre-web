@@ -412,6 +412,11 @@
                             <a href="{{ url_for('edit-book.show_edit_book', book_id=entry.id) }}"
                                class="btn btn-sm btn-primary" id="edit_book" role="button"><span
                                     class="glyphicon glyphicon-edit"></span> {{ _('Edit Metadata') }}</a>
+                            {% if current_user.role_admin() %}
+                            <button type="button" class="btn btn-sm btn-default" id="book_tone"
+                                    data-book-id="{{ entry.id }}"><span
+                                    class="glyphicon glyphicon-flash"></span> {{ _('Sentiment: score this book') }}</button>
+                            {% endif %}
                         </div>
                         <div class="btn btn-default" data-back="{{ url_for('web.index') }}" id="back">{{_('Cancel')}}</div>
                    </div>

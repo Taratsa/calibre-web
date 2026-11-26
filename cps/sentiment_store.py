@@ -27,7 +27,7 @@ from .ocr_service import (
     cache_directory,
     extract_book_ocr,
 )
-from .sentiment import SENTENCE_TONE_VERSION, BookTone, profiles
+from .sentiment import SENTENCE_TONE_VERSION, BookTone, calibrated, record
 from .text_analysis import SENTIMENT_SAMPLE, SENTIMENT_SAMPLE_MIN, language_words
 
 # Books per classifier call: 32 books x 60 sentences is ~5 minutes of CPU, a convenient progress and write unit.
@@ -42,6 +42,18 @@ EMOTION_DIRECTORIES = {"id": MODEL_ROOT / "emotion_id", "en": MODEL_ROOT / "emot
 EMOTION_SAMPLE = 40
 
 
+def _stored_books(path: Path) -> dict[str, dict[str, object]]:
+    """Books already in the stored file; another version or a missing file gives an empty dict."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    if not isinstance(payload, dict) or payload.get("version") != SENTENCE_TONE_VERSION:
+        return {}
+    books = payload.get("books")
+    return books if isinstance(books, dict) else {}
+
+
 def _tone_path() -> Path:
     directory = cache_directory().parent / "analysis"
     directory.mkdir(parents=True, exist_ok=True)
@@ -49,9 +61,12 @@ def _tone_path() -> Path:
 
 
 def configured() -> bool:
-    """Whether the model files are present (they are baked into the image)."""
-    directories = [SENTIMENT_DIRECTORY, *EMOTION_DIRECTORIES.values()]
-    return all((directory / "model.safetensors").is_file() for directory in directories)
+    """Whether the ONNX model files are present (they are baked into the image) and ONNX Runtime can be found."""
+    files = [
+        SENTIMENT_DIRECTORY / "onnx" / "model_quantized.onnx",
+        *(directory / "model_quantized.onnx" for directory in EMOTION_DIRECTORIES.values()),
+    ]
+    return all(path.is_file() for path in files) and bool(os.environ.get("ORT_DYLIB_PATH"))
 
 
 def emotion_language(languages: list[str], sentences: list[str]) -> str | None:
@@ -87,15 +102,22 @@ def score_books(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
     written = 0
 
     def write() -> None:
-        """Store what has been scored so far: a two-day first pass must not lose its work if it is interrupted."""
+        """Store what has been scored so far, merged with the file's existing books.
+
+        Merging keeps an on-demand score (the book-page button) from being dropped by the next batch write of the long
+        pass, and keeps the pass's work when a single-book run writes in between. A two-day pass must not lose its
+        work if it is interrupted.
+        """
         nonlocal written
+        path = _tone_path()
+        merged: dict[str, dict[str, object]] = dict(_stored_books(path))
+        merged.update({str(book_id): record(book) for book_id, book in books.items()})
         stored = {
             "version": SENTENCE_TONE_VERSION,
             "built_at": datetime.now(UTC).isoformat(timespec="seconds"),
             "model": "Horizon-Labs/multilingual-sentiment-small",
-            "books": profiles(books),
+            "books": calibrated(merged),
         }
-        path = _tone_path()
         temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
         temporary.write_text(json.dumps(stored, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         temporary.replace(path)

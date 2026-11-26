@@ -616,6 +616,23 @@ $(function() {
             }
         });
     });
+    $("#book_tone").click(function() {
+        var button = $(this);
+        var bookId = button.data("book-id");
+        button.prop("disabled", true);
+        $.ajax({
+            method: "post",
+            dataType: "json",
+            url: getPath() + "/sentiment/book/" + bookId,
+            success: function success(data) {
+                button.text("Queued: " + (data.message || "sentence tone"));
+            },
+            error: function error() {
+                button.prop("disabled", false);
+                button.text("Could not queue sentence tone");
+            }
+        });
+    });
     $("#fulltext_index").click(function() {
         $("#DialogHeader").addClass("hidden");
         $("#DialogFinished").addClass("hidden");

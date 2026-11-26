@@ -4,6 +4,7 @@ mod classifier;
 mod constants;
 mod corpus;
 mod emotions;
+mod onnx;
 mod orthography;
 mod sentiment;
 mod text;

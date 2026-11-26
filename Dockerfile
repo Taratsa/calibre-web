@@ -1,6 +1,9 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_VERSION=3.15
+# The export tools in the `models` stage need wheels for torch/onnxruntime, which the runtime Python does not have yet;
+# that stage runs only at build time and copies plain files out, so its interpreter need not match the app's.
+ARG MODELS_PYTHON_VERSION=3.12
 
 FROM ghcr.io/linuxserver/unrar:latest AS unrar
 FROM python:${PYTHON_VERSION}-slim-bookworm AS builder
@@ -46,6 +49,44 @@ RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
     /lsiopy/bin/maturin build --release --locked --out /tmp/wheels && \
     /lsiopy/bin/pip install --no-cache-dir /tmp/wheels/*.whl && \
     rm -rf /tmp/wheels /app/rust
+
+# Model stage: downloads the pinned checkpoints, exports the two emotion RoBERTas to int8 ONNX and verifies every
+# result against a SHA-256. torch and transformers live only here; the runtime stage copies the finished files.
+#   sentiment/  Horizon-Labs/multilingual-sentiment-small  Apache-2.0  ModernBERT, 3-way sentiment, ships int8 ONNX
+#   emotion_id/ StevenLimcorn/indonesian-roberta-base-emotion-classifier  MIT  RoBERTa, EmoT 5 emotions
+#   emotion_en/ SamLowe/roberta-base-go_emotions  MIT  RoBERTa, GoEmotions 28 emotions
+FROM python:${MODELS_PYTHON_VERSION}-slim-bookworm AS models
+ARG SENTIMENT_MODEL_REPO=Horizon-Labs/multilingual-sentiment-small
+ARG EMOTION_ID_MODEL_REPO=StevenLimcorn/indonesian-roberta-base-emotion-classifier
+ARG EMOTION_EN_MODEL_REPO=SamLowe/roberta-base-go_emotions
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates && rm -rf /var/lib/apt/lists/*
+# Versions as measured: the exported int8 files are pinned by SHA-256 below, so a tool upgrade that changes them
+# fails the build instead of moving every book's emotions.
+RUN python3 -m venv /export && /export/bin/pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==2.15.0 && \
+    /export/bin/pip install --no-cache-dir transformers==4.57.1 onnx==1.23.2 onnxscript==0.7.2 onnxruntime==1.32.0
+RUN set -e; mkdir -p /models/sentiment/onnx /models/emotion_id /models/emotion_en /raw/emotion_id /raw/emotion_en; \
+    get() { curl -fsSL -o "$3" "https://huggingface.co/$1/resolve/main/$2"; }; \
+    get "$SENTIMENT_MODEL_REPO" onnx/model_quantized.onnx /models/sentiment/onnx/model_quantized.onnx; \
+    get "$SENTIMENT_MODEL_REPO" tokenizer.json /models/sentiment/tokenizer.json; \
+    get "$SENTIMENT_MODEL_REPO" config.json /models/sentiment/config.json; \
+    for pair in "emotion_id $EMOTION_ID_MODEL_REPO" "emotion_en $EMOTION_EN_MODEL_REPO"; do \
+      set -- $pair; \
+      for f in model.safetensors tokenizer.json config.json vocab.json merges.txt tokenizer_config.json special_tokens_map.json; do \
+        curl -fsSL -o "/raw/$1/$f" "https://huggingface.co/$2/resolve/main/$f" || true; done; \
+      cp /raw/$1/tokenizer.json /raw/$1/config.json /models/$1/; \
+    done
+COPY docker/export_emotion_onnx.py /export_emotion_onnx.py
+RUN set -e; /export/bin/python /export_emotion_onnx.py /raw/emotion_id /models/emotion_id; \
+    /export/bin/python /export_emotion_onnx.py /raw/emotion_en /models/emotion_en; \
+    cd /models && printf '%s\n' \
+      'a2b63c00af1dbb19ddbfdf7376fefb9b4abab6f54819de226f9649d367a9b2d9  sentiment/onnx/model_quantized.onnx' \
+      'f34b44a6dc8a0eef651bfa10e8325057530152606a69d9c3b6ae02efb1558f0a  sentiment/tokenizer.json' \
+      '6ec7630763facc42817d19f5ffcf826feb6d1b2692143227cd388c79806aade4  emotion_id/model_quantized.onnx' \
+      '4cae32a9b97d0215cbbf409b1996e541729405dfc13becf37fd3bd08b8ba8991  emotion_id/tokenizer.json' \
+      '4cbb063047d0b314c6d8c592c697b5aaa4e1859174055f1be725b98b724b2178  emotion_en/model_quantized.onnx' \
+      '90e2336a1cdacffe5d4328ab323aa9e5c33889026e4e4881323bebdeeb0e179d  emotion_en/tokenizer.json' | sha256sum -c -
+# ONNX Runtime, taken from the wheel that matches the `ort` crate's expectations (the crate loads it at run time).
+RUN mkdir -p /ort && cp "$(/export/bin/python -c 'import onnxruntime,os;d=os.path.join(os.path.dirname(onnxruntime.__file__),"capi");print([os.path.join(d,f) for f in os.listdir(d) if f.startswith("libonnxruntime.so.")][0])')" /ort/libonnxruntime.so
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
 
@@ -114,33 +155,13 @@ RUN curl -fsSL -o /usr/bin/kepubify \
 COPY --from=builder /lsiopy /lsiopy
 ENV PATH="/lsiopy/bin:${PATH}"
 
+# Sentence tone and emotion models (cps/sentiment_store.py -> taratsa_text::classifier / ::emotions), copied from the
+# `models` stage below: int8 ONNX files only, no torch in the runtime image.
+COPY --from=models /models /app/calibre-web/cps/sentiment_model
+COPY --from=models /ort/libonnxruntime.so /usr/local/lib/libonnxruntime.so
+ENV ORT_DYLIB_PATH=/usr/local/lib/libonnxruntime.so
 COPY cps/ /app/calibre-web/cps/
 
-# Sentence tone and emotion models (cps/sentiment_store.py -> taratsa_text::classifier / ::emotions). All
-# Apache-2.0 or MIT. The SHA-256 values pin the files: a changed upstream file fails the build instead of silently
-# moving every book's numbers.
-#   sentiment/  Horizon-Labs/multilingual-sentiment-small       Apache-2.0  ModernBERT, 3-way sentiment
-#   emotion_id/ StevenLimcorn/indonesian-roberta-base-emotion-classifier  MIT  RoBERTa, EmoT 5 emotions
-#   emotion_en/ SamLowe/roberta-base-go_emotions                 MIT         RoBERTa, GoEmotions 28 emotions
-ARG SENTIMENT_MODEL_REPO=Horizon-Labs/multilingual-sentiment-small
-ARG EMOTION_ID_MODEL_REPO=StevenLimcorn/indonesian-roberta-base-emotion-classifier
-ARG EMOTION_EN_MODEL_REPO=SamLowe/roberta-base-go_emotions
-RUN set -e; root=/app/calibre-web/cps/sentiment_model; \
-    fetch() { mkdir -p "$root/$1"; for file in model.safetensors tokenizer.json config.json; do \
-      curl -fsSL -o "$root/$1/$file" "https://huggingface.co/$2/resolve/main/$file"; done; }; \
-    fetch sentiment "$SENTIMENT_MODEL_REPO"; \
-    fetch emotion_id "$EMOTION_ID_MODEL_REPO"; \
-    fetch emotion_en "$EMOTION_EN_MODEL_REPO"; \
-    cd "$root" && printf '%s\n' \
-      'f0d0b6d2958f2f0a017ec060bb4768bfa720ef67625486ef02710c6484d02dd1  sentiment/model.safetensors' \
-      'f34b44a6dc8a0eef651bfa10e8325057530152606a69d9c3b6ae02efb1558f0a  sentiment/tokenizer.json' \
-      '516d8046cca3238145113bbe8b5e2b5b34b2f0c04b0ca093d7761c5f0a504eb9  sentiment/config.json' \
-      '13539f82a8580263bfa2b13432d1fb5496b8ffd05ec2985b58114dbf577b18b7  emotion_id/model.safetensors' \
-      '4cae32a9b97d0215cbbf409b1996e541729405dfc13becf37fd3bd08b8ba8991  emotion_id/tokenizer.json' \
-      'f384e99cdefa19b6db70eb62c507ac68a7a008c8644c22fe111fe09b1b440c03  emotion_id/config.json' \
-      '84d6d338b4cf63f0ed3c990a0ce748d32d1d2965c072f4645accaa71af3888c0  emotion_en/model.safetensors' \
-      '90e2336a1cdacffe5d4328ab323aa9e5c33889026e4e4881323bebdeeb0e179d  emotion_en/tokenizer.json' \
-      '3d4ef8e1465958e169761e2eb09d6e2c8d8806216973691ac40e405c97339d5c  emotion_en/config.json' | sha256sum -c -
 COPY cps.py /app/calibre-web/
 COPY pyproject.toml /app/calibre-web/
 COPY messages.pot /app/calibre-web/

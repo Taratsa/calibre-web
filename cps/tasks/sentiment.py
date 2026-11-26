@@ -18,15 +18,16 @@ from cps.sentiment_store import score_books
 log = logger.create()
 
 
-def score_library() -> int:
-    """Score every book with cached text; returns how many got a tone. Needs an app context."""
-    rows = (
+def score_library(book_ids: list[int] | None = None) -> int:
+    """Score every book with cached text, or only ``book_ids``; returns how many got a tone. Needs an app context."""
+    query = (
         calibre_db.session.query(db.Books.id, db.Books.title, db.Books.path, db.Data.format, db.Data.name)
         .join(db.Data, db.Data.book == db.Books.id)
         .filter(db.Data.format.in_(["PDF", "EPUB"]))
-        .order_by(db.Books.id, db.Data.format)
-        .all()
     )
+    if book_ids:
+        query = query.filter(db.Books.id.in_(book_ids))
+    rows = query.order_by(db.Books.id, db.Data.format).all()
     languages: dict[int, list[str]] = {}
     for book_id, code in calibre_db.session.query(
         db.books_languages_link.c.book, db.Languages.lang_code
@@ -43,8 +44,9 @@ def score_library() -> int:
 
 
 class TaskSentenceTone(CalibreTask):
-    def __init__(self, task_message=None):
+    def __init__(self, task_message=None, book_ids: list[int] | None = None):
         super().__init__(task_message or N_("Sentence tone"))
+        self.book_ids = book_ids
 
     @property
     def name(self):  # pyright: ignore[reportIncompatibleMethodOverride]
@@ -58,7 +60,7 @@ class TaskSentenceTone(CalibreTask):
         try:
             with app.app_context():
                 self.message = N_("Scoring sentence tone")
-                books = score_library()
+                books = score_library(self.book_ids)
                 self.progress = 1.0
                 self.message = N_("Sentence tone complete: %(books)d books", books=books)
                 self._handleSuccess()

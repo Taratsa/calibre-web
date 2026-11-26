@@ -514,13 +514,16 @@ Two live search systems (plus the legacy advanced-search form):
 - Sentence tone ("Nada kalimat (model)", same page, separate from "Sentimen kata"): a multilingual transformer reads a
   sample of the book's sentences, so it works for every language in the library and is not fooled by context-free
   words. Model `Horizon-Labs/multilingual-sentiment-small` (Apache-2.0, ModernBERT-small, 3-way negative/neutral/
-  positive); weights downloaded in the runtime stage of the Dockerfile, SHA-256 pinned, into `cps/sentiment_model/`
-  (git-ignored, ~562 MB fp32). Runs through `candle-transformers` (`modernbert::
-  ModernBertForSequenceClassification`) and the `tokenizers` crate, both maintained Hugging Face crates, from
-  `rust/taratsa_text/src/classifier.rs`; the Python seam is `cps/sentiment_store.py` (I/O + cache) and
-  `cps/sentiment.py` (pure calibration). Measured against the int8 ONNX reference: 99.0% label agreement, mean
-  probability difference 0.0023; ~10 sentences/s on 8 CPU cores fp32. Measured on 400 human-labelled NusaX sentences
-  per language: 81.8 macro-F1 Indonesian, 82.6 English (the lexicon: 57.6 / 14.1); on Indonesian rewritten to Van
+  positive); int8 ONNX file taken from the model repo (`onnx/model_quantized.onnx`, 268 MB) in the Dockerfile's
+  `models` stage, SHA-256 pinned, into `cps/sentiment_model/` (git-ignored). Runs on ONNX Runtime through the `ort`
+  crate (`2.0.0-rc.15`, `load-dynamic`: the crate loads `libonnxruntime.so` from `ORT_DYLIB_PATH`, copied out of the
+  `onnxruntime` wheel in the `models` stage) and the `tokenizers` crate, from `rust/taratsa_text/src/onnx.rs`
+  (shared engine, batches sentences by length) and `classifier.rs`; the Python seam is `cps/sentiment_store.py` (I/O +
+  cache) and `cps/sentiment.py` (pure calibration). Replaced candle after measuring on 96 real book sentences: candle
+  fp32 3.9-6.0 sentences/s, ONNX Runtime int8 23.4/s on 4 threads (11.6/s on 1), 99.0% label agreement, mean
+  probability difference 0.0026, per-sentence polarity correlation 0.9995. `SENTIMENT_THREADS` (default 4) sets the
+  intra-op threads. Measured on 400 human-labelled NusaX sentences per language:
+  81.8 macro-F1 Indonesian, 82.6 English (the lexicon: 57.6 / 14.1); on Indonesian rewritten to Van
   Ophuijsen spelling 76.2 (lexicon 43.7). NusaX is review text, so these are direction, not book-level accuracy;
   no human-labelled sentences from this library were scored yet
 - Old-spelling normalisation: `rust/taratsa_text/src/orthography.rs` (rules) and `cps/sentiment_sample` (apply).
@@ -546,9 +549,14 @@ Two live search systems (plus the legacy advanced-search form):
   into `books/<id>.json` as `text.tone`; a missing or version-mismatched file means no line, never a stale one.
   Re-run the task and then `./build-frontend.sh` to publish new tone numbers
 - Model emotions ("Emosi dominan (model)", same page, next to the lexicon's "Emosi dominan"): one RoBERTa per
-  language, both MIT and pinned by SHA-256 in the Dockerfile, run through candle's `xlm_roberta` module (candle has no
-  `roberta` module, but the architectures and weight names are identical: 100% label agreement with torch on 96 EmoT
-  sentences). Indonesian: `StevenLimcorn/indonesian-roberta-base-emotion-classifier` (EmoT 5 labels), 72.1 macro-F1 /
+  language, both MIT. Neither repo ships ONNX, so the Dockerfile's `models` stage (Python 3.12, torch 2.15,
+  transformers 4.57.1, onnx 1.23.2, onnxruntime 1.32.0; `docker/export_emotion_onnx.py`) exports each checkpoint and
+  dynamically quantizes it to int8 (125 MB instead of 480 MB); the export is deterministic (two runs, same SHA-256)
+  and every resulting file is pinned, so a tool upgrade fails the build instead of moving every book's emotions. Int8
+  costs 0.3-1.0 macro-F1 and runs 2.3-2.6x faster: Indonesian EmoT 72.1 -> 71.8 (46.0 vs 17.6 sentences/s on 4
+  threads), English GoEmotions 75.4 -> 74.4 on 800 sentences (92.0 vs 39.3/s). Fp32 results: candle (which has no
+  `roberta` module but loads these via its `xlm_roberta` one) matched torch on 96 sentences at 100% label agreement.
+  Models: Indonesian: `StevenLimcorn/indonesian-roberta-base-emotion-classifier` (EmoT 5 labels), 72.1 macro-F1 /
   71.8 accuracy on the EmoT test set; English: `SamLowe/roberta-base-go_emotions` (GoEmotions 28 labels), 79.1 / 84.2
   on the single-label GoEmotions test set under a coarse 5-way mapping. Rejected after measuring: one multilingual
   model (`tabularisai/multilingual-emotion-classification`, XLM-R) 59.4 Indonesian / 43.6 English, and
@@ -557,7 +565,7 @@ Two live search systems (plus the legacy advanced-search form):
   other language gets model emotions. The model reads the first 40 sentences of the tone sample (same deterministic
   sample), stores its top three labels with shares of the non-neutral labels as `tone.emotions` plus
   `tone.emotion_language`; "neutral" is dropped. The page maps both label sets to Indonesian names. Costs ~2x the tone
-  pass: the library run doubles to about four days. Sentence emotion accuracy is measured on tweets/reviews, not book
+  pass; on ONNX the library run takes about a day and a half (see below). Sentence emotion accuracy is measured on tweets/reviews, not book
   prose
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until

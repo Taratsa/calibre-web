@@ -266,6 +266,17 @@ def queue_sentence_tone():
     return jsonify({"success": True, "message": _("Sentence tone queued"), "task_id": str(task.id)})
 
 
+@admi.route("/sentiment/book/<int:book_id>", methods=["POST"])
+@user_login_required
+@admin_required
+def queue_book_tone(book_id):
+    from .tasks.sentiment import TaskSentenceTone
+
+    task = TaskSentenceTone(book_ids=[book_id])
+    WorkerThread.add(current_user.name, task, hidden=True)
+    return jsonify({"success": True, "message": _("Sentence tone queued for this book"), "task_id": str(task.id)})
+
+
 @admi.route("/fulltext/run", methods=["POST"])
 @user_login_required
 @admin_required
