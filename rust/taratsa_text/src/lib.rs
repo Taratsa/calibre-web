@@ -3,6 +3,7 @@
 mod classifier;
 mod constants;
 mod corpus;
+mod emotions;
 mod orthography;
 mod sentiment;
 mod text;
@@ -178,6 +179,20 @@ fn sentiment_sample(py: Python<'_>, markup: &str, book_id: i64, limit: usize) ->
     py.detach(|| classifier::sample_sentences(markup, book_id, limit))
 }
 
+/// Point the emotion classifier at its per-language model directories ("id", "en").
+#[pyfunction]
+fn configure_emotion_models(id: &str, en: &str) {
+    emotions::configure("id", id);
+    emotions::configure("en", en);
+}
+
+/// The most likely emotion label per text, in order, for a configured language ("id" or "en").
+#[pyfunction]
+fn emotion_labels(py: Python<'_>, texts: Vec<String>, language: &str) -> PyResult<Vec<String>> {
+    py.detach(|| emotions::labels(&texts, language))
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
 /// The spelling system a text is written in: `modern`, `soewandi` or `van_ophuijsen`.
 #[pyfunction]
 fn spelling_of(markup: &str) -> &'static str {
@@ -194,5 +209,7 @@ fn taratsa_text(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(sentiment_summary, module)?)?;
     module.add_function(wrap_pyfunction!(sentiment_sample, module)?)?;
     module.add_function(wrap_pyfunction!(spelling_of, module)?)?;
+    module.add_function(wrap_pyfunction!(configure_emotion_models, module)?)?;
+    module.add_function(wrap_pyfunction!(emotion_labels, module)?)?;
     Ok(())
 }

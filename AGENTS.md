@@ -545,6 +545,20 @@ Two live search systems (plus the legacy advanced-search form):
   "cenderung negatif" at or below -0.25, otherwise "berimbang". `seed.mjs` (`loadSentenceTone()`) merges the record
   into `books/<id>.json` as `text.tone`; a missing or version-mismatched file means no line, never a stale one.
   Re-run the task and then `./build-frontend.sh` to publish new tone numbers
+- Model emotions ("Emosi dominan (model)", same page, next to the lexicon's "Emosi dominan"): one RoBERTa per
+  language, both MIT and pinned by SHA-256 in the Dockerfile, run through candle's `xlm_roberta` module (candle has no
+  `roberta` module, but the architectures and weight names are identical: 100% label agreement with torch on 96 EmoT
+  sentences). Indonesian: `StevenLimcorn/indonesian-roberta-base-emotion-classifier` (EmoT 5 labels), 72.1 macro-F1 /
+  71.8 accuracy on the EmoT test set; English: `SamLowe/roberta-base-go_emotions` (GoEmotions 28 labels), 79.1 / 84.2
+  on the single-label GoEmotions test set under a coarse 5-way mapping. Rejected after measuring: one multilingual
+  model (`tabularisai/multilingual-emotion-classification`, XLM-R) 59.4 Indonesian / 43.6 English, and
+  `Aardiiiiy/EmoSense-ID` (BERT, Plutchik 8) 46.3 Indonesian. Routing: Calibre tag `eng` -> English model, `ind`/`msa`
+  -> Indonesian, untagged decided on function words in the sampled sentences (English only if >1.5x Indonesian); no
+  other language gets model emotions. The model reads the first 40 sentences of the tone sample (same deterministic
+  sample), stores its top three labels with shares of the non-neutral labels as `tone.emotions` plus
+  `tone.emotion_language`; "neutral" is dropped. The page maps both label sets to Indonesian names. Costs ~2x the tone
+  pass: the library run doubles to about four days. Sentence emotion accuracy is measured on tweets/reviews, not book
+  prose
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)

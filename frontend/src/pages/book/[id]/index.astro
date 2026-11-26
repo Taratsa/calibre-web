@@ -130,6 +130,17 @@ const sentenceTone = text?.tone ?? null;
 const sentenceToneLabel = !sentenceTone
   ? ''
   : sentenceTone.score >= 0.25 ? 'cenderung positif' : sentenceTone.score <= -0.25 ? 'cenderung negatif' : 'berimbang';
+// Model emotions use two label sets (EmoT's five for Indonesian, GoEmotions' 28 for English); both get Indonesian names.
+const emotionNames: Record<string, string> = {
+  sadness: 'Sedih', anger: 'Marah', love: 'Cinta', fear: 'Takut', happy: 'Senang',
+  admiration: 'Kagum', amusement: 'Geli', annoyance: 'Kesal', approval: 'Setuju', caring: 'Peduli',
+  confusion: 'Bingung', curiosity: 'Penasaran', desire: 'Ingin', disappointment: 'Kecewa',
+  disapproval: 'Tidak setuju', disgust: 'Jijik', embarrassment: 'Malu', excitement: 'Antusias',
+  frustration: 'Frustrasi', gratitude: 'Syukur', grief: 'Duka', joy: 'Senang', nervousness: 'Gugup',
+  optimism: 'Optimis', pride: 'Bangga', realization: 'Sadar', relief: 'Lega', remorse: 'Menyesal',
+  surprise: 'Terkejut', contempt: 'Meremehkan', neutral: 'Netral',
+};
+const modelEmotions = (sentenceTone?.emotions ?? []).map(([code, share]) => `${emotionNames[code] ?? code} ${Math.round(share * 100)}%`);
 
 // Trend: 16 sections, null where a section had too few polarity words; each run of scored sections becomes one line.
 const trend = sentiment?.trend ?? [];
@@ -252,6 +263,9 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
                 : ''}
             </p>
           )}
+          {modelEmotions.length > 0 && (
+            <p class="book-text__note">Emosi dominan (model): {modelEmotions.join(' · ')}</p>
+          )}
           {sentiment && (
             <div class="book-text__sentiment">
               <p class="book-text__note">
@@ -265,7 +279,7 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
               )}
               {topEmotions.length > 0 && (
                 <>
-                  <h3>Emosi dominan</h3>
+                  <h3>Emosi dominan (leksikon)</h3>
                   <ol class="book-text__rank book-text__emotions">
                     {topEmotions.map(([code, count]) => (
                       <li>

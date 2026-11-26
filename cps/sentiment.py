@@ -15,10 +15,11 @@ from collections.abc import Iterable, Sequence
 from statistics import median
 
 # Bump when the calibration, the sample rules or the profile keys change; the seed ignores another version.
-SENTENCE_TONE_VERSION = 1
+SENTENCE_TONE_VERSION = 2
 
-# Per-book values: (mean polarity, share of decision sentences that are positive, sentences scored).
-BookTone = tuple[float, float, int]
+# Per-book values: (mean polarity, share of decision sentences that are positive, sentences scored,
+# top emotion labels [(label, share of labelled sentences)], emotion language).
+BookTone = tuple[float, float, int, list[tuple[str, float]], str | None]
 
 
 def percentile(values: Sequence[float], share: float) -> float:
@@ -55,12 +56,14 @@ def score(mean: float, shift: float, scale: float) -> float:
 
 def profiles(books: dict[int, BookTone]) -> dict[int, dict[str, object]]:
     """Per-book tone records, calibrated across the corpus given all book means at once."""
-    shift, scale = calibration([mean for mean, _, _ in books.values()])
+    shift, scale = calibration([mean for mean, _, _, _, _ in books.values()])
     return {
         book_id: {
             "score": round(score(mean, shift, scale), 4),
             "positive_share": round(share, 4) if sentences >= 30 else None,
             "sentences": sentences,
+            "emotions": [[label, round(fraction, 4)] for label, fraction in emotions],
+            "emotion_language": language,
         }
-        for book_id, (mean, share, sentences) in books.items()
+        for book_id, (mean, share, sentences, emotions, language) in books.items()
     }

@@ -80,6 +80,10 @@ export interface BookText {
     positive_share: number | null;
     /** Sentences the classifier read. */
     sentences: number;
+    /** [emotion code, share]: the model's top three over the sampled sentences, most frequent first. */
+    emotions: [string, number][];
+    /** Which emotion model read the book ("id" or "en"); null when neither language applied. */
+    emotion_language: string | null;
   };
 }
 

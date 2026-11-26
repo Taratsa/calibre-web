@@ -116,18 +116,31 @@ ENV PATH="/lsiopy/bin:${PATH}"
 
 COPY cps/ /app/calibre-web/cps/
 
-# Sentence-level tone classifier (cps/sentiment_store.py -> taratsa_text::classifier). Apache-2.0. The SHA-256 values
-# pin the files: a changed upstream file fails the build instead of silently moving every book's tone score.
+# Sentence tone and emotion models (cps/sentiment_store.py -> taratsa_text::classifier / ::emotions). All
+# Apache-2.0 or MIT. The SHA-256 values pin the files: a changed upstream file fails the build instead of silently
+# moving every book's numbers.
+#   sentiment/  Horizon-Labs/multilingual-sentiment-small       Apache-2.0  ModernBERT, 3-way sentiment
+#   emotion_id/ StevenLimcorn/indonesian-roberta-base-emotion-classifier  MIT  RoBERTa, EmoT 5 emotions
+#   emotion_en/ SamLowe/roberta-base-go_emotions                 MIT         RoBERTa, GoEmotions 28 emotions
 ARG SENTIMENT_MODEL_REPO=Horizon-Labs/multilingual-sentiment-small
-ARG SENTIMENT_MODEL_REVISION=main
-RUN mkdir -p /app/calibre-web/cps/sentiment_model && cd /app/calibre-web/cps/sentiment_model && \
-    for file in model.safetensors tokenizer.json config.json special_tokens_map.json; do \
-      curl -fsSL -o "$file" "https://huggingface.co/${SENTIMENT_MODEL_REPO}/resolve/${SENTIMENT_MODEL_REVISION}/${file}"; \
-    done && \
-    printf '%s\n' \
-      'f0d0b6d2958f2f0a017ec060bb4768bfa720ef67625486ef02710c6484d02dd1  model.safetensors' \
-      'f34b44a6dc8a0eef651bfa10e8325057530152606a69d9c3b6ae02efb1558f0a  tokenizer.json' \
-      '516d8046cca3238145113bbe8b5e2b5b34b2f0c04b0ca093d7761c5f0a504eb9  config.json' | sha256sum -c -
+ARG EMOTION_ID_MODEL_REPO=StevenLimcorn/indonesian-roberta-base-emotion-classifier
+ARG EMOTION_EN_MODEL_REPO=SamLowe/roberta-base-go_emotions
+RUN set -e; root=/app/calibre-web/cps/sentiment_model; \
+    fetch() { mkdir -p "$root/$1"; for file in model.safetensors tokenizer.json config.json; do \
+      curl -fsSL -o "$root/$1/$file" "https://huggingface.co/$2/resolve/main/$file"; done; }; \
+    fetch sentiment "$SENTIMENT_MODEL_REPO"; \
+    fetch emotion_id "$EMOTION_ID_MODEL_REPO"; \
+    fetch emotion_en "$EMOTION_EN_MODEL_REPO"; \
+    cd "$root" && printf '%s\n' \
+      'f0d0b6d2958f2f0a017ec060bb4768bfa720ef67625486ef02710c6484d02dd1  sentiment/model.safetensors' \
+      'f34b44a6dc8a0eef651bfa10e8325057530152606a69d9c3b6ae02efb1558f0a  sentiment/tokenizer.json' \
+      '516d8046cca3238145113bbe8b5e2b5b34b2f0c04b0ca093d7761c5f0a504eb9  sentiment/config.json' \
+      '13539f82a8580263bfa2b13432d1fb5496b8ffd05ec2985b58114dbf577b18b7  emotion_id/model.safetensors' \
+      '4cae32a9b97d0215cbbf409b1996e541729405dfc13becf37fd3bd08b8ba8991  emotion_id/tokenizer.json' \
+      'f384e99cdefa19b6db70eb62c507ac68a7a008c8644c22fe111fe09b1b440c03  emotion_id/config.json' \
+      '84d6d338b4cf63f0ed3c990a0ce748d32d1d2965c072f4645accaa71af3888c0  emotion_en/model.safetensors' \
+      '90e2336a1cdacffe5d4328ab323aa9e5c33889026e4e4881323bebdeeb0e179d  emotion_en/tokenizer.json' \
+      '3d4ef8e1465958e169761e2eb09d6e2c8d8806216973691ac40e405c97339d5c  emotion_en/config.json' | sha256sum -c -
 COPY cps.py /app/calibre-web/
 COPY pyproject.toml /app/calibre-web/
 COPY messages.pot /app/calibre-web/

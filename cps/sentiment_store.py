@@ -14,7 +14,9 @@ from collections.abc import Iterable
 from datetime import UTC, datetime
 from pathlib import Path
 
-from taratsa_text import sentiment_sample, sentiment_sentences, sentiment_summary
+from collections import Counter
+
+from taratsa_text import emotion_labels, sentiment_sample, sentiment_sentences, sentiment_summary
 
 from .ocr_service import (
     BookRecord,
@@ -26,14 +28,18 @@ from .ocr_service import (
     extract_book_ocr,
 )
 from .sentiment import SENTENCE_TONE_VERSION, BookTone, profiles
-from .text_analysis import SENTIMENT_SAMPLE, SENTIMENT_SAMPLE_MIN
+from .text_analysis import SENTIMENT_SAMPLE, SENTIMENT_SAMPLE_MIN, language_words
 
 # Books per classifier call: 32 books x 60 sentences is ~5 minutes of CPU, a convenient progress and write unit.
 BOOK_BATCH = 32
 # Books scored before the stored file is rewritten (it is rewritten as a whole, ~1 MB, so not after every batch).
 WRITE_EVERY = 200
-# The model ships in the image beside this module.
-MODEL_DIRECTORY = Path(__file__).with_name("sentiment_model")
+# The models ship in the image beside this module: the sentence-tone ModernBERT and one RoBERTa per emotion language.
+MODEL_ROOT = Path(__file__).with_name("sentiment_model")
+SENTIMENT_DIRECTORY = MODEL_ROOT / "sentiment"
+EMOTION_DIRECTORIES = {"id": MODEL_ROOT / "emotion_id", "en": MODEL_ROOT / "emotion_en"}
+# Sentences read by the emotion model: a share of the tone sample, enough for a top-three over a book.
+EMOTION_SAMPLE = 40
 
 
 def _tone_path() -> Path:
@@ -44,20 +50,39 @@ def _tone_path() -> Path:
 
 def configured() -> bool:
     """Whether the model files are present (they are baked into the image)."""
-    return (MODEL_DIRECTORY / "model.safetensors").is_file()
+    directories = [SENTIMENT_DIRECTORY, *EMOTION_DIRECTORIES.values()]
+    return all((directory / "model.safetensors").is_file() for directory in directories)
 
 
-def score_books(
-    entries: Iterable[tuple[BookRecord, FormatRecord, str]], model_directory: Path = MODEL_DIRECTORY
-) -> int:
+def emotion_language(languages: list[str], sentences: list[str]) -> str | None:
+    """The emotion model to use: English or Indonesian, from the Calibre tag, else from function words.
+
+    Emotion nets exist for these two languages only; an untagged book is decided on the sentences the tone sample
+    already holds (the library is overwhelmingly Indonesian, so the tie goes there).
+    """
+    if any(code == "eng" for code in languages):
+        return "en"
+    if any(code in {"ind", "msa"} for code in languages):
+        return "id"
+    words = language_words()
+    text = " ".join(sentences).lower()
+    indonesian = sum(text.count(f" {word} ") for word in words["ind"])
+    english = sum(text.count(f" {word} ") for word in words["eng"])
+    if english > indonesian * 1.5:
+        return "en"
+    return "id" if indonesian > 0 else None
+
+
+def score_books(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
     """Score every given book with cached text; returns how many books got a tone. Writes the stored file."""
-    from taratsa_text import configure_sentiment_model
+    from taratsa_text import configure_emotion_models, configure_sentiment_model
 
     if not configured():
-        raise RuntimeError(f"sentiment model not found in {model_directory}")
-    configure_sentiment_model(str(model_directory))
+        raise RuntimeError(f"sentiment models not found in {MODEL_ROOT}")
+    configure_sentiment_model(str(SENTIMENT_DIRECTORY))
+    configure_emotion_models(str(EMOTION_DIRECTORIES["id"]), str(EMOTION_DIRECTORIES["en"]))
     books: dict[int, BookTone] = {}
-    batch: list[tuple[int, list[str]]] = []
+    batch: list[tuple[int, list[str], str | None]] = []
 
     written = 0
 
@@ -77,16 +102,24 @@ def score_books(
         written = len(books)
 
     def flush() -> None:
-        texts = [sentence for _, sentences in batch for sentence in sentences]
+        texts = [sentence for _, sentences, _ in batch for sentence in sentences]
         if not texts:
             return
         probabilities = sentiment_sentences(texts)
         cursor = 0
-        for book_id, sentences in batch:
+        for book_id, sentences, language in batch:
             result = sentiment_summary(probabilities[cursor : cursor + len(sentences)])
             cursor += len(sentences)
-            if result is not None:
-                books[book_id] = (result[0], result[1], len(sentences))
+            if result is None:
+                continue
+            emotions: list[tuple[str, float]] = []
+            if language:
+                labels = emotion_labels(sentences[:EMOTION_SAMPLE], language)
+                counts = Counter(label for label in labels if label != "neutral")
+                total = sum(counts.values())
+                if total:
+                    emotions = [(label, count / total) for label, count in counts.most_common(3)]
+            books[book_id] = (result[0], result[1], len(sentences), emotions, language)
         batch.clear()
         if len(books) - written >= WRITE_EVERY:
             write()
@@ -99,7 +132,8 @@ def score_books(
         sentences = sentiment_sample(document.markdown_html, book.id, SENTIMENT_SAMPLE)
         if len(sentences) < SENTIMENT_SAMPLE_MIN:
             continue
-        batch.append((book.id, sentences))
+        language = emotion_language(list(getattr(book, "languages", ())), sentences)
+        batch.append((book.id, sentences, language))
         if len(batch) >= BOOK_BATCH:
             flush()
     flush()
