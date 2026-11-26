@@ -18,11 +18,12 @@ Calibre-Web is a web app that offers a clean and intuitive interface for browsin
    - [Installation via pip (recommended)](#installation-via-pip-recommended)
    - [Quick start](#quick-start)
    - [Requirements](#requirements)
-4. [Docker Images](#docker-images)
-5. [Troubleshooting](#troubleshooting)
-6. [Contributor Recognition](#contributor-recognition)
-7. [Contact](#contact)
-8. [Contributing to Calibre-Web](#contributing-to-calibre-web)
+4. [Architecture](#architecture)
+5. [Docker Images](#docker-images)
+6. [Troubleshooting](#troubleshooting)
+7. [Contributor Recognition](#contributor-recognition)
+8. [Contact](#contact)
+9. [Contributing to Calibre-Web](#contributing-to-calibre-web)
 
 </details>
 
@@ -54,6 +55,130 @@ Calibre-Web is a web app that offers a clean and intuitive interface for browsin
 - Self-update capability
 - "Magic Link" login for easy access on eReaders
 - LDAP, Google/GitHub OAuth, and proxy authentication support
+
+## Architecture
+
+This fork (branch `taratsa`) runs as the Pustaka deployment at `pustaka.taratsa.id`: a Flask backend (Calibre-Web),
+an Astro SSR frontend, and a Manticore full-text index, behind Caddy and Cloudflare. Details per area are in
+[AGENTS.md](AGENTS.md); deployment steps are in [DEPLOY.md](DEPLOY.md).
+
+### Infrastructure
+
+```mermaid
+flowchart TB
+    user["Browsers, OPDS and Kobo clients, crawlers"]
+    cf["Cloudflare CDN<br/>caches /files/*, /_astro/*, covers"]
+
+    subgraph host["Host"]
+        caddy["Caddy :80/:443<br/>routes by path, sets Cache-Control"]
+        script["build-frontend.sh<br/>seed + image rebuild"]
+        subgraph caddy_net["Docker network caddy_net"]
+            flask["calibre-web-automated<br/>Flask + gevent :8083<br/>auth, downloads, OPDS, Kobo, readers, OCR and index tasks"]
+            astro["astro-frontend<br/>Astro SSR on Bun :4321<br/>catalog, book, author, search, data pages"]
+        end
+        subgraph search_net["Docker network search_net, internal, no route out"]
+            manticore["manticore 32.1.3<br/>text_chunks index, no auth, no published port"]
+        end
+        lib[("library/<br/>Calibre metadata.db and book files, written by Flask uploads and edits")]
+        data[("data/<br/>app.db, ocr-cache, analysis, clippings")]
+        seed[("frontend/src/data<br/>seed JSON: books, slugs, authors, popular")]
+    end
+
+    ocr["TurboOCR server<br/>GPU, TURBOOCR_URL"]
+    umami["Umami analytics"]
+    fb["Formbricks feedback<br/>feedback.taratsa.id"]
+    hc["Hardcover API<br/>optional metadata"]
+
+    user --> cf --> caddy
+    caddy -->|"/admin /login /download /files /read /show /opds /kobo /cover /api/read"| flask
+    caddy -->|"everything else, /og, /read/id/ocr"| astro
+    astro -->|"BACKEND_URL"| flask
+    astro -->|"search reads"| manticore
+    flask -->|"index writes"| manticore
+    flask --- lib
+    flask --- data
+    flask -->|"PDF pages"| ocr
+    flask -->|"server-side events"| umami
+    flask -.-> hc
+    user -.->|"widget, tracker"| fb
+    user -.-> umami
+    script -->|"reads"| lib
+    script -->|"reads"| data
+    script -->|"writes"| seed
+    seed -->|"baked into image"| astro
+    seed -->|"mounted read-only, book-slugs.json"| flask
+```
+
+| Component | Role | Exposure |
+|---|---|---|
+| Cloudflare | CDN in front of Caddy. Caches only `/files/*`, `/_astro/*` and covers; never `/download/*`, `/read/*`, `/show/*`, `/api/*`, `/opds*` | public |
+| Caddy | Host-level reverse proxy, path routing, cache headers, 500 MB upload limit; serves `/_astro/*` and static assets itself with `file_server`; `old.pustaka.taratsa.id` goes straight to Flask | 80/443 |
+| `calibre-web-automated` | Flask app on one gevent loop; owns auth, downloads and counters, OPDS, Kobo, readers, OCR, duplicate scans, admin | `127.0.0.1:8083`, `caddy_net`, `search_net` |
+| `astro-frontend` | Public site rendered per request; reads `src/data` baked into the image, queries Manticore for in-text search | `caddy_net`, `search_net` |
+| `manticore` | Full-text index over OCR/EPUB text (derived data, rebuildable) | `search_net` only |
+| TurboOCR | External GPU OCR server for PDF pages | outbound from Flask |
+
+### Request routing
+
+```mermaid
+flowchart LR
+    req["Request"] --> c{"Caddy path match"}
+    c -->|"/download/*"| dl["Flask: authorize, count, 302"]
+    dl --> files["/files/id/fmt/version/sig<br/>signed, immutable, CDN-cached"]
+    c -->|"/files/*"| files
+    c -->|"/read/* /show/* /api/read/*"| rd["Flask: readers, Readium manifest, OCR API<br/>private, no-store"]
+    c -->|"/opds* /kobo/*"| op["Flask: OPDS 5 min cache, Kobo sync"]
+    c -->|"/cover/* /cover_thumb/*"| cv["Flask: cover or generated title card<br/>1 day cache"]
+    c -->|"/book/NUMBER/"| lg["Flask: 301 to slug via book-slugs.json"]
+    c -->|"/admin* /login* /me /ajax/*"| ad["Flask: stateful pages"]
+    c -->|"/read/id/ocr/fmt/, /og/*.png"| as1["Astro: text reader, OG images"]
+    c -->|"default"| as2["Astro SSR: /, /book/slug/, /author/, /search/, /search/text/, /data, /kliping/, /video/"]
+```
+
+### Data flow
+
+```mermaid
+flowchart LR
+    subgraph sources["Sources of truth"]
+        calib[("library/metadata.db<br/>+ book files")]
+        appdb[("data/app.db<br/>users, downloads, settings")]
+        cache[("data/ocr-cache<br/>extracted text")]
+        clip[("data/clippings/*.md")]
+    end
+
+    upload["Upload, Calibre edit,<br/>bulk import"] --> calib
+    calib -->|"PDF"| ocr["TurboOCR"] --> cache
+    calib -->|"EPUB text"| cache
+
+    cache -->|"chunk ~900 chars"| mant[("Manticore<br/>text_chunks")]
+    cache -->|"Rust taratsa_text<br/>CorpusBuilder"| ana[("data/analysis<br/>corpus, book_text, author_text")]
+
+    calib --> sd["seed.mjs"]
+    appdb --> sd
+    ana --> sd
+    clip -->|"published only"| sd
+    cache -->|"ready list"| sd
+    sd --> json[("frontend/src/data<br/>books, slugs, file URLs,<br/>popular, ocr-ready, clippings")]
+    json -->|"docker image build"| astro["Astro SSR"]
+    json -->|"read-only mount"| flask["Flask: slug redirects"]
+    mant --> astro
+
+    calib -.->|"fingerprint change"| fts[("app.db books_fts<br/>trigram prefilter")]
+    fts --> flask2["Flask: OPDS and legacy search"]
+```
+
+Notes on how the pieces fit:
+
+- **Catalog changes are batch-published.** New or edited books appear on the Astro site after `./build-frontend.sh`
+  (seed from the live `library/metadata.db` and `data/app.db`, rebuild the image, recreate the container, about a
+  minute). Flask serves new books immediately.
+- **Downloads are counted once, served by the CDN.** `/download` authorizes, counts (anonymous = user 0) and 302s to a
+  signed, versioned `/files/...` URL that Cloudflare caches for a year; `/files` never counts.
+- **Search has three layers.** `/search/` is an in-process MiniSearch index over `books.json` (Astro); `/search/text/`
+  queries Manticore (passages inside the books); OPDS and the legacy UI use `cps/db.py` with an FTS5 prefilter.
+- **Text analysis runs off the web loop.** The corpus rebuild (Rust, GIL released) and the full-text reindex are
+  background tasks in Flask's worker; do not restart the Flask container while they or OCR run.
+- **Manticore has no authentication.** It is reachable only on the internal `search_net`; never publish port 9308.
 
 ## Installation
 
