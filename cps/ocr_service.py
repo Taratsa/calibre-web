@@ -141,6 +141,27 @@ def _save_cache(path: Path, request: dict[str, object], result: dict[str, object
     temporary.replace(path)
 
 
+def _prune_superseded(cache_path: Path, request: dict[str, object]) -> None:
+    """Delete the other cache files of this book and format once ``cache_path`` holds the current text.
+
+    The file name embeds a hash of the request (version, file name, size, mtime), so a version bump or a changed
+    file writes a new name and the old one is never read again. Files that do not parse, or that name a different
+    format, are left alone. A failed delete is logged and ignored: it must not fail the OCR job.
+    """
+    book_id = request["book_id"]
+    book_format = str(request["format"]).lower()
+    for path in cache_directory().glob(f"{book_id}-*.json"):
+        if path == cache_path:
+            continue
+        try:
+            other = json.loads(path.read_text(encoding="utf-8"))["request"]
+            if other["book_id"] != book_id or str(other["format"]).lower() != book_format:
+                continue
+            path.unlink()
+        except (OSError, KeyError, TypeError, ValueError) as exc:
+            log.warning("Could not prune superseded OCR cache %s: %s", path.name, exc)
+
+
 def ready_ocr_entries() -> list[tuple[int, str, int]]:
     entries: dict[tuple[int, str], int] = {}
     for path in cache_directory().glob("*.json"):
@@ -577,6 +598,7 @@ def extract_book_ocr(
                 "processing_time_ms": document.processing_time_ms,
             },
         )
+        _prune_superseded(cache_path, request)
         # Derived data: the full-text index follows the cache. Runs off this thread and never fails the OCR job.
         replace_format_later(book.id, selected_format, document.markdown_html)
         return document

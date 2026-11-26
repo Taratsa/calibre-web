@@ -215,6 +215,13 @@ Two live search systems (plus the legacy advanced-search form):
   drops books that left the library. ~250 s for 8,386 formats. After a bulk reindex run
   `optimize index text_chunks option cutoff=1, sync=1` (~140 s) to merge to one disk chunk (1.19 GB). A write that
   happens while Manticore is down is lost until the next full rebuild
+- OCR cache housekeeping: a cache file is `<book id>-<sha256 of the request>.json`, so a `CACHE_VERSION` bump, a layout
+  version bump or a changed source file writes a NEW name. `extract_book_ocr()` calls `_prune_superseded()` right
+  after a successful `_save_cache()` and deletes the other files of the same book and format (a file that does not
+  parse is left alone; a failed delete is logged, never fails the job). Before this (2026-11-26) nothing deleted them:
+  1,544 stale files (231 MB of 1.6 GB) were removed by hand. Books never re-extracted keep their old-version file, and
+  files of books deleted from the library are not pruned. The cache is large because it IS the text: 1.22 G characters
+  (EPUB 11.4k files 149 MB; PDF 9.4k files 1.14 GB, median file 10 KB, p90 176 KB, largest 4 MB), HTML markup only 7%
 - Query syntax (`matchExpression()` in `frontend/src/utils/fulltext.ts`, the only copy): all words must be in ONE passage,
   `"exact phrase"`, `-word`, `-"phrase"`; 7+ plain words need 60% of them (a pasted sentence); every Manticore
   operator is stripped; max 200 characters, 12 words. When the exact words match nothing the query is retried with
