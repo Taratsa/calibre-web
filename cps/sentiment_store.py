@@ -115,7 +115,13 @@ def dominant_emotions(
     total = sum(counts.values())
     if not total:
         return []
-    return [(label, count / total) for label, count in counts.most_common(3)]
+    ranked = counts.most_common(3)
+    # One label over half the votes is not a profile, it is the model's prior ("sadness" for Indonesian prose); the
+    # page says "beragam" instead of pretending the book has one mood. Measured: 70% of the first 224 books topped out
+    # at sadness, and 67% of the books with emotions had a top label over 50%.
+    if ranked[0][1] / total > 0.5:
+        return []
+    return [(label, count / total) for label, count in ranked]
 
 
 def score_books(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:

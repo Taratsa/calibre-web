@@ -147,6 +147,18 @@
   color: var(--muted);
 }
 .book-detail .book-text__sentiment { margin: 0 0 1rem; }
+.book-detail .book-text__measure { margin: 0.25rem 0 1rem; }
+.book-detail .book-text__measure > summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--muted-strong);
+}
+.book-detail .book-text__hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.book-detail .book-text__measure[open] > summary { margin-bottom: 0.5rem; }
 .book-detail .book-text__trend {
   display: block;
   width: 100%;

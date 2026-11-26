@@ -140,6 +140,7 @@ const emotionNames: Record<string, string> = {
   optimism: 'Optimis', pride: 'Bangga', realization: 'Sadar', relief: 'Lega', remorse: 'Menyesal',
   surprise: 'Terkejut', contempt: 'Meremehkan', neutral: 'Netral',
 };
+const measure = Boolean(sentenceTone || sentiment);
 const modelEmotions = (sentenceTone?.emotions ?? []).map(([code, share]) => `${emotionNames[code] ?? code} ${Math.round(share * 100)}%`);
 
 // Trend: 16 sections, null where a section had too few polarity words; each run of scored sections becomes one line.
@@ -255,47 +256,53 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
         <section class="book-text">
           <h2 class="shelves-heading">Tentang teks</h2>
           {textFacts && <p class="book-text__facts">{textFacts}</p>}
-          {sentenceTone && (
-            <p class="book-text__note">
-              Nada kalimat (model): {sentenceToneLabel}
-              {sentenceTone.positive_share !== null
-                ? ` · ${Math.round(sentenceTone.positive_share * 100)}% kalimat positif atau negatif dari ${countFormat.format(sentenceTone.sentences)} kalimat contoh`
-                : ''}
-            </p>
-          )}
-          {modelEmotions.length > 0 && (
-            <p class="book-text__note">Emosi dominan (model): {modelEmotions.join(' · ')}</p>
-          )}
-          {sentiment && (
-            <div class="book-text__sentiment">
-              <p class="book-text__note">
-                Sentimen kata: {toneLabel} · {countFormat.format(sentiment.positive)} kata positif, {countFormat.format(sentiment.negative)} negatif
-              </p>
-              {trendSegments.length > 0 && (
-                <svg class="book-text__trend" viewBox="0 0 240 48" preserveAspectRatio="none" role="img" aria-label="Tren sentimen kata dari awal ke akhir buku">
-                  <line class="book-text__trend-zero" x1="0" y1="24" x2="240" y2="24" />
-                  {trendSegments.map(points => <polyline class="book-text__trend-line" points={points} />)}
-                </svg>
+          {measure && (
+            <details class="book-text__measure">
+              <summary>Nada &amp; emosi <span class="book-text__hint">eksperimental</span></summary>
+              {sentenceTone && (
+                <p class="book-text__note">
+                  Nada kalimat (model): {sentenceToneLabel}
+                  {sentenceTone.positive_share !== null
+                    ? ` · ${Math.round(sentenceTone.positive_share * 100)}% kalimat positif atau negatif dari ${countFormat.format(sentenceTone.sentences)} kalimat contoh`
+                    : ''}
+                </p>
               )}
-              {topEmotions.length > 0 && (
-                <>
-                  <h3>Emosi dominan (leksikon)</h3>
-                  <ol class="book-text__rank book-text__emotions">
-                    {topEmotions.map(([code, count]) => (
-                      <li>
-                        <span>{emotionLabels[code] ?? code}</span>
-                        <span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / emotionTotal) * 100}%`}></i></span>
-                        <b>{Math.round((count / emotionTotal) * 100)}%</b>
-                      </li>
-                    ))}
-                  </ol>
-                </>
+              {modelEmotions.length > 0 && (
+                <p class="book-text__note">Emosi dominan (model): {modelEmotions.join(' · ')}</p>
               )}
-              <p class="book-text__note">
-                {trendSegments.length > 0 && 'Grafik: tiap bagian buku, dari awal (kiri) ke akhir (kanan). '}
-                Perkiraan kasar dari daftar kata, relatif terhadap pustaka ini; bukan penilaian isi buku.
-              </p>
-            </div>
+              {sentiment && (
+                <div class="book-text__sentiment">
+                  <p class="book-text__note">
+                    Sentimen kata: {toneLabel} · {countFormat.format(sentiment.positive)} kata positif, {countFormat.format(sentiment.negative)} negatif
+                  </p>
+                  {trendSegments.length > 0 && (
+                    <svg class="book-text__trend" viewBox="0 0 240 48" preserveAspectRatio="none" role="img" aria-label="Tren sentimen kata dari awal ke akhir buku">
+                      <line class="book-text__trend-zero" x1="0" y1="24" x2="240" y2="24" />
+                      {trendSegments.map(points => <polyline class="book-text__trend-line" points={points} />)}
+                    </svg>
+                  )}
+                  {topEmotions.length > 0 && (
+                    <>
+                      <h3>Emosi dominan (leksikon)</h3>
+                      <ol class="book-text__rank book-text__emotions">
+                        {topEmotions.map(([code, count]) => (
+                          <li>
+                            <span>{emotionLabels[code] ?? code}</span>
+                            <span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / emotionTotal) * 100}%`}></i></span>
+                            <b>{Math.round((count / emotionTotal) * 100)}%</b>
+                          </li>
+                        ))}
+                      </ol>
+                    </>
+                  )}
+                  <p class="book-text__note">
+                    {trendSegments.length > 0 && 'Grafik: tiap bagian buku, dari awal (kiri) ke akhir (kanan). '}
+                    Perkiraan kasar dari kata dan kalimat, relatif terhadap pustaka ini; mengukur pilihan kata, bukan isi
+                    atau mutu buku, dan tidak menangkap ironi.
+                  </p>
+                </div>
+              )}
+            </details>
           )}
           {(text.top.length > 0 || text.distinct.length > 0) && (
             <div class="book-text__lists">
