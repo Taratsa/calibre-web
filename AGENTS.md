@@ -94,6 +94,16 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
   that is not a public movie (e.g. the audio-only `pyk6qfgqs…`) is skipped with a
   warning. `crawl:videos` keeps entries from other collections, so a re-crawl does not
   drop them; `import:videos-mei98` is idempotent and skips videos already present
+- Whole channels come through `bun run import:channel -- --channel @jakartanicus
+  --collection jakartanicus` (`scripts/import-channel-videos.ts`, 2026-11-26): `yt-dlp --flat-playlist`
+  on the Videos and Live tabs (that listing is NOT bot-checked here), then each new video's watch page for
+  the publish date (`videoDescriptionHeaderRenderer.publishDate`) and description
+  (`expandableVideoDescriptionBodyRenderer.attributedDescription` when YouTube sends it). It is resumable:
+  it saves every 25 videos, skips ids already present and retries the rest on a rerun (1,132 videos in 43 min
+  at `--delay-ms 1500`, 13 reran clean). 1,151 `jakartanicus` entries (2014-2026), channel name
+  "Jakartanicus"; the listing carries no dates, so `--extractor-args youtubetab:approximate_date` (all
+  "today") is not usable. Descriptions come back empty for these pages, so their detail pages say the
+  description is unavailable
 - Detail pages embed `youtube-nocookie.com` or `archive.org/embed/<id>`; a YouTube video
   the owner does not allow to be embedded (`embeddable: false`, e.g. `CPpVu28RIxg`)
   renders a thumbnail link to YouTube instead. YouTube descriptions need
