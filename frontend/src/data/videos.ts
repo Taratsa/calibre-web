@@ -17,6 +17,10 @@ export interface CrawledVideo {
   providerTitle?: string
   providerDescription?: string
   thumbnailUrl?: string
+  /** Set for videos that did not come from the WordPress crawl (e.g. `mei-1998`). */
+  collection?: string
+  /** `false` when the owner disallows embedding: link to YouTube instead of an iframe. */
+  embeddable?: boolean
 }
 
 export interface FilmVideo extends CrawledVideo {

@@ -2,9 +2,22 @@ import rawData from '../src/data/wordpress-videos.json'
 
 const outputPath = new URL('../src/data/wordpress-videos.json', import.meta.url)
 const userAgent = 'pustaka-taratsa-video-metadata/1.0'
-const concurrency = 12
+const flag = (name: string) => {
+  const index = process.argv.indexOf(`--${name}`)
+  return index === -1 ? undefined : process.argv[index + 1]
+}
+const concurrency = Number(flag('concurrency') ?? 12)
+// YouTube answers 429 after a burst; use `--delay-ms 2000 --concurrency 1` for a polite run.
+const delayMs = Number(flag('delay-ms') ?? 0)
 const metadata = new Map<string, { providerTitle?: string; providerDescription?: string }>()
-const videos = rawData.videos.filter((video) => video.type === 'youtube' && (!video.providerDescription || !video.providerTitle))
+// `--collection mei-1998` limits the run to one collection (the crawl alone is ~2,500 requests).
+const collectionFlag = process.argv.indexOf('--collection')
+const collection = collectionFlag === -1 ? undefined : process.argv[collectionFlag + 1]
+const videos = rawData.videos.filter((video) => (
+  video.type === 'youtube'
+  && (!video.providerDescription || !video.providerTitle)
+  && (!collection || ('collection' in video && video.collection === collection))
+))
 let cursor = 0
 let enriched = 0
 let failed = 0
@@ -73,6 +86,7 @@ async function worker() {
     const video = videos[cursor]
     cursor += 1
     await enrich(video)
+    await Bun.sleep(delayMs)
     if ((enriched + failed) % 50 === 0) console.log(`Processed ${enriched + failed}/${videos.length}`)
   }
 }

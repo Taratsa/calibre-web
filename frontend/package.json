@@ -9,6 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "crawl:videos": "bun scripts/crawl-videos.ts",
+    "import:videos-mei98": "bun scripts/import-mei98-videos.ts",
     "enrich:videos": "bun scripts/enrich-video-metadata.ts",
     "enrich:video-descriptions": "bun scripts/enrich-video-descriptions.ts",
     "enrich:video-transcripts": "bun scripts/enrich-video-transcripts.ts",

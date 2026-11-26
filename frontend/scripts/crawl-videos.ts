@@ -28,5 +28,10 @@ for (const video of parsed.videos) {
   ids.add(key)
 }
 
+// Videos added from other collections (scripts/import-mei98-videos.ts) are not in the upstream crawl: keep them.
+const current = JSON.parse(await Bun.file(outputPath).text().catch(() => '{"videos":[]}'))
+const extra = current.videos.filter((video: { collection?: string; type: string; id: string }) => video.collection && !ids.has(`${video.type}:${video.id}`))
+parsed.videos.push(...extra)
+
 await Bun.write(outputPath, `${JSON.stringify(parsed, null, 2)}\n`)
-console.log(`Wrote ${parsed.videos.length} videos from ${parsed.totalPosts} source posts`)
+console.log(`Wrote ${parsed.videos.length} videos (${extra.length} from other collections) from ${parsed.totalPosts} source posts`)

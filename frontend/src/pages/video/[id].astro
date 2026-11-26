@@ -25,7 +25,13 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
 
   <article class="video-detail">
     <div class="video-player">
-      {video.type === 'youtube' && (
+      {video.type === 'youtube' && video.embeddable === false && (
+        <a class="video-player__external" href={video.watchUrl} target="_blank" rel="noopener noreferrer">
+          {video.thumbnail && <img src={video.thumbnail} alt="" referrerpolicy="no-referrer" />}
+          <span>Pemilik video tidak mengizinkan pemutaran di situs lain. Tonton di YouTube ↗</span>
+        </a>
+      )}
+      {video.type === 'youtube' && video.embeddable !== false && (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}?rel=0`}
           title={video.providerTitle}
@@ -53,10 +59,12 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
       <a href={video.channelUrl} target="_blank" rel="noopener noreferrer">{video.channel}</a>
     </p>
     {description && <p class="video-desc">{description}{description.length >= 400 ? '…' : ''}</p>}
-    <p class="video-source">
-      Sumber artikel:
-      <a href={video.sourceUrl} target="_blank" rel="noopener noreferrer">{video.sourceUrl}</a>
-    </p>
+    {video.postId !== 0 && (
+      <p class="video-source">
+        Sumber artikel:
+        <a href={video.sourceUrl} target="_blank" rel="noopener noreferrer">{video.sourceUrl}</a>
+      </p>
+    )}
 
     {transcript && (
       <section class="transcript" aria-labelledby="transcript-heading">
@@ -92,6 +100,9 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
   .video-detail { max-width: 60rem; }
   .video-player { aspect-ratio: 16 / 9; width: 100%; margin-bottom: 1.5rem; border-radius: 4px; background: #000; overflow: hidden; box-shadow: 0 1px 4px var(--shadow-sm); }
   .video-player iframe, .video-player video { width: 100%; height: 100%; border: 0; display: block; }
+  .video-player__external { position: relative; display: block; width: 100%; height: 100%; color: #fff; text-decoration: none; }
+  .video-player__external img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; display: block; }
+  .video-player__external span { position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem; text-align: center; font-weight: 600; }
   .video-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
   .video-desc { max-width: 48rem; line-height: 1.65; }
   .video-source { margin-top: 1.25rem; overflow-wrap: anywhere; }

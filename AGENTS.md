@@ -71,6 +71,21 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - Transcripts are read at SSR time from `src/data` (copied into the runtime image),
   so new files need an image rebuild
 
+### Video Catalogue (`/video/`, `/video/<id>/`)
+- Two sources in one list (`frontend/src/data/videos.ts`): the WordPress crawl
+  (`bun run crawl:videos`, upstream `Taratsa/pustaka-video`) and the videos of the
+  Arsip Mei 1998 catalogue (`bun run import:videos-mei98`,
+  `scripts/import-mei98-videos.ts`). Collection entries carry `collection: "mei-1998"`,
+  `postId: 0` and `sourceUrl` = the YouTube watch URL; only their selection (YouTube ID,
+  title, date) comes from Logos, playback/thumbnail/channel come from YouTube (oEmbed).
+  `crawl:videos` keeps entries from other collections, so a re-crawl does not drop them;
+  `import:videos-mei98` is idempotent and skips videos already present
+- Detail pages embed `youtube-nocookie.com`; a video the owner does not allow to be
+  embedded (`embeddable: false`, e.g. `CPpVu28RIxg`) renders a thumbnail link to YouTube
+  instead. YouTube descriptions need `bun run enrich:video-descriptions --
+  --collection mei-1998 --concurrency 1 --delay-ms 2500`: watch pages answer 429 after a
+  burst, and `yt-dlp` asks for a "not a bot" sign-in on datacenter IPs
+
 ## Download Tracking
 
 ### Anonymous Downloads

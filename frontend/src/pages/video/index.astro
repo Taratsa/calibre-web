@@ -53,7 +53,7 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
 
 <BaseLayout
   title="Video"
-  description={`Arsip ${uniqueVideos.length.toLocaleString('id-ID')} video dari Perpustakaan Online Genosida 1965-1966.`}
+  description={`Arsip ${uniqueVideos.length.toLocaleString('id-ID')} video terkait sejarah Indonesia: Perpustakaan Online Genosida 1965-1966 dan katalog Arsip Mei 1998.`}
   canonical="/video/"
   ogType="website"
 >
@@ -81,7 +81,7 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
 
   <div class="video-summary">
     <span>Menampilkan {from}–{to} dari {uniqueVideos.length.toLocaleString('id-ID')} video</span>
-    <span>Diambil dari {totalPosts.toLocaleString('id-ID')} artikel</span>
+    <span>Diambil dari {totalPosts.toLocaleString('id-ID')} artikel dan katalog Arsip Mei 1998</span>
   </div>
 
   {pageVideos.length ? (
