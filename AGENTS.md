@@ -673,6 +673,11 @@ Two live search systems (plus the legacy advanced-search form):
   honors wildcards. For existing source and thumbnail cache files, ETags, Last-Modified, Range, HEAD, 304 and 412
   match Flask. ETag mtime is rendered through Python-compatible floating-point formatting.
 - Check with `cargo fmt --check && cargo clippy --release --all-targets && cargo test --release` in `rust/backend`.
+- **`rust/host-rs`** is a `rust-anything` (PyO3) port of `host/rebuild-listener.py`'s `log()` (2026-11-27): 28 recorded
+  cases match, `rust-anything gate rust/host-rs` passes, and the speed is a tie (the call is I/O-bound). It is NOT wired
+  in: `rust-anything enable` was never run, so `host/rebuild-listener.py` still uses its own `log`. `main` and `Handler`
+  stay in Python. Write code only in `src/port.rs`; `src/lib.rs` is generated (`rust-anything refresh`) and
+  `cases.jsonl` is the recording, never edited by hand.
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

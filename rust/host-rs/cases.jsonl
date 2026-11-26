@@ -1,0 +1,28 @@
+{"fn": "log", "args": [":ns:key.path"], "ok": null}
+{"fn": "log", "args": ["abc"], "ok": null}
+{"fn": "log", "args": ["  padded  "], "ok": null}
+{"fn": "log", "args": ["a"], "ok": null}
+{"fn": "log", "args": ["a😀b😀c"], "ok": null}
+{"fn": "log", "args": ["emoji 👍🏽 mix"], "ok": null}
+{"fn": "log", "args": ["ünïcödé"], "ok": null}
+{"fn": "log", "args": ["helloHello World"], "ok": null}
+{"fn": "log", "args": ["HELLO"], "ok": null}
+{"fn": "log", "args": ["é"], "ok": null}
+{"fn": "log", "args": ["a:b:c"], "ok": null}
+{"fn": "log", "args": ["ab"], "ok": null}
+{"fn": "log", "args": ["héllo wörld"], "ok": null}
+{"fn": "log", "args": ["👍🏽 thumbs"], "ok": null}
+{"fn": "log", "args": ["日本語"], "ok": null}
+{"fn": "log", "args": [""], "ok": null}
+{"fn": "log", "args": ["İstanbul"], "ok": null}
+{"fn": "log", "args": ["straße"], "ok": null}
+{"fn": "log", "args": ["ılık ırmak"], "ok": null}
+{"fn": "log", "args": ["👨‍👩‍👧 family"], "ok": null}
+{"fn": "log", "args": ["a b"], "ok": null}
+{"fn": "log", "args": ["ΣΊΣΥΦΟΣ"], "ok": null}
+{"fn": "log", "args": ["a😀b"], "ok": null}
+{"fn": "log", "args": ["﻿bom"], "ok": null}
+{"fn": "log", "args": ["a²b x½ y①"], "ok": null}
+{"fn": "log", "args": ["aⅠb Ⅻ"], "ok": null}
+{"fn": "log", "args": ["a𐐀b 𝐀bc"], "ok": null}
+{"fn": "log", "args": ["कि ٣٤"], "ok": null}

@@ -1,0 +1,43 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "/home/devuser/workspaces/calibre-web",
+  "unit": "host/",
+  "language": "python",
+  "kind": "pyo3",
+  "crate_name": "host-rs",
+  "exports": [
+    {
+      "name": "log",
+      "file": "host/rebuild-listener.py",
+      "line": 26,
+      "params": [
+        {
+          "name": "msg",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "main",
+      "file": "host/rebuild-listener.py",
+      "line": 95,
+      "reason": "a command-line entry point: it stays in Python, and `app front-door` takes the command line over when the whole app moves"
+    },
+    {
+      "name": "Handler",
+      "file": "host/rebuild-listener.py",
+      "line": 38,
+      "reason": "class: inherits from BaseHTTPRequestHandler"
+    }
+  ]
+}
