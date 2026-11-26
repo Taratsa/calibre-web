@@ -15,7 +15,7 @@ from collections.abc import Iterable, Sequence
 from statistics import median
 
 # Bump when the calibration, the sample rules or the profile keys change; the seed ignores another version.
-SENTENCE_TONE_VERSION = 3
+SENTENCE_TONE_VERSION = 4
 
 # Per-book values: (mean polarity, share of decision sentences that are positive, sentences scored,
 # top emotion labels [(label, share of labelled sentences)], emotion language).

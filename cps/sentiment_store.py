@@ -10,11 +10,10 @@ from __future__ import annotations
 
 import json
 import os
-from collections.abc import Iterable
+from collections import Counter
+from collections.abc import Iterable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
-
-from collections import Counter
 
 from taratsa_text import emotion_labels, sentiment_sample, sentiment_sentences, sentiment_summary
 
@@ -40,6 +39,8 @@ SENTIMENT_DIRECTORY = MODEL_ROOT / "sentiment"
 EMOTION_DIRECTORIES = {"id": MODEL_ROOT / "emotion_id", "en": MODEL_ROOT / "emotion_en"}
 # Sentences read by the emotion model: a share of the tone sample, enough for a top-three over a book.
 EMOTION_SAMPLE = 40
+# A book needs this many emotionally loaded sentences (by the tone model) before its emotions are shown.
+EMOTION_MIN_SENTENCES = 5
 
 
 def _stored_books(path: Path) -> dict[str, dict[str, object]]:
@@ -88,6 +89,35 @@ def emotion_language(languages: list[str], sentences: list[str]) -> str | None:
     return "id" if indonesian > 0 else None
 
 
+def affective(probabilities: Sequence[Sequence[float]]) -> list[bool]:
+    """Which sentences the tone model calls positive or negative (not neutral).
+
+    The Indonesian emotion model was trained on tweets with no neutral class, so on an informational sentence it still
+    names an emotion; measured on 96 real book sentences it called 46 of them "sadness", including a computing manual
+    and a Dutch military text. Only sentences the tone model already finds emotionally loaded (24% of that sample)
+    may vote.
+    """
+    return [max(row[0], row[2]) >= row[1] for row in probabilities]
+
+
+def dominant_emotions(
+    sentences: list[str], probabilities: Sequence[Sequence[float]], language: str
+) -> list[tuple[str, float]]:
+    """A book's top three emotions among its affective sentences, with shares of the labelled affective sentences.
+
+    Needs at least ``EMOTION_MIN_SENTENCES`` affective sentences: a handful of votes is noise, not a tone.
+    """
+    chosen = [sentence for sentence, loaded in zip(sentences, affective(probabilities), strict=True) if loaded]
+    if len(chosen) < EMOTION_MIN_SENTENCES:
+        return []
+    labels = emotion_labels(chosen[:EMOTION_SAMPLE], language)
+    counts = Counter(label for label in labels if label != "neutral")
+    total = sum(counts.values())
+    if not total:
+        return []
+    return [(label, count / total) for label, count in counts.most_common(3)]
+
+
 def score_books(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
     """Score every given book with cached text; returns how many books got a tone. Writes the stored file."""
     from taratsa_text import configure_emotion_models, configure_sentiment_model
@@ -130,17 +160,14 @@ def score_books(entries: Iterable[tuple[BookRecord, FormatRecord, str]]) -> int:
         probabilities = sentiment_sentences(texts)
         cursor = 0
         for book_id, sentences, language in batch:
-            result = sentiment_summary(probabilities[cursor : cursor + len(sentences)])
+            book_probabilities = probabilities[cursor : cursor + len(sentences)]
+            result = sentiment_summary(book_probabilities)
             cursor += len(sentences)
             if result is None:
                 continue
             emotions: list[tuple[str, float]] = []
             if language:
-                labels = emotion_labels(sentences[:EMOTION_SAMPLE], language)
-                counts = Counter(label for label in labels if label != "neutral")
-                total = sum(counts.values())
-                if total:
-                    emotions = [(label, count / total) for label, count in counts.most_common(3)]
+                emotions = dominant_emotions(sentences, book_probabilities, language)
             books[book_id] = (result[0], result[1], len(sentences), emotions, language)
         batch.clear()
         if len(books) - written >= WRITE_EVERY:
