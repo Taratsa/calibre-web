@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 4452,
-    "longer_than": 69,
+    "longer_than": 68,
     "top": [
       [
         "konflik",
@@ -206,12 +206,28 @@
       [
         8668,
         0.21
+      ],
+      [
+        8370,
+        0.2
+      ],
+      [
+        8373,
+        0.2
+      ],
+      [
+        6803,
+        0.2
+      ],
+      [
+        8749,
+        0.19
       ]
     ],
     "sentiment": {
-      "score": 0.58,
+      "score": 0.59,
       "positive": 82,
-      "negative": 22,
+      "negative": 21,
       "trend": [
         null,
         0.78,
@@ -225,9 +241,9 @@
         1,
         null,
         1,
-        -0.2,
-        0.5,
-        0.55,
+        null,
+        1,
+        0.42,
         null
       ],
       "emotions": [

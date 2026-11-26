@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2182,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "bahasa",
@@ -180,12 +180,28 @@
       [
         2020,
         0.14
+      ],
+      [
+        7442,
+        0.14
+      ],
+      [
+        2225,
+        0.13
+      ],
+      [
+        2333,
+        0.12
+      ],
+      [
+        7893,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.1,
-      "positive": 33,
-      "negative": 27,
+      "score": 0.21,
+      "positive": 34,
+      "negative": 22,
       "trend": [],
       "emotions": []
     }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 6528,
-    "longer_than": 74,
+    "longer_than": 73,
     "top": [
       [
         "perbedaan",
@@ -206,14 +206,30 @@
       [
         2095,
         0.36
+      ],
+      [
+        3733,
+        0.35
+      ],
+      [
+        1842,
+        0.35
+      ],
+      [
+        2507,
+        0.34
+      ],
+      [
+        7894,
+        0.33
       ]
     ],
     "sentiment": {
-      "score": 0.27,
-      "positive": 66,
-      "negative": 38,
+      "score": 0.31,
+      "positive": 68,
+      "negative": 36,
       "trend": [
-        0.56,
+        0.75,
         null,
         0.2,
         null,
@@ -223,10 +239,10 @@
         0.87,
         -0.29,
         null,
-        -0.11,
+        0,
         null,
         0.56,
-        -0.6,
+        null,
         0.78,
         null
       ],

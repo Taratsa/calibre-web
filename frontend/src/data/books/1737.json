@@ -14,7 +14,7 @@
     "Indonesia",
     "Jakarta",
     "music",
-    "Zine"
+    "zine"
   ],
   "publisher": {
     "id": 87,
@@ -209,12 +209,28 @@
       [
         1525,
         0.17
+      ],
+      [
+        1465,
+        0.16
+      ],
+      [
+        1530,
+        0.16
+      ],
+      [
+        1557,
+        0.16
+      ],
+      [
+        2554,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.47,
-      "positive": 56,
-      "negative": 20,
+      "score": 0.57,
+      "positive": 58,
+      "negative": 16,
       "trend": [
         1,
         0.2,
@@ -224,12 +240,12 @@
         null,
         0.11,
         null,
-        0.67,
+        1,
         null,
         null,
-        0.2,
         null,
-        0.33,
+        null,
+        0.6,
         1,
         null
       ],

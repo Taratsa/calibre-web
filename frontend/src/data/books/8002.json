@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1874,
-    "longer_than": 59,
+    "longer_than": 58,
     "top": [
       [
         "hewan",
@@ -124,12 +124,12 @@
         14
       ],
       [
-        "manusia",
-        24
-      ],
-      [
         "sekresi",
         4
+      ],
+      [
+        "manusia",
+        24
       ],
       [
         "iconoclast",
@@ -206,12 +206,28 @@
       [
         7349,
         0.17
+      ],
+      [
+        2410,
+        0.17
+      ],
+      [
+        2347,
+        0.16
+      ],
+      [
+        7889,
+        0.15
+      ],
+      [
+        3720,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0,
+      "score": 0.08,
       "positive": 27,
-      "negative": 27,
+      "negative": 23,
       "trend": [],
       "emotions": []
     }

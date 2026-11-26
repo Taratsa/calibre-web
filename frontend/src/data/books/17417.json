@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 2624,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "fantsuam",
@@ -211,19 +211,35 @@
       [
         16852,
         0.24
+      ],
+      [
+        17415,
+        0.23
+      ],
+      [
+        17489,
+        0.22
+      ],
+      [
+        18550,
+        0.22
+      ],
+      [
+        17649,
+        0.21
       ]
     ],
     "sentiment": {
-      "score": 0.25,
+      "score": 0.33,
       "positive": 40,
-      "negative": 24,
+      "negative": 20,
       "trend": [
         null,
         0,
         1,
         null,
         null,
-        0.43,
+        1,
         1,
         null,
         null,
@@ -232,7 +248,7 @@
         -0.67,
         null,
         null,
-        0.5,
+        0.71,
         null
       ],
       "emotions": []

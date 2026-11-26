@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 523,
-    "longer_than": 40,
+    "longer_than": 39,
     "top": [
       [
         "quality",
@@ -133,11 +133,11 @@
         7
       ],
       [
-        "recommendation",
+        "score",
         5
       ],
       [
-        "score",
+        "recommendation",
         5
       ],
       [
@@ -210,7 +210,23 @@
       ],
       [
         18062,
-        0.17
+        0.18
+      ],
+      [
+        16096,
+        0.16
+      ],
+      [
+        12509,
+        0.16
+      ],
+      [
+        10182,
+        0.15
+      ],
+      [
+        14912,
+        0.14
       ]
     ],
     "sentiment": null

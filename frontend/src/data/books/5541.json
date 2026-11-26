@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 4431,
-    "longer_than": 69,
+    "longer_than": 68,
     "top": [
       [
         "sastra",
@@ -211,29 +211,45 @@
       [
         6324,
         0.14
+      ],
+      [
+        5966,
+        0.13
+      ],
+      [
+        5348,
+        0.13
+      ],
+      [
+        5630,
+        0.13
+      ],
+      [
+        5333,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": 0.19,
-      "positive": 72,
-      "negative": 49,
+      "score": 0.32,
+      "positive": 73,
+      "negative": 38,
       "trend": [
-        0.75,
+        1,
         -0.6,
-        -0.33,
+        -0.2,
         null,
         null,
         null,
         null,
         null,
-        0.14,
-        0.2,
+        0.33,
+        0.24,
         0.38,
         0.75,
         -0.27,
         0.78,
         null,
-        0.67
+        1
       ],
       "emotions": [
         [

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2204,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "teh",
@@ -116,12 +116,12 @@
         9
       ],
       [
-        "komunal",
-        9
-      ],
-      [
         "tiongkok",
         10
+      ],
+      [
+        "komunal",
+        9
       ],
       [
         "kelas",
@@ -136,12 +136,12 @@
         11
       ],
       [
-        "imperium",
-        6
-      ],
-      [
         "oolong",
         3
+      ],
+      [
+        "imperium",
+        6
       ],
       [
         "fanon",
@@ -206,14 +206,24 @@
       [
         2093,
         0.12
+      ],
+      [
+        7037,
+        0.12
+      ],
+      [
+        3924,
+        0.12
+      ],
+      [
+        2619,
+        0.12
+      ],
+      [
+        3708,
+        0.11
       ]
     ],
-    "sentiment": {
-      "score": 0.4,
-      "positive": 37,
-      "negative": 16,
-      "trend": [],
-      "emotions": []
-    }
+    "sentiment": null
   }
 }

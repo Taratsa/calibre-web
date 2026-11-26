@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2209,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "pertandingan",
@@ -206,12 +206,28 @@
       [
         3741,
         0.25
+      ],
+      [
+        2447,
+        0.25
+      ],
+      [
+        48,
+        0.24
+      ],
+      [
+        47,
+        0.24
+      ],
+      [
+        41,
+        0.23
       ]
     ],
     "sentiment": {
-      "score": 0.44,
+      "score": 0.53,
       "positive": 49,
-      "negative": 19,
+      "negative": 15,
       "trend": [],
       "emotions": []
     }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 2415,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "kaum",
@@ -212,21 +212,37 @@
       [
         1761,
         0.23
+      ],
+      [
+        7208,
+        0.23
+      ],
+      [
+        3778,
+        0.22
+      ],
+      [
+        2497,
+        0.22
+      ],
+      [
+        7885,
+        0.22
       ]
     ],
     "sentiment": {
-      "score": 0,
+      "score": 0.03,
       "positive": 49,
-      "negative": 49,
+      "negative": 46,
       "trend": [
         null,
         0,
-        -0.5,
+        -0.43,
         1,
         null,
-        -0.06,
+        0,
         null,
-        -0.71,
+        -0.67,
         null,
         null,
         null,

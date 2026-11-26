@@ -46,7 +46,7 @@
   ],
   "text": {
     "words": 3396,
-    "longer_than": 66,
+    "longer_than": 65,
     "top": [
       [
         "rodang",
@@ -205,27 +205,43 @@
       [
         5499,
         0.13
+      ],
+      [
+        5460,
+        0.12
+      ],
+      [
+        5294,
+        0.12
+      ],
+      [
+        3586,
+        0.12
+      ],
+      [
+        3509,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.23,
-      "positive": 50,
-      "negative": 31,
+      "score": 0.4,
+      "positive": 51,
+      "negative": 22,
       "trend": [
         1,
-        0.5,
+        0.71,
         null,
         null,
         null,
-        -0.71,
-        -0.43,
-        0,
+        -0.67,
+        -0.2,
+        0.2,
         1,
         null,
         0.14,
         1,
-        null,
-        0.5,
+        0.2,
+        0.33,
         null,
         null
       ],

@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 2627,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "noc",
@@ -141,12 +141,12 @@
         11
       ],
       [
-        "pelatihan",
-        11
-      ],
-      [
         "management",
         10
+      ],
+      [
+        "pelatihan",
+        11
       ],
       [
         "retensi",
@@ -211,12 +211,28 @@
       [
         12308,
         0.15
+      ],
+      [
+        11723,
+        0.15
+      ],
+      [
+        15539,
+        0.15
+      ],
+      [
+        893,
+        0.14
+      ],
+      [
+        15361,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.54,
-      "positive": 54,
-      "negative": 16,
+      "score": 0.64,
+      "positive": 55,
+      "negative": 12,
       "trend": [],
       "emotions": []
     }

@@ -53,7 +53,7 @@
   ],
   "text": {
     "words": 3063,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "kancil",
@@ -212,12 +212,28 @@
       [
         5398,
         0.24
+      ],
+      [
+        6082,
+        0.2
+      ],
+      [
+        5400,
+        0.2
+      ],
+      [
+        5138,
+        0.19
+      ],
+      [
+        5046,
+        0.19
       ]
     ],
     "sentiment": {
-      "score": 0.04,
-      "positive": 41,
-      "negative": 38,
+      "score": 0.09,
+      "positive": 43,
+      "negative": 36,
       "trend": [
         0,
         null,
@@ -227,13 +243,13 @@
         null,
         null,
         -0.69,
-        -0.33,
+        -0.2,
         -0.14,
         -0.71,
         null,
         0.33,
         null,
-        0.14,
+        0.33,
         null
       ],
       "emotions": [

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2403,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "anarkisme",
@@ -128,12 +128,12 @@
         3
       ],
       [
-        "otoritas",
-        6
-      ],
-      [
         "libertarian",
         4
+      ],
+      [
+        "otoritas",
+        6
       ],
       [
         "pemikiran",
@@ -168,17 +168,33 @@
       ],
       [
         7150,
-        0.21
+        0.22
       ],
       [
         3087,
         0.19
+      ],
+      [
+        1957,
+        0.18
+      ],
+      [
+        3752,
+        0.17
+      ],
+      [
+        7203,
+        0.17
+      ],
+      [
+        2444,
+        0.17
       ]
     ],
     "sentiment": {
-      "score": 0.11,
-      "positive": 42,
-      "negative": 34,
+      "score": 0.15,
+      "positive": 43,
+      "negative": 32,
       "trend": [
         -0.43,
         null,
@@ -193,7 +209,7 @@
         -0.33,
         null,
         null,
-        -0.17,
+        -0.09,
         null,
         null
       ],

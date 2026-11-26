@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3050,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "negara",
@@ -192,7 +192,7 @@
     "similar": [
       [
         7424,
-        0.74
+        0.73
       ],
       [
         2147,
@@ -213,12 +213,28 @@
       [
         7378,
         0.22
+      ],
+      [
+        7993,
+        0.22
+      ],
+      [
+        7901,
+        0.22
+      ],
+      [
+        7968,
+        0.2
+      ],
+      [
+        3746,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": 0.27,
-      "positive": 35,
-      "negative": 20,
+      "score": 0.4,
+      "positive": 37,
+      "negative": 16,
       "trend": [],
       "emotions": []
     }

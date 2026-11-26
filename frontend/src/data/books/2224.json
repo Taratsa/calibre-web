@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3754,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "mahasiswa",
@@ -108,12 +108,12 @@
         46
       ],
       [
-        "kapitalisme",
-        36
-      ],
-      [
         "kampus",
         28
+      ],
+      [
+        "kapitalisme",
+        36
       ],
       [
         "kognitif",
@@ -206,29 +206,45 @@
       [
         3692,
         0.19
+      ],
+      [
+        2064,
+        0.19
+      ],
+      [
+        7184,
+        0.18
+      ],
+      [
+        2599,
+        0.18
+      ],
+      [
+        2099,
+        0.18
       ]
     ],
     "sentiment": {
-      "score": 0.06,
+      "score": 0.12,
       "positive": 46,
-      "negative": 41,
+      "negative": 36,
       "trend": [
         null,
         0.2,
         0.4,
         null,
         null,
-        0.2,
+        null,
         0.71,
-        -0.43,
+        -0.33,
         null,
         0,
         -0.6,
-        0.14,
+        0.6,
         null,
-        -0.43,
+        -0.33,
         null,
-        -0.25
+        -0.14
       ],
       "emotions": []
     }

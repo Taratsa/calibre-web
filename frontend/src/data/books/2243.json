@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1726,
-    "longer_than": 58,
+    "longer_than": 57,
     "top": [
       [
         "pekerja",
@@ -206,12 +206,28 @@
       [
         2510,
         0.3
+      ],
+      [
+        2639,
+        0.28
+      ],
+      [
+        2535,
+        0.19
+      ],
+      [
+        7975,
+        0.18
+      ],
+      [
+        7386,
+        0.17
       ]
     ],
     "sentiment": {
-      "score": -0.19,
-      "positive": 23,
-      "negative": 34,
+      "score": -0.12,
+      "positive": 25,
+      "negative": 32,
       "trend": [],
       "emotions": []
     }

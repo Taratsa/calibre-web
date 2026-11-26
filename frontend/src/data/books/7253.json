@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3776,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "mahasiswa",
@@ -213,12 +213,28 @@
       [
         1533,
         0.17
+      ],
+      [
+        7884,
+        0.17
+      ],
+      [
+        7986,
+        0.17
+      ],
+      [
+        2670,
+        0.16
+      ],
+      [
+        3950,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": -0.11,
+      "score": -0.03,
       "positive": 33,
-      "negative": 41,
+      "negative": 35,
       "trend": [],
       "emotions": []
     }

@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 2017,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "indonesia",
@@ -133,12 +133,12 @@
         38
       ],
       [
-        "bahasa",
-        23
-      ],
-      [
         "masasilam",
         6
+      ],
+      [
+        "bahasa",
+        23
       ],
       [
         "by-sa",
@@ -215,12 +215,28 @@
       [
         4028,
         0.24
+      ],
+      [
+        4025,
+        0.23
+      ],
+      [
+        6740,
+        0.23
+      ],
+      [
+        4008,
+        0.21
+      ],
+      [
+        4012,
+        0.21
       ]
     ],
     "sentiment": {
-      "score": 0.21,
+      "score": 0.19,
       "positive": 34,
-      "negative": 22,
+      "negative": 23,
       "trend": [],
       "emotions": []
     }

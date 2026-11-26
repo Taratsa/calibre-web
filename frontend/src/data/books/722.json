@@ -196,13 +196,46 @@
       [
         1434,
         0.23
+      ],
+      [
+        7589,
+        0.23
+      ],
+      [
+        493,
+        0.22
+      ],
+      [
+        21708,
+        0.22
+      ],
+      [
+        16949,
+        0.22
       ]
     ],
     "sentiment": {
-      "score": 0.43,
-      "positive": 58,
-      "negative": 23,
-      "trend": [],
+      "score": 0.44,
+      "positive": 61,
+      "negative": 24,
+      "trend": [
+        null,
+        0.75,
+        null,
+        null,
+        null,
+        null,
+        -0.5,
+        0.25,
+        null,
+        null,
+        -0.2,
+        0.25,
+        0.67,
+        0.82,
+        1,
+        null
+      ],
       "emotions": [
         [
           "joy",

@@ -20,7 +20,7 @@
     "the-bunbury",
     "well-whale",
     "Yogyakarta",
-    "Zine"
+    "zine"
   ],
   "publisher": {
     "id": 420,
@@ -209,28 +209,44 @@
       [
         131,
         0.16
+      ],
+      [
+        1524,
+        0.16
+      ],
+      [
+        4742,
+        0.16
+      ],
+      [
+        132,
+        0.16
+      ],
+      [
+        1527,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.45,
-      "positive": 66,
-      "negative": 25,
+      "score": 0.56,
+      "positive": 68,
+      "negative": 19,
       "trend": [
-        0.71,
+        1,
         null,
         0.2,
         1,
-        0,
-        0.78,
+        0.11,
+        0.8,
         null,
         1,
         null,
         null,
-        0.5,
+        0.71,
         null,
         0.67,
         0.43,
-        0,
+        0.2,
         0.6
       ],
       "emotions": [

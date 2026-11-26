@@ -12,7 +12,7 @@
   "author_sort": "Clea",
   "tags": [
     "Cinema",
-    "film",
+    "Film",
     "Indonesia",
     "Politic",
     "Yogyakarta",
@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 9301,
-    "longer_than": 79,
+    "longer_than": 78,
     "top": [
       [
         "perempuan",
@@ -213,25 +213,41 @@
       [
         4048,
         0.15
+      ],
+      [
+        4040,
+        0.15
+      ],
+      [
+        4723,
+        0.14
+      ],
+      [
+        2708,
+        0.14
+      ],
+      [
+        7079,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.31,
+      "score": 0.34,
       "positive": 119,
-      "negative": 62,
+      "negative": 59,
       "trend": [
         1,
-        -0.25,
+        -0.2,
         -0.12,
         null,
         1,
         0.6,
-        -0.14,
+        0,
         0.33,
         1,
         0.4,
         0.58,
-        0.43,
+        0.54,
         0.38,
         0.05,
         null,

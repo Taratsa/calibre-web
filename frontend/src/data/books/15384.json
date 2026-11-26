@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 3763,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "siem",
@@ -211,12 +211,28 @@
       [
         15580,
         0.2
+      ],
+      [
+        15339,
+        0.19
+      ],
+      [
+        15532,
+        0.17
+      ],
+      [
+        15637,
+        0.16
+      ],
+      [
+        16730,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.35,
-      "positive": 35,
-      "negative": 17,
+      "score": 0.38,
+      "positive": 36,
+      "negative": 16,
       "trend": [],
       "emotions": []
     }

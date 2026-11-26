@@ -1,61 +1,65 @@
 {
   "id": 2342,
   "title": "Akar Rumput Zine Vol. 4",
-  "slug": "akar-rumput-zine-vol-4-tidak-diketahui",
-  "slugBase": "akar-rumput-zine-vol-4-tidak-diketahui",
+  "slug": "akar-rumput-zine-vol-4-akar-rumput-zine",
+  "slugBase": "akar-rumput-zine-vol-4-akar-rumput-zine",
   "authors": [
     {
-      "id": 668,
-      "name": "Tidak diketahui"
+      "id": 7807,
+      "name": "Akar Rumput Zine"
     }
   ],
-  "author_sort": "diketahui, Tidak",
+  "author_sort": "Zine, Akar Rumput",
   "tags": [
-    "Akar Rumput Zine"
+    "Akar Rumput Zine",
+    "Archipelago Anti-Authoritarian Archive",
+    "zine"
   ],
   "publisher": {
-    "id": 117,
-    "name": "Archipelago Anti-Authoritarian Archive"
+    "id": 1666,
+    "name": "Akar Rumput Zine"
   },
   "publishers": [
     {
-      "id": 117,
-      "name": "Archipelago Anti-Authoritarian Archive"
+      "id": 1666,
+      "name": "Akar Rumput Zine"
     }
   ],
-  "languages": [],
-  "pubdate": null,
+  "languages": [
+    "ind"
+  ],
+  "pubdate": "2009-07-04",
   "timestamp": "2026-05-25 05:54:24.770880",
-  "last_modified": "2026-05-25 05:54:24.770884",
+  "last_modified": "2026-11-26 03:34:36.563698",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/2342?v=1779663264",
-  "cover_og_url": "/cover/2342/og?v=1779663264",
+  "cover_url": "/cover_thumb/2342?v=1795638876",
+  "cover_og_url": "/cover/2342/og?v=1795638876",
   "has_cover": true,
-  "url": "/book/akar-rumput-zine-vol-4-tidak-diketahui/",
+  "url": "/book/akar-rumput-zine-vol-4-akar-rumput-zine/",
   "rating": null,
-  "comment": "Archipelago Anti-Authoritarian Archive · 2009",
+  "comment": null,
   "data": [
     {
       "format": "pdf",
       "size": 2171917,
-      "name": "Akar Rumput Zine Vol. 4 - Tidak diketahui"
+      "name": "Akar Rumput Zine Vol. 4 - Akar Rumput Zine"
     }
   ],
   "text": {
-    "words": 7875,
-    "longer_than": 76,
+    "words": 8334,
+    "longer_than": 77,
     "top": [
       [
         "band",
-        52
+        46
       ],
       [
         "zine",
-        36
+        37
       ],
       [
         "catheter",
@@ -70,12 +74,12 @@
         21
       ],
       [
-        "tmn",
+        "jember",
         20
       ],
       [
-        "jember",
-        19
+        "tmn",
+        20
       ],
       [
         "negara",
@@ -104,24 +108,28 @@
         22
       ],
       [
-        "band",
-        52
-      ],
-      [
         "tmn",
         20
+      ],
+      [
+        "zine",
+        37
       ],
       [
         "dropdead",
         16
       ],
       [
-        "zine",
-        36
+        "band",
+        46
       ],
       [
         "arz",
         12
+      ],
+      [
+        "jember",
+        20
       ],
       [
         "straightedge",
@@ -130,10 +138,6 @@
       [
         "split",
         21
-      ],
-      [
-        "jember",
-        19
       ],
       [
         "hehe",
@@ -185,59 +189,75 @@
     "similar": [
       [
         1516,
-        0.31
+        0.3
       ],
       [
         2655,
         0.25
       ],
       [
-        2739,
+        1527,
         0.25
+      ],
+      [
+        2739,
+        0.24
       ],
       [
         1846,
-        0.25
-      ],
-      [
-        1527,
         0.24
       ],
       [
         1524,
-        0.23
+        0.22
+      ],
+      [
+        2543,
+        0.22
+      ],
+      [
+        2263,
+        0.22
+      ],
+      [
+        2554,
+        0.2
+      ],
+      [
+        2504,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": 0.12,
-      "positive": 74,
+      "score": 0.13,
+      "positive": 76,
       "negative": 58,
       "trend": [
         null,
-        0.2,
-        0.71,
-        0.2,
         0,
-        -0.08,
-        -0.27,
-        0.57,
+        0.71,
+        0.4,
+        -0.11,
+        0,
+        0,
+        0.26,
         -0.09,
         -0.5,
-        0.75,
-        -0.23,
-        -0.25,
+        0.6,
+        0,
+        -0.11,
         null,
         null,
-        0.67
+        1
       ],
       "emotions": [
         [
-          "trust",
-          13
+          "anger",
+          14
         ],
         [
-          "anger",
-          12
+          "trust",
+          13
         ],
         [
           "sadness",

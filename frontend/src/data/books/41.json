@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2402,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "klub",
@@ -144,8 +144,8 @@
         6
       ],
       [
-        "sidoarjo",
-        9
+        "mania",
+        7
       ]
     ],
     "phrases": [
@@ -206,12 +206,28 @@
       [
         3723,
         0.23
+      ],
+      [
+        40,
+        0.23
+      ],
+      [
+        109,
+        0.22
+      ],
+      [
+        2405,
+        0.22
+      ],
+      [
+        3741,
+        0.21
       ]
     ],
     "sentiment": {
-      "score": 0.53,
+      "score": 0.68,
       "positive": 42,
-      "negative": 13,
+      "negative": 8,
       "trend": [],
       "emotions": []
     }

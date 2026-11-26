@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2037,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "orang",
@@ -180,12 +180,28 @@
       [
         2210,
         0.17
+      ],
+      [
+        3093,
+        0.17
+      ],
+      [
+        2445,
+        0.16
+      ],
+      [
+        3989,
+        0.16
+      ],
+      [
+        4093,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.15,
+      "score": 0.13,
       "positive": 38,
-      "negative": 28,
+      "negative": 29,
       "trend": [],
       "emotions": []
     }

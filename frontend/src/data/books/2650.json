@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2842,
-    "longer_than": 64,
+    "longer_than": 63,
     "top": [
       [
         "masyarakat",
@@ -206,18 +206,34 @@
       [
         2652,
         0.17
+      ],
+      [
+        2095,
+        0.16
+      ],
+      [
+        8062,
+        0.16
+      ],
+      [
+        7304,
+        0.16
+      ],
+      [
+        1776,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0.07,
-      "positive": 39,
-      "negative": 34,
+      "score": 0.11,
+      "positive": 41,
+      "negative": 33,
       "trend": [
         -0.14,
         null,
         null,
-        -0.2,
-        0.2,
+        -0.09,
+        0.33,
         0.43,
         null,
         null,
@@ -225,8 +241,8 @@
         null,
         -0.14,
         null,
-        -0.43,
-        0.33,
+        -0.33,
+        0.5,
         null,
         null
       ],

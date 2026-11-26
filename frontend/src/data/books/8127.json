@@ -145,12 +145,12 @@
         3
       ],
       [
-        "sinar",
-        5
-      ],
-      [
         "menari",
         4
+      ],
+      [
+        "sinar",
+        5
       ],
       [
         "bunga-bunga",
@@ -182,11 +182,27 @@
       [
         8114,
         0.18
+      ],
+      [
+        2109,
+        0.18
+      ],
+      [
+        4676,
+        0.17
+      ],
+      [
+        2552,
+        0.17
+      ],
+      [
+        8124,
+        0.17
       ]
     ],
     "sentiment": {
-      "score": -0.16,
-      "positive": 38,
+      "score": -0.15,
+      "positive": 39,
       "negative": 53,
       "trend": [
         null,
@@ -195,7 +211,7 @@
         null,
         null,
         null,
-        null,
+        0.2,
         null,
         0,
         null,

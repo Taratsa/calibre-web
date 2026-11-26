@@ -100,12 +100,12 @@
     ],
     "distinct": [
       [
-        "pertanahan",
-        36
-      ],
-      [
         "bandung",
         66
+      ],
+      [
+        "pertanahan",
+        36
       ],
       [
         "kabupaten",
@@ -201,17 +201,33 @@
       ],
       [
         8992,
-        0.22
+        0.21
       ],
       [
         8342,
         0.21
+      ],
+      [
+        8370,
+        0.2
+      ],
+      [
+        8546,
+        0.2
+      ],
+      [
+        8353,
+        0.2
+      ],
+      [
+        8557,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": -0.19,
+      "score": -0.16,
       "positive": 23,
-      "negative": 34,
+      "negative": 32,
       "trend": [],
       "emotions": []
     }

@@ -199,22 +199,22 @@
     ],
     "sentiment": {
       "score": 0.02,
-      "positive": 52,
-      "negative": 50,
+      "positive": 55,
+      "negative": 53,
       "trend": [
         null,
         null,
-        null,
+        -0.6,
         null,
         0.14,
-        0.09,
-        -0.75,
+        0,
+        -0.78,
         -0.6,
         null,
         0.09,
         0.14,
-        -0.33,
-        0.45,
+        -0.4,
+        0.5,
         null,
         1,
         null
@@ -222,7 +222,7 @@
       "emotions": [
         [
           "joy",
-          13
+          14
         ],
         [
           "sadness",
@@ -242,7 +242,7 @@
         ],
         [
           "fear",
-          2
+          3
         ],
         [
           "disgust",

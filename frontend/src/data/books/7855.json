@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2044,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "seks",
@@ -190,12 +190,28 @@
       [
         7131,
         0.17
+      ],
+      [
+        2312,
+        0.15
+      ],
+      [
+        2292,
+        0.14
+      ],
+      [
+        2610,
+        0.12
+      ],
+      [
+        76,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": -0.15,
-      "positive": 23,
-      "negative": 31,
+      "score": -0.06,
+      "positive": 25,
+      "negative": 28,
       "trend": [],
       "emotions": []
     }

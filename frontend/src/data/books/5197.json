@@ -65,7 +65,7 @@
   ],
   "text": {
     "words": 1127,
-    "longer_than": 52,
+    "longer_than": 51,
     "top": [
       [
         "kerajaan",
@@ -224,12 +224,28 @@
       [
         5182,
         0.14
+      ],
+      [
+        3624,
+        0.13
+      ],
+      [
+        6097,
+        0.12
+      ],
+      [
+        3620,
+        0.12
+      ],
+      [
+        19,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.81,
+      "score": 0.84,
       "positive": 58,
-      "negative": 6,
+      "negative": 5,
       "trend": [],
       "emotions": []
     }

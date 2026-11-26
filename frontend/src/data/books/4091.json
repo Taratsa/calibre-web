@@ -134,12 +134,12 @@
         61
       ],
       [
-        "platform",
-        49
-      ],
-      [
         "digital",
         59
+      ],
+      [
+        "platform",
+        49
       ],
       [
         "download",
@@ -208,28 +208,44 @@
       [
         4052,
         0.19
+      ],
+      [
+        1265,
+        0.16
+      ],
+      [
+        4056,
+        0.15
+      ],
+      [
+        346,
+        0.15
+      ],
+      [
+        17860,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.33,
+      "score": 0.54,
       "positive": 60,
-      "negative": 30,
+      "negative": 18,
       "trend": [
         1,
         1,
+        0.45,
+        -0.2,
+        0.25,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0.2,
+        0.6,
         0.33,
-        -0.27,
-        0.25,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0.25,
-        0,
-        0.14,
-        0.09,
         null
       ],
       "emotions": []

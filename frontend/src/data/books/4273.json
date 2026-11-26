@@ -59,7 +59,7 @@
   ],
   "text": {
     "words": 3098,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "ketua",
@@ -218,30 +218,29 @@
       [
         4404,
         0.16
+      ],
+      [
+        4453,
+        0.16
+      ],
+      [
+        1006,
+        0.15
+      ],
+      [
+        8768,
+        0.15
+      ],
+      [
+        6321,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0.29,
+      "score": 0.3,
       "positive": 45,
-      "negative": 25,
-      "trend": [
-        -0.2,
-        null,
-        -0.2,
-        0.56,
-        -0.14,
-        0.67,
-        0.5,
-        null,
-        -1,
-        null,
-        0.25,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "negative": 24,
+      "trend": [],
       "emotions": []
     }
   }

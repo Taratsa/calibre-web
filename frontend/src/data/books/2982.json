@@ -40,7 +40,7 @@
   ],
   "text": {
     "words": 8606,
-    "longer_than": 78,
+    "longer_than": 77,
     "top": [
       [
         "sing",
@@ -199,12 +199,28 @@
       [
         5812,
         0.33
+      ],
+      [
+        5809,
+        0.33
+      ],
+      [
+        5811,
+        0.32
+      ],
+      [
+        5808,
+        0.31
+      ],
+      [
+        5813,
+        0.31
       ]
     ],
     "sentiment": {
-      "score": -0.17,
+      "score": -0.18,
       "positive": 29,
-      "negative": 41,
+      "negative": 42,
       "trend": [],
       "emotions": []
     }

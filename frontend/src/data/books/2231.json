@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3794,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "orang",
@@ -132,12 +132,12 @@
         5
       ],
       [
-        "squat",
-        5
-      ],
-      [
         "aktivisme",
         7
+      ],
+      [
+        "squat",
+        5
       ],
       [
         "pekerja",
@@ -206,29 +206,45 @@
       [
         4731,
         0.24
+      ],
+      [
+        1762,
+        0.24
+      ],
+      [
+        4730,
+        0.23
+      ],
+      [
+        4715,
+        0.23
+      ],
+      [
+        4663,
+        0.23
       ]
     ],
     "sentiment": {
-      "score": 0.04,
-      "positive": 54,
-      "negative": 50,
+      "score": 0.1,
+      "positive": 59,
+      "negative": 48,
       "trend": [
         null,
         0,
-        null,
+        -0.2,
         -0.5,
-        0.56,
+        0.78,
         0.5,
         null,
-        -1,
+        null,
         0.75,
         null,
         0.2,
-        0.56,
+        0.6,
         0,
         -0.75,
-        null,
-        0.67
+        0.2,
+        0.71
       ],
       "emotions": [
         [

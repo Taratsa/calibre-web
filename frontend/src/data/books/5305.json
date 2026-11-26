@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 6527,
-    "longer_than": 74,
+    "longer_than": 73,
     "top": [
       [
         "gadis",
@@ -209,30 +209,29 @@
       [
         5348,
         0.12
+      ],
+      [
+        5839,
+        0.11
+      ],
+      [
+        964,
+        0.11
+      ],
+      [
+        8698,
+        0.11
+      ],
+      [
+        3478,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": 0.33,
-      "positive": 52,
-      "negative": 26,
-      "trend": [
-        0.2,
-        0.71,
-        null,
-        null,
-        0.71,
-        null,
-        -0.14,
-        0.33,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0.14,
-        0.14,
-        0.75
-      ],
+      "score": 0.61,
+      "positive": 53,
+      "negative": 13,
+      "trend": [],
       "emotions": []
     }
   }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 5240,
-    "longer_than": 71,
+    "longer_than": 70,
     "top": [
       [
         "breakdance",
@@ -206,12 +206,28 @@
       [
         4076,
         0.15
+      ],
+      [
+        2452,
+        0.15
+      ],
+      [
+        9189,
+        0.14
+      ],
+      [
+        9181,
+        0.14
+      ],
+      [
+        3694,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.15,
-      "positive": 60,
-      "negative": 44,
+      "score": 0.33,
+      "positive": 63,
+      "negative": 32,
       "trend": [
         null,
         null,
@@ -221,14 +237,14 @@
         0,
         0.75,
         null,
-        0,
+        0.08,
         null,
-        -0.2,
+        0.33,
         0.6,
-        -0.2,
+        null,
         0.25,
-        0.11,
-        null
+        0.56,
+        0.6
       ],
       "emotions": [
         [

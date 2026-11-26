@@ -63,7 +63,7 @@
   ],
   "text": {
     "words": 4457,
-    "longer_than": 69,
+    "longer_than": 68,
     "top": [
       [
         "manusia",
@@ -222,26 +222,42 @@
       [
         8005,
         0.13
+      ],
+      [
+        2458,
+        0.13
+      ],
+      [
+        7226,
+        0.12
+      ],
+      [
+        2008,
+        0.12
+      ],
+      [
+        8073,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.08,
+      "score": 0.14,
       "positive": 57,
-      "negative": 49,
+      "negative": 43,
       "trend": [
         null,
-        -0.27,
+        -0.2,
         null,
-        0.2,
+        0.33,
         -0.89,
         0,
         0.33,
         null,
         null,
         0.6,
-        0.67,
+        1,
         null,
-        0.6,
+        0.78,
         0.67,
         null,
         null

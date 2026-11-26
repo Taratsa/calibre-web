@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4450,
-    "longer_than": 69,
+    "longer_than": 68,
     "top": [
       [
         "saudara-saudara",
@@ -118,12 +118,12 @@
         29
       ],
       [
-        "sadja",
-        30
-      ],
-      [
         "kepribadian",
         29
+      ],
+      [
+        "sadja",
+        30
       ],
       [
         "tanah-air",
@@ -208,27 +208,43 @@
       [
         8771,
         0.21
+      ],
+      [
+        11017,
+        0.2
+      ],
+      [
+        683,
+        0.19
+      ],
+      [
+        11993,
+        0.19
+      ],
+      [
+        21036,
+        0.18
       ]
     ],
     "sentiment": {
-      "score": 0.65,
-      "positive": 95,
-      "negative": 20,
+      "score": 0.71,
+      "positive": 99,
+      "negative": 17,
       "trend": [
         0.82,
         0.67,
         null,
-        0.43,
-        0.62,
+        0.67,
+        0.73,
         0.25,
         null,
         1,
         null,
-        0.56,
+        0.75,
         0.62,
         0.75,
         null,
-        null,
+        0.33,
         null,
         1
       ],

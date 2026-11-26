@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 5197,
-    "longer_than": 71,
+    "longer_than": 70,
     "top": [
       [
         "warnet",
@@ -209,12 +209,28 @@
       [
         1265,
         0.17
+      ],
+      [
+        17860,
+        0.16
+      ],
+      [
+        7951,
+        0.14
+      ],
+      [
+        4082,
+        0.13
+      ],
+      [
+        4056,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": 0.1,
-      "positive": 40,
-      "negative": 33,
+      "score": 0.32,
+      "positive": 41,
+      "negative": 21,
       "trend": [],
       "emotions": []
     }

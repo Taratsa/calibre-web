@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3728,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "koperasi",
@@ -206,28 +206,44 @@
       [
         1806,
         0.2
+      ],
+      [
+        2758,
+        0.19
+      ],
+      [
+        7875,
+        0.19
+      ],
+      [
+        2540,
+        0.19
+      ],
+      [
+        7886,
+        0.18
       ]
     ],
     "sentiment": {
-      "score": 0.3,
-      "positive": 60,
-      "negative": 32,
+      "score": 0.43,
+      "positive": 66,
+      "negative": 26,
       "trend": [
-        0.6,
+        0.67,
         null,
         1,
         null,
-        0.2,
+        null,
         null,
         -0.33,
         0.75,
         -0.14,
-        0.23,
-        0.25,
-        0.11,
+        0.29,
+        0.43,
+        0.43,
         null,
         null,
-        null,
+        0.2,
         1
       ],
       "emotions": []

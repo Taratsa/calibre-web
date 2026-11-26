@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3768,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "armenia",
@@ -124,12 +124,12 @@
         25
       ],
       [
-        "mendjadi",
-        24
-      ],
-      [
         "fersia",
         7
+      ],
+      [
+        "mendjadi",
+        24
       ],
       [
         "bangaa",
@@ -206,12 +206,28 @@
       [
         16907,
         0.18
+      ],
+      [
+        11928,
+        0.17
+      ],
+      [
+        14252,
+        0.16
+      ],
+      [
+        19117,
+        0.16
+      ],
+      [
+        18095,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0.33,
+      "score": 0.36,
       "positive": 36,
-      "negative": 18,
+      "negative": 17,
       "trend": [],
       "emotions": []
     }

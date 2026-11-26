@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2183,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "solidaritas",
@@ -209,12 +209,28 @@
       [
         2161,
         0.2
+      ],
+      [
+        8020,
+        0.2
+      ],
+      [
+        7114,
+        0.2
+      ],
+      [
+        3719,
+        0.2
+      ],
+      [
+        8021,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": -0.12,
+      "score": -0.09,
       "positive": 35,
-      "negative": 45,
+      "negative": 42,
       "trend": [
         null,
         null,
@@ -223,9 +239,9 @@
         -0.5,
         0.33,
         null,
+        null,
+        -0.33,
         -0.2,
-        -0.33,
-        -0.33,
         null,
         null,
         0,

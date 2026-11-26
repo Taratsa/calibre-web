@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2011,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "teknologi",
@@ -213,12 +213,28 @@
       [
         7890,
         0.16
+      ],
+      [
+        2561,
+        0.15
+      ],
+      [
+        3706,
+        0.15
+      ],
+      [
+        7000,
+        0.14
+      ],
+      [
+        2660,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.45,
+      "score": 0.47,
       "positive": 42,
-      "negative": 16,
+      "negative": 15,
       "trend": [],
       "emotions": []
     }

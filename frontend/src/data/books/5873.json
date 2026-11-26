@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 2833,
-    "longer_than": 64,
+    "longer_than": 63,
     "top": [
       [
         "buruh",
@@ -207,12 +207,28 @@
       [
         5888,
         0.41
+      ],
+      [
+        6798,
+        0.36
+      ],
+      [
+        5899,
+        0.36
+      ],
+      [
+        6784,
+        0.35
+      ],
+      [
+        6785,
+        0.35
       ]
     ],
     "sentiment": {
-      "score": 0.24,
+      "score": 0.26,
       "positive": 34,
-      "negative": 21,
+      "negative": 20,
       "trend": [],
       "emotions": []
     }

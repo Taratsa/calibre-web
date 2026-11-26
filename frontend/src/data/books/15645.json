@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 1727,
-    "longer_than": 58,
+    "longer_than": 57,
     "top": [
       [
         "ict",
@@ -211,14 +211,24 @@
       [
         9874,
         0.19
+      ],
+      [
+        19411,
+        0.18
+      ],
+      [
+        19498,
+        0.18
+      ],
+      [
+        19469,
+        0.18
+      ],
+      [
+        19468,
+        0.18
       ]
     ],
-    "sentiment": {
-      "score": 0.92,
-      "positive": 49,
-      "negative": 2,
-      "trend": [],
-      "emotions": []
-    }
+    "sentiment": null
   }
 }

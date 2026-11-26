@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2013,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "anarkis",
@@ -213,12 +213,28 @@
       [
         1762,
         0.25
+      ],
+      [
+        7456,
+        0.25
+      ],
+      [
+        7971,
+        0.24
+      ],
+      [
+        3989,
+        0.24
+      ],
+      [
+        2283,
+        0.23
       ]
     ],
     "sentiment": {
       "score": 0.37,
-      "positive": 37,
-      "negative": 17,
+      "positive": 39,
+      "negative": 18,
       "trend": [],
       "emotions": []
     }

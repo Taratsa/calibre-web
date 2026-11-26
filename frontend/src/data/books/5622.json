@@ -207,14 +207,51 @@
       [
         6193,
         0.41
+      ],
+      [
+        3138,
+        0.39
+      ],
+      [
+        4988,
+        0.38
+      ],
+      [
+        5093,
+        0.38
+      ],
+      [
+        2894,
+        0.35
       ]
     ],
     "sentiment": {
-      "score": 0.2,
+      "score": 0.16,
       "positive": 48,
-      "negative": 32,
+      "negative": 35,
       "trend": [],
-      "emotions": []
+      "emotions": [
+        [
+          "sadness",
+          20
+        ],
+        [
+          "joy",
+          5
+        ],
+        [
+          "trust",
+          3
+        ],
+        [
+          "surprise",
+          1
+        ],
+        [
+          "anticipation",
+          1
+        ]
+      ]
     }
   }
 }

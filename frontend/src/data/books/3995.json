@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1858,
-    "longer_than": 59,
+    "longer_than": 58,
     "top": [
       [
         "indonesia",
@@ -199,21 +199,37 @@
       [
         3991,
         0.19
+      ],
+      [
+        4029,
+        0.19
+      ],
+      [
+        4023,
+        0.17
+      ],
+      [
+        4016,
+        0.17
+      ],
+      [
+        4014,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.06,
-      "positive": 43,
-      "negative": 38,
+      "score": 0.08,
+      "positive": 46,
+      "negative": 39,
       "trend": [
         null,
         0.33,
-        -0.6,
-        null,
+        -0.64,
+        0,
         0.33,
         null,
         0.67,
-        -0.2,
+        0,
         0,
         0.43,
         null,

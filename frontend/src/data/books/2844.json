@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 6077,
-    "longer_than": 73,
+    "longer_than": 72,
     "top": [
       [
         "games",
@@ -204,30 +204,29 @@
       [
         2218,
         0.14
+      ],
+      [
+        4762,
+        0.13
+      ],
+      [
+        2738,
+        0.13
+      ],
+      [
+        2263,
+        0.13
+      ],
+      [
+        2504,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": 0.14,
+      "score": 0.21,
       "positive": 49,
-      "negative": 37,
-      "trend": [
-        null,
-        null,
-        0.75,
-        0.67,
-        null,
-        null,
-        -0.2,
-        null,
-        null,
-        -0.56,
-        null,
-        -0.25,
-        null,
-        0.71,
-        -0.09,
-        0.27
-      ],
+      "negative": 32,
+      "trend": [],
       "emotions": []
     }
   }

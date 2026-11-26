@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2181,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "moral",
@@ -198,17 +198,33 @@
       [
         1974,
         0.17
+      ],
+      [
+        2727,
+        0.17
+      ],
+      [
+        2106,
+        0.16
+      ],
+      [
+        2445,
+        0.15
+      ],
+      [
+        4094,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0.32,
+      "score": 0.35,
       "positive": 68,
-      "negative": 35,
+      "negative": 33,
       "trend": [
         0.25,
         null,
         null,
-        0.6,
+        null,
         null,
         1,
         null,

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2627,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "cravan",
@@ -120,12 +120,12 @@
         10
       ],
       [
-        "pertandingan",
-        10
-      ],
-      [
         "penyair",
         11
+      ],
+      [
+        "pertandingan",
+        10
       ],
       [
         "petinju-petinju",
@@ -202,12 +202,24 @@
       [
         7187,
         0.11
+      ],
+      [
+        4691,
+        0.11
+      ],
+      [
+        2601,
+        0.11
+      ],
+      [
+        2313,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": 0.16,
-      "positive": 33,
-      "negative": 24,
+      "score": 0.21,
+      "positive": 34,
+      "negative": 22,
       "trend": [],
       "emotions": []
     }

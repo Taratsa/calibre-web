@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 1210,
-    "longer_than": 53,
+    "longer_than": 52,
     "top": [
       [
         "mse",
@@ -195,11 +195,27 @@
       [
         13638,
         0.14
+      ],
+      [
+        13454,
+        0.14
+      ],
+      [
+        13310,
+        0.13
+      ],
+      [
+        16189,
+        0.13
+      ],
+      [
+        13750,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": -0.12,
-      "positive": 25,
+      "score": -0.08,
+      "positive": 27,
       "negative": 32,
       "trend": [],
       "emotions": []

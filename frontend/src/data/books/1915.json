@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2405,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "anarkis",
@@ -206,30 +206,29 @@
       [
         7144,
         0.26
+      ],
+      [
+        6730,
+        0.23
+      ],
+      [
+        2203,
+        0.23
+      ],
+      [
+        2389,
+        0.23
+      ],
+      [
+        7150,
+        0.23
       ]
     ],
     "sentiment": {
-      "score": -0.06,
+      "score": 0.02,
       "positive": 30,
-      "negative": 34,
-      "trend": [
-        null,
-        0.33,
-        0.6,
-        -0.2,
-        null,
-        null,
-        -0.2,
-        0,
-        -0.5,
-        -0.33,
-        null,
-        null,
-        null,
-        null,
-        -0.6,
-        null
-      ],
+      "negative": 29,
+      "trend": [],
       "emotions": []
     }
   }

@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3097,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "stirner",
@@ -206,12 +206,28 @@
       [
         9185,
         0.3
+      ],
+      [
+        1938,
+        0.29
+      ],
+      [
+        4732,
+        0.29
+      ],
+      [
+        281,
+        0.29
+      ],
+      [
+        7389,
+        0.29
       ]
     ],
     "sentiment": {
-      "score": 0.53,
+      "score": 0.55,
       "positive": 52,
-      "negative": 16,
+      "negative": 15,
       "trend": [
         null,
         0.2,
@@ -222,7 +238,7 @@
         1,
         null,
         0.33,
-        -0.6,
+        null,
         0.78,
         null,
         1,

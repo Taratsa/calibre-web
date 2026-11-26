@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 3791,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "bonang",
@@ -206,14 +206,30 @@
       [
         1264,
         0.13
+      ],
+      [
+        3748,
+        0.11
+      ],
+      [
+        7961,
+        0.11
+      ],
+      [
+        2819,
+        0.11
+      ],
+      [
+        7214,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": 0.1,
-      "positive": 49,
-      "negative": 40,
+      "score": 0.2,
+      "positive": 51,
+      "negative": 34,
       "trend": [
-        0,
+        0.2,
         null,
         null,
         null,
@@ -223,11 +239,11 @@
         0.71,
         -1,
         0.2,
-        null,
+        -0.2,
         0.11,
         0.56,
         null,
-        -0.43,
+        0,
         0.25
       ],
       "emotions": []

@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3770,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "ekologi",
@@ -213,29 +213,45 @@
       [
         2709,
         0.2
+      ],
+      [
+        1860,
+        0.2
+      ],
+      [
+        7981,
+        0.2
+      ],
+      [
+        7080,
+        0.2
+      ],
+      [
+        8103,
+        0.19
       ]
     ],
     "sentiment": {
-      "score": 0.17,
-      "positive": 51,
-      "negative": 36,
+      "score": 0.24,
+      "positive": 56,
+      "negative": 34,
       "trend": [
         null,
-        -0.2,
+        0,
         -0.25,
         null,
         null,
-        null,
+        0.2,
         1,
         0.25,
         0.33,
-        -0.08,
+        0,
         null,
         null,
         null,
-        1,
+        0.67,
         -0.67,
-        0.43
+        0.25
       ],
       "emotions": []
     }

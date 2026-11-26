@@ -55,7 +55,7 @@
   ],
   "text": {
     "words": 6086,
-    "longer_than": 73,
+    "longer_than": 72,
     "top": [
       [
         "hacker",
@@ -214,12 +214,28 @@
       [
         17369,
         0.11
+      ],
+      [
+        18930,
+        0.11
+      ],
+      [
+        15878,
+        0.11
+      ],
+      [
+        20081,
+        0.11
+      ],
+      [
+        19618,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": 0.15,
-      "positive": 42,
-      "negative": 31,
+      "score": 0.66,
+      "positive": 48,
+      "negative": 10,
       "trend": [],
       "emotions": []
     }

@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 4115,
-    "longer_than": 68,
+    "longer_than": 67,
     "top": [
       [
         "saudara-saudara",
@@ -208,11 +208,27 @@
       [
         11690,
         0.25
+      ],
+      [
+        11993,
+        0.24
+      ],
+      [
+        683,
+        0.24
+      ],
+      [
+        8771,
+        0.23
+      ],
+      [
+        12177,
+        0.23
       ]
     ],
     "sentiment": {
-      "score": 0.58,
-      "positive": 75,
+      "score": 0.6,
+      "positive": 79,
       "negative": 20,
       "trend": [
         null,
@@ -226,10 +242,10 @@
         0.75,
         null,
         null,
-        0.33,
+        0.5,
         0.54,
         null,
-        -0.09,
+        0,
         0.69
       ],
       "emotions": [

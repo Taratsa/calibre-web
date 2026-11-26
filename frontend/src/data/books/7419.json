@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 4858,
-    "longer_than": 70,
+    "longer_than": 69,
     "top": [
       [
         "breton",
@@ -213,12 +213,28 @@
       [
         1779,
         0.14
+      ],
+      [
+        2813,
+        0.13
+      ],
+      [
+        2522,
+        0.13
+      ],
+      [
+        4717,
+        0.13
+      ],
+      [
+        2355,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": 0.29,
+      "score": 0.34,
       "positive": 47,
-      "negative": 26,
+      "negative": 23,
       "trend": [],
       "emotions": []
     }

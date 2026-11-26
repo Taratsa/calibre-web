@@ -208,29 +208,45 @@
       [
         13893,
         0.27
+      ],
+      [
+        7618,
+        0.27
+      ],
+      [
+        12118,
+        0.24
+      ],
+      [
+        10861,
+        0.24
+      ],
+      [
+        12917,
+        0.21
       ]
     ],
     "sentiment": {
-      "score": 0.45,
-      "positive": 77,
-      "negative": 29,
+      "score": 0.56,
+      "positive": 84,
+      "negative": 24,
       "trend": [
         1,
         null,
-        0.82,
+        1,
         1,
         null,
         null,
-        -0.33,
+        null,
+        0.75,
+        null,
+        null,
         0.71,
-        null,
-        null,
         0.5,
-        0.5,
-        -0.2,
+        -0.09,
         0,
         null,
-        0
+        0.33
       ],
       "emotions": [
         [
@@ -247,7 +263,7 @@
         ],
         [
           "anticipation",
-          5
+          6
         ],
         [
           "trust",

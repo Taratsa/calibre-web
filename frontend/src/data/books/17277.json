@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3753,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "pengetahuan",
@@ -213,12 +213,28 @@
       [
         17302,
         0.31
+      ],
+      [
+        17296,
+        0.31
+      ],
+      [
+        17343,
+        0.28
+      ],
+      [
+        17300,
+        0.27
+      ],
+      [
+        20558,
+        0.26
       ]
     ],
     "sentiment": {
-      "score": 0.46,
-      "positive": 78,
-      "negative": 29,
+      "score": 0.52,
+      "positive": 79,
+      "negative": 25,
       "trend": [
         0.6,
         0.5,
@@ -228,11 +244,11 @@
         0.83,
         null,
         0.11,
-        0.33,
-        0.43,
+        0.6,
+        0.67,
         null,
         null,
-        0.64,
+        0.8,
         null,
         null,
         null

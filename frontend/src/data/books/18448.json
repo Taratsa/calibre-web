@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2620,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "internet",
@@ -213,12 +213,28 @@
       [
         20073,
         0.18
+      ],
+      [
+        15846,
+        0.18
+      ],
+      [
+        12494,
+        0.17
+      ],
+      [
+        1051,
+        0.17
+      ],
+      [
+        1052,
+        0.17
       ]
     ],
     "sentiment": {
-      "score": -0.19,
+      "score": -0.16,
       "positive": 23,
-      "negative": 34,
+      "negative": 32,
       "trend": [],
       "emotions": []
     }

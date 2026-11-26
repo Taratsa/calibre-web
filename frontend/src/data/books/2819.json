@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2618,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "penulis",
@@ -112,12 +112,12 @@
         9
       ],
       [
-        "bilang",
-        10
-      ],
-      [
         "nonok",
         3
+      ],
+      [
+        "bilang",
+        10
       ],
       [
         "membaca",
@@ -173,11 +173,11 @@
     "similar": [
       [
         8051,
-        0.19
+        0.2
       ],
       [
         2685,
-        0.19
+        0.2
       ],
       [
         4737,
@@ -194,13 +194,46 @@
       [
         268,
         0.15
+      ],
+      [
+        1963,
+        0.14
+      ],
+      [
+        3748,
+        0.14
+      ],
+      [
+        4127,
+        0.14
+      ],
+      [
+        2683,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.1,
-      "positive": 44,
-      "negative": 36,
-      "trend": [],
+      "score": 0.16,
+      "positive": 48,
+      "negative": 35,
+      "trend": [
+        null,
+        0.11,
+        null,
+        null,
+        null,
+        -0.75,
+        0.67,
+        0.6,
+        null,
+        0,
+        0.25,
+        0.6,
+        null,
+        null,
+        0.71,
+        null
+      ],
       "emotions": [
         [
           "joy",

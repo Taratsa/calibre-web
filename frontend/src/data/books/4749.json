@@ -207,17 +207,33 @@
       [
         8492,
         0.13
+      ],
+      [
+        9164,
+        0.13
+      ],
+      [
+        15356,
+        0.13
+      ],
+      [
+        3440,
+        0.13
+      ],
+      [
+        21607,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.71,
-      "positive": 66,
-      "negative": 11,
+      "score": 0.7,
+      "positive": 67,
+      "negative": 12,
       "trend": [
         null,
         null,
         null,
-        null,
+        0.6,
         null,
         0.56,
         1,

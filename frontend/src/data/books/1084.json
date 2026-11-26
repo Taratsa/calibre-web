@@ -108,16 +108,16 @@
         21
       ],
       [
+        "pengobatan",
+        13
+      ],
+      [
         "kerdja",
         13
       ],
       [
         "penjakit",
         12
-      ],
-      [
-        "pengobatan",
-        13
       ],
       [
         "masjarakat",
@@ -198,30 +198,29 @@
       [
         1391,
         0.17
+      ],
+      [
+        6625,
+        0.17
+      ],
+      [
+        4866,
+        0.16
+      ],
+      [
+        2841,
+        0.16
+      ],
+      [
+        2835,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.52,
+      "score": 0.59,
       "positive": 69,
-      "negative": 22,
-      "trend": [
-        null,
-        -0.14,
-        0.29,
-        null,
-        0.6,
-        null,
-        1,
-        0.56,
-        0.67,
-        0.33,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "negative": 18,
+      "trend": [],
       "emotions": []
     }
   }

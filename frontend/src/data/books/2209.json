@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2192,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "sosial",
@@ -206,13 +206,46 @@
       [
         1986,
         0.17
+      ],
+      [
+        2596,
+        0.16
+      ],
+      [
+        1959,
+        0.16
+      ],
+      [
+        7019,
+        0.16
+      ],
+      [
+        7859,
+        0.16
       ]
     ],
     "sentiment": {
-      "score": 0.43,
-      "positive": 53,
-      "negative": 21,
-      "trend": [],
+      "score": 0.44,
+      "positive": 56,
+      "negative": 22,
+      "trend": [
+        null,
+        0.2,
+        null,
+        0.78,
+        null,
+        null,
+        0.67,
+        -0.2,
+        0,
+        0.14,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
       "emotions": []
     }
   }

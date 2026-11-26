@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2625,
-    "longer_than": 63,
+    "longer_than": 62,
     "top": [
       [
         "temon",
@@ -206,12 +206,28 @@
       [
         5941,
         0.14
+      ],
+      [
+        2448,
+        0.13
+      ],
+      [
+        2663,
+        0.12
+      ],
+      [
+        7457,
+        0.12
+      ],
+      [
+        4055,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.34,
+      "score": 0.53,
       "positive": 39,
-      "negative": 19,
+      "negative": 12,
       "trend": [],
       "emotions": []
     }

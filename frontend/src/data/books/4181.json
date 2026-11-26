@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2022,
-    "longer_than": 60,
+    "longer_than": 59,
     "top": [
       [
         "teater",
@@ -206,22 +206,38 @@
       [
         4559,
         0.23
+      ],
+      [
+        4177,
+        0.21
+      ],
+      [
+        4280,
+        0.19
+      ],
+      [
+        4162,
+        0.19
+      ],
+      [
+        4409,
+        0.19
       ]
     ],
     "sentiment": {
-      "score": -0.2,
-      "positive": 33,
-      "negative": 49,
+      "score": -0.1,
+      "positive": 35,
+      "negative": 43,
       "trend": [
-        -0.33,
         -0.2,
+        0.2,
         null,
         null,
         0,
         0.25,
         null,
         null,
-        -0.33,
+        -0.2,
         null,
         null,
         null,

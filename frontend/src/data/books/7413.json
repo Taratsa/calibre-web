@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 2421,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "kerja",
@@ -201,30 +201,29 @@
       [
         4659,
         0.16
+      ],
+      [
+        3064,
+        0.16
+      ],
+      [
+        1928,
+        0.15
+      ],
+      [
+        1989,
+        0.15
+      ],
+      [
+        2256,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": 0.24,
+      "score": 0.29,
       "positive": 42,
-      "negative": 26,
-      "trend": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        0.43,
-        0,
-        0.2,
-        -0.2,
-        null,
-        null,
-        0.2,
-        0.71,
-        null,
-        0,
-        0.6
-      ],
+      "negative": 23,
+      "trend": [],
       "emotions": []
     }
   }

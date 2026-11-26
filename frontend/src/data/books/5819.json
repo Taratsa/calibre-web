@@ -50,7 +50,7 @@
   ],
   "text": {
     "words": 2397,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "usang",
@@ -139,12 +139,12 @@
         10
       ],
       [
-        "dusun",
-        21
-      ],
-      [
         "ardius",
         7
+      ],
+      [
+        "dusun",
+        21
       ],
       [
         "iko",
@@ -209,12 +209,28 @@
       [
         3643,
         0.11
+      ],
+      [
+        5781,
+        0.11
+      ],
+      [
+        5551,
+        0.1
+      ],
+      [
+        5229,
+        0.1
+      ],
+      [
+        3583,
+        0.1
       ]
     ],
     "sentiment": {
-      "score": 0.39,
+      "score": 0.46,
       "positive": 46,
-      "negative": 20,
+      "negative": 17,
       "trend": [],
       "emotions": []
     }

@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 4467,
-    "longer_than": 69,
+    "longer_than": 68,
     "top": [
       [
         "rakjat",
@@ -207,23 +207,39 @@
       [
         799,
         0.28
+      ],
+      [
+        798,
+        0.27
+      ],
+      [
+        4878,
+        0.27
+      ],
+      [
+        4810,
+        0.27
+      ],
+      [
+        1896,
+        0.27
       ]
     ],
     "sentiment": {
-      "score": 0.52,
+      "score": 0.56,
       "positive": 75,
-      "negative": 24,
+      "negative": 21,
       "trend": [
         null,
         -0.5,
-        0.2,
-        -0.2,
+        null,
+        null,
         0.5,
         0.75,
         1,
         1,
         null,
-        0.4,
+        0.56,
         1,
         null,
         0.5,

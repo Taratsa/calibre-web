@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 3074,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "kartu",
@@ -211,11 +211,27 @@
       [
         18839,
         0.22
+      ],
+      [
+        17512,
+        0.21
+      ],
+      [
+        18608,
+        0.21
+      ],
+      [
+        17545,
+        0.2
+      ],
+      [
+        18603,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": 0.53,
-      "positive": 56,
+      "score": 0.55,
+      "positive": 58,
       "negative": 17,
       "trend": [],
       "emotions": []

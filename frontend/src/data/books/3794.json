@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 2406,
-    "longer_than": 62,
+    "longer_than": 61,
     "top": [
       [
         "anarkisme",
@@ -206,14 +206,24 @@
       [
         2481,
         0.13
+      ],
+      [
+        7203,
+        0.13
+      ],
+      [
+        4093,
+        0.12
+      ],
+      [
+        3959,
+        0.12
+      ],
+      [
+        2561,
+        0.12
       ]
     ],
-    "sentiment": {
-      "score": -0.12,
-      "positive": 22,
-      "negative": 28,
-      "trend": [],
-      "emotions": []
-    }
+    "sentiment": null
   }
 }

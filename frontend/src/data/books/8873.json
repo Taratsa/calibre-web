@@ -45,7 +45,7 @@
   ],
   "text": {
     "words": 1885,
-    "longer_than": 59,
+    "longer_than": 58,
     "top": [
       [
         "ham",
@@ -204,12 +204,28 @@
       [
         8918,
         0.36
+      ],
+      [
+        8902,
+        0.36
+      ],
+      [
+        8911,
+        0.35
+      ],
+      [
+        8883,
+        0.35
+      ],
+      [
+        8916,
+        0.35
       ]
     ],
     "sentiment": {
-      "score": 0.57,
+      "score": 0.6,
       "positive": 40,
-      "negative": 11,
+      "negative": 10,
       "trend": [],
       "emotions": []
     }

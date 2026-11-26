@@ -56,7 +56,7 @@
   ],
   "text": {
     "words": 1293,
-    "longer_than": 54,
+    "longer_than": 53,
     "top": [
       [
         "matahari",
@@ -203,14 +203,24 @@
       [
         2525,
         0.17
+      ],
+      [
+        4725,
+        0.16
+      ],
+      [
+        1862,
+        0.16
+      ],
+      [
+        2109,
+        0.16
+      ],
+      [
+        7367,
+        0.16
       ]
     ],
-    "sentiment": {
-      "score": 0,
-      "positive": 25,
-      "negative": 25,
-      "trend": [],
-      "emotions": []
-    }
+    "sentiment": null
   }
 }

@@ -116,12 +116,12 @@
         13
       ],
       [
-        "defenisi",
-        5
-      ],
-      [
         "kebohongan",
         9
+      ],
+      [
+        "defenisi",
+        5
       ],
       [
         "mendefenisikan",
@@ -173,12 +173,28 @@
       [
         2413,
         0.14
+      ],
+      [
+        4700,
+        0.14
+      ],
+      [
+        2008,
+        0.14
+      ],
+      [
+        2192,
+        0.14
+      ],
+      [
+        1995,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": -0.02,
-      "positive": 46,
-      "negative": 48,
+      "score": 0.01,
+      "positive": 47,
+      "negative": 46,
       "trend": [
         0.4,
         1,
@@ -194,7 +210,7 @@
         0,
         null,
         null,
-        0,
+        0.14,
         null
       ],
       "emotions": []

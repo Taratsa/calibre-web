@@ -54,7 +54,7 @@
   ],
   "text": {
     "words": 3729,
-    "longer_than": 67,
+    "longer_than": 66,
     "top": [
       [
         "pulau",
@@ -213,15 +213,31 @@
       [
         3029,
         0.13
+      ],
+      [
+        4945,
+        0.13
+      ],
+      [
+        3120,
+        0.13
+      ],
+      [
+        3530,
+        0.12
+      ],
+      [
+        5143,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.55,
+      "score": 0.71,
       "positive": 58,
-      "negative": 17,
+      "negative": 10,
       "trend": [
         1,
-        0.56,
+        0.75,
         null,
         1,
         null,
@@ -233,8 +249,8 @@
         null,
         null,
         0.43,
-        0.14,
-        0.56,
+        0.33,
+        1,
         null
       ],
       "emotions": [

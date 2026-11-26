@@ -13,7 +13,7 @@
   "tags": [
     "https://kontras.org/",
     "pelanggaran berat ham",
-    "Zine"
+    "zine"
   ],
   "publisher": null,
   "publishers": [],
@@ -41,7 +41,7 @@
   ],
   "text": {
     "words": 3060,
-    "longer_than": 65,
+    "longer_than": 64,
     "top": [
       [
         "pangan",
@@ -200,25 +200,41 @@
       [
         6932,
         0.16
+      ],
+      [
+        6901,
+        0.14
+      ],
+      [
+        2219,
+        0.14
+      ],
+      [
+        8794,
+        0.13
+      ],
+      [
+        331,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": -0.16,
-      "positive": 42,
-      "negative": 58,
+      "score": -0.09,
+      "positive": 44,
+      "negative": 53,
       "trend": [
         -0.43,
-        0.06,
+        0.11,
         null,
         null,
-        0.08,
+        0.17,
         0.71,
         null,
         null,
         null,
         -0.75,
+        -0.25,
         -0.33,
-        -0.14,
         null,
         null,
         -0.67,
@@ -227,7 +243,7 @@
       "emotions": [
         [
           "fear",
-          17
+          18
         ],
         [
           "anger",

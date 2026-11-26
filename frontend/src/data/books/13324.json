@@ -118,12 +118,12 @@
         50
       ],
       [
-        "kemoedian",
-        65
-      ],
-      [
         "toekang",
         69
+      ],
+      [
+        "kemoedian",
+        65
       ],
       [
         "poela",
@@ -142,12 +142,12 @@
         275
       ],
       [
-        "soepaja",
-        58
+        "koelit",
+        51
       ],
       [
-        "soedah",
-        56
+        "soepaja",
+        58
       ]
     ],
     "phrases": [
@@ -208,13 +208,46 @@
       [
         14790,
         0.23
+      ],
+      [
+        444,
+        0.22
+      ],
+      [
+        4642,
+        0.21
+      ],
+      [
+        563,
+        0.21
+      ],
+      [
+        524,
+        0.2
       ]
     ],
     "sentiment": {
-      "score": 0.45,
-      "positive": 47,
-      "negative": 18,
-      "trend": [],
+      "score": 0.42,
+      "positive": 52,
+      "negative": 21,
+      "trend": [
+        0.6,
+        0,
+        1,
+        0.71,
+        0.14,
+        null,
+        null,
+        0.08,
+        null,
+        null,
+        0.43,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "emotions": []
     }
   }

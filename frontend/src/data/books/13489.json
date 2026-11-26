@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 6118,
-    "longer_than": 73,
+    "longer_than": 72,
     "top": [
       [
         "pendapatan",
@@ -208,17 +208,33 @@
       [
         788,
         0.14
+      ],
+      [
+        14252,
+        0.14
+      ],
+      [
+        434,
+        0.14
+      ],
+      [
+        7731,
+        0.13
+      ],
+      [
+        6979,
+        0.13
       ]
     ],
     "sentiment": {
-      "score": 0.06,
-      "positive": 66,
+      "score": 0.07,
+      "positive": 67,
       "negative": 58,
       "trend": [
         null,
         -0.54,
         null,
-        0.14,
+        0.25,
         0.11,
         null,
         0.5,
@@ -235,7 +251,7 @@
       "emotions": [
         [
           "joy",
-          19
+          20
         ],
         [
           "sadness",

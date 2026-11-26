@@ -128,12 +128,12 @@
         22
       ],
       [
-        "penyelesaian",
-        26
-      ],
-      [
         "atr",
         14
+      ],
+      [
+        "penyelesaian",
+        26
       ],
       [
         "kehutanan",
@@ -198,34 +198,50 @@
       [
         8740,
         0.44
+      ],
+      [
+        8544,
+        0.42
+      ],
+      [
+        9050,
+        0.42
+      ],
+      [
+        8600,
+        0.41
+      ],
+      [
+        6808,
+        0.41
       ]
     ],
     "sentiment": {
-      "score": 0.04,
-      "positive": 58,
-      "negative": 54,
+      "score": 0.08,
+      "positive": 59,
+      "negative": 50,
       "trend": [
         0.08,
         -0.2,
         null,
-        0.27,
+        0.4,
         null,
-        -0.2,
+        -0.33,
         -0.69,
         null,
         null,
-        -0.2,
+        null,
         0.14,
         null,
         0.33,
         null,
-        0,
-        0.4
+        0.14,
+        0.6
       ],
       "emotions": [
         [
           "anger",
-          137
+          139
         ],
         [
           "sadness",
@@ -240,12 +256,12 @@
           4
         ],
         [
-          "joy",
+          "fear",
           3
         ],
         [
-          "fear",
-          2
+          "joy",
+          3
         ],
         [
           "disgust",

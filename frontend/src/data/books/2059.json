@@ -51,7 +51,7 @@
   ],
   "text": {
     "words": 2850,
-    "longer_than": 64,
+    "longer_than": 63,
     "top": [
       [
         "penerbit",
@@ -210,12 +210,28 @@
       [
         2001,
         0.13
+      ],
+      [
+        1829,
+        0.12
+      ],
+      [
+        7212,
+        0.12
+      ],
+      [
+        2505,
+        0.12
+      ],
+      [
+        2737,
+        0.12
       ]
     ],
     "sentiment": {
-      "score": 0.7,
-      "positive": 69,
-      "negative": 12,
+      "score": 0.77,
+      "positive": 70,
+      "negative": 9,
       "trend": [],
       "emotions": []
     }

@@ -52,7 +52,7 @@
   ],
   "text": {
     "words": 2181,
-    "longer_than": 61,
+    "longer_than": 60,
     "top": [
       [
         "menulis",
@@ -121,12 +121,12 @@
         16
       ],
       [
-        "honor",
-        6
-      ],
-      [
         "exemplar",
         4
+      ],
+      [
+        "honor",
+        6
       ],
       [
         "forum",
@@ -199,12 +199,28 @@
       [
         16937,
         0.22
+      ],
+      [
+        20115,
+        0.21
+      ],
+      [
+        12523,
+        0.18
+      ],
+      [
+        18237,
+        0.16
+      ],
+      [
+        16935,
+        0.15
       ]
     ],
     "sentiment": {
-      "score": 0.31,
+      "score": 0.38,
       "positive": 53,
-      "negative": 28,
+      "negative": 24,
       "trend": [],
       "emotions": []
     }

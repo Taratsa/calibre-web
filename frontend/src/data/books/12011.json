@@ -49,7 +49,7 @@
   ],
   "text": {
     "words": 6092,
-    "longer_than": 73,
+    "longer_than": 72,
     "top": [
       [
         "hukum",
@@ -130,12 +130,12 @@
         64
       ],
       [
-        "qurän",
-        18
-      ],
-      [
         "sunnah",
         26
+      ],
+      [
+        "qurän",
+        18
       ],
       [
         "kitab",
@@ -208,26 +208,42 @@
       [
         15905,
         0.12
+      ],
+      [
+        13878,
+        0.12
+      ],
+      [
+        8395,
+        0.12
+      ],
+      [
+        6988,
+        0.11
+      ],
+      [
+        6985,
+        0.11
       ]
     ],
     "sentiment": {
-      "score": 0.39,
-      "positive": 50,
-      "negative": 22,
+      "score": 0.58,
+      "positive": 49,
+      "negative": 13,
       "trend": [
         null,
-        0.43,
+        0.67,
         null,
         0.33,
         1,
         1,
-        0.75,
         1,
-        0.14,
-        0.5,
+        1,
+        null,
+        0.71,
         0.2,
         null,
-        -0.6,
+        null,
         null,
         null,
         null

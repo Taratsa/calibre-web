@@ -48,7 +48,7 @@
   ],
   "text": {
     "words": 1060,
-    "longer_than": 51,
+    "longer_than": 50,
     "top": [
       [
         "pemimpin",
@@ -191,11 +191,19 @@
       [
         2895,
         0.1
+      ],
+      [
+        938,
+        0.1
+      ],
+      [
+        7303,
+        0.1
       ]
     ],
     "sentiment": {
-      "score": 0.36,
-      "positive": 40,
+      "score": 0.37,
+      "positive": 41,
       "negative": 19,
       "trend": [
         null,
@@ -204,7 +212,7 @@
         null,
         0.67,
         0.6,
-        -0.67,
+        -0.43,
         1,
         null,
         0.6,

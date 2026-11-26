@@ -44,7 +44,7 @@
   ],
   "text": {
     "words": 1382,
-    "longer_than": 55,
+    "longer_than": 54,
     "top": [
       [
         "revolusi",
@@ -203,8 +203,30 @@
       [
         4649,
         0.14
+      ],
+      [
+        385,
+        0.14
+      ],
+      [
+        4650,
+        0.14
+      ],
+      [
+        380,
+        0.14
+      ],
+      [
+        299,
+        0.14
       ]
     ],
-    "sentiment": null
+    "sentiment": {
+      "score": -0.6,
+      "positive": 10,
+      "negative": 40,
+      "trend": [],
+      "emotions": []
+    }
   }
 }

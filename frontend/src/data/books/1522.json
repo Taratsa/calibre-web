@@ -14,7 +14,7 @@
     "Indonesia",
     "magazine",
     "music",
-    "Zine"
+    "zine"
   ],
   "publisher": {
     "id": 87,
@@ -209,14 +209,30 @@
       [
         4762,
         0.15
+      ],
+      [
+        1846,
+        0.14
+      ],
+      [
+        3789,
+        0.14
+      ],
+      [
+        2669,
+        0.14
+      ],
+      [
+        131,
+        0.14
       ]
     ],
     "sentiment": {
-      "score": -0.01,
-      "positive": 36,
-      "negative": 37,
+      "score": 0.06,
+      "positive": 38,
+      "negative": 34,
       "trend": [
-        -0.6,
+        null,
         null,
         null,
         1,
@@ -230,7 +246,7 @@
         -1,
         0.2,
         null,
-        null,
+        0.2,
         null
       ],
       "emotions": []

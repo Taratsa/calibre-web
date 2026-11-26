@@ -216,24 +216,24 @@
         0.13
       ],
       [
-        1935,
+        2644,
         0.12
       ],
       [
-        2644,
+        1935,
         0.12
       ]
     ],
     "sentiment": {
-      "score": 0.23,
+      "score": 0.2,
       "positive": 61,
-      "negative": 38,
+      "negative": 41,
       "trend": [
-        null,
+        0.2,
         -0.25,
         null,
-        -0.2,
-        0.6,
+        null,
+        0.33,
         null,
         null,
         -0.08,
@@ -241,7 +241,7 @@
         null,
         1,
         -0.2,
-        0.67,
+        0.43,
         0.71,
         -0.09,
         null
@@ -260,12 +260,12 @@
           6
         ],
         [
-          "sadness",
+          "anger",
           5
         ],
         [
-          "anger",
-          4
+          "sadness",
+          5
         ],
         [
           "surprise",

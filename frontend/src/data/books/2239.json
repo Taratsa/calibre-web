@@ -47,7 +47,7 @@
   ],
   "text": {
     "words": 1863,
-    "longer_than": 59,
+    "longer_than": 58,
     "top": [
       [
         "perempuan",
@@ -144,8 +144,8 @@
         7
       ],
       [
-        "visi",
-        7
+        "komune",
+        5
       ]
     ],
     "phrases": [
@@ -190,12 +190,28 @@
       [
         2374,
         0.24
+      ],
+      [
+        7544,
+        0.23
+      ],
+      [
+        2156,
+        0.23
+      ],
+      [
+        7037,
+        0.23
+      ],
+      [
+        7351,
+        0.22
       ]
     ],
     "sentiment": {
-      "score": 0.58,
+      "score": 0.62,
       "positive": 56,
-      "negative": 15,
+      "negative": 13,
       "trend": [],
       "emotions": []
     }

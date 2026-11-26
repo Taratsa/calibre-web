@@ -209,24 +209,24 @@
       ]
     ],
     "sentiment": {
-      "score": 0.04,
-      "positive": 83,
-      "negative": 76,
+      "score": 0.08,
+      "positive": 91,
+      "negative": 78,
       "trend": [
-        0.1,
+        0.2,
         -0.29,
-        -0.05,
-        0.62,
+        -0.1,
+        0.65,
         null,
         null,
         null,
-        null,
+        0.33,
         -0.4,
         null,
         null,
         null,
         0,
-        0.14,
+        0.2,
         0.75,
         -0.52
       ],
@@ -241,11 +241,11 @@
         ],
         [
           "fear",
-          10
+          11
         ],
         [
           "anger",
-          8
+          9
         ],
         [
           "trust",
