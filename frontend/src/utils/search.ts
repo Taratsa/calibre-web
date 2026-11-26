@@ -261,6 +261,51 @@ export function searchCatalog(request: SearchRequest): SearchOutcome {
   return { matches, parsed, highlight: [...highlight], yearFilterApplied };
 }
 
+export interface BookPathSuggestions {
+  /** The book the slug's trailing "-<id>" points at, when it exists and its title shares a word with the slug. */
+  exact: SearchableBook | null;
+  /** Words read from the slug, as searched. */
+  query: string;
+  /** Best title/author/tag matches for those words (any of them, best first), without `exact`. */
+  books: SearchableBook[];
+}
+
+/**
+ * For a 404 on `/book/<slug>/`: what the visitor probably meant. A mistyped slug keeps most of its words and often the
+ * trailing id, so the id finds the book itself and the words (OR, so one garbled word does not empty the result) find
+ * its neighbours. Returns null for other paths. A trailing number is only trusted as an id when the book's title shares
+ * a word with the slug, because "...-1998" is far more likely a year than book 1998.
+ */
+export function suggestForBookPath(pathname: string, limit = 12): BookPathSuggestions | null {
+  const match = /^\/book\/([^/]+)\/?$/.exec(pathname);
+  if (!match) return null;
+  let slug: string;
+  try {
+    slug = decodeURIComponent(match[1]);
+  } catch {
+    return null;
+  }
+  if (/^\d+$/.test(slug)) return null;
+
+  const words = [...new Set(normalizeText(slug.replace(/-/g, ' ')).split(' ').filter(word => word.length >= 3 && !/^\d+$/.test(word)))];
+  const { ms, byId: map } = ensureIndex();
+
+  const idMatch = /-(\d+)$/.exec(slug);
+  const candidate = idMatch ? map.get(Number(idMatch[1])) : undefined;
+  const exact = candidate && normalizeText(candidate.title).split(' ').some(word => words.includes(word)) ? candidate : null;
+
+  const books: SearchableBook[] = [];
+  if (words.length > 0) {
+    for (const hit of ms.search(words.join(' '), { combineWith: 'OR' })) {
+      if (hit.id === exact?.id) continue;
+      const book = map.get(hit.id);
+      if (book) books.push(book);
+      if (books.length >= limit) break;
+    }
+  }
+  return { exact, query: words.join(' '), books };
+}
+
 // ── Form options ──────────────────────────────────────────────────────────
 
 export interface Facet { value: string; count: number }

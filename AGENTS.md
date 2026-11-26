@@ -595,6 +595,15 @@ Two live search systems (plus the legacy advanced-search form):
   are handled: `/book/<id>/<old-slug>/` 301s to the canonical slug (`pages/book/[id]/[slug]/index.astro`), and relative
   links inside EPUB text (`Section0006.xhtml`) are unwrapped on `/read/<id>/ocr/epub/` (`unwrapRelativeLinks`) so they stop
   being crawlable dead URLs
+- The 404 page (`pages/404.astro`) helps a mistyped `/book/<slug>/` instead of ending there; the status stays 404 and the page
+  `noindex`, so nothing new is indexable. `suggestForBookPath()` (`utils/search.ts`) reads the slug: a trailing `-<id>`
+  names a book only if that book's title shares a word with the slug (so "...-1998" is not read as book 1998), which is
+  shown as "Apakah maksud Anda buku ini?" followed by that book's "Buku serupa" (the corpus similarity from
+  `src/data/books/<id>.json`). Without a matching id, the slug's words (3+ letters, no digits) search the catalog index with
+  OR, so one garbled word does not empty the result: "Buku yang mungkin Anda cari", up to 12. A slug with no usable
+  words, or any other path, gets the plain message. The words are free text from the URL and only ever rendered through
+  `BookGrid`, which escapes them. Checked with `.../temuan-tim-gabungsdfsdfan-...-1998-unknown-492/`: book 492 plus its six
+  similar books
 - Astro runs with `trailingSlash: 'always'`: every internal `href` and `canonical` MUST end in `/` (`/author/`,
   `/category/<id>/`, `${authorPath(a)}/`). A slashless link 301s, and a 2026-11 audit found 56% of internal links were
   slashless, which wastes crawl budget and inflates Search Console's "Page with redirect". Do not link `/osd.xml`

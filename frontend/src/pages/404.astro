@@ -1,8 +1,59 @@
 ---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import BookGrid from '~/components/BookGrid.astro';
+import { getAllBooks } from '~/data';
+import type { BookDetail, BookSummary } from '~/data/types';
+import { suggestForBookPath } from '~/utils/search';
+
+// A mistyped /book/<slug>/ still carries its words and usually the trailing id: offer the book it points at and
+// books like it instead of a dead end. Other paths keep the plain message.
+const suggestions = suggestForBookPath(Astro.url.pathname);
+const exact = suggestions?.exact ?? null;
+
+// Books like the one the id points at: the corpus similarity the book page shows as "Buku serupa" (a book removed
+// since the corpus rebuild is dropped). Without it, or when the id matched nothing, the closest title/author/tag
+// matches for the slug's words.
+let related: BookSummary[] = [];
+if (exact) {
+  try {
+    const detail: BookDetail = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'books', `${exact.id}.json`), 'utf8'));
+    const booksById = new Map(getAllBooks().map((book) => [book.id, book]));
+    related = (detail.text?.similar ?? []).flatMap(([otherId]) => booksById.get(otherId) ?? []);
+  } catch {}
+}
+if (related.length === 0) related = suggestions?.books ?? [];
 ---
 <BaseLayout title="Tidak Ditemukan" noindex>
   <h1>404 — Tidak ditemukan</h1>
   <p>Halaman yang Anda cari tidak ada di katalog.</p>
-  <p><a href="/">Kembali ke beranda</a> · <a href="/search">Cari buku</a></p>
+  {exact && (
+    <section class="not-found__section">
+      <h2>Apakah maksud Anda buku ini?</h2>
+      <BookGrid books={[exact]} />
+    </section>
+  )}
+  {related.length > 0 && (
+    <section class="not-found__section">
+      <h2>{exact ? 'Buku serupa' : 'Buku yang mungkin Anda cari'}</h2>
+      <p class="not-found__note">
+        {exact ? 'Dipilih dari kemiripan kata-kata khas di dalam teks.' : 'Dipilih dari kata-kata pada alamat yang Anda buka.'}
+      </p>
+      <BookGrid books={related} />
+    </section>
+  )}
+  <p><a href="/">Kembali ke beranda</a> · <a href="/search/">Cari buku</a></p>
 </BaseLayout>
+
+<style>
+  .not-found__section {
+    margin: 1.5rem 0;
+  }
+  .not-found__section h2 {
+    margin-bottom: 0.25rem;
+  }
+  .not-found__note {
+    color: var(--muted-strong);
+  }
+</style>
