@@ -80,13 +80,11 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
   garbled Portuguese ASR of Indonesian audio, so it was stored as `lines: []`. 38 of 53 have text (29 `id`, 8 `en`,
   1 `th`); 15 have none (14 with no panel, mostly the AP Archive clips, plus that one). Tracks are often auto-generated, so the page says so
 - Internet Archive videos (`type: "archive"`) have no transcript (no caption files; `getTranscript` is YouTube-only)
-- **The 1,151 `jakartanicus` videos have no transcripts yet** (2026-11-26): a scan of 800 ids (watch-page HTML for
-  `"getTranscriptEndpoint"`) found 90 with a transcript panel, 155 without, and then YouTube rate-limited the server
-  (555 × HTTP 429, redirect to `google.com/sorry` reCAPTCHA; the managed Chromium tab is blocked too). Roughly 250 watch
-  pages is the budget per window, so a 1,151-video crawl cannot run here in one pass. Run
-  `bun run enrich:video-transcripts` from an unblocked IP (resumable, skips existing files, writes
-  `src/data/video-transcripts/<id>.json`) and copy the directory in. Long streams are large: a 3-hour stream was
-  1,388 segments / 127k characters
+- **Channel subtitle coverage** (2026-11-27): all 1,151 `jakartanicus` videos were checked in Chromium with the same
+  transcript-panel extraction above. 829 have usable text (796 `id`, 33 `en`); 322 have no usable captions
+  (no panel or rejected music / garbled ASR). The checked-in files total 31 MB; long live streams can exceed 300 KB
+  each. The crawler paused/restarted after 30-minute browser rounds and saved each video separately, so new videos can
+  be retried by the normal `bun run enrich:video-transcripts` script from an unblocked IP if captions are added later
 
 ### Video Catalogue (`/video/`, `/video/<id>/`)
 - Two sources in one list (`frontend/src/data/videos.ts`): the WordPress crawl
