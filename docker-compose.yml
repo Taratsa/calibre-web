@@ -22,6 +22,9 @@ services:
       - OCR_SCAN_CRON=${OCR_SCAN_CRON:-}
       - MANTICORE_URL=http://manticore:9308
       - BOOK_SLUGS_PATH=/app/calibre-web/seed-data/book-slugs.json
+      # Rust backend (rust/backend/) on 127.0.0.1:8084, next to Flask. Off by default: Caddy keeps every route on
+      # Flask until the switch is made, and Flask keeps serving whatever Rust does not.
+      - RUST_BACKEND_ENABLED=${RUST_BACKEND_ENABLED:-false}
     ports:
       - "127.0.0.1:8083:8083"
     volumes:

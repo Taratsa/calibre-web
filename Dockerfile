@@ -48,7 +48,8 @@ RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
     cd /app/rust/taratsa_text && \
     /lsiopy/bin/maturin build --release --locked --out /tmp/wheels && \
     /lsiopy/bin/pip install --no-cache-dir /tmp/wheels/*.whl && \
-    rm -rf /tmp/wheels /app/rust
+    cargo build --release --locked --manifest-path /app/rust/backend/Cargo.toml && \
+    rm -rf /tmp/wheels
 
 # Model stage: downloads the pinned checkpoints, exports the two emotion RoBERTas to int8 ONNX and verifies every
 # result against a SHA-256. torch and transformers live only here; the runtime stage copies the finished files.
@@ -161,6 +162,10 @@ COPY --from=models /models /app/calibre-web/cps/sentiment_model
 COPY --from=models /ort/libonnxruntime.so /usr/local/lib/libonnxruntime.so
 ENV ORT_DYLIB_PATH=/usr/local/lib/libonnxruntime.so
 COPY cps/ /app/calibre-web/cps/
+
+# Rust backend (rust/backend/README.md); Flask keeps serving every route, Caddy can send ported ones here.
+COPY --from=builder /app/rust/backend/target/release/taratsa_backend /usr/local/bin/taratsa_backend
+ENV APP_DB_PATH=/config/app.db LISTEN=127.0.0.1:8084
 
 COPY cps.py /app/calibre-web/
 COPY pyproject.toml /app/calibre-web/

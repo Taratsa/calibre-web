@@ -642,6 +642,37 @@ Two live search systems (plus the legacy advanced-search form):
   the next run
 - PDFs without cached OCR text are left out (no GPU work is queued); ~6,000 of ~7,100 books are in that state
 
+### Rust backend rewrite (branch `rewrite/rust-backend`)
+
+- Strangler rewrite, not a big bang: Flask stays the live backend and Caddy switches routes one at a time. The crate
+  is `rust/backend/` (axum + tokio + rusqlite), see its `README.md` for the design and the environment variables.
+- **It never writes.** `app.db` and Calibre's `metadata.db` are opened read-only; `library/` is only read. Schemas,
+  accounts, password hashes and the signing key stay Flask's, so Calibre desktop and the Flask UI keep working and a
+  rollback is a Caddy edit. Settings are re-read from `app.db` at most once per second, so an admin change applies
+  without a restart.
+- **Signed URLs stay byte-identical to three other copies**: `_file_signature` in `cps/helper.py`,
+  `frontend/scripts/seed.mjs` and `src/signing.rs`. `version` is `last_modified` as UTC (the first
+  `YYYY-MM-DD HH:MM:SS` of the stored text; a `+00:00` suffix is ignored, as SQLAlchemy's `TIMESTAMP` does) plus the
+  `uncompressed_size`. Change all three together or the sitemap, the `Link: rel="canonical"` header and the served
+  bytes stop agreeing.
+- **`/files` embeds metadata like Flask**: with `config_embed_metadata` and a Calibre binaries directory (production
+  has both) each response is a fresh `calibredb export`, so two requests for the same PDF differ only in the
+  `xmp:MetadataDate` calibre writes. EPUBs come out byte-identical. Exports are bounded by `MAX_EXPORTS` and a 5
+  minute timeout, the staged copy is unlinked once the response holds the file open, and a failed export serves the
+  stored file, exactly as Flask does.
+- **Deliberately 501 from Rust**: Google Drive libraries and `kepub` with embedded metadata (production uses
+  neither). A wrong Caddy rule then fails loudly instead of serving a different file.
+- **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus
+  `Cloudflare-CDN-Cache-Control: no-store`), so the edge never keeps an error that a later request should not see.
+- **Parity checked on real data**: 12 library books served by both backends on the same host (right signature,
+  wrong signature, stale version, unknown book, `Range`). EPUB bodies byte-identical, PDFs differing only in
+  `xmp:MetadataDate`; status, `Location`, `Cache-Control`, canonical `Link`, `Content-Disposition` and the security
+  headers equal. The only remaining difference is Flask's session cookie adding `Vary: Cookie`, which Caddy
+  overrides with `Accept-Encoding`.
+- Check with `cargo fmt --check && cargo clippy --release --all-targets && cargo test --release` in `rust/backend`.
+- Not yet ported (still Flask): `/download/*` (authorizes and counts, needs sessions), `/cover*` (placeholder
+  cards, thumbnails, WebP), and every other route.
+
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
   clipping is ONE Markdown file `<id>.md`: YAML frontmatter = metadata, body = transcribed Markdown. The files are the

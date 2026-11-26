@@ -48,5 +48,13 @@ chown -R "$ABC_USER":"$ABC_USER" /config 2>/dev/null || true
 
 echo "[entrypoint] CACHE_DIRECTORY=$CACHE_DIRECTORY CALIBRE_DBPATH=$CALIBRE_DBPATH" >&2
 
+# Optional Rust backend (rust/backend/README.md) on 127.0.0.1:8084. Off by default: Caddy keeps sending every route
+# to Flask until it is switched on. Set RUST_BACKEND_ENABLED=true to start it next to Flask.
+if [[ "${RUST_BACKEND_ENABLED:-false}" == "true" ]]; then
+    echo "[entrypoint] starting taratsa_backend on ${LISTEN:-127.0.0.1:8084}"
+    setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
+        /usr/local/bin/taratsa_backend >>/config/rust-backend.log 2>&1 &
+fi
+
 exec setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
     python3 /app/calibre-web/cps.py
