@@ -70,6 +70,16 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
   Resumable; no-caption videos get `lines: []` (`--retry-empty` to retry)
 - Transcripts are read at SSR time from `src/data` (copied into the runtime image),
   so new files need an image rebuild
+- **Fetch from the browser when yt-dlp is blocked** (2026-11-26): on this server every yt-dlp/Innertube client gets
+  "Sign in to confirm you're not a bot", and a raw `get_transcript` call fails with `FAILED_PRECONDITION`, but a real
+  Chromium tab (eval `browser`) loads the watch page and its "Show transcript" panel works. The 53 `mei-1998` YouTube
+  videos were filled that way: open `watch?v=<id>`, expand the description, click "Show transcript" (a real click, then a
+  JS click if no segments appear), read `transcript-segment-view-model` (`.ytwTranscriptSegmentViewModelTimestamp` and
+  `[role="text"]`), group into ~280-character paragraphs like `parseJson3()`. The panel names no language, so `lang` was
+  guessed from stopwords and then checked by hand: one Thai track was mis-tagged `en`, and `w9cG81ZXqXw` is
+  garbled Portuguese ASR of Indonesian audio, so it was stored as `lines: []`. 38 of 53 have text (29 `id`, 8 `en`,
+  1 `th`); 15 have none (14 with no panel, mostly the AP Archive clips, plus that one). Tracks are often auto-generated, so the page says so
+- Internet Archive videos (`type: "archive"`) have no transcript (no caption files; `getTranscript` is YouTube-only)
 
 ### Video Catalogue (`/video/`, `/video/<id>/`)
 - Two sources in one list (`frontend/src/data/videos.ts`): the WordPress crawl

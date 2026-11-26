@@ -18,6 +18,11 @@ const samePost = allVideos.filter((item) => item.postId === video.postId && item
 const fallback = allVideos.filter((item) => item.id !== video.id).slice(0, 6)
 const related = samePost.length ? samePost : fallback
 const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
+// Indonesian is the page language, so only a different transcript language is named.
+const languageNames: Record<string, string> = { en: 'Inggris', th: 'Thai', ms: 'Melayu', zh: 'Mandarin', nl: 'Belanda' }
+const transcriptLanguage = transcript?.lang && transcript.lang !== 'id'
+  ? languageNames[transcript.lang.split('-')[0]] ?? transcript.lang
+  : null
 ---
 
 <BaseLayout title={`${video.providerTitle} | Video`} description={description.slice(0, 200)} canonical={`/video/${video.id}/`} ogType="article">
@@ -80,8 +85,9 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
       <section class="transcript" aria-labelledby="transcript-heading">
         <details>
           <summary id="transcript-heading">
-            Subtitel{transcript.lang?.startsWith('en') ? ' (bahasa Inggris)' : ''}
+            Subtitel{transcriptLanguage ? ` (bahasa ${transcriptLanguage})` : ''}
           </summary>
+          <p class="transcript__note">Teks diambil dari subtitel YouTube; sebagian dibuat otomatis sehingga bisa keliru, terutama nama dan istilah.</p>
           <ol>
             {transcript.lines.map(([seconds, text]) => (
               <li>
@@ -118,6 +124,7 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
   .video-source { margin-top: 1.25rem; overflow-wrap: anywhere; }
   .transcript { max-width: 48rem; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem; }
   .transcript summary { cursor: pointer; font-weight: 600; }
+  .transcript__note { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
   .transcript ol { list-style: none; margin: 1rem 0 0; padding: 0; max-height: 32rem; overflow-y: auto; }
   .transcript li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.75rem; padding: 0.4rem 0; line-height: 1.65; }
   .transcript__time { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.85rem; text-decoration: none; }
