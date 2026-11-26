@@ -255,6 +255,17 @@ def queue_text_analysis():
     return jsonify({"success": True, "message": _("Text analysis queued"), "task_id": str(task.id)})
 
 
+@admi.route("/sentiment/run", methods=["POST"])
+@user_login_required
+@admin_required
+def queue_sentence_tone():
+    from .tasks.sentiment import TaskSentenceTone
+
+    task = TaskSentenceTone()
+    WorkerThread.add(current_user.name, task, hidden=False)
+    return jsonify({"success": True, "message": _("Sentence tone queued"), "task_id": str(task.id)})
+
+
 @admi.route("/fulltext/run", methods=["POST"])
 @user_login_required
 @admin_required

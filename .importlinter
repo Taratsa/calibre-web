@@ -200,3 +200,41 @@ forbidden_modules =
 ignore_imports =
     cps -> cps.main
 message = "cps.fulltext_store is the Manticore writer. The OCR service and the edit-books layer call it, so it must not import them back, nor the web layer or the task framework."
+
+[importlinter:contract:sentiment-is-pure]
+type = forbidden
+name = sentiment-is-pure
+source_modules =
+    cps.sentiment
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.helper
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+    cps.db
+    cps.ocr_service
+    cps.sentiment_store
+ignore_imports =
+    cps -> cps.main
+message = "cps.sentiment turns a book's sampled sentence probabilities into its stored tone (calibration, profile keys). It is pure; cps.sentiment_store reads the cache and calls the classifier, the task and admin call the store."
+
+[importlinter:contract:sentiment-store-is-a-client]
+type = forbidden
+name = sentiment-store-is-a-client
+source_modules =
+    cps.sentiment_store
+forbidden_modules =
+    cps.web
+    cps.admin
+    cps.helper
+    cps.render_template
+    cps.services
+    cps.tasks
+    cps.ub
+    cps.db
+ignore_imports =
+    cps -> cps.main
+message = "cps.sentiment_store runs the sentence classifier over cached text and writes sentiment_sentences.json. The task and admin depend on it, never the other way around."

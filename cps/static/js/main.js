@@ -591,6 +591,31 @@ $(function() {
             }
         });
     });
+    $("#sentence_tone").click(function() {
+        $("#DialogHeader").addClass("hidden");
+        $("#DialogFinished").addClass("hidden");
+        $("#DialogContent").html("");
+        $("#spinner2").show();
+        $.ajax({
+            method: "post",
+            dataType: "json",
+            url: getPath() + "/sentiment/run",
+            success: function success(data) {
+                $("#spinner2").hide();
+                $("#DialogContent").text(data.message || "Sentence tone queued");
+                if (data.task_id) {
+                    $("#DialogContent").append(" ");
+                    $("#DialogContent").append($("<a>", { href: getPath() + "/tasks", text: "View Tasks" }));
+                }
+                $("#DialogFinished").removeClass("hidden");
+            },
+            error: function error(xhr) {
+                $("#spinner2").hide();
+                $("#DialogContent").text(xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : "Unable to queue sentence tone.");
+                $("#DialogFinished").removeClass("hidden");
+            }
+        });
+    });
     $("#fulltext_index").click(function() {
         $("#DialogHeader").addClass("hidden");
         $("#DialogFinished").addClass("hidden");

@@ -500,7 +500,41 @@ Two live search systems (plus the legacy advanced-search form):
   "berimbang" between; an older corpus-quartile cut-off (0.53) labelled 336 of 6,090 books "negatif" while they had
   more positive than negative words. Not done, and measured as the next biggest error: old-spelling Indonesian
   (`jang`, `dj`, `tj`; about 1,500 books) misses the lexicon, English books (about 2,400) are not scored, and
-  `perang`/`benar`/`terang` are scored out of context. A multilingual transformer pilot is the next step
+  `perang`/`benar`/`terang` are scored out of context; English books are also left unscored by design
+- Sentence tone ("Nada kalimat (model)", same page, separate from "Sentimen kata"): a multilingual transformer reads a
+  sample of the book's sentences, so it works for every language in the library and is not fooled by context-free
+  words. Model `Horizon-Labs/multilingual-sentiment-small` (Apache-2.0, ModernBERT-small, 3-way negative/neutral/
+  positive); weights downloaded in the runtime stage of the Dockerfile, SHA-256 pinned, into `cps/sentiment_model/`
+  (git-ignored, ~562 MB fp32). Runs through `candle-transformers` (`modernbert::
+  ModernBertForSequenceClassification`) and the `tokenizers` crate, both maintained Hugging Face crates, from
+  `rust/taratsa_text/src/classifier.rs`; the Python seam is `cps/sentiment_store.py` (I/O + cache) and
+  `cps/sentiment.py` (pure calibration). Measured against the int8 ONNX reference: 99.0% label agreement, mean
+  probability difference 0.0023; ~10 sentences/s on 8 CPU cores fp32. Measured on 400 human-labelled NusaX sentences
+  per language: 81.8 macro-F1 Indonesian, 82.6 English (the lexicon: 57.6 / 14.1); on Indonesian rewritten to Van
+  Ophuijsen spelling 76.2 (lexicon 43.7). NusaX is review text, so these are direction, not book-level accuracy;
+  no human-labelled sentences from this library were scored yet
+- Old-spelling normalisation: `rust/taratsa_text/src/orthography.rs` (rules) and `cps/sentiment_sample` (apply).
+  Rules `dj->j tj->c nj->ny sj->sy ch->kh oe->u j->y`, order significant (`dj` before `j`). The system is detected per
+  document (share of `dj`/`tj` tokens >= 0.4% -> Van Ophuijsen; else `oe` >= 0.2% -> Soewandi: `oe` only; else modern:
+  nothing changes), so modern books are never rewritten. Derived and tested on DOIL (`doi:10.5334/johd.564`, CC BY
+  4.0): rules picked on half of the 44 pre-1972 works; exact match against its human `standardized_eyd` column on the
+  other half 72.1% -> 98.0%, and over all 58 works with the detector 78.7% -> 98.0% (Van Ophuijsen 65.0% -> 97.3%,
+  Soewandi 82.4% -> 98.2%, modern 98.7% unchanged). Remaining errors are almost all `j->y` where `j` is right
+  (`saja`, `menjadi`, `wajan`); a word list would fix them
+- Sentence tone data flow: admin button "Compute Sentence Tone Now" (`POST /sentiment/run`) queues
+  `TaskSentenceTone` (`cps/tasks/sentiment.py`); ~1.2M sentences for ~20.7k books (60 sampled sentences each,
+  sequential: throughput is flat across threads at the measured ~6 sentences/s fp32) - about two days of CPU. The task writes the
+  file incrementally every few batches, and the first full pass is run as a separate process so the worker queue (OCR,
+  duplicates, full text) is not held for days. It writes `<OCR_CACHE_DIR>/../analysis/sentiment_sentences.json`
+  (`{version, built_at, model, books: {id: {score, positive_share, sentences}}}`, version =
+  `SENTENCE_TONE_VERSION` in `cps/sentiment.py`, not `ANALYSIS_VERSION`). Sampling is deterministic per book (the 60
+  sentences with the smallest hash of book id and index), so a rerun scores the same sentences. `score` = mean
+  (positive probability - negative probability) over the sample, calibrated across the library (shift so the median
+  book is 0, scale so the middle half reaches about +-0.25, clip +-1, scale capped at 4). `positive_share` = share of
+  non-neutral sentences called positive, `null` below 30 sentences. The page shows "cenderung positif" from +0.25,
+  "cenderung negatif" at or below -0.25, otherwise "berimbang". `seed.mjs` (`loadSentenceTone()`) merges the record
+  into `books/<id>.json` as `text.tone`; a missing or version-mismatched file means no line, never a stale one.
+  Re-run the task and then `./build-frontend.sh` to publish new tone numbers
 - Storage: `<OCR_CACHE_DIR>/../analysis/corpus.json` (`/config/ocr-cache/analysis`), rebuilt as a whole, never
   patched. Bump `ANALYSIS_VERSION` whenever a metric or its definition changes (an older file is then ignored until
   the next rebuild)
