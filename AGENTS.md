@@ -75,16 +75,21 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 - Two sources in one list (`frontend/src/data/videos.ts`): the WordPress crawl
   (`bun run crawl:videos`, upstream `Taratsa/pustaka-video`) and the videos of the
   Arsip Mei 1998 catalogue (`bun run import:videos-mei98`,
-  `scripts/import-mei98-videos.ts`). Collection entries carry `collection: "mei-1998"`,
-  `postId: 0` and `sourceUrl` = the YouTube watch URL; only their selection (YouTube ID,
-  title, date) comes from Logos, playback/thumbnail/channel come from YouTube (oEmbed).
-  `crawl:videos` keeps entries from other collections, so a re-crawl does not drop them;
-  `import:videos-mei98` is idempotent and skips videos already present
-- Detail pages embed `youtube-nocookie.com`; a video the owner does not allow to be
-  embedded (`embeddable: false`, e.g. `CPpVu28RIxg`) renders a thumbnail link to YouTube
-  instead. YouTube descriptions need `bun run enrich:video-descriptions --
-  --collection mei-1998 --concurrency 1 --delay-ms 2500`: watch pages answer 429 after a
-  burst, and `yt-dlp` asks for a "not a bot" sign-in on datacenter IPs
+  `scripts/import-mei98-videos.ts`). Collection entries carry `collection: "mei-1998"`
+  and `postId: 0`; only their selection (video ID, title, date) comes from Logos
+  (`k` "Video" for clips, "Audio/video" for footage uploaded to an archive), and the
+  rest from the source itself: YouTube oEmbed for `v.yt` (`type: "youtube"`),
+  `archive.org/metadata/<id>` for `v.ia` (`type: "archive"`, thumbnail
+  `archive.org/services/img/<id>`, channel = item creator). An Internet Archive item
+  that is not a public movie (e.g. the audio-only `pyk6qfgqs…`) is skipped with a
+  warning. `crawl:videos` keeps entries from other collections, so a re-crawl does not
+  drop them; `import:videos-mei98` is idempotent and skips videos already present
+- Detail pages embed `youtube-nocookie.com` or `archive.org/embed/<id>`; a YouTube video
+  the owner does not allow to be embedded (`embeddable: false`, e.g. `CPpVu28RIxg`)
+  renders a thumbnail link to YouTube instead. YouTube descriptions need
+  `bun run enrich:video-descriptions -- --collection mei-1998 --concurrency 1
+  --delay-ms 2500`: watch pages answer 429 after a burst, and `yt-dlp` asks for a
+  "not a bot" sign-in on datacenter IPs (Archive descriptions come with the import)
 
 ## Download Tracking
 

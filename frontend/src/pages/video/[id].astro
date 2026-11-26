@@ -51,6 +51,16 @@ const transcript = video.type === 'youtube' ? getTranscript(video.id) : null
         />
       )}
       {video.type === 'video' && <video controls preload="metadata" src={video.embedUrl} />}
+      {video.type === 'archive' && (
+        <iframe
+          src={`https://archive.org/embed/${encodeURIComponent(video.id)}`}
+          title={video.providerTitle}
+          loading="lazy"
+          allow="autoplay; fullscreen"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        />
+      )}
     </div>
 
     <h1>{video.providerTitle}</h1>

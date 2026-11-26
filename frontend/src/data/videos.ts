@@ -1,6 +1,6 @@
 import rawData from './wordpress-videos.json'
 
-export type VideoSource = 'youtube' | 'vimeo' | 'video'
+export type VideoSource = 'youtube' | 'vimeo' | 'video' | 'archive'
 
 export interface CrawledVideo {
   type: VideoSource
@@ -72,6 +72,7 @@ export function decodeEntities(value: string) {
 function thumbnailFor(video: CrawledVideo) {
   if (video.type === 'youtube') return `https://i.ytimg.com/vi/${encodeURIComponent(video.id)}/hqdefault.jpg`
   if (video.type === 'vimeo') return `https://vumbnail.com/${encodeURIComponent(video.id)}.jpg`
+  if (video.type === 'archive') return `https://archive.org/services/img/${encodeURIComponent(video.id)}`
   return null
 }
 
@@ -86,6 +87,7 @@ function domainFor(url: string) {
 function labelFor(type: VideoSource) {
   if (type === 'youtube') return 'YouTube'
   if (type === 'vimeo') return 'Vimeo'
+  if (type === 'archive') return 'Internet Archive'
   return 'Video'
 }
 

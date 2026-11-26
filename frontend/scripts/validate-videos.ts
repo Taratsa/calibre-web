@@ -8,7 +8,7 @@ for (const video of videos) {
   if (ids.has(key)) throw new Error(`Duplicate video entry: ${key}`)
   ids.add(key)
   const known = video.postId === 0
-    ? video.sourceUrl.startsWith('https://www.youtube.com/watch?v=')
+    ? video.sourceUrl.startsWith('https://www.youtube.com/watch?v=') || video.sourceUrl.startsWith('https://archive.org/details/')
     : video.sourceUrl.startsWith('https://19651966perpustakaanonline.wordpress.com/')
   if (!known) {
     throw new Error(`Unexpected source URL: ${video.sourceUrl}`)
