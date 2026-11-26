@@ -80,6 +80,13 @@ Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
   garbled Portuguese ASR of Indonesian audio, so it was stored as `lines: []`. 38 of 53 have text (29 `id`, 8 `en`,
   1 `th`); 15 have none (14 with no panel, mostly the AP Archive clips, plus that one). Tracks are often auto-generated, so the page says so
 - Internet Archive videos (`type: "archive"`) have no transcript (no caption files; `getTranscript` is YouTube-only)
+- **The 1,151 `jakartanicus` videos have no transcripts yet** (2026-11-26): a scan of 800 ids (watch-page HTML for
+  `"getTranscriptEndpoint"`) found 90 with a transcript panel, 155 without, and then YouTube rate-limited the server
+  (555 × HTTP 429, redirect to `google.com/sorry` reCAPTCHA; the managed Chromium tab is blocked too). Roughly 250 watch
+  pages is the budget per window, so a 1,151-video crawl cannot run here in one pass. Run
+  `bun run enrich:video-transcripts` from an unblocked IP (resumable, skips existing files, writes
+  `src/data/video-transcripts/<id>.json`) and copy the directory in. Long streams are large: a 3-hour stream was
+  1,388 segments / 127k characters
 
 ### Video Catalogue (`/video/`, `/video/<id>/`)
 - Two sources in one list (`frontend/src/data/videos.ts`): the WordPress crawl
