@@ -221,7 +221,31 @@ async function loadAnalysis(file, key, what) {
   return new Map(Object.entries(payload[key]).map(([id, profile]) => [Number(id), profile]));
 }
 
-async function loadBooks(db, bookText) {
+// Sentence-level tone from the transformer classifier (cps/sentiment_store.py): sentiment_sentences.json
+// ({books: {id: {score, positive_share, sentences}}}). Its own version counter (SENTENCE_TONE_VERSION in
+// cps/sentiment.py) because it changes on a different schedule than the corpus: a new model or calibration.
+async function loadSentenceTone() {
+  const none = new Map();
+  const source = readFileSync(join(ROOT, '..', 'cps', 'sentiment.py'), 'utf8');
+  const version = Number(source.match(/^SENTENCE_TONE_VERSION\s*=\s*(\d+)/m)?.[1]);
+  let payload;
+  try {
+    payload = JSON.parse(await readFile(join(OCR_CACHE_DIR, '..', 'analysis', 'sentiment_sentences.json'), 'utf8'));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.warn('[seed] sentiment_sentences.json not found; book pages get no sentence tone');
+      return none;
+    }
+    throw error;
+  }
+  if (payload.version !== version) {
+    console.warn(`[seed] sentiment_sentences.json is version ${payload.version}, expected ${version}; no sentence tone`);
+    return none;
+  }
+  return new Map(Object.entries(payload.books).map(([id, tone]) => [Number(id), tone]));
+}
+
+async function loadBooks(db, bookText, sentenceTone) {
   const stmt = db.prepare(`
     SELECT
       b.id            AS id,
@@ -409,7 +433,14 @@ async function loadBooks(db, bookText) {
       ...summary,
       comment,
       data: formats.map(f => ({ format: f.format, size: f.size, name: f.name })),
-      ...(bookText.has(book.id) ? { text: bookText.get(book.id) } : {}),
+      ...((bookText.has(book.id) || sentenceTone.has(book.id))
+        ? {
+            text: {
+              ...(bookText.get(book.id) ?? {}),
+              ...(sentenceTone.has(book.id) ? { tone: sentenceTone.get(book.id) } : {}),
+            },
+          }
+        : {}),
     };
 
     index.push(summary);
@@ -437,7 +468,8 @@ async function main() {
   const db = openDb();
   try {
     const bookText = await loadAnalysis('book_text.json', 'books', 'book pages get no text profile');
-    const index = await loadBooks(db, bookText);
+    const sentenceTone = await loadSentenceTone();
+    const index = await loadBooks(db, bookText, sentenceTone);
     await writeJson('books.json', index);
     console.log(`[seed] wrote ${index.length} books`);
     const readyOcr = await loadReadyOcr(db);

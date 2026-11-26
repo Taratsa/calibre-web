@@ -103,8 +103,9 @@ const ratingStr = book.rating && book.rating.count > 0
 // "Tentang teks": facts line, ranked word lists and key phrases from the corpus rebuild (see cps/text_analysis.py).
 const text = detail?.text ?? null;
 const countFormat = new Intl.NumberFormat('id-ID');
-const readingMinutes = text ? Math.max(1, Math.round(text.words / 200)) : 0;
-const textFacts = text
+// A book can carry only the sentence tone (no corpus profile yet), so the facts line needs the word count itself.
+const readingMinutes = text?.words ? Math.max(1, Math.round(text.words / 200)) : 0;
+const textFacts = text?.words
   ? [
       `${countFormat.format(text.words)} kata`,
       readingMinutes >= 60
@@ -122,6 +123,13 @@ const positiveShare = sentimentHits > 0 ? sentiment.positive / sentimentHits : 0
 // counts printed beside it (a 52% positive share used to read "negatif" under an older, corpus-quartile cut-off).
 // "cenderung positif" starts at 0.70 because Indonesian prose has a positive baseline (median ~0.61 positive share).
 const toneLabel = positiveShare >= 0.70 ? 'cenderung positif' : positiveShare < 0.5 ? 'cenderung negatif' : 'berimbang';
+
+// "Nada kalimat": the transformer classifier reads a sample of sentences (any language). Its score is calibrated
+// across the library (median book at 0, middle half within +-0.25), so the cut-offs below are not the lexicon's.
+const sentenceTone = text?.tone ?? null;
+const sentenceToneLabel = !sentenceTone
+  ? ''
+  : sentenceTone.score >= 0.25 ? 'cenderung positif' : sentenceTone.score <= -0.25 ? 'cenderung negatif' : 'berimbang';
 
 // Trend: 16 sections, null where a section had too few polarity words; each run of scored sections becomes one line.
 const trend = sentiment?.trend ?? [];
@@ -235,7 +243,15 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
       {text && (
         <section class="book-text">
           <h2 class="shelves-heading">Tentang teks</h2>
-          <p class="book-text__facts">{textFacts}</p>
+          {textFacts && <p class="book-text__facts">{textFacts}</p>}
+          {sentenceTone && (
+            <p class="book-text__note">
+              Nada kalimat (model): {sentenceToneLabel}
+              {sentenceTone.positive_share !== null
+                ? ` · ${Math.round(sentenceTone.positive_share * 100)}% kalimat positif atau negatif dari ${countFormat.format(sentenceTone.sentences)} kalimat contoh`
+                : ''}
+            </p>
+          )}
           {sentiment && (
             <div class="book-text__sentiment">
               <p class="book-text__note">

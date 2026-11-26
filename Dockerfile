@@ -115,6 +115,19 @@ COPY --from=builder /lsiopy /lsiopy
 ENV PATH="/lsiopy/bin:${PATH}"
 
 COPY cps/ /app/calibre-web/cps/
+
+# Sentence-level tone classifier (cps/sentiment_store.py -> taratsa_text::classifier). Apache-2.0. The SHA-256 values
+# pin the files: a changed upstream file fails the build instead of silently moving every book's tone score.
+ARG SENTIMENT_MODEL_REPO=Horizon-Labs/multilingual-sentiment-small
+ARG SENTIMENT_MODEL_REVISION=main
+RUN mkdir -p /app/calibre-web/cps/sentiment_model && cd /app/calibre-web/cps/sentiment_model && \
+    for file in model.safetensors tokenizer.json config.json special_tokens_map.json; do \
+      curl -fsSL -o "$file" "https://huggingface.co/${SENTIMENT_MODEL_REPO}/resolve/${SENTIMENT_MODEL_REVISION}/${file}"; \
+    done && \
+    printf '%s\n' \
+      'f0d0b6d2958f2f0a017ec060bb4768bfa720ef67625486ef02710c6484d02dd1  model.safetensors' \
+      'f34b44a6dc8a0eef651bfa10e8325057530152606a69d9c3b6ae02efb1558f0a  tokenizer.json' \
+      '516d8046cca3238145113bbe8b5e2b5b34b2f0c04b0ca093d7761c5f0a504eb9  config.json' | sha256sum -c -
 COPY cps.py /app/calibre-web/
 COPY pyproject.toml /app/calibre-web/
 COPY messages.pot /app/calibre-web/

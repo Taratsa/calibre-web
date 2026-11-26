@@ -68,6 +68,19 @@ export interface BookText {
     /** [emotion code, weighted hits], most frequent first; empty when the book has too few emotion words. */
     emotions: [string, number][];
   } | null;
+  /**
+   * Sentence-level tone from the transformer classifier (cps/sentiment_store.py), any language, independent of
+   * `sentiment`: the mean polarity of a sampled sentences, calibrated across the library so 0 is the median book.
+   * Absent when the classifier has not run or the book had too few sample sentences.
+   */
+  tone?: {
+    /** Calibrated mean polarity in -1..1. */
+    score: number;
+    /** Share of the sampled sentences the classifier called positive or negative (not neutral), 0..1. */
+    positive_share: number | null;
+    /** Sentences the classifier read. */
+    sentences: number;
+  };
 }
 
 export interface Author { id: number; name: string; sort: string }
