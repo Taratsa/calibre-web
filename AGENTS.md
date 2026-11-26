@@ -664,14 +664,15 @@ Two live search systems (plus the legacy advanced-search form):
   neither). A wrong Caddy rule then fails loudly instead of serving a different file.
 - **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus
   `Cloudflare-CDN-Cache-Control: no-store`), so the edge never keeps an error that a later request should not see.
-- **Parity checked on real data**: 12 library books served by both backends on the same host (right signature,
-  wrong signature, stale version, unknown book, `Range`). EPUB bodies byte-identical, PDFs differing only in
-  `xmp:MetadataDate`; status, `Location`, `Cache-Control`, canonical `Link`, `Content-Disposition` and the security
-  headers equal. The only remaining difference is Flask's session cookie adding `Vary: Cookie`, which Caddy
-  overrides with `Accept-Encoding`.
+- **Cover routes** (`/cover/*`, `/cover_thumb/*`) have a Rust fast path for anonymous, unfiltered local libraries:
+  it reads existing local source JPEG/prebuilt WebP and Flask thumbnail-cache files. Cookies, Authorization,
+  reverse-proxy auth, hidden anonymous browsing, restricted columns and Google Drive still go to Flask. Missing
+  thumbnails, placeholder cards and on-demand WebP conversion stay in Flask and fill the shared cache.
+  `/series_cover/*` and `/download/*` remain Flask.
+- **Cover `Accept` and file headers** match the tested Werkzeug cases: `MIMEAccept.__contains__` ignores `q=0` and
+  honors wildcards. For existing source and thumbnail cache files, ETags, Last-Modified, Range, HEAD, 304 and 412
+  match Flask. ETag mtime is rendered through Python-compatible floating-point formatting.
 - Check with `cargo fmt --check && cargo clippy --release --all-targets && cargo test --release` in `rust/backend`.
-- Not yet ported (still Flask): `/download/*` (authorizes and counts, needs sessions), `/cover*` (placeholder
-  cards, thumbnails, WebP), and every other route.
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

@@ -17,7 +17,14 @@ pub struct Settings {
     pub calibre_split_dir: PathBuf,
     pub trusted_hosts: String,
     pub title: String,
-    /// `flask_settings.flask_session_key`: the HMAC key of every signed URL.
+    pub anonymous_browse: bool,
+    pub restricted_column: i64,
+    pub reverse_proxy_login: bool,
+    pub reverse_proxy_login_header: String,
+    pub guest_language: String,
+    pub guest_denied_tags: String,
+    pub guest_allowed_tags: String,
+    /// `flask_settings.flask_session_key`: the HMAC key of signed URLs.
     pub session_key: Vec<u8>,
 }
 
@@ -50,7 +57,8 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
     let mut settings = conn.query_row(
         "SELECT config_use_google_drive, config_embed_metadata, config_unicode_filename, config_binariesdir,
                 config_kepubifypath, config_calibre_dir, config_calibre_split, config_calibre_split_dir, config_trustedhosts,
-                config_calibre_web_title
+                config_calibre_web_title, config_anonbrowse, config_restricted_column,
+                config_allow_reverse_proxy_header_login, config_reverse_proxy_login_header_name
          FROM settings LIMIT 1",
         [],
         |row| {
@@ -67,10 +75,29 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
                 calibre_split_dir: PathBuf::from(text(7)?),
                 trusted_hosts: text(8)?,
                 title: text(9)?,
+                anonymous_browse: flag(10)?,
+                restricted_column: row.get::<_, Option<i64>>(11)?.unwrap_or(0),
+                reverse_proxy_login: flag(12)?,
+                reverse_proxy_login_header: text(13)?,
+                guest_language: String::new(),
+                guest_denied_tags: String::new(),
+                guest_allowed_tags: String::new(),
                 session_key: Vec::new(),
             })
         },
     )?;
+    let (guest_language, guest_denied_tags, guest_allowed_tags) = conn.query_row(
+        "SELECT default_language, denied_tags, allowed_tags FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
+        [],
+        |row| Ok((
+            row.get::<_, Option<String>>(0)?.unwrap_or_default(),
+            row.get::<_, Option<String>>(1)?.unwrap_or_default(),
+            row.get::<_, Option<String>>(2)?.unwrap_or_default(),
+        )),
+    )?;
+    settings.guest_language = guest_language;
+    settings.guest_denied_tags = guest_denied_tags;
+    settings.guest_allowed_tags = guest_allowed_tags;
     settings.session_key = conn
         .query_row(
             "SELECT flask_session_key FROM flask_settings LIMIT 1",

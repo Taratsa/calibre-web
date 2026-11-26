@@ -2,12 +2,15 @@
 //! `metadata.db` as the Flask app (which stays the owner and only writer of both); Caddy sends everything
 //! else to Flask. See `rust/backend/README.md`.
 
+pub mod accept;
+pub mod cover;
 pub mod export;
 pub mod filename;
 pub mod files;
 pub mod health;
 pub mod library;
 pub mod mime;
+pub mod proxy;
 pub mod security;
 pub mod settings;
 pub mod signing;
@@ -26,10 +29,12 @@ pub struct AppState {
     pub app_db: PathBuf,
     pub started: Instant,
     pub onion_location: Option<String>,
-    /// `SECRET_KEY` overrides the key stored in `app.db`, exactly as in `cps/__init__.py`.
     pub secret_key_override: Option<Vec<u8>>,
-    /// Bounds concurrent `calibredb export` processes.
     pub exports: Semaphore,
+    pub proxy_url: String,
+    pub proxy_client: reqwest::Client,
+    pub cache_directory: PathBuf,
+    pub static_directory: PathBuf,
     cached: Mutex<Option<(Instant, Arc<Settings>)>>,
 }
 
@@ -50,6 +55,18 @@ impl AppState {
                 .filter(|v| !v.is_empty())
                 .map(String::into_bytes),
             exports: Semaphore::new(max_exports.max(1)),
+            proxy_url: env("FLASK_BACKEND_URL").unwrap_or_else(|| "http://127.0.0.1:8083".into()),
+            proxy_client: reqwest::Client::builder()
+                .connect_timeout(Duration::from_secs(2))
+                .timeout(Duration::from_secs(20))
+                .build()
+                .expect("valid proxy client configuration"),
+            cache_directory: env("CACHE_DIRECTORY")
+                .map(PathBuf::from)
+                .unwrap_or_else(|| PathBuf::from("/config/cache")),
+            static_directory: env("STATIC_DIR")
+                .map(PathBuf::from)
+                .unwrap_or_else(|| PathBuf::from("/app/calibre-web/cps/static")),
             cached: Mutex::new(None),
         }
     }
@@ -82,6 +99,7 @@ impl AppState {
 pub fn router(state: Arc<AppState>) -> Router {
     Router::new()
         .merge(health::routes())
+        .merge(cover::routes())
         .merge(files::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),

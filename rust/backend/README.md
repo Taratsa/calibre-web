@@ -21,10 +21,27 @@ backend answers. Nothing moves until its Rust version has been compared against 
 |---|---|---|
 | `/health`, `/healthz`, `/readyz`, `/healthz/live`, `/healthz/ready` | `src/health.rs` | same paths and payload keys as `cps/health.py`; `process` names the Rust runtime |
 | `/files/<id>/<fmt>/<version>/<sig>[/<name>]` | `src/files.rs` | signed, immutable, never counts a download; `Range`/`ETag`/`Last-Modified` from `tower-http` |
+| `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
 
-Not ported (still Flask): `/download/*` (authorizes and counts, needs sessions), `/cover*` (placeholder cards and
-thumbnails need the image pipeline), everything else. The security headers of `add_security_headers` are applied
-here to every response (`src/security.rs`).
+`/download/*`, `/series_cover/*`, and everything else remain Flask. The cover route serves an existing local source
+JPEG or prebuilt WebP, or an existing Flask thumbnail-cache file. On cache miss (including requested WebP without
+a prebuilt image), Rust proxies the original request to Flask; Flask generates/converts the asset and fills the
+shared cache. Generated placeholder cards are still served by Flask. The security headers of `add_security_headers`
+are applied here to every response (`src/security.rs`).
+
+### Cover fallback requirements
+
+- A request carrying `Cookie` or `Authorization`, a deployment with reverse-proxy-header login, hidden anonymous
+  browsing, restricted custom columns or Google Drive always proxies to Flask. The Rust service does not yet
+  decode Flask's signed session / remember cookies or implement per-user cover ACLs.
+- The anonymous fast-path query applies the guest language and tag filters from the anonymous user row. Restricted
+  custom columns still proxy to Flask.
+- Thumbnail cache misses and on-demand WebP conversion stay in Flask. Existing cache files are served with
+  Werkzeug-compatible path Adler-32 ETags, Last-Modified, Range, HEAD and conditional requests.
+  `/cover_thumb` defaults to `sm`; `/cover` does not.
+
+Not ported: `/download/*` (authorizes and counts, needs sessions), `/series_cover/*` (series cache semantics),
+everything else.
 
 ### Behaviour that is deliberately the same as Flask
 

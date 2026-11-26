@@ -23,14 +23,20 @@ fn fixture(embed_metadata: bool) -> Fixture {
     let book_dir = library.join("Author/Cafe (7)");
     std::fs::create_dir_all(&book_dir).unwrap();
     std::fs::write(book_dir.join("Cafe Muller.pdf"), BODY).unwrap();
+    std::fs::write(book_dir.join("cover.jpg"), b"jpeg-fixture").unwrap();
+    std::fs::write(book_dir.join("cover.webp"), b"webp-fixture").unwrap();
 
     let meta = Connection::open(library.join("metadata.db")).unwrap();
     meta.execute_batch(
-        "CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT, path TEXT, last_modified TIMESTAMP);
+        "CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT, path TEXT, last_modified TIMESTAMP, has_cover INTEGER);
          CREATE TABLE authors (id INTEGER PRIMARY KEY, name TEXT);
          CREATE TABLE books_authors_link (id INTEGER PRIMARY KEY, book INTEGER, author INTEGER);
          CREATE TABLE data (id INTEGER PRIMARY KEY, book INTEGER, format TEXT, uncompressed_size INTEGER, name TEXT);
-         INSERT INTO books VALUES (7, 'Café Müller', 'Author/Cafe (7)', '2023-10-27 07:56:53.123456');
+         CREATE TABLE books_languages_link (id INTEGER PRIMARY KEY, book INTEGER, lang_code INTEGER);
+         CREATE TABLE languages (id INTEGER PRIMARY KEY, lang_code TEXT);
+         CREATE TABLE books_tags_link (id INTEGER PRIMARY KEY, book INTEGER, tag INTEGER);
+         CREATE TABLE tags (id INTEGER PRIMARY KEY, name TEXT);
+         INSERT INTO books VALUES (7, 'Café Müller', 'Author/Cafe (7)', '2023-10-27 07:56:53.123456', 1);
          INSERT INTO authors VALUES (1, 'First Author'), (2, 'Second Author');
          INSERT INTO books_authors_link (book, author) VALUES (7, 2), (7, 1);",
     )
@@ -47,12 +53,16 @@ fn fixture(embed_metadata: bool) -> Fixture {
         "CREATE TABLE settings (config_use_google_drive INTEGER, config_embed_metadata INTEGER,
             config_unicode_filename INTEGER, config_binariesdir TEXT, config_kepubifypath TEXT,
             config_calibre_dir TEXT, config_calibre_split INTEGER, config_calibre_split_dir TEXT,
-            config_trustedhosts TEXT, config_calibre_web_title TEXT);
+            config_trustedhosts TEXT, config_calibre_web_title TEXT, config_anonbrowse INTEGER,
+            config_restricted_column INTEGER, config_allow_reverse_proxy_header_login INTEGER,
+            config_reverse_proxy_login_header_name TEXT);
+         CREATE TABLE user (id INTEGER PRIMARY KEY, role INTEGER, default_language TEXT, denied_tags TEXT, allowed_tags TEXT);
+         CREATE TABLE archived_book (id INTEGER PRIMARY KEY, user_id INTEGER, book_id INTEGER, is_archived INTEGER);
          CREATE TABLE flask_settings (id INTEGER PRIMARY KEY, flask_session_key BLOB);",
     )
     .unwrap();
     app.execute(
-        "INSERT INTO settings VALUES (0, ?1, 0, '/nonexistent-binaries', '', ?2, 0, '', 'https://stats.example', 'Fixture')",
+        "INSERT INTO settings VALUES (0, ?1, 0, '/nonexistent-binaries', '', ?2, 0, '', 'https://stats.example', 'Fixture', 1, 0, 0, '')",
         rusqlite::params![embed_metadata as i64, library.to_str().unwrap()],
     )
     .unwrap();
@@ -61,10 +71,18 @@ fn fixture(embed_metadata: bool) -> Fixture {
         [KEY],
     )
     .unwrap();
+    app.execute("INSERT INTO user VALUES (1, 32, 'all', '', '')", [])
+        .unwrap();
 
+    let mut state = Arc::new(AppState::new(app_db, 2));
+    Arc::get_mut(&mut state).unwrap().cache_directory = dir.path().join("cache");
+    Arc::get_mut(&mut state).unwrap().static_directory = dir.path().join("static");
+    std::fs::create_dir_all(dir.path().join("static")).unwrap();
+    std::fs::write(dir.path().join("static/generic_cover.jpg"), b"generic").unwrap();
+    Arc::get_mut(&mut state).unwrap().proxy_url = "http://127.0.0.1:1".into();
     let version = format!("{}-{}", 1_698_393_413, BODY.len());
     Fixture {
-        app: router(Arc::new(AppState::new(app_db, 2))),
+        app: router(state),
         _dir: dir,
         version,
     }
@@ -250,4 +268,171 @@ async fn health_reports_a_missing_library() {
     let json: serde_json::Value = serde_json::from_slice(&body).unwrap();
     assert_eq!(json["checks"]["calibre_db"]["status"], "down");
     assert_eq!(get(&f, "/healthz/live", None).await.0, StatusCode::OK);
+}
+
+#[tokio::test]
+async fn cover_original_serves_cached_jpeg_or_prebuilt_webp() {
+    let f = fixture(false);
+    let (status, headers, body) = get(&f, "/cover/7", None).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, b"jpeg-fixture");
+    assert_eq!(headers[header::CONTENT_TYPE], "image/jpeg");
+    assert_eq!(
+        headers[header::CONTENT_DISPOSITION],
+        "inline; filename=cover.jpg"
+    );
+    assert_eq!(headers[header::CACHE_CONTROL], "no-cache");
+    assert_eq!(headers[header::VARY], "Cookie");
+
+    let request = Request::builder()
+        .uri("/cover/7")
+        .header(header::HOST, "pustaka.example")
+        .header(header::ACCEPT, "image/webp")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.headers()[header::CONTENT_TYPE], "image/webp");
+    assert_eq!(
+        response.headers()[header::CONTENT_DISPOSITION],
+        "inline; filename=cover.webp"
+    );
+    assert_eq!(
+        response.headers()[header::CACHE_CONTROL],
+        "public, max-age=604800"
+    );
+    assert_eq!(response.headers()[header::VARY], "Accept-Encoding, Cookie");
+    assert_eq!(
+        response.into_body().collect().await.unwrap().to_bytes(),
+        &b"webp-fixture"[..]
+    );
+}
+
+#[tokio::test]
+async fn cover_thumbnail_reads_existing_cache_files() {
+    let f = fixture(false);
+    let cache_dir = f._dir.path().join("cache/thumbnails");
+    std::fs::create_dir_all(&cache_dir).unwrap();
+    std::fs::write(cache_dir.join("cover_7_r1.jpg"), b"thumbnail-jpeg").unwrap();
+    std::fs::write(cache_dir.join("cover_7_r1.webp"), b"thumbnail-webp").unwrap();
+
+    let request = Request::builder()
+        .uri("/cover_thumb/7")
+        .header(header::HOST, "pustaka.example")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.headers()[header::CONTENT_TYPE], "image/jpeg");
+    assert_eq!(
+        response.headers()[header::CACHE_CONTROL],
+        "public, max-age=604800"
+    );
+    assert_eq!(
+        response.into_body().collect().await.unwrap().to_bytes(),
+        &b"thumbnail-jpeg"[..]
+    );
+
+    let request = Request::builder()
+        .uri("/cover_thumb/7/sm")
+        .header(header::HOST, "pustaka.example")
+        .header(header::ACCEPT, "image/webp")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.headers()[header::CONTENT_TYPE], "image/webp");
+    assert_eq!(
+        response.headers()[header::CONTENT_DISPOSITION],
+        "inline; filename=cover_7_r1.webp"
+    );
+    assert_eq!(
+        response.into_body().collect().await.unwrap().to_bytes(),
+        &b"thumbnail-webp"[..]
+    );
+}
+
+#[tokio::test]
+async fn cover_head_range_and_conditional_requests_work() {
+    let f = fixture(false);
+    let request = Request::builder()
+        .method("HEAD")
+        .uri("/cover/7")
+        .header(header::HOST, "pustaka.example")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.headers()[header::CONTENT_LENGTH], "12");
+    assert!(
+        response
+            .into_body()
+            .collect()
+            .await
+            .unwrap()
+            .to_bytes()
+            .is_empty()
+    );
+
+    let request = Request::builder()
+        .uri("/cover/7")
+        .header(header::HOST, "pustaka.example")
+        .header(header::RANGE, "bytes=0-3")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::PARTIAL_CONTENT);
+    assert_eq!(response.headers()[header::CONTENT_RANGE], "bytes 0-3/12");
+    assert_eq!(
+        response.into_body().collect().await.unwrap().to_bytes(),
+        &b"jpeg"[..]
+    );
+
+    let request = Request::builder()
+        .uri("/cover/7")
+        .header(header::HOST, "pustaka.example")
+        .header(header::IF_NONE_MATCH, "*")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::NOT_MODIFIED);
+    assert_eq!(response.headers()[header::CACHE_CONTROL], "no-cache");
+}
+
+#[tokio::test]
+async fn request_identity_and_generic_cases_are_preserved() {
+    let f = fixture(false);
+    let request = Request::builder()
+        .uri("/cover/7")
+        .header(header::HOST, "pustaka.example")
+        .header(header::COOKIE, "session=abc")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(
+        response.status(),
+        StatusCode::BAD_GATEWAY,
+        "cookie requests must proxy to Flask"
+    );
+    assert!(
+        response
+            .headers()
+            .get(header::CONTENT_SECURITY_POLICY)
+            .is_some()
+    );
+
+    for path in ["/cover/99", "/cover_thumb/99"] {
+        let request = Request::builder()
+            .uri(path)
+            .header(header::HOST, "pustaka.example")
+            .body(Body::empty())
+            .unwrap();
+        let response = f.app.clone().oneshot(request).await.unwrap();
+        assert_eq!(response.status(), StatusCode::OK, "{path}");
+        assert_eq!(response.headers()[header::CONTENT_TYPE], "image/jpeg");
+        assert_eq!(
+            response.into_body().collect().await.unwrap().to_bytes(),
+            &b"generic"[..]
+        );
+    }
 }
