@@ -18,7 +18,7 @@ from taratsa_text import CorpusBuilder as _RustCorpusBuilder
 from taratsa_text import html_to_blocks as _html_to_blocks
 from taratsa_text import settings as _settings
 
-ANALYSIS_VERSION = 10
+ANALYSIS_VERSION = 11
 
 _SETTINGS = _settings()
 

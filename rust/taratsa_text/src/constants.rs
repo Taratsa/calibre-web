@@ -18,7 +18,7 @@ pub const AUTHOR_WORD_MIN_BOOKS: u32 = 2;
 pub const AUTHOR_WORD_MIN_SHARE: f64 = 0.25;
 pub const AUTHOR_WORDS_MIN_SHOWN: usize = 12;
 /// Similar books.
-pub const SIMILAR_BOOKS: usize = 6;
+pub const SIMILAR_BOOKS: usize = 10;
 pub const SIMILAR_BOOKS_MIN_SHOWN: usize = 3;
 pub const SIMILAR_MIN_SCORE: f64 = 0.10;
 pub const SIMILAR_MAX_SCORE: f64 = 0.85;

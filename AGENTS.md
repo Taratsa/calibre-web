@@ -487,7 +487,7 @@ Two live search systems (plus the legacy advanced-search form):
   line). Only the top `BOOK_CANDIDATES` words of a book are scored for `distinct` (150 matched the full ranking in
   99.8% of 900 books). Reading time = words / 200 per minute. Repeated page headers show up as phrases. New OCR text
   appears only after the next corpus rebuild + `./build-frontend.sh`; changing a rule -> bump `ANALYSIS_VERSION`
-- "Buku serupa" (book page, below the article, rendered with `BookGrid`): `profile.similar` = up to 6 `[book id, score]`
+- "Buku serupa" (book page, below the article, rendered with `BookGrid`): `profile.similar` = up to 10 `[book id, score]`
   from `CorpusBuilder._similar_books()`: cosine similarity of tf-idf vectors over each book's `BOOK_CANDIDATES` words
   (weight `(1 + ln count) x ln(books / books using the word)`; words in more than `SIMILAR_MAX_DOCUMENT_SHARE` of the
   books are dropped). Scores below `SIMILAR_MIN_SCORE` (0.10) are not shown; scores at or above `SIMILAR_MAX_SCORE`
