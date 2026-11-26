@@ -274,9 +274,24 @@
       ]
     },
     "tone": {
-      "score": 0.4447,
+      "score": 0.4884,
       "positive_share": 0.6,
-      "sentences": 60
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "happy",
+          0.3
+        ],
+        [
+          "love",
+          0.175
+        ]
+      ],
+      "emotion_language": "id"
     }
   }
 }
