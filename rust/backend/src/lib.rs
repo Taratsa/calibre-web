@@ -12,7 +12,9 @@ pub mod health;
 pub mod library;
 pub mod locale;
 pub mod mime;
+pub mod ocr_status;
 pub mod proxy;
+pub mod pyjson;
 pub mod reader;
 pub mod security;
 pub mod settings;
@@ -39,6 +41,8 @@ pub struct AppState {
     pub proxy_client: reqwest::Client,
     pub cache_directory: PathBuf,
     pub static_directory: PathBuf,
+    /// Where Flask's OCR service writes its text cache (`OCR_CACHE_DIR`); read-only here.
+    pub ocr_cache_directory: PathBuf,
     /// Umami endpoint of the server-side `file-download` event; `None` disables it (`UMAMI_URL=off`).
     pub umami_url: Option<String>,
     cached: Mutex<Option<(Instant, Arc<Settings>)>>,
@@ -76,6 +80,10 @@ impl AppState {
             static_directory: env("STATIC_DIR")
                 .map(PathBuf::from)
                 .unwrap_or_else(|| PathBuf::from("/app/calibre-web/cps/static")),
+            // The same variable and default as `cache_directory()` in `cps/ocr_service.py`.
+            ocr_cache_directory: env("OCR_CACHE_DIR")
+                .map(PathBuf::from)
+                .unwrap_or_else(|| PathBuf::from("/config/ocr-cache/results")),
             umami_url: match env("UMAMI_URL").as_deref() {
                 Some("off") => None,
                 Some(url) => Some(url.to_owned()),
@@ -118,6 +126,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(files::routes())
         .merge(static_files::routes())
         .merge(reader::routes())
+        .merge(ocr_status::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,

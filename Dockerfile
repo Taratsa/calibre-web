@@ -45,7 +45,9 @@ RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-too
 ENV PATH=/usr/local/cargo/bin:${PATH}
 COPY rust/ /app/rust/
 # `rust/backend/src/reader.rs` embeds this template with include_str!, and from `src/` it sits at `/app/cps/templates`.
+# `rust/backend/build.rs` reads the OCR cache version constants out of `cps/ocr_service.py` (`/app/cps` from `build.rs`).
 COPY cps/templates/readpdf.html /app/cps/templates/readpdf.html
+COPY cps/ocr_service.py /app/cps/ocr_service.py
 RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
     cd /app/rust/taratsa_text && \
     /lsiopy/bin/maturin build --release --locked --out /tmp/wheels && \

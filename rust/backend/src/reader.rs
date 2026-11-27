@@ -67,8 +67,8 @@ async fn pdf_reader(
     // The guest's role and filters decide what this page may show, so they are read fresh, not from the 1 s cache.
     let app_db = state.app_db.clone();
     let guest =
-        tokio::task::spawn_blocking(move || crate::settings::load_pdf_reader(&app_db)).await;
-    let (language, guest_role, denied, allowed) = match guest {
+        tokio::task::spawn_blocking(move || crate::settings::load_guest_access(&app_db)).await;
+    let guest = match guest {
         Ok(Ok(guest)) => guest,
         Ok(Err(error)) => {
             tracing::error!("PDF reader guest settings unavailable: {error}");
@@ -79,13 +79,21 @@ async fn pdf_reader(
             return proxy::fallback_reconstructed(state, &path, method, headers).await;
         }
     };
-    if guest_role & ROLE_VIEWER == 0 {
+    // `get_filtered_book` also hides the guest's archived books, which the query below does not model.
+    if guest.role & ROLE_VIEWER == 0 || guest.has_archived {
         return proxy::fallback_reconstructed(state, &path, method, headers).await;
     }
+    let guest_role = guest.role;
 
     let metadata_db = settings.metadata_db();
     let found = tokio::task::spawn_blocking(move || {
-        library::find_visible_pdf_reader_book(&metadata_db, book_id, &language, &denied, &allowed)
+        library::find_visible_pdf_reader_book(
+            &metadata_db,
+            book_id,
+            &guest.language,
+            &guest.denied,
+            &guest.allowed,
+        )
     })
     .await;
     // A hidden or missing book is a flash message and a redirect in Flask, and so is any database error here.
@@ -227,62 +235,15 @@ fn escape_html(value: &str) -> String {
 /// `umami_reader.html` with its three `tojson` values. Jinja's `tojson` escapes `<`, `>`, `&` and `'` as `\u003c`,
 /// `\u003e`, `\u0026`, `\u0027`, so the script cannot be closed from a book title.
 fn umami_script(book_id: i64, title: &str) -> String {
-    let title = tojson(title);
+    let title = crate::pyjson::tojson(title);
     format!(
         "    \n    \n<script defer=\"\" src=\"https://umami.kenadera.org/script.js\" data-website-id=\"0b57aeb6-d996-4d88-89fc-59ada511cd9c\" data-performance=\"true\" data-do-not-track=\"true\" type=\"text/javascript\" data-cfasync=\"false\"></script>\n<script type=\"text/javascript\" data-cfasync=\"false\">\n  window.addEventListener('load', function () {{\n    if (window.umami && typeof window.umami.track === 'function') {{\n      window.umami.track(\"pdf-read\", {{\n        book_id: {book_id},\n        format: \"pdf\",\n        title: {title}\n      }});\n    }}\n  }});\n</script>"
     )
 }
 
-/// Jinja's `tojson` = `json.dumps(value, ensure_ascii=True)` with `<`, `>`, `&` and `'` escaped as `\u003c`, `\u003e`,
-/// `\u0026` and `\u0027`. Python writes every non-ASCII character as `\uXXXX` (an astral one as a surrogate pair), so a
-/// title never leaves the page as raw UTF-8 inside the script. DEL (0x7f) is ASCII and stays literal.
-fn tojson(value: &str) -> String {
-    let mut out = String::with_capacity(value.len() + 2);
-    out.push('"');
-    for ch in value.chars() {
-        match ch {
-            '"' => out.push_str("\\\""),
-            '\\' => out.push_str("\\\\"),
-            '\n' => out.push_str("\\n"),
-            '\r' => out.push_str("\\r"),
-            '\t' => out.push_str("\\t"),
-            '\u{8}' => out.push_str("\\b"),
-            '\u{c}' => out.push_str("\\f"),
-            '<' | '>' | '&' | '\'' => out.push_str(&format!("\\u{:04x}", ch as u32)),
-            ch if (ch as u32) < 0x20 || (ch as u32) > 0x7f => {
-                let mut units = [0u16; 2];
-                for unit in ch.encode_utf16(&mut units) {
-                    out.push_str(&format!("\\u{unit:04x}"));
-                }
-            }
-            ch => out.push(ch),
-        }
-    }
-    out.push('"');
-    out
-}
-
 #[cfg(test)]
 mod tests {
-    use super::{remove_blocks, tojson};
-
-    #[test]
-    fn tojson_cannot_close_a_script_tag() {
-        assert_eq!(
-            tojson("a</script>&'b"),
-            "\"a\\u003c/script\\u003e\\u0026\\u0027b\""
-        );
-    }
-
-    #[test]
-    fn tojson_matches_python_for_non_ascii() {
-        // json.dumps ensure_ascii: en dash, the replacement character, an astral emoji (surrogate pair)
-        assert_eq!(tojson("a – b"), "\"a \\u2013 b\"");
-        assert_eq!(tojson("x\u{fffd}"), "\"x\\ufffd\"");
-        assert_eq!(tojson("😀"), "\"\\ud83d\\ude00\"");
-        assert_eq!(tojson("a\u{7f}"), "\"a\u{7f}\"");
-        assert_eq!(tojson("t\n\"\\"), "\"t\\n\\\"\\\\\"");
-    }
+    use super::remove_blocks;
 
     #[test]
     fn removes_only_the_marked_blocks() {

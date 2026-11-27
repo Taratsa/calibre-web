@@ -126,21 +126,54 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
 
     Ok(settings)
 }
-/// The PDF reader's guest role and visibility filters control access to the rendered content. Unlike cheap metadata
-/// settings, a revocation must apply to the next request, so this reads fresh values rather than `AppState::settings`.
-pub fn load_pdf_reader(app_db: &Path) -> rusqlite::Result<(String, i64, String, String)> {
+
+/// What the anonymous visitor may see, read fresh on every request. Unlike cheap metadata settings, a revocation here
+/// must apply to the next request, so this does not go through `AppState::settings`.
+#[derive(Debug, Clone)]
+pub struct GuestAccess {
+    pub id: i64,
+    pub language: String,
+    pub role: i64,
+    pub denied: String,
+    pub allowed: String,
+    /// The guest has at least one archived book. Flask's `get_filtered_book` hides those, which no Rust query models,
+    /// so a guest with archive rows is left to Flask entirely.
+    pub has_archived: bool,
+}
+
+pub fn load_guest_access(app_db: &Path) -> rusqlite::Result<GuestAccess> {
     let conn = open_read_only(app_db)?;
-    conn.query_row(
-        "SELECT default_language, role, denied_tags, allowed_tags
+    let (id, language, role, denied, allowed) = conn.query_row(
+        "SELECT id, default_language, role, denied_tags, allowed_tags
          FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
         [],
         |row| {
             Ok((
-                row.get::<_, Option<String>>(0)?.unwrap_or_default(),
-                row.get::<_, Option<i64>>(1)?.unwrap_or(0),
-                row.get::<_, Option<String>>(2)?.unwrap_or_default(),
+                row.get::<_, i64>(0)?,
+                row.get::<_, Option<String>>(1)?.unwrap_or_default(),
+                row.get::<_, Option<i64>>(2)?.unwrap_or(0),
                 row.get::<_, Option<String>>(3)?.unwrap_or_default(),
+                row.get::<_, Option<String>>(4)?.unwrap_or_default(),
             ))
         },
-    )
+    )?;
+    let has_archived = conn
+        .query_row(
+            "SELECT 1 FROM archived_book WHERE user_id = ?1 AND is_archived LIMIT 1",
+            [id],
+            |_| Ok(()),
+        )
+        .map(|()| true)
+        .or_else(|error| match error {
+            rusqlite::Error::QueryReturnedNoRows => Ok(false),
+            other => Err(other),
+        })?;
+    Ok(GuestAccess {
+        id,
+        language,
+        role,
+        denied,
+        allowed,
+        has_archived,
+    })
 }

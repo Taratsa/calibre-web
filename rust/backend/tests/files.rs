@@ -92,6 +92,7 @@ fn fixture(embed_metadata: bool) -> Fixture {
     std::fs::write(dir.path().join("static/generic_cover.jpg"), b"generic").unwrap();
     Arc::get_mut(&mut state).unwrap().proxy_url = "http://127.0.0.1:1".into();
     Arc::get_mut(&mut state).unwrap().umami_url = None;
+    Arc::get_mut(&mut state).unwrap().ocr_cache_directory = dir.path().join("ocr");
     let version = format!("{}-{}", 1_698_393_413, BODY.len());
     Fixture {
         app: router(state),
@@ -906,4 +907,134 @@ async fn pdf_reader_leaves_identity_and_odd_cases_to_flask() {
         .unwrap();
     tokio::time::sleep(std::time::Duration::from_millis(100)).await;
     assert_eq!(reader(&f, &[]).await.0, StatusCode::BAD_GATEWAY);
+}
+
+/// The cache file name for the fixture's PDF at mtime 1_700_000_000.123456789 s, computed with CPython's
+/// `json.dumps(request, sort_keys=True, separators=(",", ":"))` + sha256.
+const OCR_CACHE_FILE: &str =
+    "7-f6ee0b01563e8a866b5f9539dd051452f11c7cfeeb37a2ebca03332975e96f8e.json";
+
+fn ocr_ready(f: &Fixture, result: &str) {
+    let book = f
+        ._dir
+        .path()
+        .join("library/Author/Cafe (7)/Cafe Muller.pdf");
+    let file = std::fs::OpenOptions::new().write(true).open(&book).unwrap();
+    file.set_modified(std::time::UNIX_EPOCH + std::time::Duration::new(1_700_000_000, 123_456_789))
+        .unwrap();
+    let cache = f._dir.path().join("ocr");
+    std::fs::create_dir_all(&cache).unwrap();
+    std::fs::write(
+        cache.join(OCR_CACHE_FILE),
+        format!("{{\"request\":{{}},\"result\":{result}}}"),
+    )
+    .unwrap();
+}
+
+const READY: &str = r#"{"status":"ready","markdown_html":"<p>x</p>","page_count":3,"pages_routed_to_ocr":1,"processing_time_ms":9}"#;
+
+#[tokio::test]
+async fn ocr_status_answers_a_cached_document_like_flask() {
+    let f = fixture(false);
+    reader_state(&f);
+    ocr_ready(&f, READY);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    for uri in [
+        "/api/read/7/ocr/status",
+        "/api/read/7/ocr/status/pdf",
+        "/api/read/7/ocr/status/PDF",
+    ] {
+        let (status, headers, body) = get(&f, uri, None).await;
+        assert_eq!(status, StatusCode::OK, "{uri}");
+        assert_eq!(body, b"{\"available\":true,\"state\":null}\n", "{uri}");
+        assert_eq!(headers[header::CONTENT_TYPE], "application/json");
+        assert_eq!(headers[header::VARY], "Cookie");
+        assert!(headers.get(header::CACHE_CONTROL).is_none());
+    }
+}
+
+#[tokio::test]
+async fn ocr_status_leaves_everything_it_cannot_prove_to_flask() {
+    // 502 = reached Flask (down in the fixture). A miss must never be answered `available: false` from here: Flask
+    // asks the in-memory job queue, extracts an EPUB inline and rejects a non-PDF file.
+    let f = fixture(false);
+    reader_state(&f);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY,
+        "cache miss"
+    );
+
+    ocr_ready(&f, READY);
+    tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+    for uri in [
+        "/api/read/7/ocr/status/pdf/",  // trailing slash is a Flask 404
+        "/api/read/7/ocr/status/epub",  // no EPUB format on this book
+        "/api/read/7/ocr/status/txt",   // not an OCR format
+        "/api/read/07x/ocr/status/pdf", // not an int
+        "/api/read/99/ocr/status/pdf",  // unknown book
+    ] {
+        assert_eq!(get(&f, uri, None).await.0, StatusCode::BAD_GATEWAY, "{uri}");
+    }
+    // identity stays with Flask even for a cached book
+    for (name, value) in [("Cookie", "session=abc"), ("Authorization", "Basic eDp5")] {
+        let request = Request::builder()
+            .uri("/api/read/7/ocr/status/pdf")
+            .header(header::HOST, "pustaka.example")
+            .header(name, value)
+            .body(Body::empty())
+            .unwrap();
+        let response = f.app.clone().oneshot(request).await.unwrap();
+        assert_eq!(response.status(), StatusCode::BAD_GATEWAY, "{name}");
+    }
+    // a cache file that is not a finished result is a miss, not an answer
+    ocr_ready(&f, r#"{"status":"queued"}"#);
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+    ocr_ready(
+        &f,
+        r#"{"status":"ready","markdown_html":"x","page_count":"many"}"#,
+    );
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+}
+
+#[tokio::test]
+async fn ocr_status_follows_the_guest_role_and_archive_at_once() {
+    let f = fixture(false);
+    reader_state(&f);
+    ocr_ready(&f, READY);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::OK
+    );
+    let app = Connection::open(&f.app_db).unwrap();
+    app.execute("UPDATE user SET role = 34 WHERE id = 1", [])
+        .unwrap(); // viewer role taken away
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+    app.execute("UPDATE user SET role = 34 | 256 WHERE id = 1", [])
+        .unwrap();
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::OK
+    );
+    // an archived book of the guest hides it in Flask (`get_filtered_book`), which Rust does not model
+    app.execute(
+        "INSERT INTO archived_book (user_id, book_id, is_archived) VALUES (1, 7, 1)",
+        [],
+    )
+    .unwrap();
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY
+    );
 }
