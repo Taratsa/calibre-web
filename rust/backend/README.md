@@ -128,6 +128,8 @@ routed; `/read/<id>/epub` and everything else stay on Flask. Backup of the Caddy
 First 3 minutes: 44 requests, all 200, Caddy-side p50 13 ms / p95 29 ms (Flask: p95 about 0.9 s), none reached Flask's
 access log. `readpdf.html` is compiled into the binary, so the Dockerfile copies it into the builder stage
 (`/app/cps/templates/`) and `build.rs` rebuilds on a template change; after a pdf.js upgrade, rerun the comparison.
+Rechecked against the DEPLOYED binary on pdf.js 6.5.438 (2026-11-27): 800 books, status, every header except `Date` and
+the body hash identical to Flask, 0 differences.
 
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
