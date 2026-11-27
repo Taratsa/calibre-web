@@ -221,6 +221,31 @@ image's itsdangerous (byte-identical cookie decodes, a compressed and an uncompr
 expired one, a revoked `user_session` row, and a user whose denied tag hides the book. Live: the EPUB reader renders
 with a real browser session, and only an unverifiable `session=garbage` still reaches Flask.
 
+### `/read/<id>/epub` (`src/epub_page.rs`, LIVE 2026-11-28 ~00:3x WIB)
+
+The EPUB reader shell for the ANONYMOUS visitor, a port of `cps/templates/read.html` (the public site has no reader
+accounts; only the admin logs in). Rust now MINTS state, not only reads it: Flask's page calls `csrf_token()`, which stores
+a value in the session and so always answers with a `Set-Cookie`. Both are reproduced in `session.rs`:
+
+* the session cookie: `{"csrf_token":"<40 hex>"}` (compact JSON, `TaggedJSONSerializer`), zlib only when shorter, signed with
+  `hmac` key derivation and salt `cookie-session`, the timestamp as minimal big-endian bytes (4 until 2106);
+* the CSRF token: `URLSafeTimedSerializer(secret, salt="wtf-csrf-token")` left on itsdangerous' DEFAULTS, i.e.
+  `django-concat` key derivation, not the session's `hmac`. The first version signed it with `hmac`, and Flask's own
+  `validate_csrf` rejected it: that was the one real bug of this port, found only by feeding the token to Flask's validator.
+
+Verified: byte-identical to Flask in six locales (`en id de ar zh-TW pt-BR`) for the page body (token aside); 400 random
+EPUB books plus 150 whose titles carry HTML/JSON-special or non-ASCII punctuation, all identical in status, body and
+whether `Set-Cookie` is sent; Flask's `URLSafeTimedSerializer.loads` and `flask_wtf.csrf.validate_csrf` accept the cookie
+and token Rust minted; a returning visitor's valid cookie is reused (no new `Set-Cookie`). Labels come from
+`src/reader_strings.json`, generated from the app image's catalogs by `tools/gen_reader_strings.py` (regenerate when
+`read.html` or the catalogs change). A logged-in session, a cookie that does not verify, `kepub`, a trailing slash and
+every ACL switch go to Flask, because there the page carries a bookmark and `useBookmarks: true`.
+
+Live: `@rust_reader` widened to `^/read/[0-9]+/(pdf|epub)$` (backup `Caddyfile.pre-epubshell.2026-11-28`); 21 requests in
+70 s at p50 6.3 ms / p95 20.3 ms with none reaching Flask, a fresh Chromium profile renders three chapter frames and sets
+one `HttpOnly; SameSite=Lax` cookie. A new template embedded by Rust must be copied in the Dockerfile's builder stage
+too (`read.html` was missed once, the same trap as `readpdf.html`).
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's

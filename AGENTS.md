@@ -454,6 +454,14 @@ Two live search systems (plus the legacy advanced-search form):
   `SECRET_KEY_FALLBACKS`, or any unresolved case is proxied to Flask rather than answered as a guest. Changing the
   signer, the salt, the session lifetime or the revocation columns means changing Flask and Rust together and rerunning
   the itsdangerous comparison (`SESSION_TEST_COOKIE` in `tests/files.rs`).
+- **The EPUB reader shell is rendered by Rust for anonymous visitors** (`rust/backend/src/epub_page.rs`, 2026-11-28; the
+  public site has no reader accounts). It is the first Rust code that WRITES a cookie: it mints Flask's session cookie
+  (`{"csrf_token": …}`, `hmac` derivation, salt `cookie-session`) and the Flask-WTF token (salt `wtf-csrf-token`,
+  itsdangerous defaults, `django-concat` derivation: NOT the session's `hmac`, which Flask's `validate_csrf` rejects).
+  Both are accepted by Flask's own `loads`/`validate_csrf`. Page bytes equal Flask's in 6 locales and 550 books; labels
+  come from `src/reader_strings.json` (`tools/gen_reader_strings.py`, rerun when `read.html` or the catalogs change). A
+  logged-in session, a cookie that does not verify, `kepub` and a trailing slash stay with Flask. A template embedded
+  with `include_str!` must ALSO be copied into the Dockerfile's builder stage.
 - `/read/<id>/epub` (`templates/read.html` + `static/js/reading/epub.js`) renders EPUBs with the
   [Readium ts-toolkit](https://github.com/readium/ts-toolkit) `EpubNavigator`; it replaced epubjs/epub-ts. The
   navigator does not read zips: `cps/readium.py` builds a Readium Web Publication Manifest and a position list
