@@ -44,5 +44,28 @@
       "size": 173115,
       "name": "Integration of the human rights of women a - Radhika Coomaraswamy"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.23951,
+      "positive_share": 0.1176,
+      "sentences": 60,
+      "emotions": [
+        [
+          "disappointment",
+          0.5
+        ],
+        [
+          "sadness",
+          0.25
+        ],
+        [
+          "optimism",
+          0.25
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.3492
+    }
+  }
 }

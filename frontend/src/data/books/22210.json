@@ -53,5 +53,28 @@
       "size": 134088,
       "name": "CIA Menggulingkan Sukarno demi Emas di Pap - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.06595,
+      "positive_share": 0.375,
+      "sentences": 48,
+      "emotions": [
+        [
+          "sadness",
+          0.25
+        ],
+        [
+          "fear",
+          0.25
+        ],
+        [
+          "anger",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0754
+    }
+  }
 }

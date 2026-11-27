@@ -53,5 +53,28 @@
       "size": 150841,
       "name": "Amanat Jasmerah dari Jenderal Post-Truth - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16765,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4167
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2359
+    }
+  }
 }

@@ -52,5 +52,24 @@
       "size": 399691,
       "name": "Sebelum PKI Berdiri_ Lingkaran Kaum Sosial - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.00324,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.5
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0337
+    }
+  }
 }

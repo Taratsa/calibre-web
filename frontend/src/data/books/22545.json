@@ -53,5 +53,24 @@
       "size": 173005,
       "name": "Kejagung Cari Solusi 7 Kasus Pelanggaran H - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13514,
+      "positive_share": 0.1667,
+      "sentences": 41,
+      "emotions": [
+        [
+          "fear",
+          0.5
+        ],
+        [
+          "sadness",
+          0.5
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1846
+    }
+  }
 }

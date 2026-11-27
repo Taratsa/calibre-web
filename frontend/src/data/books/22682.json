@@ -51,5 +51,28 @@
       "size": 100790,
       "name": "Wiranto_ Kembalinya Ajudan Soeharto ke Lin - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07828,
+      "positive_share": 0.2,
+      "sentences": 52,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3
+        ],
+        [
+          "anger",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0949
+    }
+  }
 }

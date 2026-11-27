@@ -54,5 +54,28 @@
       "size": 501531,
       "name": "Jagal Gestok'65 Bandung Selatan Minta Maaf - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17859,
+      "positive_share": 0,
+      "sentences": 49,
+      "emotions": [
+        [
+          "fear",
+          0.5
+        ],
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "anger",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2531
+    }
+  }
 }

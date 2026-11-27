@@ -49,5 +49,28 @@
       "size": 159446,
       "name": "Survivors _ Penyintas Pembunuhan Massal 19 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.30907,
+      "positive_share": 0.1875,
+      "sentences": 32,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.375
+        ],
+        [
+          "fear",
+          0.0625
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.459
+    }
+  }
 }

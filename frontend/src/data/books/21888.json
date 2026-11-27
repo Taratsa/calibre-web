@@ -54,5 +54,28 @@
       "size": 272783,
       "name": "Staf Presiden Gelar Pertemuan dengan Korba - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17542,
+      "positive_share": 0.125,
+      "sentences": 32,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.25
+        ],
+        [
+          "happy",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2481
+    }
+  }
 }

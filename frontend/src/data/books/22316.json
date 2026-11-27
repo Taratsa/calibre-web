@@ -52,5 +52,28 @@
       "size": 81998,
       "name": "Dokumen CIA AS Tegaskan G30S 1965 Bukti Ku - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14551,
+      "positive_share": 0.1,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4
+        ],
+        [
+          "sadness",
+          0.3
+        ],
+        [
+          "fear",
+          0.3
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2009
+    }
+  }
 }

@@ -14,7 +14,7 @@
     "Anti Orba",
     "Artikel",
     "Kliping",
-    "Sastra",
+    "sastra",
     "Sejarah",
     "Wawancara"
   ],
@@ -56,5 +56,28 @@
       "size": 427058,
       "name": "Mereka Menghormati Saya Sebagai Indonesia - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.02866,
+      "positive_share": 0.4167,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.2917
+        ],
+        [
+          "sadness",
+          0.2917
+        ],
+        [
+          "happy",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0166
+    }
+  }
 }

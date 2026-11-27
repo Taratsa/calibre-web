@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Kisah Tapol",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -52,5 +52,15 @@
       "size": 85043,
       "name": "Segulung Kertas Kecil di Ubi Rebus - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26986,
+      "positive_share": 0.1786,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.3971
+    }
+  }
 }

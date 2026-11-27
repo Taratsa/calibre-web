@@ -52,5 +52,28 @@
       "size": 172511,
       "name": "In Memoriam_ Michel Karatem , 27 Agustus 1 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.02367,
+      "positive_share": 0.5,
+      "sentences": 53,
+      "emotions": [
+        [
+          "happy",
+          0.4167
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "anger",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0659
+    }
+  }
 }

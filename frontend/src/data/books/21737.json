@@ -44,5 +44,24 @@
       "size": 1423206,
       "name": "Time to Settle the Sense of Security - Komnas Perempuan et al_"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12899,
+      "positive_share": 0.3529,
+      "sentences": 60,
+      "emotions": [
+        [
+          "disappointment",
+          0.5
+        ],
+        [
+          "sadness",
+          0.5
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.1749
+    }
+  }
 }

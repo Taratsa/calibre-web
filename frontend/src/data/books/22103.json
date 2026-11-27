@@ -51,5 +51,28 @@
       "size": 396251,
       "name": "Nahasnya Organisasi-Organisasi Onderbouw P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17055,
+      "positive_share": 0.1875,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "happy",
+          0.0625
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2404
+    }
+  }
 }

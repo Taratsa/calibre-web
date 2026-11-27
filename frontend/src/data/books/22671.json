@@ -51,5 +51,28 @@
       "size": 1456722,
       "name": "Gua (Luweng) Tikus_ Tempat Pembantaian Mas - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11716,
+      "positive_share": 0.1667,
+      "sentences": 45,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "anger",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1562
+    }
+  }
 }

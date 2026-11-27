@@ -52,5 +52,28 @@
       "size": 184904,
       "name": "Tokoh PKI di TMP Kalibata - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.00191,
+      "positive_share": 0.7143,
+      "sentences": 51,
+      "emotions": [
+        [
+          "happy",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "love",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0316
+    }
+  }
 }

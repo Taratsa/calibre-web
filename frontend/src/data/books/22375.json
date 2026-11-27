@@ -52,5 +52,28 @@
       "size": 333107,
       "name": "Cokrokembang, Bumi yang Menolak Jadi Kubur - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.27742,
+      "positive_share": 0.1111,
+      "sentences": 47,
+      "emotions": [
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.409
+    }
+  }
 }

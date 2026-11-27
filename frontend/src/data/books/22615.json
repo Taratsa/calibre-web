@@ -51,5 +51,28 @@
       "size": 84227,
       "name": "Arsip Seni Visual Peristiwa 1965-1966 _ Pa - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.01102,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "love",
+          0.25
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "sadness",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.046
+    }
+  }
 }

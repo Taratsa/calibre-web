@@ -53,5 +53,28 @@
       "size": 205714,
       "name": "Penyelesaian Pelanggaran HAM Mandek, Dirje - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14142,
+      "positive_share": 0.125,
+      "sentences": 35,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "happy",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1945
+    }
+  }
 }

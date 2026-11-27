@@ -49,5 +49,28 @@
       "size": 492164,
       "name": "Neraka Di Pulau Kemarau - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13424,
+      "positive_share": 0.25,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.2
+        ],
+        [
+          "anger",
+          0.15
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1832
+    }
+  }
 }

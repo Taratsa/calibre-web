@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol",
     "Kliping"
   ],
@@ -55,5 +55,15 @@
       "size": 274880,
       "name": "Membunuh Palu Arit di Utara Celebes - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11528,
+      "positive_share": 0.1818,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.1533
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 240099,
       "name": "Sejak Hari itu mereka dieksekusi _hilang_ - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24433,
+      "positive_share": 0,
+      "sentences": 30,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.25
+        ],
+        [
+          "fear",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3568
+    }
+  }
 }

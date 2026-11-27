@@ -16,7 +16,7 @@
     "Daerah",
     "Kisah Tapol",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -56,5 +56,15 @@
       "size": 251044,
       "name": "Sejarah Lisan _Para Korban_ 65 Sumatera Ut - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19874,
+      "positive_share": 0.2174,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2849
+    }
+  }
 }

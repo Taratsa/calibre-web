@@ -51,5 +51,28 @@
       "size": 121548,
       "name": "Gagal Paham Mahfud MD Dalam Mendudukkan DP - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.33312,
+      "positive_share": 0,
+      "sentences": 38,
+      "emotions": [
+        [
+          "anger",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "fear",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4969
+    }
+  }
 }

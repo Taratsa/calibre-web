@@ -53,5 +53,28 @@
       "size": 83372,
       "name": "Istana Jawab Kontroversi Politik dan HAM 4 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12533,
+      "positive_share": 0.3333,
+      "sentences": 58,
+      "emotions": [
+        [
+          "anger",
+          0.4167
+        ],
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1691
+    }
+  }
 }

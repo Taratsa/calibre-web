@@ -53,5 +53,28 @@
       "size": 107295,
       "name": "Sulami, Sosok perempuan revolusioner yang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.18937,
+      "positive_share": 0.3077,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "fear",
+          0.1923
+        ],
+        [
+          "love",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2701
+    }
+  }
 }

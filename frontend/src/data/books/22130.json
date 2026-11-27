@@ -51,5 +51,28 @@
       "size": 131549,
       "name": "Cerita Sertu Ishak Bahar, ajudan Letkol Un - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0534,
+      "positive_share": 0.2,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "anger",
+          0.2
+        ],
+        [
+          "happy",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0556
+    }
+  }
 }

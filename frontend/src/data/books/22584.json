@@ -52,5 +52,28 @@
       "size": 262611,
       "name": "Pembantaian di Indonesia (Genosida 1965-19 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.30187,
+      "positive_share": 0.0714,
+      "sentences": 40,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "fear",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4476
+    }
+  }
 }

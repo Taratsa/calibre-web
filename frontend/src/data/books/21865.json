@@ -53,5 +53,28 @@
       "size": 199442,
       "name": "Tragedi 1965 dan Peristiwa Madiun 1948 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.4116,
+      "positive_share": 0.0667,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4333
+        ],
+        [
+          "sadness",
+          0.4333
+        ],
+        [
+          "fear",
+          0.0667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.6207
+    }
+  }
 }

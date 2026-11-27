@@ -54,5 +54,28 @@
       "size": 164680,
       "name": "Pidato Zak Yacoob , 20 Juli 2016 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.32578,
+      "positive_share": 0,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4211
+        ],
+        [
+          "anger",
+          0.2632
+        ],
+        [
+          "fear",
+          0.2632
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4853
+    }
+  }
 }

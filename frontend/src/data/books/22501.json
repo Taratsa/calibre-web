@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Kliping"
   ],
   "publisher": {
@@ -53,5 +53,28 @@
       "size": 272635,
       "name": "Pembantaian berdarah 1965-66 - di balik ke - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17928,
+      "positive_share": 0.2222,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.2778
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2542
+    }
+  }
 }

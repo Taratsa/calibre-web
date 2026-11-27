@@ -52,5 +52,28 @@
       "size": 198209,
       "name": "Jika Bisa Adil Pada Rohingya, Mengapa Pada - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.41096,
+      "positive_share": 0.0385,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.3077
+        ],
+        [
+          "fear",
+          0.1923
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.6197
+    }
+  }
 }

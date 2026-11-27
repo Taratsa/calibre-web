@@ -53,5 +53,28 @@
       "size": 71156,
       "name": "Pengungkapan Kebenaran Dulu, Baru Rekonsil - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26943,
+      "positive_share": 0.1538,
+      "sentences": 46,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "anger",
+          0.3846
+        ],
+        [
+          "happy",
+          0.0769
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3964
+    }
+  }
 }

@@ -14,7 +14,7 @@
     "Anti Orba",
     "Artikel",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -54,5 +54,28 @@
       "size": 361034,
       "name": "Dikerjapaksakan Di Alam Terbuka , 5 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.08826,
+      "positive_share": 0.3548,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4194
+        ],
+        [
+          "happy",
+          0.3226
+        ],
+        [
+          "anger",
+          0.129
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1106
+    }
+  }
 }

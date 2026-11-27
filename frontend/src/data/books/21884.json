@@ -55,5 +55,28 @@
       "size": 209562,
       "name": "Tragedi 1965 dan Transformasi Sejarahnya - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.21363,
+      "positive_share": 0.25,
+      "sentences": 41,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.3
+        ],
+        [
+          "anger",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3084
+    }
+  }
 }

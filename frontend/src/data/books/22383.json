@@ -54,5 +54,28 @@
       "size": 307320,
       "name": "Kata Sambutan oleh UN High Commissioner fo - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.01166,
+      "positive_share": 0.5357,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "fear",
+          0.2143
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.047
+    }
+  }
 }

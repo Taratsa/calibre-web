@@ -53,5 +53,28 @@
       "size": 330452,
       "name": "Semua Adalah PKI (2020-03-01) - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.38088,
+      "positive_share": 0,
+      "sentences": 37,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.4375
+        ],
+        [
+          "fear",
+          0.0625
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5722
+    }
+  }
 }

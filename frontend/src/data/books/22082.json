@@ -51,5 +51,28 @@
       "size": 258127,
       "name": "Kisah Apel Akbar 5 Oktober 1965 dan Pengga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.06333,
+      "positive_share": 0.4,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.4
+        ],
+        [
+          "happy",
+          0.2
+        ],
+        [
+          "sadness",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0713
+    }
+  }
 }

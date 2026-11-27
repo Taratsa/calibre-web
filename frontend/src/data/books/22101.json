@@ -51,5 +51,28 @@
       "size": 283799,
       "name": "Mohammad Misbach Sang Haji Merah - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.09579,
+      "positive_share": 0.3929,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.2857
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.1786
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1225
+    }
+  }
 }

@@ -56,5 +56,28 @@
       "size": 189659,
       "name": "Fitnah dalam Sejarah Tari Harum Bunga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.28533,
+      "positive_share": 0.0476,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "fear",
+          0.2857
+        ],
+        [
+          "anger",
+          0.2381
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4215
+    }
+  }
 }

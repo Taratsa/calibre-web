@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol",
     "Kliping",
     "Mass-Graves"
@@ -56,5 +56,15 @@
       "size": 406632,
       "name": "Sejarah Indonesia , Kisah Kelam Pembantaia - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.09165,
+      "positive_share": 0.1818,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.116
+    }
+  }
 }

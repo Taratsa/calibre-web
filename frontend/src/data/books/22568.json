@@ -53,5 +53,28 @@
       "size": 243150,
       "name": "Api di Kereta dari Moscow ke Berlin [2] - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.08615,
+      "positive_share": 0.4091,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.3636
+        ],
+        [
+          "sadness",
+          0.2727
+        ],
+        [
+          "anger",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1073
+    }
+  }
 }

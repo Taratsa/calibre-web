@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Internasional"
   ],
   "publisher": {
@@ -53,5 +53,28 @@
       "size": 401356,
       "name": "Kisah Holocaust untuk Generasi Media Sosia - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.01754,
+      "positive_share": 0.4667,
+      "sentences": 55,
+      "emotions": [
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.2667
+        ],
+        [
+          "fear",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0009
+    }
+  }
 }

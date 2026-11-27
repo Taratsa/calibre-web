@@ -44,5 +44,28 @@
       "size": 1631206,
       "name": "TAPOL Bulletin No. 148 - TAPOL"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.28735,
+      "positive_share": 0.1304,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "disappointment",
+          0.125
+        ],
+        [
+          "approval",
+          0.125
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.4247
+    }
+  }
 }

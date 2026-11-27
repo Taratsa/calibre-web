@@ -52,5 +52,28 @@
       "size": 241413,
       "name": "Pidato Bung Karno, 27 Oktober 1965 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14875,
+      "positive_share": 0.2857,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3571
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "happy",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2061
+    }
+  }
 }

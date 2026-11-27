@@ -54,5 +54,28 @@
       "size": 258185,
       "name": "Cerita Dibalik Supersemar - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0543,
+      "positive_share": 0.4,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4
+        ],
+        [
+          "happy",
+          0.2667
+        ],
+        [
+          "sadness",
+          0.2667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0571
+    }
+  }
 }

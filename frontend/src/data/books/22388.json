@@ -55,5 +55,28 @@
       "size": 163566,
       "name": "Meringkus Loyalis Sukarno - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17888,
+      "positive_share": 0.1429,
+      "sentences": 56,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "happy",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2536
+    }
+  }
 }

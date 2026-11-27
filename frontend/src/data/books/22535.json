@@ -54,5 +54,28 @@
       "size": 462076,
       "name": "Tokoh Gerwani, SOBSI, dan BTI yang Ditangk - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19667,
+      "positive_share": 0.0714,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "fear",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2816
+    }
+  }
 }

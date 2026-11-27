@@ -49,5 +49,28 @@
       "size": 274421,
       "name": "YPKP65 SERAHKAN SURAT AUDIENSI KE DPRD TAN - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.02672,
+      "positive_share": 0.5,
+      "sentences": 36,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.2
+        ],
+        [
+          "fear",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0708
+    }
+  }
 }

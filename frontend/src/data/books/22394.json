@@ -52,5 +52,28 @@
       "size": 334733,
       "name": "Cermin _Kepanikan_ Siapa [_] - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0535,
+      "positive_share": 0.3077,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3077
+        ],
+        [
+          "happy",
+          0.2308
+        ],
+        [
+          "anger",
+          0.2308
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0558
+    }
+  }
 }

@@ -51,5 +51,28 @@
       "size": 67477,
       "name": "YPKP 65 PROTES KERAS ATAS INTIMIDASI PARA - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16728,
+      "positive_share": 0.2308,
+      "sentences": 33,
+      "emotions": [
+        [
+          "anger",
+          0.3846
+        ],
+        [
+          "fear",
+          0.3077
+        ],
+        [
+          "sadness",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2353
+    }
+  }
 }

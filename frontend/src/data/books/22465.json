@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Kliping",
     "Mass-Graves",
     "Nasional",
@@ -57,5 +57,28 @@
       "size": 181815,
       "name": "Pembunuhan Massal 1965_ Bermula dari Aceh, - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20148,
+      "positive_share": 0.1,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.4
+        ],
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "happy",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2892
+    }
+  }
 }

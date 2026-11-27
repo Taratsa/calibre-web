@@ -52,5 +52,28 @@
       "size": 123605,
       "name": "Rocky Gerung_ _Ketakutan Muncul Negara Kom - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.36532,
+      "positive_share": 0.129,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3226
+        ],
+        [
+          "sadness",
+          0.2903
+        ],
+        [
+          "fear",
+          0.2258
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5477
+    }
+  }
 }

@@ -14,7 +14,7 @@
     "Anti Orba",
     "Artikel",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -54,5 +54,28 @@
       "size": 75305,
       "name": "Surat Terbuka Pramoedya Ananta Toer kepada - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.23322,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4583
+        ],
+        [
+          "anger",
+          0.2917
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3393
+    }
+  }
 }

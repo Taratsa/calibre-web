@@ -49,5 +49,24 @@
       "size": 146133,
       "name": "Melampaui Kelam Masa Lalu, Menjadi Saksi.. - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.01107,
+      "positive_share": 0.5,
+      "sentences": 43,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.5
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0111
+    }
+  }
 }

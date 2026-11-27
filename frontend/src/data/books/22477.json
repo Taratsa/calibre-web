@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol"
   ],
   "publisher": {
@@ -54,5 +54,15 @@
       "size": 706615,
       "name": "Dari Koblen Ke Nusakambangan dan Buangan P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.09193,
+      "positive_share": 0.25,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.1164
+    }
+  }
 }

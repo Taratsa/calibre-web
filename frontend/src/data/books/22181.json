@@ -51,5 +51,28 @@
       "size": 156852,
       "name": "[Cuma Mimpi_Red]_ Pidato Penting Presiden - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07032,
+      "positive_share": 0.4211,
+      "sentences": 59,
+      "emotions": [
+        [
+          "sadness",
+          0.4474
+        ],
+        [
+          "happy",
+          0.3158
+        ],
+        [
+          "fear",
+          0.1053
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0823
+    }
+  }
 }

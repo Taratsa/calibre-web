@@ -51,5 +51,28 @@
       "size": 76189,
       "name": "Omar Dani_ CIA Terlibat G30S 1965 dan Soeh - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.10121,
+      "positive_share": 0.125,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.375
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "anger",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1311
+    }
+  }
 }

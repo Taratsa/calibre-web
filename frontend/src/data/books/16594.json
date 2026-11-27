@@ -11,7 +11,7 @@
   ],
   "author_sort": "diketahui, Tidak",
   "tags": [
-    "Wayang"
+    "wayang"
   ],
   "publisher": null,
   "publishers": [],
@@ -202,6 +202,14 @@
         0.1
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": 0.04756,
+      "positive_share": 0.6,
+      "sentences": 50,
+      "emotions": [],
+      "emotion_language": "en",
+      "score": 0.1036
+    }
   }
 }

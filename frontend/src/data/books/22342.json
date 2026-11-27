@@ -53,5 +53,28 @@
       "size": 110568,
       "name": "Sisi Kelam Sejarah 3 , Di Balik Berita Pur - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.15438,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4167
+        ],
+        [
+          "sadness",
+          0.4167
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2149
+    }
+  }
 }

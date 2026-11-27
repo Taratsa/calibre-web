@@ -56,5 +56,28 @@
       "size": 353591,
       "name": "Genosida Indonesia 1965_ Perang Dingin dan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20654,
+      "positive_share": 0.2381,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4762
+        ],
+        [
+          "anger",
+          0.1905
+        ],
+        [
+          "fear",
+          0.1905
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2972
+    }
+  }
 }

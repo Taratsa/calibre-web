@@ -52,5 +52,28 @@
       "size": 72496,
       "name": "G30S, Omar Dani_ Harto Tak Mau ke Bung Kar - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.18123,
+      "positive_share": 0,
+      "sentences": 36,
+      "emotions": [
+        [
+          "anger",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "happy",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2573
+    }
+  }
 }

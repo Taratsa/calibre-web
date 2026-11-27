@@ -53,5 +53,28 @@
       "size": 250691,
       "name": "Negara Segera Usut Tuntas Dalang Penyerang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24662,
+      "positive_share": 0.0909,
+      "sentences": 31,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "anger",
+          0.3636
+        ],
+        [
+          "fear",
+          0.0909
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3604
+    }
+  }
 }

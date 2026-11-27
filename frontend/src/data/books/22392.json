@@ -51,5 +51,28 @@
       "size": 422226,
       "name": "Menuju Pulau Buangan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.1612,
+      "positive_share": 0.2222,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4444
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "happy",
+          0.1111
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2257
+    }
+  }
 }

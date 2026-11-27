@@ -11,7 +11,7 @@
   ],
   "author_sort": "Kunst, Jaap (penulis)",
   "tags": [
-    "Musik"
+    "musik"
   ],
   "publisher": {
     "id": 1576,
@@ -224,6 +224,14 @@
         0.18
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": -0.02488,
+      "positive_share": 0.3913,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "en",
+      "score": -0.0106
+    }
   }
 }

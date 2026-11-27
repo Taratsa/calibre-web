@@ -56,5 +56,28 @@
       "size": 493379,
       "name": "Setiap Menghabisi PKI, Saya Simpan Telinga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.10509,
+      "positive_share": 0.3333,
+      "sentences": 42,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1372
+    }
+  }
 }

@@ -46,5 +46,28 @@
       "size": 7448113,
       "name": "Soeara Ra'jat _ Tegoehlah setia ra'jat kep - Snelpersdrukkerij _Orang Alam Minangkabau_"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.02035,
+      "positive_share": 0.6875,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4375
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "anger",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0607
+    }
+  }
 }

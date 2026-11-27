@@ -52,5 +52,28 @@
       "size": 332439,
       "name": "Editorial , Reformasi yang Dikhianati! - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.32299,
+      "positive_share": 0.12,
+      "sentences": 51,
+      "emotions": [
+        [
+          "sadness",
+          0.44
+        ],
+        [
+          "anger",
+          0.44
+        ],
+        [
+          "happy",
+          0.08
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4809
+    }
+  }
 }

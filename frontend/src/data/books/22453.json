@@ -13,7 +13,7 @@
   "tags": [
     "Anti Orba",
     "Artikel",
-    "Genosida",
+    "genosida",
     "Nasional"
   ],
   "publisher": {
@@ -54,5 +54,28 @@
       "size": 352937,
       "name": "Indonesian Genocide 1965_ Cold War and The - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07367,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.25
+        ],
+        [
+          "happy",
+          0.1875
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0876
+    }
+  }
 }

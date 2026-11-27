@@ -13,7 +13,7 @@
   "tags": [
     "Kisah Tapol",
     "Opini",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -53,5 +53,15 @@
       "size": 515612,
       "name": "100 Tahun Maestro Hendra Gunawan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.10044,
+      "positive_share": 0.7,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": 0.187
+    }
+  }
 }

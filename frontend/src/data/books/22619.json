@@ -49,5 +49,28 @@
       "size": 458803,
       "name": "Jembatan Bacem _ _.... Merah Bengawan Solo - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20477,
+      "positive_share": 0.1667,
+      "sentences": 41,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "happy",
+          0.0833
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2944
+    }
+  }
 }

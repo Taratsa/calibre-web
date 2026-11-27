@@ -11,7 +11,7 @@
   ],
   "author_sort": "1965, YPKP",
   "tags": [
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -51,5 +51,28 @@
       "size": 233698,
       "name": "Cerpen , Coblos dengan Air Sirih-Pinang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13138,
+      "positive_share": 0.2,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.45
+        ],
+        [
+          "fear",
+          0.2
+        ],
+        [
+          "love",
+          0.15
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1787
+    }
+  }
 }

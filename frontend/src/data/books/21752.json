@@ -44,5 +44,28 @@
       "size": 321948,
       "name": "Chinese Indonesians after May 1998_ How th - Dewi Anggraeni"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19227,
+      "positive_share": 0.2105,
+      "sentences": 60,
+      "emotions": [
+        [
+          "caring",
+          0.3333
+        ],
+        [
+          "approval",
+          0.1111
+        ],
+        [
+          "sadness",
+          0.1111
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.2747
+    }
+  }
 }

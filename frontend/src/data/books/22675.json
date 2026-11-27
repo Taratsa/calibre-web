@@ -51,5 +51,28 @@
       "size": 141289,
       "name": "Kisah Siksa, Kerja Paksa dan Lagu Cinta Ta - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.03851,
+      "positive_share": 0.5,
+      "sentences": 34,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.3333
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0321
+    }
+  }
 }

@@ -53,5 +53,28 @@
       "size": 150358,
       "name": "Nuansa politis menjadi hambatan terbesar P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16228,
+      "positive_share": 0.3077,
+      "sentences": 47,
+      "emotions": [
+        [
+          "anger",
+          0.3846
+        ],
+        [
+          "sadness",
+          0.3077
+        ],
+        [
+          "happy",
+          0.3077
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2274
+    }
+  }
 }

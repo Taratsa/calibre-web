@@ -49,5 +49,28 @@
       "size": 164178,
       "name": "BENTUK TIM PENYELIDIK pro-justicia PULAU B - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11499,
+      "positive_share": 0.25,
+      "sentences": 44,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "happy",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1528
+    }
+  }
 }

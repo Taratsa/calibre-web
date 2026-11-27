@@ -51,5 +51,28 @@
       "size": 188245,
       "name": "Kontras dan keluarga korban kasus pelangga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.10459,
+      "positive_share": 0.2308,
+      "sentences": 47,
+      "emotions": [
+        [
+          "sadness",
+          0.3846
+        ],
+        [
+          "anger",
+          0.3077
+        ],
+        [
+          "fear",
+          0.2308
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1364
+    }
+  }
 }

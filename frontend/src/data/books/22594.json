@@ -51,5 +51,28 @@
       "size": 526541,
       "name": "Ibu Supanah Perempuan Tangguh Dari Pati _I - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.27938,
+      "positive_share": 0.16,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.48
+        ],
+        [
+          "fear",
+          0.24
+        ],
+        [
+          "anger",
+          0.24
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4121
+    }
+  }
 }

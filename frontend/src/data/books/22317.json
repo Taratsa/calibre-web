@@ -53,5 +53,28 @@
       "size": 274443,
       "name": "USA_ Benar, Suharto Perintahkan Pembantaia - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2108,
+      "positive_share": 0.1,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.3
+        ],
+        [
+          "anger",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3039
+    }
+  }
 }

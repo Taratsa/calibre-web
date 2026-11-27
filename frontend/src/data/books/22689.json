@@ -49,5 +49,28 @@
       "size": 76387,
       "name": "PERSEKUSI & TEROR DALAM JURNALISME SEBUAH - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17128,
+      "positive_share": 0.2083,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2416
+    }
+  }
 }

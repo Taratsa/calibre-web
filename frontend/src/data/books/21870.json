@@ -52,5 +52,28 @@
       "size": 157226,
       "name": "Penelitian Korban Tragedi 1965-1966 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24201,
+      "positive_share": 0,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4667
+        ],
+        [
+          "anger",
+          0.2667
+        ],
+        [
+          "fear",
+          0.2667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3532
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 248623,
       "name": "[SAGA] Menyusuri Gua Pembasmian PKI di Gun - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20754,
+      "positive_share": 0.0909,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3636
+        ],
+        [
+          "anger",
+          0.2727
+        ],
+        [
+          "fear",
+          0.2727
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2988
+    }
+  }
 }

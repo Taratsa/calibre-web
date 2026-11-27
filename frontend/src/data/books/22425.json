@@ -53,5 +53,28 @@
       "size": 257758,
       "name": "Haris Azhar_ _Jokowi Tidak Bisa dan Tidak - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26245,
+      "positive_share": 0.1,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.45
+        ],
+        [
+          "sadness",
+          0.3
+        ],
+        [
+          "fear",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3854
+    }
+  }
 }

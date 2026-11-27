@@ -56,5 +56,28 @@
       "size": 732470,
       "name": "Temuan Tim Gabungan Pencari Fakta Peristiw - Tim Gabungan Pencari Fakta (TGPF)"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.21976,
+      "positive_share": 0.1765,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4706
+        ],
+        [
+          "fear",
+          0.2941
+        ],
+        [
+          "anger",
+          0.1176
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3181
+    }
+  }
 }

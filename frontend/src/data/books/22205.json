@@ -52,5 +52,28 @@
       "size": 138446,
       "name": "Perjuangkan Korban Tragedi 1965, YPKP 65 M - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20093,
+      "positive_share": 0.2308,
+      "sentences": 40,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "anger",
+          0.2308
+        ],
+        [
+          "fear",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2884
+    }
+  }
 }

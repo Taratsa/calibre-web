@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Kisah Tapol",
-    "Sastra",
+    "sastra",
     "Sejarah"
   ],
   "publisher": {
@@ -54,5 +54,15 @@
       "size": 89210,
       "name": "Menyaksikan jiwa-jiwa yang dibantai_ Menga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.31141,
+      "positive_share": 0.1111,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.4627
+    }
+  }
 }

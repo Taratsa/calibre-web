@@ -55,5 +55,28 @@
       "size": 417323,
       "name": "Temuan Baru YPKP'65_ Titik Kuburan Massal - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.1617,
+      "positive_share": 0,
+      "sentences": 38,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "fear",
+          0.2857
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2265
+    }
+  }
 }

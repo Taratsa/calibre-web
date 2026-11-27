@@ -198,6 +198,27 @@
         0.14
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": -0.12244,
+      "positive_share": 0.3333,
+      "sentences": 45,
+      "emotions": [
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.2667
+        ],
+        [
+          "anger",
+          0.2667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1646
+    }
   }
 }

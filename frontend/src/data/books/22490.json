@@ -53,5 +53,28 @@
       "size": 176832,
       "name": "Ke Pulau Buru_ Perjalanan ke Sisi Gelap Ma - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26373,
+      "positive_share": 0.1538,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.2308
+        ],
+        [
+          "happy",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3874
+    }
+  }
 }

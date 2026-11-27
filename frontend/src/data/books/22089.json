@@ -34,5 +34,28 @@
       "size": 100788,
       "name": "977-wiranto-kembalinya-ajudan-soeharto-ke- - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07828,
+      "positive_share": 0.2,
+      "sentences": 52,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3
+        ],
+        [
+          "anger",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0949
+    }
+  }
 }

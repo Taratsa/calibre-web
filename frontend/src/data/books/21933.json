@@ -54,5 +54,28 @@
       "size": 63166,
       "name": "Pembantaian Massal Orde Baru Di Balik Stra - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.18997,
+      "positive_share": 0.2105,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4737
+        ],
+        [
+          "anger",
+          0.4211
+        ],
+        [
+          "happy",
+          0.1053
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2711
+    }
+  }
 }

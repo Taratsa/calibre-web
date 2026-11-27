@@ -11,7 +11,7 @@
   ],
   "author_sort": "Moens-Zorab, M. V. (penulis)",
   "tags": [
-    "Wayang"
+    "wayang"
   ],
   "publisher": {
     "id": 1079,
@@ -177,6 +177,14 @@
         0.1
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": 0.02433,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "en",
+      "score": 0.067
+    }
   }
 }

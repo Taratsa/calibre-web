@@ -34,5 +34,28 @@
       "size": 121541,
       "name": "3604-gagal-paham-mahfud-md-dalam-mendudukk - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.33312,
+      "positive_share": 0,
+      "sentences": 38,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.4286
+        ],
+        [
+          "fear",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4969
+    }
+  }
 }

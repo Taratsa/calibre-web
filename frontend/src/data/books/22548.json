@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Kliping"
   ],
   "publisher": {
@@ -53,5 +53,28 @@
       "size": 80462,
       "name": "Pertumpahan darah orang Indonesia, Bagian - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.25923,
+      "positive_share": 0.1739,
+      "sentences": 48,
+      "emotions": [
+        [
+          "sadness",
+          0.4783
+        ],
+        [
+          "anger",
+          0.2174
+        ],
+        [
+          "happy",
+          0.1739
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3803
+    }
+  }
 }

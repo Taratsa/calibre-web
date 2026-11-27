@@ -52,5 +52,28 @@
       "size": 128803,
       "name": "Tragedi 1965 dan Kemanusiaan Kita (2016-04 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.22513,
+      "positive_share": 0.8889,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "love",
+          0.1111
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.3837
+    }
+  }
 }

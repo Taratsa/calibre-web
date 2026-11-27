@@ -52,5 +52,28 @@
       "size": 378547,
       "name": "Kisah Mogok-Duduk dan Mogok-Total Tahun 19 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.01827,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "anger",
+          0.2143
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0002
+    }
+  }
 }

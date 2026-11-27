@@ -53,5 +53,28 @@
       "size": 240826,
       "name": "Kedutaan Besar AS mengikuti berjalannya pe - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20369,
+      "positive_share": 0.0714,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.2857
+        ],
+        [
+          "anger",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2927
+    }
+  }
 }

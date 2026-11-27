@@ -54,5 +54,28 @@
       "size": 155257,
       "name": "Siapa Berhak Sita Buku_ - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19975,
+      "positive_share": 0.0833,
+      "sentences": 54,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2865
+    }
+  }
 }

@@ -53,5 +53,28 @@
       "size": 165702,
       "name": "Deskripsi Proses Temu Nasional Korban 1965 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.00171,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "fear",
+          0.0714
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0259
+    }
+  }
 }

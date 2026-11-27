@@ -52,5 +52,28 @@
       "size": 479195,
       "name": "MEMORIAL KUBURAN MASSAL YOGYAKARTA - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.05787,
+      "positive_share": 0.4545,
+      "sentences": 37,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "happy",
+          0.3636
+        ],
+        [
+          "anger",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0627
+    }
+  }
 }

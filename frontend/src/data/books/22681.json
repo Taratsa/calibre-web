@@ -13,7 +13,7 @@
   "tags": [
     "Daerah",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -53,5 +53,15 @@
       "size": 59662,
       "name": "Kisah Ketoprak Siswo Budoyo & Lekra Sebelu - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.09259,
+      "positive_share": 0.8,
+      "sentences": 49,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": 0.1747
+    }
+  }
 }

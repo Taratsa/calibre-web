@@ -52,5 +52,28 @@
       "size": 139718,
       "name": "Djakarta 1966_ Hiruk Pikuk Supersemar yang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.31254,
+      "positive_share": 0.0435,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4348
+        ],
+        [
+          "anger",
+          0.3043
+        ],
+        [
+          "fear",
+          0.1739
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4644
+    }
+  }
 }

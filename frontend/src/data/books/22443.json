@@ -53,5 +53,28 @@
       "size": 111942,
       "name": "Hoax di Film Pengkhianatan G30S - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13397,
+      "positive_share": 0.2941,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.2941
+        ],
+        [
+          "anger",
+          0.2353
+        ],
+        [
+          "happy",
+          0.2353
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1827
+    }
+  }
 }

@@ -44,5 +44,28 @@
       "size": 3573164,
       "name": "The May 1998 Tragedy in the Course of the - Komnas Perempuan"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12439,
+      "positive_share": 0.3333,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "approval",
+          0.3333
+        ],
+        [
+          "disapproval",
+          0.1111
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.1676
+    }
+  }
 }

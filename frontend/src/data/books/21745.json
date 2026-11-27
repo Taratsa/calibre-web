@@ -44,5 +44,28 @@
       "size": 1753690,
       "name": "The May 1998 Riot in Surabaya_ Through the - Evi Lina Sutrisno"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16681,
+      "positive_share": 0.0909,
+      "sentences": 60,
+      "emotions": [
+        [
+          "disappointment",
+          0.3333
+        ],
+        [
+          "approval",
+          0.1667
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.2345
+    }
+  }
 }

@@ -51,5 +51,28 @@
       "size": 126709,
       "name": "Surat YPKP 65 Kepada Komisioner Tinggi HAM - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.3009,
+      "positive_share": 0.1579,
+      "sentences": 35,
+      "emotions": [
+        [
+          "sadness",
+          0.4737
+        ],
+        [
+          "anger",
+          0.4211
+        ],
+        [
+          "fear",
+          0.0526
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4461
+    }
+  }
 }

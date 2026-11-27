@@ -57,5 +57,28 @@
       "size": 143036,
       "name": "Membuka Tabir Gelap Sejarah Kita - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17283,
+      "positive_share": 0.3214,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4643
+        ],
+        [
+          "happy",
+          0.2143
+        ],
+        [
+          "anger",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.244
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 256569,
       "name": "Perupa Lekra Sahabat Soekarno - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.09734,
+      "positive_share": 0.8,
+      "sentences": 60,
+      "emotions": [
+        [
+          "love",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "happy",
+          0.2667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1822
+    }
+  }
 }

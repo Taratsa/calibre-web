@@ -54,5 +54,28 @@
       "size": 285688,
       "name": "Jejak Paluarit di Perkebunan Sawit - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.00175,
+      "positive_share": 0.5,
+      "sentences": 50,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "anger",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0314
+    }
+  }
 }

@@ -51,5 +51,28 @@
       "size": 494920,
       "name": "Mengingat Pulau Buru, Kamp Siberia Rezim O - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.08684,
+      "positive_share": 0.4444,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.2778
+        ],
+        [
+          "happy",
+          0.1111
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1084
+    }
+  }
 }

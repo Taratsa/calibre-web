@@ -51,5 +51,28 @@
       "size": 95440,
       "name": "Korban Tragedi 1965 Desak Tentara Hentikan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.22754,
+      "positive_share": 0.2,
+      "sentences": 34,
+      "emotions": [
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "anger",
+          0.4
+        ],
+        [
+          "happy",
+          0.1
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3303
+    }
+  }
 }

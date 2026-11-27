@@ -55,5 +55,28 @@
       "size": 315091,
       "name": "50 Orang Bunuh Diri di Bekas Kuburan Massa - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17648,
+      "positive_share": 0.1111,
+      "sentences": 36,
+      "emotions": [
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "anger",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2498
+    }
+  }
 }

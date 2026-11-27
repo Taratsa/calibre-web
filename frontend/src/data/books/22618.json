@@ -51,5 +51,28 @@
       "size": 143998,
       "name": "Jejak Genosida 1965-1966 _ Aceh, Sumut, Ri - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0714,
+      "positive_share": 0.2857,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "happy",
+          0.2857
+        ],
+        [
+          "love",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.084
+    }
+  }
 }

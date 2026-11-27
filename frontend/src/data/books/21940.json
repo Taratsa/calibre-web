@@ -53,5 +53,28 @@
       "size": 126804,
       "name": "Aku Bukan Anggota PKI, Aku Tidak Takut Kom - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.15729,
+      "positive_share": 0.3667,
+      "sentences": 57,
+      "emotions": [
+        [
+          "anger",
+          0.3
+        ],
+        [
+          "sadness",
+          0.2333
+        ],
+        [
+          "fear",
+          0.2333
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2195
+    }
+  }
 }

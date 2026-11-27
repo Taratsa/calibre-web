@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol",
     "Mass-Graves",
     "Reportase"
@@ -55,5 +55,15 @@
       "size": 398758,
       "name": "Pembunuhan Tapol 65 Setumbu - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11997,
+      "positive_share": 0.25,
+      "sentences": 52,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.1607
+    }
+  }
 }

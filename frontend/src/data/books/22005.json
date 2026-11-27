@@ -52,5 +52,28 @@
       "size": 268450,
       "name": "Jejak Bekas Pembantaian PKI di Singarantin - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14976,
+      "positive_share": 0.0909,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "fear",
+          0.2727
+        ],
+        [
+          "anger",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2076
+    }
+  }
 }

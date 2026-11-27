@@ -54,5 +54,28 @@
       "size": 136485,
       "name": "51 Tahun Tragedi 65, Alasan Penyintas Unda - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.17143,
+      "positive_share": 0.1429,
+      "sentences": 31,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.4286
+        ],
+        [
+          "happy",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2418
+    }
+  }
 }

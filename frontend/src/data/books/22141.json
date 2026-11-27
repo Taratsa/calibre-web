@@ -52,5 +52,28 @@
       "size": 140994,
       "name": "Tanah dan Riba - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13191,
+      "positive_share": 0.3889,
+      "sentences": 36,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.2778
+        ],
+        [
+          "anger",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1795
+    }
+  }
 }

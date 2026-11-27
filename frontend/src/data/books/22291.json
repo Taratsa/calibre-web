@@ -52,5 +52,28 @@
       "size": 147999,
       "name": "Kesaksian mantan anggota Cakrabirawa tenta - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12785,
+      "positive_share": 0.2143,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.3571
+        ],
+        [
+          "happy",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1731
+    }
+  }
 }

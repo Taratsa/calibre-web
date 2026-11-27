@@ -49,5 +49,28 @@
       "size": 144607,
       "name": "Surat Terbuka Desakan Pembatalan Untung Bu - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.15568,
+      "positive_share": 0.1818,
+      "sentences": 56,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "anger",
+          0.4545
+        ],
+        [
+          "happy",
+          0.0909
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.217
+    }
+  }
 }

@@ -51,5 +51,28 @@
       "size": 91412,
       "name": "Keadilan untuk Sejarah Kelam Indonesia - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.35567,
+      "positive_share": 0.125,
+      "sentences": 37,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.3125
+        ],
+        [
+          "fear",
+          0.1875
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5325
+    }
+  }
 }

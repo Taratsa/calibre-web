@@ -52,5 +52,28 @@
       "size": 161166,
       "name": "Dokumen Rahasia AS Ungkap Upaya Pengguling - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13028,
+      "positive_share": 0.2857,
+      "sentences": 44,
+      "emotions": [
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.2857
+        ],
+        [
+          "happy",
+          0.2857
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1769
+    }
+  }
 }

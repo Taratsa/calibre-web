@@ -13,7 +13,7 @@
   "tags": [
     "Anti Orba",
     "Artikel",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -53,5 +53,15 @@
       "size": 108530,
       "name": "Dari Kampung Togog Sampai _idu bacin_ Tapo - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26723,
+      "positive_share": 0.16,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.393
+    }
+  }
 }

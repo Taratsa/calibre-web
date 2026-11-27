@@ -51,5 +51,28 @@
       "size": 202707,
       "name": "FPI Tuding PKI di Balik Penyerangan Bom Mo - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2202,
+      "positive_share": 0.1818,
+      "sentences": 32,
+      "emotions": [
+        [
+          "sadness",
+          0.3636
+        ],
+        [
+          "anger",
+          0.3636
+        ],
+        [
+          "fear",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3188
+    }
+  }
 }

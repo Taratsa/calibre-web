@@ -52,5 +52,28 @@
       "size": 204813,
       "name": "Seminar Nasional, Negara Terlibat Pembanta - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.28683,
+      "positive_share": 0,
+      "sentences": 44,
+      "emotions": [
+        [
+          "fear",
+          0.4545
+        ],
+        [
+          "sadness",
+          0.2727
+        ],
+        [
+          "anger",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4239
+    }
+  }
 }

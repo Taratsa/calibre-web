@@ -51,5 +51,28 @@
       "size": 685962,
       "name": "Misi Pengusaha Sebelum Supersemar - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.10928,
+      "positive_share": 0.3636,
+      "sentences": 39,
+      "emotions": [
+        [
+          "sadness",
+          0.2727
+        ],
+        [
+          "anger",
+          0.2727
+        ],
+        [
+          "happy",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1438
+    }
+  }
 }

@@ -34,5 +34,28 @@
       "size": 131251,
       "name": "506-history-memory-and-remembrance-a-persp - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.31317,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "disappointment",
+          0.3333
+        ],
+        [
+          "curiosity",
+          0.1667
+        ],
+        [
+          "gratitude",
+          0.1667
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.4654
+    }
+  }
 }

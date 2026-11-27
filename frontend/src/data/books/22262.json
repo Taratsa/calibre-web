@@ -52,5 +52,28 @@
       "size": 299230,
       "name": "Perlukah Meluruskan Sejarah Tragedi 1965_ - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.01844,
+      "positive_share": 0.6364,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.3636
+        ],
+        [
+          "anger",
+          0.3636
+        ],
+        [
+          "sadness",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0577
+    }
+  }
 }

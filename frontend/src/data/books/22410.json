@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Kisah Tapol"
   ],
   "publisher": {
@@ -53,5 +53,15 @@
       "size": 308081,
       "name": "Kisah Kelam Jembatan Cindaga - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24792,
+      "positive_share": 0,
+      "sentences": 50,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.3625
+    }
+  }
 }

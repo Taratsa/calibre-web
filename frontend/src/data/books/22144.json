@@ -51,5 +51,28 @@
       "size": 139097,
       "name": "KontraS Luncurkan Hasil Penelitian Peristi - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.08404,
+      "positive_share": 0.3333,
+      "sentences": 32,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "fear",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.104
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 120746,
       "name": "Tahun Itu Memang Tak Pernah Berakhir Tuan_ - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11804,
+      "positive_share": 0.4375,
+      "sentences": 31,
+      "emotions": [
+        [
+          "sadness",
+          0.4375
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "fear",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1576
+    }
+  }
 }

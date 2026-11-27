@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Film",
+    "film",
     "Kliping"
   ],
   "publisher": {
@@ -53,5 +53,15 @@
       "size": 153386,
       "name": "Ulasan_ Ketika pelaku berbicara - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.15778,
+      "positive_share": 0.2759,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2203
+    }
+  }
 }

@@ -51,5 +51,28 @@
       "size": 497427,
       "name": "Pernyataan Pers_ Putusan Akhir Majelis Hak - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.27782,
+      "positive_share": 0.0909,
+      "sentences": 38,
+      "emotions": [
+        [
+          "sadness",
+          0.3636
+        ],
+        [
+          "fear",
+          0.2727
+        ],
+        [
+          "anger",
+          0.2727
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4097
+    }
+  }
 }

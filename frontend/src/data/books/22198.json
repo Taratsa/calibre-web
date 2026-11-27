@@ -52,5 +52,28 @@
       "size": 301721,
       "name": "Sema'an _Gejolak Makam Keramat_, Pentasnya - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.13632,
+      "positive_share": 0.7059,
+      "sentences": 53,
+      "emotions": [
+        [
+          "happy",
+          0.4706
+        ],
+        [
+          "sadness",
+          0.2941
+        ],
+        [
+          "fear",
+          0.2353
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.2436
+    }
+  }
 }

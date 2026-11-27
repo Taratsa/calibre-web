@@ -56,5 +56,28 @@
       "size": 117063,
       "name": "Pembunuhan Massal Indonesia; Penggalian - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20754,
+      "positive_share": 0.2105,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4211
+        ],
+        [
+          "anger",
+          0.2632
+        ],
+        [
+          "happy",
+          0.2105
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2988
+    }
+  }
 }

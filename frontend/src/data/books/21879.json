@@ -53,5 +53,28 @@
       "size": 115680,
       "name": "Cinta Berbalut Politik Litsus - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.05304,
+      "positive_share": 0.5143,
+      "sentences": 60,
+      "emotions": [
+        [
+          "love",
+          0.4
+        ],
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "fear",
+          0.1143
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1123
+    }
+  }
 }

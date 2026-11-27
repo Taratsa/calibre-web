@@ -53,5 +53,28 @@
       "size": 146957,
       "name": "Yang Menghidupmatikan Hantu Komunis - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19127,
+      "positive_share": 0.2105,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.4211
+        ],
+        [
+          "sadness",
+          0.3158
+        ],
+        [
+          "anger",
+          0.1053
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2731
+    }
+  }
 }

@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -52,5 +52,28 @@
       "size": 321265,
       "name": "Langit Makin Mendung - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.08008,
+      "positive_share": 0.3667,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.3
+        ],
+        [
+          "happy",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0977
+    }
+  }
 }

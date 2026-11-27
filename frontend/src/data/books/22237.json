@@ -53,5 +53,28 @@
       "size": 96544,
       "name": "Dari Film PKI hingga Sastra untuk Rekonsil - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.03327,
+      "positive_share": 0.4444,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3889
+        ],
+        [
+          "anger",
+          0.0556
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0239
+    }
+  }
 }

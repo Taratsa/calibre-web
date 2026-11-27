@@ -49,5 +49,28 @@
       "size": 117598,
       "name": "TOM ILJAS _ INPRES N0.2_2023 TIDAK MENYENT - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24409,
+      "positive_share": 0.1429,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "happy",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3565
+    }
+  }
 }

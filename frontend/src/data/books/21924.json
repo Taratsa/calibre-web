@@ -14,7 +14,7 @@
     "Anti Orba",
     "Artikel",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -54,5 +54,15 @@
       "size": 335265,
       "name": "Interogasi , 4 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.34004,
+      "positive_share": 0.1515,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.5078
+    }
+  }
 }

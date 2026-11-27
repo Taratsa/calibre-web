@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Mass-Graves",
     "Reportase"
   ],
@@ -55,5 +55,15 @@
       "size": 490256,
       "name": "Temuan 12 Lokasi Kuburan Massal Korban Tra - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.23088,
+      "positive_share": 0.0714,
+      "sentences": 50,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.3356
+    }
+  }
 }

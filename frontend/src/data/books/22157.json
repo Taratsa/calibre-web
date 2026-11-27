@@ -51,5 +51,28 @@
       "size": 127007,
       "name": "Supersemar dan Tafsir Soeharto - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.1281,
+      "positive_share": 0.2222,
+      "sentences": 45,
+      "emotions": [
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "anger",
+          0.3333
+        ],
+        [
+          "happy",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1735
+    }
+  }
 }

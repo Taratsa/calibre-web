@@ -53,5 +53,28 @@
       "size": 354816,
       "name": "Mari belajar dari proses perdamaian Korea - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12642,
+      "positive_share": 0.3571,
+      "sentences": 54,
+      "emotions": [
+        [
+          "happy",
+          0.4286
+        ],
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "fear",
+          0.0714
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1708
+    }
+  }
 }

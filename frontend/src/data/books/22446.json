@@ -13,8 +13,8 @@
   "tags": [
     "Anti Orba",
     "Berita",
-    "Film",
-    "Genosida",
+    "film",
+    "genosida",
     "Kisah Tapol"
   ],
   "publisher": {
@@ -55,5 +55,15 @@
       "size": 134505,
       "name": "Sisi Lain _Perempuan yang Tertuduh__ Para - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19178,
+      "positive_share": 0.2963,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2739
+    }
+  }
 }

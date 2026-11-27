@@ -52,5 +52,28 @@
       "size": 105640,
       "name": "Berita Duka_ MENGENANG IBRAHIM ISA - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0845,
+      "positive_share": 0.2308,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "anger",
+          0.3846
+        ],
+        [
+          "happy",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1047
+    }
+  }
 }

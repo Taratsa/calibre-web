@@ -51,5 +51,28 @@
       "size": 160471,
       "name": "Korban Tragedi 1965 Kecewa dengan Kinerja - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.25203,
+      "positive_share": 0.0833,
+      "sentences": 33,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.4167
+        ],
+        [
+          "happy",
+          0.0833
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.369
+    }
+  }
 }

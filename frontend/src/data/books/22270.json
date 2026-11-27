@@ -52,5 +52,28 @@
       "size": 190140,
       "name": "Gila PKI_ Indonesia Membutuhkan Scooby Doo - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2883,
+      "positive_share": 0.0417,
+      "sentences": 58,
+      "emotions": [
+        [
+          "fear",
+          0.375
+        ],
+        [
+          "sadness",
+          0.2917
+        ],
+        [
+          "anger",
+          0.2917
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4262
+    }
+  }
 }

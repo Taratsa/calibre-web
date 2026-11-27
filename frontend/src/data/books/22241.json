@@ -52,5 +52,28 @@
       "size": 117724,
       "name": "Perang Dingin, CIA, dan Kejatuhan Sukarno - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20618,
+      "positive_share": 0.0714,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "fear",
+          0.3571
+        ],
+        [
+          "anger",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2967
+    }
+  }
 }

@@ -14,7 +14,7 @@
     "Artikel",
     "Kisah Tapol",
     "Kliping",
-    "Sastra",
+    "sastra",
     "Sejarah"
   ],
   "publisher": {
@@ -55,5 +55,28 @@
       "size": 238550,
       "name": "Letkol Ahmad Yadau - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.11371,
+      "positive_share": 0.1818,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "fear",
+          0.1818
+        ],
+        [
+          "anger",
+          0.1818
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1508
+    }
+  }
 }

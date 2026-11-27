@@ -88,5 +88,28 @@
       "size": 429313,
       "name": "Alternative Report on ICERD_ _Breaking the - HRWG"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.35662,
+      "positive_share": 0.04,
+      "sentences": 60,
+      "emotions": [
+        [
+          "disappointment",
+          0.5
+        ],
+        [
+          "sadness",
+          0.25
+        ],
+        [
+          "admiration",
+          0.25
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.534
+    }
+  }
 }

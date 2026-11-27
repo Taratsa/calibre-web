@@ -52,5 +52,28 @@
       "size": 170843,
       "name": "Umi Sarjono, Pembuka Jalan Gerakan Perempu - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.05323,
+      "positive_share": 0.6875,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.4375
+        ],
+        [
+          "sadness",
+          0.4375
+        ],
+        [
+          "anger",
+          0.0625
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1126
+    }
+  }
 }

@@ -49,5 +49,28 @@
       "size": 229428,
       "name": "NYAWAMU TERBENAM DI KALI BACEM oleh EDDY J - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.1513,
+      "positive_share": 0.2222,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.2222
+        ],
+        [
+          "fear",
+          0.1111
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2101
+    }
+  }
 }

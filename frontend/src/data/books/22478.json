@@ -53,5 +53,28 @@
       "size": 707591,
       "name": "Dari Koblen ke Nusakambangan dan Buangan P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.00823,
+      "positive_share": 0.4783,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3913
+        ],
+        [
+          "happy",
+          0.3913
+        ],
+        [
+          "anger",
+          0.1304
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0416
+    }
+  }
 }

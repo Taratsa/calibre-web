@@ -41,5 +41,28 @@
       "size": 65417,
       "name": "Laporan Tim Gabungan Pencari Fakta (TGPF) - Tim Gabungan Pencari Fakta"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13427,
+      "positive_share": 0,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.375
+        ],
+        [
+          "fear",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1832
+    }
+  }
 }

@@ -53,5 +53,28 @@
       "size": 118506,
       "name": "Reformasi Kebijakan TNI_ Militer Tidak Bol - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.02034,
+      "positive_share": 0.3333,
+      "sentences": 30,
+      "emotions": [
+        [
+          "anger",
+          0.4444
+        ],
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0035
+    }
+  }
 }

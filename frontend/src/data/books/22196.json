@@ -53,5 +53,28 @@
       "size": 319910,
       "name": "Penghargaan untuk Martir Kemanusiaan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.03083,
+      "positive_share": 0.5161,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4516
+        ],
+        [
+          "happy",
+          0.4516
+        ],
+        [
+          "fear",
+          0.0645
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0772
+    }
+  }
 }

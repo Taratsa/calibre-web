@@ -51,5 +51,28 @@
       "size": 168285,
       "name": "Menjelang Dibukanya Arsip Rahasia Amerika - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.06489,
+      "positive_share": 0.2857,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.4286
+        ],
+        [
+          "happy",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.2857
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0738
+    }
+  }
 }

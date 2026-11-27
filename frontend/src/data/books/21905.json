@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -52,5 +52,15 @@
       "size": 87216,
       "name": "Bom Di Hanoi, Keajaiban Di Bukit Cahaya - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.06227,
+      "positive_share": 0.4444,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.0696
+    }
+  }
 }

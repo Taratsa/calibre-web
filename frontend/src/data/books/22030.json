@@ -54,5 +54,24 @@
       "size": 110512,
       "name": "Press-Release , Usulan Dewan Kerukunan Nas - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.24962,
+      "positive_share": 0,
+      "sentences": 37,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "anger",
+          0.5
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3652
+    }
+  }
 }

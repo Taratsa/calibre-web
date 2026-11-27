@@ -51,5 +51,28 @@
       "size": 289083,
       "name": "Film Jagal dan Senyap Sebagai Media Pembel - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.05749,
+      "positive_share": 0.5833,
+      "sentences": 51,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "fear",
+          0.0833
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1193
+    }
+  }
 }

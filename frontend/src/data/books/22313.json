@@ -54,5 +54,28 @@
       "size": 150893,
       "name": "Soal dokumen rahasia AS, Agus Widjojo_ Isu - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2011,
+      "positive_share": 0.2273,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3636
+        ],
+        [
+          "fear",
+          0.2727
+        ],
+        [
+          "sadness",
+          0.2727
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2886
+    }
+  }
 }

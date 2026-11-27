@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -52,5 +52,15 @@
       "size": 129026,
       "name": "Aroma Tanah Moncongloe - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.02505,
+      "positive_share": 0.5172,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.0109
+    }
+  }
 }

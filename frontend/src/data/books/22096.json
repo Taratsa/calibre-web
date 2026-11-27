@@ -51,5 +51,28 @@
       "size": 163026,
       "name": "CIA Mendadak Ungkap Nasib DN Aidit di Tang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12743,
+      "positive_share": 0.2857,
+      "sentences": 35,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "fear",
+          0.2857
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1724
+    }
+  }
 }

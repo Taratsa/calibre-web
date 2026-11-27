@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol",
     "Mass-Graves",
     "Reportase"
@@ -55,5 +55,15 @@
       "size": 508075,
       "name": "Ziarah Makam Mendiang Asmoe [1] - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20585,
+      "positive_share": 0.0667,
+      "sentences": 59,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2961
+    }
+  }
 }

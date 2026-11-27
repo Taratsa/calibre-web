@@ -51,5 +51,28 @@
       "size": 177502,
       "name": "Pasukan Polri Kepung Aksi Memorialisasi di - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16297,
+      "positive_share": 0.1,
+      "sentences": 49,
+      "emotions": [
+        [
+          "anger",
+          0.4
+        ],
+        [
+          "fear",
+          0.3
+        ],
+        [
+          "sadness",
+          0.3
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2285
+    }
+  }
 }

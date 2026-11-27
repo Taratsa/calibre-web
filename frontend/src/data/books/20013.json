@@ -11,7 +11,7 @@
   ],
   "author_sort": "Poortenaar, Jan",
   "tags": [
-    "Wayang"
+    "wayang"
   ],
   "publisher": {
     "id": 1610,
@@ -224,6 +224,14 @@
         0.19
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": 0.09714,
+      "positive_share": 0.6786,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "en",
+      "score": 0.1818
+    }
   }
 }

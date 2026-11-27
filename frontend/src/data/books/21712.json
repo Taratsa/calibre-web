@@ -44,5 +44,28 @@
       "size": 342420,
       "name": "Lahirnya Pergerakan Perempuan Minangkabau - Risa Marta Yati"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.10944,
+      "positive_share": 0.6667,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3333
+        ],
+        [
+          "anger",
+          0.1111
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.2012
+    }
+  }
 }

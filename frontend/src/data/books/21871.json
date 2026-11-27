@@ -51,5 +51,28 @@
       "size": 379969,
       "name": "Hakekat Kekuasaan Belum Berubah - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13757,
+      "positive_share": 0.3846,
+      "sentences": 30,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "happy",
+          0.3077
+        ],
+        [
+          "anger",
+          0.2308
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1884
+    }
+  }
 }

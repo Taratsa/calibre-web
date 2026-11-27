@@ -51,5 +51,28 @@
       "size": 307354,
       "name": "Alimin Periode 1946-1950_ Pertemuan dengan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.0143,
+      "positive_share": 0.4706,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4118
+        ],
+        [
+          "fear",
+          0.2941
+        ],
+        [
+          "happy",
+          0.1765
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.006
+    }
+  }
 }

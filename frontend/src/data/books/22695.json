@@ -44,5 +44,24 @@
       "size": 526556,
       "name": "The Ontological Status of Religion - Risalatul Hukmi"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.04564,
+      "positive_share": 0.4286,
+      "sentences": 60,
+      "emotions": [
+        [
+          "admiration",
+          0.5
+        ],
+        [
+          "approval",
+          0.5
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.0434
+    }
+  }
 }

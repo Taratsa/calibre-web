@@ -55,5 +55,28 @@
       "size": 339240,
       "name": "Menelusuri Jejak Kuburan Massal di Pasar P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07674,
+      "positive_share": 0.4706,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4118
+        ],
+        [
+          "happy",
+          0.3529
+        ],
+        [
+          "anger",
+          0.1176
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0925
+    }
+  }
 }

@@ -14,7 +14,7 @@
     "Anti Orba",
     "Artikel",
     "Kliping",
-    "Sastra"
+    "sastra"
   ],
   "publisher": {
     "id": 1780,
@@ -54,5 +54,28 @@
       "size": 170502,
       "name": "Haji Merah dan Islam Komunis - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.07467,
+      "positive_share": 0.3571,
+      "sentences": 55,
+      "emotions": [
+        [
+          "anger",
+          0.2857
+        ],
+        [
+          "happy",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.2143
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0892
+    }
+  }
 }

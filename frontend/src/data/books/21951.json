@@ -55,5 +55,28 @@
       "size": 199288,
       "name": "Akhir Api Gerwani dan Serpih Kenangan Bers - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.01914,
+      "positive_share": 0.4706,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.4118
+        ],
+        [
+          "happy",
+          0.2941
+        ],
+        [
+          "sadness",
+          0.2353
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0016
+    }
+  }
 }

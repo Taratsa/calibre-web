@@ -53,5 +53,28 @@
       "size": 207498,
       "name": "Dokumen rahasia Amerika dibuka, TNI disara - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14622,
+      "positive_share": 0,
+      "sentences": 33,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "anger",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2021
+    }
+  }
 }

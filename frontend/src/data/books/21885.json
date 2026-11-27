@@ -54,5 +54,28 @@
       "size": 87861,
       "name": "Trah Aidit di Paris - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.10171,
+      "positive_share": 0.7273,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4091
+        ],
+        [
+          "happy",
+          0.3636
+        ],
+        [
+          "fear",
+          0.1364
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.189
+    }
+  }
 }

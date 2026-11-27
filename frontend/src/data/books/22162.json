@@ -34,5 +34,28 @@
       "size": 160469,
       "name": "1298-korban-tragedi-1965-kecewa-dengan-kin - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.25203,
+      "positive_share": 0.0833,
+      "sentences": 33,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.4167
+        ],
+        [
+          "happy",
+          0.0833
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.369
+    }
+  }
 }

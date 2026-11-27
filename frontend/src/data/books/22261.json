@@ -52,5 +52,28 @@
       "size": 390011,
       "name": "Isu PKI dan Keributan yang Memuakkan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.38415,
+      "positive_share": 0.069,
+      "sentences": 58,
+      "emotions": [
+        [
+          "sadness",
+          0.4483
+        ],
+        [
+          "anger",
+          0.3793
+        ],
+        [
+          "fear",
+          0.1724
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5774
+    }
+  }
 }

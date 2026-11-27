@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Berita",
-    "Genosida",
+    "genosida",
     "Nasional"
   ],
   "publisher": {
@@ -53,5 +53,15 @@
       "size": 249891,
       "name": "Komitmen penegakan hukum dan HAM dipertany - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.35843,
+      "positive_share": 0.0588,
+      "sentences": 41,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.5368
+    }
+  }
 }

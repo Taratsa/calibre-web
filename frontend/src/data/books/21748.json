@@ -44,5 +44,28 @@
       "size": 2408996,
       "name": "Chineseness Is in the Eye of the Beholder_ - Setefanus Suprajitno"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.05706,
+      "positive_share": 0.5385,
+      "sentences": 60,
+      "emotions": [
+        [
+          "admiration",
+          0.5
+        ],
+        [
+          "love",
+          0.1667
+        ],
+        [
+          "disapproval",
+          0.1667
+        ]
+      ],
+      "emotion_language": "en",
+      "score": 0.1186
+    }
+  }
 }

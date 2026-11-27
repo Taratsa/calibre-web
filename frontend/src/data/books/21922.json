@@ -53,5 +53,28 @@
       "size": 221605,
       "name": "Kronologi Pembubaran Diskusi Publik Marxis - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.18743,
+      "positive_share": 0.0909,
+      "sentences": 46,
+      "emotions": [
+        [
+          "sadness",
+          0.4545
+        ],
+        [
+          "anger",
+          0.3636
+        ],
+        [
+          "happy",
+          0.0909
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2671
+    }
+  }
 }

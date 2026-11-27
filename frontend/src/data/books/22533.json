@@ -34,5 +34,28 @@
       "size": 324259,
       "name": "3263-kesaksianku-tentang-g30s-4 - Tidak diketahui"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.27125,
+      "positive_share": 0.2,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4333
+        ],
+        [
+          "anger",
+          0.2333
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3993
+    }
+  }
 }

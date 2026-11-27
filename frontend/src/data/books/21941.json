@@ -54,5 +54,28 @@
       "size": 124350,
       "name": "Provokasi Madiun Korban Perdana Perang Din - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.23824,
+      "positive_share": 0.125,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.5
+        ],
+        [
+          "sadness",
+          0.25
+        ],
+        [
+          "fear",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3472
+    }
+  }
 }

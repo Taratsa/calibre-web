@@ -53,5 +53,28 @@
       "size": 244095,
       "name": "Mengapa Elit Politik Borjuis Tidak (Bisa) - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.42061,
+      "positive_share": 0.0952,
+      "sentences": 41,
+      "emotions": [
+        [
+          "anger",
+          0.381
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "fear",
+          0.1905
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.6349
+    }
+  }
 }

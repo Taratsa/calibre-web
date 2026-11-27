@@ -52,5 +52,28 @@
       "size": 106815,
       "name": "Berpikir Radikal tentang PKI - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.13527,
+      "positive_share": 0.3333,
+      "sentences": 46,
+      "emotions": [
+        [
+          "sadness",
+          0.4444
+        ],
+        [
+          "happy",
+          0.2778
+        ],
+        [
+          "anger",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1848
+    }
+  }
 }

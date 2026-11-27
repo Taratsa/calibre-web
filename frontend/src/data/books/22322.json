@@ -52,5 +52,28 @@
       "size": 228164,
       "name": "Arsip Rahasia AS_ Pembantaian di Bone pada - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.21472,
+      "positive_share": 0.0769,
+      "sentences": 52,
+      "emotions": [
+        [
+          "sadness",
+          0.4615
+        ],
+        [
+          "anger",
+          0.3846
+        ],
+        [
+          "fear",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3101
+    }
+  }
 }

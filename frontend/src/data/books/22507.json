@@ -13,7 +13,7 @@
   "tags": [
     "Berita",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Kisah Tapol",
     "Mass-Graves"
   ],
@@ -55,5 +55,15 @@
       "size": 623912,
       "name": "Kuburan Massal Penggarit Tak Boleh Hilang - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14958,
+      "positive_share": 0.2857,
+      "sentences": 31,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2074
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 164132,
       "name": "Alimin Periode 1946-1950_ Mengevakuasi ke - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.03466,
+      "positive_share": 0.4444,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "sadness",
+          0.3333
+        ],
+        [
+          "happy",
+          0.2222
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0261
+    }
+  }
 }

@@ -52,5 +52,28 @@
       "size": 166063,
       "name": "'Pembiaran' polisi dan 'legitimasi' gebuk - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.37857,
+      "positive_share": 0.04,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.48
+        ],
+        [
+          "anger",
+          0.36
+        ],
+        [
+          "fear",
+          0.12
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5686
+    }
+  }
 }

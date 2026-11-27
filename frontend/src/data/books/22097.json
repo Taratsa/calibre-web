@@ -51,5 +51,28 @@
       "size": 169230,
       "name": "Seperti ini Fakta Mengejutkan Peristiwa G - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19753,
+      "positive_share": 0.125,
+      "sentences": 35,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.25
+        ],
+        [
+          "anger",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.283
+    }
+  }
 }

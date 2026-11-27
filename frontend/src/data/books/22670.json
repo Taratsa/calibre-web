@@ -51,5 +51,28 @@
       "size": 398036,
       "name": "Markus Talam Dari Blitar Selatan_ Ia telah - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.26403,
+      "positive_share": 0.12,
+      "sentences": 59,
+      "emotions": [
+        [
+          "sadness",
+          0.48
+        ],
+        [
+          "anger",
+          0.24
+        ],
+        [
+          "fear",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.3879
+    }
+  }
 }

@@ -12,7 +12,7 @@
   "author_sort": "1965, YPKP",
   "tags": [
     "Artikel",
-    "Genosida",
+    "genosida",
     "Internasional",
     "Kliping",
     "Sejarah"
@@ -55,5 +55,15 @@
       "size": 164310,
       "name": "Perang rahasia di Indonesia, 1957-58 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20491,
+      "positive_share": 0.1765,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.2946
+    }
+  }
 }

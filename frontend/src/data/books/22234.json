@@ -52,5 +52,28 @@
       "size": 329814,
       "name": "Pecahan Kaca di YLBHI_ Serangan terhadap P - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.20572,
+      "positive_share": 0.2174,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4348
+        ],
+        [
+          "fear",
+          0.2174
+        ],
+        [
+          "happy",
+          0.2174
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2959
+    }
+  }
 }

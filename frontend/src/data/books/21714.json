@@ -48,5 +48,24 @@
       "size": 447913,
       "name": "ASJRAQ MAGAZINE 1925–1928_ MINANGKABAU W - Salsabila Yumna Al-Insyi"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.12888,
+      "positive_share": 0.9,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "approval",
+          0.5
+        ]
+      ],
+      "emotion_language": "en",
+      "score": 0.2319
+    }
+  }
 }

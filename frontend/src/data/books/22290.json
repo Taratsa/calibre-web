@@ -52,5 +52,28 @@
       "size": 138430,
       "name": "Pengetahuan Kecil dari Nusakambangan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.02188,
+      "positive_share": 0.5,
+      "sentences": 40,
+      "emotions": [
+        [
+          "happy",
+          0.4286
+        ],
+        [
+          "fear",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.2857
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0631
+    }
+  }
 }

@@ -44,5 +44,28 @@
       "size": 1544989,
       "name": "'We cannot heal what we will not face' - Alberta Natasia Adji and Marcella Polain"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.12637,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "realization",
+          0.3333
+        ],
+        [
+          "gratitude",
+          0.3333
+        ],
+        [
+          "anger",
+          0.3333
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.1708
+    }
+  }
 }

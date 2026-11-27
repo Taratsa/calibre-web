@@ -54,5 +54,28 @@
       "size": 325201,
       "name": "Kesaksianku tentang G30S [3] - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.18194,
+      "positive_share": 0.1905,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4286
+        ],
+        [
+          "anger",
+          0.381
+        ],
+        [
+          "happy",
+          0.1905
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2584
+    }
+  }
 }

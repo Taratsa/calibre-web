@@ -54,5 +54,28 @@
       "size": 97555,
       "name": "Diskusi Aidit - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.10601,
+      "positive_share": 0.3,
+      "sentences": 35,
+      "emotions": [
+        [
+          "fear",
+          0.4
+        ],
+        [
+          "happy",
+          0.4
+        ],
+        [
+          "sadness",
+          0.2
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1386
+    }
+  }
 }

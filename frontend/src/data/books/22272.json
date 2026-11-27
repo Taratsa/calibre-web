@@ -52,5 +52,28 @@
       "size": 301659,
       "name": "H.O.S. Tjokroaminoto Memadukan Islam dan S - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": 0.10462,
+      "positive_share": 0.7857,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "love",
+          0.2857
+        ],
+        [
+          "sadness",
+          0.1429
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1936
+    }
+  }
 }

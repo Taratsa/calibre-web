@@ -52,5 +52,28 @@
       "size": 227827,
       "name": "Hatta di Pusaran Peristiwa Madiun 1948 - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.16691,
+      "positive_share": 0.0833,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.25
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2347
+    }
+  }
 }

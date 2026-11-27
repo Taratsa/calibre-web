@@ -51,5 +51,28 @@
       "size": 107752,
       "name": "Perspektif alternatif dalam melihat Perist - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.36224,
+      "positive_share": 0.04,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.4
+        ],
+        [
+          "anger",
+          0.36
+        ],
+        [
+          "fear",
+          0.12
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.5428
+    }
+  }
 }

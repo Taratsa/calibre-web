@@ -51,5 +51,28 @@
       "size": 217878,
       "name": "Dokumen rahasia Amerika_ AS mengetahui ska - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.15321,
+      "positive_share": 0.1667,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3333
+        ],
+        [
+          "fear",
+          0.3333
+        ],
+        [
+          "happy",
+          0.1667
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2131
+    }
+  }
 }

@@ -13,7 +13,7 @@
   "tags": [
     "Artikel",
     "Daerah",
-    "Genosida",
+    "genosida",
     "Mass-Graves",
     "Nasional",
     "Sejarah"
@@ -56,5 +56,15 @@
       "size": 191038,
       "name": "Keji pembantaian terhadap PKI - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2806,
+      "positive_share": 0.0476,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": -0.4141
+    }
+  }
 }

@@ -54,5 +54,28 @@
       "size": 130157,
       "name": "Penggalan Kepala Dipajang sepanjang Jalan - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.2819,
+      "positive_share": 0.2188,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "fear",
+          0.25
+        ],
+        [
+          "anger",
+          0.0938
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.4161
+    }
+  }
 }

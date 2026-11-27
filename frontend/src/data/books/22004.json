@@ -53,5 +53,28 @@
       "size": 122307,
       "name": "Sandiarja_ Dituduh PKI, Tentara Rebut Tana - YPKP 1965"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.19741,
+      "positive_share": 0.1579,
+      "sentences": 60,
+      "emotions": [
+        [
+          "anger",
+          0.3684
+        ],
+        [
+          "sadness",
+          0.3684
+        ],
+        [
+          "happy",
+          0.1579
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.2828
+    }
+  }
 }
