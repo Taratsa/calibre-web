@@ -79,21 +79,28 @@ Measured (2026-11-27, against copies of the live `app.db`, never the live file):
 - Umami: the `file-download` payload and `User-Agent` equal what `_track_download_analytics` sends (`file` is
   `data.name` + format); `DNT: 1` sends nothing in both.
 
-Rollout (LIVE since 2026-11-27 ~10:41 WIB): `.env` has `RUST_BACKEND_ENABLED=true` and
-`RUST_BACKEND_LISTEN=0.0.0.0:8084` (reachable only over `caddy_net` as `calibre-web-automated:8084`; never publish it
-on the host, it has no authentication). The production Caddyfile (`/home/wibi/apps/caddy/Caddyfile`, applied with
-`caddy reload`; the diff is `deploy/caddy-download-canary.patch`) sends ONLY `/download/*` there. Everything Rust cannot
-answer itself is proxied to Flask, so the worst case is a slower download, not a lost count.
+Rollout (LIVE since 2026-11-27): `.env` has `RUST_BACKEND_ENABLED=true` and `RUST_BACKEND_LISTEN=0.0.0.0:8084`
+(reachable only over `caddy_net` as `calibre-web-automated:8084`; never publish it on the host, it has no
+authentication). The production Caddyfile (`/home/wibi/apps/caddy/Caddyfile`, applied with `caddy reload`) sends
+`/download/*` (since ~10:41 WIB) and `/cover/*`, `/cover_thumb/*`, `/series_cover/*` (since ~11:25 WIB) to
+`calibre-web-automated:8084 calibre-web-automated:8083` with `lb_policy first`, so Flask answers whenever Rust does not
+(checked by killing Rust: all three routes kept answering). The cover `handle_response` blocks (2xx cached for a day,
+errors `no-store`) stay in Caddy and apply to either upstream. The entrypoint restarts Rust 2 s after it exits.
+Anything Rust cannot answer itself is proxied to Flask, so the worst case is a slower response, not a lost count.
 
 Checked live through https://pustaka.taratsa.id: anonymous `/download/4644/pdf` -> 302 with Flask's headers, the
 followed link downloads the 4,808,966 bytes, a cookie request is answered by Flask, an unknown id is a 404, and the
-counter moved by exactly the requests Rust and Flask each answered (+3 for 2 Rust + 1 Flask; the 404 counts nothing).
-Baseline before the switch (Caddy log): ~292 `/download` requests in 22 minutes, 278 x 302, 14 x 404, 6 with a cookie.
+counter moved by exactly the requests Rust and Flask each answered. First 495 requests after the switch: 471 x 302,
+24 x 404, no 502, p50 8 ms / p95 19 ms. Covers: 4,510 comparisons against live Flask (`/cover`, `/cover_thumb`; 350
+books with a cover, 100 without, an unknown id; 5 URL shapes; WebP and JPEG) found 0 differences.
+Baseline before the switch (Caddy log): `/download` ~292 requests per 22 minutes (6 with a cookie); covers ~12 per
+minute, 241 of 242 anonymous, Flask p50 89 ms but p95 13.6 s / p99 23.8 s. Rust's proxy to Flask therefore uses a READ
+timeout (120 s), not a total one: a slow Flask answer must not become a 502.
 
-Rollback (one minute): remove the `@rust_download` block from the Caddyfile and `caddy reload`; the Rust process can
-keep running idle, or set `RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. The previous
-image is tagged `calibre-web:pre-rust-download`; backups of the old Caddyfile and `.env` are in `/home/devuser/backups`
-(`*.pre-rust-download.2026-11-27`). Rust logs only errors unless `RUST_LOG=info` is set; `/config/rust-backend.log`.
+Rollback: restore the previous Caddyfile (`/home/devuser/backups/Caddyfile.pre-rust-covers.2026-11-27` is the
+`/download`-only state, `Caddyfile.pre-rust-download.2026-11-27` the original) and `caddy reload`; or set
+`RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. Previous images: `calibre-web:pre-rust-covers`,
+`calibre-web:pre-rust-download`. Rust logs to `/config/rust-backend.log` (errors only unless `RUST_LOG=info`).
 
 ### Behaviour that is deliberately the same as Flask
 

@@ -48,12 +48,19 @@ chown -R "$ABC_USER":"$ABC_USER" /config 2>/dev/null || true
 
 echo "[entrypoint] CACHE_DIRECTORY=$CACHE_DIRECTORY CALIBRE_DBPATH=$CALIBRE_DBPATH" >&2
 
-# Optional Rust backend (rust/backend/README.md) on 127.0.0.1:8084. Off by default: Caddy keeps sending every route
-# to Flask until it is switched on. Set RUST_BACKEND_ENABLED=true to start it next to Flask.
+# Optional Rust backend (rust/backend/README.md). Off by default. Set RUST_BACKEND_ENABLED=true to start it next to
+# Flask; it listens on ${LISTEN:-127.0.0.1:8084}. It is restarted when it exits: Caddy fails over to Flask while it is
+# down, so a crash costs speed, never availability, but without the loop it would stay down until the next restart.
 if [[ "${RUST_BACKEND_ENABLED:-false}" == "true" ]]; then
     echo "[entrypoint] starting taratsa_backend on ${LISTEN:-127.0.0.1:8084}"
-    setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
-        /usr/local/bin/taratsa_backend >>/config/rust-backend.log 2>&1 &
+    (
+        while true; do
+            setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
+                /usr/local/bin/taratsa_backend >>/config/rust-backend.log 2>&1
+            echo "[entrypoint] taratsa_backend exited ($?), restarting in 2s" >>/config/rust-backend.log
+            sleep 2
+        done
+    ) &
 fi
 
 exec setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
