@@ -102,5 +102,27 @@ def main():
         server.shutdown()
 
 
+# >>> rust-anything: host-rs is on. `rust-anything disable ../rust/host-rs` removes this block.
+def _rust_anything_host_rs():
+    import importlib, os, sys
+    mode = os.environ.get("RUST_ANYTHING_MODE")
+    if mode == "old" or os.environ.get("RUST_ANYTHING_UNIT_HOST") == "original":
+        return
+    at = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../rust/host-rs/python"))
+    sys.path.insert(0, at)
+    try:
+        native = importlib.import_module("host_rs")
+    except ImportError:
+        if mode == "new":
+            raise
+        return
+    finally:
+        sys.path.remove(at)
+    globals().update({name: getattr(native, name) for name in ["log"]})
+
+
+_rust_anything_host_rs()
+del _rust_anything_host_rs
+# <<< rust-anything: host-rs
 if __name__ == "__main__":
     main()
