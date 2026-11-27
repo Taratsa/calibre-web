@@ -241,6 +241,27 @@
               </div>
               <div id="toolbarViewerRight" class="toolbarHorizontalGroup">
                 <div id="editorModeButtons" class="toolbarHorizontalGroup">
+                  <div id="signatureProperties" class="toolbarButtonWithContainer" hidden="true">
+                    <button
+                      id="signaturePropertiesButton"
+                      class="toolbarButton"
+                      type="button"
+                      tabindex="0"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-controls="signaturePropertiesPanel"
+                      data-l10n-id="pdfjs-digital-signature-properties-button"
+                    >
+                      <span data-l10n-id="pdfjs-digital-signature-properties-button-label"></span>
+                    </button>
+                    <div class="editorParamsToolbar hidden doorHangerRight" id="signaturePropertiesPanel" role="region">
+                      <div id="signaturePropertiesContainer" class="signaturePropertiesContainer">
+                        <div id="signaturePropertiesBanner" class="sigBanner" hidden="true" role="status"></div>
+                        <ul id="signaturePropertiesList" class="signaturePropertiesList" tabindex="-1"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="signaturePropertiesSeparator" class="verticalToolbarSeparator" hidden="true"></div>
                   <div id="editorComment" class="toolbarButtonWithContainer" hidden="true">
                     <button id="editorCommentButton" class="toolbarButton" type="button" tabindex="0" disabled="disabled" aria-expanded="false" aria-haspopup="true" aria-controls="editorCommentParamsToolbar" data-l10n-id="pdfjs-editor-comment-button">
                       <span data-l10n-id="pdfjs-editor-comment-button-label"></span>
@@ -495,8 +516,8 @@
             <input type="password" id="password" class="toolbarField" />
           </div>
           <div class="buttonRow">
-            <button id="passwordCancel" class="dialogButton" type="button"><span data-l10n-id="pdfjs-password-cancel-button"></span></button>
-            <button id="passwordSubmit" class="dialogButton" type="button"><span data-l10n-id="pdfjs-password-ok-button"></span></button>
+            <button id="passwordCancel" class="secondaryButton" type="button"><span data-l10n-id="pdfjs-password-cancel-button"></span></button>
+            <button id="passwordSubmit" class="primaryButton" type="button"><span data-l10n-id="pdfjs-password-ok-button"></span></button>
           </div>
         </dialog>
         <dialog id="documentPropertiesDialog">
@@ -560,7 +581,9 @@
             <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
           </div>
           <div class="buttonRow">
-            <button id="documentPropertiesClose" class="dialogButton" type="button"><span data-l10n-id="pdfjs-document-properties-close-button"></span></button>
+            <button id="documentPropertiesClose" class="secondaryButton" type="button">
+              <span data-l10n-id="pdfjs-document-properties-close-button"></span>
+            </button>
           </div>
         </dialog>
         <dialog class="dialog altText" id="altTextDialog" aria-labelledby="dialogLabel" aria-describedby="dialogDescription">
@@ -730,7 +753,7 @@
                       <button class="clearInputButton" type="button" tabindex="0" aria-hidden="true"></button>
                     </span>
                   </div>
-                  <button id="clearSignatureButton" type="button" data-l10n-id="pdfjs-editor-add-signature-clear-button" tabindex="0"><span data-l10n-id="pdfjs-editor-add-signature-clear-button-label"></span></button>
+                  <button id="clearSignatureButton" class="secondaryButton" type="button" data-l10n-id="pdfjs-editor-add-signature-clear-button" tabindex="0"><span data-l10n-id="pdfjs-editor-add-signature-clear-button-label"></span></button>
                 </div>
                 <div id="addSignatureSaveContainer">
                   <input type="checkbox" id="addSignatureSaveCheckbox" />
@@ -797,7 +820,7 @@
             <span data-l10n-id="pdfjs-print-progress-percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
           </div>
           <div class="buttonRow">
-            <button id="printCancel" class="dialogButton" type="button"><span data-l10n-id="pdfjs-print-progress-close-button"></span></button>
+            <button id="printCancel" class="secondaryButton" type="button"><span data-l10n-id="pdfjs-print-progress-close-button"></span></button>
           </div>
         </dialog>
       </div>
@@ -807,7 +830,7 @@
           <div>
             <span id="editorUndoBarMessage" class="description"></span>
           </div>
-          <button id="editorUndoBarUndoButton" class="undoButton" type="button" tabindex="0" data-l10n-id="pdfjs-editor-undo-bar-undo-button">
+          <button id="editorUndoBarUndoButton" class="secondaryButton" type="button" tabindex="0" data-l10n-id="pdfjs-editor-undo-bar-undo-button">
             <span data-l10n-id="pdfjs-editor-undo-bar-undo-button-label"></span>
           </button>
           <button id="editorUndoBarCloseButton" class="closeButton" type="button" tabindex="0" data-l10n-id="pdfjs-editor-undo-bar-close-button">
