@@ -66,24 +66,7 @@ async fn serve(
     .await
 }
 
-/// Flask's error pages are uncacheable (`NO_CACHE_HEADERS` in `cps/error_handler.py`), so Cloudflare never keeps a
-/// 404 that a later request (a replaced file, a fixed signature) should not see.
-fn not_found() -> Response {
-    (
-        StatusCode::NOT_FOUND,
-        [
-            (header::CACHE_CONTROL, "no-store, no-cache, must-revalidate"),
-            (
-                HeaderName::from_static("cloudflare-cdn-cache-control"),
-                "no-store",
-            ),
-            (header::PRAGMA, "no-cache"),
-        ],
-        "Not Found",
-    )
-        .into_response()
-}
-
+/// A response for failures that are Rust's own (an unreadable database), with Flask's no-store headers.
 fn server_error(message: &str) -> Response {
     tracing::error!("{message}");
     (
@@ -101,6 +84,17 @@ fn server_error(message: &str) -> Response {
         .into_response()
 }
 
+/// The 404 (unknown book, bad signature, missing file) and error pages are Flask's rendered HTML (title, language,
+/// `Vary: Cookie`, no-store headers), so those requests go to Flask instead of getting a bare Rust body.
+async fn to_flask(
+    state: Arc<AppState>,
+    path_and_query: &str,
+    method: axum::http::Method,
+    headers: HeaderMap,
+) -> Response {
+    crate::proxy::fallback_reconstructed(state, path_and_query, method, headers).await
+}
+
 async fn serve_inner(
     state: Arc<AppState>,
     book_id: i64,
@@ -110,6 +104,11 @@ async fn serve_inner(
     headers: HeaderMap,
     request: Request<Body>,
 ) -> Response {
+    let path_and_query = request.uri().path_and_query().map_or_else(
+        || request.uri().path().to_owned(),
+        |v| v.as_str().to_owned(),
+    );
+    let method = request.method().clone();
     // `book_format.split(".")[0]`
     let book_format = book_format.split('.').next().unwrap_or("").to_owned();
     let settings = match state.settings().await {
@@ -123,7 +122,7 @@ async fn serve_inner(
         &version,
         &sig,
     ) {
-        return not_found();
+        return to_flask(state, &path_and_query, method, headers).await;
     }
 
     let metadata_db = settings.metadata_db();
@@ -134,7 +133,7 @@ async fn serve_inner(
     .await;
     let record = match found {
         Ok(Ok(Some(record))) => record,
-        Ok(Ok(None)) => return not_found(),
+        Ok(Ok(None)) => return to_flask(state, &path_and_query, method, headers).await,
         Ok(Err(error)) => return server_error(&format!("metadata.db query failed: {error}")),
         Err(error) => return server_error(&format!("lookup task failed: {error}")),
     };
@@ -172,7 +171,7 @@ async fn serve_inner(
         .join(format!("{}.{book_format}", record.name));
     if !disk.is_file() {
         tracing::error!("File not found: {}", disk.display());
-        return not_found();
+        return to_flask(state, &path_and_query, method, headers).await;
     }
 
     // Embedded metadata: the file is re-exported with the book's current metadata written in.
@@ -235,14 +234,28 @@ async fn serve_inner(
     if let Some(staged) = staged {
         staged.remove();
     }
+    // An error from the file service (416 for an unsatisfiable Range) is Flask's rendered error page, not a bare one.
+    if response.status().is_client_error() || response.status().is_server_error() {
+        return to_flask(state, &path_and_query, method, headers).await;
+    }
 
-    let success = response.status().is_success();
+    let status = response.status();
+    let success = status.is_success();
+    // Flask sets these on whatever `send_from_directory` returned, so a 304 carries them too (without Last-Modified).
+    let not_modified = status == StatusCode::NOT_MODIFIED;
     let out = response.headers_mut();
-    if success {
-        out.insert(
-            header::CONTENT_TYPE,
-            HeaderValue::from_static(mime::for_format(&book_format)),
-        );
+    // Flask's session machinery adds `Vary: Cookie` to every response; Caddy then replaces it with its own `Vary`.
+    out.insert(header::VARY, HeaderValue::from_static("Cookie"));
+    if success || not_modified {
+        if success {
+            out.insert(
+                header::CONTENT_TYPE,
+                HeaderValue::from_static(mime::for_format(&book_format)),
+            );
+        } else {
+            out.remove(header::LAST_MODIFIED);
+            out.insert(header::ACCEPT_RANGES, HeaderValue::from_static("bytes"));
+        }
         if let Some(value) = disposition.and_then(|d| HeaderValue::from_str(&d).ok()) {
             out.insert(header::CONTENT_DISPOSITION, value);
         }

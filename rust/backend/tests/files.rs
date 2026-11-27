@@ -165,7 +165,33 @@ async fn serves_the_file_with_the_flask_headers() {
             .unwrap()
             .contains("https://stats.example 'self'")
     );
-    assert!(headers.get(header::VARY).is_none());
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(headers[header::ACCEPT_RANGES], "bytes");
+}
+
+#[tokio::test]
+async fn a_conditional_request_gets_flasks_304_headers() {
+    let f = fixture(false);
+    let sig = signing::signature(KEY, 7, "pdf", &f.version);
+    let request = Request::builder()
+        .uri(url(&f, &sig))
+        .header(header::HOST, "pustaka.example")
+        .header(header::IF_NONE_MATCH, "*")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::NOT_MODIFIED);
+    let headers = response.headers();
+    // Flask's 304 keeps the immutable cache policy, the canonical link and the file name, but has no Last-Modified
+    assert_eq!(
+        headers[header::CACHE_CONTROL],
+        "public, max-age=31536000, immutable"
+    );
+    assert!(headers.get("link").is_some());
+    assert!(headers.get(header::CONTENT_DISPOSITION).is_some());
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(headers[header::ACCEPT_RANGES], "bytes");
+    assert!(headers.get(header::LAST_MODIFIED).is_none());
 }
 
 #[tokio::test]
@@ -183,42 +209,46 @@ async fn trailing_name_is_ignored_and_ranges_work() {
 }
 
 #[tokio::test]
-async fn bad_signature_is_404_and_reveals_nothing() {
+async fn a_bad_signature_is_handed_to_flask_and_reveals_nothing() {
+    // The fixture's Flask is down, so a request Rust hands over answers 502 with no file bytes. In production Flask
+    // renders its own 404 page (title, Vary, no-store headers), which Rust must not imitate with a bare body.
     let f = fixture(false);
-    let (status, headers, body) = get(&f, &url(&f, &"0".repeat(32)), None).await;
-    assert_eq!(status, StatusCode::NOT_FOUND);
-    // a 404 must never be cached at the edge (Flask's NO_CACHE_HEADERS)
-    assert_eq!(
-        headers[header::CACHE_CONTROL],
-        "no-store, no-cache, must-revalidate"
-    );
-    assert_eq!(headers["cloudflare-cdn-cache-control"], "no-store");
+    let (status, _, body) = get(&f, &url(&f, &"0".repeat(32)), None).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
     assert!(!body.windows(3).any(|w| w == b"PDF"));
     // a signature valid for a different book does not open this one
     let other = signing::signature(KEY, 8, "pdf", &f.version);
     assert_eq!(
         get(&f, &url(&f, &other), None).await.0,
-        StatusCode::NOT_FOUND
+        StatusCode::BAD_GATEWAY
     );
 }
 
 #[tokio::test]
-async fn unknown_book_or_format_is_404() {
+async fn unknown_book_or_format_is_handed_to_flask() {
     let f = fixture(false);
     let sig = signing::signature(KEY, 99, "pdf", &f.version);
     assert_eq!(
         get(&f, &format!("/files/99/pdf/{}/{sig}", f.version), None)
             .await
             .0,
-        StatusCode::NOT_FOUND
+        StatusCode::BAD_GATEWAY
     );
     let sig = signing::signature(KEY, 7, "epub", &f.version);
     assert_eq!(
         get(&f, &format!("/files/7/epub/{}/{sig}", f.version), None)
             .await
             .0,
-        StatusCode::NOT_FOUND
+        StatusCode::BAD_GATEWAY
     );
+}
+
+#[tokio::test]
+async fn an_unsatisfiable_range_is_handed_to_flask() {
+    let f = fixture(false);
+    let sig = signing::signature(KEY, 7, "pdf", &f.version);
+    let (status, _, _) = get(&f, &url(&f, &sig), Some("bytes=999999-")).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
 }
 
 #[tokio::test]
