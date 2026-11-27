@@ -175,6 +175,28 @@ Ordering trap worth remembering: pointing Astro at `:8084` BEFORE this route exi
 `/api/read/<id>/ocr/<fmt>` (no catch-all exists), so both OCR text pages returned 404 for about 15 minutes
 (2026-11-27 22:2x WIB). Add the Rust route first, then switch `BACKEND_URL`; a 404 from Rust is not proxied.
 
+### `/show/readium/<id>/…` (LIVE since 2026-11-27 ~23:4x WIB)
+
+Port of `cps/readium.py`: `manifest.json`, `positions.json` and every zip member, for the ANONYMOUS visitor
+(`src/readium.rs`). The manifest and position list are built as ordered [`pyjson::Py`] values and written with Python
+`json.dumps` shape (key order, `", "`/`": "` separators, `ensure_ascii`, `repr` floats), so the bytes equal Flask's.
+The XML side is a small namespace-aware DOM over quick-xml with lxml's parser settings modelled: entity references are
+expanded (`&amp;`, `&#233;`), line endings normalised (CRLF inside a paragraph was one real off-by-one), attribute
+values normalised, comments kept as text-bearing nodes, `posixpath`/`urllib` path and URL rules reproduced.
+
+Two deliberate hand-backs to Flask, because lxml's re-serialisation cannot be reproduced byte for byte: a markup member
+that WOULD be rewritten (`<script>`, `on*`, `srcdoc`, `javascript:` URLs) and every `text/html` member (libxml's HTML
+parser is not the XML parser). A clean member is served with its exact bytes, which is every member of the real library
+(~6,000 checked, none modified), and an unparsable member is Flask's 404. Cookie-bearing requests and the guest gates
+(viewer role, archived books, restricted column, reverse-proxy login, Google Drive) go to Flask unchanged, so the ~13%
+of readium traffic that carries a Flask session cookie keeps Flask's per-user view; the ~87% cookieless traffic moves here.
+
+Measured against live Flask (2026-11-27): 300 EPUBs × (manifest, positions) = 600 bodies identical in status, headers
+(except `Date`) and bytes, plus `304` on a matching `If-None-Match`; 558 resource members (XHTML, CSS, WebP, PNG, JPEG,
+SVG) identical, the only proxied ones the 8 `text/html` members. Live: `@rust_readium` (`path_regexp
+^/show/readium/[0-9]+/`, backup `Caddyfile.pre-readium.2026-11-27`), the EPUB reader renders and turns pages in
+Chromium with zero console errors, and Flask's access log shows only the cookie-bearing requests.
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's

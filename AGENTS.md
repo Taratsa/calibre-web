@@ -438,6 +438,14 @@ Two live search systems (plus the legacy advanced-search form):
 - `/duplicates/invalidate-cache` internal endpoint is CSRF-exempt
 
 ### EPUB Reader (Readium ts-toolkit)
+- **The readium publication routes are served by Rust for the anonymous visitor since 2026-11-27 ~23:4x WIB**
+  (`rust/backend/src/readium.rs`, a port of `cps/readium.py`; `@rust_readium` in the production Caddyfile, backup
+  `Caddyfile.pre-readium.2026-11-27`). Manifest/positions bytes equal Flask's (Python `json.dumps` shape: key order,
+  `", "`/`": "` separators, `ensure_ascii`, `repr` floats; 600 pairs identical over 300 EPUBs, 558 resource members
+  identical). Clean XHTML/SVG members are served with their exact bytes; a member that would be sanitised
+  (`<script>`, `on*`, `srcdoc`, `javascript:`), every `text/html` member, unparsable markup, any cookie-bearing request
+  and the guest ACL gates are proxied to Flask, whose lxml rewrite cannot be reproduced byte for byte. Changing the
+  manifest shape means changing `pyjson.rs` and `readium.rs` together, then rerunning the Flask comparison.
 - `/read/<id>/epub` (`templates/read.html` + `static/js/reading/epub.js`) renders EPUBs with the
   [Readium ts-toolkit](https://github.com/readium/ts-toolkit) `EpubNavigator`; it replaced epubjs/epub-ts. The
   navigator does not read zips: `cps/readium.py` builds a Readium Web Publication Manifest and a position list
