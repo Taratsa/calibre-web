@@ -1066,3 +1066,188 @@ async fn the_cached_document_is_flasks_jsonify_body() {
         StatusCode::BAD_GATEWAY
     );
 }
+
+// ── readium ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+/// An EPUB with one clean chapter and one carrying a `<script>`; the dirty one must never leave Rust.
+fn write_epub(f: &Fixture, dirty: bool) {
+    use std::io::Write;
+    use zip::write::SimpleFileOptions;
+    let path = f
+        ._dir
+        .path()
+        .join("library/Author/Cafe (7)/Cafe Muller.epub");
+    let file = std::fs::File::create(&path).unwrap();
+    let mut zip = zip::ZipWriter::new(file);
+    let options = SimpleFileOptions::default().compression_method(zip::CompressionMethod::Stored);
+    let mut put = |name: &str, data: &[u8]| {
+        zip.start_file(name, options).unwrap();
+        zip.write_all(data).unwrap();
+    };
+    put(
+        "META-INF/container.xml",
+        br#"<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>"#,
+    );
+    put(
+        "OEBPS/content.opf",
+        br#"<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>Caf&#233; &amp; co</dc:title><dc:creator>An Author</dc:creator><dc:language>id</dc:language></metadata><manifest><item id="ch" href="text/ch.xhtml" media-type="application/xhtml+xml"/><item id="css" href="style.css" media-type="text/css"/></manifest><spine><itemref idref="ch"/></spine></package>"#,
+    );
+    if dirty {
+        put(
+            "OEBPS/text/ch.xhtml",
+            br#"<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><body><p onclick="x()">hi</p><script>alert(1)</script></body></html>"#,
+        );
+    } else {
+        put(
+            "OEBPS/text/ch.xhtml",
+            br#"<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><body><p>Hal&#233; &amp; dunia</p></body></html>"#,
+        );
+    }
+    put("OEBPS/style.css", b"p { color: red }\n");
+}
+
+async fn readium(
+    epub_format_rows: bool,
+    dirty: bool,
+    uri: &str,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, Vec<u8>) {
+    let f = fixture(false);
+    reader_state(&f);
+    if epub_format_rows {
+        Connection::open(f._dir.path().join("library/metadata.db"))
+            .unwrap()
+            .execute(
+                "INSERT INTO data VALUES (2, 7, 'EPUB', 0, 'Cafe Muller')",
+                [],
+            )
+            .unwrap();
+        write_epub(&f, dirty);
+    }
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let mut request = Request::builder()
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    (
+        parts.status,
+        parts.headers,
+        body.collect().await.unwrap().to_bytes().to_vec(),
+    )
+}
+
+#[tokio::test]
+async fn readium_serves_a_clean_chapter_byte_for_byte() {
+    let (status, headers, body) =
+        readium(true, false, "/show/readium/7/OEBPS/text/ch.xhtml", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_TYPE], "application/xhtml+xml");
+    assert_eq!(headers[header::CACHE_CONTROL], "private, no-cache");
+    assert_eq!(headers["x-robots-tag"], "noindex");
+    assert!(body.starts_with(b"<?xml"));
+    assert!(body.ends_with(b"</html>"));
+    let (status, headers, _) = readium(true, false, "/show/readium/7/OEBPS/style.css", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_TYPE], "text/css");
+}
+
+#[tokio::test]
+async fn readium_hands_markup_it_would_rewrite_to_flask() {
+    // A `<script>` member: lxml strips it and re-serialises, so only Flask can answer with the same bytes.
+    let (status, _, _) = readium(true, true, "/show/readium/7/OEBPS/text/ch.xhtml", &[]).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    // A book without EPUB, a missing member and an odd path are Flask's 404s too.
+    for uri in [
+        "/show/readium/7/OEBPS/missing.xhtml",
+        "/show/readium/7/OEBPS/../content.opf",
+        "/show/readium/99/manifest.json",
+    ] {
+        assert_eq!(
+            readium(true, false, uri, &[]).await.0,
+            StatusCode::BAD_GATEWAY,
+            "{uri}"
+        );
+    }
+    assert_eq!(
+        readium(false, false, "/show/readium/7/manifest.json", &[])
+            .await
+            .0,
+        StatusCode::BAD_GATEWAY
+    );
+}
+
+async fn on(
+    f: &Fixture,
+    uri: &str,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, Vec<u8>) {
+    let mut request = Request::builder()
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    (
+        parts.status,
+        parts.headers,
+        body.collect().await.unwrap().to_bytes().to_vec(),
+    )
+}
+
+#[tokio::test]
+async fn readium_manifest_and_positions_match_readium_shapes() {
+    let f = fixture(false);
+    reader_state(&f);
+    Connection::open(f._dir.path().join("library/metadata.db"))
+        .unwrap()
+        .execute(
+            "INSERT INTO data VALUES (2, 7, 'EPUB', 0, 'Cafe Muller')",
+            [],
+        )
+        .unwrap();
+    write_epub(&f, false);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let (status, headers, body) = on(&f, "/show/readium/7/manifest.json", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_TYPE], "application/webpub+json");
+    let etag = headers[header::ETAG].to_str().unwrap().to_owned();
+    assert!(
+        etag.starts_with('"') && etag.ends_with('"') && etag[1..].contains('-'),
+        "{etag}"
+    );
+    let text = String::from_utf8(body).unwrap();
+    // `json.dumps` separators and order: @context, metadata, readingOrder, resources, toc, links.
+    assert!(text.starts_with("{\"@context\": \"https://readium.org/webpub-manifest/context.jsonld\", \"metadata\": {\"title\": \"Caf\\u00e9 & co\""));
+    assert!(text.contains("\"readingOrder\": [{\"href\": \"OEBPS/text/ch.xhtml\", \"type\": \"application/xhtml+xml\"}]"));
+    assert!(text.contains("\"href\": \"positions.json\""));
+    // Same identity, conditional request: 304 with the same headers.
+    let (status, conditional, empty) = on(
+        &f,
+        "/show/readium/7/manifest.json",
+        &[("If-None-Match", &etag)],
+    )
+    .await;
+    assert_eq!(status, StatusCode::NOT_MODIFIED);
+    assert!(empty.is_empty());
+    assert_eq!(conditional[header::ETAG], etag);
+    let (status, _, positions) = on(&f, "/show/readium/7/positions.json", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    let text = String::from_utf8(positions).unwrap();
+    assert!(text.starts_with("{\"total\": 1, \"positions\": [{\"href\": \"OEBPS/text/ch.xhtml\""));
+    assert!(text.contains("\"progression\": 0.0, \"totalProgression\": 0.0"));
+}

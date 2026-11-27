@@ -16,6 +16,7 @@ pub mod ocr_status;
 pub mod proxy;
 pub mod pyjson;
 pub mod reader;
+pub mod readium;
 pub mod security;
 pub mod settings;
 pub mod signing;
@@ -127,6 +128,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(static_files::routes())
         .merge(reader::routes())
         .merge(ocr_status::routes())
+        .merge(readium::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,

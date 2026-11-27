@@ -25,6 +25,8 @@ uuid = { version = "1.29.3", features = ["v4"] }
 bytes = "1.12.2"
 futures-util = "0.3.34"
 chrono = { version = "0.4.45", default-features = false, features = ["clock", "std"] }
+zip = { version = "4", default-features = false, features = ["deflate"] }
+quick-xml = "0.38"
 
 [dev-dependencies]
 http-body-util = "0.1.5"
