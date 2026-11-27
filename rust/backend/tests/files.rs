@@ -796,3 +796,114 @@ async fn static_misses_and_unsafe_paths_go_to_flask() {
         );
     }
 }
+
+fn reader_state(f: &Fixture) {
+    // the fixture's `user` rows: Guest is role 34 (anonymous + download); the PDF reader needs the viewer bit too
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("UPDATE user SET role = 34 | 256 WHERE id = 1", [])
+        .unwrap();
+}
+
+async fn reader(
+    f: &Fixture,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, String) {
+    let mut request = Request::builder()
+        .uri("/read/7/pdf")
+        .header(header::HOST, "pustaka.example");
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    let text = String::from_utf8_lossy(&body.collect().await.unwrap().to_bytes()).into_owned();
+    (parts.status, parts.headers, text)
+}
+
+#[tokio::test]
+async fn pdf_reader_renders_the_guest_page() {
+    let f = fixture(false);
+    reader_state(&f);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let sig = signing::signature(KEY, 7, "pdf", &f.version);
+    let (status, headers, page) = reader(&f, &[("Accept-Language", "id-ID,id;q=0.9")]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_TYPE], "text/html; charset=utf-8");
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(headers["x-robots-tag"], "noindex");
+    assert!(
+        page.contains("<title>Pembaca PDF | Café Müller</title>"),
+        "{page}"
+    );
+    assert!(page.contains(&format!("\"/files/7/pdf/{}/{sig}\"", f.version)));
+    // the guest has the download role in this fixture, so the toolbar keeps print and download
+    assert!(page.contains("id=\"downloadButton\"") && page.contains("id=\"printButton\""));
+    assert!(!page.contains("{{") && !page.contains("{%"));
+    assert!(page.contains("window.umami.track(\"pdf-read\""));
+}
+
+#[tokio::test]
+async fn pdf_reader_hides_download_buttons_without_the_role() {
+    let f = fixture(false);
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("UPDATE user SET role = 32 | 256 WHERE id = 1", [])
+        .unwrap();
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let (status, _, page) = reader(&f, &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert!(!page.contains("id=\"downloadButton\"") && !page.contains("id=\"printButton\""));
+    assert!(!page.contains("id=\"secondaryDownload\""));
+}
+
+#[tokio::test]
+async fn pdf_reader_applies_the_guest_role_at_once() {
+    // the viewer bit is read fresh, not through the 1 s settings cache
+    let f = fixture(false);
+    reader_state(&f);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    assert_eq!(reader(&f, &[]).await.0, StatusCode::OK);
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("UPDATE user SET role = 34 WHERE id = 1", [])
+        .unwrap();
+    assert_eq!(
+        reader(&f, &[]).await.0,
+        StatusCode::BAD_GATEWAY,
+        "revoked: Flask answers"
+    );
+}
+
+#[tokio::test]
+async fn pdf_reader_leaves_identity_and_odd_cases_to_flask() {
+    let f = fixture(false);
+    reader_state(&f);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    // 502: the fixture's Flask is down, so reaching it is what these cases must do
+    for extra in [
+        vec![("Cookie", "session=abc")],
+        vec![("Authorization", "Basic eDp5")],
+        vec![("Accept-Language", "id;q=\"x\"")], // a header Werkzeug parses differently
+    ] {
+        assert_eq!(
+            reader(&f, &extra).await.0,
+            StatusCode::BAD_GATEWAY,
+            "{extra:?}"
+        );
+    }
+    let (status, _, _) = get(&f, "/read/99/pdf", None).await; // unknown book: Flask redirects
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    // a book the guest's language filter hides is Flask's redirect as well
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("UPDATE user SET default_language = 'ind' WHERE id = 1", [])
+        .unwrap();
+    tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+    assert_eq!(reader(&f, &[]).await.0, StatusCode::BAD_GATEWAY);
+}

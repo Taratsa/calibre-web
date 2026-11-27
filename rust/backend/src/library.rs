@@ -118,6 +118,42 @@ pub fn find_visible_format(
     })
     .optional()
 }
+/// Data used by the PDF reader shell. Keep the book row even when it has no PDF: Flask still renders the reader and
+/// points it at `/show/<id>/pdf`, which then answers the ordinary missing-file response.
+#[derive(Debug, Clone)]
+pub struct PdfReaderBook {
+    pub title: String,
+    pub last_modified: Option<String>,
+    pub pdf_size: Option<i64>,
+}
+
+/// An anonymous `read_book` lookup after Flask's `get_filtered_book`: guest language/tag filters, with a LEFT JOIN
+/// because `get_pdf_reader_url()` falls back to `/show` when no PDF format row exists.
+pub fn find_visible_pdf_reader_book(
+    metadata_db: &Path,
+    book_id: i64,
+    language: &str,
+    denied: &str,
+    allowed: &str,
+) -> rusqlite::Result<Option<PdfReaderBook>> {
+    let conn = open_read_only(metadata_db)?;
+    let (filter, extra) = visibility_clause(language, denied, allowed);
+    let sql = format!(
+        "SELECT b.title, b.last_modified, d.uncompressed_size
+         FROM books b LEFT JOIN data d ON d.book = b.id AND d.format = 'PDF'
+         WHERE b.id = ?1{filter} LIMIT 1"
+    );
+    let mut values: Vec<rusqlite::types::Value> = vec![book_id.into()];
+    values.extend(extra);
+    conn.query_row(&sql, rusqlite::params_from_iter(values), |row| {
+        Ok(PdfReaderBook {
+            title: row.get::<_, Option<String>>(0)?.unwrap_or_default(),
+            last_modified: row.get(1)?,
+            pdf_size: row.get(2)?,
+        })
+    })
+    .optional()
+}
 
 fn split_filter(value: &str) -> Vec<String> {
     value

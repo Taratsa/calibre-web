@@ -10,8 +10,10 @@ pub mod filename;
 pub mod files;
 pub mod health;
 pub mod library;
+pub mod locale;
 pub mod mime;
 pub mod proxy;
+pub mod reader;
 pub mod security;
 pub mod settings;
 pub mod signing;
@@ -115,6 +117,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(download::routes())
         .merge(files::routes())
         .merge(static_files::routes())
+        .merge(reader::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,
