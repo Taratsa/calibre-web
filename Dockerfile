@@ -44,9 +44,10 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
 ENV PATH=/usr/local/cargo/bin:${PATH}
 COPY rust/ /app/rust/
-# `rust/backend/src/reader.rs` embeds this template with include_str!, and from `src/` it sits at `/app/cps/templates`.
+# `rust/backend/src/reader.rs` and `epub_page.rs` embed these templates with include_str!, and from `src/` they sit at
+# `/app/cps/templates`. A template added to a Rust `include_str!("../../../cps/templates/…")` MUST be copied here too.
 # `rust/backend/build.rs` reads the OCR cache version constants out of `cps/ocr_service.py` (`/app/cps` from `build.rs`).
-COPY cps/templates/readpdf.html /app/cps/templates/readpdf.html
+COPY cps/templates/readpdf.html cps/templates/read.html /app/cps/templates/
 COPY cps/ocr_service.py /app/cps/ocr_service.py
 RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
     cd /app/rust/taratsa_text && \
