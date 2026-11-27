@@ -672,6 +672,10 @@ Two live search systems (plus the legacy advanced-search form):
   neither). A wrong Caddy rule then fails loudly instead of serving a different file.
 - **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus
   `Cloudflare-CDN-Cache-Control: no-store`), so the edge never keeps an error that a later request should not see.
+- **`/static/*` has a Rust implementation** (`rust/backend/src/static_files.rs`, 2026-11-27) that matches Flask on 5,053
+  comparisons over all 837 files of `cps/static` (headers and body, validators, ranges, odd paths) and serves about 3x
+  the throughput. It is NOT live: it needs an image rebuild and the `deploy/caddy-static.patch` block in the production
+  Caddyfile. Anything it cannot reproduce (misses, odd paths, unknown types, other methods, 412/416) is proxied to Flask.
 - **Cover routes** (`/cover/*`, `/cover_thumb/*`) have a Rust fast path for anonymous, unfiltered local libraries:
   it reads existing local source JPEG/prebuilt WebP and Flask thumbnail-cache files. Cookies, Authorization,
   reverse-proxy auth, hidden anonymous browsing, restricted columns and Google Drive still go to Flask. Missing
@@ -686,6 +690,23 @@ Two live search systems (plus the legacy advanced-search form):
   in: `rust-anything enable` was never run, so `host/rebuild-listener.py` still uses its own `log`. `main` and `Handler`
   stay in Python. Write code only in `src/port.rs`; `src/lib.rs` is generated (`rust-anything refresh`) and
   `cases.jsonl` is the recording, never edited by hand.
+
+### Plain Flask UI (logged-in pages)
+- The Flask pages a logged-in user sees (login, book lists/search, book edit, profile and user editor, admin dashboard,
+  config/database/email/scheduled tasks, tasks, duplicates, clippings, audit log) extend `cps/templates/plain_layout.html`
+  and use ONE stylesheet, `cps/static/plain.css` (same neutral/red tokens as the Astro site). They load no Bootstrap
+  and no jQuery; the only third-party script is the existing Umami tag. Routes, endpoint names, form field names, CSRF
+  and permission checks are unchanged: only the `render_template` target moved to the `plain_*.html` files
+- Measured on the login page: 14,096 B HTML plus the Bootstrap/jQuery bundle before; 2,965 B HTML (1,354 B gzip),
+  6,324 B CSS and a 2,394 B `favicon.png` (was a 408 KB `.ico`) after
+- The old templates (`layout.html`, `index.html`, `user_edit.html`, ...) are still in the tree for the pages not yet
+  moved (shelves, detail page, reader, OPDS, Kobo auth). Do not mix the two layouts in one page
+- Upload is the header file input in `plain_layout.html`: it posts `btn-upload` with the CSRF token to `/upload` and
+  follows the JSON `location` Flask returns
+- Jinja filters `formatfloat`, `last_modified`, `shortentitle` and `formatdateinput` exist only inside the running app
+  (`cps/jinjia.py`); compiling these templates with a bare `jinja2.Environment` fails on them. Check a template by
+  rendering the route. Flask caches templates when not in debug, so restart the process after editing one
+- Not carried over from the old book editor: metadata-provider swaps and the Kobo token modal
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

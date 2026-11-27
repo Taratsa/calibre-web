@@ -1,0 +1,27 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<section class="plain-login">
+  <h1>{{ _('Login') }}</h1>
+  <form method="post">
+    <input type="hidden" name="next" value="{{ next_url }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="username">{{ _('Username') }}</label>
+    <input id="username" name="username" type="text" autocomplete="username" autocapitalize="off" value="{{ username }}" required autofocus>
+    <label for="password">{{ _('Password') }}</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <p><label class="plain-inline"><input type="checkbox" name="remember_me" checked> {{ _('Remember Me') }}</label></p>
+    <div class="plain-actions">
+      <button type="submit" name="submit" value="{{ _('Login') }}">{{ _('Login') }}</button>
+      {% if config.config_login_type == 0 and mail %}<button type="submit" name="forgot" value="forgot">{{ _('Forgot Password?') }}</button>{% endif %}
+      {% if g.allow_registration %}<a class="button" href="{{ url_for('web.register') }}">{{ _('Register') }}</a>{% endif %}
+      {% if g.allow_anonymous %}<a class="button" href="{{ url_for('web.index') }}">{{ _('Home') }}</a>{% endif %}
+    </div>
+    {% if config.config_remote_login %}<p><a href="{{ url_for('remotelogin.remote_login') }}">{{ _('Log in with Magic Link') }}</a></p>{% endif %}
+    {% if config.config_login_type == 2 %}
+      {% if 1 in oauth_check %}<p><a href="{{ url_for('oauth.github_login') }}">{{ _('Log in with GitHub') }}</a></p>{% endif %}
+      {% if 2 in oauth_check %}<p><a href="{{ url_for('oauth.google_login') }}">{{ _('Log in with Google') }}</a></p>{% endif %}
+    {% endif %}
+  </form>
+  {% if error %}<p class="flash flash-error" role="alert">{{ error }}</p>{% endif %}
+</section>
+{% endblock %}

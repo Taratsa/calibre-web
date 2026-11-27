@@ -1,0 +1,248 @@
+{% extends "plain_layout.html" %}
+{% macro text(name, label, type='text', attrs='') -%}
+<label for="{{ name }}">{{ label }}</label>
+<input type="{{ type }}" id="{{ name }}" name="{{ name }}" value="{% if config[name] != None %}{{ config[name] }}{% endif %}" autocomplete="off" {{ attrs|safe }}>
+{%- endmacro %}
+{% macro path(name, label, folderonly=false) -%}
+<label for="{{ name }}">{{ label }}</label>
+<div class="plain-actions">
+  <input type="text" id="{{ name }}" name="{{ name }}" value="{% if config[name] != None %}{{ config[name] }}{% endif %}" autocomplete="off">
+  <button type="button" data-filechooser="{{ name }}" {% if folderonly %}data-folderonly{% endif %} aria-label="{{ _('Choose File Location') }}">{{ _('Browse') }}</button>
+</div>
+{%- endmacro %}
+{% macro check(name, label, control=none, attrs='') -%}
+<label class="plain-inline"><input type="checkbox" id="{{ name }}" name="{{ name }}" {% if control %}data-control="{{ control }}"{% endif %} {% if config[name] %}checked{% endif %} {{ attrs|safe }}> {{ label }}</label>
+{%- endmacro %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<div id="plain-config-status" role="status" aria-live="polite"></div>
+<form id="plain-config-form" method="post" action="{{ url_for('admin.ajax_config') }}" autocomplete="off">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+  <details class="plain-section" open>
+    <summary><strong>{{ _('Server Configuration') }}</strong></summary>
+    {{ text('config_port', _('Server Port'), 'number', 'min="1" max="65535" required') }}
+    {{ path('config_certfile', _('SSL certfile location (leave it empty for non-SSL Servers)')) }}
+    {{ path('config_keyfile', _('SSL Keyfile location (leave it empty for non-SSL Servers)')) }}
+    <label for="config_updatechannel">{{ _('Update Channel') }}</label>
+    <select name="config_updatechannel" id="config_updatechannel">
+      <option value="0" {% if config.config_updatechannel == 0 %}selected{% endif %}>{{ _('Stable') }}</option>
+      <option value="2" {% if config.config_updatechannel == 2 %}selected{% endif %}>{{ _('Nightly') }}</option>
+    </select>
+    {{ text('config_trustedhosts', _('Trusted Hosts (Comma Separated)')) }}
+  </details>
+
+  <details class="plain-section">
+    <summary><strong>{{ _('Logfile Configuration') }}</strong></summary>
+    <label for="config_log_level">{{ _('Log Level') }}</label>
+    <select name="config_log_level" id="config_log_level">
+      <option value="10" {% if config.config_log_level == 10 %}selected{% endif %}>DEBUG</option>
+      <option value="20" {% if config.config_log_level == 20 or config.config_log_level == None %}selected{% endif %}>INFO</option>
+      <option value="30" {% if config.config_log_level == 30 %}selected{% endif %}>WARNING</option>
+      <option value="40" {% if config.config_log_level == 40 %}selected{% endif %}>ERROR</option>
+    </select>
+    {{ text('config_logfile', _('Location and name of logfile (calibre-web.log for no entry)')) }}
+    <p>{{ check('config_access_log', _('Enable Access Log')) }}</p>
+    {{ text('config_access_logfile', _('Location and name of access logfile (access.log for no entry)')) }}
+  </details>
+
+  <details class="plain-section">
+    <summary><strong>{{ _('Feature Configuration') }}</strong></summary>
+    <p>{{ check('config_unicode_filename', _('Convert non-English characters in title and author while saving to disk')) }}</p>
+    <p>{{ check('config_embed_metadata', _('Embed Metadata to Ebook File on Download/Conversion/e-mail (needs Calibre/Kepubify binaries)')) }}</p>
+    <p>{{ check('config_uploading', _('Enable Uploads') ~ ' ' ~ _('(Please ensure that users also have upload permissions)'), 'upload_settings') }}</p>
+    <div data-related="upload_settings" class="plain-indent">
+      {{ text('config_upload_formats', _('Allowed Upload Fileformats')) }}
+    </div>
+    <p>{{ check('config_anonbrowse', _('Enable Anonymous Browsing')) }}</p>
+    <p>{{ check('config_public_reg', _('Enable Public Registration'), 'register_settings') }}</p>
+    <div data-related="register_settings" class="plain-indent">
+      <p>{{ check('config_register_email', _('Use Email as Username')) }}</p>
+    </div>
+    <p>{{ check('config_remote_login', _('Enable Magic Link Remote Login')) }}</p>
+    {% if feature_support['kobo'] %}
+    <p>{{ check('config_kobo_sync', _('Enable Kobo sync'), 'kobo-settings') }}</p>
+    <div data-related="kobo-settings" class="plain-indent">
+      <p>{{ check('config_kobo_proxy', _('Proxy unknown requests to Kobo Store')) }}</p>
+      {{ text('config_external_port', _('Server External Port (for port forwarded API calls)'), 'number', 'min="1" max="65535" required') }}
+    </div>
+    {% endif %}
+    {% if feature_support['goodreads'] %}
+    <p>{{ check('config_use_goodreads', _('Use Goodreads'), 'goodreads-settings') }}</p>
+    <div data-related="goodreads-settings" class="plain-indent">
+      {{ text('config_goodreads_api_key', _('Goodreads API Key')) }}
+    </div>
+    {% endif %}
+    {{ text('config_googlebooks_api_key', _('Google Books API Key')) }}
+    <p>{{ check('config_allow_reverse_proxy_header_login', _('Allow Reverse Proxy Authentication'), 'reverse-proxy-login-settings') }}</p>
+    <div data-related="reverse-proxy-login-settings" class="plain-indent">
+      {{ text('config_reverse_proxy_login_header_name', _('Reverse Proxy Header Name')) }}
+    </div>
+    {% if not config.config_is_initial %}
+    {% if feature_support['ldap'] or feature_support['oauth'] %}
+    <label for="config_login_type">{{ _('Login type') }}</label>
+    <select name="config_login_type" id="config_login_type" data-control="login-settings">
+      <option value="0" {% if config.config_login_type == 0 %}selected{% endif %}>{{ _('Use Standard Authentication') }}</option>
+      {% if feature_support['ldap'] %}<option value="1" {% if config.config_login_type == 1 %}selected{% endif %}>{{ _('Use LDAP Authentication') }}</option>{% endif %}
+      {% if feature_support['oauth'] %}<option value="2" {% if config.config_login_type == 2 %}selected{% endif %}>{{ _('Use OAuth') }}</option>{% endif %}
+    </select>
+    {% if feature_support['ldap'] %}
+    <fieldset data-related="login-settings-1" class="plain-section">
+      <legend>{{ _('Use LDAP Authentication') }}</legend>
+      {{ text('config_ldap_provider_url', _('LDAP Server Host Name or IP Address')) }}
+      {{ text('config_ldap_port', _('LDAP Server Port'), 'number', 'min="1" max="65535" required') }}
+      <label for="config_ldap_encryption">{{ _('LDAP Encryption') }}</label>
+      <select name="config_ldap_encryption" id="config_ldap_encryption" data-controlall="ldap-cert-settings">
+        <option value="0" {% if config.config_ldap_encryption == 0 %}selected{% endif %}>{{ _('None') }}</option>
+        <option value="1" {% if config.config_ldap_encryption == 1 %}selected{% endif %}>{{ _('TLS') }}</option>
+        <option value="2" {% if config.config_ldap_encryption == 2 %}selected{% endif %}>{{ _('SSL') }}</option>
+      </select>
+      <div data-related="ldap-cert-settings">
+        {{ path('config_ldap_cacert_path', _('LDAP CACertificate Path (Only needed for Client Certificate Authentication)')) }}
+        {{ path('config_ldap_cert_path', _('LDAP Certificate Path (Only needed for Client Certificate Authentication)')) }}
+        {{ path('config_ldap_key_path', _('LDAP Keyfile Path (Only needed for Client Certificate Authentication)')) }}
+      </div>
+      <label for="config_ldap_authentication">{{ _('LDAP Authentication') }}</label>
+      <select name="config_ldap_authentication" id="config_ldap_authentication" data-control="ldap-auth-password" data-controlall="ldap-auth-settings">
+        <option value="0" {% if config.config_ldap_authentication == 0 %}selected{% endif %}>{{ _('Anonymous') }}</option>
+        <option value="1" {% if config.config_ldap_authentication == 1 %}selected{% endif %}>{{ _('Unauthenticated') }}</option>
+        <option value="2" {% if config.config_ldap_authentication == 2 %}selected{% endif %}>{{ _('Simple') }}</option>
+      </select>
+      <div data-related="ldap-auth-settings">
+        {{ text('config_ldap_serv_username', _('LDAP Administrator Username')) }}
+      </div>
+      <div data-related="ldap-auth-password-2">
+        <label for="config_ldap_serv_password_e">{{ _('LDAP Administrator Password') }}</label>
+        <input type="password" id="config_ldap_serv_password_e" name="config_ldap_serv_password_e" value="" autocomplete="off">
+      </div>
+      {{ text('config_ldap_dn', _('LDAP Distinguished Name (DN)')) }}
+      {{ text('config_ldap_user_object', _('LDAP User Object Filter')) }}
+      <p>{{ check('config_ldap_openldap', _('LDAP Server is OpenLDAP?')) }}</p>
+      <h3>{{ _('Following Settings are Needed For User Import') }}</h3>
+      {{ text('config_ldap_group_object_filter', _('LDAP Group Object Filter')) }}
+      {{ text('config_ldap_group_name', _('LDAP Group Name')) }}
+      {{ text('config_ldap_group_members_field', _('LDAP Group Members Field')) }}
+      <label for="ldap_import_user_filter">{{ _('LDAP Member User Filter Detection') }}</label>
+      <select name="ldap_import_user_filter" id="ldap_import_user_filter" data-control="ldap_member_user_object">
+        <option value="0" {% if config.config_ldap_member_user_object == "" %}selected{% endif %}>{{ _('Autodetect') }}</option>
+        <option value="1" {% if config.config_ldap_member_user_object %}selected{% endif %}>{{ _('Custom Filter') }}</option>
+      </select>
+      <div data-related="ldap_member_user_object-1">
+        {{ text('config_ldap_member_user_object', _('LDAP Member User Filter')) }}
+      </div>
+    </fieldset>
+    {% endif %}
+    {% if feature_support['oauth'] %}
+    <fieldset data-related="login-settings-2" class="plain-section">
+      <legend>{{ _('Use OAuth') }}</legend>
+      {% for prov in provider %}
+      <p><a href="{{ prov['obtain_link'] }}" target="_blank" rel="noopener noreferrer">{{ _('Obtain %(provider)s OAuth Credential', provider=prov['provider_name']) }}</a></p>
+      <label for="config_{{ prov['id'] }}_oauth_client_id">{{ _('%(provider)s OAuth Client Id', provider=prov['provider_name']) }}</label>
+      <input type="text" id="config_{{ prov['id'] }}_oauth_client_id" name="config_{{ prov['id'] }}_oauth_client_id" value="{% if prov['oauth_client_id'] %}{{ prov['oauth_client_id'] }}{% endif %}" autocomplete="off">
+      <label for="config_{{ prov['id'] }}_oauth_client_secret">{{ _('%(provider)s OAuth Client Secret', provider=prov['provider_name']) }}</label>
+      <input type="text" id="config_{{ prov['id'] }}_oauth_client_secret" name="config_{{ prov['id'] }}_oauth_client_secret" value="{% if prov['oauth_client_secret'] %}{{ prov['oauth_client_secret'] }}{% endif %}" autocomplete="off">
+      {% endfor %}
+    </fieldset>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+  </details>
+
+  <details class="plain-section">
+    <summary><strong>{{ _('External binaries') }}</strong></summary>
+    {{ path('config_binariesdir', _('Path to Calibre Binaries'), true) }}
+    {{ text('config_calibre', _('Calibre E-Book Converter Settings')) }}
+    {{ path('config_kepubifypath', _('Path to Kepubify E-Book Converter')) }}
+    {% if feature_support['rar'] %}
+    {{ path('config_rarfile_location', _('Location of Unrar binary')) }}
+    {% endif %}
+  </details>
+
+  <details class="plain-section">
+    <summary><strong>{{ _('Security Settings') }}</strong></summary>
+    <p>{{ check('config_ratelimiter', _('Limit failed login attempts')) }}</p>
+    <div class="plain-indent">
+      {{ text('config_limiter_uri', _('Configure Backend for Limiter')) }}
+      {{ text('config_limiter_options', _('Options for Limiter Backend')) }}
+    </div>
+    <p>{{ check('config_check_extensions', _('Check if file extensions matches file content on upload')) }}</p>
+    <label for="config_session">{{ _('Session protection') }}</label>
+    <select name="config_session" id="config_session">
+      <option value="0" {% if config.config_session == 0 %}selected{% endif %}>{{ _('Basic') }}</option>
+      <option value="1" {% if config.config_session == 1 %}selected{% endif %}>{{ _('Strong') }}</option>
+    </select>
+    <p>{{ check('config_password_policy', _('User Password policy'), 'password_settings') }}</p>
+    <div data-related="password_settings" class="plain-indent">
+      {{ text('config_password_min_length', _('Minimum password length'), 'number', 'min="1" max="40" required') }}
+      <p>{{ check('config_password_number', _('Enforce number')) }}</p>
+      <p>{{ check('config_password_lower', _('Enforce lowercase characters')) }}</p>
+      <p>{{ check('config_password_upper', _('Enforce uppercase characters')) }}</p>
+      <p>{{ check('config_password_character', _('Enforce characters (needed For Chinese/Japanese/Korean Characters)')) }}</p>
+      <p>{{ check('config_password_special', _('Enforce special characters')) }}</p>
+    </div>
+  </details>
+
+  <div class="plain-actions">
+    <button type="submit" name="submit" id="config_submit">{{ _('Save') }}</button>
+    <a class="button" href="{{ url_for('admin.admin') }}" id="config_back">{{ _('Cancel') }}</a>
+  </div>
+</form>
+{% include "plain_filechooser.html" %}
+{% include "plain_conditional_fields.html" %}
+{% endblock %}
+{% block js %}
+<script>
+(() => {
+  /* The form posts to the ajax config endpoint, which answers with JSON; show that as messages. */
+  const form = document.getElementById('plain-config-form');
+  const status = document.getElementById('plain-config-status');
+  const aliveUrl = {{ url_for('admin.calibreweb_alive')|tojson }};
+  const csrf = form.querySelector('input[name=csrf_token]').value;
+  const restartText = {{ _('Server restarting. Reload in a few seconds.')|tojson }};
+  const failText = {{ _('Request failed')|tojson }};
+  function show(items) {
+    status.replaceChildren();
+    for (const item of items) {
+      const div = document.createElement('div');
+      div.className = 'flash ' + (item.type === 'success' ? 'flash-success' : 'flash-error');
+      div.textContent = item.message;
+      status.append(div);
+    }
+    status.scrollIntoView({ block: 'start' });
+  }
+  // Closed <details> hide invalid controls; open the section so the browser can point at the field.
+  form.addEventListener('invalid', (e) => { const d = e.target.closest('details'); if (d) d.open = true; }, true);
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = document.getElementById('config_submit');
+    button.disabled = true;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST', credentials: 'same-origin',
+        headers: { 'X-CSRFToken': csrf },
+        body: new URLSearchParams(new FormData(form)),
+      });
+      if (!response.ok) throw new Error(failText + ' (' + response.status + ')');
+      const data = await response.json();
+      const formats = document.getElementById('config_upload_formats');
+      if (formats && data.config_upload !== undefined && data.config_upload !== null) formats.value = data.config_upload;
+      if (data.reboot) {
+        show([{ type: 'success', message: restartText }]);
+        const timer = setInterval(async () => {
+          try {
+            const alive = await fetch(aliveUrl, { credentials: 'same-origin' });
+            if (alive.status < 400) { clearInterval(timer); show(data.result || []); }
+          } catch (_) { /* server still restarting */ }
+        }, 1000);
+      } else {
+        show(data.result || []);
+      }
+    } catch (error) {
+      show([{ type: 'danger', message: error.message }]);
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+{% endblock %}

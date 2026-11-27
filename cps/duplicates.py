@@ -125,7 +125,7 @@ def show_duplicates():
     settings = get_or_create_settings()
 
     return render_title_template(
-        "duplicates.html",
+        "plain_duplicates.html",
         duplicate_groups=duplicate_groups,
         duplicate_index_needs_full_scan=duplicate_index_needs_full_scan,
         next_scan_run=get_next_duplicate_scan_run(),

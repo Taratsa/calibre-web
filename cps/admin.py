@@ -180,7 +180,6 @@ def shutdown():
         ub.create_audit_log_entry(
             user_id=current_user.id,
             action=action_text,
-            resource_type="server",
             resource_id="",
             details=f"Server {action_text} initiated",
             ip_address=helper.get_client_ip(),
@@ -328,7 +327,7 @@ def admin():
     schedule_duration = format_timedelta(t, threshold=0.99)
 
     return render_title_template(
-        "admin.html",
+        "plain_admin.html",
         allUser=all_user,
         downloadSums=download_sums,
         config=config,
@@ -355,7 +354,7 @@ def db_configuration():
 @admin_required
 def configuration():
     return render_title_template(
-        "config_edit.html",
+        "plain_config_edit.html",
         config=config,
         provider=oauthblueprints,
         feature_support=feature_support,
@@ -1631,7 +1630,7 @@ def new_user():
         content.locale = config.config_default_locale
         content.default_language = config.config_default_language
     return render_title_template(
-        "user_edit.html",
+        "plain_user_edit.html",
         new_user=1,
         content=content,
         config=config,
@@ -1650,7 +1649,7 @@ def new_user():
 def edit_mailsettings():
     content = config.get_mail_settings()
     return render_title_template(
-        "email_edit.html",
+        "plain_email_edit.html",
         content=content,
         title=_("Edit Email Server Settings"),
         page="mailset",
@@ -1749,7 +1748,7 @@ def edit_scheduledtasks():
         duration_field.append((n, format_timedelta(t, threshold=0.97)))
 
     return render_title_template(
-        "schedule_edit.html",
+        "plain_schedule_edit.html",
         config=content,
         starttime=time_field,
         duration=duration_field,
@@ -1834,7 +1833,7 @@ def edit_user(user_id):
             ip_address=helper.get_client_ip(),
         )
     return render_title_template(
-        "user_edit.html",
+        "plain_user_edit.html",
         translations=translations,
         languages=languages,
         new_user=0,
@@ -1934,7 +1933,7 @@ def view_audit_log():
     )
     pages = (total + entries_per_page - 1) // entries_per_page
     return render_title_template(
-        "audit_log.html",
+        "plain_audit_log.html",
         entries=entries,
         cur_page=page,
         pages=pages,
@@ -2360,7 +2359,7 @@ def _db_configuration_result(error_flash=None, gdrive_error=None):
         flash(_("Database Settings updated"), category="success")
 
     return render_title_template(
-        "config_db.html",
+        "plain_config_db.html",
         config=config,
         show_authenticate_google_drive=gdrive_authenticate,
         gdriveError=gdrive_error,
@@ -2396,7 +2395,7 @@ def _handle_new_user(to_save, content, languages, translations, kobo_support):
     except Exception as ex:
         flash(str(ex), category="error")
         return render_title_template(
-            "user_edit.html",
+            "plain_user_edit.html",
             new_user=1,
             content=content,
             config=config,
@@ -2542,7 +2541,7 @@ def _handle_edit_user(to_save, content, languages, translations, kobo_support):
             log.error(ex)
             flash(str(ex), category="error")
             return render_title_template(
-                "user_edit.html",
+                "plain_user_edit.html",
                 translations=translations,
                 languages=languages,
                 mail_configured=config.get_mail_server_configured(),

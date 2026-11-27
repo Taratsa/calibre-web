@@ -1,0 +1,165 @@
+{% extends "plain_layout.html" %}
+{% block header %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ (url_for('web.index', _external=True)|trim('/') + '#website')|tojson }},
+      "url": {{ url_for('web.index', _external=True)|tojson }},
+      "name": "Pustaka Taratsa",
+      "description": "Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia",
+      "inLanguage": "id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ (url_for('search.simple_search', _external=True) + '?query={search_term_string}')|tojson }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": {{ (url_for('web.index', _external=True)|trim('/') + '#organization')|tojson }},
+      "name": "Pustaka Taratsa",
+      "url": {{ url_for('web.index', _external=True)|tojson }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ url_for('static', filename='logo-taratsa.png', _external=True)|tojson }},
+        "width": 600,
+        "height": 72
+      },
+      "description": "Pustaka Taratsa adalah perpustakaan digital non-komersil berakses terbuka yang mengoleksi dan mengarsip buku langka, zine, serta literatur terkait Indonesia",
+      "sameAs": [
+        "https://pustaka.taratsa.id"
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block body %}
+{% macro book_rows(items) %}
+<div class="plain-table-wrap">
+  <table>
+    <tbody>
+    {% for entry in items %}
+      {% set b = entry.Books %}
+      <tr>
+        <td style="width: 64px;">
+          <a href="{{ url_for('web.show_book', book_id=b.id) }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ url_for('web.get_cover_thumb', book_id=b.id, resolution='sm', c=b|last_modified) }}" alt="" width="48" height="70" loading="lazy" style="aspect-ratio: 48 / 70; width: 48px; height: auto;">
+          </a>
+        </td>
+        <td>
+          <a href="{{ url_for('web.show_book', book_id=b.id) }}"><strong>{{ b.title }}</strong></a>
+          {% if entry[2] == True %}<span class="plain-badge">{{ _('Read') }}</span>{% endif %}
+          {% if b.data|music %}<span class="plain-badge">{{ _('Audio') }}</span>{% endif %}
+          <div class="plain-muted">
+            {% for author in b.authors %}{% if not loop.first %} &amp; {% endif %}<a href="{{ url_for('web.books_list', data='author', sort_param='stored', book_id=author.id) }}">{{ author.name.replace('|', ',') }}</a>{% endfor %}
+          </div>
+          {% if b.series|length > 0 %}
+          <div class="plain-muted">
+            {% if page != 'series' %}<a href="{{ url_for('web.books_list', data='series', sort_param='stored', book_id=b.series[0].id) }}">{{ b.series[0].name }}</a>{% else %}{{ b.series[0].name }}{% endif %}
+            ({{ b.series_index|formatfloat(2) }})
+          </div>
+          {% endif %}
+        </td>
+        <td class="plain-muted" style="white-space: nowrap;">
+          {% if b.ratings|length > 0 %}{% set stars = (b.ratings[0].rating / 2)|int(0) %}<span title="{{ stars }} / 5" aria-label="{{ stars }} / 5">{{ '★' * stars }}{{ '☆' * (5 - stars) }}</span>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endmacro %}
+
+{% set bid = id if id is defined and id is not none else 1 %}
+{% set is_search = page in ['search', 'advsearch'] %}
+{% set books = entries|default([]) %}
+
+{% if page == 'search' and not books and not searchterm %}
+  <h1 class="plain-title">{{ _('Search') }}</h1>
+{% elif is_search %}
+  <h1 class="plain-title">{% if not books %}{{ _('No Results Found') }}{% else %}{{ result_count }} {{ _('Results for:') }}{% endif %} {{ adv_searchterm|default(searchterm|default('')) }}</h1>
+{% else %}
+  <h1 class="plain-title">{{ title }}</h1>
+{% endif %}
+
+{% if page == 'search' and not books and not searchterm %}
+<form class="plain-section" action="{{ url_for('search.simple_search') }}" method="get" role="search">
+  <label for="plain-search-query">{{ _('Search Library') }}</label>
+  <div class="plain-actions"><input id="plain-search-query" name="query" type="search" autofocus><button type="submit">{{ _('Search') }}</button><a class="button" href="{{ url_for('search.advanced_search_form') }}">{{ _('Advanced Search') }}</a></div>
+</form>
+{% endif %}
+
+{% if page != 'discover' and not is_search and current_user.show_detail_random() and random and random|length > 0 %}
+<section class="plain-section">
+  <h2>{{ _('Discover (Random Books)') }}</h2>
+  {{ book_rows(random) }}
+</section>
+{% endif %}
+
+{% if is_search and entries|length > 0 and current_user.is_authenticated and (current_user.shelf.all() or g.shelves_access) %}
+<section class="plain-section">
+  <form method="post" class="plain-actions" id="shelf-actions">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <details>
+      <summary>{{ _('Add to shelf') }}</summary>
+      <div class="plain-links">
+        {% for shelf in g.shelves_access %}{% if not shelf.is_public or current_user.role_edit_shelfs() %}
+          <button type="submit" formaction="{{ url_for('shelf.search_to_shelf', shelf_id=shelf.id) }}">{{ shelf.name }}{% if shelf.is_public == 1 %} {{ _('(Public)') }}{% endif %}</button>
+        {% endif %}{% endfor %}
+      </div>
+    </details>
+    <details>
+      <summary>{{ _('Remove from shelf') }}</summary>
+      <div class="plain-links">
+        {% for shelf in g.shelves_access %}{% if not shelf.is_public or current_user.role_edit_shelfs() %}
+          <button type="submit" formaction="{{ url_for('shelf.search_from_shelf', shelf_id=shelf.id) }}">{{ shelf.name }}{% if shelf.is_public == 1 %} {{ _('(Public)') }}{% endif %}</button>
+        {% endif %}{% endfor %}
+      </div>
+    </details>
+  </form>
+</section>
+{% endif %}
+
+{% if page != 'discover' and (not is_search or entries|length > 0) %}
+<nav class="plain-links" aria-label="{{ _('Sort') }}">
+  {% set sorts = [] %}
+  {% if page == 'hot' %}
+    {% set sorts = [('hotdesc', _('Sort descending according to download count')), ('hotasc', _('Sort ascending according to download count'))] %}
+  {% else %}
+    {% set sorts = [
+      ('new', _('Sort according to book date, newest first')),
+      ('old', _('Sort according to book date, oldest first')),
+      ('abc', _('Sort title in alphabetical order')),
+      ('zyx', _('Sort title in reverse alphabetical order')),
+      ('authaz', _('Sort authors in alphabetical order')),
+      ('authza', _('Sort authors in reverse alphabetical order')),
+      ('pubnew', _('Sort according to publishing date, newest first')),
+      ('pubold', _('Sort according to publishing date, oldest first'))] %}
+    {% if page == 'series' %}
+      {% set sorts = sorts + [('seriesasc', _('Sort ascending according to series index')), ('seriesdesc', _('Sort descending according to series index'))] %}
+    {% endif %}
+  {% endif %}
+  {% for key, label in sorts %}
+    {% if page == 'search' %}
+      <a class="button{% if order == key %} plain-danger{% endif %}" href="{{ url_for('web.books_list', data=page, sort_param=key, query=query) }}" title="{{ label }}"{% if order == key %} aria-current="true"{% endif %}>{{ label }}</a>
+    {% else %}
+      <a class="button{% if order == key %} plain-danger{% endif %}" href="{{ url_for('web.books_list', data=page, book_id=bid, sort_param=key) }}" title="{{ label }}"{% if order == key %} aria-current="true"{% endif %}>{{ label }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}
+
+{% if entries|length > 0 %}
+  {{ book_rows(entries) }}
+{% elif not is_search %}
+  <p class="plain-muted">{{ _('No Results Found') }}</p>
+{% endif %}
+{% endblock %}

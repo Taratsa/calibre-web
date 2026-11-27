@@ -1,0 +1,93 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<form id="plain-db-form" method="post" action="{{ url_for('admin.db_configuration') }}" autocomplete="off" class="plain-section">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <p id="plain-db-invalid" class="flash flash-error" role="alert" hidden>{{ _('New db location is invalid, please enter valid path') }}</p>
+
+  <label for="config_calibre_dir">{{ _('Location of Calibre Database') }}</label>
+  <div class="plain-actions">
+    <input type="text" id="config_calibre_dir" name="config_calibre_dir" value="{% if config.config_calibre_dir != None %}{{ config.config_calibre_dir }}{% endif %}" autocomplete="off">
+    <button type="button" id="calibre_modal_path" data-filechooser="config_calibre_dir" data-filefilter="metadata.db" aria-label="{{ _('Choose File Location') }}">{{ _('Browse') }}</button>
+  </div>
+
+  <p><label class="plain-inline"><input type="checkbox" id="config_calibre_split" name="config_calibre_split" data-control="split_settings" {% if config.config_calibre_split %}checked{% endif %}> {{ _('Separate Book Files from Library') }}</label></p>
+  <div data-related="split_settings" class="plain-indent">
+    <label for="config_calibre_split_dir">{{ _('Separate Book Files from Library') }}</label>
+    <div class="plain-actions">
+      <input type="text" id="config_calibre_split_dir" name="config_calibre_split_dir" value="{% if config.config_calibre_split_dir != None %}{{ config.config_calibre_split_dir }}{% endif %}" autocomplete="off">
+      <button type="button" id="calibre_modal_split_path" data-filechooser="config_calibre_split_dir" aria-label="{{ _('Choose File Location') }}">{{ _('Browse') }}</button>
+    </div>
+  </div>
+
+  {% if feature_support['gdrive'] %}
+  <p><label class="plain-inline"><input type="checkbox" id="config_use_google_drive" name="config_use_google_drive" data-control="gdrive_settings" {% if config.config_use_google_drive %}checked{% endif %}> {{ _('Use Google Drive?') }}</label></p>
+  {% if not gdriveError and config.config_use_google_drive %}
+    {% if show_authenticate_google_drive and config.config_use_google_drive %}
+    <p><a href="{{ url_for('gdrive.authenticate_google_drive') }}" id="gdrive_auth" class="button">{{ _('Authenticate Google Drive') }}</a></p>
+    {% else %}
+      {% if not show_authenticate_google_drive %}
+      <label for="config_google_drive_folder">{{ _('Google Drive Calibre folder') }}</label>
+      <select name="config_google_drive_folder" id="config_google_drive_folder">
+        {% for gdrivefolder in gdrivefolders %}
+        <option value="{{ gdrivefolder.title }}" {% if gdrivefolder.title == config.config_google_drive_folder %}selected{% endif %}>{{ gdrivefolder.title }}</option>
+        {% endfor %}
+      </select>
+      {% if config.config_google_drive_watch_changes_response %}
+      <label for="config_google_drive_watch_changes_response">{{ _('Metadata Watch Channel ID') }}</label>
+      <div class="plain-actions">
+        <input type="text" name="config_google_drive_watch_changes_response" id="config_google_drive_watch_changes_response" value="{{ config.config_google_drive_watch_changes_response['id'] }} expires on {{ config.config_google_drive_watch_changes_response['expiration'] | strftime }}" autocomplete="off" disabled>
+        <a href="{{ url_for('gdrive.revoke_watch_gdrive') }}" id="watch_revoke" class="button">{{ _('Revoke') }}</a>
+      </div>
+      {% else %}
+      <p><a href="{{ url_for('gdrive.watch_gdrive') }}" id="enable_gdrive_watch" class="button">Enable watch of metadata.db</a></p>
+      {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  {% endif %}
+
+  <div class="plain-actions">
+    <button type="submit" id="db_submit">{{ _('Save') }}</button>
+    <a class="button" href="{{ url_for('admin.admin') }}" id="config_back">{{ _('Cancel') }}</a>
+  </div>
+</form>
+{% include "plain_filechooser.html" %}
+{% include "plain_conditional_fields.html" %}
+{% endblock %}
+{% block js %}
+<script>
+(() => {
+  /* Same flow as the old page: ask the server whether the new location is valid and whether it replaces the
+     current library, confirm that case, then submit normally. Without JS the form simply posts. */
+  const form = document.getElementById('plain-db-form');
+  const invalid = document.getElementById('plain-db-invalid');
+  const simulateUrl = {{ url_for('admin.simulatedbchange')|tojson }};
+  const confirmText = {{ _('Are you sure you want to change Calibre library location?')|tojson }};
+  const failText = {{ _('Request failed')|tojson }};
+  const csrf = form.querySelector('input[name=csrf_token]').value;
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = document.getElementById('db_submit');
+    button.disabled = true;
+    invalid.hidden = true;
+    try {
+      const response = await fetch(simulateUrl, {
+        method: 'POST', credentials: 'same-origin',
+        headers: { 'X-CSRFToken': csrf },
+        body: new URLSearchParams({ config_calibre_dir: document.getElementById('config_calibre_dir').value, csrf_token: csrf }),
+      });
+      if (!response.ok) throw new Error(failText + ' (' + response.status + ')');
+      const data = await response.json();
+      if (!data.valid) { invalid.hidden = false; invalid.scrollIntoView({ block: 'nearest' }); button.disabled = false; return; }
+      if (data.change && !window.confirm(confirmText)) { button.disabled = false; return; }
+      form.submit();
+    } catch (error) {
+      invalid.textContent = error.message;
+      invalid.hidden = false;
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+{% endblock %}

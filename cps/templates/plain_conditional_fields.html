@@ -1,0 +1,40 @@
+{# Shared show/hide for plain admin forms. Include once at the end of the body.
+   <input type=checkbox data-control="x"> toggles [data-related="x"];
+   <select data-control="x"> shows only [data-related="x-<value>"];
+   <select data-controlall="x"> shows [data-related="x"] when the value is not 0.
+   Without JS every section stays visible. Hidden required inputs are relaxed so they never block submit. #}
+<style>
+  [data-related][hidden] { display: none; }
+  .plain-indent { margin-left: 1.2rem; padding-left: .8rem; border-left: 2px solid var(--plain-border-subtle); }
+</style>
+<script>
+(() => {
+  const setVisible = (el, visible) => {
+    el.hidden = !visible;
+    for (const input of el.querySelectorAll('[required], [data-was-required]')) {
+      if (!visible && input.required) { input.dataset.wasRequired = '1'; input.required = false; }
+      else if (visible && input.dataset.wasRequired) { input.required = true; delete input.dataset.wasRequired; }
+    }
+  };
+  const apply = (control) => {
+    if (control.matches('input[type=checkbox][data-control]')) {
+      document.querySelectorAll('[data-related]').forEach((el) => {
+        if (el.dataset.related === control.dataset.control) setVisible(el, control.checked);
+      });
+    }
+    if (control.matches('select[data-control]')) {
+      const prefix = control.dataset.control + '-';
+      document.querySelectorAll('[data-related]').forEach((el) => {
+        if (el.dataset.related.startsWith(prefix)) setVisible(el, el.dataset.related === prefix + control.value);
+      });
+    }
+    if (control.matches('select[data-controlall]')) {
+      document.querySelectorAll('[data-related]').forEach((el) => {
+        if (el.dataset.related === control.dataset.controlall) setVisible(el, parseInt(control.value, 10) !== 0);
+      });
+    }
+  };
+  const controls = document.querySelectorAll('input[type=checkbox][data-control], select[data-control], select[data-controlall]');
+  controls.forEach((control) => { control.addEventListener('change', () => apply(control)); apply(control); });
+})();
+</script>

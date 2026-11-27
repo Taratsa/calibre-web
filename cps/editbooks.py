@@ -1392,7 +1392,7 @@ def render_edit_book(book_id):
     if kepub_possible:
         allowed_conversion_formats.append("kepub")
     return render_title_template(
-        "book_edit.html",
+        "plain_book_edit.html",
         book=book,
         authors=author_names,
         cc=cc,

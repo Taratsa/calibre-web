@@ -50,7 +50,7 @@ def get_email_status_json():
 @user_login_required
 def get_tasks_status():
     # if current user admin, show all email, otherwise only own emails
-    return render_title_template("tasks.html", title=_("Tasks"), page="tasks")
+    return render_title_template("plain_tasks.html", title=_("Tasks"), page="tasks")
 
 
 # helper function to apply localize status information in tasklist entries

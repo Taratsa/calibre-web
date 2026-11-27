@@ -1,0 +1,185 @@
+{% extends "plain_layout.html" %}
+{% macro bool(value) -%}{% if value %}<span class="plain-badge">{{ _('On') }}</span>{% else %}<span class="plain-muted">{{ _('Off') }}</span>{% endif %}{%- endmacro %}
+{% block body %}
+<h1 class="plain-title">{{ _('Administration') }}</h1>
+<p class="plain-subtitle">{{ _('Manage users, library settings, and background work.') }}</p>
+
+<section class="plain-section">
+  <h2>{{ _('Users') }}</h2>
+  {% if allUser|length < 10 %}
+  <div class="plain-table-wrap">
+    <table>
+      <thead><tr><th>{{ _('Username') }}</th><th>{{ _('Email') }}</th><th>{{ _('Downloads') }}</th><th>{{ _('Admin') }}</th><th>{{ _('Upload') }}</th><th>{{ _('Download') }}</th><th>{{ _('Edit') }}</th></tr></thead>
+      <tbody>
+      {% for user in allUser if not user.role_anonymous() or config.config_anonbrowse %}
+        <tr><td><a href="{{ url_for('admin.edit_user', user_id=user.id) }}">{{ user.name }}</a></td><td>{{ user.email or '—' }}</td><td>{{ downloadSums.get(user.id, 0) }}</td><td>{{ bool(user.role_admin()) }}</td><td>{% if config.config_uploading %}{{ bool(user.role_upload()) }}{% else %}—{% endif %}</td><td>{{ bool(user.role_download()) }}</td><td>{{ bool(user.role_edit()) }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  <div class="plain-links">
+    {% if not simple %}<a class="button" id="admin_user_table" href="{{ url_for('admin.edit_user_table') }}">{{ _('Edit Users') }}</a>{% endif %}
+    <a class="button" id="admin_new_user" href="{{ url_for('admin.new_user') }}">{{ _('Add New User') }}</a>
+    {% if config.config_login_type == 1 %}<form action="{{ url_for('admin.import_ldap_users') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button type="submit" id="import_ldap_users">{{ _('Import LDAP Users') }}</button></form>{% endif %}
+  </div>
+</section>
+
+<section class="plain-section">
+  <h2>{{ _('Configuration') }}</h2>
+  <div class="plain-grid">
+    <div>
+      <div class="plain-row"><span>{{ _('Calibre Database Directory') }}</span><span>{{ config.config_calibre_dir }}</span></div>
+      <div class="plain-row"><span>{{ _('Log Level') }}</span><span>{{ config.get_log_level() }}</span></div>
+      <div class="plain-row"><span>{{ _('Port') }}</span><span>{{ config.config_port }}</span></div>
+      {% if kobo_support and config.config_port != config.config_external_port %}<div class="plain-row"><span>{{ _('External Port') }}</span><span>{{ config.config_external_port }}</span></div>{% endif %}
+    </div>
+    <div>
+      <div class="plain-row"><span>{{ _('Books per Page') }}</span><span>{{ config.config_books_per_page }}</span></div>
+      <div class="plain-row"><span>{{ _('Uploads') }}</span><span>{{ bool(config.config_uploading) }}</span></div>
+      <div class="plain-row"><span>{{ _('Anonymous Browsing') }}</span><span>{{ bool(config.config_anonbrowse) }}</span></div>
+      <div class="plain-row"><span>{{ _('Public Registration') }}</span><span>{{ bool(config.config_public_reg) }}</span></div>
+      <div class="plain-row"><span>{{ _('Magic Link Remote Login') }}</span><span>{{ bool(config.config_remote_login) }}</span></div>
+      <div class="plain-row"><span>{{ _('Reverse Proxy Login') }}</span><span>{{ bool(config.config_allow_reverse_proxy_header_login) }}</span></div>
+      {% if config.config_allow_reverse_proxy_header_login %}<div class="plain-row"><span>{{ _('Reverse Proxy Header Name') }}</span><span>{{ config.config_reverse_proxy_login_header_name }}</span></div>{% endif %}
+    </div>
+  </div>
+  <div class="plain-links">
+    <a class="button" id="db_config" href="{{ url_for('admin.db_configuration') }}">{{ _('Edit Calibre Database Configuration') }}</a>
+    <a class="button" id="basic_config" href="{{ url_for('admin.configuration') }}">{{ _('Edit Basic Configuration') }}</a>
+    <a class="button" id="view_config" href="{{ url_for('admin.view_configuration') }}">{{ _('Edit UI Configuration') }}</a>
+  </div>
+</section>
+
+<section class="plain-section">
+  <h2>{{ _('Email Server Settings') }}</h2>
+  {% if config.get_mail_server_configured() %}
+    {% if config.mail_server_type == 0 %}
+      <div class="plain-row"><span>{{ _('SMTP Hostname') }}</span><span>{{ config.mail_server }}</span></div>
+      <div class="plain-row"><span>{{ _('SMTP Port') }}</span><span>{{ config.mail_port }}</span></div>
+      <div class="plain-row"><span>{{ _('Encryption') }}</span><span>{{ bool(config.mail_use_ssl) }}</span></div>
+      <div class="plain-row"><span>{{ _('SMTP Login') }}</span><span>{{ config.mail_login }}</span></div>
+      <div class="plain-row"><span>{{ _('From Email') }}</span><span>{{ config.mail_from }}</span></div>
+    {% else %}<div class="plain-row"><span>{{ _('Email Service') }}</span><span>{{ _('Gmail via Oauth2') }}</span></div><div class="plain-row"><span>{{ _('From Email') }}</span><span>{{ config.mail_gmail_token['email'] }}</span></div>{% endif %}
+  {% else %}<p class="plain-muted">{{ _('No email server configured.') }}</p>{% endif %}
+  <a class="button emailconfig" id="admin_edit_email" href="{{ url_for('admin.edit_mailsettings') }}">{{ _('Edit Email Server Settings') }}</a>
+</section>
+
+{% if feature_support['scheduler'] %}
+<section class="plain-section">
+  <h2>{{ _('Scheduled Tasks') }}</h2>
+  <div class="plain-grid">
+    <div class="plain-row"><span>{{ _('Start Time') }}</span><span>{{ schedule_time }}</span></div>
+    <div class="plain-row"><span>{{ _('Maximum Duration') }}</span><span>{{ schedule_duration }}</span></div>
+    <div class="plain-row"><span>{{ _('Generate Thumbnails') }}</span><span>{{ bool(config.schedule_generate_book_covers) }}</span></div>
+    <div class="plain-row"><span>{{ _('Reconnect Calibre Database') }}</span><span>{{ bool(config.schedule_reconnect) }}</span></div>
+    <div class="plain-row"><span>{{ _('Generate Metadata Backup Files') }}</span><span>{{ bool(config.schedule_metadata_backup) }}</span></div>
+  </div>
+  <div class="plain-links"><a class="button scheduledtasks" id="admin_edit_scheduled_tasks" href="{{ url_for('admin.edit_scheduledtasks') }}">{{ _('Edit Scheduled Tasks Settings') }}</a>{% if config.schedule_generate_book_covers %}<button type="button" id="admin_refresh_cover_cache">{{ _('Refresh Thumbnail Cache') }}</button>{% endif %}</div>
+</section>
+{% endif %}
+
+<section class="plain-section">
+  <h2>{{ _('Library jobs') }}</h2>
+  <p class="plain-muted">{{ _('Long-running work is queued in the background. You can leave this page while it runs.') }}</p>
+  <div class="plain-links">
+    {% if config.schedule_metadata_backup %}<button type="button" id="metadata_backup">{{ _('Queue metadata backups') }}</button>{% endif %}
+    <button type="button" id="ocr_scan">{{ _('Precompute OCR cache') }}</button>
+    <button type="button" id="text_analysis">{{ _('Compute text analysis') }}</button>
+    <button type="button" id="sentence_tone">{{ _('Compute sentence tone') }}</button>
+    <button type="button" id="fulltext_index">{{ _('Rebuild full-text index') }}</button>
+    <a class="button" href="{{ url_for('tasks.get_tasks_status') }}">{{ _('View tasks') }}</a>
+  </div>
+  <p id="plain-job-status" role="status" aria-live="polite" class="plain-muted"></p>
+</section>
+
+<section class="plain-section">
+  <h2>{{ _('Administration') }}</h2>
+  <div class="plain-links">
+    <a class="button" id="debug" href="{{ url_for('admin.download_debug') }}">{{ _('Download Debug Package') }}</a>
+    <a class="button" id="logfile" href="{{ url_for('admin.view_logfile') }}">{{ _('View Logs') }}</a>
+    <a class="button" id="audit_log" href="{{ url_for('admin.view_audit_log') }}">{{ _('View Audit Log') }}</a>
+    <button type="button" id="restart_database">{{ _('Reconnect Calibre Database') }}</button>
+    <button type="button" class="plain-danger" id="admin_restart">{{ _('Restart') }}</button>
+    <button type="button" class="plain-danger" id="admin_stop">{{ _('Shutdown') }}</button>
+  </div>
+  <p id="plain-admin-status" role="status" aria-live="polite" class="plain-muted"></p>
+</section>
+
+<section class="plain-section">
+  <h2>{{ _('Version Information') }}</h2>
+  <div class="plain-row"><span>{{ _('Version') }}</span><span id="current_version">{{ commit }} <span class="plain-muted">{{ _('Current Version') }}</span></span></div>
+  <input type="hidden" id="plain-csrf" value="{{ csrf_token() }}">
+  {% if feature_support['updater'] %}<div class="plain-links"><button type="button" id="check_for_update">{{ _('Check for Update') }}</button><button type="button" id="perform_update" hidden>{{ _('Perform Update') }}</button></div><p id="plain-update-status" role="status"></p>{% endif %}
+</section>
+{% endblock %}
+{% block js %}
+<script>
+(() => {
+  const csrf = document.querySelector('#plain-csrf')?.value || '';
+  const status = document.querySelector('#plain-job-status');
+  const adminStatus = status;
+  async function post(path, body) {
+    const response = await fetch(path, {method:'POST', headers:{'Content-Type':'application/json','X-CSRFToken':csrf}, body: JSON.stringify(body || {})});
+    const type = response.headers.get('content-type') || '';
+    const result = type.includes('json') ? await response.json() : await response.text();
+    if (!response.ok) throw new Error(result.message || result.text || `Request failed (${response.status})`);
+    return result;
+  }
+  async function queue(button, path) {
+    button.disabled = true;
+    if (status) status.textContent = '{{ _('Queueing…') }}';
+    try { const result = await post(path); if (status) status.textContent = result.message || '{{ _('Queued.') }}'; }
+    catch (error) { if (status) status.textContent = error.message; }
+    finally { button.disabled = false; }
+  }
+  for (const [id,path] of [['ocr_scan','/ocr/scan'],['text_analysis','/analysis/run'],['sentence_tone','/sentiment/run'],['fulltext_index','/fulltext/run']]) {
+    const button=document.getElementById(id); if(button) button.addEventListener('click',()=>queue(button,path));
+  }
+  for (const [id,parameter,label] of [['restart_database',2,'{{ _('Database reconnected.') }}'],['admin_restart',0,'{{ _('Server restarting. Reload in a few seconds.') }}'],['admin_stop',1,'{{ _('Server shutting down.') }}']]) {
+    const button=document.getElementById(id); if(!button) continue;
+    button.addEventListener('click',async()=>{
+      if(parameter!==2 && !confirm(parameter===0?'{{ _('Restart the server?') }}':'{{ _('Shut down the server?') }}')) return;
+      button.disabled=true; if(adminStatus) adminStatus.textContent='{{ _('Working…') }}';
+      try { const result=await post('/shutdown',{parameter}); if(adminStatus) adminStatus.textContent=result.text||label; if(parameter===0) setTimeout(()=>location.reload(),4000); }
+      catch(error) { if(adminStatus) adminStatus.textContent=error.message; button.disabled=false; }
+    });
+  }
+  const metadataBackup=document.getElementById('metadata_backup');
+  if(metadataBackup) metadataBackup.addEventListener('click',()=>queue(metadataBackup,'/metadata_backup'));
+  const refresh=document.getElementById('admin_refresh_cover_cache');
+  if(refresh) refresh.addEventListener('click',async()=>{ if(!confirm('{{ _('Refresh the thumbnail cache?') }}')) return; refresh.disabled=true; try { await post('/ajax/updateThumbnails'); if(adminStatus) adminStatus.textContent='{{ _('Thumbnail refresh queued.') }}'; } catch(e) { if(adminStatus) adminStatus.textContent=e.message; } finally { refresh.disabled=false; }});
+  const check=document.getElementById('check_for_update'), perform=document.getElementById('perform_update'), out=document.getElementById('plain-update-status');
+  if(check) check.addEventListener('click',async()=>{
+    check.disabled=true; out.textContent='{{ _('Checking…') }}';
+    try {
+      const r=await fetch('/get_update_status',{credentials:'same-origin'}); const data=await r.json();
+      out.textContent=data.message||'';
+      if(data.success===true && data.update===true){
+        check.hidden=true; perform.hidden=false;
+        const list=document.createElement('ul');
+        for(const entry of data.history||[]){const li=document.createElement('li');li.textContent=entry[0]+' '+entry[1];list.append(li);}
+        out.append(list);
+      }
+    } catch(e) { out.textContent=e.message; } finally { check.disabled=false; }
+  });
+  if(perform) perform.addEventListener('click',async()=>{
+    if(!confirm('{{ _('Install the update now? The server will restart.') }}')) return;
+    perform.disabled=true;
+    try {
+      const r=await fetch('/get_updater_status',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRFToken':csrf},body:'start=True'});
+      const data=await r.json(); const text=data.text||{};
+      out.textContent=text[data.status]||'';
+      let misses=0;
+      const timer=setInterval(async()=>{
+        try {
+          const s=await (await fetch('/get_updater_status',{credentials:'same-origin'})).json();
+          out.textContent=text[s.status]||'';
+          if(s.status>6){clearInterval(timer);perform.disabled=false;perform.hidden=true;check.hidden=false;}
+        } catch(e) { if(++misses>30){clearInterval(timer);out.textContent=text[11]||e.message;perform.disabled=false;} }
+      },2000);
+    } catch(e) { out.textContent=e.message; perform.disabled=false; }
+  });
+})();
+</script>
+{% endblock %}

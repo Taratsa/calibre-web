@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="{{ current_user.locale if current_user else 'id' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ instance }} | {{ title }}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='plain.css') }}">
+  <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true"></script>
+  {% block header %}{% endblock %}
+</head>
+<body>
+  <header class="plain-header">
+    <a class="plain-brand" href="{{ url_for('web.index', page=1) }}">
+      <img src="{{ url_for('static', filename='logo-taratsa.png') }}" alt="">
+      <span>{{ instance }}</span>
+    </a>
+    {% if current_user.is_authenticated or g.allow_anonymous %}
+    <form class="plain-search" role="search" action="{{ url_for('search.simple_search') }}" method="get">
+      <label class="sr-only" for="plain-query">{{ _('Search Library') }}</label>
+      <input id="plain-query" name="query" value="{{ searchterm }}" placeholder="{{ _('Search Library') }}">
+      <button type="submit">{{ _('Search') }}</button>
+    </form>
+    {% endif %}
+    <nav class="plain-nav" aria-label="{{ _('Main navigation') }}">
+      {% if current_user.is_authenticated or g.allow_anonymous %}
+        <a href="{{ url_for('search.advanced_search_form') }}">{{ _('Advanced Search') }}</a>
+        {% if not current_user.is_anonymous %}<a href="{{ url_for('tasks.get_tasks_status') }}">{{ _('Tasks') }}</a>{% endif %}
+        {% if current_user.role_admin() %}<a href="{{ url_for('admin.admin') }}">{{ _('Admin') }}</a>{% endif %}
+        {% if not current_user.is_anonymous %}<a href="{{ url_for('web.profile') }}">{{ current_user.name }}</a>{% endif %}
+        {% if current_user.role_upload() and g.allow_upload %}
+        <label class="plain-upload-control">
+          <span class="button">{{ _('Upload') }}</span>
+          <input id="plain-upload" type="file" name="btn-upload" accept="{% for format in accept %}.{% if format %}{{ format }}{% else %}*{% endif %}{{ ',' if not loop.last }}{% endfor %}" multiple hidden>
+        </label>
+        {% endif %}
+        {% if not current_user.is_anonymous %}<a id="logout" href="{{ url_for('web.logout', next=(request.path + '?' + request.query_string.decode('utf-8')).rstrip('?')) }}">{{ _('Logout') }}</a>{% endif %}
+      {% else %}
+        {% if g.allow_registration %}<a href="{{ url_for('web.register') }}">{{ _('Register') }}</a>{% endif %}
+        <a id="login" href="{{ url_for('web.login') }}">{{ _('Login') }}</a>
+      {% endif %}
+    </nav>
+  </header>
+  {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="plain-wrap"><div class="flash flash-{{ category }}" role="status">{{ message }}</div></div>
+  {% endfor %}
+  <main class="plain-wrap">
+    <div class="plain-page">
+      {% block body %}{% endblock %}
+      {% if pagination and (pagination.has_next or pagination.has_prev) %}
+      <nav class="plain-actions" aria-label="{{ _('Pagination') }}">
+        {% if pagination.has_prev %}<a class="button" href="{{ (pagination.page - 1)|url_for_other_page }}">{{ _('Previous') }}</a>{% endif %}
+        {% for page_num in pagination.iter_pages() %}
+          {% if page_num %}
+            {% if page_num == pagination.page %}<span class="plain-badge" aria-current="page">{{ page_num }}</span>
+            {% else %}<a class="button" href="{{ page_num|url_for_other_page }}">{{ page_num }}</a>{% endif %}
+          {% else %}<span class="plain-muted">…</span>{% endif %}
+        {% endfor %}
+        {% if pagination.has_next %}<a class="button" href="{{ (pagination.page + 1)|url_for_other_page }}">{{ _('Next') }}</a>{% endif %}
+      </nav>
+      {% endif %}
+    </div>
+    <footer class="plain-footer">{{ instance }}</footer>
+  </main>
+  {% block modal %}{% endblock %}
+  {% block js %}{% endblock %}
+  <script>
+  (() => {
+    const input=document.getElementById('plain-upload');
+    if(!input)return;
+    input.addEventListener('change',async()=>{
+      if(!input.files.length)return;
+      const data=new FormData();
+      for(const file of input.files)data.append('btn-upload',file);
+      data.append('csrf_token','{{ csrf_token() }}');
+      try {
+        const response=await fetch('{{ url_for('edit-book.upload') }}',{method:'POST',body:data,credentials:'same-origin'});
+        if(!response.ok)throw new Error('Upload failed ('+response.status+')');
+        const result=await response.json();
+        window.location.assign(result.location||'{{ url_for('web.index', page=1) }}');
+      } catch(error) { window.alert(error.message); input.value=''; }
+    });
+  })();
+  </script>
+</body>
+</html>

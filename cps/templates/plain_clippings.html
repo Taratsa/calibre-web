@@ -1,0 +1,87 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ _('Clippings') }}</h1>
+<p class="plain-subtitle">
+  {{ _('Newsletter and press clippings stored as Markdown files with YAML frontmatter.') }}
+  {{ all_total }} {{ _('total') }} &middot; {{ counts['published'] }} {{ _('published') }} &middot; {{ counts['draft'] }} {{ _('draft') }}
+</p>
+
+{% if broken %}
+<div class="alert" id="clippings_broken" role="alert">
+  <strong>{{ broken|length }} {{ _('file(s) could not be read:') }}</strong>
+  <ul>
+    {% for id, error in broken.items() %}
+    <li><code>{{ id }}.md</code> &mdash; {{ error }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<form class="plain-actions" method="get" action="{{ url_for('clippings.list_clippings') }}" role="search">
+  <label class="sr-only" for="clippings-q">{{ _('Search title, text, tags…') }}</label>
+  <input type="search" id="clippings-q" name="q" value="{{ q }}" placeholder="{{ _('Search title, text, tags…') }}" style="width:min(100%,18rem);min-height:42px">
+  <label class="sr-only" for="clippings-status">{{ _('Status') }}</label>
+  <select id="clippings-status" name="status" style="width:auto">
+    <option value="">{{ _('Any status') }}</option>
+    <option value="published" {% if status == 'published' %}selected{% endif %}>{{ _('published') }}</option>
+    <option value="draft" {% if status == 'draft' %}selected{% endif %}>{{ _('draft') }}</option>
+  </select>
+  <label class="sr-only" for="clippings-publication">{{ _('Publication') }}</label>
+  <select id="clippings-publication" name="publication" style="width:auto">
+    <option value="">{{ _('Any publication') }}</option>
+    {% for name in publications %}
+    <option value="{{ name }}" {% if publication == name %}selected{% endif %}>{{ name }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">{{ _('Filter') }}</button>
+  <a class="button" id="new_clipping" href="{{ url_for('clippings.new_clipping') }}">+ {{ _('New clipping') }}</a>
+</form>
+
+<div class="plain-table-wrap">
+  <table id="table_clippings">
+    <thead>
+      <tr>
+        <th>{{ _('Title') }}</th>
+        <th>{{ _('Publication') }}</th>
+        <th>{{ _('Date') }}</th>
+        <th>{{ _('Tags') }}</th>
+        <th>{{ _('Status') }}</th>
+        <th><span class="sr-only">{{ _('Download .md') }}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td><a href="{{ url_for('clippings.edit_clipping', clipping_id=row.id) }}">{{ row.meta.title }}</a></td>
+        <td>{{ row.meta.publication }}{% if row.meta.issue %} <span class="plain-muted">({{ row.meta.issue }})</span>{% endif %}</td>
+        <td>{{ row.meta.date }}</td>
+        <td>{% for tag in row.meta.tags %}<span class="plain-badge">{{ tag }}</span> {% endfor %}</td>
+        <td><span class="plain-badge">{% if row.meta.status == 'published' %}{{ _('published') }}{% else %}{{ _('draft') }}{% endif %}</span></td>
+        <td><a href="{{ url_for('clippings.raw_clipping', clipping_id=row.id) }}">{{ _('Download .md') }}</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6" class="plain-muted">{{ _('No clippings found.') }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if pages > 1 %}
+<nav class="plain-actions" aria-label="{{ _('Pagination') }}">
+  {% if page_no > 1 %}<a class="button" rel="prev" href="{{ url_for('clippings.list_clippings', q=q, status=status, publication=publication, page=page_no - 1) }}">&laquo; {{ _('Previous') }}</a>{% endif %}
+  <span>{{ page_no }} / {{ pages }} ({{ total }})</span>
+  {% if page_no < pages %}<a class="button" rel="next" href="{{ url_for('clippings.list_clippings', q=q, status=status, publication=publication, page=page_no + 1) }}">{{ _('Next') }} &raquo;</a>{% endif %}
+</nav>
+{% endif %}
+
+<section class="plain-section">
+  <h2>{{ _('Import Markdown files') }}</h2>
+  <form method="post" enctype="multipart/form-data" action="{{ url_for('clippings.import_clippings') }}" class="plain-actions">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label class="sr-only" for="clippings-files">{{ _('Import Markdown files') }}</label>
+    <input id="clippings-files" type="file" name="files" accept=".md,text/markdown,text/plain" multiple required>
+    <button type="submit">{{ _('Import') }}</button>
+  </form>
+  <p class="plain-muted">{{ _('Each file needs a "title" in its frontmatter (the file name is used when missing).') }}</p>
+</section>
+{% endblock %}

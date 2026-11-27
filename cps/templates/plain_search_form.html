@@ -1,0 +1,60 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<p class="plain-subtitle">{{ _('Combine fields and filters to narrow the catalogue.') }}</p>
+<form role="form" id="search" action="{{ url_for('search.advanced_search_form') }}" method="post" class="plain-section">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="plain-grid">
+    <div><label for="title">{{ _('Book Title') }}</label><input type="text" name="title" id="title"></div>
+    <div><label for="authors">{{ _('Author') }}</label><input type="text" name="authors" id="authors" autocomplete="off"></div>
+    <div><label for="publisher">{{ _('Publisher') }}</label><input type="text" name="publisher" id="publisher"></div>
+    <div><label for="publishstart">{{ _('Published Date From') }}</label><input type="date" name="publishstart" id="publishstart"></div>
+    <div><label for="publishend">{{ _('Published Date To') }}</label><input type="date" name="publishend" id="publishend"></div>
+    <div><label for="read_status">{{ _('Read Status') }}</label><select name="read_status" id="read_status"><option value="Any">{{ _('Any') }}</option><option value="">{{ _('Empty') }}</option><option value="True">{{ _('Yes') }}</option><option value="False">{{ _('No') }}</option></select></div>
+    <div><label for="ratinghigh">{{ _('Rating Above') }}</label><input type="number" min="0" max="5" step="0.5" name="ratinghigh" id="ratinghigh"></div>
+    <div><label for="ratinglow">{{ _('Rating Below') }}</label><input type="number" min="0" max="5" step="0.5" name="ratinglow" id="ratinglow"></div>
+    <div><label for="comments">{{ _('Description') }}</label><input type="text" name="comments" id="comments"></div>
+  </div>
+
+  {% for name, label, items, value_attr, text_attr in [
+    ('include_tag', _('Tags'), tags, 'id', 'name'),
+    ('exclude_tag', _('Exclude Tags'), tags, 'id', 'name'),
+    ('include_serie', _('Series'), series, 'id', 'name'),
+    ('exclude_serie', _('Exclude Series'), series, 'id', 'name'),
+    ('include_shelf', _('Shelves'), shelves, 'id', 'name'),
+    ('exclude_shelf', _('Exclude Shelves'), shelves, 'id', 'name'),
+    ('include_language', _('Languages'), languages, 'id', 'name'),
+    ('exclude_language', _('Exclude Languages'), languages, 'id', 'name'),
+    ('include_extension', _('Extensions'), extensions, 'format', 'format'),
+    ('exclude_extension', _('Exclude Extensions'), extensions, 'format', 'format')
+  ] %}
+    {% if items %}
+    <label for="{{ name }}">{{ label }}</label>
+    <select name="{{ name }}" id="{{ name }}" multiple size="8">
+      {% for item in items %}<option value="{{ item|attr(value_attr) }}">{{ item|attr(text_attr) }}</option>{% endfor %}
+    </select>
+    {% endif %}
+  {% endfor %}
+
+  {% for c in cc %}
+    {% set cname = 'custom_column_' ~ c.id %}
+    <section class="plain-section">
+      <h2>{{ c.name }}</h2>
+      {% if c.datatype == 'bool' %}
+        <label for="{{ cname }}">{{ c.name }}</label><select name="{{ cname }}" id="{{ cname }}"><option value="Any">{{ _('Any') }}</option><option value="">{{ _('Empty') }}</option><option value="True">{{ _('Yes') }}</option><option value="False">{{ _('No') }}</option></select>
+      {% elif c.datatype in ['int', 'float'] %}
+        <div class="plain-grid"><div><label for="{{ cname }}_low">{{ _('From:') }}</label><input type="number" step="{% if c.datatype == 'float' %}0.01{% else %}1{% endif %}" name="{{ cname }}_low" id="{{ cname }}_low"></div><div><label for="{{ cname }}_high">{{ _('To:') }}</label><input type="number" step="{% if c.datatype == 'float' %}0.01{% else %}1{% endif %}" name="{{ cname }}_high" id="{{ cname }}_high"></div></div>
+      {% elif c.datatype == 'datetime' %}
+        <div class="plain-grid"><div><label for="{{ cname }}_start">{{ _('From:') }}</label><input type="date" name="{{ cname }}_start" id="{{ cname }}_start"></div><div><label for="{{ cname }}_end">{{ _('To:') }}</label><input type="date" name="{{ cname }}_end" id="{{ cname }}_end"></div></div>
+      {% elif c.datatype in ['text', 'series', 'comments'] %}
+        <label for="{{ cname }}">{{ c.name }}</label><input type="text" name="{{ cname }}" id="{{ cname }}">
+      {% elif c.datatype == 'enumeration' %}
+        <label for="{{ cname }}">{{ c.name }}</label><select name="{{ cname }}" id="{{ cname }}"><option></option>{% for opt in c.get_display_dict().enum_values %}<option>{{ opt }}</option>{% endfor %}</select>
+      {% elif c.datatype == 'rating' %}
+        <label for="{{ cname }}">{{ c.name }}</label><input type="number" min="0" max="5" step="0.5" name="{{ cname }}" id="{{ cname }}">
+      {% endif %}
+    </section>
+  {% endfor %}
+  <div class="plain-actions"><button type="submit" id="adv_submit">{{ _('Search') }}</button></div>
+</form>
+{% endblock %}

@@ -54,7 +54,7 @@ def _editor(clipping, meta_form=None, body="", error=None, status=200):
     meta = meta_form if meta_form is not None else (clipping.meta if clipping else {})
     return (
         render_title_template(
-            "clipping_edit.html",
+            "plain_clipping_edit.html",
             clipping=clipping,
             meta=meta,
             body=body if meta_form is not None else (clipping.body if clipping else ""),
@@ -91,7 +91,7 @@ def list_clippings():
     pages = max((len(rows) + PER_PAGE - 1) // PER_PAGE, 1)
     page_no = min(page_no, pages)
     return render_title_template(
-        "clippings.html",
+        "plain_clippings.html",
         rows=rows[(page_no - 1) * PER_PAGE : page_no * PER_PAGE],
         total=len(rows),
         all_total=len(summaries),

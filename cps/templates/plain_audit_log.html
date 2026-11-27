@@ -1,0 +1,51 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ _('Audit Log') }} <span class="plain-muted">({{ total }} {{ _('entries') }})</span></h1>
+<div class="plain-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>{{ _('Time') }}</th>
+        <th>{{ _('User') }}</th>
+        <th>{{ _('Action') }}</th>
+        <th>{{ _('Resource Type') }}</th>
+        <th>{{ _('Resource ID') }}</th>
+        <th>{{ _('Details') }}</th>
+        <th>{{ _('IP Address') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.created.strftime('%Y-%m-%d %H:%M:%S') if entry.created else '' }}</td>
+        <td>{{ entry.user.name if entry.user else _('Unknown') }}</td>
+        <td>{{ entry.action }}</td>
+        <td>{{ entry.resource_type }}</td>
+        <td>{{ entry.resource_id or '' }}</td>
+        <td>{{ entry.details or '' }}</td>
+        <td>{{ entry.ip_address or '' }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="7" class="plain-muted">{{ _('No audit log entries') }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if pages > 1 %}
+<nav class="plain-actions" aria-label="{{ _('Pagination') }}">
+  {% if cur_page > 1 %}<a class="button" rel="prev" href="{{ url_for('admin.view_audit_log', page=cur_page - 1) }}" aria-label="{{ _('Previous') }}">&laquo;</a>{% endif %}
+  {% set ns = namespace(gap=false) %}
+  {% for p in range(1, pages + 1) %}
+    {% if p == 1 or p == pages or (p >= cur_page - 2 and p <= cur_page + 2) %}
+      {% set ns.gap = false %}
+      {% if p == cur_page %}<span class="plain-badge" aria-current="page">{{ p }}</span>
+      {% else %}<a class="button" href="{{ url_for('admin.view_audit_log', page=p) }}">{{ p }}</a>{% endif %}
+    {% elif not ns.gap %}
+      {% set ns.gap = true %}
+      <span class="plain-muted">&hellip;</span>
+    {% endif %}
+  {% endfor %}
+  {% if cur_page < pages %}<a class="button" rel="next" href="{{ url_for('admin.view_audit_log', page=cur_page + 1) }}" aria-label="{{ _('Next') }}">&raquo;</a>{% endif %}
+</nav>
+{% endif %}
+{% endblock %}

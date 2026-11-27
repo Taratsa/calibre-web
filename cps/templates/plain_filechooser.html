@@ -1,0 +1,82 @@
+{# Shared server-path chooser for plain admin pages. Buttons: <button type="button" data-filechooser="INPUT_ID" [data-folderonly] [data-filefilter="metadata.db"]>. #}
+<style>
+  #plain-filechooser { width: min(40rem, 94vw); max-height: 85vh; padding: 1rem; border: 1px solid var(--plain-border); border-radius: 3px; background: var(--plain-surface); color: var(--plain-fg); }
+  #plain-filechooser::backdrop { background: rgba(0,0,0,.45); }
+  #plain-filechooser .plain-table-wrap { max-height: 45vh; overflow-y: auto; }
+  #plain-filechooser td button { border: 0; background: none; min-height: 0; padding: .1rem 0; text-align: left; color: inherit; text-decoration: underline; }
+  #plain-fc-selected { overflow-wrap: anywhere; }
+</style>
+<dialog id="plain-filechooser" aria-labelledby="plain-fc-title">
+  <h2 id="plain-fc-title" class="plain-title">{{ _('Choose File Location') }}</h2>
+  <p id="plain-fc-error" class="flash flash-error" role="alert" hidden></p>
+  <div class="plain-table-wrap">
+    <table>
+      <thead><tr><th>{{ _('type') }}</th><th>{{ _('name') }}</th><th>{{ _('size') }}</th></tr></thead>
+      <tbody id="plain-fc-body"></tbody>
+    </table>
+  </div>
+  <p class="plain-muted" id="plain-fc-selected" aria-live="polite"></p>
+  <div class="plain-actions">
+    <button type="button" id="plain-fc-select">{{ _('Select') }}</button>
+    <button type="button" id="plain-fc-cancel">{{ _('Cancel') }}</button>
+  </div>
+</dialog>
+<script>
+(() => {
+  const dialog = document.getElementById('plain-filechooser');
+  const buttons = document.querySelectorAll('[data-filechooser]');
+  if (!dialog || typeof dialog.showModal !== 'function') { buttons.forEach((b) => { b.hidden = true; }); return; }
+  const endpoint = {{ url_for('admin.ajax_pathchooser')|tojson }};
+  const body = document.getElementById('plain-fc-body');
+  const selectedEl = document.getElementById('plain-fc-selected');
+  const errorEl = document.getElementById('plain-fc-error');
+  let target = null, folderOnly = false, fileFilter = '', selected = '';
+  // The server HTML-escapes names; DOMParser decodes them without running anything.
+  const decode = (s) => new DOMParser().parseFromString(String(s), 'text/html').documentElement.textContent;
+  function setSelected(path) { selected = path; selectedEl.textContent = path; }
+  function addRow(type, name, path, size, isDir) {
+    const tr = document.createElement('tr');
+    const t = document.createElement('td'); t.textContent = type;
+    const n = document.createElement('td');
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = name;
+    b.addEventListener('click', () => { setSelected(path); if (isDir) load(path); });
+    n.append(b);
+    const s = document.createElement('td'); s.textContent = size;
+    tr.append(t, n, s);
+    body.append(tr);
+  }
+  async function load(path) {
+    errorEl.hidden = true;
+    const params = new URLSearchParams({ path });
+    if (folderOnly) params.set('folder', 'true');
+    if (fileFilter) params.set('filter', fileFilter);
+    try {
+      const response = await fetch(endpoint + '?' + params.toString(), { credentials: 'same-origin' });
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      const data = await response.json();
+      if (!selected) setSelected(data.cwd);
+      body.replaceChildren();
+      if (data.parentdir !== '') addRow('▸', '..', data.absolute ? data.parentdir : '..', '', true);
+      for (const entry of data.files) {
+        const isDir = entry.type === 'dir';
+        addRow(isDir ? '▸' : '', decode(entry.name), decode(entry.fullpath), entry.size, isDir);
+      }
+    } catch (error) {
+      errorEl.textContent = error.message;
+      errorEl.hidden = false;
+    }
+  }
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    target = document.getElementById(button.dataset.filechooser);
+    if (!target) return;
+    folderOnly = button.dataset.folderonly !== undefined;
+    fileFilter = button.dataset.filefilter || '';
+    setSelected(target.value);
+    body.replaceChildren();
+    dialog.showModal();
+    load(target.value);
+  }));
+  document.getElementById('plain-fc-select').addEventListener('click', () => { if (target) target.value = selected; dialog.close(); });
+  document.getElementById('plain-fc-cancel').addEventListener('click', () => dialog.close());
+})();
+</script>

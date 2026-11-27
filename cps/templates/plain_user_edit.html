@@ -1,0 +1,73 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<form method="post" autocomplete="off" class="plain-section">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="plain-grid">
+    <div>
+      {% if new_user or (current_user and content.name != 'Guest' and current_user.role_admin()) %}<label for="name">{{ _('Username') }}</label><input id="name" name="name" value="{{ content.name if content.name != None }}" autocomplete="off" required>{% endif %}
+      <label for="email">{{ _('Email') }}</label><input id="email" name="email" type="email" value="{{ content.email if content.email != None }}" autocomplete="off">
+      {% if current_user and (current_user.role_passwd() or current_user.role_admin()) and not content.role_anonymous() %}
+        {% if current_user.role_admin() and not new_user and not profile and mail_configured and content.email %}<button type="submit" formaction="{{ url_for('admin.reset_user_password', user_id=content.id) }}" formmethod="post" name="reset_password" value="1" id="resend_password">{{ _('Reset user Password') }}</button>{% endif %}
+        <label for="password">{{ _('Password') }}{% if not new_user %} <span class="plain-muted">({{ _('leave blank to keep the current password') }})</span>{% endif %}</label><input id="password" name="password" type="password" autocomplete="new-password">
+      {% endif %}
+      <label for="kindle_mail">{{ _('Send to eReader Email Address. Use comma to separate emails for multiple eReaders') }}</label><input id="kindle_mail" name="kindle_mail" value="{{ content.kindle_mail if content.kindle_mail != None }}">
+      {% if not content.role_anonymous() %}
+        <label for="locale">{{ _('Language') }}</label><select name="locale" id="locale">{% for translation in translations %}<option value="{{ translation }}" {% if translation|string == content.locale %}selected{% endif %}>{{ translation.display_name|capitalize }}</option>{% endfor %}</select>
+      {% endif %}
+      <label for="default_language">{{ _('Language of Books') }}</label><select name="default_language" id="default_language"><option value="all" {% if content.default_language == 'all' %}selected{% endif %}>{{ _('Show All') }}</option>{% for language in languages %}<option value="{{ language.lang_code }}" {% if content.default_language == language.lang_code %}selected{% endif %}>{{ language.name }}</option>{% endfor %}</select>
+    </div>
+    <div>
+      <fieldset class="plain-section"><legend>{{ _('Visible sections') }}</legend>
+        {% for element in sidebar if element.config_show %}<label class="plain-inline"><input type="checkbox" name="show_{{ element.visibility }}" {% if content.check_visibility(element.visibility) %}checked{% endif %}> {{ element.show_text }}</label>{% endfor %}
+        <label class="plain-inline"><input type="checkbox" name="Show_detail_random" {% if content.show_detail_random() %}checked{% endif %}> {{ _('Show Random Books in Detail View') }}</label>
+      </fieldset>
+      {% if current_user and current_user.role_admin() and not profile %}
+      <fieldset class="plain-section"><legend>{{ _('Permissions') }}</legend>
+        {% if not content.role_anonymous() %}<label class="plain-inline"><input type="checkbox" name="admin_role" {% if content.role_admin() %}checked{% endif %}> {{ _('Admin User') }}</label>{% endif %}
+        <label class="plain-inline"><input type="checkbox" name="download_role" {% if content.role_download() %}checked{% endif %}> {{ _('Allow Downloads') }}</label>
+        <label class="plain-inline"><input type="checkbox" name="viewer_role" {% if content.role_viewer() %}checked{% endif %}> {{ _('Allow eBook Viewer') }}</label>
+        {% if config.config_uploading %}<label class="plain-inline"><input type="checkbox" name="upload_role" {% if content.role_upload() %}checked{% endif %}> {{ _('Allow Uploads') }}</label>{% endif %}
+        <label class="plain-inline"><input type="checkbox" name="edit_role" {% if content.role_edit() %}checked{% endif %}> {{ _('Allow Edit') }}</label>
+        <label class="plain-inline"><input type="checkbox" name="delete_role" {% if content.role_delete_books() %}checked{% endif %}> {{ _('Allow Delete Books') }}</label>
+        {% if not content.role_anonymous() %}<label class="plain-inline"><input type="checkbox" name="passwd_role" {% if content.role_passwd() %}checked{% endif %}> {{ _('Allow Changing Password') }}</label><label class="plain-inline"><input type="checkbox" name="edit_shelf_role" {% if content.role_edit_shelfs() %}checked{% endif %}> {{ _('Allow Editing Public Shelves') }}</label>{% endif %}
+      </fieldset>
+      {% endif %}
+      {% if kobo_support and not content.role_anonymous() %}<label class="plain-inline"><input type="checkbox" name="kobo_only_shelves_sync" {% if content.kobo_only_shelves_sync %}checked{% endif %}> {{ _('Sync only books in selected shelves with Kobo') }}</label>{% endif %}
+    </div>
+  </div>
+  <div class="plain-actions"><button type="submit" id="user_submit">{{ _('Save') }}</button>{% if not profile %}<a class="button" id="back" href="{{ url_for('admin.admin') }}">{{ _('Cancel') }}</a>{% endif %}{% if current_user and current_user.role_admin() and not profile and not new_user and not content.role_anonymous() %}<button class="plain-danger" type="submit" name="delete" value="1" onclick="return confirm('{{ _('Delete User') }}?')">{{ _('Delete User') }}</button>{% endif %}</div>
+</form>
+{% if current_user and current_user.role_admin() and not profile %}
+<section class="plain-section">
+  <h2>{{ _('View Restrictions') }}</h2>
+  <p class="plain-muted">{{ _('Manage tags and custom-column values this user may or may not see.') }}</p>
+  <div class="plain-grid">
+  {% for type, label in [(2,_('Tags')),(3,_('Custom Column Values'))] %}
+    {% for prefix, action, add_name, delete_name in [('a',_('Allowed'),'submit_allow','submit_allow'),('d',_('Denied'),'submit_deny','submit_deny')] %}
+    <section class="plain-section">
+      <h3>{{ label }} · {{ action }}</h3>
+      <form class="restriction-add" action="{{ url_for('admin.add_restriction', res_type=type, user_id=content.id) }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="user_id" value="{{ content.id }}">
+        <label>{{ _('Add View Restriction') }}<input name="add_element" required></label><button type="submit" name="{{ add_name }}" value="1">{{ _('Add') }}</button>
+      </form>
+      <div class="restriction-list" data-url="{{ url_for('admin.list_restriction', res_type=type, user_id=content.id) }}" data-edit="{{ url_for('admin.edit_restriction', res_type=type, user_id=content.id) }}" data-delete="{{ url_for('admin.delete_restriction', res_type=type, user_id=content.id) }}" data-prefix="{{ prefix }}"><p class="plain-muted">{{ _('Loading…') }}</p><p class="plain-muted" aria-live="polite"></p></div>
+    </section>
+    {% endfor %}
+  {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}
+{% block js %}
+{% if current_user and current_user.role_admin() and not profile %}
+<script>
+(() => {
+  const post=(url,data)=>fetch(url,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','X-CSRFToken':document.querySelector('[name=csrf_token]').value},body:new URLSearchParams(data)});
+  for(const box of document.querySelectorAll('.restriction-list')){
+    const load=async()=>{const r=await fetch(box.dataset.url,{credentials:'same-origin'});if(!r.ok)throw new Error('HTTP '+r.status);const rows=await r.json();box.replaceChildren();const items=rows.filter(x=>String(x.id).startsWith(box.dataset.prefix));if(!items.length){const p=document.createElement('p');p.className='plain-muted';p.textContent='{{ _('No restrictions.') }}';box.append(p);return;}const table=document.createElement('table'),tbody=document.createElement('tbody');for(const item of items){const tr=document.createElement('tr'),td=document.createElement('td'),type=document.createElement('td'),actions=document.createElement('td'),input=document.createElement('input'),save=document.createElement('button'),remove=document.createElement('button');input.value=item.Element;input.setAttribute('aria-label','{{ _('Restriction value') }}');type.textContent=item.type;save.type=remove.type='button';save.textContent='{{ _('Save') }}';remove.textContent='{{ _('Remove') }}';save.addEventListener('click',async()=>{await post(box.dataset.edit,{id:item.id,type:item.type,Element:input.value});});remove.addEventListener('click',async()=>{if(confirm('{{ _('Remove this restriction?') }}')){await post(box.dataset.delete,{id:item.id,type:item.type,Element:input.value});await load();}});td.append(input);actions.append(save,remove);tr.append(td,type,actions);tbody.append(tr);}table.append(tbody);box.append(table);};load().catch(e=>box.textContent='{{ _('Could not load restrictions:') }} '+e.message);
+  }
+})();
+</script>
+{% endif %}
+{% endblock %}

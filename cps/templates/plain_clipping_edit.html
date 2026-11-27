@@ -1,0 +1,129 @@
+{% extends "plain_layout.html" %}
+{% macro joined(value) %}{% if value is string %}{{ value }}{% else %}{{ (value or [])|join(', ') }}{% endif %}{% endmacro %}
+{% block body %}
+<h1 class="plain-title">{% if clipping %}{{ _('Edit clipping') }}{% else %}{{ _('New clipping') }}{% endif %}</h1>
+<p class="plain-links">
+  <a href="{{ url_for('clippings.list_clippings') }}">&laquo; {{ _('All clippings') }}</a>
+  {% if clipping %}
+  <span class="plain-muted"><code>{{ clipping.id }}.md</code></span>
+  <a href="{{ url_for('clippings.raw_clipping', clipping_id=clipping.id) }}">{{ _('Download .md') }}</a>
+  {% endif %}
+</p>
+
+{% if error %}<div class="alert plain-danger" id="clipping_error" role="alert">{{ error }}</div>{% endif %}
+
+<form method="post" id="clipping_form" action="{% if clipping %}{{ url_for('clippings.edit_clipping', clipping_id=clipping.id) }}{% else %}{{ url_for('clippings.new_clipping') }}{% endif %}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+  <section class="plain-section">
+    <div class="plain-grid">
+      <div>
+        <label for="title">{{ _('Title') }} *</label>
+        <input type="text" id="title" name="title" value="{{ meta.get('title', '') }}" maxlength="300" required>
+      </div>
+      <div>
+        <label for="number">{{ _('Number') }}</label>
+        <input type="text" id="number" value="{% if clipping and clipping.meta.number %}{{ clipping.meta.number }}{% endif %}" placeholder="{% if clipping %}{{ _('assigned on save') }}{% else %}{{ _('auto') }}{% endif %}" title="/kliping/{{ clipping.meta.number if clipping and clipping.meta.number else 'N' }}/" readonly>
+      </div>
+      <div>
+        <label for="status">{{ _('Status') }}</label>
+        <select id="status" name="status">
+          {% for name in statuses %}<option value="{{ name }}" {% if meta.get('status', 'draft') == name %}selected{% endif %}>{{ name }}</option>{% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="publication">{{ _('Publication') }}</label>
+        <input type="text" id="publication" name="publication" value="{{ meta.get('publication', '') }}" maxlength="200">
+      </div>
+      <div>
+        <label for="date">{{ _('Date') }}</label>
+        <input type="text" id="date" name="date" value="{{ meta.get('date', '') }}" placeholder="YYYY-MM-DD">
+      </div>
+      <div>
+        <label for="issue">{{ _('Issue') }}</label>
+        <input type="text" id="issue" name="issue" value="{{ meta.get('issue', '') }}" maxlength="100">
+      </div>
+      <div>
+        <label for="page">{{ _('Page') }}</label>
+        <input type="text" id="page" name="page" value="{{ meta.get('page', '') }}" maxlength="50">
+      </div>
+      <div>
+        <label for="authors">{{ _('Authors') }}</label>
+        <input type="text" id="authors" name="authors" value="{{ joined(meta.get('authors')) }}" placeholder="{{ _('comma separated') }}">
+      </div>
+      <div>
+        <label for="tags">{{ _('Tags') }}</label>
+        <input type="text" id="tags" name="tags" value="{{ joined(meta.get('tags')) }}" placeholder="{{ _('comma separated') }}">
+      </div>
+      <div>
+        <label for="language">{{ _('Lang') }}</label>
+        <input type="text" id="language" name="language" value="{{ meta.get('language', '') }}" placeholder="id" maxlength="35">
+      </div>
+      <div>
+        <label for="source_url">{{ _('Source URL') }}</label>
+        <input type="url" id="source_url" name="source_url" value="{{ meta.get('source_url', '') }}" maxlength="2000">
+      </div>
+    </div>
+  </section>
+
+  <div class="plain-grid">
+    <div>
+      <label for="body">{{ _('Text (Markdown)') }}</label>
+      <textarea id="body" name="body" rows="28" style="max-width:none;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">{{ body }}</textarea>
+    </div>
+    <div>
+      <label for="clipping_preview">{{ _('Preview') }}</label>
+      <div id="clipping_preview" class="plain-section" style="margin:0;min-height:12rem;max-height:40rem;overflow:auto" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <p class="plain-actions">
+    <button type="submit" id="save_clipping">{{ _('Save') }}</button>
+    <a class="button" href="{{ url_for('clippings.list_clippings') }}">{{ _('Cancel') }}</a>
+  </p>
+</form>
+
+{% if clipping %}
+<details class="plain-section">
+  <summary>{{ _('Delete') }}</summary>
+  <form method="post" action="{{ url_for('clippings.delete_clipping', clipping_id=clipping.id) }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <p>{{ _('Move this clipping to the trash?') }}</p>
+    <button type="submit" id="delete_clipping" class="plain-danger">{{ _('Delete') }}</button>
+  </form>
+</details>
+{% endif %}
+{% endblock %}
+{% block js %}
+<script>
+(() => {
+  const endpoint = {{ url_for('clippings.preview_clipping')|tojson }};
+  const body = document.getElementById('body');
+  const preview = document.getElementById('clipping_preview');
+  const token = document.querySelector('#clipping_form input[name="csrf_token"]').value;
+  let timer = 0, controller = null;
+  async function render() {
+    if (controller) controller.abort();
+    controller = new AbortController();
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'same-origin',
+        signal: controller.signal,
+        headers: {'Accept': 'application/json'},
+        body: new URLSearchParams({csrf_token: token, body: body.value})
+      });
+      if (!response.ok) throw new Error(response.status);
+      const data = await response.json();
+      // Server-sanitised HTML, parsed inertly before insertion.
+      const doc = new DOMParser().parseFromString(data.html, 'text/html');
+      preview.replaceChildren(...doc.body.childNodes);
+    } catch (error) {
+      if (error.name !== 'AbortError') preview.textContent = {{ _('Preview failed')|tojson }} + ' (' + error.message + ')';
+    }
+  }
+  body.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(render, 400); });
+  render();
+})();
+</script>
+{% endblock %}

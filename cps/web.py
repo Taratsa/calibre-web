@@ -613,8 +613,7 @@ def render_books_list(data, sort_param, book_id, page):
             relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
         return render_title_template(
-            "index.html",
-            random=random,
+            "plain_index.html",
             entries=entries,
             pagination=pagination,
             title=_("Books"),
@@ -640,8 +639,7 @@ def render_rated_books(page, book_id, order):
         )
 
         return render_title_template(
-            "index.html",
-            random=random,
+            "plain_index.html",
             entries=entries,
             pagination=pagination,
             id=book_id,
@@ -667,7 +665,7 @@ def render_discover_books(book_id):
         )
         pagination = Pagination(1, config.config_books_per_page, config.config_books_per_page)
         return render_title_template(
-            "index.html",
+            "plain_index.html",
             random=false(),
             entries=entries,
             pagination=pagination,
@@ -719,8 +717,7 @@ def render_hot_books(page, order):
         num_books = entries.__len__()
         pagination = Pagination(page, config.config_books_per_page, num_books)
         return render_title_template(
-            "index.html",
-            random=random,
+            "plain_index.html",
             entries=entries,
             pagination=pagination,
             title=_("Hot Books (Most Downloaded)"),
@@ -756,8 +753,7 @@ def render_downloaded_books(page, order, user_id):
             if not calibre_db.session.query(db.Books.id).filter(db.Books.id == book.Books.id).first():
                 ub.delete_download(book.Books.id)
         return render_title_template(
-            "index.html",
-            random=random,
+            "plain_index.html",
             entries=entries,
             pagination=pagination,
             id=user_id,
@@ -856,8 +852,7 @@ def render_publisher_books(page, book_id, order):
             abort(404)
 
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         entries=entries,
         pagination=pagination,
         id=book_id,
@@ -900,8 +895,7 @@ def render_series_books(page, book_id, order):
         else:
             abort(404)
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         pagination=pagination,
         entries=entries,
         id=book_id,
@@ -945,8 +939,7 @@ def render_ratings_books(page, book_id, order):
         else:
             abort(404)
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         pagination=pagination,
         entries=entries,
         id=book_id,
@@ -988,8 +981,7 @@ def render_formats_books(page, book_id, order):
             abort(404)
 
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         pagination=pagination,
         entries=entries,
         id=book_id,
@@ -1042,8 +1034,7 @@ def render_category_books(page, book_id, order):
         else:
             abort(404)
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         entries=entries,
         pagination=pagination,
         id=book_id,
@@ -1089,8 +1080,7 @@ def render_language_books(page, name, order):
             relationship_loaders=db.LIST_RELATIONSHIPS["index"],
         )
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         entries=entries,
         pagination=pagination,
         id=name,
@@ -1151,8 +1141,7 @@ def render_read_books(page, are_read, as_xml=False, order=None):
             name = _("Unread Books") + " (" + str(pagination.total_count) + ")"  # pyright: ignore[reportAttributeAccessIssue]
             page_name = "unread"
         return render_title_template(
-            "index.html",
-            random=random,
+            "plain_index.html",
             entries=entries,
             pagination=pagination,
             title=name,
@@ -1188,8 +1177,7 @@ def render_archived_books(page, sort_param):
     name = _("Archived Books") + " (" + str(len(entries)) + ")"
     page_name = "archived"
     return render_title_template(
-        "index.html",
-        random=random,
+        "plain_index.html",
         entries=entries,
         pagination=pagination,
         title=name,
@@ -2290,7 +2278,7 @@ def render_login(username="", password=""):
     if url_for("web.logout") == next_url:
         next_url = url_for("web.index")
     return render_title_template(
-        "login.html",
+        "plain_login.html",
         title=_("Login"),
         next_url=next_url,
         config=config,
@@ -2429,7 +2417,7 @@ def change_profile(kobo_support, local_oauth_check, oauth_status, translations, 
     except Exception as ex:
         flash(str(ex), category="error")
         return render_title_template(
-            "user_edit.html",
+            "plain_user_edit.html",
             content=current_user,
             config=config,
             translations=translations,
@@ -2488,7 +2476,7 @@ def profile():
     if request.method == "POST":
         change_profile(kobo_support, local_oauth_check, oauth_status, translations, languages)
     return render_title_template(
-        "user_edit.html",
+        "plain_user_edit.html",
         translations=translations,
         profile=1,
         languages=languages,

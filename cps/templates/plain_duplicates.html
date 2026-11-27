@@ -1,0 +1,365 @@
+{% extends "plain_layout.html" %}
+{% block header %}
+<style>
+  .dup-book { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+  .dup-book img { display: block; max-width: 100%; max-height: 170px; width: auto; height: auto; }
+  .dup-book p { margin: 0; overflow-wrap: anywhere; }
+  .dup-group-head { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: .75rem; }
+  .dup-group-head .dup-dismiss { margin-left: auto; }
+  .dup-fields { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1rem; margin: .6rem 0; }
+  .dup-fields label, label.dup-check { display: inline-flex; align-items: center; gap: .4rem; margin: 0; font-weight: 400; }
+  .dup-fields select, .dup-fields input[type=text], .dup-fields input[type=number] { width: auto; }
+  details > summary { cursor: pointer; font-weight: 600; font-size: 1.1rem; }
+  details[open] > summary { margin-bottom: .75rem; }
+</style>
+{% endblock %}
+{% block body %}
+<h1 class="plain-title">{{ _('Duplicate Books') }}</h1>
+<input type="hidden" name="csrf_token" id="dup_csrf" value="{{ csrf_token() }}">
+
+{% if duplicate_index_needs_full_scan %}
+<div class="alert" role="alert">
+  {{ _('The duplicate index has not been built yet for this library. Click "Scan now" to detect duplicate books.') }}
+</div>
+{% endif %}
+
+<div class="plain-actions">
+  <button type="button" id="trigger_scan">{{ _('Scan now') }}</button>
+  <span class="plain-badge" id="unresolved_badge" data-template="{{ _('Unresolved: %(count)s', count='{count}') }}">{{ _('Unresolved: %(count)s', count=unresolved_count) }}</span>
+  {% if next_scan_run %}<span class="plain-muted">{{ _('Next scheduled scan: %(when)s', when=next_scan_run) }}</span>{% endif %}
+  {% if cache_timestamp %}<span class="plain-muted">{{ _('Last scan: %(when)s', when=cache_timestamp|formatdate) }}</span>{% endif %}
+</div>
+
+<div id="dup_message" class="flash" role="status" aria-live="polite" hidden></div>
+
+<section class="plain-section" id="duplicate_settings_section">
+  <details>
+    <summary>{{ _('Detection Settings') }}</summary>
+    <form id="duplicate-settings-form" action="{{ url_for('duplicates.save_settings') }}" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="dup-fields">
+        <label><input type="checkbox" name="detection_enabled" value="1" {% if settings.detection_enabled %}checked{% endif %}> {{ _('Enable duplicate detection') }}</label>
+      </div>
+      <fieldset class="dup-fields">
+        <legend>{{ _('Matching criteria') }}</legend>
+        <label><input type="checkbox" name="use_title" value="1" {% if settings.use_title %}checked{% endif %}> {{ _('Title') }}</label>
+        <label><input type="checkbox" name="use_author" value="1" {% if settings.use_author %}checked{% endif %}> {{ _('Author') }}</label>
+        <label><input type="checkbox" name="use_language" value="1" {% if settings.use_language %}checked{% endif %}> {{ _('Language') }}</label>
+        <label><input type="checkbox" name="use_series" value="1" {% if settings.use_series %}checked{% endif %}> {{ _('Series') }}</label>
+        <label><input type="checkbox" name="use_publisher" value="1" {% if settings.use_publisher %}checked{% endif %}> {{ _('Publisher') }}</label>
+        <label><input type="checkbox" name="use_format" value="1" {% if settings.use_format %}checked{% endif %}> {{ _('Format') }}</label>
+      </fieldset>
+      <div class="dup-fields">
+        <label for="dup_scan_method">{{ _('Scan method') }}</label>
+        <select id="dup_scan_method" name="scan_method">
+          <option value="hybrid" {% if settings.scan_method == 'hybrid' %}selected{% endif %}>{{ _('Hybrid (SQL + fuzzy)') }}</option>
+          <option value="python" {% if settings.scan_method == 'python' %}selected{% endif %}>{{ _('Python (full scan)') }}</option>
+          <option value="sql" {% if settings.scan_method == 'sql' %}selected{% endif %}>{{ _('SQL only (experimental)') }}</option>
+        </select>
+      </div>
+      <div class="dup-fields">
+        <label><input type="checkbox" name="schedule_enabled" value="1" {% if settings.schedule_enabled %}checked{% endif %}> {{ _('Scheduled incremental scans') }}</label>
+        <label class="sr-only" for="dup_schedule_cron">{{ _('Cron schedule') }}</label>
+        <input type="text" id="dup_schedule_cron" name="schedule_cron" value="{{ settings.schedule_cron }}" placeholder="{{ _('crontab, e.g. 0 3 * * *') }}">
+      </div>
+      <div class="dup-fields">
+        <label><input type="checkbox" name="auto_resolve_enabled" value="1" {% if settings.auto_resolve_enabled %}checked{% endif %}> {{ _('Automatically resolve duplicates after scans') }}</label>
+        <label class="sr-only" for="dup_auto_strategy">{{ _('Strategy') }}</label>
+        <select id="dup_auto_strategy" name="auto_resolve_strategy">
+          <option value="newest" {% if settings.auto_resolve_strategy == 'newest' %}selected{% endif %}>{{ _('Keep newest') }}</option>
+          <option value="oldest" {% if settings.auto_resolve_strategy == 'oldest' %}selected{% endif %}>{{ _('Keep oldest') }}</option>
+          <option value="merge" {% if settings.auto_resolve_strategy == 'merge' %}selected{% endif %}>{{ _('Merge formats') }}</option>
+          <option value="highest_quality_format" {% if settings.auto_resolve_strategy == 'highest_quality_format' %}selected{% endif %}>{{ _('Highest quality format') }}</option>
+          <option value="most_metadata" {% if settings.auto_resolve_strategy == 'most_metadata' %}selected{% endif %}>{{ _('Most metadata') }}</option>
+          <option value="largest_file_size" {% if settings.auto_resolve_strategy == 'largest_file_size' %}selected{% endif %}>{{ _('Largest file size') }}</option>
+        </select>
+        <label class="sr-only" for="dup_cooldown">{{ _('Cooldown (minutes)') }}</label>
+        <input type="number" id="dup_cooldown" name="auto_resolve_cooldown_minutes" value="{{ settings.auto_resolve_cooldown_minutes }}" min="0" placeholder="{{ _('Cooldown (minutes)') }}">
+      </div>
+      <label for="dup_format_priority">{{ _('Format priority (JSON)') }}</label>
+      <textarea id="dup_format_priority" name="format_priority" rows="3">{{ settings.format_priority|tojson }}</textarea>
+      <p class="plain-muted">{{ _('Used by the "highest quality format" strategy, e.g. {"EPUB": 100, "PDF": 60}') }}</p>
+      <div class="plain-actions">
+        <button type="submit" id="save_settings">{{ _('Save settings') }}</button>
+      </div>
+    </form>
+  </details>
+</section>
+
+<section class="plain-section" id="duplicate_resolve_section">
+  <details>
+    <summary>{{ _('Batch Operations') }}</summary>
+    <div class="dup-fields">
+      <label for="resolution_strategy">{{ _('Strategy') }}</label>
+      <select id="resolution_strategy">
+        <option value="newest">{{ _('Keep newest') }}</option>
+        <option value="oldest">{{ _('Keep oldest') }}</option>
+        <option value="merge">{{ _('Merge formats') }}</option>
+        <option value="highest_quality_format">{{ _('Highest quality format') }}</option>
+        <option value="most_metadata">{{ _('Most metadata') }}</option>
+        <option value="largest_file_size">{{ _('Largest file size') }}</option>
+      </select>
+      <button type="button" id="preview_resolution">{{ _('Preview') }}</button>
+      <button type="button" class="plain-danger" id="execute_resolution">{{ _('Execute on all groups') }}</button>
+    </div>
+    <p class="plain-muted">{{ _('Preview shows which book would be kept in every group without making changes. Execution backs up and deletes surplus copies.') }}</p>
+    <div id="resolution_preview" hidden>
+      <h2>{{ _('Resolution preview') }}</h2>
+      <p id="resolution_preview_summary"></p>
+      <div class="plain-table-wrap">
+        <table>
+          <thead><tr><th>{{ _('Group') }}</th><th>{{ _('Keep') }}</th><th>{{ _('Remove') }}</th></tr></thead>
+          <tbody id="resolution_preview_body"></tbody>
+        </table>
+      </div>
+      <div class="plain-actions"><button type="button" id="close_preview">{{ _('Close') }}</button></div>
+    </div>
+  </details>
+</section>
+
+{% if duplicate_groups %}
+<h2 id="dup_groups_heading">{{ _('Detected duplicate groups') }} <span class="plain-badge" id="dup_groups_count">{{ duplicate_groups|length }}</span></h2>
+{% for group in duplicate_groups %}
+<section class="plain-section dup-group" data-group-hash="{{ group.group_hash }}">
+  <div class="dup-group-head">
+    <strong>{{ group.title }}</strong>
+    <span class="plain-muted">{{ _('by') }} {{ group.author }}</span>
+    <span class="plain-badge">{{ group.count }} {{ _('copies') }}</span>
+    <button type="button" class="dup-dismiss" title="{{ _('Hide this group for this user') }}">{{ _('Dismiss') }}</button>
+  </div>
+  <div class="plain-grid">
+    {% for book in group.books %}
+    <article class="dup-book" data-book-id="{{ book.id }}">
+      <a href="{{ url_for('web.show_book', book_id=book.id) }}"><img src="{{ book.cover_url }}" alt="{{ book.title }}" loading="lazy"></a>
+      <strong><a href="{{ url_for('web.show_book', book_id=book.id) }}">{{ book.title|shortentitle(30) }}</a></strong>
+      <p class="plain-muted">{{ book.author_names }}</p>
+      <p>
+        {% if book.series %}{{ book.series[0].name }}{% if book.series_index %}: {{ book.series_index }}{% endif %}<br>{% endif %}
+        {% for data in book.data %}<span class="plain-badge">{{ data.format }}</span> {% endfor %}
+      </p>
+      <div class="plain-links">
+        <a class="button" href="{{ url_for('edit-book.show_edit_book', book_id=book.id) }}">{{ _('Edit metadata') }}</a>
+        <a class="button" href="{{ url_for('web.show_book', book_id=book.id) }}">{{ _('View details') }}</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% elif not duplicate_index_needs_full_scan %}
+<div class="alert" role="status">{{ _('No duplicate books found.') }}</div>
+{% endif %}
+{% endblock %}
+{% block js %}
+<script>
+(function () {
+  "use strict";
+  var T = {{ {
+    'unresolved': _('Unresolved: %(count)s', count='{count}'),
+    'error': _('Error'),
+    'scanFailed': _('Scan failed'),
+    'saveFailed': _('Could not save settings'),
+    'dismissFailed': _('Failed to dismiss group'),
+    'noDuplicates': _('No duplicates to resolve.'),
+    'previewSummary': _('Strategy: %(strategy)s - %(groups)s group(s), %(books)s book(s) would be removed.', strategy='{strategy}', groups='{groups}', books='{books}'),
+    'book': _('Book #%(id)s', id='{id}'),
+    'noFormats': _('no formats'),
+    'confirm': _('Execute resolution using strategy %(strategy)s on all groups? Books will be backed up and then deleted. This cannot be undone from the UI.', strategy='{strategy}'),
+    'resolutionFailed': _('Resolution failed'),
+    'resolutionStarted': _('Resolving duplicates in the background. This page reloads when it finishes; progress is also on the Tasks page.'),
+    'resolved': _('Resolved %(groups)s group(s), removed %(books)s book(s).', groups='{groups}', books='{books}'),
+    'viewTasks': _('View Background Tasks')
+  }|tojson }};
+  var URLS = {{ {
+    'tasks': url_for('tasks.get_tasks_status'),
+    'scan': url_for('duplicates.trigger_scan'),
+    'status': url_for('duplicates.get_duplicate_status'),
+    'settings': url_for('duplicates.save_settings'),
+    'preview': url_for('duplicates.preview_resolution'),
+    'execute': url_for('duplicates.execute_resolution'),
+    'dismiss': url_for('duplicates.dismiss_duplicate_group', group_hash='GROUP_HASH')
+  }|tojson }};
+  var csrf = document.getElementById("dup_csrf").value;
+  var box = document.getElementById("dup_message");
+  var badge = document.getElementById("unresolved_badge");
+
+  function fill(tpl, vals) {
+    return tpl.replace(/\{(\w+)\}/g, function (m, k) { return k in vals ? vals[k] : m; });
+  }
+
+  function say(text, link) {
+    box.textContent = text;
+    if (link) {
+      box.appendChild(document.createTextNode(" "));
+      var a = document.createElement("a");
+      a.href = URLS.tasks;
+      a.textContent = T.viewTasks;
+      box.appendChild(a);
+    }
+    box.hidden = false;
+    box.scrollIntoView({block: "nearest"});
+  }
+
+  function send(url, body, json) {
+    var headers = {"X-CSRFToken": csrf, "X-Requested-With": "XMLHttpRequest"};
+    var init = {method: "POST", headers: headers, credentials: "same-origin"};
+    if (json) {
+      headers["Content-Type"] = "application/json";
+      init.body = JSON.stringify(json);
+    } else if (body) {
+      init.body = body;
+    }
+    return fetch(url, init).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (data) {
+        return {ok: res.ok, data: data};
+      });
+    });
+  }
+
+  function failText(r, fallback) {
+    var d = r.data || {};
+    return d.message || d.error || fallback;
+  }
+
+  function setCount(n) {
+    badge.textContent = fill(badge.dataset.template, {count: n});
+  }
+
+  function refreshCount() {
+    fetch(URLS.status, {credentials: "same-origin"}).then(function (res) { return res.json(); })
+      .then(function (d) { if (d && d.success) { setCount(d.count); } })
+      .catch(function () {});
+  }
+
+  function pollResolution() {
+    var attempts = 0;
+    var timer = window.setInterval(function () {
+      if (++attempts > 600) { window.clearInterval(timer); return; }
+      fetch(URLS.status, {credentials: "same-origin"}).then(function (res) { return res.json(); })
+        .then(function (d) {
+          if (d && !d.resolving) { window.clearInterval(timer); window.location.reload(); }
+        })
+        .catch(function () {});
+    }, 2000);
+  }
+
+  function busy(btn, on) { btn.disabled = on; }
+
+  /* Manual scan */
+  var scanBtn = document.getElementById("trigger_scan");
+  scanBtn.addEventListener("click", function () {
+    busy(scanBtn, true);
+    send(URLS.scan).then(function (r) {
+      if (r.ok && r.data.queued) {
+        say(r.data.message || "", true);
+      } else if (r.ok) {
+        window.location.reload();
+      } else {
+        say(T.scanFailed + ": " + failText(r, T.error));
+      }
+    }).catch(function () { say(T.scanFailed); }).then(function () { busy(scanBtn, false); });
+  });
+
+  /* Save settings */
+  var form = document.getElementById("duplicate-settings-form");
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var btn = document.getElementById("save_settings");
+    busy(btn, true);
+    send(URLS.settings, new FormData(form)).then(function (r) {
+      if (r.ok) {
+        say(r.data.message || "");
+        window.setTimeout(function () { window.location.reload(); }, 800);
+      } else {
+        say(T.saveFailed + ": " + failText(r, T.error));
+      }
+    }).catch(function () { say(T.saveFailed); }).then(function () { busy(btn, false); });
+  });
+
+  /* Dismiss a group */
+  Array.prototype.forEach.call(document.querySelectorAll(".dup-group"), function (group) {
+    group.querySelector(".dup-dismiss").addEventListener("click", function () {
+      var url = URLS.dismiss.replace("GROUP_HASH", encodeURIComponent(group.dataset.groupHash));
+      send(url).then(function (r) {
+        if (r.ok && r.data.success) {
+          group.remove();
+          var left = document.querySelectorAll(".dup-group").length;
+          var c = document.getElementById("dup_groups_count");
+          if (c) { c.textContent = left; }
+          if (typeof r.data.count === "number") { setCount(r.data.count); } else { refreshCount(); }
+        } else {
+          say(failText(r, T.dismissFailed));
+        }
+      }).catch(function () { say(T.dismissFailed); });
+    });
+  });
+
+  /* Preview resolution */
+  var strategySel = document.getElementById("resolution_strategy");
+  var previewBox = document.getElementById("resolution_preview");
+  var previewBody = document.getElementById("resolution_preview_body");
+  var previewSummary = document.getElementById("resolution_preview_summary");
+
+  function cell(tr, text, small) {
+    var td = tr.insertCell();
+    td.textContent = text;
+    if (small) {
+      td.appendChild(document.createElement("br"));
+      var s = document.createElement("small");
+      s.textContent = small;
+      td.appendChild(s);
+    }
+  }
+
+  document.getElementById("close_preview").addEventListener("click", function () { previewBox.hidden = true; });
+
+  document.getElementById("preview_resolution").addEventListener("click", function () {
+    var btn = this, strategy = strategySel.value;
+    busy(btn, true);
+    send(URLS.preview, null, {strategy: strategy}).then(function (r) {
+      var d = r.data || {};
+      previewBody.textContent = "";
+      if (!r.ok || !d.success) {
+        previewBox.hidden = true;
+        say(failText(r, T.error));
+      } else if (!d.preview || !d.preview.length) {
+        previewBox.hidden = true;
+        say(T.noDuplicates);
+      } else {
+        previewSummary.textContent = fill(T.previewSummary, {strategy: strategy, groups: d.resolved_count, books: d.deleted_count});
+        d.preview.forEach(function (g) {
+          var tr = previewBody.insertRow();
+          var formats = (g.kept_book_formats || []).join(", ") || T.noFormats;
+          cell(tr, g.title);
+          cell(tr, fill(T.book, {id: g.kept_book_id}) + " (" + g.kept_book_timestamp + ")", formats);
+          cell(tr, (g.deleted_book_ids || []).map(function (id) { return fill(T.book, {id: id}); }).join(", "));
+        });
+        previewBox.hidden = false;
+        previewBox.scrollIntoView({block: "nearest"});
+      }
+    }).catch(function () { say(T.error); }).then(function () { busy(btn, false); });
+  });
+
+  /* Execute resolution (destructive: confirm first) */
+  document.getElementById("execute_resolution").addEventListener("click", function () {
+    var btn = this, strategy = strategySel.value;
+    if (!window.confirm(fill(T.confirm, {strategy: strategy}))) { return; }
+    busy(btn, true);
+    send(URLS.execute, null, {strategy: strategy}).then(function (r) {
+      var d = r.data || {};
+      if (!r.ok || !d.success) {
+        var errs = (d.errors || []).join("; ");
+        say(T.resolutionFailed + ": " + (errs || failText(r, T.error)));
+        busy(btn, false);
+      } else if (d.queued) {
+        say(T.resolutionStarted, true);
+        pollResolution();
+      } else {
+        say(fill(T.resolved, {groups: d.resolved_count, books: d.deleted_count}));
+        window.setTimeout(function () { window.location.reload(); }, 1200);
+      }
+    }).catch(function () { say(T.error); busy(btn, false); });
+  });
+})();
+</script>
+{% endblock %}

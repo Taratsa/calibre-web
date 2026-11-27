@@ -1,0 +1,147 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<form method="post" class="plain-section" autocomplete="off">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  {% if feature_support['gmail'] %}
+  <label for="config_email_type">{{ _('Email Account Type') }}</label>
+  <select name="mail_server_type" id="config_email_type" data-control="email-settings">
+    <option value="0" {% if content.mail_server_type == 0 %}selected{% endif %}>{{ _('Standard Email Account') }}</option>
+    <option value="1" {% if content.mail_server_type == 1 %}selected{% endif %}>{{ _('Gmail Account') }}</option>
+  </select>
+  <div data-related="email-settings-1">
+    <p>
+      {% if content.mail_gmail_token == {} %}
+      <button type="submit" id="gmail_server" name="gmail" value="submit">{{ _('Setup Gmail Account') }}</button>
+      {% else %}
+      <button type="submit" id="invalidate_server" name="invalidate" value="submit" class="plain-danger">{{ _('Revoke Gmail Access') }}</button>
+      {% endif %}
+    </p>
+  </div>
+  <div data-related="email-settings-0">
+  {% endif %}
+    <label for="mail_server">{{ _('SMTP Hostname') }}</label>
+    <input type="text" name="mail_server" id="mail_server" value="{{ content.mail_server }}" required>
+    <label for="mail_port">{{ _('SMTP Port') }}</label>
+    <input type="number" min="1" max="65535" step="1" name="mail_port" id="mail_port" value="{% if content.mail_port != None %}{{ content.mail_port }}{% endif %}" autocomplete="off" required>
+    <label for="mail_use_ssl">{{ _('Encryption') }}</label>
+    <select name="mail_use_ssl" id="mail_use_ssl">
+      <option value="0" {% if content.mail_use_ssl == 0 %}selected{% endif %}>{{ _('None') }}</option>
+      <option value="1" {% if content.mail_use_ssl == 1 %}selected{% endif %}>{{ _('STARTTLS') }}</option>
+      <option value="2" {% if content.mail_use_ssl == 2 %}selected{% endif %}>{{ _('SSL/TLS') }}</option>
+    </select>
+    <label for="mail_login">{{ _('SMTP Login') }}</label>
+    <input type="text" name="mail_login" id="mail_login" value="{{ content.mail_login }}">
+    <label for="mail_password_e">{{ _('SMTP Password') }}</label>
+    <input type="password" name="mail_password_e" id="mail_password_e" value="" autocomplete="new-password">
+    <label for="mail_from">{{ _('From Email') }}</label>
+    <input type="text" name="mail_from" id="mail_from" value="{{ content.mail_from }}" required>
+    <label for="mail_size">{{ _('Attachment Size Limit') }} (MB)</label>
+    <input type="number" min="1" max="600" step="1" name="mail_size" id="mail_size" value="{% if content.mail_size != None %}{{ (content.mail_size / 1024 / 1024)|int }}{% endif %}" required>
+    <div class="plain-actions">
+      <button type="submit" name="submit" value="submit">{{ _('Save') }}</button>
+      <button type="submit" name="test" value="test">{{ _('Save and Send Test Email') }}</button>
+    </div>
+  {% if feature_support['gmail'] %}
+  </div>
+  {% endif %}
+  <p><a class="button" href="{{ url_for('admin.admin') }}" id="email_back">{{ _('Back') }}</a></p>
+</form>
+
+{% if g.allow_registration and not simple %}
+<input type="hidden" id="plain-csrf" value="{{ csrf_token() }}">
+{% for allow, heading in ((1, _('Allowed Domains (Whitelist)')), (0, _('Denied Domains (Blacklist)'))) %}
+<section class="plain-section" id="domain-section-{{ allow }}" data-allow="{{ allow }}"
+         data-list-url="{{ url_for('admin.list_domain', allow=allow) }}"
+         data-edit-url="{{ url_for('admin.edit_domain', allow=allow) }}">
+  <h2>{{ heading }}</h2>
+  <div class="plain-table-wrap">
+    <table>
+      <caption class="sr-only">{{ heading }}</caption>
+      <tbody id="domain-{{ 'allow' if allow else 'deny' }}-table"></tbody>
+    </table>
+  </div>
+  <form id="domain_add_{{ 'allow' if allow else 'deny' }}" class="domain-add" action="{{ url_for('admin.add_domain', allow=allow) }}" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="domainname_{{ 'allow' if allow else 'deny' }}">{{ _('Add Domain') }}</label>
+    <div class="plain-actions">
+      <input type="text" name="domainname" id="domainname_{{ 'allow' if allow else 'deny' }}" required>
+      <button type="submit" id="domain_{{ 'allow' if allow else 'deny' }}_submit">{{ _('Add') }}</button>
+    </div>
+  </form>
+</section>
+{% endfor %}
+<p id="plain-domain-status" class="flash flash-error" role="alert" hidden></p>
+{% endif %}
+{% include "plain_conditional_fields.html" %}
+{% endblock %}
+{% block js %}
+{% if g.allow_registration and not simple %}
+<script>
+(() => {
+  /* Domain lists are loaded from the JSON list endpoint and edited through the existing ajax endpoints. */
+  const csrf = document.getElementById('plain-csrf').value;
+  const deleteUrl = {{ url_for('admin.delete_domain')|tojson }};
+  const confirmText = {{ _('Do you really want to delete this domain?')|tojson }};
+  const failText = {{ _('Request failed')|tojson }};
+  const saveText = {{ _('Save')|tojson }};
+  const deleteLabel = {{ _('Delete')|tojson }};
+  const errorEl = document.getElementById('plain-domain-status');
+  const sections = [...document.querySelectorAll('section[data-allow]')];
+  const post = async (url, data) => {
+    const response = await fetch(url, { method: 'POST', credentials: 'same-origin', headers: { 'X-CSRFToken': csrf }, body: new URLSearchParams(data) });
+    if (!response.ok) throw new Error(failText + ' (' + response.status + ')');
+  };
+  const fail = (error) => { errorEl.textContent = error.message; errorEl.hidden = false; };
+  async function load(section) {
+    const body = section.querySelector('tbody');
+    const response = await fetch(section.dataset.listUrl, { credentials: 'same-origin' });
+    if (!response.ok) throw new Error(failText + ' (' + response.status + ')');
+    const rows = await response.json();
+    body.replaceChildren();
+    for (const row of rows) {
+      const tr = document.createElement('tr');
+      const form = document.createElement('form');
+      form.className = 'plain-actions';
+      const input = document.createElement('input');
+      input.type = 'text'; input.value = row.domain; input.required = true;
+      input.setAttribute('aria-label', section.querySelector('h2').textContent);
+      const save = document.createElement('button');
+      save.type = 'submit'; save.textContent = saveText;
+      const del = document.createElement('button');
+      del.type = 'button'; del.className = 'plain-danger'; del.textContent = deleteLabel;
+      form.append(input, save, del);
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        errorEl.hidden = true;
+        try { await post(section.dataset.editUrl, { pk: row.id, value: input.value }); await reloadAll(); } catch (error) { fail(error); }
+      });
+      del.addEventListener('click', async () => {
+        if (!window.confirm(confirmText)) return;
+        errorEl.hidden = true;
+        try { await post(deleteUrl, { domainid: row.id }); await reloadAll(); } catch (error) { fail(error); }
+      });
+      const td = document.createElement('td');
+      td.append(form);
+      tr.append(td);
+      body.append(tr);
+    }
+  }
+  const reloadAll = () => Promise.all(sections.map(load)).catch(fail);
+  for (const section of sections) {
+    section.querySelector('form.domain-add').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      errorEl.hidden = true;
+      try {
+        await post(form.action, { domainname: form.elements.domainname.value });
+        form.reset();
+        await reloadAll();
+      } catch (error) { fail(error); }
+    });
+  }
+  reloadAll();
+})();
+</script>
+{% endif %}
+{% endblock %}

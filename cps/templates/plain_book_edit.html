@@ -1,0 +1,337 @@
+{% extends "plain_layout.html" %}
+{% block header %}
+<meta name="referrer" content="never">
+{% endblock %}
+{% block body %}
+{% if book %}
+<h1 class="plain-title">{{ book.title }}</h1>
+<p class="plain-subtitle">{{ title|capitalize }} · <a href="{{ url_for('web.show_book', book_id=book.id) }}">{{ _('Cancel') }}</a></p>
+
+<div class="plain-grid">
+  <section class="plain-section">
+    <img id="detailcover" title="{{ book.title }}" alt="{{ book.title }}" src="{{ url_for('web.get_cover_thumb', book_id=book.id, resolution='md', c=book|last_modified) }}" width="195" height="285" style="aspect-ratio: 195 / 285; width: 100%; max-width: 195px; height: auto;">
+  </section>
+
+  {% if book.data %}
+  <section class="plain-section">
+    <h2>{{ _('Formats') }}</h2>
+    <div class="plain-table-wrap">
+      <table>
+        <tbody>
+        {% for file in book.data %}
+          <tr>
+            <td>{{ file.format }}</td>
+            <td class="plain-muted">{{ (file.uncompressed_size / 1048576)|round(2) }} MB</td>
+            <td>
+            {% if current_user.role_delete_books() and book.data|length > 1 %}
+              <details>
+                <summary class="plain-danger">{{ _('Delete') }} - {{ file.format }}</summary>
+                <form action="{{ url_for('edit-book.delete_book', book_id=book.id, book_format=file.format) }}" method="post">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <p>{{ _('Are you really sure?') }} {{ _('This book format will be permanently erased from database') }}</p>
+                  <button type="submit" class="plain-danger">{{ _('Delete') }} - {{ file.format }}</button>
+                </form>
+              </details>
+            {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if source_formats|length > 0 and conversion_formats|length > 0 %}
+  <section class="plain-section">
+    <h2>{{ _('Convert book format:') }}</h2>
+    <form action="{{ url_for('edit-book.convert_bookformat', book_id=book.id) }}" method="post" id="book_convert_frm">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label for="book_format_from">{{ _('Convert from:') }}</label>
+      <select name="book_format_from" id="book_format_from" required>
+        <option disabled selected value="">-- {{ _('select an option') }} --</option>
+        {% for format in source_formats %}<option>{{ format|upper }}</option>{% endfor %}
+      </select>
+      <label for="book_format_to">{{ _('Convert to:') }}</label>
+      <select name="book_format_to" id="book_format_to" required>
+        <option disabled selected value="">-- {{ _('select an option') }} --</option>
+        {% for format in conversion_formats %}<option>{{ format|upper }}</option>{% endfor %}
+      </select>
+      <p><button type="submit" id="btn-book-convert" name="btn-book-convert">{{ _('Convert book') }}</button></p>
+    </form>
+  </section>
+  {% endif %}
+
+  {% if current_user.role_upload() and g.allow_upload %}
+  <section class="plain-section">
+    <h2>{{ _('Upload Format') }}</h2>
+    <form id="form-upload-format" action="{{ url_for('edit-book.upload') }}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="book_id" value="{{ book.id }}">
+      <label for="btn-upload-format">{{ _('Upload Format') }}</label>
+      <input id="btn-upload-format" name="btn-upload-format" type="file" accept="{% for format in accept %}.{% if format != '' %}{{ format }}{% else %}*{% endif %}{{ ',' if not loop.last }}{% endfor %}" multiple required>
+      <p><button type="submit">{{ _('Upload Format') }}</button></p>
+    </form>
+  </section>
+  {% endif %}
+</div>
+
+<section class="plain-section" id="meta-box" hidden>
+  <h2>{{ _('Fetch Metadata') }}</h2>
+  <form id="meta-search" class="plain-actions">
+    <label class="sr-only" for="keyword">{{ _('Keyword') }}</label>
+    <input type="text" id="keyword" name="keyword" placeholder="{{ _('Search keyword') }}" value="{{ book.title }}">
+    <button type="submit" id="do-search">{{ _('Search') }}</button>
+  </form>
+  <p class="plain-muted">{{ _('Click the cover to load metadata to the form') }}</p>
+  <div id="meta-info" aria-live="polite"></div>
+</section>
+
+<form role="form" action="{{ url_for('edit-book.edit_book', book_id=book.id) }}" method="post" enctype="multipart/form-data" id="book_edit_frm" class="plain-section">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+  <label for="title">{{ _('Book Title') }}</label>
+  <input type="text" name="title" id="title" value="{{ book.title }}">
+
+  <label for="authors">{{ _('Author') }} <span class="plain-muted">(&amp;)</span></label>
+  <input type="text" autocomplete="off" name="authors" id="authors" value="{{ ' & '.join(authors) }}">
+
+  <label for="tags">{{ _('Tags') }}</label>
+  <input type="text" autocomplete="off" name="tags" id="tags" value="{% for tag in book.tags %}{{ tag.name.strip() }}{% if not loop.last %}, {% endif %}{% endfor %}">
+
+  <label for="series">{{ _('Series') }}</label>
+  <input type="text" autocomplete="off" name="series" id="series" value="{% if book.series %}{{ book.series[0].name }}{% endif %}">
+
+  <label for="series_index">{{ _('Series ID') }}</label>
+  <input type="number" step="0.01" min="0" placeholder="1" name="series_index" id="series_index" value="{{ book.series_index|formatfloat(2) }}">
+
+  <label for="pubdate">{{ _('Published Date') }}</label>
+  <input type="date" name="pubdate" id="pubdate" value="{% if book.pubdate %}{{ book.pubdate|formatdateinput }}{% endif %}">
+
+  <label for="publisher">{{ _('Publisher') }}</label>
+  <input type="text" autocomplete="off" name="publisher" id="publisher" value="{% if book.publishers|length > 0 %}{{ book.publishers[0].name }}{% endif %}">
+
+  <label for="languages">{{ _('Language') }}</label>
+  <input type="text" autocomplete="off" name="languages" id="languages" value="{% for language in book.languages %}{{ language.language_name.strip() }}{% if not loop.last %}, {% endif %}{% endfor %}">
+
+  {% set current_rating = (book.ratings[0].rating / 2)|int if book.ratings else 0 %}
+  <label for="rating">{{ _('Rating') }}</label>
+  <select name="rating" id="rating">
+    <option value=""></option>
+    {% for n in range(1, 6) %}<option value="{{ n }}" {% if current_rating == n %}selected{% endif %}>{{ n }} / 5</option>{% endfor %}
+  </select>
+
+  <label for="comments">{{ _('Description') }}</label>
+  <textarea name="comments" id="comments" rows="7">{% if book.comments %}{{ book.comments[0].text }}{% endif %}</textarea>
+
+  <label>{{ _('Identifiers') }}</label>
+  <div class="plain-table-wrap">
+    <table id="identifier-table">
+      <tbody id="identifier-rows">
+      {% for identifier in book.identifiers %}
+        <tr>
+          <td><input type="text" name="identifier-type-{{ identifier.type }}" value="{{ identifier.type }}" required placeholder="{{ _('Identifier Type') }}"></td>
+          <td><input type="text" name="identifier-val-{{ identifier.type }}" value="{{ identifier.val }}" required placeholder="{{ _('Identifier Value') }}"></td>
+          <td><button type="button" class="js-only" data-remove-row hidden>{{ _('Remove') }}</button></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p><button type="button" id="add-identifier-line" class="js-only" hidden>{{ _('Add Identifier') }}</button></p>
+
+  {% if current_user.role_upload() and g.allow_upload %}
+  <label for="cover_url">{{ _('Fetch Cover from URL (JPEG - Image will be downloaded and stored in database)') }}</label>
+  <input type="text" name="cover_url" id="cover_url" value="">
+
+  <label for="btn-upload-cover">{{ _('Upload Cover from Local Disk') }}</label>
+  <input id="btn-upload-cover" name="btn-upload-cover" type="file" accept=".jpg, .jpeg, .png, .webp">
+  {% endif %}
+
+  {% for c in cc %}
+    {% set cname = 'custom_column_' ~ c.id %}
+    {% set cvals = book[cname] %}
+    <label for="{{ cname }}">{{ c.name }}</label>
+    {% if c.datatype == 'bool' %}
+      <select name="{{ cname }}" id="{{ cname }}">
+        <option value="None" {% if cvals|length == 0 %}selected{% endif %}></option>
+        <option value="True" {% if cvals|length > 0 and cvals[0].value == true %}selected{% endif %}>{{ _('Yes') }}</option>
+        <option value="False" {% if cvals|length > 0 and cvals[0].value == false %}selected{% endif %}>{{ _('No') }}</option>
+      </select>
+    {% elif c.datatype == 'int' or c.datatype == 'float' %}
+      <input type="number" step="{% if c.datatype == 'float' %}0.01{% else %}1{% endif %}" name="{{ cname }}" id="{{ cname }}" value="{% if cvals|length > 0 %}{{ cvals[0].value }}{% endif %}">
+    {% elif c.datatype == 'text' %}
+      <input type="text" name="{{ cname }}" id="{{ cname }}" {% if cvals|length > 0 %}value="{% for column in cvals %}{{ column.value.strip() }}{% if not loop.last %}, {% endif %}{% endfor %}"{% endif %}>
+    {% elif c.datatype == 'series' %}
+      <input type="text" name="{{ cname }}" id="{{ cname }}" {% if cvals|length > 0 %}value="{% for column in cvals %} {{ '%s [%s]' % (cvals[0].value, cvals[0].extra|formatfloat(2)) }}{% if not loop.last %}, {% endif %}{% endfor %}"{% endif %}>
+    {% elif c.datatype == 'datetime' %}
+      <input type="date" name="{{ cname }}" id="{{ cname }}" {% if cvals|length > 0 %}value="{% if cvals[0].value %}{{ cvals[0].value|formatdateinput }}{% endif %}"{% endif %}>
+    {% elif c.datatype == 'comments' %}
+      <textarea name="{{ cname }}" id="{{ cname }}" rows="7">{% if cvals|length > 0 %}{{ cvals[0].value }}{% endif %}</textarea>
+    {% elif c.datatype == 'enumeration' %}
+      <select name="{{ cname }}" id="{{ cname }}">
+        <option></option>
+        {% for opt in c.get_display_dict().enum_values %}
+          <option {% if cvals|length > 0 and cvals[0].value == opt %}selected="selected"{% endif %}>{{ opt }}</option>
+        {% endfor %}
+      </select>
+    {% elif c.datatype == 'rating' %}
+      <input type="number" min="1" max="5" step="0.5" name="{{ cname }}" id="{{ cname }}" {% if cvals|length > 0 %}value="{{ '%.1f' % (cvals[0].value / 2) }}"{% endif %}>
+    {% endif %}
+  {% endfor %}
+
+  <p><label class="plain-inline"><input name="detail_view" type="checkbox" checked> {{ _('View Book on Save') }}</label></p>
+  <div class="plain-actions">
+    <button type="submit" id="submit">{{ _('Save') }}</button>
+    <a href="{{ url_for('web.show_book', book_id=book.id) }}" id="edit_cancel" class="button">{{ _('Cancel') }}</a>
+  </div>
+</form>
+
+{% if current_user.role_delete_books() %}
+<section class="plain-section">
+  <h2 class="plain-danger">{{ _('Delete Book') }}</h2>
+  <details>
+    <summary class="plain-danger">{{ _('Delete Book') }}</summary>
+    <form action="{{ url_for('edit-book.delete_book', book_id=book.id) }}" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <p>{{ _('Are you really sure?') }} {{ _('This book will be permanently erased from database and hard disk') }}</p>
+      {% if config.config_kobo_sync %}<p class="plain-muted">{{ _('Important Kobo Note: deleted books will remain on any paired Kobo device.') }} {{ _('Books must first be archived and the device synced before a book can safely be deleted.') }}</p>{% endif %}
+      <button type="submit" id="delete" class="plain-danger">{{ _('Delete Book') }}</button>
+    </form>
+  </details>
+</section>
+{% endif %}
+{% endif %}
+{% endblock %}
+
+{% block js %}
+{% if book %}
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var i18n = {
+    loading: {{ _('Loading...')|tojson }},
+    searchError: {{ _('Search error!')|tojson }},
+    noResult: {{ _('No Result(s) found! Please try another keyword.')|tojson }},
+    author: {{ _('Author')|tojson }},
+    publisher: {{ _('Publisher')|tojson }},
+    source: {{ _('Source')|tojson }},
+    use: {{ _('Select')|tojson }},
+    remove: {{ _('Remove')|tojson }},
+    typePh: {{ _('Identifier Type')|tojson }},
+    valPh: {{ _('Identifier Value')|tojson }}
+  };
+  var csrf = {{ csrf_token()|tojson }};
+
+  // Everything below is optional enhancement: forms work without it, except add/remove identifier and metadata fetch.
+  Array.prototype.forEach.call(document.querySelectorAll('.js-only'), function (el) { el.hidden = false; });
+
+  // Identifiers
+  var rows = $('identifier-rows');
+  function addIdentifier(id, type, val) {
+    var tr = document.createElement('tr');
+    [['identifier-type-', i18n.typePh, type], ['identifier-val-', i18n.valPh, val]].forEach(function (f) {
+      var td = document.createElement('td'), input = document.createElement('input');
+      input.type = 'text'; input.name = f[0] + id; input.required = true; input.placeholder = f[1]; input.value = f[2] || '';
+      td.appendChild(input); tr.appendChild(td);
+    });
+    var td = document.createElement('td'), b = document.createElement('button');
+    b.type = 'button'; b.textContent = i18n.remove; b.setAttribute('data-remove-row', '');
+    td.appendChild(b); tr.appendChild(td);
+    rows.appendChild(tr);
+  }
+  rows.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-remove-row]');
+    if (b) b.closest('tr').remove();
+  });
+  $('add-identifier-line').addEventListener('click', function () {
+    // The random suffix only pairs type and value inputs in the form; the server ignores it.
+    addIdentifier(Math.floor(Math.random() * 1000000).toString(), '', '');
+  });
+
+  // Upload format: the endpoint answers with JSON {location}; follow it so flashed messages are shown.
+  var upload = $('form-upload-format');
+  if (upload && window.fetch && window.FormData) {
+    upload.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch(upload.action, { method: 'POST', body: new FormData(upload), credentials: 'same-origin' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { window.location.href = d.location; })
+        .catch(function () { window.location.reload(); });
+    });
+  }
+
+  // Fetch metadata
+  var box = $('meta-box'), info = $('meta-info');
+  if (!box || !window.fetch) return;
+  box.hidden = false;
+
+  function setVal(id, v) { var el = $(id); if (el && v !== undefined && v !== null) el.value = v; }
+  function merge(id, list) {
+    var el = $(id);
+    var cur = el.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    (list || []).forEach(function (x) { if (cur.indexOf(x) < 0) cur.push(x); });
+    el.value = cur.join(', ');
+  }
+  function toDate(s) {
+    var m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/.exec(s || '');
+    return m ? m[1] + '-' + (m[2] || '01') + '-' + (m[3] || '01') : null;
+  }
+  function populate(book) {
+    setVal('comments', book.description || '');
+    merge('tags', book.tags);
+    merge('languages', book.languages);
+    setVal('authors', (book.authors || []).join(' & '));
+    setVal('title', book.title);
+    var r = Math.round(book.rating || 0);
+    setVal('rating', r >= 1 && r <= 5 ? String(r) : '');
+    if (book.cover && $('cover_url')) { setVal('cover_url', book.cover); $('detailcover').src = book.cover; }
+    var d = toDate(book.publishedDate);
+    if (d) setVal('pubdate', d);
+    setVal('publisher', book.publisher || '');
+    if (book.series) { setVal('series', book.series); setVal('series_index', book.series_index); }
+    var ids = book.identifiers || {};
+    Object.keys(ids).forEach(function (key) {
+      var existing = document.querySelector('input[name="identifier-val-' + (window.CSS && CSS.escape ? CSS.escape(key) : key) + '"]');
+      if (existing) existing.value = ids[key]; else addIdentifier(key, key, ids[key]);
+    });
+    $('book_edit_frm').scrollIntoView();
+  }
+  function p(label, text) {
+    var el = document.createElement('p'); el.textContent = label + ': ' + text; return el;
+  }
+  function render(list) {
+    info.textContent = '';
+    if (!list.length) { info.textContent = i18n.noResult; return; }
+    var ul = document.createElement('ul');
+    list.forEach(function (book) {
+      var li = document.createElement('li');
+      var h = document.createElement('strong'), a = document.createElement('a');
+      a.href = book.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = book.title;
+      h.appendChild(a); li.appendChild(h);
+      li.appendChild(p(i18n.author, (book.authors || []).join(' & ')));
+      if (book.publisher) li.appendChild(p(i18n.publisher, book.publisher));
+      if (book.description) li.appendChild(p('', book.description.replace(/<[^>]*>/g, '').slice(0, 300)));
+      if (book.source) li.appendChild(p(i18n.source, book.source.description));
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = i18n.use;
+      b.addEventListener('click', function () { populate(book); });
+      li.appendChild(b); ul.appendChild(li);
+    });
+    info.appendChild(ul);
+  }
+  $('meta-search').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var keyword = $('keyword').value;
+    if (!keyword) return;
+    info.textContent = i18n.loading;
+    var body = new URLSearchParams(); body.set('query', keyword); body.set('csrf_token', csrf);
+    fetch({{ url_for('metadata.metadata_search')|tojson }}, { method: 'POST', body: body, credentials: 'same-origin' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function () { info.textContent = i18n.searchError; });
+  });
+}());
+</script>
+{% endif %}
+{% endblock %}

@@ -43,7 +43,7 @@ def simple_search():
     if term:
         return redirect(url_for("web.books_list", data="search", sort_param="stored", query=term.strip()))
     else:
-        return render_title_template("search.html", searchterm="", result_count=0, title=_("Search"), page="search")
+        return render_title_template("plain_index.html", searchterm="", result_count=0, title=_("Search"), page="search")
 
 
 @search.route("/advsearch", methods=["POST"])
@@ -421,7 +421,7 @@ def render_adv_search_results(term, offset=None, order=None, limit=None):
         limit_all = result_count
     entries = calibre_db.order_authors(q[offset:limit_all], list_return=True, combined=True)
     return render_title_template(
-        "search.html",
+        "plain_index.html",
         adv_searchterm=search_term,
         pagination=pagination,
         entries=entries,
@@ -469,7 +469,7 @@ def render_prepare_search_form(cc):
     )  # pyright: ignore[reportGeneralTypeIssues]
     languages = calibre_db.speaking_language() if current_user.filter_language() == "all" else None
     return render_title_template(
-        "search_form.html",
+        "plain_search_form.html",
         tags=tags,
         languages=languages,
         extensions=extensions,
@@ -491,7 +491,7 @@ def render_search_results(term, offset=None, order=None, limit=None):
         pagination = result_count = None
 
     return render_title_template(
-        "search.html",
+        "plain_index.html",
         searchterm=term,
         pagination=pagination,
         query=term,

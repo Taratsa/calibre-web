@@ -1,0 +1,23 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ title }}</h1>
+<form method="post" autocomplete="off" class="plain-section">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label for="schedule_start_time">{{ _('Start Time') }}</label>
+  <select name="schedule_start_time" id="schedule_start_time">
+    {% for n in starttime %}<option value="{{ n[0] }}" {% if config.schedule_start_time == n[0] %}selected{% endif %}>{{ n[1] }}</option>{% endfor %}
+  </select>
+  <label for="schedule_duration">{{ _('Maximum Duration') }}</label>
+  <select name="schedule_duration" id="schedule_duration">
+    {% for n in duration %}<option value="{{ n[0] }}" {% if config.schedule_duration == n[0] %}selected{% endif %}>{{ n[1] }}</option>{% endfor %}
+  </select>
+  <p><label class="plain-inline"><input type="checkbox" id="schedule_generate_book_covers" name="schedule_generate_book_covers" {% if config.schedule_generate_book_covers %}checked{% endif %}> {{ _('Generate Thumbnails') }}</label></p>
+  <p><label class="plain-inline"><input type="checkbox" id="schedule_reconnect" name="schedule_reconnect" {% if config.schedule_reconnect %}checked{% endif %}> {{ _('Reconnect Calibre Database') }}</label></p>
+  <p><label class="plain-inline"><input type="checkbox" id="schedule_metadata_backup" name="schedule_metadata_backup" {% if config.schedule_metadata_backup %}checked{% endif %}> {{ _('Generate Metadata Backup Files') }}</label></p>
+  <p><label class="plain-inline"><input type="checkbox" id="schedule_ocr_scan" name="schedule_ocr_scan" {% if config.schedule_ocr_scan %}checked{% endif %}> {{ _('Precompute OCR Cache') }}</label></p>
+  <div class="plain-actions">
+    <button type="submit" name="submit" value="submit">{{ _('Save') }}</button>
+    <a class="button" href="{{ url_for('admin.admin') }}" id="email_back">{{ _('Cancel') }}</a>
+  </div>
+</form>
+{% endblock %}
