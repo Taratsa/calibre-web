@@ -8,9 +8,10 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='plain.css') }}">
   <script defer src="https://umami.kenadera.org/script.js" data-website-id="0b57aeb6-d996-4d88-89fc-59ada511cd9c" data-performance="true" data-do-not-track="true"></script>
+  {% if not current_user.is_anonymous %}<script defer src="{{ url_for('static', filename='js/libs/htmx.min.js') }}"></script>{% endif %}
   {% block header %}{% endblock %}
 </head>
-<body>
+<body{% if not current_user.is_anonymous %} hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'{% endif %}>
   <header class="plain-header">
     <a class="plain-brand" href="{{ url_for('web.index', page=1) }}">
       <img src="{{ url_for('static', filename='logo-taratsa.png') }}" alt="">

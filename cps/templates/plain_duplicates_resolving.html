@@ -1,0 +1,7 @@
+{#- Self-polling status line shown while a duplicate resolution runs. The server decides when polling stops: once the task is
+    gone /duplicates/resolving answers `HX-Refresh: true` and the page reloads with the new groups. -#}
+<p id="dup_resolving" class="flash" role="status" aria-live="polite"
+   hx-get="{{ url_for('duplicates.resolving_status') }}" hx-trigger="every 2s" hx-swap="outerHTML">
+  {{ _('Resolving duplicates in the background. This page reloads when it finishes; progress is also on the Tasks page.') }}
+  <a href="{{ url_for('tasks.get_tasks_status') }}">{{ _('View Background Tasks') }}</a>
+</p>

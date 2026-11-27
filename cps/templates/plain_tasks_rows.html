@@ -1,0 +1,20 @@
+{#- One <tbody> worth of task rows. Rendered by both the full page and the /tasks/rows fragment, so a column has a single
+    definition. Cancel is an htmx POST: the response is a fresh copy of these rows. -#}
+{% set admin = current_user.role_admin() %}
+{% for task in tasks %}
+<tr>
+  {% if admin %}<td>{{ task.user }}</td>{% endif %}
+  <td>{{ task.taskMessage }}</td>
+  <td>{{ task.status }}</td>
+  <td>{{ task.progress }}</td>
+  <td>{{ task.runtime }}</td>
+  <td>{{ task.starttime }}</td>
+  <td>{{ task.error or '' }}</td>
+  {% if admin %}<td>{% if task.is_cancellable %}<button type="button"
+      hx-post="{{ url_for('tasks.cancel_task_row', task_id=task.task_id) }}"
+      hx-target="#taskrows" hx-swap="innerHTML"
+      hx-confirm="{{ _('Cancel this task?') }}" hx-disabled-elt="this">{{ _('Cancel') }}</button>{% endif %}</td>{% endif %}
+</tr>
+{% else %}
+<tr><td colspan="{{ 8 if admin else 6 }}">{{ _('No active or recent tasks.') }}</td></tr>
+{% endfor %}

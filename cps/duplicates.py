@@ -22,7 +22,7 @@
 
 from functools import wraps
 
-from flask import Blueprint, abort, jsonify, request
+from flask import Blueprint, abort, jsonify, make_response, render_template, request
 from flask_babel import gettext as _
 
 from . import csrf, logger, ub
@@ -132,9 +132,21 @@ def show_duplicates():
         settings=settings,
         unresolved_count=len(duplicate_groups),
         cache_timestamp=cache_data.get("scan_timestamp"),
+        resolving=_resolve_task_active(),
         title=_("Duplicate Books"),
         page="duplicates",
     )
+
+
+@duplicates.route("/duplicates/resolving")
+@admin_or_edit_required
+def resolving_status():
+    """htmx poll target: the status line while a resolution runs, a page refresh once it has ended."""
+    if _resolve_task_active():
+        return render_template("plain_duplicates_resolving.html")
+    response = make_response("")
+    response.headers["HX-Refresh"] = "true"
+    return response
 
 
 @duplicates.route("/duplicates/status")

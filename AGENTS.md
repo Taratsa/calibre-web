@@ -776,6 +776,16 @@ Two live search systems (plus the legacy advanced-search form):
   (`cps/jinjia.py`); compiling these templates with a bare `jinja2.Environment` fails on them. Check a template by
   rendering the route. Flask caches templates when not in debug, so restart the process after editing one
 - Not carried over from the old book editor: metadata-provider swaps and the Kobo token modal
+- **htmx in the admin UI** (2026-11-28): `plain_layout.html` loads the vendored `static/js/libs/htmx.min.js` (2.0.4, 0BSD,
+  50.9 KB, 16.4 KB gzip) ONLY for logged-in users, so an anonymous visit to a Flask page carries no extra script, and sets
+  the CSRF token once as `<body hx-headers='{"X-CSRFToken": ...}'>` (Flask-WTF accepts that header; a POST without it is a
+  400, checked). Convention: a polling or refreshing panel is a Jinja PARTIAL included by the full page and returned by a
+  fragment route, so a row has ONE template and the first paint works without script; the fragment route keeps the page's
+  `login_required` and role check. The server ends a poll: `/duplicates/resolving` answers `HX-Refresh: true` once the
+  task is gone. Done: `/tasks` (`plain_tasks_rows.html`, `GET /tasks/rows` every 5 s, `POST /tasks/<id>/cancel` admin-only,
+  `hx-confirm`) and the duplicate-resolution status line (`plain_duplicates_resolving.html`). The old JSON endpoints
+  (`/ajax/emailstat`, `/ajax/canceltask`) stay for the legacy `tasks.html`/`table.js`. Next: book-list search and inline
+  edit, then bulk actions. Changes to `cps/static/` and templates need a Docker image rebuild.
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

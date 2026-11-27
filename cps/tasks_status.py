@@ -15,7 +15,7 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from babel.units import format_unit
-from flask import Blueprint, jsonify
+from flask import Blueprint, abort, jsonify, render_template
 from flask_babel import format_datetime
 from flask_babel import gettext as _
 from markupsafe import escape
@@ -46,11 +46,32 @@ def get_email_status_json():
     return jsonify(render_task_status(tasks))
 
 
+def _visible_tasks():
+    return render_task_status(WorkerThread.get_instance().tasks)
+
+
 @tasks.route("/tasks")
 @user_login_required
 def get_tasks_status():
     # if current user admin, show all email, otherwise only own emails
-    return render_title_template("plain_tasks.html", title=_("Tasks"), page="tasks")
+    return render_title_template("plain_tasks.html", title=_("Tasks"), page="tasks", tasks=_visible_tasks())
+
+
+@tasks.route("/tasks/rows")
+@user_login_required
+def task_rows():
+    """The task table body as an HTML fragment, polled by htmx. Same visibility rule as the page."""
+    return render_template("plain_tasks_rows.html", tasks=_visible_tasks())
+
+
+@tasks.route("/tasks/<int:task_id>/cancel", methods=["POST"])
+@user_login_required
+def cancel_task_row(task_id):
+    """Cancel a task and answer with the refreshed rows, so the button's htmx swap shows the result."""
+    if not current_user.role_admin():  # same rule as admin.cancel_task; admin.py imports this module's neighbours
+        abort(403)
+    WorkerThread.get_instance().end_task(task_id)
+    return render_template("plain_tasks_rows.html", tasks=_visible_tasks())
 
 
 # helper function to apply localize status information in tasklist entries
