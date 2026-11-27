@@ -89,6 +89,46 @@ and the period before the switch, when Flask's single loop was shared with the b
 `toolbarButton-viewsManagerToggle.svg` is requested ~90 times per 5 minutes and each 404 costs a Flask round trip, so
 shipping that file (or a Caddy-level 404 for it) would remove the last common Flask static hit.
 
+### `/read/<id>/pdf` (LIVE since 2026-11-27 ~21:28 WIB)
+
+The PDF.js viewer shell for the ANONYMOUS visitor (`src/reader.rs`). It renders the unchanged `cps/templates/readpdf.html`
+(compiled in with `include_str!`, so the template and the route cannot drift) and fills the same few Jinja values:
+the title, the signed `/files` URL (`/show/<id>/pdf` when the book has no PDF), the translated "PDF Reader", the
+`GOOGLE_SITE_VERIFICATION` meta, the Umami snippet, and the print/download buttons (the guest's download role). A request
+with any `Cookie` or `Authorization`, reverse-proxy login, a restricted custom column, Google Drive, guest browsing off,
+a guest without the viewer role, a book the guest cannot see, an unknown or non-numeric id, a trailing slash, any other
+format, a query error, or an `Accept-Language` this code cannot place exactly, is proxied to Flask unchanged. So
+logged-in readers keep their per-session behaviour (bookmarks, CSRF, per-user archive and filters), and no session
+cookie is decoded in Rust.
+
+The guest's role, language and tag filters are read FRESH on every request (`settings::load_pdf_reader`), not from the
+1 s settings cache the other routes use: this page's access depends on them, so a revocation applies to the next request.
+
+Language: Flask picks the translation with Werkzeug's `LanguageAccept` ordering, Babel's `Locale.parse` and
+`negotiate_locale` against the catalogs in `cps/translations`. Babel's CLDR data is not reimplemented. Instead
+`tools/gen_locale_table.py` asks the real Babel inside the app image what 5,016 tag shapes map to and writes
+`src/locale_table.txt`; `src/locale.rs` only parses the header and looks tags up. Regenerate the table when
+`cps/translations` or Babel changes (command in the script's docstring). Absent `Accept-Language` means English, as in
+Flask (64 of 292 production reader requests had none).
+
+Measured against live Flask (2026-11-27), Rust on a copy of `app.db`, the production image's own template and library:
+800 books (700 random PDFs, 40 without a PDF, 60 with `<`, `>`, `&`, quotes or backslashes in the title) across 7
+`Accept-Language` shapes: status, every header except `Date`, and the body hash identical, 0 differences. Two bugs the
+comparison found: Jinja's whitespace around block tags (the first version was 14 bytes short) and `tojson`, which
+writes every non-ASCII character as `\uXXXX` (30 titles with en dashes or the replacement character). 85 further cases
+(odd `Accept-Language` values, cookies, bad ids, other formats): identical apart from `Set-Cookie` (a fresh random
+session per Flask response, so two Flask answers differ too). In Chromium the real 127-page, 4.8 MB report opens and
+renders page 1 through Rust (1,096 ms with `id-ID`, the PDF itself served by the public site), with print and download
+buttons and the same 404 for the viewer's missing `toolbarButton-viewsManagerToggle.svg` as Flask.
+
+Live: `@rust_reader` in the production Caddyfile (`path_regexp ^/read/[0-9]+/pdf$`, Rust first and Flask as failover,
+same upstream list as `/files`), inside `@flask`, so the `@reader` no-store headers still apply. Only this exact shape is
+routed; `/read/<id>/epub` and everything else stay on Flask. Backup of the Caddyfile:
+`/home/devuser/backups/Caddyfile.pre-rust-reader.2026-11-27`; roll back by deleting the block (then `caddy reload`).
+First 3 minutes: 44 requests, all 200, Caddy-side p50 13 ms / p95 29 ms (Flask: p95 about 0.9 s), none reached Flask's
+access log. `readpdf.html` is compiled into the binary, so the Dockerfile copies it into the builder stage
+(`/app/cps/templates/`) and `build.rs` rebuilds on a template change; after a pdf.js upgrade, rerun the comparison.
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's

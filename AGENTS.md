@@ -672,6 +672,14 @@ Two live search systems (plus the legacy advanced-search form):
   neither). A wrong Caddy rule then fails loudly instead of serving a different file.
 - **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus
   `Cloudflare-CDN-Cache-Control: no-store`), so the edge never keeps an error that a later request should not see.
+- **`/read/<id>/pdf` has a Rust implementation for the anonymous visitor** (`rust/backend/src/reader.rs`, `locale.rs`,
+  2026-11-27): byte-identical to Flask on 800 real books and 7 `Accept-Language` shapes. LIVE since 2026-11-27 ~21:28 WIB
+  (`@rust_reader` in the production Caddyfile, backup `Caddyfile.pre-rust-reader.2026-11-27`; p50 13 ms vs Flask p95 0.9 s).
+  The vendored pdf.js is 6.5.438 (upgraded the same day for GHSA-hq66-cqwq-w95j). `readpdf.html` is compiled into the Rust
+  binary (Dockerfile copies it into the builder), so after editing it rerun the Flask-vs-Rust comparison.
+  Anything with a cookie or credential, and every case it cannot reproduce exactly, is proxied to Flask. The guest's role
+  and filters are read fresh per request (not through the 1 s settings cache). `locale_table.txt` is generated from the
+  app image's Babel by `rust/backend/tools/gen_locale_table.py`; regenerate it when `cps/translations` changes.
 - **`/static/*` has a Rust implementation** (`rust/backend/src/static_files.rs`, 2026-11-27) that matches Flask on 5,053
   comparisons over all 837 files of `cps/static` (headers and body, validators, ranges, odd paths) and serves about 3x
   the throughput. It is LIVE (since 2026-11-27, `@rust_static` in the production Caddyfile, Rust first with Flask as the
@@ -692,6 +700,11 @@ Two live search systems (plus the legacy advanced-search form):
   `cases.jsonl` is the recording, never edited by hand.
 
 ### Plain Flask UI (logged-in pages)
+- **LIVE since 2026-11-27** (image `calibre-web:plain-ui`, rollback `calibre-web:pre-plain-ui`; the earlier Rust `/static` image is
+  `calibre-web:rust-static`). It was checked by running the packaged image against copies of the sandbox databases: 20
+  logged-in pages answered 200 with the right titles and no template errors. Production itself was checked only for
+  `/login`, `/opds`, `/healthz/ready`, a cover thumbnail and an anonymous download (all 200/302) and a clean error log; no
+  admin session was used there, so the admin pages were not clicked through on the live data.
 - The Flask pages a logged-in user sees (login, book lists/search, book edit, profile and user editor, admin dashboard,
   config/database/email/scheduled tasks, tasks, duplicates, clippings, audit log) extend `cps/templates/plain_layout.html`
   and use ONE stylesheet, `cps/static/plain.css` (same neutral/red tokens as the Astro site). They load no Bootstrap
