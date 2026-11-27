@@ -197,6 +197,30 @@ SVG) identical, the only proxied ones the 8 `text/html` members. Live: `@rust_re
 ^/show/readium/[0-9]+/`, backup `Caddyfile.pre-readium.2026-11-27`), the EPUB reader renders and turns pages in
 Chromium with zero console errors, and Flask's access log shows only the cookie-bearing requests.
 
+### Flask session cookie (`src/session.rs`, LIVE 2026-11-27 ~00:5x WIB)
+
+The last Flask-served load was identity traffic: `/read/<id>/epub` 159, `/api/read/*` 112, readium 42 and `/download` 29
+requests in three minutes, all carrying a Flask `session` cookie. Rust now verifies that cookie itself instead of handing
+every cookie to Flask. It reproduces Flask's stock `SecureCookieSessionInterface`: `URLSafeTimedSerializer(secret,
+salt="cookie-session", serializer=TaggedJSONSerializer(), key_derivation="hmac", digest_method=sha1)`,
+i.e. `base64url(payload).base64url(timestamp).base64url(signature)` with the signature over the first two segments
+using `HMAC-SHA1(HMAC-SHA1(secret, salt), …)`, a 4-byte big-endian timestamp checked against Flask's 31-day
+`permanent_session_lifetime`, and a JSON payload that is zlib-compressed (marked by a leading `.` on the base64 TEXT)
+when that is shorter. Being named by the cookie is not being logged in: `cps.usermanagement.load_user` also needs a
+`user_session` row matching `(_id, _random)` and belonging to that user, and `session_row_matches` reproduces it
+(expiry is not checked there, so not here either).
+
+Rules: no `session` cookie, or a verified session without `_user_id` → the anonymous guest (Flask's empty session);
+a verified user with the revocation row → that user's own role, language and tag filters (`settings::load_access`);
+a cookie that does not verify, or any case this code cannot resolve → Flask. That last rule is deliberate: a user whose
+session Rust misreads must never receive the guest view of a book their own filters hide. `SECRET_KEY` overrides the
+stored key, `SECRET_KEY_FALLBACKS` is not modelled (unset in production), so an old-key cookie goes to Flask.
+
+Readium and both OCR routes now take `session::identify` instead of proxying every cookie. Verified against the app
+image's itsdangerous (byte-identical cookie decodes, a compressed and an uncompressed payload), a tampered cookie, an
+expired one, a revoked `user_session` row, and a user whose denied tag hides the book. Live: the EPUB reader renders
+with a real browser session, and only an unverifiable `session=garbage` still reaches Flask.
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's

@@ -443,9 +443,17 @@ Two live search systems (plus the legacy advanced-search form):
   `Caddyfile.pre-readium.2026-11-27`). Manifest/positions bytes equal Flask's (Python `json.dumps` shape: key order,
   `", "`/`": "` separators, `ensure_ascii`, `repr` floats; 600 pairs identical over 300 EPUBs, 558 resource members
   identical). Clean XHTML/SVG members are served with their exact bytes; a member that would be sanitised
-  (`<script>`, `on*`, `srcdoc`, `javascript:`), every `text/html` member, unparsable markup, any cookie-bearing request
-  and the guest ACL gates are proxied to Flask, whose lxml rewrite cannot be reproduced byte for byte. Changing the
-  manifest shape means changing `pyjson.rs` and `readium.rs` together, then rerunning the Flask comparison.
+  (`<script>`, `on*`, `srcdoc`, `javascript:`), every `text/html` member, unparsable markup, a cookie that does not
+  verify and the guest ACL gates are proxied to Flask, whose lxml rewrite cannot be reproduced byte for byte; a verified
+  cookie is served with that user's filters (see the session-cookie bullet). Changing the manifest shape means changing
+  `pyjson.rs` and `readium.rs` together, then rerunning the Flask comparison.
+- **Flask's session cookie is verified in Rust** (`rust/backend/src/session.rs`, 2026-11-27 ~00:5x WIB):
+  `URLSafeTimedSerializer(secret, salt="cookie-session", key_derivation="hmac", digest_method=sha1)` with the payload
+  zlib-compressed (leading `.` on the base64 text) and the 31-day age check, plus the `user_session` row check from
+  `cps.usermanagement.load_user`. Readium and both OCR routes use it for logged-in users; a cookie that does not verify,
+  `SECRET_KEY_FALLBACKS`, or any unresolved case is proxied to Flask rather than answered as a guest. Changing the
+  signer, the salt, the session lifetime or the revocation columns means changing Flask and Rust together and rerunning
+  the itsdangerous comparison (`SESSION_TEST_COOKIE` in `tests/files.rs`).
 - `/read/<id>/epub` (`templates/read.html` + `static/js/reading/epub.js`) renders EPUBs with the
   [Readium ts-toolkit](https://github.com/readium/ts-toolkit) `EpubNavigator`; it replaced epubjs/epub-ts. The
   navigator does not read zips: `cps/readium.py` builds a Readium Web Publication Manifest and a position list
