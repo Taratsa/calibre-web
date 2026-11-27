@@ -131,6 +131,38 @@ access log. `readpdf.html` is compiled into the binary, so the Dockerfile copies
 Rechecked against the DEPLOYED binary on pdf.js 6.5.438 (2026-11-27): 800 books, status, every header except `Date` and
 the body hash identical to Flask, 0 differences.
 
+### `/api/read/<id>/ocr/status[/<fmt>]` (ported 2026-11-27, NOT live: needs an image rebuild and a Caddy block)
+
+Answers ONE case: the anonymous visitor asks for a book whose OCR text is already cached, and the reply is Flask's
+`{"available":true,"state":null}\n` (`application/json`, `Vary: Cookie`, no `Cache-Control`). Everything else is proxied to
+Flask unchanged, because it needs state Rust does not have: a PDF miss asks the in-memory job queue (`ocr_job_state`),
+an EPUB miss extracts the text inline, a file under the PDF format that is not a PDF raises, and every 404 is Flask's own
+page. So this route never says `available: false` and never invents an error. Cookie, `Authorization`, reverse-proxy
+login, a restricted column, Google Drive, guest browsing off, a guest without the viewer role, a guest with archived
+books and a trailing slash all go to Flask; the guest's role and archive rows are read fresh per request.
+
+The hit test rebuilds the cache file name Flask writes: `<book id>-<sha256 of json.dumps({version, book_id, format, name,
+size, mtime_ns, extract_version|layout_version}, sort_keys=True, separators=(",", ":"))>.json`, with the file's size and
+mtime in nanoseconds, then checks the file parses as `status: ready` with the four fields `_load_cache` needs. The version
+numbers (`CACHE_VERSION`, `EPUB_EXTRACT_VERSION`, `PDF_LAYOUT_VERSION`) are read out of `cps/ocr_service.py` by `build.rs`,
+so a bump there reaches the binary at the next build (the Dockerfile copies that file into the builder); without it every
+book would silently be proxied. `src/pyjson.rs` is Python's `json.dumps` string escaping (`ensure_ascii`, DEL as
+`\u007f`): the reader's `tojson` had left DEL literal, which no real title has (0 of 24.5k in the library) but Python does
+not do.
+
+Measured against live Flask (2026-11-27), Rust on a copy of `app.db` with the real OCR cache read-only: 1,200 random
+book/format pairs, 1,186 answered by Rust and identical to Flask in status, every header except `Date` and body; the 14
+Rust did not answer are Flask's (`available:false` for 11 PDFs not yet OCR'd, 404 for 3 books whose PDF is not a PDF).
+Edge shapes (`PDF`, `Pdf`, `00004644`, `%34644`, `?x=1`, `%70df`) match Flask; a trailing slash, `txt` and an unknown book
+reach Flask. 800 books of `/read/<id>/pdf` were rechecked on the refactored binary: 0 differences. Traffic that justifies
+it: 195 requests in 71 s from `pustaka-astro` (the book page asks per format), 28 ms each in Flask's single gevent loop.
+Astro sends no cookie from the server-side fetch unless the visitor has one, so the visitor's own requests hit this route.
+
+Rollout, not done: image rebuild, then a Caddy block `path_regexp ^/api/read/[0-9]+/ocr/status(/(pdf|epub))?$` with the
+same Rust-first upstream list as `/files`, ahead of the generic `@flask` handler. Astro reaches Flask directly at
+`BACKEND_URL=http://calibre-web-automated:8083` and bypasses Caddy, so the book page's own call does NOT benefit until
+`BACKEND_URL` points at `:8084` (Rust proxies every miss to Flask).
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's
