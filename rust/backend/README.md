@@ -57,6 +57,23 @@ id, and any book/format/file that is missing, hidden or has an unusable name or 
 
 Not ported: `/series_cover/*` (series cache semantics), everything else.
 
+Measured (2026-11-27, against copies of the live `app.db`, never the live file):
+
+- Redirect: headers and the 513-byte body identical to Flask for book 4644; the file name and percent-encoding
+  matched Flask's `get_valid_filename` + werkzeug quoting for 1,800 real books (1,500 random, 300 with special
+  characters), 0 mismatches.
+- Concurrency: 1,500 Rust `/download` requests (4 clients) next to 1,500 Flask-style writers (3 threads, same SQL, 30 s
+  busy timeout, foreign keys on) on one WAL database: 0 failures and 0 lost counts (expected +3,000, got +3,000);
+  Rust latency p50 10 ms, p99 336 ms, max 851 ms while sharing the write lock.
+- Umami: the `file-download` payload and `User-Agent` equal what `_track_download_analytics` sends (`file` is
+  `data.name` + format); `DNT: 1` sends nothing in both.
+
+Rollout (not done; Caddy still sends `/download/*` to Flask): set `RUST_BACKEND_ENABLED=true`, then route ONLY
+`/download/*` to `127.0.0.1:8084` for a canary (the `@downloads` matcher in the production Caddyfile; the Rust side
+needs the container's port reachable from Caddy, which today only publishes 8083). Watch the `downloads` totals
+against the access log, and roll back by removing that one route. A request Rust cannot answer itself is proxied to
+Flask, so the worst case is a slower download, not a lost count.
+
 ### Behaviour that is deliberately the same as Flask
 
 - **Metadata embedding.** With `config_embed_metadata` and a Calibre binaries directory (production has both), a
