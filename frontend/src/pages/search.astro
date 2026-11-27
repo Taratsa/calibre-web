@@ -2,7 +2,8 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import BookGrid from '~/components/BookGrid.astro';
 import SearchTabs from '~/components/SearchTabs.astro';
-import { localeLanguageName } from '~/data';
+import { getAllBooks, localeLanguageName } from '~/data';
+import type { BookSummary } from '~/data/types';
 import {
   SORT_KEYS,
   hasAdvancedCriteria,
@@ -11,6 +12,19 @@ import {
   type SearchRequest,
   type SortKey,
 } from '~/utils/search';
+import { FulltextUnavailable, fulltextConfigured, searchFulltext, type FulltextHit } from '~/utils/fulltext';
+import { highlight, where } from '~/utils/fulltext-snippet';
+import { authorPath } from '~/utils/author-url';
+import { bookPath } from '~/utils/book-url';
+import Cover from '~/components/Cover.astro';
+
+// Old Calibre-Web links, bots and OpenSearch descriptions send ?query=; this page reads ?q=.
+if (Astro.url.searchParams.has('query') && !Astro.url.searchParams.has('q')) {
+  const next = new URLSearchParams(Astro.url.searchParams);
+  next.set('q', next.get('query') ?? '');
+  next.delete('query');
+  return Astro.redirect(`/search/?${next.toString()}`, 301);
+}
 
 const PAGE_SIZE = 48;
 const params = Astro.url.searchParams;
@@ -92,6 +106,31 @@ if (searched) {
 
 const title = request.q ? `Cari: ${request.q}` : searched ? 'Pencarian lanjutan' : 'Cari';
 const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' : code === 'eng' ? 'en' : code === 'msa' ? 'ms' : code);
+
+// When the catalog (titles, authors, categories) has few answers for a plain query, show the best passages from inside
+// the books too, so a search for a name or a phrase that lives in the text is not a dead end. Manticore being down or
+// slow only hides this block; the catalog result never depends on it.
+const TEXT_FALLBACK_BELOW = 5;
+const TEXT_FALLBACK_HITS = 3;
+const plainQuery = Boolean(request.q) && !hasAdvancedCriteria(request);
+let textHits: Array<{ hit: FulltextHit; book: BookSummary }> = [];
+let textTotal = 0;
+if (plainQuery && page === 1 && matches.length < TEXT_FALLBACK_BELOW && fulltextConfigured()) {
+  try {
+    const found = await searchFulltext(request.q!, 1);
+    if (found) {
+      textTotal = found.total;
+      const booksById = new Map(getAllBooks().map((book) => [book.id, book]));
+      textHits = found.hits.flatMap((hit) => {
+        const book = booksById.get(hit.bookId);
+        return book ? [{ hit, book }] : [];
+      }).slice(0, TEXT_FALLBACK_HITS);
+    }
+  } catch (error) {
+    if (!(error instanceof FulltextUnavailable)) throw error;
+    console.error(`[fulltext] ${error.message}`);
+  }
+}
 ---
 
 <BaseLayout title={title} description="Cari buku di Pustaka Taratsa." noindex>
@@ -196,6 +235,42 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
       </nav>
     )}
 
+    {textHits.length > 0 && (
+      <section class="search-passages" aria-labelledby="search-passages-title">
+        <h2 id="search-passages-title">Juga ditemukan di dalam teks buku</h2>
+        <ol class="search-passages__list">
+          {textHits.map(({ hit, book }) => (
+            <li class="search-passage">
+              <a class="search-passage__cover" href={`${bookPath(book)}/`} tabindex="-1" aria-hidden="true">
+                <Cover image={book.cover_url.replace(/\?.*$/, '')} alt="" width={72} height={108} loading="lazy" />
+              </a>
+              <div>
+                <h3 class="search-passage__title"><a href={`${bookPath(book)}/`} set:html={book.title.trim()} /></h3>
+                {book.authors.length > 0 && (
+                  <p class="search-passage__authors">
+                    {book.authors.map((author, index) => (
+                      <>{index > 0 && ', '}<a href={`${authorPath(author)}/`}>{author.name}</a></>
+                    ))}
+                  </p>
+                )}
+                <p class="search-passage__snippet" set:html={highlight(hit.snippet)} />
+                <p class="search-passage__meta">
+                  <span>{where(hit.progress)}</span>
+                  <span aria-hidden="true">·</span>
+                  <a href={`/read/${book.id}/ocr/${hit.format}/`}>Baca teks ({hit.format.toUpperCase()})</a>
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        {textTotal > textHits.length && (
+          <p class="search-passages__more">
+            <a href={`/search/text/?q=${encodeURIComponent(request.q)}`}>Lihat {formatCount.format(textTotal)} buku yang memuat "{request.q}"</a>
+          </p>
+        )}
+      </section>
+    )}
+
     {searched && request.q && (
       <p class="search-crosslink">
         Mencari kata di dalam isi buku? <a href={`/search/text/?q=${encodeURIComponent(request.q)}`}>Cari "{request.q}" di dalam teks</a>
@@ -215,6 +290,22 @@ const languageName = (code: string) => localeLanguageName(code === 'ind' ? 'id' 
 </BaseLayout>
 
 <style>
+  .search-passages { margin: 1.75rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
+  .search-passages h2 { margin: 0 0 0.9rem; font-size: 1rem; font-weight: 600; }
+  .search-passages__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  .search-passage { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.85rem; align-items: start; }
+  .search-passage__cover :global(img) { width: 100% !important; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; background: var(--surface-3); box-shadow: 0 1px 3px var(--shadow-sm); }
+  .search-passage__title { margin: 0; font-size: 0.95rem; line-height: 1.3; font-weight: 600; }
+  .search-passage__title a { color: var(--fg); text-decoration: none; }
+  .search-passage__title a:hover { text-decoration: underline; }
+  .search-passage__authors { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .search-passage__authors a { color: var(--muted); text-decoration: none; }
+  .search-passage__snippet { margin: 0.35rem 0 0; font-size: 0.86rem; line-height: 1.55; overflow-wrap: anywhere; }
+  .search-passage__snippet :global(mark) { background: var(--mark-bg); color: var(--mark-fg); border-radius: 2px; padding: 0 0.1em; font-weight: 600; }
+  .search-passage__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem 0.5rem; margin: 0.35rem 0 0; font-size: 0.78rem; color: var(--muted); }
+  .search-passage__meta a { display: inline-flex; align-items: center; min-height: 32px; color: var(--fg); }
+  .search-passages__more { margin: 0.9rem 0 0; font-size: 0.9rem; }
+  .search-passages__more a { display: inline-flex; align-items: center; min-height: 40px; color: var(--fg); }
   .search-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; }
   .search-crosslink { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--muted-strong); }
   .search-crosslink a { display: inline-flex; align-items: center; min-height: 40px; color: var(--fg); }

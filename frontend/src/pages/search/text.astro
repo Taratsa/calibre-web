@@ -5,6 +5,7 @@ import SearchTabs from '~/components/SearchTabs.astro';
 import { getAllBooks } from '~/data';
 import { authorPath } from '~/utils/author-url';
 import { bookPath } from '~/utils/book-url';
+import { highlight, where } from '~/utils/fulltext-snippet';
 import {
   FulltextUnavailable,
   MAX_PAGES,
@@ -63,14 +64,6 @@ function hrefFor(next: { q?: string; format?: string | null; page?: number }): s
   const text = target.toString();
   return `/search/text/${text ? `?${text}` : ''}`;
 }
-
-const escapeHtml = (value: string) =>
-  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// The snippet is plain text with [ ] around matches (the book text itself may contain brackets, so those that are
-// not Manticore's are rare but possible: the worst case is an extra <mark> around a bracketed word).
-const highlight = (snippet: string) =>
-  escapeHtml(snippet).replace(/\[([^\[\]]+)\]/g, '<mark>$1</mark>').replace(/^\s*\.\.\.\s*/, '… ').replace(/\s*\.\.\.\s*$/, ' …');
-const where = (progress: number) => (progress <= 2 ? 'awal buku' : progress >= 98 ? 'akhir buku' : `sekitar ${progress}% dari buku`);
 
 const formatLabels = { epub: 'EPUB', pdf: 'PDF' } as const;
 const examples = ['reforma agraria', '"hak asasi manusia"', 'buruh mogok -komunis', 'masyarakat adat'];
