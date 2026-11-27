@@ -5,6 +5,7 @@
 pub mod accept;
 pub mod cover;
 pub mod download;
+pub mod epub_page;
 pub mod export;
 pub mod filename;
 pub mod files;

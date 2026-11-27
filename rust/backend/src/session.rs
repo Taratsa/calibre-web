@@ -18,8 +18,9 @@ use crate::settings::{self, Access};
 use flate2::read::ZlibDecoder;
 use hmac::{Hmac, KeyInit, Mac};
 use serde_json::Value;
-use sha1::Sha1;
+use sha1::{Digest, Sha1};
 use std::io::Read;
+use std::io::Write;
 use std::path::Path;
 use std::sync::Arc;
 
@@ -70,6 +71,113 @@ pub fn decode(cookie: &str, keys: &[Vec<u8>], now: u64) -> Option<Value> {
         raw
     };
     serde_json::from_slice(&raw).ok()
+}
+
+/// URL-safe base64 without padding, as itsdangerous writes it.
+fn base64_encode(data: &[u8]) -> String {
+    const ALPHABET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+    let mut out = String::with_capacity(data.len().div_ceil(3) * 4);
+    for chunk in data.chunks(3) {
+        let b = [
+            chunk[0],
+            *chunk.get(1).unwrap_or(&0),
+            *chunk.get(2).unwrap_or(&0),
+        ];
+        let n = u32::from(b[0]) << 16 | u32::from(b[1]) << 8 | u32::from(b[2]);
+        let chars = [
+            ALPHABET[(n >> 18) as usize & 63],
+            ALPHABET[(n >> 12) as usize & 63],
+            ALPHABET[(n >> 6) as usize & 63],
+            ALPHABET[n as usize & 63],
+        ];
+        for ch in &chars[..chunk.len() + 1] {
+            out.push(*ch as char);
+        }
+    }
+    out
+}
+
+/// How itsdangerous derives the signing key from the secret and the salt. The session cookie asks for `hmac`; a
+/// serializer left on its defaults (Flask-WTF's CSRF token) uses `django-concat`.
+#[derive(Clone, Copy)]
+enum Derivation {
+    Hmac,
+    DjangoConcat,
+}
+
+/// `itsdangerous.URLSafeTimedSerializer(secret, salt=..., key_derivation=...).dumps(payload)` for raw JSON bytes: the
+/// same `base64url(possibly zlib-payload).base64url(timestamp).base64url(signature)` shape [`decode`] verifies.
+fn sign(payload: &[u8], secret: &[u8], salt: &[u8], derivation: Derivation, issued: u64) -> String {
+    let mut encoder = flate2::write::ZlibEncoder::new(Vec::new(), flate2::Compression::default());
+    encoder.write_all(payload).expect("writing to a Vec");
+    let compressed = encoder.finish().expect("in-memory zlib");
+    let body = if compressed.len() < payload.len().saturating_sub(1) {
+        format!(".{}", base64_encode(&compressed))
+    } else {
+        base64_encode(payload)
+    };
+    // `int_to_bytes`: the timestamp's big-endian bytes without leading zeros (4 bytes until 2106, not always 8).
+    let issued_bytes = issued.to_be_bytes();
+    let first = issued_bytes
+        .iter()
+        .position(|b| *b != 0)
+        .unwrap_or(issued_bytes.len() - 1);
+    let timestamp = base64_encode(&issued_bytes[first..]);
+    let key = match derivation {
+        Derivation::Hmac => derive_key_for(secret, salt),
+        Derivation::DjangoConcat => {
+            let mut hasher = Sha1::new();
+            hasher.update(salt);
+            hasher.update(b"signer");
+            hasher.update(secret);
+            hasher.finalize().to_vec()
+        }
+    };
+    let mut mac = HmacSha1::new_from_slice(&key).expect("HMAC accepts any key length");
+    mac.update(format!("{body}.{timestamp}").as_bytes());
+    format!(
+        "{body}.{timestamp}.{}",
+        base64_encode(&mac.finalize().into_bytes())
+    )
+}
+
+/// `flask_wtf.generate_csrf`: `URLSafeTimedSerializer(secret, salt="wtf-csrf-token").dumps(session["csrf_token"])`,
+/// a serializer left on itsdangerous' defaults (so `django-concat` key derivation, not the session's `hmac`).
+pub fn csrf_token(secret: &[u8], value: &str, issued: u64) -> String {
+    sign(
+        dumps_string(value).as_bytes(),
+        secret,
+        b"wtf-csrf-token",
+        Derivation::DjangoConcat,
+        issued,
+    )
+}
+
+/// What Flask stores for a page that only called `csrf_token()`: `{"csrf_token": "<40 hex>"}`, serialized by
+/// `TaggedJSONSerializer` with `json.dumps` defaults.
+pub fn new_session_cookie(secret: &[u8], csrf: &str, issued: u64) -> String {
+    // Flask's `TaggedJSONSerializer.dumps` uses `json.dumps(..., separators=(",", ":"))`: compact, no spaces.
+    let payload = format!("{{\"csrf_token\":{}}}", dumps_string(csrf));
+    sign(payload.as_bytes(), secret, SALT, Derivation::Hmac, issued)
+}
+
+/// `hashlib.sha1(os.urandom(64)).hexdigest()`, the value Flask puts in the session.
+pub fn new_csrf_value() -> String {
+    let random = format!("{}{}", uuid::Uuid::new_v4(), uuid::Uuid::new_v4());
+    let digest = Sha1::digest(random.as_bytes());
+    digest.iter().map(|byte| format!("{byte:02x}")).collect()
+}
+
+/// The page reader's own `tojson`-free JSON string escaping (kept local so this module has no page dependency).
+fn dumps_string(value: &str) -> String {
+    crate::pyjson::dumps_string(value)
+}
+
+/// `derive_key` for an arbitrary salt (`cookie-session` for the session, `wtf-csrf-token` for CSRF).
+fn derive_key_for(secret: &[u8], salt: &[u8]) -> Vec<u8> {
+    let mut mac = HmacSha1::new_from_slice(secret).expect("HMAC accepts any key length");
+    mac.update(salt);
+    mac.finalize().into_bytes().to_vec()
 }
 
 /// itsdangerous' default key derivation for `Signer(salt=...)`: `HMAC-SHA1(secret, salt)`.
@@ -195,6 +303,36 @@ async fn anonymous(state: &Arc<AppState>) -> Result<Who, Unverified> {
         .map_err(|_| Unverified)?
         .ok_or(Unverified)?;
     Ok(Who::Anonymous(access))
+}
+
+/// The CSRF value of an ANONYMOUS session, decoded from the request's cookie: `Ok(None)` when there is no cookie (or
+/// none yet), `Err` for a cookie that does not verify and for a session that names a logged-in user (Flask's page
+/// there carries per-user bookmarks).
+pub fn anonymous_csrf(
+    headers: &axum::http::HeaderMap,
+    secret: &[u8],
+    now: u64,
+) -> Result<Option<String>, Unverified> {
+    let cookie = headers
+        .get(axum::http::header::COOKIE)
+        .and_then(|value| value.to_str().ok())
+        .unwrap_or("");
+    let Some(session) = cookie
+        .split(';')
+        .filter_map(|pair| pair.trim().split_once('='))
+        .find(|(name, _)| *name == "session")
+        .map(|(_, value)| value)
+    else {
+        return Ok(None);
+    };
+    let payload = decode(session, &[secret.to_vec()], now).ok_or(Unverified)?;
+    if payload.get("_user_id").is_some() {
+        return Err(Unverified);
+    }
+    Ok(payload
+        .get("csrf_token")
+        .and_then(Value::as_str)
+        .map(str::to_owned))
 }
 
 /// `cps.usermanagement.load_user`: a `user_session` row by `(random, session_key)` (or by `random` alone when the

@@ -118,6 +118,26 @@ pub fn find_visible_format(
     })
     .optional()
 }
+/// The visible book's title (the EPUB reader page shows it and needs nothing else from the row).
+pub fn find_visible_title(
+    metadata_db: &Path,
+    book_id: i64,
+    language: &str,
+    denied: &str,
+    allowed: &str,
+) -> rusqlite::Result<Option<String>> {
+    let conn = open_read_only(metadata_db)?;
+    let (filter, extra) = visibility_clause(language, denied, allowed);
+    let sql = format!("SELECT b.title FROM books b WHERE b.id = ?1{filter} LIMIT 1");
+    let mut values: Vec<rusqlite::types::Value> = vec![book_id.into()];
+    values.extend(extra);
+    conn.query_row(&sql, rusqlite::params_from_iter(values), |row| {
+        row.get::<_, Option<String>>(0)
+    })
+    .optional()
+    .map(|found| found.flatten())
+}
+
 /// Data used by the PDF reader shell. Keep the book row even when it has no PDF: Flask still renders the reader and
 /// points it at `/show/<id>/pdf`, which then answers the ordinary missing-file response.
 #[derive(Debug, Clone)]

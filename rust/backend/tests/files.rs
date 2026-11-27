@@ -1444,3 +1444,108 @@ fn session_cookie_from_itsdangerous_decodes() {
     assert_eq!(decoded["_id"], "sid");
     assert_eq!(decoded["_random"], payload);
 }
+
+// ── EPUB reader shell (guest) ──────────────────────────────────────────────────────────────────────────────────────
+#[tokio::test]
+async fn epub_page_mints_a_flask_session_and_csrf_token_for_a_guest() {
+    let f = fixture(false);
+    reader_state(&f);
+    Connection::open(f._dir.path().join("library/metadata.db"))
+        .unwrap()
+        .execute(
+            "INSERT INTO data VALUES (2, 7, 'EPUB', 0, 'Cafe Muller')",
+            [],
+        )
+        .unwrap();
+    write_epub(&f, false);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let (status, headers, body) = on(&f, "/read/7/epub", &[("Accept-Language", "de")]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers["x-robots-tag"], "noindex");
+    let cookie = headers[header::SET_COOKIE].to_str().unwrap().to_owned();
+    assert!(
+        cookie.starts_with("session=")
+            && cookie.contains("HttpOnly")
+            && cookie.contains("SameSite=Lax"),
+        "{cookie}"
+    );
+    let text = String::from_utf8(body).unwrap();
+    assert!(!text.contains("{{") && !text.contains("{%"));
+    assert!(
+        text.contains("| Café Müller</title>"),
+        "the title is escaped text, not JSON"
+    );
+    assert!(
+        text.contains("Einstellungen"),
+        "the German catalog translated the labels"
+    );
+    assert!(text.contains("useBookmarks: false"));
+    // The cookie it set decodes with the very key that signed it, and holds only the CSRF value.
+    let value = cookie
+        .trim_start_matches("session=")
+        .split(';')
+        .next()
+        .unwrap();
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap()
+        .as_secs();
+    let payload =
+        taratsa_backend::session::decode(value, &[KEY.to_vec()], now).expect("cookie verifies");
+    assert_eq!(payload.as_object().unwrap().len(), 1);
+    assert_eq!(payload["csrf_token"].as_str().unwrap().len(), 40);
+    // A returning visitor reuses that CSRF value and gets no new cookie.
+    let (status, headers, _) = on(
+        &f,
+        "/read/7/epub",
+        &[("Cookie", &format!("session={value}"))],
+    )
+    .await;
+    assert_eq!(status, StatusCode::OK);
+    assert!(headers.get(header::SET_COOKIE).is_none());
+}
+
+#[tokio::test]
+async fn epub_page_leaves_users_and_odd_cookies_to_flask() {
+    let f = fixture(false);
+    reader_state(&f);
+    Connection::open(f._dir.path().join("library/metadata.db"))
+        .unwrap()
+        .execute(
+            "INSERT INTO data VALUES (2, 7, 'EPUB', 0, 'Cafe Muller')",
+            [],
+        )
+        .unwrap();
+    write_epub(&f, false);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    // 502 = reached Flask (down in the fixture).
+    assert_eq!(
+        on(&f, "/read/7/epub", &[("Cookie", "session=garbage")])
+            .await
+            .0,
+        StatusCode::BAD_GATEWAY
+    );
+    let user = session_cookie(3);
+    assert_eq!(
+        on(
+            &f,
+            "/read/7/epub",
+            &[("Cookie", &format!("session={user}"))]
+        )
+        .await
+        .0,
+        StatusCode::BAD_GATEWAY
+    );
+    assert_eq!(
+        on(&f, "/read/99/epub", &[]).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+    assert_eq!(
+        on(&f, "/read/7/kepub", &[]).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+    assert_eq!(
+        on(&f, "/read/7/epub/", &[]).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+}

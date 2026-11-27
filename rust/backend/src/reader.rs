@@ -41,8 +41,19 @@ async fn pdf_reader(
         .map_or_else(|| uri.0.path().to_owned(), |v| v.as_str().to_owned());
     // Flask's `<int:book_id>` converter accepts only ASCII digits, and the format is matched exactly (`pdf`).
     let plain_digits = !book_id.is_empty() && book_id.bytes().all(|b| b.is_ascii_digit());
-    let book_id = match book_id.parse::<i64>() {
-        Ok(id) if plain_digits && format == "pdf" && !uri.0.path().ends_with('/') => id,
+    let parsed = match book_id.parse::<i64>() {
+        Ok(id) if plain_digits && !uri.0.path().ends_with('/') => id,
+        _ => return proxy::fallback_reconstructed(state, &path, method, headers).await,
+    };
+    // The other reader shell this service owns: `read.html` for an anonymous visitor (see `epub_page`).
+    if format == "epub" {
+        if let Some(response) = crate::epub_page::render(&state, parsed, &format, &headers).await {
+            return response;
+        }
+        return proxy::fallback_reconstructed(state, &path, method, headers).await;
+    }
+    let book_id = match (format.as_str(), parsed) {
+        ("pdf", id) => id,
         _ => return proxy::fallback_reconstructed(state, &path, method, headers).await,
     };
     let settings = match state.settings().await {
@@ -173,7 +184,7 @@ async fn pdf_reader(
 }
 
 /// `url_for('static', filename=...)` for the fixed set of assets the template names.
-fn replace_static_urls(page: String) -> String {
+pub(crate) fn replace_static_urls(page: String) -> String {
     let mut page = page;
     for name in [
         "favicon.ico",
@@ -198,7 +209,12 @@ fn replace_static_urls(page: String) -> String {
 
 /// Replaces every `opening ... closing` span (the Jinja `{% if %}` blocks whose condition is false) with
 /// `replacement`: the blank line Jinja leaves where the tag lines were.
-fn remove_blocks(input: &str, opening: &str, closing: &str, replacement: &str) -> String {
+pub(crate) fn remove_blocks(
+    input: &str,
+    opening: &str,
+    closing: &str,
+    replacement: &str,
+) -> String {
     let mut out = String::with_capacity(input.len());
     let mut rest = input;
     while let Some(start) = rest.find(opening) {
@@ -217,7 +233,7 @@ fn remove_blocks(input: &str, opening: &str, closing: &str, replacement: &str) -
 }
 
 /// `markupsafe.escape`.
-fn escape_html(value: &str) -> String {
+pub(crate) fn escape_html(value: &str) -> String {
     let mut out = String::with_capacity(value.len());
     for ch in value.chars() {
         match ch {
