@@ -22,9 +22,10 @@ backend answers. Nothing moves until its Rust version has been compared against 
 | `/health`, `/healthz`, `/readyz`, `/healthz/live`, `/healthz/ready` | `src/health.rs` | same paths and payload keys as `cps/health.py`; `process` names the Rust runtime |
 | `/files/<id>/<fmt>/<version>/<sig>[/<name>]` | `src/files.rs` | signed, immutable, never counts a download; `Range`/`ETag`/`Last-Modified` from `tower-http` |
 | `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
+| `/series_cover/<id>[/<resolution>]` | `src/cover.rs` | the cover of the series' first book with a cover (no visibility filter, like Flask); same fast path and fallbacks as `/cover`; stays on Flask while `app.db` holds any series thumbnail row |
 | `/download/<id>/<fmt>[/<name>]` | `src/download.rs` | anonymous only: counts the download in `app.db` and 302s to the signed `/files` URL; identity and failure cases proxy to Flask |
 
-`/series_cover/*` and everything else remain Flask. The cover route serves an existing local source
+Everything else remains Flask. The cover route serves an existing local source
 JPEG or prebuilt WebP, or an existing Flask thumbnail-cache file. On cache miss (including requested WebP without
 a prebuilt image), Rust proxies the original request to Flask; Flask generates/converts the asset and fills the
 shared cache. Generated placeholder cards are still served by Flask. The security headers of `add_security_headers`
@@ -41,6 +42,16 @@ are applied here to every response (`src/security.rs`).
   Werkzeug-compatible path Adler-32 ETags, Last-Modified, Range, HEAD and conditional requests.
   `/cover_thumb` defaults to `sm`; `/cover` does not.
 
+### `/series_cover/<id>[/<resolution>]`
+
+Flask looks for a series thumbnail (`thumbnail.type = 2`, made only by the optional `TaskGenerateSeriesThumbnails`), and
+otherwise serves the cover of the first book of the series that has one (`get_series_thumbnail_on_failure`, no
+visibility filter and no `ORDER BY`, i.e. the lowest `books_series_link` row). Production has no type-2 rows, so Rust
+answers it like `/cover/<book id>`. If such rows ever appear, `Settings.series_thumbnails` sends every series cover to
+Flask again, so a generated series thumbnail is never bypassed. Checked against live Flask for all 23 series plus an
+unknown id at original/`og`/`sm`/`md`/`lg`/unknown resolution, WebP and JPEG (288 requests): status, headers and body
+identical, as are HEAD, `Range` and `If-None-Match`. The route is NOT yet sent to Rust by Caddy.
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's
@@ -55,7 +66,7 @@ twice: `Cookie`/`Authorization`, reverse-proxy login, hidden anonymous browsing,
 a guest without the download role, a Kindle User-Agent, a missing `User-Agent` (Flask answers 500), a non-numeric
 id, and any book/format/file that is missing, hidden or has an unusable name or timestamp (so every 404 is Flask's).
 
-Not ported: `/series_cover/*` (series cache semantics), everything else.
+Not ported: everything else.
 
 Measured (2026-11-27, against copies of the live `app.db`, never the live file):
 

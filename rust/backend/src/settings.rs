@@ -26,6 +26,8 @@ pub struct Settings {
     pub guest_language: String,
     pub guest_denied_tags: String,
     pub guest_allowed_tags: String,
+    /// Any series thumbnail rows in `app.db` (type 2); see `load`.
+    pub series_thumbnails: bool,
     /// `flask_settings.flask_session_key`: the HMAC key of signed URLs.
     pub session_key: Vec<u8>,
 }
@@ -86,6 +88,7 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
                 guest_language: String::new(),
                 guest_denied_tags: String::new(),
                 guest_allowed_tags: String::new(),
+                series_thumbnails: true,
                 session_key: Vec::new(),
             })
         },
@@ -106,6 +109,13 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
     settings.guest_language = guest_language;
     settings.guest_denied_tags = guest_denied_tags;
     settings.guest_allowed_tags = guest_allowed_tags;
+    // `TaskGenerateSeriesThumbnails` (optional, scheduled) stores series thumbnails Flask serves first; while any
+    // exist, series covers stay on Flask. A failed query counts as "exist" (the safe side).
+    settings.series_thumbnails = conn.query_row(
+        "SELECT EXISTS (SELECT 1 FROM thumbnail WHERE type = 2)",
+        [],
+        |row| row.get::<_, i64>(0),
+    ) != Ok(0);
     settings.session_key = conn
         .query_row(
             "SELECT flask_session_key FROM flask_settings LIMIT 1",

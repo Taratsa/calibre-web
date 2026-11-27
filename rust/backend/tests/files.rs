@@ -37,9 +37,11 @@ fn fixture(embed_metadata: bool) -> Fixture {
          CREATE TABLE languages (id INTEGER PRIMARY KEY, lang_code TEXT);
          CREATE TABLE books_tags_link (id INTEGER PRIMARY KEY, book INTEGER, tag INTEGER);
          CREATE TABLE tags (id INTEGER PRIMARY KEY, name TEXT);
+         CREATE TABLE books_series_link (id INTEGER PRIMARY KEY, book INTEGER, series INTEGER);
          INSERT INTO books VALUES (7, 'Café Müller', 'Author/Cafe (7)', '2023-10-27 07:56:53.123456', 1);
          INSERT INTO authors VALUES (1, 'First Author'), (2, 'Second Author');
-         INSERT INTO books_authors_link (book, author) VALUES (7, 2), (7, 1);",
+         INSERT INTO books_authors_link (book, author) VALUES (7, 2), (7, 1);
+         INSERT INTO books_series_link (book, series) VALUES (7, 3);",
     )
     .unwrap();
     meta.execute(
@@ -63,6 +65,7 @@ fn fixture(embed_metadata: bool) -> Fixture {
             PRIMARY KEY (id), FOREIGN KEY(user_id) REFERENCES user (id));
          CREATE UNIQUE INDEX uq_downloads_user_book ON downloads (user_id, book_id);
          CREATE TABLE archived_book (id INTEGER PRIMARY KEY, user_id INTEGER, book_id INTEGER, is_archived INTEGER);
+         CREATE TABLE thumbnail (id INTEGER PRIMARY KEY, entity_id INTEGER, type SMALLINT, resolution SMALLINT);
          CREATE TABLE flask_settings (id INTEGER PRIMARY KEY, flask_session_key BLOB);",
     )
     .unwrap();
@@ -550,4 +553,44 @@ async fn a_failed_counter_write_never_fails_the_download() {
     let (status, _, _) = download(&f, "/download/7/pdf", &[]).await;
     assert_eq!(status, StatusCode::FOUND);
     assert!(hits(&f).is_empty());
+}
+
+#[tokio::test]
+async fn series_cover_is_its_first_book_with_a_cover() {
+    let f = fixture(false);
+    // series 3 contains book 7: the original JPEG, no visibility filter, same headers as /cover/7
+    let (status, headers, body) = get(&f, "/series_cover/3", None).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, b"jpeg-fixture");
+    let (_, book_headers, _) = get(&f, "/cover/7", None).await;
+    assert_eq!(headers[header::ETAG], book_headers[header::ETAG]);
+    assert_eq!(headers[header::CONTENT_TYPE], "image/jpeg");
+
+    // an unknown series is the generic cover, like an unknown book
+    let (status, _, body) = get(&f, "/series_cover/99", None).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, b"generic");
+
+    // a thumbnail miss and a cookie go to Flask (502 here: the fixture's Flask is down)
+    let (status, _, _) = get(&f, "/series_cover/3/sm", None).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+}
+
+#[tokio::test]
+async fn series_cover_stays_on_flask_while_series_thumbnails_exist() {
+    let f = fixture(false);
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute(
+            "INSERT INTO thumbnail (entity_id, type, resolution) VALUES (3, 2, 1)",
+            [],
+        )
+        .unwrap();
+    // the settings cache lives 1 s; wait it out
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    let (status, _, _) = get(&f, "/series_cover/3", None).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    // book covers are unaffected
+    let (status, _, _) = get(&f, "/cover/7", None).await;
+    assert_eq!(status, StatusCode::OK);
 }

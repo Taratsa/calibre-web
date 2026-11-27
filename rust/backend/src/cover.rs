@@ -47,6 +47,14 @@ pub fn routes() -> Router<Arc<AppState>> {
             "/cover_thumb/{book_id}/{resolution}",
             get(thumb_resolved).head(thumb_resolved),
         )
+        .route(
+            "/series_cover/{series_id}",
+            get(series_basic).head(series_basic),
+        )
+        .route(
+            "/series_cover/{series_id}/{resolution}",
+            get(series_resolved).head(series_resolved),
+        )
 }
 
 async fn cover_basic(
@@ -58,7 +66,7 @@ async fn cover_basic(
 ) -> Response {
     handle(
         state.0,
-        book_id,
+        Subject::Book(book_id),
         None,
         CoverRoute::Cover,
         uri.0,
@@ -77,7 +85,7 @@ async fn cover_resolved(
 ) -> Response {
     handle(
         state.0,
-        book_id,
+        Subject::Book(book_id),
         Some(resolution),
         CoverRoute::Cover,
         uri.0,
@@ -96,7 +104,7 @@ async fn thumb_basic(
 ) -> Response {
     handle(
         state.0,
-        book_id,
+        Subject::Book(book_id),
         None,
         CoverRoute::Thumbnail,
         uri.0,
@@ -115,7 +123,7 @@ async fn thumb_resolved(
 ) -> Response {
     handle(
         state.0,
-        book_id,
+        Subject::Book(book_id),
         Some(resolution),
         CoverRoute::Thumbnail,
         uri.0,
@@ -125,9 +133,54 @@ async fn thumb_resolved(
     .await
 }
 
+async fn series_basic(
+    state: State<Arc<AppState>>,
+    Path(series_id): Path<i64>,
+    uri: OriginalUri,
+    method: Method,
+    headers: HeaderMap,
+) -> Response {
+    handle(
+        state.0,
+        Subject::Series(series_id),
+        None,
+        CoverRoute::Cover,
+        uri.0,
+        method,
+        headers,
+    )
+    .await
+}
+
+async fn series_resolved(
+    state: State<Arc<AppState>>,
+    Path((series_id, resolution)): Path<(i64, String)>,
+    uri: OriginalUri,
+    method: Method,
+    headers: HeaderMap,
+) -> Response {
+    handle(
+        state.0,
+        Subject::Series(series_id),
+        Some(resolution),
+        CoverRoute::Cover,
+        uri.0,
+        method,
+        headers,
+    )
+    .await
+}
+
+/// What the URL names: a book, or a series (whose cover is its first book's).
+#[derive(Debug, Clone, Copy)]
+enum Subject {
+    Book(i64),
+    Series(i64),
+}
+
 async fn handle(
     state: Arc<AppState>,
-    book_id: i64,
+    subject: Subject,
     requested_resolution: Option<String>,
     route: CoverRoute,
     uri: Uri,
@@ -151,6 +204,7 @@ async fn handle(
         || (matches!(route, CoverRoute::Cover) && !settings.anonymous_browse)
         || settings.use_google_drive
         || settings.restricted_column != 0
+        || (matches!(subject, Subject::Series(_)) && settings.series_thumbnails)
     {
         return proxy::fallback_reconstructed(state, &request_path, method, headers).await;
     }
@@ -158,8 +212,11 @@ async fn handle(
     let language = settings.guest_language.clone();
     let denied = settings.guest_denied_tags.clone();
     let allowed = settings.guest_allowed_tags.clone();
-    let found = tokio::task::spawn_blocking(move || {
-        find_visible_cover(&metadata_db, book_id, &language, &denied, &allowed)
+    let found = tokio::task::spawn_blocking(move || match subject {
+        Subject::Book(book_id) => {
+            find_visible_cover(&metadata_db, book_id, &language, &denied, &allowed)
+        }
+        Subject::Series(series_id) => find_series_cover(&metadata_db, series_id),
     })
     .await;
     let book = match found {
@@ -186,7 +243,7 @@ async fn handle(
         return proxy::fallback_reconstructed(state, &request_path, method, headers).await;
     }
     if let Some(resolution) = selected {
-        let stem = format!("cover_{book_id}_r{resolution}");
+        let stem = format!("cover_{}_r{resolution}", book.id);
         let extension = if accept_webp { "webp" } else { "jpg" };
         let image_path = state
             .cache_directory
@@ -219,6 +276,7 @@ async fn handle(
 
 #[derive(Debug)]
 struct Cover {
+    id: i64,
     path: String,
     has_cover: bool,
 }
@@ -232,16 +290,32 @@ fn find_visible_cover(
 ) -> rusqlite::Result<Option<Cover>> {
     let conn = crate::settings::open_read_only(metadata_db)?;
     let (filter, extra) = crate::library::visibility_clause(language, denied, allowed);
-    let sql = format!("SELECT b.path, b.has_cover FROM books b WHERE b.id = ?1{filter}");
+    let sql = format!("SELECT b.id, b.path, b.has_cover FROM books b WHERE b.id = ?1{filter}");
     let mut values = vec![rusqlite::types::Value::Integer(book_id)];
     values.extend(extra);
-    conn.query_row(&sql, rusqlite::params_from_iter(values), |row| {
-        Ok(Cover {
-            path: row.get(0)?,
-            has_cover: row.get::<_, i64>(1)? != 0,
-        })
-    })
+    conn.query_row(&sql, rusqlite::params_from_iter(values), cover_row)
+        .optional()
+}
+
+/// `get_series_thumbnail_on_failure`: the first book of the series that has a cover. Flask applies NO visibility
+/// filter here (and no `ORDER BY`: SQLite walks `books_series_link_aidx`, i.e. the lowest link row first).
+fn find_series_cover(metadata_db: &FsPath, series_id: i64) -> rusqlite::Result<Option<Cover>> {
+    let conn = crate::settings::open_read_only(metadata_db)?;
+    conn.query_row(
+        "SELECT b.id, b.path, b.has_cover FROM books_series_link l JOIN books b ON b.id = l.book
+         WHERE l.series = ?1 AND b.has_cover = 1 ORDER BY l.id LIMIT 1",
+        [series_id],
+        cover_row,
+    )
     .optional()
+}
+
+fn cover_row(row: &rusqlite::Row<'_>) -> rusqlite::Result<Cover> {
+    Ok(Cover {
+        id: row.get(0)?,
+        path: row.get(1)?,
+        has_cover: row.get::<_, i64>(2)? != 0,
+    })
 }
 
 async fn generic_cover(
