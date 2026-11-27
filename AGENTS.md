@@ -200,6 +200,19 @@ Two live search systems (plus the legacy advanced-search form):
 - Results are plain SSR HTML (no client JS); identical queries are CDN-cached (`s-maxage=300`,
   `frontend/src/middleware.ts`)
 - The dead client-side typeahead (`frontend/src/utils/liveSearch.ts`) was removed; do not reintroduce a second index
+- `?query=` (Calibre-Web's parameter, still sent by old links and bots) 301s to `?q=` inside `search.astro`, keeping every
+  other parameter. On the legacy host `old-pustaka.taratsa.id` the production Caddyfile redirects `/search` and
+  `/search/stored` (with or without a query string) to `https://pustaka.taratsa.id/search/`; before that, Flask answered
+  each crawled query twice (302 to `/search/stored`, then the search itself): 1,246 of 1,513 requests in 29 minutes on that
+  host, mostly from one cloud network. After it, Flask logged 0 `GET /search*` in 3 minutes. Roll back by deleting the
+  `@oldsearch`/`@oldsearchbare` block (backup `Caddyfile.pre-old-search.2026-11-27`). The Cloudflare side was left alone.
+- **Passages from inside the books on the catalog page** (2026-11-27): a plain query (no advanced criteria, page 1) with
+  fewer than 5 catalog matches also asks Manticore (`searchFulltext`, the same call as `/search/text/`) and shows the
+  best 3 passages under "Juga ditemukan di dalam teks buku", with a link to the full list ("Lihat N buku"). A Manticore
+  failure only hides the block (logged as `[fulltext]`); the catalog result never waits on it beyond the 6 s timeout of
+  `fulltext.ts`. The rendering helpers (`highlight`, `where`) live in `frontend/src/utils/fulltext-snippet.ts`, shared
+  with `search/text.astro`. Checked live: "pembebasan nasional rakyat tertindas" has 0 catalog hits and shows 3 passages
+  plus "Lihat 24 buku" (the same 24 as `/search/text/`); "Keluarga Besar" (7 catalog hits) and a nonsense word show none.
 
 ### Backend search (OPDS, `/ajax/listbooks`, legacy UI)
 - `cps/db.py:search_query()` keeps the `ILIKE '%term%'` OR-query as the
