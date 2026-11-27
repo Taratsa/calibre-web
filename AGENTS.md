@@ -701,12 +701,17 @@ Two live search systems (plus the legacy advanced-search form):
   Anything with a cookie or credential, and every case it cannot reproduce exactly, is proxied to Flask. The guest's role
   and filters are read fresh per request (not through the 1 s settings cache). `locale_table.txt` is generated from the
   app image's Babel by `rust/backend/tools/gen_locale_table.py`; regenerate it when `cps/translations` changes.
-- **`/api/read/<id>/ocr/status[/<fmt>]` has a Rust implementation for the anonymous visitor** (`rust/backend/src/ocr_status.rs`,
-  `pyjson.rs`, 2026-11-27): answers only the cache hit (`{"available":true,"state":null}`) and proxies every miss, 404 and
-  odd shape to Flask. Identical to Flask on 1,186 of 1,200 real pairs. NOT live yet. The cache file name is rebuilt from the
-  file's size/mtime and the version constants that `build.rs` reads out of `cps/ocr_service.py`: after changing
-  `CACHE_VERSION`, `EPUB_EXTRACT_VERSION` or `PDF_LAYOUT_VERSION` there, rebuild the image or every status falls through to
-  Flask. The Astro book page calls Flask directly (`BACKEND_URL`), not Caddy, so it needs `BACKEND_URL` on `:8084` to benefit.
+- **`/api/read/<id>/ocr[/<fmt>]` and `/api/read/<id>/ocr/status[/<fmt>]` have a Rust implementation for the anonymous
+  visitor** (`rust/backend/src/ocr_status.rs`, `pyjson.rs`, 2026-11-27): on an OCR cache hit they answer Flask's status
+  object and its `jsonify` document body (`private, no-store`) and proxy every miss (202 job state, EPUB extraction),
+  404 and odd shape to Flask. Identical to Flask on 1,186 of 1,200 real pairs; the largest document (3.4 MB) answers in
+  4-10 ms. LIVE since 2026-11-27 ~22:35 WIB (`@rust_ocrstatus`; backup `Caddyfile.pre-ocr-document.2026-11-27`), with
+  Astro's `BACKEND_URL=http://calibre-web-automated:8084` so the book page and text reader call Rust directly. The cache
+  file name is rebuilt from the file's size/mtime and the version constants that `build.rs` reads out of
+  `cps/ocr_service.py`: after changing `CACHE_VERSION`, `EPUB_EXTRACT_VERSION` or `PDF_LAYOUT_VERSION` there, rebuild the
+  image or every request falls through to Flask. **Ordering:** point `BACKEND_URL` at `:8084` only AFTER the Rust routes
+  exist; Rust has no catch-all, so an unported path answers its own 404 (that made both OCR text pages 404 for ~15 min on
+  2026-11-27).
 - **`/static/*` has a Rust implementation** (`rust/backend/src/static_files.rs`, 2026-11-27) that matches Flask on 5,053
   comparisons over all 837 files of `cps/static` (headers and body, validators, ranges, odd paths) and serves about 3x
   the throughput. It is LIVE (since 2026-11-27, `@rust_static` in the production Caddyfile, Rust first with Flask as the

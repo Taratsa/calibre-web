@@ -131,7 +131,7 @@ access log. `readpdf.html` is compiled into the binary, so the Dockerfile copies
 Rechecked against the DEPLOYED binary on pdf.js 6.5.438 (2026-11-27): 800 books, status, every header except `Date` and
 the body hash identical to Flask, 0 differences.
 
-### `/api/read/<id>/ocr/status[/<fmt>]` (ported 2026-11-27, NOT live: needs an image rebuild and a Caddy block)
+### `/api/read/<id>/ocr[/<fmt>]` and `.../ocr/status[/<fmt>]` (LIVE since 2026-11-27 ~22:35 WIB)
 
 Answers ONE case: the anonymous visitor asks for a book whose OCR text is already cached, and the reply is Flask's
 `{"available":true,"state":null}\n` (`application/json`, `Vary: Cookie`, no `Cache-Control`). Everything else is proxied to
@@ -158,10 +158,22 @@ reach Flask. 800 books of `/read/<id>/pdf` were rechecked on the refactored bina
 it: 195 requests in 71 s from `pustaka-astro` (the book page asks per format), 28 ms each in Flask's single gevent loop.
 Astro sends no cookie from the server-side fetch unless the visitor has one, so the visitor's own requests hit this route.
 
-Rollout, not done: image rebuild, then a Caddy block `path_regexp ^/api/read/[0-9]+/ocr/status(/(pdf|epub))?$` with the
-same Rust-first upstream list as `/files`, ahead of the generic `@flask` handler. Astro reaches Flask directly at
-`BACKEND_URL=http://calibre-web-automated:8083` and bypasses Caddy, so the book page's own call does NOT benefit until
-`BACKEND_URL` points at `:8084` (Rust proxies every miss to Flask).
+Live: `@rust_ocrstatus` in the production Caddyfile (`path_regexp ^/api/read/[0-9]+/ocr(/status)?(/(pdf|epub))?$`, Rust
+first and Flask as failover, inside `@flask` so the `@reader` no-store headers apply; backup
+`Caddyfile.pre-ocr-document.2026-11-27`), the image rebuilt from `6319bbf8c`, and the Astro service's
+`BACKEND_URL=http://calibre-web-automated:8084` (compose), so the book page and the text reader call Rust directly.
+Verified live: the cached document and status answer from Rust, unknown books and EPUB misses reach Flask (which
+extracts and caches, so the next call is a hit), and both Astro text pages (`/read/<id>/ocr/<fmt>/`) answer 200.
+
+The document route (`GET /api/read/<id>/ocr[/<fmt>]`) adds Flask's `jsonify` body on the same cache hit:
+`{"book":{"id":N,"title":"…"},"document":{"markdown_html":"…","page_count":N,"pages_routed_to_ocr":N,
+"processing_time_ms":N}}\n` with keys sorted, `ensure_ascii` string escaping (`pyjson.rs`) and `Cache-Control:
+private, no-store`; every miss (202 with the job state, or a 404) stays Flask's. Compared with live Flask on the same
+1,200 pairs: 1,186 answered by Rust, 0 differences, the largest (3.4 MB) in 4-10 ms.
+
+Ordering trap worth remembering: pointing Astro at `:8084` BEFORE this route existed made Rust answer its own 404 for
+`/api/read/<id>/ocr/<fmt>` (no catch-all exists), so both OCR text pages returned 404 for about 15 minutes
+(2026-11-27 22:2x WIB). Add the Rust route first, then switch `BACKEND_URL`; a 404 from Rust is not proxied.
 
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
