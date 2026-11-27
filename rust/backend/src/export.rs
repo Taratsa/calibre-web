@@ -43,11 +43,39 @@ pub struct Request<'a> {
     pub book_format: &'a str,
 }
 
-/// The staged file, or `None` when the export failed; the caller then serves the unmodified file, like Flask.
-pub async fn export(request: Request<'_>) -> Option<Staged> {
-    let dir = staging_dir()
-        .inspect_err(|e| tracing::error!("cannot create the staging dir: {e}"))
-        .ok()?;
+/// What an export attempt came to.
+pub enum Outcome {
+    /// The file with the book's metadata written in.
+    Staged(Staged),
+    /// `calibredb` could not take the library lock (another calibre process, e.g. Flask's own export, holds it) even
+    /// after retries. The stored file is NOT the same bytes as an export, so the caller must not serve it as if it were.
+    Busy,
+    /// The export failed for another reason; Flask serves the stored file then too.
+    Failed,
+}
+
+/// `calibredb` writes this when another calibre program holds the library.
+const LOCKED: &str = "Another calibre program";
+/// Tries and pause between them when the library is locked (about 6 s in total).
+const LOCK_ATTEMPTS: u32 = 12;
+const LOCK_RETRY: Duration = Duration::from_millis(500);
+
+pub async fn export(request: Request<'_>) -> Outcome {
+    for attempt in 1..=LOCK_ATTEMPTS {
+        match export_once(&request).await {
+            Outcome::Busy if attempt < LOCK_ATTEMPTS => tokio::time::sleep(LOCK_RETRY).await,
+            other => return other,
+        }
+    }
+    Outcome::Busy
+}
+
+async fn export_once(request: &Request<'_>) -> Outcome {
+    let Ok(dir) =
+        staging_dir().inspect_err(|e| tracing::error!("cannot create the staging dir: {e}"))
+    else {
+        return Outcome::Failed;
+    };
     let stem = Uuid::new_v4().to_string();
     let mut command = Command::new(request.calibredb);
     command
@@ -70,18 +98,23 @@ pub async fn export(request: Request<'_>) -> Option<Staged> {
         Ok(Ok(output)) => output,
         Ok(Err(error)) => {
             tracing::error!("calibredb could not start: {error}");
-            return None;
+            return Outcome::Failed;
         }
         Err(_) => {
             tracing::error!("calibredb export of book {} timed out", request.book_id);
-            return None;
+            return Outcome::Failed;
         }
     };
-    if !output.stderr.is_empty() {
-        tracing::error!(
-            "Metadata embedder encountered an error: {}",
-            String::from_utf8_lossy(&output.stderr)
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    if stderr.contains(LOCKED) {
+        tracing::warn!(
+            "calibre library locked while exporting book {}",
+            request.book_id
         );
+        return Outcome::Busy;
+    }
+    if !output.stderr.is_empty() {
+        tracing::error!("Metadata embedder encountered an error: {stderr}");
     }
     let staged = dir.join(format!("{stem}.{}", request.book_format));
     if !output.status.success() {
@@ -90,7 +123,7 @@ pub async fn export(request: Request<'_>) -> Option<Staged> {
             request.book_id,
             output.status
         );
-        return None;
+        return Outcome::Failed;
     }
     if !staged.is_file() {
         tracing::warn!(
@@ -98,7 +131,7 @@ pub async fn export(request: Request<'_>) -> Option<Staged> {
             request.book_id,
             staged.display()
         );
-        return None;
+        return Outcome::Failed;
     }
-    Some(Staged { path: staged })
+    Outcome::Staged(Staged { path: staged })
 }

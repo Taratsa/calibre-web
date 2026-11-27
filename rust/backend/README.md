@@ -102,11 +102,22 @@ Rollback: restore the previous Caddyfile (`/home/devuser/backups/Caddyfile.pre-r
 `RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. Previous images: `calibre-web:pre-rust-covers`,
 `calibre-web:pre-rust-download`. Rust logs to `/config/rust-backend.log` (errors only unless `RUST_LOG=info`).
 
+### Concurrent exports (found 2026-11-27, `/files` rolled back once because of it)
+
+`calibredb export` takes an exclusive lock on the library: with `MAX_EXPORTS=4`, four simultaneous `/files` requests gave
+ONE embedded file and THREE stored files ("Another calibre program ... is running"), and the stored bytes (7,533,766 for
+book 7) differ from an export (7,584,735) under a URL the CDN keeps for a year. Flask never shows this because its
+requests are served one by one. Now: one export at a time; a "library locked" answer is retried 12 times, 500 ms
+apart; if the library is still locked the request goes to Flask instead of being served the stored file; any other
+export failure serves the stored file, like Flask. Tested live: 4 and 8 simultaneous requests to Rust, and 4 to Rust plus
+4 to Flask at the same moment, 20 of 20 responses embedded. A residual risk remains where Flask's own export holds the
+lock for longer than the retries (about 6 s); that request is then answered by Flask, never by a stored file.
+
 ### Behaviour that is deliberately the same as Flask
 
 - **Metadata embedding.** With `config_embed_metadata` and a Calibre binaries directory (production has both), a
   `/files` response is a fresh `calibredb export` of the book, not the stored file; `src/export.rs` runs the same
-  command, bounded by `MAX_EXPORTS` (default 4) and a 5 minute timeout, and serves the stored file if the export
+  command, bounded by `MAX_EXPORTS` (default 1) and a 5 minute timeout, and serves the stored file if the export
   fails. A staged copy is deleted as soon as the response has the file open.
 - **Stale links.** A version that no longer matches 302s to `/download/<id>/<fmt>` with `private, no-store`.
 - **First author** in the file name is the lowest author id (what SQLAlchemy's lazy load returns; checked against
@@ -131,7 +142,7 @@ APP_DB_PATH=/config/app.db LISTEN=127.0.0.1:8084 RUST_LOG=info ./taratsa_backend
 |---|---|---|
 | `APP_DB_PATH` | `/config/app.db` | Flask's app database |
 | `LISTEN` | `127.0.0.1:8084` | bind address |
-| `MAX_EXPORTS` | `4` | concurrent `calibredb export` processes |
+| `MAX_EXPORTS` | `1` | concurrent `calibredb export` processes (calibre locks the library, so more only fail on each other) |
 | `SECRET_KEY` | none | overrides the stored signing key, like Flask |
 | `ONION_LOCATION` | none | adds the `Onion-Location` header |
 | `UMAMI_URL` | `https://umami.kenadera.org/api/send` | Umami endpoint of the `/download` event; `off` disables it |

@@ -180,22 +180,33 @@ async fn serve_inner(
     if book_format != "kepub" && settings.embed_metadata {
         if let Some(dir) = settings.binaries_dir.as_deref() {
             let calibredb = std::path::Path::new(dir).join("calibredb");
-            let _permit = state
+            let permit = state
                 .exports
                 .acquire()
                 .await
                 .expect("the export semaphore is never closed");
             let metadata_db = settings.calibre_split.then(|| settings.metadata_db());
-            staged = export::export(export::Request {
+            match export::export(export::Request {
                 calibredb: &calibredb,
                 library: settings.book_path(),
                 metadata_db: metadata_db.as_deref(),
                 book_id,
                 book_format: &book_format,
             })
-            .await;
-            if let Some(staged) = &staged {
-                path = staged.path.clone();
+            .await
+            {
+                export::Outcome::Staged(file) => {
+                    path = file.path.clone();
+                    staged = Some(file);
+                }
+                // Another calibre process holds the library: the stored file would be different bytes under a URL the
+                // CDN keeps for a year, so Flask (which queues its own exports) answers this one.
+                export::Outcome::Busy => {
+                    drop(permit);
+                    return to_flask(state, &path_and_query, method, headers).await;
+                }
+                // Flask serves the stored file when the export fails for any other reason.
+                export::Outcome::Failed => {}
             }
         }
     } else if book_format == "kepub" && settings.embed_metadata && settings.kepubify_configured {
