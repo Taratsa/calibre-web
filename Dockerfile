@@ -44,6 +44,8 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
 ENV PATH=/usr/local/cargo/bin:${PATH}
 COPY rust/ /app/rust/
+# `rust/backend/src/reader.rs` embeds this template with include_str!, and from `src/` it sits at `/app/cps/templates`.
+COPY cps/templates/readpdf.html /app/cps/templates/readpdf.html
 RUN /lsiopy/bin/pip install --no-cache-dir maturin && \
     cd /app/rust/taratsa_text && \
     /lsiopy/bin/maturin build --release --locked --out /tmp/wheels && \
