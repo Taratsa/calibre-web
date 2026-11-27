@@ -66,6 +66,7 @@ try:
 except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, backref, relationship, scoped_session, sessionmaker
+from sqlalchemy.pool import NullPool
 from werkzeug.security import generate_password_hash
 
 from . import constants, logger
@@ -1000,7 +1001,11 @@ def create_admin_user(_session):
 
 def init_db_thread():
     global app_DB_path
-    engine = create_engine(f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS})
+    # NullPool: a task keeps its engine for as long as the worker lists the task, and a pooled engine would hold
+    # app.db and app.db-wal open for all of that time (4,095 descriptors after ~2,000 uploads, 2026-11-27).
+    engine = create_engine(
+        f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS}, poolclass=NullPool
+    )
 
     Session = scoped_session(sessionmaker())
     Session.configure(bind=engine)
@@ -1076,7 +1081,10 @@ def password_change(user_credentials=None):
 
 
 def get_new_session_instance():
-    new_engine = create_engine(f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS})
+    # NullPool: see init_db_thread. Every upload queues a thumbnail task that calls this once.
+    new_engine = create_engine(
+        f"sqlite:///{app_DB_path}", echo=False, connect_args={"timeout": _SQLITE_BUSY_SECONDS}, poolclass=NullPool
+    )
     new_session = scoped_session(sessionmaker())
     new_session.configure(bind=new_engine)
 
