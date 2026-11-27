@@ -674,8 +674,8 @@ Two live search systems (plus the legacy advanced-search form):
   `Cloudflare-CDN-Cache-Control: no-store`), so the edge never keeps an error that a later request should not see.
 - **`/static/*` has a Rust implementation** (`rust/backend/src/static_files.rs`, 2026-11-27) that matches Flask on 5,053
   comparisons over all 837 files of `cps/static` (headers and body, validators, ranges, odd paths) and serves about 3x
-  the throughput. It is NOT live: it needs an image rebuild and the `deploy/caddy-static.patch` block in the production
-  Caddyfile. Anything it cannot reproduce (misses, odd paths, unknown types, other methods, 412/416) is proxied to Flask.
+  the throughput. It is LIVE (since 2026-11-27, `@rust_static` in the production Caddyfile, Rust first with Flask as the
+  upstream fallback). Anything it cannot reproduce (misses, odd paths, unknown types, other methods, 412/416) is proxied to Flask.
 - **Cover routes** (`/cover/*`, `/cover_thumb/*`) have a Rust fast path for anonymous, unfiltered local libraries:
   it reads existing local source JPEG/prebuilt WebP and Flask thumbnail-cache files. Cookies, Authorization,
   reverse-proxy auth, hidden anonymous browsing, restricted columns and Google Drive still go to Flask. Missing

@@ -53,7 +53,7 @@ Flask again, so a generated series thumbnail is never bypassed. Checked against 
 unknown id at original/`og`/`sm`/`md`/`lg`/unknown resolution, WebP and JPEG (288 requests): status, headers and body
 identical, as are HEAD, `Range` and `If-None-Match`. The route is NOT yet sent to Rust by Caddy.
 
-### `/static/<path>` (ported 2026-11-27, NOT yet sent to Rust by Caddy)
+### `/static/<path>` (LIVE since 2026-11-27 ~18:29 WIB)
 
 Flask's static view (`send_from_directory` over `cps/static`; `cps/cache_buster.py` only strips the `?q=<hash>` query).
 It was the largest Flask-served family by request count in the Caddy log (3,539 css + 1,119 js + 958 locale + 255 wasm
@@ -77,8 +77,17 @@ css/js/font/svg/png: Flask 97 req/s (p50 44 ms, p95 124 ms, max 2,045 ms), Rust 
 The 540 `/static/css/libs/images/toolbarButton-viewsManagerToggle.svg` 404s in the log are a file the image does not
 ship; they stay Flask's 404.
 
-Rollout: `deploy/caddy-static.patch` (a `handle` block with the same Rust-first `lb_policy first` upstream list as
-`/files`). Needs the image rebuilt with this binary first, then `caddy reload`. Rollback: delete the block.
+Rollout: image `calibre-web:rust-static` (previous image `calibre-web:pre-rust-static`), then `deploy/caddy-static.patch`
+applied to the production Caddyfile (a `handle` block with the same Rust-first `lb_policy first` upstream list as `/files`;
+backup `/home/devuser/backups/Caddyfile.pre-rust-static.2026-11-27`) and `caddy reload`. Rollback: delete the block and
+reload. The same 5,022-request comparison, run again from `caddy_net` against the DEPLOYED binary on port 8084 and Flask on
+8083, found 0 differences.
+
+Live (first minutes): the Flask-served requests of that family are now answered by Rust, p50 8 ms for 304s and 28 ms for
+200s. The slow tail in the Caddy log (about 2 s) is the requests Rust hands to Flask (misses: Flask renders its HTML 404)
+and the period before the switch, when Flask's single loop was shared with the bulk import. A real finding: the missing
+`toolbarButton-viewsManagerToggle.svg` is requested ~90 times per 5 minutes and each 404 costs a Flask round trip, so
+shipping that file (or a Caddy-level 404 for it) would remove the last common Flask static hit.
 
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
