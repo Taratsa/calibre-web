@@ -61,7 +61,10 @@ impl AppState {
             proxy_url: env("FLASK_BACKEND_URL").unwrap_or_else(|| "http://127.0.0.1:8083".into()),
             proxy_client: reqwest::Client::builder()
                 .connect_timeout(Duration::from_secs(2))
-                .timeout(Duration::from_secs(20))
+                // Not `.timeout()`: that bounds the WHOLE response, so a Flask answer that is merely slow (its single
+                // gevent loop answers covers in 13-24 s at p95-p99 under load) became a 502 here, where Caddy talking
+                // to Flask directly would have waited. A read timeout only fires when Flask stops sending.
+                .read_timeout(Duration::from_secs(120))
                 .build()
                 .expect("valid proxy client configuration"),
             cache_directory: env("CACHE_DIRECTORY")
