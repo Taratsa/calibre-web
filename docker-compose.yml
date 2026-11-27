@@ -64,7 +64,7 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
       - NODE_ENV=production
-      - BACKEND_URL=http://calibre-web-automated:8083
+      - BACKEND_URL=http://calibre-web-automated:8084
       - MANTICORE_URL=http://manticore:9308
     restart: unless-stopped
     networks:

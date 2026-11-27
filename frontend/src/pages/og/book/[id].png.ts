@@ -3,6 +3,8 @@ import { getAllBooks } from '~/data';
 import { bookByPathSegment } from '~/utils/book-url';
 import { fetchCoverDataUri, renderBookOgImage } from '~/utils/og-image';
 
+// The cover is cheap (Rust answers a cached one in about 5 ms); the 5 s budget below is for rendering the PNG, so the
+// fetch gets its own short abort instead of sharing the render's controller.
 const BACKEND_URL = process.env.BACKEND_URL || 'http://calibre-web-automated:8083';
 
 export const prerender = false;
@@ -15,12 +17,14 @@ export const GET: APIRoute = async ({ params, request }) => {
   const book = match && getAllBooks().find((candidate) => candidate.id === match.id);
   if (!book || segment !== book.slug) return new Response(null, { status: 404 });
 
+  const coverSignal = AbortSignal.timeout(3000);
+
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
 
   try {
     const coverDataUri = book.cover_url.startsWith('/cover')
-      ? await fetchCoverDataUri(book.cover_url, BACKEND_URL, controller.signal)
+      ? await fetchCoverDataUri(book.cover_url, BACKEND_URL, coverSignal)
       : null;
     const image = await renderBookOgImage(book, coverDataUri);
 
