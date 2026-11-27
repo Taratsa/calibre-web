@@ -14,6 +14,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 import os
+import time
 from uuid import uuid4
 
 from . import config, logger
@@ -22,6 +23,11 @@ from .file_helper import get_temp_dir
 from .subproc_wrapper import process_open
 
 log = logger.create()
+
+# calibredb's stderr when another calibre process (calibre-server, the Rust backend's export, ...) holds the library.
+_LOCK_MESSAGE = "Another calibre program"
+_LOCK_ATTEMPTS = 12
+_LOCK_RETRY_SECONDS = 0.5
 
 
 def do_calibre_export(book_id, book_format):
@@ -49,8 +55,15 @@ def do_calibre_export(book_id, book_format):
             f"{temp_file_name}",
             str(book_id),
         ]
-        p = process_open(opf_command, quotes, my_env)
-        _, err = p.communicate()
+        # `calibredb` takes an exclusive lock on the library. The Rust backend (rust/backend) runs its own exports
+        # next to this process, and a request that collides with one used to get the unmodified stored file (a
+        # different file than an export) and, on /files, have it cached for a year. Wait for the lock instead.
+        for attempt in range(_LOCK_ATTEMPTS):
+            p = process_open(opf_command, quotes, my_env)
+            _, err = p.communicate()
+            if _LOCK_MESSAGE not in (err or "") or attempt == _LOCK_ATTEMPTS - 1:
+                break
+            time.sleep(_LOCK_RETRY_SECONDS)
         if err:
             log.error("Metadata embedder encountered an error: %s", err)
         if p.returncode != 0:

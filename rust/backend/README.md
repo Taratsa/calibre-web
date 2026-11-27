@@ -104,14 +104,19 @@ Rollback: restore the previous Caddyfile (`/home/devuser/backups/Caddyfile.pre-r
 
 ### Concurrent exports (found 2026-11-27, `/files` rolled back once because of it)
 
-`calibredb export` takes an exclusive lock on the library: with `MAX_EXPORTS=4`, four simultaneous `/files` requests gave
-ONE embedded file and THREE stored files ("Another calibre program ... is running"), and the stored bytes (7,533,766 for
-book 7) differ from an export (7,584,735) under a URL the CDN keeps for a year. Flask never shows this because its
-requests are served one by one. Now: one export at a time; a "library locked" answer is retried 12 times, 500 ms
-apart; if the library is still locked the request goes to Flask instead of being served the stored file; any other
-export failure serves the stored file, like Flask. Tested live: 4 and 8 simultaneous requests to Rust, and 4 to Rust plus
-4 to Flask at the same moment, 20 of 20 responses embedded. A residual risk remains where Flask's own export holds the
-lock for longer than the retries (about 6 s); that request is then answered by Flask, never by a stored file.
+`calibredb export` takes an exclusive lock on the library, so two exports can never overlap. With `MAX_EXPORTS=4`, four
+simultaneous `/files` requests to Rust gave ONE embedded file and THREE stored files ("Another calibre program ...
+is running"), and the stored bytes (7,533,766 for book 7) differ from an export (7,584,735) under a URL the CDN keeps
+for a year. Flask alone never shows this (it serves requests one by one). Rust now exports one at a time, retries a
+"library locked" answer 12 times (500 ms apart), and hands the request to Flask instead of serving the stored file when
+the library is still locked; any other export failure serves the stored file, like Flask.
+
+That made Rust correct on its own (18 of 18 simultaneous Rust requests embedded, in three rounds), but not safe
+TOGETHER with Flask: with 6 requests to Rust and 3 to Flask at the same instant, the Rust ones all embedded and Flask
+returned the stored file for 2 of its 3, because Flask did not retry when Rust held the lock. Two exporters on one
+library is the real defect, so `do_calibre_export()` (`cps/embed_helper.py`, also used by mail and convert) now waits
+for the lock the same way (12 tries, 500 ms apart) instead of falling through to the stored file. Flask's loop is not
+monkey-patched, so that sleep blocks it for as long as it waits; the export itself already blocked it the same way.
 
 ### Behaviour that is deliberately the same as Flask
 
