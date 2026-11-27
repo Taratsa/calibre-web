@@ -66,7 +66,8 @@ fn fixture(embed_metadata: bool) -> Fixture {
          CREATE UNIQUE INDEX uq_downloads_user_book ON downloads (user_id, book_id);
          CREATE TABLE archived_book (id INTEGER PRIMARY KEY, user_id INTEGER, book_id INTEGER, is_archived INTEGER);
          CREATE TABLE thumbnail (id INTEGER PRIMARY KEY, entity_id INTEGER, type SMALLINT, resolution SMALLINT);
-         CREATE TABLE flask_settings (id INTEGER PRIMARY KEY, flask_session_key BLOB);",
+         CREATE TABLE flask_settings (id INTEGER PRIMARY KEY, flask_session_key BLOB);
+         CREATE TABLE user_session (id INTEGER PRIMARY KEY, user_id INTEGER, session_key TEXT, random TEXT, expiry INTEGER);",
     )
     .unwrap();
     app.execute(
@@ -1250,4 +1251,196 @@ async fn readium_manifest_and_positions_match_readium_shapes() {
     let text = String::from_utf8(positions).unwrap();
     assert!(text.starts_with("{\"total\": 1, \"positions\": [{\"href\": \"OEBPS/text/ch.xhtml\""));
     assert!(text.contains("\"progression\": 0.0, \"totalProgression\": 0.0"));
+}
+
+// ── Flask session cookie ────────────────────────────────────────────────────────────────────────────────────────────
+/// A cookie signed exactly as Flask's `URLSafeTimedSerializer(..., salt="cookie-session", key_derivation="hmac",
+/// digest_method=sha1)` writes it: `base64url(zlib-json or json).timestamp.signature`, the signature over
+/// `payload.timestamp` with `HMAC-SHA1(HMAC-SHA1(secret, salt), ...)` and the timestamp as 4 big-endian bytes.
+fn flask_cookie(payload: &str, key: &[u8], issued: u64) -> String {
+    use base64_like::encode as b64;
+    use hmac::{Hmac, KeyInit, Mac};
+    use sha1::Sha1;
+    let derive = |key: &[u8], message: &[u8]| {
+        let mut mac = Hmac::<Sha1>::new_from_slice(key).unwrap();
+        mac.update(message);
+        mac.finalize().into_bytes().to_vec()
+    };
+    let derived = derive(key, b"cookie-session");
+    let json = payload.as_bytes();
+    let mut encoder = flate2::write::ZlibEncoder::new(Vec::new(), flate2::Compression::default());
+    use std::io::Write;
+    encoder.write_all(json).unwrap();
+    let compressed = encoder.finish().unwrap();
+    let body = if compressed.len() < json.len() - 1 {
+        format!(".{}", b64(&compressed))
+    } else {
+        b64(json)
+    };
+    let timestamp = b64(&issued.to_be_bytes());
+    let mut mac = Hmac::<Sha1>::new_from_slice(&derived).unwrap();
+    mac.update(format!("{body}.{timestamp}").as_bytes());
+    let signature = b64(&mac.finalize().into_bytes());
+    format!("{body}.{timestamp}.{signature}")
+}
+
+/// itsdangerous' `base64_encode`: URL-safe alphabet, padding stripped.
+mod base64_like {
+    pub fn encode(data: &[u8]) -> String {
+        const ALPHABET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+        let mut out = String::new();
+        for chunk in data.chunks(3) {
+            let b = [
+                chunk[0],
+                *chunk.get(1).unwrap_or(&0),
+                *chunk.get(2).unwrap_or(&0),
+            ];
+            let n = u32::from(b[0]) << 16 | u32::from(b[1]) << 8 | u32::from(b[2]);
+            let chars = [
+                ALPHABET[(n >> 18) as usize & 63],
+                ALPHABET[(n >> 12) as usize & 63],
+                ALPHABET[(n >> 6) as usize & 63],
+                ALPHABET[n as usize & 63],
+            ];
+            let take = chunk.len() + 1;
+            for ch in &chars[..take] {
+                out.push(*ch as char);
+            }
+        }
+        out
+    }
+}
+
+fn session_state(f: &Fixture, user_id: i64, role: i64, denied: &str) {
+    let app = Connection::open(&f.app_db).unwrap();
+    app.execute(
+        "INSERT INTO user (id, name, role, default_language, denied_tags, allowed_tags) VALUES (?1, 'Reader', ?2, 'all', ?3, '')",
+        rusqlite::params![user_id, role, denied],
+    )
+    .unwrap();
+    app.execute(
+        "INSERT INTO user_session (user_id, session_key, random, expiry) VALUES (?1, 'sid', 'rnd', 0)",
+        [user_id],
+    )
+    .unwrap();
+}
+
+fn session_cookie(user_id: i64) -> String {
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap()
+        .as_secs();
+    flask_cookie(
+        &format!(
+            "{{\"_user_id\":\"{user_id}\",\"_id\":\"sid\",\"_random\":\"rnd\",\"csrf_token\":\"t\"}}"
+        ),
+        KEY,
+        now,
+    )
+}
+
+#[tokio::test]
+async fn readium_serves_a_logged_in_user_with_that_users_filters() {
+    let f = fixture(false);
+    reader_state(&f);
+    Connection::open(f._dir.path().join("library/metadata.db"))
+        .unwrap()
+        .execute(
+            "INSERT INTO data VALUES (2, 7, 'EPUB', 0, 'Cafe Muller')",
+            [],
+        )
+        .unwrap();
+    write_epub(&f, false);
+    let cookie = session_cookie(3);
+    // A user whose denied tag matches the fixture book sees Flask's 404; without the deny, the publication loads.
+    Connection::open(f._dir.path().join("library/metadata.db")).unwrap()
+        .execute_batch(
+            "INSERT INTO tags VALUES (1, 'Fiction'); INSERT INTO books_tags_link (book, tag) VALUES (7, 1);",
+        )
+        .unwrap();
+    session_state(&f, 3, 34 | 256, "Fiction");
+    let denied = format!("session={cookie}");
+    assert_eq!(
+        on(&f, "/show/readium/7/manifest.json", &[("Cookie", &denied)])
+            .await
+            .0,
+        StatusCode::BAD_GATEWAY
+    );
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("UPDATE user SET denied_tags = '' WHERE id = 3", [])
+        .unwrap();
+    let (status, headers, body) =
+        on(&f, "/show/readium/7/manifest.json", &[("Cookie", &denied)]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_TYPE], "application/webpub+json");
+    assert!(
+        String::from_utf8(body)
+            .unwrap()
+            .contains("\"title\": \"Caf\\u00e9 & co\"")
+    );
+    // A cookie that does not verify is Flask's, never the guest's answer.
+    let tampered = format!("session={cookie}x");
+    assert_eq!(
+        on(
+            &f,
+            "/show/readium/7/manifest.json",
+            &[("Cookie", &tampered)]
+        )
+        .await
+        .0,
+        StatusCode::BAD_GATEWAY
+    );
+    // Revoked session row: Flask loads no user, so the guest answer is the same one Flask would give.
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("DELETE FROM user_session WHERE user_id = 3", [])
+        .unwrap();
+    assert_eq!(
+        on(&f, "/show/readium/7/manifest.json", &[("Cookie", &denied)])
+            .await
+            .0,
+        StatusCode::OK
+    );
+}
+
+#[test]
+fn session_cookie_round_trips_the_flask_signer() {
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap()
+        .as_secs();
+    let cookie = flask_cookie(
+        "{\"_user_id\":\"3\",\"_id\":\"sid\",\"_random\":\"rnd\"}",
+        KEY,
+        now,
+    );
+    let payload =
+        taratsa_backend::session::decode(&cookie, &[KEY.to_vec()], now).expect("verifies");
+    assert_eq!(payload["_user_id"], "3");
+    assert_eq!(payload["_random"], "rnd");
+    assert!(taratsa_backend::session::decode(&cookie, &[b"other".to_vec()], now).is_none());
+    assert!(
+        taratsa_backend::session::decode(&cookie, &[KEY.to_vec()], now + 40 * 24 * 3600).is_none()
+    );
+}
+
+#[test]
+fn session_cookie_from_itsdangerous_decodes() {
+    // A cookie produced by the app image's own itsdangerous with the fixture key:
+    //   URLSafeTimedSerializer(KEY, salt="cookie-session", serializer=TaggedJSONSerializer(),
+    //                          signer_kwargs={"key_derivation": "hmac", "digest_method": sha1})
+    let (Ok(cookie), Ok(payload), Ok(issued)) = (
+        std::env::var("SESSION_TEST_COOKIE"),
+        std::env::var("SESSION_TEST_PAYLOAD"),
+        std::env::var("SESSION_TEST_ISSUED"),
+    ) else {
+        return;
+    };
+    let issued: u64 = issued.parse().unwrap();
+    let decoded = taratsa_backend::session::decode(&cookie, &[KEY.to_vec()], issued + 5)
+        .expect("a cookie from itsdangerous must verify");
+    assert_eq!(decoded["_user_id"], "3");
+    assert_eq!(decoded["_id"], "sid");
+    assert_eq!(decoded["_random"], payload);
 }

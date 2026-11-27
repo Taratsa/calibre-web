@@ -116,22 +116,26 @@ async fn serve(
             return proxy_or(state, &path, method, headers).await;
         }
     };
-    if headers.contains_key(header::COOKIE)
-        || headers.contains_key(header::AUTHORIZATION)
+    if headers.contains_key(header::AUTHORIZATION)
         || settings.reverse_proxy_login
         || settings.restricted_column != 0
         || settings.use_google_drive
-        || !settings.anonymous_browse
     {
         return proxy_or(state, &path, method, headers).await;
     }
-    let app_db = state.app_db.clone();
-    let guest =
-        tokio::task::spawn_blocking(move || crate::settings::load_guest_access(&app_db)).await;
-    let guest = match guest {
-        Ok(Ok(guest)) if guest.role & ROLE_VIEWER != 0 && !guest.has_archived => guest,
-        _ => return proxy_or(state, &path, method, headers).await,
+    // The request's own Flask session decides who it is; a cookie that does not verify stays with Flask.
+    let access = match crate::session::identify(&state, &settings, &headers).await {
+        Ok(crate::session::Who::Anonymous(_access)) if !settings.anonymous_browse => {
+            return proxy_or(state, &path, method, headers).await;
+        }
+        Ok(crate::session::Who::Anonymous(access)) | Ok(crate::session::Who::User(access)) => {
+            access
+        }
+        Err(_) => return proxy_or(state, &path, method, headers).await,
     };
+    if access.role & ROLE_VIEWER == 0 || access.has_archived {
+        return proxy_or(state, &path, method, headers).await;
+    }
     let metadata_db = settings.metadata_db();
     let book_path = settings.book_path().to_path_buf();
     let found = tokio::task::spawn_blocking(move || {
@@ -139,9 +143,9 @@ async fn serve(
             &metadata_db,
             book_id,
             "EPUB",
-            &guest.language,
-            &guest.denied,
-            &guest.allowed,
+            &access.language,
+            &access.denied,
+            &access.allowed,
         )
         .ok()
         .flatten()?;

@@ -1,7 +1,7 @@
 //! Reads the few settings the Rust routes need from `app.db` (the Flask app owns and writes it).
 //! Read on every request, so an admin change in the Flask UI applies at once, as it does there.
 
-use rusqlite::{Connection, OpenFlags};
+use rusqlite::{Connection, OpenFlags, OptionalExtension};
 use std::path::{Path, PathBuf};
 use std::time::Duration;
 
@@ -127,36 +127,60 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
     Ok(settings)
 }
 
-/// What the anonymous visitor may see, read fresh on every request. Unlike cheap metadata settings, a revocation here
-/// must apply to the next request, so this does not go through `AppState::settings`.
+/// What one identity (the anonymous visitor, or a logged-in user) may see, read fresh on every request. Unlike cheap
+/// metadata settings, a revocation here must apply to the next request, so this does not go through
+/// `AppState::settings`.
 #[derive(Debug, Clone)]
-pub struct GuestAccess {
+pub struct Access {
     pub id: i64,
     pub language: String,
     pub role: i64,
     pub denied: String,
     pub allowed: String,
-    /// The guest has at least one archived book. Flask's `get_filtered_book` hides those, which no Rust query models,
-    /// so a guest with archive rows is left to Flask entirely.
+    /// This identity has at least one archived book. Flask's `get_filtered_book` hides those, which no Rust query
+    /// models, so an identity with archive rows is left to Flask entirely.
     pub has_archived: bool,
 }
 
-pub fn load_guest_access(app_db: &Path) -> rusqlite::Result<GuestAccess> {
+/// The anonymous visitor's row (the user carrying `ROLE_ANONYMOUS`).
+pub fn load_guest_access(app_db: &Path) -> rusqlite::Result<Access> {
     let conn = open_read_only(app_db)?;
-    let (id, language, role, denied, allowed) = conn.query_row(
-        "SELECT id, default_language, role, denied_tags, allowed_tags
-         FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
+    let id: i64 = conn.query_row(
+        "SELECT id FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
         [],
-        |row| {
-            Ok((
-                row.get::<_, i64>(0)?,
-                row.get::<_, Option<String>>(1)?.unwrap_or_default(),
-                row.get::<_, Option<i64>>(2)?.unwrap_or(0),
-                row.get::<_, Option<String>>(3)?.unwrap_or_default(),
-                row.get::<_, Option<String>>(4)?.unwrap_or_default(),
-            ))
-        },
+        |row| row.get(0),
     )?;
+    access_row(&conn, id)?.ok_or(rusqlite::Error::QueryReturnedNoRows)
+}
+
+/// The row of `user_id`, or `None` when that user does not exist (Flask's `load_user` then has no user either).
+pub fn load_access(app_db: &Path, user_id: Option<i64>) -> rusqlite::Result<Option<Access>> {
+    let Some(user_id) = user_id else {
+        return load_guest_access(app_db).map(Some);
+    };
+    let conn = open_read_only(app_db)?;
+    access_row(&conn, user_id)
+}
+
+fn access_row(conn: &rusqlite::Connection, id: i64) -> rusqlite::Result<Option<Access>> {
+    let row = conn
+        .query_row(
+            "SELECT id, default_language, role, denied_tags, allowed_tags FROM user WHERE id = ?1",
+            [id],
+            |row| {
+                Ok((
+                    row.get::<_, i64>(0)?,
+                    row.get::<_, Option<String>>(1)?.unwrap_or_default(),
+                    row.get::<_, Option<i64>>(2)?.unwrap_or(0),
+                    row.get::<_, Option<String>>(3)?.unwrap_or_default(),
+                    row.get::<_, Option<String>>(4)?.unwrap_or_default(),
+                ))
+            },
+        )
+        .optional()?;
+    let Some((id, language, role, denied, allowed)) = row else {
+        return Ok(None);
+    };
     let has_archived = conn
         .query_row(
             "SELECT 1 FROM archived_book WHERE user_id = ?1 AND is_archived LIMIT 1",
@@ -168,12 +192,12 @@ pub fn load_guest_access(app_db: &Path) -> rusqlite::Result<GuestAccess> {
             rusqlite::Error::QueryReturnedNoRows => Ok(false),
             other => Err(other),
         })?;
-    Ok(GuestAccess {
+    Ok(Some(Access {
         id,
         language,
         role,
         denied,
         allowed,
         has_archived,
-    })
+    }))
 }

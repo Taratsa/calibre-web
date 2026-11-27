@@ -161,25 +161,28 @@ async fn answer(
             return proxy::fallback_reconstructed(state, &path, method, headers).await;
         }
     };
-    // Identity, reverse-proxy login, custom-column ACLs and Google Drive stay in Flask.
-    if headers.contains_key(header::COOKIE)
-        || headers.contains_key(header::AUTHORIZATION)
+    // Reverse-proxy login, custom-column ACLs and Google Drive stay in Flask.
+    if headers.contains_key(header::AUTHORIZATION)
         || settings.reverse_proxy_login
         || settings.restricted_column != 0
         || settings.use_google_drive
-        || !settings.anonymous_browse
     {
         return proxy::fallback_reconstructed(state, &path, method, headers).await;
     }
-
-    // Read fresh: the guest's role and filters decide whether this book may be shown.
-    let app_db = state.app_db.clone();
-    let guest =
-        tokio::task::spawn_blocking(move || crate::settings::load_guest_access(&app_db)).await;
-    let guest = match guest {
-        Ok(Ok(guest)) if guest.role & ROLE_VIEWER != 0 && !guest.has_archived => guest,
-        _ => return proxy::fallback_reconstructed(state, &path, method, headers).await,
+    // Flask's own session: anonymous visitors and logged-in users alike (a cookie it cannot verify, or a revoked
+    // user_session row that this code does not model, is Flask's).
+    let access = match crate::session::identify(&state, &settings, &headers).await {
+        Ok(crate::session::Who::Anonymous(_access)) if !settings.anonymous_browse => {
+            return proxy::fallback_reconstructed(state, &path, method, headers).await;
+        }
+        Ok(crate::session::Who::Anonymous(access)) | Ok(crate::session::Who::User(access)) => {
+            access
+        }
+        Err(_) => return proxy::fallback_reconstructed(state, &path, method, headers).await,
     };
+    if access.role & ROLE_VIEWER == 0 || access.has_archived {
+        return proxy::fallback_reconstructed(state, &path, method, headers).await;
+    }
 
     let metadata_db = settings.metadata_db();
     let book_path = settings.book_path().to_path_buf();
@@ -190,9 +193,9 @@ async fn answer(
             &metadata_db,
             book_id,
             &lookup_format,
-            &guest.language,
-            &guest.denied,
-            &guest.allowed,
+            &access.language,
+            &access.denied,
+            &access.allowed,
         )
         .ok()
         .flatten()?;

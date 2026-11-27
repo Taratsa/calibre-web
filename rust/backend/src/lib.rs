@@ -18,6 +18,7 @@ pub mod pyjson;
 pub mod reader;
 pub mod readium;
 pub mod security;
+pub mod session;
 pub mod settings;
 pub mod signing;
 pub mod static_files;
