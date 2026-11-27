@@ -15,6 +15,7 @@ pub mod proxy;
 pub mod security;
 pub mod settings;
 pub mod signing;
+pub mod static_files;
 
 use axum::Router;
 use settings::Settings;
@@ -113,6 +114,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(cover::routes())
         .merge(download::routes())
         .merge(files::routes())
+        .merge(static_files::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,

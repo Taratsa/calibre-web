@@ -624,3 +624,175 @@ async fn series_cover_stays_on_flask_while_series_thumbnails_exist() {
     let (status, _, _) = get(&f, "/cover/7", None).await;
     assert_eq!(status, StatusCode::OK);
 }
+
+fn static_dir(f: &Fixture) -> std::path::PathBuf {
+    f._dir.path().join("static")
+}
+
+async fn static_request(
+    f: &Fixture,
+    method: &str,
+    uri: &str,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, Vec<u8>) {
+    let mut request = Request::builder()
+        .method(method)
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    (
+        parts.status,
+        parts.headers,
+        body.collect().await.unwrap().to_bytes().to_vec(),
+    )
+}
+
+#[tokio::test]
+async fn static_file_is_served_with_flasks_headers() {
+    let f = fixture(false);
+    std::fs::create_dir_all(static_dir(&f).join("css")).unwrap();
+    std::fs::write(static_dir(&f).join("css/main.css"), b"body{margin:0}").unwrap();
+
+    let (status, headers, body) =
+        static_request(&f, "GET", "/static/css/main.css?q=abc1234", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, b"body{margin:0}");
+    assert_eq!(headers[header::CONTENT_TYPE], "text/css; charset=utf-8");
+    assert_eq!(headers[header::CONTENT_LENGTH], "14");
+    assert_eq!(headers[header::CACHE_CONTROL], "no-cache");
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(headers[header::ACCEPT_RANGES], "bytes");
+    assert_eq!(
+        headers[header::CONTENT_DISPOSITION],
+        "inline; filename=main.css"
+    );
+    assert!(headers.contains_key(header::LAST_MODIFIED));
+    assert!(
+        headers[header::CONTENT_SECURITY_POLICY]
+            .to_str()
+            .unwrap()
+            .contains("object-src 'none'")
+    );
+
+    // HEAD: same headers, no body
+    let (status, head, body) = static_request(&f, "HEAD", "/static/css/main.css", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert!(body.is_empty());
+    assert_eq!(head[header::CONTENT_LENGTH], "14");
+    assert_eq!(head[header::ETAG], headers[header::ETAG]);
+}
+
+#[tokio::test]
+async fn static_conditional_and_range_requests() {
+    let f = fixture(false);
+    std::fs::write(static_dir(&f).join("app.js"), b"0123456789").unwrap();
+    let (_, headers, _) = static_request(&f, "GET", "/static/app.js", &[]).await;
+    let etag = headers[header::ETAG].to_str().unwrap().to_owned();
+    let modified = headers[header::LAST_MODIFIED].to_str().unwrap().to_owned();
+
+    // 304 by ETag and by date: no body, no Content-Type, Flask's validators kept
+    for extra in [
+        ("If-None-Match", etag.as_str()),
+        ("If-Modified-Since", modified.as_str()),
+    ] {
+        let (status, h, body) = static_request(&f, "GET", "/static/app.js", &[extra]).await;
+        assert_eq!(status, StatusCode::NOT_MODIFIED, "{extra:?}");
+        assert!(body.is_empty());
+        assert!(!h.contains_key(header::CONTENT_TYPE));
+        assert_eq!(h[header::ETAG].to_str().unwrap(), etag);
+        assert_eq!(h[header::CACHE_CONTROL], "no-cache");
+    }
+    // a different ETag is a full 200
+    let (status, _, body) = static_request(
+        &f,
+        "GET",
+        "/static/app.js",
+        &[("If-None-Match", "\"other\"")],
+    )
+    .await;
+    assert_eq!(
+        (status, body.as_slice()),
+        (StatusCode::OK, &b"0123456789"[..])
+    );
+
+    // ranges
+    let (status, h, body) =
+        static_request(&f, "GET", "/static/app.js", &[("Range", "bytes=2-4")]).await;
+    assert_eq!(status, StatusCode::PARTIAL_CONTENT);
+    assert_eq!(body, b"234");
+    assert_eq!(h[header::CONTENT_RANGE], "bytes 2-4/10");
+    let (_, _, body) = static_request(&f, "GET", "/static/app.js", &[("Range", "bytes=-3")]).await;
+    assert_eq!(body, b"789");
+    // If-Range with a stale validator ignores the range
+    let (status, _, body) = static_request(
+        &f,
+        "GET",
+        "/static/app.js",
+        &[("Range", "bytes=2-4"), ("If-Range", "\"stale\"")],
+    )
+    .await;
+    assert_eq!((status, body.len()), (StatusCode::OK, 10));
+    // an unsatisfiable range, and a failed precondition, are Flask's pages (502: the fixture's Flask is down)
+    let (status, _, _) =
+        static_request(&f, "GET", "/static/app.js", &[("Range", "bytes=50-")]).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    let (status, _, _) =
+        static_request(&f, "GET", "/static/app.js", &[("If-Match", "\"nope\"")]).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    // werkzeug answers 416 to a Range header it cannot parse, so Rust must not answer 200 for it
+    for bad in ["bytes=a-b", "items=0-1", "bytes=-0"] {
+        let (status, _, _) = static_request(&f, "GET", "/static/app.js", &[("Range", bad)]).await;
+        assert_eq!(status, StatusCode::BAD_GATEWAY, "Range: {bad}");
+    }
+}
+
+#[tokio::test]
+async fn static_misses_and_unsafe_paths_go_to_flask() {
+    let f = fixture(false);
+    std::fs::create_dir_all(static_dir(&f).join("css")).unwrap();
+    std::fs::write(static_dir(&f).join("css/main.css"), b"x").unwrap();
+    std::fs::write(static_dir(&f).join("data.unknownext"), b"x").unwrap();
+    std::fs::write(f._dir.path().join("secret.txt"), b"outside").unwrap();
+    #[cfg(unix)]
+    std::os::unix::fs::symlink(
+        f._dir.path().join("secret.txt"),
+        static_dir(&f).join("link.txt"),
+    )
+    .unwrap();
+
+    for (method, uri) in [
+        ("GET", "/static/css/missing.css"),
+        ("GET", "/static/css"), // a directory
+        ("GET", "/static/css/"),
+        ("GET", "/static/"),
+        ("GET", "/static"),
+        ("GET", "/static/data.unknownext"), // a type Rust was not compared on
+        ("GET", "/static/../secret.txt"),
+        ("GET", "/static/css/../../secret.txt"),
+        ("GET", "/static/%2e%2e/secret.txt"),
+        ("GET", "/static/css%2f..%2f..%2fsecret.txt"),
+        ("GET", "/static/css//main.css"),
+        ("GET", "/static/link.txt"), // a symlink out of the directory
+        ("POST", "/static/css/main.css"),
+    ] {
+        let (status, _, body) = static_request(&f, method, uri, &[]).await;
+        assert_eq!(
+            status,
+            StatusCode::BAD_GATEWAY,
+            "{method} {uri} must be Flask's"
+        );
+        assert!(
+            !String::from_utf8_lossy(&body).contains("outside"),
+            "{uri} leaked a file"
+        );
+    }
+}

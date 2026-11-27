@@ -1,0 +1,17 @@
+--- a/Caddyfile
++++ b/Caddyfile
+@@ handle @flask { ... after the @rust_files block ... @@
++        # /static/* is answered by the Rust backend (src/static_files.rs): existing plain files only, with Flask's
++        # ETag/Last-Modified/no-cache headers. Misses, odd paths and every non-GET method are proxied to Flask by Rust
++        # itself, and Caddy falls back to Flask when Rust is down. Roll back by deleting this block.
++        @rust_static {
++            path /static/*
++        }
++        handle @rust_static {
++            reverse_proxy calibre-web-automated:8084 calibre-web-automated:8083 {
++                lb_policy first
++                lb_try_duration 3s
++                lb_try_interval 250ms
++                fail_duration 10s
++            }
++        }

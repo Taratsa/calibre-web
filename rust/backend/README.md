@@ -24,6 +24,7 @@ backend answers. Nothing moves until its Rust version has been compared against 
 | `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
 | `/series_cover/<id>[/<resolution>]` | `src/cover.rs` | the cover of the series' first book with a cover (no visibility filter, like Flask); same fast path and fallbacks as `/cover`; stays on Flask while `app.db` holds any series thumbnail row |
 | `/download/<id>/<fmt>[/<name>]` | `src/download.rs` | anonymous only: counts the download in `app.db` and 302s to the signed `/files` URL; identity and failure cases proxy to Flask |
+| `/static/<path>` | `src/static_files.rs` | GET/HEAD of an existing plain file under `cps/static`: werkzeug's ETag, `Last-Modified`, `no-cache`, 304 and single-range 206; a miss, odd path, symlink out, unknown type, other method, 412 or 416 goes to Flask |
 
 Everything else remains Flask. The cover route serves an existing local source
 JPEG or prebuilt WebP, or an existing Flask thumbnail-cache file. On cache miss (including requested WebP without
@@ -51,6 +52,33 @@ answers it like `/cover/<book id>`. If such rows ever appear, `Settings.series_t
 Flask again, so a generated series thumbnail is never bypassed. Checked against live Flask for all 23 series plus an
 unknown id at original/`og`/`sm`/`md`/`lg`/unknown resolution, WebP and JPEG (288 requests): status, headers and body
 identical, as are HEAD, `Range` and `If-None-Match`. The route is NOT yet sent to Rust by Caddy.
+
+### `/static/<path>` (ported 2026-11-27, NOT yet sent to Rust by Caddy)
+
+Flask's static view (`send_from_directory` over `cps/static`; `cps/cache_buster.py` only strips the `?q=<hash>` query).
+It was the largest Flask-served family by request count in the Caddy log (3,539 css + 1,119 js + 958 locale + 255 wasm
+of 8,596 Flask-routed requests, 87% of them 304s), so it is the cheapest load to take off the single gevent loop.
+Rust answers only what it can reproduce exactly: GET/HEAD of an existing file whose name is plain `[A-Za-z0-9._-]`
+segments, whose extension is one of the types listed in `content_type()` (the table was read from the live app for every
+extension under `cps/static`), and which does not resolve through a symlink out of the directory. It sends werkzeug's
+ETag (`mtime-size-adler32(path)`, shared with the cover code), `Last-Modified`, `Cache-Control: no-cache`,
+`Content-Disposition: inline; filename=...`, `Vary: Cookie`, `Accept-Ranges`, the 304 (no `Content-Type`/`Length`) and a
+single-range 206. Everything else goes to Flask: a miss (Flask's HTML 404), a directory, `/static` and `/static/`,
+`..`/encoded/doubled-slash paths (werkzeug's 308 and 404), a type not in the table, POST/PUT/..., a failed `If-Match` (412),
+an unsatisfiable range (416) and any `Range` header Rust cannot parse (werkzeug answers 416, not 200, for `bytes=a-b`;
+the first version answered 200 there, found by the comparison below).
+
+Measured against live Flask on the production image's own `cps/static` (837 files), with a Rust instance on a copy of
+`app.db`: 5,053 requests (every file as GET, GET with `?q=`, HEAD, `If-None-Match`, `If-Modified-Since`, `Range: bytes=0-9`,
+plus traversal, encoded and odd paths and five other methods): status, every header except `Date`, and the body hash
+identical, 0 differences. A further 3,575-request pass covered weak/list/`*` validators, `If-Range`, `If-Match`,
+`If-Unmodified-Since`, multi-range and suffix ranges on 126 files. Eight keep-alive clients, 250 requests each, random
+css/js/font/svg/png: Flask 97 req/s (p50 44 ms, p95 124 ms, max 2,045 ms), Rust 302 req/s (p50 28 ms, p95 50 ms, max 127 ms).
+The 540 `/static/css/libs/images/toolbarButton-viewsManagerToggle.svg` 404s in the log are a file the image does not
+ship; they stay Flask's 404.
+
+Rollout: `deploy/caddy-static.patch` (a `handle` block with the same Rust-first `lb_policy first` upstream list as
+`/files`). Needs the image rebuilt with this binary first, then `caddy reload`. Rollback: delete the block.
 
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 

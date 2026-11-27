@@ -353,25 +353,7 @@ async fn send_image(
     let modified_secs = modified
         .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
         .map(|d| d.as_secs());
-    let mtime = match modified {
-        Some(t) => match t.duration_since(std::time::UNIX_EPOCH) {
-            Ok(d) => {
-                let seconds = d.as_secs() as f64 + f64::from(d.subsec_nanos()) / 1_000_000_000.0;
-                let text = seconds.to_string();
-                if text.contains('.') {
-                    text
-                } else {
-                    format!("{text}.0")
-                }
-            }
-            Err(_) => "0.0".into(),
-        },
-        None => "0.0".into(),
-    };
-    let etag = format!(
-        "\"{mtime}-{size}-{}\"",
-        adler2::adler32_slice(path.to_string_lossy().as_bytes())
-    );
+    let etag = werkzeug_etag(path, size, modified);
     if let Some(mut response) = conditional_not_modified(request_headers, &etag, modified_secs) {
         response = response_with_cover_headers(
             response,
@@ -541,11 +523,38 @@ fn response_with_cover_headers(
     response
 }
 
+/// werkzeug's `send_file` ETag: `"<mtime as a Python float>-<size>-<adler32 of the absolute path>"`.
+pub(crate) fn werkzeug_etag(
+    path: &FsPath,
+    size: u64,
+    modified: Option<std::time::SystemTime>,
+) -> String {
+    let mtime = match modified {
+        Some(t) => match t.duration_since(std::time::UNIX_EPOCH) {
+            Ok(d) => {
+                let seconds = d.as_secs() as f64 + f64::from(d.subsec_nanos()) / 1_000_000_000.0;
+                let text = seconds.to_string();
+                if text.contains('.') {
+                    text
+                } else {
+                    format!("{text}.0")
+                }
+            }
+            Err(_) => "0.0".into(),
+        },
+        None => "0.0".into(),
+    };
+    format!(
+        "\"{mtime}-{size}-{}\"",
+        adler2::adler32_slice(path.to_string_lossy().as_bytes())
+    )
+}
+
 fn weak_equal(a: &str, b: &str) -> bool {
     a.trim().strip_prefix("W/").unwrap_or(a.trim()) == b
 }
 
-fn conditional_not_modified(
+pub(crate) fn conditional_not_modified(
     headers: &HeaderMap,
     etag: &str,
     modified: Option<u64>,
@@ -569,7 +578,11 @@ fn conditional_not_modified(
     None
 }
 
-fn failed_precondition(headers: &HeaderMap, etag: &str, modified: Option<u64>) -> Option<Response> {
+pub(crate) fn failed_precondition(
+    headers: &HeaderMap,
+    etag: &str,
+    modified: Option<u64>,
+) -> Option<Response> {
     if let Some(value) = headers.get(header::IF_MATCH) {
         let value = value.to_str().ok()?;
         if !value
@@ -590,7 +603,7 @@ fn failed_precondition(headers: &HeaderMap, etag: &str, modified: Option<u64>) -
     None
 }
 
-fn if_range_matches(headers: &HeaderMap, etag: &str, modified: Option<u64>) -> bool {
+pub(crate) fn if_range_matches(headers: &HeaderMap, etag: &str, modified: Option<u64>) -> bool {
     let Some(value) = headers.get(header::IF_RANGE).and_then(|v| v.to_str().ok()) else {
         return true;
     };
@@ -604,7 +617,7 @@ fn if_range_matches(headers: &HeaderMap, etag: &str, modified: Option<u64>) -> b
         .is_ok_and(|d| d.as_secs() >= modified)
 }
 
-fn parse_range(value: Option<&str>, size: u64) -> Option<Result<(u64, u64), ()>> {
+pub(crate) fn parse_range(value: Option<&str>, size: u64) -> Option<Result<(u64, u64), ()>> {
     let value = value?;
     let spec = value.strip_prefix("bytes=")?;
     if spec.contains(',') {
