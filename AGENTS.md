@@ -659,9 +659,15 @@ Two live search systems (plus the legacy advanced-search form):
   bytes stop agreeing.
 - **`/files` embeds metadata like Flask**: with `config_embed_metadata` and a Calibre binaries directory (production
   has both) each response is a fresh `calibredb export`, so two requests for the same PDF differ only in the
-  `xmp:MetadataDate` calibre writes. EPUBs come out byte-identical. Exports are bounded by `MAX_EXPORTS` and a 5
-  minute timeout, the staged copy is unlinked once the response holds the file open, and a failed export serves the
+  `xmp:MetadataDate` calibre writes. EPUBs come out byte-identical. Exports are bounded by `MAX_EXPORTS` (default 1) and a
+  5 minute timeout, the staged copy is unlinked once the response holds the file open, and a failed export serves the
   stored file, exactly as Flask does.
+- **`calibredb export` locks the whole library, so two exports can never overlap** (2026-11-27). A loser used to fall
+  back to the stored file, which can differ from an export (book 7: 7,533,766 vs 7,584,735 bytes) under a `/files` URL the
+  CDN keeps for a year. Both exporters therefore wait for the lock: Rust retries 12 x 500 ms and then hands the request
+  to Flask instead of serving the stored file; `do_calibre_export()` (`cps/embed_helper.py`) does the same. Keep that in
+  any new export code. `/files/*`, `/download/*`, `/cover*` and `/series_cover/*` are answered by Rust behind Caddy with
+  Flask as failover (see `rust/backend/README.md`, "Rollout").
 - **Deliberately 501 from Rust**: Google Drive libraries and `kepub` with embedded metadata (production uses
   neither). A wrong Caddy rule then fails loudly instead of serving a different file.
 - **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus

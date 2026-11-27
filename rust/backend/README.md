@@ -82,7 +82,8 @@ Measured (2026-11-27, against copies of the live `app.db`, never the live file):
 Rollout (LIVE since 2026-11-27): `.env` has `RUST_BACKEND_ENABLED=true` and `RUST_BACKEND_LISTEN=0.0.0.0:8084`
 (reachable only over `caddy_net` as `calibre-web-automated:8084`; never publish it on the host, it has no
 authentication). The production Caddyfile (`/home/wibi/apps/caddy/Caddyfile`, applied with `caddy reload`) sends
-`/download/*` (since ~10:41 WIB) and `/cover/*`, `/cover_thumb/*`, `/series_cover/*` (since ~11:25 WIB) to
+`/download/*` (since ~10:41 WIB), `/cover/*`, `/cover_thumb/*`, `/series_cover/*` (since ~11:25 WIB) and `/files/*` (since
+~12:05 WIB, after the export-lock fixes below) to
 `calibre-web-automated:8084 calibre-web-automated:8083` with `lb_policy first`, so Flask answers whenever Rust does not
 (checked by killing Rust: all three routes kept answering). The cover `handle_response` blocks (2xx cached for a day,
 errors `no-store`) stay in Caddy and apply to either upstream. The entrypoint restarts Rust 2 s after it exits.
@@ -97,9 +98,9 @@ Baseline before the switch (Caddy log): `/download` ~292 requests per 22 minutes
 minute, 241 of 242 anonymous, Flask p50 89 ms but p95 13.6 s / p99 23.8 s. Rust's proxy to Flask therefore uses a READ
 timeout (120 s), not a total one: a slow Flask answer must not become a 502.
 
-Rollback: restore the previous Caddyfile (`/home/devuser/backups/Caddyfile.pre-rust-covers.2026-11-27` is the
-`/download`-only state, `Caddyfile.pre-rust-download.2026-11-27` the original) and `caddy reload`; or set
-`RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. Previous images: `calibre-web:pre-rust-covers`,
+Rollback: restore the previous Caddyfile (`/home/devuser/backups/Caddyfile.pre-rust-files-v2.2026-11-27` is the
+state before `/files`, `Caddyfile.pre-rust-covers.2026-11-27` the `/download`-only state, `Caddyfile.pre-rust-download.2026-11-27` the original) and `caddy reload`; or set
+`RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. Previous images: `calibre-web:pre-rust-files3`, `calibre-web:pre-rust-covers`,
 `calibre-web:pre-rust-download`. Rust logs to `/config/rust-backend.log` (errors only unless `RUST_LOG=info`).
 
 ### Concurrent exports (found 2026-11-27, `/files` rolled back once because of it)
@@ -117,6 +118,15 @@ returned the stored file for 2 of its 3, because Flask did not retry when Rust h
 library is the real defect, so `do_calibre_export()` (`cps/embed_helper.py`, also used by mail and convert) now waits
 for the lock the same way (12 tries, 500 ms apart) instead of falling through to the stored file. Flask's loop is not
 monkey-patched, so that sleep blocks it for as long as it waits; the export itself already blocked it the same way.
+
+### `/files/*` live check (2026-11-27)
+
+Parity before the switch: 50 real signed URLs (25 PDF, 25 EPUB) compared with Flask, bodies equal apart from the
+`xmp:MetadataDate` that every `calibredb export` rewrites; status and headers (`Vary: Cookie`, the 304 headers with
+Flask's missing `Last-Modified`) equal after two fixes this found; 404 and 416 pages are Flask's own (Rust hands those
+requests over). Simultaneous Rust and Flask exports: 59 of 59 embedded over six rounds (up to 8 + 8 at once), after the
+lock fixes. Live, first 5 minutes: 35 requests, all 200, p50 1.0 s, p95 2.1 s (Flask alone had p95 10.3 s, p99 21.6 s).
+Books whose export equals their stored file (228, 213: nothing to embed) legitimately return the stored size.
 
 ### Behaviour that is deliberately the same as Flask
 
