@@ -47,5 +47,28 @@
       "size": 9031848,
       "name": "Tragedi Mei 1998 Dalam Perjalanan Bangsa D - Komnas Perempuan"
     }
-  ]
+  ],
+  "text": {
+    "tone": {
+      "mean": -0.14819,
+      "positive_share": 0.3462,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.5
+        ],
+        [
+          "happy",
+          0.3077
+        ],
+        [
+          "fear",
+          0.1538
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.1915
+    }
+  }
 }

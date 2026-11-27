@@ -214,6 +214,27 @@
         0.15
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": -0.05134,
+      "positive_share": 0.4167,
+      "sentences": 60,
+      "emotions": [
+        [
+          "admiration",
+          0.3333
+        ],
+        [
+          "embarrassment",
+          0.3333
+        ],
+        [
+          "disappointment",
+          0.3333
+        ]
+      ],
+      "emotion_language": "en",
+      "score": -0.0421
+    }
   }
 }

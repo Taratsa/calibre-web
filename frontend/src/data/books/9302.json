@@ -277,6 +277,27 @@
           1
         ]
       ]
+    },
+    "tone": {
+      "mean": 0.06626,
+      "positive_share": 0.5806,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3548
+        ],
+        [
+          "happy",
+          0.3548
+        ],
+        [
+          "love",
+          0.129
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.1393
     }
   }
 }

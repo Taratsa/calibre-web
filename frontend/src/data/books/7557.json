@@ -223,6 +223,14 @@
         0.12
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": -0.06033,
+      "positive_share": 0.4348,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "en",
+      "score": -0.056
+    }
   }
 }

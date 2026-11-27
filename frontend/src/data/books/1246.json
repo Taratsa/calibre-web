@@ -12,13 +12,13 @@
   "author_sort": "Salazar, Heather",
   "tags": [],
   "publisher": {
-    "id": 29,
-    "name": "Antinomi"
+    "id": 1781,
+    "name": "Antinomi Institute"
   },
   "publishers": [
     {
-      "id": 29,
-      "name": "Antinomi"
+      "id": 1781,
+      "name": "Antinomi Institute"
     }
   ],
   "languages": [
@@ -26,14 +26,14 @@
   ],
   "pubdate": "2026-01-01",
   "timestamp": "2026-01-17 07:38:47.521450",
-  "last_modified": "2026-01-17 07:39:46.186580",
+  "last_modified": "2026-11-26 09:00:44.206678",
   "series": null,
   "identifiers": [],
   "formats": [
     "pdf"
   ],
-  "cover_url": "/cover_thumb/1246?v=1768610386",
-  "cover_og_url": "/cover/1246/og?v=1768610386",
+  "cover_url": "/cover_thumb/1246?v=1795658444",
+  "cover_og_url": "/cover/1246/og?v=1795658444",
   "has_cover": true,
   "url": "/book/filsafat-pikiran-heather-salazar/",
   "rating": null,
@@ -276,6 +276,14 @@
           5
         ]
       ]
+    },
+    "tone": {
+      "mean": -0.00985,
+      "positive_share": 0,
+      "sentences": 60,
+      "emotions": [],
+      "emotion_language": "id",
+      "score": 0.0219
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 3053,
   "title": "Ensiklopedia Sastra Indonesia Modern",
-  "slug": "ensiklopedia-sastra-indonesia-modern-dendy-sugono",
+  "slug": "ensiklopedia-sastra-indonesia-modern-dendy-sugono-3053",
   "slugBase": "ensiklopedia-sastra-indonesia-modern-dendy-sugono",
   "authors": [
     {
@@ -27,7 +27,7 @@
   "cover_url": "/cover_thumb/3053?v=1779789559",
   "cover_og_url": "/cover/3053/og?v=1779789559",
   "has_cover": true,
-  "url": "/book/ensiklopedia-sastra-indonesia-modern-dendy-sugono/",
+  "url": "/book/ensiklopedia-sastra-indonesia-modern-dendy-sugono-3053/",
   "rating": null,
   "comment": "PED007.8",
   "data": [
@@ -272,6 +272,27 @@
           9
         ]
       ]
+    },
+    "tone": {
+      "mean": -0.01059,
+      "positive_share": 0.5,
+      "sentences": 60,
+      "emotions": [
+        [
+          "happy",
+          0.5
+        ],
+        [
+          "sadness",
+          0.375
+        ],
+        [
+          "anger",
+          0.125
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.0208
     }
   }
 }

@@ -180,6 +180,27 @@
         0.1
       ]
     ],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": 0.27106,
+      "positive_share": 0.7,
+      "sentences": 60,
+      "emotions": [
+        [
+          "love",
+          0.375
+        ],
+        [
+          "desire",
+          0.25
+        ],
+        [
+          "joy",
+          0.125
+        ]
+      ],
+      "emotion_language": "en",
+      "score": 0.4552
+    }
   }
 }

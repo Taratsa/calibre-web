@@ -15,12 +15,12 @@
   ],
   "publisher": {
     "id": 396,
-    "name": "Pusat Bahasa Departemen Pendidikan Nasional"
+    "name": "PUSAT BAHASA DEPARTEMEN PENDIDIKAN NASIONAL"
   },
   "publishers": [
     {
       "id": 396,
-      "name": "Pusat Bahasa Departemen Pendidikan Nasional"
+      "name": "PUSAT BAHASA DEPARTEMEN PENDIDIKAN NASIONAL"
     }
   ],
   "languages": [],
@@ -280,6 +280,27 @@
           4
         ]
       ]
+    },
+    "tone": {
+      "mean": 0.13525,
+      "positive_share": 0.75,
+      "sentences": 60,
+      "emotions": [
+        [
+          "sadness",
+          0.3214
+        ],
+        [
+          "happy",
+          0.2857
+        ],
+        [
+          "love",
+          0.25
+        ]
+      ],
+      "emotion_language": "id",
+      "score": 0.2457
     }
   }
 }

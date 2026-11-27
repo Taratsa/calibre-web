@@ -50,6 +50,27 @@
     "distinct": [],
     "phrases": [],
     "similar": [],
-    "sentiment": null
+    "sentiment": null,
+    "tone": {
+      "mean": -0.00056,
+      "positive_share": 0.5,
+      "sentences": 39,
+      "emotions": [
+        [
+          "admiration",
+          0.2857
+        ],
+        [
+          "excitement",
+          0.1429
+        ],
+        [
+          "optimism",
+          0.1429
+        ]
+      ],
+      "emotion_language": "en",
+      "score": 0.0362
+    }
   }
 }

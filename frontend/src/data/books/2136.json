@@ -235,6 +235,27 @@
       "negative": 24,
       "trend": [],
       "emotions": []
+    },
+    "tone": {
+      "mean": -0.0711,
+      "positive_share": 0.4,
+      "sentences": 60,
+      "emotions": [
+        [
+          "fear",
+          0.3
+        ],
+        [
+          "happy",
+          0.3
+        ],
+        [
+          "sadness",
+          0.3
+        ]
+      ],
+      "emotion_language": "id",
+      "score": -0.0726
     }
   }
 }
