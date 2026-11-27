@@ -68,11 +68,21 @@ Measured (2026-11-27, against copies of the live `app.db`, never the live file):
 - Umami: the `file-download` payload and `User-Agent` equal what `_track_download_analytics` sends (`file` is
   `data.name` + format); `DNT: 1` sends nothing in both.
 
-Rollout (not done; Caddy still sends `/download/*` to Flask): set `RUST_BACKEND_ENABLED=true`, then route ONLY
-`/download/*` to `127.0.0.1:8084` for a canary (the `@downloads` matcher in the production Caddyfile; the Rust side
-needs the container's port reachable from Caddy, which today only publishes 8083). Watch the `downloads` totals
-against the access log, and roll back by removing that one route. A request Rust cannot answer itself is proxied to
-Flask, so the worst case is a slower download, not a lost count.
+Rollout (LIVE since 2026-11-27 ~10:41 WIB): `.env` has `RUST_BACKEND_ENABLED=true` and
+`RUST_BACKEND_LISTEN=0.0.0.0:8084` (reachable only over `caddy_net` as `calibre-web-automated:8084`; never publish it
+on the host, it has no authentication). The production Caddyfile (`/home/wibi/apps/caddy/Caddyfile`, applied with
+`caddy reload`; the diff is `deploy/caddy-download-canary.patch`) sends ONLY `/download/*` there. Everything Rust cannot
+answer itself is proxied to Flask, so the worst case is a slower download, not a lost count.
+
+Checked live through https://pustaka.taratsa.id: anonymous `/download/4644/pdf` -> 302 with Flask's headers, the
+followed link downloads the 4,808,966 bytes, a cookie request is answered by Flask, an unknown id is a 404, and the
+counter moved by exactly the requests Rust and Flask each answered (+3 for 2 Rust + 1 Flask; the 404 counts nothing).
+Baseline before the switch (Caddy log): ~292 `/download` requests in 22 minutes, 278 x 302, 14 x 404, 6 with a cookie.
+
+Rollback (one minute): remove the `@rust_download` block from the Caddyfile and `caddy reload`; the Rust process can
+keep running idle, or set `RUST_BACKEND_ENABLED=false` and `docker compose up -d calibre-web-automated`. The previous
+image is tagged `calibre-web:pre-rust-download`; backups of the old Caddyfile and `.env` are in `/home/devuser/backups`
+(`*.pre-rust-download.2026-11-27`). Rust logs only errors unless `RUST_LOG=info` is set; `/config/rust-backend.log`.
 
 ### Behaviour that is deliberately the same as Flask
 

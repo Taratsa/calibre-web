@@ -25,6 +25,10 @@ services:
       # Rust backend (rust/backend/) on 127.0.0.1:8084, next to Flask. Off by default: Caddy keeps every route on
       # Flask until the switch is made, and Flask keeps serving whatever Rust does not.
       - RUST_BACKEND_ENABLED=${RUST_BACKEND_ENABLED:-false}
+      # Where taratsa_backend listens. The default keeps it on the container's loopback (unreachable from Caddy).
+      # For the /download canary set RUST_BACKEND_LISTEN=0.0.0.0:8084 in .env: Caddy then reaches it over caddy_net
+      # as calibre-web-automated:8084. Do NOT publish 8084 on the host (it has no authentication of its own).
+      - LISTEN=${RUST_BACKEND_LISTEN:-127.0.0.1:8084}
     ports:
       - "127.0.0.1:8083:8083"
     volumes:

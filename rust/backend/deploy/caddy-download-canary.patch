@@ -1,0 +1,19 @@
+--- a/Caddyfile
++++ b/Caddyfile
+@@ -342,6 +342,16 @@
+         }
+         header @files >Vary "Accept-Encoding"
+ 
++        # Canary: the anonymous /download goes to the Rust backend (rust/backend), which counts it and 302s to the
++        # signed /files URL exactly like Flask, and hands every request it cannot answer itself (cookies, Kindle,
++        # 404s, ...) to Flask. Roll back by deleting this block.
++        @rust_download {
++            path /download/*
++        }
++        handle @rust_download {
++            reverse_proxy calibre-web-automated:8084
++        }
++
+         # WebP-friendly cover assets. Only a successful response may be cached: a Cache-Control added to a 5xx/4xx is
+         # honoured by Cloudflare, which served the 500s of the 2026-11-18 outage for a day after Flask had recovered.
+         @covers {
