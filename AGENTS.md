@@ -61,6 +61,14 @@ Built by `rebuild-watcher` or manually via:
 
 Output served by Caddy from `/srv/frontend/dist` (mapped from `frontend/dist/`).
 
+- **`frontend/src/data/books/` is NOT tracked** (changed 2026-11-27, `.gitignore`). The ~24.5k per-book JSON files are
+  reseed output (`seed.mjs`, rewritten wholesale on every run), and committing them made a reseed commit ~15,000
+  changed paths: `commit.draft()` ran for 5+ minutes at 90% CPU and 1-2 GB three times (2026-11-24, 11-25, 11-27).
+  They still exist on disk and are baked into the image by `./build-frontend.sh`, so nothing changes at runtime.
+  A fresh clone has NO `books/` directory: run `./build-frontend.sh` (or `node scripts/seed.mjs`) before building the
+  frontend image. The other snapshots (`books.json`, `authors.json`, `book-slugs.json`, `legacy-book-slugs.json`, ...)
+  stay tracked; `book-slugs.json` is copied into the Flask image. Old commits keep the per-book history
+
 ### Video Transcripts (`/video/<id>/`)
 - The video page renders a collapsible "Subtitel" section from
   `frontend/src/data/video-transcripts/<id>.json` (`{lang, lines: [[sec, text]]}`);
