@@ -21,6 +21,8 @@ pub struct Settings {
     pub restricted_column: i64,
     pub reverse_proxy_login: bool,
     pub reverse_proxy_login_header: String,
+    pub guest_name: String,
+    pub guest_role: i64,
     pub guest_language: String,
     pub guest_denied_tags: String,
     pub guest_allowed_tags: String,
@@ -79,6 +81,8 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
                 restricted_column: row.get::<_, Option<i64>>(11)?.unwrap_or(0),
                 reverse_proxy_login: flag(12)?,
                 reverse_proxy_login_header: text(13)?,
+                guest_name: String::new(),
+                guest_role: 0,
                 guest_language: String::new(),
                 guest_denied_tags: String::new(),
                 guest_allowed_tags: String::new(),
@@ -86,15 +90,19 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
             })
         },
     )?;
-    let (guest_language, guest_denied_tags, guest_allowed_tags) = conn.query_row(
-        "SELECT default_language, denied_tags, allowed_tags FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
+    let (guest_name, guest_role, guest_language, guest_denied_tags, guest_allowed_tags) = conn.query_row(
+        "SELECT name, role, default_language, denied_tags, allowed_tags FROM user WHERE (role & 32) = 32 ORDER BY id LIMIT 1",
         [],
         |row| Ok((
             row.get::<_, Option<String>>(0)?.unwrap_or_default(),
-            row.get::<_, Option<String>>(1)?.unwrap_or_default(),
+            row.get::<_, Option<i64>>(1)?.unwrap_or(0),
             row.get::<_, Option<String>>(2)?.unwrap_or_default(),
+            row.get::<_, Option<String>>(3)?.unwrap_or_default(),
+            row.get::<_, Option<String>>(4)?.unwrap_or_default(),
         )),
     )?;
+    settings.guest_name = guest_name;
+    settings.guest_role = guest_role;
     settings.guest_language = guest_language;
     settings.guest_denied_tags = guest_denied_tags;
     settings.guest_allowed_tags = guest_allowed_tags;

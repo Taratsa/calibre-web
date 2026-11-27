@@ -231,26 +231,10 @@ fn find_visible_cover(
     allowed: &str,
 ) -> rusqlite::Result<Option<Cover>> {
     let conn = crate::settings::open_read_only(metadata_db)?;
-    let denied: Vec<String> = split_filter(denied);
-    let allowed: Vec<String> = split_filter(allowed);
-    let mut sql = String::from("SELECT b.path, b.has_cover FROM books b WHERE b.id = ?1");
+    let (filter, extra) = crate::library::visibility_clause(language, denied, allowed);
+    let sql = format!("SELECT b.path, b.has_cover FROM books b WHERE b.id = ?1{filter}");
     let mut values = vec![rusqlite::types::Value::Integer(book_id)];
-    if !language.is_empty() && language != "all" {
-        sql.push_str(" AND EXISTS (SELECT 1 FROM books_languages_link bl JOIN languages l ON l.id = bl.lang_code WHERE bl.book = b.id AND l.lang_code = ?)");
-        values.push(language.to_owned().into());
-    }
-    if !denied.is_empty() {
-        sql.push_str(" AND NOT EXISTS (SELECT 1 FROM books_tags_link bt JOIN tags t ON t.id = bt.tag WHERE bt.book = b.id AND t.name IN (");
-        placeholders(&mut sql, denied.len());
-        sql.push_str("))");
-        values.extend(denied.into_iter().map(Into::into));
-    }
-    if !allowed.is_empty() {
-        sql.push_str(" AND EXISTS (SELECT 1 FROM books_tags_link bt JOIN tags t ON t.id = bt.tag WHERE bt.book = b.id AND t.name IN (");
-        placeholders(&mut sql, allowed.len());
-        sql.push_str("))");
-        values.extend(allowed.into_iter().map(Into::into));
-    }
+    values.extend(extra);
     conn.query_row(&sql, rusqlite::params_from_iter(values), |row| {
         Ok(Cover {
             path: row.get(0)?,
@@ -258,27 +242,6 @@ fn find_visible_cover(
         })
     })
     .optional()
-}
-fn split_filter(value: &str) -> Vec<String> {
-    value
-        .split(',')
-        .map(|part| {
-            part.trim_matches(|c: char| {
-                c.is_whitespace() || matches!(c, '\u{200B}'..='\u{200D}' | '\u{FEFF}')
-            })
-        })
-        .filter(|part| !part.is_empty())
-        .map(str::to_owned)
-        .collect()
-}
-
-fn placeholders(sql: &mut String, count: usize) {
-    for i in 0..count {
-        if i > 0 {
-            sql.push(',');
-        }
-        sql.push('?');
-    }
 }
 
 async fn generic_cover(
@@ -613,13 +576,5 @@ mod tests {
         assert_eq!(resolution(None, CoverRoute::Thumbnail), Some(1));
         assert_eq!(resolution(Some("unknown"), CoverRoute::Thumbnail), Some(1));
         assert_eq!(resolution(Some("og"), CoverRoute::Thumbnail), None);
-    }
-
-    #[test]
-    fn tag_filter_splits_and_trims_unicode_whitespace() {
-        assert_eq!(
-            super::split_filter(" foo, bar ,\u{200B}baz\u{FEFF}"),
-            vec!["foo", "bar", "baz"]
-        );
     }
 }

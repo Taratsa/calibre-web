@@ -13,6 +13,7 @@ const BODY: &[u8] = b"%PDF-1.4 fixture body, long enough to range over";
 struct Fixture {
     _dir: TempDir,
     app: axum::Router,
+    app_db: std::path::PathBuf,
     version: String,
 }
 
@@ -56,7 +57,11 @@ fn fixture(embed_metadata: bool) -> Fixture {
             config_trustedhosts TEXT, config_calibre_web_title TEXT, config_anonbrowse INTEGER,
             config_restricted_column INTEGER, config_allow_reverse_proxy_header_login INTEGER,
             config_reverse_proxy_login_header_name TEXT);
-         CREATE TABLE user (id INTEGER PRIMARY KEY, role INTEGER, default_language TEXT, denied_tags TEXT, allowed_tags TEXT);
+         CREATE TABLE user (id INTEGER PRIMARY KEY, name TEXT, role INTEGER, default_language TEXT, denied_tags TEXT, allowed_tags TEXT);
+         CREATE TABLE downloads (id INTEGER NOT NULL, book_id INTEGER, user_id INTEGER,
+            hit_count INTEGER NOT NULL DEFAULT 1, last_hit DATETIME NOT NULL DEFAULT '1970-01-01 00:00:00',
+            PRIMARY KEY (id), FOREIGN KEY(user_id) REFERENCES user (id));
+         CREATE UNIQUE INDEX uq_downloads_user_book ON downloads (user_id, book_id);
          CREATE TABLE archived_book (id INTEGER PRIMARY KEY, user_id INTEGER, book_id INTEGER, is_archived INTEGER);
          CREATE TABLE flask_settings (id INTEGER PRIMARY KEY, flask_session_key BLOB);",
     )
@@ -71,18 +76,23 @@ fn fixture(embed_metadata: bool) -> Fixture {
         [KEY],
     )
     .unwrap();
-    app.execute("INSERT INTO user VALUES (1, 32, 'all', '', '')", [])
-        .unwrap();
+    app.execute(
+        "INSERT INTO user VALUES (0, '__anonymous__', 0, 'all', '', ''), (1, 'Guest', 34, 'all', '', '')",
+        [],
+    )
+    .unwrap();
 
-    let mut state = Arc::new(AppState::new(app_db, 2));
+    let mut state = Arc::new(AppState::new(app_db.clone(), 2));
     Arc::get_mut(&mut state).unwrap().cache_directory = dir.path().join("cache");
     Arc::get_mut(&mut state).unwrap().static_directory = dir.path().join("static");
     std::fs::create_dir_all(dir.path().join("static")).unwrap();
     std::fs::write(dir.path().join("static/generic_cover.jpg"), b"generic").unwrap();
     Arc::get_mut(&mut state).unwrap().proxy_url = "http://127.0.0.1:1".into();
+    Arc::get_mut(&mut state).unwrap().umami_url = None;
     let version = format!("{}-{}", 1_698_393_413, BODY.len());
     Fixture {
         app: router(state),
+        app_db,
         _dir: dir,
         version,
     }
@@ -435,4 +445,109 @@ async fn request_identity_and_generic_cases_are_preserved() {
             &b"generic"[..]
         );
     }
+}
+
+async fn download(
+    f: &Fixture,
+    uri: &str,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, String) {
+    let mut request = Request::builder()
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    if !extra.iter().any(|(name, _)| *name == "user-agent") {
+        request = request.header(header::USER_AGENT, "Mozilla/5.0");
+    }
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    let text = String::from_utf8_lossy(&body.collect().await.unwrap().to_bytes()).into_owned();
+    (parts.status, parts.headers, text)
+}
+
+fn hits(f: &Fixture) -> Vec<(i64, i64, i64)> {
+    let conn = Connection::open(&f.app_db).unwrap();
+    let mut statement = conn
+        .prepare("SELECT book_id, user_id, hit_count FROM downloads ORDER BY id")
+        .unwrap();
+    statement
+        .query_map([], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?)))
+        .unwrap()
+        .map(Result::unwrap)
+        .collect()
+}
+
+#[tokio::test]
+async fn anonymous_download_counts_and_redirects_to_the_signed_url() {
+    let f = fixture(false);
+    let sig = signing::signature(KEY, 7, "pdf", &f.version);
+    let location = format!("/files/7/pdf/{}/{sig}/Cafe%20Muller.pdf", f.version);
+    let (status, headers, body) = download(&f, "/download/7/pdf", &[]).await;
+    assert_eq!(status, StatusCode::FOUND);
+    assert_eq!(headers[header::LOCATION], location.as_str());
+    assert_eq!(headers[header::CACHE_CONTROL], "private, no-store");
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(headers[header::CONTENT_TYPE], "text/html; charset=utf-8");
+    assert!(body.starts_with("<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>"));
+    assert!(body.contains(&format!(
+        "<a href=\"/files/7/pdf/{}/{sig}/Cafe%20Muller.pdf\">",
+        f.version
+    )));
+    assert_eq!(hits(&f), vec![(7, 0, 1)]);
+
+    // the named variant and a dotted format both count the same (user, book) row again
+    let (status, _, _) = download(&f, "/download/7/pdf.pdf/whatever.pdf", &[]).await;
+    assert_eq!(status, StatusCode::FOUND);
+    assert_eq!(hits(&f), vec![(7, 0, 2)]);
+
+    // the redirect target is the signed file
+    let (status, _, served) = get(&f, headers[header::LOCATION].to_str().unwrap(), None).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(served, BODY);
+}
+
+#[tokio::test]
+async fn download_leaves_identity_and_failures_to_flask_without_counting() {
+    let f = fixture(false);
+    for extra in [
+        vec![("cookie", "session=abc")],
+        vec![("authorization", "Basic eDp5")],
+        vec![("user-agent", "Mozilla/5.0 (Linux; Kindle Fire)")],
+    ] {
+        let (status, _, _) = download(&f, "/download/7/pdf", &extra).await;
+        assert_eq!(status, StatusCode::BAD_GATEWAY, "{extra:?} must proxy");
+    }
+    for path in ["/download/99/pdf", "/download/7/epub", "/download/7x/pdf"] {
+        let (status, _, _) = download(&f, path, &[]).await;
+        assert_ne!(status, StatusCode::FOUND, "{path}");
+    }
+    // no User-Agent: Flask raises, so the request goes to Flask
+    let request = Request::builder()
+        .uri("/download/7/pdf")
+        .header(header::HOST, "pustaka.example")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::BAD_GATEWAY);
+    assert!(hits(&f).is_empty(), "nothing may be counted");
+}
+
+#[tokio::test]
+async fn a_failed_counter_write_never_fails_the_download() {
+    let f = fixture(false);
+    // a guest without the sentinel row: the foreign key rejects the insert
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute("DELETE FROM user WHERE id = 0", [])
+        .unwrap();
+    let (status, _, _) = download(&f, "/download/7/pdf", &[]).await;
+    assert_eq!(status, StatusCode::FOUND);
+    assert!(hits(&f).is_empty());
 }

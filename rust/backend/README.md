@@ -22,8 +22,9 @@ backend answers. Nothing moves until its Rust version has been compared against 
 | `/health`, `/healthz`, `/readyz`, `/healthz/live`, `/healthz/ready` | `src/health.rs` | same paths and payload keys as `cps/health.py`; `process` names the Rust runtime |
 | `/files/<id>/<fmt>/<version>/<sig>[/<name>]` | `src/files.rs` | signed, immutable, never counts a download; `Range`/`ETag`/`Last-Modified` from `tower-http` |
 | `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
+| `/download/<id>/<fmt>[/<name>]` | `src/download.rs` | anonymous only: counts the download in `app.db` and 302s to the signed `/files` URL; identity and failure cases proxy to Flask |
 
-`/download/*`, `/series_cover/*`, and everything else remain Flask. The cover route serves an existing local source
+`/series_cover/*` and everything else remain Flask. The cover route serves an existing local source
 JPEG or prebuilt WebP, or an existing Flask thumbnail-cache file. On cache miss (including requested WebP without
 a prebuilt image), Rust proxies the original request to Flask; Flask generates/converts the asset and fills the
 shared cache. Generated placeholder cards are still served by Flask. The security headers of `add_security_headers`
@@ -40,8 +41,21 @@ are applied here to every response (`src/security.rs`).
   Werkzeug-compatible path Adler-32 ETags, Last-Modified, Range, HEAD and conditional requests.
   `/cover_thumb` defaults to `sm`; `/cover` does not.
 
-Not ported: `/download/*` (authorizes and counts, needs sessions), `/series_cover/*` (series cache semantics),
-everything else.
+### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
+
+Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's
+`download` role, language and tag filters, that the file exists, then does what `ub.update_download` does (the same
+`INSERT ... ON CONFLICT DO UPDATE` on `downloads`, user 0, a connection with `PRAGMA foreign_keys=ON`, 30 s busy
+timeout; a failed write is logged, never fails the download), sends the Umami `file-download` event in the
+background (`UMAMI_URL=off` disables it; `DNT: 1` skips it) and answers werkzeug's 302 to the signed `/files` URL:
+same `Location`, body, `Cache-Control: private, no-store` and `Vary: Cookie` as Flask.
+
+Everything else is proxied to Flask UNCHANGED, and nothing is counted on that path, so no download is counted
+twice: `Cookie`/`Authorization`, reverse-proxy login, hidden anonymous browsing, Google Drive, restricted columns,
+a guest without the download role, a Kindle User-Agent, a missing `User-Agent` (Flask answers 500), a non-numeric
+id, and any book/format/file that is missing, hidden or has an unusable name or timestamp (so every 404 is Flask's).
+
+Not ported: `/series_cover/*` (series cache semantics), everything else.
 
 ### Behaviour that is deliberately the same as Flask
 
@@ -75,6 +89,7 @@ APP_DB_PATH=/config/app.db LISTEN=127.0.0.1:8084 RUST_LOG=info ./taratsa_backend
 | `MAX_EXPORTS` | `4` | concurrent `calibredb export` processes |
 | `SECRET_KEY` | none | overrides the stored signing key, like Flask |
 | `ONION_LOCATION` | none | adds the `Onion-Location` header |
+| `UMAMI_URL` | `https://umami.kenadera.org/api/send` | Umami endpoint of the `/download` event; `off` disables it |
 
 ## Check
 

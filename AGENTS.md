@@ -644,10 +644,14 @@ Two live search systems (plus the legacy advanced-search form):
 
 - Strangler rewrite, not a big bang: Flask stays the live backend and Caddy switches routes one at a time. The crate
   is `rust/backend/` (axum + tokio + rusqlite), see its `README.md` for the design and the environment variables.
-- **It never writes.** `app.db` and Calibre's `metadata.db` are opened read-only; `library/` is only read. Schemas,
+- **It writes exactly one thing: the anonymous download counter.** `app.db` and Calibre's `metadata.db` are opened
+  read-only, except that `/download` (`src/download.rs`) upserts the `downloads` row of user 0 like
+  `ub.update_download` (same SQL, `PRAGMA foreign_keys=ON`, so the `__anonymous__` sentinel row must exist; a failed
+  write is logged and never fails the download). `library/` is only read. Schemas,
   accounts, password hashes and the signing key stay Flask's, so Calibre desktop and the Flask UI keep working and a
   rollback is a Caddy edit. Settings are re-read from `app.db` at most once per second, so an admin change applies
-  without a restart.
+  without a restart. Rust counts only requests it answers itself; anything it proxies to Flask is counted by Flask,
+  so a download is never counted twice. Rust sends the Umami event in the background (`UMAMI_URL=off` disables it).
 - **Signed URLs stay byte-identical to three other copies**: `_file_signature` in `cps/helper.py`,
   `frontend/scripts/seed.mjs` and `src/signing.rs`. `version` is `last_modified` as UTC (the first
   `YYYY-MM-DD HH:MM:SS` of the stored text; a `+00:00` suffix is ignored, as SQLAlchemy's `TIMESTAMP` does) plus the

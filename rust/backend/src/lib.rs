@@ -4,6 +4,7 @@
 
 pub mod accept;
 pub mod cover;
+pub mod download;
 pub mod export;
 pub mod filename;
 pub mod files;
@@ -35,6 +36,8 @@ pub struct AppState {
     pub proxy_client: reqwest::Client,
     pub cache_directory: PathBuf,
     pub static_directory: PathBuf,
+    /// Umami endpoint of the server-side `file-download` event; `None` disables it (`UMAMI_URL=off`).
+    pub umami_url: Option<String>,
     cached: Mutex<Option<(Instant, Arc<Settings>)>>,
 }
 
@@ -67,6 +70,11 @@ impl AppState {
             static_directory: env("STATIC_DIR")
                 .map(PathBuf::from)
                 .unwrap_or_else(|| PathBuf::from("/app/calibre-web/cps/static")),
+            umami_url: match env("UMAMI_URL").as_deref() {
+                Some("off") => None,
+                Some(url) => Some(url.to_owned()),
+                None => Some("https://umami.kenadera.org/api/send".to_owned()),
+            },
             cached: Mutex::new(None),
         }
     }
@@ -100,6 +108,7 @@ pub fn router(state: Arc<AppState>) -> Router {
     Router::new()
         .merge(health::routes())
         .merge(cover::routes())
+        .merge(download::routes())
         .merge(files::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
