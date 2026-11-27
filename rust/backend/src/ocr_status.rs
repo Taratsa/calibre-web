@@ -1,10 +1,12 @@
-//! `GET /api/read/<id>/ocr/status[/<fmt>]` for the anonymous visitor, answered only when the text is already cached.
+//! Two read-only OCR routes for the anonymous visitor, answered only when the text is already cached:
+//! `GET /api/read/<id>/ocr/status[/<fmt>]` and `GET /api/read/<id>/ocr[/<fmt>]` (the cached document).
 //!
-//! Flask answers `{"available": true, "state": null}` as soon as the document's OCR cache file exists and is `ready`.
-//! Everything else needs state Rust does not have and is proxied unchanged: an EPUB cache miss extracts the text
-//! inline, a PDF miss asks the in-memory job queue (`ocr_job_state`), a non-PDF file under the PDF format raises, and
-//! every 404 is Flask's own page. So this route never answers anything but the one cache-hit body, and a failed or
-//! odd lookup of any kind is Flask's job.
+//! Flask answers the status as `{"available": true, "state": null}` and the document as a small `jsonify` object as
+//! soon as the OCR cache file exists and is `ready`. Everything else needs state Rust does not have and is proxied
+//! unchanged: an EPUB cache miss extracts the text inline, a PDF miss asks the in-memory job queue
+//! (`ocr_job_state`) or answers 202, a non-PDF file under the PDF format raises, and every 404 is Flask's own page.
+//! So these routes never answer anything but the cache-hit bodies, and a failed or odd lookup of any kind is Flask's
+//! job.
 //!
 //! The cache file name is `<book id>-<sha256 of the request>.json`, where the request is
 //! `json.dumps({version, book_id, format, name, size, mtime_ns, extract_version|layout_version}, sort_keys=True,
@@ -37,6 +39,12 @@ const fn parse(digits: &str) -> u32 {
     value
 }
 
+#[derive(Clone, Copy)]
+enum Body {
+    Status,
+    Document,
+}
+
 pub fn routes() -> Router<Arc<AppState>> {
     Router::new()
         .route("/api/read/{book_id}/ocr/status", get(status))
@@ -49,6 +57,8 @@ pub fn routes() -> Router<Arc<AppState>> {
             "/api/read/{book_id}/ocr/status/{format}/",
             get(status_format),
         )
+        .route("/api/read/{book_id}/ocr", get(document))
+        .route("/api/read/{book_id}/ocr/{format}", get(document_format))
 }
 
 async fn status(
@@ -58,7 +68,16 @@ async fn status(
     method: Method,
     headers: HeaderMap,
 ) -> Response {
-    answer(state.0, book_id, "pdf".to_owned(), uri, method, headers).await
+    answer(
+        state.0,
+        book_id,
+        "pdf".to_owned(),
+        Body::Status,
+        uri,
+        method,
+        headers,
+    )
+    .await
 }
 
 async fn status_format(
@@ -68,13 +87,52 @@ async fn status_format(
     method: Method,
     headers: HeaderMap,
 ) -> Response {
-    answer(state.0, book_id, format, uri, method, headers).await
+    answer(state.0, book_id, format, Body::Status, uri, method, headers).await
+}
+
+async fn document(
+    state: State<Arc<AppState>>,
+    Path(book_id): Path<String>,
+    uri: OriginalUri,
+    method: Method,
+    headers: HeaderMap,
+) -> Response {
+    answer(
+        state.0,
+        book_id,
+        "pdf".to_owned(),
+        Body::Document,
+        uri,
+        method,
+        headers,
+    )
+    .await
+}
+
+async fn document_format(
+    state: State<Arc<AppState>>,
+    Path((book_id, format)): Path<(String, String)>,
+    uri: OriginalUri,
+    method: Method,
+    headers: HeaderMap,
+) -> Response {
+    answer(
+        state.0,
+        book_id,
+        format,
+        Body::Document,
+        uri,
+        method,
+        headers,
+    )
+    .await
 }
 
 async fn answer(
     state: Arc<AppState>,
     book_id: String,
     format: String,
+    body: Body,
     uri: OriginalUri,
     method: Method,
     headers: HeaderMap,
@@ -83,7 +141,7 @@ async fn answer(
         .0
         .path_and_query()
         .map_or_else(|| uri.0.path().to_owned(), |v| v.as_str().to_owned());
-    // Flask's `<int:book_id>` takes ASCII digits only, a trailing slash is a 404 there (the rule has none), and the
+    // Flask's `<int:book_id>` takes ASCII digits only, a trailing slash is a 404 there (the rules have none), and the
     // format must be `pdf` or `epub` once upper-cased (`_ocr_format`), so `PDF` is accepted too.
     let plain_digits = !book_id.is_empty() && book_id.bytes().all(|b| b.is_ascii_digit());
     let upper = format.to_ascii_uppercase();
@@ -99,7 +157,7 @@ async fn answer(
     let settings = match state.settings().await {
         Ok(settings) => settings,
         Err(error) => {
-            tracing::error!("OCR status settings unavailable: {error}");
+            tracing::error!("OCR reader settings unavailable: {error}");
             return proxy::fallback_reconstructed(state, &path, method, headers).await;
         }
     };
@@ -114,7 +172,7 @@ async fn answer(
         return proxy::fallback_reconstructed(state, &path, method, headers).await;
     }
 
-    // Read fresh: the guest's role and filters decide whether this book's status may be shown.
+    // Read fresh: the guest's role and filters decide whether this book may be shown.
     let app_db = state.app_db.clone();
     let guest =
         tokio::task::spawn_blocking(move || crate::settings::load_guest_access(&app_db)).await;
@@ -127,7 +185,7 @@ async fn answer(
     let book_path = settings.book_path().to_path_buf();
     let cache_directory = state.ocr_cache_directory.clone();
     let lookup_format = upper.clone();
-    let hit = tokio::task::spawn_blocking(move || {
+    let found = tokio::task::spawn_blocking(move || {
         let found = library::find_visible_format(
             &metadata_db,
             book_id,
@@ -152,22 +210,48 @@ async fn answer(
             size: meta.len(),
             mtime_ns: mtime_ns(&meta)?,
         };
-        cache_is_ready(&cache_directory, &key).then_some(())
+        let ready = load_ready(&cache_directory, &key)?;
+        Some((found.title.unwrap_or_default(), ready))
     })
     .await;
-    if !matches!(hit, Ok(Some(()))) {
-        return proxy::fallback_reconstructed(state, &path, method, headers).await;
-    }
+    let (title, ready) = match found {
+        Ok(Some(found)) => found,
+        _ => return proxy::fallback_reconstructed(state, &path, method, headers).await,
+    };
 
-    let mut response = (StatusCode::OK, "{\"available\":true,\"state\":null}\n").into_response();
+    let kind = body;
+    let content = match kind {
+        Body::Status => "{\"available\":true,\"state\":null}\n".to_owned(),
+        Body::Document => format!(
+            "{{\"book\":{{\"id\":{book_id},\"title\":{}}},\"document\":{{\"markdown_html\":{},\"page_count\":{},\"pages_routed_to_ocr\":{},\"processing_time_ms\":{}}}}}\n",
+            pyjson::dumps_string(&title),
+            pyjson::dumps_string(&ready.markdown_html),
+            ready.page_count,
+            ready.pages_routed_to_ocr,
+            ready.processing_time_ms,
+        ),
+    };
+    let mut response = (StatusCode::OK, content).into_response();
     let out = response.headers_mut();
     out.insert(
         header::CONTENT_TYPE,
         HeaderValue::from_static("application/json"),
     );
     out.insert(header::VARY, HeaderValue::from_static("Cookie"));
-    // Flask sets nothing else here (no Cache-Control), so neither does this.
+    if matches!(kind, Body::Document) {
+        out.insert(
+            header::CACHE_CONTROL,
+            HeaderValue::from_static("private, no-store"),
+        );
+    }
     response
+}
+
+struct Ready {
+    markdown_html: String,
+    page_count: i64,
+    pages_routed_to_ocr: i64,
+    processing_time_ms: i64,
 }
 
 struct CacheKey<'a> {
@@ -212,21 +296,26 @@ fn cache_file_name(key: &CacheKey<'_>) -> String {
     format!("{}-{}.json", key.book_id, hex::encode(digest))
 }
 
-/// True when the cache file exists and parses as a `ready` result with the fields Flask's `_load_cache` requires.
-fn cache_is_ready(directory: &FsPath, key: &CacheKey<'_>) -> bool {
+/// The `ready` result `_load_cache` accepts, with the four fields both bodies read, or `None` (a miss).
+fn load_ready(directory: &FsPath, key: &CacheKey<'_>) -> Option<Ready> {
     let path: PathBuf = directory.join(cache_file_name(key));
-    let Ok(bytes) = std::fs::read(path) else {
-        return false;
-    };
-    let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) else {
-        return false;
-    };
+    let bytes = std::fs::read(path).ok()?;
+    let value = serde_json::from_slice::<serde_json::Value>(&bytes).ok()?;
     let result = &value["result"];
-    result["status"] == "ready"
-        && result["markdown_html"].is_string()
-        && ["page_count", "pages_routed_to_ocr", "processing_time_ms"]
-            .iter()
-            .all(|field| result[*field].is_i64() || result[*field].is_u64())
+    if result["status"] != "ready" {
+        return None;
+    }
+    let integer = |field: &str| {
+        result[field]
+            .as_i64()
+            .or_else(|| result[field].as_u64().and_then(|v| i64::try_from(v).ok()))
+    };
+    Some(Ready {
+        markdown_html: result["markdown_html"].as_str()?.to_owned(),
+        page_count: integer("page_count")?,
+        pages_routed_to_ocr: integer("pages_routed_to_ocr")?,
+        processing_time_ms: integer("processing_time_ms")?,
+    })
 }
 
 #[cfg(test)]

@@ -1038,3 +1038,31 @@ async fn ocr_status_follows_the_guest_role_and_archive_at_once() {
         StatusCode::BAD_GATEWAY
     );
 }
+
+#[tokio::test]
+async fn the_cached_document_is_flasks_jsonify_body() {
+    let f = fixture(false);
+    reader_state(&f);
+    ocr_ready(&f, READY);
+    tokio::time::sleep(std::time::Duration::from_millis(1100)).await;
+    // jsonify sorts keys and escapes non-ASCII: the title's é is \u00e9, and the body ends with a newline.
+    let expected = "{\"book\":{\"id\":7,\"title\":\"Caf\\u00e9 M\\u00fcller\"},\"document\":{\"markdown_html\":\"<p>x</p>\",\"page_count\":3,\"pages_routed_to_ocr\":1,\"processing_time_ms\":9}}\n";
+    for uri in [
+        "/api/read/7/ocr",
+        "/api/read/7/ocr/pdf",
+        "/api/read/7/ocr/PDF",
+    ] {
+        let (status, headers, body) = get(&f, uri, None).await;
+        assert_eq!(status, StatusCode::OK, "{uri}");
+        assert_eq!(String::from_utf8_lossy(&body), expected, "{uri}");
+        assert_eq!(headers[header::CONTENT_TYPE], "application/json");
+        assert_eq!(headers[header::VARY], "Cookie");
+        assert_eq!(headers[header::CACHE_CONTROL], "private, no-store");
+    }
+    // a miss is Flask's 202/404, never a body from here
+    ocr_ready(&f, r#"{"status":"queued"}"#);
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/pdf", None).await.0,
+        StatusCode::BAD_GATEWAY
+    );
+}
