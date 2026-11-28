@@ -1110,7 +1110,14 @@ Two live search systems (plus the legacy advanced-search form):
   are HTML-unescaped and `_` turned into spaces (several coverless titles are slugs or contain `&amp;`).
   Checked 2026-11-28 on a throwaway image with copies of `app.db`/`metadata.db` (no book files): 2,702 responses over 120
   coverless books × 10 URL shapes × both `Accept` values, plus HEAD, `Range` and `If-None-Match`, were identical between
-  Flask and Rust in status, headers and bytes. A cached card takes Flask 22-54 ms and Rust 2-7 ms.
+  Flask and Rust in status, headers and bytes. A cached card takes Flask 22-54 ms and Rust 2-7 ms. LIVE since 2026-11-28
+  ~05:55 UTC (image `calibre-web:placeholder-live`, rollback `calibre-web:pre-placeholder`; no Caddy change, `/cover*` was
+  already Rust-first). On production, the first request for a card took 100 ms and was proxied to Flask (one access-log
+  line, the card stored), the second was answered by Rust in 3.7 ms with no Flask request, and both bodies were
+  byte-identical. Cards for books real traffic asked for appeared in `cache/placeholders` within minutes of the deploy.
+  A Cloudflare edge copy of a card stays for up to a day (`age` 14134 s observed), so an old-looking card right after a
+  deploy is the edge, not the origin. Flask's access log reports ~666 bytes more than the card's `Content-Length` for
+  these proxied responses; the bodies are identical (checked with `cmp`), so it is a logging artefact, not a difference.
 - **Error responses are not cacheable at the origin** (changed 2026-11-20, after the 2026-11-18 outage): the `/cover*`
   rule in the production Caddyfile sets `Cache-Control: public, max-age=86400` only inside `handle_response` for
   `status 2xx`, and `no-store` for 3xx/4xx/5xx. A plain `header @covers >Cache-Control ...` applied to every status, so
