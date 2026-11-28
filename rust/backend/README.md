@@ -246,6 +246,35 @@ Live: `@rust_reader` widened to `^/read/[0-9]+/(pdf|epub)$` (backup `Caddyfile.p
 one `HttpOnly; SameSite=Lax` cookie. A new template embedded by Rust must be copied in the Dockerfile's builder stage
 too (`read.html` was missed once, the same trap as `readpdf.html`).
 
+### `/book/<id>[/…]` and `/author/<id>[/<page>]` (`src/legacy.rs`, written 2026-11-28)
+
+The legacy numeric URLs of the main host, which Flask answers with a `301` to the canonical slug page and Caddy sends to
+Flask (`@legacy_book`, `@legacy_author`). Rust answers the same `301` for the visitor with no cookie or credential:
+
+* **Book**: `book-slugs.json` (`BOOK_SLUGS_PATH`, the file `seed.mjs` writes) maps id to slug; the map is re-read when
+  the file's mtime changes, like `_get_book_slugs`. `/book/<id>` and `/book/<id>/` give `/book/<slug>/`;
+  `/book/<id>/<slug>[/<extra>]` gives `/book/<id>/`. An id missing from the map, a slug that fails Flask's
+  `[a-z0-9]+(-[a-z0-9]+)*` pattern, an unreadable map, a library that needs a login and the `old-pustaka` host (which
+  renders the real page) are proxied.
+* **Author**: the slug is computed from `authors.name` with Flask's `_author_slug` (NFKD, combining marks dropped, a
+  table of letters NFKD leaves alone, runs of non-`[a-z0-9]` to one hyphen, `-<id>` when two names collapse to the same
+  slug, when the base is all digits or longer than 96). `unicode-normalization` does the NFKD; Python's `unicodedata`
+  and the crate both implement Unicode, so a Unicode version gap could differ on a name using a very new character
+  (none of the 7,961 authors does: 44 have non-ASCII names, all compared). Pages: `/<n>` and `/page/<n>`, `>1` adds
+  `page/<n>/`.
+* Everything else is Flask's: `%` anywhere in the path (the server would decode it first), a shape werkzeug does not route
+  (`/author/1/page`, `/book/1/a/b/`), an unknown book or author (Flask's HTML 404 page), other methods.
+
+Checked against Flask on a copy of `app.db` (no counters are written by these routes): 3,873 requests (the 270 authors
+with a non-ASCII name, a collision, an all-digit slug, a name over 96 characters or the `author` fallback, 389 more random
+authors, page variants, 3,000 book ids, aliases, 14 odd shapes, HEAD, a cookie and the legacy host): 3,870 identical in
+status, headers and body. The three differences are not this route: two are Flask's own refreshed `Set-Cookie` on
+requests Flask itself answers (`/author/1/x`, `/author/1/2/3`: a 302 it produces both times, with a different signed
+timestamp), and one is `/book/<id>/%2e`, which Rust hands to Flask and `proxy.rs` forwards with `%2e` collapsed to a dot
+segment (reqwest's URL parser), so Flask answers a different redirect than for the raw path. That is a property of the
+shared proxy for every route and only matters for a crafted path; it was left alone. One redirect: Flask 0.6-1.1 s, Rust
+0.5-12 ms. Not wired into Caddy yet.
+
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
 Port of `download_link` + `get_download_redirect`, for the ANONYMOUS visitor only. It checks the guest's

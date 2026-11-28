@@ -29,6 +29,7 @@ zip = { version = "4", default-features = false, features = ["deflate"] }
 quick-xml = "0.38"
 flate2 = "1"
 sha1 = "0.11"
+unicode-normalization = "0.1"
 
 [dev-dependencies]
 http-body-util = "0.1.5"

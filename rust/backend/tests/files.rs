@@ -94,6 +94,9 @@ fn fixture(embed_metadata: bool) -> Fixture {
     Arc::get_mut(&mut state).unwrap().proxy_url = "http://127.0.0.1:1".into();
     Arc::get_mut(&mut state).unwrap().umami_url = None;
     Arc::get_mut(&mut state).unwrap().ocr_cache_directory = dir.path().join("ocr");
+    let slugs = dir.path().join("book-slugs.json");
+    std::fs::write(&slugs, r#"{"7": "cafe-muller", "8": "Bad_Slug"}"#).unwrap();
+    Arc::get_mut(&mut state).unwrap().book_slugs_path = Some(slugs);
     let version = format!("{}-{}", 1_698_393_413, BODY.len());
     Fixture {
         app: router(state),
@@ -1548,4 +1551,124 @@ async fn epub_page_leaves_users_and_odd_cookies_to_flask() {
         on(&f, "/read/7/epub/", &[]).await.0,
         StatusCode::BAD_GATEWAY
     );
+}
+
+async fn legacy(
+    f: &Fixture,
+    uri: &str,
+    headers: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, String) {
+    let mut request = Request::builder()
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    for (name, value) in headers {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    let bytes = body.collect().await.unwrap().to_bytes();
+    (
+        parts.status,
+        parts.headers,
+        String::from_utf8_lossy(&bytes).into_owned(),
+    )
+}
+
+#[tokio::test]
+async fn legacy_book_urls_redirect_to_the_slug_like_flask() {
+    let f = fixture(false);
+    for uri in ["/book/7", "/book/7/", "/book/007"] {
+        let (status, headers, body) = legacy(&f, uri, &[]).await;
+        assert_eq!(status, StatusCode::MOVED_PERMANENTLY, "{uri}");
+        assert_eq!(headers[header::LOCATION], "/book/cafe-muller/");
+        assert_eq!(headers[header::VARY], "Cookie");
+        assert_eq!(headers[header::CONTENT_TYPE], "text/html; charset=utf-8");
+        assert!(headers.get(header::CACHE_CONTROL).is_none());
+        assert_eq!(
+            body,
+            "<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n\
+             <p>You should be redirected automatically to the target URL: <a href=\"/book/cafe-muller/\">/book/cafe-muller/</a>. If not, click the link.\n"
+        );
+    }
+    for uri in [
+        "/book/7/old-slug",
+        "/book/7/old-slug/",
+        "/book/7/old-slug/extra",
+    ] {
+        let (status, headers, _) = legacy(&f, uri, &[]).await;
+        assert_eq!(status, StatusCode::MOVED_PERMANENTLY, "{uri}");
+        assert_eq!(headers[header::LOCATION], "/book/7/");
+    }
+}
+
+#[tokio::test]
+async fn legacy_urls_it_cannot_prove_go_to_flask() {
+    let f = fixture(false);
+    // unknown id, a slug that fails Flask's pattern, odd shapes, cookies and credentials, other methods, the legacy host
+    for (uri, headers) in [
+        ("/book/99", vec![]),
+        ("/book/8", vec![]),
+        ("/book/7/a/b/", vec![]),
+        ("/book/x", vec![]),
+        ("/book/7/%2e", vec![]),
+        ("/book/7", vec![("Cookie", "session=abc")]),
+        ("/book/7", vec![("Authorization", "Basic eDp5")]),
+        ("/book/7", vec![("Host", "old-pustaka.taratsa.id")]),
+        ("/author/99", vec![]),
+        ("/author/1/page", vec![]),
+        ("/author/1/x", vec![]),
+        ("/author/1", vec![("Cookie", "session=abc")]),
+    ] {
+        let host = headers
+            .iter()
+            .find(|(name, _)| *name == "Host")
+            .map_or("pustaka.example", |(_, value)| *value);
+        let mut request = Request::builder().uri(uri).header(header::HOST, host);
+        for (name, value) in headers.iter().filter(|(name, _)| *name != "Host") {
+            request = request.header(*name, *value);
+        }
+        let response = f
+            .app
+            .clone()
+            .oneshot(request.body(Body::empty()).unwrap())
+            .await
+            .unwrap();
+        assert_eq!(
+            response.status(),
+            StatusCode::BAD_GATEWAY,
+            "{uri} {headers:?}"
+        );
+    }
+    let request = Request::builder()
+        .method("POST")
+        .uri("/book/7")
+        .header(header::HOST, "pustaka.example")
+        .body(Body::empty())
+        .unwrap();
+    assert_eq!(
+        f.app.clone().oneshot(request).await.unwrap().status(),
+        StatusCode::BAD_GATEWAY
+    );
+}
+
+#[tokio::test]
+async fn legacy_author_urls_redirect_to_the_computed_slug() {
+    let f = fixture(false);
+    for (uri, location) in [
+        ("/author/1", "/author/first-author/"),
+        ("/author/2/", "/author/second-author/"),
+        ("/author/1/2", "/author/first-author/page/2/"),
+        ("/author/1/page/3/", "/author/first-author/page/3/"),
+        ("/author/1/1", "/author/first-author/"),
+        ("/author/1/page/0", "/author/first-author/"),
+    ] {
+        let (status, headers, _) = legacy(&f, uri, &[]).await;
+        assert_eq!(status, StatusCode::MOVED_PERMANENTLY, "{uri}");
+        assert_eq!(headers[header::LOCATION], location, "{uri}");
+    }
 }

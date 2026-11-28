@@ -202,7 +202,7 @@ fn redirect(location: &str) -> Response {
 }
 
 /// `markupsafe.escape`.
-fn escape_html(text: &str) -> String {
+pub fn escape_html(text: &str) -> String {
     let mut out = String::with_capacity(text.len());
     for ch in text.chars() {
         match ch {

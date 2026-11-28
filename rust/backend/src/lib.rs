@@ -10,6 +10,7 @@ pub mod export;
 pub mod filename;
 pub mod files;
 pub mod health;
+pub mod legacy;
 pub mod library;
 pub mod locale;
 pub mod mime;
@@ -48,6 +49,10 @@ pub struct AppState {
     pub ocr_cache_directory: PathBuf,
     /// Umami endpoint of the server-side `file-download` event; `None` disables it (`UMAMI_URL=off`).
     pub umami_url: Option<String>,
+    /// `BOOK_SLUGS_PATH`: the id-to-slug map `seed.mjs` writes (see `legacy`); Flask reads the same variable.
+    pub book_slugs_path: Option<PathBuf>,
+    /// The parsed map and the mtime (ns) it was read at, so a reseed is picked up without a restart.
+    book_slugs: std::sync::Mutex<Option<legacy::SlugCache>>,
     cached: Mutex<Option<(Instant, Arc<Settings>)>>,
 }
 
@@ -92,6 +97,8 @@ impl AppState {
                 Some(url) => Some(url.to_owned()),
                 None => Some("https://umami.kenadera.org/api/send".to_owned()),
             },
+            book_slugs_path: env("BOOK_SLUGS_PATH").map(PathBuf::from),
+            book_slugs: std::sync::Mutex::new(None),
             cached: Mutex::new(None),
         }
     }
@@ -131,6 +138,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(reader::routes())
         .merge(ocr_status::routes())
         .merge(readium::routes())
+        .merge(legacy::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,
