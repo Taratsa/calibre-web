@@ -727,7 +727,9 @@ Two live search systems (plus the legacy advanced-search form):
   any new export code. `/files/*`, `/download/*`, `/cover*` and `/series_cover/*` are answered by Rust behind Caddy with
   Flask as failover (see `rust/backend/README.md`, "Rollout").
 - **`/opds/download/<id>/<fmt>/` has a Rust implementation for the anonymous guest** (`rust/backend/src/opds_download.rs`,
-  2026-11-28, NOT routed yet: Caddy still sends `/opds/*` to Flask). It streams the book instead of redirecting and runs
+  2026-11-28, LIVE since 07:26 UTC: `@rust_download` and the old host's `@rust_paths` list `/opds/download/*`, Rust first
+  with Flask as the failover; image `calibre-web:opds-rust`, rollback `calibre-web:pre-opds-rust`, Caddyfile backup
+  `Caddyfile.pre-opds-rust.2026-11-28`). It streams the book instead of redirecting and runs
   the same `calibredb export` as `/files` through `src/export.rs` (the original, maintained Calibre 9.19 binary of the
   image, not a reimplementation), counting user 0 like `ub.update_download`. Checked on a throwaway pair of containers with
   copies of both databases and 10 real books (5 PDF, 5 EPUB, 2.4 KB to 527 KB) from the library: status, headers (minus
