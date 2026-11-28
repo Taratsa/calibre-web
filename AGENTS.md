@@ -1050,6 +1050,26 @@ Two live search systems (plus the legacy advanced-search form):
   before `@flask`, with Flask as the failover. Apply it only with the image that has these routes (Rust has no catch-all:
   until then `/admin/books*` must keep going to Flask).
 
+### Upload bot API (`/api/webhook/*`, 2026-11-28, NOT deployed yet)
+- **`GET|POST /api/webhook/check` is Rust** (`rust/backend/src/webhook_check.rs`). It was Flask-only and **BROKEN for
+  `author=`**: `cps/api.py` does `query.join(db.Authors)` on a many-to-many with no left side, so every author query
+  raised `InvalidRequestError: Don't know how to join to Authors` and answered 500 (reproduced on the sandbox; the bot's
+  own pre-upload check). The Rust route joins through `books_authors_link` and matches `name` OR `sort`.
+- Parity with Flask on 8 queries (title=Zine / Scream @ Word! / 2013 / ??? / kebudayaan / komnas / Laporan, with and
+  without `format`): the JSON was identical key for key. Details that make it identical: authors/series/publishers/
+  languages come back in the id order Flask's index reads, formats sorted, `authors` keep the stored `|` (`book.authors`
+  is serialised as stored), an exact title is compared after `normalize_title` (so `Solo <b>` is NOT exact), a title
+  with no searchable word sets `partial` and filters nothing, `is_duplicate` comes from `duplicate_book_key` with the
+  fingerprint of the last scan.
+- **`POST /api/webhook/upload` is still Flask.** The bot posts PDF/EPUB with its long-lived session cookie; the port
+  needs the metadata readers (`cps/epub.py`, `cps/uploader.py: pdf_meta`). `ebook-meta` is NOT in the image (only
+  `ebook-convert`, `calibredb`, `gs`), so the readers are Rust crates: zip + OPF for EPUB, pypdf-equivalent for PDF, and
+  a PDF cover rendered with `gs` (10.00.0 in the image) where Flask uses ImageMagick. Only PDF/EPUB/kepub are theirs:
+  any other extension goes to Flask.
+- Auth for both: the session cookie (`session::identify`), 401 `{"error":"Authentication required"}` otherwise; `check`
+  needs any account (Flask only checks `is_authenticated`), `upload` needs `ROLE_UPLOAD` (bit 1<<2; `hermes` has it).
+  `private, no-store`; no CSRF, like the Flask routes.
+
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
   Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on

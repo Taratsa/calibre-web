@@ -43,6 +43,7 @@ pub mod suggest;
 pub mod totp;
 pub mod turnstile;
 pub mod twofa;
+pub mod webhook_check;
 pub mod whoami;
 
 use axum::Router;
@@ -171,6 +172,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(crate::authors_admin::routes())
         .merge(crate::books_admin::routes())
         .merge(crate::whoami::routes())
+        .merge(crate::webhook_check::routes())
         .merge(crate::suggest::routes())
         .merge(crate::opds_guard::routes())
         .layer(axum::middleware::from_fn_with_state(
