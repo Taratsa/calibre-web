@@ -816,9 +816,14 @@ Two live search systems (plus the legacy advanced-search form):
   audit entry gone), cancel leaves data untouched, merge of one book is refused. Not checked: Google Drive libraries
   (merge answers "not supported"), a failing delete on a read-only folder, and the merge failure path (a source whose
   file is missing is meant to stay and be reported; that branch is written but was never run).
-- Caddy: `/admin/*` already goes to Flask. `/tasks` and `/duplicates` were NOT in `@flask` (they 404'd on
-  `pustaka.taratsa.id`, Astro answered); added with the htmx release (2026-11-28, backup
-  `Caddyfile.pre-admin-paths.2026-11-28`).
+- Caddy and rollout (LIVE 2026-11-28, image `calibre-web:htmx-admin`, rollback `calibre-web:pre-htmx-admin`, Caddyfile backup
+  `Caddyfile.pre-admin-paths.2026-11-28`): `/admin/*` already went to Flask. `/tasks` and `/duplicates` were NOT in `@flask`
+  (they 404'd on `pustaka.taratsa.id`, Astro answered); `/tasks /tasks/* /duplicates /duplicates/*` are now in it, and an
+  `@adminpages` matcher (tasks, duplicates, `/admin/books*`) sets `Cache-Control: private, no-store` and
+  `Cloudflare-CDN-Cache-Control: no-store`. Checked after the reload: anonymous `/tasks` 302 to login, `/duplicates` 401, both
+  `private, no-store`; `/`, `/search/`, `/book/<id>/`, `/read/<id>/epub`, `/cover_thumb/<id>` unchanged. An anonymous
+  `curl` to `/admin/books` gets Cloudflare's own `403` (`cf-mitigated: challenge`) before it reaches the origin: that is
+  a Cloudflare challenge rule, so the admin pages need a browser session that has passed it (not changed here).
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
