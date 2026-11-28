@@ -902,6 +902,23 @@ Two live search systems (plus the legacy advanced-search form):
   One `AbortController` owns all registrations (aborted on `pagehide`, re-registered on a bfcache `pageshow`). Nothing
   happens in browsers without the API. Tool text returned to an agent is untrusted page content (`untrustedContentHint`)
 
+### Accessibility (WCAG 2.2 AA)
+- Public statement: `/aksesibilitas/` (`frontend/src/pages/aksesibilitas.astro`, footer link, in the sitemap). It states
+  "partially conformant" and lists what was NOT tested (manual keyboard run, screen reader, 200% zoom, both readers, no
+  third-party audit). Do not upgrade the claim without that testing; update the date and the page count when you re-audit
+- Audit (2026-11-28): axe-core, tags `wcag2a wcag2aa wcag21a wcag21aa wcag22aa best-practice`, 29 pages x light/dark
+  against a throwaway image (`docker build -t pustaka-astro:a11y-test frontend`, run on the compose network): 0 violations
+  after the fixes below. Axe finds only part of WCAG; the rest is unverified
+- Conventions that came out of it: `--muted-soft` is now 4.5:1 (text may use it; it was 2.8:1); `BookGrid`/`BookCard`/
+  `VideoCard` take `level` = the heading above the grid + 1 (default 2, pass `level={3}` under an `h2`); the card cover link
+  is `aria-hidden` + `tabindex="-1"` because the title link beside it goes to the same URL; a line-clamped title clamps on
+  the `<a>`, not the heading (a `-webkit-box` parent made the link's hit box 14 px); links inside `set:html` need
+  `:global()` in scoped CSS; disabled pagers are `<span aria-disabled>`, never `<a href="#">`; accessible names of buttons
+  must contain their visible text (WCAG 2.5.3); `scroll-padding-top` keeps focus below the sticky top bar; `.skip-link`
+  targets `main#main`; EPUB-text headings never jump more than one level (`previousOutLevel` in the OCR page)
+- Known open: the Flask-served EPUB/PDF reader shells (`read.html` has `user-scalable=no`, no `lang`, no `aria-label`;
+  `readpdf.html` has `maximum-scale=1`; pdf.js UI is English) and the admin UI are not audited or fixed
+
 ### Structured Data (JSON-LD)
 
 #### Book Pages
@@ -1060,6 +1077,17 @@ Two live search systems (plus the legacy advanced-search form):
   (see "Cloudflare caching")
 - `Vary: Accept, Accept-Encoding`
 - WebP served to supporting browsers via `?fm=webp` or `Accept` header
+- **The nightly "Generate Cover Thumbnails" task was the busiest thing in the app** (found 2026-11-28 by sampling threads: the
+  Flask web thread used 2% of a core, the task worker `Thread-4` 85% for ~5 minutes at 04:00 UTC, while it generated 7 files
+  for 13,159 books). Cause: `thumbnail` (44,030 rows) had no index, and the task runs about four lookups per book
+  (`get_book_cover_thumbnail` x3 for the WebP pass, `get_book_cover_thumbnails` x1), each a full scan of 5.1 ms (15.5 s of
+  the 25.1 s profiled for 1,000 books was inside `sqlite3.Cursor.execute`). `ub._ensure_thumbnail_index()` now creates
+  `ix_thumbnail_entity (type, entity_id)` at startup (`CREATE INDEX IF NOT EXISTS`, ~0.01 ms a lookup). Measured on copies of
+  `app.db`, the library and the cache (writes stubbed, the scratch app's own task queue disabled): the full pass over all
+  13,159 books went from an estimated 331 s to 50 s, 9 thumbnails to update either way. The remaining 50 s is SQLAlchemy ORM
+  overhead (one query per check, 53k queries); loading the thumbnail rows once per run would remove most of it, and was not
+  done. The index is NOT unique on purpose: 517 (book, resolution, format) groups are duplicated by earlier runs (499 `jpeg`),
+  and deleting them is a data fix. NOT yet live: it needs a Flask image rebuild and restart.
 - **Generated covers**: a book with no cover (`has_cover = 0`, or its `cover.jpg` is missing) gets a title + publisher
   card from `cps/cover_placeholder.py` (Pillow only, bundled Open Sans, neutral grey card, near-black type, no colour,
   2:3, import-linter contract `cover-placeholder-is-pure`). It is rendered on demand by `get_cover_on_failure()` in

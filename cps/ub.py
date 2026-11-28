@@ -854,6 +854,19 @@ def _ensure_download_index(engine):
         log.exception("downloads unique-index migration failed — download counter may lose increments")
 
 
+def _ensure_thumbnail_index(engine):
+    """The cover-thumbnail task asks "does book N have a thumbnail of resolution R" about four times per book, and the table
+    had no index: each lookup scanned all ~44,000 rows (5.1 ms), so the nightly pass over 13,159 books kept the task worker at
+    ~85% of a core for ~5 minutes while creating almost nothing. With the index a lookup is ~0.01 ms. Not unique: the table
+    holds 517 duplicate (book, resolution, format) groups from earlier runs, and removing them is a data fix, not a startup
+    migration."""
+    try:
+        with engine.begin() as conn:
+            conn.exec_driver_sql("CREATE INDEX IF NOT EXISTS ix_thumbnail_entity ON thumbnail (type, entity_id)")
+    except Exception:
+        log.exception("thumbnail index migration failed - the cover thumbnail task will scan the table per lookup")
+
+
 def clean_database(_session):
     # Remove expired remote login tokens
     now = datetime.now()
@@ -1049,11 +1062,13 @@ def init_db(app_db_path):
         _ensure_column(engine, "downloads", "hit_count", "INTEGER NOT NULL DEFAULT 1")
         _ensure_column(engine, "downloads", "last_hit", "DATETIME NOT NULL DEFAULT '1970-01-01 00:00:00'")
         _ensure_download_index(engine)
+        _ensure_thumbnail_index(engine)
         migrate_Database(session)
         clean_database(session)
     else:
         Base.metadata.create_all(engine)
         _ensure_download_index(engine)
+        _ensure_thumbnail_index(engine)
         create_admin_user(session)
         create_anonymous_user(session)
     _ensure_anonymous_downloads_user(engine)
