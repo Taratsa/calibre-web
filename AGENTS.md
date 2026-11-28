@@ -1015,7 +1015,7 @@ Two live search systems (plus the legacy advanced-search form):
   pick works. Endpoint 16-23 ms on the real catalogue (8,101 authors). NOT checked: a screen reader, touch devices.
 - Caddy: `/api/suggest` is in `@rust_auth` (Rust first, Flask failover), like `/api/whoami`.
 
-### Book manager in Rust (`/admin/books`, 2026-11-28, NOT deployed yet)
+### Book manager in Rust (`/admin/books`, LIVE 2026-11-28)
 - `rust/backend/src/books_admin.rs` (pages, listing, search, cell edit/save) and `books_bulk.rs` (bulk set/archive),
   with the writes in `bookedit.rs` and the folder moves in `bookedit::relocate`. Flask's `manage_books*` and the
   `plain_books_*` templates stay untouched as the fallback.
@@ -1046,11 +1046,14 @@ Two live search systems (plus the legacy advanced-search form):
 - **Bulk**: archive/unarchive and set-one-field are Rust (with the confirm step and `confirm=yes`); read/unread, merge and
   delete stay Flask (they cascade into Kobo reading state, the thumbnail cache task, shelves and the debounced
   duplicate-index scan). `audit_log` rows are written for every save and archive like `record_list_edit`.
-- **Caddy (unapplied)**: `/home/devuser/backups/Caddyfile.book-manager.patch` adds `/admin/books*` to a Rust-first block
-  before `@flask`, with Flask as the failover. Apply it only with the image that has these routes (Rust has no catch-all:
-  until then `/admin/books*` must keep going to Flask).
+- **Caddy**: `@rust_manager` sends `/admin/books /admin/books/*` to Rust first with Flask as the failover, applied with
+  image `calibre-web:webhook` (2026-11-28; backups `Caddyfile.pre-rust-webhook.2026-11-28`,
+  `Caddyfile.pre-webhook-main.2026-11-28`; earlier rollback image `calibre-web:pre-webhook`). Checked through Caddy:
+  anonymous `/admin/books` 303 to the login, `/admin/books/rows` 303, `/api/whoami` 200 `{"edit":false,"admin":false}`,
+  `/api/suggest` 401, `POST /api/read/21623/ocr/pdf` 200, `/`, `/search/`, `/login` 200, `/admin/view` 302. NOT checked: a
+  logged-in edit on production data (the sandbox comparison in this section is what proves the writes).
 
-### Upload bot API (`/api/webhook/*`, 2026-11-28, NOT deployed yet)
+### Upload bot API (`/api/webhook/*`, LIVE 2026-11-28)
 - **`GET|POST /api/webhook/check` is Rust** (`rust/backend/src/webhook_check.rs`). It was Flask-only and **BROKEN for
   `author=`**: `cps/api.py` does `query.join(db.Authors)` on a many-to-many with no left side, so every author query
   raised `InvalidRequestError: Don't know how to join to Authors` and answered 500 (reproduced on the sandbox; the bot's
@@ -1078,6 +1081,10 @@ Two live search systems (plus the legacy advanced-search form):
   `shutil.move`. The duplicate index is only marked pending (`scan_pending=1`): the debounced scan is Flask's until the
   worker is ported. The comment is stored as uploaded (Flask sanitises with nh3 at write; the book page sanitises on
   render). `duplicate_index_cache` must exist (it does in production).
+- **Rust answers both endpoints since 2026-11-28** (image `calibre-web:webhook`): `/api/webhook/check` and
+  `/api/webhook/upload` are Rust-first on the main host (`@webhook` -> `:8084 :8083`); the old host still reaches Flask
+  through its catch-all, so nothing changes for a client that stays there. Verified through Caddy: anonymous
+  GET/POST `{"error":"Authentication required"}` 401 JSON, `cf-cache-status: DYNAMIC` through Cloudflare.
 - **The bot's API is served on the MAIN host since 2026-11-28** (`@webhook` in the production Caddyfile, backup
   `/home/devuser/backups/Caddyfile.pre-webhook-main.2026-11-28`): `pustaka.taratsa.id/api/webhook/*` used to fall
   through to Astro (404), so the bot only worked through `old-pustaka.taratsa.id`, whose catch-all reaches Flask. Both
