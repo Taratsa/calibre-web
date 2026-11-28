@@ -1023,6 +1023,39 @@ async fn ocr_status_leaves_everything_it_cannot_prove_to_flask() {
     );
 }
 
+/// Regression: the OCR button POSTs `/api/read/<id>/ocr/<fmt>`. The route was GET-only, so axum answered 405 itself and
+/// Caddy (which only fails over on connection errors) showed "Gagal menghubungi server". Every other method must reach
+/// Flask (502 here: Flask is down in the fixture), for every OCR path the module owns.
+#[tokio::test]
+async fn ocr_paths_hand_every_other_method_to_flask() {
+    let f = fixture(false);
+    reader_state(&f);
+    ocr_ready(&f, READY);
+    tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+    for method in ["POST", "PUT", "DELETE", "PATCH"] {
+        for uri in [
+            "/api/read/7/ocr/pdf",
+            "/api/read/7/ocr",
+            "/api/read/7/ocr/status",
+            "/api/read/7/ocr/status/pdf",
+        ] {
+            let request = Request::builder()
+                .method(method)
+                .uri(uri)
+                .header(header::HOST, "pustaka.example")
+                .body(Body::empty())
+                .unwrap();
+            let response = f.app.clone().oneshot(request).await.unwrap();
+            assert_eq!(response.status(), StatusCode::BAD_GATEWAY, "{method} {uri}");
+        }
+    }
+    // GET of a cached document is still answered here
+    assert_eq!(
+        get(&f, "/api/read/7/ocr/status/pdf", None).await.0,
+        StatusCode::OK
+    );
+}
+
 #[tokio::test]
 async fn ocr_status_follows_the_guest_role_and_archive_at_once() {
     let f = fixture(false);

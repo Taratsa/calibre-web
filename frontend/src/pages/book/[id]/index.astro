@@ -204,6 +204,19 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
         {[...ocrUrls.entries()].map(([format, link]) => (
           <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
         ))}
+        <a id="staff-edit" class="staff-edit" href={`/admin/book/${book.id}`} rel="nofollow" hidden>Sunting buku</a>
+        <script is:inline>
+          // The page is cached for everyone, so the link is revealed here, and only for people who logged in as staff
+          // (a readable marker set at login). The marker proves nothing: /api/whoami checks the real session.
+          if (/(?:^|; )pustaka_staff=1/.test(document.cookie)) {
+            fetch('/api/whoami', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+              .then(function (r) { return r.ok ? r.json() : null; })
+              .then(function (who) {
+                if (who && who.edit) document.getElementById('staff-edit').hidden = false;
+              })
+              .catch(function () {});
+          }
+        </script>
       </div>
 
       <table class="metadata">

@@ -47,18 +47,45 @@ enum Body {
 
 pub fn routes() -> Router<Arc<AppState>> {
     Router::new()
-        .route("/api/read/{book_id}/ocr/status", get(status))
-        .route("/api/read/{book_id}/ocr/status/", get(status))
+        .route(
+            "/api/read/{book_id}/ocr/status",
+            get(status).fallback(to_flask),
+        )
+        .route(
+            "/api/read/{book_id}/ocr/status/",
+            get(status).fallback(to_flask),
+        )
         .route(
             "/api/read/{book_id}/ocr/status/{format}",
-            get(status_format),
+            get(status_format).fallback(to_flask),
         )
         .route(
             "/api/read/{book_id}/ocr/status/{format}/",
-            get(status_format),
+            get(status_format).fallback(to_flask),
         )
-        .route("/api/read/{book_id}/ocr", get(document))
-        .route("/api/read/{book_id}/ocr/{format}", get(document_format))
+        .route("/api/read/{book_id}/ocr", get(document).fallback(to_flask))
+        // POST queues an OCR job: Flask's in-memory worker queue owns that, so every non-GET method on these paths is
+        // proxied unchanged. Without it the path matched a GET-only route and axum answered 405 itself, which is what
+        // the "Proses PDF dengan OCR" button saw ("Gagal menghubungi server").
+        .route(
+            "/api/read/{book_id}/ocr/{format}",
+            get(document_format).fallback(to_flask),
+        )
+}
+
+/// Any method this module does not answer goes to Flask with its body, headers and query intact.
+async fn to_flask(
+    State(state): State<Arc<AppState>>,
+    uri: OriginalUri,
+    method: Method,
+    headers: HeaderMap,
+    body: axum::body::Bytes,
+) -> Response {
+    let path = uri.0.path_and_query().map_or_else(
+        || uri.0.path().to_owned(),
+        |value| value.as_str().to_owned(),
+    );
+    proxy::fallback_with_body(state, &path, method, headers, body.to_vec()).await
 }
 
 async fn status(
