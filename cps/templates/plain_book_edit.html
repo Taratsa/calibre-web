@@ -206,6 +206,7 @@
 
 {% block js %}
 {% if book %}
+<script defer src="{{ url_for('static', filename='js/edit-suggest.js') }}"></script>
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };

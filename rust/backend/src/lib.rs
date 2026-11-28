@@ -36,6 +36,7 @@ pub mod session;
 pub mod settings;
 pub mod signing;
 pub mod static_files;
+pub mod suggest;
 pub mod totp;
 pub mod turnstile;
 pub mod twofa;
@@ -166,6 +167,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(crate::twofa::routes())
         .merge(crate::authors_admin::routes())
         .merge(crate::whoami::routes())
+        .merge(crate::suggest::routes())
         .merge(crate::opds_guard::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),

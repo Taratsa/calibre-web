@@ -993,6 +993,28 @@ Two live search systems (plus the legacy advanced-search form):
   `private, no-store`, no longer a 301. NOT checked: a logged-in click on each button. A new Flask route outside the
   listed prefixes has the same failure mode: add its path to `@flask`.
 
+### Book editor suggestions (`/admin/book/<id>`, Rust, 2026-11-28)
+- Clicking or typing in Author, Tags, Series, Publisher or Language offers the values that already exist, most used first,
+  with their book counts (`cps/static/js/edit-suggest.js`, loaded by `plain_book_edit.html`; a WAI-ARIA combobox: arrow
+  keys, Enter picks without submitting the form, Escape closes; the form still works without the script).
+- **`GET /api/suggest?field=authors|tags|series|publishers|languages&q=`** (`rust/backend/src/suggest.rs`), editors only
+  (admin or edit role through the verified session: 401 anonymous, 403 for e.g. an upload-only account, `private,
+  no-store`). Flask had `/get_*_json` typeaheads but the plain editor never called them; those are untouched. Ranking:
+  prefix, then a word that starts with the text, then a substring; ties by use, then name; at most 20. No text = the
+  most used.
+- The names are what the editor SAVES: authors show `|` as `,` (stored form `Doe| John`), joined by ` & `; tags and
+  languages by `,`. **Languages are saved by NAME in the account's locale** (`isoLanguages.get_language_code_from_name`),
+  so the list is every language of that locale with this library's usage as the rank (Indonesian 12,866, English 376,
+  Dutch 247, ...). The table is `src/language_names.tsv`, generated from `cps/iso_language_names.py` by
+  `tools/gen_language_names.py`: rerun it when that file changes. A user's locale is `user.locale` (`en` for adminzxc).
+- Tags follow the account's allowed/denied tags exactly like `helper.tags_filters` (a denied tag is never offered).
+- Checked in a real headless Chromium against the sandbox copy of the library (Rust + Flask behind a throwaway Caddy):
+  20 tags on click, typing narrows ("zin" after "zine, " offers the Zine tags), ArrowDown + Enter picks, no trailing
+  separator is added (an empty trailing author/tag would be saved), a pick while the list is stale is ignored, an author
+  pick keeps `Adi Triyono & Onno Widodo Purbo`, Language "indo" -> Indonesian (12,866), no match hides the list, mouse
+  pick works. Endpoint 16-23 ms on the real catalogue (8,101 authors). NOT checked: a screen reader, touch devices.
+- Caddy: `/api/suggest` is in `@rust_auth` (Rust first, Flask failover), like `/api/whoami`.
+
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
   Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on

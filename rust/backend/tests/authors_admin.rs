@@ -36,6 +36,19 @@ fn fixture() -> Fixture {
          CREATE TABLE books_authors_link (id INTEGER PRIMARY KEY, book INTEGER NOT NULL, author INTEGER NOT NULL,
             UNIQUE(book, author));
          CREATE TABLE metadata_dirtied (id INTEGER PRIMARY KEY, book INTEGER NOT NULL UNIQUE);
+         CREATE TABLE tags (id INTEGER PRIMARY KEY, name TEXT);
+         CREATE TABLE books_tags_link (id INTEGER PRIMARY KEY, book INTEGER, tag INTEGER);
+         CREATE TABLE series (id INTEGER PRIMARY KEY, name TEXT);
+         CREATE TABLE books_series_link (id INTEGER PRIMARY KEY, book INTEGER, series INTEGER);
+         CREATE TABLE publishers (id INTEGER PRIMARY KEY, name TEXT);
+         CREATE TABLE books_publishers_link (id INTEGER PRIMARY KEY, book INTEGER, publisher INTEGER);
+         CREATE TABLE languages (id INTEGER PRIMARY KEY, lang_code TEXT);
+         CREATE TABLE books_languages_link (id INTEGER PRIMARY KEY, book INTEGER, lang_code INTEGER);
+         INSERT INTO tags VALUES (1, 'Sejarah'), (2, 'Sastra');
+         INSERT INTO books_tags_link (book, tag) VALUES (10, 1), (11, 1), (12, 2);
+         INSERT INTO publishers VALUES (1, 'Penerbit Satu');
+         INSERT INTO languages VALUES (1, 'ind');
+         INSERT INTO books_languages_link (book, lang_code) VALUES (10, 1);
          INSERT INTO authors VALUES (1, 'abc', 'abc', ''), (2, 'Other Person', 'Person, Other', '');
          INSERT INTO books (id, title, author_sort, last_modified, path) VALUES
             (10, 'Solo <b>', 'abc', '2020-01-01 00:00:00', 'abc/Solo (10)'),
@@ -433,4 +446,78 @@ async fn whoami_answers_from_the_session_and_login_sets_a_marker_only_for_staff(
     )
     .await;
     assert_eq!(who.body, r#"{"edit":false,"admin":false}"#);
+}
+
+#[tokio::test]
+async fn suggestions_are_for_editors_only_and_come_back_in_the_form_the_editor_saves() {
+    let f = fixture();
+    let anonymous = call(&f, "GET", "/api/suggest?field=authors&q=a", None, None).await;
+    assert_eq!(
+        anonymous.status,
+        StatusCode::UNAUTHORIZED,
+        "no catalogue data without a session"
+    );
+    assert_eq!(
+        anonymous.headers[header::CACHE_CONTROL],
+        "private, no-store"
+    );
+
+    // `hermes` (role 260: download + upload, no edit) may not use the editor, so gets nothing
+    let uploader = login(&f, "hermes").await;
+    let denied = call(&f, "GET", "/api/suggest?field=tags", Some(&uploader), None).await;
+    assert_eq!(denied.status, StatusCode::FORBIDDEN);
+
+    let admin = login(&f, "adminzxc").await;
+    let tags = call(
+        &f,
+        "GET",
+        "/api/suggest?field=tags&q=sej",
+        Some(&admin),
+        None,
+    )
+    .await;
+    assert_eq!(tags.status, StatusCode::OK, "{}", tags.body);
+    let json: serde_json::Value = serde_json::from_str(&tags.body).unwrap();
+    assert_eq!(
+        json["items"],
+        serde_json::json!([{"name": "Sejarah", "count": 2}])
+    );
+
+    // most used first with no text; the author the form shows is `abc` (two books)
+    let authors = call(&f, "GET", "/api/suggest?field=authors", Some(&admin), None).await;
+    let json: serde_json::Value = serde_json::from_str(&authors.body).unwrap();
+    assert_eq!(
+        json["items"][0],
+        serde_json::json!({"name": "abc", "count": 2})
+    );
+
+    // the account's locale is `en` in the fixture: language names are what the editor parses in that locale
+    let languages = call(
+        &f,
+        "GET",
+        "/api/suggest?field=languages&q=indo",
+        Some(&admin),
+        None,
+    )
+    .await;
+    let json: serde_json::Value = serde_json::from_str(&languages.body).unwrap();
+    assert_eq!(json["items"][0]["name"], "Indonesian");
+    assert_eq!(json["items"][0]["count"], 1);
+
+    let publishers = call(
+        &f,
+        "GET",
+        "/api/suggest?field=publishers&q=satu",
+        Some(&admin),
+        None,
+    )
+    .await;
+    assert!(
+        publishers.body.contains("Penerbit Satu"),
+        "{}",
+        publishers.body
+    );
+
+    let bad = call(&f, "GET", "/api/suggest?field=password", Some(&admin), None).await;
+    assert_eq!(bad.status, StatusCode::BAD_REQUEST);
 }
