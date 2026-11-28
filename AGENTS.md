@@ -841,6 +841,23 @@ Two live search systems (plus the legacy advanced-search form):
   `private, no-store`; `/`, `/search/`, `/book/<id>/`, `/read/<id>/epub`, `/cover_thumb/<id>` unchanged. An anonymous
   `curl` to `/admin/books` gets Cloudflare's own `403` (`cf-mitigated: challenge`) before it reaches the origin: that is
   a Cloudflare challenge rule, so the admin pages need a browser session that has passed it (not changed here).
+- **The legacy host `old-pustaka.taratsa.id` goes through Rust and no longer serves the admin UI** (2026-11-28, Caddyfile
+  backups `Caddyfile.pre-old-host-rust.2026-11-28`, patch `Caddyfile.old-host-rust.patch`; both in `/home/devuser/backups`).
+  Before this it proxied everything to Flask, and in 7.2 h one client (74.7.242.24) made 29,839 of its 33,203 requests
+  (20,026 `/cover_thumb/N/sm`, 1,824 EPUB `/files`), which was almost all of Flask's remaining load; the main host's
+  traffic was already on Rust. Now `/cover* /cover_thumb* /series_cover*`, `/static/*`, `/files/*`, `/download/*`,
+  `/read/<id>/(pdf|epub)`, `/api/read/<id>/ocr*` and `/show/readium/<id>/*` go Rust first with Flask as upstream fallback and
+  failover (same `lb_policy first` block as the main host); everything else (author/category/publisher lists, the numeric
+  book pages, `/newest`, `/formats`, search redirect) still reaches Flask. Admin and login paths (`/admin`, `/login`,
+  `/logout`, `/me`, `/register`, `/remote_login`, `/tasks`, `/duplicates`, `/table`, `/downloadlist`, `/ajax`, `/shelf`,
+  `/send`) answer `307` to the same path on `pustaka.taratsa.id` (decided: the admin UI lives on the main host only).
+  Rust vs Flask on `Host: old-pustaka.taratsa.id`, before the switch: 55/55 cover requests (real covers, WebP, placeholder
+  cards), 4/4 static files, 12/12 PDF shells, 10 manifests, 6 position files and 16 OCR status calls byte-identical; EPUB
+  shells identical except the random CSRF token; `/download` redirects 20/20 identical and 14/14 EPUB bodies identical. NOT
+  identical: the `ETag` and `Last-Modified` of `/files` (each response is a fresh `calibredb export`, and Flask's own ETag
+  differs between two identical requests), and PDF bodies by the embedded `xmp:MetadataDate`. A parity script that calls
+  `/download` writes the download counter: the 2026-11-28 check added ~45 hits to 20 books on production (do such checks
+  against a copy of `app.db`). A 403 with `cf-mitigated: challenge` from this host is Cloudflare, not the origin.
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
