@@ -1087,7 +1087,9 @@ Two live search systems (plus the legacy advanced-search form):
   13,159 books went from an estimated 331 s to 50 s, 9 thumbnails to update either way. The remaining 50 s is SQLAlchemy ORM
   overhead (one query per check, 53k queries); loading the thumbnail rows once per run would remove most of it, and was not
   done. The index is NOT unique on purpose: 517 (book, resolution, format) groups are duplicated by earlier runs (499 `jpeg`),
-  and deleting them is a data fix. NOT yet live: it needs a Flask image rebuild and restart.
+  and deleting them is a data fix. LIVE since 2026-11-28 ~04:30 UTC (image `calibre-web:legacy-index`, rollback
+  `calibre-web:pre-legacy-index`): the index exists in production and `EXPLAIN QUERY PLAN` uses it. The first 04:00 run
+  after the deploy is 2026-11-29; its duration was not measured yet.
 - **Generated covers**: a book with no cover (`has_cover = 0`, or its `cover.jpg` is missing) gets a title + publisher
   card from `cps/cover_placeholder.py` (Pillow only, bundled Open Sans, neutral grey card, near-black type, no colour,
   2:3, import-linter contract `cover-placeholder-is-pure`). It is rendered on demand by `get_cover_on_failure()` in

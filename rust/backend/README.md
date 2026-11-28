@@ -273,7 +273,10 @@ requests Flask itself answers (`/author/1/x`, `/author/1/2/3`: a 302 it produces
 timestamp), and one is `/book/<id>/%2e`, which Rust hands to Flask and `proxy.rs` forwards with `%2e` collapsed to a dot
 segment (reqwest's URL parser), so Flask answers a different redirect than for the raw path. That is a property of the
 shared proxy for every route and only matters for a crafted path; it was left alone. One redirect: Flask 0.6-1.1 s, Rust
-0.5-12 ms. Not wired into Caddy yet.
+0.5-12 ms. LIVE since 2026-11-28 ~04:34 UTC: `@legacy_author` and `@legacy_book` in the production Caddyfile go Rust first with
+Flask as failover (backup `Caddyfile.pre-legacy-rust.2026-11-28`); image `calibre-web:legacy-index`, rollback
+`calibre-web:pre-legacy-index`. Checked after the reload: `/book/<id>`, `/book/<id>/`, `/author/<id>`, `/author/<id>/2` answer
+the slug redirect; an unknown id answers 404 from Flask (Rust hands it over, and Flask's own access log shows the request).
 
 ### `/download/<id>/<fmt>[/<name>]` (the one route that writes)
 
@@ -341,6 +344,17 @@ returned the stored file for 2 of its 3, because Flask did not retry when Rust h
 library is the real defect, so `do_calibre_export()` (`cps/embed_helper.py`, also used by mail and convert) now waits
 for the lock the same way (12 tries, 500 ms apart) instead of falling through to the stored file. Flask's loop is not
 monkey-patched, so that sleep blocks it for as long as it waits; the export itself already blocked it the same way.
+
+### Related project: `Taratsa/calibre` (read 2026-11-28, not used)
+
+`github.com/Taratsa/calibre` is a fork of `kteal/calibre`: a pre-release (0.1.0) Rust crate that reads and writes Calibre
+libraries without Calibre or Python (Apache-2.0 and MIT, "do not publish until the owner reviews licensing and provenance").
+What matters here: it supports ONLY `PRAGMA user_version = 27` and refuses other versions, and this library is **28**
+(`application_id` 0x63616c69 matches; no custom columns, no `full-text-search.db`), so the crate would not open it today. It also
+says locale-aware sort generation, exact filename parity, custom-column writes, preferences, notes and annotations are
+unsupported, and it does not embed metadata into an exported file, which is what `calibredb export` does for `/files` (about
+0.94 s of CPU per call, ~10% of one core). So it does not replace that export, and nothing here depends on it. Where it could
+help later: read-only listing and audit (`books().query`, `audit`) once a schema-28 policy exists, and trash handling.
 
 ### `/files/*` live check (2026-11-27)
 
