@@ -616,7 +616,11 @@ Two live search systems (plus the legacy advanced-search form):
   Every `BookText` field except `tone` is now optional in `types.ts` and the page reads the lists through `?? []`. Checked
   on a throwaway image: all 630 tone-only books answer 200 (the running image: 500 for 40 of 40 sampled), and 258 normal
   pages are byte-identical to the running image. Any NEW use of the corpus fields on the book page must tolerate a
-  `text` without them; a corpus rebuild (Compute Text Analysis Now) + `./build-frontend.sh` gives these books the full block
+  `text` without them; a corpus rebuild (Compute Text Analysis Now) + `./build-frontend.sh` gives these books the full block.
+  LIVE 2026-11-28 02:37 UTC as image `pustaka-astro:local` (the tested `pustaka-astro:fix-tone-only`; rollback
+  `pustaka-astro:pre-tone-only-fix`), deployed on its own with `docker compose up -d --no-build --no-deps astro-frontend`
+  so no other uncommitted frontend change shipped. The target URL answers 200; 120 random tone-only books answer 200 from
+  the origin. A recreate of the Astro container gives about a second of 502 on `/book/<slug>/` (two seen)
 - Model emotions ("Emosi dominan (model)", same page, next to the lexicon's "Emosi dominan"): one RoBERTa per
   language, both MIT. Neither repo ships ONNX, so the Dockerfile's `models` stage (Python 3.12, torch 2.15,
   transformers 4.57.1, onnx 1.23.2, onnxruntime 1.32.0; `docker/export_emotion_onnx.py`) exports each checkpoint and
@@ -822,9 +826,13 @@ Two live search systems (plus the legacy advanced-search form):
   not a wrapping `<form>`, because the cell editors are forms and forms cannot nest. The legacy `/table` and its
   `/ajax/*selected*` endpoints stay. Checked in the sandbox with copied files: mark read x3, set series on 2 books,
   clear it with an empty value, merge (formats copied, source folder removed, audit entry), delete (row, folder and
-  audit entry gone), cancel leaves data untouched, merge of one book is refused. Not checked: Google Drive libraries
-  (merge answers "not supported"), a failing delete on a read-only folder, and the merge failure path (a source whose
-  file is missing is meant to stay and be reported; that branch is written but was never run).
+  audit entry gone), cancel leaves data untouched, merge of one book is refused. The merge failure path was run too: a
+  source whose EPUB was missing answered with the file error, stayed in the library with both formats and wrote no
+  merge audit entry. Roles were run as well: an edit-role user without the delete role sees no Merge/Delete buttons and
+  gets "You are missing permissions to delete books" for a CONFIRMED delete, a confirmed merge and a delete preview; a
+  user without the edit role gets 403 on the manager, rows, cell, save and bulk endpoints. A non-admin cannot cancel a
+  task (403) but sees `/tasks` and `/tasks/rows`. Not checked: Google Drive libraries (merge answers "not supported")
+  and a failing delete on a read-only folder.
 - Caddy and rollout (LIVE 2026-11-28, image `calibre-web:htmx-admin`, rollback `calibre-web:pre-htmx-admin`, Caddyfile backup
   `Caddyfile.pre-admin-paths.2026-11-28`): `/admin/*` already went to Flask. `/tasks` and `/duplicates` were NOT in `@flask`
   (they 404'd on `pustaka.taratsa.id`, Astro answered); `/tasks /tasks/* /duplicates /duplicates/*` are now in it, and an
