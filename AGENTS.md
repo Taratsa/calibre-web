@@ -938,7 +938,38 @@ Two live search systems (plus the legacy advanced-search form):
   authenticator app, and this against production data. **Open gap (2026-11-28)**: `RUST_LOG` is unset, so
   `tracing_subscriber`'s `EnvFilter` defaults to `error` and every auth event logged at `info`/`warn` (successful
   logins, invalid codes, refused Basic auth, rate-limit hits) is dropped; Flask's own "logged in" line is gone with its
-  login route. Setting `RUST_LOG=info` in `.env` (the container reads it, no rebuild) and recreating restores them
+  login route. `rust/backend/src/main.rs` now defaults the filter to `info` when `RUST_LOG` is unset (that fix ships with
+  the next backend image rebuild); `.env` needs no change
+
+### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
+- **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
+  Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on
+  the production host: seed **28 s**, Astro image build **40 s** with a warm Docker layer cache, ~1 s recreate (and
+  about a second of 502 while the container restarts). Regardless of Docker cache the first pull/build after a
+  dependency change is minutes; the numbers assume the normal case, where only `src/data` moved
+- **`rust/rebuildd`** (own crate, `deploy/pustaka-rebuildd.service` is a systemd *user* unit) watches `library/metadata.db`
+  with its `-wal`/`-shm` (SQLite commits land in the WAL, so the main file's mtime alone is not reliable), `data/app.db`
+  and `data/clippings`, and runs `build-frontend.sh` after **90 s of quiet**, deferring a continuous change stream at
+  most **600 s**, at most once per **300 s**, never two at a time, and only when the fingerprint actually moved. This
+  covers edits made in Calibre desktop too, which the Flask hook never saw
+- **It refuses to ship uncommitted frontend CODE**: `git status --porcelain` over `frontend/src/{pages,components,layouts,
+  styles,utils,scripts}`, `middleware.ts`, `astro.config.mjs`, `Dockerfile` must be empty, else the run is skipped and
+  `/status` says why (`REBUILD_ALLOW_DIRTY=1` overrides). `frontend/src/data` is excluded on purpose: the seed rewrites
+  it every run, so counting it would block every rebuild after the first. This guard exists because `build-frontend.sh`
+  builds the working tree: an automated run would otherwise publish half-finished frontend work on the next upload
+- **Control surface**: `POST /rebuild` on `127.0.0.1:9999` (queues one refresh; `X-Frontend-Token` required when
+  `REBUILD_TOKEN` is set), `GET /status` (running, next run in N s, last run with exit code and skip reason, 40-line log
+  tail), `GET /healthz`; `--once [--dry-run]` prints the outcome as JSON. Its log filter defaults to `info` when
+  `RUST_LOG` is unset, so skip and failure reasons are visible
+- **Flask's trigger stays a no-op**: `trigger_rebuild_async()` (12 call sites in `editbooks.py`) posts only when
+  `config_frontend_rebuild_token` is set, and it is not; the watcher replaced the need. The old Python host listener
+  (`host/rebuild-listener.py`) is not used by this flow
+- Verified: `cargo test --release` (6 tests: debounce, max-wait cap, minimum interval, manual request labelling, wait
+  reporting, stamp/fingerprint), and on the host `--once --dry-run` correctly reported the 18 uncommitted frontend code
+  files instead of building, while `REBUILD_ALLOW_DIRTY=1` reached the dry-run step; the HTTP surface answered
+  healthz 200, no/wrong token 403, correct token 202 with `next_run_in_seconds`, `/status` JSON
+- NOT verified: a full automated run (no catalog change happened while testing, and the frontend tree is dirty), and
+  the service is **not enabled yet** (enabling it is a live change)
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

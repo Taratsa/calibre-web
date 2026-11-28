@@ -4,8 +4,13 @@ use taratsa_backend::{AppState, router};
 
 #[tokio::main]
 async fn main() {
+    // `RUST_LOG` when set, otherwise `info`: the auth events (logins, refused codes, guard refusals) are info/warn,
+    // and an unset variable used to default the filter to `error`, which dropped them all.
     tracing_subscriber::fmt()
-        .with_env_filter(tracing_subscriber::EnvFilter::from_default_env())
+        .with_env_filter(
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
+        )
         .init();
     let app_db =
         PathBuf::from(std::env::var("APP_DB_PATH").unwrap_or_else(|_| "/config/app.db".into()));

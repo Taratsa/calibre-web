@@ -72,6 +72,7 @@ frontend/public/*.txt
 # Rust build output
 rust/taratsa_text/target/
 rust/backend/target/
+rust/rebuildd/target/
 
 # Sentence-tone model, downloaded and checksum-pinned by the Dockerfile
 cps/sentiment_model/
