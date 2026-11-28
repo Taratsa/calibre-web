@@ -15,6 +15,7 @@ pub mod library;
 pub mod locale;
 pub mod mime;
 pub mod ocr_status;
+pub mod opds_download;
 pub mod proxy;
 pub mod pyjson;
 pub mod reader;
@@ -133,6 +134,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(health::routes())
         .merge(cover::routes())
         .merge(download::routes())
+        .merge(opds_download::routes())
         .merge(files::routes())
         .merge(static_files::routes())
         .merge(reader::routes())

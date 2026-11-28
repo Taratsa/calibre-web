@@ -726,6 +726,19 @@ Two live search systems (plus the legacy advanced-search form):
   to Flask instead of serving the stored file; `do_calibre_export()` (`cps/embed_helper.py`) does the same. Keep that in
   any new export code. `/files/*`, `/download/*`, `/cover*` and `/series_cover/*` are answered by Rust behind Caddy with
   Flask as failover (see `rust/backend/README.md`, "Rollout").
+- **`/opds/download/<id>/<fmt>/` has a Rust implementation for the anonymous guest** (`rust/backend/src/opds_download.rs`,
+  2026-11-28, NOT routed yet: Caddy still sends `/opds/*` to Flask). It streams the book instead of redirecting and runs
+  the same `calibredb export` as `/files` through `src/export.rs` (the original, maintained Calibre 9.19 binary of the
+  image, not a reimplementation), counting user 0 like `ub.update_download`. Checked on a throwaway pair of containers with
+  copies of both databases and 10 real books (5 PDF, 5 EPUB, 2.4 KB to 527 KB) from the library: status, headers (minus
+  `Set-Cookie`, `ETag`, `Last-Modified`) and body equal; EPUB bytes identical, PDFs differ only in the 8 bytes of
+  `xmp:MetadataDate` that every export rewrites; each request counted exactly once by each side; upper-case and dotted
+  formats, `Range` (206), `HEAD`, unknown book/format and non-numeric id (404) and a bad `Range` (416) equal. Differences
+  on purpose: no `Set-Cookie` (Flask opens a throwaway guest session), and an opaque `ETag`/`Last-Modified` from the
+  staged copy (werkzeug's `ETag` contains the random name of the staged file, so it never matched between two requests).
+  Timing for the 310 KB PDF: Rust 1.3-1.6 s, Flask 1.6-1.7 s, because `calibredb` start-up and export dominate (the
+  port saves the gevent loop, not CPU). Anything with a cookie or `Authorization` (real OPDS clients using Basic auth)
+  stays on Flask.
 - **Deliberately 501 from Rust**: Google Drive libraries and `kepub` with embedded metadata (production uses
   neither). A wrong Caddy rule then fails loudly instead of serving a different file.
 - **404s and 500s carry Flask's `NO_CACHE_HEADERS`** (`no-store, no-cache, must-revalidate` plus
@@ -785,6 +798,11 @@ Two live search systems (plus the legacy advanced-search form):
   moved (shelves, detail page, reader, OPDS, Kobo auth). Do not mix the two layouts in one page
 - Upload is the header file input in `plain_layout.html`: it posts `btn-upload` with the CSRF token to `/upload` and
   follows the JSON `location` Flask returns
+- `/admin` and `/admin/` redirect an admin to the dashboard `/admin/view` (`admin.admin_root`, `cps/admin.py`). Stock
+  Calibre-Web had no page at that URL (a commented-out route would have answered 403) and this fork answered 404, which
+  looked like a broken admin. Anonymous visitors go to `/login`, a user without the admin role gets 403. Checked on the
+  sandbox (anonymous 302 to login, admin 302 to `/admin/view` then 200, `hermes` 403); production needs a Flask image
+  rebuild to pick it up
 - Jinja filters `formatfloat`, `last_modified`, `shortentitle` and `formatdateinput` exist only inside the running app
   (`cps/jinjia.py`); compiling these templates with a bare `jinja2.Environment` fails on them. Check a template by
   rendering the route. Flask caches templates when not in debug, so restart the process after editing one

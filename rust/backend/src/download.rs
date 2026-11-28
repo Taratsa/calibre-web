@@ -262,7 +262,7 @@ fn isoformat(now: DateTime<Utc>) -> String {
 
 /// `ub.update_download`: the same upsert, on a connection with foreign keys enforced (user 0 is the
 /// `__anonymous__` sentinel row, so the insert needs it).
-fn increment(
+pub(crate) fn increment(
     app_db: &std::path::Path,
     book_id: i64,
     user_id: i64,
@@ -288,7 +288,7 @@ fn increment(
 
 /// `_track_download_analytics`: the log line, then (unless `DNT: 1`) the Umami `file-download` event.
 /// The event goes out in the background; Flask waits for it for up to 5 s, which a download need not do.
-fn track(
+pub(crate) fn track(
     state: &Arc<AppState>,
     user: &str,
     name: &str,

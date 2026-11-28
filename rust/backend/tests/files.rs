@@ -1823,3 +1823,158 @@ async fn a_card_that_flask_has_not_rendered_yet_goes_to_flask() {
         assert_eq!(status, StatusCode::BAD_GATEWAY, "{uri} {wanted}");
     }
 }
+
+async fn opds(
+    f: &Fixture,
+    uri: &str,
+    extra: &[(&str, &str)],
+) -> (StatusCode, axum::http::HeaderMap, Vec<u8>) {
+    let mut request = Request::builder()
+        .uri(uri)
+        .header(header::HOST, "pustaka.example");
+    if !extra.iter().any(|(name, _)| *name == "user-agent") {
+        request = request.header(header::USER_AGENT, "Moon+Reader");
+    }
+    for (name, value) in extra {
+        request = request.header(*name, *value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    (
+        parts.status,
+        parts.headers,
+        body.collect().await.unwrap().to_bytes().to_vec(),
+    )
+}
+
+#[tokio::test]
+async fn anonymous_opds_download_streams_the_file_and_counts_it() {
+    let f = fixture(false);
+    let (status, headers, body) = opds(&f, "/opds/download/7/pdf/", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, BODY);
+    assert_eq!(headers[header::CONTENT_TYPE], "application/pdf");
+    assert_eq!(headers[header::CACHE_CONTROL], "private, no-store");
+    assert_eq!(headers[header::VARY], "Cookie");
+    assert_eq!(
+        headers[header::CONTENT_DISPOSITION],
+        "attachment; filename=\"Cafe Muller - First Author.pdf\"; filename*=UTF-8''Caf%C3%A9%20M%C3%BCller%20-%20First%20Author.pdf"
+    );
+    assert_eq!(hits(&f), vec![(7, 0, 1)]);
+
+    // upper-case and dotted formats are the same book file, and a Range gets its slice
+    let (status, _, _) = opds(&f, "/opds/download/7/PDF/", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    let (status, _, _) = opds(&f, "/opds/download/7/pdf.pdf/", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(hits(&f), vec![(7, 0, 3)]);
+    let (status, headers, body) =
+        opds(&f, "/opds/download/7/pdf/", &[("range", "bytes=0-4")]).await;
+    assert_eq!(status, StatusCode::PARTIAL_CONTENT);
+    assert_eq!(body, &BODY[..5]);
+    assert_eq!(
+        headers[header::CONTENT_RANGE],
+        format!("bytes 0-4/{}", BODY.len())
+    );
+}
+
+#[tokio::test]
+async fn opds_download_leaves_identity_and_failures_to_flask_without_counting() {
+    let f = fixture(false);
+    for extra in [
+        vec![("cookie", "session=abc")],
+        vec![("authorization", "Basic eDp5")],
+        vec![("user-agent", "Mozilla/5.0 Kobo eReader")],
+    ] {
+        let (status, _, _) = opds(&f, "/opds/download/7/pdf/", &extra).await;
+        assert_eq!(status, StatusCode::BAD_GATEWAY, "{extra:?} must proxy");
+    }
+    for path in [
+        "/opds/download/99/pdf/",
+        "/opds/download/7/epub/",
+        "/opds/download/7x/pdf/",
+        "/opds/download/7/kepub/",
+    ] {
+        let (status, _, _) = opds(&f, path, &[]).await;
+        assert_eq!(status, StatusCode::BAD_GATEWAY, "{path}");
+    }
+    // an unsatisfiable Range is Flask's rendered 416 page
+    let (status, _, _) = opds(&f, "/opds/download/7/pdf/", &[("range", "bytes=9999-")]).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    assert!(hits(&f).is_empty(), "nothing may be counted");
+}
+
+/// A stand-in `calibredb` that writes `EXPORTED` where the real one would put the book.
+fn fake_calibredb(dir: &std::path::Path, script_body: &str) {
+    use std::os::unix::fs::PermissionsExt;
+    let path = dir.join("calibredb");
+    std::fs::write(&path, format!("#!/bin/sh\n{script_body}\n")).unwrap();
+    std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o755)).unwrap();
+}
+
+const EXPORT_ARGS: &str = r#"while [ $# -gt 0 ]; do case "$1" in --to-dir) d="$2"; shift;; --template) s="$2"; shift;; esac; shift; done"#;
+
+#[tokio::test]
+async fn opds_download_serves_a_fresh_export_when_metadata_embedding_is_on() {
+    let f = fixture(true);
+    let bin = TempDir::new().unwrap();
+    fake_calibredb(
+        bin.path(),
+        &format!("{EXPORT_ARGS}\nprintf EXPORTED > \"$d/$s.pdf\""),
+    );
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute(
+            "UPDATE settings SET config_binariesdir = ?1",
+            [bin.path().to_str().unwrap()],
+        )
+        .unwrap();
+    let (status, headers, body) = opds(&f, "/opds/download/7/pdf/", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, b"EXPORTED");
+    assert_eq!(headers[header::CONTENT_LENGTH], "8");
+    assert_eq!(hits(&f), vec![(7, 0, 1)]);
+}
+
+#[tokio::test]
+async fn opds_download_hands_a_locked_library_to_flask_and_serves_the_stored_file_when_the_export_fails()
+ {
+    // The library stays locked: the stored file is not an export, so Flask answers and nothing is counted here.
+    let f = fixture(true);
+    let bin = TempDir::new().unwrap();
+    fake_calibredb(
+        bin.path(),
+        "echo 'Another calibre program is running' >&2; exit 1",
+    );
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute(
+            "UPDATE settings SET config_binariesdir = ?1",
+            [bin.path().to_str().unwrap()],
+        )
+        .unwrap();
+    let (status, _, _) = opds(&f, "/opds/download/7/pdf/", &[]).await;
+    assert_eq!(status, StatusCode::BAD_GATEWAY);
+    assert!(hits(&f).is_empty());
+
+    // Any other failure serves the stored file, as Flask does.
+    let f = fixture(true);
+    let bin = TempDir::new().unwrap();
+    fake_calibredb(bin.path(), "exit 3");
+    Connection::open(&f.app_db)
+        .unwrap()
+        .execute(
+            "UPDATE settings SET config_binariesdir = ?1",
+            [bin.path().to_str().unwrap()],
+        )
+        .unwrap();
+    let (status, _, body) = opds(&f, "/opds/download/7/pdf/", &[]).await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, BODY);
+    assert_eq!(hits(&f), vec![(7, 0, 1)]);
+}

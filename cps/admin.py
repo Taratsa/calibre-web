@@ -155,10 +155,13 @@ def before_request():
         return redirect(url_for("admin.db_configuration"))
 
 
-# @admi.route("/admin")
-# @user_login_required
-# def admin_forbidden():
-#    abort(403)
+@admi.route("/admin")
+@admi.route("/admin/")
+@user_login_required
+@admin_required
+def admin_root():
+    # Stock Calibre-Web had no page here (a commented-out route answered 403); the dashboard is /admin/view.
+    return redirect(url_for("admin.admin"))
 
 
 @admi.route("/shutdown", methods=["POST"])
