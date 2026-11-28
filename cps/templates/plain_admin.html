@@ -88,6 +88,7 @@
     <button type="button" id="text_analysis">{{ _('Compute text analysis') }}</button>
     <button type="button" id="sentence_tone">{{ _('Compute sentence tone') }}</button>
     <button type="button" id="fulltext_index">{{ _('Rebuild full-text index') }}</button>
+    <a class="button" href="/admin/authors">{{ _('Rename an author in every book') }}</a>
     <a class="button" href="{{ url_for('tasks.get_tasks_status') }}">{{ _('View tasks') }}</a>
   </div>
   <p id="plain-job-status" role="status" aria-live="polite" class="plain-muted"></p>

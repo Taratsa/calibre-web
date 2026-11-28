@@ -31,6 +31,10 @@
     {% endif %}
   </div>
 </fieldset>
+{#- Renaming ONE author across every book is a Rust page (rust/backend/src/authors_admin.rs, admin only), so a plain href. -#}
+{% if current_user.role_admin() %}
+<p class="plain-muted"><a class="button" href="/admin/authors">{{ _('Rename an author in every book…') }}</a></p>
+{% endif %}
 <div id="bulk-result" aria-live="polite"></div>
 <div id="booklist" aria-busy="false" hx-get="{{ url_for('edit-book.manage_books_rows') }}" hx-trigger="books-changed from:body"
      hx-include="#manage-q, #booklist input[name=page]" hx-target="this" hx-swap="innerHTML">{% include "plain_books_rows.html" %}</div>
