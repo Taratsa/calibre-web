@@ -17,7 +17,7 @@ reseed, an image rebuild and a container recreate. Measured on the production ho
 - **Refuses to run while frontend CODE is uncommitted** (`frontend/src/{pages,components,layouts,styles,utils,scripts}`,
   `middleware.ts`, `astro.config.mjs`, `Dockerfile`) unless `REBUILD_ALLOW_DIRTY=1`. `frontend/src/data` is excluded on
   purpose: the seed rewrites it every run, so counting it would block every rebuild after the first.
-- HTTP on `127.0.0.1:9999`: `POST /rebuild` (queue one refresh; requires `X-Frontend-Token` when `REBUILD_TOKEN` is
+- HTTP on `127.0.0.1:9777`: `POST /rebuild` (queue one refresh; requires `X-Frontend-Token` when `REBUILD_TOKEN` is
   set — the same header the old Python listener used), `GET /status` (running, next run, last run, log tail), `GET
   /healthz`.
 - `--once [--dry-run]` runs one refresh and prints the outcome as JSON (for a timer or an operator); `--dry-run` never
@@ -27,31 +27,20 @@ Flask's `trigger_rebuild_async` (12 call sites in `editbooks.py`) posts to Flask
 when `config_frontend_rebuild_token` is set; it is not, so those calls are no-ops. This daemon watches the database
 instead, so edits made in Calibre desktop are covered too.
 
-## Stopping
-
-`systemctl --user stop` (SIGTERM) lets the build in flight finish and starts nothing new; the unit allows 180 s.
-
-## Build and run
+## Run it (no systemd)
 
 ```bash
-cd rust/rebuildd
-cargo build --release
-REBUILD_TOKEN=… ./target/release/pustaka-rebuildd          # daemon
-./target/release/pustaka-rebuildd --once --dry-run          # what would it do?
+cd rust/rebuildd && cargo build --release          # once
+scripts/rebuildd.sh start      # background supervisor: restarts the daemon after a crash
+scripts/rebuildd.sh status     # running/stopped + the daemon's own /status
+scripts/rebuildd.sh logs       # follow ~/.local/state/pustaka/rebuildd.log
+scripts/rebuildd.sh stop       # finishes the build in flight, starts nothing new, waits up to 180 s
+scripts/rebuildd.sh once       # one rebuild now, in the foreground (add --dry-run to only report)
 ```
 
-Install as a user unit (the build needs `docker compose` and the docker group):
-
-```bash
-mkdir -p ~/.config/systemd/user ~/.config/pustaka
-cp deploy/pustaka-rebuildd.service ~/.config/systemd/user/
-printf 'REBUILD_TOKEN=%s\n' "$(openssl rand -hex 16)" > ~/.config/pustaka/rebuildd.env
-chmod 600 ~/.config/pustaka/rebuildd.env
-systemctl --user daemon-reload
-systemctl --user enable --now pustaka-rebuildd
-loginctl enable-linger "$USER"      # keep it running without an open session
-journalctl --user -u pustaka-rebuildd -f
-```
+It binds `127.0.0.1:9777` (override with `REBUILD_BIND`; 9999 is taken by the Tor bridge on this host). Optional
+settings (`REBUILD_TOKEN`, `REBUILD_DEBOUNCE_SECS`, ...) go in `~/.config/pustaka/rebuildd.env`. To start it at boot
+add `@reboot /home/devuser/workspaces/calibre-web/scripts/rebuildd.sh start` with `crontab -e`.
 
 ## Check
 

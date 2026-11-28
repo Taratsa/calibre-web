@@ -17,7 +17,7 @@
 //!
 //! Configuration (environment):
 //!   PUSTAKA_REPO            repository root (default /home/devuser/workspaces/calibre-web)
-//!   REBUILD_BIND            listen address (default 127.0.0.1:9999)
+//!   REBUILD_BIND            listen address (default 127.0.0.1:9777)
 //!   REBUILD_TOKEN           optional; when set, POST /rebuild requires `X-Frontend-Token`
 //!   REBUILD_DEBOUNCE_SECS   quiet time before a rebuild (default 90)
 //!   REBUILD_MIN_INTERVAL_SECS  minimum spacing between two runs (default 300)
@@ -76,7 +76,7 @@ impl Config {
             .map(PathBuf::from)
             .unwrap_or_else(|| repo.join("build-frontend.sh"));
         Ok(Self {
-            bind: env("REBUILD_BIND").unwrap_or_else(|| "127.0.0.1:9999".to_owned()),
+            bind: env("REBUILD_BIND").unwrap_or_else(|| "127.0.0.1:9777".to_owned()),
             token: env("REBUILD_TOKEN"),
             debounce: Duration::from_secs(number("REBUILD_DEBOUNCE_SECS", 90)?),
             min_interval: Duration::from_secs(number("REBUILD_MIN_INTERVAL_SECS", 300)?),

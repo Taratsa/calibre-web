@@ -947,7 +947,7 @@ Two live search systems (plus the legacy advanced-search form):
   the production host: seed **28 s**, Astro image build **40 s** with a warm Docker layer cache, ~1 s recreate (and
   about a second of 502 while the container restarts). Regardless of Docker cache the first pull/build after a
   dependency change is minutes; the numbers assume the normal case, where only `src/data` moved
-- **`rust/rebuildd`** (own crate, `deploy/pustaka-rebuildd.service` is a systemd *user* unit) watches `library/metadata.db`
+- **`rust/rebuildd`** (own crate, run by `scripts/rebuildd.sh`, NO systemd: a decision of 2026-11-28) watches `library/metadata.db`
   with its `-wal`/`-shm` (SQLite commits land in the WAL, so the main file's mtime alone is not reliable) and
   `data/clippings`, and runs `build-frontend.sh` after **90 s of quiet**, deferring a continuous change stream at
   most **600 s**, at most once per **300 s**, never two at a time, and only when the fingerprint actually moved. This
@@ -955,15 +955,20 @@ Two live search systems (plus the legacy advanced-search form):
   anonymous download and every login writes it, so watching it would rebuild after any visitor's download (a change to
   app.db alone, e.g. a site setting, is refreshed with `POST /rebuild`). Measured 2026-11-28: 221 `/files` exports in 25
   minutes left `metadata.db` and its WAL untouched, so reads do not trigger it
-- **Stopping** (`systemctl --user stop`, SIGTERM, Ctrl-C) finishes the build in flight and starts nothing new; the unit
-  gives it 180 s (`TimeoutStopSec`), longer than a whole run. Checked under a real `systemd-run --user` unit: a stop
-  during a 5 s fake build returned after 2.8 s with the build's output and exit 0 logged, never killing it mid-run
+- **Running it, without systemd**: `scripts/rebuildd.sh start|stop|status|logs|once`. `start` forks a small supervisor
+  (own session, pid in `~/.local/state/pustaka/rebuildd.pid`, log `rebuildd.log` there) that restarts the daemon after a
+  crash (5 s, backing off to 60 s for a crash loop). Boot start is one cron line: `@reboot <repo>/scripts/rebuildd.sh
+  start`. It binds `127.0.0.1:9777` (9999 is the Tor bridge container on this host); settings in
+  `~/.config/pustaka/rebuildd.env`. Not running unless started: at this writing it is NOT started
+- **Stopping** (`rebuildd.sh stop`, SIGTERM, Ctrl-C) finishes the build in flight and starts nothing new. Checked
+  2026-11-28 with a fake 6 s build: the crash restart came back in 5 s with `/healthz` 200, and a stop issued 3 s into a
+  build waited for it ("build-done", exit 0 logged) and left no process behind
 - **It refuses to ship uncommitted frontend CODE**: `git status --porcelain` over `frontend/src/{pages,components,layouts,
   styles,utils,scripts}`, `middleware.ts`, `astro.config.mjs`, `Dockerfile` must be empty, else the run is skipped and
   `/status` says why (`REBUILD_ALLOW_DIRTY=1` overrides). `frontend/src/data` is excluded on purpose: the seed rewrites
   it every run, so counting it would block every rebuild after the first. This guard exists because `build-frontend.sh`
   builds the working tree: an automated run would otherwise publish half-finished frontend work on the next upload
-- **Control surface**: `POST /rebuild` on `127.0.0.1:9999` (queues one refresh; `X-Frontend-Token` required when
+- **Control surface**: `POST /rebuild` on `127.0.0.1:9777` (queues one refresh; `X-Frontend-Token` required when
   `REBUILD_TOKEN` is set), `GET /status` (running, next run in N s, last run with exit code and skip reason, 40-line log
   tail), `GET /healthz`; `--once [--dry-run]` prints the outcome as JSON. Its log filter defaults to `info` when
   `RUST_LOG` is unset, so skip and failure reasons are visible
