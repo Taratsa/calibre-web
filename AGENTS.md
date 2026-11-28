@@ -970,6 +970,14 @@ Two live search systems (plus the legacy advanced-search form):
   healthz 200, no/wrong token 403, correct token 202 with `next_run_in_seconds`, `/status` JSON
 - NOT verified: a full automated run (no catalog change happened while testing, and the frontend tree is dirty), and
   the service is **not enabled yet** (enabling it is a live change)
+- **`frontend/src/data/*.json` is marked `binary` in `.git/info/attributes`** (local, untracked, so a fresh clone does
+  not inherit it): the seed rewrites those files wholesale and `rebuildd` leaves them dirty permanently, so any
+  `commit.draft()` called with a reseeded snapshot line-attributes ~50k changed lines. On 2026-11-28 that blocked the
+  agent loop for 285 s and then grew RSS ~10 MB/s until it was killed. The attribute makes git treat each file as
+  binary (`git diff`/`git show` print `Bin N -> N bytes`), and `commit.draft()`'s documented rule is one whole-file
+  unit instead of line attribution. The files stay tracked (only `book-slugs.json` is needed by the Flask image build,
+  the rest let the Astro image build without the live DBs); commit data with `git add frontend/src/data && git commit`
+  and code with `commit.draft()`
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
