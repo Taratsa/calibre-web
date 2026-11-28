@@ -5,6 +5,7 @@ use axum::routing::{get, post};
 use pustaka_rebuildd::{Config, Reason, Status, dirty_frontend, fingerprint};
 use std::path::PathBuf;
 use std::sync::Arc;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::time::{Duration, Instant};
 use tokio::io::{AsyncBufReadExt, BufReader};
 
@@ -68,8 +69,35 @@ async fn main() {
             tracing::error!("server error: {error}");
         }
     });
-    watch_loop(status.clone()).await;
+    let stopping = Arc::new(AtomicBool::new(false));
+    tokio::spawn(wait_for_stop(stopping.clone()));
+    watch_loop(status.clone(), stopping.clone()).await;
     server.abort();
+    tracing::info!("rebuildd stopped");
+    // A caught SIGTERM leaves an unambiguous success status for `systemctl`.
+    std::process::exit(0);
+}
+
+/// `systemctl --user stop`, Ctrl-C or a reboot: finish the build in flight, start nothing new.
+async fn wait_for_stop(stopping: Arc<AtomicBool>) {
+    let mut term = match tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate()) {
+        Ok(signal) => signal,
+        Err(error) => {
+            tracing::error!("cannot listen for SIGTERM: {error}");
+            return;
+        }
+    };
+    // Loop for the life of the process: dropping the last `Signal` restores SIGTERM's default action, and a second
+    // SIGTERM (systemd sends one, a shell job control may send another) would then kill the daemon mid-drain.
+    loop {
+        tokio::select! {
+            _ = term.recv() => {}
+            _ = tokio::signal::ctrl_c() => {}
+        }
+        if !stopping.swap(true, Ordering::SeqCst) {
+            tracing::info!("stop requested; finishing any running build before exit");
+        }
+    }
 }
 
 fn check_paths(config: &Config) -> Result<(), String> {
@@ -89,7 +117,7 @@ fn check_paths(config: &Config) -> Result<(), String> {
 }
 
 /// Poll the catalog's fingerprint and run the build when the schedule says so.
-async fn watch_loop(status: Arc<Status>) {
+async fn watch_loop(status: Arc<Status>, stopping: Arc<AtomicBool>) {
     let repo: PathBuf = status.config.repo.clone();
     let poll = status.config.poll;
     let mut observed = fingerprint(&repo);
@@ -111,9 +139,15 @@ async fn watch_loop(status: Arc<Status>) {
                 None => None,
             }
         };
+        if stopping.load(Ordering::SeqCst) {
+            break;
+        }
         if let Some(reason) = due {
             run_build(&status, reason, false).await;
             status.schedule.lock().await.finished(Instant::now());
+            if stopping.load(Ordering::SeqCst) {
+                break;
+            }
         }
     }
 }
@@ -189,6 +223,7 @@ async fn run_build_inner(status: &Arc<Status>, reason: Reason, dry_run: bool) ->
             skipped: Some("dry run".to_owned()),
         };
     }
+    tracing::info!("starting {:?}", config.script);
     let mut child = match tokio::process::Command::new("bash")
         .arg(&config.script)
         .current_dir(&config.repo)
@@ -227,7 +262,7 @@ async fn run_build_inner(status: &Arc<Status>, reason: Reason, dry_run: bool) ->
             }
         }));
     }
-    let waited = tokio::time::timeout(config.timeout, child.wait()).await;
+    let waited = tokio::time::timeout(config.timeout, wait_for_child(&mut child)).await;
     for reader in readers {
         let _ = reader.await;
     }
@@ -252,6 +287,27 @@ async fn run_build_inner(status: &Arc<Status>, reason: Reason, dry_run: bool) ->
             Outcome {
                 exit: None,
                 skipped: Some(format!("timed out after {}s", config.timeout.as_secs())),
+            }
+        }
+    }
+}
+
+/// `wait()` retried across `EINTR`: a SIGTERM that arrives while a build runs must end with the build DRAINED, not
+/// with the child abandoned (systemd would otherwise SIGKILL it mid-seed at stop time).
+async fn wait_for_child(
+    child: &mut tokio::process::Child,
+) -> std::io::Result<std::process::ExitStatus> {
+    loop {
+        match child.wait().await {
+            Err(error) if error.kind() == std::io::ErrorKind::Interrupted => {
+                tracing::info!("wait() was interrupted; still waiting for the build");
+            }
+            other => {
+                tracing::info!(
+                    "wait() returned {:?}",
+                    other.as_ref().map(|status| status.to_string())
+                );
+                return other;
             }
         }
     }

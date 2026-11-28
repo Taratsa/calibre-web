@@ -948,10 +948,16 @@ Two live search systems (plus the legacy advanced-search form):
   about a second of 502 while the container restarts). Regardless of Docker cache the first pull/build after a
   dependency change is minutes; the numbers assume the normal case, where only `src/data` moved
 - **`rust/rebuildd`** (own crate, `deploy/pustaka-rebuildd.service` is a systemd *user* unit) watches `library/metadata.db`
-  with its `-wal`/`-shm` (SQLite commits land in the WAL, so the main file's mtime alone is not reliable), `data/app.db`
-  and `data/clippings`, and runs `build-frontend.sh` after **90 s of quiet**, deferring a continuous change stream at
+  with its `-wal`/`-shm` (SQLite commits land in the WAL, so the main file's mtime alone is not reliable) and
+  `data/clippings`, and runs `build-frontend.sh` after **90 s of quiet**, deferring a continuous change stream at
   most **600 s**, at most once per **300 s**, never two at a time, and only when the fingerprint actually moved. This
-  covers edits made in Calibre desktop too, which the Flask hook never saw
+  covers edits made in Calibre desktop too, which the Flask hook never saw. `data/app.db` is NOT watched: every
+  anonymous download and every login writes it, so watching it would rebuild after any visitor's download (a change to
+  app.db alone, e.g. a site setting, is refreshed with `POST /rebuild`). Measured 2026-11-28: 221 `/files` exports in 25
+  minutes left `metadata.db` and its WAL untouched, so reads do not trigger it
+- **Stopping** (`systemctl --user stop`, SIGTERM, Ctrl-C) finishes the build in flight and starts nothing new; the unit
+  gives it 180 s (`TimeoutStopSec`), longer than a whole run. Checked under a real `systemd-run --user` unit: a stop
+  during a 5 s fake build returned after 2.8 s with the build's output and exit 0 logged, never killing it mid-run
 - **It refuses to ship uncommitted frontend CODE**: `git status --porcelain` over `frontend/src/{pages,components,layouts,
   styles,utils,scripts}`, `middleware.ts`, `astro.config.mjs`, `Dockerfile` must be empty, else the run is skipped and
   `/status` says why (`REBUILD_ALLOW_DIRTY=1` overrides). `frontend/src/data` is excluded on purpose: the seed rewrites

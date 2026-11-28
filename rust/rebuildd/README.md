@@ -10,7 +10,7 @@ reseed, an image rebuild and a container recreate. Measured on the production ho
 ## What it does
 
 - Watches `library/metadata.db` (with `-wal`/`-shm`: SQLite commits land in the WAL, the main file's mtime alone is not
-  reliable), `data/app.db` (+`-wal`) and `data/clippings`, polling every 5 s.
+  reliable) and `data/clippings`, polling every 5 s. `data/app.db` is not watched: every download and login writes it.
 - On a change, waits for **90 s of quiet** (`REBUILD_DEBOUNCE_SECS`), defers a continuous stream at most **600 s**
   (`REBUILD_MAX_WAIT_SECS`), runs **at most once per 300 s** (`REBUILD_MIN_INTERVAL_SECS`), and never two at a time.
 - Skips the run when the fingerprint (mtime+size of those files) did not actually move.
@@ -26,6 +26,10 @@ reseed, an image rebuild and a container recreate. Measured on the production ho
 Flask's `trigger_rebuild_async` (12 call sites in `editbooks.py`) posts to Flask's own `/internal/rebuild-frontend` only
 when `config_frontend_rebuild_token` is set; it is not, so those calls are no-ops. This daemon watches the database
 instead, so edits made in Calibre desktop are covered too.
+
+## Stopping
+
+`systemctl --user stop` (SIGTERM) lets the build in flight finish and starts nothing new; the unit allows 180 s.
 
 ## Build and run
 

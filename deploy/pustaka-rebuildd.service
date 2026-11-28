@@ -14,9 +14,10 @@ EnvironmentFile=-%h/.config/pustaka/rebuildd.env
 ExecStart=/home/devuser/workspaces/calibre-web/rust/rebuildd/target/release/pustaka-rebuildd
 Restart=on-failure
 RestartSec=10
-# A rebuild is `seed (28 s) + docker build (40 s) + recreate`; do not abort it halfway because the last session ended.
+# A rebuild is `seed (28 s) + docker build (40 s) + recreate`. The daemon finishes the build in flight when it gets
+# SIGTERM, so give it longer than a whole run; `KillMode=mixed` then only has to kill what is left after that.
 KillMode=mixed
-TimeoutStopSec=60
+TimeoutStopSec=180
 
 [Install]
 WantedBy=default.target

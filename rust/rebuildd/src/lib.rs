@@ -130,7 +130,9 @@ pub fn newest_below(dir: &Path) -> Stamp {
     newest
 }
 
-/// The whole catalog signal: both databases (with their WAL files) and the clippings.
+/// The catalog signal: Calibre's database (with its WAL files) and the clippings. `data/app.db` is deliberately
+/// absent — the anonymous download counter and every login write to it, so watching it would trigger a rebuild after
+/// any visitor's download. A change to app.db alone (a site setting) can be refreshed with `POST /rebuild`.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Fingerprint(pub Vec<(String, Stamp)>);
 
@@ -140,8 +142,6 @@ pub fn fingerprint(repo: &Path) -> Fingerprint {
         "library/metadata.db",
         "library/metadata.db-wal",
         "library/metadata.db-shm",
-        "data/app.db",
-        "data/app.db-wal",
     ] {
         parts.push((name.to_owned(), stamp(&repo.join(name))));
     }
