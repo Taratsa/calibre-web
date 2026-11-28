@@ -31,14 +31,14 @@ pub fn routes() -> Router<Arc<AppState>> {
         .route("/me/2fa/disable", post(disable))
 }
 
-fn now() -> u64 {
+pub(crate) fn now() -> u64 {
     SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|elapsed| elapsed.as_secs())
         .unwrap_or(0)
 }
 
-fn cookie_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
+pub(crate) fn cookie_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
     headers
         .get(header::COOKIE)?
         .to_str()
@@ -49,7 +49,7 @@ fn cookie_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
         .map(|(_, value)| value)
 }
 
-fn locale(headers: &HeaderMap) -> &'static str {
+pub(crate) fn locale(headers: &HeaderMap) -> &'static str {
     // The site's language is Indonesian; only a browser that asks for another supported locale gets it.
     match headers.get(header::ACCEPT_LANGUAGE) {
         None => "id",
@@ -57,7 +57,7 @@ fn locale(headers: &HeaderMap) -> &'static str {
     }
 }
 
-fn client_ip(headers: &HeaderMap) -> String {
+pub(crate) fn client_ip(headers: &HeaderMap) -> String {
     for name in ["cf-connecting-ip", "x-forwarded-for"] {
         if let Some(value) = headers.get(name).and_then(|v| v.to_str().ok()) {
             let first = value.split(',').next().unwrap_or("").trim();
@@ -69,7 +69,7 @@ fn client_ip(headers: &HeaderMap) -> String {
     String::new()
 }
 
-fn page(body: String, status: StatusCode) -> Response {
+pub(crate) fn page(body: String, status: StatusCode) -> Response {
     let mut response = (status, body).into_response();
     let headers = response.headers_mut();
     headers.insert(
@@ -88,7 +88,7 @@ fn page(body: String, status: StatusCode) -> Response {
     response
 }
 
-fn redirect(location: &str, extra_cookie: Option<String>) -> Response {
+pub(crate) fn redirect(location: &str, extra_cookie: Option<String>) -> Response {
     let mut response = (StatusCode::SEE_OTHER, "").into_response();
     let headers = response.headers_mut();
     if let Ok(value) = HeaderValue::from_str(location) {
@@ -129,20 +129,20 @@ fn login_redirect() -> Response {
     redirect("/login?next=%2Fme%2F2fa", None)
 }
 
-fn parse_form(body: &str) -> Vec<(String, String)> {
+pub(crate) fn parse_form(body: &str) -> Vec<(String, String)> {
     form_urlencoded::parse(body.as_bytes())
         .map(|(key, value)| (key.into_owned(), value.into_owned()))
         .collect()
 }
 
-fn field<'a>(form: &'a [(String, String)], name: &str) -> Option<&'a str> {
+pub(crate) fn field<'a>(form: &'a [(String, String)], name: &str) -> Option<&'a str> {
     form.iter()
         .rev()
         .find(|(key, _)| key == name)
         .map(|(_, value)| value.as_str())
 }
 
-async fn csrf_ok(
+pub(crate) async fn csrf_ok(
     state: &Arc<AppState>,
     headers: &HeaderMap,
     form: &[(String, String)],

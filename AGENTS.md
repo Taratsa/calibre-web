@@ -941,6 +941,46 @@ Two live search systems (plus the legacy advanced-search form):
   login route. `rust/backend/src/main.rs` now defaults the filter to `info` when `RUST_LOG` is unset (that fix ships with
   the next backend image rebuild); `.env` needs no change
 
+### Author rename and the Edit button (Rust, 2026-11-28, NOT deployed yet)
+- **`/admin/authors`** (`rust/backend/src/authors_admin.rs`, core in `authors.rs`): admin-only form -> preview (mode, book
+  count, sample of titles) -> confirmed run. Session and CSRF are the same ones `/me/2fa` uses; a non-admin gets 403, a
+  POST without `csrf_token` 400, and `/run` refuses anything without `confirm=yes` and the previewed `expected` count.
+  `apply()` re-plans and aborts (409) when the count changed since the preview, writes ONE transaction after a
+  `VACUUM INTO` backup in `<app.db dir>/processed_books/author_renames/`, and adds an `audit_log` row (`author_rename`,
+  resource_type `author`).
+- **The rename is database-only: book folders are NOT renamed.** `library/` is never written by this backend,
+  `books.path` is authoritative in Calibre, and 1,006 of 24,465 folders already differ from their first author. Flask's
+  editor moves folders; this does not. Calibre desktop moves a folder the next time it saves that book.
+- Semantics follow `prepare_authors`: names store `,` as `|`, `&` is refused (one author at a time), `authors.sort` =
+  `get_sorted_author` (`sorted_author()`, 16 vectors taken from Flask's own function), a free name renames the row, a
+  case-only change keeps the row, an EXISTING name merges (books move, a book with both keeps one link, the emptied
+  author is deleted). Touched books get `last_modified` and a `metadata_dirtied` row.
+- **`books.author_sort` is rewritten per whole ` & ` component, not with `str.replace`** like Flask: 12,496 stored strings
+  contain another author's sort as a substring (`"(Anonim), Pembantu Varia"` holds `Anonim`, `"SEPAHAM, Komnas HAM dan
+  Tim"` holds `HAM, Komnas`), and `replace` would corrupt them. No whole component found -> rebuilt from link order.
+- A writing connection must register `title_sort()` and `uuid4()` (the `metadata.db` triggers call them): `open_library()`.
+- Checked on a `VACUUM INTO` copy of the real `metadata.db`: `Komnas HAM` -> 180 books in 14 ms and `Anonim` -> `Tanpa Nama`
+  141 books in 24 ms, `integrity_check` ok, no orphan links, books 8999/9000/1098/1116 untouched, the count of books whose
+  `author_sort` differs from their authors' sorts unchanged (954), and Flask's SQLAlchemy in `calibre-web:local` reads the
+  result (including the `...+00:00` `last_modified` Rust writes). Mounting a copy over `/lib` in `docker run` breaks the
+  image (the dynamic loader lives there): use another path.
+- The public site follows through `rebuildd` (it watches `metadata.db` + WAL). Flask's own session reads the new names on
+  its next query.
+- **Edit button on the book page**: the page is edge-cached, so it cannot know the visitor. Login sets a readable marker
+  cookie `pustaka_staff=1` (31 days, only for a role with admin or edit); `pages/book/[id]/index.astro` has a hidden
+  `#staff-edit` link and an inline script that, ONLY when the marker exists, asks `GET /api/whoami`
+  (`whoami.rs`, `private, no-store`, answers from the verified session: `{"edit":bool,"admin":bool}`) and reveals the
+  link to `/admin/book/<id>`. A forged marker shows nothing and anonymous readers make no extra request. The target
+  route is Flask's `edit_required` (admin or edit role).
+- **OCR POST bug (found 2026-11-28)**: the OCR routes in `ocr_status.rs` were GET-only, so `POST /api/read/<id>/ocr/<fmt>`
+  (the "Proses dengan OCR" button) got axum's own 405 and the page said "Gagal menghubungi server". Caddy only fails over
+  on connection errors, so Flask never saw it. Every non-GET method on those paths is now proxied to Flask
+  (`to_flask`), tested in `tests/files.rs`. A Rust route that matches a path MUST handle or proxy every method Flask
+  accepts there.
+- **Caddy (unapplied)**: `/home/devuser/backups/Caddyfile.author-admin-whoami.patch` adds `/admin/authors /admin/authors/*
+  /api/whoami` to `@rust_auth` (Rust first, Flask failover, before `@flask`); validated with `caddy validate`, not
+  reloaded. Needs the new backend image first (Rust has no catch-all, so route to it only after it exists).
+
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
   Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on

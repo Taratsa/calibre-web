@@ -539,6 +539,23 @@ async fn log_in(
         )));
     }
     cookies.push(clear_cookie_header(PENDING_COOKIE));
+    // A readable hint for the cached book pages: show the Edit link only to people who may use it. It carries no
+    // authority (`/api/whoami` and Flask check the session), so a forged or stale marker shows nothing.
+    let app_db = state.app_db.clone();
+    let staff = tokio::task::spawn_blocking(move || {
+        settings::load_access(&app_db, Some(user_id))
+            .ok()
+            .flatten()
+            .is_some_and(|access| crate::whoami::can_edit(access.role))
+    })
+    .await
+    .unwrap_or(false);
+    if staff {
+        cookies.push(format!(
+            "{}=1; Max-Age=2678400; Path=/; SameSite=Lax; Secure",
+            crate::whoami::MARKER_COOKIE
+        ));
+    }
     let values: Vec<HeaderValue> = cookies
         .iter()
         .filter_map(|value| HeaderValue::from_str(value).ok())

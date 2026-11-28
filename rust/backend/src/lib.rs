@@ -5,6 +5,8 @@
 pub mod accept;
 pub mod auth_page;
 pub mod authdb;
+pub mod authors;
+pub mod authors_admin;
 pub mod cover;
 pub mod download;
 pub mod epub_page;
@@ -37,6 +39,7 @@ pub mod static_files;
 pub mod totp;
 pub mod turnstile;
 pub mod twofa;
+pub mod whoami;
 
 use axum::Router;
 use settings::Settings;
@@ -161,6 +164,8 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(legacy::routes())
         .merge(crate::login::routes())
         .merge(crate::twofa::routes())
+        .merge(crate::authors_admin::routes())
+        .merge(crate::whoami::routes())
         .merge(crate::opds_guard::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),

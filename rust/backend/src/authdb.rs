@@ -185,14 +185,27 @@ pub fn set_recovery(app_db: &Path, user_id: i64, recovery_json: &str) -> rusqlit
 
 /// `create_audit_log_entry`: same columns, same `created` shape (`YYYY-MM-DD HH:MM:SS.ffffff`).
 pub fn audit(app_db: &Path, user_id: i64, action: &str, details: &str, ip: &str) {
+    audit_resource(app_db, user_id, action, "user", None, details, ip);
+}
+
+/// The same entry for another resource type (`resource_id` is stored as text, like Flask's `str(resource_id)`).
+pub fn audit_resource(
+    app_db: &Path,
+    user_id: i64,
+    action: &str,
+    resource_type: &str,
+    resource_id: Option<&str>,
+    details: &str,
+    ip: &str,
+) {
     let created = chrono::Utc::now()
         .format("%Y-%m-%d %H:%M:%S%.6f")
         .to_string();
     let written = open(app_db).and_then(|conn| {
         conn.execute(
-            "INSERT INTO audit_log (user_id, action, resource_type, details, ip_address, created)
-             VALUES (?1, ?2, 'user', ?3, ?4, ?5)",
-            params![user_id, action, details, ip, created],
+            "INSERT INTO audit_log (user_id, action, resource_type, resource_id, details, ip_address, created)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)",
+            params![user_id, action, resource_type, resource_id, details, ip, created],
         )
     });
     if let Err(error) = written {
