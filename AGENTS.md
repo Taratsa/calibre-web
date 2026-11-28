@@ -982,13 +982,16 @@ Two live search systems (plus the legacy advanced-search form):
   `Caddyfile.author-admin-whoami.patch`). Checked through Caddy: anonymous `/api/whoami` 200 `{"edit":false,"admin":false}`,
   `/admin/authors` 303 to the login, `POST /api/read/21623/ocr/pdf` 200 (was 405), the book page carries the hidden
   `#staff-edit` link. NOT checked: a real admin browser session (the Edit link appearing, a rename on production data).
-- **Dashboard actions that never reached Flask (found 2026-11-28, pre-existing, NOT fixed yet)**: `POST /ocr/scan`
-  (and `/analysis/run`, `/sentiment/run`, `/sentiment/book/<id>`, `/fulltext/run`, `/metadata_backup`, `/shutdown`,
-  `/reconnect`, `/get_update_status`, `/get_updater_status`, `/import_ldap_users`, `/upload`) are Flask routes that
-  `@flask` in the Caddyfile does not list, so they fall through to Astro, which 301s the POST to `/x/` and then 404s the
-  GET (what the browser's network panel shows as `GET /ocr/scan/` 404). These queue jobs in Flask's in-memory worker
-  queue, so Rust cannot serve them. Fix is routing only: patch `/home/devuser/backups/Caddyfile.admin-actions-to-flask.patch`
-  adds them to `@flask` and to `@adminpages` (no-store); it passes `caddy validate` and is NOT applied.
+- **Dashboard actions that never reached Flask (fixed 2026-11-28 ~12:45 UTC)**: `POST /ocr/scan` (and `/analysis/run`,
+  `/sentiment/run`, `/sentiment/book/<id>`, `/fulltext/run`, `/metadata_backup`, `/shutdown`, `/reconnect`,
+  `/get_update_status`, `/get_updater_status`, `/import_ldap_users`, `/upload`) are Flask routes that `@flask` in the
+  Caddyfile did not list, so they fell through to Astro, which 301s the POST to `/x/` and then 404s the GET (the
+  "Precompute OCR cache" button did nothing; the browser's network panel showed `GET /ocr/scan/` 404). They queue jobs in
+  Flask's in-memory worker queue, so Rust cannot serve them: they are in `@flask` and `@adminpages` (`private, no-store`)
+  now (backup `Caddyfile.pre-admin-actions.2026-11-28`, patch `Caddyfile.admin-actions-to-flask.patch`). Checked through
+  Caddy with anonymous POSTs: each now answers from Flask (400 CSRF, or 405 for the GET-only status routes) with
+  `private, no-store`, no longer a 301. NOT checked: a logged-in click on each button. A new Flask route outside the
+  listed prefixes has the same failure mode: add its path to `@flask`.
 
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
