@@ -33,6 +33,8 @@ library/
 data/
 !frontend/src/data/
 !frontend/src/data/book-slugs.json
+# parity vectors read with include_str! by the Rust tests (a few KB of JSON)
+!rust/backend/tests/data/
 frontend/src/data/books/
 *.db
 *.log
