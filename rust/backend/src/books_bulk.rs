@@ -300,11 +300,12 @@ pub async fn run(State(state): State<Arc<AppState>>, headers: HeaderMap, body: B
     };
     let form = parse_form(&String::from_utf8_lossy(&body));
     let action = value_of(&form, "action").to_owned();
-    // Everything Flask still owns goes there with the request as it came.
-    if matches!(action.as_str(), "read" | "unread" | "merge" | "delete") {
+    // Read/unread (Kobo reading state) and merge still go to Flask with the request as it came; delete is answered
+    // here because Flask's path took 91 s for one selection (2026-11-28).
+    if matches!(action.as_str(), "read" | "unread" | "merge") {
         return flask(&state, "/admin/books/bulk/run", headers, body).await;
     }
-    if !matches!(action.as_str(), "archive" | "unarchive" | "set") {
+    if !matches!(action.as_str(), "archive" | "unarchive" | "set" | "delete") {
         return StatusCode::BAD_REQUEST.into_response();
     }
     let header_token = headers
@@ -321,7 +322,7 @@ pub async fn run(State(state): State<Arc<AppState>>, headers: HeaderMap, body: B
         return (StatusCode::BAD_REQUEST, text(l, "csrf")).into_response();
     }
     let english = l.starts_with("en");
-    if action == "set" && value_of(&form, "confirm") != "yes" {
+    if matches!(action.as_str(), "set" | "delete") && value_of(&form, "confirm") != "yes" {
         return message(
             l,
             "error",
@@ -340,7 +341,64 @@ pub async fn run(State(state): State<Arc<AppState>>, headers: HeaderMap, body: B
     }
     let ids: Vec<i64> = books.iter().map(|(id, _)| *id).collect();
     let mut lines: Vec<(&str, String)> = Vec::new();
-    if action == "set" {
+    if action == "delete" {
+        if !editor.can_delete() {
+            return message(
+                l,
+                "error",
+                if english {
+                    "You are missing permissions to delete books"
+                } else {
+                    "Anda tidak memiliki izin menghapus buku"
+                },
+            );
+        }
+        let (settings, app_db) = (editor.settings.clone(), state.app_db.clone());
+        let manticore = std::env::var("MANTICORE_URL")
+            .ok()
+            .filter(|url| !url.is_empty());
+        let todo = ids.clone();
+        let outcome = tokio::task::spawn_blocking(move || {
+            crate::books_delete::delete_books(
+                settings.book_path(),
+                &settings.metadata_db(),
+                &app_db,
+                manticore.as_deref(),
+                &todo,
+            )
+        })
+        .await;
+        match outcome {
+            Ok(Ok(done)) => {
+                if !done.deleted.is_empty() {
+                    let (app_db, user, ip) =
+                        (state.app_db.clone(), editor.access.id, client_ip(&headers));
+                    let deleted = done.deleted.clone();
+                    let _ = tokio::task::spawn_blocking(move || {
+                        crate::books_delete::audit(&app_db, user, &ip, &deleted);
+                    })
+                    .await;
+                    lines.push((
+                        "success",
+                        if english {
+                            format!("Deleted {} books.", done.deleted.len())
+                        } else {
+                            format!("{} buku dihapus.", done.deleted.len())
+                        },
+                    ));
+                }
+                lines.extend(done.lines);
+            }
+            Ok(Err(error)) => {
+                tracing::error!("bulk delete failed: {error}");
+                lines.push(("error", error));
+            }
+            Err(error) => {
+                tracing::error!("bulk delete task failed: {error}");
+                lines.push(("error", "Error".to_owned()));
+            }
+        }
+    } else if action == "set" {
         let Some(field) = Field::parse(value_of(&form, "field")).filter(|f| SET_FIELDS.contains(f))
         else {
             return message(l, "error", choose_field(l));

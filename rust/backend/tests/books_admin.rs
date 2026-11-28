@@ -100,7 +100,8 @@ fn fixture() -> Fixture {
          INSERT INTO flask_settings (flask_session_key) VALUES (x'{key}');
          INSERT INTO user VALUES (1, 'adminzxc', 'a@example.org', '{hash}', 479, 'all', '', '', NULL, NULL, NULL, NULL);
          INSERT INTO user VALUES (4, 'hermes', 'h@example.org', '{hash}', 260, 'all', '', '', NULL, NULL, NULL, NULL);
-         INSERT INTO user VALUES (2, 'Guest', '', '', 290, 'id', '', '', NULL, NULL, NULL, NULL);",
+         INSERT INTO user VALUES (2, 'Guest', '', '', 290, 'id', '', '', NULL, NULL, NULL, NULL);
+         INSERT INTO user VALUES (6, 'plain', 'p@example.org', '{hash}', 2, 'id', '', '', NULL, NULL, NULL, NULL);",
         library = library.display(),
         key = hex::encode(KEY),
         hash = PASSWORD_HASH,
@@ -508,25 +509,112 @@ async fn bulk_set_needs_confirmation_and_archive_runs_directly() {
 }
 
 #[tokio::test]
-async fn read_merge_and_delete_still_go_to_flask() {
-    // Flask is down in the fixture: a 502 means the request was handed over instead of answered here.
+async fn merge_and_read_still_go_to_flask_but_delete_is_answered_here() {
     let f = fixture();
     let admin = login(&f, "adminzxc").await;
-    for (path, body) in [
-        ("/admin/books/bulk/run", "action=delete&confirm=yes&ids=10"),
-        (
+    let page = call(&f, "GET", "/admin/books", Some(&admin), None).await;
+    let token = page
+        .body
+        .split("X-CSRFToken")
+        .nth(1)
+        .unwrap()
+        .split(['"', '\\'])
+        .find(|s| s.len() > 20)
+        .unwrap()
+        .to_owned();
+    // Flask is down in the fixture: a proxied request answers 502, a locally answered one does not.
+    for (action, extra) in [("merge", "&keep=10"), ("read", ""), ("unread", "")] {
+        let body = format!("action={action}&confirm=yes&ids=10&ids=11{extra}&csrf_token={token}");
+        let reply = call(
+            &f,
+            "POST",
             "/admin/books/bulk/run",
-            "action=merge&confirm=yes&ids=10&ids=11&keep=10",
-        ),
-        ("/admin/books/bulk/run", "action=read&ids=10"),
-        ("/admin/books/bulk/preview", "action=delete&ids=10"),
-        ("/admin/books/bulk/preview", "action=merge&ids=10&ids=11"),
-    ] {
-        let reply = call(&f, "POST", path, Some(&admin), Some(body.into())).await;
-        assert_eq!(reply.status, StatusCode::BAD_GATEWAY, "{path} {body}");
+            Some(&admin),
+            Some(body),
+        )
+        .await;
+        assert_eq!(reply.status, StatusCode::BAD_GATEWAY, "{action}");
     }
+    let delete = call(
+        &f,
+        "POST",
+        "/admin/books/bulk/run",
+        Some(&admin),
+        Some(format!(
+            "action=delete&confirm=yes&ids=10&ids=11&csrf_token={token}"
+        )),
+    )
+    .await;
+    assert_eq!(delete.status, StatusCode::OK, "{}", delete.body);
+    assert!(delete.body.contains("2 buku dihapus"), "{}", delete.body);
+    assert_eq!(delete.headers["hx-trigger"], "books-changed");
+    let conn = Connection::open(&f.metadata).unwrap();
+    let left: i64 = conn
+        .query_row("SELECT count(*) FROM books WHERE id IN (10,11)", [], |r| {
+            r.get(0)
+        })
+        .unwrap();
+    assert_eq!(left, 0, "both catalogue rows are gone");
     assert!(
-        lib_file(&f, "abc/Solo (10)/Solo.pdf"),
-        "nothing was deleted"
+        !lib_file(&f, "abc/Solo (10)/Solo.pdf"),
+        "the folder is gone"
     );
+    assert!(
+        !std::path::Path::new(&f.metadata.parent().unwrap().join("abc")).exists(),
+        "the emptied author folder is gone"
+    );
+    let audits: i64 = Connection::open(&f.app_db)
+        .unwrap()
+        .query_row(
+            "SELECT count(*) FROM audit_log WHERE action = 'delete'",
+            [],
+            |r| r.get(0),
+        )
+        .unwrap();
+    assert_eq!(audits, 2, "one audit row per deleted book");
+}
+
+#[tokio::test]
+async fn a_delete_without_the_role_or_the_confirmation_changes_nothing() {
+    let f = fixture();
+    verify_delete_guards(&f).await;
+}
+
+async fn verify_delete_guards(f: &Fixture) {
+    let admin = login(f, "adminzxc").await;
+    let page = call(f, "GET", "/admin/books", Some(&admin), None).await;
+    let token = page
+        .body
+        .split("X-CSRFToken")
+        .nth(1)
+        .unwrap()
+        .split(['"', '\\'])
+        .find(|s| s.len() > 20)
+        .unwrap()
+        .to_owned();
+    // a bare run (no confirm) never deletes
+    let bare = call(
+        f,
+        "POST",
+        "/admin/books/bulk/run",
+        Some(&admin),
+        Some(format!("action=delete&ids=10&csrf_token={token}")),
+    )
+    .await;
+    assert!(bare.body.contains("dikonfirmasi"), "{}", bare.body);
+    assert!(lib_file(f, "abc/Solo (10)/Solo.pdf"));
+    // an account without ROLE_DELETE_BOOKS (plain = 2) is refused
+    let plain = login(f, "plain").await;
+    let denied = call(
+        f,
+        "POST",
+        "/admin/books/bulk/run",
+        Some(&plain),
+        Some(format!(
+            "action=delete&confirm=yes&ids=10&csrf_token={token}"
+        )),
+    )
+    .await;
+    assert!(denied.body.contains("izin"), "{}", denied.body);
+    assert!(lib_file(f, "abc/Solo (10)/Solo.pdf"));
 }

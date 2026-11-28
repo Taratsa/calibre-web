@@ -10,6 +10,7 @@ pub mod authors_admin;
 pub mod bookedit;
 pub mod books_admin;
 pub mod books_bulk;
+pub mod books_delete;
 pub mod cover;
 pub mod download;
 pub mod epub_page;

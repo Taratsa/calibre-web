@@ -1043,9 +1043,15 @@ Two live search systems (plus the legacy advanced-search form):
   (unidecode), so "cafe" finds "Café". Visibility is `common_filters(allow_show_archived=True)`: allowed/denied tags and
   the language filter. A library with ANY custom column, or a restricted column configured, goes to Flask (the search
   and the visibility rules there are not modelled).
-- **Bulk**: archive/unarchive and set-one-field are Rust (with the confirm step and `confirm=yes`); read/unread, merge and
-  delete stay Flask (they cascade into Kobo reading state, the thumbnail cache task, shelves and the debounced
-  duplicate-index scan). `audit_log` rows are written for every save and archive like `record_list_edit`.
+- **Bulk**: archive/unarchive, set-one-field and DELETE are Rust (with the confirm step and `confirm=yes`); read/unread and
+  merge stay Flask (Kobo reading-state rows). `audit_log` rows are written for every save, archive and delete.
+- **Multi-book delete is Rust because Flask's was unusably slow** (measured 2026-11-28: `POST /admin/books/bulk/run`
+  took **91 s** in Flask for one selection; the browser gave up at 18 s (Caddy 499) and the previews behind it waited
+  15-33 s). `books_delete.rs` removes the folder (refusing a folder with sub folders, which Flask half-deletes), the
+  catalogue row (trigger cascades), `metadata_dirtied`, the app.db rows (shelves, read state, bookmarks, archive, Kobo
+  sync/reading state with bookmark+statistics, downloads, thumbnail ROWS, duplicate key), sets `scan_pending`, deletes
+  the Manticore chunks (best effort) and audits each book. 8 books took **0.21 s** through the manager on the sandbox.
+  The thumbnail cache FILES of deleted books are left for the nightly task.
 - **Caddy**: `@rust_manager` sends `/admin/books /admin/books/*` to Rust first with Flask as the failover, applied with
   image `calibre-web:webhook` (2026-11-28; backups `Caddyfile.pre-rust-webhook.2026-11-28`,
   `Caddyfile.pre-webhook-main.2026-11-28`; earlier rollback image `calibre-web:pre-webhook`). Checked through Caddy:
