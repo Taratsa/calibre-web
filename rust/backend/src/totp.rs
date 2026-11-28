@@ -77,6 +77,16 @@ mod tests {
         assert_eq!(verify(SECRET, &code, step.saturating_sub(60)), None);
     }
 
+    /// RFC 6238's test secret (`"12345678901234567890"`, base32) at the RFC's timestamps, truncated to our six digits:
+    /// the values were computed independently with `hmac`/`struct` in Python, so Python's TOTP arithmetic and
+    /// `totp-rs`'s agree.
+    #[test]
+    fn codes_match_pythons_rfc_6238_arithmetic() {
+        assert_eq!(code_at(SECRET, 59).as_deref(), Some("287082"));
+        assert_eq!(code_at(SECRET, 1_111_111_109).as_deref(), Some("081804"));
+        assert_eq!(code_at(SECRET, 2_000_000_000).as_deref(), Some("279037"));
+    }
+
     #[test]
     fn malformed_codes_are_refused_without_panicking() {
         let now = 1_790_000_000;

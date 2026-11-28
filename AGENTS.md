@@ -905,6 +905,7 @@ Two live search systems (plus the legacy advanced-search form):
   and the secret for manual entry, writes the secret only after a code proves the app holds it, and shows the ten
   recovery codes exactly once. A valid code is required to disable. Enabling and disabling write an `audit_log` row.
   The profile page (`plain_user_edit.html`) links to it with a plain `<a href="/me/2fa">`, because the route is Rust's
+  (the link's msgid has no catalog entry yet, so it shows English until the next Babel update)
 - **Turnstile** (`turnstile.rs`) sits on the login form only: `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` in `.env`
   (both required; without them the widget is absent and the check is skipped, so a misconfiguration cannot lock the
   admin out). The login pages' CSP adds `https://challenges.cloudflare.com` (`security::AUTH_PAGE`)
@@ -917,8 +918,15 @@ Two live search systems (plus the legacy advanced-search form):
 - **Coverage**: `rust/backend/tests/auth.rs` drives the router: CSRF (missing token = 400), wrong password, unknown
   account, the minted cookie accepted as the user on `/me/2fa`, the `user_session` row, the 2FA challenge, TOTP replay
   refusal, the rate limit, full enrolment (start → QR → confirm → ten codes → next login needs 2FA) and the OPDS guard.
-  NOT checked live yet: a real browser with Turnstile, a real authenticator app, and `POST /login` against production
-  data
+- **Flask-vs-Rust parity, 2026-11-28** (throwaway pair on copies of the sandbox `app.db`/`metadata.db`, 23 checks, 0
+  mismatches): a session cookie minted by Rust's `POST /login` was accepted by Flask on `/me` and `/admin/view`, and so
+  was the one minted after the second step — so the signature, the `_id` identifier, the retained `csrf_token` and the
+  `user_session` row all agree. A TOTP code computed in Python (hmac-sha1, dynamic truncation) confirmed enrolment in
+  Rust and later logged in; the confirmation code was then refused as a replay, as RFC 6238 §5.2 requires (a person
+  enrolling has to wait for the next 30 s window to log in with a code). The sealed secret stored by Rust was opened by
+  Flask's own `.key`/Fernet. Rust refused `Authorization: Basic` on `/opds/new` for the 2FA account while Flask alone
+  answered it 200 — the hole the guard closes. `src/totp.rs` keeps three Python-computed RFC 6238 vectors as a test. NOT checked: a real browser with Turnstile (the widget only appears when `TURNSTILE_*` is set), a real
+  authenticator app, and this against production data
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
