@@ -941,7 +941,7 @@ Two live search systems (plus the legacy advanced-search form):
   login route. `rust/backend/src/main.rs` now defaults the filter to `info` when `RUST_LOG` is unset (that fix ships with
   the next backend image rebuild); `.env` needs no change
 
-### Author rename and the Edit button (Rust, 2026-11-28, NOT deployed yet)
+### Author rename and the Edit button (Rust, LIVE 2026-11-28 ~12:33 UTC; image `calibre-web:ocr-post`, rollback `calibre-web:pre-ocr-post`)
 - **`/admin/authors`** (`rust/backend/src/authors_admin.rs`, core in `authors.rs`): admin-only form -> preview (mode, book
   count, sample of titles) -> confirmed run. Session and CSRF are the same ones `/me/2fa` uses; a non-admin gets 403, a
   POST without `csrf_token` 400, and `/run` refuses anything without `confirm=yes` and the previewed `expected` count.
@@ -977,9 +977,18 @@ Two live search systems (plus the legacy advanced-search form):
   on connection errors, so Flask never saw it. Every non-GET method on those paths is now proxied to Flask
   (`to_flask`), tested in `tests/files.rs`. A Rust route that matches a path MUST handle or proxy every method Flask
   accepts there.
-- **Caddy (unapplied)**: `/home/devuser/backups/Caddyfile.author-admin-whoami.patch` adds `/admin/authors /admin/authors/*
-  /api/whoami` to `@rust_auth` (Rust first, Flask failover, before `@flask`); validated with `caddy validate`, not
-  reloaded. Needs the new backend image first (Rust has no catch-all, so route to it only after it exists).
+- **Caddy**: `/admin/authors /admin/authors/* /api/whoami` are in `@rust_auth` (Rust first, Flask failover, before
+  `@flask`); applied 2026-11-28 (backup `/home/devuser/backups/Caddyfile.pre-author-admin.2026-11-28`, patch
+  `Caddyfile.author-admin-whoami.patch`). Checked through Caddy: anonymous `/api/whoami` 200 `{"edit":false,"admin":false}`,
+  `/admin/authors` 303 to the login, `POST /api/read/21623/ocr/pdf` 200 (was 405), the book page carries the hidden
+  `#staff-edit` link. NOT checked: a real admin browser session (the Edit link appearing, a rename on production data).
+- **Dashboard actions that never reached Flask (found 2026-11-28, pre-existing, NOT fixed yet)**: `POST /ocr/scan`
+  (and `/analysis/run`, `/sentiment/run`, `/sentiment/book/<id>`, `/fulltext/run`, `/metadata_backup`, `/shutdown`,
+  `/reconnect`, `/get_update_status`, `/get_updater_status`, `/import_ldap_users`, `/upload`) are Flask routes that
+  `@flask` in the Caddyfile does not list, so they fall through to Astro, which 301s the POST to `/x/` and then 404s the
+  GET (what the browser's network panel shows as `GET /ocr/scan/` 404). These queue jobs in Flask's in-memory worker
+  queue, so Rust cannot serve them. Fix is routing only: patch `/home/devuser/backups/Caddyfile.admin-actions-to-flask.patch`
+  adds them to `@flask` and to `@adminpages` (no-store); it passes `caddy validate` and is NOT applied.
 
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
