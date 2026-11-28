@@ -290,17 +290,47 @@ struct Node {
     tail: String,
 }
 
-struct Doc {
+pub(crate) struct Doc {
     nodes: Vec<Node>,
     root: usize,
 }
 
 impl Doc {
-    fn is(&self, index: usize, ns: &str, local: &str) -> bool {
+    pub(crate) fn root(&self) -> usize {
+        self.root
+    }
+
+    pub(crate) fn local(&self, index: usize) -> &str {
+        &self.nodes[index].local
+    }
+
+    pub(crate) fn node_text(&self, index: usize) -> &str {
+        &self.nodes[index].text
+    }
+
+    pub(crate) fn is(&self, index: usize, ns: &str, local: &str) -> bool {
         self.nodes[index].ns.as_deref() == Some(ns) && self.nodes[index].local == local
     }
 
-    fn attr(&self, index: usize, local: &str) -> Option<&str> {
+    /// `(local name, value)` of every attribute, in document order.
+    pub(crate) fn attrs(&self, index: usize) -> Vec<(&str, &str)> {
+        self.nodes[index]
+            .attrs
+            .iter()
+            .map(|(_, name, value)| (name.as_str(), value.as_str()))
+            .collect()
+    }
+
+    /// Every attribute VALUE in document order (Flask's `node.attrib.values()[-1]` heuristic reads the last one).
+    pub(crate) fn attr_values(&self, index: usize) -> Vec<&str> {
+        self.nodes[index]
+            .attrs
+            .iter()
+            .map(|(_, _, value)| value.as_str())
+            .collect()
+    }
+
+    pub(crate) fn attr(&self, index: usize, local: &str) -> Option<&str> {
         self.nodes[index]
             .attrs
             .iter()
@@ -316,7 +346,7 @@ impl Doc {
             .map(|(_, _, value)| value.as_str())
     }
 
-    fn child(&self, index: usize, ns: &str, local: &str) -> Option<usize> {
+    pub(crate) fn child(&self, index: usize, ns: &str, local: &str) -> Option<usize> {
         self.nodes[index]
             .children
             .iter()
@@ -324,7 +354,7 @@ impl Doc {
             .find(|&child| self.is(child, ns, local))
     }
 
-    fn children(&self, index: usize, ns: &str, local: &str) -> Vec<usize> {
+    pub(crate) fn children(&self, index: usize, ns: &str, local: &str) -> Vec<usize> {
         self.nodes[index]
             .children
             .iter()
@@ -334,7 +364,7 @@ impl Doc {
     }
 
     /// `iter()`: pre-order, the node itself first.
-    fn iter(&self, start: usize) -> Vec<usize> {
+    pub(crate) fn iter(&self, start: usize) -> Vec<usize> {
         let mut out = vec![start];
         let mut index = 0;
         while index < out.len() {
@@ -371,7 +401,7 @@ impl Doc {
 }
 
 /// Parse XML with the namespace resolution lxml applies (`_parser` has entity resolution off and no recovery).
-fn parse_xml(bytes: &[u8]) -> Option<Doc> {
+pub(crate) fn parse_xml(bytes: &[u8]) -> Option<Doc> {
     let mut reader = NsReader::from_reader(bytes);
     reader.config_mut().trim_text(false);
     let mut nodes: Vec<Node> = Vec::new();

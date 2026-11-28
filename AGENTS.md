@@ -1061,11 +1061,27 @@ Two live search systems (plus the legacy advanced-search form):
   is serialised as stored), an exact title is compared after `normalize_title` (so `Solo <b>` is NOT exact), a title
   with no searchable word sets `partial` and filters nothing, `is_duplicate` comes from `duplicate_book_key` with the
   fingerprint of the last scan.
-- **`POST /api/webhook/upload` is still Flask.** The bot posts PDF/EPUB with its long-lived session cookie; the port
-  needs the metadata readers (`cps/epub.py`, `cps/uploader.py: pdf_meta`). `ebook-meta` is NOT in the image (only
-  `ebook-convert`, `calibredb`, `gs`), so the readers are Rust crates: zip + OPF for EPUB, pypdf-equivalent for PDF, and
-  a PDF cover rendered with `gs` (10.00.0 in the image) where Flask uses ImageMagick. Only PDF/EPUB/kepub are theirs:
-  any other extension goes to Flask.
+- **`POST /api/webhook/upload` is Rust too** (`webhook_upload.rs`, readers in `meta.rs`). PDF and EPUB only, as Flask's
+  own validation says. The readers are Rust (`zip` + the `readium` XML tree for the OPF, `lopdf` + XMP for PDF):
+  `ebook-meta` is not in the image. Compared with Flask's `uploader.process` on 20 real library files: title, author,
+  series, series_id, languages, pubdate 20/20; description 20/20; tags and publisher 19/20 (only a whitespace-only or
+  trailing-space value differs).
+- **Upload parity on the real flow** (same EPUB and PDF through Flask and Rust on two copies): the `books` row (title,
+  sort, author_sort, path, pubdate incl. `.000000`, series_index, has_cover), the authors, the `bookid` identifier, the
+  `data` row, the comments, the `cover.jpg` and `cover.webp` (byte sizes equal) and the folder tree were identical.
+  Three cases checked: an EPUB without a cover (generic cover copied, `has_cover` 0), an EPUB whose cover is declared
+  only in the guide page (`cover-image` manifest / `meta name="cover"` / guide -> page -> `<img src>`, all three followed
+  like `epub.parse_epub_cover`), and a PDF whose first page is rendered with ImageMagick (`convert`, the same binary
+  wand uses; `has_cover` 1).
+- Upload writes ONE transaction: book, links, data row, comments, identifiers, then the folder, the file and the covers;
+  a failure removes what it wrote. A cross-device rename (container temp -> bind mount) falls back to copy+delete, like
+  `shutil.move`. The duplicate index is only marked pending (`scan_pending=1`): the debounced scan is Flask's until the
+  worker is ported. The comment is stored as uploaded (Flask sanitises with nh3 at write; the book page sanitises on
+  render). `duplicate_index_cache` must exist (it does in production).
+- Caddy (unapplied): `/api/webhook /api/webhook/*` go Rust-first on the main host (`Caddyfile.book-manager.patch`
+  includes them) and on the old host (`Caddyfile.webhook-old-host.patch`); today the bot only reaches Flask through the
+  old host.
+
 - Auth for both: the session cookie (`session::identify`), 401 `{"error":"Authentication required"}` otherwise; `check`
   needs any account (Flask only checks `is_authenticated`), `upload` needs `ROLE_UPLOAD` (bit 1<<2; `hermes` has it).
   `private, no-store`; no CSRF, like the Flask routes.

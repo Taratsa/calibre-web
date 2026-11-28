@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 adler2 = "2.0.1"
-axum = "0.8.9"
+axum = { version = "0.8.9", features = ["multipart"] }
 deunicode = "1.6.2"
 hex = "0.4.3"
 hmac = "0.13.0"
@@ -38,6 +38,8 @@ getrandom = "0.3"
 pbkdf2 = { version = "0.13.0", default-features = false, features = ["hmac", "sha2"] }
 serde = { version = "1.0.229", features = ["derive"] }
 regex = "1.13.2"
+lopdf = { version = "0.47.0", default-features = false }
+isolang = "2.4.0"
 
 [dev-dependencies]
 http-body-util = "0.1.5"

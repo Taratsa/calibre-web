@@ -21,6 +21,7 @@ pub mod legacy;
 pub mod library;
 pub mod locale;
 pub mod login;
+pub mod meta;
 pub mod mime;
 pub mod ocr_status;
 pub mod opds_download;
@@ -44,6 +45,7 @@ pub mod totp;
 pub mod turnstile;
 pub mod twofa;
 pub mod webhook_check;
+pub mod webhook_upload;
 pub mod whoami;
 
 use axum::Router;
@@ -173,6 +175,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(crate::books_admin::routes())
         .merge(crate::whoami::routes())
         .merge(crate::webhook_check::routes())
+        .merge(crate::webhook_upload::routes())
         .merge(crate::suggest::routes())
         .merge(crate::opds_guard::routes())
         .layer(axum::middleware::from_fn_with_state(
