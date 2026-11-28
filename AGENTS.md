@@ -1078,9 +1078,14 @@ Two live search systems (plus the legacy advanced-search form):
   `shutil.move`. The duplicate index is only marked pending (`scan_pending=1`): the debounced scan is Flask's until the
   worker is ported. The comment is stored as uploaded (Flask sanitises with nh3 at write; the book page sanitises on
   render). `duplicate_index_cache` must exist (it does in production).
-- Caddy (unapplied): `/api/webhook /api/webhook/*` go Rust-first on the main host (`Caddyfile.book-manager.patch`
-  includes them) and on the old host (`Caddyfile.webhook-old-host.patch`); today the bot only reaches Flask through the
-  old host.
+- **The bot's API is served on the MAIN host since 2026-11-28** (`@webhook` in the production Caddyfile, backup
+  `/home/devuser/backups/Caddyfile.pre-webhook-main.2026-11-28`): `pustaka.taratsa.id/api/webhook/*` used to fall
+  through to Astro (404), so the bot only worked through `old-pustaka.taratsa.id`, whose catch-all reaches Flask. Both
+  hosts now answer `{"error":"Authentication required"}` (401 JSON) anonymously and `cf-cache-status: DYNAMIC`. The
+  production image is still Flask for these paths; when the Rust image ships, point this block at `:8084` first.
+  **Cookies are host-independent**: a bot configured with the same `Cookie:` header keeps working on the new host (the
+  session's `_id` is sha512(IP|User-Agent), so the same client passes), but a cookie jar bound to the old host needs a
+  new login, and the Turnstile-gated `/login` refuses bots — the fix then is Basic auth on the Rust webhook routes.
 
 - Auth for both: the session cookie (`session::identify`), 401 `{"error":"Authentication required"}` otherwise; `check`
   needs any account (Flask only checks `is_authenticated`), `upload` needs `ROLE_UPLOAD` (bit 1<<2; `hermes` has it).
