@@ -25,7 +25,7 @@ from datetime import UTC, datetime
 from functools import wraps
 from shutil import copyfile
 
-from flask import Blueprint, Response, abort, flash, jsonify, make_response, redirect, request, url_for
+from flask import Blueprint, Response, abort, flash, jsonify, make_response, redirect, render_template, request, url_for
 from flask_babel import get_locale
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as N_
@@ -297,15 +297,9 @@ def table_get_custom_enum(c_id):
     return make_response(jsonify(ret))
 
 
-@editbook.route("/ajax/editbooks/<param>", methods=["POST"])
-@login_required_if_no_ano
-@edit_required
-def edit_list_book(param):
-    vals = request.get_json()
-    multi = vals.get("multi", False) == "True"
-    ret_value = edit_book_param(param, vals, multi)
+def record_list_edit(param, book_ids):
+    """Rebuild trigger and audit entries for a field edited from a book list (legacy table and the plain manager)."""
     trigger_rebuild_async(f"editbooks:{param}")
-    book_ids = vals.get("pk", [])
     if isinstance(book_ids, int):
         book_ids = [book_ids]
     for bid in book_ids:
@@ -317,10 +311,160 @@ def edit_list_book(param):
             details=f"Book field edited: {param}",
             ip_address=helper.get_client_ip(),
         )
+
+
+@editbook.route("/ajax/editbooks/<param>", methods=["POST"])
+@login_required_if_no_ano
+@edit_required
+def edit_list_book(param):
+    vals = request.get_json()
+    multi = vals.get("multi", False) == "True"
+    ret_value = edit_book_param(param, vals, multi)
+    record_list_edit(param, vals.get("pk", []))
     if isinstance(ret_value, dict):
         return jsonify(ret_value)
     else:
         return ret_value
+
+
+# --- Plain book manager (htmx): search, paginate and edit single fields in place --------------------------------------
+# Same writes as the legacy /table editor: every save goes through edit_book_param() and record_list_edit(), so title,
+# author and sort handling, audit entries and the frontend rebuild trigger are shared. Fragments reuse one cell partial.
+MANAGE_FIELDS = ("title", "authors", "tags", "series", "publishers", "languages")
+
+
+def _manage_labels():
+    return {
+        "title": _("Title"),
+        "authors": _("Author"),
+        "tags": _("Categories"),
+        "series": _("Series"),
+        "publishers": _("Publisher"),
+        "languages": _("Language"),
+    }
+
+
+def _manage_field(field):
+    if field not in MANAGE_FIELDS:
+        abort(404)
+    return field
+
+
+def _managed_book(book_id):
+    """The book if the current user may see it (same filters as the lists), else 404."""
+    book = (
+        calibre_db.session.query(db.Books)
+        .filter(db.Books.id == book_id)
+        .filter(calibre_db.common_filters(allow_show_archived=True))
+        .first()
+    )
+    if book is None:
+        abort(404)
+    return book
+
+
+def _manage_cell_text(book, field):
+    if field == "title":
+        return book.title
+    if field == "authors":
+        return " & ".join(a.name.replace("|", ",") for a in calibre_db.order_authors([book]))
+    if field == "languages":
+        return ", ".join(isoLanguages.get_language_name(get_locale(), lang.lang_code) for lang in book.languages)
+    return ", ".join(item.name for item in getattr(book, field))
+
+
+def _manage_cell(book, field, **extra):
+    return {"book_id": book.id, "field": field, "label": _manage_labels()[field], "text": _manage_cell_text(book, field), **extra}
+
+
+def _manage_listing(query, page):
+    limit = int(config.config_books_per_page or 60)
+    page = max(page, 1)
+    offset = (page - 1) * limit
+    order = [db.Books.timestamp.desc()]  # pyright: ignore[reportGeneralTypeIssues]
+    if query:
+        entries, total, __ = calibre_db.get_search_results(query, config, offset, [order, ""], limit)
+        has_next = total > offset + limit
+        total = None if has_next else total  # the search only knows "at least this many" while more pages follow
+    else:
+        entries, __, pagination = calibre_db.fill_indexpage_with_archived_books(
+            page,
+            db.Books,
+            limit,
+            True,
+            order,
+            True,
+            True,
+            config.config_read_column,
+            relationship_loaders=db.LIST_RELATIONSHIPS["ajax"],
+        )
+        total = getattr(pagination, "total_count", None)
+        has_next = bool(getattr(pagination, "has_next", False))
+    rows = [{"id": entry[0].id, "cells": [_manage_cell(entry[0], f) for f in MANAGE_FIELDS]} for entry in entries]
+    return {"rows": rows, "q": query, "pageno": page, "has_next": has_next, "has_prev": page > 1, "total": total}
+
+
+@editbook.route("/admin/books")
+@user_login_required
+@edit_required
+def manage_books():
+    query = (request.args.get("q") or "").strip()
+    page = request.args.get("page", 1, type=int)
+    return render_title_template(
+        "plain_books_manage.html",
+        title=_("Manage Books"),
+        page="manage_books",
+        labels=_manage_labels(),
+        fields=MANAGE_FIELDS,
+        **_manage_listing(query, page),
+    )
+
+
+@editbook.route("/admin/books/rows")
+@user_login_required
+@edit_required
+def manage_books_rows():
+    query = (request.args.get("q") or "").strip()
+    page = request.args.get("page", 1, type=int)
+    return render_template(
+        "plain_books_rows.html", labels=_manage_labels(), fields=MANAGE_FIELDS, **_manage_listing(query, page)
+    )
+
+
+@editbook.route("/admin/books/<int:book_id>/<field>")
+@user_login_required
+@edit_required
+def manage_cell(book_id, field):
+    return render_template("plain_books_cell.html", **_manage_cell(_managed_book(book_id), _manage_field(field)))
+
+
+@editbook.route("/admin/books/<int:book_id>/<field>/edit")
+@user_login_required
+@edit_required
+def manage_cell_edit(book_id, field):
+    return render_template("plain_books_cell_edit.html", **_manage_cell(_managed_book(book_id), _manage_field(field)))
+
+
+@editbook.route("/admin/books/<int:book_id>/<field>", methods=["POST"])
+@user_login_required
+@edit_required
+def manage_cell_save(book_id, field):
+    field = _manage_field(field)
+    _managed_book(book_id)
+    value = request.form.get("value", "")
+    result = edit_book_param(field, {"pk": [book_id], "value": value, "checkT": True, "checkA": True})
+    error = None
+    if isinstance(result, tuple):  # (message, status) from an unsupported parameter
+        error = result[0]
+    elif isinstance(result, dict) and result.get("success") is False:
+        error = result.get("msg") or _("Error")
+    if error:
+        calibre_db.session.rollback()
+        return render_template(
+            "plain_books_cell_edit.html", **_manage_cell(_managed_book(book_id), field, value=value, error=error)
+        )
+    record_list_edit(field, [book_id])
+    return render_template("plain_books_cell.html", **_manage_cell(_managed_book(book_id), field))
 
 
 @editbook.route("/ajax/editselectedbooks", methods=["POST"])

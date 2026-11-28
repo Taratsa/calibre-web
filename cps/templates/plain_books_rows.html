@@ -1,0 +1,26 @@
+{#- The result table and pager of the book manager; swapped into #booklist by the search box and the pager. -#}
+{% set pager_q = {'q': q} if q else {} %}
+<p class="plain-muted" role="status" aria-live="polite">{% if total is not none %}{{ _('%(count)s books', count=total) }}{% else %}{{ _('More results follow') }}{% endif %}{% if q %} · {{ _('Results for:') }} {{ q }}{% endif %}</p>
+<div class="plain-table-wrap">
+  <table>
+    <thead><tr><th>#</th>{% for f in fields %}<th>{{ labels[f] }}</th>{% endfor %}<th></th></tr></thead>
+    <tbody>
+    {% for row in rows %}
+      <tr id="book-{{ row.id }}">
+        <td><a href="{{ url_for('web.show_book', book_id=row.id) }}">{{ row.id }}</a></td>
+        {% for cell in row.cells %}<td>{% with %}{% set book_id, field, label, text = cell.book_id, cell.field, cell.label, cell.text %}{% include "plain_books_cell.html" %}{% endwith %}</td>{% endfor %}
+        <td><a href="{{ url_for('edit-book.show_edit_book', book_id=row.id) }}">{{ _('Full editor') }}</a></td>
+      </tr>
+    {% else %}
+      <tr><td colspan="{{ fields|length + 2 }}">{{ _('No Results Found') }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if has_prev or has_next %}
+<nav class="plain-actions" aria-label="{{ _('Pagination') }}">
+  {% if has_prev %}<button type="button" hx-get="{{ url_for('edit-book.manage_books_rows', page=pageno - 1, **pager_q) }}" hx-target="#booklist" hx-swap="innerHTML">{{ _('Previous') }}</button>{% endif %}
+  <span class="plain-badge" aria-current="page">{{ pageno }}</span>
+  {% if has_next %}<button type="button" hx-get="{{ url_for('edit-book.manage_books_rows', page=pageno + 1, **pager_q) }}" hx-target="#booklist" hx-swap="innerHTML">{{ _('Next') }}</button>{% endif %}
+</nav>
+{% endif %}

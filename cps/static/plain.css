@@ -83,3 +83,9 @@ th { font-weight: 650; background: var(--plain-surface-2); }
   .plain-section { padding: .8rem; }
   .plain-row { grid-template-columns: 1fr; gap: .1rem; }
 }
+/* Inline edit cells of the book manager (htmx): a value that looks like text and turns into a form on click. */
+.cell-edit { min-height: 0; padding: 0; border: 0; background: none; color: inherit; text-align: left; cursor: text; border-bottom: 1px dotted var(--plain-muted); }
+.cell-edit:hover { background: var(--plain-surface-2); }
+.cell-form { display: flex; flex-wrap: wrap; gap: .35rem; min-width: 14rem; }
+.cell-form input[type=text] { flex: 1 1 10rem; }
+.htmx-request { opacity: .6; }

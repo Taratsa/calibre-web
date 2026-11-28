@@ -1,0 +1,11 @@
+{% extends "plain_layout.html" %}
+{% block body %}
+<h1 class="plain-title">{{ _('Manage Books') }}</h1>
+<p class="plain-subtitle">{{ _('Search the whole library and click a value to change it. Every save is logged in the audit log.') }}</p>
+<div class="plain-actions">
+  <label class="sr-only" for="manage-q">{{ _('Search Library') }}</label>
+  <input id="manage-q" type="search" name="q" value="{{ q }}" placeholder="{{ _('Search Library') }}" autocomplete="off" autofocus
+         hx-get="{{ url_for('edit-book.manage_books_rows') }}" hx-trigger="input changed delay:300ms, search" hx-target="#booklist" hx-swap="innerHTML" hx-sync="this:replace">
+</div>
+<div id="booklist" aria-busy="false">{% include "plain_books_rows.html" %}</div>
+{% endblock %}

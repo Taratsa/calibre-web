@@ -784,8 +784,24 @@ Two live search systems (plus the legacy advanced-search form):
   `login_required` and role check. The server ends a poll: `/duplicates/resolving` answers `HX-Refresh: true` once the
   task is gone. Done: `/tasks` (`plain_tasks_rows.html`, `GET /tasks/rows` every 5 s, `POST /tasks/<id>/cancel` admin-only,
   `hx-confirm`) and the duplicate-resolution status line (`plain_duplicates_resolving.html`). The old JSON endpoints
-  (`/ajax/emailstat`, `/ajax/canceltask`) stay for the legacy `tasks.html`/`table.js`. Next: book-list search and inline
-  edit, then bulk actions. Changes to `cps/static/` and templates need a Docker image rebuild.
+  (`/ajax/emailstat`, `/ajax/canceltask`) stay for the legacy `tasks.html`/`table.js`. Changes to `cps/static/` and
+  templates need a Docker image rebuild.
+- **Book manager** (`/admin/books`, nav "Manage Books", `edit` or `admin` role, 2026-11-28): a plain page for finding and
+  fixing catalogue entries. The search box (`hx-trigger="input changed delay:300ms"`, `hx-sync` replaces an in-flight
+  request) swaps `GET /admin/books/rows?q=&page=` into `#booklist`; a cell is a button that loads
+  `/admin/books/<id>/<field>/edit` (a form), and `POST /admin/books/<id>/<field>` saves and returns the display cell.
+  Fields: title, authors, tags (Categories), series, publishers, languages. Every save goes through the SAME
+  `edit_book_param()` as the legacy `/table` editor (title/author folder renames, sort fields, `last_modified`) and
+  `record_list_edit()` (audit entry + frontend rebuild trigger, shared with `edit_list_book`), so the two cannot drift.
+  A failure (invalid language, a folder that cannot be renamed) re-renders the form with the message and the database
+  rolled back; a hostile value is escaped in the cell (checked with `<img onerror>`). The listing is newest first
+  (`timestamp`), 60 per page (`config_books_per_page`); an unfiltered listing knows its total, a search only "more
+  results follow". Only visible books can be edited (same `common_filters` as the lists), else 404. Checked on a copy of
+  the library in the sandbox image (a title edit needs the book's folder and file to exist there, otherwise the rename
+  fails and nothing is saved). Not done yet: bulk actions (select several, set one field, archive, mark read, delete,
+  merge) still live only in the legacy `/table`, which has no plain version. No Caddy change: `/admin/*` already goes
+  to Flask. NOTE: Caddy's `@flask` list does NOT include `/tasks` or `/duplicates`, so on `pustaka.taratsa.id` those
+  pages 404 (Astro answers); they are reachable on `old-pustaka.taratsa.id`, which proxies everything to Flask.
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

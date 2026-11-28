@@ -29,6 +29,7 @@
         <a href="{{ url_for('search.advanced_search_form') }}">{{ _('Advanced Search') }}</a>
         {% if not current_user.is_anonymous %}<a href="{{ url_for('tasks.get_tasks_status') }}">{{ _('Tasks') }}</a>{% endif %}
         {% if current_user.role_admin() %}<a href="{{ url_for('admin.admin') }}">{{ _('Admin') }}</a>{% endif %}
+        {% if current_user.role_edit() or current_user.role_admin() %}<a href="{{ url_for('edit-book.manage_books') }}">{{ _('Manage Books') }}</a>{% endif %}
         {% if not current_user.is_anonymous %}<a href="{{ url_for('web.profile') }}">{{ current_user.name }}</a>{% endif %}
         {% if current_user.role_upload() and g.allow_upload %}
         <label class="plain-upload-control">

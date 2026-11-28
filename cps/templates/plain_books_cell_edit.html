@@ -1,0 +1,8 @@
+{#- Edit state of one cell. Save replaces the cell with its display state; a failed save shows this form again with the message. -#}
+<form class="cell-form" hx-post="{{ url_for('edit-book.manage_cell_save', book_id=book_id, field=field) }}" hx-target="closest td" hx-swap="innerHTML">
+  <label class="sr-only" for="v-{{ book_id }}-{{ field }}">{{ label }}</label>
+  <input id="v-{{ book_id }}-{{ field }}" type="text" name="value" value="{{ value if value is defined else text }}" autofocus autocomplete="off">
+  <button type="submit">{{ _('Save') }}</button>
+  <button type="button" hx-get="{{ url_for('edit-book.manage_cell', book_id=book_id, field=field) }}" hx-target="closest td" hx-swap="innerHTML">{{ _('Cancel') }}</button>
+  {% if error %}<div class="plain-danger" role="alert">{{ error }}</div>{% endif %}
+</form>

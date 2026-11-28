@@ -1,0 +1,3 @@
+{#- Display state of one editable cell. Clicking it swaps in the edit form (plain_books_cell_edit.html). -#}
+<button type="button" class="cell-edit" hx-get="{{ url_for('edit-book.manage_cell_edit', book_id=book_id, field=field) }}"
+        hx-target="closest td" hx-swap="innerHTML" title="{{ _('Edit') }}: {{ label }}">{{ text or '—' }}</button>
