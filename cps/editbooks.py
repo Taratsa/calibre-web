@@ -467,6 +467,220 @@ def manage_cell_save(book_id, field):
     return render_template("plain_books_cell.html", **_manage_cell(_managed_book(book_id), field))
 
 
+# --- Bulk actions of the plain book manager ----------------------------------------------------------------------------
+# Select rows, then archive / mark read directly, or set one field / merge / delete after a confirm panel. The confirm
+# panel is a server-rendered form that carries the validated ids and a `confirm` field; the run endpoint refuses the
+# three consequential actions without it, so a stray POST cannot delete anything.
+BULK_MAX_BOOKS = 200
+BULK_FIELDS = ("authors", "tags", "series", "publishers", "languages")
+BULK_DIRECT = {"archive", "unarchive", "read", "unread"}
+BULK_CONFIRMED = {"set", "merge", "delete"}
+
+
+def _bulk_message(text, kind="error"):
+    return render_template("plain_books_bulk_result.html", lines=[(kind, text)])
+
+
+def _bulk_selection():
+    """Books of the posted `ids` that the current user may see, in the order posted (duplicates dropped)."""
+    ids = list(dict.fromkeys(request.form.getlist("ids", type=int)))[:BULK_MAX_BOOKS]
+    if not ids:
+        return [], 0
+    found = {
+        b.id: b
+        for b in calibre_db.session.query(db.Books)
+        .filter(db.Books.id.in_(ids))
+        .filter(calibre_db.common_filters(allow_show_archived=True))
+        .all()
+    }
+    books = [found[i] for i in ids if i in found]
+    return books, len(ids) - len(books)
+
+
+def _bulk_value():
+    field = request.form.get("field", "")
+    if field not in BULK_FIELDS:
+        return None, None
+    return field, request.form.get("value", "")
+
+
+@editbook.route("/admin/books/bulk/preview", methods=["POST"])
+@user_login_required
+@edit_required
+def bulk_preview():
+    action = request.form.get("action", "")
+    books, skipped = _bulk_selection()
+    if not books:
+        return _bulk_message(_("Select at least one book."))
+    if action in {"merge", "delete"} and not current_user.role_delete_books():
+        return _bulk_message(_("You are missing permissions to delete books"))
+    if action == "merge" and len(books) < 2:
+        return _bulk_message(_("Select at least two books to merge."))
+    field = value = None
+    if action == "set":
+        field, value = _bulk_value()
+        if field is None:
+            return _bulk_message(_("Choose a field to change."))
+    elif action not in {"merge", "delete"}:
+        abort(400)
+    return render_template(
+        "plain_books_bulk_confirm.html",
+        action=action,
+        books=books,
+        shown=books[:10],
+        skipped=skipped,
+        field=field,
+        value=value,
+        label=_manage_labels().get(field),
+    )
+
+
+@editbook.route("/admin/books/bulk/run", methods=["POST"])
+@user_login_required
+@edit_required
+def bulk_run():
+    action = request.form.get("action", "")
+    if action not in BULK_DIRECT | BULK_CONFIRMED:
+        abort(400)
+    if action in BULK_CONFIRMED and request.form.get("confirm") != "yes":
+        return _bulk_message(_("This action needs to be confirmed first."))
+    books, skipped = _bulk_selection()
+    if not books:
+        return _bulk_message(_("Select at least one book."))
+
+    lines = []
+    if action in BULK_DIRECT:
+        lines = _bulk_flags(action, books)
+    elif action == "set":
+        lines = _bulk_set(books)
+    elif not current_user.role_delete_books():
+        lines = [("error", _("You are missing permissions to delete books"))]
+    elif action == "delete":
+        lines = _bulk_delete(books)
+    else:
+        lines = _bulk_merge(books)
+    if skipped:
+        lines.append(("error", _("%(count)s selected books were not available and were skipped.", count=skipped)))
+    response = make_response(render_template("plain_books_bulk_result.html", lines=lines))
+    response.headers["HX-Trigger"] = "books-changed"
+    return response
+
+
+def _bulk_flags(action, books):
+    state = action in {"archive", "read"}
+    for book in books:
+        if action in {"archive", "unarchive"}:
+            if change_archived_books(book.id, state, message=f"Book {book.id} archive bit set to: {state}"):
+                kobo_sync_status.remove_synced_book(book.id)
+            details = f"Book archive status set to: {state}"
+        else:
+            helper.edit_book_read_status(book.id, state)
+            details = f"Book read status set to: {state}"
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="edit",
+            resource_type="book",
+            resource_id=book.id,
+            details=details,
+            ip_address=helper.get_client_ip(),
+        )
+    done = {
+        "archive": _("Archived %(count)s books.", count=len(books)),
+        "unarchive": _("Unarchived %(count)s books.", count=len(books)),
+        "read": _("Marked %(count)s books as read.", count=len(books)),
+        "unread": _("Marked %(count)s books as unread.", count=len(books)),
+    }[action]
+    return [("success", done)]
+
+
+def _bulk_set(books):
+    field, value = _bulk_value()
+    if field is None:
+        return [("error", _("Choose a field to change."))]
+    ids = [b.id for b in books]
+    results = edit_book_param(field, {"pk": ids, "value": value, "checkT": True, "checkA": True}, True)
+    failures = [r.get("msg") for r in results if isinstance(r, dict) and r.get("success") is False]
+    if failures:
+        calibre_db.session.rollback()
+        return [("error", _("Could not change %(field)s: %(msg)s", field=_manage_labels()[field], msg=m)) for m in dict.fromkeys(failures)]
+    record_list_edit(field, ids)
+    return [("success", _("Changed %(field)s on %(count)s books.", field=_manage_labels()[field], count=len(ids)))]
+
+
+def _bulk_delete(books):
+    lines, deleted = [], []
+    for book in books:
+        title = book.title
+        problem = delete_book_from_table(book.id)
+        if problem:
+            lines.append(("error", f"{title} (#{book.id}): {problem['message']}"))
+            continue
+        deleted.append(book.id)
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="delete",
+            resource_type="book",
+            resource_id=book.id,
+            details="Book deleted via the book manager",
+            ip_address=helper.get_client_ip(),
+        )
+    if deleted:
+        trigger_rebuild_async("delete:manage")
+        notify_duplicate_books_changed(deleted)
+        lines.insert(0, ("success", _("Deleted %(count)s books.", count=len(deleted))))
+    return lines
+
+
+def _bulk_merge(books):
+    if config.config_use_google_drive:
+        return [("error", _("Merging is not supported for Google Drive libraries."))]
+    keep = request.form.get("keep", type=int)
+    target = next((b for b in books if b.id == keep), None)
+    if target is None:
+        return [("error", _("Choose the book to keep."))]
+    sources = [b for b in books if b.id != target.id]
+    target_id, target_title, formats = target.id, target.title, {d.format for d in target.data}
+    author = target.authors[0].name if target.authors else _("Unknown")
+    to_name = helper.get_valid_filename(target_title, chars=96) + " - " + helper.get_valid_filename(author, chars=96)
+    lines, merged = [], []
+    for source in sources:
+        source_id, source_title = source.id, source.title
+        try:
+            for element in list(source.data):
+                if element.format in formats:
+                    continue
+                ext = "." + element.format.lower()
+                path_new = os.path.normpath(os.path.join(config.get_book_path(), target.path, to_name + ext))
+                path_old = os.path.normpath(os.path.join(config.get_book_path(), source.path, element.name + ext))
+                copyfile(path_old, path_new)
+                target.data.append(db.Data(target_id, element.format, element.uncompressed_size, to_name))
+                formats.add(element.format)
+            calibre_db.session.commit()
+        except Exception as ex:  # a missing or unreadable source file must not delete that source
+            calibre_db.session.rollback()
+            log.error_or_exception(ex)
+            lines.append(("error", f"{source_title} (#{source_id}): {ex}"))
+            continue
+        problem = delete_book_from_table(source_id)
+        if problem:
+            lines.append(("error", f"{source_title} (#{source_id}): {problem['message']}"))
+            continue
+        merged.append(source_id)
+        ub.create_audit_log_entry(
+            user_id=current_user.id,
+            action="merge",
+            resource_type="book",
+            resource_id=target_id,
+            details=f"Merged book {source_id} into {target_id}",
+            ip_address=helper.get_client_ip(),
+        )
+    if merged:
+        trigger_rebuild_async("merge:manage")
+        notify_duplicate_books_changed([target_id, *merged])
+        lines.insert(0, ("success", _("Merged %(count)s books into #%(target)s.", count=len(merged), target=target_id)))
+    return lines
+
+
 @editbook.route("/ajax/editselectedbooks", methods=["POST"])
 @login_required_if_no_ano
 @edit_required

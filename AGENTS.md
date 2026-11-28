@@ -798,10 +798,27 @@ Two live search systems (plus the legacy advanced-search form):
   (`timestamp`), 60 per page (`config_books_per_page`); an unfiltered listing knows its total, a search only "more
   results follow". Only visible books can be edited (same `common_filters` as the lists), else 404. Checked on a copy of
   the library in the sandbox image (a title edit needs the book's folder and file to exist there, otherwise the rename
-  fails and nothing is saved). Not done yet: bulk actions (select several, set one field, archive, mark read, delete,
-  merge) still live only in the legacy `/table`, which has no plain version. No Caddy change: `/admin/*` already goes
-  to Flask. NOTE: Caddy's `@flask` list does NOT include `/tasks` or `/duplicates`, so on `pustaka.taratsa.id` those
-  pages 404 (Astro answers); they are reachable on `old-pustaka.taratsa.id`, which proxies everything to Flask.
+  fails and nothing is saved).
+- **Bulk actions of the book manager** (same page, `POST /admin/books/bulk/preview` and `/bulk/run`): tick rows (a
+  checkbox column, select-all for the page, a counter), then archive / unarchive / mark read / mark unread run at once,
+  while "Set on selected" (authors, categories, series, publishers, languages), "Merge" and "Delete" first open a
+  server-rendered confirm panel that lists the books and carries the validated ids. `/bulk/run` REFUSES set, merge and
+  delete unless the form has `confirm=yes` (checked with a bare POST), so a stray request cannot delete anything.
+  Merge and delete need `role_delete_books`; merge needs two or more books and a chosen "keep" book; at most
+  `BULK_MAX_BOOKS` (200) ids per request; ids the user may not see are skipped and counted. Set goes through
+  `edit_book_param()` (one commit per book, rolled back on any failure) and writes one audit entry per book; delete
+  reuses `delete_book_from_table()` and audits each book; merge copies formats the kept book lacks and deletes a source
+  ONLY if its copy succeeded (a missing file leaves that source alone and reports it). After a run the server sends
+  `HX-Trigger: books-changed` and the list reloads on the same page and query. Ticks are gathered with `hx-include`,
+  not a wrapping `<form>`, because the cell editors are forms and forms cannot nest. The legacy `/table` and its
+  `/ajax/*selected*` endpoints stay. Checked in the sandbox with copied files: mark read x3, set series on 2 books,
+  clear it with an empty value, merge (formats copied, source folder removed, audit entry), delete (row, folder and
+  audit entry gone), cancel leaves data untouched, merge of one book is refused. Not checked: Google Drive libraries
+  (merge answers "not supported"), a failing delete on a read-only folder, and the merge failure path (a source whose
+  file is missing is meant to stay and be reported; that branch is written but was never run).
+- Caddy: `/admin/*` already goes to Flask. `/tasks` and `/duplicates` were NOT in `@flask` (they 404'd on
+  `pustaka.taratsa.id`, Astro answered); added with the htmx release (2026-11-28, backup
+  `Caddyfile.pre-admin-paths.2026-11-28`).
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each

@@ -1,0 +1,2 @@
+{#- Outcome of a bulk action: one line per result, success or error. -#}
+{% for kind, text in lines %}<div class="flash flash-{{ kind }}" role="{{ 'alert' if kind == 'error' else 'status' }}">{{ text }}</div>{% endfor %}

@@ -7,5 +7,44 @@
   <input id="manage-q" type="search" name="q" value="{{ q }}" placeholder="{{ _('Search Library') }}" autocomplete="off" autofocus
          hx-get="{{ url_for('edit-book.manage_books_rows') }}" hx-trigger="input changed delay:300ms, search" hx-target="#booklist" hx-swap="innerHTML" hx-sync="this:replace">
 </div>
-<div id="booklist" aria-busy="false">{% include "plain_books_rows.html" %}</div>
+{#- Bulk bar: acts on the ticked rows of the current page. The ticks are collected with hx-include, not a wrapping form,
+    because the cell editors are forms and forms cannot nest. -#}
+<fieldset id="bulk-bar" class="plain-section">
+  <legend>{{ _('Selected books') }} <span id="bulk-count" class="plain-badge">0</span></legend>
+  {% set sel = '#booklist input[name=ids]:checked' %}
+  <div class="plain-actions">
+    {% for action, label in [('archive', _('Archive')), ('unarchive', _('Unarchive')), ('read', _('Mark as read')), ('unread', _('Mark as unread'))] %}
+    <button type="button" hx-post="{{ url_for('edit-book.bulk_run') }}" hx-vals='{"action": "{{ action }}"}'
+            hx-include="{{ sel }}" hx-target="#bulk-result" hx-swap="innerHTML">{{ label }}</button>
+    {% endfor %}
+  </div>
+  <div class="plain-actions">
+    <label class="sr-only" for="bulk-field">{{ _('Field') }}</label>
+    <select id="bulk-field" name="field">{% for f in ['authors', 'tags', 'series', 'publishers', 'languages'] %}<option value="{{ f }}">{{ labels[f] }}</option>{% endfor %}</select>
+    <label class="sr-only" for="bulk-value">{{ _('New value') }}</label>
+    <input id="bulk-value" type="text" name="value" placeholder="{{ _('New value (empty clears it)') }}" autocomplete="off">
+    <button type="button" hx-post="{{ url_for('edit-book.bulk_preview') }}" hx-vals='{"action": "set"}'
+            hx-include="{{ sel }}, #bulk-field, #bulk-value" hx-target="#bulk-result" hx-swap="innerHTML">{{ _('Set on selected…') }}</button>
+    {% if current_user.role_delete_books() %}
+    <button type="button" hx-post="{{ url_for('edit-book.bulk_preview') }}" hx-vals='{"action": "merge"}' hx-include="{{ sel }}" hx-target="#bulk-result" hx-swap="innerHTML">{{ _('Merge…') }}</button>
+    <button type="button" class="plain-danger" hx-post="{{ url_for('edit-book.bulk_preview') }}" hx-vals='{"action": "delete"}' hx-include="{{ sel }}" hx-target="#bulk-result" hx-swap="innerHTML">{{ _('Delete…') }}</button>
+    {% endif %}
+  </div>
+</fieldset>
+<div id="bulk-result" aria-live="polite"></div>
+<div id="booklist" aria-busy="false" hx-get="{{ url_for('edit-book.manage_books_rows') }}" hx-trigger="books-changed from:body"
+     hx-include="#manage-q, #booklist input[name=page]" hx-target="this" hx-swap="innerHTML">{% include "plain_books_rows.html" %}</div>
+{% endblock %}
+{% block js %}
+<script>
+/* Select-all and the selection counter; the rest of the page is htmx. */
+(() => {
+  const count = () => { document.getElementById('bulk-count').textContent = document.querySelectorAll('#booklist input[name=ids]:checked').length; };
+  document.addEventListener('change', e => {
+    if (e.target.id === 'select-all') document.querySelectorAll('#booklist input[name=ids]').forEach(c => { c.checked = e.target.checked; });
+    if (e.target.id === 'select-all' || e.target.name === 'ids') count();
+  });
+  document.body.addEventListener('htmx:afterSwap', e => { if (e.target.id === 'booklist') count(); });
+})();
+</script>
 {% endblock %}

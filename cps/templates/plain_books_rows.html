@@ -1,18 +1,20 @@
 {#- The result table and pager of the book manager; swapped into #booklist by the search box and the pager. -#}
 {% set pager_q = {'q': q} if q else {} %}
+<input type="hidden" name="page" value="{{ pageno }}">
 <p class="plain-muted" role="status" aria-live="polite">{% if total is not none %}{{ _('%(count)s books', count=total) }}{% else %}{{ _('More results follow') }}{% endif %}{% if q %} · {{ _('Results for:') }} {{ q }}{% endif %}</p>
 <div class="plain-table-wrap">
   <table>
-    <thead><tr><th>#</th>{% for f in fields %}<th>{{ labels[f] }}</th>{% endfor %}<th></th></tr></thead>
+    <thead><tr><th><input type="checkbox" id="select-all" aria-label="{{ _('Select all on this page') }}"></th><th>#</th>{% for f in fields %}<th>{{ labels[f] }}</th>{% endfor %}<th></th></tr></thead>
     <tbody>
     {% for row in rows %}
       <tr id="book-{{ row.id }}">
+        <td><input type="checkbox" name="ids" value="{{ row.id }}" aria-label="{{ _('Select') }} #{{ row.id }}"></td>
         <td><a href="{{ url_for('web.show_book', book_id=row.id) }}">{{ row.id }}</a></td>
         {% for cell in row.cells %}<td>{% with %}{% set book_id, field, label, text = cell.book_id, cell.field, cell.label, cell.text %}{% include "plain_books_cell.html" %}{% endwith %}</td>{% endfor %}
         <td><a href="{{ url_for('edit-book.show_edit_book', book_id=row.id) }}">{{ _('Full editor') }}</a></td>
       </tr>
     {% else %}
-      <tr><td colspan="{{ fields|length + 2 }}">{{ _('No Results Found') }}</td></tr>
+      <tr><td colspan="{{ fields|length + 3 }}">{{ _('No Results Found') }}</td></tr>
     {% endfor %}
     </tbody>
   </table>

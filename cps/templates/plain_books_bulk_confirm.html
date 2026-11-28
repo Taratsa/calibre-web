@@ -1,0 +1,30 @@
+{#- Confirm step for set / merge / delete. Carries the validated ids; the run endpoint refuses these actions without `confirm=yes`. -#}
+<form class="flash flash-warning" hx-post="{{ url_for('edit-book.bulk_run') }}" hx-target="#bulk-result" hx-swap="innerHTML" hx-disabled-elt="find button">
+  <input type="hidden" name="action" value="{{ action }}">
+  <input type="hidden" name="confirm" value="yes">
+  {% if field %}<input type="hidden" name="field" value="{{ field }}"><input type="hidden" name="value" value="{{ value }}">{% endif %}
+  {% for book in books %}<input type="hidden" name="ids" value="{{ book.id }}">{% endfor %}
+  {% if action == 'delete' %}
+    <p><strong>{{ _('Delete %(count)s books and their files? This cannot be undone.', count=books|length) }}</strong></p>
+  {% elif action == 'merge' %}
+    <p><strong>{{ _('Merge %(count)s books into one. The other books are deleted after their formats are copied over.', count=books|length) }}</strong></p>
+    <fieldset>
+      <legend>{{ _('Keep this book') }}</legend>
+      {% for book in books %}<label class="plain-inline"><input type="radio" name="keep" value="{{ book.id }}"{% if loop.first %} checked{% endif %} required> #{{ book.id }} {{ book.title }}{% if book.data %} ({{ book.data|map(attribute='format')|join(', ') }}){% endif %}</label><br>{% endfor %}
+    </fieldset>
+  {% else %}
+    <p><strong>{{ _('Set %(field)s to “%(value)s” on %(count)s books?', field=label, value=value, count=books|length) }}</strong>
+      {% if not value %}{{ _('The value is empty, so the existing %(field)s is removed.', field=label) }}{% endif %}</p>
+  {% endif %}
+  {% if action != 'merge' %}
+  <ul>
+    {% for book in shown %}<li>#{{ book.id }} {{ book.title }}</li>{% endfor %}
+    {% if books|length > shown|length %}<li class="plain-muted">{{ _('… and %(count)s more', count=books|length - shown|length) }}</li>{% endif %}
+  </ul>
+  {% endif %}
+  {% if skipped %}<p class="plain-muted">{{ _('%(count)s selected books are not available and were left out.', count=skipped) }}</p>{% endif %}
+  <div class="plain-actions">
+    <button type="submit" class="plain-danger">{{ {'delete': _('Delete'), 'merge': _('Merge'), 'set': _('Apply')}[action] }}</button>
+    <button type="button" onclick="this.closest('form').remove()">{{ _('Cancel') }}</button>
+  </div>
+</form>
