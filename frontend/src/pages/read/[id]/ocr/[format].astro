@@ -108,12 +108,17 @@ const unwrapRelativeLinks = (html: string) => html.replace(
 );
 const headingIds = new Map<string, number>();
 const toc: Array<{ id: string; level: number; text: string }> = [];
+// Output level of the previous heading; the page title is the h1, so the first document heading may be an h2 at most.
+let previousOutLevel = 1;
 const contentHtml = unwrapRelativeLinks(document?.markdown_html ?? '').replace(
   /<(h[1-6])([^>]*)>([\s\S]*?)<\/\1>/gi,
   (_, tag: string, attributes: string, content: string) => {
-    // The page title is the only <h1>: document headings are demoted one level (h6 stays h6).
+    // The page title is the only <h1>: document headings are demoted one level (h6 stays h6), and never jump more
+    // than one level below the previous heading (WCAG 1.3.1 / best practice heading-order).
     const level = Number(tag.slice(1));
-    const outTag = `h${Math.min(6, level + 1)}`;
+    const outLevel = Math.min(6, level + 1, previousOutLevel + 1);
+    previousOutLevel = outLevel;
+    const outTag = `h${outLevel}`;
     const text = decodeEntities(content.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
     if (!text) return `<${outTag}${attributes}>${content}</${outTag}>`;
     const baseId = text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'bagian';
@@ -149,9 +154,9 @@ const ocrDescription = document && plainText
       {!pending && (
         <div class="ocr-reader__tools">
           <div class="ocr-reader__segmented" role="group" aria-label="Ukuran teks" data-fontsize>
-            <button type="button" data-fontsize-down aria-label="Perkecil teks">A−</button>
-            <button type="button" data-fontsize-reset aria-label="Atur ulang ukuran teks" title="Atur ulang ukuran teks">100%</button>
-            <button type="button" data-fontsize-up aria-label="Perbesar teks">A+</button>
+            <button type="button" data-fontsize-down aria-label="A−, perkecil teks">A−</button>
+            <button type="button" data-fontsize-reset aria-label="100%, atur ulang ukuran teks" title="Atur ulang ukuran teks">100%</button>
+            <button type="button" data-fontsize-up aria-label="A+, perbesar teks">A+</button>
           </div>
           <div class="ocr-reader__segmented" role="group" aria-label="Perataan teks" data-align>
             <button type="button" data-align-value="left" aria-label="Rata kiri" title="Rata kiri" aria-pressed="true">
@@ -162,8 +167,8 @@ const ocrDescription = document && plainText
             </button>
           </div>
           <div class="ocr-reader__segmented" role="group" aria-label="Unduh teks" data-download data-title={book.title} data-authors={authorNames} data-format={requestedFormat} data-ocr={String(isOcr)}>
-            <button type="button" data-download-format="txt" title="Unduh sebagai teks biasa (.txt)" aria-label="Unduh sebagai teks biasa (.txt)">Unduh .txt</button>
-            <button type="button" data-download-format="md" title="Unduh sebagai Markdown (.md)" aria-label="Unduh sebagai Markdown (.md)">Unduh .md</button>
+            <button type="button" data-download-format="txt" title="Unduh sebagai teks biasa (.txt)">Unduh .txt</button>
+            <button type="button" data-download-format="md" title="Unduh sebagai Markdown (.md)">Unduh .md</button>
           </div>
         </div>
       )}
@@ -302,7 +307,7 @@ const ocrDescription = document && plainText
       scrollTopButton.toggleAttribute('data-visible', window.scrollY > 480);
     };
     scrollTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
     updateVisibility();
     window.addEventListener('scroll', updateVisibility, { passive: true });
@@ -328,6 +333,7 @@ const ocrDescription = document && plainText
       const scale = steps[index];
       document.documentElement.style.setProperty('--ocr-scale', String(scale));
       reset.textContent = `${Math.round(scale * 100)}%`;
+      reset.setAttribute('aria-label', `${Math.round(scale * 100)}%, atur ulang ukuran teks`);
       smaller.disabled = index === 0;
       larger.disabled = index === steps.length - 1;
       try {
@@ -627,7 +633,7 @@ const ocrDescription = document && plainText
   .ocr-progress__chain :global(li + li::before) {
     content: '›';
     padding: 0 0.5em;
-    color: var(--muted-soft);
+    color: var(--muted);
   }
   .ocr-progress__chain :global(a) {
     color: var(--muted-strong);
@@ -705,7 +711,7 @@ const ocrDescription = document && plainText
     background: var(--surface);
   }
   .ocr-reader__segmented button:disabled {
-    color: var(--muted-soft);
+    color: var(--muted);
     cursor: default;
   }
   .ocr-reader__segmented button[aria-pressed='true'] {

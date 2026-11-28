@@ -353,7 +353,7 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
     <section class="similar-books">
       <h2 class="shelves-heading">Buku serupa</h2>
       <p class="similar-books__note">Dipilih dari kemiripan kata-kata khas di dalam teks.</p>
-      <BookGrid books={similarBooks} />
+      <BookGrid books={similarBooks} level={3} />
     </section>
   )}
 </BookLayout>

@@ -95,9 +95,9 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
   <nav class="video-pagination" aria-label="Halaman video">
     <ol>
       <li class="pagination__item pagination__item--nav">
-        <a class:list={{ 'pagination__link': true, disabled: safePage <= 1 }} href={safePage > 1 ? urlFor(safePage - 1) : '#'} rel="prev" aria-label="Halaman sebelumnya">
-          <span class="pagination__label">Sebelumnya</span>
-        </a>
+        {safePage > 1
+          ? <a class="pagination__link" href={urlFor(safePage - 1)} rel="prev" aria-label="Halaman sebelumnya"><span class="pagination__label">Sebelumnya</span></a>
+          : <span class="pagination__link disabled" aria-disabled="true"><span class="pagination__label">Sebelumnya</span></span>}
       </li>
       {pagination.map((number) => (
         <li class:list={{ 'pagination__item': true, 'pagination__item--current': number === safePage }}>
@@ -105,9 +105,9 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
         </li>
       ))}
       <li class="pagination__item pagination__item--nav">
-        <a class:list={{ 'pagination__link': true, disabled: safePage >= totalPages }} href={safePage < totalPages ? urlFor(safePage + 1) : '#'} rel="next" aria-label="Halaman selanjutnya">
-          <span class="pagination__label">Selanjutnya</span>
-        </a>
+        {safePage < totalPages
+          ? <a class="pagination__link" href={urlFor(safePage + 1)} rel="next" aria-label="Halaman selanjutnya"><span class="pagination__label">Selanjutnya</span></a>
+          : <span class="pagination__link disabled" aria-disabled="true"><span class="pagination__label">Selanjutnya</span></span>}
       </li>
     </ol>
   </nav>
@@ -135,6 +135,6 @@ const pagination = Array.from({ length: Math.min(totalPages, 7) }, (_, index) =>
   .video-pagination .pagination__item--current span, .video-pagination .pagination__link { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 0.25rem; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--fg); text-decoration: none; font-size: 0.875rem; }
   .video-pagination .pagination__item--current span { border-color: var(--fg); background: var(--fg); color: var(--bg); font-weight: 600; }
   .video-pagination .pagination__link:hover:not(.disabled) { border-color: var(--fg); }
-  .video-pagination .pagination__link.disabled { cursor: default; opacity: 0.45; pointer-events: none; }
+  .video-pagination .pagination__link.disabled { cursor: default; color: var(--muted); background: var(--surface-2); border-color: var(--border-subtle); }
   @media (max-width: 640px) { .video-heading, .video-summary { flex-direction: column; gap: 0; } .video-tools { flex-wrap: wrap; } .video-tools label { flex-basis: 100%; } .video-tools select, .video-tools button { flex: 1; } }
 </style>

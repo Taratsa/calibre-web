@@ -31,7 +31,7 @@ const tocHtml = buckets.map(b => `<li><a href="#${b.key}">${b.label}</a> — ${b
     b.count > 0 && (
       <section id={b.key}>
         <h2 set:html={b.label} />
-        <BookGrid books={booksByFormat(b.key).slice(0, 60)} />
+        <BookGrid books={booksByFormat(b.key).slice(0, 60)} level={3} />
         {booksByFormat(b.key).length > 60 && (
           <p><em>Menampilkan 60 buku pertama.</em></p>
         )}

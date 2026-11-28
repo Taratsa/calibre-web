@@ -196,6 +196,7 @@ const moreNav: NavLink[] = [
     <!-- END Formbricks Surveys -->
   </head>
   <body>
+    <a href="#main" class="skip-link">Lewati ke konten utama</a>
     <input type="checkbox" id="nav-open" class="nav-check" aria-label="Buka menu navigasi" />
     <div class="app">
       <header class="topbar">
@@ -271,7 +272,7 @@ const moreNav: NavLink[] = [
       <label for="nav-open" class="scrim" aria-hidden="true"></label>
 
       <div class="content">
-        <main class="container">
+        <main class="container" id="main" tabindex="-1">
           <slot />
         </main>
 
@@ -283,6 +284,7 @@ const moreNav: NavLink[] = [
             menjadi milik pencipta, penerbit, dan kontributor masing-masing. Jika terdapat kekeliruan atau keberatan
             mengenai hak atas karya, hubungi kami di <a href="mailto:redaksi@taratsa.id">redaksi@taratsa.id</a>
           </p>
+          <p><a href="/aksesibilitas/" class="footer-link">Pernyataan aksesibilitas</a></p>
         </footer>
       </div>
     </div>

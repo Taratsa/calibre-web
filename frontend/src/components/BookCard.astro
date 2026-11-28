@@ -7,9 +7,12 @@ export interface Props {
   book: BookSummary;
   size?: 'sm' | 'md' | 'lg';
   priority?: boolean;
+  /** Heading level of the card title; one below the heading that introduces the grid. */
+  level?: 2 | 3 | 4;
 }
 
-const { book, size = 'md', priority = false } = Astro.props;
+const { book, size = 'md', priority = false, level = 2 } = Astro.props;
+const Heading = `h${level}` as 'h2' | 'h3' | 'h4';
 const widths = { sm: 120, md: 200, lg: 320 };
 const w = widths[size];
 const authorHtml = truncateAuthorsHtml(book.authors ?? [], 60);
@@ -20,12 +23,12 @@ const href = `${bookPath(book)}/`;
 ---
 
 <article class={`book-card book-card--${size}`}>
-    <a href={href} class="book-card__cover" aria-label={`Cover ${book.title.trim()}`}>
-    <Cover image={coverImg} alt={book.title} width={w} height={coverH} loading={priority ? "eager" : "lazy"} fetchpriority={priority ? "high" : "auto"} />
+    <a href={href} class="book-card__cover" tabindex="-1" aria-hidden="true">
+    <Cover image={coverImg} alt="" width={w} height={coverH} loading={priority ? "eager" : "lazy"} fetchpriority={priority ? "high" : "auto"} />
   </a>
-  <h3 class="book-card__title">
+  <Heading class="book-card__title">
     <a href={href} set:html={book.title.trim()} />
-  </h3>
+  </Heading>
   {showAuthors && (
     <p class="book-card__authors" set:html={authorHtml} />
   )}
@@ -50,17 +53,18 @@ const href = `${bookPath(book)}/`;
     font-weight: 600;
     margin: 0.5rem 0 0.1rem;
     line-height: 1.3;
-    overflow: hidden;
+  }
+  /* The clamp sits on the link, so its box is exactly the visible lines; at least 24px tall (WCAG 2.5.8). */
+  .book-card__title a {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    overflow: hidden;
     word-break: break-word;
-  }
-  .book-card__title a {
+    min-height: 24px;
+    min-width: 0;
     color: var(--fg);
     text-decoration: none;
-    min-height: 0;
-    min-width: 0;
   }
   .book-card__title a:hover { text-decoration: underline; }
   .book-card__authors {
@@ -73,9 +77,17 @@ const href = `${bookPath(book)}/`;
     -webkit-box-orient: vertical;
     word-break: break-word;
   }
-  .book-card__authors a { color: var(--muted); text-decoration: none; min-height: 0; min-width: 0; }
-  .book-card__authors a:hover { text-decoration: underline; }
-  .book-card__authors .more { color: var(--muted-soft); font-style: italic; }
+  /* Links inside set:html carry no scope attribute, so these need :global(). 24px tall hit area (WCAG 2.5.8). */
+  .book-card__authors :global(a) {
+    display: inline-block;
+    min-height: 0;
+    min-width: 0;
+    line-height: 1.5rem;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .book-card__authors :global(a:hover) { text-decoration: underline; }
+  .book-card__authors :global(.more) { color: var(--muted); font-style: italic; }
   @media (prefers-reduced-motion: reduce) {
     :global(.book-card__cover img) { transition: none; }
     .book-card__cover:hover :global(img) { transform: none; }

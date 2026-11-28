@@ -1,0 +1,170 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+
+const updated = '28 November 2026';
+const updatedIso = '2026-11-28';
+---
+
+<BaseLayout
+  title="Pernyataan Aksesibilitas"
+  description="Pernyataan aksesibilitas Pustaka Taratsa: acuan WCAG 2.2 AA, fitur yang tersedia, keterbatasan yang kami ketahui, dan cara melapor."
+>
+  <article class="mx-auto max-w-3xl a11y-statement">
+    <header class="mb-8 border-b pb-6 border-[var(--border-subtle)]">
+      <h1 class="mb-3">Pernyataan Aksesibilitas</h1>
+      <p class="m-0 text-[var(--muted)]">
+        Terakhir diperbarui: <time datetime={updatedIso}>{updated}</time>. Berlaku untuk: pustaka.taratsa.id
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <h2>Komitmen kami</h2>
+      <p class="mb-4">
+        Pustaka Taratsa adalah perpustakaan digital non-komersil. Kami merawat buku langka, zine, dan terbitan yang sulit
+        ditemukan, termasuk banyak terbitan yang dilarang, ditarik dari peredaran, atau tidak pernah masuk toko buku.
+      </p>
+      <p class="mb-4">
+        Akses atas pengetahuan tidak boleh ditentukan oleh bentuk tubuh, indra, atau cara seseorang membaca. Karena itu
+        kami berkomitmen agar pustaka.taratsa.id dapat digunakan oleh semua orang, termasuk penyandang disabilitas:
+        pembaca yang memakai pembaca layar, pengguna yang mengoperasikan komputer hanya dengan papan ketik, pembaca
+        dengan disleksia atau penglihatan rendah, dan pembaca yang peka terhadap gerak.
+      </p>
+      <p>
+        Kami merancang, membangun, dan memperbarui situs ini dengan mengacu pada
+        <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.2</a>
+        Level AA.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Cakupan</h2>
+      <p class="mb-4">
+        Pernyataan ini berlaku untuk situs utama pustaka.taratsa.id: beranda, katalog dan hasil pencarian, halaman detail
+        buku, halaman teks (OCR dan EPUB), kliping, video, serta pembaca EPUB dan PDF yang berjalan di dalam situs.
+      </p>
+      <p>
+        Situs lama di old-pustaka.taratsa.id adalah cermin warisan yang sedang kami migrasikan dan tidak dicakup
+        pernyataan ini.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Fitur aksesibilitas</h2>
+      <ul class="a11y-list">
+        <li><strong>Struktur heading yang logis.</strong> Satu H1 per halaman. Judul buku pada daftar mengikuti tingkat heading di atasnya, dan heading di dalam teks buku tidak melompati tingkat.</li>
+        <li><strong>Teks alternatif.</strong> Sampul pada kartu buku ditandai dekoratif karena judul buku tertaut tepat di sebelahnya, sehingga pembaca layar tidak membaca tautan yang sama dua kali. Sampul di halaman detail buku memakai judul buku sebagai teks alternatif.</li>
+        <li><strong>Lewati ke konten utama.</strong> Tautan pertama di setiap halaman melompati menu samping.</li>
+        <li><strong>Navigasi dengan papan ketik.</strong> Elemen interaktif di halaman katalog dapat dijangkau dan dioperasikan tanpa tetikus, dan menu samping di layar sempit dapat ditutup dengan Esc.</li>
+        <li><strong>Indikator fokus yang terlihat.</strong> Elemen yang sedang difokuskan diberi garis tepi dua piksel, dan fokus tidak tertutup bilah atas yang menempel.</li>
+        <li><strong>Kontras warna.</strong> Teks sekunder diukur dengan alat uji kontras otomatis pada mode terang dan gelap, dan memenuhi rasio 4,5:1. Mode terang dan gelap mengikuti pengaturan sistem dan dapat diubah dengan tombol di menu samping.</li>
+        <li><strong>Target sentuh.</strong> Tautan dan tombol berukuran minimal 24 × 24 piksel (WCAG 2.5.8); sebagian besar kontrol utama 44 piksel.</li>
+        <li><strong>Teks tautan yang deskriptif.</strong> Alamat halaman buku memuat judul dan penulis. Nama tautan dan tombol memuat teks yang terlihat.</li>
+        <li><strong>Bahasa.</strong> Dokumen ditandai <code>lang="id"</code>. Kliping yang berbahasa lain ditandai sesuai bahasanya. Judul buku berbahasa asing belum ditandai per judul.</li>
+        <li><strong>Tata letak yang menyesuaikan.</strong> Halaman katalog diuji pada lebar 320 piksel tanpa gulir horizontal. Pembaca teks memiliki pengaturan ukuran teks (85% sampai 175%) dan perataan.</li>
+        <li><strong>Pengurangan gerak.</strong> Transisi dan gulir halus dimatikan bila perangkat meminta gerak dikurangi.</li>
+        <li><strong>Tanpa konten berkedip.</strong> Situs tidak memuat animasi atau konten yang berkedip.</li>
+        <li><strong>Tanpa akun.</strong> Membaca dan mengunduh tidak memerlukan akun, sehingga tidak ada captcha atau verifikasi yang menghambat.</li>
+        <li><strong>Pencarian berlabel.</strong> Formulir pencarian ditandai sebagai landmark pencarian dan kolom isiannya berlabel.</li>
+        <li><strong>Pembaca EPUB.</strong> Menyediakan pengaturan ukuran teks, jenis huruf, tema warna (terang, gelap, sepia, amber, hitam, dan warna kustom), perataan teks, serta tata letak satu atau beberapa kolom.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2>Aksesibilitas koleksi</h2>
+      <p class="mb-4">
+        Bagi perpustakaan, aksesibilitas bukan hanya soal navigasi situs, tetapi soal apakah isi buku benar-benar dapat
+        dibaca.
+      </p>
+      <ul class="a11y-list">
+        <li><strong>EPUB</strong> menyajikan teks asli: dapat diperbesar, diatur tipografinya, dan dibacakan pembaca layar.</li>
+        <li><strong>PDF hasil pindai</strong> adalah gambar halaman. Tanpa lapisan teks, isinya tidak dapat dibaca pembaca layar dan tidak dapat dicari.</li>
+        <li><strong>Teks hasil OCR.</strong> Untuk sebagian buku kami menyediakan hasil pengenalan teks pada halaman “Baca teks”. Kualitasnya bervariasi menurut kondisi pindaian, dan kami tidak mengklaim hasil OCR setara naskah aslinya. Setiap halaman OCR memuat peringatan itu.</li>
+        <li><strong>Prioritas format.</strong> Bila sebuah judul tersedia dalam EPUB dan PDF, kami mengutamakan EPUB.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2>Keterbatasan yang kami ketahui</h2>
+      <p class="mb-4">Kami mencantumkan keterbatasan ini secara terbuka, bukan menyembunyikannya.</p>
+      <ul class="a11y-list">
+        <li><strong>Pembaca EPUB.</strong> Komponen ini belum menandai bahasa dokumennya, kontrolnya belum seluruhnya berlabel, dan halaman pembaca mematikan pembesaran dengan dua jari (<i lang="en">pinch-zoom</i>) di perangkat seluler. Sementara ini: perbesar teks melalui panel pengaturan pembaca, buka halaman “Baca teks” yang berupa HTML biasa, atau unduh berkas EPUB dan buka dengan aplikasi yang ramah pembaca layar (Thorium, Apple Books, KOReader, Calibre).</li>
+        <li><strong>Pembaca PDF.</strong> Halaman pembaca ini mematikan pembesaran dengan dua jari di perangkat seluler. Pengguna pembaca layar sebaiknya memakai halaman “Baca teks” (bila tersedia) atau mengunduh berkas dan membukanya di aplikasi PDF yang mendukung pelabelan.</li>
+        <li><strong>Koleksi pindaian.</strong> Bagian terbesar koleksi kami adalah hasil pindai tanpa lapisan teks. Ini keterbatasan terbesar kami dan tidak dapat diselesaikan dengan perubahan kode. Kami menanganinya bertahap melalui OCR, tetapi kualitas OCR pada pindaian lama, miring, atau bernoda belum cukup baik untuk dijadikan teks utama.</li>
+        <li><strong>Isi gambar di dalam buku.</strong> Deskripsi alternatif untuk ilustrasi, peta, dan tabel di dalam buku tidak tersedia. Tabel lebar pada teks OCR dapat memerlukan gulir horizontal di layar sempit.</li>
+        <li><strong>Video.</strong> Halaman video menyematkan pemutar YouTube atau Internet Archive. Takarir dan transkrip bergantung pada pemilik video; transkrip yang kami tampilkan sebagian besar berasal dari takarir otomatis dan dapat keliru, dan banyak video tidak memilikinya. Video tanpa deskripsi audio.</li>
+        <li><strong>Metadata katalog.</strong> Sebagian metadata diisi manual dan sebagian warisan data lama. Salah eja nama penulis atau judul dapat menyulitkan pencarian. Laporkan, dan kami perbaiki.</li>
+        <li><strong>Berkas di luar situs.</strong> Sebagian tautan mengarah ke layanan pihak ketiga. Ketersediaan dan aksesibilitasnya di luar kendali kami.</li>
+        <li><strong>Halaman admin.</strong> Antarmuka pengelolaan koleksi (khusus pengelola) belum kami uji aksesibilitasnya.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2>Pendekatan kami</h2>
+      <p>
+        Kami tidak memakai widget “tombol aksesibilitas” pihak ketiga sebagai pengganti perbaikan kode. Lapisan tambahan
+        di atas halaman tidak memperbaiki HTML yang salah, dan sering kali menambah hambatan baru bagi pengguna pembaca
+        layar. Perbaikan kami lakukan langsung pada kode, struktur, dan konten.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Status kepatuhan</h2>
+      <p class="mb-4">
+        pustaka.taratsa.id berada pada status <strong>patuh sebagian</strong> (<i lang="en">partially conformant</i>)
+        terhadap WCAG 2.2 Level AA. Halaman katalog dan halaman detail buku lolos pemeriksaan otomatis kami untuk kriteria
+        Level A dan AA yang dapat diuji mesin. Pemeriksaan otomatis hanya menangkap sebagian masalah, sehingga ini belum
+        berarti halaman tersebut patuh penuh. Kedua komponen pembaca dan isi koleksi hasil pindaian belum memenuhinya.
+      </p>
+      <p>
+        Kami tidak menyatakan situs ini sepenuhnya patuh. Pernyataan patuh penuh hanya sah bila didukung audit
+        menyeluruh, dan sampai saat ini kami belum melakukannya.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Cara kami menguji</h2>
+      <p class="mb-4">Pernyataan ini disusun dari:</p>
+      <ul class="a11y-list">
+        <li>pemeriksaan otomatis dengan axe-core (aturan WCAG 2.0, 2.1, 2.2 Level A/AA dan praktik terbaik) pada 29 halaman contoh (beranda, daftar buku, pencarian, detail buku, kliping, video, halaman teks, halaman data, dan halaman 404), masing-masing dalam mode terang dan gelap, yang dijalankan pada 28 November 2026;</li>
+        <li>pemeriksaan lebar 320 piksel untuk gulir horizontal pada halaman utama.</li>
+      </ul>
+      <p class="mt-4 mb-4">
+        <strong>Belum kami lakukan:</strong> pengujian manual alur utama dengan papan ketik saja, pengujian dengan pembaca
+        layar, pengujian pembesaran 200%, dan pengujian kedua komponen pembaca. Belum ada audit oleh pihak ketiga. Bila
+        pengujian itu dilakukan, hasilnya akan kami cantumkan di halaman ini.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Umpan balik</h2>
+      <p class="mb-4">
+        Bila Anda menemukan bagian yang tidak dapat diakses, atau punya saran perbaikan, hubungi kami di
+        <a href="mailto:redaksi@taratsa.id">redaksi@taratsa.id</a>.
+      </p>
+      <p class="mb-4">
+        Sertakan bila memungkinkan: alamat halaman, jenis kendala, peramban dan perangkat, serta teknologi bantu yang
+        Anda pakai. Kami membalas dalam 5 hari kerja dan akan menyampaikan perkiraan waktu perbaikannya.
+      </p>
+      <p>
+        Untuk permintaan format alternatif, misalnya buku tertentu dalam EPUB atau teks yang dapat dibacakan pembaca
+        layar, tuliskan judul dan tautannya. Kami akan mengupayakannya sejauh hak dan kondisi berkas memungkinkan.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Peninjauan ulang</h2>
+      <p>
+        Halaman ini ditinjau setiap 6 bulan, atau lebih cepat bila ada perubahan besar pada situs. Tanggal pembaruan
+        tercantum di bagian atas.
+      </p>
+    </section>
+
+    <p><a href="/">← Kembali ke beranda</a></p>
+  </article>
+</BaseLayout>
+
+<style>
+  .a11y-list { list-style: disc; padding-left: 1.25rem; margin: 0; }
+  .a11y-list li { margin: 0 0 0.6rem; }
+  .a11y-statement code { font-size: 0.9em; }
+</style>

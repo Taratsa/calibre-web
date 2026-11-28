@@ -112,7 +112,7 @@ const transcriptLanguage = transcript?.lang && transcript.lang !== 'id'
     <section class="related">
       <h2>Video lainnya</h2>
       <ul class="video-grid">
-        {related.map((item) => <VideoCard video={item} />)}
+        {related.map((item) => <VideoCard video={item} level={3} />)}
       </ul>
     </section>
   )}

@@ -31,7 +31,7 @@ if (related.length === 0) related = suggestions?.books ?? [];
   {exact && (
     <section class="not-found__section">
       <h2>Apakah maksud Anda buku ini?</h2>
-      <BookGrid books={[exact]} />
+      <BookGrid books={[exact]} level={3} />
     </section>
   )}
   {related.length > 0 && (
@@ -40,7 +40,7 @@ if (related.length === 0) related = suggestions?.books ?? [];
       <p class="not-found__note">
         {exact ? 'Dipilih dari kemiripan kata-kata khas di dalam teks.' : 'Dipilih dari kata-kata pada alamat yang Anda buka.'}
       </p>
-      <BookGrid books={related} />
+      <BookGrid books={related} level={3} />
     </section>
   )}
   <p><a href="/">Kembali ke beranda</a> · <a href="/search/">Cari buku</a></p>

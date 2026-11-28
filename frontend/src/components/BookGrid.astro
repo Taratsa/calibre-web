@@ -4,16 +4,18 @@ import BookCard from './BookCard.astro';
 
 export interface Props {
   books: BookSummary[];
+  /** Heading level of each card title: one below the heading that introduces the grid (h1 pages: 2, the default). */
+  level?: 2 | 3 | 4;
 }
 
-const { books } = Astro.props;
+const { books, level = 2 } = Astro.props;
 ---
 
 {books.length > 0 ? (
   <ul class="book-grid">
     {books.map((book, index) => (
       <li>
-        <BookCard book={book} priority={index < 6} />
+        <BookCard book={book} priority={index < 6} level={level} />
       </li>
     ))}
   </ul>

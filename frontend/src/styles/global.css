@@ -15,7 +15,7 @@
   --border-subtle: rgba(0, 0, 0, 0.08);
   --muted: rgba(0, 0, 0, 0.60);
   --muted-strong: rgba(0, 0, 0, 0.74);
-  --muted-soft: rgba(0, 0, 0, 0.40);
+  --muted-soft: rgba(0, 0, 0, 0.58);
   --accent: #b91c1c;
   --inverse-bg: #111111;
   --inverse-fg: #ffffff;
@@ -45,7 +45,7 @@
     --border-subtle: rgba(255, 255, 255, 0.10);
     --muted: rgba(255, 255, 255, 0.60);
     --muted-strong: rgba(255, 255, 255, 0.75);
-    --muted-soft: rgba(255, 255, 255, 0.42);
+    --muted-soft: rgba(255, 255, 255, 0.56);
     --accent: #f87171;
     --inverse-bg: rgba(255, 255, 255, 0.92);
     --inverse-fg: #0d0d0d;
@@ -73,7 +73,7 @@
   --border-subtle: rgba(255, 255, 255, 0.10);
   --muted: rgba(255, 255, 255, 0.60);
   --muted-strong: rgba(255, 255, 255, 0.75);
-  --muted-soft: rgba(255, 255, 255, 0.42);
+  --muted-soft: rgba(255, 255, 255, 0.56);
   --accent: #f87171;
   --inverse-bg: rgba(255, 255, 255, 0.92);
   --inverse-fg: #0d0d0d;
@@ -98,7 +98,30 @@ html {
   -webkit-text-size-adjust: 100%;
   background: var(--bg);
   color: var(--fg);
+  /* WCAG 2.4.11: a focused element or an in-page anchor must not land under the sticky top bar. */
+  scroll-padding-top: calc(var(--topbar-h) + 1rem);
 }
+
+/* Keyboard focus ring for everything that has no ring of its own (WCAG 2.4.7). */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Skip link (WCAG 2.4.1): first Tab stop, visible only while focused. */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 4px;
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+  font-weight: 600;
+}
+.skip-link:focus { top: 0.5rem; }
+main:focus { outline: none; }
+.site-footer .footer-link { display: inline-flex; align-items: center; min-height: 24px; min-width: 24px; }
 
 h1 { @apply text-2xl font-semibold mb-6; }
 h2 { @apply text-xl font-semibold mb-4; }

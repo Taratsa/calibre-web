@@ -3,20 +3,23 @@ import type { FilmVideo } from '../data/videos'
 
 interface Props {
   video: FilmVideo
+  /** Heading level of the card title: one below the heading that introduces the list. */
+  level?: 2 | 3
 }
 
-const { video } = Astro.props
+const { video, level = 2 } = Astro.props
+const Heading = `h${level}` as 'h2' | 'h3'
 const href = `/video/${video.id}/`
 ---
 
 <li data-video-item>
   <article class="video-card">
-    <a href={href} class="video-card__cover" aria-label={`Tonton ${video.title}`}>
+    <a href={href} class="video-card__cover" tabindex="-1" aria-hidden="true">
       {
         video.thumbnail ? (
           <img
             src={video.thumbnail}
-            alt={video.title}
+            alt=""
             width="320"
             height="180"
             loading="lazy"
@@ -29,9 +32,9 @@ const href = `/video/${video.id}/`
       }
       <span class="video-card__badge">{video.sourceLabel}</span>
     </a>
-    <h3 class="video-card__title">
+    <Heading class="video-card__title">
       <a href={href}>{video.title}</a>
-    </h3>
+    </Heading>
     <p class="video-card__meta">
       <a href={`/video/?q=${encodeURIComponent(video.channel)}`}>{video.channel}</a> · {video.year}
     </p>
@@ -86,17 +89,18 @@ const href = `/video/${video.id}/`
   }
 
   .video-card__title {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    word-break: break-word;
     margin: 0.5rem 0 0.25rem;
     font-size: 1rem;
     line-height: 1.3;
   }
 
   .video-card__title a {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+    min-height: 24px;
     color: var(--fg);
     text-decoration: none;
   }

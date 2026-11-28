@@ -19,7 +19,7 @@ const ratings = getAllRatings();
       return (
         <section>
           <h2 set:html={ratingLabel} />
-          <BookGrid books={books.slice(0, 60)} />
+          <BookGrid books={books.slice(0, 60)} level={3} />
           {books.length > 60 && <p><em>Menampilkan 60 buku pertama.</em></p>}
         </section>
       );

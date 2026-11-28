@@ -37,7 +37,7 @@ const formatCount = new Intl.NumberFormat('id-ID');
         <h2 id="home-populer">Buku Terpopuler</h2>
         <a href="/populer/">Lihat semua →</a>
       </div>
-      <BookGrid books={topPopular} />
+      <BookGrid books={topPopular} level={3} />
     </section>
   )}
 
@@ -46,7 +46,7 @@ const formatCount = new Intl.NumberFormat('id-ID');
       <h2 id="home-terbaru">Daftar Terbaru</h2>
       {totalPages > 1 && <a href="/page/2/">Telusuri semua {formatCount.format(total)} buku →</a>}
     </div>
-    <BookGrid books={items} />
+    <BookGrid books={items} level={3} />
   </section>
 </BaseLayout>
 

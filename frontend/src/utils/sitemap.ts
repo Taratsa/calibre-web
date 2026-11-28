@@ -28,6 +28,7 @@ const OCR_FORMATS = ['epub', 'pdf'];
 const STATIC_PATHS = [
   '/',
   '/about/',
+  '/aksesibilitas/',
   '/author/',
   '/data/',
   '/category/',
