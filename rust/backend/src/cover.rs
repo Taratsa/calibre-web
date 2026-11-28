@@ -10,6 +10,7 @@ use axum::http::{HeaderMap, HeaderValue, Method, StatusCode, Uri, header};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use rusqlite::OptionalExtension;
+use sha2::{Digest, Sha256};
 use std::path::Path as FsPath;
 use std::sync::Arc;
 use tokio::io::{AsyncReadExt, AsyncSeekExt};
@@ -231,15 +232,19 @@ async fn handle(
             return proxy::fallback_reconstructed(state, &request_path, method, headers).await;
         }
     };
-    if !book.has_cover {
-        return proxy::fallback_reconstructed(state, &request_path, method, headers).await;
-    }
     let accept_webp =
         accept::accepts_webp(headers.get(header::ACCEPT).and_then(|v| v.to_str().ok()));
     let selected = resolution(requested_resolution.as_deref(), route);
     let book_dir = settings.book_path().join(&book.path);
     let cover_jpg = book_dir.join("cover.jpg");
-    if !cover_jpg.is_file() {
+    // Flask's `get_cover_on_failure`: no cover flag, or the file is gone. The card is rendered by Flask, which also keeps
+    // it under `cache/placeholders`; Rust only serves a card that is already there.
+    if !book.has_cover || !cover_jpg.is_file() {
+        let fmt = if accept_webp { "webp" } else { "jpeg" };
+        if let Some(response) = placeholder_card(&state, &book, selected, fmt, route, &method).await
+        {
+            return response;
+        }
         return proxy::fallback_reconstructed(state, &request_path, method, headers).await;
     }
     if let Some(resolution) = selected {
@@ -279,6 +284,10 @@ struct Cover {
     id: i64,
     path: String,
     has_cover: bool,
+    /// `books.title` (Flask renders `book.title or ""`), read only for generated placeholder cards.
+    title: String,
+    /// The first publisher *as Flask's ORM returns it* (`book.publishers[0]`), or "".
+    publisher: String,
 }
 
 fn find_visible_cover(
@@ -290,7 +299,7 @@ fn find_visible_cover(
 ) -> rusqlite::Result<Option<Cover>> {
     let conn = crate::settings::open_read_only(metadata_db)?;
     let (filter, extra) = crate::library::visibility_clause(language, denied, allowed);
-    let sql = format!("SELECT b.id, b.path, b.has_cover FROM books b WHERE b.id = ?1{filter}");
+    let sql = format!("{} WHERE b.id = ?1{filter}", COVER_SELECT);
     let mut values = vec![rusqlite::types::Value::Integer(book_id)];
     values.extend(extra);
     conn.query_row(&sql, rusqlite::params_from_iter(values), cover_row)
@@ -302,7 +311,10 @@ fn find_visible_cover(
 fn find_series_cover(metadata_db: &FsPath, series_id: i64) -> rusqlite::Result<Option<Cover>> {
     let conn = crate::settings::open_read_only(metadata_db)?;
     conn.query_row(
-        "SELECT b.id, b.path, b.has_cover FROM books_series_link l JOIN books b ON b.id = l.book
+        "SELECT b.id, b.path, b.has_cover, COALESCE(b.title, ''),
+                COALESCE((SELECT p.name FROM books_publishers_link pl JOIN publishers p ON p.id = pl.publisher
+                          WHERE pl.book = b.id ORDER BY pl.id LIMIT 1), '')
+         FROM books_series_link l JOIN books b ON b.id = l.book
          WHERE l.series = ?1 AND b.has_cover = 1 ORDER BY l.id LIMIT 1",
         [series_id],
         cover_row,
@@ -310,12 +322,88 @@ fn find_series_cover(metadata_db: &FsPath, series_id: i64) -> rusqlite::Result<O
     .optional()
 }
 
+/// Columns shared by the book and series queries, in `cover_row`'s order.
+const COVER_SELECT: &str = "SELECT b.id, b.path, b.has_cover, COALESCE(b.title, ''),
+       COALESCE((SELECT p.name FROM books_publishers_link pl JOIN publishers p ON p.id = pl.publisher
+                 WHERE pl.book = b.id ORDER BY pl.id LIMIT 1), '')
+FROM books b";
+
 fn cover_row(row: &rusqlite::Row<'_>) -> rusqlite::Result<Cover> {
     Ok(Cover {
         id: row.get(0)?,
         path: row.get(1)?,
         has_cover: row.get::<_, i64>(2)? != 0,
+        title: row.get(3)?,
+        publisher: row.get(4)?,
     })
+}
+
+/// `cover_placeholder.cache_name` in `cps/cover_placeholder.py`: SHA-256 of `title \0 publisher \0 height \0 fmt`, first
+/// 32 hex digits and `.webp`/`.jpg`. Both sides compute it from the same database values, so Rust finds exactly the file
+/// Flask rendered; if the recipe ever changes, Rust misses and proxies (Flask renders again), it never serves a wrong card.
+fn placeholder_name(title: &str, publisher: &str, height: u32, fmt: &str) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(format!("{title}\0{publisher}\0{height}\0{fmt}").as_bytes());
+    let digest = hex::encode(hasher.finalize());
+    format!(
+        "{}.{}",
+        &digest[..32],
+        if fmt == "webp" { "webp" } else { "jpg" }
+    )
+}
+
+/// A generated card from Flask's cache. Flask answers these with a plain `make_response(bytes)`: no ETag, no
+/// Last-Modified, no `Accept-Ranges`, so Range and conditional requests are ignored and every answer is 200 (this was
+/// measured on the live app; see `AGENTS.md`).
+async fn placeholder_card(
+    state: &AppState,
+    book: &Cover,
+    selected: Option<u8>,
+    fmt: &str,
+    route: CoverRoute,
+    method: &Method,
+) -> Option<Response> {
+    let height = selected.map_or(1020, |resolution| 255 * u32::from(resolution));
+    let path = state
+        .cache_directory
+        .join("placeholders")
+        .join(placeholder_name(&book.title, &book.publisher, height, fmt));
+    let data = tokio::fs::read(&path).await.ok()?;
+    let length = data.len();
+    let mut response = StatusCode::OK.into_response();
+    if *method != Method::HEAD {
+        *response.body_mut() = Body::from(data);
+    }
+    let headers = response.headers_mut();
+    headers.insert(
+        header::CONTENT_TYPE,
+        HeaderValue::from_static(if fmt == "webp" {
+            "image/webp"
+        } else {
+            "image/jpeg"
+        }),
+    );
+    if let Ok(value) = HeaderValue::from_str(&length.to_string()) {
+        headers.insert(header::CONTENT_LENGTH, value);
+    }
+    let thumbnail = matches!(route, CoverRoute::Thumbnail);
+    headers.insert(
+        header::CACHE_CONTROL,
+        HeaderValue::from_static(if thumbnail {
+            "public, max-age=604800"
+        } else {
+            "public, max-age=86400"
+        }),
+    );
+    headers.insert(
+        header::VARY,
+        HeaderValue::from_static(if thumbnail {
+            "Accept-Encoding, Cookie"
+        } else {
+            "Accept, Cookie"
+        }),
+    );
+    Some(response)
 }
 
 async fn generic_cover(
@@ -650,7 +738,56 @@ pub(crate) fn parse_range(value: Option<&str>, size: u64) -> Option<Result<(u64,
 
 #[cfg(test)]
 mod tests {
-    use super::{CoverRoute, resolution};
+    use super::{CoverRoute, placeholder_name, resolution};
+
+    // Outputs of `cover_placeholder.cache_name` in the app image (Python 3.15, hashlib.sha256 of UTF-8).
+    #[test]
+    fn placeholder_names_match_flasks_cache_name() {
+        for (title, publisher, height, fmt, expected) in [
+            (
+                "Café Müller",
+                "",
+                255,
+                "webp",
+                "8aff485791485db7b0c345f9e36f0e6a.webp",
+            ),
+            ("", "", 1020, "jpeg", "3d44a9f15096e6646def9a34cbc0f0fd.jpg"),
+            (
+                "Book 8",
+                "",
+                255,
+                "jpeg",
+                "bb6bed5d2ec17abca79662f075c0d965.jpg",
+            ),
+            (
+                "Mikrotik: Setup Konfigurasi HotSpot",
+                "",
+                1020,
+                "webp",
+                "5ff174d920384876ac302a4625f76704.webp",
+            ),
+            (
+                "Kebijakan & Privasi / Uji",
+                "Penerbit Uji",
+                510,
+                "jpeg",
+                "de78a43b2077b3c1c0604eee6b595490.jpg",
+            ),
+            (
+                "中文 📚",
+                "",
+                255,
+                "webp",
+                "cd2881e16f8f97f5313ba70824c9939a.webp",
+            ),
+        ] {
+            assert_eq!(
+                placeholder_name(title, publisher, height, fmt),
+                expected,
+                "{title}/{publisher}/{height}/{fmt}"
+            );
+        }
+    }
 
     #[test]
     fn flask_resolution_defaults() {

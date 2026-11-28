@@ -21,7 +21,7 @@ backend answers. Nothing moves until its Rust version has been compared against 
 |---|---|---|
 | `/health`, `/healthz`, `/readyz`, `/healthz/live`, `/healthz/ready` | `src/health.rs` | same paths and payload keys as `cps/health.py`; `process` names the Rust runtime |
 | `/files/<id>/<fmt>/<version>/<sig>[/<name>]` | `src/files.rs` | signed, immutable, never counts a download; `Range`/`ETag`/`Last-Modified` from `tower-http` |
-| `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
+| `/cover/<id>[/<resolution>]`, `/cover_thumb/<id>[/<resolution>]` | `src/cover.rs` | anonymous unfiltered fast path reads cached JPEG/WebP files and the generated placeholder cards Flask rendered; all cookie/auth/restricted/Drive and cache-miss cases stay on Flask |
 | `/series_cover/<id>[/<resolution>]` | `src/cover.rs` | the cover of the series' first book with a cover (no visibility filter, like Flask); same fast path and fallbacks as `/cover`; stays on Flask while `app.db` holds any series thumbnail row |
 | `/download/<id>/<fmt>[/<name>]` | `src/download.rs` | anonymous only: counts the download in `app.db` and 302s to the signed `/files` URL; identity and failure cases proxy to Flask |
 | `/static/<path>` | `src/static_files.rs` | GET/HEAD of an existing plain file under `cps/static`: werkzeug's ETag, `Last-Modified`, `no-cache`, 304 and single-range 206; a miss, odd path, symlink out, unknown type, other method, 412 or 416 goes to Flask |
@@ -31,6 +31,27 @@ JPEG or prebuilt WebP, or an existing Flask thumbnail-cache file. On cache miss 
 a prebuilt image), Rust proxies the original request to Flask; Flask generates/converts the asset and fills the
 shared cache. Generated placeholder cards are still served by Flask. The security headers of `add_security_headers`
 are applied here to every response (`src/security.rs`).
+
+### Placeholder cards (2026-11-28)
+
+A book without a cover (`has_cover = 0`, or `cover.jpg` missing) gets a generated card from Flask's
+`cover_placeholder.py`. Flask renders it once and keeps it in `<CACHE_DIRECTORY>/placeholders/`; Rust computes the same
+file name and serves that file. The name is `sha256("title \0 publisher \0 height \0 fmt")[:32]` plus `.webp`/`.jpg`
+(`cover::placeholder_name` mirrors `cover_placeholder.cache_name`). `height` is `255 * resolution` (sm/md/lg = 1/2/4) or
+1020 for the original and `og`; `fmt` is `webp` when Werkzeug's `MIMEAccept` contains `image/webp`, else `jpeg`. The
+publisher is the first `publishers` row by link id, which is what Flask's `book.publishers[0]` returns for every
+coverless book in this library (none has two publishers). A wrong or changed recipe cannot serve a wrong card: Rust
+misses the file and proxies, and Flask renders and stores it.
+
+Rust reads `books.title` and that publisher in the same metadata query it already ran for `has_cover`/`path`. Serving the
+file matches Flask's `make_response(bytes)` exactly: 200 with `Content-Type`, `Content-Length`, `Cache-Control`
+(`public, max-age=86400` for `/cover*`, `public, max-age=604800` for `/cover_thumb*`) and `Vary`
+(`Accept, Cookie` / `Accept-Encoding, Cookie`), and NO `ETag`, `Last-Modified`, `Accept-Ranges` or `Content-Disposition`,
+so `Range` and `If-None-Match` are ignored and HEAD carries the length with no body.
+
+Checked on a throwaway image with copies of `app.db`/`metadata.db` (no book files, so every book took the placeholder
+branch): 2,702 responses over 120 books, 10 URL shapes and both `Accept` values, plus HEAD, `Range` and
+`If-None-Match`: 0 mismatches in status, headers or bytes. A cached card takes Rust 2-7 ms against Flask's 22-54 ms.
 
 ### Cover fallback requirements
 

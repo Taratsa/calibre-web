@@ -1095,11 +1095,22 @@ Two live search systems (plus the legacy advanced-search form):
   2:3, import-linter contract `cover-placeholder-is-pure`). It is rendered on demand by `get_cover_on_failure()` in
   `cps/helper.py` at the SAME URLs as real covers (`/cover/<id>`, `/cover_thumb/<id>[/sm|md|lg]`, `/opds/cover/<id>`),
   so every consumer (Astro cards, book page, search, OG image, sitemap image, OPDS) needs no special case and
-  `seed.mjs` always emits `/cover_thumb/<id>` and `/cover/<id>/og`. Output is memoised in-process (`render_cached`,
-  256 entries) and sent with `max-age=86400`, `Vary: Accept` (WebP or JPEG). Only an unknown/invisible book id still
-  gets the static `generic_cover.jpg`, so nothing about hidden books leaks. To change the look edit
+  `seed.mjs` always emits `/cover_thumb/<id>` and `/cover/<id>/og`. Each card is rendered ONCE and kept on disk:
+  `cover_placeholder.render_persisted()` writes `cache/placeholders/<sha256(title \\0 publisher \\0 height \\0 fmt)[:32]>.<webp|jpg>`
+  (atomic tmp + rename; a failed write only costs a re-render), and the Rust backend computes the same name
+  (`cover::placeholder_name`) and serves that file itself (2026-11-28), so a repeat costs Flask nothing and a crawler
+  sweep does not re-render thousands of cards. The hash recipe is a contract between `cover_placeholder.cache_name` and
+  Rust: change one without the other and Rust just misses and proxies (Flask re-renders), never serves a wrong card.
+  Placeholder responses carry no ETag/Last-Modified/`Accept-Ranges`, so Range and conditional requests are ignored
+  (checked live); `/cover*` answers `max-age=86400` + `Vary: Accept, Cookie`, `/cover_thumb*` `max-age=604800` +
+  `Vary: Accept-Encoding, Cookie` (the thumb route overrides). Only an unknown/invisible book id still
+  gets the static `generic_cover.jpg`, so nothing about hidden books leaks. A retitled or republished book gets a NEW
+  file name; the old one is left behind (nothing prunes `cache/placeholders` yet). To change the look edit
   `cover_placeholder.py` (the whole template is that one file); a new look reaches browsers/CDN within a day. Titles
-  are HTML-unescaped and `_` turned into spaces (several coverless titles are slugs or contain `&amp;`)
+  are HTML-unescaped and `_` turned into spaces (several coverless titles are slugs or contain `&amp;`).
+  Checked 2026-11-28 on a throwaway image with copies of `app.db`/`metadata.db` (no book files): 2,702 responses over 120
+  coverless books × 10 URL shapes × both `Accept` values, plus HEAD, `Range` and `If-None-Match`, were identical between
+  Flask and Rust in status, headers and bytes. A cached card takes Flask 22-54 ms and Rust 2-7 ms.
 - **Error responses are not cacheable at the origin** (changed 2026-11-20, after the 2026-11-18 outage): the `/cover*`
   rule in the production Caddyfile sets `Cache-Control: public, max-age=86400` only inside `handle_response` for
   `status 2xx`, and `no-store` for 3xx/4xx/5xx. A plain `header @covers >Cache-Control ...` applied to every status, so

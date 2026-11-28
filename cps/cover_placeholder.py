@@ -6,11 +6,14 @@ Style follows the site design system: neutral light canvas, near-black type, no 
 
 from __future__ import annotations
 
+import contextlib
+import hashlib
 import html
 import os
 import re
 from functools import lru_cache
 from io import BytesIO
+from uuid import uuid4
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -173,7 +176,37 @@ def render(
     return out.getvalue(), "image/jpeg"
 
 
-@lru_cache(maxsize=256)
-def render_cached(title: str, publisher: str, height: int, fmt: str) -> tuple[bytes, str]:
-    """``render`` memoised: the same few hundred cards are requested over and over (grids, thumbnails, crawlers)."""
-    return render(title, publisher, height, fmt)
+def cache_name(title: str, publisher: str, height: int, fmt: str) -> str:
+    """File name for a rendered card, derived from the inputs and nothing else.
+
+    The Rust backend computes the same name to serve a card Flask has already rendered (it never renders one itself), so
+    the recipe is a contract between the two: UTF-8 of ``title \\0 publisher \\0 height \\0 fmt``, SHA-256, first 32 hex
+    digits, extension ``webp`` or ``jpg``. A retitled book or an edited publisher gets a new name; the old file is left
+    for the cache owner to prune.
+    """
+    digest = hashlib.sha256(f"{title}\x00{publisher}\x00{height}\x00{fmt}".encode()).hexdigest()[:32]
+    return f"{digest}.{'webp' if fmt == 'webp' else 'jpg'}"
+
+
+def render_persisted(
+    title: str | None, publisher: str | None, height: int, fmt: str, cache_dir: str
+) -> tuple[bytes, str]:
+    """``render`` once per card, kept on disk: a crawler asks for the same few thousand cards over and over, and each
+    render costs ~60 ms of Pillow. Returns ``(bytes, mimetype)``. A failed write only costs a future re-render."""
+    mimetype = "image/webp" if fmt == "webp" else "image/jpeg"
+    path = os.path.join(cache_dir, cache_name(title or "", publisher or "", height, fmt))
+    try:
+        with open(path, "rb") as cached:
+            return cached.read(), mimetype
+    except FileNotFoundError:
+        pass
+    data, mimetype = render(title, publisher, height, fmt)
+    temporary = f"{path}.{os.getpid()}.{uuid4().hex}.tmp"
+    try:
+        with open(temporary, "wb") as out:
+            out.write(data)
+        os.replace(temporary, path)
+    except OSError:
+        with contextlib.suppress(OSError):
+            os.unlink(temporary)
+    return data, mimetype

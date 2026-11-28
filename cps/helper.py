@@ -785,8 +785,14 @@ def get_cover_on_failure(book=None, resolution=None, accept_webp=False):
         try:
             height = int(255 * resolution) if resolution else cover_placeholder.DEFAULT_HEIGHT
             publisher = book.publishers[0].name if book.publishers else ""
-            data, mimetype = cover_placeholder.render_cached(
-                book.title or "", publisher, height, "webp" if accept_webp else "jpeg"
+            # The card is rendered once and kept on disk (cache/placeholders), so a repeat costs one read here and no
+            # render at all in the Rust backend, which serves the same file (see cover_placeholder.cache_name).
+            data, mimetype = cover_placeholder.render_persisted(
+                book.title or "",
+                publisher,
+                height,
+                "webp" if accept_webp else "jpeg",
+                fs.FileSystem().get_cache_dir("placeholders"),
             )
             response = make_response(data)
             response.headers["Content-Type"] = mimetype

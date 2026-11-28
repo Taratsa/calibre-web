@@ -38,7 +38,10 @@ fn fixture(embed_metadata: bool) -> Fixture {
          CREATE TABLE books_tags_link (id INTEGER PRIMARY KEY, book INTEGER, tag INTEGER);
          CREATE TABLE tags (id INTEGER PRIMARY KEY, name TEXT);
          CREATE TABLE books_series_link (id INTEGER PRIMARY KEY, book INTEGER, series INTEGER);
+         CREATE TABLE publishers (id INTEGER PRIMARY KEY, name TEXT);
+         CREATE TABLE books_publishers_link (id INTEGER PRIMARY KEY, book INTEGER, publisher INTEGER);
          INSERT INTO books VALUES (7, 'Café Müller', 'Author/Cafe (7)', '2023-10-27 07:56:53.123456', 1);
+         INSERT INTO books VALUES (8, 'Book 8', 'No Publisher/Book 8 (8)', '2023-10-27 07:56:53.123456', 0);
          INSERT INTO authors VALUES (1, 'First Author'), (2, 'Second Author');
          INSERT INTO books_authors_link (book, author) VALUES (7, 2), (7, 1);
          INSERT INTO books_series_link (book, series) VALUES (7, 3);",
@@ -94,6 +97,17 @@ fn fixture(embed_metadata: bool) -> Fixture {
     Arc::get_mut(&mut state).unwrap().proxy_url = "http://127.0.0.1:1".into();
     Arc::get_mut(&mut state).unwrap().umami_url = None;
     Arc::get_mut(&mut state).unwrap().ocr_cache_directory = dir.path().join("ocr");
+    // Cards Flask has already rendered for book 8 (`cps/cover_placeholder.cache_name`): 255 px WebP (thumbnails),
+    // 1020 px WebP and 1020 px JPEG (original/`og`).
+    let placeholders = dir.path().join("cache/placeholders");
+    std::fs::create_dir_all(&placeholders).unwrap();
+    for (height, fmt) in [(255, "webp"), (1020, "webp"), (1020, "jpeg")] {
+        std::fs::write(
+            placeholders.join(placeholder_file_name("Book 8", "", height, fmt)),
+            format!("card-{height}-{fmt}"),
+        )
+        .unwrap();
+    }
     let slugs = dir.path().join("book-slugs.json");
     std::fs::write(&slugs, r#"{"7": "cafe-muller", "8": "Bad_Slug"}"#).unwrap();
     Arc::get_mut(&mut state).unwrap().book_slugs_path = Some(slugs);
@@ -1670,5 +1684,142 @@ async fn legacy_author_urls_redirect_to_the_computed_slug() {
         let (status, headers, _) = legacy(&f, uri, &[]).await;
         assert_eq!(status, StatusCode::MOVED_PERMANENTLY, "{uri}");
         assert_eq!(headers[header::LOCATION], location, "{uri}");
+    }
+}
+
+/// The recipe of `cps/cover_placeholder.cache_name`; the unit test in `cover.rs` pins the Rust copy to Flask's output.
+fn placeholder_file_name(title: &str, publisher: &str, height: u32, fmt: &str) -> String {
+    use sha2::{Digest, Sha256};
+    let mut hasher = Sha256::new();
+    hasher.update(format!("{title}\0{publisher}\0{height}\0{fmt}").as_bytes());
+    let digest = sha2::Digest::finalize(hasher);
+    let encoded = hex::encode(digest);
+    format!(
+        "{}.{}",
+        &encoded[..32],
+        if fmt == "webp" { "webp" } else { "jpg" }
+    )
+}
+
+async fn fetch_image(
+    f: &Fixture,
+    uri: &str,
+    accept: Option<&str>,
+    method: &str,
+) -> (StatusCode, axum::http::HeaderMap, Vec<u8>) {
+    let mut request = Request::builder()
+        .uri(uri)
+        .method(method)
+        .header(header::HOST, "pustaka.example");
+    if let Some(value) = accept {
+        request = request.header(header::ACCEPT, value);
+    }
+    let response = f
+        .app
+        .clone()
+        .oneshot(request.body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    let (parts, body) = response.into_parts();
+    (
+        parts.status,
+        parts.headers,
+        body.collect().await.unwrap().to_bytes().to_vec(),
+    )
+}
+
+#[tokio::test]
+async fn a_rendered_placeholder_card_is_served_with_flasks_headers() {
+    let f = fixture(false);
+    for (uri, wanted, body, content_type, cache_control, vary) in [
+        (
+            "/cover/8",
+            "image/webp",
+            "card-1020-webp",
+            "image/webp",
+            "public, max-age=86400",
+            "Accept, Cookie",
+        ),
+        (
+            "/cover/8/og",
+            "image/jpeg",
+            "card-1020-jpeg",
+            "image/jpeg",
+            "public, max-age=86400",
+            "Accept, Cookie",
+        ),
+        (
+            "/cover/8/sm",
+            "image/webp",
+            "card-255-webp",
+            "image/webp",
+            "public, max-age=86400",
+            "Accept, Cookie",
+        ),
+        (
+            "/cover_thumb/8",
+            "image/webp",
+            "card-255-webp",
+            "image/webp",
+            "public, max-age=604800",
+            "Accept-Encoding, Cookie",
+        ),
+        (
+            "/cover_thumb/8/lg",
+            "image/webp",
+            "card-1020-webp",
+            "image/webp",
+            "public, max-age=604800",
+            "Accept-Encoding, Cookie",
+        ),
+    ] {
+        let (status, headers, got) = fetch_image(&f, uri, Some(wanted), "GET").await;
+        assert_eq!(status, StatusCode::OK, "{uri} {wanted}");
+        assert_eq!(got, body.as_bytes(), "{uri} {wanted}");
+        assert_eq!(headers[header::CONTENT_TYPE], content_type, "{uri}");
+        assert_eq!(headers[header::CACHE_CONTROL], cache_control, "{uri}");
+        assert_eq!(headers[header::VARY], vary, "{uri}");
+        assert!(
+            headers.get(header::ETAG).is_none(),
+            "{uri} must not carry a validator"
+        );
+        assert!(headers.get(header::ACCEPT_RANGES).is_none(), "{uri}");
+    }
+    // Flask sends no validators, so a conditional or range request still gets the whole card.
+    let request = Request::builder()
+        .uri("/cover_thumb/8")
+        .header(header::HOST, "pustaka.example")
+        .header(header::ACCEPT, "image/webp")
+        .header(header::IF_NONE_MATCH, "\"x\"")
+        .header(header::RANGE, "bytes=0-3")
+        .body(Body::empty())
+        .unwrap();
+    let response = f.app.clone().oneshot(request).await.unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    let (parts, body) = response.into_parts();
+    assert_eq!(
+        body.collect().await.unwrap().to_bytes(),
+        &b"card-255-webp"[..]
+    );
+    assert_eq!(parts.headers[header::CONTENT_LENGTH], "13");
+    // HEAD carries the length and no body.
+    let (status, headers, body) =
+        fetch_image(&f, "/cover_thumb/8", Some("image/webp"), "HEAD").await;
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(headers[header::CONTENT_LENGTH], "13");
+    assert!(body.is_empty());
+}
+
+#[tokio::test]
+async fn a_card_that_flask_has_not_rendered_yet_goes_to_flask() {
+    let f = fixture(false);
+    // A height/format pair the cache does not have: Rust must not serve another size or the other format.
+    for (uri, wanted) in [
+        ("/cover_thumb/8/md", "image/webp"),
+        ("/cover/8/sm", "image/jpeg"),
+        ("/cover_thumb/8/md", "image/jpeg"),
+    ] {
+        let (status, _, _) = fetch_image(&f, uri, Some(wanted), "GET").await;
+        assert_eq!(status, StatusCode::BAD_GATEWAY, "{uri} {wanted}");
     }
 }
