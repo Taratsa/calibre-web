@@ -7,6 +7,9 @@ pub mod auth_page;
 pub mod authdb;
 pub mod authors;
 pub mod authors_admin;
+pub mod bookedit;
+pub mod books_admin;
+pub mod books_bulk;
 pub mod cover;
 pub mod download;
 pub mod epub_page;
@@ -166,6 +169,7 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(crate::login::routes())
         .merge(crate::twofa::routes())
         .merge(crate::authors_admin::routes())
+        .merge(crate::books_admin::routes())
         .merge(crate::whoami::routes())
         .merge(crate::suggest::routes())
         .merge(crate::opds_guard::routes())

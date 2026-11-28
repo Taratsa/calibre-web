@@ -42,7 +42,7 @@ static LANGUAGES: LazyLock<HashMap<&'static str, Vec<(&'static str, &'static str
     });
 
 /// `isoLanguages.get_language_names(locale)`: the exact locale, then its language part, then English.
-fn names_for(locale: &str) -> &'static [(&'static str, &'static str)] {
+pub(crate) fn names_for(locale: &str) -> &'static [(&'static str, &'static str)] {
     let language = locale.split(['_', '-']).next().unwrap_or("en");
     LANGUAGES
         .get(locale)

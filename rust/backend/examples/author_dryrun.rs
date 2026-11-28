@@ -4,7 +4,7 @@ use taratsa_backend::authors::{apply, open_library, plan};
 fn main() {
     let args: Vec<String> = std::env::args().skip(1).collect();
     let (path, old, new) = (&args[0], &args[1], &args[2]);
-    let mut conn = open_library(std::path::Path::new(path)).expect("open");
+    let mut conn = open_library(std::path::Path::new(path), None).expect("open");
     let preview = plan(&conn, old, new).expect("plan");
     println!(
         "mode={:?} books={} old=({:?}, sort {:?}) target={:?}",

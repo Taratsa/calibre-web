@@ -7,6 +7,17 @@ const MAX_BYTES: usize = 128;
 ///
 /// `unicode` is `config_unicode_filename || force_unidecode`: transliterate to ASCII.
 pub fn valid_filename(value: &str, unicode: bool) -> Option<String> {
+    clean(value, MAX_BYTES, unicode, false)
+}
+
+/// `get_valid_filename(value, chars=chars, force_unidecode=unicode)` with `replace_whitespace=True`, the form that names
+/// the folders and files of the library (`96` for the author and title folders, `42` for the file names): the characters
+/// `* + : \ " / < > ?` become `_` (a run becomes one `_`), `|` becomes `,`.
+pub fn library_name(value: &str, chars: usize, unicode: bool) -> Option<String> {
+    clean(value, chars, unicode, true)
+}
+
+fn clean(value: &str, limit: usize, unicode: bool, replace_whitespace: bool) -> Option<String> {
     let mut value = value.to_owned();
     if value.ends_with('.') {
         value.pop();
@@ -33,8 +44,41 @@ pub fn valid_filename(value: &str, unicode: bool) -> Option<String> {
     } else {
         cleaned.as_str()
     };
-    let text = strip_whitespaces(truncate_bytes(text, MAX_BYTES));
+    let replaced;
+    let text = if replace_whitespace {
+        replaced = replace_runs(text);
+        replaced.as_str()
+    } else {
+        text
+    };
+    let text = strip_whitespaces(truncate_bytes(text, limit));
     (!text.is_empty()).then(|| text.to_owned())
+}
+
+/// `re.sub(r"[*+:\\\"/<>?]+", "_", v)` then `re.sub(r"[|]+", ",", v)`.
+fn replace_runs(text: &str) -> String {
+    let mut out = String::with_capacity(text.len());
+    let mut last: Option<char> = None;
+    for ch in text.chars() {
+        let class = match ch {
+            '*' | '+' | ':' | '\\' | '"' | '/' | '<' | '>' | '?' => Some('_'),
+            '|' => Some(','),
+            _ => None,
+        };
+        match class {
+            Some(replacement) => {
+                if last != Some(replacement) {
+                    out.push(replacement);
+                }
+                last = Some(replacement);
+            }
+            None => {
+                out.push(ch);
+                last = None;
+            }
+        }
+    }
+    out
 }
 
 /// `value.encode("utf-8")[:n].decode("utf-8", errors="ignore")`.
@@ -50,7 +94,7 @@ fn truncate_bytes(text: &str, limit: usize) -> &str {
 }
 
 /// `strip_whitespaces` in `cps/string_helper.py`: whitespace plus the zero-width characters U+200B-U+200D, U+FEFF.
-fn strip_whitespaces(text: &str) -> &str {
+pub(crate) fn strip_whitespaces(text: &str) -> &str {
     text.trim_matches(|c: char| {
         c.is_whitespace() || matches!(c, '\u{200B}'..='\u{200D}' | '\u{FEFF}')
     })
@@ -93,6 +137,26 @@ pub fn content_disposition(
 
 #[cfg(test)]
 mod tests {
+    /// 48 values produced by Flask's own `get_valid_filename` (source of `cps/helper.py` run in the app image, both
+    /// `force_unidecode` settings, the `chars` the library uses).
+    #[test]
+    fn library_name_matches_flask() {
+        let vectors: Vec<(String, usize, bool, String)> =
+            serde_json::from_str(include_str!("../tests/data/valid_filename.json")).unwrap();
+        assert_eq!(vectors.len(), 48);
+        for (value, chars, unicode, expected) in vectors {
+            let got = super::library_name(&value, chars, unicode);
+            match expected.strip_prefix("ERR:") {
+                Some(_) => assert_eq!(got, None, "{value:?} chars={chars} unicode={unicode}"),
+                None => assert_eq!(
+                    got.as_deref(),
+                    Some(expected.as_str()),
+                    "{value:?} chars={chars} unicode={unicode}"
+                ),
+            }
+        }
+    }
+
     use super::*;
 
     #[test]

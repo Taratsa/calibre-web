@@ -214,6 +214,45 @@ pub fn audit_resource(
     }
 }
 
+/// `change_archived_books(book_id, state)` for one account: upsert the `archived_book` row, and when archiving, drop the
+/// account's `kobo_synced_books` row (`kobo_sync_status.remove_synced_book`), so the book leaves its Kobo.
+pub fn set_archived(
+    app_db: &Path,
+    user_id: i64,
+    book_id: i64,
+    archived: bool,
+) -> rusqlite::Result<()> {
+    let modified = chrono::Utc::now()
+        .format("%Y-%m-%d %H:%M:%S%.6f")
+        .to_string();
+    let mut conn = open(app_db)?;
+    let tx = conn.transaction()?;
+    let existing: Option<i64> = tx
+        .query_row(
+            "SELECT id FROM archived_book WHERE user_id = ?1 AND book_id = ?2 ORDER BY id LIMIT 1",
+            params![user_id, book_id],
+            |row| row.get(0),
+        )
+        .optional()?;
+    match existing {
+        Some(id) => tx.execute(
+            "UPDATE archived_book SET is_archived = ?2, last_modified = ?3 WHERE id = ?1",
+            params![id, archived, modified],
+        )?,
+        None => tx.execute(
+            "INSERT INTO archived_book (user_id, book_id, is_archived, last_modified) VALUES (?1, ?2, ?3, ?4)",
+            params![user_id, book_id, archived, modified],
+        )?,
+    };
+    if archived {
+        tx.execute(
+            "DELETE FROM kobo_synced_books WHERE book_id = ?1 AND user_id = ?2",
+            params![book_id, user_id],
+        )?;
+    }
+    tx.commit()
+}
+
 /// Seconds since the epoch, `datetime.now() + 31 days` as the Python store writes it.
 pub fn session_expiry(now: i64) -> i64 {
     now + 31 * 24 * 60 * 60

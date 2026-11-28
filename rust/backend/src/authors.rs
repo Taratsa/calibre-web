@@ -114,22 +114,30 @@ impl From<rusqlite::Error> for PlanError {
 
 /// `title_sort` and `uuid4` are Python functions Calibre registers on its connections; the triggers of `metadata.db`
 /// name them, so any UPDATE of `books` fails without them ("no such function: title_sort").
-pub fn open_library(path: &Path) -> rusqlite::Result<Connection> {
+pub fn open_library(path: &Path, regex: Option<regex::Regex>) -> rusqlite::Result<Connection> {
     let conn = Connection::open_with_flags(
         path,
         rusqlite::OpenFlags::SQLITE_OPEN_READ_WRITE | rusqlite::OpenFlags::SQLITE_OPEN_NO_MUTEX,
     )?;
     conn.busy_timeout(Duration::from_secs(30))?;
-    register_functions(&conn)?;
+    register_functions(&conn, regex)?;
     Ok(conn)
 }
 
-pub fn register_functions(conn: &Connection) -> rusqlite::Result<()> {
+/// `regex`: the library's `config_title_regex` (the `title_sort` the triggers call must be the real one, or a title or
+/// series edit would store a wrong sort); `None` makes it the identity, for fixtures that never change a title.
+pub fn register_functions(conn: &Connection, regex: Option<regex::Regex>) -> rusqlite::Result<()> {
     conn.create_scalar_function(
         "title_sort",
         1,
         FunctionFlags::SQLITE_UTF8 | FunctionFlags::SQLITE_DETERMINISTIC,
-        |ctx| ctx.get::<Option<String>>(0),
+        move |ctx| {
+            let title = ctx.get::<Option<String>>(0)?;
+            Ok(match (&regex, title) {
+                (Some(regex), Some(title)) => Some(crate::bookedit::title_sort(regex, &title)),
+                (_, title) => title,
+            })
+        },
     )?;
     conn.create_scalar_function("uuid4", 0, FunctionFlags::SQLITE_UTF8, |_| {
         Ok(uuid::Uuid::new_v4().to_string())
@@ -223,6 +231,13 @@ pub struct Applied {
     pub books: usize,
     pub new_name: String,
     pub backup: Option<std::path::PathBuf>,
+}
+
+/// `books.last_modified` as this backend writes it (`...+00:00`, read back by Flask and `signing::epoch`).
+pub fn now_stamp() -> String {
+    chrono::Utc::now()
+        .format("%Y-%m-%d %H:%M:%S%.6f+00:00")
+        .to_string()
 }
 
 /// A consistent copy of the database next to the library's backups (`VACUUM INTO`), taken before any write.
@@ -390,7 +405,7 @@ mod tests {
 
     fn library() -> Connection {
         let conn = Connection::open_in_memory().unwrap();
-        register_functions(&conn).unwrap();
+        register_functions(&conn, None).unwrap();
         conn.execute_batch(
             "CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT, sort TEXT, author_sort TEXT,
                 last_modified TIMESTAMP, path TEXT, uuid TEXT);
@@ -612,7 +627,7 @@ mod tests {
             )
             .unwrap();
         }
-        let conn = open_library(&path).unwrap();
+        let conn = open_library(&path, None).unwrap();
         let copy = backup(&conn, &dir.path().join("backups")).unwrap();
         conn.execute("UPDATE authors SET name = 'changed'", [])
             .unwrap();

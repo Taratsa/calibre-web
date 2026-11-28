@@ -1015,6 +1015,41 @@ Two live search systems (plus the legacy advanced-search form):
   pick works. Endpoint 16-23 ms on the real catalogue (8,101 authors). NOT checked: a screen reader, touch devices.
 - Caddy: `/api/suggest` is in `@rust_auth` (Rust first, Flask failover), like `/api/whoami`.
 
+### Book manager in Rust (`/admin/books`, 2026-11-28, NOT deployed yet)
+- `rust/backend/src/books_admin.rs` (pages, listing, search, cell edit/save) and `books_bulk.rs` (bulk set/archive),
+  with the writes in `bookedit.rs` and the folder moves in `bookedit::relocate`. Flask's `manage_books*` and the
+  `plain_books_*` templates stay untouched as the fallback.
+- **Saving one field** (`bookedit::save_field`, the port of `edit_book_param` for the manager's six fields): ONE
+  transaction; the folder/file moves happen inside it and are UNDONE when anything later fails. Flask rolls the database
+  back but leaves a moved folder behind; this does not.
+- **Folders ARE moved now** (decided 2026-11-28): `<author (96, get_valid_filename)>/<title (96)> (<id>)` and the files
+  to `<title (42)> - <author (42)>.<ext>`, exactly Flask's `update_dir_structure_file`. An emptied author folder is
+  removed. The library is chowned to `abc` (PUID) by the entrypoint, which is the user the Rust process also runs as. A
+  format whose FILE is already gone (the archive has copies like 22749) no longer stops the move: Flask aborts the
+  rename and then leaves the database rolled back; here the present files move and the missing row keeps its old name
+  (logged).
+- `title_sort` on a writing connection is now the REAL one (`bookedit::title_regex` reads `config_title_regex`), not
+  the identity, so a title or series edit stores the sort Calibre expects (33 vectors from Flask in
+  `tests/data/title_sort.json`). Without the regex the trigger would write a wrong sort.
+- `get_valid_filename(.., chars=96/42)` is `filename::library_name`, checked against 48 vectors produced by Flask's own
+  function (`tests/data/valid_filename.json`): `* + : \ " / < > ?` runs become one `_`, `|` becomes `,`, control runs
+  one space, 96/42 BYTE truncation.
+- **Parity on real data** (a throwaway Flask and Rust on copies of the sandbox library, two saves: a title and an author
+  on a book with two authors): the `books` rows (title, sort, author_sort, path), the `authors` rows, the `data` rows and
+  the whole folder tree came out IDENTICAL; the reads (page, status line, search hits for "zine"/"adi"/"zzzzqq", the
+  authors and languages cells, the edit form, the unknown-id 404) matched too.
+- **Search** is Flask's `search_query`: title, tags, series, publishers and authors `ilike '%term%'`, the author split on
+  commas/spaces with every part required; the page's `lower()` is Flask's accent-folding `db.lcase`
+  (unidecode), so "cafe" finds "Café". Visibility is `common_filters(allow_show_archived=True)`: allowed/denied tags and
+  the language filter. A library with ANY custom column, or a restricted column configured, goes to Flask (the search
+  and the visibility rules there are not modelled).
+- **Bulk**: archive/unarchive and set-one-field are Rust (with the confirm step and `confirm=yes`); read/unread, merge and
+  delete stay Flask (they cascade into Kobo reading state, the thumbnail cache task, shelves and the debounced
+  duplicate-index scan). `audit_log` rows are written for every save and archive like `record_list_edit`.
+- **Caddy (unapplied)**: `/home/devuser/backups/Caddyfile.book-manager.patch` adds `/admin/books*` to a Rust-first block
+  before `@flask`, with Flask as the failover. Apply it only with the image that has these routes (Rust has no catch-all:
+  until then `/admin/books*` must keep going to Flask).
+
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
   Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on

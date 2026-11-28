@@ -190,6 +190,57 @@ pub fn layout(
     )
 }
 
+/// The shell for the staff pages Rust serves with htmx (the book manager): the plain UI's header with the links an
+/// administrator or editor sees, the vendored htmx script, and the CSRF token on `<body hx-headers>` so every htmx
+/// request carries it (Flask-WTF reads the `X-CSRFToken` header).
+pub fn layout_htmx(
+    instance: &str,
+    locale: &str,
+    title: &str,
+    body: &str,
+    user: &str,
+    csrf: &str,
+    is_admin: bool,
+) -> String {
+    let english = locale.starts_with("en");
+    let label = |en: &'static str, id: &'static str| e(if english { en } else { id });
+    let admin = if is_admin {
+        format!("<a href=\"/admin/view\">{}</a>", label("Admin", "Admin"))
+    } else {
+        String::new()
+    };
+    let account = format!(
+        "<a href=\"/search/\">{adv}</a><a href=\"/tasks\">{tasks}</a>{admin}<a href=\"/admin/books\">{manage}</a>\
+         <a href=\"/me\">{user}</a><a href=\"/logout\">{logout}</a>",
+        adv = label("Search", "Cari"),
+        tasks = label("Tasks", "Tugas"),
+        manage = label("Manage Books", "Kelola Buku"),
+        user = e(user),
+        logout = label("Logout", "Keluar"),
+    );
+    let token = serde_json::json!({ "X-CSRFToken": csrf }).to_string();
+    format!(
+        "<!doctype html>\n<html lang=\"{lang}\">\n<head>\n  <meta charset=\"utf-8\">\n  \
+         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  \
+         <meta name=\"color-scheme\" content=\"light dark\">\n  <meta name=\"robots\" content=\"noindex\">\n  \
+         <title>{instance} | {title}</title>\n  \
+         <link rel=\"icon\" type=\"image/png\" href=\"/static/favicon.png\">\n  \
+         <link rel=\"stylesheet\" href=\"/static/plain.css\">\n  \
+         <script defer src=\"/static/js/libs/htmx.min.js\"></script>\n</head>\n<body hx-headers='{token}'>\n  \
+         <header class=\"plain-header\">\n    \
+         <a class=\"plain-brand\" href=\"/\"><img src=\"/static/logo-taratsa.png\" alt=\"\"><span>{instance}</span></a>\n    \
+         <nav class=\"plain-nav\" aria-label=\"Main navigation\">{account}</nav>\n  </header>\n  \
+         <main class=\"plain-wrap\">\n    <div class=\"plain-page\">\n{body}\n    </div>\n    \
+         <footer class=\"plain-footer\">{instance}</footer>\n  </main>\n</body>\n</html>\n",
+        lang = if english { "en" } else { "id" },
+        instance = e(instance),
+        title = e(title),
+        token = token.replace('\'', "&#39;"),
+        account = account,
+        body = body,
+    )
+}
+
 /// One flash-style message block, Flask's `flash flash-error` markup.
 fn flash(message: &str) -> String {
     format!(

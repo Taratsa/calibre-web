@@ -215,8 +215,11 @@ fn open_plan(
     new: &str,
 ) -> Result<Plan, PlanError> {
     let _ = state;
-    let conn =
-        authors::open_library(&settings.metadata_db()).map_err(|e| PlanError::Db(e.to_string()))?;
+    let conn = authors::open_library(
+        &settings.metadata_db(),
+        Some(crate::bookedit::title_regex(&state.app_db)),
+    )
+    .map_err(|e| PlanError::Db(e.to_string()))?;
     authors::plan(&conn, old, new)
 }
 
@@ -385,9 +388,13 @@ async fn run(State(state): State<Arc<AppState>>, headers: HeaderMap, body: Bytes
         .app_db
         .parent()
         .map(|dir| dir.join("processed_books").join("author_renames"));
-    let (job_old, job_new) = (old.clone(), new.clone());
+    let (job_old, job_new, app_db_path) = (old.clone(), new.clone(), state.app_db.clone());
     let outcome = tokio::task::spawn_blocking(move || {
-        let mut conn = authors::open_library(&settings.metadata_db()).map_err(|e| e.to_string())?;
+        let mut conn = authors::open_library(
+            &settings.metadata_db(),
+            Some(crate::bookedit::title_regex(&app_db_path)),
+        )
+        .map_err(|e| e.to_string())?;
         authors::apply(
             &mut conn,
             &job_old,
