@@ -884,8 +884,11 @@ Two live search systems (plus the legacy advanced-search form):
   `/home/devuser/backups/Caddyfile.pre-auth-2026-11-28-1045` (the two blocks to delete are marked there). Live check:
   public `/login` answers 200 in 13 ms from Rust with the Turnstile widget, a POST without a token is refused with
   "Verifikasi bot gagal", `/me/2fa` 303s to the login, `/opds/new` still returns Flask's Atom feed through the guard.
-  A successful production login was NOT exercised (no password at hand); the admin must log in through the browser
-  and then enrol at `/me/2fa`
+  Confirmed in the admin's browser the same day: the Turnstile widget solves and the password step passes, and the
+  account `adminzxc` enrolled at 11:00:36 UTC (`twofa_enabled_at`, 10 recovery codes, an `2fa_enabled` audit row) and
+  logged in with a code. Once an account is enrolled, Basic auth on `/opds/*` is refused for it (403); an OPDS client
+  configured with that account's password stops working by design - anonymous browsing (`config_anonbrowse=1`) and
+  accounts without 2FA are unaffected
 - **Flask no longer authenticates anything.** `POST /login`, `POST /login/2fa` and the 2FA pages are answered by
   `rust/backend` (`login.rs`, `twofa.rs`, `auth_page.rs`); Caddy routes `/login /login/* /me/2fa /me/2fa/*` to Rust
   first with Flask as the failover. Flask's own `login_post` still exists but is unreachable through Caddy, so a
@@ -932,7 +935,10 @@ Two live search systems (plus the legacy advanced-search form):
   enrolling has to wait for the next 30 s window to log in with a code). The sealed secret stored by Rust was opened by
   Flask's own `.key`/Fernet. Rust refused `Authorization: Basic` on `/opds/new` for the 2FA account while Flask alone
   answered it 200 — the hole the guard closes. `src/totp.rs` keeps three Python-computed RFC 6238 vectors as a test. NOT checked: a real browser with Turnstile (the widget only appears when `TURNSTILE_*` is set), a real
-  authenticator app, and this against production data
+  authenticator app, and this against production data. **Open gap (2026-11-28)**: `RUST_LOG` is unset, so
+  `tracing_subscriber`'s `EnvFilter` defaults to `error` and every auth event logged at `info`/`warn` (successful
+  logins, invalid codes, refused Basic auth, rate-limit hits) is dropped; Flask's own "logged in" line is gone with its
+  login route. Setting `RUST_LOG=info` in `.env` (the container reads it, no rebuild) and recreating restores them
 
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
