@@ -608,6 +608,15 @@ Two live search systems (plus the legacy advanced-search form):
   "cenderung negatif" at or below -0.25, otherwise "berimbang". `seed.mjs` (`loadSentenceTone()`) merges the record
   into `books/<id>.json` as `text.tone`; a missing or version-mismatched file means no line, never a stale one.
   Re-run the task and then `./build-frontend.sh` to publish new tone numbers
+- **A book can have `text` with only `tone`** (2026-11-28 500 on `/book/<slug>/`): `seed.mjs` builds `text` from the corpus
+  profile AND the tone record, so a book scored by the classifier but not yet in the corpus rebuild (630 books on that
+  day, mostly the recent `YPKP 1965` and similar uploads, e.g. ids 21712-21722 and 8842) gets `text = {tone}` with no `top`, `distinct`,
+  `phrases`, `words`, `similar` or `sentiment`. The book page read `text.top.length` and threw, so every one of those pages
+  answered 500 (Astro log: `undefined is not an object (evaluating 'text.top.length')`) while Caddy logged an empty 500.
+  Every `BookText` field except `tone` is now optional in `types.ts` and the page reads the lists through `?? []`. Checked
+  on a throwaway image: all 630 tone-only books answer 200 (the running image: 500 for 40 of 40 sampled), and 258 normal
+  pages are byte-identical to the running image. Any NEW use of the corpus fields on the book page must tolerate a
+  `text` without them; a corpus rebuild (Compute Text Analysis Now) + `./build-frontend.sh` gives these books the full block
 - Model emotions ("Emosi dominan (model)", same page, next to the lexicon's "Emosi dominan"): one RoBERTa per
   language, both MIT. Neither repo ships ONNX, so the Dockerfile's `models` stage (Python 3.12, torch 2.15,
   transformers 4.57.1, onnx 1.23.2, onnxruntime 1.32.0; `docker/export_emotion_onnx.py`) exports each checkpoint and

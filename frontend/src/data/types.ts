@@ -42,24 +42,29 @@ export interface BookDetail extends BookSummary {
   text?: BookText;
 }
 
+/**
+ * Everything the corpus rebuild and the tone pass know about one book. The two sources are merged by `seed.mjs`, so a
+ * book can carry only `tone` (no corpus profile yet: 630 books in 2026-11) or only the corpus fields. Every corpus field
+ * is therefore optional; read it with `?.` and a default.
+ */
 export interface BookText {
   /** Words in the book (all tokens, stopwords included). */
-  words: number;
+  words?: number;
   /** Percent of the library's books that have fewer words. */
-  longer_than: number;
+  longer_than?: number;
   /** [word, count]: most frequent non-stopwords. */
-  top: [string, number][];
+  top?: [string, number][];
   /** [word, count]: words that are frequent here but rare in the other books (count x log(books / books using it)). */
-  distinct: [string, number][];
+  distinct?: [string, number][];
   /** [phrase, count]: key two- and three-word phrases. */
-  phrases: [string, number][];
+  phrases?: [string, number][];
   /** [book id, similarity 0-1]: the most similar books by distinctive words, best first; empty when none is close enough. */
-  similar: [number, number][];
+  similar?: [number, number][];
   /**
    * Tone of the words from the corpus rebuild: (positive - negative) / hits, in [-1, 1], plus the weighted hit counts.
    * Null for books that are not scored (non-Indonesian language, or fewer than SENTIMENT_MIN_HITS hits).
    */
-  sentiment: {
+  sentiment?: {
     score: number;
     positive: number;
     negative: number;

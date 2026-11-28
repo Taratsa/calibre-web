@@ -102,6 +102,11 @@ const ratingStr = book.rating && book.rating.count > 0
 
 // "Tentang teks": facts line, ranked word lists and key phrases from the corpus rebuild (see cps/text_analysis.py).
 const text = detail?.text ?? null;
+// A book can have only the sentence tone (`text` = `{ tone }`, no corpus profile yet): 630 books in 2026-11, which made
+// every one of those pages a 500 on `text.top.length`. The ranked lists therefore default to empty.
+const topWords = text?.top ?? [];
+const distinctWords = text?.distinct ?? [];
+const phraseList = text?.phrases ?? [];
 const countFormat = new Intl.NumberFormat('id-ID');
 // A book can carry only the sentence tone (no corpus profile yet), so the facts line needs the word count itself.
 const readingMinutes = text?.words ? Math.max(1, Math.round(text.words / 200)) : 0;
@@ -304,24 +309,24 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
               )}
             </details>
           )}
-          {(text.top.length > 0 || text.distinct.length > 0) && (
+          {(topWords.length > 0 || distinctWords.length > 0) && (
             <div class="book-text__lists">
-              {text.top.length > 0 && (
+              {topWords.length > 0 && (
                 <div>
                   <h3>Paling sering muncul</h3>
                   <ol class="book-text__rank">
-                    {text.top.map(([word, count]) => (
-                      <li><span>{word}</span><span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / text.top[0][1]) * 100}%`}></i></span><b>{countFormat.format(count)}</b></li>
+                    {topWords.map(([word, count]) => (
+                      <li><span>{word}</span><span class="book-text__bar" aria-hidden="true"><i style={`width:${(count / topWords[0][1]) * 100}%`}></i></span><b>{countFormat.format(count)}</b></li>
                     ))}
                   </ol>
                 </div>
               )}
-              {text.distinct.length > 0 && (
+              {distinctWords.length > 0 && (
                 <div>
                   <h3>Khas buku ini</h3>
                   <p class="book-text__note">Sering di buku ini, jarang di buku lain.</p>
                   <ol class="book-text__rank">
-                    {text.distinct.map(([word, count]) => (
+                    {distinctWords.map(([word, count]) => (
                       <li><span>{word}</span><b>{countFormat.format(count)}</b></li>
                     ))}
                   </ol>
@@ -329,11 +334,11 @@ const similarBooks = (text?.similar ?? []).flatMap(([otherId]) => booksById.get(
               )}
             </div>
           )}
-          {text.phrases.length > 0 && (
+          {phraseList.length > 0 && (
             <div>
               <h3>Frasa yang berulang</h3>
               <ul class="book-text__phrases">
-                {text.phrases.map(([phrase, count]) => (
+                {phraseList.map(([phrase, count]) => (
                   <li><a href={`/search/text/?${new URLSearchParams({ q: `"${phrase.replaceAll('"', '')}"` })}`} title={`${count} kali di buku ini. Cari frasa ini di dalam teks semua buku`}>{phrase}</a></li>
                 ))}
               </ul>
