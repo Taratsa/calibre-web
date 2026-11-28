@@ -879,7 +879,13 @@ Two live search systems (plus the legacy advanced-search form):
   `/download` writes the download counter: the 2026-11-28 check added ~45 hits to 20 books on production (do such checks
   against a copy of `app.db`). A 403 with `cf-mitigated: challenge` from this host is Cloudflare, not the origin.
 
-### Authentication (login, 2FA, Turnstile) - Rust since 2026-11-28
+### Authentication (login, 2FA, Turnstile) - Rust, LIVE since 2026-11-28 ~10:45 UTC
+- Image `calibre-web:auth-rust`, rollback `calibre-web:pre-auth`; Caddyfile backup
+  `/home/devuser/backups/Caddyfile.pre-auth-2026-11-28-1045` (the two blocks to delete are marked there). Live check:
+  public `/login` answers 200 in 13 ms from Rust with the Turnstile widget, a POST without a token is refused with
+  "Verifikasi bot gagal", `/me/2fa` 303s to the login, `/opds/new` still returns Flask's Atom feed through the guard.
+  A successful production login was NOT exercised (no password at hand); the admin must log in through the browser
+  and then enrol at `/me/2fa`
 - **Flask no longer authenticates anything.** `POST /login`, `POST /login/2fa` and the 2FA pages are answered by
   `rust/backend` (`login.rs`, `twofa.rs`, `auth_page.rs`); Caddy routes `/login /login/* /me/2fa /me/2fa/*` to Rust
   first with Flask as the failover. Flask's own `login_post` still exists but is unreachable through Caddy, so a
