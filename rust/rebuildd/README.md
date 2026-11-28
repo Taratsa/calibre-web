@@ -4,8 +4,8 @@ Keeps the Astro frontend's catalog in step with Calibre's database, in Rust, wit
 `./build-frontend.sh` by hand.
 
 The frontend bakes `src/data` into its image at build time, so a new or edited book reaches the site only after a
-reseed, an image rebuild and a container recreate. Measured on the production host: **seed 28 s + image build 40 s**
-(warm Docker cache) **+ ~1 s recreate**, with about a second of 502 while the container restarts.
+reseed, an image rebuild and a container recreate. Measured on the production host: **seed ~26 s + image build ~41 s**
+(warm Docker cache) **+ ~11 s recreate** (76 s in total), with that last stretch answering 502 on the Astro pages.
 
 ## What it does
 

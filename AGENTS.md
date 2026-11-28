@@ -944,8 +944,8 @@ Two live search systems (plus the legacy advanced-search form):
 ### Frontend reseed automation (`rust/rebuildd`, 2026-11-28)
 - **The old flow was manual**: the Astro image bakes `frontend/src/data` at build time, so a book added or edited in
   Calibre reached the site only after someone ran `./build-frontend.sh` (seed + image build + recreate). Measured on
-  the production host: seed **28 s**, Astro image build **40 s** with a warm Docker layer cache, ~1 s recreate (and
-  about a second of 502 while the container restarts). Regardless of Docker cache the first pull/build after a
+  the production host: seed **28 s**, Astro image build **40 s** with a warm Docker layer cache, recreate **~11 s**
+  (the first recreate measured ~1 s; the real automated run took 11 s of 502 on the Astro pages). Regardless of Docker cache the first pull/build after a
   dependency change is minutes; the numbers assume the normal case, where only `src/data` moved
 - **`rust/rebuildd`** (own crate, run by `scripts/rebuildd.sh`, NO systemd: a decision of 2026-11-28) watches `library/metadata.db`
   with its `-wal`/`-shm` (SQLite commits land in the WAL, so the main file's mtime alone is not reliable) and
@@ -959,7 +959,7 @@ Two live search systems (plus the legacy advanced-search form):
   (own session, pid in `~/.local/state/pustaka/rebuildd.pid`, log `rebuildd.log` there) that restarts the daemon after a
   crash (5 s, backing off to 60 s for a crash loop). Boot start is one cron line: `@reboot <repo>/scripts/rebuildd.sh
   start`. It binds `127.0.0.1:9777` (9999 is the Tor bridge container on this host); settings in
-  `~/.config/pustaka/rebuildd.env`. Not running unless started: at this writing it is NOT started
+  `~/.config/pustaka/rebuildd.env`. STARTED 2026-11-28 ~11:52 UTC (`scripts/rebuildd.sh start`); it does not survive a reboot unless the cron line is added
 - **Stopping** (`rebuildd.sh stop`, SIGTERM, Ctrl-C) finishes the build in flight and starts nothing new. Checked
   2026-11-28 with a fake 6 s build: the crash restart came back in 5 s with `/healthz` 200, and a stop issued 3 s into a
   build waited for it ("build-done", exit 0 logged) and left no process behind
@@ -979,8 +979,15 @@ Two live search systems (plus the legacy advanced-search form):
   reporting, stamp/fingerprint), and on the host `--once --dry-run` correctly reported the 18 uncommitted frontend code
   files instead of building, while `REBUILD_ALLOW_DIRTY=1` reached the dry-run step; the HTTP surface answered
   healthz 200, no/wrong token 403, correct token 202 with `next_run_in_seconds`, `/status` JSON
-- NOT verified: a full automated run (no catalog change happened while testing, and the frontend tree is dirty), and
-  the service is **not enabled yet** (enabling it is a live change)
+- **Real run, 2026-11-28 11:50 UTC** (`rebuildd.sh once`, tree clean): seed 26 s (24,465 books), image build 41 s (warm
+  cache; the 119 MB build context alone is 6 s), recreate **11 s** (not the ~1 s measured earlier: the old container is
+  stopped gracefully first), 76 s total, exit 0. `pustaka-astro` was `healthy` 16 s after the end; `/`, `/search/`,
+  `/author/`, `/aksesibilitas/` (the new page) and `/sitemap.xml` answered 200, and the newest book (25330) is in the
+  slug map. So expect **up to ~11 s of 502 on the Astro pages** per automated refresh, plus the ~76 s of CPU. Rollback
+  image kept as `pustaka-astro:pre-autoreseed`
+- NOT verified: the change DETECTION on a real edit (testing it would mean writing `library/metadata.db`, which is off
+  limits); the debounce, the watch of `metadata.db`'s WAL and the dirty-tree guard are covered by unit tests and the dry
+  runs, the build path by the real run above
 - **`frontend/src/data/*.json` is marked `binary` in `.git/info/attributes`** (local, untracked, so a fresh clone does
   not inherit it): the seed rewrites those files wholesale and `rebuildd` leaves them dirty permanently, so any
   `commit.draft()` called with a reseeded snapshot line-attributes ~50k changed lines. On 2026-11-28 that blocked the
