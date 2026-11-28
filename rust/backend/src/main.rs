@@ -16,6 +16,8 @@ async fn main() {
         .and_then(|v| v.parse().ok())
         .unwrap_or(1);
 
+    // The second-factor columns live in `app.db`'s `user` table and are Rust's to create (Flask's ORM ignores them).
+    taratsa_backend::authdb::ensure_schema(&app_db);
     let state = Arc::new(AppState::new(app_db, max_exports));
     let listener = match tokio::net::TcpListener::bind(&listen).await {
         Ok(listener) => listener,

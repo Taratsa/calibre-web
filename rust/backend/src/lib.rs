@@ -3,6 +3,8 @@
 //! else to Flask. See `rust/backend/README.md`.
 
 pub mod accept;
+pub mod auth_page;
+pub mod authdb;
 pub mod cover;
 pub mod download;
 pub mod epub_page;
@@ -13,18 +15,28 @@ pub mod health;
 pub mod legacy;
 pub mod library;
 pub mod locale;
+pub mod login;
 pub mod mime;
 pub mod ocr_status;
 pub mod opds_download;
+pub mod opds_guard;
+pub mod password;
 pub mod proxy;
 pub mod pyjson;
+pub mod random;
+pub mod ratelimit;
 pub mod reader;
 pub mod readium;
+pub mod recovery;
+pub mod secretbox;
 pub mod security;
 pub mod session;
 pub mod settings;
 pub mod signing;
 pub mod static_files;
+pub mod totp;
+pub mod turnstile;
+pub mod twofa;
 
 use axum::Router;
 use settings::Settings;
@@ -54,6 +66,10 @@ pub struct AppState {
     pub book_slugs_path: Option<PathBuf>,
     /// The parsed map and the mtime (ns) it was read at, so a reseed is picked up without a restart.
     book_slugs: std::sync::Mutex<Option<legacy::SlugCache>>,
+    /// Cloudflare Turnstile on the login form; `None` when its keys are not configured.
+    pub turnstile: Option<crate::turnstile::Turnstile>,
+    /// Failed-password and second-factor limits, in memory.
+    pub limits: crate::ratelimit::RateLimiter,
     cached: Mutex<Option<(Instant, Arc<Settings>)>>,
 }
 
@@ -100,6 +116,8 @@ impl AppState {
             },
             book_slugs_path: env("BOOK_SLUGS_PATH").map(PathBuf::from),
             book_slugs: std::sync::Mutex::new(None),
+            turnstile: crate::turnstile::Turnstile::from_env(),
+            limits: crate::ratelimit::RateLimiter::new(),
             cached: Mutex::new(None),
         }
     }
@@ -141,6 +159,9 @@ pub fn router(state: Arc<AppState>) -> Router {
         .merge(ocr_status::routes())
         .merge(readium::routes())
         .merge(legacy::routes())
+        .merge(crate::login::routes())
+        .merge(crate::twofa::routes())
+        .merge(crate::opds_guard::routes())
         .layer(axum::middleware::from_fn_with_state(
             state.clone(),
             security::layer,

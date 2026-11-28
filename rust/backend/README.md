@@ -25,6 +25,9 @@ backend answers. Nothing moves until its Rust version has been compared against 
 | `/series_cover/<id>[/<resolution>]` | `src/cover.rs` | the cover of the series' first book with a cover (no visibility filter, like Flask); same fast path and fallbacks as `/cover`; stays on Flask while `app.db` holds any series thumbnail row |
 | `/download/<id>/<fmt>[/<name>]` | `src/download.rs` | anonymous only: counts the download in `app.db` and 302s to the signed `/files` URL; identity and failure cases proxy to Flask |
 | `/opds/download/<id>/<fmt>/` | `src/opds_download.rs` | anonymous guest only: streams the file (a fresh `calibredb export` when metadata embedding is on, through `src/export.rs`, so it is Calibre's own export), counts the download for user 0; cookies, `Authorization`, Kobo, `kepub`, 404s, 416 and a locked library go to Flask. Live (Caddy `@rust_download`, `@rust_paths`) |
+| `/login`, `/login/2fa` | `src/login.rs`, `src/auth_page.rs` | the password step (Flask-WTF CSRF, Turnstile, werkzeug scrypt) and the second step (TOTP or a recovery code); mints Flask's `session`/`remember_token` cookies and the `user_session` row; LDAP/OAuth and `forgot` proxy to Flask |
+| `/me/2fa[/start|/confirm|/disable]` | `src/twofa.rs` | enrolment (QR + secret), the one-time recovery codes, and disabling with a current code; `src/secretbox.rs` seals the secret with the app's `.key` |
+| `/opds`, `/opds/*` | `src/opds_guard.rs` | answers nothing: refuses Basic auth for an account with 2FA enabled (403), proxies every other request to Flask |
 | `/static/<path>` | `src/static_files.rs` | GET/HEAD of an existing plain file under `cps/static`: werkzeug's ETag, `Last-Modified`, `no-cache`, 304 and single-range 206; a miss, odd path, symlink out, unknown type, other method, 412 or 416 goes to Flask |
 
 Everything else remains Flask. The cover route serves an existing local source
@@ -420,6 +423,8 @@ APP_DB_PATH=/config/app.db LISTEN=127.0.0.1:8084 RUST_LOG=info ./taratsa_backend
 | `SECRET_KEY` | none | overrides the stored signing key, like Flask |
 | `ONION_LOCATION` | none | adds the `Onion-Location` header |
 | `UMAMI_URL` | `https://umami.kenadera.org/api/send` | Umami endpoint of the `/download` event; `off` disables it |
+| `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | none | Cloudflare Turnstile on the login form; both are required, and without them the widget and the check are off |
+| `FLASK_BACKEND_URL` | `http://127.0.0.1:8083` | where anything not ported (and every case Rust refuses) is proxied |
 
 ## Check
 

@@ -11,6 +11,11 @@ use std::sync::Arc;
 
 /// Set by the reader route on its response so the layer adds the viewer's extra CSP sources, and removed again.
 pub const READER_PAGE: &str = "x-internal-reader-page";
+/// Set by the login pages, which load Cloudflare Turnstile's script and iframe.
+pub const AUTH_PAGE: &str = "x-internal-auth-page";
+
+/// Cloudflare Turnstile serves its widget script and the challenge iframe from this origin.
+pub const TURNSTILE_ORIGIN: &str = "https://challenges.cloudflare.com";
 
 fn default_sources(trusted_hosts: &str) -> Vec<&str> {
     let mut sources: Vec<&str> = trusted_hosts
@@ -46,6 +51,7 @@ pub async fn layer(
 ) -> Response {
     let mut response = next.run(request).await;
     let reader_page = response.headers_mut().remove(READER_PAGE).is_some();
+    let auth_page = response.headers_mut().remove(AUTH_PAGE).is_some();
     let trusted_hosts = state
         .settings()
         .await
@@ -53,6 +59,8 @@ pub async fn layer(
         .unwrap_or_default();
     let policy = if reader_page {
         reader_content_security_policy(&trusted_hosts)
+    } else if auth_page {
+        content_security_policy(&format!("{trusted_hosts},{TURNSTILE_ORIGIN}"))
     } else {
         content_security_policy(&trusted_hosts)
     };

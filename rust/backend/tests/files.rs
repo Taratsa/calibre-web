@@ -61,7 +61,8 @@ fn fixture(embed_metadata: bool) -> Fixture {
             config_calibre_dir TEXT, config_calibre_split INTEGER, config_calibre_split_dir TEXT,
             config_trustedhosts TEXT, config_calibre_web_title TEXT, config_anonbrowse INTEGER,
             config_restricted_column INTEGER, config_allow_reverse_proxy_header_login INTEGER,
-            config_reverse_proxy_login_header_name TEXT);
+            config_reverse_proxy_login_header_name TEXT, config_login_type INTEGER,
+            config_remote_login INTEGER, mail_server TEXT);
          CREATE TABLE user (id INTEGER PRIMARY KEY, name TEXT, role INTEGER, default_language TEXT, denied_tags TEXT, allowed_tags TEXT);
          CREATE TABLE downloads (id INTEGER NOT NULL, book_id INTEGER, user_id INTEGER,
             hit_count INTEGER NOT NULL DEFAULT 1, last_hit DATETIME NOT NULL DEFAULT '1970-01-01 00:00:00',
@@ -74,7 +75,7 @@ fn fixture(embed_metadata: bool) -> Fixture {
     )
     .unwrap();
     app.execute(
-        "INSERT INTO settings VALUES (0, ?1, 0, '/nonexistent-binaries', '', ?2, 0, '', 'https://stats.example', 'Fixture', 1, 0, 0, '')",
+        "INSERT INTO settings VALUES (0, ?1, 0, '/nonexistent-binaries', '', ?2, 0, '', 'https://stats.example', 'Fixture', 1, 0, 0, '', 0, 0, '')",
         rusqlite::params![embed_metadata as i64, library.to_str().unwrap()],
     )
     .unwrap();

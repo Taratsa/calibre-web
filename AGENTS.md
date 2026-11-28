@@ -879,6 +879,47 @@ Two live search systems (plus the legacy advanced-search form):
   `/download` writes the download counter: the 2026-11-28 check added ~45 hits to 20 books on production (do such checks
   against a copy of `app.db`). A 403 with `cf-mitigated: challenge` from this host is Cloudflare, not the origin.
 
+### Authentication (login, 2FA, Turnstile) - Rust since 2026-11-28
+- **Flask no longer authenticates anything.** `POST /login`, `POST /login/2fa` and the 2FA pages are answered by
+  `rust/backend` (`login.rs`, `twofa.rs`, `auth_page.rs`); Caddy routes `/login /login/* /me/2fa /me/2fa/*` to Rust
+  first with Flask as the failover. Flask's own `login_post` still exists but is unreachable through Caddy, so a
+  password alone can never mint a session any more. LDAP/OAuth logins and the "Forgot password?" mail are proxied to
+  Flask untouched (`config_login_type != 0`, or a form with `forgot=forgot`)
+- **Two-step verification (TOTP + recovery codes)**: `user.twofa_secret` holds the base32 secret sealed with Fernet
+  (the app's `.key`, byte-compatible with `cryptography.fernet`, so Python reads the same tokens), `user.twofa_recovery`
+  a JSON array of SHA-256 digests of ten one-time codes, `user.twofa_last_step` the last accepted 30 s step (RFC 6238
+  §5.2: a code cannot be replayed) and `user.twofa_enabled_at` the date. The columns are created by
+  `authdb::ensure_schema()` at Rust startup (`ALTER TABLE user ADD COLUMN`, idempotent); Flask's ORM ignores them, so
+  no Python schema change is involved. `totp-rs` (MIT) does RFC 6238: SHA-1, 6 digits, 30 s step, skew 1
+- **Login flow**: `GET /login` renders the form and mints the anonymous session cookie holding `csrf_token` (Flask's
+  own `URLSafeTimedSerializer`, salt `cookie-session`); `POST /login` checks `flask_wtf`'s CSRF (`wtf-csrf-token`,
+  django-concat, 3600 s), Turnstile, then the werkzeug scrypt hash (`password.rs`; pbkdf2 hashes also verify), all on a
+  blocking worker. Success writes the `user_session` revocation row Flask checks, sets the `session` cookie (with the
+  retained `csrf_token`, as Flask's session dict keeps it) and, with "Remember me", a `remember_token`
+  (`URLSafeSerializer`, salt `remember`, no timestamp). `_id` is `cps.cw_login._create_identifier`:
+  `sha512(f"{X-Forwarded-For-first}|{User-Agent}")`, which is why Rust forwards the header unchanged
+- **Second step**: an account with a secret gets a signed `pustaka_2fa` cookie (5 min, uid/remember/next, HMAC-SHA256)
+  and `/login/2fa`; a valid TOTP step or one unused recovery code then mints the session. Rate limits live in process
+  memory (`ratelimit.rs`): 3/minute and 40/day per username, 10/minute per address, 5/minute per second-factor attempt
+- **Enrolment** is `/me/2fa` (`/me/2fa/start`, `/confirm`, `/disable`): it renders the QR (`totp-rs`'s `qrcodegen-image`)
+  and the secret for manual entry, writes the secret only after a code proves the app holds it, and shows the ten
+  recovery codes exactly once. A valid code is required to disable. Enabling and disabling write an `audit_log` row.
+  The profile page (`plain_user_edit.html`) links to it with a plain `<a href="/me/2fa">`, because the route is Rust's
+- **Turnstile** (`turnstile.rs`) sits on the login form only: `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` in `.env`
+  (both required; without them the widget is absent and the check is skipped, so a misconfiguration cannot lock the
+  admin out). The login pages' CSP adds `https://challenges.cloudflare.com` (`security::AUTH_PAGE`)
+- **Basic auth is a second door and is closed**: Flask's `requires_basic_auth_if_no_ano` (OPDS) logs in with
+  username+password and sets a session cookie that the admin pages accept (verified: `curl -u` on `/opds/` then
+  `/admin/view` answered 200). `opds_guard.rs` therefore refuses Basic auth for an account with 2FA enabled (403 with a
+  message) and proxies everything else to Flask unchanged, so wrong passwords keep Flask's own 401. Caddy sends
+  `/opds /opds/*` to Rust first. The old host needs no guard: its session cookie is host-scoped and its `/admin*` paths
+  307 to the main host
+- **Coverage**: `rust/backend/tests/auth.rs` drives the router: CSRF (missing token = 400), wrong password, unknown
+  account, the minted cookie accepted as the user on `/me/2fa`, the `user_session` row, the 2FA challenge, TOTP replay
+  refusal, the rate limit, full enrolment (start → QR → confirm → ten codes → next login needs 2FA) and the OPDS guard.
+  NOT checked live yet: a real browser with Turnstile, a real authenticator app, and `POST /login` against production
+  data
+
 ### Clippings Admin (`/admin/clippings`)
 - Admin-only dashboard (sidebar "Clippings", `role_admin`) for old newsletter / press clippings ("kliping"). Each
   clipping is ONE Markdown file `<id>.md`: YAML frontmatter = metadata, body = transcribed Markdown. The files are the

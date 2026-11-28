@@ -30,6 +30,12 @@ pub struct Settings {
     pub series_thumbnails: bool,
     /// `flask_settings.flask_session_key`: the HMAC key of signed URLs.
     pub session_key: Vec<u8>,
+    /// `config_login_type`: 0 local, 1 LDAP, 2/3 OAuth. Only 0 can be answered here.
+    pub login_type: i64,
+    /// `config_remote_login`: the magic-link page lives on Flask; the login page links to it.
+    pub remote_login: bool,
+    /// A mail server is configured (`mail_server` set), so "Forgot password?" can work.
+    pub mail_configured: bool,
 }
 
 impl Settings {
@@ -62,7 +68,8 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
         "SELECT config_use_google_drive, config_embed_metadata, config_unicode_filename, config_binariesdir,
                 config_kepubifypath, config_calibre_dir, config_calibre_split, config_calibre_split_dir, config_trustedhosts,
                 config_calibre_web_title, config_anonbrowse, config_restricted_column,
-                config_allow_reverse_proxy_header_login, config_reverse_proxy_login_header_name
+                config_allow_reverse_proxy_header_login, config_reverse_proxy_login_header_name,
+                config_login_type, config_remote_login, mail_server
          FROM settings LIMIT 1",
         [],
         |row| {
@@ -90,6 +97,9 @@ pub fn load(app_db: &Path) -> rusqlite::Result<Settings> {
                 guest_allowed_tags: String::new(),
                 series_thumbnails: true,
                 session_key: Vec::new(),
+                login_type: row.get::<_, Option<i64>>(14)?.unwrap_or(0),
+                remote_login: flag(15)?,
+                mail_configured: !text(16)?.is_empty(),
             })
         },
     )?;

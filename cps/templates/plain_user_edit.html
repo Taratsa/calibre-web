@@ -10,6 +10,7 @@
       {% if current_user and (current_user.role_passwd() or current_user.role_admin()) and not content.role_anonymous() %}
         {% if current_user.role_admin() and not new_user and not profile and mail_configured and content.email %}<button type="submit" formaction="{{ url_for('admin.reset_user_password', user_id=content.id) }}" formmethod="post" name="reset_password" value="1" id="resend_password">{{ _('Reset user Password') }}</button>{% endif %}
         <label for="password">{{ _('Password') }}{% if not new_user %} <span class="plain-muted">({{ _('leave blank to keep the current password') }})</span>{% endif %}</label><input id="password" name="password" type="password" autocomplete="new-password">
+        {% if profile %}<p><a href="/me/2fa">{{ _('Two-Step Verification (2FA)') }}</a></p>{% endif %}
       {% endif %}
       <label for="kindle_mail">{{ _('Send to eReader Email Address. Use comma to separate emails for multiple eReaders') }}</label><input id="kindle_mail" name="kindle_mail" value="{{ content.kindle_mail if content.kindle_mail != None }}">
       {% if not content.role_anonymous() %}

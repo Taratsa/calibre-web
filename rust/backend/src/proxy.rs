@@ -58,6 +58,27 @@ pub async fn fallback_reconstructed(
     proxy_parts(state, parts, body).await
 }
 
+/// A fallback that carries a body (the login form's `forgot` case, proxied to Flask as it always was).
+pub async fn fallback_with_body(
+    state: Arc<AppState>,
+    path: &str,
+    method: axum::http::Method,
+    headers: axum::http::HeaderMap,
+    body: Vec<u8>,
+) -> Response {
+    let request = match Request::builder()
+        .method(method)
+        .uri(path)
+        .body(Body::from(body))
+    {
+        Ok(request) => request,
+        Err(_) => return (StatusCode::BAD_GATEWAY, "Invalid fallback request").into_response(),
+    };
+    let (mut parts, body) = request.into_parts();
+    parts.headers = headers;
+    proxy_parts(state, parts, body).await
+}
+
 async fn proxy_parts(state: Arc<AppState>, parts: Parts, body: Body) -> Response {
     let target = match reqwest::Url::parse(&state.proxy_url) {
         Ok(target) => target,
